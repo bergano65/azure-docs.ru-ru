@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 11/18/2020
 ms.author: procha
 ms.reviewer: jrasnick
-ms.openlocfilehash: 861b963922d64926266b42a23f85e9dc30fda7a3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a1031656eaa5125d07ae078773379270b26625e7
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95903990"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121385"
 ---
 # <a name="compatibility-issues-with-third-party-applications-and-azure-synapse-analytics"></a>Проблемы совместимости с приложениями сторонних производителей и Azure синапсе Analytics
 
@@ -26,7 +26,7 @@ ms.locfileid: "95903990"
 
 Начиная с выделенного пула SQL Azure синапсе версии 10.0.11038.0 некоторые запросы Tableau, выполняющие вызовы хранимых процедур, могут завершиться со следующим сообщением об ошибке: "**[Microsoft] [ODBC Driver 17 for SQL Server] [SQL Server] 111214; Сбой при выполнении транзакции. Соответствующие транзакции не найдены».**
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Это проблема в выделенном пуле SQL Azure синапсе, вызванная введением новых системных хранимых процедур, которые вызываются автоматически драйверами ODBC и JDBC. Одна из этих системных хранимых процедур может привести к прерыванию открытых транзакций в случае сбоя их выполнения. Эта проблема может возникнуть в зависимости от логики клиентского приложения.
 
@@ -55,5 +55,5 @@ ms.locfileid: "95903990"
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Элементы языка T-SQL для выделенного пула SQL в Azure синапсе Analytics.](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-reference-tsql-language-elements?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-* [Инструкции T-SQL, поддерживаемые для выделенного пула SQL в Azure синапсе Analytics.](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-reference-tsql-statements)
+* [Элементы языка T-SQL для выделенного пула SQL в Azure синапсе Analytics.](./sql-data-warehouse-reference-tsql-language-elements.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)
+* [Инструкции T-SQL, поддерживаемые для выделенного пула SQL в Azure синапсе Analytics.](./sql-data-warehouse-reference-tsql-statements.md)

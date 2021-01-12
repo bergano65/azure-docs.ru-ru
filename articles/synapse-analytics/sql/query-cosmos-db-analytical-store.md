@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 22103ad580fa474f44eaf42c696d19bbbd137c8e
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: a0458264b6ea0c741244531fc104a7637108b06e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095106"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121351"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в предварительной версии Azure синапсе Link
 
@@ -31,7 +31,7 @@ ms.locfileid: "97095106"
 > [!IMPORTANT]
 > В этом руководстве используется контейнер с [четко определенной схемой Azure Cosmos DB](../../cosmos-db/analytical-store-introduction.md#schema-representation). Работа запроса, которую серверный пул SQL предоставляет для [схемы Azure Cosmos DB полной точности](#full-fidelity-schema) , является временным поведением, которое будет изменено на основе отзывов о предварительной версии. Не полагайтесь на схему результирующего набора `OPENROWSET` функции без `WITH` предложения, считывающего данные из контейнера с полной схемой точности, так как работа запроса может быть согласована с и изменяется на основе четко определенной схемы. Вы можете опубликовать свой отзыв на [форуме обратной связи Azure синапсе Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics). Вы также можете обратиться к [группе разработчиков Azure синапсе Link](mailto:cosmosdbsynapselink@microsoft.com) , чтобы отправить отзыв.
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Бессерверный пул SQL позволяет запрашивать Azure Cosmos DB аналитического хранилища с помощью `OPENROWSET` функции. 
 - `OPENROWSET` со встроенным ключом. Этот синтаксис можно использовать для запроса коллекций Azure Cosmos DB без необходимости подготовки учетных данных.
@@ -222,7 +222,7 @@ FROM OPENROWSET(
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
 
-Не используйте `OPENROWSET` без явно определенных схем, так как это может повлиять на производительность. Убедитесь, что используются наименьшие возможные размеры столбцов (например, VARCHAR (100) вместо VARCHAR (8000) по умолчанию. Необходимо использовать некоторые параметры сортировки UTF-8 в качестве параметров сортировки базы данных по умолчанию или задать их как явные параметры сортировки столбцов, чтобы избежать [проблем с преобразованием UTF-8](/azure/synapse-analytics/troubleshoot/reading-utf8-text). Параметры сортировки `Latin1_General_100_BIN2_UTF8` обеспечивают лучшую производительность при Yu фильтрации данных с помощью некоторых строковых столбцов.
+Не используйте `OPENROWSET` без явно определенных схем, так как это может повлиять на производительность. Убедитесь, что используются наименьшие возможные размеры столбцов (например, VARCHAR (100) вместо VARCHAR (8000) по умолчанию. Необходимо использовать некоторые параметры сортировки UTF-8 в качестве параметров сортировки базы данных по умолчанию или задать их как явные параметры сортировки столбцов, чтобы избежать [проблем с преобразованием UTF-8](../troubleshoot/reading-utf8-text.md). Параметры сортировки `Latin1_General_100_BIN2_UTF8` обеспечивают лучшую производительность при Yu фильтрации данных с помощью некоторых строковых столбцов.
 
 ## <a name="query-nested-objects-and-arrays"></a>Запрос вложенных объектов и массивов
 
@@ -268,8 +268,8 @@ WITH (  paper_id    varchar(8000),
 Узнайте больше о том, как анализировать [сложные типы данных в ссылках Azure синапсе](../how-to-analyze-complex-schema.md) и [вложенных структурах в бессерверном пуле SQL](query-parquet-nested-types.md).
 
 > [!IMPORTANT]
-> Если в тексте, например вместо, отображаются непредвиденные символы `MÃƒÂ©lade` `Mélade` , параметры сортировки базы данных не задаются в параметрах сортировки [UTF-8](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support#utf8) .
-> [Измените параметры сортировки базы данных](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) на параметры сортировки UTF-8 с помощью инструкции SQL, такой как `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
+> Если в тексте, например вместо, отображаются непредвиденные символы `MÃƒÂ©lade` `Mélade` , параметры сортировки базы данных не задаются в параметрах сортировки [UTF-8](/sql/relational-databases/collations/collation-and-unicode-support#utf8) .
+> [Измените параметры сортировки базы данных](/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) на параметры сортировки UTF-8 с помощью инструкции SQL, такой как `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
 
 ## <a name="flatten-nested-arrays"></a>Сведение вложенных массивов
 
@@ -325,7 +325,7 @@ FROM
 | Дополнительная информация — епидеми... |   `[{"first":"Olivier","last":"Flores","suffix":"","affiliation":{"laboratory":"UMR C53 CIRAD, …` | оливиер | флорес |`{"laboratory":"UMR C53 CIRAD, …` |     
 
 > [!IMPORTANT]
-> Если в тексте, например вместо, отображаются непредвиденные символы `MÃƒÂ©lade` `Mélade` , параметры сортировки базы данных не задаются в параметрах сортировки [UTF-8](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support#utf8) . [Измените параметры сортировки базы данных](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) на параметры сортировки UTF-8 с помощью инструкции SQL, такой как `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
+> Если в тексте, например вместо, отображаются непредвиденные символы `MÃƒÂ©lade` `Mélade` , параметры сортировки базы данных не задаются в параметрах сортировки [UTF-8](/sql/relational-databases/collations/collation-and-unicode-support#utf8) . [Измените параметры сортировки базы данных](/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) на параметры сортировки UTF-8 с помощью инструкции SQL, такой как `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
 
 ## <a name="azure-cosmos-db-to-sql-type-mappings"></a>Сопоставления типов SQL Azure Cosmos DB
 
@@ -337,11 +337,11 @@ FROM
 | --- | --- |
 | Логическое значение | bit |
 | Целое число | BIGINT |
-| Decimal | FLOAT |
+| Decimal | float |
 | Строка | varchar (параметры сортировки базы данных UTF-8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
 | Дата и время (метка времени UNIX) | BIGINT |
-| NULL | `any SQL type` 
+| Null | `any SQL type` 
 | Вложенный объект или массив | varchar (max) (параметры сортировки базы данных UTF-8), сериализованный как текст JSON |
 
 ## <a name="full-fidelity-schema"></a>Схема полной точности

@@ -11,18 +11,31 @@ author: nabhishek
 manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: 8734247a913bdf6a44a9156f6f87705b618f7228
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 3f0cf3de4c2cffca6540fcd727872372103ac98f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632895"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118274"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом руководстве описывается создание общей локальной среды выполнения интеграции в Фабрике данных Azure. Общую локальную среду выполнения интеграции затем можно использовать в другой фабрике данных.
+
+## <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure
+
+Вы можете повторно использовать существующую инфраструктуру локальной среды IR, которую вы уже настроили в фабрике данных. Это повторное использование позволяет создать связанную локальную среду выполнения интеграции в другой фабрике данных, ссылаясь на существующий общий объект IR, размещенный на собственном сервере.
+
+Чтобы ознакомиться с введением и демонстрацией этой функции, просмотрите следующее 12-минутное видео:
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Hybrid-data-movement-across-multiple-Azure-Data-Factories/player]
+
+### <a name="terminology"></a>Терминология
+
+- **Общие IR**— это изначально размещенная локальная среда IR, которая работает в физической инфраструктуре.  
+- **Связанный IR**— IR, который ссылается на другой общий IR. Связанный IR является логическим IR и использует инфраструктуру другого общедоступного саморазмещенного ИК-соединения.
 
 ## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Создание общей локальной среды выполнения интеграции с помощью пользовательского интерфейса Фабрики данных Azure
 
@@ -55,9 +68,9 @@ ms.locfileid: "92632895"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- **Подписка Azure** . Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+- **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 
-- **Azure PowerShell** . Выполните инструкции из руководства [Install Azure PowerShell on Windows with PowerShellGet](/powershell/azure/install-az-ps) (Установка Azure PowerShell в Windows c помощью PowerShellGet). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
+- **Azure PowerShell**. Выполните инструкции из руководства [Install Azure PowerShell on Windows with PowerShellGet](/powershell/azure/install-az-ps) (Установка Azure PowerShell в Windows c помощью PowerShellGet). С помощью PowerShell выполните скрипт, чтобы создать локальную среду выполнения интеграции, которую можно использовать совместно с другими фабриками данных. 
 
 > [!NOTE]  
 > Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
@@ -66,7 +79,7 @@ ms.locfileid: "92632895"
 
 1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell.
 
-1. Создайте переменные. Скопируйте и вставьте следующий скрипт. Замените переменные, такие как **SubscriptionName** и **ResourceGroupName** , фактическими значениями: 
+1. Создайте переменные. Скопируйте и вставьте следующий скрипт. Замените переменные, такие как **SubscriptionName** и **ResourceGroupName**, фактическими значениями: 
 
     ```powershell
     # If input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$". 
@@ -213,6 +226,37 @@ Remove-AzDataFactoryV2IntegrationRuntime `
     -Links `
     -LinkedDataFactoryName $LinkedDataFactoryName
 ```
+
+### <a name="monitoring"></a>Мониторинг
+
+#### <a name="shared-ir"></a>Общие IR
+
+![Варианты поиска общей среды выполнения интеграции](media/create-self-hosted-integration-runtime/Contoso-shared-IR.png)
+
+![Мониторинг общей среды выполнения интеграции](media/create-self-hosted-integration-runtime/contoso-shared-ir-monitoring.png)
+
+#### <a name="linked-ir"></a>Связанный IR
+
+![Варианты поиска связанной среды выполнения интеграции](media/create-self-hosted-integration-runtime/Contoso-linked-ir.png)
+
+![Мониторинг связанной среды выполнения интеграции](media/create-self-hosted-integration-runtime/Contoso-linked-ir-monitoring.png)
+
+
+### <a name="known-limitations-of-self-hosted-ir-sharing"></a>Известные ограничения общего доступа к локальной среде IR
+
+* Фабрика данных, в которой создается связанный IR, должна иметь [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md). По умолчанию фабрики данных, созданные в портал Azure или командлетах PowerShell, имеют неявно созданное управляемое удостоверение. Но при создании фабрики данных с помощью шаблона Azure Resource Manager или пакета SDK необходимо явно задать свойство **Identity** . Этот параметр гарантирует, что диспетчер ресурсов создаст фабрику данных, содержащую управляемое удостоверение.
+
+* Пакет SDK для .NET фабрики данных, поддерживающий эту функцию, должен иметь версию 1.1.0 или более позднюю.
+
+* Чтобы предоставить разрешение, требуется роль владельца или Наследуемая роль владельца в фабрике данных, где существует общий IR.
+
+* Функция общего доступа работает только для фабрик данных в одном клиенте Azure AD.
+
+* Для [гостевых пользователей](../active-directory/governance/manage-guest-access-with-access-reviews.md)Azure AD функция поиска в пользовательском интерфейсе, в которой перечислены все фабрики данных с помощью ключевого слова поиска, не работает. Но при условии, что гостевой пользователь является владельцем фабрики данных, вы можете совместно использовать IR без функции поиска. Для управляемого удостоверения фабрики данных, которая должна предоставлять общий доступ к IR, введите это управляемое удостоверение в поле **назначить разрешение** и выберите **Добавить** в пользовательском интерфейсе фабрики данных.
+
+  > [!NOTE]
+  > Эта функция доступна только в фабрике данных версии 2.
+
 
 ### <a name="next-steps"></a>Дальнейшие действия
 

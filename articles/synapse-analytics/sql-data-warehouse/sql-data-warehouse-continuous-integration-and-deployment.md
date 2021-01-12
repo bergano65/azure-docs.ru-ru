@@ -11,18 +11,18 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 9f2bbc39b9c9c4770775bf49a7775ab8980a1f3b
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: cb80f2d21246a75d41fc5753e72995d409d5c6b4
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589905"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119192"
 ---
 # <a name="continuous-integration-and-deployment-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Непрерывная интеграция и развертывание для выделенного пула SQL в Azure синапсе Analytics
 
 В этом простом учебнике объясняется, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с Azure DevOps и настроить непрерывную интеграцию и развертывание с помощью Azure Pipelines. Это руководство является вторым шагом в создании конвейера непрерывной интеграции и развертывания для хранения данных.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом работы
 
 - Изучите [учебник по интеграции системы управления версиями](sql-data-warehouse-source-control-integration.md).
 
@@ -62,5 +62,5 @@ ms.locfileid: "97589905"
 
 - Изучение [архитектуры выделенного пула SQL (прежнее название — хранилище данных SQL)](massively-parallel-processing-mpp-architecture.md)
 - Быстрое [Создание выделенного пула SQL (прежнее название — хранилище данных SQL)](create-data-warehouse-portal.md)
-- [Отправка примера данных](load-data-from-azure-blob-storage-using-polybase.md)
+- [Отправка примера данных](./load-data-from-azure-blob-storage-using-copy.md)
 - Просмотрите [видео](sql-data-warehouse-videos.md).

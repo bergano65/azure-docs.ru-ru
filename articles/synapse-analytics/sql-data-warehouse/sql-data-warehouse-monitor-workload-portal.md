@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 53c68f44273b14658bd4d95ce7cf3cf847c077d0
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: f780d5404d99435a61c4e3f9e90b1acbd9539af9
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025958"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118444"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки — портал Azure
 
@@ -24,9 +24,9 @@ ms.locfileid: "93025958"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-- Пул SQL. Мы будем собирать журналы для пула SQL. Если у вас нет подготовленного пула SQL, см. инструкции в разделе [Создание пула SQL](load-data-from-azure-blob-storage-using-polybase.md).
+- Пул SQL. Мы будем собирать журналы для пула SQL. Если у вас нет подготовленного пула SQL, см. инструкции в разделе [Создание пула SQL](./load-data-from-azure-blob-storage-using-copy.md).
 
-## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
+## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
 Перейдите в колонку "Обзор" для Log Analytics рабочих областей и создайте рабочую область.
 
@@ -63,7 +63,7 @@ ms.locfileid: "93025958"
 - Создание оповещений журнала
 - Закрепление результатов запроса на панели мониторинга
 
-Дополнительные сведения о возможностях запросов журналов см. в следующей [документации](../../azure-monitor/log-query/query-language.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+Дополнительные сведения о возможностях запросов журналов см. в следующей [документации](/azure/data-explorer/kusto/query/?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json).
 
 ![Редактор рабочей области Log Analytics](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_editor.png)
 

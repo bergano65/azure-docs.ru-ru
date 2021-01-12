@@ -8,16 +8,16 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7972f34bf0d2b93828899903e013c2e35bc997c0
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 2d9f3bfe6a273bfb0f3d314d1a4664806bd45ae2
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523643"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118818"
 ---
 # <a name="what-is-synapse-role-based-access-control-rbac"></a>Что такое синапсе управления доступом на основе ролей (RBAC)?
 
-Синапсе RBAC расширяет возможности [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) для рабочих областей синапсе и их содержимого. 
+Синапсе RBAC расширяет возможности [Azure RBAC](../../role-based-access-control/overview.md) для рабочих областей синапсе и их содержимого. 
 
 Azure RBAC используется для управления тем, кто может создавать, обновлять или удалять рабочую область синапсе и ее пулы SQL, пулы Apache Spark и среды выполнения интеграции.
 

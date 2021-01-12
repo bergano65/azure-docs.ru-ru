@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a5e514602668c96d63562e45fb114cf9770a54a9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 1fd7649cac6b636873ca529fe9780429d86697c6
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321484"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120909"
 ---
 # <a name="development-best-practices-for-synapse-sql"></a>Рекомендации по разработке для Synapse SQL
 
@@ -53,7 +53,7 @@ ms.locfileid: "93321484"
 
 Ниже приведены ссылки на дополнительные разделы, содержащие сведения о том, как с помощью столбца распределения можно улучшить производительность и как определить распределенную таблицу в предложение WITH инструкции CREATE TABLES.
 
-Дополнительные сведения см. в статьях [Общие сведения о таблицах](develop-tables-overview.md), [Распределение таблиц](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Выбор распределения таблиц](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+Дополнительные сведения см. в статьях [Общие сведения о таблицах](develop-tables-overview.md), [Распределение таблиц](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [Выбор распределения таблиц](/archive/blogs/sqlcat/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service), [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="do-not-over-partition"></a>Недопущение избыточного секционирования
 Несмотря на то, что секционирование данных — это эффективный способ управления данными, который реализуется благодаря переключению секций или оптимизации сканирования путем исключения секций, наличие большого количества секций может повлиять на производительность запросов.  Зачастую стратегия секционирования с высокой степенью детализации, которая хорошо работает на SQL Server может не работать в выделенном пуле SQL.  
@@ -167,7 +167,6 @@ CETAS можно использовать для сохранения часто
 
 ### <a name="next-steps"></a>Дальнейшие действия
 
-Если вам нужна информация, не указанная в этой статье, используйте функцию **поиска doc** в левой части этой страницы, чтобы найти все документы пула SQL.  На [странице Microsoft Q&A вопрос для Azure синапсе Analytics](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) можно задать вопросы для других пользователей и для группы разработчиков Azure синапсе Analytics. Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
+Если вам нужна информация, не указанная в этой статье, используйте функцию **поиска doc** в левой части этой страницы, чтобы найти все документы пула SQL.  На [странице Microsoft Q&A вопрос для Azure синапсе Analytics](/answers/topics/azure-synapse-analytics.html) можно задать вопросы для других пользователей и для группы разработчиков Azure синапсе Analytics. Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
 
 Если вы предпочитаете задавать вопросы на Stack Overflow, у нас также есть [форум Stack overflow Azure синапсе Analytics](https://stackoverflow.com/questions/tagged/azure-sqldw).
- 

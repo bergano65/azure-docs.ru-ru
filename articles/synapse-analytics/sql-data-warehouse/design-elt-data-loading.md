@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 64ba24eb0eab581310122908fc05d1d671ac1d40
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 1a988dba52b36b1d27407316200bfa6897de7cf5
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531579"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120161"
 ---
 # <a name="data-loading-strategies-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Стратегии загрузки данных для выделенного пула SQL в Azure синапсе Analytics
 
@@ -42,7 +42,7 @@ ms.locfileid: "96531579"
 5. Преобразуйте данные.
 6. Вставьте данные в рабочие таблицы.
 
-Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure](load-data-from-azure-blob-storage-using-polybase.md).
+Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure](./load-data-from-azure-blob-storage-using-copy.md).
 
 ## <a name="1-extract-the-source-data-into-text-files"></a>1. Извлечение исходных данных в текстовые файлы
 
@@ -123,7 +123,7 @@ ms.locfileid: "96531579"
 >- При несовпадении типов между Parquet и SQL или с неподдерживаемыми типами данных Parquet может возникнуть следующая ошибка: **"хдфсбридже:: рекордреадерфиллбуффер-непредвиденная ошибка при заполнении буфера чтения записи: класскастексцептион:..."**
 >- Загрузка значения за пределами диапазона 0-127 в столбец tinyint для формата файлов Parquet и ORC не поддерживается.
 
-Пример создания внешних объектов см. в разделе [Создание внешних таблиц](https://docs.microsoft.com/azure/synapse-analytics/sql/develop-tables-external-tables?tabs=sql-pool).
+Пример создания внешних объектов см. в разделе [Создание внешних таблиц](../sql/develop-tables-external-tables.md?tabs=sql-pool).
 
 ### <a name="format-text-files"></a>Форматирование текстовых файлов
 
@@ -142,11 +142,11 @@ ms.locfileid: "96531579"
 
 Для загрузки данных можно использовать любой из следующих вариантов загрузки:
 
-- [Инструкция Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) является рекомендуемой программой загрузки, так как она позволяет легко и гибко загружать данные. Инструкция имеет множество дополнительных возможностей загрузки, которые не предоставляет Polybase. 
-- [Polybase с T-SQL](load-data-from-azure-blob-storage-using-polybase.md) требует определения внешних объектов данных.
+- [Инструкция Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) является рекомендуемой программой загрузки, так как она позволяет легко и гибко загружать данные. Инструкция имеет множество дополнительных возможностей загрузки, которые не предоставляет Polybase. 
+- [Polybase с T-SQL](./load-data-from-azure-blob-storage-using-copy.md) требует определения внешних объектов данных.
 - [PolyBase и инструкция COPY с Фабрикой данных Azure (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) представляют собой другое средство оркестрации.  Оно определяет конвейер и планирует расписания заданий.
 - [Polybase с SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) хорошо работает, когда исходные данные находятся в SQL Server. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных.
-- [PolyBase с Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) передает данные из таблицы в кадр данных Databricks и (или) записывает данные из кадра данных Databricks в таблицу с помощью PolyBase.
+- [PolyBase с Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json) передает данные из таблицы в кадр данных Databricks и (или) записывает данные из кадра данных Databricks в таблицу с помощью PolyBase.
 
 ### <a name="other-loading-options"></a>Другие варианты загрузки
 

@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 99ee41de7ffd66191ff712a5ffbda65f3233196f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 0d83e1305a851bf6bafb6c4c79f5caf73f8e44b6
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324448"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120892"
 ---
 # <a name="use-t-sql-loops-with-synapse-sql-in-azure-synapse-analytics"></a>Использование циклов T-SQL с синапсе SQL в Azure синапсе Analytics
 
@@ -23,7 +23,7 @@ ms.locfileid: "93324448"
 
 ## <a name="purpose-of-while-loops"></a>Назначение циклов WHILE
 
-Синапсе SQL поддерживает цикл [while](https://docs.microsoft.com/sql/t-sql/language-elements/while-transact-sql?view=sql-server-ver15&preserve-view=true) для многократного выполнения блоков инструкций. Цикл WHILE продолжается, пока не будут выполнены указанные условия или пока код не прервет цикл с помощью ключевого слова BREAK. 
+Синапсе SQL поддерживает цикл [while](/sql/t-sql/language-elements/while-transact-sql?preserve-view=true&view=sql-server-ver15) для многократного выполнения блоков инструкций. Цикл WHILE продолжается, пока не будут выполнены указанные условия или пока код не прервет цикл с помощью ключевого слова BREAK. 
 
 Циклы в синапсе SQL полезны для замены курсоров, определенных в коде SQL. К счастью, почти все курсоры, записанные в коде SQL, относятся к разряду перемотки и доступности только для чтения. Таким образом, циклы WHILE — отличная альтернатива замене курсоров.
 

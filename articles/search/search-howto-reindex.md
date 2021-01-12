@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: ae8fd7f405beb20d516835ccb80b86e769fd0393
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 47e9b80bb25b7ff14695cc67682265fe338ff76f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697090"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119107"
 ---
 # <a name="how-to-rebuild-an-index-in-azure-cognitive-search"></a>Как перестроить индекс в Azure Когнитивный поиск
 
@@ -91,11 +91,11 @@ ms.locfileid: "94697090"
 
 Вы можете отправлять запросы к индексу сразу после загрузки первого документа. Если вы знаете идентификатор документа, [API REST поиска по документу](/rest/api/searchservice/lookup-document) возвращает определенный документ. Для более подробного тестирования подождите полной загрузки индекса, а затем используйте запросы, чтобы проверить контекст, который вы ожидаете увидеть.
 
-Для проверки наличия обновленного содержимого можно использовать [Обозреватель поиска](search-explorer.md) или средство веб-тестирования, например [POST или Visual Studio Code](search-get-started-rest.md) .
+Для проверки наличия обновленного содержимого можно использовать [Обозреватель поиска](search-explorer.md) или средство веб-тестирования, например [POST](search-get-started-rest.md) или [Visual Studio Code](search-get-started-vs-code.md) .
 
 Если вы добавили или переименовали поле, используйте [$SELECT](search-query-odata-select.md) , чтобы вернуть это поле: `search=*&$select=document-id,my-new-field,some-old-field&$count=true`
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Обзор индексатора](search-indexer-overview.md)
 + [Индексирование с поддержкой горизонтального масштабирования в службе "Поиск Azure"](search-howto-large-index.md)

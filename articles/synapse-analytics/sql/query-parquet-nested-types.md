@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 91f612ba7f19deb739dbb6004e275ea044a5a3d3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 45e1ae5b8a1084334b7596f62c272e16294c4c14
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462551"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118767"
 ---
 # <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью бессерверного пула SQL в Azure синапсе Analytics
 
@@ -24,7 +24,7 @@ ms.locfileid: "96462551"
 - Иерархические [JSON-файлы](query-json-files.md), в которых можно читать СЛОЖНЫЕ документы JSON в виде одного столбца.
 - Azure Cosmos DB коллекции (в настоящее время находится в общедоступной предварительной версии), где каждый документ может содержать сложные вложенные свойства.
 
-Несерверный пул SQL форматирует все вложенные типы как объекты JSON и массивы. Таким образом, можно [извлекать или изменять сложные объекты с помощью функций JSON](https://docs.microsoft.com/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) или [анализировать данные JSON с помощью функции OPENJSON](https://docs.microsoft.com/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
+Несерверный пул SQL форматирует все вложенные типы как объекты JSON и массивы. Таким образом, можно [извлекать или изменять сложные объекты с помощью функций JSON](/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) или [анализировать данные JSON с помощью функции OPENJSON](/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
 
 Ниже приведен пример запроса, который извлекает скалярные значения и из [ковид-19 Open Research DataSet](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/) JSON, который содержит вложенные объекты: 
 
@@ -121,7 +121,7 @@ FROM
 | --- | --- | --- | --- |
 | Дополнительная информация — епидемиоло... | Жюльен   | -Рис. S1: Филожени из... | `{    "paper_id": "000b7d1517ceebb34e1e3e817695b6de03e2fa78",    "metadata": {        "title": "Supplementary Information An eco-epidemiological study of Morbilli-related paramyxovirus infection in Madagascar bats reveals host-switching as the dominant macro-evolutionary mechanism",        "authors": [            {                "first": "Julien"` |
 
-В отличие от JSON-файлов, которые в большинстве случаев возвращают один столбец, содержащий сложный объект JSON, Parquet-файлы могут иметь несколько сложных столбцов. Свойства вложенных столбцов можно считывать с помощью `JSON_VALUE` функции для каждого столбца. `OPENROWSET` позволяет непосредственно указывать пути вложенных свойств в `WITH` предложении. Можно задать пути в качестве имени столбца или добавить [выражение пути JSON](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server) после типа столбца.
+В отличие от JSON-файлов, которые в большинстве случаев возвращают один столбец, содержащий сложный объект JSON, Parquet-файлы могут иметь несколько сложных столбцов. Свойства вложенных столбцов можно считывать с помощью `JSON_VALUE` функции для каждого столбца. `OPENROWSET` позволяет непосредственно указывать пути вложенных свойств в `WITH` предложении. Можно задать пути в качестве имени столбца или добавить [выражение пути JSON](/sql/relational-databases/json/json-path-expressions-sql-server) после типа столбца.
 
 Следующий запрос считывает файл Структексампле. Parquet и показывает, как Surface Elements вложенного столбца. Существует два способа ссылки на вложенное значение:
 - Путем указания выражения пути вложенного значения после спецификации типа.

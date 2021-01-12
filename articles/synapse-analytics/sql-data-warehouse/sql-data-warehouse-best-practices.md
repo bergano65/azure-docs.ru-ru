@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 9802e6553d553aae4f13194dc9951d1a17af6f66
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b17e47463ef3fe9a2cc959364825451468266f0e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462881"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120025"
 ---
 # <a name="best-practices-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Рекомендации по выделенному пулу SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics
 
@@ -74,7 +74,7 @@ Polybase предназначен для использования распре
 > [!NOTE]
 > Чтобы максимально повысить пропускную способность при использовании текстовых файлов в формате GZIP, разбейте файлы на 60 или больше частей. Это позволит достичь максимальной степени параллелизма для загрузки.  Кроме того, для повышения общей пропускной способности можно загружать данные одновременно.
 
-См. также [загрузить данные](design-elt-data-loading.md), [Пошаговые инструкции по использованию polybase](guidance-for-loading-data.md), [выделенным схемам и стратегиям загрузки пула SQL](https://blogs.msdn.microsoft.com/sqlcat/20../../), [загрузке данных с]( ../../data-factory/load-azure-sql-data-warehouse.md)помощью фабрики данных Azure, [перемещению данных с помощью фабрики данных](../../data-factory/transform-data-using-machine-learning.md), [создании формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [созданию таблицы как SELECT (CTAS)](sql-data-warehouse-develop-ctas.md).
+См. также [загрузить данные](design-elt-data-loading.md), [Пошаговые инструкции по использованию polybase](guidance-for-loading-data.md), [выделенным схемам и стратегиям загрузки пула SQL](/archive/blogs/sqlcat/), [загрузке данных с]( ../../data-factory/load-azure-sql-data-warehouse.md)помощью фабрики данных Azure, [перемещению данных с помощью фабрики данных](../../data-factory/transform-data-using-machine-learning.md), [создании формата внешнего файла](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)и [созданию таблицы как SELECT (CTAS)](sql-data-warehouse-develop-ctas.md).
 
 ## <a name="load-then-query-external-tables"></a>Загрузка внешних таблиц и отправка запросов к ним
 
@@ -97,7 +97,7 @@ Polybase предназначен для использования распре
 
 Ниже приведены ссылки на дополнительные сведения о том, как с помощью столбца распределения повысить производительность и как определить распределенную таблицу в предложение WITH инструкции CREATE TABLE.
 
-Дополнительные сведения см. в статьях [Общие сведения о таблицах в хранилище данных SQL](sql-data-warehouse-tables-overview.md), [Распределение таблиц в хранилище данных SQL](sql-data-warehouse-tables-distribute.md), [Создание таблицы (хранилище данных Azure SQL)](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [Создание TABLE AS SELECT (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [CREATE TABLE AS SELECT (хранилище данных SQL Azure)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения см. в статьях [Общие сведения о таблицах в хранилище данных SQL](sql-data-warehouse-tables-overview.md), [Распределение таблиц в хранилище данных SQL](sql-data-warehouse-tables-distribute.md), [Создание таблицы (хранилище данных Azure SQL)](/archive/blogs/sqlcat/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service), [Создание TABLE AS SELECT (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и [CREATE TABLE AS SELECT (хранилище данных SQL Azure)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
 ## <a name="do-not-over-partition"></a>Недопущение избыточного секционирования
 
@@ -180,7 +180,7 @@ Polybase предназначен для использования распре
 
 Дополнительные сведения о распространенных проблемах и решениях см. в статье [Устранение неполадок хранилища данных SQL Azure](sql-data-warehouse-troubleshoot.md).
 
-Если вы не нашли нужных сведений в этой статье, попробуйте использовать поиск по документации в левой части страницы, чтобы найти все документы, связанные с Azure Synapse.  На [странице вопросов и ответов Майкрософт для Azure Synapse](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) можно задавать вопросы другим пользователям и группе разработчиков Azure Synapse. Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
+Если вы не нашли нужных сведений в этой статье, попробуйте использовать поиск по документации в левой части страницы, чтобы найти все документы, связанные с Azure Synapse.  На [странице вопросов и ответов Майкрософт для Azure Synapse](/answers/topics/azure-synapse-analytics.html) можно задавать вопросы другим пользователям и группе разработчиков Azure Synapse. Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
 
 Вопросы также можно задавать на [форуме Stack Overflow в разделе, посвященном Azure Synapse](https://stackoverflow.com/questions/tagged/azure-sqldw).
 

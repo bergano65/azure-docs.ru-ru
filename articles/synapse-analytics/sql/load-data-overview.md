@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: a57abd080bdbbaefbe07258a2b241c093dc8c441
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 58e14ab04084871dfd5de400cac0c38401855d0c
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308744"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120263"
 ---
 # <a name="design-a-polybase-data-loading-strategy-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Проектирование стратегии загрузки данных Polybase для выделенного пула SQL в Azure синапсе Analytics
 
@@ -38,9 +38,9 @@ ms.locfileid: "93308744"
 5. Преобразуйте данные.
 6. Вставьте данные в рабочие таблицы.
 
-Руководство по загрузке см. в [статье Загрузка данных из хранилища BLOB-объектов Azure в Azure синапсе Analytics с помощью polybase](../sql-data-warehouse/load-data-from-azure-blob-storage-using-polybase.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Руководство по загрузке см. в [статье Загрузка данных из хранилища BLOB-объектов Azure в Azure синапсе Analytics с помощью polybase](../sql-data-warehouse/load-data-from-azure-blob-storage-using-copy.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json).
 
-Дополнительные сведения см. в записи блога о [стратегиях и шаблонах загрузки в хранилище данных SQL Azure](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/).
+Дополнительные сведения см. в записи блога о [стратегиях и шаблонах загрузки в хранилище данных SQL Azure](/archive/blogs/sqlcat/azure-sql-data-warehouse-loading-patterns-and-strategies).
 
 ## <a name="1-extract-the-source-data-into-text-files"></a>1. Извлечение исходных данных в текстовые файлы
 
@@ -75,7 +75,7 @@ PolyBase загружает данные из текстовых файлов с
 |       TIMESTAMP       |                           DATETIME                           |
 |       TIMESTAMP       |                             time                             |
 |       Дата            |                             Дата                             |
-|        Decimal        |                            decimal                           |
+|        Decimal        |                            Decimal                           |
 
 ## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Помещение данных в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 
@@ -118,10 +118,10 @@ PolyBase загружает данные из текстовых файлов с
 
 Чтобы загрузить данные с помощью PolyBase, можно использовать любые из приведенных ниже вариантов загрузки.
 
-- [PolyBase с использованием T-SQL](../sql-data-warehouse/load-data-from-azure-blob-storage-using-polybase.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure.
+- [PolyBase с использованием T-SQL](../sql-data-warehouse/load-data-from-azure-blob-storage-using-copy.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure.
 - [Polybase с SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) хорошо работает, когда исходные данные находятся в SQL Server. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных.
 - [PolyBase с фабрикой данных Azure (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) представляет собой другое средство оркестрации.  Оно определяет конвейер и планирует расписания заданий.
-- [Polybase с Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) передает данные из таблицы Azure синапсе Analytics в блок данных DataTable и (или) записывает данные из стека данных модуля данных в таблицу Azure синапсе Analytics с помощью polybase.
+- [Polybase с Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) передает данные из таблицы Azure синапсе Analytics в блок данных DataTable и (или) записывает данные из стека данных модуля данных в таблицу Azure синапсе Analytics с помощью polybase.
 
 ### <a name="non-polybase-loading-options"></a>Варианты загрузки, отличные от PolyBase
 

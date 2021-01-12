@@ -10,19 +10,19 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 45c7f89f773095a102429c07f7441223de3c2dec
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c537d3109f770c1ce77be6495bdacd24270dad5f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448268"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119600"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-architecture-in-azure-synapse-analytics"></a>Архитектура выделенного пула SQL (ранее — хранилище данных SQL) в Azure синапсе Analytics
 
 Azure Synapse Analytics — это служба аналитики, которая объединяет корпоративные хранилища данных и аналитику больших данных. Это дает возможность запрашивать данные на своих условиях.
 
 > [!NOTE]
->Изучите [документацию по Azure синапсе Analytics](../overview-what-is.md).
+>Изучите [документацию по Azure Synapse Analytics](../overview-what-is.md).
 >
 
 
@@ -107,13 +107,13 @@ Azure Synapse Analytics — это служба аналитики, кото�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы уже знакомы с Azure синапсе, Узнайте, как быстро [создать выделенный пул SQL (ранее — хранилище данных SQL)](create-data-warehouse-portal.md) и [загрузить демонстрационные данные](load-data-from-azure-blob-storage-using-polybase.md). Если вы раньше не работали с Azure, используйте [глоссарий Azure Глоссарий](../../azure-glossary-cloud-terminology.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) , чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными Azure Synapse.  
+Теперь, когда вы уже знакомы с Azure синапсе, Узнайте, как быстро [создать выделенный пул SQL (ранее — хранилище данных SQL)](create-data-warehouse-portal.md) и [загрузить демонстрационные данные](./load-data-from-azure-blob-storage-using-copy.md). Если вы раньше не работали с Azure, используйте [глоссарий Azure Глоссарий](../../azure-glossary-cloud-terminology.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) , чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными Azure Synapse.  
 
 - [Истории успеха клиентов](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
 - [Блоги](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)
 - [Запросы функций](https://feedback.azure.com/forums/307516-sql-data-warehouse)
 - [Видео](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 - [Создание запроса в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md)
-- [Раздел вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html)
+- [Раздел вопросов и ответов на сайте Майкрософт](/answers/topics/azure-synapse-analytics.html)
 - [Форум Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw)
 - [Twitter](https://twitter.com/hashtag/SQLDW)

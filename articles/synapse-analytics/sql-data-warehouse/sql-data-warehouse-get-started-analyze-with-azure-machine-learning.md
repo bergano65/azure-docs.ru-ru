@@ -12,27 +12,27 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-Synapse
-ms.openlocfilehash: ea4038e88d41a089958d4199e4c5a00f0d2acabd
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 5348c0ed5d80e2738bb865ca3ec1ddf5aaed009a
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015572"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118053"
 ---
 # <a name="analyze-data-with-azure-machine-learning"></a>Анализ данных с помощью машинного обучения Azure
 
-В этом руководстве для создания модели прогнозирования машинного обучения используется [конструктор машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer) . Модель основана на данных, хранящихся в Azure синапсе. Сценарий для учебника состоит в том, чтобы предсказать, что клиент, скорее всего, купит велосипед или не так, что компания Adventure Works, велосипед, может создать целевую маркетинговую кампанию.
+В этом руководстве для создания модели прогнозирования машинного обучения используется [конструктор машинное обучение Azure](../../machine-learning/concept-designer.md) . Модель основана на данных, хранящихся в Azure синапсе. Сценарий для учебника состоит в том, чтобы предсказать, что клиент, скорее всего, купит велосипед или не так, что компания Adventure Works, велосипед, может создать целевую маркетинговую кампанию.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для пошагового изучения этого учебника потребуется следующее:
 
-* пул SQL, предварительно загруженный с образцом данных AdventureWorksDW. Сведения о подготовке этого пула SQL см. в разделе [Создание пула SQL](create-data-warehouse-portal.md) и выборка загрузки демонстрационных данных. Если у вас уже есть хранилище данных, но нет демонстрационных данных, можно [загрузить образцы данных вручную](load-data-from-azure-blob-storage-using-polybase.md).
-* Рабочая область машинного обучения Azure. Следуйте указаниям [этого учебника](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace) , чтобы создать новый.
+* пул SQL, предварительно загруженный с образцом данных AdventureWorksDW. Сведения о подготовке этого пула SQL см. в разделе [Создание пула SQL](create-data-warehouse-portal.md) и выборка загрузки демонстрационных данных. Если у вас уже есть хранилище данных, но нет демонстрационных данных, можно [загрузить образцы данных вручную](./load-data-from-azure-blob-storage-using-copy.md).
+* Рабочая область машинного обучения Azure. Следуйте указаниям [этого учебника](../../machine-learning/how-to-manage-workspace.md) , чтобы создать новый.
 
 ## <a name="get-the-data"></a>Получение данных
 
-Используемые данные находятся в представлении dbo. vTargetMail в AdventureWorksDW. Чтобы использовать хранилище данных в этом учебнике, данные сначала экспортируются в Azure Data Lake Storage учетной записи, так как Azure синапсе в настоящее время не поддерживает набор данных. Фабрику данных Azure можно использовать для экспорта данных из хранилища данных в Azure Data Lake Storage с помощью [действия копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-overview). Используйте следующий запрос для импорта:
+Используемые данные находятся в представлении dbo. vTargetMail в AdventureWorksDW. Чтобы использовать хранилище данных в этом учебнике, данные сначала экспортируются в Azure Data Lake Storage учетной записи, так как Azure синапсе в настоящее время не поддерживает набор данных. Фабрику данных Azure можно использовать для экспорта данных из хранилища данных в Azure Data Lake Storage с помощью [действия копирования](../../data-factory/copy-activity-overview.md). Используйте следующий запрос для импорта:
 
 ```sql
 SELECT [CustomerKey]
@@ -54,7 +54,7 @@ SELECT [CustomerKey]
 FROM [dbo].[vTargetMail]
 ```
 
-Когда данные доступны в Azure Data Lake Storage, хранилища данных в Машинное обучение Azure используются для [подключения к службам хранилища Azure](https://docs.microsoft.com/azure/machine-learning/how-to-access-data). Выполните следующие действия, чтобы создать хранилище данных и соответствующий DataSet.
+Когда данные доступны в Azure Data Lake Storage, хранилища данных в Машинное обучение Azure используются для [подключения к службам хранилища Azure](../../machine-learning/how-to-access-data.md). Выполните следующие действия, чтобы создать хранилище данных и соответствующий DataSet.
 
 1. Запустите Машинное обучение Azure Studio из портал Azure или войдите в [машинное обучение Azure Studio](https://ml.azure.com/).
 
@@ -68,7 +68,7 @@ FROM [dbo].[vTargetMail]
 
 1. Укажите имя набора данных и выберите тип, который будет **табличным**. Затем нажмите кнопку **Далее** , чтобы перейти вперед.
 
-1. В **разделе Выбор или создание хранилища данных**выберите параметр **ранее созданное хранилище данных**. Выберите хранилище данных, которое было создано ранее. Нажмите кнопку Далее и укажите параметры пути и файла. Обязательно укажите заголовок столбца, если файлы содержат один из них.
+1. В **разделе Выбор или создание хранилища данных** выберите параметр **ранее созданное хранилище данных**. Выберите хранилище данных, которое было создано ранее. Нажмите кнопку Далее и укажите параметры пути и файла. Обязательно укажите заголовок столбца, если файлы содержат один из них.
 
 1. Наконец, нажмите кнопку **создать** , чтобы создать набор данных.
 
@@ -90,7 +90,7 @@ FROM [dbo].[vTargetMail]
 
 1. Перетащите созданный ранее набор данных в холст.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/import-dataset.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/import-dataset.png" alt-text="Снимок экрана модуля набора данных на холсте.":::
 
 ## <a name="clean-the-data"></a>Очистка данных
 
@@ -100,13 +100,13 @@ FROM [dbo].[vTargetMail]
 
 1. В разделе **Data Transformation < Manipulation** (Преобразование данных < Манипуляции) перетащите модуль **Select Columns in Dataset** (Выбор столбцов в наборе данных) на холст. Подключите этот модуль к модулю **набора данных** .
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-in.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure" lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-out.png":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-in.png" alt-text="Снимок экрана: Модуль выбора столбцов на холсте." lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-out.png":::
 
 1. Щелкните модуль, чтобы открыть панель свойств. Щелкните Изменить столбец, чтобы указать столбцы, которые нужно удалить.
 
-1. Исключите два столбца. CustomerAlternateKey и GeographyKey. Нажмите кнопку **Сохранить**
+1. Исключите два столбца. CustomerAlternateKey и GeographyKey. Щелкните **Сохранить**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/drop-columns.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/drop-columns.png" alt-text="Снимок экрана, показывающий удаленные столбцы.":::
 
 ## <a name="build-the-model"></a>Создание модели
 
@@ -116,7 +116,7 @@ FROM [dbo].[vTargetMail]
 
 1. На панели свойств введите 0,8 для **целой части строк в первом выходном наборе данных**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/split-data.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/split-data.png" alt-text="Снимок экрана, показывающий соотношение разбиения 0,8.":::
 
 1. Перетащите на холст модуль **Двухклассовое увеличивающееся дерево принятия решений** .
 
@@ -124,9 +124,9 @@ FROM [dbo].[vTargetMail]
 
 1. Для модели обучение модели в параметре **столбец метки** на панели Свойства выберите Изменить столбец. Выберите столбец **BikeBuyer** в качестве прогнозируемого столбца и нажмите кнопку **сохранить**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/label-column.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/label-column.png" alt-text="Снимок экрана с выбранным столбцом меток BikeBuyer.":::
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/train-model.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/train-model.png" alt-text="Снимок экрана: модуль обучения модели, подключенный к Two-Class увеличивающегося дерева принятия решений и модулей разбиения данных.":::
 
 ## <a name="score-the-model"></a>Оценка модели
 
@@ -142,11 +142,11 @@ FROM [dbo].[vTargetMail]
 
 1. Нажмите кнопку **Отправить** , чтобы настроить выполнение конвейера.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-in.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure" lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-out.png":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-in.png" alt-text="Снимок экрана всех оставшихся модулей на холсте." lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-out.png":::
 
 1. После завершения выполнения щелкните правой кнопкой мыши модуль **Анализ модели** и выберите команду **визуализировать результаты оценки**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/result-visualize-zoomed-out.png" alt-text="Снимок экрана левой панели интерфейса Машинное обучение Azure":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/result-visualize-zoomed-out.png" alt-text="Снимок экрана результатов.":::
 
 Отображенные метрики представляют собой ROC-кривую, lift-кривую, а также диаграмму соотношения полноты и точности. Взгляните на эти метрики, чтобы убедиться, что первая модель выполнена лучше, чем вторая. Чтобы просмотреть прогнозы первой модели, щелкните правой кнопкой мыши модуль оценка модели и выберите команду визуализировать показательный набор данных, чтобы увидеть прогнозируемые результаты.
 
@@ -155,10 +155,10 @@ FROM [dbo].[vTargetMail]
 * Оценка вероятности: вероятность того, что клиент является покупателем велосипеда.
 * Метка оценки: выполненная моделью классификация — покупатель велосипеда (1) или нет (0). Порог вероятности для маркировки равен 50 % и может быть изменен.
 
-Сравните столбец BikeBuyer (фактический) с оцененными метками (прогноз), чтобы увидеть, насколько хорошо была выполнена модель. Затем эту модель можно использовать для прогнозирования новых клиентов. Вы можете [опубликовать эту модель как веб-службу](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy) или записать результаты обратно в Azure синапсе.
+Сравните столбец BikeBuyer (фактический) с оцененными метками (прогноз), чтобы увидеть, насколько хорошо была выполнена модель. Затем эту модель можно использовать для прогнозирования новых клиентов. Вы можете [опубликовать эту модель как веб-службу](../../machine-learning/tutorial-designer-automobile-price-deploy.md) или записать результаты обратно в Azure синапсе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Машинное обучение Azure см. в статье [Введение в машинное обучение в Azure](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-ml).
+Дополнительные сведения о Машинное обучение Azure см. в статье [Введение в машинное обучение в Azure](../../machine-learning/overview-what-is-azure-ml.md).
 
 Дополнительные сведения о встроенных оценках в хранилище данных см. [здесь](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest).

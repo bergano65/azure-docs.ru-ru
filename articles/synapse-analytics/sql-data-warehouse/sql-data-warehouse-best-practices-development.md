@@ -11,12 +11,12 @@ ms.date: 09/04/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f8db19b209ddefebd4a297f18fb9b178fcf40f21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8826dff6d347f78625272a5620a1f168b8804db
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89457912"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120042"
 ---
 # <a name="development-best-practices-for-synapse-sql-pool"></a>Рекомендации по разработке для пула Synapse SQL
 
@@ -55,7 +55,7 @@ ms.locfileid: "89457912"
 
 При загрузке распределенной таблицы входящие данные не должны быть отсортированы по ключу распределения, так как это замедлит процесс загрузки.  Ниже указаны ссылки на статьи, содержащие сведения о том, как с помощью столбца распределения можно улучшить производительность и определить распределенную таблицу в предложение WITH инструкции CREATE TABLES.
 
-Дополнительные сведения см. в статьях [Общие сведения о таблицах](sql-data-warehouse-tables-overview.md), [Распределение таблиц](sql-data-warehouse-tables-distribute.md), [Выбор распределения таблиц](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [CREATE TABLE](sql-data-warehouse-tables-overview.md) и [CREATE TABLE AS SELECT](sql-data-warehouse-develop-ctas.md).
+Дополнительные сведения см. в статьях [Общие сведения о таблицах](sql-data-warehouse-tables-overview.md), [Распределение таблиц](sql-data-warehouse-tables-distribute.md), [Выбор распределения таблиц](/archive/blogs/sqlcat/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service), [CREATE TABLE](sql-data-warehouse-tables-overview.md) и [CREATE TABLE AS SELECT](sql-data-warehouse-develop-ctas.md).
 
 ## <a name="do-not-over-partition"></a>Недопущение избыточного секционирования
 
@@ -120,7 +120,7 @@ ms.locfileid: "89457912"
 
 Если вы не нашли нужных сведений в этой статье, попробуйте использовать поиск по документации в левой части страницы, чтобы найти все документы, связанные с Azure Synapse.  
 
-На [странице вопросов и ответов Майкрософт для Azure Synapse](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) можно задавать вопросы другим пользователям и группе разработчиков Azure Synapse.  Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
+На [странице вопросов и ответов Майкрософт для Azure Synapse](/answers/topics/azure-synapse-analytics.html) можно задавать вопросы другим пользователям и группе разработчиков Azure Synapse.  Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  
 
 Если вы предпочитаете задавать вопросы на Stack Overflow, у нас также есть [форум Stack overflow Azure синапсе Analytics](https://stackoverflow.com/questions/tagged/azure-sqldw).
 

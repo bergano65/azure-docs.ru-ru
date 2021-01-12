@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 60a995f78b9b696197d9bd45e04becb19e4129f0
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c91310d9d1e67dd77098ee13a87190ee6d411607
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653067"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120110"
 ---
 # <a name="best-practices-for-loading-data-using-dedicated-sql-pools-in-azure-synapse-analytics"></a>Рекомендации по загрузке данных с помощью выделенных пулов SQL в Azure синапсе Analytics
 
@@ -47,7 +47,7 @@ ms.locfileid: "97653067"
    CREATE LOGIN loader WITH PASSWORD = 'a123STRONGpassword!';
 ```
 
-Подключитесь к выделенному пулу SQL и создайте пользователя. В следующем коде предполагается, что вы подключены к базе данных с именем mySampleDataWarehouse. Здесь показано, как создать пользователя с именем Loader и получить разрешения пользователя на создание таблиц и загрузку с помощью [инструкции Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Затем он классифицирует пользователя на группу рабочей нагрузки "загрузки" с максимальным количеством ресурсов. 
+Подключитесь к выделенному пулу SQL и создайте пользователя. В следующем коде предполагается, что вы подключены к базе данных с именем mySampleDataWarehouse. Здесь показано, как создать пользователя с именем Loader и получить разрешения пользователя на создание таблиц и загрузку с помощью [инструкции Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Затем он классифицирует пользователя на группу рабочей нагрузки "загрузки" с максимальным количеством ресурсов. 
 
 ```sql
    -- Connect to the dedicated SQL pool
@@ -160,7 +160,7 @@ create statistics [YearMeasured] on [Customer_Speed] ([YearMeasured]);
 
 Для каждой учетной записи хранения с измененным ключом выполните [ALTER DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/alter-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-Пример:
+Пример
 
 Исходный ключ создан
 
@@ -179,5 +179,5 @@ ALTER DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', SE
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о инструкции COPY или Polybase при проектировании процесса извлечения, загрузки и преобразования (ELT) см. в статье [проектирование ELT для Azure синапсе Analytics](design-elt-data-loading.md).
-- В руководстве по загрузке [используйте инструкцию Copy для загрузки данных из хранилища BLOB-объектов Azure в СИНАПСЕ SQL](load-data-from-azure-blob-storage-using-polybase.md).
+- В руководстве по загрузке [используйте инструкцию Copy для загрузки данных из хранилища BLOB-объектов Azure в СИНАПСЕ SQL](./load-data-from-azure-blob-storage-using-copy.md).
 - Инструкции по мониторингу загрузки данных см. в статье [Мониторинг рабочей нагрузки с помощью динамических административных представлений](sql-data-warehouse-manage-monitor.md).

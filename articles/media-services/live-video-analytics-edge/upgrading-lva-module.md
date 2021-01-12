@@ -5,12 +5,12 @@ author: naiteeks
 ms.topic: how-to
 ms.author: naiteeks
 ms.date: 12/14/2020
-ms.openlocfilehash: 9621f0a933c6102309286505f2c551c5256c5506
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: aa8657550c6475afd9f893acf8985c50cec0f199
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901561"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119464"
 ---
 # <a name="upgrading-live-video-analytics-on-iot-edge-from-10-to-20"></a>Обновление службы Live Video Analytics на IoT Edge с 1,0 по 2,0
 
@@ -19,9 +19,9 @@ ms.locfileid: "97901561"
 ## <a name="change-list"></a>Список изменений
 
 > [!div class="mx-tdCol4BreakAll"]
-> |Title|Live Video Analytics 1,0|Live Video Analytics 2,0|Описание|
+> |Заголовок|Live Video Analytics 1,0|Live Video Analytics 2,0|Описание|
 > |-------------|----------|---------|---------|
-> |Образ контейнера|mcr.microsoft.com/media/live-video-analytics:1.0.0|mcr.microsoft.com/media/live-video-analytics:2.0.0|Опубликованные образы DOCKER для Live Video Analytics на Azure IoT Edge|
+> |Образ контейнера|mcr.microsoft.com/media/live-video-analytics:1|mcr.microsoft.com/media/live-video-analytics:2|Опубликованные образы DOCKER для Live Video Analytics на Azure IoT Edge|
 > |**Узлы Медиаграф** |    |   |   |
 > |Источники|:::image type="icon" source="./././media/upgrading-lva/check.png"::: Источник RTSP </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Источник сообщения центра Интернета вещей |:::image type="icon" source="./././media/upgrading-lva/check.png"::: Источник RTSP </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Источник сообщения центра Интернета вещей | Узлы Медиаграф, выступающие в качестве источников для приема мультимедиа и сообщений.|
 > |Процессоры|:::image type="icon" source="./././media/upgrading-lva/check.png"::: Процессор обнаружения движения </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик фильтра частоты кадров </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик расширений HTTP </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик расширения GRPC </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик сигнальных шлюзов |:::image type="icon" source="./././media/upgrading-lva/check.png"::: Процессор обнаружения движения </br>:::image type="icon" source="./././media/upgrading-lva/remove.png":::**Обработчик фильтра частоты кадров**</br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик расширений HTTP </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик расширения GRPC </br>:::image type="icon" source="./././media/upgrading-lva/check.png"::: Обработчик сигнальных шлюзов | Узлы Медиаграф, которые позволяют форматировать носитель перед отправкой на серверы вывода AI.|

@@ -11,12 +11,12 @@ ms.date: 04/09/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: f66efb9112a9342122f5b56ab11b862ce3c7c61b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 75c0058f2d4878016281656935cbd82f79b859fd
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314436"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120008"
 ---
 # <a name="monitoring-resource-utilization-and-query-activity-in-azure-synapse-analytics"></a>Мониторинг использования ресурсов и действий запросов в Azure Synapse Analytics
 
@@ -24,7 +24,7 @@ Azure Synapse Analytics предоставляет широкие возможн
 
 ## <a name="resource-utilization"></a>Использование ресурсов
 
-На портале Azure доступны указанные ниже метрики Synapse SQL. Эти метрики отслеживаются с помощью [Azure Monitor](../../azure-monitor/platform/data-collection.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#metrics).
+На портале Azure доступны указанные ниже метрики Synapse SQL. Эти метрики отслеживаются с помощью [Azure Monitor](../../azure-monitor/platform/data-platform.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json#metrics).
 
 | Имя метрики             | Описание                                                  | Тип статистической обработки |
 | ----------------------- | ------------------------------------------------------------ | ---------------- |
@@ -57,7 +57,7 @@ Azure Synapse Analytics предоставляет широкие возможн
 
 ## <a name="metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики 
 
-Можно экспортировать метрики и журналы в Azure Monitor, в частности в [журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), и программно обращаться к ним посредством [запросов к журналам](../../azure-monitor/log-query/get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Задержка журнала для Synapse SQL составляет примерно 10–15 минут. Дополнительные сведения о факторах, влияющих на задержку, приведены в указанной ниже документации.
+Можно экспортировать метрики и журналы в Azure Monitor, в частности в [журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), и программно обращаться к ним посредством [запросов к журналам](../../azure-monitor/log-query/log-analytics-tutorial.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json). Задержка журнала для Synapse SQL составляет примерно 10–15 минут. Дополнительные сведения о факторах, влияющих на задержку, приведены в указанной ниже документации.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

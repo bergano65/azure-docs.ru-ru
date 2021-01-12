@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 03a536e16a6ba12611ed704b404c1bd411f0c4c8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 242e5d042aa14e3b7bd92ebb37ae1be61b1b2c8f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322696"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120977"
 ---
 # <a name="best-practices-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Рекомендации по выделенным пулам SQL в Azure синапсе Analytics
 
@@ -61,7 +61,7 @@ ms.locfileid: "93322696"
 
 - [Загрузка данных](../sql-data-warehouse/design-elt-data-loading.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [руководством по использованию PolyBase](data-loading-best-practices.md)
-- [Шаблоны и стратегии загрузки пула SQL Azure](https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-loading-patterns-and-strategies/)
+- [Шаблоны и стратегии загрузки пула SQL Azure](/archive/blogs/sqlcat/azure-sql-data-warehouse-loading-patterns-and-strategies)
 - [Загрузка данных с помощью фабрики данных Azure](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [Перенос данных с помощью фабрики данных Azure](../../data-factory/transform-data-using-machine-learning.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
@@ -88,7 +88,7 @@ Polybase не подходит для запросов. Таблицы polybase 
 
 - [Общие сведения о таблицах](develop-tables-overview.md)
 - [Distributing tables in SQL Data Warehouse (Распределение таблиц в хранилище данных SQL)](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-- [Выбор распределения таблицы](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/)
+- [Выбор распределения таблицы](/archive/blogs/sqlcat/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service)
 - [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 - [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
@@ -193,7 +193,7 @@ Polybase не подходит для запросов. Таблицы polybase 
 
 Дополнительные сведения о распространенных проблемах и способах их решения см. в статье об [устранении неполадок](../sql-data-warehouse/sql-data-warehouse-troubleshoot.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 
-Если вам нужна информация, не указанная в этой статье, выполните поиск на [странице часто задаваемых вопросов по Azure Synapse](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) на сайте Майкрософт, где можно задать вопросы другим пользователям, и в группе продуктов пула SQL.  
+Если вам нужна информация, не указанная в этой статье, выполните поиск на [странице часто задаваемых вопросов по Azure Synapse](/answers/topics/azure-synapse-analytics.html) на сайте Майкрософт, где можно задать вопросы другим пользователям, и в группе продуктов пула SQL.  
 
 Мы регулярно просматриваем этот форум и следим за тем, чтобы другие пользователи или наши специалисты ответили на интересующие вас вопросы.  Вопросы также можно задавать на [форуме по пулу SQL Azure](https://stackoverflow.com/questions/tagged/azure-sqldw) на сайте Stack Overflow.
 

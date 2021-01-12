@@ -9,16 +9,16 @@ ms.subservice: sql-dw
 ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: de446209104c113b10346645f79b461239c3efab
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 25c692ea9a2dce4723472f6812ac46d82b2b318d
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901285"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120994"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Безопасная загрузка данных с помощью Synapse SQL
 
-В этой статье описано использование безопасных способов проверки подлинности для [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и приведены соответствующие примеры. Инструкция COPY — это наиболее гибкий и безопасный способ массовой загрузки данных в Synapse SQL.
+В этой статье описано использование безопасных способов проверки подлинности для [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и приведены соответствующие примеры. Инструкция COPY — это наиболее гибкий и безопасный способ массовой загрузки данных в Synapse SQL.
 ## <a name="supported-authentication-mechanisms"></a>Поддерживаемые способы проверки подлинности
 
 В следующей таблице описаны поддерживаемые методы проверки подлинности для каждого типа файла и учетной записи хранения. Они относятся к исходному месту хранения и расположению файла ошибок.
@@ -136,7 +136,7 @@ WITH (
 
     ![Предоставление разрешения Azure RBAC на загрузку](./media/quickstart-bulk-load-copy-tsql-examples/rbac-load-permissions.png)
 
-2. Настройте проверку подлинности Azure AD, выполнив [соответствующие инструкции](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure?tabs=azure-powershell#create-an-azure-ad-administrator-for-azure-sql-server). 
+2. Настройте проверку подлинности Azure AD, выполнив [соответствующие инструкции](../../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell). 
 
 3. Подключитесь к пулу SQL с помощью Active Directory. Теперь вы можете выполнять инструкцию COPY без указания учетных данных.
 
@@ -152,11 +152,11 @@ WITH (
 ## <a name="e-service-principal-authentication"></a>Д. Проверка подлинности на основе субъекта-службы
 #### <a name="steps"></a>Шаги
 
-1. [Создание приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application)
-2. [Получите идентификатор приложения.](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)
-3. [Получите ключ проверки подлинности.](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
-4. [Получите конечную точку маркера OAuth 2.0 версии V1.](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications)
-5. В учетной записи хранения [назначьте приложению Azure AD разрешения на чтение, запись и выполнение](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder).
+1. [Создание приложения Azure Active Directory](../..//active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)
+2. [Получите идентификатор приложения.](../..//active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)
+3. [Получите ключ проверки подлинности.](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options)
+4. [Получите конечную точку маркера OAuth 2.0 версии V1.](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json#step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications)
+5. В учетной записи хранения [назначьте приложению Azure AD разрешения на чтение, запись и выполнение](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json#step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder).
 6. Выполните инструкцию COPY.
 
     ```sql
@@ -176,5 +176,5 @@ WITH (
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с подробными сведениями о синтаксисе в статье [об инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax).
-- Прочитайте обзорную статью [о загрузке данных](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/design-elt-data-loading#what-is-elt), где приведены рекомендации по загрузке.
+- Ознакомьтесь с подробными сведениями о синтаксисе в статье [об инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax).
+- Прочитайте обзорную статью [о загрузке данных](./design-elt-data-loading.md#what-is-elt), где приведены рекомендации по загрузке.

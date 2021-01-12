@@ -7,19 +7,17 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 5aadd9d96f538f92e1b9e0100b2c1055ee0b0633
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: e60f77495cdb822a0c50be936c2b0d3ac31348f3
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065275"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116715"
 ---
 # <a name="cross-service-query---azure-monitor-and-azure-data-explorer-preview"></a>Кросс-Сервисный запрос — Azure Monitor и Azure обозреватель данных (Предварительная версия)
 Создавайте запросы между службами между [Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/), [Application Insights](/azure/azure-monitor/app/app-insights-overview)и [log Analytics](/azure/azure-monitor/platform/data-platform-logs).
 ## <a name="azure-monitor-and-azure-data-explorer-cross-service-querying"></a>Azure Monitor и Azure обозреватель данных запросы между службами
 Этот интерфейс позволяет [создавать запросы между службами между Azure обозреватель данных и Azure Monitor](https://docs.microsoft.com/azure/data-explorer/query-monitor-data) , а также [создавать запросы между службами между Azure Monitor и обозреватель данных Azure](https://docs.microsoft.com/azure/azure-monitor/platform/azure-monitor-data-explorer-proxy).
-
-:::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-data-explorer-monitor-flow.png" alt-text="Поток прокси обозревателя данных Azure.":::
 
 Например, (запрос обозреватель данных Azure из Log Analytics):
 ```kusto

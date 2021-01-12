@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 12/17/2020
-ms.openlocfilehash: 5d291ad745122d929c4b664e9da5e4649e463529
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: bdd7fd8e19bf2de6d0b3c6b2edd4515771fae237
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679104"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119031"
 ---
 # <a name="execute-r-script-module"></a>Выполнить модуль R Script
 
@@ -49,10 +49,12 @@ azureml_main <- function(dataframe1, dataframe2){
 Чтобы установить дополнительные пакеты R, используйте `install.packages()` метод. Пакеты устанавливаются для каждого модуля выполнить сценарий R. Они не являются общими для других модулей «выполнение сценария R».
 
 > [!NOTE]
+> **Не** рекомендуется устанавливать пакет R из пакета сценариев. Рекомендуется устанавливать пакеты непосредственно в редакторе скриптов.
 > При установке пакетов укажите репозиторий CRAN, например `install.packages("zoo",repos = "http://cran.us.r-project.org")` .
 
 > [!WARNING]
 > Модуль скрипта R екскуте не поддерживает установку пакетов, для которых требуется компиляция в собственном коде, например `qdap` пакет, требующий Java и Package, для `drc` которых требуется C++. Это происходит потому, что этот модуль выполняется в предварительно установленной среде с разрешениями, не являющимися администраторами.
+> Не устанавливайте пакеты, предварительно созданные на платформе или для Windows, так как модули конструктора работают на Ubuntu. Чтобы проверить, является ли пакет предварительно созданным в Windows, можно зайти на [Cran](https://cran.r-project.org/) и выполнить поиск по пакету, скачать один двоичный файл в соответствии с вашей операционной системой, а затем проверить **сборку:** Part в файле **описания** . Ниже приведен пример: :::image type="content" source="media/module/r-package-description.png" alt-text="Описание пакета R" lightbox="media/module/r-package-page.png"::: .
 
 В этом примере показано, как установить Zoo:
 ```R
@@ -349,7 +351,7 @@ azureml_main <- function(dataframe1, dataframe2){
 
 | Пакет      | Версия    | 
 |--------------|------------| 
-| аскпасс      | 1.1        | 
+| аскпасс      | 1,1        | 
 | assertthat   | 0.2.1      | 
 | backports    | 1.1.4      | 
 | base         | 3.5.1      | 
@@ -456,7 +458,7 @@ azureml_main <- function(dataframe1, dataframe2){
 | rmarkdown    | 1.13       | 
 | ROCR         | 1.0–7      | 
 | rpart        | 4.1 – 15     | 
-| rstudioapi   | 0,1        | 
+| rstudioapi   | 0.1        | 
 | rvest        | 0.3.4      | 
 | scales       | 1.0.0      | 
 | selectr      | 0.4–1      | 

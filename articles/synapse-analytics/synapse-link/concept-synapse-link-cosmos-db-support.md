@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3d12e60e2aeee667b89d56589870d53366772014
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b58474758ac4d26b347dc72d84be401d15a3846b
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459041"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119821"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link для Azure Cosmos DB
 
@@ -31,7 +31,7 @@ ms.locfileid: "96459041"
 
 Вы можете подключиться к контейнеру Azure Cosmos DB, не включив ссылку синапсе. В этом сценарии можно только считывать и записывать в хранилище транзакций. Ниже приведен список поддерживаемых в настоящее время функций в ссылке синапсе для Azure Cosmos DB. 
 
-| Категория              | Описание |[Пул Apache Spark](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Бессерверный пул SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
+| Категория              | Описание |[Пул Apache Spark](../sql/on-demand-workspace-overview.md) | [Бессерверный пул SQL](../sql/on-demand-workspace-overview.md) |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- | ----------------------------------------------------------- |
 | **Поддержка среды выполнения** |Поддержка среды выполнения Azure синапсе для доступа к Azure Cosmos DB| ✓ | Предварительный просмотр |
 | **Поддержка API Azure Cosmos DB** | Поддерживаемый тип API Azure Cosmos DB | SQL/MongoDB | SQL/MongoDB |

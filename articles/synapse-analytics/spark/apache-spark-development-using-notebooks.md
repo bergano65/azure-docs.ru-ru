@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: bfb822481e00e84fa17bd4b1fcb58c1d4b89a124
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7bb0b9b4645be7e548fe116d9e9a2c92fae7dc96
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450867"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120960"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Создание, разработка и обслуживание записных книжек синапсе Studio в Azure синапсе Analytics
 
@@ -33,7 +33,7 @@ ms.locfileid: "96450867"
 ## <a name="preview-of-the-new-notebook-experience"></a>Предварительная версия нового интерфейса записной книжки
 Команда синапсе развернула новый компонент записных книжек в синапсе Studio, чтобы обеспечить единообразную работу с ноутбуками для клиентов корпорации Майкрософт и максимально увеличить возможности обнаружения, повышения производительности, совместного использования и совместной работы. Новый интерфейс записной книжки готов к предварительной версии. Нажмите кнопку **Предварительная версия компонентов** на панели инструментов записной книжки, чтобы включить ее. В приведенной ниже таблице отслеживается Сравнение характеристик существующей записной книжки (так называемое «классическая Записная книжка») с новой предварительной версией.  
 
-|Признак|Классическая Записная книжка|Предварительный просмотр записной книжки|
+|Компонент|Классическая Записная книжка|Предварительный просмотр записной книжки|
 |--|--|--|
 |% выполнения| Не поддерживается | &#9745;|
 |% журнала| Не поддерживается |&#9745;
@@ -553,4 +553,4 @@ df = spark.read.option("header", "true") \
 - [Что такое Apache Spark в Azure Synapse Analytics](apache-spark-overview.md)
 - [Использование .NET для Apache Spark с помощью Azure Synapse Analytics](spark-dotnet.md)
 - [Документация по .NET для Apache Spark](/dotnet/spark?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-- [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+- [Azure Synapse Analytics](../index.yml)

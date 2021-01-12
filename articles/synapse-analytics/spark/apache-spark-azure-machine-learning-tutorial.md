@@ -9,18 +9,18 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: e547d047e8d736acbd1cdda5ffe3a78dbe8259f7
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 2594e25bff3ca949b329f8b66f4427eb1f6950b0
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901068"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118716"
 ---
 # <a name="tutorial-train-a-model-in-python-with-automated-machine-learning"></a>Руководство. Обучение модели на Python с помощью автоматизированного машинного обучения
 
 Машинное обучение Azure представляет собой облачную среду, которая позволяет обучать, развертывать, автоматизировать, контролировать и отслеживать модели машинного обучения. 
 
-В этом руководстве показано, как в Машинном обучении Azure с помощью функции [автоматизированного машинного обучения](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) создать модель регрессии для прогнозирования тарифов на такси. Для получения оптимальной модели в ходе этого процесса добавляются данные для обучения и настраиваются параметры, а также выполняется автоматическая итерация с использованием комбинаций разных методов, моделей и настроек гиперпараметров.
+В этом руководстве показано, как в Машинном обучении Azure с помощью функции [автоматизированного машинного обучения](../../machine-learning/concept-automated-ml.md) создать модель регрессии для прогнозирования тарифов на такси. Для получения оптимальной модели в ходе этого процесса добавляются данные для обучения и настраиваются параметры, а также выполняется автоматическая итерация с использованием комбинаций разных методов, моделей и настроек гиперпараметров.
 
 В этом руководстве описано следующее.
 - Скачивание данных с помощью Apache Spark и Открытых наборов данных Azure.
@@ -31,7 +31,7 @@ ms.locfileid: "97901068"
 ## <a name="before-you-begin"></a>Подготовка к работе
 
 - Создайте бессерверный пул Apache Spark, следуя инструкциям из [этого краткого руководства](../quickstart-create-apache-spark-pool-studio.md).
-- Если у вас нет рабочей области Машинного обучения Azure, выполните инструкции из статьи [Руководство по началу работы с Машинным обучением Azure в Jupyter Notebook](https://docs.microsoft.com/azure/machine-learning/tutorial-1st-experiment-sdk-setup). 
+- Если у вас нет рабочей области Машинного обучения Azure, выполните инструкции из статьи [Руководство по началу работы с Машинным обучением Azure в Jupyter Notebook](../../machine-learning/tutorial-1st-experiment-sdk-setup.md). 
 
 ## <a name="understand-regression-models"></a>Общие сведения о моделях регрессии
 
@@ -48,7 +48,7 @@ ms.locfileid: "97901068"
 
 Это делается так.
 
-1. Создайте записную книжку, используя ядро PySpark. Инструкции см. в разделе [Создание записной книжки](https://docs.microsoft.com/azure/synapse-analytics/quickstart-apache-spark-notebook#create-a-notebook).
+1. Создайте записную книжку, используя ядро PySpark. Инструкции см. в разделе [Создание записной книжки](../quickstart-apache-spark-notebook.md#create-a-notebook).
    
     > [!Note]
     > Ядро PySpark позволяет не задавать контексты явным образом. Контекст Spark будет создан автоматически при выполнении первой ячейки кода.
@@ -144,7 +144,7 @@ ws = Workspace(workspace_name = workspace_name,
 ```
 
 ## <a name="convert-a-dataframe-to-an-azure-machine-learning-dataset"></a>Преобразование кадра данных в набор данных Машинного обучения Azure
-Чтобы отправить удаленный эксперимент, преобразуйте набор данных в формат ```TabularDatset``` для Машинного обучения Azure. [TabularDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) переводит данные в табличный формат, выполняя синтаксический анализ предоставленных файлов.
+Чтобы отправить удаленный эксперимент, преобразуйте набор данных в формат ```TabularDatset``` для Машинного обучения Azure. [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) переводит данные в табличный формат, выполняя синтаксический анализ предоставленных файлов.
 
 Приведенный ниже код позволяет получить сведения о существующей рабочей области и стандартном хранилище данных Машинного обучения Azure. Затем это хранилище и расположение файлов передаются в параметре path для создания нового ```TabularDataset```. 
 
@@ -170,7 +170,7 @@ dataset_training = Dataset.Tabular.from_delimited_files(path = [(datastore, 'tra
 В следующих разделах показано, как отправить эксперимент автоматизированного машинного обучения.
 
 ### <a name="define-training-settings"></a>Определение параметров обучения
-1. Чтобы отправить эксперимент, нужно определить параметр эксперимента и параметры модели для обучения. Полный список параметров см. в статье [Настройка экспериментов автоматизированного машинного обучения на Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train).
+1. Чтобы отправить эксперимент, нужно определить параметр эксперимента и параметры модели для обучения. Полный список параметров см. в статье [Настройка экспериментов автоматизированного машинного обучения на Python](../../machine-learning/how-to-configure-auto-train.md).
 
    ```python
    import logging
@@ -338,5 +338,5 @@ NYCGreenTaxiModel 1
 ![Снимок экрана: рабочая область службы "Машинное обучение Azure".](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+- [Azure Synapse Analytics](../index.yml)
 - [Руководство по Создание приложения машинного обучения с помощью Apache Spark MLlib и Azure Synapse Analytics](./apache-spark-machine-learning-mllib-notebook.md)

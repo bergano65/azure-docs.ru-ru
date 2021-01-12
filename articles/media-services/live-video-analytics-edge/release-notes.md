@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 7761fee8f23b5be259f9a5c278f761fa4ce92fbf
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 7f8957d1ec93259cf6defe7980f19298f782ea5e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059982"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121249"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -20,6 +20,23 @@ ms.locfileid: "98059982"
 * Известные проблемы
 * Исправления ошибок
 * Нерекомендуемые функции
+
+<hr width=100%>
+
+## <a name="january-12-2021"></a>12 января 2021 г.
+
+Этот тег выпуска предназначен для обновления за январь 2021:
+
+```
+mcr.microsoft.com/media/live-video-analytics:2.0.1
+```
+
+> [!NOTE]
+> В кратком руководстве и учебниках в манифестах развертывания используется тег 2 (Live-Video-Analytics: 2). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
+### <a name="bug-fixes"></a>Исправления ошибок 
+
+* Поля `ActivationSignalOffset` `MinimumActivationTime` и `MaximumActivationTime` в обработчиках сигнального шлюза были неправильно заданы как обязательные свойства. Теперь они являются **необязательными** свойствами.
+* Исправлена ошибка использования, из-за которой при развертывании в определенных регионах модуль анализа видео в реальном времени IoT Edgeся к сбою.
 
 <hr width=100%>
 
