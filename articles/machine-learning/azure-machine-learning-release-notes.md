@@ -9,16 +9,36 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 1cc6c8cd49a2388ad66a276f4a1667b4c3ee3826
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 0ecf47ecdc66c0005f0d793d91a67af102fb1c76
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070326"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107911"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
 В этой статье вы узнаете о выпусках Машинное обучение Azure.  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) машинное обучение Azure.
+
+
+ ## <a name="2021-01-11"></a>2021-01-11
+
+### <a name="azure-machine-learning-sdk-for-python-v1200"></a>Машинное обучение Azure SDK для Python v 1.20.0
++ **Исправления ошибок и улучшения**
+  + **azure-cli-ml**
+    + framework_version добавлен в Оптимизатионконфиг. Он будет использоваться при регистрации модели в платформе MULTI.
+  + **azureml-automl-runtime**
+    + В этом обновлении мы добавили холтные зима экспоненциального сглаживания к панели элементов прогнозирования Аутомл SDK. При наличии временных рядов оптимальная модель выбирается с помощью [AICc (исправленный Акаике информации)](https://otexts.com/fpp3/selecting-predictors.html#selecting-predictors) и возвращается.
+  + **azureml-от участников сообщества-Optimization**
+    + framework_version добавлен в Оптимизатионконфиг. Он будет использоваться при регистрации модели в платформе MULTI.
+  + **azureml-pipeline-steps**
+    + Знакомство с Коммандстеп, которое принимает команду на обработку. Команда может включать исполняемые файлы, команды оболочки, скрипты и т. д.
+  + **azureml-core**
+    + Теперь создание рабочей области поддерживает назначенное пользователем удостоверение. Добавление поддержки УАИ из пакета SDK/CLI
+    + Исправлена проблема с Service. Reload () для получения изменений в score.py в локальном развертывании.
+    + `run.get_details()` содержит дополнительное поле с именем «submittedBy», которое отображает имя автора для этого запуска.
+    + Измененная модель. Зарегистрируйте метод в документации, чтобы сказать, как зарегистрировать модель непосредственно из запуска.
+   
 
 ## <a name="2020-12-31"></a>2020-12-31
 ### <a name="azure-machine-learning-studio-notebooks-experience-december-update"></a>Опыт работы с записными книжками Машинное обучение Azure Studio (декабрьское обновление)
@@ -31,6 +51,7 @@ ms.locfileid: "98070326"
   + Повышение времени загрузки страниц
   + повышение производительности. 
   + Повышенная скорость и надежность ядра
+
   
 ## <a name="2020-12-07"></a>2020-12-07
 

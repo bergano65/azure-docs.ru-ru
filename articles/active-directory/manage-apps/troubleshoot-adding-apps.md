@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 09/11/2018
 ms.author: kenwith
-ms.openlocfilehash: 714cbb06506cc3e0dffe74007712d9cbad072284
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f873608d07785e6b99bd8e0fcdadf64a8899d490
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655074"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108421"
 ---
 # <a name="troubleshoot-common-problem-adding-or-removing-an-application-to-azure-active-directory"></a>Устранение распространенных неполадок при добавлении или удалении приложения для Azure Active Directory
 Эта статья поможет вам понять распространенные проблемы, с которыми сталкиваются пользователи при добавлении или удалении приложения для Azure Active Directory.
@@ -43,7 +43,7 @@ ms.locfileid: "94655074"
 
 - Для приложения Майкрософт вы не сможете удалить их из пользовательского интерфейса независимо от вашей роли.
 
-- Для свойства serviceprincipals, соответствующих управляемому удостоверению. Субъекты-службы управляемых удостоверений нельзя удалить в колонке "корпоративные приложения". Для управления им необходимо обратиться к ресурсу Azure. Подробнее об [управляемом удостоверении](../managed-identities-azure-resources/overview.md)
+- Для свойства serviceprincipals, соответствующих управляемому удостоверению. Субъекты-службы управляемых удостоверений нельзя удалить в колонке "корпоративные приложения". Для управления им необходимо обратиться к ресурсу Azure. Дополнительные сведения об [управляемом удостоверении](../managed-identities-azure-resources/overview.md)
 
 ## <a name="how-to-see-the-details-of-a-portal-notification"></a>Как просмотреть сведения об уведомлении на портале
 Чтобы просмотреть сведения об уведомлении на портале, выполните следующие действия:

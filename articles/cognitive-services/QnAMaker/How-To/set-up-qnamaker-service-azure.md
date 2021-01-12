@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 5af4eb931015e386e35470f2b36341e15f76150f
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: af9087f0dd45212ec88b620dcd965c895b86bbce
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065411"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108198"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -135,7 +135,7 @@ ms.locfileid: "98065411"
     * Проверьте конфигурацию службы приложений и добавьте "Примарендпоинткэй" в качестве параметра приложения. Для параметра "Примарендпоинткэй" должно быть задано значение " \<app-name\> -примарендпоинткэй". Имя приложения определяется в URL-адресе службы приложений. Например, если URL-адрес службы приложений имеет значение "mywebsite.myase.p.azurewebsite.net", то имя приложения — "mywebsite". В этом случае для параметра "Примарендпоинткэй" должно быть задано значение "mywebsite-Примарендпоинткэй".
     * Создайте службу поиска Azure.
     * Убедитесь, что параметры поиска Azure и приложения настроены соответствующим образом. 
-      Следуйте указаниям в этом [руководстве](https://docs.microsoft.com/azure/cognitiveservices/qnamaker/reference-app-service#app-service).
+      Следуйте указаниям в этом [руководстве](https://docs.microsoft.com/azure/cognitive-services/qnamaker/reference-app-service?tabs=v1#app-service).
 3.  Обновите группу безопасности сети, связанную с Среда службы приложений
     * Обновите предварительно созданные правила безопасности для входящего трафика в соответствии с вашими требованиями.
     * Добавьте новое правило безопасности входящего трафика с исходным кодом как тег службы и тегом исходной службы как "Когнитивесервицесманажемент".

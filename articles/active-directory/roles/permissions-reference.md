@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6da053bb04e5ee3f2b2b307c382f2695663669e5
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 568584b849b2c5977d4bbb6216697dce3c498cfd
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020661"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107928"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -770,6 +770,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/directoryRoles/allProperties/allTasks | Создание и удаление объектов directoryRole, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/directoryRoleTemplates/allProperties/allTasks | Создание и удаление объектов directoryRoleTemplate, а также чтение и изменение всех свойств в Azure Active Directory. |
 | microsoft.directory/domains/allProperties/allTasks | Создание и удаление доменов, а также чтение и изменение всех свойств в Azure Active Directory. |
+| Microsoft. Directory/Ентитлементманажемент/Аллпропертиес/Аллтаскс | Создание и удаление ресурсов, а затем чтение и обновление всех свойств в управлении назначениями Azure AD. |
 | microsoft.directory/groups/allProperties/allTasks | Создание и удаление групп, а также чтение и изменение всех свойств в Azure Active Directory. |
 | Microsoft. Directory/Граупсассигнаблеторолес/Аллпропертиес/Update | Обновите группы со свойством Исассигнаблетороле, имеющим значение true в Azure Active Directory. |
 | Microsoft. Directory/Граупсассигнаблеторолес/создать | Создайте группы со свойством Исассигнаблетороле, для которых задано значение true в Azure Active Directory. |
@@ -831,6 +832,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
+| Microsoft. Directory/Ентитлементманажемент/Аллпропертиес/Read | Чтение всех свойств в управлении назначениями Azure AD. |
 | microsoft.office365.complianceManager/allEntities/allTasks | Управление всеми аспектами Office 365 Compliance Manager. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
@@ -1133,6 +1135,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/directoryRoles/eligibleMembers/read    | Чтение свойства directoryroles.eligibleMembers в Azure Active Directory. |
 | microsoft.directory/directoryRoles/members/read    | Чтение свойства directoryRoles.members в Azure Active Directory. |
 | microsoft.directory/domains/basic/read    | Чтение базовых свойств доменов в Azure Active Directory. |
+| Microsoft. Directory/Ентитлементманажемент/Аллпропертиес/Read | Чтение всех свойств в управлении назначениями Azure AD. |
 | microsoft.directory/groups/appRoleAssignments/read    | Чтение свойства Groups.AppRoleAssignments в Azure Active Directory. |
 | microsoft.directory/groups/basic/read    | Чтение базовых свойств в группах в Azure Active Directory. |
 | microsoft.directory/groups/hiddenMembers/read    | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
@@ -1231,7 +1234,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 
 ### <a name="hybrid-identity-administrator-permissions"></a>Разрешения администратора гибридных удостоверений
 
-Включение, развертывание, настройка, контроль, мониторинг и устранение неполадок служб облачной подготовки и проверки подлинности. 
+Может управлять AD для подготовки облачных служб Azure AD и настройки Федерации. 
 
 | **Действия** | **Описание** |
 | --- | --- |
@@ -1249,8 +1252,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/applicationTemplates/instantiate | Создание экземпляров приложений коллекции из шаблонов приложений. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | microsoft.directory/cloudProvisioning/allProperties/allTasks | Чтение и настройка всех свойств службы подготовки облачных решений Azure AD. |
-| microsoft.directory/federatedAuthentication/allProperties/allTasks | Управление всеми аспектами служб федерации Active Directory (AD FS) или сторонних поставщиков федерации в Azure AD. |
+| Microsoft. Directory/Domains/Аллпропертиес/Read | Чтение всех свойств доменов. |
+| Microsoft. Directory/Domains/Federation/Update | Обновите свойство Федерации доменов. |
 | microsoft.directory/organization/dirSync/update | Изменение свойства organization.dirSync в Azure Active Directory. |
+| microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 | microsoft.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
 | microsoft.directory/servicePrincipals/authentication/update | Обновление свойства servicePrincipals.authentication в Azure Active Directory. |
 | microsoft.directory/servicePrincipals/basic/update | Обновление базовых свойств для объектов ServicePrincipal в Azure Active Directory. |
@@ -1708,9 +1713,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
-| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
 | microsoft.directory/applications/policies/update | Изменение свойства applications.policies в Azure Active Directory. |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+| Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
+| Microsoft. Directory/Ентитлементманажемент/Аллпропертиес/Read | Чтение всех свойств в управлении назначениями Azure AD. |
 | Microsoft. Directory/Идентитипротектион/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 | Microsoft. Directory/Идентитипротектион/Аллпропертиес/Update | Обновление всех ресурсов в microsoft.aad.identityProtection. |
 | microsoft.directory/policies/basic/update | Обновление базовых свойств политик в Azure Active Directory. |
@@ -1761,6 +1767,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
 | Microsoft. Directory/Битлоккеркэйс/ключ/чтение | Чтение объектов и свойств ключа BitLocker (включая ключ восстановления) в Azure Active Directory. |
+| Microsoft. Directory/Ентитлементманажемент/Аллпропертиес/Read | Чтение всех свойств в управлении назначениями Azure AD. |
 | microsoft.directory/policies/conditionalAccess/basic/read | Чтение свойства policies.conditionalAccess в Azure Active Directory. |
 | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
@@ -1926,6 +1933,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
+| Microsoft. Directory/Ентитлементманажемент/Аллпропертиес/Аллтаскс | Создание и удаление ресурсов, а затем чтение и обновление всех свойств в управлении назначениями Azure AD. |
 | microsoft.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
 | microsoft.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
 | microsoft.directory/groups/create | Создание групп в Azure Active Directory. |

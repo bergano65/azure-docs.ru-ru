@@ -10,12 +10,12 @@ ms.date: 12/11/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 558f4792a055fc491f15600ecc5502c3a114a94b
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: e5ab583330b46b8f53223500076aa04780e6deac
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360226"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108727"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Принудительная минимальная требуемая версия протокола TLS для запросов к учетной записи хранения
 
@@ -37,9 +37,8 @@ ms.locfileid: "97360226"
 
 Ведение журнала службы хранилища Azure в Azure Monitor поддерживает использование запросов журналов для анализа данных журнала. Для запроса журналов можно использовать рабочую область Azure Log Analytics. Дополнительные сведения о запросах журналов см. в разделе [учебник. Начало работы с log Analytics запросами](../../azure-monitor/log-query/log-analytics-tutorial.md).
 
-Чтобы записывать данные службы хранилища Azure с Azure Monitor и анализировать их с помощью Log Analytics Azure, необходимо сначала создать параметр диагностики, который указывает, какие типы запросов и какие услуги хранилища будут записывать данные. Чтобы создать параметр диагностики в портал Azure, выполните следующие действия.
+Чтобы записывать данные службы хранилища Azure с Azure Monitor и анализировать их с помощью Log Analytics Azure, необходимо сначала создать параметр диагностики, который указывает, какие типы запросов и какие услуги хранилища будут записывать данные. Журналы службы хранилища Azure в Azure Monitor предоставляются в общедоступной предварительной версии. Они также доступны для предварительного тестирования во всех регионах общедоступного облака. Эта предварительная версия включает журналы для больших двоичных объектов (включая Azure Data Lake Storage 2-го поколения), файлов, очередей и таблиц. Чтобы создать параметр диагностики в портал Azure, выполните следующие действия.
 
-1. Зарегистрируйтесь в [журнале службы хранилища Azure в Azure Monitor предварительной версии](https://forms.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUM0E0MFdPRFpOVTRYVklDSE1WUTcyTVAwOC4u).
 1. Создайте новую рабочую область Log Analytics в подписке, которая содержит вашу учетную запись хранения Azure. После настройки ведения журнала для учетной записи хранения журналы будут доступны в рабочей области Log Analytics. Дополнительные сведения см. в статье [Create a Log Analytics workspace in the Azure portal](../../azure-monitor/learn/quick-create-workspace.md) (Создание рабочей области Log Analytics на портале Azure).
 1. Войдите в свою учетную запись хранения на портале Azure.
 1. В разделе Мониторинг выберите **параметры диагностики (Предварительная версия)**.

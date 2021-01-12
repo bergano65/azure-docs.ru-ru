@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/01/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 5e0007f3b0dad8a68e9d81cebbe9fe24b5a7db3c
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 0e1ce841f6da8f15bd977437bca6b835a7b0d745
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285645"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108744"
 ---
 # <a name="how-to-enable-key-vault-logging"></a>Включение ведения журнала Key Vault
 
@@ -25,20 +25,10 @@ ms.locfileid: "93285645"
 Для работы с этим учебником необходимо наличие следующих компонентов.
 
 * Существующее хранилище ключей, которое вы используете.  
-* Интерфейс командной строки Azure или Azure PowerShell.
+* [Azure Cloud Shell](https://shell.azure.com) — среда bash
 * Достаточный объем хранилища в Azure для журналов хранилищ ключей.
 
-Если вы решили установить и использовать CLI локально, потребуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Чтобы войти в Azure с помощью CLI, введите следующее:
-
-```azurecli-interactive
-az login
-```
-
-Если вы решили установить и использовать PowerShell локально, потребуется Azure PowerShell модуль версии 1.0.0 или более поздней. Чтобы узнать версию, введите `$PSVersionTable.PSVersion`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
-
-```powershell-interactive
-Connect-AzAccount
-```
+Команды этого руководством форматируются для [Cloud Shell](https://shell.azure.com) с Bash в качестве среды.
 
 ## <a name="connect-to-your-key-vault-subscription"></a>Подключение к подписке Key Vault
 
@@ -64,7 +54,7 @@ Set-AzContext -SubscriptionId "<subscriptionID>"
 
 Хотя для журналов можно использовать существующую учетную запись хранения, мы создадим новую учетную запись хранения, выделенную для Key Vault журналов. 
 
-Чтобы упростить управление, мы также будем использовать ту же группу ресурсов, которая содержит хранилище ключей. В кратком руководстве по [Azure CLI](quick-create-cli.md) и [Azure PowerShell](quick-create-powershell.md)эта группа ресурсов называется **myResourceGroup** , а расположение — *eastus*. Замените эти значения собственными, как применимые. 
+Чтобы упростить управление, мы также будем использовать ту же группу ресурсов, которая содержит хранилище ключей. В кратком руководстве по [Azure CLI](quick-create-cli.md) и [Azure PowerShell](quick-create-powershell.md)эта группа ресурсов называется **myResourceGroup**, а расположение — *eastus*. Замените эти значения собственными, как применимые. 
 
 Кроме того, необходимо указать имя учетной записи хранения. Имена учетных записей хранения должны быть уникальными длиной от 3 до 24 символов и использовать только цифры и буквы в нижнем регистре.  Наконец, мы создадим учетную запись хранения SKU "Standard_LRS".
 
@@ -162,7 +152,7 @@ az storage blob list --account-name "<your-unique-storage-account-name>" --conta
 Используя Azure PowerShell, используйте список [Get-азсторажеблоб](/powershell/module/az.storage/get-azstorageblob?view=azps-4.7.0) , содержащий все большие двоичные объекты в этом контейнере, и введите:
 
 ```powershell
-Get-AzStorageBlob -Container $container -Context $sa.Context
+Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context
 ```
 
 Как видно из выходных данных команды Azure CLI или командлета Azure PowerShell, имена больших двоичных объектов имеют формат `resourceId=<ARM resource ID>/y=<year>/m=<month>/d=<day of month>/h=<hour>/m=<minute>/filename.json` . Для значений даты и времени используется время в формате UTC.
@@ -178,7 +168,7 @@ az storage blob download --container-name "insights-logs-auditevent" --file <pat
 Используя Azure PowerShell, используйте командлет [gt-азсторажеблобс](/powershell/module/az.storage/get-azstorageblob?view=azps-4.7.0) , чтобы получить список больших двоичных объектов, затем передайте его в командлет [Get-азсторажеблобконтент](/powershell/module/az.storage/get-azstorageblobcontent?view=azps-4.7.0) , чтобы скачать журналы по выбранному пути.
 
 ```powershell-interactive
-$blobs = Get-AzStorageBlob -Container $container -Context $sa.Context | Get-AzStorageBlobContent -Destination "<path-to-file>"
+$blobs = Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context | Get-AzStorageBlobContent -Destination "<path-to-file>"
 ```
 
 При запуске второго командлета в PowerShell **/** разделитель в именах больших двоичных объектов создает полную структуру папок в папке назначения. Эта структура будет использоваться для скачивания и хранения больших двоичных объектов в виде файлов.
@@ -188,19 +178,19 @@ $blobs = Get-AzStorageBlob -Container $container -Context $sa.Context | Get-AzSt
 * Если у вас есть несколько хранилищ ключей, но вы хотите загрузить журналы только для одного хранилища с именем CONTOSOKEYVAULT3.
 
   ```powershell
-  Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/VAULTS/CONTOSOKEYVAULT3
+  Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context -Blob '*/VAULTS/CONTOSOKEYVAULT3
   ```
 
 * Если у вас есть несколько групп ресурсов, но вы хотите загрузить журналы только для одной из них, используйте `-Blob '*/RESOURCEGROUPS/<resource group name>/*'`:
 
   ```powershell
-  Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
+  Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
   ```
 
 * Если вы хотите скачать все журналы за январь 2019 г., используйте `-Blob '*/year=2019/m=01/*'`:
 
   ```powershell
-  Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/year=2016/m=01/*'
+  Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context -Blob '*/year=2016/m=01/*'
   ```
 
 Теперь можно переходить к анализу содержимого журналов. Но прежде чем мы перейдем к этому, вам нужно изучить еще две команды:

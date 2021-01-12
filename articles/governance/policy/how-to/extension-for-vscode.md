@@ -1,22 +1,22 @@
 ---
 title: Расширение Политики Azure для Visual Studio Code
 description: Узнайте, как использовать расширение политики Azure для Visual Studio Code поиска псевдонимов Azure Resource Manager.
-ms.date: 10/20/2020
+ms.date: 01/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 8c7357d70323fa74ec77cf43bd11f149a2f99154
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 4c4ba0eeb0506179ff92ead0ee86f048600d157e
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906307"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107945"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Использование расширения политики Azure для Visual Studio Code
 
-> Применяется к расширению политики Azure версии **0.1.0** и более поздних версий
+> Применяется к расширению политики Azure версии **0.1.1** и более поздних версий
 
 Узнайте, как использовать расширение политики Azure для Visual Studio Code поиска [псевдонимов](../concepts/definition-structure.md#aliases), просмотра ресурсов и политик, экспорта объектов и оценки определений политик. Сначала мы расскажем, как установить расширение политики Azure в Visual Studio Code. Затем мы рассмотрим, как искать псевдонимы.
 
-Расширение политики Azure для Visual Studio Code можно установить на всех платформах, поддерживаемых Visual Studio Code. Эта поддержка включает в себя Windows, Linux и macOS.
+Расширение политики Azure для Visual Studio Code можно установить в Windows.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,7 +29,7 @@ ms.locfileid: "96906307"
 
 После выполнения необходимых условий можно установить расширение политики Azure для Visual Studio Code, выполнив следующие действия.
 
-1. Откройте Visual Studio Code.
+1. Откройте Visual Studio Code.
 1. В строке меню выберите **Просмотреть**  >  **расширения**.
 1. В поле поиска введите " **Политика Azure**".
 1. В результатах поиска выберите пункт **Политика Azure** и нажмите кнопку **установить**.

@@ -3,18 +3,18 @@ title: Azure Data Lake Storage 2-го поколения пакета SDK для
 description: Используйте библиотеки службы хранилища Azure для Java для управления каталогами и списками управления доступом к файлам и каталогам (ACL) в учетных записях хранения с включенным иерархическое пространством имен (HNS).
 author: normesta
 ms.service: storage
-ms.date: 09/10/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-java
 ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: f6e8219f744a91628f9860f0af133c07eddb4253
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1cc6954569c509c977634a8e1cdd52c5c55b2100
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913391"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108133"
 ---
 # <a name="use-java-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Java для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -37,7 +37,6 @@ ms.locfileid: "95913391"
 Затем добавьте эти операторы Imports в файл кода.
 
 ```java
-import com.azure.core.credential.TokenCredential;
 import com.azure.storage.common.StorageSharedKeyCredential;
 import com.azure.storage.file.datalake.DataLakeDirectoryClient;
 import com.azure.storage.file.datalake.DataLakeFileClient;
@@ -45,11 +44,16 @@ import com.azure.storage.file.datalake.DataLakeFileSystemClient;
 import com.azure.storage.file.datalake.DataLakeServiceClient;
 import com.azure.storage.file.datalake.DataLakeServiceClientBuilder;
 import com.azure.storage.file.datalake.models.ListPathsOptions;
+import com.azure.storage.file.datalake.models.PathItem;
+import com.azure.storage.file.datalake.models.AccessControlChangeCounters;
+import com.azure.storage.file.datalake.models.AccessControlChangeResult;
+import com.azure.storage.file.datalake.models.AccessControlType;
 import com.azure.storage.file.datalake.models.PathAccessControl;
 import com.azure.storage.file.datalake.models.PathAccessControlEntry;
-import com.azure.storage.file.datalake.models.PathItem;
 import com.azure.storage.file.datalake.models.PathPermissions;
+import com.azure.storage.file.datalake.models.PathRemoveAccessControlEntry;
 import com.azure.storage.file.datalake.models.RolePermissions;
+import com.azure.storage.file.datalake.options.PathSetAccessControlRecursiveOptions;
 ```
 
 ## <a name="connect-to-the-account"></a>Подключение к учетной записи 
@@ -62,22 +66,7 @@ import com.azure.storage.file.datalake.models.RolePermissions;
 
 В этом примере создается экземпляр **даталакесервицеклиент** с помощью ключа учетной записи.
 
-```java
-
-static public DataLakeServiceClient GetDataLakeServiceClient
-(String accountName, String accountKey){
-
-    StorageSharedKeyCredential sharedKeyCredential =
-        new StorageSharedKeyCredential(accountName, accountKey);
-
-    DataLakeServiceClientBuilder builder = new DataLakeServiceClientBuilder();
-
-    builder.credential(sharedKeyCredential);
-    builder.endpoint("https://" + accountName + ".dfs.core.windows.net");
-
-    return builder.buildClient();
-}      
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/Authorize_DataLake.java" id="Snippet_AuthorizeWithKey":::
 
 ### <a name="connect-by-using-azure-active-directory-azure-ad"></a>Подключение с помощью Azure Active Directory (Azure AD)
 
@@ -85,22 +74,7 @@ static public DataLakeServiceClient GetDataLakeServiceClient
 
 В этом примере создается экземпляр **даталакесервицеклиент** с использованием идентификатора клиента, секрета клиента и идентификатора клиента.  Чтобы получить эти значения, см. статью [Получение маркера из Azure AD для авторизации запросов из клиентского приложения](../common/storage-auth-aad-app.md).
 
-```java
-static public DataLakeServiceClient GetDataLakeServiceClient
-    (String accountName, String clientId, String ClientSecret, String tenantID){
-
-    String endpoint = "https://" + accountName + ".dfs.core.windows.net";
-        
-    ClientSecretCredential clientSecretCredential = new ClientSecretCredentialBuilder()
-    .clientId(clientId)
-    .clientSecret(ClientSecret)
-    .tenantId(tenantID)
-    .build();
-           
-    DataLakeServiceClientBuilder builder = new DataLakeServiceClientBuilder();
-    return builder.credential(clientSecretCredential).endpoint(endpoint).buildClient();
- } 
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/Authorize_DataLake.java" id="Snippet_AuthorizeWithAzureAD":::
 
 > [!NOTE]
 > Дополнительные примеры см. в документации по [клиентской библиотеке удостоверений Azure для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/identity/azure-identity) .
@@ -112,13 +86,7 @@ static public DataLakeServiceClient GetDataLakeServiceClient
 
 В этом примере создается контейнер с именем `my-file-system` . 
 
-```java
-static public DataLakeFileSystemClient CreateFileSystem
-(DataLakeServiceClient serviceClient){
-
-    return serviceClient.createFileSystem("my-file-system");
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_CreateFileSystem":::
 
 ## <a name="create-a-directory"></a>Создание каталога
 
@@ -126,19 +94,7 @@ static public DataLakeFileSystemClient CreateFileSystem
 
 В этом примере добавляется каталог с именем `my-directory` в контейнер, а затем добавляется подкаталог с именем `my-subdirectory` . 
 
-```java
-static public DataLakeDirectoryClient CreateDirectory
-(DataLakeServiceClient serviceClient, String fileSystemName){
-    
-    DataLakeFileSystemClient fileSystemClient =
-    serviceClient.getFileSystemClient(fileSystemName);
-
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.createDirectory("my-directory");
-
-    return directoryClient.createSubDirectory("my-subdirectory");
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_CreateDirectory":::
 
 ## <a name="rename-or-move-a-directory"></a>Переименование или перемещение каталога
 
@@ -146,31 +102,11 @@ static public DataLakeDirectoryClient CreateDirectory
 
 В этом примере подкаталог переименовывается в имя `my-subdirectory-renamed` .
 
-```java
-static public DataLakeDirectoryClient
-    RenameDirectory(DataLakeFileSystemClient fileSystemClient){
-
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory/my-subdirectory");
-
-    return directoryClient.rename(
-        fileSystemClient.getFileSystemName(),"my-subdirectory-renamed");
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_RenameDirectory":::
 
 В этом примере каталог с именем перемещается `my-subdirectory-renamed` в подкаталог каталога с именем `my-directory-2` . 
 
-```java
-static public DataLakeDirectoryClient MoveDirectory
-(DataLakeFileSystemClient fileSystemClient){
-
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory/my-subdirectory-renamed");
-
-    return directoryClient.rename(
-        fileSystemClient.getFileSystemName(),"my-directory-2/my-subdirectory-renamed");                
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_MoveDirectory":::
 
 ## <a name="delete-a-directory"></a>Удаление каталога
 
@@ -178,15 +114,7 @@ static public DataLakeDirectoryClient MoveDirectory
 
 В этом примере удаляется каталог `my-directory`.   
 
-```java
-static public void DeleteDirectory(DataLakeFileSystemClient fileSystemClient){
-        
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory");
-
-    directoryClient.deleteWithResponse(true, null, null, null);
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_DeleteDirectory":::
 
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог
 
@@ -194,26 +122,7 @@ static public void DeleteDirectory(DataLakeFileSystemClient fileSystemClient){
 
 В этом примере текстовый файл перегружается в каталог с именем `my-directory` .
 
-```java
-static public void UploadFile(DataLakeFileSystemClient fileSystemClient) 
-    throws FileNotFoundException{
-        
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory");
-
-    DataLakeFileClient fileClient = directoryClient.createFile("uploaded-file.txt");
-
-    File file = new File("C:\\mytestfile.txt");
-
-    InputStream targetStream = new BufferedInputStream(new FileInputStream(file));
-
-    long fileSize = file.length();
-
-    fileClient.append(targetStream, 0, fileSize);
-
-    fileClient.flush(fileSize);
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_UploadFile":::
 
 > [!TIP]
 > Если размер файла большой, код должен выполнить несколько вызовов метода **даталакефилеклиент. append** . Вместо этого рекомендуется использовать метод **даталакефилеклиент. uploadFromFile** . Таким образом, вы можете передать весь файл в одном вызове. 
@@ -224,79 +133,19 @@ static public void UploadFile(DataLakeFileSystemClient fileSystemClient)
 
 Используйте метод **даталакефилеклиент. uploadFromFile** для отправки больших файлов без выполнения нескольких вызовов к методу **даталакефилеклиент. append** .
 
-```java
-static public void UploadFileBulk(DataLakeFileSystemClient fileSystemClient) 
-    throws FileNotFoundException{
-        
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory");
-
-    DataLakeFileClient fileClient = directoryClient.getFileClient("uploaded-file.txt");
-
-    fileClient.uploadFromFile("C:\\mytestfile.txt");
-
-    }
-
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_UploadFileBulk":::
 
 ## <a name="download-from-a-directory"></a>Скачивание из каталога
 
 Сначала создайте экземпляр **даталакефилеклиент** , представляющий файл, который требуется скачать. Для чтения файла используйте метод **даталакефилеклиент. Read** . Используйте любой API-интерфейс обработки файлов .NET для сохранения байтов из потока в файл. 
 
-```java
-static public void DownloadFile(DataLakeFileSystemClient fileSystemClient)
-    throws FileNotFoundException, java.io.IOException{
-
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory");
-
-    DataLakeFileClient fileClient = 
-        directoryClient.getFileClient("uploaded-file.txt");
-
-    File file = new File("C:\\downloadedFile.txt");
-
-    OutputStream targetStream = new FileOutputStream(file);
-
-    fileClient.read(targetStream);
-
-    targetStream.close();
-      
-}
-
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_DownloadFile":::
 
 ## <a name="list-directory-contents"></a>Вывод содержимого каталогов
 
 В этом примере выводятся имена каждого файла, расположенного в каталоге с именем `my-directory` .
 
-```java
-static public void ListFilesInDirectory(DataLakeFileSystemClient fileSystemClient){
-        
-    ListPathsOptions options = new ListPathsOptions();
-    options.setPath("my-directory");
-     
-    PagedIterable<PathItem> pagedIterable = 
-    fileSystemClient.listPaths(options, null);
-
-    java.util.Iterator<PathItem> iterator = pagedIterable.iterator();
-       
-    PathItem item = iterator.next();
-
-    while (item != null)
-    {
-        System.out.println(item.getName());
-
-
-        if (!iterator.hasNext())
-        {
-            break;
-        }
-            
-        item = iterator.next();
-    }
-
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/CRUD_DataLake.java" id="Snippet_ListFilesInDirectory":::
 
 ## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
 
@@ -312,43 +161,7 @@ static public void ListFilesInDirectory(DataLakeFileSystemClient fileSystemClien
 > [!NOTE]
 > Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](./data-lake-storage-access-control.md).
 
-```java
-static public void ManageDirectoryACLs(DataLakeFileSystemClient fileSystemClient){
-
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory");
-
-    PathAccessControl directoryAccessControl =
-        directoryClient.getAccessControl();
-
-    List<PathAccessControlEntry> pathPermissions = directoryAccessControl.getAccessControlList();
-       
-    System.out.println(PathAccessControlEntry.serializeList(pathPermissions));
-             
-    RolePermissions groupPermission = new RolePermissions();
-    groupPermission.setExecutePermission(true).setReadPermission(true);
-  
-    RolePermissions ownerPermission = new RolePermissions();
-    ownerPermission.setExecutePermission(true).setReadPermission(true).setWritePermission(true);
-  
-    RolePermissions otherPermission = new RolePermissions();
-    otherPermission.setReadPermission(true);
-  
-    PathPermissions permissions = new PathPermissions();
-  
-    permissions.setGroup(groupPermission);
-    permissions.setOwner(ownerPermission);
-    permissions.setOther(otherPermission);
-
-    directoryClient.setPermissions(permissions, null, null);
-
-    pathPermissions = directoryClient.getAccessControl().getAccessControlList();
-     
-    System.out.println(PathAccessControlEntry.serializeList(pathPermissions));
-
-}
-
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/ACL_DataLake.java" id="Snippet_ManageDirectoryACLs":::
 
 Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, передайте в `""` метод **Даталакефилесистемклиент. жетдиректориклиент** пустую строку ().
 
@@ -359,51 +172,13 @@ static public void ManageDirectoryACLs(DataLakeFileSystemClient fileSystemClient
 > [!NOTE]
 > Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](./data-lake-storage-access-control.md).
 
-```java
-static public void ManageFileACLs(DataLakeFileSystemClient fileSystemClient){
-
-    DataLakeDirectoryClient directoryClient =
-        fileSystemClient.getDirectoryClient("my-directory");
-
-    DataLakeFileClient fileClient = 
-        directoryClient.getFileClient("uploaded-file.txt");
-
-    PathAccessControl fileAccessControl =
-        fileClient.getAccessControl();
-
-    List<PathAccessControlEntry> pathPermissions = fileAccessControl.getAccessControlList();
-     
-    System.out.println(PathAccessControlEntry.serializeList(pathPermissions));
-           
-    RolePermissions groupPermission = new RolePermissions();
-    groupPermission.setExecutePermission(true).setReadPermission(true);
-
-    RolePermissions ownerPermission = new RolePermissions();
-    ownerPermission.setExecutePermission(true).setReadPermission(true).setWritePermission(true);
-
-    RolePermissions otherPermission = new RolePermissions();
-    otherPermission.setReadPermission(true);
-
-    PathPermissions permissions = new PathPermissions();
-
-    permissions.setGroup(groupPermission);
-    permissions.setOwner(ownerPermission);
-    permissions.setOther(otherPermission);
-
-    fileClient.setPermissions(permissions, null, null);
-
-    pathPermissions = fileClient.getAccessControl().getAccessControlList();
-   
-    System.out.println(PathAccessControlEntry.serializeList(pathPermissions));
-
-}
-```
+:::code language="java" source="~/azure-storage-snippets/blobs/howto/Java/Java-v12/src/main/java/com/datalake/manage/ACL_DataLake.java" id="Snippet_ManageFileACLs":::
 
 ### <a name="set-an-acl-recursively"></a>Рекурсивное задание списка ACL
 
 Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 * [Справочная документация по API](/java/api/overview/azure/storage-file-datalake-readme)
 * [Пакет (Maven)](https://search.maven.org/artifact/com.azure/azure-storage-file-datalake)

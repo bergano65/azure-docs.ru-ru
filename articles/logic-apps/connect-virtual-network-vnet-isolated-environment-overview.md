@@ -3,19 +3,19 @@ title: Доступ к виртуальным сетям Azure
 description: Общие сведения о том, как среды службы Integration Services (Исес) помогают приложениям логики получать доступ к виртуальным сетям Azure (виртуальных сетей)
 services: logic-apps
 ms.suite: integration
-ms.reviewer: jonfan, logicappspm
+ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
-ms.date: 11/12/2020
-ms.openlocfilehash: 19c9ec39d85bfc56b118498aba62c3752d6d771c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/11/2021
+ms.openlocfilehash: 7bb9c8552f673587891fde12e25d4fb899726c22
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996327"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108574"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
 
-Иногда приложениям логики требуется доступ к защищенным ресурсам, таким как виртуальные машины (VM) и другие системы или службы, которые находятся в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md)или подключены к ней. Чтобы настроить этот доступ, можно [создать *среду службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md). Интегрированная среда сценариев — это экземпляр службы Logic Apps, использующий выделенные ресурсы и выполняемый отдельно от "глобальной" многоклиентской Logic Apps службы.
+Иногда приложениям логики требуется доступ к защищенным ресурсам, таким как виртуальные машины (VM) и другие системы или службы, которые находятся в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md)или подключены к ней. Чтобы настроить этот доступ, можно [создать *среду службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md). Интегрированная среда сценариев — это экземпляр службы Logic Apps, использующий выделенные ресурсы и выполняемый отдельно от "глобальной" многоклиентской Logic Apps службы. Данные в интегрированной среде сценариев остаются в том [же регионе, где вы создаете и развертываете эту интегрированную среду сценариев](https://azure.microsoft.com/global-infrastructure/data-residency/).
 
 Например, некоторые виртуальные сети Azure используют частные конечные точки, которые можно настроить с помощью [частного канала Azure](../private-link/private-link-overview.md), чтобы предоставить доступ к службам Azure PaaS, таким как служба хранилища azure, Azure Cosmos DB или база данных SQL Azure, службы партнера или службы клиентов, размещенные в Azure. Если приложениям логики требуется доступ к виртуальным сетям, использующим частные конечные точки, необходимо создать, развернуть и запустить эти приложения логики в интегрированной среде сценариев.
 
@@ -152,7 +152,7 @@ ms.locfileid: "95996327"
 
 Учетные записи интеграции с приложениями логики можно использовать в среде службы интеграции. Тем не менее эти учетные записи интеграции должны использовать *ту же ISE*, что и связанные приложения логики. Приложения логики в среде ISE могут ссылаться только на те учетные записи интеграции, которые находятся в одной с ними среде ISE. При создании учетной записи интеграции можно выбрать среду ISE в качестве расположения учетной записи интеграции. Чтобы узнать, как цены и данные о выставлении счетов для учетных записей интеграции с интегрированной средой ISE, см. [Logic Appsную модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing). Сведения о тарифах см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/). Сведения об ограничениях см. в разделе [ограничения учетной записи интеграции](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к виртуальным сетям Azure из Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
 * Узнайте больше о [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md).

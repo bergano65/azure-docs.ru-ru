@@ -9,14 +9,14 @@ author: stevestein
 ms.custom: sqldbrb=2
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 07/16/2019
+ms.date: 01/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 7dc6cd580687544226b61a29ca9ccf2d1b8dff42
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: f874803e0ae361255754477ca68184255f35b91f
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92671534"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107384"
 ---
 # <a name="export-to-a-bacpac-file---azure-sql-database-and-azure-sql-managed-instance"></a>Экспорт в файл BACPAC — база данных SQL Azure и Azure SQL Управляемый экземпляр
 
@@ -30,6 +30,7 @@ ms.locfileid: "92671534"
 - Максимальный размер BACPAC-файла при экспорте в хранилище BLOB-объектов составляет 200 ГБ. Для архивации BACPAC-файла большего размера выполняйте экспорт в локальное хранилище.
 - Экспорт BACPAC-файла в службу хранилища Azure уровня "Премиум" с использованием методов, описанных в этой статье, не поддерживается.
 - Хранилище за брандмауэром сейчас не поддерживается.
+- Имя файла хранилища или входное значение для StorageURI должно содержать менее 128 символов и не может заканчиваться символом "." и не может содержать специальные символы, такие как пробел или "<, >, *,%, &,:, \, /,?". 
 - Если операция экспорта длится более 20 часов, она может быть отменена. Для повышения производительности во время экспорта можно сделать следующее.
 
   - Временно повысить объем вычислительных ресурсов.
@@ -54,9 +55,9 @@ ms.locfileid: "92671534"
 
     ![Экспорт базы данных](./media/database-export/database-export2.png)
 
-3. Нажмите кнопку **ОК** .
+3. Нажмите **OK**.
 
-4. Чтобы отслеживать ход выполнения операции экспорта, откройте страницу для сервера, содержащего экспортируемую базу данных. В разделе **Параметры** выберите **Журнал импорта и экспорта** .
+4. Чтобы отслеживать ход выполнения операции экспорта, откройте страницу для сервера, содержащего экспортируемую базу данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**.
 
    ![журнал экспорта](./media/database-export/export-history.png)
 
@@ -89,7 +90,7 @@ $exportRequest = New-AzSqlDatabaseExport -ResourceGroupName $ResourceGroupName -
   -AdministratorLogin $creds.UserName -AdministratorLoginPassword $creds.Password
 ```
 
-Чтобы проверить состояние запроса на экспорт, используйте командлет [Get-азсклдатабасеимпортекспортстатус](/powershell/module/az.sql/get-azsqldatabaseimportexportstatus) . Если выполнить его немедленно после запроса, то обычно возвращается сообщение **Состояние: выполняется** . Отображение сообщения **Состояние: выполнен** означает, что экспорт завершен.
+Чтобы проверить состояние запроса на экспорт, используйте командлет [Get-азсклдатабасеимпортекспортстатус](/powershell/module/az.sql/get-azsqldatabaseimportexportstatus) . Если выполнить его немедленно после запроса, то обычно возвращается сообщение **Состояние: выполняется**. Отображение сообщения **Состояние: выполнен** означает, что экспорт завершен.
 
 ```powershell
 $exportStatus = Get-AzSqlDatabaseImportExportStatus -OperationStatusLink $exportRequest.OperationStatusLink

@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 01/11/2021
 ms.author: victorh
-ms.openlocfilehash: 43755b312a64c429b38a07c8c4fad8c85b08342a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51af9ff4972f5edef02426a6e81e8582123c9a7a
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89437859"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107860"
 ---
 # <a name="use-azure-firewall-to-protect-azure-kubernetes-service-aks-deployments"></a>Защита развертываний службы Azure Kubernetes Service (AKS) с помощью Брандмауэра Azure
 
@@ -24,7 +24,7 @@ Kubernetes управляет кластерами виртуальных маш
 
 Следуйте указаниям в этой статье, чтобы обеспечить дополнительную защиту кластера Azure Kubernetes с помощью брандмауэра Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Развернутый кластер Azure Kubernetes с выполняющимся приложением.
 
@@ -47,11 +47,11 @@ Kubernetes управляет кластерами виртуальных маш
    - TCP [*ипаддрофйоураписервер*]: 443 требуется, если у вас есть приложение, которое должно взаимодействовать с сервером API. Это значение можно изменить после создания кластера.
    - TCP-порт 9000 и UDP-порт 1194 для клиентского модуля туннелирования для взаимодействия с конечным сервером на сервере API.
 
-      Дополнительные сведения см. в разделе **. HCP. <location> . azmk8s.io* и адреса в следующей таблице:
+      Дополнительные сведения см. в адресах в следующей таблице:
 
    | Целевая конечная точка                                                             | Протокол | Порт    | Использование  |
    |----------------------------------------------------------------------------------|----------|---------|------|
-   | **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | Протокол UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
+   | **`*:1194`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:1194`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:1194`** <br/> *Or* <br/> **`APIServerIP:1194`** `(only known after cluster creation)`  | UDP           | 1194      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
    | **`*:9000`** <br/> *Or* <br/> [сервицетаг](../virtual-network/service-tags-overview.md#available-service-tags) - **`AzureCloud.<Region>:9000`** <br/> *Or* <br/> [Региональные Цидрс](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) - **`RegionCIDRs:9000`** <br/> *Or* <br/> **`APIServerIP:9000`** `(only known after cluster creation)`  | TCP           | 9000      | Для туннелирования безопасного взаимодействия между узлами и плоскостью управления. |
 
    - UDP-порт 123 для синхронизации времени по протоколу NTP (узлы Linux).
@@ -74,6 +74,6 @@ Kubernetes управляет кластерами виртуальных маш
    ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе Azure Kubernetes см. в разделе [Основные понятия Kubernetes Core для службы Kubernetes Azure (AKS)](../aks/concepts-clusters-workloads.md).

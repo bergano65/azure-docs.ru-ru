@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: eca2009ee0470dec9c9ce60d8754f8f7a71619d3
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: d9dd07e3a35d83ff6bd9c7c493768d1197667c39
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740544"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108795"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Диагностика и устранение неполадок среды Gen2 "аналитика временных рядов Azure"
 
@@ -71,7 +71,7 @@ ms.locfileid: "97740544"
 - Эта проблема может возникнуть из-за регулирования вашей среды.
 
     > [!NOTE]
-    > В настоящее время служба "Аналитика временных рядов" поддерживает максимальную скорость приема данных 6 Мбит/с.
+    > В настоящее время аналитика временных рядов поддерживает максимальную скорость приема данных в 1 Мбит/с.
 
 ## <a name="problem-data-was-showing-but-now-ingestion-has-stopped"></a>Проблема: данные были показаны, но теперь прием остановлен
 

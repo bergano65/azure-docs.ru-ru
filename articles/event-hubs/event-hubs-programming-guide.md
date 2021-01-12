@@ -4,12 +4,12 @@ description: В этой статье приводятся сведения о �
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 17bec931f79a6dbb3d98270ab0ff6e2d1d4c6541
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f95abe3668bb400d84e354c3bca9eac289c5795
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013917"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108693"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>Руководством по программированию .NET для концентраторов событий Azure (устаревший пакет Microsoft. Azure. EventHubs)
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](./event-hubs-about.md).
@@ -68,7 +68,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 }
 ```
 
-## <a name="partition-key"></a>Ключ секции
+## <a name="partition-key"></a>Ключ раздела
 
 > [!NOTE]
 > Если вы не знакомы с секциями, см. [эту статью](event-hubs-features.md#partitions). 
@@ -144,7 +144,6 @@ await eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>();
 > [!NOTE]
 > В настоящее время эта функция поддерживается только REST API ([отзыв издателя](/rest/api/eventhub/revoke-publisher)).
 
-Дополнительные сведения об отзыве издателя и отправке в Центры событий в качестве издателя см. в примере, приведенном в статье [Event Hubs Large Scale Secure Publishing](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) (Крупномасштабная безопасная публикация Центров событий).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

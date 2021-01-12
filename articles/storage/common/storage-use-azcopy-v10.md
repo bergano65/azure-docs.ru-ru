@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 6232b315abf8840d6fd77d02e3e928c0004746a0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: ab3cb403a8757f424a141206f99f9c29bf3e0b49
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029334"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108154"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -105,7 +105,7 @@ azcopy copy "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/
 
 | Служба | Статья |
 |--------|-----------|
-|Хранилище BLOB-объектов Azure |[Отправка файлов в хранилище BLOB-объектов Azure](storage-use-azcopy-blobs-upload.md)<br><br>[Скачивание больших двоичных объектов из хранилища BLOB-объектов Azure](storage-use-azcopy-blobs-download.md)<br><br>[Копирование больших двоичных объектов между учетными записями хранения Azure](storage-use-azcopy-blobs-download.md)<br><br>[Синхронизация с хранилищем BLOB-объектов Azure](storage-use-azcopy-blobs-download.md)|
+|Хранилище BLOB-объектов Azure |[Отправка файлов в хранилище BLOB-объектов Azure](storage-use-azcopy-blobs-upload.md)<br><br>[Скачивание больших двоичных объектов из хранилища BLOB-объектов Azure](storage-use-azcopy-blobs-download.md)<br><br>[Копирование больших двоичных объектов между учетными записями хранения Azure](storage-use-azcopy-blobs-copy.md)<br><br>[Синхронизация с хранилищем BLOB-объектов Azure](storage-use-azcopy-blobs-synchronize.md)|
 |Файлы Azure |[Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)|
 |Amazon S3|[Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)|
 |Хранилище Azure Stack|[Перенос данных с помощью AzCopy и хранилища Azure Stack](/azure-stack/user/azure-stack-storage-transfer#azcopy)|

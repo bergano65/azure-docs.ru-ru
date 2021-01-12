@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы
 description: Содержит ответы на некоторые распространенные вопросы о решении Azure VMware.
 ms.topic: conceptual
 ms.date: 1/4/2020
-ms.openlocfilehash: d0228739a6ee4eac20d2fa04e47cf86b6fddb84e
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 1420fba40492e1a5f45f4ad5e58da2caa29ae7e7
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881231"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107962"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -29,6 +29,10 @@ ms.locfileid: "97881231"
 #### <a name="can-workloads-running-in-an-azure-vmware-solution-instance-consume-or-integrate-with-azure-services"></a>Могут ли рабочие нагрузки, работающие в экземпляре решения Azure VMware, использовать или интегрировать со службами Azure?
 
 Все службы Azure будут доступны клиентам Azure VMware. Ограничения производительности и доступности для конкретных служб следует решать на индивидуальной основе.
+
+#### <a name="what-guest-operating-systems-are-compatible-with-azure-vmware-solution"></a>Какие операционные системы на виртуальной машине совместимы с решением VMware для Azure?
+
+Сведения о совместимости операционной системы на виртуальной машине с vSphere можно найти в статье Использование [руководств по совместимости с VMware](https://www.vmware.com/resources/compatibility/search.php?deviceCategory=software&details=1&releases=485&page=1&display_interval=10&sortColumn=Partner&sortOrder=Asc&testConfig=16).  Чтобы определить версию vSphere, работающую в решении VMware для Azure, см. статью [версии программного обеспечения VMware](concepts-private-clouds-clusters.md#vmware-software-versions).
 
 #### <a name="do-i-use-the-same-tools-that-i-use-now-to-manage-private-cloud-resources"></a>Будут ли у меня те же средства, которые я использую сейчас, для управления ресурсами частного облака?
 

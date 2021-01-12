@@ -12,21 +12,23 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 8b95c5a45992c895713e0be056856172b14b830d
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 52b52c4c19b22fb1afd76d1e8dfa4163326c0244
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740680"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108596"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 
 
-В этой статье вы узнаете, как работать с [машинное обучение Azure наборами данных](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) в учебных экспериментах.  Наборы данных можно использовать в локальном или удаленном целевом объекте вычислений, не беспокоясь о строках подключения или путях к данным.
+Из этой статьи вы узнаете, как работать с [машинное обучение Azureными наборами данных](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) для обучения моделей машинного обучения.  Наборы данных можно использовать в локальном или удаленном целевом объекте вычислений, не беспокоясь о строках подключения или путях к данным. 
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) как [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), а также [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+Если вы не готовы сделать данные доступными для обучения модели, но хотите загрузить данные в записную книжку для просмотра данных, см. статью [изучение данных в наборе](how-to-create-register-datasets.md#explore-data)данных. 
+
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -34,7 +36,7 @@ ms.locfileid: "97740680"
 
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
 
-* [Установленный пакет SDK машинное обучение Azure для Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0), включающий пакет azureml-DataSets.
+* [Установленный пакет SDK машинное обучение Azure для Python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0), который включает в себя `azureml-datasets` пакеты.
 
 > [!Note]
 > Некоторые классы наборов данных имеют зависимости от пакета [azureml-](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
@@ -65,7 +67,7 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path)
 > [!Note]
 > Если исходный источник данных содержит NaN, пустые строки или пустые значения, то при использовании `to_pandas_dataframe()` эти значения заменяются значением *null* .
 
-Если необходимо загрузить подготовленные данные в новый набор данных из Pandas данных в памяти, запишите данные в локальный файл, например в Parquet, и создайте новый набор данных из этого файла. Наборы данных можно также создавать из локальных файлов или путей в хранилищах данных. Дополнительные сведения о [создании наборов данных](how-to-create-register-datasets.md).
+Если необходимо загрузить подготовленные данные в новый набор данных из Pandas данных в памяти, запишите данные в локальный файл, например в Parquet, и создайте новый набор данных из этого файла. Дополнительные сведения о [создании наборов данных](how-to-create-register-datasets.md).
 
 ```Python
 %%writefile $script_folder/train_titanic.py
