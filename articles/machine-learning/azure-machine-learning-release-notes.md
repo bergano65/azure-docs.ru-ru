@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 0ecf47ecdc66c0005f0d793d91a67af102fb1c76
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 4ba06af98714004e4429fe802a206acdfa8fb148
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98107911"
+ms.locfileid: "98127623"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -27,8 +27,6 @@ ms.locfileid: "98107911"
 + **Исправления ошибок и улучшения**
   + **azure-cli-ml**
     + framework_version добавлен в Оптимизатионконфиг. Он будет использоваться при регистрации модели в платформе MULTI.
-  + **azureml-automl-runtime**
-    + В этом обновлении мы добавили холтные зима экспоненциального сглаживания к панели элементов прогнозирования Аутомл SDK. При наличии временных рядов оптимальная модель выбирается с помощью [AICc (исправленный Акаике информации)](https://otexts.com/fpp3/selecting-predictors.html#selecting-predictors) и возвращается.
   + **azureml-от участников сообщества-Optimization**
     + framework_version добавлен в Оптимизатионконфиг. Он будет использоваться при регистрации модели в платформе MULTI.
   + **azureml-pipeline-steps**
@@ -1597,13 +1595,13 @@ ms.locfileid: "98107911"
   + **azureml-train-core**
     + Добавлена поддержка TensorFlow 2,0 в Оценщике TensorFlow.
   + **azureml-Training-аутомл**
-    + Создание объекта [эксперимента](/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример.
+    + Создание объекта [эксперимента](/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример
 
         ```py
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        Функция [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример.
+        Функция [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример
 
         ```py
         experiment1 = Experiment(workspace, "Active Experiment")
@@ -1612,7 +1610,7 @@ ms.locfileid: "98107911"
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример.
+        Список статических методов [()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример
 
         ```py
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")

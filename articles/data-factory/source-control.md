@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: e839b8a22da50ce172043f57a4467219a1771175
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 27f14834e45dd32bdf3a26d22d38ab250aa1bcbe
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584207"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127742"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -25,6 +25,7 @@ ms.locfileid: "97584207"
 
 - Служба фабрики данных не содержит репозиторий для хранения сущностей JSON для изменений. Единственный способ сохранить изменения — с помощью кнопки **Опубликовать все**. Все изменения публикуются непосредственно в службе фабрики данных.
 - Служба "Фабрика данных" не оптимизирована для совместной работы и управления версиями.
+- Шаблон Azure Resource Manager, необходимый для развертывания фабрики данных, не включен.
 
 Чтобы сделать процесс разработки удобнее, Фабрика данных Azure позволяет настроить репозиторий Git в Azure Repos или GitHub. Git — это система управления версиями, упрощающая отслеживание изменений и совместную работу. В этой статье описывается, как настроить и работать в репозитории Git вместе с рекомендациями и руководством по устранению неполадок.
 

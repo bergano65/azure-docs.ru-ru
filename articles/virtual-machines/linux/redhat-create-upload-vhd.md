@@ -8,12 +8,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: danis
-ms.openlocfilehash: 065b4348675fcd48088fd26db0e0293eb2d7a387
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 751d447c164c602b9b1524d4945d61556bf71932
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97896470"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127300"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Подготовка виртуальной машины на основе Red Hat для Azure
 В этой статье вы узнаете, как подготовить виртуальную машину Red Hat Enterprise Linux (RHEL) для использования в Azure. В статье описываются версии RHEL 6.7+ и 7.1+. Низкоуровневые оболочки для подготовки, о которых идет речь в этой статье, — это Hyper-V, Kernel-based Virtual Machine (KVM) и VMware. Подробнее о требованиях к участникам в программе Red Hat Cloud Access см. на [веб-сайте Red Hat Cloud Access](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) и странице [запуска RHEL в Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Способы автоматизации создания образов RHEL см. в разделе [Построитель образов Azure](./image-builder-overview.md).
@@ -200,11 +200,14 @@ ms.locfileid: "97896470"
 
 1. Измените строку загрузки ядра в конфигурации grub, чтобы включить дополнительные параметры ядра для Azure. Для этого откройте файл `/etc/default/grub` в текстовом редакторе и измените параметр `GRUB_CMDLINE_LINUX`. Пример:
 
+    
     ```config-grub
-    GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
+    GRUB_CMDLINE_LINUX="rootdelay=300 console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200 earlyprintk=ttyS0 net.ifnames=0"
+    GRUB_TERMINAL_OUTPUT="serial console"
+    GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1
     ```
    
-   Это также гарантирует отправку всех сообщений консоли на первый последовательный порт, что может помочь технической поддержке Azure в плане отладки. Также будут отключены новые соглашения об именовании RHEL 7 для сетевых карт. В дополнение к вышесказанному мы рекомендуем удалить следующие параметры:
+    Это также обеспечит отправку всех сообщений консоли первому последовательному порту и включение взаимодействия с последовательной консолью, что может помочь в поддержке Azure с проблемами отладки. Также будут отключены новые соглашения об именовании RHEL 7 для сетевых карт.
 
     ```config
     rhgb quiet crashkernel=auto
@@ -217,6 +220,8 @@ ms.locfileid: "97896470"
     ```console
     # sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ```
+    > [!NOTE]
+    > При отправке виртуальной машины с поддержкой UEFI команда для обновления GRUB имеет значение `grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg` .
 
 1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки (что обычно задано по умолчанию). Измените файл `/etc/ssh/sshd_config` , добавив в него следующую строку:
 
@@ -230,31 +235,40 @@ ms.locfileid: "97896470"
     # subscription-manager repos --enable=rhel-7-server-extras-rpms
     ```
 
-1. Установите агент Linux для Azure, выполнив следующую команду:
+1. Установите агент Linux для Azure, Cloud-init и другие необходимые служебные программы, выполнив следующую команду:
 
     ```console
-    # sudo yum install WALinuxAgent
+    # sudo yum install -y WALinuxAgent cloud-init cloud-utils-growpart gdisk hyperv-daemons
 
     # sudo systemctl enable waagent.service
+    # sudo systemctl enable cloud-init.service
     ```
 
-1. Установка Cloud-init для решения подготовки
+1. Настройте Cloud-init для выполнения подготовки:
+
+    1. Настройка waagent для Cloud-init:
 
     ```console
-    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
-
-    # Configure waagent for cloud-init
-    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
-    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Agent=auto/Provisioning.Agent=cloud-init/g' /etc/waagent.conf
     sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
     sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+    ```
+    > [!NOTE]
+    > Если вы переносите определенную виртуальную машину и не хотите создавать обобщенные образы, установите `Provisioning.Agent=disabled` в `/etc/waagent.conf` конфигурации.
+    
+    1. Настройка подключений:
 
+    ```console
     echo "Adding mounts and disk_setup to init stage"
     sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
     sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
     sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
     sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+    ```
+    
+    1. Настройка источника данных Azure:
 
+    ```console
     echo "Allow only Azure datasource, disable fetching network setting via IMDS"
     cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
     datasource_list: [ Azure ]
@@ -262,13 +276,206 @@ ms.locfileid: "97896470"
     Azure:
         apply_network_config: False
     EOF
+    ```
 
+    1. Если настроено, удалите существующие файл подкачки:
+
+    ```console
     if [[ -f /mnt/resource/swapfile ]]; then
-    echo Removing swapfile - RHEL uses a swapfile by default
+    echo "Removing swapfile" #RHEL uses a swapfile by defaul
     swapoff /mnt/resource/swapfile
     rm /mnt/resource/swapfile -f
     fi
+    ```
+    1. Настройка ведения журнала Cloud-init:
+    ```console
+    echo "Add console log file"
+    cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
 
+    # This tells cloud-init to redirect its stdout and stderr to
+    # 'tee -a /var/log/cloud-init-output.log' so the user can see output
+    # there without needing to look on the console.
+    output: {all: '| tee -a /var/log/cloud-init-output.log'}
+    EOF
+
+    ```
+
+1. Конфигурация переключения не создает пространство подкачки на диске операционной системы.
+
+    Ранее агент Linux для Azure использовал автоматическую настройку области подкачки с помощью локального диска ресурсов, подключенного к виртуальной машине после подготовки виртуальной машины в Azure. Однако это теперь обрабатывается с помощью Cloud-init, поэтому **не следует** использовать агент Linux для форматирования диска ресурсов. Создайте файл подкачки, измените следующие параметры соответствующим образом `/etc/waagent.conf` :
+
+    ```console
+    ResourceDisk.Format=n
+    ResourceDisk.EnableSwap=n
+    ```
+
+    Если требуется подключить, отформатировать и создать подкачку, можно выполнить одно из следующих действий.
+    * Передавайте это в качестве конфигурации Cloud-init при каждом создании виртуальной машины.
+    * Используйте директиву Cloud-init, помогут в образ, который будет выполнять это при каждом создании виртуальной машины:
+
+        ```console
+        cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+        #cloud-config
+        # Generated by Azure cloud image build
+        disk_setup:
+          ephemeral0:
+            table_type: mbr
+            layout: [66, [33, 82]]
+            overwrite: True
+        fs_setup:
+          - device: ephemeral0.1
+            filesystem: ext4
+          - device: ephemeral0.2
+            filesystem: swap
+        mounts:
+          - ["ephemeral0.1", "/mnt"]
+          - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+        EOF
+        ```
+1. Чтобы отменить регистрацию подписки, выполните следующую команду:
+
+    ```console
+    # sudo subscription-manager unregister
+    ```
+
+1. Отзыв
+
+    Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
+
+    > [!CAUTION]
+    > Если вы переносите определенную виртуальную машину и не хотите создавать обобщенные образы, пропустите этап отмены наполнения. Выполнение команды `waagent -force -deprovision` сделает исходный компьютер непригодным для использования. Этот шаг предназначен только для создания обобщенного образа.
+    ```console
+    # sudo waagent -force -deprovision
+
+    # export HISTSIZE=0
+
+    # logout
+    ```
+    
+
+1. Щелкните **действие**  >  **Завершение работы** в диспетчере Hyper-V. Виртуальный жесткий диск Linux готов к передаче в Azure.
+
+### <a name="rhel-8-using-hyper-v-manager"></a>RHEL 8 с помощью диспетчера Hyper-V
+
+1. В диспетчере Hyper-V выберите виртуальную машину.
+
+1. Щелкните **Подключение** , чтобы открыть окно консоли для виртуальной машины.
+
+1. Убедитесь, что служба диспетчера сети запустится во время загрузки, выполнив следующую команду:
+
+    ```console
+    # sudo systemctl enable NetworkManager.service
+    ```
+
+1. Настройте сетевой интерфейс для автоматического запуска при загрузке и используйте DHCP:
+
+    ```console
+    # nmcli con mod eth0 connection.autoconnect yes ipv4.method auto
+    ```
+
+
+1. Зарегистрируйте подписку Red Hat, чтобы активировать установку пакетов из репозитория RHEL, запустив следующую команду:
+
+    ```console
+    # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
+    ```
+
+1. Измените строку загрузки ядра в конфигурации GRUB, чтобы включить дополнительные параметры ядра для Azure и включить последовательную консоль. 
+
+    1. Удалить текущие параметры GRUB:
+    ```console
+    # grub2-editenv - unset kernelopts
+    ```
+
+    1. Измените `/etc/default/grub` в текстовом редакторе и добавьте следующий примечанием:
+
+    ```config-grub
+    GRUB_CMDLINE_LINUX="rootdelay=300 console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200 earlyprintk=ttyS0 net.ifnames=0"
+    GRUB_TERMINAL_OUTPUT="serial console"
+    GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"
+    ```
+   
+   Это также обеспечит отправку всех сообщений консоли первому последовательному порту и включение взаимодействия с последовательной консолью, что может помочь в поддержке Azure с проблемами отладки. Также будут отключены новые соглашения об именовании RHEL 7 для сетевых карт.
+   
+   1. Кроме того, рекомендуется удалить следующие параметры:
+
+    ```config
+    rhgb quiet crashkernel=auto
+    ```
+   
+    Графическая и "тихая" загрузка бесполезны в облачной среде, в которой нам нужно, чтобы все журналы отправлялись на последовательный порт. При желании можно оставить параметр `crashkernel`. Обратите внимание, что этот параметр сокращает объем доступной памяти на виртуальной машине на 128 MБ и более. Это может оказаться проблемой для виртуальных машин небольшого размера.
+
+1. После внесения изменений в файл `/etc/default/grub`выполните следующую команду, чтобы повторно создать конфигурацию grub:
+
+    ```console
+    # sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    ```
+    Для виртуальной машины с включенной UEFI выполните следующую команду:
+
+    ```console
+    # sudo grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+    ```
+
+1. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки (что обычно задано по умолчанию). Измените файл `/etc/ssh/sshd_config` , добавив в него следующую строку:
+
+    ```config
+    ClientAliveInterval 180
+    ```
+
+1. Установите агент Linux для Azure, Cloud-init и другие необходимые служебные программы, выполнив следующую команду:
+
+    ```console
+    # sudo yum install -y WALinuxAgent cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # sudo systemctl enable waagent.service
+    # sudo systemctl enable cloud-init.service
+    ```
+
+1. Настройте Cloud-init для выполнения подготовки:
+
+    1. Настройка waagent для Cloud-init:
+
+    ```console
+    sed -i 's/Provisioning.Agent=auto/Provisioning.Agent=cloud-init/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+    ```
+    > [!NOTE]
+    > Если вы переносите определенную виртуальную машину и не хотите создавать обобщенные образы, установите `Provisioning.Agent=disabled` в `/etc/waagent.conf` конфигурации.
+    
+    1. Настройка подключений:
+
+    ```console
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+    ```
+    
+    1. Настройка источника данных Azure:
+
+    ```console
+    echo "Allow only Azure datasource, disable fetching network setting via IMDS"
+    cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
+    datasource_list: [ Azure ]
+    datasource:
+    Azure:
+        apply_network_config: False
+    EOF
+    ```
+
+    1. Если настроено, удалите существующие файл подкачки:
+
+    ```console
+    if [[ -f /mnt/resource/swapfile ]]; then
+    echo "Removing swapfile" #RHEL uses a swapfile by defaul
+    swapoff /mnt/resource/swapfile
+    rm /mnt/resource/swapfile -f
+    fi
+    ```
+    1. Настройка ведения журнала Cloud-init:
+    ```console
     echo "Add console log file"
     cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
 
@@ -323,14 +530,15 @@ ms.locfileid: "97896470"
     Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
 
     ```console
-    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
-    # skip the deprovision step
     # sudo waagent -force -deprovision
 
     # export HISTSIZE=0
 
     # logout
     ```
+    > [!CAUTION]
+    > Если вы переносите определенную виртуальную машину и не хотите создавать обобщенные образы, пропустите этап отмены наполнения. Выполнение команды `waagent -force -deprovision` сделает исходный компьютер непригодным для использования. Этот шаг предназначен только для создания обобщенного образа.
+
 
 1. Щелкните **действие**  >  **Завершение работы** в диспетчере Hyper-V. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
@@ -1222,7 +1430,7 @@ ms.locfileid: "97896470"
 
 1. Откройте параметры виртуальной машины:
 
-    а.  Подключите новый виртуальный жесткий диск к виртуальной машине. Выберите параметры **VHD Format** (Формат VHD) и **Фиксированный размер**.
+    a.  Подключите новый виртуальный жесткий диск к виртуальной машине. Выберите параметры **VHD Format** (Формат VHD) и **Фиксированный размер**.
 
     b.  Подключите установочный ISO-образ к DVD-дисководу.
 

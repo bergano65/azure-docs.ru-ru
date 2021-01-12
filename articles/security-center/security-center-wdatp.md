@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 34d8881eb072c4c723bf68b7c6ccfd24ab19cd3c
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 553151aebeadf4ad4764e747b1bf6dcd8c552721
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116285"
+ms.locfileid: "98126858"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Защитите свои конечные точки с помощью интегрированного решения ЕДР центра безопасности: защитник Майкрософт для конечной точки
 
@@ -71,7 +71,7 @@ ms.locfileid: "98116285"
 
 При использовании центра безопасности Azure для мониторинга серверов автоматически создается защитник Майкрософт для клиента конечной точки. Данные, собранные защитником для конечной точки, хранятся в географическом расположении клиента, как определено во время подготовки. Данные клиента — в анонимные Forms могут также храниться в центральных хранилищах и системах обработки в США. 
 
-После настройки расположения его нельзя изменить. Если необходимо переместить данные в другое расположение, обратитесь в служба поддержки Майкрософт для сброса клиента.
+После настройки расположения его нельзя изменить. Если у вас есть собственная лицензия для защитника Майкрософт для конечной точки и необходимо переместить данные в другое расположение, обратитесь в служба поддержки Майкрософт для сброса клиента.
 
 
 ## <a name="enabling-the-microsoft-defender-for-endpoint-integration"></a>Включение защитника Майкрософт для интеграции конечных точек
@@ -94,7 +94,7 @@ ms.locfileid: "98116285"
 
 ## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Доступ к Microsoft Defender для портала конечной точки
 
-1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее.](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access)
+1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
 
 1. Проверьте наличие прокси-сервера или брандмауэра, блокирующего анонимный трафик. Защитник для датчика конечных точек подключается к системному контексту, поэтому необходимо разрешить анонимный трафик. Чтобы обеспечить неограниченный доступ к защитнику для портала конечной точки, следуйте инструкциям в разделе [Включение доступа к URL-адресам служб на прокси-сервере](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server).
 

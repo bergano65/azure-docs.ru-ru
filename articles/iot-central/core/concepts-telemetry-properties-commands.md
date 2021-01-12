@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 87fb7f0eb4017a39aca081f73de543a67400d4b5
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 5a9f6fa79da59425e4972dddd21ffdea15af73e7
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97969067"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127912"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Полезные данные телеметрии, свойств и команд
 
@@ -187,6 +187,9 @@ IoT Central позволяет просматривать необработан
   "schema": "geopoint"
 }
 ```
+
+> [!NOTE]
+> Тип схемы **геоточек** не является частью [спецификации языка определения цифровых двойников](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). В настоящее время IoT Central поддерживает тип схемы **географической** **точки** и тип семантики расположения для обеспечения обратной совместимости.
 
 Клиент устройства должен отправить данные телеметрии как JSON, который выглядит, как в следующем примере. IoT Central отображает значение в виде ПИН-кода на карте:
 
@@ -575,6 +578,9 @@ IoT Central позволяет просматривать необработан
   "writable": false
 }
 ```
+
+> [!NOTE]
+> Тип схемы **геоточек** не является частью [спецификации языка определения цифровых двойников](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). В настоящее время IoT Central поддерживает тип схемы **географической** **точки** и тип семантики расположения для обеспечения обратной совместимости.
 
 Клиент устройства должен отправить полезные данные JSON, как в следующем примере, как сообщаемое свойство в двойникае устройства:
 
