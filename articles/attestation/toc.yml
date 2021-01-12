@@ -15,6 +15,8 @@
   items:
     - name: Создание политики аттестации
       href: author-sign-policy.md
+    - name: Создание частной конечной точки с помощью PowerShell
+      href: private-endpoint-powershell.md
     - name: Примеры кода для аттестации SGX
       href: /samples/browse/?expanded=azure&terms=attestation
 - name: Примеры

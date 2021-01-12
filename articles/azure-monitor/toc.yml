@@ -127,7 +127,7 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: видны узлы
+    - name: Предупреждения
       items:
         - name: Обзор
           href: platform/alerts-overview.md
@@ -226,6 +226,8 @@
               href: platform/service-providers.md
             - name: Кластеры категории "Выделенный"
               href: log-query/logs-dedicated-clusters.md
+            - name: Журналы для устранения неполадок
+              href: platform/azure-monitor-troubleshooting-logs.md
         - name: Log Analytics
           items:
             - name: Обзор
