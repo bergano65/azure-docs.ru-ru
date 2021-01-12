@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: a9d8c42432d619ab120afd0bd5734f6fa269b514
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: db85bf19c1b040fea1ed2f5d6dcf904288366c7f
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458108"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050244"
 ---
 # <a name="tutorial-explore-azure-digital-twins-with-a-sample-client-app"></a>Руководство по Изучение Azure Digital Twins с помощью примера клиентского приложения
 
@@ -51,27 +51,15 @@ ms.locfileid: "96458108"
 1. **Измените свойство**. Измените имя свойства `Humidity` на *HumidityLevel* или на другое имя, которое вам больше нравится. Однако не забывайте, что если вы используете имя, отличное от *HumidityLevel*, то должны будете указывать это имя вместо *HumidityLevel* на протяжении всего учебника).
 1. **Добавьте свойство**. Под свойством `HumidityLevel`, которое заканчивается на строке 15, вставьте следующий код, чтобы добавить свойство `RoomName` к объекту room.
 
-    ```json
-    ,
-    {
-      "@type": "Property",
-      "name": "RoomName",
-      "schema": "string"
-    }
-    ```
+    :::code language="json" source="~/digital-twins-docs-samples/models/Room.json" range="16-20":::
+
 1. **Добавьте связь**. Под только что добавленным свойством `RoomName` вставьте следующий код, чтобы добавить для этого типа двойника возможность формировать связи *contains* с другими двойниками.
 
-    ```json
-    ,
-    {
-      "@type": "Relationship",
-      "name": "contains"
-    }
-    ```
+    :::code language="json" source="~/digital-twins-docs-samples/models/Room.json" range="21-24":::
 
 Когда вы закончите, обновленная модель должна выглядеть следующим образом:
 
-:::image type="content" source="media/tutorial-command-line-app/room-model.png" alt-text="Room.json с обновленным номером версии, свойствами HumidityLevel и RoomName и связью contains" border="false":::
+:::code language="json" source="~/digital-twins-docs-samples/models/Room.json":::
 
 Обязательно сохраните этот файл, прежде чем двигаться дальше.
 

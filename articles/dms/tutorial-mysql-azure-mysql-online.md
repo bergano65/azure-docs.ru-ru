@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 41c0bd23bbd2d69506a979c5a36ac40f73258f2c
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: ab03e0bdf7761e45a134ec90685955403fbc433b
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605519"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060390"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос MySQL в Базу данных Azure для MySQL по сети с помощью DMS
 
@@ -237,7 +237,7 @@ SELECT Concat('DROP TRIGGER ', Trigger_Name, ';') FROM  information_schema.TRIGG
 
     ![Сопоставление с целевыми базами данных](media/tutorial-mysql-to-azure-mysql-online/dms-map-target-details.png)
    > [!NOTE] 
-   > Хотя на этом шаге вы можете выбрать несколько баз данных, каждый экземпляр Azure Database Migration Service поддерживает до четырех баз данных для параллельной миграции. Кроме того, в подписке действует ограничение в два экземпляра Azure Database Migration Service на регион. Например, если вы переносите 40 баз данных, вы можете параллельно перенести только 8 из них и только при наличии двух экземпляров Azure Database Migration Service.
+   > Хотя на этом шаге вы можете выбрать несколько баз данных, каждый экземпляр Azure Database Migration Service поддерживает до четырех баз данных для параллельной миграции. Кроме того, в каждой подписке действует ограничение в 10 экземпляров Azure Database Migration Service на регион. Например, если вы переносите 80 баз данных, в один регион вы можете параллельно перенести 40 из них и только при наличии 10 экземпляров Azure Database Migration Service.
 
 3. Нажмите кнопку **Сохранить** в окне **Migration summary** (Сводка по миграции) и в поле **Имя действия** введите имя действия миграции, а затем проверьте соответствие сведениям о целевом и исходном сервере, которые вы указали ранее.
 

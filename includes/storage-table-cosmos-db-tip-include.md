@@ -4,13 +4,13 @@ ms.service: storage
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
-ms.openlocfilehash: b771b56c4513713ae2a6553f48f320f2d2d5f5cc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f64abe6db03263f342aa953dc3d43d9929b21ecb
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025700"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98052810"
 ---
 > [!TIP]
-> Сведения в этой статье применимы к обычному хранилищу таблиц Azure. Однако теперь существует предложение категории "Премиум" для хранилища таблиц: API таблиц Azure Cosmos DB. Этот API предоставляет оптимизированные для пропускной способности таблицы, глобальное распределение и автоматические вторичные индексы. Существуют некоторые [различия в функциях между API таблиц в Azure Cosmos DB и хранилищем таблиц Azure](../articles/cosmos-db/table-api-faq.md#table-api-vs-table-storage). См. дополнительные сведения об [API таблиц Azure Cosmos DB](../articles/cosmos-db/table-introduction.md). 
+> Сведения в этой статье применимы к обычному хранилищу таблиц Azure. Но теперь доступно альтернативное предложение для хранилища таблиц — API таблиц Azure Cosmos DB. Этот API обеспечивает более высокую производительность и доступность, глобальное распределение и автоматические вторичные индексы. Он также доступен в [бессерверном](../articles/cosmos-db/serverless.md) режиме, основанном на потреблении. Есть некоторые [различия в функциях](../articles/cosmos-db/table-api-faq.md#table-api-vs-table-storage) между API таблиц в Azure Cosmos DB и хранилищем таблиц Azure. Дополнительные сведения см. в статье [Знакомство со службой Azure Cosmos DB. API таблицы](../articles/cosmos-db/table-introduction.md). 
 >

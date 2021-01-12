@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 11/20/2020
+ms.date: 01/08/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: cf638e1de116532136b9e78df1933048c8305b7b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 907bf06c009738eb098532ac5ff53e13dbd16826
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005472"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98047713"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -65,3 +65,4 @@ ms.locfileid: "96005472"
 |[Учетная запись хранения, содержащая контейнер с журналами действий, должна быть зашифрована с помощью BYOK](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffbb99e8e-e444-4da0-9ff1-75c92f5a85b2) |Эта политика проверяет, зашифрована ли учетная запись хранения, содержащая контейнер с журналами действий, с помощью BYOK. Эта политика применяется только в том случае, если проект реализован так, что учетная запись хранения находится в той же подписке, что и журналы действий. Дополнительные сведения о шифровании неактивных данных в службе хранилища Azure см. на странице [https://aka.ms/azurestoragebyok](https://aka.ms/azurestoragebyok).  |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_StorageAccountBYOK_Audit.json) |
 |[Агент Log Analytics должен быть установлен в масштабируемом наборе виртуальных машин](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fefbde977-ba53-4479-b8e9-10b957924fbf) |Эта политика выполняет аудит всех масштабируемых наборов виртуальных машин Windows или Linux, в которых не установлен агент Log Analytics. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/VMSS_LogAnalyticsAgent_AuditIfNotExists.json) |
 |[Агент Log Analytics должен быть установлен на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa70ca396-0a34-413a-88e1-b956c1e683be) |Эта политика выполняет аудит всех виртуальных машин Windows или Linux, на которых не установлен агент Log Analytics. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/VirtualMachines_LogAnalyticsAgent_AuditIfNotExists.json) |
+|[Книги следует сохранять в учетных записях хранения, которыми вы управляете](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F6fc8115b-2008-441f-8c61-9b722c1e537f) |Если вы используете собственное хранилище (BYOS), ваши книги отправляются в учетную запись хранения, которой вы управляете. Это означает, что вы управляете политикой шифрования неактивных объектов, политикой управления жизненным циклом и доступом к сети. При этом вы несете ответственность за затраты, связанные с этой учетной записью хранения. Дополнительные сведения см. по адресу [https://aka.ms/workbooksByos](https://aka.ms/workbooksByos). |deny, audit, disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/Workbooks_BYOSEnabled_Audit.json) |
