@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 10/20/2020
 ms.author: midesa
-ms.openlocfilehash: 8735514b639cb0322a83ffb19d661027327c0f73
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8768b8f8c7bf70b184971abc6ce27e2193823dea
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458769"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121555"
 ---
 # <a name="analyze-data-with-apache-spark"></a>Анализ данных с помощью Apache Spark
 
@@ -21,11 +21,11 @@ ms.locfileid: "96458769"
 
 В частности, мы проанализируем набор данных о [такси городе Нью-Йорк (Нью)](https://azure.microsoft.com/en-us/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) . Данные доступны через открытые наборы данных Azure. Это подмножество набора данных содержит сведения о желтых поездках в такси, включая сведения о каждом путешествии, начальное и конечное время и местоположения, стоимость и другие интересные атрибуты.
   
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 - Создайте пул Apache Spark, следуя [учебнику создание пула Apache Spark](../articles/../quickstart-create-apache-spark-pool-studio.md) . 
 
 ## <a name="download-and-prepare-the-data"></a>Скачивание и подготовка данных
-1. Создайте записную книжку, используя ядро PySpark. Инструкции см. [в разделе Создание записной книжки](https://docs.microsoft.com/azure/synapse-analytics/quickstart-apache-spark-notebook#create-a-notebook). 
+1. Создайте записную книжку, используя ядро PySpark. Инструкции см. [в разделе Создание записной книжки](../quickstart-apache-spark-notebook.md#create-a-notebook). 
    
 > [!Note]
 > 
@@ -180,5 +180,5 @@ plt.show()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+- [Azure Synapse Analytics](../index.yml)
 - [Официальная документация по Apache Spark](https://spark.apache.org/docs/latest/)
