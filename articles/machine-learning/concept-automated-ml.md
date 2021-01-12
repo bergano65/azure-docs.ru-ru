@@ -6,17 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: 2d759a8ed58d5b323f9894a5127c222ce1f75c52
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: ee9267637c5e3250bfcd543ca46c39d513725819
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97345982"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072230"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Что такое автоматизированное машинное обучение (AutoML)?
 
@@ -276,7 +275,7 @@ ms.locfileid: "97345982"
 
  + **Сведения о низком или недоступном коде** см. в [руководстве по созданию автоматизированных моделей классификации ML с помощью машинное обучение Azure Studio](tutorial-first-experiment-automated-ml.md).
 
-В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. например следующие. 
+В статье приводятся дополнительные сведения о возможностях, предоставляемых Аутомл. Например, 
 
 + Настройка параметров для экспериментов автоматического обучения
     + В Студии машинного обучения Azure выполните [эти инструкции](how-to-use-automated-ml-for-ml-models.md). 

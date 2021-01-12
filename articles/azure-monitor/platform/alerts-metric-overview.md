@@ -1,15 +1,15 @@
 ---
 title: Узнайте о работе оповещений о метриках в Azure Monitor.
 description: Ознакомьтесь с обзором действий, применимых к оповещениям о метриках, а также узнайте о том, как они работают в Azure Monitor.
-ms.date: 09/30/2020
+ms.date: 01/11/2021
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 066ffff5979e658a7c06fe10bd668a9fac839a14
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 424cc9db01f1eb6300c2915795f3e2c37b34449f
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460847"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071057"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
@@ -137,7 +137,7 @@ ms.locfileid: "96460847"
 
 | Служба | Public Azure (Общедоступные Azure) | Государственный сектор | Китай |
 |:--------|:--------|:--------|:--------|
-| Виртуальные машины<sup>1</sup>  | **Да** | Нет | Нет |
+| Виртуальные машины<sup>1</sup>  | **Да** | **Да** | Нет |
 | Базы данных SQL Server | **Да** | **Да** | **Да** |
 | Эластичные пулы SQL Server | **Да** | **Да** | **Да** |
 | Пулы емкости NetApp файлов | **Да** | **Да** | **Да** |

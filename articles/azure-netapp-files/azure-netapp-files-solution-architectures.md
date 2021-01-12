@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/04/2020
+ms.date: 01/11/2021
 ms.author: b-juche
-ms.openlocfilehash: 919a9831731a8f7c8065f2f1c496691ae33ba659
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: a66b5d59415aad7abf3e8dc95c7498b5d774d640
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861980"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071278"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -136,6 +136,7 @@ ms.locfileid: "97861980"
 * [Интеграция Azure NetApp Files со службой Kubernetes Azure](../aks/azure-netapp-files.md)
 * [Kubernetes производительность в Azure с помощью Azure NetApp Files](https://cloud.netapp.com/blog/ma-anf-blg-configure-kubernetes-openshift)
 * [Trident — Orchestrator Storage для контейнеров](https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/backends/anf.html)
+* [Платформа электронной коммерции Magento в службе Kubernetes Azure (AKS)](/azure/architecture/example-scenario/magento/magento-azure)
 
 ### <a name="azure-batch"></a>Пакетная служба Azure
 

@@ -6,17 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.reviewer: jmartens
 author: jpe316
 ms.author: jordane
 ms.date: 03/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: 64784d747e9f33961c2f5d2df95e0d5a83e01548
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8813b2cad5800bd4ede6e64119117df57c230fdc
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324831"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071227"
 ---
 # <a name="mlops-model-management-deployment-and-monitoring-with-azure-machine-learning"></a>Млопс: Управление моделями, развертывание и мониторинг с помощью Машинное обучение Azure
 
@@ -143,7 +142,7 @@ ms.locfileid: "93324831"
 
 Дополнительные сведения см. в разделе [Развертывание моделей](how-to-deploy-and-where.md).
 
-### <a name="analytics"></a>Аналитика
+### <a name="analytics"></a>Analytics
 
 Microsoft Power BI поддерживает использование моделей машинного обучения для аналитики данных. Дополнительные сведения см. [в разделе интеграция машинное обучение Azure в Power BI (Предварительная версия)](/power-bi/service-machine-learning-integration).
 

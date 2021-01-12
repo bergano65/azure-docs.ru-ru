@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: 95c3ad6f689893195e0e5c17c59ab31143cf238d
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 473353c3f61d1096beb11c521c08ac723d54b780
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346525"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071612"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -157,11 +157,6 @@ ms.locfileid: "93346525"
     На этой панели отображается имя группы (которую можно изменить), тип ОС, расположение и другие релевантные сведения.
 
     :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-group-settings.png" alt-text="Страница параметров группы для адаптивных элементов управления приложениями" lightbox="./media/security-center-adaptive-application/adaptive-application-group-settings.png":::
-
-    > [!IMPORTANT]
-    > Параметр **принудительное применение** в параметрах режима защиты файлов во **всех** сценариях затенен. В настоящее время параметры принудительной установки недоступны. 
-    >
-    > :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-modes.png" alt-text="Режим принудительного применения защиты файлов полностью неактивен. Параметры принудительной установки недоступны.":::
 
 1. При необходимости измените имя группы или режим защиты типа файла.
 

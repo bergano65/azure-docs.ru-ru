@@ -5,22 +5,19 @@ description: Узнайте, как экспортировать или удал
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.reviewer: jmartens
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 82e128ffdc215a084110a68170ac12accd8fca0e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c4f48acc2d6e57dea0a8db2a149d7ca2871c9f39
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308137"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072009"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения
-
-
 
 В Машинное обучение Azure можно экспортировать или удалить данные рабочей области с помощью графического интерфейса портала или пакета SDK для Python. В этой статье описываются оба варианта.
 
@@ -82,7 +79,7 @@ model_output_port.download('.', show_progress=True)
 
 С помощью пакета SDK для Python можно удалить следующие ресурсы машинного обучения: 
 
-| Тип | Вызов функции | Примечания | 
+| Type | Вызов функции | Примечания | 
 | --- | --- | --- |
 | `Workspace` | [`delete`](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete-delete-dependent-resources-false--no-wait-false-) | Используйте `delete-dependent-resources` для каскадного удаления |
 | `Model` | [`delete`](/python/api/azureml-core/azureml.core.model%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--) | | 

@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 12/11/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: dd7a336df5ff187b874876db32abb45915e00f3b
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 195f1c527185fbd55450b6151f26525074db75f7
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739388"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070428"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
 
@@ -322,6 +322,8 @@ print(service.state)
 | Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
 | Работоспособно | Служба работоспособна, и доступна конечная точка. | Да |
 
+> [!TIP]
+> При развертывании образы DOCKER для целевых объектов вычислений создаются и загружаются из реестра контейнеров Azure (запись контроля доступа). По умолчанию Машинное обучение Azure создает запись контроля доступа, которая использует уровень служб " *базовый* ". Изменение записи контроля доступа для рабочей области на уровень "Стандартный" или "Премиум" может сократить время, затрачиваемое на сборку и развертывание образов в целевых объектах вычислений. Дополнительные сведения см в статье [Уровни службы Реестра контейнеров Azure](../container-registry/container-registry-skus.md).
 
 ### <a name="batch-inference"></a><a id="azuremlcompute"></a> Вывод пакета
 Машинное обучение Azure целевые объекты вычислений создаются и управляются с помощью Машинное обучение Azure. Их можно использовать для прогнозирования пакетной службы из Машинное обучение Azure конвейеров.

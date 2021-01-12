@@ -7,18 +7,17 @@ author: vladvino
 manager: erikre
 editor: ''
 ms.service: api-management
-ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/10/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: e36f7c6085908630d5e7aa2593fe4d57202d6ee7
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: d0d5434de747b48464df1c07f8c7b6a7e785c858
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107657"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070972"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -147,6 +146,9 @@ ms.locfileid: "97107657"
   > Изменение указанных выше кластеров с зоной DNS **.nsatc.net** на **.microsoftmetrics.com** является по большей части изменением DNS. IP-адрес кластера не изменится.
 
 + **Теги региональной службы.** Правила групп безопасности сети, разрешающие исходящие подключения к тегам служб хранилища, SQL и Центров событий, могут использовать региональные версии этих тегов, соответствующие региону, где находится экземпляр Управления API (например, Storage.WestUS для экземпляра Управления API в регионе "Западная часть США"). В развертываниях с несколькими регионами группа безопасности сети должна разрешать трафик в теги службы для этого региона и основного региона.
+
+    > [!IMPORTANT]
+    > Чтобы включить публикацию [портала разработчика](api-management-howto-developer-portal.md) для экземпляра службы управления API в виртуальной сети, убедитесь, что вы также разрешите исходящие подключения к хранилищу BLOB-объектов в регионе "Западная часть США". Например, используйте тег службы **Storage. WestUS** в правиле NSG. Подключение к хранилищу BLOB-объектов в регионе "Западная часть США" в настоящее время требуется для публикации портала разработчика для любого экземпляра службы управления API.
 
 + **Службы SMTP-ретрансляции.** Исходящее сетевое подключение для ретрансляции SMTP, которое разрешается в узле `smtpi-co1.msn.com`, `smtpi-ch1.msn.com`, `smtpi-db3.msn.com`, `smtpi-sin.msn.com` и `ies.global.microsoft.com`.
 

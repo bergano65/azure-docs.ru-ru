@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/08/2020
+ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4592742b99d7c3e915c31ca5a202355d32e76d68
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 15b4b61fd250dfb7d68c563f9f42c7d288a0019c
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356129"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070870"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C партнеров независимых поставщиков программного обеспечения
 
@@ -54,10 +54,10 @@ ms.locfileid: "97356129"
 | ![Снимок экрана: Невис логотип](./media/partner-gallery/nevis-logo.png) | [Невис](./partner-nevis.md) включает проверку подлинности без пароля и обеспечивает полноценное взаимодействие с конечным пользователем, полностью ориентированное на мобильных пользователей, с помощью Невис приложения Access для проверки подлинности клиентов и соблюдения требований PSD2 Transaction. |
 | ![Снимок экрана с логотипом трусона](./media/partner-gallery/trusona-logo.png) | Интеграция [трусона](./partner-trusona.md) помогает безопасно входить в систему и обеспечивает проверку подлинности без пароля, MFA и проверку цифровых лицензий. |
 | ![Снимок экрана с логотипом twilio.](./media/partner-gallery/twilio-logo.png) | [Twilio Verify App](./partner-twilio.md) предоставляет несколько решений для включения MFA с помощью одноразового пароля (OTP) SMS, одноразового пароля (TOTP) и push-уведомлений, а также для соответствия требованиям SCA к PSD2. |
-| ![Снимок экрана с логотипом Типингдна](./media/partner-gallery/typingdna-logo.png) | [Типингдна](./partner-twilio.md) обеспечивает надежную проверку подлинности клиента путем анализа шаблона ввода пользователя. Она помогает компаниям включать автоматический MFA и соответствовать требованиям SCA для PSD2. |
+| ![Снимок экрана с логотипом Типингдна](./media/partner-gallery/typingdna-logo.png) | [Типингдна](./partner-typingdna.md) обеспечивает надежную проверку подлинности клиента путем анализа шаблона ввода пользователя. Она помогает компаниям включать автоматический MFA и соответствовать требованиям SCA для PSD2. |
 | ![Снимок экрана с логотипом вхоиам](./media/partner-gallery/whoiam-logo.png) | [Вхоиам](./partner-whoiam.md) — это приложение системы управления удостоверениями (бримс), которое позволяет организациям проверять свою базу пользователей с помощью голоса, SMS и электронной почты. |
 
-## <a name="role-based-access-control"></a>управление доступом на основе ролей; 
+## <a name="role-based-access-control"></a>Управление доступом на основе ролей 
  
 Партнеры корпорации Майкрософт со следующими поставщиками программного обеспечения для управления доступом на основе ролей.
 

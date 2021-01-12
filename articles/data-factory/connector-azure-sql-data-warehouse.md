@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/18/2020
-ms.openlocfilehash: 68f536e06ec5a40083d96745f5b72e511e423f64
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.date: 01/11/2021
+ms.openlocfilehash: a411f4ce261ee6d203e274efe3cf23ca23203453
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695170"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070929"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure синапсе Analytics с помощью фабрики данных Azure
 
@@ -391,7 +391,7 @@ GO
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/><br/>Допустимое значение — **timespan**. Пример "00:30:00" (30 минут). | Нет.<br/>Применяется при использовании массовой вставки.        |
 | preCopyScript     | Укажите SQL-запрос для выполнения действия копирования, прежде чем записывать данные в Azure синапсе Analytics при каждом запуске. Это свойство используется для очистки предварительно загруженных данных. | нет                                            |
 | tableOption | Указывает, следует ли [автоматически создавать таблицу приемника, если она](copy-activity-overview.md#auto-create-sink-tables) не существует на основе исходной схемы. Допустимые значения: `none` (по умолчанию), `autoCreate`. |нет |
-| disableMetricsCollection | Фабрика данных собирает такие метрики, как Azure синапсе Analytics DWU для оптимизации производительности копирования и рекомендации. Если вас не устраивает такое поведение, укажите `true`, чтобы отключить его. | Нет (значение по умолчанию — `false`) |
+| disableMetricsCollection | Фабрика данных собирает такие метрики, как Azure синапсе Analytics DWU для оптимизации производительности копирования и рекомендации, которые представляют дополнительный доступ к базе данных master. Если вас не устраивает такое поведение, укажите `true`, чтобы отключить его. | Нет (значение по умолчанию — `false`) |
 
 #### <a name="azure-synapse-analytics-sink-example"></a>Пример приемника Azure синапсе Analytics
 

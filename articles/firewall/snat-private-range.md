@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 01/11/2021
 ms.author: victorh
-ms.openlocfilehash: c5613dda7adbbc47f989bc2a772777e716620b3c
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 0df91680dadbc4ac19299a4df48a585a11f044e8
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97348039"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072247"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Диапазоны частных IP-адресов SNAT в брандмауэре Azure
 
@@ -25,6 +25,9 @@ ms.locfileid: "97348039"
 - Чтобы настроить в брандмауэре Azure параметр " **никогда не** использовать SNAT" независимо от IP-адреса назначения, используйте **0.0.0.0/0** в качестве диапазона частных IP-адресов. В этой конфигурации брандмауэр Azure не может маршрутизировать трафик напрямую в Интернет. 
 
 - Чтобы настроить в брандмауэре значение **Always** SNAT независимо от адреса назначения, используйте адрес **255.255.255.255/32** в качестве диапазона частных IP-адресов.
+
+> [!IMPORTANT]
+> Указанный диапазон частных адресов применяется только к сетевым правилам. В настоящее время правила приложения всегда поддерживают SNAT.
 
 > [!IMPORTANT]
 > Если вы хотите указать собственные диапазоны частных IP-адресов и сохранить диапазоны адресов IANA RFC 1918 по умолчанию, убедитесь, что пользовательский список по-прежнему содержит диапазон IANA RFC 1918. 
