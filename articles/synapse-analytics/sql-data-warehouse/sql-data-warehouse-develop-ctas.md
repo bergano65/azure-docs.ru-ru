@@ -11,12 +11,12 @@ ms.date: 03/26/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seoapril2019, azure-synapse
-ms.openlocfilehash: 3d9a842af5e1d3fac73515d96644bef250d7d0c4
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 95158193a978702392106c8aa3347de211fd1a3e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334575"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115452"
 ---
 # <a name="create-table-as-select-ctas"></a>CREATE TABLE AS SELECT (CTAS)
 
@@ -208,7 +208,7 @@ DROP TABLE CTAS_acs;
 
 ## <a name="ansi-join-replacement-for-merge"></a>Замена присоединением ANSI для слияния 
 
-В Azure синапсе Analytics [Слияние](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver15) (Предварительная версия) с несоответствием целевым объектом требует, чтобы целевой объект был распределенной хэш-таблицей.  Пользователи могут использовать соединение ANSI с [Update](https://docs.microsoft.com/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15) или [Delete](https://docs.microsoft.com/sql/t-sql/statements/delete-transact-sql?view=sql-server-ver15) в качестве обходного пути для изменения данных целевой таблицы на основе результата объединения с другой таблицей.  Ниже приведен пример.
+В Azure синапсе Analytics [Слияние](/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver15) (Предварительная версия) с несоответствием целевым объектом требует, чтобы целевой объект был распределенной хэш-таблицей.  Пользователи могут использовать соединение ANSI с [Update](/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15) или [Delete](/sql/t-sql/statements/delete-transact-sql?view=sql-server-ver15) в качестве обходного пути для изменения данных целевой таблицы на основе результата объединения с другой таблицей.  Ниже приведен пример.
 
 ```sql
 CREATE TABLE dbo.Table1   
@@ -381,6 +381,6 @@ OPTION (LABEL = 'CTAS : Partition IN table : Create');
 
 CTAS является одной из самых важных инструкций в синапсе SQL. Научитесь его применять. См. [документацию по CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).

@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: c4fe512ff6db24498148ffa724c3144a2f61823f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: ceb242dcd05105b533e365e91afd9601cc550392
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451720"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116734"
 ---
 # <a name="use-transactions-with-dedicated-sql-pool-in-azure-synapse-analytics"></a>Использование транзакций с выделенным пулом SQL в Azure синапсе Analytics
 
@@ -29,7 +29,7 @@ ms.locfileid: "96451720"
 
 Выделенный пул SQL реализует транзакции ACID. Уровень изоляции транзакционной поддержки по умолчанию — READ UNCOMMITTED.  Его можно изменить на READ COMMITTED SNAPSHOT ISOLATION, включив параметр базы данных READ_COMMITTED_SNAPSHOT для пользовательской базы данных при подключении к базе данных master.  
 
-После его включения все транзакции в этой базе данных выполняются в режиме READ COMMITTED SNAPSHOT ISOLATION, и параметр READ UNCOMMITTED на уровне сеанса учитываться не будет. Дополнительные сведения см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest&preserve-view=true).
+После его включения все транзакции в этой базе данных выполняются в режиме READ COMMITTED SNAPSHOT ISOLATION, и параметр READ UNCOMMITTED на уровне сеанса учитываться не будет. Дополнительные сведения см. в разделе [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?preserve-view=true&view=azure-sqldw-latest).
 
 ## <a name="transaction-size"></a>Размер транзакции
 Размер одной транзакции, изменяющей данные, ограничен. Действует ограничение по распределению. Таким образом, общее распределение можно вычислить, умножив ограничение на число распределения. 

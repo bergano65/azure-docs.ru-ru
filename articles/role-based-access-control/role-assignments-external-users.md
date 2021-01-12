@@ -16,12 +16,12 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 846e1a83f3cba5f87210ae4f825b5fac4f1569c6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a18fc3e4851c2daf03c662cf40cef58cc7d9e77a
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648384"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117713"
 ---
 # <a name="add-or-remove-azure-role-assignments-for-external-guest-users-using-the-azure-portal"></a>Добавление или удаление назначений ролей Azure для внешних гостевых пользователей с помощью портал Azure
 
@@ -29,9 +29,7 @@ ms.locfileid: "94648384"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для добавления или удаления назначений ролей необходимо иметь следующее:
-
-- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
+[!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
 
 ## <a name="when-would-you-invite-guest-users"></a>Когда вы приглашаете гостевых пользователей?
 
@@ -77,7 +75,7 @@ ms.locfileid: "94648384"
 
 1. Щелкните конкретный ресурс.
 
-1. Щелкните **Управление доступом (IAM)** .
+1. Выберите **Управление доступом (IAM)**.
 
     На следующем снимке экрана представлен пример колонки Управление доступом (IAM) для группы ресурсов. Если вы вносите здесь изменения в контроль доступа, они будут применены только к группе ресурсов.
 
@@ -115,7 +113,7 @@ ms.locfileid: "94648384"
 
 1. Щелкните конкретный ресурс.
 
-1. Щелкните **Управление доступом (IAM)** .
+1. Выберите **Управление доступом (IAM)**.
 
 1. Щелкните вкладку **Назначения ролей**, чтобы просмотреть все назначения ролей в этой области.
 

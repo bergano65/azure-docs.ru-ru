@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.subservice: machine-learning
 ms.date: 04/15/2020
 ms.author: euang
-ms.openlocfilehash: 50429696c4cbe10c4723f6d4bb9c9499d9b775c5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 30ddee7c203ef1654972675f610256d1bfb1f21c
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450421"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116914"
 ---
 # <a name="tutorial-build-a-machine-learning-app-with-apache-spark-mllib-and-azure-synapse-analytics"></a>Руководство по Создание приложения машинного обучения с помощью Apache Spark MLlib и Azure Synapse Analytics
 
@@ -247,7 +247,7 @@ plt.show()
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Документация по .NET для Apache Spark](/dotnet/spark?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-- [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+- [Azure Synapse Analytics](../index.yml)
 - [Официальная документация по Apache Spark](https://spark.apache.org/docs/2.4.5/)
 
 >[!NOTE]

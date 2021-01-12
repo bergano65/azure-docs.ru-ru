@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a43200985820779c56983f09b81a86989261c36f
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 13756be041f88883d84f9558308c7fe5c9be2d0e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935008"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116013"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Планирование развертывания условного доступа
 
@@ -223,14 +223,6 @@ ms.locfileid: "97935008"
 Если политика неправильно настроена, она может блокировать работу организаций на портале Azure. Уменьшить ущерб от случайного блокирования администраторов можно, создав в организации одну или две [учетные записи для аварийного доступа](../roles/security-emergency-access.md).
 
 * Создайте учетную запись пользователя, предназначенную для администрирования политик и исключенную из всех политик.
-
-* Аварийный сценарий для гибридных сред.
-
-  * Создайте локальную группу безопасности и синхронизируйте ее с Azure AD. Эта группа безопасности должна содержать выделенную учетную запись для администрирования политик. 
-
-   * ИСКЛЮЧИТе эту группу безопасности из всех политик условного доступа.
-
-   * При возникновении сбоя службы при необходимости добавьте других администраторов в локальную группу и принудительно выполните синхронизацию. Это позволяет анимировать их исключение в политики условного доступа.
 
 ### <a name="set-up-report-only-mode"></a>Настройка режима "Только отчет"
 
@@ -493,4 +485,4 @@ Azure Active Directory позволяет создавать [именованн
 
 [Узнайте больше о поставщиках удостоверений](../identity-protection/overview-identity-protection.md).
 
-[Управление политиками условного доступа с помощью Microsoft Graph API](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)
+[Управление политиками условного доступа с помощью Microsoft Graph API](https://docs.microsoft.com/graph/api/resources/conditionalaccesspolicy)

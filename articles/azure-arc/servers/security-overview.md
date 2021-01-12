@@ -3,12 +3,12 @@ title: Общие сведения о безопасности
 description: Сведения о безопасности серверов с поддержкой Arc Azure.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: be79be3030af76425b54fd683784d0e216ac2cf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa8653b783e7eb3e211b7514831604dd5642cfbe
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329046"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117033"
 ---
 # <a name="azure-arc-for-servers-security-overview"></a>Обзор безопасности ARC для серверов Azure
 
@@ -16,7 +16,7 @@ ms.locfileid: "91329046"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-Каждый сервер, поддерживающий дугу Azure, имеет управляемое удостоверение как часть группы ресурсов в подписке Azure. это удостоверение представляет сервер, работающий в локальной среде или в другой облачной среды. Доступом к этому ресурсу управляет Стандартный [Контроль доступа на основе ролей Azure](../../role-based-access-control/overview.md). На странице [**управления доступом (IAM)**](../../role-based-access-control/role-assignments-portal.md#access-control-iam) в портал Azure можно проверить, кто имеет доступ к серверу с поддержкой Arc Azure.
+Каждый сервер, поддерживающий дугу Azure, имеет управляемое удостоверение как часть группы ресурсов в подписке Azure. это удостоверение представляет сервер, работающий в локальной среде или в другой облачной среды. Доступом к этому ресурсу управляет Стандартный [Контроль доступа на основе ролей Azure](../../role-based-access-control/overview.md). На странице [**управления доступом (IAM)**](../../role-based-access-control/role-assignments-portal.md) в портал Azure можно проверить, кто имеет доступ к серверу с поддержкой Arc Azure.
 
 :::image type="content" source="./media/security-overview/access-control-page.png" alt-text="Управление доступом на сервере с поддержкой ARC в Azure" border="false" lightbox="./media/security-overview/access-control-page.png":::
 

@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 33eb5977ecb373a0dba87c26cacea247f541be8f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3778b6046c750bb131be1e51bf1afdc7b0df7184
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452733"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116795"
 ---
 # <a name="design-tables-using-synapse-sql-in-azure-synapse-analytics"></a>Разработка таблиц с помощью синапсе SQL в Azure синапсе Analytics
 
@@ -40,7 +40,7 @@ ms.locfileid: "96452733"
 | [Реплицированные таблицы](#replicated-tables)                      | Да                | Нет                      |
 | [Таблицы с распределением методом циклического перебора](#round-robin-tables)                    | Да                | Нет                      |
 | [Общие методы распределения для таблиц](#common-distribution-methods-for-tables) | Да                | Нет                      |
-| [Секции](#partitions)                                    | Да                | Да                     |
+| [Разделы](#partitions)                                    | Да                | Да                     |
 | [Индексы columnstore](#columnstore-indexes)                  | Да                | Нет                      |
 | [Статистика](#statistics)                                    | Да                | Да                     |
 | [Первичный ключ и уникальный ключ](#primary-key-and-unique-key)    | Да                | Нет                      |
@@ -102,7 +102,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 
 [Внешние таблицы](develop-tables-external-tables.md) указывают на данные, расположенные в хранилище BLOB-объектов Azure или Azure Data Lake Storage.
 
-Импорт данных из внешних таблиц в выделенные пулы SQL с помощью [CREATE TABLE в качестве инструкции SELECT](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) . Руководство по загрузке см. [в статье Загрузка данных из хранилища BLOB-объектов Azure с помощью polybase](../sql-data-warehouse/load-data-from-azure-blob-storage-using-polybase.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Импорт данных из внешних таблиц в выделенные пулы SQL с помощью [CREATE TABLE в качестве инструкции SELECT](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) . Руководство по загрузке см. [в статье Загрузка данных из хранилища BLOB-объектов Azure с помощью polybase](../sql-data-warehouse/load-data-from-azure-blob-storage-using-copy.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json).
 
 Для несерверного пула SQL можно использовать [CETAS](develop-tables-cetas.md) , чтобы сохранить результат запроса во внешней таблице в службе хранилища Azure.
 
@@ -144,9 +144,9 @@ CREATE TABLE MyTable (col1 int, col2 int );
 |:---------------|:--------------------|
 | Факты           | Используйте хэш-распределение с кластеризованным индексом columnstore. Производительность улучшается, когда две хэш-таблицы объединены по одному столбцу распределения. |
 | Измерение      | Используйте репликацию для небольших таблиц. Если таблицы слишком велики для хранения на каждом вычислительном узле, используйте хэш-распределение. |
-| Промежуточная        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
+| Промежуточный        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
 
-## <a name="partitions"></a>Секции
+## <a name="partitions"></a>Разделы
 
 В выделенных пулах SQL секционированная таблица хранит и выполняет операции над строками таблицы в соответствии с диапазонами данных. Например, таблицу можно разделить по дню, месяцу или году. Вы можете улучшить производительность запросов путем исключения секций, что ограничивает проверку запросов к данным в секции.
 

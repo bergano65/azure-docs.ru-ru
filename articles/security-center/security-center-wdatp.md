@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 9a8dba99435e1616b1c49d5209b30c3c523876db
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 34d8881eb072c4c723bf68b7c6ccfd24ab19cd3c
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071346"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116285"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Защитите свои конечные точки с помощью интегрированного решения ЕДР центра безопасности: защитник Майкрософт для конечной точки
 
@@ -131,7 +131,7 @@ ms.locfileid: "98071346"
 ### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Если у меня есть лицензия на использование защитника Майкрософт для конечной точки, можно ли получить скидку для защитника Azure?
 Если у вас уже есть лицензия на использование защитника Майкрософт для конечной точки, вам не придется платить за эту часть лицензии на защитник Azure.
 
-Чтобы подтвердить скидку, обратитесь к группе поддержки центра безопасности и укажите соответствующий идентификатор рабочей области, регион и сведения о лицензии.
+Чтобы подтвердить скидку, обратитесь в службу поддержки центра безопасности и предоставьте соответствующий идентификатор рабочей области, регион и сведения о лицензии для каждой соответствующей лицензии.
 
 ### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Разделы справки переключаться от стороннего средства ЕДР?
 Полные инструкции по переключению с решения конечной точки, отличной от Майкрософт, доступны в документации защитника Майкрософт для конечной точки: [Общие сведения о миграции](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration).

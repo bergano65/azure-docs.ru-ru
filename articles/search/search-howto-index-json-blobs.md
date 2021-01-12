@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
-ms.openlocfilehash: a3c44d667b6baaf16e109dfb88c22c16a1ea2ce1
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 1fc6c7086917f2bcd6e4991d2dac37ea24cbfa83
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697209"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116388"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Индексация больших двоичных объектов JSON с помощью индексатора больших двоичных объектов в Azure Когнитивный поиск
 
@@ -108,11 +108,11 @@ ms.locfileid: "94697209"
 
 Вы можете ознакомиться с [кодом примера оставшейся](#rest-example) в конце этого раздела, в котором показано, как создать все три объекта. В этом разделе также содержатся сведения о [режимах синтаксического анализа JSON](#parsing-modes), [отдельных больших двоичных](#parsing-single-blobs)объектах, [массивах JSON](#parsing-arrays)и [вложенных массивах](#nested-json-arrays).
 
-Для индексации JSON на основе кода используйте [POST или Visual Studio Code](search-get-started-rest.md) и REST API для создания этих объектов:
+Для индексации JSON на основе кода используйте [POST](search-get-started-rest.md) или [Visual Studio Code](search-get-started-vs-code.md) и REST API для создания этих объектов:
 
 + [index](/rest/api/searchservice/create-index)
 + [Источник данных](/rest/api/searchservice/create-data-source)
-+ [индексатора](/rest/api/searchservice/create-indexer)
++ [Индексатор](/rest/api/searchservice/create-indexer)
 
 Порядок операций требует создания и вызова объектов в этом порядке. В отличие от рабочего процесса портала, для реализации кода требуется доступный индекс для приема документов JSON, отправленных через запрос на **Создание индексатора** .
 
@@ -455,7 +455,7 @@ ms.locfileid: "94697209"
 ## <a name="help-us-make-azure-cognitive-search-better"></a>Помогите нам сделать Azure Когнитивный поиск лучше
 Если вам нужна какая-либо функция или у вас есть идеи, которые можно было бы реализовать, сообщите об этом на [сайте UserVoice](https://feedback.azure.com/forums/263029-azure-search/). Если вам нужна помощь с использованием существующего компонента, опубликуйте свой вопрос на [Stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 + [Индексирование хранилища BLOB-объектов Azure с помощью Azure Когнитивный поиск](search-howto-index-json-blobs.md)

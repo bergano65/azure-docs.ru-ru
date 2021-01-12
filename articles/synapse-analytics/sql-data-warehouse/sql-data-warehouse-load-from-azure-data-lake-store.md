@@ -11,16 +11,16 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 4886cf6c24e7e96676b9ca5e74b431685cd5a8bb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4f881dcc0d26589c4029246019119fa0555dcd5d
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452869"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117781"
 ---
 # <a name="load-data-from-azure-data-lake-storage-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Загрузка данных из Azure Data Lake Storage в выделенные пулы SQL в Azure синапсе Analytics
 
-В этом руководство описано, как использовать [инструкцию Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для загрузки данных из Azure Data Lake Storage. Краткие примеры использования инструкции COPY во всех методах проверки подлинности см. в следующей документации: [Безопасная загрузка данных с помощью выделенных ПУЛОВ SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples).
+В этом руководство описано, как использовать [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для загрузки данных из Azure Data Lake Storage. Краткие примеры использования инструкции COPY во всех методах проверки подлинности см. в следующей документации: [Безопасная загрузка данных с помощью выделенных ПУЛОВ SQL](./quickstart-bulk-load-copy-tsql-examples.md).
 
 > [!NOTE]  
 > Чтобы отправить отзыв или сообщить о проблемах в инструкции COPY, отправьте сообщение электронной почты по следующему списку рассылки: sqldwcopypreview@service.microsoft.com .
@@ -65,7 +65,7 @@ WITH
 
 ## <a name="create-the-copy-statement"></a>Создание инструкции COPY
 
-Подключитесь к выделенному пулу SQL и выполните инструкцию COPY. Полный список примеров см. в следующей документации: [Безопасная загрузка данных с помощью выделенных ПУЛОВ SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples).
+Подключитесь к выделенному пулу SQL и выполните инструкцию COPY. Полный список примеров см. в следующей документации: [Безопасная загрузка данных с помощью выделенных ПУЛОВ SQL](./quickstart-bulk-load-copy-tsql-examples.md).
 
 ```sql
 -- B: Create and execute the COPY statement
@@ -133,6 +133,6 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 > [Узнайте, как проектировать таблицы для хранения данных](sql-data-warehouse-tables-overview.md).
 
 Дополнительные примеры загрузки и ссылки см. в следующей документации:
-- [Справочная документация по инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax)
-- [Примеры копирования для каждого метода проверки подлинности](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples)
-- [Быстрый Запуск копирования для одной таблицы](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql)
+- [Справочная документация по инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax)
+- [Примеры копирования для каждого метода проверки подлинности](./quickstart-bulk-load-copy-tsql-examples.md)
+- [Быстрый Запуск копирования для одной таблицы](./quickstart-bulk-load-copy-tsql.md)

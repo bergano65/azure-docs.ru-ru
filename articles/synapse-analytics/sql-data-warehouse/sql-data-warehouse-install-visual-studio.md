@@ -12,12 +12,12 @@ ms.subservice: sql-dw
 ms.date: 05/11/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 456d7eb0cabd7ebede6415e3ce92d7403ecef7ef
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 56a2cbf88cec47417e992990c16a76ec84c6433d
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368760"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117815"
 ---
 # <a name="getting-started-with-visual-studio-2019"></a>Начало работы с Visual Studio 2019
 
@@ -43,7 +43,7 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый ин
 - [Безопасность на уровне строк](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (включая функции, возвращающие табличные значения)
   - Отправьте запрос в [службу поддержки или голосование](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040057-ssdt-row-level-security) , чтобы получить поддерживаемую функцию.
   - Отправьте запрос в [службу поддержки или голосование](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) , чтобы получить поддерживаемую функцию.
-- Таблицы со [столбцом идентификаторов](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver15)
+- Таблицы со [столбцом идентификаторов](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver15)
 - Некоторые функции T-SQL, такие как:
    - В предложении *Group* в функции [STRING_AGG](/sql/t-sql/functions/string-agg-transact-sql) строк.
 

@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 2afc274bf7c040eca6a83abbab24c41767f16482
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3e55ef054d5c305937f88d6ec5b2b4453cac6792
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453668"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117764"
 ---
 # <a name="integrate-other-services-with-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Интегрируйте другие службы с выделенным пулом SQL (ранее — ХРАНИЛИЩЕм данных SQL) в Azure синапсе Analytics.
 
@@ -36,7 +36,7 @@ ms.locfileid: "96453668"
 * **Прямое подключение**: более расширенное подключение с использованием логического включение к хранилищу данных, подготовленное с помощью выделенного пула SQL (прежнее название — SQL DW). Это обеспечивает более быстрый анализ в большем масштабе.
 * **Открыть в Power BI**: кнопка "Открыть в Power BI" передает сведения об экземпляре в Power BI, упрощая подключение.
 
-Дополнительные сведения см. в статье [Использование Power BI с хранилищем данных SQL](sql-data-warehouse-get-started-visualize-with-power-bi.md) или в [документации по Power BI](https://powerbi.microsoft.com/blog/exploring-azure-sql-data-warehouse-with-power-bi/).
+Дополнительные сведения см. в статье [Использование Power BI с хранилищем данных SQL](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect) или в [документации по Power BI](https://powerbi.microsoft.com/blog/exploring-azure-sql-data-warehouse-with-power-bi/).
 
 ## <a name="azure-data-factory"></a>Фабрика данных Azure
 
