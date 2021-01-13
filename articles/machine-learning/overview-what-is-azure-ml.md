@@ -5,16 +5,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: overview
-author: j-martens
-ms.author: jmartens
+ms.author: larryfr
+author: BlackMist
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 53e6d6e67a90cd1f39aed7f9cd7c2368282b2d1f
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 9b4cb3117464bfd32e17df4a1dbfdf7efd4ecbe6
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916598"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127776"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -47,7 +47,7 @@ ms.locfileid: "97916598"
 
 + Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
 
-+ + [Акселератор решений для многих моделей](https://aka.ms/many-models) (предварительная версия) основан на службе Машинного обучения Azure и позволяет обучать, использовать и обслуживать сотни и даже тысячи моделей машинного обучения.
++ [Акселератор решений для многих моделей](https://aka.ms/many-models) (предварительная версия) основан на службе Машинного обучения Azure и позволяет обучать, использовать и обслуживать сотни и даже тысячи моделей машинного обучения.
 
 + [Расширение машинного обучения для пользователей Visual Studio Code](tutorial-setup-vscode-extension.md)
 
