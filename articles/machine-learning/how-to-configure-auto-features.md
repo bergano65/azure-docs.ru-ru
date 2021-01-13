@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to,automl,contperf-fy21q2
 ms.date: 12/18/2020
-ms.openlocfilehash: b26b0d9086f464556cbca2c70773374c3cccbd52
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 5fcb57d1ef909d7c15e21b34c3f584c6615a6a44
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915867"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134421"
 ---
 # <a name="data-featurization-in-automated-machine-learning"></a>Добавление признаков данных в автоматизированном машинном обучении
 
@@ -122,6 +122,9 @@ ms.locfileid: "97915867"
 |**Изменение параметра преобразователя** |Обновите параметры для указанного преобразователя. В настоящее время поддерживает *импутер* (среднее, наиболее частые и медиана) и *хашонехотенкодер*.|
 |**Удаление столбцов** |Указывает столбцы для удаления из признаками.|
 |**Блокирование преобразователей**| Указывает блочные преобразователи для использования в процессе Добавление признаков.|
+
+>[!NOTE]
+> Функции **Drop Columns** устарели в пакете SDK версии 1,19. Удаление столбцов из набора данных в ходе очистки данных до их использования в автоматическом эксперименте ML. 
 
 Создайте `FeaturizationConfig` объект с помощью вызовов API:
 
