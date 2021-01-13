@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 5733c5d6eb6cbd86207589244c22badc17fe7073
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: a397678488921744f076d93235304c8d217d961f
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95807633"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178965"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Развертывание клиентов с помощью шаблонов ARM
 
@@ -96,7 +96,7 @@ ms.locfileid: "95807633"
 
 Команды, используемые для развертываний клиентов, отличаются от команд для развертываний группы ресурсов.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для Azure CLI используйте [az deployment tenant create](/cli/azure/deployment/tenant#az-deployment-tenant-create):
 
@@ -145,7 +145,8 @@ New-AzTenantDeployment `
 * группы управления в клиенте
 * subscriptions
 * группы ресурсов
-* [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
+
+[Ресурс расширения](scope-extension-resources.md) можно ограничить целевым объектом, который отличается от целевого объекта развертывания.
 
 Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
 

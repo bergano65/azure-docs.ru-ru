@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: ejarvi
-ms.openlocfilehash: e5a0069e02c5285a950d23abc0ec4bee6e9e467b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 361751107212d556aaee6886902d2798c014ff39
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968389"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180189"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
@@ -149,7 +149,7 @@ ms.locfileid: "94968389"
 | (схема 1,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
 | (схема 1,1) AADClientSecret | password | строка |
 | (схема 1,1) аадклиентцертификате | thumbprint | строка |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
+| EncryptionOperation | EnableEncryption | строка | 
 | (необязательно-по умолчанию RSA-OAEP) кэйенкриптионалгорисм | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
 | KeyVaultURL | url | строка |
 | кэйваултресаурцеид | url | строка |
@@ -179,7 +179,7 @@ ms.locfileid: "94968389"
 
 Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите в [службу поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Сведения об использовании службы поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).
 * Дополнительные сведения о шифровании дисков Azure для Windows см. в статье [виртуальные машины Windows](../../security/fundamentals/azure-disk-encryption-vms-vmss.md#windows-virtual-machines).

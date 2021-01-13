@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: f5d6d6255b48192a5943159599531fac18ebeb26
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: f3d1918eafe8d61d9c5a7db3f29b83b5412914c0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796998"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179565"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -126,13 +126,13 @@ ms.locfileid: "97796998"
 |[Отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)|✔|✔|
 |[Инвентаризация ресурсов](asset-inventory.md)|✔|✔|
 |[Azure Defender для Службы приложений](defender-for-app-service-introduction.md)|-|-|
-|[Azure Defender для службы хранилища](defender-for-storage-introduction.md)|✔ (2)|-|
+|[Azure Defender для службы хранилища](defender-for-storage-introduction.md)|✔|-|
 |[Azure Defender для SQL](defender-for-sql-introduction.md)|✔|✔ (2)|
 |[Azure Defender для Key Vault](defender-for-key-vault-introduction.md)|-|-|
 |[Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender для DNS](defender-for-dns-introduction.md)|-|-|
-|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔ (2)|✔|
-|[Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)|✔ (2)|-|
+|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
 |||
 
 (1) Требуется _ *Azure Defender для серверов**.

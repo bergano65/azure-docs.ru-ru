@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в группах ресурсов
 description: Описывает развертывание ресурсов в шаблоне Azure Resource Manager. В нем показано, как ориентироваться на несколько групп ресурсов.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 9d0bec51fa55ee377eb647a11fb554ec3b81e9eb
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: 8fe503cc95d71772c07427438b17e2ff0d4620a7
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95807725"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178897"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Развертывание группы ресурсов с помощью шаблонов ARM
 
@@ -42,7 +42,7 @@ ms.locfileid: "95807725"
 
 Для развертывания в группе ресурсов используйте команды развертывания группы ресурсов.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для Azure CLI используйте команду [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create). В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
@@ -85,7 +85,8 @@ New-AzResourceGroupDeployment `
 * другие группы ресурсов в той же подписке или других подписках
 * Любая подписка в клиенте
 * Клиент для группы ресурсов
-* [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
+
+[Ресурс расширения](scope-extension-resources.md) можно ограничить целевым объектом, который отличается от целевого объекта развертывания.
 
 Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
 

@@ -1,19 +1,19 @@
 ---
 title: Интеграция с Azure Maps
 titleSuffix: Azure Digital Twins
-description: Узнайте, как создать функцию Azure, которая может использовать двойника Graph и уведомления Azure Digital двойников для обновления карт Azure Maps.
+description: Узнайте, как использовать функции Azure для создания функции, которая может использовать двойника Graph и уведомления Azure Digital двойников для обновления карт Azure Maps.
 author: alexkarcher-msft
 ms.author: alkarche
 ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 7b2039f8b1aebef65112067e4fd9184777192015
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: e582415d9a83dc506b77d506f3e0803002129a07
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051587"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180053"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Использование Azure Digital двойников для обновления карт Azure Maps
 
@@ -22,10 +22,10 @@ ms.locfileid: "98051587"
 В этом практические руководства будут рассмотрены следующие вопросы.
 
 1. Настройка экземпляра Azure Digital двойников для отправки событий обновления двойника в функцию в функциях [Azure](../azure-functions/functions-overview.md).
-2. Создание функции Azure для обновления "Azure Maps" функции сопоставления.
+2. Создание функции для обновления набором состояний функций для Azure Maps карт.
 3. Сведения о хранении идентификатора сопоставления и идентификатора состояния компонентов в графе Azure Digital двойников.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 * Следуйте указаниям в руководстве по цифровому двойников Azure [*: подключение комплексного решения*](./tutorial-end-to-end.md).
     * Вы будете расширять эту двойника с помощью дополнительной конечной точки и маршрута. Вы также добавите в приложение функции другую функцию из этого руководства. 
@@ -41,7 +41,7 @@ ms.locfileid: "98051587"
 
 ## <a name="create-a-function-to-update-a-map-when-twins-update"></a>Создание функции для обновления схемы при двойников обновления
 
-Сначала вы создадите маршрут в Azure Digital двойников, чтобы перенаправить все события обновления двойника в раздел сетки событий. Затем вы используете функцию Azure для чтения этих сообщений об обновлениях и обновляете набор состояний компонентов в Azure Maps. 
+Сначала вы создадите маршрут в Azure Digital двойников, чтобы перенаправить все события обновления двойника в раздел сетки событий. Затем вы будете использовать функцию для считывания этих сообщений и обновления набор состояний компонентов в Azure Maps. 
 
 ## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Создание маршрута и фильтрация для двойника уведомлений об обновлении
 
@@ -70,7 +70,7 @@ ms.locfileid: "98051587"
     az dt route create -n <your-Azure-Digital-Twins-instance-name> --endpoint-name <Event-Grid-endpoint-name> --route-name <my_route> --filter "type = 'Microsoft.DigitalTwins.Twin.Update'"
     ```
 
-## <a name="create-an-azure-function-to-update-maps"></a>Создание функции Azure для обновления карт
+## <a name="create-a-function-to-update-maps"></a>Создание функции для обновления карт
 
 Вы создадите функцию, активируемую с помощью функции "Сетка событий" в приложении-функции, из комплексного учебника ([*Учебник: подключение комплексного решения*](./tutorial-end-to-end.md)). Эта функция выполнит распаковку этих уведомлений и отправит обновления в Azure Maps наборе состояний компонентов, чтобы обновить температуру одной комнаты. 
 

@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в группе управления
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 79cdb35de40501dfc0794155dcf807cced94bfa7
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: f847e481670d7f9afd4b40cfb8fcbec65d1e28c8
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95798591"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178931"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Развертывание группы управления с помощью шаблонов ARM
 
@@ -71,7 +71,7 @@ ms.locfileid: "95798591"
 
 Для развертывания в группе управления используйте команды развертывания группы управления.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для Azure CLI используйте команду [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create):
 
@@ -123,7 +123,8 @@ New-AzManagementGroupDeployment `
 * подписки в группе управления
 * группы ресурсов в группе управления
 * Клиент для группы ресурсов
-* [ресурсы расширения](scope-extension-resources.md) можно применять к ресурсам
+
+[Ресурс расширения](scope-extension-resources.md) можно ограничить целевым объектом, который отличается от целевого объекта развертывания.
 
 Пользователь, развертывающий шаблон, должен иметь доступ к указанной области.
 

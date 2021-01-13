@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9d4fa80f669493e4dc47a9ad0f9bfe9390d4ab24
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8d41f8959d0a1ec0d6e48cf2fa4711a8ef8d8ae5
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953582"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178948"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Настройка регистрации телефона и входа в систему с помощью пользовательских политик в Azure AD B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "94953582"
 >
 > *&lt;INSERT: ссылка на заявление о конфиденциальности&gt;*<br/>*&lt;INSERT: ссылка на условия предоставления услуг&gt;*
 
-Чтобы добавить собственные сведения о согласии, настройте следующий пример и включите его в LocalizedResources для Контентдефинитион, используемого на странице с автоматическим подтверждением, с помощью элемента управления отображением (файл Phone-Email-Base.xml на телефоне & войти в начальный пакет):
+Чтобы добавить собственные сведения о согласии, настройте приведенный ниже пример и включите его в LocalizedResources для Контентдефинитион, используемого на странице с автоматическим подтверждением, с помощью элемента управления отображением (файл *Phone_Email_Base.xml* в [телефоне "регистрация и вход в начальный пакет][starter-pack-phone]"):
 
 ```xml
 <LocalizedResources Id="phoneSignUp.en">        

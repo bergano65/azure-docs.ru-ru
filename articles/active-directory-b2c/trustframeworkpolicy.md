@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 01/31/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 354c6f9710b7cbd70e0631bc973b2482ea8d8bb3
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: a87b4c6b845006a9f9f3cf82815277c67c09bef0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97386890"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178846"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
 
@@ -38,7 +38,7 @@ ms.locfileid: "97386890"
 
 Элемент **TrustFrameworkPolicy** содержит следующие атрибуты:
 
-| Атрибут | Обязательно | Описание |
+| attribute | Обязательно | Описание |
 |---------- | -------- | ----------- |
 | PolicySchemaVersion | Да | Версия схемы, которая будет использоваться для выполнения политики. Значение должно быть `0.3.0.0`. |
 | TenantObjectId | Нет | Уникальный идентификатор объекта для Azure Active Directory B2C клиента (Azure AD B2C). |
@@ -46,7 +46,7 @@ ms.locfileid: "97386890"
 | PolicyId | Да | Уникальный идентификатор политики. Этот идентификатор должен начинаться с префикса *B2C_1A_* |
 | PublicPolicyUri | Да | Универсальный код ресурса (URI) для политики, который является сочетанием идентификатора арендатора и идентификатора политики. |
 | DeploymentMode | Нет | Возможные значения: `Production` или `Development` . Значение по умолчанию — `Production`. Это свойство используется при отладке политики. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
-| UserJourneyRecorderEndpoint | Нет | Конечная точка, которая используется, когда для **DeploymentMode** задано значение `Development`. Значение должно быть равно `urn:journeyrecorder:applicationinsights`. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
+| UserJourneyRecorderEndpoint | Нет | Конечная точка, используемая для ведения журнала. Значение должно быть равно, `urn:journeyrecorder:applicationinsights` Если атрибут существует. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
 
 
 В следующем примере показано, как указать элемент **TrustFrameworkPolicy**:
