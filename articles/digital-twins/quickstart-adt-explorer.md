@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: d42a32e236eb73f2aa9f2f61d9708314783564dd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f6bd6b13ab4a2e654bdabc86355f2c3388abed31
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187309"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050533"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Краткое руководство. Изучение примера сценария Azure Digital Twins с помощью ADT Explorer
 
@@ -251,9 +251,7 @@ ms.locfileid: "96187309"
 
 Чтобы увидеть ответ, выполните следующий запрос в окне **Обозреватель запросов**.
 
-```SQL
-SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="TemperatureQuery":::
 
 Ранее вы видели, что в свойствах двойника для Room0 указана температура 70, а для Room1 — 80. Поэтому в результатах отображается только Room1.
     
@@ -284,9 +282,7 @@ SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
 
 Чтобы убедиться, что граф успешно зарегистрировал обновление температуры для Room0, повторно запустите указанный выше запрос, чтобы получить список цифровых двойников в среде с температурой выше 75.
 
-```SQL
-SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="TemperatureQuery":::
 
 Теперь, когда температура Room0 изменилась с 70 на 76, в результатах должны отобразиться оба двойника.
 

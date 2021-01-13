@@ -5,12 +5,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 01/27/2020
 ms.author: trbye
-ms.openlocfilehash: 8d70d282ffb1a39f9ffb3eb6addf694ac9d0d060
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4725a1a9cf2cb74655a37ac27a0a86f10d7f4bb9
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81422289"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98053006"
 ---
 В этом кратком руководстве показано, как распознать намерения из звуковых данных, полученных с микрофона, с помощью [пакета SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) и службы "Распознавание речи". В частности, вы будете использовать пакет SDK для службы "Речь" и предварительно созданную предметную область в службе "Распознавание речи", чтобы определить намерения для системы домашней автоматики, например включение или выключение света. 
 
@@ -22,3 +22,4 @@ ms.locfileid: "81422289"
 > * Создайте объект `IntentRecognizer`, используя приведенный выше объект `SpeechConfig`.
 > * С помощью объекта `IntentRecognizer` запустите процесс распознавания для одного речевого фрагмента.
 > * Проверьте возвращенный результат `IntentRecognitionResult`.
+

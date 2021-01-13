@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: 2c159e25195c5f144187268b4355c1078695e809
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c3dc2f91fcd09807a7eaaaaa638e78ba3717faec
+ms.sourcegitcommit: 63caac7871df9d999ca5a5f1b8c036ae7014231c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345531"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98061775"
 ---
 # <a name="whats-new-in-qna-maker"></a>Новые возможности QnA Maker
 
@@ -26,6 +26,8 @@ ms.locfileid: "96345531"
 ### <a name="november-2020"></a>Ноябрь 2020 г.
 
 * Запущена новая версия QnA Maker в бесплатной общедоступной предварительной версии. Дополнительные сведения см. [здесь](https://techcommunity.microsoft.com/t5/azure-ai/introducing-qna-maker-managed-now-in-public-preview/ba-p/1845575).
+
+> [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Introducing-QnA-managed-Now-in-Public-Preview/player]
 * Упрощенное создание ресурсов.
 * Комплексная поддержка по регионам.
 * Модель ранжирования глубокого обучения.
