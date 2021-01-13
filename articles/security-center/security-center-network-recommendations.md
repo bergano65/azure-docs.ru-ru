@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
 ms.author: memildin
-ms.openlocfilehash: 28d0d7b14c18a1d98be1872b1555930b2e1650c3
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 366a9a63e4577a9b8470faec68f8d4a25114dd48
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342456"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133707"
 ---
 # <a name="protect-your-network-resources"></a>Защита сетевых ресурсов
 Центр безопасности Azure постоянно анализирует состояние безопасности ресурсов Azure, чтобы предоставлять рекомендации по обеспечению безопасности сети. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления, чтобы укрепить защиту ресурсов.
 
-Полный список рекомендаций по работе с сетью см. в разделе [рекомендации](recommendations-reference.md#recs-network)по работе с сетью.
+Полный список рекомендаций по работе с сетью см. в разделе [рекомендации](recommendations-reference.md#recs-networking)по работе с сетью.
 
 В этой статье рассматриваются рекомендации по безопасности сети для ресурсов Azure. Рекомендации по сетям в центре брандмауэров следующего поколения, групп безопасности сети, JIT-доступа к виртуальным машинам, чрезмерно разрешающих правила входящего трафика и многое другое. Список рекомендаций для сети и действия по исправлению проблем см. в статье [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md).
 
@@ -48,9 +48,9 @@ ms.locfileid: "92342456"
 
 1. В меню центра безопасности откройте панель мониторинга Azure Defender и выберите **Сетевая схема**.
 
-    :::image type="content" source="./media/security-center-network-recommendations/opening-network-map.png" alt-text="Типы ресурсов сети инвентаризации активов" lightbox="./media/security-center-network-recommendations/opening-network-map.png":::
+    :::image type="content" source="./media/security-center-network-recommendations/opening-network-map.png" alt-text="Открытие сетевой схемы с помощью панели мониторинга защитника Azure" lightbox="./media/security-center-network-recommendations/opening-network-map.png":::
 
-1. Выберите пункт **топология**в меню **слои** .
+1. Выберите пункт **топология** в меню **слои** .
  
 В представлении карты топологии по умолчанию отображаются следующие элементы:
 
@@ -116,7 +116,7 @@ ms.locfileid: "92342456"
 [![Карта трафика сети](./media/security-center-network-recommendations/network-map-traffic.png)](./media/security-center-network-recommendations/network-map-traffic.png#lightbox)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 

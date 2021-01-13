@@ -1,7 +1,7 @@
 ---
-title: Настройка гиперпараметров модели
+title: Настройка модели
 titleSuffix: Azure Machine Learning
-description: Эффективная настройка параметров для моделей глубокого обучения и машинного обучения с помощью Машинное обучение Azure.
+description: Автоматизируйте настройку параметров для моделей глубокого обучения и машинного обучения с помощью Машинное обучение Azure.
 ms.author: swatig
 author: swatig007
 ms.reviewer: sgilley
@@ -11,14 +11,14 @@ ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: a1a0b89dee5a6d57e6f317c5f6c8b61ffeda3c33
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: e9f9f73a8e0dbc851efdba07bf1e103f58ae9e75
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029079"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133867"
 ---
-# <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
+# <a name="hyperparameter-tuning-a-model-with-azure-machine-learning"></a>Настройка параметров модели с помощью Машинное обучение Azure
 
 
 Автоматизируйте эффективную настройку параметров с помощью Машинное обучение Azure [пакета](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py). Узнайте, как выполнить шаги, необходимые для настройки параметров с помощью [пакета SDK для машинное обучение Azure](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py).
@@ -31,11 +31,11 @@ ms.locfileid: "97029079"
 1. визуализация учебных запусков;
 1. Выберите оптимальную конфигурацию для модели
 
-## <a name="what-are-hyperparameters"></a>Сведения о гиперпараметрах
+## <a name="what-is-hyperparameter-tuning"></a>Что такое настройка параметров?
 
 **Параметры** — это настраиваемые параметры, позволяющие управлять процессом обучения модели. Например, в нейронных сетях необходимо выбрать количество скрытых слоев и количество узлов в каждом слое. Производительность модели в значительной степени зависит от параметров.
 
- **Настройка** параметров «помощник» — это процесс поиска конфигурации параметров, которые приводят к лучшей производительности. Процесс обычно является дорогостоящим и выполняемым вручную.
+ **Настройка** параметров, называемая также **оптимизацией параметров**, — это процесс поиска конфигурации параметров, которые приводят к лучшей производительности. Процесс обычно является дорогостоящим и выполняемым вручную.
 
 Машинное обучение Azure позволяет автоматизировать настройку параметров и выполнять эксперименты в параллельном режиме для эффективной оптимизации параметров.
 
@@ -46,7 +46,7 @@ ms.locfileid: "97029079"
 
 Параметры могут быть дискретными или непрерывными и иметь распределение значений, описываемых [выражением параметра](/python/api/azureml-train-core/azureml.train.hyperdrive.parameter_expressions?preserve-view=true&view=azure-ml-py).
 
-### <a name="discrete-hyperparameters"></a>Дискретные гиперпараметры 
+### <a name="discrete-hyperparameters"></a>Дискретные гиперпараметры
 
 Дискретные гиперпараметры определяются как `choice` в дискретных значениях. Параметр `choice` может принимать следующие значения:
 
@@ -296,7 +296,7 @@ max_concurrent_runs=4
 
 Этот код настраивает эксперимент настройки параметров, чтобы использовать максимум 20 запусков, одновременно выполняющих четыре конфигурации.
 
-## <a name="configure-experiment"></a>Настройка эксперимента
+## <a name="configure-hyperparameter-tuning-experiment"></a>Настройка эксперимента по настройке параметров
 
 Чтобы [настроить эксперимент настройки параметров](/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverunconfig?preserve-view=true&view=azure-ml-py) , укажите следующие параметры.
 * Область поиска определенного параметра
@@ -323,7 +323,7 @@ hd_config = HyperDriveConfig(run_config=src,
                              max_concurrent_runs=4)
 ```
 
-## <a name="submit-experiment"></a>Отправка эксперимента
+## <a name="submit-hyperparameter-tuning-experiment"></a>Отправка эксперимента по настройке параметров
 
 Определив конфигурацию настройки параметров, [отправьте эксперимент](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truesubmit-config--tags-none----kwargs-):
 
@@ -333,7 +333,7 @@ experiment = Experiment(workspace, experiment_name)
 hyperdrive_run = experiment.submit(hd_config)
 ```
 
-## <a name="warm-start-your-hyperparameter-tuning-experiment-optional"></a>Горячий запуск эксперимента по настройке параметров (необязательно)
+## <a name="warm-start-hyperparameter-tuning-optional"></a>Настройка параметров теплого запуска (необязательно)
 
 Для поиска лучших значений параметров в модели можно использовать итеративный процесс. Вы можете повторно использовать знания из пяти предыдущих запусков, чтобы ускорить настройку параметров.
 
@@ -380,7 +380,7 @@ hd_config = HyperDriveConfig(run_config=src,
                              max_concurrent_runs=4)
 ```
 
-## <a name="visualize-experiment"></a>Визуализация эксперимента
+## <a name="visualize-hyperparameter-tuning-runs"></a>Визуализация выполнения настройки параметров
 
 Используйте мини-приложение [записной книжки](/python/api/azureml-widgets/azureml.widgets.rundetails?preserve-view=true&view=azure-ml-py) для визуализации хода выполнения обучения. Следующий фрагмент кода визуализирует все запуски по настройке гиперпараметров в одном отображении, создаваемом в записной книжке Jupyter:
 
@@ -391,15 +391,15 @@ RunDetails(hyperdrive_run).show()
 
 Этот код отображает таблицу со сведениями об учебных запусках для каждой из конфигураций гиперпараметров.
 
-![Таблица настройки гиперпараметров](./media/how-to-tune-hyperparameters/HyperparameterTuningTable.png)
+![Таблица настройки гиперпараметров](./media/how-to-tune-hyperparameters/hyperparameter-tuning-table.png)
 
 Вы также можете визуализировать эффективность каждого прогона в ходе обучения. 
 
-![График настройки гиперпараметров](./media/how-to-tune-hyperparameters/HyperparameterTuningPlot.png)
+![График настройки гиперпараметров](./media/how-to-tune-hyperparameters/hyperparameter-tuning-plot.png)
 
 Можно визуально вычислить корреляцию между производительностью и значениями отдельных параметров, используя график параллельных координат. 
 
-[![параллельные координаты для настройки гиперпараметров](./media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
+[![параллельные координаты для настройки гиперпараметров](./media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
 
 Вы также можете визуализировать все запуски настройки параметров на веб-портале Azure. Дополнительные сведения о том, как просмотреть эксперименты на портале, см. в разделе [мониторинг экспериментов](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal).
 
@@ -420,6 +420,7 @@ print('\n batch size:',parameter_values[7])
 ```
 
 ## <a name="sample-notebook"></a>Пример записной книжки
+
 См. Дополнительные сведения в записных книжках в этой папке:
 * [how-to-use-azureml/ml-frameworks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks)
 

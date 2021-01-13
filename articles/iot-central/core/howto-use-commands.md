@@ -7,12 +7,12 @@ ms.date: 01/07/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: dd05a4880bdf077f63dc58575828e6180e415260
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 52872175eb799785674c331ad4d687ff8ef427a4
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122600"
+ms.locfileid: "98134285"
 ---
 # <a name="how-to-use-commands-in-an-azure-iot-central-solution"></a>Использование команд в решении IoT Central Azure
 
@@ -219,10 +219,8 @@ const commandHandler = async (request, response) => {
 
 В этом разделе показано, как устройство обрабатывает команду в режиме «вне сети». Если устройство находится в оперативном режиме, оно может работать с автономной командой, как только оно будет получено. Если устройство находится в автономном режиме, при следующем подключении к IoT Central обрабатывается команда offline. Устройства не могут отправить возвращаемое значение в ответ на команду offline.
 
-В следующем фрагменте кода показано, как устройство может реализовать автономную команду:
-
 > [!NOTE]
-> В этой статье для простоты используется Node.js. Примеры для других языков см. в руководстве по [созданию и подключению клиентского приложения к IOT Centralному приложению Azure](tutorial-connect-device.md) .
+> В этой статье для простоты используется Node.js.
 
 На следующем снимке экрана показана автономная команда с именем **женератедиагностикс**. Параметр запроса — это объект со свойством DateTime с именем **StartTime** и целочисленным свойством перечисления под названием **Bank**:
 

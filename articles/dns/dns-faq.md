@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: article
-ms.date: 6/15/2019
+ms.date: 01/11/2021
 ms.author: rohink
-ms.openlocfilehash: 2f7e4eadc25028db4668db8d245803c7ddba8688
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c468b1216670ce7e6b5d252a7f7fee807199d20c
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968253"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131497"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
 
@@ -195,7 +195,11 @@ Azure DNS поддерживает только размещение "стати
 
 Чтобы настроить имена IDN в Azure DNS, преобразуйте имя зоны или набора записей в punycode. Azure DNS в настоящее время не поддерживает встроенное преобразование в punycode.
 
-## <a name="next-steps"></a>Следующие шаги
+### <a name="does-azure-dns-private-zones-store-any-customer-content"></a>Хранит ли содержимое клиента в частных зонах Azure DNS?
+
+Нет, Azure DNS частные зоны не хранят содержимое клиента.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные [сведения о Azure DNS](dns-overview.md).
 

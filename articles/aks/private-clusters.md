@@ -4,12 +4,12 @@ description: Узнайте, как создать частный кластер
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 696ba785abb317a29de38160440dc06487ff5bca
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 87966a9bd2f83916998a724fc6c1c26a91609665
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673891"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133401"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Создание частного кластера Службы Azure Kubernetes
 
@@ -68,17 +68,21 @@ az aks create \
 
 ### <a name="configure-private-dns-zone"></a>Настройка зоны Частная зона DNS
 
-Значение по умолчанию — System, если аргумент--частный-DNS-Zone не указан. AKS создаст зону Частная зона DNS в группе ресурсов Node. Передача параметра "None" означает, что AKS не создаст зону Частная зона DNS.  Это полагается на собственный DNS-сервер и настройку разрешения DNS для частного полного доменного имени.  Если не настроить разрешение DNS, DNS разрешается только в пределах узлов агентов и после развертывания приведет к проблемам с кластером.
+Для настройки зоны Частная зона DNS можно использовать следующие параметры.
+
+1. Значение System является значением по умолчанию. Если аргумент--частный-DNS-Zone не указан, AKS создаст зону Частная зона DNS в группе ресурсов Node.
+2. "Нет" означает, что AKS не создаст зону Частная зона DNS.  Для этого необходимо подключить собственный DNS-сервер и настроить разрешение DNS для частного полного доменного имени.  Если не настроить разрешение DNS, DNS разрешается только в пределах узлов агентов и после развертывания приведет к проблемам с кластером.
+3. "Пользовательское частное имя зоны DNS" должно быть в этом формате для глобального облака Azure: `privatelink.<region>.azmk8s.io` . Назначенному пользователю удостоверению или субъекту-службе необходимо предоставить по крайней мере `private dns zone contributor` роль для пользовательской частной зоны DNS.
 
 ## <a name="no-private-dns-zone-prerequisites"></a>Нет предварительных требований для Частная зона DNS зоны
-Нет Приватеднсзоне
-* Azure CLI версии 0.4.67 или более поздней.
+
+* Azure CLI версии 0.4.71 или более поздней.
 * API версии 2020-11-01 или более поздней
 
 ## <a name="create-a-private-aks-cluster-with-private-dns-zone"></a>Создание частного кластера AKS с зоной Частная зона DNS
 
 ```azurecli-interactive
-az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --private-dns-zone [none|system]
+az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --private-dns-zone [none|system|custom private dns zone]
 ```
 ## <a name="options-for-connecting-to-the-private-cluster"></a>Варианты подключения к частному кластеру
 

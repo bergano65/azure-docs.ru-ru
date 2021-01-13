@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: b36f52fd97a9f7ff294f14ec394ff9a9f607b5b0
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3c0dd2b4e7e48eeb76d82c26eb52b89b61e9f668
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187159"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134115"
 ---
 # <a name="monitor-identity-and-access"></a>Мониторинг идентификации и доступа
 
@@ -44,7 +44,7 @@ ms.locfileid: "96187159"
 - Нерекомендуемые учетные записи должны быть удалены из подписки (устаревшие учетные записи — это учетные записи, которые больше не нужны и заблокированы для входа с помощью Azure Active Directory)
 
 > [!TIP]
-> Дополнительные сведения об этих рекомендациях и других возможностях, которые могут отображаться в этих элементах управления, см. в разделе [рекомендации по удостоверениям и доступу](recommendations-reference.md#recs-identity).
+> Дополнительные сведения об этих рекомендациях и других возможностях, которые могут отображаться в этих элементах управления, см. в разделе [рекомендации по удостоверениям и доступу](recommendations-reference.md#recs-identityandaccess).
 
 ### <a name="limitations"></a>Ограничения
 

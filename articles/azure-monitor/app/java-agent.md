@@ -6,12 +6,12 @@ ms.date: 01/10/2019
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 299e9010b74c8363cacd1c20044d183dc1def6a6
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 50c5a8a0c1e7c5d554e19ffcbc9a78bc0a385a5c
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601294"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131735"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -37,7 +37,7 @@ ms.locfileid: "96601294"
 Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения необходимо инструментировать [пакетом SDK для Java Application Insights][java]. 
 
 ## <a name="install-the-application-insights-agent-for-java"></a>Установка агента Application Insights для Java
-1. [Скачайте агент](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) на компьютер с сервером Java. Обязательно скачайте агент Java той же версии, что и веб-пакеты и пакет SDK для Java Application Insights.
+1. На компьютере, на котором работает сервер Java, [Скачайте агент 2. x](https://github.com/microsoft/ApplicationInsights-Java/releases/tag/2.6.2). Убедитесь, что используемая версия агента Java для версии 2. x соответствует версии пакета SDK для Java, установленного на языке 2. x Application Insights.
 2. Измените скрипт запуска сервера приложений и добавьте следующий аргумент ВИРТУАЛЬНОЙ машины Java:
    
     `-javaagent:<full path to the agent JAR file>`
@@ -89,10 +89,7 @@ ms.locfileid: "96601294"
 * Выберите элементы "Параметры > Параметры приложения".
 * В разделе "Параметры приложения" добавьте новую пару "ключ — значение":
 
-Ключ: `JAVA_OPTS` значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
-
-Для получения последней версии агента Java ознакомьтесь с выпусками [здесь](https://github.com/Microsoft/ApplicationInsights-Java/releases
-). 
+Ключ: `JAVA_OPTS` значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.6.2.jar`
 
 Агент должен быть упакован в проект в виде ресурса таким образом, чтобы он закончится в папке D:/Home, site/wwwroot/. Чтобы убедиться, что агент находится в нужном каталоге службы приложений, перейдите в **меню средства разработки**  >  **Дополнительные инструменты**  >  **консоль отладки** и проверьте содержимое каталога сайта.    
 
@@ -127,7 +124,7 @@ ms.locfileid: "96601294"
 
 [Дополнительные сведения о диагностировании проблем зависимостей](./asp-net-dependencies.md#diagnosis).
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+## <a name="questions-problems"></a>У вас появились вопросы? Проблемы?
 * Данные отсутствуют? [Настройка исключений брандмауэра](./ip-addresses.md)
 * [Устранение неполадок Java](java-troubleshoot.md)
 

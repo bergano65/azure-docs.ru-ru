@@ -5,14 +5,14 @@ services: private-link
 author: mblanco77
 ms.service: private-link
 ms.topic: conceptual
-ms.date: 06/18/2020
+ms.date: 01/12/2021
 ms.author: allensu
-ms.openlocfilehash: 1c296b157fbac1e4c8d3fefb2b8cc09ff2ccc7a8
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 859768345c2b88e38e09d897391ac8a3501fd901
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620602"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134081"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>Конфигурация DNS частной конечной точки Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "96620602"
 | Azure Backup (Microsoft.RecoveryServices/vaults) / хранилище | privatelink.{region}.backup.windowsazure.com | {region}.backup.windowsazure.com |
 | Центры событий Azure (Microsoft.EventHub/namespaces)/Пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
 | Служебная шина Azure (Microsoft.ServiceBus/namespaces) / пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
-| Центр Интернета вещей Azure (Microsoft. Devices/IotHubs)/iotHub | privatelink.azure-devices.net | azure-devices.net |
+| Центр Интернета вещей Azure (Microsoft. Devices/IotHubs)/iotHub | privatelink.azure-devices.net<br/>privatelink.servicebus.windows.net<sup>1</sup> | azure-devices.net<br/>servicebus.windows.net. |
 | Azure Relay (Microsoft.Relay/namespaces) / пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
 | Сетка событий Azure (Microsoft.EventGrid/topics) / тема | privatelink.eventgrid.azure.net | eventgrid.azure.net |
 | Сетка событий Azure (Microsoft.EventGrid/domains) / домен | privatelink.eventgrid.azure.net | eventgrid.azure.net |
@@ -83,6 +83,7 @@ ms.locfileid: "96620602"
 | Фабрика данных Azure (Microsoft. данные и фабрики)/портал |  privatelink.azure.com  |  azure.com  |
 | Кэш Azure для Redis (Microsoft. Cache/Redis)/redisCache | privatelink.redis.cache.windows.net | redis.cache.windows.net |
 
+<sup>1</sup> Для использования с встроенной конечной точкой центра Интернета вещей, совместимой с концентратором событий. Дополнительные сведения см. в разделе [Поддержка частных ссылок для встроенной конечной точки центра Интернета вещей](../iot-hub/virtual-network-support.md#built-in-event-hub-compatible-endpoint) .
  
 ## <a name="dns-configuration-scenarios"></a>Сценарии настройки DNS
 

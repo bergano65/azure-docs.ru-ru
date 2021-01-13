@@ -1,14 +1,14 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 12/14/2020
+ms.date: 01/07/2021
 ms.topic: how-to
-ms.openlocfilehash: 6c1cbde696ccf9131797a05db33553b8505216a4
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 797a6159d310f85c35c7eb550f05ff152526b3e8
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509280"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131157"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
@@ -24,6 +24,9 @@ ms.locfileid: "97509280"
 Для получения данных необходимо создать Log Analytics рабочие области. Эти Log Analytics рабочие области являются уникальными окружениями для данных, собираемых Azure Monitor. Каждая рабочая область имеет свои репозиторий данных и конфигурации, при этом источники данных и решения настроены для хранения данных в определенной рабочей области.
 
 Рекомендуется создавать эти рабочие области непосредственно в клиентских клиентах. Таким образом их данные остаются в своих клиентах, а не экспортируются в. Это также позволяет осуществлять централизованный мониторинг любых ресурсов или служб, поддерживаемых Log Analytics, обеспечивая большую гибкость при мониторинге типов данных.
+
+> [!TIP]
+> Любая учетная запись службы автоматизации, используемая для доступа к данным из Log Analytics рабочей области, должна быть создана в том же клиенте, что и Рабочая область.
 
 Рабочую область Log Analytics можно создать с помощью [портал Azure](../../azure-monitor/learn/quick-create-workspace.md), с помощью [Azure CLI](../../azure-monitor/learn/quick-create-workspace-cli.md)или с помощью [Azure PowerShell](../../azure-monitor/platform/powershell-workspace-configuration.md).
 

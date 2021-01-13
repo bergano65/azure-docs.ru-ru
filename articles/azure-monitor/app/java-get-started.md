@@ -6,12 +6,12 @@ ms.date: 11/22/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 6bdad71f0b36995abdeb3b1edb87cbef32df8b67
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 115e1ec347cdcd80904b47a0c8798206360d0dad
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96919418"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131786"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
@@ -56,7 +56,7 @@ Application Insights — это расширяемая служба аналит
         <artifactId>applicationinsights-web-auto</artifactId>
         <!-- or applicationinsights-web for manual web filter registration -->
         <!-- or applicationinsights-core for bare API -->
-        <version>2.5.0</version>
+        <version>2.6.2</version>
       </dependency>
     </dependencies>
 ```
@@ -69,15 +69,11 @@ Application Insights — это расширяемая служба аналит
 
 ```gradle
     dependencies {
-      compile group: 'com.microsoft.azure', name: 'applicationinsights-web-auto', version: '2.5.0'
+      compile group: 'com.microsoft.azure', name: 'applicationinsights-web-auto', version: '2.6.2'
       // or applicationinsights-web for manual web filter registration
       // or applicationinsights-core for bare API
     }
 ```
-
-# <a name="other-types"></a>[Другие типы](#tab/other)
-
-Скачайте [последнюю версию](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и скопируйте необходимые файлы в проект, заменив все предыдущие версии.
 
 ---
 
@@ -88,10 +84,7 @@ Application Insights — это расширяемая служба аналит
   * `applicationinsights-core` предоставляет только простой API, например, если приложение не основано на сервлета.
   
 * *Как обновить пакет SDK до последней версии?*
-  * Если вы используете Gradle или Maven...
-    * Обновите файл сборки, чтобы указать последнюю версию.
-  * Если вы управляете зависимостями вручную...
-    * Загрузите последнюю версию [пакета SDK Application Insights для Java](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и установите ее вместо более старых версий. Изменения описаны в статье [Заметки о выпуске пакета SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).
+  * По состоянию на ноябрь 2020 для мониторинга приложений Java рекомендуется автоматическое инструментирование с помощью Azure Monitor Application Insights агента Java 3,0. Дополнительные сведения о том, как приступить к работе, см. в разделе [Application Insights агент Java 3,0](./java-in-process-agent.md).
 
 ## <a name="add-an-applicationinsightsxml-file"></a>Добавление файла *ApplicationInsights.xml*
 Добавьте *ApplicationInsights.xml* в папку ресурсов проекта или убедитесь, что она добавлена в путь к классу развертывания проекта. Скопируйте в него следующий код XML.
@@ -168,10 +161,6 @@ Application Insights — это расширяемая служба аналит
 Щелкните любую диаграмму, чтобы увидеть более подробные агрегированные метрики.
 
 ![Панель Application Insights сбоев с диаграммами](./media/java-get-started/006-barcharts.png)
-
-<!--
-[TODO update image with 2.5.0 operation naming provided by agent]
--->
 
 ### <a name="instance-data"></a>Данные экземпляров
 Щелкните тип запроса, чтобы просмотреть отдельные экземпляры.
@@ -295,7 +284,7 @@ Application Insights может тестировать ваш веб-сайт ч
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+## <a name="questions-problems"></a>У вас появились вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия

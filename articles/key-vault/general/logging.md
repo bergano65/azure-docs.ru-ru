@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d900659f3ca8a8688c1b1d3a66cd888f37521fc6
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 5fcb3226eebf39ab18fb3bb24f0521a0523748d4
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883390"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134183"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -182,6 +182,7 @@ ms.locfileid: "97883390"
 | **CertificatePendingDelete** |Удаление ожидающего сертификата |
 | **CertificateNearExpiryEventGridNotification** |Опубликованное событие приближения истечения срока действия сертификата |
 | **CertificateExpiredEventGridNotification** |Опубликованное событие истечения срока действия сертификата |
+
 ---
 
 ## <a name="use-azure-monitor-logs"></a>Использование журналов Azure Monitor

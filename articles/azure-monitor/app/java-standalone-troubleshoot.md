@@ -4,12 +4,12 @@ description: Узнайте, как устранять неполадки аге
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 14644f76b7de53b2b6ee3f04131daaf59267a5ff
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 54bf2440dff20fc757f37e3f31a53c57ebd59120
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507648"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133197"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Руководство по устранению неполадок: Azure Monitor Application Insights для Java
 
@@ -20,6 +20,10 @@ ms.locfileid: "97507648"
 По умолчанию агент Java 3,0 для Application Insights создает файл журнала с именем `applicationinsights.log` в том же каталоге, в котором находится `applicationinsights-agent-3.0.0.jar` файл.
 
 Этот файл журнала является первым местом для поиска подсказок о любых проблемах, которые могут возникнуть.
+
+## <a name="jvm-fails-to-start"></a>Не удается запустить ВИРТУАЛЬНОЙ машины Java
+
+Если ВИРТУАЛЬНОЙ машины Java не удается запустить с ошибкой "Ошибка открытия ZIP-файла или манифеста JAR", попробуйте повторно Скачать JAR-файл агента, так как он мог быть поврежден при переносе файлов.
 
 ## <a name="upgrade-from-the-application-insights-java-2x-sdk"></a>Обновление с помощью пакета SDK для Java 2. x Application Insights
 

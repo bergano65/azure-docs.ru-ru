@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
-ms.date: 01/22/2020
-ms.openlocfilehash: 0eb9afc179f1dd2559f0db7b212f6b3a1da15824
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/12/2021
+ms.openlocfilehash: 2478148f946ddc88e571b76396544b028455ec75
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998759"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132113"
 ---
 # <a name="cluster-creation-fails-with-invalidnetworkconfigurationerrorcode-in-azure-hdinsight"></a>Сбой создания кластера с InvalidNetworkConfigurationErrorCode в Azure HDInsight
 
@@ -26,11 +26,11 @@ ms.locfileid: "95998759"
 
 Описание ошибки содержит "сбой разрешения имени узла".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка указывает на проблему с пользовательской конфигурацией DNS. DNS-серверы в виртуальной сети могут пересылать запросы DNS в рекурсивные арбитры конфликтов Azure для разрешения имен узлов в этой виртуальной сети (Дополнительные сведения см. [в разделе разрешение имен в виртуальных сетях](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) ). Доступ к рекурсивным разрешителям Azure предоставляется через виртуальный IP-адрес 168.63.129.16. Этот IP-адрес доступен только на виртуальных машинах Azure. Поэтому он не будет работать, если вы используете локальный DNS-сервер или если ваш DNS-сервер является виртуальной машиной Azure, которая не является частью виртуальной сети кластера.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 1. Подключитесь по протоколу SSH к виртуальной машине, входящей в состав кластера, и выполните команду `hostname -f` . Это приведет к возврату полного доменного имени узла (которое называется `<host_fqdn>` приведенными ниже инструкциями).
 
@@ -52,11 +52,11 @@ ms.locfileid: "95998759"
 
 Описание ошибки содержит сообщение "не удалось подключиться к учетной записи хранения Azure" или "не удалось подключиться к Azure SQL".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Служба хранилища Azure и SQL не имеют фиксированных IP-адресов, поэтому для доступа к этим службам необходимо разрешить исходящие подключения ко всем IP-адресам. Точные действия по устранению зависят от того, настроена ли группа безопасности сети (NSG) или правила User-Defined (UDR). Дополнительные сведения об этих конфигурациях см. в разделе [Управление сетевым трафиком с помощью HDInsight с группами безопасности сети и определяемыми пользователем маршрутами](../control-network-traffic.md) .
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 * Если кластер использует [группу безопасности сети (NSG)](../../virtual-network/virtual-network-vnet-plan-design-arm.md).
 
@@ -74,11 +74,11 @@ ms.locfileid: "95998759"
 
 Описание ошибки "содержит" не удалось установить исходящее подключение из кластера для связи с поставщиком ресурсов HDInsight. Убедитесь, что исходящее подключение разрешено ".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 При использовании частных связанных кластеров HDInsight исходящий доступ из кластера должен быть настроен на разрешение подключений к поставщику ресурсов HDInsight.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 * Чтобы устранить эту проблему, ознакомьтесь с инструкциями по настройке закрытой ссылки HDInsight по [ссылке Настройка частной связи](../hdinsight-private-link.md) .
 ---
@@ -94,11 +94,11 @@ ErrorCode: InvalidNetworkConfigurationErrorCode
 ErrorDescription: Virtual Network configuration is not compatible with HDInsight Requirement. Error: 'Failed to connect to Azure Storage Account; Failed to connect to Azure SQL; HostName Resolution failed', Please follow https://go.microsoft.com/fwlink/?linkid=853974 to fix it.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Скорее всего, возникла ошибка в пользовательской установке DNS.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Проверьте, что 168.63.129.16 находится в пользовательской цепочке DNS. DNS-серверы в виртуальной сети могут перенаправлять запросы DNS рекурсивным разрешителям Azure для разрешения имен узлов в этой виртуальной сети. Дополнительные сведения см. [в разделе разрешение имен в виртуальных сетях](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server). Доступ к рекурсивным разрешителям Azure предоставляется через виртуальный IP-адрес 168.63.129.16.
 
@@ -147,6 +147,13 @@ hostname -f
 nslookup <headnode_fqdn> (e.g.nslookup hn1-hditest.5h6lujo4xvoe1kprq3azvzmwsd.hx.internal.cloudapp.net)
 dig @168.63.129.16 <headnode_fqdn> (e.g. dig @168.63.129.16 hn0-hditest.5h6lujo4xvoe1kprq3azvzmwsd.hx.internal.cloudapp.net)
 ```
+### <a name="cause"></a>Причина
+
+Другой причиной для этого `InvalidNetworkConfigurationErrorCode` кода ошибки может быть использование устаревшего параметра `EnableVmProtection` в PowerShell или Runbook Azure.
+
+### <a name="resolution"></a>Решение
+
+Используйте допустимые параметры для `Get-AzVirtualNetwork` , как описано в [пакете SDK для AZ PowerShell](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork?view=azps-5.3.0&viewFallbackFrom=azps-4.2.0) .
 
 ---
 

@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.subservice: networking
 ms.topic: how-to
 ms.workload: infrastructure-services
-ms.date: 11/03/2020
+ms.date: 1/12/2020
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 08d5e20bf0755a71e70a0e446cf96d33bb42ad59
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: aadf4000da4ab88a3c3b4dee37d2179eb49d39d7
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93351930"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132070"
 ---
 # <a name="create-a-fully-qualified-domain-name-in-the-azure-portal-for-a-linux-vm"></a>Создание полного доменного имени на портале Azure для виртуальной машины Linux
 
@@ -24,16 +24,14 @@ ms.locfileid: "93351930"
 Для работы с руководством требуется виртуальная машина. При необходимости на портале можно создать виртуальную машину [Linux](./linux/quick-create-portal.md) или [Windows](./windows/quick-create-portal.md) . Когда виртуальная машина будет готова, выполните следующие действия:
 
 
-1. Выберите виртуальную машину на портале. В разделе **DNS-имя** выберите **настроить**.
-2. Введите DNS-имя и нажмите кнопку **сохранить** в верхней части страницы.
-3. Чтобы вернуться в колонку обзор виртуальной машины, закройте колонку **Конфигурация** , щелкнув значок **X** в правом верхнем углу. 
-4. Убедитесь, что *DNS-имя* теперь отображается правильно.
-   
-
-
+1. Выберите виртуальную машину на портале. 
+1. В меню слева выберите **Конфигурация** .
+1. В поле **Метка DNS-имени** введите префикс, который вы хотите использовать.
+1. Щелкните **Сохранить** в верхней части страницы.
+1. Вернитесь в колонку обзор виртуальной машины, выбрав **Обзор** в меню слева. 
+1. Убедитесь, что *DNS-имя* отображается правильно. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда у виртуальной машины есть общедоступный IP-адрес и DNS-имя, можно развернуть общие платформы приложений или службы, такие как nginx, MongoDB и DOCKER.
 
-Изучите дополнительные сведения об [использовании Resource Manager](../azure-resource-manager/management/overview.md), чтобы получить советы по созданию развертываний Azure.
+Вы также можете управлять DNS с помощью [зон Azure DNS](../dns/dns-getstarted-portal.md).
 

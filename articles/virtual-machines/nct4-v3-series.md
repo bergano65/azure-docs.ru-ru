@@ -6,14 +6,14 @@ ms.subservice: sizes
 author: vikancha-MSFT
 ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 01/05/2021
+ms.date: 01/12/2021
 ms.author: vikancha
-ms.openlocfilehash: 6463e54fb7f0a2cc03ffa043c00048c1131899ce
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 41ab057bdbf31667e45a73b2c5ded4993e716a66
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913436"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131565"
 ---
 # <a name="ncast4_v3-series"></a>Серия NCasT4_v3 
 
@@ -26,7 +26,7 @@ ms.locfileid: "97913436"
 [Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
 [Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
-[Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 Ускоренная сеть: поддерживается<br>
 Нвлинкное Interconnect NVIDIA: не поддерживается<br>
 <br>

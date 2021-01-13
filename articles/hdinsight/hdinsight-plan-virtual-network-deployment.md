@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
-ms.date: 05/04/2020
-ms.openlocfilehash: 2d6d18cc73c02d3139074555fdd22a40c797ce40
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.date: 01/12/2021
+ms.openlocfilehash: 429f0b2ffe486279a1c429fc7a153e6528642f54
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825149"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131667"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
 
@@ -51,7 +51,8 @@ ms.locfileid: "97825149"
 Следуйте инструкциям в этом разделе, чтобы узнать, как добавить новый кластер HDInsight в существующую виртуальную сеть Azure.
 
 > [!NOTE]  
-> В виртуальную сеть невозможно добавить существующий кластер HDInsight.
+> - В виртуальную сеть невозможно добавить существующий кластер HDInsight.
+> - Виртуальная сеть и создаваемый кластер должны находиться в одной подписке.
 
 1. Какая модель используется для развертывания виртуальной сети: классическая модель или развертывание с помощью диспетчера ресурсов?
 
@@ -69,7 +70,7 @@ ms.locfileid: "97825149"
 
     Чтобы найти существующую конфигурацию безопасности, используйте следующие команды Azure PowerShell или Azure CLI:
 
-    * Группы безопасности сети
+    * группы безопасности сети;
 
         Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
 
