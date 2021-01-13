@@ -56,6 +56,8 @@
               href: connect-azure-active-directory.md
             - name: "Office\_365 (теперь с поддержкой Teams)"
               href: connect-office-365.md
+            - name: "Dynamics\_365 (новинка!)"
+              href: connect-dynamics-365.md
             - name: Cloud App Security
               href: connect-cloud-app-security.md
             - name: Журнал действий Azure
@@ -72,16 +74,18 @@
               href: connect-azure-atp.md
             - name: "Microsoft Defender для Office\_365 (прежнее название\_— Office\_365\_ATP)"
               href: connect-office-365-advanced-threat-protection.md
-            - name: Защита от атак DDoS Azure
-              href: connect-azure-ddos-protection.md
-            - name: Брандмауэр Azure
-              href: connect-azure-firewall.md
             - name: Оповещения от ASC в Защитнике Azure
               href: connect-azure-security-center.md
             - name: "Защитник Azure (прежнее название\_— ASC) для Интернета вещей"
               href: connect-asc-iot.md
+            - name: Защита от атак DDoS Azure
+              href: connect-azure-ddos-protection.md
+            - name: Брандмауэр Azure
+              href: connect-azure-firewall.md
             - name: Брандмауэр веб-приложения Azure (WAF)
               href: connect-azure-waf.md
+            - name: Журналы базы данных SQL Azure
+              href: connect-azure-sql-logs.md
             - name: Сервер доменных имен
               href: connect-dns.md
             - name: Брандмауэр Windows

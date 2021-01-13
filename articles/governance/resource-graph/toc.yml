@@ -38,6 +38,9 @@
     - name: "Создание общего запроса с помощью Azure\_CLI"
       displayName: 'extension, docker, queries'
       href: ./shared-query-azure-cli.md
+    - name: Создание общего запроса с помощью Azure PowerShell
+      displayName: 'powershell, queries, Az.ResourceGraph'
+      href: ./shared-query-azure-powershell.md
     - name: Развертывание общего запроса с помощью шаблона ARM
       displayName: 'resource manager, queries'
       href: ./shared-query-template.md

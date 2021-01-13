@@ -355,6 +355,8 @@
               href: ./spark/optimize-cluster-configuration.md
         - name: Миграция на Spark 2.3 или 2.4
           href: ./spark/migrate-versions.md
+        - name: "Обновление .NET для Apache Spark до версии\_1.0"
+          href: ./spark/spark-dotnet-version-update.md
     - name: Практические руководства
       items:
         - name: Использование средств

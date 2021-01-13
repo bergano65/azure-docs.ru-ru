@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/13/2020
 ms.author: memildin
-ms.openlocfilehash: 0b6a9d081d2b81124b0cae15e81e4b233f7824bb
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 99f47df86d89e9daf2bc8878b868b04b7038ffd5
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629346"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071210"
 ---
 # <a name="pricing-of-azure-security-center"></a>Цены на Центр безопасности Azure
 Центр безопасности Azure предоставляет возможности унифицированного управления безопасностью и расширенной защиты от угроз для рабочих нагрузок в Azure, в локальной среде и в других облаках. Он повышает вашу информированность о гибридных облачных рабочих нагрузках, обеспечивает управление ими, а также предоставляет активные средства защиты, снижающие уровень риска угроз, и интеллектуальные средства обнаружения, которые позволяют быть в курсе быстро развивающихся рисков для кибербезопасности.
@@ -72,6 +72,7 @@ Azure Defender предоставляется бесплатно в течени
 - [Какие планы предлагаются в Центре безопасности?](#what-are-the-plans-offered-by-security-center)
 - [Как включить Azure Defender для моей подписки?](#how-do-i-enable-azure-defender-for-my-subscription)
 - [Можно ли включить Azure Defender для серверов из подмножества серверов в моей подписке?](#can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription)
+- [Если у меня уже есть лицензия на Microsoft Defender для конечной точки, могу ли я получить скидку на Azure Defender?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
 - [В моей подписке включено средство "Azure Defender для серверов". Будет ли взиматься плата за незапущенные серверы?](#my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers)
 - [Будет ли взиматься плата за компьютеры без установленного агента Log Analytics?](#will-i-be-charged-for-machines-without-the-log-analytics-agent-installed)
 - [Если агент Log Analytics отправляет отчеты в несколько рабочих областей, будет ли плата взиматься дважды?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
@@ -111,6 +112,10 @@ Azure Defender предоставляется бесплатно в течени
 
 Альтернативный вариант — включить Azure Defender для серверов на уровне рабочей области Log Analytics. В этом случае защита и выставление счетов будет осуществляться только для серверов, отправляющих отчеты в эту рабочую область. Но некоторые возможности будут недоступны. К ним относятся JIT-доступ к виртуальным машинам, обнаружение сетей, обеспечение соответствия нормативным требованиям, адаптивное усиление защиты сети, адаптивные элементы управления приложениями и другое. 
 
+### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Если у меня уже есть лицензия на Microsoft Defender для конечной точки, могу ли я получить скидку на Azure Defender?
+Если у вас уже есть лицензия на Microsoft Defender для конечной точки, вам не придется платить за эту часть лицензии для Azure Defender.
+
+Чтобы получить эту скидку, обратитесь к группе поддержки Центра безопасности и укажите соответствующий идентификатор рабочей области, регион и сведения о лицензии.
 
 ### <a name="my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers"></a>В моей подписке включено средство "Azure Defender для серверов". Будет ли взиматься плата за незапущенные серверы? 
 Нет. Если вы включите в подписке [Azure Defender для серверов](defender-for-servers-introduction.md), счета будут выставляться за каждый час только для работающих серверов. С вас не будет взиматься плата за все отключенные серверы в то время, когда они не работают. 
