@@ -6,12 +6,12 @@ ms.author: nimag
 ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: d35e51d097c2d5e0b66c23efa27ae70c065d547c
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: f3d6023ffd3043bc57727fc39f077dd0ce7eccb8
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96584487"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98024172"
 ---
 Из этого краткого руководства вы узнаете, как начать вызов с помощью клиентской библиотеки Служб коммуникации Azure для реализации вызовов на JavaScript.
 
@@ -22,52 +22,10 @@ ms.locfileid: "96584487"
 - Активный ресурс Служб коммуникации. [Создайте ресурс Служб коммуникации.](../../create-communication-resource.md)
 - Маркер доступа пользователя для создания экземпляра клиента вызова. Узнайте, как [создать маркер доступа пользователя и обеспечить управление им](../../access-tokens.md).
 
-## <a name="setting-up"></a>Настройка
 
-### <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
+[!INCLUDE [Calling with JavaScript](./get-started-javascript-setup.md)]
 
-Откройте терминал или командное окно, создайте каталог для своего приложения и перейдите к нему.
-
-```console
-mkdir calling-quickstart && cd calling-quickstart
-```
-
-Воспользуйтесь командой `npm init -y`, чтобы создать файл **package.json** с параметрами по умолчанию.
-
-```console
-npm init -y
-```
-
-### <a name="install-the-package"></a>Установка пакета
-
-Используйте команду `npm install`, чтобы установить клиентскую библиотеку Служб коммуникации для реализации вызовов на JavaScript.
-
-```console
-npm install @azure/communication-common --save
-npm install @azure/communication-calling --save
-```
-
-Для работы с этим кратким руководством рекомендуется использовать следующие версии этого пакета:
-
-```console
-"webpack": "^4.42.0",
-"webpack-cli": "^3.3.11",
-"webpack-dev-server": "^3.10.3"
-```
-
-Параметр `--save` указывает библиотеку как зависимость в файле пакета **package.json**.
-
-### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
-
-В этом кратком руководстве для объединения ресурсов приложения используется webpack. Выполните следующую команду, чтобы установить пакеты npm webpack, webpack-cli и webpack-dev-server, а также указать их в качестве зависимостей разработки в файле **package.json**:
-
-```console
-npm install webpack@4.42.0 webpack-cli@3.3.11 webpack-dev-server@3.10.3 --save-dev
-```
-
-Создайте файл **index.html** в корневом каталоге проекта. Мы будем использовать этоn файл для настройки базового макета, с помощью которого пользователь сможет выполнить вызов к боту Служб коммуникации Azure.
-
-Ниже приведен код:
+Вот этот код:
 
 ```html
 <!DOCTYPE html>

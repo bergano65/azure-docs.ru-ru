@@ -4,12 +4,12 @@ description: Сведения о том, как создать функцию C#
 ms.topic: quickstart
 ms.date: 11/03/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 444dff214a70a47ced127a3ca2533c20ea2a779a
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 791416a54fa75091facf1f7bc2aadf6fccf54b05
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424835"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968625"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции C# в Azure с помощью Visual Studio Code
 
@@ -27,8 +27,7 @@ ms.locfileid: "93424835"
 
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
-+ [Node.js](https://nodejs.org/), необходимый Windows для npm. Только [активная версия LTS и версия Maintenance LTS](https://nodejs.org/about/releases/). Используйте команду `node --version`, чтобы проверить установленную версию.
-    Не требуется для локальной разработки на macOS и Linux.
++ [Azure Functions Core Tools](functions-run-local.md#install-the-azure-functions-core-tools) версии 3.x.
 
 + [Visual Studio Code](https://code.visualstudio.com/) на одной из [поддерживаемых платформ](https://code.visualstudio.com/docs/supporting/requirements#_platforms).
 

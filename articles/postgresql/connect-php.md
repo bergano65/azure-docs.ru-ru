@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: php
 ms.topic: quickstart
 ms.date: 2/28/2018
-ms.openlocfilehash: 4e82c8402584f694cb32bb37ae3e6eae9366eaf7
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 200fdd126e2ed95804f81c1dd36804ecc6c61d85
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341439"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019692"
 ---
 # <a name="quickstart-use-php-to-connect-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью PHP
 
@@ -31,13 +31,13 @@ ms.locfileid: "93341439"
 - Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://windows.php.net/download#php-7.1).
 - Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.windows.php).
 - В коде используется класс **pgsql** (ext/php_pgsql.dll), который устанавливается с PHP. 
-- Включите расширение **pgsql** , изменив файл конфигурации php.ini. Как правило, он находится в папке `C:\Program Files\PHP\v7.1\php.ini`. Файл конфигурации должен содержать строку с текстом `extension=php_pgsql.so`. Если текст не отображается, добавьте его и сохраните файл. Если текст есть, но закомментирован префиксом в виде точки с запятой, раскомментируйте его, удалив точку с запятой.
+- Включите расширение **pgsql**, изменив файл конфигурации php.ini. Как правило, он находится в папке `C:\Program Files\PHP\v7.1\php.ini`. Файл конфигурации должен содержать строку с текстом `extension=php_pgsql.so`. Если текст не отображается, добавьте его и сохраните файл. Если текст есть, но закомментирован префиксом в виде точки с запятой, раскомментируйте его, удалив точку с запятой.
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
 - Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://secure.php.net/downloads.php). 
 - Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.unix.php).
 - В коде используется класс **pgsql** (php_pgsql.so). Установите его, выполнив команду `sudo apt-get install php-pgsql`.
-- Включите расширение **pgsql** , изменив файл конфигурации `/etc/php/7.0/mods-available/pgsql.ini`. Файл конфигурации должен содержать строку с текстом `extension=php_pgsql.so`. Если текст не отображается, добавьте его и сохраните файл. Если текст есть, но закомментирован префиксом в виде точки с запятой, раскомментируйте его, удалив точку с запятой.
+- Включите расширение **pgsql**, изменив файл конфигурации `/etc/php/7.0/mods-available/pgsql.ini`. Файл конфигурации должен содержать строку с текстом `extension=php_pgsql.so`. Если текст не отображается, добавьте его и сохраните файл. Если текст есть, но закомментирован префиксом в виде точки с запятой, раскомментируйте его, удалив точку с запятой.
 
 ### <a name="macos"></a>MacOS
 - Скачайте [PHP версии 7.1.4](https://secure.php.net/downloads.php).
@@ -47,7 +47,7 @@ ms.locfileid: "93341439"
 Получите сведения, необходимые для подключения к базе данных Azure.для PostgreSQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver** ).
+2. В меню слева на портале Azure щелкните **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
 3. Щелкните имя сервера.
 4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
  :::image type="content" source="./media/connect-php/1-connection-string.png" alt-text="Имя сервера службы &quot;База данных Azure для PostgreSQL&quot;":::
@@ -87,7 +87,7 @@ ms.locfileid: "93341439"
     // Insert some data into table.
     $name = '\'banana\'';
     $quantity = 150;
-    $query = "INSERT INTO inventory (name, quantity) VALUES ($1, $2);";
+    $query = "INSERT INTO inventory (name, quantity) VALUES ($name, $quantity);";
     pg_query($connection, $query) 
         or die("Encountered an error when executing given sql statement: ". pg_last_error(). "<br/>");
 

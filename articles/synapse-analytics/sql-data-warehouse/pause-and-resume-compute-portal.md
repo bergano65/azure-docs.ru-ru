@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 7d258243dae06461d21e9b5f0346e419f034eea9
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 567d5ae8b9d480003486362a7aa0ef69f9740d52
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109703"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120297"
 ---
 # <a name="quickstart-pause-and-resume-compute-in-dedicated-sql-pool-via-the-azure-portal"></a>Краткое руководство. Приостановка и возобновление вычислений в выделенном пуле SQL с помощью портала Azure
 
@@ -98,5 +98,4 @@ ms.locfileid: "97109703"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы приостановили и возобновили вычисления для выделенного пула SQL. Перейдите к следующей статье, чтобы узнать больше о том, как [загрузить данные в выделенный пул SQL](load-data-from-azure-blob-storage-using-polybase.md). Дополнительные сведения об управлении возможностями вычислений см. в статье [Управление вычислениями](sql-data-warehouse-manage-compute-overview.md). 
-
+Вы приостановили и возобновили вычисления для выделенного пула SQL. Перейдите к следующей статье, чтобы узнать больше о том, как [загрузить данные в выделенный пул SQL](./load-data-from-azure-blob-storage-using-copy.md). Дополнительные сведения об управлении возможностями вычислений см. в статье [Управление вычислениями](sql-data-warehouse-manage-compute-overview.md).

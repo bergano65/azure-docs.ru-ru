@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: b605c2c9f3c7468d0fe1f2cccd8c3602c556714b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 949b7e55569cc6fceacc37677ed06a28bb85d7c2
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501079"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116370"
 ---
 # <a name="azure-synapse-analytics-managed-virtual-network"></a>Управляемая виртуальная сеть Azure Synapse Analytics
 
@@ -41,7 +41,7 @@ ms.locfileid: "96501079"
 
 ## <a name="create-an-azure-synapse-workspace-with-a-managed-workspace-virtual-network"></a>Создание рабочей области Azure Synapse с управляемой виртуальной сетью
 
-Зарегистрируйте поставщик сетевых ресурсов, если вы еще этого не сделали. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types) из списка поставщиков ресурсов.
+Зарегистрируйте поставщик сетевых ресурсов, если вы еще этого не сделали. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](../../azure-resource-manager/management/resource-providers-and-types.md) из списка поставщиков ресурсов.
 
 Чтобы создать рабочую область Azure Synapse, у которой есть связанная управляемая виртуальная сеть, выберите вкладку **Сеть** на портале Azure и установите флажок **Включить управляемую виртуальную сеть**.
 

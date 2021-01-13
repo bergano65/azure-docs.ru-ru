@@ -11,12 +11,12 @@ ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
 zone_pivot_groups: app-service-platform-windows-linux
 adobe-target: true
-ms.openlocfilehash: b54df350e3f59720a92d7c1e74e28d9fcafddf94
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 32d7dc913ae19353574e91837b4ea009d9f797c6
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802496"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071822"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure
 
@@ -218,7 +218,7 @@ mvn com.microsoft.azure:azure-webapp-maven-plugin:1.12.0:config
 `<subscriptionId>` | false | Укажите идентификатор подписки. | Версия 0.1.0 и выше
 `<resourceGroup>` | Да | Группа ресурсов Azure для вашего веб-приложения. | Версия 0.1.0 и выше
 `<appName>` | Да | Название вашего веб-приложения. | Версия 0.1.0 и выше
-`<region>` | Да | Указывает регион, в котором будет размещено ваше веб-приложение (значение по умолчанию: **westeurope**). Определить допустимые регионы можно в разделе [Поддерживаемые регионы](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md). | Версия 0.1.0 и выше
+`<region>` | Да | Указывает регион, в котором будет размещено ваше веб-приложение (значение по умолчанию: **westeurope**). Определить допустимые регионы можно в разделе [Поддерживаемые регионы](https://azure.microsoft.com/global-infrastructure/services/?products=app-service). | Версия 0.1.0 и выше
 `<pricingTier>` | false | Ценовая категория веб-приложения. Значение по умолчанию — **P1V2** для производственной рабочей нагрузки. Вариант **B2** является рекомендуемым минимумом для разработки и тестирования в среде Java. [Дополнительные сведения](https://azure.microsoft.com/pricing/details/app-service/linux/)| Версия 0.1.0 и выше
 `<runtime>` | Да | Конфигурация среды выполнения. Дополнительные сведения см. [здесь](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Web-App:-Configuration-Details). | Версия 0.1.0 и выше
 `<deployment>` | Да | Конфигурация развертывания. Дополнительные сведения см. [здесь](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Web-App:-Configuration-Details). | Версия 0.1.0 и выше

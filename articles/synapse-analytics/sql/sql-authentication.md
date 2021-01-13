@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: efa160eb422658aeeb2eea3ad3c1d305b4b9f8be
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 1217cf74ab36a8fe865e47009616b1ccb240df67
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462400"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119889"
 ---
 # <a name="sql-authentication"></a>Проверка подлинности SQL
 
@@ -111,7 +111,7 @@ CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
    CREATE USER Mary FROM LOGIN Mary;  -- To create a SQL Server user based on a SQL Server authentication login
    ```
 
-4. Добавьте нового пользователя в роль базы данных **DBManager** в `master` с помощью процедуры [sp_addrolemember](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=azure-sqldw-latest). Обратите внимание, что инструкция [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) не поддерживается в подготовленной среде SQL. Примеры инструкций:
+4. Добавьте нового пользователя в роль базы данных **DBManager** в `master` с помощью процедуры [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=azure-sqldw-latest). Обратите внимание, что инструкция [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) не поддерживается в подготовленной среде SQL. Примеры инструкций:
 
    ```sql
    EXEC sp_addrolemember 'dbmanager', 'Mary'; 
@@ -133,7 +133,7 @@ CREATE USER [mike@contoso.com] FROM EXTERNAL PROVIDER;
 
 ## <a name="non-administrator-users"></a>Пользователи без прав администратора
 
-Как правило, для учетных записей без прав администратора не требуется доступ к базе данных master. Создайте пользователей автономной базы данных на уровне базы данных с помощью инструкции [CREATE USER (Transact-SQL)](https://msdn.microsoft.com/library/ms173463.aspx). 
+Как правило, для учетных записей без прав администратора не требуется доступ к базе данных master. Создайте пользователей автономной базы данных на уровне базы данных с помощью инструкции [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql). 
 
 Пользователь может быть пользователем автономной базы данных проверки подлинности Azure Active Directory (если вы настроили среду для проверки подлинности Azure AD), пользователем автономной базы данных проверки подлинности SQL Server или пользователем проверки подлинности SQL Server с именем входа проверки подлинности SQL Server (созданным на предыдущем шаге).  
 
@@ -191,7 +191,7 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 
 Например, фиксированная роль базы данных **db_datareader** предоставляет доступ (как правило, строго обязательный) на чтение к каждой таблице в базе данных. 
 
-Рекомендуется использовать инструкцию [CREATE ROLE](https://msdn.microsoft.com/library/ms187936.aspx), чтобы создавать пользовательские роли базы данных, а затем внимательно предоставлять каждой роли наименьший набор разрешений, необходимый для работы. Если пользователь является участником нескольких ролей, то ему предоставлены разрешения всех этих ролей.
+Рекомендуется использовать инструкцию [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql), чтобы создавать пользовательские роли базы данных, а затем внимательно предоставлять каждой роли наименьший набор разрешений, необходимый для работы. Если пользователь является участником нескольких ролей, то ему предоставлены разрешения всех этих ролей.
 
 ## <a name="permissions"></a>Разрешения
 
@@ -199,7 +199,7 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 
 Так как некоторые разрешения включены в другие разрешения и их достаточно много, необходимо внимательно изучить их, чтобы спроектировать соответствующую систему разрешений, которая будет надежно защищать базу данных. 
 
-Изучите список разрешений на [этой странице](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine) и ознакомьтесь с [графическим представлением](https://docs.microsoft.com/sql/relational-databases/security/media/database-engine-permissions.png) разрешений.
+Изучите список разрешений на [этой странице](/sql/relational-databases/security/permissions-database-engine) и ознакомьтесь с [графическим представлением](/sql/relational-databases/security/media/database-engine-permissions.png) разрешений.
 
 ### <a name="considerations-and-restrictions"></a>Рекомендации и ограничения
 
@@ -236,5 +236,4 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в разделе [Пользователи автономной базы данных — создание переносимой базы данных](https://msdn.microsoft.com/library/ff929188.aspx).
- 
+Дополнительные сведения см. в разделе [Пользователи автономной базы данных — создание переносимой базы данных](/sql/relational-databases/security/contained-database-users-making-your-database-portable).

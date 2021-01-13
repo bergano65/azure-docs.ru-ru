@@ -1,13 +1,15 @@
 ---
-ms.openlocfilehash: e0c313ea5e5062f725d0a65fefeac444214cf863
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: df6137e4e00ebd089ef7fb5efa163a513fb30728
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88682393"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98061228"
 ---
 Когда вы настроите ресурсы Azure для этого краткого руководства, видео с изображением автостоянки будет скопировано на виртуальную машину Linux в Azure, используемую в качестве устройства IoT Edge. Этот видеофайл будет использован для имитации прямой трансляции во время работы с этим руководством.
 
 Откройте приложение, например [проигрыватель VLC](https://www.videolan.org/vlc/), нажмите сочетание клавиш Ctrl+N и вставьте [эту ссылку](https://lvamedia.blob.core.windows.net/public/lots_015.mkv) на видео с автостоянкой, чтобы начать воспроизведение. Примерно на 5-секундной отметке белый автомобиль движется по стоянке.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LUbN]
 
 Выполняя указанные действия, чтобы использовать Аналитику видеотрансляций в IoT Edge для обнаружения перемещения автомобиля и записи видео, начиная с 5-секундной отметки.

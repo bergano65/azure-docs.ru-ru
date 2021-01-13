@@ -1,13 +1,15 @@
 ---
-ms.openlocfilehash: eb6551a9ec9accd4a7ee270ec47794fdaed91a8a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 69fd32c1569dbd1f08815be156585b0cce9f10d4
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88684320"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98061057"
 ---
 При настройке ресурсов Azure на виртуальную машину Linux в Azure, используемую в качестве устройства IoT Edge, копируется короткое видео дорожного потока автомобилей. В этом кратком руководстве для имитации потока в реальном времени используется видеофайл.
 
 Откройте приложение, например [проигрыватель мультимедиа VLC](https://www.videolan.org/vlc/). Нажмите клавиши `Ctrl+N` и вставьте ссылку на [пример видео с развязкой на автостраде](https://lvamedia.blob.core.windows.net/public/camera-300s.mkv), чтобы начать воспроизведение. Вы увидите видеозапись множества транспортных средств, движущихся в потоке.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LTY4]
 
 В этом кратком руководстве вы будете использовать Аналитику видеотрансляций в IoT Edge для обнаружения таких объектов, как транспортные средства и лица. Вы будете публиковать связанные события вывода в центре IoT Edge.

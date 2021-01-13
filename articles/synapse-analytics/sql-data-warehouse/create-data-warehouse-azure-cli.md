@@ -9,12 +9,12 @@ ms.subservice: sql-dw
 ms.date: 11/20/2020
 ms.author: Kevin
 ms.custom: azure-synapse
-ms.openlocfilehash: 59195bba69bb343e55cfcb7342400d93dcce60c0
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 2920c96d6a2e505347edb51780101327cb884e08
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932965"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120178"
 ---
 # <a name="quickstart-create-a-synapse-sql-pool-with-azure-cli"></a>Краткое руководство. Создание пула SQL Synapse с помощью Azure CLI
 
@@ -134,4 +134,4 @@ az group delete --ResourceGroupName MyResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы создали пул SQL, создали правило брандмауэра и подключились к этому пулу SQL. Чтобы узнать больше, перейдите к статье о [загрузке данных в пул SQL](load-data-from-azure-blob-storage-using-polybase.md).
+Вы создали пул SQL, создали правило брандмауэра и подключились к этому пулу SQL. Чтобы узнать больше, перейдите к статье о [загрузке данных в пул SQL](./load-data-from-azure-blob-storage-using-copy.md).

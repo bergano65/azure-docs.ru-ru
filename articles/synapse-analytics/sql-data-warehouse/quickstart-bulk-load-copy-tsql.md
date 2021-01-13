@@ -11,16 +11,16 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 83b5804888379316b855c36f803f646cec102d9e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 939a74a2bbedf6b00159f0c33a50eeb93595cda4
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024591"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116081"
 ---
 # <a name="quickstart-bulk-load-data-using-the-copy-statement"></a>Краткое руководство. Массовая загрузка данных с помощью инструкции COPY
 
-В этом кратком руководстве вы выполните массовую загрузку данных в выделенный пул SQL с помощью простой и гибкой [инструкции COPY](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для приема данных с высокой пропускной способностью. Инструкция COPY является рекомендуемой служебной программой загрузки, поскольку она позволяет легко и гибко загружать данные, предоставляя им функциональные возможности, которые позволяют:
+В этом кратком руководстве вы выполните массовую загрузку данных в выделенный пул SQL с помощью простой и гибкой [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для приема данных с высокой пропускной способностью. Инструкция COPY является рекомендуемой служебной программой загрузки, поскольку она позволяет легко и гибко загружать данные, предоставляя им функциональные возможности, которые позволяют:
 
 - Выполнять загрузку пользователям с более низкими привилегиями, без ограничения разрешений на управление хранилищем данных
 - Использовать только одну инструкцию T-SQL без необходимости создавать дополнительные объекты базы данных.
@@ -138,5 +138,5 @@ GROUP BY r.[request_id]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Рекомендации по загрузке данных см. в статье [Рекомендации по загрузке данных с помощью пула Synapse SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data).
-- Сведения об управлении ресурсами для загрузки данных см. в кратком руководстве [Настройка изоляции рабочих нагрузок с помощью T-SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-tsql). 
+- Рекомендации по загрузке данных см. в статье [Рекомендации по загрузке данных с помощью пула Synapse SQL](./guidance-for-loading-data.md).
+- Сведения об управлении ресурсами для загрузки данных см. в кратком руководстве [Настройка изоляции рабочих нагрузок с помощью T-SQL](./quickstart-configure-workload-isolation-tsql.md).

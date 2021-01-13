@@ -13,12 +13,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 4ebae7e97f9128bb9302e9076e71dd3164f0c29e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: bf8b705aff8ac608d0eb3626026797f1d106414b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030966"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017758"
 ---
 # <a name="quickstart-configure-an-application-to-expose-a-web-api"></a>Краткое руководство. Настройка приложения для предоставления веб-API
 
@@ -45,7 +45,7 @@ ms.locfileid: "97030966"
 
 Для начала выполните указанные ниже действия, чтобы создать пример области с именем `Employees.Read.All`:
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/quickstart-configure-app-expose-web-apis/portal-01-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, содержащий регистрацию клиентского приложения.
 1. Выберите **Azure Active Directory** > **Регистрация приложений**, а затем — регистрацию приложения API.
 1. Выберите **Предоставление API** > **Добавить группу**.

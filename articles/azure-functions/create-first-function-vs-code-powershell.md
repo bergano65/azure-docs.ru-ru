@@ -3,12 +3,12 @@ title: Создание функции PowerShell с помощью Visual Studi
 description: Сведения о том, как создать функцию PowerShell, а затем опубликовать локальный проект в бессерверном размещении в Функциях Azure с помощью расширения Функций Azure в Visual Studio Code.
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: 5d85c0362daa9dc3b42ed0cc1329329ffa598bee
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: ad129d8faec5725a6e76f14577e6a0e9deae8d86
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94637053"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968013"
 ---
 # <a name="quickstart-create-a-powershell-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции PowerShell в Azure с помощью Visual Studio Code
 
@@ -26,8 +26,7 @@ ms.locfileid: "94637053"
 
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
-+ [Node.js](https://nodejs.org/), необходимый Windows для npm. Только [активная версия LTS и версия Maintenance LTS](https://nodejs.org/about/releases/). Используйте команду `node --version`, чтобы проверить установленную версию.
-    Не требуется для локальной разработки на macOS и Linux.
++ [Azure Functions Core Tools](functions-run-local.md#install-the-azure-functions-core-tools) версии 3.x.
 
 + [PowerShell 7](/powershell/scripting/install/installing-powershell-core-on-windows)
 

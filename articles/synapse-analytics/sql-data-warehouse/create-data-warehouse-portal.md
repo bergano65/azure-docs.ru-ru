@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 78a0982081b8e34461fb2910cc7ce21be622cb6a
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 4da99200079557ab9d1674635c0df26c9e62d488
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922844"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120280"
 ---
 # <a name="quickstart-create-and-query-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-the-azure-portal"></a>Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics и отправка в него запросов с помощью портала Azure
 
@@ -153,7 +153,7 @@ ms.locfileid: "96922844"
 
 ## <a name="run-some-queries"></a>Выполнение запросов
 
-Не рекомендуем выполнять большие запросы при входе в систему в качестве администратора сервера, так как при этом используется [ограниченный класс ресурсов](resource-classes-for-workload-management.md). Вместо этого настройте [изоляцию рабочей нагрузки](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-tsql), как [показано в руководствах](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/load-data-wideworldimportersdw#create-a-user-for-loading-data).
+Не рекомендуем выполнять большие запросы при входе в систему в качестве администратора сервера, так как при этом используется [ограниченный класс ресурсов](resource-classes-for-workload-management.md). Вместо этого настройте [изоляцию рабочей нагрузки](./quickstart-configure-workload-isolation-tsql.md), как [показано в руководствах](./load-data-wideworldimportersdw.md#create-a-user-for-loading-data).
 
 В Azure Synapse Analytics в качестве языка запросов используется T-SQL. Чтобы открыть окно запросов и выполнить несколько запросов T-SQL, выполните следующие действия.
 

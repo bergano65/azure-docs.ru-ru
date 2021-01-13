@@ -3,21 +3,21 @@ title: Краткое руководство. Добавление провер�
 titleSuffix: Microsoft identity platform
 description: Из этого краткого руководства вы узнаете, как реализовать проверку подлинности с помощью веб-приложения Node.js и библиотеки проверки подлинности Майкрософт (MSAL) для Node.js.
 services: active-directory
-author: amikuma
-manager: saeeda
+author: mmacy
+manager: celested
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
 ms.date: 10/22/2020
-ms.author: amikuma
+ms.author: marsma
 ms.custom: aaddev, scenarios:getting-started, languages:js, devx-track-js
-ms.openlocfilehash: e860a33ba44743dcc5a96d7656f22fd952a1d0b8
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 7fc76259f30f96d95c63b7e9369ec5e9647d923e
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762573"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107452"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-node-web-app-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в веб-приложении Node с помощью потока кода авторизации
 
@@ -41,7 +41,7 @@ ms.locfileid: "96762573"
 >
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 >
-> 1. Войдите на [портал Azure](https://portal.azure.com).
+> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 > 1. Введите значение **Name** (Имя) для приложения. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.

@@ -10,16 +10,16 @@ ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6859d0582997ee861713090ccb4c22ed58ec4ca7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5ce411f3a2f3be162f9af16422d20b3e8b536fee
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462345"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120926"
 ---
 # <a name="connection-strings-for-synapse-sql"></a>Строки подключения для Synapse SQL
 
-К Synapse SQL можно подключиться с помощью различных протоколов приложений, таких как [ADO.NET](https://msdn.microsoft.com/library/e80y5yhx(v=vs.110).aspx), [ODBC](https://msdn.microsoft.com/library/jj730314.aspx), [PHP](https://msdn.microsoft.com/library/cc296172.aspx?f=255&MSPPError=-2147217396) и [JDBC](https://msdn.microsoft.com/library/mt484311(v=sql.110).aspx). Ниже приведены некоторые примеры строк подключения для каждого протокола. 
+К Synapse SQL можно подключиться с помощью различных протоколов приложений, таких как [ADO.NET](/dotnet/framework/data/adonet/), [ODBC](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows), [PHP](/sql/connect/php/overview-of-the-php-sql-driver?f=255&MSPPError=-2147217396) и [JDBC](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server). Ниже приведены некоторые примеры строк подключения для каждого протокола. 
 
 Кроме того, для формирования строки подключения можно использовать портал Azure.  Чтобы создать строку подключения с помощью портала Azure, перейдите к колонке своей базы данных и в разделе *Основное* выберите *Показать строки подключения к базам данных*.
 
