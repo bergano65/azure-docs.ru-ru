@@ -85,8 +85,14 @@
       items:
         - name: Настройка шаблона устройства
           href: howto-set-up-template.md
+        - name: Перемещение устройств в Интернет вещей
+          href: how-to-move-device-to-iot.md
         - name: Использование свойств
           href: howto-use-properties.md
+        - name: Использование команд
+          href: howto-use-commands.md
+        - name: Использование данных о расположении
+          href: howto-use-location-data.md
         - name: "Подготовка и подключение пакета средств разработки Azure\_Sphere"
           href: howto-connect-sphere.md
         - name: Подготовка и подключение устройства RuuviTag

@@ -11,16 +11,18 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: nichola
-ms.openlocfilehash: 9c53ea5bad88eb79940274c409218045c06d7981
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 4f0588667df6acb11a43e8c3469c67f65ed3cdd9
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064974"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165184"
 ---
 # <a name="support-single-sign-on-and-app-protection-policies-in-mobile-apps-you-develop"></a>Поддержка единого входа и политик защиты приложений в мобильных приложениях, которые вы разрабатываете
 
 Единый вход (SSO) — это ключевое предложение платформы Microsoft Identity и Azure Active Directory, обеспечивающее простые и безопасные имена входа для пользователей приложения. Кроме того, политики защиты приложений (APP) обеспечивают поддержку политик безопасности ключей, обеспечивающих безопасность данных пользователя. Вместе эти функции обеспечивают безопасный вход пользователей в систему и управление данными приложения.
+
+> [!VIDEO https://www.youtube.com/embed/JpeMeTjQJ04]
 
 В этой статье объясняется, зачем важны единый вход и приложение, а также общее руководство по созданию мобильных приложений, поддерживающих эти функции. Это применимо как для телефонов, так и для планшетных приложений. Если вы ИТ-администратор, желающий развернуть единый вход в клиенте Azure Active Directory организации, ознакомьтесь [с нашим руководством по планированию развертывания единого входа](../manage-apps/plan-sso-deployment.md) .
 

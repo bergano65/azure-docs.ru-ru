@@ -6,12 +6,12 @@ ms.author: bwren
 ms.subservice: metrics
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 6ce9183fad50c43ea7070f5fa09e0d445caf89df
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5dcb86ff4af2a68ecf0bb361e6da4f788ea32b62
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451260"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881299"
 ---
 # <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Руководство по Создание диаграммы метрик в Azure Monitor
 Обозреватель метрик является компонентом Azure Monitor и доступен на портале Microsoft Azure. Он позволяет создавать диаграммы, визуально сопоставлять тенденции и изучать пики и спады в значениях метрик. Используйте обозреватель метрик для анализа работоспособности и использования ресурсов Azure или для построения диаграмм по пользовательским метрикам. 
@@ -40,7 +40,7 @@ ms.locfileid: "96451260"
 
 1. Выберите **Метрики** в меню **Azure Monitor** или в разделе **Мониторинг** в меню ресурса.
 
-1. Выберите **Область**, то есть ресурс для просмотра метрик. Область заполняется автоматически, если вы открыли обозреватель метрик из меню ресурса.
+1. Выберите **Область**, то есть ресурс для просмотра метрик. Область заполняется автоматически, если вы открыли обозреватель метрик из меню ресурса. Дополнительные сведения о различных возможностях средства выбора области ресурсов см. в [этой статье](../platform/metrics-charts.md#resource-scope-picker).
 
     ![Выбор области](media/tutorial-metrics-explorer/scope-picker.png)
 

@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: c2496959f851b55f8cc66c0e793b641cdafb003a
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 39081bc7bec7cfd76ccfc9107d5c2286affb7df0
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808340"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913776"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-have-two-sets-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с двумя наборами учетных данных для аутентификации
 
@@ -222,8 +222,15 @@ az storage account keys list -n vaultrotationstorage
 
 ## <a name="key-vault-rotation-functions-for-two-sets-of-credentials"></a>Функции ротации хранилища ключей для двух наборов учетных данных
 
-- [Учетная запись хранения](https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell)
-- [Кэш Redis](https://github.com/jlichwa/KeyVault-Rotation-RedisCacheKey-PowerShell)
+Шаблон функций ротации для двух наборов учетных данных и нескольких готовых к использованию функций:
+
+- [шаблон проекта](https://serverlesslibrary.net/sample/bc72c6c3-bd8f-4b08-89fb-c5720c1f997f);
+- [Кэш Redis](https://serverlesslibrary.net/sample/0d42ac45-3db2-4383-86d7-3b92d09bc978)
+- [Учетная запись хранения](https://serverlesslibrary.net/sample/0e4e6618-a96e-4026-9e3a-74b8412213a4)
+- [База данных Cosmos](https://serverlesslibrary.net/sample/bcfaee79-4ced-4a5c-969b-0cc3997f47cc)
+
+> [!NOTE]
+> Описанные выше функции ротации создают члены сообщества, а не корпорация Майкрософт. Функции Azure, созданные сообществом, не поддерживаются ни в соответствии с какой-либо программой поддержки Майкрософт, ни какими-либо службами поддержки Майкрософт и предоставляются КАК ЕСТЬ без каких-либо гарантий.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

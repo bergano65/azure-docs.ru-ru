@@ -37,6 +37,8 @@
       href: azure-netapp-files-cost-model.md
     - name: Рекомендации по планированию сети Azure NetApp Files
       href: azure-netapp-files-network-topologies.md
+    - name: Принцип работы моментальных снимков Azure NetApp Files
+      href: snapshots-introduction.md
     - name: Управляемый вручную пул емкости QoS
       href: manual-qos-capacity-pool-introduction.md
     - name: Репликация между регионами

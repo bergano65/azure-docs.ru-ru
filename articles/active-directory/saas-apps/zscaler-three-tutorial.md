@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/17/2019
+ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: ad88f2a469fb89145c39990fe55e92abf0f2a4c1
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 054afcc4fb0f137a49e4b200ca7399424aba9adc
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608890"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936565"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zscaler-three"></a>Руководство по интеграции единого входа Azure Active Directory с Zscaler Three
 
@@ -26,7 +26,6 @@ ms.locfileid: "97608890"
 * Вы можете включить автоматический вход пользователей в Zscaler Three с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,18 +49,18 @@ ms.locfileid: "97608890"
 
 Чтобы настроить интеграцию Zscaler Three с Azure AD, нужно добавить Zscaler Three из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в окно поиска введите **Zscaler Three**.
 1. Выберите **Zscaler Three** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-zscaler-three"></a>Настройка и проверка единого входа Azure AD для Zscaler Three
+## <a name="configure-and-test-azure-ad-sso-for-zscaler-three"></a>Настройка и проверка единого входа Azure AD для Zscaler Three
 
 Настройте и проверьте единый вход Azure AD в Zscaler Three с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Zscaler Three.
 
-Чтобы настроить и проверить единый вход Azure AD в Zscaler Three, выполните следующие стандартные блоки действий.
+Чтобы настроить и проверить единый вход Azure AD в Zscaler Three, выполните следующие действия:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
@@ -74,9 +73,9 @@ ms.locfileid: "97608890"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Zscaler Three** найдите раздел **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Zscaler Three** найдите раздел **Управление** и выберите элемент **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** для изменения параметров.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -95,7 +94,7 @@ ms.locfileid: "97608890"
     | memberOf | user.assignedroles |
 
     > [!NOTE]
-    > Перейдите по [этой ссылке](../develop/active-directory-enterprise-app-role-management.md), чтобы прочитать о настройке роли в Azure Active Directory.
+    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui), чтобы прочитать о настройке роли в Azure AD.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -223,16 +222,15 @@ ms.locfileid: "97608890"
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-Щелкнув элемент "Zscaler Three" на Панели доступа, вы автоматически войдете в приложение Zscaler Three, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Zscaler Three, где можно инициировать поток входа. 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+* Перейдите по URL-адресу для входа в Zscaler Three и инициируйте поток входа.
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Zscaler Three в разделе "Мои приложения", вы перейдете по URL-адресу для входа в Zscaler Three. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Попробуйте использовать Zscaler Three с Azure AD](https://aad.portal.azure.com/)
+После настройки Zscaler Three вы можете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

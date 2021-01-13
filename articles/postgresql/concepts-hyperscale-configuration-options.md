@@ -6,13 +6,13 @@ ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
-ms.date: 7/1/2020
-ms.openlocfilehash: 8dc70eaeb9e2c2f5d4cdfef37619e4b04217782e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 1/12/2021
+ms.openlocfilehash: 48537483501165d4a978afdbd05560613170d187
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85964521"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165617"
 ---
 # <a name="azure-database-for-postgresql--hyperscale-citus-configuration-options"></a>Параметры конфигурации базы данных Azure для PostgreSQL — Scale (Цитус)
 
@@ -79,12 +79,12 @@ ms.locfileid: "85964521"
     * Восточная часть США
     * восточная часть США 2
     * Центрально-северная часть США
-    * западная часть США 2
+    * Западная часть США 2
 * Азиатско-Тихоокеанский регион:
     * Восточная Австралия
     * Japan East
     * Республика Корея, центральный регион
-    * Юго-Восточная Азия
+    * Southeast Asia
 * Европа
     * Северная Европа
     * южная часть Соединенного Королевства
@@ -118,6 +118,10 @@ ms.locfileid: "85964521"
 ### <a name="storage-size"></a>Объем памяти
 
 На узлах координатора и рабочей роли поддерживается до 2 Тиб хранилища. Сведения о доступных параметрах хранилища и вычислении операций ввода-вывода см. [выше](#compute-and-storage) для размеров узлов и кластеров.
+
+### <a name="database-creation"></a>Создание базы данных
+
+Портал Azure предоставляет учетные данные для подключения к ровно одной базе данных на каждую группу серверов горизонтальной шкалы (Цитус), которая является `citus` базой данных. Создание другой базы данных в настоящее время не разрешено, и команда CREATE DATABASE завершится ошибкой.
 
 ## <a name="pricing"></a>Цены
 Наиболее актуальные сведения о стоимости см. в статье [Цены на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/).

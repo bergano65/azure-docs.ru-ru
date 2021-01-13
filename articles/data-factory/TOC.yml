@@ -629,15 +629,19 @@
         - name: Среда выполнения интеграции Azure
           href: create-azure-integration-runtime.md
         - name: Локальная среда выполнения интеграции
-          href: create-self-hosted-integration-runtime.md
+          items:
+            - name: Создание и настройка локальной среды выполнения интеграции
+              href: create-self-hosted-integration-runtime.md
+            - name: Уведомление об автоматическом обновлении и истечении срока действия локальной среды выполнения интеграции
+              href: self-hosted-integration-runtime-auto-update.md
+            - name: Общая локальная среда выполнения интеграции
+              href: create-shared-self-hosted-integration-runtime-powershell.md
+            - name: Скрипты автоматизации локальной среды выполнения интеграции
+              href: self-hosted-integration-runtime-automation-scripts.md
+            - name: Запуск локальной среды выполнения интеграции в контейнере Windows
+              href: how-to-run-self-hosted-integration-runtime-in-windows-container.md
         - name: Azure-SSIS Integration Runtime
           href: create-azure-ssis-integration-runtime.md
-        - name: Общая локальная среда выполнения интеграции
-          href: create-shared-self-hosted-integration-runtime-powershell.md
-        - name: Скрипты автоматизации локальной среды выполнения интеграции
-          href: self-hosted-integration-runtime-automation-scripts.md
-        - name: Запуск локальной среды выполнения интеграции в контейнере Windows
-          href: how-to-run-self-hosted-integration-runtime-in-windows-container.md
     - name: Запуск пакетов служб Integration Services в Azure
       items:
         - name: Запуск пакетов Integration Services в Azure из SSDT

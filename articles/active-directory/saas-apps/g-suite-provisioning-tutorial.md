@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4851dfb4a96ab2ca19ba6ea67139772f9c091a69
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: c3f61c3fe688a0b7533902fb0caa19b67f883482
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763651"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901595"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
@@ -24,13 +24,6 @@ ms.locfileid: "97763651"
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
-
-> [!NOTE]
-> Соединитель G Suite был обновлен относительно недавно, в октябре 2019 года. В соединитель G Suite внесены следующие изменения:
->
-> * Добавлена поддержка дополнительных атрибутов пользователей и групп G Suite.
-> * Обновлены целевые имена атрибутов G Suite для соответствия приведенному [здесь](https://developers.google.com/admin-sdk/directory) определению.
-> * Обновлены стандартные сопоставления атрибутов.
 
 > [!NOTE]
 > Эта статья содержит ссылки на термин *список разрешений*. Корпорация Майкрософт больше не использует его. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
@@ -63,15 +56,15 @@ ms.locfileid: "97763651"
 
 1. Войдите в [консоль администрирования G Suite](https://admin.google.com/) с учетной записью администратора, а затем выберите **Security** (Безопасность). Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
 
-    ![G Suite: Security (Безопасность)](./media/google-apps-provisioning-tutorial/gapps-security.png)
+    ![G Suite: Security (Безопасность)](./media/g-suite-provisioning-tutorial/gapps-security.png)
 
 2. На странице **Security** (Безопасность) выберите **API Reference** (Справочник по API).
 
-    ![G Suite: API](./media/google-apps-provisioning-tutorial/gapps-api.png)
+    ![G Suite: API](./media/g-suite-provisioning-tutorial/gapps-api.png)
 
 3. Выберите **Включить доступ через API**.
 
-    ![G Suite: включен доступ через API](./media/google-apps-provisioning-tutorial/gapps-api-enabled.png)
+    ![G Suite: включен доступ через API](./media/g-suite-provisioning-tutorial/gapps-api-enabled.png)
 
     > [!IMPORTANT]
    > Имя каждого пользователя в Azure AD, которого вы хотите подготовить для G Suite, **должно** быть связано с личным доменом. Например, такие имена пользователей, как bob@contoso.onmicrosoft.com, не будут приняты G Suite. а bob@contoso.com — будут. Чтобы изменить домен для существующего пользователя, воспользуйтесь [этой инструкцией](../fundamentals/add-custom-domain.md).
@@ -80,15 +73,15 @@ ms.locfileid: "97763651"
 
     a. В [консоли администрирования G Suite](https://admin.google.com/) выберите **Domains** (Домены).
 
-    ![G Suite: домены](./media/google-apps-provisioning-tutorial/gapps-domains.png)
+    ![G Suite: домены](./media/g-suite-provisioning-tutorial/gapps-domains.png)
 
     b. Выберите **Add a domain or a domain alias** (Добавить домен или псевдоним домена).
 
-    ![G Suite: добавление домена](./media/google-apps-provisioning-tutorial/gapps-add-domain.png)
+    ![G Suite: добавление домена](./media/g-suite-provisioning-tutorial/gapps-add-domain.png)
 
     c. Выберите **Add another domain** (Добавить другой домен), а затем введите имя домена, который нужно добавить.
 
-    ![G Suite: добавление другого домена](./media/google-apps-provisioning-tutorial/gapps-add-another.png)
+    ![G Suite: добавление другого домена](./media/g-suite-provisioning-tutorial/gapps-add-another.png)
 
     d. Выберите **Continue and verify domain ownership** (Перейти к проверке владельца домена). Затем выполните действия, подтверждающие, что вы владеете доменным именем. Подробные инструкции по проверке домена в Google см. на странице [Как подтвердить право собственности на сайт](https://support.google.com/webmasters/answer/35179).
 
@@ -96,11 +89,11 @@ ms.locfileid: "97763651"
 
 5. Затем определите, какую учетную запись администратора вы хотите использовать для управления подготовкой пользователей в G Suite. Перейдите к разделу **Admin Roles** (Роли администратора).
 
-    ![G Suite: администратор](./media/google-apps-provisioning-tutorial/gapps-admin.png)
+    ![G Suite: администратор](./media/g-suite-provisioning-tutorial/gapps-admin.png)
 
 6. Для **роли администратора** этой учетной записи измените свойство **Privileges** (Привилегии). Убедитесь, что для учетной записи выбраны все параметры в разделе **Admin API Privileges** (Административные права доступа к API). Это позволит использовать ее для подготовки.
 
-    ![G Suite: права администратора](./media/google-apps-provisioning-tutorial/gapps-admin-privileges.png)
+    ![G Suite: права администратора](./media/g-suite-provisioning-tutorial/gapps-admin-privileges.png)
 
 ## <a name="step-3-add-g-suite-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление G Suite из коллекции приложений Azure AD
 
@@ -126,9 +119,9 @@ ms.locfileid: "97763651"
 
 1. Войдите на [портал Azure](https://portal.azure.com). Выберите **Корпоративные приложения**, а затем **Все приложения**. Пользователям придется выполнять вход на сайте portal.azure.com, а сайт aad.portal.azure.com они не увидят.
 
-    ![Колонка "Корпоративные приложения"](./media/google-apps-provisioning-tutorial/enterprise-applications.png)
+    ![Колонка "Корпоративные приложения"](./media/g-suite-provisioning-tutorial/enterprise-applications.png)
 
-    ![Колонка "Все приложения"](./media/google-apps-provisioning-tutorial/all-applications.png)
+    ![Колонка "Все приложения"](./media/g-suite-provisioning-tutorial/all-applications.png)
 
 2. В списке приложений выберите **G Suite**.
 
@@ -138,7 +131,7 @@ ms.locfileid: "97763651"
 
     ![Снимок экрана: раздел "Управление" с выделенным параметром "Подготовка".](common/provisioning.png)
 
-      ![Колонка "Начало работы"](./media/google-apps-provisioning-tutorial/get-started.png)
+      ![Колонка "Начало работы"](./media/g-suite-provisioning-tutorial/get-started.png)
 
 4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
@@ -146,11 +139,11 @@ ms.locfileid: "97763651"
 
 5. В разделе **Учетные данные администратора** щелкните **Авторизовать**. Вы перейдете к новому окну браузера, где откроется диалоговое окно авторизации Google.
 
-      ![G Suite: авторизация](./media/google-apps-provisioning-tutorial/authorize-1.png)
+      ![G Suite: авторизация](./media/g-suite-provisioning-tutorial/authorize-1.png)
 
 6. Подтвердите, что вы готовы предоставить Azure AD разрешение на внесение изменений в клиент G Suite. Выберите **Принять**.
 
-     ![G Suite: аутентификация клиента](./media/google-apps-provisioning-tutorial/gapps-auth.png)
+     ![G Suite: аутентификация клиента](./media/g-suite-provisioning-tutorial/gapps-auth.png)
 
 7. На портале Azure щелкните **Проверить подключение** и убедитесь, что Azure AD может подключиться к G Suite. Если установить подключение не удалось, убедитесь, что у учетной записи G Suite есть разрешения администратора, и повторите попытку. Затем повторите шаг **авторизации**.
 
@@ -276,7 +269,13 @@ ms.locfileid: "97763651"
 
 1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
 2. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).  
+
+## <a name="change-log"></a>Журнал изменений
+
+* 17.10.2020: добавлена поддержка дополнительных атрибутов пользователей и групп G Suite.
+* 17.10.2020: обновлены целевые имена атрибутов G Suite для соответствия приведенному [здесь](https://developers.google.com/admin-sdk/directory) определению.
+* 17.10.2020: обновлены стандартные сопоставления атрибутов.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

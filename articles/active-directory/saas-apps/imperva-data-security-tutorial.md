@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.author: jeedes
-ms.openlocfilehash: 0ea08f8ec98ff8ddd4a9f15f12a0224db440b7b0
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 710164fa3712058d64e5d23006b986eb3dc3eaba
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97675696"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882761"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-imperva-data-security"></a>Руководство по интеграции единого входа Azure Active Directory с Imperva Data Security
 
@@ -37,7 +37,7 @@ ms.locfileid: "97675696"
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Imperva Data Security поддерживает единый вход, инициированный **поставщиком удостоверений**.
+* Imperva Data Security поддерживает единый вход, инициированный **поставщиком служб**.
 
 ## <a name="adding-imperva-data-security-from-the-gallery"></a>Добавление Imperva Data Security из коллекции
 
@@ -76,9 +76,13 @@ ms.locfileid: "97675696"
 
 1. На странице **Настройка единого входа с помощью SAML** введите значения для следующих полей:
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<IMPERVA_DNS_NAME>:8443`.
+    а. В текстовом поле **Идентификатор** введите идентификатор в таком формате: `application-name`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<IMPERVA_DNS_NAME>:8443`.
+    
+    c. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<IMPERVA_DNS_NAME>:8443`.
+    
+    d. В текстовом поле **URL-адрес выхода** введите URL-адрес в следующем формате: `https://<IMPERVA_DNS_NAME>:8443`    
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Imperva Data Security](mailto:support@jsonar.imperva.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

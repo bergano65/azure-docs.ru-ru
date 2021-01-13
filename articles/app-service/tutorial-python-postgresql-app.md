@@ -3,7 +3,7 @@ title: Руководство по развертыванию приложени
 description: Создайте веб-приложение Python с использованием базы данных PostgreSQL и разверните его в Azure. В этом учебнике используется платформа Django, а приложение размещается в Службе приложений Azure в Linux.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/02/2020
+ms.date: 01/04/2021
 ms.custom:
 - mvc
 - seodec18
@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: b106b403022f3407a3838b7f65222baf41cbfff5
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: ffde74a0567661d6b9f77e45a80bfd585e5c7212
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852971"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898595"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по развертыванию веб-приложения Django с PostgreSQL в Службе приложений Azure
 
@@ -236,14 +236,11 @@ az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNA
 1. Выполните следующие команды в сеансе SSH (можно вставить команды с помощью сочетания клавиш **CTRL**+**SHIFT**+**V**):
 
     ```bash
-    # Change to the folder where the app code is deployed
-    cd site/wwwroot
+    # Change to the app folder
+    cd $APP_PATH
     
-    # Activate default virtual environment in App Service container
+    # Activate the venv (requirements.txt is installed automatically)
     source /antenv/bin/activate
-
-    # Install packages
-    pip install -r requirements.txt
 
     # Run database migrations
     python manage.py migrate
@@ -251,6 +248,8 @@ az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNA
     # Create the super user (follow prompts)
     python manage.py createsuperuser
     ```
+
+    При возникновении ошибок, связанных с подключением к базе данных, проверьте значения параметров приложения, созданных при работе с предыдущим разделом.
 
 1. Команда `createsuperuser` запросит учетные данные суперпользователя. В рамках этого учебника используйте имя пользователя по умолчанию `root`, нажмите **ВВОД**, чтобы адрес электронной почты оставался пустым, а затем введите `Pollsdb1` в качестве пароля.
 
@@ -260,13 +259,13 @@ az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNA
     
 ### <a name="44-create-a-poll-question-in-the-app"></a>4.4. Создание вопроса опроса в приложении
 
-1. В браузере откройте URL-адрес `http://<app-name>.azurewebsites.net`. В приложении должно отобразиться сообщение No polls are available (Доступных опросов нет), так как в базе данных нет отдельных опросов.
+1. В браузере откройте URL-адрес `http://<app-name>.azurewebsites.net`. В приложении должно отобразиться сообщение Polls app (Опрашивает приложение) или No polls are available (Доступных опросов нет), так как в базе данных нет конкретных опросов.
 
     Если отображается сообщение об ошибке приложения, скорее всего, вы не создали необходимые параметры на предыдущем шаге [Настройка переменных среды для подключения к базе данных](#42-configure-environment-variables-to-connect-the-database) или значения этих параметров содержат ошибки. Выполните команду `az webapp config appsettings list`, чтобы проверить параметры. Кроме того, можно [проверить журналы диагностики](#6-stream-diagnostic-logs), чтобы увидеть конкретные ошибки при запуске приложения. Например, если вы не создали параметры, в журналах отобразится ошибка `KeyError: 'DBNAME'`.
 
     После обновления параметров для исправления ошибок дайте приложению минуту для перезапуска, а затем обновите страницу браузера.
 
-1. Перейдите по адресу `http://<app-name>.azurewebsites.net/admin`. Выполните вход с использованием учетных данных суперпользователя из предыдущего раздела (`root` и `Pollsdb1`). В разделе **Polls** (Опросы) щелкните **Add** (Добавить) возле поля **Questions** (Вопросы) и создайте вопрос с несколькими вариантами ответа.
+1. Перейдите по адресу `http://<app-name>.azurewebsites.net/admin`. Выполните вход с использованием учетных данных суперпользователя Django из предыдущего раздела (`root` и `Pollsdb1`). В разделе **Polls** (Опросы) щелкните **Add** (Добавить) возле поля **Questions** (Вопросы) и создайте вопрос с несколькими вариантами ответа.
 
 1. Еще раз перейдите по адресу `http://<app-name>.azurewebsites.net`, чтобы убедиться, что пользователь видит вопросы. Ответьте на вопросы произвольным образом, чтобы наполнить базу данных.
 
@@ -292,7 +291,7 @@ az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNA
 python3 -m venv venv
 source venv/bin/activate
 
-# Install packages
+# Install dependencies
 pip install -r requirements.txt
 # Run Django migrations
 python manage.py migrate
@@ -310,7 +309,7 @@ py -3 -m venv venv
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 venv\scripts\activate
 
-# Install packages
+# Install dependencies
 pip install -r requirements.txt
 # Run Django migrations
 python manage.py migrate
@@ -327,7 +326,7 @@ python manage.py runserver
 py -3 -m venv venv
 venv\scripts\activate
 
-:: Install packages
+:: Install dependencies
 pip install -r requirements.txt
 :: Run Django migrations
 python manage.py migrate
@@ -397,11 +396,8 @@ az webapp up
 Еще раз откройте в браузере сеанс SSH, перейдя по адресу `https://<app-name>.scm.azurewebsites.net/webssh/host`. Затем выполните следующие команды:
 
 ```
-cd site/wwwroot
-
-# Activate default virtual environment in App Service container
+cd $APP_PATH
 source /antenv/bin/activate
-# Run database migrations
 python manage.py migrate
 ```
 

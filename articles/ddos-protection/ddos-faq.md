@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: c09f8c5ae4a742e6caa489ee29043f500617bb24
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 4196515463611f51dddb79438b1d4e827f1b32c2
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746494"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165405"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Часто задаваемые вопросы о стандарте защиты Azure от атак DDoS
 
@@ -27,6 +27,11 @@ ms.locfileid: "96746494"
 
 ## <a name="what-is-azure-ddos-protection-standard-service"></a>Что такое стандартная служба защиты Azure от атак DDoS?
 Azure от атак DDoS Protection Standard, в сочетании с рекомендациями по проектированию приложений, предоставляет улучшенные функции предотвращения от атак DDoS для защиты от атак от атак DDoS. Она автоматически настраивается для защиты конкретных ресурсов Azure в виртуальной сети. Защита проста в использовании для любой новой или имеющейся виртуальной сети и не требует изменений приложений или ресурсов. Она имеет несколько преимуществ в сравнении с базовой службой, например ведение журнала, оповещения и данные телеметрии. Дополнительные сведения см. в статье [Обзор службы защиты Azure от атак DDoS Standard](ddos-protection-overview.md) . 
+
+## <a name="how-does-pricing-work"></a>Как действуют цены?
+Планы защиты от атак DDoS имеют фиксированную ежемесячную оплату $2 944 в месяц, которая охватывает до 100 общедоступных IP-адресов. Защита для дополнительных ресурсов будет стоить дополнительные $30 на ресурс в месяц. 
+
+В рамках клиента один план защиты от атак DDoS может использоваться в нескольких подписках, поэтому нет необходимости создавать более одного плана защиты от атак DDoS.
 
 ## <a name="what-about-protection-at-the-service-layer-layer-7"></a>Что насчет защиты на уровне служб (уровень 7)?
 Клиенты могут использовать службу защиты Azure от атак DDoS в сочетании с брандмауэром веб-приложения (WAF) для защиты как на уровне сети (уровень 3 и 4, предлагаемом стандартом Azure от атак DDoS Protection), так и на уровне приложения (уровень 7, предлагаемый WAF). Предложения WAF включают [SKU WAF шлюза приложений](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure, а также предложения брандмауэра веб-приложений сторонних производителей, доступные в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).

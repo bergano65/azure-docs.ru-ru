@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 7c5cac0b52fb0a224595ca7e328b551fd48d6661
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 375f0a26006f1176174b335073709e45911d9921
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614240"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165813"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Параметры конфигурации — Application Insights Azure Monitor для Java
 
@@ -233,6 +233,35 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 {
   "instrumentation": {
     "micrometer": {
+      "enabled": false
+    }
+  }
+}
+```
+
+## <a name="suppressing-specific-auto-collected-telemetry"></a>Подавление конкретных автособираемых данных телеметрии
+
+Начиная с версии 3.0.1-BETA. 2, можно подавлять определенные автособираемые данные телеметрии, используя следующие параметры конфигурации:
+
+```json
+{
+  "instrumentation": {
+    "cassandra": {
+      "enabled": false
+    },
+    "jdbc": {
+      "enabled": false
+    },
+    "kafka": {
+      "enabled": false
+    },
+    "micrometer": {
+      "enabled": false
+    },
+    "mongo": {
+      "enabled": false
+    },
+    "redis": {
       "enabled": false
     }
   }

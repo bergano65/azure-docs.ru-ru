@@ -8,18 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 09e922ffddcce732d9213eb91026561528c0728a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ce854c8f2d1d317c3660aaab9c0a6569aae0bb36
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169143"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97895977"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Руководство. Выполнение входа от имени пользователя и вызов защищенного API из приложения Blazor WebAssembly
 
-Из этого руководства вы узнаете, как создать приложение Blazor WebAssembly с поддержкой входа пользователей и получения данных из Microsoft Graph, используя платформу удостоверений Майкрософт и зарегистрировав приложение в Azure Active Directory (Azure AD).
-
-Кроме того, у нас есть руководство по [Blazor Server](tutorial-blazor-server.md). 
+Из этого руководства вы узнаете, как создать приложение Blazor WebAssembly с поддержкой входа пользователей и получения данных из Microsoft Graph, используя платформу удостоверений Майкрософт и зарегистрировав приложение в Azure Active Directory (Azure AD). 
 
 В этом руководстве рассматриваются следующие темы:
 
@@ -27,6 +25,10 @@ ms.locfileid: "96169143"
 >
 > * создание нового приложения Blazor WebAssembly, в котором настроено использование Azure Active Directory (Azure AD) для [аутентификации и авторизации](authentication-vs-authorization.md) с помощью платформы удостоверений Майкрософт;
 > * получение данных из защищенного веб-API (на примере [Microsoft Graph](/graph/overview)).
+
+В этом руководстве используется .NET Core 3.1. Документация по .NET содержит инструкции по [защите приложения Blazor WebAssembly](https://docs.microsoft.com/aspnet/core/blazor/security/webassembly/graph-api) с помощью ASP.NET Core 5.0. 
+
+Кроме того, у нас есть руководство по [Blazor Server](tutorial-blazor-server.md). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -74,9 +76,11 @@ dotnet run --framework netstandard2.1
 
 Компоненты этого шаблона, которые поддерживают вход с использованием Azure AD и платформы удостоверений Майкрософт, описаны в [документации по ASP.NET](/aspnet/core/blazor/security/webassembly/standalone-with-azure-active-directory#authentication-package).
 
-## <a name="retrieving-data-from-microsoft-graph"></a>Получение данных из Microsoft Graph
+## <a name="retrieving-data-from-a-protected-api-microsoft-graph"></a>Извлечение данных из защищенного API (Microsoft Graph)
 
-[Microsoft Graph](/graph/overview) предлагает ряд API, которые предоставляют доступ к данным пользователей Microsoft 365 в арендаторе. Используя платформу удостоверений Майкрософт в качестве поставщика удостоверений для приложения, вы получаете более удобный доступ к этим сведениям, так как Microsoft Graph напрямую поддерживает маркеры, выданные этой платформой. В этом разделе показано, как добавить код, который может отображать сообщения электронной почты выполнившего вход пользователя на странице получения данных в приложении.
+[Microsoft Graph](/graph/overview) включает интерфейсы API, которые предоставляют доступ к данным Microsoft 365 для пользователей, и поддерживает маркеры, выданные платформой удостоверений Майкрософт, благодаря чему этот API хорошо использовать в качестве примера. В этом разделе описано, как добавить код для вызова Microsoft Graph и отображения адресов электронной почты пользователей на странице Fetch data (Получение данных) в приложении.
+
+Этот раздел написан с использованием общего подхода к вызову защищенного API с помощью именованного клиента. Этот же метод можно использовать для других защищенных API, которые вы хотите вызывать. Но если вы планируете вызывать Microsoft Graph из приложения, вы можете использовать пакет SDK Graph для уменьшения объема кода. В документации по .NET приведены инструкции по [использованию пакета SDK Graph](https://docs.microsoft.com/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0).
 
 Прежде чем начать, выйдите из приложения, так как вы будете вносить изменения в обязательные разрешения, и текущий маркер не будет работать. Если вы этого еще не сделали, прежде чем обновлять код ниже, запустите приложение еще раз и выберите **Выйти**.
 

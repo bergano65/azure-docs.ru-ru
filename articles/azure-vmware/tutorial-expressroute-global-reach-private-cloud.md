@@ -2,13 +2,13 @@
 title: Учебник по настройке пиринга между локальной средой и частным облаком
 description: Создание пиринга ExpressRoute Global Reach к частному облаку в решении Azure VMware.
 ms.topic: tutorial
-ms.date: 09/21/2020
-ms.openlocfilehash: 4d10972a693f7c4c3ae25a5bc986f6c15e978294
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.date: 1/5/2021
+ms.openlocfilehash: 613aece6ed548f70840349e017de4416883d6cf3
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912503"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913164"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Руководство по Настройка пиринга между локальной средой и частным облаком
 
@@ -33,9 +33,10 @@ ExpressRoute Global Reach подключает локальную среду к 
 - Установленное подключение к частному облаку решения Azure VMware и из него с помощью канала ExpressRoute, подключенного к шлюзу ExpressRoute в виртуальной сети Azure (VNet) — _канал 2_ из процедур пиринга.  
 - Отдельный работоспособный канал ExpressRoute, используемый для подключения локальных сред к Azure — _канал 1_ с точки зрения процедур пиринга.
 - [блок неперекрывающихся сетевых адресов](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) /29 для пиринга ExpressRoute Global Reach.
+- Убедитесь, что все маршрутизаторы, включая службу поставщика ExpressRoute, поддерживают 4-байтовые номера автономной системы (ASN). Решение Azure VMware использует 4-байтовые общедоступные номера ASN для объявления маршрутов.
 
 > [!TIP]
-> В рамках этих предварительных требований считается, что канал ExpressRoute локальной среды называется _канал 1_ , а канал ExpressRoute частного облака находится в другой подписке и обозначается как _канал 2_. 
+> В рамках этих предварительных требований считается, что канал ExpressRoute локальной среды называется _канал 1_, а канал ExpressRoute частного облака находится в другой подписке и обозначается как _канал 2_. 
 
 
 ## <a name="create-an-expressroute-authorization-key-in-the-private-cloud"></a>Создание ключа авторизации ExpressRoute в частном облаке

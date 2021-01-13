@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 62a1f43fb73f0eda77ebb8f62f64c95ff4ad37a1
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 5df8b478c550522d4602398afd208c1e001c96a2
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734204"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883305"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Руководство по началу работы с Машинным обучением Azure в среде разработки (часть 1 из 4)
 
@@ -67,8 +67,10 @@ tutorial
 - `.azureml`: скрытый подкаталог для хранения файлов конфигурации Машинного обучения Azure.
 
 > [!TIP]
-> Если вы работаете с компьютером Mac, в окне поиска используйте клавиши **CMD+SHIFT+.** для переключения возможности просмотра и создания каталогов, начинающихся с точки.  Или используйте командный терминал для создания каталога.
-
+> Вы можете создать скрытый подкаталог .azureml в окне терминала.  Или сделайте следующее:
+> * В окне поиска компьютера Mac используйте клавиши **CMD+SHIFT+.** для переключения возможности просмотра и создания каталогов, начинающихся с точки.  
+> * В Windows 10 выполните инструкции по [просмотру скрытых файлов и папок](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). 
+> * В графическом интерфейсе Linux используйте **CTRL+H** или меню **Представление** и установите флажок **Show hidden files** (Показать скрытые файлы).
 
 > [!div class="nextstepaction"]
 > [Мной создан каталог](?success=create-dir#workspace) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=create-dir)
