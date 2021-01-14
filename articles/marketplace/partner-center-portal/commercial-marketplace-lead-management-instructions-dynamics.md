@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 03/30/2020
-ms.openlocfilehash: 5d07dda82361ff59a43aa6753669bf38f4463059
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: d996a2e0732ad9b4da104265710970e04cdbd368
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491143"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98199786"
 ---
 # <a name="configure-lead-management-for-dynamics-365-customer-engagement"></a>Настройка управления потенциальными клиентами в Dynamics 365 Customer Engagement
 
@@ -37,19 +37,19 @@ ms.locfileid: "94491143"
 1. Откройте Dynamics 365 Customer Engagement, перейдя по URL-адресу экземпляра Dynamics, например `https://tenant.crm.dynamics.com`.
 
 1. Щелкните значок шестеренки на верхней панели и выберите пункт **Дополнительные параметры**.
- 
-    ![Пункт меню "Дополнительные параметры" в Dynamics 365](./media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-advanced-settings.png)
+
+    ![Пункт меню "Дополнительные параметры" в Dynamics 365](media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-advanced-settings.png)
 
 1. На странице **Параметры** на верхней панели откройте меню **Параметры** и выберите пункт **Решения**.
 
     >[!NOTE]
     >Если вы не видите параметры, показанные на снимке экрана ниже, значит, у вас нет нужных разрешений. Обратитесь к администратору экземпляра Dynamics 365 Customer Engagement.
 
-    ![Пункт "Решения" в Dynamics 365](./media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-solutions.png)
+    ![Пункт "Решения" в Dynamics 365](media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-solutions.png)
 
-1. На странице **Решения** выберите команду **Импорт** и перейдите к месту, где вы сохранили решение **Microsoft Marketplace Lead Writer** , скачанное на шаге 1.
+1. На странице **Решения** выберите команду **Импорт** и перейдите к месту, где вы сохранили решение **Microsoft Marketplace Lead Writer**, скачанное на шаге 1.
 
-    ![Кнопка «Импорт»](./media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-crm-import.png)
+    ![Кнопка «Импорт»](media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-crm-import.png)
 
 1. Выполните импорт решения согласно указаниям в мастере импорта решений.
 
@@ -72,43 +72,43 @@ ms.locfileid: "94491143"
 
 1. Выберите **Свойства** и скопируйте значение **идентификатора каталога** на странице **Свойства каталога**. Сохраните это значение, так как его необходимо будет указать на портале публикации для получения сведений о потенциальных клиентах для вашего коммерческого предложения.
 
-    ![Пункт меню "Свойства каталога" в Azure Active Directory](./media/commercial-marketplace-lead-management-instructions-dynamics/aad-properties.png)
+    ![Пункт меню "Свойства каталога" в Azure Active Directory](media/commercial-marketplace-lead-management-instructions-dynamics/aad-properties.png)
 
-1. В левой области в Azure Active Directory выберите **Регистрация приложений** , а затем на открывшейся странице выберите элемент **Новая регистрация**.
+1. В левой области в Azure Active Directory выберите **Регистрация приложений**, а затем на открывшейся странице выберите элемент **Новая регистрация**.
 1. Введите понятное имя для приложения.
 1. В разделе **Поддерживаемые типы учетных записей** выберите **Учетные записи в любом каталоге организации**.
-1. В поле **URI перенаправления (необязательно)** выберите **Интернет** и введите универсальный код ресурса (URI), например `https://contosoapp1/auth`. 
+1. В поле **URI перенаправления (необязательно)** выберите **Интернет** и введите универсальный код ресурса (URI), например `https://contosoapp1/auth`.
 1. Выберите **Зарегистрировать**.
 
-    ![Страница регистрации приложения](./media/commercial-marketplace-lead-management-instructions-dynamics/register-an-application.png)
+    ![Страница регистрации приложения](media/commercial-marketplace-lead-management-instructions-dynamics/register-an-application.png)
 
 1. После регистрации приложения перейдите на страницу общих сведений о нем. Скопируйте значение **Идентификатор приложения (клиент)** на этой странице. Сохраните это значение, так как его необходимо будет указать на портале публикации и в Dynamics 365 для получения сведений о потенциальных клиентах для вашего коммерческого предложения.
 
-    ![Поле "Идентификатор приложения (клиент)"](./media/commercial-marketplace-lead-management-instructions-dynamics/application-id.png)
+    ![Поле "Идентификатор приложения (клиент)"](media/commercial-marketplace-lead-management-instructions-dynamics/application-id.png)
 
-1. На странице **Сертификаты и секреты** в левой области приложения нажмите кнопку **Новый секрет клиента**. Введите понятное описание секрета клиента и в разделе **Срок действия** выберите вариант **Никогда**. Выберите **Добавить** , чтобы создать секрет клиента.
+1. На странице **Сертификаты и секреты** в левой области приложения нажмите кнопку **Новый секрет клиента**. Введите понятное описание секрета клиента и в разделе **Срок действия** выберите вариант **Никогда**. Выберите **Добавить**, чтобы создать секрет клиента.
 
-    ![Пункт меню "Сертификаты и секреты"](./media/commercial-marketplace-lead-management-instructions-dynamics/aad-certificates-secrets.png)
+    ![Пункт меню "Сертификаты и секреты"](media/commercial-marketplace-lead-management-instructions-dynamics/aad-certificates-secrets.png)
 
 1. После успешного создания секрета клиента скопируйте значение **Секрет клиента**. После закрытия этой страницы вы не сможете получить это значение. Сохраните это значение, так как его необходимо будет указать на портале публикации для получения сведений о потенциальных клиентах для вашего коммерческого предложения. 
-1. В левой области приложения выберите пункт **Разрешения API** , а затем выберите **Добавить разрешение**.
-1. Выберите **Интерфейсы API Microsoft** , а затем выберите интерфейс API **Dynamics CRM**.
-1. В разделе **Какие разрешения требуются вашему приложению?** выберите пункт **Делегированные разрешения**. 
+1. В левой области приложения выберите пункт **Разрешения API**, а затем выберите **Добавить разрешение**.
+1. Выберите **Интерфейсы API Microsoft**, а затем выберите интерфейс API **Dynamics CRM**.
+1. В разделе **Какие разрешения требуются вашему приложению?** выберите пункт **Делегированные разрешения**.
 1. В разделе **Разрешение** установите флажок **user_impersonation** для **доступа к Common Data Service в качестве пользователей организации**. Нажмите кнопку **Добавить разрешения**.
 
-    ![Кнопка "Добавить разрешения"](./media/commercial-marketplace-lead-management-instructions-dynamics/api-permissions.png)
+    ![Кнопка "Добавить разрешения"](media/commercial-marketplace-lead-management-instructions-dynamics/api-permissions.png)
 
 1. После выполнения шагов 1–14 на портале Azure перейдите к экземпляру Dynamics 365 Customer Engagement по URL-адресу, например `https://tenant.crm.dynamics.com`.
 1. Щелкните значок шестеренки на верхней панели и выберите пункт **Дополнительные параметры**.
 1. На странице **Параметры** на верхней панели откройте меню **Параметры** и выберите пункт **Безопасность**.
 1. На странице **Безопасность** выберите элемент **Пользователи**. На странице **Пользователи** в раскрывающемся списке **Включенные пользователи** выберите пункт **Пользователи приложения**.
-1. Нажмите **Создать** , чтобы создать пользователя. 
+1. Нажмите **Создать**, чтобы создать пользователя.
 
-    ![Создание пользователя](./media/commercial-marketplace-lead-management-instructions-dynamics/application-users.png)
+    ![Создание пользователя](media/commercial-marketplace-lead-management-instructions-dynamics/application-users.png)
 
-1. В области **Новый пользователь** выберите пункт **ПОЛЬЗОВАТЕЛЬ: ПОЛЬЗОВАТЕЛЬ ПРИЛОЖЕНИЯ**. Укажите имя пользователя, полное имя и электронный адрес пользователя, который должен использоваться с этим подключением. Кроме того, вставьте **идентификатор приложения** , созданный на портале Azure на шаге 8. Выберите **Сохранить и закрыть** , чтобы завершить добавление пользователя.
+1. В области **Новый пользователь** выберите пункт **ПОЛЬЗОВАТЕЛЬ: ПОЛЬЗОВАТЕЛЬ ПРИЛОЖЕНИЯ**. Укажите имя пользователя, полное имя и электронный адрес пользователя, который должен использоваться с этим подключением. Кроме того, вставьте **идентификатор приложения**, созданный на портале Azure на шаге 8. Выберите **Сохранить и закрыть**, чтобы завершить добавление пользователя.
 
-    ![Область "Новый пользователь"](./media/commercial-marketplace-lead-management-instructions-dynamics/new-user-info.png)
+    ![Область "Новый пользователь"](media/commercial-marketplace-lead-management-instructions-dynamics/new-user-info.png)
 
 1. Перейдите в раздел "Параметры безопасности" этой статьи и завершите настройку подключения для этого пользователя.
 
@@ -122,7 +122,7 @@ ms.locfileid: "94491143"
 
 1. Нажмите **Добавить пользователя**.
 
-    ![Команда добавления пользователя в Центре администрирования Microsoft 365](./media/commercial-marketplace-lead-management-instructions-dynamics/ms-365-add-user.png)
+    ![Команда добавления пользователя в Центре администрирования Microsoft 365](media/commercial-marketplace-lead-management-instructions-dynamics/ms-365-add-user.png)
 
 1. Создайте пользователя для службы модуля записи интересов. Настройте следующие параметры:
 
@@ -133,7 +133,7 @@ ms.locfileid: "94491143"
 
 Сохраните эти значения, так как вам необходимо будет указать значения **Имя пользователя** и **Пароль** на портале публикации для получения сведений о потенциальных клиентах для вашего коммерческого предложения.
 
-![Область "Новый пользователь" в Центре администрирования Microsoft 365.](./media/commercial-marketplace-lead-management-instructions-dynamics/ms-365-new-user.png)
+![Область "Новый пользователь" в Центре администрирования Microsoft 365.](media/commercial-marketplace-lead-management-instructions-dynamics/ms-365-new-user.png)
 
 ## <a name="security-settings"></a>Параметры безопасности
 
@@ -142,32 +142,32 @@ ms.locfileid: "94491143"
 1. Откройте Dynamics 365 Customer Engagement, перейдя по URL-адресу экземпляра Dynamics, например `https://tenant.crm.dynamics.com`.
 1. Щелкните значок шестеренки на верхней панели и выберите пункт **Дополнительные параметры**.
 1. На странице **Параметры** на верхней панели откройте меню **Параметры** и выберите пункт **Безопасность**.
-1. На странице **Безопасность** выберите **Пользователи** , а затем выберите пользователя, созданного в разделе "Настройка разрешений пользователей" этого документа. Затем выберите вкладку **Управление ролями**. 
+1. На странице **Безопасность** выберите **Пользователи**, а затем выберите пользователя, созданного в разделе "Настройка разрешений пользователей" этого документа. Затем выберите вкладку **Управление ролями**.
 
-    ![Вкладка "Управление ролями"](./media/commercial-marketplace-lead-management-instructions-dynamics/security-manage-roles.png)
+    ![Вкладка "Управление ролями"](media/commercial-marketplace-lead-management-instructions-dynamics/security-manage-roles.png)
 
 1. Найдите роль с именем **Microsoft Marketplace Lead Writer** и выберите ее, чтобы назначить ее пользователю.
 
-    ![Область "Управление ролями пользователей"](./media/commercial-marketplace-lead-management-instructions-dynamics/security-manage-user-roles.png)
+    ![Область "Управление ролями пользователей"](media/commercial-marketplace-lead-management-instructions-dynamics/security-manage-user-roles.png)
 
     >[!NOTE]
     >Эту роль создало импортированное решение, и ей предоставлены разрешения только на запись данных о потенциальных клиентах и на отслеживание версии решения для обеспечения совместимости.
 
 1. Вернитесь на страницу **Безопасность** и выберите элемент **Роли безопасности**. Найдите роль **Microsoft Marketplace Lead Writer** и выберите ее.
 
-    ![Область "Роли безопасности"](./media/commercial-marketplace-lead-management-instructions-dynamics/security-roles.png)
+    ![Область "Роли безопасности"](media/commercial-marketplace-lead-management-instructions-dynamics/security-roles.png)
 
-1. На странице роли безопасности выберите вкладку **Базовые записи**. Выполните поиск элемента **Параметры интерфейса сущности пользователя**. Включите разрешения на создание, чтение и запись для пользователя (четверть желтого круга) для этой сущности, щелкнув один раз каждый из соответствующих кружков.
+1. На странице роли безопасности выберите вкладку **Базовые записи**. Выполните поиск элемента **Параметры интерфейса сущности пользователя**. Включите разрешения на создание, чтение и запись для пользователя (1/4 желтый круг) для этой сущности, выбрав соответствующие переключатели.
 
-    ![Вкладка "Базовые записи" для Microsoft Marketplace Lead Writer](./media/commercial-marketplace-lead-management-instructions-dynamics/marketplace-lead-writer.png)
+    ![Вкладка "Базовые записи" для Microsoft Marketplace Lead Writer](media/commercial-marketplace-lead-management-instructions-dynamics/marketplace-lead-writer.png)
 
-1. На вкладке **Настройка** найдите элемент **Системное задание**. Включите разрешения на чтение, запись и добавление для организации (сплошные зеленые кружки) для этой сущности, щелкнув четыре раза каждый из соответствующих кружков.
+1. На вкладке **Настройка** найдите элемент **Системное задание**. Включите разрешения чтение, запись и Аппендто для организации (сплошные зеленые переключатели) для этой сущности, выбрав соответствующие переключатели.
 
-    ![Вкладка "Настройка" для Microsoft Marketplace Lead Writer](./media/commercial-marketplace-lead-management-instructions-dynamics/marketplace-lead-writer-customization.png)
+    ![Вкладка "Настройка" для Microsoft Marketplace Lead Writer](media/commercial-marketplace-lead-management-instructions-dynamics/marketplace-lead-writer-customization.png)
 
 1. Выберите команду **Сохранить и закрыть**.
 
-## <a name="configure-your-offer-to-send-leads-to-dynamics-365-customer-engagement"></a>Настройка предложения для передачи потенциальных клиентов в Dynamics 365 Customer Engagement 
+## <a name="configure-your-offer-to-send-leads-to-dynamics-365-customer-engagement"></a>Настройка предложения для передачи потенциальных клиентов в Dynamics 365 Customer Engagement
 
 Чтобы настроить сведения об управлении потенциальными клиентами для своего предложения на портале публикации, выполните указанные ниже действия.
 
@@ -178,25 +178,25 @@ ms.locfileid: "94491143"
 
 1. Во всплывающем окне со сведениями о подключении в качестве назначения потенциального клиента выберите **Dynamics 365 Customer Engagement**.
 
-    ![Поле назначения потенциального клиента](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-lead-destination.png)
+    ![Поле назначения потенциального клиента](media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-lead-destination.png)
 
 1. Введите **URL-адрес** экземпляра Dynamics 365, например `https://contoso.crm4.dynamics.com`.
 
-1. Выберите метод **проверки подлинности** : Azure Active Directory или Office 365. 
-1. Если вы выбрали **Azure Active Directory** , введите **идентификатор приложения (клиента)** (например, `23456052-aaaa-bbbb-8662-1234df56788f`), **идентификатор каталога** (например, `12345678-8af1-4asf-1234-12234d01db47`) и **секрет клиента** (например, `1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=`).
+1. Выберите метод **проверки подлинности**: Azure Active Directory или Office 365.
+1. Если вы выбрали **Azure Active Directory**, введите **идентификатор приложения (клиента)** (например, `23456052-aaaa-bbbb-8662-1234df56788f`), **идентификатор каталога** (например, `12345678-8af1-4asf-1234-12234d01db47`) и **секрет клиента** (например, `1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=`).
 
-    ![Выбор проверки подлинности с помощью Azure Active Directory](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-application-id.png)
+    ![Выбор проверки подлинности с помощью Azure Active Directory](media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-application-id.png)
 
-1. Если вы выбрали **Office 365** , введите **имя пользователя** (например, `contoso@contoso.onmicrosoft.com`) и **пароль** (например, `P@ssw0rd`).
+1. Если вы выбрали **Office 365**, введите **имя пользователя** (например, `contoso@contoso.onmicrosoft.com`) и **пароль** (например, `P@ssw0rd`).
 
-    ![Поле имени пользователя Office 365](./media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-authentication.png)
+    ![Поле имени пользователя Office 365](media/commercial-marketplace-lead-management-instructions-dynamics/connection-details-authentication.png)
 
 1. В разделе **Контактный адрес электронной почты** введите адреса электронной почты сотрудников организации, которые должны получать уведомления по электронной почте при обнаружении нового интереса. Можно ввести несколько адресов электронной почты через точку с запятой.
 1. Щелкните **ОК**.
 
 Чтобы убедиться в том, что вы успешно подключились к месту назначения потенциальных клиентов, нажмите кнопку **Проверить**. При успешном подключении вы получите тестового потенциального клиента в месте назначения потенциальных клиентов.
 
-![Поле "Контактный адрес электронной почты"](./media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-connection-details.png)
+![Поле "Контактный адрес электронной почты"](media/commercial-marketplace-lead-management-instructions-dynamics/dynamics-connection-details.png)
 
 >[!NOTE]
 >Прежде чем вы сможете получать сведения о потенциальных клиентах для своего предложения необходимо завершить настройку его остальной части и опубликовать его.

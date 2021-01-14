@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 44e9712466734c0e42fd2bea05c5110cbff6924b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 308d30118349e020d3b407243f106d9ad8368118
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964802"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98198991"
 ---
 # <a name="additional-network-requirements-for-large-instances"></a>Дополнительные требования к сети для крупных экземпляров
 
@@ -31,7 +31,7 @@ ms.locfileid: "94964802"
 
 Добавьте новый диапазон IP-адресов в адресное пространство виртуальной сети вместо того, чтобы создавать агрегированный диапазон. Отправьте это изменение в корпорацию Майкрософт. Благодаря этому вы сможете подключиться к единицам больших экземпляров HANA в клиенте с использованием нового диапазона IP-адресов. Вы можете отправить запрос на добавление нового адресного пространства виртуальной сети в службу поддержки Azure. Получив подтверждение, выполните следующие шаги.
 
-Сведения о создании дополнительной подсети с портала Azure см. в разделе [Создание виртуальной сети](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network). Сведения о создании такой подсети с помощью PowerShell см. в [этом](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network) разделе.
+Сведения о создании дополнительной подсети с портала Azure см. в разделе [Создание виртуальной сети](../../../virtual-network/manage-virtual-network.md#create-a-virtual-network). Сведения о создании такой подсети с помощью PowerShell см. в [этом](../../../virtual-network/manage-virtual-network.md#create-a-virtual-network) разделе.
 
 ## <a name="add-virtual-networks"></a>Добавление виртуальных сетей
 
@@ -51,11 +51,11 @@ ms.locfileid: "94964802"
 
 Чтобы удалить подсеть виртуальной сети, можно использовать портал Azure, PowerShell или Azure CLI. Если диапазон IP-адресов или адресное пространство виртуальной сети Azure представляли собой агрегированный диапазон, вам не нужно ничего отправлять в корпорацию Майкрософт. (Обратите внимание, что виртуальная сеть по-прежнему распространяет адресное пространство маршрута BGP, включающее в себя удаленную подсеть.) Возможно, вы определили диапазон адресов виртуальной сети Azure или адресное пространство как несколько диапазонов IP-адресов, из которых один из них был назначен вашей удаленной подсети. Обязательно удалите его из адресного пространства виртуальной сети. Затем сообщите в службу поддержки решения "SAP HANA для управления службами Майкрософт", чтобы специалисты службы удалили его из диапазонов, с которыми SAP HANA в Azure (крупные экземпляры) может обмениваться данными.
 
-Дополнительные сведения см. в разделе [Удаление подсети](../../../virtual-network/virtual-network-manage-subnet.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#delete-a-subnet).
+Дополнительные сведения см. в разделе [Удаление подсети](../../../virtual-network/virtual-network-manage-subnet.md#delete-a-subnet).
 
 ## <a name="delete-a-virtual-network"></a>Удаление виртуальной сети
 
-Сведения см. в разделе [Удаление виртуальной сети](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#delete-a-virtual-network).
+Сведения см. в разделе [Удаление виртуальной сети](../../../virtual-network/manage-virtual-network.md#delete-a-virtual-network).
 
 Решение "SAP HANA для управления службами Майкрософт" удаляет имеющиеся авторизации канала ExpressRoute для SAP HANA в Azure (крупные экземпляры), а также удаляет диапазон IP-адресов или адресное пространство виртуальной сети Azure для обмена данными с крупными экземплярами HANA.
 
@@ -67,6 +67,6 @@ ms.locfileid: "94964802"
 
 Чтобы удалить дополнительный канал ExpressRoute SAP HANA в Azure (крупные экземпляры), отправьте запрос на поддержку Azure в службу поддержки решения "SAP HANA для управления службами Майкрософт" и укажите, что нужно удалить канал. В подписке Azure вы можете по желанию удалить или оставить виртуальную сеть. Тем не менее нужно удалить подключение между каналом ExpressRoute крупных экземпляров HANA и связанным шлюзом виртуальной сети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как установить и настроить SAP HANA в Azure (крупные экземпляры)](hana-installation.md)

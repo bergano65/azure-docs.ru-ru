@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 01/13/2019
 ms.author: cynthn
-ms.openlocfilehash: 5c57ac0fb0ab377f00770e3c9c03a413dcb345bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e6f7b461d205478d6a3fe3eecbbb933d0533ec9
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87291032"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200521"
 ---
 # <a name="download-a-windows-vhd-from-azure"></a>Скачивание виртуального жесткого диска Windows из Azure
 
@@ -27,11 +27,11 @@ ms.locfileid: "87291032"
 Чтобы использовать VHD в качестве образа для создания других виртуальных машин, подготовьте виртуальную машину к использованию.
 
 1. Войдите в [портал Azure](https://portal.azure.com/), если вы еще этого не сделали.
-2. [Подключитесь к виртуальной машине](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
+2. [Подключитесь к виртуальной машине](connect-logon.md). 
 3. На виртуальной машине откройте окно командной строки с правами администратора.
 4. Измените каталог на *%windir%\system32\sysprep* и запустите файл sysprep.exe.
 5. В диалоговом окне "Программа подготовки системы" выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
-6. В окне Параметры завершения работы выберите **Завершение работы**и нажмите кнопку **ОК**. 
+6. В окне Параметры завершения работы выберите **Завершение работы** и нажмите кнопку **ОК**. 
 
 
 ## <a name="stop-the-vm"></a>Остановка виртуальной машины
@@ -65,6 +65,6 @@ VHD невозможно скачать из Azure, если он подключ
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [передать VHD-файл в Azure](upload-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
-- [Создание управляемых дисков из неуправляемых дисков в учетной записи хранения](attach-disk-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-- [Управление дисками Azure с помощью PowerShell](tutorial-manage-data-disk.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+- Узнайте, как [передать VHD-файл в Azure](upload-generalized-managed.md). 
+- [Создание управляемых дисков из неуправляемых дисков в учетной записи хранения](attach-disk-ps.md).
+- [Управление дисками Azure с помощью PowerShell](tutorial-manage-data-disk.md).

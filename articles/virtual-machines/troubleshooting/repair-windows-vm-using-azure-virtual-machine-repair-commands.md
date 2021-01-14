@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
-ms.openlocfilehash: 82bebcbda3110d51ae72df1fb4b18fedaa6c2f4e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7763c1d856a09acf2523a7073c3d300be6b70b37
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597713"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200708"
 ---
 # <a name="repair-a-windows-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "91597713"
 
    Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду ``az --version``. Если вам необходимо установить или обновить Azure CLI, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
    
-   Если вам нужно войти в Cloud Shell с учетной записью, отличной от той, что в данный момент зарегистрирована в портал Azure, можно использовать команду ``az login`` [AZ login Reference](/cli/azure/reference-index?view=azure-cli-latest#az-login&preserve-view=true).  Для переключения между подписками, связанными с вашей учетной записью, можно использовать команду ``az account set --subscription`` [AZ Account Set Reference](/cli/azure/account?view=azure-cli-latest#az-account-set&preserve-view=true).
+   Если вам нужно войти в Cloud Shell с учетной записью, отличной от той, что в данный момент зарегистрирована в портал Azure, можно использовать команду ``az login`` [AZ login Reference](/cli/azure/reference-index#az-login&preserve-view=true).  Для переключения между подписками, связанными с вашей учетной записью, можно использовать команду ``az account set --subscription`` [AZ Account Set Reference](/cli/azure/account#az-account-set&preserve-view=true).
 
 2. Если вы используете команды `az vm repair` в первый раз, добавьте расширение CLI vm-repair.
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d8f69f94c53227dc86fbbf9e9936a2fc3c97ec55
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: af248b4ee3ccd079d41317fdb1db3de82ad0f835
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967879"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98199042"
 ---
 # <a name="connecting-azure-vms-to-hana-large-instances"></a>Подключение виртуальных машин Azure к крупным экземплярам HANA
 
@@ -41,7 +41,7 @@ ms.locfileid: "94967879"
 >[!Note]
 >Эту виртуальную сеть Azure для крупных экземпляров HANA следует создавать с использованием модели развертывания с помощью Azure Resource Manager. Крупные экземпляры HANA не поддерживают старую модель развертывания Azure, известную как классическая модель развертывания.
 
-Чтобы создать виртуальную сеть, можно использовать портал Azure, PowerShell, шаблон Azure или Azure CLI. (Дополнительные сведения см. [в разделе Создание виртуальной сети с помощью портал Azure](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network)). В следующем примере мы рассмотрим виртуальную сеть, которая создается с помощью портала Azure.
+Чтобы создать виртуальную сеть, можно использовать портал Azure, PowerShell, шаблон Azure или Azure CLI. (Дополнительные сведения см. [в разделе Создание виртуальной сети с помощью портал Azure](../../../virtual-network/manage-virtual-network.md#create-a-virtual-network)). В следующем примере мы рассмотрим виртуальную сеть, которая создается с помощью портала Azure.
 
 При ссылке на **адресное пространство** в этой документации к адресному пространству, которое может использовать виртуальная сеть Azure. Оно будет использоваться в виртуальной сети для распространения маршрутов BGP. Это **адресное пространство** можно просмотреть здесь:
 
@@ -147,6 +147,6 @@ ms.locfileid: "94967879"
 
 Можно также обратиться к последовательности подключения крупных экземпляров HANA, которая описана в документе [SAP HANA on Azure (Large Instances) Setup](https://azure.microsoft.com/resources/sap-hana-on-azure-large-instances-setup/) (Комплексная настройка крупных экземпляров SAP HANA). Многие из следующих действий демонстрируются в примере развертывания в этом документе. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. статью [Подключение виртуальной сети к крупным экземплярам HANA](hana-connect-vnet-express-route.md).

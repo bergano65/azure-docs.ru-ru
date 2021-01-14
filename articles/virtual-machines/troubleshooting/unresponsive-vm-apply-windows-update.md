@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 76c3f729a8520c7bff7b49a1d2200d7950f8a9f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55dcd65e901a5ce8665ef8d3a2a29d7943581df9
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87074307"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200725"
 ---
 # <a name="vm-is-unresponsive-with-c01a001d-error-when-applying-windows-update"></a>Виртуальная машина не отвечает на ошибку "C01A001D" при применении Центр обновления Windows
 
@@ -56,7 +56,7 @@ ms.locfileid: "87074307"
 
 Если диск еще не 1 ТБ, его размер необходимо изменить. Если диск равен 1 ТБ, выполните очистку диска и дефрагментацию диска.
 
-1. Проверьте, есть ли свободное место на диске. Если размер диска меньше 1 ТБ, [его можно развернуть до 1 ТБ с помощью PowerShell](../windows/expand-os-disk.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json).
+1. Проверьте, есть ли свободное место на диске. Если размер диска меньше 1 ТБ, [его можно развернуть до 1 ТБ с помощью PowerShell](../windows/expand-os-disk.md).
 2. Когда диск будет равен 1 ТБ, выполните очистку диска.
     - [Отключите диск данных от поврежденной виртуальной машины](../windows/detach-disk.md).
     - [Подключите диск данных к работающей виртуальной машине](../windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm).
