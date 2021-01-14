@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/19/2020
 ms.author: alkohli
 ms.subservice: pod
-ms.openlocfilehash: f75907dc1fa079cebb3b80874090c658fd7b8174
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 80a6824edb92d8337481f592cbbf5eb23255b383
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302821"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185535"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-azure-data-box"></a>Использование управляемых клиентом ключей в Azure Key Vault для Azure Data Box
 
@@ -57,7 +57,7 @@ Azure Data Box защищает ключ разблокировки устрой
 
       ![Проверка и создание Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-4.png)
 
-      Проверьте сведения о хранилище ключей и нажмите кнопку **создать**. Подождите несколько минут, пока не завершится создание хранилища ключей.
+      Проверьте сведения о хранилище ключей и выберите **Создать**. Подождите несколько минут, пока не завершится создание хранилища ключей.
 
        ![Создание Azure Key Vault с помощью параметров](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-5.png)
 
@@ -65,11 +65,11 @@ Azure Data Box защищает ключ разблокировки устрой
 
     ![Выберите ключ из Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6.png)
 
-   Если вы хотите создать новый ключ, выберите **создать**. Необходимо использовать ключ RSA. Размер может быть 2048 или выше.
+   Если вы хотите создать новый ключ, выберите **Создать новый**. Необходимо использовать ключ RSA. Размер ключа может составлять 2048 бит или больше.
 
     ![Создание ключа в Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6-a.png)
 
-    Введите имя нового ключа, примите другие значения по умолчанию и нажмите кнопку **создать**. Вы получите извещение о том, что в хранилище ключей создан ключ.
+    Введите имя для нового ключа, примите остальные значения по умолчанию и нажмите кнопку **Создать**. Вы получите извещение о том, что в хранилище ключей создан ключ.
 
     ![Имя новый ключ](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-7.png)
 
@@ -79,9 +79,9 @@ Azure Data Box защищает ключ разблокировки устрой
 
     Если необходимо создать новую версию ключа, выберите **создать**.
 
-    ![Открытие диалогового окна для создания новой версии ключа](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-a.png)
+    ![Диалоговое окно для создания новой версии ключа](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-a.png)
 
-    Выберите параметры для новой версии ключа и нажмите кнопку **создать**.
+    Выберите параметры для новой версии ключа и выберите команду **Создать**.
 
     ![Создание новой версии ключа](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-b.png)
 
@@ -95,7 +95,7 @@ Azure Data Box защищает ключ разблокировки устрой
 
 7. Выберите тип удостоверения, которое будет использоваться для управления управляемым клиентом ключом для этого ресурса. Можно использовать **назначенное системой** удостоверение, созданное во время создания заказа, или выбрать удостоверение, назначенное пользователем.
 
-    Назначенное пользователем удостоверение — это независимый ресурс, который можно использовать для управления доступом к ресурсам. Дополнительные сведения см. в разделе [управляемые типы удостоверений](/azure/active-directory/managed-identities-azure-resources/overview).
+    Назначенное пользователем удостоверение — это независимый ресурс, который можно использовать для управления доступом к ресурсам. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview)
 
     ![Выбор типа удостоверения](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-13.png)
 
@@ -107,7 +107,7 @@ Azure Data Box защищает ключ разблокировки устрой
 
     Выбранное удостоверение пользователя отображается в параметрах **типа шифрования** .
 
-    ![Выбранное удостоверение пользователя отображается в параметрах типа шифрования](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-15.png)
+    ![Выбранное удостоверение пользователя отображается в параметрах "Тип шифрования"](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-15.png)
 
  9. Нажмите кнопку **сохранить** , чтобы сохранить обновленные параметры **типа шифрования** .
 
@@ -201,5 +201,5 @@ Azure Data Box защищает ключ разблокировки устрой
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Что такое хранилище ключей Azure?](../key-vault/general/overview.md)
+- [Что такое Azure Key Vault?](../key-vault/general/overview.md)
 - [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../key-vault/secrets/quick-create-portal.md)

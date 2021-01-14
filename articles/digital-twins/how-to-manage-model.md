@@ -7,12 +7,13 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a8b2fdf99b33df3322748b7e073cc4ab18957c84
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 00e6802f37ec60467edbea98038dd23fcba1239a
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045246"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185501"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
@@ -20,7 +21,7 @@ ms.locfileid: "98045246"
 
 К операциям управления относятся передача, проверка, извлечение и удаление моделей. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -53,9 +54,6 @@ ms.locfileid: "98045246"
 
 После создания моделей их можно передать в экземпляр Digital двойников Azure.
 
-> [!TIP]
-> Перед отправкой в свой экземпляр Azure Digital двойников рекомендуется проверить свои модели в автономном режиме. Для проверки моделей перед их отправкой в службу можно использовать пример [библиотеки средства синтаксического анализа](https://nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/) [дтдл и проверочного элемента управления](/samples/azure-samples/dtdl-validator/dtdl-validator) дтдл, описанный в разделе [*инструкции. анализ и проверка моделей*](how-to-parse-models.md) .
-
 Когда вы будете готовы отправить модель, можно использовать следующий фрагмент кода:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="CreateModel":::
@@ -64,7 +62,7 @@ ms.locfileid: "98045246"
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="CreateModels_multi":::
 
-Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Например:
+Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Пример:
 
 :::code language="json" source="~/digital-twins-docs-samples/models/Planet-Moon.json":::
 

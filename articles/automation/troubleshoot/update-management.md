@@ -5,12 +5,12 @@ services: automation
 ms.date: 12/04/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: c6d0f38eaa25f2fe033a5e2cf48ee6daa51fcbe6
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: f00002c7374e0c35c7bb91c28b2dd87ad71e3350
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929282"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184923"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -425,7 +425,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 При возможности используйте [динамические группы](../update-management/configure-groups.md) для развертываний обновлений. Кроме того, можно выполнить следующие действия.
 
-1. Убедитесь, что компьютер или сервер соответствуют [требованиям](../update-management/overview.md#client-requirements).
+1. Убедитесь, что компьютер или сервер соответствуют [требованиям](../update-management/overview.md#system-requirements).
 2. Проверьте подключение к гибридной рабочей роли Runbook с помощью средства устранения неполадок агента гибридной рабочей роли Runbook. Для дополнительных сведений о средстве устранения неполадок см. [Общие сведения о результатах проверки агента в службе "Управление обновлениями"](update-agent-issues.md).
 
 ## <a name="scenario-updates-are-installed-without-a-deployment"></a><a name="updates-nodeployment"></a>Сценарий. Обновления устанавливаются без развертывания

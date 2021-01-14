@@ -3,12 +3,12 @@ title: Развертывание ресурсов в группах ресур�
 description: Описывает развертывание ресурсов в шаблоне Azure Resource Manager. В нем показано, как ориентироваться на несколько групп ресурсов.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: 8fe503cc95d71772c07427438b17e2ff0d4620a7
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 9eb70e5ce69a2c7bc7ac9b8c9a7a558d09ecbef0
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178897"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186232"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Развертывание группы ресурсов с помощью шаблонов ARM
 
@@ -137,6 +137,8 @@ New-AzResourceGroupDeployment `
 Или можно задать область `/` для некоторых типов ресурсов, например для групп управления.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-create-mg.json" highlight="12,15":::
+
+Дополнительные сведения см. в разделе [Группа управления](deploy-to-management-group.md#management-group).
 
 ## <a name="deploy-to-target-resource-group"></a>Развертывание в целевую группу ресурсов
 

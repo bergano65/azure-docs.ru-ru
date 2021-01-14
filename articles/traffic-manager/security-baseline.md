@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d4523319c04703c04a293471124329512e31a265
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5d5ecf95289bf7860363b7e97d834372ee6c2268
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964683"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185263"
 ---
 # <a name="azure-security-baseline-for-azure-traffic-manager"></a>Базовый план безопасности Azure для диспетчера трафика Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "94964683"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/get-started-portal.md)
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 - [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
@@ -116,9 +116,9 @@ ms.locfileid: "94964683"
 
 - [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -136,7 +136,7 @@ ms.locfileid: "94964683"
 
 Вы также можете включить JIT-доступ с помощью Azure AD Privileged Identity Management и Azure Resource Manager. 
 
-- [Дополнительные сведения о управление привилегированными пользователями](/azure/active-directory/privileged-identity-management/)
+- [Дополнительные сведения о управление привилегированными пользователями](../active-directory/privileged-identity-management/index.yml)
 
 - [Использование Политики Azure](../governance/policy/tutorials/create-and-manage.md)
 
@@ -170,7 +170,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. используйте защищенную, управляемую Azure рабочую станцию (также называемую рабочей станцией привилегированного доступа или привилегированным доступом) для административных задач, требующих повышенных привилегий.
 
-- [Общие сведения о защищенных рабочих станциях под управлением Azure](../active-directory/devices/concept-azure-managed-workstation.md)
+- [Общие сведения о защищенных рабочих станциях под управлением Azure](/security/compass/concept-azure-managed-workstation)
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -184,9 +184,9 @@ ms.locfileid: "94964683"
 
 Кроме того, с помощью функции обнаружения рисков Azure AD можно просматривать предупреждения и отчеты о поведении опасного пользователя.
 
-- [Развертывание управление привилегированными пользователями](/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+- [Развертывание управление привилегированными пользователями](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Общие сведения об обнаружении рисков в Azure AD](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Общие сведения об обнаружении рисков в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -206,7 +206,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+- [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -216,9 +216,9 @@ ms.locfileid: "94964683"
 
 **Руководство**. Azure AD предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверки подлинности и доступа Azure AD для эффективного управления членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи. 
 
-- [Общие сведения об отчетах Azure AD](/azure/active-directory/reports-monitoring/)
+- [Общие сведения об отчетах Azure AD](../active-directory/reports-monitoring/index.yml)
 
-- [Как использовать проверки подлинности и доступа Azure AD](../active-directory/governance/access-reviews-overview.md)
+- [Использование проверок доступа для идентификации Azure AD](../active-directory/governance/access-reviews-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -230,7 +230,7 @@ ms.locfileid: "94964683"
 
 Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей Azure AD и отправив журналы аудита и журналы входа в рабочую область Log Analytics. Вы можете настроить нужные оповещения в Log Analytics рабочей области.
 
-- [Как интегрировать журналы действий Azure с Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure с Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -240,7 +240,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. использование функций защита идентификации Azure AD для настройки автоматических ответов на обнаруженные подозрительные действия, связанные с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -258,7 +258,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. Используйте теги для пометки ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -276,9 +276,9 @@ ms.locfileid: "94964683"
 
 - [Роль участника диспетчера трафика](../role-based-access-control/built-in-roles.md#traffic-manager-contributor)
 
-- [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
 
-- [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -306,7 +306,7 @@ ms.locfileid: "94964683"
 
 - [Как создавать запросы с помощью обозревателя Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Просмотр подписок Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
 - [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -318,7 +318,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. Использование имени политики, описания и категории для логической организации активов в соответствии с классификацией.
 
-- [Дополнительные сведения о разметке ресурсов см. в разделе Определение решения для именования и добавления тегов.](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Дополнительные сведения о разметке ресурсов см. в разделе Определение решения для именования и добавления тегов.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -335,11 +335,11 @@ ms.locfileid: "94964683"
 
 Вы также можете создать пользовательские определения политики Azure, чтобы ограничить более детализированные параметры ресурсов.
 
-- [Создание дополнительных подписок Azure](/azure/billing/billing-create-subscription)
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-- [Создание групп управления](/azure/governance/management-groups/create)
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Создание и использование тегов](/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -357,7 +357,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках.
 
-Используйте граф ресурсов Azure для запроса и обнаружения ресурсов в своих подписках.  Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
+Используйте Azure Resource Graph для запроса и обнаружения ресурсов в своих подписках.  Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -378,7 +378,7 @@ ms.locfileid: "94964683"
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -402,7 +402,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для диспетчера трафика Azure с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения конфигурации хранилищ служб восстановления.
 
-- [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
 - [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -426,9 +426,9 @@ ms.locfileid: "94964683"
 
 **Рекомендации**. Если вы используете пользовательские определения политик Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-- [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+- [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -494,7 +494,7 @@ ms.locfileid: "94964683"
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -514,7 +514,7 @@ ms.locfileid: "94964683"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
 
-- [Как задать контакт безопасности центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
+- [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -548,11 +548,11 @@ ms.locfileid: "94964683"
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
-**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию Майкрософт и рекомендации "красных команд", а затем выполните тест на проникновение в режиме реального времени для управляемых корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+- [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -560,5 +560,5 @@ ms.locfileid: "94964683"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

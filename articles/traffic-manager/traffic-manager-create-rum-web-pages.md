@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: duau
 ms.custom: ''
-ms.openlocfilehash: 8606e89a40e9cfd2c0f55df2c65532928c0d11f8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2bb104fd9cfc3c4ffddb82e4cf442e94c4650550
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95972595"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184564"
 ---
 # <a name="how-to-send-real-user-measurements-to-azure-traffic-manager-using-web-pages"></a>Как отправить измерения на стороне пользователей в диспетчер трафика Azure с использованием веб-страниц
 
@@ -64,9 +64,8 @@ ms.locfileid: "95972595"
 4. При следующем отображении этой страницы в веб-браузере загрузится соответствующий код JavaScript и с его помощью будут выполнены операции измерения и создания отчетов.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [измерениях на стороне пользователей](traffic-manager-rum-overview.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md) , поддерживаемых в диспетчере трафика.
-- Узнайте, как [создать профиль диспетчера трафика](traffic-manager-create-profile.md)
-
+- Узнайте, как [создать профиль диспетчера трафика](./quickstart-create-traffic-manager-profile.md)

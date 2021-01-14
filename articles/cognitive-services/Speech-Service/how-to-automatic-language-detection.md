@@ -12,12 +12,12 @@ ms.date: 05/19/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-speech-services-nomore-variant
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 1d294bb4b3cae314e964407e5e75fcddf4fa5d92
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e62333f241cf24620773314fb7aa4846af651eaf
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971002"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185875"
 ---
 # <a name="automatic-language-detection-for-speech-to-text"></a>Автоматическое определение языка для речи в текст
 
@@ -254,11 +254,11 @@ var autoDetectConfig = SpeechSDK.AutoDetectSourceLanguageConfig.fromSourceLangua
 ::: zone-end
 
 ::: zone pivot="programming-language-python"
-* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_synthesis_sample.py#L434) в GitHub для автоматического определения языка
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_sample.py#L458) в GitHub для автоматического определения языка
 ::: zone-end
 
 ::: zone pivot="programming-language-objectivec"
-* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/objective-c/ios/speech-samples/speech-samples/ViewController.m#L494) в GitHub для автоматического определения языка
+* См. [пример кода](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/objective-c/ios/speech-samples/speech-samples/ViewController.m#L525) в GitHub для автоматического определения языка
 ::: zone-end
 
 * [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 09/11/2020
+ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: dd1b6d216f6225a13d86aa2435b5b1c807547ec3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: dda3ece27fd2c687647e0aa289bd1596a87b274f
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014583"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186028"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Данные телеметрии и устранение неполадок
 
@@ -68,7 +68,7 @@ az iot hub list
 az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principal name>" --scopes="<resource ID of IoT Hub>"
 ```
 
-В манифесте развертывания для [Azure Stack пограничной устройства](https://go.microsoft.com/fwlink/?linkid=2142179) или другого [настольного компьютера](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)найдите модуль *Telegraf* и замените следующие значения на сведения о субъекте-службе из предыдущего шага и выполните повторное развертывание.
+В манифесте развертывания для [Azure Stackного устройства](https://go.microsoft.com/fwlink/?linkid=2142179), [настольного компьютера](https://go.microsoft.com/fwlink/?linkid=2152270)или [виртуальной машины Azure с графическим процессором](https://go.microsoft.com/fwlink/?linkid=2152189)найдите модуль *Telegraf* и замените следующие значения на сведения о субъекте-службе из предыдущего шага и выполните повторное развертывание.
 
 ```json
 
@@ -129,7 +129,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 
 ## <a name="collect-log-files-with-the-diagnostics-container"></a>Получение файлов журналов с помощью контейнера диагностики
 
-Пространственный анализ создает журналы отладки DOCKER, которые можно использовать для диагностики проблем во время выполнения или включения в билеты поддержки. Модуль диагностики пространственного анализа доступен в реестре контейнеров Майкрософт для загрузки. В файле развертывания манифеста для [Azure Stackного устройства](https://go.microsoft.com/fwlink/?linkid=2142179) или другого [настольного компьютера](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)найдите модуль *диагностики* .
+Пространственный анализ создает журналы отладки DOCKER, которые можно использовать для диагностики проблем во время выполнения или включения в билеты поддержки. Модуль диагностики пространственного анализа доступен в реестре контейнеров Майкрософт для загрузки. В файле развертывания манифеста для [Azure Stack пограничной устройства](https://go.microsoft.com/fwlink/?linkid=2142179), [настольного компьютера](https://go.microsoft.com/fwlink/?linkid=2152270)или [ВИРТУАЛЬНОЙ машины Azure с помощью GPU](https://go.microsoft.com/fwlink/?linkid=2152189) найдите модуль *диагностики* .
 
 В разделе "env" добавьте следующую конфигурацию:
 
@@ -188,13 +188,13 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 > `diagnostics`Модуль не влияет на содержимое журнала, он помогает собирать, фильтровать и отправлять существующие журналы.
 > Для использования этого модуля требуется API-интерфейс DOCKER версии 1,40 или более поздней.
 
-Пример файла манифеста развертывания для [Azure Stack пограничной устройства](https://go.microsoft.com/fwlink/?linkid=2142179) или другого [настольного компьютера](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)  включает модуль с именем `diagnostics` , который собирает и отправляет журналы. Этот модуль по умолчанию отключен, и его следует включить с помощью конфигурации модуля IoT Edge, если требуется доступ к журналам. 
+Пример файла манифеста развертывания для [Azure Stack пограничной устройства](https://go.microsoft.com/fwlink/?linkid=2142179), [настольного компьютера](https://go.microsoft.com/fwlink/?linkid=2152270)или [виртуальной машины Azure с графическим процессором](https://go.microsoft.com/fwlink/?linkid=2152189) включает модуль с именем `diagnostics` , который собирает и отправляет журналы. Этот модуль по умолчанию отключен, и его следует включить с помощью конфигурации модуля IoT Edge, если требуется доступ к журналам. 
 
 `diagnostics`Коллекция выполняется по требованию и контролируется с помощью IOT Edge прямого метода и может отсылать журналы в хранилище BLOB-объектов Azure.
 
 ### <a name="configure-diagnostics-upload-targets"></a>Настройка целевых объектов для отправки диагностики
 
-На портале IoT Edge выберите устройство, а затем модуль **диагностики** . В примере файла манифеста развертывания для [Azure Stackного устройства](https://go.microsoft.com/fwlink/?linkid=2142179) или других [настольных компьютеров](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)найдите раздел **переменные среды** для диагностики, с именем `env` и добавьте следующие сведения:
+На портале IoT Edge выберите устройство, а затем модуль **диагностики** . В примере файла манифеста развертывания для [Azure Stack пограничной устройства](https://go.microsoft.com/fwlink/?linkid=2142179), [настольных компьютеров](https://go.microsoft.com/fwlink/?linkid=2152270)или [ВИРТУАЛЬНОЙ машины Azure с помощью GPU](https://go.microsoft.com/fwlink/?linkid=2152189) найдите раздел **переменные среды** для диагностики, именованные `env` и добавьте следующие сведения.
 
 **Настройка отправки в хранилище BLOB-объектов Azure**
 
@@ -239,7 +239,7 @@ az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principa
 | ContainerId | Целевой контейнер для выборки журналов.| `null`, если идентификатор контейнера отсутствует. API возвращает все доступные сведения о контейнерах с идентификаторами.|
 | допост | Выполните операцию отправки. Если задано значение `false` , то она выполняет запрошенную операцию и возвращает размер отправки без выполнения отправки. Если задано значение `true` , будет инициирована асинхронная отправка выбранных журналов. | `false`, не отправлять.|
 | Регулирование | Укажите, сколько строк журналов нужно отправить на пакет | `1000`, Используйте этот параметр, чтобы настроить скорость записи. |
-| Фильтры | Фильтрует журналы для отправки | `null`, фильтры могут быть указаны в виде пар "ключ — значение" на основе структуры журналов пространственных анализов: `[UTC, LocalTime, LOGLEVEL,PID, CLASS, DATA]` . Пример: `{"TimeFilter":[-1,1573255761112]}, {"TimeFilter":[-1,1573255761112]}, {"CLASS":["myNode"]`|
+| Фильтры | Фильтрует журналы для отправки | `null`, фильтры могут быть указаны в виде пар "ключ — значение" на основе структуры журналов пространственных анализов: `[UTC, LocalTime, LOGLEVEL,PID, CLASS, DATA]` . Например: `{"TimeFilter":[-1,1573255761112]}, {"TimeFilter":[-1,1573255761112]}, {"CLASS":["myNode"]`|
 
 В следующей таблице перечислены атрибуты в ответе на запрос.
 

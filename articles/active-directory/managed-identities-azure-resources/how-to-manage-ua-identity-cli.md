@@ -16,14 +16,14 @@ ms.date: 04/17/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: edb326c889a76eedd82c8918c705bdb5bbe5d195
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 68f305156645d69049519cd383f06b28ab9b5e03
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92893614"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184889"
 ---
-# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-the-azure-cli"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure CLI
+# <a name="create-list-or-delete-a-user-assigned-managed-identity-using-the-azure-cli"></a>Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure CLI
 
 
 Управляемые удостоверения для ресурсов Azure предоставляют службы Azure с управляемым удостоверением в Azure Active Directory. Это удостоверение можно использовать для аутентификации в службах, которые поддерживают аутентификацию Azure AD, без учетных данных в коде. 
@@ -32,9 +32,9 @@ ms.locfileid: "92893614"
 
 Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-- Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, см. статью [что такое управляемые удостоверения для ресурсов Azure?](overview.md). Сведения о назначенных системой и назначенных пользователем типах удостоверений см. в разделе [управляемые типы удостоверений](overview.md#managed-identity-types).
+- Если вы не работали с управляемыми удостоверениями для ресурсов Azure, см. статью [Что такое управляемые удостоверения для ресурсов Azure](overview.md). Сведения об удостоверениях, назначаемых системой и назначаемых пользователем, см. в разделе [Типы управляемых удостоверений](overview.md#managed-identity-types).
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 

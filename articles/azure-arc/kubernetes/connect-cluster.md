@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Подключение к Azure Arc кластера Kubernetes, который поддерживает Azure Arc
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 8155ed709045626dee44fb499304ff5244a61b54
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 131ec014c9ac016a682bc4928f74910a3405a5da
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060254"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186011"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -35,19 +35,19 @@ ms.locfileid: "98060254"
   
   Установите расширение `connectedk8s`, которое поможет подключить кластеры Kubernetes к Azure.
   
-  ```console
+  ```azurecli
   az extension add --name connectedk8s
   ```
   
   Установите расширение `k8sconfiguration`:
   
-  ```console
+  ```azurecli
   az extension add --name k8sconfiguration
   ```
   
   Если вы хотите обновить эти расширения позже, выполните следующие команды:
   
-  ```console
+  ```azurecli
   az extension update --name connectedk8s
   az extension update --name k8sconfiguration
   ```

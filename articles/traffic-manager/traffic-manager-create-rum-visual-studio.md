@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: duau
 ms.custom: devx-track-js
-ms.openlocfilehash: c49672ad38ac8cf80214d03870b5876d741e76ec
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f9e8cdd3eb5c9f441444683fb5efaccc880b2757
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994882"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184617"
 ---
 # <a name="how-to-send-real-user-measurements-to-traffic-manager-with-visual-studio-mobile-center"></a>Отправка измерений на стороне пользователей в диспетчер трафика с помощью Visual Studio Mobile Center
 
@@ -52,7 +52,7 @@ ms.locfileid: "95994882"
 
 ## <a name="step-2-instrument-your-app-with-the-rum-package-of-mobile-center-sdk"></a>Шаг 2. Инструментирование приложения с помощью пакета RUM пакета SDK Mobile Center
 
-Если вы не знакомы с Visual Studio Mobile Center, посетите его [веб-сайт](https://mobile.azure.com). Дополнительные сведения об интеграции пакета средств разработки см. в статье [Get Started with Android](https://docs.microsoft.com/mobile-center/sdk/getting-started/Android) (Начало работы с Android).
+Если вы не знакомы с Visual Studio Mobile Center, посетите его [веб-сайт](https://mobile.azure.com). Дополнительные сведения об интеграции пакета средств разработки см. в статье [Get Started with Android](/mobile-center/sdk/getting-started/Android) (Начало работы с Android).
 
 Чтобы использовать измерения на стороне пользователей, выполните следующую процедуру:
 
@@ -95,11 +95,10 @@ ms.locfileid: "95994882"
     MobileCenter.start(getApplication(), "<Your Mobile Center AppSecret>", RealUserMeasurements.class);
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [измерениях на стороне пользователей](traffic-manager-rum-overview.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
-- Дополнительные сведения о Mobile Center см. [здесь](https://docs.microsoft.com/mobile-center/).
+- Дополнительные сведения о Mobile Center см. [здесь](/mobile-center/).
 - [Регистрация в Mobile Center](https://mobile.azure.com)
 - Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md) , поддерживаемых в диспетчере трафика.
-- Узнайте, как [создать профиль диспетчера трафика](traffic-manager-create-profile.md)
-
+- Узнайте, как [создать профиль диспетчера трафика](./quickstart-create-traffic-manager-profile.md)

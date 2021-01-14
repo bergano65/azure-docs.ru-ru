@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f625b7dd68d4b5a5e1af68aeb53dac453ff8cbfd
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 5e45c51735e0b7ab4b263d3f3047b5848c82439d
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400834"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185773"
 ---
 # <a name="create-powershell-scripts-for-msix-app-attach-preview"></a>Создание скриптов PowerShell для присоединения приложения MSIX (Предварительная версия)
 
@@ -39,6 +39,17 @@ ms.locfileid: "97400834"
 6. Выберите **Поместить все сертификаты в следующее хранилище** и нажмите **Обзор**.
 7. Когда откроется окно хранилища сертификатов, выберите **Доверенные лица** и нажмите **ОК**.
 8. Выберите **Далее** и **Готово**.
+
+## <a name="enable-microsoft-hyper-v"></a>Включить Microsoft Hyper-V
+
+Microsoft Hyper-V должны быть включены, так как `Mount-VHD` команда необходима для ее размещения и `Dismount-VHD` необходима для ее отмены.
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+
+>[!NOTE]
+>Чтобы это вступило в силу, перезапустите виртуальную машину.
 
 ## <a name="prepare-powershell-scripts-for-msix-app-attach"></a>Подготовка сценариев PowerShell для подключения к приложению MSIX
 

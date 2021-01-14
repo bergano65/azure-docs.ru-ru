@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 12/15/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7a503235f3ef948939f3188828b1e01f54dd2fe
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: acbeb8e0fc638955995cc5aaf00f58d40adc69a8
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588630"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184884"
 ---
-# <a name="create-list-and-delete-a-user-assigned-managed-identity-using-azure-resource-manager"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure Resource Manager
+# <a name="create-list-and-delete-a-user-assigned-managed-identity-using-azure-resource-manager"></a>Создание, перечисление и удаление назначенного пользователем управляемого удостоверения с помощью Azure Resource Manager
 
 
 Управляемые удостоверения для ресурсов Azure предоставляют службы Azure с управляемым удостоверением в Azure Active Directory. Это удостоверение можно использовать для аутентификации в службах, которые поддерживают аутентификацию Azure AD, без учетных данных в коде. 
@@ -33,7 +33,7 @@ ms.locfileid: "97588630"
 
 - [Отображение управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-cli.md#list-user-assigned-managed-identities)
 - [Удаление управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-cli.md#delete-a-user-assigned-managed-identity)
-  ## <a name="prerequisites"></a>Обязательные условия
+  ## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, ознакомьтесь с [разделом Обзор](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#managed-identity-types)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.

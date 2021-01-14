@@ -3,12 +3,12 @@ title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: a397678488921744f076d93235304c8d217d961f
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 0b3ddc63e49b272c93349ada91e9a1599ea4be4f
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178965"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186215"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Развертывание клиентов с помощью шаблонов ARM
 
@@ -185,6 +185,8 @@ New-AzTenantDeployment `
 В следующем примере создается группа управления:
 
 :::code language="json" source="~/quickstart-templates/tenant-deployments/new-mg/azuredeploy.json":::
+
+Если у вашей учетной записи нет разрешения на развертывание в клиенте, вы все равно можете создавать группы управления, развернув их в другую область. Дополнительные сведения см. в разделе [Группа управления](deploy-to-management-group.md#management-group).
 
 ## <a name="assign-role"></a>Назначение роли
 

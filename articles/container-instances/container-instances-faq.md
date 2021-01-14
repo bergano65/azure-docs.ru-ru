@@ -5,12 +5,12 @@ author: macolso
 ms.author: macolso
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: e4760463a4d71e4c097b082aa6b93d8b339f94ca
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 5de1188ee018e796f918d7559c0e2c24c77834f4
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516976"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186198"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
 
@@ -54,6 +54,10 @@ ms.locfileid: "92516976"
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень образа .NET или .NET Core следует использовать в моем контейнере? 
 
 Используйте наименьшее изображение, удовлетворяющее вашим требованиям. Для Linux можно использовать образ *среды выполнения — Alpine* .NET Core, который поддерживался с момента выпуска .net Core 2,1. Для Windows, если используется полная .NET Framework, необходимо использовать образ Windows Server Core (образ только для среды выполнения, например  *4.7.2-windowsservercore-ltsc2016*). Образы только для среды выполнения меньше, но не поддерживают рабочие нагрузки, для которых требуется пакет SDK для .NET.
+
+### <a name="what-types-of-container-registries-are-compatible-with-aci"></a>Какие типы реестров контейнеров совместимы с ACI?
+
+ACI поддерживает извлечение изображений из записи контроля доступа и других сторонних реестров контейнеров, таких как DockerHub. ACI также поддерживает извлечение изображений из локальных реестров, если они совместимы с OCR и имеют общедоступную конечную точку в Интернете.
 
 ## <a name="availability-and-quotas"></a>Доступность и квоты
 

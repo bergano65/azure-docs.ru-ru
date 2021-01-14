@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: duau
-ms.openlocfilehash: 692c63849bc9e92ded43db3bf22ce14384f2b68d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e55c2115edef684f38aa53172596beffd101ef59
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401288"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184396"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 
@@ -92,17 +92,17 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
-* [Можно ли использовать в диспетчере трафика конечные точки из нескольких подписок?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-endpoints-from-multiple-subscriptions)
+* [Можно ли использовать в диспетчере трафика конечные точки из нескольких подписок?](./traffic-manager-faqs.md#can-i-use-traffic-manager-with-endpoints-from-multiple-subscriptions)
 
-* [Можно ли использовать диспетчер трафика с промежуточными слотами облачной службы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-cloud-service-staging-slots)
+* [Можно ли использовать диспетчер трафика с промежуточными слотами облачной службы?](./traffic-manager-faqs.md#can-i-use-traffic-manager-with-cloud-service-staging-slots)
 
-* [Поддерживает ли диспетчер трафика конечные точки IP версии 6?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-ipv6-endpoints)
+* [Поддерживает ли диспетчер трафика конечные точки IP версии 6?](./traffic-manager-faqs.md#does-traffic-manager-support-ipv6-endpoints)
 
-* [Можно ли использовать в диспетчере трафика несколько веб-приложений в одном и том же регионе?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-more-than-one-web-app-in-the-same-region)
+* [Можно ли использовать в диспетчере трафика несколько веб-приложений в одном и том же регионе?](./traffic-manager-faqs.md#can-i-use-traffic-manager-with-more-than-one-web-app-in-the-same-region)
 
-* [Как переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
+* [Как переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](./traffic-manager-faqs.md#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 * Узнайте больше о [мониторинге конечных точек и автоматической отработке отказов](traffic-manager-monitoring.md)диспетчера трафика.

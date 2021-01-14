@@ -1,26 +1,26 @@
 ---
-title: Как и где развертываются модели
+title: Развертывание моделей машинного обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как и где развертываются модели Машинное обучение Azure, включая службы "экземпляры контейнеров Azure", "служба Kubernetes Azure", "Azure IoT Edge" и "FPGA".
+description: Узнайте, как и где развертываются модели машинного обучения. Выполните развертывание в службе "экземпляры контейнеров Azure", службу Kubernetes Azure, Azure IoT Edge и FPGA.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: gopalv
 author: gvashishtha
 ms.reviewer: larryfr
-ms.date: 12/11/2020
+ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: 195f1c527185fbd55450b6151f26525074db75f7
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: e9c691485eb0ec1a0b3c0564f9a8f9a5d2aa255d
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070428"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185807"
 ---
-# <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинного обучения Azure
+# <a name="deploy-machine-learning-models-to-azure"></a>Развертывание моделей машинного обучения в Azure
 
-Узнайте, как развернуть модель машинного обучения в качестве веб-службы в облаке Azure или на Azure IoT Edge устройствах.
+Сведения о развертывании машинного обучения или модели глубокого обучения в качестве веб-службы в облаке Azure. Также можно выполнить развертывание на Azure IoT Edge устройствах.
 
 Последовательность действий всегда одна и та же, независимо от того, где развертывается модель:
 
@@ -31,7 +31,7 @@ ms.locfileid: "98070428"
 1. развертывание модели в целевом объекте вычислений;
 1. Протестируйте полученную веб-службу.
 
-Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
+Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания машинного обучения, см. в статье [Управление моделями с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -197,7 +197,7 @@ az ml model register -n onnx_mnist -p mnist/model.onnx
 }
 ```
 
-Это означает, что развертывание будет использовать файл `score.py` в `./working_dir` каталоге для обработки входящих запросов.
+Это означает, что при развертывании машинного обучения будет использоваться файл `score.py` в `./working_dir` каталоге для обработки входящих запросов.
 
 Более подробное обсуждение конфигураций вывода см. в [этой статье](./reference-azure-machine-learning-cli.md#inference-configuration-schema) . 
 
@@ -269,7 +269,7 @@ from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservic
 
 ---
 
-## <a name="deploy-your-model"></a>Развертывание модели
+## <a name="deploy-your-machine-learning-model"></a>Развертывание модели машинного обучения
 
 Теперь вы готовы к развертыванию модели. 
 

@@ -5,12 +5,12 @@ description: Узнайте, как установить и настроить �
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: 88e2bdc1b516e55fb630b2fd31ff6a2977d57bfe
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 3cf7b069d6f010a4461b22c5326589ad3ec31204
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607914"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186266"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -67,7 +67,7 @@ helm install nginx-ingress ingress-nginx/ingress-nginx \
 
 Чтобы получить общедоступный IP-адрес, используйте команду `kubectl get service`. Назначение службе IP-адреса занимает несколько минут.
 
-```
+```console
 $ kubectl --namespace ingress-basic get services -o wide -w nginx-ingress-ingress-nginx-controller
 
 NAME                                     TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)                      AGE   SELECTOR
@@ -91,7 +91,7 @@ az network dns record-set a add-record \
 > [!NOTE]
 > При необходимости можно настроить полное доменное имя для IP-адреса контроллера входящего трафика вместо личного домена. Обратите внимание, что этот пример предназначен для оболочки bash.
 > 
-> ```azurecli-interactive
+> ```bash
 > # Public IP address of your ingress controller
 > IP="MY_EXTERNAL_IP"
 > 
@@ -337,7 +337,7 @@ kubectl apply -f hello-world-ingress.yaml --namespace ingress-basic
 
 Чтобы убедиться, что сертификат успешно создан, используйте `kubectl get certificate --namespace ingress-basic` команду и убедитесь, что параметр *Ready* имеет *значение true*, что может занять несколько минут.
 
-```
+```console
 $ kubectl get certificate --namespace ingress-basic
 
 NAME         READY   SECRET       AGE
@@ -370,7 +370,7 @@ kubectl delete -f cluster-issuer.yaml --namespace ingress-basic
 
 Выведите список выпусков Helm с помощью `helm list` команды. Найдите диаграммы с именами *nginx* и *CERT-Manager*, как показано в следующем примере выходных данных:
 
-```
+```console
 $ helm list --namespace ingress-basic
 
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
@@ -380,7 +380,7 @@ nginx                   ingress-basic   1               2020-01-15 10:09:45.9826
 
 Удалите выпуски с помощью `helm uninstall` команды. В следующем примере производится удаление развертываний NGINX и диспетчера сертификатов.
 
-```
+```console
 $ helm uninstall cert-manager nginx --namespace ingress-basic
 
 release "cert-manager" uninstalled
@@ -423,7 +423,7 @@ kubectl delete namespace ingress-basic
 - [Создать контроллер входящего трафика, который использует службу Let's Encrypt для автоматического создания сертификатов TLS со статическим общедоступным IP-адресом][aks-ingress-static-tls]
 
 <!-- LINKS - external -->
-[az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/a?view=azure-cli-latest#az-network-dns-record-set-a-add-record
+[az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/#az-network-dns-record-set-a-add-record
 [custom-domain]: ../app-service/manage-custom-dns-buy-domain.md#buy-an-app-service-domain
 [dns-zone]: ../dns/dns-getstarted-cli.md
 [helm]: https://helm.sh/
