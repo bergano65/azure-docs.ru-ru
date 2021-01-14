@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 11/16/2020
-ms.openlocfilehash: 791cab369dcbf9cab8d1256377cfee4a433c21b9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 53fb256d3a0fba1cc10cafb239ff7f7bb21ac4eb
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450895"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121079"
 ---
 # <a name="tutorial-create-a-power-bi-report-using-apache-spark-and-azure-synapse-analytics"></a>Руководство по созданию отчета Power BI с помощью Apache Spark и Azure Synapse Analytics
 
@@ -22,7 +22,7 @@ ms.locfileid: "96450895"
 
 ## <a name="before-you-begin"></a>Перед началом
 - [Рабочая область Azure Synapse Analytics](../quickstart-create-workspace.md) с учетной записью хранения ADLS 2-го поколения, настроенной в качестве хранилища по умолчанию. 
-- Рабочая область Power BI и Power BI Desktop для визуализации данных. Дополнительные сведения см. в статьях о [создании рабочей области Power BI](https://docs.microsoft.com/power-bi/service-create-the-new-workspaces) и [установке Power BI Desktop](https://powerbi.microsoft.com/downloads/).
+- Рабочая область Power BI и Power BI Desktop для визуализации данных. Дополнительные сведения см. в статьях о [создании рабочей области Power BI](/power-bi/service-create-the-new-workspaces) и [установке Power BI Desktop](https://powerbi.microsoft.com/downloads/).
 - Связанная служба для подключения Azure Synapse Analytics и рабочих областей Power BI. Дополнительные сведения см. в статье о [связывании рабочей области Power BI](../quickstart-power-bi.md).
 - Бессерверный пул Apache Spark в рабочей области Synapse Analytics. Дополнительные сведения см. в статье о [создании бессерверного пула Apache Spark](../quickstart-create-apache-spark-pool-studio.md).
   
@@ -89,7 +89,7 @@ Azure Synapse Analytics позволяет различным вычислите
 Теперь мы подключим бессерверный пул SQL к рабочей области Power BI. После подключения рабочей области вы сможете создавать отчеты Power BI непосредственно из Azure Synapse Analytics и из Power BI Desktop.
 
 >[!Note]
-> Прежде чем начать, настройте связанную службу для [рабочей области Power BI](../quickstart-power-bi.md) и скачайте [Power BI Desktop](https://docs.microsoft.com/power-bi/service-create-the-new-workspaces).  
+> Прежде чем начать, настройте связанную службу для [рабочей области Power BI](../quickstart-power-bi.md) и скачайте [Power BI Desktop](/power-bi/service-create-the-new-workspaces).  
 
 Чтобы подключить бессерверный пул SQL к рабочей области Power BI, сделайте следующее:
 

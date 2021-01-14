@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/06/2020
+ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 9b9390b498f28fc8f9029f1c11805b970aaca73d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: de011fb0f827ea90efe33e237bbf1c5100dc76a7
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014566"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183478"
 ---
 # <a name="how-to-deploy-a-people-counting-web-application"></a>Руководство. Развертывание веб-приложения для инвентаризации людей
 
@@ -63,12 +63,12 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 
 ### <a name="deploy-the-container-on-azure-iot-edge-on-the-host-computer"></a>Развертывание контейнера на Azure IoT Edge на главном компьютере
 
-Разверните контейнер пространственного анализа как модуль IoT на главном компьютере с помощью Azure CLI. Для процесса развертывания требуется файл манифеста развертывания, который описывает необходимые контейнеры, переменные и конфигурации для развертывания. Вы можете найти пример [манифеста развертывания с пограничным Azure Stack](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) , а также [манифест развертывания](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) на сайте GitHub, не относящийся к Azure Stack, который включает базовую конфигурацию развертывания для контейнера *пространственного анализа* . 
+Разверните контейнер пространственного анализа как модуль IoT на главном компьютере с помощью Azure CLI. Для процесса развертывания требуется файл манифеста развертывания, который описывает необходимые контейнеры, переменные и конфигурации для развертывания. В GitHub можно найти пример [манифеста развертывания](https://go.microsoft.com/fwlink/?linkid=2142179)для конкретного Azure Stack, не относящегося к [Azure Stack](https://go.microsoft.com/fwlink/?linkid=2152189), а также [виртуальной машины Azure с манифестом развертывания на основе GPU](https://go.microsoft.com/fwlink/?linkid=2152189) , который включает базовую конфигурацию развертывания для контейнера *пространственного анализа* . 
 
 Кроме того, вы можете использовать расширения Azure IoT для Visual Studio Code для выполнения операций с центром Интернета вещей. Чтобы узнать больше, перейдите к разделу [Развертывание модулей Azure IOT Edge из Visual Studio Code](../../iot-edge/how-to-deploy-modules-vscode.md) .
 
 > [!NOTE] 
-> Контейнеры *spatial-Analysis-Telegraf* и *пространственный-Analysis-Diagnostics* являются необязательными. Вы можете удалить их из *DeploymentManifest.js* файла. Дополнительные сведения см. в статье [телеметрии и устранении неполадок](./spatial-analysis-logging.md) . Вы можете найти два примера *DeploymentManifest.js* файлов на сайте GitHub, для устройств с [Azure Stack пограничным](https://go.microsoft.com/fwlink/?linkid=2142179) или для другого [настольного компьютера](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) .
+> Контейнеры *spatial-Analysis-Telegraf* и *пространственный-Analysis-Diagnostics* являются необязательными. Вы можете удалить их из *DeploymentManifest.js* файла. Дополнительные сведения см. в статье [телеметрии и устранении неполадок](./spatial-analysis-logging.md) . Вы можете найти три примера *DeploymentManifest.js* файлов на сайте GitHub, для [Azure Stackных устройств](https://go.microsoft.com/fwlink/?linkid=2142179), на [настольном компьютере](https://go.microsoft.com/fwlink/?linkid=2152189)или на [виртуальной машине Azure с графическим процессором](https://go.microsoft.com/fwlink/?linkid=2152189) .
 
 ### <a name="set-environment-variables"></a>Настройка переменных среды
 
@@ -185,7 +185,7 @@ docker push [desired local image name]
 * `EventHubConsumerGroup` — Строковое имя группы потребителей из центра Интернета вещей Azure, можно создать новую группу потребителей в центре Интернета вещей или использовать группу по умолчанию. 
 * `IotHubConnectionString` — Строка подключения к центру Интернета вещей Azure, ее можно получить из раздела ключи в ресурсе центра Интернета вещей Azure ![ Настройка параметров](./media/spatial-analysis/solution-app-config-page.png)
 
-После добавления этих двух параметров нажмите кнопку **сохранить**. Затем в меню навигации слева щелкните **Проверка подлинности и авторизация** и обновите требуемый уровень проверки подлинности. Мы рекомендуем использовать Azure Active Director (Azure AD) Express. 
+После добавления этих двух параметров нажмите кнопку **сохранить**. Затем в меню навигации слева щелкните **Проверка подлинности и авторизация** и обновите требуемый уровень проверки подлинности. Рекомендуем Azure Active Directory (Azure AD) Express. 
 
 ### <a name="test-the-app"></a>Тестирование приложения
 

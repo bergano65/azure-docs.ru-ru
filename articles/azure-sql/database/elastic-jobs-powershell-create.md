@@ -11,12 +11,12 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 10/21/2020
-ms.openlocfilehash: 27cd35eba7320022ea9b137a7b8bb079a1226751
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1fc5653f08f8fc7916257dfdba570f451c0afa75
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427287"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131939"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell-preview"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell (предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "92427287"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-Установите модуль **Az.Sql** , чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
+Установите модуль **Az.Sql**, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 
 ```powershell
 # installs the latest PackageManagement and PowerShellGet packages
@@ -123,19 +123,11 @@ $db2 = New-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $targ
 $db2
 ```
 
-## <a name="use-elastic-jobs"></a>Использование заданий обработки эластичных баз данных
-
-Чтобы использовать задания обработки эластичных баз данных, зарегистрируйте эту функцию в подписке Azure, выполнив следующую команду. Однократно выполните эту команду для подписки, в которой вы хотите подготовить агент заданий обработки эластичных баз данных. Подписки, в которых только находятся базы данных, обрабатываемые агентом, регистрировать не нужно.
-
-```powershell
-Register-AzProviderFeature -FeatureName sqldb-JobAccounts -ProviderNamespace Microsoft.Sql
-```
-
 ### <a name="create-the-elastic-job-agent"></a>Создание агента заданий обработки эластичных баз данных
 
 Агент заданий обработки эластичных баз данных является ресурсом Azure для создания, запуска заданий и управления ими. Агент выполняет запланированные или разовые задания.
 
-Командлет **New-AzSqlElasticJobAgent** требует наличия базы данных в службе "База данных SQL Azure", поэтому параметры *resourceGroupName* , *serverName* и *databaseName* должны указывать на существующие ресурсы.
+Командлет **New-AzSqlElasticJobAgent** требует наличия базы данных в службе "База данных SQL Azure", поэтому параметры *resourceGroupName*, *serverName* и *databaseName* должны указывать на существующие ресурсы.
 
 ```powershell
 Write-Output "Creating job agent..."
@@ -205,7 +197,7 @@ $jobCred = $jobAgent | New-AzSqlElasticJobCredential -Name "jobuser" -Credential
 
 [Целевая группа](job-automation-overview.md#target-group) определяет набор из одной или нескольких баз данных, в которых будет выполняться шаг задания.
 
-Следующий фрагмент кода позволяет создать две целевые группы: *serverGroup* и *serverGroupExcludingDb2* . *serverGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *serverGroupExcludingDb2* охватывает все базы данных сервера, за исключением *targetDb2* :
+Следующий фрагмент кода позволяет создать две целевые группы: *serverGroup* и *serverGroupExcludingDb2*. *serverGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *serverGroupExcludingDb2* охватывает все базы данных сервера, за исключением *targetDb2*:
 
 ```powershell
 Write-Output "Creating test target groups..."
@@ -221,7 +213,7 @@ $serverGroupExcludingDb2 | Add-AzSqlElasticJobTarget -ServerName $targetServerNa
 
 ### <a name="create-a-job-and-steps"></a>Создание задания и шагов
 
-В этом примере определяется задание и два шага для выполнения задания. Первый шаг задания ( *step1* ) позволяет создать таблицу ( *Step1Table* ) в каждой базе данных целевой группы *ServerGroup* . Второй шаг задания ( *step2* ) позволяет создать таблицу ( *Step2Table* ) в каждой базе данных, за исключением *TargetDb2* , так как целевая группа, определенная ранее, предназначена для исключения этой базы данных.
+В этом примере определяется задание и два шага для выполнения задания. Первый шаг задания (*step1*) позволяет создать таблицу (*Step1Table*) в каждой базе данных целевой группы *ServerGroup*. Второй шаг задания (*step2*) позволяет создать таблицу (*Step2Table*) в каждой базе данных, за исключением *TargetDb2*, так как целевая группа, определенная ранее, предназначена для исключения этой базы данных.
 
 ```powershell
 Write-Output "Creating a new job..."

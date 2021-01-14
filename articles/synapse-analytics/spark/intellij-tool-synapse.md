@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: 75cc23df41741a95e87ad64d168aea4fa4f45733
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 39f39b6f53944510b5f3692bb8b3fdd472004454
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451050"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121232"
 ---
 # <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Руководство по созданию приложения Apache Spark с помощью IntelliJ и рабочей области Synapse
 
@@ -36,7 +36,7 @@ ms.locfileid: "96451050"
 - [Версия IntelliJ IDEA для сообщества](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC);
 - подключаемый модуль Azure Toolkit 3.27.0-2019.2 — [установите из репозитория подключаемого модуля IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-installation?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json);
 - [JDK (версия 1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
-- подключаемый модуль Scala — [установите из репозитория подключаемого модуля IntelliJ](/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#install-scala-plugin-for-intellij-idea).
+- подключаемый модуль Scala — [установите из репозитория подключаемого модуля IntelliJ](../../hdinsight/spark/apache-spark-intellij-tool-plugin.md#install-scala-plugin-for-intellij-idea).
 - Приведенное ниже предварительное требование предназначено только для пользователей Windows.
 
   При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в статье о [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл WinUtils.exe.

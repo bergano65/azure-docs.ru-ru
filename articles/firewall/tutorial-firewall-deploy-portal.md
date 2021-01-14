@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/15/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: e73f11ec178c067941ee33e02f37c96605460ee0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 40e4a3d3a819280255ee931e5e12206f99ef28fe
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658593"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051519"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Руководство по Развертывание и настройка службы "Брандмауэр Azure" с помощью портала Azure
 
@@ -72,7 +72,7 @@ ms.locfileid: "94658593"
 В этой виртуальной сети будет содержаться три подсети.
 
 > [!NOTE]
-> Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size).
+> Размер подсети AzureFirewallSubnet равен /26. Дополнительные сведения о размере подсети см. в статье с [часто задаваемыми вопросами о Брандмауэре Azure](firewall-faq.yml#why-does-azure-firewall-need-a--26-subnet-size).
 
 1. На **домашней странице** или в меню портала Azure выберите **Создать ресурс**.
 1. Выберите **Сети** > **Виртуальная сеть**.

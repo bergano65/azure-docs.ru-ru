@@ -3,12 +3,12 @@ title: Развертывание ресурсов в группе управл�
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: f847e481670d7f9afd4b40cfb8fcbec65d1e28c8
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: d6c6b925ad1533fc1f3bf490a9b996280164bd57
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178931"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184022"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Развертывание группы управления с помощью шаблонов ARM
 
@@ -44,6 +44,8 @@ ms.locfileid: "98178931"
 Для управления ресурсами используйте:
 
 * [теги](/azure/templates/microsoft.resources/tags)
+
+Группы управления — это ресурсы уровня клиента. Однако вы можете создать группы управления в развертывании группы управления, задав область действия новой группы управления для клиента. См. раздел [Группа управления](#management-group).
 
 ## <a name="schema"></a>схема
 
@@ -168,9 +170,55 @@ New-AzManagementGroupDeployment `
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/management-group-to-tenant.json" highlight="9,10,14":::
 
-Или можно задать область `/` для некоторых типов ресурсов, например для групп управления.
+Или можно задать область `/` для некоторых типов ресурсов, например для групп управления. Создание новой группы управления описано в следующем разделе.
+
+## <a name="management-group"></a>группа управления;
+
+Чтобы создать группу управления в развертывании группы управления, необходимо задать для области значение `/` для группы управления.
+
+В следующем примере создается новая группа управления в корневой группе управления.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/management-group-create-mg.json" highlight="12,15":::
+
+В следующем примере создается новая группа управления в группе управления, заданной как родительская. Обратите внимание, что для области задано значение `/` .
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mgName": {
+            "type": "string",
+            "defaultValue": "[concat('mg-', uniqueString(newGuid()))]"
+        },
+        "parentMG": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "name": "[parameters('mgName')]",
+            "type": "Microsoft.Management/managementGroups",
+            "apiVersion": "2020-05-01",
+            "scope": "/",
+            "location": "eastus",
+            "properties": {
+                "details": {
+                    "parent": {
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('parentMG'))]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "output": {
+            "type": "string",
+            "value": "[parameters('mgName')]"
+        }
+    }
+}
+```
 
 ## <a name="azure-policy"></a>Политика Azure
 

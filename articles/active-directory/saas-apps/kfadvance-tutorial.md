@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/02/2020
 ms.author: jeedes
-ms.openlocfilehash: 43e6495c0231d5b14d27eabc3b9b82ba791d7108
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 241e5abf8377bd2e2207d140e291b18592651ea6
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97364487"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179594"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kfadvance"></a>Руководство по интеграции единого входа Azure Active Directory с KFAdvance
 
@@ -76,13 +76,13 @@ ms.locfileid: "97364487"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.kfadvance-<ENVIRONMENT>.com/<PARTNER_ID>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.kfadvance.com/<PARTNER_ID>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.kfadvance-<ENVIRONMENT>.com/vn/account/partnerssocallback?partnerKey=<PARTNER_ID>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.kfadvance-<ENVIRONMENT>.com/v1/account/partnerssocallback?partnerKey=<PARTNER_ID>`.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://api.kfadvance-<ENVIRONMENT>.com/vn/account/partnerssologin?partnerKey=<PARTNER_ID>`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://api.kfadvance.com/v1/account/partnerssologin?partnerKey=<PARTNER_ID>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов KFAdvance](mailto:support@kornferry.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

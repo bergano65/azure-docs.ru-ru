@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: traffic-manager
 ms.date: 09/18/2019
 ms.author: duau
-ms.openlocfilehash: 01bd3b1e945ee7c9ac16af7048536c0a9e2d731a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 502533b69058eacd4ad18a3b29a33fbc4a3715a5
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401594"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183791"
 ---
 # <a name="traffic-manager-subnet-override-using-azure-powershell"></a>Переопределение подсети диспетчера трафика с помощью Azure PowerShell
 
@@ -43,7 +43,7 @@ ms.locfileid: "89401594"
 
 1. **Получите конечную точку диспетчера трафика.**
 
-    Чтобы включить переопределение подсети, извлеките конечную точку, в которую нужно добавить переопределение, и сохраните ее в переменной с помощью командлета [Get-азтраффикманажерендпоинт](https://docs.microsoft.com/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint?view=azps-2.5.0).
+    Чтобы включить переопределение подсети, извлеките конечную точку, в которую нужно добавить переопределение, и сохраните ее в переменной с помощью командлета [Get-азтраффикманажерендпоинт](/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint?view=azps-2.5.0).
 
     Замените Name, имя_профиля и ResourceGroupName значениями изменяемой конечной точки.
 
@@ -54,7 +54,7 @@ ms.locfileid: "89401594"
     ```
 2. **Добавьте диапазон IP-адресов в конечную точку.**
     
-    Чтобы добавить диапазон IP-адресов в конечную точку, используйте [Add-азтраффикманажерипаддрессранже](https://docs.microsoft.com/powershell/module/az.trafficmanager/add-aztrafficmanageripaddressrange?view=azps-2.5.0&viewFallbackFrom=azps-2.4.0) , чтобы добавить диапазон.
+    Чтобы добавить диапазон IP-адресов в конечную точку, используйте [Add-азтраффикманажерипаддрессранже](/powershell/module/az.trafficmanager/add-aztrafficmanageripaddressrange?view=azps-2.5.0&viewFallbackFrom=azps-2.4.0) , чтобы добавить диапазон.
 
     ```powershell
 
@@ -68,18 +68,18 @@ ms.locfileid: "89401594"
     Add-AzTrafficManagerIPAddressRange -TrafficManagerEndpoint $TrafficManagerEndpoint -First "12.13.14.0" -Last "12.13.14.31" -Scope 27
  
     ```
-    После добавления диапазонов используйте [Set-азтраффикманажерендпоинт](https://docs.microsoft.com/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint?view=azps-2.5.0) , чтобы обновить конечную точку.
+    После добавления диапазонов используйте [Set-азтраффикманажерендпоинт](/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint?view=azps-2.5.0) , чтобы обновить конечную точку.
 
     ```powershell
 
     Set-AzTrafficManagerEndpoint -TrafficManagerEndpoint $TrafficManagerEndpoint
 
     ```
-Удаление диапазона IP-адресов может быть выполнено с помощью [Remove-азтраффикманажерипаддрессранже](https://docs.microsoft.com/powershell/module/az.trafficmanager/remove-aztrafficmanageripaddressrange?view=azps-2.5.0).
+Удаление диапазона IP-адресов может быть выполнено с помощью [Remove-азтраффикманажерипаддрессранже](/powershell/module/az.trafficmanager/remove-aztrafficmanageripaddressrange?view=azps-2.5.0).
 
 1.  **Получите конечную точку диспетчера трафика.**
 
-    Чтобы включить переопределение подсети, извлеките конечную точку, в которую нужно добавить переопределение, и сохраните ее в переменной с помощью командлета [Get-азтраффикманажерендпоинт](https://docs.microsoft.com/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint?view=azps-2.5.0).
+    Чтобы включить переопределение подсети, извлеките конечную точку, в которую нужно добавить переопределение, и сохраните ее в переменной с помощью командлета [Get-азтраффикманажерендпоинт](/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint?view=azps-2.5.0).
 
     Замените Name, имя_профиля и ResourceGroupName значениями изменяемой конечной точки.
 
@@ -102,7 +102,7 @@ ms.locfileid: "89401594"
     Remove-AzTrafficManagerIpAddressRange -TrafficManagerEndpoint $TrafficManagerEndpoint -First "12.13.14.0" -Last "12.13.14.31" -Scope 27
 
     ```
-     После удаления диапазонов используйте [Set-азтраффикманажерендпоинт](https://docs.microsoft.com/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint?view=azps-2.5.0) , чтобы обновить конечную точку.
+     После удаления диапазонов используйте [Set-азтраффикманажерендпоинт](/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint?view=azps-2.5.0) , чтобы обновить конечную точку.
 
     ```powershell
 
@@ -110,7 +110,7 @@ ms.locfileid: "89401594"
 
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. дополнительные сведения в статье [Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md).
 
-Сведения о [методе маршрутизации трафика подсети](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods#subnet-traffic-routing-method)
+Сведения о [методе маршрутизации трафика подсети](./traffic-manager-routing-methods.md#subnet-traffic-routing-method)

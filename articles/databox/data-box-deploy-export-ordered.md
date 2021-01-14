@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: e822a2be200f701d65ab2080804d252f99589680
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: ac86dfba02b54730773a1d243981e85d563517e7
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680795"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183836"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box"></a>Учебник. создание порядка экспорта для Azure Data Box
 
@@ -58,7 +58,7 @@ Azure Data Box — это гибридное решение, которое по
 
    ![Создание ресурса](media/data-box-deploy-export-ordered/azure-data-box-export-order-create-resource.png)
 
-3. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
    ![Создание ресурса Azure Data Box](media/data-box-deploy-export-ordered/azure-data-box-export-order-create-data-box-resource.png)
 
@@ -181,7 +181,7 @@ Azure Data Box — это гибридное решение, которое по
 
     Назначаемое пользователем управляемое удостоверение — это автономный ресурс Azure, который можно использовать для управления несколькими ресурсами. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview)  
 
-    Если вам нужно создать новое управляемое удостоверение, следуйте указаниям в статье [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
+    Если вам нужно создать новое управляемое удостоверение, следуйте указаниям в статье [Создание, перечисление, удаление или назначение роли назначенному пользователем управляемому удостоверению с помощью портал Azure](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     
     ![Выбор удостоверения пользователя](./media/data-box-deploy-export-ordered/customer-managed-key-10.png)
 
@@ -242,7 +242,7 @@ Azure Data Box — это гибридное решение, которое по
 
    ![Выбор параметра экспорта, новые параметры контейнера](media/data-box-deploy-export-ordered/azure-data-box-export-sms-use-xml-file-container-settings.png)
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
    ![Выберите параметр экспорт, создать контейнер.](media/data-box-deploy-export-ordered/azure-data-box-export-sms-use-xml-create-container.png)
 

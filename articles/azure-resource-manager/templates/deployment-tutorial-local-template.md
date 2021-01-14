@@ -1,16 +1,16 @@
 ---
 title: Учебник. Развертывание шаблона Azure Resource Manager
 description: Узнайте, как развернуть шаблон Azure Resource Manager (шаблон ARM) на локальном компьютере.
-ms.date: 05/20/2020
+ms.date: 01/12/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 640d314711e34119dac5e1c5bf9fa245685b6f38
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 3b2368f5adcfa4b7140c4ec00243ca2cba5c566a
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368142"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134132"
 ---
 # <a name="tutorial-deploy-a-local-arm-template"></a>Руководство по развертыванию шаблона ARM в локальной среде
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/10/2017
 ms.author: duau
-ms.openlocfilehash: 7bb5559f21289a40b6c75a3481680ab5b2c1c269
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a39120b1305022739aaef3407aa6c2621a97e842
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89392890"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184159"
 ---
 # <a name="manage-an-azure-traffic-manager-profile"></a>Управление профилем диспетчера трафика Azure
 
@@ -68,9 +68,9 @@ ms.locfileid: "89392890"
 3. Щелкните **Обзор**  >  **Удалить**.
 4. Подтвердите, что собираетесь удалить профиль диспетчера трафика.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Добавление конечной точки](traffic-manager-endpoints.md)
+* [Добавление конечной точки](./traffic-manager-manage-endpoints.md)
 * [Настройка метода маршрутизации трафика по приоритету в диспетчере трафика](traffic-manager-configure-priority-routing-method.md)
 * [Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика](traffic-manager-configure-geographic-routing-method.md) 
 * [Настройка метода взвешенной маршрутизации трафика в диспетчере трафика](traffic-manager-configure-weighted-routing-method.md)
