@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 830f58ea11ba84dd2aee81c0352b3ede4aa4929c
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8aecee0946c8418016be542e65b117894c68c591
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498257"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197614"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---single-server"></a>Базовый уровень безопасности Azure для базы данных Azure для PostgreSQL — один сервер
 
 Базовый план безопасности Azure для базы данных Azure для PostgreSQL-Single Server содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
@@ -176,7 +176,7 @@ ms.locfileid: "96498257"
 
 **Руководство**: Корпорация Майкрософт поддерживает источники времени для ресурсов Azure, например базу данных Azure для PostgreSQL для меток времени в журналах.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Microsoft
 
@@ -274,7 +274,7 @@ ms.locfileid: "96498257"
 
 **Руководство**: Неприменимо; база данных Azure для PostgreSQL не обрабатывает и не создает журналы, связанные с DNS.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Неприменимо
 
@@ -366,7 +366,7 @@ ms.locfileid: "96498257"
 
 **Руководство**: Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной проверкой подлинности (MFA) для входа в ресурсы Azure и их настройки.
 
-- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -590,7 +590,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 - [Как создать оповещения для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 

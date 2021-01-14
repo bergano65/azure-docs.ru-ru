@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 02/15/2017
 ms.reviewer: dx@sendgrid.com
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: e605e162e4639a876cc5b6d763e81fdd7ff93aa8
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: ae816d2be592ab774500d1cfe8f2f6a7b7905b91
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674554"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196560"
 ---
 # <a name="how-to-send-email-using-sendgrid-with-azure"></a>Как отправлять электронную почту с помощью SendGrid и Azure
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 В этом руководстве показано, как выполнять типовые задачи программирования для службы электронной почты SendGrid в Azure. Примеры написаны на языке C\# и поддерживают .NET Standard 1.3. Здесь описываются сценарии создания электронного сообщения, его отправки, добавления вложений и включения различных параметров электронной почты и отслеживания. Дополнительные сведения о SendGrid и отправке электронной почты см. в разделе [Дальнейшие действия][Next steps].
 
 ## <a name="what-is-the-sendgrid-email-service"></a>Что такое служба электронной почты SendGrid?
@@ -52,7 +52,7 @@ SendGrid — это [облачная служба электронной по�
 
 1. Щелкните **Новый проект** и выберите **Шаблон**.
 
-   ![Создание проекта][create-new-project]
+   ![Создание нового проекта][create-new-project]
 2. В **обозревателе решений** щелкните правой кнопкой мыши **Ссылки**, а затем выберите **Управление пакетами NuGet**.
 
    ![Пакет SendGrid NuGet][SendGrid-NuGet-package]
@@ -273,7 +273,7 @@ msg.SetClickTracking(true);
 ## <a name="how-to-use-additional-sendgrid-services"></a>Практическое руководство. Использование дополнительных служб SendGrid
 SendGrid предоставляет несколько интерфейсов API и объектов webhook, с помощью которых в своем приложении Azure можно использовать дополнительные функции. Дополнительные сведения см. в [справочнике по API SendGrid][SendGrid API documentation].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы получили основные сведения о службе доставки электронной почты SendGrid. Дополнительные сведения вы найдете по следующим ссылкам.
 
 * Репозиторий библиотек C\# для SendGrid: [sendgrid-csharp][sendgrid-csharp]
@@ -296,7 +296,7 @@ SendGrid предоставляет несколько интерфейсов AP
 [sendgrid-csharp]: https://github.com/sendgrid/sendgrid-csharp
 [SMTP vs. Web API]: https://sendgrid.com/docs/Integrate/index.html
 [App Settings]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html
-[SendGrid API documentation]: https://sendgrid.com/docs/API_Reference/api_v3.html
+[SendGrid API documentation]: https://sendgrid.com/docs/api-reference/
 [NET-library]: https://sendgrid.com/docs/Integrate/Code_Examples/v2_Mail/csharp.html#-Using-NETs-Builtin-SMTP-Library
 [documentation]: https://sendgrid.com/docs/Classroom/Send/api_keys.html
 [settings-documentation]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html

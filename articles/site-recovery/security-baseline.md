@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 860bc9440547a4c62336ccc573859ec56b3400b5
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: c3e2245ae47504e058921c532ed40a220e95423d
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533865"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197580"
 ---
 # <a name="azure-security-baseline-for-site-recovery"></a>Базовый план безопасности Azure для Site Recovery
 
@@ -222,7 +222,7 @@ Azure PowerShell или Azure CLI можно использовать для п�
 
 **Руководство**. Использование защищенной рабочей станции, управляемой Azure (также называемой рабочей станцией привилегированного доступа (привилегированным доступом)), с многофакторной проверкой подлинности Azure для административных задач и выполнения привилегированных действий в site Recoveryных ресурсах.
 
-- [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Рабочие станции c привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [Планирование развертывания облачной службы Многофакторной идентификации Azure AD](../active-directory/authentication/howto-mfa-getstarted.md)
 

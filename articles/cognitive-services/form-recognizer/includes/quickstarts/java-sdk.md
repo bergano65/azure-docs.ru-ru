@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 6768f46f39920c975e7eccef72563fc0bb7e5180
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 93552d203508fb893bd2e85d27a3a991fc539472
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808595"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132333"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
@@ -156,8 +156,8 @@ mkdir -p src/main/java
 `FormRecognizerClient` предоставляет операции для перечисленных ниже целей.
 
 - Распознавание полей форм и содержимого с помощью настраиваемых моделей, обученных для распознавания пользовательских форм.  Эти значения возвращаются в коллекцию объектов `RecognizedForm`. См. пример в разделе об [анализе пользовательских форм](#analyze-forms-with-a-custom-model).
-- Распознавание содержимого формы, в том числе таблиц, строк и слов, без необходимости обучения модели.  Содержимое форм возвращается в коллекцию объектов `FormPage`. См. пример в разделе о [распознавании содержимого формы](#recognize-form-content).
-- Распознавание общих полей в квитанциях для США с помощью предварительно обученной модели для обработки квитанций в службе "Распознаватель документов".  Эти поля и метаданные возвращаются в коллекцию объектов `RecognizedForm`. См. пример в разделе о [распознавании квитанций](#recognize-receipts).
+- Распознавание содержимого формы, в том числе таблиц, строк и слов, без необходимости обучения модели.  Содержимое форм возвращается в коллекцию объектов `FormPage`. См. пример [анализа макета](#analyze-layout).
+- Распознавание общих полей в квитанциях для США с помощью предварительно обученной модели для обработки квитанций в службе "Распознаватель документов".  Эти поля и метаданные возвращаются в коллекцию объектов `RecognizedForm`. См. пример [анализа квитанций](#analyze-receipts).
 
 ### <a name="formtrainingclient"></a>FormTrainingClient
 
@@ -177,17 +177,17 @@ mkdir -p src/main/java
 
 #### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 * [аутентификация клиента](#authenticate-the-client);
-* [распознавание содержимого формы](#recognize-form-content);
-* [распознавание квитанций](#recognize-receipts);
+* [анализ макета](#analyze-layout);
+* [анализ квитанций](#analyze-receipts);
 * [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
 #### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 * [аутентификация клиента](#authenticate-the-client);
-* [распознавание содержимого формы](#recognize-form-content);
-* [распознавание квитанций](#recognize-receipts);
-* [Распознавание визитных карточек](#recognize-business-cards)
-* [Распознавание счетов](#recognize-invoices)
+* [анализ макета](#analyze-layout);
+* [анализ квитанций](#analyze-receipts);
+* [анализ визитных карточек](#analyze-business-cards);
+* [анализ счетов](#analyze-invoices);
 * [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
@@ -200,7 +200,7 @@ mkdir -p src/main/java
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_auth)]
 
-## <a name="recognize-form-content"></a>Распознавание содержимого формы
+## <a name="analyze-layout"></a>Анализ макета
 
 С помощью Распознавателя документов можно распознавать таблицы, строки и слова в документах без предварительного обучения модели.
 
@@ -233,7 +233,7 @@ Cell has text $89,024.34.
 Cell has text ET.
 ```
 
-## <a name="recognize-receipts"></a>Распознавание квитанций
+## <a name="analyze-receipts"></a>Анализ квитанций
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в США квитанции и извлекать из них содержимое стандартных полей.
 
@@ -269,7 +269,7 @@ Quantity: null, confidence: 0.927s]
 Total Price: null, confidence: 0.93
 ```
 
-## <a name="recognize-business-cards"></a>Распознавание визитных карточек
+## <a name="analyze-business-cards"></a>Анализ визитных карточек
 
 #### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
@@ -293,7 +293,7 @@ Total Price: null, confidence: 0.93
 
 ---
 
-## <a name="recognize-invoices"></a>Распознавание счетов
+## <a name="analyze-invoices"></a>Анализ счетов
 
 #### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 

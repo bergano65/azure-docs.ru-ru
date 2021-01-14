@@ -1,18 +1,18 @@
 ---
-title: Отчетность по классификации данных с помощью зрения Insights (Предварительная версия)
-description: В этом пошаговом руководство описано, как просматривать и использовать отчеты о классификации зрения Insights для ваших данных.
+title: Классификация отчетов по данным в Azure зрения с помощью зрения Insights
+description: В этом пошаговом руководство описано, как просматривать и использовать отчеты зрения Classification для ваших данных.
 author: batamig
 ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: bb3c7cc3f51eae90c5b712d224407e639b232fbc
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: a0eed27636a3f65d68489d1f2249db784ba1d722
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938891"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196543"
 ---
 # <a name="classification-insights-about-your-data-from-azure-purview"></a>Сведения о классификации данных из Azure зрения
 
@@ -33,7 +33,9 @@ ms.locfileid: "96938891"
 
 - Настройка ресурсов Azure и заполнение соответствующих учетных записей тестовыми данными
 
-- Настройка и завершение проверки тестовых данных в каждом источнике данных 
+- Настройка и завершение проверки тестовых данных в каждом источнике данных
+
+- Выполнен вход в зрения с учетной записью с помощью [средства чтения данных или роли пленку данных](catalog-permissions.md#azure-purviews-pre-defined-data-plane-roles).
 
 Дополнительные сведения см. [в статье Управление источниками данных в Azure зрения (Предварительная версия)](manage-data-sources.md).
 

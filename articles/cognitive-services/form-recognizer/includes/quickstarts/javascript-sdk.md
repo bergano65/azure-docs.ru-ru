@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 45654d55ac07bc9056a41cacba6f8f5890c56580
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 6520c1e326dc95584030d3187fdaaaa7e06c498a
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808646"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132296"
 ---
 > [!IMPORTANT]
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. См. справочную документацию ниже. 
@@ -102,8 +102,8 @@ npm install @azure/ai-form-recognizer
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Распознавателя документов для JavaScript:
 
 * [аутентификация клиента](#authenticate-the-client);
-* [распознавание содержимого формы](#recognize-form-content);
-* [распознавание квитанций](#recognize-receipts);
+* [анализ макета](#analyze-layout);
+* [анализ квитанций](#analyze-receipts);
 * [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
@@ -126,7 +126,7 @@ npm install @azure/ai-form-recognizer
 * Используйте пример формы и изображения квитанций, включенные в приведенные ниже примеры. Вы можете также скачать их с [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/test-assets) или выполнить описанные выше действия, чтобы получить URL-адрес SAS для отдельного документа в хранилище BLOB-объектов. 
 
 
-## <a name="recognize-form-content"></a>Распознавание содержимого формы
+## <a name="analyze-layout"></a>Анализ макета
 
 С помощью Распознавателя документов можно распознавать таблицы, строки и слова в документах без предварительного обучения модели. Для распознавания содержимого файла c определенным универсальным кодом ресурса URI используйте метод `beginRecognizeContentFromUrl`.
 
@@ -152,7 +152,7 @@ cell [1,3] has text $56,651.49
 cell [1,5] has text PT
 ```
 
-## <a name="recognize-receipts"></a>Распознавание квитанций
+## <a name="analyze-receipts"></a>Анализ квитанций
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в США квитанции и извлекать из них содержимое стандартных полей.
 

@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.date: 07/17/2017
 ms.custom: devx-track-java
 ms.author: cynthn
-ms.openlocfilehash: f571dc5f4f3aee2405d4968b050bd2dd92a709db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 568760dcaebbad0e14405e14c5a5bf8f6cd18395
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012754"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197461"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять следующие задачи:
+[Виртуальной машине Azure](overview.md) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины с помощью Java. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание проекта Maven
@@ -288,7 +288,7 @@ input.nextLine();
 ```
 
 > [!NOTE]
-> В этом учебнике создается виртуальная машина под управлением одной из версий операционной системы Windows Server. Дополнительные сведения о выборе других образов см. в статье [Просмотр и выбор образов виртуальных машин Windows в Azure с помощью оболочки PowerShell или интерфейса командной строки](../linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+> В этом учебнике создается виртуальная машина под управлением одной из версий операционной системы Windows Server. Дополнительные сведения о выборе других образов см. в статье [Просмотр и выбор образов виртуальных машин Windows в Azure с помощью оболочки PowerShell или интерфейса командной строки](../linux/cli-ps-findimage.md).
 > 
 >
 

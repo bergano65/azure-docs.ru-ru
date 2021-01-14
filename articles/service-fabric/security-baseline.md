@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9eab908d2767bcdc9305daa625c70be9b63b9756
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1ba23b73836f1a2dbe73932ba920649ca5bb8b33
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485552"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98195710"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
 Базовый план безопасности Azure для Service Fabric содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовая конфигурация безопасности для этой службы взята из [теста производительности системы Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
 Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
@@ -380,7 +380,7 @@ ms.locfileid: "96485552"
 
 **Руководство**. Используйте лапы (рабочие станции с привилегированным доступом) с поддержкой многофакторной идентификации (MFA), настроенной для входа в и настройки кластеров Azure Service Fabric и связанных ресурсов.
 
-* [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 

@@ -9,12 +9,12 @@ ms.subservice: computer-vision
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: ea71cd4e235923c48c7c5b5269eb8f58d4c349d1
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: fc4830e89d71c387afc1c7bc7fbc81608dfeb592
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560803"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109311"
 ---
 <a name="HOLTop"></a>
 
@@ -41,6 +41,12 @@ ms.locfileid: "97560803"
 
 ```console
 pip install --upgrade azure-cognitiveservices-vision-computervision
+```
+
+Также установите библиотеку Pillow.
+
+```console
+pip install pillow
 ```
 
 ### <a name="create-a-new-python-application"></a>Создание приложения Python

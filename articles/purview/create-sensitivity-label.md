@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: c824e0abea7320a20441e51caa2a05d534ff61b3
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 003a71f962652b1a1436f5d9875835534090a77a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092692"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196594"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Автоматическая маркировка данных в Azure зрения
 
@@ -33,8 +33,9 @@ ms.locfileid: "97092692"
 Зрения использует те же классификации, которые также известны как типы конфиденциальных данных, как Microsoft 365.  Метки чувствительности MIP создаются в центре безопасности и соответствия требованиям (SCC) Microsoft 365. Это позволяет расширить существующие метки чувствительности в ресурсах Azure зрения.
 
 > [!NOTE]
-> Хотя классификации сопоставляются напрямую (номер социального страхования имеет классификацию **номера социального страхования**), метки чувствительности применяются, когда одна или несколько классификаций и сценариев находятся вместе. 
-> 
+> Классификации сопоставляются напрямую, например номер социального страхования, который имеет классификацию **номера социального страхования**. 
+>
+> Метки чувствительности, напротив, применяются, когда одна или несколько классификаций и условий находятся вместе. В этом контексте [условия](/microsoft-365/compliance/apply-sensitivity-label-automatically) относятся ко всем параметрам, которые можно определить для неструктурированных данных, таких как **сходство с другой классификацией**, и **% достоверность**. 
 
 Метки чувствительности в Azure зрения можно использовать для автоматического применения меток к файлам и столбцам базы данных.
 
@@ -92,16 +93,11 @@ ms.locfileid: "97092692"
 >
 > По этой причине метки и пользовательские типы конфиденциальных данных не являются общими для Azure зрения по умолчанию и должны иметь согласие на их использование в Azure зрения.
 
-> [!IMPORTANT]
-> Ваше согласие позволяет корпорации Майкрософт совместно использовать имя метки и имя типа настраиваемой конфиденциальной информации как в Azure зрения, *так* и в центре безопасности Azure (ASC). Корпорация Майкрософт использует сведения о метках из Azure зрения, чтобы расширить свои рекомендации и оповещения в ASC. 
->
-> Отправка в центр соответствия Microsoft 365 применяется для совместного использования этих данных в обеих службах. Сейчас нет возможности совместно использовать сведения о метках только с Azure зрения.
-
 **Чтобы расширить метки конфиденциальности до зрения, сделайте следующее:**
 
 В Microsoft 365 перейдите на страницу **Information Protection** . В области **расширение меток для ресурсов в Azure зрения** нажмите кнопку **включить** , а затем в появившемся диалоговом окне подтверждения выберите **Да** .
 
-Пример.
+Пример:
 
 :::image type="content" source="media/create-sensitivity-label/extend-sensitivity-labels-to-purview-small.png" alt-text="Выберите * * включить * *, чтобы расширить метки чувствительности на зрения" lightbox="media/create-sensitivity-label/extend-sensitivity-labels-to-purview.png":::
  
@@ -159,7 +155,7 @@ ms.locfileid: "97092692"
 
 На странице **Автоматическое добавление меток для приложений Office** включите **автоматическую маркировку для приложений Office,** а затем определите условия, при которых должна автоматически применяться метка к данным.
 
-Пример.
+Пример:
 
 :::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-files-small.png" alt-text="Определение правил автометки для файлов в центре безопасности и соответствия требованиям Microsoft 365" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-files.png":::
  
@@ -175,7 +171,7 @@ ms.locfileid: "97092692"
 
 1. Выберите **проверить конфиденциальные типы сведений** , чтобы выбрать типы конфиденциальных сведений, которые нужно применить к метке.
 
-Пример.
+Пример:
         
 :::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-db-columns-small.png" alt-text="Определение правил автометки для столбцов SQL в Microsoft 365 центре безопасности и соответствия требованиям" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-db-columns.png":::
 
@@ -185,11 +181,11 @@ ms.locfileid: "97092692"
 
 Дополнительные сведения о настройке проверок для различных ресурсов в Azure зрения см. в следующих статьях:
 
-|Источник  |Справочник  |
+|Источник  |Ссылка  |
 |---------|---------|
 |**Хранилище BLOB-объектов Azure**     |[Регистрация и проверка хранилища BLOB-объектов Azure](register-scan-azure-blob-storage-source.md)         |
 |**Хранилище озера данных Azure**     |[Регистрация и сканирование Azure Data Lake Storage 1-го поколения](register-scan-adls-gen1.md) </br>[Регистрация и сканирование Azure Data Lake Storage 2-го поколения](register-scan-adls-gen2.md)         |
-|**Базы данных SQL Azure**|[Регистрация и сканирование базы данных SQL Azure](register-scan-azure-sql-database.md) </br>[Регистрация и сканирование Управляемый экземпляр Базы данных SQL Azure](register-scan-azure-sql-database-managed-instance.md)|
+|**Базы данных SQL Azure**|[Регистрация и сканирование Базы данных SQL Azure](register-scan-azure-sql-database.md) </br>[Регистрация и сканирование Управляемого экземпляра Базы данных SQL Azure](register-scan-azure-sql-database-managed-instance.md)|
 | | |
 
 ## <a name="view-labels-on-assets"></a>Просмотр меток для ресурсов
@@ -198,11 +194,11 @@ ms.locfileid: "97092692"
 
 **Чтобы просмотреть метки, применяемые к вашим ресурсам в каталоге Azure зрения, выполните следующие действия.**
 
-В каталоге Azure зрения используйте параметры фильтрации **меток** , чтобы показывать только файлы с конкретными метками. Пример. 
+В каталоге Azure зрения используйте параметры фильтрации **меток** , чтобы показывать только файлы с конкретными метками. Пример: 
 
 :::image type="content" source="media/create-sensitivity-label/filter-search-results-small.png" alt-text="Поиск активов по метке" lightbox="media/create-sensitivity-label/filter-search-results.png":::
 
-Пример.
+Пример:
 
 :::image type="content" source="media/create-sensitivity-label/view-labeled-files-blob-storage-small.png" alt-text="Просмотр метки чувствительности для файла в хранилище BLOB-объектов Azure" lightbox="media/create-sensitivity-label/view-labeled-files-blob-storage.png":::
 

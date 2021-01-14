@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 53324709e2d3dd11160ee0b7837d86d9e9594571
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 77fccf8b2480232debb88136394013941af796c8
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763933"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197274"
 ---
 # <a name="azure-security-baseline-for-azure-front-door"></a>Базовый план безопасности Azure для передней дверцы Azure
 
@@ -86,7 +86,7 @@ ms.locfileid: "96763933"
 
 Используйте высокозащищенные пользовательские рабочие станции с Azure бастиона для административных задач. Выберите Azure Active Directory (Azure AD), Microsoft Защитник Advanced Threat protection (ATP) и Microsoft Intune, чтобы развернуть защищенные и управляемые рабочие станции пользователей для административных задач. Защищенные рабочие станции должны централизованно управляться, чтобы обеспечить безопасную настройку, включая строгую проверку подлинности, базовые показатели программного обеспечения и оборудования, ограниченный логический и сетевой доступ.
 
-- [Общие сведения о рабочих станциях с привилегированным доступом](../active-directory/devices/concept-azure-managed-workstation.md) 
+- [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) 
 
 - [Развертывание рабочей станции с привилегированным доступом](../active-directory/devices/howto-azure-managed-workstation.md)
 

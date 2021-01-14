@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 9762ca79f73b3333045d1c11376ab315aac2d55e
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: fb9d74da6030c430cce4a2a3c4c5e4299183ca15
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808663"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132311"
 ---
 > [!IMPORTANT]
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. См. справочную документацию ниже. 
@@ -100,8 +100,8 @@ pip install azure-ai-formrecognizer --pre
 #### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
 * [аутентификация клиента](#authenticate-the-client);
-* [распознавание содержимого формы](#recognize-form-content);
-* [распознавание квитанций](#recognize-receipts);
+* [анализ макета](#analyze-layout);
+* [анализ квитанций](#analyze-receipts);
 * [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
@@ -109,10 +109,10 @@ pip install azure-ai-formrecognizer --pre
 #### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 * [аутентификация клиента](#authenticate-the-client);
-* [распознавание содержимого формы](#recognize-form-content);
-* [распознавание квитанций](#recognize-receipts);
-* [Распознавание визитных карточек](#recognize-business-cards)
-* [Распознавание счетов](#recognize-invoices)
+* [анализ макета](#analyze-layout);
+* [анализ квитанций](#analyze-receipts);
+* [анализ визитных карточек](#analyze-business-cards);
+* [анализ счетов](#analyze-invoices);
 * [обучение пользовательской модели](#train-a-custom-model);
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
@@ -137,7 +137,7 @@ pip install azure-ai-formrecognizer --pre
 > [!NOTE]
 > Во фрагментах кода в этом руководстве используются удаленные формы, доступ к которым осуществляется по URL-адресам. Если вместо этого вы планируете работать с локальными документами, воспользуйтесь соответствующими методами, которые описаны в [справочной документации](/python/api/azure-ai-formrecognizer) и [образцах](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples).
 
-## <a name="recognize-form-content"></a>Распознавание содержимого формы
+## <a name="analyze-layout"></a>Анализ макета
 
 С помощью Распознавателя документов можно распознавать таблицы, строки и слова в документах без предварительного обучения модели.
 
@@ -171,7 +171,7 @@ Confidence score: 1.0
 
 ```
 
-## <a name="recognize-receipts"></a>Распознавание квитанций
+## <a name="analyze-receipts"></a>Анализ квитанций
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в США квитанции и извлекать из них содержимое стандартных полей. Для распознавания квитанции с определенным URL-адресом используйте метод `begin_recognize_receipts_from_url`. 
 
@@ -203,7 +203,7 @@ Total: 1203.39 has confidence 0.774
 ```
 
 
-## <a name="recognize-business-cards"></a>Распознавание визитных карточек
+## <a name="analyze-business-cards"></a>Анализ визитных карточек
 
 #### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 
@@ -221,7 +221,7 @@ Total: 1203.39 has confidence 0.774
 
 ---
 
-## <a name="recognize-invoices"></a>Распознавание счетов
+## <a name="analyze-invoices"></a>Анализ счетов
 
 #### <a name="version-20"></a>[Версия 2.0](#tab/ga)
 

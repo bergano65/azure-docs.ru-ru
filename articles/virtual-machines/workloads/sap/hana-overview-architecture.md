@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 01/04/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c06988bf9c3558f5ef82862bdbcd821dc42ca28a
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 5ec3500c124d3e4f8cb1b46445c28c6a64c93526
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880993"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98195455"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Что такое SAP HANA в Azure (большие экземпляры)?
 
@@ -52,11 +52,11 @@ SAP HANA в Azure (крупные экземпляры) — это уникал�
 
 Различные документы руководства по HANA (крупные экземпляры) охватывают следующие области:
 
-- [Обзор и архитектура SAP HANA (крупные экземпляры) в Azure](hana-overview-architecture.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Инфраструктура и возможности подключения SAP HANA (крупные экземпляры) в Azure](hana-overview-infrastructure-connectivity.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Как установить и настроить SAP HANA в Azure (крупные экземпляры)](hana-installation.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Высокая доступность и аварийное восстановление SAP HANA (крупные экземпляры) в Azure](hana-overview-high-availability-disaster-recovery.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Устранение неполадок SAP HANA (крупные экземпляры) и мониторинг в Azure](troubleshooting-monitoring.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Обзор и архитектура SAP HANA (крупные экземпляры) в Azure](hana-overview-architecture.md)
+- [Инфраструктура и возможности подключения SAP HANA (крупные экземпляры) в Azure](hana-overview-infrastructure-connectivity.md)
+- [Как установить и настроить SAP HANA в Azure (крупные экземпляры)](hana-installation.md)
+- [Высокая доступность и аварийное восстановление SAP HANA (крупные экземпляры) в Azure](hana-overview-high-availability-disaster-recovery.md)
+- [Устранение неполадок SAP HANA (крупные экземпляры) и мониторинг в Azure](troubleshooting-monitoring.md)
 - [Настройка высокого уровня доступности в SUSE с помощью STONITH](./ha-setup-with-stonith.md)
 - [Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3](./os-backup-type-ii-skus.md)
 - [Экономия на SAP HANA (крупные экземпляры) благодаря резервированию Azure](../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md)

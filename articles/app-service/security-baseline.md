@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3d84f0df44f17bdc7dd68aa9cae1f01b06d261b4
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 1ea8f3bccd97e1aaa15a21ae605a163b11c8ae39
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601647"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197937"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Базовый план безопасности Azure для службы приложений
 
@@ -397,7 +397,7 @@ ms.locfileid: "96601647"
 
 Приложения службы приложений используют федеративный идентификатор, при котором сторонний поставщик удостоверений управляет удостоверениями пользователей и потоком проверки подлинности. Эти поставщики удостоверений доступны по умолчанию.
 
-- Azure AD
+- Azure AD
 - Учетная запись Майкрософт
 
 - Facebook
@@ -436,7 +436,7 @@ ms.locfileid: "96601647"
 
 **Руководство**. Использование рабочих станций привилегированного доступа (привилегированным доступом) с многофакторной проверкой подлинности, настроенной для входа и настройки ресурсов Azure.
 
-- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 

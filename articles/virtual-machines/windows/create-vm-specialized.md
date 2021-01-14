@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: cddc7f4f453f22b0cb36b1d3a1e9c2fba2dcabaf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 577b8527d95a6410deca8002cddfaae31be1fc97
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455101"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197495"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -54,7 +54,7 @@ $osDisk = Get-AzDisk `
 ### <a name="prepare-the-vm"></a>Подготовка виртуальной машины
 Используйте VHD "как есть" для создания новой виртуальной машины. 
   
-  * [Подготовьте виртуальный жесткий диск Windows к передаче в Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). **Не выполняйте** подготовку виртуальной машины к использованию с помощью Sysprep.
+  * [Подготовьте виртуальный жесткий диск Windows к передаче в Azure](prepare-for-upload-vhd-image.md). **Не выполняйте** подготовку виртуальной машины к использованию с помощью Sysprep.
   * Удалите все гостевые инструменты и агенты виртуализации, которые установлены на виртуальной машине (такие как инструменты VMware).
   * Убедитесь, что виртуальная машина настроена на получение IP-адреса и параметров DNS от DHCP-сервера. Таким образом, сервер будет получать IP-адрес в виртуальной сети при запуске. 
 
@@ -193,7 +193,7 @@ $nsg = New-AzNetworkSecurityGroup `
     
 ```
 
-Дополнительные сведения о конечных точках и правилах NSG см. в статье [Открытие портов для виртуальной машины в Azure с помощью PowerShell](nsg-quickstart-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Дополнительные сведения о конечных точках и правилах NSG см. в статье [Открытие портов для виртуальной машины в Azure с помощью PowerShell](nsg-quickstart-powershell.md).
 
 ### <a name="create-a-public-ip-address-and-nic"></a>Создание общедоступного IP-адреса и сетевой карты
 Чтобы обеспечить обмен данными с виртуальной машиной в виртуальной сети, требуются [общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) и сетевой интерфейс.

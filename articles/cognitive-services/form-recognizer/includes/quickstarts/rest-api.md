@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: a677623c030ff26567f14a4526f6d07bc6631a37
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 31e1a0d912c6623f57d4ea256968102604ce42ff
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97853695"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132340"
 ---
 > [!NOTE]
 > В этом руководстве для выполнения вызовов REST API используется cURL. Также [на GitHub доступен пример кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/FormRecognizer/rest), демонстрирующий, как вызывать интерфейсы REST API с помощью Python.
@@ -32,7 +32,7 @@ ms.locfileid: "97853695"
 * URL-адрес изображения счета-фактуры. Для работы с этим кратким руководством вы можете использовать [пример документа](https://raw.githubusercontent.com/Azure/azure-sdk-for-python/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms/forms/Invoice_1.pdf).
 
 
-## <a name="recognize-form-content"></a>Распознавание содержимого формы
+## <a name="analyze-layout"></a>Анализ макета
 
 С помощью Распознавателя документов можно распознавать и извлекать таблицы, строки и слова в документах без предварительного обучения модели. Перед выполнением команды внесите следующие изменения:
 
@@ -319,7 +319,7 @@ curl -v -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.2/layout/analyzeR
 
 ---
 
-## <a name="recognize-receipts"></a>Распознавание квитанций
+## <a name="analyze-receipts"></a>Анализ квитанций
 
 Для начала анализа квитанции запустите API **[анализа](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeReceiptAsync)** , используя приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
 
@@ -699,7 +699,7 @@ curl -X GET "https://{Endpoint}/formrecognizer/v2.1-preview.2/prebuilt/receipt/a
 }
 ```
 
-## <a name="recognize-business-cards"></a>Распознавание визитных карточек
+## <a name="analyze-business-cards"></a>Анализ визитных карточек
 
 # <a name="v20"></a>[Версия 2.0](#tab/v2-0)  
 
@@ -861,7 +861,7 @@ curl -v -X GET "https://westcentralus.api.cognitive.microsoft.com/formrecognizer
 
 ---
 
-## <a name="recognize-invoices"></a>Распознавание счетов
+## <a name="analyze-invoices"></a>Анализ счетов
 
 # <a name="version-20"></a>[Версия 2.0](#tab/v2-0)
 

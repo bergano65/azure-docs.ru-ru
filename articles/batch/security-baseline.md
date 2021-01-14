@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e7be42b2a6e9f2cdc1aa0258f218fea9fd963093
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: c27ef1af3e439b22f00f9247b5270118bbe9ca89
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532047"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197716"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Базовый план безопасности Azure для пакетной службы
 
@@ -312,7 +312,7 @@ ms.locfileid: "96532047"
 
 **Руководство**. Использование лапы (рабочие станции с привилегированным доступом) с многофакторной проверкой подлинности, настроенной для входа в и настройки ресурсов пакетной службы Azure.
 
-- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [Как включить многофакторную проверку подлинности в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 

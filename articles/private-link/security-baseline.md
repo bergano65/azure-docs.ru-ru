@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 636bc3c64dcd15ead36a9a4e969e802d49895dca
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: b38d86402f418e5c2b484bb9101e2b4cc3575d6e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522249"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196628"
 ---
 # <a name="azure-security-baseline-for-azure-private-link"></a>Базовый канал безопасности Azure для частной связи Azure
 
@@ -176,7 +176,7 @@ ms.locfileid: "95522249"
 
 **Руководство**. Использование рабочей станции с привилегированным доступом (привилегированным доступом) с настроенной многофакторной проверкой подлинности для входа и настройки сетевых ресурсов Azure.
 
-- [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -212,7 +212,7 @@ ms.locfileid: "95522249"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации. Azure AD защищает данные с помощью надежного шифрования для неактивных и транзитных данных, а также для использования случайных значений, хэшей и безопасного хранения учетных данных пользователя.  
 
-- [Создание и настройка экземпляра Azure AD](../active-directory-domain-services/tutorial-create-instance.md)
+- [Создание и настройка экземпляра Azure AD](../active-directory-domain-services/tutorial-create-instance.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -696,9 +696,9 @@ Azure Resource Manager шаблоны — это файлы на основе н
 
 Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+- [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

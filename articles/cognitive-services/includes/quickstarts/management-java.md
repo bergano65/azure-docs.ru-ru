@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: pafarley
-ms.openlocfilehash: ed85faf9ffe38489eb00ed5a71b3eb841c399d24
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 62726b9da5166d365c6e386363d0a65007259f10
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97745747"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97956468"
 ---
 [Справочная документация](/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/mgmt-v2017_04_18/src/main/java/com/microsoft/azure/management/cognitiveservices/v2017_04_18) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-mgmt-cognitiveservices).
 
@@ -94,7 +94,7 @@ dependencies {
 
 [!code-java[](~/cognitive-services-quickstart-code/java/azure_management_service/quickstart.java?name=snippet_calls)]
 
-## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services
+## <a name="create-a-cognitive-services-resource-java"></a>Создание ресурса Cognitive Services (Java)
 
 Чтобы создать ресурс Cognitive Services и подписаться на него, используйте метод **create**. Этот метод добавляет новый оплачиваемый ресурс в передаваемую группу ресурсов. При создании ресурса необходимо знать, какой вид службы вы хотите использовать, а также выбрать ценовую категорию (или номер SKU) и расположение Azure. Следующий метод использует все эти аргументы и создает ресурс.
 

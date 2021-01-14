@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: автоматическая обработка данных, обработка документов, автоматическая запись данных, обработка форм
-ms.openlocfilehash: ed940622f72271ef3e606c5068babcb6366c31b6
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: e1e5a4abf8eab96af62b160e28f98d95cf527eaf
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845521"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044770"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -42,11 +42,11 @@ ms.locfileid: "97845521"
 
 # <a name="v20"></a>[Версия 2.0](#tab/v2-0)
 > [!div class="nextstepaction"]
-> [Ознакомление с предварительно созданными моделями](https://fott.azurewebsites.net/)
+> [Опробовать Распознаватель документов](https://fott.azurewebsites.net/)
 
-# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)
+# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)
 > [!div class="nextstepaction"]
-> [Ознакомление с предварительно созданными моделями](https://fott-preview.azurewebsites.net/)
+> [Опробовать Распознаватель документов](https://fott-preview.azurewebsites.net/)
 
 ---
 
@@ -152,7 +152,18 @@ ms.locfileid: "97845521"
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>Развертывание в локальной среде с помощью контейнеров Docker
 
-Для развертывания функций API в локальной среде [используйте контейнеры Распознавателя документов (предварительная версия)](form-recognizer-container-howto.md). Этот контейнер Docker позволяет разместить службу ближе к данным для обеспечения безопасности, соответствия требованиям и других эксплуатационных преимуществ.
+Для развертывания функций API в локальной среде [используйте контейнеры Распознавателя документов (предварительная версия)](form-recognizer-container-howto.md). Этот контейнер Docker позволяет разместить службу ближе к данным для обеспечения безопасности, соответствия требованиям и других эксплуатационных преимуществ. 
+
+## <a name="service-availability-and-redundancy"></a>Доступность и избыточность службы
+
+### <a name="is-form-recognizer-service-zone-resilient"></a>Является ли служба "Распознаватель документов" устойчивой в пределах зоны?
+
+Да. Для службы "Распознаватель документов" по умолчанию обеспечивается устойчивость в пределах зоны.
+
+### <a name="how-do-i-configure-the-form-recognizer-service-to-be-zone-resilient"></a>Как настроить службу "Распознаватель документов" для устойчивости в пределах зоны?
+
+Чтобы включить устойчивость зоны, настройка со стороны клиента не требуется. Устойчивость в пределах зоны для ресурсов Распознавателя документов доступна по умолчанию и управляется самой службой.
+
 
 ## <a name="data-privacy-and-security"></a>Конфиденциальность и безопасность данных
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 6c2a15ac8d0863539ca878a048940b19794e920d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 2773a76ed1166a26ebc12b97550876eaa66bad14
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842913"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197325"
 ---
 # <a name="azure-security-baseline-for-azure-data-box"></a>Базовый план безопасности Azure для Azure Data Box
 
@@ -273,9 +273,9 @@ ms.locfileid: "94842913"
 
 **Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с включенной многофакторной идентификацией Azure AD (MFA) для входа и настройки заказов на Azure Data Box.
 
-* [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Рабочие станции c привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-* [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](../active-directory/authentication/howto-mfa-getstarted.md)
+* [Планирование развертывания облачной службы Многофакторной идентификации Azure AD](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -309,7 +309,7 @@ ms.locfileid: "94842913"
 
 **Руководство**. Используйте Azure Active Directory (AD) в качестве централизованной системы проверки подлинности и авторизации, где это применимо. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -889,9 +889,9 @@ Azure Data Box реализует шифрование AES 256-bit для неа
 
 **Руководство**. Корпорация Майкрософт выполняет проверку на уязвимости и проверку уязвимостей на Data Box устройствах. Вы можете выполнить собственное тестирование на проникновение и проверку уязвимостей. Если вы решили это сделать, следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: eddee6bc0fdcd636b7b9ffb81b121052499251b2
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 97b8f889bf625ac36917debe2cc2848cb1a97e37
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97745748"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97956567"
 ---
 [Справочная документация](/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/arm-cognitiveservices) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices#sample-code)
 
@@ -74,7 +74,7 @@ npm install @azure/ms-rest-nodeauth
 
 Добавьте следующий код в конец функции `quickstart`, чтобы получить список доступных ресурсов, создать пример ресурса, вывести список собственных ресурсов, а затем удалить пример ресурса. Эти функции будут определены позже.
 
-## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services
+## <a name="create-a-cognitive-services-resource-nodejs"></a>Создание ресурса Cognitive Services (Node.js)
 
 Чтобы создать ресурс Cognitive Services и подписываться на него, используйте функцию **Create**. Эта функция добавляет новый оплачиваемый ресурс в передаваемую группу ресурсов. При создании ресурса необходимо знать, какой вид службы вы хотите использовать, а также выбрать ценовую категорию (или номер SKU) и расположение Azure. Следующая функция использует все эти аргументы и создает ресурс.
 

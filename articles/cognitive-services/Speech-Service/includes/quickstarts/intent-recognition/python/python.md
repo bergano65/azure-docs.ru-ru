@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 44c4427540e1b94ebcaf00e6875723e0a654e9ef
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 0cb27a8dc5685ce295c2ce30820734c4301e9dc6
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425284"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109422"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -70,6 +70,13 @@ ms.locfileid: "94425284"
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=19-27)]
 
 В этом примере функция `add_intents()` используется для добавления списка явно определенных намерений. Если требуется добавить все намерения из модели, используйте `add_all_intents(model)` и передайте модель.
+
+> [!NOTE]
+> Пакет SDK службы "Речь" поддерживает только конечные точки LUIS версии 2.0.
+> Нужно вручную изменить URL-адрес конечной точки версии 3.0, который можно найти в поле примера запроса, на шаблон URL-адреса версии 2.0.
+> Для конечных точек LUIS версии 2.0 всегда используется один из двух следующих шаблонов:
+> * `https://{AzureResourceName}.cognitiveservices.azure.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
+> * `https://{Region}.api.cognitive.microsoft.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
 
 ## <a name="recognize-an-intent"></a>Распознавание намерения
 

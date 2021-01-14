@@ -6,18 +6,18 @@ ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 03/04/2020
 ms.author: shants
-ms.openlocfilehash: 38532fba2be1fedd275ed2e7f9dfc1bf5752499d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c4d9f3a5f73e5832e9ff22ed2cd4c215811c845
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86501659"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197563"
 ---
 # <a name="move-resources-in-a-maintenance-control-configuration-to-another-region"></a>Перемещение ресурсов в конфигурации управления обслуживанием в другой регион
 
 Чтобы переместить ресурсы, связанные с конфигурацией управления обслуживанием, в другой регион Azure, следуйте этой статье. Может потребоваться переместить конфигурацию по ряду причин. Например, чтобы воспользоваться преимуществами нового региона, можно развернуть компоненты или службы, доступные в определенном регионе, в соответствии с требованиями к внутренней политике и управлению, а также в ответ на планирование ресурсов.
 
-Управление обслуживанием с пользовательскими конфигурациями обслуживания позволяет управлять применением обновлений платформы к виртуальным машинам [Windows](./maintenance-control-cli.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json) и [Linux](./maintenance-control-cli.md?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json&bc=%2Fazure%2Fvirtual-machines%2Flinux%2Fbreadcrumb%2Ftoc.json&view=azure-java-stable) , а также к выделенным узлам Azure. Существует несколько сценариев перемещения управления обслуживанием в разных регионах:
+[Управление обслуживанием](maintenance-control.md)с настраиваемыми конфигурациями обслуживания позволяет управлять применением обновлений платформы к виртуальным машинам и выделенным узлам Azure. Существует несколько сценариев перемещения управления обслуживанием в разных регионах:
 
 - Чтобы переместить ресурсы, связанные с конфигурацией обслуживания, но не самой конфигурацией, следуйте этой статье.
 - Чтобы переместить конфигурацию управления обслуживанием, но не ресурсы, связанные с конфигурацией, выполните следующие [инструкции](move-region-maintenance-configuration.md).
@@ -61,7 +61,7 @@ ms.locfileid: "86501659"
         ```
         Get-AzConfigurationAssignment -ResourceGroupName $rgName -ResourceName $vmName -ProviderName Microsoft.Compute -ResourceType virtualMachines | Format-Table Name
         ```
-3. Чтобы получить конфигурации обслуживания с помощью команды CLI [AZ Maintenance](/cli/azure/ext/maintenance/maintenance/assignment?view=azure-cli-latest) :
+3. Чтобы получить конфигурации обслуживания с помощью команды CLI [AZ Maintenance](/cli/azure/ext/maintenance/maintenance/assignment) :
 
     - Для выделенных узлов Azure:
 

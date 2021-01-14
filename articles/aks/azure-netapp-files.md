@@ -4,12 +4,12 @@ description: Узнайте, как интегрировать Azure NetApp File
 services: container-service
 ms.topic: article
 ms.date: 10/23/2020
-ms.openlocfilehash: bc65c3dfad4c27c1650054c6836fbbbf07a7dbf2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 19727d3c3322b05f340463d94a2bc3884e5d9d93
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93126259"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196016"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
@@ -28,14 +28,14 @@ ms.locfileid: "93126259"
 При использовании Azure NetApp Files применяются следующие ограничения.
 
 * Azure NetApp Files доступен только [в выбранных регионах Azure][anf-regions].
-* Прежде чем можно будет использовать Azure NetApp Files, необходимо предоставить доступ к службе Azure NetApp Files. Для применения к Access можно использовать [форму Azure NetApp Files отправки ваитлист][anf-waitlist]. Вы не можете получить доступ к службе Azure NetApp Files, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
+* Прежде чем можно будет использовать Azure NetApp Files, необходимо предоставить доступ к службе Azure NetApp Files. Для применения к Access можно использовать [форму Azure NetApp Files отправки ваитлист][anf-waitlist] или перейти по адресу https://azure.microsoft.com/services/netapp/#getting-started . Вы не можете получить доступ к службе Azure NetApp Files, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
 * После первоначального развертывания кластера AKS поддерживается только статическая подготовка для Azure NetApp Files.
 * Чтобы использовать динамическую подготовку с Azure NetApp Files, установите и настройте [NetApp Trident](https://netapp-trident.readthedocs.io/) версии 19,07 или более поздней.
 
 ## <a name="configure-azure-netapp-files"></a>Настройка Azure NetApp Files
 
 > [!IMPORTANT]
-> Прежде чем можно будет зарегистрировать поставщик ресурсов  *Microsoft. NetApp* , необходимо заполнить [форму отправки Azure NetApp Files ваитлист][anf-waitlist] для своей подписки. Вы не можете зарегистрировать ресурс, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
+> Прежде чем можно будет зарегистрировать поставщик ресурсов  *Microsoft. NetApp* , необходимо заполнить [форму отправки Azure NetApp Files ваитлист][anf-waitlist] или перейдите к https://azure.microsoft.com/services/netapp/#getting-started своей подписке. Вы не можете зарегистрировать ресурс, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
 
 Зарегистрируйте поставщик ресурсов *Microsoft. NetApp* :
 
@@ -46,7 +46,7 @@ az provider register --namespace Microsoft.NetApp --wait
 > [!NOTE]
 > Это может занять некоторое время.
 
-При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup* :
+При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
 az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -158,6 +158,8 @@ spec:
     storage: 100Gi
   accessModes:
     - ReadWriteMany
+  mountOptions:
+    - vers=3
   nfs:
     server: 10.0.0.4
     path: /myfilepath2

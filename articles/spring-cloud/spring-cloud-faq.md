@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 0143b014328dfd5c164f0c3c62aeef7cabe1a17c
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 307afc8f1caafac1a511f0f9895cc73dd9b47eb4
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065428"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196050"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
@@ -37,7 +37,7 @@ Azure Веснного облака расширяет возможности д
 
 ### <a name="in-which-regions-is-azure-spring-cloud-available"></a>В каких регионах доступно облако Azure весны?
 
-Восточная часть США, Восточная часть США 2, Центральная часть США, Юго-Центральный регион США, северо-центральная часть US, Запад США, Западная часть США 2, Западная Европа, Северная Европа, южная часть Соединенного Королевства, Юго-Восточная Азия, Восточная Австралия, Центральная Канада, Северная ОАЭ, Центральная Индия, Центральная Корея и Восточная Азия. [Подробнее](https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud)
+Восточная часть США, Восточная часть США 2, Центральная часть США, Юго-Центральный регион США, северо-центральная часть US, Западная часть США, Запад 2, Западная Европа, Северная Европа, южная часть Соединенного Королевства, Юго-Восточная Азия, Восточная Австралия, Центральная Канада, Северная ОАЭ, Центральная Индия, Центральная Корея, Восточная Азия и Восточный Китай 2 (Mooncake). [Подробнее](https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud)
 
 ### <a name="is-any-customer-data-stored-outside-of-the-specified-region"></a>Хранятся ли данные клиента за пределами указанного региона?
 

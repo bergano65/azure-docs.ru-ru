@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e0cf0f30d1110a58ff8087fd348c4916c34e4603
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 0f0c771b11dfc029f18681e7a4c11b8ee271252c
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351816"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197699"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
 
@@ -385,7 +385,7 @@ ms.locfileid: "96351816"
 
 **Руководство**. Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной проверкой подлинности для входа в ресурсы Azure и их настройки.
 
-* [Рабочие станции с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Рабочие станции с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -1194,9 +1194,9 @@ ms.locfileid: "96351816"
 
 **Руководство**. соблюдение правил корпорации Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
 
-* [Правила взаимодействия для выполнения тестов на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Red Teaming в Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо

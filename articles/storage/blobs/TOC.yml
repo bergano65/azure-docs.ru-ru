@@ -307,6 +307,8 @@
               href: ../common/storage-account-recover.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Получение сведений о типе учетной записи и имени SKU (.NET)
               href: ../common/storage-account-get-info.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Управление уровнем доступа по умолчанию для учетной записи хранения
+              href: ../common/manage-account-default-access-tier.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Создание контейнеров и управление ими
           items:
             - name: Создание или удаление контейнера (.NET)
@@ -321,6 +323,8 @@
               href: storage-blobs-list.md
             - name: Управление свойствами и метаданными больших двоичных объектов (.NET)
               href: storage-blob-properties-metadata.md
+            - name: Управление уровнем доступа для BLOB-объекта
+              href: manage-access-tier.md
             - name: Копирование большого двоичного объекта (SDK)
               href: storage-blob-copy.md
             - name: Использование тегов индекса BLOB-объектов

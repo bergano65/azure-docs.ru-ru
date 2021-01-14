@@ -3,12 +3,12 @@ title: Обзор функций Центров событий Azure | Доку
 description: В этой статье приводится терминология и сведения о функциях Центров событий Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 0730a5fa3abbc6b27cb96431125564a2475a90d1
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 60dc964d1b827eec75ee4f65a5776710e57fd6eb
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955657"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98195795"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Функции и терминология в Центрах событий Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "97955657"
 
 [Функция "Сбор" в Центрах событий](event-hubs-capture-overview.md) позволяет автоматически собирать данные потоковой передачи в Центры событий и сохранять их в выбранной учетной записи хранения BLOB-объектов или учетной записи службы Azure Data Lake. Эту функцию можно включить на портале Azure и указать минимальный размер записываемых данных и интервал времени для записи. С помощью функции "Сбор" в Центрах событий можно указать собственную учетную запись хранилища BLOB-объектов Azure и контейнер или учетную запись службы Azure Data Lake, используемую для хранения собранных данных. Зафиксированные данные записываются в формате Apache Avro.
 
-## <a name="partitions"></a>Секции
+## <a name="partitions"></a>Разделы
 [!INCLUDE [event-hubs-partitions](../../includes/event-hubs-partitions.md)]
 
 
@@ -104,7 +104,7 @@ ms.locfileid: "97955657"
 
 На следующем рисунке показана архитектура обработки потока Центров событий.
 
-![Архитектура концентраторов событий](./media/event-hubs-features/event_hubs_architecture.png)
+![Архитектура концентраторов событий](./media/event-hubs-about/event_hubs_architecture.svg)
 
 ### <a name="stream-offsets"></a>Смещение потока
 

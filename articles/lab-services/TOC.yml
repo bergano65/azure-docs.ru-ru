@@ -63,19 +63,8 @@
         - name: Использование Служб лабораторий Azure с Teams
           items:
             - name: Обзор
+              displayName: labs within Teams
               href: lab-services-within-teams-overview.md
-            - name: Создание лаборатории с помощью Teams
-              href: how-to-get-started-create-lab-within-teams.md
-            - name: Управление списками пользователей
-              href: how-to-manage-user-lists-within-teams.md
-            - name: Управление пулом виртуальных машин
-              href: how-to-manage-vm-pool-within-teams.md
-            - name: Удаление лабораторий
-              href: how-to-delete-lab-within-teams.md
-            - name: Расписания и параметры
-              href: how-to-create-schedules-within-teams.md
-            - name: Доступ к виртуальной машине (представление для учащихся)
-              href: how-to-access-vm-for-students-within-teams.md
 - name: Практические руководства
   items:
     - name: Руководство для администратора
@@ -164,6 +153,20 @@
           href: how-to-set-virtual-machine-passwords-student.md
         - name: Просмотр сведений о поддержке (учащийся)
           href: lab-user-support-information.md
+    - name: Использование лабораторий в Teams
+      items:
+        - name: Создание лаборатории с помощью Teams
+          href: how-to-get-started-create-lab-within-teams.md
+        - name: Управление списками пользователей
+          href: how-to-manage-user-lists-within-teams.md
+        - name: Управление пулом виртуальных машин
+          href: how-to-manage-vm-pool-within-teams.md
+        - name: Удаление лабораторий
+          href: how-to-delete-lab-within-teams.md
+        - name: Расписания и параметры
+          href: how-to-create-schedules-within-teams.md
+        - name: Доступ к виртуальной машине (представление для учащихся)
+          href: how-to-access-vm-for-students-within-teams.md
 - name: Справочник
   items:
     - name: REST API

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 3c1c7ac8fe8b7adf287bcde30a054df5ebaa63d7
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 2b6ea68d069b90293ab35024bebf3fbdc8acb592
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337446"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197682"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -37,7 +37,7 @@ ms.locfileid: "94337446"
 |[Starburst Presto для Azure HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/starburstdatainc1579800938563.starburst-presto?tab=Overview) |Hadoop |Presto — это быстрая и масштабируемая распределенная подсистема запросов SQL. Разработанная для разделения хранилища и вычислений Presto идеально подходит для выполнения запросов к данным в Azure Data Lake Storage, хранилищах BLOB-объектов Azure, базах данных SQL и NoSQL и других источниках данных. |
 |[StreamSets Data Collector для облака HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/streamsets.streamsets-data-collector-hdinsight) |Hadoop, HBase, Spark, Kafka |StreamSets Data Collector — это облегченная и в то же время эффективная подсистема, которая осуществляет потоковую передачу данных в режиме реального времени. Используйте Data Collector для маршрутизации и обработки данных в потоках данных. Предлагается 30-дневная пробная версия продукта. |
 |[Trifacta Wrangler Enterprise](https://azuremarketplace.microsoft.com/marketplace/apps/trifacta.trifacta-db?tab=Overview) |Hadoop, Spark, HBase |Trifacta Wrangler Enterprise для HDInsight поддерживает первичную обработку данных уровня предприятия для любого масштаба данных. Стоимость запуска Trifacta в Azure представляет собой сочетание затрат на подписку Trifacta и затрат на инфраструктуру Azure для виртуальных машин. |
-|[Unifi Data Platform](https://unifisoftware.com/platform/) |Hadoop, HBase, Storm, Spark |Unifi Data Platform — это набор интегрированных средств для самостоятельной обработки данных, предназначенных для расширения возможностей бизнес-пользователя при решении проблем с данными, приносящий дополнительный доход, снижающий затраты и уменьшающий сложность эксплуатации. |
+|[Unifi Data Platform](https://www.crunchbase.com/organization/unifi-software) |Hadoop, HBase, Storm, Spark |Unifi Data Platform — это набор интегрированных средств для самостоятельной обработки данных, предназначенных для расширения возможностей бизнес-пользователя при решении проблем с данными, приносящий дополнительный доход, снижающий затраты и уменьшающий сложность эксплуатации. |
 |[Unraveldata APM](https://azuremarketplace.microsoft.com/marketplace/apps/unravel-data.unravel-app) |Spark |Приложение Unravel Data для кластера HDInsight Spark. |
 |[Каталог данных на базе искусственного интеллекта Waterline](https://azuremarketplace.microsoft.com/marketplace/apps/waterline_data.waterline_data) |Spark |Waterline каталогизирует, упорядочивает и управляет данными, используя искусственный интеллект, чтобы автоматически отмечать данные бизнес-терминами. Каталог грамотного бизнеса Waterline —это чрезвычайно важный компонент успешного проведения самостоятельной аналитики, обеспечения соответствия требованиям и системы управления, а также инициатив в области управления ИТ. |
 
