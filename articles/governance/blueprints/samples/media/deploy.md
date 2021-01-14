@@ -1,14 +1,14 @@
 ---
 title: Развертывание примера схемы мультимедийных данных
 description: Шаги развертывания для примера схемы мультимедийных данных и сведения о параметрах артефактов схемы.
-ms.date: 08/13/2020
+ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: c8ac1726bc5007c1790f5efbc45c72f9712fcdf2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dc3720ceb1bdd8e50ab220288cef64c73e304ff
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88208434"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035008"
 ---
 # <a name="deploy-the-media-blueprint-sample"></a>Развертывание примера схемы мультимедийных данных
 

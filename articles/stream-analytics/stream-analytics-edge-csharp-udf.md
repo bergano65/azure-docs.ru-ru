@@ -1,19 +1,18 @@
 ---
 title: Учебник. Создание пользовательских функций на C# для заданий Azure Stream Analytics с помощью Visual Studio (предварительная версия)
 description: В этом учебнике показано, как написать определяемые пользователем функции C# для заданий Stream Analytics в Visual Studio.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: d53f13cb740b3feb39dc64ce012ff320afbb1db5
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 851229e441aa2fbdf7b6eec05390c0ce2b149da2
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130499"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020474"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Руководство по написанию определяемой пользователем функции на C# для задания Azure Stream Analytics (предварительная версия)
 
@@ -46,7 +45,7 @@ ms.locfileid: "93130499"
 
 3. Из списка шаблонов слева выберите **Stream Analytics** и щелкните **Приложение Stream Analytics для пограничных устройств** или **Приложение Azure Stream Analytics**.
 
-4.  Введите в проекте **Имя** , **Расположение** и **Имя решения** , а затем нажмите кнопку **ОК**.
+4.  Введите в проекте **Имя**, **Расположение** и **Имя решения**, а затем нажмите кнопку **ОК**.
 
     ![Создание проекта Edge в Azure Stream Analytics с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-create-edge-app.png)
 
@@ -69,7 +68,7 @@ ms.locfileid: "93130499"
 
 
 ## <a name="write-a-c-udf-with-codebehind"></a>Написание пользовательской функции C# с помощью кода программной части
-Файл кода программной части — это файл C#, связанный с одним сценарием запросов в ASA. Средства Visual Studio автоматически архивируют файл кода программной части и после передачи отправляют его в вашу учетную запись хранения. Все классы должны быть определены как *public* , а объекты — как *static public*.
+Файл кода программной части — это файл C#, связанный с одним сценарием запросов в ASA. Средства Visual Studio автоматически архивируют файл кода программной части и после передачи отправляют его в вашу учетную запись хранения. Все классы должны быть определены как *public*, а объекты — как *static public*.
 
 1. В **обозревателе решений** разверните **Script.asql** и найдите файл кода программной части **Script.asaql.cs**.
 
@@ -111,7 +110,7 @@ ms.locfileid: "93130499"
 
 1. Скачайте [файл данных с примером симулятора температуры](https://raw.githubusercontent.com/Azure/azure-stream-analytics/master/Sample%20Data/TemperatureSampleData.json).
 
-2. В **обозревателе решений** разверните **Входные данные** , щелкните правой кнопкой мыши **Input.json** и выберите команду **Добавить локальный ввод**.
+2. В **обозревателе решений** разверните **Входные данные**, щелкните правой кнопкой мыши **Input.json** и выберите команду **Добавить локальный ввод**.
 
    ![Добавление локальных входных данных в задание Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-add-local-input.png)
 
@@ -123,7 +122,7 @@ ms.locfileid: "93130499"
 
     ![Выполнение задания Azure Stream Analytics на локальном компьютере с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-run-locally.png)
 
-5. Вы также можете выбрать команду **Открыть папку результатов** , чтобы увидеть необработанные файлы в формате JSON и CSV.
+5. Вы также можете выбрать команду **Открыть папку результатов**, чтобы увидеть необработанные файлы в формате JSON и CSV.
 
     ![Просмотр результатов локального задания Azure Stream Analytics с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-view-local-results.png)
 
@@ -134,7 +133,7 @@ ms.locfileid: "93130499"
 
     ![Добавление точек останова в пользовательскую функцию Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-breakpoints.png)
 
-2. Нажмите клавишу **F5** , чтобы запустить отладку. Программа будет останавливаться в точках останова.
+2. Нажмите клавишу **F5**, чтобы запустить отладку. Программа будет останавливаться в точках останова.
 
     ![Просмотр результатов отладки определяемой пользователем функции Stream Analytics](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-debug.png)
 

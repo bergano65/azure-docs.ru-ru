@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 12/01/2020
+ms.date: 01/08/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: c2385d07ccb81041bd340a8bec0412a8f14cef56
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 69e9240a107856f620235191cda8660cc0164e55
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96478303"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98048283"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security Benchmark
 
@@ -22,5 +22,3 @@ ms.locfileid: "96478303"
 |---|---|---|---|---|
 |Защита данных |4.8 |Шифрование конфиденциальной информации при хранении |[Необходимо включить шифрование для переменных учетной записи службы автоматизации](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3657f5a0-770e-44a3-b44e-9431ba1e9735) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automation/Automation_AuditUnencryptedVars_Audit.json) |
 
-> [!NOTE]
-> При создании переменной учетной записи службы автоматизации можно указать способ ее шифрования и хранилище со службой автоматизации Azure в качестве безопасного ресурса. После создания переменной вы не сможете изменить ее состояние шифрования, не создав переменную снова. Если у вас есть переменные учетной записи службы автоматизации, в которых хранятся еще не зашифрованные конфиденциальные данные, удалите их и создайте снова в виде зашифрованных переменных. Центр безопасности Azure рекомендует шифровать все переменные службы автоматизации Azure, как описано в рекомендации [Переменные учетной записи службы автоматизации должны быть зашифрованы](../../../../articles/security-center/recommendations-reference.md#recs-computeapp). Если у вас есть незашифрованные переменные, которые нужно исключить из этой рекомендации по безопасности, выполните указания, приведенные в статье [Исключение ресурса из рекомендаций и оценки безопасности](../../../../articles/security-center/exempt-resource.md), чтобы создать правило исключения.

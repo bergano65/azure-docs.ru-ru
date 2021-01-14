@@ -13,12 +13,12 @@ ms.date: 09/18/2020
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f04a8aa96b51ac9330e4302c3afcc48f7d305b39
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: c9e4997ad08f2dd1d96dd442f80ad4203abf6261
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507716"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015892"
 ---
 # <a name="tutorial-sign-in-users-and-call-microsoft-graph-from-an-ios-or-macos-app"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS
 
@@ -71,7 +71,7 @@ ms.locfileid: "97507716"
 
 ## <a name="register-your-application"></a>Регистрация приложения
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.

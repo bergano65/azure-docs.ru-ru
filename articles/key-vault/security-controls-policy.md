@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием в службе "Политика Azure" для Azure Key Vault
 description: Содержит список элементов управления соответствием из службы "Политика Azure", доступных для Azure Key Vault. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 11/20/2020
+ms.date: 01/08/2021
 ms.topic: sample
 author: msmbaldwin
 ms.author: mbaldwin
 ms.service: key-vault
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 723108aa964fa572f465c874291618163e47e124
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: b2d5be41efcef7050079227104955cafd520c254
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94987035"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98047844"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-key-vault"></a>Элементы управления соответствием в службе "Политика Azure" для Azure Key Vault
 

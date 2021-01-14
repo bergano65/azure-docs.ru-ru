@@ -1,14 +1,14 @@
 ---
 title: Развертывание примера схемы SWIFT CSP-CSCF v2020
 description: Процедура развертывания для примера схемы SWIFT CSP-CSCF v2020 и сведения о параметрах артефактов схемы.
-ms.date: 08/18/2020
+ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: 973cd0076ae03fd32db5fc9be262b2c5300fdf16
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: c3672dabb7f4c0a977b8140f470ddfc9fcea9c6d
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91949417"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98048765"
 ---
 # <a name="deploy-the-swift-csp-cscf-v2020-blueprint-sample"></a>Развертывание примера схемы SWIFT CSP-CSCF v2020
 
