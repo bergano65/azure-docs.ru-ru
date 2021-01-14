@@ -1,18 +1,18 @@
 ---
-title: Создание отчетов о расширении файлов на основе данных с помощью зрения Insights
-description: В этом пошаговом руководство описано, как просмотреть и использовать расширение файла зрения Insights для данных.
+title: Создание отчетов о расширении файлов на основе данных в Azure зрения с помощью зрения Insights
+description: В этом пошаговом руководство описано, как просматривать и использовать отчеты о расширении файлов зрения для ваших данных.
 author: batamig
 ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 222106f5838a1eb237987afaa93924f1efe4a1f4
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 246a9dcfa35498d99fd403f10e5c17d7707efe84
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746290"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202629"
 ---
 # <a name="file-extension-insights-about-your-data-from-azure-purview"></a>Расширение файла сведения о данных из Azure зрения 
 
@@ -33,6 +33,9 @@ ms.locfileid: "96746290"
 - Настройка ресурсов Azure и заполнение соответствующих учетных записей тестовыми данными
 
 - Настройка и завершение проверки тестовых данных в каждом источнике данных
+
+- Выполнен вход в зрения с учетной записью с помощью [средства чтения данных или роли пленку данных](catalog-permissions.md#azure-purviews-pre-defined-data-plane-roles).
+
 
 Дополнительные сведения см. [в статье Управление источниками данных в Azure зрения (Предварительная версия)](manage-data-sources.md).
 

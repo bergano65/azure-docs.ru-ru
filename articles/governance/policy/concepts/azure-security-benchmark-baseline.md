@@ -7,20 +7,20 @@ ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8b18da5e41e235b560918ad26117a0162078862c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8915e1c15972341befd176b412925f4e87c94f6
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540988"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201456"
 ---
 # <a name="azure-policy-security-baseline-for-azure-security-benchmark"></a>Базовый план безопасности политики Azure для производительности системы безопасности Azure
 
-Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../../../security/benchmarks/overview.md) к политике Azure. Тест производительности системы безопасности Azure содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **доменам соответствия** и **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к политике Azure. **Элементы управления** , неприменимые к политике Azure, были исключены. Сведения о том, как полностью сопоставить политику Azure с тестовым показателем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности политики Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Этот базовый план безопасности применяет рекомендации из [теста безопасности Azure](../../../security/benchmarks/overview.md) к политике Azure. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure. Содержимое группируются по **доменам соответствия** и **элементам управления безопасностью** , определенным в производительности системы безопасности Azure, и связанным рекомендациям, применимым к политике Azure. **Элементы управления** , неприменимые к политике Azure, были исключены. Сведения о том, как полностью сопоставить политику Azure с тестовым показателем безопасности Azure, см. в [полном файле сопоставления базовых показателей безопасности политики Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
 
 Сведения о сопоставлении элементов управления производительности Azure с встроенными определениями политик с помощью встроенной инициативы см. в разделе [соответствие нормативным требованиям: производительность системы безопасности Azure](../samples/azure-security-benchmark.md).
 
-Политика Azure использует термин _владение_ вместо _ответственности_. Дополнительные сведения о _владельце_см. в статье [определения политик](./definition-structure.md#type) и [Общие обязанности политики Azure в облаке](../../../security/fundamentals/shared-responsibility.md).
+Политика Azure использует термин _владение_ вместо _ответственности_. Дополнительные сведения о _владельце_ см. в статье [определения политик](./definition-structure.md#type) и [Общие обязанности политики Azure в облаке](../../../security/fundamentals/shared-responsibility.md).
 
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
@@ -59,7 +59,7 @@ ms.locfileid: "91540988"
 
 **Руководство**. Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной проверкой подлинности для входа в ресурсы Azure и их настройки.
 
-* [Рабочие станции с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Рабочие станции с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [Включение MFA в Azure](../../../active-directory/authentication/howto-mfa-getstarted.md)
 

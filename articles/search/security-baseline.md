@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 07ef3da9f67de92c3526b83222c1c8088660d7c7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f393c5df23b9552f598e05d25aaf09e529324abe
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499872"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202000"
 ---
 # <a name="azure-security-baseline-for-azure-cognitive-search"></a>Базовый план безопасности Azure для Azure Когнитивный поиск
 
@@ -340,7 +340,7 @@ ms.locfileid: "96499872"
 
 **Руководство**. Используйте рабочую станцию привилегированного доступа (привилегированным доступом) с поддержкой многофакторной идентификации (MFA), настроенной для входа в ресурсы Azure и получения доступа к ним.
 
-- [Общие сведения о защищенных рабочих станциях под управлением Azure](../active-directory/devices/concept-azure-managed-workstation.md)
+- [Общие сведения о защищенных рабочих станциях под управлением Azure](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
  
 
 - [Как включить Azure AD MFA](../active-directory/authentication/howto-mfa-getstarted.md)

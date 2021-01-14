@@ -8,12 +8,12 @@ author: AlexandraKemperMS
 ms.author: alkemper
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 9a6ae1581b3958495010b032980b0de2e267088b
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 13857580d434736fbf0b12f52d39537ca864a497
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931883"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203148"
 ---
 # <a name="use-feature-filters-to-enable-conditional-feature-flags"></a>Использование фильтров компонентов для включения условных флагов функций
 
@@ -56,19 +56,19 @@ public void ConfigureServices(IServiceCollection services)
     > [!div class="mx-imgBorder"]
     > ![Изменение флага бета-версии компонента](./media/edit-beta-feature-flag.png)
 
-1. На экране **редактирования** выберите переключатель **вкл** ., если он еще не выбран. Затем нажмите кнопку **Добавить фильтр** . (Метка **на** переключателе будет изменена на " **условие** чтения".)
+1. На экране **редактирования** выберите кнопку **включить флаг функции** , если она еще не выбрана. Затем нажмите кнопку **использовать фильтр компонентов** и выберите **Пользовательский**. 
 
 1. В поле **ключ** введите *Microsoft. Percentage*.
 
     > [!div class="mx-imgBorder"]
     > ![Добавить фильтр компонентов](./media/feature-flag-add-filter.png)
 
-1. Щелкните контекстное меню рядом с ключом фильтра компонентов. Нажмите кнопку **изменить параметры**.
+1. Щелкните контекстное меню рядом с ключом фильтра компонентов. Нажмите кнопку **изменить параметры фильтра**.
 
     > [!div class="mx-imgBorder"]
-    > ![Изменение параметров фильтра компонентов](./media/feature-flag-edit-filter-parameters.png)
+    > ![Изменение параметров фильтра компонентов](./media/feature-flags-edit-filter-parameters.png)
 
-1. Наведите указатель мыши под заголовком **имя** , чтобы в сетке появились текстовые поля. Введите **имя** *и* **значение** 50. В поле **значение** указывается процент запросов, для которых включается фильтр компонентов.
+1. Введите **имя** *и* **значение** 50. В поле **значение** указывается процент запросов, для которых включается фильтр компонентов.
 
     > [!div class="mx-imgBorder"]
     > ![Настройка параметров фильтра компонентов](./media/feature-flag-set-filter-parameters.png)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e48b1357b8576baca0e8defca94f4c5248c6f74e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4e82b4adbfde7623de9497c94e56a9ae303131ad
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461276"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202782"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
 
@@ -239,7 +239,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Мониторинг Центра безопасности Azure**: Да
 
-**Ответственность**. Customer
+**Ответственность**: Customer
 
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
@@ -331,7 +331,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 Хотя Azure AD является рекомендуемым методом для администрирования доступа пользователей, помните, что если вы используете Integration Runtime на виртуальной машине Azure, ваша ВИРТУАЛЬная машина также может иметь локальные учетные записи. Как локальные, так и доменные учетные записи должны проверяться и управляться обычным образом с минимальным объемом памяти. Кроме того, мы советуем рассмотреть, что диспетчер привилегированных удостоверений проверяется на наличие JIT-функции, чтобы снизить доступность административных разрешений.
 
-* [Roles and permissions for Azure Data Factory](./concepts-roles-permissions.md) (Роли и разрешения для службы "Фабрика данных Azure")
+* [Роли и разрешения для службы "Фабрика данных Azure"](./concepts-roles-permissions.md)
 
 * [Сведения о диспетчере привилегированных удостоверений](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
@@ -349,7 +349,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. фабрика данных azure использует Azure Active Directory (AD) для предоставления доступа к портал Azure, а также к консоли фабрики данных Azure. В Azure AD нет концепции паролей по умолчанию, однако вы несете ответственность за изменение или запрет паролей по умолчанию для пользовательских или сторонних приложений.
 
-**Мониторинг Центра безопасности Azure**: Неприменимо
+**Мониторинг Центра безопасности Azure**. Неприменимо
 
 **Ответственность**: Customer
 
@@ -370,7 +370,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Сведения о диспетчере привилегированных удостоверений](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-* [Roles and permissions for Azure Data Factory](./concepts-roles-permissions.md) (Роли и разрешения для службы "Фабрика данных Azure")
+* [Роли и разрешения для службы "Фабрика данных Azure"](./concepts-roles-permissions.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -408,7 +408,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Используйте рабочие станции с привилегированным доступом (PAW) с настроенной Многофакторной идентификацией (MFA) для входа в ресурсы Azure и их настройки.
 
-* [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -608,7 +608,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Настройка Azure RBAC](../role-based-access-control/role-assignments-portal.md)
 
-* [Roles and permissions for Azure Data Factory](./concepts-roles-permissions.md) (Роли и разрешения для службы "Фабрика данных Azure")
+* [Роли и разрешения для службы "Фабрика данных Azure"](./concepts-roles-permissions.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -784,7 +784,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Определите утвержденные ресурсы Azure и программное обеспечение для вычислительных ресурсов.
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -872,7 +872,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
@@ -994,7 +994,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Настройка Azure RBAC](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-* [Roles and permissions for Azure Data Factory](./concepts-roles-permissions.md) (Роли и разрешения для службы "Фабрика данных Azure")
+* [Роли и разрешения для службы "Фабрика данных Azure"](./concepts-roles-permissions.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

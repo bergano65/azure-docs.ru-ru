@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/8/2020
-ms.openlocfilehash: bea618b34809544308caba46a0ffbdecee91d69f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 199810f835924ccbb51948169244622a19c5e8ed
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541816"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201439"
 ---
 # <a name="connect-to-azure-database-for-mysql-with-redirection"></a>Подключение с перенаправлением к Базе данных Azure для MySQL
 
@@ -21,6 +21,9 @@ ms.locfileid: "94541816"
 Войдите на [портал Azure](https://portal.azure.com). Создайте сервер Базы данных Azure для MySQL с версией ядра 5.6, 5.7 или 8.0. 
 
 Дополнительные сведения см. в статье Создание сервера базы данных Azure для MySQL с помощью [портал Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+
+> [!IMPORTANT]
+> Перенаправление сейчас не поддерживается [для частной связи с базой данных Azure для MySQL](concepts-data-access-security-private-link.md).
 
 ## <a name="enable-redirection"></a>Включить перенаправление
 

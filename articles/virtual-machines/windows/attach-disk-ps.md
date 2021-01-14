@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: baeeeae54829fad7378df597965eec5ba2039d20
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d2f283aa8b049602d25cf8969bc2327ebcfafe08
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972821"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202884"
 ---
 # <a name="attach-a-data-disk-to-a-windows-vm-with-powershell"></a>Подключение диска данных к виртуальной машине Windows с помощью PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "91972821"
 
 Во-первых, ознакомьтесь со следующими советами:
 
-* Размер виртуальной машины определяет, сколько дисков данных к ней можно подключить. Дополнительные сведения см. в статье [размеры виртуальных машин](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+* Размер виртуальной машины определяет, сколько дисков данных к ней можно подключить. Дополнительные сведения см. в статье [размеры виртуальных машин](../sizes.md).
 * Для использования хранилища категории "Премиум" (SSD) необходима [виртуальная машина соответствующего типа](../sizes-memory.md), например серии DS или GS.
 
 В этой статье используется PowerShell в [Azure Cloud Shell](../../cloud-shell/overview.md), который постоянно обновляется до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.

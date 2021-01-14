@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 01/05/2021
 ms.author: abhishgu
 ms.reviewer: abhishgu
-ms.openlocfilehash: 24714b185b0f666770b306a7e80a97a3f8f868a3
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 0038219ee8c1721ff5ab2be76231d33d2bd9064d
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98052632"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203071"
 ---
 # <a name="migrate-data-from-postgresql-to-azure-cosmos-db-cassandra-api-account-using-apache-kafka"></a>Перенос данных из PostgreSQL в учетную запись API Cassandra Azure Cosmos DB с помощью Apache Kafka
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -30,7 +30,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 
 В этой статье показано, как использовать сочетание соединителей Kafka для настройки конвейера данных для непрерывной синхронизации записей из реляционной базы данных, например [PostgreSQL](https://www.postgresql.org/) [Azure Cosmos DB API Cassandra](cassandra-introduction.md).
 
-## <a name="overview"></a>Обзор
+## <a name="overview"></a>Общие сведения
 
 Ниже приведен общий обзор сквозного потока, представленного в этой статье.
 
@@ -39,7 +39,7 @@ API Cassandra в Azure Cosmos DB стали отличным выбором дл
 > [!NOTE]
 > Использование конкретных функций соединителя DataStax Apache Kafka позволяет отправлять данные в несколько таблиц. В этом примере соединитель поможет нам сохранить записи измененных данных в две Cassandra таблицы, которые могут поддерживать различные требования к запросам.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Предоставление учетной записи API Cassandra для Azure Cosmos DB](create-cassandra-dotnet.md#create-a-database-account)
 * [Использование cqlsh или размещенной оболочки для проверки](cassandra-support.md#hosted-cql-shell-preview)
@@ -107,7 +107,7 @@ bin/kafka-server-start.sh config/server.properties
 
 ### <a name="setup-connectors"></a>Установка соединителей
 
-Установите соединитель Дебезиум PostgreSQL и DataStax Apache Kafka. Скачайте архив подключаемого модуля соединителя Дебезиум PostgreSQL. Например, чтобы скачать версию 1.3.0 соединителя (последняя версия на момент написания статьи), используйте [эту ссылку](https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.3.0.Final/debezium-connector-postgres-1.2.0.Final-plugin.tar.gz). Скачайте соединитель Apache Kafka DataStax по [этой ссылке](https://downloads.datastax.com/#akc).
+Установите соединитель Дебезиум PostgreSQL и DataStax Apache Kafka. Скачайте архив подключаемого модуля соединителя Дебезиум PostgreSQL. Например, чтобы скачать версию 1.3.0 соединителя (последняя версия на момент написания статьи), используйте [эту ссылку](https://repo1.maven.org/maven2/io/debezium/debezium-connector-postgres/1.3.0.Final/debezium-connector-postgres-1.3.0.Final-plugin.tar.gz). Скачайте соединитель Apache Kafka DataStax по [этой ссылке](https://downloads.datastax.com/#akc).
 
 Распакуйте оба архива соединителя и скопируйте JAR-файлы в [подключаемый модуль Kafka Connect. путь](https://kafka.apache.org/documentation/#connectconfigs).
 

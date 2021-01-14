@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f6c990b3ce5edaab4d2ce6600c0291272058e092
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 7721100d902948364c9e4b1373f1fa805c680a50
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369299"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202221"
 ---
 # <a name="security-control-v2-privileged-access"></a>Управление безопасностью v2: привилегированный доступ
 
@@ -157,7 +157,7 @@ ms.locfileid: "97369299"
 
 Защищенные изолированные рабочие станции критически важны для защиты конфиденциальных ролей, таких как администраторы, разработчики и критические операторы обслуживания. Используйте высокозащищенные рабочие станции пользователей и (или) Azure бастиона для административных задач. Чтобы развернуть защищенную и управляемую рабочую станцию для административных задач, используйте Azure Active Directory, Advanced Threat Protection в Microsoft Defender и (или) Microsoft Intune. Защищенные рабочие станции можно централизованно управлять, чтобы обеспечить безопасную настройку, включая надежную проверку подлинности, базовые показатели программного обеспечения и оборудования, а также ограниченный логический и сетевой доступ. 
 
-- [Общие сведения о рабочих станциях с привилегированным доступом](../../active-directory/devices/concept-azure-managed-workstation.md)
+- [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [Развертывание рабочей станции с привилегированным доступом](../../active-directory/devices/howto-azure-managed-workstation.md)
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: traffic-manager
 ms.date: 09/18/2019
 ms.author: duau
-ms.openlocfilehash: 984cdfb3e60717f7632ea1fdcd05a4681dd6a1fd
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 7a448afb85a35674921ce74a25eaf2a97430dc61
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517943"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201422"
 ---
 # <a name="traffic-manager-subnet-override-using-azure-cli"></a>Переопределение подсети диспетчера трафика с помощью Azure CLI
 
@@ -36,10 +36,10 @@ ms.locfileid: "94517943"
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+- Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="update-the-traffic-manager-endpoint-with-subnet-override"></a>Обновите конечную точку диспетчера трафика с переопределением подсети.
-Используйте Azure CLI для обновления конечной точки с помощью команды [AZ Network трафика — обновление конечной точки диспетчера](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).
+Используйте Azure CLI для обновления конечной точки с помощью команды [AZ Network трафика — обновление конечной точки диспетчера](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).
 
 ```azurecli-interactive
 ### Add a range of IPs ###
@@ -59,7 +59,7 @@ az network traffic-manager endpoint update \
     --type AzureEndpoints
 ```
 
-Диапазоны IP-адресов можно удалить, выполнив [Обновление конечной точки AZ Network Configuration Manager](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update) с параметром **--Remove** .
+Диапазоны IP-адресов можно удалить, выполнив [Обновление конечной точки AZ Network Configuration Manager](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update) с параметром **--Remove** .
 
 ```azurecli-interactive
 az network traffic-manager endpoint update \
@@ -74,4 +74,4 @@ az network traffic-manager endpoint update \
 
 См. дополнительные сведения в статье [Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md).
 
-Сведения о [методе маршрутизации трафика подсети](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods#subnet-traffic-routing-method)
+Сведения о [методе маршрутизации трафика подсети](./traffic-manager-routing-methods.md#subnet-traffic-routing-method)

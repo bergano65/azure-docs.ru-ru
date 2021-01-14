@@ -7,18 +7,18 @@ ms.topic: how-to
 ms.date: 10/17/2018
 ms.author: cynthn
 ms.custom: legacy, devx-track-azurecli
-ms.openlocfilehash: f92f286fc9d9438331617cb567272a331834af42
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 7f9ac0ab9eacb90bde70c85ea06bc19a18aa0c05
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735391"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201150"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
 
 В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux с помощью Azure CLI. Сведения о копировании, создании, хранении и совместном использовании образов виртуальных машин в масштабе см. в статье [Общие галереи изображений](../shared-images-cli.md).
 
-Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "92735391"
 ## <a name="stop-the-source-vm"></a>Остановка исходной виртуальной машины
 
 Отмените выделение исходной виртуальной машины, выполнив команду [az vm deallocate](/cli/azure/vm#az-vm-deallocate).
-В следующем примере отменяется распределение виртуальной машины *myVM* , входящей в группу ресурсов *myResourceGroup* .
+В следующем примере отменяется распределение виртуальной машины *myVM*, входящей в группу ресурсов *myResourceGroup*.
 
 ```azurecli
 az vm deallocate \
@@ -45,7 +45,7 @@ az vm deallocate \
 
 Дополнительные сведения об Управляемых дисках Azure см. в [обзоре Управляемых дисков Azure](../managed-disks-overview.md). 
 
-1.  Получите список виртуальных машин и имен их дисков ОС, выполнив команду [az vm list](/cli/azure/vm#az-vm-list). В следующем примере создается список виртуальных машин, входящих в группу ресурсов *myResourceGroup* .
+1.  Получите список виртуальных машин и имен их дисков ОС, выполнив команду [az vm list](/cli/azure/vm#az-vm-list). В следующем примере создается список виртуальных машин, входящих в группу ресурсов *myResourceGroup*.
     
     ```azurecli
     az vm list -g myResourceGroup \
@@ -61,14 +61,14 @@ az vm deallocate \
     myVM    myDisk
     ```
 
-1.  Скопируйте диск, создав управляемый диск и используя команду [az disk create](/cli/azure/disk#az-disk-create). В следующем примере создается диск *myCopiedDisk* на основе управляемого диска *myDisk* .
+1.  Скопируйте диск, создав управляемый диск и используя команду [az disk create](/cli/azure/disk#az-disk-create). В следующем примере создается диск *myCopiedDisk* на основе управляемого диска *myDisk*.
 
     ```azurecli
     az disk create --resource-group myResourceGroup \
          --name myCopiedDisk --source myDisk
     ``` 
 
-1.  Убедитесь, что этот управляемый диск теперь входит в нужную группу ресурсов, выполнив команду [az disk list](/cli/azure/disk#az-disk-list). В следующем примере выводится список управляемых дисков, входящих в группу ресурсов *myResourceGroup* .
+1.  Убедитесь, что этот управляемый диск теперь входит в нужную группу ресурсов, выполнив команду [az disk list](/cli/azure/disk#az-disk-list). В следующем примере выводится список управляемых дисков, входящих в группу ресурсов *myResourceGroup*.
 
     ```azurecli
     az disk list --resource-group myResourceGroup --output table
@@ -83,7 +83,7 @@ az vm deallocate \
 
 Если для копируемых виртуальных машин нужна отдельная инфраструктура виртуальный сети, выполните следующие шаги. Если вам не нужно создавать виртуальную сеть, перейдите к разделу [Создание виртуальной машины](#create-a-vm).
 
-1.  Создайте виртуальную сеть, выполнив команду [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet* .
+1.  Создайте виртуальную сеть, выполнив команду [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 
     ```azurecli
     az network vnet create --resource-group myResourceGroup \
@@ -93,7 +93,7 @@ az vm deallocate \
         --subnet-prefix 192.168.1.0/24
     ```
 
-1.  Создайте общедоступный IP-адрес, выполнив команду [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create). В следующем примере создается общедоступный IP-адрес *myPublicIP* с DNS-именем *mypublicdns* . (Так как DNS-имя должно быть уникальным, укажите уникальное имя.)
+1.  Создайте общедоступный IP-адрес, выполнив команду [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create). В следующем примере создается общедоступный IP-адрес *myPublicIP* с DNS-именем *mypublicdns*. (Так как DNS-имя должно быть уникальным, укажите уникальное имя.)
 
     ```azurecli
     az network public-ip create --resource-group myResourceGroup \
@@ -102,7 +102,7 @@ az vm deallocate \
     ```
 
 1.  Создайте сетевую карту, выполнив команду [az network nic create](/cli/azure/network/nic#az-network-nic-create).
-    В следующем примере создается сетевая карта *myNic* , подключенная к подсети *mySubnet* .
+    В следующем примере создается сетевая карта *myNic*, подключенная к подсети *mySubnet*.
 
     ```azurecli
     az network nic create --resource-group myResourceGroup \

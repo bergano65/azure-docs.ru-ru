@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 0a0756c0beeb752e69703119a300bf4cc85f621b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c1e61e9434d96148fbce840f4bad7f6a3b2ecb6b
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485184"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202731"
 ---
 # <a name="azure-security-baseline-for-stream-analytics"></a>Базовый план безопасности Azure для Stream Analytics
 
@@ -260,7 +260,7 @@ ms.locfileid: "96485184"
 
 **Руководство**. Создание плана безопасности для управления удостоверениями и ролей, соблюдение рекомендаций, включая принцип минимального привилегированного доступа для ролей администратора. Используйте Azure управление привилегированными пользователями (PIM), чтобы предоставить доступ к ресурсам Azure AD и Azure только в режиме доступа. Используйте оповещения и журнал аудита PIM Azure для отслеживания активности административных учетных записей. Используйте отчеты безопасности Azure AD, чтобы определить учетные записи администратора, которые могли быть скомпрометированы.
 
-* [Дополнительные сведения](../active-directory/privileged-identity-management/index.yml)
+* [Подробнее](../active-directory/privileged-identity-management/index.yml)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -292,7 +292,7 @@ ms.locfileid: "96485184"
 
 **Руководство**. Используйте лапы (рабочие станции с привилегированным доступом) с многофакторной идентификацией (MFA), настроенной для входа в и настройки ресурсов Stream Analytics.
 
-* [Использование рабочих станций с привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 

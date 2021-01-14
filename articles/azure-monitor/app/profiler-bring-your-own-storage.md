@@ -4,21 +4,21 @@ description: Настройка BYOS (перевод собственного х
 ms.topic: conceptual
 author: renatosalas
 ms.author: regutier
-ms.date: 04/14/2020
+ms.date: 01/14/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: 719f0cfa0a1f80568acf3231ce3ffab441e5f6b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f82432c1dd8c66e8ce845831ff35d534a34e3e04
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87117395"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202544"
 ---
 # <a name="configure-bring-your-own-storage-byos-for-application-insights-profiler-and-snapshot-debugger"></a>Настройка собственного хранилища (BYOS) для Application Insights Profiler и Snapshot Debugger
 
 ## <a name="what-is-bring-your-own-storage-byos-and-why-might-i-need-it"></a>Что такое хранилище (BYOS) и зачем оно может потребоваться? 
 При использовании Application Insights Profiler или Snapshot Debugger артефакты, созданные приложением, передаются в учетные записи хранения Azure через общедоступный Интернет. Эти учетные записи оплачиваются и контролируются корпорацией Майкрософт для обработки и анализа. Корпорация Майкрософт управляет политиками шифрования неактивных данных и управления жизненным циклом для этих артефактов.
 
-Используя свое собственное хранилище, эти артефакты отправляются в учетную запись хранения, которую вы контролируете. Это означает, что вы управляете политикой шифрования неактивных объектов, политикой управления жизненным циклом и доступом к сети. Тем не менее, вы несете ответственность за затраты, связанные с этой учетной записью хранения.
+Используя свое собственное хранилище, эти артефакты отправляются в учетную запись хранения, которую вы контролируете. Это означает, что вы управляете политикой шифрования неактивных объектов, политикой управления жизненным циклом и доступом к сети. При этом вы несете ответственность за затраты, связанные с этой учетной записью хранения.
 
 > [!NOTE]
 > При включении закрытой ссылки необходимо использовать собственное хранилище. Дополнительные сведения о закрытой ссылке для Application Insights [см. в документации.](../platform/private-link-security.md)
@@ -31,7 +31,7 @@ ms.locfileid: "87117395"
 1. При просмотре трассировок профилировщика или анализе snapshot Debugger служба получает результаты анализа из хранилища BLOB-объектов.
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Не забудьте создать учетную запись хранения в том же расположении, что и ресурс Application Insights. Например: Если ресурс Application Insights находится в западной части США 2, ваша учетная запись хранения должна быть также в западной части США 2. 
+* Не забудьте создать учетную запись хранения в том же расположении, что и ресурс Application Insights. Пример: Если ресурс Application Insights находится в западной части США 2, ваша учетная запись хранения должна быть также в западной части США 2. 
 * Предоставьте роли "участник данных BLOB-объекта хранилища" для приложения AAD "доступ к доверенному хранилищу служб диагностики" в учетной записи хранения через пользовательский интерфейс управления доступом (IAM).
 * Если частная связь включена, Настройте дополнительный параметр, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. 
 
@@ -53,11 +53,11 @@ ms.locfileid: "87117395"
 1. Поиск & выберите приложение "доступ к доверенному хранилищу служб диагностики" 
 1. Сохранение изменений
 
-_ ![ Рис. 1,0](media/profiler-bring-your-own-storage/figure-10.png)_. 
+_![ Рис. 1,0](media/profiler-bring-your-own-storage/figure-10.png)_. 
  _рис. 1,0_ 
 
 После добавления роли она появится в разделе "назначения ролей", как показано на рисунке 1,1 ниже. 
-_ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_. 
+_![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_. 
  _рис. 1,1_ 
 
 Если вы также используете частную ссылку, требуется одна дополнительная настройка, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. См. [документацию по сетевой безопасности хранилища](../../storage/common/storage-network-security.md#trusted-microsoft-services).
@@ -91,11 +91,11 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
 
     Шаблон.
     ```powershell
-    $appInsights = Get-AzApplicationInsights -ResourceGroupName "{resource_group_name}" -Name "{storage_account_name}"
+    $appInsights = Get-AzApplicationInsights -ResourceGroupName "{resource_group_name}" -Name "{application_insights_name}"
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
     ```
 
-    Пример.
+    Пример
     ```powershell
     $appInsights = Get-AzApplicationInsights -ResourceGroupName "byos-test" -Name "byos-test-westus2-ai"
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
@@ -110,7 +110,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     New-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id -LinkedStorageAccountResourceId $storageAccount.Id
     ```
 
-    Пример.
+    Пример
     ```powershell
     $storageAccount = Get-AzStorageAccount -ResourceGroupName "byos-test" -Name "byosteststoragewestus2"
     $appInsights = Get-AzApplicationInsights -ResourceGroupName "byos-test" -Name "byos-test-westus2-ai"
@@ -135,7 +135,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     az monitor app-insights component linked-storage link --resource-group "{resource_group_name}" --app "{application_insights_name}" --storage-account "{storage_account_name}"
     ```
     
-    Пример.
+    Пример
     ```powershell
     az monitor app-insights component linked-storage link --resource-group "byos-test" --app "byos-test-westus2-ai" --storage-account "byosteststoragewestus2"
     ```
@@ -191,7 +191,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     New-AzResourceGroupDeployment -ResourceGroupName "{your_resource_name}" -TemplateFile "{local_path_to_arm_template}"
     ```
 
-    Пример.
+    Пример
     ```powershell
     New-AzResourceGroupDeployment -ResourceGroupName "byos-test" -TemplateFile "D:\Docs\byos.template.json"
     ```
@@ -226,7 +226,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     DeploymentDebugLogLevel :
     ```
 
-1. Включите диагностику на уровне кода (профилировщик или отладчик) в интересующей рабочей нагрузке с помощью портал Azure. (> службы приложений Application Insights) _ ![ Рис. 2,0](media/profiler-bring-your-own-storage/figure-20.png)_. 
+1. Включите диагностику на уровне кода (профилировщик или отладчик) в интересующей рабочей нагрузке с помощью портал Azure. (> службы приложений Application Insights) _![ Рис. 2,0](media/profiler-bring-your-own-storage/figure-20.png)_. 
  _рис. 2,0_
 
 ## <a name="troubleshooting"></a>Устранение неполадок

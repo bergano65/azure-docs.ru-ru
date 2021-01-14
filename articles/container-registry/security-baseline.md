@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3fcbc386c60611493912fdfb17226490549cdc53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 52cc67b1160ae8c9a0120a0a10d0131b167d5776
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89396817"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202680"
 ---
 # <a name="azure-security-baseline-for-azure-container-registry"></a>Базовый план безопасности Azure для реестра контейнеров Azure
 
@@ -366,7 +366,7 @@ Azure Marketplace:  https://azuremarketplace.microsoft.com/marketplace/?term=Fir
 
 **Руководство**. Используйте рабочие станции привилегированного доступа (PAW) с настроенной многофакторной проверкой подлинности для входа в ресурсы Azure и их настройки.
 
-Дополнительные сведения о рабочих станциях с привилегированным доступом:  https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
+Дополнительные сведения о рабочих станциях с привилегированным доступом:  https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/
 
 Включение MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 

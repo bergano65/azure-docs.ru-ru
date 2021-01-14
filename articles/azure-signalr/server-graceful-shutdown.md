@@ -6,12 +6,12 @@ ms.author: tefa
 ms.date: 11/12/2020
 ms.service: signalr
 ms.topic: conceptual
-ms.openlocfilehash: 06aa91ff414e5575f7b1a743d2cc17765437ef72
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: d9dd7ce9cf321628598a7bb866c5d1b1a6fb0e1e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797572"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201677"
 ---
 # <a name="server-graceful-shutdown"></a>Корректное завершение работы сервера
 Служба Microsoft Azure SignalR предоставляет два режима для корректного завершения работы сервера. 
@@ -43,7 +43,7 @@ ms.locfileid: "97797572"
 
     Может потребоваться разработать такой способ, как широковещательное сообщение для всех клиентов, а затем позволить своим клиентам принять решение о том, когда нужно закрыть или повторно подключиться.
 
-    Прочитайте [чатсампле](https://github.com/Azure/azure-signalr/tree/dev/samples/ChatSample/ChatSample) для примера использования, который пересылает сообщение "Exit", чтобы активировать закрытие клиента в ловушке завершения работы.
+    Прочитайте [чатсампле](https://github.com/Azure/azure-signalr/tree/dev/samples/ChatSample) для примера использования, который пересылает сообщение "Exit", чтобы активировать закрытие клиента в ловушке завершения работы.
 
     **Режим установлен в Мигратеклиентс**
 

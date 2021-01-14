@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8213523e3035841f42c4a56b777444fd616b29d6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 598f925d939694ea47605b0e8ea2e63872db7811
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948533"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201252"
 ---
 # <a name="azure-security-baseline-for-network-watcher"></a>Базовый план безопасности Azure для наблюдателя за сетями
 
@@ -293,9 +293,9 @@ ms.locfileid: "94948533"
 
 **Руководство**. Использование рабочей станции привилегированного доступа (привилегированным доступом) с включенной многофакторной идентификацией Azure AD (MFA) для входа и настройки ресурсов, связанных с Sentinel Azure.
 
-* [Рабочие станции c привилегированным доступом](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Рабочие станции c привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-* [Планирование развертывания службы многофакторной идентификации Azure AD на основе облачных служб](../active-directory/authentication/howto-mfa-getstarted.md)
+* [Планирование развертывания облачной службы Многофакторной идентификации Azure AD](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -329,7 +329,7 @@ ms.locfileid: "94948533"
 
 **Руководство**. Использование Azure Active Directory (Azure AD) в качестве централизованной системы проверки подлинности и авторизации для экземпляров Sentinel Azure. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. Кроме того, в Azure AD используются salt-записи, хэши и безопасное хранение учетных данных пользователей.
 
-* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
+* [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -589,7 +589,7 @@ ms.locfileid: "94948533"
 
 **Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в подписках.
 
-Используйте граф ресурсов Azure для запроса и обнаружения ресурсов в своих подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
+Используйте Azure Resource Graph для запроса и обнаружения ресурсов в своих подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 

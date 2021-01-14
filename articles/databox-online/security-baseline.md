@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 14e19732423da3842b2f2748a46219691fe222b9
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 0de08c166aba7609210892a32836bee9b07d5394
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803159"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203054"
 ---
 # <a name="azure-security-baseline-for-azure-stack-edge"></a>Базовый план безопасности Azure для Azure Stack пограничных устройств
 
@@ -234,7 +234,7 @@ Azure Stack пограничные устройства загружаются �
 
 Защищенными рабочими станциями можно централизованно управлять, чтобы обеспечить безопасную настройку, включая строгую проверку подлинности, базовые параметры программного обеспечения и оборудования, ограниченный логический и сетевой доступ.
 
-- [Общие сведения о рабочих станциях с привилегированным доступом](/azure/active-directory/devices/concept-azure-managed-workstation) 
+- [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) 
 
 - [Развертывание рабочей станции с привилегированным доступом](/azure/active-directory/devices/howto-azure-managed-workstation)
 

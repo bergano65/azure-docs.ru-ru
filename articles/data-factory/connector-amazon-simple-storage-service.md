@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/08/2020
-ms.openlocfilehash: 925a0270c50d20790c093eaf193d66e0acd4cd11
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.date: 01/14/2021
+ms.openlocfilehash: 82871a09916b2b64f74e25088f5e75ac60a40678
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347410"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202510"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-by-using-azure-data-factory"></a>Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -71,6 +71,7 @@ ms.locfileid: "97347410"
 | secretAccessKey | Сам секретный ключ доступа. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | сессионтокен | Применяется при использовании проверки подлинности с [временными учетными данными безопасности](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) . Узнайте, как [запросить временные учетные данные безопасности](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken) из AWS.<br>Примечание. AWS временные учетные данные истекает от 15 минут до 36 часов в зависимости от параметров. Убедитесь, что учетные данные действительны при выполнении действия, особенно для рабочей нагрузки. Например, вы можете периодически обновлять его и хранить в Azure Key Vault.<br>Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
 | serviceUrl | Укажите настраиваемую конечную точку S3, если вы копируете данные из совместимого с S3 поставщика хранилища, отличного от официальной службы Amazon S3. Например, для копирования данных из Google Cloud Storage укажите `https://storage.googleapis.com`. | нет |
+| форцепасстиле | Указывает, следует ли использовать [уровень доступа](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) S3, а не виртуальный размещенный в стиле доступ. Допустимые значения: **false** (по умолчанию), **true**.<br>Если вы подключаетесь к поставщику хранилища, совместимому с S3, отличному от официальной службы Amazon S3, и для этого хранилища данных требуется доступ в стиле Path (например, в [облачном хранилище Oracle](https://docs.oracle.com/iaas/Content/Object/Tasks/s3compatibleapi.htm)), задайте для этого свойства значение true. Ознакомьтесь с документацией по каждому хранилищу данных в случае, если необходим доступ в стиле Path. |Нет |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции (если хранилище данных находится в частной сети). Если это свойство не указано, служба использует среду выполнения интеграции Azure по умолчанию. |Нет |
 
 >[!TIP]

@@ -3,15 +3,15 @@ title: Настройка кластера в Службе Azure Kubernetes (AKS
 description: Сведения о том, как настроить кластер в Службе Kubernetes Azure (AKS)
 services: container-service
 ms.topic: article
-ms.date: 09/21/2020
+ms.date: 01/13/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: ab9e2a5483f0699ad7bfca991539025adff34b11
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: eacca50e00dfe8625d86362c444544e2fd5d5511
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606918"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201116"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -21,10 +21,52 @@ ms.locfileid: "97606918"
 
 AKS теперь поддерживает Ubuntu 18,04 в качестве операционной системы узла (ОС) в общем доступе для кластеров в kubernetes версиях выше, чем 1.18.8. Для версий ниже 18E. x AKS Ubuntu 16,04 по-прежнему является базовым образом по умолчанию. Начиная с kubernetes v 18E. x и наоборот, база по умолчанию — AKS Ubuntu 18,04.
 
-> [!IMPORTANT]
-> Пулы узлов, созданные в Kubernetes v 18E или более поздней версии по умолчанию для `AKS Ubuntu 18.04` образа узла. Пулы узлов в поддерживаемой версии Kubernetes меньше, чем 1,18, получают `AKS Ubuntu 16.04` как образ узла, но будут обновлены до, `AKS Ubuntu 18.04` когда версия Kubernetes пула узлов обновится до версии v 18E или выше.
-> 
-> Настоятельно рекомендуется протестировать рабочие нагрузки в пулах узлов AKS Ubuntu 18,04, прежде чем использовать кластеры на 1,18 или более поздней версии. Узнайте о том, как [тестировать пулы узлов Ubuntu 18,04](#use-aks-ubuntu-1804-existing-clusters-preview).
+### <a name="use-aks-ubuntu-1804-generally-available-on-new-clusters"></a>Использование AKS Ubuntu 18,04, как правило, доступно в новых кластерах
+
+Кластеры, созданные в Kubernetes v 18E или более поздней версии по умолчанию, — `AKS Ubuntu 18.04` образ узла. Пулы узлов в поддерживаемой версии Kubernetes менее 1,18 будут по-прежнему получать `AKS Ubuntu 16.04` образ узла, но будут обновлены до тех пор, пока `AKS Ubuntu 18.04` версия кластера или пула узлов Kubernetes обновляется до версии 18E или выше.
+
+Настоятельно рекомендуется протестировать рабочие нагрузки в пулах узлов AKS Ubuntu 18,04, прежде чем использовать кластеры на 1,18 или более поздней версии. Узнайте о том, как [тестировать пулы узлов Ubuntu 18,04](#test-aks-ubuntu-1804-generally-available-on-existing-clusters).
+
+Чтобы создать кластер с помощью `AKS Ubuntu 18.04` образа узла, просто создайте кластер под названием kubernetes v 18E или выше, как показано ниже.
+
+```azurecli
+az aks create --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+### <a name="use-aks-ubuntu-1804-generally-available-on-existing-clusters"></a>Использование AKS Ubuntu 18,04, как правило, доступно в существующих кластерах
+
+Кластеры, созданные в Kubernetes v 18E или более поздней версии по умолчанию, — `AKS Ubuntu 18.04` образ узла. Пулы узлов в поддерживаемой версии Kubernetes менее 1,18 будут по-прежнему получать `AKS Ubuntu 16.04` образ узла, но будут обновлены до тех пор, пока `AKS Ubuntu 18.04` версия кластера или пула узлов Kubernetes обновляется до версии 18E или выше.
+
+Настоятельно рекомендуется протестировать рабочие нагрузки в пулах узлов AKS Ubuntu 18,04, прежде чем использовать кластеры на 1,18 или более поздней версии. Узнайте о том, как [тестировать пулы узлов Ubuntu 18,04](#test-aks-ubuntu-1804-generally-available-on-existing-clusters).
+
+Если кластеры или пулы узлов готовы к `AKS Ubuntu 18.04` образу узла, вы можете просто обновить их до версии 18E или выше.
+
+```azurecli
+az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+Если нужно просто обновить только один пул узлов, выполните следующие действия.
+
+```azurecli
+az aks nodepool upgrade -name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+### <a name="test-aks-ubuntu-1804-generally-available-on-existing-clusters"></a>Тестирование AKS Ubuntu 18,04, как правило, доступно в существующих кластерах
+
+Пулы узлов, созданные в Kubernetes v 18E или более поздней версии по умолчанию для `AKS Ubuntu 18.04` образа узла. Пулы узлов в поддерживаемой версии Kubernetes менее 1,18 будут по-прежнему получать `AKS Ubuntu 16.04` образ узла, но будут обновлены до тех пор, пока `AKS Ubuntu 18.04` версия Kubernetes пула узлов будет обновлена до версии v 18E или выше.
+
+Настоятельно рекомендуется протестировать рабочие нагрузки в пулах узлов AKS Ubuntu 18,04 перед обновлением пулов производственных узлов.
+
+Чтобы создать пул узлов с помощью `AKS Ubuntu 18.04` образа узла, просто создайте пул узлов под kubernetes v 18E или более поздней версии. Плоскость управления кластером должна быть не ниже версии v 18E или выше, но другие пулы узлов могут остаться в более старых версиях kubernetes.
+Ниже мы сначала обновляем плоскость управления, а затем создаем новый пул узлов с помощью v 18E, который получит новую версию ОС образа узла.
+
+```azurecli
+az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14 --control-plane-only
+
+az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+### <a name="use-aks-ubuntu-1804-on-new-clusters-preview"></a>Использование AKS Ubuntu 18,04 в новых кластерах (Предварительная версия)
 
 В следующем разделе объясняется, как использовать и тестировать AKS Ubuntu 18,04 в кластерах, которые еще не используют kubernetes версии 18E. x или выше, или были созданы до того, как эта функция стала общедоступной, с помощью предварительной версии конфигурации ОС.
 
@@ -57,8 +99,6 @@ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/U
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
 ```
-
-### <a name="use-aks-ubuntu-1804-on-new-clusters-preview"></a>Использование AKS Ubuntu 18,04 в новых кластерах (Предварительная версия)
 
 При создании кластера выберите для него ОС Ubuntu 18.04. Установите флаг `--aks-custom-headers`, чтобы назначить Ubuntu 18.04 операционной системой по умолчанию.
 

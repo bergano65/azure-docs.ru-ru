@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: ffbafb76fd2c6dd06a88bfd79746557889039cd6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2e831b3c091b18a5c739275e4c932094ce088ba4
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956030"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202612"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -636,7 +636,7 @@ WriteBytesPerSecond | Количество записанных байт за с
 az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group <resource_group_name> --vm-name <vm_name> --protected-settings ProtectedSettings.json --settings PublicSettings.json
 ```
 
-В команде предполагается, что используется режим управления ресурсами Azure Azure CLI. Чтобы настроить LAD для виртуальных машин на основе классической модели развертывания (ASM), переключитесь в режим asm (`azure config mode asm`) и не указывайте в команде имя группы ресурсов. Дополнительные сведения см. в [документации по кроссплатформенному интерфейсу командной строки](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+В команде предполагается, что используется режим управления ресурсами Azure Azure CLI. Чтобы настроить LAD для виртуальных машин на основе классической модели развертывания (ASM), переключитесь в режим asm (`azure config mode asm`) и не указывайте в команде имя группы ресурсов. Дополнительные сведения см. в [документации по кроссплатформенному интерфейсу командной строки](/cli/azure/authenticate-azure-cli).
 
 ### <a name="powershell"></a>PowerShell
 
