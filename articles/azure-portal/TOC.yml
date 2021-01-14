@@ -70,8 +70,6 @@
       items:
         - name: Восстановление удаленной панели мониторинга
           href: recover-shared-deleted-dashboard.md
-        - name: Устранение неполадок c доступом подписки к региону или номеру SKU
-          href: supportability/sku-series-unavailable.md
         - name: Запись трассировки браузера для устранения неполадок
           href: capture-browser-trace.md
 - name: Справочник

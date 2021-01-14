@@ -124,7 +124,7 @@
     - name: Python
       href: 'https://azure.github.io/azure-sdk-for-python/trafficmanager.html'
     - name: REST
-      href: 'https://msdn.microsoft.com/library/mt163667.aspx'
+      href: /rest/api/trafficmanager/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.network/trafficmanagerprofiles
 - name: Ресурсы
@@ -134,7 +134,7 @@
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/networking/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
+      href: /answers/topics/azure-virtual-network.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/traffic-manager/'
     - name: Калькулятор цен

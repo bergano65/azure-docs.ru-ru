@@ -102,6 +102,8 @@
   items:
     - name: Планы службы приложений
       href: overview-hosting-plans.md
+    - name: управления затратами;
+      href: overview-manage-costs.md
     - name: Функции ОС
       href: operating-system-functionality.md
     - name: Рекомендации по развертыванию
