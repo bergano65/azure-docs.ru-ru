@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: 495300d677d6d898bfc916e5115b801c815bd587
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: fbc4f11b450a645002daedc800d4fed74ed37a3d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461479"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219578"
 ---
 # <a name="ingest-data-into-azure-data-lake-storage-gen2"></a>Прием данных в Azure Data Lake Storage 2-го поколения 
 
@@ -23,7 +23,7 @@ ms.locfileid: "96461479"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**: Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-* **учетную запись хранения,** Azure Data Lake 2-го поколения используется в качестве хранилища *исходных* данных. Если у вас нет учетной записи хранения Azure, создайте ее по инструкциям из статьи [Создание учетной записи хранения Azure](../../storage/blobs/data-lake-storage-quickstart-create-account.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+* **учетную запись хранения,** Azure Data Lake 2-го поколения используется в качестве хранилища *исходных* данных. Если у вас нет учетной записи хранения Azure, создайте ее по инструкциям из статьи [Создание учетной записи хранения Azure](../../storage/common/storage-account-create.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json).
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 

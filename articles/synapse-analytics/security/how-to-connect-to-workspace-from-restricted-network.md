@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 10/25/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2e96cbf0c1464e27b0a384e8a813118056103b91
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 41403a59be0395a6d9874c7369bfe59c22f5ac17
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296714"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218371"
 ---
 # <a name="connect-to-workspace-resources-from-a-restricted-network"></a>Подключение к ресурсам рабочей области из ограниченной сети
 
@@ -40,7 +40,7 @@ ms.locfileid: "96296714"
 
 При создании других трех правил замените значение **тега службы назначения** на **азурефронтдур. интерфейс**, **AzureActiveDirectory** или **азуремонитор** из списка.
 
-Дополнительные сведения см. в статье [Обзор тегов служб](/azure/virtual-network/service-tags-overview).
+Дополнительные сведения см. в статье [Обзор тегов служб](../../virtual-network/service-tags-overview.md).
 
 ## <a name="step-2-create-private-link-hubs"></a>Шаг 2. Создание концентраторов частных ссылок
 
@@ -153,7 +153,7 @@ ms.locfileid: "96296714"
 ![Снимок экрана создания частной зоны DNS синапсе в зоне 5.](./media/how-to-connect-to-workspace-from-restricted-network/pdns-zone-5.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об [управляемой виртуальной сети рабочей области](./synapse-workspace-managed-vnet.md).
 

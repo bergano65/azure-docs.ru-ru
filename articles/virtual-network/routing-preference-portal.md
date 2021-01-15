@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/02/2020
 ms.author: mnayak
-ms.openlocfilehash: ef1e33a2e43f26dcaf794b2ed81f27d39639b52d
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 2c6295db96f951abd1fd069535b98639e723d93a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533984"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217572"
 ---
 # <a name="configure-routing-preference-for-a-public-ip-address-using-the-azure-portal"></a>Настройка предпочтительного варианта маршрутизации для общедоступного IP-адреса с помощью портала Azure
 
-В этой статье показано, как настроить [параметры маршрутизации](https://docs.microsoft.com/azure/virtual-network/routing-preference-overview) через сеть ISP (параметр **Интернета** ) для общедоступного IP-адреса. Созданный общедоступный IP-адрес можно связать со следующими ресурсами Azure для входящего и исходящего Интернет-трафика.
+В этой статье показано, как настроить [параметры маршрутизации](./routing-preference-overview.md) через сеть ISP (параметр **Интернета** ) для общедоступного IP-адреса. Созданный общедоступный IP-адрес можно связать со следующими ресурсами Azure для входящего и исходящего Интернет-трафика.
 
 * Виртуальная машина
 * Набор масштабирования виртуальных машин
@@ -56,5 +56,5 @@ ms.locfileid: "96533984"
 - См. сведения об [общедоступном IP-адресе с предпочтительным вариантом маршрутизации](routing-preference-overview.md).
 - [Настройка предпочтительного варианта маршрутизации для виртуальной машины](tutorial-routing-preference-virtual-machine-portal.md)
 - [Настройка предпочтительного варианта маршрутизации для общедоступного IP-адреса с помощью PowerShell](routing-preference-powershell.md)
-- См. дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+- См. дополнительные сведения об [общедоступных IP-адресах в Azure](./public-ip-addresses.md#public-ip-addresses).
 - См. сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).

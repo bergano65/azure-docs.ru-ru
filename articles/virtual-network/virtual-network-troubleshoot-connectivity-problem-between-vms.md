@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: eb94b67b026ed108f31f6cd802010577665ec0d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ece3e639e0ef3516696e2a0bad7deeb833433a6
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87286093"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219204"
 ---
 # <a name="troubleshooting-connectivity-problems-between-azure-vms"></a>Устранение проблем с подключением между виртуальными машинами Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "87286093"
 
 ### <a name="step-1-check-whether-nic-is-misconfigured"></a>Шаг 1. Проверка настройки сетевого интерфейса
 
-Выполните действия, указанные в статье [Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows](../virtual-machines/windows/reset-network-interface.md). 
+Выполните действия, указанные в статье [Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows](../virtual-machines/troubleshooting/reset-network-interface.md). 
 
 Если изменение конфигурации сетевого интерфейса не решило проблему, выполните указанные ниже действия.
 
@@ -62,8 +62,8 @@ ms.locfileid: "87286093"
 
 **Виртуальные машины с одним сетевым интерфейсом** 
 
-- [Повторное развертывание виртуальной машины Windows](../virtual-machines/windows/redeploy-to-new-node.md)
-- [Повторное развертывание виртуальной машины Linux](../virtual-machines/linux/redeploy-to-new-node.md)
+- [Повторное развертывание виртуальной машины Windows](../virtual-machines/troubleshooting/redeploy-to-new-node-windows.md)
+- [Повторное развертывание виртуальной машины Linux](../virtual-machines/troubleshooting/redeploy-to-new-node-linux.md)
 
 ### <a name="step-2-check-whether-network-traffic-is-blocked-by-nsg-or-udr"></a>Шаг 2. Проверка блокировки трафика группой безопасности сети или определяемым пользователем маршрутом
 
@@ -103,7 +103,7 @@ netstat -l
 
 ### <a name="step-7-check-whether-the-endpoint-is-created-for-the-classic-vm"></a>Шаг 7. Проверка наличия конечной точки классической виртуальной машины
 
-Все виртуальные машины, созданные в Azure с помощью классической модели развертывания, могут автоматически взаимодействовать с другими виртуальными машинами в той же облачной службе или виртуальной сети, используя канал частной сети. Однако компьютерам в других виртуальных сетях требуются конечные точки, чтобы направить входящий трафик к виртуальной машине. Дополнительные сведения см. в статье [Настройка конечных точек в классической виртуальной машине Windows в Azure](../virtual-machines/windows/classic/setup-endpoints.md).
+Все виртуальные машины, созданные в Azure с помощью классической модели развертывания, могут автоматически взаимодействовать с другими виртуальными машинами в той же облачной службе или виртуальной сети, используя канал частной сети. Однако компьютерам в других виртуальных сетях требуются конечные точки, чтобы направить входящий трафик к виртуальной машине. Дополнительные сведения см. в статье [Настройка конечных точек в классической виртуальной машине Windows в Azure](/previous-versions/azure/virtual-machines/windows/classic/setup-endpoints).
 
 ### <a name="step-8-try-to-connect-to-a-vm-network-share"></a>Шаг 8. Подключение к сетевой папке виртуальной машины
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 27372207df66b4198bd9c785ecc099fa88cbe548
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: b974af343907c98ebd7a318bc60a0e553a07a233
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335700"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219357"
 ---
 # <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Устранение неполадок: Не удалось удалить виртуальную сеть в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "94335700"
 
 Чтобы удалить виртуальную сеть, сначала необходимо удалить шлюз виртуальной сети.
 
-Для классических виртуальных сетей перейдите на страницу **обзора** классической виртуальной сети на портале Azure. В разделе **VPN-подключения** , если шлюз работает в виртуальной сети, отобразится IP-адрес шлюза. 
+Для классических виртуальных сетей перейдите на страницу **обзора** классической виртуальной сети на портале Azure. В разделе **VPN-подключения**, если шлюз работает в виртуальной сети, отобразится IP-адрес шлюза. 
 
 ![Проверка работы шлюза](media/virtual-network-troubleshoot-cannot-delete-vnet/classic-gateway.png)
 
@@ -64,15 +64,15 @@ ms.locfileid: "94335700"
 ### <a name="check-whether-azure-container-instances-still-exist-in-the-virtual-network"></a>Проверьте, не существуют ли в виртуальной сети экземпляры контейнеров Azure.
 
 1. В портал Azure перейдите на страницу **обзора** группы ресурсов.
-1. В заголовке списка ресурсов группы ресурсов выберите **Показывать скрытые типы**. Тип сетевого профиля по умолчанию скрыт в портал Azure.
+1. В заголовке списка ресурсов группы ресурсов выберите **Показать скрытые типы**. Тип сетевого профиля по умолчанию скрыт в портал Azure.
 1. Выберите сетевой профиль, связанный с группами контейнеров.
-1. Выберите команду **Удалить**.
+1. Нажмите кнопку **Удалить**.
 
    ![Снимок экрана со списком скрытых сетевых профилей.](media/virtual-network-troubleshoot-cannot-delete-vnet/container-instances.png)
 
 1. Удалите подсеть или виртуальную сеть еще раз.
 
-Если эти действия не помогли устранить проблему, используйте эти [Azure CLI команды](https://docs.microsoft.com/azure/container-instances/container-instances-vnet#clean-up-resources) для очистки ресурсов. 
+Если эти действия не помогли устранить проблему, используйте эти [Azure CLI команды](../container-instances/container-instances-vnet.md#clean-up-resources) для очистки ресурсов. 
 
 ### <a name="check-whether-azure-active-directory-domain-service-is-enabled-in-the-virtual-network"></a>Проверка, включена ли доменная служба Active Directory Azure в виртуальной сети
 

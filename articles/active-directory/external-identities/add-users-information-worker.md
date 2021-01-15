@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 352d5218f91fa55134a7515b6aeee49857847468
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 345cbe2efb644fe2b84d4a6021ff962337e29285
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173215"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219918"
 ---
 # <a name="how-users-in-your-organization-can-invite-guest-users-to-an-app"></a>Как пользователи в вашей организации могут приглашать гостевых пользователей в приложение
 
@@ -28,8 +28,8 @@ ms.locfileid: "96173215"
  - настройка в приложении самообслуживания и назначение группы приложению.
 
 > [!NOTE]
-> В этой статье описывается настройка самостоятельного управления для коллекции и приложений на основе SAML, добавленных в клиент Azure AD. Вы также можете [настроить группы самообслуживания Microsoft 365](../enterprise-users/groups-self-service-management.md) , чтобы пользователи могли управлять доступом к собственным группам Microsoft 365. Дополнительные сведения о том, как пользователи могут совместно использовать файлы Office и приложения с гостевыми пользователями, см. [в разделе гостевой доступ в Microsoft 365 группах](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6) и [совместное использование файлов и папок SharePoint](https://support.office.com/article/share-sharepoint-files-or-folders-1fe37332-0f9a-4719-970e-d2578da4941c).
-
+> * В этой статье описывается настройка самостоятельного управления для коллекции и приложений на основе SAML, добавленных в клиент Azure AD. Вы также можете [настроить группы самообслуживания Microsoft 365](../enterprise-users/groups-self-service-management.md) , чтобы пользователи могли управлять доступом к собственным группам Microsoft 365. Дополнительные сведения о том, как пользователи могут совместно использовать файлы Office и приложения с гостевыми пользователями, см. [в разделе гостевой доступ в Microsoft 365 группах](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6) и [совместное использование файлов и папок SharePoint](https://support.office.com/article/share-sharepoint-files-or-folders-1fe37332-0f9a-4719-970e-d2578da4941c).
+> * Пользователи могут приглашать гостей только в том случае, если у них есть **гостевая роль участника** .
 ## <a name="invite-a-guest-user-to-an-app-from-the-access-panel"></a>Приглашение гостевых пользователей в приложение с помощью панели доступа
 
 После настройки в приложении самообслуживания владельцы приложений могут пригласить гостевого пользователя в приложение, к которому они хотят предоставить общий доступ, с помощью панели доступа. Гостевого пользователя необязательно добавлять в Azure AD заранее. 
@@ -86,7 +86,7 @@ ms.locfileid: "96173215"
 3. Выберите **Группы**.
 4. В разделе **Параметры** выберите **Общие**.
 5. В разделе **Самостоятельное управление группами** рядом с элементом **Владельцы могут управлять запросами на членство в группе на панели доступа** выберите **Да**.
-6. Щелкните **Сохранить**.
+6. Выберите **Сохранить**.
 
 ### <a name="create-a-group-to-assign-to-the-app-and-make-the-user-an-owner"></a>создание группы для назначения приложению и назначение пользователя владельцем;
 1. Войдите на [портал Azure](https://portal.azure.com) как администратор Azure AD или глобальный администратор.

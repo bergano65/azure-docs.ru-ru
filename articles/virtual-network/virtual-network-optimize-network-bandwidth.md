@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/06/2020
 ms.author: steveesp
-ms.openlocfilehash: a9db2bcc0b44dfb6146517de8a139f34cd8584af
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: bb9235f4d1190bf7f71ddc007f09c9666c353234
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654461"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216807"
 ---
 # <a name="optimize-network-throughput-for-azure-virtual-machines"></a>Оптимизации пропускной способности сети для виртуальной машины Azure
 
@@ -152,7 +152,7 @@ sudo ./install.sh #or upgrade.sh if prior LIS was previously installed
 Дополнительные сведения о версии 4.2 служб интеграции Linux (LIS) для Hyper-V см. на [странице скачивания](https://www.microsoft.com/download/details.aspx?id=55106).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Развертывание виртуальных машин близко друг к другу для низкой задержки с [группой размещения с близкой](../virtual-machines/windows/co-location.md) назначением
+* Развертывание виртуальных машин близко друг к другу для низкой задержки с [группой размещения с близкой](../virtual-machines/co-location.md) назначением
 * Просмотрите оптимизированные результаты для своего сценария, используя сведения в статье [Проверка пропускной способности (NTTTCP)](virtual-network-bandwidth-testing.md).
 * Узнайте о том [, как пропускная способность выделяется виртуальным машинам](virtual-machine-network-throughput.md) .
 * Дополнительные сведения см. в статье [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md).

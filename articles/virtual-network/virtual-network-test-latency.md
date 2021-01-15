@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: steveesp
-ms.openlocfilehash: 77ea14097538f722569acb5a0371674776aac8e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8f167a7947c42ce837ec83b336ae636f593f2e4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84687809"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219264"
 ---
 # <a name="test-vm-network-latency"></a>Проверка задержки сети виртуальной машины
 
@@ -55,7 +55,7 @@ ms.locfileid: "84687809"
 При создании конфигурации виртуальной машины учитывайте следующие рекомендации.
 - Используйте последнюю версию Windows или Linux.
 - Для получения наилучших результатов включите функцию ускорения сети.
-- Развертывание виртуальных машин с помощью [группы размещения](https://docs.microsoft.com/azure/virtual-machines/linux/co-location)с учетом расположения Azure.
+- Развертывание виртуальных машин с помощью [группы размещения](../virtual-machines/co-location.md)с учетом расположения Azure.
 - Крупные виртуальные машины обычно работают лучше, чем небольшие.
 
 ### <a name="tips-for-analysis"></a>Советы по анализу
@@ -77,7 +77,7 @@ ms.locfileid: "84687809"
 
 ### <a name="allow-latteexe-through-windows-defender-firewall"></a>Разрешить latte.exe через брандмауэр защитника Windows
 
-В окне *приемника*создайте правило Allow на брандмауэре защитника Windows, чтобы разрешить поступление latte.exeного трафика. Проще всего разрешить всем latte.exe программу по имени, а не разрешать входящие TCP-порты.
+В окне *приемника* создайте правило Allow на брандмауэре защитника Windows, чтобы разрешить поступление latte.exeного трафика. Проще всего разрешить всем latte.exe программу по имени, а не разрешать входящие TCP-порты.
 
 Разрешите latte.exe через брандмауэр защитника Windows, выполнив следующую команду:
 
@@ -91,7 +91,7 @@ netsh advfirewall firewall add rule program=<path>\latte.exe name="Latte" protoc
 
 ### <a name="run-latency-tests"></a>Запуск тестов задержки
 
-* На *получателе*запустите latte.exe (запустите его из окна CMD, а не из PowerShell):
+* На *получателе* запустите latte.exe (запустите его из окна CMD, а не из PowerShell):
 
     ```cmd
     latte -a <Receiver IP address>:<port> -i <iterations>
@@ -105,13 +105,13 @@ netsh advfirewall firewall add rule program=<path>\latte.exe name="Latte" protoc
 
     `latte -a 10.0.0.4:5005 -i 65100`
 
-* На *отправителю*запустите latte.exe (запустите его из окна CMD, а не из PowerShell):
+* На *отправителю* запустите latte.exe (запустите его из окна CMD, а не из PowerShell):
 
     ```cmd
     latte -c -a <Receiver IP address>:<port> -i <iterations>
     ```
 
-    Результирующая команда совпадает с получателем, за исключением добавления &nbsp; *-c* для указания на то, что это *клиент*или *отправитель*:
+    Результирующая команда совпадает с получателем, за исключением добавления &nbsp; *-c* для указания на то, что это *клиент* или *отправитель*:
 
     `latte -c -a 10.0.0.4:5005 -i 65100`
 
@@ -123,7 +123,7 @@ netsh advfirewall firewall add rule program=<path>\latte.exe name="Latte" protoc
 
 ### <a name="install-sockperf-on-the-vms"></a>Установка Соккперф на виртуальных машинах
 
-На виртуальных машинах Linux как *отправитель* , так и *получатель*выполните следующие команды, чтобы подготовить соккперф на виртуальных машинах. Для основных дистрибутивов предоставляются команды.
+На виртуальных машинах Linux как *отправитель* , так и *получатель* выполните следующие команды, чтобы подготовить соккперф на виртуальных машинах. Для основных дистрибутивов предоставляются команды.
 
 #### <a name="for-red-hat-enterprise-linux-rhelcentos"></a>Для Red Hat Enterprise Linux (RHEL)/Центос
 
@@ -200,7 +200,7 @@ sockperf ping-pong -i 10.0.0.4 --tcp -m 350 -t 101 -p 12345  --full-rtt
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Повысьте задержку с помощью [группы размещения](https://docs.microsoft.com/azure/virtual-machines/linux/co-location)службы "близость" Azure.
+* Повысьте задержку с помощью [группы размещения](../virtual-machines/co-location.md)службы "близость" Azure.
 * Узнайте, как [оптимизировать сетевые подключения для виртуальных машин](../virtual-network/virtual-network-optimize-network-bandwidth.md) в вашем сценарии.
 * Узнайте о [том, как пропускная способность выделяется виртуальным машинам](../virtual-network/virtual-machine-network-throughput.md).
 * Дополнительные сведения см. в статье [часто задаваемые вопросы о виртуальной сети Azure](../virtual-network/virtual-networks-faq.md).

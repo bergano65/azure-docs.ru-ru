@@ -6,18 +6,18 @@ ms.service: virtual-network
 ms.topic: how-to
 ms.date: 08/31/2019
 ms.author: allensu
-ms.openlocfilehash: 04abc051cec8a6fb38ce6aa8f5347ae06cb8bd1d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0f569c623deb8e6249323cf1925d2c754eac7d42
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019758"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218847"
 ---
 # <a name="move-azure-network-security-group-nsg-to-another-region-using-azure-powershell"></a>Перемещение группы безопасности сети Azure (NSG) в другой регион с помощью Azure PowerShell
 
 Существуют различные сценарии, в которых необходимо переместить существующий группы безопасности сети из одного региона в другой. Например, может потребоваться создать NSG с теми же конфигурацией и правилами безопасности для тестирования. Вы также можете переместить NSG в другой регион в рамках планирования аварийного восстановления.
 
-Группы безопасности Azure нельзя перемещать из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующих правил конфигурации и безопасности NSG.  Затем можно разместить ресурс в другом регионе, экспортировав NSG в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблон в новом регионе.  Дополнительные сведения о диспетчер ресурсов и шаблонах см. [в разделе Экспорт групп ресурсов в шаблоны](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates).
+Группы безопасности Azure нельзя перемещать из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующих правил конфигурации и безопасности NSG.  Затем можно разместить ресурс в другом регионе, экспортировав NSG в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблон в новом регионе.  Дополнительные сведения о диспетчер ресурсов и шаблонах см. [в разделе Экспорт групп ресурсов в шаблоны](../azure-resource-manager/management/manage-resource-groups-powershell.md#export-resource-groups-to-templates).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -32,7 +32,7 @@ ms.locfileid: "96019758"
 
 - Убедитесь, что ваша подписка Azure позволяет создать группы безопасности сети в используемом целевом регионе. Свяжитесь со службой поддержки, чтобы включить необходимые квоты.
 
-- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления группы безопасности сети для этого процесса.  Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits).
+- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления группы безопасности сети для этого процесса.  Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
 
 ## <a name="prepare-and-move"></a>Подготовка и перемещение
@@ -43,19 +43,19 @@ ms.locfileid: "96019758"
 
 ### <a name="export-the-template-and-deploy-from-a-script"></a>Экспорт шаблона и развертывание из скрипта
 
-1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
+1. С помощью команды [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
 
-2. Получите идентификатор ресурса NSG, который необходимо переместить в целевой регион, и поместите его в переменную с помощью [Get-азнетворксекуритиграуп](https://docs.microsoft.com/powershell/module/az.network/get-aznetworksecuritygroup?view=azps-2.6.0):
+2. Получите идентификатор ресурса NSG, который необходимо переместить в целевой регион, и поместите его в переменную с помощью [Get-азнетворксекуритиграуп](/powershell/module/az.network/get-aznetworksecuritygroup?view=azps-2.6.0):
 
     ```azurepowershell-interactive
     $sourceNSGID = (Get-AzNetworkSecurityGroup -Name <source-nsg-name> -ResourceGroupName <source-resource-group-name>).Id
 
     ```
-3. Экспортируйте исходный NSG в JSON-файл в каталог, в котором выполняется команда [Export — азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
+3. Экспортируйте исходный NSG в JSON-файл в каталог, в котором выполняется команда [Export — азресаурцеграуп](/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
    
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceNSGID -IncludeParameterDefaultValue
@@ -99,7 +99,7 @@ ms.locfileid: "96019758"
             }
     ```
   
-7. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
+7. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
 
     ```azurepowershell-interactive
 
@@ -173,13 +173,13 @@ ms.locfileid: "96019758"
 
 9. Сохраните файл **\<resource-group-name>.json**.
 
-10. Создайте группу ресурсов в целевом регионе для развертывания целевого NSG с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0):
+10. Создайте группу ресурсов в целевом регионе для развертывания целевого NSG с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0):
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -187,7 +187,7 @@ ms.locfileid: "96019758"
     
     ```
 
-12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азнетворксекуритиграуп](https://docs.microsoft.com/powershell/module/az.network/get-aznetworksecuritygroup?view=azps-2.6.0):
+12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азнетворксекуритиграуп](/powershell/module/az.network/get-aznetworksecuritygroup?view=azps-2.6.0):
     
     ```azurepowershell-interactive
 
@@ -203,7 +203,7 @@ ms.locfileid: "96019758"
 
 ## <a name="discard"></a>Игнорировать 
 
-Если после развертывания вы хотите начать или отклонить NSG в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенный NSG будет удален.  Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
+Если после развертывания вы хотите начать или отклонить NSG в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенный NSG будет удален.  Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
 
 ```azurepowershell-interactive
 
@@ -213,7 +213,7 @@ Remove-AzResourceGroup -Name <target-resource-group-name>
 
 ## <a name="clean-up"></a>Очистка
 
-Чтобы сохранить изменения и завершить перемещение NSG, удалите исходный NSG или группу ресурсов, используйте [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0) или [Remove-азнетворксекуритиграуп](https://docs.microsoft.com/powershell/module/az.network/remove-aznetworksecuritygroup?view=azps-2.6.0):
+Чтобы сохранить изменения и завершить перемещение NSG, удалите исходный NSG или группу ресурсов, используйте [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0) или [Remove-азнетворксекуритиграуп](/powershell/module/az.network/remove-aznetworksecuritygroup?view=azps-2.6.0):
 
 ```azurepowershell-interactive
 
@@ -227,10 +227,10 @@ Remove-AzNetworkSecurityGroup -Name <source-nsg-name> -ResourceGroupName <source
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы переместили группу безопасности сети Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 
 
-- [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Перенос виртуальных машин Azure в другой регион](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md)
+- [Перенос виртуальных машин Azure в другой регион](../site-recovery/azure-to-azure-tutorial-migrate.md)

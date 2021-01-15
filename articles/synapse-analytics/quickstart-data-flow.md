@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/03/2020
-ms.openlocfilehash: 207679ad5b508b687c9cad372d144839fcaa501d
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: cb0fd5464f7025d71dd384c56233aefa6a6cd364
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94743853"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218728"
 ---
 # <a name="quickstart-transform-data-using-mapping-data-flows"></a>Краткое руководство. Преобразование данных с помощью потоков данных сопоставления
 
@@ -39,7 +39,7 @@ ms.locfileid: "94743853"
 
 После создания рабочей области Azure Synapse можно открыть Synapse Studio двумя способами:
 
-* Откройте рабочую область Synapse на [портале Azure](https://ms.portal.azure.com/#home). Выберите **Открыть** на карточке Open синапсе Studio в разделе Приступая к работе.
+* Откройте рабочую область Synapse на [портале Azure](https://ms.portal.azure.com/#home). Щелкните **Открыть** на карточке "Открыть Synapse Studio" в разделе "Начало работы".
 * Откройте [Azure Synapse Analytics](https://web.azuresynapse.net/) и войдите в рабочую область.
 
 Для целей этого краткого руководства в качестве примера мы используем рабочую область с именем adftest2020. При этом вы автоматически перейдете на домашнюю страницу Synapse Studio.
@@ -68,7 +68,7 @@ ms.locfileid: "94743853"
 
 После создания потока данных он будет автоматически отправлен на холст потока данных. На этом шаге вы создадите поток данных, который принимает MoviesDB.csv в хранилище ADLS и суммирует среднюю оценку комедиес с 1910 до 2000. Затем вы запишете этот файл обратно в хранилище ADLS.
 
-1. Над холстом потока данных продвиньте ползунок **Отладка потока данных** . Режим отладки позволяет выполнять интерактивное тестирование логики преобразования в динамическом кластере Spark. Подготовка кластеров потоков данных занимает 5-7 минут, и пользователям рекомендуется включить отладку первыми, если планируется разработка потока данных. Дополнительные сведения см. в статье [Режим отладки](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-debug-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+1. Над холстом потока данных продвиньте ползунок **Отладка потока данных** . Режим отладки позволяет выполнять интерактивное тестирование логики преобразования в динамическом кластере Spark. Подготовка кластеров потоков данных занимает 5-7 минут, и пользователям рекомендуется включить отладку первыми, если планируется разработка потока данных. Дополнительные сведения см. в статье [Режим отладки](../data-factory/concepts-data-flow-debug-mode.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json).
 
     ![Проведите отладку](media/quickstart-data-flow/debug-on.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "94743853"
 
 1. Назовите преобразование фильтра **филтереарс**. Щелкните поле Выражение рядом с полем **Фильтр** , чтобы открыть построитель выражений. Здесь вы укажете условие фильтрации.
 
-1. Построитель выражений потока данных позволяет интерактивно создавать выражения для использования в различных преобразованиях. Выражения могут включать встроенные функции, столбцы из входной схемы и определяемые пользователем параметры. Дополнительные сведения о построении выражений см. в разделе [Построитель выражений потока данных](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+1. Построитель выражений потока данных позволяет интерактивно создавать выражения для использования в различных преобразованиях. Выражения могут включать встроенные функции, столбцы из входной схемы и определяемые пользователем параметры. Дополнительные сведения о построении выражений см. в разделе [Построитель выражений потока данных](../data-factory/concepts-data-flow-expression-builder.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json).
 
     В этом кратком руководстве вы хотите отфильтровать фильмы для жанра комедия, которые поступили между годами 1910 и 2000. Поскольку в настоящее время в качестве года используется строка, ее необходимо преобразовать в целое число с помощью ```toInteger()``` функции. Используйте операторы "больше или равно" (>=) и "меньше или равно" (<=) для сравнения значений литерального года 1910 и 200-. Объедините эти выражения вместе с оператором AND (&&). Выражение выйдет следующим образом:
 
@@ -190,6 +190,6 @@ ms.locfileid: "94743853"
 Перейдите к следующим статьям, чтобы узнать о поддержке Azure синапсе Analytics.
 
 > [!div class="nextstepaction"]
-> [Конвейер и действия](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) 
->  [Общие сведения о](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) 
->  потоке данных сопоставления [Язык выражений потока данных](https://docs.microsoft.com/azure/data-factory/data-flow-expression-functions?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
+> [Конвейер и действия](../data-factory/concepts-pipelines-activities.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) 
+>  [Общие сведения о](../data-factory/concepts-data-flow-overview.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) 
+>  потоке данных сопоставления [Язык выражений потока данных](../data-factory/data-flow-expression-functions.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)

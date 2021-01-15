@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 536a9641b68ccd2510a7891b46483a322fb6ecb7
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 6c065b7a7269c8da42493ede50466f44f7dd2658
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900932"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219952"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -78,7 +78,7 @@ ms.locfileid: "97900932"
 - Microsoft Bookings
 - Кортана от Microsoft
 - Microsoft Dynamics 365
-- Microsoft Edge;
+- Microsoft Edge
 - Microsoft Excel
 - Microsoft Power Automate
 - Microsoft Invoicing.
@@ -124,7 +124,7 @@ ms.locfileid: "97900932"
 Этот параметр применяется к следующим клиентским приложениям.
 
 - Кортана от Microsoft
-- Microsoft Edge;
+- Microsoft Edge
 - Microsoft Excel
 - Microsoft Office
 - Microsoft OneDrive
@@ -139,7 +139,7 @@ ms.locfileid: "97900932"
 - Девять сообщений электронной почты & календарь
 
 > [!NOTE]
-> Microsoft Kaizala, Microsoft Skype для бизнеса и Microsoft Visio не поддерживают предоставление **политики защиты приложений** . Если требуется, чтобы эти приложения работали, используйте только **утвержденные приложения** , предоставляемые исключительно. Использование предложения OR между двумя грантами не будет работать для этих трех приложений.
+> Microsoft Teams, Microsoft Kaizala, Microsoft Skype для бизнеса и Microsoft Visio не поддерживают предоставление **политики защиты приложений** . Если требуется, чтобы эти приложения работали, используйте только **утвержденные приложения** , предоставляемые исключительно. Использование предложения OR между двумя грантами не будет работать для этих трех приложений.
 
 **Замечания**
 

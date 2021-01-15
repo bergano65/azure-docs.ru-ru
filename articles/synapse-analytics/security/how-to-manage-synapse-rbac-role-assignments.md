@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: f26b54a18ff137575cac208d70e4693c0b9914a8
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: c88371eb450d5b0e2e8b821cdec0e87190e291f8
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96572292"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218201"
 ---
 # <a name="how-to-manage-synapse-rbac-role-assignments-in-synapse-studio"></a>Управление назначениями ролей RBAC синапсе в синапсе Studio
 
@@ -65,7 +65,7 @@ ms.locfileid: "96572292"
 
 ![Добавление назначения роли для элемента рабочей области — Выбор типа элемента](./media/how-to-manage-synapse-rbac-role-assignments/access-control-add-workspace-item-assignment-select-item-type.png) 
 
-Выберите конкретный **элемент** , который будет использоваться в качестве области, а затем выберите **роль** , которая будет назначена, из раскрывающегося списка.  Раскрывающийся список содержит только те роли, которые являются допустимыми для выбранного типа элемента. [Подробнее](https://go.microsoft.com/fwlink/?linkid=2148306).  
+Выберите конкретный **элемент** , который будет использоваться в качестве области, а затем выберите **роль** , которая будет назначена, из раскрывающегося списка.  Раскрывающийся список содержит только те роли, которые являются допустимыми для выбранного типа элемента. [Подробнее](./synapse-workspace-synapse-rbac.md).  
 
 ![Добавление назначения роли для элемента рабочей области — Выбор роли](./media/how-to-manage-synapse-rbac-role-assignments/access-control-add-workspace-item-assignment-select-role.png) 
  
@@ -81,4 +81,4 @@ ms.locfileid: "96572292"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Общие сведения о ролях синапсе RBAC, необходимых для выполнения стандартных задач](./synapse-workspace-understand-what-role-you-need.md) 
+[Общие сведения о ролях синапсе RBAC, необходимых для выполнения стандартных задач](./synapse-workspace-understand-what-role-you-need.md)

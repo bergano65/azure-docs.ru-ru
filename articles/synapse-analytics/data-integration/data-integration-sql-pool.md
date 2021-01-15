@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 11/03/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: afebb6a67b4c8a33e812c0e51ff225f16cd35356
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6156bd72e3f4965a74798a3f91496eb8a321444e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461473"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219534"
 ---
 # <a name="ingest-data-into-a-dedicated-sql-pool"></a>Прием данных в выделенный пул SQL
 
@@ -23,7 +23,7 @@ ms.locfileid: "96461473"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**: Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-* **Учетная запись хранения Azure**. в качестве *исходного* хранилища данных используется Azure Data Lake Storage Gen 2. Если у вас нет учетной записи хранения Azure, создайте ее по инструкциям из статьи [Создание учетной записи хранения Azure](../../storage/blobs/data-lake-storage-quickstart-create-account.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+* **Учетная запись хранения Azure**. в качестве *исходного* хранилища данных используется Azure Data Lake Storage Gen 2. Если у вас нет учетной записи хранения Azure, создайте ее по инструкциям из статьи [Создание учетной записи хранения Azure](../../storage/common/storage-account-create.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json).
 * **Azure синапсе Analytics**. вы используете выделенный пул SQL в качестве *приемника* хранилища данных. Если у вас нет экземпляра Azure Synapse Analytics, выполните действия, приведенные в статье [Краткое руководство. Создание выделенного пула SQL (предварительная версия) с помощью портала Azure](../../azure-sql/database/single-database-create-quickstart.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), чтобы создать его.
 
 ## <a name="create-linked-services"></a>Создание связанных служб

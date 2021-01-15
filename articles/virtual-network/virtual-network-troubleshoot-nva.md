@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2018
 ms.author: genli
-ms.openlocfilehash: 3a8982b5626e3c19dbd49a3d2e20542d44b1a1da
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 18f2128b6869b4047cc6f35e1638aca81233a014
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368593"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219289"
 ---
 # <a name="network-virtual-appliance-issues-in-azure"></a>Неполадки сетевого виртуального модуля в Azure
 
@@ -127,7 +127,7 @@ ms.locfileid: "92368593"
 ## <a name="advanced-network-administrator-troubleshooting"></a>Устранение неполадок с расширенными функциями сети администратором
 
 ### <a name="capture-network-trace"></a>Запись трассировки сети
-Запустив **[PsPing](https://docs.microsoft.com/sysinternals/downloads/psping)** или **Nmap**, записывайте одновременную трассировку сети на исходной виртуальной машине, модуле NVA и виртуальной машине назначения, а затем остановите трассировку.
+Запустив **[PsPing](/sysinternals/downloads/psping)** или **Nmap**, записывайте одновременную трассировку сети на исходной виртуальной машине, модуле NVA и виртуальной машине назначения, а затем остановите трассировку.
 
 1. Чтобы записать параллельную трассировку сети, выполните следующую команду.
 

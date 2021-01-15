@@ -8,20 +8,20 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 699a7321646167b0a9fb20a77a40999ec33b14f0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9782cce4165487b612c0295dc893d120ed043225
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461342"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218269"
 ---
 # <a name="connect-to-your-azure-synapse-workspace-using-private-links"></a>Подключение к рабочей области Azure Synapse с использованием Приватных каналов
 
-Из этой статьи вы узнаете, как создать частную конечную точку для рабочей области Azure синапсе. Дополнительные сведения о частных каналах и частных конечных точках см. [здесь](https://docs.microsoft.com/azure/private-link/).
+Из этой статьи вы узнаете, как создать частную конечную точку для рабочей области Azure синапсе. Дополнительные сведения о частных каналах и частных конечных точках см. [здесь](../../private-link/index.yml).
 
 ## <a name="step-1-register-network-resource-provider"></a>Шаг 1. Зарегистрируйте поставщик сетевых ресурсов
 
-Если вы еще не сделали этого, зарегистрируйте поставщик сетевых ресурсов. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types) из списка поставщиков ресурсов. Если поставщик сетевых ресурсов уже зарегистрирован, перейдите к шагу 2.
+Если вы еще не сделали этого, зарегистрируйте поставщик сетевых ресурсов. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](../../azure-resource-manager/management/resource-providers-and-types.md) из списка поставщиков ресурсов. Если поставщик сетевых ресурсов уже зарегистрирован, перейдите к шагу 2.
 
 ## <a name="step-2-open-your-azure-synapse-workspace-in-azure-portal"></a>Шаг 2. Откройте рабочую область Synapse на портале Azure
 

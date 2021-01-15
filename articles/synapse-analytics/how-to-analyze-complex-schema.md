@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 06/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 43e4027c9d88b209ed0606e045dd5b4d47d3ff6e
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: a35cdebe5ff4db562b19dc4ceed069a831af4305
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088522"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220003"
 ---
 # <a name="analyze-complex-data-types-in-azure-synapse-analytics"></a>Анализ сложных типов данных в Azure синапсе Analytics
 
@@ -28,7 +28,7 @@ ms.locfileid: "92088522"
 
 ## <a name="what-are-arrays-and-nested-structures"></a>Что такое массивы и вложенные структуры?
 
-Следующий объект взят из [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). В этом объекте есть вложенные структуры и массивы, содержащие вложенные структуры.
+Следующий объект взят из [Application Insights](../azure-monitor/app/app-insights-overview.md). В этом объекте есть вложенные структуры и массивы, содержащие вложенные структуры.
 
 ```json
 {
@@ -221,4 +221,4 @@ with ( ProfileType varchar(50) '$.customerInfo.ProfileType',
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте, как запросить ссылку синапсе для Azure Cosmos DB с помощью Spark](./synapse-link/how-to-query-analytical-store-spark.md)
-* [Запрашивание вложенных типов Parquet](./sql/query-parquet-nested-types.md) 
+* [Запрашивание вложенных типов Parquet](./sql/query-parquet-nested-types.md)

@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4ab71138f110df19ec84fa8707b480ad1bc6e72c
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 9276ce07c68afa6f229dbc32198bc624d8887ace
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95255178"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217827"
 ---
 # <a name="azure-security-baseline-for-virtual-network-nat"></a>Базовый уровень безопасности Azure для NAT виртуальной сети
 
-Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](https://docs.microsoft.com/azure/security/benchmarks/overview-v1) к сети NAT для виртуальных сетей Майкрософт. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure.
+Этот базовый план безопасности применяет рекомендации из [тестового показателя безопасности Azure версии 1,0](../security/benchmarks/overview-v1.md) к сети NAT для виртуальных сетей Майкрософт. Azure Security Benchmark содержит рекомендации по обеспечению безопасности облачных решений в Azure.
 Содержимое группируются по **элементам управления безопасностью** , определенным в тестовом производительности системы безопасности Azure, и связанным рекомендациям, относящимся к NAT виртуальной сети. **Элементы управления** , неприменимые к NAT виртуальной сети, были исключены.
 
  
@@ -24,7 +24,7 @@ ms.locfileid: "95255178"
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность сети](https://docs.microsoft.com/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
@@ -34,15 +34,15 @@ ms.locfileid: "95255178"
 
 Используйте центр безопасности Azure и следуйте рекомендациям по защите сети, чтобы помочь защитить сетевые ресурсы Azure. Включите журналы потоков для групп безопасности сети и отправьте журналы в учетную запись хранения Azure для аудита. Кроме того, можно отправить журналы потоков в рабочую область Log Analytics, а затем использовать Аналитика трафика для получения сведений о шаблонах трафика в облаке Azure. Некоторые преимущества Аналитика трафика — возможность визуализировать сетевые активности, выявлять горячие участки и угрозы безопасности, анализировать шаблоны потоков трафика и указывать несетевые настройки. 
 
-- [Общие сведения о NAT для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/nat-overview)
+- [Общие сведения о NAT для виртуальной сети](./nat-overview.md)
 
-- [Ресурс шлюза NAT](https://docs.microsoft.com/azure/virtual-network/nat-gateway-resource)
+- [Ресурс шлюза NAT](./nat-gateway-resource.md)
 
-- [Включение журналов потоков для групп безопасности сети](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal) 
+- [Включение журналов потоков для групп безопасности сети](../network-watcher/network-watcher-nsg-flow-logging-portal.md) 
 
-- [Как включить и использовать Аналитика трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+- [Как включить и использовать Аналитика трафика](../network-watcher/traffic-analytics.md)
 
-- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+- [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../security-center/security-center-network-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -52,7 +52,7 @@ ms.locfileid: "95255178"
 
 **Руководство**. Включение записи пакетов наблюдателя за сетями для изучения аномальных действий. 
 
-- [Создание экземпляра наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+- [Создание экземпляра наблюдателя за сетями](../network-watcher/network-watcher-create.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -62,9 +62,9 @@ ms.locfileid: "95255178"
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для подсетей, настроенных с помощью ресурсов ШЛЮЗа NAT, с использованием встроенных или настраиваемых определений и назначений политик Azure.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Примеры политик Azure для работы в сети](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#network)
+- [Примеры политик Azure для работы в сети](../governance/policy/samples/built-in-policies.md#network)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -74,9 +74,9 @@ ms.locfileid: "95255178"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в ресурсах шлюза NAT и ресурсах виртуальной сети. Создайте оповещения в Azure Monitor, чтобы получать уведомления при изменении критических ресурсов.
 
-- [Просмотр и получение событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+- [Просмотр и получение событий журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -84,7 +84,7 @@ ms.locfileid: "95255178"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [производительность системы безопасности Azure: ведение журнала и мониторинг](https://docs.microsoft.com/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [производительность системы безопасности Azure: ведение журнала и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
@@ -92,9 +92,9 @@ ms.locfileid: "95255178"
 
 Кроме того, вы можете включить эти данные в Azure Sentinel или SIEM стороннего производителя.
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard) 
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -106,9 +106,9 @@ ms.locfileid: "95255178"
 
 **Руководство**. журналы действий, которые автоматически доступны, содержат все операции записи (размещение, публикация, удаление) для ресурсов шлюза NAT, за исключением операций чтения (Get). Журналы действий можно использовать для поиска ошибок при устранении неполадок или для мониторинга того, как пользователь в вашей организации изменил ресурс.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview) 
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md) 
 
 В настоящее время NAT виртуальной сети не создает никаких дополнительных журналов диагностики, которые настраиваются клиентами.
 
@@ -120,11 +120,11 @@ ms.locfileid: "95255178"
 
 **Руководство**. Использование центра безопасности Azure с рабочей областью log Analytics для мониторинга и оповещения о аномальных действиях, обнаруженных в журналах и событиях безопасности. Вместо этого можно включить и встроенные данные в Azure Sentinel.
 
-- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard) 
+- [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts) 
+- [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -132,7 +132,7 @@ ms.locfileid: "95255178"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Инвентаризация и управление активами](https://docs.microsoft.com/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: Инвентаризация и управление активами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
@@ -142,7 +142,7 @@ ms.locfileid: "95255178"
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать ресурсы на основе Azure Resource Manager.
 
-- [Запросы графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Запросы графа ресурсов Azure](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -160,11 +160,11 @@ ms.locfileid: "95255178"
 
 **Руководство**. применение тегов для управления ресурсами Azure.
 
-- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription) 
+- [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md) 
 
-- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create) 
+- [Создание групп управления](../governance/management-groups/create-management-group-portal.md) 
 
-- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+- [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -183,8 +183,8 @@ ms.locfileid: "95255178"
 **Руководство**. Использование политики Azure для ограничения типа ресурсов, которые могут быть созданы в ваших подписках.
 Используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage) 
-- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md) 
+- [Как создавать запросы с помощью Azure Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -194,9 +194,9 @@ ms.locfileid: "95255178"
 
 **Руководство**. Использование политики Azure для ограничения служб, которые можно подготавливать в вашей среде.
 
-- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-- [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#general)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/built-in-policies.md#general)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -204,7 +204,7 @@ ms.locfileid: "95255178"
 
 ## <a name="secure-configuration"></a>Настройка безопасности
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасная конфигурация](https://docs.microsoft.com/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
 
@@ -218,9 +218,9 @@ ms.locfileid: "95255178"
 
 **Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими определениями политик Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory (Azure AD), если они интегрированы с Azure DevOps, или Active Directory, если они интегрированы с TFS. 
 
-- [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops) 
+- [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops) 
 
-- [О разрешениях и группах в Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/security/about-permissions)
+- [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -236,7 +236,7 @@ ms.locfileid: "95255178"
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: реагирование на инциденты](https://docs.microsoft.com/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
@@ -288,21 +288,21 @@ ms.locfileid: "95255178"
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [тесты производительности системы безопасности Azure: испытания на проникновение и команды красных команд](https://docs.microsoft.com/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [тесты производительности системы безопасности Azure: испытания на проникновение и команды красных команд](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
-**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений. 
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию Майкрософт и рекомендации "красных команд", а затем выполните тест на проникновение в режиме реального времени для управляемых корпорацией Майкрософт облачной инфраструктуры, служб и приложений. 
 
-- [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
+- [Правила взаимодействия при выполнении тестирования на проникновение](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
 
-- [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Привлечение "красных команд для тестирования "Microsoft Cloud](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Customer
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- См. [Обзор производительности системы безопасности Azure v2](/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- См. [Обзор Azure Security Benchmark версии 2](../security/benchmarks/overview.md)
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

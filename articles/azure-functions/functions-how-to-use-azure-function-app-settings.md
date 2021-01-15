@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: 2526fd60d6e07ecf43864945f2b05858b41ca567
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 70aecc2613fbe21d34e36f9487d7ba383e140bc8
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98035212"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217368"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
 
@@ -19,11 +19,6 @@ ms.locfileid: "98035212"
 Отдельные функции в приложении-функции развертываются вместе и масштабируются вместе. Все функции в одном и том же приложении функции совместно используют ресурсы для каждого экземпляра, так как приложение функции масштабируется. 
 
 Строки подключения, переменные среды и другие параметры приложения определяются отдельно для каждого приложения функции. Все данные, которые должны совместно использоваться приложениями-функциями, должны храниться извне в постоянном хранилище.
-
-В этой статье описывается настройка приложений функций и управление ими. 
-
-> [!TIP]  
-> Многие параметры конфигурации можно также управлять с помощью [Azure CLI]. 
 
 ## <a name="get-started-in-the-azure-portal"></a>Начало работы на портале Azure
 
@@ -37,15 +32,17 @@ ms.locfileid: "98035212"
 
 ## <a name="work-with-application-settings"></a><a name="settings"></a>Работа с параметрами приложения
 
-На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции. Эти параметры хранятся в зашифрованном виде, поэтому необходимо выбрать параметр **Показать значения** , чтобы просмотреть значения на портале. Вы также можете получить доступ к параметрам приложения с помощью Azure CLI.
+Параметрами приложения можно управлять из [портал Azure](functions-how-to-use-azure-function-app-settings.md?tabs=portal#settings) и с помощью [Azure CLI](functions-how-to-use-azure-function-app-settings.md?tabs=azurecli#settings) и [Azure PowerShell](functions-how-to-use-azure-function-app-settings.md?tabs=powershell#settings). Вы также можете управлять параметрами приложения из [Visual Studio Code](functions-develop-vs-code.md#application-settings-in-azure) и из [Visual Studio](functions-develop-vs.md#function-app-settings). 
 
-### <a name="portal"></a>Портал
+Эти параметры хранятся в зашифрованном виде. Дополнительные сведения см. в разделе [Application Settings Security](security-concepts.md#application-settings).
 
-Чтобы добавить параметр на портале, выберите **параметр создать приложение** и добавьте новую пару «ключ-значение».
+# <a name="portal"></a>[Портал](#tab/portal)
+
+На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции. Для просмотра значений на портале необходимо выбрать параметр **Показать значения** . Чтобы добавить параметр на портале, выберите **параметр создать приложение** и добавьте новую пару «ключ-значение».
 
 ![Параметры приложения функции в портал Azure.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
 
-### <a name="azure-cli"></a>Azure CLI
+# <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 
 [`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list)Команда возвращает существующие параметры приложения, как показано в следующем примере:
 
@@ -62,6 +59,22 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 --resource-group <RESOURCE_GROUP_NAME> \
 --settings CUSTOM_FUNCTION_APP_SETTING=12345
 ```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+[`Get-AzFunctionAppSetting`](/powershell/module/az.functions/get-azfunctionappsetting)Командлет возвращает существующие параметры приложения, как показано в следующем примере: 
+
+```azurepowershell-interactive
+Get-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME>
+```
+
+[`Update-AzFunctionAppSetting`](/powershell/module/az.functions/update-azfunctionappsetting)Команда добавляет или обновляет параметр приложения. В следующем примере создается параметр с именем ключа `CUSTOM_FUNCTION_APP_SETTING` и значением `12345` :
+
+```azurepowershell-interactive
+Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME> -AppSetting @{"CUSTOM_FUNCTION_APP_SETTING" = "12345"}
+```
+
+---
 
 ### <a name="use-application-settings"></a>Использовать параметры приложения
 

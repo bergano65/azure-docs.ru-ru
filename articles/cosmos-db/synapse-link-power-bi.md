@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: be2657d9606f260fcea06d2535be87fc6976577c
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 8a3142199502b912f20ebe05c625aa40be9fab11
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915680"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218677"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Использование Power BI и бессерверного пула SQL синапсе (Предварительная версия) для анализа данных Azure Cosmos DB с помощью ссылки синапсе 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "97915680"
 
 ## <a name="create-a-database-and-views"></a>Создание базы данных и представлений
 
-В рабочей области синапсе перейдите на вкладку **Разработка** , щелкните **+** значок и выберите **скрипт SQL**.
+Создание представлений в базах данных master или по умолчанию не рекомендуется или не поддерживается. Поэтому необходимо запустить этот шаг, создав базу данных. В рабочей области синапсе перейдите на вкладку **Разработка** , щелкните **+** значок и выберите **скрипт SQL**.
 
 :::image type="content" source="./media/synapse-link-power-bi/add-sql-script.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 7d937542201792c0d1c0be69df9bd1c2b34edea3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 93feaef01b234eeb7ac363c18d8e9d8f52b009de
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004948"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216535"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -33,14 +33,14 @@ ms.locfileid: "96004948"
 - **[Azure синапсе Analytics](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*). общедоступна во всех регионах Azure.
 - **[Сервер базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*): общедоступный в регионах Azure, где доступна служба базы данных.
 - **[Сервер базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*): общедоступный в регионах Azure, где доступна служба базы данных.
-- **[База данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** (*Microsoft. SQL*): общедоступная версия в регионах Azure, где доступна служба базы данных.
-- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. азурекосмосдб*): общедоступная версия доступна во всех регионах Azure.
+- **[База данных Azure для MariaDB](../mariadb/concepts-data-access-security-vnet.md)** (*Microsoft. SQL*): общедоступная версия в регионах Azure, где доступна служба базы данных.
+- **[Azure Cosmos DB](../cosmos-db/how-to-configure-vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. азурекосмосдб*): общедоступная версия доступна во всех регионах Azure.
 - **[Azure Key Vault](../key-vault/general/overview-vnet-service-endpoints.md)** (*Microsoft. KeyVault*): общедоступная версия доступна во всех регионах Azure.
 - **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. servicebus*): общедоступная версия доступна во всех регионах Azure.
 - **[Концентраторы событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. EventHub*). общедоступно во всех регионах Azure.
 - **[Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. AzureActiveDirectory*): общедоступная версия доступна во всех регионах Azure, где доступна ADLS 1-го поколения.
-- **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** (*Microsoft. Web*): общедоступная версия доступна во всех регионах Azure, где доступна служба приложений.
-- **[Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal)** (*Microsoft. CognitiveServices*). общедоступная версия доступна во всех регионах Azure, где доступны переработающие службы.
+- **[Служба приложений Azure](../app-service/app-service-ip-restrictions.md)** (*Microsoft. Web*): общедоступная версия доступна во всех регионах Azure, где доступна служба приложений.
+- **[Azure Cognitive Services](../cognitive-services/cognitive-services-virtual-networks.md?tabs=portal)** (*Microsoft. CognitiveServices*). общедоступная версия доступна во всех регионах Azure, где доступны переработающие службы.
 
 **Общедоступная Предварительная версия**
 
@@ -81,7 +81,7 @@ ms.locfileid: "96004948"
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 - Настройка конечных точек службы в подсети в виртуальной сети. Конечные точки работают с любым типом вычислительных экземпляров, выполняющихся в этой подсети.
 - Вы можете настроить несколько конечных точек службы для всех поддерживаемых служб Azure (например, службы хранилища Azure или базы данных SQL Azure) в подсети.
@@ -89,7 +89,7 @@ ms.locfileid: "96004948"
 - Виртуальная сеть, в которой настраивается конечная точка, может относиться к той же подписке, что и ресурс службы Azure, либо же к другой подписке. Дополнительные сведения о разрешениях, которые требуются для настройки конечных точек и защиты служб Azure, см. в разделе [Подготовка](#provisioning).
 - Вы можете защитить новые или существующие ресурсы в виртуальных сетях с помощью конечных точек служб для поддерживаемых служб.
 
-### <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Особенности
 
 - После включения конечной точки службы исходные IP-адреса переключаются с использования общедоступных адресов IPv4 для использования их частного IPv4-адреса при взаимодействии со службой из этой подсети. Во время этого переключения все открытые TCP-подключения к службе закрываются. Убедитесь, что при включении или отключении конечной точки службы в подсети не выполняются критически важные задачи. Также удостоверьтесь, что приложения могут автоматически подключаться к службам Azure после этого переключения IP-адресов.
 
@@ -98,7 +98,7 @@ ms.locfileid: "96004948"
 
 - Группы безопасности сети (NSG) с конечными точками служб:
   - По умолчанию группы безопасности сети разрешает исходящий Интернет, а также разрешает трафик из виртуальной сети в службы Azure. Этот трафик продолжит работать с конечными точками службы, как есть. 
-  - Если вы хотите запретить весь исходящий Интернет и разрешить только трафик к определенным службам Azure, это можно сделать с помощью [тегов службы](security-overview.md#service-tags) в группы безопасности сети. Вы можете указать поддерживаемые службы Azure в качестве места назначения в правилах NSG, а Azure также обеспечивает обслуживание IP-адресов, лежащих в основе каждого тега. Дополнительные сведения см. в статье о [тегах служб Azure для групп NSG](security-overview.md#service-tags). 
+  - Если вы хотите запретить весь исходящий Интернет и разрешить только трафик к определенным службам Azure, это можно сделать с помощью [тегов службы](./network-security-groups-overview.md#service-tags) в группы безопасности сети. Вы можете указать поддерживаемые службы Azure в качестве места назначения в правилах NSG, а Azure также обеспечивает обслуживание IP-адресов, лежащих в основе каждого тега. Дополнительные сведения см. в статье о [тегах служб Azure для групп NSG](./network-security-groups-overview.md#service-tags). 
 
 ### <a name="scenarios"></a>Сценарии
 
@@ -138,18 +138,18 @@ ms.locfileid: "96004948"
 
 ## <a name="vnet-service-endpoint-policies"></a>Политики конечной точки службы виртуальной сети 
 
-Политики конечной точки службы виртуальной сети позволяют фильтровать трафик виртуальной сети в службах Azure. Этот фильтр разрешает только определенные ресурсы службы Azure через конечные точки службы. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [политики конечной точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
+Политики конечной точки службы виртуальной сети позволяют фильтровать трафик виртуальной сети в службах Azure. Этот фильтр разрешает только определенные ресурсы службы Azure через конечные точки службы. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [политики конечной точки службы виртуальной сети](./virtual-network-service-endpoint-policies-overview.md).
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
-Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
+Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](./virtual-networks-faq.md#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Настройка конечных точек служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md)
+- [Настройка конечных точек службы виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защита базы данных SQL Azure в виртуальной сети](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защита Azure синапсе Analytics для виртуальной сети](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fsql-data-warehouse%2ftoc.json)
 - [Интеграция служб Azure в виртуальные сети](virtual-network-for-azure-services.md)
-- [Политики конечных точек служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
+- [Политики конечных точек служб для виртуальной сети](./virtual-network-service-endpoint-policies-overview.md)
 - [Шаблон Azure Resource Manager](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)

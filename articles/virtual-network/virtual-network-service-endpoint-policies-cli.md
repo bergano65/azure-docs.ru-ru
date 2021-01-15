@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
-ms.openlocfilehash: a080c3953c48227301052a0bb151c8cba96e515a
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 9ce1e320a93a834a938ce95f3931d885d2214faa
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94737393"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216875"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-the-azure-cli"></a>Управление данными утечка в учетные записи хранения Azure с помощью политик конечной точки службы виртуальной сети с использованием Azure CLI
 
@@ -41,7 +41,7 @@ ms.locfileid: "94737393"
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+- Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -114,7 +114,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Каждая группа безопасности сети содержит несколько [правил безопасности по умолчанию](security-overview.md#default-security-rules). Следующее правило переопределяет правило безопасности по умолчанию, разрешающее исходящий доступ ко всем общедоступным IP-адресам. `destination-address-prefix "Internet"`Параметр запрещает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
+Каждая группа безопасности сети содержит несколько [правил безопасности по умолчанию](./network-security-groups-overview.md#default-security-rules). Следующее правило переопределяет правило безопасности по умолчанию, разрешающее исходящий доступ ко всем общедоступным IP-адресам. `destination-address-prefix "Internet"`Параметр запрещает исходящий доступ ко всем общедоступным IP-адресам. Предыдущее правило переопределяет это правило ввиду более высокого приоритета. Оно предоставляет доступ к общедоступным IP-адресам службы хранилища Azure.
 
 ```azurecli-interactive
 az network nsg rule create \

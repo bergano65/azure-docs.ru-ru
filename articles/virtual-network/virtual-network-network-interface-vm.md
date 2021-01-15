@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: f7253be2844f40ca52df2f9b3bc9cbba552fea2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b45bd2e2b9ad971891cbcb944286f40b4f66883
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85480139"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216977"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Добавление и удаление сетевых интерфейсов виртуальных машин
 
@@ -50,7 +50,7 @@ ms.locfileid: "85480139"
 
 Перед созданием виртуальной машины [Создайте сетевой интерфейс](virtual-network-network-interface.md#create-a-network-interface).
 
-|Инструмент|Get-Help|
+|Средство|Команда|
 |---|---|
 |CLI|[az network nic create](/cli/azure/network/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-network-nic-create)|
 |PowerShell|[New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json)|
@@ -61,11 +61,11 @@ ms.locfileid: "85480139"
 
 1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы найти существующую виртуальную машину. Найдите и щелкните **Виртуальные машины**.
 
-2. Выберите имя виртуальной машины. Она должна поддерживать количество сетевых интерфейсов, которое вы хотите добавить. Чтобы узнать, сколько сетевых интерфейсов поддерживает каждый размер виртуальной машины, см. размеры в Azure для [виртуальных машин Linux](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [виртуальных машин Windows](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+2. Выберите имя виртуальной машины. Она должна поддерживать количество сетевых интерфейсов, которое вы хотите добавить. Чтобы узнать, сколько сетевых интерфейсов поддерживает каждый размер виртуальной машины, см. размеры в Azure для [виртуальных машин Linux](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [виртуальных машин Windows](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 3. На панели команд виртуальной машины выберите команду " **Закрыть**", а затем нажмите **кнопку "ОК** " в диалоговом окне подтверждения. Затем дождитесь, пока **состояние** виртуальной машины не изменится на **остановлено (освобождено)**.
 
-4. В строке меню виртуальной **машины выберите сеть**  >  **Подключить сетевой интерфейс**. Затем в окне **Подключение существующего сетевого интерфейса**выберите сетевой интерфейс, который вы хотите подключить, и нажмите кнопку **ОК**.
+4. В строке меню виртуальной **машины выберите сеть**  >  **Подключить сетевой интерфейс**. Затем в окне **Подключение существующего сетевого интерфейса** выберите сетевой интерфейс, который вы хотите подключить, и нажмите кнопку **ОК**.
 
     >[!NOTE]
     >В выбранном сетевом интерфейсе не может быть включена Ускоренная сеть, не может быть назначен IPv6-адрес и он должен находиться в той же виртуальной сети с сетевым интерфейсом, подключенным к виртуальной машине в данный момент.
@@ -78,7 +78,7 @@ ms.locfileid: "85480139"
 
 ### <a name="commands"></a>Команды
 
-|Инструмент|Get-Help|
+|Средство|Команда|
 |---|---|
 |CLI|[AZ VM NIC Add](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-add) (Справочник); [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
 |PowerShell|[Add-азвмнетворкинтерфаце](/powershell/module/az.compute/add-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (ссылка); [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
@@ -100,7 +100,7 @@ ms.locfileid: "85480139"
 
 ### <a name="commands"></a>Команды
 
-|Инструмент|Get-Help|
+|Средство|Команда|
 |---|---|
 |CLI|[AZ VM NIC List](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-list)|
 |PowerShell|[Get-AzVM](/powershell/module/az.compute/get-azvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
@@ -124,7 +124,7 @@ ms.locfileid: "85480139"
 
 ### <a name="commands"></a>Команды
 
-|Инструмент|Get-Help|
+|Средство|Команда|
 |---|---|
 |CLI|[AZ VM NIC Remove](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az-vm-nic-remove) (Reference); [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
 |PowerShell|[Remove-азвмнетворкинтерфаце](/powershell/module/az.compute/remove-azvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) (Reference); [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|
@@ -133,7 +133,7 @@ ms.locfileid: "85480139"
 
 - К виртуальной машине должен быть подключен по крайней мере один сетевой интерфейс.
 
-- К виртуальной машине можно подключить столько сетевых интерфейсов, сколько поддерживает ее размер. Дополнительные сведения о количестве сетевых интерфейсов, поддерживаемых размером каждой виртуальной машины, см. в разделе размеры в Azure для [виртуальных машин Linux](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [виртуальных машин Windows](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Все размеры поддерживают как минимум два сетевых интерфейса.
+- К виртуальной машине можно подключить столько сетевых интерфейсов, сколько поддерживает ее размер. Дополнительные сведения о количестве сетевых интерфейсов, поддерживаемых размером каждой виртуальной машины, см. в разделе размеры в Azure для [виртуальных машин Linux](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [виртуальных машин Windows](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Все размеры поддерживают как минимум два сетевых интерфейса.
 
 - Сетевые интерфейсы, добавляемые в виртуальную машину, в настоящее время не могут быть присоединены к другой виртуальной машине. Дополнительные сведения о создании сетевого интерфейса см. в [этом разделе](virtual-network-network-interface.md#create-a-network-interface).
 
@@ -143,7 +143,7 @@ ms.locfileid: "85480139"
 
 - Вы можете контролировать, к какому сетевому интерфейсу отправляются исходящий трафик. Однако по умолчанию виртуальная машина отправляет весь исходящий трафик на IP-адрес, назначенный основной IP-конфигурации основного сетевого интерфейса.
 
-- В прошлом все виртуальные машины в одной группе доступности должны были иметь один или несколько сетевых интерфейсов. Теперь в одной группе доступности могут находиться виртуальные машины с любым количеством сетевых интерфейсов (в пределах количества, поддерживаемого размером виртуальной машины). Виртуальную машину можно добавить в группу доступности только при ее создании. Дополнительные сведения о группах доступности см. в разделе [Настройка нескольких виртуальных машин в группе доступности для обеспечения избыточности](../virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
+- В прошлом все виртуальные машины в одной группе доступности должны были иметь один или несколько сетевых интерфейсов. Теперь в одной группе доступности могут находиться виртуальные машины с любым количеством сетевых интерфейсов (в пределах количества, поддерживаемого размером виртуальной машины). Виртуальную машину можно добавить в группу доступности только при ее создании. Дополнительные сведения о группах доступности см. в разделе [Настройка нескольких виртуальных машин в группе доступности для обеспечения избыточности](../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 
 - Вы можете подключать сетевые интерфейсы в одной виртуальной машине к разным подсетям в виртуальной сети. Однако все сетевые интерфейсы должны быть подключены к одной виртуальной сети.
 
