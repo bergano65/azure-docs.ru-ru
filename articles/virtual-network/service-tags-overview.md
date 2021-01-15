@@ -13,32 +13,32 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: e357667e650e9feeb8dceeffe71c287cde9fe8a0
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 965795b96deda03531504952fc8afbea0acb41bf
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631607"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221958"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
 
 Тег службы представляет группу префиксов IP-адресов из определенной службы Azure. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов, сводя к минимуму сложность частых обновлений правил сетевой безопасности.
 
-Теги службы можно использовать для определения элементов управления доступом к сети для [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэра Azure](https://docs.microsoft.com/azure/firewall/service-tags). Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы, например **ApiManagement**, в соответствующем поле *источника* или *назначения* правила, можно разрешить или запретить трафик для соответствующей службы.
+Теги службы можно использовать для определения элементов управления доступом к сети для [групп безопасности сети](./network-security-groups-overview.md#security-rules) или [брандмауэра Azure](../firewall/service-tags.md). Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы, например **ApiManagement**, в соответствующем поле *источника* или *назначения* правила, можно разрешить или запретить трафик для соответствующей службы.
 
 Теги службы можно использовать для обеспечения изоляции сети и защиты ресурсов Azure от общего доступа через Интернет при доступе к службам Azure, имеющим общедоступные конечные точки. Создайте правила группы безопасности сети для входящих и исходящих подключений, чтобы запретить передачу трафика **Интернета** и разрешить входящий и исходящий трафик **AzureCloud** или других [доступных тегов](#available-service-tags) служб Azure.
 
 ![Сетевая изоляция служб Azure с помощью тегов служб](./media/service-tags-overview/service_tags.png)
 
 ## <a name="available-service-tags"></a>Доступные теги службы
-В следующей таблице перечислены все теги службы, доступные для использования в правилах [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules).
+В следующей таблице перечислены все теги службы, доступные для использования в правилах [группы безопасности сети](./network-security-groups-overview.md#security-rules).
 
 Столбцы указывают на следующее:
 
 - Подходит ли тег для правил, охватывающих входящий или исходящий трафик.
 - Поддерживает ли тег [региональные](https://azure.microsoft.com/regions) области.
-- Можно ли использовать тег в правилах [Брандмауэра Azure](https://docs.microsoft.com/azure/firewall/service-tags).
+- Можно ли использовать тег в правилах [Брандмауэра Azure](../firewall/service-tags.md).
 
 По умолчанию теги службы отображают диапазоны для всего облака. Некоторые теги службы также обеспечивают более детализированный контроль за счет запрета соответствующих диапазонов IP-адресов для указанного региона. Например, тег службы **Storage** представляет службу хранилища Azure для всего облака, тогда как тег **Storage.WestUS** ограничивает диапазон только диапазонами IP-адресов хранилища из региона WestUS. В следующей таблице показано, поддерживает ли каждый тег службы такую региональную область.  
 
@@ -57,7 +57,7 @@ ms.locfileid: "97631607"
 | **AzureBackup** |Azure Backup.<br/><br/>*Примечание.* Этот тег зависит от тегов **Storage** и **AzureActiveDirectory**. | Исходящие | Нет | Да |
 | **AzureBotService** | Служба Azure Bot. | Исходящие | Нет | Нет |
 | **AzureCloud** | Все [общедоступные IP-адреса центра обработки данных](https://www.microsoft.com/download/details.aspx?id=56519). | Исходящие | Да | Да |
-| **AzureCognitiveSearch** | Когнитивный поиск Azure. <br/><br/>Этот тег или IP-адреса, охватываемые этим тегом, можно использовать для предоставления индексаторам безопасного доступа к источникам данных. Дополнительные сведения см. в [документации по подключению индексатора](https://docs.microsoft.com/azure/search/search-indexer-troubleshooting#connection-errors) . <br/><br/> *Примечание.* IP-адрес службы поиска не включен в список диапазонов IP-адресов для этого тега службы, и его **также необходимо добавить** в брандмауэр IP-адресов источников данных. | Входящий трафик | Нет | Нет |
+| **AzureCognitiveSearch** | Когнитивный поиск Azure. <br/><br/>Этот тег или IP-адреса, охватываемые этим тегом, можно использовать для предоставления индексаторам безопасного доступа к источникам данных. Дополнительные сведения см. в [документации по подключению индексатора](../search/search-indexer-troubleshooting.md#connection-errors) . <br/><br/> *Примечание.* IP-адрес службы поиска не включен в список диапазонов IP-адресов для этого тега службы, и его **также необходимо добавить** в брандмауэр IP-адресов источников данных. | Входящий трафик | Нет | Нет |
 | **AzureConnectors** | Соединители Azure Logic Apps для пробных и серверных подключений. | Входящий трафик | Да | Да |
 | **AzureContainerRegistry** | Реестр контейнеров Azure. | Исходящие | Да | Да |
 | **AzureCosmosDB** | Azure Cosmos DB. | Исходящие | Да | Да |
@@ -72,17 +72,17 @@ ms.locfileid: "97631607"
 | **AzureInformationProtection** | Azure Information Protection.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**, **AzureFrontDoor.Frontend** и **AzureFrontDoor.FirstParty**. | Исходящие | Нет | Нет |
 | **AzureIoTHub** | Центр Интернета вещей Azure. | Исходящие | Нет | Нет |
 | **AzureKeyVault** | Azure Key Vault.<br/><br/>*Примечание.* Этот тег зависит от тега **AzureActiveDirectory**. | Исходящие | Да | Да |
-| **AzureLoadBalancer**. | Подсистема балансировки нагрузки инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Сюда входит только пробный трафик, а не реальный трафик к внутреннему ресурсу. Если Azure Load Balancer не используется, это правило можно переопределить. | both | Нет | Нет |
+| **AzureLoadBalancer**. | Подсистема балансировки нагрузки инфраструктуры Azure. Этот тег преобразуется в [виртуальный IP-адрес узла](./network-security-groups-overview.md#azure-platform-considerations) (168.63.129.16), из которого поступают пробы работоспособности Azure. Сюда входит только пробный трафик, а не реальный трафик к внутреннему ресурсу. Если Azure Load Balancer не используется, это правило можно переопределить. | both | Нет | Нет |
 | **AzureMachineLearning** | Машинное обучение Azure. | both | Нет | Да |
 | **AzureMonitor** | Log Analytics, Application Insights, AzMon и настраиваемые метрики (конечные точки GiG).<br/><br/>*Примечание.* Для Log Analytics этот тег зависит от тега **Storage**. | Исходящие | Нет | Да |
 | **AzureOpenDatasets** | Открытые наборы данных Azure.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureFrontDoor.Frontend** и **Storage**. | Исходящие | Нет | Нет |
-| **AzurePlatformDNS** | Служба DNS базовой инфраструктуры (по умолчанию).<br/><br>Этот тег можно использовать для отключения DNS по умолчанию. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations). Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
-| **AzurePlatformIMDS** | Служба метаданных экземпляров Azure (IMDS), которая является базовой службой инфраструктуры.<br/><br/>Этот тег можно использовать для отключения IMDS по умолчанию. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations). Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
-| **AzurePlatformLKM** | Лицензирование Windows или служба управления ключами.<br/><br/>С помощью этого тега можно отключить значения по умолчанию для лицензирования. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations).  Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
+| **AzurePlatformDNS** | Служба DNS базовой инфраструктуры (по умолчанию).<br/><br>Этот тег можно использовать для отключения DNS по умолчанию. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](./network-security-groups-overview.md#azure-platform-considerations). Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
+| **AzurePlatformIMDS** | Служба метаданных экземпляров Azure (IMDS), которая является базовой службой инфраструктуры.<br/><br/>Этот тег можно использовать для отключения IMDS по умолчанию. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](./network-security-groups-overview.md#azure-platform-considerations). Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
+| **AzurePlatformLKM** | Лицензирование Windows или служба управления ключами.<br/><br/>С помощью этого тега можно отключить значения по умолчанию для лицензирования. Это тег следует использовать с осторожностью. Ознакомьтесь с [рекомендациями по использованию платформы Azure](./network-security-groups-overview.md#azure-platform-considerations).  Также рекомендуется протестировать этот тег, прежде чем использовать его. | Исходящие | Нет | Нет |
 | **AzureResourceManager** | Azure Resource Manager. | Исходящие | Нет | Нет |
 | **AzureSignalR** | Служба Azure SignalR. | Исходящие | Нет | Нет |
 | **AzureSiteRecovery** | Azure Site Recovery.<br/><br/>*Примечание.* Этот тег зависит от тегов **AzureActiveDirectory**, **AzureKeyVault**, **EventHub**, **GuestAndHybridManagement** и **Storage**. | Исходящие | Нет | Нет |
-| **AzureTrafficManager** | IP-адреса пробы Диспетчера трафика Azure.<br/><br/>Дополнительные сведения об IP-адресах пробы Диспетчера трафика см. в статье [Диспетчер трафика Azure: вопросы и ответы](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs). | Входящий трафик | Нет | Да |  
+| **AzureTrafficManager** | IP-адреса пробы Диспетчера трафика Azure.<br/><br/>Дополнительные сведения об IP-адресах пробы Диспетчера трафика см. в статье [Диспетчер трафика Azure: вопросы и ответы](../traffic-manager/traffic-manager-faqs.md). | Входящий трафик | Нет | Да |  
 | **BatchNodeManagement** | Трафик управления для развертываний, выделенных для пакетной службы Azure. | both | Нет | Да |
 | **CognitiveServicesManagement** | Диапазоны адресов для трафика Cognitive Services Azure. | both | Нет | Нет |
 | **DataFactory**  | Фабрика данных Azure | both | Нет | Нет |
@@ -105,7 +105,7 @@ ms.locfileid: "97631607"
 | **Память** | служба хранилища Azure. <br/><br/>*Примечание.* Этот тег представляет службу, но не определенные экземпляры службы. Например, тег представляет службу хранилища Azure, но не определенную учетную запись хранения Azure. | Исходящие | Да | Да |
 | **StorageSyncService** | Служба хранилища Azure. | both | Нет | Нет |
 | **WindowsVirtualDesktop** | Виртуальный рабочий стол Windows. | both | Нет | Да |
-| **VirtualNetwork**; | Адресное пространство виртуальной сети (все диапазоны IP-адресов, определенные для виртуальной сети), все адресное пространство подключенных локальных сетей, [пиринговые](virtual-network-peering-overview.md) виртуальные сети, виртуальные сети, подключенные к [шлюзу виртуальной сети](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json), [виртуальный IP-адрес узла](security-overview.md#azure-platform-considerations) и префиксы адресов, используемые в [определенных пользователем маршрутах](virtual-networks-udr-overview.md). Этот тег также может содержать маршруты по умолчанию. | both | Нет | Нет |
+| **VirtualNetwork**; | Адресное пространство виртуальной сети (все диапазоны IP-адресов, определенные для виртуальной сети), все адресное пространство подключенных локальных сетей, [пиринговые](virtual-network-peering-overview.md) виртуальные сети, виртуальные сети, подключенные к [шлюзу виртуальной сети](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%3ftoc.json), [виртуальный IP-адрес узла](./network-security-groups-overview.md#azure-platform-considerations) и префиксы адресов, используемые в [определенных пользователем маршрутах](virtual-networks-udr-overview.md). Этот тег также может содержать маршруты по умолчанию. | both | Нет | Нет |
 
 >[!NOTE]
 >В классической модели развертывания (до Azure Resource Manager) поддерживается подмножество тегов, перечисленных в предыдущей таблице. Написание этих тегов различается:
@@ -128,9 +128,9 @@ ms.locfileid: "97631607"
 ### <a name="use-the-service-tag-discovery-api-public-preview"></a>Использование API обнаружения тегов служб (общедоступная предварительная версия)
 Актуальный список тегов служб вместе со сведениями о диапазоне IP-адресов можно получить программным способом:
 
-- [REST](https://docs.microsoft.com/rest/api/virtualnetwork/servicetags/list)
-- [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.network/Get-AzNetworkServiceTag?view=azps-2.8.0&viewFallbackFrom=azps-2.3.2)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags)
+- [REST](/rest/api/virtualnetwork/servicetags/list)
+- [Azure PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag?view=azps-2.8.0&viewFallbackFrom=azps-2.3.2)
+- [Azure CLI](/cli/azure/network?view=azure-cli-latest#az-network-list-service-tags)
 
 > [!NOTE]
 > В общедоступной предварительной версии API обнаружения может возвращать менее актуальную информацию, чем сведения из скачиваемых файлов JSON. (См. следующий раздел.)
@@ -151,7 +151,7 @@ ms.locfileid: "97631607"
 
 ### <a name="tips"></a>Советы 
 - Наличие обновления можно отслеживать по увеличению значения *changeNumber* в файле JSON. Для каждого подраздела (например, **Storage.WestUS**) имеется собственное значение *changeNumber*, которое увеличивается по мере появления изменений. Значение *changeNumber* в файле увеличивается при изменении любого из подразделов.
-- Примеры синтаксического анализа сведений о теге службы (например, получение всех диапазонов адресов для хранилища в WestUS) см. в [документации по API обнаружения тегов служб PowerShell](https://aka.ms/discoveryapi_powershell).
+- Примеры синтаксического анализа сведений о теге службы (например, получение всех диапазонов адресов для хранилища в WestUS) см. в [документации по API обнаружения тегов служб PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag?viewFallbackFrom=azps-2.3.2).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [создать группу безопасности сети](tutorial-filter-network-traffic.md).

@@ -10,13 +10,13 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
-ms.date: 09/15/2020
-ms.openlocfilehash: 9dfe70cf6c91a0c12604f91e583a9a4eb9b4e088
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 1/14/2021
+ms.openlocfilehash: e21a5a5be03ffa4ada362247c488ee7d12bd50f7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308820"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222230"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Ограничения ресурсов для базы данных SQL Azure и серверов Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "93308820"
 - Увеличение объема вычислительных ресурсов базы данных или эластичного пула для предоставления базе данных дополнительных вычислительных ресурсов. См. разделы [Масштабирование ресурсов отдельной базы данных](single-database-scale.md) и [Масштабирование ресурсов эластичного пула](elastic-pool-scale.md).
 - Оптимизация запросов для уменьшения использования ресурсов ЦП каждым запросом. Дополнительные сведения см. в разделе [Настройка запросов и указания на них](performance-guidance.md#query-tuning-and-hinting).
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Хранение
 
 Когда используемое пространство базы данных достигает максимального размера, операции вставки и обновления, увеличивающие размер данных, завершаются сбоем и клиенты получают [сообщение об ошибке](troubleshoot-common-errors-issues.md). Инструкции SELECT и DELETE продолжают выполняться.
 
@@ -80,7 +80,7 @@ ms.locfileid: "93308820"
 - Повышение уровня служб или объема вычислительных ресурсов базы данных или эластичного пула. См. разделы [Масштабирование ресурсов отдельной базы данных](single-database-scale.md) и [Масштабирование ресурсов эластичного пула](elastic-pool-scale.md).
 - Оптимизация запросов для сокращения использования ресурсов, необходимых каждому запросу, если причиной повышенного использования рабочих ролей является состязание за вычислительные ресурсы. Дополнительные сведения см. в разделе [Настройка запросов и указания на них](performance-guidance.md#query-tuning-and-hinting).
 - Уменьшение параметра [MAXDOP](/sql/database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option#Guidelines) (максимальная степень параллелизма).
-- Оптимизация рабочей нагрузки запросов для сокращения числа вхождений и длительности блокировки запросов.
+- Оптимизация рабочей нагрузки запросов для сокращения числа вхождений и длительности блокировки запросов. Дополнительные сведения см. в статье [изучение и устранение проблем с БЛОКИРОВКОЙ SQL Azure](understand-resolve-blocking.md).
 
 ### <a name="memory"></a>Память
 

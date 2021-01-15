@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 16b37258d922db59f520d4e30c45773f6d1108cf
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 2f9fa6e7ef9a7ee8ea7dd2a09622f26f6fd9739e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341138"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223131"
 ---
 # <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio для мониторинга приложений Apache Spark
 
@@ -33,7 +33,7 @@ ms.locfileid: "93341138"
 
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
 
-- Рабочая область синапсе Studio. Инструкции см. [в разделе Создание рабочей области синапсе Studio](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace#create-a-workspace).
+- Рабочая область синапсе Studio. Инструкции см. [в разделе Создание рабочей области синапсе Studio](../../machine-learning/how-to-manage-workspace.md#create-a-workspace).
 
 - Пул Apache Spark.
 
@@ -43,11 +43,11 @@ ms.locfileid: "93341138"
 
 ## <a name="view-completed-apache-spark-application"></a>Просмотр завершенного Apache Spark приложения
 
-Откройте **монитор** , а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о завершенных Apache Spark приложениях, выберите Apache Spark приложение и просмотрите сведения.
+Откройте **монитор**, а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о завершенных Apache Spark приложениях, выберите Apache Spark приложение и просмотрите сведения.
 
   ![Выбор выполненного задания](./media/how-to-monitor-spark-applications/select-completed-job.png)
 
-1. Проверьте **Завершенные задачи** , **состояние** и **общую длительность**.
+1. Проверьте **Завершенные задачи**, **состояние** и **общую длительность**.
 
 2. Обновить запрос журнала.
 
@@ -92,11 +92,11 @@ ms.locfileid: "93341138"
 
 ## <a name="monitor-running-apache-spark-application"></a>Мониторинг работающего приложения Apache Spark
 
-Откройте **монитор** , а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о Apache Spark приложениях, которые выполняются, выберите приложение отправки Apache Spark и просмотрите сведения. Если приложение Apache Spark все еще выполняется, можно отслеживать ход выполнения.
+Откройте **монитор**, а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о Apache Spark приложениях, которые выполняются, выберите приложение отправки Apache Spark и просмотрите сведения. Если приложение Apache Spark все еще выполняется, можно отслеживать ход выполнения.
 
    ![Выбор выполняющегося задания](./media/how-to-monitor-spark-applications/select-running-job.png)
 
-1. Проверьте **Завершенные задачи** , **состояние** и **общую длительность**.
+1. Проверьте **Завершенные задачи**, **состояние** и **общую длительность**.
 
 2. **Отмена** Apache Spark приложения.
 
@@ -116,11 +116,11 @@ ms.locfileid: "93341138"
 
 ## <a name="view-canceled-apache-spark-application"></a>Просмотр отмененного Apache Spark приложения
 
-Откройте **монитор** , а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения об отмененных Apache Spark приложениях, выберите Apache Spark приложение и просмотрите сведения.
+Откройте **монитор**, а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения об отмененных Apache Spark приложениях, выберите Apache Spark приложение и просмотрите сведения.
 
  ![Выбор отмененного задания](./media/how-to-monitor-spark-applications/select-cancelled-job.png) 
 
-1. Проверьте **Завершенные задачи** , **состояние** и **общую длительность**.
+1. Проверьте **Завершенные задачи**, **состояние** и **общую длительность**.
 
 2. Обновите запрос журнала.
 
@@ -138,11 +138,11 @@ ms.locfileid: "93341138"
 
 ## <a name="debug-failed-apache-spark-application"></a>Сбой отладки Apache Spark приложение
 
-Откройте **монитор** , а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о неудачных Apache Spark приложениях, выберите Apache Spark приложение и просмотрите сведения.
+Откройте **монитор**, а затем выберите **Apache Spark приложения**. Чтобы просмотреть сведения о неудачных Apache Spark приложениях, выберите Apache Spark приложение и просмотрите сведения.
 
 ![Выберите невыполненное задание](./media/how-to-monitor-spark-applications/select-failed-job.png)
 
-1. Проверьте **Завершенные задачи** , **состояние** и **общую длительность**.
+1. Проверьте **Завершенные задачи**, **состояние** и **общую длительность**.
 
 2. Обновить запрос журнала.
 
@@ -156,6 +156,6 @@ ms.locfileid: "93341138"
 
    ![сведения о невыполненном задании](./media/how-to-monitor-spark-applications/failed-job-info.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о выполнении конвейера мониторинга см. в статье [выполнение конвейера мониторинга с помощью синапсе Studio](how-to-monitor-pipeline-runs.md) .  
+Дополнительные сведения о выполнении конвейера мониторинга см. в статье [выполнение конвейера мониторинга с помощью синапсе Studio](how-to-monitor-pipeline-runs.md) .

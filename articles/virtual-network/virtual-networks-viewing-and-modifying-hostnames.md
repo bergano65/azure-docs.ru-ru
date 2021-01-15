@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 3f8c35604af9780fb4299bbd7bfd87c3d93ac537
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed250e3f32965fc450102fb14b93b93d6753ab3e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84702845"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222791"
 ---
 # <a name="viewing-and-modifying-hostnames"></a>Просмотр и изменение имен узлов
-Чтобы позволить ссылаться на экземпляры ролей по имени узла, необходимо задать значение имени узла в файле конфигурации службы для каждой роли. Для этого добавьте нужное имя узла в атрибут **vmName** элемента **Role**. Значение атрибута **vmName** используется в качестве основы для имени узла каждого экземпляра роли. Например, если **vmName** — *webrole* и существует три экземпляра этой роли, имена узлов экземпляров будут следующими: *webrole0*, *webrole1* и *webrole2*. Вам не нужно указывать имя узла для виртуальных машин в файле конфигурации, так как имя узла виртуальной машины заполняется на основе ее имени. Дополнительные сведения о настройке службы Microsoft Azure см. в статье, посвященной [схеме конфигурации службы Azure (файл CSCFG)](https://msdn.microsoft.com/library/azure/ee758710.aspx).
+Чтобы позволить ссылаться на экземпляры ролей по имени узла, необходимо задать значение имени узла в файле конфигурации службы для каждой роли. Для этого добавьте нужное имя узла в атрибут **vmName** элемента **Role**. Значение атрибута **vmName** используется в качестве основы для имени узла каждого экземпляра роли. Например, если **vmName** — *webrole* и существует три экземпляра этой роли, имена узлов экземпляров будут следующими: *webrole0*, *webrole1* и *webrole2*. Вам не нужно указывать имя узла для виртуальных машин в файле конфигурации, так как имя узла виртуальной машины заполняется на основе ее имени. Дополнительные сведения о настройке службы Microsoft Azure см. в статье, посвященной [схеме конфигурации службы Azure (файл CSCFG)](/previous-versions/azure/reference/ee758710(v=azure.100)).
 
 ## <a name="viewing-hostnames"></a>Просмотр имен узлов
 Имена узлов виртуальных машин и экземпляров ролей в облачной службе можно просмотреть с помощью приведенных ниже средств.
@@ -39,7 +39,7 @@ ms.locfileid: "84702845"
 ### <a name="azure-service-management-rest-api"></a>Интерфейс API REST управления службой Azure
 В клиенте REST выполните следующие действия:
 
-1. Убедитесь, что у вас есть сертификат клиента для подключения к порталу Azure. Чтобы получить сертификат клиента, выполните действия, описанные в разделе [Пошаговое руководство. Скачивание и импорт параметров публикации и информации о подписке](https://msdn.microsoft.com/library/dn385850.aspx). 
+1. Убедитесь, что у вас есть сертификат клиента для подключения к порталу Azure. Чтобы получить сертификат клиента, выполните действия, описанные в разделе [Пошаговое руководство. Скачивание и импорт параметров публикации и информации о подписке](/previous-versions/dynamicsnav-2013/dn385850(v=nav.70)). 
 2. Задайте запись заголовка с именем x-ms-version и значением 2013-11-01.
 3. Отправить запрос в следующем формате: https: \/ /Management.Core.Windows.NET/ \<subscrition-id\> /Services/hostedservices/ \<service-name\> ? embed-Detail = true
 4. Найдите элемент **HostName** для каждого элемента **RoleInstance**.
@@ -55,9 +55,8 @@ ms.locfileid: "84702845"
 ## <a name="next-steps"></a>Дальнейшие действия
 [Разрешение имен (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances.md)
 
-[Схема конфигурации службы Azure (CSCFG-файл)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
+[Схема конфигурации службы Azure (CSCFG-файл)](/previous-versions/azure/reference/ee758710(v=azure.100))
 
-[Схема настройки виртуальной сети Azure](https://go.microsoft.com/fwlink/?LinkId=248093)
+[Схема настройки виртуальной сети Azure](/previous-versions/azure/reference/jj157100(v=azure.100))
 
-[Укажите параметры DNS с помощью файлов конфигурации сети](virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md)
-
+[Укажите параметры DNS с помощью файлов конфигурации сети](/previous-versions/azure/virtual-network/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file)

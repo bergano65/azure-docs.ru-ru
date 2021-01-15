@@ -8,12 +8,12 @@ ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: e582415d9a83dc506b77d506f3e0803002129a07
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 24487d3028b90d28f302a6f259096ba68c964541
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180053"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222128"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Использование Azure Digital двойников для обновления карт Azure Maps
 
@@ -31,7 +31,7 @@ ms.locfileid: "98180053"
     * Вы будете расширять эту двойника с помощью дополнительной конечной точки и маршрута. Вы также добавите в приложение функции другую функцию из этого руководства. 
 * Следуйте указаниям в руководстве по Azure Maps [*. Создайте карты с помощью Azure Maps Creator*](../azure-maps/tutorial-creator-indoor-maps.md) , чтобы создать Azure Mapsную карту с набором *состояний компонентов*.
     * [Feature статесетс](../azure-maps/creator-indoor-maps.md#feature-statesets) — это коллекции динамических свойств (состояний), назначенных функциям набора данных, например комнатам или оборудованию. В приведенном выше руководстве по Azure Mapsю набор состояния компонента сохраняет состояние комнаты, которое будет отображаться на карте.
-    * Вам потребуется *идентификатор* и идентификатор *подписки* Azure Maps.
+    * Вам понадобятся *идентификаторы* и *ключ подписки* Azure Maps.
 
 ### <a name="topology"></a>Топология
 
@@ -43,7 +43,7 @@ ms.locfileid: "98180053"
 
 Сначала вы создадите маршрут в Azure Digital двойников, чтобы перенаправить все события обновления двойника в раздел сетки событий. Затем вы будете использовать функцию для считывания этих сообщений и обновления набор состояний компонентов в Azure Maps. 
 
-## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Создание маршрута и фильтрация для двойника уведомлений об обновлении
+## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Создание маршрута и фильтра для уведомлений об обновлении цифрового двойника
 
 Экземпляры Azure Digital двойников могут создавать события обновления двойника при каждом обновлении состояния двойника. Руководство по цифровому двойников Azure. [*Подключение к комплексному решению*](./tutorial-end-to-end.md) , описанному выше, рассматривается в сценарии, в котором для обновления атрибута температуры, прикрепленного к двойника комнаты, используется термометр. Вы будете расширять это решение, подписавшись на уведомления об обновлениях для двойников и используя эти сведения для обновления карт.
 
@@ -59,7 +59,7 @@ ms.locfileid: "98180053"
     az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
     ```
 
-3. Создайте маршрут в Azure Digital двойников, чтобы отправить события обновления двойника в конечную точку.
+3. Создайте маршрут в Azure Digital Twins для отправки событий обновления цифрового двойника в конечную точку.
 
     >[!NOTE]
     >В Cloud Shell присутствует **известная проблема**, которая затрагивает такие группы команд: `az dt route`, `az dt model`, `az dt twin`.
@@ -72,7 +72,7 @@ ms.locfileid: "98180053"
 
 ## <a name="create-a-function-to-update-maps"></a>Создание функции для обновления карт
 
-Вы создадите функцию, активируемую с помощью функции "Сетка событий" в приложении-функции, из комплексного учебника ([*Учебник: подключение комплексного решения*](./tutorial-end-to-end.md)). Эта функция выполнит распаковку этих уведомлений и отправит обновления в Azure Maps наборе состояний компонентов, чтобы обновить температуру одной комнаты. 
+Вы создадите *функцию, активируемую с* помощью функции "Сетка событий" в приложении-функции, из комплексного учебника ([*Учебник: подключение комплексного решения*](./tutorial-end-to-end.md)). Эта функция выполнит распаковку этих уведомлений и отправит обновления в Azure Maps наборе состояний компонентов, чтобы обновить температуру одной комнаты. 
 
 Справочные сведения см. в следующем документе: триггер службы " [*Сетка событий Azure" для функций Azure*](../azure-functions/functions-bindings-event-grid-trigger.md).
 
@@ -83,8 +83,8 @@ ms.locfileid: "98180053"
 В приложении функции необходимо задать две переменные среды. Один из них — [ключ первичной подписки Azure Maps](../azure-maps/quick-demo-map-app.md#get-the-primary-key-for-your-account), а второй — [идентификатор своего Azure Maps](../azure-maps/tutorial-creator-indoor-maps.md#create-a-feature-stateset).
 
 ```azurecli-interactive
-az functionapp config appsettings set --settings "subscription-key=<your-Azure-Maps-primary-subscription-key> -g <your-resource-group> -n <your-App-Service-(function-app)-name>"
-az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-stateset-ID> -g <your-resource-group> -n <your-App-Service-(function-app)-name>
+az functionapp config appsettings set --name <your-App-Service-(function-app)-name> --resource-group <your-resource-group> --settings "subscription-key=<your-Azure-Maps-primary-subscription-key>"
+az functionapp config appsettings set --name <your-App-Service-(function-app)-name>  --resource-group <your-resource-group> --settings "statesetID=<your-Azure-Maps-stateset-ID>"
 ```
 
 ### <a name="view-live-updates-on-your-map"></a>Просмотр динамических обновлений на карте
@@ -94,7 +94,7 @@ az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-st
 1. Начните отправлять смоделированные данные IoT, запустив проект **девицесимулатор** из учебника по цифровым двойников Azure [*: подключение комплексного решения*](tutorial-end-to-end.md). Инструкции для этого см. в разделе [*Настройка и запуск моделирования*](././tutorial-end-to-end.md#configure-and-run-the-simulation) .
 2. Используйте [модуль **Azure Maps**](../azure-maps/how-to-use-indoor-module.md) для отображения карт, созданных в Azure Maps Creator.
     1. Скопируйте HTML-код из [*примера: используйте модуль Maps*](../azure-maps/how-to-use-indoor-module.md#example-use-the-indoor-maps-module) в учебнике по картам для подразделов [*: используйте модуль map Maps (Azure Maps*](../azure-maps/how-to-use-indoor-module.md) ) к локальному файлу.
-    1. Замените *тилесетид* и *статесетид* в локальном HTML-файле своими значениями.
+    1. Замените *ключ подписки*, *тилесетид* и *статесетид*  в локальном HTML-файле своими значениями.
     1. Откройте этот файл в браузере.
 
 Оба образца отправляют температуру в совместимом диапазоне, поэтому на карте должен отображаться цвет для обновления комнаты 121 примерно каждые 30 секунд.

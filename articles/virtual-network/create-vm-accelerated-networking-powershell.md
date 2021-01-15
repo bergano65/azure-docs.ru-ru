@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 04/15/2020
 ms.author: gsilva
-ms.openlocfilehash: fd50af98fe0d7f20273c45e2b86c18215a3626f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3728a2b67529bab0900d42b3e39140d9329bc83
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289632"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223641"
 ---
-# <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Создание виртуальной машины Windows с ускоренной сетью с помощью Azure PowerShell
+# <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Создание виртуальной машины Windows с функцией ускорения сети с помощью Azure PowerShell
 
 В этом руководстве вы узнаете, как создать виртуальную машину Windows с ускоренной сетью.
 
@@ -65,7 +65,7 @@ ms.locfileid: "87289632"
 
 В экземплярах, поддерживающих технологию Hyper-Threading, Технология ускоренной сети поддерживается на экземплярах виртуальных машин с четырьмя и более виртуальных ЦП. Поддерживаются следующие серии: D/Dsv3, D/Dsv4, Da/Dasv4, E/Esv3, EA/Easv4, серия fsv2, Lsv2, MS/MMS и MS/Mmsv2.
 
-Дополнительные сведения об экземплярах ВИРТУАЛЬНЫХ машин см. [в статье размеры виртуальных машин Windows в Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Дополнительные сведения об экземплярах ВИРТУАЛЬНЫХ машин см. [в статье размеры виртуальных машин Windows в Azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ### <a name="custom-images"></a>Пользовательские образы
 
@@ -85,7 +85,7 @@ ms.locfileid: "87289632"
 
 ## <a name="vm-creation-using-the-portal"></a>Создание виртуальной машины с помощью портала
 
-Хотя в этой статье описаны действия по созданию виртуальной машины с ускоренной сетью с помощью Azure PowerShell, можно также [использовать портал Azure для создания виртуальной машины](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) , которая обеспечивает ускоренную работу сети. При создании виртуальной машины на портале на странице **Создание виртуальной машины** перейдите на вкладку **сеть** . На этой вкладке имеется возможность **ускорения**работы в сети. Если вы выбрали [поддерживаемую операционную систему](#supported-operating-systems) и [Размер виртуальной машины](#supported-vm-instances), для этого параметра автоматически устанавливается значение **вкл**. В противном случае параметр имеет значение **Off**, и в Azure отображается причина, по которой ее нельзя включить.
+Хотя в этой статье описаны действия по созданию виртуальной машины с ускоренной сетью с помощью Azure PowerShell, можно также [использовать портал Azure для создания виртуальной машины](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) , которая обеспечивает ускоренную работу сети. При создании виртуальной машины на портале на странице **Создание виртуальной машины** перейдите на вкладку **сеть** . На этой вкладке имеется возможность **ускорения** работы в сети. Если вы выбрали [поддерживаемую операционную систему](#supported-operating-systems) и [Размер виртуальной машины](#supported-vm-instances), для этого параметра автоматически устанавливается значение **вкл**. В противном случае параметр имеет значение **Off**, и в Azure отображается причина, по которой ее нельзя включить.
 
 > [!NOTE]
 > На портале можно включить только поддерживаемые операционные системы. Если вы используете пользовательский образ, а образ поддерживает ускорение работы в сети, создайте виртуальную машину с помощью интерфейса командной строки или PowerShell. 
@@ -104,7 +104,7 @@ ms.locfileid: "87289632"
 
 Прежде чем продолжать установку, установите [Azure PowerShell](/powershell/azure/install-az-ps) версии 1.0.0 или более поздней. Чтобы определить текущую версию, выполните командлет `Get-Module -ListAvailable Az`. Если необходимо установить или обновить, установите последнюю версию модуля az из [коллекция PowerShell](https://www.powershellgallery.com/packages/Az). В сеансе PowerShell Войдите в учетную запись Azure с помощью [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount).
 
-В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров включают *myResourceGroup*, *myNic*и *myVM*.
+В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров включают *myResourceGroup*, *myNic* и *myVM*.
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -134,7 +134,7 @@ ms.locfileid: "87289632"
 
 ### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
-1. Создайте правило группы безопасности сети с помощью [New-азнетворксекуритирулеконфиг](/powershell/module/az.Network/New-azNetworkSecurityRuleConfig).
+1. Создайте правило группы безопасности сети с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.Network/New-azNetworkSecurityRuleConfig):
 
     ```azurepowershell
     $rdp = New-AzNetworkSecurityRuleConfig `
@@ -208,7 +208,7 @@ ms.locfileid: "87289632"
     $vmConfig = New-AzVMConfig -VMName "myVm" -VMSize "Standard_DS4_v2"
     ```
 
-    Чтобы просмотреть список всех размеров виртуальных машин и их характеристики, ознакомьтесь со статьей [Размеры виртуальных машин Windows в Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    Чтобы просмотреть список всех размеров виртуальных машин и их характеристики, ознакомьтесь со статьей [Размеры виртуальных машин Windows в Azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 3. Создайте оставшуюся часть конфигурации виртуальной машины с помощью [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem) и [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage). Следующая команда создает виртуальную машину Windows Server 2016:
 

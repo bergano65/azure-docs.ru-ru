@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 65985e05be1061bb69eb160cf5be559cb271d5cd
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 89a437504394797b8cbed5325210186248082c33
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202935"
+ms.locfileid: "98218236"
 ---
 # <a name="azure-security-baseline-for-azure-synapse-analytics"></a>Базовый план безопасности Azure для аналитики Azure синапсе
 
 Базовый план безопасности Azure для Azure синапсе Analytics содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
-Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](../security/benchmarks/overview.md), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
 
-Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](/azure/security/benchmarks/security-control-network-security).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](../security/benchmarks/security-control-network-security.md).*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
@@ -33,13 +33,13 @@ ms.locfileid: "98202935"
 
 Кроме того, при подключении к пулу синапсе SQL Ограничьте область исходящего подключения к базе данных SQL с помощью группы безопасности сети. Отключите весь трафик службы Azure к базе данных SQL через общедоступную конечную точку, установив флажок Разрешить службам Azure отключить. Убедитесь, что в правилах брандмауэра не разрешены общедоступные IP-адреса.
 
-* [Общие сведения о частной ссылке Azure](https://docs.microsoft.com/azure/private-link/private-link-overview)
+* [Общие сведения о частной ссылке Azure](../private-link/private-link-overview.md)
 
-* [Общие сведения о закрытой ссылке для Azure синапсе SQL](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)
+* [Общие сведения о закрытой ссылке для Azure синапсе SQL](../azure-sql/database/private-endpoint-overview.md)
 
-* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
-* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+* [Создание NSG с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -51,13 +51,13 @@ ms.locfileid: "98202935"
 
 Вы также можете отправить журналы потоков для группы безопасности сети в рабочую область Log Analytics и использовать аналитику трафика для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Аналитики трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять некорректные сетевые настройки.
 
-* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+* [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-* [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+* [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../security-center/security-center-network-recommendations.md)
 
-* [Как включать и использовать Аналитику трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+* [Как включать и использовать Аналитику трафика](../network-watcher/traffic-analytics.md)
 
-* [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+* [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](../security-center/security-center-network-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -77,15 +77,15 @@ ms.locfileid: "98202935"
 
 Включите стандарт защиты от атак DDoS в виртуальных сетях, связанных с Azure синапсе SQL, для защиты от распределенных атак типа "отказ в обслуживании". Используйте интегрированную аналитику угроз Центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
 
-* [Общие сведения о ATP для Azure синапсе SQL](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview)
+* [Общие сведения о ATP для Azure синапсе SQL](../azure-sql/database/threat-detection-overview.md)
 
-* [Как включить расширенную защиту данных для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+* [Как включить расширенную защиту данных для базы данных SQL Azure](../azure-sql/database/azure-defender-for-sql.md)
 
-* [Общие сведения об ADS](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+* [Общие сведения об ADS](../azure-sql/database/azure-defender-for-sql.md)
 
-* [Настройка защиты от атак DDoS](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+* [Настройка защиты от атак DDoS](../ddos-protection/manage-ddos-protection.md)
 
-* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-data-services)
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -95,9 +95,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. при подключении к выделенному пулу SQL и включении журналов потоков для группы безопасности сети (NSG) отправьте журналы в учетную запись хранения Azure для аудита трафика. Кроме того, можно отправить журналы потоков в Log Analytics рабочую область или передать их в концентраторы событий. Если требуется для изучения аномальных действий, включите запись пакетов наблюдателя за сетями.
 
-* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+* [Как включить журналы потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-portal.md)
 
-* [Как включить Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+* [Как включить Наблюдатель за сетями](../network-watcher/network-watcher-create.md)
 
 **Мониторинг Центра безопасности Azure**. Да
 
@@ -107,7 +107,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Использование расширенной защиты от угроз (ATP) для Azure синапсе SQL. ATP обнаруживает аномальные действия, указывающие на необычные и потенциально опасные попытки доступа к базам данных или их использования, и может запускать различные предупреждения, такие как «потенциальное внедрение кода SQL» и «доступ из необычного расположения». ATP является частью предложения расширенной системы безопасности данных (ADS), доступ к которому можно получить и управлять ими с помощью центрального портала SQL AD. ATP также интегрирует предупреждения с центром безопасности Azure.
 
-* [Общие сведения о ATP для Azure синапсе SQL](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview)
+* [Общие сведения о ATP для Azure синапсе SQL](../azure-sql/database/threat-detection-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -127,9 +127,9 @@ ms.locfileid: "98202935"
 
 При использовании конечной точки службы для выделенного пула SQL требуется исходящий трафик к общедоступным IP-адресам базы данных SQL Azure. чтобы разрешить подключение, необходимо открыть группы безопасности сети (группы безопасности сети) для прав доступа к базе данных SQL Azure. Это можно сделать с помощью тегов службы NSG для базы данных SQL Azure.
 
-* [Общие сведения о тегах служб с конечными точками службы для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview#limitations)
+* [Общие сведения о тегах служб с конечными точками службы для базы данных SQL Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md#limitations)
 
-* [Общие сведения и использование тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+* [Общие сведения и использование тегов служб](../virtual-network/service-tags-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -141,9 +141,9 @@ ms.locfileid: "98202935"
 
 Используйте схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны управления ресурсами Azure, управление доступом на основе ролей Azure (Azure RBAC) и политики, в одном определении схемы. Простое применение схемы к новым подпискам и средам, а также управление точной настройкой и управление с помощью версионирования.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+* [Создание схемы Azure](../governance/blueprints/create-blueprint-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -157,7 +157,7 @@ ms.locfileid: "98202935"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -167,9 +167,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с выделенным пулом SQL. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -177,13 +177,13 @@ ms.locfileid: "98202935"
 
 ## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
 
-*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](/azure/security/benchmarks/security-control-logging-monitoring).*
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](../security/benchmarks/security-control-logging-monitoring.md).*
 
 ### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
 **Руководство**. Майкрософт поддерживает источники времени для ресурсов Azure. Вы можете обновить синхронизацию времени для развертывания вычислений.
 
-* [Настройка синхронизации времени для ресурсов вычислений Azure](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
+* [Настройка синхронизации времени для ресурсов вычислений Azure](../virtual-machines/windows/time-sync.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -199,9 +199,9 @@ ms.locfileid: "98202935"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Настройка аудита для ресурсов SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/auditing-overview#server-vs-database-level)
+* [Настройка аудита для ресурсов SQL Azure](../azure-sql/database/auditing-overview.md#server-vs-database-level)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -213,11 +213,11 @@ ms.locfileid: "98202935"
 
 Аудит может быть включен на уровне базы данных или сервера и предложен для включения только на уровне сервера, если только не требуется настройка отдельного приемника данных или хранения для конкретной базы данных.
 
-* [Включение аудита для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-auditing)
+* [Включение аудита для базы данных SQL Azure](../azure-sql/database/auditing-overview.md)
 
-* [Включение аудита для сервера](https://docs.microsoft.com/azure/azure-sql/database/auditing-overview#setup-auditing)
+* [Включение аудита для сервера](../azure-sql/database/auditing-overview.md#setup-auditing)
 
-* [Различия в политиках аудита уровня сервера и базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-auditing#server-vs-database-level)
+* [Различия в политиках аудита уровня сервера и базы данных](../azure-sql/database/auditing-overview.md#server-vs-database-level)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -235,11 +235,11 @@ ms.locfileid: "98202935"
 
 **Рекомендации**. при хранении журналов, связанных с выделенным пулом SQL в учетной записи хранения, log Analytics рабочей области или концентраторах событий, задайте срок хранения журнала согласно нормативным требованиям Организации.
 
-* [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal)
+* [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal)
 
-* [Настройка параметров хранения журнала в Log Analytics рабочей области](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period)
+* [Настройка параметров хранения журнала в Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
-* [Запись потоковых событий в концентраторах событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview)
+* [Запись потоковых событий в концентраторах событий](../event-hubs/event-hubs-capture-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -251,13 +251,13 @@ ms.locfileid: "98202935"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Общие сведения о расширенной защите от угроз и предупреждениях для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview)
+* [Общие сведения о расширенной защите от угроз и предупреждениях для базы данных SQL Azure](../azure-sql/database/threat-detection-overview.md)
 
-* [Как включить расширенную защиту данных для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+* [Как включить расширенную защиту данных для базы данных SQL Azure](../azure-sql/database/azure-defender-for-sql.md)
 
-* [Настройка пользовательских предупреждений для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-insights-alerts-portal?view=azps-1.4.0&preserve-view=true)
+* [Настройка пользовательских предупреждений для базы данных SQL Azure](../azure-sql/database/alerts-insights-configure-portal.md?preserve-view=true&view=azps-1.4.0)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -269,13 +269,13 @@ ms.locfileid: "98202935"
 
 Кроме того, вы можете включить и подключить данные в Azure Sentinel.
 
-* [Общие сведения о расширенной защите от угроз и предупреждениях для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview)
+* [Общие сведения о расширенной защите от угроз и предупреждениях для базы данных SQL Azure](../azure-sql/database/threat-detection-overview.md)
 
-* [Как включить расширенную защиту данных для базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+* [Как включить расширенную защиту данных для базы данных SQL Azure](../azure-sql/database/azure-defender-for-sql.md)
 
-* [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+* [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+* [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -307,7 +307,7 @@ ms.locfileid: "98202935"
 
 ## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
 
-*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](/azure/security/benchmarks/security-control-identity-access-control).*
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](../security/benchmarks/security-control-identity-access-control.md).*
 
 ### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
 
@@ -317,19 +317,19 @@ ms.locfileid: "98202935"
 
 Для операций управления используйте встроенные роли Azure, которые должны быть явно назначены. Используйте модуль Azure AD PowerShell для выполнения специальных запросов для обнаружения учетных записей, входящих в группы администраторов.
 
-* [Проверка подлинности для базы данных SQL](https://docs.microsoft.com/azure/azure-sql/database/security-overview#authentication)
+* [Проверка подлинности для базы данных SQL](../azure-sql/database/security-overview.md#authentication)
 
-* [Создание учетных записей для пользователей, не имеющих прав администратора](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#create-accounts-for-non-administrator-users)
+* [Создание учетных записей для пользователей, не имеющих прав администратора](../azure-sql/database/logins-create-manage.md#create-accounts-for-non-administrator-users)
 
-* [Использование учетной записи Azure Active Directory для проверки подлинности](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#create-additional-logins-and-users-having-administrative-permissions)
+* [Использование учетной записи Azure Active Directory для проверки подлинности](../azure-sql/database/logins-create-manage.md#create-additional-logins-and-users-having-administrative-permissions)
 
-* [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&preserve-view=true)
+* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-* [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&preserve-view=true)
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
-* [Управление существующими именами входа и учетными записями администратора в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database)
+* [Управление существующими именами входа и учетными записями администратора в SQL Azure](../azure-sql/database/logins-create-manage.md#existing-logins-and-user-accounts-after-creating-a-new-database)
 
-* [Встроенные роли Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles)
+* [Встроенные роли Azure](../role-based-access-control/built-in-roles.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -339,9 +339,9 @@ ms.locfileid: "98202935"
 
 **Рекомендации**. Azure Active Directory не имеет концепции паролей по умолчанию. При подготовке выделенного пула SQL рекомендуется интегрировать проверку подлинности с Azure Active Directory. При использовании этого метода проверки подлинности пользователь отправляет имя учетной записи пользователя и запрашивает, что служба использует учетные данные, хранящиеся в Azure Active Directory (Azure AD).
 
-* [Настройка проверки подлинности Azure Active Directory и управление ею с помощью Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure?tabs=azure-powershell#active-directory-password-authentication)
+* [Настройка проверки подлинности Azure Active Directory и управление ею с помощью Azure SQL](../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell#active-directory-password-authentication)
 
-* [Общие сведения о проверке подлинности в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database)
+* [Общие сведения о проверке подлинности в SQL Azure](../azure-sql/database/logins-create-manage.md#existing-logins-and-user-accounts-after-creating-a-new-database)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -353,9 +353,9 @@ ms.locfileid: "98202935"
 
 Чтобы найти учетные записи администратора для базы данных, откройте портал Azure и перейдите на вкладку Свойства сервера или управляемого экземпляра.
 
-* [Общие сведения об удостоверениях и доступе центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Общие сведения об удостоверениях и доступе центра безопасности Azure](../security-center/security-center-identity-access.md)
 
-* [Управление существующими именами входа и учетными записями администратора в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage#existing-logins-and-user-accounts-after-creating-a-new-database)
+* [Управление существующими именами входа и учетными записями администратора в SQL Azure](../azure-sql/database/logins-create-manage.md#existing-logins-and-user-accounts-after-creating-a-new-database)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -365,11 +365,11 @@ ms.locfileid: "98202935"
 
 **Руководство**. Использование регистрации приложений Azure (субъекта-службы) для получения маркера, который можно использовать для взаимодействия с хранилищем данных на плоскости управления (портал Azure) через вызовы API.
 
-* [Как вызывать интерфейсы API службы Azure](https://docs.microsoft.com/rest/api/azure/#how-to-call-azure-rest-apis-with-postman)
+* [Как вызывать интерфейсы API службы Azure](/rest/api/azure/#how-to-call-azure-rest-apis-with-postman)
 
-* [Регистрация клиентского приложения (субъекта-службы) в Azure AD](https://docs.microsoft.com/rest/api/azure/#register-your-client-application-with-azure-ad)
+* [Регистрация клиентского приложения (субъекта-службы) в Azure AD](/rest/api/azure/#register-your-client-application-with-azure-ad)
 
-* [Сведения о REST API SQL Azure синапсе](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-compute-rest-api)
+* [Сведения о REST API SQL Azure синапсе](./sql-data-warehouse/sql-data-warehouse-manage-compute-rest-api.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -379,11 +379,11 @@ ms.locfileid: "98202935"
 
 **Руководство**. Включите Многофакторную идентификацию (MFA) в Azure Active Directory (AD) и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure.
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-* [Общие сведения о MFA в Azure SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-mfa-ssms-overview)
+* [Общие сведения о MFA в Azure SQL](../azure-sql/database/authentication-mfa-ssms-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -395,7 +395,7 @@ ms.locfileid: "98202935"
 
 * [Использование рабочих станций с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+* [Включение MFA в Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -409,15 +409,15 @@ ms.locfileid: "98202935"
 
 Подсистема аудита SQL Server позволяет проводить аудит сервера, который может предусматривать спецификации аудита серверов для событий на уровне сервера и спецификации аудита баз данных для событий на уровне базы данных. События аудита могут записываться в журналы событий или файлы аудита.
 
-* [Как определить пользователей Azure AD, помеченных для события риска](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-user-at-risk)
+* [Как определить пользователей Azure AD, помеченных для события риска](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как отслеживать активность удостоверений и доступа пользователей в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+* [Как отслеживать активность удостоверений и доступа пользователей в центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-* [Обзор расширенной защиты от угроз и потенциальных оповещений](https://docs.microsoft.com/azure/sql-database/sql-database-threat-detection-overview#advanced-threat-protection-alerts)
+* [Обзор расширенной защиты от угроз и потенциальных оповещений](../azure-sql/database/threat-detection-overview.md#alerts)
 
-* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage)
+* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](../azure-sql/database/logins-create-manage.md)
 
-* [Общие сведения об аудите SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine?view=sql-server-ver15&preserve-view=true)
+* [Общие сведения об аудите SQL Server](/sql/relational-databases/security/auditing/sql-server-audit-database-engine?preserve-view=true&view=sql-server-ver15)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -427,7 +427,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Используйте условный доступ с именованными расположениями, чтобы разрешить доступ к порталу и управлению ресурсами Azure только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
 
-* [Настройка именованных расположений в Azure](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений в Azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -437,9 +437,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. создание администратора Azure Active Directory (AD) для сервера базы данных SQL Azure в выделенном пуле SQL.
 
-* [Настройка аутентификации Azure AD и управление ею с помощью Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure)
+* [Настройка аутентификации Azure AD и управление ею с помощью Azure SQL](../azure-sql/database/authentication-aad-configure.md)
 
-* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance)
+* [Создание и настройка экземпляра Azure AD](../active-directory-domain-services/tutorial-create-instance.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -451,9 +451,9 @@ ms.locfileid: "98202935"
 
 При использовании проверки подлинности SQL создайте пользователей автономной базы данных в базе данных. Убедитесь, что один или несколько пользователей базы данных помещаются в пользовательскую роль базы данных с конкретными разрешениями, соответствующими этой группе пользователей.
 
-* [Использование проверок доступа](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Использование проверок доступа](../active-directory/governance/access-reviews-overview.md)
 
-* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage)
+* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](../azure-sql/database/logins-create-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -465,13 +465,13 @@ ms.locfileid: "98202935"
 
 При использовании проверки подлинности SQL создайте пользователей автономной базы данных в базе данных. Убедитесь, что один или несколько пользователей базы данных помещаются в пользовательскую роль базы данных с конкретными разрешениями, соответствующими этой группе пользователей.
 
-* [Использование проверок доступа](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+* [Использование проверок доступа](../active-directory/governance/access-reviews-overview.md)
 
-* [Как настроить аутентификацию Azure AD и управлять ею с помощью базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure)
+* [Как настроить аутентификацию Azure AD и управлять ею с помощью базы данных SQL Azure](../azure-sql/database/authentication-aad-configure.md)
 
-* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+* [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage)
+* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](../azure-sql/database/logins-create-manage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -483,13 +483,13 @@ ms.locfileid: "98202935"
 
 При использовании проверки подлинности SQL создайте пользователей автономной базы данных в базе данных. Убедитесь, что один или несколько пользователей базы данных помещаются в пользовательскую роль базы данных с конкретными разрешениями, соответствующими этой группе пользователей.
 
-* [Просмотр входа в систему с рисками Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+* [Просмотр входа в систему с рисками Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+* [Как настроить и включить политики рисков с помощью защиты идентификации](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
-* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-data-sources)
+* [Подключение к Azure Sentinel](../sentinel/connect-data-sources.md)
 
-* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage)
+* [Общие сведения об именах входа и учетных записях пользователей в SQL Azure](../azure-sql/database/logins-create-manage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -499,7 +499,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. в сценариях поддержки, в которых Майкрософт требуется доступ к данным, связанным с базой данных SQL Azure, в выделенном пуле SQL Azure защищенное хранилище предоставляет интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным.
 
-* [Общие сведения о защищенное хранилище](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview)
+* [Общие сведения о защищенное хранилище](../security/fundamentals/customer-lockbox-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -507,7 +507,7 @@ ms.locfileid: "98202935"
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](/azure/security/benchmarks/security-control-data-protection).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](../security/benchmarks/security-control-data-protection.md).*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
 
@@ -515,9 +515,9 @@ ms.locfileid: "98202935"
 
 Классификация обнаружения данных &amp; встроена в Azure СИНАПСЕ SQL. Они предоставляют расширенные возможности для обнаружения, классификации и маркировки конфиденциальных данных в вашей базе, а также создания по ним отчетности.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Общие сведения о &amp; классификации обнаружения данных](https://docs.microsoft.com/azure/azure-sql/database/data-discovery-and-classification-overview)
+* [Общие сведения о &amp; классификации обнаружения данных](../azure-sql/database/data-discovery-and-classification-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -527,13 +527,13 @@ ms.locfileid: "98202935"
 
 **Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Ресурсы должны быть разделены виртуальной сетью или подсетью, помечены соответствующим образом и защищены в рамках группы безопасности сети или брандмауэра Azure. Ресурсы, которые хранят или обрабатывают конфиденциальные данные, должны быть изолированы. Использовать частную ссылку; развертывание SQL Server Azure в виртуальной сети и безопасное подключение с помощью частной ссылки.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Настройка Приватного канала для Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview#how-to-set-up-private-link-for-azure-sql-database)
+* [Настройка Приватного канала для Базы данных SQL Azure](../azure-sql/database/private-endpoint-overview.md#how-to-set-up-private-link-for-azure-sql-database)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -547,11 +547,11 @@ ms.locfileid: "98202935"
 
 Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
 
-* [Настройка частных ссылок и группы безопасности сети для предотвращения утечка данных в экземплярах базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-private-endpoint-overview)
+* [Настройка частных ссылок и группы безопасности сети для предотвращения утечка данных в экземплярах базы данных SQL Azure](../azure-sql/database/private-endpoint-overview.md)
 
-* [Общие сведения о расширенной защите от угроз для базы данных SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/threat-detection-overview)
+* [Общие сведения о расширенной защите от угроз для базы данных SQL Azure](../azure-sql/database/threat-detection-overview.md)
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -561,7 +561,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. база данных SQL Azure обеспечивает защиту данных путем шифрования данных при перемещении с защитой транспортного уровня. Для всех подключений SQL Server принудительно применяет шифрование SSL/TLS. Это гарантирует, что все данные шифруются "при передаче" между клиентом и сервером независимо от значения параметра Encrypt или TrustServerCertificate в строке подключения.
 
-* [Общие сведения о шифровании SQL Azure при передаче](https://docs.microsoft.com/azure/sql-database/sql-database-security-overview#information-protection-and-encryption)
+* [Общие сведения о шифровании SQL Azure при передаче](../azure-sql/database/security-overview.md#information-protection-and-encryption)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -575,9 +575,9 @@ ms.locfileid: "98202935"
 
 Кроме того, можно настроить политику динамического маскирования данных (DDM) в портал Azure. Обработчик рекомендаций DDM помечает определенные поля базы данных как потенциально конфиденциальные поля, которые могут быть хорошими кандидатами для маскировки.
 
-* [Как использовать обнаружение и классификацию данных для Azure SQL Server](https://docs.microsoft.com/azure/sql-database/sql-database-data-discovery-and-classification)
+* [Как использовать обнаружение и классификацию данных для Azure SQL Server](../azure-sql/database/data-discovery-and-classification-overview.md)
 
-* [Общие сведения о динамическом маскировании данных для Azure синапсе SQL](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started)
+* [Общие сведения о динамическом маскировании данных для Azure синапсе SQL](../azure-sql/database/dynamic-data-masking-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -589,11 +589,11 @@ ms.locfileid: "98202935"
 
 Авторизация контролируется членством в роли базы данных пользователя и разрешениями уровня объектов. Обычно пользователям рекомендуется предоставлять наименьшие необходимые привилегии.
 
-* [Как интегрировать Azure SQL Server с Azure Active Directory для проверки подлинности](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication)
+* [Как интегрировать Azure SQL Server с Azure Active Directory для проверки подлинности](../azure-sql/database/authentication-aad-overview.md)
 
-* [Управление доступом в Azure SQL Server](https://docs.microsoft.com/azure/sql-database/sql-database-control-access)
+* [Управление доступом в Azure SQL Server](../azure-sql/database/logins-create-manage.md)
 
-* [Общие сведения о авторизации и проверке подлинности в SQL Azure](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage)
+* [Общие сведения о авторизации и проверке подлинности в SQL Azure](../azure-sql/database/logins-create-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -603,7 +603,7 @@ ms.locfileid: "98202935"
 
 **Руководство**: неприменимо; Корпорация Майкрософт управляет базовой инфраструктурой для Azure синапсе SQL и реализует четкие элементы управления для предотвращения потери или раскрытия данных клиента.
 
-* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+* [Общие сведения о защите данных клиентов в Azure](../security/fundamentals/protection-customer-data.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -613,11 +613,11 @@ ms.locfileid: "98202935"
 
 **Руководство**. прозрачное шифрование данных (TDE) помогает защитить Azure синапсе SQL от угрозы вредоносной автономной активности, шифруя неактивных данных. Выполняется шифрование и расшифровка базы данных, связанных резервных копий и неактивных файлов журналов транзакций в реальном времени без необходимости изменения приложения. В Azure значение по умолчанию для TDE заключается в том, что DEK защищен встроенным сертификатом сервера. Кроме того, можно использовать управляемую клиентом TDE, также называемую поддержкой создание собственных ключей (BYOK) для TDE. В этом сценарии средство защиты TDE, которое шифрует DEK, является асимметричным ключом, управляемым клиентом, который хранится в принадлежащем заказчике и управляемом Azure Key Vaultе (облачной системе управления внешними ключами Azure) и никогда не покидает хранилище ключей.
 
-* [Общие сведения о прозрачном шифровании данных, управляемых службой](https://docs.microsoft.com/azure/azure-sql/database/transparent-data-encryption-tde-overview?tabs=azure-portal)
+* [Общие сведения о прозрачном шифровании данных, управляемых службой](../azure-sql/database/transparent-data-encryption-tde-overview.md?tabs=azure-portal)
 
-* [Понимание управляемого клиентом прозрачного шифрования данных](https://docs.microsoft.com/azure/azure-sql/database/transparent-data-encryption-tde-overview?tabs=azure-portal#customer-managed-transparent-data-encryption---bring-your-own-key)
+* [Понимание управляемого клиентом прозрачного шифрования данных](../azure-sql/database/transparent-data-encryption-tde-overview.md?tabs=azure-portal#customer-managed-transparent-data-encryption---bring-your-own-key)
 
-* [Как включить TDE с помощью собственного ключа](https://docs.microsoft.com/azure/azure-sql/database/transparent-data-encryption-byok-configure)
+* [Как включить TDE с помощью собственного ключа](../azure-sql/database/transparent-data-encryption-byok-configure.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -629,9 +629,9 @@ ms.locfileid: "98202935"
 
 Кроме того, вы можете настроить оповещения для баз данных в пуле синапсе SQL с помощью портал Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП).
 
-* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Создание оповещений для Azure SQL синапсе](https://docs.microsoft.com/azure/azure-sql/database/alerts-insights-configure-portal)
+* [Создание оповещений для Azure SQL синапсе](../azure-sql/database/alerts-insights-configure-portal.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -639,17 +639,17 @@ ms.locfileid: "98202935"
 
 ## <a name="vulnerability-management"></a>управление уязвимостями;
 
-*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](/azure/security/benchmarks/security-control-vulnerability-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](../security/benchmarks/security-control-vulnerability-management.md).*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
 
 **Рекомендации**. включите расширенную безопасность данных и следуйте рекомендациям центра безопасности Azure по выполнению оценки уязвимостей в базах данных SQL Azure.
 
-* [Как выполнять оценку уязвимостей в базах данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment)
+* [Как выполнять оценку уязвимостей в базах данных SQL Azure](../azure-sql/database/sql-vulnerability-assessment.md)
 
-* [Включение расширенной защиты данных](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security)
+* [Включение расширенной защиты данных](../azure-sql/database/azure-defender-for-sql.md)
 
-* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-vulnerability-assessment-recommendations)
+* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -675,7 +675,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Оценка уязвимостей — это служба сканирования, встроенная в Azure синапсе SQL. Служба использует базу знаний правил, которые помечают уязвимости безопасности. Он выделяет отклонения от рекомендаций, таких как непредусмотренные настройки, чрезмерные разрешения и незащищенные конфиденциальные данные. Можно получить доступ к оценке уязвимостей и управлять ими с помощью центрального портала SQL Advanced Data Security (ADS).
 
-* [Управление сканированием оценки уязвимостей и их экспорт на портале ADS SQL](https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment)
+* [Управление сканированием оценки уязвимостей и их экспорт на портале ADS SQL](../azure-sql/database/sql-vulnerability-assessment.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -687,9 +687,9 @@ ms.locfileid: "98202935"
 
 Классификация обнаружения данных &amp; встроена в Azure СИНАПСЕ SQL. Они предоставляют расширенные возможности для обнаружения, классификации и маркировки конфиденциальных данных в вашей базе, а также создания по ним отчетности.
 
-* [Оценка безопасности центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-secure-score)
+* [Оценка безопасности центра безопасности Azure](../security-center/secure-score-security-controls.md)
 
-* [Общие сведения о &amp; классификации обнаружения данных](https://docs.microsoft.com/azure/azure-sql/database/data-discovery-and-classification-overview)
+* [Общие сведения о &amp; классификации обнаружения данных](../azure-sql/database/data-discovery-and-classification-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -697,7 +697,7 @@ ms.locfileid: "98202935"
 
 ## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
 
-*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](/azure/security/benchmarks/security-control-inventory-asset-management).*
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](../security/benchmarks/security-control-inventory-asset-management.md).*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
@@ -705,11 +705,11 @@ ms.locfileid: "98202935"
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов Azure, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0&preserve-view=true)
+* [Просмотр подписок Azure](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-3.0.0)
 
-* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+* [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -719,7 +719,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -729,11 +729,11 @@ ms.locfileid: "98202935"
 
 **Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
-* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+* [Создание дополнительных подписок Azure](../cost-management-billing/manage/create-subscription.md)
 
-* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+* [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -755,9 +755,9 @@ ms.locfileid: "98202935"
 
 Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+* [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -795,9 +795,9 @@ ms.locfileid: "98202935"
 
 Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](../governance/policy/samples/index.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -815,7 +815,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки "Блокировать доступ" для приложения "Управление Microsoft Azure".
 
-* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+* [Как настроить условный доступ для блокировки доступа к Azure Resource Manager](../role-based-access-control/conditional-access-azure-management.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -833,9 +833,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. любой ресурс, связанный с выделенным пулом SQL, который необходим для бизнес-операций, но может повысить риск для Организации, должен быть изолирован в собственной виртуальной машине и (или) виртуальной сети и полностью защищен с помощью брандмауэра Azure или группы безопасности сети.
 
-* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+* [Создание виртуальной сети](../virtual-network/quick-create-portal.md)
 
-* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+* [Создание NSG с конфигурацией безопасности](../virtual-network/tutorial-filter-network-traffic.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -843,7 +843,7 @@ ms.locfileid: "98202935"
 
 ## <a name="secure-configuration"></a>Безопасная конфигурация
 
-*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](/azure/security/benchmarks/security-control-secure-configuration).*
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](../security/benchmarks/security-control-secure-configuration.md).*
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
 
@@ -851,9 +851,9 @@ ms.locfileid: "98202935"
 - Развертывание обнаружения угроз на серверах SQL Server
 - Служба SQL Server должна использовать конечную точку службы виртуальной сети.
 
-* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0&preserve-view=true)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-3.3.0)
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -871,9 +871,9 @@ ms.locfileid: "98202935"
 
 **Рекомендации**. Используйте Политику Azure [отказывать] и [развернуть, если не существует], чтобы обеспечить безопасность параметров в ресурсах Azure.
 
-* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+* [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+* [Сведения о действии Политик Azure](../governance/policy/concepts/effects.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -891,9 +891,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
-* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&preserve-view=true)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
-* [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops&preserve-view=true)
+* [Документация по Azure Repos](/azure/devops/repos/index?preserve-view=true&view=azure-devops)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -927,7 +927,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Использование центра безопасности Azure для выполнения проверок базовых показателей для любых ресурсов, связанных с выделенным пулом SQL.
 
-* [Как исправить рекомендации в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-sql-service-recommendations)
+* [Как исправить рекомендации в центре безопасности Azure](../security-center/security-center-remediate-recommendations.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -945,9 +945,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. ПРОЗРАЧНОЕ шифрование данных (TDE) с ключами, управляемыми клиентом, в Azure Key Vault позволяет зашифровать автоматически созданный ключ шифрования базы данных (DEK) с помощью управляемого клиентом асимметричного ключа, который называется предохранителем TDE. Обычно это также называется поддержкой создания собственных ключей (BYOK) для прозрачного шифрования данных. В сценарии BYOK средство защиты TDE хранится в принадлежащих к клиенту и управляемых Azure Key Vault. Кроме того, убедитесь, что в Azure Key Vault включен обратимое удаление.
 
-* [Как включить TDE с управляемым клиентом ключом из Azure Key Vault](https://docs.microsoft.com/azure/azure-sql/database/transparent-data-encryption-byok-configure?tabs=azure-powershell)
+* [Как включить TDE с управляемым клиентом ключом из Azure Key Vault](../azure-sql/database/transparent-data-encryption-byok-configure.md?tabs=azure-powershell)
 
-* [Включение обратимого удаления в Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell)
+* [Включение обратимого удаления в Azure Key Vault](../key-vault/general/key-vault-recovery.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -957,9 +957,9 @@ ms.locfileid: "98202935"
 
 **Руководство**. Использование управляемых удостоверений для предоставления служб Azure с автоматически управляемым удостоверением в Azure Active Directory (AD). Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Azure Key Vault без каких бы то ни было учетных данных в коде.
 
-* [Руководство по Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к SQL Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql)
+* [Руководство по Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к SQL Azure](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql.md)
 
-* [Настройка управляемых удостоверений](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+* [Настройка управляемых удостоверений](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -977,7 +977,7 @@ ms.locfileid: "98202935"
 
 ## <a name="malware-defense"></a>Защита от вредоносных программ
 
-*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](/azure/security/benchmarks/security-control-malware-defense).*
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](../security/benchmarks/security-control-malware-defense.md).*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
 
@@ -993,7 +993,7 @@ ms.locfileid: "98202935"
 
 Предварительное сканирование любого содержимого, отправляемого в Нерасчетные ресурсы Azure, например служба приложений, Data Lake Storage, хранилище BLOB-объектов, SQL Server Azure и т. д. Корпорация Майкрософт не может получить доступ к данным в этих экземплярах.
 
-* [Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
+* [Сведения о антивредоносном по Майкрософт для облачных служб и виртуальных машин Azure](../security/fundamentals/antimalware.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1009,13 +1009,13 @@ ms.locfileid: "98202935"
 
 ## <a name="data-recovery"></a>Восстановление данных
 
-*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](/azure/security/benchmarks/security-control-data-recovery).*
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](../security/benchmarks/security-control-data-recovery.md).*
 
 ### <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярное автоматическое резервное копирование
 
 **Руководство**. моментальные снимки выделенного пула SQL автоматически берутся в течение дня, создавая точки восстановления, доступные в течение семи дней. Этот срок нельзя изменить. Выделенный пул SQL поддерживает целевую точку восстановления в 8 часов (RPO). Вы можете восстановить хранилище данных в основном регионе до любого из моментальных снимков, доступных за последние семь дней. Обратите внимание, что при необходимости можно также активировать моментальные снимки вручную.
 
-* [Резервное копирование и восстановление в выделенном пуле SQL](/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
+* [Резервное копирование и восстановление в выделенном пуле SQL](./sql-data-warehouse/backup-and-restore.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1027,9 +1027,9 @@ ms.locfileid: "98202935"
 
 Если вы используете ключ, управляемый клиентом, для шифрования ключа шифрования базы данных, убедитесь, что выполняется резервное копирование ключа.
 
-* [Резервное копирование и восстановление в выделенном пуле SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
+* [Резервное копирование и восстановление в выделенном пуле SQL](./sql-data-warehouse/backup-and-restore.md)
 
-* [Резервное копирование ключей Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0&preserve-view=true)
+* [Резервное копирование ключей Azure Key Vault](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?preserve-view=true&view=azurermps-6.13.0)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1039,11 +1039,11 @@ ms.locfileid: "98202935"
 
 **Руководство**. Периодическая проверка точек восстановления для обеспечения допустимости моментальных снимков. Чтобы восстановить существующий выделенный пул SQL из точки восстановления, можно использовать либо портал Azure, либо PowerShell. Проверка восстановления резервных копий ключей, управляемых клиентом.
 
-* [Восстановление ключей Azure Key Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0&preserve-view=true)
+* [Восстановление ключей Azure Key Vault](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?preserve-view=true&view=azurermps-6.13.0)
 
-* [Резервное копирование и восстановление в выделенном пуле SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/backup-and-restore)
+* [Резервное копирование и восстановление в выделенном пуле SQL](./sql-data-warehouse/backup-and-restore.md)
 
-* [Восстановление существующего выделенного пула SQL](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-restore-active-paused-dw)
+* [Восстановление существующего выделенного пула SQL](./sql-data-warehouse/sql-data-warehouse-restore-active-paused-dw.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1055,11 +1055,11 @@ ms.locfileid: "98202935"
 
 По умолчанию данные в учетной записи хранения шифруются с помощью ключей, управляемых корпорацией Майкрософт. Вы можете использовать ключи, управляемые корпорацией Майкрософт, для шифрования данных, а также управлять шифрованием с помощью собственных ключей. Если вы управляете собственными ключами с помощью Key Vault, убедитесь, что включено обратимое удаление.
 
-* [Управление долгосрочным хранением резервных копий базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-long-term-backup-retention-configure)
+* [Управление долгосрочным хранением резервных копий базы данных SQL Azure](../azure-sql/database/long-term-backup-retention-configure.md)
 
-* [Шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
+* [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)
 
-* [Включение обратимого удаления в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+* [Включение обратимого удаления в Key Vault](../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**. Недоступно
 
@@ -1067,13 +1067,13 @@ ms.locfileid: "98202935"
 
 ## <a name="incident-response"></a>Реагирование на инциденты
 
-*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](/azure/security/benchmarks/security-control-incident-response).*
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](../security/benchmarks/security-control-incident-response.md).*
 
 ### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
 
 **Руководство**. Убедитесь, что существуют планы реагирования на инциденты, определяющие роли персонала, а также этапы обработки инцидентов и управления ими.
 
-* [Как настроить автоматизацию рабочих процессов в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-planning-and-operations-guide)
+* [Как настроить автоматизацию рабочих процессов в Центре безопасности Azure](../security-center/security-center-planning-and-operations-guide.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1083,7 +1083,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Центр безопасности назначает серьезность предупреждениям, чтобы помочь вам определить порядок, в котором вы задаете каждое оповещение, чтобы при компрометации ресурса вы могли сразу перейти к нему. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
 
-* [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+* [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1103,7 +1103,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ.
 
-* [Как задать контакт безопасности Центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+* [Как задать контакт безопасности Центра безопасности Azure](../security-center/security-center-provide-security-contact-details.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1113,9 +1113,9 @@ ms.locfileid: "98202935"
 
 **Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи оповещений в метку.
 
-* [Настройка непрерывного экспорта данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+* [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
-* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1125,7 +1125,7 @@ ms.locfileid: "98202935"
 
 **Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
 
-* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](../security-center/workflow-automation.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -1133,7 +1133,7 @@ ms.locfileid: "98202935"
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
 
-*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](../security/benchmarks/security-control-penetration-tests-red-team-exercises.md).*
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
 
@@ -1147,5 +1147,5 @@ ms.locfileid: "98202935"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](../security/benchmarks/overview.md).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

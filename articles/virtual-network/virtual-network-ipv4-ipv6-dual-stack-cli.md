@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 3808ff9b57a900b8a1d55b66f8c652d070107322
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 1acdc311cdd75cb35cfd4b9acc35f4bc954c7f43
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96012056"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221329"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-basic-load-balancer---cli"></a>Развертывание приложения с двумя стеками IPv6 с помощью Basic Load Balancer-CLI
 
@@ -94,7 +94,7 @@ az network public-ip create \
 
 ### <a name="create-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Создайте базовый Load Balancer с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **дслб** , которая включает интерфейсный пул с именем **dsLbFrontEnd_v4**, внутренний пул с именем **dsLbBackEndPool_v4** , связанный с общедоступным IP-адресом IPv4 **dsPublicIP_v4** , созданным на предыдущем шаге. 
+Создайте базовый Load Balancer с помощью команды [AZ Network фунтов Create](/cli/azure/network/lb?view=azure-cli-latest) с именем **дслб** , которая включает интерфейсный пул с именем **dsLbFrontEnd_v4**, внутренний пул с именем **dsLbBackEndPool_v4** , связанный с общедоступным IP-адресом IPv4 **dsPublicIP_v4** , созданным на предыдущем шаге. 
 
 ```azurecli-interactive
 az network lb create \
@@ -109,7 +109,7 @@ az network lb create \
 
 ### <a name="create-ipv6-frontend"></a>Создание внешнего интерфейса IPv6
 
-Создайте интерфейсный IP-адрес IPV6 с помощью команды [AZ Network фунтов интерфейсного интерфейса-IP Create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create). В следующем примере создается внешняя IP-конфигурация с именем *dsLbFrontEnd_v6* и присоединяется *dsPublicIP_v6* адрес.
+Создайте интерфейсный IP-адрес IPV6 с помощью команды [AZ Network фунтов интерфейсного интерфейса-IP Create](/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create). В следующем примере создается внешняя IP-конфигурация с именем *dsLbFrontEnd_v6* и присоединяется *dsPublicIP_v6* адрес.
 
 ```azurecli-interactive
 az network lb frontend-ip create \
@@ -122,7 +122,7 @@ az network lb frontend-ip create \
 
 ### <a name="configure-ipv6-back-end-address-pool"></a>Настройка пула адресов IPv6 для серверной части
 
-Создайте пулы внутренних адресов IPv6 с помощью команды [AZ Network фунтов Address-Pool Create](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create). В следующем примере создается пул адресов серверной части с именем *dsLbBackEndPool_v6*  для включения виртуальных машин с КОНФИГУРАЦИЯМИ сетевых адаптеров IPv6:
+Создайте пулы внутренних адресов IPv6 с помощью команды [AZ Network фунтов Address-Pool Create](/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create). В следующем примере создается пул адресов серверной части с именем *dsLbBackEndPool_v6*  для включения виртуальных машин с КОНФИГУРАЦИЯМИ сетевых адаптеров IPv6:
 
 ```azurecli-interactive
 az network lb address-pool create \
@@ -132,7 +132,7 @@ az network lb address-pool create \
 ```
 
 ### <a name="create-a-health-probe"></a>Создание пробы работоспособности
-Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
+Создайте зонд работоспособности с помощью команды [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
 az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --protocol tcp --port 3389
@@ -142,7 +142,7 @@ az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --pro
 
 Правило балансировщика нагрузки позволяет определить распределение трафика между виртуальными машинами. Вы определяете конфигурацию внешнего IP-адреса для входящего трафика и пул внутренних IP-адресов для приема трафика, а также требуемый порт источника и назначения. 
 
-Создайте правило балансировщика нагрузки с помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create). В следующем примере создаются правила балансировщика нагрузки с именами *dsLBrule_v4* и *dsLBrule_v6* и сбалансированный трафик по *TCP* -порту *80* в конфигурациях интерфейсов IPv4 и IPv6.
+Создайте правило балансировщика нагрузки с помощью команды [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create). В следующем примере создаются правила балансировщика нагрузки с именами *dsLBrule_v4* и *dsLBrule_v6* и сбалансированный трафик по *TCP* -порту *80* в конфигурациях интерфейсов IPv4 и IPv6.
 
 ```azurecli-interactive
 az network lb rule create \
@@ -175,7 +175,7 @@ az network lb rule create \
 ### <a name="create-an-availability-set"></a>"Создать группу доступности"
 Чтобы повысить доступность приложения, разместите виртуальные машины в группе доступности.
 
-Создайте группу доступности с помощью команды [az vm availability-set create](https://docs.microsoft.com/cli/azure/vm/availability-set?view=azure-cli-latest). В следующем примере создается группа доступности с именем *дсавсет*:
+Создайте группу доступности с помощью команды [az vm availability-set create](/cli/azure/vm/availability-set?view=azure-cli-latest). В следующем примере создается группа доступности с именем *дсавсет*:
 
 ```azurecli-interactive
 az vm availability-set create \
@@ -192,7 +192,7 @@ az vm availability-set create \
 
 #### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
-Создайте группу безопасности сети с помощью команды [AZ Network NSG Create](https://docs.microsoft.com/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create) .
+Создайте группу безопасности сети с помощью команды [AZ Network NSG Create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create) .
 
 
 ```azurecli-interactive
@@ -205,7 +205,7 @@ az network nsg create \
 
 #### <a name="create-a-network-security-group-rule-for-inbound-and-outbound-connections"></a>Создание правила группы безопасности сети для входящих и исходящих соединений
 
-Создайте правило группы безопасности сети, разрешающее подключения по протоколу RDP через порт 3389, подключение к Интернету через порт 80 и исходящие подключения с помощью команды [AZ Network NSG правило Create](https://docs.microsoft.com/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create).
+Создайте правило группы безопасности сети, разрешающее подключения по протоколу RDP через порт 3389, подключение к Интернету через порт 80 и исходящие подключения с помощью команды [AZ Network NSG правило Create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create).
 
 ```azurecli-interactive
 # Create inbound rule for port 3389
@@ -258,7 +258,7 @@ az network nsg rule create \
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *дсвнет* с подсетями *dsSubNET_v4* и *dsSubNET_v6*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *дсвнет* с подсетями *dsSubNET_v4* и *dsSubNET_v6*.
 
 ```azurecli-interactive
 # Create the virtual network
@@ -280,7 +280,7 @@ az network vnet subnet create \
 
 ### <a name="create-nics"></a>Создание сетевых адаптеров
 
-Создайте виртуальные сетевые карты для каждой виртуальной машины с помощью команды [AZ Network NIC Create](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create). В следующем примере создается виртуальный сетевой адаптер для каждой виртуальной машины. Каждая сетевая карта имеет две конфигурации IP-адресов (1 Конфигурация IPv4, 1 Конфигурация IPv6). Создайте конфигурацию IPV6 с помощью команды [AZ Network NIC IP-config Create](https://docs.microsoft.com/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create).
+Создайте виртуальные сетевые карты для каждой виртуальной машины с помощью команды [AZ Network NIC Create](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create). В следующем примере создается виртуальный сетевой адаптер для каждой виртуальной машины. Каждая сетевая карта имеет две конфигурации IP-адресов (1 Конфигурация IPv4, 1 Конфигурация IPv6). Создайте конфигурацию IPV6 с помощью команды [AZ Network NIC IP-config Create](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create).
 
 ```azurecli-interactive
 # Create NICs
@@ -331,7 +331,7 @@ az network nic ip-config create \
 
 ### <a name="create-virtual-machines"></a>Создание виртуальных машин
 
-Создайте виртуальные машины с помощью команды [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create). В приведенном ниже примере создаются две виртуальные машины и обязательные компоненты виртуальной сети, если их еще нет: 
+Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create). В приведенном ниже примере создаются две виртуальные машины и обязательные компоненты виртуальной сети, если их еще нет: 
 
 Создайте виртуальную машину *dsVM0* следующим образом:
 

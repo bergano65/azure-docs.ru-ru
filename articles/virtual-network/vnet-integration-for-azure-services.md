@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: kumud
-ms.openlocfilehash: a25d6d0d1990682287b5962a7bd93a0c525db133
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: a29454f09268406511730c63dcc3bc3063b909c6
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882370"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218660"
 ---
 # <a name="integrate-azure-services-with-virtual-networks-for-network-isolation"></a>Интеграция служб Azure с виртуальными сетями для изоляции сети
 
@@ -66,7 +66,7 @@ ms.locfileid: "97882370"
 
 ## <a name="service-tags"></a>Теги служб
 
-Тег службы представляет группу префиксов IP-адресов из определенной службы Azure. С помощью тегов служб можно определить элементы управления доступом к сети для [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэра Azure](https://docs.microsoft.com/azure/firewall/service-tags). Указав имя тега службы (например, Азуривентгрид) в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для соответствующей службы.
+Тег службы представляет группу префиксов IP-адресов из определенной службы Azure. С помощью тегов служб можно определить элементы управления доступом к сети для [групп безопасности сети](./network-security-groups-overview.md#security-rules) или [брандмауэра Azure](../firewall/service-tags.md). Указав имя тега службы (например, Азуривентгрид) в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для соответствующей службы.
 
 ![Разрешение или запрет трафика с помощью тегов службы](./media/network-isolation/service-tags.png)
 
@@ -78,4 +78,4 @@ ms.locfileid: "97882370"
 
 - Узнайте, как [интегрировать приложение с сетью Azure](../app-service/web-sites-integrate-with-vnet.md).
 - Узнайте, как [ограничить доступ к ресурсам с помощью тегов служб](tutorial-restrict-network-access-to-resources.md).
-- Узнайте, как [подключаться к учетной записи Azure Cosmos с помощью частной ссылки Azure](../private-link/create-private-endpoint-cosmosdb-portal.md).
+- Узнайте, как [подключаться к учетной записи Azure Cosmos с помощью частной ссылки Azure](../private-link/tutorial-private-endpoint-cosmosdb-portal.md).

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 14c71d5888aefc11485c03935c5d8c7ff7d17045
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7462c78ecad718c30980a98ff7659a2a4d2ea020
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995885"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222162"
 ---
 # <a name="quickstart-connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Краткое руководство. Подключение к Azure Synapse Link для Azure Cosmos DB
 
@@ -24,8 +24,8 @@ ms.locfileid: "95995885"
 
 Для подключения учетной записи Azure Cosmos DB к рабочей области потребуется следующее:
 
-* имеющаяся учетная запись Azure Cosmos DB (можно также создать новую учетную запись, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account));
-* имеющаяся рабочая область Synapse (можно также создать новую рабочую область, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)). 
+* имеющаяся учетная запись Azure Cosmos DB (можно также создать новую учетную запись, следуя инструкциям в этом [кратком руководстве](../cosmos-db/how-to-manage-database-account.md));
+* имеющаяся рабочая область Synapse (можно также создать новую рабочую область, следуя инструкциям в этом [кратком руководстве](./quickstart-create-workspace.md)). 
 
 ## <a name="enable-azure-cosmos-db-analytical-store"></a>Включение аналитического хранилища Azure Cosmos DB
 

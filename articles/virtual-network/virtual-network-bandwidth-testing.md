@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/06/2020
 ms.author: steveesp
-ms.openlocfilehash: 0b009b7c44084e76194c1447fefdb2ff59f8086a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a2f6750a4d0a48c6971f60241976fb55410b65c
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91812290"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221448"
 ---
 # <a name="bandwidththroughput-testing-ntttcp"></a>Проверка пропускной способности (NTTTCP)
 
@@ -26,7 +26,7 @@ ms.locfileid: "91812290"
 Скопируйте этот инструмент на две виртуальные машины Azure одного размера. Одна виртуальная машина выполняет роль отправителя, а другая — получателя.
 
 #### <a name="deploying-vms-for-testing"></a>Развертывание виртуальных машин для тестирования
-Для целей этого теста две виртуальные машины должны находиться в одной [группе размещения](../virtual-machines/windows/co-location.md) или одной и той же группы доступности, чтобы можно было использовать свои внутренние IP-адреса и исключать подсистемы балансировки нагрузки из теста. Существует возможность тестирования с помощью виртуального IP-адреса, но это выходит за рамки данного документа.
+Для целей этого теста две виртуальные машины должны находиться в одной [группе размещения](../virtual-machines/co-location.md) или одной и той же группы доступности, чтобы можно было использовать свои внутренние IP-адреса и исключать подсистемы балансировки нагрузки из теста. Существует возможность тестирования с помощью виртуального IP-адреса, но это выходит за рамки данного документа.
 
 Запишите IP-адрес получателя. Назовем этот IP-адрес a.b.c.r.
 
@@ -59,13 +59,13 @@ ms.locfileid: "91812290"
 Рекомендуется поместить NTTTCP в отдельную папку, например c:\\tools.
 
 #### <a name="allow-ntttcp-through-the-windows-firewall"></a>Разрешение трафика NTTTCP в брандмауэре Windows
-На в брандмауэре Windows виртуальной машине-получателе создайте правило, разрешающее прием трафика NTTTCP. Проще разрешить саму программу NTTTCP по имени, чем входящий трафик через определенные TCP-порты.
+На в брандмауэре Windows виртуальной машине-получателе создайте правило, разрешающее прием трафика NTTTCP. Проще разрешить саму программу NTTTCP по имени, чем входящий трафик через определенные TCP-порты.
 
 Разрешите трафик NTTTCP в брандмауэре Windows следующей командой.
 
 netsh advfirewall Firewall Добавление правила программа = \<PATH\> \\ntttcp.exe имя = "ntttcp" Protocol = любой dir = в действии = разрешить Enable = да Profile = Any
 
-Например, если вы скопировали ntttcp.exe в папку c:\\tools, то это будет следующая команда: 
+Например, если вы скопировали ntttcp.exe в папку c:\\tools, то это будет следующая команда. 
 
 netsh advfirewall firewall add rule program=c:\\tools\\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
 
@@ -82,7 +82,7 @@ ntttcp -r –m 8,\*,10.0.0.4 -t 300
 
 Запустите NTTTCP на виртуальной машине-отправителе (**в командной строке**, а не в PowerShell).
 
-ntttcp -s –m 8,\*,10.0.0.4 -t 300 
+ntttcp -s –m 8,\*,10.0.0.4 -t 300 
 
 Дождитесь результатов.
 
@@ -95,19 +95,19 @@ ntttcp -s –m 8,\*,10.0.0.4 -t 300 
 
 CentOS: установка Git.
 ``` bash
-  yum install gcc -y  
-  yum install git -y
+  yum install gcc -y  
+  yum install git -y
 ```
 Ubuntu: установка Git.
 ``` bash
- apt-get -y install build-essential  
- apt-get -y install git
+ apt-get -y install build-essential  
+ apt-get -y install git
 ```
-Создание и установка в обеих ОС:
+Создание и установка в обеих ОС.
 ``` bash
- git clone https://github.com/Microsoft/ntttcp-for-linux
- cd ntttcp-for-linux/src
- make && make install
+ git clone https://github.com/Microsoft/ntttcp-for-linux
+ cd ntttcp-for-linux/src
+ make && make install
 ```
 
 Как и в примере для Windows, предполагается, что IP-адрес виртуальной машины-получателя Linux — 10.0.0.4.
@@ -123,7 +123,7 @@ ntttcp -r -t 300
 ``` bash
 ntttcp -s10.0.0.4 -t 300
 ```
- 
+ 
 Если для теста не указан параметр времени, по умолчанию он длится 60 секунд.
 
 ## <a name="testing-between-vms-running-windows-and-linux"></a>Тестирование подключения между виртуальными машинами под управлением Windows и Linux
@@ -165,7 +165,7 @@ ntttcp -s -m <2 x nr cores>,*,<Linux  server IP> -ns -t 300
 </Endpoints> 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * В зависимости от полученных результатов в вашем сценарии вполне может быть возможность [оптимизировать пропускную способность сети виртуальных машин](virtual-network-optimize-network-bandwidth.md).
-* Узнайте, как [выделяется пропускная способность для виртуальных машин](virtual-machine-network-throughput.md)
+* Узнайте о том [, как пропускная способность выделяется виртуальным машинам](virtual-machine-network-throughput.md) .
 * Дополнительные сведения см. в статье [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md).

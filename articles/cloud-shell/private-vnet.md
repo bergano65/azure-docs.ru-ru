@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: damaerte
-ms.openlocfilehash: a820fb4ec5d6c2053b1104b68dbda0ae70f624c0
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 58f6c7a3b5d68d2825cead545ba1b683d1faf1af
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179203"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222808"
 ---
 # <a name="deploy-cloud-shell-into-an-azure-virtual-network"></a>Развертывание Cloud Shell в виртуальной сети Azure
 
@@ -87,9 +87,6 @@ ResourceTypes                             RegistrationState
 Если у вас уже есть нужная виртуальная сеть, к которой вы хотите подключиться, пропустите этот раздел.
 
 В портал Azure или с помощью Azure CLI, Azure PowerShell и т. д. Создайте группу ресурсов и виртуальную сеть в новой группе ресурсов, **Группа ресурсов и виртуальная сеть должны находиться в одном регионе**.
-
-> [!NOTE]
-> В общедоступной предварительной версии группа ресурсов и виртуальная сеть должны находиться либо в WestCentralUS, либо в WestUS.
 
 ### <a name="arm-templates"></a>Шаблоны ARM
 Используйте шаблон быстрого запуска [Azure](https://aka.ms/cloudshell/docs/vnet/template) для создания ресурсов Cloud Shell в виртуальной сети, а также шаблон быстрого запуска [Azure](https://aka.ms/cloudshell/docs/vnet/template/storage) для создания необходимого хранилища. Запишите имена ресурсов, в первую очередь, имя общей папки.

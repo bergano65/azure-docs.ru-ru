@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: a0458264b6ea0c741244531fc104a7637108b06e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 4681039f60154b95eeb7e40196ca33055a192c74
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121351"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222111"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в предварительной версии Azure синапсе Link
 
@@ -31,7 +31,7 @@ ms.locfileid: "98121351"
 > [!IMPORTANT]
 > В этом руководстве используется контейнер с [четко определенной схемой Azure Cosmos DB](../../cosmos-db/analytical-store-introduction.md#schema-representation). Работа запроса, которую серверный пул SQL предоставляет для [схемы Azure Cosmos DB полной точности](#full-fidelity-schema) , является временным поведением, которое будет изменено на основе отзывов о предварительной версии. Не полагайтесь на схему результирующего набора `OPENROWSET` функции без `WITH` предложения, считывающего данные из контейнера с полной схемой точности, так как работа запроса может быть согласована с и изменяется на основе четко определенной схемы. Вы можете опубликовать свой отзыв на [форуме обратной связи Azure синапсе Analytics](https://feedback.azure.com/forums/307516-azure-synapse-analytics). Вы также можете обратиться к [группе разработчиков Azure синапсе Link](mailto:cosmosdbsynapselink@microsoft.com) , чтобы отправить отзыв.
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Бессерверный пул SQL позволяет запрашивать Azure Cosmos DB аналитического хранилища с помощью `OPENROWSET` функции. 
 - `OPENROWSET` со встроенным ключом. Этот синтаксис можно использовать для запроса коллекций Azure Cosmos DB без необходимости подготовки учетных данных.
@@ -206,6 +206,8 @@ FROM OPENROWSET(
 
 ## <a name="create-view"></a>Создать представление
 
+Создание представлений в базах данных master или по умолчанию не рекомендуется или не поддерживается. Поэтому необходимо создать пользовательскую базу данных для представлений.
+
 Определив схему, можно подготовить представление поверх данных Azure Cosmos DB. Ключ учетной записи Azure Cosmos DB следует размещать в отдельных учетных данных и ссылаться на эти учетные данные из `OPENROWSET` функции. Не оставляйте ключ учетной записи в определении представления.
 
 ```sql
@@ -337,7 +339,7 @@ FROM
 | --- | --- |
 | Логическое значение | bit |
 | Целое число | BIGINT |
-| Decimal | float |
+| Decimal | FLOAT |
 | Строка | varchar (параметры сортировки базы данных UTF-8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
 | Дата и время (метка времени UNIX) | BIGINT |

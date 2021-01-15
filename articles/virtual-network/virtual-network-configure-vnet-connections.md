@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: d6532747c50311ada4df6a0038bd0e05f4d9ce31
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: d9a87eca6a6c66d116817ced0f534a75033d48b9
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089696"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221482"
 ---
 # <a name="configure-and-validate-virtual-network-or-vpn-connections"></a>Настройка и проверка виртуальной сети или VPN-подключений
 
@@ -38,7 +38,7 @@ VPN-шлюзы Azure обеспечивают гибкость при Орган
 
 ![Подключение "сеть — сеть" с использованием IPsec](./media/virtual-network-configure-vnet-connections/4034386_en_2.png)
  
-Если виртуальные сети находятся в одном регионе, их можно подключить с помощью пиринга виртуальных сетей. Пиринг виртуальных сетей не использует VPN-шлюз. Это увеличивает пропускную способность и сокращает задержку. Чтобы настроить подключение пиринга между виртуальными сетями, выберите **Настройка и проверка пиринга**виртуальной сети.
+Если виртуальные сети находятся в одном регионе, их можно подключить с помощью пиринга виртуальных сетей. Пиринг виртуальных сетей не использует VPN-шлюз. Это увеличивает пропускную способность и сокращает задержку. Чтобы настроить подключение пиринга между виртуальными сетями, выберите **Настройка и проверка пиринга** виртуальной сети.
 
 Если виртуальные сети были созданы с помощью модели развертывания диспетчера ресурсов Azure, выберите **Настройка и проверка диспетчер ресурсов виртуальной сети для подключения к Диспетчер ресурсов виртуальной сети** , чтобы настроить VPN-подключение.
 
@@ -52,7 +52,7 @@ VPN-шлюзы Azure обеспечивают гибкость при Орган
 * Одноранговые виртуальные сети должны иметь пространства IP-адресов, которые не перекрываются.
 * Пиринговая связь устанавливается между двумя виртуальными сетями. Между одноранговыми узлами нет производной промежуточной связи. Например, если VNetA соединен с VNetB, а *VNetB — с* Внетк, VNetA не является одноранговым элементом внетк.
 
-При соблюдении требований вы можете следовать указаниям в [руководстве по подключению виртуальных сетей с помощью пиринга виртуальных сетей, используя портал Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-create-peering) для создания и настройки пиринга.
+При соблюдении требований вы можете следовать указаниям в [руководстве по подключению виртуальных сетей с помощью пиринга виртуальных сетей, используя портал Azure](./tutorial-connect-virtual-networks-portal.md) для создания и настройки пиринга.
 
 Чтобы проверить конфигурацию пиринга, используйте следующий метод:
 
@@ -64,7 +64,7 @@ VPN-шлюзы Azure обеспечивают гибкость при Орган
 
 ![Параметры для проверки конфигурации пиринга виртуальной сети](./media/virtual-network-configure-vnet-connections/4034496_en_1.png)
  
-Для Azure PowerShell выполните команду [Get-azurermvirtualnetworkpeering —](https://docs.microsoft.com/powershell/module/azurerm.network/get-azurermvirtualnetworkpeering?view=azurermps-4.1.0) , чтобы получить пиринг виртуальной сети. Приведем пример:
+Для Azure PowerShell выполните команду [Get-azurermvirtualnetworkpeering —](/powershell/module/azurerm.network/get-azurermvirtualnetworkpeering?view=azurermps-4.1.0) , чтобы получить пиринг виртуальной сети. Ниже приведен пример:
 
 ```
 PS C:\Users\User1> Get-AzureRmVirtualNetworkPeering -VirtualNetworkName Vnet10-01 -ResourceGroupName dev-vnets
@@ -93,12 +93,12 @@ RemoteVirtualNetworkAddressSpace : null
 
 ### <a name="configure-a-vpn-connection-between-resource-manager-virtual-networks"></a>Настройка VPN-подключения между диспетчер ресурсов виртуальными сетями
 
-Сведения о настройке подключения между виртуальными сетями диспетчер ресурсов без использования IPsec см. [в статье Настройка подключения к VPN-шлюзу типа "сеть — сеть" с помощью портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal).
+Сведения о настройке подключения между виртуальными сетями диспетчер ресурсов без использования IPsec см. [в статье Настройка подключения к VPN-шлюзу типа "сеть — сеть" с помощью портал Azure](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md).
 
-Чтобы настроить подключение между двумя диспетчер ресурсов виртуальными сетями по протоколу IPsec, выполните шаги 1 – 5 в разделе [Создание подключения типа "сеть — сеть" в портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal) для каждой виртуальной сети.
+Чтобы настроить подключение между двумя диспетчер ресурсов виртуальными сетями по протоколу IPsec, выполните шаги 1 – 5 в разделе [Создание подключения типа "сеть — сеть" в портал Azure](../vpn-gateway/tutorial-site-to-site-portal.md) для каждой виртуальной сети.
 
 > [!Note]
-> Эти действия применимы только к виртуальным сетям в одной подписке. Если ваши виртуальные сети находятся в разных подписках, для подключения необходимо использовать PowerShell. См. статью, посвященную использованию [PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps).
+> Эти действия применимы только к виртуальным сетям в одной подписке. Если ваши виртуальные сети находятся в разных подписках, для подключения необходимо использовать PowerShell. См. статью, посвященную использованию [PowerShell](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md).
 
 ### <a name="validate-the-vpn-connection-between-resource-manager-virtual-networks"></a>Проверка VPN-подключения между диспетчер ресурсов виртуальными сетями
 
@@ -120,7 +120,7 @@ RemoteVirtualNetworkAddressSpace : null
 
 Можно создать подключение между виртуальными сетями, которые находятся в разных подписках, и в разных регионах. Вы также можете подключать виртуальные сети, которые уже имеют подключения к локальным сетям, при условии, что тип шлюза настроен как на основе маршрутов.
 
-Сведения о настройке подключения между классической виртуальной сетью и диспетчер ресурсов виртуальной сетью см. в статье [подключение виртуальных сетей из разных моделей развертывания с помощью портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-connect-different-deployment-models-portal).
+Сведения о настройке подключения между классической виртуальной сетью и диспетчер ресурсов виртуальной сетью см. в статье [подключение виртуальных сетей из разных моделей развертывания с помощью портал Azure](../vpn-gateway/vpn-gateway-connect-different-deployment-models-portal.md).
 
 ![На схеме показана классическая виртуальная сеть, подключенная к Azure Resource Manager виртуальной сети.](./media/virtual-network-configure-vnet-connections/4034389_en_2.png)
 
@@ -138,7 +138,7 @@ RemoteVirtualNetworkAddressSpace : null
    - Классическая виртуальная сеть: **Определение локальной сети** (3)
    - Azure Resource Manager виртуальная сеть: **объект подключения** (4)
 
-## <a name="create-a-point-to-site-vpn-connection"></a>Создание VPN-подключения типа "точка — сеть"
+## <a name="create-a-point-to-site-vpn-connection"></a>Создание VPN-подключения "точка — сеть"
 
 Конфигурация "точка — сеть" (*P2S* на следующей схеме) позволяет создать безопасное подключение с отдельного клиентского компьютера к виртуальной сети. Подключения типа "точка — сеть" полезны, если требуется подключиться к виртуальной сети из удаленного расположения, например из дома или конференции. Они также полезны при наличии нескольких клиентов, которым требуется подключение к виртуальной сети. 
 
@@ -148,13 +148,13 @@ VPN-подключение типа "точка — сеть" инициируе
 
 Для подключений типа "точка — сеть" не требуется VPN-устройство. Они создают VPN-подключение по протоколу SSTP. Подключение типа "точка — сеть" к виртуальной сети можно подключить с помощью различных средств развертывания и моделей развертывания.
 
-* [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal)
-* [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью портал Azure (классическая модель)](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal)
-* [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps)
+* [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью портал Azure](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md)
+* [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью портал Azure (классическая модель)](../vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md)
+* [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью PowerShell](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md)
 
 ### <a name="validate-your-point-to-site-connection"></a>Проверка подключения "точка — сеть"
 
-В статье [Устранение неполадок подключения "точка — сеть](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems) " в Azure рассматриваются распространенные проблемы с подключением "точка — сеть".
+В статье [Устранение неполадок подключения "точка — сеть](../vpn-gateway/vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md) " в Azure рассматриваются распространенные проблемы с подключением "точка — сеть".
 
 ## <a name="create-a-multisite-vpn-connection"></a>Создание многосайтового VPN-подключения
 
@@ -164,11 +164,11 @@ VPN-подключение типа "точка — сеть" инициируе
 
 Сейчас Azure поддерживает две модели развертывания: классическую и с использованием Resource Manager. Эти две модели не полностью совместимы друг с другом. Сведения о настройке многосайтового подключения с различными моделями см. в следующих статьях:
 
-* [Добавление подключения типа "сеть — сеть" в виртуальную сеть с существующим VPN-шлюзом](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal)
-* [Добавление подключения типа "сеть — сеть" в виртуальную сеть с существующим подключением VPN-шлюза (классическая модель)](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-multi-site)
+* [Добавление подключения типа "сеть — сеть" в виртуальную сеть с существующим VPN-шлюзом](../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
+* [Добавление подключения типа "сеть — сеть" в виртуальную сеть с существующим подключением VPN-шлюза (классическая модель)](../vpn-gateway/vpn-gateway-multi-site.md)
 
 > [!Note]
-> Действия, описанные в этих статьях, не применяются к параллельным конфигурациям подключений Azure ExpressRoute и "сеть — сеть". Дополнительные сведения см. в разделе [подключения ExpressRoute и соединения "сеть — сеть](https://docs.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager)".
+> Действия, описанные в этих статьях, не применяются к параллельным конфигурациям подключений Azure ExpressRoute и "сеть — сеть". Дополнительные сведения см. в разделе [подключения ExpressRoute и соединения "сеть — сеть](../expressroute/expressroute-howto-coexist-resource-manager.md)".
 
 ## <a name="configure-transit-routing"></a>Настройка транзитной маршрутизации
 
@@ -178,20 +178,20 @@ VPN-подключение типа "точка — сеть" инициируе
 
 Представьте себе ситуацию, в которой необходимо настроить VPN-подключение типа "сеть — сеть" между VNetA и VNetB. Кроме того, необходимо настроить VPN-подключение типа "точка — сеть" для подключения клиента к шлюзу VNetA. Затем необходимо включить транзитную маршрутизацию для клиентов "точка — сеть", чтобы подключиться к VNetB, который проходит через VNetA. 
 
-Этот сценарий поддерживается при включении BGP для VPN типа "сеть — сеть" между VNetA и VNetB. Дополнительные сведения см. в статье [о маршрутизации VPN типа "точка — сеть](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-point-to-site-routing)".
+Этот сценарий поддерживается при включении BGP для VPN типа "сеть — сеть" между VNetA и VNetB. Дополнительные сведения см. в статье [о маршрутизации VPN типа "точка — сеть](../vpn-gateway/vpn-gateway-about-point-to-site-routing.md)".
 
 ### <a name="configure-transit-routing-in-an-expressroute-connection"></a>Настройка транзитной маршрутизации в подключении ExpressRoute
 
-Azure ExpressRoute позволяет переносить локальные сети в облако Microsoft по выделенному закрытому соединению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure, Microsoft 365 и Dynamics 365. Дополнительные сведения см. в статье [Обзор ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction).
+Azure ExpressRoute позволяет переносить локальные сети в облако Microsoft по выделенному закрытому соединению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure, Microsoft 365 и Dynamics 365. Дополнительные сведения см. в статье [Обзор ExpressRoute](../expressroute/expressroute-introduction.md).
 
 ![Подключение частного пиринга ExpressRoute к виртуальным сетям Azure](./media/virtual-network-configure-vnet-connections/4034395_en_1.png)
 
 > [!Note]
-> Рекомендуется [связать обе виртуальные сети с каналом ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-arm) , а не настроить транзитную маршрутизацию, если VNetA и VNetB находятся в одном регионе. Если ваши виртуальные сети находятся в разных регионах, их также можно связать непосредственно с каналом, если у вас установлен [ExpressRoute Premium](https://docs.microsoft.com/azure/expressroute/expressroute-faqs#expressroute-premium). 
+> Рекомендуется [связать обе виртуальные сети с каналом ExpressRoute](../expressroute/expressroute-howto-linkvnet-arm.md) , а не настроить транзитную маршрутизацию, если VNetA и VNetB находятся в одном регионе. Если ваши виртуальные сети находятся в разных регионах, их также можно связать непосредственно с каналом, если у вас установлен [ExpressRoute Premium](../expressroute/expressroute-faqs.md#expressroute-premium). 
 
-Если у вас есть ExpressRoute и сосуществование между сайтами, транзитная маршрутизация не поддерживается. Дополнительные сведения см. в статье [Настройка ExpressRoute и "сеть — сеть" с помощью PowerShell](https://docs.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager).
+Если у вас есть ExpressRoute и сосуществование между сайтами, транзитная маршрутизация не поддерживается. Дополнительные сведения см. в статье [Настройка ExpressRoute и "сеть — сеть" с помощью PowerShell](../expressroute/expressroute-howto-coexist-resource-manager.md).
 
-Если вы включили ExpressRoute для подключения локальных сетей к виртуальной сети Azure, вы можете включить пиринг между виртуальными сетями, в которых требуется транзитная маршрутизация. Чтобы разрешить локальным сетям подключаться к удаленной виртуальной сети, необходимо настроить [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#gateways-and-on-premises-connectivity). 
+Если вы включили ExpressRoute для подключения локальных сетей к виртуальной сети Azure, вы можете включить пиринг между виртуальными сетями, в которых требуется транзитная маршрутизация. Чтобы разрешить локальным сетям подключаться к удаленной виртуальной сети, необходимо настроить [пиринг виртуальных сетей](./virtual-network-peering-overview.md#gateways-and-on-premises-connectivity). 
 
 > [!Note]
 > Пиринг виртуальных сетей доступен только для виртуальных сетей в том же регионе.
@@ -199,13 +199,13 @@ Azure ExpressRoute позволяет переносить локальные с
 Чтобы проверить, настроена ли транзитная маршрутизация для пиринга виртуальных сетей, выполните следующие действия:
 
 1. Войдите в [портал Azure](https://portal.azure.com/) , используя учетную запись с необходимыми [ролями и разрешениями](virtual-network-manage-peering.md#permissions).
-2. [Создайте пиринг между VNetA и VNetB](https://docs.microsoft.com/azure/virtual-network/virtual-network-create-peering) , как показано на предыдущей схеме. 
+2. [Создайте пиринг между VNetA и VNetB](./tutorial-connect-virtual-networks-portal.md) , как показано на предыдущей схеме. 
 3. В области, которая отображается для виртуальной сети, в разделе **Параметры** выберите **пиринг** .
 4. Выберите пиринг, который вы хотите просмотреть. Затем выберите **Конфигурация** , чтобы убедиться, что вы включили параметр **Разрешить транзит шлюза** в сети VNetA, подключенной к каналу Expressroute, и **Используйте удаленный шлюз** в удаленной сети VNetB, не подключенной к каналу expressroute.
 
 ### <a name="configure-transit-routing-in-a-virtual-network-peering-connection"></a>Настройка транзитной маршрутизации в одноранговом подключении к виртуальной сети
 
-Если между виртуальными сетями установлена пиринговая связь, можно использовать шлюз в одной из этих сетей в качестве транзитного пункта при подключении к локальной сети. Чтобы настроить транзитный маршрут в пиринга виртуальной сети, см. раздел [подключения типа "сеть — сеть](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps?toc=/azure/virtual-network/toc.json)".
+Если между виртуальными сетями установлена пиринговая связь, можно использовать шлюз в одной из этих сетей в качестве транзитного пункта при подключении к локальной сети. Чтобы настроить транзитный маршрут в пиринга виртуальной сети, см. раздел [подключения типа "сеть — сеть](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json)".
 
 > [!Note]
 > Транзитный шлюз не поддерживается в связи пиринга между виртуальными сетями, созданными с помощью разных моделей развертывания. Обе виртуальные сети в связи пиринга должны быть созданы с помощью диспетчер ресурсов для передачи шлюза.
@@ -222,39 +222,39 @@ Azure ExpressRoute позволяет переносить локальные с
 
 ### <a name="configure-transit-routing-in-a-network-to-network-connection"></a>Настройка транзитной маршрутизации в подключении "сеть — сеть"
 
-Чтобы настроить транзитную маршрутизацию между виртуальными сетями, необходимо включить протокол BGP для всех промежуточных подключений "сеть — сеть" с помощью модели развертывания диспетчер ресурсов и PowerShell. Инструкции см. [в статье Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-bgp-resource-manager-ps).
+Чтобы настроить транзитную маршрутизацию между виртуальными сетями, необходимо включить протокол BGP для всех промежуточных подключений "сеть — сеть" с помощью модели развертывания диспетчер ресурсов и PowerShell. Инструкции см. [в статье Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md).
 
 Транзитный трафик через VPN-шлюзы Azure можно перебрать с помощью классической модели развертывания, но в нем используются статически определенные адресные пространства в файле конфигурации сети. BGP пока не поддерживается виртуальными сетями Azure и VPN-шлюзами через классическую модель развертывания. Без BGP определение адресов транзитного пространства вручную может привести к ошибке, и мы не рекомендуем их использовать.
 
 > [!Note]
-> Классические подключения типа "сеть — сеть" настраиваются с помощью классического портала Azure или файла конфигурации сети на классическом портале. Вы не можете создать или изменить классическую виртуальную сеть с помощью модели развертывания Azure Resource Manager или портал Azure. Дополнительные сведения о транзитной маршрутизации для классических виртуальных сетей см. в [блоге разработчика Майкрософт](https://blogs.msdn.microsoft.com/igorpag/2015/10/01/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-using-vpn-v1/).
+> Классические подключения типа "сеть — сеть" настраиваются с помощью классического портала Azure или файла конфигурации сети на классическом портале. Вы не можете создать или изменить классическую виртуальную сеть с помощью модели развертывания Azure Resource Manager или портал Azure. Дополнительные сведения о транзитной маршрутизации для классических виртуальных сетей см. в [блоге разработчика Майкрософт](/archive/blogs/igorpag/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-using-vpn-v1).
 
 ### <a name="configure-transit-routing-in-a-site-to-site-connection"></a>Настройка транзитной маршрутизации в подключении типа "сеть — сеть"
 
-Чтобы настроить транзитную маршрутизацию между локальной сетью и виртуальной сетью с подключением типа "сеть — сеть", необходимо включить протокол BGP для всех промежуточных подключений типа "сеть — сеть" с помощью модели развертывания диспетчер ресурсов и PowerShell. Инструкции см. [в статье Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-bgp-resource-manager-ps) .
+Чтобы настроить транзитную маршрутизацию между локальной сетью и виртуальной сетью с подключением типа "сеть — сеть", необходимо включить протокол BGP для всех промежуточных подключений типа "сеть — сеть" с помощью модели развертывания диспетчер ресурсов и PowerShell. Инструкции см. [в статье Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md) .
 
 Транзитный трафик через VPN-шлюзы Azure можно перебрать с помощью классической модели развертывания, но в нем используются статически определенные адресные пространства в файле конфигурации сети. BGP пока не поддерживается виртуальными сетями Azure и VPN-шлюзами через классическую модель развертывания. Без BGP определение адресов транзитного пространства вручную может привести к ошибке, и мы не рекомендуем их использовать.
 
 > [!Note]
-> Классические подключения типа "сеть — сеть" настраиваются с помощью классического портала Azure или файла конфигурации сети на классическом портале. Вы не можете создать или изменить классическую виртуальную сеть с помощью модели развертывания Azure Resource Manager или портал Azure. Дополнительные сведения о транзитной маршрутизации для классических виртуальных сетей см. в [блоге разработчика Майкрософт](https://blogs.msdn.microsoft.com/igorpag/2015/10/01/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-using-vpn-v1/).
+> Классические подключения типа "сеть — сеть" настраиваются с помощью классического портала Azure или файла конфигурации сети на классическом портале. Вы не можете создать или изменить классическую виртуальную сеть с помощью модели развертывания Azure Resource Manager или портал Azure. Дополнительные сведения о транзитной маршрутизации для классических виртуальных сетей см. в [блоге разработчика Майкрософт](/archive/blogs/igorpag/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-using-vpn-v1).
 
 ## <a name="configure-bgp-for-a-vpn-gateway"></a>Настройка BGP для VPN-шлюза
 
 BGP — это стандартный протокол маршрутизации, используемый в Интернете для обмена информацией о маршрутизации и достижимости между двумя или более сетями. Когда BGP используется в контексте виртуальных сетей Azure, он включает VPN-шлюзы Azure и локальные VPN-устройства, называемые одноранговыми узлами BGP или соседями. Они обмениваются "маршрутами", которые будут сообщать о доступности и достижимости обоих шлюзов, чтобы эти префиксы продавались через шлюзы или маршрутизаторы. 
 
-BGP также может включить транзитную маршрутизацию между несколькими сетями путем распространения маршрутов, которые шлюз BGP изучает с одного узла BGP на все остальные узлы BGP. Дополнительные сведения см. в статье Общие сведения о [BGP с VPN-шлюзом Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-bgp-overview).
+BGP также может включить транзитную маршрутизацию между несколькими сетями путем распространения маршрутов, которые шлюз BGP изучает с одного узла BGP на все остальные узлы BGP. Дополнительные сведения см. в статье Общие сведения о [BGP с VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md).
 
 ### <a name="configure-bgp-for-a-vpn-connection"></a>Настройка BGP для VPN-подключения
 
-Сведения о настройке VPN-подключения, использующего BGP, см. в статье [Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-bgp-resource-manager-ps).
+Сведения о настройке VPN-подключения, использующего BGP, см. в статье [Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md).
 
-Включите протокол BGP для шлюза виртуальной сети, создав для него автономную систему (как). Основные шлюзы не поддерживают BGP. Чтобы проверить номер SKU шлюза, перейдите к разделу **Обзор** колонки **VPN-шлюза** в портал Azure. Если номер SKU является **базовым**, необходимо изменить номер SKU (см. раздел изменение [размера шлюза](https://docs.microsoft.com/powershell/module/azurerm.network/resize-azurermvirtualnetworkgateway?view=azurermps-4.1.0&viewFallbackFrom=azurermps-4.0.0)) на **VpnGw1**. 
+Включите протокол BGP для шлюза виртуальной сети, создав для него автономную систему (как). Основные шлюзы не поддерживают BGP. Чтобы проверить номер SKU шлюза, перейдите к разделу **Обзор** колонки **VPN-шлюза** в портал Azure. Если номер SKU является **базовым**, необходимо изменить номер SKU (см. раздел изменение [размера шлюза](/powershell/module/azurerm.network/resize-azurermvirtualnetworkgateway?view=azurermps-4.1.0&viewFallbackFrom=azurermps-4.0.0)) на **VpnGw1**. 
 
-Проверка номера SKU приведет к простою 20 – 30 минут. Как только шлюз будет иметь правильный номер SKU, его можно добавить с помощью командлета PowerShell [Set-AzureRmVirtualNetworkGateway](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermvirtualnetworkgateway?view=azurermps-3.8.0) . Когда вы настроите значение AS, IP-адрес узла BGP для шлюза будет предоставляться автоматически.
+Проверка номера SKU приведет к простою 20 – 30 минут. Как только шлюз будет иметь правильный номер SKU, его можно добавить с помощью командлета PowerShell [Set-AzureRmVirtualNetworkGateway](/powershell/module/azurerm.network/set-azurermvirtualnetworkgateway?view=azurermps-3.8.0) . Когда вы настроите значение AS, IP-адрес узла BGP для шлюза будет предоставляться автоматически.
 
-Необходимо вручную указать `LocalNetworkGateway` номер AS и адрес узла BGP. Значения и можно задать `ASN` с `-BgpPeeringAddress` помощью команды [New-азурермлокалнетворкгатевай](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermlocalnetworkgateway?view=azurermps-4.1.0) или [Set-азурермлокалнетворкгатевай](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermlocalnetworkgateway?view=azurermps-4.1.0) PowerShell командлет. Некоторые цифры зарезервированы для Azure, и их нельзя использовать, как описано в статье [о BGP с VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md#faq).
+Необходимо вручную указать `LocalNetworkGateway` номер AS и адрес узла BGP. Значения и можно задать `ASN` с `-BgpPeeringAddress` помощью команды [New-азурермлокалнетворкгатевай](/powershell/module/azurerm.network/new-azurermlocalnetworkgateway?view=azurermps-4.1.0) или [Set-азурермлокалнетворкгатевай](/powershell/module/azurerm.network/set-azurermlocalnetworkgateway?view=azurermps-4.1.0) PowerShell командлет. Некоторые цифры зарезервированы для Azure, и их нельзя использовать, как описано в статье [о BGP с VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md#faq).
 
-Для объекта соединения должен быть включен BGP. Можно задать значение с `-EnableBGP` `$True` помощью [New-AzureRmVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/azurerm.network/new-azurermvirtualnetworkgatewayconnection?view=azurermps-4.1.0) или [Set-AzureRmVirtualNetworkGatewayConnection](https://docs.microsoft.com/powershell/module/azurerm.network/set-azurermvirtualnetworkgatewayconnection?view=azurermps-4.1.0).
+Для объекта соединения должен быть включен BGP. Можно задать значение с `-EnableBGP` `$True` помощью [New-AzureRmVirtualNetworkGatewayConnection](/powershell/module/azurerm.network/new-azurermvirtualnetworkgatewayconnection?view=azurermps-4.1.0) или [Set-AzureRmVirtualNetworkGatewayConnection](/powershell/module/azurerm.network/set-azurermvirtualnetworkgatewayconnection?view=azurermps-4.1.0).
 
 ### <a name="validate-the-bgp-configuration"></a>Проверка конфигурации BGP
 
@@ -278,11 +278,11 @@ BGP также может включить транзитную маршрути
 
 * Необходимо создать две IP-конфигурации шлюза с двумя общедоступными IP-адресами.
 * Необходимо задать флаг **енаблеактивеактивефеатуре** .
-* Номер SKU шлюза должен быть **VpnGw1**, **VpnGw2**или **VpnGw3**.
+* Номер SKU шлюза должен быть **VpnGw1**, **VpnGw2** или **VpnGw3**.
 
-Чтобы обеспечить высокий уровень доступности между локальными и сетевыми подключениями, необходимо развернуть несколько VPN-шлюзов и установить несколько параллельных подключений между сетями и Azure. Общие сведения о вариантах подключения и топологии см. в разделе [высокодоступные подключения между локальными сетями и сеть-сеть](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-highlyavailable).
+Чтобы обеспечить высокий уровень доступности между локальными и сетевыми подключениями, необходимо развернуть несколько VPN-шлюзов и установить несколько параллельных подключений между сетями и Azure. Общие сведения о вариантах подключения и топологии см. в разделе [высокодоступные подключения между локальными сетями и сеть-сеть](../vpn-gateway/vpn-gateway-highlyavailable.md).
 
-Чтобы создать активные или активные подключения между локальными и сетевыми сетями, следуйте инструкциям в статье Настройка активных и активных подключений [S2S с VPN-шлюзами Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-activeactive-rm-powershell) для настройки VPN-шлюза Azure в режиме "активный/активный".
+Чтобы создать активные или активные подключения между локальными и сетевыми сетями, следуйте инструкциям в статье Настройка активных и активных подключений [S2S с VPN-шлюзами Azure](../vpn-gateway/vpn-gateway-activeactive-rm-powershell.md) для настройки VPN-шлюза Azure в режиме "активный/активный".
 
 > [!Note]  
 > * При добавлении адресов в шлюз локальной сети для режима "активный/активный" с поддержкой BGP *добавьте только адреса узлов BGP (/32)*. Если добавить дополнительные адреса, они будут рассматриваться как статические маршруты и имеют приоритет над маршрутами BGP.
@@ -296,15 +296,14 @@ BGP также может включить транзитную маршрути
 
 1. Удалите все подключения, связанные с исходным шлюзом.
 2. Удалите шлюз с помощью портал Azure, PowerShell или классической оболочки PowerShell: 
-   * [Удаление шлюза виртуальной сети с помощью портал Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-delete-vnet-gateway-portal)
-   * [Удаление шлюза виртуальной сети с помощью PowerShell](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-delete-vnet-gateway-powershell)
-   * [Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-delete-vnet-gateway-classic-powershell)
-3. Выполните действия, описанные в разделе [Создание VPN-шлюза](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md#VNetGateway) , чтобы создать новый шлюз требуемого типа и завершить настройку VPN.
+   * [Удаление шлюза виртуальной сети с помощью портал Azure](../vpn-gateway/vpn-gateway-delete-vnet-gateway-portal.md)
+   * [Удаление шлюза виртуальной сети с помощью PowerShell](../vpn-gateway/vpn-gateway-delete-vnet-gateway-powershell.md)
+   * [Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)](../vpn-gateway/vpn-gateway-delete-vnet-gateway-classic-powershell.md)
+3. Выполните действия, описанные в разделе [Создание VPN-шлюза](../vpn-gateway/tutorial-site-to-site-portal.md#VNetGateway) , чтобы создать новый шлюз требуемого типа и завершить настройку VPN.
 
 > [!Note]
 > Этот процесс займет около 60 минут.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Устранение проблем с подключением между виртуальными машинами Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-connectivity-problem-between-vms)
-
+* [Устранение проблем с подключением между виртуальными машинами Azure](./virtual-network-troubleshoot-connectivity-problem-between-vms.md)

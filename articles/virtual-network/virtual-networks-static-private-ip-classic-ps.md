@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/02/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 669b8427f13efcc55a69bc7c970b6658a6719cd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e798f81102017b4d34c4b1b219a9f23035b0359
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86134720"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222842"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-powershell"></a>Настройка частных IP-адресов для (классической) виртуальной машины с помощью PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "86134720"
 
 [!INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
-Для приведенных ниже примеров команд PowerShell требуется уже созданная простая среда. Чтобы выполнять команды в соответствии с указаниями, представленными в этом документе, сначала создайте тестовую среду, как описано в статье [Создание виртуальной сети](virtual-networks-create-vnet-classic-netcfg-ps.md).
+Для приведенных ниже примеров команд PowerShell требуется уже созданная простая среда. Чтобы выполнять команды в соответствии с указаниями, представленными в этом документе, сначала создайте тестовую среду, как описано в статье [Создание виртуальной сети](/previous-versions/azure/virtual-network/virtual-networks-create-vnet-classic-netcfg-ps).
 
 ## <a name="how-to-verify-if-a-specific-ip-address-is-available"></a>Проверка доступности определенного IP-адреса
 Чтобы проверить, доступен ли IP-адрес *192.168.1.101* в виртуальной сети *TestVNet*, выполните следующую команду PowerShell и проверьте значение для *IsAvailable*.
@@ -154,7 +154,6 @@ Update-AzureVM       77d8cae2-87e6-0ead-9738-7c7dae9810cb Succeeded
 Не рекомендуется без необходимости статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе. Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному виртуальной машине Azure, иначе соединение с виртуальной машиной может быть потеряно. Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Ознакомьтесь с информацией о [зарезервированных общедоступных IP-адресах](virtual-networks-reserved-public-ip.md) .
-* Узнайте об [общедоступных IP-адресах уровня экземпляра (ILPIP)](virtual-networks-instance-level-public-ip.md) .
-* Ознакомьтесь с информацией о [REST API зарезервированных IP-адресов](https://msdn.microsoft.com/library/azure/dn722420.aspx).
-
+* Ознакомьтесь с информацией о [зарезервированных общедоступных IP-адресах](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) .
+* Узнайте об [общедоступных IP-адресах уровня экземпляра (ILPIP)](/previous-versions/azure/virtual-network/virtual-networks-instance-level-public-ip) .
+* Ознакомьтесь с информацией о [REST API зарезервированных IP-адресов](/previous-versions/azure/reference/dn722420(v=azure.100)).

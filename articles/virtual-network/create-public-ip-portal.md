@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: bd35d3288591a01c14e306960601eef6dea7e761
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 02a6e934b517cdd118b6175d9cfef73bee4c996d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954147"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223012"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-the-azure-portal"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью портал Azure
 
-В этой статье показано, как создать ресурс общедоступного IP-адреса с помощью портал Azure. Дополнительные сведения о том, к каким ресурсам можно связываться, разница между SKU "базовый" и "Стандартный" и другими связанными сведениями см. в разделе [общедоступные IP-адреса](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses).  В этом примере мы рассмотрим только IPv4-адреса. Дополнительные сведения об IPv6-адресах см. в статье [IPv6 для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/ipv6-overview).
+В этой статье показано, как создать ресурс общедоступного IP-адреса с помощью портал Azure. Дополнительные сведения о том, к каким ресурсам можно связываться, разница между SKU "базовый" и "Стандартный" и другими связанными сведениями см. в разделе [общедоступные IP-адреса](./public-ip-addresses.md).  В этом примере мы рассмотрим только IPv4-адреса. Дополнительные сведения об IPv6-адресах см. в статье [IPv6 для виртуальной сети Azure](./ipv6-overview.md).
 
 # <a name="standard-sku---using-zones"></a>[**SKU "Стандартный" — Использование зон**](#tab/option-create-public-ip-standard-zones)
 
@@ -46,9 +46,9 @@ ms.locfileid: "97954147"
     | Расположение                | Выберите **Восточная часть США 2**      |
     | Зона доступности       | Выберите зону, **избыточную в зоне** , или выберите конкретную (см. Примечание ниже). |
 
-Обратите внимание, что эти варианты допустимы только в регионах с [зоны доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  (Можно также выбрать конкретную зону в этих регионах, хотя она не будет устойчивой к зональные сбоям.)
+Обратите внимание, что эти варианты допустимы только в регионах с [зоны доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  (Можно также выбрать конкретную зону в этих регионах, хотя она не будет устойчивой к зональные сбоям.)
 
-\* = Уровень относится к функциям [Load Balancer в разных регионах](https://docs.microsoft.com/azure/load-balancer/cross-region-overview) , в настоящее время в предварительной версии.
+\* = Уровень относится к функциям [Load Balancer в разных регионах](../load-balancer/cross-region-overview.md) , в настоящее время в предварительной версии.
 
 # <a name="basic-sku"></a>[**SKU "Базовый"**](#tab/option-create-public-ip-basic)
 
@@ -78,9 +78,9 @@ ms.locfileid: "97954147"
 
 ## <a name="additional-information"></a>Дополнительные сведения 
 
-Дополнительные сведения об отдельных указанных выше полях см. в разделе [Управление общедоступными IP-адресами](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address).
+Дополнительные сведения об отдельных указанных выше полях см. в разделе [Управление общедоступными IP-адресами](./virtual-network-public-ip-address.md#create-a-public-ip-address).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Связывание [общедоступного IP-адреса с виртуальной машиной](https://docs.microsoft.com/azure/virtual-network/associate-public-ip-address-vm#azure-portal)
-- См. дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+- Связывание [общедоступного IP-адреса с виртуальной машиной](./associate-public-ip-address-vm.md#azure-portal)
+- См. дополнительные сведения об [общедоступных IP-адресах в Azure](./public-ip-addresses.md#public-ip-addresses).
 - См. сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).
