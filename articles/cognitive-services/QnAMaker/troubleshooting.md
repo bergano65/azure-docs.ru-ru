@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: troubleshooting
 ms.date: 11/09/2020
-ms.openlocfilehash: e8b1d985fcb2852df52382e005ec0f0266e23d9d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: aea205bee41aed232b8453417dca521d2dfc83ab
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345650"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233786"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для QnA Maker
 
@@ -323,6 +323,29 @@ ms.locfileid: "96345650"
 
 1. Запустите службу приложений.
 1. Получите доступ к базе знаний, чтобы проверить, работает ли она сейчас.
+
+</details>
+<details>
+<summary><b>Почему Application Insights не работает?</b></summary>
+
+**Ответ**. Выполните перекрестную проверку и обновите следующие шаги, чтобы устранить проблему.
+
+1. В разделе "служба приложений — группа параметров >-> раздел" Конфигурация "> параметры приложения-> имя" Усераппинсигхтскэй "настроены должным образом на вкладке" Обзор Application Insights "(" ключ инструментирования "). 
+
+1. В разделе "служба приложений — >" Группа параметров > "Application Insights" — > убедитесь, что служба App Insights включена и подключена к соответствующему ресурсу Application Insights.
+
+</details>
+
+<details>
+<summary><b>Мой Application Insights включен, но почему он работает неправильно?</b></summary>
+
+**Ответ**. выполните следующие действия. 
+
+1.  Скопируйте значение "" APPINSIGHTS_INSTRUMENTATIONKEY "имя" в имя "Усераппинсигхтскэй" путем переопределения, если там уже присутствует какое-либо значение. 
+
+1.  Если ключ "Усераппинсигхтскэй" не существует в параметрах приложения, добавьте новый ключ с таким именем и скопируйте значение.
+
+1.  Сохраните его, и это приведет к автоматическому перезапуску службы приложений. Это решит проблему. 
 
 </details>
 

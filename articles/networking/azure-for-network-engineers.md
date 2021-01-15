@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 06/25/2020
 ms.author: osamaz
-ms.openlocfilehash: e13dc868512dba15c5b335c1774aaa540eef8157
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 9a22e58e4407897fb9418cae0ba9f32408cda8e1
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861410"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234211"
 ---
 # <a name="azure-for-network-engineers"></a>Azure для сетевых инженеров
 Как обычный сетевой инженер, вы разработали с физическими ресурсами, такими как маршрутизаторы, коммутаторы, кабели, брандмауэры для создания инфраструктуры. На логическом уровне вы настроили виртуальную локальную сеть (VLAN) с протоколом STP, протоколы маршрутизации (RIP, OSPF, BGP). Вы управляете сетью с помощью средств управления и интерфейса командной строки. Сети в облаке отличаются от сетевых конечных точек, и использование протоколов маршрутизации является минимальным. Для настройки ресурсов и управления ими в Azure вы будете работать с Azure Resource Manager API, Azure CLI и PowerShell. Вы начнете свое сетевое взаимодействие в облаке, понимая основные клиенты сетей Azure. 
@@ -88,7 +88,6 @@ ms.locfileid: "97861410"
 Сведения о [группах безопасности сети][network-security].
 
 <!--Link References-->
-[VNet]: https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal
-[vnet-routing]: https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview
-[network-security]: https://docs.microsoft.com/azure/virtual-network/security-overview
-
+[VNet]: ../virtual-network/tutorial-connect-virtual-networks-portal.md
+[vnet-routing]: ../virtual-network/virtual-networks-udr-overview.md
+[network-security]: ../virtual-network/network-security-groups-overview.md

@@ -7,12 +7,12 @@ ms.service: virtual-network
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: rambala
-ms.openlocfilehash: e0e5806ec59cd2d75111db213d8511488d043eec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 835be5b867826d75732c9482743ad6a4ca2900e7
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80982860"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98231848"
 ---
 # <a name="working-remotely-using-azure-networking-services"></a>Работа в удаленном режиме с помощью сетевых служб Azure
 
@@ -86,15 +86,15 @@ Azure также имеет обширный набор экономичных �
 | [Трудности с обработкой для работы с домашними потребностями? Вот где Виртуальная глобальная сеть Azure может помочь](../virtual-wan/work-remotely-support.md) | Используйте виртуальную сеть Azure для решения задач удаленного подключения Организации.|
 | [Поддержка больших объемов трафика Шлюза приложений](../application-gateway/high-traffic-support.md) | Используйте шлюз приложений с брандмауэром веб-приложения (WAF) для масштабируемого и безопасного способа управления трафиком в веб-приложениях. |
 | [Требования к сетевому виртуальному устройству (NVA) для удаленной работы](../vpn-gateway/nva-work-remotely-support.md)|Ознакомьтесь с руководством по использованию NVA в Azure для предоставления решений удаленного доступа. |
-| [Переход на протокол Опенвпн или IKEv2 из SSTP](https://go.microsoft.com/fwlink/?linkid=2124112) | Преодолеть ограничение на число одновременных подключений 128 по протоколу SSTP, переполнив в Опенвпн Protocol или IKEv2.|
+| [Переход на протокол Опенвпн или IKEv2 из SSTP](../vpn-gateway/ikev2-openvpn-from-sstp.md) | Преодолеть ограничение на число одновременных подключений 128 по протоколу SSTP, переполнив в Опенвпн Protocol или IKEv2.|
 | [Работа в удаленном режиме с помощью Azure бастиона](../bastion/work-remotely-support.md) | Обеспечьте безопасное и удобное подключение по протоколу RDP или SSH к виртуальным машинам в виртуальной сети Azure непосредственно в портал Azure без использования общедоступного IP-адреса. |
 | [Использование Azure ExpressRoute для создания гибридного подключения для поддержки удаленных пользователей](../expressroute/work-remotely-support.md) | Используйте ExpressRoute для гибридного подключения, чтобы позволить пользователям в организации работать удаленно.|
 | [Поддержка удаленной работы брандмауэра Azure](../firewall/remote-work-support.md)|Защитите ресурсы виртуальной сети Azure с помощью брандмауэра Azure. |
 
 <!--Link References-->
-[VNet-peer]: https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview
-[S2S]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
-[ExR]: https://docs.microsoft.com/azure/expressroute/expressroute-introduction
-[ExR-eco]: https://docs.microsoft.com/azure/expressroute/expressroute-locations
-[ExR-D]: https://docs.microsoft.com/azure/expressroute/expressroute-erdirect-about
-[Az-OCI]: https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/configure-azure-oci-networking
+[VNet-peer]: ../virtual-network/virtual-network-peering-overview.md
+[S2S]: ../vpn-gateway/tutorial-site-to-site-portal.md
+[ExR]: ../expressroute/expressroute-introduction.md
+[ExR-eco]: ../expressroute/expressroute-locations.md
+[ExR-D]: ../expressroute/expressroute-erdirect-about.md
+[Az-OCI]: ../virtual-machines/workloads/oracle/configure-azure-oci-networking.md

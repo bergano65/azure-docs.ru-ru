@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: agummadi
-ms.openlocfilehash: 36e41db6e1a3cff13f31f0abf2e83e872dfd7c49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a92c6789723dc42ac8f3a9c471e494079dc19328
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742338"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233446"
 ---
 # <a name="network-monitoring-solutions"></a>Решения для мониторинга сетей 
 
@@ -52,10 +52,10 @@ Azure предлагает целый ряд решений для монито�
 Дополнительные сведения см. в следующих статьях:
 
 * [Настройка решения Монитор производительности сети в журналах Azure Monitor](../azure-monitor/insights/network-performance-monitor.md) 
-* [Варианты использования](https://blogs.technet.microsoft.com/msoms/2016/08/30/monitor-on-premises-cloud-iaas-and-hybrid-networks-using-oms-network-performance-monitor/)
+* [Варианты использования](/archive/blogs/msoms/monitor-on-premises-cloud-iaas-and-hybrid-networks-using-oms-network-performance-monitor)
 * Обновления продукта:
-  * [Февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/)
-  * [Август 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/08/14/improvements-to-oms-network-performance-monitor/)
+  * [Февраль 2017 г.](/archive/blogs/msoms/oms-network-performance-monitor-is-now-generally-available)
+  * [Август 2017 г.](/archive/blogs/msoms/improvements-to-oms-network-performance-monitor)
 
 ## <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -106,7 +106,7 @@ NPM для ExpressRoute предоставляет комплексные воз
 ![Географическая схема, показывающая трафик между регионами 2](../network-watcher/media/traffic-analytics/geo-map-view-showcasing-traffic-distribution-to-countries-and-continents.png) 
 
 Связанные ссылки
-* [Запись блога](https://aka.ms/trafficanalytics), [документация](https://aka.ms/trafficanalyticsdocs), [часто задаваемые вопросы](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-faq)
+* [Запись блога](https://aka.ms/trafficanalytics), [документация](../network-watcher/traffic-analytics.md), [часто задаваемые вопросы](../network-watcher/traffic-analytics-faq.md)
 
 ## <a name="dns-analytics"></a>Аналитика DNS
 Это решение предназначено для администраторов DNS. Оно собирает, анализирует и сопоставляет журналы DNS для предоставления сведений о безопасности, операциях и производительности.  Некоторые возможности:
@@ -120,8 +120,8 @@ NPM для ExpressRoute предоставляет комплексные воз
 ![Панель мониторинга решения "Аналитика DNS"](./media/network-monitoring-overview/dns-analytics-overview.png) 
 
 Связанные ссылки
-* [запись блога](https://blogs.technet.microsoft.com/msoms/2017/04/19/introducing-oms-dns-analytics/), [документация](https://docs.microsoft.com/azure/log-analytics/log-analytics-dns)
+* [запись блога](/archive/blogs/msoms/introducing-oms-dns-analytics), [документация](../azure-monitor/insights/dns-analytics.md)
 
 ## <a name="miscellaneous"></a>Прочее
 
-* [Новые цены](https://docs.microsoft.com/azure/log-analytics/log-analytics-network-performance-monitor-pricing-faq)
+* [Новые цены](../azure-monitor/insights/network-performance-monitor-pricing-faq.md)

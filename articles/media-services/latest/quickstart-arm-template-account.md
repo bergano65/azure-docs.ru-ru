@@ -277,4 +277,4 @@ az group delete --name {name of the resource group}
 Дополнительные сведения об использовании шаблона Resource Manager, о процессе создания шаблона с параметрами, переменными и т. д. см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> Создание и развертывание первого шаблона ARM[
+> [Создание и развертывание первого шаблона ARM](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)

@@ -12,12 +12,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/05/2018
-ms.openlocfilehash: cffa5677c5531f3887639c049998523d7d07586a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c53eb65f31e32d3edebcbf31d48d166f5464a92
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79455568"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233361"
 ---
 # <a name="check-resource-usage-against-limits"></a>Проверка использования ресурсов в соответствии с ограничениями
 
@@ -48,7 +48,7 @@ ms.locfileid: "79455568"
 
 Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы войти в Azure.
 
-Просмотрите сведения об использовании с ограничениями с помощью [Get-азнетворкусаже](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkusage). В следующем примере показано использование ресурсов по крайней мере с одним экземпляром, развернутым в восточной части США:
+Просмотрите сведения об использовании с ограничениями с помощью [Get-азнетворкусаже](/powershell/module/az.network/get-aznetworkusage). В следующем примере показано использование ресурсов по крайней мере с одним экземпляром, развернутым в восточной части США:
 
 ```azurepowershell-interactive
 Get-AzNetworkUsage `

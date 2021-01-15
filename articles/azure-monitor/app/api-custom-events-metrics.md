@@ -4,12 +4,12 @@ description: Вставьте несколько строк кода в свое
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: ae64888669fb9a3c053802ee4f7ad7db6316265d
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: d553c192d62baedb93c7f8270c56526fbf8edb62
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780507"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233752"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -47,7 +47,7 @@ ms.locfileid: "96780507"
 
     *C#:*`using Microsoft.ApplicationInsights;`
 
-    *Visual Basic:*`Imports Microsoft.ApplicationInsights`
+    *Visual Basic:* `Imports Microsoft.ApplicationInsights`
 
     *Java:*`import com.microsoft.applicationinsights.TelemetryClient;`
 
@@ -146,7 +146,9 @@ telemetry.trackEvent({name: "WinGame"});
 
 ### <a name="custom-events-in-analytics"></a>Пользовательские события в службе аналитики
 
-Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](../log-query/log-query-overview.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
+Данные телеметрии доступны в `customEvents` таблице на [вкладке Application Insights журналов](../log-query/log-query-overview.md) или в процессе [использования](usage-overview.md). События могут поступать `trackEvent(..)` или [щелкнуть подключаемый модуль автоматической коллекции аналитики](javascript-click-analytics-plugin.md).
+
+ 
 
 Если действует [выборка](./sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, необходимо использовать код, такой как `customEvents | summarize sum(itemCount)` .
 
@@ -437,7 +439,7 @@ exceptions
 | summarize sum(itemCount) by type
 ```
 
-Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример.
+Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Например:
 
 ```kusto
 exceptions
@@ -500,7 +502,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.  
 
-Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример.
+Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Например:
 
 *C#*
 
@@ -935,7 +937,7 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 [Выборка](./api-filtering-sampling.md) представляет собой упакованное решение для сокращения объема данных, отправляемых из приложения на портал. На отображаемые метрики выборка не влияет. Возможность диагностировать проблемы путем перехода между связанными элементами, такими как исключения, запросы и просмотры страниц, также не затрагивается.
 
-[Подробнее.](./api-filtering-sampling.md)
+[Подробнее](./api-filtering-sampling.md).
 
 ## <a name="disabling-telemetry"></a>Отключение телеметрии
 
@@ -1066,7 +1068,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="telemetrycontext"></a>Класс TelemetryContext
 
-Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример.
+Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Например:
 
 ```csharp
 telemetry.Context.Operation.Name = "MyOperationName";
@@ -1122,4 +1124,3 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * [Поиск событий и журналов](./diagnostic-search.md)
 * [Устранение неполадок](../faq.md)
-

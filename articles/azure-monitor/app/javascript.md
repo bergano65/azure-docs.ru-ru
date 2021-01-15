@@ -4,12 +4,12 @@ description: Получение количества просмотров стр
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 31cfa2e56fa10743c9a95d4df880fb1869fd9613
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 60b3e9229adb93ce32c97c2822a465f7f629d47d
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203445"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234364"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -167,7 +167,7 @@ appInsights.addTelemetryInitializer(() => false); // Nothing is sent after this 
 appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ```
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными, за исключением `instrumentationKey` .
 
 | Имя | По умолчанию | Описание |
@@ -266,7 +266,8 @@ Access-Control-Allow-Headers: `Request-Id` , `Request-Context` , `<your header>`
 |---------------|
 | [React](javascript-react-plugin.md)|
 | [React Native](javascript-react-native-plugin.md)|
-| [Angular](javascript-angular-plugin.md) |
+| [Angular](javascript-angular-plugin.md)|
+| [Щелкните Автосбор в аналитике](javascript-click-analytics-plugin.md)|
 
 ## <a name="explore-browserclient-side-data"></a>Изучение данных в браузере и на стороне клиента
 

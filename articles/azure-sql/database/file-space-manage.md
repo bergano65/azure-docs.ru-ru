@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, sstein
-ms.date: 03/12/2019
-ms.openlocfilehash: 3a46e47d6e12d52113bf63342c84a58ca98743d0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 12/22/2020
+ms.openlocfilehash: 08cab806d6ad8b75821a92994dde0fa07db8b960
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789613"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233599"
 ---
 # <a name="manage-file-space-for-databases-in-azure-sql-database"></a>Управление пространством для баз данных в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -84,7 +84,7 @@ ms.locfileid: "92789613"
 SELECT TOP 1 storage_in_megabytes AS DatabaseDataSpaceUsedInMB
 FROM sys.resource_stats
 WHERE database_name = 'db1'
-ORDER BY end_time DESC
+ORDER BY end_time DESC;
 ```
 
 ### <a name="database-data-space-allocated-and-unused-allocated-space"></a>Выделенное пространство данных базы данных и неиспользуемое выделенное пространство
@@ -98,7 +98,7 @@ SELECT SUM(size/128.0) AS DatabaseDataSpaceAllocatedInMB,
 SUM(size/128.0 - CAST(FILEPROPERTY(name, 'SpaceUsed') AS int)/128.0) AS DatabaseDataSpaceAllocatedUnusedInMB
 FROM sys.database_files
 GROUP BY type_desc
-HAVING type_desc = 'ROWS'
+HAVING type_desc = 'ROWS';
 ```
 
 ### <a name="database-data-max-size"></a>Максимальный размер данных базы данных
@@ -108,7 +108,7 @@ HAVING type_desc = 'ROWS'
 ```sql
 -- Connect to database
 -- Database data max size in bytes
-SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes
+SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes;
 ```
 
 ## <a name="understanding-types-of-storage-space-for-an-elastic-pool"></a>Основные сведения о типах дискового пространства для эластичного пула
@@ -121,6 +121,9 @@ SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes
 |**Выделенное пространство данных**|Общий объем пространства данных, выделенного всеми базами данных в эластичном пуле.||
 |**Выделенное, но неиспользуемое пространство данных**|Разница между объемом выделенного пространства данных и пространства данных, используемого всеми базами данных в эластичном пуле.|Это количество представляет максимальный объем выделенного для эластичного пула пространства, которое можно освободить путем сжатия файлов данных базы данных.|
 |**Максимальный размер данных**|Максимальный объем пространства данных, который эластичный пул может использовать для всех своих баз данных.|Выделенное для эластичного пула пространство не должно превышать максимальный размер эластичного пула.  В этом случае выделенное неиспользуемое пространство можно освободить путем сжатия файлов данных базы данных.|
+
+> [!NOTE]
+> Сообщение об ошибке "пул эластичных БД достигла предела хранилища" указывает, что объектам базы данных было выделено достаточно места для соответствия предельному объему хранилища эластичного пула, но при выделении пространства данных может возникнуть неиспользуемое место. Рассмотрите возможность увеличения предельного размера хранилища эластичного пула или в качестве краткосрочного решения, освобождая пространство данных, используя раздел "освобождение [**неиспользуемого выделенного места**](#reclaim-unused-allocated-space) " ниже. Кроме того, следует учитывать потенциальную негативную производительность сжатия файлов базы данных, см. раздел [**Перестроение индексов**](#rebuild-indexes) ниже.
 
 ## <a name="query-an-elastic-pool-for-storage-space-information"></a>Запрос эластичного пула для получения сведений о дисковом пространстве
 
@@ -136,7 +139,7 @@ SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes
 SELECT TOP 1 avg_storage_percent / 100.0 * elastic_pool_storage_limit_mb AS ElasticPoolDataSpaceUsedInMB
 FROM sys.elastic_pool_resource_stats
 WHERE elastic_pool_name = 'ep1'
-ORDER BY end_time DESC
+ORDER BY end_time DESC;
 ```
 
 ### <a name="elastic-pool-data-space-allocated-and-unused-allocated-space"></a>Выделенное пространство данных эластичного пула и неиспользуемое выделенное пространство
@@ -187,7 +190,7 @@ Write-Output $databaseStorageMetrics | Sort -Property DatabaseDataSpaceAllocated
 
 ### <a name="elastic-pool-data-max-size"></a>Максимальный размер данных эластичного пула
 
-Измените следующий запрос T-SQL, чтобы получить максимальный размер данных эластичного пула.  Единицы результатов запроса указываются в МБ.
+Измените следующий запрос T-SQL, чтобы возвращался максимальный размер данных последнего записанного пула эластичных БД.  Единицы результатов запроса указываются в МБ.
 
 ```sql
 -- Connect to master
@@ -195,13 +198,13 @@ Write-Output $databaseStorageMetrics | Sort -Property DatabaseDataSpaceAllocated
 SELECT TOP 1 elastic_pool_storage_limit_mb AS ElasticPoolMaxSizeInMB
 FROM sys.elastic_pool_resource_stats
 WHERE elastic_pool_name = 'ep1'
-ORDER BY end_time DESC
+ORDER BY end_time DESC;
 ```
 
 ## <a name="reclaim-unused-allocated-space"></a>Освобождение неиспользуемого выделенного пространства
 
 > [!NOTE]
-> Эта команда может влиять на производительность базы данных во время выполнения, поэтому по возможности ее следует выполнять в периоды низкого уровня использования.
+> Команды сжатия влияют на производительность базы данных во время работы и, если это возможно, должны выполняться в периоды низкой загрузки.
 
 ### <a name="dbcc-shrink"></a>Сжатие DBCC
 
@@ -209,24 +212,28 @@ ORDER BY end_time DESC
 
 ```sql
 -- Shrink database data space allocated.
-DBCC SHRINKDATABASE (N'db1')
+DBCC SHRINKDATABASE (N'db1');
 ```
 
-Эта команда может влиять на производительность базы данных во время выполнения, поэтому по возможности ее следует выполнять в периоды низкого уровня использования.  
+Команды сжатия влияют на производительность базы данных во время работы и, если это возможно, должны выполняться в периоды низкой загрузки.  
 
-Дополнительные сведения об этой команде см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql).
+Кроме того, следует учитывать потенциальную негативную производительность сжатия файлов базы данных, см. раздел [**Перестроение индексов**](#rebuild-indexes) ниже.
+
+Дополнительные сведения об этой команде см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql.md).
 
 ### <a name="auto-shrink"></a>Автоматическое сжатие
 
 Кроме того, для базы данных можно включить автоматическое сжатие.  Автоматическое сжатие упрощает управления файлами и оказывает меньшее влияние на производительность базы данных, чем `SHRINKDATABASE` или `SHRINKFILE`.  Автоматическое сжатие может быть особенно полезным для управления эластичными пулами с множеством баз данных.  Однако автоматическое сжатие может быть менее эффективным при восстановлении файлового пространства, чем операции `SHRINKDATABASE` и `SHRINKFILE`.
+По умолчанию Автоматическое сжатие отключено, как рекомендовано для большинства баз данных. Дополнительные сведения см. в разделе [рекомендации для AUTO_SHRINK](/troubleshoot/sql/admin/considerations-autogrow-autoshrink#considerations-for-auto_shrink).
+
 Чтобы включить автоматическое сжатие, измените имя базы данных в следующей команде.
 
 ```sql
 -- Enable auto-shrink for the database.
-ALTER DATABASE [db1] SET AUTO_SHRINK ON
+ALTER DATABASE [db1] SET AUTO_SHRINK ON;
 ```
 
-Дополнительные сведения об этой команде см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
+Дополнительные сведения об этой команде см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options).
 
 ### <a name="rebuild-indexes"></a>Перестроение индексов
 

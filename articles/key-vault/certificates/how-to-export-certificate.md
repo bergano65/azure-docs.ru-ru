@@ -10,16 +10,16 @@ ms.topic: how-to
 ms.custom: mvc
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: 0925b51ed960b8007d2df86115ea7e5cf627fe7e
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: b3c917c9652954783fcddd92b9a7370c358ab3cc
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826130"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233650"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Экспорт сертификатов из Azure Key Vault
 
-Узнайте, как экспортировать сертификаты из Azure Key Vault. Вы можете экспортировать сертификаты с помощью портала Azure, Azure PowerShell или Azure CLI. Вы также можете использовать портал Azure для экспорта сертификатов Службы приложений Azure.
+Узнайте, как экспортировать сертификаты из Azure Key Vault. Вы можете экспортировать сертификаты с помощью портала Azure, Azure PowerShell или Azure CLI. 
 
 ## <a name="about-azure-key-vault-certificates"></a>Сведения о сертификатах Azure Key Vault
 
@@ -114,7 +114,7 @@ $pfxFileByte = $x509Cert.Export($type, $password)
 
 **Экспорт сертификатов Службы приложений Azure**
 
-Сертификаты Службы приложений Azure предоставляют удобный способ покупки SSL-сертификатов. Вы можете назначить их приложениям Azure на портале. Вы также можете экспортировать такие сертификаты с портала в виде PFX-файлов. Импортированные сертификаты Службы приложений находятся в разделе с **секретами**.
+Сертификаты Службы приложений Azure предоставляют удобный способ покупки SSL-сертификатов. Вы можете назначить их приложениям Azure на портале. Импортированные сертификаты Службы приложений находятся в разделе с **секретами**.
 
 Дополнительные сведения см. в статье с инструкциями по [экспорту сертификатов Службы приложений](https://social.technet.microsoft.com/wiki/contents/articles/37431.exporting-azure-app-service-certificates.aspx).
 

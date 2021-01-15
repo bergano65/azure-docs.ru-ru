@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: deb05083ca45c24a58cabf9e923b706575ef093b
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 484dd8313710332660bb20d55f3dac2aa21bbc61
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562146"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232528"
 ---
 # <a name="integrate-your-existing-network-policy-server-nps-infrastructure-with-azure-ad-multi-factor-authentication"></a>Интеграция существующей инфраструктуры сервера сетевых политик (NPS) с многофакторной идентификацией Azure AD
 
@@ -116,6 +116,8 @@ Windows Server 2012 или более поздней версии.
 * *HTTPS: \/ /Login.microsoftonline.com*
 * *HTTPS: \/ /provisioningapi.microsoftonline.com*
 * *HTTPS: \/ /aadcdn.msauth.NET*
+* *HTTPS: \/ /www.powershellgallery.com*
+* *HTTPS: \/ /aadcdn.msftauthimages.NET*
 
 ## <a name="prepare-your-environment"></a>Подготовка среды
 

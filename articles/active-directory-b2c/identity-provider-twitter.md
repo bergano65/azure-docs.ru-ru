@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 7779730b98630d08af046e7cb402caca1d0c2fe6
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: a0f209e0ac17c62378d279a32f4a27f48a9f74bd
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653662"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232698"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Twitter через Azure Active Directory B2C
 
@@ -35,16 +35,21 @@ ms.locfileid: "97653662"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Чтобы использовать Twitter в качестве поставщика удостоверений в Azure AD B2C, необходимо создать приложение Twitter. Если у вас еще нет учетной записи Twitter, вы можете зарегистрироваться по адресу [https://twitter.com/signup](https://twitter.com/signup) .
+Чтобы включить вход для пользователей с учетной записью Twitter в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение Twitter. Если у вас еще нет учетной записи Twitter, вы можете зарегистрироваться по адресу [https://twitter.com/signup](https://twitter.com/signup) . Также необходимо [Применить для учетной записи разработчика](https://developer.twitter.com/en/apply/user.html). Дополнительные сведения см. в разделе [применение для доступа](https://developer.twitter.com/en/apply-for-access).
 
-1. Выполните вход на [веб-сайт разработчиков Twitter](https://developer.twitter.com/en/apps) с учетными данными для учетной записи Twitter.
-1. Выберите  **создать приложение**.
-1. Введите **имя приложения** и **описание приложения**.
-1. В поле **Website URL** (URL-адрес веб-сайта) введите `https://your-tenant.b2clogin.com`. Замените `your-tenant` именем вашего клиента. Например, `https://contosob2c.b2clogin.com`.
-1. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-user-flow-Id/oauth1/authresp`. Замените `your-tenant` именем своего клиента, а `your-user-flow-Id` — идентификатором своего потока пользователя. Например, `b2c_1A_signup_signin_twitter`. При вводе имени клиента и идентификатора потока пользователя необходимо использовать все строчные буквы, даже если они определены с прописными буквами в Azure AD B2C.
-1. В нижней части страницы прочтите условия использования и примите их, а затем щелкните **Create** (Создать).
-1. На странице **сведений о приложении** выберите **Edit > Edit details** (Изменить > Изменить сведения), установите флажок в поле **Enable Sign in with Twitter** (Включить вход через Twitter), а затем нажмите кнопку **Save** (Сохранить).
-1. Выберите **Keys and tokens** (Ключи и маркеры), а затем запишите значения **ключа API клиента** и **секретного ключа API клиента**, которые понадобятся далее.
+1. Войдите на [портал разработчиков Twitter](https://developer.twitter.com/portal/projects-and-apps) , используя учетные данные вашей учетной записи Twitter.
+1. В разделе **автономные приложения** выберите **+ создать приложение**.
+1. Введите **имя приложения** и нажмите кнопку **завершить**.
+1. Скопируйте значение **ключа приложения** и **секрет ключа API**.  Они используются для настройки Twitter в качестве поставщика удостоверений в клиенте. 
+1. В разделе **Настройка приложения** выберите **Параметры приложения**.
+1. В разделе **Параметры проверки подлинности** выберите **изменить** .
+    1. Установите флажок **включить 3-legged OAuth** .
+    1. Установите флажок **запросить адрес электронной почты у пользователей** .
+    1. Для **URL-адресов обратного вызова** введите `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-user-flow-Id/oauth1/authresp` . Замените `your-tenant` именем своего клиента, а `your-user-flow-Id` — идентификатором своего потока пользователя. Например, `b2c_1A_signup_signin_twitter`. При вводе имени клиента и идентификатора потока пользователя необходимо использовать все строчные буквы, даже если они определены с прописными буквами в Azure AD B2C.
+    1. Введите в качестве **URL-адреса веб-сайта** `https://your-tenant.b2clogin.com` . Замените `your-tenant` именем вашего клиента. Например, `https://contosob2c.b2clogin.com`.
+    1. Введите URL-адрес **условий предоставления услуг**, например `http://www.contoso.com/tos` . URL-адрес политики — это страница, которую вы поддерживаете для предоставления условий для приложения.
+    1. Введите URL-адрес **политики конфиденциальности**, например `http://www.contoso.com/privacy` . URL-адрес политики — это управляемая вами страница, где предоставляются сведения о конфиденциальности для вашего приложения.
+    1. Щелкните **Сохранить**.
 
 ::: zone pivot="b2c-user-flow"
 
@@ -55,9 +60,19 @@ ms.locfileid: "97653662"
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 1. Выберите **поставщики удостоверений**, а затем выберите **Twitter**.
 1. Введите **Имя**. Например, *Twitter*.
-1. В поле **идентификатор клиента** введите ключ API потребителя созданного ранее приложения Twitter.
-1. В качестве **секрета клиента** введите записанный секретный ключ API-интерфейса потребителя.
+1. В поле **идентификатор клиента** введите *ключ API* приложения Twitter, созданного ранее.
+1. В поле **секрет клиента** введите *секретный ключ API* , который вы записали.
 1. Щелкните **Сохранить**.
+
+## <a name="add-twitter-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Twitter в поток пользователя 
+
+1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
+1. Выберите поток пользователя, который требуется добавить в качестве поставщика удостоверений Twitter.
+1. В разделе **поставщики удостоверений социальных сетей** выберите **Twitter**.
+1. Щелкните **Сохранить**.
+1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
+1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Щелкните **выполнить поток пользователя**
 
 ::: zone-end
 
@@ -103,7 +118,7 @@ ms.locfileid: "97653662"
             <Item Key="request_token_endpoint">https://api.twitter.com/oauth/request_token</Item>
             <Item Key="ClaimsEndpoint">https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true</Item>
             <Item Key="ClaimsResponseFormat">json</Item>
-            <Item Key="client_id">Your Twitter application consumer key</Item>
+            <Item Key="client_id">Your Twitter application API key</Item>
           </Metadata>
           <CryptographicKeys>
             <Key Id="client_secret" StorageReferenceId="B2C_1A_TwitterSecret" />
@@ -127,7 +142,7 @@ ms.locfileid: "97653662"
     </ClaimsProvider>
     ```
 
-4. Замените значение параметра **client_id** ключом пользователя, записанным ранее.
+4. Замените значение **client_id** на *секретный ключ API* , который вы записали ранее.
 5. Сохраните файл.
 
 ### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
@@ -173,24 +188,6 @@ ms.locfileid: "97653662"
     Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Twitter-OAUTH1`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-twitter-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Twitter в поток пользователя 
-
-1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните поток пользователя, который вы хотите использовать для поставщика удостоверений Twitter.
-1. В разделе **поставщики удостоверений социальных сетей** выберите **Twitter**.
-1. Щелкните **Сохранить**.
-1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
-1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Щелкните **выполнить поток пользователя**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
 
 ## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
 

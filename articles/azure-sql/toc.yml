@@ -179,6 +179,8 @@
               href: database/performance-guidance.md
             - name: Использование динамических административных представлений для мониторинга производительности
               href: database/monitoring-with-dmvs.md
+            - name: Анализ и устранение блокировки
+              href: database/understand-resolve-blocking.md
             - name: Ведение журналов диагностических данных телеметрии
               href: database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md
             - name: Выполняющаяся в памяти OLTP

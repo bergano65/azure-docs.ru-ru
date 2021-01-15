@@ -6,12 +6,12 @@ ms.date: 03/29/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 2011d013cce43eaf471d61936d5c34c318360381
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 32d906bf96a0ad5cf798f68bf83f2d6af1064361
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616649"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98231746"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Application Insights Azure Monitor отслеживания приложений Java с некодированным кодом
 
@@ -34,11 +34,11 @@ ms.locfileid: "97616649"
 >
 > Тщательно изучите все [Параметры конфигурации](./java-standalone-config.md) , так как структура JSON была полностью изменена, а не только само имя файла, что и все строчные буквы.
 
-Скачать [аппликатионинсигхтс-ажент-3.0.0. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.0/applicationinsights-agent-3.0.0.jar)
+Скачать [аппликатионинсигхтс-ажент-3.0.1. jar](https://github.com/microsoft/ApplicationInsights-Java/releases/download/3.0.1/applicationinsights-agent-3.0.1.jar)
 
 **2. Указание ВИРТУАЛЬНОЙ машины Java агенту**
 
-Добавить `-javaagent:path/to/applicationinsights-agent-3.0.0.jar` в виртуальной машины Java argss вашего приложения
+Добавить `-javaagent:path/to/applicationinsights-agent-3.0.1.jar` в виртуальной машины Java argss вашего приложения
 
 Стандартные аргументы ВИРТУАЛЬНОЙ машины Java включают `-Xmx512m` и `-XX:+UseG1GC` . Итак, если вы узнаете, куда добавить эти данные, вы уже знакомы с их добавлением.
 
@@ -54,7 +54,7 @@ ms.locfileid: "97616649"
 APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 ```
 
-Или создайте файл конфигурации с именем `applicationinsights.json` и поместите его в тот же каталог, что и `applicationinsights-agent-3.0.0.jar` , со следующим содержимым:
+Или создайте файл конфигурации с именем `applicationinsights.json` и поместите его в тот же каталог, что и `applicationinsights-agent-3.0.1.jar` , со следующим содержимым:
 
 ```json
 {
@@ -74,7 +74,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=...
 > Для отображения данных мониторинга на портале может потребоваться несколько минут.
 
 
-## <a name="configuration-options"></a>Варианты настройки
+## <a name="configuration-options"></a>Параметры конфигурации
 
 В `applicationinsights.json` файле можно дополнительно настроить:
 
@@ -147,7 +147,7 @@ Application Insights Java 3,0 автоматически захватывает 
 | **Пользовательские метрики**  |  Да       |                     |  Да    |
 | **Зависимости**    |            |                     |  Да    |
 | **Исключения**      |            |  Да                |  Да    |
-| **Просмотры страницы**      |            |                     |  Да    |
+| **Просмотры страниц**      |            |                     |  Да    |
 | **Запросы**        |            |                     |  Да    |
 | **Трассировки**          |            |  Да                |  Да    |
 
@@ -255,7 +255,7 @@ try {
 ### <a name="add-request-custom-dimensions-using-the-2x-sdk"></a>Добавление запроса пользовательских измерений с помощью пакета SDK 2. x
 
 > [!NOTE]
-> Эта функция доступна только в 3.0.1-BETA и более поздних версиях
+> Эта функция доступна только в 3.0.1 и более поздних версиях
 
 Добавьте `applicationinsights-web-2.6.2.jar` в приложение (все версии 2. x поддерживаются Application Insights Java 3,0, но следует использовать последнюю версию, если у вас есть вариант):
 
@@ -279,7 +279,7 @@ requestTelemetry.getProperties().put("mydimension", "myvalue");
 ### <a name="set-the-request-telemetry-user_id-using-the-2x-sdk"></a>Настройка user_Id телеметрии запросов с помощью пакета SDK 2. x
 
 > [!NOTE]
-> Эта функция доступна только в 3.0.1-BETA и более поздних версиях
+> Эта функция доступна только в 3.0.1 и более поздних версиях
 
 Добавьте `applicationinsights-web-2.6.2.jar` в приложение (все версии 2. x поддерживаются Application Insights Java 3,0, но следует использовать последнюю версию, если у вас есть вариант):
 
@@ -303,7 +303,7 @@ requestTelemetry.getContext().getUser().setId("myuser");
 ### <a name="override-the-request-telemetry-name-using-the-2x-sdk"></a>Переопределение имени телеметрии запроса с помощью пакета SDK 2. x
 
 > [!NOTE]
-> Эта функция доступна только в 3.0.1-BETA и более поздних версиях
+> Эта функция доступна только в 3.0.1 и более поздних версиях
 
 Добавьте `applicationinsights-web-2.6.2.jar` в приложение (все версии 2. x поддерживаются Application Insights Java 3,0, но следует использовать последнюю версию, если у вас есть вариант):
 

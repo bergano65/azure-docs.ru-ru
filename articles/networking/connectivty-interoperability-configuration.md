@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
-ms.openlocfilehash: 7be326e0f01ed6a00244c0f5b9ed6a960b2b6e0b
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 50fd5641c61d08939eca1f2cbafb1d077254e37d
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "86171862"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233276"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-test-configuration-details"></a>Взаимодействие между функциями подключения к серверной части в Azure. Сведения о тестовой конфигурации
 
@@ -33,10 +33,10 @@ ms.locfileid: "86171862"
 
 ## <a name="branch-vnet-connectivity-by-using-a-site-to-site-vpn"></a>Подключение к виртуальной сети филиала с помощью VPN типа "сеть — сеть"
 
-Подключение между центральной виртуальной сетью и виртуальными сетями филиалов с использованием VPN типа "сеть — сеть" настраивается с помощью VPN-шлюзов в службе "VPN-шлюз Azure". По умолчанию VPN-шлюзы и шлюзы Azure ExpressRoute используют ASN (номер автономной системы) **65515**. Вы можете изменить значение ASN в службе "VPN-шлюз Azure". В тестовой конфигурации значение ASN для VPN-шлюза виртуальной сети филиала изменено на **65516** , чтобы поддерживать маршрутизацию eBGP между центральной виртуальной сетью и виртуальными сетями филиалов.
+Подключение между центральной виртуальной сетью и виртуальными сетями филиалов с использованием VPN типа "сеть — сеть" настраивается с помощью VPN-шлюзов в службе "VPN-шлюз Azure". По умолчанию VPN-шлюзы и шлюзы Azure ExpressRoute используют ASN (номер автономной системы) **65515**. Вы можете изменить значение ASN в службе "VPN-шлюз Azure". В тестовой конфигурации значение ASN для VPN-шлюза виртуальной сети филиала изменено на **65516**, чтобы поддерживать маршрутизацию eBGP между центральной виртуальной сетью и виртуальными сетями филиалов.
 
 
-[![3]][3]
+[![3-5]][3]
 
 
 ## <a name="on-premises-location-1-connectivity-by-using-expressroute-and-a-site-to-site-vpn"></a>Подключение к локальному расположению 1 через ExpressRoute и VPN типа "сеть — сеть"
@@ -51,7 +51,7 @@ ms.locfileid: "86171862"
 
 [![5.0]][5]
 
-Ниже перечислены основные настройки маршрутизатора CE для подключения через частный пиринг ExpressRoute. (Маршрутизаторы Cisco ASR1000 используются в настройках тестирования в качестве маршрутизаторов CE). Если VPN-подключение типа "сеть — сеть" и каналы ExpressRoute настроены параллельно для подключения локальной сети к Azure, Azure назначает по умолчанию канал ExpressRoute. Чтобы избежать асимметричной маршрутизации, в локальной сети подключения ExpressRoute также должны иметь более высокий приоритет, чем VPN-подключение типа "сеть — сеть". Следующая конфигурация устанавливает приоритеты с помощью атрибута BGP **local-preference** :
+Ниже перечислены основные настройки маршрутизатора CE для подключения через частный пиринг ExpressRoute. (Маршрутизаторы Cisco ASR1000 используются в настройках тестирования в качестве маршрутизаторов CE). Если VPN-подключение типа "сеть — сеть" и каналы ExpressRoute настроены параллельно для подключения локальной сети к Azure, Azure назначает по умолчанию канал ExpressRoute. Чтобы избежать асимметричной маршрутизации, в локальной сети подключения ExpressRoute также должны иметь более высокий приоритет, чем VPN-подключение типа "сеть — сеть". Следующая конфигурация устанавливает приоритеты с помощью атрибута BGP **local-preference**:
 
 ```config
 interface TenGigabitEthernet0/0/0.300
@@ -217,18 +217,15 @@ ExpressRoute предоставляется в виде пары каналов,
 [8]: ./media/backend-interoperability/ExR2-Remote-Connection.png "Конфигурация подключения ExpressRoute 2 к шлюзу ExpressRoute удаленной виртуальной сети"
 
 <!--Link References-->
-[Setup]: https://docs.microsoft.com/azure/networking/connectivty-interoperability-preface
-[ExpressRoute]: https://docs.microsoft.com/azure/expressroute/expressroute-introduction
-[VPN]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways
-[VNet]: https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal
-[Configuration]: https://docs.microsoft.com/azure/networking/connectivty-interoperability-configuration
-[Control-Analysis]:https://docs.microsoft.com/azure/networking/connectivty-interoperability-control-plane
-[Data-Analysis]: https://docs.microsoft.com/azure/networking/connectivty-interoperability-data-plane
-[ExR-FAQ]: https://docs.microsoft.com/azure/expressroute/expressroute-faqs
-[S2S-Over-ExR]: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
-[ExR-S2S-CoEx]: https://docs.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager
-[Hub-n-Spoke]: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke
-[Deploy-NVA]: https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-ha
-[VNet-Config]: https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering
-
-
+[Setup]: ./connectivty-interoperability-preface.md
+[ExpressRoute]: ../expressroute/expressroute-introduction.md
+[VPN]: ../vpn-gateway/vpn-gateway-about-vpngateways.md
+[VNet]: ../virtual-network/tutorial-connect-virtual-networks-portal.md
+[Control-Analysis]: ./connectivty-interoperability-control-plane.md
+[Data-Analysis]: ./connectivty-interoperability-data-plane.md
+[ExR-FAQ]: ../expressroute/expressroute-faqs.md
+[S2S-Over-ExR]: ../expressroute/site-to-site-vpn-over-microsoft-peering.md
+[ExR-S2S-CoEx]: ../expressroute/expressroute-howto-coexist-resource-manager.md
+[Hub-n-Spoke]: /azure/architecture/reference-architectures/hybrid-networking/hub-spoke
+[Deploy-NVA]: /azure/architecture/reference-architectures/dmz/nva-ha
+[VNet-Config]: ../virtual-network/virtual-network-manage-peering.md

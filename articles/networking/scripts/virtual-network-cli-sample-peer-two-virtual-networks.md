@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 507e17b2edb0db2d21265f3e945745d97395e7c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 527a2e0dd5a807552aed8d6a833d513fa40c72e3
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87503860"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234398"
 ---
 # <a name="use-an-azure-cli-sample-script-to-connect-two-virtual-networks"></a>Использование примера сценария Azure CLI для подключения двух виртуальных сетей
 
@@ -47,13 +47,13 @@ az group delete --name myResourceGroup --yes
 
 | Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
-| [az network vnet peering create](https://docs.microsoft.com/cli/azure/network/vnet/peering) | Создает пиринг между двумя виртуальными сетями.  |
-| [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
+| [az network vnet peering create](/cli/azure/network/vnet/peering) | Создает пиринг между двумя виртуальными сетями.  |
+| [az group delete](/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры сценариев Azure CLI для сетей см. в статье [Примеры Azure CLI](../cli-samples.md).

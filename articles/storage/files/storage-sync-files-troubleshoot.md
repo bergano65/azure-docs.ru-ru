@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 1/13/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: e2f0d62ae6882229cee3ee32e3b362f2b6593da7
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: a262c2b4351c96217001ba42e8c745f7d71c7d45
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98199241"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233905"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -205,7 +205,7 @@ Set-AzStorageSyncServerEndpoint `
     - Если сервер находится за брандмауэром, убедитесь, что порт 443 для исходящих подключений разрешен. Если брандмауэр ограничивает трафик определенными доменами, подтвердите, что домены, перечисленные в [документации](./storage-sync-files-firewall-and-proxy.md#firewall) брандмауэра, доступны.
     - Если сервер находится за прокси-сервером, настройте параметры прокси-сервера для компьютера или конкретного приложения, выполнив действия, описанные в [документации](./storage-sync-files-firewall-and-proxy.md#proxy) прокси-сервера.
     - Используйте командлет Test-StorageSyncNetworkConnectivity, чтобы проверить сетевое подключение к конечным точкам службы. Дополнительные сведения см. в разделе [Проверка сетевого подключения к конечным точкам службы](./storage-sync-files-firewall-and-proxy.md#test-network-connectivity-to-service-endpoints).
-    - Для добавления комплектов шифров на сервер используйте групповые политики или командлеты TLS.
+    - Если порядок комплекта шифров TLS настроен на сервере, для добавления комплектов шифров можно использовать групповые политики или командлеты TLS:
         - Сведения об использовании групповой политики см. в разделе [Настройка порядка комплектов шифров TLS с помощью групповая политика](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-group-policy).
         - Инструкции по использованию командлетов TLS см. в разделе [Настройка порядка комплектов шифров TLS с помощью командлетов TLS PowerShell](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets).
     

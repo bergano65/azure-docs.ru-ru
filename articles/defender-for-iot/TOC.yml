@@ -201,6 +201,10 @@
       items:
         - name: Работа с Azure Defender для Интернета вещей с помощью API
           href: references-work-with-defender-for-iot-apis.md
+        - name: API Horizon
+          href: references-horizon-api.md
+        - name: Пакет SDK Horizon
+          href: references-horizon-sdk.md
         - name: "Работа с Azure Defender для Интернета вещей с помощью команд\_CLI"
           href: references-work-with-defender-for-iot-cli-commands.md
         - name: Управление защищаемыми протоколами (Horizon)

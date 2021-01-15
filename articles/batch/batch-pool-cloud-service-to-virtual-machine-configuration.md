@@ -3,12 +3,12 @@ title: Перенос конфигурации пула пакетной слу�
 description: Узнайте, как обновить конфигурацию пула до последней и рекомендуемой конфигурации.
 ms.topic: how-to
 ms.date: 1/6/2021
-ms.openlocfilehash: b6f4184f7c4f133f74cb3157638b1621dad25fda
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: d987a185efb6593fd541dd14fa74b6c4d3ca41be
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97969033"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234313"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Перенос конфигурации пула пакетной службы из облачных служб на виртуальные машины
 
@@ -22,7 +22,7 @@ ms.locfileid: "97969033"
 
 Существующие активные пулы не могут быть обновлены с "cloudServiceConfiguration" на "virtualMachineConfiguration", необходимо создать новые пулы. Создание пулов с помощью "virtualMachineConfiguration" поддерживается всеми API пакетной службы, программами командной строки, портал Azure и пользовательским интерфейсом Batch Explorer.
 
-В учебниках по [.NET](tutorial-parallel-dotnet.md) и [Python](tutorial-parallel-python.md) приведены примеры создания пула с помощью "virtualMachineConfiguration".
+**В учебниках по [.NET](tutorial-parallel-dotnet.md) и [Python](tutorial-parallel-python.md) приведены примеры создания пула с помощью "virtualMachineConfiguration".**
 
 ## <a name="pool-configuration-differences"></a>Различия в конфигурации пула
 

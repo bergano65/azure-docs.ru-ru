@@ -13,12 +13,12 @@ ms.date: 10/27/2020
 ms.author: hirsin
 ms.reviewer: mmacy, hirsin
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: ceb5acbee2e572b1859a5577b58dd586fc924b3b
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 4a798443560f62673ef8fcf0bce970a66071d011
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653288"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232392"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Маркеры доступа платформы удостоверений Майкрософт
 
@@ -292,10 +292,7 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 - Голосовая связь
 - Пин-код
 
-> [!NOTE]
-> Основные маркеры обновления (PRT) в Windows 10 разделены на основе учетных данных. Например, Windows Hello и пароль имеют собственные основные маркеры обновления, изолированные друг от друга. Когда пользователь входит в систему с помощью учетных данных Hello (ПИН-код или биометрия), а затем изменяет пароль, PRT на основе пароля, полученный ранее, будет отозван. Повторный вход с помощью пароля делает недействительным старый PRT и запрашивает новый.
->
-> Маркеры обновления не аннулируются и не отзываются, если они используются для получения нового маркера доступа и маркера обновления.  Однако приложение должно удалить старый маркер, как только он будет использован, и заменить его новым, так как новый маркер имеет новый срок действия.
+Ознакомьтесь с [основными маркерами обновления](../devices/concept-primary-refresh-token.md) , чтобы получить дополнительные сведения о первичных маркерах обновления.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

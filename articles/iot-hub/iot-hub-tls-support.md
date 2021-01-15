@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: jlian
-ms.openlocfilehash: e569cbe9030b2ac5a42bd99233b4fefc925a5662
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: d36a7917693aef9063ade473759f2f451d3a677f
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220321"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234024"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Поддержка протокола TLS в центре Интернета вещей
 
@@ -48,7 +48,7 @@ ms.locfileid: "98220321"
 * US Gov (Аризона)
 * US Gov (Вирджиния) (поддержка TLS 1.0/1.1 недоступна в этом регионе — необходимо включить принудительное использование TLS 1,2 или создать центр Интернета вещей не удается)
 
-Чтобы включить принудительное применение TLS 1,2, выполните действия, описанные в разделе [Создание центра Интернета вещей в портал Azure](/.iot-hub-create-through-portal.md), за исключением
+Чтобы включить принудительное применение TLS 1,2, выполните действия, описанные в разделе [Создание центра Интернета вещей в портал Azure](iot-hub-create-through-portal.md), за исключением
 
 - Выберите **регион** из одной из перечисленных выше в списке.
 - В разделе **Management-> Advanced-> TLS-> минимальная версия TLS** выберите **1,2**. Этот параметр отображается только для центра Интернета вещей, созданного в поддерживаемом регионе.

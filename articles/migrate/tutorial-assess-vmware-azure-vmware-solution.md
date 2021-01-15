@@ -187,4 +187,4 @@ ms.locfileid: "96753082"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Найдите зависимости компьютера с помощью [сопоставления зависимостей](concepts-dependency-visualization.md).
-- Настройте сопоставления зависимостей [без агента[ или ](how-to-create-group-machine-dependencies.md)на основе агента](how-to-create-group-machine-dependencies-agentless.md).
+- Настройте сопоставления зависимостей [без агента](how-to-create-group-machine-dependencies-agentless.md) или [на основе агента](how-to-create-group-machine-dependencies.md).
