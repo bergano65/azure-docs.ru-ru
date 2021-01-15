@@ -16,16 +16,16 @@ ms.workload: infrastructure-services
 ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 09a0574666441138c143932e843080e8745f1b40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b95b3cfdf8fea6e31015d945566803569b4ba064
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289596"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222927"
 ---
 # <a name="deploy-the-azure-virtual-network-container-network-interface-plug-in"></a>Развертывание подключаемого модуля сетевого интерфейса контейнера виртуальной сети Azure
 
-Подключаемый модуль сетевого интерфейса контейнера (CNI) виртуальной сети Azure устанавливается на виртуальной машине Azure и предоставляет возможности виртуальной сети для модулей pod Kubernetes и контейнеров Docker. Дополнительные сведения о подключаемом модуле см. в разделе [Включение контейнеров для использования возможностей виртуальной сети Azure](container-networking-overview.md). Кроме того, подключаемый модуль можно использовать со службой Azure Kubernetes (AKS), выбрав параметр [Расширенное сетевое подключение](../aks/networking-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json), который автоматически размещает контейнеры AKS в виртуальной сети.
+Подключаемый модуль сетевого интерфейса контейнера (CNI) виртуальной сети Azure устанавливается на виртуальной машине Azure и предоставляет возможности виртуальной сети для модулей pod Kubernetes и контейнеров Docker. Дополнительные сведения о подключаемом модуле см. в разделе [Включение контейнеров для использования возможностей виртуальной сети Azure](container-networking-overview.md). Кроме того, подключаемый модуль можно использовать со службой Azure Kubernetes (AKS), выбрав параметр [Расширенное сетевое подключение](../aks/configure-azure-cni.md?toc=%2fazure%2fvirtual-network%2ftoc.json), который автоматически размещает контейнеры AKS в виртуальной сети.
 
 ## <a name="deploy-plug-in-for-acs-engine-kubernetes-cluster"></a>Развертывание подключаемого модуля для кластера Kubernetes с обработчиком ACS
 
@@ -95,10 +95,10 @@ ms.locfileid: "87289596"
 1. [Загрузка и установка подключаемого модуля](#download-and-install-the-plug-in).
 2. Предварительно выделите пул IP-адресов виртуальной сети на каждой виртуальной машине, из которой IP-адреса будут назначаться для модулей pod. Каждая виртуальная машина Azure имеет основной частный IP-адрес виртуальной сети для каждого сетевого интерфейса. Пул IP-адресов для модулей pod добавляется в качестве дополнительных адресов (*ipconfigs*) в сетевом интерфейсе виртуальной машины с помощью одного из следующих вариантов:
 
-   - **CLI**.  [Назначение нескольких IP-адресов с помощью Azure CLI](virtual-network-multiple-ip-addresses-cli.md).
-   - **PowerShell**.  [Назначение нескольких IP-адресов с помощью PowerShell](virtual-network-multiple-ip-addresses-powershell.md).
-   - **Портал**.  [Назначение нескольких IP-адресов с помощью портала Azure](virtual-network-multiple-ip-addresses-portal.md).
-   - **Шаблон Resource Manager**.  [Назначение нескольких IP-адресов с помощью шаблонов](virtual-network-multiple-ip-addresses-template.md).
+   - **CLI**. [Назначение нескольких IP-адресов с помощью Azure CLI](virtual-network-multiple-ip-addresses-cli.md)
+   - **PowerShell**. [Назначение нескольких IP-адресов с помощью PowerShell](virtual-network-multiple-ip-addresses-powershell.md)
+   - **Портал**. [Назначение нескольких IP-адресов с помощью портала Azure](virtual-network-multiple-ip-addresses-portal.md)
+   - **Шаблон Resource Manager**. [Назначение нескольких IP-адресов с помощью шаблонов](./template-samples.md)
 
    Убедитесь, что добавили достаточно IP-адресов для всех модулей pod, которые планируется использовать на виртуальной машине.
 
@@ -106,7 +106,7 @@ ms.locfileid: "87289596"
 4. Если вы хотите, чтобы у модулей pod был доступ к Интернету, добавьте следующее правило *iptables* на виртуальных машинах Linux для предоставления Интернет-трафика через source NAT. В следующем примере указанный диапазон IP-адресов — 10.0.0.0/8.
 
    ```bash
-   iptables -t nat -A POSTROUTING -m iprange ! --dst-range 168.63.129.16 -m
+   iptables -t nat -A POSTROUTING -m iprange ! --dst-range 168.63.129.16 -m
    addrtype ! --dst-type local ! -d 10.0.0.0/8 -j MASQUERADE
    ```
 
@@ -157,10 +157,10 @@ ms.locfileid: "87289596"
 
 #### <a name="settings-explanation"></a>Объяснение параметров
 
-- **cniVersion**. Подключаемые модули CNI виртуальной сети Azure поддерживают версии 0.3.0 и 0.3.1 из  [спецификации CNI](https://github.com/containernetworking/cni/blob/master/SPEC.md).
+- **cniVersion**: подключаемые модули CNI виртуальной сети Azure поддерживают версии 0.3.0 и 0.3.1 из [спецификации CNI](https://github.com/containernetworking/cni/blob/master/SPEC.md).
 - **name**. Имя сети. Это свойство может иметь любое уникальное значение.
 - **type**. Имя подключаемого модуля сети. Установлено *azure-vnet*.
-- **mode**. Режим работы. Это поле является необязательным. Поддерживается только режим bridge. Дополнительные сведений см. в разделе о  [режимах работы](https://github.com/Azure/azure-container-networking/blob/master/docs/network.md).
+- **mode**. Режим работы. Это поле является необязательным. Поддерживается только режим bridge. Для получения дополнительных сведений см. раздел о [режимах работы](https://github.com/Azure/azure-container-networking/blob/master/docs/network.md).
 - **bridge**. Имя моста, который будет использоваться для подключения контейнеров к виртуальной сети. Это поле является необязательным. Если этот параметр опущен, подключаемый модуль автоматически выбирает уникальное имя на основе главного индекса интерфейса.
 - **ipam type**. Имя подключаемого модуля IPAM. Всегда установлено *azure-vnet-ipam*.
 

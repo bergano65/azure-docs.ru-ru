@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 9685c1739a00788a974c200ddabb8cc975696b62
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75b62eb00b1a1a534be01f9f118b4d5066e44a37
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83587737"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222893"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Устранение неполадок с пирингом виртуальной сети
 
@@ -36,8 +36,8 @@ ms.locfileid: "83587737"
 
 Чтобы настроить пиринг между виртуальными сетями, принадлежащие к одной подписке, используйте методы, описанные в следующих статьях.
 
-* Если виртуальные сети находятся в *одном регионе*, см. раздел [Создание пиринга](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering#create-a-peering).
-* Если виртуальные сети находятся в *различных регионах*, см. статью [Пиринг между виртуальными сетями](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview). 
+* Если виртуальные сети находятся в *одном регионе*, см. раздел [Создание пиринга](./virtual-network-manage-peering.md#create-a-peering).
+* Если виртуальные сети находятся в *различных регионах*, см. статью [Пиринг между виртуальными сетями](./virtual-network-peering-overview.md). 
 
 > [!Note]
 > Подключение с использованием глобального пиринга между виртуальными сетями не работает для следующих ресурсов: 
@@ -52,11 +52,11 @@ ms.locfileid: "83587737"
 > * Управление API Azure (использует внутренняя подсистема балансировки нагрузки внутренний со SKU "Базовый");
 > * Доменные службы Azure Active Directory (AAD DS) (использует внутренняя подсистема балансировки нагрузки внутренний со SKU "Базовый");
 
-Дополнительные сведения см. в разделе о [требованиях и ограничениях](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) для глобального пиринга.
+Дополнительные сведения см. в разделе о [требованиях и ограничениях](./virtual-network-peering-overview.md#requirements-and-constraints) для глобального пиринга.
 
 ### <a name="the-virtual-networks-are-in-different-subscriptions-or-active-directory-tenants"></a>Виртуальные сети с разными подписками или клиентами Active Directory
 
-Сведения о настройке пиринга между виртуальными сетями с разными подписками или клиентами Active Directory см. в разделе [Создание пиринга с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli).
+Сведения о настройке пиринга между виртуальными сетями с разными подписками или клиентами Active Directory см. в разделе [Создание пиринга с помощью Azure CLI](./create-peering-different-subscriptions.md#cli).
 
 > [!Note]
 > Чтобы настроить пиринг между сетями, необходимы разрешения **Участник сетей** в обеих подписках. Дополнительные сведения см. в разделе о [разрешениях для пиринга](virtual-network-manage-peering.md#permissions).
@@ -67,11 +67,11 @@ ms.locfileid: "83587737"
 
 ### <a name="for-a-site-to-site-connection-or-an-expressroute-connection"></a>Для подключений "сеть — сеть" или ExpressRoute
 
-Выполните инструкции в статье [Настройка транзита VPN-шлюзов для включения пиринга между виртуальными сетями](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
+Выполните инструкции в статье [Настройка транзита VPN-шлюзов для включения пиринга между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ### <a name="for-point-to-site-connections"></a>Для подключений "точка — сеть"
 
-1. Выполните инструкции в статье [Настройка транзита VPN-шлюзов для включения пиринга между виртуальными сетями](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
+1. Выполните инструкции в статье [Настройка транзита VPN-шлюзов для включения пиринга между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 2. После установки или изменения пиринга между виртуальными сетями скачайте и переустановите пакет "точка — сеть", чтобы клиенты "точка — сеть" могли получать обновленные маршруты к периферийной виртуальной сети.
 
 ## <a name="configure-virtual-network-peering-with-hub-spoke-topology-virtual-network"></a>Настройка пиринга между виртуальными сетями со звездообразной топологией
@@ -84,12 +84,12 @@ ms.locfileid: "83587737"
 1. В центральной виртуальной сети настройте сетевой виртуальный модуль (NVA).
 1. В периферийных виртуальных сетях примените определяемые пользователем маршруты с типом следующего прыжка "сетевой виртуальный модуль".
 
-Дополнительные сведения см. в разделе [Цепочка служб](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#service-chaining).
+Дополнительные сведения см. в разделе [Цепочка служб](./virtual-network-peering-overview.md#service-chaining).
 
 > [!Note]
 > Если вам нужна помощь по настройке сетевого виртуального модуля, [обратитесь к его поставщику](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
 
-Дополнительные сведения об устранении неполадок при настройке и маршрутизации устройств NVA см. в статье [Неполадки сетевого виртуального модуля в Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-nva).
+Дополнительные сведения об устранении неполадок при настройке и маршрутизации устройств NVA см. в статье [Неполадки сетевого виртуального модуля в Azure](./virtual-network-troubleshoot-nva.md).
 
 ### <a name="the-virtual-networks-are-in-different-regions"></a>Виртуальные сети в разных регионах
 
@@ -105,7 +105,7 @@ ms.locfileid: "83587737"
 * Управление API (использует внутренний балансировщик нагрузки SKU "Базовый")
 * Azure AD DS (использует внутренняя подсистема балансировки нагрузки внутренний со SKU "Базовый").
 
-Дополнительные сведения о требованиях и ограничениях для глобального пиринга между виртуальными сетями см. в [этом разделе](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints).
+Дополнительные сведения о требованиях и ограничениях для глобального пиринга между виртуальными сетями см. в [этом разделе](./virtual-network-peering-overview.md#requirements-and-constraints).
 
 ## <a name="troubleshoot-a-connectivity-issue-between-two-peered-virtual-networks"></a>Устранение проблем с подключением между двумя одноранговыми виртуальными сетями
 
@@ -117,11 +117,11 @@ ms.locfileid: "83587737"
 
 1. Проверьте потоки сетевого трафика.
 
-   На исходной виртуальной машине используйте функции [Устранение неполадок с подключением](https://docs.microsoft.com/azure/network-watcher/network-watcher-connectivity-overview) и [Проверка IP-потока](https://docs.microsoft.com/azure/network-watcher/network-watcher-ip-flow-verify-overview) для целевой виртуальной машины, чтобы определить, нет ли NSG или UDR, вызывающих помехи в потоках трафика.
+   На исходной виртуальной машине используйте функции [Устранение неполадок с подключением](../network-watcher/network-watcher-connectivity-overview.md) и [Проверка IP-потока](../network-watcher/network-watcher-ip-flow-verify-overview.md) для целевой виртуальной машины, чтобы определить, нет ли NSG или UDR, вызывающих помехи в потоках трафика.
 
    Если вы используете брандмауэр или NVA, выполните следующие действия. 
    1. Задокументируйте параметры UDR, чтобы их можно было восстановить после выполнения этого шага.
-   2. Удалите UDR из подсети исходной виртуальной машины или сетевую карту, которая указывает на NVA в качестве места назначения для следующего прыжка. Проверьте подключение исходной виртуальной машины непосредственно к месту назначению, которое обходит NVA. Если это не сработало, см. [руководство по устранению неполадок NVA](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-nva).
+   2. Удалите UDR из подсети исходной виртуальной машины или сетевую карту, которая указывает на NVA в качестве места назначения для следующего прыжка. Проверьте подключение исходной виртуальной машины непосредственно к месту назначению, которое обходит NVA. Если это не сработало, см. [руководство по устранению неполадок NVA](./virtual-network-troubleshoot-nva.md).
 
 2. Выполните трассировку сети. 
    1. Запустите трассировку сети на целевой виртуальной машине. Для Windows можно использовать **Netsh**. Для Linux используйте **TCPDump**.
@@ -145,7 +145,7 @@ ms.locfileid: "83587737"
    > * Управление API (использует внутренний балансировщик нагрузки SKU "Базовый")
    > * Azure AD DS (использует внутренняя подсистема балансировки нагрузки внутренний со SKU "Базовый").
 
-Дополнительные сведения см. в разделе о [требованиях и ограничениях](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) для глобального пиринга.
+Дополнительные сведения см. в разделе о [требованиях и ограничениях](./virtual-network-peering-overview.md#requirements-and-constraints) для глобального пиринга.
 
 ### <a name="the-peering-status-is-disconnected"></a>Состояние пиринга — "Отключено"
 
@@ -159,8 +159,8 @@ ms.locfileid: "83587737"
 
 Сведения об устранении проблем с подключением, влияющих на NVA или VPN-шлюз стороннего производителя, см. по следующим ссылкам:
 
-* [Руководство по устранению неполадок с NVA](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-nva)
-* [Цепочка служб](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#service-chaining)
+* [Руководство по устранению неполадок с NVA](./virtual-network-troubleshoot-nva.md)
+* [Цепочка служб](./virtual-network-peering-overview.md#service-chaining)
 
 ### <a name="my-network-does-not-use-a-third-party-nva-or-vpn-gateway"></a>В сети не используется NVA или VPN-шлюз стороннего производителя
 
@@ -190,7 +190,7 @@ ms.locfileid: "83587737"
 
 Центральная сеть должна включать NVA. Настройте маршруты UDR в периферийных сетях, для которых в качестве места назначения следующего прыжка задан сетевой виртуальный модуль, и активируйте параметр **Разрешить перенаправленный трафик** в центральной виртуальной сети.
 
-Дополнительные сведения см. в разделе [Цепочка служб](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#service-chaining). Указанные требования следует обсудить с выбранным [поставщиком NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Дополнительные сведения см. в разделе [Цепочка служб](./virtual-network-peering-overview.md#service-chaining). Указанные требования следует обсудить с выбранным [поставщиком NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
 
 ## <a name="troubleshoot-a-hub-spoke-network-connectivity-issue-between-spoke-virtual-networks-in-different-regions"></a>Устранение неполадок с сетевым подключением между периферийными виртуальными сетями в разных регионах в звездообразной топологии
 
@@ -206,7 +206,7 @@ ms.locfileid: "83587737"
 * Управление API (использует внутренний балансировщик нагрузки SKU "Базовый")
 * Azure AD DS (использует внутренняя подсистема балансировки нагрузки внутренний со SKU "Базовый").
 
-Дополнительные сведения см. в разделе о [требованиях и ограничениях](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) для глобального пиринга и статье о [других топологиях VPN](https://blogs.msdn.microsoft.com/igorpag/2016/02/11/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-v2/).
+Дополнительные сведения см. в разделе о [требованиях и ограничениях](./virtual-network-peering-overview.md#requirements-and-constraints) для глобального пиринга и статье о [других топологиях VPN](/archive/blogs/igorpag/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-v2).
 
 ## <a name="troubleshoot-a-hub-spoke-network-connectivity-issue-between-a-web-app-and-the-spoke-virtual-network"></a>Устранение неполадок с сетевым подключением между веб-приложением и периферийной виртуальной сетью в звездообразной топологии
 
@@ -218,14 +218,14 @@ ms.locfileid: "83587737"
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Интеграция приложения с виртуальной сетью Azure](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)
-* [Сведения о маршрутизации VPN-подключений "точка — сеть"](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-point-to-site-routing)
+* [Интеграция приложения с виртуальной сетью Azure](../app-service/web-sites-integrate-with-vnet.md)
+* [Сведения о маршрутизации VPN-подключений "точка — сеть"](../vpn-gateway/vpn-gateway-about-point-to-site-routing.md)
 
 ## <a name="troubleshoot-a-virtual-network-peering-configuration-error-message"></a>Устранение неполадки, являющейся причиной сообщения об ошибке с конфигурацией пиринга между виртуальными сетями 
 
 ### <a name="current-tenant-tenant-id-isnt-authorized-to-access-linked-subscription"></a>Текущий `<TENANT ID>` клиента не имеет прав доступа к связанной подписке
 
-Сведения о том, как устранить эту проблему, см. в раздел [Создание пиринга с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli).
+Сведения о том, как устранить эту проблему, см. в раздел [Создание пиринга с помощью Azure CLI](./create-peering-different-subscriptions.md#cli).
 
 ### <a name="not-connected"></a>Не подключено
 
@@ -246,4 +246,4 @@ ms.locfileid: "83587737"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Устранение проблем с подключением между виртуальными машинами Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-connectivity-problem-between-vms)
+* [Устранение проблем с подключением между виртуальными машинами Azure](./virtual-network-troubleshoot-connectivity-problem-between-vms.md)

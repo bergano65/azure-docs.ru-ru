@@ -13,12 +13,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: eedc3dc1422d4eb6dcce80766077e8056f8509cf
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 7bd991bd709bb4be69325afe967d7e5600a9e1a4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678050"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222570"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "92678050"
 
 - [Временные таблицы](../temporal-tables.md) позволяют восстанавливать версии строк из любой точки во времени.
 - [Встроенные автоматические резервные копии](automated-backups-overview.md) и [восстановление на момент времени](recovery-using-backups.md#point-in-time-restore) позволяют восстановить полную базу данных до некоторой точки во времени в пределах настроенного периода хранения до 35 дней.
-- Вы можете [восстановить удаленную базу данных](recovery-using-backups.md#deleted-database-restore) до той точки, в которой она была удалена, если **сервер не был удален** .
+- Вы можете [восстановить удаленную базу данных](recovery-using-backups.md#deleted-database-restore) до той точки, в которой она была удалена, если **сервер не был удален**.
 - [Долгосрочное хранение архивных копий](long-term-retention-overview.md) позволяет хранить резервные копии до 10 лет. Это ограниченная общедоступная Предварительная версия для SQL Управляемый экземпляр
 - [Активная Георепликация](active-geo-replication-overview.md) позволяет создавать реплики, доступные для чтения, и вручную отработку отказа для любой реплики в случае сбоя центра обработки данных или обновления приложения.
 - [Группа автоматической отработки отказа](auto-failover-group-overview.md#terminology-and-capabilities) позволяет приложению автоматически восстанавливаться в случае сбоя центра обработки данных.
@@ -88,7 +88,7 @@ ms.locfileid: "92678050"
 
 | Метод восстановления | RTO | RPO |
 | --- | --- | --- |
-| Геовосстановление из геореплицированных резервных копий | 12 ч | 1 ч |
+| Геовосстановление из геореплицированных резервных копий | 12 h | 1 ч |
 | Группы автоматической отработки отказа | 1 ч | 5 с |
 | Отработка отказа базы данных вручную | 30 с | 5 с |
 

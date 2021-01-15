@@ -5,14 +5,14 @@ services: iot-hub
 author: jlian
 ms.service: iot-fundamentals
 ms.topic: conceptual
-ms.date: 11/25/2020
+ms.date: 01/14/2020
 ms.author: jlian
-ms.openlocfilehash: f4438aebcb81d665a19a595ac7ade4fea27fc43f
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: e569cbe9030b2ac5a42bd99233b4fefc925a5662
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621014"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220321"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Поддержка протокола TLS в центре Интернета вещей
 
@@ -46,9 +46,16 @@ ms.locfileid: "96621014"
 * Центрально-южная часть США
 * западная часть США 2
 * US Gov (Аризона)
-* US Gov (Вирджиния)
+* US Gov (Вирджиния) (поддержка TLS 1.0/1.1 недоступна в этом регионе — необходимо включить принудительное использование TLS 1,2 или создать центр Интернета вещей не удается)
 
-Для этой цели подготовьте новый Центр Интернета вещей в любом из поддерживаемых регионов и задайте для свойства `minTlsVersion` значение `1.2` в спецификации ресурса Центра Интернета вещей в шаблоне Azure Resource Manager:
+Чтобы включить принудительное применение TLS 1,2, выполните действия, описанные в разделе [Создание центра Интернета вещей в портал Azure](/.iot-hub-create-through-portal.md), за исключением
+
+- Выберите **регион** из одной из перечисленных выше в списке.
+- В разделе **Management-> Advanced-> TLS-> минимальная версия TLS** выберите **1,2**. Этот параметр отображается только для центра Интернета вещей, созданного в поддерживаемом регионе.
+
+    :::image type="content" source="media/iot-hub-tls-12-enforcement.png" alt-text="Снимок экрана, показывающий, как включить принудительное применение TLS 1,2 во время создания центра Интернета вещей":::
+
+Чтобы использовать шаблон ARM для создания, подготавливает новый центр Интернета вещей в любом из поддерживаемых регионов и присвойте `minTlsVersion` свойству значение `1.2` в спецификации ресурсов:
 
 ```json
 {

@@ -1,8 +1,6 @@
 ---
 title: Уведомление об автоматическом обновлении и истечении срока действия локальной среды выполнения интеграции
 description: Сведения об автоматическом обновлении в локальной среде выполнения интеграции и уведомлении об истечении срока действия
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
@@ -11,12 +9,12 @@ ms.author: lle
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 12/25/2020
-ms.openlocfilehash: 6a6c897d92d469fd6247dd51f2bacb91032ac123
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 8c51839e760dcca32bfc0d150c5e4d10767d95a4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122664"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222706"
 ---
 # <a name="self-hosted-integration-runtime-auto-update-and-expire-notification"></a>Уведомление об автоматическом обновлении и истечении срока действия локальной среды выполнения интеграции
 
@@ -33,7 +31,7 @@ ms.locfileid: "98122664"
 
 Вы можете проверить дату и время последнего обновления в собственном клиенте среды выполнения интеграции.
 
-![Включить автоматическое обновление](media/create-self-hosted-integration-runtime/shir-auto-update-2.png)
+![Снимок экрана: Проверка времени обновления](media/create-self-hosted-integration-runtime/shir-auto-update-2.png)
 
 > [!NOTE]
 > Чтобы обеспечить стабильность работы локальной среды интеграции, хотя мы выпускаем две версии, мы будем обновлять их только раз в месяц. Иногда вы обнаружите, что обновленная версия — это Предыдущая версия самой последней версии. Если вы хотите получить последнюю версию, можно перейти в [Центр загрузки](https://www.microsoft.com/download/details.aspx?id=39717).

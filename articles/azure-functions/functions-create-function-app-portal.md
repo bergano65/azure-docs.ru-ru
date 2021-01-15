@@ -1,48 +1,81 @@
 ---
-title: Создание приложения-функции на портале Azure
-description: Создание нового приложения-функции в Azure на портале.
+title: Создание первой функции на портале Azure
+description: Узнайте, как создать первую функцию Azure, выполняемую без сервера, с помощью портала Azure.
 ms.topic: how-to
-ms.date: 08/29/2019
-ms.custom: mvc
-ms.openlocfilehash: 8d19a269903de309bf219c2546fa70c3abe7be10
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.date: 03/26/2020
+ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
+ms.openlocfilehash: bebef4e8964576b968af8f8aebd06030ca0d0227
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093595"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222723"
 ---
-# <a name="create-a-function-app-from-the-azure-portal"></a>Создание приложения-функции на портале Azure
+# <a name="create-your-first-function-in-the-azure-portal"></a>Создание первой функции на портале Azure
 
-В этом разделе показано, как использовать функции Azure для создания приложения-функции в портал Azure. Приложение-функция — это контейнер, в котором выполняются отдельные функции. 
+Функции Azure позволяют выполнять код в бессерверной среде без необходимости сначала создавать виртуальную машину или публиковать веб-приложение. Из этой статьи вы узнаете, как использовать функции Azure для создания функции триггера HTTP "Hello World" в портал Azure.
+
+Рекомендуется [разрабатывать функции локально](functions-develop-local.md) и публиковать их в приложении-функции в Azure.  
+Используйте одну из следующих ссылок, чтобы приступить к работе с выбранной локальной средой разработки и языком:
+
+| Visual Studio Code | Терминал / командная строка | Visual Studio |
+| --- | --- | --- |
+|  &bull;&nbsp;[Начало работы с C #](./create-first-function-vs-code-csharp.md)<br/>&bull;&nbsp;[Начало работы с Java](./create-first-function-vs-code-java.md)<br/>&bull;&nbsp;[Приступая к работе с JavaScript](./create-first-function-vs-code-node.md)<br/>&bull;&nbsp;[Начало работы с PowerShell](./create-first-function-vs-code-powershell.md)<br/>&bull;&nbsp;[Начало работы с Python](./create-first-function-vs-code-python.md) |&bull;&nbsp;[Начало работы с C #](./create-first-function-cli-csharp.md)<br/>&bull;&nbsp;[Начало работы с Java](./create-first-function-cli-java.md)<br/>&bull;&nbsp;[Приступая к работе с JavaScript](./create-first-function-cli-node.md)<br/>&bull;&nbsp;[Начало работы с PowerShell](./create-first-function-cli-powershell.md)<br/>&bull;&nbsp;[Начало работы с Python](./create-first-function-cli-python.md) | [Приступая к работе с C#](functions-create-your-first-function-visual-studio.md) |
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="sign-in-to-azure"></a>Вход в Azure
+
+Войдите на [портал Azure](https://portal.azure.com) с помощью своей учетной записи Azure.
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
-[!INCLUDE [functions-create-function-app-portal](../../includes/functions-create-function-app-portal.md)]
+Для выполнения функций вам понадобится приложение-функция, позволяющее группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими.
 
-После создания приложения-функции можно создать отдельные функции на одном или нескольких языках программирования. Создайте функции [с помощью портала](functions-create-first-azure-function.md#create-function), [непрерывного развертывания](functions-continuous-deployment.md) или [передачи по FTP](https://github.com/projectkudu/kudu/wiki/Accessing-files-via-ftp).
+[!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
-## <a name="service-plans"></a>Планы обслуживания
+Затем создайте функцию в новом приложении-функции.
 
-Функции Azure имеют три разных плана обслуживания: план потребления, план Premium и выделенный план (служба приложений). При создании приложения-функции необходимо выбрать свой план обслуживания, который впоследствии невозможно изменить. Дополнительные сведения см. в разделе [Выбор правильного плана обслуживания для Функций Azure](functions-scale.md).
+## <a name="create-an-http-trigger-function"></a><a name="create-function"></a>Создание функции, активируемой HTTP
 
-Если вы планируете выполнять функции JavaScript для выделенного плана (службы приложений), следует выбрать план с меньшим числом ядер. Дополнительные сведения см. в разделе [обзора функций для JavaScript](functions-reference-node.md#choose-single-vcpu-app-service-plans).
+1. В меню слева в окне **Функции** выберите **Функции**, а затем в верхнем меню выберите **Добавить**. 
+ 
+1. В окне **Новая функция** выберите **Триггер HTTP**.
 
-<a name="storage-account-requirements"></a>
+    ![Выбор функции, активируемой HTTP](./media/functions-create-first-azure-function/function-app-select-http-trigger.png)
 
-## <a name="storage-account-requirements"></a>Требования к учетной записи хранения
+1. В окне **Новая функция** для пункта **Новая функция** оставьте имя по умолчанию или введите новое имя. 
 
-При создании приложения-функции необходимо создать или привязать учетную запись хранения Azure общего назначения, поддерживающую хранилища BLOB-объектов, очередей и таблиц. Для внутренних операций, таких как управление триггерами и ведение журнала выполнения функций, Функции Azure используют службу хранилища. Некоторые учетные записи хранения не поддерживают очереди и таблицы. Например, это относится к учетным записям хранения только для больших двоичных объектов, службе хранилища Azure уровня "Премиум" и учетным записям хранения общего назначения с репликацией ZRS. 
+1. Из раскрывающегося списка **Уровень авторизации** выберите **Анонимный**, а затем выберите **Создать функцию**.
 
-Учетные записи неподдерживаемого типа отфильтровываются при создании приложения-функции в портал Azure. Портал также позволяет использовать существующую учетную запись хранения, только если эта учетная запись находится в том же регионе, что и создаваемое приложение-функция. Если по какой бы то ни было причине нужно нарушать производительность учетной записи хранения, используемой приложением функции в том же регионе, необходимо создать приложение функции за пределами портала. 
+    Azure создает функцию, активируемую HTTP. Теперь вы можете запустить новую функцию, отправив HTTP-запрос.
 
->[!NOTE]
->При использовании плана потребления файлы кода и конфигурации привязок приложения-функции хранятся в хранилище файлов Azure в основной учетной записи хранения. При удалении основной учетной записи хранения это содержимое удаляется без возможности восстановления. 
+## <a name="test-the-function"></a>Проверка функции
 
-Дополнительные сведения о типах учетных записей хранения см. в разделе [Введение в службы хранилища Azure](../storage/common/storage-introduction.md#core-storage-services). 
+1. В новой функции, активируемой HTTP, выберите **Code + Test** (Код + Тест) в меню слева, а затем в верхнем меню выберите **Получить URL-адрес функции**.
+
+    ![Выбор "Получить URL-адрес функции"](./media/functions-create-first-azure-function/function-app-select-get-function-url.png)
+
+1. В диалоговом окне **Получить URL-адрес функции** в раскрывающемся списке выберите вариант **по умолчанию**, а затем выберите значок **Копировать в буфер обмена**. 
+
+    ![Копирование URL-адреса функции с портала Azure](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
+
+1. Вставьте URL-адрес функции в адресную строку браузера. Добавьте значение строки запроса `?name=<your_name>` в конец этого URL-адреса и нажмите клавишу Enter, чтобы выполнить этот запрос. 
+
+    Следующий пример демонстрирует ответ в браузере:
+
+    ![Ответ функции в браузере.](./media/functions-create-first-azure-function/function-app-browser-testing.png)
+
+    Если URL-адрес запроса содержит [ключ доступа](functions-bindings-http-webhook-trigger.md#authorization-keys) ( `?code=...` ), это означает, что при создании функции вы выбираете **функцию** , а не **Анонимный** уровень доступа. В этом случае вместо этого следует добавить `&name=<your_name>` .
+
+1. При выполнении функции сведения о трассировке записываются в журналы. Чтобы просмотреть выходные данные трассировки, вернитесь на страницу **Code + Test** (Код + Тест) на портале и разверните список **Журналы** в нижней части страницы.
+
+   ![Средство просмотра журналов Функций на портале Azure.](./media/functions-create-first-azure-function/function-view-logs.png)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+[!INCLUDE [Clean-up resources](../../includes/functions-quickstart-cleanup.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Хотя портал Azure позволяет легко создать и опробовать функции, мы рекомендуем [локальную разработку](functions-develop-local.md). После создания приложения-функции на портале необходимо еще добавить функцию. 
-
-> [!div class="nextstepaction"]
-> [Добавление функции, активируемой HTTP](functions-create-first-azure-function.md#create-function)
+[!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]

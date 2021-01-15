@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: kumud
-ms.openlocfilehash: 79062ae45f04b290f6e4120906b98590ce95dbe1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 654c883498e724d10104133f99ef1664f72fe09d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87833272"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223488"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions-and-azure-active-directory-tenants"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках и арендаторах Azure Active Directory
 
@@ -31,14 +31,14 @@ ms.locfileid: "87833272"
 |[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models.md) |Аналогично|
 |[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Разные|
 
-Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
+Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/tutorial-site-to-site-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 
 Это руководство по созданию пиринга между виртуальными сетями в одном регионе. Пиринг можно создавать между виртуальными сетями в разных [поддерживаемых регионах](virtual-network-manage-peering.md#cross-region). Рекомендуется ознакомиться с [требованиями и ограничениями пиринга](virtual-network-manage-peering.md#requirements-and-constraints) перед созданием пиринга виртуальных сетей.
 
 Для создания пиринга виртуальных сетей можно использовать [портал Azure](#portal), [интерфейс командной строки](#cli) Azure (CLI), Azure [PowerShell](#powershell) или [шаблон Azure Resource Manager](#template). Выберите любую из представленных выше ссылок на инструменты, чтобы перейти к инструкциям по созданию пиринга виртуальных сетей с помощью выбранного инструмента.
 
 Если виртуальные сети находятся в разных подписках, а эти подписки связаны с разными арендаторами Azure Active Directory, выполните приведенные ниже действия, прежде чем продолжить.
-1. Добавьте пользователя из каждого клиента Active Directory в качестве [гостевого пользователя](../active-directory/b2b/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory) в другой клиент Azure Active Directory.
+1. Добавьте пользователя из каждого клиента Active Directory в качестве [гостевого пользователя](../active-directory/external-identities/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory) в другой клиент Azure Active Directory.
 1. Каждый пользователь должен принять приглашение в качестве гостевого пользователя из другого арендатора Azure Active Directory.
 
 ## <a name="create-peering---azure-portal"></a><a name="portal"></a>Создание пиринга с помощью портала Azure

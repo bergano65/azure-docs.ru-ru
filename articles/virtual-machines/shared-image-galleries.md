@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 4156308fa58ea1f02e6e3f2c5174839dc1cd381c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 2731a7f263db223c258ddfc434bc84f59632d1f5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841530"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223369"
 ---
 # <a name="shared-image-galleries-overview"></a>Обзор коллекций общих образов
 
@@ -316,6 +316,11 @@ ms.locfileid: "96841530"
 ### <a name="can-i-update-my-virtual-machine-scale-set-created-using-managed-image-to-use-shared-image-gallery-images"></a>Можно ли обновить масштабируемый набор виртуальных машин, созданный на основе управляемого образа, чтобы использовать в нем образы из Общей коллекции образов?
 
 Да, вы можете изменить для масштабируемого набора ссылку на исходный образ с управляемого образа на образ в общей коллекции, если в этих образах совпадают тип ОС, поколение Hyper-V и схема дисков данных.
+
+## <a name="troubleshoot-shared-image-gallery-issues"></a>Устранение неполадок с общей коллекцией образов
+Если у вас возникли проблемы с выполнением каких либо операций с общими ресурсами коллекции образов, просмотрите список распространенных ошибок в [руководстве по устранению неполадок](troubleshooting-shared-images.md).
+
+Кроме того, вы можете разместить свой вопрос и пометить его в `azure-virtual-machines-images` [Q&A](/answers/topics/azure-virtual-machines-images.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

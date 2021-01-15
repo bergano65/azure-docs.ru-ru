@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: 4e4f002d038820edf128e3fefb229a0918a8ac55
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: bc43dc7afb234d410eb17d20beb13cd5cb44bb18
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433509"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222536"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
 
@@ -79,7 +79,7 @@ ms.locfileid: "96433509"
 - Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
-Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 В следующем примере создается группа ресурсов с именем **myResourceGroup** в расположении **eastus**.
 
@@ -92,7 +92,7 @@ ms.locfileid: "96433509"
 ```
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-С помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) создайте виртуальную сеть с именем **myVnet**, содержащую подсеть **mySubnet**, в группе ресурсов **myResourceGroup**.
+С помощью команды [az network vnet create](/cli/azure/network/vnet) создайте виртуальную сеть с именем **myVnet**, содержащую подсеть **mySubnet**, в группе ресурсов **myResourceGroup**.
 
 ```azurecli-interactive
   az network vnet create \
@@ -113,7 +113,7 @@ ms.locfileid: "96433509"
 
 В этом разделе вы делегируйте подсеть, созданную в предыдущем разделе, в службу Azure. 
 
-Чтобы обновить подсеть с именем **mySubnet** и делегированием к службе Azure, используйте команду [AZ Network vnet подсети Update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update) .  В этом примере в качестве примера делегирования используется **Microsoft. дбфорпостгрескл/serversv2** .
+Чтобы обновить подсеть с именем **mySubnet** и делегированием к службе Azure, используйте команду [AZ Network vnet подсети Update](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update) .  В этом примере в качестве примера делегирования используется **Microsoft. дбфорпостгрескл/serversv2** .
 
 ```azurecli-interactive
   az network vnet subnet update \
@@ -123,7 +123,7 @@ ms.locfileid: "96433509"
   --delegations Microsoft.DBforPostgreSQL/serversv2
 ```
 
-Чтобы убедиться, что делегирование было применено, используйте команду [AZ Network vnet подсеть показывать](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show). Убедитесь, что служба делегирована в подсеть в свойстве **ServiceName**:
+Чтобы убедиться, что делегирование было применено, используйте команду [AZ Network vnet подсеть показывать](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show). Убедитесь, что служба делегирована в подсеть в свойстве **ServiceName**:
 
 ```azurecli-interactive
   az network vnet subnet show \
@@ -152,7 +152,7 @@ ms.locfileid: "96433509"
 
 ### <a name="remove-subnet-delegation-from-an-azure-service"></a>Удаление делегирования подсети из службы Azure
 
-Чтобы удалить делегирование из подсети с именем **mySubnet**, используйте команду [AZ Network vnet подсети Update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update) .
+Чтобы удалить делегирование из подсети с именем **mySubnet**, используйте команду [AZ Network vnet подсети Update](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update) .
 
 ```azurecli-interactive
   az network vnet subnet update \
@@ -161,7 +161,7 @@ ms.locfileid: "96433509"
   --vnet-name myVnet \
   --remove delegations
 ```
-Чтобы проверить, было ли делегирование удалено, используйте команду [AZ Network vnet подсеть показывать](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show). Убедитесь, что служба удалена из подсети в свойстве **ServiceName**:
+Чтобы проверить, было ли делегирование удалено, используйте команду [AZ Network vnet подсеть показывать](/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show). Убедитесь, что служба удалена из подсети в свойстве **ServiceName**:
 
 ```azurecli-interactive
   az network vnet subnet show \
@@ -186,7 +186,7 @@ ms.locfileid: "96433509"
 ```
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
-Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
@@ -195,7 +195,7 @@ ms.locfileid: "96433509"
 ```
 ### <a name="create-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с именем **myVnet** и подсетью **mySubnet** с помощью командлета [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) в группе **myResourceGroup**, используя командлет [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=latest). Пространство IP-адресов для виртуальной сети — **10.0.0.0/16**. Подсеть в виртуальной сети — **10.0.0.0/24**.  
+Создайте виртуальную сеть с именем **myVnet** и подсетью **mySubnet** с помощью командлета [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) в группе **myResourceGroup**, используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork?view=latest). Пространство IP-адресов для виртуальной сети — **10.0.0.0/16**. Подсеть в виртуальной сети — **10.0.0.0/24**.  
 
 ```azurepowershell-interactive
   $subnet = New-AzVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix "10.0.0.0/24"
@@ -212,7 +212,7 @@ ms.locfileid: "96433509"
 
 В этом разделе вы делегируйте подсеть, созданную в предыдущем разделе, в службу Azure. 
 
-Используйте [Add-азделегатион](https://docs.microsoft.com/powershell/module/az.network/add-azdelegation?view=latest) для обновления подсети с именем **mySubnet** и делегирования с именем **миделегатион** в службу Azure.  В этом примере в качестве примера делегирования используется **Microsoft. дбфорпостгрескл/serversv2** .
+Используйте [Add-азделегатион](/powershell/module/az.network/add-azdelegation?view=latest) для обновления подсети с именем **mySubnet** и делегирования с именем **миделегатион** в службу Azure.  В этом примере в качестве примера делегирования используется **Microsoft. дбфорпостгрескл/serversv2** .
 
 ```azurepowershell-interactive
   $vnet = Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName "myResourceGroup"
@@ -220,7 +220,7 @@ ms.locfileid: "96433509"
   $subnet = Add-AzDelegation -Name "myDelegation" -ServiceName "Microsoft.DBforPostgreSQL/serversv2" -Subnet $subnet
   Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
-Чтобы проверить делегирование, используйте команду [Get-азделегатион](https://docs.microsoft.com/powershell/module/az.network/get-azdelegation?view=latest) .
+Чтобы проверить делегирование, используйте команду [Get-азделегатион](/powershell/module/az.network/get-azdelegation?view=latest) .
 
 ```azurepowershell-interactive
   $subnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"
@@ -236,7 +236,7 @@ ms.locfileid: "96433509"
 ```
 ### <a name="remove-subnet-delegation-from-an-azure-service"></a>Удаление делегирования подсети из службы Azure
 
-Удалите делегирование из подсети с именем **mySubnet** с помощью [Remove-азделегатион](https://docs.microsoft.com/powershell/module/az.network/remove-azdelegation?view=latest) :
+Удалите делегирование из подсети с именем **mySubnet** с помощью [Remove-азделегатион](/powershell/module/az.network/remove-azdelegation?view=latest) :
 
 ```azurepowershell-interactive
   $vnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup"
@@ -244,7 +244,7 @@ ms.locfileid: "96433509"
   $subnet = Remove-AzDelegation -Name "myDelegation" -Subnet $subnet
   Set-AzVirtualNetwork -VirtualNetwork $vnet
 ```
-Чтобы убедиться, что делегирование было удалено, используйте команду [Get-азделегатион](https://docs.microsoft.com/powershell/module/az.network/get-azdelegation?view=latest) :
+Чтобы убедиться, что делегирование было удалено, используйте команду [Get-азделегатион](/powershell/module/az.network/get-azdelegation?view=latest) :
 
 ```azurepowershell-interactive
   $subnet = Get-AzVirtualNetwork -Name "myVnet" -ResourceGroupName "myResourceGroup" | Get-AzVirtualNetworkSubnetConfig -Name "mySubnet"

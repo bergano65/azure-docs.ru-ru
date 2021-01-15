@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: de8d63fb5181e324738e082cbb36a40ee59e36b0
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 04f50396ea9ced4b4377f264b4952efa7a75d170
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96005254"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223505"
 ---
 # <a name="add-ipv6-to-an-ipv4-application-in-azure-virtual-network---azure-cli"></a>Добавление IPv6 в приложение IPv4 в виртуальной сети Azure Azure CLI
 
@@ -30,7 +30,7 @@ ms.locfileid: "96005254"
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+- Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-ipv6-addresses"></a>Создание IPv6-адресов
 
@@ -48,7 +48,7 @@ az network public-ip create \
 
 ## <a name="configure-ipv6-load-balancer-frontend"></a>Настройка внешнего интерфейса балансировщика нагрузки IPv6
 
-Настройте подсистему балансировки нагрузки с новым IP-адресом IPv6 с помощью команды [AZ Network фунтов интерфейсного IP-адреса Create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create) , как показано ниже.
+Настройте подсистему балансировки нагрузки с новым IP-адресом IPv6 с помощью команды [AZ Network фунтов интерфейсного IP-адреса Create](/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create) , как показано ниже.
 
 ```azurecli-interactive
 az network lb frontend-ip create \
@@ -60,7 +60,7 @@ az network lb frontend-ip create \
 
 ## <a name="configure-ipv6-load-balancer-backend-pool"></a>Настройка внутреннего пула подсистемы балансировки нагрузки IPv6
 
-Создайте внутренний пул для сетевых карт с IPv6-адресами, используя команду [AZ Network фунтов Address-Pool Create](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create) , как показано ниже.
+Создайте внутренний пул для сетевых карт с IPv6-адресами, используя команду [AZ Network фунтов Address-Pool Create](/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create) , как показано ниже.
 
 ```azurecli-interactive
 az network lb address-pool create \
@@ -71,7 +71,7 @@ az network lb address-pool create \
 
 ## <a name="configure-ipv6-load-balancer-rules"></a>Настройка правил подсистемы балансировки нагрузки IPv6
 
-Создайте правила подсистемы балансировки нагрузки IPv6 с помощью команды [AZ Network фунтов Rule Create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create).
+Создайте правила подсистемы балансировки нагрузки IPv6 с помощью команды [AZ Network фунтов Rule Create](/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create).
 
 ```azurecli-interactive
 az network lb rule create \
@@ -104,7 +104,7 @@ az network vnet subnet update \
 
 ## <a name="add-ipv6-configuration-to-nics"></a>Добавление конфигурации IPv6 в сетевые карты
 
-Настройте сетевые карты виртуальных машин с адресом IPv6 с помощью команды [AZ Network NIC IP-config Create](https://docs.microsoft.com/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create) , как показано ниже.
+Настройте сетевые карты виртуальных машин с адресом IPv6 с помощью команды [AZ Network NIC IP-config Create](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create) , как показано ниже.
 
 ```azurecli-interactive
 az network nic ip-config create \

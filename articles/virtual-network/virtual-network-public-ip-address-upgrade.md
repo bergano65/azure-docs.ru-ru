@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions
-ms.openlocfilehash: 3e2905019244279129528c177a76291cb7d75e11
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: d6e8c4f4b6646254aeea12cf587f47047e661e3f
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825764"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222876"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Обновление общедоступных IP-адресов
 
@@ -33,15 +33,15 @@ ms.locfileid: "97825764"
 
 ## <a name="upgrade-public-ip-address-from-basic-to-standard-sku"></a>Обновление общедоступного IP-адреса с базового на стандартный SKU
 
-Чтобы обновить общедоступный IP-адрес, он не должен быть связан ни с одним ресурсом (Дополнительные сведения о том, как отменять связь с общедоступными IP, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) ).
+Чтобы обновить общедоступный IP-адрес, он не должен быть связан ни с одним ресурсом (Дополнительные сведения о том, как отменять связь с общедоступными IP, см. на [этой странице](./virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address) ).
 
 >[!IMPORTANT]
->Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", остаются без [зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  Это означает, что они не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны, или привязан к предварительно указанной зоне в регионах, где это предлагается.
+>Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", остаются без [зон доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  Это означает, что они не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны, или привязан к предварительно указанной зоне в регионах, где это предлагается.
 
 ---
 # <a name="basic-to-standard---powershell"></a>[**Базовый для Standard-PowerShell**](#tab/option-upgrade-powershell)
 
-В следующем примере предполагается, что ранее было создано общедоступный IP-адрес базового SKU с использованием примера, указанного на [этой странице](https://docs.microsoft.com/azure/virtual-network/create-public-ip-powershell?tabs=option-create-public-ip-basic) с базовым общедоступным IP-адресом **мибасикпублиЦип** в **myResourceGroup**.
+В следующем примере предполагается, что ранее было создано общедоступный IP-адрес базового SKU с использованием примера, указанного на [этой странице](./create-public-ip-powershell.md?tabs=option-create-public-ip-basic) с базовым общедоступным IP-адресом **мибасикпублиЦип** в **myResourceGroup**.
 
 Чтобы обновить IP-адрес, просто выполните приведенные ниже команды с помощью PowerShell.  Примечание. Если IP-адрес уже выделен статически, этот раздел можно пропустить.
 
@@ -63,7 +63,7 @@ Set-AzPublicIpAddress -PublicIpAddress $pubIP
 
 # <a name="basic-to-standard---cli"></a>[**Базовый до Standard-CLI**](#tab/option-upgrade-cli)
 
-В следующем примере предполагается, что ранее было создано общедоступный IP-адрес базового SKU с использованием примера, указанного на [этой странице](https://docs.microsoft.com/azure/virtual-network/create-public-ip-cli?tabs=option-create-public-ip-basic) с базовым общедоступным IP-адресом **мибасикпублиЦип** в **myResourceGroup**.
+В следующем примере предполагается, что ранее было создано общедоступный IP-адрес базового SKU с использованием примера, указанного на [этой странице](./create-public-ip-cli.md?tabs=option-create-public-ip-basic) с базовым общедоступным IP-адресом **мибасикпублиЦип** в **myResourceGroup**.
 
 Чтобы обновить IP-адрес, просто выполните приведенные ниже команды с помощью Azure CLI.  Примечание. Если IP-адрес уже выделен статически, этот раздел можно пропустить.
 
@@ -95,7 +95,7 @@ az network public-ip update \
 
 # <a name="reserved-to-basic---powershell"></a>[**Зарезервировано в Basic-PowerShell**](#tab/option-migrate-powershell)
 
-В следующем примере предполагается, что предыдущее создание классической службы Azure зарезервированный IP-адрес **myReservedIP** в **myResourceGroup**. Еще одним необходимым условием для миграции является проверка того, зарегистрирована Azure Resource Manager подписка на миграцию. Это подробно описано в шагах 3 и 4 [этой страницы](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-ps).
+В следующем примере предполагается, что предыдущее создание классической службы Azure зарезервированный IP-адрес **myReservedIP** в **myResourceGroup**. Еще одним необходимым условием для миграции является проверка того, зарегистрирована Azure Resource Manager подписка на миграцию. Это подробно описано в шагах 3 и 4 [этой страницы](../virtual-machines/migration-classic-resource-manager-ps.md).
 
 Чтобы перенести зарезервированный IP-адрес, выполните приведенные ниже команды с помощью PowerShell.  Примечание. Если IP-адрес не связан ни с одной службой (ниже находится служба с именем **myService**), этот шаг можно пропустить.
 
@@ -119,7 +119,7 @@ Move-AzureReservedIP -ReservedIPName $name -Commit
 
 # <a name="reserved-to-basic---cli"></a>[**Зарезервировано для Basic-CLI**](#tab/option-migrate-cli)
 
-В следующем примере предполагается, что предыдущее создание классической службы Azure зарезервированный IP-адрес **myReservedIP** в **myResourceGroup**. Еще одним необходимым условием для миграции является проверка того, зарегистрирована Azure Resource Manager подписка на миграцию. Это подробно описано в шагах 3 и 4 [этой страницы](https://docs.microsoft.com/azure/virtual-machines/linux/migration-classic-resource-manager-cli).
+В следующем примере предполагается, что предыдущее создание классической службы Azure зарезервированный IP-адрес **myReservedIP** в **myResourceGroup**. Еще одним необходимым условием для миграции является проверка того, зарегистрирована Azure Resource Manager подписка на миграцию. Это подробно описано в шагах 3 и 4 [этой страницы](../virtual-machines/migration-classic-resource-manager-cli.md).
 
 Чтобы перенести зарезервированный IP-адрес, выполните приведенные ниже команды с помощью Azure CLI.  Примечание. Если IP-адрес не связан ни с одной службой (ниже находится служба с именем **myService** и развертывание **развертывании mydeployment**), этот шаг можно пропустить.
 
@@ -145,12 +145,12 @@ azure network reserved-ip commit-migration $name
 
 ## <a name="limitations"></a>Ограничения
 
-* Чтобы обновить базовый общедоступный IP-адрес, он не может быть связан ни с одним ресурсом Azure.  Дополнительные сведения о том, как разорвать связь с общедоступными IP-адресами, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) .  Аналогично, чтобы перенести зарезервированный IP-адрес, он не может быть связан с какой-либо облачной службой.  Дополнительные сведения о том, как отсоединить зарезервированные IP-адреса, см. на [этой странице](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm) .  
-* Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", не будут иметь [зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones) и поэтому не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны или зональные.  Обратите внимание, что это относится только к регионам, предлагающим зоны доступности.
+* Чтобы обновить базовый общедоступный IP-адрес, он не может быть связан ни с одним ресурсом Azure.  Дополнительные сведения о том, как разорвать связь с общедоступными IP-адресами, см. на [этой странице](./virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address) .  Аналогично, чтобы перенести зарезервированный IP-адрес, он не может быть связан с какой-либо облачной службой.  Дополнительные сведения о том, как отсоединить зарезервированные IP-адреса, см. на [этой странице](./remove-public-ip-address-vm.md) .  
+* Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", не будут иметь [зон доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones) и поэтому не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны или зональные.  Обратите внимание, что это относится только к регионам, предлагающим зоны доступности.
 * Нельзя перейти с уровня "Стандартный" на базовый.
 
 ## <a name="next-steps"></a>Next Steps
 
-- Узнайте больше об [общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) в Azure, включая разницу между типами SKU, а также [параметрами общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address).
-- Узнайте, как [Обновить общедоступные подсистемы балансировки нагрузки Azure с уровня "базовый" на "Стандартный](https://docs.microsoft.com/azure/load-balancer/upgrade-basic-standard)".
-- Ознакомьтесь с [классическими зарезервированными IP](https://docs.microsoft.com/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) -адресами Azure и [переносом классических ресурсов в Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-overview).
+- Узнайте больше об [общедоступных IP-адресах](./public-ip-addresses.md#public-ip-addresses) в Azure, включая разницу между типами SKU, а также [параметрами общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address).
+- Узнайте, как [Обновить общедоступные подсистемы балансировки нагрузки Azure с уровня "базовый" на "Стандартный](../load-balancer/upgrade-basic-standard.md)".
+- Ознакомьтесь с [классическими зарезервированными IP](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) -адресами Azure и [переносом классических ресурсов в Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-overview.md).

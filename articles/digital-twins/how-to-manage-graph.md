@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: dd5197f99f7187e21eb466bfa213f68a7638e24d
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 54001cde76bd89305eb77544c6e6858defda6096
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045348"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222553"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -22,7 +22,7 @@ ms.locfileid: "98045348"
 
 Эта статья посвящена управлению связями и графу в целом. для работы с отдельными цифровыми двойниковми см. раздел [*как управлять цифровыми двойников*](how-to-manage-twin.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -157,7 +157,7 @@ ms.locfileid: "98045348"
 > [!TIP]
 > Граф двойника является концепцией создания связей между двойников. Если вы хотите просмотреть визуальное представление графа двойника, см. раздел [*визуализация*](how-to-manage-graph.md#visualization) в этой статье. 
 
-### <a name="create-a-twin-graph-from-a-csv-file"></a>Создание графа двойника из CSV-файла
+## <a name="create-graph-from-a-csv-file"></a>Создание графа из CSV-файла
 
 В практических случаях двойника иерархии часто создаются на основе данных, хранящихся в другой базе данных или в виде CSV-файла. В этом разделе показано, как считать данные из CSV-файла и создать граф двойника из него.
 
@@ -165,8 +165,8 @@ ms.locfileid: "98045348"
 
 |  Идентификатор модели    | Идентификатор двойника (должен быть уникальным) | Имя связи  | Идентификатор целевого двойника  | Данные инициализации двойника |
 | --- | --- | --- | --- | --- |
-| дтми: пример: Floor; 1    | Floor1 | содержит | Room1 | |
-| дтми: пример: Floor; 1    | Floor0 | содержит | Room0 | |
+| дтми: пример: Floor; 1    | Floor1 | contains | Room1 | |
+| дтми: пример: Floor; 1    | Floor0 | contains | Room0 | |
 | дтми: пример: комната; 1    | Room1 | | | {"Температура": 80} |
 | дтми: пример: комната; 1    | Room0 | | | {"Температура": 70} |
 

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: mnayak
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ccd04a43e6781e8d58234cc382b2739d800e5fe7
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: d375b860c6b23fd6033e985e23c6f12dfe9a3c68
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510681"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223573"
 ---
 # <a name="configure-routing-preference-for-a-vm-using-azure-cli"></a>Настройка предпочтительного варианта маршрутизации для виртуальной машины с помощью Azure CLI
 
@@ -58,7 +58,7 @@ az network public-ip create \
 
 ### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
-Создайте группу безопасности сети для правил, которые будут управлять входящим и исходящим обменом данными в виртуальной сети с помощью [az network nsg create](https://docs.microsoft.com/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create)
+Создайте группу безопасности сети для правил, которые будут управлять входящим и исходящим обменом данными в виртуальной сети с помощью [az network nsg create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create)
 
 ```azurecli
 az network nsg create \
@@ -69,7 +69,7 @@ az network nsg create \
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть *myVNET* с подсетью *mySubNet*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть *myVNET* с подсетью *mySubNet*.
 
 ```azurecli
 # Create a virtual network
@@ -89,7 +89,7 @@ az network vnet subnet create \
 
 ### <a name="create-a-nic"></a>Создание сетевой карты
 
-Создайте виртуальную сетевую карту для виртуальной машины с помощью команды [az network nic create](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create). В следующем примере создается виртуальная сетевая карта, которая будет подключена к виртуальной машине.
+Создайте виртуальную сетевую карту для виртуальной машины с помощью команды [az network nic create](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-create). В следующем примере создается виртуальная сетевая карта, которая будет подключена к виртуальной машине.
 
 ```azurecli-interactive
 # Create a NIC
@@ -105,7 +105,7 @@ az network nic create \
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [az vm create](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create). В приведенном ниже примере создается виртуальная машина windows server 2019 и обязательные компоненты виртуальной сети, если их еще нет:
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create). В приведенном ниже примере создается виртуальная машина windows server 2019 и обязательные компоненты виртуальной сети, если их еще нет:
 
 ```azurecli
 az vm create \
@@ -128,5 +128,5 @@ az group delete --name myResourceGroup --yes
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [предпочтительном варианте маршрутизации в общедоступных IP-адресах](routing-preference-overview.md).
-- См. дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+- См. дополнительные сведения об [общедоступных IP-адресах в Azure](./public-ip-addresses.md#public-ip-addresses).
 - Дополнительные сведения о [параметрах общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address).

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 06/25/2020
 ms.author: kumud
 ms.reviewer: anavin
-ms.openlocfilehash: 88e576231e0231a105cd9ec303f63307b5eaff89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29a64931ac92eacf8948ae067118b6b25198c85d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87051613"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223471"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-and-subscriptions"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в разных подписках
 
@@ -186,7 +186,7 @@ ms.locfileid: "87051613"
 1. Установите последнюю версию модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AZ](https://www.powershellgallery.com/packages/Az) . Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
 2. Запустите сеанс PowerShell.
 3. В PowerShell войдите в подписку пользователя B от имени этого пользователя, введя команду `Add-AzureAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#permissions).
-4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
+4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
 
     ```xml
     <VirtualNetworkSite name="myVnetB" Location="East US">
@@ -305,7 +305,7 @@ ms.locfileid: "87051613"
    Remove-AzResourceGroup -Name myResourceGroupA -Force
    ```
 
-2. Чтобы удалить классическую виртуальную сеть с помощью PowerShell, необходимо изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Удалите приведенный ниже элемент VirtualNetworkSite для виртуальной сети, используемой в этом руководстве.
+2. Чтобы удалить классическую виртуальную сеть с помощью PowerShell, необходимо изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Удалите приведенный ниже элемент VirtualNetworkSite для виртуальной сети, используемой в этом руководстве.
 
    ```xml
    <VirtualNetworkSite name="myVnetB" Location="East US">

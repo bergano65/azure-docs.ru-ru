@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 36e5bb33b7d555c3b457b63f94d9032ff390e6cb
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: b7c683edd15ab05e9efc239ffe07759078754607
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342320"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222655"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Общие сведения о сетевых политиках Azure Kubernetes
 
@@ -38,7 +38,7 @@ ms.locfileid: "92342320"
 Azure NPM можно использовать в следующих способах для обеспечения микросегментации для модулей Pod.
 
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
-NPM доступен в AKS и может быть включен во время создания кластера. Узнайте больше об этом в [безопасном трафике между модулями Pod с помощью сетевых политик в службе Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/use-network-policies).
+NPM доступен в AKS и может быть включен во время создания кластера. Узнайте больше об этом в [безопасном трафике между модулями Pod с помощью сетевых политик в службе Azure Kubernetes Service (AKS)](../aks/use-network-policies.md).
 
 ### <a name="aks-engine"></a>AKS-Engine
 является средством, которое создает шаблон Azure Resource Manager для развертывания кластера Kubernetes в Azure. Конфигурация кластера указана в файле JSON, который передается в средство при создании шаблона. Полный список поддерживаемых параметров кластера и их описание см. в разделе "Обработчик службы контейнеров Azure Microsoft — определения кластера".
@@ -114,13 +114,13 @@ Azure NPM включает информативные метрики Prometheus,
 
 |Имя метрики |Описание  |Тип метрики Prometheus  |Метки  |
 |---------|---------|---------|---------|
-|`npm_num_policies`     |число сетевых политик          |Датчик         |-         |
-|`npm_num_iptables_rules`     | число правил IPTables     | Датчик        |-         |         
-|`npm_num_ipsets`     |число Ипсетс         |Датчик            |-         |
-|`npm_num_ipset_entries`     |число записей IP-адресов во всех Ипсетс         |Датчик         |-         |
-|`npm_add_policy_exec_time`     |среда выполнения для добавления сетевой политики         |Итоги         |квантилей (0,5, 0,9 или 0,99)         |
-|`npm_add_iptables_rule_exec_time`     |среда выполнения для добавления правила IPTables         |Итоги         |квантилей (0,5, 0,9 или 0,99)         |
-|`npm_add_ipset_exec_time`     |среда выполнения для добавления Ипсет         |Итоги         |квантилей (0,5, 0,9 или 0,99)         |
+|`npm_num_policies`     |число сетевых политик          |Индикаторная диаграмма         |-         |
+|`npm_num_iptables_rules`     | число правил IPTables     | Индикаторная диаграмма        |-         |         
+|`npm_num_ipsets`     |число Ипсетс         |Индикаторная диаграмма            |-         |
+|`npm_num_ipset_entries`     |число записей IP-адресов во всех Ипсетс         |Индикаторная диаграмма         |-         |
+|`npm_add_policy_exec_time`     |среда выполнения для добавления сетевой политики         |Сводка         |квантилей (0,5, 0,9 или 0,99)         |
+|`npm_add_iptables_rule_exec_time`     |среда выполнения для добавления правила IPTables         |Сводка         |квантилей (0,5, 0,9 или 0,99)         |
+|`npm_add_ipset_exec_time`     |среда выполнения для добавления Ипсет         |Сводка         |квантилей (0,5, 0,9 или 0,99)         |
 |`npm_ipset_counts` продвинут     |число записей в каждом отдельном Ипсет         |гаужевек         |задать имя & хэш         |
 
 Различные уровни квантилей в метриках "exec_time" помогают различать общие и наихудшие ситуации.
@@ -130,7 +130,7 @@ Azure NPM включает информативные метрики Prometheus,
 Метрики могут быть списаны с помощью Azure Monitor для контейнеров или через Prometheus.
 
 ### <a name="setup-for-azure-monitor"></a>Настройка для Azure Monitor
-Первым шагом является включение Azure Monitor для контейнеров в кластере Kubernetes. Действия можно найти в разделе [Общие сведения о Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview). После включения Azure Monitor для контейнеров настройте [Azure Monitor для контейнеров ConfigMap](https://aka.ms/container-azm-ms-agentconfig) , чтобы включить интеграцию NPM и сбор МЕТРИК Prometheus NPM. В Azure Monitor для контейнеров ConfigMap есть ```integrations``` раздел с параметрами для сбора МЕТРИК NPM. Эти параметры по умолчанию отключены в ConfigMap. При включении базового параметра ```collect_basic_metrics = true``` будут собраны базовые метрики NPM. При включении дополнительных параметров ```collect_advanced_metrics = true``` будут собираются дополнительные метрики в дополнение к основным метрикам. 
+Первым шагом является включение Azure Monitor для контейнеров в кластере Kubernetes. Действия можно найти в разделе [Общие сведения о Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md). После включения Azure Monitor для контейнеров настройте [Azure Monitor для контейнеров ConfigMap](https://aka.ms/container-azm-ms-agentconfig) , чтобы включить интеграцию NPM и сбор МЕТРИК Prometheus NPM. В Azure Monitor для контейнеров ConfigMap есть ```integrations``` раздел с параметрами для сбора МЕТРИК NPM. Эти параметры по умолчанию отключены в ConfigMap. При включении базового параметра ```collect_basic_metrics = true``` будут собраны базовые метрики NPM. При включении дополнительных параметров ```collect_advanced_metrics = true``` будут собираются дополнительные метрики в дополнение к основным метрикам. 
 
 После изменения ConfigMap сохраните его локально и примените ConfigMap к кластеру следующим образом.
 
@@ -143,7 +143,7 @@ integrations: |-
 ```
 Дополнительные метрики необязательны, и их включение автоматически приводит к автоматическому включению сбора основных метрик. В настоящее время Расширенная метрика включает только `npm_ipset_counts`
 
-Дополнительные сведения о [параметрах коллекции "Azure Monitor для контейнеров" в карте конфигурации](https://aka.ms/azmon-containers-agent-collection-settings-doc)
+Дополнительные сведения о [параметрах коллекции "Azure Monitor для контейнеров" в карте конфигурации](../azure-monitor/insights/container-insights-agent-config.md)
 
 ### <a name="visualization-options-for-azure-monitor"></a>Параметры визуализации для Azure Monitor
 После включения сбора метрик NPM можно просмотреть метрики в портал Azure с помощью Container Insights или в Grafana.
@@ -154,7 +154,7 @@ integrations: |-
 Помимо просмотра книги (рисунков ниже), можно также напрямую запрашивать метрики Prometheus в разделе "журналы" раздела Insights. Например, этот запрос возвратит все собираемые метрики.
 | где TimeGenerated > назад (5H) | где name содержит "npm_"
 
-Можно также запрашивать Log Analytics непосредственно для метрик. Дополнительные сведения о [Начало работы с помощью запросов log Analytics](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-log-search) 
+Можно также запрашивать Log Analytics непосредственно для метрик. Дополнительные сведения о [Начало работы с помощью запросов log Analytics](../azure-monitor/insights/container-insights-log-search.md) 
 
 #### <a name="viewing-in-grafana-dashboard"></a>Просмотр на панели мониторинга Grafana
 Настройте сервер Grafana и настройте источник данных Log Analytics, как описано [здесь](https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource). Затем импортируйте [панель мониторинга Grafana с log Analyticsной серверной частью](https://grafana.com/grafana/dashboards/10956) в Grafana Labs.
@@ -261,9 +261,8 @@ helm install prometheus stable/prometheus -n monitoring \
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [Службе Azure Kubernetes](../aks/intro-kubernetes.md).
 -  Дополнительные сведения о [работе с контейнерами в сети](container-networking-overview.md).
 - [Разверните подключаемый модуль](deploy-container-networking.md) для кластеров Kubernetes или контейнеров DOCKER.
 
-    

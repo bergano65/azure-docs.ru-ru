@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/29/2020
 ms.author: allensu
-ms.openlocfilehash: 53dd6d2dda762b3cbf53f4aaec6cd3692a9656e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d98107075c215c0a00bc2035325a6ad8bf5bfc5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87432574"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222434"
 ---
 # <a name="public-ip-address-prefix"></a>Префикс общедоступного IP-адреса
 
 Префикс общедоступного IP-адреса является зарезервированным диапазоном IP-адресов в Azure. Azure предоставляет непрерывный диапазон адресов для подписки в зависимости от указанного количества. 
 
-Если вы не знакомы с общедоступными адресами, ознакомьтесь с разделом [Общедоступные IP-адреса](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+Если вы не знакомы с общедоступными адресами, ознакомьтесь с разделом [Общедоступные IP-адреса](./public-ip-addresses.md#public-ip-addresses).
 
 Общедоступные IP-адреса назначаются из пула адресов в каждом регионе Azure. Вы можете [скачать](https://www.microsoft.com/download/details.aspx?id=56519) список диапазонов адресов, которые Azure использует для каждого региона. Например, 40.121.0.0/16 является одним из более чем 100 диапазонов, которые используются Azure в регионе "Восточная часть США". Этот диапазон содержит доступные для использования адреса 40.121.0.1–40.121.255.254.
 
@@ -68,9 +68,9 @@ ms.locfileid: "87432574"
 ## <a name="constraints"></a>Ограничения
 
 - Невозможно указать IP-адреса для префикса. Azure предоставляет IP-адреса для префикса в зависимости от указанного размера.
-- По умолчанию можно создать префикс длиной до 16 IP-адресов или/28. Чтобы получить дополнительные сведения, ознакомьтесь [с](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) [ограничениями сети](https://docs.microsoft.com/azure/azure-portal/supportability/networking-quota-requests) .
+- По умолчанию можно создать префикс длиной до 16 IP-адресов или/28. Чтобы получить дополнительные сведения, ознакомьтесь [с](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) [ограничениями сети](../azure-portal/supportability/networking-quota-requests.md) .
 - После создания префикса изменить диапазон невозможно.
-- Только статические общедоступные IP-адреса, созданные с помощью номера SKU "Стандартный", можно назначить из диапазона префикса. Дополнительные сведения о номерах SKU общедоступных IP-адресов см. в разделе [Общедоступные IP-адреса](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
+- Только статические общедоступные IP-адреса, созданные с помощью номера SKU "Стандартный", можно назначить из диапазона префикса. Дополнительные сведения о номерах SKU общедоступных IP-адресов см. в разделе [Общедоступные IP-адреса](./public-ip-addresses.md#public-ip-addresses).
 - Адреса из диапазона могут назначаться только ресурсам Azure Resource Manager. Адреса не могут быть назначены ресурсам в классической модели развертывания.
 - Все общедоступные IP-адреса, созданные из префикса, должны находиться в том же регионе Azure и подписке, что и префикс. Адреса должны быть назначены ресурсам в том же регионе и подписке.
 - Префикс невозможно удалить, если какие-либо его адреса используются в качестве общедоступных IP-адресов, связанных с ресурсом. Сначала следует отменить связь всех ресурсов общедоступных IP-адресов, назначенных из этого префикса.
