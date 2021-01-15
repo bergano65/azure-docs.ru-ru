@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/15/2018
 ms.author: kumud
 ms.reviewer: anavin
-ms.openlocfilehash: 148d57da549e8364620c8417cbd61d975cea1498
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ff9fcbb693f7e606c07985f9bce9acd60c5591a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87046100"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222978"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -35,7 +35,7 @@ ms.locfileid: "87046100"
 |[Обе Resource Manager](create-peering-different-subscriptions.md) |Разные|
 |[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Разные|
 
-Создать пиринг между двумя виртуальными сетями, развернутыми с помощью классической модели развертывания, невозможно. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
+Создать пиринг между двумя виртуальными сетями, развернутыми с помощью классической модели развертывания, невозможно. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/tutorial-site-to-site-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 
 Это руководство по созданию пиринга между виртуальными сетями в одном регионе. Пиринг можно создавать между виртуальными сетями в разных [поддерживаемых регионах](virtual-network-manage-peering.md#cross-region). Рекомендуется ознакомиться с [требованиями и ограничениями пиринга](virtual-network-manage-peering.md#requirements-and-constraints) перед созданием пиринга виртуальных сетей.
 
@@ -53,7 +53,7 @@ ms.locfileid: "87046100"
     - **Подписка**: выберите подписку.
     - **Группа ресурсов**: установите флажок **Создать** и введите *myResourceGroup*.
     - **Расположение.** *восточная часть США*.
-4. Щелкните **+ Создать**. В поле **Поиск по Marketplace** введите *Виртуальная сеть*. Когда в результатах поиска появится пункт **Виртуальная сеть**, щелкните его.
+4. Щелкните **+ Создать**. В поле **Поиск по Marketplace** введите *Виртуальная сеть*. Когда в результатах поиска появится пункт **Виртуальная сеть**, щелкните его.
 5. В колонке **Виртуальная сеть** в поле **Выбор модели развертывания** выберите **Классический** и нажмите кнопку **Создать**.
 6. В колонке **Создание виртуальной сети** введите или выберите значения для приведенных ниже параметров и щелкните **Создать**.
     - **Имя**: *myVnet2*.
@@ -148,7 +148,7 @@ ms.locfileid: "87046100"
 1. Установите последнюю версию модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AZ](https://www.powershellgallery.com/packages/Az/) . Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
 2. Запустите сеанс PowerShell.
 3. В PowerShell войдите в Azure, выполнив команду `Add-AzureAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#requirements-and-constraints).
-4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
+4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
 
     ```xml
     <VirtualNetworkSite name="myVnet2" Location="East US">
@@ -214,7 +214,7 @@ ms.locfileid: "87046100"
 
 1. В поле поиска на портале введите **myResourceGroup**. В результатах поиска щелкните **myResourceGroup**.
 2. В колонке **myResourceGroup** щелкните значок **Удалить** .
-3. Чтобы подтвердить удаление, в поле **введите имя группы ресурсов** введите **myResourceGroup**и нажмите кнопку **Удалить**.
+3. Чтобы подтвердить удаление, в поле **введите имя группы ресурсов** введите **myResourceGroup** и нажмите кнопку **Удалить**.
 
 ### <a name="azure-cli"></a><a name="delete-cli"></a>Интерфейс командной строки Azure
 
@@ -240,7 +240,7 @@ ms.locfileid: "87046100"
     Remove-AzResourceGroup -Name myResourceGroup -Force
     ```
 
-2. Чтобы удалить классическую виртуальную сеть с помощью PowerShell, необходимо изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Удалите приведенный ниже элемент VirtualNetworkSite для виртуальной сети, используемой в этом руководстве.
+2. Чтобы удалить классическую виртуальную сеть с помощью PowerShell, необходимо изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Удалите приведенный ниже элемент VirtualNetworkSite для виртуальной сети, используемой в этом руководстве.
 
     ```xml
     <VirtualNetworkSite name="myVnet2" Location="East US">
