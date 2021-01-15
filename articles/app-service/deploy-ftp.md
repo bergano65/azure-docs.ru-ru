@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: ce8c32b1afdf4178e3ffdc09e9c9176436fa771b
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: cfec5ec5f14afc8c4eba5c21c5904687c9b187cc
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605082"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209259"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -111,7 +111,7 @@ ms.locfileid: "97605082"
 ### <a name="im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue"></a>Мне не удается подключиться по FTP для публикации кода. Как мне решить эту проблему?
 Убедитесь, что вы правильно ввели имя узла и [учетные данные](#open-ftp-dashboard). Также убедитесь, что на вашем компьютере брандмауэр не блокирует следующие порты FTP.
 
-- Порт подключения для управления FTP: 21
+- Порт управляющего соединения FTP: 21, 990
 - Порт подключения к данным FTP: 989, 10001–10300.
  
 ### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Как применить пассивный режим для подключения к FTP в Службе приложений Azure?

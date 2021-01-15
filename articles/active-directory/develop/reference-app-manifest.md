@@ -13,12 +13,12 @@ ms.date: 04/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: b29d8007ba7c6fb41209ad4f792069667416616b
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: d855e124c84dee8554073d05fa04fe078b92ddaa
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011549"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208895"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
@@ -115,17 +115,6 @@ ms.locfileid: "98011549"
     "allowPublicClient": false,
 ```
 
-### <a name="availabletoothertenants-attribute"></a>Атрибут availableToOtherTenants
-
-| Клавиши | Тип значения |
-| :--- | :--- |
-| AvailableToOtherTenants | Логическое |
-
-Задайте значение true, если приложение совместно используется с другими клиентами, в противном случае — false.
-
-> [!NOTE]
-> Этот атрибут доступен только в интерфейсе **Регистрация приложений (прежних версий)** . Заменяется на `signInAudience` в интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
-
 ### <a name="appid-attribute"></a>Атрибут appId
 
 | Клавиши | Тип значения |
@@ -165,17 +154,6 @@ ms.locfileid: "98011549"
     ],
 ```
 
-### <a name="displayname-attribute"></a>Атрибут displayName
-
-| Клавиши | Тип значения |
-| :--- | :--- |
-| displayName | Строка |
-
-Отображаемое имя приложения.
-
-> [!NOTE]
-> Этот атрибут доступен только в интерфейсе **Регистрация приложений (прежних версий)** . Заменяется на `name` в интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
-
 ### <a name="errorurl-attribute"></a>Атрибут errorUrl
 
 | Клавиши | Тип значения |
@@ -203,33 +181,6 @@ ms.locfileid: "98011549"
     "groupMembershipClaims": "SecurityGroup",
 ```
 
-### <a name="homepage-attribute"></a>Атрибут homepage
-
-| Клавиши | Тип значения |
-| :--- | :--- |
-| homepage |Строка |
-
-URL-адрес домашней страницы приложения.
-
-> [!NOTE]
-> Этот атрибут доступен только в интерфейсе **Регистрация приложений (прежних версий)** . Заменяется на `signInUrl` в интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
-
-### <a name="objectid-attribute"></a>Атрибут objectId
-
-| Клавиши | Тип значения |
-| :--- | :--- |
-|objectId | Строка |
-
-Уникальный идентификатор для приложения в каталоге.
-
-Этот атрибут доступен только в интерфейсе **Регистрация приложений (прежних версий)** . Заменяется на `id` в интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
-
-Пример
-
-```json
-    "objectId": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
-```
-
 ### <a name="optionalclaims-attribute"></a>Атрибут optionalClaims
 
 | Клавиши | Тип значения |
@@ -245,7 +196,6 @@ URL-адрес домашней страницы приложения.
 ```json
     "optionalClaims": null,
 ```
-
 
 
 ### <a name="identifieruris-attribute"></a>Атрибут identifierUris
@@ -489,16 +439,6 @@ URL-адрес для выхода из приложения.
     ],
 ```
 
-### <a name="publicclient-attribute"></a>Атрибут publicClient
-
-| Клавиши | Тип значения |
-| :--- | :--- |
-| publicClient | Логическое|
-
-Указывает, является ли это приложение общедоступным клиентом (например, установленным приложением, которое работает на мобильном устройстве).
-
-Это свойство доступно только в интерфейсе **Регистрация приложений (прежних версий)** . Заменяется на `allowPublicClient` в интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
-
 ### <a name="publisherdomain-attribute"></a>Атрибут publisherDomain
 
 | Клавиши | Тип значения |
@@ -511,17 +451,7 @@ URL-адрес для выхода из приложения.
 
 ```json
     "publisherDomain": "https://www.contoso.com",
-````
-
-### <a name="replyurls-attribute"></a>Атрибут replyUrls
-
-| Клавиши | Тип значения |
-| :--- | :--- |
-| replyUrls | Массив строк |
-
-Это свойство с несколькими значениями хранит список зарегистрированных значений redirect_uri, которые Azure AD будет принимать в качестве назначений при возвращении маркеров.
-
-Это свойство доступно только в интерфейсе **Регистрация приложений (прежних версий)** . Заменяется на `replyUrlsWithType` в интерфейсе [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908).
+```
 
 ### <a name="replyurlswithtype-attribute"></a>Атрибут replyUrlsWithType
 

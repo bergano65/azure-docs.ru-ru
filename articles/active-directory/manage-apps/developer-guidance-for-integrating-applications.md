@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de16c947c59f5a0111b9325dbefe7daf1268fb40
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 006aaf7ca5066c552f9c0b797549d7e90ac9beb7
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649166"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208698"
 ---
 # <a name="develop-line-of-business-apps-for-azure-active-directory"></a>Разработка бизнес-приложений для Azure Active Directory
 В этом разделе представлен обзор разработки бизнес-приложений для Azure Active Directory (AD). Предполагаемая аудитория — Active Directory и Microsoft 365 глобальных администраторов.
@@ -70,8 +70,8 @@ ms.locfileid: "94649166"
 
 При использовании приложений, которым вы доверяете, можно упростить процедуру, предоставляя приложению согласие от имени организации.
 
-Дополнительные сведения о согласии пользователей и процедуре использования согласия в Azure см. в статье [Интеграция приложений с Azure Active Directory](../develop/quickstart-register-app.md).
+Дополнительные сведения о согласии пользователей и о предоставлении согласия в Azure см. в разделе Общие сведения о [согласии приложений в Azure AD](../develop/application-consent-experience.md).
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="related-articles"></a>Связанные статьи
 * [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md)
 * [Управление доступом к приложениям с помощью Azure AD](what-is-access-management.md)

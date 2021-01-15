@@ -1,19 +1,18 @@
 ---
-title: Библиотеки управления служебной шины Azure | Документация Майкрософт
-description: В этой статье объясняется, как использовать библиотеки управления служебной шины Azure для динамической инициализации пространств имен и сущностей служебной шины.
+title: Программное создание сущностей служебной шины Azure | Документация Майкрософт
+description: В этой статье объясняется, как использовать динамически или программно подготавливать пространства имен и сущности служебной шины.
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 06/23/2020
+ms.date: 01/13/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 915606bffc2037c8fcd1a7d33218143f40c78f2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 97d89db17af9cde3afadee430b3d0c2a434e12c9
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89008052"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210143"
 ---
-# <a name="service-bus-management-libraries"></a>Библиотеки управления служебной шины
-
+# <a name="dynamically-provision-service-bus-namespaces-and-entities"></a>Динамическая инициализация пространств имен и сущностей служебной шины 
 Библиотеки управления служебной шины Azure могут динамически подготавливать пространства имен и сущности служебной шины. Это дает возможность реализовывать сложные развертывания и сценарии обмена сообщениями и позволяет программно определять, какие сущности следует подготовить. В настоящее время эти библиотеки доступны для .NET.
 
 ## <a name="supported-functionality"></a>Поддерживаемые функции
@@ -23,9 +22,137 @@ ms.locfileid: "89008052"
 * Создание, обновление, удаление раздела.
 * Создание, обновление, удаление подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="azuremessagingservicebusadministration-recommended"></a>Azure. Messaging. ServiceBus. Administration (рекомендуется)
+Класс [сервицебусадминистратионклиент](/dotnet/api/azure.messaging.servicebus.administration.servicebusadministrationclient) можно использовать в пространстве имен [Azure. Messaging. servicebus. admin](/dotnet/api/azure.messaging.servicebus.administration) для управления пространствами имен, очередями, разделами и подписками. Ниже приведен пример кода. Полный пример см. в разделе [Пример CRUD](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/tests/Samples/Sample07_CrudOperations.cs).
 
-Чтобы приступить к работе с библиотеками управления служебной шины, нужно пройти аутентификацию в службе Azure Active Directory (Azure AD). Azure AD требует выполнять аутентификацию в качестве субъекта-службы, который предоставляет доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
+```csharp
+using System;
+using System.Threading.Tasks;
+
+using Azure.Messaging.ServiceBus.Administration;
+
+namespace adminClientTrack2
+{
+    class Program
+    {
+        public static void Main()
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            string connectionString = "SERVICE BUS NAMESPACE CONNECTION STRING";
+            string QueueName = "QUEUE NAME";
+            string TopicName = "TOPIC NAME";
+            string SubscriptionName = "SUBSCRIPTION NAME";
+
+            var adminClient = new ServiceBusAdministrationClient(connectionString);
+            bool queueExists = await adminClient.QueueExistsAsync(QueueName);
+            if (!queueExists)
+            {
+                var options = new CreateQueueOptions(QueueName)
+                {
+                    MaxDeliveryCount = 3                    
+                };
+                await adminClient.CreateQueueAsync(options);
+            }
+
+
+            bool topicExists = await adminClient.TopicExistsAsync(TopicName);
+            if (!topicExists)
+            {
+                var options = new CreateTopicOptions(TopicName)
+                {
+                    MaxSizeInMegabytes = 1024
+                };
+                await adminClient.CreateTopicAsync(options);
+            }
+
+            bool subscriptionExists = await adminClient.SubscriptionExistsAsync(TopicName, SubscriptionName);
+            if (!subscriptionExists)
+            {
+                var options = new CreateSubscriptionOptions(TopicName, SubscriptionName)
+                {
+                    DefaultMessageTimeToLive = new TimeSpan(2, 0, 0, 0)
+                };
+                await adminClient.CreateSubscriptionAsync(options);
+            }
+        }
+    }
+}
+
+```
+
+
+## <a name="microsoftazureservicebusmanagement"></a>Microsoft. Azure. ServiceBus. Management 
+Класс [манажементклиент](/dotnet/api/microsoft.azure.servicebus.management.managementclient) в пространстве имен [Microsoft. Azure. servicebus. Management](/dotnet/api/microsoft.azure.servicebus.management) можно использовать для управления пространствами имен, очередями, разделами и подписками. Вот пример кода: 
+
+> [!NOTE]
+> Рекомендуется использовать `ServiceBusAdministrationClient` класс из `Azure.Messaging.ServiceBus.Administration` библиотеки, которая является последним пакетом SDK. Дополнительные сведения см. в [первом разделе](#azuremessagingservicebusadministration-recommended). 
+
+```csharp
+using System;
+using System.Threading.Tasks;
+
+using Microsoft.Azure.ServiceBus.Management;
+
+namespace SBusManagementClient
+{
+    class Program
+    {
+        public static void Main()
+        {
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        private static async Task MainAsync()
+        {
+            string connectionString = "SERVICE BUS NAMESPACE CONNECTION STRING";
+            string QueueName = "QUEUE NAME";
+            string TopicName = "TOPIC NAME";
+            string SubscriptionName = "SUBSCRIPTION NAME";
+
+            var managementClient = new ManagementClient(connectionString);
+            bool queueExists = await managementClient.QueueExistsAsync(QueueName);
+            if (!queueExists)
+            {
+                QueueDescription qd = new QueueDescription(QueueName);
+                qd.MaxSizeInMB = 1024;
+                qd.MaxDeliveryCount = 3;
+                await managementClient.CreateQueueAsync(qd);
+            }
+
+
+            bool topicExists = await managementClient.TopicExistsAsync(TopicName);
+            if (!topicExists)
+            {
+                TopicDescription td = new TopicDescription(TopicName);
+                td.MaxSizeInMB = 1024;
+                td.DefaultMessageTimeToLive = new TimeSpan(2, 0, 0, 0);
+                await managementClient.CreateTopicAsync(td);
+            }
+
+            bool subscriptionExists = await managementClient.SubscriptionExistsAsync(TopicName, SubscriptionName);
+            if (!subscriptionExists)
+            {
+                SubscriptionDescription sd = new SubscriptionDescription(TopicName, SubscriptionName);
+                sd.DefaultMessageTimeToLive = new TimeSpan(2, 0, 0, 0);
+                sd.MaxDeliveryCount = 3;
+                await managementClient.CreateSubscriptionAsync(sd);
+            }
+        }
+    }
+}
+```
+
+
+## <a name="microsoftazuremanagementservicebus"></a>Microsoft.Azure.Management.ServiceBus. 
+Эта библиотека является частью пакета SDK для плоскости управления на основе Azure Resource Manager. 
+
+### <a name="prerequisites"></a>Предварительные требования
+
+Чтобы приступить к работе с этой библиотекой, необходимо пройти проверку подлинности с помощью службы Azure Active Directory (Azure AD). Azure AD требует выполнять аутентификацию в качестве субъекта-службы, который предоставляет доступ к вашим ресурсам Azure. Сведения о создании субъекта-службы см. в одной из приведенных ниже статей:  
 
 * [Используйте портал Azure, чтобы создать Active Directory приложения и субъекта-службы, которые могут получать доступ к ресурсам.](../active-directory/develop/howto-create-service-principal-portal.md)
 * [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
@@ -33,7 +160,7 @@ ms.locfileid: "89008052"
 
 В этих руководствах вы получите `AppId` (идентификатор клиента), `TenantId` и `ClientSecret` (ключ аутентификации), которые используются библиотеками управления для аутентификации. Необходимо иметь по крайней мере разрешения владельца данных или [**участника**](../role-based-access-control/built-in-roles.md#contributor) [**служебной шины Azure**](../role-based-access-control/built-in-roles.md#azure-service-bus-data-owner) для группы ресурсов, которую вы хотите запустить.
 
-## <a name="programming-pattern"></a>Шаблон программирования
+### <a name="programming-pattern"></a>Шаблон программирования
 
 Шаблон обработки любого ресурса служебной шины соответствует общему протоколу.
 
@@ -67,8 +194,8 @@ ms.locfileid: "89008052"
    await sbClient.Queues.CreateOrUpdateAsync(resourceGroupName, namespaceName, QueueName, queueParams);
    ```
 
-## <a name="complete-code-to-create-a-queue"></a>Завершение кода для создания очереди
-Ниже приведен полный код для создания очереди служебной шины. 
+### <a name="complete-code-to-create-a-queue"></a>Завершение кода для создания очереди
+Ниже приведен пример кода для создания очереди служебной шины. Полный пример см. в [примере управления .NET на сайте GitHub](https://github.com/Azure-Samples/service-bus-dotnet-management/). 
 
 ```csharp
 using System;
@@ -154,8 +281,13 @@ namespace SBusADApp
 }
 ```
 
-> [!IMPORTANT]
-> Полный пример см. в [примере управления .NET на сайте GitHub](https://github.com/Azure-Samples/service-bus-dotnet-management/). 
+## <a name="fluent-library"></a>Библиотека Fluent
+Пример использования библиотеки Fluent для управления сущностями служебной шины см. в [этом примере](https://github.com/Azure/azure-libraries-for-net/tree/master/Samples/ServiceBus). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Справочник по API Microsoft.Azure.Management.ServiceBus](/dotnet/api/Microsoft.Azure.Management.ServiceBus)
+См. следующие разделы справки: 
+
+- [Azure. Messaging. ServiceBus. Administration](/dotnet/api/azure.messaging.servicebus.administration.servicebusadministrationclient)
+- [Microsoft. Azure. ServiceBus. Management](/dotnet/api/microsoft.azure.servicebus.management.managementclient)
+- [Microsoft.Azure.Management.ServiceBus.](/dotnet/api/microsoft.azure.management.servicebus.servicebusmanagementclient)
+- [Fluent](/dotnet/api/microsoft.azure.management.servicebus.fluent)

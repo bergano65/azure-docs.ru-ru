@@ -4,15 +4,15 @@ description: Узнайте, как управлять отдельными да
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/22/2020
+ms.date: 01/10/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: daaca1d7c6cf43f69241e6a23f8bdfaf4015ba23
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: b61bef89d53da280961b818425d11a6f81bbf5ea
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976951"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210245"
 ---
 # <a name="manage-individual-sensors"></a>Управление отдельными датчиками
 
@@ -120,7 +120,7 @@ ms.locfileid: "97976951"
 Чтобы изменить параметр проверки, выполните следующие действия.
 
 1. Включите или отключите переключатель **включить проверку сертификата** .
-1. Щелкните **Сохранить**.
+1. Выберите **Сохранить**.
 
 Если параметр включен и проверка завершается неудачно, связь между консолью управления и датчиком останавливается и в консоли отображается ошибка проверки.
 
@@ -248,7 +248,7 @@ ms.locfileid: "97976951"
 
 1. В диалоговом окне **изменение имени датчика** введите имя.
 
-1. Щелкните **Сохранить**. Будет применено новое имя.
+1. Выберите **Сохранить**. Будет применено новое имя.
 
 ### <a name="change-the-name-of-a-cloud-connected-sensor"></a>Изменение имени датчика, подключенного к облаку
 
@@ -291,7 +291,7 @@ ms.locfileid: "97976951"
     | Hostname (Имя узла) | Имя узла датчика |
     | Proxy (Прокси) | Узел прокси-сервера и имя порта |
 
-4. Щелкните **Сохранить**.
+4. Выберите **Сохранить**.
 
 ## <a name="synchronize-time-zones-on-the-sensor"></a>Синхронизация часовых поясов на датчике
 
@@ -455,7 +455,7 @@ ms.locfileid: "97976951"
 
 3. В разделе **Общие** выберите **Свойства системы** .
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Исследование и пакеты аналитики угроз](how-to-work-with-threat-intelligence-packages.md)
 

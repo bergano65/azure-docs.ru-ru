@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 93ac8cd3e462c244840a5ed569d685a9d67fa6c2
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: c752bc6ae49f009056067545fde292dc29027d5d
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165881"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208137"
 ---
 # <a name="best-practices-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Рекомендации по использованию бессерверного пула SQL в Azure синапсе Analytics
 
@@ -129,7 +129,7 @@ FROM
 
 ## <a name="manually-create-statistics-for-csv-files"></a>Создание статистики для CSV-файлов вручную
 
-Бессерверный пул SQL использует статистику для создания оптимальных планов выполнения запросов. Статистика будет автоматически создана для столбцов в файлах Parquet при необходимости. В данный момент статистические данные не создаются автоматически для столбцов в CSV-файлах, и необходимо создавать статистику вручную для столбцов, используемых в запросах, особенно тех, которые используются в разных случаях: DISTINCT, JOIN, WHERE, ORDER BY и GROUP BY. Проверьте [статистику в бессерверном пуле SQL Server] (разработка-Tables-Statistics. md # Statistics-on-Server-SQL-Pool для получения дополнительных сведений.
+Бессерверный пул SQL использует статистику для создания оптимальных планов выполнения запросов. Статистика будет автоматически создана для столбцов в файлах Parquet при необходимости. В данный момент статистические данные не создаются автоматически для столбцов в CSV-файлах, и необходимо создавать статистику вручную для столбцов, используемых в запросах, особенно тех, которые используются в разных случаях: DISTINCT, JOIN, WHERE, ORDER BY и GROUP BY. Дополнительные сведения см. [в статистике бессерверного пула SQL](develop-tables-statistics.md#statistics-in-serverless-sql-pool) .
 
 ## <a name="use-cetas-to-enhance-query-performance-and-joins"></a>Использование CETAS для повышения производительности и улучшения соединений запросов
 

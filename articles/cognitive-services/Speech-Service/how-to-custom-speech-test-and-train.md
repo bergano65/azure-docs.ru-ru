@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: d24565522a75427be04cacfdc20347056a515847
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: ed79d9fb3be192d300587eda5198d9b153109241
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070768"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209786"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Подготовка данных для службы пользовательского распознавания речи
 
@@ -121,11 +121,14 @@ ms.locfileid: "98070768"
 
 Для устранения таких проблем, как удаление или замена Word, требуется значительный объем данных для улучшения распознавания. Как правило, рекомендуется предоставлять записи в Word на примерно 10 – 20 часов. Транскрипции всех WAV-файлов должны содержаться в одном текстовом файле. Каждая строка файла транскрипции должна содержать имя звукового файла и соответствующую ему транскрипцию. Для разделения имени файла и транскрипции необходимо использовать символ табуляции (\t).
 
-  Пример:
-```
-  speech01.wav  speech recognition is awesome
-  speech02.wav  the quick brown fox jumped all over the place
-  speech03.wav  the lazy dog was not amused
+Пример:
+
+<!-- The following example contains tabs. Don't accidentally convert these into spaces. -->
+
+```input
+speech01.wav    speech recognition is awesome
+speech02.wav    the quick brown fox jumped all over the place
+speech03.wav    the lazy dog was not amused
 ```
 
 > [!IMPORTANT]
@@ -194,7 +197,7 @@ ms.locfileid: "98070768"
 
 Настройка произношения доступна на английском ( `en-US` ) и немецком () языках ( `de-DE` ). В этой таблице показаны поддерживаемые символы по языку:
 
-| Language | Locale | Characters |
+| Язык | Locale | Characters |
 |----------|--------|------------|
 | Английский | `en-US` | `a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z` |
 | Немецкий | `de-DE` | `ä, ö, ü, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z` |
