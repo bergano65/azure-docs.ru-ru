@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 70b7042e4006cc59419d0ea6798fe7626a82c086
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 872a67d8d9f41c0c809df54304352b2a5f58e011
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621082"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251766"
 ---
 # <a name="required-url-list"></a>Список требуемых URL-адресов
 
@@ -32,12 +32,13 @@ ms.locfileid: "96621082"
 |* xt.blob.core.windows.net|443|Агент трафика|AzureCloud;|
 |* eh.servicebus.windows.net|443|Агент трафика|AzureCloud;|
 |* xt.table.core.windows.net|443|Агент трафика|AzureCloud;|
+|* xt.queue.core.windows.net|443|Агент трафика|AzureCloud;|
 |catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud;|
 |kms.core.windows.net|1688;|Активация Windows|Интернет|
 |mrsglobalsteus2prod.blob.core.windows.net|443|Обновления агента и стека SxS|AzureCloud;|
 |wvdportalstorageblob.blob.core.windows.net|443|Поддержка портала Azure|AzureCloud;|
-| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Н/Д |
-| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Н/Д |
+| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Недоступно |
 
 >[!IMPORTANT]
 >Виртуальный рабочий стол Windows теперь поддерживает тег полного доменного имени. Дополнительные сведения см. в статье [Использование Брандмауэра Azure для защиты развертываний виртуального рабочего стола Windows](../firewall/protect-windows-virtual-desktop.md).
@@ -58,8 +59,8 @@ ms.locfileid: "96621082"
 |Kms.core.usgovcloudapi.net|1688;|Активация Windows|Интернет|
 |mrsglobalstugviffx.blob.core.usgovcloudapi.net|443|Обновления агента и стека SxS|AzureCloud;|
 |wvdportalstorageblob.blob.core.usgovcloudapi.net|443|Поддержка портала Azure|AzureCloud;|
-| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Н/Д |
-| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Н/Д |
+| 169.254.169.254 | 80 | [Конечная точка службы метаданных экземпляра Azure](../virtual-machines/windows/instance-metadata-service.md) | Недоступно |
+| 168.63.129.16 | 80 | [Мониторинг работоспособности узла сеансов](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | Недоступно |
 
 В следующей таблице перечислены дополнительные URL-адреса, к которым виртуальные машины Azure могут иметь доступ:
 
@@ -72,8 +73,8 @@ ms.locfileid: "96621082"
 |login.windows.net|443|Вход в Microsoft Online Services, Microsoft 365|login.microsoftonline.us|
 |*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|oneclient.sfx.ms|
 |*.digicert.com|443|Проверка отзыва сертификата|None|
-|*. azure-dns.com|443|Разрешение Azure DNS|None|
-|*. azure-dns.net|443|Разрешение Azure DNS|None|
+|*. azure-dns.com|443|Разрешение Azure DNS|Нет|
+|*. azure-dns.net|443|Разрешение Azure DNS|Нет|
 
 >[!NOTE]
 >В настоящее время виртуальный рабочий стол Windows не содержит список диапазонов IP-адресов, которые можно разблокировать, чтобы разрешить сетевой трафик. В настоящее время поддерживается только разблокирование конкретных URL-адресов.
@@ -100,7 +101,7 @@ ms.locfileid: "96621082"
 |aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|None|
 |docs.microsoft.com|443|Документация|All|None|
 |privacy.microsoft.com|443|Заявление о конфиденциальности|All|None|
-|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|None|
+|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|Нет|
 
 >[!IMPORTANT]
 >Открытие этих URL-адресов является обязательным для надежной работы клиента. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы.

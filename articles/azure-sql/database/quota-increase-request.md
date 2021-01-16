@@ -9,17 +9,17 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
 ms.date: 06/04/2020
-ms.openlocfilehash: 44a37a912c5c7a882d21631b8ce2da2c7ba9c05e
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 27719663acfbdbcd7293defc4b746153359adb61
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967707"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251863"
 ---
 # <a name="request-quota-increases-for-azure-sql-database-and-sql-managed-instance"></a>Увеличение квот запросов для базы данных SQL Azure и SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-В этой статье объясняется, как запросить увеличение квоты для базы данных SQL Azure и Управляемый экземпляр Azure SQL. В нем также объясняется, как включить доступ к подписке для региона.
+В этой статье объясняется, как запросить увеличение квоты для базы данных SQL Azure и Управляемый экземпляр Azure SQL. Здесь также объясняется, как включить доступ к подписке для региона и как запросить включение определенного оборудования в регионе.
 
 ## <a name="create-a-new-support-request"></a><a id="newquota"></a> Создать новый запрос в службу поддержки
 
@@ -62,8 +62,7 @@ ms.locfileid: "97967707"
 
 - Единиц транзакций базы данных (DTU) на сервер
 - Серверов на подписку
-- Доступ к региону серии M
-- Доступ к региону
+- Доступ к региону для подписок или конкретного оборудования
 
 ### <a name="database-transaction-units-dtus-per-server"></a>Единиц транзакций базы данных (DTU) на сервер
 
@@ -109,30 +108,15 @@ ms.locfileid: "97967707"
 
    ![Доступ к региону запроса](./media/quota-increase-request/quota-request.png)
 
-<!--
-### <a id="mseries"></a> Enable M-series access to a region
+### <a name="request-enabling-specific-hardware-in-a-region"></a>Запрос на включение определенного оборудования в регионе
 
-To enable M-series hardware for a subscription and region, a support request must be opened.
+Если [поколение оборудования](service-tiers-vcore.md#hardware-generations) , которое вы хотите использовать, недоступно в вашем регионе (см. раздел [доступность оборудования](service-tiers-vcore.md#hardware-availability)), вы можете запросить его, выполнив следующие действия.
 
-1. Select the **M-series region access** quota type.
+1. Выберите тип квоты для **запроса другой квоты** .
 
-1. In the **Select a location** list, select the Azure region to use. The quota is per subscription in each region.
+1. В поле **Описание** заполните свой запрос, включая имя создания оборудования и имя нужного региона.
 
-
-   ![Request M-series region access](./media/quota-increase-request/quota-m-series.png)
--->
-
-## <a name="sql-managed-instance-quota-type"></a><a id="sqlmiquota"></a> Тип квоты SQL Управляемый экземпляр
-
-Для типа квоты **SQL управляемый экземпляр** выполните следующие действия.
-
-1. В списке **регион** выберите целевой регион Azure.
-
-1. Введите новые ограничения, которые вы запрашиваете для **подсети** и **Виртуальное ядро**.
-
-   ![Сведения о квоте SQL Управляемый экземпляр](./media/quota-increase-request/quota-details-managed-instance.png)
-
-Дополнительные сведения см. в статье [Общие сведения об ограничениях ресурсов Azure SQL управляемый экземпляр](../managed-instance/resource-limits.md).
+   ![Запросить оборудование в новом регионе](./media/quota-increase-request/hardware-in-new-region.png)
 
 ## <a name="submit-your-request"></a>Отправка запроса
 

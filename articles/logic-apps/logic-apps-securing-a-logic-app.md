@@ -3,15 +3,15 @@ title: Безопасный доступ к данным
 description: Безопасный доступ к входным и выходным данным, триггерам на основе запросов, журналу выполнения, задачам управления и другим ресурсам в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: rarayudu, logicappspm
+ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
-ms.date: 01/09/2020
-ms.openlocfilehash: 5ad01e31cb9af18fa018d99424b25dee338981d7
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.date: 01/15/2021
+ms.openlocfilehash: c889498d6341875682055e9d67b8d2b958bac70a
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034515"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251069"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -911,6 +911,10 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 > Для защиты конфиденциальных данных, обрабатываемых приложением логики, используйте защищенные параметры и зашифровать данные по мере необходимости.
 > Дополнительные сведения об использовании и защите параметров см. в разделе [Доступ к входным параметрам](#secure-action-parameters).
 
+<a name="authentication-types-supported-triggers-actions"></a>
+
+#### <a name="authentication-types-for-triggers-and-actions-that-support-authentication"></a>Типы проверки подлинности для триггеров и действий, поддерживающих проверку подлинности
+
 В этой таблице указаны типы проверки подлинности, доступные в триггерах и действиях, в которых можно выбрать тип проверки подлинности:
 
 | Authentication type (Тип проверки подлинности) | Поддерживаемые триггеры и действия |
@@ -919,12 +923,12 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | [Сертификат клиента](#client-certificate-authentication) | Управление API Azure, службы приложений Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Active Directory OAuth](#azure-active-directory-oauth-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
 | [Raw](#raw-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, HTTP + Swagger, веб-перехватчик HTTP |
-| [Управляемое удостоверение](#managed-identity-authentication) | Управление API Azure, службы приложений Azure, функции Azure, HTTP, веб-перехватчик HTTP |
+| [Управляемое удостоверение](#managed-identity-authentication) | **Встроенные триггеры и действия** <p><p>Управление API Azure, службы приложений Azure, функции Azure, HTTP, веб-перехватчик HTTP <p><p>**Управляемые соединители** <p><p>Защита идентификации Azure AD, служба автоматизации Azure, экземпляр контейнера Azure, обозреватель данных Azure, фабрика данных Azure, Azure Data Lake, служба "Сетка событий Azure", Azure IoT Central v3, Azure Key Vault, Log Analytics Azure, журналы Azure Monitor, Azure Resource Manager, Sentinel Azure, HTTP с Azure AD <p><p>**Примечание**. Сейчас поддержка управляемых соединителей доступна в предварительной версии. |
 |||
 
 <a name="basic-authentication"></a>
 
-### <a name="basic-authentication"></a>обычная проверка подлинности
+#### <a name="basic-authentication"></a>обычная проверка подлинности
 
 Если доступен параметр [Обычная](../active-directory-b2c/secure-rest-api.md), укажите следующие значения свойств.
 
@@ -955,7 +959,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 <a name="client-certificate-authentication"></a>
 
-### <a name="client-certificate-authentication"></a>Проверка подлинности на основе сертификата клиента
+#### <a name="client-certificate-authentication"></a>Проверка подлинности на основе сертификата клиента
 
 Если доступен параметр [Сертификат клиента](../active-directory/authentication/active-directory-certificate-based-authentication-get-started.md), укажите следующие значения свойств.
 
@@ -994,7 +998,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 <a name="azure-active-directory-oauth-authentication"></a>
 
-### <a name="azure-active-directory-open-authentication"></a>Открытая проверка подлинности Azure Active Directory
+#### <a name="azure-active-directory-open-authentication"></a>Открытая проверка подлинности Azure Active Directory
 
 В триггерах запросов можно использовать [Azure Active Directory Open authentication (Azure AD OAuth)](../active-directory/develop/index.yml)для проверки подлинности входящих вызовов после [настройки политик авторизации Azure AD](#enable-oauth) для приложения логики. Для всех других триггеров и действий, для которых можно выбрать **Active Directory OAuth** в качестве типа проверки подлинности, укажите следующие значения свойств.
 
@@ -1034,7 +1038,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 <a name="raw-authentication"></a>
 
-### <a name="raw-authentication"></a>Проверка подлинности Raw
+#### <a name="raw-authentication"></a>Проверка подлинности Raw
 
 Если параметр **Raw** доступен, этот тип проверки подлинности можно использовать при необходимости использовать [схемы проверки подлинности](https://iana.org/assignments/http-authschemes/http-authschemes.xhtml), которые не соответствуют [протоколу OAuth 2.0](https://oauth.net/2/). При использовании этого типа вы вручную создаете значение заголовка авторизации, отправляемого с исходящим запросом, и указываете это значение заголовка в триггере или действии.
 
@@ -1077,15 +1081,17 @@ Authorization: OAuth realm="Photos",
 
 <a name="managed-identity-authentication"></a>
 
-### <a name="managed-identity-authentication"></a>Проверка подлинности управляемого удостоверения
+#### <a name="managed-identity-authentication"></a>Проверка подлинности управляемого удостоверения
 
-Если параметр [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) доступен для [конкретного триггера или действия](#add-authentication-outbound), приложение логики может использовать назначенное системой удостоверение или *однократно* созданное вручную удостоверение для проверки подлинности доступа к другим ресурсам, защищенным Azure Active Directory (Azure AD) без входа. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты. Подробнее см. в статье [Службы, которые поддерживают управляемые удостоверения для проверки подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
+Если параметр [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) доступен в [триггере или действии, поддерживающем проверку подлинности управляемого удостоверения](#add-authentication-outbound), приложение логики может использовать назначенное системой удостоверение или *однократно* созданное вручную удостоверение для проверки подлинности доступа к ресурсам Azure, защищенным Azure Active Directory (Azure AD), а не учетными данными, секретами или маркерами Azure AD. Azure управляет этим удостоверением и помогает защитить учетные данные, так как вы не имеете возможности управлять секретами или напрямую использовать токены Azure AD. Подробнее см. в статье [Службы, которые поддерживают управляемые удостоверения для проверки подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
 
 1. Прежде чем приложение логики сможет использовать управляемое удостоверение, выполните действия, описанные в разделе [Проверка подлинности доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps](../logic-apps/create-managed-service-identity.md). Это действия позволяют включить управляемое удостоверение в приложении логики и настроить доступ этого удостоверения к целевому ресурсу Azure.
 
 1. Прежде чем функция Azure сможет использовать управляемое удостоверение, необходимо [включить проверку подлинности для функций Azure](../logic-apps/logic-apps-azure-functions.md#enable-authentication-for-functions).
 
-1. В триггере или действии, где вы хотите использовать управляемое удостоверение, укажите следующие значения свойств.
+1. В триггере или действии, поддерживающем использование управляемого удостоверения, укажите следующие сведения:
+
+   **Встроенные триггеры и действия**
 
    | Свойство (конструктор) | Свойство (JSON) | Обязательно | Значение | Описание |
    |---------------------|-----------------|----------|-------|-------------|
@@ -1094,7 +1100,7 @@ Authorization: OAuth realm="Photos",
    | **Аудитория** | `audience` | Да | <*идентификатор-целевого-ресурса*> | Идентификатор целевого ресурса, к которому требуется получить доступ. <p>Например, значение `https://storage.azure.com/` делает [маркеры доступа](../active-directory/develop/access-tokens.md) действительными для проверки подлинности для всех учетных записей хранения. Однако можно также указать URL-адрес корневой службы для конкретной учетной записи хранения, например `https://fabrikamstorageaccount.blob.core.windows.net`. <p>**Примечание.** Свойство **Аудитория** может быть скрыто в некоторых триггерах или действиях. Чтобы отобразить это свойство, в триггере или действии откройте список **Добавить новый параметр** и выберите **Аудитория**. <p><p>**Важно!** Убедитесь, что значение идентификатора ресурса *точно совпадает* со значением, ожидаемым Azure AD, включая все необходимые знаки косой черты. Например, для идентификатора ресурса `https://storage.azure.com/` для всех учетных записей хранилища BLOB-объектов Azure требуется завершающая косая черта. Но для идентификатора ресурса конкретной учетной записи хранения завершающая косая черта не требуется. Сведения о том, как найти эти идентификаторы ресурсов, см. в разделе [Службы Azure, которые поддерживают Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). |
    |||||
 
-   При использовании [защищенных параметров](#secure-action-parameters) для управления конфиденциальной информацией, например, в [шаблоне Azure Resource Manager для автоматизации развертывания](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), можно использовать выражения для доступа к этим значениям параметров во время выполнения. В следующем примере определение действия HTTP задает тип проверки подлинности `type` как `ManagedServiceIdentity` и использует [функцию parameters()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) для получения значений параметров.
+   При использовании [защищенных параметров](#secure-action-parameters) для управления конфиденциальной информацией, например, в [шаблоне Azure Resource Manager для автоматизации развертывания](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), можно использовать выражения для доступа к этим значениям параметров во время выполнения. Например, это определение действия HTTP определяет проверку подлинности `type` как `ManagedServiceIdentity` и использует [функцию Parameters ()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) для получения значений параметров:
 
    ```json
    "HTTP": {
@@ -1111,6 +1117,15 @@ Authorization: OAuth realm="Photos",
       "runAfter": {}
    }
    ```
+
+   **Триггеры и действия управляемых соединителей**
+
+   | Свойство (конструктор) | Обязательно | Значение | Описание |
+   |---------------------|----------|-------|-------------|
+   | **Имя соединения** | Да | <*имя соединения*> ||
+   | **Управляемое удостоверение** | Да | **Управляемое удостоверение, назначаемое системой** <br>или <br> <*назначенное пользователем удостоверение-имя*> | Тип проверки подлинности |
+   |||||
+
 
 <a name="block-connections"></a>
 

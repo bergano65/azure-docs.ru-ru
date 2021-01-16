@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.date: 08/17/2020
 ms.reviewer: cynthn
-ms.openlocfilehash: c3b3848e4e4f7b0445f882265dbe66bb10b48833
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0bb0a7833e9ee3b499ae013b665ecf137c667005
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968593"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251001"
 ---
 # <a name="deploy-azure-monitor-for-sap-solutions-with-azure-portal"></a>Развертывание Azure Monitor для решений SAP с помощью портал Azure
 
@@ -46,7 +46,7 @@ Azure Monitor для ресурсов решений SAP можно создат
 
    :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-3.png" alt-text="Отображение вкладки поставщик для добавления дополнительных поставщиков в Azure Monitor для решений SAP." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-3.png":::
 
-2. Щелкните **Добавить поставщика** и выберите **SAP HANA** в раскрывающемся списке. 
+2. Выберите **Добавить поставщика** и в раскрывающемся списке выберите **SAP HANA** . 
 
    > [!IMPORTANT]
    > Убедитесь, что SAP HANA поставщик настроен для SAP HANA главного узла.
@@ -79,6 +79,18 @@ Azure Monitor для ресурсов решений SAP можно создат
    :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-5.png" alt-text="На рисунке показаны параметры, относящиеся к поставщику Pacemaker кластера высокой доступности." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-5.png":::
 
 
+### <a name="os-linux-provider"></a>Поставщик ОС (Linux) 
+
+1. Выберите ОС (Linux) из раскрывающегося списка. 
+
+> [!IMPORTANT]
+> Чтобы настроить поставщик ОС (Linux), убедитесь, что Node_Exporter установлен в каждом экземпляре BareMetal. Дополнительные сведения см. в разделе [Node_Exporter](https://github.com/prometheus/node_exporter)
+
+2. Введите имя, которое будет идентификатором экземпляра BareMetal.
+3. Введите конечную точку экспорта узла в виде http://IP:9100/metrics .
+4. По завершении нажмите кнопку **Добавить поставщика**. Продолжайте добавлять дополнительные поставщики по мере необходимости или выберите **проверить и создать**   , чтобы завершить развертывание. 
+
+
 ### <a name="microsoft-sql-server-provider"></a>Поставщик Microsoft SQL Server
 
 1. Перед добавлением поставщика Microsoft SQL Server необходимо выполнить следующий скрипт в SQL Server Management Studio, чтобы создать пользователя с соответствующими разрешениями, необходимыми для настройки поставщика.
@@ -108,7 +120,7 @@ Azure Monitor для ресурсов решений SAP можно создат
    GO
    ``` 
 
-2. Щелкните **Добавить поставщика** и выберите **Microsoft SQL Server** в раскрывающемся списке. 
+2. Выберите **Добавить поставщика** и в раскрывающемся списке выберите **Microsoft SQL Server** . 
 
 3. Заполните поля, используя сведения, связанные с Microsoft SQL Server. 
 
@@ -116,6 +128,6 @@ Azure Monitor для ресурсов решений SAP можно создат
 
      :::image type="content" source="./media/azure-monitor-sap/azure-monitor-quickstart-6.png" alt-text="На рисунке показаны сведения о добавлении поставщика Microsoft SQL Server." lightbox="./media/azure-monitor-sap/azure-monitor-quickstart-6.png":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [Azure Monitor для решений SAP](azure-monitor-overview.md)

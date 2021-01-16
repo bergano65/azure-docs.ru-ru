@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 01/15/2021
-ms.openlocfilehash: fb7d9f78ac5498affa10521e17cff4348eecb5eb
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 5ebae41e68633eb10959c56011dd71952f9564bd
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98231950"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250423"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Настройка Репликация входных данных в базе данных Azure для MariaDB
 
@@ -23,12 +23,6 @@ ms.locfileid: "98231950"
 
 > [!NOTE]
 > Если на исходном сервере используется версия 10,2 или более поздняя, рекомендуется настроить Репликация входных данных с помощью [идентификатора глобальной транзакции](https://mariadb.com/kb/en/library/gtid/).
-
-> [!NOTE]
-> Обмен данными без смещения
->
-> Корпорация Майкрософт поддерживает принципы инклюзивности, а также этнического и социокультурного многообразия. Эта статья содержит ссылки на слова _master_ и _Slave_. В соответствии с [руководством по стилю Майкрософт для обмена данными без смещения](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) они распознаются как исключаемые слова. Эти слова используются в этой статье для обеспечения согласованности, поскольку в настоящее время они отображаются в программном обеспечении. При обновлении программного обеспечения для удаления слов эта статья будет обновлена для выравнивания.
->
 
 ## <a name="create-a-mariadb-server-to-use-as-a-replica"></a>Создание сервера MariaDB для использования в качестве реплики
 
@@ -46,6 +40,10 @@ ms.locfileid: "98231950"
 3. Добавьте IP-адрес исходного сервера в правила брандмауэра для реплики. 
 
    Измените правила брандмауэра на [портале Azure](howto-manage-firewall-portal.md) или с помощью [Azure CLI](howto-manage-firewall-cli.md).
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин « _Ведомый_» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
+>
 
 ## <a name="configure-the-source-server"></a>Настройка исходного сервера
 
@@ -83,7 +81,7 @@ ms.locfileid: "98231950"
       ping <output of step 2b>
       ```
 
-      Например:
+      Пример:
 
       ```bash
       C:\Users\testuser> ping e299ae56f000.tr1830.westus1-a.worker.database.windows.net

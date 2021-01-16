@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/02/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a47126a48ea63efd4e49097428679b85b7a95a61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ec900f0537030d3ed0d1c875e8125806159bd51
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667169"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251460"
 ---
 # <a name="create-a-windows-virtual-desktop-host-pool-with-powershell"></a>Создание пула узлов виртуальных рабочих столов Windows с помощью PowerShell
 
@@ -124,7 +124,7 @@ $token = Get-AzWvdRegistrationInfo -ResourceGroupName <resourcegroupname> -HostP
 
 Необходимо обновить агент, если вы используете одну из следующих ситуаций:
 
-- Вы хотите перенести ранее зарегистрированный сеанс в новый пул узлов
+- Вы хотите перенести ранее зарегистрированный узел сеанса в новый пул узлов
 - Узел сеанса не отображается в пуле узлов после обновления
 
 Чтобы обновить агент, выполните следующие действия.

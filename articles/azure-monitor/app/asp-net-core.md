@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 2921c6379b34e002013b5f0087cefd502ab0ab84
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 2f17f4fbed196932ad7a5680338c459740e4d3bd
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904539"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249114"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -31,7 +31,7 @@ ms.locfileid: "96904539"
 > [!NOTE]
 > ASP.NET Core 3. X требует [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Работающее приложение ASP.NET Core. Если необходимо создать ASP.NET Core приложение, следуйте указаниям в этом [ASP.NET Coreном руководстве](/aspnet/core/getting-started/).
 - Допустимый ключ инструментирования Application Insights. Этот ключ необходим для отправки любых данных телеметрии в Application Insights. Если необходимо создать новый Application Insights ресурс для получения ключа инструментирования, см. раздел [Создание ресурса Application Insights](./create-new-resource.md).
@@ -53,7 +53,7 @@ ms.locfileid: "96904539"
 
 3. Выберите **Начать**. Текст этого варианта может отличаться в зависимости от используемой версии Visual Studio. В некоторых более ранних версиях вместо нее используется кнопка **запустить бесплатно** .
 
-4. Выберите свою подписку. Затем выберите **Resource** пункт  >  **регистр** ресурсов.
+4. Выберите свою подписку. Затем выберите пункт  >  **регистр** ресурсов.
 
 5. После добавления Application Insights в проект убедитесь, что вы используете последний стабильный выпуск пакета SDK. Перейдите в **проект**  >  **Управление пакетами NuGet**  >  **Microsoft. ApplicationInsights. AspNetCore**. При необходимости выберите **Обновить**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "96904539"
 
     ```xml
         <ItemGroup>
-          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.13.1" />
+          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.16.0" />
         </ItemGroup>
     ```
 
@@ -213,26 +213,26 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание: | Значение по умолчанию
+|Параметр | Описание | По умолчанию
 |---------------|-------|-------
-|енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | true
-|енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | true
-|енабливенткаунтерколлектионмодуле   | Включить или отключить `EventCounterCollectionModule` | true
-|енабледепенденцитраккингтелеметримодуле   | Включить или отключить `DependencyTrackingTelemetryModule` | true
-|енаблеаппсервицешеартбеаттелеметримодуле  |  Включить или отключить `AppServicesHeartbeatTelemetryModule` | true
-|енаблеазуреинстанцеметадатателеметримодуле   |  Включить или отключить `AzureInstanceMetadataTelemetryModule` | true
-|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | true
-|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | true
-|енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | true
-|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | true
+|енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | Да
+|енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | Да
+|енабливенткаунтерколлектионмодуле   | Включить или отключить `EventCounterCollectionModule` | Да
+|енабледепенденцитраккингтелеметримодуле   | Включить или отключить `DependencyTrackingTelemetryModule` | Да
+|енаблеаппсервицешеартбеаттелеметримодуле  |  Включить или отключить `AppServicesHeartbeatTelemetryModule` | Да
+|енаблеазуреинстанцеметадатателеметримодуле   |  Включить или отключить `AzureInstanceMetadataTelemetryModule` | Да
+|енаблекуиккпулсеметрикстреам | Включить или отключить функцию Ливеметрикс | Да
+|енаблеадаптивесамплинг | Включение или отключение адаптивной выборки | Да
+|енаблехеартбеат | Функция "включить/отключить пульс", которая периодически (по умолчанию составляет 15 минут) отправляет пользовательскую метрику "Хеартбеатстате" со сведениями о среде выполнения, такими как версия .NET, сведения о среде Azure, если применимо, и т. д. | Да
+|аддаутоколлектедметрицекстрактор | Включите или отключите средство извлечения Аутоколлектедметрикс, которое представляет собой Телеметрипроцессор, который отправляет предварительно агрегированные метрики о запросах и зависимостях перед выполнением выборки. | Да
 |Рекуестколлектионоптионс. Траккексцептионс | Включение и отключение отчетов о необработанном отслеживании исключений модулем сбора запросов. | false в NETSTANDARD 2.0 (поскольку исключения отправляются с помощью Аппликатионинсигхтслогжерпровидер), в противном случае — значение true.
-|енабледиагностикстелеметримодуле | Включить или отключить `DiagnosticsTelemetryModule` . Отключение этого параметра приведет к игнорированию следующих параметров. `EnableHeartbeat`, `EnableAzureInstanceMetadataTelemetryModule`, `EnableAppServicesHeartbeatTelemetryModule` | true
+|енабледиагностикстелеметримодуле | Включить или отключить `DiagnosticsTelemetryModule` . Отключение этого параметра приведет к игнорированию следующих параметров. `EnableHeartbeat`, `EnableAzureInstanceMetadataTelemetryModule`, `EnableAppServicesHeartbeatTelemetryModule` | Да
 
 См. список [настраиваемых параметров `ApplicationInsightsServiceOptions` в](https://github.com/microsoft/ApplicationInsights-dotnet/blob/develop/NETCORE/src/Shared/Extensions/ApplicationInsightsServiceOptions.cs) для наиболее актуального списка.
 
 ### <a name="configuration-recommendation-for-microsoftapplicationinsightsaspnetcore-sdk-2150--above"></a>Рекомендация по настройке пакета SDK для Microsoft. ApplicationInsights. AspNetCore, 2.15.0 & выше
 
-Начиная с Microsoft. ApplicationInsights. AspNetCore SDK версии [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0) , рекомендуется настроить каждый параметр, доступный в `ApplicationInsightsServiceOptions` , включая instrumentationkey с помощью `IConfiguration` экземпляра приложения. Параметры должны быть в разделе "ApplicationInsights", как показано в следующем примере. Следующий раздел из appsettings.jsв разделе Настройка ключа инструментирования, а также отключение адаптивной выборки и сбора счетчиков производительности.
+Начиная с Microsoft. ApplicationInsights. AspNetCore SDK версии [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0), рекомендуется настроить каждый параметр, доступный в `ApplicationInsightsServiceOptions` , включая instrumentationkey с помощью экземпляра приложения `IConfiguration` . Параметры должны быть в разделе "ApplicationInsights", как показано в следующем примере. Следующий раздел из appsettings.jsв разделе Настройка ключа инструментирования, а также отключение адаптивной выборки и сбора счетчиков производительности.
 
 ```json
 {

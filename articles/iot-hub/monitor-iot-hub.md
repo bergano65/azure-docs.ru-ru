@@ -6,12 +6,12 @@ ms.author: robinsh
 ms.topic: conceptual
 ms.service: iot-hub
 ms.date: 11/06/2020
-ms.openlocfilehash: 2fabf75f74ccf57f57e7b47720ceda8885420842
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 35134f3ee4946d294ba6c6f71bd3953823d6d138
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460912"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250034"
 ---
 # <a name="monitoring-azure-iot-hub"></a>Наблюдение за центром Интернета вещей Azure
 
@@ -87,7 +87,7 @@ ms.locfileid: "96460912"
 
 Для метрик платформы центра Интернета вещей, собранных в единицах счетчика, некоторые агрегаты могут быть недоступны или использоваться. Дополнительные сведения см. в разделе [Поддерживаемые статистические функции статьи мониторинг справочника по данным центра Интернета вещей Azure](monitor-iot-hub-reference.md#supported-aggregations).
 
-Некоторые метрики центра Интернета вещей, такие как [метрики маршрутизации](monitor-iot-hub-reference.md#routing-metrics), являются многомерными. Для этих метрик можно применить [фильтры](../azure-monitor/platform/metrics-charts.md#apply-filters-to-charts) и [разделение](../azure-monitor/platform/metrics-charts.md#apply-splitting-to-a-chart) на диаграммы на основе измерения.
+Некоторые метрики центра Интернета вещей, такие как [метрики маршрутизации](monitor-iot-hub-reference.md#routing-metrics), являются многомерными. Для этих метрик можно применить [фильтры](../azure-monitor/platform/metrics-charts.md#filters) и [разделение](../azure-monitor/platform/metrics-charts.md#apply-splitting) на диаграммы на основе измерения.
 
 ## <a name="analyzing-logs"></a>анализ журналов;
 
@@ -133,7 +133,7 @@ ms.locfileid: "96460912"
 | com. Microsoft. Azure. iothub. Service. SDK | Пакет SDK для службы Java |
 | com. Microsoft. Azure. SDK. IOT. IOT-Device-Client | Пакет SDK для устройств Java |
 | com. Microsoft. Azure. SDK. IOT. IOT-Service-Client | Пакет SDK для службы Java |
-| C | Внедренный C |
+| C | Embedded C; |
 | C + (Оссимплифиед = Azure RTO) | ОСРВ Azure |
 
 Вы можете извлечь свойство версии пакета SDK при выполнении запросов к журналам ресурсов центра Интернета вещей. Например, следующий запрос извлекает свойство версии пакета SDK (и идентификатор устройства) из свойств, возвращаемых операциями подключения. Эти два свойства записываются в результаты вместе со временем операции и ИДЕНТИФИКАТОРом ресурса центра Интернета вещей, к которому подключается устройство.

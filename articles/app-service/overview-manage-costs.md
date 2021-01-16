@@ -5,12 +5,12 @@ ms.custom: subject-cost-optimization
 ms.service: app-service
 ms.topic: how-to
 ms.date: 01/01/2021
-ms.openlocfilehash: de55a708ab78844fd8e834db0bd88e12dd66885a
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: f92b766fc1122456fda70d2deff81fa80a02d159
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186483"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250117"
 ---
 # <a name="plan-and-manage-costs-for-azure-app-service"></a>Планирование и управление затратами для службы приложений Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "98186483"
 
 <!-- Note for Azure service writer: Modify the following for your service. -->
 
-В этой статье описывается планирование и управление затратами для службы приложений Azure. Сначала вы используете калькулятор цен Azure, чтобы помочь спланировать затраты на службу приложений, прежде чем добавлять ресурсы для службы для оценки затрат. После добавления ресурсов Azure ознакомьтесь с оценочными затратами. После начала работы с ресурсами службы приложений используйте функции [управления затратами](https://docs.microsoft.com/azure/cost-management-billing/) для установки бюджетов и отслеживания затрат. Вы также можете просматривать прогнозные затраты и выявление тенденций расходов для выявления областей, в которых может потребоваться выполнить действия. Стоимость службы приложений Azure — это лишь часть ежемесячных затрат в счете Azure. Хотя в этой статье объясняется, как спланировать и управлять затратами для службы приложений, вы оплачиваете все службы и ресурсы Azure, используемые в вашей подписке Azure, включая сторонние службы.
+В этой статье описывается планирование и управление затратами для службы приложений Azure. Сначала вы используете калькулятор цен Azure, чтобы помочь спланировать затраты на службу приложений, прежде чем добавлять ресурсы для службы для оценки затрат. После добавления ресурсов Azure ознакомьтесь с оценочными затратами. После начала работы с ресурсами службы приложений используйте функции [управления затратами](https://docs.microsoft.com/azure/cost-management-billing/?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для установки бюджетов и отслеживания затрат. Вы также можете просматривать прогнозные затраты и выявление тенденций расходов для выявления областей, в которых может потребоваться выполнить действия. Стоимость службы приложений Azure — это лишь часть ежемесячных затрат в счете Azure. Хотя в этой статье объясняется, как спланировать и управлять затратами для службы приложений, вы оплачиваете все службы и ресурсы Azure, используемые в вашей подписке Azure, включая сторонние службы.
 
 ## <a name="relevant-costs-for-app-service"></a>Важные затраты на службу приложений
 
@@ -84,7 +84,7 @@ ms.locfileid: "98186483"
 
     ![Обзор оценочных затрат для каждой ценовой категории на портале](media/overview-manage-costs/pricing-estimates.png)
 
-Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../billing/billing-spending-limit.md).
+Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../cost-management-billing/manage/spending-limit.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 ## <a name="optimize-costs"></a>Оптимизация затрат
 
@@ -129,7 +129,7 @@ ms.locfileid: "98186483"
 
 ## <a name="monitor-costs"></a>Мониторинг затрат
 
-При использовании ресурсов Azure со службой приложений издержки взимается плата. Затраты на единицу использования ресурсов Azure зависят от временных интервалов (секунды, минуты, часы и дни). Как только начнется использование службы приложений, издержки будут затратны, и вы сможете просмотреть затраты в [анализе затрат](https://docs.microsoft.com/azure/cost-management/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+При использовании ресурсов Azure со службой приложений издержки взимается плата. Затраты на единицу использования ресурсов Azure зависят от временных интервалов (секунды, минуты, часы и дни). Как только начнется использование службы приложений, издержки будут затратны, и вы сможете просмотреть затраты в [анализе затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 При использовании анализа затрат вы просматриваете затраты на службы приложений в графиках и таблицах для различных временных интервалов. Некоторые примеры относятся к дню, текущему и предыдущему месяцу и году. Вы также можете просматривать затраты по бюджету и прогнозируемым затратам. Переключение на более длительные представления с течением времени может помочь определить тенденции расходов. И вы видите, где может произойти чрезмерная трата. Если вы создали бюджеты, можно легко увидеть, где они превышаются.
     
@@ -155,20 +155,20 @@ ms.locfileid: "98186483"
 
 <!-- Note to Azure service writer: Modify the following as needed for your service. -->
 
-Вы можете создавать [бюджеты](https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](https://docs.microsoft.com/azure/cost-management/cost-mgt-alerts-monitor-usage-spending?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
+Вы можете создавать [бюджеты](../cost-management/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](../cost-management/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
 
-Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, изменяющих дополнительные деньги. Дополнительные сведения о параметрах фильтра, доступных при создании бюджета, см. в разделе [Параметры группы и фильтра](https://docs.microsoft.com/azure/cost-management-billing/costs/group-filter?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, изменяющих дополнительные деньги. Дополнительные сведения о параметрах фильтра, доступных при создании бюджета, см. в разделе [Параметры группы и фильтра](../cost-management-billing/costs/group-filter.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 ## <a name="export-cost-data"></a>Экспорт данных о затратах
 
-Вы также можете [экспортировать данные о затратах](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям нужно выполнить больше анализа данных за затраты. Например, Группа финансов может анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
+Вы также можете [экспортировать данные о затратах](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям нужно выполнить больше анализа данных за затраты. Например, Группа финансов может анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о том, как цены работают со службой хранилища Azure. См. [цены на Службу приложений](https://azure.microsoft.com/pricing/details/app-service/).
-- Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
-- Дополнительные сведения об управлении затратами с помощью [анализа затрат](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Узнайте, как [предотвратить непредвиденные затраты](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
+- Дополнительные сведения об управлении затратами с помощью [анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Узнайте, как [предотвратить непредвиденные затраты](../cost-management-billing/manage/getting-started.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 - Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
 
 <!-- Insert links to other articles that might help users save and manage costs for you service here.

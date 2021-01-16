@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: f729c00d3b78631a32013ec9453302584cecbd16
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 82161a8f66dd717a9dc448a743b818a9ab9938db
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962437"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250984"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Развертывание кластера Azure Service Fabric в Зоны доступности
 Зоны доступности в Azure — это высокодоступное предложение, защищающее приложения и данные от сбоев центров обработки данных. Зона доступности — это уникальное физическое расположение, оснащенное независимым питанием, охлаждением и сетью в регионе Azure.
@@ -345,7 +345,7 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 
 * Первое значение — это свойство **Zones** , которое указывает зоны доступности, присутствующую в масштабируемом наборе виртуальных машин.
 * Вторым значением является свойство "singlePlacementGroup", которое должно иметь значение true. **Масштабируемый набор, развернутый в 3 AZ, может масштабировать до 300 виртуальных машин, даже если "singlePlacementGroup = true".**
-* Третье значение — "zoneBalance" и является необязательным, что обеспечивает ограниченную балансировку зоны, если имеет значение true. Прочитайте о [зонебаланЦинг](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
+* Третье значение — "zoneBalance", которое обеспечивает ограниченную балансировку зоны, если имеет значение true. Рекомендуется задать значение true, чтобы избежать несбалансированного распределения виртуальных машин между зонами. Прочитайте о [зонебаланЦинг](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
 * Переопределения FaultDomain и UpgradeDomain не обязательно должны быть настроены.
 
 ```json
@@ -357,7 +357,7 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
     "zones": ["1", "2", "3"],
     "properties": {
         "singlePlacementGroup": "true",
-        "zoneBalance": false
+        "zoneBalance": true
     }
 }
 ```

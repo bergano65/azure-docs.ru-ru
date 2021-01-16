@@ -11,13 +11,13 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 01/22/2020
-ms.openlocfilehash: 18ff2c9690de1708cd8382d83a0c01662a8e6fb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/09/2020
+ms.openlocfilehash: 8bd1e312463cf89ae30d54bc4a32a497fc7a9a78
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91619788"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249658"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Глоссарий терминов для Базы данных SQL Azure
 [!INCLUDE[appliesto-asf](includes/appliesto-asf.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "91619788"
 |Уровень служб|Базовый, Стандартный, премиум, общего назначения, масштабирование, критически важный для бизнеса|Сведения об уровнях служб в модели Виртуальное ядро см. в разделе [уровни служб базы данных SQL](database/service-tiers-vcore.md#service-tiers). Сведения об уровнях служб в модели DTU см. в разделе [модель DTU](database/service-tiers-dtu.md#compare-the-dtu-based-service-tiers).|
 |Уровень вычислений|Бессерверные вычисления|[Бессерверные вычисления](database/service-tiers-vcore.md#compute-tiers)
 ||Подготовленные вычисления|[Подготовленные вычисления](database/service-tiers-vcore.md#compute-tiers)
-|Поколение вычислительных ресурсов|Серии го поколения, M, серия fsv2|[Поколения оборудования](database/service-tiers-vcore.md#hardware-generations)
+|Поколение вычислительных ресурсов|Серия го поколения, M-Series, серия fsv2, серии DC|[Поколения оборудования](database/service-tiers-vcore.md#hardware-generations)
 |Серверная сущность| Сервер |[Логические серверы SQL Server](database/logical-servers.md)|
 |Тип ресурса|Виртуальное ядро|Ядро ЦП, предоставляемое вычислительному ресурсу для отдельной базы данных, эластичного пула. |
 ||Размер вычислений и объем хранилища|Размер вычислений — это максимальный объем ресурсов ЦП, памяти и других устройств, не связанных с хранилищем, доступных для отдельной базы данных или эластичного пула.  Размер хранилища — это максимальный объем хранилища, доступный для отдельной базы данных или эластичного пула. Параметры изменения размера в модели Виртуальное ядро см. в разделе [Виртуальное ядро Single databases](database/resource-limits-vcore-single-databases.md)and [Виртуальное ядро эластичные пулы](database/resource-limits-vcore-elastic-pools.md).  (.. /манажед-инстанце/ресаурце-лимитс.МД).  Сведения о параметрах изменения размера в модели DTU см. в разделе [DTU Single databases](database/resource-limits-dtu-single-databases.md) and [DTU эластичные пулы](database/resource-limits-dtu-elastic-pools.md).
@@ -53,7 +53,3 @@ ms.locfileid: "91619788"
 |Серверная сущность|Управляемый экземпляр или экземпляр| Н/д, так как SQL Управляемый экземпляр сам является сервером |
 |Тип ресурса|Виртуальное ядро|Ядро ЦП, предоставляемое вычислительному ресурсу для Управляемый экземпляр SQL.|
 ||Размер вычислений и объем хранилища|Размер вычислений — это максимальный объем ресурсов ЦП, памяти и других устройств, не связанных с хранилищем, для SQL Управляемый экземпляр.  Размер хранилища — это максимальный объем хранилища, доступный для Управляемый экземпляр SQL.  Для параметров изменения размера, [управляемых экземпляров SQL](managed-instance/resource-limits.md). |
-
-## <a name="sql-on-azure-vm"></a>SQL на виртуальной машине Azure
-
-нужны дополнительные материалы

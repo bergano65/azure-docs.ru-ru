@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: ec4917aa378f746eb2caac6a7b4ce99d1c44db90
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 55e618a7e4e0d21f6d4afab270e257c26fa15634
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127657"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251120"
 ---
 # <a name="configure-and-submit-training-runs"></a>Настройка и отправка запуска на выполнение обучения
 
@@ -59,7 +59,7 @@ ms.locfileid: "98127657"
 * Отправьте запрос на запуск HyperDrive для [настройки гиперпараметров](how-to-tune-hyperparameters.md).
 * Отправьте эксперимент с помощью расширения [VS Code](tutorial-train-deploy-image-classification-model-vscode.md#train-the-model).
 
-## <a name="create-an-experiment"></a>Создание эксперимента
+## <a name="create-an-experiment"></a>Создание эксперимента.
 
 Создайте эксперимент в рабочей области.
 
@@ -75,6 +75,9 @@ experiment = Experiment(workspace=ws, name=experiment_name)
 Выберите целевой объект вычислений, на котором будет выполняться сценарий обучения. Если в Скриптрунконфиг не указан целевой объект вычислений или `compute_target='local'` , Azure ML будет выполнять скрипт локально. 
 
 В примере кода в этой статье предполагается, что вы уже создали целевой объект вычислений `my_compute_target` из раздела "необходимые условия".
+
+>[!Note]
+>Azure Databricks не поддерживается в качестве целевого объекта вычислений для обучения модели. Azure Databricks можно использовать для подготовки данных и задач развертывания. 
 
 ## <a name="create-an-environment"></a>Создание среды
 Машинное обучение Azure [средах](concept-environments.md) — это инкапсуляция среды, в которой выполняется обучение машинного обучения. Они указывают пакеты Python, образ DOCKER, переменные среды и параметры программного обеспечения для сценариев обучения и оценки. Они также указывают среды выполнения (Python, Spark или DOCKER).

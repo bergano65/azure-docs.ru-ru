@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
-ms.openlocfilehash: ce528e268e0ed1e34f53e32196bceef5ad8a2fcb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9fe0c79a2f65b27b35aa5029d0a53de62ef08078
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452500"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251681"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Правила брандмауэра для базы данных SQL Azure и IP-адреса Azure синапсе
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -270,7 +270,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Убедитесь, что корпоративная сетевая среда разрешает входящий трафик из диапазонов вычислительных IP-адресов (включая диапазоны SQL), которые используются центрами обработки данных Azure. Может потребоваться добавить эти IP-адреса в список разрешений. См. раздел [диапазоны IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).  
-- Краткое руководство по созданию правила брандмауэра IP на уровне сервера см. в статье [Создание отдельной базы данных в базе данных SQL Azure](single-database-create-quickstart.md).
+- Ознакомьтесь с нашим кратким руководством по [созданию отдельной базы данных в базе данных SQL Azure](single-database-create-quickstart.md).
 - Дополнительные сведения о подключении к базе данных в базе данных SQL Azure из приложений с открытым исходным кодом или сторонними приложениями см. [в статье примеры кода для быстрого запуска клиента в базе данных SQL Azure](connect-query-content-reference-guide.md#libraries).
 - Дополнительные сведения о дополнительных портах, которые, возможно, потребуется открыть, см. в разделе "база данных SQL: за пределами Vs внутри" [портов за пределами 1433 для ADO.NET 4,5 и базы данных SQL](adonet-v12-develop-direct-route-ports.md) .
 - Общие сведения о безопасности базы данных SQL Azure см. в разделе [Защита базы данных](security-overview.md).
