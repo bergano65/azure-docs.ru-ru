@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: 3632c098f865b1e5c4e76709a83176035be7abc2
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 07e165382608f4fde5433de0f4436cb86f5083af
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351833"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251902"
 ---
 # <a name="plan-and-manage-costs-for-azure-cosmos-db"></a>Планирование и управление затратами для Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -71,7 +71,7 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
    :::image type="content" source="./media/plan-manage-costs/cost-estimate-portal.png" alt-text="Оценка затрат в портал Azure":::
 
-Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../cost-management-billing/manage/spending-limit.md).
+Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../cost-management-billing/manage/spending-limit.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 Вы можете платить за Azure Cosmos DB оплаты с помощью Azure Соглашение Enterprise денежных обязательств по кредиту. Однако вы не можете использовать денежные обязательства кредита для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
 

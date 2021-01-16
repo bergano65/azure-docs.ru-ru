@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 9751bd082947e66b3fc5ea47448857558301a1e7
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 59329fccda77f16e4a595e9b1789ef684c5cbf95
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97366419"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98256563"
 ---
 ### <a name="networking-limits---azure-resource-manager"></a><a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети — Azure Resource Manager
 Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью **Azure Resource Manager** для каждых региона и подписки. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
@@ -34,7 +34,7 @@ ms.locfileid: "97366419"
 | Частные IP-адреса на виртуальную машину |256 |
 | Общедоступные IP-адреса на сетевой интерфейс |256 |
 | Общедоступные IP-адреса на виртуальную машину |256 |
-| [Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли](../articles/virtual-network/virtual-machine-network-throughput.md#flow-limits-and-recommendations) |500 000 |
+| [Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли](../articles/virtual-network/virtual-machine-network-throughput.md#flow-limits-and-active-connections-recommendations) |500 000 |
 | Сетевые адаптеры |65 536 |
 | группы сетевой безопасности; |5 000 |
 | Правил группы NSG на группу NSG |1000 |

@@ -12,20 +12,19 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/12/2020
+ms.date: 01/14/2021
 ms.author: b-juche
-ms.openlocfilehash: e5219e1c87221ade8da68c21209f41b4d6139be2
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 78cc68d2be600cec78c433ae3eae1de09d31ac94
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579085"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251817"
 ---
 # <a name="dynamically-change-the-service-level-of-a-volume"></a>Динамическое изменение уровня обслуживания тома
 
 > [!IMPORTANT] 
-> * Регистрация в общедоступной предварительной версии для этой функции находится на удержании до дальнейшего уведомления. 
-> * Динамическое изменение уровня обслуживания тома назначения репликации сейчас не поддерживается.
+> Динамическое изменение уровня обслуживания тома назначения репликации сейчас не поддерживается.
 
 Уровень обслуживания существующего тома можно изменить, переместив том в другой пул мощностей, который использует требуемый [уровень обслуживания](azure-netapp-files-service-levels.md) для тома. Это изменение уровня обслуживания для тома выполняется на месте и не требует переноса данных. Он также не влияет на доступ к тому.  
 
@@ -37,28 +36,28 @@ ms.locfileid: "94579085"
 
 * После перемещения тома в другой пул емкостью вы больше не сможете получить доступ к предыдущим журналам действий тома и метрикам тома. Том будет начинаться с новых журналов действий и метрик в новом пуле емкости.
 
-* При перемещении тома в пул ресурсов более высокого уровня обслуживания (например, при переходе с уровня " *стандартный* " на уровень " *премиум* " или " *Ultra* Service") необходимо подождать не менее семи дней, прежде чем можно будет переместить *этот том в* пул емкости более низкого уровня обслуживания (например, переход с *Ultra* на *Premium* или *Standard* ).  
-<!-- 
-## Register the feature
+* При перемещении тома в пул ресурсов более высокого уровня обслуживания (например, при переходе с уровня " *стандартный* " на уровень " *премиум* " или " *Ultra* Service") необходимо подождать не менее семи дней, прежде чем можно будет переместить *этот том в* пул емкости более низкого уровня обслуживания (например, переход с *Ultra* на *Premium* или *Standard*).  
 
-The feature to move a volume to another capacity pool is currently in preview. If you are using this feature for the first time, you need to register the feature first.
+## <a name="register-the-feature"></a>регистрация компонента
 
-1. Register the feature: 
+Функция перемещения тома в другой пул емкости сейчас доступна в предварительной версии. Если эта функция используется впервые, ее необходимо сначала зарегистрировать.
+
+1. Зарегистрируйте функцию: 
 
     ```azurepowershell-interactive
     Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange
     ```
 
-2. Check the status of the feature registration: 
+2. Проверьте состояние регистрации компонента: 
 
     > [!NOTE]
-    > The **RegistrationState** may be in the `Registering` state for up to 60 minutes before changing to`Registered`. Wait until the status is **Registered** before continuing.
+    > **RegistrationState** может находиться в состоянии до `Registering` 60 минут до перехода на `Registered` . Прежде чем продолжить, подождите, пока состояние не будет **зарегистрировано** .
 
     ```azurepowershell-interactive
     Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange
     ```
-You can also use [Azure CLI commands](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` and `az feature show` to register the feature and display the registration status. 
---> 
+Вы также можете использовать [Azure CLI команды](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` , `az feature show` чтобы зарегистрировать эту функцию и отобразить состояние регистрации. 
+ 
 ## <a name="move-a-volume-to-another-capacity-pool"></a>Перемещение тома в другой пул мощностей
 
 1.  На странице тома щелкните правой кнопкой мыши том, уровень обслуживания которого необходимо изменить. Выберите **изменить пул**.
@@ -76,3 +75,4 @@ You can also use [Azure CLI commands](/cli/azure/feature?preserve-view=true&view
 
 * [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
+* [Устранение неполадок при изменении пула емкости тома](troubleshoot-capacity-pools.md#issues-when-changing-the-capacity-pool-of-a-volume)

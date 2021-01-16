@@ -2,14 +2,14 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 12/21/2020
+ms.date: 01/15/2021
 ms.author: alkohli
-ms.openlocfilehash: f2443765ecc9116193cefbc729ced25fa5657e59
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 56fc24966fa60c3a5e91f92b57332ae2f6a525ff
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763440"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256556"
 ---
 Перед развертыванием виртуальных машин на Azure Stack пограничном устройстве необходимо настроить клиент для подключения к устройству через Azure Resource Manager Azure PowerShell. Чтобы получить подробные инструкции, перейдите к разделу [Подключение к Azure Resource Manager на устройстве Azure Stack](../articles/databox-online/azure-stack-edge-j-series-connect-resource-manager.md).
 
@@ -38,11 +38,3 @@ ms.locfileid: "97763440"
     > При создании виртуальных машин GPU выберите сетевой интерфейс, подключенный к Интернету. Это позволяет установить расширение GPU на устройстве.
 
 
-1. Включите роль виртуальной машины из портал Azure. На этом шаге создается уникальная подписка на устройство, которое используется для создания виртуальных машин с помощью локальных API-интерфейсов устройства. 
-
-    1. Чтобы включить роль ВМ, в портал Azure перейдите к ресурсу Azure Stackного периметра для устройства Azure Stackного периметра. Перейдите к **границе вычисление > виртуальных машин**.
-
-        ![Добавление виртуальной машины, образ 1](../articles/databox-online/media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-image-1.png)
-
-    1. Выберите **виртуальные машины** , чтобы открыть страницу **Обзор** . **Включите** управление облаком виртуальных машин.
-        ![Добавление виртуальной машины, образ 2](../articles/databox-online/media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-image-2.png)

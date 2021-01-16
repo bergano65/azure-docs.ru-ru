@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/15/2021
-ms.openlocfilehash: 376a4941ac767b670bd2706cb3af63d139b0c3a3
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: b0f0ee9477a84dc198ea3fb48b2ed81be10ea9c5
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233497"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251885"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
 
@@ -19,12 +19,6 @@ ms.locfileid: "98233497"
 
 >[!NOTE]
 > Основываясь на отзывах клиентов, мы расширили нерекомендуемую поддержку корневого сертификата для нашего существующего корневого ЦС Baltimore из октября 26th, 2020 до 15 февраля 2021. Мы надеемся, что это расширение позволяет нашим пользователям достаточно времени для реализации изменений клиентов, если они затронуты.
-
-> [!NOTE]
-> Обмен данными без смещения
->
-> Корпорация Майкрософт поддерживает принципы инклюзивности, а также этнического и социокультурного многообразия. Эта статья содержит ссылки на слова _master_ и _Slave_. В соответствии с [руководством по стилю Майкрософт для обмена данными без смещения](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) они распознаются как исключаемые слова. Эти слова используются в этой статье для обеспечения согласованности, поскольку в настоящее время они отображаются в программном обеспечении. При обновлении программного обеспечения для удаления слов эта статья будет обновлена для выравнивания.
->
 
 ## <a name="what-update-is-going-to-happen"></a>Какое обновление будет выполнено?
 
@@ -79,15 +73,17 @@ ms.locfileid: "98233497"
 
   - Для пользователей .NET в Linux, использующих SSL_CERT_DIR, убедитесь, что **BaltimoreCyberTrustRoot** и **DigiCertGlobalRootG2** существуют в каталоге, указанном SSL_CERT_DIR. Если какие либо сертификаты не существуют, создайте недостающий файл сертификата.
 
-  - Для других пользователей (MariaDB Client/MariaDB Workbench/C/C++/го/Писон/Руби/ФП/нодежс/Перл/Свифт) можно выполнить слияние двух файлов сертификатов ЦС, таких как приведенный ниже формат.</b>
+  - Для других пользователей (MariaDB Client/MariaDB Workbench/C/C++/го/Писон/Руби/ФП/нодежс/Перл/Свифт) можно выполнить слияние двух файлов сертификатов ЦС, таких как приведенный ниже формат.
 
-    </br>-----НАЧАТЬ-----СЕРТИФИКАТА
-    </br>(Корневой CA1: BaltimoreCyberTrustRoot. CRT. PEM)
-    </br>----------КОНЕЧНОГО СЕРТИФИКАТА
-    </br>-----НАЧАТЬ-----СЕРТИФИКАТА
-    </br>(Корневой CA2: DigiCertGlobalRootG2. CRT. PEM)
-    </br>----------КОНЕЧНОГО СЕРТИФИКАТА
-
+   ```
+   -----BEGIN CERTIFICATE-----
+   (Root CA1: BaltimoreCyberTrustRoot.crt.pem)
+   -----END CERTIFICATE-----
+   -----BEGIN CERTIFICATE-----
+    (Root CA2: DigiCertGlobalRootG2.crt.pem)
+   -----END CERTIFICATE-----
+   ```
+   
 - Замените исходный файл PEM корневого центра сертификации на объединенный файл корневого ЦС и перезапустите приложение или клиент.
 - В будущем после развертывания нового сертификата на стороне сервера можно изменить PEM-файл CA на DigiCertGlobalRootG2. CRT. PEM.
 
@@ -154,6 +150,21 @@ ms.locfileid: "98233497"
 
 ### <a name="12-if-im-using-data-in-replication-do-i-need-to-perform-any-action"></a>12. Если я использую репликацию данных, нужно ли выполнять какие-либо действия?
 
+> [!NOTE]
+> Эта статья содержит ссылки на термин « _Ведомый_» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
+>
+
+*   Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр.
+
+    ```azurecli-interactive
+    Master_SSL_Allowed            : Yes
+    Master_SSL_CA_File            : ~\azure_mysqlservice.pem
+    Master_SSL_CA_Path            :
+    Master_SSL_Cert               : ~\azure_mysqlclient_cert.pem
+    Master_SSL_Cipher             :
+    Master_SSL_Key                : ~\azure_mysqlclient_key.pem
+    ```
+
 Если вы используете [репликацию данных](concepts-data-in-replication.md) для подключения к базе данных Azure для MySQL, необходимо учитывать два фактора:
 
 - Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр. 
@@ -166,8 +177,7 @@ ms.locfileid: "98233497"
   Master_SSL_Cipher             :
   Master_SSL_Key                : ~\azure_mysqlclient_key.pem
   ```
-
-    Если вы видите сертификат для CA_file, SSL_Cert и SSL_Key, необходимо будет обновить файл, добавив [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
+  Если вы видите сертификат для CA_file, SSL_Cert и SSL_Key, необходимо будет обновить файл, добавив [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
 - Если репликация данных выполняется между двумя базами данных Azure для MySQL, необходимо сбросить реплику, выполнив команду **CALL MySQL.az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication).
 
