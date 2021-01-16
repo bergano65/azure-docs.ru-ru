@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: c4f65da4f9a4f7ade94d76e99d57439e62b3c808
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 495f9d568760421c7f42df3acf74217c15b01a05
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092063"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246345"
 ---
 # <a name="access-your-security-data"></a>Доступ к данным безопасности
 
 Защитник для Интернета вещей хранит оповещения системы безопасности, рекомендации и необработанные данные безопасности (если вы решили сохранить их) в рабочей области Log Analytics.
 
-## <a name="log-analytics"></a>Анализ журналов
+## <a name="log-analytics"></a>Log Analytics
 
 Чтобы настроить используемую рабочую область Log Analytics:
 
@@ -37,7 +37,7 @@ ms.locfileid: "97092063"
 1. Выберите оповещение или рекомендацию в защитнике для Интернета вещей.
 1. Щелкните **дальнейшее исследование**, а затем щелкните, **чтобы узнать, какие устройства имеют это оповещение щелкните здесь и просмотрите столбец DeviceID**.
 
-Дополнительные сведения о запросах данных из Log Analytics см. [в разделе Начало работы с запросами в log Analytics](/azure/azure-monitor/log-query/get-started-queries).
+Дополнительные сведения о запросах данных из Log Analytics см. [в разделе Начало работы с запросами в log Analytics](../azure-monitor/log-query/get-started-queries.md).
 
 ## <a name="security-alerts"></a>Оповещения безопасности
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 01/13/2021
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: 8843bc803cdad07d8b66f9aeb87688c816158200
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 07535add495484abae06fc6ac8ac435d84bccc52
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202286"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246253"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Преимущества коммерческой платформы
 
@@ -26,7 +26,7 @@ ms.locfileid: "98202286"
 
 Эта программа создает цикл положительной обратной связи: преимущества на каждом этапе роста способствуют продвижению к следующему этапу, что позволяет вам расширять свой бизнес на этой коммерческой платформе. Вы сможете охватить клиентов Майкрософт, действовать на площадке Майкрософт и использовать канал Майкрософт.
 
-Ваши преимущества зависят от того, к какой категории относится предложение: [список, пробная версия или транзакция](determine-your-listing-type.md#available-listing-options-by-offer-type).
+Ваши преимущества зависят от того, к какой категории относится предложение: [список, пробная версия или транзакция](determine-your-listing-type.md).
 
 Когда ваше предложение будет доступно клиентам и вы получите право на соответствующие преимущества, с вами свяжется член команды Rewards.
 

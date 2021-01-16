@@ -6,12 +6,12 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/11/2020
-ms.openlocfilehash: a740ad62dacc9a29cab1cc144f1789e125ec2e89
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 31b96f03a8519b068eaa816443be0a0f374a4a8c
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368585"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247035"
 ---
 # <a name="frequently-asked-questions-about-autoscale-provisioned-throughput-in-azure-cosmos-db"></a>Часто задаваемые вопросы об автомасштабировании подготовленной пропускной способности в Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "97368585"
 Зарезервированная емкость региона с множественной записью работает одинаково для автомасштабирования и стандартной (ручной) подготовленной пропускной способности. См. раздел [Зарезервированная емкость в Azure Cosmos DB](cosmos-db-reserved-capacity.md).
 
 ### <a name="does-autoscale-work-with-free-tier"></a>Работает ли автомасштабирование на уровне "Бесплатный"?
-Да. На уровне "Бесплатный" можно использовать автомасштабирование пропускной способности в контейнере. Поддержка баз данных с автомасштабированием общей пропускной способности и пользовательской настройкой максимального количества единиц запрос в секунду пока недоступна. См. [примеры выставления счетов за автомасштабирование на уровне "Бесплатный"](understand-your-bill.md#billing-examples-with-free-tier-accounts).
+Да. На уровне "Бесплатный" можно использовать автомасштабирование пропускной способности в контейнере. Поддержка баз данных с автомасштабированием общей пропускной способности и пользовательской настройкой максимального количества единиц запрос в секунду пока недоступна. См. [примеры выставления счетов за автомасштабирование на уровне "Бесплатный"](understand-your-bill.md#azure-free-tier).
 
 ### <a name="is-autoscale-supported-for-all-apis"></a>Все ли API поддерживают автомасштабирование?
 Да, автомасштабирование поддерживают все API: Core (SQL), Gremlin, Table, Cassandra и API для MongoDB.

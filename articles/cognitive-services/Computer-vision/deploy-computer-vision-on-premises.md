@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.author: aahi
-ms.openlocfilehash: d79c52c05d09eedab2dd964acb544c9cdb405380
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: b3e1bb3f418f21c75e29b5a1cad337c6f3c10145
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562605"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246644"
 ---
 # <a name="use-computer-vision-container-with-kubernetes-and-helm"></a>Использование контейнера Компьютерное зрение с Kubernetes и Helm
 
@@ -25,7 +25,7 @@ ms.locfileid: "97562605"
 
 Перед использованием Компьютерное зрение контейнеров в локальной среде выполните следующие предварительные требования:
 
-| Обязательно | Назначение |
+| Обязательно | Цель |
 |----------|---------|
 | Учетная запись Azure | Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][free-azure-account], прежде чем начинать работу. |
 | Kubernetes CLI | Интерфейс [командной строки Kubernetes][kubernetes-cli] требуется для управления общими учетными данными из реестра контейнеров. Kubernetes также требуется перед Helm, который является диспетчером пакетов Kubernetes. |
@@ -168,7 +168,7 @@ spec:
 В той же папке *Templates* скопируйте и вставьте следующие вспомогательные функции в `helpers.tpl` . `helpers.tpl` определяет полезные функции, помогающие создать шаблон Helm.
 
 > [!NOTE]
-> Эта статья содержит ссылки на термин «ведомый» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+> Эта статья содержит ссылки на термин slave (ведомый). Корпорация Майкрософт больше не использует его. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 ```yaml
 {{- define "rabbitmq.hostname" -}}
@@ -258,6 +258,8 @@ replicaset.apps/read-57cb76bcf7   1         1         1       17s
 
 Контейнер, получающий запрос, может разделить задачу на подзадачи одной страницы и добавить их в универсальную очередь. Любой работник распознавания от менее занятого контейнера может использовать подзадачи одной страницы из очереди, выполнять распознавание и передавать результат в хранилище. Пропускную способность можно улучшить до `n` времени в зависимости от количества развертываемых контейнеров.
 
+Контейнер v3 предоставляет API проверки актуальности в `/ContainerLiveness` пути. Используйте следующий пример развертывания, чтобы настроить проверку жизни для Kubernetes. 
+
 Скопируйте и вставьте следующий YAML в файл с именем `deployment.yaml` . Замените `# {ENDPOINT_URI}` комментарии и `# {API_KEY}` собственными значениями. Замените `# {AZURE_STORAGE_CONNECTION_STRING}` Комментарий строкой подключения к службе хранилища Azure. Настройте `replicas` на нужное число, которое задано `3` в следующем примере.
 
 ```yaml
@@ -293,6 +295,13 @@ spec:
           value: # {AZURE_STORAGE_CONNECTION_STRING}
         - name: Queue__Azure__ConnectionString
           value: # {AZURE_STORAGE_CONNECTION_STRING}
+        livenessProbe:
+          httpGet:
+            path: /ContainerLiveness
+            port: 5000
+          initialDelaySeconds: 60
+          periodSeconds: 60
+          timeoutSeconds: 20
 --- 
 apiVersion: v1
 kind: Service
@@ -350,7 +359,7 @@ replicaset.apps/read-6cbbb6678   3         3         3       3s
 
 [!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об установке приложений с помощью Helm в службе Kubernetes Azure (AKS) см. [здесь][installing-helm-apps-in-aks].
 

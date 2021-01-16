@@ -2,15 +2,15 @@
 title: Устранение неполадок с Управлением обновлениями службы автоматизации Azure
 description: Эта статья содержит сведения об устранении неполадок с Управлением обновлениями службы автоматизации Azure.
 services: automation
-ms.date: 12/04/2020
+ms.date: 01/13/2021
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: f00002c7374e0c35c7bb91c28b2dd87ad71e3350
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 55e58c92004f4f4cf4ba6a96620b4f037c80cdb4
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184923"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246270"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -144,13 +144,11 @@ Error details: Failed to enable the Update solution
    | summarize by Computer, Solutions
    ```
 
-4. Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо [переустановить агент](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
+    Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо [переустановить агент](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
 
-5. Если компьютер отображается в результатах запроса, проверьте конфигурацию области. [Конфигурация области](../update-management/scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями.
+    Если компьютер указан в результатах запроса, проверьте свойство **Solutions** , которое присутствует в списке **обновлений** . Он проверяет, зарегистрирован ли он в Управление обновлениями. Если это не так, проверьте наличие проблем с конфигурацией области. [Конфигурация области](../update-management/scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями. Чтобы настроить конфигурацию области для целевого компьютера, см. раздел [Включение компьютеров в рабочей области](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace).
 
-6. Если компьютер отображается в рабочей области, но не в Управлении обновлениями, необходимо настроить конфигурацию области для целевого компьютера. Сведения о том, как это сделать, см. в разделе [Включение компьютеров в рабочей области](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace).
-
-7. В рабочей области выполните этот запрос.
+4. В рабочей области выполните этот запрос.
 
    ```kusto
    Operation
@@ -158,9 +156,9 @@ Error details: Failed to enable the Update solution
    | sort by TimeGenerated desc
    ```
 
-8. Если получен такой результат: `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota`, значит достигнута квота, определенная в рабочей области, которая не позволяет сохранить данные. В рабочей области перейдите к параметру **Управление объемом данных** в разделе **Использование и ожидаемые затраты** и измените или удалите квоту.
+   Если получен такой результат: `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota`, значит достигнута квота, определенная в рабочей области, которая не позволяет сохранить данные. В рабочей области перейдите к параметру **Управление объемом данных** в разделе **Использование и ожидаемые затраты** и измените или удалите квоту.
 
-9. Если проблема по прежнему не решена, следуйте инструкциям статьи [Развертывание гибридной рабочей роли Runbook для Windows](../automation-windows-hrw-install.md), чтобы переустановить гибридную рабочую роль для Windows. Для Linux следуйте инструкциям из статьи [Развертывание гибридной рабочей роли Runbook для Linux](../automation-linux-hrw-install.md).
+5. Если проблема по прежнему не решена, следуйте инструкциям статьи [Развертывание гибридной рабочей роли Runbook для Windows](../automation-windows-hrw-install.md), чтобы переустановить гибридную рабочую роль для Windows. Для Linux следуйте инструкциям из статьи [Развертывание гибридной рабочей роли Runbook для Linux](../automation-linux-hrw-install.md).
 
 ## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Сценарий. Не удается оформить подписки для поставщика ресурсов службы автоматизации
 

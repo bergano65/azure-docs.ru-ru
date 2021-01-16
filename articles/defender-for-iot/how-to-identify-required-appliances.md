@@ -1,20 +1,20 @@
 ---
-title: Указание необходимых устройств
+title: Определение необходимых устройств
 description: Узнайте о оборудовании и виртуальных устройствах для сертифицированного защитника для датчиков Интернета вещей и локальной консоли управления.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/21/2020
+ms.date: 01/13/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b22f880eee1b691b6b50b8151a64a2d501b891b3
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 25685d7e933c9d171e1547be2f5899c08443321a
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97842559"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246576"
 ---
-# <a name="identify-required-appliances"></a>Указание необходимых устройств
+# <a name="identify-required-appliances"></a>Определение необходимых устройств
 
 Эта статья содержит сведения о сертифицированном защитнике для устройств датчика IoT. Защитник Форт IoT можно развернуть на физических и виртуальных устройствах.
 
@@ -40,7 +40,7 @@ ms.locfileid: "97842559"
 
 | Тип развертывания | Корпоративный | Enterprise | SMB |
 |--|--|--|--|
-| Изображение | :::image type="content" source="media/how-to-prepare-your-network/corporate-hpe-proliant-dl360-v2.png" alt-text="Модель корпоративного уровня."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Модель корпоративного уровня."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Модель на уровне SMB."::: |
+| Образ — | :::image type="content" source="media/how-to-prepare-your-network/corporate-hpe-proliant-dl360-v2.png" alt-text="Модель корпоративного уровня."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Модель корпоративного уровня."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Модель на уровне SMB."::: |
 | Модель | HPE ProLiant DL360 | HPE ProLiant DL20 | HPE ProLiant DL20 |
 | Порты мониторинга | До 15 RJ45 или 8 OPT | До 8 RJ45 или 6 OPT | 4 RJ45 |
 | Максимальная пропускная способность [1](#anchortext) | 3 ГБ в секунду | 1 ГБ в секунду | 200 МБ в секунду |
@@ -50,7 +50,7 @@ ms.locfileid: "97842559"
 
 Сведения о предварительно настроенных датчиках: Корпорация Майкрософт сотрудничает со стрелкой для предоставления предварительно настроенных датчиков. Чтобы приобрести предварительно настроенный датчик, свяжитесь со стрелкой по следующему адресу: <hardware.sales@arrow.com>
 
-Сведения о переносе собственного устройства: Ознакомьтесь с поддерживаемыми моделями, описанными здесь. После приобретения устройства перейдите в раздел **защитник для**  >  **сетевого датчика** Интернета вещей  >  **Установка** ISO для загрузки программного обеспечения.
+Сведения о том, как присвоить собственное устройство: Ознакомьтесь с поддерживаемыми моделями, описанными здесь. После приобретения устройства перейдите в раздел **защитник для**  >  **сетевого датчика** Интернета вещей  >  **Установка** ISO для загрузки программного обеспечения.
 
 :::image type="content" source="media/how-to-prepare-your-network/azure-defender-for-iot-sensor-download-software-screen.png" alt-text="Сетевой датчик ISO.":::
 
@@ -109,7 +109,7 @@ ms.locfileid: "97842559"
 
 ### <a name="appliance-bom"></a>Спецификация устройства
 
-| PN | Описание | Количество |
+| PN | Описание | количество; |
 |--|--|--|
 | P19766-B21 | HPE DL360 Gen10 8SFF NC CTO Server | 1 |
 | P19766-B21 | Европа — Многоязычная локализация | 1 |
@@ -145,7 +145,7 @@ ms.locfileid: "97842559"
 
 ### <a name="appliance-bom"></a>Спецификация устройства
 
-| PN | Описание: верхний конец | Количество |
+| PN | Описание: верхний конец | количество; |
 |--|--|--|
 | P06963-B21 | HPE DL20 Gen10 4SFF CTO Server | 1 |
 | P06963-B21 | HPE DL20 Gen10 4SFF CTO Server | 1 |
@@ -180,7 +180,7 @@ ms.locfileid: "97842559"
 
 ### <a name="appliance-bom"></a>Спецификация устройства
 
-| PN | Описание | Количество |
+| PN | Описание | количество; |
 |--|--|--|
 | P06961-B21 | HPE DL20 Gen10 НХП 2LFF CTO Server | 1 |
 | P06961-B21 | HPE DL20 Gen10 НХП 2LFF CTO Server | 1 |
@@ -255,30 +255,8 @@ ms.locfileid: "97842559"
 
 :::image type="content" source="media/how-to-prepare-your-network/enterprise-deployment-for-azure-defender-for-iot-dell-r340-bom.png" alt-text="Спецификация Dell R340.":::
 
-## <a name="smb-deployment-neousys-nuvo-5006lp"></a>Развертывание SMB: Неаусис нуво-5006LP
-
-| Компонент | Технические спецификации |
-|--|--|
-| Строительство | Алюминиевая, фанлессная и пыль |
-| Измерения | 240 мм (W) x 225 мм (D) x 77 мм (H) |
-| Вес | 3,1 кг (включая ЦП, память и HDD) |
-| ЦП | Intel Core i5-6500TE (кэш 6 мин, до 3,30 ГГц) S1151 |
-| Микросхем | Центр контроллера платформы Intel Q170 |
-| Память | 8 ГБ DDR4 2133 МГц Wide температура СОДИММ |
-| Память | твердотельный SSD 128-GB 3ME3 с широкими температурными Мсата |
-| Сетевой контроллер | порты 6X Gigabit Ethernet Intel I219 |
-| Доступ к устройству | 4 Усбс: два спереди, два задних плана, один внутренний |
-| Адаптер питания | 120/240VAC-20VDC/6A |
-| Соединение | Набор для монтажа, шина DIN |
-| Рабочая температура | \-25 °C ~ 70 °C |
-| Температура хранилища | \-40 °C ~ 85 °C |
-| влажность. | 10% ~ 90%, без конденсации |
-| Вибрация | Эксплуатация, 5 Грмс, 5-500 Гц, 3 оси <br>(w/SSD, в соответствии с IEC60068-2-64) |
-| Электрически | Эксплуатация, 50 Грмс, половина синуса 11-мс продолжительность (w/SSD) в соответствии с IEC60068-2-27) |
-| Электромагнитное соответствие | Класс A CE/FCC, в соответствии с EN 55022, EN 55024 и EN 55032 |
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Об установке Azure Defender для IoT](how-to-install-software.md)
 
-[Сведения о службе "защитник Azure" для настройки сети IoT](how-to-set-up-your-network.md)
+[Настройка сети с Azure Defender для Интернета вещей](how-to-set-up-your-network.md)

@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 01/11/2021
 ms.author: rohink
-ms.openlocfilehash: c468b1216670ce7e6b5d252a7f7fee807199d20c
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: cb14cb95ec1362782a634b0e62cfa2f8237a5852
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131497"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246388"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
 
@@ -194,10 +194,6 @@ Azure DNS поддерживает только размещение "стати
 Международные доменные имена (IDN) создаются путем кодирования DNS-имен в формат [punycode](https://en.wikipedia.org/wiki/Punycode). Запросы DNS выполняются с использованием этих имен в формате punycode.
 
 Чтобы настроить имена IDN в Azure DNS, преобразуйте имя зоны или набора записей в punycode. Azure DNS в настоящее время не поддерживает встроенное преобразование в punycode.
-
-### <a name="does-azure-dns-private-zones-store-any-customer-content"></a>Хранит ли содержимое клиента в частных зонах Azure DNS?
-
-Нет, Azure DNS частные зоны не хранят содержимое клиента.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

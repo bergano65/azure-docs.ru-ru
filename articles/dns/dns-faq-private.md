@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: article
-ms.date: 10/05/2019
+ms.date: 01/15/2021
 ms.author: rohink
-ms.openlocfilehash: 24f2ca238288854b99160a25c3d4dcedf8ce3368
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3272f4fea4169fd5e91b1ba2b97ad72dfbb49080
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952392"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247392"
 ---
 # <a name="azure-private-dns-faq"></a>Частная зона DNS: часто задаваемые вопросы
 
@@ -89,6 +89,10 @@ ms.locfileid: "94952392"
 
 Настоятельно рекомендуется как можно скорее перейти на новую модель ресурсов. Поддержка устаревшей модели ресурсов будет поддерживаться, однако дополнительные функции не будут разрабатываться поверх этой модели. В будущем мы планируем использовать ее в пользу новой модели ресурсов. Инструкции по переносу существующих частных зон DNS в новую модель ресурсов см. в[руководстве по миграции для Azure DNS частных зон](private-dns-migration-guide.md).
 
-## <a name="next-steps"></a>Следующие шаги
+### <a name="does-azure-dns-private-zones-store-any-customer-content"></a>Хранит ли содержимое клиента в частных зонах Azure DNS?
+
+Нет, Azure DNS частные зоны не хранят содержимое клиента.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения об Azure Частная зона DNS](private-dns-overview.md)

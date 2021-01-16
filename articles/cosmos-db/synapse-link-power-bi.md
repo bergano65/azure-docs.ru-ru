@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: 8a3142199502b912f20ebe05c625aa40be9fab11
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f0111228b9b0030cbbceb9fc70d829a7a22fda01
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218677"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247018"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Использование Power BI и бессерверного пула SQL синапсе (Предварительная версия) для анализа данных Azure Cosmos DB с помощью ссылки синапсе 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "98218677"
 
 ## <a name="create-a-database-and-views"></a>Создание базы данных и представлений
 
-Создание представлений в базах данных master или по умолчанию не рекомендуется или не поддерживается. Поэтому необходимо запустить этот шаг, создав базу данных. В рабочей области синапсе перейдите на вкладку **Разработка** , щелкните **+** значок и выберите **скрипт SQL**.
+В рабочей области синапсе перейдите на вкладку **Разработка** , щелкните **+** значок и выберите **скрипт SQL**.
 
 :::image type="content" source="./media/synapse-link-power-bi/add-sql-script.png" alt-text="Добавление скрипта SQL в рабочую область синапсе Analytics":::
 
@@ -49,7 +49,7 @@ ms.locfileid: "98218677"
 
 :::image type="content" source="./media/synapse-link-power-bi/enable-sql-on-demand-endpoint.png" alt-text="Разрешить скрипту SQL использовать бессерверную конечную точку SQL в рабочей области":::
 
-Создайте новую базу данных с именем **ретаилкосмосдб** и представление SQL для контейнеров с включенной ссылкой синапсе. Следующая команда показывает, как создать базу данных.
+Создание представлений в базах данных **master** или **по умолчанию** не рекомендуется или не поддерживается. Создайте новую базу данных с именем **ретаилкосмосдб** и представление SQL для контейнеров с включенной ссылкой синапсе. Следующая команда показывает, как создать базу данных.
 
 ```sql
 -- Create database

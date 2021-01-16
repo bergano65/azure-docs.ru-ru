@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/28/2020
 ms.author: shhazam
-ms.openlocfilehash: d4686f1d7192d1469e52e653185f1fc9389764de
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 2d82aaadf158e45cb8faaeee0b9b4e0fc80a3420
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832324"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247341"
 ---
 # <a name="connect-your-data-from-defender-for-iot-to-azure-sentinel"></a>Подключение данных из защитника к Azure для Интернета вещей с помощью Sentinel 
 
@@ -65,5 +65,5 @@ SecurityAlert | where ProductName == "Azure Security Center for IoT"
 
 В этом документе вы узнали, как подключить защитник для Интернета вещей к Azure Sentinel. Дополнительные сведения об обнаружении угроз и доступе к данным безопасности см. в следующих статьях:
 
-- Узнайте, как использовать Sentinel Azure для [получения сведений о данных и потенциальных угроз](https://docs.microsoft.com/azure/sentinel/quickstart-get-visibility).
+- Узнайте, как использовать Sentinel Azure для [получения сведений о данных и потенциальных угроз](../sentinel/quickstart-get-visibility.md).
 - Узнайте, как [получить доступ к данным безопасности IOT](how-to-security-data-access.md)

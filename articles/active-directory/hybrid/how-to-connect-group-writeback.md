@@ -11,12 +11,12 @@ ms.date: 06/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2e24246c749978cd2bbb5b3d0821eea6d7dfb4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c506c87ad5901754175f18e6b50bc6ed46a3c19
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89660868"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246916"
 ---
 # <a name="azure-ad-connect-group-writeback"></a>Обратная запись группы Azure AD Connect
 
@@ -34,10 +34,10 @@ ms.locfileid: "89660868"
 
 1. Откройте мастер Azure AD Connect, выберите **Настройка** , а затем нажмите кнопку **Далее**.
 2. Выберите **настроить параметры синхронизации** , а затем нажмите кнопку **Далее**.
-3. На странице **Подключение к Azure AD** введите свои учетные данные. Щелкните **Далее**.
+3. На странице **Подключение к Azure AD** введите свои учетные данные. Нажмите кнопку **Далее**.
 4. На странице **Дополнительные компоненты** убедитесь, что настроенные ранее параметры по-прежнему выбраны.
 5. Выберите элемент **обратная запись группы** , а затем нажмите кнопку **Далее**.
-6. На **странице Обратная запись**выберите Active Directory подразделения (OU) для хранения объектов, которые синхронизируются из Microsoft 365 с локальной организацией, а затем нажмите кнопку **Далее**.
+6. На **странице Обратная запись** выберите Active Directory подразделения (OU) для хранения объектов, которые синхронизируются из Microsoft 365 с локальной организацией, а затем нажмите кнопку **Далее**.
 7. На странице **все готово** для настройки нажмите кнопку **настроить**.
 8. После завершения работы мастера нажмите кнопку **выход** на странице Настройка завершена.
 9. Откройте Windows PowerShell от имени администратора на Azure Active Directory Connect сервере и выполните следующие команды.
@@ -45,7 +45,13 @@ ms.locfileid: "89660868"
 ```Powershell
 $AzureADConnectSWritebackAccountDN =  <MSOL_ account DN>
 Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\AdSyncConfig.psm1"
+
+# To grant the <MSOL_account> permission to all domains in the forest:
 Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnectSWritebackAccountDN
+
+# To grant the <MSOL_account> permission to specific OU (eg. the OU chosen to writeback Office 365 Groups to):
+$GroupWritebackOU = <DN of OU where groups are to be written back to>
+Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnectSWritebackAccountDN -ADObjectDN $GroupWritebackOU
 ```
 
 Дополнительные сведения о настройке групп Microsoft 365 см. в разделе [Настройка групп Microsoft 365 с использованием гибридной локальной среды Exchange](/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect).
@@ -61,7 +67,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnect
 
    ![Флажок снят](media/how-to-connect-group-writeback/group2.png)
   
-3. Щелкните **Далее**.
+3. Нажмите кнопку **Далее**.
 4. Нажмите **Настроить**.
 
  >[!NOTE]
