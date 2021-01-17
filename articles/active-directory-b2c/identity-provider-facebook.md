@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 37fc33ae8084a2b4e99e7b5dc417eac70060eef5
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 02c3890a9aca03d9d79b55098297174401cab37d
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516192"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537962"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "97516192"
 
 ## <a name="create-a-facebook-application"></a>Создание приложения Facebook
 
-Чтобы использовать учетную запись Facebook в качестве [поставщика удостоверений](authorization-code-flow.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас нет учетной записи Facebook, вы можете зарегистрироваться здесь: [https://www.facebook.com/](https://www.facebook.com/).
+Чтобы включить вход для пользователей с учетной записью Facebook в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [панели мониторинга приложений Facebook](https://developers.facebook.com/). Дополнительные сведения см. в разделе [Разработка приложений](https://developers.facebook.com/docs/development). Если у вас нет учетной записи Facebook, вы можете зарегистрироваться здесь: [https://www.facebook.com/](https://www.facebook.com/).
 
 1. Выполните вход на [веб-сайт разработчиков Facebook](https://developers.facebook.com/) с учетными данными от учетной записи Facebook.
 1. Если вы этого еще не сделали, необходимо зарегистрироваться в качестве разработчика Facebook. Для этого щелкните **Get Started** (Начать работу) в правом верхнем углу страницы, примите политики Facebook и завершите регистрацию.
@@ -93,7 +93,7 @@ ms.locfileid: "97516192"
 ## <a name="add-facebook-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Facebook в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Facebook.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Facebook.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Facebook**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

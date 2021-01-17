@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b8be516051f8eed0649064ae0f7c29a4dde85675
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 8a0d69ea57eb5b8b2a074c37d4798a99c576ce95
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98224499"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538180"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-azure-ad-b2c-account-from-another-azure-ad-b2c-tenant"></a>Настройка регистрации и входа с учетной записью Azure AD B2C из другого клиента Azure AD B2C
 
@@ -43,7 +43,7 @@ ms.locfileid: "98224499"
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Чтобы использовать учетную запись Azure AD B2C в качестве [поставщика удостоверений](openid-connect.md) в клиенте Azure AD B2C (например, Contoso), в другом Azure AD B2C (например, Fabrikam):
+Чтобы включить вход для пользователей с учетной записью из другого клиента Azure AD B2C (например, Fabrikam), в Azure AD B2C (например, Contoso):
 
 1. Создайте пользовательский [поток](tutorial-create-user-flows.md)или [пользовательскую политику](custom-policy-get-started.md).
 1. Затем создайте приложение на Azure AD B2C, как описано в этом разделе. 
@@ -105,7 +105,7 @@ ms.locfileid: "98224499"
     - **Surname**: *family_name*;
     - **Электронная почта**: *Электронная почта*
 
-1. Выберите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -241,7 +241,7 @@ ms.locfileid: "98224499"
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 1. Щелкните поток пользователя, который требуется добавить Azure AD B2C поставщика удостоверений.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Fabrikam**.
-1. Выберите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 4/22/2018
 ms.author: xujing
-ms.openlocfilehash: 43784fe2bb94d5abd012f22ed530e4631a304614
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c13203c076378e1ff8f213971466eb5f63dfc4f4
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335992"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539173"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Преимущество гибридного использования Azure для Windows Server
 Благодаря преимуществам гибридного использования Azure для Windows Server, клиенты, участвующие в программе Software Assurance, могут использовать локальные лицензии Windows Server для запуска виртуальных машин Windows в Azure с меньшими затратами. С помощью Преимущества гибридного использования Azure также можно развертывать новые виртуальные машины с ОС Windows. В этой статье описывается, как выполнить развертывание новых виртуальных машин с помощью преимуществ гибридного использования Azure для Windows Server, а также как обновить существующие запущенные виртуальные машины. Дополнительные сведения о лицензировании преимуществ гибридного использования Azure для Windows Server и экономии денежных средств см. [на этой странице](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
@@ -42,10 +42,9 @@ ms.locfileid: "91335992"
 Все образы на основе Windows Server поддерживают Преимущество гибридного использования Azure для Windows Server. Вы можете использовать образы, предоставляемые платформой Azure, или передать собственные образы Windows Server. 
 
 ### <a name="portal"></a>Портал
-Чтобы создать виртуальную машину с помощью Преимущества гибридного использования Azure для Windows Server, воспользуйтесь переключателем в разделе "Сэкономьте деньги".
+Чтобы создать виртуальную машину с Преимущество гибридного использования Azure для Windows Server, перейдите в нижнюю часть вкладки " **основные** " в процессе создания и в разделе " **Лицензирование** " установите флажок, чтобы использовать существующую лицензию Windows Server. 
 
 ### <a name="powershell"></a>PowerShell
-
 
 ```powershell
 New-AzVm `
@@ -187,7 +186,7 @@ az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
 Сведения о дополнительных возможностях изменения масштабируемого набора см. в статье [Изменение масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше о [том, как сэкономить деньги с помощью преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 - Ознакомьтесь с [часто задаваемыми вопросами о Преимуществе гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/faq/).
 - См. дополнительные сведения о [программе "Преимущество гибридного использования Azure" для Windows Server](/windows-server/get-started/azure-hybrid-benefit).

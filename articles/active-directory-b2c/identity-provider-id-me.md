@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 6877a82d81b46ac2ffda8d0f0bf3fb0d7b337ff3
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c7d43a55878a07e424ce1b6f55782502c244239c
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97663692"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537945"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-idme-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с использованием учетной записи ID.me с помощью Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "97663692"
 
 ## <a name="create-an-idme-application"></a>Создание приложения ID.me
 
-Чтобы использовать учетную запись ID.me в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [ID.Me Developer Resources for API & SDK](https://developers.id.me/). Если у вас еще нет учетной записи разработчика ID.me, вы можете зарегистрироваться по адресу [https://developers.id.me/registration/new](https://developers.id.me/registration/new) .
+Чтобы включить вход для пользователей с учетной записью ID.me в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [ID.Me Developer Resources for API & SDK](https://developers.id.me/). Дополнительные сведения см. в статье [Интеграция OAuth](https://developers.id.me/documentation/oauth/overview/kyc). Если у вас еще нет учетной записи разработчика ID.me, вы можете зарегистрироваться по адресу [https://developers.id.me/registration/new](https://developers.id.me/registration/new) .
 
 1. Войдите в [ресурсы разработчика ID.Me для API & SDK](https://developers.id.me/) с учетной записью ID.Me.
 1. Выберите **Просмотреть мои приложения** и нажмите кнопку **продолжить**.

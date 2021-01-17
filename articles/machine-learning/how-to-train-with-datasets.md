@@ -1,7 +1,7 @@
 ---
-title: Обучение с помощью azureml-DataSets
+title: Обучение с помощью наборов данных машинного обучения
 titleSuffix: Azure Machine Learning
-description: Узнайте, как сделать свои данные доступными локальному или удаленному вычислению для обучения модели ML с помощью Машинное обучение Azure наборов данных.
+description: Узнайте, как сделать данные доступными для локального или удаленного вычислений для обучения модели с помощью Машинное обучение Azure наборов данных.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -12,15 +12,14 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 52b52c4c19b22fb1afd76d1e8dfa4163326c0244
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 2d6282c527293abdb8b21e0591548cb51e1339a9
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108596"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539666"
 ---
-# <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
-
+# <a name="train-models-with-azure-machine-learning-datasets"></a>Обучение моделей с помощью наборов данных Машинное обучение Azure 
 
 Из этой статьи вы узнаете, как работать с [машинное обучение Azureными наборами данных](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) для обучения моделей машинного обучения.  Наборы данных можно использовать в локальном или удаленном целевом объекте вычислений, не беспокоясь о строках подключения или путях к данным. 
 
@@ -28,7 +27,7 @@ ms.locfileid: "98108596"
 
 Если вы не готовы сделать данные доступными для обучения модели, но хотите загрузить данные в записную книжку для просмотра данных, см. статью [изучение данных в наборе](how-to-create-register-datasets.md#explore-data)данных. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -41,7 +40,7 @@ ms.locfileid: "98108596"
 > [!Note]
 > Некоторые классы наборов данных имеют зависимости от пакета [azureml-](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) DataMarket. Для пользователей Linux эти классы поддерживаются только в следующих дистрибутивах: Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
-## <a name="use-datasets-directly-in-training-scripts"></a>Использование наборов данных непосредственно в сценариях обучения
+## <a name="consume-datasets-in-machine-learning-training-scripts"></a>Использование наборов данных в сценариях обучения машинного обучения
 
 Если структурированные данные еще не зарегистрированы в качестве набора данных, создайте Табулардатасет и используйте их непосредственно в обучающем скрипте для локального или удаленного эксперимента.
 
@@ -90,6 +89,7 @@ df = dataset.to_pandas_dataframe()
 ```
 
 ### <a name="configure-the-training-run"></a>Настройка обучающего запуска
+
 Объект [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrun?preserve-view=true&view=azure-ml-py) используется для настройки и отправки обучающего запуска.
 
 Этот код создает объект Скриптрунконфиг, `src` который указывает
@@ -141,6 +141,7 @@ mnist_ds = Dataset.File.from_files(path = web_paths)
 ```
 
 ### <a name="configure-the-training-run"></a>Настройка обучающего запуска
+
 Рекомендуется передавать набор данных в качестве аргумента при подключении через `arguments` параметр `ScriptRunConfig` конструктора. Это позволит получить путь к данным (точка подключения) в скрипте обучения с помощью аргументов. Таким образом вы сможете использовать один и тот же сценарий обучения для локальной отладки и удаленного обучения на любой облачной платформе.
 
 В следующем примере создается объект Скриптрунконфиг, который передается в Филедатасет с помощью `arguments` . После отправки выполнения файлы данных, на которые ссылается набор данных, `mnist_ds` будут подключены к целевому объекту вычислений.
@@ -160,7 +161,7 @@ run = experiment.submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
-### <a name="retrieve-the-data-in-your-training-script"></a>Получение данных в скрипте обучения
+### <a name="retrieve-data-in-your-training-script"></a>Получение данных в обучающем скрипте
 
 В следующем коде показано, как получить данные в скрипте.
 
@@ -222,10 +223,9 @@ print(os.listdir(mounted_path))
 print (mounted_path)
 ```
 
+## <a name="get-datasets-in-machine-learning-scripts"></a>Получение наборов данных в скриптах машинного обучения
 
-## <a name="directly-access-datasets-in-your-script"></a>Прямой доступ к наборам данных в скрипте
-
-Зарегистрированные наборы данных доступны как локально, так и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Чтобы получить доступ к зарегистрированному набору данных во всех экспериментах, используйте следующий код для доступа к рабочей области и зарегистрированному набору данных по имени. По умолчанию [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) метод в `Dataset` классе возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
+Зарегистрированные наборы данных доступны как локально, так и удаленно в таких кластерах, как Машинное обучение Azure вычислений. Чтобы получить доступ к зарегистрированному набору данных во время экспериментов, используйте следующий код для доступа к рабочей области и получения набора данных, который использовался в ранее отправленном запуске. По умолчанию [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) метод в `Dataset` классе возвращает последнюю версию набора данных, зарегистрированную в рабочей области.
 
 ```Python
 %%writefile $script_folder/train.py
@@ -244,7 +244,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="accessing-source-code-during-training"></a>Доступ к исходному коду во время обучения
+## <a name="access-source-code-during-training"></a>Доступ к исходному коду во время обучения
 
 Хранилище BLOB-объектов Azure имеет более высокую пропускную способность, чем общая папка Azure, и может масштабироваться до большого числа параллельно запущенных заданий. По этой причине рекомендуется настроить запуски для использования хранилища BLOB-объектов для передачи файлов исходного кода.
 

@@ -1,5 +1,5 @@
 ---
-title: Создание Машинное обучение Azure наборов данных для доступа к данным
+title: Создание наборов данных Машинного обучения Azure
 titleSuffix: Azure Machine Learning
 description: Узнайте, как создать Машинное обучение Azure наборы данных для доступа к данным для запуска экспериментов машинного обучения.
 services: machine-learning
@@ -12,16 +12,14 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: fa6cdeaa47c7fdf9e90cdab96397473d8498afa0
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 8dac15f359d8ab6c7a84bbc30dba392322e84bb5
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108710"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538193"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинного обучения Azure
-
-
 
 Из этой статьи вы узнаете, как создавать наборы данных Машинное обучение Azure для доступа к данным для локальных и удаленных экспериментов с помощью пакета SDK для Машинное обучение Azure Python. Чтобы узнать, где находятся наборы данных в общем рабочем процессе доступа к данным Машинное обучение Azure, ознакомьтесь со статьей [безопасный доступ к](concept-data.md#data-workflow) данным.
 
@@ -37,7 +35,7 @@ ms.locfileid: "98108710"
 
 * Совместное использование данных и совместная работа с другими пользователями.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для создания наборов данных и работы с ними требуется:
 
@@ -127,6 +125,7 @@ mnist_ds = Dataset.File.from_files(path=web_paths)
 > Отправьте файлы из локального каталога и создайте Филедатасет в одном методе с помощью общедоступного метода предварительной версии [upload_directory ()](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?preserve-view=true&view=azure-ml-py#upload-directory-src-dir--target--pattern-none--overwrite-false--show-progress-true-). Этот метод является [экспериментальной](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) функцией предварительной версии и может измениться в любое время. 
 > 
 >  Этот метод передает данные в базовое хранилище, что приводит к затратам на хранение. 
+
 ### <a name="create-a-tabulardataset"></a>Создание Табулардатасет
 
 Используйте [`from_delimited_files()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory) метод `TabularDatasetFactory` класса для чтения файлов в формате CSV или TSV и для создания незарегистрированного табулардатасет. Если выполняется чтение из нескольких файлов, результаты будут объединены в одно табличное представление. 
@@ -173,10 +172,9 @@ titanic_ds.take(3).to_pandas_dataframe()
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
 1|2|True|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|True|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+2|3|Да|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
 Чтобы повторно использовать наборы данных и обмениваться ими между экспериментами в рабочей области, [зарегистрируйте свой DataSet](#register-datasets).
-
 
 ## <a name="explore-data"></a>Анализ данных
 
@@ -208,7 +206,7 @@ titanic_ds.take(3).to_pandas_dataframe()
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|False|3|Браунд, Mr. О'мэлли Owen Харрис|Мужской|22,0|1|0|A/5 21171|7,2500||S
 1|2|True|1|Кумингс, Mrs. Джон Кирилл (Флоренция Бриггс TH...|Женский|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|True|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
+2|3|Да|3|Хеиккинен, промах. лаина|Женский|26,0|0|0|СТОН/O2. 3101282|7,9250||S
 
 ## <a name="create-a-dataset-from-pandas-dataframe"></a>Создание набора данных на основе Pandas
 

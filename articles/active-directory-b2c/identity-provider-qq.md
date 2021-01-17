@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b497176deff896e785387f4b64a8e66ff4d6d58e
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 5b7c6a229cfee5b543d1169b30be336cc97ba7ed
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654325"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538093"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
 
@@ -31,7 +31,7 @@ ms.locfileid: "97654325"
 
 ## <a name="create-a-qq-application"></a>Создание приложения QQ
 
-Чтобы использовать учетную запись QQ в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи QQ, вы можете зарегистрироваться по адресу [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033) .
+Чтобы включить вход для пользователей с учетной записью QQ в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [портале разработчика QQ](http://open.qq.com). Если у вас еще нет учетной записи QQ, вы можете зарегистрироваться по адресу [https://ssl.zc.qq.com](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033) .
 
 ### <a name="register-for-the-qq-developer-program"></a>Регистрация в программе разработчиков QQ
 
@@ -189,7 +189,7 @@ ms.locfileid: "97654325"
 ## <a name="add-qq-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений QQ в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений QQ.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений QQ.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **QQ**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

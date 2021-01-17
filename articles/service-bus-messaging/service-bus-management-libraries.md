@@ -5,24 +5,30 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/13/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 97d89db17af9cde3afadee430b3d0c2a434e12c9
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 57192ab2ee1624cb18de832ac91c95290da727df
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210143"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539868"
 ---
 # <a name="dynamically-provision-service-bus-namespaces-and-entities"></a>Динамическая инициализация пространств имен и сущностей служебной шины 
 Библиотеки управления служебной шины Azure могут динамически подготавливать пространства имен и сущности служебной шины. Это дает возможность реализовывать сложные развертывания и сценарии обмена сообщениями и позволяет программно определять, какие сущности следует подготовить. В настоящее время эти библиотеки доступны для .NET.
 
-## <a name="supported-functionality"></a>Поддерживаемые функции
+## <a name="overview"></a>Обзор
+Для создания сущностей служебной шины и управления ими доступны три библиотеки управления. К ним относятся:
 
-* Создание, обновление, удаление пространства имен.
-* Создание, обновление, удаление очереди.
-* Создание, обновление, удаление раздела.
-* Создание, обновление, удаление подписки.
+- [Azure. Messaging. ServiceBus. Administration](#azuremessagingservicebusadministration)
+- [Microsoft. Azure. ServiceBus. Management](#microsoftazureservicebusmanagement)
+- [Microsoft.Azure.Management.ServiceBus.](#microsoftazuremanagementservicebus)
 
-## <a name="azuremessagingservicebusadministration-recommended"></a>Azure. Messaging. ServiceBus. Administration (рекомендуется)
+Все эти пакеты поддерживают операции создания, получения, перечисления, удаления, обновления, удаления и обновления **очередей, разделов и подписок**. Но только [Microsoft. Azure. Management. servicebus](#microsoftazuremanagementservicebus) поддерживает операции создания, обновления, перечисления, получения и удаления для **пространств имен**, перечисление и повторное создание ключей SAS и многое другое. 
+
+Библиотека Microsoft. Azure. Management. ServiceBus работает только с проверкой подлинности Azure Active Directory (Azure AD) и не поддерживает использование строки подключения. В то время как другие две библиотеки (Azure. Messaging. ServiceBus и Microsoft. Azure. ServiceBus) поддерживают использование строки подключения для проверки подлинности в службе и проще в использовании. Между этими библиотеками Azure. Messaging. ServiceBus является последней и мы рекомендуем использовать.
+
+В следующих разделах содержатся дополнительные сведения об этих библиотеках. 
+
+## <a name="azuremessagingservicebusadministration"></a>Azure. Messaging. ServiceBus. Administration
 Класс [сервицебусадминистратионклиент](/dotnet/api/azure.messaging.servicebus.administration.servicebusadministrationclient) можно использовать в пространстве имен [Azure. Messaging. servicebus. admin](/dotnet/api/azure.messaging.servicebus.administration) для управления пространствами имен, очередями, разделами и подписками. Ниже приведен пример кода. Полный пример см. в разделе [Пример CRUD](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/tests/Samples/Sample07_CrudOperations.cs).
 
 ```csharp
@@ -89,7 +95,7 @@ namespace adminClientTrack2
 Класс [манажементклиент](/dotnet/api/microsoft.azure.servicebus.management.managementclient) в пространстве имен [Microsoft. Azure. servicebus. Management](/dotnet/api/microsoft.azure.servicebus.management) можно использовать для управления пространствами имен, очередями, разделами и подписками. Вот пример кода: 
 
 > [!NOTE]
-> Рекомендуется использовать `ServiceBusAdministrationClient` класс из `Azure.Messaging.ServiceBus.Administration` библиотеки, которая является последним пакетом SDK. Дополнительные сведения см. в [первом разделе](#azuremessagingservicebusadministration-recommended). 
+> Рекомендуется использовать `ServiceBusAdministrationClient` класс из `Azure.Messaging.ServiceBus.Administration` библиотеки, которая является последним пакетом SDK. Дополнительные сведения см. в [первом разделе](#azuremessagingservicebusadministration). 
 
 ```csharp
 using System;
@@ -156,7 +162,7 @@ namespace SBusManagementClient
 
 * [Используйте портал Azure, чтобы создать Active Directory приложения и субъекта-службы, которые могут получать доступ к ресурсам.](../active-directory/develop/howto-create-service-principal-portal.md)
 * [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
-* [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)
+* [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/cli/azure/create-an-azure-service-principal-azure-cli)
 
 В этих руководствах вы получите `AppId` (идентификатор клиента), `TenantId` и `ClientSecret` (ключ аутентификации), которые используются библиотеками управления для аутентификации. Необходимо иметь по крайней мере разрешения владельца данных или [**участника**](../role-based-access-control/built-in-roles.md#contributor) [**служебной шины Azure**](../role-based-access-control/built-in-roles.md#azure-service-bus-data-owner) для группы ресурсов, которую вы хотите запустить.
 

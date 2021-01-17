@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: c8b942e66a76bcc3a095f9bd3d40b44bf4217e50
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 286f4f5ca8a18a67da2ac24beb4c6935de35778d
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584890"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538118"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C
 
@@ -30,14 +30,14 @@ ms.locfileid: "97584890"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 
 ## <a name="create-a-google-application"></a>Создание приложения Google
 
-Чтобы использовать учетную запись Google в качестве [поставщика удостоверений](authorization-code-flow.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в консоли Google Developers. Если у вас еще нет учетной записи Google, вы можете зарегистрироваться по адресу [https://accounts.google.com/SignUp](https://accounts.google.com/SignUp) .
+Чтобы включить вход для пользователей с учетной записью Google в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [консоли Google Developers](https://console.developers.google.com/). Дополнительные сведения см. в разделе [Настройка OAuth 2,0](https://support.google.com/googleapi/answer/6158849). Если у вас еще нет учетной записи Google, вы можете зарегистрироваться по адресу [https://accounts.google.com/SignUp](https://accounts.google.com/SignUp) .
 
 1. Выполните вход в [консоль разработчиков Google](https://console.developers.google.com/) с учетными данными для учетной записи Google.
 1. В левом верхнем углу страницы выберите список проект, а затем выберите **Новый проект**.
@@ -62,7 +62,7 @@ ms.locfileid: "97584890"
 1. Введите **Имя**. Например, *Google*.
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения Google, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ::: zone-end
 
@@ -189,9 +189,9 @@ ms.locfileid: "97584890"
 ## <a name="add-google-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Google в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать в качестве поставщика удостоверений Google.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Google.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Google**.
-1. Нажмите **Сохранить**.
+1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
 1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
 1. Щелкните **выполнить поток пользователя**

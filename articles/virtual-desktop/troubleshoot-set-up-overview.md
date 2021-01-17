@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d051594572f742b290867d12e0fb148f2abbf370
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 4d4bdc4fa15f634b36f12a650b70b9ffd89b40e0
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621320"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539105"
 ---
 # <a name="troubleshooting-overview-feedback-and-support-for-windows-virtual-desktop"></a>Обзор устранения неполадок, обратная связь и поддержка виртуальных рабочих столов Windows
 
@@ -53,6 +53,7 @@ ms.locfileid: "96621320"
 
 - Сведения об устранении неполадок при создании пула узлов в среде виртуальных рабочих столов Windows см. в разделе [Создание пула узлов](troubleshoot-set-up-issues.md).
 - Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
+- Сведения об устранении неполадок, связанных с агентом виртуальных рабочих столов Windows или подключением к сеансу, см. в статье [Устранение распространенных неполадок агента виртуальных рабочих столов Windows](troubleshoot-agent.md).
 - Сведения об устранении неполадок подключения клиентов к виртуальным рабочим столам Windows см. в статье [подключения к службе виртуальных рабочих столов Windows](troubleshoot-service-connection.md).
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](troubleshoot-client.md)
 - Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell.md).

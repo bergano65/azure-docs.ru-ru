@@ -8,25 +8,13 @@ ms.topic: include
 ms.date: 04/02/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: de0cf260207747f4acb02a377819a13de8b8ba22
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e207866b61d21334bc9923d0d784b900906b0045
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002530"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539715"
 ---
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
-
-## <a name="regional-availability"></a>Доступность по регионам
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-regions](virtual-machines-disks-incremental-snapshots-regions.md)]
-
-### <a name="restrictions"></a>Ограничения
-
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-restrictions](virtual-machines-disks-incremental-snapshots-restrictions.md)]
-
-## <a name="portal"></a>Портал
-
-
 1. Войдите в [портал Azure](https://portal.azure.com/) и перейдите к диску, который вы хотите создать моментальный снимок.
 1. На диске выберите **создать моментальный снимок** .
 
@@ -40,7 +28,3 @@ ms.locfileid: "96002530"
 1. Выберите **Создать**.
 
     :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-incremental-snapshot-validation.png" alt-text="Снимок экрана. Страница проверки для моментального снимка, Подтвердите выборы и Создайте моментальный снимок.":::
-
-## <a name="next-steps"></a>Следующие шаги
-
-Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).

@@ -5,13 +5,13 @@ author: mksuni
 ms.author: sumuth
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.openlocfilehash: b0f0ee9477a84dc198ea3fb48b2ed81be10ea9c5
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/18/2021
+ms.openlocfilehash: ac7019abab1aefaee95c155e34fbc0cb551b4d94
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251885"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538419"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
 
@@ -19,6 +19,9 @@ ms.locfileid: "98251885"
 
 >[!NOTE]
 > Основываясь на отзывах клиентов, мы расширили нерекомендуемую поддержку корневого сертификата для нашего существующего корневого ЦС Baltimore из октября 26th, 2020 до 15 февраля 2021. Мы надеемся, что это расширение позволяет нашим пользователям достаточно времени для реализации изменений клиентов, если они затронуты.
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин « _Ведомый_» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 ## <a name="what-update-is-going-to-happen"></a>Какое обновление будет выполнено?
 
@@ -69,7 +72,7 @@ ms.locfileid: "98251885"
 
   - Для пользователей .NET (MariaDB Connector/NET, Мариадбконнектор) убедитесь, что в хранилище сертификатов Windows существуют и другие доверенные корневые центры сертификации ( **BaltimoreCyberTrustRoot** и **DigiCertGlobalRootG2** ). Если какие либо сертификаты не существуют, импортируйте недостающий сертификат.
 
-    ![Сертификат .NET для базы данных Azure для MariaDB](media/overview/netconnecter-cert.png)
+    [![Сертификат .NET для базы данных Azure для MariaDB](media/overview/netconnecter-cert.png)](media/overview/netconnecter-cert.png#lightbox)
 
   - Для пользователей .NET в Linux, использующих SSL_CERT_DIR, убедитесь, что **BaltimoreCyberTrustRoot** и **DigiCertGlobalRootG2** существуют в каталоге, указанном SSL_CERT_DIR. Если какие либо сертификаты не существуют, создайте недостающий файл сертификата.
 
@@ -80,10 +83,10 @@ ms.locfileid: "98251885"
    (Root CA1: BaltimoreCyberTrustRoot.crt.pem)
    -----END CERTIFICATE-----
    -----BEGIN CERTIFICATE-----
-    (Root CA2: DigiCertGlobalRootG2.crt.pem)
+   (Root CA2: DigiCertGlobalRootG2.crt.pem)
    -----END CERTIFICATE-----
    ```
-   
+
 - Замените исходный файл PEM корневого центра сертификации на объединенный файл корневого ЦС и перезапустите приложение или клиент.
 - В будущем после развертывания нового сертификата на стороне сервера можно изменить PEM-файл CA на DigiCertGlobalRootG2. CRT. PEM.
 
@@ -150,11 +153,7 @@ ms.locfileid: "98251885"
 
 ### <a name="12-if-im-using-data-in-replication-do-i-need-to-perform-any-action"></a>12. Если я использую репликацию данных, нужно ли выполнять какие-либо действия?
 
-> [!NOTE]
-> Эта статья содержит ссылки на термин « _Ведомый_» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
->
-
-*   Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр.
+- Если репликация данных выполняется из виртуальной машины (локальной или виртуальной машины Azure) в базу данных Azure для MySQL, необходимо проверить, используется ли SSL для создания реплики. Выполните команду **ОТОБРАЗИТЬ состояние Slave** и проверьте следующий параметр.
 
     ```azurecli-interactive
     Master_SSL_Allowed            : Yes
@@ -177,6 +176,7 @@ ms.locfileid: "98251885"
   Master_SSL_Cipher             :
   Master_SSL_Key                : ~\azure_mysqlclient_key.pem
   ```
+
   Если вы видите сертификат для CA_file, SSL_Cert и SSL_Key, необходимо будет обновить файл, добавив [новый сертификат](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem).
 
 - Если репликация данных выполняется между двумя базами данных Azure для MySQL, необходимо сбросить реплику, выполнив команду **CALL MySQL.az_replication_change_master** и указав новый двойной корневой сертификат в качестве последнего параметра [master_ssl_ca](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication).

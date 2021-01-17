@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 3d8107e980b9cad9bc55cb51cc78b63985986ba5
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 3370215e9a69e62596f214ba4330fc4914a2837f
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97696231"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539686"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Регистрация и сканирование клиента Power BI (Предварительная версия)
 
@@ -55,7 +55,7 @@ ms.locfileid: "97696231"
     > [!Important]
     > Для просмотра страницы параметры клиента необходимо быть администратором Power BI.
 
-1. Выберите **Параметры разработчика**  >  **Разрешить субъектам-службам использовать доступ только для чтения Power BI API администратора (Предварительная версия)**.
+1. Выберите **Параметры API администратора**  >  **Разрешить субъектам-службам использовать интерфейсы API администратора Power BI только для чтения (Предварительная версия)**.
 1. Выберите **определенные группы безопасности**.
 
     :::image type="content" source="./media/setup-power-bi-scan-PowerShell/allow-service-principals-power-bi-admin.png" alt-text="Изображение, показывающее, как разрешить субъектам-службам получать разрешения API администратора Power BI только для чтения":::

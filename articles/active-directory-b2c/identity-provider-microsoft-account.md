@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 123b36ba854bec8b363d59bbed5e70f18da1e578
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d9cba08e5b6650edc0decd3ff9df4060e9ad815c
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653713"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537998"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "97653713"
 
 ## <a name="create-a-microsoft-account-application"></a>Создание приложения для учетной записи Майкрософт
 
-Чтобы использовать учетную запись Microsoft в качестве [поставщика удостоверений](openid-connect.md) для Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C. Если у вас нет учетной записи Microsoft, вы можете получить ее по адресу [https://www.live.com/](https://www.live.com/).
+Чтобы включить вход для пользователей с учетная запись Майкрософт в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в статье регистрация приложения на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app). Если у вас нет учетной записи Microsoft, вы можете получить ее по адресу [https://www.live.com/](https://www.live.com/).
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог с клиентом Azure AD, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом Azure AD.
@@ -210,7 +210,7 @@ ms.locfileid: "97653713"
 ## <a name="add-microsoft-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Майкрософт в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Майкрософт.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Майкрософт.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **учетная запись Майкрософт**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

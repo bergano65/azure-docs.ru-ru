@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: e3a665e3615c9ff3a68cf13eeaef5e8f41632f6a
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 55042c8d1e612598cc5728668c9e87b054fb3afa
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900366"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537841"
 ---
 # <a name="test-through-simulations"></a>Тестирование через моделирования
 
@@ -42,9 +42,9 @@ ms.locfileid: "97900366"
     |---------      |---------                                          |
     |Целевой IP-адрес           | Введите один из общедоступных IP-адресов, который вы хотите протестировать.                     |
     |Номер порта   | Введите _443_.                       |
-    |Профиль от атак DDoS | Возможны следующие значения: **переполнение DNS**, **NTPv2 Flood**, **SSDP**-перегрузку **TCP SYN**, переполнение **UDP 64b**, **UDP 128B Flood**, **UDP 256B** Flood, **UDP 512B переполнение**, **UDP 1024B Flood**, **UDP 1514B переполнение**, UDP- **memcached**- **фрагментация** UDP.|
-    |Размер теста       | Возможные значения: **100 000, 50 Мбит/с и 4 исходных IP**-адресов, **200 000 деятелей PPS, 100 Мбит/с и 8 исходных** IP-адресов, **400 тыс. PPS, 200 Мбит/и 16 исходных** IP-адресов, **800K PPS, 400 Мбит/с и IP-адресов источника 32**.                                  |
-    |Длительность теста | Возможные значения: **10 минут**, **15 минут**, **20 минут**, **25 минут**, **30 минут**.|
+    |Профиль от атак DDoS | Возможные значения: `DNS Flood` , `NTPv2 Flood` , `SSDP Flood` , `TCP SYN Flood` , `UDP 64B Flood` , `UDP 128B Flood` , `UDP 256B Flood` , `UDP 512B Flood` , `UDP 1024B Flood` , `UDP 1514B Flood` , `UDP Fragmentation` , `UDP Memcached` .|
+    |Размер теста       | Возможные значения: `100K pps, 50 Mbps and 4 source IPs` , `200K pps, 100 Mbps and 8 source IPs` , `400K pps, 200Mbps and 16 source IPs` , `800K pps, 400 Mbps and 32 source IPs` .                                  |
+    |Длительность теста | Возможные значения: `10 Minutes` , `15 Minutes` , `20 Minutes` , `25 Minutes` , `30 Minutes` .|
 
 Теперь он должен выглядеть следующим образом:
 

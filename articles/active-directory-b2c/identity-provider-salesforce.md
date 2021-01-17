@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/05/2021
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 129809a83bcebdcf80b05a7300dd9acf862e5886
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 92c5850c3e8c6db63bb5f6287078d2b0345a051c
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900405"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538042"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с помощью учетной записи SalesForce с помощью Azure Active Directory B2C
 
@@ -37,7 +37,7 @@ ms.locfileid: "97900405"
 
 ## <a name="create-a-salesforce-application"></a>Создание приложения Salesforce
 
-Чтобы использовать учетную запись Salesforce в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в **диспетчере приложений** Salesforce. Дополнительные сведения см. в статьях [Настройка основных параметров подключенного приложения](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm)и [Включение параметров OAuth для интеграции API](https://help.salesforce.com/articleView?id=connected_app_create_api_integration.htm) .
+Чтобы включить вход для пользователей с учетной записью Salesforce в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [диспетчере приложений](https://login.salesforce.com/)Salesforce. Дополнительные сведения см. в статьях [Настройка основных параметров подключенного приложения](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm)и [Включение параметров OAuth для интеграции API](https://help.salesforce.com/articleView?id=connected_app_create_api_integration.htm) .
 
 1. [Войдите в Salesforce](https://login.salesforce.com/).
 1. В меню выберите пункт **Настройка**.
@@ -210,7 +210,7 @@ ms.locfileid: "97900405"
 ## <a name="add-salesforce-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Salesforce в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать в качестве поставщика удостоверений Salesforce.
+1. Щелкните поток пользователя, который требуется добавить в поставщик удостоверений Salesforce.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Salesforce**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

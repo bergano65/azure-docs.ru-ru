@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.custom: project-no-code
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 48887df0ce6228fa436cb91bfb0a3ee7aa0f6c08
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 79fcbb6d2bf10da566139b0d103a4f31930f3200
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654512"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537985"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Amazon через Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "97654512"
 
 ## <a name="create-an-app-in-the-amazon-developer-console"></a>Создание приложения в консоли разработчика Amazon
 
-Чтобы использовать учетную запись Amazon в качестве федеративного поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [службах и технологиях Amazon Developer](https://developer.amazon.com). Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться по адресу [https://www.amazon.com/](https://www.amazon.com/) .
+Чтобы включить вход для пользователей с учетной записью Amazon в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [службах и технологиях Amazon Developer](https://developer.amazon.com). Дополнительные сведения см. в разделе [Регистрация для входа с помощью Amazon](https://developer.amazon.com/docs/login-with-amazon/register-web.html). Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться по адресу [https://www.amazon.com/](https://www.amazon.com/) .
 
 > [!NOTE]  
 > Используйте следующие URL-адреса на **шаге 8** ниже, заменив `your-tenant-name` именем своего клиента. При вводе имени клиента используйте все строчные буквы, даже если клиент определен с прописными буквами в Azure AD B2C.
@@ -181,7 +181,7 @@ ms.locfileid: "97654512"
 ## <a name="add-amazon-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Amazon в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Amazon.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Amazon.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Amazon**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

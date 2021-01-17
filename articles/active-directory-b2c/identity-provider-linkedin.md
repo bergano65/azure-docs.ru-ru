@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: bde7c1adefea88ed5b5d86e2c0e17f475be1bc71
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: e2c576c97d170726f5ec1b06e5a6d0d859a85e64
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654376"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538104"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "97654376"
 
 ## <a name="create-a-linkedin-application"></a>Создание приложения LinkedIn
 
-Чтобы использовать учетную запись LinkedIn в качестве [поставщика удостоверений](authorization-code-flow.md) в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи LinkedIn, вы можете зарегистрироваться по адресу [https://www.linkedin.com/](https://www.linkedin.com/) .
+Чтобы включить вход для пользователей с учетной записью LinkedIn в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [веб-сайте LinkedIn Developers](https://www.developer.linkedin.com/). Дополнительные сведения см. в разделе [поток кода авторизации](https://docs.microsoft.com/linkedin/shared/authentication/authorization-code-flow). Если у вас еще нет учетной записи LinkedIn, вы можете зарегистрироваться по адресу [https://www.linkedin.com/](https://www.linkedin.com/) .
 
 1. Выполните вход на [сайт разработчиков LinkedIn](https://www.developer.linkedin.com/) с учетными данными для учетной записи LinkedIn.
 1. Выберите **Мои приложения**, а затем щелкните **создать приложение**.
@@ -232,7 +232,7 @@ ms.locfileid: "97654376"
 ## <a name="add-linkedin-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений LinkedIn в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать в качестве поставщика удостоверений LinkedIn.
+1. Щелкните поток пользователя, который необходимо добавить в качестве поставщика удостоверений LinkedIn.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **LinkedIn**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

@@ -5,13 +5,13 @@ author: savjani
 ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
-ms.date: 01/15/2021
-ms.openlocfilehash: 5ebae41e68633eb10959c56011dd71952f9564bd
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/18/2021
+ms.openlocfilehash: 67e4da13d6954342b9979eb57a35c812cb63bb3e
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250423"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539999"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Настройка Репликация входных данных в базе данных Azure для MariaDB
 
@@ -23,6 +23,9 @@ ms.locfileid: "98250423"
 
 > [!NOTE]
 > Если на исходном сервере используется версия 10,2 или более поздняя, рекомендуется настроить Репликация входных данных с помощью [идентификатора глобальной транзакции](https://mariadb.com/kb/en/library/gtid/).
+
+> [!NOTE]
+> Эта статья содержит ссылки на термин « _Ведомый_» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 ## <a name="create-a-mariadb-server-to-use-as-a-replica"></a>Создание сервера MariaDB для использования в качестве реплики
 
@@ -40,10 +43,6 @@ ms.locfileid: "98250423"
 3. Добавьте IP-адрес исходного сервера в правила брандмауэра для реплики. 
 
    Измените правила брандмауэра на [портале Azure](howto-manage-firewall-portal.md) или с помощью [Azure CLI](howto-manage-firewall-cli.md).
-
-> [!NOTE]
-> Эта статья содержит ссылки на термин « _Ведомый_» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
->
 
 ## <a name="configure-the-source-server"></a>Настройка исходного сервера
 
@@ -95,7 +94,7 @@ ms.locfileid: "98250423"
 
 3. Включите ведение журнала в двоичном формате.
 
-    Чтобы узнать, включено ли ведение журнала на базе главного сервера, введите следующую команду:
+    Чтобы узнать, включено ли ведение журнала на уровне источника, введите следующую команду:
 
    ```sql
    SHOW VARIABLES LIKE 'log_bin';

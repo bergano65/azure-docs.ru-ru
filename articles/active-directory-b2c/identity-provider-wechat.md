@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: af840a7becb0fb2c23e01153828458ee1cfa51a1
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1dd9af3abd723b3a7adad82f3bbb4a09fc4464f7
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654240"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538017"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-wechat-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью WeChat в Azure Active Directory B2C
 
@@ -33,7 +33,7 @@ ms.locfileid: "97654240"
 
 ## <a name="create-a-wechat-application"></a>Создание приложения WeChat
 
-Чтобы использовать учетную запись WeChat в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи WeChat, вы можете получить информацию по адресу [https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html](https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html) .
+Чтобы включить вход для пользователей с учетной записью WeChat в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [центре управления WeChat](https://open.weixin.qq.com/). Если у вас еще нет учетной записи WeChat, вы можете получить информацию по адресу [https://kf.qq.com](https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html) .
 
 ### <a name="register-a-wechat-application"></a>Регистрация приложения WeChat
 
@@ -183,7 +183,7 @@ ms.locfileid: "97654240"
 ## <a name="add-wechat-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений WeChat в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений WeChat.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений WeChat.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **WeChat**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

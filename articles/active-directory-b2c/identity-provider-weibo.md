@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 24e267b66d11cb3c5ca2b70ed09b7acb3653da99
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 36b7618fbacc18ec506f12eabc642246d3148ce0
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653611"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537923"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Weibo через Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ ms.locfileid: "97653611"
 
 ## <a name="create-a-weibo-application"></a>Создание приложения Weibo
 
-Чтобы использовать учетную запись Weibo в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи Weibo, вы можете зарегистрироваться по адресу [https://weibo.com/signup/signup.php?lang=en-us](https://weibo.com/signup/signup.php?lang=en-us) .
+Чтобы включить вход для пользователей с учетной записью Weibo в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [портале разработчика Weibo](https://open.weibo.com/). Если у вас еще нет учетной записи Weibo, вы можете зарегистрироваться по адресу [https://weibo.com](https://weibo.com/signup/signup.php?lang=en-us) .
 
 1. Выполните вход на [портал разработчиков Weibo](https://open.weibo.com/) с учетными данными от учетной записи Weibo.
 1. После входа щелкните отображаемое имя в правом верхнем углу.
@@ -263,7 +263,7 @@ ms.locfileid: "97653611"
 ## <a name="add-weibo-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Weibo в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Weibo.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Weibo.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **Weibo**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.

@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 05c4d36f266fb526a1d0232cc32f0408e4322c80
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 2b640730bac410136ef8fdd4ea8e0261f68a3284
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654393"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538134"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Настройка входа для определенной организации Azure Active Directory в Azure Active Directory B2C
 
@@ -38,7 +38,7 @@ ms.locfileid: "97654393"
 
 ## <a name="register-an-azure-ad-app"></a>Регистрация приложения Azure AD
 
-Чтобы включить вход для пользователей из определенной организации Azure AD, вам необходимо зарегистрировать приложение в клиенте организации Azure AD.
+Чтобы включить вход для пользователей с учетной записью Azure AD из определенной организации Azure AD, в Azure Active Directory B2C (Azure AD B2C) необходимо создать приложение в [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в статье регистрация приложения на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD Организации (например, contoso.com). Выберите **Фильтр каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий ваш клиент Azure AD.
@@ -183,7 +183,7 @@ ms.locfileid: "97654393"
 1. Обновите значение **DisplayName**. Это значение будет отображаться на кнопке входа на экране входа в систему.
 1. Обновите значение **Description**.
 1. Azure AD использует протокол OpenID Connect, поэтому для параметра **Protocol** должно быть задано значение `OpenIdConnect`.
-1. Задайте для параметра **METADATA** значение `https://login.microsoftonline.com/tenant-name.onmicrosoft.com/v2.0/.well-known/openid-configuration`, где `tenant-name` — это имя клиента Azure AD. Например `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`.
+1. Задайте для параметра **METADATA** значение `https://login.microsoftonline.com/tenant-name.onmicrosoft.com/v2.0/.well-known/openid-configuration`, где `tenant-name` — это имя клиента Azure AD. Например: `https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0/.well-known/openid-configuration`
 1. Задайте для параметра **client_id** значение идентификатора приложения из регистрации приложения.
 1. В разделе **криптографиккэйс** измените значение **идентификатором storagereferenceid** на имя созданного ранее ключа политики. Например, `B2C_1A_ContosoAppSecret`.
 
@@ -238,7 +238,7 @@ ms.locfileid: "97654393"
 ## <a name="add-azure-ad-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Azure AD в поток пользователя 
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните пользовательский поток, который вы хотите использовать для поставщика удостоверений Azure AD.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Azure AD.
 1. В разделе **поставщики удостоверений социальных сетей** выберите **contoso Azure AD**.
 1. Щелкните **Сохранить**.
 1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
