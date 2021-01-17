@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 327dce053c38fdb7b03e7ceb0d7a62ec8b8e7248
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 87af99d5136a8bed93854e9396895cddeb22549a
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96993072"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98540465"
 ---
 ## <a name="download-and-install"></a>Загрузите и установите
 
@@ -59,11 +59,11 @@ ms.locfileid: "96993072"
 
 1. При необходимости <a href="https://www.docker.com/get-started" target="_blank">установите Docker Desktop<span class="docon docon-navigate-external x-hidden-focus"></span></a> для своей платформы.
 2. В новой командной строке или в терминале введите следующую команду: .
-   ```shell   
+   ```console   
    docker pull msftspeech/spx
    ```
 3. Введите эту команду. Вы должны увидеть справочную информацию по интерфейсу командной строки службы "Речь": .
-   ```shell 
+   ```console 
    docker run -it --rm msftspeech/spx help
    ```
 
@@ -93,27 +93,27 @@ pwd
 
 Команды в Windows:
 
-```shell
+```console
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
 В Linux или macOS команды будут выглядеть как в примере ниже. Замените `ABSOLUTE_PATH` на абсолютный путь к подключенному каталогу. Этот путь был возвращен командой `pwd` в предыдущем разделе. 
 
 Если выполнить эту команду перед настройкой ключа и региона, появится сообщение об ошибке, уведомляющее о необходимости настроить ключ и регион:
-```shell   
+```console   
 sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx
 ```
 
 Чтобы использовать команду `spx`, установленную в контейнере, всегда вводите полную версию команды, показанную выше, а затем — параметры запроса.
 Например, в Windows эта команда задает ключ:
 
-```shell
+```console
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
 ```
 
 Для более расширенного взаимодействия с программой командной строки можно запустить контейнер с интерактивной оболочкой bash, добавив параметр входной точки.
 В Windows введите эту команду, чтобы запустить контейнер, который предоставляет интерактивный интерфейс командной строки, где можно ввести несколько команд `spx`:
-```shell
+```console
 docker run -it --entrypoint=/bin/bash -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
@@ -160,7 +160,7 @@ Follow these instructions to create a shortcut:
 Чтобы начать работу с интерфейсом командной строки службы "Речь", необходимо ввести ключ подписки службы "Речь" и идентификатор региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../overview.md#try-the-speech-service-for-free).
 Указав ключ подписки и идентификатор региона (например, `eastus` и `westus`), выполните следующие команды.
 
-```shell
+```console
 spx config @key --set SUBSCRIPTION-KEY
 spx config @region --set REGION
 ```

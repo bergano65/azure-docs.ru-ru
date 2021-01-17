@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 126a8e48a8db1c41299a7cb7a34f172342110667
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 0a5439a9d1fd43154379c1dc1a95a6e98b6e877b
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023128"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539640"
 ---
 # <a name="host-pool-creation"></a>Создание пула узлов
 
@@ -20,7 +20,7 @@ ms.locfileid: "95023128"
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -269,6 +269,7 @@ the VM.\\\"
 
 - Общие сведения об устранении неполадок с Виртуальным рабочим столом Windows и о путях эскалации см. в статье [Общие сведения об устранении неисправностей, отзывы и поддержка](troubleshoot-set-up-overview.md).
 - Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
+- Сведения об устранении неполадок, связанных с агентом виртуальных рабочих столов Windows или подключением к сеансу, см. в статье [Устранение распространенных неполадок агента виртуальных рабочих столов Windows](troubleshoot-agent.md).
 - Сведения об устранении неполадок подключения клиентов к виртуальным рабочим столам Windows см. в статье [подключения к службе виртуальных рабочих столов Windows](troubleshoot-service-connection.md).
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](troubleshoot-client.md)
 - Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell.md).

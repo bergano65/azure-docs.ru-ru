@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 12/16/2020
+ms.date: 01/15/2021
 ms.custom: generated
-ms.openlocfilehash: 9318ea9d811f2fd490ed6e796b9719c5c482d513
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
+ms.openlocfilehash: 36f266a8402721dffecc9e80c4f769bd51b0e172
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97707645"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539086"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "97707645"
 
 ## <a name="all"></a>Все
 
-| Общие сведения |
+| Общее |
 | --- |
 | [Microsoft.Addons](#microsoftaddons) |
 | [Microsoft.Marketplace](#microsoftmarketplace) |
@@ -32,7 +32,7 @@ ms.locfileid: "97707645"
 | [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering) |
 | [Microsoft.ResourceHealth](#microsoftresourcehealth) |
 | [Microsoft. support](#microsoftsupport) |
-| **Службы вычислений** |
+| **Compute** |
 | [Microsoft.ClassicCompute](#microsoftclassiccompute) |
 | [Microsoft.Compute](#microsoftcompute) |
 | [Microsoft.ServiceFabric](#microsoftservicefabric) |
@@ -80,6 +80,7 @@ ms.locfileid: "97707645"
 | [Microsoft.HDInsight](#microsofthdinsight) |
 | [Microsoft.Kusto](#microsoftkusto) |
 | [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated) |
+| [Microsoft.Purview](#microsoftpurview) |
 | [Microsoft.StreamAnalytics](#microsoftstreamanalytics) |
 | **Блокчейн** |
 | [Microsoft.Blockchain](#microsoftblockchain) |
@@ -144,6 +145,7 @@ ms.locfileid: "97707645"
 | [Microsoft.Features](#microsoftfeatures) |
 | [Microsoft.GuestConfiguration](#microsoftguestconfiguration) |
 | [Microsoft.HybridCompute](#microsofthybridcompute) |
+| [Microsoft.Kubernetes](#microsoftkubernetes) |
 | [Microsoft.ManagedServices](#microsoftmanagedservices) |
 | [Microsoft.Management](#microsoftmanagement) |
 | [Microsoft.PolicyInsights](#microsoftpolicyinsights). |
@@ -160,7 +162,7 @@ ms.locfileid: "97707645"
 | [Microsoft.DigitalTwins](#microsoftdigitaltwins) |
 
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 
 ### <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -402,6 +404,12 @@ ms.locfileid: "97707645"
 > | Microsoft.Compute/availabilitySets/write | Создает новую группу доступности или обновляет существующую. |
 > | Microsoft.Compute/availabilitySets/delete | Удаляет группу доступности. |
 > | Microsoft.Compute/availabilitySets/vmSizes/read | Выводит список доступных размеров для создания или обновления виртуальной машины в группе доступности. |
+> | Microsoft. COMPUTE/КапаЦитиресерватионграупс/чтение | Получение свойств группы резервирования емкости |
+> | Microsoft. COMPUTE/КапаЦитиресерватионграупс/запись | Создает новую группу резервирования емкости или обновляет существующую группу резервирования емкости. |
+> | Microsoft. COMPUTE/КапаЦитиресерватионграупс/удаление | Удаляет группу резервирования емкости. |
+> | Microsoft. COMPUTE/КапаЦитиресерватионграупс/КапаЦитиресерватионс/чтение | Получение свойств резервирования емкости |
+> | Microsoft. COMPUTE/КапаЦитиресерватионграупс/КапаЦитиресерватионс/запись | Создает новое резервирование емкости или обновляет существующее резервирование емкости. |
+> | Microsoft. COMPUTE, КапаЦитиресерватионграупс/КапаЦитиресерватионс/Delete | Удаляет резервирование емкости |
 > | Microsoft. COMPUTE/Клаудсервицес/чтение | Получение свойств CloudService. |
 > | Microsoft. COMPUTE/Клаудсервицес/запись | Создал новый CloudService или обновить существующий. |
 > | Microsoft. COMPUTE/Клаудсервицес/удаление | Удаляет CloudService. |
@@ -1504,7 +1512,6 @@ ms.locfileid: "97707645"
 > | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/Volumes/Аусоризерепликатион/Action | Авторизация исходного тома репликации |
 > | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/Volumes/Ресинкрепликатион/Action | Повторная синхронизация репликации на целевом томе |
 > | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/Volumes/Делетерепликатион/Action | Удаление репликации на целевом томе |
-> | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/Volumes/Интерналактион/Action | Внутренние операции для ресурса. |
 > | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/тома/резервное копирование/чтение | Считывает ресурс резервного копирования. |
 > | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/тома/резервные копии/запись | Записывает ресурс резервного копирования. |
 > | Microsoft. NetApp/Нетаппаккаунтс/КапаЦитипулс/тома/резервные копии/удаление | Удаляет ресурс резервного копирования. |
@@ -1558,6 +1565,7 @@ ms.locfileid: "97707645"
 > | Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action | Возвращает ключ делегирования пользователя для службы BLOB-объектов |
 > | Microsoft.Storage/storageAccounts/blobServices/write | Возвращение результата настройки свойств службы BLOB-объектов. |
 > | Microsoft.Storage/storageAccounts/blobServices/read | Возвращение свойств или статистики службы BLOB-объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/write |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращает результат обновления контейнера больших двоичных объектов. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает контейнер. |
@@ -1571,6 +1579,8 @@ ms.locfileid: "97707645"
 > | Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/write | Размещение политики неизменяемости контейнера больших двоичных объектов. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/lock/action | Блокировка политики неизменяемости контейнера больших двоичных объектов. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/read | Получение политики неизменяемости контейнера больших двоичных объектов. |
+> | Microsoft. Storage, storageAccounts/КонсумердаташареполиЦиес/Read |  |
+> | Microsoft. Storage/storageAccounts/КонсумердаташареполиЦиес/запись |  |
 > | Microsoft. Storage, storageAccounts/ДаташареполиЦиес/Delete |  |
 > | Microsoft. Storage, storageAccounts/ДаташареполиЦиес/Read |  |
 > | Microsoft. Storage, storageAccounts/ДаташареполиЦиес/Read |  |
@@ -2253,6 +2263,10 @@ ms.locfileid: "97707645"
 > | microsoft.web/hostingenvironments/multirolepools/usages/read | Возвращает данные об использовании пулов множественных ролей в средах внешнего размещения. |
 > | microsoft.web/hostingenvironments/operations/read | Возвращает операции сред внешнего размещения. |
 > | microsoft.web/hostingenvironments/outboundnetworkdependenciesendpoints/read | Получение конечных точек сети всех исходящих зависимостей. |
+> | Microsoft. Web/hostingEnvironments/Приватиндпоинтконнектионс/Write | Утверждение или отклонение подключения к частной конечной точке. |
+> | Microsoft. Web/hostingEnvironments/Приватиндпоинтконнектионс/Read | Получение подключения к частной конечной точке или списка подключений к частным конечным точкам. |
+> | Microsoft. Web/hostingEnvironments/Приватиндпоинтконнектионс/Delete | Удаление подключения к частной конечной точке. |
+> | Microsoft. Web/hostingEnvironments/Привателинкресаурцес/Read | Получение ресурсов частной ссылки. |
 > | microsoft.web/hostingenvironments/serverfarms/read | Возвращает планы службы приложений в средах внешнего размещения. |
 > | microsoft.web/hostingenvironments/sites/read | Возвращает веб-приложения в средах внешнего размещения. |
 > | microsoft.web/hostingenvironments/usages/read | Возвращает данные об использовании сред внешнего размещения. |
@@ -2265,6 +2279,11 @@ ms.locfileid: "97707645"
 > | microsoft.web/ishostingenvironmentnameavailable/read | Проверяет, доступно ли имя среды внешнего размещения. |
 > | microsoft.web/ishostnameavailable/read | Проверяет, доступно ли имя узла. |
 > | microsoft.web/isusernameavailable/read | Проверяет, доступно ли имя пользователя. |
+> | Microsoft. Web/Кубинвиронментс/Read | Получение свойств среды Kubernetes |
+> | Microsoft. Web/Кубинвиронментс/запись | Создание среды Kubernetes или обновление существующей |
+> | Microsoft. Web/Кубинвиронментс/Delete | Удаление среды Kubernetes |
+> | Microsoft. Web/Кубинвиронментс/Join/действие | Присоединяет среду Kubernetes |
+> | Microsoft. Web/Кубинвиронментс/операции/чтение | Получение операций для среды Kubernetes |
 > | Microsoft.Web/listSitesAssignedToHostName/Read | Возвращает имена сайтов, назначенные имени узла. |
 > | microsoft.web/locations/extractapidefinitionfromwsdl/action | Извлечение определения API для расположений из синтаксиса WSDL. |
 > | microsoft.web/locations/listwsdlinterfaces/action | Получение списка интерфейсов языка WSDL для расположений. |
@@ -2651,6 +2670,10 @@ ms.locfileid: "97707645"
 > | Microsoft. Web/Статикситес/кустомдомаинс/Read | Вывод списка пользовательских доменов для статического сайта |
 > | Microsoft. Web/Статикситес/кустомдомаинс/проверка/действие | Проверка того, что личный домен можно добавить на статический сайт |
 > | Microsoft. Web/Статикситес/функции/чтение | Перечисление функций для статического сайта |
+> | Microsoft. Web/Статикситес/Приватиндпоинтконнектионс/Write | Утверждение или отклонение подключения к частной конечной точке для статического сайта |
+> | Microsoft. Web/Статикситес/Приватиндпоинтконнектионс/Read | Получение подключения к частной конечной точке или списка частных подключений конечной точки для статического сайта |
+> | Microsoft. Web/Статикситес/Приватиндпоинтконнектионс/Delete | Удаление подключения к частной конечной точке для статического сайта |
+> | Microsoft. Web/Статикситес/Привателинкресаурцес/Read | Получение ресурсов частной ссылки |
 
 ## <a name="containers"></a>Контейнеры
 
@@ -3271,6 +3294,8 @@ ms.locfileid: "97707645"
 > | Microsoft.DataFactory/factories/integrationruntimes/linkedIntegrationRuntime/action | Создает ссылку на связанную Integration Runtime для указанной общей среды Integration Runtime. |
 > | Microsoft.DataFactory/factories/integrationruntimes/getObjectMetadata/action | Получает метаданные среды выполнения интеграции SSIS для указанной среды Integration Runtime. |
 > | Microsoft.DataFactory/factories/integrationruntimes/refreshObjectMetadata/action | Обновляет метаданные среды выполнения интеграции SSIS для указанной среды Integration Runtime. |
+> | Microsoft. интегратионрунтимес/фабрики//Енаблеинтерактивекуери/действие | Включить интерактивный сеанс разработки. |
+> | Microsoft. интегратионрунтимес/фабрики//Дисаблеинтерактивекуери/действие | Отключение интерактивного сеанса разработки. |
 > | Microsoft.DataFactory/factories/integrationruntimes/getstatus/read | Считывает состояние среды выполнения интеграции. |
 > | Microsoft.DataFactory/factories/integrationruntimes/monitoringdata/read | Возвращает данные мониторинга для среды выполнения интеграции. |
 > | Microsoft.DataFactory/factories/integrationruntimes/nodes/read | Считывает узел для указанной среды Integration Runtime. |
@@ -3317,6 +3342,8 @@ ms.locfileid: "97707645"
 > | Microsoft. субскрибетоевентс/фабрики/триггеры//действие | Подпишитесь на события. |
 > | Microsoft. жетевентсубскриптионстатус/фабрики/триггеры//действие | Состояние подписки на событие. |
 > | Microsoft. унсубскрибефромевентс/фабрики/триггеры//действие | Отмена подписки на события. |
+> | Microsoft. куерисубскриптионевентс/фабрики/триггеры//действие | Запрос событий подписки. |
+> | Microsoft. делетекуеуедсубскриптионевентс/фабрики/триггеры//действие | Удаляет события подписки, поставленные в очередь. |
 > | Microsoft.DataFactory/factories/triggers/start/action | Запускает триггер. |
 > | Microsoft.DataFactory/factories/triggers/stop/action | Останавливает триггер. |
 > | Microsoft.DataFactory/factories/triggers/triggerruns/read | Считывает выполнения триггеров. |
@@ -4663,6 +4690,38 @@ ms.locfileid: "97707645"
 > | Microsoft.PowerBIDedicated/operations/read | Извлечение сведений об операциях. |
 > | Microsoft.PowerBIDedicated/skus/read | Извлечение сведений о номерах SKU. |
 
+### <a name="microsoftpurview"></a>Microsoft.Purview
+
+Служба Azure: [Azure зрения](../purview/index.yml)
+
+> [!div class="mx-tableFixed"]
+> | Действие | Описание |
+> | --- | --- |
+> | Microsoft. зрения/Register/действие | Зарегистрируйте подписку для поставщика Microsoft зрения. |
+> | Microsoft. зрения/отменить регистрацию или действие | Отмените регистрацию подписки для поставщика Microsoft зрения. |
+> | Microsoft. зрения/Сетдефаултаккаунт/действие | Задает учетную запись по умолчанию для области. |
+> | Microsoft. зрения/Accounts/Read | Чтение ресурса учетной записи для поставщика Microsoft зрения. |
+> | Microsoft. зрения/Accounts/Write | Запись ресурса учетной записи для поставщика Microsoft зрения. |
+> | Microsoft. зрения/Accounts/Delete | Удаление ресурса учетной записи для поставщика Microsoft зрения. |
+> | Microsoft. зрения/учетные записи/перемещение/действие | Переместить ресурс учетной записи для поставщика Microsoft зрения. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионсаппровал/Action | Утверждение подключения к частной конечной точке. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионпроксиес/Read | Чтение учетной записи прокси подключения частной конечной точки. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионпроксиес/Write | Прокси подключения частной конечной точки учетной записи для записи. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионпроксиес/Delete | Удаление учетной записи прокси подключения к частной конечной точке. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка учетной записи прокси подключения частной конечной точки. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионпроксиес/Оператионресултс/Read | Мониторинг асинхронных операций прокси подключения к частной конечной точке. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионс/Read | Чтение подключения к частной конечной точке. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионс/Write | Создайте или обновите подключение к частной конечной точке. |
+> | Microsoft. зрения/Accounts/Приватиндпоинтконнектионс/Delete | Удаление подключения к частной конечной точке. |
+> | Microsoft. зрения/Жетдефаултаккаунт/Read | Возвращает учетную запись по умолчанию для области. |
+> | Microsoft. зрения/Locations/Оператионресултс/Read | Наблюдение за асинхронными операциями. |
+> | Microsoft. зрения/операции/чтение | Чтение всех доступных операций для поставщика Microsoft зрения. |
+> | **DataAction** | **Описание** |
+> | Microsoft. зрения/Accounts/Data/Read | Чтение объектов данных. |
+> | Microsoft. зрения/Accounts/Data/Write | Создание, обновление и удаление объектов данных. |
+> | Microsoft. зрения/учетные записи/сканирование/чтение | Чтение источников данных и проверок. |
+> | Microsoft. зрения/учетные записи/сканирование/запись | Создание, обновление и удаление источников данных и Управление сканированием. |
+
 ### <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
 Служба Azure: [Stream Analytics](../stream-analytics/index.yml)
@@ -4828,8 +4887,8 @@ ms.locfileid: "97707645"
 > | Microsoft. CognitiveServices/Accounts/Компутервисион/обнаружение/действие | Эта операция выполняет обнаружение объектов для указанного образа.  |
 > | Microsoft. CognitiveServices/Accounts/Компутервисион/Models/Read | Эта операция возвращает список моделей домена, которые поддерживаются API компьютерного зрения.  В настоящее время API поддерживает следующие модели для конкретных доменов: распознаватель знаменитости, распознаватель ориентиров. |
 > | Microsoft. CognitiveServices/Accounts/Компутервисион/Models/Analyze/Action | Эта операция распознает содержимое в образе, применяя модель для конкретного домена.<br> Список моделей для конкретных доменов, которые поддерживаются API компьютерного зрения, можно получить с помощью запроса GET/Моделс.<br> В настоящее время API предоставляет следующие модели для конкретных доменов: знаменитостей, ориентиры. |
-> | Microsoft. CognitiveServices/Accounts/Компутервисион, чтение, анализ и действие | Используйте этот интерфейс для выполнения операций чтения, используя современные алгоритмы оптического распознавания символов (OCR), оптимизированные для документов с большим объемом текста.<br>Он может обрабатывать рукописные, печатные или смешанные документы.<br>При использовании интерфейса чтения ответ содержит заголовок с именем Operation-Location.<br>Заголовок "Operation-Location" содержит URL-адрес, который необходимо использовать для операции получения результата чтения при получении доступа к результатам OCR. |
-> | Microsoft. CognitiveServices/Accounts/Компутервисион/Read/анализересултс/Read | Используйте этот интерфейс для получения состояния и результата OCR операции чтения.  URL-адрес, содержащий "идентификатор", возвращается в заголовке ответа операции чтения "Operation-Location". |
+> | Microsoft. CognitiveServices/Accounts/Компутервисион, чтение, анализ и действие | Используйте этот интерфейс для выполнения операций чтения, используя современные алгоритмы оптического распознавания символов (OCR), оптимизированные для документов с большим объемом текста.<br>Он может обрабатывать рукописные, печатные или смешанные документы.<br>При использовании интерфейса чтения ответ содержит заголовок с именем Operation-Location.<br>Заголовок "Operation-Location" содержит URL-адрес, который необходимо использовать для операции получения результата чтения при попытке получить доступ к результатам распознавания текста. * |
+> | Microsoft. CognitiveServices/Accounts/Компутервисион/Read/анализересултс/Read | Используйте этот интерфейс для получения состояния и результата OCR операции чтения.  URL-адрес, содержащий "идентификатор", возвращается в заголовке ответа операции чтения "Operation-Location". * |
 > | Microsoft. CognitiveServices/Accounts/Компутервисион, чтение, ядро, асинкбатчанализе/действие | Используйте этот интерфейс для получения результата операции пакетного чтения файла, применяя штатный оптический символ |
 > | Microsoft. CognitiveServices/Accounts/Компутервисион/Read/Operations/Read | Этот интерфейс используется для получения результатов OCR операции чтения. URL-адрес этого интерфейса должен быть получен из поля <b>"Operation-Location"</b> , возвращенного из интерфейса пакетного чтения файлов. |
 > | Microsoft. CognitiveServices/Accounts/Компутервисион/текстоператионс/Read | Этот интерфейс используется для получения результата операции распознавания текста. URL-адрес этого интерфейса должен быть получен из поля <b>"Operation-Location"</b> , возвращенного из интерфейса распознавание текста. |
@@ -5099,6 +5158,126 @@ ms.locfileid: "97707645"
 > | Microsoft. CognitiveServices/Accounts/Иммерсивереадер/жетконтентмоделфорреадер/Action | Создает иммерсивное сеанс чтения |
 > | Microsoft. CognitiveServices/Accounts/Инкрекогнизер/Recognize/действие | Учитывая набор данных Stroke, анализирует содержимое и создает список распознаваемых сущностей, включая распознанный текст. |
 > | Microsoft. CognitiveServices/Accounts/LUIS/Predict/Action | Возвращает прогноз опубликованной конечной точки для данного запроса. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/запись | Создает новое приложение LUIS. Обновляет имя или описание приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/азуреаккаунтс/действие | Назначает учетную запись Azure приложению. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/удаление | Удаляет приложение. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/чтение | Возвращает сведения о приложении. Список всех пользовательских приложений. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/импорт/действие | Импортирует приложение в LUIS, JSON приложения должен быть добавлен в текст запроса. Возвращает идентификатор нового приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/публикация/действие | Публикует определенную версию приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/куерилогсасинк/действие | Запуск запроса на скачивание для журналов запросов в прошлом месяце для приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/азуреаккаунтс/Read | Возвращает LUIS учетные записи Azure, назначенные приложению для пользователя с помощью его токена Azure Resource Manager. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/азуреаккаунтс/Delete | Возвращает учетные записи LUIS Azure для пользователя, используя его маркер Azure Resource Manager. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/языки и региональные параметры/чтение | Возвращает поддерживаемые языки и региональные параметры приложения LUIS. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/кустомпребуилтдомаинс/запись | Добавляет предварительно собранный домен вместе с его моделями в качестве нового приложения. Возвращает идентификатор нового приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/кустомпребуилтдомаинс/Read | Получает все доступные пользовательские предварительно созданные домены для определенного языка и региональных параметров. получает все доступные пользовательские предварительно созданные домены для всех языков и региональных параметров. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/домены/чтение | Возвращает доступные домены приложений. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/конечные точки/чтение | Возвращает доступные регионы развертывания конечных точек и URL-адреса |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/publishsettings/Read | Получение параметров публикации для приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/publishsettings/запись | Обновляет параметры публикации приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/куерилогс/Read | Возвращает журналы запросов за прошлый месяц для приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/куерилогсасинк/Read | Получение состояния запроса на скачивание для журналов запросов. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/параметры/чтение | Получение параметров приложения |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/параметры/запись | Обновляет параметры приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/усажесценариос/Read | Возвращает доступные сценарии использования приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/версии/обучение/действие | Отправляет запрос на обучение для версии указанного приложения LUIS. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Clone/Action | Создает новую версию приложения, эквивалентную текущему моментальному снимку выбранной версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Delete | Удаляет версию приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/App/Versions/Read | Возвращает сведения о версии приложения. Возвращает сведения о списке версий приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/версия/импорт/действие | Импортирует новую версию в приложение LUIS. в тексте запроса должна быть включена JSON версии. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Write | Обновляет имя или описание версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/Write | Добавляет сущность списка в приложение LUIS. Добавляет пакет подсписков в существующую клоседлист. * обновляет модель закрытого списка. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/Delete | Удаляет сущность закрытого списка из приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/Read | Возвращает сведения о модели закрытого списка. Возвращает сведения о моделях клоседлист. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/Roles/Write | Добавляет роль для объектной модели с закрытым списком обновляет роль для объектной модели закрытого списка. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/Roles/Delete | Удаляет роль для объектной модели закрытого списка. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/Roles/Read | Возвращает роль для объектной модели закрытого списка. Возвращает роли для объектной модели закрытого списка. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/подсписки/запись | Добавляет список в существующий закрытый список, обновляет один из подсписков закрытого списка |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/клоседлистс/подсписок/удаление | Удаляет подсписок указанной сущности списка. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/Write | Добавляет в приложение средство извлечения составных сущностей. Обновляет средство извлечения составных сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/Delete | Удаляет составное средство извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/Read | Возвращает сведения о модели составных сущностей. Возвращает сведения о моделях составных сущностей версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/дети/Write | Добавляет один дочерний элемент в существующую модель составных сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/дети/Delete | Удаляет дочерний объект средства извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/Roles/Write | Добавляет роль для модели составных сущностей. Обновляет роль для модели составных сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/Roles/Delete | Удаляет роль для модели составных сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/компоситинтитиес/Roles/Read | Возвращает роль для модели составных сущностей. Возвращает роли для модели составных сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтдомаинс/Write | Добавляет настраиваемый предварительно собранный домен вместе со всеми его моделями в эту версию приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтдомаинс/Delete | Удаляет предварительно созданные модели домена из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтентитиес/Write | Добавляет пользовательскую предварительно созданную модель доменных сущностей в версию приложения. Чтобы удалить эту сущность, используйте [Delete Entity](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1f) с идентификатором сущности. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтентитиес/Read | Возвращает все пользовательские предварительно собранные сведения об сущностях домена для этой версии приложения |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтентитиес/Roles/Write | Добавляет роль для настраиваемой предварительно подготовленной доменной сущности домена обновляет роль для настраиваемой предварительно построенной объектной модели предметной области. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтентитиес/Roles/Delete | Удаляет роль для настраиваемой готовой модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтентитиес/Roles/Read | Возвращает роль для пользовательской предварительно построенной объектной модели предметной области. Возвращает роли для пользовательской предварительно построенной объектной модели предметной области. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтинтентс/Write | Добавляет в приложение пользовательскую предварительно созданную модель доменных намерений. Чтобы удалить эту цель, используйте [намерение Delete](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c1c) с идентификатором намерения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтинтентс/Read | Получает сведения о пользовательских предварительно подготовленных целях для этой версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/кустомпребуилтмоделс/Read | Возвращает все пользовательские предварительно собранные сведения о моделях домена для этой версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/версии/сущности/запись | Добавляет простое средство извлечения сущностей в версию приложения. Обновляет имя средства извлечения сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Entities/Delete | Удаляет простое средство извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/версии/сущности/чтение | Возвращает сведения о модели простого объекта Entity. Возвращает сведения о моделях простых сущностей в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Entities/Roles/Write | Добавляет роль для простой модели сущностей, которая обновляет роль простой модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Entities/Roles/Delete | Удаляет роль для простой модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Entities/Roles/Read | Возвращает роль для простой модели сущностей. Возвращает роли для простой модели сущности. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Entities/предложение/чтение | Предлагает примеры, которые улучшат точность модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/example/Write | Добавляет пример с меткой в версию приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/examples/Write | Добавляет в указанное приложение пакет недублирующихся примеров с метками. Пакетная обработка не может содержать иерархические дочерние сущности. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/examples/Delete | Удаляет метку с указанным ИДЕНТИФИКАТОРом. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/examples/Read | Возвращает подмножество примеров конечных точек для просмотра. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/версии/экспорт/чтение | Экспортирует версию приложения LUIS в формат JSON. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Features/Read | Возвращает все функции версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/Write | Добавляет средство извлечения иерархических сущностей в версию приложения. Обновляет имя и дочерние элементы иерархической модели извлечения сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/Delete | Удаляет иерархическое средство извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/Read | Возвращает сведения о иерархической модели сущностей. Возвращает сведения о иерархических моделях сущностей в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/дети/Write | Создает один дочерний элемент в существующей иерархической модели сущностей. Переименовывает один дочерний элемент в существующей иерархической модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/дети/Delete | Удаляет потомка иерархического объекта-средства извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/дети/Read | Возвращает сведения о иерархической дочерней модели сущности. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/Roles/Write | Добавляет роль для иерархической модели сущностей, обновляет роль иерархической модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/Roles/Delete | Удаляет роль для иерархической модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/хиерарчикалентитиес/Roles/Read | Возвращает роль для иерархической модели сущностей. Возвращает роли для иерархической модели сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/на запись | Добавляет классификатор намерения к версии приложения. Обновляет имя классификатора намерения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/a/Delete | Удаляет классификатор цели из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/для чтения | Возвращает сведения о модели намерения. Возвращает сведения о модели намерения в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/a/паттернрулес/Read | Возвращает шаблоны для конкретной цели. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions//предложение/чтение | Предлагает примеры, которые улучшат точность модели намерения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/листпребуилтс/Read | Возвращает все доступные предварительно созданные сущности для приложения на основе языка и региональных параметров приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Models/Read | Возвращает сведения о моделях версий приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/Write | Добавляет шаблон. любое средство извлечения сущностей в версию приложения. Обновляет шаблон. любое средство извлечения сущностей. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/Delete | Удаляет шаблон. любое средство извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/Read | Возвращает сведения о шаблоне. Любая сущностная модель. Возвращает сведения о шаблоне. все модели сущностей в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/експлиЦитлист/Write | Добавляет элемент в шаблон. любой явный список. Обновляет явный элемент списка для шаблона. Любая сущностная модель. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/експлиЦитлист/Delete | Удаляет элемент из шаблона. любой явный список. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/експлиЦитлист/Read | Возвращает явный список шаблона. Любая сущностная модель. Возвращает явный элемент списка для шаблона. Любая сущностная модель. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/Roles/Write | Добавляет роль для шаблона. Любая модель сущностей обновляет роль для шаблона. Любая сущностная модель. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/Roles/Delete | Удаляет роль для шаблона. Любая сущностная модель. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернанентитиес/Roles/Read | Возвращает роль для шаблона. Любая сущностная модель. Возвращает роли для шаблона. Любая сущностная модель. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернруле/Write | Добавляет шаблон в указанную версию приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернрулес/Write | Добавляет список шаблонов в версию приложения. Обновляет шаблон в версии приложения. Обновляет список шаблонов в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернрулес/Delete | Удаляет список шаблонов из версии приложения. Удаляет шаблон из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/паттернрулес/Read | Возвращает шаблоны в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Patterns/Write | **ЭТОТ API НЕ РЕКОМЕНДУЕТСЯ К ИСПОЛЬЗОВАНИЮ.** |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Patterns/Delete | **ЭТОТ API НЕ РЕКОМЕНДУЕТСЯ К ИСПОЛЬЗОВАНИЮ.** |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Patterns/Read | **ЭТОТ API НЕ РЕКОМЕНДУЕТСЯ К ИСПОЛЬЗОВАНИЮ.** |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/фраселистс/Write | Создает новую функцию фраселист. Обновляет фразы, состояние и имя компонента фраселист. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/фраселистс/Delete | Удаляет компонент фраселист из приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/фраселистс/Read | Возвращает сведения о функции фраселист. Возвращает все функции фраселист для версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Предварительная сборка/запись | Добавляет список предварительно созданных средств извлечения сущностей в версию приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Предварительная сборка или удаление | Удаляет предварительно созданное средство извлечения сущностей из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Предварительная сборка/чтение | Возвращает сведения о предварительно созданной модели сущностей. Возвращает сведения о предварительно созданных сущностях в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/предварительно созданные/роли/запись | Добавляет роль для предварительно созданной объектной модели. обновляет роль для предварительно созданной объектной модели. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/предварительно созданные/роли/удаление | Удаляет роль для предварительно созданной объектной модели. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/предварительно созданные/роли/чтение | Возвращает роль для предварительно созданной объектной модели. Возвращает роли для предварительно созданной объектной модели. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/режексентитиес/Write | Добавляет средство извлечения сущностей регулярного выражения в версию приложения. Обновляет модель сущностей регулярного выражения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/режексентитиес/Delete | Удаляет модель сущностей регулярного выражения из версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/режексентитиес/Read | Возвращает сведения о модели сущностей регулярного выражения. Возвращает сведения о моделях сущностей регулярных выражений в версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/режексентитиес/Roles/Write | Добавляет роль для модели сущности регулярного выражения, обновляет роль для модели сущностей регулярного выражения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/режексентитиес/Roles/Delete | Удаляет роль для модели сущности регулярного выражения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/режексентитиес/Roles/Read | Возвращает роли для модели сущности регулярного выражения. Возвращает роль для модели сущности регулярного выражения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Settings/Read | Возвращает параметры версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/Settings/Write | Обновляет параметры версии приложения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Apps/Versions/предложение/удаление | Удалена конечная точка utterance. Этот utterance находится в списке "Проверка конечной точки фразы продолжительностью". |
+> | Microsoft. CognitiveServices/Accounts/LUIS/приложения/версии/обучение/чтение | Возвращает состояние обучения всех моделей (целей и сущностей) для указанной версии приложения. Необходимо вызвать API обучения для обучения приложения LUIS перед вызовом этого API для получения состояния обучения. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/азуреаккаунтс/Read | Возвращает учетные записи LUIS Azure для пользователя, используя его маркер Azure Resource Manager. |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Package/слот/gzip/Read | Пакеты опубликовано приложение LUIS как GZip |
+> | Microsoft. CognitiveServices/Accounts/LUIS/Package/Versions/gzip/Read | Пакеты, обученные приложением LUIS как GZip |
 > | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/запись | Создать или обновить конфигурацию предупреждений об аномалиях |
 > | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/Configurations/Delete | Удаление конфигурации предупреждений об аномалиях |
 > | Microsoft. CognitiveServices/Accounts/Метриксадвисор/Alert/аномалия/конфигурации/чтение | Запрос конфигурации предупреждений об аномалии |
@@ -5228,7 +5407,7 @@ ms.locfileid: "97707645"
 > | Microsoft.MachineLearningServices/locations/usages/read | Отчет об использовании для вычислительных ресурсов Машинного обучения Azure в подписке. |
 > | Microsoft.MachineLearningServices/locations/vmsizes/read | Возвращает поддерживаемые размеры виртуальных машин. |
 > | Microsoft. Мачинелеарнингсервицес/операции/чтение | Получение всех операций для поставщика ресурсов Службы машинного обучения |
-> | Microsoft. Мачинелеарнингсервицес/workspaces/Чекккомпутенамеаваилабилити/действие | Проверяет имя для вычислений в конечной точке пакетной службы в Службы машинного обучения рабочих областях |
+> | Microsoft.MachineLearningServices/workspaces/checkComputeNameAvailability/action | Проверяет имя для вычислений в конечной точке пакетной службы в Службы машинного обучения рабочих областях |
 > | Microsoft.MachineLearningServices/workspaces/read | Получает рабочие области служб машинного обучения. |
 > | Microsoft.MachineLearningServices/workspaces/write | Создает или обновляет рабочие области служб машинного обучения. |
 > | Microsoft.MachineLearningServices/workspaces/delete | Удаляет рабочие области служб машинного обучения. |
@@ -5306,6 +5485,9 @@ ms.locfileid: "97707645"
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/метки/проекты/запись | Создает или обновляет проект меток в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/метки/проекты/Удаление | Удаляет проект меток в рабочих областях Службы машинного обучения |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/метки/проекты/сводка/чтение | Получает пометку сводки проекта в Службы машинного обучения рабочих областях |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/linkedServices/чтение | Получение всех связанных служб для Службы машинного обучения рабочей области |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/linkedServices/запись | Создание или обновление связанных служб рабочей области Службы машинного обучения |
+> | Microsoft. Мачинелеарнингсервицес/рабочие области/linkedServices/удаление | Удалить связанные службы Службы машинного обучения рабочей области |
 > | Microsoft. Мачинелеарнингсервицес/workspaces/метаданные/артефакты/чтение | Получение артефактов в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/Метаданные/артефакты/запись | Создает или обновляет артефакты в Службы машинного обучения рабочих областях |
 > | Microsoft. Мачинелеарнингсервицес/рабочие области/Метаданные/артефакты/удаление | Удаление артефактов в Службы машинного обучения рабочих областях |
@@ -5571,6 +5753,9 @@ ms.locfileid: "97707645"
 > | Microsoft.TimeSeriesInsights/environments/eventsources/read | Получение свойств источника событий. |
 > | Microsoft.TimeSeriesInsights/environments/eventsources/write | Создание нового источника событий для среды или обновление существующего. |
 > | Microsoft.TimeSeriesInsights/environments/eventsources/delete | Удаление источника события. |
+> | Microsoft. TimeSeriesInsights/среды/Приватиндпоинтконнектионс/чтение | Получение свойств подключения к частной конечной точке. |
+> | Microsoft. TimeSeriesInsights/среды/Приватиндпоинтконнектионс/запись | Создает новое подключение к частной конечной точке для среды или обновляет существующее соединение. |
+> | Microsoft. TimeSeriesInsights/Environments/Приватиндпоинтконнектионс/Delete | Удаляет подключение к частной конечной точке. |
 > | Microsoft.TimeSeriesInsights/environments/referencedatasets/read | Получение свойств эталонного набора данных. |
 > | Microsoft.TimeSeriesInsights/environments/referencedatasets/write | Создание нового эталонного набора данных для среды или обновление существующего. |
 > | Microsoft.TimeSeriesInsights/environments/referencedatasets/delete | Удаление эталонного набора данных. |
@@ -5883,9 +6068,6 @@ ms.locfileid: "97707645"
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/Евентгридфилтерс/Read | Возвращает свойства указанного фильтра сетки событий хранилища конфигураций или список всех фильтров сетки событий хранилища конфигурации в указанном хранилище конфигураций. |
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/Евентгридфилтерс/запись | Создание или обновление фильтра сетки событий хранилища конфигураций с указанными параметрами. |
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/Евентгридфилтерс/Delete | Удаляет фильтр сетки событий хранилища конфигурации. |
-> | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/Read | Считывает значение ключа из хранилища конфигураций. |
-> | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/запись | Создает или обновляет значение ключа в хранилище конфигураций. |
-> | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/Delete | Удаляет существующее значение ключа из хранилища конфигураций. |
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверьте прокси-сервер подключения частной конечной точки в указанном хранилище конфигураций. |
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/Приватиндпоинтконнектионпроксиес/Read | Получение прокси-сервера подключения к частной конечной точке в указанном хранилище конфигураций. |
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/Приватиндпоинтконнектионпроксиес/запись | Создание или обновление прокси-сервера подключения к частной конечной точке в указанном хранилище конфигураций. |
@@ -5900,6 +6082,10 @@ ms.locfileid: "97707645"
 > | Microsoft. Аппконфигуратион/Конфигуратионсторес/providers/Microsoft. Insights/metricDefinitions/Read | Получение всех определений метрик для конфигурации приложения Майкрософт. |
 > | Microsoft. Аппконфигуратион/Locations/Оператионсстатус/Read | Получение состояния операции. |
 > | Microsoft. Аппконфигуратион/операции/чтение | Список всех операций, поддерживаемых конфигурацией приложения Майкрософт. |
+> | **DataAction** | **Описание** |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/Read | Считывает значение ключа из хранилища конфигураций. |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/запись | Создает или обновляет значение ключа в хранилище конфигураций. |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/Кэйвалуес/Delete | Удаляет существующее значение ключа из хранилища конфигураций. |
 
 ### <a name="microsoftazurestack"></a>Microsoft.AzureStack
 
@@ -6698,6 +6884,7 @@ ms.locfileid: "97707645"
 > | Microsoft. Security/Иотдефендерсеттингс/Write | Создание или обновление параметров защитника IoT |
 > | Microsoft. Security/Иотдефендерсеттингс/Delete | Удаление параметров защитника IoT |
 > | Microsoft. Security/Иотдефендерсеттингс/Паккажедовнлоадс/действие | Получение сведений о загружаемых пакетах защитника IoT |
+> | Microsoft. Security/Иотдефендерсеттингс/Довнлоадманажерактиватион/действие | Файл активации диспетчера загрузки с данными квоты подписки |
 > | Microsoft. Security/Иотсекуритисолутионс/Write | Создает или обновляет решения безопасности IoT. |
 > | Microsoft. Security/Иотсекуритисолутионс/Delete | Удаление решений безопасности IoT |
 > | Microsoft. Security/Иотсекуритисолутионс/Read | Получение решений безопасности IoT |
@@ -6718,6 +6905,8 @@ ms.locfileid: "97707645"
 > | Microsoft. Security/Иотсенсорс/Write | Создание или обновление датчиков IoT |
 > | Microsoft. Security/Иотсенсорс/Delete | Удаление датчиков IoT |
 > | Microsoft. Security/Иотсенсорс/Довнлоадактиватион/действие | Скачивает файл активации для датчиков IoT |
+> | Microsoft. Security/Иотсенсорс/Тригжертипаккажеупдате/действие | Запускает обновление пакета аналитики угроз |
+> | Microsoft. Security/Иотсенсорс/Довнлоадресетпассворд/действие | Скачивание файла сброса пароля для датчиков IoT |
 > | Microsoft. Security/Иотсите/Read | Получение сайта IoT |
 > | Microsoft. Security/Иотсите/Write | Создает или обновляет сайт IoT |
 > | Microsoft. Security/Иотсите/Delete | Удаление сайта IoT |
@@ -7076,6 +7265,7 @@ ms.locfileid: "97707645"
 > | Действие | Описание |
 > | --- | --- |
 > | Microsoft.Migrate/register/action | Регистрирует подписки в поставщике ресурсов Microsoft.Migrate |
+> | Microsoft. миграция, отмена регистрации или действия | Отмена регистрации подписки в Microsoft. Миграция поставщика ресурсов |
 > | Microsoft. Migrate/ассессментпрожектс/чтение | Возвращает свойства проекта оценки. |
 > | Microsoft. Migrate/ассессментпрожектс/запись | Создает новый проект оценки или обновляет существующий проект оценки. |
 > | Microsoft. Migrate/ассессментпрожектс/удалить | Удаляет проект оценки. |
@@ -7158,6 +7348,7 @@ ms.locfileid: "97707645"
 > | Microsoft. Migrate/Мовеколлектионс/Мовересаурцес/чтение | Получение всех ресурсов перемещения или перемещения из коллекции перемещения. |
 > | Microsoft. Migrate/Мовеколлектионс/Мовересаурцес/запись | Создает или обновляет ресурс перемещения. |
 > | Microsoft. Migrate/Мовеколлектионс/Мовересаурцес/удаление | Удаляет ресурс перемещения из коллекции перемещения. |
+> | Microsoft. Migrate/Мовеколлектионс/Operations/Read | Возвращает состояние операции. |
 > | Microsoft. Migrate/Мовеколлектионс/УнресолведдепенденЦиес/чтение | Возвращает список неразрешенных зависимостей в коллекции перемещения. |
 > | Microsoft.Migrate/Operations/read | Список операций, доступных в поставщике ресурсов Microsoft.Migrate |
 > | Microsoft.Migrate/projects/read | Получает свойства проекта |
@@ -7539,7 +7730,7 @@ ms.locfileid: "97707645"
 > | Microsoft.OffAzure/VMwareSites/vcenters/read | Получает свойства VMware vCenter. |
 > | Microsoft.OffAzure/VMwareSites/vcenters/write | Создает или обновляет VMware vCenter. |
 
-## <a name="monitor"></a>Монитор
+## <a name="monitor"></a>Azure Monitor
 
 ### <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 
@@ -9040,13 +9231,331 @@ ms.locfileid: "97707645"
 > | Microsoft. Хибридкомпуте/отменить регистрацию или действие | Отменяет регистрацию подписки для поставщика ресурсов Microsoft. Хибридкомпуте. |
 > | Microsoft. Хибридкомпуте/Locations/оператионресултс/Read | Считывает состояние операции с поставщиком ресурсов Microsoft. Хибридкомпуте. |
 > | Microsoft. Хибридкомпуте/Locations/значение operationstatus/Read | Считывает состояние операции с поставщиком ресурсов Microsoft. Хибридкомпуте. |
+> | Microsoft. Хибридкомпуте/Locations/Упдатецентероператионресултс/Read | Чтение состояния операции центра обновления на компьютерах |
 > | Microsoft.HybridCompute/machines/read | Чтение всех компьютеров ARC в Azure |
 > | Microsoft.HybridCompute/machines/write | Запись компьютеров ARC в Azure |
 > | Microsoft.HybridCompute/machines/delete | Удаление компьютеров ARC в Azure |
+> | Microsoft. Хибридкомпуте/Machines/Ассесспатчес/Action | Оценивает все компьютеры ARC в Azure на наличие недостающих исправлений программного обеспечения |
+> | Microsoft. Хибридкомпуте/Machines/Инсталлпатчес/Action | Устанавливает исправления на всех компьютерах ARC в Azure |
 > | Microsoft. Хибридкомпуте/Machines/Extensions/Read | Считывает все расширения Azure Arc |
 > | Microsoft.HybridCompute/machines/extensions/write | Установка или обновление расширения Arc Azure |
 > | Microsoft. Хибридкомпуте/Machines/Extensions/Delete | Удаляет расширения Azure ARC. |
+> | Microsoft. Хибридкомпуте/Machines/Патчассессментресултс/Read | Считывает все Патчассессментресултси Azure Arc |
+> | Microsoft. Хибридкомпуте/Machines/Патчассессментресултс/Софтварепатчес/Read | Чтение всех Патчассессментресултс Azure Arc/Софтварепатчес |
+> | Microsoft. Хибридкомпуте/Machines/Патчинсталлатионресултс/Read | Считывает все Патчинсталлатионресултси Azure Arc |
+> | Microsoft. Хибридкомпуте/Machines/Патчинсталлатионресултс/Софтварепатчес/Read | Чтение всех Патчинсталлатионресултс Azure Arc/Софтварепатчес |
 > | Microsoft. Хибридкомпуте/операции/чтение | Чтение всех операций для службы "Дуга" для серверов Azure |
+
+### <a name="microsoftkubernetes"></a>Microsoft.Kubernetes
+
+Служба Azure: [Kubernetes с поддержкой дуги Azure](../azure-arc/kubernetes/overview.md)
+
+> [!div class="mx-tableFixed"]
+> | Действие | Описание |
+> | --- | --- |
+> | Microsoft. Kubernetes/Коннектедклустерс/Read | Чтение Коннектедклустерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/запись | Записывает Коннектедклустерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Delete | Удаляет Коннектедклустерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Листклустерусеркредентиалс/Action | Список учетных данных Клустерусер |
+> | Microsoft. Kubernetes/Регистередсубскриптионс/Read | Чтение зарегистрированных подписок |
+> | **DataAction** | **Описание** |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/инитиализерконфигуратионс/чтение | Считывает инитиализерконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/инитиализерконфигуратионс/запись | Записывает инитиализерконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/инитиализерконфигуратионс/Delete | Удаляет инитиализерконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/мутатингвебхукконфигуратионс/чтение | Считывает мутатингвебхукконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/мутатингвебхукконфигуратионс/запись | Записывает мутатингвебхукконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/мутатингвебхукконфигуратионс/Delete | Удаляет мутатингвебхукконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/валидатингвебхукконфигуратионс/чтение | Считывает валидатингвебхукконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/валидатингвебхукконфигуратионс/запись | Записывает валидатингвебхукконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/адмиссионрегистратион. K8S. IO/валидатингвебхукконфигуратионс/Delete | Удаляет валидатингвебхукконфигуратионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/чтение | API чтения |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/V1/Read | Считывания API/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/апиекстенсионс. K8S. IO/кустомресаурцедефинитионс/чтение | Считывает кустомресаурцедефинитионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/апиекстенсионс. K8S. IO/кустомресаурцедефинитионс/запись | Записывает кустомресаурцедефинитионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/апиекстенсионс. K8S. IO/кустомресаурцедефинитионс/Delete | Удаляет кустомресаурцедефинитионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/апирегистратион. K8S. IO/аписервицес/чтение | Считывает аписервицес |
+> | Microsoft. Kubernetes/Коннектедклустерс/апирегистратион. K8S. IO/аписервицес/запись | Записывает аписервицес |
+> | Microsoft. Kubernetes/Коннектедклустерс/апирегистратион. K8S. IO/аписервицес/Delete | Удаляет аписервицес |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/чтение | Чтение API-интерфейсов |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/адмиссионрегистратион. K8S. IO/Read | Считывает admissionregistration.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/адмиссионрегистратион. K8S. IO/v1/чтение | Считывает admissionregistration.k8s.io/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/адмиссионрегистратион. K8S. IO/v1beta1/чтение | Считывает admissionregistration.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/апиекстенсионс. K8S. IO/Read | Считывает apiextensions.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/апиекстенсионс. K8S. IO/v1/чтение | Считывает apiextensions.k8s.io/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/апиекстенсионс. K8S. IO/v1beta1/чтение | Считывает apiextensions.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/апирегистратион. K8S. IO/Read | Считывает apiregistration.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/апирегистратион. K8S. IO/v1/чтение | Считывает apiregistration.k8s.io/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/апирегистратион. K8S. IO/v1beta1/чтение | Считывает apiregistration.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/приложения/чтение | Чтение приложений |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/приложения/v1beta1/чтение | Чтение приложений/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/приложения/v1beta2/чтение | Считывает v1beta2 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/проверка подлинности. K8S. IO/чтение | Считывает authentication.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/проверка подлинности. K8S. IO/v1/чтение | Считывает authentication.k8s.io/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/проверка подлинности. K8S. IO/v1beta1/чтение | Считывает authentication.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/авторизация. K8S. IO/чтение | Считывает authorization.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/авторизация. K8S. IO/v1/чтение | Считывает authorization.k8s.io/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/авторизация. K8S. IO/v1beta1/чтение | Считывает authorization.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Автомасштабирование/чтение | Чтение автомасштабирования |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Автомасштабирование/v1/чтение | Чтение автомасштабирования/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Автомасштабирование, v2beta1/чтение | Чтение с автомасштабированием или v2beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Автомасштабирование, v2beta2/чтение | Чтение с автомасштабированием или v2beta2 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Пакетная обработка/чтение | Считывания пакета |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/пакет/v1/чтение | Считывания пакетов/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Пакетная обработка/v1beta1/чтение | Считывания пакета/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Certificates. K8S. IO/Read | Считывает certificates.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Certificates. K8S. IO/v1beta1/Read | Считывает certificates.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/координация. K8S. IO/чтение | Считывает coordination.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/координация. K8S. IO/v1/чтение | Считывает данные координации и v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/координация. K8S. IO/v1beta1/чтение | Считывает coordination.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Events. K8S. IO/Read | Считывает events.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/события. K8S. IO/v1beta1/чтение | Считывает events.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/расширения/чтение | Чтение расширений |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Extensions/v1beta1/Read | Чтение расширений/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/метрики. K8S. IO/Read | Считывает metrics.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/метрики. K8S. IO/v1beta1/чтение | Считывает metrics.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Networking. K8S. IO/Read | Считывает networking.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Network. K8S. IO/v1/Read | Чтение сетевых подключений/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/сеть. K8S. IO/v1beta1/чтение | Считывает networking.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Node. K8S. IO/Read | Считывает node.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/Node. K8S. IO/v1beta1/чтение | Считывает node.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/политика/чтение | Чтение политики |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/политика/v1beta1/чтение | Чтение политики/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/RBAC. Authorization. K8S. IO/Read | Считывает rbac.authorization.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/RBAC. Authorization. K8S. IO/v1/Read | Считывает RBAC. Authorization/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/RBAC. Авторизация. K8S. IO/v1beta1/чтение | Считывает rbac.authorization.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/планирование. K8S. IO/чтение | Считывает scheduling.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/планирование. K8S. IO/v1/чтение | Считывания планирования/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/планирование. K8S. IO/v1beta1/чтение | Считывает scheduling.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/хранилище. K8S. IO/чтение | Считывает storage.k8s.io |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/хранилище. K8S. IO/v1/чтение | Чтение хранилища/v1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/API/хранилище. K8S. IO/v1beta1/чтение | Считывает storage.k8s.io/v1beta1 |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/контроллерревисионс/чтение | Считывает контроллерревисионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/контроллерревисионс/запись | Записывает контроллерревисионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/контроллерревисионс/удалить | Удаляет контроллерревисионс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/daemonset/чтение | Считывает daemonset |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/daemonset/запись | Записывает daemonset |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/daemonset/удалить | Удаляет daemonset |
+> | Microsoft. Kubernetes/Коннектедклустерс/приложения/развертывания/чтение | Чтение развертываний |
+> | Microsoft. Kubernetes/Коннектедклустерс/приложения/развертывания/запись | Записывает развертывания |
+> | Microsoft. Kubernetes/Коннектедклустерс/приложения/развертывания/удаление | Удаляет развертывания |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/репликасетс/чтение | Считывает репликасетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/репликасетс/запись | Записывает репликасетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/репликасетс/удалить | Удаляет репликасетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/статефулсетс/чтение | Считывает статефулсетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/статефулсетс/запись | Записывает статефулсетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Apps/статефулсетс/удалить | Удаляет статефулсетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/проверка подлинности. K8S. IO/токенревиевс/запись | Записывает токенревиевс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Authentication. K8S. IO/усерекстрас/IMPERSONATE/Action | Олицетворение усерекстрас |
+> | Microsoft. Kubernetes/Коннектедклустерс/авторизация. K8S. IO/локалсубжектакцессревиевс/запись | Записывает локалсубжектакцессревиевс |
+> | Microsoft. Kubernetes/Коннектедклустерс/авторизация. K8S. IO/селфсубжектакцессревиевс/запись | Записывает селфсубжектакцессревиевс |
+> | Microsoft. Kubernetes/Коннектедклустерс/авторизация. K8S. IO/селфсубжектрулесревиевс/запись | Записывает селфсубжектрулесревиевс |
+> | Microsoft. Kubernetes/Коннектедклустерс/авторизация. K8S. IO/субжектакцессревиевс/запись | Записывает субжектакцессревиевс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Автомасштабирование, хоризонталподаутоскалерс/чтение | Считывает хоризонталподаутоскалерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Автомасштабирование, хоризонталподаутоскалерс/запись | Записывает хоризонталподаутоскалерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Автомасштабирование, хоризонталподаутоскалерс/удаление | Удаляет хоризонталподаутоскалерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Пакетная обработка/кронжобс/чтение | Считывает кронжобс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Пакетная обработка, кронжобс/запись | Записывает кронжобс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Пакетная обработка, кронжобс/удалить | Удаляет кронжобс |
+> | Microsoft. Kubernetes/Коннектедклустерс/пакет/задания/чтение | Чтение заданий |
+> | Microsoft. Kubernetes/Коннектедклустерс/пакет/задания/запись | Записывает задания |
+> | Microsoft. Kubernetes/Коннектедклустерс/пакет/задания/Удаление | Удаляет задания |
+> | Microsoft. Kubernetes/Коннектедклустерс/привязки/запись | Записывает привязки |
+> | Microsoft. Kubernetes/Коннектедклустерс/Certificates. K8S. IO/цертификатесигнингрекуестс/чтение | Считывает цертификатесигнингрекуестс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Certificates. K8S. IO/цертификатесигнингрекуестс/запись | Записывает цертификатесигнингрекуестс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Certificates. K8S. IO/цертификатесигнингрекуестс/Delete | Удаляет цертификатесигнингрекуестс |
+> | Microsoft. Kubernetes/Коннектедклустерс/clusterconfig. Azure. com/азуреклустеридентитирекуестс/Read | Считывает азуреклустеридентитирекуестс |
+> | Microsoft. Kubernetes/Коннектедклустерс/clusterconfig. Azure. com/азуреклустеридентитирекуестс/Write | Записывает азуреклустеридентитирекуестс |
+> | Microsoft. Kubernetes/Коннектедклустерс/clusterconfig. Azure. com/азуреклустеридентитирекуестс/Delete | Удаляет азуреклустеридентитирекуестс |
+> | Microsoft. Kubernetes/Коннектедклустерс/компонентстатусес/Read | Считывает компонентстатусес |
+> | Microsoft. Kubernetes/Коннектедклустерс/компонентстатусес/запись | Записывает компонентстатусес |
+> | Microsoft. Kubernetes/Коннектедклустерс/компонентстатусес/Delete | Удаляет компонентстатусес |
+> | Microsoft. Kubernetes/Коннектедклустерс/конфигмапс/Read | Считывает конфигмапс |
+> | Microsoft. Kubernetes/Коннектедклустерс/конфигмапс/запись | Записывает конфигмапс |
+> | Microsoft. Kubernetes/Коннектедклустерс/конфигмапс/Delete | Удаляет конфигмапс |
+> | Microsoft. Kubernetes/Коннектедклустерс/координация. K8S. IO/Аренда/чтение | Чтение аренд |
+> | Microsoft. Kubernetes/Коннектедклустерс/координация. K8S. IO/Аренда/запись | Записывает аренду |
+> | Microsoft. Kubernetes/Коннектедклустерс/координация. K8S. IO/Аренда/удаление | Удаление аренд |
+> | Microsoft. Kubernetes/Коннектедклустерс/конечные точки/чтение | Считывает конечные точки |
+> | Microsoft. Kubernetes/Коннектедклустерс/конечные точки/запись | Записывает конечные точки |
+> | Microsoft. Kubernetes/Коннектедклустерс/конечные точки/удаление | Удаляет конечные точки |
+> | Microsoft. Kubernetes/Коннектедклустерс/Events/Read | Чтение событий |
+> | Microsoft. Kubernetes/Коннектедклустерс/Events/Write | Записывает события |
+> | Microsoft. Kubernetes/Коннектедклустерс/Events/Delete | Удаляет события |
+> | Microsoft. Kubernetes/Коннектедклустерс/Events. K8S. IO/Events/READS | Чтение событий |
+> | Microsoft. Kubernetes/Коннектедклустерс/Events. K8S. IO/Events/Write | Записывает события |
+> | Microsoft. Kubernetes/Коннектедклустерс/Events. K8S. IO/Events/Delete | Удаляет события |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/daemonset/Read | Считывает daemonset |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/daemonset/Write | Записывает daemonset |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/daemonset/Delete | Удаляет daemonset |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/deployments/Read | Чтение развертываний |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/deployments/Write | Записывает развертывания |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/deployments/Delete | Удаляет развертывания |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/передает/Read | Считывает передает |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/передает/Write | Записывает передает |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/передает/Delete | Удаляет передает |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/нетворкполиЦиес/Read | Считывает нетворкполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/нетворкполиЦиес/Write | Записывает нетворкполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/нетворкполиЦиес/Delete | Удаляет нетворкполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/подсекуритиполиЦиес/Read | Считывает подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/подсекуритиполиЦиес/Write | Записывает подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/подсекуритиполиЦиес/Delete | Удаляет подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/репликасетс/Read | Считывает репликасетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/репликасетс/Write | Записывает репликасетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Extensions/репликасетс/Delete | Удаляет репликасетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Groups/IMPERSONATE/Action | Олицетворение групп |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/Read | Считывает хеалсз |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/авторегистрация — завершение и чтение | Чтение авторегистрации — завершение |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/etcd/Read | Считывает etcd |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/журнал/чтение | Чтение журнала |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/ping/Read | Чтение проверки связи |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/аписервице-openapi-контроллер/чтение | Чтение аписервице-openapi-Controller |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/аписервице-регистрация-контроллер/чтение | Чтение аписервице-регистрация-контроллер |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/аписервице-состояние — доступно-контроллер/чтение | Чтение аписервице-Status-Available-Controller |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/начальная загрузка-контроллер/чтение | Считывает загрузочный контроллер |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/CA-регистрация/чтение | Чтение ЦС — регистрация |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/CRD-информирует-синхронизация/чтение | Чтение CRD — синхронизация с уведомлением |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/Generic-аписервер — запуск — предназначение или чтение | Считывает общие-аписервер-Start-информирует |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/KUBE-аписервер — авторегистрация/чтение | Чтение KUBE-аписервер — авторегистрация |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/RBAC/начальная загрузка — роли/чтение | Считывает начальную загрузку — роли |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/планирование/начальная загрузка-система-приоритет-классы/чтение | Считывает классы начальной загрузки-System-Priority-classes |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/Start-апиекстенсионс-Controllers/Read | Чтение с Start-апиекстенсионс-Controllers |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/Start-апиекстенсионс-информирует/Read | Reads Start-апиекстенсионс-информирует |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/Start-KUBE-агрегатор — недоступность и чтение | Чтение Start-KUBE-агрегатор — несоответствие |
+> | Microsoft. Kubernetes/Коннектедклустерс/хеалсз/постстарсук/Start-KUBE-аписервер-допуски — инициализатор/чтение | Чтение с Start-KUBE-аписервер-допуск-initializer |
+> | Microsoft. Kubernetes/Коннектедклустерс/лимитранжес/Read | Считывает лимитранжес |
+> | Microsoft. Kubernetes/Коннектедклустерс/лимитранжес/запись | Записывает лимитранжес |
+> | Microsoft. Kubernetes/Коннектедклустерс/лимитранжес/Delete | Удаляет лимитранжес |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/Read | Считывает ливез |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/авторегистрация — завершение и чтение | Чтение авторегистрации — завершение |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/etcd/Read | Считывает etcd |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/журнал/чтение | Чтение журнала |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/ping/Read | Чтение проверки связи |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/аписервице-openapi-контроллер/чтение | Чтение аписервице-openapi-Controller |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/аписервице-регистрация-контроллер/чтение | Чтение аписервице-регистрация-контроллер |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/аписервице-состояние — доступно-контроллер/чтение | Чтение аписервице-Status-Available-Controller |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/начальная загрузка-контроллер/чтение | Считывает загрузочный контроллер |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/CA-регистрация/чтение | Чтение ЦС — регистрация |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/CRD-информирует-синхронизация/чтение | Чтение CRD — синхронизация с уведомлением |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/Generic-аписервер — запуск — предназначение или чтение | Считывает общие-аписервер-Start-информирует |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/KUBE-аписервер — авторегистрация/чтение | Чтение KUBE-аписервер — авторегистрация |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/RBAC/начальная загрузка — роли/чтение | Считывает начальную загрузку — роли |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/планирование/начальная загрузка-система-приоритет-классы/чтение | Считывает классы начальной загрузки-System-Priority-classes |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/Start-апиекстенсионс-Controllers/Read | Чтение с Start-апиекстенсионс-Controllers |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/Start-апиекстенсионс-информирует/Read | Reads Start-апиекстенсионс-информирует |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/Start-KUBE-агрегатор — недоступность и чтение | Чтение Start-KUBE-агрегатор — несоответствие |
+> | Microsoft. Kubernetes/Коннектедклустерс/ливез/постстарсук/Start-KUBE-аписервер-допуски — инициализатор/чтение | Чтение с Start-KUBE-аписервер-допуск-initializer |
+> | Microsoft. Kubernetes/Коннектедклустерс/журналы/чтение | Чтение журналов |
+> | Microsoft. Kubernetes/Коннектедклустерс/метрики/чтение | Считывает метрики |
+> | Microsoft. Kubernetes/Коннектедклустерс/метрики. K8S. IO/Nodes/Read | Чтение узлов |
+> | Microsoft. Kubernetes/Коннектедклустерс/метрики. K8S. IO/Pod/Read | Чтение модулей Pod |
+> | Microsoft. Kubernetes/Коннектедклустерс/пространства имен/чтение | Считывает пространства имен |
+> | Microsoft. Kubernetes/Коннектедклустерс/пространства имен/запись | Записывает пространства имен |
+> | Microsoft. Kubernetes/Коннектедклустерс/пространства имен/удаление | Удаляет пространства имен |
+> | Microsoft. Kubernetes/Коннектедклустерс/Network. K8S. IO/передает/чтение | Считывает передает |
+> | Microsoft. Kubernetes/Коннектедклустерс/Network. K8S. IO/передает/запись | Записывает передает |
+> | Microsoft. Kubernetes/Коннектедклустерс/Network. K8S. IO/передает/Delete | Удаляет передает |
+> | Microsoft. Kubernetes/Коннектедклустерс/Network. K8S. IO/нетворкполиЦиес/чтение | Считывает нетворкполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Network. K8S. IO/нетворкполиЦиес/запись | Записывает нетворкполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Network. K8S. IO/нетворкполиЦиес/Delete | Удаляет нетворкполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Node. K8S. IO/рунтимеклассес/чтение | Считывает рунтимеклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Node. K8S. IO/рунтимеклассес/запись | Записывает рунтимеклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Node. K8S. IO/рунтимеклассес/Delete | Удаляет рунтимеклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Nodes/Read | Чтение узлов |
+> | Microsoft. Kubernetes/Коннектедклустерс/Nodes/Write | Записывает узлы |
+> | Microsoft. Kubernetes/Коннектедклустерс/Nodes/Delete | Удаляет узлы |
+> | Microsoft. Kubernetes/Коннектедклустерс/openapi/v2/чтение | Операций чтения v2 |
+> | Microsoft. Kubernetes/Коннектедклустерс/персистентволумеклаимс/Read | Считывает персистентволумеклаимс |
+> | Microsoft. Kubernetes/Коннектедклустерс/персистентволумеклаимс/запись | Записывает персистентволумеклаимс |
+> | Microsoft. Kubernetes/Коннектедклустерс/персистентволумеклаимс/Delete | Удаляет персистентволумеклаимс |
+> | Microsoft. Kubernetes/Коннектедклустерс/персистентволумес/Read | Считывает персистентволумес |
+> | Microsoft. Kubernetes/Коннектедклустерс/персистентволумес/запись | Записывает персистентволумес |
+> | Microsoft. Kubernetes/Коннектедклустерс/персистентволумес/Delete | Удаляет персистентволумес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Pod/чтение | Чтение модулей Pod |
+> | Microsoft. Kubernetes/Коннектедклустерс/Pod/Write | Запись модулей Pod |
+> | Microsoft. Kubernetes/Коннектедклустерс/Pod/Delete | Удаление модулей Pod |
+> | Microsoft. Kubernetes/Коннектедклустерс/подтемплатес/Read | Считывает подтемплатес |
+> | Microsoft. Kubernetes/Коннектедклустерс/подтемплатес/запись | Записывает подтемплатес |
+> | Microsoft. Kubernetes/Коннектедклустерс/подтемплатес/Delete | Удаляет подтемплатес |
+> | Microsoft. Kubernetes/Коннектедклустерс/политика/поддисруптионбуджетс/чтение | Считывает поддисруптионбуджетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/политика/поддисруптионбуджетс/запись | Записывает поддисруптионбуджетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Policy/поддисруптионбуджетс/Delete | Удаляет поддисруптионбуджетс |
+> | Microsoft. Kubernetes/Коннектедклустерс/политика/подсекуритиполиЦиес/чтение | Считывает подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/политика/подсекуритиполиЦиес/запись | Записывает подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Policy/подсекуритиполиЦиес/Delete | Удаляет подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/Policy/подсекуритиполиЦиес/использование/действие | Использование действия в подсекуритиполиЦиес |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролебиндингс/чтение | Считывает клустерролебиндингс |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролебиндингс/запись | Записывает клустерролебиндингс |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролебиндингс/Delete | Удаляет клустерролебиндингс |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролес/чтение | Считывает клустерролес |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролес/запись | Записывает клустерролес |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролес/Delete | Удаляет клустерролес |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролес, BIND/Action | Привязка клустерролес |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/клустерролес/эскалация/действие | Текст передает принтерами |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/ролебиндингс/чтение | Считывает ролебиндингс |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/ролебиндингс/запись | Записывает ролебиндингс |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/ролебиндингс/Delete | Удаляет ролебиндингс |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/Roles/Read | Чтение ролей |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/Roles/Write | Записывает роли |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/Roles/Delete | Удаляет роли |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/Roles/BIND/Action | Привязывает роли |
+> | Microsoft. Kubernetes/Коннектедклустерс/RBAC. Authorization. K8S. IO/Roles/эскалация/действие | Эскалация ролей |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/Read | Считывает реадиз |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/авторегистрация — завершение и чтение | Чтение авторегистрации — завершение |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/etcd/Read | Считывает etcd |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/журнал/чтение | Чтение журнала |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/ping/Read | Чтение проверки связи |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/аписервице-openapi-контроллер/чтение | Чтение аписервице-openapi-Controller |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/аписервице-регистрация-контроллер/чтение | Чтение аписервице-регистрация-контроллер |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/аписервице-состояние — доступно-контроллер/чтение | Чтение аписервице-Status-Available-Controller |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/начальная загрузка-контроллер/чтение | Считывает загрузочный контроллер |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/CA-регистрация/чтение | Чтение ЦС — регистрация |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/CRD-информирует-синхронизация/чтение | Чтение CRD — синхронизация с уведомлением |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/Generic-аписервер — запуск — предназначение или чтение | Считывает общие-аписервер-Start-информирует |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/KUBE-аписервер — авторегистрация/чтение | Чтение KUBE-аписервер — авторегистрация |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/RBAC/начальная загрузка — роли/чтение | Считывает начальную загрузку — роли |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/планирование/начальная загрузка-система-приоритет-классы/чтение | Считывает классы начальной загрузки-System-Priority-classes |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/Start-апиекстенсионс-Controllers/Read | Чтение с Start-апиекстенсионс-Controllers |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/Start-апиекстенсионс-информирует/Read | Reads Start-апиекстенсионс-информирует |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/Start-KUBE-агрегатор — недоступность и чтение | Чтение Start-KUBE-агрегатор — несоответствие |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/постстарсук/Start-KUBE-аписервер-допуски — инициализатор/чтение | Чтение с Start-KUBE-аписервер-допуск-initializer |
+> | Microsoft. Kubernetes/Коннектедклустерс/реадиз/завершение работы/чтение | Чтение завершено |
+> | Microsoft. Kubernetes/Коннектедклустерс/репликатионконтроллерс/Read | Считывает репликатионконтроллерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/репликатионконтроллерс/запись | Записывает репликатионконтроллерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/репликатионконтроллерс/Delete | Удаляет репликатионконтроллерс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Ресетметрикс/Read | Считывает Ресетметрикс |
+> | Microsoft. Kubernetes/Коннектедклустерс/ресаурцекуотас/Read | Считывает ресаурцекуотас |
+> | Microsoft. Kubernetes/Коннектедклустерс/ресаурцекуотас/запись | Записывает ресаурцекуотас |
+> | Microsoft. Kubernetes/Коннектедклустерс/ресаурцекуотас/Delete | Удаляет ресаурцекуотас |
+> | Microsoft. Kubernetes/Коннектедклустерс/планирование. K8S. IO/приоритиклассес/чтение | Считывает приоритиклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/планирование. K8S. IO/приоритиклассес/запись | Записывает приоритиклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/планирование. K8S. IO/приоритиклассес/удаление | Удаляет приоритиклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/секреты/чтение | Чтение секретов |
+> | Microsoft. Kubernetes/Коннектедклустерс/секреты/запись | Запись секретов |
+> | Microsoft. Kubernetes/Коннектедклустерс/секреты/удаление | Удаление секретов |
+> | Microsoft. Kubernetes/Коннектедклустерс/сервицеаккаунтс/Read | Считывает сервицеаккаунтс |
+> | Microsoft. Kubernetes/Коннектедклустерс/сервицеаккаунтс/запись | Записывает сервицеаккаунтс |
+> | Microsoft. Kubernetes/Коннектедклустерс/сервицеаккаунтс/Delete | Удаляет сервицеаккаунтс |
+> | Microsoft. Kubernetes/Коннектедклустерс/сервицеаккаунтс/IMPERSONATE/Action | Олицетворение сервицеаккаунтс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Services/Read | Считывает службы |
+> | Microsoft. Kubernetes/Коннектедклустерс/Services/Write | Записывает службы |
+> | Microsoft. Kubernetes/Коннектедклустерс/Services/Delete | Удаляет службы |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/ксидриверс/чтение | Считывает ксидриверс |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/ксидриверс/запись | Записывает ксидриверс |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/ксидриверс/удаление | Удаляет ксидриверс |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/ксинодес/чтение | Считывает ксинодес |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/ксинодес/запись | Записывает ксинодес |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/ксинодес/удаление | Удаляет ксинодес |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/сторажеклассес/чтение | Считывает сторажеклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/сторажеклассес/запись | Записывает сторажеклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/сторажеклассес/удаление | Удаляет сторажеклассес |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/волумеаттачментс/чтение | Считывает волумеаттачментс |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/волумеаттачментс/запись | Записывает волумеаттачментс |
+> | Microsoft. Kubernetes/Коннектедклустерс/хранилище. K8S. IO/волумеаттачментс/удаление | Удаляет волумеаттачментс |
+> | Microsoft. Kubernetes/Коннектедклустерс/Swagger-API/чтение | Чтение Swagger — API |
+> | Microsoft. Kubernetes/Коннектедклустерс/Swagger-UI/Read | Считывание Swagger — пользовательский интерфейс |
+> | Microsoft. Kubernetes/Коннектедклустерс/UI/чтение | Чтение пользовательского интерфейса |
+> | Microsoft. Kubernetes/Коннектедклустерс/Users/IMPERSONATE/Action | Олицетворять пользователей |
+> | Microsoft. Kubernetes/Коннектедклустерс/версия/чтение | Чтение версии |
 
 ### <a name="microsoftmanagedservices"></a>Microsoft.ManagedServices
 
@@ -9153,76 +9662,76 @@ ms.locfileid: "97707645"
 > | Действие | Описание |
 > | --- | --- |
 > | Microsoft.RecoveryServices/register/action | Регистрация подписки для заданного поставщика ресурсов. |
-> | Microsoft.RecoveryServices/Locations/backupPreValidateProtection/action |  |
-> | Microsoft.RecoveryServices/Locations/backupStatus/action | Проверка состояния архивации хранилищ служб восстановления. |
-> | Microsoft.RecoveryServices/Locations/backupValidateFeatures/action | Проверка компонентов. |
+> | Microsoft. recoveryservices/Locations/Баккупкроссрегионресторе/Action | Активация восстановления между регионами. |
+> | Microsoft. recoveryservices/Locations/Баккупкрржоб/Action | Получите сведения о задании восстановления из нескольких регионов в дополнительном регионе для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Locations/Баккупкрржобс/Action | Перечисление заданий восстановления с перекрестной областью в дополнительном регионе для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Locations/Баккуппревалидатепротектион/Action |  |
+> | Microsoft. recoveryservices/Locations/Баккупстатус/Action | Проверка состояния архивации хранилищ служб восстановления. |
+> | Microsoft. recoveryservices/Locations/Баккупвалидатефеатурес/Action | Проверка компонентов. |
 > | Microsoft.RecoveryServices/locations/allocateStamp/action | AllocatedStamp является внутренней операцией, используемой службой. |
 > | Microsoft.RecoveryServices/locations/checkNameAvailability/action | Проверка доступности имени ресурса использует API, позволяющий проверить, доступно ли имя ресурса. |
 > | Microsoft.RecoveryServices/locations/allocatedStamp/read | GetAllocatedStamp является внутренней операцией, используемой службой. |
-> | Microsoft. RecoveryServices/Locations/Баккуппротектедитем/Write | Создает элемент, защищенный службой архивации. |
-> | Microsoft. RecoveryServices/Locations/Баккуппротектедитемс/Read | Возвращает список всех защищенных элементов. |
+> | Microsoft. recoveryservices/Locations/Баккупаадпропертиес/Read | Получите свойства AAD для проверки подлинности в третьем регионе для восстановления между регионами. |
+> | Microsoft. recoveryservices/Locations/Баккупкрроператионресултс/Read | Возвращает результат операции КРР для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Locations/Баккупкрроператионсстатус/Read | Возвращает состояние операции КРР для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Locations/Баккуппротектедитем/Write | Создает элемент, защищенный службой архивации. |
+> | Microsoft. recoveryservices/Locations/Баккуппротектедитемс/Read | Возвращает список всех защищенных элементов. |
 > | Microsoft.RecoveryServices/locations/operationStatus/read | Возвращает состояние операции для данной операции |
 > | Microsoft.RecoveryServices/operations/read | Получение списка операций для поставщика ресурсов. |
-> | Microsoft. RecoveryServices/Vault/Баккупкроссрегионресторе/действие | Восстановление точек восстановления для защищенных элементов в разных регионах. |
-> | Microsoft. RecoveryServices/Vault/Баккупкрржоб/действие | Получите сведения о задании восстановления из нескольких регионов в дополнительном регионе для хранилища служб восстановления. |
-> | Microsoft. RecoveryServices/Vault/Баккупкрржобс/действие | Перечисление заданий восстановления с перекрестной областью в дополнительном регионе для хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupSecurityPIN/action | Возвращает данные ПИН-кода безопасности для хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupValidateOperation/action | Проверка операций для защищенного элемента |
+> | Microsoft. recoveryservices/Vault/Баккупжобсекспорт/действие | Экспортирует задания. |
+> | Microsoft. recoveryservices/Vault/Баккупсекуритипин/действие | Возвращает данные ПИН-кода безопасности для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Vault/Баккупвалидатеоператион/действие | Проверка операций для защищенного элемента |
 > | Microsoft.RecoveryServices/Vaults/write | Создает операцию создания хранилища, которая создает ресурс Azure типа "хранилище". |
 > | Microsoft.RecoveryServices/Vaults/read | Операция получения хранилища возвращает объект, представляющий ресурс Azure типа "хранилище". |
 > | Microsoft.RecoveryServices/Vaults/delete | Операция удаления хранилища удаляет указанный ресурс Azure типа "хранилище". |
-> | Microsoft. RecoveryServices/хранилища/Баккупаадпропертиес/чтение | Получите свойства AAD для проверки подлинности в третьем регионе для восстановления между регионами. |
-> | Microsoft.RecoveryServices/Vaults/backupconfig/read | Возвращает конфигурацию хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupconfig/write | Обновляет конфигурацию хранилища служб восстановления. |
-> | Microsoft. RecoveryServices/хранилища/Баккупкрроператионресултс/чтение | Возвращает результат операции КРР для хранилища служб восстановления. |
-> | Microsoft. RecoveryServices/хранилища/Баккупкрроператионсстатус/чтение | Возвращает состояние операции КРР для хранилища служб восстановления. |
-> | Microsoft. RecoveryServices/хранилища/Баккупенкриптионконфигс/чтение | Возвращает конфигурацию шифрования ресурсов резервной копии. |
-> | Microsoft. RecoveryServices/Vault/Баккупенкриптионконфигс/запись | Обновляет конфигурацию шифрования ресурсов резервных копий |
-> | Microsoft.RecoveryServices/Vaults/backupEngines/read | Возвращение всех серверов управления архивацией, зарегистрированных в хранилище. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/delete | Удаление цели защиты для резервного копирования. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/read | Получение цели защиты для резервного копирования. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write | Создание цели защиты для резервной копии. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/read | Возвращает состояние операции. |
-> | Microsoft. RecoveryServices/хранилища/Баккупфабрикс/Оператионсстатус/чтение | Возвращает состояние операции. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectableContainers/read | Получение всех защищаемых контейнеров. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/delete | Удаление зарегистрированного контейнера. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/inquire/action | Запрос рабочих нагрузок в контейнере. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/read | Возвращает все зарегистрированные контейнеры. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/write | Создание зарегистрированного контейнера. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/items/read | Получение всех элементов в контейнере. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/operationResults/read | Возвращает результат операции, выполненной с контейнером защиты. |
-> | Microsoft. RecoveryServices/Vault/Баккупфабрикс/Протектионконтаинерс/Оператионсстатус/чтение | Возвращает состояние операции, выполненной с контейнером защиты. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/backup/action | Архивирует защищенный элемент. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/delete | Удаляет защищенный элемент. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read | Возвращает сведения об объекте для защищенного элемента. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write | Создает элемент, защищенный службой архивации. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationResults/read | Возвращает результат операции, выполненной с защищенными элементами. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read | Возвращает состояние операции, выполненной с защищенными элементами. |
-> | Microsoft. RecoveryServices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Рековерипоинтс/accessToken/действие | Получение AccessToken для восстановления между регионами. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/action | Подготавливает мгновенное восстановление для защищенного элемента. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/read | Возвращает точки восстановления для защищенных элементов. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/restore/action | Восстанавливает точки восстановления для защищенных элементов. |
-> | Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/revokeInstantItemRecovery/action | Отменяет мгновенное восстановление для защищенного элемента. |
-> | Microsoft.RecoveryServices/Vaults/backupJobs/cancel/action | Отменяет задание. |
-> | Microsoft.RecoveryServices/Vaults/backupJobs/read | Возвращает все объекты заданий. |
-> | Microsoft.RecoveryServices/Vaults/backupJobs/operationResults/read | Возвращает результат операции задания. |
-> | Microsoft. RecoveryServices/хранилища/Баккупжобс/Оператионсстатус/чтение | Возвращает состояние операции задания. |
-> | Microsoft.RecoveryServices/Vaults/backupOperationResults/read | Возвращает результат операции архивации для хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupOperations/read | Возвращает состояние операции архивации для хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupPolicies/delete | Удаляет политику защиты. |
-> | Microsoft.RecoveryServices/Vaults/backupPolicies/read | Возвращает все политики защиты. |
-> | Microsoft.RecoveryServices/Vaults/backupPolicies/write | Создает политику защиты. |
-> | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
-> | Microsoft.RecoveryServices/Vaults/backupPolicies/operations/read | Возвращает состояние операции политики. |
-> | Microsoft.RecoveryServices/Vaults/backupProtectableItems/read | Возвращает список всех защищаемых элементов. |
-> | Microsoft.RecoveryServices/Vaults/backupProtectedItems/read | Возвращает список всех защищенных элементов. |
-> | Microsoft.RecoveryServices/Vaults/backupProtectionContainers/read | Возвращает все контейнеры, принадлежащие подписке. |
-> | Microsoft.RecoveryServices/Vaults/backupProtectionIntents/read | Вывод списка всех целей защиты для резервного копирования. |
-> | Microsoft.RecoveryServices/Vaults/backupstorageconfig/read | Возвращает конфигурацию службы хранилища для хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupstorageconfig/write | Обновляет конфигурацию службы хранилища для хранилища служб восстановления. |
-> | Microsoft.RecoveryServices/Vaults/backupUsageSummaries/read | Возвращает сводки по защищенным элементам и защищенным серверам для служб восстановления. |
+> | Microsoft. recoveryservices/хранилища/баккупконфиг/чтение | Возвращает конфигурацию хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Vault/баккупконфиг/запись | Обновляет конфигурацию хранилища служб восстановления. |
+> | Microsoft. recoveryservices/хранилища/Баккупенкриптионконфигс/чтение | Возвращает конфигурацию шифрования ресурсов резервной копии. |
+> | Microsoft. recoveryservices/Vault/Баккупенкриптионконфигс/запись | Обновляет конфигурацию шифрования ресурсов резервных копий |
+> | Microsoft. recoveryservices/хранилища/Баккупенгинес/чтение | Возвращение всех серверов управления архивацией, зарегистрированных в хранилище. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Рефрешконтаинерс/действие | Обновляет список контейнеров. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Баккуппротектионинтент/удалить | Удаление цели защиты для резервного копирования. |
+> | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Баккуппротектионинтент/чтение | Получение цели защиты для резервного копирования. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Баккуппротектионинтент/запись | Создание цели защиты для резервной копии. |
+> | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Оператионресултс/чтение | Возвращает состояние операции. |
+> | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Оператионсстатус/чтение | Возвращает состояние операции. |
+> | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Протектаблеконтаинерс/чтение | Получение всех защищаемых контейнеров. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/удалить | Удаление зарегистрированного контейнера. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/запрос/действие | Запрос рабочих нагрузок в контейнере. |
+> | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Протектионконтаинерс/чтение | Возвращает все зарегистрированные контейнеры. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/запись | Создание зарегистрированного контейнера. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/элементы/чтение | Получение всех элементов в контейнере. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Оператионресултс/чтение | Возвращает результат операции, выполненной с контейнером защиты. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Оператионсстатус/чтение | Возвращает состояние операции, выполненной с контейнером защиты. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/резервное копирование/действие | Архивирует защищенный элемент. |
+> | Microsoft. recoveryservices/хранилища/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Delete | Удаляет защищенный элемент. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/чтение | Возвращает сведения об объекте для защищенного элемента. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/запись | Создает элемент, защищенный службой архивации. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Оператионресултс/чтение | Возвращает результат операции, выполненной с защищенными элементами. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Оператионсстатус/чтение | Возвращает состояние операции, выполненной с защищенными элементами. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Рековерипоинтс/accessToken/действие | Получение AccessToken для восстановления между регионами. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Рековерипоинтс/Провисионинстантитемрековери/действие | Подготавливает мгновенное восстановление для защищенного элемента. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Рековерипоинтс/чтение | Возвращает точки восстановления для защищенных элементов. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Рековерипоинтс/Restore/Action | Восстанавливает точки восстановления для защищенных элементов. |
+> | Microsoft. recoveryservices/Vault/Баккупфабрикс/Протектионконтаинерс/Протектедитемс/Рековерипоинтс/Ревокеинстантитемрековери/действие | Отменяет мгновенное восстановление для защищенного элемента. |
+> | Microsoft. recoveryservices/Vault/Баккупжобс/отмена/действие | Отменяет задание. |
+> | Microsoft. recoveryservices/хранилища/Баккупжобс/чтение | Возвращает все объекты заданий. |
+> | Microsoft. recoveryservices/хранилища/Баккупжобс/Оператионресултс/чтение | Возвращает результат операции задания. |
+> | Microsoft. recoveryservices/хранилища/Баккупжобс/Оператионсстатус/чтение | Возвращает состояние операции задания. |
+> | Microsoft. recoveryservices/хранилища/Баккупоператионресултс/чтение | Возвращает результат операции архивации для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/хранилища/Баккупоператионс/чтение | Возвращает состояние операции архивации для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/хранилища/БаккупполиЦиес/удаление | Удаляет политику защиты. |
+> | Microsoft. recoveryservices/хранилища/БаккупполиЦиес/чтение | Возвращает все политики защиты. |
+> | Microsoft. recoveryservices/Vault/БаккупполиЦиес/запись | Создает политику защиты. |
+> | Microsoft. recoveryservices/хранилища/БаккупполиЦиес/Оператионресултс/чтение | Возвращает результаты операции политики. |
+> | Microsoft. recoveryservices/Vault/БаккупполиЦиес/операции/чтение | Возвращает состояние операции политики. |
+> | Microsoft. recoveryservices/хранилища/Баккуппротектаблеитемс/чтение | Возвращает список всех защищаемых элементов. |
+> | Microsoft. recoveryservices/хранилища/Баккуппротектедитемс/чтение | Возвращает список всех защищенных элементов. |
+> | Microsoft. recoveryservices/хранилища/Баккуппротектионконтаинерс/чтение | Возвращает все контейнеры, принадлежащие подписке. |
+> | Microsoft. recoveryservices/хранилища/Баккуппротектионинтентс/чтение | Вывод списка всех целей защиты для резервного копирования. |
+> | Microsoft. recoveryservices/хранилища/баккупсторажеконфиг/чтение | Возвращает конфигурацию службы хранилища для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/Vault/баккупсторажеконфиг/запись | Обновляет конфигурацию службы хранилища для хранилища служб восстановления. |
+> | Microsoft. recoveryservices/хранилища/Баккупусажесуммариес/чтение | Возвращает сводки по защищенным элементам и защищенным серверам для служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/certificates/write | Операция обновления сертификата ресурса обновляет сертификат учетных данных для ресурса или хранилища. |
 > | Microsoft.RecoveryServices/Vaults/extendedInformation/read | Операция получения расширенных сведений о хранилище возвращает расширенные сведения об объекте, представляющие ресурс Azure типа "хранилище". |
 > | Microsoft.RecoveryServices/Vaults/extendedInformation/write | Операция получения расширенных сведений о хранилище возвращает расширенные сведения об объекте, представляющие ресурс Azure типа "хранилище". |
@@ -9231,14 +9740,14 @@ ms.locfileid: "97707645"
 > | Microsoft.RecoveryServices/Vaults/monitoringAlerts/write | Разрешение оповещения. |
 > | Microsoft.RecoveryServices/Vaults/monitoringConfigurations/read | Возвращает конфигурацию уведомлений хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/monitoringConfigurations/write | Настройка уведомлений по электронной почте в хранилище служб восстановления. |
-> | Microsoft. RecoveryServices/хранилища/Приватиндпоинтконнектионпроксиес/удаление | Подождите несколько минут и повторите попытку. Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт. |
-> | Microsoft. RecoveryServices/хранилища/Приватиндпоинтконнектионпроксиес/чтение | Получение всех защищаемых контейнеров. |
-> | Microsoft. RecoveryServices/Vault/Приватиндпоинтконнектионпроксиес/проверка/действие | Получение всех защищаемых контейнеров. |
-> | Microsoft. RecoveryServices/Vault/Приватиндпоинтконнектионпроксиес/запись | Получение всех защищаемых контейнеров. |
-> | Microsoft. RecoveryServices/хранилища/Приватиндпоинтконнектионпроксиес/Оператионсстатус/чтение | Получение всех защищаемых контейнеров. |
-> | Microsoft. RecoveryServices/хранилища/Приватиндпоинтконнектионс/удаление | Удаление запросов к закрытой конечной точке. Этот вызов осуществляется администратором резервного копирования. |
-> | Microsoft. RecoveryServices/Vault/Приватиндпоинтконнектионс/запись | Утверждение или отклонение запросов частной конечной точки. Этот вызов осуществляется администратором резервного копирования. |
-> | Microsoft. RecoveryServices/хранилища/Приватиндпоинтконнектионс/Оператионсстатус/чтение | Возвращает состояние операции для подключения к частной конечной точке. |
+> | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/удаление | Подождите несколько минут и повторите попытку. Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт. |
+> | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/чтение | Получение всех защищаемых контейнеров. |
+> | Microsoft. recoveryservices/Vault/Приватиндпоинтконнектионпроксиес/проверка/действие | Получение всех защищаемых контейнеров. |
+> | Microsoft. recoveryservices/Vault/Приватиндпоинтконнектионпроксиес/запись | Получение всех защищаемых контейнеров. |
+> | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионпроксиес/Оператионсстатус/чтение | Получение всех защищаемых контейнеров. |
+> | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионс/удаление | Удаление запросов к закрытой конечной точке. Этот вызов осуществляется администратором резервного копирования. |
+> | Microsoft. recoveryservices/Vault/Приватиндпоинтконнектионс/запись | Утверждение или отклонение запросов частной конечной точки. Этот вызов осуществляется администратором резервного копирования. |
+> | Microsoft. recoveryservices/хранилища/Приватиндпоинтконнектионс/Оператионсстатус/чтение | Возвращает состояние операции для подключения к частной конечной точке. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/write | Операцию регистрации контейнера в службе можно использовать для регистрации контейнера в службе восстановления. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/read | Операцию получения контейнеров можно использовать для получения контейнеров, зарегистрированных для ресурса. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/delete | Операцию отмены регистрации контейнера можно использовать для отмены регистрации контейнера. |
@@ -9294,7 +9803,7 @@ ms.locfileid: "97707645"
 > | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/Адддискс/действие | Добавление дисков |
 > | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/Ремоведискс/действие | Удаление дисков |
 > | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/Ресолвехеалсеррорс/действие |  |
-> | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/Фаиловерканцел/действие |  |
+> | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/Фаиловерканцел/действие | Отмена отработки отказа |
 > | Microsoft. RecoveryServices/Vault/Репликатионфабрикс/Репликатионпротектионконтаинерс/Репликатионпротектедитемс/оператионресултс/чтение | Отследите результаты асинхронной операции с защищенными элементами ресурсов. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/targetComputeSizes/read | Считывание целевых объемов вычислительных ресурсов |
@@ -9345,6 +9854,7 @@ ms.locfileid: "97707645"
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/testFailoverCleanup/action | Тестирует очистку отработки отказа для плана восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/failoverCommit/action | Выполняет отработку отказа с фиксацией для плана восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/reProtect/action | Повторно защищает план восстановления. |
+> | Microsoft. RecoveryServices/Vault/Репликатионрековерипланс/Фаиловерканцел/действие | Отменить план восстановления отработки отказа |
 > | Microsoft. RecoveryServices/хранилища/Репликатионрековерипланс/оператионресултс/чтение | Отследите результаты асинхронной операции с планами восстановления ресурсов. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
 > | Microsoft.RecoveryServices/vaults/replicationStorageClassificationMappings/read | Считывание сопоставлений классификаций хранилища |
@@ -9357,7 +9867,7 @@ ms.locfileid: "97707645"
 > | Microsoft. RecoveryServices/хранилища/Репликатионваултсеттингс/чтение | Чтение любого элемента.  |
 > | Microsoft. RecoveryServices/Vault/Репликатионваултсеттингс/запись | Создание или обновление любого  |
 > | Microsoft.RecoveryServices/vaults/replicationvCenters/read | Чтение vCenter |
-> | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |
+> | Microsoft. recoveryservices/хранилища/использование/чтение | Возвращает данные об использовании хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/vaults/usages/read | Считывание данных об использовании хранилищ |
 > | Microsoft.RecoveryServices/Vaults/vaultTokens/read | Операцию получения маркера хранилища можно использовать, чтобы получить маркер хранилища для операций серверной части уровня хранилища. |
 
@@ -9537,6 +10047,16 @@ ms.locfileid: "97707645"
 > | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Логдефинитионс/Read | Возвращает параметры журнала для Azure Monitor ресурса. |
 > | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/metricDefinitions/Read | Возвращает параметры метрики для Azure Monitor ресурса. |
 > | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Оператионсресултс/Read | Считывает результат операции |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионпроксиес/проверка/действие | Проверка ресурса Приватиндпоинтконнектионпроксиес |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионпроксиес/Read | Чтение ресурса Приватиндпоинтконнектионпроксиес |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионпроксиес/запись | Запись ресурса Приватиндпоинтконнектионпроксиес |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионпроксиес/Delete | Удаление ресурса Приватиндпоинтконнектионпроксиес |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионпроксиес/Оператионресултс/Read | Получение результата асинхронной операции на прокси-сервере подключения частной конечной точки |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионс/Read | Чтение ресурса Приватиндпоинтконнектион |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионс/запись | Запись ресурса Приватиндпоинтконнектион |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионс/Delete | Удаление ресурса Приватиндпоинтконнектион |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Приватиндпоинтконнектионс/Оператионресултс/Read | Получение результата асинхронной операции для подключения к частной конечной точке |
+> | Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес/Привателинкресаурцес/Read | Считывает Привателинкресаурцес для цифровых двойников |
 > | Microsoft. Дигиталтвинс/Locations/Чеккнамеаваилабилити/Action | Проверка доступности имени ресурса в поставщике ресурсов Digital двойников |
 > | Microsoft. Дигиталтвинс/Locations/Оператионсресултс/Read | Считывает результат операции |
 > | Microsoft. Дигиталтвинс/операции/чтение | Чтение всех операций |
