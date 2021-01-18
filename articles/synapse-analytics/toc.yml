@@ -1094,25 +1094,26 @@
     - name: Учебники
       items:
         - name: Визуализация данных с помощью Apache Spark
+          displayname: machine learning
           href: ./spark/apache-spark-data-visualization-tutorial.md
-          displayname: machine learning
         - name: Использование мастера оценки для выделенных пулов SQL
-          href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
           displayname: machine learning
+          href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
         - name: Обучение модели без использования кода с помощью автоматизированного ML
+          displayname: machine learning
           href: ./machine-learning/tutorial-automl.md
         - name: Обучение модели на Python с помощью автоматизированного машинного обучения
+          displayname: machine learning
           href: ./spark/apache-spark-azure-machine-learning-tutorial.md
-          displayname: machine learning
         - name: Создание модели с помощью Apache Spark MLlib
-          href: ./spark/apache-spark-machine-learning-mllib-notebook.md
           displayname: machine learning
+          href: ./spark/apache-spark-machine-learning-mllib-notebook.md
+        - name: Настройка Cognitive Services для Azure Synapse
+          href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
         - name: Анализ тональности с помощью Cognitive Services
           href: ./machine-learning/tutorial-cognitive-services-sentiment.md
         - name: Обнаружение аномалий с помощью Cognitive Services
           href: ./machine-learning/tutorial-cognitive-services-anomaly.md
-        - name: Настройка Cognitive Services для Azure Synapse
-          href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
 - name: Каталог данных и управление
   items:
     - name: Краткие руководства

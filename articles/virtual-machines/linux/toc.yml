@@ -234,7 +234,7 @@
         - name: Резервирования Хранилища дисков
           href: ../../cost-management-billing/reservations/understand-disk-reservations.md
         - name: Производительность диска и виртуальной машины
-          href: disk-performance-linux.md
+          href: ../disks-performance.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Проектирование для обеспечения высокой производительности
           href: ../premium-storage-performance.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Всплеск активности диска
@@ -725,7 +725,7 @@
                       href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
                     - name: Пользовательские поля
                       href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-            - name: Устранение неполадок
+            - name: Диагностика
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
                   href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
@@ -906,10 +906,8 @@
           href: snapshot-copy-managed-disk.md
         - name: Зарезервировать Хранилище дисков
           href: ../disks-reserved-capacity.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
-        - name: "Создание добавочного моментального снимка\_— CLI"
-          href: disks-incremental-snapshots.md
-        - name: "Создание добавочного моментального снимка\_— портал"
-          href: disks-incremental-snapshots-portal.md
+        - name: Создание добавочного моментального снимка
+          href: ../disks-incremental-snapshots.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Резервное копирование неуправляемых дисков
           href: incremental-snapshots.md
         - name: Шифрование
@@ -943,7 +941,7 @@
             - name: Использование дисков (цен. категория "Ультра")
               href: ../disks-enable-ultra-ssd.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
             - name: Тест производительности диска
-              href: disks-benchmarks.md
+              href: ../disks-benchmarks.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: "Обнаружение неприсоединенных дисков\_— CLI"
           href: find-unattached-disks.md
         - name: "Обнаружение неприсоединенных дисков\_— портал"
