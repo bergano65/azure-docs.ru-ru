@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 6c1f323828eb48b61b38370bc2fe56d4c93bf036
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 889ee48c43119086047d6f52737266f4c611fc8d
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127215"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562749"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -83,11 +83,11 @@ Azure Monitor использует управляемое удостоверен
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -95,7 +95,7 @@ Azure Monitor использует управляемое удостоверен
 
 # <a name="rest"></a>[REST](#tab/rest)
 
-При использовании функции остальное ответ сначала возвращает код состояния HTTP 200 (ОК) и заголовок с помощью свойства *Azure-AsyncOperation* , если оно принято:
+При использовании функции остальное ответ изначально возвращает код состояния HTTP 202 (принято) и заголовок со свойством *Azure-AsyncOperation* :
 ```json
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
 ```
@@ -160,7 +160,7 @@ Authorization: Bearer <token>
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -200,7 +200,7 @@ Content-type: application/json
 1. Скопируйте значение URL-адреса Azure-AsyncOperation из ответа и выполните [проверку состояния асинхронных операций](#asynchronous-operations-and-status-check).
 2. Отправьте запрос GET в кластер и просмотрите свойства *кэйваултпропертиес* . Недавно обновленный ключ должен вернуть ответ.
 
-Ответ на запрос GET должен выглядеть следующим образом после завершения обновления ключа: 200 ОК и заголовок
+Ответ на запрос GET должен выглядеть следующим образом после завершения обновления ключа: 202 (принято) и Header
 ```json
 {
   "identity": {
@@ -283,7 +283,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -327,7 +327,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 

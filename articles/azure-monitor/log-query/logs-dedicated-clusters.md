@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 34524626cc213233c3db2ca438261b238eb18a2a
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 93b05a5535b80d0e0d1a07c88aa9b19052f1b703
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831777"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562681"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
 
@@ -58,7 +58,7 @@ Azure Monitor журналов выделенные кластеры — это 
 
 ## <a name="asynchronous-operations-and-status-check"></a>Асинхронные операции и проверка состояния
 
-Некоторые этапы настройки выполняются асинхронно, так как они не могут быть завершены быстро. В ответе может быть указано одно из следующих состояний: "выполняется", "обновление", "удаление", "успешно" или "сбой", включая код ошибки. При использовании функции остальное ответ первоначально возвращает код состояния HTTP 200 (ОК) и заголовок со свойством Azure-AsyncOperation, если оно принято:
+Некоторые этапы настройки выполняются асинхронно, так как они не могут быть завершены быстро. В ответе может быть указано одно из следующих состояний: "выполняется", "обновление", "удаление", "успешно" или "сбой", включая код ошибки. При использовании функции остальное ответ изначально возвращает код состояния HTTP 202 (принято) и заголовок со свойством Azure-AsyncOperation:
 
 ```JSON
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
@@ -102,7 +102,7 @@ Get-Job -Command "New-AzOperationalInsightsCluster*" | Format-List -Property *
 
 **REST**
 
-*Вызов* 
+*Обращение* 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
 Authorization: Bearer <token>
@@ -125,7 +125,7 @@ Content-type: application/json
 
 *Ответ*
 
-Должно быть 200 ОК и заголовок.
+Должно быть 202 (принято) и заголовком.
 
 ### <a name="check-cluster-provisioning-status"></a>Проверка состояния подготовки кластера
 
@@ -229,7 +229,7 @@ Content-type: application/json
 
 *Ответ*
 
-200 ОК и заголовок.
+202 (принято) и заголовок.
 
 ### <a name="check-workspace-link-status"></a>Проверить состояние ссылки на рабочую область
   
@@ -255,7 +255,7 @@ Get-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Nam
 
 **REST**
 
-*Вызов*
+*Обращение*
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>?api-version=2020-08-01
@@ -322,7 +322,7 @@ Get-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name"
 
 **REST**
 
-*Вызов*
+*Обращение*
 
   ```rst
   GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -380,7 +380,7 @@ Get-AzOperationalInsightsCluster
 
 **REST**
 
-*Вызов*
+*Обращение*
 
 ```rst
 GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -411,7 +411,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Cl
 
 **REST**
 
-*Вызов*
+*Обращение*
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -434,7 +434,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Cl
 
 **REST**
 
-*Вызов*
+*Обращение*
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01

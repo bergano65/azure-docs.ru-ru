@@ -1,6 +1,6 @@
 ---
-title: Назначение пользовательских ролей с помощью Azure PowerShell Azure AD | Документация Майкрософт
-description: Управление членами настраиваемой роли администратора Azure AD с помощью Azure PowerShell.
+title: Назначение пользовательских ролей с помощью Azure AD PowerShell в Azure AD | Документация Майкрософт
+description: Управление членами настраиваемой роли администратора Azure AD с помощью Azure AD PowerShell.
 services: active-directory
 author: curtand
 manager: daveba
@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4695d0844ef8b707edce53a05de611c91223a46
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 8b155ccd7f8f0d7f6d63d906d7d0baaa3243512b
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861958"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562783"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Назначение пользовательских ролей с областью действия ресурса с помощью PowerShell в Azure Active Directory
 
@@ -32,26 +32,26 @@ ms.locfileid: "96861958"
 
 ## <a name="prepare-powershell"></a>Подготовка PowerShell
 
-Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Импортируйте модуль Azure AD PowerShell (предварительная версия) с помощью следующей команды:
+Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview). Импортируйте модуль Azure AD PowerShell (предварительная версия) с помощью следующей команды:
 
 ``` PowerShell
-import-module azureadpreview
+Import-Module AzureADPreview
 ```
 
 Чтобы убедиться в готовности модуля к использованию, сопоставьте версию, возвращенную следующей командой, с указанной здесь.
 
 ``` PowerShell
-get-module azureadpreview
+Get-Module AzureADPreview
   ModuleType Version      Name                         ExportedCommands
   ---------- ---------    ----                         ----------------
   Binary     2.0.0.115    azureadpreview               {Add-AzureADMSAdministrati...}
 ```
 
-Теперь можно начать использование командлетов в модуле. Полное описание командлетов в модуле Azure AD см. в интерактивной справочной документации по [модулю Azure AD Preview](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17).
+Теперь можно начать использование командлетов в модуле. Полное описание командлетов в модуле Azure AD см. в интерактивной справочной документации по [модулю Azure AD Preview](https://www.powershellgallery.com/packages/AzureADPreview).
 
-## <a name="assign-a-role-to-a-user-or-service-principal-with-resource-scope"></a>Назначение роли пользователю или субъекту-службе с областью действия ресурса
+## <a name="assign-a-directory-role-to-a-user-or-service-principal-with-resource-scope"></a>Назначение роли каталога пользователю или субъекту-службе с областью действия ресурса
 
-1. Откройте модуль PowerShell для предварительной версии Azure AD.
+1. Загрузите модуль Azure AD PowerShell (Предварительная версия).
 1. Выполните вход, выполнив команду `Connect-AzureAD` .
 1. Создайте новую роль, используя следующий сценарий PowerShell.
 
@@ -69,13 +69,13 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-Чтобы назначить роль субъекту-службе, а не пользователю, используйте [командлет Get-азуреадмссервицепринЦипал](/powershell/module/azuread/get-azureadserviceprincipal).
+Чтобы назначить роль субъекту-службе, а не пользователю, используйте командлет [Get-азуреадмссервицепринЦипал](/powershell/module/azuread/get-azureadserviceprincipal) .
 
-## <a name="operations-on-roledefinition"></a>Операции с определения роли
+## <a name="role-definitions"></a>Определения ролей
 
-Объекты определения ролей содержат определение встроенной или пользовательской роли вместе с разрешениями, предоставленными этим назначением роли. В этом ресурсе отображаются пользовательские определения ролей и встроенные directoryRoles (которые отображаются в форме эквивалента определения роли). Сейчас в Организации Azure AD может быть определено не более 30 уникальных настраиваемых RoleDefinitions.
+Объекты определения ролей содержат определение встроенной или пользовательской роли вместе с разрешениями, предоставленными этим назначением роли. В этом ресурсе отображаются пользовательские определения ролей и встроенные роли каталога (которые отображаются в эквивалентной форме определения роли). Сейчас в Организации Azure AD может быть определено не более 30 уникальных определений пользовательских ролей.
 
-### <a name="create-operations-on-roledefinition"></a>Создание операций в определения роли
+### <a name="create-a-role-definition"></a>Создание определения роли
 
 ``` PowerShell
 # Basic information
@@ -83,32 +83,32 @@ $description = "Can manage credentials of application registrations"
 $displayName = "Application Registration Credential Administrator"
 $templateId = (New-Guid).Guid
 
-# Set of actions to grant
-$allowedResourceAction =
-@(
-    "microsoft.directory/applications/standard/read",
-    "microsoft.directory/applications/credentials/update"
-)
-$rolePermissions = @{'allowedResourceActions'= $allowedResourceAction}
+# Set of actions to include
+$rolePermissions = @{
+    "allowedResourceActions" = @(
+        "microsoft.directory/applications/standard/read",
+        "microsoft.directory/applications/credentials/update"
+    )
+}
 
-# Create new custom admin role
+# Create new custom directory role
 $customAdmin = New-AzureADMSRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
 ```
 
-### <a name="read-operations-on-roledefinition"></a>Операции чтения в определения роли
+### <a name="read-and-list-role-definitions"></a>Чтение и перечисление определений ролей
 
 ``` PowerShell
 # Get all role definitions
 Get-AzureADMSRoleDefinitions
 
-# Get single role definition by objectId
+# Get single role definition by ID
 Get-AzureADMSRoleDefinition -Id 86593cfc-114b-4a15-9954-97c3494ef49b
 
 # Get single role definition by templateId
 Get-AzureADMSRoleDefinition -Filter "templateId eq 'c4e39bd9-1100-46d3-8c65-fb160da0071f'"
 ```
 
-### <a name="update-operations-on-roledefinition"></a>Обновление операций в определения роли
+### <a name="update-a-role-definition"></a>Обновление определения роли
 
 ``` PowerShell
 # Update role definition
@@ -117,18 +117,18 @@ Get-AzureADMSRoleDefinition -Filter "templateId eq 'c4e39bd9-1100-46d3-8c65-fb16
 Set-AzureADMSRoleDefinition -Id c4e39bd9-1100-46d3-8c65-fb160da0071f -DisplayName "Updated DisplayName"
 ```
 
-### <a name="delete-operations-on-roledefinition"></a>Удаление операций с определения роли
+### <a name="delete-a-role-definition"></a>Удаление определения роли
 
 ``` PowerShell
 # Delete role definition
 Remove-AzureADMSRoleDefinitions -Id c4e39bd9-1100-46d3-8c65-fb160da0071f
 ```
 
-## <a name="operations-on-roleassignment"></a>Операции с RoleAssignment
+## <a name="role-assignments"></a>Назначения ролей
 
-Назначения ролей содержат сведения, связывающие указанного участника безопасности (субъекта-службы) с определением роли. При необходимости можно добавить область одного ресурса Azure AD для назначенных разрешений.  Ограничение области разрешений поддерживается для встроенных и пользовательских ролей.
+Назначения ролей содержат сведения, связывающие указанного участника безопасности (субъекта-службы) с определением роли. При необходимости можно добавить область одного ресурса Azure AD для назначенных разрешений.  Ограничение области назначения ролей поддерживается для встроенных и пользовательских ролей.
 
-### <a name="create-operations-on-roleassignment"></a>Создание операций в RoleAssignment
+### <a name="create-a-role-assignment"></a>Создание назначения роли
 
 ``` PowerShell
 # Get the user and role definition you want to link
@@ -143,7 +143,7 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-### <a name="read-operations-on-roleassignment"></a>Операции чтения в RoleAssignment
+### <a name="read-and-list-role-assignments"></a>Чтение и перечисление назначений ролей
 
 ``` PowerShell
 # Get role assignments for a given principal
@@ -153,7 +153,7 @@ Get-AzureADMSRoleAssignment -Filter "principalId eq '27c8ca78-ab1c-40ae-bd1b-eae
 Get-AzureADMSRoleAssignment -Filter "roleDefinitionId eq '355aed8a-864b-4e2b-b225-ea95482e7570'"
 ```
 
-### <a name="delete-operations-on-roleassignment"></a>Удаление операций с RoleAssignment
+### <a name="delete-a-role-assignment"></a>Удаление назначения ролей
 
 ``` PowerShell
 # Delete role assignment
