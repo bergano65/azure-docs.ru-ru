@@ -8,16 +8,16 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 8/26/2020
 ms.author: alkemper
-ms.openlocfilehash: d1dc843ff676429f202c0b9077057d067294f738
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 6996fdd9dce4314e9365177815d7d310ac80c7cb
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076170"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98046079"
 ---
 # <a name="quickstart-add-feature-flags-to-an-azure-functions-app"></a>Краткое руководство. Добавление флагов функций в приложение "Функции Azure"
 
-Используя сведения этого краткого руководства, вы создадите реализацию управления функциями в приложении "Функции Azure" с помощью службы "Конфигурация приложений Azure". Вы сможете использовать службу "Конфигурация приложений" для централизованного хранения всех флагов функций и управления их состояниями. 
+При работе с этим кратким руководством вы создадите приложение Функций Azure и используете в нем флаги функций. Вы будете осуществлять управление функциями из службы "Конфигурация приложений Azure" для централизованного хранения всех флагов функций и управления их состояниями.
 
 Библиотеки управления функциями .NET расширяют возможности платформы за счет поддержки флагов функций. Эти библиотеки создаются на основе системы конфигурации .NET. Они интегрируются со службой "Конфигурация приложений" посредством поставщика конфигураций .NET.
 
@@ -46,66 +46,113 @@ ms.locfileid: "92076170"
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
-1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet. Для `Microsoft.Extensions.DependencyInjection` проверьте, что вы используете самую последнюю стабильную сборку. 
+В этом проекте будет использоваться [внедрение зависимостей в Функциях Azure .NET](/azure/azure-functions/functions-dotnet-dependency-injection). При этом в качестве дополнительного источника конфигурации, в котором хранятся флаги функций, добавляется служба "Конфигурация приложений Azure".
 
-    ```
-    Microsoft.Extensions.DependencyInjection
-    Microsoft.Extensions.Configuration
-    Microsoft.FeatureManagement
-    ```
+1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet:
+   - [Microsoft.Extensions.Configuration.AzureAppConfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureAppConfiguration/) 4.1.0 или более поздней версии;
+   - [Microsoft.FeatureManagement](https://www.nuget.org/packages/Microsoft.FeatureManagement/) 2.2.0 или более поздней версии;
+   - [Microsoft.Azure.Functions.Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/) 1.1.0 или более поздней версии. 
 
-
-1. Откройте *Function1.cs* и добавьте пространства имен этих пакетов.
+2. Добавьте новый файл *Startup.cs* с приведенным ниже кодом. В нем определен класс с именем `Startup`, который реализует абстрактный класс `FunctionsStartup`. С помощью атрибута сборки указывается имя типа, используемого при запуске Функций Azure.
 
     ```csharp
+    using System;
+    using Microsoft.Azure.Functions.Extensions.DependencyInjection;
     using Microsoft.Extensions.Configuration;
     using Microsoft.FeatureManagement;
-    using Microsoft.Extensions.DependencyInjection;
-    ```
 
-1. Добавьте приведенный ниже статический конструктор `Function1` для начальной загрузки поставщика Конфигурации приложений Azure. Затем добавьте два элемента `static`, поле с именем `ServiceProvider`, чтобы создать отдельный экземпляр `ServiceProvider`, и указанное ниже свойство `Function1` с именем `FeatureManager`, чтобы создать отдельный экземпляр `IFeatureManager`. Затем подключитесь к службе "Конфигурация приложений" в `Function1`, вызвав `AddAzureAppConfiguration()`. Будет загружена конфигурация при запуске приложения. Позже один и тот же экземпляр конфигурации будет использоваться для всех вызовов функций. 
+    [assembly: FunctionsStartup(typeof(FunctionApp.Startup))]
 
-    ```csharp
-        // Implements IDisposable, cached for life time of function
-        private static ServiceProvider ServiceProvider; 
-
-        static Function1()
+    namespace FunctionApp
+    {
+        class Startup : FunctionsStartup
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .AddAzureAppConfiguration(options =>
-                {
-                    options.Connect(Environment.GetEnvironmentVariable("ConnectionString"))
-                           .UseFeatureFlags();
-                }).Build();
+            public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
+            {
+            }
 
-            var services = new ServiceCollection();                                                                             
-            services.AddSingleton<IConfiguration>(configuration).AddFeatureManagement();
-
-            ServiceProvider = services.BuildServiceProvider(); 
+            public override void Configure(IFunctionsHostBuilder builder)
+            {
+            }
         }
-
-        private static IFeatureManager FeatureManager => ServiceProvider.GetRequiredService<IFeatureManager>();
+    }
     ```
 
-1. Обновите метод `Run`, чтобы изменить значение отображаемого сообщения в зависимости от состояния флага функций.
+
+3. Обновите метод `ConfigureAppConfiguration` и добавьте поставщик Конфигурации приложений Azure в качестве дополнительного источника конфигурации, вызвав `AddAzureAppConfiguration()`. 
+
+   Метод `UseFeatureFlags()` указывает поставщику загрузить флаги функций. Для всех флагов функций срок действия кэша по умолчанию истекает через 30 секунд, а затем выполняется повторная проверка на предмет изменений. Интервал времени, по истечении которого действие прекращается, можно обновить. Для этого задайте свойство `FeatureFlagsOptions.CacheExpirationInterval`, передаваемое в метод `UseFeatureFlags`. 
 
     ```csharp
-        [FunctionName("Function1")]
-        public static async Task<IActionResult> Run(
-                [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-                ILogger log)
-            {
-                string message = await FeatureManager.IsEnabledAsync("Beta")
-                     ? "The Feature Flag 'Beta' is turned ON"
-                     : "The Feature Flag 'Beta' is turned OFF";
-                
-                return (ActionResult)new OkObjectResult(message); 
-            }
+    public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
+    {
+        builder.ConfigurationBuilder.AddAzureAppConfiguration(options =>
+        {
+            options.Connect(Environment.GetEnvironmentVariable("ConnectionString"))
+                   .Select("_")
+                   .UseFeatureFlags();
+        });
+    }
+    ```
+   > [!TIP]
+   > Если вы не хотите, чтобы в приложение загружались какие-либо конфигурации, кроме флагов функций, можно вызвать `Select("_")`, чтобы загрузить только несуществующий фиктивный ключ "_". Если не вызвать метод `Select`, по умолчанию будут загружены все значения ключей конфигурации в хранилище службы "Конфигурация приложений".
+
+4. Обновите метод `Configure`, чтобы службы Конфигурации приложений Azure и диспетчер функций были доступны посредством внедрения зависимостей.
+
+    ```csharp
+    public override void Configure(IFunctionsHostBuilder builder)
+    {
+        builder.Services.AddAzureAppConfiguration();
+        builder.Services.AddFeatureManagement();
+    }
+    ```
+
+5. Откройте *Function1.cs* и добавьте указанные ниже пространства имен.
+
+    ```csharp
+    using System.Linq;
+    using Microsoft.FeatureManagement;
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+    ```
+
+   Добавьте конструктор для получения экземпляров `_featureManagerSnapshot` и `IConfigurationRefresherProvider` с помощью внедрения зависимостей. Из `IConfigurationRefresherProvider` можно получить экземпляр `IConfigurationRefresher`.
+
+    ```csharp
+    private readonly IFeatureManagerSnapshot _featureManagerSnapshot;
+    private readonly IConfigurationRefresher _configurationRefresher;
+
+    public Function1(IFeatureManagerSnapshot featureManagerSnapshot, IConfigurationRefresherProvider refresherProvider)
+    {
+        _featureManagerSnapshot = featureManagerSnapshot;
+        _configurationRefresher = refresherProvider.Refreshers.First();
+    }
+    ```
+
+6. Обновите метод `Run`, чтобы изменить значение отображаемого сообщения в зависимости от состояния флага функции.
+
+   Метод `TryRefreshAsync` вызывается в начале вызова Функций для обновления флагов функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы флаги функций обновлялась без блокировки текущего вызова Функций. В этом случае при последующих вызовах Функций будет поступать обновленное значение.
+
+    ```csharp
+    [FunctionName("Function1")]
+    public async Task<IActionResult> Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+        ILogger log)
+    {
+        log.LogInformation("C# HTTP trigger function processed a request.");
+
+        await _configurationRefresher.TryRefreshAsync();
+
+        string message = await _featureManagerSnapshot.IsEnabledAsync("Beta")
+                ? "The Feature Flag 'Beta' is turned ON"
+                : "The Feature Flag 'Beta' is turned OFF";
+
+        return (ActionResult)new OkObjectResult(message);
+    }
     ```
 
 ## <a name="test-the-function-locally"></a>Локальное тестирование функции
 
-1. Задайте переменную среды с именем **ConnectionString**, где значение является ключом доступа, полученным ранее в хранилище службы "Конфигурация приложений" в разделе **Ключи доступа**. Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
+1. Задайте переменную среды с именем **ConnectionString**, где значение является строкой подключения, полученной ранее в хранилище службы "Конфигурация приложений" в разделе **Ключи доступа**. Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
     ```cmd
         setx ConnectionString "connection-string-of-your-app-configuration-store"
@@ -133,15 +180,16 @@ ms.locfileid: "92076170"
 
     ![Флаг функции, рассматриваемый в этом кратком руководстве, отключен](./media/quickstarts/functions-launch-ff-disabled.png)
 
-1. Войдите на [портал Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали.
+1. Войдите на [портал Azure](https://portal.azure.com). Щелкните элемент **Все ресурсы** и выберите хранилище службы "Конфигурация приложений", которое вы создали.
 
-1. Выберите **Диспетчер компонентов** и измените состояние ключа **Beta** на **Вкл**.
+1. Выберите **Диспетчер компонентов** и измените состояние ключа **Beta** на **Вкл.**
 
-1. Вернитесь в командную строку и отмените запущенный процесс, нажав кнопку `Ctrl-C`.  Перезапустите приложение, нажав клавишу F5. 
-
-1. Скопируйте URL-адрес функции из выходных данных среды выполнения Функций Azure, используя тот же процесс, что и в шаге 3. Вставьте URL-адрес для HTTP-запроса в адресной строке браузера. Ответ браузера должен измениться и показать, что флаг функции `Beta` включен, как показано на рисунке ниже.
+1. Обновите приложение браузера несколько раз. Если действие кэшированного флага функции прекращается по истечении 30 секунд, страница должна измениться и отобразить сведения о том, что флаг функции `Beta` включен, как показано на приведенном ниже изображении.
  
     ![Флаг функций, рассматриваемый в этом кратком руководстве, включен](./media/quickstarts/functions-launch-ff-enabled.png)
+
+> [!NOTE]
+> Пример кода, используемый в этом руководстве, можно скачать в [репозитории GitHub для службы "Конфигурация приложений Azure"](https://github.com/Azure/AppConfiguration/tree/master/examples/DotNetCore/AzureFunction).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -149,8 +197,10 @@ ms.locfileid: "92076170"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Используя сведения из этого краткого руководства, вы создали флаг функции и использовали его с приложением "Функции Azure" с помощью [поставщика Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration).
+Используя сведения из этого краткого руководства, вы создали флаг функции и использовали его с приложением Функций Azure с помощью библиотеки [Microsoft.FeatureManagement](/dotnet/api/microsoft.featuremanagement).
 
 - Узнайте больше об [управлении функциями](./concept-feature-management.md).
-- [Управляйте флагами функций](./manage-feature-flags.md).
+- [Управление флагами компонентов](./manage-feature-flags.md)
+- [Использование условных флагов функций](./howto-feature-filters-aspnet-core.md)
+- [Включение поэтапного развертывания функций для определенных аудиторий](./howto-targetingfilter-aspnet-core.md)
 - [использованию динамической конфигурации в приложении Функций Azure](./enable-dynamic-configuration-azure-functions-csharp.md)

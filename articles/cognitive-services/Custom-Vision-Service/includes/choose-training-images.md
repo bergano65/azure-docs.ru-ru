@@ -5,12 +5,12 @@ ms.subservice: custom-vision
 ms.topic: include
 ms.date: 07/17/2019
 ms.author: pafarley
-ms.openlocfilehash: ce67062f83ad10703dfb1f0ee1f3741e698fb450
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d07a5da3b9013700694f6c20102ef2e8c5066087
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018388"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98256395"
 ---
 Мы рекомендуем включить в начальный обучающий набор не менее 30 изображений для каждого тега. Кроме того, вам потребуются несколько дополнительных изображений для тестирования обученной модели.
 
@@ -27,3 +27,6 @@ ms.locfileid: "96018388"
 * формат JPG, PNG, BMP или GIF;
 * размер не более 6 МБ (4 МБ для прогнозирования изображений);
 * не менее 256 пикселей по короткой стороне (Пользовательская служба визуального распознавания автоматически увеличивает изображения меньшего размера).
+
+> [!NOTE]
+> Trove, проект Microsoft Garage, позволяет создавать и покупать наборы изображений для обучения. После сбора изображений их можно скачать, а затем импортировать в проект Пользовательского визуального распознавания обычным способом. Чтобы узнать больше, посетите [страницу Trove](https://www.microsoft.com/en-us/ai/trove?activetab=pivot1:primaryr3).

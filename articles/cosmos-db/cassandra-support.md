@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 8c51450fb6ce5c381784e6aaf9b1a66c3c4ff153
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 771cf97a5c938fb987c66555c92c23f42b302a10
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188553"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134234"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -84,10 +84,11 @@ API Cassandra для Azure Cosmos DB поддерживает следующие
 | Токен * | Да |
 | ttl | Да |
 | writetime | Да |
-| Приведение | Нет |
+| cast ** | Да |
 
-> [!NOTE]
-> \* API Cassandra поддерживает токен в качестве проекции или селектора и разрешает параметр token(pk) в левой части предложения WHERE. Например, `WHERE token(pk) > 1024` поддерживается, но `WHERE token(pk) > token(100)` — **нет**.
+> [!NOTE] 
+> \* API Cassandra поддерживает токен в качестве проекции или селектора и разрешает параметр token(pk) в левой части предложения WHERE. Например, `WHERE token(pk) > 1024` поддерживается, но `WHERE token(pk) > token(100)` — **нет**.  
+> \*\* Функция `cast()` не может иметь вложенные элементы в API Cassandra. Например, `SELECT cast(count as double) FROM myTable` поддерживается, но `SELECT avg(cast(count as double)) FROM myTable` — **нет**.
 
 
 
@@ -183,6 +184,30 @@ Azure Cosmos DB поддерживает следующие команды ба�
 | UPDATE (упрощенные транзакции с условием IF)| Нет |
 | TRUNCATE | Нет |
 | USE | Да |
+
+## <a name="cql-shell-commands"></a>Команды оболочки CQL
+
+Azure Cosmos DB поддерживает следующие команды базы данных для учетных записей API Cassandra.
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+| ЗАПИСАТЬ | Да |
+| CLEAR | Да |
+| CONSISTENCY * | Н/Д |
+| КОПИРОВАТЬ | Нет |
+| DESCRIBE | Да |
+| cqlshExpand | Нет |
+| EXIT | Да |
+| Имя_для_входа | Н/П (функция CQL не поддерживается `USER`, поэтому `LOGIN` не нужно использовать) |
+| PAGING | Да |
+| SERIAL CONSISTENCY * | Н/Д |
+| SHOW | Да |
+| ИСТОЧНИК | Да |
+| TRACING | Н/П (API Cassandra работает на основе Azure Cosmos DB — используйте [журнал ведения диагностики](cosmosdb-monitor-resource-logs.md) для устранения неполадок) |
+
+> [!NOTE] 
+> \* В Azure Cosmos DB согласованность действует иначе, дополнительные сведения см. [здесь](cassandra-consistency.md).  
+
 
 ## <a name="json-support"></a>Поддержка JSON
 |Get-Help  |Поддерживаются: |

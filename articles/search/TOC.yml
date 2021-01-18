@@ -308,10 +308,10 @@
       items:
         - name: Выбор уровня
           href: search-sku-tier.md
-        - name: Оценка емкости и стоимости
-          href: search-sku-manage-costs.md
-        - name: Настройка емкости
+        - name: Оценка емкости и управление ею
           href: search-capacity-planning.md
+        - name: Оценка затрат
+          href: search-sku-manage-costs.md
         - name: Ограничения службы
           href: search-limits-quotas-capacity.md
         - name: Масштабирование для производительности
@@ -558,5 +558,5 @@
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'

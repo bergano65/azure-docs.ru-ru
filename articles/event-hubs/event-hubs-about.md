@@ -3,12 +3,12 @@ title: Что такое Центры событий Azure? Это служба 
 description: В этой статье приводятся сведения о службе потоковой передачи больших данных "Центры событий Azure", которая способна принимать миллионы событий в секунду.
 ms.topic: overview
 ms.date: 06/23/2020
-ms.openlocfilehash: 6669760bceee558a058878fbb89342aedda80117
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b0124f023eab6638c986beb2305b1c4c375b47ee
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88927907"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954351"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Центры событий Azure — платформа потоковой передачи больших данных и служба приема событий
 Центры событий Azure представляют собой платформу потоковой передачи больших данных и службу приема событий. Она может получать и обрабатывать миллионы событий в секунду. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения.
@@ -52,10 +52,9 @@ ms.locfileid: "88927907"
 
 ## <a name="rich-ecosystem"></a>Обширная экосистема
 
-[Центры событий для экосистем Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) позволяют клиентам и приложениям [Apache Kafka (версии 1.0 и более поздних)](https://kafka.apache.org/) работать со службой "Центры событий". Вам не нужно устанавливать, настраивать собственные кластеры Kafka и управлять ими.
+Благодаря широкому спектру поддерживаемых экосистем на основе отраслевого протокола AMQP 1.0 на различных языках ([.NET,](https://github.com/Azure/azure-sdk-for-net/) [Java](https://github.com/Azure/azure-sdk-for-java/), [Python](https://github.com/Azure/azure-sdk-for-python/), [JavaScript](https://github.com/Azure/azure-sdk-for-js/)) вы сможете с легкостью приступить к обработке потоков из Центров событий. Все поддерживаемые языки клиентов реализуют низкоуровневую интеграцию. Экосистема также обеспечивает тесную интеграцию со службами Azure (Azure Stream Analytics и Функции Azure), что позволяет создавать бессерверную архитектуру.
 
-Благодаря широкому спектру поддерживаемых экосистем на различных языках ([.NET,](https://github.com/Azure/azure-sdk-for-net/) [Java](https://github.com/Azure/azure-sdk-for-java/), [Python](https://github.com/Azure/azure-sdk-for-python/), [JavaScript](https://github.com/Azure/azure-sdk-for-js/)) вы сможете с легкостью приступить к обработке потоков из Центров событий. Все поддерживаемые языки клиентов реализуют низкоуровневую интеграцию. Экосистема также обеспечивает тесную интеграцию со службами Azure (Azure Stream Analytics и Функции Azure), что позволяет создавать бессерверную архитектуру.
-
+[Центры событий для экосистем Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) также позволяют клиентам и приложениям [Apache Kafka (версии 1.0 и более поздних)](https://kafka.apache.org/) работать со службой "Центры событий". Вам не нужно настраивать собственные кластеры Kafka и Zookeeper и управлять ими, а также использовать некоторые предложения "Kafka как услуга", которые не имеют версий для Azure.
 ## <a name="key-architecture-components"></a>Основные компоненты архитектуры
 Центры событий содержат следующие [основные компоненты](event-hubs-features.md):
 

@@ -188,16 +188,6 @@
               href: manage/pay-by-invoice.md
             - name: Создание дополнительных подписок
               href: manage/create-subscription.md
-            - name: Создание подписок EA программным способом
-              href: manage/programmatically-create-subscription-enterprise-agreement.md
-            - name: Создание подписок MCA программным способом
-              href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
-            - name: Создание подписок MPA программным способом
-              href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
-            - name: Создание подписок с помощью шаблона ARM
-              href: manage/create-subscription-template.md
-            - name: "Создание подписок программным способом\_— предварительная версия"
-              href: manage/programmatically-create-subscription-preview.md
             - name: Предоставление доступа для создания подписок EA
               href: manage/grant-access-to-create-subscription.md
             - name: Экспорт сведений о подписке
@@ -214,6 +204,20 @@
               href: manage/transfer-subscriptions-subscribers-csp.md
             - name: Отмена подписки
               href: manage/cancel-azure-subscription.md
+        - name: Создание подписок программными средствами
+          items:
+            - name: Создание подписок программными средствами
+              href: manage/programmatically-create-subscription.md
+            - name: Создание подписок EA программным способом
+              href: manage/programmatically-create-subscription-enterprise-agreement.md
+            - name: Создание подписок MCA программным способом
+              href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
+            - name: Создание подписок MPA программным способом
+              href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
+            - name: Создание подписок с помощью шаблона ARM
+              href: manage/create-subscription-template.md
+            - name: "Создание подписок программным способом\_— предварительная версия API"
+              href: manage/programmatically-create-subscription-preview.md
         - name: Управление подписками в рамках Соглашения Enterprise
           items:
             - name: Роли EA в Azure

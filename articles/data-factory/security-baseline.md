@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4e82b4adbfde7623de9497c94e56a9ae303131ad
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: ff777f079116942eba32e49f359c7f7e0b99f65d
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202782"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555786"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
 
@@ -311,7 +311,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 ### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
-**Рекомендации**. Если вы используете Integration Runtime на виртуальной машине Azure, вы можете включить ведение журнала аудита для командной строки. Центр безопасности Azure обеспечивает мониторинг журнала событий безопасности для виртуальных машин Azure. Центр безопасности подготавливает Microsoft Monitoring Agent на всех поддерживаемых виртуальных машинах Azure и на всех новых, созданных, если включена автоматическая подготовка или вы можете установить агент вручную. Агент включает событие создания процесса 4688 и поле CommandLine в событии 4688. Новые процессы, созданные на виртуальной машине, записываются в журнал событий и отслеживаются с помощью служб обнаружения в центре безопасности.
+**Рекомендации**. Если вы используете Integration Runtime на виртуальной машине Azure, вы можете включить ведение журнала аудита для командной строки. Центр безопасности Azure обеспечивает мониторинг журнала событий безопасности для виртуальных машин Azure. Центр безопасности подготавливает Microsoft Monitoring Agent на всех поддерживаемых виртуальных машинах Azure и на всех новых, созданных, если включена автоматическая подготовка или вы можете установить агент вручную. Агент включает событие создания процесса 4688 и поле CommandLine в событии 4688. Новые процессы, созданные на виртуальной машине, регистрируются в журнале событий и отслеживаются с помощью служб обнаружения Центра безопасности.
 
 * [Сбор данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
@@ -335,9 +335,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Сведения о диспетчере привилегированных удостоверений](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 * [Сведения о локальных учетных записях](../active-directory/devices/assign-local-admin.md#manage-the-device-administrator-role)
 
@@ -744,7 +744,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription)
 
 * [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -880,7 +880,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Если вы используете интеграцию среды выполнения на виртуальной машине Azure, то в зависимости от типа сценариев вы можете использовать конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure. Можно также использовать адаптивные элементы управления приложениями центра безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
-* [Управление выполнением скриптов PowerShell в средах Windows](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+* [Управление выполнением скриптов PowerShell в средах Windows](/powershell/module/microsoft.powershell.security/set-executionpolicy)
 
 * [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](../security-center/security-center-adaptive-application.md)
 
@@ -918,7 +918,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Определение и реализация стандартных конфигураций безопасности для фабрики данных Azure с помощью политики Azure. Используйте псевдонимы политик Azure в пространстве имен Microsoft. данных фактов, чтобы создать настраиваемые политики для аудита или принудительного применения конфигурации экземпляров фабрики данных Azure.
 
-* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias)
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -964,7 +964,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Сведения о создании шаблонов Azure Resource Manager](../virtual-machines/windows/ps-template.md)
 
-* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -974,9 +974,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
-* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-* [Документация по Azure Repos](/azure/devops/repos/index?view=azure-devops)
+* [Документация по Azure Repos](/azure/devops/repos/index)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -1150,7 +1150,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Общие сведения о резервном копировании виртуальных машин Azure](../backup/backup-azure-vms-introduction.md)
 
-* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1164,7 +1164,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Как восстановить файлы из резервной копии виртуальной машины Azure](../backup/backup-azure-restore-files-from-vm.md)
 
-* [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -1214,7 +1214,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
-**Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелы и пересмотрите план по мере необходимости.
+**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем на регулярной ритмичности. Выявите слабые точки и пробелы и пересмотрите план по мере необходимости.
 
 * [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
@@ -1264,9 +1264,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт.](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Дополнительные сведения о стратегии корпорации Майкрософт и реализации "красной команды", а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь.](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Мониторинг Центра безопасности Azure**. Неприменимо
+**Мониторинг Центра безопасности Azure**: Неприменимо
 
 **Ответственность**: Совмещаемая блокировка
 

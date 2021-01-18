@@ -6,12 +6,12 @@ ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/30/2020
-ms.openlocfilehash: 244f8a446e33102e018881b3ec8f32ba9d8cbcc6
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 7d624f2dd2c0c9b4c7e99d5628a1d47e4303da7f
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014151"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555599"
 ---
 # <a name="use-managed-identities-to-access-azure-sql-database-or-azure-synapse-analytics-from-an-azure-stream-analytics-job-preview"></a>Использование управляемых удостоверений для доступа к базе данных SQL Azure или Azure синапсе Analytics из задания Azure Stream Analytics (Предварительная версия)
 
@@ -123,7 +123,7 @@ Azure Stream Analytics поддерживает [проверку подлинн
 
 После создания пользователя автономной базы данных и получения доступа к службам Azure на портале, как описано в предыдущем разделе, ваше задание Stream Analytics имеет разрешение от управляемого удостоверения для **подключения** к ресурсу базы данных Azure синапсе через управляемое удостоверение. Рекомендуется дополнительно предоставить заданиям Stream Analytics, INSERT и АДМИНИСТРировать групповые операции базы данных, так как они понадобятся позже в рабочем процессе Stream Analytics. Разрешение **SELECT** позволяет заданию проверить подключение к таблице в базе данных синапсе Azure. Разрешения на **вставку** и **Администрирование для операций с массовыми базами данных** позволяют выполнять тестирование сквозных Stream Analytics запросов после настройки входных данных и выходного файла синапсе в Azure.
 
-Чтобы предоставить разрешение на управление МАССОВЫми ОПЕРАЦИЯми базы данных, необходимо предоставить всем разрешениям, которые помечены как **элементы управления** , [подразумеваемые разрешением базы данных](/sql/t-sql/statements/grant-database-permissions-transact-sql?view=azure-sqldw-latest#remarks) для задания Stream Analytics. Это разрешение необходимо, так как задание Stream Analytics выполняет инструкцию COPY, для которой требуется [Администрирование операций с массовыми БАЗАМИ данных и вставки](/sql/t-sql/statements/copy-into-transact-sql).
+Чтобы предоставить разрешение на управление МАССОВЫми ОПЕРАЦИЯми базы данных, необходимо предоставить всем разрешениям, которые помечены как **элементы управления** , [подразумеваемые разрешением базы данных](/sql/t-sql/statements/grant-database-permissions-transact-sql?view=azure-sqldw-latest&preserve-view=true#remarks) для задания Stream Analytics. Это разрешение необходимо, так как задание Stream Analytics выполняет инструкцию COPY, для которой требуется [Администрирование операций с массовыми БАЗАМИ данных и вставки](/sql/t-sql/statements/copy-into-transact-sql).
 
 ---
 

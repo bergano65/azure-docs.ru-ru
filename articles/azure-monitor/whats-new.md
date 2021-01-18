@@ -5,17 +5,75 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 12/04/2020
-ms.openlocfilehash: 91aa76fd3d9dbb54316f32fdb319e92ca2283b1d
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.date: 01/11/2021
+ms.openlocfilehash: 6347bd3710a4727b9d3f820072ffff21cb57752d
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745780"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071873"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Что нового в документации по Azure Monitor?
 
 В этой статье приводятся списки новых или значительно измененных статей об Azure Monitor. Он будет обновляться в первую неделю каждого месяца, чтобы включать в себя обновления статей за предыдущий месяц.
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+
+### <a name="general"></a>Общее
+- [Ключ Azure Monitor, управляемый клиентом](platform/customer-managed-keys.md): добавлены сообщения об ошибках.
+- [Партнеры, которые интегрируют решения с Azure Monitor](platform/partners.md): добавлен раздел об интеграции с концентратором событий.
+
+### <a name="agents"></a>Агенты
+- [Запрос между несколькими ресурсами Azure Data Explorer с использованием Azure Monitor](platform/azure-monitor-data-explorer-proxy.md): новая статья.
+- [Обзор агентов мониторинга Azure](platform/agents-overview.md): добавлена поддержка Oracle 8.
+
+### <a name="alerts"></a>видны узлы
+- [Устранение неполадок с оповещениями метрик Azure](platform/alerts-troubleshoot-metric.md): добавлены сведения об устранении неполадок для динамических порогов.
+- [Соединитель управления ИТ-услугами в Log Analytics](platform/itsmc-definition.md): новая статья.
+- [Общие сведения о Соединителе управления ИТ-услугами](platform/itsmc-overview.md): реструктуризованы сведения об устранении неполадок.
+- [Подключение Cherwell к Соединителю управления ИТ-услугами](platform/itsmc-connections-cherwell.md): новая статья.
+- [Подключение Provance к Соединителю управления ИТ-услугами](platform/itsmc-connections-provance.md): новая статья.
+- [Подключение SCSM к Соединителю управления ИТ-услугами](platform/itsmc-connections-scsm.md): новая статья.
+- [Подключение ServiceNow к Соединителю управления ИТ-услугами](platform/itsmc-connections-servicenow.md): новая статья.
+- [Как вручную исправить проблемы с синхронизацией ServiceNow](platform/itsmc-resync-servicenow.md): реструктуризованы сведения об устранении неполадок.
+
+
+
+
+### <a name="application-insights"></a>Application Insights
+- [Azure Application Insights для веб-приложений JavaScript](app/javascript.md): добавлена возможность настройки строки подключения.
+- [Стандартные метрики Azure Application Insights](app/standard-metrics.md): новая статья.
+- [Java для Application Insights в Azure Monitor](app/java-in-process-agent.md): дополнительные сведения об отправке пользовательских данных телеметрии из приложения.
+- [Непрерывный экспорт данных телеметрии из Application Insights](app/export-telemetry.md): добавлена возможность экспорта на основе параметров диагностики.
+- [Включение Snapshot Debugger для приложений .NET и .NET Core в Функциях Azure](app/snapshot-debugger-function-app.md): новая статья.
+- [IP-адреса, используемые Application Insights и Log Analytics](app/ip-addresses.md): добавлены IP-адреса для Azure для государственных организаций.
+- [Устранение проблем с Azure Application Insights Profiler](app/profiler-troubleshooting.md): добавлены сведения на страницу состояния расширения сайта служб диагностики.
+- [Устранение неполадок с тестами доступности Azure Application Insights](app/troubleshoot-availability.md): обновления сведений об устранении неполадок с тестами проверки связи.
+- [Устранение неполадок с Application Insights в Azure Monitor для Java](app/java-standalone-troubleshoot.md): новая статья.
+
+### <a name="containers"></a>Контейнеры
+- [Отчеты в Azure Monitor для контейнеров](insights/container-insights-reports.md): новая статья.
+
+### <a name="logs"></a>Журналы
+- [Выделенные кластеры журналов Azure Monitor](log-query/logs-dedicated-clusters.md): добавлены автоматические команды, методы для отмены связи и удаления, а также сведения об устранении неполадок.
+- [Запросы между службами Azure Monitor и Azure Data Explorer (предварительная версия)](platform/azure-data-explorer-monitor-cross-service-query.md): новая статья.
+- [Экспорт данных рабочей области Log Analytics в Azure Monitor (предварительная версия)](platform/logs-data-export.md): добавлены шаблоны ARM.
+
+### <a name="metrics"></a>Метрики
+- [Дополнительные возможности обозревателя метрик Azure](platform/metrics-charts.md): добавлены сведения о средстве выбора области ресурсов.
+- [Просмотр нескольких ресурсов в обозревателе метрик](platform/metrics-dynamic-scope.md): новая статья.
+
+### <a name="networks"></a>Сети
+- [Решение для анализа сети Azure в Azure Monitor](insights/azure-networking-analytics.md): добавлена информация о книге аналитических сведений о сети.
+
+### <a name="virtual-machines"></a>Виртуальные машины
+- [Включение Azure Monitor для гибридной среды](insights/vminsights-enable-hybrid.md): новая версия агента зависимостей.
+
+
+### <a name="visualizations"></a>Визуализации
+- [Визуализации карты книги Azure Monitor](platform/workbooks-map-visualizations.md): новая статья.
+- [Использование собственного хранилища в книгах Azure Monitor](platform/workbooks-bring-your-own-storage.md): новая статья.
+
 
 ## <a name="november-2020"></a>Ноябрь 2020 г.
 

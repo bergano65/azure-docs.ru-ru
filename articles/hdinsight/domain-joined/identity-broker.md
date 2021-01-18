@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: c6bc5ca748a35b17c61d314e96f7284d30e7fc3b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b8dfe9a23e5c6697323142212156006cb65d2f9b
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96338135"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556534"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 
@@ -126,9 +126,9 @@ ms.locfileid: "96338135"
 
 В программе установки брокера HDInsight ID можно обновить пользовательские приложения и клиенты, подключающиеся к шлюзу, чтобы сначала получить требуемый маркер OAuth. Выполните действия, описанные в [этом документе](../../storage/common/storage-auth-aad-app.md) , чтобы получить маркер со следующими сведениями:
 
-*   URI ресурса OAuth: `https://hib.azurehdinsight.net` 
+*    URI ресурса OAuth: `https://hib.azurehdinsight.net` 
 *   AppId: 7865c1d2-F040-46cc-875f-831a1ef6a28a
-*   Разрешение: (имя: Cluster. ReadWrite, идентификатор: 8f89faa0-ffef-4007-974d-4989b39ad77d)
+*    Разрешение: (имя: Cluster. ReadWrite, идентификатор: 8f89faa0-ffef-4007-974d-4989b39ad77d)
 
 После получения маркера OAuth используйте его в заголовке авторизации HTTP-запроса к шлюзу кластера (например, https:// <clustername> -int.azurehdinsight.NET). Пример команды с фигурой на API Apache Livy может выглядеть следующим образом:
     
@@ -138,7 +138,7 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 
 Для использования Beeline и Livy можно также воспользоваться приведенными [здесь](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/HIB/HIBSamples) кодами примеров, чтобы настроить клиент для использования OAuth и подключения к кластеру.
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>Вопросы и ответы
 ### <a name="what-app-is-created-by-hdinsight-in-aad"></a>Какое приложение создано в HDInsight в AAD?
 Для каждого кластера стороннее приложение будет зарегистрировано в AAD с универсальным кодом ресурса (URI) кластера в качестве identifierUri (например, `https://clustername.azurehdinsight.net` ).
 
@@ -146,7 +146,7 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 В AAD согласие требуется для всех сторонних приложений, прежде чем оно сможет проходить проверку подлинности пользователей или доступа к данным.
 
 ### <a name="can-the-consent-be-approved-programatically"></a>Может ли согласие быть утверждено программно?
-Microsoft Graph API позволяет автоматизировать согласие, см. [документацию по API](/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0) . последовательность действий для автоматизации согласия:
+Microsoft Graph API позволяет автоматизировать согласие, см. [документацию по API](/graph/api/resources/oauth2permissiongrant) . последовательность действий для автоматизации согласия:
 
 * Зарегистрируйте приложение и предоставьте приложению. ReadWrite. ALL разрешения на доступ к Microsoft Graph
 * После создания кластера запросите приложение кластера на основе URI идентификатора.

@@ -4,16 +4,16 @@ description: Узнайте об Azure Analysis Services — полностью 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: overview
-ms.date: 12/01/2020
+ms.date: 01/07/2021
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: e70d02c02ba9a3f14d1659851919fbccf71776d1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c4a14ab1e5b52eb36a532c6d69713d588864d288
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487360"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019080"
 ---
 # <a name="what-is-azure-analysis-services"></a>Службы Azure Analysis Services
 
@@ -91,6 +91,7 @@ Azure Analysis Services — это полностью управляемая п�
 |Центральная часть США     |    B1, B2, S0, S1, S2, S4, D1     |    1     |
 |Центральная часть США     |    S8v2, S9v2     |    1     |
 |Центрально-южная часть США     |    B1, B2, S0, S1, S2, S4, D1     |    1     |
+|Центрально-южная часть США     |    S8v2, S9v2     |    1     |
 |центрально-западная часть США   |     B1, B2, S0, S1, S2, S4, D1    |    3     |
 |западная часть США     |    B1, B2, S0, S1, S2, S4, D1    |    7   |
 |западная часть США     |    S8v2, S9v2   |    2  |
@@ -115,6 +116,7 @@ Azure Analysis Services — это полностью управляемая п�
 |Восточная Австралия     |    S8v2, S9v2    |    1     |
 |Юго-Восточная часть Австралии     | B1, B2, S0, S1, S2, S4, D1       |    1     |
 |Восточная Япония     |   B1, B2, S0, S1, S2, S4, D1       |    1     |
+|Восточная Япония     |    S8v2, S9v2    |    1     |
 |Юго-Восточная Азия     |     B1, B2, S0, S1, S2, S4, D1     |   1      |
 |Юго-Восточная Азия     |     S8v2, S9v2     |   1      |
 |Западная Индия     |    B1, B2, S0, S1, S2, S4, D1     |    1     |
@@ -211,7 +213,7 @@ Azure Analysis Services — это полностью управляемая п�
 
 Проекты Microsoft Analysis Services доступны в виде бесплатного устанавливаемого пакета VSIX. [Скачать с сайта Marketplace](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects). Это расширение работает с любым выпуском Visual Studio 2017 и более поздних версий, включая бесплатный выпуск Community.
 
-### <a name="sql-server-management-studio"></a>SQL Server Management Studio
+### <a name="sql-server-management-studio"></a>SQL Server Management Studio.
 
 Управляйте серверами и базами данных модели с помощью [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). Подключайтесь к серверам в облаке. Запускайте скрипты TMSL прямо в окне запросов XMLA и автоматизируйте задачи, используя эти скрипты и PowerShell. Новые возможности и функции SSMS появляются часто, так как обновления выходят каждый месяц.
 

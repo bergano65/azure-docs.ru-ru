@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: reference
-ms.date: 10/01/2020
+ms.date: 01/12/2020
 ms.author: mbaldwin
-ms.openlocfilehash: dbbde397ab235068ea90280da721e3e3dc38866a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ef2c42ae76dc5e1511494635904228a8b574d483
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792367"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132194"
 ---
 # <a name="whats-new-for-azure-key-vault"></a>Новые возможности Azure Key Vault
 
@@ -37,7 +37,7 @@ ms.locfileid: "92792367"
 
 ### <a name="soft-delete-on-by-default"></a>Включенное по умолчанию обратимое удаление
 
-К концу 2020 г. **обратимое удаление будет включено по умолчанию для всех хранилищ ключей** (новых и существующих). Подробные сведения об этом критическом изменении, а также инструкции по поиску затронутых хранилищ ключей и их предварительному обновлению см. в статье [Включение обратимого удаления во всех хранилищах ключей](soft-delete-change.md).
+**Обратимое удаление должно быть включено для всех хранилищ ключей** — новых и существующих. Возможность отказаться от обратимого удаления перестанет поддерживаться в ближайшие месяцы. Подробные сведения об этом критическом изменении, а также инструкции по поиску затронутых хранилищ ключей и их предварительному обновлению см. в статье [Включение обратимого удаления во всех хранилищах ключей](soft-delete-change.md).
 
 ### <a name="azure-tls-certificate-changes"></a>Изменения TLS-сертификатов Azure
 

@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: b4902e1fb7a2a181d3d5b2ce2ac6d1d458500fce
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 9609c382161514611ddc41af040e8fb438431fdf
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844188"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556007"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -28,7 +28,7 @@ ms.locfileid: "94844188"
 
 Используйте портал фабрики данных Azure для проверки выходных данных действия выполнения пакета служб SSIS. Выходные данные включают результат выполнения, сообщения об ошибках и идентификатор операции. Дополнительные сведения см. [в разделе Мониторинг конвейера](how-to-invoke-ssis-package-ssis-activity.md#monitor-the-pipeline).
 
-Используйте каталог SSIS (SSISDB) для проверки подробных журналов выполнения. Дополнительные сведения см. в разделе [мониторинг выполняемых пакетов и других операций](/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017).
+Используйте каталог SSIS (SSISDB) для проверки подробных журналов выполнения. Дополнительные сведения см. в разделе [мониторинг выполняемых пакетов и других операций](/sql/integration-services/performance/monitor-running-packages-and-other-operations).
 
 ## <a name="common-errors-causes-and-solutions"></a>Распространенные ошибки, причины и решения
 
@@ -91,7 +91,7 @@ ms.locfileid: "94844188"
 Эта ошибка возникает, когда при выполнении пакета не удается найти файл на локальном диске в среде выполнения интеграции SSIS. Попробуйте выполнить следующие действия:
 * Не используйте абсолютный путь в пакете, который выполняется в среде выполнения интеграции SSIS. Использовать текущий рабочий каталог выполнения (.) или временную папку (% TEMP%) Используйте.
 * Если необходимо сохранить некоторые файлы на узлах среды выполнения интеграции SSIS, подготовьте их, как описано в разделе [Настройка установки](how-to-configure-azure-ssis-ir-custom-setup.md). После завершения выполнения все файлы в рабочем каталоге будут очищены.
-* Используйте службу файлов Azure вместо хранения файла в узле среды выполнения интеграции SSIS. Дополнительные сведения см. в статье [Использование файловых ресурсов Azure](/sql/integration-services/lift-shift/ssis-azure-files-file-shares?view=sql-server-2017#use-azure-file-shares).
+* Используйте службу файлов Azure вместо хранения файла в узле среды выполнения интеграции SSIS. Дополнительные сведения см. в статье [Использование файловых ресурсов Azure](/sql/integration-services/lift-shift/ssis-azure-files-file-shares#use-azure-file-shares).
 
 ### <a name="error-message-the-database-ssisdb-has-reached-its-size-quota"></a>Сообщение об ошибке: "база данных" SSISDB "достигла квоты на размер"
 
@@ -154,7 +154,7 @@ ms.locfileid: "94844188"
 
 * Возможная причина и рекомендуемое действие.
   * Если имеется также предупреждающее сообщение "компонент не поддерживает использование диспетчера соединений с параметром Коннектбипрокси value true" в журнале выполнения, это означает, что диспетчер соединений используется для компонента, который еще не поддерживал "Коннектбипрокси". Поддерживаемые компоненты можно найти на странице [настройка Self-Hosted IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#enable-ssis-packages-to-connect-by-proxy) .
-  * Журнал выполнения можно найти в [отчете SSMS](/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
+  * Журнал выполнения можно найти в [отчете SSMS](/sql/integration-services/performance/monitor-running-packages-and-other-operations#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
   * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "... \\ Ссистелеметри \\ ExecutionLog \\ ... "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"

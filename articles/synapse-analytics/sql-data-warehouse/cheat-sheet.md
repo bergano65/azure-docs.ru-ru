@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: a236cf99d3131e83619cfab06e8ec028938a87ba
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: cc54ae66cda6bf8ecde07d1830448ec39a15cc29
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96454597"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120229"
 ---
 # <a name="cheat-sheet-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytic"></a>Памятка по выделенному пулу SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics
 
@@ -37,7 +37,7 @@ ms.locfileid: "96454597"
 
 ## <a name="data-migration"></a>Перенос данных
 
-Сначала загрузите данные в [Azure Data Lake Storage](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или в хранилище BLOB-объектов Azure. Затем воспользуйтесь [инструкцией COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (предварительная версия), чтоб отправить данные в промежуточные таблицы. Используйте следующую конфигурацию:
+Сначала загрузите данные в [Azure Data Lake Storage](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) или в хранилище BLOB-объектов Azure. Затем воспользуйтесь [инструкцией COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), чтоб отправить данные в промежуточные таблицы. Используйте следующую конфигурацию:
 
 | Конструирование | Рекомендация |
 |:--- |:--- |
@@ -46,7 +46,7 @@ ms.locfileid: "96454597"
 | Секционирование | None |
 | Класс ресурсов | largerc или xlargerc |
 
-Подробнее о [переносе данных](https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/), [загрузке данных](design-elt-data-loading.md), а также о [процессе извлечения, загрузки и преобразования (ELT)](design-elt-data-loading.md).
+Подробнее о [переносе данных](/archive/blogs/sqlcat/migrating-data-to-azure-sql-data-warehouse-in-practice), [загрузке данных](design-elt-data-loading.md), а также о [процессе извлечения, загрузки и преобразования (ELT)](design-elt-data-loading.md).
 
 ## <a name="distributed-or-replicated-tables"></a>Распределенные или реплицируемые таблицы
 
@@ -137,7 +137,7 @@ ms.locfileid: "96454597"
 
 Рекомендуем рассматривать базу данных SQL и Azure Analysis Services в звездообразной архитектуре. Это решение может обеспечить изоляцию рабочей нагрузки между различными группами пользователей наряду с использованием некоторых расширенных функций безопасности базы данных SQL и Azure Analysis Services. Это также поможет обеспечить неограниченный параллелизм для ваших пользователей.
 
-Дополнительные сведения о [стандартных архитектурах, использующих выделенный пул SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
+Дополнительные сведения о [стандартных архитектурах, использующих выделенный пул SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics](/archive/blogs/sqlcat/common-isv-application-patterns-using-azure-sql-data-warehouse).
 
 Разверните периферийные зоны в базах данных SQL из выделенного пула SQL (ранее — Хранилище данных SQL) одним щелчком:
 

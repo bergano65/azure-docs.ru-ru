@@ -3,14 +3,14 @@ title: Руководство по Kubernetes в Azure. Обновление к�
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющийся кластер AKS до последней доступной версии Kubernetes.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 517172b919552a24e9cb12bbaad14eb8cb71b3fd
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 8efb381562a5c55fa2c29b8379312dc41ef6a046
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007540"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251341"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство по Обновление Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -37,22 +37,22 @@ ms.locfileid: "97007540"
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster
 ```
 
-В следующем примере текущей является версия *1.15.11*, а доступные версии представлены в разделе *upgrades*.
+В следующем примере текущей является версия *1.18.10*, а доступные версии представлены в разделе *upgrades*.
 
 ```json
 {
   "agentPoolProfiles": null,
   "controlPlaneProfile": {
-    "kubernetesVersion": "1.15.11",
+    "kubernetesVersion": "1.18.10",
     ...
     "upgrades": [
       {
         "isPreview": null,
-        "kubernetesVersion": "1.16.8"
+        "kubernetesVersion": "1.19.1"
       },
       {
         "isPreview": null,
-        "kubernetesVersion": "1.16.9"
+        "kubernetesVersion": "1.19.3"
       }
     ]
   },
@@ -82,7 +82,7 @@ az aks upgrade \
 > [!NOTE]
 > Одновременно можно выполнить только одно обновление дополнительного номера версии. Например, вы можете обновить версию *1.14.x* до *1.15.x*, но нельзя обновить версию *1.14.x* сразу до *1.16.x*. Чтобы обновить версию *1.14.x* до *1.16.x*, сначала обновите версию *1.14.x* до *1.15.x*, а затем выполните обновление с версии *1.15.x* до *1.16.x*.
 
-В следующем кратком примере выходных данных показан результат обновления до версии *1.16.8*. Обратите внимание, что теперь для *kubernetesVersion* указан номер *1.16.8*.
+В следующем кратком примере выходных данных показан результат обновления до версии *1.19.1*. Обратите внимание, что теперь для *kubernetesVersion* указан номер *1.19.1*.
 
 ```json
 {
@@ -100,7 +100,7 @@ az aks upgrade \
   "enableRbac": false,
   "fqdn": "myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io",
   "id": "/subscriptions/<Subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster",
-  "kubernetesVersion": "1.16.8",
+  "kubernetesVersion": "1.19.1",
   "location": "eastus",
   "name": "myAKSCluster",
   "type": "Microsoft.ContainerService/ManagedClusters"
@@ -115,12 +115,12 @@ az aks upgrade \
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере выходных данных показано, что на кластере AKS выполняется *KubernetesVersion 1.16.8*.
+В следующем примере выходных данных показано, что в кластере AKS выполняется *KubernetesVersion 1.19.1*.
 
-```
+```output
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ----------------------------------------------------------------
-myAKSCluster  eastus      myResourceGroup  1.16.8               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.19.1               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="delete-the-cluster"></a>Удаление кластера

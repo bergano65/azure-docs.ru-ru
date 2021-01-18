@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: troubleshooting
 ms.date: 12/03/2020
-ms.openlocfilehash: d5cf39cf91b69574fc1423cfe0942b567cf9a278
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: e5e1a4ff676a6677357638dc4b67dc94926adbd2
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548214"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556313"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Устранение неполадок непрерывной интеграции — CD, Azure DevOps и GitHub в ADF 
 
@@ -72,7 +72,7 @@ ms.locfileid: "96548214"
 2020-07-06T09:50:50.8771655Z ##[error]Details:
 2020-07-06T09:50:50.8772837Z ##[error]DataFactoryPropertyUpdateNotSupported: Updating property type is not supported.
 2020-07-06T09:50:50.8774148Z ##[error]DataFactoryPropertyUpdateNotSupported: Updating property type is not supported.
-2020-07-06T09:50:50.8775530Z ##[error]Check out the troubleshooting guide to see if your issue is addressed: https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment?view=azure-devops#troubleshooting
+2020-07-06T09:50:50.8775530Z ##[error]Check out the troubleshooting guide to see if your issue is addressed: https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment#troubleshooting
 2020-07-06T09:50:50.8776801Z ##[error]Task failed while creating or updating the template deployment.
 `
 
@@ -107,7 +107,7 @@ ms.locfileid: "96548214"
 
 Вы отсоединили конфигурацию Git и настроили ее снова с выбранным флагом "Импорт ресурсов", который задает для фабрики данных значение "синхронизировано". Это означает отсутствие изменений для публикации.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Отсоедините конфигурацию Git и снова настройте ее и убедитесь, что не установлен флажок "импортировать существующие ресурсы".
 
@@ -131,7 +131,7 @@ ms.locfileid: "96548214"
 }
 `
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Чтобы разрешить операцию перемещения, необходимо удалить службы SSIS — IR и Shared IRs. Если вы не хотите удалять IRs, лучше всего следовать документу копирование и клонирование, чтобы скопировать и после этого удалить старую фабрику данных.
 
@@ -147,11 +147,11 @@ ms.locfileid: "96548214"
 
 Вы создали роль клиента в качестве пользователя и у нее нет необходимых разрешений. При загрузке фабрики в пользовательском интерфейсе проверяется ряд значений элементов управления экспозицией для фабрики. В этом случае роль доступа пользователя не имеет разрешения на доступ к API *куерифеатуресвалуе* . Для доступа к этому API функция глобальных параметров отключена. Путь к коду экспорта ARM частично полагается на функцию глобальных параметров.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 Чтобы устранить эту проблему, необходимо добавить в роль следующее разрешение: *Microsoft. куерифеатуресвалуе, фабрики,/Action*. Это разрешение должно включаться по умолчанию в роли "участник фабрики данных".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

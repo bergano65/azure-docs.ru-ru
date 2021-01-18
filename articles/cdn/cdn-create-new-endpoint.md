@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 04/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: af90166b688dee104e7bda18a88a2fe7c98f657b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7a3c4bc2a0445a2821e212986b495993695652a6
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82996271"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165932"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Краткое руководство. Создание профиля и конечной точки Azure CDN
 
@@ -68,7 +68,7 @@ ms.locfileid: "82996271"
     
    ![Конечная точка сети CDN](./media/cdn-create-new-endpoint/cdn-endpoint-success.png)
     
-   Время, необходимое для распространения конечной точки, зависит от выбранной при создании профиля ценовой категории. **Akamai (цен. категория "Стандартный")** обычно требует не более одной минуты, **Microsoft (цен. категория "Стандартный")**  — примерно 10 минут, а **Verizon (цен. категория "Стандартный")** и **Verizon (цен. категория "Премиум")**  — до 90 минут.
+   Время, необходимое для распространения конечной точки, зависит от выбранной при создании профиля ценовой категории. **Akamai (цен. категория "Стандартный")** обычно требует не более одной минуты, **Microsoft (цен. категория "Стандартный")**  — примерно 10 минут, а **Verizon (цен. категория "Стандартный")** и **Verizon (цен. категория "Премиум")**  — до 30 минут.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

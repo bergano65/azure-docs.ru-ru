@@ -3,12 +3,12 @@ title: Запись видео в Службы мультимедиа Azure пр
 description: В этом кратком руководстве показано, как использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения во время видеотрансляции и записи видеороликов в Службы мультимедиа Azure.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 8872c9aefa0ed748cbed93d0f7376586859be9df
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 33deabf27fe9b74fd01dba5d6fbe3883b54dda63
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511898"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060424"
 ---
 # <a name="quickstart-detect-motion-record-video-to-media-services"></a>Краткое руководство. Запись видео в Cлужбы мультимедиа при обнаружении движения
 
@@ -24,12 +24,14 @@ ms.locfileid: "97511898"
     * [Настройка ресурсов Azure](get-started-detect-motion-emit-events-quickstart.md#set-up-azure-resources)
     * [Развертывание модулей](get-started-detect-motion-emit-events-quickstart.md#deploy-modules-on-your-edge-device)
     * [Настройка Visual Studio Code](get-started-detect-motion-emit-events-quickstart.md#configure-the-azure-iot-tools-extension)
-
+    > [!TIP]
+    > Если вы столкнулись с проблемами с созданными ресурсами Azure, ознакомьтесь с нашим **[руководством по устранению неполадок](troubleshoot-how-to.md#common-error-resolutions)** , чтобы решить некоторые часто встречающиеся проблемы.
 ## <a name="review-the-sample-video"></a>Просмотр примера видео
 
 В рамках описанных выше действий по настройке ресурсов Azure (короткое) видео с изображением стоянки автомашин будет скопировано на виртуальную машину Linux в Azure, используемую в качестве устройства IoT Edge. Этот видеофайл будет использован для имитации прямой трансляции во время работы с этим руководством.
 
 Можно использовать приложение, например [проигрыватель VLC](https://www.videolan.org/vlc/): запустите его, нажмите клавиши `Ctrl+N` и вставьте [ссылку на пример видео с изображением стоянки автомашин](https://lvamedia.blob.core.windows.net/public/lots_015.mkv), чтобы начать воспроизведение. Примерно на 5-секундной отметке белый автомобиль движется по стоянке.
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LUbN]
 
 Выполняя указанные ниже действия, вы будете использовать Аналитику видеотрансляции в IoT Edge для обнаружения движения автомобиля и записи видеоролика, начиная с 5-секундной отметки. Приведенная ниже схема является визуальным представлением общего потока.
 
@@ -194,7 +196,7 @@ ms.locfileid: "97511898"
 
 Указанные выше полезные данные JSON приводят к созданию топологии графа, которая определяет пять параметров (для четырех из которых установлены значения по умолчанию). Топология имеет один узел источника ([источник RTSP](media-graph-concept.md#rtsp-source)), два узла обработчиков ([обработчик обнаружения движения](media-graph-concept.md#motion-detection-processor) и [обработчик сигнального шлюза](media-graph-concept.md#signal-gate-processor)) и два узла приемников (приемник Центра Интернета вещей и [приемник актива](media-graph-concept.md#asset-sink)). Визуальное представление топологии показано выше.
 
-Через несколько секунд появится окно вывода со следующим ответом:
+Через несколько секунд появится окно **OUTPUT** со следующим ответом.
 
 ```
 [DirectMethod] Invoking Direct Method [GraphTopologySet] to [lva-sample-device/lvaEdge] ...

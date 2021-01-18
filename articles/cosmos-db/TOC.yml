@@ -1122,6 +1122,10 @@
           href: find-request-unit-charge-mongodb.md
         - name: Решение проблем с производительностью запросов
           href: mongodb-troubleshoot-query.md
+        - name: Устранение распространенных неполадок
+          href: mongodb-troubleshoot.md
+        - name: 'Предотвращение ошибок, ограничивающих скорость'
+          href: prevent-rate-limiting-errors.md
         - name: Хранение данных и управление ими с помощью Spring Data
           href: /azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db?context=%2fazure%2fcosmos-db%2fcontext%2fcontext
         - name: Команды расширения MongoDB
@@ -1134,8 +1138,6 @@
           href: powershell-samples-mongodb.md
         - name: Управление с помощью Azure CLI
           href: cli-samples-mongodb.md
-        - name: Устранение распространенных неполадок
-          href: mongodb-troubleshoot.md
     - name: Справочник
       items:
         - name: Поставщик ресурсов REST

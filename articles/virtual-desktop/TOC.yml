@@ -128,6 +128,8 @@
       href: authentication.md
     - name: Среда Виртуального рабочего стола Windows
       href: environment-setup.md
+    - name: Агент Виртуального рабочего стола Windows
+      href: agent-overview.md
     - name: Возможность подключения к сети
       items:
         - name: Основные сведения о сетевом подключении
@@ -180,6 +182,8 @@
       href: troubleshoot-vm-configuration.md
     - name: Подключения службы удаленного рабочего стола
       href: troubleshoot-service-connection.md
+    - name: Агент Виртуального рабочего стола Windows
+      href: troubleshoot-agent.md
     - name: Проблемы с клиентом удаленного рабочего стола
       href: troubleshoot-client.md
     - name: "Виртуальный рабочий стол Windows\_— PowerShell"

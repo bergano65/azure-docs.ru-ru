@@ -9,13 +9,13 @@ manager: diviso
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 10/02/2020
-ms.openlocfilehash: 3956f8d91793367f7200d2f349a8713aff3d2f59
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 01/11/2021
+ms.openlocfilehash: cb5bac06ab6eeaa00e72ba6068328a972b8ac37b
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016230"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119367"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-gen2-demo-environment"></a>Краткое руководство. Общие сведения о демонстрационной среде службы "Аналитика временных рядов Azure" 2-го поколения
 
@@ -38,12 +38,27 @@ ms.locfileid: "95016230"
 
 ## <a name="work-with-historical-data"></a>Работа с историческими данными
 
-1. Рассмотрим ветрогенератор **W7** на электростанции **Contoso Plant 1**.  
+1. Выберите **Иерархия Contoso WindFarm**.
+
+   [![Иерархия Contoso WindFarm](media/quickstart-explore/quick-start-contoso-1.png)](media/quickstart-explore/quick-start-contoso-1.png#lightbox)
+
+1. Рассмотрим ветрогенератор **W7** на электростанции **Contoso Plant 1**.
+
+   [![W7 на Contoso Plant 1](media/quickstart-explore/quick-start-contoso-2.png)](media/quickstart-explore/quick-start-contoso-2.png#lightbox)
 
    1. Выберите диапазон просмотра с **20:00 01.01.17 до 20:00 10.03.17 (UTC)** .
+
+      [![Диапазон представления](media/quickstart-explore/range-setting-1.png)](media/quickstart-explore/range-setting-1.png#lightbox)
+
+      [![Параметр представления диапазона](media/quickstart-explore/range-setting-2.png)](media/quickstart-explore/range-setting-2.png#lightbox)
+
+   1. Измените представление диапазона с помощью масштабирования ( **(+)** и **(-)** ) и перемещения ползунка.
+
+      [![Настройка представления диапазона](media/quickstart-explore/view-range-setting.png)](media/quickstart-explore/view-range-setting.png#lightbox)
+
    1. Чтобы выбрать датчик, выберите **Contoso Plant 1** > **W7** > **Generator System** (Система генерации)  > **GeneratorSpeed** (Скорость генератора). Просмотрите значения на экране.
 
-      [![W7 на Contoso Plant 1](media/v2-update-quickstart/quick-start-generator-speed.png)](media/v2-update-quickstart/quick-start-generator-speed.png#lightbox)
+      [![Скорость генератора](media/quickstart-explore/quick-start-generator-speed-1.png)](media/quickstart-explore/quick-start-generator-speed-1.png#lightbox)
 
 1. Недавно Contoso обнаружила пожар на ветроэлектрической установке **W7**. Мнения о причине пожара расходятся. В службе "Аналитика временных рядов Azure" 2-го поколения отображаются данные датчика оповещения о пожаре, сработавшем во время пожара.
 

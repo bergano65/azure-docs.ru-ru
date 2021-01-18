@@ -1,15 +1,15 @@
 ---
 title: Общие сведения о службе "Блокчейн Azure"
 description: Общие сведения о службе "Блокчейн Azure".
-ms.date: 05/22/2020
+ms.date: 01/04/2021
 ms.topic: overview
 ms.reviewer: ravastra
-ms.openlocfilehash: dc716b475fe85170d595463e0785743591e398c1
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 15d1126a98a4d3194a256ed07de3918cb066a4e2
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874565"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963884"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Что собой представляет служба "Блокчейн Azure"?
 
@@ -83,6 +83,8 @@ ms.locfileid: "94874565"
 
 Чтобы приступить к работе, воспользуйтесь кратким руководством или найдите дополнительные сведения в этих ресурсах.
 * [Создайте элемент блокчейна, используя портал Azure](create-member.md) или [Azure CLI](create-member-cli.md).
+* Изучите схему Microsoft Learn [Начало работы с разработкой для блокчейна](/learn/paths/ethereum-blockchain-development).
+* Посмотрите серию видео [Блокчейн для начинающих](https://channel9.msdn.com/Series/Beginners-Series-to-Blockchain).
 * Перейдите на [страницу цен](https://azure.microsoft.com/pricing/details/blockchain-service) для сравнения цен и доступа к калькуляторам.
 * Создайте первое приложение с помощью [комплекта SDK Блокчейна Azure](https://github.com/Azure-Samples/blockchain-devkit).
 * [Руководство пользователя](https://github.com/Microsoft/vscode-azure-blockchain-ethereum/wiki) по расширению VS Code для Блокчейна Azure.

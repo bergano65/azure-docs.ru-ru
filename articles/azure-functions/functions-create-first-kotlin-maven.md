@@ -1,18 +1,18 @@
 ---
-title: Создание первой функции в Azure с помощью Kotlin и Maven
-description: В этой статье описывается создание и публикация в Azure функции, активируемой с помощью HTTP, используя Kotlin и Maven.
+title: Создание функции Kotlin в Функциях Azure с помощью Maven
+description: В этой статье описывается создание и публикация в Функциях Azure приложения-функции, активируемого через HTTP, с помощью Kotlin и Maven.
 author: dglover
 ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 167e7c447fe43851255677a44043c508cbdc4239
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 6f7b79b6e3e72b34a27e5b4f0e1fb5426c539699
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934838"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035246"
 ---
 # <a name="quickstart-create-your-first-function-with-kotlin-and-maven"></a>Краткое руководство. Создание первой функции с помощью Kotlin и Maven
 
@@ -32,9 +32,9 @@ ms.locfileid: "97934838"
 > [!IMPORTANT]
 > Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.
 
-## <a name="generate-a-new-functions-project"></a>Создание нового проекта функций
+## <a name="generate-a-new-azure-functions-project"></a>Создание проекта Функций Azure
 
-В пустой папке выполните следующую команду, чтобы создать проект функций из [архетипа Maven](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
+В пустой папке выполните следующую команду, чтобы создать проект Функций Azure из [архетипа Maven](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
 
 # <a name="bash"></a>[bash](#tab/bash)
 ```bash
@@ -173,7 +173,7 @@ az login
 mvn azure-functions:deploy
 ```
 
-После завершения развертывания появится URL-адрес, который можно использовать для доступа к приложению-функции Azure:
+После завершения развертывания появится URL-адрес, который можно использовать для доступа к приложению-функции:
 
 <pre>
 [INFO] Successfully deployed Function App with package.
@@ -231,7 +231,7 @@ Hi, AzureFunctionsTest
 
 ## <a name="reference-bindings"></a>Указание ссылки на привязки
 
-Для работы с [триггерами и привязками функций](functions-triggers-bindings.md), отличных от триггера HTTP и триггера таймера, необходимо установить расширения привязки. Хотя это и не требуется в этой статье, необходимо знать, как включить расширения при работе с другими типами привязок.
+Для работы с [триггерами и привязками функций Azure](functions-triggers-bindings.md), отличных от триггера HTTP и триггера таймера, необходимо установить расширения привязки. Хотя это и не требуется в этой статье, необходимо знать, как включить расширения при работе с другими типами привязок.
 
 [!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
 

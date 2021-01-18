@@ -8,6 +8,8 @@
       href: faq.md
     - name: Новые возможности
       href: whats-new.md
+    - name: Миграция из Operations Manager
+      href: azure-monitor-operations-manager.md
 - name: Краткие руководства
   items:
     - name: Мониторинг ресурса Azure
@@ -196,6 +198,8 @@
               href: platform/metric-chart-samples.md
             - name: Устранение неполадок с диаграммами метрик
               href: platform/metrics-troubleshoot.md
+            - name: Основные сведения об агрегировании метрик
+              href: platform/metrics-aggregation-explained.md
     - name: Журналы Azure Monitor
       items:
         - name: Обзор
@@ -567,7 +571,11 @@
             - name: 'Данные, синхронизированные из продукта ITSM'
               href: platform/itsmc-synced-data.md
             - name: Устранение неполадок с соединителем ITSM
-              href: platform/itsmc-resync-servicenow.md
+              items:
+                - name: Обзор
+                  href: platform/itsmc-resync-servicenow.md
+                - name: Исследование панели мониторинга
+                  href: platform/itsmc-dashboard.md
             - name: Интеграция с Secure Export
               items:
                 - name: Обзор
@@ -664,6 +672,8 @@
                       href: app/javascript-react-native-plugin.md
                     - name: Подключаемый модуль Angular
                       href: app/javascript-angular-plugin.md
+                    - name: Вызов подключаемого модуля автоматического сбора аналитики
+                      href: app/javascript-click-analytics-plugin.md
                 - name: Диагностика
                   items:
                     - name: Сбоев при загрузке пакетов SDK

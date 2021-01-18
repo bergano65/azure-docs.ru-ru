@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
 ms.author: alkemper
-ms.openlocfilehash: 4197891949062123042736e578cfbcc5def4e1f9
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: b5c659a673ece8fd7fbb9566d8bb84201a668a7f
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96930812"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964088"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
@@ -44,45 +44,75 @@ ms.locfileid: "96930812"
 [!INCLUDE [Create a project using the Azure Functions template](../../includes/functions-vstools-create.md)]
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
+Этот проект будет использовать [внедрение зависимостей в Функциях Azure .NET](/azure/azure-functions/functions-dotnet-dependency-injection) и добавит Конфигурацию приложений Azure в качестве дополнительного источника конфигурации.
 
-1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`. Если найти не удается, установите флажок **Включить предварительные выпуски**.
+1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet:
+   - [Microsoft.Extensions.Configuration.AzureAppConfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureAppConfiguration/) 4.1.0 или более поздней версии;
+   - [Microsoft.Azure.Functions.Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/) 1.1.0 или более поздней версии. 
 
-2. Откройте *Function1.cs* и добавьте пространства имен поставщика конфигурации .NET Core и конфигурации службы "Конфигурация приложений".
+2. Добавьте новый файл *Startup.cs* с приведенным ниже кодом. В нем определен класс с именем `Startup`, который реализует абстрактный класс `FunctionsStartup`. С помощью атрибута сборки указывается имя типа, используемого при запуске Функций Azure.
+
+    Метод `ConfigureAppConfiguration` переопределяется, при этом добавляется поставщик Конфигурации приложений Azure в качестве дополнительного источника конфигурации с помощью вызова `AddAzureAppConfiguration()`. Метод `Configure` остается пустым, так как на этом этапе не нужно регистрировать какие-либо службы.
+    
+    ```csharp
+    using System;
+    using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Configuration;
+
+    [assembly: FunctionsStartup(typeof(FunctionApp.Startup))]
+
+    namespace FunctionApp
+    {
+        class Startup : FunctionsStartup
+        {
+            public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
+            {
+                string cs = Environment.GetEnvironmentVariable("ConnectionString");
+                builder.ConfigurationBuilder.AddAzureAppConfiguration(cs);
+            }
+
+            public override void Configure(IFunctionsHostBuilder builder)
+            {
+            }
+        }
+    }
+    ```
+
+3. Откройте *Function1.cs* и добавьте указанное ниже пространство имен.
 
     ```csharp
     using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
 
-3. Добавьте свойство `static` с именем `Configuration`, чтобы создать отдельный экземпляр `IConfiguration`. Затем добавьте конструктор `static` для подключения к службе "Конфигурация приложения", вызвав `AddAzureAppConfiguration()`. Конфигурация будет загружена один раз при запуске приложения. Позже один и тот же экземпляр конфигурации будет использоваться для всех вызовов функций.
+   Добавьте конструктор для получения экземпляра `IConfiguration` с помощью внедрения зависимостей.
 
     ```csharp
-    private static IConfiguration Configuration { set; get; }
+    private readonly IConfiguration _configuration;
 
-    static Function1()
+    public Function1(IConfiguration configuration)
     {
-        var builder = new ConfigurationBuilder();
-        builder.AddAzureAppConfiguration(Environment.GetEnvironmentVariable("ConnectionString"));
-        Configuration = builder.Build();
+        _configuration = configuration;
     }
     ```
 
 4. Обновите метод `Run`, чтобы считать значения из конфигурации.
 
     ```csharp
-    public static async Task<IActionResult> Run(
+    public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req, ILogger log)
     {
         log.LogInformation("C# HTTP trigger function processed a request.");
 
         string keyName = "TestApp:Settings:Message";
-        string message = Configuration[keyName];
+        string message = _configuration[keyName];
 
         return message != null
             ? (ActionResult)new OkObjectResult(message)
             : new BadRequestObjectResult($"Please create a key-value with the key '{keyName}' in App Configuration.");
     }
     ```
+
+   Класс `Function1` и метод `Run` не должны быть статическими. Удалите модификатор `static`, если он был создан автоматически.
 
 ## <a name="test-the-function-locally"></a>Локальное тестирование функции
 
@@ -120,7 +150,7 @@ ms.locfileid: "96930812"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы создали хранилище службы "Конфигурация приложений" и использовали его с приложением Функций Azure с помощью [поставщика Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration). Чтобы узнать, как настроить приложение Функций Azure для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
+В этом кратком руководстве вы создали хранилище службы "Конфигурация приложений" и использовали его с приложением Функций Azure с помощью [поставщика Конфигурации приложений](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration). Чтобы узнать, как настроить приложение Функций Azure для динамического обновления конфигурации, перейдите к следующему учебнику.
 
 > [!div class="nextstepaction"]
-> [Включение динамической конфигурации](./enable-dynamic-configuration-azure-functions-csharp.md)
+> [Включение динамической конфигурации в Функциях Azure](./enable-dynamic-configuration-azure-functions-csharp.md)

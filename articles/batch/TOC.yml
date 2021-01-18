@@ -223,14 +223,12 @@
           items:
             - name: Рендеринг с помощью Azure
               href: batch-rendering-service.md
-            - name: Образы виртуальных машин для рендеринга
+            - name: Рендеринг образов виртуальных машин в пакетной службе
               href: batch-rendering-applications.md
             - name: Возможности рендеринга в пакетной службе
               href: batch-rendering-functionality.md
             - name: Использование рендеринга в пакетной службе
               href: batch-rendering-using.md
-            - name: Использование диспетчеров рендеринга
-              href: batch-rendering-render-managers.md
             - name: Справочник по приложениям для рендеринга
               href: batch-rendering-application-reference.md
             - name: Хранение и перемещение данных

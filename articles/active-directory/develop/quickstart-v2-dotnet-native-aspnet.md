@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: fe82b03c4a8c71f84de02245b075ff30da31b45b
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 2967476d06b8f6f88b740f811a94c5fdb4284b4d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031106"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98011872"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
 
@@ -48,13 +48,13 @@ ms.locfileid: "97031106"
 
 Чтобы зарегистрировать приложения вручную, выберите арендатор Azure Active Directory (Azure AD), в котором вы хотите создать приложения.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с личной учетной записью Майкрософт либо рабочей или учебной учетной записью.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a> с личной учетной записью Майкрософт либо рабочей или учебной учетной записью.
 1. Если ваша учетная запись принадлежит к нескольким арендаторам Azure AD, выберите профиль в правом верхнем углу, а затем **переключите каталог**.
 1. Смените сеанс портала на арендатор Azure AD, который необходимо использовать.
 
 ### <a name="register-the-todolistservice-app"></a>Регистрация приложения TodoListService
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Новая регистрация**.

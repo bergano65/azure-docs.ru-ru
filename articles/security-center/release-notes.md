@@ -1,6 +1,6 @@
 ---
 title: Заметки о выпуске Центра безопасности Azure
-description: Описание новых возможностей и изменений в Центре безопасности Azure.
+description: Описание новых возможностей и изменений в Центре безопасности Azure
 services: security-center
 documentationcenter: na
 author: memildin
@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/07/2021
+ms.date: 01/17/2021
 ms.author: memildin
-ms.openlocfilehash: 86da6c0a3393dd3f47143355597cd9ccdec9928d
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 48e7093c30ffb135231f5843cb0767848f242d89
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539936"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541395"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -32,6 +32,24 @@ ms.locfileid: "98539936"
 
 
 ## <a name="january-2021"></a>Январь 2021 г.
+
+В декабре добавлены следующие обновления:
+
+- [Экспорт отфильтрованного списка рекомендаций в CSV-файл](#csv-export-of-filtered-list-of-recommendations)
+- [Оценка уязвимостей для компьютеров в локальной среде и нескольких облаках уже общедоступна](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-generally-available)
+
+
+### <a name="csv-export-of-filtered-list-of-recommendations"></a>Экспорт отфильтрованного списка рекомендаций в CSV-файл 
+
+В ноябре 2020 года мы добавили фильтры на страницу рекомендаций (см. раздел [В списке рекомендаций теперь можно применять фильтры](#recommendations-list-now-includes-filters)). В декабре мы расширили эти фильтры (см. раздел [На странице "Рекомендации" доступны новые фильтры для среды, серьезности и доступных ответов](#recommendations-page-has-new-filters-for-environment-severity-and-available-responses)). 
+
+Объявляем о том, что мы изменяем поведение кнопки **Скачать в CSV**, чтобы экспорт в CSV-файл включал только те рекомендации, которые сейчас отображаются в отфильтрованном списке. 
+
+Например, на приведенном ниже изображении видно, что список отфильтрован по двум рекомендациям. Генерируемый CSV-файл содержит сведения о состоянии для каждого ресурса, которого касаются эти две рекомендации.   
+
+:::image type="content" source="media/security-center-managing-and-responding-alerts/export-to-csv-with-filters.png" alt-text="Экспорт отфильтрованных рекомендаций в CSV-файл":::
+
+Дополнительные сведения см. в статье [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md).
 
 ### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-generally-available"></a>Оценка уязвимостей для компьютеров в локальной среде и нескольких облаках уже общедоступна
 

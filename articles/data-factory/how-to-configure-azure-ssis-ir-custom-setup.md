@@ -12,12 +12,12 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 11/06/2020
-ms.openlocfilehash: bc5d2cad7b4fbf1871d2c02dc91db30daf55e855
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: b9dc88c5773d1329ad4fb4d1c45a0cbc88737423
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600733"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556585"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -345,7 +345,7 @@ ms.locfileid: "96600733"
 
       * Папка *tls 1,2* , которая содержит пользовательский сценарий установки (*Main. cmd*) для использования надежного шифрования и более защищенного сетевого протокола (TLS 1,2) на каждом узле Azure-SSIS IR. Скрипт также отключает более старые версии SSL/TLS.
 
-      * Папка *ZULU OPENJDK*, которая содержит скрипт пользовательской установки (*main.cmd*) и файл PowerShell (*install_openjdk.ps1*) для установки Zulu OpenJDK на каждом узле Azure-SSIS IR. Эта программа установки позволяет использовать Azure Data Lake Store и гибкие соединители файлов для обработки файлов ORC и Parquet. Дополнительные сведения см. в статье [Пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-ver15#dependency-on-java). 
+      * Папка *ZULU OPENJDK*, которая содержит скрипт пользовательской установки (*main.cmd*) и файл PowerShell (*install_openjdk.ps1*) для установки Zulu OpenJDK на каждом узле Azure-SSIS IR. Эта программа установки позволяет использовать Azure Data Lake Store и гибкие соединители файлов для обработки файлов ORC и Parquet. Дополнительные сведения см. в статье [Пакет дополнительных компонентов Azure для служб Integration Services (SSIS)](/sql/integration-services/azure-feature-pack-for-integration-services-ssis#dependency-on-java). 
       
         Сначала [скачайте последнюю версию Zulu OpenJDK](https://www.azul.com/downloads/zulu/zulu-windows/) (например, *zulu8.33.0.1-jdk8.0.192-win_x64.zip*), а затем отправьте этот файл вместе с *main.cmd* и *install_openjdk.ps1* в ваш контейнер.
 

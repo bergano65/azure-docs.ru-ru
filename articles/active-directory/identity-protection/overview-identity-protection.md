@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: overview
-ms.date: 08/24/2020
+ms.date: 01/05/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.custom: contperf-fy21q1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 242e0e4614994c30d0a14b8fe3d7a5c2b217bb5a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 6e274d35fde6a3d55c05bcb5a9f22e75a37aa3c6
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033346"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955405"
 ---
 # <a name="what-is-identity-protection"></a>Общие сведения о защите идентификации
 
@@ -49,13 +49,16 @@ ms.locfileid: "97033346"
 
 | Тип обнаружения риска | Описание |
 | --- | --- |
-| Необычный переход | Вход из необычного местоположения (на основе недавних входов пользователя). |
 | Анонимный IP-адрес | Вход с анонимного IP-адреса (например, Tor Browser, анонимайзеры VPN). |
-| Неизвестные свойства входа | Вход с использованием свойств, в последнее время не наблюдавшихся у пользователя. |
+| Необычный переход | Вход из необычного местоположения (на основе недавних входов пользователя). |
 | IP-адрес, который помечен как вредоносный | Вход с вредоносного IP-адреса. |
+| Неизвестные свойства входа | Вход с использованием свойств, в последнее время не наблюдавшихся у пользователя. |
 | Утечка учетных данных | Означает, что произошла утечка допустимых учетных данных пользователя. |
 | Распыление пароля | Означает, что несколько имен пользователей подвергаются атакам с использованием общих паролей в едином режиме принудительного подбора. |
 | Аналитика угроз Azure AD | Источниками внутренней и внешней аналитики угроз Майкрософт обнаружено известный шаблон атак. |
+| Новая страна | Это обнаружение выполняется брокером [Microsoft Cloud App Security (MCAS)](/cloud-app-security/anomaly-detection-policy#activity-from-infrequent-country). |
+| Действия, выполняемые с анонимных IP-адресов | Это обнаружение выполняется брокером [Microsoft Cloud App Security (MCAS)](/cloud-app-security/anomaly-detection-policy#activity-from-anonymous-ip-addresses). |
+| Подозрительная пересылка входящих сообщений | Это обнаружение выполняется брокером [Microsoft Cloud App Security (MCAS)](/cloud-app-security/anomaly-detection-policy#suspicious-inbox-forwarding). |
 
 Дополнительные сведения об этих рисках и их вычислении можно найти в статье [Что такое риск](concept-identity-protection-risks.md).
 

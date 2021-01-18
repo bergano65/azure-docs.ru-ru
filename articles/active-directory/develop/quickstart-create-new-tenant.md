@@ -13,12 +13,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: f43cb80a148f5dadb409f506f237cb1210a2000a
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 869b37aea823cf91dc59211b23fcaccd7646afb9
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934005"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012025"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -47,7 +47,7 @@ ms.locfileid: "97934005"
 
 У многих разработчиков уже есть клиенты благодаря службам или подпискам, которые связаны с клиентами Azure AD (например, подписки Microsoft 365 или Azure).
 
-1. Чтобы проверить клиента, войдите на [портал Azure](https://portal.azure.com) под учетной записью, которую вы хотите использовать для управления приложением.
+1. Чтобы проверить клиента, войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a> под учетной записью, которую вы хотите использовать для управления приложением.
 1. Посмотрите в правый верхний угол. Если у вас есть клиент, вы автоматически войдете в него и сможете увидеть имя клиента непосредственно под своей учетной записью.
    * Наведите указатель мыши на имя учетной записи в верхней правой части портала Azure, чтобы увидеть свое имя, адрес электронной почты, идентификатор каталога или клиента (GUID), а также домен.
    * Если ваша учетная запись связана с несколькими клиентами, выберите имя учетной записи, чтобы открыть меню, где можно переключаться между клиентами. У каждого клиента есть свой идентификатор.

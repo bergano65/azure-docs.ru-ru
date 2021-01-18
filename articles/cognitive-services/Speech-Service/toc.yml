@@ -467,11 +467,19 @@
       displayName: SPX
       items:
         - name: Обзор CLI службы "Речь"
-          displayName: What is SPX?
+          displayName: 'What is SPX?, spx, spx overview'
           href: spx-overview.md
-        - name: Общие сведения об интерфейсе командной строки службы "Речь"
-          displayName: SPX basics
+        - name: Краткое руководство по CLI службы Речи
+          displayName: 'spx basics, spx quickstart, spx get started, speech cli get started'
           href: spx-basics.md
+        - name: Практические руководства
+          items:
+            - name: Варианты настройки CLI службы Речи
+              displayName: 'SPX configuration options, speech cli config, speech cli data store, data store, datastore, speech cli datastore'
+              href: spx-data-store-configuration.md
+            - name: Пакетные операции CLI службы Речи
+              displayName: 'spx batch, spx batch operations, speech batch, speech cli speech to text batch, speech cli tex to speech batch'
+              href: spx-batch-operations.md
     - name: Speech Studio
       items:
         - name: Обзор Speech Studio

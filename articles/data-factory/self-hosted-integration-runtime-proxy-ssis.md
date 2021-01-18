@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 11/19/2020
-ms.openlocfilehash: 82cc58d46061ec7b623d062ab0b0e5a1fdae7ddd
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: bde8bc11a959bea4bd2c05c5ae75db81192aad6a
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352224"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555871"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в фабрике данных Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "96352224"
 
 ### <a name="enable-windows-authentication-for-on-premises-staging-tasks"></a>Включение проверки подлинности Windows для локальных промежуточных задач
 
-Если для локальных промежуточных задач требуется проверка подлинности Windows, [Настройте пакеты служб SSIS на использование одной и той же проверки подлинности Windows](/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth?view=sql-server-ver15). 
+Если для локальных промежуточных задач требуется проверка подлинности Windows, [Настройте пакеты служб SSIS на использование одной и той же проверки подлинности Windows](/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth). 
 
 Локальные задачи промежуточного хранения будут вызываться с помощью учетной записи локальной службы IR (по умолчанию *NT сервице\диахостсервице*), и ваши хранилища данных будут доступны с учетной записью проверки подлинности Windows. Для обеих учетных записей необходимо назначить определенные политики безопасности. На автономном IR-компьютере перейдите в раздел **Локальная политика безопасности**  >  **локальные** политики  >  **Назначение прав пользователя** и выполните следующие действия.
 
@@ -70,7 +70,7 @@ ms.locfileid: "96352224"
 - В качестве **метода проверки подлинности** выберите **ключ учетной записи**, **URI SAS**, **субъект-служба** или **управляемое удостоверение**.  
 
 >[!TIP]
->Если выбран метод **субъекта-службы** , предоставьте субъекту-службе по крайней мере роль *участника данных большого двоичного объекта хранилища* . Дополнительные сведения см. в статье [соединитель хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties). Если вы выбрали **управляемый метод идентификации** , предоставьте управляемому удостоверению ADF необходимые роли для доступа к хранилищу BLOB-объектов Azure. Дополнительные сведения см. в статье [доступ к хранилищу BLOB-объектов Azure с помощью Azure Active Directory аутентификации с помощью управляемого удостоверения ADF](/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication).
+>Если выбран метод **субъекта-службы** , предоставьте субъекту-службе по крайней мере роль *участника данных большого двоичного объекта хранилища* . Дополнительные сведения см. в статье [соединитель хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties). Если вы выбрали **управляемый метод идентификации** , предоставьте управляемому удостоверению ADF необходимые роли для доступа к хранилищу BLOB-объектов Azure. Дополнительные сведения см. в статье [доступ к хранилищу BLOB-объектов Azure с помощью Azure Active Directory аутентификации с помощью управляемого удостоверения ADF](/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication).
 
 ![Подготовка связанной службы хранилища BLOB-объектов Azure для промежуточного хранения](media/self-hosted-integration-runtime-proxy-ssis/shir-azure-blob-storage-linked-service.png)
 
@@ -132,7 +132,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Используя последнюю версию SSDT в качестве расширения проектов служб SSIS для Visual Studio или автономного установщика, можно найти новое `ConnectByProxy` свойство, добавленное в диспетчере соединений для поддерживаемых компонентов потока данных.
 * [Скачивание расширения проектов служб SSIS для Visual Studio](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects)
-* [Скачать автономный установщик](/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)   
+* [Скачать автономный установщик](/sql/ssdt/download-sql-server-data-tools-ssdt#ssdt-for-vs-2017-standalone-installer)   
 
 При проектировании новых пакетов, содержащих задачи потока данных, с компонентами, которые обращаются к локальным данным, можно включить это свойство, задав для него *значение true* на панели **свойства** соответствующих диспетчеров соединений.
 

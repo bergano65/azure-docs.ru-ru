@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: adc08e978be699ea6ea3dd00beae1762d48644c0
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 3c03a207e91ae969836e208f4e6bf4ea32086c7d
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96781068"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121330"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -22,6 +22,8 @@ ms.locfileid: "96781068"
 
 > [!IMPORTANT]
 > Приватный канал Azure теперь является общедоступным. Как частная конечная точка, так и служба "Приватный канал" (служба за стандартной подсистемой балансировки нагрузки) являются общедоступными. Различные службы PaaS Azure будут подключаться к Приватному каналу Azure по разным расписаниям. Проверьте раздел [Доступность](#availability) ниже для получения точного статуса Azure PaaS по Приватному каналу. Сведения об известных ограничениях см. в разделах о [частной конечной точке](private-endpoint-overview.md#limitations) и [службе "Приватный канал"](private-link-service-overview.md#limitations). 
+
+:::image type="content" source="./media/private-link-overview/private-link-center.png" alt-text="Центр Приватного канала Azure на портале Azure" border="false":::
 
 ## <a name="key-benefits"></a>Основные преимущества
 Приватный канал Azure обеспечивает следующие преимущества:  

@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: cherylmc
   ms.author: cherylmc
-  ms.date: 08/19/2020
-  ms.openlocfilehash: 772fa134eabc45dcbaa9e9b05c573aec493dd57b
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.date: 01/15/2020
+  ms.openlocfilehash: 3aaf42935e292bda64d9227d01f498c83f4c9f7a
+  ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "89438164"
+  ms.lasthandoff: 01/16/2021
+  ms.locfileid: "98250780"
 landingContent:
 - title: Общие сведения о Виртуальной глобальной сети
   linkLists:
@@ -75,12 +75,14 @@ landingContent:
       url: about-virtual-hub-routing.md
     - text: 'Сценарий: перенаправление трафика через сетевой виртуальный модуль'
       url: scenario-route-through-nva.md
-    - text: 'Сценарий: подключение "любой к любому"'
+    - text: 'Сценарий: из любой периферийной зоны в любую периферийную зону'
       url: scenario-any-to-any.md
-    - text: 'Сценарий: изоляция виртуальных сетей'
+    - text: 'Сценарий: изоляция виртуальной сети'
       url: scenario-isolate-vnets.md
-    - text: 'Сценарий: виртуальные сети с общими службами'
+    - text: 'Сценарий: маршрутизация в виртуальную сеть общих служб'
       url: scenario-shared-services-vnet.md
+    - text: 'Сценарий: настраиваемая маршрутизация через Брандмауэр Azure'
+      url: scenario-route-between-vnets-firewall.md
   - linkListType: how-to-guide
     links:
     - text: Настройка маршрутизации для виртуального концентратора

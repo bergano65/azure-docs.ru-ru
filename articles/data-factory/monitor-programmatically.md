@@ -11,12 +11,12 @@ author: dcstwh
 ms.author: weetok
 manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: e7b435080fda48e1df0bb31d16dafed30ac3d3db
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b5d1f0c0d6aa848e590e68e1f18abf7861674483
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497866"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556568"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Отслеживание фабрики данных Azure с помощью программных средств
 
@@ -68,7 +68,7 @@ ms.locfileid: "96497866"
     Console.ReadKey();
     ```
 
-Полная документация по пакету SDK для .NET приведена в [справочнике по пакету SDK для .NET для фабрики данных](/dotnet/api/microsoft.azure.management.datafactory?view=azure-dotnet).
+Полная документация по пакету SDK для .NET приведена в [справочнике по пакету SDK для .NET для фабрики данных](/dotnet/api/microsoft.azure.management.datafactory).
 
 ## <a name="python"></a>Python
 Полное пошаговое руководство по созданию и отслеживанию конвейера с помощью пакета SDK для Python приведено в разделе [Создание фабрики данных и конвейера с помощью Python](quickstart-create-data-factory-python.md).
@@ -86,7 +86,7 @@ activity_runs_paged = list(adf_client.activity_runs.list_by_pipeline_run(
 print_activity_run_details(activity_runs_paged[0])
 ```
 
-Полная документация по пакету SDK для Python приведена в [справочнике по пакету SDK для Python для фабрики данных](/python/api/overview/azure/datafactory?view=azure-python).
+Полная документация по пакету SDK для Python приведена в [справочнике по пакету SDK для Python для фабрики данных](/python/api/overview/azure/datafactory).
 
 ## <a name="rest-api"></a>REST API
 Полное пошаговое руководство по созданию и отслеживанию конвейера с помощью REST API приведено в разделе [Создание фабрики данных Azure и конвейера с помощью REST API](quickstart-create-data-factory-rest-api.md).
