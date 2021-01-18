@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: sideeksh
-ms.openlocfilehash: 599ad76f38833e06cc458fd0687921e6975e190b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f63021275574e294fa372357d6e62724f5efe0f7
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426373"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541196"
 ---
 # <a name="customize-networking-configurations-of-the-target-azure-vm"></a>Настройка сетевых конфигураций целевой виртуальной машины Azure
 
@@ -44,12 +44,12 @@ ms.locfileid: "89426373"
 
      ![Настройка конфигураций сети отработки отказа](media/azure-to-azure-customize-networking/edit-networking-properties.png)
 
-4. Выберите виртуальную сеть тестовой отработки отказа. Вы можете оставить его пустым и выбрать его во время тестовой отработки отказа.
+4. Выберите виртуальную сеть тестовой отработки отказа.
 5. Сеть отработки отказа выберите **изменить** рядом с сетевой картой, которую вы хотите настроить. В следующей появившейся колонке выберите соответствующие предварительно созданные ресурсы в области тестовая отработка отказа и расположение отработки отказа.
 
     ![Изменение конфигурации сетевого адаптера](media/azure-to-azure-customize-networking/nic-drilldown.png) 
 
-6. Щелкните **ОК**.
+6. Нажмите кнопку **ОК**.
 
 Site Recovery теперь соберет эти параметры и убедитесь, что виртуальная машина при отработке отказа подключена к выбранному ресурсу через соответствующий сетевой адаптер.
 

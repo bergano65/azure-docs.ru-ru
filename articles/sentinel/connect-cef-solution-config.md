@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: fec3f25c4b401ff7c3bc73d249b716b9c12e6529
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 36c832e198d7b6e9a6c3f6ddc19ad87c87917f38
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548551"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541280"
 ---
 # <a name="step-2-configure-your-security-solution-to-send-cef-messages"></a>Шаг 2. Настройка решения безопасности для отправки сообщений CEF
 
@@ -31,15 +31,19 @@ ms.locfileid: "96548551"
 
 - [Vectra AI Detect](connect-ai-vectra-detect.md)
 - [Check Point](connect-checkpoint.md)
-- [Cisco](connect-cisco.md)
+- [Cisco ASA](connect-cisco.md)
+- [Citrix WAF](connect-citrix-waf.md)
+- [CyberArk Enterprise Password Vault](connect-cyberark.md)
 - [ExtraHop Reveal(x)](connect-extrahop.md)
-- [F5 ASM](connect-f5.md)  
+- [F5 ASM](connect-f5.md)
 - [Продукты Forcepoint](connect-forcepoint-casb-ngfw.md)
 - [Fortinet](connect-fortinet.md)
 - [Illusive Networks AMS](connect-illusive-attack-management-system.md)
 - [One Identity Safeguard](connect-one-identity.md)
 - [Palo Alto Networks](connect-paloalto.md)
 - [Trend Micro Deep Security](connect-trend-micro.md)
+- [Тенденция Micro Типпингпоинт](connect-trend-micro-tippingpoint.md)
+- [Платформа сетевого судебного Вирекса](connect-wirex-systems.md)
 - [Zscaler](connect-zscaler.md)
 ## <a name="configure-any-other-solution"></a>Настройка любого другого решения
 
@@ -68,7 +72,7 @@ ms.locfileid: "96548551"
 >    wget -O TimeGenerated.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/TimeGenerated.py && python TimeGenerated.py {ws_id}
 >    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
