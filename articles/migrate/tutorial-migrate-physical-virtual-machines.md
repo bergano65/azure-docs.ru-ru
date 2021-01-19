@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: aac949de0b0ae1f085187c1b5e1f3b64d8edad03
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c0f4f1d7f0213ad24d25d8d34235475bbdb0316a
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233820"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567104"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Перенос компьютеров в качестве физических серверов в Azure
 
@@ -163,6 +163,8 @@ ms.locfileid: "98233820"
     - На устройстве репликации можно получить парольную фразу. В командной строке выполните **C:\ProgramData\ASR\home\svsystems\bin\genpassphrase.exe -v**, чтобы просмотреть текущую парольную фразу.
     - Не создавайте парольную фразу повторно. Это нарушит соединение и вам придется перерегистрировать устройство репликации.
 
+> [!NOTE]
+> Если вы выполняете миграцию виртуальных машин VMware или физических компьютеров, укажите в параметре */Platform* значение *VMware*.
 
 ### <a name="install-on-windows"></a>Установка в Windows
 
