@@ -13,12 +13,12 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 7ba15e66cca7baefdf8cca5cabd5e5d5b1e2c7f7
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 1282c27378e6a088a600a3ab3105f3f548984d03
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507818"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063150"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-application"></a>Руководство по Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -71,11 +71,11 @@ MSAL автоматически обновляет маркеры, обеспе�
 6. Присвойте параметру **Minimum API level** (Минимальный уровень API) задайте **API 19** или выше и щелкните **Finish** (Готово).
 7. В представлении проекта в раскрывающемся списке выберите **Project** (Проект), чтобы отобразить исходные и другие файлы проекта, откройте **app/build.gradle** и задайте параметру `targetSdkVersion` значение `28`.
 
-## <a name="integrate-with-microsoft-authentication-library"></a>Интеграция с библиотекой проверки подлинности Майкрософт
+## <a name="integrate-with-the-microsoft-authentication-library"></a>Интеграция с библиотекой проверки подлинности Майкрософт
 
 ### <a name="register-your-application"></a>Регистрация приложения
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.

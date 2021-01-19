@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 10/12/2020
 ms.author: inhenkel
-ms.openlocfilehash: 023c4d685804b2c6c201f44ab672139d56338cdb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c1798ca74493ba22d29cd9ce819d469c29cd5ec3
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979110"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059591"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
 
@@ -68,7 +68,7 @@ ms.locfileid: "91979110"
 
 ### <a name="configure-the-environment"></a>Настройка среды 
 
-1. Откройте приложение**Postman**.
+1. Откройте приложение **Postman**.
 2. В правой части экрана выберите параметр **Управление средой**.
 
     ![Управление средой](./media/develop-with-postman/postman-import-env.png)
@@ -170,10 +170,17 @@ ms.locfileid: "91979110"
         {
         "properties": {
             "description": "My Asset",
-            "alternateId" : "some GUID"
+            "alternateId" : "some GUID",
+            "storageAccountName": "<replace from environment file>",
+            "container": "<supply any valid container name of your choosing>"
          }
         }
         ```
+
+> [!NOTE]
+> Обязательно замените учетную запись хранения и имена контейнеров соответствующими значениями из файла среды или укажите собственные значения.
+>
+> При выполнении действий, описанных в оставшейся части этой статьи, обязательно указывайте допустимые параметры в теле запроса.
 
 ### <a name="create-a-transform"></a>Создание преобразования
 
@@ -355,8 +362,9 @@ ms.locfileid: "91979110"
     Чтобы получить имя узла, можно использовать следующую операцию GET:
     
     ```
-    https://management.azure.com/subscriptions/00000000-0000-0000-0000-0000000000000/resourceGroups/amsResourceGroup/providers/Microsoft.Media/mediaservices/amsaccount/streamingEndpoints/default?api-version={{api-version}}
+    https://management.azure.com/subscriptions/00000000-0000-0000-0000-0000000000000/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/default?api-version={{api-version}}
     ```
+    Убедитесь, что параметры `resourceGroupName` и `accountName` соответствуют файлу среды. 
     
 3. Путь, который вы получили в разделе, посвященном перечислению путей.  
 

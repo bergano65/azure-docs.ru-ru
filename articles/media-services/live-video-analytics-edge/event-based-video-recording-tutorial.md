@@ -3,12 +3,12 @@ title: Руководство по записи видео в облако на 
 description: Из этого руководства можно узнать, как с помощью службы Аналитики видеотрансляций на платформе Azure IoT Edge записывать видео в облако на основе событий и воспроизводить его.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 8f3ecdf7e4260d700f31663852abbb39474cd474
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: cfb4648d991565470133d603194c07b797f89311
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401686"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060441"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство. Запись видео в облако на основе событий и его воспроизведение
 
@@ -53,6 +53,9 @@ ms.locfileid: "97401686"
 * Учетная запись хранения Azure
 * Учетная запись Служб мультимедиа Azure
 * Виртуальная машина Linux в Azure с установленной [средой выполнения IoT Edge](../../iot-edge/how-to-install-iot-edge.md)
+
+> [!TIP]
+> Если вы столкнулись с проблемами с созданными ресурсами Azure, ознакомьтесь с нашим **[руководством по устранению неполадок](troubleshoot-how-to.md#common-error-resolutions)** , чтобы решить некоторые часто встречающиеся проблемы.
 
 ## <a name="concepts"></a>Основные понятия
 
@@ -230,7 +233,7 @@ ms.locfileid: "97401686"
      
         ```
         {
-          "@apiVersion": "1.0",
+          "@apiVersion": "2.0",
           "name": "Sample-Graph-1",
           "properties": {
             "topologyName": "EVRtoAssetsOnObjDetect",
@@ -277,7 +280,7 @@ ms.locfileid: "97401686"
 
 ### <a name="mediasessionestablished-event"></a>Событие MediaSessionEstablished 
 
-После создания экземпляра графа узел источника RTSP пытается подключиться к серверу TRSP, работающему в контейнере симулятора RTSP. В случае успеха, это событие выводится на печать. Тип данного события — Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished.
+После создания экземпляра графа узел источника RTSP пытается подключиться к серверу TRSP, работающему в контейнере симулятора RTSP. В случае успеха, это событие выводится на печать. Тип этого события — **Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished**.
 
 ```
 [IoTHubMonitor] [5:53:17 PM] Message received from [lva-sample-device/lvaEdge]:
@@ -325,7 +328,7 @@ ms.locfileid: "97401686"
 
 ### <a name="recordingstarted-event"></a>Событие RecordingStarted
 
-Практически сразу после отправки счетчиком объектов события мы увидим событие типа Microsoft.Media.Graph.Operational.RecordingStarted:
+Практически сразу после того, как счетчик объектов отправит события, мы увидим событие типа **Microsoft.Media.Graph.Operational.RecordingStarted**:
 
 ```
 [IoTHubMonitor] [5:53:46 PM] Message received from [lva-sample-device/lvaEdge]:
@@ -348,7 +351,7 @@ ms.locfileid: "97401686"
 
 ### <a name="recordingavailable-event"></a>Событие RecordingAvailable
 
-После того как узел приемника ресурса загружает видео в ресурс, он генерирует событие типа Microsoft.Media.Graph.Operational.RecordingAvailable:
+После того как узел приемника ресурса загружает видео в ресурс, он генерирует событие типа **Microsoft.Media.Graph.Operational.RecordingAvailable**:
 
 ```
 [IoTHubMonitor] [5:54:15 PM] Message received from [lva-sample-device/lvaEdge]:
@@ -371,7 +374,7 @@ ms.locfileid: "97401686"
 
 ### <a name="recordingstopped-event"></a>Событие RecordingStopped
 
-Изучив параметры активации (maximumActivationTime) узла обработчика шлюза сигналов в [топологии](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-hubMessage-assets/topology.json), мы увидим, что шлюз закрывается, пропустив через себя видео продолжительностью 30 секунд. Таким образом, примерно через 30 секунд после события RecordingStarted вы должны увидеть событие типа Microsoft.Media.Graph.Operational.RecordingStopped. Это событие означает, что узел приемника ресурса прекратил запись видео на ресурс.
+Изучив параметры активации (maximumActivationTime) узла обработчика шлюза сигналов в [топологии](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-hubMessage-assets/topology.json), мы увидим, что шлюз закрывается, пропустив через себя видео продолжительностью 30 секунд. Таким образом, примерно через 30 секунд после события RecordingStarted вы должны увидеть событие типа **Microsoft.Media.Graph.Operational.RecordingStopped**. Это событие означает, что узел приемника ресурса прекратил запись видео на ресурс.
 
 ```
 [IoTHubMonitor] [5:54:15 PM] Message received from [lva-sample-device/lvaEdge]:

@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: df511e79b73256833ec54c5906bb6acbc852bc46
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: b1fa4d3e6c017232922e500352558e34726b90cc
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739626"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183087"
 ---
 # <a name="tutorial-train-your-first-machine-learning-model-part-3-of-4"></a>Руководство по обучению первых моделей машинного обучения (часть 3 из 4)
 
@@ -40,10 +40,8 @@ ms.locfileid: "97739626"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-* Завершение [части 2](tutorial-1st-experiment-hello-world.md) в серии.
-* Вводные знания о языке Python и рабочих процессах машинного обучения.
-* Локальная среда разработки, например Visual Studio Code, Jupyter или PyCharm.
-* Python (версия от 3.5 до 3.7).
+- [Anaconda](https://www.anaconda.com/download/) или [Miniconda](https://www.anaconda.com/download/) для управления виртуальными средами Python и установки пакетов.
+- Завершение [части 1](tutorial-1st-experiment-sdk-setup-local.md) и [части 2](tutorial-1st-experiment-hello-world.md) в серии руководств.
 
 ## <a name="create-training-scripts"></a>Создание сценариев обучения
 
@@ -77,9 +75,7 @@ tutorial
 > [!div class="nextstepaction"]
 > [Созданы скрипты обучения](?success=create-scripts#environment) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=create-scripts)
 
-## <a name="create-a-python-environment"></a><a name="environment"></a> Создание среды Python
-
-В демонстрационных целях мы будем использовать среду Conda. (Шаги для виртуальной среды pip практически идентичны.)
+## <a name="create-a-new-python-environment"></a><a name="environment"></a> Создание новой среды Python
 
 В скрытом каталоге `.azureml` создайте файл с именем `pytorch-env.yml`:
 
@@ -92,18 +88,19 @@ tutorial
 
 ## <a name="test-locally"></a><a name="test-local"></a> Локальное тестирование
 
-Используйте следующий код, чтобы протестировать выполнение скрипта локально в этой среде:
+В окне терминала или окна запроса Anaconda используйте следующий код, чтобы протестировать скрипт локально в новой среде.  
 
 ```bash
-conda env create -f .azureml/pytorch-env.yml    # create conda environment
-conda activate pytorch-env                      # activate conda environment
+conda deactivate                                # If you are still using the tutorial environment, exit it
+conda env create -f .azureml/pytorch-env.yml    # create the new Conda environment
+conda activate pytorch-env                      # activate new Conda environment
 python src/train.py                             # train model
 ```
 
 После выполнения этого скрипта данные будут загружены в каталог с именем `tutorial/data`.
 
 > [!div class="nextstepaction"]
-> [Создан файл среды](?success=test-local#create-local) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=test-local)
+> [Код запущен локально](?success=test-local#create-local) [Возникла проблема](https://www.research.net/r/7CTJQQN?issue=test-local)
 
 ## <a name="create-the-control-script"></a><a name="create-local"></a> Создание скрипта элемента управления
 
@@ -163,11 +160,11 @@ if __name__ == "__main__":
 
 ## <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit"></a> Отправка выполнения в Машинное обучение Azure
 
-При переключении между локальными средами обязательно переключитесь обратно в среду с установленным пакетом SDK Машинного обучения Azure для Python.
-
-Далее выполните:
+Переключитесь обратно в *учебную* среду с установленным пакетом SDK Машинного обучения Azure для Python. Так как обучающий код не выполняется на компьютере, PyTorch устанавливать не нужно.  Но вам потребуется `azureml-sdk` (находится в *учебной* среде).
 
 ```bash
+conda deactivate
+conda activate tutorial
 python 04-run-pytorch.py
 ```
 

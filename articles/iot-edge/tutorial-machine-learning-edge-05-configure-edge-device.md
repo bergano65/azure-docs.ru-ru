@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp, devx-track-azurecli
-ms.openlocfilehash: bc62590b9517b2c6d16fdf2637990b845248d2ec
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 74d77d8c81455116cec861bf6704c6cb96526561
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932359"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121096"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство по Настройка устройства IoT Edge
 
@@ -81,7 +81,7 @@ ms.locfileid: "96932359"
 
 ## <a name="upload-certificates-to-azure-key-vault"></a>Отправка сертификатов в Azure Key Vault
 
-Чтобы безопасно хранить сертификаты, а также сделать их доступными с разных устройств, мы отправим эти сертификаты в Azure Key Vault. Как видно в приведенном выше списке, у нас есть два типа файлов сертификатов: PFX и PEM. Мы рассматриваем PFX-файлы в качестве сертификатов хранилища ключей, которые будут отправлены в Key Vault. PEM-файлы имеют обычный текстовый формат, и мы будем использовать их как секреты Key Vault. Мы выберем хранилище Key Vault, связанное с рабочей областью Машинного обучения Azure, которую мы создали с помощью [Записных книжек Azure](tutorial-machine-learning-edge-04-train-model.md#run-azure-notebooks).
+Чтобы безопасно хранить сертификаты, а также сделать их доступными с разных устройств, мы отправим эти сертификаты в Azure Key Vault. Как видно в приведенном выше списке, у нас есть два типа файлов сертификатов: PFX и PEM. Мы рассматриваем PFX-файлы в качестве сертификатов хранилища ключей, которые будут отправлены в Key Vault. PEM-файлы имеют обычный текстовый формат, и мы будем использовать их как секреты Key Vault. Мы выберем хранилище Key Vault, связанное с рабочей областью Машинного обучения Azure, которую мы создали с помощью [Jupyter Notebook](tutorial-machine-learning-edge-04-train-model.md#run-jupyter-notebooks).
 
 1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к рабочей области Машинного обучения Azure.
 

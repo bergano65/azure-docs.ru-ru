@@ -278,7 +278,7 @@ ms.locfileid: "97845538"
 Когда обучение завершится, оцените значение **средней точности**. Если оно слишком низкое, следует добавить дополнительные документы и повторить описанные выше шаги. Маркированные документы останутся в индексе проекта.
 
 > [!TIP]
-> Вы также можете выполнить процесс обучения, используя вызов REST API. См. сведения о том, как это сделать на [Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md).
+> Вы также можете выполнить процесс обучения, используя вызов REST API. Узнать, как это сделать, можно в разделе [Обучение с помощью меток и Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md).
 
 ## <a name="compose-trained-models"></a>Создание обученных моделей
 
@@ -301,7 +301,7 @@ ms.locfileid: "97845538"
 Щелкните значок прогнозирования (лампочка) слева, чтобы протестировать модель. Отправьте документ формы, который вы не использовали в процессе обучения. Затем нажмите кнопку **Прогнозировать** справа, чтобы получить прогнозы, связанные с парой "ключ — значение" для формы. Средство применит теги к ограничивающим прямоугольникам и сообщит о достоверности каждого тега.
 
 > [!TIP]
-> Вы также можете обратиться к API анализа, используя вызов REST. См. сведения о том, как это сделать на [Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md).
+> Вы также можете обратиться к API анализа, используя вызов REST. Узнать, как это сделать, можно в разделе [Обучение с помощью меток и Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md).
 
 ## <a name="improve-results"></a>Улучшение результатов
 

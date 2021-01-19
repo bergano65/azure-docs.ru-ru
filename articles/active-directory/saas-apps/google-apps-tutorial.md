@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/06/2020
+ms.date: 12/27/2020
 ms.author: jeedes
-ms.openlocfilehash: 0dd66e246e5e172ad359f5e6e953b360e6e74ebd
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: eeb5f3e2a87dcc56b8e2ef0bf17309e184c3d65b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796981"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019403"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-google-cloud-g-suite-connector"></a>Руководство по интеграции единого входа Azure Active Directory с Google Cloud (G Suite) Connector
 
@@ -25,8 +25,6 @@ ms.locfileid: "97796981"
 * Контроль доступа к Google Cloud (G Suite) Connector с помощью Azure AD.
 * Включение автоматического входа пользователей в Google Cloud (G Suite) Connector с использованием учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
-
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -82,14 +80,13 @@ ms.locfileid: "97796981"
 
 * Google Cloud (G Suite) Connector поддерживает единый вход, инициируемый **поставщиком служб**.
 
-* Google Cloud (G Suite) Connector поддерживает [**автоматическую** подготовку пользователей](g-suite-provisioning-tutorial.md).
-* После настройки Google Cloud (G Suite) Connector вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
+* Google Cloud (G Suite) Connector поддерживает [**автоматическую** подготовку пользователей](./g-suite-provisioning-tutorial.md).
 
 ## <a name="adding-google-cloud-g-suite-connector-from-the-gallery"></a>Добавление Google Cloud (G Suite) Connector из коллекции
 
 Чтобы настроить интеграцию Google Cloud (G Suite) Connector с Azure AD, нужно добавить Google Cloud (G Suite) Connector из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
@@ -100,7 +97,7 @@ ms.locfileid: "97796981"
 
 Настройте и проверьте единый вход Azure AD в Google Cloud (G Suite) Connector, используя данные тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Google Cloud (G Suite) Connector.
 
-Чтобы настроить и проверить единый вход Azure AD в Google Cloud (G Suite) Connector, выполните действия из следующих стандартных блоков:
+Чтобы настроить и проверить единый вход Azure AD в Google Cloud (G Suite) Connector, сделайте следующее:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
@@ -113,9 +110,9 @@ ms.locfileid: "97796981"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Google Cloud (G Suite) Connector** найдите раздел **Управление** и щелкните **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Google Cloud (G Suite) Connector** найдите раздел **Управление** и щелкните **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** для изменения параметров.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -152,7 +149,7 @@ ms.locfileid: "97796981"
     https://google.com/a/<yourdomain.com>
     ```
     
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: . 
     
     ```http
     https://www.google.com
@@ -194,15 +191,9 @@ ms.locfileid: "97796981"
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Google Cloud (G Suite) Connector**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-google-cloud-g-suite-connector-sso"></a>Настройка единого входа в Google Cloud (G Suite) Connector
@@ -242,7 +233,7 @@ ms.locfileid: "97796981"
 
 Цель этого раздела — [создать пользователя в Google Cloud (G Suite) Connector](https://support.google.com/a/answer/33310?hl=en) с именем B.Simon. После того как пользователь будет создан в Google Cloud (G Suite) Connector вручную, он сможет войти в систему, используя учетные данные для входа в Microsoft 365.
 
-Google Cloud (G Suite) Connector также поддерживает автоматическую подготовку пользователей. Чтобы настроить автоматическую подготовку пользователей, сначала необходимо [настроить ее в Google Cloud (G Suite) Connector](g-suite-provisioning-tutorial.md).
+Google Cloud (G Suite) Connector также поддерживает автоматическую подготовку пользователей. Чтобы настроить автоматическую подготовку пользователей, сначала необходимо [настроить ее в Google Cloud (G Suite) Connector](./g-suite-provisioning-tutorial.md).
 
 > [!NOTE]
 > Если выполнять проверку единого входа, когда подготовка в Azure AD еще не включена, необходимо убедиться, что пользователь уже существует в Google Cloud (G Suite) Connector.
@@ -252,25 +243,18 @@ Google Cloud (G Suite) Connector также поддерживает автом
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-Щелкнув плитку Google Cloud (G Suite) Connector на панели доступа, вы автоматически войдете в Google Cloud (G Suite) Connector, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Google Cloud (G Suite) Connector, где можно инициировать поток входа. 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+* Перейдите по URL-адресу для входа в Google Cloud (G Suite) Connector и инициируйте поток входа.
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Google Cloud (G Suite) Connector в области "Мои приложения", вы перейдете по URL-адресу Google Cloud (G Suite) Connector. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство по настройке Google Apps для автоматической подготовки пользователей](g-suite-provisioning-tutorial.md)
-
-- [Попробуйте использовать Google Cloud (G Suite) Connector с Azure AD](https://aad.portal.azure.com/)
-
-- [Что такое управление сеансами в Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
-
-- [Как защитить Google Cloud (G Suite) Connector с помощью функции управления настройками условного доступа](/cloud-app-security/protect-gsuite)
+После настройки Google Cloud (G Suite) Connector вы можете применить функцию управления сеансом, которая в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
 
 <!--Image references-->
 

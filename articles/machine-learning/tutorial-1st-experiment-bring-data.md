@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: tracking-python
-ms.openlocfilehash: de89f9d87b010dc3710e7d82f4d846de12303905
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: ab497dee35afdd60247d156d0f30bbf003ea1210
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739439"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072162"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Руководство по использованию собственных данных (часть 4 из 4)
 
@@ -40,9 +40,6 @@ ms.locfileid: "97739439"
 ## <a name="prerequisites"></a>Prerequisites
 
 * Завершение [Части 3](tutorial-1st-experiment-sdk-train.md) в серии учебников.
-* Вводные знания о языке Python и рабочих процессах машинного обучения.
-* Локальная среда разработки, например Visual Studio Code, Jupyter или PyCharm.
-* Python (версия от 3.5 до 3.7).
 
 ## <a name="adjust-the-training-script"></a>Настройка скрипта обучения
 
@@ -130,7 +127,7 @@ python src/train.py --data_path ./data --learning_rate 0.003 --momentum 0.92
 >[!TIP] 
 > При использовании Машинного обучения Azure для передачи данных можно использовать [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) для отправки ad-hoc-файлов. Если вам требуется средство извлечения, преобразования и загрузки, для приема данных в Azure можно использовать [Фабрику данных Azure](../data-factory/introduction.md).
 
-Запустите файл Python, чтобы передать данные. (отправка должна выполняться быстро — меньше чем за 60 секунд.)
+В окне с активированной средой Conda *tutorial1* выполните файл Python, чтобы отправить данные. (отправка должна выполняться быстро — меньше чем за 60 секунд.)
 
 ```bash
 python 05-upload-data.py

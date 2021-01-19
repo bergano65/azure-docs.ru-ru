@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: 1f6757a9f78e3c400d92fd65a0795ceae7570c99
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: f043f7ed63353dcb9cf9fd26690da97b902f32a6
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347580"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108625"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -229,6 +229,9 @@ GO
 > [!NOTE]
 > Серверные службы управляемых удостоверений также [поддерживают кэш маркеров](overview-managed-identity.md#obtain-tokens-for-azure-resources), который обновляет маркер целевого ресурса только по истечении срока его действия. Если вы допустите ошибку при настройке разрешений Базы данных SQL и попытаетесь изменить разрешения *после* попытки получить маркер в приложении, вы получите новый маркер с обновленными разрешениями только после того, как истечет срок действия кэшированного маркера.
 
+> [!NOTE]
+> AAD не поддерживается для локального экземпляра SQL Server, в том числе для файлов MSI. 
+
 ### <a name="modify-connection-string"></a>Изменение строки подключения
 
 Помните, что те же изменения, которые вы внесли в файл *Web.config* или *appsettings.json*, работают с управляемым удостоверением, поэтому единственное, что нужно сделать, — это удалить существующую строку подключения в Службе приложений, которую было создано Visual Studio во время первого развертывая вашего приложения. Используйте в следующих командах, но замените *\<app-name>* именем вашего приложения.
@@ -251,7 +254,7 @@ az webapp config connection-string delete --resource-group myResourceGroup --nam
 
 ```bash
 git commit -am "configure managed identity"
-git push azure master
+git push azure main
 ```
 
 Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.

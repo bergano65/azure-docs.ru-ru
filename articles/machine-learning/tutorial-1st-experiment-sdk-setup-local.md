@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 5df8b478c550522d4602398afd208c1e001c96a2
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 2f33fe4fafbe194238fcfbd4942807ed2fc4d6ff
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883305"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183546"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Руководство по началу работы с Машинным обучением Azure в среде разработки (часть 1 из 4)
 
@@ -32,30 +32,49 @@ ms.locfileid: "97883305"
 > * Настройка вычислительного кластера.
 
 > [!NOTE]
-> В этой серии учебников основное внимание уделяется концепциям Машинного обучения Azure, подходящим для выполнения задач машинного обучения *на основе заданий* в Python, для которых требуются ресурсоемкие вычисления и/или воспроизводимость. Если вы больше заинтересованы в произвольном рабочем процессе, можно использовать [вычислительный экземпляр Jupyter или RStudio в Машинном обучении Azure](tutorial-1st-experiment-sdk-setup.md).
+> Эта серия руководств посвящена аспектам Машинного обучения Azure, связанным с отправкой **пакетных заданий**, когда код отправляется в облако для запуска в фоновом режиме без вмешательства пользователя. Это удобно при использования завершенных скриптов или кода, которые требуется запускать многократно, или для задач машинного обучения с интенсивным потреблением вычислительных ресурсов. Если вы больше заинтересованы в произвольном рабочем процессе, можно использовать [вычислительный экземпляр Jupyter или RStudio в Машинном обучении Azure](tutorial-1st-experiment-sdk-setup.md).
 
 ## <a name="prerequisites"></a>Обязательные условия
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Попробуйте [Машинное обучение Azure](https://aka.ms/AMLFree).
-- Ознакомьтесь с Python и [концепциями Машинного обучения](concept-azure-machine-learning-architecture.md). Примеры: среды, обучение и оценка.
-- Локальная среда разработки, например Visual Studio Code, Jupyter или PyCharm.
-- Python (версия от 3.5 до 3.7).
-
+- [Anaconda](https://www.anaconda.com/download/) или [Miniconda](https://www.anaconda.com/download/) для управления виртуальными средами Python и установки пакетов.
 
 ## <a name="install-the-azure-machine-learning-sdk"></a>Установка пакета SDK Машинного обучения Azure.
 
-В рамках этого учебника используется пакет SDK Машинного обучения Azure для Python.
+В этом руководстве предполагается использование пакета SDK Машинного обучения Azure для Python. Чтобы избежать проблем с зависимостями Python, создайте изолированную среду. В этой серии руководств для создания такой среды предполагается использование Conda. Если вы предпочитаете другие решения, такие как `venv`, `virtualenv` или Docker, убедитесь, что используется версия Python не ниже 3.5 и не выше 3.9.
 
-Вы можете применять знакомые вам инструменты, например Conda и pip, чтобы настроить среду Python для использования в рамках этого руководства. Установите в среде Python пакет SDK Машинного обучения Azure для Python с помощью pip:
+Проверьте, есть ли в системе установка Conda:
+    
+```bash
+conda --version
+```
+    
+Если эта команда возвращает ошибку `conda not found`, [скачайте и установите Miniconda](https://docs.conda.io/en/latest/miniconda.html). 
+
+После установки Conda используйте терминал или окно командной строки Anaconda для создания новой среды:
 
 ```bash
-pip install azureml-sdk
+conda create -n tutorial python=3.8
 ```
+
+Затем установите пакет SDK Машинного обучения Azure в созданную среду Conda:
+
+```bash
+conda activate tutorial
+pip install azureml-core
+```
+    
+> [!NOTE]
+> Завершение установки пакета SDK Машинного обучения Azure занимает примерно 2 минуты.
+>
+> Если возникает ошибка времени ожидания, воспользуйтесь `pip install --default-timeout=100 azureml-core`.
+
 
 > [!div class="nextstepaction"]
 > [Мной установлен пакет SDK](?success=install-sdk#dir) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=install-sdk)
 
 ## <a name="create-a-directory-structure-for-code"></a><a name="dir"></a>Создание структуры каталогов для кода
+
 Для работы с этим руководством рекомендуется настроить следующую простую структуру каталогов:
 
 ```markdown
@@ -68,8 +87,9 @@ tutorial
 
 > [!TIP]
 > Вы можете создать скрытый подкаталог .azureml в окне терминала.  Или сделайте следующее:
+>
 > * В окне поиска компьютера Mac используйте клавиши **CMD+SHIFT+.** для переключения возможности просмотра и создания каталогов, начинающихся с точки.  
-> * В Windows 10 выполните инструкции по [просмотру скрытых файлов и папок](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). 
+> * В проводнике Windows 10 [включите просмотр скрытых файлов и папок](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). 
 > * В графическом интерфейсе Linux используйте **CTRL+H** или меню **Представление** и установите флажок **Show hidden files** (Показать скрытые файлы).
 
 > [!div class="nextstepaction"]
@@ -104,7 +124,7 @@ ws = Workspace.create(name='<my_workspace_name>', # provide a name for your work
 ws.write_config(path='.azureml')
 ```
 
-Запустите этот код из каталога `tutorial`:
+В окне с активированной средой Conda *tutorial1* запустите этот код из каталога `tutorial`.
 
 ```bash
 cd <path/to/tutorial>
@@ -163,7 +183,7 @@ except ComputeTargetException:
 cpu_cluster.wait_for_completion(show_output=True)
 ```
 
-Запустите файл Python:
+В окне с активированной средой Conda *tutorial1* выполните файл Python:
 
 ```bash
 python ./02-create-compute.py
@@ -185,6 +205,19 @@ tutorial
 
 > [!div class="nextstepaction"]
 > [Мной создан вычислительный кластер](?success=create-compute-cluster#next-steps) [Возникла проблема](https://www.research.net/r/7C8Z3DN?issue=create-compute-cluster)
+
+## <a name="view-in-the-studio"></a>Просмотр в студии
+
+Войдите в [Студию машинного обучения Azure](https://ml.azure.com), чтобы просмотреть созданные рабочую область и вычислительный экземпляр.
+
+1. Выберите **подписку**, которую вы использовали для создания рабочей области.
+1. Выберите созданную **рабочую область машинного обучения**: *tutorial-ws*.
+1. После загрузки рабочей области слева выберите **Вычисления**.
+1. Вверху выберите вкладку **Вычислительные кластеры**.
+
+:::image type="content" source="media/tutorial-1st-experiment-sdk-local/compute-instance-in-studio.png" alt-text="Снимок экрана: просмотр вычислительного экземпляра в рабочей области.":::
+
+В этом представлении отображается подготовленный вычислительный кластер, а также количество бездействующих, занятых и неподготовленных узлов.  Так как вы еще не использовали кластер, все узлы являются неподготовленными.
 
 ## <a name="next-steps"></a>Следующие шаги
 

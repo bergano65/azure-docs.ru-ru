@@ -4,12 +4,12 @@ description: Сведения о том, как с помощью Пользов
 ms.topic: tutorial
 ms.date: 09/08/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 614c4e401579eda68d8030dc2d2a42b2c4736031
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: de788c337ce8030b73538565e4f374ffc7db55b8
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401701"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060525"
 ---
 # <a name="tutorial-analyze-live-video-with-live-video-analytics-on-iot-edge-and-azure-custom-vision"></a>Руководство по анализу видеотрансляций с помощью Аналитики видеотрансляций в IoT Edge и Пользовательского визуального распознавания Azure
 
@@ -61,8 +61,11 @@ ms.locfileid: "97401701"
 ::: zone-end
 ## <a name="review-the-sample-video"></a>Просмотр примера видео
 
+В этом руководстве для моделирования прямой трансляции используется файл [видео вывода игрушечного автомобиля](https://lvamedia.blob.core.windows.net/public/t2.mkv). Видео можно просмотреть с помощью таких приложений, как [проигрыватель мультимедиа VLC](https://www.videolan.org/vlc/). Нажмите клавиши **CTRL+N**, а затем вставьте ссылку на [видео вывода игрушечного автомобиля](https://lvamedia.blob.core.windows.net/public/t2.mkv), чтобы начать воспроизведение. Просматривая видео, обратите внимание на то, что игрушечный грузовик появляется на отметке времени, которая соответствует 36 секунде. Пользовательская модель обучена так, чтобы обнаруживать этот конкретный игрушечный грузовик. 
 
-В этом руководстве для моделирования прямой трансляции используется файл [видео вывода игрушечного автомобиля](https://lvamedia.blob.core.windows.net/public/t2.mkv). Видео можно просмотреть с помощью таких приложений, как [проигрыватель мультимедиа VLC](https://www.videolan.org/vlc/). Нажмите клавиши **CTRL+N**, а затем вставьте ссылку на [видео вывода игрушечного автомобиля](https://lvamedia.blob.core.windows.net/public/t2.mkv), чтобы начать воспроизведение. Просматривая видео, обратите внимание на то, что игрушечный грузовик появляется на отметке времени, которая соответствует 36 секунде. Пользовательская модель обучена так, чтобы обнаруживать этот конкретный игрушечный грузовик. В этом руководстве показано, как использовать Аналитику видеотрансляций в IoT Edge, чтобы обнаруживать игрушечные грузовики и публиковать соответствующие события вывода в центре IoT Edge.
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LPwK]
+
+В этом руководстве показано, как использовать Аналитику видеотрансляций в IoT Edge, чтобы обнаруживать игрушечные грузовики и публиковать соответствующие события вывода в центре IoT Edge.
 
 ## <a name="overview"></a>Обзор
 
@@ -127,7 +130,6 @@ ms.locfileid: "97401701"
 
 ## <a name="examine-the-sample-files"></a>Изучение примеров файлов
 
-
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [examine-sample-files](includes/custom-vision-tutorial/csharp/examine-sample-files.md)]
 ::: zone-end
@@ -140,7 +142,7 @@ ms.locfileid: "97401701"
 
 1. В Visual Studio Code перейдите к файлу src/cloud-to-device-console-app/operations.json.
 
-1. В разделе `GraphTopologySet` убедитесь, что соблюдены следующие условия:<br/>`"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtension/topology.json"`
+1. В разделе `GraphTopologySet` убедитесь, что соблюдены следующие условия:<br/>`"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtension/2.0/topology.json"`
 1. В разделе `GraphInstanceSet` проверьте следующее.
     1. `"topologyName" : "InferencingWithHttpExtension"`
     1. Добавьте следующий код в начало массива параметров `{"name": "inferencingUrl","value": "http://cv:80/image"},`.
@@ -261,7 +263,7 @@ ms.locfileid: "97401701"
 
 ### <a name="mediasessionestablished-event"></a>Событие MediaSessionEstablished
 
-После создания экземпляра графа мультимедиа узел источника RTSP пытается подключиться к RTSP-серверу, работающему в контейнере rtspsim-live555. Если соединение установлено, будет выводиться следующее событие. Тип события — `Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished`.
+После создания экземпляра графа мультимедиа узел источника RTSP пытается подключиться к RTSP-серверу, работающему в контейнере rtspsim-live555. Если соединение установлено, будет выводиться следующее событие. Тип этого события — **Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished**.
 
 ```
 {

@@ -11,12 +11,12 @@ ms.devlang: na
 ms.date: 12/16/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7eda805a5fdf24a7a55b9296a0f0a1c9a5bfc576
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 36fb54b4b6521d87c7461936c84a644bf22f7e31
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683499"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963969"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата
 
@@ -329,13 +329,13 @@ ms.locfileid: "97683499"
 
     ![Ресурсы скрипта развертывания шаблона Resource Manager](./media/template-tutorial-deployment-script/resource-manager-template-deployment-script-resources.png)
 
-    Оба файла имеют суффикс **azscripts**. Один из них — учетная запись хранения, а второй — экземпляр контейнера.
+    Оба файла имеют суффикс _azscripts_. Один из них — учетная запись хранения, а второй — экземпляр контейнера.
 
     Выберите **Показывать скрытые типы**, чтобы отобразился ресурс `deploymentScripts`.
 
-1. Выберите учетную запись хранения с суффиксом **azscripts**.
-1. Выберите плитку **Общие папки**. Вы увидите папку **azscripts**. Она содержит файлы выполнения скрипта развертывания.
-1. Выберите **azscripts**. Вы должны увидеть две папки: **azscriptinput** и **azscriptoutput**. Входная папка содержит системный файл скрипта PowerShell и пользовательские файлы скрипта развертывания. Выходная папка содержит файл _executionresult.json_ и выходной файл скрипта. Сообщение об ошибке можно просмотреть в файле _executionresult.json_. Выходной файл отсутствует из-за ошибки выполнения.
+1. Выберите учетную запись хранения с суффиксом _azscripts_.
+1. Выберите плитку **Общие папки**. Вы увидите папку _azscripts_, в которой содержатся файлы выполнения скрипта развертывания.
+1. Выберите _azscripts_. Вы должны увидеть две папки: _azscriptinput_ и _azscriptoutput_. Входная папка содержит системный файл скрипта PowerShell и пользовательские файлы скрипта развертывания. Выходная папка содержит файл _executionresult.json_ и выходной файл скрипта. Сообщение об ошибке можно просмотреть в файле _executionresult.json_. Выходной файл отсутствует из-за ошибки выполнения.
 
 Удалите строку `Write-Output1` и повторно разверните шаблон.
 

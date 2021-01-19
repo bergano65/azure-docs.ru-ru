@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 12/09/2020
-ms.openlocfilehash: 16b924f486215d972477e93c4e199e7076a0a531
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.date: 01/12/2021
+ms.openlocfilehash: 2fcb8f6d22e93f3a95be26b7bc61f3b5226ba090
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508889"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117135"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-in-the-azure-portal"></a>Копирование нескольких таблиц в пакетном режиме с помощью Фабрики данных Azure на портале Azure
 
@@ -51,20 +51,8 @@ ms.locfileid: "97508889"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * **Учетная запись хранения Azure.** Учетная запись хранения Azure используется в качестве промежуточного хранилища больших двоичных объектов в операции массового копирования. 
-* **База данных SQL Azure**. Эта база данных содержит исходные данные. 
-* **Azure Synapse Analytics**. Это хранилище данных содержит данные, копируемые из базы данных SQL. 
-
-### <a name="prepare-sql-database-and-azure-synapse-analytics"></a>Подготовка Базы данных SQL Azure и Azure Synapse Analytics 
-
-**Подготовка исходной базы данных SQL Azure:**
-
-Создайте базу данных в службе "База данных SQL", используя пример данных Adventure Works LT, представленный в статье о [создании базы данных в службе "База данных SQL Azure"](../azure-sql/database/single-database-create-quickstart.md). В этом учебнике все таблицы из этого примера базы данных копируются в Azure Synapse Analytics.
-
-**Подготовка приемника в Azure Synapse Analytics**.
-
-1. Если у вас нет рабочей области Azure Synapse Analytics, создайте ее по инструкциям из статьи [Начало работы с Azure Synapse Analytics](..\synapse-analytics\get-started.md).
-
-1. Создание соответствующих схем таблиц в Azure Synapse Analytics. Фабрика данных Azure используется для миграции и копирования данных на более поздних этапах.
+* **База данных SQL Azure**. Эта база данных содержит исходные данные. Создайте базу данных в службе "База данных SQL", используя пример данных Adventure Works LT, представленный в статье о [создании базы данных в службе "База данных SQL Azure"](../azure-sql/database/single-database-create-quickstart.md). В этом учебнике все таблицы из этого примера базы данных копируются в Azure Synapse Analytics.
+* **Azure Synapse Analytics**. Это хранилище данных содержит данные, копируемые из базы данных SQL. Если у вас нет рабочей области Azure Synapse Analytics, создайте ее по инструкциям из статьи [Начало работы с Azure Synapse Analytics](..\synapse-analytics\get-started.md).
 
 ## <a name="azure-services-to-access-sql-server"></a>Доступ служб Azure к серверу SQL Server
 
@@ -241,6 +229,7 @@ ms.locfileid: "97508889"
     ![Построитель параметров ForEach](./media/tutorial-bulk-copy-portal/for-each-parameter-builder.png)
     
     d. Перейдите на вкладку **Действия**, щелкните **значок карандаша**, чтобы добавить дочернее действие к действию **ForEach**.
+    
     ![Построитель действия ForEach](./media/tutorial-bulk-copy-portal/for-each-activity-builder.png)
 
 1. На панели элементов **Действия** разверните узел **Move & Transfer** (Перемещение и передача) и перетащите действие **Копирование данных** в область конструктора конвейера. Обратите внимание на строку навигации вверху. Здесь **IterateAndCopySQLTable** — это имя конвейера, а **IterateSQLTables** — имя действия ForEach. Конструктор находится в области действия. Чтобы снова переключиться в редактор конвейера из редактора ForEach, можно щелкнуть ссылку в этом меню навигации. 
@@ -257,7 +246,6 @@ ms.locfileid: "97508889"
         SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]
         ``` 
 
-
 1. Перейдите на вкладку **Приемник** и выполните здесь следующие действия: 
 
     1. Выберите **AzureSqlDWDataset** в списке **Sink Dataset** (Целевой набор данных).
@@ -265,6 +253,7 @@ ms.locfileid: "97508889"
     1. Щелкните поле ввода для значения VALUE параметра DWSchema, выберите **Добавить динамическое содержимое** ниже, введите выражение `@item().TABLE_SCHEMA` в качестве скрипта и выберите **Готово**.
     1. Для метода "Копирование" выберите значение **PolyBase**. 
     1. Снимите флажок **Use type default** (Использовать значение по умолчанию для типа). 
+    1. Для параметра "Таблица" по умолчанию установлено значение "Нет". Если у вас нет предварительно созданных в приемнике Azure Synapse Analytics таблиц, включите параметр **Auto create table** (Автоматическое создание таблицы). После этого с помощью действия копирования будут автоматически созданы таблицы на основе исходных данных. Дополнительные сведения см. в разделе [Автоматическое создание таблиц в приемнике](copy-activity-overview.md#auto-create-sink-tables). 
     1. Щелкните поле ввода **Скрипт предварительного копирования**, выберите **Добавить динамическое содержимое** ниже, введите указанное ниже выражение в качестве скрипта и выберите **Готово**. 
 
         ```sql
@@ -272,6 +261,8 @@ ms.locfileid: "97508889"
         ```
 
         ![Параметры приемника копирования](./media/tutorial-bulk-copy-portal/copy-sink-settings.png)
+
+
 1. Перейдите на вкладку **Настройки** и выполните здесь следующие действия: 
 
     1. Установите флажок напротив **Enable Staging** (Включить промежуточный режим).

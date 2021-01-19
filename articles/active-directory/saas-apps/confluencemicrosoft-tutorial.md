@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/05/2019
+ms.date: 12/25/2020
 ms.author: jeedes
-ms.openlocfilehash: adee491625cec3b4a22cc7b3d1f3ba17595d9e87
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 939db97a03b69335c9d648c894f453cbb2010edb
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673260"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97967095"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-confluence-saml-sso-by-microsoft"></a>Руководство по Интеграции единого входа Azure Active Directory с Confluence SAML SSO by Microsoft
 
@@ -26,7 +26,6 @@ ms.locfileid: "97673260"
 * Включение автоматического входа пользователей в Confluence SAML SSO by Microsoft с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="description"></a>Описание.
 
@@ -78,18 +77,18 @@ ms.locfileid: "97673260"
 
 Чтобы настроить интеграцию Confluence SAML SSO by Microsoft с Azure AD, необходимо добавить Confluence SAML SSO by Microsoft из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **Confluence SAML SSO by Microsoft**.
 1. В области результатов выберите **Confluence SAML SSO by Microsoft** и добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-confluence-saml-sso-by-microsoft"></a>Настройка и проверка единого входа в Confluence SAML SSO by Microsoft
+## <a name="configure-and-test-azure-ad-sso-for-confluence-saml-sso-by-microsoft"></a>Настройка и проверка единого входа в Confluence SAML SSO by Microsoft
 
 Настройте и проверьте единый вход Azure AD в Confluence SAML SSO by Microsoft с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Confluence SAML SSO by Microsoft.
 
-Чтобы настроить и проверить единый вход Microsoft Azure AD в Confluence SAML SSO by Microsoft, вам потребуется выполнить действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Confluence SAML SSO by Microsoft, сделайте следующее:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
@@ -102,9 +101,9 @@ ms.locfileid: "97673260"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Confluence SAML SSO by Microsoft** найдите **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Confluence SAML SSO by Microsoft** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** для изменения параметров.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -142,15 +141,9 @@ ms.locfileid: "97673260"
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Confluence SAML SSO by Microsoft**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-confluence-saml-sso-by-microsoft-sso"></a>Настройка единого входа в Confluence SAML SSO by Microsoft
@@ -251,18 +244,17 @@ ms.locfileid: "97673260"
 
     е) Нажмите кнопку **Добавить**.
 
-## <a name="test-sso"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа 
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов. 
 
-Щелкнув элемент "Confluence SAML SSO by Microsoft" на панели доступа, вы автоматически войдете в Confluence SAML SSO by Microsoft, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Confluence SAML SSO by Microsoft, где можно инициировать поток входа. 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+* Перейдите по URL-адресу для входа в Confluence SAML SSO by Microsoft и инициируйте поток входа.
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](./tutorial-list.md)
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Confluence SAML SSO by Microsoft на портале "Мои приложения", вы перейдете к URL-адресу для входа в приложение Confluence SAML SSO by Microsoft. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Пробное использование Confluence SAML SSO от Майкрософт с помощью Azure AD](https://aad.portal.azure.com/)
+После настройки Confluence SAML SSO by Microsoft вы можете применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

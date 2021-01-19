@@ -3,12 +3,12 @@ title: Руководство по непрерывной записи виде�
 description: Из этого руководства мы узнаем, как с помощью службы Аналитики видеотрансляции Azure в Azure IoT Edge осуществлять непрерывную запись видео в облако и транслировать произвольные фрагменты этого видео в режиме потоковой передачи с помощью Служб мультимедиа Azure.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: c38ab1f32d1ef4e54cd8568ff17d325fabdefc31
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8fa2b65416499e58235fa312ffdcd2d71c3cfb39
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498376"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060152"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство по Непрерывная запись видео в облако и его воспроизведение
 
@@ -51,6 +51,9 @@ ms.locfileid: "96498376"
 * Учетная запись Служб мультимедиа Azure
 * Виртуальная машина Linux в Azure с установленной [средой выполнения IoT Edge](../../iot-edge/how-to-install-iot-edge.md)
 
+> [!TIP]
+> Если вы столкнулись с проблемами с созданными ресурсами Azure, ознакомьтесь с нашим **[руководством по устранению неполадок](troubleshoot-how-to.md#common-error-resolutions)** , чтобы решить некоторые часто встречающиеся проблемы.
+
 ## <a name="concepts"></a>Основные понятия
 
 Как описано в статье о [концепции графа мультимедиа](media-graph-concept.md), граф мультимедиа позволяет определить:
@@ -64,7 +67,9 @@ ms.locfileid: "96498376"
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/continuous-video-recording-tutorial/continuous-video-recording-overview.svg" alt-text="Граф мультимедиа":::
 
-В этом руководстве для эмуляции RTSP-камеры мы будем использовать модуль Edge, созданный с помощью [мультимедийного сервера Live555](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555). В графе мультимедиа мы используем узел [источника RTSP](media-graph-concept.md#rtsp-source) для приема трансляции из канала и отправляем полученное видео на [узел приемника](media-graph-concept.md#asset-sink), который записывает его в актив.
+В этом руководстве для эмуляции RTSP-камеры мы будем использовать модуль Edge, созданный с помощью [мультимедийного сервера Live555](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555). В графе мультимедиа мы используем узел [источника RTSP](media-graph-concept.md#rtsp-source) для приема трансляции из канала и отправляем полученное видео на [узел приемника](media-graph-concept.md#asset-sink), который записывает его в актив. В этом руководстве будет использоваться [пример видео с развязкой на автостраде](https://lvamedia.blob.core.windows.net/public/camera-300s.mkv).
+<iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4LTY4" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LTY4]
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
@@ -169,14 +174,14 @@ ms.locfileid: "96498376"
 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Show Verbose Message"::: (Показывать подробное сообщение)
-1. <!--In Visual Studio Code, go-->Перейдите к файлу src/cloud-to-device-console-app/operations.json.
+1. Перейдите к файлу src/cloud-to-device-console-app/operations.json.
 1. В узле **GraphTopologySet** внесите следующие изменения:
 
     `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json" `
 1. Затем убедитесь, что в узлах **GraphInstanceSet** и **GraphTopologyDelete** значение **topologyName** соответствует значению свойства **name** в топологии вышеприведенного графа:
 
     `"topologyName" : "CVRToAMSAsset"`  
-1. Откройте [топологию](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json) в браузере и найдите параметр assetNamePattern. Чтобы название ресурса было уникальным, можно изменить название экземпляра графа в файле operations.json (по умолчанию он называется Sample-Graph-1).
+1. Откройте [топологию](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/2.0/topology.json) в браузере и найдите параметр assetNamePattern. Чтобы название ресурса было уникальным, можно изменить название экземпляра графа в файле operations.json (по умолчанию он называется Sample-Graph-1).
 
     `"assetNamePattern": "sampleAsset-${System.GraphTopologyName}-${System.GraphInstanceName}"`    
 1. Чтобы запустить сеанс отладки, нажмите клавишу F5. В окне **ТЕРМИНАЛ** начнут появляться сообщения.
@@ -187,7 +192,7 @@ ms.locfileid: "96498376"
     Executing operation GraphTopologyList
     -----------------------  Request: GraphTopologyList  --------------------------------------------------
     {
-      "@apiVersion": "1.0"
+      "@apiVersion": "2.0"
     }
     ---------------  Response: GraphTopologyList - Status: 200  ---------------
     {
@@ -204,7 +209,7 @@ ms.locfileid: "96498376"
      
      ```
      {
-       "@apiVersion": "1.0",
+       "@apiVersion": "2.0",
        "name": "Sample-Graph-1",
        "properties": {
          "topologyName": "CVRToAMSAsset",
@@ -277,7 +282,7 @@ ms.locfileid: "96498376"
 
 ### <a name="recordingstarted-event"></a>Событие RecordingStarted
 
-Когда узел приемника ресурса начинает записывать видео, он генерирует событие типа Microsoft.Media.Graph.Operational.RecordingStarted.
+Когда узел приемника ресурса начинает записывать видео, он генерирует событие типа **Microsoft.Media.Graph.Operational.RecordingStarted**.
 
 ```
 [IoTHubMonitor] [9:42:38 AM] Message received from [lva-sample-device/lvaEdge]:
@@ -302,7 +307,7 @@ ms.locfileid: "96498376"
 
 ### <a name="recordingavailable-event"></a>Событие RecordingAvailable
 
-Когда начинается запись видео, отправляется событие RecordingStarted, однако при этом видеоданные могут быть еще не загружены в ресурс. После того как узел приемника ресурса загружает видеоданные в ресурс, он генерирует событие типа Microsoft.Media.Graph.Operational.RecordingAvailable.
+Когда начинается запись видео, отправляется событие RecordingStarted, однако при этом видеоданные могут быть еще не загружены в ресурс. Когда узел приемника ресурса загружает видеоданные в ресурс, он генерирует событие типа **Microsoft.Media.Graph.Operational.RecordingAvailable**.
 
 ```
 [IoTHubMonitor] [[9:43:38 AM] Message received from [lva-sample-device/lvaEdge]:
@@ -329,7 +334,7 @@ ms.locfileid: "96498376"
 
 ### <a name="recordingstopped-event"></a>Событие RecordingStopped
 
-При деактивации экземпляра графа узел приемника ресурса останавливает запись видео в ресурс. Он выдает событие типа Microsoft.Media.Graph.Operational.RecordingStopped:
+При деактивации экземпляра графа узел приемника ресурса останавливает запись видео в ресурс. Он генерирует событие типа **Microsoft.Media.Graph.Operational.RecordingStopped**.
 
 ```
 [IoTHubMonitor] [11:33:31 PM] Message received from [lva-sample-device/lvaEdge]:

@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 169a8dba979571a5f4b8c8056737fce72db1d058
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 3baeb87bf3fe1cdcd5e9f27aed2587eed060c5a8
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629873"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064527"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода для платформы удостоверений Майкрософт (конечная точка версии 2.0)
 
@@ -69,7 +69,7 @@ ms.locfileid: "97629873"
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Общедоступные клиентские приложения — классические и мобильные
 
-В приведенных ниже примерах показаны общедоступные клиентские приложения (классические или мобильные), которые обращаются к API Microsoft Graph или веб-API от имени пользователя. Кроме примера *классического (консольного) приложения с WAM*, все эти клиентские приложения используют библиотеку аутентификации Майкрософт (MSAL).
+В приведенных ниже примерах показаны общедоступные клиентские приложения (классические или мобильные), которые обращаются к API Microsoft Graph или веб-API от имени пользователя. Кроме примера *классического (консольного) приложения с WAM*, все эти клиентские приложения используют библиотеку проверки подлинности Майкрософт (MSAL).
 
 | Клиентское приложение | Платформа | Поток или способ предоставления | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core |
 | ------------------ | -------- |  ----------| ---------- | ------------------------- |
@@ -140,7 +140,7 @@ ms.locfileid: "97629873"
 | ![На этом изображении показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | Веб-API (служба) ASP.NET Core Функций Azure для [dotnet-native-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)  |
 | ![На этом изображении показан логотип Python](media/sample-v2-code/logo_python.png)</p>Python | Веб-API (служба) для [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) |
 | ![На этом изображении показан логотип Node.js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) для [Node.js и passport-azure-ad](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
-| ![На этом изображении показан логотип Node.js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) для [NodeJS и passport-azure-ad с работой от имени](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
+| ![На этом изображении показан логотип Node.js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) для [Node.js и passport-azure-ad с использованием от имени пользователя](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
 
 ## <a name="other-microsoft-graph-samples"></a>Другие примеры Microsoft Graph
 

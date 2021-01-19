@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: dce2cd0d77ff0a98d4d68e1c99edb472e61ce8a5
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 63d56d8afc584a760f4b31c6021d4c764afd52b3
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509467"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064425"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Руководство по Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
@@ -42,7 +42,7 @@ ms.locfileid: "97509467"
 
 ![Схема работы примера приложения, создаваемого в этом кратком руководстве](./media/tutorial-v2-windows-uwp/uwp-intro.svg)
 
-В рамках этого руководства создается приложение UWP, которое обращается к API Microsoft Graph. В этом сценарии маркер добавляется в запросы HTTP в заголовке "Authorization". Получение и продление маркеров выполняет библиотека проверки подлинности Майкрософт.
+В рамках этого руководства создается приложение UWP, которое обращается к API Microsoft Graph. В этом сценарии маркер добавляется в запросы HTTP в заголовке "Authorization". Получение и возобновление действия маркеров выполняет библиотека проверки подлинности Майкрософт.
 
 ## <a name="nuget-packages"></a>Пакеты NuGet
 
@@ -50,7 +50,7 @@ ms.locfileid: "97509467"
 
 |Библиотека|Описание|
 |---|---|
-|[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)|Библиотека проверки подлинности Майкрософт|
+|[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)| Библиотека проверки подлинности Майкрософт|
 |[Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph)|Клиентская библиотека Microsoft Graph|
 
 ## <a name="set-up-your-project"></a>Настройка проекта
@@ -71,7 +71,7 @@ ms.locfileid: "97509467"
 
    ![Минимальная и целевая версии](./media/tutorial-v2-windows-uwp/select-uwp-target-minimum.png)
 
-### <a name="add-microsoft-authentication-library-to-your-project"></a>Добавление библиотеки проверки подлинности Майкрософт в проект
+### <a name="add-the-microsoft-authentication-library-to-your-project"></a>Добавление библиотеки проверки подлинности Майкрософт в проект
 
 1. В Visual Studio выберите **Сервис** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
 1. Скопируйте и вставьте следующую команду в окно **консоли диспетчера пакетов**:
@@ -103,9 +103,9 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 </Grid>
 ```
 
-### <a name="use-microsoft-authentication-library-to-get-a-token-for-the-microsoft-graph-api"></a>Использование библиотеки проверки подлинности Майкрософт для получения маркера для API Microsoft Graph
+### <a name="use-the-microsoft-authentication-library-to-get-a-token-for-the-microsoft-graph-api"></a>Получение маркера для API Microsoft Graph с помощью библиотеки проверки подлинности Майкрософт
 
-В этом разделе показано, как использовать библиотеку проверки подлинности Майкрософт для получения маркера для API Microsoft Graph. Внесите изменения в файл *MainPage.xaml.cs*.
+В этом разделе показано, как получить маркер для API Microsoft Graph с помощью библиотеки проверки подлинности Майкрософт. Внесите изменения в файл *MainPage.xaml.cs*.
 
 1. Добавьте в *MainPage.xaml.cs* следующие ссылки.
 
@@ -225,7 +225,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 
 #### <a name="get-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
-Метод `AcquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого запуска `AcquireTokenInteractive` и запроса учетных данных пользователя выполните метод `AcquireTokenSilent`, чтобы запросить маркеры для последующих вызовов. Этот метод принимает маркеры без дополнительного взаимодействия. Кэширование и продление маркеров выполняет библиотека проверки подлинности Майкрософт.
+Метод `AcquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого запуска `AcquireTokenInteractive` и запроса учетных данных пользователя выполните метод `AcquireTokenSilent`, чтобы запросить маркеры для последующих вызовов. Этот метод принимает маркеры без дополнительного взаимодействия. Кэширование и возобновление действия маркеров выполняет библиотека проверки подлинности Майкрософт.
 
 Иногда метод `AcquireTokenSilent` завершается ошибкой. Например, если пользователь вышел из системы или изменил пароль на другом устройстве. Когда библиотека проверки подлинности Майкрософт обнаруживает, что для решения проблемы требуется интерактивное действие, она создает исключение `MsalUiRequiredException`. Приложение может обработать это исключение двумя способами:
 
@@ -346,7 +346,7 @@ private async Task DisplayMessageAsync(string message)
 
 Теперь вам нужно зарегистрировать приложение.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
@@ -357,7 +357,7 @@ private async Task DisplayMessageAsync(string message)
 
 Настройте проверку подлинности для приложения.
 
-1. Вернитесь на [портал Azure](https://portal.azure.com) и в разделе **Управление** щелкните **Проверка подлинности** > **Добавить платформу**, а затем выберите **Мобильные и классические приложения**.
+1. Вернитесь на <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a> и в разделе **Управление** щелкните **Проверка подлинности** > **Добавить платформу**, а затем выберите **Мобильные и классические приложения**.
 1. В разделе **URI перенаправления** проверьте, что указан адрес **https://login.microsoftonline.com/common/oauth2/nativeclient** .
 1. Нажмите кнопку **Настроить**.
 
@@ -469,7 +469,7 @@ private async Task DisplayMessageAsync(string message)
 |Свойство  |Формат  |Описание |
 |---------|---------|---------|
 |`Username` |`user@domain.com` |Имя пользователя, которое позволяет его идентифицировать.|
-|`Token Expires` |`DateTime` |Это время, когда истекает срок действия маркера. Библиотека проверки подлинности Майкрософт продлевает срок действия, обновляя токен по мере необходимости.|
+|`Token Expires` |`DateTime` |Это время, когда истекает срок действия маркера. Библиотека проверки подлинности Майкрософт продлевает срок действия, возобновляя действие маркера по мере необходимости.|
 
 ### <a name="more-information-about-scopes-and-delegated-permissions"></a>Дополнительные сведения об областях и делегированных разрешениях
 
@@ -509,4 +509,4 @@ private async Task DisplayMessageAsync(string message)
 Подробнее об использовании библиотеки аутентификации Майкрософт (MSAL) для авторизации и аутентификации в приложениях .NET:
 
 > [!div class="nextstepaction"]
-> [Обзор библиотеки аутентификации Майкрософт (MSAL)](msal-overview.md)
+> [Обзор библиотеки проверки подлинности Майкрософт (MSAL)](msal-overview.md)

@@ -3,12 +3,12 @@ title: Анализ видеотрансляций с помощью Компь�
 description: В этом руководстве показано, как использовать функцию "Аналитика видеотрансляций" вместе с функцией ИИ "Пространственный анализ с помощью Компьютерного зрения" от Azure Cognitive Services для анализа веб-канала видеотрансляции с IP-камеры (имитация).
 ms.topic: tutorial
 ms.date: 09/08/2020
-ms.openlocfilehash: 5cebedec11b91f5b0b94df25a860da3d517bb997
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 5b979bfeb6961b285cfeb2287888d8f157608d96
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400540"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060186"
 ---
 # <a name="analyze-live-video-with-computer-vision-for-spatial-analysis-preview"></a>Анализ видеотрансляций с помощью Компьютерного зрения для Пространственного анализа (предварительная версия)
 
@@ -166,7 +166,7 @@ ms.locfileid: "97400540"
 Выполните перечисленные ниже действия, чтобы создать манифест на базе файла шаблона, а затем развернуть его на пограничном устройстве.
 
 1. Откройте Visual Studio Code.
-1. Рядом с областью ЦЕНТР ИНТЕРНЕТА ВЕЩЕЙ AZURE выберите значок Дополнительные действия, чтобы задать строку подключения к Центру Интернета вещей. Строку подключения можно скопировать из файла src/cloud-to-device-console-app/appsettings.json.
+1. Рядом с областью ЦЕНТР ИНТЕРНЕТА ВЕЩЕЙ AZURE выберите значок Дополнительные действия, чтобы задать строку подключения к Центру Интернета вещей. Строку можно скопировать из файла `src/cloud-to-device-console-app/appsettings.json`.
 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/spatial-analysis-tutorial/connection-string.png" alt-text="Пространственный анализ: строка подключения":::
@@ -222,13 +222,13 @@ ms.locfileid: "97400540"
 
 В operations.json:
 
-* Задайте топологию следующим образом (topologyFile для локальной топологии, topologyUrl — для сетевой):
+* Задайте топологию следующим образом:
 
 ```json
 {
     "opName": "GraphTopologySet",
     "opParams": {
-        "topologyFile": "../edge/spatialAnalysisTopology.json"
+        "topologyUrl": "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/lva-spatial-analysis/2.0/topology.json"
     }
 },
 ```
@@ -261,17 +261,6 @@ ms.locfileid: "97400540"
     }
 },
 ```
-* Измените ссылку на топологию графа:
-
-`topologyUrl` : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/lva-spatial-analysis/topology.json"
-
-В разделе **GraphInstanceSet** измените имя топологии графа, чтобы оно совпадало со значением в предыдущей ссылке:
-
-`topologyName`: InferencingWithCVExtension
-
-В разделе **GraphTopologyDelete** измените имя:
-
-`name`: InferencingWithCVExtension
 
 >[!Note]
 Проверьте использование MediaGraphRealTimeComputerVisionExtension для подключения модуля пространственного анализа. Задайте для ${grpcUrl} значение **tcp://spatialAnalysis:<номер_порта>** , т. е. tcp://spatialAnalysis:50051
@@ -281,40 +270,51 @@ ms.locfileid: "97400540"
     "@type": "#Microsoft.Media.MediaGraphCognitiveServicesVisionExtension",
     "name": "computerVisionExtension",
     "endpoint": {
-    "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
-    "url": "${grpcUrl}",
-    "credentials": {
-        "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
-        "username": "${spatialanalysisusername}",
-        "password": "${spatialanalysispassword}"
-    }
+        "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
+        "url": "${grpcUrl}",
+        "credentials": {
+            "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
+            "username": "${spatialanalysisusername}",
+            "password": "${spatialanalysispassword}"
+        }
     },
     "image": {
-    "scale": {
-        "mode": "pad",
-        "width": "1408",
-        "height": "786"
+        "scale": {
+            "mode": "pad",
+            "width": "1408",
+            "height": "786"
+        },
+        "format": {
+            "@type": "#Microsoft.Media.MediaGraphImageFormatRaw",
+            "pixelFormat": "bgr24"
+        }
     },
-    "format": {
-        "@type": "#Microsoft.Media.MediaGraphImageFormatRaw",
-        "pixelFormat": "bgr24"
-    }
+    "samplingOptions": {
+        "skipSamplesWithoutAnnotation": "false",
+        "maximumSamplesPerSecond": "20"
     },
     "inputs": [
-    {
-        "nodeName": "frameRateFilter"
-    }
+        {
+            "nodeName": "rtspSource",
+            "outputSelectors": [
+                {
+                    "property": "mediaType",
+                    "operator": "is",
+                    "value": "video"
+                }
+            ]
+        }
     ]
 }
 ```
 
-Запустите сеанс отладки и следуйте инструкциям в окне "ТЕРМИНАЛ". Этот сеанс задаст топологию, установит экземпляр graph, активирует экземпляр graph и, наконец, удалит ресурсы.
+Запустите сеанс отладки и следуйте инструкциям в окне **Терминал**. В этом сеансе будет задана топология, установлен и активирован экземпляр, а также, в конечном итоге, будут удалены ресурсы.
 
 ## <a name="interpret-results"></a>Интерпретация результатов
 
 При создании экземпляра графа мультимедиа вы увидите событие "MediaSessionEstablished", здесь [пример события MediaSessionEstablished](detect-motion-emit-events-quickstart.md#mediasessionestablished-event).
 
-Модуль пространственного анализа также будет отправлять события Аналитики ИИ в Аналитику видеотрансляций, а затем в Центр Интернета вещей. Эти события также будут содержатся в выводе. Значение ENTITY — это объекты обнаружения, а EVENT — события spaceanalytics. Эти выходные данные будут переданы в Аналитику видеотрансляций.
+Модуль пространственного анализа также будет отправлять события Аналитики ИИ в службу "Аналитика видеотрансляций", а затем в Центр Интернета вещей. Эти события также будут содержатся в окне **Вывод**. Значение ENTITY — это объекты обнаружения, а EVENT — события spaceanalytics. Эти выходные данные будут переданы в Аналитику видеотрансляций.
 
 Пример выходных данных для personZoneEvent (из cognitiveservices.vision.spatialanalysis-personcrossingpolygon.livevideoanalytics operation):
 

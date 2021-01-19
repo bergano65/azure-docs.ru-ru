@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
 ms.custom: mvc, seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 7e63f770763d1960148dfdfa184d0b4e2b76754c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 2c4fbefc1bb801ab4a9387054ac91e5fca14ec18
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427086"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185603"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Руководство по созданию веб-приложения Java Spring Boot с помощью Службы приложений Azure в Linux и Azure Cosmos DB
 
@@ -55,23 +55,23 @@ yes | cp -rf .prep/* .
 
 Чтобы создать базу данных Azure Cosmos DB в подписке, выполните следующие действия. Приложение списка задач подключится к этой базе данных и сохранит данные при запуске, сохраняя состояние приложения независимо от того, где вы его запускаете.
 
-1. Войдите в Azure CLI и при необходимости настройте подписку, если у вас есть несколько подключенных к учетным данным для входа.
+1. Войдите в Azure CLI и при необходимости укажите подписку, если у вас есть несколько подписок подключены к учетным данным для входа.
 
-    ```bash
+    ```azurecli
     az login
     az account set -s <your-subscription-id>
     ```   
 
 2. Создайте группу ресурсов Azure, указав ее имя.
 
-    ```bash
+    ```azurecli
     az group create -n <your-azure-group-name> \
         -l <your-resource-group-region>
     ```
 
 3. Создайте Azure Cosmos DB с видом `GlobalDocumentDB`. В имени Cosmos DB нужно использовать только строчные буквы. Запишите поле `documentEndpoint` в ответе от команды.
 
-    ```bash
+    ```azurecli
     az cosmosdb create --kind GlobalDocumentDB \
         -g <your-azure-group-name> \
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
@@ -79,7 +79,7 @@ yes | cp -rf .prep/* .
 
 4. Получите ключ Azure Cosmos DB, чтобы подключиться к приложению. Сохраните `primaryMasterKey` и `documentEndpoint` поблизости, так как они потребуются на следующем шаге.
 
-    ```bash
+    ```azurecli
     az cosmosdb list-keys -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
@@ -146,7 +146,7 @@ mvn package spring-boot:run
 
 Полученный результат должен выглядеть примерно так:
 
-```bash
+```output
 bash-3.2$ mvn package spring-boot:run
 [INFO] Scanning for projects...
 [INFO] 
@@ -291,7 +291,7 @@ curl https://spring-todo-app.azurewebsites.net
 
 Выполните горизонтальное увеличение масштаба приложения, добавив другую рабочую роль:
 
-```bash
+```azurecli
 az appservice plan update --number-of-workers 2 \
    --name ${WEBAPP_PLAN_NAME} \
    --resource-group <your-azure-group-name>
@@ -301,7 +301,7 @@ az appservice plan update --number-of-workers 2 \
 
 Если эти ресурсы не требуются для изучения другого руководства (см. раздел [Дальнейшие действия](#next)), их можно удалить, выполнив следующие команды в Cloud Shell: 
   
-```bash
+```azurecli
 az group delete --name <your-azure-group-name>
 ```
 

@@ -15,16 +15,16 @@ ms.date: 11/17/2019
 ms.author: zhenlwa
 ms.custom: devx-track-csharp, azure-functions
 ms.tgt_pltfrm: Azure Functions
-ms.openlocfilehash: e603aa8ba85fdd214c04de515f405bcf9028791e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: add4b54adb02db09536f4e56a7f039c46245c182
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88207114"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963570"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-azure-functions-app"></a>Руководство по использованию динамической конфигурации в приложении Функций Azure
 
-Конфигурация .NET Standard службы "Конфигурация приложений" поддерживает кэширование и обновление, динамически управляемое активностью приложения. Из этого руководства вы узнаете, как реализовать динамические обновления конфигурации в коде. При этом в качестве основы используется код приложения Функций Azure, представленный в кратких руководствах. Прежде чем продолжить, ознакомьтесь со статьей [Краткое руководство. Создание приложения Функций Azure с помощью службы "Конфигурация приложений Azure"](./quickstart-azure-functions-csharp.md).
+Конфигурация .NET службы "Конфигурация приложений" поддерживает кэширование и обновление, динамически управляемое активностью приложения. Из этого руководства вы узнаете, как реализовать динамические обновления конфигурации в коде. При этом в качестве основы используется код приложения Функций Azure, представленный в кратких руководствах. Прежде чем продолжить, ознакомьтесь со статьей [Краткое руководство. Создание приложения Функций Azure с помощью службы "Конфигурация приложений Azure"](./quickstart-azure-functions-csharp.md).
 
 В этом руководстве описано следующее:
 
@@ -41,44 +41,71 @@ ms.locfileid: "88207114"
 
 ## <a name="reload-data-from-app-configuration"></a>Перезагрузка данных из App Configuration
 
-1. Откройте *Function1.cs*. В дополнение к свойству `static``Configuration` добавьте новое свойство `static``ConfigurationRefresher`, чтобы сохранить отдельный экземпляр `IConfigurationRefresher`, который будет использоваться для оповещения об обновлениях конфигурации при последующих вызовах функций.
+1. Откройте файл *Startup.cs* и измените метод `ConfigureAppConfiguration`. 
+
+   Метод `ConfigureRefresh` регистрирует параметр, который будет проверяться на наличие изменений при каждом запуске обновления в приложении, что вы сделаете на следующем шаге при добавлении `_configurationRefresher.TryRefreshAsync()`. Параметр `refreshAll` указывает поставщику Конфигурации приложений перезагрузить всю конфигурацию при обнаружении изменений в зарегистрированном параметре.
+
+    Срок действия кэша для всех параметров, зарегистрированных для обновления, по умолчанию составляет 30 секунд. Его можно обновить, вызвав метод `AzureAppConfigurationRefreshOptions.SetCacheExpiration`.
 
     ```csharp
-    private static IConfiguration Configuration { set; get; }
-    private static IConfigurationRefresher ConfigurationRefresher { set; get; }
-    ```
-
-2. Обновите конструктор и используйте метод `ConfigureRefresh`, чтобы указать параметр, который необходимо обновить из хранилища службы "Конфигурация приложений". Экземпляр `IConfigurationRefresher` извлекается с помощью метода `GetRefresher`. При необходимости мы также можем изменить время истечения срока действия кэша конфигурации на 1 минуту с 30 секунд по умолчанию.
-
-    ```csharp
-    static Function1()
+    public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
     {
-        var builder = new ConfigurationBuilder();
-        builder.AddAzureAppConfiguration(options =>
+        builder.ConfigurationBuilder.AddAzureAppConfiguration(options =>
         {
             options.Connect(Environment.GetEnvironmentVariable("ConnectionString"))
+                   // Load all keys that start with `TestApp:`
+                   .Select("TestApp:*")
+                   // Configure to reload configuration if the registered 'Sentinel' key is modified
                    .ConfigureRefresh(refreshOptions =>
-                        refreshOptions.Register("TestApp:Settings:Message")
-                                      .SetCacheExpiration(TimeSpan.FromSeconds(60))
-            );
-            ConfigurationRefresher = options.GetRefresher();
+                      refreshOptions.Register("TestApp:Settings:Sentinel", refreshAll: true));
         });
-        Configuration = builder.Build();
     }
     ```
 
-3. Обновите метод `Run` и оповещение об обновлениях конфигурации, используя метод `TryRefreshAsync` в начале вызова функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы конфигурация обновлялась без блокировки.
+   > [!TIP]
+   > При обновлении нескольких значений ключа в Конфигурации приложений обычно не требуется, чтобы приложение перезагружало конфигурацию до внесения всех изменений. Вы можете зарегистрировать ключ **Sentinel** и обновить его только после внесения всех остальных изменений конфигурации. Это помогает обеспечить согласованность конфигурации в приложении.
+
+2. Обновите метод `Configure`, чтобы службы Конфигурации приложений Azure были доступны посредством внедрения зависимостей.
 
     ```csharp
-    public static async Task<IActionResult> Run(
+    public override void Configure(IFunctionsHostBuilder builder)
+    {
+        builder.Services.AddAzureAppConfiguration();
+    }
+    ```
+
+3. Откройте файл *Function1.cs* и добавьте указанные ниже пространства имен.
+
+    ```csharp
+    using System.Linq;
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+    ```
+
+   Обновите конструктор, чтобы получить экземпляр `IConfigurationRefresherProvider` посредством внедрения зависимостей, благодаря чему можно получить экземпляр `IConfigurationRefresher`.
+
+    ```csharp
+    private readonly IConfiguration _configuration;
+    private readonly IConfigurationRefresher _configurationRefresher;
+
+    public Function1(IConfiguration configuration, IConfigurationRefresherProvider refresherProvider)
+    {
+        _configuration = configuration;
+        _configurationRefresher = refresherProvider.Refreshers.First();
+    }
+    ```
+
+4. Обновите метод `Run` и оповещение об обновлениях конфигурации, используя метод `TryRefreshAsync` в начале вызова функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы конфигурация обновлялась без блокировки текущего вызова Функций. В этом случае при последующих вызовах Функций будет поступать обновленное значение.
+
+    ```csharp
+    public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req, ILogger log)
     {
         log.LogInformation("C# HTTP trigger function processed a request.");
 
-        await ConfigurationRefresher.TryRefreshAsync(); 
+        await _configurationRefresher.TryRefreshAsync(); 
 
         string keyName = "TestApp:Settings:Message";
-        string message = Configuration[keyName];
+        string message = _configuration[keyName];
             
         return message != null
             ? (ActionResult)new OkObjectResult(message)
@@ -106,29 +133,37 @@ ms.locfileid: "88207114"
     export ConnectionString='connection-string-of-your-app-configuration-store'
     ```
 
-2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
+2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)**. Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 
 3. Скопируйте URL-адрес функции из выходных данных среды выполнения функций Azure.
 
     ![Отладки рассматриваемой в этом кратком руководстве функции в VS](./media/quickstarts/function-visual-studio-debugging.png)
 
-4. Вставьте URL-адрес запроса в адресную строку браузера. На изображении ниже показан ответ в браузере на локальный запрос GET, возвращаемый функцией.
+4. Вставьте URL-адрес для HTTP-запроса в адресной строке браузера. На изображении ниже показан ответ в браузере на локальный запрос GET, возвращаемый функцией.
 
     ![Локальный запуск рассматриваемой в этом кратком руководстве функции](./media/quickstarts/dotnet-core-function-launch-local.png)
 
-5. Войдите на [портал Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали по инструкциям из краткого руководства.
+5. Войдите на [портал Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите хранилище Конфигурации приложений, которое вы создали по инструкциям из краткого руководства.
 
-6. Выберите **Обозреватель конфигураций** и измените значения следующего ключа.
+6. Выберите **Обозреватель конфигураций** и измените значения следующего ключа:
 
-    | Клавиши | Значение |
+    | Ключ | Значение |
     |---|---|
     | TestApp:Settings:FontSize | Данные из конфигурации приложений Azure. Обновлено |
 
-7. Обновите приложение браузера несколько раз. Если истечение срока действия кэша происходит через минуту, на странице будет отображаться ответ на вызов функций с обновленным значением.
+   Затем создайте ключ Sentinel или измените его значение, если он уже существует, например:
+
+    | Ключ | Значение |
+    |---|---|
+    | TestApp:Settings:Sentinel | Версия 1 |
+
+
+7. Обновите приложение браузера несколько раз. Если истечение срока действия кэша происходит через 30 секунд, на странице будет отображаться ответ на вызов функций с обновленным значением.
 
     ![Локальное обновление рассматриваемой в этом кратком руководстве функции](./media/quickstarts/dotnet-core-function-refresh-local.png)
 
-Пример кода, используемый в этом учебнике, можно скачать в [репозитории GitHub](https://github.com/Azure/AppConfiguration/tree/master/examples/DotNetCore/AzureFunction).
+> [!NOTE]
+> Пример кода, используемый в этом руководстве, можно скачать в [репозитории GitHub](https://github.com/Azure/AppConfiguration/tree/master/examples/DotNetCore/AzureFunction).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

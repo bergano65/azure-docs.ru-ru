@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 886d6ff1d3437a9d45bdabc68b2bf3ab8cdaa3ef
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 5f49d2c918164fa529b12313e000aff5f8893a65
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349979"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201861"
 ---
 # <a name="tutorial-configure-blink-for-automatic-user-provisioning"></a>Руководство по настройке Blink для автоматической подготовки пользователей
 
@@ -117,7 +117,7 @@ ms.locfileid: "96349979"
 
 9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Blink. Атрибуты, выбранные как свойства в разделе **Сопоставления**, используются для сопоставления учетных записей пользователей в Blink для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя Blink](media/blink-provisioning-tutorial/user-attributes.png)
+    ![Атрибуты пользователя Blink](media/blink-provisioning-tutorial/new-user-attributes.png)
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -136,6 +136,10 @@ ms.locfileid: "96349979"
 После этого начнется начальная синхронизация пользователей, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. В разделе **Сведения о синхронизации** можно отслеживать ход выполнения и переходить по ссылкам для просмотра отчетов о подготовке, в которых зафиксированы все действия, выполняемые службой подготовки Azure AD с приложением Blink.
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
+
+## <a name="change-log"></a>Журнал изменений
+
+* 14.01.2021: добавлены пользовательские атрибуты расширения **company**, **description** и **location**.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,6 +1,6 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Synerise AI Growth Ecosystem | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в приложение Synerise AI Growth Ecosystem.
+title: Руководство по Интеграция единого входа Azure Active Directory с Synerise AI Growth Operating System | Документация Майкрософт
+description: Сведения о том, как настроить единый вход Azure Active Directory в приложение Synerise AI Growth Operating System.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/15/2020
+ms.date: 01/06/2021
 ms.author: jeedes
-ms.openlocfilehash: 988ec89f1ca9f3f88e92ed226c0bf6d81fae8397
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: e6b9ad19eae64fa4b2e37e0e7c033d5926fcae9c
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97675686"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018825"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-synerise-ai-growth-ecosystem"></a>Руководство по интеграции единого входа Azure Active Directory с Synerise AI Growth Ecosystem
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-synerise-ai-growth-operating-system"></a>Руководство по Интеграция единого входа Azure Active Directory с Synerise AI Growth Operating System
 
-В этом руководстве объясняется, как интегрировать Synerise AI Growth Ecosystem с Azure Active Directory (Azure AD). Интеграция Synerise AI Growth Ecosystem с Azure AD обеспечивает следующие возможности:
+Из этого учебника вы узнаете, как интегрировать Synerise с Azure Active Directory (Azure AD). Интеграция Synerise с Azure AD обеспечивает следующие возможности:
 
-* Контроль доступа к Synerise AI Growth Ecosystem с помощью Azure AD.
-* Автоматический вход пользователей в Synerise AI Growth Ecosystem с помощью учетных записей Azure AD.
+* управление доступом к Synerise с помощью Azure AD;
+* автоматический вход пользователей в Synerise с помощью учетных записей Azure AD;
 * Централизованное управление учетными записями через портал Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -31,70 +31,70 @@ ms.locfileid: "97675686"
 Чтобы приступить к работе, потребуется следующее.
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка на Synerise AI Growth Ecosystem с поддержкой единого входа.
+* Подписка Synerise с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Synerise AI Growth Ecosystem поддерживает единый вход, инициированный **поставщиком службы и поставщиком удостоверений**.
-* Synerise AI Growth Ecosystem поддерживает **JIT**-подготовку пользователей.
+* Synerise поддерживает единый вход, инициированный **поставщиком службы и поставщиком удостоверений**.
+* Synerise поддерживает **JIT**-подготовку пользователей.
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
 
 
-## <a name="adding-synerise-ai-growth-ecosystem-from-the-gallery"></a>Добавление Synerise AI Growth Ecosystem из коллекции
+## <a name="adding-synerise-ai-growth-operating-system-from-the-gallery"></a>Добавление Synerise AI Growth Operating System из коллекции
 
-Чтобы настроить интеграцию Synerise AI Growth Ecosystem с Azure AD, необходимо добавить Synerise AI Growth Ecosystem из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию Synerise с Azure AD, необходимо добавить это приложение из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
-1. В разделе **Добавление из коллекции** в поле поиска введите **Synerise AI Growth Ecosystem**.
-1. Выберите **Synerise AI Growth Ecosystem** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Synerise AI Growth Operating System**.
+1. Выберите **Synerise AI Growth Operating System** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 
-## <a name="configure-and-test-azure-ad-sso-for-synerise-ai-growth-ecosystem"></a>Настройка и проверка единого входа Azure AD в Synerise AI Growth Ecosystem
+## <a name="configure-and-test-azure-ad-sso-for-synerise-ai-growth-operating-system"></a>Настройка и проверка единого входа Azure AD в Synerise AI Growth Operating System
 
-Настройте и проверьте единый вход Azure AD в Synerise AI Growth Ecosystem с помощью тестового пользователя **B. Simon**. Для обеспечения единого входа необходимо установить связь между пользователем Azure AD и одноименным пользователем Synerise AI Growth Ecosystem.
+Настройте и проверьте единый вход Azure AD в приложение Synerise с помощью тестового пользователя **B.Simon**. Для обеспечения единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Synerise.
 
-Чтобы настроить и проверить единый вход Azure AD в Synerise AI Growth Ecosystem, выполните действия из следующих стандартных блоков:
+Чтобы настроить и проверить единый вход Azure AD в Synerise, выполните следующие действия:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в Synerise AI Growth Ecosystem](#configure-synerise-ai-growth-ecosystem-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Synerise AI Growth Ecosystem](#create-synerise-ai-growth-ecosystem-test-user)** требуется для того, чтобы в Synerise AI Growth Ecosystem существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Настройка единого входа в Synerise AI Growth Operating System](#configure-synerise-ai-growth-operating-system-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Synerise AI Growth Operating System](#create-synerise-ai-growth-operating-system-test-user)** требуется для того, чтобы в Synerise существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На портале Azure на странице интеграции с приложением **Synerise AI Growth Ecosystem** найдите раздел **Управление** и выберите элемент **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Synerise AI Growth Operating System** найдите раздел **Управление** и выберите элемент **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** для изменения параметров.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.synerise.com/api-portal/uauth/saml/auth/<CUSTOMER_PROFILE_HASH>`.
+    В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.synerise.com/api-portal/uauth/saml/auth/<PROFILE_HASH>`.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://app.synerise.com/api-portal/uauth/saml/auth/<CUSTOMER_PROFILE_HASH>`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://app.synerise.com/api-portal/uauth/saml/auth/<PROFILE_HASH>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу технической поддержки Synerise AI Growth Ecosystem](mailto:support@synerise.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки Synerise](mailto:support@synerise.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Требуемые URL-адреса можно скопировать из раздела **настройки Synerise AI Growth Ecosystem**.
+1. Требуемые URL-адреса можно скопировать из раздела **Настройка Synerise**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -111,23 +111,51 @@ ms.locfileid: "97675686"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе объясняется, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Synerise AI Growth Ecosystem.
+В этом разделе объясняется, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Synerise.
 
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
-1. В списке приложений выберите **Synerise AI Growth Ecosystem**.
+1. В списке приложений выберите **Synerise AI Growth Operating System**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-## <a name="configure-synerise-ai-growth-ecosystem-sso"></a>Настройка единого входа в Synerise AI Growth Ecosystem
+## <a name="configure-synerise-ai-growth-operating-system-sso"></a>Настройка единого входа в Synerise AI Growth Operating System
 
-Чтобы настроить единый вход на стороне **Synerise AI Growth Ecosystem**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу технической поддержки Synerise AI Growth Ecosystem](mailto:support@synerise.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Войдите в Synerise от имени администратора.
 
-### <a name="create-synerise-ai-growth-ecosystem-test-user"></a>Создание тестового пользователя Synerise AI Growth Ecosystem
+1. Перейдите к разделу **Settings > Access Control** (Параметры > Управление доступом).
 
-В этом разделе объясняется, как создать пользователя с именем Britta Simon в Synerise AI Growth Ecosystem. Synerise AI Growth Ecosystem поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Synerise AI Growth Ecosystem, он создается после проверки подлинности.
+    ![Параметры Synerise](./media/synerise-ai-growth-ecosystem-tutorial/settings.png)
+
+1. На странице **Access Control** (Управление доступом) нажмите кнопку **Show** (Показать) на вкладке **Single Sign-On** (Единый вход).
+
+    ![Synerise: управление доступом](./media/synerise-ai-growth-ecosystem-tutorial/single-sign-on.png)
+
+1. Выполните описанные ниже действия на следующей странице.
+
+    ![Конфигурация Synerise](./media/synerise-ai-growth-ecosystem-tutorial/configuration.png)
+
+    а. В текстовом поле **Identifier Provider Entity ID** (Идентификатор сущности поставщика идентификаторов) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
+
+    b. В текстовом поле **SSO endpoint (HTTPS)** (Конечная точка единого входа (HTTPS)) вставьте **URL-адрес входа**, скопированный на портале Azure.
+
+    c. В текстовом поле **Identity Provider application ID** (Идентификатор приложения поставщика удостоверений) вставьте **идентификатор приложения**.
+
+    d. Скопируйте **URI перенаправления поставщика службы** и вставьте его в текстовое поле **URL-адрес ответа** в разделе "Базовая конфигурация SAML" на портале Azure.
+
+    д) Выберите элемент **HTTP REDIRECT** (Перенаправление HTTP) в разделе **Request binding** (Запрос привязки).
+
+    е) Перейдите к разделу **Request signature** (Запрос подписи).
+
+    ж. Передайте скачанный файл **сертификата (Base64)** в качестве **сертификата подписи поставщика удостоверений**.
+
+    i. Нажмите кнопку **Apply** (Применить).
+
+### <a name="create-synerise-ai-growth-operating-system-test-user"></a>Создание тестового пользователя в Synerise AI Growth Operating System
+
+В рамках работы с этим разделом вы создадите в Synerise пользователя с именем Britta Simon. Приложение Synerise поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Synerise, он создается после аутентификации.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -135,19 +163,19 @@ ms.locfileid: "97675686"
 
 #### <a name="sp-initiated"></a>Инициация поставщиком услуг:
 
-* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Synerise AI Growth Ecosystem, где можно инициировать поток входа.  
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Synerise, где можно инициировать поток входа.  
 
-* Перейдите по URL-адресу для входа в Synerise AI Growth Ecosystem и инициируйте поток входа.
+* Перейдите по URL-адресу для входа в Synerise и инициируйте поток входа.
 
 #### <a name="idp-initiated"></a>Вход, инициированный поставщиком удостоверений
 
-* Выберите элемент **Тестировать приложение** на портале Azure. Вы автоматически войдете в приложение Synerise AI Growth Ecosystem, для которого настроен единый вход. 
+* На портале Azure выберите **Тестировать приложение**, и вы автоматически войдете в приложение Synerise, для которого настроен единый вход 
 
-Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Щелкните плитку Synerise AI Growth Ecosystem в разделе "Мои приложения". Вы будете перенаправлены на страницу входа приложения, чтобы инициировать поток входа (при настройке в режиме поставщика службы), или автоматически войдете в приложение Synerise AI Growth Ecosystem, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку Synerise в разделе "Мои приложения", вы автоматически перейдете на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика службы) или в приложение Synerise, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки единого входа в Synerise AI Growth Ecosystem вы можете применить функцию управления сеансом, которая в режиме реального времени защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+После настройки Synerise вы сможете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 

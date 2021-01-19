@@ -4,12 +4,12 @@ description: В этом учебнике вы будете использова
 ms.topic: tutorial
 ms.date: 09/08/2020
 titleSuffix: Azure
-ms.openlocfilehash: 82906111e64bd278d4371d1c3497fefc4510bbbd
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 9fb2f533d433c89d13ee0c29058f87aab3521a78
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401220"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060203"
 ---
 # <a name="tutorial-analyze-live-video-by-using-openvino-model-server--ai-extension-from-intel"></a>Руководство по Анализ видеотрансляций с помощью OpenVINO™ Model Server (расширение ИИ от Intel) 
 
@@ -37,6 +37,8 @@ ms.locfileid: "97401220"
 При настройке ресурсов Azure на виртуальную машину Linux в Azure, используемую в качестве устройства IoT Edge, копируется короткое видео с изображением автостоянки. В этом кратком руководстве для имитации потока в реальном времени используется видеофайл.
 
 Откройте приложение, например [проигрыватель мультимедиа VLC](https://www.videolan.org/vlc/). Нажмите сочетание клавиш CTRL+N, а затем вставьте ссылку на [видео](https://lvamedia.blob.core.windows.net/public/lots_015.mkv), чтобы начать воспроизведение. Вы увидите видеоматериал с автомобилями на автостоянке, большинство из которых припарковано, а один движется.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LUbN]
 
 В этом кратком руководстве Аналитика видеотрансляций в IoT Edge используется вместе с OpenVINO™ Model Server (расширением ИИ от Intel) для обнаружения таких объектов, как транспортные средства, и их классификации. Полученные события вывода будут опубликованы в центре IoT Edge.
 
@@ -97,7 +99,7 @@ ms.locfileid: "97401220"
 1. Внесите правки в файл *operations.json*:
     * Измените ссылку на топологию графа:
 
-        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtensionOpenVINO/topology.json"`
+        `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/httpExtensionOpenVINO/2.0/topology.json"`
 
     * В разделе `GraphInstanceSet` измените имя топологии графа, чтобы оно совпадало со значением в приведенной выше ссылке:
 
@@ -160,7 +162,7 @@ ms.locfileid: "97401220"
 
          ```
          {
-           "@apiVersion": "1.0",
+           "@apiVersion": "2.0",
            "name": "Sample-Graph-1",
            "properties": {
              "topologyName": "InferencingWithOpenVINO",
@@ -203,7 +205,7 @@ ms.locfileid: "97401220"
 
 ### <a name="mediasessionestablished-event"></a>Событие MediaSessionEstablished
 
-После создания экземпляра графа мультимедиа узел источника RTSP пытается подключиться к RTSP-серверу, работающему в контейнере rtspsim-live555. Если соединение установлено, будет выводиться указанное ниже событие. Тип события — `Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished`.
+После создания экземпляра графа мультимедиа узел источника RTSP пытается подключиться к RTSP-серверу, работающему в контейнере rtspsim-live555. Если соединение установлено, будет выводиться указанное ниже событие. Тип этого события — **Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished**.
 
 ```
 [IoTHubMonitor] [9:42:18 AM] Message received from [lvaedgesample/lvaEdge]:
