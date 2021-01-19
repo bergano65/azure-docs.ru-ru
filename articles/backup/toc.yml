@@ -66,6 +66,8 @@
           href: sap-hana-backup-support-matrix.md
         - name: Таблица поддержки резервного копирования общих папок в Azure
           href: azure-file-share-support-matrix.md
+        - name: Таблица поддержки резервного копирования дисков Azure
+          href: disk-backup-support-matrix.md
         - name: Контроллеры домена Active Directory
           href: active-directory-backup-restore.md
         - name: Поддерживаемые номера SKU виртуальных машин для Политики Azure
@@ -82,6 +84,8 @@
           href: backup-azure-file-folder-backup-faq.md
         - name: 'Вопросы и ответы: резервное копирование ресурсов Файлов Azure'
           href: backup-azure-files-faq.md
+        - name: 'Вопросы и ответы: резервное копирование дисков Azure'
+          href: disk-backup-faq.md
         - name: "Вопросы и ответы: резервное копирование баз данных SQL\_Server на виртуальных машинах Azure"
           href: faq-backup-sql-server.md
         - name: Вопросы и ответы. Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
@@ -210,6 +214,14 @@
               href: backup-azure-restore-system-state.md
         - name: Управление
           href: backup-azure-manage-mars.md
+    - name: Резервное копирование дисков Azure
+      items:
+        - name: Обзор
+          href: disk-backup-overview.md
+        - name: Резервное копирование
+          href: backup-managed-disks.md
+        - name: Восстановить
+          href: restore-managed-disks.md
     - name: Резервное копирование общих папок Azure
       items:
         - name: Обзор
@@ -441,6 +453,8 @@
           href: backup-azure-scdpm-troubleshooting.md
         - name: Общая папка Azure
           href: troubleshoot-azure-files.md
+        - name: Резервное копирование дисков Azure
+          href: disk-backup-troubleshoot.md
         - name: "SQL\_Server"
           href: backup-sql-server-azure-troubleshoot.md
         - name: Резервное копирование SAP HANA на виртуальных машинах Azure

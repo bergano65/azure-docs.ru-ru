@@ -159,6 +159,20 @@
           href: how-to-troubleshoot-the-sensor-and-on-premises-management-console.md
         - name: Настройка мониторинга SNMP MIB
           href: how-to-set-up-snmp-mib-monitoring.md
+        - name: Интеграция с партнерскими решениями
+          items:
+            - name: Интеграция с Cisco ISE pxGrid
+              href: integration-cisco-ise-pxgrid.md
+            - name: Интеграция с Forescout
+              href: integration-forescout.md
+            - name: Интеграция с Fortinet
+              href: integration-fortinet.md
+            - name: Интеграция с Palo Alto
+              href: integration-palo-alto.md
+            - name: Интеграция с ServiceNow
+              href: integration-servicenow.md
+            - name: Интеграция со Splunk
+              href: integration-splunk.md
     - name: Решение на основе агента для разработчиков устройств
       items:
         - name: Работа с модулем безопасности для ОСРВ Azure

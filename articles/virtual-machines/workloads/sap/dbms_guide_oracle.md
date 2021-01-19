@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/20/2020
+ms.date: 01/18/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3e99b3a8960eb49856e9a016eb054eed41eccde9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b4cf2e79acf4cd58ff94a2e90f07202341672a1d
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965261"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569442"
 ---
 # <a name="azure-virtual-machines-oracle-dbms-deployment-for-sap-workload"></a>Виртуальные машины Azure развертывание СУБД Oracle для рабочей нагрузки SAP
 
@@ -445,15 +445,19 @@ Oracle Database и файлы журнала повторяемых операц
 
 ### <a name="storage-configuration"></a>Конфигурация хранилища
 
-Файловые системы ext4, xfs и Oracle ASM поддерживаются для файлов Oracle Database в Azure. Все файлы базы данных должны храниться на виртуальных жестких дисках или Управляемых дисках с этими файловыми системами. Эти виртуальные жесткие диски должны быть подключены к виртуальной машине Azure и созданы на основе [хранилища страничных BLOB-объектов Azure](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) или [Управляемых дисков Azure](../../managed-disks-overview.md).
+Файловые системы ext4, XFS, Нфсв 4.1 (только на Azure NetApp Files (использовании)) или Oracle ASM (см. Примечание SAP [#2039619](https://launchpad.support.sap.com/#/notes/2039619) для требований к выпуску и версии) поддерживаются для Oracle Database файлов в Azure. Все файлы базы данных должны храниться в этих файловых системах на основе виртуальных жестких дисков, управляемых дисков или использовании. Эти диски подключены к виртуальной машине Azure и основаны на [хранилище страничных BLOB-объектов](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs)Azure, [управляемых дисках Azure](../../managed-disks-overview.md)или [Azure NetApp Files](https://azure.microsoft.com/services/netapp/).
 
-Ядра UEK Oracle Linux требуют UEK версии не меньше 4 для поддержки [дисков SSD Azure ценовой категории "Премиум"](../../premium-storage-performance.md#disk-caching).
+Список минимальных требований, например: 
+
+- Ядра UEK Oracle Linux требуют UEK версии не меньше 4 для поддержки [дисков SSD Azure ценовой категории "Премиум"](../../premium-storage-performance.md#disk-caching).
+- Для Oracle с использовании минимальным числом поддерживаемых Oracle Linux является 8,2.
+- Для Oracle с использовании минимальная поддерживаемая версия Oracle — 19c (19.8.0.0).
 
 Изучите статьи [типы хранилища Azure для рабочей нагрузки SAP](./planning-guide-storage.md) , чтобы получить дополнительные сведения о конкретных типах блочных хранилищ Azure, пригодных для рабочей нагрузки СУБД.
 
-Настоятельно рекомендуем использовать [Управляемые диски Azure](../../managed-disks-overview.md). Также для развертываний Oracle Database настоятельно рекомендуется использовать [диски SSD Azure ценовой категории "Премиум"](../../disks-types.md).
+С помощью блочного хранилища Azure мы настоятельно рекомендуем использовать [управляемые диски Azure](../../managed-disks-overview.md) и [Azure Premium ssd](../../disks-types.md) для развертывания Oracle Database.
 
-Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения см. в следующих разделах: 
+За исключением Azure NetApp Files, другие общие диски, сетевые диски или удаленные общие ресурсы, такие как службы файлов Azure (AFS), не поддерживаются для файлов Oracle Database. Дополнительные сведения см. в следующих разделах: 
 
 - [Введение в службы файлов Microsoft Azure](/archive/blogs/windowsazurestorage/introducing-microsoft-azure-file-service)
 
@@ -469,10 +473,10 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/\<SID>/origlogaA & mirrlogB | Premium или Ultra Disk | None | Не требуется. |
-| /oracle/\<SID>/origlogaB & mirrlogA | Premium или Ultra Disk | None | Не требуется. |
-| /oracle/\<SID>/sapdata1...n | Premium или Ultra Disk | Только для чтения | Можно использовать для Premium |
-| /oracle/\<SID>/oraarch | Standard | None | Не требуется. |
+| /oracle/\<SID>/origlogaA & mirrlogB | Premium, Ultra Disk или использовании | None | Не требуется. |
+| /oracle/\<SID>/origlogaB & mirrlogA | Premium, Ultra Disk или использовании | None | Не требуется. |
+| /oracle/\<SID>/sapdata1...n | Premium, Ultra Disk или использовании | Только для чтения | Можно использовать для Premium |
+| /oracle/\<SID>/oraarch | Standard или использовании | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | | Не требуется. |
 
 * Чередование: LVM или MDADM на основе RAID0.
@@ -483,13 +487,13 @@ Oracle Database и файлы журнала повторяемых операц
 
 | Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /oracle/\<SID>/origlogaA | Premium или Ultra Disk | Нет | Можно использовать для Premium  |
-| /oracle/\<SID>/origlogaB | Premium или Ultra Disk | Нет | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogAB | Premium или Ultra Disk | Нет | Можно использовать для Premium |
-| /oracle/\<SID>/mirrlogBA | Premium или Ultra Disk | Нет | Можно использовать для Premium |
-| /oracle/\<SID>/sapdata1...n | Premium или Ultra Disk | Только для чтения | Рекомендуется для уровня "Премиум"  |
-| /oracle/\<SID>/sapdata(n+1)* | Premium или Ultra Disk | Нет | Можно использовать для Premium |
-| /oracle/\<SID>/oraarch* | Premium или Ultra Disk | None | Не требуется. |
+| /oracle/\<SID>/origlogaA | Premium, Ultra Disk или использовании | Нет | Можно использовать для Premium  |
+| /oracle/\<SID>/origlogaB | Premium, Ultra Disk или использовании | Нет | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogAB | Premium, Ultra Disk или использовании | Нет | Можно использовать для Premium |
+| /oracle/\<SID>/mirrlogBA | Premium, Ultra Disk или использовании | Нет | Можно использовать для Premium |
+| /oracle/\<SID>/sapdata1...n | Premium, Ultra Disk или использовании | Только для чтения | Рекомендуется для уровня "Премиум"  |
+| /oracle/\<SID>/sapdata(n+1)* | Premium, Ultra Disk или использовании | Нет | Можно использовать для Premium |
+| /oracle/\<SID>/oraarch* | Premium, Ultra Disk или использовании | None | Не требуется. |
 | Домашняя страница Oracle, `saptrace` ,... | Диск ОС (Premium) | Не требуется. |
 
 * Чередование: LVM или MDADM на основе RAID0.
@@ -500,6 +504,10 @@ Oracle Database и файлы журнала повторяемых операц
 
 
 Если при использовании хранилища Azure класса Premium требуется больше операций ввода-вывода, рекомендуется использовать LVM (Диспетчер логических томов) или MDADM, чтобы создать один большой логический том на нескольких подключенных дисках. Рекомендации и указания по использованию LVM или MDADM см. в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). Такой подход позволяет сократить административные расходы на управление дисковым пространством и помогает избежать необходимости вручную распределять файлы между несколькими подключенными дисками.
+
+Если вы планируете использовать Azure NetApp Files убедитесь, что клиент Днфс настроен правильно. Использование Днфс обязательно для поддержки среды. Конфигурация Днфс описана в статье [создание Oracle Database для Direct NFS](https://docs.oracle.com/en/database/oracle/oracle-database/19/ntdbi/creating-an-oracle-database-on-direct-nfs.html#GUID-2A0CCBAB-9335-45A8-B8E3-7E8C4B889DEA).
+
+Пример, демонстрирующий использование Azure NetApp Files NFS для баз данных Oracle, представлен в блоге [развертывание SAP сертифицированную (Oracle 19c) с Azure NetApp Files](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/deploy-sap-anydb-oracle-19c-with-azure-netapp-files/ba-p/2064043).
 
 
 #### <a name="write-accelerator"></a>Ускоритель записи
@@ -528,7 +536,7 @@ sudo curl -so /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules https://raw.gi
 </code></pre>
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Читать статью 
 
 - [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md)
