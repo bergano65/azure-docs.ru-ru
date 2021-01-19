@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: cf7c5fa8563544add55a7fad5075848eb5116fe1
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: c30c01a18a17981b4e034c9df2cf822e6580430e
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901938"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567727"
 ---
 # <a name="networking-overview---azure-database-for-postgresql---flexible-server"></a>Обзор сети: база данных Azure для PostgreSQL — гибкий сервер
 
@@ -74,7 +74,7 @@ ms.locfileid: "96901938"
 Узнайте, как создать гибкий сервер с частным доступом (интеграция с виртуальной сетью) в [портал Azure](how-to-manage-virtual-network-portal.md) или [в Azure CLI](how-to-manage-virtual-network-cli.md).
 
 > [!NOTE]
-> При использовании настраиваемого DNS-сервера необходимо использовать DNS-сервер пересылки для разрешения полного доменного имени базы данных Azure для MySQL — гибкого сервера. Дополнительные сведения см. в разделе [разрешение имен, которое использует собственный DNS-сервер](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) .
+> При использовании пользовательского DNS-сервера необходимо использовать сервер пересылки DNS для разрешения полного доменного имени базы данных Azure для PostgreSQL-гибкого сервера. Дополнительные сведения см. в разделе [разрешение имен, которое использует собственный DNS-сервер](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) .
 
 ## <a name="public-access-allowed-ip-addresses"></a>Открытый доступ (разрешенные IP-адреса)
 Характеристики общедоступного метода доступа включают:

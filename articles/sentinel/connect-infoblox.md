@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: c8af1c32607e5fc7bf548b40069e18923c666303
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28abb9f09e3bca2522b959c6a9b890de5320b17a
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87089657"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567435"
 ---
 # <a name="connect-your-infoblox-nios-to-azure-sentinel"></a>Подключение Инфоблокс Ниос к Azure Sentinel
 
@@ -34,7 +34,7 @@ ms.locfileid: "87089657"
 
 ## <a name="forward-infoblox-logs-to-the-syslog-agent"></a>Пересылка журналов Инфоблокс в агент системного журнала  
 
-Настройте Инфоблокс для пересылки сообщений системного журнала в рабочую область Azure с помощью агента системного журнала.
+Настройте Инфоблокс для пересылки сообщений Syslog в рабочую область Sentinel Azure с помощью агента системного журнала.
 
 1. На портале Sentinel Azure щелкните **соединители данных** и выберите **инфоблокс Ниос** Connector.
 
@@ -48,7 +48,7 @@ ms.locfileid: "87089657"
 
 ## <a name="validate-connectivity"></a>Проверка подключения
 
-Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
+После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

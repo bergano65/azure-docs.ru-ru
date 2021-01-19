@@ -1,21 +1,21 @@
 ---
 title: Создание и администрирование проектов Миграции Azure
 description: Поиск, создание, управление и удаление проектов в службе "миграция Azure".
-author: ms-psharma
-ms.author: panshar
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 445e08b255e5b4dd67dd1c6a47c8df6ce59df5bd
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: de0c48bb775b96052fe16d60aa58049bfd58ca4d
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753830"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567780"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
-В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) ".
+В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) ". Если вы используете классические проекты службы "миграция Azure", удалите эти проекты и следуйте инструкциям по созданию нового проекта службы "миграция Azure". Вы не можете обновить классические проекты или компоненты службы "миграция Azure" в службу "миграция Azure".
 
 Проект Миграции Azure используется для хранения метаданных обнаружения, оценки и миграции, собранных из среды, для которой выполняется оценка или миграция. В проекте можно контролировать обнаруженные ресурсы, создавать оценки и управлять миграцией в Azure.  
 
@@ -46,7 +46,7 @@ ms.locfileid: "96753830"
     - География используется только для хранения метаданных, собранных с локальных компьютеров. Можно выбрать любой целевой регион для миграции. 
     - Просмотрите список поддерживаемых регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
 
-8. Щелкните **Создать**.
+8. Нажмите кнопку **создания**.
 
    ![Страница с параметрами входного проекта](./media/create-manage-projects/project-details.png)
 
@@ -127,6 +127,6 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
        
 2. [Следуйте инструкциям](../azure-monitor/platform/delete-workspace.md) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".
