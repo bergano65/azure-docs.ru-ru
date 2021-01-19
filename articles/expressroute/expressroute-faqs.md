@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: duau
-ms.openlocfilehash: ef5b065425fa05d016c1b1c1688cc28508f32d30
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: deb5f07340f44e7ae4da3372fd17e484d500e6ab
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462044"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573264"
 ---
 # <a name="expressroute-faq"></a>Вопросы и ответы по ExpressRoute
 
@@ -256,7 +256,7 @@ ExpressRoute поддерживает [три домена маршрутиза�
 
 ### <a name="can-virtual-networks-linked-to-the-same-expressroute-circuit-talk-to-each-other"></a>Могут виртуальные сети, связанные с одним каналом ExpressRoute, взаимодействовать друг с другом?
 
-Да. Виртуальные машины, развернутые в виртуальных сетях, подключенных к одному каналу ExpressRoute, могут взаимодействовать друг с другом.
+Да. Виртуальные машины, развернутые в виртуальных сетях, подключенных к одному каналу ExpressRoute, могут взаимодействовать друг с другом. Мы рекомендуем настроить [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) , чтобы упростить это взаимодействие.
 
 ### <a name="can-i-use-site-to-site-connectivity-for-virtual-networks-in-conjunction-with-expressroute"></a>Можно ли использовать подключения типа "сеть-сеть" для виртуальных сетей вместе с ExpressRoute?
 

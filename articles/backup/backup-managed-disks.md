@@ -3,12 +3,12 @@ title: Резервное копирование управляемых диск
 description: Узнайте, как выполнять резервное копирование управляемых дисков Azure из портал Azure.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: c4e2d4e649d59389ac3f8bd115e43acabc792eb2
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 2169e2f44e3ffb2c05c674d633efabed2c531878
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558371"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573128"
 ---
 # <a name="back-up-azure-managed-disks-in-preview"></a>Резервное копирование управляемых дисков Azure (Предварительная версия)
 
@@ -130,6 +130,8 @@ ms.locfileid: "98558371"
 
    ![Добавление роли участника моментального снимка диска](./media/backup-managed-disks/disk-snapshot-contributor-role.png)
 
+1. Если диск для резервного копирования шифруется с помощью ключей, [управляемых пользователем (CMK)](https://docs.microsoft.com/azure/virtual-machines/disks-enable-customer-managed-keys-portal) , или с помощью [двойного шифрования с использованием ключей, управляемых платформой, и ключей, управляемых клиентом](https://docs.microsoft.com/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal), назначьте ему **разрешение на доступ** к управляемому удостоверению в хранилище резервных копий на ресурсе **набора шифрования диска** .
+
 1. Убедитесь, что управляемое удостоверение хранилища службы архивации имеет правильный набор назначений ролей на исходном диске и в группе ресурсов, которая служит хранилищем моментальных снимков.
 
    1. Перейдите в **хранилище архивации — > удостоверение** и выберите **назначения ролей Azure**.
@@ -217,6 +219,6 @@ ms.locfileid: "98558371"
 
    ![Выберите задание, чтобы просмотреть подробные сведения](./media/backup-managed-disks/select-job.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Восстановление управляемых дисков Azure](restore-managed-disks.md)

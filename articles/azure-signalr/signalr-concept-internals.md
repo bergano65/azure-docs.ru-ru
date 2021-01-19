@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 3fc6971c66d06ae9f25584f5be28b051075bfa49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: afb63b76666f47217f9c19376d81aa4ed73991bf
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88921976"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572567"
 ---
 # <a name="azure-signalr-service-internals"></a>Внутренние компоненты службы Azure SignalR
 
@@ -42,7 +42,7 @@ ms.locfileid: "88921976"
 - Для ASP.NET Core SignalR пакет SDK Службы Azure SignalR открывает 5 подключений WebSocket на один концентратор Службы SignalR. 
 - Для ASP.NET SignalR пакет SDK Службы Azure SignalR открывается 5 подключений WebSocket на один концентратор Службы SignalR и одно для подключения WebSocket приложения.
 
-5 подключений WebSocket — это значение по умолчанию, которое можно изменить в [конфигурации](https://github.com/Azure/azure-signalr/blob/dev/docs/use-signalr-service.md#connectioncount).
+5 подключений WebSocket — это значение по умолчанию, которое можно изменить в [конфигурации](https://github.com/Azure/azure-signalr/blob/dev/docs/run-asp-net-core.md#connectioncount).
 
 Исходящие и входящие сообщения клиентов будут мультиплексироваться в эти подключениях.
 

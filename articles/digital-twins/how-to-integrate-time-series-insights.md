@@ -4,21 +4,21 @@ titleSuffix: Azure Digital Twins
 description: См. статью Настройка маршрутов событий из Azure Digital двойников в службу "аналитика временных рядов Azure".
 author: alexkarcher-msft
 ms.author: alkarche
-ms.date: 7/14/2020
+ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: f776482c684004c8d661f69d8158ba9597c923b2
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 24b4f56e5798acc4d9bd0962be7059a359958645
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127043"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573247"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Интеграция Azure Digital двойников со службой "аналитика временных рядов Azure"
 
 В этой статье вы узнаете, как интегрировать Azure Digital двойников со службой ["аналитика временных рядов Azure" (TSI)](../time-series-insights/overview-what-is-tsi.md).
 
-Решение, описанное в этой статье, позволит собирать и анализировать исторические данные о решении IoT. Azure Digital двойников отлично подходит для передачи данных в службу "аналитика временных рядов", так как позволяет сопоставлять несколько потоков данных и стандартизировать информацию перед их отправкой в службу "аналитика временных рядов". 
+Решение, описанное в этой статье, позволит собирать и анализировать исторические данные о решении IoT. Azure Digital Twins отлично подходит для передачи данных в Аналитику временных рядов, так как позволяет сопоставлять несколько потоков данных и стандартизировать информацию перед отправкой в Аналитику временных рядов. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,31 +38,28 @@ ms.locfileid: "98127043"
     :::column-end:::
 :::row-end:::
 
-## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Создание маршрута и фильтрация для двойника уведомлений об обновлении
+## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Создание маршрута и фильтра для уведомлений об обновлении цифрового двойника
 
 Экземпляры Azure Digital двойников могут создавать [события обновления двойника](how-to-interpret-event-data.md) при каждом обновлении состояния двойника. В этом разделе вы создадите [**маршрут событий**](concepts-route-events.md) Azure Digital двойников, который будет направлять эти события обновления в [концентраторы событий](../event-hubs/event-hubs-about.md) Azure для дальнейшей обработки.
 
 Руководство по работе с цифровыми Двойниковми Azure [*: подключение к комплексному решению*](./tutorial-end-to-end.md) с использованием термометра для обновления атрибута температуры цифрового двойника, представляющего комнату. Этот шаблон основан на обновлениях двойника, а не на пересылке телеметрических данных с устройства IoT, что дает вам возможность изменить базовый источник, не требуя обновления логики "аналитика временных рядов".
 
-1. Сначала создайте пространство имен концентратора событий, которое будет принимать события из своего экземпляра Azure Digital двойников. Вы можете использовать приведенные ниже инструкции Azure CLI или воспользоваться портал Azure: [*Краткое руководство. Создание концентратора событий с помощью портал Azure*](../event-hubs/event-hubs-create.md).
+1. Сначала создайте пространство имен концентратора событий, которое будет принимать события из вашего экземпляра Digital двойников для Azure. Вы можете использовать приведенные ниже инструкции Azure CLI или воспользоваться портал Azure: [*Краткое руководство. Создание концентратора событий с помощью портал Azure*](../event-hubs/event-hubs-create.md). Чтобы узнать, какие регионы поддерживают концентраторы событий, посетите страницу [*продукты Azure, доступные по регионам*](https://azure.microsoft.com/global-infrastructure/services/?products=event-hubs).
 
     ```azurecli-interactive
-    # Create an Event Hubs namespace. Specify a name for the Event Hubs namespace.
-    az eventhubs namespace create --name <name for your Event Hubs namespace> --resource-group <resource group name> -l <region, for example: East US>
+    az eventhubs namespace create --name <name for your Event Hubs namespace> --resource-group <resource group name> -l <region>
     ```
 
-2. Создайте концентратор событий в пространстве имен.
+2. Создайте концентратор событий в пространстве имен для получения событий изменения двойника. Укажите имя концентратора событий.
 
     ```azurecli-interactive
-    # Create an event hub to receive twin change events. Specify a name for the event hub. 
     az eventhubs eventhub create --name <name for your Twins event hub> --resource-group <resource group name> --namespace-name <Event Hubs namespace from above>
     ```
 
-3. Создайте [правило авторизации](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) с разрешениями Send и Receive.
+3. Создайте [правило авторизации](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) с разрешениями Send и Receive. Укажите имя правила.
 
     ```azurecli-interactive
-    # Create an authorization rule. Specify a name for the rule.
-    az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from above> --eventhub-name <Twins event hub name from above> --name <name for your Twins auth rule>
+        az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from above> --eventhub-name <Twins event hub name from above> --name <name for your Twins auth rule>
     ```
 
 4. Создайте [конечную точку](concepts-route-events.md#create-an-endpoint) цифрового двойников Azure, которая связывает концентратор событий с экземпляром Azure Digital двойников.
@@ -71,7 +68,7 @@ ms.locfileid: "98127043"
     az dt endpoint create eventhub --endpoint-name <name for your Event Hubs endpoint> --eventhub-resource-group <resource group name> --eventhub-namespace <Event Hubs namespace from above> --eventhub <Twins event hub name from above> --eventhub-policy <Twins auth rule from above> -n <your Azure Digital Twins instance name>
     ```
 
-5. Создайте [маршрут](concepts-route-events.md#create-an-event-route) в Azure Digital двойников, чтобы отправить события обновления двойника в конечную точку. Фильтр в этом маршруте позволит передавать только сообщения обновления двойника в конечную точку.
+5. Создайте [маршрут](concepts-route-events.md#create-an-event-route) в Azure Digital Twins для отправки событий обновления цифрового двойника в конечную точку. Фильтр в этом маршруте позволит передавать только сообщения обновления двойника в конечную точку.
 
     >[!NOTE]
     >В Cloud Shell присутствует **известная проблема**, которая затрагивает такие группы команд: `az dt route`, `az dt model`, `az dt twin`.
@@ -86,7 +83,7 @@ ms.locfileid: "98127043"
 
 ## <a name="create-a-function-in-azure"></a>создавать функции в Azure;
 
-Далее вы будете использовать функции Azure для создания функции, активируемой концентраторами событий, внутри приложения-функции. Вы можете использовать приложение-функцию, созданное в комплексном учебнике ([*руководство по подключению комплексного решения*](./tutorial-end-to-end.md)) или к своему собственному интерфейсу. 
+Далее вы будете использовать функции Azure для создания функции, **активируемой концентраторами событий** , внутри приложения-функции. Вы можете использовать приложение-функцию, созданное в комплексном учебнике ([*руководство по подключению комплексного решения*](./tutorial-end-to-end.md)) или к своему собственному интерфейсу. 
 
 Эта функция преобразует события обновления двойника из их исходной формы в документы исправления JSON в объекты JSON, содержащие только обновленные и добавленные значения из двойников.
 
@@ -100,9 +97,9 @@ ms.locfileid: "98127043"
 
 Позже вы также настроите некоторые переменные среды, которые эта функция будет использовать для подключения к вашим концентраторам событий.
 
-## <a name="send-telemetry-to-an-event-hub"></a>Отправка данных телеметрии в концентратор событий
+## <a name="send-telemetry-to-an-event-hub"></a>Отправка телеметрии в Центр событий
 
-Теперь вы создадите второй концентратор событий и настроите функцию для потоковой передачи выходных данных в этот концентратор событий. Затем этот концентратор событий будет подключен к службе "аналитика временных рядов".
+Теперь вы создадите второй концентратор событий и настроите функцию для потоковой передачи выходных данных в этот концентратор событий. Затем этот Центр событий будет подключен к Аналитике временных рядов.
 
 ### <a name="create-an-event-hub"></a>Создание концентратора событий
 
@@ -110,22 +107,22 @@ ms.locfileid: "98127043"
 
 1. Подготовьте *пространство имен концентраторов событий* и имя *группы ресурсов* из ранее в этой статье.
 
-2. Создание нового концентратора событий
+2. Создайте новый концентратор событий. Укажите имя концентратора событий.
+
     ```azurecli-interactive
-    # Create an event hub. Specify a name for the event hub. 
     az eventhubs eventhub create --name <name for your TSI event hub> --resource-group <resource group name from earlier> --namespace-name <Event Hubs namespace from earlier>
     ```
-3. Создание [правила авторизации](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) с разрешениями Send и Receive
+3. Создайте [правило авторизации](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) с разрешениями Send и Receive. Укажите имя правила.
+
     ```azurecli-interactive
-    # Create an authorization rule. Specify a name for the rule.
-    az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from earlier> --eventhub-name <TSI event hub name from above> --name <name for your TSI auth rule>
+        az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from earlier> --eventhub-name <TSI event hub name from above> --name <name for your TSI auth rule>
     ```
 
 ## <a name="configure-your-function"></a>Настройка функции
 
 Далее необходимо задать в приложении функции переменные среды, которые содержат строки подключения для созданных концентраторов событий.
 
-### <a name="set-the-twins-event-hub-connection-string"></a>Задание строки подключения концентратора событий двойников
+### <a name="set-the-twins-event-hub-connection-string"></a>Задание строки подключения Центра событий цифрового двойника
 
 1. Получите [строку подключения концентратора событий](../event-hubs/event-hubs-get-connection-string.md)двойников, используя правила авторизации, созданные ранее для центра двойников.
 
@@ -133,13 +130,13 @@ ms.locfileid: "98127043"
     az eventhubs eventhub authorization-rule keys list --resource-group <resource group name> --namespace-name <Event Hubs namespace> --eventhub-name <Twins event hub name from earlier> --name <Twins auth rule from earlier>
     ```
 
-2. Используйте строку подключения в качестве результата, чтобы создать параметр приложения в приложении-функции, который содержит строку подключения:
+2. Используйте полученную строку подключения для создания параметра приложения в приложении-функции, содержащей строку подключения:
 
     ```azurecli-interactive
     az functionapp config appsettings set --settings "EventHubAppSetting-Twins=<Twins event hub connection string>" -g <resource group> -n <your App Service (function app) name>
     ```
 
-### <a name="set-the-time-series-insights-event-hub-connection-string"></a>Настройка строки подключения концентратора событий "аналитика временных рядов"
+### <a name="set-the-time-series-insights-event-hub-connection-string"></a>Задание строки подключения Центра событий Аналитики временных рядов
 
 1. Получите [строку подключения концентратора событий](../event-hubs/event-hubs-get-connection-string.md)TSI, используя правила авторизации, созданные ранее для центра "аналитика временных рядов".
 
@@ -147,13 +144,13 @@ ms.locfileid: "98127043"
     az eventhubs eventhub authorization-rule keys list --resource-group <resource group name> --namespace-name <Event Hubs namespace> --eventhub-name <TSI event hub name> --name <TSI auth rule>
     ```
 
-2. В приложении функции создайте параметр приложения, содержащий строку подключения:
+2. В приложении-функции создайте параметр приложения, содержащий строку подключения:
 
     ```azurecli-interactive
     az functionapp config appsettings set --settings "EventHubAppSetting-TSI=<TSI event hub connection string>" -g <resource group> -n <your App Service (function app) name>
     ```
 
-## <a name="create-and-connect-a-time-series-insights-instance"></a>Создание и подключение экземпляра Time Series Insights
+## <a name="create-and-connect-a-time-series-insights-instance"></a>Создание и подключение экземпляра Аналитики временных рядов
 
 Далее вы настроите экземпляр Time Series Insights для получения данных из второго концентратора событий. Выполните приведенные ниже действия и дополнительные сведения об этом процессе см. в разделе [*учебник. Настройка среды Gen2 PAYG для службы "аналитика временных рядов Azure"*](../time-series-insights/tutorials-set-up-tsi-environment.md).
 
@@ -173,7 +170,7 @@ ms.locfileid: "98127043"
 
 Если вы используете полное руководство ([*руководство по подключению комплексного решения*](tutorial-end-to-end.md)) для помощи в настройке среды, можно начать отправку смоделированных данных IOT, запустив проект *девицесимулатор* из примера. Инструкции см. в разделе [*Настройка и запуск модели моделирования*](tutorial-end-to-end.md#configure-and-run-the-simulation) руководства.
 
-## <a name="visualize-your-data-in-time-series-insights"></a>Визуализация данных в Time Series Insights
+## <a name="visualize-your-data-in-time-series-insights"></a>Визуализация данных в Аналитике временных рядов
 
 Теперь данные должны передаваться в экземпляр "аналитика временных рядов", готовый для анализа. Выполните следующие действия, чтобы просмотреть данные, поступающие в.
 
@@ -193,7 +190,7 @@ ms.locfileid: "98127043"
     
     :::image type="content" source="media/how-to-integrate-time-series-insights/day-data.png" alt-text="Данные температуры для каждого двойника отображаются в виде трех параллельных линий различных цветов.":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Цифровые двойников по умолчанию хранятся в виде плоской иерархии в службе "аналитика временных рядов", но их можно расширить с помощью сведений о модели и многоуровневого дерева для Организации. Дополнительные сведения об этом процессе см. в следующих статье: 
 

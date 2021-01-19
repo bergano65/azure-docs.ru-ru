@@ -4,16 +4,16 @@ titleSuffix: Azure Digital Twins
 description: Узнайте, как использовать функции Azure для создания функции, которая может использовать двойника Graph и уведомления Azure Digital двойников для обновления карт Azure Maps.
 author: alexkarcher-msft
 ms.author: alkarche
-ms.date: 6/3/2020
+ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 24487d3028b90d28f302a6f259096ba68c964541
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 6a654f74ff6a32ad37646021d504359c84942c12
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222128"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573043"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Использование Azure Digital двойников для обновления карт Azure Maps
 
@@ -72,7 +72,7 @@ ms.locfileid: "98222128"
 
 ## <a name="create-a-function-to-update-maps"></a>Создание функции для обновления карт
 
-Вы создадите *функцию, активируемую с* помощью функции "Сетка событий" в приложении-функции, из комплексного учебника ([*Учебник: подключение комплексного решения*](./tutorial-end-to-end.md)). Эта функция выполнит распаковку этих уведомлений и отправит обновления в Azure Maps наборе состояний компонентов, чтобы обновить температуру одной комнаты. 
+Вы создадите **функцию, активируемую с** помощью функции "Сетка событий" в приложении-функции, из комплексного учебника ([*Учебник: подключение комплексного решения*](./tutorial-end-to-end.md)). Эта функция выполнит распаковку этих уведомлений и отправит обновления в Azure Maps наборе состояний компонентов, чтобы обновить температуру одной комнаты.
 
 Справочные сведения см. в следующем документе: триггер службы " [*Сетка событий Azure" для функций Azure*](../azure-functions/functions-bindings-event-grid-trigger.md).
 
@@ -109,7 +109,7 @@ az functionapp config appsettings set --name <your-App-Service-(function-app)-na
 
 В зависимости от конфигурации топологии вы сможете хранить эти три атрибута на разных уровнях, соотнесенных с степенью детализации вашей схемы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об управлении, обновлении и извлечении данных из графа двойников см. в следующих статьях:
 
