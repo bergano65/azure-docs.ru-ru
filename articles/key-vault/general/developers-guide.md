@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: b7980bfc58ed696a74d3da259e23fb7e428621a9
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: e92b17a5743e983ca3e77ad18c0973b9f056dfbd
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028919"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611174"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "98028919"
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault)<br>[Краткое руководство](quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/)|[Ссылки](/azure/templates/microsoft.keyvault/vaults)|[Ссылки](/dotnet/api/microsoft.azure.management.keyvault)<br>[Краткое руководство](https://docs.microsoft.com/azure/key-vault/general/vault-create-template)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Ссылки](/java/api/com.microsoft.azure.management.keyvault)|[Ссылки](/javascript/api/@azure/arm-keyvault)|
+|[Ссылки](/cli/azure/keyvault)<br>[Краткое руководство](quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/)|[Ссылки](/azure/templates/microsoft.keyvault/vaults)<br>[Краткое руководство](https://docs.microsoft.com/azure/key-vault/general/vault-create-template)|[Ссылки](/dotnet/api/microsoft.azure.management.keyvault)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Ссылки](/java/api/com.microsoft.azure.management.keyvault)|[Ссылки](/javascript/api/@azure/arm-keyvault)|
 
 См. раздел [клиентские библиотеки](client-libraries.md) для пакетов установки и исходный код.
 
@@ -67,7 +67,7 @@ Key Vault использует проверку подлинности Azure AD,
 
 Дополнительные сведения о либарари Azure Identity Client см. в следующих статьях:
 
-### <a name="azure-identity-client-libraries"></a>Клиентские библиотеки Azure Identity
+**Клиентские библиотеки Azure Identity**
 
 | .NET | Python | Java | JavaScript |
 |--|--|--|--|
@@ -85,22 +85,19 @@ Key Vault использует проверку подлинности Azure AD,
 
 Доступом к ключам, секретам и сертификатам управляет плоскость данных. Управление доступом к плоскости данных можно выполнить с помощью политик доступа к локальному хранилищу или Azure RBAC (Предварительная версия).
 
-**Ключи API и пакеты SDK**
-
+**API ключей и пакеты SDK**
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
 |[Ссылки](/cli/azure/keyvault/key)<br>[Краткое руководство](../keys/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault/)<br>[Краткое руководство](../keys/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#key-operations)|[Ссылки](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/keys)<br>[Краткое руководство](../keys/quick-create-template.md)|[Ссылки](/dotnet/api/azure.security.keyvault.keys)<br>[Краткое руководство](../keys/quick-create-net.md)|[Ссылки](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Краткое руководство](../keys/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)<br>[Краткое руководство](../keys/quick-create-java.md)|[Ссылки](/javascript/api/@azure/keyvault-keys/)<br>[Краткое руководство](../keys/quick-create-node.md)|
 
-**Интерфейсы API и пакеты SDK для сертификатов**
-
+**API-интерфейсы и пакеты SDK для сертификатов**
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|
-|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Недоступно|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)<br>[Краткое руководство](../certificates/quick-create-net.md)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)<br>[Краткое руководство](../certificates/quick-create-java.md)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)<br>[Краткое руководство](../certificates/quick-create-node.md)|
+|[Ссылки](/cli/azure/keyvault/certificate)<br>[Краткое руководство](../certificates/quick-create-cli.md)|[Ссылки](/powershell/module/az.keyvault)<br>[Краткое руководство](../certificates/quick-create-powershell.md)|[Ссылки](/rest/api/keyvault/#certificate-operations)|Н/Д|[Ссылки](/dotnet/api/azure.security.keyvault.certificates)<br>[Краткое руководство](../certificates/quick-create-net.md)|[Ссылки](/python/api/overview/azure/keyvault-certificates-readme)<br>[Краткое руководство](../certificates/quick-create-python.md)|[Ссылки](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)<br>[Краткое руководство](../certificates/quick-create-java.md)|[Ссылки](/javascript/api/@azure/keyvault-certificates/)<br>[Краткое руководство](../certificates/quick-create-node.md)|
 
 **Секреты API и пакеты SDK**
-
 
 | Azure CLI | PowerShell | REST API | Resource Manager | .NET | Python | Java | JavaScript |  
 |--|--|--|--|--|--|--|--|

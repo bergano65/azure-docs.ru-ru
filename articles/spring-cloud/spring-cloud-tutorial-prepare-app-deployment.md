@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 5d160c46b235c6890426cab9de52ec7b827efe4a
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 37753265afa7e76e87dbcdc5893595bea66798f4
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750719"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610256"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
@@ -146,40 +146,14 @@ Azure Spring Cloud поддерживает только приложения Sp
 
 Версия Spring Boot | Версия Spring Cloud
 ---|---
-2.1 | Greenwich.RELEASE
 2.2 | Хокстон. SR8
 2.3 | Хокстон. SR8
+2.4.1 + | 2020.0.0
 
 > [!NOTE]
-> Мы обнаружили проблему с пружинной загрузкой 2,4 при проверке подлинности TLS между вашими приложениями и Еурека и сейчас работаем над тем, чтобы разрешить его. Для решения этой проблемы обратитесь к нашим [часто задаваемым](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) вопросам.
+> Обнаружена ошибка с пружинным загрузкой 2.4.0 при проверке подлинности TLS между приложениями и Еурека, используйте 2.4.1 или более позднюю версию. Если вы настаиваете на использовании 2.4.0, обратитесь к нашим [часто задаваемым](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) вопросам.
 
-### <a name="dependencies-for-spring-boot-version-21"></a>Зависимости для Spring Boot версии 2.1
-
-Для Spring Boot версии 2.1 добавьте следующие зависимости в файл POM приложения.
-
-```xml
-    <!-- Spring Boot dependencies -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.12.RELEASE</version>
-    </parent>
-
-    <!-- Spring Cloud dependencies -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-```
-
-### <a name="dependencies-for-spring-boot-version-22"></a>Зависимости для Spring Boot версии 2.2
+### <a name="dependencies-for-spring-boot-version-2223"></a>Зависимости для пружинной загрузки версии 2.2/2.3
 
 Для Spring Boot версии 2.2 добавьте следующие зависимости в файл POM приложения.
 
@@ -204,16 +178,17 @@ Azure Spring Cloud поддерживает только приложения Sp
         </dependencies>
     </dependencyManagement>
 ```
-### <a name="dependencies-for-spring-boot-version-23"></a>Зависимости для пружинной загрузки, версия 2,3
 
-Для пружинной загрузки версии 2,3 Добавьте следующие зависимости в файл POM приложения.
+### <a name="dependencies-for-spring-boot-version-24"></a>Зависимости для пружинной загрузки, версия 2,4
+
+Для Spring Boot версии 2.2 добавьте следующие зависимости в файл POM приложения.
 
 ```xml
     <!-- Spring Boot dependencies -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.4.1.RELEASE</version>
     </parent>
 
     <!-- Spring Cloud dependencies -->
@@ -222,34 +197,14 @@ Azure Spring Cloud поддерживает только приложения Sp
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR8</version>
+                <version>2020.0.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 ```
-## <a name="azure-spring-cloud-client-dependency"></a>Зависимость клиента Azure Spring Cloud
 
-Azure Spring Cloud размещает компоненты Spring Cloud и управляет ими от вашего имени. К ним относятся реестр облачной службы Spring Cloud и сервер конфигурации Spring Cloud. Рекомендуется использовать пружинную загрузку 2,2 или 2,3. Для пружинной загрузки 2,1 необходимо включить клиентскую библиотеку Azure "Весна Cloud Client" в зависимости, чтобы обеспечить взаимодействие с экземпляром облачной службы Azure весны.
-
-В следующей таблице перечислены нужные версии Azure Spring Cloud для приложения, в котором используются Spring Boot и Spring Cloud.
-
-Версия Spring Boot | Версия Spring Cloud | Начальная версия облачного клиента Azure весны
----|---|---
-2.1.x | Greenwich.RELEASE | 2.1.2
-2.2. x | Хокстон. SR8 | Не требуется
-2.3. x | Хокстон. SR8 | Не требуется
-
-Если вы используете пружинную загрузку 2,1, включите следующие депенденЦии в файл pom.xml.
-
-```xml
-<dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
-        <version>2.1.2</version>
-</dependency>
-```
 > [!WARNING]
 > Не указывайте `server.port` в конфигурации. В Azure Веснного облака этот параметр будет переопределить с фиксированным номером порта. Также следует учитывать этот параметр и не указывать порт сервера в коде.
 
@@ -329,6 +284,9 @@ public class GatewayApplication {
 
 ### <a name="distributed-tracing"></a>Распределенная трассировка
 
+Также вам нужно включить экземпляр Azure Application Insights для работы с экземпляром службы Azure Spring Cloud. Сведения об использовании Application Insights с Azure Веснным облаком см. в [документации по распределенной трассировке](spring-cloud-tutorial-distributed-tracing.md).
+
+#### <a name="spring-boot-2223"></a>Пружинная Загрузка 2.2/2.3
 Добавьте зависимости `spring-cloud-starter-sleuth` и `spring-cloud-starter-zipkin`, как указано ниже, в раздел зависимостей файла pom.xml.
 
 ```xml
@@ -342,7 +300,15 @@ public class GatewayApplication {
 </dependency>
 ```
 
- Также вам нужно включить экземпляр Azure Application Insights для работы с экземпляром службы Azure Spring Cloud. Сведения об использовании Application Insights с Azure Веснным облаком см. в [документации по распределенной трассировке](spring-cloud-tutorial-distributed-tracing.md).
+#### <a name="spring-boot-24"></a>Пружинная Загрузка 2,4
+Включите следующую `spring-cloud-sleuth-zipkin` зависимость в раздел зависимостей файла pom.xml:
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+</dependency>
+```
 
 ## <a name="see-also"></a>См. также раздел
 * [Анализ журналов и метрик приложений](./diagnostic-services.md)

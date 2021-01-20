@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: cynthn
-ms.openlocfilehash: 4052a9c8614a17c3b5cdd871ad78be8cc3258c5a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 3bacec27f5253741b340688374d64402fdbc2836
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202595"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610392"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>Установка и настройка PostgreSQL в Azure
 PostgreSQL — это расширенная открытая СУБД, аналогичная СУБД Oracle и DB2. Она предлагает возможности корпоративного уровня, обеспечивая полное соответствие принципам ACID, надежную обработку транзакций и управление параллелизмом в разных версиях. Она также поддерживает такие стандарты, как ANSI SQL и SQL/MED (включая оболочки для внешних данных Oracle, MySQL, MongoDB и др.). Высокая расширяемость обеспечивается поддержкой более 12 процедурных языков, индексов GIN и GIST, пространственных данных, различных функций NoSQL для JSON и приложений на основе пары "ключ — значение".
@@ -35,7 +35,7 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 1. Выполните следующую команду, чтобы переключиться на привилегированного пользователя (администратора):
 
     ```console
-    # sudo su -
+    sudo su -
     ```
 
 2. Для некоторых дистрибутивов требуется перед установкой PostgreSQL установить другие программы. Найдите свой дистрибутив в списке и выполните соответствующую команду:
@@ -43,27 +43,27 @@ PostgreSQL — это расширенная открытая СУБД, ана�
    * Linux на базе Red Hat:
 
         ```console
-        # yum install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam  libxslt-devel tcl-devel python-devel -y
+        yum install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam  libxslt-devel tcl-devel python-devel -y
         ```
 
    * Linux на базе Debian:
 
         ```console
-        # apt-get install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam libxslt-devel tcl-devel python-devel -y
+        apt-get install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam libxslt-devel tcl-devel python-devel -y
         ```
 
    * SUSE Linux:
 
         ```console
-        # zypper install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam  libxslt-devel tcl-devel python-devel -y
+        zypper install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam  libxslt-devel tcl-devel python-devel -y
         ```
 
 3. Загрузите PostgreSQL в корневой каталог и распакуйте пакет:
 
     ```console
-    # wget https://ftp.postgresql.org/pub/source/v9.3.5/postgresql-9.3.5.tar.bz2 -P /root/
+    wget https://ftp.postgresql.org/pub/source/v9.3.5/postgresql-9.3.5.tar.bz2 -P /root/
 
-    # tar jxvf  postgresql-9.3.5.tar.bz2
+    tar jxvf  postgresql-9.3.5.tar.bz2
     ```
 
     Выше приведен лишь пример. Более точный адрес для скачивания см. в [индексе каталога /pub/source/](https://ftp.postgresql.org/pub/source/).
@@ -71,15 +71,15 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 4. Чтобы запустить сборку, выполните следующие команды:
 
     ```console
-    # cd postgresql-9.3.5
+    cd postgresql-9.3.5
 
-    # ./configure --prefix=/opt/postgresql-9.3.5
+    ./configure --prefix=/opt/postgresql-9.3.5
     ```
 
 5. Если вы хотите создать все, что можно построить, включая документацию (HTML и man-страницы) и дополнительные модули ( `contrib` ), выполните следующую команду:
 
     ```console
-    # gmake install-world
+    gmake install-world
     ```
 
     Должно появиться следующее подтверждение:
@@ -92,23 +92,23 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 1. (Необязательно) Создайте символьную ссылку на PostgreSQL, исключив номер версии:
 
     ```console
-    # ln -s /opt/postgresql-9.3.5 /opt/pgsql
+    ln -s /opt/postgresql-9.3.5 /opt/pgsql
     ```
 
 2. Создайте каталог для базы данных:
 
     ```console
-    # mkdir -p /opt/pgsql_data
+    mkdir -p /opt/pgsql_data
     ```
 
 3. Создайте непривилегированного пользователя и измените его профиль. Затем переключитесь на этого пользователя (в нашем примере — *postgres* ):
 
     ```console
-    # useradd postgres
+    useradd postgres
    
-    # chown -R postgres.postgres /opt/pgsql_data
+    chown -R postgres.postgres /opt/pgsql_data
    
-    # su - postgres
+    su - postgres
     ```
    
    > [!NOTE]
@@ -135,13 +135,13 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 5. Запустите файл *bash_profile*:
 
     ```console
-    $ source .bash_profile
+    source .bash_profile
     ```
 
 6. Проверьте установку, используя следующую команду:
 
     ```console
-    $ which psql
+    which psql
     ```
 
     Если установка выполнена успешно, появится такой ответ:
@@ -153,13 +153,13 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 7. Вы также можете проверить версию PostgreSQL:
 
     ```sql
-    $ psql -V
+    psql -V
     ```
 
 8. Инициализируйте базу данных:
 
     ```console
-    $ initdb -D $PGDATA -E UTF8 --locale=C -U postgres -W
+    initdb -D $PGDATA -E UTF8 --locale=C -U postgres -W
     ```
 
     Вы должны увидеть следующий результат:
@@ -172,17 +172,17 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 Выполните следующие команды:
 
 ```console
-# cd /root/postgresql-9.3.5/contrib/start-scripts
+cd /root/postgresql-9.3.5/contrib/start-scripts
 
-# cp linux /etc/init.d/postgresql
+cp linux /etc/init.d/postgresql
 ```
 
 Измените две переменные в файле /etc/init.d/postgresql. В качестве префикса задайте путь установки PostgreSQL: **/opt/pgsql**. В качестве значения PGDATA задайте путь к хранилищу данных из PostgreSQL: **/opt/pgsql_data**.
 
 ```config
-# sed -i '32s#usr/local#opt#' /etc/init.d/postgresql
+sed -i '32s#usr/local#opt#' /etc/init.d/postgresql
 
-# sed -i '35s#usr/local/pgsql/data#opt/pgsql_data#' /etc/init.d/postgresql
+sed -i '35s#usr/local/pgsql/data#opt/pgsql_data#' /etc/init.d/postgresql
 ```
 
 ![Снимок экрана, на котором показан префикс установки и каталог данных.](./media/postgresql-install/no2.png)
@@ -190,22 +190,22 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 Сделайте файл исполняемым:
 
 ```console
-# chmod +x /etc/init.d/postgresql
+chmod +x /etc/init.d/postgresql
 ```
 
 Запустите PostgreSQL:
 
 ```console
-# /etc/init.d/postgresql start
+/etc/init.d/postgresql start
 ```
 
 Убедитесь, что конечная точка PostgreSQL включена:
 
 ```console
-# netstat -tunlp|grep 1999
+netstat -tunlp|grep 1999
 ```
 
-Вы должны увидеть следующий результат.
+Вы должны увидеть следующий результат:
 
 ![Снимок экрана, на котором показана конечная точка PostgreSQL.](./media/postgresql-install/no3.png)
 
@@ -213,19 +213,19 @@ PostgreSQL — это расширенная открытая СУБД, ана�
 Снова переключитесь на пользователя postgres:
 
 ```console
-# su - postgres
+su - postgres
 ```
 
 Создайте базу данных Postgres:
 
 ```console
-$ createdb events
+createdb events
 ```
 
 Подключитесь к только что созданной базе данных events:
 
 ```console
-$ psql -d events
+psql -d events
 ```
 
 ## <a name="create-and-delete-a-postgres-table"></a>Создание и удаление таблицы Postgres
@@ -293,7 +293,7 @@ delete from potluck where name=’John’;
 
 Она удалит все данные в строке John. Результат.
 
-![image](./media/postgresql-install/no8.png)
+![Изображение](./media/postgresql-install/no8.png)
 
 ### <a name="update-data-in-a-table"></a>Обновление данных в таблице
 Для обновления данных в таблице используйте следующую команду: Для этого рыже-подтвердил, что они находятся в процессе, поэтому мы изменим RSVP с "N" на "Y":

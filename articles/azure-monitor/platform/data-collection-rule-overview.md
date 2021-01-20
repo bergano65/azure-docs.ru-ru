@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/19/2020
-ms.openlocfilehash: 048068a74151bb986392b5cb27787385fc0f5363
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.date: 01/19/2021
+ms.openlocfilehash: 7013a4ab1becd6108d30d8369f1f72bcb3e55c37
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95315538"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611072"
 ---
 # <a name="data-collection-rules-in-azure-monitor-preview"></a>Правила сбора данных в Azure Monitor (Предварительная версия)
 Правила сбора данных (ДКР) определяют данные, поступающие в Azure Monitor, и указывают, куда должны отправляться или храниться эти данные. В этой статье приводятся общие сведения о правилах сбора данных, включая их содержимое и структуру, а также способах создания и работы с ними.
@@ -53,10 +53,20 @@ ms.locfileid: "95315538"
 
 
 ## <a name="create-a-dcr"></a>Создание ДКР
-В настоящее время существует два доступных метода для создания ДКР:
+В настоящее время для создания ДКР можно использовать любой из следующих методов:
 
 - [Используйте портал Azure](data-collection-rule-azure-monitor-agent.md) , чтобы создать правило сбора данных и связать его с одной или несколькими виртуальными машинами.
 - Непосредственно измените правило сбора данных в JSON и [отправьте его с помощью REST API](/rest/api/monitor/datacollectionrules).
+- Создание ДКР и взаимосвязей с [Azure CLI](https://github.com/Azure/azure-cli-extensions/blob/master/src/monitor-control-service/README.md).
+- Создание ДКР и взаимосвязей с Azure PowerShell.
+  - [Get-Аздатаколлектионруле](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzDataCollectionRule.md)
+  - [New-Аздатаколлектионруле](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRule.md)
+  - [Set-Аздатаколлектионруле](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDataCollectionRule.md)
+  - [Update-Аздатаколлектионруле](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Update-AzDataCollectionRule.md)
+  - [Remove-Аздатаколлектионруле](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzDataCollectionRule.md)
+  - [Get-АздатаколлектионрулеассоЦиатион](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzDataCollectionRuleAssociation.md)
+  - [New-АздатаколлектионрулеассоЦиатион](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md)
+  - [Remove-АздатаколлектионрулеассоЦиатион](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzDataCollectionRuleAssociation.md)
 
 ## <a name="sample-data-collection-rule"></a>Правило сбора образцов данных
 Приведенное ниже правило сбора образцов данных предназначено для виртуальных машин с агентом управления Azure и содержит следующие сведения.

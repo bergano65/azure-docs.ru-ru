@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: b53501bf5aa4bafb0229158edfe0cb244116b909
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 89685d1b8c3a57fa142bbbfd1114f9aa0ff0c400
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600855"
+ms.locfileid: "98611123"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Часто задаваемые вопросы о стандарте защиты Azure от атак DDoS
 
@@ -79,4 +79,7 @@ Azure от атак DDoS Protection Standard, в сочетании с реко�
 
 ## <a name="how-long-does-it-take-for-the-metrics-to-load-on-portal"></a>Сколько времени займет загрузка метрик на портал?
 Метрики должны отображаться на портале в течение 5 минут. Если ресурс находится под угрозой, другие метрики начнут отображаться на портале в течение 5-7 минут. 
+
+## <a name="does-the-service-store-customer-data"></a>Хранит ли служба данные клиента?
+Нет, Azure от атак DDoS Protection не хранит данные клиента.
     

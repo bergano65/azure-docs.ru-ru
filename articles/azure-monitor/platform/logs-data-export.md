@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 8e310ea487818f6d82869fe1973c8e9ed0b04195
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: d9ae9cae1a0a8014f007cd7c4a3d1f97f27128bb
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797117"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610970"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -35,13 +35,16 @@ Log Analytics экспорт данных рабочей области непр
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- В настоящее время настройку можно выполнять только с помощью запросов CLI или интерфейса RESTFUL. Нельзя использовать портал Azure или PowerShell.
+- Конфигурацию можно выполнить с помощью запросов CLI или RESTFUL в настоящее время. Портал Azure или PowerShell еще не поддерживаются.
 - ```--export-all-tables```Параметр в интерфейсе командной строки и интерфейсе RESTful не поддерживается и будет удален. Необходимо явно указать список таблиц в правилах экспорта.
-- Поддерживаемые таблицы в настоящее время ограничиваются указанными в разделе [Поддерживаемые таблицы](#supported-tables) ниже. Если правило экспорта данных включает неподдерживаемую таблицу, операция будет выполнена, но данные для этой таблицы не будут экспортированы. Если правило экспорта данных включает таблицу, которая не существует, она завершится ошибкой. ```Table <tableName> does not exist in the workspace.```
+- Поддерживаемые таблицы в настоящее время ограничиваются указанными в разделе [Поддерживаемые таблицы](#supported-tables) ниже. 
+- Если правило экспорта данных включает неподдерживаемую таблицу, операция будет выполнена, но данные для этой таблицы не будут экспортированы, пока не будет поддерживаться таблица. 
+- Если правило экспорта данных включает таблицу, которая не существует, она завершится ошибкой ```Table <tableName> does not exist in the workspace``` .
 - Рабочая область Log Analytics может находиться в любом регионе, за исключением следующих:
   - Северная Швейцария
   - Западная Швейцария
   - регионы Azure для государственных организаций;
+- В рабочей области можно создать два правила экспорта — одно правило для концентратора событий и одно правило для учетной записи хранения.
 - Целевая учетная запись хранения или концентратор событий должны находиться в том же регионе, что и Рабочая область Log Analytics.
 - Имена экспортируемых таблиц не могут содержать более 60 символов для учетной записи хранения и не более 47 символов в концентраторе событий. Таблицы с более длинными именами не будут экспортированы.
 
@@ -58,7 +61,7 @@ Log Analytics экспорт данных рабочей области непр
 ## <a name="data-completeness"></a>Полнота данных
 Экспорт данных продолжит попытки отправки данных в течение 30 минут, когда назначение недоступно. Если он по-прежнему недоступен через 30 минут, данные будут удалены до тех пор, пока назначение не станет доступным.
 
-## <a name="cost"></a>Cost
+## <a name="cost"></a>Стоимость
 В настоящее время дополнительная плата за функцию экспорта данных не взимается. Цены на экспорт данных будут объявлены в будущем и появится уведомление, предоставленное до начала выставления счетов. Если вы решили продолжить использование экспорта данных после периода уведомления, плата будет взиматься по соответствующей ставке.
 
 ## <a name="export-destinations"></a>Экспорт назначений
@@ -115,12 +118,12 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 
 
 ### <a name="create-or-update-data-export-rule"></a>Создать или обновить правило экспорта данных
-Правило экспорта данных определяет экспортируемые данные для набора таблиц в одном месте назначения. Для каждого назначения можно создать правило.
+Правило экспорта данных определяет экспортируемые данные для набора таблиц в одном месте назначения. Для каждого назначения можно создать одно правило.
 
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -402,7 +405,7 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -426,7 +429,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -434,7 +437,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -481,7 +484,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -505,7 +508,7 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -513,7 +516,7 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+Н/Д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -537,7 +540,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -706,7 +709,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | синапсербацевентс | |
 | Системный журнал | Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
 | ThreatIntelligenceIndicator | |
-| Обновление | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
+| Update | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
 | UpdateRunProgress | |
 | UpdateSummary | |
 | Использование | |

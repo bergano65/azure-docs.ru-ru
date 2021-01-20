@@ -4,12 +4,12 @@ description: Используйте Application Insights для монитори
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7aea6c03b0ce35fa0e74c39ff5f94f714447ad6f
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 0d414ce44a8d6ab308bd31f7372bb1c146fac9f5
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920574"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611021"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -334,6 +334,12 @@ server.on("listening", () => {
   appInsights.defaultClient.trackMetric({name: "server startup time", value: duration});
 });
 ```
+
+### <a name="flush"></a>Очистка
+
+По умолчанию данные телеметрии передаются в буфер на 15 секунд перед отправкой на сервер приема. Если приложение имеет короткий срок существования (например, средство CLI), то при завершении работы приложения может потребоваться вручную очистить буферизованную телеметрию `appInsights.defaultClient.flush()` .
+
+Если пакет SDK обнаруживает сбой приложения, он вызывает сброс для вас, `appInsights.defaultClient.flush({ isAppCrashing: true })` . При использовании параметра flush `isAppCrashing` предполагается, что приложение находится в ненормальном состоянии, а не подходит для отправки данных телеметрии. Вместо этого пакет SDK сохраняет все буферизованные данные телеметрии в [постоянное хранилище](./data-retention-privacy.md#nodejs) и позволяет завершить работу приложения. При повторном запуске приложения будет предпринята попытка отправить данные телеметрии, сохраненные в постоянное хранилище.
 
 ### <a name="preprocess-data-with-telemetry-processors"></a>Предварительная обработка данных с помощью обработчиков телеметрии
 

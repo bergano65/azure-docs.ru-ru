@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 93b05a5535b80d0e0d1a07c88aa9b19052f1b703
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: a5cbbed3881433121f5ab811082969bc3c6c4f7f
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562681"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609950"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
 
@@ -102,7 +102,7 @@ Get-Job -Command "New-AzOperationalInsightsCluster*" | Format-List -Property *
 
 **REST**
 
-*Обращение* 
+*Вызов* 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
 Authorization: Bearer <token>
@@ -255,7 +255,7 @@ Get-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Nam
 
 **REST**
 
-*Обращение*
+*Вызов*
 
 ```rest
 GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>?api-version=2020-08-01
@@ -322,7 +322,7 @@ Get-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name"
 
 **REST**
 
-*Обращение*
+*Вызов*
 
   ```rst
   GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -380,7 +380,7 @@ Get-AzOperationalInsightsCluster
 
 **REST**
 
-*Обращение*
+*Вызов*
 
 ```rst
 GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -411,7 +411,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Cl
 
 **REST**
 
-*Обращение*
+*Вызов*
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -434,7 +434,7 @@ Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -Cl
 
 **REST**
 
-*Обращение*
+*Вызов*
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -512,27 +512,25 @@ Remove-AzOperationalInsightsLinkedService -ResourceGroupName {resource-group-nam
 
 - Вы можете связать рабочую область с кластером, а затем удалить ее связь. Число операций ссылок на рабочую область в конкретной рабочей области ограничено 2 в течение 30 дней.
 
-- Ссылка на рабочую область кластера должна быть выполнена только после того, как была выполнена проверка завершения подготовки кластера Log Analytics.  Данные, отправляемые в рабочую область до завершения, будут удалены и не подлежат восстановлению.
-
 - Перемещение кластера в другую группу ресурсов или подписку сейчас не поддерживается.
-
-- Ссылка на рабочую область кластера завершится ошибкой, если она связана с другим кластером.
 
 - В настоящее время защищенное хранилище недоступно в Китае. 
 
-- [Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) настраивается автоматически для кластеров, созданных с 2020 октября в поддерживаемых регионах. Вы можете проверить, настроено ли для кластера двойное шифрование с помощью запроса GET в кластере, и наблюдать за `"isDoubleEncryptionEnabled"` значением свойства — `true` для кластеров с включенным двойным шифрованием. 
-  - При создании кластера и получении сообщения об ошибке "<имя региона> не поддерживает двойное шифрование для кластеров", вы по-прежнему можете создать кластер без двойного шифрования. Добавьте `"properties": {"isDoubleEncryptionEnabled": false}` свойство в текст запроса остальной части.
+- [Двойное шифрование](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) настраивается автоматически для кластеров, созданных с 2020 октября в поддерживаемых регионах. Вы можете проверить, настроено ли для кластера двойное шифрование, отправив запрос GET в кластер и отслеживая, что это `isDoubleEncryptionEnabled` значение `true` для кластеров с включенным двойным шифрованием. 
+  - При создании кластера и получении ошибки "<имя региона> не поддерживает двойное шифрование для кластеров". Вы по-прежнему можете создать кластер без двойного шифрования, добавив `"properties": {"isDoubleEncryptionEnabled": false}` в текст запроса.
   - Параметр двойного шифрования нельзя изменить после создания кластера.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 - Если при создании кластера возникает ошибка конфликта, возможно, кластер был удален за последние 14 дней и он находится в состоянии обратимого удаления. Имя кластера остается зарезервированным в течение периода обратимого удаления, и вы не можете создать новый кластер с таким именем. Имя освобождается после периода обратимого удаления, когда кластер окончательно удаляется.
 
-- Если вы обновляете кластер во время выполнения операции, операция завершится ошибкой.
+- Если вы обновляете кластер, пока кластер находится в состоянии подготовки или обновления, обновление завершится ошибкой.
 
 - Некоторые операции являются длительными и могут занять некоторое время — это создание кластера, обновление ключа кластера и удаление кластера. Проверить состояние операции можно двумя способами.
   - При использовании функции "ОСТАВШАЯся" скопируйте значение Azure-AsyncOperation URL-адрес из ответа и выполните [проверку состояния асинхронных операций](#asynchronous-operations-and-status-check).
   - Отправьте запрос GET в кластер или рабочую область и просмотрите ответ. Например, несвязанная Рабочая область не будет иметь *клустерресаурцеид* в разделе " *компоненты*".
+
+- Ссылка на рабочую область кластера завершится ошибкой, если она связана с другим кластером.
 
 - Сообщения об ошибках
   
