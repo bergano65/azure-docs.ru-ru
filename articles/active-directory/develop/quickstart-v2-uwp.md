@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/07/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:UWP
-ms.openlocfilehash: 0257f4d97e0f6f7cef4907276423d9513568e027
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 4610d4d677d2d340340aab5edcddb658ac32e5e4
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011713"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178215"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
@@ -39,7 +39,7 @@ ms.locfileid: "98011713"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/UwpQuickstartPage/sourceType/docs).
+> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/UwpQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >

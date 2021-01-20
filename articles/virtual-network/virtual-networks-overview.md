@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/03/2020
 ms.author: kumud
-ms.openlocfilehash: 11651b7a76ea0e61f78f3b2f305e39ed621df391
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e1efd02d60ba874178f24da2b441fc122e4a1912
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109323"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218540"
 ---
 # <a name="what-is-azure-virtual-network"></a>Что такое виртуальная сеть Azure?
 
@@ -31,7 +31,7 @@ ms.locfileid: "97109323"
 По умолчанию все ресурсы в виртуальной сети могут устанавливать исходящие подключения к Интернету. Можно также установить входящее подключение к ресурсу, присвоив ему общедоступный IP-адрес, или общедоступный экземпляр Load Balancer. Общедоступный IP-адрес или общедоступную подсистему балансировки нагрузки также можно использовать для управления исходящими подключениями.  См. дополнительные сведения об [исходящих интернет-подключениях](../load-balancer/load-balancer-outbound-connections.md), [общедоступных IP-адресах](virtual-network-public-ip-address.md) и [Load Balancer](../load-balancer/load-balancer-overview.md).
 
 >[!NOTE]
->При использовании только внутреннего экземпляра [Load Balancer (цен. категория "Стандартный")](../load-balancer/load-balancer-standard-overview.md) исходящие подключения будут недоступными, пока вы не настроите для [исходящих подключений](../load-balancer/load-balancer-outbound-connections.md) использование общедоступного IP-адреса уровня экземпляра или общедоступного экземпляра Load Balancer.
+>При использовании только внутреннего экземпляра [Load Balancer (цен. категория "Стандартный")](../load-balancer/load-balancer-overview.md) исходящие подключения будут недоступными, пока вы не настроите для [исходящих подключений](../load-balancer/load-balancer-outbound-connections.md) использование общедоступного IP-адреса уровня экземпляра или общедоступного экземпляра Load Balancer.
 
 ### <a name="communicate-between-azure-resources"></a>Обмен данными между ресурсами Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "97109323"
 
 Сетевой трафик между подсетями можно фильтровать следующими способами:
 
-- **Группы безопасности сети.** Группы безопасности сети и приложения могут содержать несколько правил безопасности относительно входящего и исходящего трафика, что позволяет фильтровать его по исходному и конечному IP-адресу, порту и протоколу. Дополнительные сведения см. в разделах о [группах безопасности сети](security-overview.md#network-security-groups) и [группах безопасности приложений](security-overview.md#application-security-groups).
+- **Группы безопасности сети.** Группы безопасности сети и приложения могут содержать несколько правил безопасности относительно входящего и исходящего трафика, что позволяет фильтровать его по исходному и конечному IP-адресу, порту и протоколу. Дополнительные сведения см. в разделах о [группах безопасности сети](./network-security-groups-overview.md#network-security-groups) и [группах безопасности приложений](./network-security-groups-overview.md#application-security-groups).
 - **Виртуальные сетевые модули.** Виртуальный сетевой модуль представляет собой виртуальную машину, которая выполняет сетевую функцию (например, брандмауэр, оптимизация WAN и др.). Список доступных сетевых виртуальных модулей, которые можно развернуть в виртуальной сети, см. на странице [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances).
 
 ### <a name="route-network-traffic"></a>Маршрутизация сетевого трафика

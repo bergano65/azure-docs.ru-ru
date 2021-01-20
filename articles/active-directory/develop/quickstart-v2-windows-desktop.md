@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 0ffc3b40ecff1a7935eeef7fabfcb332fcd9dc71
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 1cac8ab4ccf23047bd5eb2d15c174a2009f2864a
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017295"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178302"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows
 
@@ -36,7 +36,7 @@ ms.locfileid: "98017295"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs).
+> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >

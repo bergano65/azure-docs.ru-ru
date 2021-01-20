@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: e75bab664bdd0d6a4ac898905226c9956f62b4ff
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: ffa9e7b5685f9a200f6a403045687626f67f66f4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450504"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218303"
 ---
 # <a name="quickstart-use-serverless-sql-pool"></a>Краткое руководство. Использование бессерверного пула SQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "96450504"
 
 Выберите клиент SQL для создания запросов:
 
-- [Azure Synapse Studio](quickstart-synapse-studio.md) — это веб-средство, которое можно использовать для просмотра файлов в хранилище и создания SQL-запросов.
+- [Azure Synapse Studio](./get-started-create-workspace.md) — это веб-средство, которое можно использовать для просмотра файлов в хранилище и создания SQL-запросов.
 - [Azure Data Studio](sql/get-started-azure-data-studio.md) — это клиентское средство, которое позволяет выполнять SQL-запросы и записные книжки в базе данных по запросу.
 - [SQL Server Management Studio](sql/get-started-ssms.md) — это клиентское средство, которое позволяет выполнять SQL-запросы к базе данных по запросу.
 

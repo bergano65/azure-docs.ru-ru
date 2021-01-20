@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 05/19/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 460cca051d743102e734971cf45069362e24c147
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e7ed4ba181d3730ebbea7725451567c93433afb8
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106009"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251103"
 ---
 # <a name="metrics-overview"></a>Общие сведения о метриках
 
@@ -30,7 +30,7 @@ ms.locfileid: "97106009"
 
 Метрики запросов API чата и SMS содержат три измерения, которые можно использовать для фильтрации данных метрик. Эти измерения можно объединить вместе, используя тип статистической обработки `Count` и поддерживать все стандартные временные ряды статистической обработки Azure, в том числе `Sum`, `Average`, `Min` и `Max`.
 
-Дополнительные сведения о поддерживаемых типах агрегирования и агрегированиях временных рядов можно найти в статье [Дополнительные функции обозревателя метрик Azure](../../azure-monitor/platform/metrics-charts.md#changing-aggregation)
+Дополнительные сведения о поддерживаемых типах агрегирования и агрегированиях временных рядов можно найти в статье [Дополнительные функции обозревателя метрик Azure](../../azure-monitor/platform/metrics-charts.md#aggregation)
 
 - **Operation**. Все операции или маршруты, которые могут быть вызваны в шлюзе чата ACS.
 - **Status Code**. Ответ кода состояния, отправленный после запроса.

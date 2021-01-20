@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/09/2020
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7dabf94c711972f9fe543edac0d7b95469fc2d35
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 07fadd7b3129b3ca3351e0416c8aa6f49de82212
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661109"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201235"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application-using-azure-cli"></a>Краткое руководство. Создание профиля диспетчера трафика для высокодоступного веб-приложения с помощью Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "94661109"
 - Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
-Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
@@ -47,7 +47,7 @@ ms.locfileid: "94661109"
 
 ## <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 
-С помощью команды [az network traffic-manager profile create](https://docs.microsoft.com/cli/azure/network/traffic-manager/profile?view=azure-cli-latest#az-network-traffic-manager-profile-create) создайте профиль диспетчера трафика, который направляет пользовательский трафик на основании приоритета конечной точки.
+С помощью команды [az network traffic-manager profile create](/cli/azure/network/traffic-manager/profile?view=azure-cli-latest#az-network-traffic-manager-profile-create) создайте профиль диспетчера трафика, который направляет пользовательский трафик на основании приоритета конечной точки.
 
 В следующем примере замените **<profile_name>** уникальным именем профиля диспетчера трафика.
 
@@ -70,7 +70,7 @@ az network traffic-manager profile create \
 Для этого краткого руководства необходимо развернуть два экземпляра веб-приложения в разных регионах Azure (*восточная часть США* и *Западная Европа*). Каждый будет использоваться в качестве основных конечных точек и конечных точек отработки отказа для диспетчера трафика.
 
 ### <a name="create-web-app-service-plans"></a>Создание планов службы веб-приложений
-С помощью команды [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) создайте планы службы веб-приложений для двух экземпляров веб-приложения, которые будут развернуты в двух разных регионах Azure.
+С помощью команды [az appservice plan create](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) создайте планы службы веб-приложений для двух экземпляров веб-приложения, которые будут развернуты в двух разных регионах Azure.
 
 В следующем примере замените **<appspname_eastus>** и **<appspname_westeurope>** уникальным именем плана службы приложений.
 
@@ -91,7 +91,7 @@ az appservice plan create \
 ```
 
 ### <a name="create-a-web-app-in-the-app-service-plan"></a>Создание веб-приложения в плане службы приложений
-С помощью команды [az webapp create](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) создайте два экземпляра веб-приложения в планах службы приложений в таких регионах Azure, как *восточная часть США* и *Западная Европа*.
+С помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) создайте два экземпляра веб-приложения в планах службы приложений в таких регионах Azure, как *восточная часть США* и *Западная Европа*.
 
 В следующем примере замените **<app1name_eastus>** и **<app2name_westeurope>** уникальными именами приложения, а **<appspname_eastus>** и **<appspname_westeurope>**  — именами, которые использовались для создания планов службы приложений в предыдущем разделе.
 
@@ -110,7 +110,7 @@ az webapp create \
 ```
 
 ## <a name="add-traffic-manager-endpoints"></a>Добавление конечных точек диспетчера трафика
-Чтобы добавить два веб-приложения в качестве конечных точек в профиль диспетчера трафика, используйте команду [az network traffic-manager endpoint create](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-create) и сделайте следующее.
+Чтобы добавить два веб-приложения в качестве конечных точек в профиль диспетчера трафика, используйте команду [az network traffic-manager endpoint create](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-create) и сделайте следующее.
 
 - Определите идентификатор веб-приложения и добавьте веб-приложение в регион Azure *Восточная часть США* как основную конечную точку для маршрутизации всего пользовательского трафика. 
 - Определите идентификатор веб-приложения и добавьте веб-приложение в регион Azure *Западная Европа* как конечную точку отработки отказа. 
@@ -178,7 +178,7 @@ az network traffic-manager endpoint create \
 
 ### <a name="determine-the-dns-name"></a>Определение DNS-имени
 
-Определите DNS-имя профиля диспетчера трафика с помощью команды [az network traffic-manager profile show](https://docs.microsoft.com/cli/azure/network/traffic-manager/profile?view=azure-cli-latest#az-network-traffic-manager-profile-show).
+Определите DNS-имя профиля диспетчера трафика с помощью команды [az network traffic-manager profile show](/cli/azure/network/traffic-manager/profile?view=azure-cli-latest#az-network-traffic-manager-profile-show).
 
 ```azurecli-interactive
 
@@ -196,7 +196,7 @@ az network traffic-manager profile show \
 
     > [!NOTE]
     > В этом кратком сценарии все запросы направляются к основной конечной точке, которой присваивается **Приоритет 1**.
-2. Чтобы просмотреть отработку отказа диспетчера трафика в действии, отключите свой основной сайт с помощью команды [az network traffic-manager endpoint update](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).
+2. Чтобы просмотреть отработку отказа диспетчера трафика в действии, отключите свой основной сайт с помощью команды [az network traffic-manager endpoint update](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).
 
    ```azurecli-interactive
 
@@ -214,7 +214,7 @@ az network traffic-manager profile show \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Закончив работу, удалите группы ресурсов, веб-приложения и все связанные ресурсы с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Закончив работу, удалите группы ресурсов, веб-приложения и все связанные ресурсы с помощью команды [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
 ```azurecli-interactive
 

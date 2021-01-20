@@ -5,26 +5,18 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: c72083f205fae77de366125e666cee479fd46805
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: dbba87be839d7f172d42827698a8e485c2edddd8
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97691983"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256433"
 ---
 ## <a name="prerequisites"></a>Обязательные условия
 
 - Рабочее приложение, [вызывающее Службы коммуникации Azure](../getting-started-with-calling.md).
 - [Развертывание Teams](/deployoffice/teams-install).
 
-## <a name="enable-teams-interoperability"></a>Включение взаимодействия с Teams
-
-Функция взаимодействия с Teams в настоящее время находится на стадии закрытой предварительной версии. Чтобы включить эту функцию для ресурса Служб коммуникации Azure, отправьте сообщение электронной почты [acsfeedback@microsoft.com](mailto:acsfeedback@microsoft.com) с помощью:
-
-1. Идентификатор подписки Azure, которая содержит ресурс Служб коммуникации.
-2. Ваш идентификатор клиента Teams. Самый простой способ получить его — [получить ссылку на команду и поделиться ею](https://support.microsoft.com/office/create-a-link-or-a-code-for-joining-a-team-11b0de3b-9288-4cb4-bc49-795e7028296f).
-
-Для использования этой функции пользователь должен быть членом организации-владельца обеих сущностей.
 
 ## <a name="add-the-teams-ui-controls"></a>Добавление элементов управления пользовательского интерфейса Teams
 

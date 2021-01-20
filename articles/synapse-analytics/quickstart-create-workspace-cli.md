@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 08/25/2020
 ms.author: alehall
 ms.reviewer: jrasnick
-ms.openlocfilehash: 46ab1df1b776bf8dc9d6d917e5394c3efeec0de4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 2658240e670e617f7296881f733ff369b9bf8f87
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659392"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219034"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-cli"></a>Краткое руководство. Создание рабочей области Azure Synapse с помощью Azure CLI
 
@@ -30,7 +30,7 @@ Azure CLI — это интерфейс командной строки Azure д
 - [Учетная запись хранения Azure Data Lake Storage 2-го поколения](../storage/common/storage-account-create.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 
     > [!IMPORTANT]
-    > В рабочей области Azure Synapse должна быть возможность считывать данные в выбранной учетной записи ADLS 2-го поколения и выполнять запись в нее. Кроме того, для любой учетной записи хранения, связываемой в качестве основной учетной записи хранения, при создании учетной записи хранения необходимо включить **иерархическое пространство имен**, как описано на странице [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account). 
+    > В рабочей области Azure Synapse должна быть возможность считывать данные в выбранной учетной записи ADLS 2-го поколения и выполнять запись в нее. Кроме того, для любой учетной записи хранения, связываемой в качестве основной учетной записи хранения, при создании учетной записи хранения необходимо включить **иерархическое пространство имен**, как описано на странице [Создание учетной записи хранения](../storage/common/storage-account-create.md?tabs=azure-portal#create-a-storage-account). 
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 

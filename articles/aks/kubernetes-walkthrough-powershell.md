@@ -3,14 +3,14 @@ title: Краткое руководство. Развертывание кла�
 description: Узнайте, как быстро создать кластер Kubernetes, развернуть приложение и отслеживать производительность в Службе Azure Kubernetes (AKS) с помощью PowerShell.
 services: container-service
 ms.topic: quickstart
-ms.date: 09/11/2020
+ms.date: 01/13/2021
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e5abcf9bfbf661abf5212d94d849d27c25fe9a8d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 41412a4ec95bb9b89df5fded6962965594e823fc
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91461059"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98248519"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-cluster-using-powershell"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes с помощью PowerShell
 
@@ -66,7 +66,7 @@ ResourceId        : /subscriptions/00000000-0000-0000-0000-000000000000/resource
 > При создании кластера AKS для хранения ресурсов AKS автоматически создается вторая группа ресурсов. Дополнительные сведения см. в разделе [Почему с AKS создаются две группы ресурсов?](./faq.md#why-are-two-resource-groups-created-with-aks)
 
 ```azurepowershell-interactive
-New-AzAks -ResourceGroupName myResourceGroup -Name myAKSCluster -NodeCount 1
+New-AzAksCluster -ResourceGroupName myResourceGroup -Name myAKSCluster -NodeCount 1
 ```
 
 Через несколько минут выполнение команды завершается и отображаются сведения о кластере.

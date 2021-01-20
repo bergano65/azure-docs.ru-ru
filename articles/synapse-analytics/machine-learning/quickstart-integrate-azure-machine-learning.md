@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: a5d84b936679cdd5ebd5bec4938d6db7fcb641e7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 800cbf9b7a7fa415452f29b253347188c8917c52
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455507"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219459"
 ---
 # <a name="quickstart-create-a-new-azure-machine-learning-linked-service-in-synapse"></a>Краткое руководство. Создание новой связанной службы машинного обучения Azure в Synapse
 
@@ -22,7 +22,7 @@ ms.locfileid: "96455507"
 
 Например, такая связь с рабочей областью машинного обучения Azure обеспечивает следующие возможности.
 
-- Запуск конвейеров машинного обучения Azure в составе конвейеров Synapse. Дополнительные сведения см. в разделе [выполнение конвейеров машинного обучения Azure](/azure/data-factory/transform-data-machine-learning-service).
+- Запуск конвейеров машинного обучения Azure в составе конвейеров Synapse. Дополнительные сведения см. в разделе [выполнение конвейеров машинного обучения Azure](../../data-factory/transform-data-machine-learning-service.md).
 
 - Наполнение своих данных прогнозами, применяя модель машинного обучения из реестра моделей машинного обучения Azure и выполняя оценку модели в пулах Synapse SQL. Дополнительные сведения см. в статье [Учебник. Мастер оценки моделей машинного обучения для пулов Synapse SQL](tutorial-sql-pool-model-scoring-wizard.md).
 
@@ -30,7 +30,7 @@ ms.locfileid: "96455507"
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Рабочая область Synapse Analytics](../get-started-create-workspace.md) с учетной записью хранения ADLS 2-го поколения, настроенной в качестве хранилища по умолчанию. Необходимо быть **участником для данных BLOB-объектов хранилища** файловой системы ADLS 2-го поколения, с которой вы работаете.
-- [Рабочая область машинного обучения Azure](/azure/machine-learning/how-to-manage-workspace)
+- [Рабочая область машинного обучения Azure](../../machine-learning/how-to-manage-workspace.md)
 - Для создания субъекта-службы и секрета, которые можно использовать для создания связанной службы, необходимы разрешения (или запрос от кого-либо, имеющего разрешения). Обратите внимание, что субъекту-службе необходимо назначить роль участника в рабочей области машинного обучения Azure.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure

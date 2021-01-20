@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 3c03a207e91ae969836e208f4e6bf4ea32086c7d
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: b3ca4f11b02f32e65cf80adc65ec12d25e6e7905
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121330"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573179"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -66,7 +66,7 @@ ms.locfileid: "98121330"
 |Сетка событий Azure| Все общедоступные регионы<br/> Регионы для государственных организаций       |  | GA   <br/> [Создание частной конечной точки для Сетки событий Azure](../event-grid/network-security.md). |
 |Веб-приложения Azure | Все общедоступные регионы      | Поддерживается в планах "Премиум" версий 2 и 3, а также "Премиум " для Функций Azure  | GA   <br/> [Создание частной конечной точки для веб-приложений Azure](./tutorial-private-endpoint-webapp-portal.md).   |
 |Машинное обучение Azure | Все общедоступные регионы    |  | GA   <br/> [Создание частной конечной точки для Машинного обучения Azure](../machine-learning/how-to-configure-private-link.md).   |
-| Служба автоматизации Azure  | Все общедоступные регионы |  | Preview (Предварительный просмотр) </br> [Создание частной конечной точки для службы автоматизации Azure](../automation/how-to/private-link-security.md).| |
+| Служба автоматизации Azure  | Все общедоступные регионы<br/> Регионы для государственных организаций |  | Preview (Предварительный просмотр) </br> [Создание частной конечной точки для службы автоматизации Azure](../automation/how-to/private-link-security.md).| |
 | Центр Интернета вещей Azure | Все общедоступные регионы    |  | GA   <br/> [Создание частной конечной точки для Центра Интернета вещей Azure](../iot-hub/virtual-network-support.md). |
 | Azure SignalR | ВОСТОЧНАЯ ЧАСТЬ США, ЦЕНТРАЛЬНО-ЮЖНАЯ ЧАСТЬ США,<br/>ЗАПАДНАЯ ЧАСТЬ США 2, все регионы Китая      |  | Preview (Предварительный просмотр)   <br/> [Создание частной конечной точки для Службы Azure SignalR](../azure-signalr/howto-private-endpoints.md).   |
 | Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |  | GA   <br/> [Создание частной конечной точки для Azure Monitor](../azure-monitor/platform/private-link-security.md).   | 

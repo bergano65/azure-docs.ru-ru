@@ -7,12 +7,12 @@ ms.author: askaur
 ms.date: 12/08/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: ea66e4295e8228aa382aa29a46fcca8147dcbc98
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 1ad6b7241c7167c6da8952e7db2797fa275b7246
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97578050"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251938"
 ---
 # <a name="quickstart-join-your-chat-app-to-a-teams-meeting"></a>Краткое руководство. Подключение приложения чата к собранию в Teams
 
@@ -29,11 +29,7 @@ ms.locfileid: "97578050"
 
 Пользователь Служб коммуникации, который присоединяется к собранию в Teams в качестве гостевого пользователя, может получить доступ к чату собрания, только когда он присоединится к вызову собрания в Teams. Дополнительные сведения о добавлении пользователя Служб коммуникации в вызов собрания в Teams см. в документации по [взаимодействию с Teams](../voice-video-calling/get-started-teams-interop.md).
 
-Функция взаимодействия с Teams в настоящее время находится на стадии закрытой предварительной версии. Чтобы включить эту функцию для ресурса Служб коммуникации Azure, отправьте сообщение электронной почты на адрес acsfeedback@microsoft.com, указав: 
-1. Идентификатор подписки Azure, которая содержит ресурс Служб коммуникации. 
-2. Ваш идентификатор клиента Teams. Самый простой способ получить его — получить ссылку на команду и поделиться ею. 
-
-Для использования этой функции пользователь должен быть членом организации-владельца обеих сущностей. 
+Для использования этой функции пользователь должен быть членом организации-владельца обеих сущностей.
 
 [!INCLUDE [Join Teams meetings](./includes/meeting-interop-javascript.md)]
 

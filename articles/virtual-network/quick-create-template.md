@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: c9e9ea2e59537a1c0c8e372a766fba3aa9a1b9a0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bc0ac1a6e882f4197828bf79c7989c16b2eb16f7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88122162"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217674"
 ---
 # <a name="quickstart-create-a-virtual-network---resource-manager-template"></a>Краткое руководство. Создание виртуальной сети с использованием шаблона Resource Manager
 
@@ -36,8 +36,8 @@ ms.locfileid: "88122162"
 :::code language="json" source="~/quickstart-templates/101-vnet-two-subnets/azuredeploy.json" range="001-96" highlight="56-92":::
 
 В шаблоне определены такие ресурсы Azure:
-- [**Microsoft.Network/virtualNetworks**](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks): создание виртуальной сети Azure.
--  [**Microsoft.Network/virtualNetworks/subnets**](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks/subnets): создание подсети.
+- [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks): создание виртуальной сети Azure.
+-  [**Microsoft.Network/virtualNetworks/subnets**](/azure/templates/microsoft.network/virtualnetworks/subnets): создание подсети.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
@@ -56,7 +56,7 @@ ms.locfileid: "88122162"
 
 Изучите ресурсы, созданные с помощью виртуальной сети.
 
-Дополнительные сведения о синтаксисе JSON и свойствах для виртуальной сети в шаблоне см. в разделе [Microsoft.Network/virtualNetworks](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks).
+Дополнительные сведения о синтаксисе JSON и свойствах для виртуальной сети в шаблоне см. в разделе [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

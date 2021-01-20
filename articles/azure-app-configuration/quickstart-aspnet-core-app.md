@@ -9,12 +9,12 @@ ms.custom: devx-track-csharp, contperf-fy21q1
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.author: alkemper
-ms.openlocfilehash: d1582cda4b083623daf7bb756d0bc8aa3e74eae8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: d0e564b98ab6331677451afd32a0848e7f5594dd
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033652"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598741"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -70,7 +70,7 @@ dotnet new mvc --no-https --output TestAppConfig
     ```
 
     > [!IMPORTANT]
-    > Некоторые оболочки усекают строки подключения, которые не заключены в кавычки. Убедитесь, что вывод команды `dotnet user-secrets` отображает полную строку подключения. В противном случае повторно выполните команду, заключив строку подключения в кавычки.
+    > Некоторые оболочки усекают строки подключения, которые не заключены в кавычки. Убедитесь, что вывод команды `dotnet user-secrets list` отображает полную строку подключения. В противном случае повторно выполните команду, заключив строку подключения в кавычки.
 
     Диспетчер секретов используется только для локальной проверки веб-приложения. При развертывании приложения в [Службе приложений Azure](https://azure.microsoft.com/services/app-service/web) для хранения строки подключения используйте параметр приложения **Строки подключения** в Службе приложений, а не диспетчер секретов.
 

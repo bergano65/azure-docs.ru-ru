@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2019
 ms.author: duau
-ms.openlocfilehash: 830700fb4a5ac57405877364e9cc4828e5d1a5a4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e2a4db1404709dadb2500df29f3f7acf8787c2b2
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89392550"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185737"
 ---
 # <a name="what-is-traffic-manager"></a>Что такое диспетчер трафика
 Диспетчер трафика Azure — это подсистема балансировки нагрузки трафика на основе DNS, которая позволяет оптимально распределять трафик между службами во всех регионах Azure, обеспечивая высокий уровень доступности и скорости реагирования.
@@ -25,9 +25,9 @@ ms.locfileid: "89392550"
 Диспетчер трафика использует DNS для направления клиентских запросов к наиболее подходящей конечной точке службы в зависимости от метода маршрутизации трафика и работоспособности конечных точек. Конечная точка — это любая служба, размещенная в среде Azure или за ее пределами, с доступом в Интернет. Диспетчер трафика предоставляет целый ряд [методов маршрутизации трафика](traffic-manager-routing-methods.md) и [параметров мониторинга конечных точек](traffic-manager-monitoring.md), подходящих для приложений с различными потребностями и моделями автоматической отработки отказа. Диспетчер трафика устойчив к сбоям, включая сбой всего региона Azure.
 
 >[!NOTE]
-> Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам необходима обработка подключений по протоколу TLS (разгрузка SSL) или обработка прикладного уровня HTTP- или HTTPS-запросов, ознакомьтесь со статьей [Обзор шлюза приложений](../application-gateway/application-gateway-introduction.md). Если вам нужна региональная балансировка нагрузки, ознакомьтесь с [Load Balancer](../load-balancer/load-balancer-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
+> Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам необходима обработка подключений по протоколу TLS (разгрузка SSL) или обработка прикладного уровня HTTP- или HTTPS-запросов, ознакомьтесь со статьей [Обзор шлюза приложений](../application-gateway/overview.md). Если вам нужна региональная балансировка нагрузки, ознакомьтесь с [Load Balancer](../load-balancer/load-balancer-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
 >
-> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
+> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
 
 В Диспетчере трафика предлагаются приведенные ниже функции.
 
@@ -58,10 +58,6 @@ ms.locfileid: "89392550"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [создать профиль диспетчера трафика](traffic-manager-create-profile.md).
+- Узнайте, как [создать профиль диспетчера трафика](./quickstart-create-traffic-manager-profile.md).
 - Узнайте больше о том, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 - Ознакомьтесь с [часто задаваемыми вопросами](traffic-manager-FAQs.md) о диспетчере трафика.
-
-
-
-

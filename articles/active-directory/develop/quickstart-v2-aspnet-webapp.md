@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1
-ms.openlocfilehash: 11c479c6cc8f330a2b3b1edd25bad39321d6ed1c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: dbddf35b0aa1494ef719803fa84cafae04f3ec50
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017550"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178591"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Краткое руководство. Добавление функции входа платформы Microsoft Identity в веб-приложение ASP.NET
 
@@ -38,7 +38,7 @@ ms.locfileid: "98017550"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs).
+> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
@@ -53,7 +53,7 @@ ms.locfileid: "98017550"
 > 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 > 1. Введите **имя** приложения, например `ASPNET-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 > 1. Добавьте `https://localhost:44368/` в поле **URI перенаправления** и выберите **Зарегистрировать**.
-> 1. В области навигации слева в разделе управления выберите **Проверка подлинности**.
+> 1. В разделе **Управление** выберите **Проверка подлинности**.
 > 1. В подразделе **Неявное предоставление** выберите **Токен идентификатора**.
 > 1. Щелкните **Сохранить**.
 

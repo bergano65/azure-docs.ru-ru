@@ -8,12 +8,12 @@ ms.subservice: security
 ms.topic: quickstart
 ms.date: 05/17/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0156a1d7cea477a1725b60a5e1de229e76d2664c
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 90c2584ef56922fc2cd57f445201b63550c485c1
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517994"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200674"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-vm-with-the-azure-cli"></a>Краткое руководство. Создание и шифрование виртуальной машины Windows с помощью Azure CLI
 
@@ -27,7 +27,7 @@ Azure CLI используется для создания ресурсов Azur
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -35,7 +35,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create). В следующем примере создается виртуальная машина с именем *myVM*. В этом примере используются имя администратора *azureuser* и его пароль *myPassword12*.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). В следующем примере создается виртуальная машина с именем *myVM*. В этом примере используются имя администратора *azureuser* и его пароль *myPassword12*.
 
 ```azurecli-interactive
 az vm create \
@@ -63,7 +63,7 @@ az vm create \
 
 ## <a name="create-a-key-vault-configured-for-encryption-keys"></a>Создание Key Vault, настроенного для ключей шифрования
 
-Шифрование дисков Azure хранит ключи шифрования в Azure Key Vault. Создайте Key Vault, используя команду [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create). Чтобы включить в Key Vault возможность хранения ключей шифрования, используйте параметр --enabled-for-disk-encryption.
+Шифрование дисков Azure хранит ключи шифрования в Azure Key Vault. Создайте Key Vault, используя команду [az keyvault create](/cli/azure/keyvault#az-keyvault-create). Чтобы включить в Key Vault возможность хранения ключей шифрования, используйте параметр --enabled-for-disk-encryption.
 > [!Important]
 > Каждый Key Vault должен иметь уникальное имя. В следующем примере показан процесс создания Key Vault с именем *myKV*. Назовите свое хранилище ключей иначе.
 
@@ -73,7 +73,7 @@ az keyvault create --name "myKV" --resource-group "myResourceGroup" --location e
 
 ## <a name="encrypt-the-virtual-machine"></a>Шифрование виртуальной машины
 
-Зашифруйте виртуальную машину, выполнив команду [az vm encryption](/cli/azure/vm/encryption?view=azure-cli-latest) и предоставив уникальное имя хранилища ключей в параметр --disk-encryption-keyvault.
+Зашифруйте виртуальную машину, выполнив команду [az vm encryption](/cli/azure/vm/encryption) и предоставив уникальное имя хранилища ключей в параметр --disk-encryption-keyvault.
 
 ```azurecli-interactive
 az vm encryption enable -g MyResourceGroup --name MyVM --disk-encryption-keyvault myKV

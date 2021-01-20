@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 26905b746efb0bfcc877e0fa8fad797672bb6447
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d0973682a62b17a21557727a8d5eb8fcb7ec7ef1
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483222"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203377"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "96483222"
 | Портал Azure |Выберите расположение из списка при создании виртуальной машины. |
 | Azure PowerShell |Используйте команду [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
 | REST API |Используйте операцию [вывода списка расположений](/rest/api/resources/subscriptions). |
-| Azure CLI |Используйте операцию [az account list-locations](/cli/azure/account?view=azure-cli-latest). |
+| Azure CLI |Используйте операцию [az account list-locations](/cli/azure/account). |
 
 ### <a name="singapore-data-residency"></a>Размещение данных в Сингапуре
 
@@ -61,7 +61,7 @@ ms.locfileid: "96483222"
 
 
 ## <a name="vm-size"></a>Размер виртуальной машины
-Используемый [размер](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) виртуальной машины зависит от рабочей нагрузки, которую требуется выполнить. Позже выбранный размер определяет разные факторы, например вычислительную мощность, объем памяти и хранилища. Azure предлагает широкий спектр размеров для поддержки разных вариантов использования.
+Используемый [размер](../sizes.md) виртуальной машины зависит от рабочей нагрузки, которую требуется выполнить. Позже выбранный размер определяет разные факторы, например вычислительную мощность, объем памяти и хранилища. Azure предлагает широкий спектр размеров для поддержки разных вариантов использования.
 
 Azure взимает [почасовую оплату](https://azure.microsoft.com/pricing/details/virtual-machines/windows/), исходя из размера и операционной системы виртуальной машины. При частичном использовании Azure взимает плату только за использованные минуты. Плата за использование хранилища взимается отдельно.
 
@@ -69,7 +69,7 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 Для подписки Azure предусмотрена [квота](../../azure-resource-manager/management/azure-subscription-service-limits.md) по умолчанию, от которой зависит возможность развертывания большого количества виртуальных машин для проекта. Текущее ограничение для каждой подписки составляет 20 виртуальных машин на регион. Чтобы увеличить квоту, следует отправить [соответствующий запрос в службу поддержки](../../azure-portal/supportability/resource-manager-core-quotas-request.md).
 
 ### <a name="operating-system-disks-and-images"></a>Диски и образы операционной системы
-Для хранения операционной системы и данных виртуальные машины используют [виртуальные жесткие диски](../managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Они также используются для образов, которые доступны для установки операционной системы. 
+Для хранения операционной системы и данных виртуальные машины используют [виртуальные жесткие диски](../managed-disks-overview.md). Они также используются для образов, которые доступны для установки операционной системы. 
 
 Azure предоставляет множество [образов из Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?filters=virtual-machine-images%3Bwindows&page=1) для различных версий и типов операционных систем Windows Server. Образы из Marketplace определяются по издателю, предложению, SKU и версии (обычно указывается последняя версия). Поддерживаются только 64-разрядные операционные системы. Дополнительные сведения о поддерживаемых гостевых операционных системах, ролях и возможностях см. в статье [Поддержка серверного ПО Майкрософт для виртуальных машин Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines).
 
@@ -80,7 +80,7 @@ Azure предоставляет множество [образов из Marketp
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
 | Azure PowerShell |[Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
 | Интерфейсы REST API |[Получение списка издателей образов](/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
-| Azure CLI |[az vm image list-publishers](/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
+| Azure CLI |[az vm image list-publishers](/cli/azure/vm/image). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](/cli/azure/vm/image). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](/cli/azure/vm). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
 
 Вы можете [передать и использовать собственный образ](upload-generalized-managed.md). В этом случае имя издателя, предложение и SKU не используются.
 
@@ -103,7 +103,7 @@ Azure предоставляет множество [образов из Marketp
 | [Виртуальная сеть](../../virtual-network/virtual-networks-overview.md) |Да |Виртуальная машина должна быть подключена к виртуальной сети. |
 | [Общедоступный IP-адрес](../../virtual-network/public-ip-addresses.md) |Нет |Для удаленного доступа к виртуальной машине ей можно назначить общедоступный IP-адрес. |
 | [Сетевой интерфейс](../../virtual-network/virtual-network-network-interface.md) |Да |Для обмена данными в сети виртуальной машине нужен сетевой интерфейс. |
-| [Диски данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |Нет |Виртуальная машина может содержать диски данных для расширения объема ресурсов хранения. |
+| [Диски данных](attach-managed-disk-portal.md) |Нет |Виртуальная машина может содержать диски данных для расширения объема ресурсов хранения. |
 
 
 ## <a name="data-residency"></a>Местонахождение данных

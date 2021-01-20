@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/09/2019
 ms.author: sagonzal
 ms.custom: aaddev, scenarios:getting-started, languages:Java, devx-track-java
-ms.openlocfilehash: efd9730123f7427e97d5494d9790bff2a26c4c4e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 91aa6c96c714bff26ea7e0df5b2b6971c68edec0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011855"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178574"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-java-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт
 
@@ -38,7 +38,7 @@ ms.locfileid: "98011855"
 >
 > ### <a name="option-1-register-and-automatically-configure-your-app-and-then-download-the-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка вашего приложения, а затем скачивание примера кода
 >
-> 1. Перейдите к интерфейсу быстрого запуска [Портал Azure > **Регистрация приложения**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavaQuickstartPage/sourceType/docs).
+> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavaQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям на экране, чтобы скачать автоматически настроенный код приложения.
 >

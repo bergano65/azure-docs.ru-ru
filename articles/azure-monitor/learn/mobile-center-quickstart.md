@@ -3,17 +3,17 @@ title: Мониторинг мобильных приложений с помо�
 description: В этой статье даны инструкции по быстрой настройке мониторинга мобильного приложения с помощью Azure Monitor Application Insights и Центра приложений
 ms.subservice: application-insights
 ms.topic: quickstart
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 06/26/2019
 ms.reviewer: daviste
 ms.custom: mvc
-ms.openlocfilehash: 27b74f99d926bf72bc22f153a8d76deb56646987
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 34c35baf1bd958058bec6642434464711f5e79f6
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993889"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210313"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Анализ мобильного приложения с помощью App Center и Application Insights
 

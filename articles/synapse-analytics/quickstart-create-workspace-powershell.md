@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: alehall
 ms.reviewer: jrasnick
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 005e3a3b717d4b1b8e5eb02b77a1d228908f8707
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 0537d2353d6b372ed19127101c488b872bbc5224
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92210575"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218864"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-powershell"></a>Краткое руководство. Создание рабочей области Azure Synapse с помощью Azure PowerShell
 
@@ -30,9 +30,9 @@ Azure PowerShell — это набор командлетов для управ
 - [Учетная запись хранения Azure Data Lake Storage 2-го поколения](../storage/common/storage-account-create.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 
     > [!IMPORTANT]
-    > В рабочей области Azure Synapse должна быть возможность считывать данные в выбранной учетной записи ADLS 2-го поколения и выполнять запись в нее. Для любой учетной записи хранения, связываемой в качестве основной учетной записи хранения, при создании учетной записи хранения необходимо включить **иерархическое пространство имен** , как описано на странице [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-powershell#create-a-storage-account).
+    > В рабочей области Azure Synapse должна быть возможность считывать данные в выбранной учетной записи ADLS 2-го поколения и выполнять запись в нее. Для любой учетной записи хранения, связываемой в качестве основной учетной записи хранения, при создании учетной записи хранения необходимо включить **иерархическое пространство имен**, как описано на странице [Создание учетной записи хранения](../storage/common/storage-account-create.md?tabs=azure-powershell#create-a-storage-account).
 
-Если вы решили использовать Cloud Shell, дополнительные сведения см. в статье [Обзор Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+Если вы решили использовать Cloud Shell, дополнительные сведения см. в статье [Обзор Azure Cloud Shell](../cloud-shell/overview.md).
 
 ### <a name="install-the-azure-powershell-module-locally"></a>Локальная установка модуля Azure PowerShell
 
