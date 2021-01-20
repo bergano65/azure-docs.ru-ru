@@ -35,6 +35,8 @@
       href: Face-API-How-to-Topics/specify-recognition-model.md
     - name: Указание модели определения лиц
       href: Face-API-How-to-Topics/specify-detection-model.md
+    - name: Уменьшение задержки при использовании службы распознавания лиц
+      href: Face-API-How-to-Topics/how-to-mitigate-latency.md
     - name: Использование функции для увеличения масштаба
       href: Face-API-How-to-Topics/how-to-use-large-scale.md
     - name: Анализ видео в реальном времени

@@ -55,6 +55,8 @@
               href: ./database/security-controls-policy.md
             - name: Базовые средства безопасности
               href: database/security-baseline.md
+            - name: Always Encrypted
+              href: database/always-encrypted-landing.yml
             - name: Azure Defender для SQL
               href: database/azure-defender-for-sql.md
             - name: Расширенная защита от угроз
@@ -255,6 +257,8 @@
               href: database/service-tier-hyperscale.md
             - name: Часто задаваемые вопросы о гипермасштабировании
               href: database/service-tier-hyperscale-frequently-asked-questions-faq.md
+        - name: Планирование затрат и управление ими
+          href: database/cost-management.md
     - name: Краткие руководства
       href: database/quickstart-content-reference-guide.md
       items:
@@ -293,14 +297,16 @@
               href: database/active-geo-replication-configure-portal.md
         - name: Безопасность
           items:
+            - name: Always Encrypted с безопасными анклавами.
+              href: database/always-encrypted-enclaves-getting-started.md
             - name: Настройка безопасности
               href: database/secure-database-tutorial.md
+            - name: Создание пользователей с помощью субъектов-служб
+              href: database/authentication-aad-service-principal-tutorial.md
             - name: Смена ключей BYOK для TDE
               href: database/transparent-data-encryption-byok-key-rotation.md
             - name: Удаление предохранителя TDE
               href: database/transparent-data-encryption-byok-remove-tde-protector.md
-            - name: Создание пользователей с помощью субъектов-служб
-              href: database/authentication-aad-service-principal-tutorial.md
         - name: Перенос данных
           items:
             - name: Миграция с помощью DMS
@@ -371,6 +377,19 @@
               href: database/sql-data-sync-troubleshoot.md
         - name: Безопасность
           items:
+            - name: Always Encrypted
+              href: database/always-encrypted-landing.yml
+            - name: Always Encrypted с безопасными анклавами.
+              href: database/always-encrypted-with-secure-enclaves-landing.yml
+              items:
+                - name: "Настройка и использование Always Encrypted с безопасными анклавами\_>"
+                  href: /sql/relational-databases/security/encryption/configure-always-encrypted-enclaves
+                - name: Планирование использования анклавов Intel SGX и аттестация
+                  href: database/always-encrypted-enclaves-plan.md
+                - name: Включение Intel SGX
+                  href: database/always-encrypted-enclaves-enable-sgx.md
+                - name: Настройка службы "Аттестация Azure"
+                  href: database/always-encrypted-enclaves-configure-attestation.md
             - name: Аудит Azure SQL
               href: database/auditing-overview.md
             - name: Формат журналов аудита
@@ -922,10 +941,12 @@
               href: /sql/relational-databases/database-mail/database-mail?toc=%2fazure%2fazure-sql%2ftoc.json
         - name: Безопасность
           items:
-            - name: Обеспечение безопасности общедоступных конечных точек
-              href: managed-instance/public-endpoint-overview.md
+            - name: Always Encrypted
+              href: database/always-encrypted-landing.yml
             - name: Аудит
               href: managed-instance/auditing-configure.md
+            - name: Обеспечение безопасности общедоступных конечных точек
+              href: managed-instance/public-endpoint-overview.md
             - name: Группы доверия сервера
               href: managed-instance/server-trust-group-overview.md
     - name: Практическое руководство

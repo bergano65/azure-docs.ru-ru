@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5f49d2c918164fa529b12313e000aff5f8893a65
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d691807f673dcd6c8147c9ff18a95c6ce0c88ae6
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201861"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247443"
 ---
 # <a name="tutorial-configure-blink-for-automatic-user-provisioning"></a>Руководство по настройке Blink для автоматической подготовки пользователей
 
@@ -50,7 +50,7 @@ ms.locfileid: "98201861"
 
 ## <a name="setup-blink-for-provisioning"></a>Настройка Blink для подготовки
 
-1. Отправьте [запрос на поддержку](https://support.joinblink.com) или обратитесь в **службу поддержки Blink** по адресу электронной почты support@joinblink.com, чтобы получить токен SCIM. .
+1. Отправьте [запрос на поддержку](https://support.joinblink.com) или обратитесь в **службу поддержки Blink** по адресу электронной почты support@joinblink.com, чтобы получить токен SCIM.
 
 2.  Скопируйте **токен проверки подлинности SCIM**. Его нужно будет ввести на вкладке "Подготовка" в поле "Секретный токен" для приложения Blink на портале Azure.
 
@@ -117,7 +117,23 @@ ms.locfileid: "98201861"
 
 9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Blink. Атрибуты, выбранные как свойства в разделе **Сопоставления**, используются для сопоставления учетных записей пользователей в Blink для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя Blink](media/blink-provisioning-tutorial/new-user-attributes.png)
+   |attribute|Тип|Поддерживается для фильтрации|
+   |---|---|---|
+   |userName|Строка|&check;|
+   |active|Логическое|
+   |title|Строка|
+   |emails[type eq "work"].value|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
+   |phoneNumbers[type eq "mobile"].value|Строка|
+   |externalId|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
+   |urn:ietf:params:scim:schemas:extension:blink:2.0:User:company|Строка|
+   urn:ietf:params:scim:schemas:extension:blink:2.0:User:description|Строка|
+   urn:ietf:params:scim:schemas:extension:blink:2.0:User:location|Строка|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -137,15 +153,23 @@ ms.locfileid: "98201861"
 
 Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
+## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
+После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
+
+* Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+* Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+* Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
+
+
 ## <a name="change-log"></a>Журнал изменений
 
 * 14.01.2021: добавлены пользовательские атрибуты расширения **company**, **description** и **location**.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

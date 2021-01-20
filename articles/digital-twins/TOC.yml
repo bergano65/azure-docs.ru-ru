@@ -129,90 +129,92 @@
               href: troubleshoot-error-403.md
 - name: Справочник
   items:
-    - name: Ограничения службы Digital Twins
-      href: reference-service-limits.md
-    - name: Цены на Digital Twins
-      href: 'https://azure.microsoft.com/pricing/details/digital-twins/'
-    - name: API и SDK
+    - name: Справочник по REST API
+      href: /rest/api/azure-digitaltwins/
+    - name: Пакеты SDK
       items:
-        - name: Справочник по REST API
-          href: /rest/api/azure-digitaltwins/
         - name: Уровень управления
           items:
-            - name: Swagger
+            - name: Пакет SDK для .NET (C#)
+              href: /dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet
+            - name: Пакет SDK для Java
+              href: /azure/developer/java/sdk/
+        - name: Плоскость данных
+          items:
+            - name: Пакет SDK для .NET (C#)
+              href: /dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet
+            - name: Пакет SDK для Java
+              href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-stable
+            - name: Пакет SDK для JavaScript
+              href: /javascript/api/@azure/digital-twins-core/?branch=master&view=azure-node-latest
+            - name: Пакет SDK для Python
+              href: /python/api/azure-digitaltwins-core/azure.digitaltwins.core?view=azure-python
+    - name: CLI Digital Twins
+      href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true
+- name: Ресурсы
+  items:
+    - name: API и SDK
+      items:
+        - name: Уровень управления
+          items:
+            - name: Уровень управления (Swagger)
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/stable'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
               href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/'
-            - name: "Пакет SDK для .NET (C#)\_— справка"
-              href: /dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet
-            - name: "Пакет SDK для .NET (C#)\_— источник"
+            - name: "Пакет SDK для .NET (C#)\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins'
             - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar'
-            - name: "Пакет SDK для Java\_— справочник"
-              href: /azure/developer/java/sdk/
-            - name: "Пакет SDK для Java\_— источник"
+            - name: "Пакет SDK для Java\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31'
-            - name: Пакет SDK для JavaScript
+            - name: "Пакет SDK для JavaScript\_— NPM"
               href: 'https://www.npmjs.com/package/@azure/arm-digitaltwins'
-            - name: "Пакет SDK для JavaScript\_— источник"
+            - name: "Пакет SDK для JavaScript\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins'
             - name: "Пакет SDK для Python\_— PyPi"
               href: 'https://pypi.org/project/azure-mgmt-digitaltwins/'
-            - name: "Пакет SDK для Python\_— источник"
+            - name: "Пакет SDK для Python\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins'
             - name: 'Пакет SDK для Go: GoDoc'
               href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
-            - name: "Go\_— источник"
+            - name: "Go\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt/2020-10-31/digitaltwins'
         - name: Плоскость данных
           items:
-            - name: Swagger
+            - name: Плоскость данных (Swagger)
               href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins'
             - name: "Пакет SDK для .NET (C#)\_— NuGet"
               href: 'https://www.nuget.org/packages/Azure.DigitalTwins.Core'
-            - name: "Пакет SDK для .NET (C#)\_— справка"
-              href: /dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet
-            - name: "Пакет SDK для .NET (C#)\_— источник"
+            - name: "Пакет SDK для .NET (C#)\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core'
             - name: Пакет SDK для Java (Maven)
               href: 'https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar'
-            - name: "Пакет SDK для Java\_— справочник"
-              href: /java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-stable
-            - name: "Пакет SDK для Java\_— источник"
+            - name: "Пакет SDK для Java\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
-            - name: Пакет SDK для JavaScript (npm)
+            - name: "Пакет SDK для JavaScript\_— NPM"
               href: 'https://www.npmjs.com/package/@azure/digital-twins-core'
-            - name: Справочник по пакету SDK для JavaScript
-              href: /javascript/api/@azure/digital-twins-core/?branch=master&view=azure-node-latest
-            - name: "Пакет SDK для JavaScript\_— источник"
+            - name: "Пакет SDK для JavaScript\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core'
             - name: "Пакет SDK для Python\_— PyPi"
               href: 'https://pypi.org/project/azure-digitaltwins-core/'
-            - name: 'Пакет SDK для Python: справочник'
-              href: /python/api/azure-digitaltwins-core/azure.digitaltwins.core?view=azure-python
-            - name: "Пакет SDK для Python\_— источник"
+            - name: "Пакет SDK для Python\_— исходный код"
               href: 'https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core'
-    - name: CLI Digital Twins
-      items:
-        - name: Справочник по CLI Digital Twins
-          href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true
-        - name: Пакет CLI
-          href: 'https://github.com/Azure/azure-iot-cli-extension/releases'
+    - name: Пакет CLI Digital Twins
+      href: 'https://github.com/Azure/azure-iot-cli-extension/releases'
     - name: "Модуль Azure PowerShell\_— Digital Twins"
       href: 'https://www.powershellgallery.com/packages/Az.DigitalTwins/'
-    - name: DTDL
+    - name: Модули Terraform
       items:
-        - name: "Спецификация DTDL версии\_2"
-          href: 'https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md'
-        - name: Расширение DTDL для VS Code
-          href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-dtdl'
-        - name: "Библиотека средства синтаксического анализа DTDL\_— NuGet"
-          href: 'https://www.nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/'
-        - name: Проверяющий элемент управления DTDL (пример)
-          href: /samples/azure-samples/dtdl-validator/dtdl-validator/
-        - name: Спецификация DTMI
-          href: 'https://github.com/Azure/digital-twin-model-identifier'
+        - name: Ресурс экземпляра Digital Twins
+          href: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_instance'
+        - name: Источник данных экземпляра Digital Twins
+          href: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/digital_twins_instance'
+        - name: Ресурс конечной точки концентратора событий
+          href: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_endpoint_eventhub'
+        - name: Ресурс конечной точки Сетки событий
+          href: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_endpoint_eventgrid'
+        - name: Ресурс конечной точки Служебной шины
+          href: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_endpoint_servicebus'
     - name: Средства и примеры проектов
       items:
         - name: Служба симуляторов устройств
@@ -229,6 +231,34 @@
           href: /samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/
         - name: Пользовательские объекты Swagger для соединителя Logic Apps
           href: /samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/
+    - name: DTDL
+      items:
+        - name: "Спецификация DTDL версии\_2"
+          href: 'https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md'
+        - name: Расширение DTDL для VS Code
+          href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-dtdl'
+        - name: "Библиотека средства синтаксического анализа DTDL\_— NuGet"
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/'
+        - name: Проверяющий элемент управления DTDL (пример)
+          href: /samples/azure-samples/dtdl-validator/dtdl-validator/
+        - name: Спецификация DTMI
+          href: 'https://github.com/Azure/digital-twin-model-identifier'
+        - name: Запросы данных клиентов
+      href: resources-customer-data-requests.md
+    - name: Цены и доступность
+      items:
+        - name: Цены
+          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
+        - name: Соглашение об уровне обслуживания
+          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
+        - name: Регионы и доступность
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
+        - name: Ограничения службы Digital Twins
+          href: reference-service-limits.md
+    - name: Истории клиентов
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
+    - name: Видео на Channel 9
+      href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
     - name: Инструменты Azure
       items:
         - name: Azure Cloud Shell
@@ -239,21 +269,5 @@
           href: 'https://portal.azure.com'
     - name: Документация по Azure RBAC
       href: ../role-based-access-control/overview.md
-- name: Ресурсы
-  items:
     - name: Возможности получения поддержки и справки
       href: ../iot-fundamentals/iot-support-help.md
-    - name: Истории клиентов
-      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
-    - name: Видео на Channel 9
-      href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
-    - name: Запросы данных клиентов
-      href: resources-customer-data-requests.md
-    - name: Цены и доступность
-      items:
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
-        - name: Соглашение об уровне обслуживания
-          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
-        - name: Регионы и доступность
-          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'

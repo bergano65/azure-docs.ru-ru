@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 08/05/2020
+ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: a62943c1a808424ded1a5e46ed115cda332bf7d5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6a73ecf18a4bd89567dc603758d9ff8501267a1f
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020761"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570050"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей Azure AD
 В этом учебнике описаны действия, необходимые для выполнения подготовки данных работников из SuccessFactors Employee Central в Azure Active Directory с необязательной обратной записью электронного адреса в SuccessFactors. 
@@ -91,51 +91,61 @@ ms.locfileid: "96020761"
 
 ### <a name="create-an-api-permissions-role"></a>Создание роли разрешений для API
 
-* Войдите в SAP SuccessFactors с учетной записью пользователя, имеющего доступ к центру администрирования.
-* Введите в строке поиска *Manage Permission Roles* (Управление ролями разрешений), а затем среди результатов поиска выберите **Manage Permission Roles** (Управление ролями разрешений).
+1. Войдите в SAP SuccessFactors с учетной записью пользователя, имеющего доступ к центру администрирования.
+1. Введите в строке поиска *Manage Permission Roles* (Управление ролями разрешений), а затем среди результатов поиска выберите **Manage Permission Roles** (Управление ролями разрешений).
   ![Управление ролями разрешений](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
-* В списке ролей разрешений щелкните **Create New** (Создать).
-  > [!div class="mx-imgBorder"]
-  > ![Создание роли разрешения](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
-* Заполните поля **Role Name** (Имя роли) и **Description** (Описание) для новой роли разрешений. Имя и описание должны указывать на то, что роль предназначена для разрешений на использование API.
-  > [!div class="mx-imgBorder"]
-  > ![Сведения о роли разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
-* В разделе Permission settings (Параметры разрешений) щелкните **Permission...** (Разрешение...), затем прокрутите список разрешений вниз и щелкните **Manage Integration Tools** (Управление инструментами интеграции). Установите флажок **Allow Admin to Access to OData API through Basic Authentication** (Разрешить администратору доступ к API-интерфейсу OData с использованием обычной проверки подлинности).
-  > [!div class="mx-imgBorder"]
-  > ![Раздел Manage integration tools (Управление инструментами интеграции)](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
-* Прокрутите вниз в том же поле и выберите **Employee Central API** (API-интерфейс Employee Central). Добавьте разрешения на чтение и изменение с помощью API-интерфейса OData, как показано ниже. Параметр изменения следует выбирать, если вы планируете использовать ту же учетную запись и для сценария обратной записи в SuccessFactors. 
-  > [!div class="mx-imgBorder"]
-  > ![Разрешения на чтение и запись](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
-* Нажмите кнопку **Готово**. Щелкните **Сохранить изменения**.
+1. В списке ролей разрешений щелкните **Create New** (Создать).
+    > [!div class="mx-imgBorder"]
+    > ![Создание роли разрешения](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
+1. Заполните поля **Role Name** (Имя роли) и **Description** (Описание) для новой роли разрешений. Имя и описание должны указывать на то, что роль предназначена для разрешений на использование API.
+    > [!div class="mx-imgBorder"]
+    > ![Сведения о роли разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
+1. В разделе Permission settings (Параметры разрешений) щелкните **Permission...** (Разрешение...), затем прокрутите список разрешений вниз и щелкните **Manage Integration Tools** (Управление инструментами интеграции). Установите флажок **Allow Admin to Access to OData API through Basic Authentication** (Разрешить администратору доступ к API-интерфейсу OData с использованием обычной проверки подлинности).
+    > [!div class="mx-imgBorder"]
+    > ![Раздел Manage integration tools (Управление инструментами интеграции)](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
+1. Прокрутите вниз в том же поле и выберите **Employee Central API** (API-интерфейс Employee Central). Добавьте разрешения на чтение и изменение с помощью API-интерфейса OData, как показано ниже. Параметр изменения следует выбирать, если вы планируете использовать ту же учетную запись и для сценария обратной записи в SuccessFactors. 
+    > [!div class="mx-imgBorder"]
+    > ![Разрешения на чтение и запись](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
+
+1. В том же окне разрешений перейдите к пункту **User Permissions -> Employee Data** (Разрешения пользователей -> Данные о сотрудниках) и проверьте атрибуты, которые учетная запись службы может считывать из клиента SuccessFactors. Например, чтобы получить из SuccessFactors атрибут *Username* (Имя пользователя), убедитесь, что для этого атрибута предоставлено разрешение View (Просмотр). Аналогичным образом проверьте каждый атрибут для разрешения на просмотр. 
+
+    > [!div class="mx-imgBorder"]
+    > ![Разрешения на данные сотрудников](./media/sap-successfactors-inbound-provisioning/review-employee-data-permissions.png)
+   
+
+    >[!NOTE]
+    >Полный список атрибутов, полученных этим приложением подготовки, см. в [справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
+
+1. Нажмите кнопку **Готово**. Щелкните **Сохранить изменения**.
 
 ### <a name="create-a-permission-group-for-the-api-user"></a>Создание группы разрешений для пользователя API
 
-* В центре администрирования SuccessFactors в строке поиска введите *Manage Permission Groups* (Управление группами разрешений), а затем среди результатов поиска выберите **Manage Permission Groups** (Управление группами разрешений).
-  > [!div class="mx-imgBorder"]
-  > ![Пункт Manage permission groups (Управление группами разрешений)](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
-* В окне Manage permission groups (Управление группами разрешений) щелкните **Create New** (Создать).
-  > [!div class="mx-imgBorder"]
-  > ![Добавление новой группы](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
-* Добавьте имя новой группы в поле Group Name (Имя группы). Это имя должно указывать на то, что группа предназначена для пользователей API.
-  > [!div class="mx-imgBorder"]
-  > ![Имя группы разрешений](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
-* Добавьте членов в группу. Например, в раскрывающемся меню People Pool (Пул пользователей) можно выбрать **Username** (Имя пользователя), а затем ввести имя пользователя учетной записи API, которая будет использоваться для интеграции. 
-  > [!div class="mx-imgBorder"]
-  > ![Добавление членов группы](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
-* Щелкните **Done** (Готово), чтобы завершить создание группы разрешений.
+1. В центре администрирования SuccessFactors в строке поиска введите *Manage Permission Groups* (Управление группами разрешений), а затем среди результатов поиска выберите **Manage Permission Groups** (Управление группами разрешений).
+    > [!div class="mx-imgBorder"]
+    > ![Пункт Manage permission groups (Управление группами разрешений)](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
+1. В окне Manage permission groups (Управление группами разрешений) щелкните **Create New** (Создать).
+    > [!div class="mx-imgBorder"]
+    > ![Добавление новой группы](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
+1. Добавьте имя новой группы в поле Group Name (Имя группы). Это имя должно указывать на то, что группа предназначена для пользователей API.
+    > [!div class="mx-imgBorder"]
+    > ![Имя группы разрешений](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
+1. Добавьте членов в группу. Например, в раскрывающемся меню People Pool (Пул пользователей) можно выбрать **Username** (Имя пользователя), а затем ввести имя пользователя учетной записи API, которая будет использоваться для интеграции. 
+    > [!div class="mx-imgBorder"]
+    > ![Добавление членов группы](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
+1. Щелкните **Done** (Готово), чтобы завершить создание группы разрешений.
 
 ### <a name="grant-permission-role-to-the-permission-group"></a>Предоставление роли разрешений группе разрешений
 
-* В центре администрирования SuccessFactors в строке поиска введите *Manage Permission Roles* (Управление ролями разрешений), а затем среди результатов поиска выберите **Manage Permission Roles** (Управление ролями разрешений).
-* В разделе **Permission Role List** (Список ролей разрешений) выберите роль, созданную для разрешений на использование API.
-* В разделе **Grant this role to...** (Предоставить эту роль...) нажмите кнопку **Add...** (Добавить...).
-* В раскрывающемся меню выберите **Permission Group...** (Группа разрешений...), а затем щелкните **Select...** (Выбрать...), чтобы открыть окно Groups (Группы) для поиска и выбора созданной ранее группы. 
-  > [!div class="mx-imgBorder"]
-  > ![Добавление группы разрешений](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
-* Просмотрите роль разрешений, предоставленную группе разрешений. 
-  > [!div class="mx-imgBorder"]
-  > ![Сведения о роли и группе разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
-* Щелкните **Сохранить изменения**.
+1. В центре администрирования SuccessFactors в строке поиска введите *Manage Permission Roles* (Управление ролями разрешений), а затем среди результатов поиска выберите **Manage Permission Roles** (Управление ролями разрешений).
+1. В разделе **Permission Role List** (Список ролей разрешений) выберите роль, созданную для разрешений на использование API.
+1. В разделе **Grant this role to...** (Предоставить эту роль...) нажмите кнопку **Add...** (Добавить...).
+1. В раскрывающемся меню выберите **Permission Group...** (Группа разрешений...), а затем щелкните **Select...** (Выбрать...), чтобы открыть окно Groups (Группы) для поиска и выбора созданной ранее группы. 
+    > [!div class="mx-imgBorder"]
+    > ![Добавление группы разрешений](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
+1. Просмотрите роль разрешений, предоставленную группе разрешений. 
+    > [!div class="mx-imgBorder"]
+    > ![Сведения о роли и группе разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
+1. Щелкните **Сохранить изменения**.
 
 ## <a name="configuring-user-provisioning-from-successfactors-to-azure-ad"></a>Настройка подготовки пользователей из SAP SuccessFactors в Azure AD
 
@@ -214,7 +224,7 @@ ms.locfileid: "96020761"
 1. В разделе **Сопоставление атрибутов** можно определить, как отдельные атрибуты SuccessFactors сопоставляются с атрибутами Active Directory.
 
   >[!NOTE]
-  >Полный список атрибутов SuccessFactors, поддерживаемых приложением, см. в [Справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
+  >Полный список атрибутов SuccessFactors, поддерживаемых приложением, см. в [справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
 
 
 1. Щелкните существующее сопоставление атрибута, чтобы его обновить, или **Добавить новое сопоставление** в нижней части экрана, чтобы добавить новые сопоставления. Отдельное сопоставление атрибутов поддерживает следующие свойства:
@@ -271,7 +281,7 @@ ms.locfileid: "96020761"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о поддерживаемых атрибутах SuccessFactors для входящей подготовки](../app-provisioning/sap-successfactors-attribute-reference.md)
-* [Сведения о настройке обратной записи электронной почты в SuccessFactors ](sap-successfactors-writeback-tutorial.md)
+* [Сведения о настройке обратной записи электронной почты в SuccessFactors](sap-successfactors-writeback-tutorial.md)
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход между SuccessFactors и Azure Active Directory](successfactors-tutorial.md)
 * [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
