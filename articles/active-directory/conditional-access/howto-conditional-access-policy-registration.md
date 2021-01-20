@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61f655d459592022a2e34b87adc50e3d49b03dc9
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 0e99f7466bd3b7ed5517157ca3fa45e7c3241217
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935773"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599753"
 ---
 # <a name="conditional-access-securing-security-info-registration"></a>Условный доступ: безопасная регистрация сведений для защиты
 
@@ -34,10 +34,12 @@ ms.locfileid: "97935773"
    > [!WARNING]
    > У пользователей должна быть включена [объединенная регистрация](../authentication/howto-registration-mfa-sspr-combined.md).
 
+   1. В разделе **Исключить** выберите **Пользователи и группы**, а затем выберите учетные записи для аварийного доступа или для обхода стандартной системы контроля доступа в вашей организации. 
+   1. Нажмите кнопку **Готово**.
 1. В разделе **Облачные приложения или действия** выберите **Действия пользователя**, установите флажок **Зарегистрировать сведения для защиты**.
 1. Выберите **Условия** > **Расположения**.
    1. Выберите **Да**.
-   1. Включить **Все расположения**.
+   1. Включите **Все расположения**.
    1. Исключите **Все надежные расположения**.
    1. В колонке "Расположения" нажмите **Готово**.
    1. В колонке "Условия" нажмите **Готово**.
@@ -69,4 +71,4 @@ ms.locfileid: "97935773"
 
 [Определение влияния условного доступа в режиме "только отчет"](howto-conditional-access-insights-reporting.md)
 
-[Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
+[Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

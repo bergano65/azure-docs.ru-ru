@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: f2170aad9bc0218d39244d08f5cc838235f8fee9
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 9021d933e3808867ec784ad3c6d0f8810d608ea3
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134370"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600058"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -65,7 +65,7 @@ automl_config = AutoMLConfig(task = "classification")
 
 Автоматическое машинное обучение поддерживает данные, находящиеся на локальном компьютере или в облаке в хранилище BLOB-объектов Azure. Данные можно считать в **кадр данных Pandas** или **табличный набор данных Машинного обучения Azure**. [Дополнительные сведения о наборах данных](how-to-create-register-datasets.md).
 
-Требования к обучающим данным:
+Требования к обучающим данным в машинном обучении:
 - Данные должны иметь табличный формат.
 - Прогнозируемое значение (целевой столбец) должно присутствовать в данных.
 
@@ -96,9 +96,9 @@ dataset = Dataset.Tabular.from_delimited_files(data)
 
 ## <a name="training-validation-and-test-data"></a>Обучающие, проверочные и проверочные данные
 
-Можно указать отдельные **наборы для обучения и проверки** непосредственно в `AutoMLConfig` конструкторе. Дополнительные сведения о [настройке разбиения данных и перекрестной проверки](how-to-configure-cross-validation-data-splits.md) для экспериментов аутомл. 
+Вы можете указать отдельные **обучающие данные и наборы данных проверки** непосредственно в `AutoMLConfig` конструкторе. Дополнительные сведения о [настройке разбиения данных и перекрестной проверки](how-to-configure-cross-validation-data-splits.md) для экспериментов аутомл. 
 
-Если не указать явно `validation_data` `n_cross_validation` параметр или, аутомл применяет методы по умолчанию для определения способа проверки. Это определение зависит от количества строк в наборе данных, назначенном вашему `training_data` параметру. 
+Если параметр или не задан явным образом `validation_data` `n_cross_validation` , то автоматизированный алгоритм ML применяет методы по умолчанию, чтобы определить, как выполняется проверка. Это определение зависит от количества строк в наборе данных, назначенном вашему `training_data` параметру. 
 
 |&nbsp;Размер данных для обучения &nbsp;| Метод проверки |
 |---|-----|

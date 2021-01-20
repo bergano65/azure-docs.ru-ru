@@ -9,12 +9,12 @@ ms.date: 11/13/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: subject-cost-optimization
-ms.openlocfilehash: 14e53efb7be9eef3ca388e6524e5ffd678671cd0
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 0bad4637f13bbcf02047416499e4f82fdc53eb4f
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251647"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601309"
 ---
 # <a name="plan-and-manage-costs-for-azure-blob-storage"></a>Планирование и управление затратами для хранилища BLOB-объектов Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "98251647"
 4. Измените оставшиеся параметры, чтобы увидеть их влияние на вашу оценку.
 
    > [!NOTE]
-   > Вы можете платить за использование хранилища BLOB-объектов Azure с помощью Azure Соглашение Enterprise денежных обязательств по кредиту. Однако вы не можете использовать денежные обязательства кредита для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
+   > Вы можете платить за использование хранилища BLOB-объектов Azure с предварительной оплатой Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предварительную оплату Azure для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
 
 ## <a name="optimize-costs"></a>Оптимизация затрат
 
@@ -106,7 +106,7 @@ ms.locfileid: "98251647"
 
 Вы также можете [экспортировать данные о затратах](../../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о том, как цены работают со службой хранилища Azure. См. [Общие сведения о ценах на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
 - [Оптимизируйте затраты на хранилище BLOB-объектов с зарезервированной емкостью](../blobs/storage-blob-reserved-capacity.md).

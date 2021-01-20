@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: d620df0b55b024cd5d7c25ea17d9b09c5c5da8ff
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 3d9360b167a246e257d8c0b2ec4cb88f1ae39dcd
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722884"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600155"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
 
@@ -317,6 +317,11 @@ if(!$err)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-[Настройте гибридное подключение](./itsmc-connections-scsm.md#configure-the-hybrid-connection).
+## <a name="troubleshoot-service-manager-web-app-deployment"></a>Устранение неполадок Service Manager развертывании веб-приложений
 
+-   Если у вас возникли проблемы с развертыванием веб-приложения, убедитесь, что у вас есть разрешения на создание и развертывание ресурсов в подписке.
+-   При получении ссылки на **объект, не установленной на экземпляр** ошибки при выполнении [скрипта](itsmc-service-manager-script.md), убедитесь, что введены допустимые значения в разделе " **Конфигурация пользователя** ".
+-   Если не удалось создать пространство имен ретранслятора служебной шины, убедитесь, что требуемый поставщик ресурсов зарегистрирован в подписке. Если оно не зарегистрировано, вручную создайте пространство имен ретранслятора служебной шины из портал Azure. Его также можно создать при [создании гибридного подключения](./itsmc-connections-scsm.md#configure-the-hybrid-connection) в портал Azure.
+
+## <a name="next-steps"></a>Следующие шаги
+[Настройте гибридное подключение](./itsmc-connections-scsm.md#configure-the-hybrid-connection).

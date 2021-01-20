@@ -4,16 +4,16 @@ description: Создайте учетную запись хранения и к
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
-ms.date: 07/24/2020
+ms.date: 01/19/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 39b5a812c5f9b8e148b5180569af110c72e2c75b
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: b3bb8736eb7a8e24f47812fc4feecbf96628dfb6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544604"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599811"
 ---
 # <a name="quickstart-manage-blobs-with-java-v8-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 8
 
@@ -201,5 +201,5 @@ sourceFile.deleteOnExit();
 В этом кратком руководстве описано, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. Чтобы узнать подробнее о работе с Java, перейдите в репозиторий исходного кода на GitHub.
 
 > [!div class="nextstepaction"]
-> [Справочник по API Java](/java/api/overview/azure/storage?view=azure-java-legacy)
+> [Справочник по API Java](/java/api/overview/azure/storage?view=azure-java-legacy&preserve-view=true)
 > [Примеры кода для Java](../common/storage-samples-java.md)

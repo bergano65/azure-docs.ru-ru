@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: 70aecc2613fbe21d34e36f9487d7ba383e140bc8
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 4db6abeb3e6f4a07780268a6455177e0ca237205
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217368"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598487"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
 
@@ -84,7 +84,7 @@ Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOUR
 
 ## <a name="hosting-plan-type"></a>Тип плана размещения
 
-При создании приложения-функции также создается план размещения службы приложений, в котором выполняется приложение. План может иметь одно или несколько приложений-функций. Функциональные возможности, масштабирование и цены на функции зависят от типа плана. Дополнительные сведения см. на [странице с ценами на функции Azure](https://azure.microsoft.com/pricing/details/functions/).
+При создании приложения-функции также создается план размещения, в котором выполняется приложение. План может иметь одно или несколько приложений-функций. Функциональные возможности, масштабирование и цены на функции зависят от типа плана. Дополнительные сведения см. в статье [Параметры размещения функций Azure](functions-scale.md).
 
 Вы можете определить тип плана, используемого приложением-функцией, из портал Azure или с помощью API-интерфейсов Azure CLI или Azure PowerShell. 
 
@@ -131,6 +131,75 @@ $PlanID = (Get-AzFunctionApp -ResourceGroupName $ResourceGroup -Name $FunctionAp
 
 ---
 
+## <a name="plan-migration"></a>Планирование миграции
+
+Вы можете использовать команды Azure CLI, чтобы перенести приложение-функцию между планом потребления и планом Premium в Windows. Конкретные команды зависят от направления миграции. Прямая миграция на выделенный план (служба приложений) сейчас не поддерживается.
+
+Эта миграция не поддерживается в Linux.
+
+### <a name="consumption-to-premium"></a>Потребление в Premium
+
+Используйте следующую процедуру, чтобы выполнить миграцию из плана потребления в план Premium в Windows.
+
+1. Выполните следующую команду, чтобы создать новый план службы приложений (эластичный Premium) в том же регионе и группе ресурсов, что и имеющееся приложение-функция.  
+
+    ```azurecli-interactive
+    az functionapp plan create --name <NEW_PREMIUM_PLAN_NAME> --resource-group <MY_RESOURCE_GROUP> --location <REGION> --sku EP1
+    ```
+
+1. Выполните следующую команду, чтобы перенести существующее приложение функции в новый план Premium.
+
+    ```azurecli-interactive
+    az functionapp update --name <MY_APP_NAME> --resource-group <MY_RESOURCE_GROUP> --plan <NEW_PREMIUM_PLAN>
+    ```
+
+1. Если вы больше не хотите использовать предыдущий план приложения функции потребления, удалите исходный план приложения функции после подтверждения успешного переноса на новый. Выполните следующую команду, чтобы получить список всех планов потребления в группе ресурсов.
+
+    ```azurecli-interactive
+    az functionapp plan list --resource-group <MY_RESOURCE_GROUP> --query "[?sku.family=='Y'].{PlanName:name,Sites:numberOfSites}" -o table
+    ```
+
+    Вы можете безопасно удалить план с нулевыми сайтами, который был перенесен из.
+
+1. Выполните следующую команду, чтобы удалить план потребления, перенесенный из.
+
+    ```azurecli-interactive
+    az functionapp plan delete --name <CONSUMPTION_PLAN_NAME> --resource-group <MY_RESOURCE_GROUP>
+    ```
+
+### <a name="premium-to-consumption"></a>Premium на потребление
+
+Используйте следующую процедуру, чтобы выполнить миграцию из плана Premium в план потребления в Windows.
+
+1. Выполните следующую команду, чтобы создать новое приложение-функцию (потребление) в том же регионе и группе ресурсов, что и существующее приложение-функция. Эта команда также создает новый план потребления, в котором выполняется приложение-функция.
+
+    ```azurecli-interactive
+    az functionapp create --resource-group <MY_RESOURCE_GROUP> --name <NEW_CONSUMPTION_APP_NAME> --consumption-plan-location <REGION> --runtime dotnet --functions-version 3 --storage-account <STORAGE_NAME>
+    ```
+
+1. Выполните следующую команду, чтобы перенести существующее приложение функции в новый план потребления.
+
+    ```azurecli-interactive
+    az functionapp update --name <MY_APP_NAME> --resource-group <MY_RESOURCE_GROUP> --plan <NEW_CONSUMPTION_PLAN>
+    ```
+
+1. Удалите приложение функции, созданное на шаге 1, так как вам понадобится только план, созданный для запуска существующего приложения функции.
+
+    ```azurecli-interactive
+    az functionapp delete --name <NEW_CONSUMPTION_APP_NAME> --resource-group <MY_RESOURCE_GROUP>
+    ```
+
+1. Если вы больше не хотите использовать предыдущий план приложения для расширенной функции, удалите исходный план приложения функции после подтверждения успешного переноса на новый. Обратите внимание, что если план не удаляется, вам по-прежнему будет выставляться плата за план Premium. Выполните следующую команду, чтобы получить список всех планов Premium в группе ресурсов.
+
+    ```azurecli-interactive
+    az functionapp plan list --resource-group <MY_RESOURCE_GROUP> --query "[?sku.family=='EP'].{PlanName:name,Sites:numberOfSites}" -o table
+    ```
+
+1. Выполните следующую команду, чтобы удалить план Premium, из которого был выполнен перенос.
+
+    ```azurecli-interactive
+    az functionapp plan delete --name <PREMIUM_PLAN> --resource-group <MY_RESOURCE_GROUP>
+    ```
 
 ## <a name="platform-features"></a>Функции платформы
 
@@ -206,7 +275,7 @@ az functionapp cors add --name <FUNCTION_APP_NAME> \
 Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. Служба приложений поддерживает Azure Active Directory проверку подлинности и вход с помощью поставщиков социальных сетей, таких как Facebook, Microsoft и Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)

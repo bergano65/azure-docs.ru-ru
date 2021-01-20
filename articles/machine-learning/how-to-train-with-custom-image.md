@@ -10,12 +10,12 @@ author: saachigopal
 ms.date: 10/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: cb8e71d9f94441f79dd7ce2fd5ee6458987563c3
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: ad86ebdbef8bf8c8ec00e54e15b751fd2285ad68
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97795926"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601343"
 ---
 # <a name="train-a-model-by-using-a-custom-docker-image"></a>Обучение модели с помощью пользовательского образа DOCKER
 
@@ -102,6 +102,12 @@ fastai_env.docker.base_image = None
 fastai_env.docker.base_dockerfile = "./Dockerfile"
 ```
 
+>[!IMPORTANT]
+> Машинное обучение Azure поддерживает только образы DOCKER, которые предоставляют следующее программное обеспечение:
+> * Ubuntu 16,04 или более поздней версии.
+> * Conda 4.5. # или более поздней версии.
+> * Python 3.5 +.
+
 Дополнительные сведения о создании и управлении средой Машинное обучение Azure см. в разделе [Создание и использование программных сред](how-to-use-environments.md). 
 
 ### <a name="create-or-attach-a-compute-target"></a>Создание или присоединение целевого объекта вычислений
@@ -165,7 +171,7 @@ run.wait_for_completion(show_output=True)
 > [!WARNING]
 > Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](/python/api/azureml-core/azureml.data?preserve-view=true&view=azure-ml-py)данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы обучили модель с помощью пользовательского образа DOCKER. Дополнительные сведения о Машинное обучение Azure см. в следующих статьях:
 * [Следите за показателями запуска](how-to-track-experiments.md) во время обучения.
 * [Развертывание модели](how-to-deploy-custom-docker-image.md) с помощью пользовательского образа DOCKER.

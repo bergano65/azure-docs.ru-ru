@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 0f0d94dbc7b2c720faa1da41a88e3c3313dac377
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: df82e76fa2e5a9ea70c447411beafb8a2df9b036
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680764"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601604"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
 
@@ -65,6 +65,12 @@ ms.locfileid: "97680764"
 | [Удаленное управление IoT Azure Maps .NET UWP](https://github.com/Azure-Samples/azure-maps-dotnet-webgl-uwp-iot-remote-control) | Это пример приложения, в котором показано, как создать карту с удаленным управлением с помощью Azure Maps и служб центра Интернета вещей. |
 | [Реализация пространственной аналитики Интернета вещей с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
 
+**Подключаемые модули управления картой сторонних производителей**
+
+| Имя проекта | Описание |
+|-|-|
+| [Подключаемый модуль Леафлет для Azure Maps](https://github.com/azure-samples/azure-maps-leaflet) | Подключаемый модуль JavaScript [леафлет](https://leafletjs.com/) , который упрощает наложение мозаичных слоев из [Azure Maps служб плиток](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview). |
+ 
 **Средства и ресурсы**
 
 | Имя проекта | Описание |

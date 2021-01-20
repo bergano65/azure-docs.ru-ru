@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
-ms.openlocfilehash: 9fe0c79a2f65b27b35aa5029d0a53de62ef08078
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: e85c97df29bbbcc5d446d788cc190f3c90f24024
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251681"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602227"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Правила брандмауэра для базы данных SQL Azure и IP-адреса Azure синапсе
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -43,6 +43,9 @@ ms.locfileid: "98251681"
 
 - Чтобы использовать портал или PowerShell, необходимо быть владельцем подписки или участником подписки.
 - Чтобы использовать Transact-SQL, необходимо подключиться к базе данных *master* в качестве имени входа субъекта уровня сервера или администратора Azure Active Directory. (Правило брандмауэра IP уровня сервера должно быть создано пользователем, имеющим разрешения уровня Azure.)
+
+> [!NOTE]
+> По умолчанию во время создания нового логического сервера SQL Server из портал Azure для параметра **Разрешить службам Azure и ресурсам доступ к этому серверу** установлено значение **нет**.
 
 ### <a name="database-level-ip-firewall-rules"></a>Правила брандмауэра для IP-адресов на уровне базы данных
 
@@ -267,7 +270,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server $se
   - Попросите поставщика услуг Интернета указать диапазон IP-адресов, назначенный клиентским компьютерам, которые обращаются к серверу. Добавьте этот диапазон IP-адресов в качестве правила брандмауэра IP.
   - Для клиентских компьютеров следует получить статические IP-адреса. Добавьте IP-адреса в качестве правил брандмауэра IP-адресов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Убедитесь, что корпоративная сетевая среда разрешает входящий трафик из диапазонов вычислительных IP-адресов (включая диапазоны SQL), которые используются центрами обработки данных Azure. Может потребоваться добавить эти IP-адреса в список разрешений. См. раздел [диапазоны IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).  
 - Ознакомьтесь с нашим кратким руководством по [созданию отдельной базы данных в базе данных SQL Azure](single-database-create-quickstart.md).

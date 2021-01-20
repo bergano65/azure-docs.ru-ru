@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: sql-database
 ms.topic: how-to
 ms.date: 01/15/2021
-ms.openlocfilehash: 19531b9d0019fb000efe5aeb2d1b9fed34ce23f1
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 8d36166a67e683dd7f15eef18d589562b39ba568
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253426"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600621"
 ---
 # <a name="plan-and-manage-costs-for-azure-sql-database"></a>Планирование и управление затратами для базы данных SQL Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "98253426"
 
 ### <a name="using-monetary-credit-with-azure-sql-database"></a>Использование денежного кредита с базой данных SQL Azure
 
-Вы можете платить за использование базы данных SQL Azure с кредитом соглашения о денежных обязательствах EA. Однако вы не можете использовать соглашение о денежных обязательствах EA для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
+Вы можете платить за использование базы данных SQL Azure с помощью предоплаты Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предварительную оплату Azure для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
 
 ## <a name="review-estimated-costs-in-the-azure-portal"></a>Просмотр предполагаемых затрат на портале Azure
 
@@ -113,7 +113,7 @@ ms.locfileid: "98253426"
 Экономия денег путем фиксации на резервирование ресурсов для вычислений на один-три года. Дополнительные сведения см. [в разделе экономия затрат для ресурсов с зарезервированной емкостью](reserved-capacity-overview.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
 - Дополнительные сведения об управлении затратами с помощью [анализа затрат](../../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

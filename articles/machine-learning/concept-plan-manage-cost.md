@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 81d9a6bcbd910a60e1f659e430bbe527eb3077c6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 5be02ff698dac02d702e47f8929c6f8ddf2adbb7
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251749"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602554"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Планирование и управление затратами для Машинное обучение Azure
 
@@ -81,9 +81,9 @@ ws.delete(delete_dependent_resources=True)
 
 Если вы создаете службу Azure Kubernetes Service (AKS) в рабочей области или подключаете какие-либо ресурсы вычислений к рабочей области, их необходимо удалить отдельно в [портал Azure](https://portal.azure.com).
 
-### <a name="using-monetary-credit-with-azure-machine-learning"></a>Использование денежного кредита с Машинное обучение Azure
+### <a name="using-azure-prepayment-credit-with-azure-machine-learning"></a>Использование предварительной оплаты Azure с Машинное обучение Azure
 
-Вы можете платить за Машинное обучение Azure оплаты с кредитом по денежным обязательствам EA. Однако вы не можете использовать соглашение о денежных обязательствах EA для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
+Вы можете платить за Машинное обучение Azureную оплату с предоплатой Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предоплату Azure для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
 
 
 ## <a name="create-budgets"></a>Создание бюджетов
@@ -159,7 +159,7 @@ Low-Priority ВМ имеют отдельную квоту, отделенную
 Машинное обучение Azure COMPUTE поддерживает зарезервированные экземпляры по сути. Если вы приобретаете зарезервированный экземпляр на один или три года, мы будем автоматически применять скидку к Машинное обучение Azure управляемым вычислительным средам.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
 - Дополнительные сведения об управлении затратами с помощью [анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

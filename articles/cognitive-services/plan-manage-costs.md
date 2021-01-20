@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cognitive-services
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.openlocfilehash: 4fe06edbb3e02f23ef56a3e7fff848682e36e3af
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 925a092eb67fa459213a37df0fc6b3f7a1b8a0fb
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251324"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602363"
 ---
 # <a name="plan-and-manage-costs-for-azure-cognitive-services"></a>Планирование и управление затратами на Cognitive Services Azure
 
@@ -60,9 +60,9 @@ Cognitive Services работает в инфраструктуре Azure, ко�
 - [Служба приложений Azure (для среды выполнения)](https://azure.microsoft.com/pricing/details/app-service/)
 - [Когнитивный поиск Azure (для данных)](https://azure.microsoft.com/pricing/details/search/)
 
-### <a name="using-monetary-credit-with-cognitive-services"></a>Использование денежного кредита с Cognitive Services
+### <a name="using-azure-prepayment-credit-with-cognitive-services"></a>Использование предварительной оплаты Azure с Cognitive Services
 
-Вы можете платить за Cognitive Services оплаты с кредитом по денежным обязательствам EA. Однако вы не можете использовать соглашение о денежных обязательствах EA для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
+Вы можете платить за Cognitive Servicesную оплату с предоплатой Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предварительную оплату Azure для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
 
 ## <a name="create-budgets"></a>Создание бюджетов
 
@@ -81,7 +81,7 @@ Work with Dean to complete this section in 2021.
 
 -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
 - Дополнительные сведения об управлении затратами с помощью [анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

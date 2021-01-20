@@ -5,12 +5,12 @@ ms.custom: subject-cost-optimization
 ms.service: app-service
 ms.topic: how-to
 ms.date: 01/01/2021
-ms.openlocfilehash: f92b766fc1122456fda70d2deff81fa80a02d159
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 85035ff894127df4e9eb8334702fd9546d7a63c3
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250117"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598701"
 ---
 # <a name="plan-and-manage-costs-for-azure-app-service"></a>Планирование и управление затратами для службы приложений Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "98250117"
 
 ### <a name="using-monetary-credit-with-azure-app-service"></a>Использование денежного кредита в службе приложений Azure
 
-Вы можете платить за службу приложений Azure по кредиту с денежным обязательством EA. Однако нельзя использовать денежные обязательства EA для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
+Вы можете платить за службу приложений Azure с помощью предоплаты Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предварительную оплату Azure для оплаты за продукты и услуги сторонних производителей, в том числе из Azure Marketplace.
 
 ## <a name="estimate-costs"></a>Оценка затрат
 
@@ -163,7 +163,7 @@ ms.locfileid: "98250117"
 
 Вы также можете [экспортировать данные о затратах](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям нужно выполнить больше анализа данных за затраты. Например, Группа финансов может анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о том, как цены работают со службой хранилища Azure. См. [цены на Службу приложений](https://azure.microsoft.com/pricing/details/app-service/).
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".

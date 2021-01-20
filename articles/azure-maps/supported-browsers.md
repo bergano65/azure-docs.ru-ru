@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 43bf70d66c42bc0ecd5e26e4cc724456bd4bf84e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: f51b46efcaf9be4f51e96b038b93562d0e3eae0b
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896928"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601156"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
@@ -29,18 +29,18 @@ if (!atlas.isSupported()) {
 }
 ```
 
-## <a name="desktop"></a>Классические приложения
+## <a name="desktop"></a>Рабочий стол
 
 Веб-пакет SDK Azure Maps поддерживает следующие браузеры для настольных систем:
 
 - Microsoft ребро (Текущая и Предыдущая версии)
 - Google Chrome (Текущая и Предыдущая версии)
 - Mozilla Firefox (Текущая и Предыдущая версии)
-- Apple Safari (Mac OS X) (Текущая и Предыдущая версии)
+- Apple Safari (macOS X) (Текущая и Предыдущая версии)
 
 См. также в разделе [устаревшие браузеры](#Target-Legacy-Browsers) ниже в этой статье.
 
-## <a name="mobile"></a>Мобильные приложения
+## <a name="mobile"></a>Мобильные службы
 
 Веб-пакет SDK Azure Maps поддерживает следующие мобильные браузеры:
 
@@ -63,7 +63,7 @@ if (!atlas.isSupported()) {
 
 ## <a name="target-legacy-browsers"></a><a name="Target-Legacy-Browsers"></a>Целевые браузеры прежних версий
 
-Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Ниже приведен пример:
+Вы можете использовать более старые браузеры, которые не поддерживают WebGL или имеют только ограниченную поддержку. В таких случаях рекомендуется использовать службы Azure Maps вместе с элементом управления картой с открытым кодом, например [леафлет](https://leafletjs.com/). Ниже приведен пример, в котором используется [подключаемый модуль леафлет](https://github.com/azure-samples/azure-maps-leaflet)с открытым исходным Azure Maps кодом.
 
 <br/>
 
@@ -71,8 +71,9 @@ if (!atlas.isSupported()) {
 См. раздел "перо <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + леафлет</a> by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+Дополнительные примеры кода, использующие Azure Maps в Леафлет, можно найти [здесь](https://azuremapscodesamples.azurewebsites.net/?search=leaflet).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о веб-пакете SDK для Azure Maps:
 

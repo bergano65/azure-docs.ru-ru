@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/08/2020
+ms.date: 01/18/2021
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: bc3640fecbe1138e46fd0d36975691740bc669dd
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: f6ae9ff27e773c36626812387b1284d660cbf39d
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369265"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602464"
 ---
 # <a name="understand-azure-role-definitions"></a>Общие сведения о определениях ролей Azure
 
@@ -291,11 +291,27 @@ assignableScopes []
 
 ## <a name="notactions"></a>NotActions
 
-Разрешение `NotActions` указывает операции управления, которые исключаются из разрешенных `Actions`. Разрешение `NotActions` следует использовать, если для определения набора операций, которые нужно разрешить, проще указать операции, которые необходимо исключить. Доступ, предоставляемый роли (набор действующих разрешений), вычисляется путем вычитания операций `NotActions` из операций `Actions`.
+`NotActions`Разрешение определяет операции управления, которые вычитаются или исключаются из разрешенных с помощью `Actions` подстановочных знаков ( `*` ). Используйте `NotActions` разрешение, если набор операций, которые требуется разрешить, проще определить путем вычитания из `Actions` , имеющего подстановочный знак ( `*` ). Доступ, предоставляемый роли (набор действующих разрешений), вычисляется путем вычитания операций `NotActions` из операций `Actions`.
+
+`Actions - NotActions = Effective management permissions`
+
+В следующей таблице показаны два примера действующих разрешений для операции с подстановочными знаками [Microsoft. костманажемент](resource-provider-operations.md#microsoftcostmanagement) :
+
+> [!div class="mx-tableFixed"]
+> | Actions | NotActions | Действующие разрешения на управление |
+> | --- | --- | --- |
+> | `Microsoft.CostManagement/exports/*` | *Нет* | `Microsoft.CostManagement/exports/action`</br>`Microsoft.CostManagement/exports/read`</br>`Microsoft.CostManagement/exports/write`</br>`Microsoft.CostManagement/exports/delete`</br>`Microsoft.CostManagement/exports/run/action` |
+> | `Microsoft.CostManagement/exports/*` | `Microsoft.CostManagement/exports/delete` | `Microsoft.CostManagement/exports/action`</br>`Microsoft.CostManagement/exports/read`</br>`Microsoft.CostManagement/exports/write`</br>`Microsoft.CostManagement/exports/run/action` |
 
 > [!NOTE]
 > Если пользователю назначена роль, которая исключает определенную операцию в `NotActions`, а также другая роль, которая предоставляет доступ к той же операции, то пользователю будет разрешено выполнять эту операцию. `NotActions` не является запрещающим правилом. Это просто удобный способ создания набора допустимых операций путем исключения некоторых операций.
 >
+
+### <a name="differences-between-notactions-and-deny-assignments"></a>Различия между неизменностью и запретом назначений
+
+`NotActions` и отказ от назначения не одинаковы и служат разным целям. `NotActions` — Это удобный способ вычитания определенных действий из операции с подстановочными знаками ( `*` ).
+
+Запрет назначений блокирует выполнение определенных действий пользователями, даже если назначение роли предоставляет им доступ. Дополнительные сведения о запретах назначений Azure см. в [этой статье](deny-assignments.md).
 
 ## <a name="dataactions"></a>Действия с данными
 
@@ -311,7 +327,17 @@ assignableScopes []
 
 ## <a name="notdataactions"></a>NotDataActions
 
-Разрешение `NotDataActions` указывает операции с данными, которые исключаются из разрешенных `DataActions`. Доступ, предоставляемый роли (набор действующих разрешений), вычисляется путем вычитания операций `NotDataActions` из операций `DataActions`. Каждый поставщик ресурсов предоставляет соответствующий набор API-интерфейсов для выполнения операций с данными.
+`NotDataActions`Разрешение указывает операции с данными, которые вычитаются или исключаются из разрешенных с помощью `DataActions` подстановочных знаков ( `*` ). Используйте `NotDataActions` разрешение, если набор операций, которые требуется разрешить, проще определить путем вычитания из `DataActions` , имеющего подстановочный знак ( `*` ). Доступ, предоставляемый роли (набор действующих разрешений), вычисляется путем вычитания операций `NotDataActions` из операций `DataActions`. Каждый поставщик ресурсов предоставляет соответствующий набор API-интерфейсов для выполнения операций с данными.
+
+`DataActions - NotDataActions = Effective data permissions`
+
+В следующей таблице показаны два примера действующих разрешений для операции с подстановочными знаками [Microsoft. Storage](resource-provider-operations.md#microsoftstorage) :
+
+> [!div class="mx-tableFixed"]
+> | Действия с данными | NotDataActions | Действующие разрешения на доступ к данным |
+> | --- | --- | --- |
+> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/*` | *Нет* | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/read`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/write`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action` |
+> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/*` | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete`</br> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/read`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/write`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action` |
 
 > [!NOTE]
 > Если пользователю назначена роль, которая исключает определенную операцию с данными в `NotDataActions`, а также другая роль, которая предоставляет доступ к той же операции, то пользователю будет разрешено выполнять эту операцию. `NotDataActions` не является запрещающим правилом. Это просто удобный способ создания набора допустимых операций с данными путем исключения некоторых операций.
@@ -335,7 +361,7 @@ assignableScopes []
 
 Дополнительные сведения о `AssignableScopes` пользовательских ролях см. в статье [пользовательские роли Azure](custom-roles.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Встроенные роли Azure](built-in-roles.md)
 * [Настраиваемые роли Azure](custom-roles.md)

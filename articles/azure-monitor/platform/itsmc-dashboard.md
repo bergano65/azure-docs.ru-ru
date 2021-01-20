@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/15/2021
-ms.openlocfilehash: 9291689b362b5cbe651a72220196dd30b40745cf
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 9a43318ed935dd1e71b6da75c9f078fbebbd29eb
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540748"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599030"
 ---
 # <a name="error-investigation-using-the-dashboard"></a>Анализ ошибок с помощью панели мониторинга
 
@@ -53,6 +53,9 @@ ms.locfileid: "98540748"
     ![Снимок экрана, на котором показаны затронутые компьютеры.](media/itsmc-resync-servicenow/itsm-dashboard-impacted-comp.png)
 3. Состояние соединителя: граф и приведенная ниже таблица содержат сообщения о состоянии соединителя. Щелкнув диаграмму в строках таблицы, можно получить дополнительные сведения о сообщениях о состоянии соединителя.
     Таблица содержит ограниченное число строк, если вы хотите просмотреть весь список, щелкнув "Показать все".
+
+    Подробные сведения о сообщениях можно просмотреть в [таблице.](itsmc-dashboard-errors.md)
+
     ![Снимок экрана, показывающий состояние соединителя.](media/itsmc-resync-servicenow/itsm-dashboard-connector-status.png)
 4. Правила генерации оповещений. таблицы содержат сведения о количестве обнаруженных правил генерации оповещений.
     Щелкая строки в таблицах, можно получить дополнительные сведения о обнаруженных правилах.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: 433875e52e77a8992197b47fe0424cd0b7e9f50c
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: d9e26b6388223ae252a5e85e6e9fb9783a3b8429
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628294"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600410"
 ---
 # <a name="how-to-plan-a-virtual-machine-offer"></a>Планирование предложения виртуальной машины
 
@@ -73,7 +73,7 @@ ms.locfileid: "94628294"
 Виртуальные машины поддерживаются полностью Commerce, используя модели лицензирования с оплатой по мере использования или собственные лицензии (BYOL). Корпорация Майкрософт проводит коммерческие транзакции и выставляет счета клиенту от вашего имени. Вы получаете преимущество использования предпочтительного платежного отношения между вашим клиентом и корпорацией Майкрософт, включая все Соглашения Enterprise. Дополнительные сведения см. в статье [функции Transact Marketplace на рынке](./marketplace-commercial-transaction-capabilities-and-considerations.md).
 
 > [!NOTE]
-> Денежные обязательства, связанные с Соглашение Enterprise, можно использовать в Azure для виртуальной машины, но не в соответствии с платами по лицензированию программного обеспечения.
+> Предоплата Azure (ранее называемая денежным обязательством), связанная с Соглашение Enterprise, может использоваться в Azure для виртуальной машины, но не в отношении оплаты по лицензированию программного обеспечения.
 
 ### <a name="licensing-options"></a>Варианты лицензирования
 
@@ -131,7 +131,7 @@ ms.locfileid: "94628294"
 > [!NOTE]
 > Теперь вы можете получить доступ к партнерским каналам поставщика облачных решений (CSP). Дополнительные сведения о маркетинге вашего предложения с помощью партнерских каналов Microsoft CSP см. в статье [**поставщики облачных решений**](./cloud-solution-providers.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание предложения виртуальной машины в Azure Marketplace](azure-vm-create.md)
 - [Создайте виртуальную машину с помощью утвержденной базы](azure-vm-create-using-approved-base.md) или [Создайте виртуальную машину с помощью собственного образа](azure-vm-create-using-own-image.md).

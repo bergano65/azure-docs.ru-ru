@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6c4f23406c97d647002fbb3ab4a3544866303cf4
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 6f74f973abc33d809624bd8abd5a514a52ccfe70
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051349"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602706"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Подключение приложений функций в Azure для обработки данных
 
@@ -27,7 +27,7 @@ ms.locfileid: "98051349"
 1. Создание проекта функций Azure в Visual Studio
 2. Написание функции с помощью триггера [сетки событий](../event-grid/overview.md)
 3. Добавление кода проверки подлинности в функцию (для доступа к Azure Digital двойников)
-4. Публикация приложения функции в Azure
+4. Публикация приложения-функции в Azure
 5. Настройка [безопасного](concepts-security.md) доступа для приложения функции
 
 ## <a name="prerequisite-set-up-azure-digital-twins-instance"></a>Предварительные требования: Настройка экземпляра Digital двойников для Azure
@@ -63,24 +63,20 @@ ms.locfileid: "98051349"
 Это можно сделать, щелкнув проект правой кнопкой мыши и выбрав пункт _Управление пакетами NuGet_ в списке. Затем в открывшемся окне выберите вкладку _Обзор_ и найдите следующие пакеты. Выберите _установить_ и _принять_ лицензионное соглашение для установки пакетов.
 
 * `Azure.DigitalTwins.Core`
-* `Azure.Identity` 
-
-Для правильной настройки конвейера пакета SDK Azure для функций Azure необходимы также следующие пакеты. Повторите тот же процесс, что и выше, чтобы установить все пакеты.
-
+* `Azure.Identity`
 * `System.Net.Http`
-* `Azure.Core.Pipeline`
+* `Azure.Core`
 
 **Вариант 2. Добавление пакетов с помощью `dotnet` программы командной строки:**
 
 Кроме того, можно использовать следующие `dotnet add` команды в программе командной строки:
-```cmd/sh
-dotnet add package System.Net.Http
-dotnet add package Azure.Core.Pipeline
-```
 
-Затем добавьте в проект еще две зависимости, которые понадобятся для работы с Azure Digital двойников. По приведенным ниже ссылкам можно перейти к пакетам в NuGet, в котором находятся команды консоли (в том числе для .NET CLI), и добавить в проект последнюю версию каждой из них.
- * [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true).
- * [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Эта библиотека предоставляет инструменты для проверки подлинности в Azure.
+```cmd/sh
+dotnet add package Azure.DigitalTwins.Core
+dotnet add package Azure.Identity
+dotnet add package System.Net.Http
+dotnet add package Azure.Core
+```
 
 Затем в Visual Studio обозреватель решений откройте файл _Function.CS_ , где имеется образец кода, и добавьте в функцию следующие операторы _using_ . 
 
@@ -110,7 +106,7 @@ dotnet add package Azure.Core.Pipeline
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs":::
 
-## <a name="publish-the-function-app-to-azure"></a>Публикация приложения функции в Azure
+## <a name="publish-the-function-app-to-azure"></a>Публикация приложения-функции в Azure
 
 Чтобы опубликовать проект в приложении-функции в Azure, выберите проект функции (не решение) в обозреватель решений и нажмите кнопку **опубликовать**.
 
@@ -154,7 +150,7 @@ dotnet add package Azure.Core.Pipeline
 ```azurecli-interactive 
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>   
 ```
-Используйте значение _principalId_ в следующей команде, чтобы назначить удостоверение приложения функции для роли _владельца данных Azure Digital двойников_ для вашего экземпляра цифрового двойников Azure.
+Используйте значение _principalId_ в следующей команде, чтобы назначить удостоверение приложения-функции роли _владельца Azure Digital Twins_ для вашего экземпляра Azure Digital Twins.
 
 ```azurecli-interactive 
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
@@ -246,7 +242,7 @@ _Значение_ : https://{ваш-Azure-Digital-двойников-hostname}
 
 :::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Портал Azure: уведомления об обновлении параметров приложения":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье описано, как настроить приложение-функцию в Azure для использования с цифровым двойников Azure. Затем можно подписать функцию на службу "Сетка событий", чтобы прослушать конечную точку. Эта конечная точка может быть следующей:
 * Конечная точка сетки событий, присоединенная к Azure Digital двойников для обработки сообщений, поступающих от самого себя в Azure Digital двойников (например, сообщений об изменении свойств, сообщений телеметрии, созданных [цифровым двойников](concepts-twins-graph.md) в графе двойника, или сообщений о жизненном цикле).

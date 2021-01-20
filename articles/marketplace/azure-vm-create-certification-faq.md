@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 01/18/2021
-ms.openlocfilehash: f802292d9723179b36d5291993bd4e07487fe6a8
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 80dc19a58d212bb6ab8d608e222cd3a0bd3990d1
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567388"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600990"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Устранение неполадок сертификации виртуальной машины
 
@@ -321,7 +321,7 @@ ms.locfileid: "98567388"
 |Недопустимое имя виртуального жесткого диска|Проверьте `%` `"` , существуют ли в имени виртуального жесткого диска какие-либо специальные символы, такие как знак процента или кавычки.|Переименуйте VHD-файл, удалив специальные символы.|
 |
 
-## <a name="first-1-mb-2048-sectors-each-sector-of-512-bytes-partition"></a>Первый 1 МБ (2048 секторов, каждый сектор размером 512 байт)
+## <a name="first-partition-starts-at-1-mb-2048-sectors"></a>Первый раздел начинается с 1 МБ (2048 секторов)
 
 Если вы [создаете собственный образ](azure-vm-create-using-own-image.md), убедитесь, что первые 2048 секторов (1 МБ) диска ОС пусты. В противном случае публикация завершится ошибкой. Это требование применимо только к диску ОС (а не к дискам данных). Если вы создаете образ [на основе утвержденной базы](azure-vm-create-using-approved-base.md), это требование можно пропустить.
 
@@ -351,7 +351,7 @@ ms.locfileid: "98567388"
 
    1. Найдите учетную запись хранения VHD.
    1. Выберите **контейнер** , а затем выберите свой виртуальный жесткий диск.
-   1. Щелкните **ОК**.
+   1. Нажмите кнопку **ОК**.
 
       ![Снимок экрана со страницей присоединения неуправляемого диска.](./media/create-vm/vm-certification-issues-solutions-19.png)
 
@@ -418,7 +418,7 @@ ms.locfileid: "98567388"
 
    1. Найдите учетную запись хранения VHD.
    1. Выберите **контейнер** , а затем выберите свой виртуальный жесткий диск.
-   1. Щелкните **ОК**.
+   1. Нажмите кнопку **ОК**.
 
       ![Снимок экрана со страницей присоединения неуправляемого диска.](./media/create-vm/vm-certification-issues-solutions-19.png)
 
@@ -594,7 +594,7 @@ ms.locfileid: "98567388"
 
 Чтобы завершить процесс публикации, см. статью [Просмотр и публикация предложений](review-publish-offer.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка свойств предложения виртуальной машины](azure-vm-create-properties.md)
 - [Активные вознаграждения Marketplace](partner-center-portal/marketplace-rewards.md)

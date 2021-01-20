@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: api-management
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.openlocfilehash: 90449a29f58f31827e2a36b5f6c41563e88ac032
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 799ef33e78737bfd2e1c1a1cfa4991f44c8f5ec0
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251358"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599648"
 ---
 # <a name="plan-and-manage-costs-for-api-management"></a>Планирование и управление затратами на управление API
 
@@ -49,7 +49,7 @@ ms.locfileid: "98251358"
 
 ### <a name="using-monetary-credit-with-api-management"></a>Использование денежного кредита с управлением API
 
-Вы можете платить за оплату управления API с кредитом денежного обязательства EA. Однако вы не можете использовать соглашение о денежных обязательствах EA для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
+Вы можете платить за оплату управления API с помощью предоплаты Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предварительную оплату Azure для оплаты за продукты и услуги сторонних производителей, в том числе и из Azure Marketplace.
 
 ## <a name="monitor-costs"></a>Мониторинг затрат
 
@@ -104,7 +104,7 @@ ms.locfileid: "98251358"
 
 [Отслеживайте](api-management-howto-use-azure-monitor.md) метрики емкости для экземпляра управления API, чтобы принимать решения о том, следует ли масштабировать или обновлять экземпляр управления API в соответствии с большей нагрузкой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
 - Дополнительные сведения об управлении затратами с помощью [анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
