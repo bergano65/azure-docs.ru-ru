@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: f464664737ab56b43ca0c0a159837487494a1eaa
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 2da90a2c8950d85d8db2a414bbe63dfc7b94cf01
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826052"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601328"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Создание & использование программных сред в Машинное обучение Azure
 
@@ -131,6 +131,8 @@ myenv.docker.base_image_registry="your_registry_location"
 #### <a name="use-your-own-dockerfile"></a>Использование собственного Dockerfile 
 
 Можно также указать пользовательский Dockerfile. Проще всего начать с одного из Машинное обучение Azure базовых образов с помощью ```FROM``` команды DOCKER, а затем добавить пользовательские шаги. Используйте этот подход, если необходимо установить пакеты, отличные от Python, как зависимости. Не забудьте задать для базового образа значение None.
+
+Обратите внимание, что Python является неявной зависимостью в Машинное обучение Azure поэтому для пользовательского dockerfile необходимо установить Python.
 
 ```python
 # Specify docker steps as a string. 
@@ -430,7 +432,7 @@ az ml environment list
 az ml environment download -n myenv -d downloaddir
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения об использовании управляемого целевого объекта вычислений для обучения модели см. в разделе [учебник. Обучение модели](tutorial-train-models-with-aml.md).
 * После создания обученной модели Узнайте, [как и где развертываются модели](how-to-deploy-and-where.md).

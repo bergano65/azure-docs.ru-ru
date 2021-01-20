@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: 07e165382608f4fde5433de0f4436cb86f5083af
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 2bea2324817986654de6689a2be15d0cbf999b38
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251902"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602148"
 ---
 # <a name="plan-and-manage-costs-for-azure-cosmos-db"></a>Планирование и управление затратами для Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -73,7 +73,7 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
 Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../cost-management-billing/manage/spending-limit.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
-Вы можете платить за Azure Cosmos DB оплаты с помощью Azure Соглашение Enterprise денежных обязательств по кредиту. Однако вы не можете использовать денежные обязательства кредита для оплаты за продукты и услуги третьих лиц, включая данные из Azure Marketplace.
+Вы можете платить за Azure Cosmos DBную оплату с предоплатой Azure (ранее называлось денежным обязательством). Однако вы не можете использовать предварительную оплату Azure для оплаты за продукты и услуги сторонних производителей, включая данные из Azure Marketplace.
 
 ## <a name="monitor-costs"></a>Мониторинг затрат
 
@@ -105,7 +105,7 @@ Azure Cosmos DB поддерживает два типа режимов емко
 
 Вы также можете [экспортировать данные о затратах](../cost-management-billing/costs/tutorial-export-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) в учетную запись хранения. Это полезно, если вам или другим пользователям требуется выполнить дополнительный анализ данных за затраты. Например, финансовые группы могут анализировать данные с помощью Excel или Power BI. Вы можете экспортировать затраты на ежедневное, еженедельное или ежемесячное расписание и задать настраиваемый диапазон дат. Для извлечения наборов данных о затратах рекомендуется экспортировать данные о затратах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о том, как работают цены в Azure Cosmos DB, см. в следующих статьях:
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 54001cde76bd89305eb77544c6e6858defda6096
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 037e7fd13f55a0f5de939197f71324221392bd55
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222553"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601070"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -137,9 +137,12 @@ ms.locfileid: "98222553"
 Перед запуском образца выполните следующие действия.
 1. Скачайте файлы модели, поместите их в свой проект и замените `<path-to>` заполнители в приведенном ниже коде, чтобы сообщить программе, где их можно найти.
 2. Замените заполнитель `<your-instance-hostname>` именем узла своего экземпляра цифрового двойников Azure.
-3. Добавьте в проект две зависимости, которые понадобятся для работы с Azure Digital двойников. По приведенным ниже ссылкам можно перейти к пакетам в NuGet, в котором находятся команды консоли (в том числе для .NET CLI), и добавить в проект последнюю версию каждой из них.
-    * [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true).
-    * [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Эта библиотека предоставляет инструменты для проверки подлинности в Azure.
+3. Добавьте в проект две зависимости, которые понадобятся для работы с Azure Digital двойников. Первый — это пакет для пакета [SDK Azure Digital двойников для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), второй предоставляет средства для проверки подлинности в Azure.
+
+      ```cmd/sh
+      dotnet add package Azure.DigitalTwins.Core
+      dotnet add package Azure.Identity
+      ```
 
 Кроме того, необходимо настроить локальные учетные данные, если вы хотите выполнить пример напрямую. В следующем разделе приведено пошаговое руководство.
 [!INCLUDE [Azure Digital Twins: local credentials prereq (outer)](../../includes/digital-twins-local-credentials-outer.md)]
@@ -176,7 +179,7 @@ ms.locfileid: "98222553"
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graphFromCSV.cs":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о запросах к графу двойников для Azure Digital двойника:
 * [*Основные понятия: язык запросов*](concepts-query-language.md)

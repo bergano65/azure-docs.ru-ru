@@ -8,12 +8,12 @@ author: AlexandraKemperMS
 ms.author: alkemper
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 13857580d434736fbf0b12f52d39537ca864a497
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 39455c4bc193cce036bd169c702b5c020d53d2f6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203148"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602266"
 ---
 # <a name="use-feature-filters-to-enable-conditional-feature-flags"></a>Использование фильтров компонентов для включения условных флагов функций
 
@@ -31,7 +31,7 @@ ms.locfileid: "98203148"
 
 ## <a name="registering-a-feature-filter"></a>Регистрация фильтра компонентов
 
-Вы регистрируете фильтр компонентов, вызывая `AddFeatureFilter` метод, указывая имя фильтра компонентов. Например, регистрируется следующий код `PercentageFilter` :
+Вы регистрируете фильтр компонентов, вызывая `AddFeatureFilter` метод, указывая имя типа требуемого фильтра компонентов. Например, регистрируется следующий код `PercentageFilter` :
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -56,14 +56,14 @@ public void ConfigureServices(IServiceCollection services)
     > [!div class="mx-imgBorder"]
     > ![Изменение флага бета-версии компонента](./media/edit-beta-feature-flag.png)
 
-1. На экране **редактирования** выберите кнопку **включить флаг функции** , если она еще не выбрана. Затем нажмите кнопку **использовать фильтр компонентов** и выберите **Пользовательский**. 
+1. На экране **редактирования** установите флажок **включить флаг функции** , если он еще не включен. Установите флажок **использовать фильтр компонентов** и выберите **Пользовательский**. 
 
-1. В поле **ключ** введите *Microsoft. Percentage*.
+1. В поле **имя** выберите *Microsoft. Percentage*.
 
     > [!div class="mx-imgBorder"]
     > ![Добавить фильтр компонентов](./media/feature-flag-add-filter.png)
 
-1. Щелкните контекстное меню рядом с ключом фильтра компонентов. Нажмите кнопку **изменить параметры фильтра**.
+1. Щелкните контекстное меню рядом с именем фильтра компонентов. Нажмите кнопку **изменить параметры фильтра**.
 
     > [!div class="mx-imgBorder"]
     > ![Изменение параметров фильтра компонентов](./media/feature-flags-edit-filter-parameters.png)
@@ -75,10 +75,10 @@ public void ConfigureServices(IServiceCollection services)
 
 1. Нажмите кнопку **Применить** , чтобы вернуться на экран **изменение флага функции** . Затем нажмите кнопку **Применить** еще раз, чтобы сохранить настройки флага функции.
 
-1. **Состояние** флага компонента теперь отображается как *условное*. Это состояние означает, что флаг компонента будет включен или отключен для каждого запроса в зависимости от критериев, принудительно примененных фильтром компонентов.
+1. На странице **Диспетчер компонентов** флаг функции теперь имеет значение **Фильтр компонентов** *Custom*. 
 
     > [!div class="mx-imgBorder"]
-    > ![Условный флаг функции](./media/feature-flag-filter-enabled.png)
+    > ![Список флагов компонентов со значением "Custom" для фильтра компонентов](./media/feature-flag-filter-custom.png)
 
 ## <a name="feature-filters-in-action"></a>Фильтры компонентов в действии
 
@@ -87,7 +87,7 @@ public void ConfigureServices(IServiceCollection services)
 > [!div class="mx-imgBorder"]
 > ![Таржетингфилтер в действии](./media/feature-flags-percentagefilter.gif)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Включение промежуточного развертывания компонентов для целевых аудиторий](./howto-targetingfilter-aspnet-core.md)
+> [Включение поэтапного развертывания функций для определенных аудиторий](./howto-targetingfilter-aspnet-core.md)

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: 6450b44e5c7281f0a24fd5000c9feec6e61fa29c
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 325502255e84e38a39ca5b90ee4126354c0d425b
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540756"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601239"
 ---
 # <a name="get-started-with-the-windows-virtual-desktop-agent"></a>Приступая к работе с агентом виртуальных рабочих столов Windows
 
@@ -40,9 +40,8 @@ ms.locfileid: "98540756"
 
 Эта установка обновления обычно длится 2-3 минут на новой виртуальной машине и не должна приводить к потере подключения или прекращению работы виртуальной машины. Этот процесс обновления относится к виртуальным рабочим столам Windows (классическая модель) и последней версии Windows Virtual Desktop с Azure Resource Manager.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда у вас есть более полное представление о агенте виртуальных рабочих столов Windows, ниже приведены некоторые ресурсы, которые могут помочь вам:
 
-- Ознакомьтесь с разделом [обновления агента виртуальных рабочих столов Windows](whats-new.md) , чтобы просмотреть сведения о том, что новое обновление агента повлечет за месяц.
 - Если возникли проблемы с агентом или подключением, ознакомьтесь с [руководством по устранению неполадок агента виртуальных рабочих столов Windows](troubleshoot-agent.md).
