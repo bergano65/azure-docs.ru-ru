@@ -3,17 +3,17 @@ title: Краткое руководство. Использование кли�
 description: Создание, передача и удаление больших двоичных объектов и контейнеров в Node.js с помощью клиентской библиотеки службы хранилища Azure версии 10 для JavaScript.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 07/24/2020
+ms.date: 01/19/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 1f47c35997fe060fd3c318602bcad17de83b530c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2371c789b9e4a9fc70f4207fd8a634e419c97912
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91249626"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599447"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-nodejs"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в Node.js
 
@@ -139,7 +139,7 @@ const ONE_MEGABYTE = 1024 * 1024;
 const FOUR_MEGABYTES = 4 * ONE_MEGABYTE;
 ```
 
-Время ожидания запросов, отправляемых API, может истечь после указанного интервала. Класс[Aborter](/javascript/api/%40azure/storage-blob/aborter?view=azure-node-legacy) отвечает за управление тем, как истекает время ожидания запросов. Следующие константы в этом примере используются для определения времени ожидания.
+Время ожидания запросов, отправляемых API, может истечь после указанного интервала. Класс[Aborter](/javascript/api/%40azure/storage-blob/aborter?view=azure-node-legacy&preserve-view=true) отвечает за управление тем, как истекает время ожидания запросов. Следующие константы в этом примере используются для определения времени ожидания.
 
 ```javascript
 const ONE_MINUTE = 60 * 1000;
@@ -178,13 +178,13 @@ const serviceURL = new ServiceURL(`https://${STORAGE_ACCOUNT_NAME}.blob.core.win
 
 В этом блоке кода используются следующие классы.
 
-- Класс [SharedKeyCredential](/javascript/api/%40azure/storage-blob/sharedkeycredential?view=azure-node-legacy) отвечает за создание программы-оболочки учетных данных учетной записи хранения для предоставления их в конвейере запросов.
+- Класс [SharedKeyCredential](/javascript/api/%40azure/storage-blob/sharedkeycredential?view=azure-node-legacy&preserve-view=true) отвечает за создание программы-оболочки учетных данных учетной записи хранения для предоставления их в конвейере запросов.
 
-- Класс [StorageURL](/javascript/api/%40azure/storage-blob/storageurl?view=azure-node-legacy) отвечает за создание нового конвейера.
+- Класс [StorageURL](/javascript/api/%40azure/storage-blob/storageurl?view=azure-node-legacy&preserve-view=true) отвечает за создание нового конвейера.
 
-- [ServiceURL](/javascript/api/%40azure/storage-blob/serviceurl?view=azure-node-legacy) моделирует URL-адрес, используемый в REST API. Экземпляры этого класса позволяют выполнять такие действия, как перечисление контейнеров и предоставление информации контекста для формирования URL-адресов контейнеров.
+- [ServiceURL](/javascript/api/%40azure/storage-blob/serviceurl?view=azure-node-legacy&preserve-view=true) моделирует URL-адрес, используемый в REST API. Экземпляры этого класса позволяют выполнять такие действия, как перечисление контейнеров и предоставление информации контекста для формирования URL-адресов контейнеров.
 
-Экземпляр класса *ServiceURL* используется с экземплярами классов [ContainerURL](/javascript/api/%40azure/storage-blob/containerurl?view=azure-node-legacy) и [BlockBlobURL](/javascript/api/%40azure/storage-blob/blockbloburl?view=azure-node-legacy) для управления контейнерами и большими двоичными объектами в учетной записи хранения.
+Экземпляр класса *ServiceURL* используется с экземплярами классов [ContainerURL](/javascript/api/%40azure/storage-blob/containerurl?view=azure-node-legacy&preserve-view=true) и [BlockBlobURL](/javascript/api/%40azure/storage-blob/blockbloburl?view=azure-node-legacy&preserve-view=true) для управления контейнерами и большими двоичными объектами в учетной записи хранения.
 
 ```javascript
 const containerURL = ContainerURL.fromServiceURL(serviceURL, containerName);
