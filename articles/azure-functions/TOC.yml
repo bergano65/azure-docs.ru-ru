@@ -413,8 +413,6 @@
           href: ./functions-create-vnet.md
         - name: "Создание определения OpenAPI\_2.0"
           href: ./functions-openapi-definition.md
-        - name: Экспорт в PowerApps и Microsoft Flow
-          href: app-service-export-api-to-powerapps-and-flow.md
         - name: Использование управляемого удостоверения
           href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Настройка конечной точки функции HTTP
