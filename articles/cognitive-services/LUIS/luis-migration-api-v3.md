@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 59cf250a9db5a1f6759495c1b5a3c48cb07cde15
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 59dfa439f6428f2db972a8f848887e1a74bc2622
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018792"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624309"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Изменения конечной точки прогнозирования для v3
 
@@ -66,9 +66,6 @@ API V3 предоставляет следующие новые возможно
 
 Продолжайте использовать конечную точку прогнозирования API v2 до выпуска версии 4.7 платформы Bot.
 
-## <a name="v2-api-deprecation"></a>Устаревшая версия API v2
-
-API-интерфейс прогнозирования версии 2 не будет считаться устаревшим в течение не менее 9 месяцев после предварительной версии v3, 8 июня 2020.
 
 ## <a name="endpoint-url-changes"></a>Изменения URL-адреса конечной точки
 
@@ -103,7 +100,7 @@ API-интерфейс прогнозирования версии 2 не буд
 }
 ```
 
-|Свойство|Type|Версия|По умолчанию|Назначение|
+|Свойство|Тип|Версия|По умолчанию|Цель|
 |--|--|--|--|--|
 |`dynamicLists`|массиве|Только версия 3|Не требуется.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
 |`externalEntities`|массиве|Только версия 3|Не требуется.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
@@ -268,10 +265,7 @@ const associatedMetadata = entities.$instance.my_list_entity[item];
 
 Ознакомьтесь с [основными понятиями](schema-change-prediction-runtime.md) о том, как расширить приложение в среде выполнения прогнозирования.
 
-## <a name="deprecation"></a>Устаревшее
 
-API v2 не будет считаться устаревшим по меньшей мере через 9 месяцев после предварительной версии v3.
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте документацию по API V3 для обновления существующих вызовов RESTFUL к API-интерфейсам [конечной точки](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/operations/5cb0a9459a1fe8fa44c28dd8) Luis.

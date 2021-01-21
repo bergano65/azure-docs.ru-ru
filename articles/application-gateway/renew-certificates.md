@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 8/15/2018
+ms.date: 01/20/2021
 ms.author: victorh
-ms.openlocfilehash: 413ae2ee19f0b8e427de9167b52971e413cdf573
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: f0c06a94498f4d2481a6e953b959d766c60415fb
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397235"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622186"
 ---
 # <a name="renew-application-gateway-certificates"></a>Обновление сертификатов шлюза приложений
 
@@ -22,11 +22,11 @@ ms.locfileid: "93397235"
 
 ## <a name="azure-portal"></a>Портал Azure
 
-Чтобы обновить сертификат прослушивателя на портале, перейдите к прослушивателям шлюза приложений. Щелкните прослушиватель, сертификат которого необходимо обновить, и выберите **Продлить или изменить выбранный сертификат**.
+Чтобы обновить сертификат прослушивателя на портале, перейдите к прослушивателям шлюза приложений. Выберите прослушиватель, у которого есть сертификат, который необходимо обновить, а затем выберите **продлить или изменить выбранный сертификат**.
 
-![Продление сертификата](media/renew-certificate/ssl-cert.png)
+:::image type="content" source="media/renew-certificate/ssl-cert.png" alt-text="Продление сертификата":::
 
-Передайте новый сертификат в формате PFX, присвойте ему имя, введите пароль и нажмите кнопку **Сохранить**.
+Отправьте новый PFX-сертификат, присвойте ему имя, введите пароль и нажмите кнопку **сохранить**.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 

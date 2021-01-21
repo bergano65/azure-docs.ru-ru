@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о служебной ши
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: acd741101928f5a2dfd72eab1598af6e4556a3d1
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 576df12a9d53ec3585f8691016cd250bf1ba4be3
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96022151"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623113"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
@@ -57,7 +57,7 @@ ms.locfileid: "96022151"
 
 [!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 
-Старый пакет WindowsAzure. ServiceBus для .NET Framework имеет возможность использовать устаревший протокол обмена сообщениями служебной шины (SBMP), также называемый "NetMessaging". Этот протокол использует TCP-порты 9350-9354. Режим по умолчанию для этого пакета — автоматическое определение доступности этих портов для связи и переключение на WebSockets с TLS через порт 443, если это не так. Вы можете переопределить этот параметр и принудительно включить этот режим, задав для `Https` параметра [задать ConnectivityMode](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) значение [`ServiceBusEnvironment.SystemConnectivity`](/dotnet/api/microsoft.servicebus.servicebusenvironment.systemconnectivity?view=azure-dotnet) , которое применяется глобально к приложению.
+Старый пакет WindowsAzure. ServiceBus для платформа .NET Framework имеет возможность использовать устаревший протокол обмена сообщениями служебной шины (SBMP), также называемый "NetMessaging". Этот протокол использует TCP-порты 9350-9354. Режим по умолчанию для этого пакета — автоматическое определение доступности этих портов для связи и переключение на WebSockets с TLS через порт 443, если это не так. Вы можете переопределить этот параметр и принудительно включить этот режим, задав для `Https` параметра [задать ConnectivityMode](/dotnet/api/microsoft.servicebus.connectivitymode) значение [`ServiceBusEnvironment.SystemConnectivity`](/dotnet/api/microsoft.servicebus.servicebusenvironment.systemconnectivity) , которое применяется глобально к приложению.
 
 ### <a name="what-ip-addresses-do-i-need-to-add-to-allow-list"></a>Какие IP-адреса нужно добавить в список разрешений?
 Чтобы найти IP-адреса, которые нужно добавить в список разрешений для подключений, выполните следующие действия.

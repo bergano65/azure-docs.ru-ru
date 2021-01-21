@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 444e7c9ad06c6f2ad584c0701fa652b901a4c3e7
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 3bb0aadf81ba501070ce0c734847bb16c0378896
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680781"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624044"
 ---
 # <a name="tutorial-migrate-web-service-from-google-maps"></a>Руководство по Миграция веб-службы из Google Карт
 
@@ -22,6 +22,7 @@ ms.locfileid: "97680781"
 
 В этом учебнике рассматривается следующее.
 
+> [!div class="checklist"]
 > * прямое и обратное геокодирование;
 > * Поиск точек интереса
 > * Вычисление маршрутов и направлений

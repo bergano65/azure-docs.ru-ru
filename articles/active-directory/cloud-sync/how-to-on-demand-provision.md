@@ -11,12 +11,12 @@ ms.date: 09/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0daca8b19f9a712253bc231cba9a0245553b0adb
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 6ac186d4b460165605ccf0fc53bdb0b691348bf3
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98614108"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622530"
 ---
 # <a name="azure-ad-connect-cloud-sync-on-demand-provisioning"></a>Azure AD Connect подготовки облачной синхронизации по требованию
 
@@ -32,9 +32,9 @@ Azure AD Connect облачная синхронизация появилось 
 
 1.  На портале Azure выберите **Azure Active Directory**.
 2.  Выберите **Azure AD Connect**.
-3.  Выберите **Управление инициализацией**.
+3.  Выберите **Управление облачной синхронизацией**.
 
-    ![Управление подготовкой](media/how-to-configure/manage-1.png)
+    ![Управление подготовкой](media/how-to-install/install-6.png)
 4. В разделе **Конфигурация** выберите свою конфигурацию.
 5. В разделе **Проверка** нажмите кнопку **подготавливать пользователя** . 
 
@@ -91,7 +91,7 @@ Azure AD Connect облачная синхронизация появилось 
 
 ![атрибут Trace](media/how-to-on-demand-provision/on-demand-12.png)
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 - [Что такое Azure AD Connect синхронизации в облаке?](what-is-cloud-sync.md)
 - [Установка облачной синхронизации Azure AD Connect](how-to-install.md)

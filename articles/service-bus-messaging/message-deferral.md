@@ -4,12 +4,12 @@ description: В этой статье объясняется, как отлож�
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 7c9ec55de24c97df3530d80deef55ed87be84077
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3a940f8aa9e72d9b09e9c0a3305521c6f17dfb0
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511285"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622051"
 ---
 # <a name="message-deferral"></a>Откладывание сообщений
 
@@ -26,7 +26,7 @@ ms.locfileid: "86511285"
 
 ## <a name="message-deferral-apis"></a>Интерфейсы API откладывания сообщений
 
-API-интерфейс — [BrokeredMessage. Отсрочка](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.defer?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_Defer) или [BrokeredMessage. DeferAsync](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deferasync?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_DeferAsync) в клиенте .NET Framework, [MessageReceiver. DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) в .NET Standardном клиенте и [Имессажерецеивер. Отсрочка](/java/api/com.microsoft.azure.servicebus.imessagereceiver.defer?view=azure-java-stable) или [имессажерецеивер. DeferAsync](/java/api/com.microsoft.azure.servicebus.imessagereceiver.deferasync?view=azure-java-stable) в клиенте Java. 
+API-интерфейс — [BrokeredMessage. Отсрочка](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.defer#Microsoft_ServiceBus_Messaging_BrokeredMessage_Defer) или [BrokeredMessage. DeferAsync](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deferasync#Microsoft_ServiceBus_Messaging_BrokeredMessage_DeferAsync) в клиенте платформа .NET Framework, [MessageReceiver. DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) в .NET Standardном клиенте и [Имессажерецеивер. Отсрочка](/java/api/com.microsoft.azure.servicebus.imessagereceiver.defer) или [имессажерецеивер. DeferAsync](/java/api/com.microsoft.azure.servicebus.imessagereceiver.deferasync) в клиенте Java. 
 
 Отложенные сообщения остаются в основной очереди вместе с другими активными сообщениями (в отличие от недоставленных сообщений, находящихся в подочереди), но их больше невозможно получить с помощью обычных функций Receive и ReceiveAsync. Отложенные сообщения можно будет обнаружить посредством [обзора сообщений](message-browsing.md), если приложение потеряет их.
 
@@ -35,7 +35,7 @@ API-интерфейс — [BrokeredMessage. Отсрочка](/dotnet/api/micro
 Если сообщение не удается обработать, так как конкретный ресурс для его обработки временно недоступен, но обработку этого сообщения нельзя бесцеремонно приостанавливать, можно отложить это сообщение в сторону на несколько минут, запомнив значение **SequenceNumber** в [запланированном сообщении](message-sequencing.md), которое должно быть опубликовано через несколько минут, и повторно получить отложенное сообщение при получении этого запланированного сообщения. Если все операции обработчика сообщений зависят от базы данных, и она временно недоступна, то следует не откладывать, а полностью приостанавливать получение сообщений, пока эта база данных снова не будет доступна.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

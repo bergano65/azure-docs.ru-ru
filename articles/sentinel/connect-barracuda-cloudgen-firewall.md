@@ -14,19 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: aaedbfdd3b1bbbc653756d74ee86fc277b21caec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd0115fa34b10805570b6e9d8d09ae96fc169dfc
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77588507"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621137"
 ---
 # <a name="connect-barracuda-cloudgen-firewall"></a>Подключение Barracuda CloudGen Firewall
 
 Соединитель Barracuda Клауджен Firewall (КГФВ) позволяет легко подключать журналы Barracuda КГФВ к Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать расследования. Это позволяет получить более подробные сведения о сети организации и улучшить возможности обеспечения безопасности.
-
-
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -36,14 +33,14 @@ ms.locfileid: "77588507"
 
 ## <a name="connect-azure-sentinel-to-barracuda-cloudgen-firewall"></a>Подключение Sentinel Azure к Barracuda Клауджен Firewall
 
-1. В портал Azure перейдите к **Azure Sentinel**  >  **соединителям данных** Azure Sentinel, а затем выберите соединитель **брандмауэра Barracuda клауджен** .
+1. В портал Azure перейдите к   >  **соединителям данных** Azure Sentinel, а затем выберите соединитель **брандмауэра Barracuda клауджен** .
 
 2. Выберите **открыть страницу соединителя**.
 
 3. Следуйте инструкциям на странице **брандмауэра Barracuda клауджен** .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить Barracuda Клауджен Firewall к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

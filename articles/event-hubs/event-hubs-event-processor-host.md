@@ -4,12 +4,12 @@ description: В этой статье описывается узел обраб
 ms.topic: conceptual
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a05f2172b266301919d0a800fb863b8f0dbe5884
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de5d8f0f8bf9f64a473b18a50434cac83e8e38c3
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89319508"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622068"
 ---
 # <a name="event-processor-host"></a>Узел обработчика событий
 > [!NOTE]
@@ -42,7 +42,7 @@ ms.locfileid: "89319508"
 
 ## <a name="ieventprocessor-interface"></a>Интерфейс IEventProcessor
 
-Сначала приложения-потребители реализуют интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) с четырьмя методами: [OpenAsync, CloseAsync, ProcessErrorAsync и ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor?view=azure-dotnet#methods). Этот интерфейс содержит фактический код для получения событий, отправляемых в Центры событий. Ниже приведен пример простой реализации:
+Сначала приложения-потребители реализуют интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) с четырьмя методами: [OpenAsync, CloseAsync, ProcessErrorAsync и ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor#methods). Этот интерфейс содержит фактический код для получения событий, отправляемых в Центры событий. Ниже приведен пример простой реализации:
 
 ```csharp
 public class SimpleEventProcessor : IEventProcessor
@@ -150,7 +150,7 @@ public class SimpleEventProcessor : IEventProcessor
 
 ## <a name="control-event-processor-host-options"></a>Параметры управления узла обработчика событий
 
-Кроме того, одна перегрузка [RegisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync?view=azure-dotnet#Microsoft_Azure_EventHubs_Processor_EventProcessorHost_RegisterEventProcessorAsync__1_Microsoft_Azure_EventHubs_Processor_EventProcessorOptions_) принимает объект [EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync?view=azure-dotnet#Microsoft_Azure_EventHubs_Processor_EventProcessorHost_RegisterEventProcessorAsync__1_Microsoft_Azure_EventHubs_Processor_EventProcessorOptions_) в качестве параметра. Этот параметр используется для управления поведением [EventProcessorHost.UnregisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.unregistereventprocessorasync). [EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions) определяет четыре свойства и одно событие:
+Кроме того, одна перегрузка [RegisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync#Microsoft_Azure_EventHubs_Processor_EventProcessorHost_RegisterEventProcessorAsync__1_Microsoft_Azure_EventHubs_Processor_EventProcessorOptions_) принимает объект [EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync#Microsoft_Azure_EventHubs_Processor_EventProcessorHost_RegisterEventProcessorAsync__1_Microsoft_Azure_EventHubs_Processor_EventProcessorOptions_) в качестве параметра. Этот параметр используется для управления поведением [EventProcessorHost.UnregisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.unregistereventprocessorasync). [EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions) определяет четыре свойства и одно событие:
 
 - [MaxBatchSize.](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.maxbatchsize) Максимальный размер коллекции, которую вы хотите получать при вызове [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync). Этот размер не имеет минимального значения, только максимальное. Если принимается меньшее количество сообщений, **ProcessEventsAsync** выполняется только с доступным количеством.
 - [PrefetchCount.](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.prefetchcount) Значение, используемое базовым каналом AMQP, чтобы определить верхнюю границу количества сообщений, полученных клиентом. Это значение должно быть больше или равно [MaxBatchSize](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.maxbatchsize).
@@ -163,7 +163,7 @@ public class SimpleEventProcessor : IEventProcessor
 Вот как работает эпоха приема:
 
 ### <a name="with-epoch"></a>С эпохой
-Эпоха — это уникальный идентификатор (значение эпохи), используемый службой для обеспечения владения секцией или арендой. Приемник на основе эпохи создается с помощью метода [креатипочрецеивер](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createepochreceiver?view=azure-dotnet) . Этот метод создает приемник на основе эпохи. Получатель создается для определенной секции концентратора событий из указанной группы потребителей.
+Эпоха — это уникальный идентификатор (значение эпохи), используемый службой для обеспечения владения секцией или арендой. Приемник на основе эпохи создается с помощью метода [креатипочрецеивер](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createepochreceiver) . Этот метод создает приемник на основе эпохи. Получатель создается для определенной секции концентратора событий из указанной группы потребителей.
 
 Функция эпохи предоставляет пользователям возможность гарантировать, что в любой момент времени только один получатель в группе потребителей будет иметь следующие правила.
 
@@ -172,7 +172,7 @@ public class SimpleEventProcessor : IEventProcessor
 - Если имеется приемник со значением эпохи E1 и создается новый получатель со значением эпохи E2, где E1 > E2, то создание E2 с ошибкой ": получатель с эпохой E1" уже существует.
 
 ### <a name="no-epoch"></a>Нет эпохи
-Создать приемник, не основанный на эпохе, можно с помощью метода [креатерецеивер](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createreceiver?view=azure-dotnet) . 
+Создать приемник, не основанный на эпохе, можно с помощью метода [креатерецеивер](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.createreceiver) . 
 
 Существуют некоторые сценарии обработки потоковой передачи, где пользователи хотели бы создать несколько получателей в одной группе потребителей. Для поддержки таких сценариев у нас есть возможность создавать приемник без эпохи, и в этом случае мы допуским 5 параллельных получателей в группе потребителей.
 
@@ -188,7 +188,7 @@ public class SimpleEventProcessor : IEventProcessor
 > Мы рекомендуем использовать разные группы потребителей для приложений, использующих эпохи, и для тех, которые не используют эпохи во избежание ошибок. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы знакомы с узлом обработчика событий, см. следующие статьи, чтобы узнать больше о Центрах событий:
 
