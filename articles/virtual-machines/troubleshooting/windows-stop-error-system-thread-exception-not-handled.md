@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/04/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 1ce594d9e3ffddf781c61717ae4534f0c7bd40f8
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: beb658474e49f9b47900d8481dab0424dae8c5be
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681896"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661397"
 ---
 # <a name="windows-stop-error---0x0000007e-system-thread-exception-not-handled"></a>Windows STOP error — исключение "системный поток 0x0000007E не обработано"
 
@@ -35,6 +35,10 @@ ms.locfileid: "94681896"
 
 ## <a name="solution"></a>Решение
 
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
+
+
 Чтобы устранить эту проблему, сначала необходимо собрать файл дампа памяти для сбоя, а затем отправить файл в службу поддержки Майкрософт. Чтобы получить файл дампа, следуйте инструкциям в следующих двух разделах.
 
 ### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>Подключение диска ОС к новой виртуальной машине восстановления
@@ -50,7 +54,7 @@ ms.locfileid: "94681896"
 
 Дополнительные сведения о вызовах NMI см. в разделе [вызов прерываний в пользовательском интерфейсе последовательной консоли Azure](./serial-console-windows.md#use-the-serial-console-for-nmi-calls) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Устранение ошибок загрузки виртуальных машин Azure](./boot-error-troubleshoot.md)

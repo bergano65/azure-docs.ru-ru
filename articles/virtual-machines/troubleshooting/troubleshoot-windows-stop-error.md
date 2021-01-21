@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/26/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 33b4c59e14301e496d0eddafa7bdfdf201b7aa29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d6e738152e542617046834980d3e7c58e497093
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87005911"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664687"
 ---
 # <a name="windows-stop-error---status-no-memory"></a>STOP-ошибка Windows "Status No Memory" (Состояние: недостаточно памяти)
 
@@ -44,6 +44,9 @@ ms.locfileid: "87005911"
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Общие сведения о процессе.
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Создание виртуальной машины для восстановления и получение доступа к ней
 1. Освободите место на диске
@@ -175,7 +178,7 @@ ms.locfileid: "87005911"
    
    - В команде замените на `<LETTER OF THE EFI SYSTEM PARTITION>` букву системного раздела EFI.
    - Может быть полезно запустить консоль управления дисками, чтобы указать соответствующий системный раздел, помеченный как **системный раздел EFI**.
-   - Идентификатор может быть уникальным GUID или **диспетчером загрузки**по умолчанию.
+   - Идентификатор может быть уникальным GUID или **диспетчером загрузки** по умолчанию.
 
 1. Чтобы включить последовательную консоль, выполните следующие команды:
 

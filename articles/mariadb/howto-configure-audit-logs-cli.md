@@ -3,16 +3,16 @@ title: Доступ к журналам аудита — Azure CLI — база 
 description: В этой статье описывается, как настроить и получить доступ к журналам аудита в базе данных Azure для MariaDB из Azure CLI.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 6/24/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c1d446d8ee2863077ad84c361876758336f5a3cb
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 57fc79e88e3268c37dd932a5618bd661f000e09c
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540983"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98665180"
 ---
 # <a name="configure-and-access-azure-database-for-maria-db-audit-logs-in-the-azure-cli"></a>Настройка и доступ к журналам аудита базы данных Azure для Марии в Azure CLI
 
@@ -20,7 +20,7 @@ ms.locfileid: "94540983"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством выполните следующие действия.
 
@@ -28,7 +28,7 @@ ms.locfileid: "94540983"
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- Для работы с этой статьей требуется версия 2,0 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+- Для работы с этой статьей требуется Azure CLI версии 2.0 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
 
@@ -57,7 +57,7 @@ ms.locfileid: "94540983"
     az mariadb server configuration set --name audit_log_include_users --resource-group myresourcegroup --server mydemoserver --value "sampleuser"
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MariaDB
 - Узнайте, как настроить журналы аудита в [портал Azure](howto-configure-audit-logs-portal.md)

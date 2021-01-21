@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: cbfdb9a73f53e194b43010c0b2d84357aa3e2e5b
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 8d501bcc745ef19d15564951b8c0f29f9e2678ab
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631991"
+ms.locfileid: "98661312"
 ---
 # <a name="windows-stop-error---0x00000074-bad-system-config-info"></a>Windows-ошибка завершения — 0x00000074 неверные сведения о конфигурации системы
 
@@ -34,7 +34,7 @@ ms.locfileid: "98631991"
  *Если вы звоните в службу поддержки, предоставьте ей следующие сведения:* 
  *Код завершения: BAD_SYSTEM_CONFIG_INFO*
 
-  ![Код завершения Windows 0x00000074, который также отображается как "BAD_SYSTEM_CONFIG_INFO". Windows информирует пользователя о том, что на компьютере возникла проблема, и его необходимо перезапустить.](./media/windows-stop-error-bad-system-config-info/1.png)
+  ![Код завершения Windows 0x00000074, который также отображается как "BAD_SYSTEM_CONFIG_INFO". Windows информирует пользователя о том, что на компьютере возникла проблема, и его необходимо перезапустить.](./media/windows-stop-error-bad-system-config-info/stop-code-0x00000074.png)
 
 ## <a name="cause"></a>Причина
 
@@ -56,8 +56,8 @@ ms.locfileid: "98631991"
 1. Включите последовательную консоль и сбор дампов памяти.
 1. Перестройте виртуальную машину.
 
-> [!NOTE]
-> При возникновении этой ошибки операционная система на виртуальной машине (ОС) не работает. Для устранения этой проблемы вы можете устранить неполадки в автономном режиме.
+   > [!NOTE]
+   > При возникновении этой ошибки операционная система на виртуальной машине (ОС) не работает. Для устранения этой проблемы вы можете устранить неполадки в автономном режиме.
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и доступ к ней
 
@@ -66,8 +66,8 @@ ms.locfileid: "98631991"
 1. Используйте подключение к удаленному рабочему столу для подключения к виртуальной машине восстановления.
 1. Скопируйте `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` папку и сохраните ее в работоспособном разделе диска или в другом надежном расположении. Создайте резервную копию этой папки в качестве меры предосторожности, так как вы будете изменять критически важные файлы реестра. 
 
-> [!NOTE]
-> Создайте копию `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` папки в качестве резервной копии на случай, если необходимо выполнить откат всех изменений, внесенных в реестр.
+   > [!NOTE]
+   > Создайте копию `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` папки в качестве резервной копии на случай, если необходимо выполнить откат всех изменений, внесенных в реестр.
 
 ### <a name="check-for-hive-corruption"></a>Проверка повреждения Hive
 
@@ -80,7 +80,7 @@ ms.locfileid: "98631991"
 
    1. Если не удается открыть куст или он пуст, то куст поврежден. Если куст поврежден, [откройте запрос в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-     ![Возникает ошибка, указывающая, что редактор реестра не может загрузить Hive.](./media/windows-stop-error-bad-system-config-info/2.png)
+      ![Возникает ошибка, указывающая, что редактор реестра не может загрузить Hive.](./media/windows-stop-error-bad-system-config-info/cannot-load-hive-error.png)
 
    1. Если куст открывается в обычном режиме, куст не был закрыт должным образом. Перейдите к шагу 5.
 
@@ -95,7 +95,7 @@ ms.locfileid: "98631991"
 
    **Включите последовательную консоль.**
    
-   ```
+   ```ps
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON 
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
    ```
@@ -108,13 +108,13 @@ ms.locfileid: "98631991"
 
    **Загрузите куст реестра с поврежденного диска ОС.**
 
-   ```
+   ```ps
    REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM
    ```
 
    **Включите сбор для ControlSet001.**
 
-   ```
+   ```ps
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f 
@@ -122,7 +122,7 @@ ms.locfileid: "98631991"
 
    **Включите сбор для ControlSet002.**
 
-   ```
+   ```ps
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f 
@@ -130,7 +130,7 @@ ms.locfileid: "98631991"
 
    **Выгрузите поврежденный диск ОС.**
 
-   ```
+   ```ps
    REG UNLOAD HKLM\BROKENSYSTEM
    ```
    

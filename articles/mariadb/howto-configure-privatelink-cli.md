@@ -3,16 +3,16 @@ title: Частная ссылка — Azure CLI — база данных Azure
 description: Узнайте, как настроить частную ссылку на базу данных Azure для MariaDB из Azure CLI
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 01/09/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7ba8a5ded1d83ffdf153724c5e76b27e10bccfcb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 693fe5820894de38a5b43fc700d517cdcb27233e
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015474"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660129"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью интерфейса командной строки
 
@@ -23,13 +23,13 @@ ms.locfileid: "96015474"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Необходим [сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md). 
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- Для работы с этой статьей требуется версия 2.0.28 или более поздняя Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+- Для работы с этой статьей требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

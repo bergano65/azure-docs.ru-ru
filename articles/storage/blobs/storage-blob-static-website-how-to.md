@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: normesta
 ms.date: 03/04/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 8ca670049b49500e6b6310bca25cb78ded31a294
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a90251097f2b4cced5b30f5d6eea03b6ca0b1c61
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95537855"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664755"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Размещение статического веб-сайта в службе хранилища Azure
 
@@ -54,9 +54,9 @@ ms.locfileid: "95537855"
 
 <a id="cli"></a>
 
-Размещение статического веб-сайта можно включить с помощью [Интерфейса командной строки Azure (CLI)](/cli/azure/?view=azure-cli-latest).
+Размещение статического веб-сайта можно включить с помощью [Интерфейса командной строки Azure (CLI)](/cli/azure/).
 
-1. Сначала откройте [Azure Cloud Shell](../../cloud-shell/overview.md?view=azure-cli-latest) или, если вы [установили](/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI локально, откройте командное консольное приложение (например, Windows PowerShell).
+1. Сначала откройте [Azure Cloud Shell](../../cloud-shell/overview.md) или, если вы [установили](/cli/azure/install-azure-cli) Azure CLI локально, откройте командное консольное приложение (например, Windows PowerShell).
 
 2. Если удостоверение связано с несколькими подписками, установите активную подписку в качестве подписки учетной записи хранения, в которой будет размещен статический веб-сайт.
 

@@ -3,15 +3,15 @@ title: Репликация данных — база данных Azure для 
 description: Сведения об использовании репликации данных для синхронизации с внешнего сервера в службе "база данных Azure для MariaDB".
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 331e064bcf11af31a778cb8dd06c463712421b7c
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4f83af5c72529b652b23db53bf9532e87b824ea4
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533435"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662633"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Репликация данных в базу данных Azure для MariaDB
 
@@ -37,10 +37,10 @@ ms.locfileid: "94533435"
 - Если на исходном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mariadb.az_replication_change_master` хранимую процедуру. См. следующие [примеры](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
 - Убедитесь, что IP-адрес исходного сервера добавлен в правила брандмауэра сервера-реплики базы данных Azure для MariaDB. Измените правила брандмауэра на [портале Azure](howto-manage-firewall-portal.md) или с помощью [Azure CLI](howto-manage-firewall-cli.md).
 - Убедитесь, что компьютер, на котором размещается исходный сервер, допускает входящий и исходящий трафик через порт 3306.
-- Убедитесь, что исходный сервер имеет **общедоступный IP-адрес** , DNS является общедоступным или имеет полное доменное имя (FQDN).
+- Убедитесь, что исходный сервер имеет **общедоступный IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
 
 ### <a name="other"></a>Другое
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).

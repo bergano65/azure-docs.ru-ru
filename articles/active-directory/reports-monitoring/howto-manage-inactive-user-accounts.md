@@ -13,16 +13,16 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 04/07/2020
+ms.date: 01/21/2021
 ms.author: markvi
-ms.reviewer: dhanyahk
+ms.reviewer: besiler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b48a84bb69a356815cccd1e33c555eeb667699f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8fb517f8c50ad2c32f23542e60069a0e0a496a2d
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89244727"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660670"
 ---
 # <a name="how-to-manage-inactive-user-accounts-in-azure-ad"></a>Практическое руководство. Управление неактивными учетными записями пользователей в Azure AD
 
@@ -85,7 +85,7 @@ ms.locfileid: "89244727"
 
 Для создания временной метки lastSignInDateTime требуется выполнить успешный вход в систему. Поскольку параметр lastSignInDateTime является новой функцией, значение свойства lastSignInDateTime может быть пустым, если:
 
-- последний успешный вход пользователя выполнялся до выпуска этой функции (1 декабря 2019 г.);
+- Последний успешный вход пользователя выполнялся до апреля 2020.
 - эта учетная запись пользователя никогда не использовалась для успешного входа.
 
 ## <a name="next-steps"></a>Дальнейшие действия

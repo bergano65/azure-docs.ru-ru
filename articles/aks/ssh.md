@@ -4,12 +4,12 @@ description: Узнайте, как создать SSL-подключение к
 services: container-service
 ms.topic: article
 ms.date: 07/31/2019
-ms.openlocfilehash: 50a52584618e505aa2ae7bd9ed7e0a9f6bc330a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c044b552cd0c28a7073364c48b9572045a290331
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87015618"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662859"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
@@ -25,7 +25,7 @@ ms.locfileid: "87015618"
 
 В этой статье также предполагается, что у вас есть ключ SSH. Ключ SSH можно создать с помощью [macOS или Linux][ssh-nix] или [Windows][ssh-windows]. Если для создания пары ключей используется выводимое значение Gen, сохраните пару ключей в формате OpenSSH, а не в формате закрытого ключа по умолчанию (PPK-файл).
 
-Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="configure-virtual-machine-scale-set-based-aks-clusters-for-ssh-access"></a>Настройка кластеров AKS на основе масштабируемых наборов виртуальных машин для доступа по протоколу SSH
 
@@ -35,7 +35,7 @@ ms.locfileid: "87015618"
 
 ```azurecli-interactive
 CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
-SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
+SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query '[0].name' -o tsv)
 ```
 
 В приведенном выше примере имя группы ресурсов кластера для *myAKSCluster* в *myResourceGroup* присваивается *CLUSTER_RESOURCE_GROUP*. Затем в примере используется *CLUSTER_RESOURCE_GROUP* для перечисления имени масштабируемого набора и его назначения *SCALE_SET_NAME*.
@@ -198,7 +198,7 @@ aks-nodepool1-79590246-0  10.240.0.4
 
 Закончив, `exit` из сеанса SSH, а затем `exit` из интерактивного сеанса контейнера. Когда сеанса с этим контейнером закроется, модуль pod, используемый для доступа по протоколу SSH, будет удален из кластера AKS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам нужны дополнительные сведения об устранении неполадок, вы можете [просмотреть журналы kubelet][view-kubelet-logs] или [журналы главного узла Kubernetes][view-master-logs].
 

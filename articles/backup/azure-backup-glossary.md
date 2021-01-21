@@ -3,12 +3,12 @@ title: Глоссарий Azure Backup
 description: В этой статье определяются термины, полезные для использования с Azure Backup.
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 1e28f0c2ad5d14ea2a8dc6ce8d5fa2b21c7e65ac
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 121258665ab275fdcffd618e7c0cf1b3e0537e70
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935076"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661482"
 ---
 # <a name="azure-backup-glossary"></a>Глоссарий Azure Backup
 
@@ -192,7 +192,7 @@ BCDR включает набор процессов, которые Органи
 
 (Термин для конкретной рабочей нагрузки)
 
-Используя Azure Backup Server, вы можете создавать резервные копии рабочих нагрузок приложения, таких как виртуальные машины Hyper-V, Microsoft SQL Server, SharePoint Server, Microsoft Exchange и клиенты Windows, с помощью единой консоли. Он наследует большую часть функций резервного копирования рабочей нагрузки из DPM, но с незначительными отличиями. [Подробнее](backup-azure-microsoft-azure-backup.md)
+Используя Azure Backup Server, вы можете создавать резервные копии рабочих нагрузок приложения, таких как виртуальные машины Hyper-V, Microsoft SQL Server, SharePoint Server, Microsoft Exchange и клиенты Windows, с помощью единой консоли. Он наследует большую часть функций резервного копирования рабочей нагрузки из DPM, но с незначительными отличиями. [Дополнительные сведения](backup-azure-microsoft-azure-backup.md)
 
 ## <a name="managed-disks"></a>Управляемые диски
 
@@ -320,7 +320,7 @@ RTO указывает максимально возможное время, в 
 
 См. [документацию по VSS](https://docs.microsoft.com/windows-server/storage/file-server/volume-shadow-copy-service).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обзор Azure Backup](backup-overview.md)
 - [Архитектура и компоненты Azure Backup](backup-architecture.md)
