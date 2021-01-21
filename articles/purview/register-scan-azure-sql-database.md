@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 15708e35fa27bb4a1f72368df6f49ff747eb799b
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 36781e7f975ee9d4a03cf899650701bf2d3940ac
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739796"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555956"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Регистрация и сканирование Базы данных SQL Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "97739796"
 
 ### <a name="known-limitations"></a>Известные ограничения
 
-Azure Purview не поддерживает сканирование [представлений](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15&preserve-view=true) в Базе данных SQL Azure. 
+Azure Purview не поддерживает сканирование [представлений](/sql/relational-databases/views/views?view=azuresqldb-current&preserve-view=true) в Базе данных SQL Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,7 +50,7 @@ Azure Purview не поддерживает сканирование [предс
 > [!Note]
 > Создавать имена входа могут только имена входа участника уровня сервера (созданного процессом подготовки) или члены роли базы данных `loginmanager` в базе данных master. Процесс предоставления разрешений займет примерно **15 минут**, и после этого Purview будет иметь нужные разрешения для сканирования ресурсов.
 
-Если у вас еще нет имени входа для Базы данных SQL Azure, создайте его по инструкциям из раздела о команде [CREATE LOGIN](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1). Значения **имя пользователя** и **пароль** вам потребуются для последующих шагов.
+Если у вас еще нет имени входа для Базы данных SQL Azure, создайте его по инструкциям из раздела о команде [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1). Значения **имя пользователя** и **пароль** вам потребуются для последующих шагов.
 
 1. На портале Azure перейдите к хранилищу ключей.
 1. Выберите **Параметры > Секреты**.
@@ -100,7 +100,7 @@ Azure Purview не поддерживает сканирование [предс
     ```
 
     > [!Note]
-    > В качестве `Username` можно использовать собственный субъект-службу или управляемое удостоверение Purview. Ознакомиться с ролями фиксированной базы данных и их возможностями можно [здесь](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15&preserve-view=true#fixed-database-roles).
+    > В качестве `Username` можно использовать собственный субъект-службу или управляемое удостоверение Purview. Ознакомиться с ролями фиксированной базы данных и их возможностями можно [здесь](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15&preserve-view=true#fixed-database-roles).
     
 ##### <a name="add-service-principal-to-key-vault-and-purviews-credential"></a>Добавление субъекта-службы в хранилище ключей и учетные данные Purview
 

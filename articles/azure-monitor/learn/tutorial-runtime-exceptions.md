@@ -3,16 +3,16 @@ title: Диагностика исключений во время выполн�
 description: Руководство по поиску и диагностике исключений во время выполнения в приложении с помощью Azure Application Insights.
 ms.subservice: application-insights
 ms.topic: tutorial
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 09/19/2017
 ms.custom: mvc
-ms.openlocfilehash: 057b211179c6932d4214e6118e3fa97b95145ba0
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 98ccaef716ae2390dcbcfbc7c4a1916359115f93
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926637"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210160"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 

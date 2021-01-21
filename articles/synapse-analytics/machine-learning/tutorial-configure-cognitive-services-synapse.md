@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: cf76a3d09da83693791873feb9e6ab03c432e47f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: eef65db05ab94b5b8de5ff82c2c51dba0730f170
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464401"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222179"
 ---
 # <a name="tutorial-pre-requisites-for-using-cognitive-services-in-azure-synapse"></a>Руководство по необходимым компонентам для использования Cognitive Services в Azure Synapse
 
@@ -38,7 +38,7 @@ ms.locfileid: "96464401"
 
 ## <a name="create-a-cognitive-services-resource"></a>Создание ресурса Cognitive Services
 
-[Azure Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147492) содержит множество различных типов служб. Ниже приведены некоторые примеры, используемые в учебниках по Synapse.
+[Azure Cognitive Services](../../cognitive-services/index.yml) содержит множество различных типов служб. Ниже приведены некоторые примеры, используемые в учебниках по Synapse.
 
 ### <a name="create-an-anomaly-detector-resource"></a>Создание ресурса "Детектор аномалий"
 Создайте [Детектор аномалий](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) на портале Azure.
@@ -53,7 +53,7 @@ ms.locfileid: "96464401"
 ## <a name="create-key-vault-and-configure-secrets-and-access"></a>Создание Key Vault, настройка секретов и доступа
 
 1. Создайте [Key Vault](https://ms.portal.azure.com/#create/Microsoft.KeyVault) на портале Azure.
-2. Выберите **Key Vault > Политики доступа** и предоставьте [рабочей области Azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/security/synapse-workspace-managed-identity) MSI разрешения для чтения секретов из Azure Key Vault.
+2. Выберите **Key Vault > Политики доступа** и предоставьте [рабочей области Azure Synapse](../security/synapse-workspace-managed-identity.md) MSI разрешения для чтения секретов из Azure Key Vault.
 
 >Убедитесь, что изменения политики сохранены. Этот важный шаг легко пропустить.
 

@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 4052d6a0773aa27e0a378ee04975c7946f1ffbfe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5e7b914d459d2452704f93987ce1bf91bfba988c
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464461"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222213"
 ---
 # <a name="tutorial-anomaly-detection-with-cognitive-services-preview"></a>Руководство по обнаружению аномалий с помощью Cognitive Services (предварительная версия)
 
-Из этого учебника вы узнаете, как обогатить данные в Azure Synapse с помощью [Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147492). Для обнаружения аномалий мы будем использовать [Детектор аномалий](https://go.microsoft.com/fwlink/?linkid=2147493). Чтобы обнаруживать аномалии, пользователь в Azure Synapse может просто выбрать таблицу для обогащения.
+Из этого учебника вы узнаете, как обогатить данные в Azure Synapse с помощью [Cognitive Services](../../cognitive-services/index.yml). Для обнаружения аномалий мы будем использовать [Детектор аномалий](../../cognitive-services/anomaly-detector/index.yml). Чтобы обнаруживать аномалии, пользователь в Azure Synapse может просто выбрать таблицу для обогащения.
 
 Темы, рассматриваемые в этом руководстве:
 
@@ -94,7 +94,7 @@ ms.locfileid: "96464461"
 
 Предоставленные сведения об Azure Key Vault позволяют безопасно сослаться на секреты из этого интерфейса, не раскрывая их.
 
-Теперь можно **выполнить все** ячейки, чтобы запустить обнаружение аномалий. Дополнительные сведения о [Детекторе аномалий в Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147493).
+Теперь можно **выполнить все** ячейки, чтобы запустить обнаружение аномалий. Дополнительные сведения о [Детекторе аномалий в Cognitive Services](../../cognitive-services/anomaly-detector/index.yml).
 
 ![Запуск обнаружения аномалий](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00f.png)
 

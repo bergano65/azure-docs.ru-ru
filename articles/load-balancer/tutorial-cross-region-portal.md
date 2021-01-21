@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 11/24/2020
-ms.openlocfilehash: 7ee203595a796529ae0aefe8b0c52a689ac29968
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: d94736656f691da9e893e4619a2299a061acd8e8
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762335"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611208"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-the-azure-portal"></a>Руководство. Создание Azure Load Balancer в нескольких регионах с помощью портала Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "96762335"
 
 ## <a name="sign-in-to-azure-portal"></a>Вход на портал Azure
 
-[Войдите](https://preview.portal.azure.com) на портал предварительной версии Azure.
+[Войдите](https://portal.azure.com) на портал предварительной версии Azure.
 
 ## <a name="create-cross-region-load-balancer"></a>Создание подсистемы балансировки нагрузки в нескольких регионах
 

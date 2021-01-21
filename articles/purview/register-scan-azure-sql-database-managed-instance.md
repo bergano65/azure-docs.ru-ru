@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 6eb17537fd64b192f64c36b38bab57e11d751328
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 3513ba0cd1a894b55da604d54964affa79b6adf4
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400783"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555973"
 ---
 # <a name="register-and-scan-an-azure-sql-database-managed-instance"></a>Регистрация и сканирование Управляемого экземпляра Базы данных SQL Azure
 
@@ -28,19 +28,19 @@ ms.locfileid: "97400783"
 
 ### <a name="known-limitations"></a>Известные ограничения
 
-Azure Purview не поддерживает сканирование [представлений](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) в Управляемом экземпляре Базы данных SQL Azure.
+Azure Purview не поддерживает сканирование [представлений](/sql/relational-databases/views/views?view=azuresqldb-mi-current&preserve-view=true) в Управляемом экземпляре Базы данных SQL Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Создайте новую учетную запись Azure Purview, если у вас ее еще нет.
 
-- [Configure public endpoint in Azure SQL Managed Instance](https://docs.microsoft.com/azure/azure-sql/managed-instance/public-endpoint-configure) (Настройка общедоступной конечной точки в управляемом экземпляре SQL Azure)
+- [Configure public endpoint in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure) (Настройка общедоступной конечной точки в управляемом экземпляре SQL Azure)
     > [!Note]
     > Ваша организация должна иметь возможность разрешить общедоступную конечную точку, так как **частная конечная точка еще не поддерживается** Purview. Если вы используете частную конечную точку, проверка не будет выполнена.
 
 ### <a name="setting-up-authentication-for-a-scan"></a>Настройка проверки подлинности для сканирования
 
-Проверка подлинности для проверки Управляемого экземпляра Базы данных SQL Azure. Если вам нужно создать новую проверку подлинности, [авторизуйте доступ к базе данных в Управляемом экземпляре Базы данных SQL](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage). Сейчас служба Purview поддерживает три метода проверки подлинности:
+Проверка подлинности для проверки Управляемого экземпляра Базы данных SQL Azure. Если вам нужно создать новую проверку подлинности, [авторизуйте доступ к базе данных в Управляемом экземпляре Базы данных SQL](/azure/azure-sql/database/logins-create-manage). Сейчас служба Purview поддерживает три метода проверки подлинности:
 
 - Проверка подлинности SQL
 - Субъект-служба
@@ -51,7 +51,7 @@ Azure Purview не поддерживает сканирование [предс
 > [!Note]
 > Создавать имена входа могут только имена входа участника уровня сервера (созданного процессом подготовки) или члены роли базы данных `loginmanager` в базе данных master. Процесс предоставления разрешений займет примерно **15 минут**, и после этого Purview будет иметь нужные разрешения для сканирования ресурсов.
 
-Если у вас еще нет имени входа для Управляемого экземпляра Базы данных SQL Azure, создайте его по инструкциям из раздела документации по команде [CREATE LOGIN](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1). Значения **имя пользователя** и **пароль** вам потребуются для последующих шагов.
+Если у вас еще нет имени входа для Управляемого экземпляра Базы данных SQL Azure, создайте его по инструкциям из раздела документации по команде [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1). Значения **имя пользователя** и **пароль** вам потребуются для последующих шагов.
 
 1. На портале Azure перейдите к хранилищу ключей.
 1. Выберите **Параметры > Секреты**.
@@ -85,8 +85,8 @@ Azure Purview не поддерживает сканирование [предс
 ##### <a name="configure-azure-ad-authentication-in-the-database-account"></a>Настройка проверки подлинности Azure AD в учетной записи базы данных
 
 Субъект-служба или управляемое удостоверение должны иметь разрешение на получение метаданных для базы данных, схем и таблиц. Кроме того, требуется возможность запрашивать из таблиц примеры для классификации.
-- [Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure)
-- Создайте пользователя Azure AD в Управляемом экземпляре Базы данных SQL Azure, следуя предварительным требованиям и учебнику по [созданию автономных пользователей, сопоставленных с удостоверениями Azure AD.](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities)
+- [Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL](/azure/azure-sql/database/authentication-aad-configure)
+- Создайте пользователя Azure AD в Управляемом экземпляре Базы данных SQL Azure, следуя предварительным требованиям и учебнику по [созданию автономных пользователей, сопоставленных с удостоверениями Azure AD.](/azure/azure-sql/database/authentication-aad-configure?tabs=azure-powershell#create-contained-users-mapped-to-azure-ad-identities)
 - Назначьте этому удостоверению разрешение `db_owner` (**рекомендуется**)
 
 ##### <a name="add-service-principal-to-key-vault-and-purviews-credential"></a>Добавление субъекта-службы в хранилище ключей и учетные данные Purview

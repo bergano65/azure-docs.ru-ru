@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 1b407cbee5218149f794ab125ac058e32b422558
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6a4833cf0d73939e01fd3e3e7263c6cba3c0a28a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96465223"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222196"
 ---
 # <a name="tutorial-sentiment-analysis-with-cognitive-services-preview"></a>Руководство. Анализ тональности с помощью Cognitive Services (предварительная версия)
 
-В этом руководстве показано, как дополнить данные в Azure Synapse с помощью [Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147492). Для выполнения анализа тональности мы будем использовать возможности [Анализа текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/). Чтобы дополнить данные сведениями о тональности, пользователь в Azure Synapse может просто выбрать таблицу с текстовым столбцом. При этом определяются позитивные, негативные, смешанные и нейтральные тональности с оценкой вероятности.
+В этом руководстве показано, как дополнить данные в Azure Synapse с помощью [Cognitive Services](../../cognitive-services/index.yml). Для выполнения анализа тональности мы будем использовать возможности [Анализа текста](../../cognitive-services/text-analytics/index.yml). Чтобы дополнить данные сведениями о тональности, пользователь в Azure Synapse может просто выбрать таблицу с текстовым столбцом. При этом определяются позитивные, негативные, смешанные и нейтральные тональности с оценкой вероятности.
 
 Темы, рассматриваемые в этом руководстве:
 
@@ -98,7 +98,7 @@ df.write.mode("overwrite").saveAsTable("default.YourTableName")
 
 Предоставленные сведения об Azure Key Vault позволяют безопасно сослаться на секреты из этого интерфейса, не раскрывая их.
 
-Теперь вы можете выбрать **Выполнить все**, чтобы дополнить данные сведениями о тональности. Сведения о тональности возвращаются в виде меток "Позитивная", "Негативная", "Нейтральная" и "Смешанная" с оценкой вероятности для каждой из них. [Дополнительные сведения об анализе тональности в Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147792).
+Теперь вы можете выбрать **Выполнить все**, чтобы дополнить данные сведениями о тональности. Сведения о тональности возвращаются в виде меток "Позитивная", "Негативная", "Нейтральная" и "Смешанная" с оценкой вероятности для каждой из них. [Дополнительные сведения об анализе тональности в Cognitive Services](../../cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md).
 
 ![Выполнение анализа тональности](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00h.png)
 

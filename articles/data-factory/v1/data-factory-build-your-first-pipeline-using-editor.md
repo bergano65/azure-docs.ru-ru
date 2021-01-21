@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
-ms.openlocfilehash: 360fbc3e1bfe7890f1f3b05899eb95ce7a3a72c2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 4e19991de20b130b878a230313d87ca09d31a84e
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496626"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556449"
 ---
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство по Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "96496626"
 > Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных"](../quickstart-create-data-factory-dot-net.md).
 
 > [!WARNING]
-> Доступный на портале Azure редактор JSON для создания и развертывания конвейеров ADF версии 1 будет отключен 31 июля 2019 г. После 31 июля 2019 г. для создания и развертывания конвейеров ADF версии 1 можно и дальше использовать [командлеты PowerShell для ADF версии 1](/powershell/module/az.datafactory/?view=azps-2.4.0&viewFallbackFrom=azps-2.3.2), [пакет SDK .NET для ADF версии 1](/dotnet/api/microsoft.azure.management.datafactories.models?view=azure-dotnet) и [REST API для ADF версии 1](/rest/api/datafactory/).
+> Доступный на портале Azure редактор JSON для создания и развертывания конвейеров ADF версии 1 будет отключен 31 июля 2019 г. После 31 июля 2019 г. для создания и развертывания конвейеров ADF версии 1 можно и дальше использовать [командлеты PowerShell для ADF версии 1](/powershell/module/az.datafactory/), [пакет SDK .NET для ADF версии 1](/dotnet/api/microsoft.azure.management.datafactories.models) и [REST API для ADF версии 1](/rest/api/datafactory/).
 
 Из этой статьи вы узнаете, как создать свою первую фабрику данных с помощью [портала Azure](https://portal.azure.com/). Чтобы выполнить приведенные здесь инструкции с помощью других средств или пакетов SDK, выберите в раскрывающемся списке один из доступных вариантов. 
 

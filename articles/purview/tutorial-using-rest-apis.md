@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/03/2020
-ms.openlocfilehash: 06f738ea88093ea8de45efebea983fd7fa13216e
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: fcc3e487d949a9450f792a6cc230b64e7dbe950a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387825"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202952"
 ---
 # <a name="tutorial-use-the-rest-apis"></a>Руководство по использованию REST API
 
@@ -142,7 +142,7 @@ ms.locfileid: "97387825"
 
 
 
-1. [Установите Node.js](https://github.com/Azure/autorest/blob/master/docs/installing-autorest.md).
+1. [Установите Node.js](https://github.com/Azure/autorest/blob/v2/docs/installing-autorest.md).
 1. Откройте PowerShell и выполните следующую команду:
 
    ```powershell
@@ -173,7 +173,7 @@ ms.locfileid: "97387825"
 1. Убедитесь, что используется версия не ниже 2.3.21, а затем щелкните элемент **Install** (Установить).
 1. Создайте и запустите приложение.
 
-Этот пример кода возвращает количество определений типов в каталоге и демонстрирует управление назначениями ролей. Дополнительные сведения см. в функции `DoRoleAssignmentOperations()` в этом примере кода. Дополнительные сведения о проекте см. в статье [Настройка проекта](https://github.com/Azure/autorest/blob/master/docs/client/proj-setup.md).
+Этот пример кода возвращает количество определений типов в каталоге и демонстрирует управление назначениями ролей. Дополнительные сведения см. в функции `DoRoleAssignmentOperations()` в этом примере кода. Дополнительные сведения о проекте см. в статье [Настройка проекта](https://github.com/Azure/autorest/blob/v2/docs/client/proj-setup.md).
 
 ### <a name="sample-code-for-the-console-application"></a>Пример кода для консольного приложения
 

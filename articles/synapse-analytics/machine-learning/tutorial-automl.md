@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: e219531a88787f19197a2e8c2a80040497c6dc1e
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: f3b0c5f1487951d05bc83973e5b4b9f3634a694b
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901425"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222264"
 ---
 # <a name="tutorial-train-a-machine-learning-model-without-code"></a>Руководство. Обучение модели машинного обучения без написания кода
 
-Вы можете обогатить данные в таблицах Spark с помощью новых моделей машинного обучения, обученных с использованием [автоматизированного машинного обучения](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml). Пользователь Azure Synapse Analytics может выбрать таблицу Spark в рабочей области, чтобы применить ее в качестве обучающего набора данных для создания моделей машинного обучения без необходимости писать код.
+Вы можете обогатить данные в таблицах Spark с помощью новых моделей машинного обучения, обученных с использованием [автоматизированного машинного обучения](../../machine-learning/concept-automated-ml.md). Пользователь Azure Synapse Analytics может выбрать таблицу Spark в рабочей области, чтобы применить ее в качестве обучающего набора данных для создания моделей машинного обучения без необходимости писать код.
 
 Из этого руководства вы узнаете, как обучать модели машинного обучения с помощью студии Azure Synapse Analytics без написания кода. Вы воспользуетесь функцией автоматизированного машинного обучения в Машинном обучении Azure, и при этом вам не нужно будет писать код. Тип модели, которую вам предстоит обучить, зависит от решаемой проблемы.
 
