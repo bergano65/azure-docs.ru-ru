@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: ff21975c34c28d7476635467e0c1abb8e6575e35
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f286542c91ba473d13595d8e8299b1bbd8c93856
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977958"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632611"
 ---
 # <a name="virtual-machine-is-unresponsive-while-applying-audit-policy-configuration-policy"></a>При применении политики конфигурации политики аудита виртуальная машина не отвечает.
 
@@ -45,6 +45,9 @@ ms.locfileid: "91977958"
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Общие сведения о процессе
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Создайте виртуальную машину для восстановления и войдите на нее.
 1. Отключение политики.
@@ -106,7 +109,7 @@ ms.locfileid: "91977958"
 
       - В команде замените на `<LETTER OF THE EFI SYSTEM PARTITION>` букву системного раздела EFI.
       - Может быть полезно запустить консоль управления дисками, чтобы указать соответствующий системный раздел, помеченный как **системный раздел EFI**.
-      - Идентификатор может быть уникальным GUID или **диспетчером загрузки**по умолчанию.
+      - Идентификатор может быть уникальным GUID или **диспетчером загрузки** по умолчанию.
 
 1. Выполните следующие команды:
 

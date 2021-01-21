@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: genli
-ms.openlocfilehash: b382efc4d283d64ce0f833bde9104fa2e3bc973a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a95ddf882e5edba9daa8ff91c02d1df1f50bceb
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088551"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632982"
 ---
 # <a name="windows-shows-blue-screen-error-when-booting-an-azure-vm"></a>Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows
 В этой статье описываются ошибки "синий экран", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки. 
@@ -41,6 +41,9 @@ ms.locfileid: "87088551"
 - Приложение обращается к запрещенному сектору памяти.
 
 ## <a name="collect-memory-dump-file"></a>Сбор файла дампа памяти
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 Чтобы устранить эту проблему, для начала нужно собрать файл дампа аварийного завершения, а затем обратиться с ним в службу поддержки. Чтобы собрать файл дампа, выполните следующие действия.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: cfeb040893ae2be5842959ed8458bd713bebe6ee
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: d8d2ab2bb3f24e1faa4791ebdc1ce3852f6a790e
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512143"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632696"
 ---
 # <a name="os-start-up--computer-restarted-unexpectedly-or-encountered-an-unexpected-error"></a>Запуск ОС — компьютер неожиданно перезагружается или произошла непредвиденная ошибка
 
@@ -35,7 +35,7 @@ ms.locfileid: "96512143"
  
 ![Ошибка при запуске служб программой установки Windows: компьютер был неожиданно перезагружен или произошла непредвиденная ошибка. Установка Windows не может быть продолжена. Чтобы установить Windows, нажмите кнопку "ОК", чтобы перезагрузить компьютер, а затем перезапустите установку.](./media/unexpected-restart-error-during-vm-boot/2.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Компьютер пытается выполнить начальную загрузку [обобщенного образа](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation), но при этом возникают проблемы из-за обработки пользовательского файла ответов (Unattend.xml). **Пользовательские файлы ответов не поддерживаются в Azure**. 
 
@@ -53,6 +53,9 @@ ms.locfileid: "96512143"
 
 ### <a name="do-not-use-unattendxml"></a>Не используйте Unattend.xml
 
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
+
 Чтобы устранить эту проблему, следуйте [указаниям Azure по подготовке и записи образа](../windows/upload-generalized-managed.md) и подготовке нового обобщенного образа. Во время работы программы Sysprep **не используйте `/unattend:<your file’s name>` флаг**. Вместо этого используйте только следующие флаги:
 
 `sysprep /oobe /generalize /shutdown`
@@ -63,6 +66,6 @@ ms.locfileid: "96512143"
 
 - Ввод готовых к работе
 - Generalize
-- Shutdown
+- Завершить работу
  
 ![Окно средства подготовки системы с выбранными параметрами OOBE, generalize и Shutdown.](./media/unexpected-restart-error-during-vm-boot/3.png)

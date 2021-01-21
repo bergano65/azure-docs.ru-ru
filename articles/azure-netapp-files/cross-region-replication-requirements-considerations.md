@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/16/2020
+ms.date: 01/20/2021
 ms.author: b-juche
-ms.openlocfilehash: 7b664dcd1cb12808960ffacf91c6d02d58632c4e
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 4a4fff18d21ccb0c729ecb1f79df17225c8086bc
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95243143"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632679"
 ---
 # <a name="requirements-and-considerations-for-using-cross-region-replication"></a>Требования и рекомендации по использованию репликации между регионами 
 
@@ -31,6 +31,7 @@ ms.locfileid: "95243143"
 * Репликация Azure NetApp Files доступна только в определенных парах областей фиксированного региона. См. раздел [Поддерживаемые пары регионов](cross-region-replication-introduction.md#supported-region-pairs). 
 * Тома SMB поддерживаются вместе с томами NFS. Для репликации томов SMB требуется подключение Active Directory в исходных и целевых учетных записях NetApp. Конечное подключение к Active Directory должно иметь доступ к DNS-серверам или добавить контроллеры домена, доступные из делегированной подсети в регионе назначения. Дополнительные сведения см. в разделе [требования к Active Directoryным подключениям](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections). 
 * Целевая учетная запись должна находиться в другом регионе, отличном от региона исходного тома. Вы также можете выбрать существующую учетную запись NetApp в другом регионе.  
+* Целевой том репликации доступен только для чтения, пока вы не [перейдете в целевой регион](cross-region-replication-manage-disaster-recovery.md#fail-over-to-destination-volume) , чтобы включить целевой том для чтения и записи. 
 * Azure NetApp Files репликация в настоящее время не поддерживает несколько подписок. все репликации должны выполняться в рамках одной подписки.
 * Можно настроить не более пяти томов для репликации в одной подписке на регион. Вы можете открыть запрос в службу поддержки, чтобы запросить увеличение квоты по умолчанию для пяти томов назначения репликации (для каждой подписки в регионе). 
 * Для отражения вновь добавленного моментального снимка на исходном томе может быть задержка до пяти минут.  
@@ -45,7 +46,7 @@ ms.locfileid: "95243143"
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)
 * [Метрики репликации томов](azure-netapp-files-metrics.md#replication)
-* [Удаление репликации томов или томов](cross-region-replication-delete.md)
+* [Удаление репликаций томов или томов](cross-region-replication-delete.md)
 * [Устранение неполадок с репликацией между регионами](troubleshoot-cross-region-replication.md)
 
 

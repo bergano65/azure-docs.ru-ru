@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 8af8d7695c48c6ac682109bb38935e98921fa9e4
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: fc3bd5d2590e969db07e9dffa61b4902ea4604c3
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681913"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632552"
 ---
 # <a name="vm-is-unresponsive-while-waiting-for-the-local-session-manager-service"></a>Виртуальная машина не отвечает при ожидании службы диспетчера локальных сеансов
 
@@ -34,6 +34,9 @@ ms.locfileid: "94681913"
 Существует несколько причин, по которым виртуальная машина может зависнуть в ожидании диспетчера локальных сеансов. Если проблема не исчезнет, необходимо получить дамп памяти для анализа.
 
 ## <a name="solution"></a>Решение
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 В некоторых случаях, чтобы устранить проблему, просто дождитесь завершения процесса. Если ваша виртуальная машина не отвечает и остается на экране ожидания в течение часа, необходимо получить дамп памяти и обратиться в службу поддержки Майкрософт.
 

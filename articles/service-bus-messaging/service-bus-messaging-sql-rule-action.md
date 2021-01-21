@@ -3,16 +3,16 @@ title: Синтаксис действия SQL правила подписки �
 description: В этой статье содержится ссылка на синтаксис действия правила SQL. Действия записываются в синтаксисе на основе языка SQL, который выполняется для сообщения.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: 7ce3332fb1a2025e89135e5e42e72d4afe1e7a5e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 606281d42d5598d7f73312990d3a19775a202c08
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489400"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632817"
 ---
 # <a name="subscription-rule-sql-action-syntax"></a>Синтаксис действия правила подписки SQL
 
-*Действие SQL* используется для работы с метаданными сообщений после того, как сообщение было выбрано фильтром правила подписки. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения действий используются с `sqlExpression` элементом свойства Action служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--action-sql-expression`](/cli/azure/servicebus/topic/subscription/rule?preserve-view=true&view=azure-cli-latest#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
+*Действие SQL* используется для работы с метаданными сообщений после того, как сообщение было выбрано фильтром правила подписки. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения действий используются с `sqlExpression` элементом свойства Action служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--action-sql-expression`](/cli/azure/servicebus/topic/subscription/rule#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
   
   
 ```  
@@ -210,7 +210,7 @@ ms.locfileid: "96489400"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Класс SQLRuleAction (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction)
+- [Класс SQLRuleAction (платформа .NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction)
 - [Класс SQLRuleAction (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlruleaction)
 - [Класс SqlRuleAction (Java)](/java/api/com.microsoft.azure.servicebus.rules.sqlruleaction)
 - [SqlRuleAction (JavaScript)](/javascript/api/@azure/service-bus/sqlruleaction)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/25/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 16f6919577955bda5b04db26deb9fe78a467e364
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14da41815e177ece64c72ac27a7cb126e69fdc62
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86509041"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633194"
 ---
 # <a name="boot-error--this-is-not-a-bootable-disk"></a>Ошибка загрузки — это не загрузочный диск
 
@@ -40,6 +40,9 @@ ms.locfileid: "86509041"
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Обзор процесса
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Создайте виртуальную машину для восстановления и войдите на нее.
 2. Задайте для секции состояние активно.
@@ -75,7 +78,7 @@ ms.locfileid: "86509041"
 
    ![На рис. 3 показано окно * DISKPART * с выходными данными команды * list partition *. Секции 1 и 2 отображаются в таблице. Также отображаются выходные данные команды * SEL Partition 1 *, если выбран диск Partition 1.](media/troubleshoot-guide-not-bootable-disk/3.jpg)
 
-7. Введите "Detail Partition", чтобы проверить состояние секции. См. рис. 4, где Секция *активна: нет*или рис. 5, где раздел имеет значение "Active: Yes".
+7. Введите "Detail Partition", чтобы проверить состояние секции. См. рис. 4, где Секция *активна: нет* или рис. 5, где раздел имеет значение "Active: Yes".
 
    Рис. 4
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3f56fc1b321396c5cc6aa93e3f47fcaafcbe4ae4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 0fbd7cda4723b62863d7d9bb0fe6aa2fac32dcd9
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202340"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633109"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый уровень безопасности Azure для концентраторов событий
 
@@ -293,9 +293,9 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Руководство**. Azure Active Directory (AD) содержит встроенные роли, которые должны быть явно назначены и доступны для запросов. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов. 
 
-Как получить роль каталога в Azure AD с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0
+Как получить роль каталога в Azure AD с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole
 
-Как получить членов роли каталога в Azure AD с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0
+Как получить членов роли каталога в Azure AD с помощью PowerShell: https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -633,7 +633,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Создание запросов с помощью Azure Resource Graph: https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
-Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
+Просмотр подписок Azure: https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription
 
 Общие сведения об Azure RBAC: https://docs.microsoft.com/azure/role-based-access-control/overview
 
@@ -779,7 +779,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 Встроенная политика Azure для пространства имен концентраторов событий: https://docs.microsoft.com/azure/governance/policy/samples/built-in-policies#event-hub
 
-Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0
+Просмотр доступных псевдонимов политик Azure: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias
 
 Настройка Политики SQL Azure и управление ею: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
@@ -820,9 +820,9 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 **Руководство**. Если вы используете пользовательские определения политики Azure для концентраторов событий или связанных ресурсов, используйте Azure Repos для безопасного хранения кода и управления им.
 
-Хранение кода в Azure DevOps: https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops
+Хранение кода в Azure DevOps: https://docs.microsoft.com/azure/devops/repos/git/gitworkflow
 
-Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops
+Документация по Azure Repos: https://docs.microsoft.com/azure/devops/repos/index
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -986,7 +986,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
  
 
-Как восстановить ключи хранилища ключей в Azure: https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
+Как восстановить ключи хранилища ключей в Azure: https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

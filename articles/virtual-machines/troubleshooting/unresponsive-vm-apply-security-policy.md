@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 06/15/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 6b50bffd1a44c0cf53f15650f5ff4d938f45df4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 047c8afbfe7b489e5c3ac0ccb677f6fc021443a8
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84908065"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632645"
 ---
 # <a name="azure-vm-is-unresponsive-while-applying-security-policy-to-the-system"></a>Виртуальная машина Azure не отвечает при применении политики безопасности к системе
 
@@ -33,7 +33,7 @@ ms.locfileid: "84908065"
 
 :::image type="content" source="media/unresponsive-vm-apply-security-policy/apply-policy.png" alt-text="Снимок экрана: экран запуска Windows Server 2012 R2 зависает.":::
 
-:::image type="content" source="media/unresponsive-vm-apply-security-policy/apply-policy-2.png" alt-text="Снимок экрана: экран запуска Windows Server 2012 R2 зависает.":::
+:::image type="content" source="media/unresponsive-vm-apply-security-policy/apply-policy-2.png" alt-text="Снимок экрана запуска ОС зависает.":::
 
 ## <a name="cause"></a>Причина
 
@@ -42,6 +42,9 @@ ms.locfileid: "84908065"
 ## <a name="resolution"></a>Решение
 
 ### <a name="process-overview"></a>Обзор процесса
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. [Создание виртуальной машины для восстановления и доступ к ней](#create-and-access-a-repair-vm)
 2. [Включение сбора последовательной консоли и дампа памяти](#enable-serial-console-and-memory-dump-collection)
@@ -68,7 +71,54 @@ ms.locfileid: "84908065"
 
         В команде замените на \<BOOT PARTITON> букву раздела на подключенном диске, который содержит папку Boot.
 
-        :::image type="content" source="media/unresponsive-vm-apply-security-policy/store-data.png" alt-text="Снимок экрана: экран запуска Windows Server 2012 R2 зависает." /v NMICrashDump /t REG_DWORD /d 1 /f
+        :::image type="content" source="media/unresponsive-vm-apply-security-policy/store-data.png" alt-text="На схеме показаны выходные данные для вывода данных из хранилища BCD в виртуальной машине поколения 1, которая отображается под заголовком Windows Boot Loader (идентификатор).":::
+
+     2. Для виртуальной машины поколения 2 введите следующую команду и запишите идентификатор в списке:
+
+        ```console
+        bcdedit /store <LETTER OF THE EFI SYSTEM PARTITION>:EFI\Microsoft\boot\bcd /enum
+        ```
+
+        - В команде замените на \<LETTER OF THE EFI SYSTEM PARTITION> букву системного раздела EFI.
+        - Может быть полезно запустить консоль управления дисками, чтобы указать соответствующий системный раздел, помеченный как "системный раздел EFI".
+        - Идентификатор может быть уникальным идентификатором GUID или значением по умолчанию BOOTMGR.
+3. Чтобы включить последовательную консоль, выполните следующие команды:
+
+    ```console
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON
+    ```
+
+    ```console
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
+    ```
+
+    - В команде замените на \<VOLUME LETTER WHERE THE BCD FOLDER IS> букву папки BCD.
+    - В команде замените \<BOOT LOADER IDENTIFIER> идентификатором, найденным на предыдущем шаге.
+4. Убедитесь, что свободное пространство на диске операционной системы превышает объем памяти (ОЗУ) виртуальной машины.
+
+    1. Если на диске ОС недостаточно места, следует изменить расположение, в котором будет создан файл дампа памяти. Вместо того чтобы создавать файл на диске операционной системы, вы можете ссылаться на него на любой другой диск данных, подключенный к виртуальной машине, имеющей достаточно свободного места. Чтобы изменить расположение, замените "% SystemRoot%" буквой диска (например, "F:") диска данных в командах, перечисленных ниже.
+    2. Введите приведенные ниже команды (рекомендуемая конфигурация дампа).
+
+        Загрузка неработающего диска ОС:
+
+        ```console
+        REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM
+        ```
+
+        Включите сбор для ControlSet001:
+
+        ```console
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
+        ```
+
+        Включите сбор для ControlSet002:
+
+        ```console
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
         ```
 
         Выгрузите поврежденный диск ОС.

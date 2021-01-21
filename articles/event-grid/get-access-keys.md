@@ -3,12 +3,12 @@ title: Получение ключа доступа для ресурса сет
 description: В этой статье описывается получение ключа доступа для раздела или домена сетки событий.
 ms.topic: how-to
 ms.date: 07/07/2020
-ms.openlocfilehash: 2e258cebe1652178a67c292d0cccab3a151eddf7
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: a642affbac79766684dc75a37dae0373450d20e8
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624841"
+ms.locfileid: "98632535"
 ---
 # <a name="get-access-keys-for-event-grid-resources-topics-or-domains"></a>Получение ключей доступа для ресурсов сетки событий (разделы или домены)
 Ключи доступа используются для проверки подлинности событий публикации приложения в ресурсах службы "Сетка событий Azure" (разделы и домены). Рекомендуется регулярно создавать ключи и хранить их в безопасном месте. Вы предоставляете два ключа доступа, которые позволяют поддерживать подключения с помощью одного ключа при повторном создании другого.
@@ -34,17 +34,17 @@ Get-AzEventGridDomainKey -ResourceGroup <RESOURCE GROUP NAME> -Name <DOMAIN NAME
 ```
 
 ## <a name="azure-cli"></a>Azure CLI
-Для получения ключей доступа используйте раздел [AZ eventgrid Topic List](/cli/azure/eventgrid/topic/key?view=azure-cli-latest#az-eventgrid-topic-key-list) . 
+Для получения ключей доступа используйте раздел [AZ eventgrid Topic List](/cli/azure/eventgrid/topic/key#az-eventgrid-topic-key-list) . 
 
 ```azurecli-interactive
 az eventgrid topic key list --resource-group <RESOURCE GROUP NAME> --name <TOPIC NAME>
 ```
 
-Чтобы получить ключи доступа для доменов, используйте команду [AZ eventgrid Domain Key List](/cli/azure/eventgrid/domain/key?view=azure-cli-latest#az-eventgrid-domain-key-list) . 
+Чтобы получить ключи доступа для доменов, используйте команду [AZ eventgrid Domain Key List](/cli/azure/eventgrid/domain/key#az-eventgrid-domain-key-list) . 
 
 ```azurecli-interactive
 az eventgrid domain key list --resource-group <RESOURCE GROUP NAME> --name <DOMAIN NAME>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующую статью: [Проверка подлинности клиентов публикации](security-authenticate-publishing-clients.md). 

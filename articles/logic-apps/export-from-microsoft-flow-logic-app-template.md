@@ -3,17 +3,19 @@ title: Экспорт потоков из Power Автоматизация в Az
 description: Перенесите потоки из Power Автоматизация в Azure Logic Apps, экспортировав их как шаблоны Azure Resource Manager
 services: logic-apps
 ms.suite: integration
-ms.reviewer: jonfan, logicappspm
+ms.reviewer: estfan, sneshaf, pinath, logicappspm
 ms.topic: conceptual
-ms.date: 06/03/2020
-ms.openlocfilehash: 1c2f0a2c54be7adbc7b8babd596f18e08c67a024
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 01/20/2021
+ms.openlocfilehash: 2192ae5f3de551cb8ff2b6c36e233804c3c56bf1
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014420"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633253"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Automate и их развертывание в Azure Logic Apps
+
+> Для последовательностей, созданных после октября 2020, вы больше не сможете экспортировать из Power Автоматизация и выполнить развертывание в Azure Logic Apps.
 
 Чтобы расширить и расширить возможности потока, можно перенести этот поток из [Power Автоматизация](https://flow.microsoft.com) в [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Вы можете экспортировать последовательность в качестве шаблона Azure Resource Manager для приложения логики, развернуть шаблон приложения логики в группе ресурсов Azure, а затем открыть это приложение логики в конструкторе приложений логики.
 
@@ -158,7 +160,7 @@ ms.locfileid: "96014420"
 
    При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Пример:
 
-   ![окно выходных данных](./media/export-from-microsoft-flow-logic-app-template/output-window.png)
+   ![Окно вывода](./media/export-from-microsoft-flow-logic-app-template/output-window.png)
 
    Если какие-либо подключения в приложении логики нуждаются в вводе данных, окно PowerShell открывается в фоновом режиме и запрашивает все необходимые пароли или секретные ключи. После ввода этих сведений развертывание продолжится.
 
@@ -172,7 +174,7 @@ ms.locfileid: "96014420"
 
 Дополнительные сведения об этих шагах развертывания см [. в разделе Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio.](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-to-Azure)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соединителях для Azure Logic Apps](../connectors/apis-list.md)
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

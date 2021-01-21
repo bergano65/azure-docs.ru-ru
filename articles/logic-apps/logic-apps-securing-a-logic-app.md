@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.openlocfilehash: c889498d6341875682055e9d67b8d2b958bac70a
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/20/2021
+ms.openlocfilehash: 337e242e3c194c8ec9f66e1888926e6a8f6a8375
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251069"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633084"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -966,7 +966,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 | Свойство (конструктор) | Свойство (JSON) | Обязательно | Значение | Описание |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Да | **Сертификат клиента** <br>или диспетчер конфигурации служб <br>`ClientCertificate` | Тип проверки подлинности. Управлять сертификатами можно с помощью службы [управления API Azure](../api-management/api-management-howto-mutual-certificates.md). <p></p>**Примечание**. пользовательские соединители не поддерживают проверку подлинности на основе сертификатов как для входящих, так и для исходящих вызовов. |
-| **Pfx** | `pfx` | Да | <*закодированное-содержимое-файла-pfx*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. <p><p>Чтобы преобразовать PFX-файл в формат в кодировке base64, можно использовать PowerShell, выполнив следующие действия. <p>1. Сохраните содержимое сертификата в переменную: <p>   `$pfx_cert = get-content 'c:\certificate.pfx' -Encoding Byte` <p>2. Преобразуйте содержимое сертификата с помощью функции `ToBase64String()` и сохраните содержимое в текстовый файл: <p>   `[System.Convert]::ToBase64String($pfx_cert) | Out-File 'pfx-encoded-bytes.txt'` |
+| **Pfx** | `pfx` | Да | <*закодированное-содержимое-файла-pfx*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. <p><p>Чтобы преобразовать PFX-файл в формат в кодировке base64, можно использовать PowerShell, выполнив следующие действия. <p>1. Сохраните содержимое сертификата в переменную: <p>   `$pfx_cert = get-content 'c:\certificate.pfx' -Encoding Byte` <p>2. Преобразуйте содержимое сертификата с помощью функции `ToBase64String()` и сохраните содержимое в текстовый файл: <p>   `[System.Convert]::ToBase64String($pfx_cert) | Out-File 'pfx-encoded-bytes.txt'` <p><p>**Устранение неполадок**. при использовании `cert mmc/PowerShell` команды может появиться следующее сообщение об ошибке: <p><p>`Could not load the certificate private key. Please check the authentication certificate password is correct and try again.` <p><p>Чтобы устранить эту ошибку, попробуйте преобразовать PFX-файл в файл PEM и снова с помощью `openssl` команды: <p><p>`openssl pkcs12 -in certificate.pfx -out certificate.pem` <br>`openssl pkcs12 -in certificate.pem -export -out certificate2.pfx` <p><p>Затем, когда вы получаете строку в кодировке Base64 для только что преобразованного PFX-файла сертификата, строка теперь работает в Azure Logic Apps. |
 | **Пароль** | `password`| нет | <*пароль-для-файла-pfx*> | Пароль для доступа к PFX-файлу |
 |||||
 

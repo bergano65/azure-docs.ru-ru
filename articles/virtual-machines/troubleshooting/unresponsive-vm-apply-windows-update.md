@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 55dcd65e901a5ce8665ef8d3a2a29d7943581df9
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 145d58013b259bf14c26d0840b8cd4299cfe85f0
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200725"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632628"
 ---
 # <a name="vm-is-unresponsive-with-c01a001d-error-when-applying-windows-update"></a>Виртуальная машина не отвечает на ошибку "C01A001D" при применении Центр обновления Windows
 
@@ -38,6 +38,9 @@ ms.locfileid: "98200725"
 ## <a name="resolution"></a>Решение
 
 ### <a name="process-overview"></a>Общие сведения о процессе
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. [Создайте виртуальную машину восстановления и получите к ней доступ](#create-and-access-a-repair-vm).
 2. [Освободите место на жестком диске](#free-up-space-on-the-hard-disk).

@@ -3,12 +3,12 @@ title: Обзор AMQP 1,0 в служебной шине Azure
 description: Узнайте, как служебная шина Azure поддерживает Расширенный протокол управления очередью сообщений (AMQP) — открытый стандартный протокол.
 ms.topic: article
 ms.date: 11/20/2020
-ms.openlocfilehash: 241a6b7fb9f9055ce610e44e5cd37dba87c77554
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: 58c2cc8e9d92fff31a286b6e9bd63b63bee26aee
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709288"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632890"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Поддержка AMQP 1.0 в служебной шине
 Облачная служба служебной шины Azure использует [протокол расширенных очередей сообщений (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) в качестве основного средства связи. Корпорация Майкрософт сотрудничает с партнерами по отрасли, а также клиентам и поставщикам конкурирующих брокеров обмена сообщениями, чтобы разрабатывать и развивать AMQP за последние десять лет. новые расширения разрабатываются в [техническом комитете Oasis AMQP](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 — это стандарт ISO и IEC ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -64,11 +64,11 @@ AMQP 1.0 разрабатывался с 2008 г. активной группо�
 
 Все поддерживаемые клиентские библиотеки служебной шины, доступные через пакет Azure SDK, используют AMQP 1,0.
 
-- [Служебная шина Azure для .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true&view=azure-dotnet)
-- [Библиотеки Служебной шины Azure для Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
+- [Служебная шина Azure для .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true)
+- [Библиотеки Служебной шины Azure для Java](/java/api/overview/azure/servicebus?preserve-view=true)
 - [Поставщик Служебной шины Azure для Java JMS 2.0](how-to-use-java-message-service-20.md)
-- [Модули Служебной шины Azure для JavaScript и TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
-- [Библиотеки Служебной шины для Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
+- [Модули Служебной шины Azure для JavaScript и TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true)
+- [Библиотеки Служебной шины для Python](/python/api/overview/azure/servicebus?preserve-view=true)
 
 [!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 

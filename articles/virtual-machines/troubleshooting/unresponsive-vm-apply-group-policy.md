@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.author: v-mibufo
-ms.openlocfilehash: cbf2fe491e1fe0b553eab04ca7190da0413a3ba6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7160ec9564ede21eab0a205b2d66a7d566639506
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86526016"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632662"
 ---
 # <a name="vm-is-unresponsive-when-applying-group-policy-local-users-and-groups-policy"></a>Виртуальная машина не отвечает, когда применяется групповая политика политики локальных пользователей и групп
 
@@ -31,7 +31,7 @@ ms.locfileid: "86526016"
 
 :::image type="content" source="media//unresponsive-vm-apply-group-policy/applying-group-policy-1.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2).":::
 
-:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2).":::
+:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012).":::
 
 ## <a name="cause"></a>Причина
 
@@ -47,6 +47,9 @@ ms.locfileid: "86526016"
 ## <a name="resolution"></a>Решение
 
 ### <a name="process-overview"></a>Общие сведения о процессе
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. [Создание виртуальной машины для восстановления и получение доступа к ней](#step-1-create-and-access-a-repair-vm)
 1. [Отключение политики](#step-2-disable-the-policy)
@@ -66,7 +69,23 @@ ms.locfileid: "86526016"
 1. Откройте редактор реестра на виртуальной машине восстановления.
 1. Перейдите к разделу **HKEY_LOCAL_MACHINE** и выберите **файл**  >  **Загрузить куст** в меню.
 
-    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="Снимок экрана загрузки применения политики Групповая политика локальных пользователей и групп (Windows Server 2012 R2)." /v CleanupProfiles /f
+    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="На снимке экрана показано выделенный HKEY_LOCAL_MACHINE и меню, содержащее пункт Загрузить куст.":::
+
+    - Можно использовать Load Hive для загрузки разделов реестра из автономной системы. В этом случае система является поврежденным диском, подключенным к виртуальной машине восстановления.
+    - Параметры на уровне системы хранятся в `HKEY_LOCAL_MACHINE` и могут быть сокращены по "HKLM".
+1. На подключенном диске перейдите к файлу `\windows\system32\config\SOFTWARE` и откройте его.
+
+    1. Когда появится запрос на ввод имени, введите BROKENSOFTWARE.
+    1. Чтобы удостовериться, загружен ли BROKENSOFTWARE, разверните **HKEY_LOCAL_MACHINE** и найдите добавленный ключ BROKENSOFTWARE.
+1. Перейдите по адресу BROKENSOFTWARE и проверьте, существует ли ключ Клеануппрофиле в загруженном Hive.
+
+    1. Если ключ существует, задается политика Клеануппрофиле. Его значение представляет политику хранения, измеряемую в днях. Продолжайте удаление ключа.
+    1. Если ключ не существует, политика CleanupProfile не установлена. [Отправьте запрос в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), включая файл memory.dmp, расположенный в каталоге Windows, подключенного диска ОС.
+
+1. Удалите ключ Клеануппрофилес с помощью следующей команды:
+
+    ```
+    reg delete "HKLM\BROKENSOFTWARE\Policies\Microsoft\Windows\System" /v CleanupProfiles /f
     ```
 1.  Выгрузите куст BROKENSOFTWARE с помощью следующей команды:
 

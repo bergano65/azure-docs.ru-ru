@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/31/2018
 ms.author: genli
-ms.openlocfilehash: f80fbd803cbe4ae5c4ac381c8cdb2f72d0ede316
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 196f49a72932906e0a21b3c6c534c79d291a845f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86132936"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632999"
 ---
 # <a name="windows-shows-checking-file-system-when-booting-an-azure-vm"></a>Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure
 
@@ -36,6 +36,9 @@ ms.locfileid: "86132936"
 Если в файловой системе обнаружена ошибка NTFS, Windows проверит и восстановит согласованность диска при следующем перезапуске. Обычно это происходит, если у виртуальной машины был неожиданный перезапуск, или если процесс ее завершения был прерван.
 
 ## <a name="solution"></a>Решение 
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 Windows будет загружаться нормально после завершения процесса проверки диска. Если виртуальная машина зависает в процессе проверки диска, попробуйте запустить проверку диска на виртуальной машине в автономном режиме.
 1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).

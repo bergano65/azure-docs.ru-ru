@@ -3,12 +3,12 @@ title: Использование служебной шины Azure на пла�
 description: В этой статье описывается, как использовать служебную шину Azure из приложения .NET с помощью AMQP (Улучшенный протокол очереди обмена сообщениями).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 0d6d7d01a56d2e7068f9c4ccb8ec505914a31ecf
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 20800363327aefda073cd484dc737b28e60466a7
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233939"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632856"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Использование служебной шины на платформе .NET с протоколом AMQP 1.0
 
@@ -74,7 +74,7 @@ ms.locfileid: "98233939"
 | long |long |Значение AMQP |
 | FLOAT |FLOAT |Значение AMQP |
 | double |double |Значение AMQP |
-| decimal |decimal128 |Значение AMQP |
+| Decimal |decimal128 |Значение AMQP |
 | char |char |Значение AMQP |
 | Дата и время |TIMESTAMP |Значение AMQP |
 | Guid |uuid |Значение AMQP |
@@ -107,10 +107,10 @@ ms.locfileid: "98233939"
 
 [Интерфейсы API .NET](/dotnet/api/) предоставляют несколько параметров для управления поведением протокола AMQP:
 
-* **[MessageReceiver. PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver.prefetchcount?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessageReceiver_PrefetchCount)**: управляет начальным кредитом, примененным к ссылке. Значение по умолчанию — 0.
-* **[MessagingFactorySettings.AmqpTransportSettings.MaxFrameSize](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.maxframesize?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_MaxFrameSize)** определяет максимальный размер кадра AMQP, доступный во время согласования при открытии подключения. Значение по умолчанию: 65 536 байт.
-* **[MessagingFactorySettings.AmqpTransportSettings.Batчфлушинтервал](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.batchflushinterval?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_BatchFlushInterval)**: если передачи являются пакетными, это значение определяет максимальную задержку отправки расстановки. По умолчанию наследуется отправителями и получателями. Отдельные отправители или получатели могут переопределить значение по умолчанию, составляющее 20 миллисекунд.
-* **[MessagingFactorySettings. AmqpTransportSettings. усесслстреамсекурити](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.usesslstreamsecurity?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_UseSslStreamSecurity)**: определяет, устанавливаются ли подключения AMQP через TLS-соединение. Значение по умолчанию — **true**.
+* **[MessageReceiver. PrefetchCount](/dotnet/api/microsoft.servicebus.messaging.messagereceiver.prefetchcount#Microsoft_ServiceBus_Messaging_MessageReceiver_PrefetchCount)**: управляет начальным кредитом, примененным к ссылке. Значение по умолчанию — 0.
+* **[MessagingFactorySettings.AmqpTransportSettings.MaxFrameSize](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.maxframesize#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_MaxFrameSize)** определяет максимальный размер кадра AMQP, доступный во время согласования при открытии подключения. Значение по умолчанию: 65 536 байт.
+* **[MessagingFactorySettings.AmqpTransportSettings.Batчфлушинтервал](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.batchflushinterval#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_BatchFlushInterval)**: если передачи являются пакетными, это значение определяет максимальную задержку отправки расстановки. По умолчанию наследуется отправителями и получателями. Отдельные отправители или получатели могут переопределить значение по умолчанию, составляющее 20 миллисекунд.
+* **[MessagingFactorySettings. AmqpTransportSettings. усесслстреамсекурити](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.usesslstreamsecurity#Microsoft_ServiceBus_Messaging_Amqp_AmqpTransportSettings_UseSslStreamSecurity)**: определяет, устанавливаются ли подключения AMQP через TLS-соединение. Значение по умолчанию — **true**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -120,10 +120,10 @@ ms.locfileid: "98233939"
 * [Руководство по использованию протокола AMQP 1.0]
 
 [Create a Service Bus namespace using the Azure portal]: service-bus-create-namespace-portal.md
-[DataContractSerializer]: /dotnet/api/system.runtime.serialization.datacontractserializer?view=netcore-3.1
-[BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage?view=azureservicebus-4.0.0
-[Microsoft.ServiceBus.Messaging.MessagingFactory.AcceptMessageSession]: /dotnet/api/microsoft.servicebus.messaging.messagingfactory.acceptmessagesession?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessagingFactory_AcceptMessageSession
-[OperationTimeout]: /dotnet/api/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout?view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessagingFactorySettings_OperationTimeout
+[DataContractSerializer]: /dotnet/api/system.runtime.serialization.datacontractserializer
+[BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage
+[Microsoft.ServiceBus.Messaging.MessagingFactory.AcceptMessageSession]: /dotnet/api/microsoft.servicebus.messaging.messagingfactory.acceptmessagesession#Microsoft_ServiceBus_Messaging_MessagingFactory_AcceptMessageSession
+[OperationTimeout]: /dotnet/api/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout#Microsoft_ServiceBus_Messaging_MessagingFactorySettings_OperationTimeout
 [NuGet]: https://nuget.org/packages/WindowsAzure.ServiceBus/
 [Azure portal]: https://portal.azure.com
 [Протокол AMQP служебной шины — обзор]: service-bus-amqp-overview.md

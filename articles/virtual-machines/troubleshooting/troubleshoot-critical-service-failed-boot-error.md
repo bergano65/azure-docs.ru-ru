@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/08/2018
 ms.author: genli
-ms.openlocfilehash: 8c3e76f1a7edffefc8773dfa548773ec0932fae6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a937528e3bfd8bea16912d614133988763748bab
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86129866"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632965"
 ---
 # <a name="windows-shows-critical-service-failed-on-blue-screen-when-booting-an-azure-vm"></a>Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure
 В этой статье описывается ошибка "Сбой критически важной службы", которая может возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Здесь приведены действия по устранению неполадок. 
@@ -38,6 +38,9 @@ ms.locfileid: "86129866"
 - Приложение обращается к запрещенному сектору памяти.
 
 ## <a name="solution"></a>Решение 
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 Чтобы устранить эту проблему, [обратитесь в службу поддержки и отправьте файл дампа](./troubleshoot-common-blue-screen-error.md#collect-memory-dump-file), который поможет нам быстрее диагностировать проблему, или воспользуйтесь следующим решением для самостоятельного устранения.
 

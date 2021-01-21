@@ -6,12 +6,12 @@ ms.date: 10/29/2020
 author: kryalama
 ms.custom: devx-track-java
 ms.author: kryalama
-ms.openlocfilehash: 39897e490e4653fbaad7a64ecc0b33f161d1264b
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: c0745dd4069c64292fbcaef666d843ae2d25f7b3
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165796"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632586"
 ---
 # <a name="telemetry-processors-preview---azure-monitor-application-insights-for-java"></a>Обработчики данных телеметрии (Предварительная версия) — Azure Monitor Application Insights для Java
 
@@ -241,7 +241,7 @@ ms.locfileid: "98165796"
 ### `extract`
 
 > [!NOTE]
-> Эта функция доступна только в 3.0.1 и более поздних версиях
+> Эта функция доступна только в 3.0.2 и более поздних версиях
 
 Извлекает значения с помощью правила регулярного выражения из входного ключа в целевые ключи, указанные в правиле. Если целевой ключ уже существует, он будет переопределен. Он ведет себя аналогично параметру [Processor span](#extract-attributes-from-span-name) `toAttributes` с существующим атрибутом в качестве источника.
 

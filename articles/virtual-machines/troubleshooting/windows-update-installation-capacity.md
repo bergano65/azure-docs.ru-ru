@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: v-miegge
-ms.openlocfilehash: f83a1820eb931fa075681da7a9661b304059cd2a
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 0c0ec45eee86031e1533b97ccf352de0ecf70e38
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635711"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633160"
 ---
 # <a name="troubleshoot-os-start-up--windows-update-installation-capacity"></a>Устранение неполадок при запуске ОС, связанных с нехваткой места для установки в Центре обновления Windows
 
@@ -38,6 +38,9 @@ ms.locfileid: "94635711"
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Общие сведения о процессе.
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Создайте виртуальную машину для восстановления и войдите на нее.
 1. Освободите место на диске.
@@ -91,13 +94,13 @@ ms.locfileid: "94635711"
 
    Рекомендуемая конфигурация для включения дампа ОС:
 
-    **Загрузка неработающего диска ОС** :
+    **Загрузка неработающего диска ОС**:
 
    ```
    REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM 
    ```
    
-   **Включение в ControlSet001** :
+   **Включение в ControlSet001**:
 
    ```
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
@@ -105,7 +108,7 @@ ms.locfileid: "94635711"
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
    ```
    
-   **Включение в ControlSet002** :
+   **Включение в ControlSet002**:
 
    ```
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
@@ -113,7 +116,7 @@ ms.locfileid: "94635711"
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
    ```
    
-   **Выгрузка неработающего диска ОС** :
+   **Выгрузка неработающего диска ОС**:
 
    ```
    REG UNLOAD HKLM\BROKENSYSTEM
