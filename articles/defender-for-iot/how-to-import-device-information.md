@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 0a443ba7b41615fc62882bd8de6bf077c6b5a137
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 7cb805f60ba9feb0ae2d1483b2ab2df4e03639d8
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97842509"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625420"
 ---
 # <a name="import-device-information-to-a-sensor"></a>Импорт сведений об устройстве в датчик
 
@@ -67,7 +67,7 @@ ms.locfileid: "97842509"
 
 Чтобы импортировать IP-адрес, операционную систему и уровень обновления, выполните следующие действия.
 
-1. Скачайте файл [assets_info_2.2.8 и up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) в [центре справки](https://cyberx-labs.zendesk.com/hc/en-us) и введите следующие сведения:
+1. Скачайте файл [devices_info_2.2.8 и up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) в [центре справки](https://cyberx-labs.zendesk.com/hc/en-us) и введите следующие сведения:
 
    - **IP-адрес**: введите IP-адрес устройства.
 
@@ -85,7 +85,7 @@ ms.locfileid: "97842509"
 
 Чтобы импортировать состояние авторизации, выполните следующие действия.
 
-1. Скачайте и сохраните файл [authorized_assets.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) из центра справки "защитник для Интернета вещей". Убедитесь, что файл сохранен в формате CSV.
+1. Скачайте и сохраните файл [authorized_devices.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) из центра справки "защитник для Интернета вещей". Убедитесь, что файл сохранен в формате CSV.
 
 2. Введите сведения в виде:
 
@@ -154,7 +154,7 @@ ms.locfileid: "97842509"
 
 Чтобы импортировать IP-адрес, операционную систему и уровень обновления, выполните следующие действия.
 
-1. Скачайте файл [assets_info_2.2.8 и up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) в [центре справки](https://cyberx-labs.zendesk.com/hc/en-us) и введите следующие сведения:
+1. Скачайте файл [devices_info_2.2.8 и up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) в [центре справки](https://cyberx-labs.zendesk.com/hc/en-us) и введите следующие сведения:
 
    - **IP-адрес**: IP-адрес устройства.
 
@@ -172,7 +172,7 @@ ms.locfileid: "97842509"
 
 Чтобы импортировать состояние авторизации, выполните следующие действия.
 
-1. Скачайте и сохраните файл [authorized_assets.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) из центра справки "защитник для Интернета вещей". Убедитесь, что файл сохранен в формате CSV.
+1. Скачайте и сохраните файл [authorized_devices.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) из центра справки "защитник для Интернета вещей". Убедитесь, что файл сохранен в формате CSV.
 
 2. Введите сведения в виде:
 
@@ -188,8 +188,8 @@ ms.locfileid: "97842509"
 
 При импорте сведений вы получаете оповещения о неавторизованных устройствах для всех устройств, которые не отображаются в этом списке.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
-[Управление мониторингом трафика](how-to-control-what-traffic-is-monitored.md)
+[Выбор трафика для мониторинга](how-to-control-what-traffic-is-monitored.md)
 
-[Изучение обнаружений датчиков в инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+[Изучение обнаруженных датчиков в данных инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)

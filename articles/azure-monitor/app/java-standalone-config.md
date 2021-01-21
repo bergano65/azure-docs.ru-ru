@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 953a9cfeed558291fba1cb517039f26860444904
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 98499961f55b55b15687d5742b4d593e3d461e49
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233667"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625336"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Параметры конфигурации — Application Insights Azure Monitor для Java
 
@@ -39,14 +39,14 @@ ms.locfileid: "98233667"
 
 ## <a name="configuration-file-path"></a>Путь к файлу конфигурации
 
-По умолчанию Application Insights Java 3,0 ждет, что файл конфигурации будет называться `applicationinsights.json` и находиться в том же каталоге, что и `applicationinsights-agent-3.0.1.jar` .
+По умолчанию Application Insights Java 3,0 ждет, что файл конфигурации будет называться `applicationinsights.json` и находиться в том же каталоге, что и `applicationinsights-agent-3.0.2.jar` .
 
 Можно указать собственный путь к файлу конфигурации, используя либо
 
 * `APPLICATIONINSIGHTS_CONFIGURATION_FILE` переменная среды или
 * `applicationinsights.configuration.file` Системное свойство Java
 
-Если указан относительный путь, он будет разрешаться относительно каталога, в котором находится `applicationinsights-agent-3.0.1.jar` .
+Если указан относительный путь, он будет разрешаться относительно каталога, в котором находится `applicationinsights-agent-3.0.2.jar` .
 
 ## <a name="connection-string"></a>Строка подключения
 
@@ -170,7 +170,7 @@ ms.locfileid: "98233667"
 `${...}` может использоваться для считывания значения из указанной переменной среды при запуске.
 
 > [!NOTE]
-> Начиная с версии 3.0.1, если добавить пользовательское измерение с именем `service.version` , оно будет сохранено в `application_Version` столбце таблицы Application Insights Logs, а не в виде пользовательского измерения.
+> Начиная с версии 3.0.2, если добавить пользовательское измерение с именем `service.version` , оно будет сохранено в `application_Version` столбце таблицы Application Insights Logs, а не в виде пользовательского измерения.
 
 ## <a name="telemetry-processors-preview"></a>Обработчики данных телеметрии (Предварительная версия)
 
@@ -241,7 +241,7 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 
 ## <a name="suppressing-specific-auto-collected-telemetry"></a>Подавление конкретных автособираемых данных телеметрии
 
-Начиная с версии 3.0.1, конкретные автоматические собранные телеметрические данные можно отключить с помощью следующих параметров конфигурации:
+Начиная с версии 3.0.2, конкретные автоматические собранные телеметрические данные можно отключить с помощью следующих параметров конфигурации:
 
 ```json
 {
@@ -338,7 +338,7 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 
 `level` может быть одним из `OFF` , `ERROR` , `WARN` , `INFO` , `DEBUG` или `TRACE` .
 
-`path` может быть абсолютным или относительным путем. Относительные пути разрешаются в каталоге, где находится `applicationinsights-agent-3.0.1.jar` .
+`path` может быть абсолютным или относительным путем. Относительные пути разрешаются в каталоге, где находится `applicationinsights-agent-3.0.2.jar` .
 
 `maxSizeMb` максимальный размер файла журнала до его перебора.
 

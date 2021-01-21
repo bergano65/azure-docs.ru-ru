@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: 7bb1ce8141f609feb4f354aa85f202915e197f37
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: cdd8783daf9e1e1458f47e773eb3b6ccedfbae83
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599292"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624563"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 
@@ -342,7 +342,14 @@ ms.locfileid: "98599292"
 
 Сведения о вычислительных операциях см. на странице **Compute** (Вычисления) в [Студии](https://ml.azure.com).
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+* Если вы не можете подключиться к записной книжке, убедитесь, что связь с веб-сокетом **не** отключена. Для работы Jupyter функций вычислительных экземпляров необходимо включить связь через веб-сокет. Убедитесь, что сеть допускает подключения WebSocket к *. instances.azureml.net и *. instances.azureml.ms. 
+
+* При развертывании экземпляра COMPUTE в рабочей области частной связи доступ к нему можно получить только из виртуальной сети. Если вы используете пользовательский DNS или файл hosts, добавьте запись для <имя экземпляра>. <region> . instances.azureml.ms с частным IP-адресом частной конечной точки рабочей области. Дополнительные сведения см. в статье о [пользовательской службе DNS](https://docs.microsoft.com/azure/machine-learning/how-to-custom-dns?tabs=azure-cli) .
+    
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выполнение первого эксперимента](tutorial-1st-experiment-sdk-train.md)
 * [Резервное копирование хранилища файлов с помощью моментальных снимков](../storage/files/storage-snapshots-files.md)
+* [Работа в безопасных средах](https://docs.microsoft.com/azure/machine-learning/how-to-secure-training-vnet#compute-instance)

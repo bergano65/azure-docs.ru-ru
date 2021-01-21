@@ -3,12 +3,12 @@ title: Динамическое добавление секций в конце�
 description: Сведения о том, как динамически добавлять секции в концентратор событий в службе "Центры событий Azure"
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: 4ebe4491338c24a331812041f4d3e6d37b934117
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: e6efdc7bab309f825032555c97f1e1128f5addd6
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132177"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625271"
 ---
 # <a name="dynamically-add-partitions-to-an-event-hub-apache-kafka-topic-in-azure-event-hubs"></a>Динамическое добавление секций в концентратор событий (раздел Apache Kafka) в службе "Центры событий Azure"
 Центры событий обеспечивают потоковую передачу сообщений так, чтобы каждый секционированный потребитель считывал только определенное подмножество (секцию) потока сообщений. Этот шаблон обеспечивает горизонтальное масштабирование для обработки событий и предоставляет другие функции, ориентированные на поток, которые недоступны для очередей и разделов. Секция — это упорядоченная последовательность событий, хранящаяся в концентраторе событий. По мере поступления новых событий они добавляются в конец этой последовательности. Дополнительные сведения о секциях см. в разделе [Секции](event-hubs-scalability.md#partitions).
@@ -26,14 +26,14 @@ ms.locfileid: "98132177"
 В этом разделе показано, как изменить число секций концентратора событий разными способами (PowerShell, CLI и т. д.).
 
 ### <a name="powershell"></a>PowerShell
-Чтобы изменить секции в концентраторе событий, используйте команду PowerShell [Set-AzureRmEventHub](/powershell/module/azurerm.eventhub/Set-AzureRmEventHub?view=azurermps-6.13.0). 
+Чтобы изменить секции в концентраторе событий, используйте команду PowerShell [Set-AzureRmEventHub](/powershell/module/azurerm.eventhub/Set-AzureRmEventHub). 
 
 ```azurepowershell-interactive
 Set-AzureRmEventHub -ResourceGroupName MyResourceGroupName -Namespace MyNamespaceName -Name MyEventHubName -partitionCount 12
 ```
 
 ### <a name="cli"></a>CLI
-Используйте [`az eventhubs eventhub update`](/cli/azure/eventhubs/eventhub?view=azure-cli-latest#az-eventhubs-eventhub-update) команду CLI для обновления секций в концентраторе событий. 
+Используйте [`az eventhubs eventhub update`](/cli/azure/eventhubs/eventhub#az-eventhubs-eventhub-update) команду CLI для обновления секций в концентраторе событий. 
 
 ```azurecli-interactive
 az eventhubs eventhub update --resource-group MyResourceGroupName --namespace-name MyNamespaceName --name MyEventHubName --partition-count 12

@@ -4,12 +4,12 @@ description: В этой статье перечислены некоторые 
 ms.topic: article
 ms.custom: devx-track-csharp
 ms.date: 06/23/2020
-ms.openlocfilehash: 44d5800c08b49118e99a678e31d02e5b7a1f550c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 724fb1a62b82036b4a0fa8b9f4f3608293f608a9
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935676"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625137"
 ---
 # <a name="azure-relay-hybrid-connections-net-standard-api-overview"></a>Обзор API-интерфейсов гибридных подключений ретранслятора Azure для платформы .NET Standard
 
@@ -83,7 +83,7 @@ var hybridConnectionStream = await client.CreateConnectionAsync();
 
 ### <a name="receiving-data"></a>Получение данных
 
-Класс [HybridConnectionStream][HCStream] можно использовать для двустороннего обмена данными. В большинстве случаев вы будете непрерывно получать данные из потока. Если выполняется чтение текста из потока, вам также может потребоваться использовать объект [StreamReader](/dotnet/api/system.io.streamreader?view=netcore-3.1) для упрощения анализа данных. Например, можно считывать данные как текст, а не как `byte[]`.
+Класс [HybridConnectionStream][HCStream] можно использовать для двустороннего обмена данными. В большинстве случаев вы будете непрерывно получать данные из потока. Если выполняется чтение текста из потока, вам также может потребоваться использовать объект [StreamReader](/dotnet/api/system.io.streamreader) для упрощения анализа данных. Например, можно считывать данные как текст, а не как `byte[]`.
 
 Следующий код считывает отдельные строки текста из потока, пока не будет запрошена отмена.
 
@@ -110,14 +110,14 @@ while (!cancellationToken.IsCancellationRequested)
 
 ### <a name="sending-data"></a>Отправка данных
 
-Когда подключение будет установлено, можно отправить сообщение на конечную точку ретранслятора. Так как объект подключения наследует [поток](/dotnet/api/system.io.stream?view=netcore-3.1), отправляйте данные в виде `byte[]`. В приведенном ниже примере показано, как это сделать.
+Когда подключение будет установлено, можно отправить сообщение на конечную точку ретранслятора. Так как объект подключения наследует [поток](/dotnet/api/system.io.stream), отправляйте данные в виде `byte[]`. В приведенном ниже примере показано, как это сделать.
 
 ```csharp
 var data = Encoding.UTF8.GetBytes("hello");
 await clientConnection.WriteAsync(data, 0, data.Length);
 ```
 
-Однако если вы хотите отправить текст напрямую, без необходимости кодирования этих строк каждый раз, можно поместить объект `hybridConnectionStream` в объект [StreamWriter](/dotnet/api/system.io.streamwriter?view=netcore-3.1).
+Однако если вы хотите отправить текст напрямую, без необходимости кодирования этих строк каждый раз, можно поместить объект `hybridConnectionStream` в объект [StreamWriter](/dotnet/api/system.io.streamwriter).
 
 ```csharp
 // The StreamWriter object only needs to be created once
@@ -125,7 +125,7 @@ var textWriter = new StreamWriter(hybridConnectionStream);
 await textWriter.WriteLineAsync("hello");
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о ретрансляторе Azure доступны по следующим ссылкам:
 

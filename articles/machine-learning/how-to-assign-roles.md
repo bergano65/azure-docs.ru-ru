@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: Blackmist
 ms.author: nigup
 author: nishankgu
-ms.date: 11/09/2020
+ms.date: 01/20/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperf-fy21q2
-ms.openlocfilehash: 636f63b3f7e43bd8f27d1df58ab82d24bd19a616
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 8420aecbc160fa6df2640d2ba0ae8a8b77702b67
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033754"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624546"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинного обучения Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "97033754"
 
 Рабочая область Машинного обучения Azure — это ресурс Azure. Как и в случае других ресурсов Azure, при создании рабочая область Машинного обучения Azure снабжается тремя ролями по умолчанию. Вы можете добавить пользователей в рабочую область и назначить их одной из этих встроенных ролей.
 
-| Role | Уровень доступа |
+| Роль | Уровень доступа |
 | --- | --- |
 | **Читатель** | Действия только для чтения в рабочей области. Читатели могут перечислять и просматривать ресурсы, включая учетные данные [хранилища](how-to-access-data.md) данных, в рабочей области. Читатели не могут создавать или обновлять эти ресурсы. |
 | **Участник** | Просмотр, создание, изменение или удаление (если применимо) ресурсов в рабочей области. Например, участники могут создать эксперимент, создать или подключить вычислительный кластер, выполнить запуск и развернуть веб-службу. |
@@ -161,6 +161,10 @@ az role definition update --role-definition update_def.json --subscription <sub-
 > [!NOTE]
 > Обновление ролей может занять от 15 до часа, чтобы применить их во всех назначениях ролей в этой области.
 
+## <a name="use-azure-resource-manager-templates-for-repeatability"></a>Использование шаблонов Azure Resource Manager для повторяемости
+
+Если предполагается, что потребуется повторное создание сложных назначений ролей, шаблон Azure Resource Manager может быть большой справкой. [Шаблон 201-Machine-Learning-зависимостей-Role-назначение](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-dependencies-role-assignment) показывает, как можно указать назначения ролей в исходном коде для повторного использования. 
+
 ## <a name="common-scenarios"></a>Распространенные сценарии
 
 В следующей таблице приведена сводка действий Машинное обучение Azure и разрешений, необходимых для их выполнения в наименьшей области. Например, если действие может быть выполнено с областью действия рабочей области (столбец 4), то все более высокие области с этим разрешением также будут работать автоматически:
@@ -207,7 +211,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 
 ## <a name="example-custom-roles"></a>Примеры пользовательских ролей
 
-### <a name="data-scientist"></a>специалист по анализу и обработке данных;
+### <a name="data-scientist"></a>Специалист по обработке и анализу данных
 
 Позволяет анализу данных выполнять все операции внутри рабочей области, **за исключением**:
 
@@ -467,7 +471,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 
 - Иногда для того, чтобы новые назначения ролей вступили в силу с кэшированными разрешениями в стеке, может потребоваться до 1 часа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
 - [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md)

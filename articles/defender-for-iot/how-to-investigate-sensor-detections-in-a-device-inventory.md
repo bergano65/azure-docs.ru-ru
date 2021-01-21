@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: f3058953e702f40fa1500441e382898b0314ddbb
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9c868685ad943c1ab9ab263a164111e46294c042
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841809"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625437"
 ---
-# <a name="investigate-sensor-detections-in-a-device-inventory"></a>Изучение обнаружений датчиков в инвентаризации устройств
+# <a name="investigate-sensor-detections-in-a-device-inventory"></a>Изучение обнаруженных датчиков в данных инвентаризации устройств
 
 В перечне устройств отображается широкий спектр атрибутов устройств, обнаруженных датчиком. Доступны следующие параметры:
 
@@ -65,7 +65,7 @@ ms.locfileid: "97841809"
 
 3. Изменение расположения столбцов в таблице с помощью стрелок.
 
-4. Щелкните **Сохранить**. Окно **Параметры инвентаризации устройств** закроется, а новые параметры отобразятся в таблице.
+4. Выберите **Сохранить**. Окно **Параметры инвентаризации устройств** закроется, а новые параметры отобразятся в таблице.
 
 ### <a name="create-temporary-device-inventory-filters"></a>Создание временных фильтров инвентаризации устройств
 
@@ -143,7 +143,7 @@ ms.locfileid: "97841809"
 
 - Windows 7
 
-- быть под управлением ОС Windows 10;
+- Windows 10
 
 - Windows Server 2003/2008/2012/2016
 
@@ -223,8 +223,8 @@ ms.locfileid: "97841809"
 
 - В верхнем правом меню инвентаризации устройства выберите :::image type="icon" source="media/how-to-work-with-asset-inventory-information/csv-excel-export-icon.png" border="false"::: . Создается и загружается отчет в формате CSV.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
-[Исследование всех обнаружений датчиков предприятия в инвентаризации устройств](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
+[Изучение всех обнаруженных датчиков предприятия в данных инвентаризации устройств](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
 
 [Работа с представлениями карт сайтов](how-to-gain-insight-into-global-regional-and-local-threats.md#work-with-site-map-views)

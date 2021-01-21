@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/16/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: e46bb87788de27916860720284087643db7153dc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a63c309c8e728e3f76ad904d479557b368388954
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913408"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624781"
 ---
 # <a name="use-azure-storage-explorer-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Обозревателя службы хранилища Azure для управления каталогами, файлами и списками управления доступом в Azure Data Lake Storage 2-го поколения
 
@@ -80,7 +80,7 @@ ms.locfileid: "95913408"
 
 Разрешения можно задавать в корне вашего контейнера. Чтобы сделать это, вам нужно войти в обозреватель службы хранилища Azure с помощью своей учетной записи с правами на это (в отличие от строки подключения). Щелкните правой кнопкой мыши свой контейнер и выберите **Управление разрешениями**, чтобы вызвать диалоговое окно **Управление разрешениями**.
 
-![Обозреватель службы хранилища Microsoft Azure — управление доступом к каталогу](media/storage-quickstart-blobs-storage-Explorer/manageperms.png)
+![Обозреватель службы хранилища Microsoft Azure — управление доступом к каталогу](media/storage-quickstart-blobs-storage-explorer/manageperms.png)
 
 В диалоговом окне **Управление разрешениями** можно управлять разрешениями для владельца и группы владельцев. Здесь также можно добавить в список управления доступом новых пользователей и группы, для которых затем можно управлять разрешениями.
 
@@ -106,7 +106,11 @@ ms.locfileid: "95913408"
 
 Вы можете назначать разрешения для отдельных каталогов, а также для отдельных файлов, что позволяет вам детально управлять доступом. Процесс управления разрешениями для каталогов и файлов такой же, как описано выше. Щелкните правой кнопкой мыши файл или каталог, разрешениями к которому вы хотите управлять, и выполните тот же процесс.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="private-endpoints-in-azure-data-lake-storage-gen2"></a>Частные конечные точки в Azure Data Lake Storage 2-го поколения
+
+При работе с Azure Data Lake Storage 2-го поколения Обозреватель службы хранилища использует как [конечные точки](../common/storage-private-endpoints.md#private-endpoints-for-azure-storage) BLOB (BLOB), & Data Lake Storage 2-го поколения (DFS). Если доступ к Azure Data Lake Storage 2-го поколения настроен с помощью частных конечных точек, убедитесь, что для учетной записи хранения созданы две частные конечные точки: одна с целевым подресурсом, `blob` а другая — целевым `dfs` .
+
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о списках управления доступом в Data Lake Storage 2-го поколения.
 

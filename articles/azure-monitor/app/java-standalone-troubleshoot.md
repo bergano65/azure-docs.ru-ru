@@ -4,12 +4,12 @@ description: Узнайте, как устранять неполадки аге
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 2876abd3749c9e56cef462e41b8268135f82cd12
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 788eea17cabbea46578d0f59919ae95a59f2223f
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232222"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625353"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Руководство по устранению неполадок: Azure Monitor Application Insights для Java
 
@@ -17,7 +17,7 @@ ms.locfileid: "98232222"
 
 ## <a name="check-the-self-diagnostic-log-file"></a>Проверка файла журнала самодиагностики
 
-По умолчанию агент Java 3,0 для Application Insights создает файл журнала с именем `applicationinsights.log` в том же каталоге, в котором находится `applicationinsights-agent-3.0.1.jar` файл.
+По умолчанию агент Java 3,0 для Application Insights создает файл журнала с именем `applicationinsights.log` в том же каталоге, в котором находится `applicationinsights-agent-3.0.2.jar` файл.
 
 Этот файл журнала является первым местом для поиска подсказок о любых проблемах, которые могут возникнуть.
 

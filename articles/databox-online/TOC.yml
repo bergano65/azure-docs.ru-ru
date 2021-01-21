@@ -397,6 +397,11 @@
   items:
     - name: Базовые средства безопасности
       href: security-baseline.md
+- name: Ссылки
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
 - name: Ресурсы
   items:
     - name: Примеры модуля Azure Stack Edge Pro на C# (.NET)

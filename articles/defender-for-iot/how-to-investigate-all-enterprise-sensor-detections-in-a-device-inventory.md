@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/02/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 47e3833fe9f35467c1d16945a9b336d4014b2efd
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9da5c8c89ee124e527584164b21b096ac815e5ca
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841849"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625470"
 ---
 # <a name="investigate-all-enterprise-sensor-detections-in-the-device-inventory"></a>Исследование всех обнаружений датчиков предприятия в инвентаризации устройств
 
@@ -30,8 +30,8 @@ ms.locfileid: "97841849"
 | **Сайт** | Сайт, содержащий это устройство. |
 | **Зона** | Зона, которая содержит это устройство. |
 | **Устройство** | Датчик защитника Azure для IoT, защищающий это устройство. |
-| **имя**; | Имя этого устройства, которое было обнаружено защитником для Интернета вещей. |
-| **Тип** | Тип устройства, например "ХМИ" или "". |
+| **Имя** | Имя этого устройства, которое было обнаружено защитником для Интернета вещей. |
+| **Type** | Тип устройства, например "ХМИ" или "". |
 | **поставщик** | Имя поставщика устройства, определенное в MAC-адресе. |
 | **Операционная система** | ОС устройства. |
 | **Встроенное ПО** | Встроенное по устройства. |
@@ -67,7 +67,7 @@ ms.locfileid: "97841849"
 
 - Пользователи, выполнившие вход на устройства
 
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-screen-with-items-highlighted-v2.png" alt-text="Таблица данных на экране &quot;Инвентаризация активов&quot;.":::
+:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-screen-with-items-highlighted-v2.png" alt-text="Таблица данных на экране &quot;Инвентаризация устройств&quot;.":::
 
 Данные можно интегрировать одним из следующих.
 
@@ -131,13 +131,13 @@ ms.locfileid: "97841849"
 
 Вы можете отфильтровать инвентаризацию устройств, чтобы отобразить интересующие столбцы. Например, можно просмотреть сведения об устройстве с параметром "не более".
 
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-view-v2.png" alt-text="Снимок экрана с перечнем активов.":::
+:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-view-v2.png" alt-text="Снимок экрана: Инвентаризация устройства.":::
 
 Фильтр удаляется после выхода из окна.
 
 Чтобы использовать один и тот же фильтр несколько раз, можно сохранить фильтр или сочетание фильтров, которые вам нужны. Вы можете открыть левую панель и просмотреть сохраненные фильтры:
 
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/view-your-asset-inventories-v2.png" alt-text="Окно инвентаризации ресурсов.":::
+:::image type="content" source="media/how-to-work-with-asset-inventory-information/view-your-asset-inventories-v2.png" alt-text="Окно инвентаризации устройств.":::
 
 Чтобы отфильтровать инвентаризацию устройств, сделайте следующее:
 
@@ -187,7 +187,7 @@ ms.locfileid: "97841849"
 
 - **Просмотр свойств устройства**. Например, датчик, отслеживающий свойства устройства и основного устройства. Щелкните устройство правой кнопкой мыши, чтобы просмотреть свойства устройства.
 
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-properties-v2.png" alt-text="Снимок экрана: представление свойств ресурса.":::
+  :::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-properties-v2.png" alt-text="Снимок экрана представления свойств устройства.":::
 
 - **Оповещение, связанное с устройством:** Щелкните устройство правой кнопкой мыши, чтобы просмотреть связанные предупреждения.
 
@@ -225,6 +225,6 @@ ms.locfileid: "97841849"
 
 - **Ход обновления**. при обновлении датчика подключения будут отображаться состояния обновления. Во время обновления локальная консоль управления не получает сведения об устройстве от датчика.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
-[Изучение обнаружений датчиков в инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+[Изучение обнаруженных датчиков в данных инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)

@@ -3,12 +3,12 @@ title: Основные сведения о языке запросов
 description: Описание таблиц Resource Graph и доступных типов данных, операторов и функций Kusto, которые можно использовать с Azure Resource Graph.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: f94023d47153dc64ca78e0386edd87a9821515be
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 137b5c40097d7de82e156b4a0869d7257d3e9964
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251732"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624764"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "98251732"
 Граф ресурсов предоставляет несколько таблиц для хранения данных о Azure Resource Manager типах ресурсов и их свойствах. Некоторые таблицы можно использовать с `join` `union` операторами или для получения свойств из связанных типов ресурсов. Ниже приведен список таблиц, доступных в Resource Graph.
 
 |Таблица графиков ресурсов |Могут `join` ли другие таблицы? |Описание |
-|---|---|
+|---|---|---|
 |Ресурсы |Да |Таблица по умолчанию, если таблица в запросе не определена. В ней содержится большинство типов ресурсов Resource Manager и их свойств. |
 |ResourceContainers |Да |Содержит подписку (в предварительной версии — `Microsoft.Resources/subscriptions`) и типы ресурсов и данные группы ресурсов (`Microsoft.Resources/subscriptions/resourcegroups`). |
 |AdvisorResources |Да (предварительная версия) |Содержит ресурсы, _связанные_ с `Microsoft.Advisor`. |
@@ -41,7 +41,7 @@ ms.locfileid: "98251732"
 |SecurityResources |Частично, только _для_ объединения. (предварительная версия) |Содержит ресурсы, _связанные_ с `Microsoft.Security`. |
 |сервицехеалсресаурцес |Нет |Содержит ресурсы, _связанные_ с `Microsoft.ResourceHealth`. |
 
-Полный список, включая типы ресурсов, см. в [справочнике по поддерживаемым таблицам и типам ресурсов](../reference/supported-tables-resources.md).
+Полный список, включая типы ресурсов, см. в разделе [reference: Supported Tables and Resource Types](../reference/supported-tables-resources.md).
 
 > [!NOTE]
 > _Resources_ — это таблица по умолчанию. При запросе таблицы _Resources_ не требуется указывать имя таблицы, если не используется `join` или `union`. Однако рекомендуется всегда включать в запрос начальную таблицу.
@@ -132,7 +132,7 @@ Resources
 |[join](/azure/kusto/query/joinoperator) |[Хранилище ключей с именем подписки](../samples/advanced.md#join) |Поддерживаемые разновидности оператора соединения: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). Ограничение в 3 `join` в одном запросе, 1 из которых может быть перекрестной таблицей `join` . Если между ресурсами и Ресаурцеконтаинерс используется все перекрестные таблицы `join` , то 3 перекрестные таблицы   `join` разрешены. Пользовательские стратегии соединения, такие как широковещательное соединение, не допускаются. Сведения о том, какие таблицы могут использоваться `join` , см. в разделе [таблицы Graph ресурсов](#resource-graph-tables). |
 |[limit](/azure/kusto/query/limitoperator) |[Вывод списка общедоступных IP-адресов](../samples/starter.md#list-publicip) |Синоним `take` . Не работает с [Skip](./work-with-data.md#skipping-records). |
 |[mvexpand](/azure/kusto/query/mvexpandoperator) | | Устаревший оператор, используйте вместо него `mv-expand`. Максимальное значение _RowLimit_ равно 400. Значение по умолчанию — 128. |
-|[mv-expand](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |Максимальное значение _RowLimit_ равно 400. Значение по умолчанию — 128. |
+|[mv-expand](/azure/kusto/query/mvexpandoperator) |[Список Cosmos DB с конкретным указанием расположений записи](../samples/advanced.md#mvexpand-cosmosdb) |Максимальное значение _RowLimit_ равно 400. Значение по умолчанию — 128. Не более 3 `mv-expand` в одном запросе.|
 |[order](/azure/kusto/query/orderoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) |Синоним `sort` |
 |[project](/azure/kusto/query/projectoperator) |[Вывод списка ресурсов, отсортированных по имени](../samples/starter.md#list-resources) | |
 |[project-away](/azure/kusto/query/projectawayoperator) |[Удаление столбцов из результатов](../samples/advanced.md#remove-column) | |
@@ -142,6 +142,10 @@ Resources
 |[В начало](/azure/kusto/query/topoperator) |[Отображение первых пяти виртуальных машин по имени и типу ОС](../samples/starter.md#show-sorted) | |
 |[union](/azure/kusto/query/unionoperator) |[Объединение результатов из двух запросов в один результат](../samples/advanced.md#unionresults) |Допускается одна таблица: _T_ `| union` \[`kind=` `inner`\|`outer`\] \[`withsource=`_ColumnName_\] _Table_. Не более 3 разветвлений `union` в одном запросе. Нечеткое разрешение таблиц разветвлений `union` не допускается. Может использоваться в одной таблице или между таблицами _Resources_ и _ResourceContainers_. |
 |[where](/azure/kusto/query/whereoperator) |[Отображение ресурсов, которые содержат хранилище](../samples/starter.md#show-storage) | |
+
+`join`В одном запросе пакета SDK для Graph используется по умолчанию ограничение в 3 и 3 `mv-expand` оператора. Вы можете запросить увеличение этих ограничений для вашего клиента с помощью **справки и поддержки**.
+
+Для поддержки возможностей портала "открыть запрос" Обозреватель графа ресурсов Azure имеет более высокий уровень глобальных ограничений, чем пакет SDK для Graph.
 
 ## <a name="query-scope"></a>Область запроса
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: ee32749e2c6f0118507fcfc6d4994a04ea3a6d69
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 759adea3cf34b79c76b6facec3bd4626ca54107e
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997279"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625038"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Руководство по Настройка геозоны с использованием Azure Maps
 
@@ -471,6 +471,10 @@ Azure Maps поддерживает [три типа событий](../event-gr
 
 
 Вы также можете [отправлять уведомления по электронной почте с помощью Сетки событий и Logic Apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) и проверять [поддерживаемые обработчики событий в Сетке событий](../event-grid/event-handlers.md) с помощью Azure Maps.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов, требующих очистки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -241,6 +241,9 @@
           href: /powershell/module/az.databox
         - name: Интерфейсы API .NET
           href: /dotnet/api/overview/azure/databox/management
+        - name: Встроенные компоненты Политики Azure
+          displayName: 'samples, policies, definitions'
+          href: ./policy-reference.md
     - name: Ресурсы
       items:
         - name: Продукт Data Box
