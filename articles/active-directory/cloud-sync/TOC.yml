@@ -1,0 +1,88 @@
+- name: Облачная синхронизация
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое подготовка удостоверений?
+      href: what-is-provisioning.md
+    - name: "Что представляет собой облачная синхронизация Azure\_AD\_Connect?"
+      href: what-is-cloud-sync.md
+      maintainContext: true
+- name: Учебники
+  expanded: true
+  items:
+    - name: Интеграция одного леса AD с одним клиентом Azure AD
+      href: tutorial-single-forest.md
+    - name: Интеграция существующего и нового лесов с одним клиентом Azure AD
+      href: tutorial-existing-forest.md
+    - name: Пилотная облачная синхронизация для существующего синхронизированного леса AD
+      href: tutorial-pilot-aadc-aadccp.md
+- name: Основные понятия
+  items:
+    - name: Принципы работы
+      href: concept-how-it-works.md
+    - name: Сведения о синхронизации хэша паролей
+      href: ../hybrid/whatis-phs.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcloud-provisioning-context
+    - name: 'Основные сведения о схеме, атрибутах и выражениях Azure AD'
+      href: concept-attributes.md
+    - name: Запись выражений для сопоставления атрибутов в Azure Active Directory
+      href: reference-expressions.md
+- name: Практические руководства
+  items:
+    - name: Установка и обновление
+      items:
+        - name: Предварительные требования для установки
+          href: how-to-prerequisites.md
+        - name: Установка агента подготовки облака Azure AD Connect
+          href: how-to-install.md
+        - name: Конфигурация облачной синхронизации
+          href: how-to-configure.md
+        - name: Подготовка по запросу
+          href: how-to-on-demand-provision.md
+        - name: Сопоставление атрибутов
+          href: how-to-attribute-mapping.md
+        - name: Использование единого входа
+          href: how-to-sso.md
+    - name: Планирование и проектирование
+      items:
+        - name: Топологии и сценарии для облачной синхронизации Azure AD Connect
+          href: plan-cloud-sync-topologies.md
+    - name: Управление
+      items:
+        - name: Автоматическое обновление агента
+          href: how-to-automatic-upgrade.md
+        - name: Случайные удаления
+          href: how-to-accidental-deletes.md
+        - name: Параметры реестра агента
+          href: how-to-manage-registry-options.md
+        - name: Командлеты PowerShell для gMSA агента
+          href: how-to-gmsa-cmdlets.md
+        - name: Установка агента подготовки с помощью PowerShell
+          href: how-to-install-pshell.md
+    - name: Разработка
+      items:
+        - name: Преобразования
+          href: how-to-transformation.md
+        - name: "Входящая синхронизация с API MS\_Graph"
+          href: how-to-inbound-synch-ms-graph.md
+        - name: API синхронизации Azure AD
+          href: /graph/api/resources/synchronization-overview
+    - name: Диагностика
+      items:
+        - name: Устранение неполадок с облачной синхронизацией
+          href: how-to-troubleshoot.md
+        - name: повторяющиеся атрибуты
+          href: ../hybrid/how-to-connect-syncservice-duplicate-attribute-resiliency.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
+- name: Ссылка
+  items:
+    - name: Журнал версий агента подготовки облака Azure AD Connect
+      href: reference-version-history.md
+    - name: "Часто задаваемые вопросы об облачной синхронизации Azure\_AD\_Connect"
+      href: reference-cloud-sync-faq.md
+    - name: Модуль AADCloudSyncTools PowerShell
+      href: reference-powershell.md
+    - name: Синхронизированные атрибуты
+      href: ../hybrid/reference-connect-sync-attributes-synchronized.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
+    - name: Коды ошибок и описания
+      href: reference-error-codes.md
+    - name: Базовое развертывание Active Directory и среда Azure AD
+      href: tutorial-basic-ad-azure.md

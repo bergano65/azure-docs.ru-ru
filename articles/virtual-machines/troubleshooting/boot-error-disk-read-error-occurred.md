@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/01/2020
 ms.author: v-miegge
-ms.openlocfilehash: f59903ed111be1fe414f4b3ded250d754c91d323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75d1cf8638f922bb0275322568eb1399db4f49e8
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87069153"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629731"
 ---
 # <a name="troubleshoot-boot-error---disk-read-error-occurred"></a>Устранение неполадок при ошибке загрузки "Произошла ошибка чтения диска"
 
@@ -38,6 +38,9 @@ ms.locfileid: "87069153"
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Общие сведения о процессе
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Создайте виртуальную машину для восстановления и войдите на нее.
 1. Выберите решение:

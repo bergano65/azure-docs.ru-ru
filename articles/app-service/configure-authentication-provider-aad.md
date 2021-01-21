@@ -5,12 +5,12 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 0c06cb11d916b417cf577b7b8f3578749feddd62
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 3d1e0eb90005abf69d90b46acc59e0258c9914c6
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092233"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630036"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Настройка Службы приложений или приложения "Функции Azure" для использования имени для входа в Azure AD
 
@@ -78,7 +78,7 @@ ms.locfileid: "97092233"
 1. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.
 1. На странице **Регистрация приложения** введите **Имя** для регистрации приложения.
 1. В разделе **URI перенаправления** выберите **Интернет** и введите `<app-url>/.auth/login/aad/callback`. Например, `https://contoso.azurewebsites.net/.auth/login/aad/callback`.
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Зарегистрировать**.
 1. После создания регистрации приложения скопируйте **идентификатор приложения (клиент)** и **идентификатор каталога (клиент)** для дальнейшего использования.
 1. Выберите **Проверка подлинности**. В разделе **Неявное предоставление** активируйте параметр **Токен идентификатора**, чтобы разрешить вход пользователей OpenID Connect из Службы приложений.
 1. (Необязательно.) Выберите **Фирменная символика**. В поле **URL-адрес домашней страницы** введите URL-адрес приложения Службы приложений и выберите **Сохранить**.

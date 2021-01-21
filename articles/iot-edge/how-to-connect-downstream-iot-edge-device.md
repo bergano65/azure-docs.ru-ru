@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 37c237cdaf6c0d4f766d4b2e39c10e3e96215463
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1258fd4b5c69b399b70d1f2db1be63765771e631
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187839"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629409"
 ---
 # <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway-preview"></a>Подключение подчиненного IoT Edge устройства к шлюзу Azure IoT Edge (Предварительная версия)
 
@@ -118,7 +118,7 @@ ms.locfileid: "96187839"
 
 Чтобы включить безопасные подключения, каждое устройство IoT Edge в сценарии шлюза должно быть настроено с помощью уникального сертификата ЦС устройства и копии сертификата корневого ЦС, общего для всех устройств в иерархии шлюза.
 
-На устройстве уже должны быть установлены IoT Edge. В противном случае выполните действия по [установке среды выполнения Azure IOT Edge](how-to-install-iot-edge.md) , а затем настройте устройство с проверкой подлинности с помощью [симметричного ключа](how-to-manual-provision-symmetric-key.md) или [сертификата X. 509](how-to-manual-provision-x509.md).
+На устройстве уже должны быть установлены IoT Edge. В противном случае выполните действия по [регистрации устройства IOT EDGE в центре Интернета вещей](how-to-register-device.md) , а затем [установите среду выполнения Azure IOT Edge](how-to-install-iot-edge.md).
 
 Действия, описанные в этом разделе, ссылаются на **сертификат корневого ЦС** и **сертификат ЦС устройства и закрытый ключ** , которые были рассмотрены ранее в этой статье. Если вы создали эти сертификаты на другом устройстве, они будут доступны на этом устройстве. Вы можете перемещать файлы физически, например с помощью USB-накопителя, со службой, например [Azure Key Vault](../key-vault/general/overview.md), или с помощью функции, такой как [безопасное копирование файлов](https://www.ssh.com/ssh/scp/).
 

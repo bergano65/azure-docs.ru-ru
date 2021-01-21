@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: v-miegge
-ms.openlocfilehash: 4f181a6dee7ed182150bd0cad2b51690b6c77d7a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 6c139398182ca9d875de0d3b21c58afe503bd8a5
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963131"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632280"
 ---
 # <a name="vm-is-unresponsive-while-applying-default-domain-controllers-policy"></a>При применении политики контроллеров домена по умолчанию виртуальная машина не отвечает
 
@@ -37,6 +37,9 @@ ms.locfileid: "91963131"
 Эта проблема может быть вызвана внесением последних изменений в политику контроллеров домена по умолчанию. В противном случае необходимо будет выполнить анализ файла дампа памяти, чтобы определить основную причину.
 
 ## <a name="solution"></a>Решение
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 Если вы недавно внесли изменения в политику контроллеров домена по умолчанию, вам может потребоваться отменить эти изменения, чтобы устранить проблему. Если вы не уверены причину проблемы, собирайте дамп памяти и отправьте запрос в службу поддержки.
 

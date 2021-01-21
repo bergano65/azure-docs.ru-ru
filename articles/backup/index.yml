@@ -9,12 +9,12 @@ metadata:
   author: dcurwin
   ms.author: dacurwin
   ms.date: 12/01/2019
-  ms.openlocfilehash: e2afc60f6fa67c1dc0582839e2d3f7480907facc
-  ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+  ms.openlocfilehash: ea54d6e4a08ff5baa2a46051a8ec342128175de3
+  ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/18/2021
-  ms.locfileid: "98556500"
+  ms.lasthandoff: 01/21/2021
+  ms.locfileid: "98624925"
 landingContent:
 - title: См. дополнительные сведения о службе архивации Azure
   linkLists:
@@ -40,8 +40,6 @@ landingContent:
       url: quick-backup-vm-cli.md
     - text: Резервное копирование виртуальной машины с помощью шаблона Resource Manager
       url: quick-backup-vm-template.md
-- title: Воспользуйтесь этими пошаговыми руководствами
-  linkLists:
   - linkListType: tutorial
     links:
     - text: Резервное копирование виртуальных машин Azure
@@ -84,6 +82,20 @@ landingContent:
       url: backup-azure-vm-backup-faq.md
     - text: Управление резервными копиями виртуальных машин Azure
       url: backup-azure-manage-vms.md
+- title: Резервное копирование управляемых дисков Azure (предварительная версия)
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о резервном копировании дисков в Azure
+      url: disk-backup-overview.md
+    - text: Таблица поддержки для резервного копирования дисков в Azure
+      url: disk-backup-support-matrix.md
+    - text: Резервное копирование управляемых дисков Azure
+      url: backup-managed-disks.md
+    - text: Часто задаваемые вопросы об управляемых дисках Azure
+      url: disk-backup-faq.md
+    - text: Устранение неполадок с резервным копированием управляемых дисков Azure
+      url: disk-backup-troubleshoot.md
 - title: Резервное копирование SQL Server на виртуальных машинах Azure
   linkLists:
   - linkListType: concept

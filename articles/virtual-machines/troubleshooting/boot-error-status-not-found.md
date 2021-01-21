@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: v-miegge
-ms.openlocfilehash: ff7d5a4e1181dccedc3584d958038a1d695c57ca
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: a91add684d7b7aaee67e7dd4f4f2d0c6df078132
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657130"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632230"
 ---
 # <a name="troubleshoot-windows-boot-manager-error----0xc0000225-status-not-found"></a>Устранение ошибки диспетчера загрузки Windows 0xC0000225 "Состояние не найдено"
  
@@ -79,6 +79,9 @@ ms.locfileid: "97657130"
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Обзор процесса
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Создайте виртуальную машину для восстановления и обратитесь к ней.
 1. Выберите решение:
@@ -255,12 +258,12 @@ ms.locfileid: "97657130"
 
 ### <a name="enable-the-serial-console-and-memory-dump-collection"></a>Включение последовательной консоли и сбор дампов памяти
 
-**Рекомендуется**. Прежде чем перестраивать виртуальную машину, включите последовательную консоль и соберите дампы памяти, выполнив приведенный ниже сценарий.
+**Рекомендуется**. Прежде чем перестраивать виртуальную машину, включите последовательную консоль и сбор дампов памяти. Для этого выполните следующий скрипт:
 
 1. Откройте сеанс командной строки с повышенными привилегиями от имени администратора.
 1. Выполните следующие команды:
 
-   **Включите последовательную консоль**.
+   **Включите последовательную консоль.**
    
    ```
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON 
@@ -269,17 +272,17 @@ ms.locfileid: "97657130"
 
 1. Убедитесь, что размер свободного места на диске ОС превышает объем памяти (ОЗУ) этой виртуальной машины.
 
-   Если места на диске ОС недостаточно, измените расположение создания для файла дампа памяти на любой подключенный к виртуальной машине диск данных, на котором достаточно свободного места. Чтобы изменить расположение, замените значение **%SystemRoot%** буквой нужного диска данных (например, **F:** ) в приведенных ниже командах.
+   Если места на диске ОС недостаточно, измените расположение для создания файла дампа памяти, указав подключенный к виртуальной машине диск данных, на котором достаточно свободного места. Чтобы изменить расположение, замените значение **%SystemRoot%** буквой нужного диска данных (например, **F:** ) в приведенных ниже командах.
 
-   Рекомендуемая конфигурация для включения дампа ОС.
+   Рекомендуемая конфигурация для включения дампа ОС.
 
-   **Загрузите куст реестра с поврежденного диска ОС.**
+   **Загрузите куст реестра с поврежденного диска ОС.**
 
    ```
    REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM
    ```
 
-   **Включите сбор для ControlSet001**.
+   **Включите сбор для ControlSet001.**
 
    ```
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
@@ -287,7 +290,7 @@ ms.locfileid: "97657130"
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f 
    ```
 
-   **Включите сбор для ControlSet002**.
+   **Включите сбор для ControlSet002.**
 
    ```
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
@@ -295,7 +298,7 @@ ms.locfileid: "97657130"
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f 
    ```
 
-   **Выгрузите поврежденный диск ОС**.
+   **Выгрузите поврежденный диск ОС.**
 
    ```
    REG UNLOAD HKLM\BROKENSYSTEM

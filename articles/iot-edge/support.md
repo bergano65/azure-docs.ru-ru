@@ -4,16 +4,16 @@ description: Узнайте, в каких операционных систем
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 10/12/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b1bd437da50ae5989e46ac5c5f881b28b0e99703
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: b17f1f32a3e49e9161afe92d62b85a162affcd9f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539908"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630536"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -50,27 +50,46 @@ Azure IoT Edge работает на большинстве операционн
 
 Семейство ОС узла всегда должно совпадать с семейством гостевой ОС, используемой в контейнере модуля. Другими словами, контейнеры Linux можно использовать только в Linux, а контейнеры Windows — только в Windows. В Windows поддерживаются только контейнеры с изолированными процессами, а не изолированные контейнеры Hyper-V.  
 
-<br>
-<center>
-
-![ОС узла совпадает с гостевой ОС](./media/support/edge-on-device.png)
-</center>
+IoT Edge для Linux в Windows использует IoT Edge на виртуальной машине Linux, работающей на узле Windows. Таким образом, вы можете запускать модули Linux на устройстве Windows.
 
 ### <a name="tier-1"></a>Уровень 1
 
-Системы, перечисленные в приведенной ниже таблице, поддерживаются корпорацией Майкрософт как в общедоступной версии, так и в общедоступной предварительной версии и тестируются с каждым новым выпуском. 
+Системы, перечисленные в следующих таблицах, поддерживаются корпорацией Майкрософт как общедоступной, так и в общедоступной предварительной версии и тестируются с каждым новым выпуском.
+
+Azure IoT Edge поддерживает модули, созданные как контейнеры Linux или Windows. Контейнеры Linux можно развертывать на устройствах Linux или развертывать на устройствах Windows с помощью IoT Edge для Linux в Windows. Контейнеры Windows можно развертывать только на устройствах Windows.
+
+#### <a name="linux-containers"></a>Контейнеры Linux
+
+Модули, созданные как контейнеры Linux, можно развертывать на устройствах Linux или Windows. Для устройств Linux среда выполнения IoT Edge устанавливается непосредственно на устройстве узла. Для устройств Windows виртуальная машина Linux, предварительно созданная с помощью среды выполнения IoT Edge, выполняется на устройстве узла.
+
+IoT Edge для Linux в Windows в настоящее время находится в общедоступной предварительной версии, но это рекомендуемый способ запуска IoT Edge на устройствах Windows.
 
 | Операционная система | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
 | Растяжение ОС Raspberry Pi |  | ![Растягивание ОС Raspberry Pi + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
-| [Ubuntu Server 16.04](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes) | ![Ubuntu Server 16.04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия  |
-| [Ubuntu Server 18.04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu Server 18.04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия |
-| [Windows 10 IoT Корпоративная](/windows/iot-core/windows-iot-enterprise), сборка 17763 | ![Windows 10 IoT Корпоративная + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows 10 IoT Базовая](/windows/iot-core/windows-iot-core), сборка 17763 | ![Windows IoT Core + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows Server 2019](/windows-server/get-started-19/rel-notes-19), сборка 17763 | ![Windows Server 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows Server IoT 2019](/windows/iot-core/windows-server), сборка 17763 | ![Windows Server IoT 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| Ubuntu Server 16.04 | ![Ubuntu Server 16.04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия  |
+| Ubuntu Server 18.04 | ![Ubuntu Server 18.04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Общедоступная предварительная версия |
+| Windows 10 Pro | Общедоступная предварительная версия |  |  |
+| Windows 10 Корпоративная | Общедоступная предварительная версия |  |  |
+| Windows 10 IoT Корпоративная | Общедоступная предварительная версия |  |  |
+| Windows Server 2019 | Общедоступная предварительная версия |  |  |
 
-Перечисленные выше операционные системы Windows являются требованиями к устройствам, на которых запускаются контейнеры Windows, что является единственной поддерживаемой конфигурацией для рабочей среды. Установочные пакеты Azure IoT Edge для Windows позволяют использовать контейнеры Linux в Windows, но эта конфигурация предназначена только для разработки и тестирования. 
+Все операционные системы Windows должны иметь версию 1809 (сборка 17763) или более позднюю.
+
+#### <a name="windows-containers"></a>Контейнеры Windows
+
+Модули, созданные как контейнеры Windows, можно развертывать только на устройствах Windows.
+
+| Операционная система | AMD64 | ARM32v7 | ARM64 |
+| ---------------- | ----- | ------- | ----- |
+| Windows 10 IoT Корпоративная | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+| Windows 10 IoT Базовая<sup>1</sup><br> | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+| Windows Server 2019  | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+| Windows Server IoT 2019<br> | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+
+<sup>1</sup> Windows 10 IOT базовая не будет поддерживаться после версии 1.0.10
+
+Все операционные системы Windows должны иметь версию 1809 (сборка 17763). Для IoT Edge в Windows требуется определенная сборка Windows, так как версия контейнеров Windows должна в точности совпадать с версией главного устройства Windows. В настоящее время контейнеры Windows используют только сборку 17763.
 
 ### <a name="tier-2"></a>Уровень 2
 

@@ -3,12 +3,12 @@ title: Использование функции в Azure в качестве о
 description: Описывает, как использовать функции, созданные в и размещенные в функциях Azure, в качестве обработчиков событий для событий службы "Сетка событий".
 ms.topic: conceptual
 ms.date: 09/18/2020
-ms.openlocfilehash: 5a1ec575b58829a422e4d263ae0324e0343d5ad3
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: beddc35f2dd8db974492d14aec27ce754a74737c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034974"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632518"
 ---
 # <a name="use-a-function-as-an-event-handler-for-event-grid-events"></a>Использование функции в качестве обработчика событий для событий сетки событий
 
@@ -75,7 +75,7 @@ ms.locfileid: "98034974"
 **Максевентспербатч** и **преферредбатчсизеинкилобитес** можно задать в шаблоне Azure Resource Manager. Дополнительные сведения см. в [справочнике по шаблонам Microsoft. EventGrid eventSubscriptions](/azure/templates/microsoft.eventgrid/eventsubscriptions).
 
 ### <a name="azure-cli"></a>Azure CLI
-Для настройки параметров, связанных с пакетной службой, можно использовать команду [AZ eventgrid Event-Subscription Create](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create&preserve-view=true) или [AZ eventgrid Event-Subscription Update](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update&preserve-view=true) . для этого используйте следующие параметры: `--max-events-per-batch` или `--preferred-batch-size-in-kilobytes` .
+Для настройки параметров, связанных с пакетной службой, можно использовать команду [AZ eventgrid Event-Subscription Create](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_create&preserve-view=true) или [AZ eventgrid Event-Subscription Update](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_update&preserve-view=true) . для этого используйте следующие параметры: `--max-events-per-batch` или `--preferred-batch-size-in-kilobytes` .
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 С помощью командлета [New-азевентгридсубскриптион](/powershell/module/az.eventgrid/new-azeventgridsubscription) или [Update-азевентгридсубскриптион](/powershell/module/az.eventgrid/update-azeventgridsubscription) можно настроить параметры, связанные с пакетной службой, используя следующие параметры: `-MaxEventsPerBatch` или `-PreferredBatchSizeInKiloBytes` .

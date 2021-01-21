@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
-ms.openlocfilehash: 4c336fe9a65d7bcc44790a4bfb02bed44f028733
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad0ed7e9619f0b789bf8949fe398aa27bc36b9e0
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86500928"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629646"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Цикл перезагрузки Windows на виртуальной машине Azure
 В этой статье описан цикл перезагрузки, который может возникнуть на виртуальной машине Windows в Microsoft Azure.
@@ -49,6 +49,9 @@ ms.locfileid: "86500928"
 Причина может быть вызвана повреждением файловой системы. Тем не менее изменение, которое привело к повреждению операционной системы, трудно диагностировать и выявить.
 
 ## <a name="solution"></a>Решение
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 Чтобы устранить эту проблему, необходимо [создать резервную копию диска ОС](../windows/snapshot-copy-managed-disk.md) и [подключить диск ОС к виртуальной машине спасения](./troubleshoot-recovery-disks-portal-windows.md). Затем необходимо применить соответствующие варианты решения или попробовать применить решения по очереди.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/09/2020
 ms.author: v-miegge
-ms.openlocfilehash: bde091b4a4559c3574ee122d74574d1f9477f3fd
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 6cb3467fec99bd12810ed058a61de1be7b39cdd0
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977054"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629595"
 ---
 # <a name="troubleshoot-windows-could-not-finish-configuring-the-system"></a>Устранение неполадок Windows, из-за которых не удается завершить настройку системы
 
@@ -39,5 +39,8 @@ ms.locfileid: "91977054"
 Эта ошибка возникает, если операционной системе (ОС) не удается завершить [процесс Sysprep](/windows-hardware/manufacture/desktop/sysprep-process-overview). Эта ошибка возникает при первой загрузке обобщенной виртуальной машины. Если вы столкнулись с этой проблемой, воссоздайте обобщенный образ, так как образ находится в неразвертываемом состоянии и не может быть восстановлен.
 
 ## <a name="solution"></a>Решение
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 Чтобы устранить эту проблему, следуйте [указаниям Azure по подготовке и записи образа](../windows/upload-generalized-managed.md) и подготовке нового обобщенного образа.

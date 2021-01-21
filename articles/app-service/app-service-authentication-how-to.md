@@ -4,12 +4,12 @@ description: Научитесь настраивать функцию прове
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 85fd7fdba4c62f4837a419af44c83f7e46cb9e39
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 4f2f43b142b290d29a4a90e504422b6c9ba2739c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601787"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630333"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -279,6 +279,150 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 ### <a name="application-level"></a>На уровне приложения
 
 Если любой из других уровней не обеспечивает необходимую авторизацию или если ваша платформа или поставщик удостоверений не поддерживается, необходимо написать пользовательский код для авторизации пользователей на основе [утверждений пользователей](#access-user-claims).
+
+## <a name="updating-the-configuration-version-preview"></a>Обновление версии конфигурации (Предварительная версия)
+
+Существует две версии API управления для функции проверки подлинности и авторизации. Для работы функции проверки подлинности (Предварительная версия) в портал Azure требуется версия предварительной версии 2. Приложение, уже использующее API V1, может выполнить обновление до версии v2 после внесения нескольких изменений. В частности, конфигурация секрета должна быть перемещена в параметры приложения, прикрепленные к гнезде. В настоящее время Настройка поставщика учетных записей Майкрософт также не поддерживается в версии 2.
+
+> [!WARNING]
+> Миграция в предварительную версию v2 приведет к отключению управления функцией проверки подлинности и авторизации службы приложений с помощью некоторых клиентов, таких как существующий интерфейс в портал Azure, Azure CLI и Azure PowerShell. Это не может быть отменено. Во время предварительной версии перенос рабочих нагрузок не рекомендуется или не поддерживается. Для тестирования приложений следует выполнить действия, описанные в этом разделе.
+
+### <a name="moving-secrets-to-application-settings"></a>Перемещение секретов в параметры приложения
+
+1. Получите существующую конфигурацию с помощью API V1:
+
+   ```azurecli
+   # For Web Apps
+   az webapp auth show -g <group_name> -n <site_name>
+
+   # For Azure Functions
+   az functionapp auth show -g <group_name> -n <site_name>
+   ```
+
+   В результирующих полезных данных JSON запишите значение секрета, используемое для каждого настроенного поставщика:
+
+   * AAD `clientSecret`
+   * Ими `googleClientSecret`
+   * Facebook `facebookAppSecret`
+   * Сайте `twitterConsumerSecret`
+   * Учетная запись Майкрософт: `microsoftAccountClientSecret`
+
+   > [!IMPORTANT]
+   > Секретные значения являются важными учетными данными безопасности и должны обрабатываться аккуратно. Не предоставляйте эти значения или не сохраним их на локальном компьютере.
+
+1. Создание параметров приложения с прикрепленными слотами для каждого значения секрета. Вы можете выбрать имя каждого параметра приложения. Это значение должно соответствовать значению, полученному на предыдущем шаге, или [ссылке на Key Vault секрет](./app-service-key-vault-references.md?toc=/azure/azure-functions/toc.json) , созданный с помощью этого значения.
+
+   Чтобы создать параметр, можно использовать портал Azure или выполнить один из следующих вариантов для каждого поставщика:
+
+   ```azurecli
+   # For Web Apps, Google example    
+   az webapp config appsettings set -g <group_name> -n <site_name> --slot-settings GOOGLE_PROVIDER_AUTHENTICATION_SECRET=<value_from_previous_step>
+
+   # For Azure Functions, Twitter example
+   az functionapp config appsettings set -g <group_name> -n <site_name> --slot-settings TWITTER_PROVIDER_AUTHENTICATION_SECRET=<value_from_previous_step>
+   ```
+
+   > [!NOTE]
+   > Параметры приложения для этой конфигурации должны быть отмечены как слоты, что означает, что они не будут перемещаться между средами во время [операции переключения слотов](./deploy-staging-slots.md). Это связано с тем, что сама конфигурация проверки подлинности привязана к среде. 
+
+1. Создайте новый JSON-файл с именем `authsettings.json` . Примите ранее полученные выходные данные и удалите из него все значения секрета. Запишите оставшиеся выходные данные в файл, убедившись, что секрет не включен. В некоторых случаях в конфигурации могут быть массивы, содержащие пустые строки. Убедитесь, что это не `microsoftAccountOAuthScopes` так, и если это так, переключите это значение на `null` .
+
+1. Добавьте свойство, `authsettings.json` которое указывает на имя параметра приложения, созданное ранее для каждого поставщика:
+ 
+   * AAD `clientSecretSettingName`
+   * Ими `googleClientSecretSettingName`
+   * Facebook `facebookAppSecretSettingName`
+   * Сайте `twitterConsumerSecretSettingName`
+   * Учетная запись Майкрософт: `microsoftAccountClientSecretSettingName`
+
+   Пример файла после этой операции может выглядеть примерно так, как показано ниже, в данном случае только для AAD:
+
+   ```json
+   {
+       "id": "/subscriptions/00d563f8-5b89-4c6a-bcec-c1b9f6d607e0/resourceGroups/myresourcegroup/providers/Microsoft.Web/sites/mywebapp/config/authsettings",
+       "name": "authsettings",
+       "type": "Microsoft.Web/sites/config",
+       "location": "Central US",
+       "properties": {
+           "enabled": true,
+           "runtimeVersion": "~1",
+           "unauthenticatedClientAction": "AllowAnonymous",
+           "tokenStoreEnabled": true,
+           "allowedExternalRedirectUrls": null,
+           "defaultProvider": "AzureActiveDirectory",
+           "clientId": "3197c8ed-2470-480a-8fae-58c25558ac9b",
+           "clientSecret": null,
+           "clientSecretSettingName": "MICROSOFT_IDENTITY_AUTHENTICATION_SECRET",
+           "clientSecretCertificateThumbprint": null,
+           "issuer": "https://sts.windows.net/0b2ef922-672a-4707-9643-9a5726eec524/",
+           "allowedAudiences": [
+               "https://mywebapp.azurewebsites.net"
+           ],
+           "additionalLoginParams": null,
+           "isAadAutoProvisioned": true,
+           "aadClaimsAuthorization": null,
+           "googleClientId": null,
+           "googleClientSecret": null,
+           "googleClientSecretSettingName": null,
+           "googleOAuthScopes": null,
+           "facebookAppId": null,
+           "facebookAppSecret": null,
+           "facebookAppSecretSettingName": null,
+           "facebookOAuthScopes": null,
+           "gitHubClientId": null,
+           "gitHubClientSecret": null,
+           "gitHubClientSecretSettingName": null,
+           "gitHubOAuthScopes": null,
+           "twitterConsumerKey": null,
+           "twitterConsumerSecret": null,
+           "twitterConsumerSecretSettingName": null,
+           "microsoftAccountClientId": null,
+           "microsoftAccountClientSecret": null,
+           "microsoftAccountClientSecretSettingName": null,
+           "microsoftAccountOAuthScopes": null,
+           "isAuthFromFile": "false"
+       }   
+   }
+   ```
+
+1. Отправьте этот файл в качестве новой конфигурации проверки подлинности или авторизации для приложения:
+
+   ```azurecli
+   az rest --method PUT --url "/subscriptions/<subscription_id>/resourceGroups/<group_name>/providers/Microsoft.Web/sites/<site_name>/config/authsettings?api-version=2020-06-01" --body @./authsettings.json
+   ```
+
+1. Проверьте, что приложение по-прежнему работает, как ожидалось после этого жеста.
+
+1. Удалите файл, который использовался на предыдущих шагах.
+
+Теперь вы выполнили миграцию приложения для хранения секретов поставщика удостоверений в качестве параметров приложения.
+
+### <a name="support-for-microsoft-account-registrations"></a>Поддержка регистраций учетная запись Майкрософт
+
+В настоящее время API v2 не поддерживает учетную запись Майкрософт в качестве отдельного поставщика. Вместо этого он использует объединенную [платформу Microsoft Identity](../active-directory/develop/v2-overview.md) для входа пользователей с личными учетными записями Майкрософт. При переключении на API v2 конфигурация Azure Active Directory v1 используется для настройки поставщика платформы удостоверений Майкрософт.
+
+Если существующая конфигурация содержит поставщик учетных записей Майкрософт и не содержит поставщика Azure Active Directory, можно переключить конфигурацию на поставщик Azure Active Directory, а затем выполнить миграцию. Выполните указанные ниже действия.
+
+1. Перейдите к [**Регистрация приложений**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure и найдите регистрацию, связанную с поставщиком учетной записи Майкрософт. Он может находиться в заголовке "приложения из личной учетной записи".
+1. Перейдите на страницу проверки подлинности для регистрации. В разделе "URI перенаправления" должна отобразиться запись, которая заканчивается на `/.auth/login/microsoftaccount/callback` . Скопируйте этот URI.
+1. Добавьте новый универсальный код ресурса (URI), совпадающий с только что скопированным, за исключением того, что он имеет значение End `/.auth/login/aad/callback` . Это позволит использовать регистрацию в конфигурации проверки подлинности и авторизации службы приложений.
+1. Перейдите к конфигурации проверки подлинности и авторизации в службе приложений для приложения.
+1. Собирайте конфигурацию для поставщика учетных записей Майкрософт.
+1. Настройте поставщик Azure Active Directory с помощью режима управления "Дополнительно", указав идентификатор клиента и значения секрета клиента, собранные на предыдущем шаге. Для URL-адреса издателя используйте `<authentication-endpoint>/<tenant-id>/v2.0` и замените *\<authentication-endpoint>* [конечной точкой проверки подлинности для облачной среды](../active-directory/develop/authentication-national-cloud.md#azure-ad-authentication-endpoints) (например, " https://login.microsoftonline.com " для глобального Azure), а также замените *\<tenant-id>* **идентификатором каталога (клиента)**.
+1. После сохранения конфигурации протестируйте поток входа, перейдя в браузер к `/.auth/login/aad` конечной точке на сайте и завершая процесс входа.
+1. На этом этапе вы успешно скопировали конфигурацию, но существующая конфигурация поставщика учетных записей Майкрософт остается. Перед удалением убедитесь, что все части приложения ссылаются на поставщика Azure Active Directory по ссылкам для входа и т. д. Убедитесь, что все части приложения работают должным образом.
+1. После проверки того, что все работает с поставщиком Azure Active Directory AAD, можно удалить конфигурацию поставщика учетных записей Майкрософт.
+
+Некоторые приложения уже могут иметь отдельные регистрации для Azure Active Directory и учетной записи Майкрософт. В настоящее время невозможно выполнить миграцию этих приложений. 
+
+> [!WARNING]
+> Можно выполнить схождение двух регистраций, изменив [Поддерживаемые типы учетных записей](../active-directory/develop/supported-accounts-validation.md) для регистрации приложения AAD. Тем не менее это приведет к принудительному появлении нового запроса согласия для пользователей учетных записей Майкрософт, а в структуре утверждения удостоверений этих пользователей могут отличаться, в `sub` особенности изменяя значения с момента использования нового идентификатора приложения. Этот подход не рекомендуется использовать, если не тщательно обпонимается. Вместо этого следует дождаться поддержки двух регистраций в области API v2.
+
+### <a name="switching-to-v2"></a>Переключение на v2
+
+После выполнения описанных выше действий перейдите к приложению в портал Azure. Выберите раздел "Проверка подлинности (Предварительная версия)". 
+
+Кроме того, вы можете выполнить запрос на размещение для `config/authsettingsv2` ресурса в ресурсе сайта. Схема полезных данных аналогична схеме, захваченной в разделе [Настройка с использованием файла](#config-file) .
 
 ## <a name="configure-using-a-file-preview"></a><a name="config-file"> </a>Настройка с помощью файла (Предварительная версия)
 

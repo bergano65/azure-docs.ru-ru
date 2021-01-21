@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/09/2018
 ms.author: genli
-ms.openlocfilehash: fe2d444bbdc09ed5ab0205d4139591e3288e3358
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 3090b7b889d914fc0cdb598b8bf29a73c81f50cb
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734571"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632009"
 ---
 # <a name="azure-vm-startup-is-stuck-at-windows-update"></a>Зависание виртуальной машины при запуске во время обновления Windows
 
@@ -37,6 +37,8 @@ ms.locfileid: "94734571"
 
 
 ## <a name="solution"></a>Решение
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 В зависимости от количества обновлений, которые устанавливаются или откатываются, процесс обновления может занять некоторое время. Оставьте виртуальную машину в этом состоянии на 8 часов. Если по прошествии этого периода виртуальная машина по-прежнему пребывает в этом состоянии, перезапустите ее на портале Azure и проверьте, запускается ли она обычным образом. Если этот шаг не помог, попробуйте следующее решение.
 
@@ -71,7 +73,7 @@ ms.locfileid: "94734571"
     ```
     dism /Image:<Attached OS disk>:\ /Remove-Package /PackageName:<PACKAGE NAME TO DELETE>
     ```
-    Пример. 
+    Пример: 
 
     ```
     dism /Image:F:\ /Remove-Package /PackageName:Package_for_RollupFix~31bf3856ad364e35~amd64~~17134.345.1.5

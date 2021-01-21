@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 960b3c29f97c43e1247018a60f6c6310c7cf02de
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 729c3e46cf329c525ce9204b26d4c6aefa04c89d
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724669"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632501"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Устранение проблем с производительностью файловых ресурсов Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "97724669"
 ### <a name="solution"></a>Решение
 
 - Если вы используете стандартный файловый ресурс, включите [большие файловые ресурсы](./storage-files-how-to-create-large-file-share.md?tabs=azure-portal) в учетной записи хранения. Большие файловые ресурсы поддерживают до 10 000 операций ввода-вывода в секунду на общую папку.
-- Если вы используете файловый ресурс уровня "Премиум", увеличьте размер подготовленной общей папки, чтобы увеличить ограничение числа операций ввода-вывода в секунду. Дополнительные сведения см. в разделе [Основные сведения о подготовке общих файловых ресурсов Premium](./understanding-billing.md#provisioned-billing).
+- Если вы используете файловый ресурс уровня "Премиум", увеличьте размер подготовленной общей папки, чтобы увеличить ограничение числа операций ввода-вывода в секунду. Дополнительные сведения см. в разделе [Основные сведения о подготовке общих файловых ресурсов Premium](./understanding-billing.md#provisioned-model).
 
 ### <a name="cause-2-metadata-or-namespace-heavy-workload"></a>Причина 2. интенсивная рабочая нагрузка метаданных или пространства имен
 

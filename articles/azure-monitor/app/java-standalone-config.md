@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 98499961f55b55b15687d5742b4d593e3d461e49
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 397c650d1d7a593a855c8f26e61dbf12ec6360fa
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625336"
+ms.locfileid: "98631327"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Параметры конфигурации — Application Insights Azure Monitor для Java
 
@@ -296,7 +296,9 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 }
 ```
 
-[//]: # "Обратите внимание, что не следует объявлять поддержку Опентелеметри до тех пор, пока мы не поддерживаем 0.10.0, который содержит существенные критические изменения"
+Application Insights Java 3,0 также учитывает глобальные и, `-Dhttps.proxyHost` `-Dhttps.proxyPort` если они заданы.
+
+[//]: # "Примечание. Поддержка Опентелеметри предоставляется в частном предварительной версии, пока API Опентелеметри не достигнет 1,0"
 
 [//]: # "Поддержка # # для предварительных выпусков API Опентелеметри в 1,0"
 
@@ -343,6 +345,8 @@ Log4j, Logback и Java. util. Logging устанавливаются в авто
 `maxSizeMb` максимальный размер файла журнала до его перебора.
 
 `maxHistory` число файлов журнала, которые были включены в сохраняемые файлы журналов (помимо текущего файла журнала).
+
+Начиная с версии 3.0.2, можно также задать самодиагностику `level` с помощью переменной среды `APPLICATIONINSIGHTS_SELF_DIAGNOSTICS_LEVEL` .
 
 ## <a name="an-example"></a>Пример
 

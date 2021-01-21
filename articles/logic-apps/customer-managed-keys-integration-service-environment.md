@@ -5,19 +5,19 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: mijos, rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 11/20/2020
-ms.openlocfilehash: 0057a4671dbc63bf53bafa8d2d742d4edcda1e5e
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.date: 01/20/2021
+ms.openlocfilehash: d31fbd813f0c5d63ee9eddbff5b299209618626b
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741054"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629680"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Настройка ключей, управляемых клиентом, для шифрования неактивных данных в средах службы интеграции (Исес) в Azure Logic Apps
 
 Azure Logic Apps использует хранилище Azure для хранения и автоматического [шифрования неактивных данных](../storage/common/storage-service-encryption.md). Это шифрование защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. По умолчанию служба хранилища Azure использует ключи, управляемые корпорацией Майкрософт, для шифрования данных. Дополнительные сведения о том, как работает шифрование службы хранилища Azure, см. в статье [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md) и [Шифрование неактивных данных Azure](../security/fundamentals/encryption-atrest.md).
 
-При создании [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) для размещения приложений логики и необходимости более эффективного управления ключами шифрования, используемыми службой хранилища Azure, можно настроить, использовать и управлять собственным ключом с помощью [Azure Key Vault](../key-vault/general/overview.md). Эта возможность также называется "создание собственных ключей" (BYOK), а ключ называется "ключом, управляемым клиентом".
+При создании [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) для размещения приложений логики и необходимости более эффективного управления ключами шифрования, используемыми службой хранилища Azure, можно настроить, использовать и управлять собственным ключом с помощью [Azure Key Vault](../key-vault/general/overview.md). Эта возможность называется "создание собственных ключей" (BYOK), а ключ называется "ключом, управляемым клиентом". Благодаря этой возможности служба хранилища Azure автоматически включает [двойное шифрование или *Шифрование инфраструктуры* с помощью ключей, управляемых платформой](../security/fundamentals/double-encryption.md) , для вашего ключа. Дополнительные сведения см. в разделе [удвоение шифрования данных с помощью шифрования инфраструктуры](../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption).
 
 В этом разделе показано, как настроить и указать собственный ключ шифрования для использования при создании интегрированной среды сценариев с помощью REST API Logic Apps. Общие действия по созданию интегрированной среды сценариев с помощью Logic Apps REST API см. [в разделе Создание окружения службы интеграции (ISE) с помощью Logic Apps REST API](../logic-apps/create-integration-service-environment-rest-api.md).
 
@@ -47,11 +47,11 @@ Azure Logic Apps использует хранилище Azure для хране
 
 * В хранилище ключей — ключ, который создается со следующими значениями свойств:
 
-  | Свойство. | Значение |
+  | Свойство | Значение |
   |----------|-------|
   | **Тип ключа** | RSA |
   | **Размер ключа RSA** | 2048 |
-  | **Включено** | Да |
+  | **Enabled** | Да |
   |||
 
   ![Создание ключа шифрования, управляемого клиентом](./media/customer-managed-keys-integration-service-environment/create-customer-managed-key-for-encryption.png)

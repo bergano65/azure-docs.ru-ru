@@ -8,12 +8,12 @@ ms.date: 10/06/2020
 ms.topic: reference
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a082ccb62103ab5bd027bf49b9ee05bc48c63115
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2878d682d0f2025a50f26baf87476f66aa236e2c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979676"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630622"
 ---
 # <a name="powershell-scripts-for-iot-edge-on-windows"></a>Сценарии PowerShell для IoT Edge в Windows
 
@@ -101,8 +101,6 @@ Get-AuthenticodeSignature "C:\<path>\IotEdgeSecurityDaemon.ps1"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об использовании этих команд см. в следующих статьях:
+Сведения об использовании этих команд см. в следующей статье:
 
-* [Установка или удаление среды выполнения Azure IoT Edge](how-to-install-iot-edge.md)
-* [Предоставление Azure IoT Edge устройства с проверкой подлинности с помощью симметричного ключа](how-to-manual-provision-symmetric-key.md)
-* [Подготавливает устройство Azure IoT Edge с помощью проверки подлинности сертификата X. 509](how-to-manual-provision-x509.md)
+* [Установка или удаление Azure IoT Edge для Windows](how-to-install-iot-edge-windows-on-windows.md)
