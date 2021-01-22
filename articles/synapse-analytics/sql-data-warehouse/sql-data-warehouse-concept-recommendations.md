@@ -11,12 +11,12 @@ ms.date: 06/26/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: bd32b9690f8a9aef92eb1f2fbcc4ec926a65584e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 6510a7143e78c054130a1f1dddba78342a6785fe
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121198"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685282"
 ---
 # <a name="azure-advisor-recommendations-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Рекомендации помощника по Azure для выделенного пула SQL в Azure синапсе Analytics
 
@@ -73,4 +73,4 @@ ms.locfileid: "98121198"
 
 ## <a name="data-loading-misconfiguration"></a>Неудачная настройка загрузки данных
 
-Необходимо всегда загружать данные из учетной записи хранения в том же регионе, что и выделенный пул SQL, чтобы максимально сокращать задержку. Используйте [инструкцию Copy для приема данных с высокой пропускной способностью](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и разделите промежуточные файлы в учетной записи хранения, чтобы повысить пропускную способность. Если вы не можете использовать инструкцию COPY, можно использовать API SqlBulkCopy или bcp с большим размером пакета для повышения пропускной способности. Дополнительные рекомендации по загрузке данных см. в следующей [документации](./guidance-for-loading-data.md).
+Необходимо всегда загружать данные из учетной записи хранения в том же регионе, что и выделенный пул SQL, чтобы максимально сокращать задержку. Используйте [инструкцию Copy для приема данных с высокой пропускной способностью](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) и разделите промежуточные файлы в учетной записи хранения, чтобы повысить пропускную способность. Если вы не можете использовать инструкцию COPY, можно использовать API SqlBulkCopy или bcp с большим размером пакета для повышения пропускной способности. Дополнительные рекомендации по загрузке данных см. в следующей [документации](./guidance-for-loading-data.md).

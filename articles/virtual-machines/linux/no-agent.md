@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 9f0309f4e8273c2ef19ea86636de8e3aa6b6c4bc
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: edbcabfe4d0b633a784163562f52b303120916ca
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435106"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685074"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Создание обобщенных образов без агента подготовки
 
@@ -180,7 +180,7 @@ wireserver_conn.close()
 
 В этой демонстрации используется система, которая является наиболее распространенной системой инициализации в современных Linux дистрибутивов. Таким образом, самый простой и эффективный способ гарантировать, что этот механизм готовности отчетов будет выполняться в нужное время, — это создать системную единицу службы. В этот пример можно добавить следующий файл единицы `/etc/systemd/system` (например, имя файла единицы измерения `azure-provisioning.service` ):
 
-```
+```bash
 [Unit]
 Description=Azure Provisioning
 
@@ -204,7 +204,7 @@ WantedBy=multi-user.target
 
 С помощью единицы в файловой системе выполните следующую команду, чтобы включить ее:
 
-```
+```bash
 $ sudo systemctl enable azure-provisioning.service
 ```
 
@@ -214,14 +214,14 @@ $ sudo systemctl enable azure-provisioning.service
 
 Вернитесь на компьютер разработки и выполните следующую команду, чтобы подготовить образ к созданию образа из базовой виртуальной машины:
 
-```
+```bash
 $ az vm deallocate --resource-group demo1 --name demo1
 $ az vm generalize --resource-group demo1 --name demo1
 ```
 
 Создайте образ на основе этой виртуальной машины:
 
-```
+```bash
 $ az image create \
     --resource-group demo1 \
     --source demo1 \
@@ -231,7 +231,7 @@ $ az image create \
 
 Теперь мы готовы создать виртуальную машину (или несколько виртуальных машин) из образа.
 
-```
+```bash
 $ IMAGE_ID=$(az image show -g demo1 -n demo1img --query id -o tsv)
 $ az vm create \
     --resource-group demo12 \
@@ -249,7 +249,7 @@ $ az vm create \
 
 Эта виртуальная машина должна быть успешно подготовлена. Войдя на новую виртуальную машину подготовки, вы сможете увидеть выходные данные готовой системной службы Reporting Service:
 
-```
+```bash
 $ sudo journalctl -u azure-provisioning.service
 -- Logs begin at Thu 2020-06-11 20:28:45 UTC, end at Thu 2020-06-11 20:31:24 UTC. --
 Jun 11 20:28:49 thstringnopa systemd[1]: Starting Azure Provisioning...
@@ -271,6 +271,6 @@ Jun 11 20:28:56 thstringnopa2 systemd[1]: Started Azure Provisioning.
 
 Если вы реализуете собственный код подготовки или агента, вы владеете поддержкой этого кода, поддержка Майкрософт будет исследовать только проблемы, связанные с интерфейсами подготовки, которые недоступны. Мы постоянно делаем улучшения и изменения в этой области, поэтому необходимо отслеживать изменения в Cloud-init и агенте Linux для Azure для подготовки изменений API.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

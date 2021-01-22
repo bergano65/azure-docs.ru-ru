@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 1/5/2021
 ms.author: v-jawe
-ms.openlocfilehash: 07c9bd12664a94c64a0d0b37d638b5668cc7f61e
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: b4035e2039afb6fe66d2658ebfcd3206d46e1de5
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98605633"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682468"
 ---
 # <a name="how-to-mitigate-latency-when-using-the-face-service"></a>Как уменьшить задержку при использовании службы распознавания лиц
 
@@ -42,7 +42,11 @@ var faces = await client.Face.DetectWithUrlAsync("https://www.biography.com/.ima
 
 Затем служба распознавания лиц должна загрузить образ с удаленного сервера. Если подключение из службы "лица" к удаленному серверу работает слишком долго, то оно повлияет на время отклика метода обнаружения.
 
-Чтобы устранить эту проблемы, рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet).
+Чтобы устранить эту проблемы, рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Пример:
+
+``` csharp
+var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
+```
 
 ### <a name="large-upload-size"></a>Большой размер передачи
 
@@ -58,7 +62,10 @@ System.Collections.Generic.IList<DetectedFace> faces = await client.Face.DetectW
 - Она занимает больше времени для обработки файла, пропорционально размеру файла.
 
 Устранение рисков:
-- Рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet).
+- Рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Пример:
+``` csharp
+var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
+```
 - Попробуйте отправить файл меньшего размера.
     - См. рекомендации по [входным данным для обнаружения лиц](https://docs.microsoft.com/azure/cognitive-services/face/concepts/face-detection#input-data) и [входных данных для распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/concepts/face-recognition#input-data).
     - При обнаружении лиц при использовании модели обнаружения `DetectionModel.Detection01` уменьшение размера файла изображения увеличит скорость обработки. При использовании модели обнаружения `DetectionModel.Detection02` уменьшение размера файла изображения увеличивает скорость обработки, только если размер файла изображения меньше 1920 x 1080.

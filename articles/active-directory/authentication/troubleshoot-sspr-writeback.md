@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d6bf4df1499d919cead0a184054e5ba0db9c06e
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 0620304de1866d24719b137836419502cd25bee9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346606"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682243"
 ---
 # <a name="troubleshoot-self-service-password-reset-writeback-in-azure-active-directory"></a>Устранение неполадок самостоятельного сброса пароля в Azure Active Directory
 
@@ -43,7 +43,7 @@ Azure Active Directory (Azure AD) самостоятельный сброс па
 * *\*. passwordreset.microsoftonline.com*
 * *\*. servicebus.windows.net*
 
-[Конечные точки gov](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers)для Azure:
+[Конечные точки gov](../../azure-government/compare-azure-government-global-azure.md#guidance-for-developers)для Azure:
 
 * *\*. passwordreset.microsoftonline.us*
 * *\*. servicebus.usgovcloudapi.net*
@@ -235,6 +235,6 @@ Azure AD Connect требует разрешения AD DS **Сброс паро
 * **Лицензирование.** Назначена ли пользователю лицензия Azure AD?
 * **Журнал событий приложений.** Если используется компонент обратной записи паролей и код ошибки находится в локальной инфраструктуре, включите сжатую копию журнала событий приложения с сервера Azure AD Connect.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о SSPR см. в статье [как это работает: самостоятельный сброс пароля Azure AD](concept-sspr-howitworks.md) или [самостоятельная обратная запись сброса пароля в Azure AD](concept-sspr-writeback.md).

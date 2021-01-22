@@ -6,12 +6,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.custom: references_regions
-ms.openlocfilehash: 2dd91e5c506f229d653fdf98bc0549c173cec793
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 1e5a53c80aed90e44ba594dcff3c8ca23afc2c4f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93351892"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684780"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes"></a>Создание и настройка кластера Azure Kubernetes Services (AKS) для использования виртуальных узлов
 
@@ -48,8 +48,9 @@ ms.locfileid: "93351892"
 * Виртуальные узлы с частными кластерами.
 * Использование диапазонов IP-адресов, прошедших авторизацию сервера API, для AKS.
 * Общий доступ к файлам Azure для подключения к общему ресурсу поддерживается для [общего назначения версии v1](../storage/common/storage-account-overview.md#types-of-storage-accounts). Следуйте инструкциям по подключению [тома с файловым ресурсом Azure](azure-files-volume.md) .
+* Использование IPv6 не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Настройте виртуальные узлы для кластеров:
 

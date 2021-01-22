@@ -8,12 +8,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 05/06/2020
 ms.author: dayshen
-ms.openlocfilehash: 80369883b84ca30cae475235d41addcfba7e52e1
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 92e93c3746308d2d6c1a489efc6b5c866b0ad2d9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152341"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682636"
 ---
 # <a name="use-private-endpoints-for-azure-signalr-service"></a>Использование частных конечных точек для службы SignalR Azure
 
@@ -59,8 +59,8 @@ ms.locfileid: "92152341"
 
 | Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
-| ``foobar.service.signalr.net``                        | CNAME | ``foobar.privatelink.service.signalr.net``            |
-| ``foobar.privatelink.service.signalr.net``            | A     | \<Azure SignalR Service public IP address\>           |
+| ``foobar.service.signalr.net``                        | CNAME. | ``foobar.privatelink.service.signalr.net``            |
+| ``foobar.privatelink.service.signalr.net``            | Объект     | \<Azure SignalR Service public IP address\>           |
 
 Как упоминалось ранее, вы можете запретить или контролировать доступ клиентов за пределами виртуальной сети через общедоступную конечную точку, используя контроль доступа к сети.
 
@@ -68,8 +68,8 @@ ms.locfileid: "92152341"
 
 | Имя                                                  | Тип  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
-| ``foobar.service.signalr.net``                        | CNAME | ``foobar.privatelink.service.signalr.net``            |
-| ``foobar.privatelink.service.signalr.net``            | A     | 10.1.1.5                                              |
+| ``foobar.service.signalr.net``                        | CNAME. | ``foobar.privatelink.service.signalr.net``            |
+| ``foobar.privatelink.service.signalr.net``            | Объект     | 10.1.1.5                                              |
 
 Такой подход обеспечивает доступ к службе Azure SignalR, **используя ту же строку подключения** для клиентов в виртуальной сети, где размещаются частные конечные точки, а также клиенты за пределами виртуальной сети.
 
@@ -126,55 +126,55 @@ ms.locfileid: "92152341"
 ### <a name="create-a-private-endpoint-using-azure-cli"></a>Создание частной конечной точки с помощью Azure CLI
 
 1. Вход в Azure CLI
-    ```console
+    ```azurecli
     az login
     ```
 1. Выбор подписки Azure
-    ```console
+    ```azurecli
     az account set --subscription {AZURE SUBSCRIPTION ID}
     ```
 1. Создание новой группы ресурсов
-    ```console
+    ```azurecli
     az group create -n {RG} -l {AZURE REGION}
     ```
 1. Регистрация Microsoft. Сигналрсервице в качестве поставщика
-    ```console
+    ```azurecli
     az provider register -n Microsoft.SignalRService
     ```
 1. Создание новой службы Azure SignalR
-    ```console
+    ```azurecli
     az signalr create --name {NAME} --resource-group {RG} --location {AZURE REGION} --sku Standard_S1
     ```
 1. Создайте виртуальную сеть
-    ```console
+    ```azurecli
     az network vnet create --resource-group {RG} --name {vNet NAME} --location {AZURE REGION}
     ```
 1. Добавление подсети
-    ```console
+    ```azurecli
     az network vnet subnet create --resource-group {RG} --vnet-name {vNet NAME} --name {subnet NAME} --address-prefixes {addressPrefix}
     ```
 1. Отключение политик виртуальной сети
-    ```console
+    ```azurecli
     az network vnet subnet update --name {subnet NAME} --resource-group {RG} --vnet-name {vNet NAME} --disable-private-endpoint-network-policies true
     ```
 1. Добавление частной зоны DNS
-    ```console
+    ```azurecli
     az network private-dns zone create --resource-group {RG} --name privatelink.service.signalr.net
     ```
 1. Связывание частной зоны DNS с виртуальной сетью
-    ```console
+    ```azurecli
     az network private-dns link vnet create --resource-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.service.signalr.net --name {dnsZoneLinkName} --registration-enabled true
     ```
 1. Создание частной конечной точки (автоматическое утверждение)
-    ```console
+    ```azurecli
     az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.SignalRService/SignalR/{NAME}" --group-ids signalr --connection-name {Private Link Connection Name} --location {AZURE REGION}
     ```
 1. Создание частной конечной точки (запрос утверждения вручную)
-    ```console
+    ```azurecli
     az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.SignalRService/SignalR/{NAME}" --group-ids signalr --connection-name {Private Link Connection Name} --location {AZURE REGION} --manual-request
     ```
 1. Отображение строк подключения
-    ```console
+    ```azurecli
     az network private-endpoint show --resource-group {RG} --name {Private Endpoint Name}
     ```
 
@@ -200,6 +200,6 @@ ms.locfileid: "92152341"
 
 Сейчас нельзя настроить правила [группы безопасности сети](../virtual-network/network-security-groups-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются к частной конечной точке. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка контроля доступа к сети](howto-network-access-control.md)

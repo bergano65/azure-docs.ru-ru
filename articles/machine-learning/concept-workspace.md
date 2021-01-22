@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/22/2020
-ms.openlocfilehash: 7acb555ddde20d6512119af85a8db055bcd9eeed
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 5211555102c0a8d29eb05abd7a680935d828f9dc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701659"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683446"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -76,7 +76,7 @@ ms.locfileid: "94701659"
 
 | Задача управления рабочей областью   | Портал              | Студия | Пакет SDK для Python или пакет SDK для R       | CLI        | VS Code
 |---------------------------|---------|---------|------------|------------|------------|
-| Создать рабочую область        | **&check;**     | | **&check;** | **&check;** | **&check;** |
+| Создание рабочей области        | **&check;**     | | **&check;** | **&check;** | **&check;** |
 | Управление доступом к рабочей области    | **&check;**   || |  **&check;**    ||
 | Создание ресурсов вычислений и управление ими    | **&check;**   | **&check;** | **&check;** |  **&check;**   ||
 | Создание виртуальной машины записной книжки |   | **&check;** | |     ||
@@ -134,6 +134,5 @@ ms.locfileid: "94701659"
 + [Создание рабочей области и управление ею](how-to-manage-workspace.md)
 + [Учебник. Начало работы с Машинное обучение Azure в среде разработки](tutorial-1st-experiment-sdk-setup-local.md)
 + [Учебник. Приступая к созданию первого эксперимента ML на вычислительном экземпляре](tutorial-1st-experiment-sdk-setup.md)
-+ [Руководство. Начало работы с Машинное обучение Azure с помощью пакета SDK для R](tutorial-1st-r-experiment.md)
 + [Руководство. Создание первой модели классификации в автоматизированном машинном обучении](tutorial-first-experiment-automated-ml.md) 
 + [Руководство по прогнозированию цен на автомобили с помощью конструктора](tutorial-designer-automobile-price-train-score.md)

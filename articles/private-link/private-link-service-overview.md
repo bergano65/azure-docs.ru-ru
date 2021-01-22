@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: sumi
-ms.openlocfilehash: 27dba675f82c4d34ec793cf492c18b293a6c8c77
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 7983a80da8a5ca9d900e44515b5e078cc9d70d79
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544264"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684192"
 ---
 # <a name="what-is-azure-private-link-service"></a>Что такое служба частной связи Azure?
 
@@ -126,7 +126,7 @@ ms.locfileid: "95544264"
 Ниже перечислены известные ограничения при использовании службы Private Link.
 - Поддерживается только в Load Balancer (цен. категория "Стандартный") 
 - Поддерживает только трафик IPv4
-- Поддерживает только TCP-трафик
+- Поддерживает только трафик TCP и UDP
 
 ## <a name="next-steps"></a>Следующие шаги
 - [Создание службы частной связи с помощью Azure PowerShell](create-private-link-service-powershell.md)

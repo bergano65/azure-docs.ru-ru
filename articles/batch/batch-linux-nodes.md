@@ -2,14 +2,14 @@
 title: Выполнение вычислительных узлов виртуальных машин под управлением Linux в пакетной службе Azure
 description: Узнайте, как обрабатывать параллельные расчетные рабочие нагрузки в пулах виртуальных машин Linux в пакетной службе Azure.
 ms.topic: how-to
-ms.date: 11/10/2020
+ms.date: 01/21/2021
 ms.custom: H1Hack27Feb2017, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 0a9c801a13af05f077b87f296992da7f50742e4b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: c711ec0d035b9b59ec7628a51fe3cff26de358bc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533503"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683706"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Подготовка вычислительных узлов Linux в пулах пакетной службы
 
@@ -17,9 +17,7 @@ ms.locfileid: "94533503"
 
 ## <a name="virtual-machine-configuration"></a>Конфигурация виртуальной машины
 
-При создании пула вычислительных узлов в пакетной службе есть два варианта для выбора размера узла и операционной системы: Cloud Services Configuration (Конфигурация облачных служб) и "Конфигурация виртуальной машины". Большинство пулов вычислений на узлах Windows используют [конфигурацию облачных служб](nodes-and-pools.md#cloud-services-configuration), которая указывает, что пул состоит из узлов облачных служб Azure. Эти пулы предоставляют только кластерные узлы Windows.
-
-В отличие от этого, [Конфигурация виртуальной машины](nodes-and-pools.md#virtual-machine-configuration) указывает, что пул состоит из виртуальных машин Azure, которые могут быть созданы из образов Linux или Windows. При создании пула с конфигурацией виртуальной машины необходимо указать [доступный размер вычислений](../virtual-machines/sizes.md), ссылку на образ виртуальной машины и номер SKU агента узла пакетной службы (программа, которая выполняется на каждом узле и предоставляет интерфейс между узлом и пакетной службой) и ссылку на образ виртуальной машины, которая будет установлена на узлах.
+При создании пула вычислительных узлов в пакетной службе есть два варианта для выбора размера узла и операционной системы: Cloud Services Configuration (Конфигурация облачных служб) и "Конфигурация виртуальной машины". Пулы [конфигурации виртуальных машин](nodes-and-pools.md#virtual-machine-configuration) состоят из виртуальных машин Azure, которые могут быть созданы из образов Linux или Windows. При создании пула с конфигурацией виртуальной машины необходимо указать [доступный размер вычислений](../virtual-machines/sizes.md), ссылку на образ виртуальной машины, которая будет установлена на узлах, и номер SKU агента узла пакетной службы (программа, которая выполняется на каждом узле и предоставляет интерфейс между узлом и пакетной службой).
 
 ### <a name="virtual-machine-image-reference"></a>Ссылка на образ виртуальной машины
 
@@ -35,7 +33,11 @@ ms.locfileid: "94533503"
 | Версия |последняя |
 
 > [!TIP]
-> Дополнительные сведения об этих свойствах и о том, как указать образы Marketplace, можно найти в статье [Поиск образов виртуальных машин Linux в Azure Marketplace с помощью Azure CLI](../virtual-machines/linux/cli-ps-findimage.md). Обратите внимание, что не все образы из Marketplace в настоящее время совместимы с пакетной службой.
+> Дополнительные сведения об этих свойствах и о том, как указать образы Marketplace, можно найти в статье [Поиск образов виртуальных машин Linux в Azure Marketplace с помощью Azure CLI](../virtual-machines/linux/cli-ps-findimage.md). Обратите внимание, что некоторые образы Marketplace в настоящее время не совместимы с пакетной службой.
+
+### <a name="list-of-virtual-machine-images"></a>Список образов виртуальных машин
+
+Не все образы Marketplace совместимы с доступными в настоящее время агентами узлов пакетной службы. Чтобы получить список всех поддерживаемых образов виртуальных машин Marketplace для пакетной службы и соответствующих номеров SKU агентов узлов, используйте [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) (Python), [листсуппортедимажес](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) (пакет .NET) или соответствующий API в другом языковом пакете SDK.
 
 ### <a name="node-agent-sku"></a>Номер SKU агента узла
 
@@ -44,10 +46,6 @@ ms.locfileid: "94533503"
 - batch.node.ubuntu 18.04
 - batch.node.centos 7
 - batch.node.windows amd64
-
-### <a name="list-of-virtual-machine-images"></a>Список образов виртуальных машин
-
-Не все образы Marketplace совместимы с доступными в настоящее время агентами узлов пакетной службы. Чтобы получить список всех поддерживаемых образов виртуальных машин Marketplace для пакетной службы и соответствующих номеров SKU агентов узлов, используйте [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) (Python), [листсуппортедимажес](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) (пакет .NET) или соответствующий API в другом языковом пакете SDK.
 
 ## <a name="create-a-linux-pool-batch-python"></a>Создание пула Linux. Python для пакетной службы
 

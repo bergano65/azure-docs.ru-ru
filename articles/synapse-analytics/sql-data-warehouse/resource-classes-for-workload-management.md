@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a557d4045b18b5c0ff71b3e47f0c189028702863
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7714ce748eb172565357723924ab2212e9559e1f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91289537"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685333"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-synapse-analytics"></a>Управление рабочими нагрузками с использованием классов ресурсов в Azure Synapse Analytics
 
@@ -162,13 +162,13 @@ WHERE  name LIKE '%rc%' AND type_desc = 'DATABASE_ROLE';
 
 Классы ресурсов реализуются путем назначения пользователям ролей базы данных. Когда пользователь выполняет запрос, он выполняется с классом ресурса пользователя. Например, если пользователь является участником роли базы данных staticrc10, то запрос выполняется с использованием небольшого объема памяти. Если пользователь базы данных является участником роли базы данных xlargerc или staticrc80, запрос выполняется с использованием большого объема памяти.
 
-Чтобы увеличить класс ресурсов пользователя, с помощью [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) добавьте этого пользователя к роли базы данных с более высоким классом ресурсов.  Приведенный ниже код добавляет пользователя к роли базы данных largerc.  Каждый запрос получает 22 % от объема системной памяти.
+Чтобы увеличить класс ресурсов пользователя, с помощью [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) добавьте этого пользователя к роли базы данных с более высоким классом ресурсов.  Приведенный ниже код добавляет пользователя к роли базы данных largerc.  Каждый запрос получает 22 % от объема системной памяти.
 
 ```sql
 EXEC sp_addrolemember 'largerc', 'loaduser';
 ```
 
-Чтобы уменьшить класс ресурсов, используйте хранимую процедуру [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Если loaduser не является членом каких-либо классов ресурсов, ему присваивается класс ресурсов smallrc по умолчанию, которому временно выделяется 3 % памяти.  
+Чтобы уменьшить класс ресурсов, используйте хранимую процедуру [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  Если loaduser не является членом каких-либо классов ресурсов, ему присваивается класс ресурсов smallrc по умолчанию, которому временно выделяется 3 % памяти.  
 
 ```sql
 EXEC sp_droprolemember 'largerc', 'loaduser';

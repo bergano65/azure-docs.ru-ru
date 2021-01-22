@@ -11,16 +11,16 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: ec577e2a70e2b354b8d2013fe259aa9ea622c50e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: b305a07997ccd2cbab0d963ced2bd23ab7a97690
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120144"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683413"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Учебник. Загрузка набора данных такси в Нью Йорк
 
-В этом руководстве используется [инструкция Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) для загрузки набора данных такси в Нью-Йорке из учетной записи хранилища BLOB-объектов Azure. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS) используются, чтобы выполнить такие действия:
+В этом руководстве используется [инструкция Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) для загрузки набора данных такси в Нью-Йорке из учетной записи хранилища BLOB-объектов Azure. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS) используются, чтобы выполнить такие действия:
 
 > [!div class="checklist"]
 >
@@ -33,7 +33,7 @@ ms.locfileid: "98120144"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).  
+Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS).  
 
 В этом учебнике предполагается, что вы уже создали выделенный пул SQL из следующего [руководства](./create-data-warehouse-portal.md#connect-to-the-server-as-server-admin).
 
@@ -251,7 +251,7 @@ ms.locfileid: "98120144"
 
 ## <a name="load-the-data-into-your-data-warehouse"></a>Загрузка данных в хранилище данных
 
-В этом разделе для загрузки образца данных из Azure Storage Blob используется [инструкция Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) .  
+В этом разделе для загрузки образца данных из Azure Storage Blob используется [инструкция Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) .  
 
 > [!NOTE]
 > В этом руководстве данные загружаются непосредственно в итоговую таблицу. Обычно для рабочих нагрузок загружается промежуточная таблица. Если данные расположены в промежуточной таблице, вы можете выполнять все необходимые преобразования. 
@@ -393,7 +393,7 @@ ms.locfileid: "98120144"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы использовали простую [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#examples) для загрузки данных в хранилище данных.
+Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы использовали простую [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql&preserve-view=true?view=azure-sqldw-latest&preserve-view=true#examples) для загрузки данных в хранилище данных.
 
 Вы выполнили такие действия:
 > [!div class="checklist"]
@@ -413,6 +413,6 @@ ms.locfileid: "98120144"
 
 Дополнительные примеры загрузки и ссылки см. в следующей документации:
 
-- [Справочная документация по инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax)
+- [Справочная документация по инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax)
 - [Примеры копирования для каждого метода проверки подлинности](./quickstart-bulk-load-copy-tsql-examples.md)
 - [Быстрый Запуск копирования для одной таблицы](./quickstart-bulk-load-copy-tsql.md)

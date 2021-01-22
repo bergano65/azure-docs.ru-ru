@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 01/15/2021
 ms.custom: generated
-ms.openlocfilehash: 8f44de679c9b0280652b0020d1e454a70f7114a3
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 39385a3ea9dc06875806ac85c06c0df6d5db2698
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538540"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683799"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -7413,7 +7413,7 @@ Microsoft. зрения Data пленку может создавать, чит�
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициассигнментс/* | Создание назначений политик и управление ими |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицидефинитионс/* | Создание определений политик и управление ими |
-> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/* |  |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/* | Создание исключений политик и управление ими |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицисетдефинитионс/* | Создание наборов политик и управление ими |
 > | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
 > | /Манажементграупс/Реад [Microsoft. Management](resource-provider-operations.md#microsoftmanagement) | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
@@ -9171,7 +9171,7 @@ Microsoft. зрения Data пленку может создавать, чит�
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициассигнментс/* | Создание назначений политик и управление ими |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицидефинитионс/* | Создание определений политик и управление ими |
-> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/* |  |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полициексемптионс/* | Создание исключений политик и управление ими |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/полицисетдефинитионс/* | Создание наборов политик и управление ими |
 > | [Microsoft. Полициинсигхтс](resource-provider-operations.md#microsoftpolicyinsights)/* |  |
 > | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |

@@ -8,13 +8,13 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/01/2020
-ms.openlocfilehash: ee13b2fbe4abbaf9bddf4975f8e25d746dc78f5e
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.date: 01/19/2021
+ms.openlocfilehash: 31398a49de871ad44499a796adfef1be618ccab9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232188"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685180"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Источники событий Gen2 для службы "аналитика временных рядов Azure"
 
@@ -45,7 +45,7 @@ ms.locfileid: "98232188"
 
 - Не выйдите за [пределы пропускной способности](./concepts-streaming-ingress-throughput-limits.md) вашей среды или ограничения на количество секций.
 
-- Настройте [оповещение](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) о задержке, чтобы получать уведомления, если в среде возникают проблемы при обработке данных. Предлагаемые условия оповещения см. в разделе [рабочие нагрузки](./concepts-streaming-ingestion-event-sources.md#production-workloads) ниже. 
+- Настройте [оповещение](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) о задержке, чтобы получать уведомления, если в среде возникают проблемы при обработке данных. Предлагаемые условия оповещения см. в разделе [рабочие нагрузки](./concepts-streaming-ingestion-event-sources.md#production-workloads) ниже.
 
 - Используйте потоковый прием только для последних данных и данных практически в реальном времени. Потоковая передача исторических данных не поддерживается.
 
@@ -55,14 +55,14 @@ ms.locfileid: "98232188"
 
 ## <a name="production-workloads"></a>Производственные рабочие нагрузки
 
-В дополнение к рекомендациям, приведенным выше, мы рекомендуем реализовать следующие решения для критически важных рабочих нагрузок. 
+В дополнение к рекомендациям, приведенным выше, мы рекомендуем реализовать следующие решения для критически важных рабочих нагрузок.
 
 - Увеличьте срок хранения данных центра Интернета вещей или концентратора событий до 7 дней.
 
 - Создание предупреждений среды в портал Azure. Оповещения, основанные на [метриках](https://docs.microsoft.com/azure/time-series-insights/how-to-monitor-tsi-reference#metrics) платформы, позволяют проверять сквозное поведение конвейера. [Ниже](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency#monitor-latency-and-throttling-with-alerts)приведены инструкции по созданию оповещений и управлению ими. Предлагаемые условия оповещения:
 
-     - Ингрессрецеиведмессажестимелаг больше 5 минут
-     - Ингрессрецеиведбитес 0
+  - Ингрессрецеиведмессажестимелаг больше 5 минут
+  - Ингрессрецеиведбитес 0
 - Обеспечьте балансировку нагрузки приема между центром Интернета вещей или разделами концентратора событий.
 
 ### <a name="historical-data-ingestion"></a>Прием данных за прошедшие периоды
@@ -92,7 +92,7 @@ ms.locfileid: "98232188"
 ± ЧЧ: ММ</br>
 ± ЧЧ: ММЗ</br>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

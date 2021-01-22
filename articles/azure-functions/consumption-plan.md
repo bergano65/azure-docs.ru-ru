@@ -3,12 +3,12 @@ title: Размещение плана использования функций
 description: Узнайте о том, как размещение плана потребления функций Azure позволяет выполнять код в среде, которая масштабируется динамически, но вы платите только за ресурсы, используемые во время выполнения.
 ms.date: 8/31/2020
 ms.topic: conceptual
-ms.openlocfilehash: c0619def4687935cd9e403563966b35b84f13c7c
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: ffb556ce48f18702e06fcdb02dda84f41ae5f906
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937790"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684697"
 ---
 # <a name="azure-functions-consumption-plan-hosting"></a>Размещение плана использования функций Azure
 
@@ -33,16 +33,16 @@ ms.locfileid: "97937790"
 Используйте следующие ссылки, чтобы узнать, как создать бессерверное приложение-функцию в плане потребления либо программно, либо в портал Azure:
 
 + [Azure CLI](./scripts/functions-cli-create-serverless.md)
-+ [Портал Azure](functions-create-first-azure-function.md)
++ [Портал Azure](./functions-get-started.md)
 + [Шаблон Azure Resource Manager](functions-create-first-function-resource-manager.md)
 
-Вы также можете создавать приложения-функции в плане потребления при публикации проекта функций из [Visual Studio Code](functions-create-first-function-vs-code.md#publish-the-project-to-azure) или [Visual Studio](functions-create-your-first-function-visual-studio.md#publish-the-project-to-azure).
+Вы также можете создавать приложения-функции в плане потребления при публикации проекта функций из [Visual Studio Code](./create-first-function-vs-code-csharp.md#publish-the-project-to-azure) или [Visual Studio](functions-create-your-first-function-visual-studio.md#publish-the-project-to-azure).
 
 ## <a name="multiple-apps-in-the-same-plan"></a>Несколько приложений в одном плане
 
 Приложениям функций в одном регионе можно назначить один и тот же план потребления. Отсутствие недостатка или влияния на наличие нескольких приложений, работающих в одном плане потребления. Назначение нескольких приложений одному плану потребления не влияет на устойчивость, масштабируемость и надежность каждого приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 + [Варианты размещения функций Azure](functions-scale.md)
 + [Масштабирование на основе событий в функциях Azure](event-driven-scaling.md)

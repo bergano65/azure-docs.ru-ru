@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6f74f973abc33d809624bd8abd5a514a52ccfe70
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 04ca8d515dbc5a28a7d3a30369d97877928c9dc1
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602706"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683924"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Подключение приложений функций в Azure для обработки данных
 
@@ -36,7 +36,7 @@ ms.locfileid: "98602706"
 
 ## <a name="create-a-function-app-in-visual-studio"></a>Создание приложения-функции в Visual Studio
 
-В Visual Studio 2019 выберите _файл > создать > проект_ и найдите шаблон _функции Azure_ , нажмите кнопку _Далее_.
+В Visual Studio 2019 выберите _файл > создать > проект_ и выполните поиск по шаблону _функции Azure_ . Нажмите _Далее_.
 
 :::image type="content" source="media/how-to-create-azure-function/create-azure-function-project.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
 
@@ -44,11 +44,11 @@ ms.locfileid: "98602706"
 
 :::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Visual Studio: Настройка нового проекта":::
 
-Выберите тип *триггера сетки событий* приложения функции и нажмите кнопку _создать_.
+Выберите тип приложения функции *триггера сетки событий* и нажмите кнопку _создать_.
 
-:::image type="content" source="media/how-to-create-azure-function/eventgridtrigger-function.png" alt-text="Visual Studio: диалоговое окно триггера проекта функций Azure":::
+:::image type="content" source="media/how-to-create-azure-function/event-grid-trigger-function.png" alt-text="Visual Studio: диалоговое окно триггера проекта функций Azure":::
 
-После создания приложения-функции Visual Studio будет иметь автоматически заполняемый пример кода в файле **Function.CS** в папке проекта. Эта небольшая функция используется для записи событий в журнал.
+После создания приложения-функции Visual Studio создаст пример кода в файле **function1.CS** в папке проекта. Эта небольшая функция используется для записи событий в журнал.
 
 :::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Visual Studio: окно проекта с образцом кода":::
 
@@ -56,11 +56,11 @@ ms.locfileid: "98602706"
 
 Вы можете написать функцию, добавив пакет SDK в приложение-функцию. Приложение-функция взаимодействует с Azure Digital двойников с помощью [пакета SDK Azure Digital двойников для .NET (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
 
-Чтобы использовать пакет SDK, необходимо включить в проект следующие пакеты. Можно либо установить пакеты с помощью диспетчера пакетов NuGet Visual Studio, либо добавить пакеты с помощью `dotnet` программы командной строки. Выберите один из следующих методов. 
+Чтобы использовать пакет SDK, необходимо включить в проект следующие пакеты. Можно либо установить пакеты с помощью диспетчера пакетов NuGet Visual Studio, либо добавить пакеты с помощью `dotnet` в программе командной строки. Выполните приведенные ниже действия для выбранного метода.
 
 **Вариант 1. Добавление пакетов с помощью диспетчера пакетов Visual Studio:**
     
-Это можно сделать, щелкнув проект правой кнопкой мыши и выбрав пункт _Управление пакетами NuGet_ в списке. Затем в открывшемся окне выберите вкладку _Обзор_ и найдите следующие пакеты. Выберите _установить_ и _принять_ лицензионное соглашение для установки пакетов.
+Щелкните проект правой кнопкой мыши и выберите в списке пункт _Управление пакетами NuGet_ . Затем в открывшемся окне выберите вкладку _Обзор_ и выполните поиск следующих пакетов. Выберите _установить_ и _принять_ лицензионное соглашение для установки пакетов.
 
 * `Azure.DigitalTwins.Core`
 * `Azure.Identity`
@@ -78,15 +78,15 @@ dotnet add package System.Net.Http
 dotnet add package Azure.Core
 ```
 
-Затем в Visual Studio обозреватель решений откройте файл _Function.CS_ , где имеется образец кода, и добавьте в функцию следующие операторы _using_ . 
+Затем в Visual Studio обозреватель решений откройте файл _function1.CS_ , в котором имеется образец кода, и добавьте в `using` функцию следующие инструкции. 
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="Function_dependencies":::
 
 ## <a name="add-authentication-code-to-the-function"></a>Добавление кода проверки подлинности в функцию
 
-Теперь вы можете объявить переменные уровня класса и добавить код проверки подлинности, который позволит функции получить доступ к Azure Digital двойников. Вы добавите следующий код в функцию в файле {имя функции}. cs.
+Теперь вы можете объявить переменные уровня класса и добавить код проверки подлинности, который позволит функции получить доступ к Azure Digital двойников. Вы добавите следующий элемент в функцию в файл _function1.CS_ .
 
-* Чтение URL-адреса службы ADT в качестве переменной среды. Рекомендуется считать URL-адрес службы из переменной среды, а не жестко кодировать его в функции.
+* Код для чтения URL-адреса службы цифровых двойников Azure в качестве переменной среды. Рекомендуется считать URL-адрес службы из переменной среды, а не жестко кодировать его в функции.
 
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="ADT_service_URL":::
 
@@ -97,43 +97,24 @@ dotnet add package Azure.Core
 * Учетные данные управляемого удостоверения можно использовать в функциях Azure.
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="ManagedIdentityCredential":::
 
-* Добавьте локальную переменную _дигиталтвинсклиент_ внутри функции, чтобы разместить свой экземпляр клиента Azure Digital двойников в проекте функции. *Не* делайте эту переменную статической внутри класса.
+* Добавьте локальную переменную _дигиталтвинсклиент_ в функцию для хранения своего экземпляра клиента Azure Digital двойников. *Не* делайте эту переменную статической внутри класса.
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="DigitalTwinsClient":::
 
-* Добавьте проверку значения NULL для _адтинстанцеурл_ и заключите логику функции в блок try catch, чтобы перехватить все исключения.
+* Добавьте проверку значения NULL для _адтинстанцеурл_ и заключите логику функции в блок try/catch, чтобы перехватить все исключения.
 
 После этих изменений код функции будет выглядеть следующим образом:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs":::
 
+Теперь, когда приложение написано, его можно опубликовать в Azure, выполнив действия, описанные в следующем разделе.
+
 ## <a name="publish-the-function-app-to-azure"></a>Публикация приложения-функции в Azure
 
-Чтобы опубликовать проект в приложении-функции в Azure, выберите проект функции (не решение) в обозреватель решений и нажмите кнопку **опубликовать**.
-
-> [!IMPORTANT] 
-> Публикация в приложении-функции в Azure влечет за собой дополнительную плату за подписку, не зависящую от Azure Digital двойников.
-
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function.png" alt-text="Visual Studio: публикация функции в Azure":::
-
-Выберите **Azure** в качестве целевого объекта публикации и нажмите кнопку **Далее**.
-
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-1.png" alt-text="Visual Studio: диалоговое окно публикации функций Azure, выбор Azure ":::
-
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-2.png" alt-text="Visual Studio: диалоговое окно функции публикации выберите Azure приложение-функция (Windows) или (Linux) на основе компьютера":::
-
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-3.png" alt-text="Visual Studio: диалоговое окно публикации функции, создание новой функции Azure":::
-
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-4.png" alt-text="Visual Studio: диалоговое окно функции публикации, заполните поля и выберите Создать.":::
-
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-5.png" alt-text="Visual Studio: диалоговое окно функции публикации, выберите в списке приложение функции и завершите его работу.":::
-
-На следующей странице введите нужное имя для нового приложения-функции, группы ресурсов и других сведений.
-Чтобы ваше приложение-функция могло получить доступ к Azure Digital двойников, оно должно иметь управляемое системой удостоверение и иметь разрешения на доступ к вашему экземпляру Azure Digital двойников.
-
-Затем можно настроить безопасный доступ для функции с помощью интерфейса командной строки или портал Azure. Выберите один из следующих методов.
+[!INCLUDE [digital-twins-publish-azure-function.md](../../includes/digital-twins-publish-azure-function.md)]
 
 ## <a name="set-up-security-access-for-the-function-app"></a>Настройка безопасного доступа для приложения функции
-Вы можете настроить доступ к безопасности для приложения функции, используя один из следующих вариантов:
+
+Вы можете настроить доступ к безопасности для приложения функции, используя либо Azure CLI, либо портал Azure. Выполните приведенные ниже действия для выбранного варианта.
 
 ### <a name="option-1-set-up-security-access-for-the-function-app-using-cli"></a>Вариант 1. Настройка безопасного доступа для приложения функции с помощью интерфейса командной строки
 
@@ -169,7 +150,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 В [портал Azure](https://portal.azure.com/)найдите _приложение функции_ в строке поиска с именем приложения функции, созданным ранее. Выберите *приложение-функция* из списка. 
 
-:::image type="content" source="media/how-to-create-azure-function/portal-search-for-functionapp.png" alt-text="Портал Azure: Поиск приложения функции":::
+:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Портал Azure: Поиск приложения функции":::
 
 В окне приложение функции выберите _удостоверение_ на панели навигации слева, чтобы включить управляемое удостоверение.
 На вкладке _назначенная система_ переключите _состояние_ на вкл. и _Сохраните_ его. Вы увидите всплывающее окно для _включения управляемого удостоверения, назначенного системой_.
@@ -206,25 +187,23 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 Чтобы сделать URL-адрес своего экземпляра Digital двойников доступным для вашей функции, можно задать переменную среды. Дополнительные сведения об этом см. в разделе [*переменные среды*](/sandbox/functions-recipes/environment-variables). Параметры приложения предоставляются как переменные среды для доступа к экземпляру Digital двойников. 
 
-Для создания параметра приложения потребуются ADT_INSTANCE_URL.
-
-ADT_INSTANCE_URL можно получить, добавив **_https://_** в имя узла экземпляра. В портал Azure можно найти имя узла Digital двойников, выполнив поиск своего экземпляра на панели поиска. Затем на левой панели навигации выберите _Обзор_ , чтобы просмотреть _имя узла_. Скопируйте это значение, чтобы создать параметр приложения.
+Чтобы задать переменную среды с URL-адресом своего экземпляра, сначала получите URL-адрес, находя имя узла своего экземпляра Azure Digital двойников. Найдите свой экземпляр на панели поиска [портал Azure](https://portal.azure.com) . Затем на левой панели навигации выберите _Обзор_ , чтобы просмотреть _имя узла_. Скопируйте это значение.
 
 :::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Портал Azure: Overview — > Копировать имя узла для использования в поле _Value_.":::
 
 Теперь можно создать параметр приложения, выполнив следующие действия:
 
-* Найдите приложение, используя имя приложения функции в строке поиска, и выберите приложение функции из списка.
-* Выберите пункт _Конфигурация_ на панели навигации слева, чтобы создать новый параметр приложения.
-* На вкладке _Параметры приложения_ выберите _+ создать параметр приложения_ .
+1. Найдите приложение, используя имя приложения функции в строке поиска, и выберите приложение функции из списка.
+1. Выберите пункт _Конфигурация_ на панели навигации слева, чтобы создать новый параметр приложения.
+1. На вкладке _Параметры приложения_ выберите _+ создать параметр приложения_ .
 
-:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Портал Azure: Поиск существующего приложения функции":::
+:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Портал Azure: Поиск существующего приложения функции" lightbox="media/how-to-create-azure-function/search-for-azure-function.png":::
 
 :::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Портал Azure: Настройка параметров приложения":::
 
-В открывшемся окне используйте значение, скопированное из выше, чтобы создать параметр приложения. \
-_Имя_  : ADT_SERVICE_URL \
-_Значение_ : https://{ваш-Azure-Digital-двойников-hostname}
+В открывшемся окне используйте скопированное выше значение имя узла, чтобы создать параметр приложения.
+* _Имя_ : ADT_SERVICE_URL
+* _Значение_: https://{ваш-Azure-Digital-двойников-Host-Name}
 
 Нажмите кнопку _ОК_ , чтобы создать параметр приложения.
 
@@ -244,10 +223,7 @@ _Значение_ : https://{ваш-Azure-Digital-двойников-hostname}
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье описано, как настроить приложение-функцию в Azure для использования с цифровым двойников Azure. Затем можно подписать функцию на службу "Сетка событий", чтобы прослушать конечную точку. Эта конечная точка может быть следующей:
-* Конечная точка сетки событий, присоединенная к Azure Digital двойников для обработки сообщений, поступающих от самого себя в Azure Digital двойников (например, сообщений об изменении свойств, сообщений телеметрии, созданных [цифровым двойников](concepts-twins-graph.md) в графе двойника, или сообщений о жизненном цикле).
-* Разделы системы IoT, используемые центром Интернета вещей для отправки данных телеметрии и других событий устройства
-* Конечная точка сетки событий, получающая сообщения от других служб
+В этой статье описано, как настроить приложение-функцию в Azure для использования с цифровым двойников Azure.
 
 Далее Узнайте, как создать базовую функцию для приема данных центра Интернета вещей в Azure Digital двойников:
 * [*Пошаговое руководство. прием данных телеметрии из центра Интернета вещей*](how-to-ingest-iot-hub-data.md)

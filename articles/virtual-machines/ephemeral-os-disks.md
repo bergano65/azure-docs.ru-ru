@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/23/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 52071b964412071d820745b173e8835c6f9e7d0e
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 62f89106538ab7f57047e211fc8715878f889af1
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510997"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684565"
 ---
 # <a name="ephemeral-os-disks-for-azure-vms"></a>Временные диски ОС для виртуальных машин Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "97510997"
 - Низкая задержка, аналогичная временному диску. 
 - Временные диски ОС свободны, не взимается плата за диск операционной системы.
 - Они доступны во всех регионах Azure. 
-- Диск с временными ОС поддерживается [коллекцией общих образов](./linux/shared-image-galleries.md). 
+- Диск с временными ОС поддерживается [коллекцией общих образов](./shared-image-galleries.md). 
  
 
  
@@ -188,7 +188,7 @@ POST https://management.azure.com/subscriptions/{sub-
 id}/resourceGroups/{rgName}/providers/Microsoft.Compute/VirtualMachines/{vmName}/reimage?a pi-version=2018-06-01" 
 ```
  
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 **Вопрос. Каков размер локальных дисков ОС?**
 
@@ -245,5 +245,5 @@ foreach($vmSize in $vmSizes)
 - Azure Site Recovery  
 - Переключение диска ОС 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы можете создать виртуальную машину с эфемерным диском ОС, используя [Azure CLI](/cli/azure/vm#az-vm-create).

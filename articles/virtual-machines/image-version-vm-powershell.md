@@ -9,18 +9,18 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 1a0bfb79b03b778696faef29597cabbcff47e6df
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: a7b8cb10f75d7a99198ddfdc1a1bbef3c34a03da
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601671"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685112"
 ---
 # <a name="create-an-image-from-a-vm"></a>Создание образа из виртуальной машины
 
 Если у вас уже есть виртуальная машина, которую вы хотите использовать для создания нескольких идентичных виртуальных машин, вы можете использовать эту виртуальную машину, чтобы создать образ в общей коллекции образов с помощью Azure PowerShell. Вы также можете создать образ из виртуальной машины с помощью [Azure CLI](image-version-vm-cli.md).
 
-Вы можете записать образ из [специализированных и обобщенных](./windows/shared-image-galleries.md#generalized-and-specialized-images) виртуальных машин с помощью Azure PowerShell. 
+Вы можете записать образ из [специализированных и обобщенных](./shared-image-galleries.md#generalized-and-specialized-images) виртуальных машин с помощью Azure PowerShell. 
 
 Изображения в коллекции образов имеют два компонента, которые будут созданы в этом примере:
 - **Определение образа** содержит сведения о образе и требования для его использования. Сюда входит, является ли образ Windows или Linux, специализированным или обобщенным, заметками о выпуске, а также минимальным и максимальным требованиями к памяти. Это определение типа образа. 
@@ -77,7 +77,7 @@ Stop-AzVM `
 
 При создании определения образа убедитесь, что содержит все правильные сведения. Если вы обобщенно используете виртуальную машину (с помощью Sysprep для Windows или waagent-unготовить для Linux), то следует создать определение образа с помощью `-OsState generalized` . Если виртуальная машина не была обобщена, создайте определение образа с помощью `-OsState specialized` .
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./windows/shared-image-galleries.md#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./shared-image-galleries.md#image-definitions).
 
 Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). 
 

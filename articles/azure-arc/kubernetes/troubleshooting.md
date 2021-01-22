@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Устранение распространенных проблем с кластерами Kubernetes с поддержкой Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
-ms.openlocfilehash: 42c90708854af6973ed1ef399b9867101a736b07
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 0827386eb6ec089cf7951e8fa513a77fc78aef22
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586165"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684095"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Устранение неполадок Kubernetes с поддержкой Azure Arc (предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "97586165"
 ### <a name="azure-cli-set-up"></a>Настройка Azure CLI
 Перед использованием команд az connectedk8s или az k8sconfiguration убедитесь, что az настроен для работы с правильной подпиской Azure.
 
-```console
+```azurecli
 az account set --subscription 'subscriptionId'
 az account show
 ```
@@ -79,7 +79,7 @@ pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 
 Если предоставленный файл kubeconfig не имеет достаточных разрешений для установки агентов Azure Arc, команда Azure CLI вернет ошибку при попытке вызова API Kubernetes.
 
-```console
+```azurecli
 $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
@@ -94,7 +94,7 @@ Error: list: failed to list: secrets is forbidden: User "myuser" cannot list res
 
 Для установки агента Azure Arc требуется запустить набор контейнеров в целевом кластере. Если для работы с кластером используется медленное подключение к Интернету, извлечение образа контейнера может занять больше времени, чем время ожидания Azure CLI.
 
-```console
+```azurecli
 $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
@@ -185,7 +185,7 @@ metadata:
   resourceVersion: ""
   selfLink: ""
 ```
-## <a name="monitoring"></a>Наблюдение
+## <a name="monitoring"></a>Мониторинг
 
 Azure Monitor для контейнеров требуется, чтобы его демон был запущен в привилегированном режиме. Чтобы успешно настроить канонический Kubernetes кластер для мониторинга, выполните следующую команду:
 

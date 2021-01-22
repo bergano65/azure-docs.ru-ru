@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef2c9d7e2388d2da7a807fbf6b579360115a8323
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 22a4bdc92ea2a91425c1070a5837c672307de665
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629805"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683782"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -335,7 +335,7 @@ az role assignment create \
 Убедитесь, что для ВИРТУАЛЬНОЙ машины [настроены политики RBAC Azure](../../virtual-machines/linux/login-using-aad.md) , которые предоставляют пользователю имя входа администратора виртуальной машины или роль входа пользователя виртуальной машины.
 
 > [!NOTE]
-> Если вы используете проблемы с назначениями ролей Azure, см. статью [Устранение неполадок в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#azure-role-assignments-limit).
+> Если вы используете проблемы с назначениями ролей Azure, см. статью [Устранение неполадок в Azure RBAC](../../role-based-access-control/troubleshooting.md#azure-role-assignments-limit).
  
 #### <a name="unauthorized-client"></a>Неавторизованный клиент
 
@@ -371,6 +371,6 @@ az role assignment create \
 
 Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../fundamentals/active-directory-whatis.md).

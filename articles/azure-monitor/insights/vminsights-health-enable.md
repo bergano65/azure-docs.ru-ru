@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 78ce082c6e90cfc9c67ddcfa00926d292b9ed7ea
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 902bcaa97658802b35fb523a1213e6bbd47f357f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740476"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684514"
 ---
 # <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Включение работоспособности гостевых виртуальных машин в Azure Monitor (предварительная версия)
 Azure Monitor для виртуальных машин работоспособности гостевых систем позволяет просматривать работоспособность виртуальной машины в соответствии с набором измерений производительности, которые вычисляются с регулярным интервалом. В этой статье описывается, как включить эту функцию в подписке и как включить гостевой мониторинг для каждой виртуальной машины.
@@ -65,9 +65,9 @@ Azure Monitor для виртуальных машин работоспособ�
 - Юго-Восточная Азия
 - южная часть Соединенного Королевства
 - Западная Европа, регион
-- Западная часть США 2
+- Западная часть США 2
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Виртуальная машина должна быть подключена к Azure Monitor для виртуальных машин.
 - Пользователь, запускающий шаги адаптации, должен иметь минимальный уровень участника доступа к подписке, в которой расположены виртуальная машина и правило сбора данных.
@@ -127,9 +127,9 @@ POST https://management.azure.com/subscriptions/[subscriptionId]/providers/Micro
 New-AzResourceGroupDeployment -Name GuestHealthDataCollectionRule -ResourceGroupName my-resource-group -TemplateFile Health.DataCollectionRule.template.json -TemplateParameterFile Health.DataCollectionRule.template.parameters.json
 ```
 
-# <a name="cli"></a>[CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-```cli
+```azurecli
 az deployment group create --name GuestHealthDataCollectionRule --resource-group my-resource-group --template-file Health.DataCollectionRule.template.json --parameters Health.DataCollectionRule.template.parameters.json
 ```
 
@@ -267,9 +267,9 @@ az deployment group create --name GuestHealthDataCollectionRule --resource-group
 New-AzResourceGroupDeployment -Name GuestHealthDeployment -ResourceGroupName my-resource-group -TemplateFile azure-monitor-deploy.json -TemplateParameterFile azure-monitor-deploy.parameters.json
 ```
 
-# <a name="cli"></a>[CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-```cli
+```azurecli
 az deployment group create --name GuestHealthDeployment --resource-group my-resource-group --template-file Health.VirtualMachine.template.json --parameters Health.VirtualMachine.template.parameters.json
 ```
 
@@ -412,6 +412,6 @@ az deployment group create --name GuestHealthDeployment --resource-group my-reso
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка мониторов, включенных Azure Monitor для виртуальных машин](vminsights-health-configure.md)

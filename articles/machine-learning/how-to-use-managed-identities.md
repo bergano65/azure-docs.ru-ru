@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 3490e3004e5f5dd99795967f0deb8510200fa50b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b0b0c43039648737b229edc79dd4e0a3dc45f38e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311040"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683346"
 ---
 # <a name="use-managed-identities-with-azure-machine-learning-preview"></a>Использование управляемых удостоверений с Машинное обучение Azure (Предварительная версия)
 
@@ -38,7 +38,7 @@ ms.locfileid: "93311040"
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 - [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md)
 - [Пакет SDK для машинное обучение Azure Python](/python/api/overview/azure/ml/intro?view=azure-ml-py).
-- Для назначения ролей имя входа для подписки Azure должно иметь роль [управляемого оператора идентификации](../role-based-access-control/built-in-roles.md#managed-identity-operator) или другую роль, которая предоставляет необходимые действия (например, __owner__ ).
+- Для назначения ролей имя входа для подписки Azure должно иметь роль [управляемого оператора идентификации](../role-based-access-control/built-in-roles.md#managed-identity-operator) или другую роль, которая предоставляет необходимые действия (например, __owner__).
 - Вы должны быть знакомы с созданием [управляемых удостоверений](../active-directory/managed-identities-azure-resources/overview.md)и работой с ними.
 
 ## <a name="configure-managed-identities"></a>Настройка управляемых удостоверений
@@ -59,7 +59,7 @@ ms.locfileid: "93311040"
 [Создайте запись контроля доступа из Azure CLI](../container-registry/container-registry-get-started-azure-cli.md) без ```--admin-enabled``` аргумента параметра или из портал Azure без включения пользователя администратора. Затем при создании Машинное обучение Azure рабочей области Укажите идентификатор ресурса Azure для записи контроля доступа. В следующем примере показано создание рабочей области машинного обучения Azure, которая использует существующую запись контроля доступа:
 
 > [!TIP]
-> Чтобы получить значение для `--container-registry` параметра, используйте команду AZ запись [контроля](/cli/azure/acr?view=azure-cli-latest#az_acr_show) доступа, чтобы отобразить сведения о записи контроля доступа. `id`Поле содержит идентификатор ресурса для записи контроля доступа.
+> Чтобы получить значение для `--container-registry` параметра, используйте команду AZ запись [контроля](/cli/azure/acr#az_acr_show) доступа, чтобы отобразить сведения о записи контроля доступа. `id`Поле содержит идентификатор ресурса для записи контроля доступа.
 
 ```azurecli-interactive
 az ml workspace create -w <workspace name> \
@@ -90,7 +90,7 @@ az ml workspace create -w <workspace name> \
 
     Эта команда возвращает значение, аналогичное следующему тексту. Требуется только последняя часть текста, которая является именем экземпляра записи контроля доступа:
 
-    ```text
+    ```output
     /subscriptions/<subscription id>/resourceGroups/<my resource group>/providers/MicrosoftContainerReggistry/registries/<ACR instance name>
     ```
 
@@ -229,6 +229,6 @@ env.docker.base_image = "my-acr.azurecr.io/my-repo/my-image:latest"
 > [!NOTE]
 > Если вы перенесете собственный кластер AKS, то вместо управляемого удостоверения кластеру должен быть включен субъект-служба.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [корпоративной безопасности в машинное обучение Azure](concept-enterprise-security.md).
