@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: f1ded1ce87df1cb57960bbc99cd950ed7b3f97ee
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: cf0e423648db174433f0717f2e5971ac49697b42
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573941"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704629"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
  
@@ -93,9 +93,9 @@ ms.locfileid: "96573941"
 |    **Тип пользователя**                    |    ИТ-специалист или разработчик                                       |    Разработка                                       |    ИТ-специалистам                                                |    ИТ-специалистам                                                             |
 |    **Цены**                      |    Бесплатно, с обычной оплатой исходящего трафика         |    Бесплатно, с обычной оплатой исходящего трафика         |    [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Сведения о передаче данных с помощью службы "Импорт и экспорт"](./storage-import-export-data-to-blobs.md).
+- [Сведения о передаче данных с помощью службы "Импорт и экспорт"](../../import-export/storage-import-export-data-to-blobs.md).
 - Практические руководства по:
 
     - [Перенесите данные с диск Data Box](../../databox/data-box-disk-quickstart-portal.md).

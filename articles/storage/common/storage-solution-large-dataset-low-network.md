@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 8afedec224fed55f617340af512485726ff44326
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9b83ba106b35a0a3abd035e85f60c4c39bbadd3b
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792945"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704646"
 ---
 # <a name="data-transfer-for-large-datasets-with-low-or-no-network-bandwidth"></a>Передача данных для больших наборов данных с низкой или отсутствующей пропускной способностью сети
  
@@ -62,10 +62,10 @@ ms.locfileid: "92792945"
 |    **Цены**                      |    [Цены](https://azure.microsoft.com/pricing/details/databox/disk/)                    |   [Цены](https://azure.microsoft.com/pricing/details/storage/databox/)                                      |  [Цены](https://azure.microsoft.com/pricing/details/storage/databox/heavy/)                               |   [Цены](https://azure.microsoft.com/pricing/details/storage-import-export/)                            |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Практические руководства по:
 
-    - [передаче данных с помощью Диска Data Box](../../databox/data-box-disk-quickstart-portal.md);
-    - [передаче данных с помощью Data Box](../../databox/data-box-quickstart-portal.md).
-    - [Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure](./storage-import-export-data-to-blobs.md).
+    - [Перенесите данные с диск Data Box](../../databox/data-box-disk-quickstart-portal.md).
+    - [Перенесите данные с Data Box](../../databox/data-box-quickstart-portal.md).
+    - [Перенесите данные с помощью импорта и экспорта](../../import-export/storage-import-export-data-to-blobs.md).
