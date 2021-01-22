@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 895b4529a8b99ecc66e3566b4696a0e61c337153
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 37e90eeaef9cb8c8e0bd927dd4d733a737c0c47f
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881921"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693881"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -64,7 +64,7 @@ ms.locfileid: "97881921"
 
 Кодирование в реальном времени теперь добавляет возможность вывода фрагментов фиксированных кадров с интервалом от 0,5 до 20 секунд.
 
-### <a name="accounts"></a>Счета
+### <a name="accounts"></a>Учетные записи
 
 > [!WARNING]
 > Если вы создаете учетную запись служб мультимедиа с версией API 2020-05-01, она не будет работать с RESTv2 
@@ -94,7 +94,7 @@ ms.locfileid: "97881921"
 
 Мы опубликовали высокий уровень доступности со службами мультимедиа и [обзором](./media-services-high-availability-encoding.md) видео по запросу (VOD) и [примерами](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/HighAvailabilityEncodingStreaming).
 
-## <a name="june-2020"></a>июнь 2020 г.
+## <a name="june-2020"></a>Июнь 2020 г.
 
 ### <a name="live-video-analytics-on-iot-edge-preview-release"></a>Интерактивная аналитика видео в предварительной версии IoT Edge
 
@@ -436,7 +436,7 @@ ms.locfileid: "97881921"
 
 ## <a name="see-also"></a>См. также раздел
 
-[Руководство по миграции для перехода с служб мультимедиа версии 2 на v3](migrate-from-v2-to-v3.md#known-issues).
+[Руководство по миграции для перехода с служб мультимедиа версии 2 на v3](migrate-v-2-v-3-migration-introduction.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

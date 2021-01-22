@@ -2,13 +2,13 @@
 title: Часто задаваемые вопросы о служебной шине Azure | Документация Майкрософт
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
-ms.date: 09/16/2020
-ms.openlocfilehash: e5bc9aae081868c92e0968c88c8cb6dcfb8ee57c
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.date: 01/20/2021
+ms.openlocfilehash: 3a96cf94ca4a7edd115f12b3e2eded11a5894e04
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676380"
+ms.locfileid: "98693412"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
@@ -35,8 +35,11 @@ ms.locfileid: "98676380"
 
  Секционированные сущности больше не поддерживаются в [номере SKU уровня "Премиум"](service-bus-premium-messaging.md). 
 
-### <a name="where-does-azure-service-bus-store-customer-data"></a><a name="in-region-data-residency"></a>Где служебная шина Azure хранит данные клиента?
-Служебная шина Azure хранит данные клиента. Эти данные автоматически сохраняются служебной шиной в одном регионе, поэтому эта служба автоматически удовлетворяет требованиям местонахождение данных региона, включая те, которые указаны в [центре управления безопасностью](https://azuredatacentermap.azurewebsites.net/).
+### <a name="where-does-azure-service-bus-store-data"></a><a name="in-region-data-residency"></a>Где служебная шина Azure хранит данные?
+Стандартная категория служебной шины Azure использует базу данных SQL Azure для внутреннего уровня хранилища. Для всех регионов, кроме Южная Бразилия и Юго-Восточной Азии, резервная копия базы данных размещается в другом регионе (обычно в парном регионе Azure). Для регионов Южной и Юго-Восточной Азии резервные копии баз данных хранятся в том же регионе, что и требования к местонахождение данных для этих регионов.
+
+На уровне Premium служебная шина Azure сохраняет метаданные и данные в выбранных регионах. При настройке географического аварийного восстановления для пространства имен уровня "Премиум" служебной шины Azure метаданные копируются в выбранный дополнительный регион.
+
 
 ### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Какие порты нужно открыть в брандмауэре? 
 Для отправки и получения сообщений можно использовать следующие протоколы со служебной шиной Azure.
@@ -171,7 +174,7 @@ Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptio
 ## <a name="is-it-possible-to-disable-tls-10-or-11-on-service-bus-namespaces"></a>Можно ли отключить TLS 1,0 или 1,1 в пространствах имен служебной шины?
 Нет. Невозможно отключить TLS 1,0 или 1,1 в пространствах имен служебной шины. В клиентских приложениях, подключающихся к служебной шине, используйте TLS 1,2 или более позднюю версию. Дополнительные сведения см. [в статье обеспечение использования TLS 1,2 с помощью служебной шины Azure — технического сообщества Майкрософт](https://techcommunity.microsoft.com/t5/messaging-on-azure/enforcing-tls-1-2-use-with-azure-service-bus/ba-p/370912).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о служебной шине см. в следующих статьях:
 
 * [Introducing Azure Service Bus Premium Messaging](https://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум") (запись блога)

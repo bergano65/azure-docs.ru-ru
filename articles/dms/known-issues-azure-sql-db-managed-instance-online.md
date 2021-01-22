@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 1d5c79a141dbe1310762dc90b447fe78848ac10d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 46c5f5995c7a1d4eb074f6c1b25ecaad7e2da37e
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94962490"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695545"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-managed-instance"></a>Известные проблемы и ограничения миграции при оперативной миграции на Azure SQL Управляемый экземпляр
 
@@ -31,7 +31,7 @@ ms.locfileid: "94962490"
 
     Azure Database Migration Service использует метод резервного копирования и восстановления для переноса локальных баз данных в Управляемый экземпляр SQL. Azure Database Migration Service поддерживает только резервные копии, созданные с использованием контрольной суммы.
 
-    [Включение или отключение контрольных сумм резервных копий во время резервного копирования или восстановления (SQL Server)](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
+    [Включение или отключение контрольных сумм резервных копий во время резервного копирования или восстановления (SQL Server)](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
 
     > [!NOTE]
     > Если вы передаете резервные копии базы данных с помощью сжатия, контрольная сумма является поведением по умолчанию, если явно не отключено.
@@ -65,3 +65,29 @@ ms.locfileid: "94962490"
     SQL Управляемый экземпляр — это служба PaaS с автоматической установкой исправлений и обновлениями версий. Во время миграции Управляемый экземпляр SQL некритические обновления удерживаются до 36 часов. Затем (и для критических обновлений) в случае нарушения миграции процесс сбрасывается в состояние полного восстановления.
 
     Прямую миграцию миграции можно вызвать только после восстановления полной резервной копии и обнаружения всех резервных копий журналов. При кутоверсии рабочей миграции обратитесь к [псевдониму обратной связи Azure DMS](mailto:dmsfeedback@microsoft.com).
+
+## <a name="smb-file-share-connectivity"></a>Подключение к общей папке SMB
+
+Проблемы с подключением к файловому ресурсу SMB, скорее всего, вызваны проблемами с разрешениями. 
+
+Чтобы проверить подключение к общей папке SMB, выполните следующие действия. 
+
+1. Сохраните резервную копию в файловый ресурс SMB. 
+1. Проверьте сетевое подключение между подсетью Azure Database Migration Service и исходным SQL Server. Самый простой способ сделать это — развернуть SQL Server виртуальную машину в подсети DMS и подключиться к исходной SQL Server с помощью SQL Server Management Studio. 
+1. Восстановите заголовок исходного SQL Server из резервной копии в общей папке: 
+
+   ```sql
+   RESTORE HEADERONLY   
+   FROM DISK = N'\\<SMB file share path>\full.bak'
+   ```
+
+Если не удается подключиться к общему файловому ресурсу, настройте разрешения следующим образом. 
+
+1. Перейдите в файловый ресурс с помощью проводника. 
+1. Щелкните правой кнопкой мыши общую папку и выберите пункт Свойства. 
+1. Перейдите на вкладку **Общий** доступ и выберите **Расширенный общий доступ**. 
+1. Добавьте учетную запись Windows, используемую для миграции, и назначьте ей полный контроль доступа. 
+1. Добавьте учетную запись службы SQL Server и назначьте ей полный контроль доступа. Если вы не уверены, какая учетная запись используется, проверьте **Диспетчер конфигурации SQL Server** учетной записи службы SQL Server. 
+
+   :::image type="content" source="media/known-issues-azure-sql-db-managed-instance-online/assign-fileshare-permissions.png" alt-text="Предоставьте полный доступ к учетным записям Windows, используемым для миграции, а также для учетной записи службы SQL Server. ":::
+

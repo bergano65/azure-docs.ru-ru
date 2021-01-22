@@ -3,12 +3,12 @@ title: Реестр, избыточный в зонах, для обеспече
 description: Сведения о включении избыточности зоны в реестре контейнеров Azure. Создайте реестр контейнеров или репликацию в зоне доступности Azure. Избыточность зоны — это функция уровня служб Premium.
 ms.topic: article
 ms.date: 01/07/2021
-ms.openlocfilehash: 8c03b2bb093f8d0fa70ff5132f7448ce86e8779d
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 7de8ed101d2df9e491c475f522a56580798c49a9
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127364"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696284"
 ---
 # <a name="enable-zone-redundancy-in-azure-container-registry-for-resiliency-and-high-availability"></a>Включение избыточности зоны в реестре контейнеров Azure для обеспечения устойчивости и высокой доступности
 
@@ -39,7 +39,7 @@ ms.locfileid: "98127364"
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-При необходимости выполните команду [AZ Group Create](/cli/az/group#az_group_create) , чтобы создать группу ресурсов для реестра.
+При необходимости выполните команду [AZ Group Create](/cli/azure/group#az_group_create) , чтобы создать группу ресурсов для реестра.
 
 ```azurecli
 az group create --name <resource-group-name> --location <location>
@@ -47,7 +47,7 @@ az group create --name <resource-group-name> --location <location>
 
 ### <a name="create-zone-enabled-registry"></a>Создание реестра с поддержкой зон
 
-Выполните команду [AZ запись контроля](/cli/az/acr#az_acr_create) доступа, чтобы создать реестр, избыточный в виде зоны, на уровне службы Premium. Выберите регион, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure. В следующем примере включена избыточность зоны в регионе *eastus* . `az acr create`Дополнительные параметры реестра см. в справке по командам.
+Выполните команду [AZ запись контроля](/cli/azure/acr?view=azure-cli-latest#az_acr_create) доступа, чтобы создать реестр, избыточный в виде зоны, на уровне службы Premium. Выберите регион, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure. В следующем примере включена избыточность зоны в регионе *eastus* . `az acr create`Дополнительные параметры реестра см. в справке по командам.
 
 ```azurecli
 az acr create \
@@ -69,7 +69,7 @@ az acr create \
 
 ### <a name="create-zone-redundant-replication"></a>Создание репликации, избыточной в виде зоны
 
-Выполните команду [AZ запись после репликации Create](/cli/az/acr/replication#az_acr_replication_create) , чтобы создать реплику реестра, избыточную в пределах зоны, в регионе, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure, например *westus2*. 
+Выполните команду [AZ запись после репликации Create](/cli/azure/acr/replication?view=azure-cli-latest#az_acr_replication_create) , чтобы создать реплику реестра, избыточную в пределах зоны, в регионе, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure, например *westus2*. 
 
 ```azurecli
 az acr replication create \
@@ -113,7 +113,7 @@ az acr replication create \
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-При необходимости выполните команду [AZ Group Create](/cli/az/group#az_group_create) , чтобы создать группу ресурсов для реестра в регионе, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure, например *eastus*. Этот регион используется шаблоном для задания расположения реестра.
+При необходимости выполните команду [AZ Group Create](/cli/azure/group#az_group_create) , чтобы создать группу ресурсов для реестра в регионе, который [поддерживает зоны доступности](../availability-zones/az-region.md) для реестра контейнеров Azure, например *eastus*. Этот регион используется шаблоном для задания расположения реестра.
 
 ```azurecli
 az group create --name <resource-group-name> --location eastus
@@ -219,7 +219,7 @@ az group create --name <resource-group-name> --location eastus
   }
 ```
 
-Выполните следующую команду [AZ Deployment Group Create](/cli/az/deployment#az_group_deployment_create) , чтобы создать реестр с помощью предыдущего файла шаблона. Где указано, укажите:
+Выполните следующую команду [AZ Deployment Group Create](/cli/azure/group/deployment?view=azure-cli-latest#az_group_deployment_create) , чтобы создать реестр с помощью предыдущего файла шаблона. Где указано, укажите:
 
 * уникальное имя реестра или развертывание шаблона без параметров, а также создание уникального имени
 * расположение реплики, которая поддерживает зоны доступности, например *westus2*

@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 3d6c494232456b4819c9275d66fa6f7ab5de9b77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2ac03f600f57ae97cebb77e3b67bcd466955d0b
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89260736"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695413"
 ---
 # <a name="get-started-with-azure-ad-authentication-by-using-the-azure-portal"></a>Приступая к работе с аутентификацией Azure AD с помощью портала Azure
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-v-2-v-3-migration-introduction.md).
 
 Узнайте, как использовать аутентификацию Azure Active Directory (Azure AD) для доступа к API служб мультимедиа Azure с помощью портала Azure.
 
@@ -45,7 +45,7 @@ ms.locfileid: "89260736"
 
 1. На [портале Azure](https://portal.azure.com/) выберите свою учетную запись служб мультимедиа.
 2. Выберите способ подключения к API служб мультимедиа.
-3. В разделе **Подключение к API служб мультимедиа**выберите версию API служб мультимедиа, к которой вы хотите подключиться.
+3. В разделе **Подключение к API служб мультимедиа** выберите версию API служб мультимедиа, к которой вы хотите подключиться.
 
 ## <a name="service-principal-authentication--recommended"></a>Проверка подлинности на основе участника-службы (рекомендуется)
 

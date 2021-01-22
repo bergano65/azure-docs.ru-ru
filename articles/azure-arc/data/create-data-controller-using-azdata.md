@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 19451fb09919238a04ac953c9c38fc70b4744d16
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 986019ec4de2fc25b6d8714a8c687cc9342f47b8
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955303"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696077"
 ---
 # <a name="create-azure-arc-data-controller-using-the-azure-data-cli-azdata"></a>Создание контроллера данных ARC в Azure с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
@@ -30,7 +30,7 @@ ms.locfileid: "97955303"
 
 Независимо от выбранной целевой платформы перед созданием учетной записи администратора контроллера данных необходимо задать следующие переменные среды. Эти учетные данные можно предоставить другим пользователям, которым требуется доступ администратора к контроллеру данных по мере необходимости.
 
-**AZDATA_USERNAME** — имя пользователя, выбранного для администратора контроллера данных. Например, `arcadmin`.
+**AZDATA_USERNAME** — имя пользователя, выбранного для администратора контроллера данных. Пример: `arcadmin`
 
 **AZDATA_PASSWORD** — пароль, выбранный для пользователя администратора контроллера данных. Длина пароля должна составлять не менее восьми символов и содержать символы из трех из следующих четырех наборов: прописные буквы, строчные буквы, числа и символы.
 
@@ -266,34 +266,11 @@ azdata arc dc create --profile-name azure-arc-aks-hci --namespace arc --name arc
 
 ### <a name="create-on-azure-red-hat-openshift-aro"></a>Создание в Azure Red Hat OpenShift (АТО)
 
-#### <a name="apply-the-scc"></a>Применение SCC
+Для Azure Red Hat OpenShift требуется ограничение контекста безопасности.
 
-Перед созданием контроллера данных в Azure Red Hat OpenShift необходимо применить определенные ограничения контекста безопасности (SCC). В предварительной версии это ослабляет ограничения безопасности. В будущих выпусках будет предоставляться обновленная версия SCC.
+#### <a name="apply-the-security-context"></a>Применение контекста безопасности
 
-1. Скачайте настраиваемое ограничение контекста безопасности (SCC). Используйте одно из следующих значений: 
-   - [GitHub](https://github.com/microsoft/azure_arc/tree/main/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
-   - ([RAW](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml))
-   - `curl` Следующая команда скачивает Arc-Data-SCC. YAML:
-
-      ```console
-      curl https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
-      ```
-
-1. Создайте SCC.
-
-   ```console
-   oc create -f arc-data-scc.yaml
-   ```
-
-1. Примените SCC к учетной записи службы.
-
-   > [!NOTE]
-   > Используйте то же пространство имен здесь и в `azdata arc dc create` приведенной ниже команде. Пример: `arc` .
-
-   ```console
-   oc adm policy add-scc-to-user arc-data-scc --serviceaccount default --namespace arc
-   ```
-
+[!INCLUDE [apply-security-context-constraint](includes/apply-security-context-constraint.md)]
 
 #### <a name="create-custom-deployment-profile"></a>Создание пользовательского профиля развертывания
 
@@ -324,33 +301,11 @@ azdata arc dc create --profile-name azure-arc-azure-openshift --namespace arc --
 > [!NOTE]
 > Если вы используете платформу контейнеров Red Hat OpenShift в Azure, рекомендуется использовать последнюю доступную версию.
 
-#### <a name="apply-the-scc"></a>Применение SCC
+Перед созданием контроллера данных в Red Hat OCP необходимо применить определенные ограничения контекста безопасности. 
 
-Перед созданием контроллера данных в Red Hat OCP необходимо применить определенные ограничения контекста безопасности (SCC). В предварительной версии это ослабляет ограничения безопасности. В будущих выпусках будет предоставляться обновленная версия SCC.
+#### <a name="apply-the-security-context-constraint"></a>Применить ограничение контекста безопасности
 
-1. Скачайте настраиваемое ограничение контекста безопасности (SCC). Используйте одно из следующих значений: 
-   - [GitHub](https://github.com/microsoft/azure_arc/tree/main/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
-   - ([RAW](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml))
-   - `curl` Следующая команда скачивает Arc-Data-SCC. YAML:
-
-      ```console
-      curl https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
-      ```
-
-1. Создайте SCC.
-
-   ```console
-   oc create -f arc-data-scc.yaml
-   ```
-
-1. Примените SCC к учетной записи службы.
-
-   > [!NOTE]
-   > Используйте то же пространство имен здесь и в `azdata arc dc create` приведенной ниже команде. Пример: `arc` .
-
-   ```console
-   oc adm policy add-scc-to-user arc-data-scc --serviceaccount default --namespace arc
-   ```
+[!INCLUDE [apply-security-context-constraint](includes/apply-security-context-constraint.md)]
 
 #### <a name="determine-storage-class"></a>Определение класса хранения
 

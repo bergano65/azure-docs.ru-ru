@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: inhenkel
-ms.openlocfilehash: c6f889963e87d900040d1fe77031f943ab368837
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 08a419f021e0315468cb6fa5917b30bb2977d958
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348752"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695515"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "93348752"
 > * [Версия 2](media-services-overview.md)
 
 > [!NOTE]
-> В Службы мультимедиа версии 2 больше не добавляются новые функции. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Службы мультимедиа версии 2 больше не добавляются новые функции. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-v-2-v-3-migration-introduction.md).
 
 Службы мультимедиа Azure (AMS) — это расширяемая облачная платформа, которая позволяет разработчикам создавать масштабируемые приложения для управления и доставки файлов мультимедиа. С помощью служб мультимедиа Azure можно безопасно передавать, сохранять, кодировать и упаковывать видео- или аудиосодержимое для потоковой трансляции разным клиентам (например, на ТВ, ПК и мобильные устройства) или для трансляции по требованию.
 
@@ -44,7 +44,7 @@ ms.locfileid: "93348752"
 
 Чтобы узнать о соответствии требованиям, конфиденциальности и безопасности в службах мультимедиа, посетите [Центр управления безопасностью](https://www.microsoft.com/trust-center/?rtc=1) корпорации Майкрософт. Для обязательств по конфиденциальности корпорации Майкрософт, обработки данных и рекомендаций по хранению, включая сведения об удалении данных, ознакомьтесь с заявлением корпорации Майкрософт [о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [условиями веб-служб](https://www.microsoft.com/licensing/product-licensing/products?rtc=1) ("OST") и [дополнением к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Используя службы мультимедиа, вы соглашаетесь соблюдать OST, DPA и Заявление о конфиденциальности.
  
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Приступить к использованию служб мультимедиа Azure можно только при наличии следующих компонентов.
 
@@ -78,7 +78,7 @@ ms.locfileid: "93348752"
 
 ## <a name="code-samples"></a>Примеры кода
 
-Найдите несколько примеров кода в коллекции **образцов кода Azure** : [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
+Найдите несколько примеров кода в коллекции **образцов кода Azure**: [Примеры кода Azure](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
 
 ## <a name="concepts"></a>Основные понятия
 

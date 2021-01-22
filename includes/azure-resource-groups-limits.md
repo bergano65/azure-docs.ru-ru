@@ -4,12 +4,12 @@ ms.service: azure-resource-manager
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: tomfitz
-ms.openlocfilehash: f1e7b33630ea52bb0cb675b81fff9cc738f27980
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 543aa50d72de5a06a9a1c7ac88ac5ecae993bc9d
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95562150"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98698073"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
@@ -37,4 +37,4 @@ ms.locfileid: "95562150"
 | Размер шаблона |4 МБ |
 | Размер файла параметров |64 КБ |
 
-Некоторые ограничения можно превысить, используя вложенные шаблоны. См. статью [Использование связанных и вложенных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/templates/linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
+Некоторые ограничения можно превысить, используя вложенные шаблоны. См. статью [Использование связанных и вложенных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/templates/linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/guide/azure-resource-manager/advanced-templates/objects-as-parameters).

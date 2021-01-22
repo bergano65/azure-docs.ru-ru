@@ -3,12 +3,12 @@ title: Рекомендации по работе с шаблонами
 description: Описывает Рекомендуемые подходы для создания шаблонов Azure Resource Manager (шаблоны ARM). Содержит рекомендации, как избежать распространенных проблем при использовании шаблонов.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 85d58098508d5ac7cad6c1cb3cb68ad6c7f179f9
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: c0b26c300a9474cc5db0b1a7b732c4416a9e6f5f
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724992"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696352"
 ---
 # <a name="arm-template-best-practices"></a>Рекомендации по использованию шаблона ARM
 
@@ -26,7 +26,7 @@ ms.locfileid: "97724992"
 * 64 выходных значения;
 * 24 576 знаков в выражении шаблона.
 
-Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. [в статье Использование связанных и вложенных шаблонов при развертывании ресурсов Azure](linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
+Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. [в статье Использование связанных и вложенных шаблонов при развертывании ресурсов Azure](linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](/azure/architecture/guide/azure-resource-manager/advanced-templates/objects-as-parameters).
 
 ## <a name="resource-group"></a>Группа ресурсов
 

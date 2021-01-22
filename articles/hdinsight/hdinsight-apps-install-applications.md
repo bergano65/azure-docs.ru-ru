@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 2b6ea68d069b90293ab35024bebf3fbdc8acb592
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: f275064bd4accd0ca12acf3e71713f39d3860be2
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197682"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696461"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -25,7 +25,7 @@ ms.locfileid: "98197682"
 
 |Приложение |Типы кластеров | Описание |
 |---|---|---|
-|[Платформа AtScale Intelligence](https://azuremarketplace.microsoft.com/marketplace/apps/atscaleinc.atscale) |Hadoop |AtScale превращает ваш кластер HDInsight в OLAP-сервер с возможностью горизонтального увеличения масштаба, позволяя запрашивать миллиарды строк данных в интерактивном режиме с помощью уже знакомых и полюбившихся инструментов бизнес-аналитики, которые уже имеются, — от Microsoft Excel, Power BI, Tableau Software до QlikView. |
+|[Платформа AtScale Intelligence](https://aws.amazon.com/marketplace/pp/AtScale-AtScale-Intelligence-Platform/B07BWWHH18) |Hadoop |AtScale превращает ваш кластер HDInsight в OLAP-сервер с возможностью горизонтального увеличения масштаба, позволяя запрашивать миллиарды строк данных в интерактивном режиме с помощью уже знакомых и полюбившихся инструментов бизнес-аналитики, которые уже имеются, — от Microsoft Excel, Power BI, Tableau Software до QlikView. |
 |[CDAP для HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/cask.cdap-for-hdinsight) |HBase |CDAP — это первая единая платформа интеграции для больших данных, которая ускоряет окупаемость вложений в Hadoop и позволяет ИТ-отделам предоставлять данные самообслуживания. Расширяемое решение CDAP с открытым исходным кодом устраняет барьеры для инноваций. Требования 4 узла регионов, минимум D3 версии 2. |
 |[Datameer](https://azuremarketplace.microsoft.com/marketplace/apps/datameer.datameer) |Hadoop |Datameer — это масштабируемая платформа самообслуживания для подготовки, изучения и управления данными для аналитики, которая ускоряет превращение сложных данных из нескольких источников в ценные сведения, готовые к использованию, быстрее и эффективнее предоставляя аналитические данные на корпоративном уровне. |
 |[Dataiku DSS в HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/dataiku.dss-on-hdi) |Hadoop, Spark |Dataiku DSS представляет собой корпоративную платформу для обработки и анализа данных, которая позволяет специалистам по обработке и анализу данных совместно создавать и запускать новые продукты и службы данных, преобразуя необработанные данные в информативные прогнозы. |

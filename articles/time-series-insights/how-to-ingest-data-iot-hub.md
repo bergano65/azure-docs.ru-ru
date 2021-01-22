@@ -9,14 +9,14 @@ manager: diviso
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/02/2020
+ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 09ee98bf8bbe0067f9c79ce4767f3cf68b83fb43
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: bb13df0f87cd10719f33afe4ec080c4c785df720
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016808"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695566"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-azure-time-series-insight-environment"></a>Добавление источника событий центра Интернета вещей в среду службы "аналитика временных рядов Azure"
 
@@ -46,7 +46,7 @@ ms.locfileid: "95016808"
 
 1. В разделе **Группы потребителей** введите уникальное имя для группы объектов-получателей. Используйте это же имя в среде службы "аналитика временных рядов Azure" при создании нового источника событий.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="add-a-new-event-source"></a>Добавление нового источника событий
 
@@ -101,7 +101,7 @@ ms.locfileid: "95016808"
 
 1. Добавьте выделенное имя группы потребителей "аналитика временных рядов Azure", добавленное в центр Интернета вещей.
 
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
 1. После создания источника событий служба "аналитика временных рядов Azure" автоматически запускает потоковую передачу данных в вашу среду.
 

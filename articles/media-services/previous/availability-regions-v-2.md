@@ -14,19 +14,19 @@ ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: inhenkel
 ms.custom: references_regions
-ms.openlocfilehash: cf84e45ff43643c7e9a983b867194a7920aa1b57
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 458927afc78c46ad365d437a574d0b40b32fc11e
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93351924"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695803"
 ---
 # <a name="media-services-regional-availability"></a>Доступность служб мультимедиа — язык
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/media-services-overview.md). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/media-services-overview.md). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-v-2-v-3-migration-introduction.md).
 
 Службы мультимедиа Microsoft Azure (AMS) позволяют безопасно передавать, сохранять, кодировать и упаковывать видео- или аудиосодержимое для потоковой трансляции разным клиентам (например, на ТВ, ПК и мобильные устройства) или для трансляции по требованию.
 
@@ -42,9 +42,9 @@ AMS работает в нескольких регионах по всему м
 
 Клиенты службы мультимедиа могут выбрать конечную точку потоковой передачи уровня **Стандартный** либо **Премиум**.
 
-|Имя|Состояние|Регион
+|name|Состояние|Регион
 |---|---|---|
-|Standard|GA|Все|
+|Стандартный|GA|Все|
 |Premium|GA|Все|
 
 ## <a name="live-encoding"></a>Кодирование в реальном времени

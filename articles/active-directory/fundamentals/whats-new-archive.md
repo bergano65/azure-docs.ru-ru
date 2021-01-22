@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8166a77b4e3090619aa4c7fdc3fe4d94af6cddc
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b83d798d00df674fd4b0502a24681c07875bc3b0
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196373"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694331"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "98196373"
 - Планы по изменениям.
 
 ---
-## <a name="june-2020"></a>июнь 2020 г. 
+## <a name="june-2020"></a>Июнь 2020 г. 
 
 ### <a name="user-risk-condition-in-conditional-access-policy"></a>Условие риска пользователя в политике условного доступа
 
@@ -1166,7 +1166,7 @@ Azure Active Directory (Azure AD) теперь предоставляет сре
  
 В январе 2020 мы добавили следующие 33 новых приложений с поддержкой Федерации в коллекцию приложений: 
 
-[Жоса](../saas-apps/josa-tutorial.md), [высокореберное облако](../saas-apps/fastly-edge-cloud-tutorial.md), [terraform Enterprise](../saas-apps/terraform-enterprise-tutorial.md), [спинтр SSO](../saas-apps/spintr-sso-tutorial.md), [абибот нетлогистик](https://azuremarketplace.microsoft.com/marketplace/apps/aad.abibotnetlogistik), [скикикк](https://login.skykick.com/login?state=g6Fo2SBTd3M5Q0xBT0JMd3luS2JUTGlYN3pYTE1remJQZnR1c6N0aWTZIDhCSkwzYVQxX2ZMZjNUaWxNUHhCSXg2OHJzbllTcmYto2NpZNkgM0h6czk3ZlF6aFNJV1VNVWQzMmpHeFFDbDRIMkx5VEc&client=3Hzs97fQzhSIWUMUd32jGxQCl4H2LyTG&protocol=oauth2&audience=https://papi.skykick.com&response_type=code&redirect_uri=https://portal.skykick.com/callback&scope=openid%20profile%20offline_access), [с](../saas-apps/upshotly-tutorial.md)более ранними [, леавебот](https://appsource.microsoft.com/en-us/product/office/WA200001175), [Camp](../saas-apps/datacamp-tutorial.md), [Трипактионс](../saas-apps/tripactions-tutorial.md), [смартворк](https://www.intumit.com/teams-smartwork/), [Дотком-Monitor](../saas-apps/dotcom-monitor-tutorial.md), [ссожен — шлюз единого входа Azure AD для Oracle E-Business Suite-EBS, PeopleSoft и жде](../saas-apps/ssogen-tutorial.md), [размещенный MyCirqa единый вход](../saas-apps/hosted-mycirqa-sso-tutorial.md), [платформа управления свойствами Yuhu](../saas-apps/yuhu-property-management-platform-tutorial.md), [LumApps](https://sites.lumapps.com/login), [выпуск Enterprise](../saas-apps/upwork-enterprise-tutorial.md), [Talentsoft](../saas-apps/talentsoft-tutorial.md), [SmartDB для Microsoft Teams](http://teams.smartdb.jp/login/), [PressPage](../saas-apps/presspage-tutorial.md), [ContractSafe Saml2 SSO](../saas-apps/contractsafe-saml2-sso-tutorial.md), [Maxient выполнять управление программным обеспечением](../saas-apps/maxient-conduct-manager-software-tutorial.md), [Helpshift](../saas-apps/helpshift-tutorial.md), [PortalTalk 365](https://www.portaltalk.com/), [совещание](https://portal.coreview.com/), [squelch Cloud Office 365 Connector](https://laxmi.squelch.io/login), PingFlow [Аутентификация](https://app-staging.pingview.io/), [ PrinterLogic SaaS](../saas-apps/printerlogic-saas-tutorial.md), Taskize [Connect](../saas-apps/taskize-connect-tutorial.md), [Sandwai](https://app.sandwai.com/), [EZRentOut](../saas-apps/ezrentout-tutorial.md) [, AssetSonar, Akari](../saas-apps/assetsonar-tutorial.md) [Virtual Assistant](https://akari.io/akari-virtual-assistant/)
+[Жоса](../saas-apps/josa-tutorial.md), [высокореберное облако](../saas-apps/fastly-edge-cloud-tutorial.md), [terraform Enterprise](../saas-apps/terraform-enterprise-tutorial.md), [спинтр SSO](../saas-apps/spintr-sso-tutorial.md), [абибот нетлогистик](https://azuremarketplace.microsoft.com/marketplace/apps/aad.abibotnetlogistik), [скикикк](https://login.skykick.com/login?state=g6Fo2SBTd3M5Q0xBT0JMd3luS2JUTGlYN3pYTE1remJQZnR1c6N0aWTZIDhCSkwzYVQxX2ZMZjNUaWxNUHhCSXg2OHJzbllTcmYto2NpZNkgM0h6czk3ZlF6aFNJV1VNVWQzMmpHeFFDbDRIMkx5VEc&client=3Hzs97fQzhSIWUMUd32jGxQCl4H2LyTG&protocol=oauth2&audience=https://papi.skykick.com&response_type=code&redirect_uri=https://portal.skykick.com/callback&scope=openid%20profile%20offline_access), [с](../saas-apps/upshotly-tutorial.md)более ранними, [леавебот](https://appsource.microsoft.com/en-us/product/office/WA200001175), [Camp](../saas-apps/datacamp-tutorial.md), [Трипактионс](../saas-apps/tripactions-tutorial.md), [смартворк](https://www.intumit.com/teams-smartwork/), [Дотком-Monitor](../saas-apps/dotcom-monitor-tutorial.md), [ссожен — шлюз единого входа Azure AD для Oracle E-Business Suite-EBS, PeopleSoft и жде](../saas-apps/ssogen-tutorial.md), [размещенный MyCirqa единый вход](../saas-apps/hosted-mycirqa-sso-tutorial.md), [платформа управления свойствами Yuhu](../saas-apps/yuhu-property-management-platform-tutorial.md), [LumApps](https://sites.lumapps.com/login), [выпуск Enterprise](../saas-apps/upwork-enterprise-tutorial.md), [Talentsoft](../saas-apps/talentsoft-tutorial.md), [SmartDB для Microsoft Teams](http://teams.smartdb.jp/login/), [PressPage](../saas-apps/presspage-tutorial.md), [ContractSafe Saml2 SSO](../saas-apps/contractsafe-saml2-sso-tutorial.md), [Maxient выполнять управление программным обеспечением](../saas-apps/maxient-conduct-manager-software-tutorial.md), [Helpshift](../saas-apps/helpshift-tutorial.md), [PortalTalk 365](https://www.portaltalk.com/), [совещание](https://portal.coreview.com/), squelch Cloud Office 365 Connector, PingFlow [Аутентификация](https://app-staging.pingview.io/), [ PrinterLogic SaaS](../saas-apps/printerlogic-saas-tutorial.md), Taskize [Connect](../saas-apps/taskize-connect-tutorial.md), [Sandwai](https://app.sandwai.com/), [EZRentOut](../saas-apps/ezrentout-tutorial.md) [, AssetSonar, Akari](../saas-apps/assetsonar-tutorial.md) [Virtual Assistant](https://akari.io/akari-virtual-assistant/)
 
 Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](../develop/v2-howto-app-gallery-listing.md).
 

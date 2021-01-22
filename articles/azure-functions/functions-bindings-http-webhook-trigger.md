@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: f04e2aa97cafe2345918e433bcef5e719cee7483
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: eaba099725530f24dcd6aa5da7eb59cb233efd46
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610171"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695651"
 ---
 # <a name="azure-functions-http-trigger"></a>Триггер HTTP в Функциях Azure
 
@@ -749,6 +749,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 }
 ```
 
+При использовании параметров маршрута `invoke_URL_template` автоматически создается для функции. Клиенты могут использовать шаблон URL-адреса, чтобы понять, какие параметры необходимы для передачи URL-адреса при вызове функции с помощью ее URL-адреса. Перейдите к одной из функций, активируемых с помощью HTTP, в [портал Azure](https://portal.azure.com) и выберите **получить URL-адрес функции**.
+
+Доступ к можно получить программным `invoke_URL_template` путем с помощью Azure Resource Manager API-интерфейсов для [функций списка](https://docs.microsoft.com/rest/api/appservice/webapps/listfunctions) или [функции Get](https://docs.microsoft.com/rest/api/appservice/webapps/getfunction).
+
 ## <a name="working-with-client-identities"></a>Работа с удостоверениями клиентов
 
 Если в приложении-функции используется [аутентификация и авторизация Службы приложений](../app-service/overview-authentication-authorization.md), сведения об аутентифицированных клиентах можно посмотреть прямо в коде. Эта информация доступна в виде [заголовков запросов, которые вставляет платформа](../app-service/app-service-authentication-how-to.md#access-user-claims).
@@ -846,11 +850,17 @@ public static void Run(JObject input, ClaimsPrincipal principal, ILogger log)
 
 ## <a name="obtaining-keys"></a>Получение ключей
 
-Ключи хранятся в Azure в составе приложения-функции в зашифрованном виде. Чтобы просмотреть ключи, создать новые или сменить значения ключей, откройте на [портале Azure](https://portal.azure.com) нужную функцию, активируемую по HTTP, и выберите **Управление**.
+Ключи хранятся в Azure в составе приложения-функции в зашифрованном виде. Чтобы просмотреть ключи, создать новые или переместить ключи в новые значения, перейдите к одной из функций, активируемых с помощью HTTP, в [портал Azure](https://portal.azure.com) и выберите **функции ключи**.
 
-![Управляйте ключами функций на портале.](./media/functions-bindings-http-webhook/manage-function-keys.png)
+Вы также можете управлять ключами узлов. Перейдите к приложению функции в [портал Azure](https://portal.azure.com) и выберите **ключи приложения**.
 
-Ключи функций можно получить программным способом с помощью [API управления ключами](https://github.com/Azure/azure-functions-host/wiki/Key-management-API).
+Ключи функций и узлов можно получить программным путем с помощью Azure Resource Manager API. Существуют API-интерфейсы для [перечисления ключей функций](/rest/api/appservice/webapps/listfunctionkeys) и [вывода списка ключей узлов](/rest/api/appservice/webapps/listhostkeys), а также при использовании слотов развертывания эквивалентные API-интерфейсы перечисляются в [области ключей функций](/rest/api/appservice/webapps/listfunctionkeysslot) и выводят [список ключей узла](/rest/api/appservice/webapps/listhostkeysslot).
+
+Вы также можете создать новые функции и ключи узлов программным путем с помощью команды [создать или обновить секрет функции](/rest/api/appservice/webapps/createorupdatefunctionsecret), [создать](/rest/api/appservice/webapps/createorupdatefunctionsecretslot)или обновить секретный ключ функции, [создать или обновить секрет узла](/rest/api/appservice/webapps/createorupdatehostsecret) и [создать или обновить ключевые API слота узла](/rest/api/appservice/webapps/createorupdatehostsecretslot) .
+
+Ключи функций и узлов можно удалить программно с помощью [функции удалить секретный](/rest/api/appservice/webapps/deletefunctionsecret)ключ, удалить секретный [сегмент функции](/rest/api/appservice/webapps/deletefunctionsecretslot), [Удалить секрет узла](/rest/api/appservice/webapps/deletehostsecret)и [Удалить API секретного слота узла](/rest/api/appservice/webapps/deletehostsecretslot) .
+
+Вы также можете использовать [устаревшие API управления ключами для получения ключей функций](https://github.com/Azure/azure-functions-host/wiki/Key-management-API), но вместо этого рекомендуется использовать Azure Resource Manager API.
 
 ## <a name="api-key-authorization"></a>Проверка подлинности с помощью ключа API
 

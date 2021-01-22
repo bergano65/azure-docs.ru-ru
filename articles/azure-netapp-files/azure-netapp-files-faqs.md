@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/05/2020
+ms.date: 01/21/2020
 ms.author: b-juche
-ms.openlocfilehash: 913d61c506505d18fff416291e7f3b718f1d92f3
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: f680b1ec76200cb4d3bfc90cd83a2c134f379245
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913504"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696131"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -145,7 +145,7 @@ Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы може
 1. Чтобы включить Касесенситивелукуп, используйте следующую команду PowerShell:   
     `Set-NfsClientConfiguration -CaseSensitiveLookup 1`    
 2. Подключите том к серверу Windows Server.   
-    Пример   
+    Пример.   
     `Mount -o rsize=1024 -o wsize=1024 -o mtype=hard \\10.x.x.x\testvol X:*`
 
 ## <a name="smb-faqs"></a>Часто задаваемые вопросы о SMB
@@ -258,6 +258,16 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 ### <a name="is-migration-with-azure-importexport-service-supported"></a>Поддерживается ли миграция с поддержкой службы импорта и экспорта Azure?
 
 Нет. Служба импорта и экспорта Azure не поддерживает Azure NetApp Files в настоящее время.
+
+## <a name="product-faqs"></a>Вопросы и ответы по продуктам
+
+### <a name="can-i-use-azure-netapp-files-nfs-or-smb-volumes-with-azure-vmware-solution-avs"></a>Можно ли использовать Azure NetApp Files NFS или томов SMB с решением VMware для Azure (AVS)?
+
+Тома Azure NetApp Files NFS можно подключить на виртуальных машинах Windows или виртуальных машинах Linux. Вы можете сопоставлять Azure NetApp Files общие ресурсы SMB на виртуальных машинах Windows AVS. Дополнительные сведения см. [в статье Azure NetApp Files с помощью решения VMware для Azure]( ../azure-vmware/net-app-files-with-azure-vmware-solution.md).  
+
+### <a name="what-regions-are-supported-for-using-azure-netapp-files-nfs-or-smb-volumes-with-azure-vmware-solution-avs"></a>Какие регионы поддерживаются при использовании Azure NetApp Files NFS или томов SMB с решением VMware для Azure (AVS)?
+
+Использование Azure NetApp Files NFS или томов SMB с AVS поддерживается в следующих регионах: Восточная часть США, Западная часть США, Западная Европа и Восточная Австралия.
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 

@@ -6,12 +6,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/15/2019
-ms.openlocfilehash: 9fe1aaed58d6069cd583f8607f7bd6332f97674e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 0b4356c74b2e0c1494456d5d1082efd7b8953a15
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019896"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693381"
 ---
 # <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Использование пакета NuGet Azure Stream Analytics CI/CD для интеграции и разработки 
 В этой статье описывается, как использовать пакет NuGet Azure Stream Analytics CI/CD для настройки процесса непрерывной интеграции и развертывания.
@@ -51,14 +51,14 @@ ms.locfileid: "98019896"
       "value": null
     },
 ```
-Узнайте, как [развернуть файл шаблона Resource Manager с помощью Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md). Узнайте, как [использовать объект в качестве параметра в шаблоне Resource Manager](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
+Узнайте, как [развернуть файл шаблона Resource Manager с помощью Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md). Узнайте, как [использовать объект в качестве параметра в шаблоне Resource Manager](/azure/architecture/guide/azure-resource-manager/advanced-templates/objects-as-parameters).
 
 Чтобы в качестве приемника выходных данных использовать управляемое удостоверение для Azure Data Lake Storage 1-го поколения, предоставите доступ субъекту-службе с помощью PowerShell перед развертыванием в Azure. Дополнительные сведения см. в разделе о [развертывании ADLS 1-го поколения с управляемым удостоверением с помощью шаблона Resource Manager](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 
 
 ## <a name="command-line-tool"></a>Программа командной строки
 
-### <a name="build-the-project"></a>Сборка проекта
+### <a name="build-the-project"></a>Построение проекта
 В пакете NuGet есть служебная программа командной строки, которая называется **SA.exe**. Она поддерживает сборку проекта и локальное тестирование на произвольном компьютере, которое можно использовать в процессе непрерывной интеграции и непрерывной доставки. 
 
 Файлы развертывания по умолчанию помещаются в текущем каталоге. С помощью параметра -OutputPath можно указать выходной путь.

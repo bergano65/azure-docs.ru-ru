@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 50a0fe0fa5dece41ac9e343d5a8939e8d9dc634e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 9e48d14419e2cd24251f1b00a09fd0289c50c55f
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426890"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693813"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа v3
 
@@ -24,7 +24,7 @@ ms.locfileid: "92426890"
 
 В этой статье приводятся ответы на часто задаваемые вопросы о службах мультимедиа Azure v3.
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-are-the-azure-portal-limitations-for-media-services-v3"></a>Каковы ограничения портал Azure для служб мультимедиа v3?
 
@@ -60,7 +60,7 @@ ms.locfileid: "92426890"
 
 ### <a name="what-features-are-not-yet-available-in-azure-media-services-v3"></a>Какие функции пока недоступны в службах мультимедиа Azure v3?
 
-Дополнительные сведения см. [в разделе зазоры функций в отношении API v2](media-services-v2-vs-v3.md#feature-gaps-with-respect-to-v2-apis).
+Дополнительные сведения см. [в разделе руководств по миграции](migrate-v-2-v-3-migration-introduction.md).
 
 ### <a name="what-is-the-process-of-moving-a-media-services-account-between-subscriptions"></a>В чем заключается процесс перемещения учетной записи служб мультимедиа между подписками?  
 
@@ -169,7 +169,7 @@ ms.locfileid: "92426890"
 
 `AssetFile`Концепция удалена из API служб мультимедиа для разделения служб мультимедиа от зависимости пакета SDK хранилища. Теперь служба хранилища Azure, а не службы мультимедиа, хранит информацию, относящуюся к пакету SDK хранилища. 
 
-Дополнительные сведения см. в разделе [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](media-services-v2-vs-v3.md).
+Дополнительные сведения см. в разделе [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-v-2-v-3-migration-introduction.md).
 
 ### <a name="where-did-client-side-storage-encryption-go"></a>Где происходит шифрование хранилища на стороне клиента?
 

@@ -2,13 +2,13 @@
 title: Часто задаваемые вопросы о службе "Центры событий Azure" | Документация Майкрософт
 description: В этой статье содержится список часто задаваемых вопросов о службе "Центры событий Azure" и ответы на эти вопросы.
 ms.topic: article
-ms.date: 10/27/2020
-ms.openlocfilehash: e7a34fe0f2ef04fffeeddc5615d3ac1749467902
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.date: 01/20/2021
+ms.openlocfilehash: e6fd4814e771d03827e51f1cd5ee182c9e432cc5
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955422"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696114"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы о Центрах событий
 
@@ -55,8 +55,8 @@ ms.locfileid: "97955422"
 ### <a name="how-do-i-monitor-my-event-hubs"></a>Как применить мониторинг для концентраторов событий?
 Концентраторы событий создают метрики, которые предоставляют в [Azure Monitor](../azure-monitor/overview.md) полные данные о состоянии ресурсов. Они позволяют оценить общую работоспособность службы Центров событий не только на уровне пространства имен, но также и на уровне сущностей. Узнайте, какие возможности мониторинга поддерживаются для [Центров событий Azure](event-hubs-metrics-azure-monitor.md).
 
-### <a name="where-does-azure-event-hubs-store-customer-data"></a><a name="in-region-data-residency"></a>Где концентраторы событий Azure хранят данные клиентов?
-Концентраторы событий Azure хранят данные клиентов. Эти данные автоматически сохраняются концентраторами событий в одном регионе, поэтому эта служба автоматически удовлетворяет требованиям местонахождение данных региона, включая те, которые указаны в [центре управления безопасностью](https://azuredatacentermap.azurewebsites.net/).
+### <a name="where-does-azure-event-hubs-store-data"></a><a name="in-region-data-residency"></a>Где концентраторы событий Azure хранят данные?
+Концентраторы событий Azure Standard и выделенные уровни хранят метаданные и данные в выбранных регионах. При настройке географического аварийного восстановления для пространства имен концентраторов событий Azure метаданные копируются в выбранный дополнительный регион. Таким образом, эта служба автоматически удовлетворяет требованиям местонахождение данных региона, включая те, которые указаны в [центре управления безопасностью](https://azuredatacentermap.azurewebsites.net/).
 
 [!INCLUDE [event-hubs-connectivity](../../includes/event-hubs-connectivity.md)]
 
@@ -76,7 +76,7 @@ sasl.mechanism=PLAIN
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.EVENTHUBS.CONNECTION.STRING}";
 ```
 
-Пример
+Пример.
 
 ```properties
 bootstrap.servers=dummynamespace.servicebus.windows.net:9093

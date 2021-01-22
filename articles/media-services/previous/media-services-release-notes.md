@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bd4f50365ced61e35ae6d10a9763a0f9815098d7
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: e1700489b4f3ee37d95b87b1bf026d47c9f1de4d
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014109"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694908"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "92014109"
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
 
 > [!NOTE]
-> В Службы мультимедиа версии 2 больше не добавляются новые функции. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Службы мультимедиа версии 2 больше не добавляются новые функции. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-v-2-v-3-migration-introduction.md).
 
 Мы ждем отзывов от наших заказчиков, чтобы уделить внимание исправлению проблем, влияющих на вашу работу. Сообщения о проблемах и вопросы размещайте на [форуме MSDN по службам мультимедиа Azure]. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "92014109"
 * [хисторикалевентс](/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.historicalevents)
 * [перфмессаже](/dotnet/api/microsoft.windowsazure.mediaservices.client.itask.perfmessage)
 
-Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения можно найти в разделе
+Чтобы получить журнал задач, следует использовать уведомления о задании v2 через веб-перехватчики или сообщения очереди с помощью конечных точек уведомлений. Дополнительные сведения см. в разделе:
 
 * [Использование хранилища очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-queues.md)
 * [Использование веб-перехватчиков Azure для мониторинга уведомлений о заданиях служб мультимедиа](media-services-dotnet-check-job-progress-with-webhooks.md)

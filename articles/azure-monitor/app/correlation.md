@@ -7,12 +7,12 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: 20e9ed7e83ff3359651acebc11a939a998f2889d
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 50b858d0bf05aa46ea20a6cf9e088376be2996e3
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607921"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693432"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -34,7 +34,7 @@ Application Insights определяет [модель данных](../../azur
 
 ## <a name="example"></a>Пример
 
-Давайте рассмотрим пример. Приложение под названием «цены на акции» показывает текущую стоимость рынка акций с помощью внешнего API, который называется «склад». В приложении "цены на акции" есть страница "акции", которая открывается веб-браузером клиента с помощью `GET /Home/Stock` . Приложение запрашивает стандартный API-интерфейс с помощью вызова HTTP `GET /api/stock/value` .
+Рассмотрим пример. Приложение под названием «цены на акции» показывает текущую стоимость рынка акций с помощью внешнего API, который называется «склад». В приложении "цены на акции" есть страница "акции", которая открывается веб-браузером клиента с помощью `GET /Home/Stock` . Приложение запрашивает стандартный API-интерфейс с помощью вызова HTTP `GET /api/stock/value` .
 
 Вы можете проанализировать итоговые данные телеметрии, выполнив запрос:
 
@@ -83,7 +83,7 @@ Application Insights также определяет [расширение](http
 
 ### <a name="enable-w3c-distributed-tracing-support-for-net-apps"></a>Включить поддержку распределенной трассировки W3C для приложений .NET
 
-По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-Id.
+По умолчанию Распределенная трассировка на основе W3C Трацеконтекст включена во всех последних пакетах SDK платформа .NET Framework/. NET Core, а также обратной совместимости с устаревшим протоколом Request-Id.
 
 ### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
 
@@ -233,6 +233,54 @@ logger.warning('After the span')
 Обратите внимание, что имеется `spanId` сообщение журнала, находящиеся в пределах диапазона. Это то же самое `spanId` , что принадлежит диапазону с именем `hello` .
 
 Данные журнала можно экспортировать с помощью `AzureLogHandler` . Дополнительные сведения см. в [этой статье](./opencensus-python.md#logs).
+
+Также можно передать сведения о трассировке из одного компонента в другой для правильной корреляции. Например, рассмотрим сценарий, в котором есть два компонента `module1` и `module2` . Module1 вызывает функции в Module2, а также для получения журналов из обеих `module1` и `module2` в одной трассировке мы можем использовать следующий подход:
+
+```python
+# module1.py
+import logging
+
+from opencensus.trace import config_integration
+from opencensus.trace.samplers import AlwaysOnSampler
+from opencensus.trace.tracer import Tracer
+from module2 import function_1
+
+config_integration.trace_integrations(['logging'])
+logging.basicConfig(format='%(asctime)s traceId=%(traceId)s spanId=%(spanId)s %(message)s')
+tracer = Tracer(sampler=AlwaysOnSampler())
+
+logger = logging.getLogger(__name__)
+logger.warning('Before the span')
+with tracer.span(name='hello'):
+   logger.warning('In the span')
+   function_1(tracer)
+logger.warning('After the span')
+
+
+# module2.py
+
+import logging
+
+from opencensus.trace import config_integration
+from opencensus.trace.samplers import AlwaysOnSampler
+from opencensus.trace.tracer import Tracer
+
+config_integration.trace_integrations(['logging'])
+logging.basicConfig(format='%(asctime)s traceId=%(traceId)s spanId=%(spanId)s %(message)s')
+tracer = Tracer(sampler=AlwaysOnSampler())
+
+def function_1(parent_tracer=None):
+    if parent_tracer is not None:
+        tracer = Tracer(
+                    span_context=parent_tracer.span_context,
+                    sampler=AlwaysOnSampler(),
+                )
+    else:
+        tracer = Tracer(sampler=AlwaysOnSampler())
+
+    with tracer.span("function_1"):
+        logger.info("In function_1")
+```
 
 ## <a name="telemetry-correlation-in-net"></a>Корреляция данных телеметрии в .NET
 
