@@ -12,12 +12,12 @@ ms.date: 02/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 9485fb09d3ac7684ba91bcd37720a0e55603404b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 04d5a989fcaf3cef3eea3b782842fb3255d4b317
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952732"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661108"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -36,7 +36,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 |---------|---------|
 |Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, администратор, обращающийся к списку политик B2C).         |
 |Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора с помощью портал Azure. |
-|Приложение | Операции создания, чтения, обновления и удаления (CRUD) в приложениях B2C. |
+|Развертывание | Операции создания, чтения, обновления и удаления (CRUD) в приложениях B2C. |
 |Ключ |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
 |Ресурс |Операции CRUD с ресурсами B2C. Например, политики и поставщики удостоверений.
 |Аутентификация |Проверка учетных данных пользователя и выдачи маркера.|
@@ -223,4 +223,4 @@ if ($oauth.access_token -ne $null) {
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Можно автоматизировать другие задачи администрирования, например [управлять Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](manage-user-accounts-graph-api.md).
+Можно автоматизировать другие задачи администрирования, например [управлять Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](microsoft-graph-operations.md).

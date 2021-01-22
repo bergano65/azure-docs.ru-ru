@@ -3,15 +3,15 @@ title: Смена сертификатов для базы данных Azure д
 description: Узнайте о предстоящих изменениях изменений корневого сертификата, которые повлияют на базу данных Azure для MariaDB
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 01/18/2021
-ms.openlocfilehash: ac7019abab1aefaee95c155e34fbc0cb551b4d94
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 66db443c4c52e4994e62a9f83f8a624319b349ab
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538419"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98659892"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Основные сведения об изменениях в корневом центре сертификации для базы данных Azure для MariaDB
 
@@ -100,7 +100,7 @@ ms.locfileid: "98538419"
 > [!NOTE]
 > Не удаляйте и не изменяйте **сертификат Baltimore** , пока не будет внесено изменение сертификата. После внесения изменений мы отправим подключение, после чего оно будет безопасно удалено для удаления сертификата Baltimore.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="1-if-im-not-using-ssltls-do-i-still-need-to-update-the-root-ca"></a>1. Если я не использую SSL/TLS, мне все равно нужно обновить корневой ЦС?
 

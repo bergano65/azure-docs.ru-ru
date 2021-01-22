@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8d41f8959d0a1ec0d6e48cf2fa4711a8ef8d8ae5
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 2600ea3488c643bcf215b058425de42cd439dcff
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178948"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660273"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Настройка регистрации телефона и входа в систему с помощью пользовательских политик в Azure AD B2C
 
@@ -39,12 +39,12 @@ ms.locfileid: "98178948"
 >
 > *&lt;INSERT: ссылка на заявление о конфиденциальности&gt;*<br/>*&lt;INSERT: ссылка на условия предоставления услуг&gt;*
 
-Чтобы добавить собственные сведения о согласии, настройте приведенный ниже пример и включите его в LocalizedResources для Контентдефинитион, используемого на странице с автоматическим подтверждением, с помощью элемента управления отображением (файл *Phone_Email_Base.xml* в [телефоне "регистрация и вход в начальный пакет][starter-pack-phone]"):
+Чтобы добавить собственные сведения о согласии, настройте следующий пример. Включите его в `LocalizedResources` для контентдефинитион, используемого страницей с автоматическим подтверждением, с помощью элемента управления отображением (файл *Phone_Email_Base.xml* в [телефоне для регистрации и входа начальный пакет][starter-pack-phone]):
 
 ```xml
 <LocalizedResources Id="phoneSignUp.en">        
     <LocalizedStrings>
-    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_msg_intro">By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you sign into {insert your application name}. Standard messsage and data rates may apply.</LocalizedString>          
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_msg_intro">By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you sign into {insert your application name}. Standard message and data rates may apply.</LocalizedString>          
     <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_1_text">Privacy Statement</LocalizedString>                
     <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_1_url">{insert your privacy statement URL}</LocalizedString>          
     <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_2_text">Terms and Conditions</LocalizedString>             
@@ -64,7 +64,7 @@ ms.locfileid: "98178948"
 
 ![Пользователь проверяет код во время регистрации телефона](media/phone-authentication/phone-signup-verify-code.png)
 
- Пользователь вводит любые другие сведения, запрашиваемые на странице регистрации, например **Отображаемое имя**, **имя** и **Фамилия** (страна и номер телефона остаются заполненными). Если пользователь хочет использовать другой номер телефона, он может выбрать **изменить номер** для перезапуска регистрации. По завершении пользователь нажмет кнопку **Continue (продолжить**).
+Пользователь вводит на странице регистрации любые другие запрашиваемые сведения. Например, **Отображаемое имя**, **имя** и **Фамилия** (страна и номер телефона остаются заполненными). Если пользователь хочет использовать другой номер телефона, он может выбрать **изменить номер** для перезапуска регистрации. По завершении пользователь нажмет кнопку **Continue (продолжить**).
 
 ![Пользователь предоставляет дополнительные сведения](media/phone-authentication/phone-signup-additional-info.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "98178948"
 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед настройкой OTP вам потребуются следующие ресурсы.
 
@@ -99,8 +99,6 @@ ms.locfileid: "98178948"
 ## <a name="get-the-phone-sign-up--sign-in-starter-pack"></a>Получение телефонного входа & начальный пакет входа в систему
 
 Начните с обновления файлов настраиваемой политики регистрации и входа в телефон для работы с вашим клиентом Azure AD B2C.
-
-В следующих шагах предполагается, что вы выполнили [необходимые условия](#prerequisites) и уже создали клонированный репозиторий [начального пакета пользовательской политики][starter-pack] на локальном компьютере.
 
 1. Найдите [файлы настраиваемой политики регистрации и входа для телефона][starter-pack-phone] в локальном клоне репозитория начального пакета или скачайте их напрямую. Файлы политики XML находятся в следующем каталоге:
 
@@ -136,9 +134,9 @@ ms.locfileid: "98178948"
 
 ## <a name="get-user-account-by-phone-number"></a>Получение учетной записи пользователя по номеру телефона
 
-Пользователь, который регистрируется с номером телефона, но не предоставляет адрес электронной почты для восстановления, записывается в Azure AD B2C каталог с номером телефона в качестве имени для входа. Если пользователь хочет изменить свой номер телефона, ваша служба технической поддержки или специалисты по технической поддержке должны сначала найти свою учетную запись, а затем обновить свой номер телефона.
+Пользователь, который регистрируется с номером телефона без адреса электронной почты для восстановления, записывается в Azure AD B2C каталог с номером телефона в качестве имени для входа. Чтобы изменить номер телефона, ваша служба технической поддержки или специалисты по поддержке должны сначала найти свою учетную запись, а затем обновить свой номер телефона.
 
-Вы можете найти пользователя по номеру телефона (имени для входа) с помощью [Microsoft Graph](manage-user-accounts-graph-api.md):
+Вы можете найти пользователя по номеру телефона (имени для входа) с помощью [Microsoft Graph](microsoft-graph-operations.md):
 
 ```http
 GET https://graph.microsoft.com/v1.0/users?$filter=identities/any(c:c/issuerAssignedId eq '+{phone number}' and c/issuer eq '{tenant name}.onmicrosoft.com')

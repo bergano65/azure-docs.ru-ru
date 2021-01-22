@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: lagayhar
-ms.openlocfilehash: 7af26be91ff129e4c968bcb131cc98290cd8d7b9
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: b2e9c267b0a3723c9ac7b3edd49e23b95741962f
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610086"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660459"
 ---
 # <a name="click-analytics-auto-collection-plugin-for-application-insights-javascript-sdk"></a>Щелкните подключаемый модуль автосбора аналитики для Application Insights пакет SDK для JavaScript.
 
@@ -69,7 +69,7 @@ appInsights.loadAppInsights();
     2. Для повышения эффективности подключаемый модуль использует этот тег в качестве флага, когда он обнаруживает, что он будет останавливаться на дальнейшей обработке модели DOM (модель DOM) назад.
     
     > [!CAUTION]
-    > Когда `parentDataTag` используется, он оказывает постоянный результат для всего приложения, а не только HTML-элемент, в котором он использовался.
+    > После `parentDataTag` использования пакет SDK начнет искать родительские теги во всем приложении, а не только HTML-элемент, где он использовался.
 4. `customDataPrefix` Этот пользователь всегда должен начинаться с `data-` , например `data-sample-` . В HTML `data-*` Глобальные атрибуты образуют класс атрибутов, называемых пользовательскими атрибутами данных, которые позволяют осуществлять обмен собственными данными между HTML и его представлением DOM с помощью скриптов. Более старые браузеры (Internet Explorer, Safari) удаляют непонятные атрибуты, если они не начинаются с `data-` .
 
     `*`В `data-*` может быть заменен любым именем, которое следует за [рабочим правилом имен XML](https://www.w3.org/TR/REC-xml/#NT-Name) со следующими ограничениями.
@@ -310,9 +310,9 @@ appInsights.loadAppInsights();
 
 [Простое веб-приложение с включенным подключаемым модулем автоматической коллекции Click Analytics](https://go.microsoft.com/fwlink/?linkid=2152871).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [репозиторием GitHub](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-clickanalytics-js) и [пакетом NPM](https://www.npmjs.com/package/@microsoft/applicationinsights-clickanalytics-js) для подключаемого модуля автосбора данных Click Analytics.
 - Используйте [Анализ событий в процессе использования](usage-segmentation.md) , чтобы анализировать верхние щелчки и срезы по доступным измерениям.
-- Найдите элемент данные в поле содержимое в атрибуте customDimensions в таблице CustomEvents в [log Analytics](../log-query/log-analytics-tutorial.md#write-a-query).
+- Найдите элемент данные в поле содержимое в атрибуте customDimensions в таблице CustomEvents в [log Analytics](../log-query/log-analytics-tutorial.md#write-a-query). Дополнительные рекомендации см. в разделе [пример приложения](https://go.microsoft.com/fwlink/?linkid=2152871) .
 - Создайте [книгу](../platform/workbooks-overview.md) для создания пользовательских визуализаций по щелчку данных.

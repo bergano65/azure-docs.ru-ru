@@ -3,15 +3,15 @@ title: Архитектура подключения к базе данных Az
 description: Описывает архитектуру подключения для сервера базы данных Azure для MariaDB.
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 98a75cee88a7d30161fc3166bce0eaec855d347c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 57e14fa4a026dafb085ea636611ab26b6bad7c01
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656722"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661710"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mariadb"></a>Архитектура подключения в базе данных Azure для MariaDB
 В этой статье описывается архитектура подключения к базе данных Azure для MariaDB, а также сведения о том, как трафик направляется в базу данных Azure для экземпляра MariaDB от клиентов как внутри, так и за пределами Azure.
@@ -96,7 +96,7 @@ ms.locfileid: "97656722"
 > [!IMPORTANT]
 > Поддержка перенаправления в расширении PHP [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) в настоящее время доступна в предварительной версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)
 * [Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI](./howto-manage-firewall-cli.md)

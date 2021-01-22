@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/23/2020
 ms.author: wolfma
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 68a129f38e9a94a7e381d11ffa3c3d02791b025b
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: e48fead4d4364fd84f178388dbfb9158296e687b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755775"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98659977"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -39,7 +39,7 @@ ms.locfileid: "97755775"
 Задания записи пакетов планируются в соответствии с оптимальными усилиями.
 Вы не можете оценить, когда задание изменится в состояние выполнения, но оно должно происходить в течение нескольких минут после обычной загрузки системы. В состоянии выполнения транскрипция выполняется быстрее, чем скорость воспроизведения в среде выполнения аудио.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Как и для всех функций службы "Речь", вам необходимо создать ключ подписки на [портале Azure](https://portal.azure.com), следуя [руководству по началу работы](overview.md#try-the-speech-service-for-free).
 
@@ -64,7 +64,7 @@ API-интерфейс для транскрипции пакетов подде
 Для звуковых потоков стереозвука левый и правый каналы разбиваются во время транскрипции. Файл результатов JSON создается для каждого канала.
 Чтобы создать упорядоченную конечную запись, используйте метки времени, созданные для каждого utterance.
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Параметры конфигурации предоставляются в виде JSON. 
 
@@ -208,7 +208,8 @@ API-интерфейс для транскрипции пакетов подде
   ],
   "recognizedPhrases": [                // results for each phrase and each channel individually
     {
-      "recognitionStatus": "Success",   // recognition state, e.g. "Success", "Failure"
+      "recognitionStatus": "Success",   // recognition state, e.g. "Success", "Failure"          
+      "speaker": 1,                     // if `diarizationEnabled` is `true`, this is the identified speaker (1 or 2), otherwise this property is not present
       "channel": 0,                     // channel number of the result
       "offset": "PT0.07S",              // offset in audio of this phrase, ISO 8601 encoded duration 
       "duration": "PT1.59S",            // audio duration of this phrase, ISO 8601 encoded duration
@@ -219,7 +220,6 @@ API-интерфейс для транскрипции пакетов подде
       "nBest": [
         {
           "confidence": 0.898652852,    // confidence value for the recognition of the whole phrase
-          "speaker": 1,                 // if `diarizationEnabled` is `true`, this is the identified speaker (1 or 2), otherwise this property is not present
           "lexical": "hello world",
           "itn": "hello world",
           "maskedITN": "hello world",
@@ -416,6 +416,6 @@ while (completed < 1)
 > [!NOTE]
 > Для транскрипций базовых показателей не нужно объявлять идентификатор для базовой модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Справочник по API для преобразования речи в текст v3](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription)

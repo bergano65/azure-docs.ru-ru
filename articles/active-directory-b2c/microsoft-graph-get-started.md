@@ -1,5 +1,5 @@
 ---
-title: Управление ресурсами с помощью Microsoft Graph
+title: Регистрация приложения Microsoft Graph
 titleSuffix: Azure AD B2C
 description: Подготовьтесь к управлению ресурсами Azure AD B2C с помощью Microsoft Graph, зарегистрировав приложение, которому предоставлены необходимые разрешения API Graph.
 services: B2C
@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/14/2020
+ms.date: 01/21/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 61e32f50e02e45487830c5ea7ff476a0571960f6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1886a0308f32ed53a1c9f0974715f20823e8bdd5
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94954007"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660358"
 ---
-# <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Управление Azure AD B2C с помощью Microsoft Graph
+# <a name="register-a-microsoft-graph-application"></a>Регистрация приложения Microsoft Graph
 
 [Microsoft Graph][ms-graph] позволяет управлять многими ресурсами в клиенте Azure AD B2C, включая учетные записи пользователей клиентов и пользовательские политики. Создавая скрипты или приложения, вызывающие [API Microsoft Graph][ms-graph-api], можно автоматизировать задачи управления клиентами, такие как:
 
@@ -51,7 +51,7 @@ ms.locfileid: "94954007"
 1. На портале Azure найдите и выберите **Azure AD B2C**.
 1. Щелкните **Регистрация приложений** и выберите **Новая регистрация**.
 1. Введите **имя** приложения. Например, *managementapp1*.
-1. Выберите **учетные записи только в этом каталоге Организации**.
+1. Установите флажок **Учетные записи только в этом каталоге организации**.
 1. В разделе **разрешения** снимите флажок *предоставить согласие администратора на OpenID Connect и offline_access разрешения* .
 1. Выберите **Зарегистрировать**.
 1. Запишите **идентификатор приложения (клиента)** , который отображается на странице Обзор приложения. Это значение используется на более позднем этапе.
@@ -83,12 +83,13 @@ ms.locfileid: "94954007"
 1. Выберите **Добавить**. Для полного распространения разрешений может потребоваться несколько минут.
 
 ## <a name="next-steps"></a>Следующие шаги
+
 Теперь, когда вы зарегистрировали приложение управления и предоставили ему необходимые разрешения, ваши приложения и службы (например, Azure Pipelines) могут использовать свои учетные данные и разрешения для взаимодействия с Microsoft Graph API. 
 
 * [Получение токена доступа из Azure AD](/graph/auth-v2-service#4-get-an-access-token)
 * [Используйте маркер доступа для вызова Microsoft Graph](/graph/auth-v2-service#4-get-an-access-token)
 * [Операции B2C, поддерживаемые Microsoft Graph](microsoft-graph-operations.md)
-* [Управление Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](manage-user-accounts-graph-api.md)
+* [Управление Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](microsoft-graph-operations.md)
 * [Получение журналов аудита с помощью API отчетов Azure AD](view-audit-logs.md#get-audit-logs-with-the-azure-ad-reporting-api)
 
 <!-- LINKS -->

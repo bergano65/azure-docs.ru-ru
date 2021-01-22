@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/21/2020
 ms.author: v-mibufo
-ms.openlocfilehash: b13b61aff819271ed1722572f251f9a6d14b17ab
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 8af656e00c457dfa3d438f0cb104d85ccc687745
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977003"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661244"
 ---
 # <a name="windows-stop-error---0xc000021a-status-system-process-terminated"></a>Ошибка при прекращении работы Windows — системный процесс состояния 0xC000021A завершен
 
@@ -48,12 +48,16 @@ ms.locfileid: "91977003"
 
 ### <a name="collect-the-memory-dump-file"></a>Получение файла дампа памяти
 
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
+
+
 Чтобы устранить эту проблему, необходимо проанализировать аварийный дамп. Собирайте файл дампа памяти для сбоя и обратитесь в службу поддержки. Чтобы получить файл дампа, выполните следующие действия.
 
 ### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>Подключение диска ОС к новой виртуальной машине восстановления
 
 1.  Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
-2.  С помощью **Подключение к удаленному рабочему столу**подключитесь к виртуальной машине восстановления.
+2.  С помощью **Подключение к удаленному рабочему столу** подключитесь к виртуальной машине восстановления.
 
 ### <a name="locate-the-dump-file-and-submit-a-support-ticket"></a>Размещение файла дампа и отправка запроса в службу поддержки
 
@@ -61,7 +65,7 @@ ms.locfileid: "91977003"
 2.  Найдите файл Memory. dmp и отправьте запрос в [службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с файлом дампа памяти.
 3.  Если при поиске файла Memory. dmp возникают проблемы, можно использовать [вызовы прерываний (NMI) в последовательной консоли](./serial-console-windows.md#use-the-serial-console-for-nmi-calls) . Вы можете воспользоваться [руководством по созданию файла аварийного дампа с помощью вызовов NMI](/windows/client-management/generate-kernel-or-complete-crash-dump).
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об устранении неполадок см. в статьях [Устранение распространенных ошибок загрузки](./boot-error-troubleshoot.md) или [Устранение неполадок виртуальной машины Windows путем подключения диска ОС к виртуальной машине восстановления](./troubleshoot-recovery-disks-windows.md). Кроме того, следует ознакомиться с [использованием диагностики загрузки для устранения неполадок виртуальной машины](./boot-diagnostics.md).
 - Дополнительные сведения об использовании Resource Manager вы найдете в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).

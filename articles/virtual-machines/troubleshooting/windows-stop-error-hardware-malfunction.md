@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/13/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 18622d60f3a33658fadfd28c53c93a07b4b438a9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 89faa5b29e0a972f31ad51a7354635a53176541a
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488652"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661363"
 ---
 # <a name="windows-stop-error---hardware-malfunction"></a>Ошибка, вызывающая остановку Windows: оборудование неисправно
 
@@ -41,13 +41,16 @@ ms.locfileid: "96488652"
 
 ![На снимке экрана отображается сообщение "сбой оборудования" в функции последовательной консоли, если включена последовательная консоль.](media/windows-stop-error-hardware-malfunction/windows-stop-error-hardware-malfunction-2.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Этот экран появится, когда гостевая ОС была настроена неправильно и было отправлено немаскированное прерывание (NMI). Сообщение об ошибке указывает, что программа режима ядра создала исключение, которое обработчик не перехватывает. Чтобы узнать, какое исключение было создано, можно собрать дамп памяти.
 
 ## <a name="solution"></a>Решение
 
 ### <a name="process-overview"></a>Обзор процесса 
+
+> [!TIP]
+> Если у вас есть недавняя резервная копия виртуальной машины, можно попытаться [восстановить виртуальную машину из резервной копии](../../backup/backup-azure-arm-restore-vms.md) , чтобы устранить проблему загрузки.
 
 1. Настройка раздела реестра немаскированного прерывания (NMI) 
 2. Создание виртуальной машины для восстановления и получение доступа к ней 
@@ -165,7 +168,7 @@ ms.locfileid: "96488652"
 
 * Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Устранение ошибок загрузки виртуальных машин Azure](./boot-error-troubleshoot.md)

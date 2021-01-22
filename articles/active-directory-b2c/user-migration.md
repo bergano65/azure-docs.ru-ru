@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fea8d93121fcb5622f86257febcc7d834b444098
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 34bc50f5f95725b59c0d2b30b529e12abb6aa7fa
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178812"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661159"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Миграция пользователей в Azure AD B2C
 
-Миграция с другого поставщика удостоверений на Azure Active Directory B2C (Azure AD B2C) также может потребовать миграции существующих учетных записей пользователей. Здесь обсуждаются два метода миграции: *Предварительная миграция* и *Простая миграция*. При использовании любого из этих подходов необходимо написать приложение или сценарий, который использует [Microsoft Graph API](manage-user-accounts-graph-api.md) для создания учетных записей пользователей в Azure AD B2C.
+Миграция с другого поставщика удостоверений на Azure Active Directory B2C (Azure AD B2C) также может потребовать миграции существующих учетных записей пользователей. Здесь обсуждаются два метода миграции: *Предварительная миграция* и *Простая миграция*. При использовании любого из этих подходов необходимо написать приложение или сценарий, который использует [Microsoft Graph API](microsoft-graph-operations.md) для создания учетных записей пользователей в Azure AD B2C.
 
 ## <a name="pre-migration"></a>Предварительная миграция
 
@@ -34,7 +34,7 @@ ms.locfileid: "98178812"
 - У вас есть доступ к учетным данным пользователя в виде открытого текста (имя пользователя и пароль).
 - Учетные данные шифруются, но их можно расшифровать.
 
-Сведения о создании учетных записей пользователей программным путем см. [в разделе Управление учетными записями пользователей Azure AD B2C с помощью Microsoft Graph](manage-user-accounts-graph-api.md).
+Сведения о создании учетных записей пользователей программным путем см. [в разделе Управление учетными записями пользователей Azure AD B2C с помощью Microsoft Graph](microsoft-graph-operations.md).
 
 ## <a name="seamless-migration"></a>Простая миграция
 
@@ -99,7 +99,7 @@ ms.locfileid: "98178812"
 
 Если переносимые учетные записи имеют более слабую стойкость пароля, чем [усиленный пароль](../active-directory/authentication/concept-sspr-policy.md) , принудительно установленный Azure AD B2C, можно отключить требование надежного пароля. Дополнительные сведения см. в разделе [свойство политики паролей](user-profile-attributes.md#password-policy-attribute).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В репозитории [Azure-AD-B2C/User-migrations](https://github.com/azure-ad-b2c/user-migration) на сайте GitHub содержится простой пример пользовательской политики миграции и REST API пример кода:
 

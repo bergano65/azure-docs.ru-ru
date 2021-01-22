@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 30b7788419695db7ee5d4b81714bf55248a41b4a
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e181b90219f340a29e818801ee2b53f1ccbd9c23
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108728"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660290"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: часто задаваемые вопросы
 
@@ -96,7 +96,7 @@ Azure AD B2C также поддерживает [пользовательски
 
 ### <a name="can-i-use-azure-ad-connect-to-migrate-consumer-identities-that-are-stored-on-my-on-premises-active-directory-to-azure-ad-b2c"></a>Можно ли с помощью Azure AD Connect перенести в Azure AD B2C удостоверения клиентов, хранящиеся в локальном каталоге Active Directory?
 
-Нет служба Azure AD Connect не предназначена для работы с Azure AD B2C. Для миграции пользователей рекомендуется использовать [API Microsoft Graph](manage-user-accounts-graph-api.md) . Дополнительные сведения см. в [руководстве по переносу пользователей](user-migration.md).
+Нет служба Azure AD Connect не предназначена для работы с Azure AD B2C. Для миграции пользователей рекомендуется использовать [API Microsoft Graph](microsoft-graph-operations.md) . Дополнительные сведения см. в [руководстве по переносу пользователей](user-migration.md).
 
 ### <a name="can-my-app-open-up-azure-ad-b2c-pages-within-an-iframe"></a>Может ли приложение открыть страницы Azure AD B2C в iFrame?
 
