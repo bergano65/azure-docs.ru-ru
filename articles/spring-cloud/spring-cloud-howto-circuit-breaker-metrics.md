@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/15/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3fd1e644d69fe1d721526afcacb362adca48bf7a
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 77a32872726e3c67f0d3c542ca699271846a193b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831811"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680676"
 ---
 # <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-preview"></a>Собирайте метрики отResilience4Jного прерывания весны облака (Предварительная версия)
 
@@ -20,7 +20,7 @@ ms.locfileid: "97831811"
 
 Мы используем [демонстрацию](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) , чтобы продемонстрировать, как это работает.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Пошаговое руководств по установке агента In-Process Java из [агента In-Process Java для Application Insights](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-howto-application-insights#enable-java-in-process-agent-for-application-insights). 
 
@@ -41,7 +41,7 @@ cd spring-cloud-circuitbreaker-demo && mvn clean package -DskipTests
 
 2. Создание приложений с помощью конечных точек
 
-```azcli
+```azurecli
 az spring-cloud app create --name resilience4j --is-public \
     -s ${asc-service-name} -g ${asc-resource-group}
 az spring-cloud app create --name reactive-resilience4j --is-public \
@@ -50,7 +50,7 @@ az spring-cloud app create --name reactive-resilience4j --is-public \
 
 3. Развертывание приложений.
 
-```azcli
+```azurecli
 az spring-cloud app deploy -n resilience4j \
     --jar-path ./spring-cloud-circuitbreaker-demo-resilience4j/target/spring-cloud-circuitbreaker-demo-resilience4j-0.0.1.BUILD-SNAPSHOT.jar \
     -s ${service_name} -g ${resource_group}
@@ -91,7 +91,7 @@ az spring-cloud app deploy -n reactive-resilience4j \
 >
 > Перейдите по URL-адресу, предоставленному приложениями шлюза, и получите доступ к конечной точке из [пружины-Cloud-цепью-Break-Demo](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) , как показано ниже.
 >
->   ```
+>   ```console
 >   /get
 >   /get/delay/{seconds}
 >   /get/fluxdelay/{seconds}

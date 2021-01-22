@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: srrengar
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: eda0b62729343b0a138d027548d8750b1e0fc74f
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 63c79169646f05cddc7c605c764398bdef7492d4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844409"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682077"
 ---
 # <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 Сетка Azure Service Fabric — это полностью управляемая служба, которая позволяет разработчикам развертывать приложения для микрослужб без управления виртуальными машинами, хранилищем или сетями. В мониторинге и диагностике для Сетки Service Fabric выделяют три основных типа диагностических данных.
@@ -26,7 +26,7 @@ ms.locfileid: "94844409"
 
 Журналы Docker можно просматривать из развернутых контейнеров или из каждого отдельного контейнера. В модели приложения Сетки Service Fabric каждый контейнер представляет пакет кода в приложении. Чтобы просмотреть связанные журналы с пакетом кода, выполните следующую команду:
 
-```cli
+```azurecli
 az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> --service-name <nameOfService> --replica-name <nameOfReplica> --code-package-name <nameOfCodePackage>
 ```
 
@@ -35,7 +35,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> 
 
 Далее приводится пример просмотра журналов из контейнера VotingWeb.Code из приложения для голосования.
 
-```cli
+```azurecli
 az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
 ```
 
@@ -51,11 +51,11 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
 | AllocatedMemory | Память, выделенная в соответствии с шаблоном Azure Resource Manager | МБ |
 | ActualCpu | Использование ЦП | Миллиардах |
 | ActualMemory | Использование памяти | МБ |
-| ContainerStatus | 0 — недопустимо: состояние контейнера неизвестно <br> 1-Ожидание: контейнер запланирован на запуск <br> 2 — Запуск: контейнер находится в процессе запуска <br> 3 — запущено: контейнер успешно запущен <br> 4 — остановка — контейнер останавливается <br> 5 — остановлено: контейнер успешно остановлен | Недоступно |
-| ApplicationStatus | 0 — неизвестно: состояние не может быть извлечено <br> 1 — готово: приложение успешно запущено <br> 2. обновление: выполняется обновление <br> 3. Создание: приложение создается <br> 4 — Удаление: приложение удаляется <br> 5 — ошибка: не удалось развернуть приложение | Недоступно |
-| ServiceStatus | 0 — недопустимо: служба в настоящее время не имеет состояния работоспособности <br> 1-ОК: служба работоспособна  <br> 2 — предупреждение. возможно, возникло что-то неправильное исследование <br> 3 — ошибка. возникли проблемы, требующие исследования <br> 4 — неизвестно. состояние не может быть извлечено | Недоступно |
-| ServiceReplicaStatus | 0 — недопустимо: Реплика в настоящее время не имеет состояния работоспособности <br> 1-ОК: служба работоспособна  <br> 2 — предупреждение. возможно, возникло что-то неправильное исследование <br> 3 — ошибка. возникли проблемы, требующие исследования <br> 4 — неизвестно. состояние не может быть извлечено | Недоступно | 
-| RestartCount | Число перезапусков контейнера | Недоступно |
+| ContainerStatus | 0 — недопустимо: состояние контейнера неизвестно <br> 1-Ожидание: контейнер запланирован на запуск <br> 2 — Запуск: контейнер находится в процессе запуска <br> 3 — запущено: контейнер успешно запущен <br> 4 — остановка — контейнер останавливается <br> 5 — остановлено: контейнер успешно остановлен | Н/Д |
+| ApplicationStatus | 0 — неизвестно: состояние не может быть извлечено <br> 1 — готово: приложение успешно запущено <br> 2. обновление: выполняется обновление <br> 3. Создание: приложение создается <br> 4 — Удаление: приложение удаляется <br> 5 — ошибка: не удалось развернуть приложение | Н/Д |
+| ServiceStatus | 0 — недопустимо: служба в настоящее время не имеет состояния работоспособности <br> 1-ОК: служба работоспособна  <br> 2 — предупреждение. возможно, возникло что-то неправильное исследование <br> 3 — ошибка. возникли проблемы, требующие исследования <br> 4 — неизвестно. состояние не может быть извлечено | Н/Д |
+| ServiceReplicaStatus | 0 — недопустимо: Реплика в настоящее время не имеет состояния работоспособности <br> 1-ОК: служба работоспособна  <br> 2 — предупреждение. возможно, возникло что-то неправильное исследование <br> 3 — ошибка. возникли проблемы, требующие исследования <br> 4 — неизвестно. состояние не может быть извлечено | Н/Д | 
+| RestartCount | Число перезапусков контейнера | Н/Д |
 
 > [!NOTE]
 > Значения Сервицестатус и Сервицерепликастатус совпадают со значением [HealthState](/dotnet/api/system.fabric.health.healthstate?view=azure-dotnet) в Service Fabric. 
@@ -74,7 +74,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
 
 ### <a name="azure-monitor-cli"></a>Azure Monitor CLI
 
-Полный список команд доступен в документации по [Azure Monitor CLI](/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list) , но мы включили несколько полезных примеров ниже. 
+Полный список команд доступен в документации по [Azure Monitor CLI](/cli/azure/monitor/metrics#az-monitor-metrics-list) , но мы включили несколько полезных примеров ниже. 
 
 В каждом примере идентификатор ресурса соответствует этому шаблону.
 
@@ -83,21 +83,21 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
 
 * Использование ЦП контейнерами в приложении
 
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "CpuUtilization"
 ```
 * Использование памяти для каждой реплики службы
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "MemoryUtilization" --dimension "ServiceReplicaName"
 ``` 
 
 * Перезапускается для каждого контейнера в течение одного часа 
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "RestartCount" --start-time 2019-02-01T00:00:00Z --end-time 2019-02-01T01:00:00Z
 ``` 
 
 * Средняя загрузка ЦП между службами с именем "VotingWeb" в течение одного часа
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "CpuUtilization" --start-time 2019-02-01T00:00:00Z --end-time 2019-02-01T01:00:00Z --aggregation "Average" --filter "ServiceName eq 'VotingWeb'"
 ``` 
 
@@ -116,6 +116,6 @@ In addition to the metrics explorer, we also have a dashboard available out of t
 ![Container Insights](./media/service-fabric-mesh-monitoring-diagnostics/containerinsights.png)
 -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о службе "Сетка Service Fabric" из раздела [Что такое Сетка Service Fabric?](service-fabric-mesh-overview.md)
-* Чтобы узнать больше о командах метрик Azure Monitor, ознакомьтесь с [документацией по Azure Monitor CLI](/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list).
+* Чтобы узнать больше о командах метрик Azure Monitor, ознакомьтесь с [документацией по Azure Monitor CLI](/cli/azure/monitor/metrics#az-monitor-metrics-list).

@@ -11,12 +11,12 @@ ms.date: 03/19/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 0cf40990d59aff984226244f520e6f8f937713fd
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7dcb884d8eafdfa5218e96d63f62a5d462d20cf8
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456491"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679936"
 ---
 # <a name="design-guidance-for-using-replicated-tables-in-synapse-sql-pool"></a>Руководство по проектированию для использования реплицированных таблиц в пуле Synapse SQL
 
@@ -46,8 +46,8 @@ ms.locfileid: "96456491"
 
 Реплицированные таблицы подходят в ситуациях, когда:
 
-- Размер таблицы на диске менее 2 ГБ, независимо от количества строк. Чтобы определить размер таблицы, можно использовать команду [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest): `DBCC PDW_SHOWSPACEUSED('ReplTableCandidate')`.
-- Таблица используется в соединениях, для которых в противном случае требуется перемещение данных. При соединении таблиц, которые не распределены по одному и тому же столбцу, например при объединении хэш-распределенной таблицы с таблицу с распределением методом циклического перебора, для выполнения запроса требуется перемещение данных.  Если одна из таблиц достаточно мала, рассмотрите возможность использования реплицированной таблицы. В большинстве случаев вместо таких таблиц рекомендуется использовать реплицированные таблицы. Чтобы просмотреть операции перемещения данных в планах запросов, используйте [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  BroadcastMoveOperation является типичной операцией перемещения данных, которую можно устранить, используя реплицированную таблицу.  
+- Размер таблицы на диске менее 2 ГБ, независимо от количества строк. Чтобы определить размер таблицы, можно использовать команду [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true): `DBCC PDW_SHOWSPACEUSED('ReplTableCandidate')`.
+- Таблица используется в соединениях, для которых в противном случае требуется перемещение данных. При соединении таблиц, которые не распределены по одному и тому же столбцу, например при объединении хэш-распределенной таблицы с таблицу с распределением методом циклического перебора, для выполнения запроса требуется перемещение данных.  Если одна из таблиц достаточно мала, рассмотрите возможность использования реплицированной таблицы. В большинстве случаев вместо таких таблиц рекомендуется использовать реплицированные таблицы. Чтобы просмотреть операции перемещения данных в планах запросов, используйте [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  BroadcastMoveOperation является типичной операцией перемещения данных, которую можно устранить, используя реплицированную таблицу.  
 
 Реплицированные таблицы не гарантируют лучшую производительность, когда:
 
@@ -78,7 +78,7 @@ WHERE EnglishDescription LIKE '%frame%comfortable%'
 
 Если имеются циклические таблицы, их рекомендуется преобразовать в реплицированные таблицы, если они удовлетворяют критериям, обозначенным в этой статье. Реплицированные таблицы эффективнее по сравнению с циклическими таблицами, поскольку они исключают необходимость в перемещении данных.  Для соединений в циклической таблице всегда требуется перемещение данных.
 
-В этом примере используется функция [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для изменения таблицы DimSalesTerritory в реплицированную таблицу. В данном примере неважно, была ли таблица DimSalesTerritory хэш-распределена или распределена методом циклического перебора.
+В этом примере используется функция [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для изменения таблицы DimSalesTerritory в реплицированную таблицу. В данном примере неважно, была ли таблица DimSalesTerritory хэш-распределена или распределена методом циклического перебора.
 
 ```sql
 CREATE TABLE [dbo].[DimSalesTerritory_REPLICATE]
@@ -99,7 +99,7 @@ DROP TABLE [dbo].[DimSalesTerritory_old];
 
 ### <a name="query-performance-example-for-round-robin-versus-replicated"></a>Пример производительности запросов для циклической и реплицированной таблиц
 
-Поскольку вся таблица уже существует на каждом вычислительном узле, для реплицированной таблицы не требуется перемещать данные для соединений. Если таблицы измерений распределены методом циклического перебора, соединение копирует таблицу измерения в полном объеме на каждом вычислительном узле. Чтобы переместить данные, план запроса содержит операцию, которая называется BroadcastMoveOperation. Операции перемещения данных данного типа снижают производительность запросов. Устранить это можно с помощью реплицированных таблиц. Чтобы просмотреть действия плана запроса, используйте представление системного каталога [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
+Поскольку вся таблица уже существует на каждом вычислительном узле, для реплицированной таблицы не требуется перемещать данные для соединений. Если таблицы измерений распределены методом циклического перебора, соединение копирует таблицу измерения в полном объеме на каждом вычислительном узле. Чтобы переместить данные, план запроса содержит операцию, которая называется BroadcastMoveOperation. Операции перемещения данных данного типа снижают производительность запросов. Устранить это можно с помощью реплицированных таблиц. Чтобы просмотреть действия плана запроса, используйте представление системного каталога [sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  
 
 Например, в следующем запросе к схеме AdventureWorks таблица `FactInternetSales` хэш-распределена. Таблицы `DimDate` и `DimSalesTerritory` являются таблицами измерений меньшего размера. Этот запрос возвращает общий объем продаж в Северной Америке за 2004 финансовый год:
 
@@ -170,7 +170,7 @@ WHERE d.FiscalYear = 2004
 
 Чтобы обеспечить согласованное время выполнение запросов, рекомендуется принудительно перестроить реплицированные таблицы после пакетной загрузки. В противном случае для выполнения первого запроса по-прежнему будет использоваться перемещение данных.
 
-В этом запросе используется динамическое административное представление [sys.pdw_replicated_table_cache_state](/sql/relational-databases/system-catalog-views/sys-pdw-replicated-table-cache-state-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для отображения реплицированных таблиц, которые были изменены, но не перестроены.
+В этом запросе используется динамическое административное представление [sys.pdw_replicated_table_cache_state](/sql/relational-databases/system-catalog-views/sys-pdw-replicated-table-cache-state-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для отображения реплицированных таблиц, которые были изменены, но не перестроены.
 
 ```sql
 SELECT [ReplicatedTable] = t.[name]
@@ -193,7 +193,7 @@ SELECT TOP 1 * FROM [ReplicatedTable]
 
 Чтобы создать реплицированную таблицу, воспользуйтесь одной из следующих инструкций:
 
-- [CREATE TABLE (пул SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [CREATE TABLE AS SELECT (пул SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [CREATE TABLE (пул SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [CREATE TABLE AS SELECT (пул SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
 Обзор распределенных таблиц см. в разделе [Распределенные таблицы](sql-data-warehouse-tables-distribute.md).

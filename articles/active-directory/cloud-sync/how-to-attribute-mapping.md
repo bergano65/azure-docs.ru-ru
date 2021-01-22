@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 01/21/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80a035f30294449a024bbde76df2d42ddc23396e
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: c6d2adbd0fe0715cb22ac158d1804f53384f8b94
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98622717"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682111"
 ---
 # <a name="azure-ad-connect-cloud-sync-attribute-mapping"></a>Azure AD Connect сопоставление атрибута облачной синхронизации
 
@@ -100,8 +100,8 @@ Azure AD Connect облачная синхронизация предостав�
 
   ![Выполнить действие](media/how-to-attribute-mapping/mapping-5.png)
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Что такое Azure AD Connect синхронизации в облаке?](what-is-cloud-sync.md)
+- [Что представляет собой облачная синхронизация Azure AD Connect?](what-is-cloud-sync.md)
 - [Запись выражений для сопоставления атрибутов](reference-expressions.md)
 - [Синхронизированные атрибуты](../hybrid/reference-connect-sync-attributes-synchronized.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context/hybrid/reference-connect-sync-attributes-synchronized.md)

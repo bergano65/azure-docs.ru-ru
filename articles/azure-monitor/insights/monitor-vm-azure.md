@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: fc89790c7d268bcfa0c08bd26249bc91979d7fca
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7fb84d544138b771170f95b5df71c33087252564
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186904"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679489"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Мониторинг виртуальных машин Azure с помощью Azure Monitor
 В этой статье описывается, как использовать Azure Monitor для сбора и анализа данных мониторинга с виртуальных машин Azure для поддержания их работоспособности. С помощью Azure Monitor можно отслеживать доступность и производительность виртуальных машин так же, как аналогичные параметры любых [других ресурсов Azure](monitor-azure-resource.md). Однако они отличаются от других ресурсов тем, что, помимо прочего, необходимо отслеживать операционную систему на виртуальной машине и выполняющиеся на ней рабочие нагрузки. 
@@ -113,7 +113,7 @@ Azure Monitor для виртуальных машин основан на аг�
 Set-AzDiagnosticSetting -Name vm-diagnostics -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm" -Enabled $true -MetricCategory AllMetrics -workspaceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/my-resource-group/providers/microsoft.operationalinsights/workspaces/my-workspace"
 ```
 
-```CLI
+```azurecli
 az monitor diagnostic-settings create \
 --name VM-Diagnostics 
 --resource /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm \

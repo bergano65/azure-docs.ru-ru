@@ -11,12 +11,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e65569cadd8f778a94f93aa22dd3924c52ff12f8
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 3796b3d86f647e38cf2ff018e8c0c903d9a64e41
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98614260"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682044"
 ---
 # <a name="inbound-synchronization-for-cloud-sync-using-ms-graph-api"></a>Входящая синхронизация для облачной синхронизации с помощью MS API Graph
 
@@ -31,7 +31,7 @@ ms.locfileid: "98614260"
 - [Запуск задания синхронизации](#start-sync-job)
 - [Состояние проверки](#review-status)
 
-Используйте эти [модуль Microsoft Azure Active Directory для Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/) команды, чтобы включить синхронизацию для рабочего клиента — это предварительная версия для возможности вызова веб-службы администрирования для этого клиента.
+Используйте эти [модуль Microsoft Azure Active Directory для Windows PowerShell](/powershell/module/msonline/) команды, чтобы включить синхронизацию для рабочего клиента — это предварительная версия для возможности вызова веб-службы администрирования для этого клиента.
 
 ## <a name="basic-setup"></a>Базовая настройка
 
@@ -60,7 +60,7 @@ ms.locfileid: "98614260"
 ## <a name="create-sync-job"></a>Создание задания синхронизации
 Выходные данные приведенной выше команды будут возвращать идентификатор объекта созданного субъекта-службы. В этом примере objectId имеет значение 614ac0e9-a59b-481f-bd8f-79a73d167e1c.  Используйте Microsoft Graph, чтобы добавить Синчронизатионжоб к этому субъекту-службе.  
 
-Документацию по созданию задания синхронизации можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-beta&tabs=http).
+Документацию по созданию задания синхронизации можно найти [здесь](/graph/api/synchronization-synchronizationjob-post?tabs=http&view=graph-rest-beta).
 
 Если вы не зарегистрировали идентификатор, указанный выше, можно найти субъект-службу, выполнив следующий вызов MS Graph. Для этого потребуется разрешение Directory. Read. ALL.
  
@@ -216,11 +216,11 @@ ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f AppId: 00000014-0000-0000-C000-00
 
  `GET https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs/ ` 
 
-Документацию по получению заданий можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-beta&tabs=http). 
+Документацию по получению заданий можно найти [здесь](/graph/api/synchronization-synchronizationjob-list?tabs=http&view=graph-rest-beta). 
  
 Чтобы запустить задание, выдайте этот запрос, используя objectId субъекта-службы, созданного на первом шаге, и идентификатор задания, полученный из запроса, создавшего задание.
 
-Документацию по запуску задания можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&tabs=http). 
+Документацию по запуску задания можно найти [здесь](/graph/api/synchronization-synchronizationjob-start?tabs=http&view=graph-rest-beta). 
 
  ```
  POST  https://graph.microsoft.com/beta/servicePrincipals/8895955e-2e6c-4d79-8943-4d72ca36878f/synchronization/jobs/AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da/start
@@ -228,7 +228,7 @@ ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f AppId: 00000014-0000-0000-C000-00
 
 Ожидаемый ответ:... HTTP 204/нет содержимого.
 
-Другие команды для управления заданием описаны [здесь](https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta).
+Другие команды для управления заданием описаны [здесь](/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta).
  
 Чтобы перезапустить задание, в одном из них будет использоваться...
 
@@ -250,8 +250,8 @@ ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f AppId: 00000014-0000-0000-C000-00
 
 Просмотрите раздел "Status" возвращаемого объекта, чтобы получить соответствующие сведения.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
-- [Что такое Azure AD Connect синхронизации в облаке?](what-is-cloud-sync.md)
+- [Что представляет собой облачная синхронизация Azure AD Connect?](what-is-cloud-sync.md)
 - [Преобразования](how-to-transformation.md)
-- [API синхронизации Azure AD](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
+- [API синхронизации Azure AD](/graph/api/resources/synchronization-overview?view=graph-rest-beta)

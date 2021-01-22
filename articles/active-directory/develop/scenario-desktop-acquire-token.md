@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: e15dce586dc4dd43cf56fd1cbb08b84ebcda1787
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 040f9fa67617b058138926310706f4bc56c4ff62
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232307"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680979"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -1181,7 +1181,7 @@ if not result:
 
 ### <a name="simple-token-cache-serialization-msal-only"></a>Простая сериализация кэша маркеров (только для MSAL)
 
-Ниже приведен пример основной реализации пользовательской сериализации кэша маркеров для классических приложений. В этом случае кэш маркера пользователя находится в файле в той же папке, что и приложение, или, если приложение является [упакованным классом для настольных приложений](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes), в папке на пользователя в приложении. Полный код см. в следующем примере: [Active-Directory-DotNet-Desktop-мсграф-v2](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2).
+Ниже приведен пример основной реализации пользовательской сериализации кэша маркеров для классических приложений. В этом случае кэш маркера пользователя находится в файле в той же папке, что и приложение, или, если приложение является [упакованным классом для настольных приложений](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes), в папке на пользователя в приложении. Полный код см. в следующем примере: [Active-Directory-DotNet-Desktop-мсграф-v2](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2).
 
 После сборки приложения вы можете включить сериализацию, вызвав ``TokenCacheHelper.EnableSerialization()`` и передав ему `UserTokenCache` приложения.
 
@@ -1405,6 +1405,6 @@ namespace CommonCacheMsalV3
 
 [!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии, [вызовите веб-API из классического приложения](scenario-desktop-call-api.md).

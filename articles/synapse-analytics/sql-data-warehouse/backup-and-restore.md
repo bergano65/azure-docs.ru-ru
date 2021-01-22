@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019"
-ms.openlocfilehash: b033fd9c0a7f752cf08d6e679facc9fa27b44037
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: d8c680ec30dcecc56c064f08e4690cbbde9c2377
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120212"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679919"
 ---
 # <a name="backup-and-restore-in-azure-synapse-dedicated-sql-pool"></a>Резервное копирование и восстановление в выделенном пуле SQL Azure синапсе
 
@@ -88,7 +88,7 @@ order by run_id desc
 
 Каждый моментальный снимок создает точку восстановления, которая представляет время начала создания моментального снимка. Для восстановления хранилища данных следует выбрать точку восстановления и выполнить команду restore.  
 
-Можно сохранить восстановленное и текущее хранилища данных либо удалить один из них. Если вы хотите заменить текущее хранилище данных восстановленным хранилищем данных, его можно переименовать с помощью [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) с параметром MODIFY Name.
+Можно сохранить восстановленное и текущее хранилища данных либо удалить один из них. Если вы хотите заменить текущее хранилище данных восстановленным хранилищем данных, его можно переименовать с помощью [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) с параметром MODIFY Name.
 
 Сведения о восстановлении хранилища данных см. в разделе [Восстановление выделенного пула SQL](sql-data-warehouse-restore-points.md#create-user-defined-restore-points-through-the-azure-portal).
 
@@ -105,6 +105,6 @@ order by run_id desc
 > [!NOTE]
 > Чтобы выполнить географически избыточное восстановление, необходимо отказаться от этой функции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о точках восстановления см. в разделе пользовательские [точки восстановления](sql-data-warehouse-restore-points.md) .

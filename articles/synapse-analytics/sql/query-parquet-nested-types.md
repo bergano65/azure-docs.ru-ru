@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 45e1ae5b8a1084334b7596f62c272e16294c4c14
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 6df8c3238ed6dfeb37fd10d0a7e97aa839e7bf26
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118767"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681083"
 ---
 # <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Запрос вложенных типов в файлах Parquet и JSON с помощью бессерверного пула SQL в Azure синапсе Analytics
 
@@ -47,7 +47,7 @@ FROM
 > [!IMPORTANT]
 > В этом примере используется файл из набора данных КОВИД-19 Open Research. [Ознакомьтесь с лицензиями и структурой данных здесь](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Первым шагом является создание базы данных, в которой будет создан источник данных. Затем вы инициализируйте объекты, запустив [сценарий установки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) в базе данных. Сценарий установки создаст источники данных, учетные данные области базы данных и форматы внешних файлов, используемые в примерах.
 
@@ -147,7 +147,7 @@ FROM
 
 ## <a name="access-elements-from-repeated-columns"></a>Доступ к элементам из повторяющихся столбцов
 
-Следующий запрос считывает файл Жустсимплеаррай. Parquet и использует [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения скалярного элемента из повторяющегося столбца, например массива или Map:
+Следующий запрос считывает файл Жустсимплеаррай. Parquet и использует [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для получения скалярного элемента из повторяющегося столбца, например массива или Map:
 
 ```sql
 SELECT
@@ -172,7 +172,7 @@ FROM
 
 ## <a name="access-sub-objects-from-complex-columns"></a>Доступ к подобъектам из сложных столбцов
 
-Следующий запрос считывает файл Мапексампле. Parquet и использует [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для получения нескалярного элемента из повторяющегося столбца, например массива или Map:
+Следующий запрос считывает файл Мапексампле. Parquet и использует [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для получения нескалярного элемента из повторяющегося столбца, например массива или Map:
 
 ```sql
 SELECT

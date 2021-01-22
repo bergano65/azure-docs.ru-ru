@@ -12,23 +12,23 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 817a912dabfc5365eabe8e0dabd7e0b40e40c525
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: fb34051f7d4b24190806dde939c8cc6d9c2a4896
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462504"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679953"
 ---
 # <a name="column-level-security"></a>Защита на уровне столбцов
 
 Column-Level безопасность позволяет клиентам управлять доступом к столбцам таблицы на основе контекста выполнения или членства пользователя в группе.
 
 > [!VIDEO https://www.youtube.com/embed/OU_ESg0g8r8]
-Так как это видео было опубликовано как [безопасность на уровне строк](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) стало доступным для выделенного пула SQL в Azure синапсе.
+Так как это видео было опубликовано как [безопасность на уровне строк](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) стало доступным для выделенного пула SQL в Azure синапсе.
 
 Безопасность на уровне столбцов упрощает проектирование и реализацию безопасности в приложении, позволяя ограничивать доступ к столбцам для защиты конфиденциальных данных. Например, можно предоставить конкретным пользователям доступ только к определенным столбцам таблицы, имеющей отношение к их отделу. Логика ограничения находится на уровне базы данных, а не на отдалении от данных на другом уровне приложения. База данных применяет ограничения доступа при каждой попытке получения доступа к данным независимо от уровня. Это ограничение делает систему безопасности более надежной и устойчивой за счет уменьшения ее контактной зоны. Кроме того, безопасность на уровне столбцов также позволяет отказаться от ввода представлений для фильтрации столбцов с целью наложения на пользователей ограничений доступа.
 
-Безопасность на уровне столбцов можно реализовать с помощью инструкции T-SQL [Grant](/sql/t-sql/statements/grant-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) . При использовании этого механизма поддерживается проверка подлинности SQL и Azure Active Directory (Azure AD).
+Безопасность на уровне столбцов можно реализовать с помощью инструкции T-SQL [Grant](/sql/t-sql/statements/grant-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) . При использовании этого механизма поддерживается проверка подлинности SQL и Azure Active Directory (Azure AD).
 
 ![На схеме показана схематическое таблица с первым столбцом, который направляется закрытым замком, и его ячейками — оранжевым цветом, тогда как остальные столбцы — это белые ячейки.](./media/column-level-security/cls.png)
 

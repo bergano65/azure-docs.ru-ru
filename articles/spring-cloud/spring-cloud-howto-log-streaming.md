@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/14/2019
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: fcfddce568be6c641a5bf5be70c2cd0ad368095f
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1eeb291c7a058efd8905e95ebf1ea14fed046691
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843610"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680524"
 ---
 # <a name="stream-azure-spring-cloud-app-logs-in-real-time"></a>Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
 
@@ -20,7 +20,7 @@ ms.locfileid: "94843610"
 
 Azure Веснного облака позволяет выполнять потоковую передачу журналов в Azure CLI для получения журналов консоли приложений в режиме реального времени для устранения неполадок. Вы также можете [анализировать журналы и метрики с помощью параметров диагностики](./diagnostic-services.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Установите [расширение Azure CLI](/cli/azure/install-azure-cli) для пружинного облака, минимальной версии 0.2.0.
 * Экземпляр **Azure веснного облака** с выполняющимся приложением, например [пружинное приложение Cloud](./spring-cloud-quickstart.md).
@@ -31,7 +31,7 @@ Azure Веснного облака позволяет выполнять пот
 ## <a name="use-cli-to-tail-logs"></a>Использование интерфейса командной строки для заключительного фрагмента журналов
 
 Чтобы избежать повторного указания имени группы ресурсов и экземпляра службы, задайте имя группы ресурсов по умолчанию и имя кластера.
-```
+```azurecli
 az configure --defaults group=<service group name>
 az configure --defaults spring-cloud=<service instance name>
 ```
@@ -39,11 +39,11 @@ az configure --defaults spring-cloud=<service instance name>
 
 ### <a name="tail-log-for-app-with-single-instance"></a>Заключительный фрагмент журнала для приложения с одним экземпляром
 Если приложение с именем auth-Service имеет только один экземпляр, журнал экземпляра приложения можно просмотреть с помощью следующей команды:
-```
+```azurecli
 az spring-cloud app logs -n auth-service
 ```
 Будут возвращены журналы:
-```
+```output
 ...
 2020-01-15 01:54:40.481  INFO [auth-service,,,] 1 --- [main] o.apache.catalina.core.StandardService  : Starting service [Tomcat]
 2020-01-15 01:54:40.482  INFO [auth-service,,,] 1 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
@@ -58,12 +58,12 @@ az spring-cloud app logs -n auth-service
 
 Сначала можно получить имена экземпляров приложения с помощью следующей команды.
 
-```
+```azurecli
 az spring-cloud app show -n auth-service --query properties.activeDeployment.properties.instances -o table
 ```
 С результатами:
 
-```
+```output
 Name                                         Status    DiscoveryStatus
 -------------------------------------------  --------  -----------------
 auth-service-default-12-75cc4577fc-pw7hb  Running   UP
@@ -72,7 +72,7 @@ auth-service-default-12-75cc4577fc-n25mh  Running   UP
 ``` 
 Затем можно выполнить потоковую передачу журналов экземпляра приложения с `-i/--instance` параметром:
 
-```
+```azurecli
 az spring-cloud app logs -n auth-service -i auth-service-default-12-75cc4577fc-pw7hb
 ```
 
@@ -81,15 +81,15 @@ az spring-cloud app logs -n auth-service -i auth-service-default-12-75cc4577fc-p
 ### <a name="continuously-stream-new-logs"></a>Непрерывный поток новых журналов
 По умолчанию `az spring-cloud ap log tail` выводит только существующие журналы, переданные в консоль приложения, а затем завершает работу. Если вы хотите создать потоковую передачу новых журналов, добавьте-f (--следовать):  
 
-```
+```azurecli
 az spring-cloud app logs -n auth-service -f
 ``` 
 Чтобы проверить все поддерживаемые параметры ведения журнала, выполните следующие действия.
-``` 
+```azurecli
 az spring-cloud app logs -h 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Краткое руководство. Мониторинг приложений Azure Spring Cloud с помощью журналов, метрик и трассировки](spring-cloud-quickstart-logs-metrics-tracing.md)
 * [Анализ журналов и метрик с помощью параметров диагностики](./diagnostic-services.md)
 

@@ -11,12 +11,12 @@ ms.date: 05/15/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 067551d198f717dd40995cb8bc3e1345e82f078f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 38fb842cf90c110266f53b79a9ab2ef6157025b4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461920"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681291"
 ---
 # <a name="configure-workload-importance-in-dedicated-sql-pool-for-azure-synapse-analytics"></a>Настройка важности рабочей нагрузки в выделенном пуле SQL для Azure синапсе Analytics
 
@@ -24,7 +24,7 @@ ms.locfileid: "96461920"
 
 ## <a name="create-a-workload-classifier-with-importance"></a>Создание классификатора рабочих нагрузок с уровнем важности
 
-Часто в сценариях хранилища данных в занятой системе имеются пользователи, которым необходимо быстро выполнить запросы.  Таким пользователем может быть руководитель компании, которому требуется создать отчет, или аналитик, выполняющий нерегламентированный запрос. Чтобы присвоить уровень важности, необходимо создать классификатор рабочей нагрузки и задать уровень важности для запроса.  В примерах ниже для создания двух классификаторов используется синтаксис [create workload classifier](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). `Membername` может быть одним пользователем или группой.  Чтобы найти существующих выделенных пользователей пула SQL, выполните:
+Часто в сценариях хранилища данных в занятой системе имеются пользователи, которым необходимо быстро выполнить запросы.  Таким пользователем может быть руководитель компании, которому требуется создать отчет, или аналитик, выполняющий нерегламентированный запрос. Чтобы присвоить уровень важности, необходимо создать классификатор рабочей нагрузки и задать уровень важности для запроса.  В примерах ниже для создания двух классификаторов используется синтаксис [create workload classifier](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). `Membername` может быть одним пользователем или группой.  Чтобы найти существующих выделенных пользователей пула SQL, выполните:
 
 ```sql
 Select name from sys.sysusers

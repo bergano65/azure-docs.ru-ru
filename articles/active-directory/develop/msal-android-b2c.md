@@ -13,12 +13,12 @@ ms.date: 9/18/2019
 ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
-ms.openlocfilehash: a8c7ae8de41a01cb07a4bbbcd5943fb6290eced8
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: f87f2e79bd9439fddb52fad82c7ab4712fc68fb9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131650"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680371"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "98131650"
 
 Файл конфигурации для приложения будет объявлять два `authorities` . По одному для каждой политики. `type`Свойство каждого из полномочий имеет значение `B2C` .
 
->Примечание. `account_mode` для приложений B2C должно быть задано значение " **несколько** ". Дополнительные сведения о [общедоступных клиентских приложениях для нескольких учетных записей](https://docs.microsoft.com/azure/active-directory/develop/single-multi-account#multiple-account-public-client-application)см. в документации.
+>Примечание. `account_mode` для приложений B2C должно быть задано значение " **несколько** ". Дополнительные сведения о [общедоступных клиентских приложениях для нескольких учетных записей](./single-multi-account.md#multiple-account-public-client-application)см. в документации.
 
 ### `app/src/main/res/raw/msal_config.json`
 ```json
@@ -240,6 +240,6 @@ B2C рассматривает каждую политику как отдель
 
 При обновлении маркеров для политики с помощью `acquireTokenSilent` Укажите то же значение `IAccount` , которое было возвращено предыдущими вызовами политики в  `AcquireTokenSilentParameters` . Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Azure Active Directory B2C (Azure AD B2C) о том [, что Azure Active Directory B2C?](../../active-directory-b2c/overview.md)
