@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 68fdc29edfd41799e2628abf40efa6a9453a90b9
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: e603e99c1aa9c49d20bdb281bbfd96131ae2efdd
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98634267"
+ms.locfileid: "98663627"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Установка и инициализация Azure IoT Edge для Linux на устройстве Windows (Предварительная версия)
 
@@ -28,7 +28,7 @@ Azure IoT Edge для Linux в Windows позволяет использоват
 >[!NOTE]
 >IoT Edge для Linux в Windows находится в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Учетная запись Azure с действительной подпиской. Если у вас еще нет [подписки Azure](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начать работу.
 
@@ -61,6 +61,12 @@ Azure IoT Edge для Linux в Windows позволяет использоват
       ![Щелкните значок шестеренки в правом верхнем углу панели мониторинга, чтобы получить доступ к параметрам.](./media/how-to-install-iot-edge-on-windows/select-gear-icon.png)
 
    1. В меню **Параметры** в разделе **шлюз** выберите **расширения**.
+
+   1. Перейдите на вкладку **веб-каналы** и нажмите кнопку **Добавить**.
+
+   1. Введите https://aka.ms/wac-insiders-feed в текстовое поле и нажмите кнопку **Добавить**.
+
+   1. После добавления веб-канала перейдите на вкладку **Доступные расширения** . Обновление списка расширений может занять некоторое время.
 
    1. На вкладке **Доступные расширения** найдите **Azure IOT Edge** в списке расширений. Выберите его и выберите запрос **установки** над списком расширений.
 

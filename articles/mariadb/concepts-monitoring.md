@@ -3,16 +3,16 @@ title: Мониторинг — база данных Azure для MariaDB
 description: В этой статье описываются метрики для мониторинга и создания предупреждений в Базе данных Azure для MariaDB, включая ЦП, хранилище и статистику подключений.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/21/2020
-ms.openlocfilehash: 7420a7c6355fbcd70ce57fbb36ab29d1241df31f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3d2cf88dba44a7f18f73fbafb66381d2ef8b29c5
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453335"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664288"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Мониторинг в Базе данных Azure для MariaDB
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MariaDB предоставляет различные метрики, позволяющие понять действия сервера.
@@ -25,7 +25,7 @@ ms.locfileid: "96453335"
 ### <a name="list-of-metrics"></a>Список метрик
 Для Базы данных Azure для MariaDB доступны следующие метрики:
 
-|Метрика|Отображаемое имя метрики|Единицы|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Описание|
 |---|---|---|---|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
@@ -65,7 +65,7 @@ ms.locfileid: "96453335"
 
 Дополнительные сведения о настройке уведомлений см. в документе [уведомления о запланированном обслуживании](./concepts-planned-maintenance-notification.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-metric.md).

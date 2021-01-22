@@ -3,17 +3,17 @@ title: Руководство по проектированию сервера �
 description: Этот учебник содержит сведения о создании базы данных и сервера Базы данных Azure для MariaDB и управлении ими с помощью PowerShell.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurepowershell
 ms.topic: tutorial
 ms.date: 05/26/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 9b4500df459e4d4ef67f97dc4fa923988f30401b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 56d901ad05aa589ecf7f2ae97251be2b853f6c55
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023097"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664507"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-powershell"></a>Руководство по проектированию Базы данных Azure для MariaDB с помощью PowerShell
 

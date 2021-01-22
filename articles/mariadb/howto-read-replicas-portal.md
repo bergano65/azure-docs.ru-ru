@@ -3,15 +3,15 @@ title: Управление репликами чтения — портал Azu
 description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MariaDB с помощью портала.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 6/10/2020
-ms.openlocfilehash: 3ca6ef3c368a5f578cc90fae3923caa89f3b076a
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: fa2afdccf9c8bd6ec7f5808674e6eec968838d10
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537753"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98665010"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "94537753"
 
     ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
-7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
+7. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
 
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Рекомендуется, чтобы конфигурация сервера реплики хранилась в значении, превышающем значение источника, чтобы реплика могла поддерживать базу данных master.
@@ -97,7 +97,7 @@ ms.locfileid: "94537753"
 
    ![База данных Azure для MariaDB — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
 
-5. Введите имя реплики и нажмите кнопку **Удалить** , чтобы подтвердить удаление реплики.  
+5. Введите имя реплики и нажмите кнопку **Удалить**, чтобы подтвердить удаление реплики.  
 
    ![Подтверждение удаления реплики базы данных Azure для MariaDB](./media/howto-read-replica-portal/delete-replica-confirm.png)
 

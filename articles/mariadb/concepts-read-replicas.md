@@ -3,16 +3,16 @@ title: Чтение реплик в базе данных Azure для MariaDB
 description: 'Сведения о репликах чтения в базе данных Azure для MariaDB: выбор регионов, создание реплик, подключение к репликам, мониторинг репликации и остановка репликации.'
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 01/18/2021
 ms.custom: references_regions
-ms.openlocfilehash: 39547e3156a684293a0624f974a8b0930f656485
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 375db7e5c113c2a48642365624207ce3acbde8a2
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540004"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664220"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Реплики чтения в Базе данных Azure для MariaDB
 
@@ -182,7 +182,7 @@ mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
 
 Чтобы обновить один из указанных выше параметров на исходном сервере, удалите серверы реплик, обновите значение параметра на первичной реплике и повторно создайте их.
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Другое
 
 * Создание реплики реплики не поддерживается.
 * Таблицы в памяти могут привести к тому, что реплики не будут синхронизированы. Это ограничение технологии репликации MariaDB.

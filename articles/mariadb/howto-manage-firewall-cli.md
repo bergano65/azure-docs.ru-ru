@@ -3,24 +3,24 @@ title: Управление правилами брандмауэра — Azure 
 description: В этой статье описывается, как создать правила брандмауэра Базы данных Azure для MariaDB и управлять ими с помощью интерфейса командной строки Azure.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ef04e2b4c820c14ea7df6c35ecb0189ef31ef7dc
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: f4ae1f3b736f6d263b8d769e241d969d058a69f4
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540906"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98665044"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для MariaDB с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Обзор брандмауэров базы данных Azure для MariaDB см. в статье [правила брандмауэра сервера базы данных Azure для MariaDB](./concepts-firewall-rules.md).
 
 Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-cli.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 * [Установите Azure CLI](/cli/azure/install-azure-cli).
 * [Сервер базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
@@ -28,11 +28,11 @@ ms.locfileid: "94540906"
 Команда **az mariadb server firewall-rule** используется в Azure CLI для создания, удаления, вывода списка, отображения и обновления правил брандмауэра.
 
 Команды:
-- **create** : создание правила брандмауэра сервера Azure MariaDB.
-- **delete** : удаление правила брандмауэра сервера Azure MariaDB.
-- **list** : вывод списка правил брандмауэра сервера Azure MariaDB.
-- **show** : отображение сведений о правиле брандмауэра сервера Azure MariaDB.
-- **update** : обновление правила брандмауэра сервера Azure MariaDB.
+- **create**: создание правила брандмауэра сервера Azure MariaDB.
+- **delete**: удаление правила брандмауэра сервера Azure MariaDB.
+- **list**: вывод списка правил брандмауэра сервера Azure MariaDB.
+- **show**: отображение сведений о правиле брандмауэра сервера Azure MariaDB.
+- **update**: обновление правила брандмауэра сервера Azure MariaDB.
 
 ## <a name="sign-in-to-azure-and-list-your-azure-database-for-mariadb-servers"></a>Войдите в Azure и выведите список серверов базы данных Azure для MariaDB.
 Безопасно подключитесь к Azure CLI с помощью своей учетной записи Azure, используя команду **az login**.
@@ -65,7 +65,7 @@ ms.locfileid: "94540906"
    ```
 
 ## <a name="list-firewall-rules-on-azure-database-for-mariadb-server"></a>Вывод списка правил брандмауэра для сервера Базы данных Azure для MariaDB 
-Используя имя сервера и имя группы ресурсов, выведите список существующих правил брандмауэра на сервере. Выполните команду [az mariadb server firewall list](/cli/azure/mariadb/server/firewall-rule#az-mariadb-server-firewall-rule-list).  Обратите внимание, что атрибут имени сервера указан в параметре **--server** , а не в параметре **--name**. 
+Используя имя сервера и имя группы ресурсов, выведите список существующих правил брандмауэра на сервере. Выполните команду [az mariadb server firewall list](/cli/azure/mariadb/server/firewall-rule#az-mariadb-server-firewall-rule-list).  Обратите внимание, что атрибут имени сервера указан в параметре **--server**, а не в параметре **--name**. 
 ```azurecli-interactive
 az mariadb server firewall-rule list --resource-group myresourcegroup --server-name mydemoserver
 ```
@@ -119,7 +119,7 @@ az mariadb server firewall-rule delete --resource-group myresourcegroup --server
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [правилах брандмауэра сервера Базы данных Azure для MariaDB](./concepts-firewall-rules.md).
 - [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью портал Azure](./howto-manage-firewall-portal.md).
 - Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-cli.md).

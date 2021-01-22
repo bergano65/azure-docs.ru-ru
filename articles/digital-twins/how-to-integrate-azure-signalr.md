@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d84acc5501b3d40f6db85d0ee6ee369aec5a6aa4
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 71e74789654d2df91d9a087eaaf8d8f2a2664f7b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051111"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664118"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Интеграция Azure Digital двойников со службой Azure SignalR
 
@@ -40,7 +40,11 @@ ms.locfileid: "98051111"
 
 Сначала скачайте необходимые примеры приложений. Потребуется следующее:
 * [**Комплексные примеры для цифровых двойников Azure**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/). в этом примере содержится *адтсамплеапп* с двумя функциями Azure для перемещения данных по экземпляру цифрового двойников Azure (Дополнительные сведения об этом сценарии см. в [*руководстве по подключению комплексного решения*](tutorial-end-to-end.md)). Он также содержит пример приложения *девицесимулатор* , которое имитирует устройство IOT, создавая новое значение температуры каждую секунду. 
-    - Перейдите к образцу ссылки и нажмите кнопку *скачать ZIP-файл* , чтобы загрузить копию примера на компьютер, как _**Azure_Digital_Twins_end_to_end_samples.zip**_. Распакуйте папку.
+    - Если вы еще не скачали пример как часть руководства в разделе [*Предварительные требования*](#prerequisites), перейдите к образцу ссылки и нажмите кнопку *обзора кода* под заголовком. Вы перейдете в репозиторий GitHub для образцов, которые можно скачать в виде *. ZIP* , нажав кнопку *код* и *загрузив ZIP*.
+
+    :::image type="content" source="media/includes/download-repo-zip.png" alt-text="Представление репозитория Digital-двойников-Samples на GitHub. Выбрана кнопка кода, в результате чего выдается небольшое диалоговое окно, где была отмечена кнопка Загрузить ZIP-файл." lightbox="media/includes/download-repo-zip.png":::
+
+    Это приведет к скачиванию копии примера репозитория на компьютер **digital-twins-samples-master.zip**. Распакуйте папку.
 * [**Пример веб-приложения для интеграции SignalR**](/samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/): это пример веб-приложения, которое будет использовать данные телеметрии Azure Digital двойников из службы Azure SignalR.
     -  Перейдите к образцу ссылки и нажмите кнопку *скачать ZIP-файл* , чтобы загрузить копию примера на компьютер, как _**Azure_Digital_Twins_SignalR_integration_web_app_sample.zip**_. Распакуйте папку.
 
@@ -63,7 +67,7 @@ ms.locfileid: "98051111"
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Снимок экрана портал Azure, на которой показана страница &quot;ключи&quot; для экземпляра SignalR. Будет выделен значок &quot;Копировать в буфер обмена&quot; рядом с основной СТРОКой подключения." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
 
-Затем запустите Visual Studio (или другой редактор кода по своему усмотрению) и откройте решение Code в папке *Azure_Digital_Twins_end_to_end_samples > адтсамплеапп* . Затем выполните следующие действия, чтобы создать функции.
+Затем запустите Visual Studio (или другой редактор кода по своему усмотрению) и откройте решение Code в папке *Digital-двойников-Samples-master > адтсамплеапп* . Затем выполните следующие действия, чтобы создать функции.
 
 1. Создайте новый яркий класс C# с именем **SignalRFunctions.CS** в проекте *самплефунктионсапп* .
 
@@ -71,7 +75,7 @@ ms.locfileid: "98051111"
     
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/signalRFunction.cs":::
 
-1. В окне *консоли диспетчера пакетов* Visual Studio или в любом окне командной строки на компьютере в папке *Azure_Digital_Twins_end_to_end_samples \адтсамплеапп\самплефунктионсапп* выполните следующую команду, чтобы установить `SignalRService` пакет NuGet в проект:
+1. В окне *консоли диспетчера пакетов* Visual Studio или в любом окне командной строки на компьютере в папке *дигитал-Твинс-самплес-мастер\адтсамплеапп\самплефунктионсапп* выполните следующую команду, чтобы установить `SignalRService` пакет NuGet в проект:
     ```cmd
     dotnet add package Microsoft.Azure.WebJobs.Extensions.SignalRService --version 1.2.0
     ```
@@ -126,7 +130,7 @@ ms.locfileid: "98051111"
 
 Во время комплексного требования к учебнику вы [настроили симулятор устройств](tutorial-end-to-end.md#configure-and-run-the-simulation) для отправки данных через центр Интернета вещей и ваш экземпляр Azure Digital двойников.
 
-Теперь все, что нужно сделать, — это запустить проект симулятора, расположенный в *Azure_Digital_Twins_end_to_end_samples > девицесимулатор > девицесимулатор. sln*. Если вы используете Visual Studio, вы можете открыть проект, а затем запустить его с помощью этой кнопки на панели инструментов:
+Теперь все, что нужно сделать, — это запустить проект симулятора, расположенный в *цифровом двойников-Samples-master > девицесимулатор > девицесимулатор. sln*. Если вы используете Visual Studio, вы можете открыть проект, а затем запустить его с помощью этой кнопки на панели инструментов:
 
 :::image type="content" source="media/how-to-integrate-azure-signalr/start-button-simulator.png" alt-text="Кнопка запуска Visual Studio (проект DeviceSimulator)":::
 
@@ -188,9 +192,9 @@ npm start
 az group delete --name <your-resource-group>
 ```
 
-Наконец, удалите образцы папок проекта, скачанные на локальный компьютер (*Azure_Digital_Twins_end_to_end_samples.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
+Наконец, удалите образцы папок проекта, скачанные на локальный компьютер (*digital-twins-samples-master.zip* и *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы настроите функции Azure с SignalR, чтобы транслировать события телеметрии Digital двойников в пример клиентского приложения.
 

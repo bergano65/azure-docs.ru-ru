@@ -3,15 +3,15 @@ title: Журналы аудита — база данных Azure для MariaD
 description: Описание журналов аудита, доступных в базе данных Azure для MariaDB, и доступных параметров для включения уровней ведения журнала.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 6/24/2020
-ms.openlocfilehash: e66eaf62b54759222421b17ebc7e33b82e018338
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 3032cb8f5ce399822de65c867d1f32da254c9948
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541765"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663763"
 ---
 # <a name="audit-logs-in-azure-database-for-mariadb"></a>Журналы аудита в базе данных Azure для MariaDB
 
@@ -77,7 +77,7 @@ ms.locfileid: "94541765"
 | `db_s` | Имя базы данных, подключенной к |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-### <a name="general"></a>Общее
+### <a name="general"></a>Общие сведения
 
 Приведенная ниже схема относится к типам событий GENERAL, DML_SELECT, DML_NONSELECT, DML, DDL, ДКЛ и ADMIN.
 
@@ -164,6 +164,6 @@ ms.locfileid: "94541765"
     | order by TimeGenerated asc nulls last
     ``` 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка журналов аудита в портал Azure](howto-configure-audit-logs-portal.md)

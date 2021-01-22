@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e19277aa3639031371e0e8dd28f4dd849efd4597
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 24fef1680c5660a70a20ae727833b045f6c5aa88
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97933937"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664356"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Как создать хранилище ключей Azure и политику доступа к хранилищу с помощью шаблона диспетчер ресурсов
 
@@ -23,7 +23,7 @@ ms.locfileid: "97933937"
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
@@ -150,7 +150,7 @@ ms.locfileid: "97933937"
             "permissions": {
               "keys": "[parameters('keysPermissions')]",
               "secrets": "[parameters('secretsPermissions')]",
-              "certificates": [parameters('certificatesPermissions')]
+              "certificates": "[parameters('certificatesPermissions')]"
             }
           }
         ]
@@ -160,6 +160,7 @@ ms.locfileid: "97933937"
 }
 
 ```
+
 Дополнительные сведения о параметрах шаблонов Key Vault см. в разделе [Справочник по шаблонам ARM Key Vault](/azure/templates/microsoft.keyvault/vaults/accesspolicies).
 
 ## <a name="more-key-vault-resource-manager-templates"></a>Дополнительные Key Vault диспетчер ресурсов шаблонов
@@ -168,7 +169,7 @@ ms.locfileid: "97933937"
 
 | Секреты | Ключи | Сертификаты |
 |--|--|--|
-|<ul><li>[Краткое руководство](../secrets/quick-create-template.md)<li>[Ссылки](/azure/templates/microsoft.keyvault/vaults/secrets)|Недоступно|Недоступно|
+|<ul><li>[Краткое руководство](../secrets/quick-create-template.md)<li>[Ссылки](/azure/templates/microsoft.keyvault/vaults/secrets)|Н/Д|Н/Д|
 
 Дополнительные Key Vault шаблоны можно найти здесь: [Key Vault диспетчер ресурсов Reference](/azure/templates/microsoft.keyvault/allversions).
 
@@ -213,9 +214,9 @@ Write-Host "Press [ENTER] to continue..."
 
 - Ознакомьтесь с [обзором Azure Key Vault](../general/overview.md).
 - Дополнительные сведения о [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
-- [Обзор Azure Key Vault безопасности](security-overview.md)
+- Статья [Обзор системы безопасности Azure Key Vault](security-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)
 - [Аутентификация в хранилище ключей](authentication.md)

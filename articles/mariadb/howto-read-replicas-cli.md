@@ -3,16 +3,16 @@ title: Управление репликами чтения — Azure CLI, REST 
 description: В этой статье описывается, как настроить и управлять репликами чтения в базе данных Azure для MariaDB с помощью Azure CLI и REST API.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 70da1e9c70bf80737065362c68781652dd9ab6e5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5ae413a1e0b5711a7c9c6bdec7317c62b4cb9733
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023641"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664959"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-cli-and-rest-api"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью Azure CLI и REST API
 
@@ -21,7 +21,7 @@ ms.locfileid: "96023641"
 ## <a name="azure-cli"></a>Azure CLI
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 - [Установите Azure CLI 2.0](/cli/azure/install-azure-cli).
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве исходного сервера. 

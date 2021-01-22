@@ -3,15 +3,15 @@ title: Создание пользователей с базой данных Az
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером базы данных Azure для MariaDB.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 01/18/2021
-ms.openlocfilehash: 28ec060e95d09cb150fc699919dde6cc0e1eaf23
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 146495947ba06bd74fea6113e57d950d29e29286
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539978"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663712"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Создание пользователей в базе данных Azure для MariaDB
 
@@ -98,7 +98,7 @@ ms.locfileid: "98539978"
 
 Все серверы базы данных Azure для MySQL создаются с помощью пользователя с именем "azure_superuser". Это системная учетная запись, созданная корпорацией Майкрософт для управления сервером с целью проведения мониторинга, резервного копирования и другого регулярного обслуживания. Инженеры по вызову также могут использовать эту учетную запись для доступа к серверу во время инцидента с проверкой подлинности на основе сертификата и должны запрашивать доступ с помощью JIT-процессов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью портала Azure](howto-manage-firewall-portal.md).  
 

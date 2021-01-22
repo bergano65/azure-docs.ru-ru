@@ -6,14 +6,14 @@ author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 01/05/2021
+ms.date: 01/21/2021
 ms.author: duau
-ms.openlocfilehash: c68d9654c673b75742205853ec186caa5d6a3ce5
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 589f8bef7e5023a3667ce0ebf9a14637b007223d
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916156"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664067"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -93,7 +93,7 @@ ms.locfileid: "97916156"
 | **[Chief Telecom](https://www.chief.com.tw/)** |Поддерживается |Поддерживается |Гонконг, Тайбэй |
 | **China Mobile International** |Поддерживается |Поддерживается | Гонконг, Гонконг, Kong2, Сингапур |
 | **China Telecom Global** |Поддерживается |Поддерживается |Гонконг, Гонконг 2 |
-| **China Unicom Global** |Поддерживается |Поддерживается | Сингапур 2 |
+| **China Unicom Global** |Поддерживается |Поддерживается | Гонконг, Сингапур 2 |
 | **[Chunghwa Telecom](https://www.cht.com.tw/en/home/cht/about-cht/products-and-services/International/Cloud-Service)** |Поддерживается |Поддерживается |Тайбэй |
 | **[Claro](https://www.usclaro.com/enterprise-mnc/connectivity/mpls/)** |Поддерживается |Поддерживается |Майами |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Поддерживается |Поддерживается |Чикаго, Далласе, Миннеаполисе, Монреаль, Торонто, Vancouver, Вашингтон (округ Колумбия) |
@@ -121,6 +121,7 @@ ms.locfileid: "97916156"
 | **[Internet Initiative Japan Inc. - IIJ](https://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |Поддерживается |Поддерживается |Осака, Токио |
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург, Лондон |
 | **[Interxion](https://www.interxion.com/why-interxion/colocate-with-the-clouds/Microsoft-Azure/)** |Поддерживается |Поддерживается |Амстердам, Амстердам 2, Копенгаген, Дублин, Франкфурт, Лондон, Марсель, Париж, Цюрих |
+| **[IRIDEOS](https://irideos.it/)** |Поддерживается |Поддерживается |Milan |
 | **[IX Reach](https://www.ixreach.com/partners/cloud-partners/microsoft-azure/)**|Поддерживается |Поддерживается | Амстердам, Лондон 2, Кремниевая долина, Торонто, Вашингтон (округ Колумбия) |
 | **Jaguar Network** |Поддерживается |Поддерживается |Марселе, Париж |
 | **[Jisc](https://www.jisc.ac.uk/microsoft-azure-expressroute)** |Поддерживается |Поддерживается |Лондон, Ньюпорт (то есть) |
@@ -159,7 +160,7 @@ ms.locfileid: "97916156"
 | **[Swisscom](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/microsoft-cloud-services/microsoft-azure-von-swisscom.html)** | Поддерживается | Поддерживается | Цюрих |
 | **[Tata Communications](https://www.tatacommunications.com/lp/izo/azure/azure_index.html)** |Поддерживается |Поддерживается |Амстердам, Ченнаи, Гонконг (САР), Лондон, Мумбаи, Сан-Паулу, Кремниевая долина, Сингапур, Вашингтон (округ Колумбия) |
 | **[Telefonica](https://www.business-solutions.telefonica.com/es/enterprise/solutions/efficient-infrastructure/managed-voice-data-connectivity/)** |Поддерживается |Поддерживается |Амстердам, Сан-Паулу |
-| **[Telehouse — KDDI](https://www.telehouse.net/solutions/cloud-services/cloud-link)** |Поддерживается |Поддерживается |Лондон, Лондон 2 |
+| **[Telehouse — KDDI](https://www.telehouse.net/solutions/cloud-services/cloud-link)** |Поддерживается |Поддерживается |Лондон, London2, Сингапур 2 |
 | **Telenor** |Поддерживается |Поддерживается |Амстердам, Лондон, Осло |
 | **[Telia Carrier](https://www.teliacarrier.com/)** | Поддерживается | Поддерживается |Амстердам, Чикаго, Даллас, Франкфурт, Гонконг, Лондон, Осло, Париж, Кремниевая долина, Стокгольм, Вашингтон (округ Колумбия) |
 | **[телин](https://www.telin.net/)** | Поддерживается | Поддерживается |Джакарта |

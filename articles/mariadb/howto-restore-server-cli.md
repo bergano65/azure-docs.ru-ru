@@ -3,17 +3,17 @@ title: Резервное копирование и восстановление
 description: Как выполнить резервное копирование и восстановление сервера в службе "База данных Azure для MariaDB" с помощью Azure CLI.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a6e46efd7f998437c3998df9a989ef9e1500e888
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ceda6c99493818042aa281ab545465e91493a80e
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539589"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664840"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-cli"></a>Как создать резервную копию сервера в службе "База данных Azure для MariaDB" и восстановить его с помощью Azure CLI
 
@@ -21,7 +21,7 @@ ms.locfileid: "94539589"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Вам потребуется [база данных Azure для сервера и базы данных MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
@@ -100,7 +100,7 @@ az mariadb server restore --resource-group myresourcegroup --name mydemoserver-r
 az mariadb server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen5_8
 ```
 
-С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver* , которые также расположены в группе ресурсов *myresourcegroup*.
+С помощью этой команды можно создать сервер *mydemoserver-georestored* в восточной части США, который будет принадлежать группе ресурсов *myresourcegroup*. Это сервер общего назначения 5-го поколения с 8 виртуальными ядрами. Он создан на основе геоизбыточных резервных копий *mydemoserver*, которые также расположены в группе ресурсов *myresourcegroup*.
 
 Если необходимо создать сервер в другой группе ресурсов с имеющегося сервера, в параметре `--source-server` необходимо определить имя сервера следующим образом.
 

@@ -4,12 +4,12 @@ description: В этой статье описывается использов�
 ms.topic: article
 ms.date: 01/15/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7bfff1a31365724ed1d1cb6ff1956a4e2ef4f4c0
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 70f2fe88cf363572bcbca71115ba08dc0ed10e6d
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539433"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664704"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Рекомендации по повышению производительности с помощью обмена сообщениями через служебную шину
 
@@ -27,7 +27,7 @@ ms.locfileid: "98539433"
 AMQP является наиболее эффективным, так как поддерживает подключение к служебной шине. Он также реализует [пакетную обработку](#batching-store-access) и [предзагрузку](#prefetching). Если явно не указано иное, в этой статье предполагается использование протокола AMQP или SBMP.
 
 > [!IMPORTANT]
-> SBMP доступен только для .NET Framework. AMQP используется по умолчанию для .NET Standard.
+> SBMP доступен только для платформа .NET Framework. AMQP используется по умолчанию для .NET Standard.
 
 ## <a name="choosing-the-appropriate-service-bus-net-sdk"></a>Выбор соответствующего пакета SDK для .NET служебной шины
 Существует три поддерживаемых пакета SDK для .NET служебной шины Azure. Их API-интерфейсы похожи, и их можно запутать. Сведения о принятии решений см. в следующей таблице. Пакет SDK для Azure. Messaging. ServiceBus является последним, и мы рекомендуем использовать его поверх других пакетов SDK. Пакеты SDK Azure. Messaging. ServiceBus и Microsoft. Azure. ServiceBus являются современными, производительными и совместимыми с различными платформами. Кроме того, они поддерживают AMQP через WebSockets и являются частью коллекции SDK Azure .NET для проектов с открытым кодом.
@@ -150,8 +150,8 @@ static Task ErrorHandler(ProcessErrorEventArgs args)
 
 static async Task MessageHandler(ProcessMessageEventArgs args)
 {
-Console.WriteLine("Handle message");
-      await args.CompleteMessageAsync(args.Message);
+    Console.WriteLine("Handle message");
+    await args.CompleteMessageAsync(args.Message);
 }
 
 await processor.StartProcessingAsync();
@@ -346,6 +346,8 @@ var queue = namespaceManager.CreateQueue(queueDescription);
 
 - [Сервицебусрецеивер. PrefetchCount](/dotnet/api/azure.messaging.servicebus.servicebusreceiver.prefetchcount)
 - [Сервицебуспроцессор. PrefetchCount](/dotnet/api/azure.messaging.servicebus.servicebusprocessor.prefetchcount)
+
+Значения этих свойств можно задать в [сервицебусрецеивероптионс](/dotnet/api/azure.messaging.servicebus.servicebusreceiveroptions) или [сервицебуспроцессороптионс](/dotnet/api/azure.messaging.servicebus.servicebusprocessoroptions).
 
 # <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
 

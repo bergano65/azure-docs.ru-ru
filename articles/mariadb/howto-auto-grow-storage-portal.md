@@ -3,22 +3,22 @@ title: Автоматическое расширение хранилища — 
 description: В этой статье описывается, как включить автоматическое увеличение хранилища для базы данных Azure для MariaDB с помощью портал Azure
 author: ambhatna
 ms.author: ambhatna
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 56bc6c0e7a294f80e946a2eb0c84e5d0bd49d0f5
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: f6410f34a4bbfde0a7090222979b3c4c98673981
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426068"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663474"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mariadb-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MariaDB с помощью портал Azure
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MariaDB, не влияя на рабочую нагрузку.
 
 Когда сервер достигает предельного размера выделенного хранилища, сервер помечается как доступный только для чтения. Однако если включить автоматическое увеличение размера хранилища, серверное хранилище будет увеличиваться в соответствии с растущими данными. Для серверов с подготовленным хранилищем объемом менее 100 ГБ размер подготовленного хранилища увеличивается на 5 ГБ, как только объем свободного хранилища превысит 1 ГБ или 10% подготовленного хранилища. Для серверов с более чем 100 ГБ подготовленного хранилища размер подготовленного хранилища увеличивается на 5%, если объем свободного пространства превышает 5% от подготовленного объема хранилища. Максимальный объем хранилища, указанный [здесь](concepts-pricing-tiers.md#storage) , применим.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер базы данных Azure для MariaDB](./quickstart-create-mariadb-server-database-using-azure-portal.md)
 
@@ -40,6 +40,6 @@ ms.locfileid: "92426068"
 
     ![База данных Azure для MariaDB — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-metric.md).

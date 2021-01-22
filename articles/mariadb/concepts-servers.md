@@ -3,15 +3,15 @@ title: Серверы — база данных Azure для MariaDB
 description: В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MariaDB.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 4d8293258083ea3e8d0172f510e5b41e91328736
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: abe17556d9ff62c44a33bfe4c4546a284785522e
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541068"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664135"
 ---
 # <a name="server-concepts-in-azure-database-for-mariadb"></a>Основные понятия работы с сервером в базе данных Azure для MariaDB
 В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для MariaDB.
@@ -40,7 +40,7 @@ ms.locfileid: "94541068"
 |||
 | :--| :--|
 | **Аутентификация и авторизация** | Сервер базы данных Azure для MariaDB поддерживает собственную аутентификацию MySQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
-| **Протокол** | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
+| **протокол**; | Служба поддерживает протокол на основе сообщений, используемый MySQL. |
 | **TCP/IP** | Протокол работает через TCP/IP, а также через сокеты домена Unix. |
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу базы данных, пока не будут указаны компьютеры, которые имеют разрешение. См. статью [Правила брандмауэра сервера базы данных Azure для MariaDB](./concepts-firewall-rules.md). |
 | **SSL** | Служба поддерживает применение SSL-соединений между приложениями и сервером базы данных. См. [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB](./howto-configure-ssl.md). |
@@ -61,8 +61,8 @@ ms.locfileid: "94541068"
 ## <a name="how-do-i-manage-a-server"></a>Как управлять сервером?
 Управлять серверами базы данных Azure для MariaDB можно с помощью портала Azure или Azure CLI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Общие сведения об этой службе см. в статье [Обзор базы данных Azure для MariaDB](./overview.md).
-- Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб** , см. в разделе [уровни служб](./concepts-pricing-tiers.md) .
+- Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](./concepts-pricing-tiers.md) .
 
 <!-- - For information about connecting to the service, see [Connection libraries for Azure Database for MariaDB](./concepts-connection-libraries.md). -->

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1667c21b9a35b8e93feffb8cf1b37d4409da73c3
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 1552401953a8cba9dda787a0f0e461adb7972920
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044312"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664458"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -29,11 +29,13 @@ ms.locfileid: "98044312"
 
 ## <a name="prerequisites-download-the-script"></a>Предварительные требования: скачивание скрипта
 
-Пример скрипта написан на PowerShell. Это часть [**комплексных примеров Azure Digital двойников**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *скачать ZIP-файл* под заголовком.
+Пример скрипта написан на PowerShell. Это часть [**комплексных примеров Azure Digital двойников**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *обзора кода* под заголовком. Вы перейдете в репозиторий GitHub для образцов, которые можно скачать в виде *. ZIP* , нажав кнопку *код* и *загрузив ZIP*.
 
-При этом пример проекта будет скачан на компьютер как _**Azure_Digital_Twins_end_to_end_samples.zip**_. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
+:::image type="content" source="media/includes/download-repo-zip.png" alt-text="Представление репозитория Digital-двойников-Samples на GitHub. Выбрана кнопка кода, в результате чего выдается небольшое диалоговое окно, где была отмечена кнопка Загрузить ZIP-файл." lightbox="media/includes/download-repo-zip.png":::
 
-В распакованной папке скрипт развертывания находится в каталоге _Azure_Digital_Twins_end_to_end_samples > скрипты > **deploy.ps1**_.
+Будет загружен *. ZIP* -папку на компьютер как **digital-twins-samples-master.zip**. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
+
+В распакованной папке скрипт развертывания находится в сценариях _Digital-двойников-Samples-master > > **deploy.ps1**_.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -56,7 +58,7 @@ ms.locfileid: "98044312"
 
     :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Окно Cloud Shell, показывающее значок отправки":::
 
-    Перейдите в файл _**deploy.ps1**_ на компьютере (в _Azure_Digital_Twins_end_to_end_samples > сценарии > **deploy.ps1**_) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
+    Перейдите к файлу _**deploy.ps1**_ на компьютере (в папке _Digital-двойников-Samples-Master > scripts > **deploy.ps1**_) и нажмите кнопку "Открыть". Файл будет отправлен в Cloud Shell, чтобы его можно было запустить в окне Cloud Shell.
 
 4. Запустите сценарий, отправив `./deploy.ps1` команду в окне Cloud Shell. Вы можете скопировать приведенную ниже команду (Напомним, что для вставки в Cloud Shell можно использовать **сочетание клавиш CTRL + SHIFT + v** в Windows и Linux или **CMD + SHIFT + v** в macOS. Вы также можете использовать контекстное меню.
 
@@ -102,7 +104,7 @@ ms.locfileid: "98044312"
 
 Если проверка завершилась неудачно, можно повторить попытку создания экземпляра с помощью [портала](how-to-set-up-instance-portal.md#create-the-azure-digital-twins-instance) или [интерфейса командной строки](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance).
 
-### <a name="collect-instance-values"></a>Получение значений экземпляров
+### <a name="collect-instance-values"></a>Сбор значений экземпляров
 
 Выберите имя своего экземпляра на [странице Azure Digital двойников](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances) , чтобы открыть страницу *обзора* экземпляра. Запомните его *имя*, *группу ресурсов* и *имя узла*. Эти данные могут потребоваться позже для обнаружения экземпляра и подключения к нему.
 
@@ -117,7 +119,7 @@ ms.locfileid: "98044312"
 
 Если проверка завершилась неудачно, можно также повторить собственное назначение ролей с помощью [портала](how-to-set-up-instance-portal.md#set-up-user-access-permissions) или [интерфейса командной строки](how-to-set-up-instance-cli.md#set-up-user-access-permissions).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
 * [AZ DT Справочник](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)

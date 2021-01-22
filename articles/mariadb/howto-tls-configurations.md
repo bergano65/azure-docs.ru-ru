@@ -3,15 +3,15 @@ title: Настройка TLS — портал Azure — база данных A
 description: Узнайте, как настроить конфигурацию TLS с помощью портал Azure для базы данных Azure для MariaDB.
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: 55a664ceb3524a0c545e037dcba7a2af90034ad4
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: b4e167714ffccd20b4628fd21fb6b284d5400112
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241990"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664772"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-mariadb-using-azure-portal"></a>Настройка параметров TLS в базе данных Azure для MariaDB с помощью портал Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "93241990"
 
 Вы можете применить версию TLS для подключения к своей базе данных Azure для MariaDB, задав минимальную версию TLS для своего сервера базы данных. Например, если задать для параметра минимальной настройки TLS значение TLS 1,0, сервер разрешит подключения клиентов, использующих TLS 1,0, 1,1 и 1.2. Кроме того, если задать для этого параметра значение 1,2, то разрешаются подключения только от клиентов, использующих TLS 1.2 +, а все соединения с TLS 1,0 и TLS 1,1 будут отклонены.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -43,6 +43,6 @@ ms.locfileid: "93241990"
 
     ![Настройка Azure Database для MariaDB TLS выполнена](./media/howto-tls-configurations/tls-configurations-success.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [создании оповещений о метриках](howto-alert-metric.md)
