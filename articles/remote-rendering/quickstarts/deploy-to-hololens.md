@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 3eec935d0a25f9510cd9a2f6e00b7ac22756e697
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a5a44b9d27901fcd00f8813096de6bbae5f2310d
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88796805"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179951"
 ---
 # <a name="quickstart-deploy-unity-sample-to-hololens"></a>Краткое руководство. Развертывание примера Unity в HoloLens
 
@@ -36,19 +36,19 @@ ms.locfileid: "88796805"
 1. Для параметра *Платформа* выберите **Универсальная платформа Windows**
 1. Задайте *целевое устройство* на **HoloLens**
 1. Для параметра *Архитектура* выберите **ARM64**
-1. Для параметра *Build Type* (Тип сборки) выберите **D3D Project** (Проект D3D).\
+1. Для параметра *Build Type* (Тип сборки) выберите **D3D Project**\ (Проект D3D).
     ![Параметры сборки](./media/unity-build-settings.png)
 1. Выберите **Switch to Platform** (Переключиться на платформу)
 1. При нажатии **Сборка** (или "Сборка и запуск") вам будет предложено выбрать папку, в которой будет храниться решение
 1. Откройте созданный файл **Quickstart.sln** в Visual Studio
 1. Измените конфигурацию на **Выпуск** и **ARM64**
-1. Для отладчика выберите режим **Remote Machine** (Удаленный компьютер).\
+1. Для отладчика выберите режим **Remote Machine**\ (Удаленный компьютер).
     ![Конфигурация решения](media/unity-deploy-config.png)
 1. Выполните сборку решения.
 1. Для проекта "Быстрый запуск" перейдите в раздел *Свойства > Отладка*
     1. Убедитесь, что конфигурация *Выпуска* активна
     1. Установите для пункта *Отладчик для запуска* значение **Удаленный компьютер**
-    1. Измените *имя компьютера* на **IP-адрес вашего HoleLens**
+    1. Измените *имя компьютера* на **IP-адрес вашего устройства HoloLens**
 
 ## <a name="launch-the-sample-project"></a>Запуск примера проекта
 

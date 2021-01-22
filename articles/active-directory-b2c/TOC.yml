@@ -383,6 +383,8 @@
           href: partner-itsme.md
         - name: Jumio
           href: partner-jumio.md
+        - name: Без ключей
+          href: partner-keyless.md
         - name: LexisNexis
           href: partner-lexisnexis.md
         - name: Удостоверение N8
@@ -417,9 +419,9 @@
         - name: Azure Monitor
           href: azure-monitor.md
           displayName: 'log, logs, logging, usage, events'
-        - name: "Управление пользователями\_— Microsoft Graph"
-          href: manage-user-accounts-graph-api.md
-          displayName: 'account, accounts'
+        - name: API Microsoft Graph
+          href: microsoft-graph-operations.md
+          displayName: 'account, accounts, msgraph, ms graph, graph'
         - name: Развертывание с использованием Azure Pipelines
           href: deploy-custom-policies-devops.md
           displayName: 'azure devops, ci/cd, cicd, custom policy, policies'
@@ -463,8 +465,6 @@
       href: extensions-app.md
     - name: Заметки о выпуске пользовательской политики (IEF)
       href: custom-policy-developer-notes.md
-    - name: Операции Microsoft Graph API
-      href: microsoft-graph-operations.md
     - name: Версии макета страницы
       href: page-layout.md
     - name: Доступность в регионах и размещение данных

@@ -18,38 +18,32 @@
   expanded: true
 - name: Учебники
   items:
-    - name: "1.\_Создание виртуальной машины и управление ею"
+    - name: Создание и администрирование виртуальных машин
       href: tutorial-manage-vm.md
-    - name: "2.\_Создание дисков и управление ими"
+    - name: Создание и администрирование дисков
       href: tutorial-manage-data-disk.md
-    - name: "3.\_Автоматизация настройки"
+    - name: Автоматизация настройки
       href: tutorial-automate-vm-deployment.md
-    - name: "4.\_Создание образов виртуальных машин"
+    - name: Создание образов виртуальных машин
       href: tutorial-custom-images.md
-    - name: "5.\_Высокодоступные виртуальные машины"
+    - name: Высокодоступные виртуальные машины
       href: tutorial-availability-sets.md
-    - name: "6.\_Создание масштабируемого набора"
+    - name: Создание масштабируемого набора
       href: tutorial-create-vmss.md
-    - name: "7.\_Распределение нагрузки виртуальных машин"
+    - name: Балансировка нагрузки виртуальных машин
       href: tutorial-load-balancer.md
-    - name: "8.\_Управление сетями"
+    - name: Управление сетями
       href: tutorial-virtual-network.md
-    - name: "9.\_Резервное копирование виртуальных машин"
-      href: tutorial-backup-vms.md
-    - name: "10.\_Включение аварийного восстановления"
+    - name: Включение аварийного восстановления
       href: tutorial-disaster-recovery.md
-    - name: "11.\_Управление виртуальными машинами"
+    - name: Управление виртуальными машинами
       displayName: scope policy Azure RBAC lock tag
       href: tutorial-govern-resources.md
-    - name: "12.\_Отслеживание и обновление виртуальных машин"
+    - name: Отслеживание и обновление виртуальных машин
       href: tutorial-config-management.md
-    - name: "13.\_Мониторинг виртуальных машин"
+    - name: Мониторинг виртуальных машин
       href: tutorial-monitor.md
-    - name: "14.\_Управление безопасностью виртуальных машин"
-      href: ../tutorial-azure-security.md
-    - name: "15.\_Установка стека SQL\\IIS\\.NET"
-      href: tutorial-iis-sql.md
-    - name: "16.\_Защита веб-сервера с помощью SSL"
+    - name: Secure a web server with SSL certificates on a Linux virtual machine in Azure (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
       href: tutorial-secure-web-server.md
 - name: Основные понятия
   items:
@@ -758,8 +752,6 @@
           href: ../custom-data.md
         - name: Chef
           href: /azure/developer/chef/windows-vm-configure
-        - name: Публикация веб-приложения из Visual Studio
-          href: publish-web-app-from-visual-studio.md
     - name: Запуск приложений
       items:
         - name: "SQL\_Server"

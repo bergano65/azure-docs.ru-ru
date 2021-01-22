@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 0701e9c6428283d45cf4b4a2e24c8de99d9a286b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bf9a96d7ffc3b939abe8cfb889c5bd49fee09cc
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89265904"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694627"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-v-2-v-3-migration-introduction.md).
 
 Службы мультимедиа Azure (AMS) позволяют получить доступ к данным телеметрии и метрик для служб. Текущая версия AMS позволяет собирать данные телеметрии для работающих сущностей **Channel**, **StreamingEndpoint** и **Archive**. 
 
@@ -54,7 +54,7 @@ ms.locfileid: "89265904"
 
 - Можно считывать данные непосредственно из хранилища таблиц Azure (например, с помощью пакета SDK для хранилища). Описание таблиц хранилища телеметрии см. в подразделе **Использование данных телеметрии**[этого](/previous-versions/azure/mt742089(v=azure.100)) раздела.
 
-Или
+либо
 
 - Для чтения данных из хранилища можно использовать поддержку, реализованную в пакете SDK служб мультимедиа для .NET, как описано в [этом](media-services-dotnet-telemetry.md) разделе. 
 
@@ -80,8 +80,8 @@ ms.locfileid: "89265904"
 PartitionKey|{ИД_учетной_записи}_{ИД_сущности}|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>Идентификатор учетной записи добавляется в ключ секции для упрощения рабочих процессов, в которых несколько учетных записей служб мультимедиа записывают данные в одну учетную запись хранения.
 RowKey|{число секунд до полуночи}_{случайное значение}|01688_00199<br/><br/>Ключ строки начинается с числа секунд до полуночи, чтобы сделать возможным выполнение запросов получения N первых элементов в секции. Дополнительные сведения см. в [этой статье](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern). 
 Отметка времени|Дата и время|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Тип|Тип сущности, предоставляющей данные телеметрии.|Channel, StreamingEndpoint, Archive.<br/><br/>Тип события — это просто строковое значение.
-Имя|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
+Type|Тип сущности, предоставляющей данные телеметрии.|Channel, StreamingEndpoint, Archive.<br/><br/>Тип события — это просто строковое значение.
+name|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
 ObservedTime|Время возникновения события телеметрии (UTC).|2016-09-09T22:42:36.924Z<br/><br/>Наблюдаемое время предоставляется сущностью, отправляющей данные телеметрии (например, сущностью Channel). Возможны проблемы синхронизации между компонентами, поэтому данное значение является приблизительным.
 ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 Свойства, относящиеся к сущности|Определяются событием.|StreamName: stream1, Bitrate 10123…<br/><br/>Остальные свойства определены для конкретного типа события. Таблица Azure содержит пары "ключ-значение".  (То есть различные строки в таблице имеют разные наборы свойств.)
@@ -101,7 +101,7 @@ ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Тип|Тип|StreamingEndpoint
+Type|Type|StreamingEndpoint
 Имя|Имя|StreamingEndpointRequestLog
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
@@ -120,7 +120,7 @@ E2ELatency|Средняя совокупная задержка.|250
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Тип|Тип|Канал
+Type|Type|Канал
 Имя|Имя|ChannelHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
@@ -133,10 +133,10 @@ OverlapCount|Перекрытие при приеме.|0
 DiscontinuityCount|Прерывание дорожки.|0
 LastTimestamp|Метка времени последнего получения данных.|1800488800
 NonincreasingCount|Число фрагментов, отклоненных из-за невозрастающей метки времени.|2
-UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |True
-UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|True
-UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |True
-Работоспособно|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|True<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
+UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |Да
+UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|Да
+UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |Да
+Работоспособно|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|Да<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
 
 **Динамический Архив**
 
@@ -145,7 +145,7 @@ UnexpectedBitrate|Значение True, если расчетная или фа
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
-Тип|Тип|Архив
+Type|Type|Архив
 Имя|Имя|ArchiveHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
@@ -217,7 +217,7 @@ Bitrate|Скорость дорожки.|785000
 
 Система телеметрии не предоставляет инструментов управления хранением данных или автоматического удаления устаревших записей. Таким образом необходимо вручную управлять данными и удалять устаревшие записей из таблицы хранилища. Узнать о том, как это сделать, можно в документации по пакету SDK для хранилища.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

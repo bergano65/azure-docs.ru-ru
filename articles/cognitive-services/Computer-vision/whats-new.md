@@ -8,18 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: overview
-ms.date: 12/15/2020
+ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 98b8cca95b8815b32fb5de6567adcf4f150551eb
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 33987be39258adc74cf4f88dbb0544f7026f6086
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561976"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183359"
 ---
 # <a name="whats-new-in-computer-vision"></a>Новые возможности Компьютерного зрения
 
 Узнайте о новых возможностях службы. Эти элементы могут включать заметки о выпуске, видео, записи блогов и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
+
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="spatial-analysis-container-update"></a>Обновление контейнера для пространственного анализа
+
+Выпущена новая версия [контейнера для пространственного анализа](spatial-analysis-container.md) с новым набором возможностей. Этот контейнер Docker позволяет анализировать потоковую передачу видео в реальном времени для распознавания пространственных связей между людьми и их перемещения в физических средах. 
+
+* Теперь можно настроить [операции пространственного анализа](spatial-analysis-operations.md) для определения того, надето ли на лице человека что-либо, например защитная маска. 
+    * Для операций `personcount`, `personcrossingline` и `personcrossingpolygon` можно включить классификатор масок, настроив параметр `ENABLE_FACE_MASK_CLASSIFIER`.
+    * Для каждого человека, обнаруженного в видеопотоке, будут возвращаться атрибуты `face_mask` и `face_noMask` как метаданные с оценкой достоверности.
+
 
 ## <a name="october-2020"></a>Октябрь 2020 г.
 

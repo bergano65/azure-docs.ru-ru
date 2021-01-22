@@ -18,49 +18,45 @@
   expanded: true
 - name: Учебники
   items:
-    - name: "1.\_Создание виртуальных машин и управление ими"
+    - name: Создание и администрирование виртуальных машин
       href: tutorial-manage-vm.md
-    - name: "2.\_Создание дисков и управление ими"
+    - name: Создание и администрирование дисков
       href: tutorial-manage-disks.md
-    - name: "3.\_Автоматизация настройки"
+    - name: Автоматизация настройки
       href: tutorial-automate-vm-deployment.md
-    - name: "4.\_Создание образов виртуальных машин"
+    - name: Создание образов виртуальных машин
       href: tutorial-custom-images.md
-    - name: "5.\_Высокодоступные виртуальные машины"
+    - name: Высокодоступные виртуальные машины
       href: tutorial-availability-sets.md
-    - name: "6.\_Создание масштабируемого набора"
+    - name: Создание масштабируемого набора
       href: tutorial-create-vmss.md
-    - name: "7.\_Распределение нагрузки виртуальных машин"
+    - name: Балансировка нагрузки виртуальных машин
       href: tutorial-load-balancer.md
-    - name: "8.\_Управление сетями"
+    - name: Управление сетями
       href: tutorial-virtual-network.md
-    - name: "9.\_Резервное копирование виртуальных машин"
-      href: tutorial-backup-vms.md
-    - name: "10.\_Включение аварийного восстановления"
+    - name: Включение аварийного восстановления
       href: tutorial-disaster-recovery.md
-    - name: "11.\_Управление виртуальными машинами"
+    - name: Управление виртуальными машинами
       href: tutorial-govern-resources.md
-    - name: "12.\_Отслеживание и обновление виртуальных машин"
+    - name: Отслеживание и обновление виртуальных машин
       href: tutorial-config-management.md
-    - name: "13.\_Мониторинг виртуальных машин"
+    - name: Мониторинг виртуальных машин
       href: tutorial-monitor.md
-    - name: "14.\_Управление безопасностью виртуальных машин"
-      href: ../tutorial-azure-security.md
-    - name: "15a.\_Сборка с помощью Jenkins"
+    - name: Сборка с помощью Jenkins
       href: /azure/developer/jenkins/pipeline-with-github-and-docker
-    - name: 15b. Интеграция Jenkins с Azure DevOps
+    - name: Интеграция Jenkins с Azure DevOps
       href: /azure/developer/jenkins/deploy-to-linux-vm-using-azure-devops-services
-    - name: "16a.\_Настройка стратегии последовательного развертывания"
+    - name: Настройка стратегии последовательного развертывания
       href: tutorial-devops-azure-pipelines-classic.md
-    - name: "16b.\_Настройка стратегии раннего развертывания"
+    - name: Настройка стратегии раннего развертывания
       href: tutorial-azure-devops-canary-strategy.md
-    - name: "16c.\_Настройка стратегии развертывания по схеме Blue-Green"
+    - name: Настройка стратегии развертывания по схеме Blue-Green
       href: tutorial-azure-devops-blue-green-strategy.md
-    - name: 16d. Использование CI/CD с Azure Pipelines (YAML)
+    - name: CI/CD с использованием Azure Pipelines (YAML)
       href: tutorial-build-deploy-azure-pipelines.md
-    - name: "17.\_Создание стека LAMP"
+    - name: Создание стека LAMP
       href: tutorial-lamp-stack.md
-    - name: "18.\_Защита веб-сервера с помощью SSL"
+    - name: Secure a web server with SSL certificates on a Linux virtual machine in Azure (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
       href: tutorial-secure-web-server.md
 - name: Основные понятия
   items:

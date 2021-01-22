@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a300345749351a360a16dc00424ee41ece7a17c9
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 6c1c74f86a9cf0e4bcd73844222f256a715cbfe5
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652985"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695896"
 ---
 # <a name="customizing-media-encoder-standard-presets"></a>Настройка предустановок Media Encoder Standard
 
@@ -33,7 +33,7 @@ ms.locfileid: "97652985"
 В этой статье показано, как настроить предустановку. Для примера взята предустановка [H264 Multiple Bitrate 720p](media-services-mes-preset-H264-Multiple-Bitrate-720p.md), в которой уменьшается количество уровней. В статье [Настройка предустановок MES для расширенного кодирования](media-services-advanced-encoding-with-mes.md) показаны пользовательские предустановки, которые могут использоваться для выполнения расширенных задач кодирования.
 
 > [!NOTE]
-> Пользовательские предустановки, описанные в этой статье, нельзя использовать в преобразованиях [служб мультимедиа v3](../latest/index.yml) или командах CLI. Дополнительные сведения см. в [руководстве по миграции с версии 2 на v3](../latest/migrate-from-v2-to-v3.md) .
+> Пользовательские предустановки, описанные в этой статье, нельзя использовать в преобразованиях [служб мультимедиа v3](../latest/index.yml) или командах CLI. Дополнительные сведения см. в [руководстве по миграции с версии 2 на v3](../latest/migrate-v-2-v-3-migration-introduction.md) .
 
 ## <a name="customizing-a-mes-preset"></a><a id="customizing_presets"></a> Настройка предустановки MES
 
@@ -269,7 +269,7 @@ namespace CustomizeMESPresests
 }
 ```
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Как кодировать с пользовательским преобразованием с помощью интерфейса командной строки](../latest/custom-preset-cli-howto.md)
 - [Кодирование с помощью Служб мультимедиа версии 3](../latest/encoding-concept.md)

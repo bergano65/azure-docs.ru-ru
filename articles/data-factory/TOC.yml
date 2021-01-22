@@ -109,8 +109,8 @@
               href: tutorial-data-flow.md
             - name: Видеоматериалы по потоку данных для сопоставления
               href: data-flow-tutorials.md
-        - name: Подготовка данных с помощью первичной обработки потоков данных
-          href: wrangling-data-flow-tutorial.md
+        - name: Подготовка данных с помощью первичной обработки данных
+          href: wrangling-tutorial.md
         - name: Использование внешних служб
           items:
             - name: HDInsight Spark
@@ -197,12 +197,12 @@
               href: concepts-data-flow-expression-builder.md
             - name: Язык выражений
               href: data-flow-expression-functions.md
-        - name: Подготовка данных с помощью первичной обработки потоков данных
+        - name: Подготовка данных с помощью первичной обработки данных Power Query
           items:
-            - name: Общие сведения о первичной обработке потоков данных
-              href: wrangling-data-flow-overview.md
+            - name: Общие сведения о первичной обработке данных
+              href: wrangling-overview.md
             - name: Поддерживаемые функции
-              href: wrangling-data-flow-functions.md
+              href: wrangling-functions.md
     - name: Роли и разрешения
       href: concepts-roles-permissions.md
     - name: Правила именования
@@ -464,6 +464,8 @@
       items:
         - name: Выполнение действия потока данных
           href: control-flow-execute-data-flow-activity.md
+        - name: Выполнение действия Power Query
+          href: control-flow-power-query-activity.md
         - name: Действия функции Azure
           href: control-flow-azure-function-activity.md
         - name: Настраиваемое действие

@@ -58,6 +58,8 @@
       href: fqdn-filtering-network-rules.md
     - name: Базовые средства безопасности
       href: security-baseline.md
+    - name: Поддержка активного FTP-подключения
+      href: active-ftp-support.md
 - name: Практические руководства
   items:
     - name: "Развертывание с помощью Azure\_PowerShell"

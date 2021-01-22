@@ -98,7 +98,7 @@
           href: reservations/reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/toc.json
         - name: Данные об использовании для отдельных подписок
           href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
-        - name: Данные об использовании для корпоративных клиентов
+        - name: "Данные об использовании\_— Клиентское соглашение Майкрософт и корпоративное соглашение"
           href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
     - name: Выставление счетов
       items:

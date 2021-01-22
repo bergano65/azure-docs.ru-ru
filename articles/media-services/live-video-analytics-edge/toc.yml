@@ -59,8 +59,12 @@
   items:
     - name: Примеры прямых методов C#
       href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp'
+    - name: Примеры для пакета SDK для C#
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp-sdk'
     - name: Примеры прямых методов Python
       href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-python'
+    - name: Примеры пакета SDK для Python
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-python-sdk'
 - name: Основные понятия
   items:
     - name: Граф мультимедиа

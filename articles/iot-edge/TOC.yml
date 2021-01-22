@@ -17,9 +17,9 @@
   items:
     - name: Настройка среды разработки
       items:
-        - name: Разработка для устройств Linux
+        - name: Разработка с помощью контейнеров Linux
           href: tutorial-develop-for-linux.md
-        - name: Разработка для устройств Windows
+        - name: Разработка с помощью контейнеров Windows
           href: tutorial-develop-for-windows.md
     - name: Разработка модулей пользовательского кода
       items:
@@ -77,6 +77,8 @@
   items:
     - name: Среда выполнения IoT Edge
       href: iot-edge-runtime.md
+    - name: IoT Edge для Linux в Windows
+      href: iot-edge-for-linux-on-windows.md
     - name: Модули IoT Edge
       items:
         - name: Общие сведения о модулях Azure IoT Edge
@@ -119,23 +121,25 @@
   items:
     - name: Создание устройства IoT Edge
       items:
-        - name: Установка среды выполнения
-          href: how-to-install-iot-edge.md
-        - name: Регистрация и проверка подлинности устройства
+        - name: Регистрация устройства в Центре Интернета вещей
+          href: how-to-register-device.md
+        - name: Установка и подготовка IoT Edge
           items:
-            - name: Проверка подлинности с использованием симметричного ключа
-              href: how-to-manual-provision-symmetric-key.md
-            - name: Проверка подлинности на основе сертификата X.509
-              href: how-to-manual-provision-x509.md
+            - name: "Установка IoT\_Edge для Linux"
+              href: how-to-install-iot-edge.md
+            - name: Выполнение IoT Edge для Linux в Windows
+              href: how-to-install-iot-edge-on-windows.md
         - name: Обновление среды выполнения
           href: how-to-update-iot-edge.md
         - name: Управление сертификатами устройств
           href: how-to-manage-device-certificates.md
-        - name: Создание тестовых сертификатов
-          href: how-to-create-test-certificates.md
-        - name: IoT Edge в Kubernetes
+    - name: Альтернативные сценарии устройств
+      items:
+        - name: Выполнение IoT Edge с контейнерами Windows
+          href: how-to-install-iot-edge-windows-on-windows.md
+        - name: Выполнение IoT Edge в Kubernetes
           href: how-to-install-iot-edge-kubernetes.md
-        - name: Создание виртуальной машины IoT Edge с помощью шаблона ARM
+        - name: Развертывание виртуальной машины IoT Edge с помощью шаблона ARM
           href: how-to-install-iot-edge-ubuntuvm.md
     - name: Автоматическая подготовка с помощью DPS
       items:
@@ -243,6 +247,8 @@
           href: troubleshoot-common-errors.md
 - name: Справочник
   items:
+    - name: Создание тестовых сертификатов
+      href: how-to-create-test-certificates.md
     - name: Скрипты управления устройствами Windows
       href: reference-windows-scripts.md
     - name: Azure CLI

@@ -38,7 +38,7 @@
           href: ../containers/index.yml
 - name: Основные понятия
   items:
-    - name: Рекомендации по работе с API Детектора аномалий
+    - name: Рекомендации по работе с API  Детектора аномалий
       href: concepts/anomaly-detection-best-practices.md
 - name: Справочник
   items:

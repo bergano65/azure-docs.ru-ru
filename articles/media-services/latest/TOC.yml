@@ -258,8 +258,49 @@
               href: job-error-codes.md
         - name: Сброс данных учетной записи
           href: cli-reset-account-credentials.md
-    - name: Миграция из версии 2 в версию 3
+    - name: Руководство по миграции
+      displayName: migration
       items:
+        - name: "Руководство по миграции\_— введение"
+          href: migrate-v-2-v-3-migration-introduction.md
+          displayName: migration
+        - name: "Шаг\_1. Преимущества"
+          href: migrate-v-2-v-3-migration-benefits.md
+          displayName: 'migration, benefits'
+        - name: Шаг 2. Различия
+          items:
+            - name: Доступ через API
+              href: migrate-v-2-v-3-differences-api-access.md
+              displayName: 'migration, api'
+            - name: Недостатки функций
+              href: migrate-v-2-v-3-differences-feature-gaps.md
+              displayName: 'migration, features'
+            - name: Изменения терминологии и сущностей
+              href: migrate-v-2-v-3-differences-terminology.md
+              displayName: 'migration, entity, api'
+        - name: Шаг 3. Установка пакета SDK
+          href: migrate-v-2-v-3-migration-setup.md
+          displayName: 'migration, SDK`'
+        - name: Шаг 4. Руководство по миграции на основе сценариев
+          items:
+            - name: Кодирование
+              href: migrate-v-2-v-3-migration-scenario-based-encoding.md
+              displayName: 'migration, encoding'
+            - name: Потоковая передача в реальном времени
+              href: migrate-v-2-v-3-migration-scenario-based-live-streaming.md
+              displayName: 'migration, live streaming'
+            - name: Упаковка и доставка
+              href: migrate-v-2-v-3-migration-scenario-based-publishing.md
+              displayName: 'migration, packaging, delivery, publishing'
+            - name: Защита содержимого
+              href: migrate-v-2-v-3-migration-scenario-based-content-protection.md
+              displayName: 'migration, content protection, DRM, digital rights management'
+            - name: Зарезервированные единицы мультимедиа
+              href: migrate-v-2-v-3-migration-scenario-based-media-reserved-units.md
+              displayName: 'migration, media reserved units'
+        - name: Сравнение примеров
+          href: migrate-v-2-v-3-migration-samples.md
+          displayName: 'migration, samples'
         - name: Сравнение версий 2 и 3
           displayName: 'migrate, v2 to v3'
           href: media-services-v2-vs-v3.md
