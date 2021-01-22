@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/19/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: d9cba08e5b6650edc0decd3ff9df4060e9ad815c
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: c48aaf7bff166620730f0731b59ecea475b82ad3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98537998"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674291"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C
 
@@ -30,13 +30,13 @@ ms.locfileid: "98537998"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-a-microsoft-account-application"></a>Создание приложения для учетной записи Майкрософт
 
-Чтобы включить вход для пользователей с учетная запись Майкрософт в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в статье регистрация приложения на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app). Если у вас нет учетной записи Microsoft, вы можете получить ее по адресу [https://www.live.com/](https://www.live.com/).
+Чтобы включить вход для пользователей с учетная запись Майкрософт в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в статье регистрация приложения на платформе Microsoft Identity](../active-directory/develop/quickstart-register-app.md). Если у вас нет учетной записи Microsoft, вы можете получить ее по адресу [https://www.live.com/](https://www.live.com/).
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог с клиентом Azure AD, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом Azure AD.
@@ -48,15 +48,15 @@ ms.locfileid: "98537998"
    Дополнительные сведения о различных вариантах выбора типа учетной записи см. в статье [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](../active-directory/develop/quickstart-register-app.md)
 1. В поле **URI перенаправления (необязательно)** выберите **Интернет** и введите `https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/oauth2/authresp` в текстовое поле. Замените `<tenant-name>` именем своего клиента Azure AD B2C.
 1. Нажмите кнопку **Зарегистрировать**.
-1. Запишите значение параметра **Идентификатор приложения (клиента)** , отображаемого на странице обзора приложения. Этот идентификатор потребуется при настройке поставщика удостоверений в следующем разделе.
+1. Запишите значение параметра **Идентификатор приложения (клиента)** , отображаемого на странице обзора приложения. При настройке поставщика удостоверений в следующем разделе вам потребуется идентификатор клиента.
 1. Выберите **Сертификаты и секреты**.
 1. Щелкните **Создать секрет клиента**.
 1. В поле **Описание** введите описание секрета, например *Пароль приложения 1*, а затем нажмите кнопку **Добавить**.
-1. Запишите пароль приложения, отображаемый в столбце **Значение**. Этот идентификатор потребуется при настройке поставщика удостоверений в следующем разделе.
+1. Запишите пароль приложения, отображаемый в столбце **Значение**. При настройке поставщика удостоверений в следующем разделе требуется секрет клиента.
 
 ::: zone pivot="b2c-user-flow"
 
-## <a name="configure-a-microsoft-account-as-an-identity-provider"></a>Настройка учетной записи Microsoft в качестве поставщика удостоверений
+## <a name="configure-microsoft-as-an-identity-provider"></a>Настройка Microsoft в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
@@ -66,6 +66,16 @@ ms.locfileid: "98537998"
 1. В качестве **идентификатора клиента** введите идентификатор приложения (клиента) для приложения Azure AD, созданного ранее.
 1. В качестве **секрета клиента** введите секрет клиента, записанный ранее.
 1. Щелкните **Сохранить**.
+
+## <a name="add-microsoft-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Майкрософт в поток пользователя 
+
+1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Майкрософт.
+1. В разделе **поставщики удостоверений социальных сетей** выберите **учетная запись Майкрософт**.
+1. Щелкните **Сохранить**.
+1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
+1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Щелкните **выполнить поток пользователя**
 
 ::: zone-end
 
@@ -99,9 +109,9 @@ ms.locfileid: "98537998"
 1. Для параметра **Использование ключа** выберите `Signature`.
 1. Нажмите кнопку **Создать**.
 
-## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
+## <a name="configure-microsoft-as-an-identity-provider"></a>Настройка Microsoft в качестве поставщика удостоверений
 
-Чтобы разрешить пользователям входить в систему с помощью учетной записи Майкрософт, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
+Чтобы разрешить пользователям выполнять вход с помощью учетная запись Майкрософт, необходимо определить учетную запись как поставщика утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Вы можете определить Azure AD в качестве поставщика утверждений, добавив элемент **ClaimsProvider** в файл расширения политики.
 
@@ -114,7 +124,7 @@ ms.locfileid: "98537998"
       <Domain>live.com</Domain>
       <DisplayName>Microsoft Account</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="MSA-OIDC">
+        <TechnicalProfile Id="MSA-MicrosoftAccount-OpenIdConnect">
           <DisplayName>Microsoft Account</DisplayName>
           <Protocol Name="OpenIdConnect" />
           <Metadata>
@@ -156,81 +166,26 @@ ms.locfileid: "98537998"
 
 Политика настроена, так что Azure AD B2C знает, как взаимодействовать с приложением учетной записи Майкрософт в Azure AD.
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-Прежде чем продолжить, отправьте измененную политику, чтобы проверить отсутствие в ней ошибок.
 
-1. Перейдите к клиенту Azure AD B2C на портале Azure и выберите **Identity Experience Framework**.
-1. На странице **Настраиваемые политики** выберите **Отправить настраиваемую политику**.
-1. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-1. Щелкните **Отправить**.
-
-Если на портале нет ошибок, перейдите к следующему разделу.
-
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
-
-К этому моменту поставщик удостоверений уже настроен, но еще не доступен ни на одном экране регистрации или входа. Чтобы сделать его доступным, необходимо создать дубликат имеющегося шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений учетной записи Майкрософт.
-
-1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
-1. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-1. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-1. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-1. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInMSA`.
-
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экране регистрации или входа. Если вы добавите для учетной записи Майкрософт элемент **ClaimsProviderSelection**, при переходе пользователя на страницу отобразится новая кнопка.
-
-1. В файле *TrustFrameworkExtensions.xml* найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-1. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `MicrosoftAccountExchange`:
-
-    ```xml
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
     <ClaimsProviderSelection TargetClaimsExchangeId="MicrosoftAccountExchange" />
-    ```
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="MicrosoftAccountExchange" TechnicalProfileReferenceId="MicrosoftAccount-OpenIdConnect" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с учетной записью Майкрософт для получения токена.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-1. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
-
-    ```xml
-    <ClaimsExchange Id="MicrosoftAccountExchange" TechnicalProfileReferenceId="MSA-OIDC" />
-    ```
-
-    Измените значение **TechnicalProfileReferenceId** так, чтобы оно совпадало со значением `Id` в элементе **TechnicalProfile** добавленного ранее поставщика утверждений. Например, `MSA-OIDC`.
-
-1. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-microsoft-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Майкрософт в поток пользователя 
-
-1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Майкрософт.
-1. В разделе **поставщики удостоверений социальных сетей** выберите **учетная запись Майкрософт**.
-1. Щелкните **Сохранить**.
-1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
-1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Щелкните **выполнить поток пользователя**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
-
-Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
-
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInMSA.xml*.
-1. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInMSA`.
-1. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_msa`.
-1. Обновите значение атрибута **ReferenceId** в элементе **DefaultUserJourney** так, чтобы оно соответствовало идентификатору созданного вами пути пользователя (SignUpSignInMSA).
-1. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
-1. Убедитесь, что созданное ранее приложение Azure AD B2C (например, *webapp1* или *testapp1*) выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить**.
-1. Нажмите кнопку **Учетная запись Майкрософт** и выполните вход.
+[!INCLUDE [active-directory-b2c-create-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
 ::: zone-end

@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: fea314d595fb39a1e35dec8ab24533ad4b893f98
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: fabbdf330d43737ffa85379f9cc4d5ac59c4a734
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448077"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673524"
 ---
 # <a name="indexing-dedicated-sql-pool-tables-in-azure-synapse-analytics"></a>Индексирование выделенных таблиц пула SQL в Azure синапсе Analytics
 
@@ -24,9 +24,9 @@ ms.locfileid: "96448077"
 
 ## <a name="index-types"></a>Типы индексов
 
-Выделенный пул SQL предлагает несколько вариантов индексирования, включая [кластеризованные индексы columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [кластеризованные индексы и некластеризованные индексы](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), а также параметр, не являющийся индексом, известный как [куча](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
+Выделенный пул SQL предлагает несколько вариантов индексирования, включая [кластеризованные индексы columnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [кластеризованные индексы и некластеризованные индексы](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), а также параметр, не являющийся индексом, известный как [куча](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  
 
-Чтобы создать таблицу с индексом, см. документацию по [CREATE TABLE (выделенному пулу SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
+Чтобы создать таблицу с индексом, см. документацию по [CREATE TABLE (выделенному пулу SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .
 
 ## <a name="clustered-columnstore-indexes"></a>Кластеризованные индексы Columnstore
 
@@ -230,7 +230,7 @@ EXEC sp_addrolemember 'xlargerc', 'LoadUser'
 
 Войдите от имени пользователя из шага 1 (например, LoadUser), который теперь использует более высокий класс ресурсов, и выполните инструкции ALTER INDEX. Убедитесь, что этот пользователь имеет разрешение ALTER в отношении таблиц, в которых будет выполнятся перестроение индекса. В этих примерах показано перестроение всего индекса Columnstore и перестроение одной секции. В больших таблицах целесообразно перестроить только одну секцию за раз.
 
-Кроме того, вместо перестроения индекса можно скопировать таблицу в новую таблицу [с помощью CTAS](sql-data-warehouse-develop-ctas.md). Какой способ лучше? Для больших объемов данных инструкция CTAS обычно выполняется быстрее, чем [ALTER INDEX](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Что же касается небольших объемов данных, рекомендуем использовать инструкцию ALTER INDEX. Она проще в использовании и не требует замены таблицы.
+Кроме того, вместо перестроения индекса можно скопировать таблицу в новую таблицу [с помощью CTAS](sql-data-warehouse-develop-ctas.md). Какой способ лучше? Для больших объемов данных инструкция CTAS обычно выполняется быстрее, чем [ALTER INDEX](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Что же касается небольших объемов данных, рекомендуем использовать инструкцию ALTER INDEX. Она проще в использовании и не требует замены таблицы.
 
 ```sql
 -- Rebuild the entire clustered index
@@ -252,7 +252,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_COMPRESSION = COLUMNSTORE)
 ```
 
-Перестроение индекса в выделенном пуле SQL является автономной операцией.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Перестроение индекса в выделенном пуле SQL является автономной операцией.  Дополнительные сведения о перестройке индексов см. в разделе об использовании инструкции ALTER INDEX REORGANIZE в статьях [Дефрагментация индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и работе с [ALTER INDEX (Transact-SQL)](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="step-3-verify-clustered-columnstore-segment-quality-has-improved"></a>Шаг 3. Проверка улучшения качества кластеризованных сегментов Columnstore
 
@@ -260,7 +260,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 
 ## <a name="rebuilding-indexes-with-ctas-and-partition-switching"></a>Перестроение индексов с помощью инструкции CTAS и переключения секций
 
-В этом примере для перестроения секции таблицы используется инструкция [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) и переключение секций.
+В этом примере для перестроения секции таблицы используется инструкция [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и переключение секций.
 
 ```sql
 -- Step 1: Select the partition of data and write it out to a new table using CTAS
@@ -285,6 +285,6 @@ ALTER TABLE [dbo].[FactInternetSales_20000101_20010101] SWITCH PARTITION 2 TO  [
 
 Дополнительные сведения о повторном создании секций с помощью CTAS см. [в разделе Использование секций в выделенном пуле SQL](sql-data-warehouse-tables-partition.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).

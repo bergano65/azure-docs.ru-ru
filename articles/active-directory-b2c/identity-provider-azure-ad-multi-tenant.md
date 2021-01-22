@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/19/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 7ffd7b4db39e6a9ced4cee37cadfc6b3cfc87301
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 764a60ada2484a58382cc1b9539686fa72ee1203
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98537896"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674356"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -32,15 +32,15 @@ ms.locfileid: "98537896"
 
 ::: zone pivot="b2c-custom-policy"
 
-В этой статье показано, как включить вход для пользователей, использующих конечную точку с несколькими клиентами, для Azure Active Directory (Azure AD). Это позволяет пользователям из нескольких клиентов Azure AD входить в систему, используя Azure AD B2C, без необходимости настройки поставщика удостоверений для каждого клиента. Однако гостевые пользователи любого из этих тенантов **не смогут** войти в систему. Для этого необходимо [отдельно настроить каждый клиент](identity-provider-azure-ad-single-tenant.md).
+В этой статье показано, как включить вход для пользователей, использующих конечную точку с несколькими клиентами, для Azure Active Directory (Azure AD). Предоставление пользователям из нескольких клиентов Azure AD возможности входа с помощью Azure AD B2C без необходимости настройки поставщика удостоверений для каждого клиента. Однако гостевые пользователи любого из этих тенантов **не смогут** войти в систему. Для этого необходимо [отдельно настроить каждый клиент](identity-provider-azure-ad-single-tenant.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="register-an-application"></a>Регистрация приложения
 
-Чтобы включить вход для пользователей с учетной записью Azure AD в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в статье регистрация приложения на платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
+Чтобы включить вход для пользователей с учетной записью Azure AD в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [портал Azure](https://portal.azure.com). Дополнительные сведения см. [в статье регистрация приложения на платформе Microsoft Identity](../active-directory/develop/quickstart-register-app.md).
 
 
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -63,7 +63,7 @@ ms.locfileid: "98537896"
 
 ## <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
 
-Чтобы получить утверждения `family_name` и `given_name` из Azure AD, можно настроить дополнительные утверждения для приложения в пользовательском интерфейсе портала Azure или манифесте приложения. Дополнительные сведения см. в статье о [предоставлении необязательных утверждений для приложения Azure AD](../active-directory/develop/active-directory-optional-claims.md).
+Если вы хотите получить `family_name` , а также `given_name` заявки из Azure AD, можно настроить необязательные утверждения для приложения в пользовательском интерфейсе портал Azure или манифесте приложения. Дополнительные сведения см. в статье о [предоставлении необязательных утверждений для приложения Azure AD](../active-directory/develop/active-directory-optional-claims.md).
 
 1. Войдите на [портал Azure](https://portal.azure.com). Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.
@@ -88,9 +88,9 @@ ms.locfileid: "98537896"
 1. Для параметра **Использование ключа** выберите `Signature`.
 1. Нажмите кнопку **создания**.
 
-## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
+## <a name="configure-azure-ad-as-an-identity-provider"></a>Настройка Azure AD в качестве поставщика удостоверений для клиента
 
-Если необходимо разрешить пользователям входить в систему с помощью Azure Active Directory, нужно определить Azure Active Directory в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
+Чтобы разрешить пользователям входить в систему с помощью учетной записи Azure AD, необходимо определить Azure AD в качестве поставщика утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Вы можете определить Azure AD в качестве поставщика утверждений, добавив Azure AD к элементу **ClaimsProvider** в файле расширения политики.
 
@@ -103,7 +103,7 @@ ms.locfileid: "98537896"
       <Domain>commonaad</Domain>
       <DisplayName>Common AAD</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="Common-AAD">
+        <TechnicalProfile Id="AADCommon-OpenIdConnect">
           <DisplayName>Multi-Tenant AAD</DisplayName>
           <Description>Login with your Contoso account</Description>
           <Protocol Name="OpenIdConnect"/>
@@ -153,10 +153,7 @@ ms.locfileid: "98537896"
 
 ### <a name="restrict-access"></a>Ограничение доступа
 
-> [!NOTE]
-> Если использовать `https://login.microsoftonline.com/` в качестве значения для **ValidTokenIssuerPrefixes**, все пользователи Azure AD смогут входить в ваше приложение.
-
-Вам необходимо обновить список допустимых издателей маркеров и предоставить доступ только определенному списку пользователей клиента Azure AD, которые могут выполнить вход в систему.
+Если использовать `https://login.microsoftonline.com/` в качестве значения для **ValidTokenIssuerPrefixes**, все пользователи Azure AD смогут входить в ваше приложение. Обновите список действительных поставщиков маркеров и ограничьте доступ определенным списком пользователей клиента Azure AD, которые могут войти в систему.
 
 Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. URL-адрес метаданных аналогичен формату `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration` , где `your-tenant` — имя клиента Azure AD. Пример:
 
@@ -167,69 +164,31 @@ ms.locfileid: "98537896"
 1. Откройте браузер и перейдите по URL-адресу метаданных OpenID Connect Connect для клиента. Найдите объект **Issuer** и запишите его значение. Он должен выглядеть примерно так `https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000/` :.
 1. Скопируйте и вставьте значение в ключ **ValidTokenIssuerPrefixes** . Несколько издателей разделяются запятыми. Пример с двумя издателями отображается в предыдущем `ClaimsProvider` примере XML.
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-Теперь вы настроили политику так, чтобы Azure AD B2C знала, как взаимодействовать с каталогами Azure AD. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
+    <ClaimsProviderSelection TargetClaimsExchangeId="AzureADCommonExchange" />
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="AzureADCommonExchange" TechnicalProfileReferenceId="AADCommon-OpenIdConnect" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-На этом этапе поставщик удостоверений настроен, но он недоступен ни на одном из экранов регистрации и входа. Чтобы сделать его доступным, необходимо создать дубликат существующего шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений Azure AD.
+[!INCLUDE [active-directory-b2c-create-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
-2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInContoso`.
+Чтобы протестировать возможность входа с несколькими клиентами, выполните последние два шага, используя учетные данные пользователя, который уже существует в другом клиенте Azure AD. Скопируйте **конечную точку "запустить сейчас** " и откройте ее в частном окне браузера, например в режиме режиме инкогнито в Google Chrome или в окне InPrivate в Microsoft погранично. Открытие в частном окне браузера позволяет протестировать полное путешествие пользователя, не используя кэшированные учетные данные Azure AD.
 
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экранах регистрации и входа. Если вы добавите для учетной записи Azure AD элемент **ClaimsProviderSelection**, при переходе пользователя на страницу отобразится новая кнопка.
-
-1. Найдите элемент **орчестратионстеп** , содержащийся `Order="1"` в пути взаимодействия пользователя, созданного в *TrustFrameworkExtensions.xml*.
-1. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `AzureADExchange`:
-
-    ```xml
-    <ClaimsProviderSelection TargetClaimsExchangeId="AzureADExchange" />
-    ```
-
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
-
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с Azure AD для получения токена. Свяжите кнопку с действием, связав технический профиль для поставщика утверждений Azure AD.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-2. Добавьте следующий элемент **ClaimsExchange** , убедившись, что используется то же значение **идентификатора** , которое использовалось для **таржетклаимсексчанжеид**:
-
-    ```xml
-    <ClaimsExchange Id="AzureADExchange" TechnicalProfileReferenceId="Common-AAD" />
-    ```
-
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее **идентификатора** технического профиля. Например, `Common-AAD`.
-
-3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
-## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
-
-Обновите файл проверяющей стороны (RP), который инициирует созданный путь взаимодействия пользователя.
-
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignContoso.xml*.
-1. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInContoso`.
-1. Обновите значение **PublicPolicyUri**, указав URI для политики. Например, `http://contoso.com/B2C_1A_signup_signin_contoso`.
-1. Обновите значение атрибута **ReferenceId** в **дефаултусержаурнэй** , чтобы оно совпадало с идентификатором пути взаимодействия пользователя, созданного ранее. Например, *сигнупсигнинконтосо*.
-1. Сохраните изменения и отправьте файл.
-1. В списке отправленные **пользовательские политики** выберите только что созданную политику из списка.
-1. В раскрывающемся списке **Выбор приложения** выберите созданное ранее приложение Azure AD B2C. Например, *testapp1*.
-1. Скопируйте **конечную точку "запустить сейчас** " и откройте ее в частном окне браузера, например в режиме режиме инкогнито в Google Chrome или в окне InPrivate в Microsoft погранично. Открытие в частном окне браузера позволяет протестировать полное путешествие пользователя, не используя кэшированные учетные данные Azure AD.
-1. Выберите кнопку входа в Azure AD, например *сотрудник Contoso*, а затем введите учетные данные пользователя в одном из ваших клиентов организации Azure AD. Вам будет предложено авторизовать приложение, а затем ввести сведения для профиля.
-
-Если вход выполнен успешно, браузер перенаправляется на `https://jwt.ms` , который отображает содержимое маркера, возвращенного Azure AD B2C.
-
-Чтобы протестировать возможность входа с несколькими клиентами, выполните последние два шага, используя учетные данные пользователя, который уже существует в другом клиенте Azure AD.
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 При работе с пользовательскими политиками иногда может потребоваться дополнительная информация при устранении неполадок политики во время ее разработки.
 

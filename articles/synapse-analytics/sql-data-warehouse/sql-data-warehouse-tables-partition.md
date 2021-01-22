@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: f65c1d6fda09d7762a59fb5a932a72ad706a767a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8a59c24100b433719ccfd3a9ea1b6a676695d381
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448023"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673440"
 ---
 # <a name="partitioning-tables-in-dedicated-sql-pool"></a>Секционирование таблиц в выделенном пуле SQL
 
@@ -58,9 +58,9 @@ ms.locfileid: "96448023"
 
 Выделенный пул SQL предоставляет способ определения секций, которые проще, чем SQL Server. Функции секционирования и схемы не используются в выделенном пуле SQL, так как они находятся в SQL Server. Вам нужно только определить секционированный столбец и граничные точки. 
 
-Хотя синтаксис секционирования может немного отличаться от синтаксиса SQL Server, основные понятия одинаковые. SQL Server и выделенный пул SQL поддерживают один столбец секционирования для каждой таблицы, который может быть секционирован по диапазону. Дополнительные сведения о секционировании см. в статье [Секционированные таблицы и индексы](/sql/relational-databases/partitions/partitioned-tables-and-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Хотя синтаксис секционирования может немного отличаться от синтаксиса SQL Server, основные понятия одинаковые. SQL Server и выделенный пул SQL поддерживают один столбец секционирования для каждой таблицы, который может быть секционирован по диапазону. Дополнительные сведения о секционировании см. в статье [Секционированные таблицы и индексы](/sql/relational-databases/partitions/partitioned-tables-and-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
-В приведенном ниже примере таблица FactInternetSales секционируется по столбцу OrderDateKey с помощью инструкции [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+В приведенном ниже примере таблица FactInternetSales секционируется по столбцу OrderDateKey с помощью инструкции [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales]
@@ -90,8 +90,8 @@ WITH
 
 Чтобы выполнить миграцию SQL Server определений секций в выделенный пул SQL, просто сделайте следующее:
 
-- удалить [схему секционирования](/sql/t-sql/statements/create-partition-scheme-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) SQL Server;
-- добавить определение [функции секционирования](/sql/t-sql/statements/create-partition-function-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) в инструкцию CREATE TABLE.
+- удалить [схему секционирования](/sql/t-sql/statements/create-partition-scheme-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) SQL Server;
+- добавить определение [функции секционирования](/sql/t-sql/statements/create-partition-function-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в инструкцию CREATE TABLE.
 
 Если вы переносите секционированную таблицу из экземпляра SQL Server, количество строк в каждой секции можно запросить с помощью приведенного ниже алгоритма SQL. Помните, что если в выделенном пуле SQL используется одна и та же гранулярность секционирования, число строк на секцию уменьшается на 60.  
 
@@ -131,7 +131,7 @@ GROUP BY    s.[name]
 
 ## <a name="partition-switching"></a>Переключение секций
 
-Выделенный пул SQL поддерживает разделение, слияние и переключение секций. Для каждой из этих функций используется инструкция [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Выделенный пул SQL поддерживает разделение, слияние и переключение секций. Для каждой из этих функций используется инструкция [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 Для переключения секций между двумя таблицами необходимо убедиться, что секции выровнены по соответствующим границам и их определения таблиц совпадают. Вы не можете установить диапазон значений в таблице с помощью ограничений CHECK, а значит, исходная таблица должна иметь такие же границы секций, как целевая. Если границы не будут совпадать, переключение секций завершится ошибкой из-за невозможности синхронизировать метаданные.
 
@@ -357,6 +357,6 @@ ALTER TABLE dbo.FactInternetSales_NewSales SWITCH PARTITION 2 TO dbo.FactInterne
 
 При таком подходе код в системе управления версиями остается статическим, а граничные значения секционирования могут быть динамическими. постепенное развитие с использованием пула SQL с течением времени.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).

@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: dbb380dca231f75f6d6e77676c9059ef3762dac5
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 4b649942a52c51aef0d6edd17b913f75e1fb247b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050941"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674173"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -686,13 +686,13 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы протестировать это развертывание, можно использовать [шаблон, аналогичный этому](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , который создает приложение-функцию в Windows в плане потребления. Замените `<function-app-name>` уникальным именем для приложения-функции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 
 * [Справочник разработчика по функциям Azure](functions-reference.md)
 * [Настройка параметров приложения функции Azure](functions-how-to-use-azure-function-app-settings.md)
-* [Создание первой функции Azure](functions-create-first-azure-function.md)
+* [Создание первой функции Azure](./functions-get-started.md)
 
 <!-- LINKS -->
 

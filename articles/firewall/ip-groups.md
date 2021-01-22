@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 07/30/2020
+ms.date: 01/21/2021
 ms.author: victorh
-ms.openlocfilehash: c56298d68bddd326ed2b32215f30a9057fa51e85
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: dc1eb64b5cfb527c10967a1a46525a418fdc37e3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94653119"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674003"
 ---
 # <a name="ip-groups-in-azure-firewall"></a>IP-группы в брандмауэре Azure
 
@@ -26,6 +26,9 @@ ms.locfileid: "94653119"
 IP-группа может иметь один IP-адрес, несколько IP-адресов или один или несколько диапазонов IP-адресов.
 
 IP-группы можно повторно использовать в правилах брандмауэра Azure ДНаТ, сети и приложений для нескольких брандмауэров в разных регионах и подписках в Azure. Имена групп должны быть уникальными. IP-группу можно настроить в портал Azure, Azure CLI или REST API. Пример шаблона поможет вам приступить к работе.
+
+> [!NOTE]
+> В настоящее время IP-группы недоступны в средах национальных облаков Azure.
 
 ## <a name="sample-format"></a>Формат выборки
 
@@ -84,6 +87,6 @@ IP-группы доступны во всех регионах общедост
 - [New-AzFirewallApplicationRule](/powershell/module/az.network/new-azfirewallapplicationrule?view=azps-3.4.0)
 - [New-Азфиреваллнатруле](/powershell/module/az.network/new-azfirewallnatrule?view=azps-3.4.0)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [развернуть и настроить брандмауэр Azure](tutorial-firewall-deploy-portal.md).

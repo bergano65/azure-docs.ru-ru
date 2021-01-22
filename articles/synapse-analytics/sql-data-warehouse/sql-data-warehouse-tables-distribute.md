@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 3b61df954e913671eafff4b739e0f53a4d420c28
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 5aefe869041d9fff8112b6aa380961ca6568ae0b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117305"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673575"
 ---
 # <a name="guidance-for-designing-distributed-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Руководство по проектированию распределенных таблиц с помощью выделенного пула SQL в Azure синапсе Analytics
 
@@ -96,7 +96,7 @@ WITH
 
 Выбор столбца распределения — это важное решение при проектировании, так как значения в этом столбце определяет, как распределяются строки. Лучший выбор зависит от нескольких факторов и обычно включает в себя компромиссы. Выбранный столбец распределения нельзя изменить.  
 
-Если вы не выберете подходящий столбец с первого раза, можно выполнить инструкцию [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), чтобы повторно создать таблицу с другим столбцом распределения.
+Если вы не выберете подходящий столбец с первого раза, можно выполнить инструкцию [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), чтобы повторно создать таблицу с другим столбцом распределения.
 
 ### <a name="choose-a-distribution-column-with-data-that-distributes-evenly"></a>Выбор столбца распределения с данными, которые распределены равномерно
 
@@ -133,7 +133,7 @@ WITH
 
 ### <a name="determine-if-the-table-has-data-skew"></a>Как выявить неравномерное распределение данных в таблице
 
-Быстро проверить наличие неравномерного распределения данных можно с помощью [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Приведенный ниже код SQL возвращает число строк таблицы, которые хранятся в каждом из 60 распределений. Для обеспечения сбалансированной производительности строки в распределенной таблице должны размещаться равномерно по всем распределениям.
+Быстро проверить наличие неравномерного распределения данных можно с помощью [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Приведенный ниже код SQL возвращает число строк таблицы, которые хранятся в каждом из 60 распределений. Для обеспечения сбалансированной производительности строки в распределенной таблице должны размещаться равномерно по всем распределениям.
 
 ```sql
 -- Find data skew for a distributed table
@@ -183,7 +183,7 @@ order by two_part_name, row_count
 
 ### <a name="re-create-the-table-with-a-new-distribution-column"></a>Повторное создание таблицы с новым столбцом распределения
 
-В примере ниже для повторного создания таблицы с другим столбцом хэш-распределения используется инструкция [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+В примере ниже для повторного создания таблицы с другим столбцом хэш-распределения используется инструкция [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales_CustomerKey]
@@ -225,5 +225,5 @@ RENAME OBJECT [dbo].[FactInternetSales_CustomerKey] TO [FactInternetSales];
 
 Чтобы создать распределенную таблицу, воспользуйтесь одной из следующих инструкций:
 
-- [CREATE TABLE (выделенный пул SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [CREATE TABLE как SELECT (выделенный пул SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [CREATE TABLE (выделенный пул SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [CREATE TABLE как SELECT (выделенный пул SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)

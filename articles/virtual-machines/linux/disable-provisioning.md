@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 2a17825d062496e6600966dc7c90b14749507e4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0fea82c376a178de0be8ede6c0393e1de21de614
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86494519"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675810"
 ---
 # <a name="disable-or-remove-the-linux-agent-from-vms-and-images"></a>Отключение или удаление агента Linux с виртуальных машин и образов
 
@@ -31,9 +31,9 @@ ms.locfileid: "86494519"
 
 ## <a name="disabling-extension-processing"></a>Отключение обработки расширения
 
-Существует несколько способов отключить обработку расширения в зависимости от ваших потребностей, но прежде чем продолжить, **необходимо** удалить все расширения, развернутые на виртуальной машине, например с помощью AZ CLI, можно [вывести список](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-list) и [Удалить](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-delete):
+Существует несколько способов отключить обработку расширения в зависимости от потребностей, но прежде чем продолжить, **необходимо** удалить все расширения, развернутые на виртуальной машине, например с помощью Azure CLI можно [вывести список](/cli/azure/vm/extension#az-vm-extension-list) и [Удалить](/cli/azure/vm/extension#az-vm-extension-delete):
 
-```bash
+```azurecli
 az vm extension delete -g MyResourceGroup --vm-name MyVm -n extension_name
 ```
 > [!Note]
@@ -43,7 +43,7 @@ az vm extension delete -g MyResourceGroup --vm-name MyVm -n extension_name
 ### <a name="disable-at-the-control-plane"></a>Отключить на плоскости управления
 Если вы не уверены, требуются ли расширения в будущем, можно оставить агент Linux установленным на виртуальной машине, а затем отключить возможность обработки расширения на платформе. Этот параметр доступен в `Microsoft.Compute` версии API `2018-06-01` или выше и не зависит от установленной версии агента Linux.
 
-```bash
+```azurecli
 az vm update -g <resourceGroup> -n <vmName> --set osProfile.allowExtensionOperations=false
 ```
 Вы можете легко повторно включить эту обработку расширения с платформы, выполнив указанную выше команду, но присвоить ей значение true.
@@ -132,7 +132,7 @@ cloud-init clean --logs --seed
 
 
 **Создание обычного управляемого образа**
-```bash
+```azurecli
 az vm deallocate -g <resource_group> -n <vm_name>
 az vm generalize -g <resource_group> -n <vm_name>
 az image create -g <resource_group> -n <image_name> --source <vm_name>
@@ -140,7 +140,7 @@ az image create -g <resource_group> -n <image_name> --source <vm_name>
 
 **Создание версии образа в общей коллекции образов**
 
-```bash
+```azurecli
 az sig image-version create \
     -g $sigResourceGroup 
     --gallery-name $sigName 
@@ -157,7 +157,7 @@ az sig image-version create \
 
 Чтобы развернуть виртуальную машину с отключенными расширениями, можно использовать Azure CLI с параметром [--Enable-Agent](/cli/azure/vm#az-vm-create).
 
-```bash
+```azurecli
 az vm create \
     --resource-group $resourceGroup \
     --name $prodVmName \
@@ -183,6 +183,6 @@ az vm create \
                     "keyData": "[parameters('adminPublicKey')]"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

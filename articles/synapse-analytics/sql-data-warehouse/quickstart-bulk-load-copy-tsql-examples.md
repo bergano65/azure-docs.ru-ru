@@ -9,16 +9,16 @@ ms.subservice: sql-dw
 ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 25c692ea9a2dce4723472f6812ac46d82b2b318d
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 1551e85bd45d4d64861b43bf53dd0c155520861f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120994"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673643"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Безопасная загрузка данных с помощью Synapse SQL
 
-В этой статье описано использование безопасных способов проверки подлинности для [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) и приведены соответствующие примеры. Инструкция COPY — это наиболее гибкий и безопасный способ массовой загрузки данных в Synapse SQL.
+В этой статье описано использование безопасных способов проверки подлинности для [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) и приведены соответствующие примеры. Инструкция COPY — это наиболее гибкий и безопасный способ массовой загрузки данных в Synapse SQL.
 ## <a name="supported-authentication-mechanisms"></a>Поддерживаемые способы проверки подлинности
 
 В следующей таблице описаны поддерживаемые методы проверки подлинности для каждого типа файла и учетной записи хранения. Они относятся к исходному месту хранения и расположению файла ошибок.
@@ -176,5 +176,5 @@ WITH (
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с подробными сведениями о синтаксисе в статье [об инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax).
+- Ознакомьтесь с подробными сведениями о синтаксисе в статье [об инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax).
 - Прочитайте обзорную статью [о загрузке данных](./design-elt-data-loading.md#what-is-elt), где приведены рекомендации по загрузке.

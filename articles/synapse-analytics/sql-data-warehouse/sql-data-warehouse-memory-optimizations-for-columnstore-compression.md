@@ -11,12 +11,12 @@ ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 6984ad41c07f7790a746dbd197c18dce2aa83e2f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d668c3e505d6849d3cde52d52698a95c1c5647d9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453719"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676168"
 ---
 # <a name="maximizing-rowgroup-quality-for-columnstore-indexes-in-dedicated-sql-pool"></a>Максимизация качества группы строк для индексов columnstore в выделенном пуле SQL 
 
@@ -28,7 +28,7 @@ ms.locfileid: "96453719"
 
 Если группы включают большое число строк, сжатие данных также оптимизируется, так как с диска считывается меньше данных.
 
-Дополнительные сведения о группах строк см. в [руководстве по индексам сolumnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения о группах строк см. в [руководстве по индексам сolumnstore](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="target-size-for-rowgroups"></a>Целевой размер для групп строк
 
@@ -42,11 +42,11 @@ ms.locfileid: "96453719"
 
 Если недостаточно памяти для сжатия по крайней мере 10 000 строк в каждом группы строк, будет сформирована ошибка.
 
-Дополнительные сведения о выполнении массовой загрузки см. в статье [Загрузка данных индексов ColumnStore](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения о выполнении массовой загрузки см. в статье [Загрузка данных индексов ColumnStore](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="how-to-monitor-rowgroup-quality"></a>Мониторинг качества групп строк
 
-Sys.dm_pdw_nodes_db_column_store_row_group_physical_stats динамического административного представления ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) содержит определение представления, соответствующее базе данных SQL), которое предоставляет полезную информацию, например количество строк в групп строк и причину усечения, если они были обрезаны.
+Sys.dm_pdw_nodes_db_column_store_row_group_physical_stats динамического административного представления ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) содержит определение представления, соответствующее базе данных SQL), которое предоставляет полезную информацию, например количество строк в групп строк и причину усечения, если они были обрезаны.
 
 Вы можете создать следующее представление для удобства выполнения запросов к этому динамическому административному представлению, чтобы получить сведения об усечении групп строк.
 
@@ -163,6 +163,6 @@ OPTION (MAXDOP 1);
 - Сведения об увеличении числа DWU см.в разделе [Масштабирование производительности](quickstart-scale-compute-portal.md).
 - Сведения об изменении класса ресурсов для запросов см. в разделе [Пример изменения класса ресурсов пользователя](resource-classes-for-workload-management.md#change-a-users-resource-class).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные способы повышения производительности выделенного пула SQL см. в [обзоре производительности](cheat-sheet.md).

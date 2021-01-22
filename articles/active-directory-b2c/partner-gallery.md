@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 15b4b61fd250dfb7d68c563f9f42c7d288a0019c
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 9aca01bae7911d2b6234d48bedc14b116e911a79
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070870"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675389"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C партнеров независимых поставщиков программного обеспечения
 
@@ -40,6 +40,7 @@ ms.locfileid: "98070870"
 |![Снимок экрана с логотипом Experian.](./media/partner-gallery/experian-logo.png) | [Experian](./partner-experian.md) — это поставщик проверки и проверки личности, который выполняет оценку рисков на основе атрибутов пользователя, чтобы предотвратить мошенничество. |
 |![Снимок экрана с логотипом Идологи.](./media/partner-gallery/idology-logo.png) | [Идологи](./partner-idology.md) — это поставщик проверки личности, а также решения для проверки идентификации, решения для предотвращения мошенничества, решения по обеспечению соответствия и др.|
 |![Снимок экрана с логотипом Жумио.](./media/partner-gallery/jumio-logo.png) | [Жумио](./partner-jumio.md) — это служба проверки идентификаторов, которая обеспечивает автоматическую проверку кода в режиме реального времени, защищая данные клиентов. |
+|![Снимок экрана с неснабженным логотипом.](./media/partner-gallery/keyless-logo.png) | Без [ключа — это](./partner-keyless.md) служба проверки идентификаторов, которая обеспечивает проверку подлинности в виде биометрической проверки лица, а также устраняет мошенничество, фишинг и повторное использование учетных данных.
 | ![Снимок экрана с логотипом Лексиснексис.](./media/partner-gallery/lexisnexis-logo.png) | [Лексиснексис](./partner-lexisnexis.md) — это поставщик для профилирования и проверки личности, который проверяет идентификацию пользователя и обеспечивает комплексную оценку рисков на основе устройства пользователя. |
 | ![Снимок экрана с логотипом Онфидо](./media/partner-gallery/onfido-logo.png) | [Онфидо](./partner-onfido.md) — это решение для проверки биометрических идентификаторов документов и лиц, которое позволяет компаниям соответствовать требованиям *клиентов* и удостоверений в режиме реального времени.  |
 
@@ -78,10 +79,10 @@ ms.locfileid: "98070870"
 
 ## <a name="additional-information"></a>Дополнительные сведения
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Выберите партнера в упомянутых таблицах, чтобы узнать, как интегрировать свое решение с Azure AD B2C.

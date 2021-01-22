@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 2f383876963e3e1d310e7d93f7dc99bb58b189d3
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 78b0cbbdccc7d6853d4ce2821bf659e888680a5f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681657"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674649"
 ---
 # <a name="create-a-data-source-android-sdk"></a>Создание источника данных (пакет SDK для Android)
 
@@ -136,7 +136,7 @@ Feature feature = Feature.fromJson(GeoJSON_STRING);
 String featureString = feature.toJson();
 ```
 
-### <a name="import-geojson-data-from-web-or-assets-folder"></a>Импорт данных геоjson из папки Web или Assets
+### <a name="import-geojson-data-from-web-or-assets-folder"></a>Импорт данных GeoJSON из Интернета или из папки assets
 
 В большинстве геофайловых файлов JSON содержится Феатуреколлектион. Чтение геофайловых файлов JSON в виде строк и использование `FeatureCollection.fromJson` метода для десериализации.
 
@@ -355,10 +355,10 @@ Utils.importData("URL_or_FilePath_to_GeoJSON_data",
 
 Azure Maps соответствует [спецификации плитки вектора мапбокс](https://github.com/mapbox/vector-tile-spec)— открытым стандартом. Azure Maps предоставляет следующие службы векторных плиток в составе платформы:
 
-- [](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview)  |  [Сведения о формате данных](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) документации для дорожных плиток
-- [](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficincidenttile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles) в документации по инцидентам трафика
-- [](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficflowtile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) документации потока трафика
-- Создатель Azure Maps также позволяет создавать пользовательские векторные плитки и получать к ним доступ через элемент [Get плитка для прорисовки v2](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview) .
+- [](/rest/api/maps/renderv2/getmaptilepreview)  |  [Сведения о формате данных](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) документации для дорожных плиток
+- [](/rest/api/maps/traffic/gettrafficincidenttile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles) в документации по инцидентам трафика
+- [](/rest/api/maps/traffic/gettrafficflowtile)  |  [Сведения о формате данных](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) документации потока трафика
+- Создатель Azure Maps также позволяет создавать пользовательские векторные плитки и получать к ним доступ через элемент [Get плитка для прорисовки v2](/rest/api/maps/renderv2/getmaptilepreview) .
 
 Чтобы отобразить данные из источника векторной плитки на карте, подключите источник к одному из слоев подготовки данных. Все слои, использующие Векторный источник, должны указывать `sourceLayer` значение в параметрах. Следующий код загружает службу плитки векторного потока трафика Azure Maps в качестве источника векторной плитки, а затем отображает ее на карте с помощью слоя линий. Этот источник векторной плитки содержит один набор данных на исходном слое с именем "поток трафика". Данные строки в этом наборе данных имеют свойство с именем `traffic_level` , которое используется в этом коде для выбора цвета и масштабирования размера строк.
 
@@ -500,7 +500,7 @@ map.layers.add(new Layer[] { polygonLayer, lineLayer, bubbleLayer });
 > - `"labels"` — Вставляет новый слой под слоями меток карт.
 > - `"transit"` — Вставляет новый слой под слоями «дорога» и «транзитный».
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
@@ -523,4 +523,4 @@ map.layers.add(new Layer[] { polygonLayer, lineLayer, bubbleLayer });
 > [Добавление тепловой карты](map-add-heat-map-layer-android.md)
 
 > [!div class="nextstepaction"]
-> [Примеры кода веб-пакета SDK](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Примеры кода веб-пакета SDK](/samples/browse/?products=azure-maps)

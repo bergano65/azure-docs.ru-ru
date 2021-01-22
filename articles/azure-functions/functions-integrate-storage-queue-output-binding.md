@@ -5,12 +5,12 @@ ms.assetid: 0b609bc0-c264-4092-8e3e-0784dcc23b5d
 ms.topic: how-to
 ms.date: 04/24/2020
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 9c635b01bcd04bd03191fca2590b0189bad0f544
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2821a16e0b72b32cc392b7ae626d782734458a6
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90982014"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674207"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 
@@ -22,13 +22,13 @@ ms.locfileid: "90982014"
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
-- Следуйте указаниям, приведенным в статье [Создание первой функции на портале Azure](functions-create-first-azure-function.md), пропустив шаг **Очистка ресурсов**. При работе с этим кратким руководством создаются приложение-функция и функция, которые вы будете использовать здесь.
+- Следуйте указаниям, приведенным в статье [Создание первой функции на портале Azure](./functions-get-started.md), пропустив шаг **Очистка ресурсов**. При работе с этим кратким руководством создаются приложение-функция и функция, которые вы будете использовать здесь.
 
 ## <a name="add-an-output-binding"></a><a name="add-binding"></a>Добавление выходной привязки
 
 В этом разделе вам нужно будет добавить выходную привязку хранилища очередей для функции, созданной ранее, с помощью пользовательского интерфейса портала. Эта привязка позволяет написать минимальный код для создания сообщения в очереди. Вам не нужно писать код для таких задач, как открытие подключения к хранилищу, создание очереди или получение ссылки на очередь. Эти задачи выполняет среда выполнения службы "Функции Azure" и выходная привязка очереди.
 
-1. На портале Azure откройте страницу приложения-функции для приложения, созданного [ранее](functions-create-first-azure-function.md). Чтобы открыть страницу, найдите и выберите **Приложение-функция**. Затем выберите свое приложение-функцию.
+1. На портале Azure откройте страницу приложения-функции для приложения, созданного [ранее](./functions-get-started.md). Чтобы открыть страницу, найдите и выберите **Приложение-функция**. Затем выберите свое приложение-функцию.
 
 1. Выберите приложение-функцию, а затем выберите созданную ранее функцию.
 
@@ -38,7 +38,7 @@ ms.locfileid: "90982014"
 
 1. Выберите тип привязки **Хранилище очередей Azure** и добавьте параметры, указанные в следующей таблице: 
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-create-output-binding-details.png" alt-text="Создание выходной привязки для функции." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-create-output-binding-details.png" alt-text="Добавление выходной привязки хранилища очередей к функции на портале Azure." border="true":::
     
     | Параметр      |  Рекомендуемое значение   | Описание                              |
     | ------------ |  ------- | -------------------------------------------------- |
@@ -94,11 +94,11 @@ ms.locfileid: "90982014"
 1. Сохранив изменения в коде, щелкните **Тест**.
 1. Убедитесь, что тест соответствует приведенному ниже изображению, и выберите **Запустить**. 
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/functions-test-run-function.png" alt-text="Создание выходной привязки для функции." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/functions-test-run-function.png" alt-text="Тестирование привязки хранилища очередей на портале Azure." border="true":::
 
     Обратите внимание, что **тело запроса** содержит `name` значение *Azure*. Это значение находится в сообщении очереди, которое создается при вызове функции.
     
-    Кроме выбора элемента **Запуск** можно вызвать функцию, введя URL-адрес в браузере и указав значение `name` в строке запроса. Метод браузера описан в предыдущем [кратком руководстве](functions-create-first-azure-function.md#test-the-function).
+    Кроме выбора элемента **Запуск** можно вызвать функцию, введя URL-адрес в браузере и указав значение `name` в строке запроса. Метод браузера описан в предыдущем [кратком руководстве](./functions-get-started.md).
 
 1. Проверьте журналы, чтобы убедиться, что функция успешно выполнена. 
 
@@ -111,11 +111,11 @@ ms.locfileid: "90982014"
 
 1. В разделе **Параметры приложения** выберите **AzureWebJobsStorage**.
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-find-storage-account.png" alt-text="Создание выходной привязки для функции." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-find-storage-account.png" alt-text="На снимке экрана показана страница конфигурации с выбранным AzureWebJobsStorage." border="true":::
 
 1. Найдите и запишите имя учетной записи.
 
-    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-storage-account-name.png" alt-text="Создание выходной привязки для функции." border="true":::
+    :::image type="content" source="./media/functions-integrate-storage-queue-output-binding/function-storage-account-name.png" alt-text="Найдите учетную запись хранения, подключенную к AzureWebJobsStorage." border="true":::
 
 ### <a name="examine-the-output-queue"></a>Проверка выходной очереди
 

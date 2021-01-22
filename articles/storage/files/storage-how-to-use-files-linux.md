@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c271107b85e4903153c29b58aadadd37fb051b76
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5161d8e169a7eb9e757dfbfa71fa697880e1806e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022570"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673693"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
@@ -34,7 +34,7 @@ ms.locfileid: "96022570"
 uname -r
 ```
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 <a id="smb-client-reqs"></a>
 
 * <a id="install-cifs-utils"></a>**Убедитесь, что пакет CIFS-utils установлен.**  
@@ -67,7 +67,7 @@ uname -r
 
     В других дистрибутивах используйте соответствующий диспетчер пакетов или выполните [компиляцию из источника](https://wiki.samba.org/index.php/LinuxCIFS_utils#Download).
 
-* **Самая последняя версия интерфейса командной строки Azure (CLI).** Дополнительные сведения об установке Azure CLI см. в статьях [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и выбор операционной системы. Если вы предпочитаете использовать модуль Azure PowerShell в PowerShell 6 +, вы можете, однако, приведенные ниже инструкции представлены для Azure CLI.
+* **Самая последняя версия интерфейса командной строки Azure (CLI).** Дополнительные сведения об установке Azure CLI см. в статьях [установка Azure CLI](/cli/azure/install-azure-cli) и выбор операционной системы. Если вы предпочитаете использовать модуль Azure PowerShell в PowerShell 6 +, вы можете, однако, приведенные ниже инструкции представлены для Azure CLI.
 
 * **Откройте порт 445**. Взаимодействие SMB выполняется через TCP-порт 445. Проверьте, чтобы брандмауэр не блокировал TCP-порты 445 с клиентского компьютера.  Замените `<your-resource-group>` , а `<your-storage-account>` затем выполните следующий скрипт:
     ```bash
@@ -87,7 +87,7 @@ uname -r
 
     Если подключение установлено успешно, вы увидите примерно следующее:
 
-    ```
+    ```ouput
     Connection to <your-storage-account> 445 port [tcp/microsoft-ds] succeeded!
     ```
 
@@ -248,24 +248,24 @@ uname -r
 
 Начиная с Linux ядра 4,18, модуль ядра SMB, вызываемый `cifs` по старым причинам, предоставляет новый параметр модуля (часто называемый *ParM* различными внешними документами) `disable_legacy_dialects` . Несмотря на то, что впервые появились в ядре Linux 4,18, некоторые поставщики отменяли это изменение на более старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля в распространенных дистрибутивах Linux.
 
-| Distribution | Можно отключить SMB 1 |
+| Распределение | Можно отключить SMB 1 |
 |--------------|-------------------|
-| Ubuntu 14.04 — 16.04 | нет |
+| Ubuntu 14.04 — 16.04 | Нет |
 | Ubuntu 18.04 | Да |
 | Ubuntu 19.04 + | Да |
-| Debian 8-9 | нет |
+| Debian 8-9 | Нет |
 | Debian 10 + | Да |
 | Fedora 29 + | Да |
-| CentOS 7 | нет | 
+| CentOS 7 | Нет | 
 | CentOS 8 + | Да |
-| Red Hat Enterprise Linux 6. x-7. x | нет |
+| Red Hat Enterprise Linux 6. x-7. x | Нет |
 | Red Hat Enterprise Linux 8 + | Да |
-| openSUSE LEAP 15,0 | нет |
+| openSUSE LEAP 15,0 | Нет |
 | openSUSE LEAP 15.1 + | Да |
 | openSUSE Тумблевид | Да |
-| SUSE Linux Enterprise 11. x-12. x | нет |
-| SUSE Linux Enterprise 15 | нет |
-| SUSE Linux Enterprise 15,1 | нет |
+| SUSE Linux Enterprise 11. x-12. x | Нет |
+| SUSE Linux Enterprise 15 | Нет |
+| SUSE Linux Enterprise 15,1 | Нет |
 
 Проверить, поддерживает ли дистрибутив Linux параметр Module, можно с `disable_legacy_dialects` помощью следующей команды.
 

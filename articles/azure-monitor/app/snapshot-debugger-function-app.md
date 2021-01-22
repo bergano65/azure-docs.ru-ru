@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 12/18/2020
-ms.openlocfilehash: 3060bd6ea8d7fbc4a4bf005b84cd07d420987ab6
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: d86455eae0834f29099c7d5c96f8326408daf519
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97696417"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675535"
 ---
 # <a name="enable-snapshot-debugger-for-net-and-net-core-apps-in-azure-functions"></a>Включение Snapshot Debugger для приложений .NET и .NET Core в функциях Azure
 
@@ -20,14 +20,14 @@ Snapshot Debugger в настоящее время работает для пр�
 
 Для большинства приложений уровни обслуживания "бесплатный" и "общий" не содержат достаточно памяти или места на диске для сохранения моментальных снимков.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
-* [Включение мониторинга Application Insights в приложение-функция](https://docs.microsoft.com/azure/azure-functions/configure-monitoring#add-to-an-existing-function-app)
+* [Включение мониторинга Application Insights в приложение-функция](../../azure-functions/configure-monitoring.md#add-to-an-existing-function-app)
 
 ## <a name="enable-snapshot-debugger"></a>Включить Snapshot Debugger
 
 Если вы используете другой тип службы Azure, ниже приведены инструкции по включению Snapshot Debugger на других поддерживаемых платформах:
-* [Служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
+* [служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json);
 * [Oблачныe службы Azure2](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
@@ -143,9 +143,9 @@ namespace SnapshotCollectorAzureFunction
 
 Рекомендуется включить Snapshot Debugger для всех приложений, чтобы упростить диагностику исключений приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Создание трафика для приложения, которое может вызвать исключение. Затем подождите 10 – 15 минут, чтобы моментальные снимки отправлялись на экземпляр Application Insights.
 - [Просмотр моментальных снимков](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) в портал Azure.
-- Настройте конфигурацию Snapshot Debugger на основе вашего варианта использования в приложении-функции. Дополнительные сведения см. [в разделе Настройка моментальных снимков в host.js](https://docs.microsoft.com/azure/azure-functions/functions-host-json#applicationinsightssnapshotconfiguration).
+- Настройте конфигурацию Snapshot Debugger на основе вашего варианта использования в приложении-функции. Дополнительные сведения см. [в разделе Настройка моментальных снимков в host.js](../../azure-functions/functions-host-json.md#applicationinsightssnapshotconfiguration).
 - Справку по устранению неполадок Snapshot Debugger см. в разделе [snapshot Debugger устранение неполадок](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).

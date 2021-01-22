@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: b213954dde6ca4eaa0a69ddf0e40398fc09b9063
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: b142c88b0003281237dad125080930c0dd4d3bee
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115775"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673609"
 ---
 # <a name="connect-to-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к выделенному пулу SQL (ранее SQL DW) в Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
 
@@ -30,12 +30,12 @@ ms.locfileid: "98115775"
 
 Используйте SQL Server Management Studio (SSMS) для подключения и запроса выделенного пула SQL (ранее — хранилища данных SQL).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
 * Существующий выделенный пул SQL. Чтобы создать его, см. раздел [Создание выделенного пула SQL (ранее — хранилище данных SQL)](create-data-warehouse-portal.md).
-* Установленный SQL Server Management Studio (SSMS). [Скачайте SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) бесплатно, если у вас его еще нет.
+* Установленный SQL Server Management Studio (SSMS). [Скачайте SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) бесплатно, если у вас его еще нет.
 * Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [выделенный пул SQL (ранее — хранилище данных SQL)](sql-data-warehouse-connect-overview.md).
 
 ## <a name="1-connect-to-your-dedicated-sql-pool-formerly-sql-dw"></a>1. подключение к выделенному пулу SQL (ранее — хранилище данных SQL)

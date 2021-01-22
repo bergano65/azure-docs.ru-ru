@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0e53bebf9cdb8c0fc084d04550c7444c1c01be50
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 56611794bc2f190eccef739679da8474c9b04eb4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352870"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675966"
 ---
 # <a name="clone-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Клонирование управляемого образа в версию образа с помощью Azure CLI
 Если у вас есть управляемый образ, который вы хотите клонировать в коллекцию общих образов, можно создать образ из коллекции общих образов непосредственно из управляемого образа. После тестирования нового образа можно удалить исходный управляемый образ. Вы также можете выполнить миграцию из управляемого образа в общую коллекцию образов с помощью [PowerShell](image-version-managed-image-powershell.md).
@@ -25,7 +25,7 @@ ms.locfileid: "96352870"
 - **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При создании виртуальной машины используется версия образа для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз.
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для работы с этой статьей необходимо иметь существующую [коллекцию общих образов](shared-images-cli.md). 
 
@@ -41,11 +41,11 @@ ms.locfileid: "96352870"
 
 В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. 
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./linux/shared-image-galleries.md#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./shared-image-galleries.md#image-definitions).
 
 Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
-В этом примере определение образа называется *мимажедефинитион* и предназначено для [обобщенного](./linux/shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. Чтобы создать определение для образов с помощью ОС Windows, используйте `--os-type Windows`. 
+В этом примере определение образа называется *мимажедефинитион* и предназначено для [обобщенного](./shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. Чтобы создать определение для образов с помощью ОС Windows, используйте `--os-type Windows`. 
 
 ```azurecli-interactive 
 resourceGroup=myGalleryRG
@@ -96,7 +96,7 @@ az sig image-version create \
 > Вы также можете хранить все реплики версии образа в хранилище, [избыточном](../storage/common/storage-redundancy.md) в виде зоны, путем добавления `--storage-account-type standard_zrs` при создании версии образа.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте виртуальную машину из [обобщенной версии образа](vm-generalized-image-version-cli.md).
 

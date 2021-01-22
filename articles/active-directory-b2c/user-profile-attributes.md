@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/13/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7b134c4e9e980104a54f6a96d45445ee114556a5
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: f76aecc80537e6db55c8c4f2e5a7a240be6b1415
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178727"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675752"
 ---
 # <a name="user-profile-attributes"></a>Атрибуты профиля пользователя
 
@@ -160,7 +160,7 @@ ms.locfileid: "98178727"
 
 ## <a name="mfa-phone-number-attribute"></a>Атрибут номера телефона MFA
 
-При использовании телефона для многофакторной проверки подлинности (MFA) для проверки удостоверения пользователя используется мобильный телефон. Чтобы [Добавить](https://docs.microsoft.com/graph/api/authentication-post-phonemethods) новый номер телефона программно, [Обновить](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update), [получить](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get)или [Удалить](https://docs.microsoft.com/graph/api/phoneauthenticationmethod-delete) номер телефона, используйте [метод проверки подлинности](https://docs.microsoft.com/graph/api/resources/phoneauthenticationmethod)MS API Graph Phone.
+При использовании телефона для многофакторной проверки подлинности (MFA) для проверки удостоверения пользователя используется мобильный телефон. Чтобы [Добавить](/graph/api/authentication-post-phonemethods) новый номер телефона программно, [Обновить](/graph/api/b2cauthenticationmethodspolicy-update), [получить](/graph/api/b2cauthenticationmethodspolicy-get)или [Удалить](/graph/api/phoneauthenticationmethod-delete) номер телефона, используйте [метод проверки подлинности](/graph/api/resources/phoneauthenticationmethod)MS API Graph Phone.
 
 В Azure AD B2C [пользовательских политик](custom-policy-overview.md)номер телефона доступен через `strongAuthenticationPhoneNumber` тип утверждения.
 

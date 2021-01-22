@@ -9,12 +9,12 @@ ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli, references_regions
-ms.openlocfilehash: 7f72d703e5377f725addc4aa8c52e1cdb0fa571d
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 3ff7b3cd29740461a4f94f3c1d433086db119a09
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630757"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673812"
 ---
 # <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
 Чтобы создать файловый ресурс Azure, необходимо ответить на три вопроса о том, как она будет использоваться:
@@ -129,7 +129,7 @@ $storAcct = New-AzStorageAccount `
 
 Чтобы упростить создание учетной записи хранения и последующего файлового ресурса, в переменных будут храниться несколько параметров. Вы можете заменить содержимое переменной любыми значениями, однако обратите внимание, что имя учетной записи хранения должно быть глобально уникальным.
 
-```bash
+```azurecli
 resourceGroupName="myResourceGroup"
 storageAccountName="mystorageacct$RANDOM"
 region="westus2"
@@ -137,7 +137,7 @@ region="westus2"
 
 Чтобы создать учетную запись хранения, способную хранить стандартные общие файловые ресурсы Azure, мы будем использовать следующую команду. `--sku`Параметр относится к требуемому типу избыточности. Если требуется геоизбыточная учетная запись хранения, избыточная или геозона, необходимо также удалить `--enable-large-file-share` параметр.
 
-```bash
+```azurecli
 az storage account create \
     --resource-group $resourceGroupName \
     --name $storageAccountName \
@@ -149,7 +149,7 @@ az storage account create \
 
 Чтобы создать учетную запись хранения, способную хранить файловые ресурсы Azure уровня "Премиум", мы будем использовать следующую команду. Обратите внимание, что `--sku` параметр изменился так, чтобы `Premium` он включал и, и требуемый уровень избыточности локально избыточного ( `LRS` ). `--kind`Параметр имеет значение, `FileStorage` `StorageV2` так как общие файловые ресурсы уровня "Премиум" должны создаваться в учетной записи хранения филестораже, а не в учетной записи хранения GPv2.
 
-```bash
+```azurecli
 az storage account create \
     --resource-group $resourceGroupName \
     --name $storageAccountName \
@@ -233,7 +233,7 @@ New-AzRmStorageShare `
 > [!Important]  
 > Для файловых ресурсов уровня "Премиум" `--quota` параметр ссылается на подготовленный размер общей папки. Подготовленный размер общей папки — это сумма, за которую будет взиматься плата, независимо от использования. Счета за стандартные общие ресурсы выставляются на основе использования, а не подготовленного размера.
 
-```bash
+```azurecli
 shareName="myshare"
 
 az storage share-rm create \
@@ -285,7 +285,7 @@ Update-AzRmStorageShare `
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 Следующая команда Azure CLI предполагает, что вы установили `$resourceGroupName` переменные, `$storageAccountName` и, `$shareName` как описано в предыдущих разделах этого документа.
 
-```bash
+```azurecli
 az storage share-rm update \
     --resource-group $resourceGroupName \
     --storage-account $storageAccountName \
@@ -295,7 +295,7 @@ az storage share-rm update \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Спланируйте развертывание файлов Azure](storage-files-planning.md) или [запланируйте развертывание синхронизация файлов Azure](storage-sync-files-planning.md). 
 - [Обзор сетевых](storage-files-networking-overview.md)возможностей.
 - Подключите и подключите общую папку в [Windows](storage-how-to-use-files-windows.md), [macOS](storage-how-to-use-files-mac.md)и [Linux](storage-how-to-use-files-linux.md).

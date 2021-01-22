@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp, devx-track-js
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 2488a476fe40c2bf1f3e290b462babceff30a9b0
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: f75f42f3879f551a945bdeb2d88450ae3b9d6106
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601396"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674156"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -36,8 +36,8 @@ ms.locfileid: "96601396"
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
-1. [Создайте новое приложение-функцию](./functions-create-first-azure-function.md) и назовите его **Functions**.
-2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее **михттптригжер**.
+1. [Создайте новое приложение-функцию](./functions-get-started.md) и назовите его **Functions**.
+2. [Создайте функцию HTTP на основе шаблона](./functions-get-started.md) и назовите ее **михттптригжер**.
 3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее **митимертригжер**.
 4. [Создайте тестовое приложение xUnit](https://xunit.net/docs/getting-started/netcore/cmdline) в решении и назовите его **functions. Tests**.
 5. Использование NuGet для добавления ссылки из тестового приложения в [Microsoft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
@@ -251,7 +251,7 @@ namespace Functions.Tests
 
 - **Timer_should_log_message**: этот тест создает экземпляр `ListLogger` и передает его в функции таймера. После выполнения функции журнал будет проверен на наличие ожидаемого сообщения.
 
-Если вы хотите получить доступ к параметрам приложения в тестах, [inject](./functions-dotnet-dependency-injection.md) можно внедрить `IConfiguration` экземпляр с макетными значениями переменных среды в функцию.
+Если вы хотите получить доступ к параметрам приложения в тестах, [](./functions-dotnet-dependency-injection.md) можно внедрить `IConfiguration` экземпляр с макетными значениями переменных среды в функцию.
 
 ### <a name="run-tests"></a>Выполнить тесты
 
@@ -381,7 +381,7 @@ npm test
 
 Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как записывать автоматизированные тесты для функций, изучите следующие ресурсы.
 

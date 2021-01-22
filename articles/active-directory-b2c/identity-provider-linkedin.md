@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/19/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e2c576c97d170726f5ec1b06e5a6d0d859a85e64
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: a378a95a28b1299502ef15cadca60f3807f99429
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538104"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674405"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
 
@@ -30,13 +30,13 @@ ms.locfileid: "98538104"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
 ## <a name="create-a-linkedin-application"></a>Создание приложения LinkedIn
 
-Чтобы включить вход для пользователей с учетной записью LinkedIn в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [веб-сайте LinkedIn Developers](https://www.developer.linkedin.com/). Дополнительные сведения см. в разделе [поток кода авторизации](https://docs.microsoft.com/linkedin/shared/authentication/authorization-code-flow). Если у вас еще нет учетной записи LinkedIn, вы можете зарегистрироваться по адресу [https://www.linkedin.com/](https://www.linkedin.com/) .
+Чтобы включить вход для пользователей с учетной записью LinkedIn в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [веб-сайте LinkedIn Developers](https://www.developer.linkedin.com/). Дополнительные сведения см. в разделе [поток кода авторизации](/linkedin/shared/authentication/authorization-code-flow). Если у вас еще нет учетной записи LinkedIn, вы можете зарегистрироваться по адресу [https://www.linkedin.com/](https://www.linkedin.com/) .
 
 1. Выполните вход на [сайт разработчиков LinkedIn](https://www.developer.linkedin.com/) с учетными данными для учетной записи LinkedIn.
 1. Выберите **Мои приложения**, а затем щелкните **создать приложение**.
@@ -50,7 +50,7 @@ ms.locfileid: "98538104"
 
 ::: zone pivot="b2c-user-flow"
 
-## <a name="configure-a-linkedin-account-as-an-identity-provider"></a>Настройка учетной записи LinkedIn в качестве поставщика удостоверений
+## <a name="configure-linkedin-as-an-identity-provider"></a>Настройка LinkedIn в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
@@ -60,6 +60,16 @@ ms.locfileid: "98538104"
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения LinkedIn, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
 1. Щелкните **Сохранить**.
+
+## <a name="add-linkedin-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений LinkedIn в поток пользователя 
+
+1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
+1. Щелкните поток пользователя, который необходимо добавить в качестве поставщика удостоверений LinkedIn.
+1. В разделе **поставщики удостоверений социальных сетей** выберите **LinkedIn**.
+1. Щелкните **Сохранить**.
+1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
+1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Щелкните **выполнить поток пользователя**
 
 ::: zone-end
 
@@ -80,9 +90,9 @@ ms.locfileid: "98538104"
 9. Для параметра **Использование ключа** выберите `Signature`.
 10. Нажмите кнопку **Создать**.
 
-## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
+## <a name="configure-linkedin-as-an-identity-provider"></a>Настройка LinkedIn в качестве поставщика удостоверений
 
-Если необходимо разрешить пользователям входить в систему с помощью учетной записи LinkedIn, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
+Чтобы пользователи могли входить с помощью учетной записи LinkedIn, необходимо определить учетную запись в качестве поставщика утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Определите учетную запись LinkedIn в качестве поставщика утверждений, добавив ее в элемент **клаимспровидерс** в файле расширения политики.
 
@@ -95,7 +105,7 @@ ms.locfileid: "98538104"
       <Domain>linkedin.com</Domain>
       <DisplayName>LinkedIn</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="LinkedIn-OAUTH">
+        <TechnicalProfile Id="LinkedIn-OAuth2">
           <DisplayName>LinkedIn</DisplayName>
           <Protocol Name="OAuth2" />
           <Metadata>
@@ -181,79 +191,27 @@ ms.locfileid: "98538104"
 </BuildingBlocks>
 ```
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-Теперь вы настроили политику, чтобы Azure AD B2C знать, как взаимодействовать с учетной записью LinkedIn. Попробуйте отправить файл расширения политики, чтобы убедиться, что на данный момент нет проблем.
 
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-1. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-1. Щелкните **Отправить**.
-
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
-
-На этом этапе поставщик удостоверений настроен, но он недоступен ни на одном из экранов регистрации или входа. Чтобы сделать его доступным, необходимо создать дубликат существующего шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений LinkedIn.
-
-1. Откройте файл *TrustFrameworkBase.xml* в начальном пакете.
-1. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-1. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-1. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-1. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInLinkedIn`.
-
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экране регистрации или входа. Если вы добавите для учетной записи LinkedIn элемент **ClaimsProviderSelection**, при переходе пользователя на страницу отобразится новая кнопка.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-2. Добавьте следующий элемент под элементом **ClaimsProviderSelections**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `LinkedInExchange`:
-
-    ```xml
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
     <ClaimsProviderSelection TargetClaimsExchangeId="LinkedInExchange" />
-    ```
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAuth2" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В нашем примере действие — это взаимодействие Azure AD B2C с учетной записью LinkedIn для получения маркера.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-1. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
-
-    ```xml
-    <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
-    ```
-
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
-
-1. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
-::: zone-end
-
-:: Zone Pivot = "B2C — пользователь-Flow"
-
-## <a name="add-linkedin-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений LinkedIn в поток пользователя 
-
-1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните поток пользователя, который необходимо добавить в качестве поставщика удостоверений LinkedIn.
-1. В разделе **поставщики удостоверений социальных сетей** выберите **LinkedIn**.
-1. Щелкните **Сохранить**.
-1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
-1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Щелкните **выполнить поток пользователя**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
-
-Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
-
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInLinkedIn.xml*.
-1. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInLinkedIn`.
-1. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_linkedin`.
-1. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами пути взаимодействия пользователя (SignUpSignLinkedIn).
-1. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
-1. Убедитесь, что созданное приложение Azure AD B2C выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.
-
+[!INCLUDE [active-directory-b2c-create-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
 ## <a name="migration-from-v10-to-v20"></a>Миграция с версии 1.0 на v 2.0
 

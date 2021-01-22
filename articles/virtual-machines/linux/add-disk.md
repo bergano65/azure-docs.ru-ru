@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 9520196c8dce9ea511c2f3b799bd12b34c6f988f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ad3a2ae9fd9a99398b384ef4e4a44820faccf8c7
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499753"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675891"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Добавление диска к виртуальной машине Linux
 
@@ -181,5 +181,5 @@ UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   xfs   defaults,nofail  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Ознакомьтесь с рекомендациями по [оптимизации производительности виртуальной машины Linux](optimization.md) , чтобы правильно настроить виртуальную машину Linux.
+* Ознакомьтесь с рекомендациями по [оптимизации производительности виртуальной машины Linux](/previous-versions/azure/virtual-machines/linux/optimization) , чтобы правильно настроить виртуальную машину Linux.
 * Увеличьте емкость хранилища, добавив дополнительные диски, и [настройте RAID](/previous-versions/azure/virtual-machines/linux/configure-raid) для повышения производительности.

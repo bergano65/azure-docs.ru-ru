@@ -11,28 +11,28 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 19aa847ce7ce1a6ba727a4733aefcdfad845e8c6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 282ec6a25dc381dc51f28534d272bae57d2e792e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629397"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674999"
 ---
 # <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Руководство по настройке Невис с Azure Active Directory B2C для проверки подлинности без пароля
 
 В этом примере руководства вы узнаете, как расширить Azure AD B2C с помощью  [Невис](https://www.nevis.net/solution/authentication-cloud) , чтобы включить проверку подлинности без пароля. Невис предоставляет полноценное взаимодействие с конечным пользователем, полностью ориентированное на мобильные пользователи, и обеспечивает надежную проверку подлинности клиентов и соответствует требованиям к транзакциям директивы оплаты 2 (PSD2).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы приступить к работе, вам потребуется:
 
 - Невис [пробная учетная запись](https://www.nevis-security.com/aadb2c/)
 
-- подписка Azure AD; Если у вас ее нет, получите [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Подписка Azure AD. Если у вас ее нет, получите [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
-- [Клиент Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с вашей подпиской Azure.
+- [Клиент Azure AD B2C](./tutorial-create-tenant.md) , связанный с вашей подпиской Azure.
 
-- Настроена Azure AD B2C среда для использования [настраиваемых политик](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started), если вы хотите интегрировать в поток политик регистрации значение «Невис».
+- Настроена Azure AD B2C среда для использования [настраиваемых политик](./custom-policy-get-started.md), если вы хотите интегрировать в поток политик регистрации значение «Невис».
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -114,7 +114,7 @@ ms.locfileid: "97629397"
 
 5. Выберите **Добавить** и создайте новый ключ со следующими параметрами:
 
-      a. Выбор параметра " **вручную** " в параметрах
+      а. Выбор параметра " **вручную** " в параметрах
 
       b. Задайте имя **аусклаудакцесстокен** .
 
@@ -134,9 +134,9 @@ ms.locfileid: "97629397"
 
 4. **Сохраните** изменения в файле.
 
-5. Следуйте [инструкциям](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#2-create-an-azure-blob-storage-account) и передайте файл **nevis.html** в хранилище BLOB-объектов Azure.
+5. Следуйте [инструкциям](./customize-ui-with-html.md#2-create-an-azure-blob-storage-account) и передайте файл **nevis.html** в хранилище BLOB-объектов Azure.
 
-6. Следуйте [инструкциям](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#3-configure-cors) и включите общий доступ к ресурсам в разных источниках (CORS) для этого файла.
+6. Следуйте [инструкциям](./customize-ui-with-html.md#3-configure-cors) и включите общий доступ к ресурсам в разных источниках (CORS) для этого файла.
 
 7. После завершения передачи и включения CORS выберите в списке файл **nevis.html** .
 
@@ -256,7 +256,7 @@ ms.locfileid: "97629397"
 
 4. Укажите свой адрес электронной почты.
 
-5. Щелкните **Продолжить**.
+5. Выберите **Continue** (Продолжить).
 
 6. На телефоне в окне уведомления выберите " **Невис Access App Notification**".
 
@@ -264,10 +264,10 @@ ms.locfileid: "97629397"
 
 8. Вы автоматически перейдете на целевую страницу [JWT.MS](https://jwt.ms) , на которой отображаются маркеры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях.
 
-- [Пользовательские политики в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Пользовательские политики в Azure AD B2C](./custom-policy-overview.md)
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

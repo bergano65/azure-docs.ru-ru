@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure
 ms.date: 07/17/2020
 ms.author: cynthn
-ms.openlocfilehash: 96c68850cfd8b03f7d1457eb0f1ca9ce5880c926
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: a20c19c3da89801570ca4d74a646e3cf0d8434b6
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198005"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675908"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 
@@ -87,8 +87,8 @@ ms.locfileid: "98198005"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Создание виртуальной машины с помощью NGINX](./scripts/virtual-machines-linux-cli-sample-create-vm-nginx.md?toc=%2fcli%2fazure%2ftoc.json)
-- [Создание виртуальной машины IIS с помощью PowerShell](./scripts/virtual-machines-windows-powershell-sample-create-vm-iis.md)
+- [Создание виртуальной машины с помощью NGINX](/previous-versions/azure/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-vm-nginx?toc=%2fcli%2fazure%2ftoc.json)
+- [Создание виртуальной машины IIS с помощью PowerShell](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-iis)
 
 
 ## <a name="packer"></a>Packer
@@ -144,8 +144,8 @@ ms.locfileid: "98198005"
 
 - [Развертывание плашечных виртуальных машин с помощью шаблона диспетчер ресурсов](./linux/spot-template.md).
 - [Создайте виртуальную машину Windows на основе шаблона диспетчер ресурсов](./windows/ps-template.md).
-- [Скачайте шаблон для виртуальной машины](./windows/download-template.md).
+- [Скачайте шаблон для виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template).
 - [Создайте шаблон Azure Image Builder](./linux/image-builder-json.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](./linux/tutorial-automate-vm-deployment.md) или [Windows](./windows/tutorial-automate-vm-deployment.md).

@@ -11,23 +11,23 @@ ms.topic: how-to
 ms.date: 12/09/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 254f8da74a187e88cfb973da7100fe5654c84bb6
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: fe427150b15c6bccb97172ae751235d388c95c7b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732452"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675032"
 ---
 # <a name="tutorial-configure-zscaler-private-access-with-azure-active-directory-b2c"></a>Руководство. Настройка частного доступа Zscaler с помощью Azure Active Directory B2C
 
 В этом руководстве вы узнаете, как интегрировать проверку подлинности Azure Active Directory B2C (Azure AD B2C) с [Zscaler Private Access (ZPA)](https://www.zscaler.com/products/zscaler-private-access). ZPA обеспечивает безопасный доступ к частным приложениям и ресурсам на основе политик без затрат, проблем или угроз безопасности виртуальной частной сети (VPN). Предложение безопасного гибридного доступа Zscaler позволяет получать нулевую атаку для приложений, ориентированных на потребителей, при объединении с Azure AD B2C.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем начать, вам потребуется:
 
 - Подписка Azure. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).  
-- [Azure AD B2C клиент](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) , связанный с подпиской Azure.  
+- [Azure AD B2C клиент](./tutorial-create-tenant.md) , связанный с подпиской Azure.  
 - [Подписка ZPA](https://azuremarketplace.microsoft.com/marketplace/apps/aad.zscalerprivateaccess?tab=Overview).
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -78,7 +78,7 @@ ms.locfileid: "97732452"
    b. В разделе **единый вход** выберите **пользователь**.  
    c. В раскрывающемся списке **домены** выберите домены проверки подлинности, которые необходимо связать с этим IDP.
 
-1. Выберите **Далее**.
+1. Нажмите **Далее**.
 
 1. Перейдите на вкладку **метаданные SP** и выполните следующие действия.
 
@@ -96,15 +96,15 @@ ms.locfileid: "97732452"
 >[!Note]
 >Этот шаг необходим только в том случае, если вы еще не настроили пользовательские политики. Если у вас уже есть одна или несколько настраиваемых политик, этот шаг можно пропустить.
 
-Сведения о настройке пользовательских политик в клиенте Azure AD B2C см. [в разделе Приступая к работе с пользовательскими политиками в Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started).
+Сведения о настройке пользовательских политик в клиенте Azure AD B2C см. [в разделе Приступая к работе с пользовательскими политиками в Azure Active Directory B2C](./custom-policy-get-started.md).
 
 ### <a name="step-3-register-zpa-as-a-saml-application-in-azure-ad-b2c"></a>Шаг 3. Регистрация ZPA в качестве приложения SAML в Azure AD B2C
 
-Сведения о настройке приложения SAML в Azure AD B2C см. в разделе [Регистрация приложения SAML в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers). 
+Сведения о настройке приложения SAML в Azure AD B2C см. в разделе [Регистрация приложения SAML в Azure AD B2C](./connect-with-saml-service-providers.md). 
 
-На шаге ["3,2. Отправка и проверка метаданных политики"](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers#32-upload-and-test-your-policy-metadata)скопируйте или запишите URL-адрес метаданных SAML IDP, используемый Azure AD B2C. Он понадобится вам позднее.
+На шаге ["3,2. Отправка и проверка метаданных политики"](./connect-with-saml-service-providers.md#32-upload-and-test-your-policy-metadata)скопируйте или запишите URL-адрес метаданных SAML IDP, используемый Azure AD B2C. Он понадобится вам позднее.
 
-Следуйте инструкциям на шаге ["4,2 обновление манифеста приложения"](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers#42-update-the-app-manifest). На шаге 4,2 Обновите свойства манифеста приложения следующим образом:
+Следуйте инструкциям на шаге ["4,2 обновление манифеста приложения"](./connect-with-saml-service-providers.md#42-update-the-app-manifest). На шаге 4,2 Обновите свойства манифеста приложения следующим образом:
 
 - Для **identifierUris**: используйте идентификатор сущности поставщика услуг, который вы скопировали или отметили ранее в шаге 1.6. b.  
 - Для **самлметадатаурл**: пропустите это свойство, так как ZPA не размещает URL-адрес метаданных SAML.  
@@ -145,11 +145,11 @@ ms.locfileid: "97732452"
 
 Перейдите на пользовательский портал ZPA или приложение для доступа к браузеру и протестируйте процесс регистрации или входа. Проверка должна привести к успешной проверке подлинности SAML.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Приступая к работе с пользовательскими политиками в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started)
-- [Регистрация приложения SAML в Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers)
+- [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md)
+- [Регистрация приложения SAML в Azure AD B2C](./connect-with-saml-service-providers.md)
 - [Пошаговое руководств по настройке ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa)
 - [Настройка IdP для единого входа](https://help.zscaler.com/zpa/configuring-idp-single-sign)

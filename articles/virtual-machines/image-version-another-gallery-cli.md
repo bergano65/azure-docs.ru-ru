@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: e8aabcd1c68272a78b3c1fe88913c5a62496f681
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 753e7503612502cde12f821ea331625406daa7a8
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88225841"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675983"
 ---
 # <a name="copy-an-image-from-another-gallery-using-the-azure-cli"></a>Копирование изображения из другой коллекции с помощью Azure CLI
 
@@ -157,10 +157,10 @@ az sig image-version create \
 > Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `--storage-account-type  standard_zrs` его при создании версии образа.
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте виртуальную машину на основе [обобщенной](vm-generalized-image-version-cli.md) или [специализированной](vm-specialized-image-version-cli.md) версии образа.
 
-Кроме того, пробное использование [Azure Image Builder (Предварительная версия)](./linux/image-builder-overview.md) может помочь в автоматизации создания версий изображений, но его можно использовать для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md). 
+Кроме того, пробное использование [Azure Image Builder (Предварительная версия)](./image-builder-overview.md) может помочь в автоматизации создания версий изображений, но его можно использовать для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md). 
 
 Сведения о том, как предоставить сведения о плане покупки, см. в разделе [предоставление сведений о плане покупки Azure Marketplace при создании образов](marketplace-images.md).

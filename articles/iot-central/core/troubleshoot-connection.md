@@ -8,12 +8,12 @@ ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
 ms.custom: device-developer, devx-track-azurecli
-ms.openlocfilehash: 2bbf400840c968587de3a0a0951d28c7c35b210f
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: d1a7c94152b611ea0dbea249156add617178d7ca
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990896"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673240"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Устранение неполадок, при которых данные с устройств не отображаются в Azure IoT Central
 
@@ -35,11 +35,11 @@ ms.locfileid: "94990896"
 
 Установите средство и расширение, если вы еще этого не сделали `az cli` `azure-iot` .
 
-Сведения об установке см. в `az cli` разделе [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+Сведения об установке см. в `az cli` разделе [Установка Azure CLI](/cli/azure/install-azure-cli).
 
-Чтобы [установить](/cli/azure/azure-cli-reference-for-IoT?view=azure-cli-latest#extension-reference-installation) `azure-iot` расширение, выполните следующую команду:
+Чтобы [установить](/cli/azure/azure-cli-reference-for-IoT#extension-reference-installation) `azure-iot` расширение, выполните следующую команду:
 
-```cmd/bash
+```azurecli
 az extension add --name azure-iot
 ```
 
@@ -50,20 +50,20 @@ az extension add --name azure-iot
 
 Используйте следующие команды для входа в подписку, в которой имеется приложение IoT Central:
 
-```cmd/bash
+```azurecli
 az login
 az set account --subscription <your-subscription-id>
 ```
 
 Чтобы отслеживать данные телеметрии, отправляемые устройством, используйте следующую команду:
 
-```cmd/bash
+```azurecli
 az iot central diagnostics monitor-events --app-id <app-id> --device-id <device-name>
 ```
 
 Если устройство успешно подключено к IoT Central, вы увидите результат, аналогичный приведенному ниже:
 
-```cmd/bash
+```output
 Monitoring telemetry.
 Filtering on device: device-001
 {
@@ -82,13 +82,13 @@ Filtering on device: device-001
 
 Для мониторинга обновлений свойств устройство обменивается данными с IoT Central используйте следующую команду предварительной версии:
 
-```cmd/bash
+```azurecli
 az iot central diagnostics monitor-properties --app-id <app-id> --device-id <device-name>
 ```
 
 Если устройство успешно отправляет обновления свойств, вы увидите результат, аналогичный приведенному ниже:
 
-```cmd/bash
+```output
 Changes in reported properties:
 version : 32
 {'state': 'true', 'name': {'value': {'value': 'Contoso'}, 'status': 'completed', 'desiredVersion': 7, 'ad': 'completed', 'av': 7, 'ac
@@ -106,7 +106,7 @@ rocessorArchitecture': 'ARM', 'swVersion': '1.0.0'}
 
 Если данные не отображаются на мониторе, проверьте состояние подготовки устройства, выполнив следующую команду:
 
-```cmd/bash
+```azurecli
 az iot central device registration-info --app-id <app-id> --device-id <device-name>
 ```
 
@@ -157,7 +157,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 | 404 | Экземпляр службы подготовки устройств или ресурс, например регистрация, не существует. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). |
 | 412 | `ETag`В запросе не совпадает с `ETag` именем существующего ресурса согласно rfc7232). | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview). |
 | 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](../../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | Уменьшение частоты сообщений, разделение обязанностей между несколькими устройствами. |
-| 500 | Произошла внутренняя ошибка. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , чтобы узнать, могут ли они помочь вам. |
+| 500 | Внутренняя ошибка. | Отправьте запрос в службу [поддержки клиентов](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) , чтобы узнать, могут ли они помочь вам. |
 
 ## <a name="payload-shape-issues"></a>Проблемы с фигурами полезных данных
 
@@ -169,20 +169,20 @@ https://aka.ms/iotcentral-docs-dps-SAS",
   - Несовпадение имен, таких как опечатки или проблемы с сопоставлением вариантов.
   - Несмоделированные свойства, в которых схема не определена в шаблоне устройства.
   - Несоответствие схем, например тип, определенный в шаблоне `boolean` , в виде, но данные являются строкой.
-  - Одно и то же имя телеметрии определено в нескольких интерфейсах, но устройство не соответствует IoT Plug and Play.
+  - Одно и то же имя телеметрии определено в нескольких интерфейсах, но устройство не соответствует IoT самонастраивающийся.
 - Фигура данных является недопустимым JSON. Дополнительные сведения см. в разделе [данные телеметрии, свойства и команды](concepts-telemetry-properties-commands.md).
 
 Чтобы определить категории, в которых находится ваша ошибка, выполните наиболее подходящую команду для своего сценария:
 
 - Чтобы проверить данные телеметрии, используйте команду Предварительный просмотр:
 
-    ```cmd/bash
+    ```azurecli
     az iot central diagnostics validate-messages --app-id <app-id> --device-id <device-name>
     ```
 
 - Чтобы проверить обновления свойств, используйте команду Предварительный просмотр
 
-    ```cmd/bash
+    ```azurecli
     az iot central diagnostics validate-properties --app-id <app-id> --device-id <device-name>
     ```
 
@@ -190,7 +190,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 
 В следующих выходных данных показаны примеры сообщений об ошибках и предупреждений из команды Validate:
 
-```cmd/bash
+```output
 Validating telemetry.
 Filtering on device: v22upeoqx6.
 Exiting after 300 second(s), or 10 message(s) have been parsed (whichever happens first).
@@ -210,7 +210,7 @@ tatype 'double'. Data '56'. All dates/times/datetimes/durations must be ISO 8601
 
 Если вы решили создать новый шаблон, который моделирует данные правильно, перенесите устройства из старого шаблона в новый шаблон. Дополнительные сведения см. в статье [Управление устройствами в приложении IOT Central Azure](howto-manage-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам нужна дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, вы можете отправить запрос в [службу поддержки Azure](https://portal.azure.com/#create/Microsoft.Support).
 

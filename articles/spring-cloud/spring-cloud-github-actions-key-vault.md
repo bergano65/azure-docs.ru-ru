@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 995d10b3c7064e462500e0bec4d5d8aa010afe64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ea0db1faf8c452958b8d95c193d45506057777c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888771"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673338"
 ---
 # <a name="authenticate-azure-spring-cloud-with-key-vault-in-github-actions"></a>Проверка подлинности Azure Spring Cloud с использованием Key Vault в GitHub Actions
 
@@ -22,13 +22,14 @@ ms.locfileid: "90888771"
 
 ## <a name="generate-credential"></a>Создание учетных данных
 Чтобы создать ключ для доступа к хранилищу ключей, выполните следующую команду на локальном компьютере:
-```
+
+```azurecli
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.KeyVault/vaults/<KEY_VAULT> --sdk-auth
 ```
 Область, заданная `--scopes` параметром, ограничивает доступ ключа к ресурсу.  Он может получить доступ только к надежному полю.
 
 С результатами:
-```
+```output
 {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
@@ -59,12 +60,12 @@ az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTIO
 ## <a name="generate-full-scope-azure-credential"></a>Создание учетных данных Azure с полной областью действия
 Это главный ключ для открытия всех дверей в здании. Процедура аналогична предыдущему шагу, но здесь мы изменим область для создания главного ключа:
 
-```
+```azurecli
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID> --sdk-auth
 ```
 
 Опять же, результаты:
-```
+```output
 {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
@@ -84,7 +85,7 @@ az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTIO
 ## <a name="combine-credentials-in-github-actions"></a>Объединение учетных данных в действиях GitHub
 Задайте учетные данные, используемые при выполнении конвейера CICD:
 
-```
+```console
 on: [push]
 
 jobs:
@@ -112,5 +113,5 @@ jobs:
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * [Действия весны GitHub Cloud](./spring-cloud-howto-github-actions.md)

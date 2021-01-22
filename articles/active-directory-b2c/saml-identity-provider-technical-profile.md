@@ -11,18 +11,18 @@ ms.topic: reference
 ms.date: 12/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: db99fbdea38dd30401a8aeedb7ebc23c71c5236c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 2f16de49518e334f2f5e679ce24e24a262a1e231
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655192"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674949"
 ---
 # <a name="define-a-saml-identity-provider-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля поставщика удостоверений SAML в настраиваемой политике Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C) обеспечивает поддержку для поставщика удостоверений SAML 2,0. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол. С помощью технического профиля SAML можно создавать федерацию с поставщиком удостоверений на основе SAML, например [ADFS](identity-provider-adfs2016-custom.md) и [Salesforce](identity-provider-salesforce-saml.md). Она позволяет пользователям выполнять вход с использованием их удостоверений для социальных сетей или корпоративных удостоверений.
+Azure Active Directory B2C (Azure AD B2C) обеспечивает поддержку для поставщика удостоверений SAML 2,0. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол. С помощью технического профиля SAML можно создавать федерацию с поставщиком удостоверений на основе SAML, например [ADFS](./identity-provider-adfs.md) и [Salesforce](identity-provider-salesforce-saml.md). Она позволяет пользователям выполнять вход с использованием их удостоверений для социальных сетей или корпоративных удостоверений.
 
 ## <a name="metadata-exchange"></a>Обмен метаданными
 
@@ -174,7 +174,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
 
 Элемент **криптографиккэйс** содержит следующие атрибуты:
 
-| Атрибут |Обязательно | Описание |
+| attribute |Обязательно | Описание |
 | --------- | ----------- | ----------- |
 | SamlMessageSigning |Да | Сертификат X509 (набор ключей RSA), используемый для подписывания сообщений SAML. Azure AD B2C использует этот ключ для подписывания запросов и отправки их поставщику удостоверений. |
 | SamlAssertionDecryption |Нет | Сертификат X509 (набор ключей RSA). Поставщик удостоверений SAML использует открытую часть сертификата для шифрования утверждения ответа SAML. Azure AD B2C использует частную часть сертификата для расшифровки утверждения. |
@@ -187,7 +187,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name/your-policy/samlp/metadat
 > [!TIP]
 > Скопируйте `<ClaimsProviders>` раздел из базы данных и сохраните эти элементы в поставщике утверждений: `<DisplayName>Token Issuer</DisplayName>` , `<TechnicalProfile Id="Saml2AssertionIssuer">` и `<DisplayName>Token Issuer</DisplayName>` .
  
-Пример:
+Пример
 
 ```xml
    <ClaimsProviders>   

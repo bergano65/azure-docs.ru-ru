@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0b32efe3738dedbe8178889b3e9008964d485b00
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 3e99b156d220b4c24a368886b1c0ca0813ffdc51
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034923"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674139"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -507,7 +507,7 @@ FUNCTIONS_WORKER_PROCESS_COUNT применяется к каждому узлу
 
 | Версия службы "Функции" | Версия узла (Windows) | Версия узла (Linux) |
 |---|---| --- |
-| 1.x | 6.11.2 (заблокировано средой выполнения) | н/д |
+| 1.x | 6.11.2 (заблокировано средой выполнения) | Н/Д |
 | 2.x  | `~8`<br/>`~10` такую<br/>`~12` | `node|8`<br/>`node|10` такую  |
 | 3.x | `~10`<br/>`~12` такую<br/>`~14` (предварительная версия)  | `node|10`<br/>`node|12` такую<br/>`node|14` (предварительная версия) |
 
@@ -567,7 +567,7 @@ module.exports = function(context) {
 
 ### <a name="in-local-development-environment"></a>В локальной среде разработки
 
-При локальном запуске проект функций включает [ `local.settings.json` файл](/azure/azure-functions/functions-run-local), в котором переменные среды хранятся в `Values` объекте. 
+При локальном запуске проект функций включает [ `local.settings.json` файл](./functions-run-local.md), в котором переменные среды хранятся в `Values` объекте. 
 
 ```json
 {
@@ -805,7 +805,7 @@ module.exports = async function (context) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих ресурсах:
 

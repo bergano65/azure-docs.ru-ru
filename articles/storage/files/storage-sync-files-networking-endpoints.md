@@ -8,12 +8,12 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 61ff5d05eb74804af69b90d839115a8468619275
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 64d66e1b9eab225b38ee21306fea6f9534a708f3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921721"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673860"
 ---
 # <a name="configuring-azure-file-sync-network-endpoints"></a>Настройка сетевых конечных точек для службы "Синхронизация файлов Azure"
 Службы "Файлы Azure" и "Синхронизация файлов Azure" предоставляют два основных типа конечных точек для доступа к общим папкам Azure: 
@@ -52,13 +52,13 @@ ms.locfileid: "96921721"
 
 Если у вас есть виртуальная машина в виртуальной сети или настроена переадресация DNS, как описано в разделе [Настройка переадресации DNS для Файлов Azure](storage-files-networking-dns.md), правильность настройки частной конечной точки можно проверить, выполнив следующие команды в PowerShell, командной строке или терминале (работает для Windows, Linux или macOS). Замените `<storage-account-name>` реальным именем учетной записи хранения.
 
-```
+```console
 nslookup <storage-account-name>.file.core.windows.net
 ```
 
 Если все пройдет успешно, вы увидите следующие выходные данные, где `192.168.0.5` обозначает частный IP-адрес частной конечной точки в виртуальной сети (здесь представлены выходные данные в среде Windows):
 
-```Output
+```output
 Server:  UnKnown
 Address:  10.2.4.4
 
@@ -73,7 +73,7 @@ Aliases:  storageaccount.file.core.windows.net
 
 Если у вас есть виртуальная машина в виртуальной сети или настроена переадресация DNS, как описано в разделе [Настройка переадресации DNS для Файлов Azure](storage-files-networking-dns.md), правильность настройки частной конечной точки можно проверить, выполнив следующие команды:
 
-```PowerShell
+```powershell
 $storageAccountHostName = [System.Uri]::new($storageAccount.PrimaryEndpoints.file) | `
     Select-Object -ExpandProperty Host
 
@@ -82,7 +82,7 @@ Resolve-DnsName -Name $storageAccountHostName
 
 Если все пройдет успешно, вы увидите следующие выходные данные, где `192.168.0.5` обозначает частный IP-адрес частной конечной точки в виртуальной сети:
 
-```Output
+```output
 Name                             Type   TTL   Section    NameHost
 ----                             ----   ---   -------    --------
 storageaccount.file.core.windows CNAME  60    Answer     storageaccount.privatelink.file.core.windows.net
@@ -113,7 +113,7 @@ nslookup $hostName
 
 Если все пройдет успешно, вы увидите следующие выходные данные, где `192.168.0.5` обозначает частный IP-адрес частной конечной точки в виртуальной сети:
 
-```Output
+```output
 Server:         127.0.0.53
 Address:        127.0.0.53#53
 
@@ -168,7 +168,7 @@ Get-AzPrivateEndpoint `
 
 Если все пройдет успешно, вы увидите следующие выходные данные, где `192.168.1.4`, `192.168.1.5`, `192.168.1.6` и `192.168.1.7` — частные IP-адреса, назначенные этой частной конечной точке.
 
-```Output
+```output
 Name     : mysssmanagement.westus2.afs.azure.net
 Type     : CNAME
 TTL      : 60
@@ -244,7 +244,7 @@ if ($null -eq $storageSyncService) {
 
 Чтобы создать частную конечную точку, необходимо создать подключение службы Приватного канала к службе синхронизации хранилища. Подключение Приватного канала передается как входные данные для создания частной конечной точки.
 
-```PowerShell 
+```powershell 
 # Disable private endpoint network policies
 $subnet.PrivateEndpointNetworkPolicies = "Disabled"
 $virtualNetwork = $virtualNetwork | `
@@ -325,7 +325,7 @@ if ($null -eq $dnsZone) {
 ```
 Теперь, когда у вас есть ссылка на частную зону DNS, нужно создать запись типа A для службы синхронизации хранилища.
 
-```PowerShell 
+```powershell 
 $privateEndpointIpFqdnMappings = $privateEndpoint | `
     Select-Object -ExpandProperty NetworkInterfaces | `
     Select-Object -ExpandProperty Id | `
@@ -607,7 +607,8 @@ $storageSyncService = $storageSyncService | Set-AzResource -Confirm:$false -Forc
 ```
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-<a name="azure-cli-does-not-support-setting-the-incomingtrafficpolicy-property-on-the-storage-sync-service-please-select-the-azure-powershell-tab-to-get-instructions-on-how-to-disable-the-storage-sync-service-public-endpoint"></a>Azure CLI не поддерживает задание `incomingTrafficPolicy` свойства в службе синхронизации хранилища. Перейдите на вкладку Azure PowerShell, чтобы получить инструкции по отключению общедоступной конечной точки службы синхронизации хранилища.
+Azure CLI не поддерживает задание `incomingTrafficPolicy` свойства в службе синхронизации хранилища. Перейдите на вкладку Azure PowerShell, чтобы получить инструкции по отключению общедоступной конечной точки службы синхронизации хранилища.
+
 ---
 
 ## <a name="see-also"></a>См. также раздел
