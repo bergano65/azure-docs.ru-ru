@@ -73,8 +73,6 @@
           href: concept-baseline.md
         - name: Агрегация событий
           href: event-aggregation.md
-        - name: Цены и связанные затраты
-          href: concept-pricing.md
 - name: Практические руководства
   items:
     - name: Безагентное решение для организаций
@@ -252,6 +250,6 @@
         - name: Доступность по регионам
           href: 'https://azure.microsoft.com/regions/services/'
         - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/security-center/'
+          href: 'https://azure.microsoft.com/pricing/details/azure-defender/'
         - name: Видео
           href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'

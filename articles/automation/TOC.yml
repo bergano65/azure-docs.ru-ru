@@ -6,6 +6,8 @@
       href: automation-intro.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: automation-faq.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   items:
     - name: Создание учетной записи службы автоматизации

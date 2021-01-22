@@ -70,10 +70,6 @@
         - name: Маркировка данных изображения
           displayName: 'tag, tagging, images'
           href: tutorial-labeling.md
-    - name: Пакет SDK для R
-      items:
-        - name: Создание первого эксперимента ML (R)
-          href: tutorial-1st-r-experiment.md
     - name: CLI
       items:
         - name: Обучение и развертывание с помощью CLI

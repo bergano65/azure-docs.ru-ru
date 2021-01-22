@@ -9,11 +9,11 @@
     - name: Агент виртуальной машины Windows
       href: agent-windows.md
 - name: Краткие руководства
-  expanded: true
   items:
     - name: Использование расширения настраиваемых скриптов
       href: ../windows/tutorial-automate-vm-deployment.md
       maintainContext: true
+  expanded: true
 - name: Основные понятия
   items:
     - name: Linux
@@ -120,13 +120,6 @@
         - name: Symantec
           href: symantec.md
     - name: Устаревшие расширения
-      items:
-        - name: Сборщик журналируемых данных
-          href: log-collector.md
-        - name: Trend Micro Deep Security
-          href: trend.md
-        - name: "Linux\_— версия\_1 (OSTC)"
-          href: custom-script-linuxOstc.md
     - name: Ограничение установки расширения
       items:
         - name: Linux

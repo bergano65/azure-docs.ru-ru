@@ -12,12 +12,12 @@ metadata:
   manager: nitinme
   ms.custom: custom-portals-hub
   ms.date: 08/28/2020
-  ms.openlocfilehash: c4c364a6c448fcee3d3c7ad3b3b2b0c4d32fec92
-  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+  ms.openlocfilehash: 059d5545c71bef3465dc634f8fdad2396a6d9a7e
+  ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/01/2020
-  ms.locfileid: "96462968"
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98681574"
 highlightedContent:
   items:
   - title: Что такое Cognitive Services?
@@ -93,7 +93,7 @@ conceptualContent:
       text: Служба "Речь"
     - url: https://speech.microsoft.com/
       itemType: overview
-      text: " - Настройка с помощью Speech Studio"
+      text: Настройка с помощью Speech Studio
   - title: Решение
     summary: Создавайте приложения, которые предоставят рекомендации для информированного и эффективного принятия решения.
     links:

@@ -25,6 +25,8 @@
       href: 'https://github.com/Azure-Samples/media-services-video-indexer'
 - name: Основные понятия
   items:
+    - name: Обзор
+      href: concepts-overview.md
     - name: Сравнение предустановок Индексатора видео и Служб мультимедиа
       href: compare-video-indexer-with-media-services-presets.md
     - name: Управление несколькими арендаторами
