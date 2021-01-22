@@ -1,0 +1,53 @@
+---
+title: Разрывы функций между службами мультимедиа Azure версии 2 и v3 | Документация Майкрософт
+description: В этой статье описываются зазоры функций между службами мультимедиа Azure версии 2 и 3.
+services: media-services
+author: IngridAtMicrosoft
+manager: femila
+ms.service: media-services
+ms.devlang: multiple
+ms.topic: conceptual
+ms.tgt_pltfrm: multiple
+ms.workload: media
+ms.date: 1/14/2020
+ms.author: inhenkel
+ms.openlocfilehash: 0f15c2bcd921c431dba1d1cce0454a6b2e752141
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98690655"
+---
+# <a name="feature-gaps-between-azure-media-services-v2-and-v3"></a>Разрывы функций между службами мультимедиа Azure версии 2 и v3
+
+![логотип с руководством по миграции](./media/migration-guide/azure-media-services-logo-migration-guide.svg)
+
+<hr color="#5ea0ef" size="10">
+
+![шаги миграции 2](./media/migration-guide/steps-2.svg)
+
+В этой части руководства по миграции содержатся подробные сведения о различиях между API v2 и v3.
+
+## <a name="feature-gaps-between-v2-and-v3-apis"></a>Разрывы функций между API версии 2 и v3
+
+В API V3 есть следующие функции, пропуская API v2. Несколько дополнительных функций Media Encoder Standard в API v2 в настоящее время недоступны в версии 3:
+
+- Вставка автоматической звуковой дорожки, если у ввода нет звука, так как это больше не требуется для Проигрыватель мультимедиа Azure.
+
+- Вставка видеодорожки, если у ввода нет видео.
+
+- Интерактивные события с перекодированием в настоящее время не поддерживают вставку в середину потока и Добавление маркера AD через вызов API.
+
+- Кодировщик Azure Media Premium больше не будет поддерживаться в версии 2. Если вы используете его для 8-разрядной кодировки HEVC, используйте новую поддержку HEVC в стандартном кодировщике. 
+    - Мы добавили поддержку сопоставления звуковых каналов со стандартным кодировщиком.  См. статью о [звуках в документации по параметрам кодирования служб мультимедиа Swagger](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json).
+    - Если вы использовали дополнительные функции или выходные форматы стороннего лицензионного продукта, например MXF или ProRes, используйте решение Azure Partner из телепотока, который будет транзакционным в соответствии со временем выхода v2. Кроме того, вы можете использовать представимую связь или [битмовин](http://bitmovin.com).
+
+- Свойство "Группа доступности" в конечной точке потоковой передачи в версии 2 больше не поддерживается. См. Пример проекта и руководство по доставке [VOD высокого уровня доступности](https://docs.microsoft.com/azure/media-services/latest/media-services-high-availability-encoding) в API V3.
+
+- В службах мультимедиа v3 невозможно указать FairPlay IV. Хотя это и не влияет на клиентов, использующих службы мультимедиа как для упаковки, так и для доставки лицензий, это может быть проблемой при использовании сторонней системы DRM для доставки лицензий FairPlay (гибридный режим).
+
+- Шифрование хранилища на стороне клиента для защиты неактивных ресурсов было удалено в API V3 и заменено шифрованием службы хранения для неактивных данных. Интерфейсы API V3 продолжают работать с существующими зашифрованными ресурсами хранилища, но не позволяют создавать новые.
+
+## <a name="next-steps"></a>Следующие шаги
+
+[!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]

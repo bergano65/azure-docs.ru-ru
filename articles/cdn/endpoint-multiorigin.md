@@ -8,14 +8,14 @@ ms.service: azure-cdn
 ms.topic: how-to
 ms.date: 9/06/2020
 ms.author: allensu
-ms.openlocfilehash: f9293206526778f8c3de8a368a1916a2cb3f88c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e433950c04c4494201b090063b17a10e54a4822
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504679"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685777"
 ---
-# <a name="azure-cdn-endpoint-multi-origin-preview"></a>Azure CDN с несколькими источниками для конечной точки (Предварительная версия)
+# <a name="azure-cdn-endpoint-multi-origin"></a>Azure CDN с несколькими источниками для конечной точки
 
 Поддержка нескольких источников позволяет сократить время простоя и установить глобальную избыточность. 
 
@@ -25,10 +25,6 @@ ms.locfileid: "89504679"
 
 > [!NOTE]
 > Сейчас эта функция доступна только в Azure CDN от Майкрософт. 
-
-> [!IMPORTANT]
-> Многоядерная конечная точка Azure CDN в настоящее время доступна в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="create-the-origin-group"></a>Создание группы происхождения
 
@@ -42,7 +38,7 @@ ms.locfileid: "89504679"
 
 4. Чтобы включить несколько источников, требуется по крайней мере одна группа-источник. Выберите **создать группу происхождения**:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-2.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-2.png" alt-text="Параметры источника" border="true":::
 
 5. В конфигурации **Добавить исходную группу** введите или выберите следующие сведения.
 
@@ -56,7 +52,7 @@ ms.locfileid: "89504679"
    | Метод проверки      | Выберите **head** или **Get**.                                           |
    | Группа происхождения по умолчанию | Выберите поле для установки в качестве группы происхождения по умолчанию.
     
-   :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-3.png" alt-text="Конечная точка сети CDN" border="true":::
+   :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-3.png" alt-text="Добавить исходную группу" border="true":::
 
 6. Выберите **Добавить**.
 
@@ -64,14 +60,14 @@ ms.locfileid: "89504679"
 
 1. В параметрах источника для конечной точки выберите **+ источник создания**:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-5.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-5.png" alt-text="Создать источник" border="true":::
 
 2. Введите или выберите следующие сведения в конфигурации **Добавить источник** :
 
    | Параметр           | Значение                                                                 |
    |-------------------|-----------------------------------------------------------------------|
    | Имя        | Введите имя источника.        |
-   | Тип источника | Выберите **хранилище**, **облачная служба**, **веб-приложение**или **Пользовательский источник**.                                   |
+   | Тип источника | Выберите **хранилище**, **облачная служба**, **веб-приложение** или **Пользовательский источник**.                                   |
    | Имя узла источника        | Выберите или введите имя узла источника.  Раскрывающийся список содержит все доступные источники типа, указанного в предыдущем параметре. Если в качестве типа источника выбрано значение **настраиваемый источник** , введите домен сервера источника клиента. |
    | Заголовок узла источника    | Введите заголовок узла, который нужно Azure CDN отправить с каждым запросом, или оставьте значение по умолчанию.                        |
    | Порт HTTP   | Введите HTTP-порт.                                         |
@@ -82,13 +78,13 @@ ms.locfileid: "89504679"
     > [!NOTE]
     > Если источник создается в группе происхождения, он должен быть связан с приоритетом и весом. Если в исходной группе есть только один источник, приоритет и вес по умолчанию задаются как 1. Трафик направляется к источникам с наивысшим приоритетом, если источник является работоспособным. Если источник определен как неработоспособный, то подключения перенаправляются в другой источник в порядке приоритета. Если два источника имеют одинаковый приоритет, трафик распределяется по весу, указанному для источника. 
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-6.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-6.png" alt-text="Добавить дополнительный источник" border="true":::
 
 3. Выберите **Добавить**.
 
 4. Выберите **настроить источник** , чтобы задать путь к источнику для всех источников:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-7.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-7.png" alt-text="Настройка пути к источнику" border="true":::
 
 5. Щелкните **ОК**.
 
@@ -98,27 +94,27 @@ ms.locfileid: "89504679"
 
 1. В параметрах источника конечной точки Azure CDN выберите имя исходной группы, которую вы хотите настроить.
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-8.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-8.png" alt-text="Настройка источников и параметров исходной группы" border="true":::
 
-2. В **группе Источник обновления**выберите **+ Выбор источника**:
+2. В **группе Источник обновления** выберите **+ Выбор источника**:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-9.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-9.png" alt-text="Обновить группу происхождения" border="true":::
 
 4. Выберите источник для добавления в группу в раскрывающемся списке и нажмите кнопку **ОК**.
 
 5. Убедитесь, что источник добавлен в группу, а затем выберите **сохранить**:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-10.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-10.png" alt-text="Проверка добавления дополнительного источника в группу" border="true":::
 
 ## <a name="remove-origin-from-origin-group"></a>Удалить источник из группы происхождения
 
 1. В параметрах источника конечной точки Azure CDN выберите имя исходной группы:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-8.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-8.png" alt-text="Удалить источник из группы" border="true":::
 
 2. Чтобы удалить источник из группы источника, щелкните значок корзины рядом с источником и выберите **сохранить**:
 
-    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-11.png" alt-text="Конечная точка сети CDN" border="true":::
+    :::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-11.png" alt-text="Обновление источника удаления исходной группы" border="true":::
 
 ## <a name="override-origin-group-with-rules-engine"></a>Переопределение исходной группы с помощью обработчика правил
 
@@ -126,9 +122,9 @@ ms.locfileid: "89504679"
 
 Распределите трафик в другую группу на основе URL-адреса запроса.
 
-1. В конечной точке CDN в разделе **Параметры**выберите **обработчик правил** :
+1. В конечной точке CDN в разделе **Параметры** выберите **обработчик правил** :
 
-:::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-12.png" alt-text="Конечная точка сети CDN" border="true":::
+:::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-12.png" alt-text="Обработчик правил" border="true":::
 
 2. Выберите **+ Добавить правило**.
 
@@ -138,17 +134,17 @@ ms.locfileid: "89504679"
 
 5. В раскрывающемся списке **оператор** выберите **Contains**.
 
-6. В списке **значение**введите **/Images**.
+6. В списке **значение** введите **/Images**.
 
 7. Выберите **+ Добавить действие**, а затем выберите **Переопределение исходной группы**.
 
 8. В поле « **Исходная группа**» выберите группу «Origin» в раскрывающемся списке.
 
-:::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-13.png" alt-text="Конечная точка сети CDN" border="true":::
+:::image type="content" source="./media/endpoint-multiorigin/endpoint-multiorigin-13.png" alt-text="Условия обработчика правил" border="true":::
 
 Для всех входящих запросов, если URL-путь содержит **/Images**, запрос будет назначен группе источника в разделе действия **(мйоригинграуп)**. 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы включили Azure CDNную конечную точку с несколькими источниками.
 
 Дополнительные сведения о Azure CDN и других службах Azure, упомянутых в этой статье, см. в следующих статьях:

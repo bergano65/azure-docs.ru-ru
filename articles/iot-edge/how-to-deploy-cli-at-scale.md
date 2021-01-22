@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 0a73651b11c9ca6f7cb34deb755543c3b5a6d710
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: f8e4925f721b307abd85a8b881caff3e5fc04fde
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92042989"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685668"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
 
@@ -191,7 +191,7 @@ ms.locfileid: "92042989"
 
 Чтобы создать развертывание, используйте команду [az iot edge deployment create](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-create).
 
-```cli
+```azurecli
 az iot edge deployment create --deployment-id [deployment id] --hub-name [hub name] --content [file path] --labels "[labels]" --target-condition "[target query]" --priority [int]
 ```
 
@@ -204,7 +204,7 @@ az iot edge deployment create --deployment-id [deployment id] --hub-name [hub na
 * **--content** — путь к файлу манифеста развертывания JSON. Обязательный параметр.
 * **--hub-name** — имя центра IoT, в котором будет создано развертывание. Центр должен быть в текущей подписке. Измените текущую подписку с помощью команды `az account set -s [subscription name]`.
 * **--labels** — добавление меток для отслеживания развертываний. Метка представляет собой пару имя и значение, которые описывают развертывание. Метки имеют формат JSON для имен и значений. Например `{"HostPlatform":"Linux", "Version:"3.0.1"}`.
-* **--target-condition** — введите целевое условие, чтобы определить, для каких устройств будет предназначено это развертывание. Условие основано на тегах двойника устройства или его сообщаемых свойствах и должно соответствовать формату выражения. Например, `tags.environment='test' and properties.reported.devicemodel='4000x'`.
+* **--target-condition** — введите целевое условие, чтобы определить, для каких устройств будет предназначено это развертывание.  Условие основано на тегах двойника устройства или его сообщаемых свойствах и должно соответствовать формату выражения.  Например, `tags.environment='test' and properties.reported.devicemodel='4000x'`.
 * **--priority** — положительные целые числа. Если одному устройству назначены два или более развертывания, будет применяться развертывание с самым высоким числовым значением параметра Priority.
 * **--metrics** — создание метрик, которые запрашивают сообщаемые свойства edgeHub для отслеживания состояния развертывания. Метрики принимают входные данные в формате JSON или путь к файлу. Например, `'{"queries": {"mymetric": "SELECT deviceId FROM devices WHERE properties.reported.lastDesiredStatus.code = 200"}}'`.
 
@@ -224,7 +224,7 @@ az iot edge deployment create --deployment-id [deployment id] --hub-name [hub na
 
 Чтобы обновить развертывание, используйте команду [az iot edge deployment update](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-update).
 
-```cli
+```azurecli
 az iot edge deployment update --deployment-id [deployment id] --hub-name [hub name] --set [property1.property2='value']
 ```
 
@@ -245,7 +245,7 @@ az iot edge deployment update --deployment-id [deployment id] --hub-name [hub na
 
 Чтобы удалить развертывание, используйте команду [az iot edge deployment delete](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-delete).
 
-```cli
+```azurecli
 az iot edge deployment delete --deployment-id [deployment id] --hub-name [hub name]
 ```
 

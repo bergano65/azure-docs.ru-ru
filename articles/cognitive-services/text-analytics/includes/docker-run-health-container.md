@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 11/12/2020
 ms.author: aahi
-ms.openlocfilehash: b19fb3f86be46a5db60fb87f9c7f5c3e28ac6428
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 82c33c038a1f8eaba540c9906efcffa0a9214762
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965152"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689666"
 ---
 ## <a name="install-the-container"></a>Установка контейнера
 
@@ -84,7 +84,7 @@ Azure [веб-приложение для контейнеров](https://azure.
 
 Запустите этот скрипт PowerShell с помощью Azure CLI, чтобы создать Веб-приложение для контейнеров, используя подписку и образ контейнера по протоколу HTTPS. Дождитесь завершения сценария (приблизительно 25-30 минут) перед отправкой первого запроса.
 
-```bash
+```azurecli
 $subscription_name = ""                    # THe name of the subscription you want you resource to be created on.
 $resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
                                            #    and AppSerivce to be attached to.
@@ -118,7 +118,7 @@ az webapp config appsettings set -g $resource_group_name -n $appservice_name --s
 > [!NOTE] 
 > В службе "экземпляры контейнеров Azure" не включена поддержка HTTPS для встроенных доменов. Если требуется протокол HTTPS, необходимо настроить его вручную, включая создание сертификата и регистрацию домена. Инструкции для этого можно найти в NGINX ниже.
 
-```bash
+```azurecli
 $subscription_name = ""                    # The name of the subscription you want you resource to be created on.
 $resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
                                            # and AppService to be attached to.

@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 4ba06af98714004e4429fe802a206acdfa8fb148
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 117bc71ba304445e3186b4e633f5888647be9223
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127623"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685635"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -1421,7 +1421,7 @@ ms.locfileid: "98127623"
 
 ### <a name="r-sdk"></a>Пакет SDK для R 
  
-Разработчики данных и искусственного интеллекта используют [пакет SDK машинное обучение Azure для R](tutorial-1st-r-experiment.md) для создания и запуска рабочих процессов машинного обучения с машинное обучение Azure.
+Разработчики данных и искусственного интеллекта используют [пакет SDK машинное обучение Azure для R](https://github.com/Azure/azureml-sdk-for-r) для создания и запуска рабочих процессов машинного обучения с машинное обучение Azure.
 
 Машинное обучение Azure SDK для R использует `reticulate` пакет для привязки к пакету SDK для Python. При непосредственной привязке к Python пакет SDK для R обеспечивает доступ к основным объектам и методам, реализованным в пакете SDK для Python, из любой выбранной среды R.
 
@@ -1595,24 +1595,24 @@ ms.locfileid: "98127623"
   + **azureml-train-core**
     + Добавлена поддержка TensorFlow 2,0 в Оценщике TensorFlow.
   + **azureml-Training-аутомл**
-    + Создание объекта [эксперимента](/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример
+    + Создание объекта [эксперимента](/python/api/azureml-core/azureml.core.experiment.experiment) Возвращает или создает эксперимент в рабочей области машинное обучение Azure для отслеживания журнала выполнения. ИДЕНТИФИКАТОР эксперимента и заархивированное время заполняются объектом эксперимента при создании. Пример.
 
-        ```py
+        ```python
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
-        Функция [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример
+        Функция [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) и [Повторная активация ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) — это функции, которые можно вызывать в эксперименте для скрытия и восстановления эксперимента в UX или по умолчанию при вызове List экспериментов. Если создается новый эксперимент с тем же именем, что и у архивного эксперимента, можно переименовать архивный эксперимент при повторной активации, передав новое имя. Может существовать только один активный эксперимент с заданным именем. Пример.
 
-        ```py
+        ```python
         experiment1 = Experiment(workspace, "Active Experiment")
         experiment1.archive()
         # Create new active experiment with the same name as the archived.
         experiment2 = Experiment(workspace, "Active Experiment")
         experiment1.reactivate(new_name="Previous Active Experiment")
         ```
-        Список статических методов [()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример
+        Список статических методов [()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) в эксперименте может принимать фильтр имен и ViewType. Значения ViewType: "ACTIVE_ONLY", "ARCHIVED_ONLY" и "ALL". Пример.
 
-        ```py
+        ```python
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
         all_first_experiments = Experiment.list(workspace, name="First Experiment", view_type="ALL")
         ```
@@ -1768,7 +1768,7 @@ ms.locfileid: "98127623"
     + Добавлена поддержка dockerfile в `environment_definition` параметре оценщиков.
     + Упрощенное распределение параметров обучения в средствах оценки.
 
-         ```py
+         ```python
         from azureml.train.dnn import TensorFlow, Mpi, ParameterServer
         ```
 
@@ -1820,20 +1820,20 @@ ms.locfileid: "98127623"
   + **azureml-core**
     + Вводится Dataset.get_all (Рабочая область), которая возвращает словарь `TabularDataset` объектов и, которым `FileDataset` назначено имя регистрации.
 
-    ```py
+    ```python
     workspace = Workspace.from_config()
     all_datasets = Dataset.get_all(workspace)
     mydata = all_datasets['my-data']
     ```
 
-    + Выявление `parition_format` аргумента AS для `Dataset.Tabular.from_delimited_files` и `Dataset.Tabular.from_parquet.files` . Сведения о секциях для каждого пути данных будут извлечены в столбцы на основе указанного формата. "{column_name}" создает строковый столбец, а "{column_name: гггг/мм/дд/чч/мм/СС}" создает столбец datetime, где "yyyy", "MM", "DD", "HH", "mm" и "SS" используются для извлечения года, месяца, дня, часа, минуты и секунды для типа DateTime. Partition_format должно начинаться с расположения первого ключа секции до конца пути к файлу. Например, с учетом пути ".. /USA/2019/01/01/data.csv ", где секция относится к стране и времени, partition_format ="/{Каунтри}/{партитиондате: гггг/мм/дд}/data.csv "создает строковый столбец" Country "со значением" USA "и столбцом datetime" Партитиондате "со значением" 2019-01-01 ".
-        ```py
+    + Выявление `parition_format` аргумента AS для `Dataset.Tabular.from_delimited_files` и `Dataset.Tabular.from_parquet.files` . Сведения о секциях для каждого пути данных будут извлечены в столбцы на основе указанного формата. "{column_name}" создает строковый столбец, а "{column_name: гггг/мм/дд/чч/мм/СС}" создает столбец datetime, где "yyyy", "MM", "DD", "HH", "mm" и "SS" используются для извлечения года, месяца, дня, часа, минуты и секунды для типа DateTime. Partition_format должно начинаться с расположения первого ключа секции до конца пути к файлу. Например, с учетом пути ".. /USA/2019/01/01/data.csv ", где секция относится к стране и времени, partition_format ="/{Каунтри}/{партитиондате: гггг/мм/дд}/data.csv "создает строковый столбец" Country "со значением" США "и столбцом datetime" Партитиондате "со значением" 2019-01-01 ".
+        ```python
         workspace = Workspace.from_config()
         all_datasets = Dataset.get_all(workspace)
         mydata = all_datasets['my-data']
         ```
 
-    + Выявление `partition_format` аргумента AS для `Dataset.Tabular.from_delimited_files` и `Dataset.Tabular.from_parquet.files` . Сведения о секциях для каждого пути данных будут извлечены в столбцы на основе указанного формата. "{column_name}" создает строковый столбец, а "{column_name: гггг/мм/дд/чч/мм/СС}" создает столбец datetime, где "yyyy", "MM", "DD", "HH", "mm" и "SS" используются для извлечения года, месяца, дня, часа, минуты и секунды для типа DateTime. Partition_format должно начинаться с расположения первого ключа секции до конца пути к файлу. Например, с учетом пути ".. /USA/2019/01/01/data.csv ", где секция относится к стране и времени, partition_format ="/{Каунтри}/{партитиондате: гггг/мм/дд}/data.csv "создает строковый столбец" Country "со значением" USA "и столбцом datetime" Партитиондате "со значением" 2019-01-01 ".
+    + Выявление `partition_format` аргумента AS для `Dataset.Tabular.from_delimited_files` и `Dataset.Tabular.from_parquet.files` . Сведения о секциях для каждого пути данных будут извлечены в столбцы на основе указанного формата. "{column_name}" создает строковый столбец, а "{column_name: гггг/мм/дд/чч/мм/СС}" создает столбец datetime, где "yyyy", "MM", "DD", "HH", "mm" и "SS" используются для извлечения года, месяца, дня, часа, минуты и секунды для типа DateTime. Partition_format должно начинаться с расположения первого ключа секции до конца пути к файлу. Например, с учетом пути ".. /USA/2019/01/01/data.csv ", где секция относится к стране и времени, partition_format ="/{Каунтри}/{партитиондате: гггг/мм/дд}/data.csv "создает строковый столбец" Country "со значением" США "и столбцом datetime" Партитиондате "со значением" 2019-01-01 ".
     + `to_csv_files` методы и были `to_parquet_files` добавлены в `TabularDataset` . Эти методы обеспечивают преобразование между `TabularDataset` и `FileDataset` путем преобразования данных в файлы указанного формата.
     + Автоматически Войдите в реестр базового образа при сохранении Dockerfile, созданного моделью. Package ().
     + "gpu_support" больше не требуется; AML теперь автоматически обнаруживает и использует расширение NVIDIA DOCKER, когда оно доступно. В будущем выпуске она будет удалена.
@@ -2278,6 +2278,6 @@ ms.locfileid: "98127623"
   + Средство просмотра файлов журналов
   + Ссылки на запуск, вычисление, модели, изображения и развертывания экспериментов на вкладке "действия"
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с общими сведениями о службе [Машинное обучение Azure](overview-what-is-azure-ml.md).

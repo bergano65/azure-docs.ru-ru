@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 23a5ea2d3ffc1511bea66bb8bc3c4282b6d16cc2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c97975d6920cd0f04a7d2d4e73c00104a2b13235
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489128"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685618"
 ---
 # <a name="high-availability-of-sap-hana-scale-out-system-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA масштабируемой системы на Red Hat Enterprise Linux 
 
@@ -141,11 +141,11 @@ ms.locfileid: "96489128"
 
 2. Создайте шесть сетевых интерфейсов, по одному для каждой виртуальной машины базы данных HANA, в `inter` подсети виртуальной сети (в этом примере это **Hana-S1-DB1-внутрихолдинговый**, Hana **-S1-DB2**-Внутрихолдинговый, Hana- **S1-db3-** **Внутрихолдинговый, Hana**-S2- **DB2**-Внутрихолдинговый, Hana – косайтового уровня) и Hana- **S2-db3-** in).  
 
-3. Создайте шесть сетевых интерфейсов, по одному для каждой виртуальной машины базы данных HANA, в `hsr` подсети виртуальной сети (в этом примере это **Hana-** S1-DB1-HSR, **Hana-S1-DB2-HSR**, Hana- **S1-db3-HSR**, Hana-S2- **DB2**-HSR и Hana-S2- **HSR-db3**). **hana-s2-db1-hsr**  
+3. Создайте шесть сетевых интерфейсов, по одному для каждой виртуальной машины базы данных HANA, в `hsr` подсети виртуальной сети (в этом примере это **Hana-** S1-DB1-HSR, **Hana-S1-DB2-HSR**, Hana- **S1-db3-HSR**, Hana-S2- **DB2**-HSR и Hana-S2- **HSR-db3**).   
 
 4. Подключите только что созданные виртуальные сетевые интерфейсы к соответствующим виртуальным машинам.  
 
-    a. Перейдите к виртуальной машине в [портал Azure](https://portal.azure.com/#home).  
+    а. Перейдите к виртуальной машине в [портал Azure](https://portal.azure.com/#home).  
 
     b. В левой области выберите **виртуальные машины**. Выполните фильтрацию по имени виртуальной машины (например, **Hana-S1-DB1**), а затем выберите виртуальную машину.  
 
@@ -161,11 +161,11 @@ ms.locfileid: "96489128"
 
 5. Включите ускоренную сеть для дополнительных сетевых интерфейсов для `inter` `hsr` подсетей и, выполнив следующие действия.  
 
-    a. Откройте [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) в [портал Azure](https://portal.azure.com/#home).  
+    а. Откройте [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) в [портал Azure](https://portal.azure.com/#home).  
 
     b. Выполните следующие команды, чтобы включить ускоренную сеть для дополнительных сетевых интерфейсов, подключенных к `inter` `hsr` подсетям и.  
 
-    ```
+    ```azurecli
     az network nic update --id /subscriptions/your subscription/resourceGroups/your resource group/providers/Microsoft.Network/networkInterfaces/hana-s1-db1-inter --accelerated-networking true
     az network nic update --id /subscriptions/your subscription/resourceGroups/your resource group/providers/Microsoft.Network/networkInterfaces/hana-s1-db2-inter --accelerated-networking true
     az network nic update --id /subscriptions/your subscription/resourceGroups/your resource group/providers/Microsoft.Network/networkInterfaces/hana-s1-db3-inter --accelerated-networking true
@@ -256,7 +256,7 @@ ms.locfileid: "96489128"
 
 1. **[A]** сохраните файлы узлов на виртуальных машинах. Включить записи для всех подсетей. Для этого примера были добавлены следующие записи `/etc/hosts` .  
 
-    ```
+    ```bash
      # Client subnet
      10.23.0.11 hana-s1-db1
      10.23.0.12 hana-s1-db1
@@ -303,7 +303,7 @@ ms.locfileid: "96489128"
 
 1. **[AH]** Создайте точки подключения для томов базы данных HANA.  
 
-    ```
+    ```bash
     mkdir -p /hana/shared
     ```
 
@@ -313,7 +313,7 @@ ms.locfileid: "96489128"
     > [!IMPORTANT]
     > Обязательно укажите домен NFS в `/etc/idmapd.conf` виртуальной машине в соответствии с конфигурацией домена по умолчанию в Azure NetApp Files: **`defaultv4iddomain.com`** . В случае несоответствия между конфигурацией домена на клиенте NFS (т. е. виртуальной машине) и NFS-сервере (т. е. конфигурацией Azure NetApp) разрешения для файлов на томах NetApp в Azure, подключенных к виртуальным машинам, будут отображаться как `nobody`.  
 
-    ```
+    ```bash
     sudo cat /etc/idmapd.conf
     # Example
     [General]
@@ -326,7 +326,7 @@ ms.locfileid: "96489128"
 3. **[AH]** Проверьте `nfs4_disable_idmapping` . Ему должно быть задано значение **Y**. Чтобы создать структуру каталогов, в которой находится параметр `nfs4_disable_idmapping`, выполните команду mount. Вы не сможете вручную создать каталог в /sys/modules, так как доступ зарезервирован для ядра или драйверов.  
    Этот шаг необходим, если используется Azure Нетаппфилес Нфсв 4.1.  
 
-    ```
+    ```bash
     # Check nfs4_disable_idmapping 
     cat /sys/module/nfs/parameters/nfs4_disable_idmapping
     # If you need to set nfs4_disable_idmapping to Y
@@ -342,20 +342,20 @@ ms.locfileid: "96489128"
 
 4. **[AH1]** Подключите общие Azure NetApp Files тома к виртуальным машинам базы данных сайту SITE1 HANA.  
 
-    ```
+    ```bash
     sudo mount -o rw,vers=4,minorversion=1,hard,timeo=600,rsize=262144,wsize=262144,intr,noatime,lock,_netdev,sec=sys 10.23.1.7:/HN1-shared-s1 /hana/shared
     ```
 
 5. **[AH2]** Подключите общие Azure NetApp Files тома к виртуальным машинам базы данных SITE2 HANA.  
 
-    ```
+    ```bash
     sudo mount -o rw,vers=4,minorversion=1,hard,timeo=600,rsize=262144,wsize=262144,intr,noatime,lock,_netdev,sec=sys 10.23.1.7:/HN1-shared-s2 /hana/shared
     ```
 
 
 10. **[AH]** Убедитесь, что соответствующие `/hana/shared/` файловые системы подключены ко всем виртуальным машинам базы данных Hana с протоколом NFS версии **NFSv4**.  
 
-    ```
+    ```bash
     sudo nfsstat -m
     # Verify that flag vers is set to 4.1 
     # Example from SITE 1, hana-s1-db1
@@ -372,25 +372,25 @@ ms.locfileid: "96489128"
 Настройте структуру дисков с помощью  **диспетчера логических томов (LVM)**. В следующем примере предполагается, что к каждой виртуальной машине HANA подключены три диска данных, которые используются для создания двух томов.
 
 1. **[AH]** Список всех доступных дисков:
-    ```
+    ```bash
     ls /dev/disk/azure/scsi1/lun*
     ```
 
    Выходные данные примера:
 
-    ```
+    ```bash
     /dev/disk/azure/scsi1/lun0  /dev/disk/azure/scsi1/lun1  /dev/disk/azure/scsi1/lun2 
     ```
 
 2. **[AH]** Создайте физические тома для всех дисков, которые вы хотите использовать.
-    ```
+    ```bash
     sudo pvcreate /dev/disk/azure/scsi1/lun0
     sudo pvcreate /dev/disk/azure/scsi1/lun1
     sudo pvcreate /dev/disk/azure/scsi1/lun2
     ```
 
 3. **[AH]** Создайте группу томов для файлов данных. Используйте одну группу томов для файлов журналов и другую — для общей папки SAP HANA.
-    ```
+    ```bash
     sudo vgcreate vg_hana_data_HN1 /dev/disk/azure/scsi1/lun0 /dev/disk/azure/scsi1/lun1
     sudo vgcreate vg_hana_log_HN1 /dev/disk/azure/scsi1/lun2
     ```
@@ -402,7 +402,7 @@ ms.locfileid: "96489128"
    > Используйте `-i` параметр и задайте для него номер базового физического тома, если для каждого тома данных или журнала используется более одного физического тома. Используйте параметр `-I`, чтобы указать размер блока чередования при создании чередующегося тома.  
    > Сведения о рекомендуемых конфигурациях хранилища, включая размеры блоков чередования и количество дисков, см. в статье [Конфигурации хранилища виртуальных машин SAP HANA в Azure](./hana-vm-operations-storage.md).  
 
-    ```
+    ```bash
     sudo lvcreate -i 2 -I 256 -l 100%FREE -n hana_data vg_hana_data_HN1
     sudo lvcreate -l 100%FREE -n hana_log vg_hana_log_HN1
     sudo mkfs.xfs /dev/vg_hana_data_HN1/hana_data
@@ -410,7 +410,7 @@ ms.locfileid: "96489128"
     ```
 
 5. **[AH]** Создайте каталоги подключения и скопируйте UUID всех логических томов:
-    ```
+    ```bash
     sudo mkdir -p /hana/data/HN1
     sudo mkdir -p /hana/log/HN1
     # Write down the ID of /dev/vg_hana_data_HN1/hana_data and /dev/vg_hana_log_HN1/hana_log
@@ -418,20 +418,20 @@ ms.locfileid: "96489128"
     ```
 
 6. **[AH]** Создайте `fstab` записи для логических томов и подключения:
-    ```
+    ```bash
     sudo vi /etc/fstab
     ```
 
    Вставьте следующую строку в файл `/etc/fstab`:
 
-    ```
+    ```bash
     /dev/disk/by-uuid/UUID of /dev/mapper/vg_hana_data_HN1-hana_data /hana/data/HN1 xfs  defaults,nofail  0  2
     /dev/disk/by-uuid/UUID of /dev/mapper/vg_hana_log_HN1-hana_log /hana/log/HN1 xfs  defaults,nofail  0  2
     ```
 
    Подключите новые тома:
 
-    ```
+    ```bash
     sudo mount -a
     ```
 
@@ -444,27 +444,27 @@ ms.locfileid: "96489128"
 1. **[AH]** Перед установкой HANA задайте корневой пароль. После завершения установки можно отключить корневой пароль. Выполните `root` команду AS `passwd` .  
 
 2. **[1, 2]** измените разрешения для `/hana/shared` 
-    ```
+    ```bash
     chmod 775 /hana/shared
     ```
 
 3. **[1]** убедитесь, что вы можете войти через SSH в виртуальные машины базы данных Hana на этом сайте **Hana-S1-DB2** и **Hana-S1-db3** без запроса пароля.  
    Если это не так, ключи SSH Exchange, как описано в разделе [использование проверки подлинности на основе ключей](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-ssh-configuration-keypairs).  
-    ```
+    ```bash
     ssh root@hana-s1-db2
     ssh root@hana-s1-db3
     ```
 
 4. **[2]** убедитесь, что вы можете войти через SSH в виртуальные машины базы данных Hana на этом сайте **Hana-S2-DB2** и **Hana-S2-db3** без запроса пароля.  
    Если это не так, ключи SSH Exchange, как описано в разделе [использование проверки подлинности на основе ключей](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s2-ssh-configuration-keypairs).  
-    ```
+    ```bash
     ssh root@hana-s2-db2
     ssh root@hana-s2-db3
     ```
 
 5. **[AH]** Установите дополнительные пакеты, необходимые для HANA 2,0 SP4. Дополнительные сведения см. в разделе SAP Note [2593824](https://launchpad.support.sap.com/#/notes/2593824) для RHEL 7. 
 
-    ```
+    ```bash
     # If using RHEL 7
     yum install libgcc_s1 libstdc++6 compat-sap-c++-7 libatomic1
     # If using RHEL 8
@@ -473,7 +473,7 @@ ms.locfileid: "96489128"
 
 
 6. **[A]** временно отключите брандмауэр, чтобы он не влиял на установку Hana. После завершения установки HANA ее можно включить повторно. 
-    ```
+    ```bash
     # Execute as root
     systemctl stop firewalld
     systemctl disable firewalld
@@ -483,9 +483,9 @@ ms.locfileid: "96489128"
 
 1. **[1]** установите SAP Hana, следуя инструкциям из руководства по [установке и обновлению SAP HANA 2,0](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.04/en-US/7eb0167eb35e4e2885415205b8383584.html). В приведенных ниже инструкциях мы покажем установку SAP HANA на первом узле сайта 1.   
 
-   a. Запустите программу **hdblcm** , как `root` в каталоге с установочным программным обеспечением Hana. Используйте `internal_network` параметр и передайте адресное пространство для подсети, используемое для обмена данными между УЗЛАМИ Hana.  
+   а. Запустите программу **hdblcm** , как `root` в каталоге с установочным программным обеспечением Hana. Используйте `internal_network` параметр и передайте адресное пространство для подсети, используемое для обмена данными между УЗЛАМИ Hana.  
 
-    ```
+    ```bash
     ./hdblcm --internal_network=10.23.1.128/26
     ```
 
@@ -522,7 +522,7 @@ ms.locfileid: "96489128"
 
    Отобразите global.ini и убедитесь, что конфигурация внутреннего SAP HANA взаимодействия между узлами выполнена. Проверьте раздел **связи** . Оно должно иметь адресное пространство для `inter` подсети и `listeninterface` должно иметь значение `.internal` . Проверьте раздел **internal_hostname_resolution** . Он должен иметь IP-адреса виртуальных машин HANA, принадлежащих к `inter` подсети.  
 
-   ```
+   ```bash
      sudo cat /usr/sap/HN1/SYS/global/hdb/custom/config/global.ini
      # Example from SITE1 
      [communication]
@@ -536,7 +536,7 @@ ms.locfileid: "96489128"
 
 4. **[1, 2]** подготовка `global.ini` к установке в среде без общего доступа, как описано в примечании к SAP [2080991](https://launchpad.support.sap.com/#/notes/0002080991).  
 
-   ```
+   ```bash
     sudo vi /usr/sap/HN1/SYS/global/hdb/custom/config/global.ini
     [persistence]
     basepath_shared = no
@@ -544,14 +544,14 @@ ms.locfileid: "96489128"
 
 4. **[1, 2]** перезапустите SAP Hana, чтобы активировать изменения.  
 
-   ```
+   ```bash
     sudo -u hn1adm /usr/sap/hostctrl/exe/sapcontrol -nr 03 -function StopSystem
     sudo -u hn1adm /usr/sap/hostctrl/exe/sapcontrol -nr 03 -function StartSystem
    ```
 
 6. **[1, 2]** убедитесь, что клиентский интерфейс будет использовать IP-адреса из `client` подсети для обмена данными.  
 
-    ```
+    ```bash
     # Execute as hn1adm
     /usr/sap/HN1/HDB03/exe/hdbsql -u SYSTEM -p "password" -i 03 -d SYSTEMDB 'select * from SYS.M_HOST_INFORMATION'|grep net_publicname
     # Expected result - example from SITE 2
@@ -562,13 +562,13 @@ ms.locfileid: "96489128"
 
 7. **[AH]** Измените разрешения для каталогов данных и журналов, чтобы избежать ошибок установки HANA.  
 
-   ```
+   ```bash
     sudo chmod o+w -R /hana/data /hana/log
    ```
 
 8. **[1]** установите вторичные узлы Hana. Примеры инструкций на этом шаге приведены для сайта 1.  
-   a. Запустите резидентную программу **hdblcm** как `root` .    
-    ```
+   а. Запустите резидентную программу **hdblcm** как `root` .    
+    ```bash
      cd /hana/shared/HN1/hdblcm
      ./hdblcm 
     ```
@@ -602,21 +602,21 @@ ms.locfileid: "96489128"
 
    Создайте резервную копию баз данных как **HN1** ADM:
 
-    ```
+    ```bash
     hdbsql -d SYSTEMDB -u SYSTEM -p "passwd" -i 03 "BACKUP DATA USING FILE ('initialbackupSYS')"
     hdbsql -d HN1 -u SYSTEM -p "passwd" -i 03 "BACKUP DATA USING FILE ('initialbackupHN1')"
     ```
 
    Скопируйте системные файлы PKI на вторичный сайт.
 
-    ```
+    ```bash
     scp /usr/sap/HN1/SYS/global/security/rsecssfs/data/SSFS_HN1.DAT hana-s2-db1:/usr/sap/HN1/SYS/global/security/rsecssfs/data/
     scp /usr/sap/HN1/SYS/global/security/rsecssfs/key/SSFS_HN1.KEY  hana-s2-db1:/usr/sap/HN1/SYS/global/security/rsecssfs/key/
     ```
 
    Создайте основной сайт:
 
-    ```
+    ```bash
     hdbnsutil -sr_enable --name=HANA_S1
     ```
 
@@ -624,7 +624,7 @@ ms.locfileid: "96489128"
     
    Зарегистрируйте второй сайт, чтобы запустить репликацию системы. Выполните следующую команду от имени <hanasid\>adm.
 
-    ```
+    ```bash
     sapcontrol -nr 03 -function StopWait 600 10
     hdbnsutil -sr_register --remoteHost=hana-s1-db1 --remoteInstance=03 --replicationMode=sync --name=HANA_S2
     sapcontrol -nr 03 -function StartSystem
@@ -634,7 +634,7 @@ ms.locfileid: "96489128"
 
    Проверьте состояние репликации и подождите, пока все базы данных синхронизируются.
 
-    ```
+    ```bash
     sudo su - hn1adm -c "python /usr/sap/HN1/HDB03/exe/python_support/systemReplicationStatus.py"
     # | Database | Host          | Port  | Service Name | Volume ID | Site ID | Site Name | Secondary     | Secondary | Secondary | Secondary | Secondary     | Replication | Replication | Replication    |
     # |          |               |       |              |           |         |           | Host          | Port      | Site ID   | Site Name | Active Status | Mode        | Status      | Status Details |
@@ -657,12 +657,12 @@ ms.locfileid: "96489128"
 
 4. **[1, 2]** измените конфигурацию Hana таким образом, чтобы связь для репликации системы Hana, если она направляется через интерфейс виртуальной сети репликации системы Hana.   
    - Останавливает HANA на обоих сайтах
-    ```
+    ```bash
     sudo -u hn1adm /usr/sap/hostctrl/exe/sapcontrol -nr 03 -function StopSystem HDB
     ```
 
    - Измените global.ini, чтобы добавить сопоставление узла для репликации системы HANA. Используйте IP-адреса из `hsr` подсети.  
-    ```
+    ```bash
     sudo vi /usr/sap/HN1/SYS/global/hdb/custom/config/global.ini
     #Add the section
     [system_replication_hostname_resolution]
@@ -675,7 +675,7 @@ ms.locfileid: "96489128"
     ```
 
    - Запуск HANA на обоих сайтах
-   ```
+   ```bash
     sudo -u hn1adm /usr/sap/hostctrl/exe/sapcontrol -nr 03 -function StartSystem HDB
    ```
 
@@ -683,7 +683,7 @@ ms.locfileid: "96489128"
 
 5. **[AH]** Снова включите брандмауэр.  
    - Повторное включение брандмауэра
-       ```
+       ```bash
        # Execute as root
        systemctl start firewalld
        systemctl enable firewalld
@@ -694,7 +694,7 @@ ms.locfileid: "96489128"
        > [!IMPORTANT]
        > Создайте правила брандмауэра, чтобы разрешить обмен данными между узлами HANA и клиентский трафик. Требуемые порты перечислены в разделе [Порты TCP/IP для всех продуктов SAP](https://help.sap.com/viewer/ports). Приведенные ниже команды являются всего лишь примером. В этом сценарии используется номер системы 03.
 
-       ```
+       ```bash
         # Execute as root
         sudo firewall-cmd --zone=public --add-port=30301/tcp --permanent
         sudo firewall-cmd --zone=public --add-port=30301/tcp
@@ -753,19 +753,19 @@ ms.locfileid: "96489128"
 
 1. **[1, 2]** прерывать SAP HANA на обоих сайтах репликации. Выполните как <SID \> ADM.  
 
-    ```
+    ```bash
     sapcontrol -nr 03 -function StopSystem
     ```
 
 2. **[AH]** Отключите файловую систему `/hana/shared` , которая была временно подключена для установки на всех виртуальных машинах базы данных Hana. Перед отключением всех процессов и сеансов, использующих файловую систему, необходимо будет отключить их. 
  
-    ```
+    ```bash
     umount /hana/shared 
     ```
 
 3. **[1]** создайте ресурсы кластера файловой системы для `/hana/shared` в отключенном состоянии. Ресурсы создаются с параметром `--disabled` , поскольку необходимо определить ограничения расположения перед включением подключений.  
 
-    ```
+    ```bash
     # /hana/shared file system for site 1
     pcs resource create fs_hana_shared_s1 --disabled ocf:heartbeat:Filesystem device=10.23.1.7:/HN1-shared-s1  directory=/hana/shared \
     fstype=nfs options='defaults,rw,hard,timeo=600,rsize=262144,wsize=262144,proto=tcp,intr,noatime,sec=sys,vers=4.1,lock,_netdev' op monitor interval=20s on-fail=fence timeout=40s OCF_CHECK_LEVEL=20 \
@@ -787,7 +787,7 @@ ms.locfileid: "96489128"
 
 4. **[1]** настройте и проверьте атрибуты узла. Всем узлам SAP HANA DB на сайте репликации 1 назначается атрибут `S1` , а всем узлам SAP HANA DB на сайте репликации 2 назначается атрибут `S2` .  
 
-    ```
+    ```bash
     # HANA replication site 1
     pcs node attribute hana-s1-db1 NFS_SID_SITE=S1
     pcs node attribute hana-s1-db2 NFS_SID_SITE=S1
@@ -801,7 +801,7 @@ ms.locfileid: "96489128"
     ```
 
 5. **[1]** настройте ограничения, которые определяют, где будут подключены файловые системы NFS и включают ресурсы файловой системы.  
-    ```
+    ```bash
     # Configure the constraints
     pcs constraint location fs_hana_shared_s1-clone rule resource-discovery=never score=-INFINITY NFS_SID_SITE ne S1
     pcs constraint location fs_hana_shared_s2-clone rule resource-discovery=never score=-INFINITY NFS_SID_SITE ne S2
@@ -814,7 +814,7 @@ ms.locfileid: "96489128"
  
 6. **[AH]** Убедитесь, что тома использовании подключены `/hana/shared` ко всем виртуальным машинам базы данных Hana на обоих сайтах.
 
-    ```
+    ```bash
     sudo nfsstat -m
     # Verify that flag vers is set to 4.1 
     # Example from SITE 1, hana-s1-db1
@@ -827,7 +827,7 @@ ms.locfileid: "96489128"
 
 7. **[1]** настройте ресурсы атрибута. Настройте ограничения, которые будут устанавливать атрибуты в `true` , если подключения NFS для `hana/shared` подключены.  
 
-    ```
+    ```bash
     # Configure the attribure resources
     pcs resource create hana_nfs_s1_active ocf:pacemaker:attribute active_value=true inactive_value=false name=hana_nfs_s1_active
     pcs resource create hana_nfs_s2_active ocf:pacemaker:attribute active_value=true inactive_value=false name=hana_nfs_s2_active
@@ -843,7 +843,7 @@ ms.locfileid: "96489128"
    > Если в конфигурацию включены другие файловые системы, помимо/ `hana/shared` , которые подключены к NFS, включите `sequential=false` параметр, чтобы не учитывать зависимости между файловыми системами. Все подключенные файловые системы NFS должны запускаться до соответствующего ресурса атрибута, но им не нужно начинать ни в каком порядке относительно друг друга. Дополнительные сведения см. [в разделе разделы справки configure SAP HANA Scale-Out HSR в кластере Pacemaker, если файловые системы Hana являются общими папками NFS](https://access.redhat.com/solutions/5423971).  
 
 8. **[1]** разместите Pacemaker в режиме обслуживания при подготовке к созданию ресурсов кластера Hana.  
-    ```
+    ```bash
     pcs property set maintenance-mode=true
     ```
 
@@ -851,7 +851,7 @@ ms.locfileid: "96489128"
 
 1. **[A]** установите агент ресурсов масштабирования Hana на всех узлах кластера, включая самого производителя.    
 
-    ```
+    ```bash
     yum install -y resource-agents-sap-hana-scaleout 
     ```
 
@@ -862,14 +862,14 @@ ms.locfileid: "96489128"
 2. **[1, 2]** установите для Hana "системный обработчик репликации". Этот обработчик должен быть установлен на одном узле базы данных HANA на каждом системном сайте репликации. SAP HANA должен быть по-прежнему отключен.        
 
    1. Подготовка обработчика как `root` 
-    ```
+    ```bash
      mkdir -p /hana/shared/myHooks
      cp /usr/share/SAPHanaSR-ScaleOut/SAPHanaSR.py /hana/shared/myHooks
      chown -R hn1adm:sapsys /hana/shared/myHooks
     ```
 
    2. Становк `global.ini`
-    ```
+    ```bash
     # add to global.ini
     [ha_dr_provider_SAPHanaSR]
     provider = SAPHanaSR
@@ -881,7 +881,7 @@ ms.locfileid: "96489128"
     ```
 
 3. **[AH]** Для кластера требуется конфигурация "Sudo" на узле кластера для <SID \> ADM. В этом примере это достигается путем создания нового файла. Выполните команды как `root` .    
-    ``` 
+    ```bash
     cat << EOF > /etc/sudoers.d/20-saphana
     # SAPHanaSR-ScaleOut needs for srHook
      Cmnd_Alias SOK = /usr/sbin/crm_attribute -n hana_hn1_glob_srHook -v SOK -t crm_config -s SAPHanaSR
@@ -892,13 +892,13 @@ ms.locfileid: "96489128"
 
 4. **[1, 2]** запустите SAP HANA на обоих сайтах репликации. Выполните как <SID \> ADM.  
 
-    ```
+    ```bash
     sapcontrol -nr 03 -function StartSystem 
     ```
 
 5. **[1]** Проверьте установку обработчика. Выполните команду AS <SID \> ADM на активном сайте репликации системы Hana.   
 
-    ```
+    ```bash
     cdtrace
      awk '/ha_dr_SAPHanaSR.*crm_attribute/ \
      { printf "%s %s %s %s\n",$2,$3,$5,$16 }' nameserver_*
@@ -917,7 +917,7 @@ ms.locfileid: "96489128"
     
    2. Затем создайте ресурс топологии HANA.  
       При создании кластера RHEL **7. x** используйте следующие команды:  
-      ```
+      ```bash
       pcs resource create SAPHanaTopology_HN1_HDB03 SAPHanaTopologyScaleOut \
        SID=HN1 InstanceNumber=03 \
        op start timeout=600 op stop timeout=300 op monitor interval=10 timeout=600
@@ -926,7 +926,7 @@ ms.locfileid: "96489128"
       ```
 
       При создании кластера RHEL **8. x** используйте следующие команды:  
-      ```
+      ```bash
       pcs resource create SAPHanaTopology_HN1_HDB03 SAPHanaTopology \
        SID=HN1 InstanceNumber=03 meta clone-node-max=1 interleave=true \
        op methods interval=0s timeout=5 \
@@ -937,10 +937,10 @@ ms.locfileid: "96489128"
 
    3. Затем создайте ресурс экземпляра HANA.  
       > [!NOTE]
-      > Эта статья содержит ссылки на термин « *Ведомый*» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.  
+      > Эта статья содержит ссылки на термин « *Ведомый*» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.  
  
       При создании кластера RHEL **7. x** используйте следующие команды:    
-      ```
+      ```bash
       pcs resource create SAPHana_HN1_HDB03 SAPHanaController \
        SID=HN1 InstanceNumber=03 PREFER_SITE_TAKEOVER=true DUPLICATE_PRIMARY_TIMEOUT=7200 AUTOMATED_REGISTER=false \
        op start interval=0 timeout=3600 op stop interval=0 timeout=3600 op promote interval=0 timeout=3600 \
@@ -951,7 +951,7 @@ ms.locfileid: "96489128"
       ```
 
       При создании кластера RHEL **8. x** используйте следующие команды:  
-      ```
+      ```bash
       pcs resource create SAPHana_HN1_HDB03 SAPHanaController \
        SID=HN1 InstanceNumber=03 PREFER_SITE_TAKEOVER=true DUPLICATE_PRIMARY_TIMEOUT=7200 AUTOMATED_REGISTER=false \
        op demote interval=0s timeout=320 op methods interval=0s timeout=5 \
@@ -965,7 +965,7 @@ ms.locfileid: "96489128"
       > Рекомендуется установить для AUTOMATED_REGISTER значение **нет**, при выполнении тщательного тестирования при сбое, чтобы предотвратить сбой основного экземпляра, автоматически регистрируемого в качестве получателя. После успешного завершения тестов отработки отказа задайте для параметра AUTOMATED_REGISTER значение **Да**, чтобы после того, как репликация системы перенаправление может возобновить работу автоматически. 
 
    4. Создайте виртуальный IP-адрес и связанные ресурсы.  
-      ```
+      ```bash
       pcs resource create vip_HN1_03 ocf:heartbeat:IPaddr2 ip=10.23.0.18 op monitor interval="10s" timeout="20s"
       sudo pcs resource create nc_HN1_03 azure-lb port=62503
       sudo pcs resource group add g_ip_HN1_03 nc_HN1_03 vip_HN1_03
@@ -973,7 +973,7 @@ ms.locfileid: "96489128"
 
    5. Создание ограничений кластера  
       При создании кластера RHEL **7. x** используйте следующие команды:  
-      ```
+      ```bash
       #Start HANA topology, before the HANA instance
       pcs constraint order SAPHanaTopology_HN1_HDB03-clone then msl_SAPHana_HN1_HDB03
 
@@ -983,7 +983,7 @@ ms.locfileid: "96489128"
       ```
  
       При создании кластера RHEL **8. x** используйте следующие команды:  
-      ```
+      ```bash
       #Start HANA topology, before the HANA instance
       pcs constraint order SAPHanaTopology_HN1_HDB03-clone then SAPHana_HN1_HDB03-clone
 
@@ -993,7 +993,7 @@ ms.locfileid: "96489128"
       ```
 
 7. **[1]** расположить кластер в режиме обслуживания. Убедитесь, что состоянию кластера соответствует значение ОК и все ресурсы запущены.  
-    ```
+    ```bash
     sudo pcs property set maintenance-mode=false
     #If there are failed cluster resources, you may need to run the next command
     pcs resource cleanup
@@ -1006,8 +1006,8 @@ ms.locfileid: "96489128"
 
 1. Перед началом теста проверьте кластер и SAP HANA состояние репликации системы.  
 
-   a. Убедитесь в отсутствии невыполненных действий кластера.  
-     ```
+   а. Убедитесь в отсутствии невыполненных действий кластера.  
+     ```bash
      #Verify that there are no failed cluster actions
      pcs status
      # Example
@@ -1044,7 +1044,7 @@ ms.locfileid: "96489128"
 
    b. Проверка синхронизации SAP HANA репликации системы
 
-      ```
+      ```bash
       # Verify HANA HSR is in sync
       sudo su - hn1adm -c "python /usr/sap/HN1/HDB03/exe/python_support/systemReplicationStatus.py"
       #| Database | Host        | Port  | Service Name | Volume ID | Site ID | Site Name | Secondary     | Secondary| Secondary | Secondary | Secondary     | Replication | Replication | Replication    |
@@ -1074,7 +1074,7 @@ ms.locfileid: "96489128"
    **Ожидаемый результат**: при повторном подключении `/hana/shared` как *доступ только для чтения* операция наблюдения, которая выполняет операции чтения/записи в файловой системе, завершится ошибкой, так как она не сможет выполнить запись в файловую систему и вызовет отработку отказа ресурса Hana. Такой же результат ожидается, когда узел HANA теряет доступ к общему ресурсу NFS.  
      
    Состояние ресурсов кластера можно проверить, выполнив `crm_mon` или `pcs status` . Состояние ресурсов перед запуском теста:
-      ```
+      ```bash
       # Output of crm_mon
       #7 nodes configured
       #45 resources configured
@@ -1103,7 +1103,7 @@ ms.locfileid: "96489128"
       ```
 
    Чтобы смоделировать сбой для `/hana/shared` одной из виртуальных машин сайта репликации, выполните следующую команду:
-      ```
+      ```bash
       # Execute as root 
       mount -o ro /hana/shared
       # Or if the above command returns an error
@@ -1114,7 +1114,7 @@ ms.locfileid: "96489128"
          
    Если кластер не был запущен на виртуальной машине, он был перезапущен, запустите кластер, выполнив следующее: 
 
-      ```
+      ```bash
       # Start the cluster 
       pcs cluster start
       ```
@@ -1122,7 +1122,7 @@ ms.locfileid: "96489128"
    При запуске кластера файловая система `/hana/shared` будет автоматически подключена.     
    Если задать AUTOMATED_REGISTER = "false", необходимо будет настроить репликацию системы SAP HANA на вторичном сайте. В этом случае можно выполнить следующие команды, чтобы перенастроить SAP HANA как вторичную.   
 
-      ```
+      ```bash
       # Execute on the secondary 
       su - hn1adm
       # Make sure HANA is not running on the secondary site. If it is started, stop HANA
@@ -1135,7 +1135,7 @@ ms.locfileid: "96489128"
 
    Состояние ресурсов после теста: 
 
-      ```
+      ```bash
       # Output of crm_mon
       #7 nodes configured
       #45 resources configured

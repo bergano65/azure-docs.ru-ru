@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: cdd8783daf9e1e1458f47e773eb3b6ccedfbae83
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: d6832238b0c76059079e2a1330d31eed3212b242
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624563"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685584"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Выполнение веб-приложений Jupyter Notebook в рабочей области
 
@@ -230,6 +230,7 @@ ms.locfileid: "98624563"
     conda install -y ipykernel
     python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
     ```
+1. После установки ядра обновите страницу и откройте записную книжку. Новый ядро появится в списке ядра.
 
 > [!NOTE]
 > Для управления пакетами в записной книжке используйте функции " **% PIP** " или " **% conda** Magic" для автоматической установки пакетов в **выполняющийся в настоящее время ядре**, а не в разделе **! PIP** или **! conda** , который ссылается на все пакеты (включая пакеты вне текущего выполняющегося ядра).
@@ -276,7 +277,7 @@ ms.locfileid: "98624563"
 | M                             | Преобразовать ячейку в Markdown  |                       
 | Вверх/K                          | Выбор ячейки выше    |               
 | Down/J                        | Выбор ячейки ниже    |               
-| A                             | Вставить ячейку кода выше  |            
+| Объект                             | Вставить ячейку кода выше  |            
 | B                             | Вставить ячейку кода ниже   |           
 | Control/Command + Shift + A   | Вставить Markdown ячейку выше    |      
 | Control/Command + Shift + B   | Вставить Markdown ячейку ниже   |       

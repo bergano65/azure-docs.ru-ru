@@ -6,18 +6,18 @@ ms.topic: article
 ms.author: jpalma
 ms.date: 11/09/2020
 author: palma21
-ms.openlocfilehash: a1d045e66771026d2b4cf7ad44fd6943d2d407f4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: c6160d36240b59c60fafa955b916fb6167c2648e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701608"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685760"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Управление исходящим трафиком для узлов кластера в службе Azure Kubernetes (AKS)
 
 В этой статье содержатся необходимые сведения, позволяющие защитить исходящий трафик от службы Azure Kubernetes (AKS). Он содержит требования к кластеру для базового развертывания AKS, а также дополнительные требования к дополнительным надстройкам и функциям. В [конце приведен пример того, как настроить эти требования с помощью брандмауэра Azure](#restrict-egress-traffic-using-azure-firewall). Однако эти сведения можно применить к любому методу ограничения или устройству исходящего трафика.
 
-## <a name="background"></a>Фон
+## <a name="background"></a>Историческая справка
 
 Кластеры AKS развертываются в виртуальной сети. Эта сеть может быть управляемой (созданной AKS) или настраиваемой (предварительно настроенной пользователем). В любом случае кластер имеет Исходящие зависимости от служб, **находящихся** за пределами этой виртуальной сети (служба не имеет входящих зависимостей).
 
@@ -745,7 +745,7 @@ voting-storage     ClusterIP      10.41.221.201   <none>        3306/TCP       9
 
 Получите IP-адрес службы, выполнив:
 ```bash
-SERVICE_IP=$(k get svc voting-app -o jsonpath='{.status.loadBalancer.ingress[*].ip}')
+SERVICE_IP=$(kubectl get svc voting-app -o jsonpath='{.status.loadBalancer.ingress[*].ip}')
 ```
 
 Добавьте правило NAT, выполнив команду.

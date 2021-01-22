@@ -2,34 +2,34 @@
 title: Начало работы с PowerShell
 description: Краткое описание командлетов Azure PowerShell, используемых для управления ресурсами пакетной службы.
 ms.topic: how-to
-ms.date: 01/15/2019
+ms.date: 01/21/2021
 ms.custom: seodec18, devx-track-azurepowershell
-ms.openlocfilehash: 3c152733ee3a75732d119db16f7db7c266740fdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b51a2a7852df82625fb342bbbbc4a3a1cbf72a3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89079852"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685516"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Управление ресурсами пакетной службы с помощью командлетов PowerShell
 
-С помощью командлетов PowerShell пакетной службы Azure можно запускать и автоматизировать задачи, которые выполняются с помощью API-интерфейсов пакетной службы, портала Azure и интерфейса командной строки (CLI) Azure. Эта статья содержит краткие сведения о командлетах, используемых для управления учетными записями пакетной службы и работы с ее ресурсами, включая пулы, задания и задачи.
+Командлеты PowerShell для пакетной службы Azure позволяют выполнять и создавать сценарии для многих распространенных задач пакетной службы. Эта статья содержит краткие сведения о командлетах, используемых для управления учетными записями пакетной службы и работы с ее ресурсами, включая пулы, задания и задачи.
 
 Полный список командлетов пакетной службы Azure и их синтаксис см. в [этой справке](/powershell/module/az.batch).
 
-В этой статье описаны командлеты модуля пакетной службы Azure 1.0.0. Рекомендуется регулярно обновлять модули Azure PowerShell, чтобы пользоваться всеми преимуществами службы.
+Рекомендуется регулярно обновлять модули Azure PowerShell, чтобы пользоваться всеми преимуществами службы.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Установите и настройте последнюю версию модуля Azure PowerShell](/powershell/azure/). Установить определенный модуль пакетной службы Azure, например модуль предварительной версии, можно из [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.Batch/1.0.0).
+- [Установите и настройте последнюю версию модуля Azure PowerShell](/powershell/azure/). Установить определенный модуль пакетной службы Azure, например модуль предварительной версии, можно из [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.Batch/).
 
-* Выполните командлет **Connect-AzAccount**, чтобы подключиться к своей подписке (командлеты пакетной службы Azure входят в состав модуля Azure Resource Manager):
+- Выполните командлет **Connect-AzAccount**, чтобы подключиться к своей подписке (командлеты пакетной службы Azure входят в состав модуля Azure Resource Manager):
 
   ```powershell
   Connect-AzAccount
   ```
 
-* **Зарегистрируйте пространство имен поставщика пакетной службы.** Эта операция выполняется **один раз для каждой подписки**.
+- **Зарегистрируйте пространство имен поставщика пакетной службы.** Эта операция выполняется **один раз для каждой подписки**.
   
   ```powershell
   Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
@@ -114,9 +114,9 @@ $context = Get-AzBatchAccount -AccountName <account_name>
 
 ### <a name="create-a-batch-pool"></a>Создание пула пакетной службы
 
-Создавая или обновляя пул пакетной службы, вам нужно выбрать конфигурацию облачных служб или виртуальной машины для операционной системы на вычислительных узлах (см. статью [Узлы и пулы](nodes-and-pools.md#configurations)). Если вы указываете конфигурацию облачных служб, образы вычислительных узлов будут созданы на основе одного из [выпусков гостевых ОС Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases). Если вы указываете конфигурацию виртуальной машины, можно выбрать один из поддерживаемых образов виртуальных машин Linux или Windows, доступных в [магазине виртуальных машин Azure Marketplace][vm_marketplace], или предоставить настраиваемый образ, подготовленный вами.
+При создании или обновлении пула пакетной службы указывается [Конфигурация](nodes-and-pools.md#configurations). Пулы обычно должны быть настроены с конфигурацией виртуальной машины, что позволяет указать один из поддерживаемых образов виртуальных машин Linux или Windows, перечисленных в [магазине виртуальных машин Azure](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1), или предоставить подготовленный пользовательский образ. Пулы конфигураций облачных служб предоставляют только кластерные узлы Windows и не поддерживают все функции пакетной службы.
 
-При выполнении командлета **New-AzBatchPool** передайте параметры операционной системы в объекте PSCloudServiceConfiguration или PSVirtualMachineConfiguration. Например, следующий фрагмент кода создает пул пакетной службы с вычислительными узлами размера Standard_A1 в конфигурации виртуальной машины с ОС Ubuntu Server 18.04-LTS. Здесь параметр **VirtualMachineConfiguration** определяет переменную *$configuration* как объект PSCloudServiceConfiguration. Параметр **BatchContext** определяет ранее заданную переменную *$context* как объект BatchAccountContext.
+При выполнении **New-азбатчпул** передайте параметры операционной системы в объекте Псвиртуалмачинеконфигуратион или PSCloudServiceConfiguration. Например, следующий фрагмент кода создает пул пакетной службы с вычислительными узлами размера Standard_A1 в конфигурации виртуальной машины с ОС Ubuntu Server 18.04-LTS. Здесь параметр **VirtualMachineConfiguration** определяет переменную *$configuration* как объект PSCloudServiceConfiguration. Параметр **BatchContext** определяет ранее заданную переменную *$context* как объект BatchAccountContext.
 
 ```powershell
 $imageRef = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSImageReference" -ArgumentList @("UbuntuServer","Canonical","18.04-LTS")
@@ -190,7 +190,10 @@ Get-AzBatchComputeNode -PoolId "myPool" -BatchContext $context | Restart-AzBatch
 
 ## <a name="application-package-management"></a>Управление пакетами приложений
 
-Пакеты приложений упрощают развертывание приложений на вычислительных узлах пулов. С помощью командлетов PowerShell для пакетной службы можно передать пакеты приложений в учетной записи пакетной службы и управлять ими, а также развертывать версии пакетов в вычислительных узлах.
+[Пакеты приложений](batch-application-packages.md) предоставляют упрощенный способ развертывания приложений на рассчитанных узлах в пулах. С помощью командлетов PowerShell для пакетной службы можно передать пакеты приложений в учетной записи пакетной службы и управлять ими, а также развертывать версии пакетов в вычислительных узлах.
+
+> [!IMPORTANT]
+> Чтобы использовать пакеты приложений, вам сначала нужно связать учетную запись службы хранилища Azure со своей учетной записью пакетной службы.
 
 **Создайте** приложение:
 
@@ -247,17 +250,13 @@ $appPackageReference.ApplicationId = "MyBatchApplication"
 $appPackageReference.Version = "1.0"
 ```
 
-Теперь создайте конфигурацию и пул. В этом примере используется параметр **CloudServiceConfiguration** с объектом типа `PSCloudServiceConfiguration`, инициализированным в `$configuration`, который устанавливает для параметра **OSFamily** значение `6` для Windows Server 2019, а для параметра **OSVersion** — значение `*`. Укажите ссылочный объект пакета в качестве аргумента в параметре `ApplicationPackageReferences`:
+Теперь создайте пул и укажите ссылочный объект пакета в качестве аргумента в параметре `ApplicationPackageReferences`:
 
 ```powershell
-$configuration = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSCloudServiceConfiguration" -ArgumentList @(6,"*")  # 6 = OSFamily 'Windows Server 2019'
-New-AzBatchPool -Id "PoolWithAppPackage" -VirtualMachineSize "Small" -CloudServiceConfiguration $configuration -BatchContext $context -ApplicationPackageReferences $appPackageReference
+New-AzBatchPool -Id "PoolWithAppPackage" -VirtualMachineSize "Small" -VirtualMachineConfiguration $configuration -BatchContext $context -ApplicationPackageReferences $appPackageReference
 ```
 
 Дополнительные сведения о пакетах приложений см. в статье [Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы](batch-application-packages.md).
-
-> [!IMPORTANT]
-> Чтобы использовать пакеты приложений, вам сначала нужно связать учетную запись службы хранилища Azure со своей учетной записью пакетной службы.
 
 ### <a name="update-a-pools-application-packages"></a>Обновление пакетов приложений пула
 
@@ -272,7 +271,7 @@ $appPackageReference.Version = "2.0"
 
 ```
 
-Затем извлеките нужный пул из пакетной службы, очистите все существующие пакеты, добавьте ссылку на новый пакет и обновите пакетную службу с использованием новых параметров пула:
+Затем получите пул из пакета, очистите все существующие пакеты, добавьте ссылку на новый пакет и обновите пакетную службу, используя новые параметры пула:
 
 ```powershell
 $pool = Get-AzBatchPool -BatchContext $context -Id "PoolWithAppPackage"
@@ -291,11 +290,9 @@ Get-AzBatchComputeNode -PoolId "PoolWithAppPackage" -BatchContext $context | Res
 ```
 
 > [!TIP]
-> На вычислительных узлах в пуле можно развернуть несколько пакетов приложений. Если нужно *добавить* пакет приложения, а не заменить развернутые пакеты, не указывайте строку `$pool.ApplicationPackageReferences.Clear()`, приведенную выше.
+> На вычислительных узлах в пуле можно развернуть несколько пакетов приложений. Если нужно добавить пакет приложения, а не заменить развернутые пакеты, не указывайте строку `$pool.ApplicationPackageReferences.Clear()`, приведенную выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Подробные сведения о синтаксисе командлетов и их примеры см. в [справке по командлетам пакетной службы Azure](/powershell/module/az.batch).
-* Дополнительные сведения о приложениях и пакетах приложений в пакетной службе см. в статье [Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы](batch-application-packages.md).
-
-[vm_marketplace]: https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1
+- Подробные сведения о синтаксисе командлетов и примеры см. в [справочнике по командлетам пакетной службы Azure](/powershell/module/az.batch) .
+- Узнайте, как [развертывать приложения для вычислений на узлах с пакетами приложений пакетной](batch-application-packages.md)службы.

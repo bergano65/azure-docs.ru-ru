@@ -5,15 +5,15 @@ services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.topic: include
-ms.date: 11/19/2020
+ms.date: 01/21/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 7ebb9dbce020086a716872c86221b97b4b7a6653
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 44afd8ea4ef2ab06ec31b7528e9776faebc3b4dc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97978845"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98689942"
 ---
 ### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Какие порты нужно открыть в брандмауэре? 
 Для отправки и получения событий можно использовать следующие протоколы с концентраторами событий Azure:
@@ -36,10 +36,10 @@ ms.locfileid: "97978845"
 
 | Язык | Параметр   |
 | -------- | ----- |
-| .NET     | Свойство [евенсубконнектионоптионс. TransportType](/dotnet/api/azure.messaging.eventhubs.eventhubconnectionoptions.transporttype?view=azure-dotnet&preserve-view=true) с [евенсубстранспорттипе. амкпткп](/dotnet/api/azure.messaging.eventhubs.eventhubstransporttype?view=azure-dotnet&preserve-view=true) или [евенсубстранспорттипе. AmqpWebSockets](/dotnet/api/azure.messaging.eventhubs.eventhubstransporttype?view=azure-dotnet&preserve-view=true) |
-| Java     | [com. Microsoft. Azure. eventhubs. евентпроцессорклиентбуилдер. transporttype](/java/api/com.azure.messaging.eventhubs.eventprocessorclientbuilder.transporttype?view=azure-java-stable&preserve-view=true) с [амкптранспорттипе. AMQP](/java/api/com.azure.core.amqp.amqptransporttype?view=azure-java-stable&preserve-view=true) или [AmqpTransportType.AMQP_WEB_SOCKETS](/java/api/com.azure.core.amqp.amqptransporttype?view=azure-java-stable&preserve-view=true) |
-| Узел  | [Евенсубконсумерклиентоптионс](/javascript/api/@azure/event-hubs/eventhubconsumerclientoptions?view=azure-node-latest&preserve-view=true) имеет `webSocketOptions` свойство. |
-| Python | [EventHubConsumerClient.transport_type](/python/api/azure-eventhub/azure.eventhub.eventhubconsumerclient?view=azure-python&preserve-view=true) с [TransportType. AMQP](/python/api/azure-eventhub/azure.eventhub.transporttype?view=azure-python) или [TransportType. амкповервебсоккет](/python/api/azure-eventhub/azure.eventhub.transporttype?view=azure-python&preserve-view=true) |
+| .NET     | Свойство [евенсубконнектионоптионс. TransportType](/dotnet/api/azure.messaging.eventhubs.eventhubconnectionoptions.transporttype) с [евенсубстранспорттипе. амкпткп](/dotnet/api/azure.messaging.eventhubs.eventhubstransporttype) или [евенсубстранспорттипе. AmqpWebSockets](/dotnet/api/azure.messaging.eventhubs.eventhubstransporttype) |
+| Java     | [com. Microsoft. Azure. eventhubs. евентпроцессорклиентбуилдер. transporttype](/java/api/com.azure.messaging.eventhubs.eventprocessorclientbuilder.transporttype) с [амкптранспорттипе. AMQP](/java/api/com.azure.core.amqp.amqptransporttype) или [AmqpTransportType.AMQP_WEB_SOCKETS](/java/api/com.azure.core.amqp.amqptransporttype) |
+| Узел  | [Евенсубконсумерклиентоптионс](/javascript/api/@azure/event-hubs/eventhubconsumerclientoptions) имеет `webSocketOptions` свойство. |
+| Python | [EventHubConsumerClient.transport_type](/python/api/azure-eventhub/azure.eventhub.eventhubconsumerclient) с [TransportType. AMQP](/python/api/azure-eventhub/azure.eventhub.transporttype) или [TransportType. амкповервебсоккет](/python/api/azure-eventhub/azure.eventhub.transporttype) |
 
 ### <a name="what-ip-addresses-do-i-need-to-allow"></a>Какие IP-адреса нужно разрешить?
 При работе с Azure иногда необходимо разрешить определенные диапазоны IP-адресов или URL-адреса в корпоративном брандмауэре или прокси, чтобы получить доступ ко всем используемым службам Azure или. Убедитесь, что трафик разрешен для IP-адресов, используемых концентраторами событий. IP-адреса, используемые концентраторами событий Azure: см. в разделе [диапазоны IP-адресов Azure и теги службы — общедоступное облако](https://www.microsoft.com/download/details.aspx?id=56519).
