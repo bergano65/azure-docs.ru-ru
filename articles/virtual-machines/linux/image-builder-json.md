@@ -8,12 +8,12 @@ ms.topic: reference
 ms.service: virtual-machines
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 43f33093010aa6a70d02c58e9faa34f7f0e2dfee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ae477dd04237e285915157615dcb6a6b841ca99
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307285"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678261"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительный просмотр: Создание шаблона Конструктора образов виртуальных машин Azure 
 
@@ -154,7 +154,7 @@ ms.locfileid: "91307285"
 > При использовании существующих пользовательских образов Windows можно выполнить команду Sysprep до 8 раз в одном образе Windows. Дополнительные сведения см. в документации по [Sysprep](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) .
 
 ### <a name="platformimage-source"></a>Источник PlatformImage 
-Конструктор образов Azure поддерживает образы Windows Server, клиента Windows и Linux Azure Marketplace. Полный список см. [здесь](../windows/image-builder-overview.md#os-support). 
+Конструктор образов Azure поддерживает образы Windows Server, клиента Windows и Linux Azure Marketplace. Полный список см. [здесь](../image-builder-overview.md#os-support). 
 
 ```json
         "source": {

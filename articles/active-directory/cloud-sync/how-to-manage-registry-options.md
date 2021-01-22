@@ -16,12 +16,12 @@ ms.subservice: hybrid
 ms.reviewer: chmutali
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4cdda52271bc7b9e9d854e0af181e2c8f22ad9a
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 1f39ef611e2ea15ef3bc3dbfcf09e9624cbcf8b3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98614124"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678227"
 ---
 # <a name="manage-agent-registry-options"></a>Управление параметрами реестра агента
 
@@ -34,7 +34,7 @@ ms.locfileid: "98614124"
 System.DirectoryServices.Protocols.LdapException: The operation was aborted because the client side timeout limit was exceeded.
 `
 
-Операции поиска LDAP могут занять больше времени, если атрибут поиска не проиндексирован. В качестве первого шага, если вы получаете указанную выше ошибку, сначала проверьте, [проиндексирован](https://docs.microsoft.com/windows/win32/ad/indexed-attributes)ли атрибут поиска и уточняющего запроса. Если атрибуты поиска индексируются и ошибка повторяется, можно увеличить время ожидания подключения LDAP, выполнив следующие действия. 
+Операции поиска LDAP могут занять больше времени, если атрибут поиска не проиндексирован. В качестве первого шага, если вы получаете указанную выше ошибку, сначала проверьте, [проиндексирован](/windows/win32/ad/indexed-attributes)ли атрибут поиска и уточняющего запроса. Если атрибуты поиска индексируются и ошибка повторяется, можно увеличить время ожидания подключения LDAP, выполнив следующие действия. 
 
 1. Войдите в систему как администратор на сервере Windows Server, на котором работает агент подготовки Azure AD Connect.
 1. Использование элемента меню " *выполнить* " для открытия редактора реестра (regedit.exe) 
@@ -48,7 +48,7 @@ System.DirectoryServices.Protocols.LdapException: The operation was aborted beca
 1. Если вы развернули несколько агентов подготовки, примените это изменение реестра ко всем агентам для обеспечения согласованности. 
 
 ## <a name="configure-referral-chasing"></a>Настройка прослеживания ссылок
-По умолчанию Azure AD Connect агент подготовки не выполняет отслеживание [ссылок](https://docs.microsoft.com/windows/win32/ad/referrals). Вы можете включить отслеживание ссылок для поддержки определенных сценариев подготовки к входящему ПЕРСОНАЛу, например: 
+По умолчанию Azure AD Connect агент подготовки не выполняет отслеживание [ссылок](/windows/win32/ad/referrals). Вы можете включить отслеживание ссылок для поддержки определенных сценариев подготовки к входящему ПЕРСОНАЛу, например: 
 * Проверка уникальности имени участника-пользователя в нескольких доменах
 * Разрешение ссылок на междоменные диспетчеры
 
@@ -95,5 +95,5 @@ System.DirectoryServices.Protocols.LdapException: The operation was aborted beca
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [Что такое Azure AD Connect синхронизации в облаке?](what-is-cloud-sync.md)
+- [Что представляет собой облачная синхронизация Azure AD Connect?](what-is-cloud-sync.md)
 

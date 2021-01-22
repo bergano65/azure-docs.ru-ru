@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: bf19e2d1674d0a0c2102280b28b5549505c1dfab
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7cd3619aa60f1bd8ac13ff767857b44348989285
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447766"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678429"
 ---
 # <a name="workload-classification-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Классификация рабочей нагрузки для выделенного пула SQL в Azure синапсе Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "96447766"
 
 ## <a name="classification-process"></a>Процесс классификации
 
-Классификация для выделенного пула SQL достигается сегодня путем назначения пользователям роли, которой назначен соответствующий класс ресурсов, с помощью [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Эта возможность позволяет определять запросы, которые выходят за пределы имени входа в класс ресурсов. Более мощный метод классификации теперь доступен с синтаксисом [классификатора рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  С помощью этого синтаксиса выделенные пользователи пула SQL могут назначать важность и количество системных ресурсов, назначенных запросу через `workload_group` параметр.
+Классификация для выделенного пула SQL достигается сегодня путем назначения пользователям роли, которой назначен соответствующий класс ресурсов, с помощью [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Эта возможность позволяет определять запросы, которые выходят за пределы имени входа в класс ресурсов. Более мощный метод классификации теперь доступен с синтаксисом [классификатора рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .  С помощью этого синтаксиса выделенные пользователи пула SQL могут назначать важность и количество системных ресурсов, назначенных запросу через `workload_group` параметр.
 
 > [!NOTE]
 > Классификация оценивается на основе каждого запроса. Несколько запросов в одном сеансе можно классифицировать по-разному.
@@ -76,7 +76,7 @@ SELECT * FROM sys.workload_management_workload_classifiers where classifier_id <
 - Для проверки нового синтаксиса классификации роль базы данных Дбароле (которая является членом Дбаусер) имеет классификатор, созданный для их сопоставления с mediumrc и высокой важностью.
 - Когда Дбаусер входит в систему и выполняет запрос, запрос будет назначен largerc. Так как пользователь имеет приоритет над членством в роли.
 
-Чтобы упростить устранение неполадок классификации, рекомендуется удалить сопоставления ролей класса ресурсов при создании классификаторов рабочей нагрузки.  Приведенный ниже код возвращает членство в роли существующего класса ресурсов.  Запустите [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для каждого имени члена, возвращенного из соответствующего класса ресурсов.
+Чтобы упростить устранение неполадок классификации, рекомендуется удалить сопоставления ролей класса ресурсов при создании классификаторов рабочей нагрузки.  Приведенный ниже код возвращает членство в роли существующего класса ресурсов.  Запустите [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для каждого имени члена, возвращенного из соответствующего класса ресурсов.
 
 ```sql
 SELECT  r.name AS [Resource Class]
@@ -90,9 +90,9 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc','staticrc10','staticrc20','st
 sp_droprolemember '[Resource Class]', membername
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о создании классификатора см. в разделе [Создание классификатора рабочей нагрузки (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
+- Дополнительные сведения о создании классификатора см. в разделе [Создание классификатора рабочей нагрузки (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  
 - См. Краткое руководство по созданию классификатора рабочей нагрузки [Создание классификатора рабочей нагрузки](quickstart-create-a-workload-classifier-tsql.md).
 - См. статьи с инструкциями по [настройке важности рабочей нагрузки](sql-data-warehouse-how-to-configure-workload-importance.md) , а также об [управлении рабочими нагрузками и наблюдении за](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md)ними.
-- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).

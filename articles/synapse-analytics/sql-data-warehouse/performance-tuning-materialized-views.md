@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick; azure-synapse
-ms.openlocfilehash: 902f0ac96349cf3e30ec12aeda02130afc2b800c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e137611809e2d2beefecfeaea11b4295bf6ba141
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460757"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678497"
 ---
 # <a name="performance-tune-with-materialized-views"></a>Настройка производительности с материализованными представлениями
 
@@ -29,7 +29,7 @@ ms.locfileid: "96460757"
 
 Материализованные представления предварительно вычисляются, сохраняют и обрабатывают свои данные в пуле SQL так же, как и таблицы.  При использовании материализованных представлений повторное вычисление не требуется.  Именно поэтому запросы, использующие все или подмножество данных в материализованных представлениях, могут повысить производительность.  Более того, запросы могут использовать материализованные представления, не используя явные ссылки на них, поэтому нет необходимости изменять код приложения.  
 
-Большинство требований к стандартным представлениям применимо и к материализованным представлениям. Дополнительные сведения о синтаксисе материализованных представлений и других требованиях см. в статье о выражении [CREATE MATERIALIZED VIEW AS SELECT](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Большинство требований к стандартным представлениям применимо и к материализованным представлениям. Дополнительные сведения о синтаксисе материализованных представлений и других требованиях см. в статье о выражении [CREATE MATERIALIZED VIEW AS SELECT](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 | Сравнение                     | Представление                                         | Материализованное представление
 |:-------------------------------|:---------------------------------------------|:--------------------------------------------------------------|
@@ -55,8 +55,8 @@ ms.locfileid: "96460757"
 По сравнению с другими поставщиками хранилища данных материализованные представления, реализованные в Azure синапсе Analytics, также предоставляют следующие дополнительные преимущества:
 
 - Автоматическое и синхронное обновление данных при их изменении в базовых таблицах. Вмешательство пользователя не требуется.
-- Широкая поддержка агрегатных функций. См. статью [CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
-- Поддержка рекомендаций по материализованным представлениям для конкретных запросов.  См. статью [EXPLAIN (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Широкая поддержка агрегатных функций. См. статью [CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+- Поддержка рекомендаций по материализованным представлениям для конкретных запросов.  См. статью [EXPLAIN (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="common-scenarios"></a>Распространенные сценарии  
 

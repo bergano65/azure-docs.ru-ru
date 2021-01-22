@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 761976741bf794a21182e8f962b274ae32925060
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5640c1e254c4738ab53881544a09808b4894a462
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324479"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676975"
 ---
 # <a name="what-is-workload-management"></a>Что такое управление рабочей нагрузкой?
 
@@ -44,7 +44,7 @@ ms.locfileid: "93324479"
 
 Управление рабочей нагрузкой выделенного пула SQL в Azure синапсе состоит из трех высокоуровневых концепций: [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md), [важность рабочей нагрузки](sql-data-warehouse-workload-importance.md)и [изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md).  Эти возможности позволяют выборочно управлять тем, как рабочие нагрузки потребляют системные ресурсы.
 
-Классификация рабочих нагрузок означает назначение запросов определенным группам рабочих нагрузок с указанным уровнем важности.  Исторически это назначение выполнялось через членство в ролях с помощью команды [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Теперь это действие можно выполнить с помощью инструкции [CREATE WORKLOAD CLASSIFER](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Возможность классификации предоставляет расширенный набор параметров для классификации запросов, таких как метка, сеанс и время.
+Классификация рабочих нагрузок означает назначение запросов определенным группам рабочих нагрузок с указанным уровнем важности.  Исторически это назначение выполнялось через членство в ролях с помощью команды [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Теперь это действие можно выполнить с помощью инструкции [CREATE WORKLOAD CLASSIFER](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  Возможность классификации предоставляет расширенный набор параметров для классификации запросов, таких как метка, сеанс и время.
 
 Важность рабочих нагрузок влияет на порядок, в котором запросы получают доступ к ресурсам.  В загруженной системе запросы с более высокой важностью первыми получают доступ к ресурсам.  Важность также может определять очередность доступа к блокировкам.
 

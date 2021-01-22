@@ -8,24 +8,21 @@ ms.topic: how-to
 ms.date: 12/16/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7c6b25fd3615fa76bc76e6d360f4c76a21a9ad02
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 817f9a88bd3536e9c0ec8a1057098e6b4a96716e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918403"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676363"
 ---
 # <a name="discover-connect-and-explore-data-in-synapse-using-azure-purview"></a>Обнаружение, подключение и просмотр данных в синапсе с помощью зрения Azure 
-
-> [!IMPORTANT]
-> Интеграция Azure синапсе Analytics и Azure зрения в настоящее время находится в предварительной версии. Если вы хотите испытать Azure зрения в синапсе, обратитесь к торговому представителя корпорации Майкрософт. 
 
 В этом документе вы узнаете тип взаимодействий, которые можно выполнить при регистрации учетной записи Azure зрения в синапсе. 
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-- [Учетная запись Azure зрения](../../purview/create-catalog-portal.md) 
-- [Рабочая область синапсе](../quickstart-create-workspace.md) 
+- [учетная запись Azure Purview;](../../purview/create-catalog-portal.md) 
+- [рабочая область Synapse.](../quickstart-create-workspace.md) 
 - [Подключение учетной записи Azure зрения к синапсе](quickstart-connect-azure-purview.md) 
 
 ## <a name="using-azure-purview-in-synapse"></a>Использование Azure зрения в синапсе 
@@ -71,5 +68,5 @@ ms.locfileid: "97918403"
 
 ##  <a name="nextsteps"></a>Дальнейшие действия 
 
-- [Регистрация и проверка ресурсов Azure синапсе в Azure зрения](../../purview/register-scan-azure-synapse-analytics.md)
+- [Регистрация и проверка ресурсов Azure Synapse в Azure Purview](../../purview/register-scan-azure-synapse-analytics.md)
 - [Поиск данных в каталоге данных зрения Azure](../../purview/how-to-search-catalog.md)

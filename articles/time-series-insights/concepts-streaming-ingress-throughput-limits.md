@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/26/2020
+ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 7496a7a40df49fa1b9f8410526cb9ec00c10478b
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 72b78f49ed8b7016b92262de7256492fa6d5d7d1
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108778"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676807"
 ---
 # <a name="streaming-ingestion-throughput-limits"></a>Ограничения пропускной способности приема потоковой передачи
 
@@ -96,6 +96,6 @@ Gen2 "аналитика временных рядов Azure" в настоящ�
 * [Масштаб Центра событий](../event-hubs/event-hubs-scalability.md#throughput-units)
 * [Секции Центра событий](../event-hubs/event-hubs-features.md#partitions)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [хранении](./concepts-storage.md) данных

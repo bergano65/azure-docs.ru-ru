@@ -5,12 +5,12 @@ author: pkshultz
 ms.topic: how-to
 ms.date: 07/17/2020
 ms.author: peshultz
-ms.openlocfilehash: 404103caf376b792d363996664a69f655d5bd202
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 2ed19846209d098d9eba8dba991e08d1fc57f185
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326018"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678015"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-batch-account-with-azure-key-vault-and-managed-identity"></a>Настройка ключей, управляемых клиентом, для учетной записи пакетной службы Azure с помощью Azure Key Vault и управляемого удостоверения
 
@@ -39,7 +39,7 @@ ms.locfileid: "96326018"
 
 При создании новой учетной записи пакетной службы укажите `SystemAssigned` для `--identity` параметра значение.
 
-```powershell
+```azurecli
 resourceGroupName='myResourceGroup'
 accountName='mybatchaccount'
 
@@ -52,7 +52,7 @@ az batch account create \
 
 После создания учетной записи можно проверить, что назначенное системой удостоверение включено для этой учетной записи. Не забудьте отметить `PrincipalId` , так как это значение потребуется для предоставления этой учетной записи пакетной службы доступа к Key Vault.
 
-```powershell
+```azurecli
 az batch account show \
     -n $accountName \
     -g $resourceGroupName \
@@ -100,7 +100,7 @@ az batch account show \
 
 После создания учетной записи пакетной службы с управляемым удостоверением, назначенным системой, и доступа к Key Vault Обновите учетную запись пакетной службы, указав `{Key Identifier}` URL-адрес в `keyVaultProperties` параметре. Также задайте **encryption_key_source** как `Microsoft.KeyVault` .
 
-```powershell
+```azurecli
 az batch account set \
     -n $accountName \
     -g $resourceGroupName \
@@ -110,7 +110,7 @@ az batch account set \
 
 ## <a name="update-the-customer-managed-key-version"></a>Обновление версии ключа, управляемого клиентом
 
-При создании новой версии ключа Обновите учетную запись пакетной службы, чтобы она использовала новую версию. Выполните следующие действия.
+При создании новой версии ключа Обновите учетную запись пакетной службы, чтобы она использовала новую версию. Выполните следующие действия:
 
 1. Перейдите к учетной записи пакетной службы в портал Azure и отобразите параметры шифрования.
 2. Введите универсальный код ресурса (URI) для новой версии ключа. Кроме того, можно выбрать хранилище ключей и ключ еще раз, чтобы обновить версию.
@@ -118,7 +118,7 @@ az batch account set \
 
 Для обновления версии также можно использовать Azure CLI.
 
-```powershell
+```azurecli
 az batch account set \
     -n $accountName \
     -g $resourceGroupName \
@@ -134,13 +134,13 @@ az batch account set \
 
 Для использования другого ключа можно также использовать Azure CLI.
 
-```powershell
+```azurecli
 az batch account set \
     -n $accountName \
     -g $resourceGroupName \
     --encryption_key_identifier {YourNewKeyIdentifier} 
 ```
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
   * **Поддерживаются ли ключи, управляемые клиентом, для существующих учетных записей пакетной службы?** Нет. Ключи, управляемые клиентом, поддерживаются только для новых учетных записей пакетной службы.
   * **Можно ли выбрать размер ключа RSA, превышающий 2048 бит?** Да, `3072` `4096` также поддерживаются размеры ключей и бит RSA.
   * **Какие операции доступны после отзыва управляемого клиентом ключа?** Единственной операцией может быть удаление учетной записи, если пакетная служба теряет доступ к ключу, управляемому клиентом.

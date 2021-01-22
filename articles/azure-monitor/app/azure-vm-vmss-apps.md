@@ -3,12 +3,12 @@ title: Мониторинг производительности на вирту
 description: Мониторинг производительности приложений для ВИРТУАЛЬНОЙ машины Azure и масштабируемых наборов виртуальных машин Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 6bc70b3d9a1a7a2d3fffb71ad28f2cf64cbd323b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: ed56bc88a9d2e8a9490331605cd4a72aef6930db
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461720"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677949"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>Развертывание агента Azure Monitor Application Insights на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "96461720"
 В этой статье описывается включение мониторинга Application Insights с помощью агента Application Insights и предоставляются предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
 
 > [!IMPORTANT]
-> Агент Application Insights Azure для приложений ASP.NET, работающих на **виртуальных машинах Azure и VMSS** , в настоящее время находится в общедоступной предварительной версии. Для мониторинга приложений ASP.Net, работающих **в локальной среде**, используйте [Агент Azure Application Insights для локальных серверов](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview), который является общедоступным и полностью поддерживаемым.
+> Агент Application Insights Azure для приложений ASP.NET, работающих на **виртуальных машинах Azure и VMSS** , в настоящее время находится в общедоступной предварительной версии. Для мониторинга приложений ASP.Net, работающих **в локальной среде**, используйте [Агент Azure Application Insights для локальных серверов](./status-monitor-v2-overview.md), который является общедоступным и полностью поддерживаемым.
 > Предварительная версия для виртуальных машин Azure и VMSS предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться, а некоторые могут иметь ограниченные возможности.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -175,6 +175,6 @@ Get-AzResource -ResourceId /subscriptions/<mySubscriptionId>/resourceGroups/<myR
 C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.ApplicationMonitoringWindows\<version>\
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [развернуть приложение в масштабируемом наборе виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app.md).
 * [Настройте веб-тесты доступности](monitor-web-app-availability.md) , которые будут оповещены, если ваша конечная точка не работает.

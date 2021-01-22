@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.author: kaib
 ms.date: 03/11/2020
 ms.custom: seodec18, devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 7f51aae39c2cb60d8b60d4fb496f74eadb91b33b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 42b1aed2f6c66dbfc0f04759b232855f3b7f0a2a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487659"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676824"
 ---
 # <a name="verify-encryption-status-for-linux"></a>Проверка состояния шифрования для Linux 
 
@@ -70,7 +70,7 @@ ms.locfileid: "92487659"
 ### <a name="single-pass"></a>Одиночный проход
 При одном проходе параметры шифрования помечаются на каждом из дисков (ОС и данных). Параметры шифрования для диска ОС можно записать одним проходом следующим образом:
 
-``` powershell
+```powershell
 $RGNAME = "RGNAME"
 $VMNAME = "VMNAME"
 
@@ -160,7 +160,7 @@ Write-Host "====================================================================
 
 Вы можете проверить *общее* состояние шифрования зашифрованной виртуальной машины с помощью следующих команд Azure CLI:
 
-```bash
+```azurecli
 VMNAME="VMNAME"
 RGNAME="RGNAME"
 az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} --query "substatus"
@@ -170,7 +170,7 @@ az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} --query "subst
 ### <a name="single-pass"></a>Одиночный проход
 Вы можете проверить параметры шифрования для каждого диска, используя следующие команды Azure CLI.
 
-```bash
+```azurecli
 az vm encryption show -g ${RGNAME} -n ${VMNAME} --query "disks[*].[name, statuses[*].displayStatus]"  -o table
 ```
 
@@ -203,7 +203,7 @@ done
 
 Диски данных
 
-```bash
+```azurecli
 RGNAME="RGNAME"
 VMNAME="VMNAME"
 az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} --query "substatus"
@@ -223,7 +223,7 @@ done
 
 ### <a name="dual-pass"></a>Двойной проход
 
-``` bash
+```azurecli
 az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} -o table
 ```
 
@@ -276,7 +276,7 @@ echo "==========================================================================
 
 Эта команда выводит список всех идентификаторов для всех учетных записей хранения:
 
-```bash
+```azurecli
 az storage account list --query [].[id] -o tsv
 ```
 Идентификаторы учетной записи хранения перечислены в следующем формате:
@@ -295,7 +295,7 @@ ConnectionString=$(az storage account show-connection-string --ids $id --query c
 ```
 
 Следующая команда выводит список всех контейнеров в учетной записи хранения:
-```bash
+```azurecli
 az storage container list --connection-string $ConnectionString --query [].[name] -o tsv
 ```
 Контейнер, используемый для дисков, обычно называется vhds.
@@ -306,7 +306,7 @@ ContainerName="name of the container"
 ```
 
 Используйте эту команду, чтобы вывести список всех больших двоичных объектов в определенном контейнере:
-```bash 
+```azurecli 
 az storage blob list -c ${ContainerName} --connection-string $ConnectionString --query [].[name] -o tsv
 ```
 Выберите диск, который требуется запросить, и сохраните его имя в переменной:
@@ -314,7 +314,7 @@ az storage blob list -c ${ContainerName} --connection-string $ConnectionString -
 DiskName="diskname.vhd"
 ```
 Запросите параметры шифрования диска:
-```bash
+```azurecli
 az storage blob show -c ${ContainerName} --connection-string ${ConnectionString} -n ${DiskName} --query metadata.DiskEncryptionSettings
 ```
 
@@ -323,7 +323,7 @@ az storage blob show -c ${ContainerName} --connection-string ${ConnectionString}
 
 При шифровании раздела или диска он отображается как тип **crypt**. Если он не зашифрован, он отображается в виде типа **part/disk**.
 
-``` bash
+```bash
 lsblk
 ```
 
@@ -340,11 +340,11 @@ lsblk -o NAME,TYPE,FSTYPE,LABEL,SIZE,RO,MOUNTPOINT
 
 В качестве дополнительного шага можно проверить, загружены ли на диск данных ключи.
 
-``` bash
+```bash
 cryptsetup luksDump /dev/VGNAME/LVNAME
 ```
 
-``` bash
+```bash
 cryptsetup luksDump /dev/sdd1
 ```
 

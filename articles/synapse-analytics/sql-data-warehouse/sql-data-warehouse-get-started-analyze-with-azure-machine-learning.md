@@ -12,12 +12,12 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-Synapse
-ms.openlocfilehash: 5348c0ed5d80e2738bb865ca3ec1ddf5aaed009a
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 76a154d3a137017f374247308a3980d598698246
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118053"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678665"
 ---
 # <a name="analyze-data-with-azure-machine-learning"></a>Анализ данных с помощью машинного обучения Azure
 
@@ -157,8 +157,8 @@ FROM [dbo].[vTargetMail]
 
 Сравните столбец BikeBuyer (фактический) с оцененными метками (прогноз), чтобы увидеть, насколько хорошо была выполнена модель. Затем эту модель можно использовать для прогнозирования новых клиентов. Вы можете [опубликовать эту модель как веб-службу](../../machine-learning/tutorial-designer-automobile-price-deploy.md) или записать результаты обратно в Azure синапсе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Машинное обучение Azure см. в статье [Введение в машинное обучение в Azure](../../machine-learning/overview-what-is-azure-ml.md).
 
-Дополнительные сведения о встроенных оценках в хранилище данных см. [здесь](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest).
+Дополнительные сведения о встроенных оценках в хранилище данных см. [здесь](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true).

@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1, contperf-fy21q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: ec925ce165c1de98fe920381e1b51e3388c1e4ad
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 33dffa40e0236483d641c2e2bbe318bb62a7724d
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232409"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678193"
 ---
 # <a name="configurable-token-lifetimes-in-microsoft-identity-platform-preview"></a>Настраиваемое время существования маркеров в платформе Microsoft Identity (Предварительная версия)
 
@@ -82,9 +82,11 @@ ms.locfileid: "98232409"
 > [!IMPORTANT]
 > Начиная с мая 2020 г. новые клиенты не могут настроить время существования маркера обновления и сеанса.  Клиенты с существующей конфигурацией могут изменять политики обновления и маркера сеанса до 30 января 2021 г.   Azure Active Directory прекращает учитывать существующую конфигурацию маркера обновления и сеанса в политиках после 30 января 2021 г. Вы по-прежнему можете настроить время существования маркера доступа, SAML и идентификатора после выхода из эксплуатации.
 >
-> Если необходимо определить период времени, по истечении которого пользователю будет предложено войти, настройте частоту входа в условный доступ. Дополнительные сведения об условном доступе см. в статье [Настройка управления сеансами проверки подлинности с помощью условного доступа](/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime).
+> Если необходимо определить период времени, по истечении которого пользователю будет предложено войти, настройте частоту входа в условный доступ. Дополнительные сведения об условном доступе см. в статье [Настройка управления сеансами проверки подлинности с помощью условного доступа](../conditional-access/howto-conditional-access-session-lifetime.md).
 >
 > Если вы не хотите использовать условный доступ после даты выбытия, то для обновления и токенов сеанса будет задана [Конфигурация по умолчанию](#configurable-token-lifetime-properties-after-the-retirement) в этой дате, и вы больше не сможете изменить их время существования.
+>
+> Время существования существующего маркера не изменится. После истечения срока действия будет выдан новый маркер на основе значения по умолчанию.
 
 :::image type="content" source="./media/active-directory-configurable-token-lifetimes/roadmap.svg" alt-text="Сведения об изъятии":::
 
@@ -272,6 +274,6 @@ ms.locfileid: "98232409"
 | [Get-AzureADServicePrincipalPolicy](/powershell/module/azuread/get-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Возвращает все политики, связанные с указанным субъектом-службой.|
 | [Remove-AzureADServicePrincipalPolicy](/powershell/module/azuread/remove-azureadserviceprincipalpolicy?view=azureadps-2.0-preview&preserve-view=true) | Удаляет политику из указанного субъекта-службы.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [примеры настройки времени существования маркеров](configure-token-lifetimes.md).

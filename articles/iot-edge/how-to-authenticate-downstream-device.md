@@ -8,12 +8,12 @@ ms.date: 10/15/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f2dd7cac8370c261f24f5587e801bd621fbdb0f0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3876b44bc6bb1ddbc5398126421fb9651003838f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017004"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678829"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -71,7 +71,7 @@ ms.locfileid: "96017004"
 
 Для выполнения той же операции можно также использовать [расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) . В следующем примере для создания нового устройства IoT с проверкой подлинности симметричного ключа и назначения родительского устройства используется команда [AZ IOT Hub Device-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) :
 
-```cli
+```azurecli
 az iot hub device-identity create -n {iothub name} -d {new device ID} --pd {existing gateway device ID}
 ```
 
@@ -126,7 +126,7 @@ az iot hub device-identity create -n {iothub name} -d {new device ID} --pd {exis
 
 Вы также можете использовать [расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) для выполнения той же операции создания устройства. В следующем примере для создания нового устройства Интернета вещей с помощью самоподписанной проверки подлинности X. 509 и назначения родительского устройства используется команда [AZ IOT Hub Device-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) .
 
-```cli
+```azurecli
 az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway device ID} --am x509_thumbprint --ptp {primary thumbprint} --stp {secondary thumbprint}
 ```
 
@@ -170,7 +170,7 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 Вы также можете использовать [расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) для выполнения той же операции создания устройства. В следующем примере для создания нового устройства IoT с подписанным центром сертификации X. 509 и назначения родительского устройства используется команда [AZ IOT Hub Device-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) .
 
-```cli
+```azurecli
 az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway device ID} --am x509_ca
 ```
 
@@ -191,19 +191,19 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 Таким образом, полная строка подключения выглядит следующим образом:
 
-```
+```console
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz;GatewayHostName=myGatewayDevice
 ```
 
 Или сделайте так:
 
-```
+```console
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;x509=true;GatewayHostName=myGatewayDevice
 ```
 
 Благодаря связи "родители-потомки" можно упростить строку подключения, вызвав шлюз непосредственно в качестве узла подключения. Пример:
 
-```
+```console
 HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
 ```
 

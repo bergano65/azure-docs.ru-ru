@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 8db1825e7abfaaeca4650cbd03dd05eec4777c21
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 9b2fc61054c40f52f7e638117109ec556cc63a78
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121283"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678463"
 ---
 # <a name="troubleshooting-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Устранение неполадок выделенного пула SQL (ранее — хранилища данных SQL) в Azure синапсе Analytics
 
@@ -30,13 +30,13 @@ ms.locfileid: "98121283"
 | Субъект-сервер "MyUserName" не может получить доступ к базе данных master в текущем контексте безопасности. Невозможно открыть пользовательскую базу данных по умолчанию. Ошибка входа. Пользователю "MyUserName" не удалось войти в систему. (Microsoft SQL Server, ошибка: 916) | Эта ошибка возникает, когда пользователь Azure AD пытается подключиться к базе данных master, в которой нет соответствующей учетной записи пользователя.  Чтобы устранить эту ошибку, укажите выделенный пул SQL (ранее — хранилище данных SQL), к которому вы хотите подключиться во время подключения, или добавьте пользователя в базу данных master.  См. дополнительные сведения в статье [Обзор безопасности](sql-data-warehouse-overview-manage-security.md). |
 | Ошибка CTAIP                                                  | Эта ошибка может возникать при создании имени входа в базе данных master базы данных SQL, но не в конкретной базе данных SQL.  Если возникла эта ошибка, ознакомьтесь со статьей с [общими сведениями о безопасности](sql-data-warehouse-overview-manage-security.md) .  В этой статье объясняется, как создать имя входа и пользователя в базе данных master, а затем создать пользователя в базе данных SQL. |
 | Заблокировано брандмауэром                                          | Выделенный пул SQL (ранее — хранилище данных SQL) защищен брандмауэрами, чтобы обеспечить доступ к базе данных только известным IP-адресам. Брандмауэры являются безопасными по умолчанию. Это означает, что перед подключением необходимо прямо разрешить доступ для IP-адреса или диапазона IP-адресов.  Чтобы настроить брандмауэр для предоставления доступа, выполните указания в разделе [Настройка доступа через брандмауэр сервера для IP-адреса вашего клиента](create-data-warehouse-portal.md) в статье [Инструкции по подготовке](create-data-warehouse-portal.md). |
-| Не удается подключиться с помощью средства или драйвера                           | Выделенный пул SQL (ранее — хранилище данных SQL) рекомендует использовать [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [SSDT для Visual Studio](sql-data-warehouse-install-visual-studio.md)или [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) для выполнения запросов к данным. Для получения дополнительной информации о драйверах и подключении к Azure Synapse обратитесь к статьям [Драйверы для Azure Synapse](sql-data-warehouse-connection-strings.md) и [Подключение к Azure Synapse](sql-data-warehouse-connect-overview.md). |
+| Не удается подключиться с помощью средства или драйвера                           | Выделенный пул SQL (ранее — хранилище данных SQL) рекомендует использовать [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [SSDT для Visual Studio](sql-data-warehouse-install-visual-studio.md)или [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md) для выполнения запросов к данным. Для получения дополнительной информации о драйверах и подключении к Azure Synapse обратитесь к статьям [Драйверы для Azure Synapse](sql-data-warehouse-connection-strings.md) и [Подключение к Azure Synapse](sql-data-warehouse-connect-overview.md). |
 
 ## <a name="tools"></a>Инструменты
 
 | Проблема                                                        | Решение                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| В обозревателе объектов Visual Studio отсутствуют пользователи Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Дополнительные сведения об использовании Azure Active Directory с выделенным пулом SQL (ранее — в хранилище данных SQL) см. в статье [Аутентификация в Azure синапсе](sql-data-warehouse-authentication.md) . |
+| В обозревателе объектов Visual Studio отсутствуют пользователи Azure AD           | Это известная проблема  Сведения о пользователях можно просмотреть в файле [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  Дополнительные сведения об использовании Azure Active Directory с выделенным пулом SQL (ранее — в хранилище данных SQL) см. в статье [Аутентификация в Azure синапсе](sql-data-warehouse-authentication.md) . |
 | Создание сценариев вручную, использование мастера создания сценариев или подключение с помощью SSMS происходит медленно, не отвечает или с ошибками. | Убедитесь, что пользователи были созданы в базе данных master. В параметрах создания скриптов также убедитесь, что для выпуска Engine задано значение "Microsoft Azure синапсе Analytics Edition", а тип модуля — "База данных SQL Microsoft Azure". |
 | Создание скриптов в SSMS завершается ошибкой                               | Создание скрипта для выделенного пула SQL (ранее — хранилища данных SQL) завершается ошибкой, если параметру "сформировать скрипт для зависимых объектов" задано значение "true". Чтобы устранить проблему, выберите **Сервис -> Параметры -> Обозреватель объектов SQL Server -> Создать скрипт для зависимых параметров и задайте значение False** |
 
@@ -75,7 +75,7 @@ ms.locfileid: "98121283"
 | Неподдерживаемые функции базы данных SQL     | Ознакомьтесь с разделом [Неподдерживаемые функции таблиц](sql-data-warehouse-tables-overview.md#unsupported-table-features). |
 | Неподдерживаемые типы данных базы данных SQL   | Ознакомьтесь с разделом [Неподдерживаемые типы данных](sql-data-warehouse-tables-data-types.md#identify-unsupported-data-types).        |
 | Ограничения хранимых процедур          | Ознакомьтесь с [ограничениями хранимых процедур](sql-data-warehouse-develop-stored-procedures.md#limitations) . |
-| Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). |
+| Определяемые пользователем функции не поддерживают инструкции SELECT | Это текущее ограничение определяемых пользователем функций.  Сведения о поддерживаемом синтаксисе см. в статье, посвященной инструкции [CREATE FUNCTION](/sql/t-sql/statements/create-function-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

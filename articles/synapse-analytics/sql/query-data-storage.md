@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 967250cf29d1f0248f296cb545a764bd8e611773
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9500d682a99e6345289a83b4b3b2fc29ffe18457
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462668"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676890"
 ---
 # <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Отправка запросов к файлам хранилища с помощью бессерверного пула SQL в Azure Synapse Analytics
 
 Бессерверный пул SQL позволяет запрашивать данные в озере данных. Предоставляемая контактная зона для запросов T-SQL позволяет запрашивать частично структурированные и неструктурированные данные. Возможность запрашивания данных поддерживает следующие аспекты T-SQL:
 
-- Полная контактная зона инструкции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), включая большинство [функций и операторов SQL](overview-features.md).
+- Полная контактная зона инструкции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), включая большинство [функций и операторов SQL](overview-features.md).
 - CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) создает [внешнюю таблицу](develop-tables-external-tables.md), а затем в параллельном режиме экспортирует результаты инструкции SELECT Transact-SQL в службу хранилища Azure.
 
 Дополнительные сведения о поддерживаемых и неподдерживаемых возможностях см. в статье с [общими сведениями о бессерверном пуле SQL](on-demand-workspace-overview.md) или следующих статьях:
@@ -190,15 +190,15 @@ OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*
 
 #### <a name="access-elements-from-repeated-columns"></a>Доступ к элементам из повторяющихся столбцов
 
-Чтобы получить доступ к элементам из повторяющегося столбца, например Array или Map, используйте функцию [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для каждого проецируемого скалярного элемента, предоставив ей следующие данные:
+Чтобы получить доступ к элементам из повторяющегося столбца, например Array или Map, используйте функцию [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для каждого проецируемого скалярного элемента, предоставив ей следующие данные:
 
 - Вложенный или повторяющийся столбец в качестве первого параметра.
-- [Путь JSON](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), который обозначает нужный элемент свойства, в качестве второго параметра.
+- [Путь JSON](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), который обозначает нужный элемент свойства, в качестве второго параметра.
 
-Чтобы обратиться к элементам с нескалярным значением из повторяющегося столбца, используйте функцию [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для каждого проецируемого нескалярного элемента, предоставив ей следующие данные:
+Чтобы обратиться к элементам с нескалярным значением из повторяющегося столбца, используйте функцию [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для каждого проецируемого нескалярного элемента, предоставив ей следующие данные:
 
 - Вложенный или повторяющийся столбец в качестве первого параметра.
-- [Путь JSON](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), который обозначает нужный элемент свойства, в качестве второго параметра.
+- [Путь JSON](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), который обозначает нужный элемент свойства, в качестве второго параметра.
 
 Фрагмент такого синтаксиса приводится ниже.
 

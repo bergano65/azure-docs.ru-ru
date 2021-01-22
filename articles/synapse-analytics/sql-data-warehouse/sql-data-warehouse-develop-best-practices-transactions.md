@@ -11,12 +11,12 @@ ms.date: 04/19/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 46a165ea7fa21c02e859c16027086695f1f378c3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3f7d6f8ca285fdc024db9ba952af9f7d169e7188
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462793"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678480"
 ---
 # <a name="optimizing-transactions-in-dedicated-sql-pool-in-azure-synapse-analytics"></a>Оптимизация транзакций в выделенном пуле SQL в Azure синапсе Analytics
 
@@ -85,7 +85,7 @@ CTAS и INSERT...SELECT являются операциями массовой �
 
 ## <a name="optimizing-deletes"></a>Оптимизация операций удаления
 
-DELETE является полностью регистрируемой операцией.  Если необходимо удалить большой объем данных в таблице или секции, часто разумнее применить к данным, которые вы хотите оставить, минимально регистрируемую операцию `SELECT` .  Чтобы выбрать данные, создайте таблицу с помощью [CTAS](sql-data-warehouse-develop-ctas.md).  После этого с помощью [RENAME](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) замените старую таблицу только что созданной.
+DELETE является полностью регистрируемой операцией.  Если необходимо удалить большой объем данных в таблице или секции, часто разумнее применить к данным, которые вы хотите оставить, минимально регистрируемую операцию `SELECT` .  Чтобы выбрать данные, создайте таблицу с помощью [CTAS](sql-data-warehouse-develop-ctas.md).  После этого с помощью [RENAME](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) замените старую таблицу только что созданной.
 
 ```sql
 -- Delete all sales transactions for Promotions except PromotionKey 2.
@@ -117,7 +117,7 @@ RENAME OBJECT [dbo].[FactInternetSales_d] TO [FactInternetSales];
 
 ## <a name="optimizing-updates"></a>Оптимизация операций обновления
 
-UPDATE является полностью регистрируемой операцией.  Если нужно обновить много строк в таблице или секции, для этого, как правило, намного эффективнее использовать минимально регистрируемую операцию, например [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+UPDATE является полностью регистрируемой операцией.  Если нужно обновить много строк в таблице или секции, для этого, как правило, намного эффективнее использовать минимально регистрируемую операцию, например [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 В примере ниже полное обновление таблицы преобразовано в операцию CTAS, что делает возможным минимальное ведение журнала.
 
@@ -414,7 +414,7 @@ END
 
 Наилучший сценарий заключается в том, чтобы перед приостановкой или масштабированием выделенного пула SQL вы могли выполнить транзакции по изменению данных. Но это не всегда удобно. Чтобы снизить риск длительного отката, выполните одно из следующих действий.
 
-* Повторно создайте долго выполняющиеся операции, используя [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+* Повторно создайте долго выполняющиеся операции, используя [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 * Разбейте операцию на блоки для работы с подмножествами строк.
 
 ## <a name="next-steps"></a>Дальнейшие действия

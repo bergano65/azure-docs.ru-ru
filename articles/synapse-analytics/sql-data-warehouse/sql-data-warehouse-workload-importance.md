@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 07c781672874bff306c9d25a464ec66414ebc9f1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 06d1957d182f2cabc336afcfc47a790442a3cb9a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322119"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678412"
 ---
 # <a name="azure-synapse-analytics-workload-importance"></a>Важность рабочей нагрузки аналитики Azure синапсе
 
@@ -38,9 +38,9 @@ ms.locfileid: "93322119"
 
 ### <a name="locking"></a>Блокировка
 
-Доступ к блокировкам для операций чтения и записи является одной областью естественного состязания. Для таких действий, как [Переключение секций](sql-data-warehouse-tables-partition.md) или [ПЕРЕименование объектов](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) , требуются повышенные блокировки.  Без важности рабочей нагрузки выделенный пул SQL в Azure синапсе оптимизирует для пропускной способности. Оптимизация для пропускной способности означает, что если запросы на выполнение и очереди имеют те же требования к блокировке и доступны ресурсы, запросы в очереди могут обходить запросы с более высокими требованиями к блокировке, которые поступили в очередь запросов ранее. После применения важности рабочей нагрузки к запросам с более высокими требованиями к блокировке. Запрос с повышенной важностью будет выполняться перед запросом с более низкой важностью.
+Доступ к блокировкам для операций чтения и записи является одной областью естественного состязания. Для таких действий, как [Переключение секций](sql-data-warehouse-tables-partition.md) или [ПЕРЕименование объектов](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) , требуются повышенные блокировки.  Без важности рабочей нагрузки выделенный пул SQL в Azure синапсе оптимизирует для пропускной способности. Оптимизация для пропускной способности означает, что если запросы на выполнение и очереди имеют те же требования к блокировке и доступны ресурсы, запросы в очереди могут обходить запросы с более высокими требованиями к блокировке, которые поступили в очередь запросов ранее. После применения важности рабочей нагрузки к запросам с более высокими требованиями к блокировке. Запрос с повышенной важностью будет выполняться перед запросом с более низкой важностью.
 
-Рассмотрим следующий пример:
+Рассмотрим следующий пример.
 
 - Q1 активно работает и выбирает данные из SalesFact.
 - Q2 находится в состоянии ожидания завершения Q1.  Он был отправлен в 9:00 и пытается секционировать новые данные в SalesFact.
@@ -60,10 +60,10 @@ ms.locfileid: "93322119"
 
 Так как вопрос 5 — mediumrc, для него требуется два слота выдачи. Вопрос 5 должен ожидать завершения двух выполняющихся запросов.  Однако при завершении одного из выполняемых запросов (Q1-Q4) вопрос 6 планируется немедленно, так как существуют ресурсы для выполнения запроса.  Если вопрос 5 имеет более высокий уровень важности, чем вопрос 6, то вопрос 6 ждет, пока не будет запущен вопрос 5, прежде чем он сможет начать выполнение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о создании классификатора см. в разделе [Создание классификатора рабочей нагрузки (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  
+- Дополнительные сведения о создании классификатора см. в разделе [Создание классификатора рабочей нагрузки (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  
 - Узнайте о [классификации рабочих нагрузок](sql-data-warehouse-workload-classification.md).  
 - Инструкции по созданию классификатора рабочей нагрузки см. в разделе Быстрый запуск [классификатора рабочей нагрузки](quickstart-create-a-workload-classifier-tsql.md) .
 - См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
-- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).

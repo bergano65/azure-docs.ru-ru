@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о служебной ши
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: 576df12a9d53ec3585f8691016cd250bf1ba4be3
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: e5bc9aae081868c92e0968c88c8cb6dcfb8ee57c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623113"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676380"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
@@ -168,6 +168,8 @@ Select-AzSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
 $res = Find-AzResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
 Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
+## <a name="is-it-possible-to-disable-tls-10-or-11-on-service-bus-namespaces"></a>Можно ли отключить TLS 1,0 или 1,1 в пространствах имен служебной шины?
+Нет. Невозможно отключить TLS 1,0 или 1,1 в пространствах имен служебной шины. В клиентских приложениях, подключающихся к служебной шине, используйте TLS 1,2 или более позднюю версию. Дополнительные сведения см. [в статье обеспечение использования TLS 1,2 с помощью служебной шины Azure — технического сообщества Майкрософт](https://techcommunity.microsoft.com/t5/messaging-on-azure/enforcing-tls-1-2-use-with-azure-service-bus/ba-p/370912).
 
 ## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о служебной шине см. в следующих статьях:
