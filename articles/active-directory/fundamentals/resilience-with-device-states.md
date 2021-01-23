@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: faa334c21e23ecddad287846d34aaf0d72af66cc
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 6d476be7a417cfc31cca76d3409074aaaa281a56
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602190"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724616"
 ---
 # <a name="build-resilience-with-device-states"></a>Устойчивость сборки к состояниям устройств
 
@@ -40,15 +40,15 @@ ms.locfileid: "96602190"
 
   Если в вашей организации используются более старые версии Windows, обновите эти устройства для использования Windows 10.
 
-* Стандартизация доступа к браузеру пользователей для использования [Microsoft ребра](https://docs.microsoft.com/deployedge/microsoft-edge-security-identity) или Google Chrome с [поддерживаемыми](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) [расширениями](https://chrome.google.com/webstore/detail/office/ndjpnladcallmjemlbaebfadecfhkepb) , которые позволили легко выполнять единый вход для веб-приложений с помощью PRT.
+* Стандартизация доступа к браузеру пользователей для использования [Microsoft ребра](/deployedge/microsoft-edge-security-identity) или Google Chrome с [поддерживаемыми](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) [расширениями](https://chrome.google.com/webstore/detail/office/ndjpnladcallmjemlbaebfadecfhkepb) , которые позволили легко выполнять единый вход для веб-приложений с помощью PRT.
 
-* Для персональных или корпоративных устройств iOS и Android разверните [приложение Microsoft Authenticator](../user-help/user-help-auth-app-overview.md). Помимо многофакторной проверки подлинности и возможностей входа без пароля, приложение Microsoft Authenticator будет включать единый вход в собственном приложении через [брокерную проверку подлинности](../develop/brokered-auth.md) с меньшим числом запросов проверки подлинности для конечных пользователей.
+* Для персональных или корпоративных устройств iOS и Android разверните [приложение Microsoft Authenticator](../user-help/user-help-auth-app-overview.md). Помимо многофакторной проверки подлинности и возможностей входа без пароля, приложение Microsoft Authenticator будет включать единый вход в собственном приложении через [брокерную проверку подлинности](../develop/msal-android-single-sign-on.md) с меньшим числом запросов проверки подлинности для конечных пользователей.
 
-* Для персональных или корпоративных устройств iOS и Android используйте [Управление мобильными приложениями](https://docs.microsoft.com/mem/intune/apps/app-management) для безопасного доступа к ресурсам компании с меньшим количеством запросов на проверку подлинности. 
+* Для персональных или корпоративных устройств iOS и Android используйте [Управление мобильными приложениями](/mem/intune/apps/app-management) для безопасного доступа к ресурсам компании с меньшим количеством запросов на проверку подлинности. 
 
 * [Используйте подключаемый модуль единого входа Microsoft Enterprise для устройств Apple (Предварительная версия)](../develop/apple-sso-plugin.md). Регистрация устройства и предоставление единого входа в браузере и собственных приложениях Azure AD. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ресурсы по устойчивости для администраторов и архитекторов
  
 * [Устойчивость к сборке с помощью управления учетными данными](resilience-in-credentials.md)

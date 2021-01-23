@@ -3,12 +3,12 @@ title: Глоссарий Azure Backup
 description: В этой статье определяются термины, полезные для использования с Azure Backup.
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 121258665ab275fdcffd618e7c0cf1b3e0537e70
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 5b575e0f56c9cf39987e9e77850ab1d9b2e80d93
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661482"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98723920"
 ---
 # <a name="azure-backup-glossary"></a>Глоссарий Azure Backup
 
@@ -21,7 +21,7 @@ ms.locfileid: "98661482"
 
 ## <a name="afs-azure-file-shares"></a>AFS (файловые ресурсы Azure)
 
-См. [документацию по службе файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction).
+См. [документацию по службе файлов Azure](../storage/files/storage-files-introduction.md).
 
 ## <a name="alternate-location-recovery"></a>Восстановление в другое расположение
 
@@ -31,11 +31,11 @@ ms.locfileid: "98661482"
 
 (Термин для конкретной рабочей нагрузки)
 
-Резервные копии, поддерживающие приложения, записывают содержимое памяти и ожидающие операции ввода-вывода. Моментальные снимки с согласованием приложений используют модуль [записи VSS VSS](#vss-windows-volume-shadow-copy-service) (или скрипты pre или POST для Linux), чтобы обеспечить согласованность данных приложения перед резервным копированием. [Подробнее](backup-azure-vms-introduction.md).
+Резервные копии, поддерживающие приложения, записывают содержимое памяти и ожидающие операции ввода-вывода. Моментальные снимки с согласованием приложений используют модуль [записи VSS VSS](#vss-windows-volume-shadow-copy-service) (или скрипты pre или POST для Linux), чтобы обеспечить согласованность данных приложения перед резервным копированием. [Подробнее.](backup-azure-vms-introduction.md)
 
 ## <a name="azure-resource-manager-arm-templates"></a>Шаблоны Azure Resource Manager (ARM)
 
-См. [документацию по шаблонам ARM](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview).
+См. [документацию по шаблонам ARM](../azure-resource-manager/templates/overview.md).
 
 ## <a name="autoprotection-for-databases"></a>Автозащита (для баз данных)
 
@@ -49,38 +49,38 @@ Azure Backup предлагает три типа репликации для о
 
 ### <a name="lrs"></a>LRS
 
-[Локально избыточное хранилище (LRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#locally-redundant-storage) реплицирует данные резервной копии три раза (она создает три копии данных резервной копии) в единице масштабирования хранилища в центре обработки данных. Все копии данных резервных копий находятся в одном регионе. LRS — это экономичный вариант защиты данных резервных копий от сбоев локального оборудования.
+[Локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md#locally-redundant-storage) реплицирует данные резервной копии три раза (она создает три копии данных резервной копии) в единице масштабирования хранилища в центре обработки данных. Все копии данных резервных копий находятся в одном регионе. LRS — это экономичный вариант защиты данных резервных копий от сбоев локального оборудования.
 
 ### <a name="grs"></a>GRS
 
-По умолчанию рекомендуется использовать для репликации [геоизбыточное хранилище (GRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#geo-redundant-storage). GRS реплицирует данные резервной копии в дополнительный регион, сотни миль от основного расположения исходных данных. GRS расходы более чем на LRS, но GRS предоставляет более высокий уровень устойчивости для данных резервных копий, даже если есть региональный сбой.
+По умолчанию рекомендуется использовать для репликации [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage). GRS реплицирует данные резервной копии в дополнительный регион, сотни миль от основного расположения исходных данных. GRS расходы более чем на LRS, но GRS предоставляет более высокий уровень устойчивости для данных резервных копий, даже если есть региональный сбой.
 
 >[!NOTE]
 >Для хранилищ GRS, в которых включена функция восстановления между регионами, хранилище резервных копий обновляется с GRS до RA-GRS (хранилище Geo-Redundant с доступом на чтение).
 
 ### <a name="zrs"></a>ZRS
 
-[Хранилище, избыточное в пределах зоны (ZRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#zone-redundant-storage) , реплицирует данные резервных копий в [зонах доступности](https://docs.microsoft.com/azure/availability-zones/az-overview#availability-zones), обеспечивая резервное копирование местонахождение данных и устойчивость в одном регионе. Поэтому критически важные рабочие нагрузки, требующие [местонахождение данных](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) , можно АРХИВИРОВАТЬ в ZRS.
+[Хранилище, избыточное в пределах зоны (ZRS)](../storage/common/storage-redundancy.md#zone-redundant-storage) , реплицирует данные резервных копий в [зонах доступности](../availability-zones/az-overview.md#availability-zones), обеспечивая резервное копирование местонахождение данных и устойчивость в одном регионе. Поэтому критически важные рабочие нагрузки, требующие [местонахождение данных](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) , можно АРХИВИРОВАТЬ в ZRS.
 
 ## <a name="azure-command-line-interface-cli"></a>Интерфейс командной строки Azure (CLI)
 
-См. [документацию по Azure CLI](https://docs.microsoft.com/cli/azure/what-is-azure-cli).
+См. [документацию по Azure CLI](/cli/azure/what-is-azure-cli).
 
 ## <a name="azure-policy"></a>Политика Azure
 
-См. [документацию по политикам Azure](https://docs.microsoft.com/azure/governance/policy/overview).
+См. [документацию по политикам Azure](../governance/policy/overview.md).
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
-См. [документацию по Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
+См. [документацию по Azure PowerShell](/powershell/azure/).
 
 ## <a name="azure-resource-manager-arm"></a>Azure Resource Manager (ARM)
 
-См. [документацию по Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview).
+См. [документацию по Azure Resource Manager](../azure-resource-manager/management/overview.md).
 
 ## <a name="azure-disk-encryption-ade"></a>шифрование дисков Azure.
 
-См. [документацию по шифрованию дисков Azure](https://docs.microsoft.com/azure/security/fundamentals/azure-disk-encryption-vms-vmss).
+См. [документацию по шифрованию дисков Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md).
 
 ## <a name="backend-storage--cloud-storage--backup-storage"></a>Серверное хранилище, облачное хранилище и хранилище резервных копий
 
@@ -88,7 +88,7 @@ Azure Backup предлагает три типа репликации для о
 
 ## <a name="bare-metal-backup"></a>Резервное копирование исходного состояния системы
 
-Резервное копирование файлов операционной системы и всех данных на критических томах, за исключением пользовательских данных. По определению резервная копия исходного состояния системы включает в себя резервную копию состояний. Она обеспечивает защиту на случай, если компьютер не запускается и вам нужно все восстановить. [Подробнее](backup-mabs-system-state-and-bmr.md).
+Резервное копирование файлов операционной системы и всех данных на критических томах, за исключением пользовательских данных. По определению резервная копия исходного состояния системы включает в себя резервную копию состояний. Она обеспечивает защиту на случай, если компьютер не запускается и вам нужно все восстановить. [Подробнее.](backup-mabs-system-state-and-bmr.md)
 
 ## <a name="backup-extensions--vm-extensions"></a>Расширения резервного копирования и расширения ВМ
 
@@ -120,15 +120,15 @@ BCDR включает набор процессов, которые Органи
 
 (Термин для конкретной рабочей нагрузки)
 
-Моментальные снимки с постоянным аварийным завершением обычно возникают, если виртуальная машина Azure завершает работу во время резервного копирования. Во время архивации создается резервная копия только тех данных, которые уже существуют на диске. [Подробнее](backup-azure-vms-introduction.md#snapshot-consistency).
+Моментальные снимки с постоянным аварийным завершением обычно возникают, если виртуальная машина Azure завершает работу во время резервного копирования. Во время архивации создается резервная копия только тех данных, которые уже существуют на диске. [Подробнее.](backup-azure-vms-introduction.md#snapshot-consistency)
 
 ## <a name="cross-region-restore-crr"></a>Восстановление между регионами (КРР)
 
-В качестве одного из [вариантов восстановления](backup-azure-arm-restore-vms.md#restore-options). восстановление между регионами (КРР) позволяет восстанавливать элементы резервного копирования в дополнительном регионе, который является [парным регионом Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions#what-are-paired-regions).
+В качестве одного из [вариантов восстановления](backup-azure-arm-restore-vms.md#restore-options). восстановление между регионами (КРР) позволяет восстанавливать элементы резервного копирования в дополнительном регионе, который является [парным регионом Azure](../best-practices-availability-paired-regions.md#what-are-paired-regions).
 
 ## <a name="data-box"></a>Поле данных
 
-См. [документацию к полю данных](https://docs.microsoft.com/azure/databox/data-box-overview).
+См. [документацию к полю данных](../databox/data-box-overview.md).
 
 ## <a name="datasource"></a>Источник данных
 
@@ -138,17 +138,17 @@ BCDR включает набор процессов, которые Органи
 
 (Термин для конкретной рабочей нагрузки)
 
-См. [документацию по DPM](https://docs.microsoft.com/system-center/dpm/dpm-overview).
+См. [документацию по DPM](/system-center/dpm/dpm-overview).
 
 ## <a name="expressroute"></a>ExpressRoute
 
-См. [документацию по ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction).
+См. [документацию по ExpressRoute](../expressroute/expressroute-introduction.md).
 
 ## <a name="file-system-consistent-backup"></a>Резервное копирование, обеспечивающее целостность файловой системы
 
 (Термин для конкретной рабочей нагрузки)
 
-Согласованные с файловой системой резервные копии обеспечивают согласованность за счет моментального снимка всех файлов в одно и то же время. [Подробнее](backup-azure-vms-introduction.md#snapshot-consistency).
+Согласованные с файловой системой резервные копии обеспечивают согласованность за счет моментального снимка всех файлов в одно и то же время. [Подробнее.](backup-azure-vms-introduction.md#snapshot-consistency)
 
 ## <a name="frontend-storage--source-size"></a>Размер интерфейсного хранилища и источника
 
@@ -164,7 +164,7 @@ BCDR включает набор процессов, которые Органи
 
 ## <a name="iaas-vms--azure-vms"></a>Виртуальные машины IaaS или виртуальные машины Azure
 
-См. [документацию по виртуальной машине Azure](https://docs.microsoft.com/azure/virtual-machines/).
+См. [документацию по виртуальной машине Azure](../virtual-machines/index.yml).
 
 ## <a name="incremental-backup"></a>Добавочное резервное копирование
 
@@ -192,25 +192,25 @@ BCDR включает набор процессов, которые Органи
 
 (Термин для конкретной рабочей нагрузки)
 
-Используя Azure Backup Server, вы можете создавать резервные копии рабочих нагрузок приложения, таких как виртуальные машины Hyper-V, Microsoft SQL Server, SharePoint Server, Microsoft Exchange и клиенты Windows, с помощью единой консоли. Он наследует большую часть функций резервного копирования рабочей нагрузки из DPM, но с незначительными отличиями. [Дополнительные сведения](backup-azure-microsoft-azure-backup.md)
+Используя Azure Backup Server, вы можете создавать резервные копии рабочих нагрузок приложения, таких как виртуальные машины Hyper-V, Microsoft SQL Server, SharePoint Server, Microsoft Exchange и клиенты Windows, с помощью единой консоли. Он наследует большую часть функций резервного копирования рабочей нагрузки из DPM, но с незначительными отличиями. [Подробнее](backup-azure-microsoft-azure-backup.md)
 
 ## <a name="managed-disks"></a>Управляемые диски
 
-См. [документацию по управляемым дискам](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+См. [документацию по управляемым дискам](../virtual-machines/managed-disks-overview.md).
 
 ## <a name="mars-agent"></a>Агент MARS
 
 (Термин для конкретной рабочей нагрузки)
 
-Агент MARS, также называемый агентом **Azure Backup** или **агентом служб восстановления**, используется Azure Backup для резервного копирования данных с локальных компьютеров и виртуальных машин Azure в хранилище резервных копий служб восстановления в Azure. [Подробнее](backup-support-matrix-mars-agent.md).
+Агент MARS, также называемый агентом **Azure Backup** или **агентом служб восстановления**, используется Azure Backup для резервного копирования данных с локальных компьютеров и виртуальных машин Azure в хранилище резервных копий служб восстановления в Azure. [Подробнее.](backup-support-matrix-mars-agent.md)
 
 ## <a name="nsg-network-security-group"></a>NSG (группа безопасности сети)
 
-См. [документацию по NSG](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview).
+См. [документацию по NSG](../virtual-network/network-security-groups-overview.md).
 
 ## <a name="offline-seeding"></a>Автономное заполнение
 
-Автономное заполнение — это процесс передачи начальной (полной) резервной копии в автономном режиме без использования пропускной способности сети. Он предоставляет механизм копирования резервных копий данных на физические устройства хранения, которые затем поставляются в ближайший центр обработки данных Azure и передаются в хранилище служб восстановления. [Подробнее](offline-backup-overview.md).
+Автономное заполнение — это процесс передачи начальной (полной) резервной копии в автономном режиме без использования пропускной способности сети. Он предоставляет механизм копирования резервных копий данных на физические устройства хранения, которые затем поставляются в ближайший центр обработки данных Azure и передаются в хранилище служб восстановления. [Подробнее.](offline-backup-overview.md)
 
 ## <a name="on-demand-backup--ad-hoc-backup"></a>Резервное копирование по запросу или архивация нерегламентированных данных
 
@@ -228,15 +228,15 @@ BCDR включает набор процессов, которые Органи
 
 ## <a name="private-endpoint"></a>Частная конечная точка
 
-См. [документацию по частной конечной точке](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
+См. [документацию по частной конечной точке](../private-link/private-endpoint-overview.md).
 
 ## <a name="protected-instance"></a>Защищенный экземпляр
 
-Защищенный экземпляр ссылается на компьютер, физический или виртуальный сервер, используемый для настройки резервного копирования в Azure.  С **точки зрения выставления счетов** число защищенных экземпляров для компьютера является функцией своего внешнего размера. Таким образом, один экземпляр резервной копии (например, виртуальная машина, резервная копия которой создается в Azure) может соответствовать нескольким защищенным экземплярам в зависимости от его внешнего размера. [Подробнее](https://azure.microsoft.com/pricing/details/backup/).
+Защищенный экземпляр ссылается на компьютер, физический или виртуальный сервер, используемый для настройки резервного копирования в Azure.  С **точки зрения выставления счетов** число защищенных экземпляров для компьютера является функцией своего внешнего размера. Таким образом, один экземпляр резервной копии (например, виртуальная машина, резервная копия которой создается в Azure) может соответствовать нескольким защищенным экземплярам в зависимости от его внешнего размера. [Подробнее.](https://azure.microsoft.com/pricing/details/backup/)
 
 ## <a name="rbac-role-based-access-control"></a>RBAC (Управление доступом на основе ролей)
 
-См. [документацию по RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview).
+См. [документацию по RBAC](../role-based-access-control/overview.md).
 
 ## <a name="recovery-point-restore-point-retention-point--point-in-time-pit"></a>Точка восстановления, точка восстановления, точка хранения и точка во времени (СМОЛа)
 
@@ -248,11 +248,11 @@ Azure Resource Manager ресурс типа *Microsoft. RecoveryServices/Vault*
 
 ## <a name="resource-group"></a>Группа ресурсов
 
-См. [документацию по Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group).
+См. [документацию по Azure Resource Manager](../azure-resource-manager/management/manage-resource-groups-portal.md#what-is-a-resource-group).
 
 ## <a name="rest-api"></a>REST API
 
-См. [документацию по REST API Azure](https://docs.microsoft.com/rest/api/azure/).
+См. [документацию по REST API Azure](/rest/api/azure/).
 
 ## <a name="retention-rule"></a>Правило хранения
 
@@ -272,19 +272,19 @@ RTO указывает максимально возможное время, в 
 
 ## <a name="secondary-region--paired-region"></a>Дополнительный регион или парный регион
 
-Пара региональных стандартов состоит из двух регионов в пределах одного географического элемента. Один из них является основным регионом, а второй — дополнительным регионом. Сопряженные регионы используются некоторыми службами Azure (включая Azure Backup с параметрами GRS) для обеспечения непрерывности бизнес-процессов и защиты от потери данных. [Подробнее](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+Пара региональных стандартов состоит из двух регионов в пределах одного географического элемента. Один из них является основным регионом, а второй — дополнительным регионом. Сопряженные регионы используются некоторыми службами Azure (включая Azure Backup с параметрами GRS) для обеспечения непрерывности бизнес-процессов и защиты от потери данных. [Подробнее.](../best-practices-availability-paired-regions.md)
 
 ## <a name="soft-delete"></a>Обратимое удаление
 
-Обратимое удаление — это функция, которая помогает защититься от случайного удаления данных резервных копий. При обратимом удалении, даже если вредоносный субъект удаляет резервную копию (или данные резервной копии случайно удаляются), данные резервного копирования сосохранены в течение дополнительного периода времени, что позволяет восстановить этот элемент без потери данных. [Подробнее](backup-azure-security-feature-cloud.md).
+Обратимое удаление — это функция, которая помогает защититься от случайного удаления данных резервных копий. При обратимом удалении, даже если вредоносный субъект удаляет резервную копию (или данные резервной копии случайно удаляются), данные резервного копирования сосохранены в течение дополнительного периода времени, что позволяет восстановить этот элемент без потери данных. [Подробнее.](backup-azure-security-feature-cloud.md)
 
 ## <a name="snapshot"></a>Моментальный снимок
 
-Моментальный снимок — это полная копия виртуального жесткого диска (VHD) или общего файлового ресурса Azure, предназначенная только для чтения. Дополнительные сведения о [моментальных снимках дисков](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk) и [моментальных снимках файлов](https://docs.microsoft.com/azure/storage/files/storage-snapshots-files).
+Моментальный снимок — это полная копия виртуального жесткого диска (VHD) или общего файлового ресурса Azure, предназначенная только для чтения. Дополнительные сведения о [моментальных снимках дисков](../virtual-machines/windows/snapshot-copy-managed-disk.md) и [моментальных снимках файлов](../storage/files/storage-snapshots-files.md).
 
 ## <a name="storage-account"></a>Учетная запись хранения
 
-См. [документацию по учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+См. [документацию по учетной записи хранения](../storage/common/storage-account-overview.md).
 
 ## <a name="subscription"></a>Подписка
 
@@ -294,7 +294,7 @@ RTO указывает максимально возможное время, в 
 
 (Термин для конкретной рабочей нагрузки)
 
-Резервное копирование файлов операционной системы. Эта резервная копия позволяет восстанавливать при запуске компьютера, но системные файлы и реестр теряются. [Подробнее](backup-mabs-system-state-and-bmr.md).
+Резервное копирование файлов операционной системы. Эта резервная копия позволяет восстанавливать при запуске компьютера, но системные файлы и реестр теряются. [Подробнее.](backup-mabs-system-state-and-bmr.md)
 
 ## <a name="tenant"></a>Клиент
 
@@ -302,7 +302,7 @@ RTO указывает максимально возможное время, в 
 
 ## <a name="unmanaged-disk"></a>Неуправляемый диск
 
-См. [документацию по неуправляемым дискам](https://docs.microsoft.com/azure/storage/common/storage-disaster-recovery-guidance#azure-unmanaged-disks).
+См. [документацию по неуправляемым дискам](../storage/common/storage-disaster-recovery-guidance.md#azure-unmanaged-disks).
 
 ## <a name="vault"></a>Хранилище
 
@@ -310,15 +310,15 @@ RTO указывает максимально возможное время, в 
 
 ## <a name="vault-credentials"></a>Учетные данные хранилища
 
-Файл учетных данных хранилища — это сертификат, созданный порталом для каждого хранилища. Используется при регистрации локального сервера в хранилище. [Подробнее](backup-azure-dpm-introduction.md).
+Файл учетных данных хранилища — это сертификат, созданный порталом для каждого хранилища. Используется при регистрации локального сервера в хранилище. [Подробнее.](backup-azure-dpm-introduction.md)
 
 ## <a name="vnet-virtual-network"></a>Виртуальная сеть
 
-См. [документацию по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+См. [документацию по виртуальной сети](../virtual-network/virtual-networks-overview.md).
 
 ## <a name="vss-windows-volume-shadow-copy-service"></a>VSS (Windows служба теневого копирования томов)
 
-См. [документацию по VSS](https://docs.microsoft.com/windows-server/storage/file-server/volume-shadow-copy-service).
+См. [документацию по VSS](/windows-server/storage/file-server/volume-shadow-copy-service).
 
 ## <a name="next-steps"></a>Следующие шаги
 

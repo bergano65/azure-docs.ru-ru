@@ -13,16 +13,16 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ad36c2a7f47948d9362b85e78355e6046cda703
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1a12cc3299fbb5916afba48d2608024f28999634
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919868"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724633"
 ---
 # <a name="build-resilience-by-using-continuous-access-evaluation"></a>Устойчивость сборки с помощью оценки непрерывного доступа
 
-[Оценка непрерывного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-continuous-access-evaluation) (автоматизированного конструирования) позволяет ПРИЛОЖЕНИЯМ Azure AD подписываться на критические события, которые затем могут быть оценены и применены. Это включает оценку следующих событий:
+[Оценка непрерывного доступа](../conditional-access/concept-continuous-access-evaluation.md) (автоматизированного конструирования) позволяет ПРИЛОЖЕНИЯМ Azure AD подписываться на критические события, которые затем могут быть оценены и применены. Это включает оценку следующих событий:
 
 * Удаляемая или отключенная учетная запись пользователя
 
@@ -48,14 +48,14 @@ ms.locfileid: "95919868"
 
 ## <a name="how-do-i-implement-cae"></a>Разделы справки реализовать автоматизированного конструирования?
 
-* [Включите автоматизированного конструирования](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-continuous-access-evaluation) в конфигурации безопасности Azure AD.
+* [Включите автоматизированного конструирования](../conditional-access/concept-continuous-access-evaluation.md) в конфигурации безопасности Azure AD.
 
-* Убедитесь, что ваша организация использует [совместимые версии](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-continuous-access-evaluation) Microsoft Office собственных приложений.
+* Убедитесь, что ваша организация использует [совместимые версии](../conditional-access/concept-continuous-access-evaluation.md) Microsoft Office собственных приложений.
 
-* [Оптимизируйте запросы повторной проверки подлинности](https://docs.microsoft.com/azure/active-directory/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime).
+* [Оптимизируйте запросы повторной проверки подлинности](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ресурсы по устойчивости для администраторов и архитекторов
  
 * [Устойчивость к сборке с помощью управления учетными данными](resilience-in-credentials.md)

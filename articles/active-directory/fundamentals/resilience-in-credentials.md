@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5fd5cf419adb137df5c578e3b17b88749215be5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 399d2f71fa20d63dce89cf3be5c12ffd63264895
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919983"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724716"
 ---
 # <a name="build-resilience-with-credential-management"></a>Устойчивость к сборке с помощью управления учетными данными
 
@@ -61,11 +61,11 @@ ms.locfileid: "95919983"
 
 * Включите [синхронизацию хэша паролей](../hybrid/whatis-phs.md) для гибридных учетных записей, которые синхронизируются с Windows Server Active Directory. Этот параметр можно включить вместе со службами федерации, такими как AD FS, и обеспечивает обратную передачу в случае сбоя службы федерации.
 
-* [Анализируйте использование методов многофакторной проверки подлинности](https://docs.microsoft.com/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) для улучшения работы пользователей.
+* [Анализируйте использование методов многофакторной проверки подлинности](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) для улучшения работы пользователей.
 
 * [Реализация гибкой стратегии управления доступом](../authentication/concept-resilient-controls.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ресурсы по устойчивости для администраторов и архитекторов
  
 * [Устойчивость сборки к состояниям устройств](resilience-with-device-states.md)

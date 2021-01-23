@@ -17,12 +17,12 @@ ms.date: 1/19/2021
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c7d02b48d30fa558f8fd12f92705046dab74057
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: deab3460baf9c46e2a3073eb41b738b0e7ad586f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624241"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726307"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Подготовка отчетов на портале Azure Active Directory (Предварительная версия)
 
@@ -43,12 +43,12 @@ ms.locfileid: "98624241"
 * Какие пользователи были успешно удалены из Adobe?
 * Какие пользователи из Workday были успешно созданы в Active Directory? 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 ### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 * Владельцы приложений могут просматривать журналы для приложений, которыми они владеют
 * Пользователи в роли "администратор безопасности", "читатель отчетов", "читатель отчета", "Администратор приложения" и "Администратор облачных приложений"
-* Пользователи в пользовательской роли с [разрешением провисионинглогс](https://docs.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions#full-list-of-permissions)
+* Пользователи в пользовательской роли с [разрешением провисионинглогс](../roles/custom-enterprise-app-permissions.md#full-list-of-permissions)
 * Глобальные администраторы.
 
 

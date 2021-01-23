@@ -14,12 +14,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 1/14/2020
-ms.openlocfilehash: d3bd63566daaf6e1d3e3343b5956d8a8d5fc8ea5
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: b73e72969a851428034499d447ecb162a61aa9ab
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98224519"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725792"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Изучение и устранение проблем с блокировкой базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -185,7 +185,7 @@ AND object_name(p.object_id) = '<table_name>';
     -   Sql_batch_completed
     -   Sql_batch_starting
 
--   Lock
+-   Блокировка
     -   Lock_deadlock
 
 -   Сеанс
@@ -208,7 +208,7 @@ AND object_name(p.object_id) = '<table_name>';
 
     | Состояние | Значение |
     |:-|:-|
-    | История | SPID выполняет фоновую задачу, например обнаружение взаимоблокировки, модуль записи журнала или контрольную точку. |
+    | Фон | SPID выполняет фоновую задачу, например обнаружение взаимоблокировки, модуль записи журнала или контрольную точку. |
     | В режиме ожидания | Идентификатор SPID в данный момент не выполняется. Обычно это означает, что SPID ожидает команду из приложения. |
     | Запущен | Идентификатор SPID в настоящее время выполняется в планировщике. |
     | Готово к запуску | Идентификатор SPID находится в очереди готовности планировщика и ожидает получения времени планировщика. |
@@ -345,7 +345,7 @@ AND object_name(p.object_id) = '<table_name>';
     После отправки запроса на сервер все приложения должны сразу же получить все строки результатов до завершения. Если приложение не извлекает все результирующие строки, то блокировки могут остаться в таблицах, блокируя других пользователей. Если вы используете приложение, которое прозрачно отправляет инструкции SQL на сервер, приложение должно получить все строки результатов. Если это не так (и не может быть настроено для этого), возможно, не удастся устранить проблему с блокировкой. Чтобы избежать этой проблемы, можно ограничить неверно работающие приложения в отчетности или базе данных поддержки принятия решений.
     
     > [!NOTE]
-    > См. [руководство по логике повторных попыток](/azure/azure-sql/database/troubleshoot-common-connectivity-issues#retry-logic-for-transient-errors) для приложений, подключающихся к базе данных SQL Azure. 
+    > См. [руководство по логике повторных попыток](./troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors) для приложений, подключающихся к базе данных SQL Azure. 
     
     **Решение**. чтобы получить все строки результата до завершения, необходимо перезаписать приложение. Это не повлечет за собой использование [смещения и выборки в предложении ORDER BY](/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned) запроса для выполнения разбиения на страницы на стороне сервера.
 
@@ -369,7 +369,7 @@ AND object_name(p.object_id) = '<table_name>';
     KILL 99
     ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Мониторинг и настройка производительности Базы данных SQL Azure и Управляемого экземпляра SQL Azure](/monitor-tune-overview.md)
 * [Мониторинг производительности с использованием хранилища запросов](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store)

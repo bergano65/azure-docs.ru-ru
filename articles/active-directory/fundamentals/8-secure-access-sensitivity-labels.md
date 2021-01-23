@@ -13,22 +13,22 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71031c7f5db299fbb1b7c99014c30590fec89f03
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 0dcb6d24eacbe594a907f084874e76fea963c561
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222298"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725134"
 ---
 # <a name="control-access-with-sensitivity-labels"></a>Управление доступом с помощью меток чувствительности 
 
-[Метки чувствительности](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide) помогают управлять доступом к содержимому в приложениях Office 365, а также в контейнерах, таких как Microsoft Teams, Microsoft 365 Groups и Sites SharePoint. Они могут защищать содержимое, не оказывая помешать совместной работы пользователей и возможностей рабочей среды. Метки чувствительности позволяют отсылать содержимое Организации между устройствами, приложениями и службами, одновременно защищая данные и соблюдая политики соответствия требованиям и безопасности. 
+[Метки чувствительности](/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide) помогают управлять доступом к содержимому в приложениях Office 365, а также в контейнерах, таких как Microsoft Teams, Microsoft 365 Groups и Sites SharePoint. Они могут защищать содержимое, не оказывая помешать совместной работы пользователей и возможностей рабочей среды. Метки чувствительности позволяют отсылать содержимое Организации между устройствами, приложениями и службами, одновременно защищая данные и соблюдая политики соответствия требованиям и безопасности. 
 
 Метки чувствительности позволяют:
 
 * **Классификация содержимого без добавления параметров защиты**. Можно назначить классификацию для содержимого (например, наклейка), которая сохраняется и перемещается в содержимое по мере использования и совместной работы. На основе этой классификации можно создавать отчеты об использовании и просматривать сведения о действиях для конфиденциального содержимого.
 
-* **Применение параметров защиты, таких как шифрование, водяные знаки и ограничения доступа**. Например, пользователи могут применить метку "конфиденциально" к документу или электронной почте, а эта метка может [Шифровать содержимое](https://docs.microsoft.com/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) и добавлять "конфиденциальный" водяной знак. Кроме того, можно [Применить метку чувствительности к контейнеру](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide) , например к сайту SharePoint, и обеспечить возможность доступа внешних пользователей к содержимому, которое оно содержит.
+* **Применение параметров защиты, таких как шифрование, водяные знаки и ограничения доступа**. Например, пользователи могут применить метку "конфиденциально" к документу или электронной почте, а эта метка может [Шифровать содержимое](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) и добавлять "конфиденциальный" водяной знак. Кроме того, можно [Применить метку чувствительности к контейнеру](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide) , например к сайту SharePoint, и обеспечить возможность доступа внешних пользователей к содержимому, которое оно содержит.
 
 Метки чувствительности к электронной почте и другому содержимому передаются вместе с содержимым. Метки чувствительности в контейнерах могут ограничивать доступ к контейнеру, но содержимое в контейнере не наследует метку. Например, пользователь может взять содержимое с защищенного сайта, загрузить его, а затем предоставить к нему доступ без ограничений, если только содержимое не имеет метки конфиденциальности.
 
@@ -52,7 +52,7 @@ ms.locfileid: "98222298"
 
 * Как вы определяете, что такое высокое, среднее или низкое воздействие на бизнес (HBI, MBI, ЛБИ)? Учитывайте влияние на организацию, если доступ к конкретным типам содержимого осуществляется ненадлежащим образом.
 
-   * Содержимое с конкретными типами [конфиденциального содержимого](https://docs.microsoft.com/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide), например кредитных карт или номеров паспортов
+   * Содержимое с конкретными типами [конфиденциального содержимого](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide), например кредитных карт или номеров паспортов
 
    * Содержимое, созданное конкретными группами или людьми (например, руководители соответствия, финансовые лица или руководители)
 
@@ -66,21 +66,21 @@ ms.locfileid: "98222298"
 
 * Какие значения по умолчанию должны быть размещены для HBI данных, сайтов или групп Microsoft 365?
 
-* Где вы будете использовать метки чувствительности для [меток и мониторинга](https://docs.microsoft.com/microsoft-365/compliance/label-analytics?view=o365-worldwide), а также для [обеспечения шифрования](https://docs.microsoft.com/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) или [принудительного применения ограничений доступа к контейнеру](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
+* Где вы будете использовать метки чувствительности для [меток и мониторинга](/microsoft-365/compliance/label-analytics?view=o365-worldwide), а также для [обеспечения шифрования](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) или [принудительного применения ограничений доступа к контейнеру](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
 
 **Для электронной почты и содержимого**
 
-* Вы хотите [автоматически применять метки конфиденциальности](https://docs.microsoft.com/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide) к содержимому или сделать это вручную?
+* Вы хотите [автоматически применять метки конфиденциальности](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide) к содержимому или сделать это вручную?
 
-   * Если вы решили сделать это вручную, вы хотите [рекомендовать пользователям использовать метку](https://docs.microsoft.com/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide)?
+   * Если вы решили сделать это вручную, вы хотите [рекомендовать пользователям использовать метку](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide)?
 
 **Для контейнеров**
 
 * Какие критерии определяют, требуется ли доступ к M365 группам, командам или сайтам SharePoint, с помощью меток чувствительности?
 
-* Вы хотите, чтобы в этих контейнерах перенаправлялись только содержимое с меткой или вы хотите [автоматически пометить](https://docs.microsoft.com/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide) существующие файлы в SharePoint и OneDrive?
+* Вы хотите, чтобы в этих контейнерах перенаправлялись только содержимое с меткой или вы хотите [автоматически пометить](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide) существующие файлы в SharePoint и OneDrive?
 
-Ознакомьтесь с этими [распространенными сценариями для меток чувствительности](https://docs.microsoft.com/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide) и другими идеями по использованию меток чувствительности.
+Ознакомьтесь с этими [распространенными сценариями для меток чувствительности](/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide) и другими идеями по использованию меток чувствительности.
 
 ### <a name="sensitivity-labels-on-email-and-content"></a>Метки чувствительности к электронной почте и содержимому
 
@@ -100,7 +100,7 @@ ms.locfileid: "98222298"
 
 ### <a name="sensitivity-labels-on-containers"></a>Метки чувствительности к контейнерам
 
-Метки чувствительности можно применять к контейнерам, таким как [группы Microsoft 365](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-assign-sensitivity-labels), [Microsoft Teams](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)и [сайты SharePoint](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide). При применении этой метки чувствительности к поддерживаемому контейнеру метка автоматически применяет параметры классификации и защиты к подключенному сайту или группе. Метки чувствительности в этих контейнерах могут управлять следующими аспектами контейнеров:
+Метки чувствительности можно применять к контейнерам, таким как [группы Microsoft 365](../enterprise-users/groups-assign-sensitivity-labels.md), [Microsoft Teams](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)и [сайты SharePoint](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide). При применении этой метки чувствительности к поддерживаемому контейнеру метка автоматически применяет параметры классификации и защиты к подключенному сайту или группе. Метки чувствительности в этих контейнерах могут управлять следующими аспектами контейнеров:
 
 * **Конфиденциальность**. Можно выбрать, кто может видеть сайт: конкретные пользователи, все внутренние пользователи или все.
 
@@ -116,27 +116,27 @@ ms.locfileid: "98222298"
 
 При применении метки чувствительности к контейнеру, например к сайту SharePoint, он не применяется к содержимому. метки чувствительности к контейнерам управляют доступом к содержимому в контейнере. 
 
-* Если вы хотите автоматически применять метки к содержимому в контейнере, см. статью [Автоматическое применение чувствительности к содержимому](https://docs.microsoft.com/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide).
+* Если вы хотите автоматически применять метки к содержимому в контейнере, см. статью [Автоматическое применение чувствительности к содержимому](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide).
 
-* Если вы хотите, чтобы пользователи могли вручную применять метки к этому содержимому, убедитесь, что вы [включили метки чувствительности для файлов Office в SharePoint и OneDrive](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide).
+* Если вы хотите, чтобы пользователи могли вручную применять метки к этому содержимому, убедитесь, что вы [включили метки чувствительности для файлов Office в SharePoint и OneDrive](/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide).
 
 ### <a name="plan-to-implement-sensitivity-labels"></a>Планирование реализации меток чувствительности
 
 После определения способа использования меток чувствительности и содержимого и сайтов, которые необходимо применить, ознакомьтесь со следующей документацией, которая поможет вам выполнить свою реализацию.
 
-1. [Начало работы с метками чувствительности](https://docs.microsoft.com/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide)
+1. [Начало работы с метками чувствительности](/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide)
 
-2. [Создание стратегии развертывания](https://docs.microsoft.com/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide)
+2. [Создание стратегии развертывания](/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide)
 
-3. [Создание и публикация меток чувствительности](https://docs.microsoft.com/microsoft-365/compliance/create-sensitivity-labels?view=o365-worldwide)
+3. [Создание и публикация меток чувствительности](/microsoft-365/compliance/create-sensitivity-labels?view=o365-worldwide)
 
-4. [Ограничение доступа к содержимому с использованием меток чувствительности для применения шифрования](https://docs.microsoft.com/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide)
+4. [Ограничение доступа к содержимому с использованием меток чувствительности для применения шифрования](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide)
 
-5. [Использование меток чувствительности с командами, группами и сайтами](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)
+5. [Использование меток чувствительности с командами, группами и сайтами](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)
 
-6. [Включение меток чувствительности для файлов Office в SharePoint и OneDrive](https://docs.microsoft.com/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide)
+6. [Включение меток чувствительности для файлов Office в SharePoint и OneDrive](/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide)
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Следующие шаги
 
 См. следующие статьи о защите внешнего доступа к ресурсам. Мы рекомендуем выполнить действия в указанном порядке.
 

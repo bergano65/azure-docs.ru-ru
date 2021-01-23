@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 06/11/2020
 ms.author: chenyl
-ms.openlocfilehash: 33df4410b9dd82fd0b1c732eb03ab5e0e77e9869
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 6752a9564dc0d9351d1c21f5be14eb626186ac0d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763121"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724066"
 ---
 # <a name="upstream-settings"></a>Параметры функции отправки данных в вышестоящий ресурс
 
@@ -40,7 +40,7 @@ ms.locfileid: "97763121"
 |категори| Категория может иметь одно из следующих значений: <ul><li>**подключения**: события времени жизни соединения. Он срабатывает при подключении или отключении клиентского подключения. Он включает в себя подключенные и отключенные события.</li><li>**сообщения**: срабатывает, когда клиенты вызывают метод концентратора. Он включает все остальные события, кроме тех, которые указаны в категории **подключения** .</li></ul>|
 |журнале| Для категории **Messages** событие является целевым объектом в [сообщении вызова](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding) , отправляемом клиентами. Для категории **подключения** используются только *подключенные* и *Отключенные* .|
 
-Эти предопределенные параметры можно использовать в шаблоне URL-адреса. При вычислении вышестоящего URL-адреса параметры будут заменены указанным значением. Пример: 
+Эти предопределенные параметры можно использовать в шаблоне URL-адреса. При вычислении вышестоящего URL-адреса параметры будут заменены указанным значением. Например: 
 ```
 http://host.com/{hub}/api/{category}/{event}
 ```
@@ -59,7 +59,7 @@ URL-адрес вышестоящего не является шифровани
 
 1. Добавьте удостоверение, назначенное системой, или пользовательское удостоверение. См. статью [Добавление управляемого удостоверения на портале Azure](./howto-use-managed-identity.md#add-a-system-assigned-identity) .
 
-2. Предоставьте секретное разрешение на чтение для управляемого удостоверения в политиках доступа в Key Vault. См. раздел [Назначение политики доступа Key Vault с помощью портал Azure](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+2. Предоставьте секретное разрешение на чтение для управляемого удостоверения в политиках доступа в Key Vault. См. раздел [Назначение политики доступа Key Vault с помощью портал Azure](../key-vault/general/assign-access-policy-portal.md)
 
 3. Замените конфиденциальный текст синтаксисом `{@Microsoft.KeyVault(SecretUri=<secret-identity>)}` в шаблоне вышестоящего URL-адреса.
 
@@ -146,7 +146,7 @@ POST
 |X-АСРС-User-Claims |Группа утверждений клиентского соединения.|
 |X-АСРС-User-ID |Удостоверение пользователя клиента, который отправляет сообщение.|
 |X-АСРС-клиент-запрос |Запрос запроса, когда клиенты подключаются к службе.|
-|Проверка подлинности |Необязательный токен, когда вы используете `ManagedIdentity` . |
+|Аутентификация |Необязательный токен, когда вы используете `ManagedIdentity` . |
 
 ### <a name="request-body"></a>Тело запроса
 
@@ -158,7 +158,7 @@ Content-Type: application/json
 
 Тип содержимого: `application/json`
 
-|Имя  |Тип  |Описание  |
+|Имя  |Type  |Описание  |
 |---------|---------|---------|
 |Ошибка |строка |Сообщение об ошибке закрытого соединения. Пусто, когда соединения закрываются без ошибок.|
 
@@ -166,10 +166,10 @@ Content-Type: application/json
 
 Content-Type: `application/json` или `application/x-msgpack`
 
-|Имя  |Тип  |Описание  |
+|Имя  |Type  |Описание  |
 |---------|---------|---------|
 |InvocationId |строка | Необязательная строка, представляющая сообщение вызова. Поиск сведений в [вызовах](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocations).|
-|Назначение |строка | То же, что и у события, и того же целевого объекта в [сообщении вызова](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding). |
+|Target |строка | То же, что и у события, и того же целевого объекта в [сообщении вызова](https://github.com/dotnet/aspnetcore/blob/master/src/SignalR/docs/specs/HubProtocol.md#invocation-message-encoding). |
 |Аргументы |Массив объектов |Массив, содержащий аргументы, применяемые к методу, на который ссылается `Target` . |
 
 ### <a name="signature"></a>Подпись
@@ -179,7 +179,7 @@ Content-Type: `application/json` или `application/x-msgpack`
 Hex_encoded(HMAC_SHA256(accessKey, connection-id))
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Управляемые удостоверения для службы Azure SignalR](howto-use-managed-identity.md)
 - [Azure Functions development and configuration with Azure SignalR Service](signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)

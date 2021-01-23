@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/03/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bed64df921326ad4d219f934f7a7bc6860bfc7d8
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 541f76ad825f492679530902c571096ca4b01902
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861907"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726237"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа 
 
@@ -125,7 +125,7 @@ Content-Type: application/json
 
 ## <a name="get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net"></a>Получение токена с помощью библиотеки Microsoft.Azure.Services.AppAuthentication для .NET
 
-Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями для ресурсов Azure заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication](../../key-vault/general/service-to-service-authentication.md). В этом разделе показано, как начать работу с библиотекой в коде.
+Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями для ресурсов Azure заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](/cli/azure) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication](/dotnet/api/overview/azure/service-to-service-authentication). В этом разделе показано, как начать работу с библиотекой в коде.
 
 1. Добавьте ссылки на пакеты NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) в приложение.
 
@@ -141,7 +141,7 @@ Content-Type: application/json
     var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
     ```
     
-Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, приведены в [справочнике по Microsoft.Azure.Services.AppAuthentication ](../../key-vault/general/service-to-service-authentication.md) и [примере .NET, использующем службу приложений и хранилище ключей с управляемыми удостоверениями для ресурсов Azure](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
+Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, приведены в [справочнике по Microsoft.Azure.Services.AppAuthentication ](/dotnet/api/overview/azure/service-to-service-authentication) и [примере .NET, использующем службу приложений и хранилище ключей с управляемыми удостоверениями для ресурсов Azure](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 ## <a name="get-a-token-using-c"></a>Получение маркера с использованием C#
 
@@ -391,7 +391,7 @@ echo The managed identities for Azure resources access token is $access_token
 
 Для повторных попыток рекомендуем следующую стратегию: 
 
-| **Стратегия повторов** | **Параметры** | **Значения** | **Принцип работы** |
+| **Стратегия повторов** | **Параметры** | **Значения** | **Принципы работы** |
 | --- | --- | --- | --- |
 |ExponentialBackoff |Число повторных попыток<br />Минимальная задержка<br />Максимальная задержка<br />Разностная задержка<br />Первый быстрый повтор |5<br />0 с<br />60 с<br />2 с<br />false |Попытка 1 — задержка 0 с<br />Попытка 2 — задержка 2 с<br />Попытка 3 — задержка 6 с<br />Попытка 4 — задержка 14 с<br />Попытка 5 — задержка 30 с |
 
@@ -400,6 +400,6 @@ echo The managed identities for Azure resources access token is $access_token
 Список ресурсов, которые поддерживают Azure AD и были протестированы с управляемыми удостоверениями для ресурсов Azure и соответствующими идентификаторами ресурсов, приведен в разделе [Службы Azure, поддерживающие аутентификацию Azure AD](./services-support-managed-identities.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы включить управляемые удостоверения для ресурсов Azure на виртуальной машине Azure, ознакомьтесь с разделом [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure](qs-configure-portal-windows-vm.md).

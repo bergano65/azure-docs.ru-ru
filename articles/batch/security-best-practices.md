@@ -3,12 +3,12 @@ title: Рекомендации по обеспечению безопаснос
 description: Ознакомьтесь с рекомендациями и полезными советами по повышению безопасности с помощью решений пакетной службы Azure.
 ms.date: 12/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: b9732ffb810a1038a6f402a46fa8b809f180f0a8
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 6ec4a1d89ebaa9318986fc0d51e832652ba51683
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802292"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98723818"
 ---
 # <a name="batch-security-and-compliance-best-practices"></a>Рекомендации по обеспечению безопасности и соответствию пакетной службы
 
@@ -137,8 +137,8 @@ ms.locfileid: "97802292"
 
 Для обеспечения дополнительной безопасности зашифруйте эти диски с помощью одной из следующих возможностей шифрования дисков Azure:
 
-- [Управляемое шифрование диска неактивных с ключами, управляемыми платформой](../virtual-machines/windows/disk-encryption.md#platform-managed-keys)
-- [Шифрование на узле с помощью управляемого платформой ключа](../virtual-machines/windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
+- [Управляемое шифрование диска неактивных с ключами, управляемыми платформой](../virtual-machines/disk-encryption.md#platform-managed-keys)
+- [Шифрование на узле с помощью управляемого платформой ключа](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 - [Дисковое шифрование Azure](disk-encryption.md)
 
 ## <a name="securely-access-services-from-compute-nodes"></a>Безопасный доступ к службам с узлов вычислений
@@ -147,7 +147,7 @@ ms.locfileid: "97802292"
 
 ## <a name="governance-and-compliance"></a>Система управления и соответствие требованиям
 
-### <a name="compliance"></a>Соответствие требованиям
+### <a name="compliance"></a>Соответствие нормативным требованиям
 
 Чтобы помочь клиентам удовлетворить свои обязательства по обеспечению соответствия в регулируемых отраслях и рынках по всему миру, Azure поддерживает [большой портфель предложений соответствия](https://azure.microsoft.com/overview/trusted-cloud/compliance). 
 
@@ -162,7 +162,7 @@ ms.locfileid: "97802292"
 - Напрямую, используя ресурс Microsoft.BatCH/Батчаккаунтс. Можно использовать подмножество свойств для учетной записи пакетной службы. Например, политика может включать допустимые регионы учетной записи пакетной службы, разрешенный режим выделения пула и возможность включения общедоступной сети для учетных записей.
 - Косвенно, используя ресурс Microsoft. COMPUTE/virtualMachineScaleSets. Учетные записи пакетной службы с режимом выделения пула пользовательских подписок могут иметь политику, заданную для ресурсов масштабируемого набора виртуальных машин, создаваемых в подписке учетной записи Batch. Например, разрешены размеры виртуальных машин и убедитесь, что определенные расширения выполняются на каждом узле пула.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [базовым планом безопасности Azure для пакетной](security-baseline.md)службы.
 - Ознакомьтесь с дополнительными [рекомендациями по пакетной службе Azure](best-practices.md).

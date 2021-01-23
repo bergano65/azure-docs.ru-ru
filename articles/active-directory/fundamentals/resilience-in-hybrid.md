@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c45b362bc37df71346fc3b635c8ae4a51f62cdc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: de01788c01d4d6dedd9563faaaac07bff30bbd97
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919916"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724765"
 ---
 # <a name="build-resilience-in-your-hybrid-architecture"></a>Устойчивость к сборке в гибридной архитектуре
 
@@ -82,7 +82,7 @@ ms.locfileid: "95919916"
 
 Федерация включает создание отношений доверия между Azure AD и службой федерации, включая обмен конечными точками, сертификаты подписи маркеров и другие метаданные. Когда запрос поступает в Azure AD, он считывает конфигурацию и перенаправляет пользователя в настроенные конечные точки. На этом этапе пользователь взаимодействует со службой федерации, которая выдает утверждение SAML, проверяемое Azure AD. 
 
-На следующей диаграмме показана топология корпоративного службы федерации Active Directory (AD FS) (AD FS), которая включает избыточные серверы федерации и прокси-службы веб приложения в нескольких локальных центрах обработки данных. Эта конфигурация полагается на корпоративные сетевые компоненты инфраструктуры, такие как DNS, балансировка сетевой нагрузки с возможностями геосходства, брандмауэры и т. д. Все локальные компоненты и подключения подвержены сбоям. Дополнительные сведения см. в [документации по планированию емкости AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity) .
+На следующей диаграмме показана топология корпоративного службы федерации Active Directory (AD FS) (AD FS), которая включает избыточные серверы федерации и прокси-службы веб приложения в нескольких локальных центрах обработки данных. Эта конфигурация полагается на корпоративные сетевые компоненты инфраструктуры, такие как DNS, балансировка сетевой нагрузки с возможностями геосходства, брандмауэры и т. д. Все локальные компоненты и подключения подвержены сбоям. Дополнительные сведения см. в [документации по планированию емкости AD FS](/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity) .
 
 > [!NOTE]
 >  Федерация имеет наибольшее число локальных зависимостей и, следовательно, наиболее вероятные точки отказа. Хотя на этой схеме показано AD FS, другие локальные поставщики удостоверений подвержены аналогичным вопросам проектирования для достижения высокого уровня доступности, масштабируемости и отработки отказа.
@@ -99,13 +99,13 @@ ms.locfileid: "95919916"
 
 * [Список совместимости с федерацией Azure AD](../hybrid/how-to-connect-fed-compatibility.md)
 
-* Следуйте указаниям в [документации по планированию емкости AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity)
+* Следуйте указаниям в [документации по планированию емкости AD FS](/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity)
 
-* [Развертывание AD FS в Azure IaaS](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs)
+* [Развертывание AD FS в Azure IaaS](/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs)
 
 * [Включение PHS](../hybrid/tutorial-phs-backup.md) вместе с Федерации
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ресурсы по устойчивости для администраторов и архитекторов
  
 * [Устойчивость к сборке с помощью управления учетными данными](resilience-in-credentials.md)

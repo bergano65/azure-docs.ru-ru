@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4b649942a52c51aef0d6edd17b913f75e1fb247b
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a1b621b5d5601e6d8bffef48e23d217e0eee1d6a
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674173"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725825"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -28,8 +28,8 @@ ms.locfileid: "98674173"
 
 | Ресурс                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|
-| Приложение-функция.                                                                     | Обязательно    | [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)                             |
-| Учетная запись [хранения Azure](../storage/index.yml) ;                                   | Обязательно    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
+| Приложение-функция.                                                                     | Обязательный    | [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)                             |
+| Учетная запись [хранения Azure](../storage/index.yml) ;                                   | Обязательный    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
 | Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |
 | [План размещения](./functions-scale.md)                                             | Необязательно<sup>1</sup>    | [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |
 
@@ -212,9 +212,11 @@ ms.locfileid: "98674173"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
+Параметры, необходимые для приложения-функции, выполняемого в плане потребления, откладываются между Windows и Linux. 
+
 #### <a name="windows"></a>Windows
 
-В Windows план потребления требует два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE` . Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+В Windows для плана потребления требуется дополнительный параметр в конфигурации сайта: [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](functions-app-settings.md#website_contentazurefileconnectionstring) . Это свойство настраивает учетную запись хранения, в которой хранятся код и конфигурация приложения функции.
 
 ```json
 {
@@ -238,10 +240,6 @@ ms.locfileid: "98674173"
                     "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2019-06-01').keys[0].value)]"
                 },
                 {
-                    "name": "WEBSITE_CONTENTSHARE",
-                    "value": "[toLower(variables('functionAppName'))]"
-                },
-                {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
                     "value": "node"
                 },
@@ -259,9 +257,12 @@ ms.locfileid: "98674173"
 }
 ```
 
+> [!IMPORTANT]
+> Не устанавливайте этот [`WEBSITE_CONTENTSHARE`](functions-app-settings.md#website_contentshare) параметр так, как он создается при создании сайта.  
+
 #### <a name="linux"></a>Linux
 
-В Linux приложение функции должно иметь `kind` значение `functionapp,linux` , а свойство должно иметь значение `reserved` `true` :
+В Linux приложение функции должно иметь `kind` значение `functionapp,linux` , а свойство должно иметь `reserved` значение `true` . 
 
 ```json
 {
@@ -299,8 +300,9 @@ ms.locfileid: "98674173"
 }
 ```
 
-<a name="premium"></a>
+[`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](functions-app-settings.md#website_contentazurefileconnectionstring)Параметры и [`WEBSITE_CONTENTSHARE`](functions-app-settings.md#website_contentshare) не поддерживаются в Linux.
 
+<a name="premium"></a>
 ## <a name="deploy-on-premium-plan"></a>Развертывание в плане Premium
 
 План Premium обеспечивает то же масштабирование, что и план потребления, но включает выделенные ресурсы и дополнительные возможности. Дополнительные сведения см. в статье [план функций Azure Premium](./functions-premium-plan.md).
@@ -332,7 +334,7 @@ ms.locfileid: "98674173"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для приложения-функции в плане Premium должно быть `serverFarmId` задано значение идентификатора ресурса созданного ранее плана. Кроме того, для плана Premium требуются два дополнительных параметра в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE` . Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
+Для приложения-функции в плане Premium должно быть `serverFarmId` задано значение идентификатора ресурса созданного ранее плана. Кроме того, для плана Premium требуется дополнительный параметр в конфигурации сайта: [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](functions-app-settings.md#website_contentazurefileconnectionstring) . Это свойство настраивает учетную запись хранения, в которой хранятся код и конфигурация приложения функции.
 
 ```json
 {
@@ -358,10 +360,6 @@ ms.locfileid: "98674173"
                     "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2019-06-01').keys[0].value)]"
                 },
                 {
-                    "name": "WEBSITE_CONTENTSHARE",
-                    "value": "[toLower(variables('functionAppName'))]"
-                },
-                {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
                     "value": "node"
                 },
@@ -378,6 +376,8 @@ ms.locfileid: "98674173"
     }
 }
 ```
+> [!IMPORTANT]
+> Не устанавливайте этот [`WEBSITE_CONTENTSHARE`](functions-app-settings.md#website_contentshare) параметр так, как он создается при создании сайта.  
 
 <a name="app-service-plan"></a>
 

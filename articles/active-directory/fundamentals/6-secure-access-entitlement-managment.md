@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9de0ce5e83b33cd793953e2b863f26dffafe58ee
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f06a54f59405d9833194b2e7d4488bc93d2437ae
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222400"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725184"
 ---
 # <a name="manage-external-access-with-entitlement-management"></a>Управление внешним доступом с помощью управления назначениями 
 
@@ -94,15 +94,15 @@ ms.locfileid: "98222400"
 
 ## <a name="using-automation-in-entitlement-management"></a>Использование службы автоматизации в управлении назначениями
 
-Функции управления назначениями можно выполнять с [помощью Microsoft Graph](https://docs.microsoft.com/graph/tutorial-access-package-api), включая
+Функции управления назначениями можно выполнять с [помощью Microsoft Graph](/graph/tutorial-access-package-api), включая
 
-* [Управление пакетами доступа](https://docs.microsoft.com/graph/api/resources/accesspackage?view=graph-rest-beta)
+* [Управление пакетами доступа](/graph/api/resources/accesspackage?view=graph-rest-beta)
 
-* [Управление проверками доступа](https://docs.microsoft.com/graph/api/resources/accessreviewsv2-root?view=graph-rest-beta)
+* [Управление проверками доступа](/graph/api/resources/accessreviewsv2-root?view=graph-rest-beta)
 
-* [Управление подключенными организациями](https://docs.microsoft.com/graph/api/resources/connectedorganization?view=graph-rest-beta)
+* [Управление подключенными организациями](/graph/api/resources/connectedorganization?view=graph-rest-beta)
 
-* [Управление параметрами управления назначениями](https://docs.microsoft.com/graph/api/resources/entitlementmanagementsettings?view=graph-rest-beta)
+* [Управление параметрами управления назначениями](/graph/api/resources/entitlementmanagementsettings?view=graph-rest-beta)
 
 ## <a name="recommendations"></a>Рекомендации 
 
@@ -112,7 +112,7 @@ ms.locfileid: "98222400"
 
 * Если у вас уже есть пользователи B2B в каталоге, их также можно напрямую назначить соответствующим пакетам доступа.
 
-* Доступ можно назначить в [портал Azure](../governance/entitlement-management-access-package-assignments.md)или с помощью [Microsoft Graph](https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta).
+* Доступ можно назначить в [портал Azure](../governance/entitlement-management-access-package-assignments.md)или с помощью [Microsoft Graph](/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta).
 
 **Используйте параметры управления удостоверениями, чтобы удалить пользователей из каталога, когда истечет срок действия пакетов доступа**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "98222400"
 
 Дополнительные сведения см. [в разделе Управление доступом для внешних пользователей в управлении](../governance/entitlement-management-external-users.md) назначениями Azure AD. 
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Следующие шаги
 
 См. следующие статьи о защите внешнего доступа к ресурсам. Мы рекомендуем выполнить действия в указанном порядке.
 
@@ -173,4 +173,3 @@ ms.locfileid: "98222400"
 
  
 
- 

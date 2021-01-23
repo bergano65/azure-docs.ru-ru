@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18036644dc4df51bfacc5019f70ae7694757f753
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 218208891cccb4f606a574a9c1c09f30c4ac0b11
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222247"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725084"
 ---
 # <a name="secure-external-access-to-microsoft-teams-sharepoint-and-onedrive-for-business"></a>Безопасный внешний доступ к Microsoft Teams, SharePoint и OneDrive для бизнеса 
 
@@ -77,7 +77,7 @@ Microsoft Teams, SharePoint и OneDrive для бизнеса — это три 
 
 ## <a name="govern-access-in-teams"></a>Управление доступом в командах
 
-[Команды отличают внешних пользователей (все за пределами организации) и гостевых пользователей (с учетными записями гостей)](https://docs.microsoft.com/microsoftteams/communicate-with-users-from-other-organizations?WT.mc_id=TeamsAdminCenterCSH). Вы управляете параметром совместной работы на [портале администрирования группы](https://admin.teams.microsoft.com/company-wide-settings/external-communications) в разделе Параметры для всей Организации. 
+[Команды отличают внешних пользователей (все за пределами организации) и гостевых пользователей (с учетными записями гостей)](/microsoftteams/communicate-with-users-from-other-organizations?WT.mc_id=TeamsAdminCenterCSH%e2%80%8b). Вы управляете параметром совместной работы на [портале администрирования группы](https://admin.teams.microsoft.com/company-wide-settings/external-communications) в разделе Параметры для всей Организации. 
 
 > [!NOTE]
 > Параметры совместной работы внешних удостоверений в Azure Active Directory управляют действующими разрешениями. Вы можете увеличить ограничения в командах, но не уменьшайте их, как указано в Azure AD.
@@ -88,13 +88,13 @@ Microsoft Teams, SharePoint и OneDrive для бизнеса — это три 
 
 Дополнительные сведения об управлении внешним доступом в командах см. в следующих ресурсах.
 
-* [Управление внешним доступом в Microsoft Teams](https://docs.microsoft.com/microsoftteams/manage-external-access)
+* [Управление внешним доступом в Microsoft Teams](/microsoftteams/manage-external-access)
 
-* [Модели удостоверений Microsoft 365 и Azure Active Directory](https://docs.microsoft.com/microsoft-365/enterprise/about-microsoft-365-identity?view=o365-worldwide)
+* [Модели удостоверений Microsoft 365 и Azure Active Directory](/microsoft-365/enterprise/about-microsoft-365-identity?view=o365-worldwide)
 
-* [Модели удостоверений и проверка подлинности для Microsoft Teams](https://docs.microsoft.com/MicrosoftTeams/identify-models-authentication)
+* [Модели удостоверений и проверка подлинности для Microsoft Teams](/MicrosoftTeams/identify-models-authentication)
 
-* [Метки чувствительности для Microsoft Teams](https://docs.microsoft.com/MicrosoftTeams/sensitivity-labels)
+* [Метки чувствительности для Microsoft Teams](/MicrosoftTeams/sensitivity-labels)
 
 ## <a name="govern-access-in-sharepoint-and-onedrive"></a>Управление доступом в SharePoint и OneDrive
 
@@ -102,9 +102,9 @@ Microsoft Teams, SharePoint и OneDrive для бизнеса — это три 
 
 ### <a name="integrating-sharepoint-and-one-drive-with-azure-ad-b2b"></a>Интеграция SharePoint и одного диска с Azure AD B2B
 
-В рамках общей стратегии по управление внешним совместным [использованием рекомендуется включить предварительную версию интеграции SharePoint и OneDrive с Azure AD B2B](https://docs.microsoft.com/sharepoint/sharepoint-azureb2b-integration-preview) .
+В рамках общей стратегии по управление внешним совместным [использованием рекомендуется включить предварительную версию интеграции SharePoint и OneDrive с Azure AD B2B](/sharepoint/sharepoint-azureb2b-integration-preview) .
 
-Azure AD B2B обеспечивает проверку подлинности и Управление гостевыми пользователями. С помощью интеграции SharePoint и OneDrive [одноразовые секретные коды Azure AD B2B](https://docs.microsoft.com/azure/active-directory/external-identities/one-time-passcode) используются для внешнего совместного использования файлов, папок, элементов списков, библиотек документов и сайтов. Эта функция предоставляет обновленный интерфейс от существующего [безопасного внешнего общего доступа получателя](https://docs.microsoft.com/sharepoint/what-s-new-in-sharing-in-targeted-release).
+Azure AD B2B обеспечивает проверку подлинности и Управление гостевыми пользователями. С помощью интеграции SharePoint и OneDrive [одноразовые секретные коды Azure AD B2B](../external-identities/one-time-passcode.md) используются для внешнего совместного использования файлов, папок, элементов списков, библиотек документов и сайтов. Эта функция предоставляет обновленный интерфейс от существующего [безопасного внешнего общего доступа получателя](/sharepoint/what-s-new-in-sharing-in-targeted-release).
 
 > [!NOTE]
 > Если вы включили предварительную версию интеграции Azure AD B2B, то совместное использование SharePoint и OneDrive зависит от параметров организационных отношений в Azure AD, таких как **Участники могут приглашать** и приглашать **гостей**.
@@ -171,11 +171,11 @@ Azure AD B2B обеспечивает проверку подлинности и
 
 Дополнительные сведения об управляющем внешнем доступе к SharePoint см. в следующих статьях:
 
-* [Общие сведения о внешнем общем доступе к SharePoint](https://docs.microsoft.com/sharepoint/external-sharing-overview)
+* [Общие сведения о внешнем общем доступе к SharePoint](/sharepoint/external-sharing-overview)
 
-* [Интеграция SharePoint и OneDrive с Azure AD B2B](https://docs.microsoft.com/sharepoint/sharepoint-azureb2b-integration-preview)
+* [Интеграция SharePoint и OneDrive с Azure AD B2B](/sharepoint/sharepoint-azureb2b-integration-preview)
 
-#### <a name="next-steps"></a>Дальнейшие действия
+#### <a name="next-steps"></a>Следующие шаги
 
 См. следующие статьи о защите внешнего доступа к ресурсам. Мы рекомендуем выполнить действия в указанном порядке.
 

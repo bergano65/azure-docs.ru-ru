@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8bfc3fb239f30911eddf0aa27496a465e36c486
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8fed78d7d2250d749ced7fe343689df76329b60d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919880"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724666"
 ---
 # <a name="build-resilience-in-application-access-with-application-proxy"></a>Устойчивость к сборке в доступе к приложениям с помощью прокси приложения
 
@@ -27,7 +27,7 @@ Azure Active Directory Application Proxy позволяет пользовате
 Пользователи обращаются к локальным ресурсам через URL-адрес, опубликованный через прокси приложения. Они перенаправляются на страницу входа в Azure AD. Затем служба прокси приложения в Azure AD отправляет маркер в соединитель прокси приложения в корпоративной сети, который передает маркер в локальную Active Directory прошедший проверку подлинности пользователь может получить доступ к локальному ресурсу. На приведенной ниже схеме [соединители](../manage-apps/application-proxy-connectors.md) отображаются в [группе соединителей](../manage-apps/application-proxy-connector-groups.md).
 
 > [!IMPORTANT]
-> При публикации приложений через прокси приложения необходимо реализовать [планирование ресурсов и обеспечить соответствующую избыточность соединителей прокси приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#capacity-planning).
+> При публикации приложений через прокси приложения необходимо реализовать [планирование ресурсов и обеспечить соответствующую избыточность соединителей прокси приложения](../manage-apps/application-proxy-connectors.md#capacity-planning).
 
 ![Схема архитектуры приложения y](./media/resilience-on-prem-access/admin-resilience-app-proxy.png))
 
@@ -43,7 +43,7 @@ Azure Active Directory Application Proxy позволяет пользовате
 
 * [Проектирование отказоустойчивой стратегии управления доступом](../authentication/concept-resilient-controls.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ресурсы по устойчивости для администраторов и архитекторов
  
 * [Устойчивость к сборке с помощью управления учетными данными](resilience-in-credentials.md)

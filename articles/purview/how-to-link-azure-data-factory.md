@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: 01af7b251c9ce3bfebb87016c85ea3efd9c0e8ac
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: dbd7937667a3c4d5af9f13e15cdd4ff2081241f0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928772"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98723886"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Подключение фабрики данных Azure и Azure зрения
 
@@ -99,12 +99,12 @@ Azure зрения захватывает журналы выполнения и
 
 | Система хранения данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 | ------------------- | ------------------- | ----------------- |
-| ADLS 1-го поколения (без поддержки JSON) | Да | Да (только для копирования без двоичного файла) |
-| ADLS 2-го поколения (без поддержки JSON) | Да | Да |
-| Большой двоичный объект Azure (без поддержки JSON) | Да | Да |
-| Azure Cosmos DB (SQL API) | Да | Да |
+| ADLS 1-го поколения | Да | Да (только для копирования без двоичного файла) |
+| ADLS 2-го поколения | Да | Да |
+| Большой двоичный объект Azure | Да | Да |
+| Azure Cosmos DB (API SQL) | Да | Да |
 | Azure Cosmos DB (API Mongo) | Да | Да |
-| Когнитивный поиск Azure | Да | Да |
+| Когнитивный поиск Azure | Да | Да |
 | Azure Data Explorer | Да | Да |
 | База данных Azure для Марии \* | Да | Да |
 | База данных Azure для MYSQL \* | Да | Да |
@@ -126,7 +126,7 @@ Azure зрения захватывает журналы выполнения и
 
 ### <a name="data-factory-data-flow-support"></a>Поддержка потока данных фабрики данных
 
-| Система хранения данных | Поддерживаются: |
+| Система хранения данных | Поддерживается |
 | ------------------- | ------------------- | ----------------- |
 | ADLS 1-го поколения | Да |
 | ADLS 2-го поколения | Да |
@@ -136,7 +136,7 @@ Azure зрения захватывает журналы выполнения и
 
 ### <a name="data-factory-execute-ssis-package-support"></a>Поддержка пакетов служб SSIS в фабрике данных
 
-| Система хранения данных | Поддерживаются: |
+| Система хранения данных | Поддерживается |
 | ------------------- | ------------------- | ----------------- |
 | Большой двоичный объект Azure | Да |
 | ADLS 1-го поколения | Да |
@@ -212,7 +212,7 @@ Azure зрения захватывает журналы выполнения и
 
 :::image type="content" source="./media/how-to-link-azure-data-factory/adf-resource-set-lineage.png" alt-text="Снимок экрана, показывающий журнал обращений и преобразований для набора ресурсов." lightbox="./media/how-to-link-azure-data-factory/adf-resource-set-lineage.png":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Пользовательская структура журнала преобразований каталога](catalog-lineage-user-guide.md)
 - [Ссылка на общую папку данных Azure для журнала обращений и преобразований](how-to-link-azure-data-share.md)

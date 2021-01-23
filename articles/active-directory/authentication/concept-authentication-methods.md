@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/14/2020
+ms.date: 01/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 24b29cfb1f58a61193f67ba924e583d4264dfc51
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 1459dd41fcdc30a29a5f9f93ec9704083767a342
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562129"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725677"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Какие методы проверки подлинности и подтверждения доступны в Azure Active Directory?
 
@@ -70,7 +70,7 @@ ms.locfileid: "97562129"
 | Ключ безопасности FIDO2 (Предварительная версия)   | Да                    | MFA                       |
 | Аппаратные маркеры OATH (предварительная версия) | нет                     | MFA                       |
 | Программные маркеры OATH           | нет                     | MFA                       |
-| SMS                            | Да (предварительная версия)          | MFA и SSPR              |
+| SMS                            | Да                    | MFA и SSPR              |
 | Голосовой звонок                     | нет                     | MFA и SSPR              |
 | Пароль                       | Да                    |                           |
 
@@ -83,7 +83,7 @@ ms.locfileid: "97562129"
 * [Ключ безопасности FIDO2 (Предварительная версия)](concept-authentication-passwordless.md#fido2-security-keys)
 * [Аппаратные маркеры OATH (предварительная версия)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 * [Программные маркеры OATH](concept-authentication-oath-tokens.md#oath-software-tokens)
-* [Вход в SMS (Предварительная версия)](howto-authentication-sms-signin.md) и [Проверка](concept-authentication-phone-options.md#mobile-phone-verification)
+* [Вход](howto-authentication-sms-signin.md) и [Проверка](concept-authentication-phone-options.md#mobile-phone-verification) SMS
 * [Проверка речевого вызова](concept-authentication-phone-options.md)
 * Пароль
 

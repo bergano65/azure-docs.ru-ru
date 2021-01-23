@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6814cafcf6dafa6f007bdd9d3623d30ef079084
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 37c27e84f15a01a2d8832baae137518685de59a8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222451"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725447"
 ---
 # <a name="determine-your-security-posture-for-external-access"></a>Определение уровня безопасности для внешнего доступа 
 
@@ -69,11 +69,11 @@ ms.locfileid: "98222451"
 
 * **Управление доступом к приложениям, данным и содержимому**. Это можно сделать с помощью различных методов в зависимости от версий [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/) и [Microsoft 365](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans). 
 
-* **Уменьшите область атаки**. [Управление привилегированными](../privileged-identity-management/pim-configure.md)пользователями, [Защита от потери данных (DLP)](https://docs.microsoft.com/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) и [возможности шифрования](https://docs.microsoft.com/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) уменьшают область атаки.
+* **Уменьшите область атаки**. [Управление привилегированными](../privileged-identity-management/pim-configure.md)пользователями, [Защита от потери данных (DLP)](/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) и [возможности шифрования](/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) уменьшают область атаки.
 
 * **Регулярно просматривайте журнал действий и аудита для подтверждения соответствия**. Он может делегировать решения по доступу своим владельцам с помощью управления назначением, в то время как проверки доступа обеспечивают способ периодического подтверждения непрерывного доступа. Автоматическая классификация данных с метками чувствительности помогает автоматизировать шифрование конфиденциального содержимого, что позволит пользователям сотрудников обеспечить соответствие требованиям.
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 См. следующие статьи о защите внешнего доступа к ресурсам. Мы рекомендуем выполнить действия в указанном порядке.
 
@@ -96,4 +96,3 @@ ms.locfileid: "98222451"
 9. [Безопасный доступ к Microsoft Teams, OneDrive и SharePoint](9-secure-access-teams-sharepoint.md)
  
 
- 

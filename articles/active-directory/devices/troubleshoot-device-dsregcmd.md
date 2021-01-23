@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cd782cdab625934fe60617142e5ac0baf756398
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 614b3f927dc22bc534168f8fe95cc2f97031b621
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80128762"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725529"
 ---
 # <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Устранение неполадок устройств с помощью команды dsregcmd
 
@@ -305,10 +305,10 @@ ms.locfileid: "80128762"
 
 ## <a name="ngc-prerequisite-check"></a>Проверка готовности NGC
 
-В этом разделе выполняется проверка изначальных для подготовки Windows Hello для бизнеса (WHFB). 
+В этом разделе выполняются проверки готовности для подготовки Windows Hello для бизнеса (WHFB). 
 
 > [!NOTE]
-> Если пользователь уже успешно настроил WHFB, сведения о предварительной проверке компонента NGC могут не отображаться в dsregcmd/Status.
+> Если пользователь уже успешно настроил WHFB, данные проверки готовности к установке NGC в dsregcmd/Status могут не отображаться.
 
 - **Исдевицежоинед:** — задайте значение "Да", если устройство присоединено к Azure AD.
 - **Исусеразуреад:** — задайте значение "Да", если вошедший в систему пользователь имеется в Azure AD.
@@ -343,6 +343,6 @@ ms.locfileid: "80128762"
 +----------------------------------------------------------------------+
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).

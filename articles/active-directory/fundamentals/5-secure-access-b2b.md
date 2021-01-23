@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c0d63df3e5525b200723db209d05e5eb5013e23
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 654e1c163a16f427958320ea081c38338e0ab4e1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222366"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725398"
 ---
 # <a name="transition-to-governed-collaboration-with-azure-active-directory-b2b-collaboration"></a>Переход к управляемой совместной работе с помощью службы совместной работы Azure Active Directory B2B 
 
@@ -100,7 +100,7 @@ ms.locfileid: "98222366"
 
 Если вы используете управление назначением Azure AD, вы можете настроить вопросы для внешних пользователей, чтобы ответить на них. Эти вопросы будут отображаться для утверждающих, чтобы помочь им принять решение. Можно настроить различные наборы вопросов для каждой [политики пакета доступа](../governance/entitlement-management-access-package-approval-policy.md) , чтобы утверждающие лица могли получить актуальные сведения о доступе, которые они будут утверждать. Например, если для доступа к поставщику предназначен один пакет Access, запрашивающий может запросить номер контракта поставщика. Другой пакет Access, предназначенный для поставщиков, может запрашивать страну происхождения.
 
-Если вы используете портал самообслуживания, вы можете использовать [соединители API](../external-identities/api-connectors-overview.md) для получения дополнительных атрибутов о пользователях при регистрации. Затем можно использовать эти атрибуты для назначения доступа. Например, если во время регистрации вы соберете идентификатор поставщика, можно использовать этот атрибут, чтобы динамически назначить их группе или пакету доступа для этого поставщика. Вы можете создать настраиваемые атрибуты на портале Azure и использовать их в потоке самообслуживания пользователей для самостоятельной регистрации. Эти атрибуты можно также считывать и записывать с помощью [Microsoft API Graph](https://docs.microsoft.com/azure/active-directory-b2c/manage-user-accounts-graph-api). 
+Если вы используете портал самообслуживания, вы можете использовать [соединители API](../external-identities/api-connectors-overview.md) для получения дополнительных атрибутов о пользователях при регистрации. Затем можно использовать эти атрибуты для назначения доступа. Например, если во время регистрации вы соберете идентификатор поставщика, можно использовать этот атрибут, чтобы динамически назначить их группе или пакету доступа для этого поставщика. Вы можете создать настраиваемые атрибуты на портале Azure и использовать их в потоке самообслуживания пользователей для самостоятельной регистрации. Эти атрибуты можно также считывать и записывать с помощью [Microsoft API Graph](../../active-directory-b2c/manage-user-accounts-graph-api.md). 
 
 ### <a name="troubleshoot-invitation-redemption-to-azure-ad-users"></a>Устранение неполадок при активации приглашений для пользователей Azure AD
 
@@ -132,7 +132,7 @@ ms.locfileid: "98222366"
 
 * **Блокировка доступа к портал Azure. Вы можете делать нередко необходимые исключения**. 
 
-   * Создайте политику условного доступа, включающую все гостевые и внешние пользователи, а затем [реализуйте политику для блокировки доступа](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management).
+   * Создайте политику условного доступа, включающую все гостевые и внешние пользователи, а затем [реализуйте политику для блокировки доступа](../../role-based-access-control/conditional-access-azure-management.md).
 
  
 
@@ -185,7 +185,7 @@ ms.locfileid: "98222366"
 
 ### <a name="direct-sharing-through-sharepoint-and-onedrive"></a>Прямой общий доступ через SharePoint и OneDrive
 
-Прямой общий доступ через SharePoint и OneDrive может добавлять пользователей за пределами процесса управления назначением. Подробные сведения об этих конфигурациях см. в [статье Управление доступом с помощью Microsoft Teams, SharePoint и OneDrive для бизнеса](9-secure-access-teams-sharepoint.md) . при необходимости вы также можете [заблокировать использование личного OneDrive пользователя](https://docs.microsoft.com/office365/troubleshoot/group-policy/block-onedrive-use-from-office) .
+Прямой общий доступ через SharePoint и OneDrive может добавлять пользователей за пределами процесса управления назначением. Подробные сведения об этих конфигурациях см. в [статье Управление доступом с помощью Microsoft Teams, SharePoint и OneDrive для бизнеса](9-secure-access-teams-sharepoint.md) . при необходимости вы также можете [заблокировать использование личного OneDrive пользователя](/office365/troubleshoot/group-policy/block-onedrive-use-from-office) .
 
 ### <a name="sending-documents-through-email"></a>Отправка документов по электронной почте
 
@@ -197,12 +197,12 @@ ms.locfileid: "98222366"
 
 Дополнительные сведения об управлении несанкционированными приложениями см. в следующих статьях:
 
-* [Управление подключенными приложениями](https://docs.microsoft.com/cloud-app-security/governance-actions)
+* [Управление подключенными приложениями](/cloud-app-security/governance-actions)
 
-* [Санкционирование и отмена санкционирования приложения.](https://docs.microsoft.com/cloud-app-security/governance-discovery)
+* [Санкционирование и отмена санкционирования приложения.](/cloud-app-security/governance-discovery)
 
  
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Следующие шаги
 
 См. следующие статьи о защите внешнего доступа к ресурсам. Мы рекомендуем выполнить действия в указанном порядке.
 
