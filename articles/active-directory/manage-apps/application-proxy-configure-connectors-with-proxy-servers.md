@@ -12,12 +12,12 @@ ms.date: 04/07/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 808357b95f4de904ead0741d848480d548a2e26a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: b6ecea10c884bffb10c936ca7c619d70d2449467
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030082"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728497"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -169,7 +169,7 @@ ms.locfileid: "97030082"
 Вы можете использовать выбранное средство мониторинга. Для целей этой статьи используется анализатор сообщений (Майкрософт).
 
 > [!NOTE]
-> [Microsoft Message Analyzer (MMA) была снята](https://docs.microsoft.com/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) с учета и пакеты загрузки, удаленные с сайтов Microsoft.com в ноябре 25 2019.  В настоящее время корпорация Майкрософт не заменяет Microsoft Message Analyzer в процессе разработки.  Для подобной функциональности рекомендуется использовать средство анализа сетевых протоколов сторонних производителей, например Wireshark.
+> [Microsoft Message Analyzer (MMA) была снята](/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) с учета и пакеты загрузки, удаленные с сайтов Microsoft.com в ноябре 25 2019.  В настоящее время корпорация Майкрософт не заменяет Microsoft Message Analyzer в процессе разработки.  Для подобной функциональности рекомендуется использовать средство анализа сетевых протоколов сторонних производителей, например Wireshark.
 
 Следующие примеры относятся к анализатору сообщений, но принципы могут быть применены к любому средству анализа.
 

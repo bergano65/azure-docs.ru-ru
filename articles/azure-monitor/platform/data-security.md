@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 87cdecd29d684c712853970c8246002132d274ac
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: a618a5d94513f7d648d118ae3bebdb34e4f5b1c4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094341"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728865"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
 В этом документе описываются функции Azure Log Analytics, компонента службы Azure Monitor, для дополнения информации о [центре управления безопасностью Azure](https://www.microsoft.com/en-us/trust-center?rtc=1).  
@@ -22,7 +22,7 @@ ms.locfileid: "97094341"
 
 * Разделение данных
 * Хранение данных
-* физическая безопасность.
+* Физическая безопасность
 * Управление инцидентами
 * Соответствие нормативным требованиям
 * Соответствие сертификатам и стандартам безопасности
@@ -75,13 +75,13 @@ ms.locfileid: "97094341"
 | **Data type** | **Fields** |
 | --- | --- |
 | Предупреждение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
-| Параметр Configuration |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
+| Конфигурация |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
 | Событие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
 | Метаданные |BaseManagedEntityId, ObjectStatus, OrganizationalUnit, ActiveDirectoryObjectSid, PhysicalProcessors, NetworkName, IPAddress, ForestDNSName, NetbiosComputerName, VirtualMachineName, LastInventoryDate, HostServerNameIsVirtualMachine, IP Address, NetbiosDomainName, LogicalProcessors, DNSName, DisplayName, DomainDnsName, ActiveDirectorySite, PrincipalName, OffsetInMinuteFromGreenwichTime |
 | Производительность |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
 | Состояние |StateChangeEventId, StateId, NewHealthState, OldHealthState, Context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
 
-## <a name="physical-security"></a>физическая безопасность.
+## <a name="physical-security"></a>Физическая безопасность
 Персонал корпорации Майкрософт управляет службой Log Analytics, а все действия записываются в журнал и доступны для аудита. Служба Log Analytics управляется в качестве службы Azure и соответствует всем нормативным требованиям Azure и требованиям безопасности. Вы можете просмотреть сведения о физической защите активов Azure на странице 18 [обзора безопасности Microsoft Azure](https://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf). Права физического доступа к защищенным областям меняются в течение одного рабочего дня для каждого клиента, который перестает нести ответственность за службу Log Analytics, в том числе за передачу данных и завершение операций. Вы также можете ознакомиться с [глобальной физической инфраструктурой, используемой в центрах обработки данных Майкрософт](https://azure.microsoft.com/global-infrastructure/).
 
 ## <a name="incident-management"></a>Управление инцидентами
@@ -183,11 +183,10 @@ Azure Log Analytics соответствует следующим требова
 - [Ключи, управляемые клиентом (безопасность)](customer-managed-keys.md) . Вы можете использовать ключи, управляемые клиентом, для шифрования данных, отправляемых в рабочие области log Analytics. Для этого требуется использование Azure Key Vault. 
 - [Закрытое или управляемое клиентом хранилище](private-storage.md) . Управление учетной записью хранения, зашифрованным с помощью личного шифрования, и указание log Analytics использовать ее для хранения данных мониторинга 
 - [Сеть с частной](private-link-security.md) связью — частная ссылка Azure позволяет безопасно связывать службы Azure PaaS (включая Azure Monitor) с виртуальной сетью с помощью частных конечных точек. 
-- [Хранилище клиентов Azure](/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-preview) — защищенное хранилище для Microsoft Azure предоставляет клиентам интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным клиентов. Этот интерфейс позволяет специалисту Майкрософт получить доступ к данным клиента в рамках процессов поддержки.
+- [Хранилище клиентов Azure](../../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-preview) — защищенное хранилище для Microsoft Azure предоставляет клиентам интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным клиентов. Этот интерфейс позволяет специалисту Майкрософт получить доступ к данным клиента в рамках процессов поддержки.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения по сбору данных с помощью Log Analytics для виртуальных машин Azure см. в [руководстве по виртуальным машинам Azure](../learn/quick-collect-azurevm.md).  
 
 *  Если вы хотите собирать данные с физических или виртуальных компьютеров Windows и Linux в своей среде, ознакомьтесь со статьей [Сбор данных с компьютеров Linux, размещенных в вашем окружении](../learn/quick-collect-linux-computer.md) и [Сбор данных с компьютеров Windows, размещенных в вашей среде](../learn/quick-collect-windows-computer.md).
-

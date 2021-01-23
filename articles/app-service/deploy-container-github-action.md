@@ -7,12 +7,12 @@ ms.date: 12/04/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: 4f5deb33218c336da7a477b4f39cd45f7386debf
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: fec4ba8cba33a1d52d8f330308645fb616921ba4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97604980"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726815"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание настраиваемого контейнера в Службе приложений с помощью GitHub Actions
 
@@ -50,7 +50,7 @@ ms.locfileid: "97604980"
 1. На странице **Обзор** выберите **получить профиль публикации**.
 
     > [!NOTE]
-    > По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием файла**. Это требование будет удалено в будущем. Сведения о настройке общих параметров веб-приложения см. в разделе [Настройка приложения службы приложений в портал Azure](/azure/app-service/configure-common).  
+    > По состоянию на Октябрь 2020 для веб-приложений Linux потребуется параметр приложения, `WEBSITE_WEBDEPLOY_USE_SCM` установленный в значение `true` **перед скачиванием файла**. Это требование будет удалено в будущем. Сведения о настройке общих параметров веб-приложения см. в разделе [Настройка приложения службы приложений в портал Azure](./configure-common.md).  
 
 1. Сохраните скачанный файл. Вы будете использовать содержимое файла для создания секрета GitHub.
 
@@ -88,7 +88,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
-При настройке рабочего процесса GitHub используйте `AZURE_WEBAPP_PUBLISH_PROFILE` в действии развертывание веб-приложения Azure. Пример.
+При настройке рабочего процесса GitHub используйте `AZURE_WEBAPP_PUBLISH_PROFILE` в действии развертывание веб-приложения Azure. Например:
     
 ```yaml
 - uses: azure/webapps-deploy@v2

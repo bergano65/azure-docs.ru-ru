@@ -4,12 +4,12 @@ description: Применяйте собственные ключи (BYOK), чт
 services: container-service
 ms.topic: article
 ms.date: 09/01/2020
-ms.openlocfilehash: c71052f44f6912006a952bae16fd89ec1dc937db
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 60a7e36039500ccb8a46fd1f5998c23c37174689
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607897"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728141"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Перенесите собственные ключи (BYOK) с помощью дисков Azure в службе Kubernetes Azure (AKS)
 
@@ -19,7 +19,7 @@ ms.locfileid: "96607897"
 * Поддержка шифрования дисков данных ограничена кластерами AKS, работающими под управлением Kubernetes версии 1,17 и выше.
 * Шифрование ОС и диска данных с ключами, управляемыми клиентом, можно включить только при создании кластера AKS.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * Необходимо включить обратимое удаление и очистку для *Azure Key Vault* при использовании Key Vault для шифрования управляемых дисков.
 * Требуется Azure CLI версии 2.11.1 или более поздней.
 
@@ -141,7 +141,7 @@ az aks get-credentials --name myAksCluster --resource-group myResourceGroup --ou
 kubectl apply -f byok-azure-disk.yaml
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с рекомендациями [по безопасности кластера AKS][best-practices-security]
 
@@ -155,4 +155,4 @@ kubectl apply -f byok-azure-disk.yaml
 [customer-managed-keys-windows]: ../virtual-machines/disk-encryption.md#customer-managed-keys
 [customer-managed-keys-linux]: ../virtual-machines/disk-encryption.md#customer-managed-keys
 [key-vault-generate]: ../key-vault/general/manage-with-cli2.md
-[supported-regions]: ../virtual-machines/windows/disk-encryption.md#supported-regions
+[supported-regions]: ../virtual-machines/disk-encryption.md#supported-regions

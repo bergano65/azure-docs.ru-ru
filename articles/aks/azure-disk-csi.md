@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 2dba9fbcbddbc7a66763636986f3d98f4f95332c
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: b75f4c85831fe66158da875c21af60ee73531026
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683137"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728262"
 ---
 # <a name="use-the-azure-disk-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Использование драйверов интерфейса хранилища контейнера дисков Azure (CSI) в службе Kubernetes Azure (AKS) (Предварительная версия)
 Драйвер интерфейса хранилища контейнеров дисков Azure (CSI) — это драйвер, совместимый с [спецификациями CSI](https://github.com/container-storage-interface/spec/blob/master/spec.md), используемый службой Kubernetes Azure (AKS) для управления жизненным циклом дисков Azure.
@@ -101,7 +101,7 @@ storageclass.storage.k8s.io/azuredisk-csi-waitforfirstconsumer created
 
 ## <a name="volume-snapshots"></a>Моментальные снимки томов
 
-Драйвер CSI диска Azure поддерживает создание [моментальных снимков постоянных томов](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html). В рамках этой возможности драйвер может выполнять *полные* или [ *добавочные* моментальные снимки](../virtual-machines/windows/disks-incremental-snapshots.md) в зависимости от значения, заданного в `incremental` параметре (по умолчанию это значение равно true).
+Драйвер CSI диска Azure поддерживает создание [моментальных снимков постоянных томов](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html). В рамках этой возможности драйвер может выполнять *полные* или [ *добавочные* моментальные снимки](../virtual-machines/disks-incremental-snapshots.md) в зависимости от значения, заданного в `incremental` параметре (по умолчанию это значение равно true).
 
 Дополнительные сведения о всех параметрах см. в разделе [Параметры класса моментальных снимков тома](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/docs/driver-parameters.md#volumesnapshotclass).
 
@@ -390,7 +390,7 @@ $ kubectl exec -it busybox-azuredisk-0 -- cat c:\mnt\azuredisk\data.txt # on Win
 (...)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об использовании драйверов CSI для службы файлов Azure см. в статье [использование файлов Azure с драйверами CSI](azure-files-csi.md).
 - Дополнительные сведения о рекомендациях по хранению см. в статье рекомендации [по хранению и резервному копированию в службе Azure Kubernetes][operator-best-practices-storage].

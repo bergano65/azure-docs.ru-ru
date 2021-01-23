@@ -3,12 +3,12 @@ title: Обновление существующей политики резер
 description: Узнайте, как обновить существующую политику резервного копирования виртуальных машин с помощью Azure CLI.
 ms.topic: conceptual
 ms.date: 12/31/2020
-ms.openlocfilehash: ba4ded4c82a1eaea7c20ea94da580a8702467b85
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 33083d6585d2b9296cd184ba258b8d2143d685b4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858842"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728584"
 ---
 # <a name="update-the-existing-vm-backup-policy-using-cli"></a>Обновление существующей политики резервного копирования виртуальных машин с помощью интерфейса командной строки
 
@@ -18,9 +18,9 @@ ms.locfileid: "97858842"
 
 Чтобы изменить существующую политику резервного копирования виртуальной машины, выполните следующие действия.
 
-1. Выполните команду [AZ Backup Policy показывать](https://docs.microsoft.com/cli/azure/backup/policy#az_backup_policy_show) , чтобы получить сведения о политике, которую необходимо обновить.
+1. Выполните команду [AZ Backup Policy показывать](/cli/azure/backup/policy#az_backup_policy_show) , чтобы получить сведения о политике, которую необходимо обновить.
 
-    Пример
+    Пример.
 
     ```azurecli
     az backup policy show --name testing123 --resource-group rg1234 --vault-name testvault
@@ -101,15 +101,15 @@ ms.locfileid: "97858842"
     ```
 
 1. Сохраните изменения.
-1. Выполните команду [AZ Backup Policy Set](https://docs.microsoft.com/cli/azure/backup/policy#az_backup_policy_set) и передайте полный путь к обновленному файлу JSON в качестве значения параметра **--Policy** .
+1. Выполните команду [AZ Backup Policy Set](/cli/azure/backup/policy#az_backup_policy_set) и передайте полный путь к обновленному файлу JSON в качестве значения параметра **--Policy** .
 
     ```azurecli
     az backup policy set --resource-group rg1234 --vault-name testvault --policy C:\temp2\Policy.json --name testing123
     ```
 
 >[!NOTE]
->Вы также можете получить пример политики JSON, выполнив команду [AZ Backup Policy Get-Default-for-VM](https://docs.microsoft.com/cli/azure/backup/policy#az_backup_policy_get_default_for_vm) .
+>Вы также можете получить пример политики JSON, выполнив команду [AZ Backup Policy Get-Default-for-VM](/cli/azure/backup/policy#az_backup_policy_get_default_for_vm) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Управление резервными копиями виртуальных машин Azure с помощью службы Azure Backup](backup-azure-manage-vms.md)
