@@ -1,23 +1,24 @@
 ---
-title: Управление облачными службами Azure с помощью службы автоматизации Azure | Документация Майкрософт
+title: Управление облачными службами Azure (классическая модель) с помощью службы автоматизации Azure | Документация Майкрософт
 description: Способы использования службы автоматизации Azure для управления облачными службами Azure при масштабировании.
-services: cloud-services, automation
-author: jodoglevy
-manager: timlt
-editor: ''
-ms.assetid: 3789810a-2892-4eef-bf29-c781c1b5af48
-ms.service: cloud-services
 ms.topic: article
-ms.date: 06/20/2016
-ms.author: timlt
-ms.openlocfilehash: 67830f8c00d9f74f62883e0714ffe1c2bbbd6903
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 530efd09f3632637c6a12648495dcff0e7bf0e6d
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075626"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743497"
 ---
-# <a name="managing-azure-cloud-services-using-azure-automation"></a>Управление облачными службами Azure с помощью службы автоматизации Azure
+# <a name="managing-azure-cloud-services-classic-using-azure-automation"></a>Управление облачными службами Azure (классическая модель) с помощью службы автоматизации Azure
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 В этом руководстве будет представлена служба автоматизации Azure и способы ее использования для упрощения управления облачными службами Azure.
 
 ## <a name="what-is-azure-automation"></a>Что такое служба автоматизации Azure
@@ -35,7 +36,7 @@ ms.locfileid: "92075626"
 * [непрерывное развертывание облачной службы всякий раз, когда в хранилище BLOB-объектов Azure обновляется CSCFG- или CSPKG-файл;](https://gallery.technet.microsoft.com/scriptcenter/Continuous-Deployment-of-A-eeebf3a6)
 * [параллельная перезагрузка экземпляров облачной службы, по одному домену обновления за раз.](https://gallery.technet.microsoft.com/scriptcenter/Reboot-Cloud-Service-PaaS-b337a06d)
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способах ее использования для управления облачными службами Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 
 * [Обзор службы автоматизации Azure](../automation/automation-intro.md)
