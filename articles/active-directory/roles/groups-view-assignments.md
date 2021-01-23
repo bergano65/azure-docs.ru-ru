@@ -2,23 +2,23 @@
 title: Просмотр ролей, назначенных группе, в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как можно просматривать роли, назначенные группе, с помощью центра администрирования Azure AD. Просмотр групп и назначенных ролей являются разрешениями пользователя по умолчанию.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: article
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8fdfd99b2ef5c1578bc9e87534461d68398c9f6
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 1a1939be42126606fdae261e60c890c71374c894
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378284"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741831"
 ---
 # <a name="view-roles-assigned-to-a-group-in-azure-active-directory"></a>Просмотр ролей, назначенных группе, в Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "93378284"
 
    ![Просмотреть все роли, назначенные выбранной группе](./media/groups-view-assignments/view-assignments.png)
 
-## <a name="using-powershell"></a>Регистрация с помощью PowerShell
+## <a name="using-powershell"></a>Использование PowerShell
 
 ### <a name="get-object-id-of-the-group"></a>Получение идентификатора объекта группы
 
@@ -60,7 +60,7 @@ GET https://graph.microsoft.com/beta/groups?$filter displayName eq ‘Contoso_He
 GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments?$filter=principalId eq
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Использование облачных групп для управления назначениями ролей](groups-concept.md)
 - [Устранение неполадок ролей, назначенных облачным группам](groups-faq-troubleshooting.md)

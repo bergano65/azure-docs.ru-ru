@@ -4,16 +4,16 @@ description: Узнайте, как создать частный кластер
 ms.service: container-service
 ms.topic: article
 ms.date: 03/12/2020
-author: georgewallace
-ms.author: gwallace
+author: sakthi-vetrivel
+ms.author: suvetriv
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3864d48399f00d5cfbdfa0a94939be0d88a73322
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 6daeb617e7d1922427fe1889b41512a61c5067cf
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928065"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740930"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-private-cluster"></a>Создание частного кластера Azure Red Hat OpenShift 4
 
@@ -23,7 +23,7 @@ ms.locfileid: "92928065"
 > * настраивать необходимые компоненты и создавать необходимую виртуальную сеть и подсети;
 > * Развертывание кластера с частной конечной точкой сервера API и закрытым контроллером входящего трафика
 
-Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -81,7 +81,7 @@ ms.locfileid: "92928065"
    CLUSTER=aro-cluster             # the name of your cluster
    ```
 
-1. **Создайте группу ресурсов** .
+1. **Создайте группу ресурсов**.
 
     Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если во время создания ресурса вы не указали другой регион. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
 
@@ -192,7 +192,7 @@ az aro create \
 После выполнения команды `az aro create` создание кластера обычно занимает около 35 минут.
 
 >[!IMPORTANT]
-> Если вы решили указать личный домен, например **foo.example.com** , консоль OpenShift будет доступна по URL-адресу, например `https://console-openshift-console.apps.foo.example.com`, вместо встроенного адреса `https://console-openshift-console.apps.<random>.<location>.aroapp.io` домена.
+> Если вы решили указать личный домен, например **foo.example.com**, консоль OpenShift будет доступна по URL-адресу, например `https://console-openshift-console.apps.foo.example.com`, вместо встроенного адреса `https://console-openshift-console.apps.<random>.<location>.aroapp.io` домена.
 >
 > По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в `*.apps.<random>.<location>.aroapp.io`.  Если вы решили использовать пользовательскую службу DNS, то после подключения к кластеру нужно выполнить действия, описанные в документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера входящего трафика](https://docs.openshift.com/container-platform/4.3/authentication/certificates/replacing-default-ingress-certificate.html) и [пользовательский ЦС для сервера API](https://docs.openshift.com/container-platform/4.3/authentication/certificates/api-server.html).
 
@@ -233,9 +233,9 @@ URL-адрес консоли кластера можно найти, выпол
 
 ## <a name="install-the-openshift-cli"></a>Установка интерфейса командной строки OpenShift
 
-После входа в веб-консоль OpenShift щелкните **?** в правом верхнем углу, а затем выберите **Программы командной строки** . Скачайте выпуск, подходящий вашему компьютеру.
+После входа в веб-консоль OpenShift щелкните **?** в правом верхнем углу, а затем выберите **Программы командной строки**. Скачайте выпуск, подходящий вашему компьютеру.
 
-![Экран входа в Azure Red Hat OpenShift](media/aro4-download-cli.png)
+![На рисунке показан экран входа Azure Red Hat OpenShift](media/aro4-download-cli.png)
 
 Вы также можете скачать последнюю версию интерфейса командной строки, подходящую для компьютера, по адресу <https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/>.
 

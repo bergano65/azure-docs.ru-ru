@@ -1,21 +1,25 @@
 ---
-title: Стандартные задачи запуска в облачной службе | Документация Майкрософт
+title: Общие задачи запуска для облачных служб (классическая модель) | Документация Майкрософт
 description: Содержит некоторые примеры стандартных задач запуска, которые можно выполнить в веб-роли или рабочей роли облачной службы.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 77cea7ebd333b958675438aaeb5e0e2a326a5866
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: f55b225e615a3e7a5fbcf56b405054883d3b5413
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075184"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741202"
 ---
-# <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
+# <a name="common-cloud-service-classic-startup-tasks"></a>Стандартные задачи запуска облачной службы (классические)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 В этой статье приведены некоторые примеры стандартных задач запуска, которые можно выполнить в облачной службе. С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса. 
 
 [Эта статья](cloud-services-startup-tasks.md) поможет понять, как работают задачи запуска, и, в частности, как создавать записи, которые определяют задачу запуска.
@@ -52,7 +56,7 @@ ms.locfileid: "92075184"
 
 
 ## <a name="configure-iis-startup-with-appcmdexe"></a>Настройка запуска IIS с помощью AppCmd.exe
-С помощью программы командной строки [AppCmd.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635852(v=ws.11)) можно управлять параметрами IIS при запуске в Azure. *AppCmd.exe* предоставляет удобный доступ из командной строки к параметрам конфигурации, используемым в задачах запуска в Azure. С помощью *AppCmd.exe*можно добавить, изменить или удалить параметры веб-сайта для приложений и сайтов.
+С помощью программы командной строки [AppCmd.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635852(v=ws.11)) можно управлять параметрами IIS при запуске в Azure. *AppCmd.exe* предоставляет удобный доступ из командной строки к параметрам конфигурации, используемым в задачах запуска в Azure. С помощью *AppCmd.exe* можно добавить, изменить или удалить параметры веб-сайта для приложений и сайтов.
 
 Однако следует знать о некоторых особенностях использования *AppCmd.exe* в качестве задачи запуска:
 
@@ -83,7 +87,7 @@ ms.locfileid: "92075184"
 Пакетный файл *Startup.cmd* использует *AppCmd.exe* для добавления раздела сжатия и записи сжатия для JSON в файл *Web.config*. Ожидаемый **errorlevel** 183 получает значение 0 с помощью программы командной строки VERIFY.EXE. Непредвиденные значения errorlevel заносятся в файл StartupErrorLog.txt.
 
 ```cmd
-REM   *** Add a compression section to the Web.config file. ***
+REM   **_ Add a compression section to the Web.config file. _*_
 %windir%\system32\inetsrv\appcmd set config /section:urlCompression /doDynamicCompression:True /commit:apphost >> "%TEMP%\StartupLog.txt" 2>&1
 
 REM   ERRORLEVEL 183 occurs when trying to add a section that already exists. This error is expected if this
@@ -98,7 +102,7 @@ IF %ERRORLEVEL% NEQ 0 (
     GOTO ErrorExit
 )
 
-REM   *** Add compression for json. ***
+REM   _*_ Add compression for json. _*_
 %windir%\system32\inetsrv\appcmd set config  -section:system.webServer/httpCompression /+"dynamicTypes.[mimeType='application/json; charset=utf-8',enabled='True']" /commit:apphost >> "%TEMP%\StartupLog.txt" 2>&1
 IF %ERRORLEVEL% EQU 183 VERIFY > NUL
 IF %ERRORLEVEL% NEQ 0 (
@@ -106,10 +110,10 @@ IF %ERRORLEVEL% NEQ 0 (
     GOTO ErrorExit
 )
 
-REM   *** Exit batch file. ***
+REM   _*_ Exit batch file. _*_
 EXIT /b 0
 
-REM   *** Log error and exit ***
+REM   _*_ Log error and exit _*_
 :ErrorExit
 REM   Report the date, time, and ERRORLEVEL of the error.
 DATE /T >> "%TEMP%\StartupLog.txt" 2>&1
@@ -125,7 +129,7 @@ EXIT %ERRORLEVEL%
 
 Azure создает правила брандмауэра для процессов, запущенных в ваших ролях. Например, при запуске службы или программы Azure автоматически создает необходимые правила брандмауэра, чтобы служба могла взаимодействовать с Интернетом. Тем не менее если создать службу, которую запускает процесс извне роли (например, службу COM+ или запланированную задачу Windows), необходимо будет вручную создать правило брандмауэра, чтобы разрешить доступ к этой службе. Эти правила брандмауэра можно создавать с помощью задачи запуска.
 
-У задачи запуска, которая создает правило брандмауэра, должен быть [executionContext][Task] со значением **elevated**. Добавьте следующую задачу запуска в файл [ServiceDefinition.csdef] .
+Задача запуска, создающая правило брандмауэра, должна иметь задачу [контекстного][задания] со статусом _ * с повышенными привилегиями * *. Добавьте следующую задачу запуска в файл [ServiceDefinition.csdef] .
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -491,7 +495,7 @@ EXIT %ERRORLEVEL%
 ### <a name="use-local-storage-to-store-files-that-must-be-accessed-in-the-role"></a>Используйте локальное хранилище для хранения файлов, которые должны использоваться в роли
 Если вы хотите во время выполнения задачи запуска скопировать или создать файл, который затем будет доступен вашей роли, этот файл необходимо поместить в локальное хранилище. См. [предыдущий раздел](#create-files-in-local-storage-from-a-startup-task).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с [моделью и пакетом облачной службы](cloud-services-model-and-package.md)
 
 Узнайте, как работают [задачи](cloud-services-startup-tasks.md) .

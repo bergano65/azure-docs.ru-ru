@@ -1,22 +1,25 @@
 ---
-title: Схема определения облачных служб Azure (CSFEF-файл) | Документация Майкрософт
+title: Схема определения облачных служб Azure (классическая модель) (файл CSDEF) | Документация Майкрософт
 description: Файл определения службы (. CSDEF) определяет модель службы для приложения, содержащую доступные роли, конечные точки и значения конфигурации для службы.
-ms.custom: ''
-ms.date: 04/14/2015
-services: cloud-services
+ms.topic: article
 ms.service: cloud-services
-ms.topic: reference
-caps.latest.revision: 42
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 1896ee8385d1e41feffe7a9f542550ea7f34a8a3
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: de81b6ffb5b4dc944f3d538a116383d06145661b
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072566"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739807"
 ---
-# <a name="azure-cloud-services-definition-schema-csdef-file"></a>Схема определения облачных служб Azure (CSFEF-файл)
+# <a name="azure-cloud-services-classic-definition-schema-csdef-file"></a>Схема определения облачных служб Azure (классическая модель) (файл CSDEF)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Файл определения службы определяет модель службы для приложения. В этом файле содержатся определения ролей, доступных в облачной службе, указываются конечные точки службы и устанавливаются параметры конфигурации для службы. Значения параметров конфигурации задаются в файле конфигурации службы, который описан в [схеме конфигурации облачной службы (классических)](/previous-versions/azure/reference/ee758710(v=azure.100)).
 
 По умолчанию файл схемы конфигурации системы диагностики Azure устанавливается в каталог `C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\<version>\schemas`. Замените `<version>` установленной версией [пакета SDK для Azure](https://www.windowsazure.com/develop/downloads/).
@@ -63,7 +66,7 @@ ms.locfileid: "92072566"
 
 В таблице ниже описаны атрибуты элемента `ServiceDefinition`.
 
-| Атрибут               | Описание |
+| attribute               | Описание |
 | ----------------------- | ----------- |
 | name                    |Обязательный. Имя службы. Имя должно быть уникальным в пределах учетной записи службы.|
 | topologyChangeDiscovery | Необязательный элемент. Указывает тип уведомления об изменении топологии. Доступны следующие значения:<br /><br /> -   `Blast` — как можно быстрее отправляет обновление всем экземплярам роли. Чтобы вы могли использовать этот параметр, роль должна иметь возможность обработать обновление топологии без перезапуска.<br />-   `UpgradeDomainWalk` — отправляет обновление каждому экземпляру роли в последовательном режиме после того, как предыдущий экземпляр успешно принял обновление.|

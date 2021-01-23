@@ -1,26 +1,25 @@
 ---
-title: Схема DEF. NetworkTrafficRules для облачных служб Azure | Документация Майкрософт
+title: Схема DEF. NetworkTrafficRules (классическая модель) облачных служб Azure | Документация Майкрософт
 description: Сведения о NetworkTrafficRules, которые ограничивают роли, которые могут получать доступ к внутренним конечным точкам роли. Он сочетается с ролями в файле определения службы.
-ms.custom: ''
-ms.date: 04/14/2015
-services: cloud-services
-ms.reviewer: ''
+ms.topic: article
 ms.service: cloud-services
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: reference
-ms.assetid: 351b369f-365e-46c1-82ce-03fc3655cc88
-caps.latest.revision: 17
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: e53c10395ec3168e656633cc43fb2d01902209fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 2c8ab53068b71652d03d03bf79a224fe5e34dff3
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79534734"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739774"
 ---
-# <a name="azure-cloud-services-definition-networktrafficrules-schema"></a>Схема NetworkTrafficRules определения облачных служб Azure
+# <a name="azure-cloud-services-classic-definition-networktrafficrules-schema"></a>Схема NetworkTrafficRules определения облачных служб Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Узел `NetworkTrafficRules` — это необязательный элемент в файле определения службы, который указывает, как роли взаимодействуют друг с другом. Он ограничивает множество ролей, которые могут обращаться ко внутренним конечным точкам определенной роли. `NetworkTrafficRules` не является отдельным элементом. Он объединяется с двумя или более ролями в файле определения службы.
 
 По умолчанию определения службы хранятся в файле с расширением .csdef.
@@ -78,8 +77,8 @@ ms.locfileid: "79534734"
 
 | attribute      | Тип     | Описание |
 | -------------- | -------- | ----------- |
-| `endpointName` | `string` | Обязательный элемент. Имя конечной точки, к которой разрешается трафик.|
-| `roleName`     | `string` | Обязательный элемент. Имя веб-роли, с которой разрешается обмен данными.|
+| `endpointName` | `string` | Обязательный. Имя конечной точки, к которой разрешается трафик.|
+| `roleName`     | `string` | Обязательный. Имя веб-роли, с которой разрешается обмен данными.|
 
 ## <a name="allowalltraffic-element"></a>Элемент AllowAllTraffic
 Элемент `AllowAllTraffic` — это правило, которое разрешает всем ролям обмениваться данными с конечными точками, определенными в узле `Destinations`.
@@ -89,16 +88,16 @@ ms.locfileid: "79534734"
 
 | attribute | Тип     | Описание |
 | --------- | -------- | ----------- |
-| `matches` | `string` | Обязательный элемент. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
+| `matches` | `string` | Обязательный. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
   
 ##  <a name="fromrole-element"></a><a name="FromRole"></a> FromRole, элемент
 Элемент `FromRole` указывает роли, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`. Можно указать несколько элементов `FromRole`, если существует несколько ролей, которые могут обмениваться данными с конечными точками.
 
 | attribute  | Тип     | Описание |
 | ---------- | -------- | ----------- |
-| `roleName` | `string` | Обязательный элемент. Имя роли, из которой разрешается обмен данными.|
+| `roleName` | `string` | Обязательный. Имя роли, из которой разрешается обмен данными.|
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
 
 

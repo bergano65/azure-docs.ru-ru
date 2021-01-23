@@ -3,23 +3,23 @@ title: Устранение неполадок и часто задаваемы�
 description: Изучите административные единицы, чтобы предоставить разрешения с ограниченной областью действия в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: roles
 ms.workload: identity
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f585be2057bda19038fff1066e7864c6796576c0
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 0fb61388b13b912166c9c07b9ee28b365c4a63b9
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394685"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740386"
 ---
 # <a name="azure-ad-administrative-units-troubleshooting-and-faq"></a>Административные единицы Azure AD: Устранение неполадок и часто задаваемые вопросы
 
@@ -73,7 +73,7 @@ ms.locfileid: "93394685"
 
 Найдите поддержку для [типа ресурса administrativeUnit](/graph/api/resources/administrativeunit?view=graph-rest-1.0&preserve-view=true) в Microsoft Graph.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Ограничение области для ролей с помощью административных единиц](administrative-units.md)
 - [Управление административными единицами](admin-units-manage.md)

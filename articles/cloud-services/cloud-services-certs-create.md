@@ -1,21 +1,25 @@
 ---
-title: Облачные службы и сертификаты управления | Документация Майкрософт
+title: Облачные службы (классические) и сертификаты управления | Документация Майкрософт
 description: Узнайте, как создавать и развертывать сертификаты для облачных служб и для проверки подлинности с помощью API управления в Azure.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 04/19/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 8650b8670c61cab15b26163dd5108145b8509434
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: c73f9812f344eecf4e51f43405b48693ddfa191b
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072430"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739740"
 ---
-# <a name="certificates-overview-for-azure-cloud-services"></a>Общие сведения о сертификатах для облачных служб Azure
+# <a name="certificates-overview-for-azure-cloud-services-classic"></a>Общие сведения о сертификатах для облачных служб Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Сертификаты используются в Azure для облачных служб ([сертификаты службы](#what-are-service-certificates)), а также для аутентификации с помощью службы управления API ([сертификаты управления](#what-are-management-certificates)). В этой статье приводится общий обзор этих двух типов сертификатов, а также описывается процесс их [создания](#create) и развертывания в Azure.
 
 Сертификаты, используемые в Azure, являются сертификатами x.509 v3; они могут быть заверены другим доверенным сертификатом или быть самозаверяющими. Поскольку самозаверяющий сертификат подписывает его автор, он не считается надежным по умолчанию. Большинство браузеров может игнорировать эту проблему. Самозаверяющие сертификаты должны использоваться только при разработке и тестировании облачных служб. 
@@ -88,7 +92,7 @@ Export-Certificate -Type CERT -Cert $cert -FilePath .\my-cert-file.cer
 ### <a name="linux"></a>Linux
 В [этой](../virtual-machines/linux/mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) статье рассматривается создание сертификатов с использованием SSH.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Передача сертификата службы на портал Azure](cloud-services-configure-ssl-certificate-portal.md).
 
 Передайте на портал Azure [сертификат API управления](/previous-versions/azure/azure-api-management-certs).

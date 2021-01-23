@@ -1,28 +1,25 @@
 ---
 title: Использование API управления службами (Python) — руководство по функциям
 description: Узнайте, как программными средствами Python реализовать общие задачи управления службами.
-services: cloud-services
-documentationcenter: python
-author: tanmaygore
-manager: vashan
-editor: ''
-ms.assetid: 61538ec0-1536-4a7e-ae89-95967fe35d73
-ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: python
 ms.topic: article
-ms.date: 05/30/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.custom: devx-track-python
-ms.openlocfilehash: ef155116904ee0d3ecab250a254010e2f7664757
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 02993f2b79e37e5e50c20c4ee07220bcbd36edb8
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073994"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741406"
 ---
 # <a name="use-service-management-from-python"></a>Использование управления службами в Python
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 В этом руководстве показано, как программными средствами Python выполнять общие задачи управления службами. Класс **ServiceManagementService** в [пакете SDK Azure для Python](https://github.com/Azure/azure-sdk-for-python) поддерживает программный доступ к большинству функций, связанных с управлением службами, которые доступны на [портале Azure][management-portal]. Эти функции можно использовать для создания, обновления и удаления облачных служб, развернутых служб, служб управления данными и виртуальных машин. Эта возможность может быть полезна при создании приложений, которым требуется программный доступ к управлению службами.
 
 ## <a name="what-is-service-management"></a><a name="WhatIs"> </a>Что такое управление службами?
@@ -127,7 +124,7 @@ for location in result:
 * Восточная часть США
 * Восточная Япония
 * Западная Япония
-* Brazil South
+* Южная Бразилия
 * Восточная Австралия
 * Юго-Восточная часть Австралии
 

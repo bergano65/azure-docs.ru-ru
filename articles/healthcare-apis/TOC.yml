@@ -21,8 +21,13 @@
         - name: Использование шаблона ARM
           displayName: Resource Manager
           href: fhir-paas-arm-template-quickstart.md
-    - name: "Развертывание соединителя \"Azure IoT для FHIR\" (предварительная версия)\_— портал"
-      href: iot-fhir-portal-quickstart.md
+    - name: Развертывание соединителя "Azure IoT для FHIR" (предварительная версия)
+      expanded: false
+      items:
+        - name: Использование портала
+          href: iot-fhir-portal-quickstart.md
+        - name: Использование шаблона ARM
+          href: iot-fhir-arm-template-quickstart.md
 - name: Учебники
   expanded: false
   items:

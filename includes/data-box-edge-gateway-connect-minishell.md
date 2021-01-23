@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 03/06/2019
 ms.author: alkohli
-ms.openlocfilehash: 6e603442bdecf9a627172e24390b06cef573f475
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 10c1680afd6cd6673efe3fe9d2397a0dc6a04859
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026672"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738928"
 ---
 В зависимости от операционной системы клиента процедуры удаленного подключения к устройству отличаются.
 
@@ -23,6 +23,8 @@ ms.locfileid: "96026672"
 2. Убедитесь, что на вашем клиенте запущена служба служба удаленного управления Windows. В командной строке введите:
 
     `winrm quickconfig`
+
+    Дополнительные сведения см. в разделе [Установка и настройка для службы удаленного управления Windows](/windows/win32/winrm/installation-and-configuration-for-windows-remote-management#quick-default-configuration).
 
 3. Назначьте переменную IP-адресу устройства.
 

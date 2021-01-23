@@ -1,21 +1,24 @@
 ---
-title: Сбор данных счетчиков производительности для облачной службы Azure | Документация Майкрософт
+title: Получение сведений о счетчиках производительности в облачных службах Azure (классическая модель) | Документация Майкрософт
 description: Узнайте, как находить, использовать и создавать счетчики производительности в облачных службах с помощью системы диагностики Azure и Application Insights.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 02/02/2018
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 39843ad83830a72b5d6b01cc00ecd65269c02e12
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 16b54e8a59eb42c6e2351d37ec0a29d775161493
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078601"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739842"
 ---
-# <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Сбор данных счетчиков производительности для облачной службы Azure
+# <a name="collect-performance-counters-for-your-azure-cloud-service-classic"></a>Получение счетчиков производительности для облачной службы Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 
 Счетчики производительности предоставляют возможность отслеживать работу приложения и узла. Windows Server предоставляет множество различных счетчиков производительности, связанных с программным обеспечением, приложениями, ОС и т. д. Собирая и отправляя данные счетчика производительности в Azure, вы сможете анализировать их и принимать более взвешенные решения. 
 
@@ -112,7 +115,7 @@ Application Insights автоматически собирает данные с
 
 Дополнительные сведения см. в статье [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md) и в разделе [Счетчики производительности](../azure-monitor/app/cloudservices.md#performance-counters).
 
-### <a name="azure-diagnostics"></a>Диагностика Azure
+### <a name="azure-diagnostics"></a>Система диагностики Azure
 
 > [!IMPORTANT]
 > Хотя все эти данные объединяются в учетную запись хранения, портал **не предоставляет собственный** способ построения диаграммы данных. Настоятельно рекомендуем интегрировать в приложение другую службу диагностики, например Application Insights.
@@ -257,7 +260,7 @@ counterServiceUsed.Increment();
 <!-- ... cut to save space ... -->
 ```
 
-### <a name="azure-diagnostics"></a>Диагностика Azure
+### <a name="azure-diagnostics"></a>Система диагностики Azure
 
 Как указывалось ранее, счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определяется для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration**  >  **PublicConfig**  >  **WadCfg**  >  **DiagnosticMonitorConfiguration**  >  **PerformanceCounters** . Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Укажите для атрибута `counterSpecifier` категорию и имя созданного в коде счетчика производительности. 
 

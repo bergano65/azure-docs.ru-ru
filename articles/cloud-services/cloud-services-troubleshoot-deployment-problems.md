@@ -1,27 +1,25 @@
 ---
-title: Устранение неполадок, которые могут возникнуть при развертывании облачной службы | Документация Майкрософт
+title: Устранение неполадок развертывания в облачной службе (классическая модель) | Документация Майкрософт
 description: Во время развертывания облачной службы в Azure вы можете столкнуться с несколькими типичными проблемами. В этой статье приведены решения некоторых из них.
-services: cloud-services
-documentationcenter: ''
-author: simonxjx
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: a18ae415-0d1c-4bc4-ab6c-c1ddea02c870
+ms.topic: article
 ms.service: cloud-services
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: tbd
-ms.date: 06/15/2018
-ms.author: v-six
-ms.openlocfilehash: 0e7cd496f031f76320df5127d7e1aa3f2f7b06c7
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 7b3d7a9a674aab3976da9399f71ff4d8df08eb62
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075082"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741083"
 ---
-# <a name="troubleshoot-cloud-service-deployment-problems"></a>Устранение неполадок, которые могут возникнуть при развертывании облачной службы
+# <a name="troubleshoot-azure-cloud-services-classic-deployment-problems"></a>Устранение неполадок развертывания облачных служб Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 При развертывании пакета приложения облачной службы в Azure сведения о развертывании можно получить на панели **Свойства** портала Azure. Сведения, отображающиеся на этой панели, можно использовать для устранения неполадок в работе облачной службы. Кроме того, вы можете передать эту информацию в службу поддержки Azure при открытии нового запроса на поддержку.
 
 Панель **Свойства** можно найти следующим образом.
@@ -81,7 +79,7 @@ URL-адрес веб-сайта, отображаемый на портале, 
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите дополнительные [статьи об устранении неполадок](./cloud-services-allocation-failures.md) в облачных службах.
 
 Чтобы узнать, как устранять неполадки ролей облачной службы с помощью диагностических данных компьютеров Azure PaaS, см. [серию статей в блоге Кевина Уильямсона](/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data).
