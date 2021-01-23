@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 3e45b5a48f9a7fb66d7539e83f385203ae371ad7
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 6e926211a0d86fef55608ede574dca53487f267c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673558"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732733"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Устранение неполадок, связанных с включением Application Insights Snapshot Debugger или просмотром моментальных снимков
 Если вы включили Application Insights Snapshot Debugger для приложения, но не видите моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок.
@@ -272,4 +272,4 @@ Snapshot Collector проверяет несколько известных ра
 
 Если приложение подключается к Интернету через прокси-сервер или брандмауэр, может потребоваться обновить правила для взаимодействия со службой Snapshot Debugger.
 
-IP-адреса, используемые Snapshot Debugger Application Insights, включены в тег службы Azure Monitor. Дополнительные сведения см. в [документации по тегам служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview).
+IP-адреса, используемые Snapshot Debugger Application Insights, включены в тег службы Azure Monitor. Дополнительные сведения см. в [документации по тегам служб](../../virtual-network/service-tags-overview.md).

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2018
-ms.openlocfilehash: 2bb1e667758a1430e34d222b9a5c537381c07624
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 40ea367c1298a916df541d362b85e8d485d193f1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505279"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734938"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Руководство по хранению персональных данных в Log Analytics и Application Insights
 
@@ -91,7 +91,7 @@ Log Analytics — это масштабируемое хранилище, опи
 Для сценариев обработки конфиденциальных данных мы включили в API путь *очистки*. Этот путь следует применять ограниченно, поскольку с ним связаны определенные риски, потенциальное влияние на производительность и результаты обобщающих вычислений и измерений, а также на другие аспекты использования Log Analytics. Выше в разделе [Стратегия обработки персональных данных](#strategy-for-personal-data-handling) представлены другие подходы к обработке персональных данных.
 
 > [!NOTE]
-> После выполнения операции очистки доступ к данным невозможен, пока [состояние операции очистки](https://docs.microsoft.com/rest/api/loganalytics/workspacepurge/getpurgestatus) — *Ожидание*. 
+> После выполнения операции очистки доступ к данным невозможен, пока [состояние операции очистки](/rest/api/loganalytics/workspacepurge/getpurgestatus) — *Ожидание*. 
 
 Операция очистки имеет настолько высокий уровень привилегий, что ни одно приложение или пользователь Azure (даже владелец ресурса) не смогут ее выполнять без явно предоставленной роли в Azure Resource Manager. Соответствующая роль именуется _Data Purger_ (Очистка данных). Ее следует назначать осторожно в силу возможных потерь данных. 
 
@@ -129,4 +129,3 @@ Log Analytics — это масштабируемое хранилище, опи
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о сборе, обработке и защите данных в Log Analytics см. в [этой статье](./data-security.md).
 - Дополнительные сведения о сборе, обработке и защите данных в Application Insights см. в [этой статье](../app/data-retention-privacy.md).
-

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 12/17/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: ea21a56249c8eaa7c6b329b755e96b21b91ebaa1
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: c63ea4f9cdb961ca492d5dcf22a89627864236cd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632314"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733206"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Службы Azure с поддержкой Зон доступности
 
@@ -37,7 +37,7 @@ ms.locfileid: "98632314"
 - **Службы, не являющиеся региональными** , — это службы, не зависящие от конкретного региона Azure, что делает их устойчивыми к простоям в пределах зоны, а также по различным регионам.
 
 
-Чтобы обеспечить всестороннюю непрерывность бизнес-процессов в Azure, создайте архитектуру приложений, используя сочетание зон доступности с парами регионов Azure. Можно синхронно реплицировать приложения и данные с помощью зон доступности в регионе Azure, чтобы обеспечить высокий уровень доступности, и асинхронно реплицировать их между регионами Azure, чтобы обеспечить защиту с помощью аварийного восстановления. Дополнительные сведения см. в статье [Создание решений для обеспечения высокой доступности с помощью зоны доступности](https://docs.microsoft.com/azure/architecture/high-availability/building-solutions-for-high-availability). 
+Чтобы обеспечить всестороннюю непрерывность бизнес-процессов в Azure, создайте архитектуру приложений, используя сочетание зон доступности с парами регионов Azure. Можно синхронно реплицировать приложения и данные с помощью зон доступности в регионе Azure, чтобы обеспечить высокий уровень доступности, и асинхронно реплицировать их между регионами Azure, чтобы обеспечить защиту с помощью аварийного восстановления. Дополнительные сведения см. в статье [Создание решений для обеспечения высокой доступности с помощью зоны доступности](/azure/architecture/high-availability/building-solutions-for-high-availability). 
 
 
 ### <a name="azure-services-supporting-availability-zones"></a>Службы Azure, поддерживающие Зоны доступности
@@ -140,7 +140,7 @@ ms.locfileid: "98632314"
 
 
 
-| **Продукты** | **Japan East** | **Southeast Asia** | **Восточная Австралия** |
+| **Продукты** | **Восточная Япония** | **Юго-Восточная Азия** | **Восточная Австралия** |
 |--|--|--|--|
 | **Compute** |  |  |  |
 | [Среды службы приложений (ILB)](../app-service/environment/zone-redundancy.md#how-to-deploy-an-app-service-environment-in-an-availability-zone) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -205,8 +205,8 @@ Azure предлагает поддержку Зоны доступности в
 - [Создание виртуальной машины](../virtual-machines/windows/create-portal-availability-zone.md)
 - [Добавление управляемого диска с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
 - [Создание избыточного между зонами масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-cli?tabs=option-1-create-load-balancer-standard).
-- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-cli?tabs=option-1-create-load-balancer-standard).
+- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard).
+- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md?tabs=option-1-create-load-balancer-standard).
 - [Хранилище, избыточное между зонами](../storage/common/storage-redundancy.md)
 - [Уровень общего назначения базы данных SQL](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
 - [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones)
@@ -214,11 +214,11 @@ Azure предлагает поддержку Зоны доступности в
 - [Создание шлюза виртуальной сети, избыточного между зонами](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
 - [Добавление области, избыточной в пределах зоны, для Azure Cosmos DB](../cosmos-db/high-availability.md#availability-zone-support)
 - [начало работы кэша Azure для Redis Зоны доступности](https://gist.github.com/JonCole/92c669ea482bbb7996f6428fb6c3eb97#file-redisazgettingstarted-md)
-- [Создание экземпляра доменных служб Azure Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services/tutorial-create-instance)
+- [Создание экземпляра доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-create-instance.md)
 - [Создание кластера Azure Kubernetes Service (AKS), использующего Зоны доступности](../aks/availability-zones.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Регионы и зоны доступности в Azure](az-overview.md)

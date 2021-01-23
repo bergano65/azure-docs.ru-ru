@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 138e3ee5272d790130cebfd8a1f61da7bed970d8
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 587078f1f084d002e4d725ca3be64bcec36b4c45
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98663974"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734653"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Поддерживаемые версии Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -107,7 +107,7 @@ New Supported Version List
 1. AKS публикует предварительное объявление с запланированной датой выпуска новой версии и устаревшей версией старой версии в [заметках о выпуске AKS](https://aka.ms/aks/releasenotes) по крайней мере через 30 дней до удаления.
 2. AKS публикует [уведомление о работоспособности службы](../service-health/service-health-overview.md) , доступное всем пользователям с AKS и доступом к порталу, и отправляет сообщение электронной почты администраторам подписки с запланированными датами удаления версий.
 ````
-To find out who is your subscription administrators or to change it, please refer to [manage Azure subscriptions](https://docs.microsoft.com/azure/cost-management-billing/manage/add-change-subscription-administrator#assign-a-subscription-administrator).
+To find out who is your subscription administrators or to change it, please refer to [manage Azure subscriptions](../cost-management-billing/manage/add-change-subscription-administrator.md#assign-a-subscription-administrator).
 ````
 3. У пользователей **30 дней** с момента удаления версии для обновления до поддерживаемой версии, чтобы продолжить получать поддержку.
 
@@ -148,7 +148,7 @@ az aks get-versions --location eastus --output table
 \* Вышестоящий выпуск Kubernetes 1,21 может быть изменен в качестве вышестоящего календарные, который еще должен быть завершен.
 
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Как часто следует ждать обновления версий Kubernetes, чтобы поддерживать поддержку?**
 
@@ -156,7 +156,7 @@ az aks get-versions --location eastus --output table
 
 **Что происходит, когда пользователь обновляет кластер Kubernetes с неподдерживаемой дополнительной версией?**
 
-Если вы используете версию *n-3* или более раннюю, это означает, что вы находитесь за пределами службы поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, вы вернетесь в наши политики поддержки. Пример:
+Если вы используете версию *n-3* или более раннюю, это означает, что вы находитесь за пределами службы поддержки и вам будет предложено выполнить обновление. Если обновление с версии n-3 до n-2 прошло успешную работу, вы вернетесь в наши политики поддержки. Например:
 
 - Если самая старая поддерживаемая версия AKS — *1,15 доллара. a* , а вы находитесь в *1.14. b* или более ранней версии, вы находитесь за пределами службы поддержки.
 - При обновлении с *1.14. b* до *1,15 доллара. a* или более поздней версии вы вернетесь в наши политики поддержки.

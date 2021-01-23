@@ -6,12 +6,12 @@ ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: e8d0dcae81944d5799841c22093585b942934b79
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: 5008da99b63cabba41dade9a745fbd5853345737
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732110"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734972"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
 
@@ -149,7 +149,7 @@ ms.locfileid: "97732110"
  
    b.    Выберите **Да** для параметра **Интеграция с частной зоной DNS** и позвольте системе автоматически создать новую частную зону DNS. Фактические зоны DNS могут отличаться от тех, которые показаны на снимке экрана ниже. 
    > [!NOTE]
-   > Если вы выберете " **нет** " и предпочитаете управлять записями DNS вручную, сначала завершите настройку частной ссылки, включая эту частную конечную точку и конфигурацию амплс. Затем настройте DNS в соответствии с инструкциями в [конфигурации DNS частной конечной точки Azure](../../private-link/private-endpoint-dns.md). Не создавайте пустые записи в качестве подготовки к настройке частной ссылки. Создаваемые записи DNS могут переопределять существующие параметры и влиять на подключение к Azure Monitor.
+   > Если вы выберете " **нет** " и предпочитаете управлять записями DNS вручную, сначала завершите настройку частной ссылки, включая эту частную конечную точку и конфигурацию амплс. Затем настройте DNS в соответствии с инструкциями в статье о [конфигурации DNS для частной конечной точки Azure](../../private-link/private-endpoint-dns.md). Не создавайте пустые записи при подготовке к настройке Приватного канала. Создаваемые записи DNS могут переопределить имеющиеся параметры и повлиять на подключение к Azure Monitor.
  
    c.    Щелкните **Review + create** (Просмотреть и создать).
  
@@ -217,7 +217,7 @@ ms.locfileid: "97732110"
 
 Процесс, описанный выше, можно автоматизировать с помощью шаблонов Azure Resource Manager, интерфейсов RESTFUL и командной строки.
 
-Чтобы создать области частной связи и управлять ими, используйте [REST API](https://docs.microsoft.com/rest/api/monitor/private%20link%20scopes%20(preview)) или [Azure CLI (AZ отслеживать частную ссылку на область)](/cli/azure/monitor/private-link-scope?view=azure-cli-latest).
+Чтобы создать области частной связи и управлять ими, используйте [REST API](/rest/api/monitor/private%20link%20scopes%20(preview)) или [Azure CLI (AZ отслеживать частную ссылку на область)](/cli/azure/monitor/private-link-scope?view=azure-cli-latest).
 
 Для управления доступом к сети используйте флаги `[--ingestion-access {Disabled, Enabled}]` и `[--query-access {Disabled, Enabled}]` в [рабочих областях Log Analytics](/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest) или [компонентах Application Insights](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest).
 
@@ -264,6 +264,6 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 Если вы подключаетесь к ресурсам Azure Monitor по частной ссылке, трафик к этому ресурсу должен пройти через закрытую конечную точку, настроенную в сети. Чтобы включить частную конечную точку, обновите параметры DNS, как описано в [подсоединении к частной конечной точке](#connect-to-a-private-endpoint). Некоторые браузеры используют собственные параметры DNS вместо заданных. Браузер может попытаться подключиться к Azure Monitor общедоступным конечным точкам и полностью обойти частную ссылку. Убедитесь, что параметры браузера не переопределяют или кэшируют старые параметры DNS. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о [закрытом хранилище](private-storage.md)

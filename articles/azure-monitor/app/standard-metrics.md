@@ -5,12 +5,12 @@ services: azure-monitor
 ms.topic: reference
 ms.date: 07/03/2019
 ms.subservice: application-insights
-ms.openlocfilehash: f59dce5a450cd745ad05ea3b53d85606706a8eaa
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 8da719f399c0c49efd478f05a0114d85233c880f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97513464"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732634"
 ---
 # <a name="application-insights-standard-metrics"></a>Application Insights стандартных метрик
 
@@ -270,7 +270,7 @@ ms.locfileid: "97513464"
 | Count | Count | `Cloud role instance`, `Cloud role name`,  `Is traffic synthetic`, `Severity level` |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Сведения об [метриках на основе журналов и предварительно агрегированных](https://docs.microsoft.com/azure/azure-monitor/app/pre-aggregated-metrics-log-metrics)данных.
-* [Запросы и определения метрик на основе журнала](https://docs.microsoft.com/azure/azure-monitor/platform/app-insights-metrics).
+* Сведения об [метриках на основе журналов и предварительно агрегированных](./pre-aggregated-metrics-log-metrics.md)данных.
+* [Запросы и определения метрик на основе журнала](../platform/app-insights-metrics.md).

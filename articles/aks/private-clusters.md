@@ -4,12 +4,12 @@ description: Узнайте, как создать частный кластер
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 2b0cc8a2fe9a45120bf0b74dbad5e107fd860845
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 66072032b3fd1ac33bef60922c62f73a8cfb11bd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664373"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734670"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Создание частного кластера Службы Azure Kubernetes
 
@@ -121,18 +121,18 @@ az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --lo
 3. В сценариях, где виртуальная сеть, содержащая кластер, имеет пользовательские параметры DNS (4), развертывание кластера завершается сбоем, если только частная зона DNS не связана с виртуальной сетью, содержащей пользовательские сопоставители DNS (5). Эту ссылку можно создать вручную после создания частной зоны во время подготовки кластера или с помощью автоматизации при обнаружении создания зоны с помощью механизмов развертывания на основе событий (например, службы "Сетка событий Azure" и "функции Azure").
 
 > [!NOTE]
-> Если вы используете [собственную таблицу маршрутов с кубенет](https://docs.microsoft.com/azure/aks/configure-kubenet#bring-your-own-subnet-and-route-table-with-kubenet) и перенесете собственный DNS с частным кластером, создание кластера завершится сбоем. После сбоя создания кластера необходимо связать [RouteTable](https://docs.microsoft.com/azure/aks/configure-kubenet#bring-your-own-subnet-and-route-table-with-kubenet) в группе ресурсов узла с подсетью, чтобы успешно создать кластер.
+> Если вы используете [собственную таблицу маршрутов с кубенет](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) и перенесете собственный DNS с частным кластером, создание кластера завершится сбоем. После сбоя создания кластера необходимо связать [RouteTable](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) в группе ресурсов узла с подсетью, чтобы успешно создать кластер.
 
 ## <a name="limitations"></a>Ограничения 
 * Диапазоны IP-адресов не могут быть применены к конечной точке сервера частного API, они применяются только к общедоступному серверу API.
 * [Ограничения службы Приватного канала Azure][private-link-service] применимы к частным кластерам.
-* Отсутствует поддержка агентов, размещенных в Microsoft Azure DevOps, с частными кластерами. Рекомендуется использовать [локальные агенты](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&preserve-view=true). 
+* Отсутствует поддержка агентов, размещенных в Microsoft Azure DevOps, с частными кластерами. Рекомендуется использовать [локальные агенты](/azure/devops/pipelines/agents/agents?preserve-view=true&tabs=browser&view=azure-devops). 
 * Для клиентов, которым необходимо включить реестр контейнеров Azure для работы с частными AKS, виртуальная сеть реестра контейнеров должна быть соединена с виртуальной сетью кластера агента.
 * Отсутствует поддержка преобразования существующих кластеров AKS в частные кластеры.
 * Удаление или изменение частной конечной точки в подсети клиента приведет к прекращению работы кластера. 
 * Интерактивный просмотр данных контейнеров в Azure Monitor в настоящее время не поддерживается.
 * После того как клиенты обновили запись A на своих собственных DNS-серверах, они по-прежнему будут разрешать аписервер FQDN до старого IP-адреса после миграции, пока они не будут перезапущены. Клиентам необходимо перезапустить Хостнетворк Pods и модули Днсполици по умолчанию после миграции плоскости управления.
-* В случае обслуживания на плоскости управления [IP-адрес AKS](https://docs.microsoft.com/azure/aks/limit-egress-traffic#:~:text=By%20default%2C%20AKS%20clusters%20have%20unrestricted%20outbound%20%28egress%29,be%20accessible%20to%20maintain%20healthy%20cluster%20maintenance%20tasks.) может измениться. В этом случае необходимо обновить запись A, указывающую на частный IP-адрес сервера API, на пользовательском DNS-сервере и перезапустить все пользовательские модули Pod или развертывания с помощью Хостнетворк.
+* В случае обслуживания на плоскости управления [IP-адрес AKS](./limit-egress-traffic.md) может измениться. В этом случае необходимо обновить запись A, указывающую на частный IP-адрес сервера API, на пользовательском DNS-сервере и перезапустить все пользовательские модули Pod или развертывания с помощью Хостнетворк.
 
 <!-- LINKS - internal -->
 [az-provider-register]: /cli/azure/provider?view=azure-cli-latest#az-provider-register

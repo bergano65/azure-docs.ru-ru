@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3012b1283688a9a680a5a4d0607ca135eab7b0f5
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 4af00b2e0e5445ecc904f603d813d843a9c54b93
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200419"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735022"
 ---
 # <a name="azure-security-baseline-for-azure-app-configuration"></a>Базовые показатели безопасности Azure для конфигурации приложений Azure
 
@@ -327,7 +327,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Создание проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями (PIM)](../active-directory/privileged-identity-management/pim-resource-roles-start-access-review.md) 
 
-- [Использование проверок доступа для идентификации Azure AD](/azure/active-directory/governance/access-reviews-overview)
+- [Использование проверок доступа для идентификации Azure AD](../active-directory/governance/access-reviews-overview.md)
 
 - [Авторизация доступа к конфигурации приложений Azure с помощью Azure AD](concept-enable-rbac.md)
 
@@ -365,7 +365,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) 
 
-- [Развертывание рабочей станции с привилегированным доступом](../active-directory/devices/howto-azure-managed-workstation.md)
+- [Развертывание рабочей станции с привилегированным доступом](/security/compass/privileged-access-deployment)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -477,7 +477,7 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="asset-management"></a>управление ресурсами.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1. Предоставление группе безопасности возможности просматривать угрозы безопасности для ресурсов
 
@@ -553,7 +553,7 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="logging-and-threat-detection"></a>Ведение журналов и обнаружение угроз
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](../security/benchmarks/security-controls-v2-logging-threat-detection.md).*
 
 ### <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: включение обнаружения угроз для управления удостоверениями и доступом Azure
 
@@ -746,7 +746,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="posture-and-vulnerability-management"></a>Управление состоянием защиты и уязвимостью
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md).*
 
 ### <a name="pv-1-establish-secure-configurations-for-azure-services"></a>PV-1: Настройка безопасных конфигураций для служб Azure 
 
@@ -846,9 +846,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
-- [Azure Security Benchmark — управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
+- [Azure Security Benchmark — управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md)
 
-- [Azure Security Benchmark — защита данных](/azure/security/benchmarks/security-controls-v2-data-protection)
+- [Azure Security Benchmark — защита данных](../security/benchmarks/security-controls-v2-data-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -876,7 +876,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Инструкции**: непрерывно измеряйте и снижайте риски для отдельных ресурсов и сред, в которых они размещены. Определите приоритеты для важных ресурсов и областей, где существует высокий риск атак, таких как опубликованные приложения, точки входа в сеть и выхода из нее, конечные точки пользователя и администратора и т. д.
 
-- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
+- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -917,7 +917,7 @@ Azure Sentinel предоставляет широкие возможности 
 Дополнительные сведения см. в следующих ресурсах.
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark — безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security)
+- [Azure Security Benchmark — безопасность сети](../security/benchmarks/security-controls-v2-network-security.md)
 
 - [Обзор сетевой безопасности Azure](../security/fundamentals/network-overview.md)
 
@@ -945,9 +945,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management)
+- [Azure Security Benchmark — управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md)
 
-- [Azure Security Benchmark — привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access)
+- [Azure Security Benchmark — привилегированный доступ](../security/benchmarks/security-controls-v2-privileged-access.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -979,9 +979,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
+- [Azure Security Benchmark — ведение журнала и обнаружение угроз](../security/benchmarks/security-controls-v2-logging-threat-detection.md)
 
-- [Azure Security Benchmark — реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
+- [Azure Security Benchmark — реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 4 — процесс: обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

@@ -3,12 +3,12 @@ title: Единицы экземпляра BareMetal в Azure
 description: Узнайте, как обнаруживать единицы экземпляра BareMetal и взаимодействовать с ними с помощью портал Azure.
 ms.topic: how-to
 ms.date: 1/4/2021
-ms.openlocfilehash: 30e1661e82546dbaf6d8dc4288ad896df89f401e
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: b089b45c35ff05f10ae59f8ce793645361be1e9b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861035"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733269"
 ---
 # <a name="manage-baremetal-instances-through-the-azure-portal"></a>Управление экземплярами BareMetal на портале Azure
  
@@ -50,7 +50,7 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
 1. Выберите **поставщики ресурсов** и введите **бареметалинфраструктуре** в поле поиска. Поставщик ресурсов должен быть **зарегистрирован**, как показано на рисунке.
  
 >[!NOTE]
->Если поставщик ресурсов не зарегистрирован, выберите **зарегистрировать**.
+>Если поставщик ресурсов не зарегистрирован, выберите **Зарегистрировать**.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/register-resource-provider-azure-portal.png" alt-text="Снимок экрана, на котором показана зарегистрированная единица экземпляра BareMetal":::
  
@@ -97,7 +97,7 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
 >[!NOTE]
 >Версия 4,2 — это последняя переработанная инфраструктура BareMetal, использующая существующую архитектуру версии 4. Версия 4 обеспечивает ближе близко к узлам виртуальной машины Azure. В ней значительно улучшена задержка в сети между виртуальными машинами Azure и единицами экземпляров BareMetal, развернутыми в отметках и строках версии 4. Вы можете получать доступ к экземплярам BareMetal и управлять ими с помощью портал Azure. Дополнительные сведения см. [в статье BareMetal Infrastructure in Azure](baremetal-overview-architecture.md).
  
-Кроме того, с правой стороны вы найдете имя [группы размещения для службы расположения Azure](../../../virtual-machines/linux/co-location.md) , которое создается автоматически для каждой развернутой единицы экземпляра BareMetal. Сослаться на группу размещения с учетом расположения при развертывании виртуальных машин Azure, на которых размещается уровень приложения. При использовании группы размещения с учетом расположения, связанной с единицей экземпляра BareMetal, вы гарантируете, что виртуальные машины Azure будут развернуты до единицы экземпляра BareMetal.
+Кроме того, с правой стороны вы найдете имя [группы размещения для службы расположения Azure](../../../virtual-machines/co-location.md) , которое создается автоматически для каждой развернутой единицы экземпляра BareMetal. Сослаться на группу размещения с учетом расположения при развертывании виртуальных машин Azure, на которых размещается уровень приложения. При использовании группы размещения с учетом расположения, связанной с единицей экземпляра BareMetal, вы гарантируете, что виртуальные машины Azure будут развернуты до единицы экземпляра BareMetal.
  
 >[!TIP]
 >Чтобы найти слой приложения в том же центре обработки данных Azure, что и версия 4. x, см. раздел [группы размещения службы "близость" для оптимальной сетевой задержки](../../../virtual-machines/workloads/sap/sap-proximity-placement-scenarios.md).
@@ -170,6 +170,6 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
  
 Для подтверждения вашего запроса специалистом службы поддержки требуется до пяти рабочих дней.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите узнать больше о рабочих нагрузках, см. раздел [типы рабочих нагрузок BareMetal](../../../virtual-machines/workloads/sap/get-started.md).

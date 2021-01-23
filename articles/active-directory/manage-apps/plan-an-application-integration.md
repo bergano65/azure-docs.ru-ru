@@ -1,26 +1,22 @@
 ---
-title: Приступая к интеграции Azure AD с приложениями | Документация Майкрософт
+title: Приступая к интеграции Azure AD с приложениями
 description: Эта статья представляет собой вводное руководство по интеграции Azure Active Directory (AD) с локальными приложениями и облачными приложениями.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
-ms.subservice: app-mgmt
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/16/2018
 ms.author: kenwith
 ms.reviewer: asteen
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 913b7975de4598bba7240647c1d9e8c81cd1cec9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: db3d3623e175d582a2fe271d73aa452ca07b8e8d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659103"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735072"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
 
@@ -77,9 +73,7 @@ ms.locfileid: "94659103"
 С помощью прокси приложений Microsoft Azure AD вы можете предоставлять безопасный доступ к приложениям, расположенным в частной сети, из любого места и с любого устройства. После установки в своей среде соединителя прокси-сервера приложения его можно легко настроить с Azure AD.
 
 ### <a name="integrating-custom-applications"></a>Интеграция пользовательских приложений
-Если вы создаете новое приложение и хотите помочь разработчикам в использовании возможностей Azure AD, см. статью создание [GUID для разработчиков](./developer-guidance-for-integrating-applications.md).
-
-Если вы хотите добавить пользовательское приложение в коллекцию приложений Azure, то см. запись блога [“Bring your own app” with Azure AD Self-Service SAML configuration](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/) (Использование собственных приложений с конфигурацией SAML самообслуживания Azure AD).
+Если вы хотите добавить пользовательское приложение в коллекцию приложений Azure, см. статью [Публикация приложения в коллекции приложений Azure AD](../develop/v2-howto-app-gallery-listing.md).
 
 ## <a name="managing-access-to-applications"></a>Управление доступом к приложениям
 В следующих статьях описываются способы управления доступом к приложениям после интеграции с Azure AD с помощью соединителей Azure AD и Azure AD.
@@ -90,12 +84,12 @@ ms.locfileid: "94659103"
 * [Назначение групп для приложения](./assign-user-or-group-access-portal.md)
 * [Совместное использование учетных записей.](../enterprise-users/users-sharing-accounts.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](../fundamentals/active-directory-deployment-plans.md). Для приложений из коллекции можно загрузить планы развертывания для единого входа, условного доступа и подготовки пользователей с помощью [портал Azure](https://portal.azure.com). 
 
 Чтобы скачать план развертывания на портале Azure, сделайте следующее.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **корпоративные приложения** выбор  |  **Pick an App**  |  **плана развертывания** приложения.
+2. Выберите **корпоративные приложения** выбор  |    |  **плана развертывания** приложения.
 
 Оставьте отзыв о планах развертывания, приняв участие в этом [опросе](https://aka.ms/DeploymentPlanFeedback).

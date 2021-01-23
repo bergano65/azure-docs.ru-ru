@@ -11,9 +11,10 @@
     - name: Создание неограниченного количества регистраций приложений
       href: quickstart-app-registration-limits.md
 - name: Учебники
+  expanded: true
   items:
-    - name: Создание динамической группы
-      href: ../enterprise-users/users-revoke-access.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
+    - name: Назначение пользователям ролей администратора
+      href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
 - name: Основные понятия
   expanded: true
   items:
@@ -28,18 +29,6 @@
 - name: Практические руководства
   expanded: true
   items:
-    - name: Пользователи и роли
-      items:
-        - name: Назначение пользователям ролей администратора
-          href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Отзыв доступа пользователя
-          href: ../enterprise-users/users-revoke-access.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Назначение роли гостевому пользователю
-          href: ../external-identities/add-guest-to-role.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Ограничение доступа гостевых пользователей
-          href: ../enterprise-users/users-restrict-guest-permissions.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Динамические группы и гости
-          href: ../external-identities/use-dynamic-groups.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
     - name: Роли и разрешения
       expanded: true
       items:
@@ -119,7 +108,7 @@
     - name: "Документация по ролям Microsoft\_365"
       href: m365-workload-docs.md
     - name: API Graph
-      href: /graph/api/resources/azure-ad-overview?view=graph-rest-1.0
+      href: /graph/api/resources/directoryrole?view=graph-rest-1.0
     - name: "Интерфейс командной строки Azure\_AD"
       href: /cli/azure/ad
     - name: "Azure\_AD PowerShell для Graph"

@@ -1,5 +1,5 @@
 ---
-title: Включение Intel SGX для базы данных SQL Azure
+title: Включение Intel SGX для Базы данных SQL Azure
 description: Узнайте, как включить Intel SGX для Always Encrypted с защищенным енклавес в базе данных SQL Azure, выбрав создание оборудования с поддержкой SGX.
 keywords: Шифрование данных, шифрование SQL, шифрование базы данных, конфиденциальные данные, Always Encrypted, безопасный енклавес, SGX, аттестация
 services: sql-database
@@ -11,21 +11,21 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: 4c77103dbb043ef9d6af9a4078b3e574ab5f953f
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: ded1406c47bb3f00c366da7a5b28319f3712f8a7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253568"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733762"
 ---
-# <a name="enable-intel-sgx-for-your-azure-sql-database"></a>Включение Intel SGX для базы данных SQL Azure 
+# <a name="enable-intel-sgx-for-your-azure-sql-database"></a>Включение Intel SGX для Базы данных SQL Azure 
 
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 > [!NOTE]
 > Always Encrypted с безопасным енклавес для базы данных SQL Azure в настоящее время находится в **общедоступной предварительной версии**.
 
-[Always encrypted с безопасным енклавес](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves) в базе данных SQL Azure использует [расширения Intel Software Guard (Intel SGX)](https://itpeernetwork.intel.com/microsoft-azure-confidential-computing/) енклавес. Чтобы обеспечить доступность Intel SGX, база данных должна использовать [модель Виртуальное ядро](service-tiers-vcore.md) и создание оборудования для [серий контроллеров домена](service-tiers-vcore.md#dc-series) .
+[Always encrypted с безопасным енклавес](/sql/relational-databases/security/encryption/always-encrypted-enclaves) в базе данных SQL Azure использует [расширения Intel Software Guard (Intel SGX)](https://itpeernetwork.intel.com/microsoft-azure-confidential-computing/) енклавес. Чтобы обеспечить доступность Intel SGX, база данных должна использовать [модель Виртуальное ядро](service-tiers-vcore.md) и создание оборудования для [серий контроллеров домена](service-tiers-vcore.md#dc-series) .
 
 Настройка создания оборудования серии контроллеров домена для поддержки Intel SGX енклавес несет администратор базы данных SQL Azure. Ознакомьтесь с [ролями и обязанностями при настройке енклавес и аттестации SGX](always-encrypted-enclaves-plan.md#roles-and-responsibilities-when-configuring-sgx-enclaves-and-attestation).
 
@@ -37,10 +37,10 @@ ms.locfileid: "98253568"
 
 Подробные инструкции по настройке новой или существующей базы данных для использования определенного поколения оборудования см. в разделе [Выбор создания оборудования](service-tiers-vcore.md#selecting-a-hardware-generation).
    
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка аттестации Azure для сервера базы данных SQL Azure](always-encrypted-enclaves-configure-attestation.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-- [Руководство. Приступая к работе с Always Encrypted Secure енклавес в базе данных SQL Azure](always-encrypted-enclaves-getting-started.md)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](always-encrypted-enclaves-getting-started.md)

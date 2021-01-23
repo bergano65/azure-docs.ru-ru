@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/03/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: f1e9d65baacb9c712b92ef6f00abda169031b47e
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: d60a241506dbcf3e038f79c99830ef1a81c06b88
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582965"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735270"
 ---
 # <a name="customize-node-configuration-for-azure-kubernetes-service-aks-node-pools-preview"></a>Настройка конфигурации узла для пулов узлов Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -62,7 +62,7 @@ az extension update --name aks-preview
 | Параметр | Допустимые значения и интервал | По умолчанию | Описание |
 | --------- | ----------------------- | ------- | ----------- |
 | `cpuManagerPolicy` | нет, статический | нет | Статическая политика позволяет контейнерам в [гарантированно гарантировать](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/) использование ЦЕЛОЧИСЛЕННЫХ ресурсов ЦП для доступа к эксклюзивным ЦП узла. |
-| `cpuCfsQuota` | true, false | true |  Включение и отключение использования квоты CFS ЦП для контейнеров, задающих ограничения ЦП. | 
+| `cpuCfsQuota` | true, false | Да |  Включение и отключение использования квоты CFS ЦП для контейнеров, задающих ограничения ЦП. | 
 | `cpuCfsQuotaPeriod` | Интервал в миллисекундах (МС) | `100ms` | Задает значение периода квоты CFS ЦП. | 
 | `imageGcHighThreshold` | 0-100 | 85 | Процент использования дискового пространства, по истечении которого всегда выполняется сборка мусора образа. Минимальное использование **диска,** запускающее сборку мусора. Для отключения сборки мусора образа установите значение 100. | 
 | `imageGcLowThreshold` | 0-100, не выше `imageGcHighThreshold` | 80 | Процент использования диска, до которого сборка мусора образа никогда не выполняется. Минимальный объем использования дискового пространства, который **может** активировать сбор мусора. |
@@ -132,7 +132,7 @@ az extension update --name aks-preview
 | `transparentHugePageDefrag` | `always`, `defer`, `defer+madvise`, `madvise`, `never` | `madvise` | Это значение определяет, должно ли ядро активно использовать сжатие памяти для повышения `hugepages` доступности. | 
 
 > [!IMPORTANT]
-> Для простоты поиска и удобочитаемости параметры ОС отображаются в этом документе по имени, но их следует добавить в файл конфигурации JSON или API AKS, используя [соглашение о капитализации camelCase](https://docs.microsoft.com/dotnet/standard/design-guidelines/capitalization-conventions).
+> Для простоты поиска и удобочитаемости параметры ОС отображаются в этом документе по имени, но их следует добавить в файл конфигурации JSON или API AKS, используя [соглашение о капитализации camelCase](/dotnet/standard/design-guidelines/capitalization-conventions).
 
 Создайте `kubeletconfig.json` файл со следующим содержимым:
 
@@ -184,7 +184,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup --kubelet-con
 az aks nodepool add --name mynodepool1 --cluster-name myAKSCluster --resource-group myResourceGroup --kubelet-config ./kubeletconfig.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте [, как настроить кластер AKS](cluster-configuration.md).
 - Узнайте [, как обновить образы узлов](node-image-upgrade.md) в кластере.

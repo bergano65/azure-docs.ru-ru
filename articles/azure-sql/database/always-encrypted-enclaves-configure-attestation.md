@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: e8cb423d4d700c4b6b6caa30a02eac3e7ef10cb6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 51431bf0da9145e1b61da708942b675e4c3eea78
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253577"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733829"
 ---
 # <a name="configure-azure-attestation-for-your-azure-sql-logical-server"></a>Настройка аттестации Azure для логического сервера Azure SQL
 
@@ -27,7 +27,7 @@ ms.locfileid: "98253577"
 
 [Microsoft Azure аттестация](../../attestation/overview.md) — это решение для подтверждения доверенных сред выполнения (TEEs), включая расширения Intel Software Guard (Intel SGX) енклавес. 
 
-Чтобы использовать аттестацию Azure для аттестации Intel SGX енклавес, используемой для [Always encrypted с безопасными енклавес](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves) в базе данных SQL Azure, необходимо:
+Чтобы использовать аттестацию Azure для аттестации Intel SGX енклавес, используемой для [Always encrypted с безопасными енклавес](/sql/relational-databases/security/encryption/always-encrypted-enclaves) в базе данных SQL Azure, необходимо:
 
 1. Создайте [поставщик аттестации](../../attestation/basic-concepts.md#attestation-provider) и настройте его с помощью рекомендованной политики аттестации.
 
@@ -114,7 +114,7 @@ Write-Host "Your attestation URL is: " $attestationUrl
 
 ### <a name="use-azure-portal-to-assign-permission"></a>Назначение разрешения с помощью портал Azure
 
-Чтобы назначить удостоверение сервера Azure SQL Server роли читателя аттестации для поставщика аттестации, следуйте указаниям в разделе [Добавление и удаление назначений ролей Azure с помощью портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal). В области **Добавление назначения ролей** выполните следующие действия.
+Чтобы назначить удостоверение сервера Azure SQL Server роли читателя аттестации для поставщика аттестации, следуйте указаниям в разделе [Добавление и удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md). В области **Добавление назначения ролей** выполните следующие действия.
 
 1. В раскрывающемся списке **роль** выберите роль **читатель аттестации** .
 1. В поле **Выбор** введите имя сервера Azure SQL Server для поиска.
@@ -143,12 +143,12 @@ $attestationResourceGroupName = "<attestation provider resource group name>"
 New-AzRoleAssignment -ObjectId $server.Identity.PrincipalId -RoleDefinitionName "Attestation Reader" -ResourceGroupName $attestationResourceGroupName
 ```
 
-Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell#add-a-role-assignment).
+Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md#add-role-assignment-examples).
 
 ## <a name="next-steps"></a>Next Steps
 
-- [Управление ключами для Always Encrypted с безопасными анклавами](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves-manage-keys)
+- [Управление ключами для Always Encrypted с безопасными анклавами](/sql/relational-databases/security/encryption/always-encrypted-enclaves-manage-keys)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-- [Руководство. Приступая к работе с Always Encrypted Secure енклавес в базе данных SQL Azure](always-encrypted-enclaves-getting-started.md)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](always-encrypted-enclaves-getting-started.md)

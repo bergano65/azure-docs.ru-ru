@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9500d682a99e6345289a83b4b3b2fc29ffe18457
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: b5025aa322ae26f9dd7c683d0e54762fd33eb355
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676890"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735387"
 ---
 # <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Отправка запросов к файлам хранилища с помощью бессерверного пула SQL в Azure Synapse Analytics
 
@@ -184,7 +184,7 @@ OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*
 - Функция возвращает скалярное значение, например int, decimal и varchar, из указанного элемента и по указанному пути для всех типов Parquet, которые не находятся в группе вложенных типов.
 - Если путь указывает на элемент вложенного типа, функция возвращает фрагмент JSON, который начинается с верхнего элемента указанного пути. Этот фрагмент JSON имеет тип varchar(8000).
 - Если свойство не удается найти по указанному значению column_name, функция возвращает ошибку.
-- Если свойство не удается найти по указанному значению column_path, в зависимости от настроенного [режима PATH](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#PATHMODE), функция возвращает ошибку (строгий режим) или значение NULL (нестрогий режим).
+- Если свойство не удается найти по указанному значению column_path, в зависимости от настроенного [режима PATH](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true#PATHMODE), функция возвращает ошибку (строгий режим) или значение NULL (нестрогий режим).
 
 См. примеры таких запросов в разделе [Доступ к элементам из вложенных столбцов](query-parquet-nested-types.md#read-properties-from-nested-object-columns).
 

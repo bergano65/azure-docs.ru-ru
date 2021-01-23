@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.openlocfilehash: 885ee993748a0a571f396cc0dc28f2c0c1a4a0c3
-ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
+ms.openlocfilehash: fcb53dc22cfb4bf7308b92ee76e5aaaf3bb0dead
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2020
-ms.locfileid: "97792523"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735116"
 ---
 # <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Руководство по настройке ThousandEyes для автоматической подготовки пользователей
 
@@ -86,7 +86,7 @@ ms.locfileid: "97792523"
 
 9. В разделе "Сопоставления" выберите **Synchronize Azure Active Directory Users to ThousandEyes** (Синхронизировать пользователей Azure Active Directory с ThousandEyes).
 
-10. В разделе **Сопоставления атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в ThousandEyes. Атрибуты, выбранные как **совпадающие** свойства, используются для сопоставления учетных записей пользователей в Parsable для операций обновления. Если вы решили изменить [совпадающий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), потребуется убедиться, что API Parsable поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+10. В разделе **Сопоставления атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в ThousandEyes. Атрибуты, выбранные как **совпадающие** свойства, используются для сопоставления учетных записей пользователей в Parsable для операций обновления. Если вы решили изменить [совпадающий целевой атрибут](../app-provisioning/customize-application-attributes.md), потребуется убедиться, что API Parsable поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
      |attribute|Тип|Поддерживается для фильтрации|
      |---|---|---|
@@ -98,7 +98,7 @@ ms.locfileid: "97792523"
      |name.formatted|Строка|
 
 
-11. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+11. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. Чтобы включить службу подготовки Azure AD для ThousandEyes, измените значение параметра **Состояние подготовки** на **Включено** в разделе **Параметры**.
 
@@ -117,15 +117,15 @@ ms.locfileid: "97792523"
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
 После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
-1. Используйте [журналы подготовки](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
-2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).  
+1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+2. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).  
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

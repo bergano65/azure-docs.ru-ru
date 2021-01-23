@@ -6,12 +6,12 @@ ms.author: sread
 ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: b2cac7a8310482305467a1cb3ed3127eb18ae416
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 2d48c767b836771600b3491299e0bdb33aacb75b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915782"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733155"
 ---
 # <a name="set-up-micro-focus-cics-bankdemo-for-micro-focus-enterprise-developer-40-on-azure"></a>Настройка Micro Focus CICS Банкдемо для Micro Focus Enterprise Developer 4,0 в Azure
 
@@ -22,13 +22,13 @@ CICs означает систему управления сведениями �
 > [!NOTE]
 > Ожидается в ближайшее время: инструкции по настройке [Micro Focus Enterprise Server 5,0](https://techcommunity.microsoft.com/t5/azurecat/micro-focus-enterprise-server-5-0-quick-start-template-on-azure/ba-p/1160110) на виртуальных машинах Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Виртуальная машина с [корпоративным разработчиком](set-up-micro-focus-azure.md). Помните, что корпоративный разработчик имеет полный экземпляр Enterprise Server для целей разработки и тестирования. Этот экземпляр является экземпляром Enterprise Server, используемым для демонстрации.
 
 - [SQL Server 2017 Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express). Скачайте и установите его на виртуальную машину разработчика Enterprise. Enterprise Server требуется база данных для управления CICS регионами, а приложение Банкдемо также использует базу данных SQL Server с именем БАНКДЕМО. В этой демонстрации предполагается, что вы используете SQL Server Express для обеих баз данных. При установке выберите базовую установку.
 
-- [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017&preserve-view=true) (SSMS). SSMS используется для управления базами данных и выполнения скрипта T-SQL. Скачайте и установите его на виртуальную машину разработчика Enterprise.
+- [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). SSMS используется для управления базами данных и выполнения скрипта T-SQL. Скачайте и установите его на виртуальную машину разработчика Enterprise.
 
 - [Visual studio 2019](https://azure.microsoft.com/downloads/) с последним пакетом обновления или [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/), который можно скачать бесплатно.
 
@@ -270,7 +270,7 @@ CICs означает систему управления сведениями �
 
 Поздравляем! Теперь вы запускаете приложение CICS в Azure с помощью Micro Focus Enterprise Server.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Запуск Enterprise Server в контейнерах DOCKER в Azure](run-enterprise-server-container.md)
 - [Перенос мэйнфреймов — портал](/archive/blogs/azurecat/mainframe-migration-to-azure-portal)

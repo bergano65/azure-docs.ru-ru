@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, sstein
 ms.date: 12/9/2020
-ms.openlocfilehash: d1ba9445441f38c55b40a8f8ca55471ea8b0a06d
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: f50042caf21630c5054ead76825e49b820405c5b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008594"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732700"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Управление несколькими базами данных в Базе данных SQL Azure и их масштабирование с помощью эластичных пулов
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -156,7 +156,7 @@ MAX (<*Общее число баз данных* x *среднего уровн
 
 На портале Azure можно отслеживать использование эластичного пула и баз данных в этом пуле. Можно также внести ряд изменений в эластичный пул и отправить все изменения одновременно. К таким изменениям относятся добавление или удаление баз данных, изменение параметров эластичного пула и изменение параметров базы данных.
 
-В сочетании с рейтингами производительности можно использовать встроенные [средства](https://docs.microsoft.com/azure/azure-sql/database/alerts-insights-configure-portal) [мониторинга производительности](https://docs.microsoft.com/azure/azure-sql/database/performance-guidance) и оповещения.  Кроме того, База данных SQL может [выдавать значения метрик и журналы ресурсов](https://docs.microsoft.com/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal) для упрощения мониторинга.
+В сочетании с рейтингами производительности можно использовать встроенные [средства](./alerts-insights-configure-portal.md) [мониторинга производительности](./performance-guidance.md) и оповещения.  Кроме того, База данных SQL может [выдавать значения метрик и журналы ресурсов](./metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-portal) для упрощения мониторинга.
 
 ## <a name="customer-case-studies"></a>Примеры реальных клиентов
 

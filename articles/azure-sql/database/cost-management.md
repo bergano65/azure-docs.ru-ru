@@ -7,23 +7,23 @@ ms.custom: subject-cost-optimization
 ms.service: sql-database
 ms.topic: how-to
 ms.date: 01/15/2021
-ms.openlocfilehash: 8d36166a67e683dd7f15eef18d589562b39ba568
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 56cf30d89460df8ac50d258bd8b29cf4e7236690
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600621"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734636"
 ---
 # <a name="plan-and-manage-costs-for-azure-sql-database"></a>Планирование и управление затратами для базы данных SQL Azure
 
 В этой статье описывается планирование и управление затратами для базы данных SQL Azure. Сначала используйте калькулятор цен Azure, чтобы добавить ресурсы Azure, и ознакомьтесь с оценочными затратами. После начала работы с ресурсами базы данных SQL Azure используйте функции управления затратами для установки бюджетов и отслеживания затрат. Вы также можете просматривать прогнозные затраты и выявление тенденций расходов для выявления областей, в которых может потребоваться выполнить действия. Стоимость базы данных SQL Azure — это лишь часть ежемесячных затрат в счете Azure. Несмотря на то, что в этой статье описывается планирование и управление затратами для базы данных SQL Azure, взимается плата за все службы и ресурсы Azure, используемые в подписке Azure, включая любые сторонние службы.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Анализ затрат поддерживает большинство типов учетных записей Azure, но не все. Полный список поддерживаемых типов учетных записей см. в статье [Understand Cost Management data](../../cost-management-billing/costs/understand-cost-mgt-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) (Интерпретация данных службы "Управление затратами"). Для просмотра данных о затратах требуется по крайней мере доступ на чтение для учетной записи Azure. 
 
-Дополнительные сведения о назначении доступа к данным службы "Управление затратами" Azure см. в [этой статье](../../cost-management/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+Дополнительные сведения о назначении доступа к данным службы "Управление затратами" Azure см. в [этой статье](../../cost-management-billing/costs/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 
 ## <a name="sql-database-initial-cost-considerations"></a>Вопросы первоначальной стоимости базы данных SQL
@@ -79,7 +79,7 @@ ms.locfileid: "98600621"
 
 
 
-Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](https://docs.microsoft.com/azure/billing/billing-spending-limit).
+Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../../cost-management-billing/manage/spending-limit.md).
 
 ## <a name="monitor-costs"></a>Мониторинг затрат
 
@@ -91,13 +91,13 @@ ms.locfileid: "98600621"
 
    :::image type="content" source="media/cost-management/cost-analysis.png" alt-text="Пример, демонстрирующий накопленные затраты в портал Azure":::
 
-Здесь вы можете исследовать затраты самостоятельно. Дополнительные сведения о различных параметрах анализа затрат см. в статье [Начало анализа затрат](../../cost-management/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+Здесь вы можете исследовать затраты самостоятельно. Дополнительные сведения о различных параметрах анализа затрат см. в статье [Начало анализа затрат](../../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
 ## <a name="create-budgets"></a>Создание бюджетов
 
 <!-- Note to Azure service writer: Modify the following as needed for your service. -->
 
-Вы можете создавать [бюджеты](../../cost-management/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](../../cost-management/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
+Вы можете создавать [бюджеты](../../cost-management-billing/costs/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](../../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
 
 Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, которые избавляет вас от дополнительных денег. Дополнительные сведения о параметрах фильтра при создании бюджета см. в разделе [Параметры группы и фильтра](../../cost-management-billing/costs/group-filter.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
@@ -117,5 +117,5 @@ ms.locfileid: "98600621"
 
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
 - Дополнительные сведения об управлении затратами с помощью [анализа затрат](../../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Узнайте, как [предотвратить непредвиденные затраты](../../cost-management-billing/manage/getting-started.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
+- Узнайте, как [предотвратить непредвиденные затраты](../../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Пройдите курс обучения по [управлению затратами](/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .

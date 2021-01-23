@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
-ms.openlocfilehash: 68bd748e890659e4b79d76e4ccab038f251a937a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 51f6a2ac4f524ac2a504fb8e0c3dd90ec25c9f93
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016035"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734736"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Общие предварительные требования для развертывания платформы контейнеров OpenShift 3,11 в Azure
 
@@ -134,7 +134,7 @@ az ad sp create-for-rbac --name openshiftsp \
  > [!WARNING] 
  > Не забудьте записать защищенный пароль, так как этот пароль будет невозможно получить снова.
 
-Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+Дополнительные сведения о субъектах-службах см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli).
 
 ## <a name="prerequisites-applicable-only-to-resource-manager-template"></a>Предварительные требования применимы только к шаблону диспетчер ресурсов
 
