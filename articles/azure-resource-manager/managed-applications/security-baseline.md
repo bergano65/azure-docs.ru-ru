@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ca49e7c171d0b8903beccf0b1ca803f5b359951b
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 3422c8eff847ed699fb75854a5ae52b4e8a08a24
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201711"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737105"
 ---
 # <a name="azure-security-baseline-for-azure-managed-applications"></a>Базовый уровень безопасности Azure для управляемых приложений Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "98201711"
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: безопасность сети](../../security/benchmarks/security-controls-v2-network-security.md).*
 
 ### <a name="ns-6-simplify-network-security-rules"></a>NS-6: Упростите правила безопасности сети.
 
@@ -36,7 +36,7 @@ ms.locfileid: "98201711"
 
 ## <a name="identity-management"></a>Управление удостоверениями
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление удостоверениями](../../security/benchmarks/security-controls-v2-identity-management.md).*
 
 ### <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1: стандартизация Azure Active Directory в качестве централизованной системы идентификации и проверки подлинности
 
@@ -130,7 +130,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Отчеты о действиях аудита в Azure Active Directory](../../active-directory/reports-monitoring/concept-audit-logs.md)
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../../security-center/security-center-identity-access.md)
 
@@ -156,7 +156,7 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="privileged-access"></a>Привилегированный доступ
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: привилегированный доступ](../../security/benchmarks/security-controls-v2-privileged-access.md).*
 
 ### <a name="pa-1-protect-and-limit-highly-privileged-users"></a>PA-1: защита и ограничение пользователей с высоким уровнем привилегий
 
@@ -168,11 +168,11 @@ Azure предоставляет следующие встроенные рол�
 
 Вы можете разрешить пользователям привилегированный JIT-доступ к ресурсам Azure и Azure AD с помощью Azure AD Privileged Identity Management (PIM). JIT-доступ предоставляет временные разрешения на выполнение привилегированных задач только в том случае, если это необходимо пользователям. PIM также может создавать оповещения безопасности при обнаружении подозрительных или небезопасных действий в организации Azure AD.
 
-- [Разрешения роли администратора в Azure Active Directory](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)
+- [Разрешения роли администратора в Azure Active Directory](../../active-directory/roles/permissions-reference.md)
 
 - [Использование оповещений системы безопасности в рамках управления привилегированными пользователями Azure](../../active-directory/privileged-identity-management/pim-how-to-configure-security-alerts.md)
 
-- [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](/azure/active-directory/users-groups-roles/directory-admin-roles-secure)
+- [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../../active-directory/roles/security-planning.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -244,7 +244,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [Развертывание рабочей станции с привилегированным доступом](../../active-directory/devices/howto-azure-managed-workstation.md)
+- [Развертывание рабочей станции с привилегированным доступом](/security/compass/privileged-access-deployment)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -288,13 +288,13 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: защита данных](/azure/security/benchmarks/security-controls-v2-data-protection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: защита данных](../../security/benchmarks/security-controls-v2-data-protection.md).*
 
 ### <a name="dp-2-protect-sensitive-data"></a>DP-2: защита конфиденциальных данных
 
 **Руководство**. для сохранения шифрования с помощью собственных ключей можно использовать собственную учетную запись хранения для хранения файлов конфигурации управляемого приложения.
 
-- [Защита данных управляемых файлов конфигурации с помощью собственного хранилища](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
+- [Защита данных управляемых файлов конфигурации с помощью собственного хранилища](./publish-service-catalog-app.md?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -306,11 +306,11 @@ Azure предоставляет следующие встроенные рол�
 
 В сценариях, где не требуется использовать собственное хранилище для определений управляемых приложений, Azure по умолчанию предоставляет шифрование неактивных данных.
 
-- [Приведите собственное хранилище к определениям управляемых приложений](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
+- [Приведите собственное хранилище к определениям управляемых приложений](./publish-service-catalog-app.md?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
 
 - [Общие сведения о шифровании неактивных данных в Azure](../../security/fundamentals/encryption-atrest.md#encryption-at-rest-in-microsoft-cloud-services) 
 
-- [Настройка ключей шифрования, управляемых клиентом](/azure/storage/common/storage-encryption-keys-portal)
+- [Настройка ключей шифрования, управляемых клиентом](../../storage/common/customer-managed-keys-configure-key-vault.md)
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
@@ -318,7 +318,7 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="asset-management"></a>управление ресурсами.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](../../security/benchmarks/security-controls-v2-asset-management.md).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1. Предоставление группе безопасности возможности просматривать угрозы безопасности для ресурсов
 
@@ -348,7 +348,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Как создавать запросы с помощью обозревателя Azure Resource Graph](../../governance/resource-graph/first-query-portal.md) 
 
-- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -372,7 +372,7 @@ Azure предоставляет следующие встроенные рол�
 
 **Руководство**. ресурсы управляемого приложения и связанные с ними управляемые группы ресурсов можно удалить, удалив ресурс управляемого приложения. При удалении ресурса управляемого приложения также будет удалена управляемая группа ресурсов и ее содержимое. Дополнительные возможности жизненного цикла указываются издателем приложения, где они могут предоставить потребителю дополнительные права по истечение жизненного цикла базовых управляемых ресурсов с помощью разрешенных действий. Обратитесь к издателю управляемого приложения за тем, какие ресурсы управляете потребителем.
 
-- [Очистка ресурсов управляемых приложений](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/tutorial-create-managed-app-with-custom-provider?tabs=azurecli-interactive#clean-up-resources)
+- [Очистка ресурсов управляемых приложений](./tutorial-create-managed-app-with-custom-provider.md?tabs=azurecli-interactive#clean-up-resources)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -390,7 +390,7 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="logging-and-threat-detection"></a>Ведение журналов и обнаружение угроз
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](../../security/benchmarks/security-controls-v2-logging-threat-detection.md).*
 
 ### <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: включение обнаружения угроз для управления удостоверениями и доступом Azure
 
@@ -405,7 +405,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Включение Защиты идентификации Azure](../../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Защита от угроз с помощью Центра безопасности Azure](/azure/security-center/threat-protection)
+- [Защита от угроз с помощью Центра безопасности Azure](../../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -447,7 +447,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Настройка срока хранения Log Analytics рабочей области](../../azure-monitor/platform/manage-cost-storage.md)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](/azure/azure-monitor/platform/resource-logs-collect-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -455,7 +455,7 @@ Azure предоставляет следующие встроенные рол�
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](../../security/benchmarks/security-controls-v2-incident-response.md).*
 
 ### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: подготовка — процесс обновления реагирования на инциденты для Azure
 
@@ -537,7 +537,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Оповещения безопасности в Центре безопасности Azure](../../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -561,7 +561,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="posture-and-vulnerability-management"></a>Управление состоянием защиты и уязвимостью
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](../../security/benchmarks/security-controls-v2-posture-vulnerability-management.md).*
 
 ### <a name="pv-1-establish-secure-configurations-for-azure-services"></a>PV-1: Настройка безопасных конфигураций для служб Azure 
 
@@ -611,15 +611,15 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="backup-and-recovery"></a>Архивация и восстановление
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: резервное копирование и восстановление](/azure/security/benchmarks/security-controls-v2-backup-recovery).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: резервное копирование и восстановление](../../security/benchmarks/security-controls-v2-backup-recovery.md).*
 
 ### <a name="br-3-validate-all-backups-including-customer-managed-keys"></a>BR-3: проверка всех резервных копий, включая ключи, управляемый клиентом
 
 **Руководство**. при хранении определений управляемых приложений в собственной учетной записи хранения убедитесь, что вы можете восстановить все связанные ключи, управляемые клиентом, которые используются для шифрования учетной записи, которые хранятся в Azure Key Vault.
 
-- [Приведите собственное хранилище к определениям управляемых приложений](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
+- [Приведите собственное хранилище к определениям управляемых приложений](./publish-service-catalog-app.md?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
 
-- [Восстановление ключей Key Vault в Azure](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey?view=azps-5.1.0&amp;preserve-view=true)
+- [Восстановление ключей Key Vault в Azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?amp;preserve-view=true&view=azps-5.1.0)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -629,9 +629,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Руководство**. Если вы используете собственное хранилище для определений управляемых приложений, убедитесь, что у вас есть меры по предотвращению и восстановлению после потери ключей, используемых для шифрования определений. Включите обратимое удаление и очистку защиты на Azure Key Vault, в которой хранятся ключи, управляемые клиентом, чтобы защитить ключи от случайного или вредоносного удаления.  
 
-- [Приведите собственное хранилище к определениям управляемых приложений](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
+- [Приведите собственное хранилище к определениям управляемых приложений](./publish-service-catalog-app.md?tabs=azure-powershell#bring-your-own-storage-for-the-managed-application-definition)
 
-- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+- [Включение обратимого удаления и очистки защиты в Key Vault](../../storage/blobs/soft-delete-blob-overview.md?tabs=azure-portal)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -639,7 +639,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="governance-and-strategy"></a>Система управления и стратегия
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление и стратегия](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление и стратегия](../../security/benchmarks/security-controls-v2-governance-strategy.md).*
 
 ### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: определение стратегии управления ресурсами и защиты данных 
 
@@ -664,15 +664,15 @@ Azure Sentinel предоставляет широкие возможности 
 -   Соответствующие криптографические стандарты
 
 Дополнительные сведения см. в следующих ресурсах.
-- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
 
 - [Основы безопасности Azure — безопасность, шифрование и хранение данных в Azure](../../security/fundamentals/encryption-overview.md)
 
-- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](../../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
-- [Azure Security Benchmark — управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
+- [Azure Security Benchmark — управление ресурсами](../../security/benchmarks/security-controls-v2-asset-management.md)
 
-- [Azure Security Benchmark — защита данных](/azure/security/benchmarks/security-controls-v2-data-protection)
+- [Azure Security Benchmark — защита данных](../../security/benchmarks/security-controls-v2-data-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -700,7 +700,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Инструкции**: непрерывно измеряйте и снижайте риски для отдельных ресурсов и сред, в которых они размещены. Определите приоритеты для важных ресурсов и областей, где существует высокий риск атак, таких как опубликованные приложения, точки входа в сеть и выхода из нее, конечные точки пользователя и администратора и т. д.
 
-- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
+- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](../../security/benchmarks/security-controls-v2-posture-vulnerability-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -741,7 +741,7 @@ Azure Sentinel предоставляет широкие возможности 
 Дополнительные сведения см. в следующих ресурсах.
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark — безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security)
+- [Azure Security Benchmark — безопасность сети](../../security/benchmarks/security-controls-v2-network-security.md)
 
 - [Обзор сетевой безопасности Azure](../../security/fundamentals/network-overview.md)
 
@@ -769,9 +769,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management)
+- [Azure Security Benchmark — управление удостоверениями](../../security/benchmarks/security-controls-v2-identity-management.md)
 
-- [Azure Security Benchmark — привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access)
+- [Azure Security Benchmark — привилегированный доступ](../../security/benchmarks/security-controls-v2-privileged-access.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -803,9 +803,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
+- [Azure Security Benchmark — ведение журнала и обнаружение угроз](../../security/benchmarks/security-controls-v2-logging-threat-detection.md)
 
-- [Azure Security Benchmark — реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
+- [Azure Security Benchmark — реагирование на инциденты](../../security/benchmarks/security-controls-v2-incident-response.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 4 — процесс: обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
@@ -819,5 +819,5 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- См. [Обзор Azure Security Benchmark версии 2](/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- См. [Обзор Azure Security Benchmark версии 2](../../security/benchmarks/overview.md)
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../../security/benchmarks/security-baselines-overview.md).

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4681039f60154b95eeb7e40196ca33055a192c74
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 2059608faa8ce148e5823e48eff6abf9e71c9b01
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222111"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735439"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Запрос Azure Cosmos DB данных с помощью несвязанного с сервером пула SQL в предварительной версии Azure синапсе Link
 
@@ -24,7 +24,7 @@ ms.locfileid: "98222111"
 
 Серверный пул SQL позволяет анализировать данные в контейнерах Azure Cosmos DB, которые включены с помощью [ссылки Azure синапсе](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) практически в режиме реального времени, не влияя на производительность транзакционных рабочих нагрузок. Он предлагает знакомый синтаксис T-SQL для запроса данных из [аналитического хранилища](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) и интегрированного подключения к широкому спектру средств бизнес-АНАЛИТИКИ (BI) и специальных запросов с помощью интерфейса T-SQL.
 
-Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , которая включает большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure или Azure Data Lake Storage с помощью инструкции [CREATE External Table как SELECT](develop-tables-cetas.md#cetas-in-serverless-sql-pool) (CETAS). В настоящее время вы не можете хранить результаты запросов пула SQL Server, чтобы Azure Cosmos DB с помощью CETAS.
+Для запросов Azure Cosmos DB Полная контактная зона [выбора](/sql/t-sql/queries/select-transact-sql?view=azure-sqldw-latest&preserve-view=true) поддерживается с помощью функции [OPENROWSET](develop-openrowset.md) , которая включает большинство [функций и операторов SQL](overview-features.md). Кроме того, можно сохранять результаты запроса, считывающего данные из Azure Cosmos DB вместе с данными в хранилище BLOB-объектов Azure или Azure Data Lake Storage с помощью инструкции [CREATE External Table как SELECT](develop-tables-cetas.md#cetas-in-serverless-sql-pool) (CETAS). В настоящее время вы не можете хранить результаты запросов пула SQL Server, чтобы Azure Cosmos DB с помощью CETAS.
 
 В этой статье вы узнаете, как написать запрос с несвязанным серверным пулом SQL, который будет запрашивать данные из Azure Cosmos DB контейнеров, которые включены с помощью ссылки Azure синапсе. Затем вы можете узнать больше о создании бессерверных представлений пула SQL в Azure Cosmos DB контейнерах и подключении их к Power BI моделям в [этом руководстве](./tutorial-data-analyst.md).
 
@@ -343,7 +343,7 @@ FROM
 | Строка | varchar (параметры сортировки базы данных UTF-8) |
 | Дата и время (строка в формате ISO) | varchar (30) |
 | Дата и время (метка времени UNIX) | BIGINT |
-| Null | `any SQL type` 
+| NULL | `any SQL type` 
 | Вложенный объект или массив | varchar (max) (параметры сортировки базы данных UTF-8), сериализованный как текст JSON |
 
 ## <a name="full-fidelity-schema"></a>Схема полной точности

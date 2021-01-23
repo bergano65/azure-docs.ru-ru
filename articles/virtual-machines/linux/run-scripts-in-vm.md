@@ -7,12 +7,12 @@ author: bobbytreed
 ms.author: robreed
 ms.date: 05/02/2018
 ms.topic: how-to
-ms.openlocfilehash: 0f91bb33116947312173d8f22929b8548d23a9ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 151bc827cc92c749edd2899cb331eebd22e171a7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292269"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737835"
 ---
 # <a name="run-scripts-in-your-linux-vm"></a>Запуск сценариев в виртуальной машине Linux
 
@@ -33,7 +33,7 @@ ms.locfileid: "87292269"
 Функция [Выполнить команду](run-command.md) позволяет управлять виртуальными машинами и приложениями и устранять неполадки с помощью сценариев и доступна даже тогда, когда машина недоступна, например, если гостевой брандмауэр не имеет открытых портов RDP или SSH.
 
 * Выполнение сценариев в виртуальных машинах Azure.
-* Можно выполнить с помощью [портала Microsoft Azure](run-command.md), [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure CLI](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke), или [PowerShell](/powershell/module/az.compute/invoke-azvmruncommand)
+* Можно выполнить с помощью [портала Microsoft Azure](run-command.md), [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure CLI](/cli/azure/vm/run-command#az_vm_run_command_invoke), или [PowerShell](/powershell/module/az.compute/invoke-azvmruncommand)
 * Быстро запустите сценарий и просмотрите выходные данные и повторите при необходимости на портале Microsoft Azure.
 * Сценарий можно ввести непосредственно или выполнив один из встроенных сценариев.
 * Запустить сценарий PowerShell на компьютерах Windows и сценарий Bash на компьютерах Linux.
@@ -63,7 +63,7 @@ ms.locfileid: "87292269"
 * Войдите в систему с помощью учетной записи локального пользователя.
 * Можно использовать, когда доступ к виртуальной машине необходим независимо от состояния сети или операционной системы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о различных доступных возможностях, для выполнения сценариев и команд в виртуальных машинах.
 

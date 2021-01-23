@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 26874c33c496b57bf6317a7b837b3afddc2f5e37
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 41457f26c22e3b8ed529ce77cfaf452618b03655
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955656"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737648"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-linux-vms"></a>Ограничение установки расширений на виртуальных машинах Linux с помощью службы "Политика Azure"
 
@@ -98,7 +98,7 @@ vim ~/clouddrive/azurepolicy.parameters.json
 
 ## <a name="create-the-policy"></a>Создание политики
 
-Определение политики — это объект для хранения конфигурации, которую нужно использовать. Для определения политики используются файлы правил и параметров. Создайте определение политики с помощью команды [az policy definition create](/cli/azure/role/assignment?view=azure-cli-latest).
+Определение политики — это объект для хранения конфигурации, которую нужно использовать. Для определения политики используются файлы правил и параметров. Создайте определение политики с помощью команды [az policy definition create](/cli/azure/role/assignment).
 
 В этом примере правила и параметры представлены в виде файлов, которые вы создали в формате JSON и сохранили с помощью Cloud Shell.
 
@@ -117,7 +117,7 @@ az policy definition create \
 
 В этом примере назначается политика для группы ресурсов с помощью команды [az policy assignment create](/cli/azure/policy/assignment). На всех виртуальных машинах, созданных в группе ресурсов **myResourceGroup**, невозможно будет установить расширение доступа к виртуальной машине Linux и пользовательские расширения для Linux. Прежде чем назначить политику, нужно создать группу ресурсов.
 
-Команда [az account list](/cli/azure/account?view=azure-cli-latest) предоставит вам идентификатор подписки, который следует указать вместо образца в примере.
+Команда [az account list](/cli/azure/account) предоставит вам идентификатор подписки, который следует указать вместо образца в примере.
 
 
 ```azurecli-interactive

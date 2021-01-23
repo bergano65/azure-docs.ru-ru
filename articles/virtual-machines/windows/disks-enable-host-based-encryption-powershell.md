@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 4dd6736afe835eefe02b8095ec08cd65ac0d63b4
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 46c26b6070a874947dfe5d7acd5a615961576b49
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915833"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736690"
 ---
 # <a name="use-the-azure-powershell-module-to-enable-end-to-end-encryption-using-encryption-at-host"></a>Использование модуля Azure PowerShell для включения сквозного шифрования с помощью шифрования на узле
 
@@ -33,7 +33,7 @@ ms.locfileid: "97915833"
 
 Размеры виртуальных машин также можно найти программно. Чтобы узнать, как получить их программно, ознакомьтесь с разделом [Поиск поддерживаемых размеров виртуальных машин](#finding-supported-vm-sizes) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты encryptionAtHost@microsoft.com с идентификаторами подписки, чтобы включить функцию для ваших подписок.
 
@@ -293,7 +293,7 @@ $VMSS.VirtualMachineProfile.SecurityProfile.EncryptionAtHost
     }
 ```
 
-Либо вызовите командлет PowerShell [Get-азкомпутересаурцеску](/powershell/module/az.compute/get-azcomputeresourcesku?view=azps-3.8.0&preserve-view=true) .
+Либо вызовите командлет PowerShell [Get-азкомпутересаурцеску](/powershell/module/az.compute/get-azcomputeresourcesku) .
 
 ```powershell
 $vmSizes=Get-AzComputeResourceSku | where{$_.ResourceType -eq 'virtualMachines' -and $_.Locations.Contains('CentralUSEUAP')} 
@@ -312,7 +312,7 @@ foreach($vmSize in $vmSizes)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы создали и настроили эти ресурсы, их можно использовать для защиты управляемых дисков. Следующая ссылка содержит примеры сценариев, каждый из которых имеет соответствующий сценарий, который можно использовать для защиты управляемых дисков.
 

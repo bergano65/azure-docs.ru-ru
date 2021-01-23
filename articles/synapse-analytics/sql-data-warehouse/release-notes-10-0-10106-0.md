@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 6538243cf8fc12131e1480c8578bfa8739c4f561
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e3ebd83646353e34c239e7d1812e380b9e9d2e26
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676295"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737529"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-release-notes"></a>Заметки о выпуске для выделенного пула SQL (прежнее название — SQL DW) в Azure синапсе Analytics
 
@@ -52,7 +52,7 @@ ms.locfileid: "98676295"
 | Улучшения службы | Сведения |
 | --- | --- |
 |**Встроенные функции Table-Valued T-SQL (Предварительная версия)**|В этом выпуске теперь можно создавать встроенные функции с табличным значением с помощью Transact-SQL и запрашивать их результаты, как в таблице. Сейчас эта функция доступна в предварительной версии. она будет поддерживаться в общедоступных средствах. Дополнительные сведения см. в статье [Создание функции (Azure синапсе Analytics)](/sql/t-sql/statements/create-function-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true).|
-|**Команда MERGE (Предварительная версия)**|Теперь можно выполнять операции вставки, обновления или удаления в целевой таблице из результатов объединения с исходной таблицей. Например, можно синхронизировать две таблицы путем вставки, обновления или удаления строк в одной таблице на основании отличий, найденных в другой таблице.  Дополнительные сведения см. в инструкции [Merge](/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) .|
+|**Команда MERGE (Предварительная версия)**|Теперь можно выполнять операции вставки, обновления или удаления в целевой таблице из результатов объединения с исходной таблицей. Например, можно синхронизировать две таблицы путем вставки, обновления или удаления строк в одной таблице на основании отличий, найденных в другой таблице.  Дополнительные сведения см. в инструкции [Merge](/sql/t-sql/statements/merge-transact-sql??view=azure-sqldw-latest&preserve-view=true) .|
 
 ## <a name="aug-2020"></a>Авг 2020
 
@@ -68,7 +68,7 @@ ms.locfileid: "98676295"
 |**Шифрование на уровне столбцов (общедоступная Предварительная версия)**|Защитите конфиденциальную информацию в Azure синапсе Analytics, применив симметричное шифрование к столбцу данных с помощью Transact-SQL. Шифрование на уровне столбцов содержит встроенные функции, которые можно использовать для шифрования данных с помощью симметричных ключей, которые дополнительно защищаются сертификатом, паролем, симметричным ключом или асимметричным ключом. Дополнительные сведения см. [в статье шифрование столбца данных](/sql/relational-databases/security/encryption/encrypt-a-column-of-data?view=azure-sqldw-latest&preserve-view=true).|
 |**Поддержка уровня совместимости (GA)**|В этом выпуске пользователи теперь могут задать уровень совместимости базы данных, чтобы определять язык Transact-SQL и поведение обработки запросов конкретной версии ядра Synapse SQL. Дополнительные сведения см. в статьях [sys.database_scoped_configurations (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-database-scoped-configurations-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) и [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).|
 |**Безопасность на уровне строк**|Этот выпуск включает в себя улучшение операций обновления и удаления строк с принудительным применением RLS. В этом выпуске операции обновления и удаления с внутренними функциями, такими как "is_rolemember", будут выполнены, если встроенная функция не ссылается ни на один столбец в целевой таблице DML. До этого улучшения произошел сбой этих операций из-за ограничений в базовых операциях DML.|
-|**DBCC SHRINKDATABASE (GA)**|Теперь размер файлов данных и журналов можно сжать в указанной базе данных. Дополнительные сведения см. в [документации](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql?view=sql-server-ver15).|
+|**DBCC SHRINKDATABASE (GA)**|Теперь размер файлов данных и журналов можно сжать в указанной базе данных. Дополнительные сведения см. в [документации](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql?view=azure-sqldw-latest&preserve-view=true).|
 
 ## <a name="may-2020"></a>Май 2020 г.
 

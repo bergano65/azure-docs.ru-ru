@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: tamram
 ms.reviewer: twooley
-ms.openlocfilehash: 8de395e34b43a4edad2affa591adb8ab34ff9e66
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 002e8650a5555b70caf09179e03ce1bad1acdef5
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921710"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737546"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -28,9 +28,9 @@ ms.locfileid: "96921710"
 > 
 
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
-Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
+Двоичные файлы Blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для Ubuntu, Debian, SUSE, центус, Oracle Linux и RHEL дистрибутивов. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
 
-Blobfuse поддерживает установку на Ubuntu 14,04, 16,04, 18,04 и 20,04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
+Blobfuse поддерживает установку в версиях Ubuntu: 16,04, 18,04 и 20,04, Рхелверсионс: 7,5, 7,8, 8,0, 8,1, 8,2, CentOS версии: 7,0, 8,0, Debian версии: 9,0, 10,0, SUSE Version: 15, Ораклелинукс 8,1. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
 ```
 lsb_release -a
 ```
@@ -38,16 +38,16 @@ lsb_release -a
 ### <a name="configure-the-microsoft-package-repository"></a>Настройка репозитория пакетов Майкрософт
 Настройте [репозиторий пакетов Linux для продуктов Майкрософт](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
 
-Например, в дистрибутиве Enterprise Linux 6:
+Например, в дистрибутиве Enterprise Linux 8:
 ```bash
-sudo rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+sudo rpm -Uvh https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
 ```
 
 Аналогичным образом измените URL-адрес на `.../rhel/7/...`, чтобы указать дистрибутив Enterprise Linux 7.
 
-Еще один пример для распределения Ubuntu 14.04:
+Еще один пример в дистрибутиве Ubuntu 20,04:
 ```bash
-wget https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```
@@ -141,7 +141,7 @@ mkdir test
 echo "hello world" > test/blob.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Домашняя страница blobfuse](https://github.com/Azure/azure-storage-fuse#blobfuse)
 * [Сообщить о проблемах с blobfuse](https://github.com/Azure/azure-storage-fuse/issues)

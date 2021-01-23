@@ -5,12 +5,12 @@ keywords: azure app service, web app, mobile app, api app, function app, securit
 ms.topic: article
 ms.date: 08/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: 55ffb2d03a42809a41583e6be25066b0b8e104b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61bffcfa8b98ed666e450c344023258b752e4880
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961505"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736111"
 ---
 # <a name="security-in-azure-app-service"></a>Безопасность в Службе приложений Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "88961505"
 
 По умолчанию приложение службы приложений принимает запросы со всех IP-адресов из Интернета, но вы можете ограничить доступ небольшим подмножеством IP-адресов. Служба приложений в Windows позволяет определить список IP-адресов, с которых разрешен доступ к вашему приложению. Список разрешений может содержать отдельные IP-адреса или их диапазон, который определяется маской подсети. Дополнительные сведения см. в статье [Ограничения статических IP-адресов в Службе приложений Azure](app-service-ip-restrictions.md).
 
-Для службы приложений в Windows можно также динамически ограничить IP-адреса, настроив _web.config_. Дополнительные сведения см. в разделе [Dynamic IP \<dynamicIpSecurity> Security ](/iis/configuration/system.webServer/security/dynamicIpSecurity/).
+Для службы приложений в Windows можно также динамически ограничить IP-адреса, настроив _web.config_. Дополнительные сведения см. в разделе [Dynamic IP \<dynamicIpSecurity> Security](/iis/configuration/system.webServer/security/dynamicIpSecurity/).
 
 ## <a name="client-authentication-and-authorization"></a>Аутентификация и авторизация клиента
 
@@ -85,8 +85,8 @@ ms.locfileid: "88961505"
 Есть три способа безопасного получения доступа к локальным ресурсам, таким как базы данных. 
 
 - [Гибридное подключение](app-service-hybrid-connections.md). Устанавливает подключение типа "точка — точка" к удаленному ресурсу через TCP-туннель. TCP-туннель устанавливается с помощью протокола TLS 1.2 с общедоступными ключами подписи (SAS).
-- [Интеграция виртуальной сети](web-sites-integrate-with-vnet.md) с VPN-подключением "сеть — сеть". Выполняется, как описано в разделе о [ресурсах внутри виртуальной сети Azure](#resources-inside-an-azure-virtual-network), но виртуальную сеть можно подключить к локальной сети через [VPN-подключение "сеть — сеть"](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md). В этой топологии сети приложение может подключаться к локальным ресурсам, например другим ресурсам в виртуальной сети.
-- [Среда службы приложений](environment/intro.md) с VPN-подключением "сеть — сеть". Сведения описаны в разделе о [ресурсах внутри виртуальной сети Azure](#resources-inside-an-azure-virtual-network), но виртуальную сеть можно подключить к локальной сети через [VPN-подключение "сеть — сеть"](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md). В этой топологии сети приложение может подключаться к локальным ресурсам, например другим ресурсам в виртуальной сети.
+- [Интеграция виртуальной сети](web-sites-integrate-with-vnet.md) с VPN-подключением "сеть — сеть". Выполняется, как описано в разделе о [ресурсах внутри виртуальной сети Azure](#resources-inside-an-azure-virtual-network), но виртуальную сеть можно подключить к локальной сети через [VPN-подключение "сеть — сеть"](../vpn-gateway/tutorial-site-to-site-portal.md). В этой топологии сети приложение может подключаться к локальным ресурсам, например другим ресурсам в виртуальной сети.
+- [Среда службы приложений](environment/intro.md) с VPN-подключением "сеть — сеть". Сведения описаны в разделе о [ресурсах внутри виртуальной сети Azure](#resources-inside-an-azure-virtual-network), но виртуальную сеть можно подключить к локальной сети через [VPN-подключение "сеть — сеть"](../vpn-gateway/tutorial-site-to-site-portal.md). В этой топологии сети приложение может подключаться к локальным ресурсам, например другим ресурсам в виртуальной сети.
 
 ## <a name="application-secrets"></a>Секреты приложений
 

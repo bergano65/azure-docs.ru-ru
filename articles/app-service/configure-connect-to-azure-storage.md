@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: e75eef86a4a0c679a44a61267f94d337538daaa8
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: ab27de9274043439f790a8fecd443223e5f26b08
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007625"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736210"
 ---
 # <a name="access-azure-storage-preview-as-a-network-share-from-a-container-in-app-service"></a>Доступ к хранилищу Azure (Предварительная версия) в качестве сетевой папки из контейнера в службе приложений
 
@@ -33,13 +33,13 @@ ms.locfileid: "97007625"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 ::: zone pivot="container-windows"
 
 - [Существующее приложение контейнера Windows в службе приложений Azure](quickstart-custom-container.md)
 - [Создание файлового ресурса Azure](../storage/files/storage-how-to-use-files-cli.md)
-- [Отправка файлов в общую папку Azure](../storage/files/storage-files-deployment-guide.md)
+- [Отправка файлов в общую папку Azure](../storage/files/storage-how-to-create-file-share.md)
 
 ::: zone-end
 

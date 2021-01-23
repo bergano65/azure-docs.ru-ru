@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
-ms.openlocfilehash: 390cda604b71404735b7c14382d30067e154ef70
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e409211c167f7b29128faf9fdfc02aa5c0a7d0e3
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976191"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736260"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -92,7 +92,7 @@ Windows Resource Protection did not find any integrity violations.
    DISKPART> exit
    ```
 
-1. Установить время в формате UTC для Windows. Кроме того, задайте **Автоматический**тип запуска службы времени Windows **W32Time** :
+1. Установить время в формате UTC для Windows. Кроме того, задайте **Автоматический** тип запуска службы времени Windows **W32Time** :
 
    ```powershell
    Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation -Name RealTimeIsUniversal -Value 1 -Type DWord -Force
@@ -427,13 +427,13 @@ Get-Service -Name Netlogon, Netman, TermService |
 
     ![Средство SysPrep](media/prepare-for-upload-vhd-image/syspre.png)
 1. В разделе **Параметры завершения работы** выберите **Завершение работы**.
-1. Нажмите кнопку **OK**.
+1. Нажмите кнопку **ОК**.
 1. После завершения работы программы Sysprep завершите работу виртуальной машины. Не используйте **перезагрузку** для завершения работы виртуальной машины.
 
 Теперь диск VHD можно отправлять. Дополнительные сведения о том, как создать виртуальную машину на основе обобщенного диска, см. в разделе [Отправка обобщенного виртуального жесткого диска и его использование для создания новой виртуальной машины в Azure](/previous-versions/azure/virtual-machines/windows/sa-upload-generalized).
 
 >[!NOTE]
-> Пользовательский файл *unattend.xml* не поддерживается. Хотя мы поддерживаем свойство **аддитионалунаттендконтент** , которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *unattend.xml* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet&preserve-view=true) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
+> Пользовательский файл *unattend.xml* не поддерживается. Хотя мы поддерживаем свойство **аддитионалунаттендконтент** , которое предоставляет ограниченную поддержку добавления параметров [Microsoft-Windows-Shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) в файл *unattend.xml* , используемый агентом подготовки Azure. Можно использовать, например, [аддитионалунаттендконтент](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent) , чтобы добавить Фирстлогонкоммандс и логонкоммандс. Дополнительные сведения см. в разделе [Аддитионалунаттендконтент фирстлогонкоммандс example](https://github.com/Azure/azure-quickstart-templates/issues/1407).
 
 ## <a name="convert-the-virtual-disk-to-a-fixed-size-vhd"></a>Преобразование виртуального диска в виртуальный жесткий диск фиксированного размера
 
@@ -517,7 +517,7 @@ Resize-VHD -Path C:\test\MyNewVM.vhd -SizeBytes 105906176
 
   - Рекомендуется отключить блокирование сценариев, которое может быть предоставлено антивирусным программным обеспечением. Они могут мешать работе и блокировать сценарии агента подготовки Windows, выполняемые при развертывании новой виртуальной машины из образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Отправка образа виртуальной машины Windows в Azure для развертываний Resource Manager](upload-generalized-managed.md)
 - [Устранение неполадок при активации виртуальной машины Windows в Azure](../troubleshooting/troubleshoot-activation-problems.md)

@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Использование Гитопс для настройки кластера Kubernetes с поддержкой Arc Azure (Предварительная версия)
 keywords: Гитопс, Kubernetes, K8s, Azure, Arc, служба Kubernetes Azure, AKS, контейнеры
-ms.openlocfilehash: 751b274a9cae68f6bc9b1adc45804f2dd2ef4c72
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a068ed90ea53b3b25a1f41cebd9a5b8e607afa54
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684763"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737190"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Развертывание конфигураций с помощью GitOps в кластерах Kubernetes с поддержкой Arc (предварительная версия)
 
@@ -138,7 +138,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > Закрытая проверка подлинности HTTPS Helm поддерживается только с версией диаграммы оператора Helm >= 1.2.0.  Версия 1.2.0 используется по умолчанию.
 > Частная проверка подлинности HTTPS Helm Release не поддерживается в настоящее время для управляемых кластеров Azure Kubernetes Services.
-> Если вам требуется Flux для доступа к репозиторию Git через прокси-сервер, вам потребуется обновить агенты Arc Azure с помощью параметров прокси-сервера. [Дополнительные сведения](https://docs.microsoft.com/azure/azure-arc/kubernetes/connect-cluster#connect-using-an-outbound-proxy-server)
+> Если вам требуется Flux для доступа к репозиторию Git через прокси-сервер, вам потребуется обновить агенты Arc Azure с помощью параметров прокси-сервера. [Дополнительные сведения](./connect-cluster.md#connect-using-an-outbound-proxy-server)
 
 #### <a name="additional-parameters"></a>Дополнительные параметры
 

@@ -139,7 +139,7 @@
         - name: Создание приложения для обработки изображений
           href: Tutorials/CSharpTutorial.md
         - name: Другие примеры использования Компьютерного зрения
-          href: 'https://docs.microsoft.com/samples/browse/?products=azure&terms=computer-vision'
+          href: /samples/browse/?products=azure&terms=computer-vision
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: FAQ.md
     - name: Классификация категорий

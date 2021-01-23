@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 01/15/2021
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: a1cfabf6ccbb5d580bcad36694cd2e1a74155714
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 52e491c88d3483f21aa74f1a9f176246033bee3c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540767"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735798"
 ---
 # <a name="create-an-incremental-snapshot-for-managed-disks"></a>Создание добавочного моментального снимка для управляемых дисков
 
@@ -33,7 +33,7 @@ Install-Module -Name Az -AllowClobber -Scope CurrentUser
 
 После установки войдите в сеанс PowerShell с помощью `Connect-AzAccount` .
 
-Чтобы создать добавочный моментальный снимок с Azure PowerShell, настройте конфигурацию с помощью командлета [New-азснапшотконфиг](/powershell/module/az.compute/new-azsnapshotconfig?view=azps-2.7.0) с `-Incremental` параметром, а затем передайте эту переменную в командлет [New-азснапшот](/powershell/module/az.compute/new-azsnapshot?view=azps-2.7.0) с помощью `-Snapshot` параметра.
+Чтобы создать добавочный моментальный снимок с Azure PowerShell, настройте конфигурацию с помощью командлета [New-азснапшотконфиг](/powershell/module/az.compute/new-azsnapshotconfig) с `-Incremental` параметром, а затем передайте эту переменную в командлет [New-азснапшот](/powershell/module/az.compute/new-azsnapshot) с помощью `-Snapshot` параметра.
 
 ```PowerShell
 $diskName = "yourDiskNameHere>"
@@ -108,6 +108,6 @@ $incrementalSnapshots
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите просмотреть пример кода, демонстрирующий возможность создания добавочных моментальных снимков с помощью .NET, см. статью [копирование резервных копий управляемых дисков Azure в другой регион с помощью разностных моментальных снимков](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots).

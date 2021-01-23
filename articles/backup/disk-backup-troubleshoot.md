@@ -3,12 +3,12 @@ title: Устранение ошибок резервного копирован
 description: Сведения об устранении сбоев резервного копирования в службе архивации дисков Azure
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 3e7c81d70fc898528532a841a484bf6fff8b83a7
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 855c6c5b19b10bdb699a25f89ebc29001b7941ac
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611242"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737733"
 ---
 # <a name="troubleshooting-backup-failures-in-azure-disk-backup-in-preview"></a>Устранение ошибок резервного копирования в службе архивации дисков Azure (Предварительная версия)
 
@@ -115,7 +115,7 @@ ms.locfileid: "98611242"
 
 Сообщение об ошибке: не удалось выполнить операцию, так как достигнуто максимальное ограничение дисковой квоты для подписки.
 
-Рекомендуемое действие. Дополнительные сведения см. в разделе [Подписка Azure, ограничения службы и квота](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) , или обратитесь к служба поддержки Майкрософт для получения дополнительных инструкций.
+Рекомендуемое действие. Дополнительные сведения см. в разделе [Подписка Azure, ограничения службы и квота](../azure-resource-manager/management/azure-subscription-service-limits.md) , или обратитесь к служба поддержки Майкрософт для получения дополнительных инструкций.
 
 ### <a name="error-code-usererrordiskbackuprestorergormsipermissionsnotpresent"></a>Код ошибки: Усереррордискбаккупресторергормсипермиссионснотпресент
 
@@ -177,6 +177,6 @@ ms.locfileid: "98611242"
 
 Рекомендуемое действие: Подождите, пока не завершится предыдущее выполнение резервного копирования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Таблица поддержки резервного копирования дисков Azure](disk-backup-support-matrix.md)

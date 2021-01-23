@@ -7,12 +7,12 @@ ms.date: 05/27/2020
 ms.author: mahender
 ms.reviewer: yevbronsh
 ms.custom: devx-track-csharp, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 4c7ba5806707e818f0ef13717d5f00b542c37614
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 16cd4685f513eb628372802cc158195b81bce72a
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092743"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736177"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -526,4 +526,4 @@ Update-AzFunctionApp -Name $functionAppName -ResourceGroupName $resourceGroupNam
 - [Безопасное получение доступа к службе хранилища Azure с помощью управляемого удостоверения](scenario-secure-app-access-storage.md)
 - [Безопасный вызов Microsoft Graph с помощью управляемого удостоверения](scenario-secure-app-access-microsoft-graph-as-app.md)
 
-[Справочник Microsoft.Azure.Services.AppAuthentication]: ../key-vault/general/service-to-service-authentication.md
+[Справочник Microsoft.Azure.Services.AppAuthentication]: /dotnet/api/overview/azure/service-to-service-authentication

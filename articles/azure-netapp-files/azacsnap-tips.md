@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 86d7b1a6d361ebbc0d8419d184f9a11d390a37f1
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 08edd86fd19e7698a791e411f42a2a89084a91f7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803193"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737139"
 ---
 # <a name="tips-and-tricks-for-using-azure-application-consistent-snapshot-tool-preview"></a>Советы и рекомендации по использованию средства создания моментальных снимков для приложений Azure (Предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "97803193"
 
 ## <a name="limit-service-principal-permissions"></a>Ограничение разрешений субъекта-службы
 
-Может потребоваться ограничить область действия субъекта-службы Азакснап.  Дополнительные сведения о детальном управлении доступом к ресурсам Azure см. в [документации по Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/) .  
+Может потребоваться ограничить область действия субъекта-службы Азакснап.  Дополнительные сведения о детальном управлении доступом к ресурсам Azure см. в [документации по Azure RBAC](../role-based-access-control/index.yml) .  
 
 Ниже приведен пример определения роли с минимальными необходимыми действиями, необходимыми для функционирования Азакснап.
 
@@ -273,6 +273,6 @@ MAILTO=""
 - **Размер моментального снимка:** Зависит от размера и изменений на уровне базы данных.
 - **Расположение файла журнала:** Файлы журнала, созданные командами, выводятся в папки в соответствии с определением в файле конфигурации JSON, который по умолчанию является вложенной папкой, в которой выполняется команда (например, `./logs` ).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Устранение проблем](azacsnap-troubleshoot.md)

@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 7518fc49f7d6d728bd8faa0de4cf0edc1c6d5831
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 56dcf29a5c703a72fd137a5f1bf129f568a03b4b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734119"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735815"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -108,9 +108,9 @@ ms.locfileid: "97734119"
 
 ## <a name="does-azure-backup-perform-a-checksum-operation-on-the-data-stream"></a>Azure Backup выполнить операцию вычисления контрольной суммы для потока данных?
 
-Мы выполняем операцию вычисления контрольной суммы для потока данных. Однако это не следует путать с [контрольной суммой SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
+Мы выполняем операцию вычисления контрольной суммы для потока данных. Однако это не следует путать с [контрольной суммой SQL](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
 Резервная копия рабочей нагрузки Azure вычислит контрольную сумму потока данных и сохранит ее явным образом во время операции резервного копирования. Затем этот поток контрольной суммы принимается в виде ссылки и перекрестно проверяется с помощью контрольной суммы потока данных во время операции восстановления, чтобы обеспечить согласованность данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [создать резервную копию базы данных SQL Server](backup-azure-sql-database.md) , которая работает на виртуальной машине Azure.

@@ -1,5 +1,5 @@
 ---
-title: Использование групп размещения с учетом расположения
+title: Использование групп размещения близкого взаимодействия
 description: Узнайте, как создавать и использовать группы размещения близкого взаимодействия для виртуальных машин в Azure.
 author: cynthn
 ms.service: virtual-machines
@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: cynthn
-ms.openlocfilehash: ee172203d6aa54b4b539356835f8a6bf2d21bad3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ea50d0fdc5a772cae449951901af36eed4e93771
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288410"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737631"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-azure-cli"></a>Развертывание виртуальных машин в группах размещения близкого взаимодействия с помощью Azure CLI
 
@@ -67,8 +67,8 @@ az ppg show --name myppg --resource-group myppggroup --query "virtualMachines"
 
 ## <a name="scale-sets"></a>Масштабируемые наборы
 
-Вы также можете создать масштабируемый набор в группе размещения с учетом расположения. Используйте тот же `--ppg` параметр команды [AZ vmss Create](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create) , чтобы создать масштабируемый набор, и все экземпляры будут созданы в той же группе размещения близости.
+Вы также можете создать масштабируемый набор в группе размещения с учетом расположения. Используйте тот же `--ppg` параметр команды [AZ vmss Create](/cli/azure/vmss#az_vmss_create) , чтобы создать масштабируемый набор, и все экземпляры будут созданы в той же группе размещения близости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о командах [Azure CLI](/cli/azure/ppg) для групп размещения с учетом расположения.

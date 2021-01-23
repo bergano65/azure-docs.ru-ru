@@ -8,16 +8,16 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/01/2020
+ms.date: 01/22/2021
 ms.custom: seodec18
-ms.openlocfilehash: 5682cf9856ad8969d930d72f53e888b03ff6ae75
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: bf743bf1997a339664a6da2e5c02f1bcc1deea26
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020867"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736757"
 ---
-# <a name="querying-data-from-azure-time-series-insights-gen2"></a>Запрос данных из Gen2 службы "аналитика временных рядов Azure"
+# <a name="querying-data-from-azure-time-series-insights-gen2"></a>Запрос данных из службы "Аналитика временных рядов Azure" 2-го поколения
 
 Gen2 "аналитика временных рядов Azure" позволяет выполнять запросы данных о событиях и метаданных, хранящихся в среде, через API-интерфейсы общедоступной поверхности. Эти API-интерфейсы также используются в [ОБОЗРЕВАТЕЛЕ TSI "аналитика временных рядов Azure](./concepts-ux-panels.md)".
 
@@ -70,7 +70,7 @@ Gen2 "аналитика временных рядов Azure" используе
 
   Метки времени, возвращаемые в наборе ответов, имеют левые границы интервала, а не события выборки из интервала.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о различных переменных, которые могут быть определены в [модели временных рядов](./concepts-model-overview.md).
 * Узнайте больше о том, как запрашивать данные из обозревателя службы " [аналитика временных рядов Azure](./concepts-ux-panels.md)".

@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 17b99a9d3fa6b2934705d913170f2f617c856998
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 1655c48eeb9227bf934c7fd9bb37610327b2b98c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915765"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736277"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure PowerShell
 
 [!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
@@ -44,7 +44,7 @@ ms.locfileid: "97915765"
 
 Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла виртуального жесткого диска, который требуется передать, в байтах. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length` . Это значение используется при указании параметра **-уплоадсизеинбитес** .
 
-Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0&preserve-view=true) . Затем вызовите [New-аздиск](/powershell/module/az.compute/new-azdisk?view=azps-1.8.0&preserve-view=true) , чтобы создать диск.
+Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](/powershell/module/az.compute/new-azdiskconfig) . Затем вызовите [New-аздиск](/powershell/module/az.compute/new-azdisk) , чтобы создать диск.
 
 Замените `<yourdiskname>` , `<yourresourcegroupname>` и `<yourregion>` выполните следующие команды:
 
@@ -133,7 +133,7 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его к виртуальной машине и начать использовать.
 

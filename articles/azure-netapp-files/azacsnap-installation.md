@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 5c2182fc80c3745e0238c378c1cade0530393181
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 00aaa5bdc0d48adb735679fc4a71b3431970ef09
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632843"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737173"
 ---
 # <a name="install-azure-application-consistent-snapshot-tool-preview"></a>Установить средство создания моментальных снимков для приложений Azure (Предварительная версия)
 
@@ -34,9 +34,9 @@ ms.locfileid: "97632843"
 
 Следуйте указаниям по настройке и выполнению команд моментальных снимков и аварийного восстановления. Перед установкой и использованием средств создания моментальных снимков рекомендуется выполнить следующие действия.
 
-1. **Обновление ОС**: см. статью Установка ИСПРАВЛЕНИЙ и SMT в [статье как установить и настроить SAP HANA (крупные экземпляры) в Azure](/azure/virtual-machines/workloads/sap/hana-installation#setting-up-smt-server-for-suse-linux).
+1. **Обновление ОС**: см. статью Установка ИСПРАВЛЕНИЙ и SMT в [статье как установить и настроить SAP HANA (крупные экземпляры) в Azure](../virtual-machines/workloads/sap/hana-installation.md#operating-system).
 1. **Синхронизация времени настроена**. Клиент должен будет предоставить NTP-совместимый сервер времени и соответствующим образом настроить ОС.
-1. **Hana установлен** . см. инструкции по установке Hana в [установке SAP NetWeaver в базе данных Hana](https://blogs.msdn.microsoft.com/saponsqlserver/2017/11/21/sap-netweaver-installation-on-hana-database/).
+1. **Hana установлен** . см. инструкции по установке Hana в [установке SAP NetWeaver в базе данных Hana](/archive/blogs/saponsqlserver/sap-netweaver-installation-on-hana-database).
 1. **[Включение связи с хранилищем](#enable-communication-with-storage)** (Дополнительные сведения см. в отдельном разделе): Клиент должен настроить SSH с парой закрытых и открытых ключей и предоставить открытый ключ для каждого узла, на котором запланировано выполнение средств создания моментальных снимков в Microsoft Operations для установки в серверной части хранилища.
    1. **Для Azure NetApp Files (Дополнительные сведения см. в отдельном разделе)**: Клиент должен создать файл проверки подлинности субъекта-службы.
    1. **Для крупных экземпляров Azure (Дополнительные сведения см. в отдельном разделе)**: Клиент должен настроить SSH с парой закрытых и открытых ключей и предоставить открытый ключ для каждого узла, на котором запланировано выполнение средств создания моментальных снимков в Microsoft Operations для установки в серверной части хранилища.
@@ -714,6 +714,6 @@ global.ini,DEFAULT,,,persistence,log_backup_timeout_s,900
 global.ini,SYSTEM,,,persistence,log_backup_timeout_s,300
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка средства создания моментальных снимков с единообразным применением приложений Azure](azacsnap-cmd-ref-configure.md)

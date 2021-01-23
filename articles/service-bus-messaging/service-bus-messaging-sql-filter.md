@@ -3,16 +3,16 @@ title: Синтаксис фильтра SQL для правила подпис�
 description: В этой статье содержатся сведения о грамматике фильтра SQL. Фильтр SQL поддерживает подмножество стандарта SQL-92.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: 60f3cb6e85cef7a166c353f78cfb50405b962bdd
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 93739b0d64fb029f4d2af1d8dbbf91947085337d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633177"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737665"
 ---
 # <a name="subscription-rule-sql-filter-syntax"></a>Синтаксис фильтра SQL правила подписки
 
-*Фильтр SQL* — это один из доступных типов фильтров для подписок на разделы служебной шины. Это текстовое выражение, которое используется в качестве основы для подмножества стандарта SQL-92. Выражения фильтра используются с `sqlExpression` элементом свойства "sqlFilter" служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--filter-sql-expression`](/cli/azure/servicebus/topic/subscription/rule#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
+*Фильтр SQL* — это один из доступных типов фильтров для подписок на разделы служебной шины. Это текстовое выражение, которое является экономичным для подмножества стандарта SQL-92. Выражения фильтра используются с `sqlExpression` элементом свойства "sqlFilter" служебной шины `Rule` в [шаблоне Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)или в Azure CLI `az servicebus topic subscription rule create` [`--filter-sql-expression`](/cli/azure/servicebus/topic/subscription/rule#az_servicebus_topic_subscription_rule_create) аргументе команды и нескольких функциях пакета SDK, которые позволяют управлять правилами подписки.
 
 Служебная шина уровня "Премиум" также поддерживает [синтаксис селектора сообщений SQL JMS](https://docs.oracle.com/javaee/7/api/javax/jms/Message.html) через API JMS 2,0.
 
@@ -52,7 +52,7 @@ ms.locfileid: "98633177"
   
 -   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. `sys`Значение указывает область системы, где `<property_name>` — это имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). `user` Указывает область пользователя, где `<property_name>` является ключом словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) . `user` SCOPE является областью по умолчанию, если она `<scope>` не указана.  
   
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Примечания
 
 Попытка доступа к несуществующему системному свойству является ошибкой, в то время как попытка доступа к несуществующему свойству пользователя не является ошибкой. Вместо этого несуществующее свойство пользователя вычисляется внутри системы как неизвестное значение. Неизвестное значение обрабатывается особым образом во время вычисления оператора.  
   
@@ -105,7 +105,7 @@ ms.locfileid: "98633177"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Примечания
   
 Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Он используется как шаблон для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
@@ -120,7 +120,7 @@ ms.locfileid: "98633177"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Комментарии  
+### <a name="remarks"></a>Примечания  
 
 Свойство `<escape_char>` должно быть выражением, которое будет вычисляться в качестве строки с 1 символом. Он используется в качестве escape-символа для оператора LIKE.  
   
@@ -169,7 +169,7 @@ ms.locfileid: "98633177"
       TRUE | FALSE  
 ```  
   
-### <a name="remarks"></a>Комментарии  
+### <a name="remarks"></a>Примечания  
 
 Логические константы представлены в виде ключевого слова **TRUE** или **FALSE**. Значения хранятся в виде `System.Boolean`.  
   
@@ -179,7 +179,7 @@ ms.locfileid: "98633177"
 <string_constant>  
 ```  
   
-### <a name="remarks"></a>Комментарии  
+### <a name="remarks"></a>Примечания  
 
 Строковые константы заключаются в одинарные кавычки и включают любые допустимые символы Юникода. Одинарная кавычка, внедренная в строковую константу, представляется в виде двух одинарных кавычек.  
   
@@ -191,7 +191,7 @@ ms.locfileid: "98633177"
       property(name) | p(name)  
 ```  
   
-### <a name="remarks"></a>Комментарии
+### <a name="remarks"></a>Примечания
   
 `newid()`Функция возвращает объект, `System.Guid` сформированный `System.Guid.NewGuid()` методом.  
   
@@ -272,6 +272,65 @@ ms.locfileid: "98633177"
 
 ## <a name="examples"></a>Примеры
 
+### <a name="filter-on-system-properties"></a>Фильтрация по свойствам системы
+Для ссылки на системное свойство в фильтре используйте следующий формат: `sys.<system-property-name>` . 
+
+```csharp
+sys.Label LIKE '%bus%'`
+sys.messageid = 'xxxx'
+sys.correlationid like 'abc-%'
+```
+
+## <a name="filter-on-message-properties"></a>Фильтрация по свойствам сообщения
+Ниже приведены примеры использования свойств сообщений в фильтре. Доступ к свойствам сообщений можно получить с помощью `user.property-name` или просто `property-name` .
+
+```csharp
+MessageProperty = 'A'
+SuperHero like 'SuperMan%'
+```
+
+### <a name="filter-on-message-properties-with-special-characters"></a>Фильтрация по свойствам сообщения с помощью специальных символов
+Если имя свойства сообщения содержит специальные символы, используйте двойные кавычки ( `"` ), чтобы заключить имя свойства. Например, если имя свойства — `"http://schemas.microsoft.com/xrm/2011/Claims/EntityLogicalName"` , используйте следующий синтаксис в фильтре. 
+
+```csharp
+"http://schemas.microsoft.com/xrm/2011/Claims/EntityLogicalName" = 'account'
+```
+
+### <a name="filter-on-message-properties-with-numeric-values"></a>Фильтрация по свойствам сообщения с помощью числовых значений
+В следующих примерах показано, как можно использовать свойства с числовыми значениями в фильтрах. 
+
+```csharp
+MessageProperty = 1
+MessageProperty > 1
+MessageProperty > 2.08
+MessageProperty = 1 AND MessageProperty2 = 3
+MessageProperty = 1 OR MessageProperty2 = 3
+```
+
+### <a name="parameter-based-filters"></a>Фильтры на основе параметров
+Ниже приведено несколько примеров использования фильтров на основе параметров. В этих примерах `DataTimeMp` свойство является свойством Message типа `DateTime` и `@dtParam` является параметром, передаваемым в фильтр в качестве `DateTime` объекта.
+
+```csharp
+DateTimeMp < @dtParam
+DateTimeMp > @dtParam
+
+(DateTimeMp2-DateTimeMp1) <= @timespan //@timespan is a parameter of type TimeSpan
+DateTimeMp2-DateTimeMp1 <= @timespan
+```
+
+### <a name="using-in-and-not-in"></a>Использование IN и NOT IN
+
+```csharp
+StoreId IN('Store1', 'Store2', 'Store3')"
+
+sys.To IN ('Store5','Store6','Store7') OR StoreId = 'Store8'
+
+sys.To NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8') OR StoreId NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8')
+```
+
+Пример для C# см. [в разделе Пример фильтров разделов на сайте GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Azure.Messaging.ServiceBus/BasicSendReceiveTutorialwithFilters).
+
+
 ### <a name="set-rule-action-for-a-sql-filter"></a>Задание действия правила для фильтра SQL
 
 ```csharp
@@ -296,36 +355,12 @@ var filterActionRule = new RuleDescription
 await this.mgmtClient.CreateRuleAsync(topicName, subscriptionName, filterActionRule);
 ```
 
-### <a name="sql-filter-on-a-system-property"></a>Фильтр SQL для системного свойства
 
-```csharp
-sys.Label LIKE '%bus%'`
-```
-
-### <a name="using-or"></a>Использование или 
-
-```csharp
- sys.Label LIKE '%bus%'` OR `user.tag IN ('queue', 'topic', 'subscription')
-```
-
-### <a name="using-in-and-not-in"></a>Использование IN и NOT IN
-
-```csharp
-StoreId IN('Store1', 'Store2', 'Store3')"
-
-sys.To IN ('Store5','Store6','Store7') OR StoreId = 'Store8'
-
-sys.To NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8') OR StoreId NOT IN ('Store1','Store2','Store3','Store4','Store5','Store6','Store7','Store8')
-```
-
-Пример для C# см. [в разделе Пример фильтров разделов на сайте GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Azure.Messaging.ServiceBus/BasicSendReceiveTutorialwithFilters).
-
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Класс SQLFilter (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)
 - [Класс SQLFilter (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlfilter)
 - [Класс SqlFilter (Java)](/java/api/com.microsoft.azure.servicebus.rules.SqlFilter)
 - [Склрулефилтер (JavaScript)](/javascript/api/@azure/service-bus/sqlrulefilter)
-- [AZ servicebus раздел правило подписки](/cli/azure/servicebus/topic/subscription/rule)
+- [`az servicebus topic subscription rule`](/cli/azure/servicebus/topic/subscription/rule)
 - [New-Азсервицебусруле](/powershell/module/az.servicebus/new-azservicebusrule)

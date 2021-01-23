@@ -5,19 +5,19 @@ ms.custom: subject-cost-optimization
 ms.service: app-service
 ms.topic: how-to
 ms.date: 01/01/2021
-ms.openlocfilehash: 85035ff894127df4e9eb8334702fd9546d7a63c3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 9d742606435f62d48446bb8ad56ece7a31b76e47
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598701"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736227"
 ---
 # <a name="plan-and-manage-costs-for-azure-app-service"></a>Планирование и управление затратами для службы приложений Azure
 
 <!-- Check out the following published examples:
-- [https://docs.microsoft.com/azure/cosmos-db/plan-manage-costs](https://docs.microsoft.com/azure/cosmos-db/plan-manage-costs)
-- [https://docs.microsoft.com/azure/storage/common/storage-plan-manage-costs](https://docs.microsoft.com/azure/storage/common/storage-plan-manage-costs)
-- [https://docs.microsoft.com/azure/machine-learning/concept-plan-manage-cost](https://docs.microsoft.com/azure/machine-learning/concept-plan-manage-cost)
+- [https://docs.microsoft.com/azure/cosmos-db/plan-manage-costs](../cosmos-db/plan-manage-costs.md)
+- [https://docs.microsoft.com/azure/storage/common/storage-plan-manage-costs](../storage/common/storage-plan-manage-costs.md)
+- [https://docs.microsoft.com/azure/machine-learning/concept-plan-manage-cost](../machine-learning/concept-plan-manage-cost.md)
 -->
 
 <!-- Note for Azure service writer: Links to Cost Management articles are full URLS with the ?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn campaign suffix. Leave those URLs intact. They're used to measure traffic to Cost Management articles.
@@ -25,7 +25,7 @@ ms.locfileid: "98598701"
 
 <!-- Note for Azure service writer: Modify the following for your service. -->
 
-В этой статье описывается планирование и управление затратами для службы приложений Azure. Сначала вы используете калькулятор цен Azure, чтобы помочь спланировать затраты на службу приложений, прежде чем добавлять ресурсы для службы для оценки затрат. После добавления ресурсов Azure ознакомьтесь с оценочными затратами. После начала работы с ресурсами службы приложений используйте функции [управления затратами](https://docs.microsoft.com/azure/cost-management-billing/?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для установки бюджетов и отслеживания затрат. Вы также можете просматривать прогнозные затраты и выявление тенденций расходов для выявления областей, в которых может потребоваться выполнить действия. Стоимость службы приложений Azure — это лишь часть ежемесячных затрат в счете Azure. Хотя в этой статье объясняется, как спланировать и управлять затратами для службы приложений, вы оплачиваете все службы и ресурсы Azure, используемые в вашей подписке Azure, включая сторонние службы.
+В этой статье описывается планирование и управление затратами для службы приложений Azure. Сначала вы используете калькулятор цен Azure, чтобы помочь спланировать затраты на службу приложений, прежде чем добавлять ресурсы для службы для оценки затрат. После добавления ресурсов Azure ознакомьтесь с оценочными затратами. После начала работы с ресурсами службы приложений используйте функции [управления затратами](../cost-management-billing/index.yml?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для установки бюджетов и отслеживания затрат. Вы также можете просматривать прогнозные затраты и выявление тенденций расходов для выявления областей, в которых может потребоваться выполнить действия. Стоимость службы приложений Azure — это лишь часть ежемесячных затрат в счете Azure. Хотя в этой статье объясняется, как спланировать и управлять затратами для службы приложений, вы оплачиваете все службы и ресурсы Azure, используемые в вашей подписке Azure, включая сторонние службы.
 
 ## <a name="relevant-costs-for-app-service"></a>Важные затраты на службу приложений
 
@@ -36,10 +36,10 @@ ms.locfileid: "98598701"
 В зависимости от того, какая функция используется в службе приложений, могут быть созданы следующие ресурсы для начисления затрат:
 
 - **План службы приложений**  Требуется для размещения приложения службы приложений.
-- **Изолированный уровень**  Для среды службы приложений требуется [Виртуальная сеть](/azure/virtual-network/) .
-- **Резервное копирование**  Для создания резервных копий требуется [учетная запись хранения](/azure/storage/) .
-- **Журналы диагностики**  Вы можете выбрать [учетную запись хранения](/azure/storage/) в качестве параметра ведения журнала или интегрировать ее с [Azure log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
-- **Сертификаты службы приложений**  Сертификаты, приобретаемые в Azure, должны храниться в [Azure Key Vault](/azure/key-vault/).
+- **Изолированный уровень**  Для среды службы приложений требуется [Виртуальная сеть](../virtual-network/index.yml) .
+- **Резервное копирование**  Для создания резервных копий требуется [учетная запись хранения](../storage/index.yml) .
+- **Журналы диагностики**  Вы можете выбрать [учетную запись хранения](../storage/index.yml) в качестве параметра ведения журнала или интегрировать ее с [Azure log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
+- **Сертификаты службы приложений**  Сертификаты, приобретаемые в Azure, должны храниться в [Azure Key Vault](../key-vault/index.yml).
 
 Другие ресурсы затрат для службы приложений (см. Дополнительные сведения о [ценах на службу приложений](https://azure.microsoft.com/pricing/details/app-service/) ):
 
@@ -51,7 +51,7 @@ ms.locfileid: "98598701"
 
 При удалении всех приложений в плане службы приложений план продолжит начислять расходы на основе настроенной ценовой категории и количества экземпляров. Чтобы избежать нежелательной оплаты, удалите план или масштабируйте его на **бесплатный** уровень.
 
-После удаления ресурсов службы приложений Azure ресурсы из связанных служб Azure могут продолжать существовать. Они продолжают начислять затраты до тех пор, пока вы не удалите их. Пример:
+После удаления ресурсов службы приложений Azure ресурсы из связанных служб Azure могут продолжать существовать. Они продолжают начислять затраты до тех пор, пока вы не удалите их. Например:
 
 - Виртуальная сеть, созданная для плана службы приложений **изолированного** уровня.
 - Учетные записи хранения, созданные для хранения резервных копий или журналов диагностики
@@ -155,7 +155,7 @@ ms.locfileid: "98598701"
 
 <!-- Note to Azure service writer: Modify the following as needed for your service. -->
 
-Вы можете создавать [бюджеты](../cost-management/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](../cost-management/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
+Вы можете создавать [бюджеты](../cost-management-billing/costs/tutorial-acm-create-budgets.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) для управления затратами и создавать [оповещения](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) , которые автоматически уведомляют заинтересованных лиц о трате аномалий и чрезмерной трате рисков. Оповещения основываются на расходах по сравнению с пороговыми значениями бюджета и затрат. Бюджеты и оповещения создаются для подписок Azure и групп ресурсов, поэтому они полезны в рамках общей стратегии мониторинга затрат. 
 
 Бюджеты можно создавать с помощью фильтров для конкретных ресурсов или служб в Azure, если требуется дополнительная детализация в мониторинге. Фильтры помогают предотвратить случайное создание новых ресурсов, изменяющих дополнительные деньги. Дополнительные сведения о параметрах фильтра, доступных при создании бюджета, см. в разделе [Параметры группы и фильтра](../cost-management-billing/costs/group-filter.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 
@@ -168,8 +168,8 @@ ms.locfileid: "98598701"
 - Узнайте больше о том, как цены работают со службой хранилища Azure. См. [цены на Службу приложений](https://azure.microsoft.com/pricing/details/app-service/).
 - Узнайте [, как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)".
 - Дополнительные сведения об управлении затратами с помощью [анализа затрат](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Узнайте, как [предотвратить непредвиденные затраты](../cost-management-billing/manage/getting-started.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Пройдите курс обучения по [управлению затратами](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
+- Узнайте, как [предотвратить непредвиденные затраты](../cost-management-billing/cost-management-billing-overview.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Пройдите курс обучения по [управлению затратами](/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) .
 
 <!-- Insert links to other articles that might help users save and manage costs for you service here.
 

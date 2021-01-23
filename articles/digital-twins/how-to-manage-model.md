@@ -7,13 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.custom: contperf-fy21q3
-ms.openlocfilehash: 00e6802f37ec60467edbea98038dd23fcba1239a
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: c193565035435b29f77177086c535fae0903ccd4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185501"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737784"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Управление моделями цифровых двойников Azure
 
@@ -21,7 +20,7 @@ ms.locfileid: "98185501"
 
 К операциям управления относятся передача, проверка, извлечение и удаление моделей. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -62,7 +61,7 @@ ms.locfileid: "98185501"
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/model_operations.cs" id="CreateModels_multi":::
 
-Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Пример:
+Файлы модели могут содержать более одной модели. В этом случае модели необходимо разместить в массиве JSON. Например:
 
 :::code language="json" source="~/digital-twins-docs-samples/models/Planet-Moon.json":::
 
@@ -196,7 +195,7 @@ ms.locfileid: "98185501"
 
 Azure Digital двойников не препятствует этому состоянию, поэтому будьте внимательны, чтобы убедиться, что они остаются действительными с помощью переключателя определения модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как создавать цифровые двойников и управлять ими на основе моделей:
 * [*Практические руководства. Управление цифровыми двойников*](how-to-manage-twin.md)

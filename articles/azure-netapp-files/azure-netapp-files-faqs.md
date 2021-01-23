@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/21/2020
+ms.date: 01/21/2021
 ms.author: b-juche
-ms.openlocfilehash: f680b1ec76200cb4d3bfc90cd83a2c134f379245
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: a8286768dac33e48bc4d7c4dce0d9934da08c319
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696131"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736077"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -269,7 +269,7 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 Использование Azure NetApp Files NFS или томов SMB с AVS поддерживается в следующих регионах: Восточная часть США, Западная часть США, Западная Европа и Восточная Австралия.
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Следующие шаги  
 
 - [Microsoft Azure ExpressRoute часто задаваемые вопросы](../expressroute/expressroute-faqs.md)
 - [Вопросы и ответы по виртуальная сеть Microsoft Azure](../virtual-network/virtual-networks-faq.md)

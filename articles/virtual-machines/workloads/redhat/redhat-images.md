@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 02/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: dbff136ac5787ef9549cca9dc8f946c56a138986
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 293245d6778a40e234cdca177905c15dc88dd04f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900507"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737767"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Общие сведения об образах Red Hat Enterprise Linux
 
@@ -60,8 +60,8 @@ az vm create --name RhelVM --resource-group TestRG --image RedHat:RHEL:8-LVM:lat
 ```
 
 >[!NOTE]
-> Как правило, при сравнении версий для определения последней версии используются правила [метода CompareTo](/dotnet/api/system.version.compareto?view=netcore-3.1#system_version_compareto_system_version_).
-Это сравнение версий образа выполняется путем сравнения значений как объекта [версии](/dotnet/api/system.version.-ctor?view=netframework-4.8) , а не строки.
+> Как правило, при сравнении версий для определения последней версии используются правила [метода CompareTo](/dotnet/api/system.version.compareto#system_version_compareto_system_version_).
+Это сравнение версий образа выполняется путем сравнения значений как объекта [версии](/dotnet/api/system.version.-ctor) , а не строки.
 
 ## <a name="rhel-6-image-types"></a>Типы образов RHEL 6
 
@@ -146,7 +146,7 @@ RedHat:RHEL:7.6:7.6.2019102813
 RHEL 7.4      |RedHat: RHEL: 7.4:7.4.2019041718 | Образы, опубликованные 2019 апреля и более поздних версий, по умолчанию ЕУС.|
 RHEL 7.5      |RedHat: RHEL: 7.5:7.5.2019060305 | Изображения, опубликованные 2019 июня и более поздних версий, по умолчанию ЕУС. |
 RHEL 7.6      |RedHat: RHEL: 7.6:7.6.2019052206 | Опубликованные образы 2019 и более поздних версий по умолчанию ЕУС. |
-RHEL 8,0      |Недоступно                            | Нет ЕУС, доступных по Red Hat.                               |
+RHEL 8,0      |Н/Д                            | Нет ЕУС, доступных по Red Hat.                               |
 
 ### <a name="update-services-for-sap"></a>Обновление служб для SAP
 
@@ -176,7 +176,7 @@ RHEL 8,0      |Недоступно                            | Нет ЕУС, 
 
 Текущая политика — для сохранения всех ранее опубликованных образов. Мы оставляем за собой право удалить образы, которые вызывают какие-либо проблемы. Например, могут быть удалены образы с неверными конфигурациями из-за последующих обновлений платформы или компонентов. Образы, которые могут быть удалены, соответствуют текущей политике Azure Marketplace для предоставления уведомлений в течение 30 дней до удаления образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Полный список образов RHEL в Azure см. в статье [образы Red Hat Enterprise Linux (RHEL), доступные в Azure](./redhat-imagelist.md).
 * Дополнительные сведения о инфраструктуре обновления Red Hat для Azure см. в разделе [инфраструктура обновления Red Hat для виртуальных машин RHEL по запросу в Azure](./redhat-rhui.md).

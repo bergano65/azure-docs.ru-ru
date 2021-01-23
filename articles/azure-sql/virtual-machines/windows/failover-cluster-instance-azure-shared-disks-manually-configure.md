@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: becf9f8c7f6a967ed63cfd3040de90de76e32fff
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 8daec71745c9eff9a7db5bb34cb3596973def4aa
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607275"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736419"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Создание FCI с общими дисками Azure (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -27,12 +27,12 @@ ms.locfileid: "97607275"
 
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
 - Подписка Azure. Начните работу [бесплатно](https://azure.microsoft.com/free/). 
-- [Две или более виртуальных машин Windows Azure](failover-cluster-instance-prepare-vm.md). [Наборы доступности](../../../virtual-machines/windows/tutorial-availability-sets.md) и [группы размещения](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) ппгс, поддерживаемые для SSD (цен. Категория "Премиум") и [зон доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , поддерживаются для Ultra-дисков. При использовании ППГ все узлы должны находиться в одной группе.
+- [Две или более виртуальных машин Windows Azure](failover-cluster-instance-prepare-vm.md). [Наборы доступности](../../../virtual-machines/windows/tutorial-availability-sets.md) и [группы размещения](../../../virtual-machines/co-location.md#proximity-placement-groups) ппгс, поддерживаемые для SSD (цен. Категория "Премиум") и [зон доступности](../../../virtual-machines/windows/create-portal-availability-zone.md#confirm-zone-for-managed-disk-and-ip-address) , поддерживаются для Ultra-дисков. При использовании ППГ все узлы должны находиться в одной группе.
 - учетная запись с разрешениями на создание объектов как на виртуальных машинах Azure, так и в Active Directory;
 - Последняя версия [PowerShell](/powershell/azure/install-az-ps). 
 
@@ -211,7 +211,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 
 - Поддерживается только регистрация с расширением агента IaaS SQL в [режиме упрощенного управления](sql-server-iaas-agent-extension-automate-management.md#management-modes) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](failover-cluster-instance-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](failover-cluster-instance-distributed-network-name-dnn-configure.md). 
 

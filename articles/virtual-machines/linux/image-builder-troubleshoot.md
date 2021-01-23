@@ -7,12 +7,12 @@ ms.date: 10/02/2020
 ms.topic: troubleshooting
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 7c937353c645ee5d977a52ec0f8e935eba19a940
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 73984694d764234e9e1ec11e6b189a9ad85d97a8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969982"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737410"
 ---
 # <a name="troubleshoot-azure-image-builder-service"></a>Устранение неполадок службы Azure Image Builder
 
@@ -152,11 +152,11 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 
 При выполнении сборки образа журналы создаются и сохраняются в учетной записи хранения. Построитель образов Azure создает учетную запись хранения во временной группе ресурсов при создании артефакта шаблона образа.
 
-Имя учетной записи хранения использует следующий шаблон: **IT_ \<ImageResourceGroupName\> _\<TemplateName\>_ \<GUID\> **
+Имя учетной записи хранения использует следующий шаблон: **IT_ \<ImageResourceGroupName\> _\<TemplateName\>_ \<GUID\>**
 
 Например, *IT_aibmdi_helloImageTemplateLinux01*.
 
-Вы можете просмотреть настройку. Войдите в учетную запись хранения в группе ресурсов, выбрав BLOB-объекты **учетной записи хранения**  >  **Blobs**  >  `packerlogs` .  Затем выберите **каталог > Настройка. log**.
+Вы можете просмотреть настройку. Войдите в учетную запись хранения в группе ресурсов, выбрав BLOB-объекты **учетной записи хранения**  >    >  `packerlogs` .  Затем выберите **каталог > Настройка. log**.
 
 
 ### <a name="understanding-the-customization-log"></a>Основные сведения о журнале настройки
@@ -209,7 +209,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
     ```
 5. Стадия отмены подготовки. В построителе образов Azure добавлен скрытый элемент настройки. Этот этап отмены подготовки отвечает за подготовку виртуальной машины для отмены подготовки. Он запускает Windows Sysprep (с помощью c:\DeprovisioningScript.ps1) или в Linux waagent unготовить (с помощью/ТМП/депровисионингскрипт.ш). 
 
-    Пример:
+    Например:
     ```text
     PACKER ERR 2020/03/04 23:05:04 [INFO] (telemetry) Starting provisioner powershell
     PACKER ERR 2020/03/04 23:05:04 packer: 2020/03/04 23:05:04 Found command: if( TEST-PATH c:\DeprovisioningScript.ps1 ){cat c:\DeprovisioningScript.ps1} else {echo "Deprovisioning script [c:\DeprovisioningScript.ps1] could not be found. Image build may fail or the VM created from the Image may not boot. Please make sure the deprovisioning script is not accidentally deleted by a Customizer in the Template."}
@@ -247,7 +247,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 
 Проверьте журнал на обнаружение сбоев настраиваемых типов. Выполните поиск по запросу *(телеметрии)*. 
 
-Пример:
+Например:
 ```text
 (telemetry) Starting provisioner windows-update
 (telemetry) ending windows-update
@@ -320,7 +320,7 @@ Deployment failed. Correlation ID: XXXXXX-XXXX-XXXXXX-XXXX-XXXXXX. Failed in dis
 
 #### <a name="cause"></a>Причина
 
-Истекло время ожидания создания образа и его репликация в общую галерею образов (SIG) в построителе образов. Если изображение внедряется в подпись, может быть, предполагается, что сборка образа выполнена успешно. Однако общий процесс завершился ошибкой, так как для завершения репликации в построителе образов Ожидалась коллекция общих образов. Несмотря на то, что сборка завершилась неудачно, Репликация продолжится. Свойства версии образа можно получить, проверив *рунаутпут*распространения.
+Истекло время ожидания создания образа и его репликация в общую галерею образов (SIG) в построителе образов. Если изображение внедряется в подпись, может быть, предполагается, что сборка образа выполнена успешно. Однако общий процесс завершился ошибкой, так как для завершения репликации в построителе образов Ожидалась коллекция общих образов. Несмотря на то, что сборка завершилась неудачно, Репликация продолжится. Свойства версии образа можно получить, проверив *рунаутпут* распространения.
 
 ```bash
 $runOutputName=<distributionRunOutput>
@@ -586,7 +586,7 @@ template name:  t_1556938436xxx
 
 Если сборка не была отменена пользователем, она была отменена агентом пользователя Azure DevOps. Скорее всего, время ожидания в 1 час истекло из-за возможностей Azure DevOps. Если вы используете частный проект и агент, вы получаете 60 минут времени сборки. Если сборка превышает время ожидания, DevOps отменяет выполняемую задачу.
 
-Дополнительные сведения о возможностях и ограничениях Azure DevOps см. в разделе [агенты, размещенные в Майкрософт](/azure/devops/pipelines/agents/hosted?view=azure-devops#capabilities-and-limitations)
+Дополнительные сведения о возможностях и ограничениях Azure DevOps см. в разделе [агенты, размещенные в Майкрософт](/azure/devops/pipelines/agents/hosted#capabilities-and-limitations)
  
 #### <a name="solution"></a>Решение
 
@@ -672,6 +672,6 @@ Support Topic: Azure Features
 Support Subtopic: Azure Image Builder
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в разделе [Общие сведения о построителе образов Azure](image-builder-overview.md).

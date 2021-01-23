@@ -3,12 +3,12 @@ title: Устранение неполадок при восстановлени
 description: Устранение неполадок при восстановлении файлов и папок из резервной копии виртуальной машины Azure.
 ms.topic: troubleshooting
 ms.date: 07/12/2020
-ms.openlocfilehash: aec69b91ad1dae5864e5e8fba61c53e6d15887f4
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: c4d0d233237cb477d72efea0b91d4e5288e2a302
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624512"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735883"
 ---
 # <a name="troubleshoot-issues-in-file-recovery-of-an-azure-vm-backup"></a>Устранение неполадок при восстановлении файлов резервной копии виртуальной машины Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "98624512"
 
 ### <a name="you-cant-download-the-script"></a>Невозможно скачать скрипт
 
-1. Убедитесь, что у вас есть [необходимые разрешения для скачивания скрипта](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#select-recovery-point-who-can-generate-script).
+1. Убедитесь, что у вас есть [необходимые разрешения для скачивания скрипта](./backup-azure-restore-files-from-vm.md#select-recovery-point-who-can-generate-script).
 1. Проверьте подключение к целевому IP-адресу Azure. В командной строке с повышенными привилегиями выполните одну из следующих команд:
 
    `nslookup download.microsoft.com`
@@ -67,7 +67,7 @@ ms.locfileid: "98624512"
 
 При подключении к целевому сообщению может появиться сообщение об ошибке "исключение перехвачено.
 
-1. Убедитесь, что компьютер, на котором выполняется сценарий, соответствует [требованиям к доступу](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm#step-4-access-requirements-to-successfully-run-the-script).
+1. Убедитесь, что компьютер, на котором выполняется сценарий, соответствует [требованиям к доступу](./backup-azure-restore-files-from-vm.md#step-4-access-requirements-to-successfully-run-the-script).
 1. Проверьте подключение к целевому IP-адресу Azure. В командной строке с повышенными привилегиями выполните одну из следующих команд:
 
    `nslookup download.microsoft.com`

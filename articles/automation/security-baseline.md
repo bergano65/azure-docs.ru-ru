@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1626ee074d51048dbf45c629f261a550822d746c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: ea984e527eb526e49c87ce5385ba5715803cc72d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200844"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737258"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Базовый уровень безопасности Azure для автоматизации
 
@@ -556,7 +556,7 @@ ms.locfileid: "98200844"
 
 * [Общие сведения о шифровании при передаче с помощью Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
-* [Принудительное применение Azure Automation TLS 1,2](/azure/active-directory/hybrid/reference-connect-tls-enforcement)
+* [Принудительное применение Azure Automation TLS 1,2](../active-directory/hybrid/reference-connect-tls-enforcement.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -938,7 +938,7 @@ ms.locfileid: "98200844"
 
 В большинстве случаев шаблоны базовых виртуальных машин Майкрософт в сочетании с конфигурацией состояния службы автоматизации Azure могут помочь в собрании и обслуживании требований безопасности.
 
-* [Сведения о том, как скачать шаблон виртуальной машины](../virtual-machines/windows/download-template.md)
+* [Сведения о том, как скачать шаблон виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template)
 
 * [Сведения о создании шаблонов ARM](../virtual-machines/windows/ps-template.md)
 

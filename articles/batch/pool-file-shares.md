@@ -3,12 +3,12 @@ title: Общая папка Azure для пулов пакетной служб
 description: Как подключить общую папку с помощью функции "Файлы Azure" к вычислительным узлам в пуле Linux или Windows пакетной службы Azure
 ms.topic: how-to
 ms.date: 05/24/2018
-ms.openlocfilehash: 6bbaba20512a17de563e74ba095057c5c3f71f6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5682e7ba853973592c3a650a06ce72615cec7b6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87986429"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735500"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Использование общей папки Azure с пулом пакетной службы
 
@@ -20,7 +20,7 @@ ms.locfileid: "87986429"
 
 * Общие папки Azure — [экономичное решение](https://azure.microsoft.com/pricing/details/storage/files/). Кроме того, для них можно настроить репликацию данных в другой регион, чтобы обеспечить глобальную избыточность. 
 
-* Вы можете параллельно подключить общую папку Azure c локального компьютера. Тем не менее убедитесь, что вы понимаете [влияние на параллелизм](../storage/common/storage-concurrency.md) , особенно при использовании интерфейсов API интерфейса RESTful.
+* Вы можете параллельно подключить общую папку Azure c локального компьютера. Тем не менее убедитесь, что вы понимаете [влияние на параллелизм](../storage/blobs/concurrency-manage.md) , особенно при использовании интерфейсов API интерфейса RESTful.
 
 * Также см. [рекомендации по планированию](../storage/files/storage-files-planning.md) для общих папок Azure.
 

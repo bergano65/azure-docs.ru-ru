@@ -7,12 +7,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0de1f1c1012315d2b9e6dd0297443f2633440869
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03536bbfedc7f5ecf2fe8d8bb6bd3035f27b72c7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90970968"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737886"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 
@@ -45,7 +45,7 @@ ms.locfileid: "90970968"
 
 ### <a name="connect-to-your-azure-account"></a>Подключение к учетной записи Azure
 
-Перед использованием Azure CLI или Azure PowerShell нужно установить подключение к подписке Azure. Для этого войдите в систему [с помощью Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0) или укажите учетные данные на портале Azure при появлении соответствующего запроса.
+Перед использованием Azure CLI или Azure PowerShell нужно установить подключение к подписке Azure. Для этого войдите в систему [с помощью Azure CLI](/cli/azure/authenticate-azure-cli), [Azure PowerShell](/powershell/azure/authenticate-azureps) или укажите учетные данные на портале Azure при появлении соответствующего запроса.
 
 ```azurecli-interactive
 az login
