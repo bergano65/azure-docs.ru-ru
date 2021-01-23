@@ -7,17 +7,17 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: e60f77495cdb822a0c50be936c2b0d3ac31348f3
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 2b68afcb9d200970ca4ea29b13175223f52c77e0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116715"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730995"
 ---
 # <a name="cross-service-query---azure-monitor-and-azure-data-explorer-preview"></a>Кросс-Сервисный запрос — Azure Monitor и Azure обозреватель данных (Предварительная версия)
-Создавайте запросы между службами между [Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/), [Application Insights](/azure/azure-monitor/app/app-insights-overview)и [log Analytics](/azure/azure-monitor/platform/data-platform-logs).
+Создавайте запросы между службами между [Azure обозреватель данных](/azure/data-explorer/), [Application Insights](../app/app-insights-overview.md)и [log Analytics](./data-platform-logs.md).
 ## <a name="azure-monitor-and-azure-data-explorer-cross-service-querying"></a>Azure Monitor и Azure обозреватель данных запросы между службами
-Этот интерфейс позволяет [создавать запросы между службами между Azure обозреватель данных и Azure Monitor](https://docs.microsoft.com/azure/data-explorer/query-monitor-data) , а также [создавать запросы между службами между Azure Monitor и обозреватель данных Azure](https://docs.microsoft.com/azure/azure-monitor/platform/azure-monitor-data-explorer-proxy).
+Этот интерфейс позволяет [создавать запросы между службами между Azure обозреватель данных и Azure Monitor](/azure/data-explorer/query-monitor-data) , а также [создавать запросы между службами между Azure Monitor и обозреватель данных Azure](./azure-monitor-data-explorer-proxy.md).
 
 Например, (запрос обозреватель данных Azure из Log Analytics):
 ```kusto
@@ -34,15 +34,15 @@ CustomEvents | where aField == 1
 
 Экспорт данных из Azure Monitor в учетную запись хранения Azure обеспечивает недорогое хранение и возможность перераспределения журналов в разные регионы.
 
-Используйте обозреватель данных Azure для запроса данных, экспортированных из рабочих областей Log Analytics. После настройки поддерживаемые таблицы, отправленные из рабочих областей в учетную запись хранения Azure, будут доступны в качестве источника данных для Azure обозреватель данных. [Запрос экспортированных данных из Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/platform/azure-data-explorer-query-storage).
+Используйте обозреватель данных Azure для запроса данных, экспортированных из рабочих областей Log Analytics. После настройки поддерживаемые таблицы, отправленные из рабочих областей в учетную запись хранения Azure, будут доступны в качестве источника данных для Azure обозреватель данных. [Запрос экспортированных данных из Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)](./azure-data-explorer-query-storage.md).
 
 :::image type="content" source="media\azure-data-explorer-query-storage\exported-data-query.png" alt-text="Запрос обозреватель данных Azure из потока хранилища.":::
 
 >[!tip] 
-> * Чтобы экспортировать все данные из рабочей области Log Analytics в учетную запись хранения Azure или концентратор событий, используйте функцию экспорта данных рабочей области Log Analytics в журналах Azure Monitor. [См. раздел Экспорт данных рабочей области log Analytics в Azure Monitor (Предварительная версия)](https://docs.microsoft.com/azure/data-explorer/query-monitor-data).
+> * Чтобы экспортировать все данные из рабочей области Log Analytics в учетную запись хранения Azure или концентратор событий, используйте функцию экспорта данных рабочей области Log Analytics в журналах Azure Monitor. [См. раздел Экспорт данных рабочей области log Analytics в Azure Monitor (Предварительная версия)](/azure/data-explorer/query-monitor-data).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. также:
-* [создавайте запросы между службами между Azure обозреватель данных и Azure Monitor](https://docs.microsoft.com/azure/data-explorer/query-monitor-data). Запрос Azure Monitor данных из Azure обозреватель данных
-* [создавайте запросы между службами между Azure Monitor и обозреватель данных Azure](https://docs.microsoft.com/azure/azure-monitor/platform/azure-monitor-data-explorer-proxy). Запрос данных обозреватель данных Azure от Azure Monitor
-* [Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)](https://docs.microsoft.com/azure/data-explorer/query-monitor-data). Свяжите и запросите учетную запись хранилища BLOB-объектов Azure с Log Analytics экспортированными данными.
+* [создавайте запросы между службами между Azure обозреватель данных и Azure Monitor](/azure/data-explorer/query-monitor-data). Запрос Azure Monitor данных из Azure обозреватель данных
+* [создавайте запросы между службами между Azure Monitor и обозреватель данных Azure](./azure-monitor-data-explorer-proxy.md). Запрос данных обозреватель данных Azure от Azure Monitor
+* [Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)](/azure/data-explorer/query-monitor-data). Свяжите и запросите учетную запись хранилища BLOB-объектов Azure с Log Analytics экспортированными данными.

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: ad3a2ae9fd9a99398b384ef4e4a44820faccf8c7
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 1155b4274b97f540fd97bf39e51fd41c37bc9627
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675891"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730627"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Добавление диска к виртуальной машине Linux
 
@@ -21,7 +21,7 @@ ms.locfileid: "98675891"
 
 ## <a name="attach-a-new-disk-to-a-vm"></a>Подключение нового диска к виртуальной машине
 
-Если вам нужен новый пустой диск с данными в виртуальной машине, то используйте команду [az vm disk attach](/cli/azure/vm/disk?view=azure-cli-latest) с параметром `--new`. Если виртуальная машина находится в зоне доступности, то диск автоматически создается в одной зоне с виртуальной машиной. Дополнительные сведения см. в статье [Общие сведения о зонах доступности в Azure (предварительная версия)](../../availability-zones/az-overview.md). В следующем примере создается диск с именем *myDataDisk* размером 50 ГБ:
+Если вам нужен новый пустой диск с данными в виртуальной машине, то используйте команду [az vm disk attach](/cli/azure/vm/disk) с параметром `--new`. Если виртуальная машина находится в зоне доступности, то диск автоматически создается в одной зоне с виртуальной машиной. Дополнительные сведения см. в статье [Общие сведения о зонах доступности в Azure (предварительная версия)](../../availability-zones/az-overview.md). В следующем примере создается диск с именем *myDataDisk* размером 50 ГБ:
 
 ```azurecli
 az vm disk attach \
@@ -34,7 +34,7 @@ az vm disk attach \
 
 ## <a name="attach-an-existing-disk"></a>Подключение существующего диска
 
-Чтобы подключить существующий диск, найдите идентификатор диска и укажите его в команде [az vm disk attach](/cli/azure/vm/disk?view=azure-cli-latest). В следующем примере выполняется запрос диска *myDataDisk* в группе ресурсов *myResourceGroup*, а затем этот диск подключается к виртуальной машине *myVM*:
+Чтобы подключить существующий диск, найдите идентификатор диска и укажите его в команде [az vm disk attach](/cli/azure/vm/disk). В следующем примере выполняется запрос диска *myDataDisk* в группе ресурсов *myResourceGroup*, а затем этот диск подключается к виртуальной машине *myVM*:
 
 ```azurecli
 diskId=$(az disk show -g myResourceGroup -n myDataDisk --query 'id' -o tsv)

@@ -7,12 +7,13 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: ab2534e40bd6b324e94a91c6ac9c5f34fa6e6f31
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 44cee2b47ae8f96e2852dfdb5aefe73a7af67ed6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044209"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731340"
 ---
 # <a name="parse-and-validate-models-with-the-dtdl-parser-library"></a>Анализ и проверка моделей с помощью библиотеки анализатора ДТДЛ
 
@@ -69,7 +70,7 @@ DTDLValidator -i
 * Определите, может ли модель быть назначена другой модели.
 
 > [!NOTE]
-> Устройства [IoT Plug and Play (PnP)](../iot-pnp/overview-iot-plug-and-play.md) используют небольшой вариант синтаксиса для описания их функциональности. Этот вариант синтаксиса является семантически совместимым подмножеством ДТДЛ, которое используется в Azure Digital двойников. При использовании библиотеки анализатора нет необходимости знать, какой вариант синтаксиса использовался для создания ДТДЛ для цифрового двойника. Синтаксический анализатор всегда по умолчанию возвращает ту же модель для синтаксиса PnP и Azure Digital двойников.
+> Устройства [IoT Самонастраивающийся (PnP)](../iot-pnp/overview-iot-plug-and-play.md) используют небольшой вариант синтаксиса для описания их функциональности. Этот вариант синтаксиса является семантически совместимым подмножеством ДТДЛ, которое используется в Azure Digital двойников. При использовании библиотеки анализатора нет необходимости знать, какой вариант синтаксиса использовался для создания ДТДЛ для цифрового двойника. Синтаксический анализатор всегда по умолчанию возвращает ту же модель для синтаксиса PnP и Azure Digital двойников.
 
 ### <a name="code-with-the-parser-library"></a>Код с библиотекой анализатора
 
@@ -83,7 +84,7 @@ DTDLValidator -i
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/parseModels.cs":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Завершив написание моделей, см. статью как передать их (и выполнить другие операции управления) с помощью API-интерфейсов Дигиталтвинсмоделс:
 * [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md).

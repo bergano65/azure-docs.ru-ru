@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5c960c7fbcc29d0aaea7511ba2187c916e84ab3
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f8210e00824d7680f4eecde2f0b299dfcdc93b90
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935246"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730577"
 ---
 # <a name="f5-big-ip-access-policy-manager-and-azure-active-directory-integration-for-secure-hybrid-access"></a>F5 крупный — диспетчер политики доступа к IP-адресу и интеграция Azure Active Directory для безопасного гибридного доступа
 
@@ -29,19 +29,20 @@ SHA решает эту слабую точку, позволяя организ
 
 Наличие предварительной проверки подлинности Azure AD для опубликованных служб с большим IP-адресом предоставляет множество преимуществ.
 
-- Проверка подлинности без пароля с помощью [Windows Hello](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-overview), [MS Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-download-install), [быстрого удостоверения в сети (Fido)](https://docs.microsoft.com/azure/active-directory/authentication/howto-authentication-passwordless-security-key)и [проверки подлинности на основе сертификатов](https://docs.microsoft.com/azure/active-directory/authentication/active-directory-certificate-based-authentication-get-started)
+- Проверка подлинности без пароля с помощью [Windows Hello](/windows/security/identity-protection/hello-for-business/hello-overview), [MS Authenticator](../user-help/user-help-auth-app-download-install.md), [быстрого удостоверения в сети (Fido)](../authentication/howto-authentication-passwordless-security-key.md)и [проверки подлинности на основе сертификатов](../authentication/active-directory-certificate-based-authentication-get-started.md)
 
-- [Условный доступ](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) с вытеснением и [многофакторная проверка подлинности (MFA)](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks)
+- [Условный доступ](../conditional-access/overview.md) с вытеснением и [многофакторная проверка подлинности (MFA)](../authentication/concept-mfa-howitworks.md)
 
-- [Защита идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection#:~:text=Identity%20Protection%20is%20a%20tool%20that%20allows%20organizations,detection%20data%20to%20third-party%20utilities%20for%20further%20analysis) — адаптивный контроль за счет профилирования рисков для пользователей и сеансов
+- [Защита идентификации](../identity-protection/overview-identity-protection.md) — адаптивный контроль за счет профилирования рисков для пользователей и сеансов
 
-- [Обнаружение потерянных учетных данных](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-risks)
 
-- [Самостоятельный сброс пароля (SSPR)](https://docs.microsoft.com/azure/active-directory/authentication/tutorial-enable-sspr)
+- [Обнаружение потерянных учетных данных](../identity-protection/concept-identity-protection-risks.md)
 
-- [Совместное использование партнеров](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-external-users) — Управление обслуживанием для управляемого гостевого доступа
+- [Самостоятельный сброс пароля (SSPR)](../authentication/tutorial-enable-sspr.md)
 
-- [Cloud App Security (КАСБ)](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) — для полного обнаружения и контроля приложений
+- [Совместное использование партнеров](../governance/entitlement-management-external-users.md) — Управление обслуживанием для управляемого гостевого доступа
+
+- [Cloud App Security (КАСБ)](/cloud-app-security/what-is-cloud-app-security) — для полного обнаружения и контроля приложений
 
 - Мониторинг угроз — [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) для Advanced Threat Analytics
 
@@ -61,7 +62,7 @@ SHA решает эту слабую точку, позволяя организ
 
 Интеграция основана на стандартном доверии федерации между APM и Azure AD, общим для большинства вариантов использования SHA, включая [сценарий SSL-VPN](f5-aad-password-less-vpn.md). Ресурсы язык разметки зявлений системы безопасности (SAML) (SAML), OAuth и Open ID Connect (OIDC) не являются исключением, так как они также могут быть защищены для удаленного доступа. Возможны также ситуации, когда большой IP-адрес станет точкой стягиванием для доступа без доверия ко всем службам, включая приложения SaaS.
 
-Возможность интеграции с Azure AD с помощью больших IP-адресов позволяет обеспечить передачу протокола, необходимого для защиты устаревших или не связанных с Azure AD служб с помощью современных элементов управления, таких как [Проверка подлинности без пароля](https://www.microsoft.com/security/business/identity/passwordless) и [Условный доступ](https://docs.microsoft.com/azure/active-directory/conditional-access/overview). В этом сценарии большой IP-адрес выполняет свою роль в качестве обратных прокси-серверов, предоставляя для каждой службы предварительную проверку подлинности и авторизацию в Azure AD.
+Возможность интеграции с Azure AD с помощью больших IP-адресов позволяет обеспечить передачу протокола, необходимого для защиты устаревших или не связанных с Azure AD служб с помощью современных элементов управления, таких как [Проверка подлинности без пароля](https://www.microsoft.com/security/business/identity/passwordless) и [Условный доступ](../conditional-access/overview.md). В этом сценарии большой IP-адрес выполняет свою роль в качестве обратных прокси-серверов, предоставляя для каждой службы предварительную проверку подлинности и авторизацию в Azure AD.
 
 Шаги 1-4 на схеме иллюстрируют обмен предварительной проверкой подлинности переднего плана между пользователем, большим IP-адресом и Azure AD в потоке, инициированном поставщиком услуг. Шаги 5-6 покажут последующие дополнения сеанса APM и единый вход для отдельных серверных служб.
 
@@ -71,16 +72,16 @@ SHA решает эту слабую точку, позволяя организ
 |:------|:-----------|
 | 1. | Пользователь выбирает на портале значок приложения, разрешающий URL-адрес для SAML SP (BIG-IP). |
 | 2. | Параметр BIG-IP перенаправляет пользователя в SAML IDP (Azure AD) для предварительной проверки подлинности.|
-| 3. | Azure AD обрабатывает политики условного доступа и [элементы управления сеансами](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) для авторизации|
+| 3. | Azure AD обрабатывает политики условного доступа и [элементы управления сеансами](../conditional-access/concept-conditional-access-session.md) для авторизации|
 | 4. | Пользователь перенаправляется на большой IP-адрес, представляющий утверждения SAML, выданные Azure AD. |
-| 5. | КРУПНЫЙ IP-адрес запрашивает дополнительные сведения о сеансе для включения [единого входа](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso) и [управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) в опубликованную службу. |
+| 5. | КРУПНЫЙ IP-адрес запрашивает дополнительные сведения о сеансе для включения [единого входа](../hybrid/how-to-connect-sso.md) и [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md) в опубликованную службу. |
 | 6. | BIG-IP перенаправляет запрос клиента в серверную службу
 
 ## <a name="user-experience"></a>Возможности для пользователя
 
 Является ли непосредственным сотрудником, дочерним или потребителем, что большинство пользователей уже знакомы с входом в Office 365, поэтому доступ к службам с большими IP-адресами через SHA остается практически знакомым.
 
-Теперь пользователи могут найти опубликованные службы с большим IP-адресом, Объединенные в панели запуска  [MyApps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access) или [Office](https://o365pp.blob.core.windows.net/media/Resources/Microsoft%20365%20Business/Launchpad%20Overview_for%20Partners_10292019.pdf) , а также возможности самообслуживания для более широкого набора служб, независимо от типа устройства или расположения. Пользователи могут даже продолжить доступ к опубликованным службам непосредственно через BIG-IPs собственный портал Webtop, если это необходимо. При завершении сеанса SHA гарантирует, что сеанс пользователя завершается на обоих концах, а также в большом IP-адресе и Azure AD, гарантируя, что службы остаются полностью защищенными от несанкционированного доступа.  
+Теперь пользователи могут найти опубликованные службы с большим IP-адресом, Объединенные в панели запуска  [MyApps](../user-help/my-apps-portal-end-user-access.md) или [Office](https://o365pp.blob.core.windows.net/media/Resources/Microsoft%20365%20Business/Launchpad%20Overview_for%20Partners_10292019.pdf) , а также возможности самообслуживания для более широкого набора служб, независимо от типа устройства или расположения. Пользователи могут даже продолжить доступ к опубликованным службам непосредственно через BIG-IPs собственный портал Webtop, если это необходимо. При завершении сеанса SHA гарантирует, что сеанс пользователя завершается на обоих концах, а также в большом IP-адресе и Azure AD, гарантируя, что службы остаются полностью защищенными от несанкционированного доступа.  
 
 Предоставленные снимки экрана находятся на портале приложений Azure AD, который обеспечивает безопасную доступ пользователей для поиска опубликованных служб с большим IP-адресом и для управления их свойствами учетной записи.  
 
@@ -92,7 +93,7 @@ SHA решает эту слабую точку, позволяя организ
 
 Роль с большим IP-адресом важна для любого бизнеса, поэтому развернутые экземпляры с большими IP-адресами следует отслеживать, чтобы обеспечить высокую доступность опубликованных служб на уровне SHA и при работе.
 
-Существует несколько вариантов ведения журнала событий локально или удаленно с помощью решения по управлению сведениями о безопасности и событиями (SIEM), что позволяет использовать автономное хранение и обработку телеметрии. Очень эффективным решением для мониторинга Azure AD и действий, связанных с SHA, является использование [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) и [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/overview), совместно с предложением:
+Существует несколько вариантов ведения журнала событий локально или удаленно с помощью решения по управлению сведениями о безопасности и событиями (SIEM), что позволяет использовать автономное хранение и обработку телеметрии. Очень эффективным решением для мониторинга Azure AD и действий, связанных с SHA, является использование [Azure Monitor](../../azure-monitor/overview.md) и [Azure Sentinel](../../sentinel/overview.md), совместно с предложением:
 
 - Подробный обзор Организации, потенциально в нескольких облаках и локальных расположениях, включая инфраструктуру с большим IP-адресом
 
@@ -100,7 +101,7 @@ SHA решает эту слабую точку, позволяя организ
 
 ![На изображении показан поток мониторинга](media/f5-aad-integration/azure-sentinel.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Интеграция F5 BIG-IP с Azure AD для SHA имеет следующие предварительные требования:
 
@@ -126,9 +127,9 @@ SHA решает эту слабую точку, позволяя организ
 
 - Лицензирование Azure AD с помощью любого из следующих вариантов:
 
-   - [Бесплатная подписка](https://docs.microsoft.com/windows/client-management/mdm/register-your-free-azure-active-directory-subscription#:~:text=%20Register%20your%20free%20Azure%20Active%20Directory%20subscription,will%20take%20you%20to%20the%20Azure...%20More%20) Azure AD предоставляет минимальные базовые требования для реализации SHA с проверкой подлинности без пароля.
+   - [Бесплатная подписка](/windows/client-management/mdm/register-your-free-azure-active-directory-subscription#:~:text=%20Register%20your%20free%20Azure%20Active%20Directory%20subscription,will%20take%20you%20to%20the%20Azure...%20More%20) Azure AD предоставляет минимальные базовые требования для реализации SHA с проверкой подлинности без пароля.
 
-   - [Подписка](https://azure.microsoft.com/pricing/details/active-directory/) уровня "Премиум" предоставляет все дополнительные добавления значений, описанные в предсловной версии, включая [Условный доступ](https://docs.microsoft.com/azure/active-directory/conditional-access/overview), [MFA](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks)и [защиту идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection) .
+   - [Подписка](https://azure.microsoft.com/pricing/details/active-directory/) уровня "Премиум" предоставляет все дополнительные добавления значений, описанные в предсловной версии, включая [Условный доступ](../conditional-access/overview.md), [MFA](../authentication/concept-mfa-howitworks.md)и [защиту идентификации](../identity-protection/overview-identity-protection.md) .
 
 Для реализации SHA не требуется опыт работы или F5 большой объем IP-адресов, но мы рекомендуем ознакомиться с терминологией F5 BIG-IP. [База знаний](https://www.f5.com/services/resources/glossary) bigip с богатыми возможностями также является хорошим местом для начала создания набора знаний с большими IP-адресами.
 
@@ -138,9 +139,9 @@ SHA решает эту слабую точку, позволяя организ
 
 - [Руководство по F5 BIG-IP в развертывании Azure.](f5-bigip-deployment-guide.md)
 
-- [F5 BIG-IP APM и Azure AD SSO для приложений Kerberos](https://docs.microsoft.com/azure/active-directory/saas-apps/kerbf5-tutorial#configure-f5-single-sign-on-for-kerberos-application)
+- [F5 BIG-IP APM и Azure AD SSO для приложений Kerberos](../saas-apps/kerbf5-tutorial.md#configure-f5-single-sign-on-for-kerberos-application)
 
-- [F5 BIG-IP APM и Azure AD SSO для приложений на основе заголовков](https://docs.microsoft.com/azure/active-directory/saas-apps/headerf5-tutorial#configure-f5-single-sign-on-for-header-based-application)
+- [F5 BIG-IP APM и Azure AD SSO для приложений на основе заголовков](../saas-apps/headerf5-tutorial.md#configure-f5-single-sign-on-for-header-based-application)
 
 - [Защита с помощью Azure AD SHA BIG-SSL на основе IP-VPN](f5-aad-password-less-vpn.md)
 
@@ -154,7 +155,7 @@ SHA решает эту слабую точку, позволяя организ
 
 - [Начало работы с Sentinel в Azure](https://azure.microsoft.com/services/azure-sentinel/?&OCID=AID2100131_SEM_XfknpgAAAHoVMTvh:20200922160358:s&msclkid=5e0e022409fc1c94dab85d4e6f4710e3&ef_id=XfknpgAAAHoVMTvh:20200922160358:s&dclid=CJnX6vHU_esCFUq-ZAod1iQF6A)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Рассмотрите возможность запуска эксперимента SHA (проверка концепции) с помощью существующей инфраструктуры с большим IP-адресом или путем развертывания пробного экземпляра. [Развертывание ВИРТУАЛЬНОЙ машины с большим IP-адресом (VE) в Azure](f5-bigip-deployment-guide.md) занимает примерно 30 минут. в этом случае вы получите следующее:
 

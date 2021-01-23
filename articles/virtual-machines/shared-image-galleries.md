@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 2731a7f263db223c258ddfc434bc84f59632d1f5
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 3022e9c694d70359a90e71ecd1232e9274f92f10
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223369"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730328"
 ---
 # <a name="shared-image-galleries-overview"></a>Обзор коллекций общих образов
 
@@ -188,10 +188,10 @@ ms.locfileid: "98223369"
 
 Следующие пакеты SDK поддерживают создание коллекций общих образов.
 
-- [.NET](/dotnet/api/overview/azure/virtualmachines/management?view=azure-dotnet)
-- [Java](/java/azure/?view=azure-java-stable)
+- [.NET](/dotnet/api/overview/azure/virtualmachines/management)
+- [Java](/java/azure/)
 - [Node.js](/javascript/api/@azure/arm-compute)
-- [Python](/python/api/overview/azure/virtualmachines?view=azure-python)
+- [Python](/python/api/overview/azure/virtualmachines)
 - [GO](/azure/go/)
 
 ## <a name="templates"></a>Шаблоны
@@ -322,7 +322,7 @@ ms.locfileid: "98223369"
 
 Кроме того, вы можете разместить свой вопрос и пометить его в `azure-virtual-machines-images` [Q&A](/answers/topics/azure-virtual-machines-images.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как развертывать общие образы с помощью [Azure CLI](shared-images-cli.md) или [PowerShell](shared-images-powershell.md).
 

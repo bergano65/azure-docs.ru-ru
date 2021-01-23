@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 1051859d514c77bad1aa5f14becc2218a923df44
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 17c29fdf88495f6ecc40963eda08858887173fd1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632996"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730944"
 ---
 # <a name="back-up-using-azure-application-consistent-snapshot-tool-preview"></a>Резервное копирование с помощью средства создания моментальных снимков для приложений Azure (Предварительная версия)
 
@@ -143,9 +143,9 @@ azacsnap -c backup --volume other --prefix boot_TEST --retention 9 --configfile 
 > Имя файла журнала состоит из "(имя команды-( `-c` параметр)-(имя файла конфигурации)".  Например, если используется `-c backup` параметр с именем файла журнала `h80.json` , то будет вызван файл журнала `azacsnap-backup-h80.log` .  При использовании `-c test` параметра с тем же файлом конфигурации будет вызван файл журнала `azacsnap-test-h80.log` .
 
 - Тип крупных экземпляров HANA. в единице крупных экземпляров HANA есть два допустимых значения: или, в `TYPEI` `TYPEII` зависимости от единицы.
-- Для подтверждения доступных номеров SKU см. раздел [Доступные номера SKU для крупных экземпляров Hana](/azure/virtual-machines/workloads/sap/hana-available-skus) .
+- Для подтверждения доступных номеров SKU см. раздел [Доступные номера SKU для крупных экземпляров Hana](../virtual-machines/workloads/sap/hana-available-skus.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Получение сведений о снимке](azacsnap-cmd-ref-details.md)
 - [Удаление моментальных снимков](azacsnap-cmd-ref-delete.md)

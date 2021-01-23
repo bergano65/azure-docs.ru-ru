@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jodowns
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 409ba7a954830bb2370ce83989b9e8b08b742fe7
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: f2d844054e3744aafa01f43ded354a5b5d9f8b4b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631182"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732105"
 ---
 # <a name="assign-a-managed-identity-access-to-an-application-role-using-powershell"></a>Назначение управляемому удостоверению доступа к роли приложения с помощью PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "97631182"
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Выполнить примеры скриптов можно двумя способами:
     - Используйте [Azure Cloud Shell](../../cloud-shell/overview.md), которую можно открыть с помощью кнопки **попробовать** в правом верхнем углу блоков кода.
-    - Выполните сценарии локально, установив последнюю версию [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+    - Выполните сценарии локально, установив последнюю версию [Azure AD PowerShell](/powershell/azure/active-directory/install-adv2).
 
 ## <a name="assign-a-managed-identity-access-to-another-applications-app-role"></a>Назначение управляемому удостоверению доступа к роли приложения другого приложения
 
@@ -134,7 +134,7 @@ New-AzureADServiceAppRoleAssignment `
     -ResourceId $serverServicePrincipalObjectId
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Что такое управляемые удостоверения для ресурсов Azure?](overview.md)
 - Дополнительные сведения см. в статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell](qs-configure-powershell-windows-vm.md).

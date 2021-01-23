@@ -3,16 +3,16 @@ title: Перенос конфигурации пула пакетной слу�
 description: Узнайте, как обновить конфигурацию пула до последней и рекомендуемой конфигурации.
 ms.topic: how-to
 ms.date: 1/6/2021
-ms.openlocfilehash: d987a185efb6593fd541dd14fa74b6c4d3ca41be
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 417738be2c69101129079b8ff3a3d80634f9f99c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234313"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731505"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Перенос конфигурации пула пакетной службы из облачных служб на виртуальные машины
 
-Пулы пакетной службы можно создавать с помощью [cloudServiceConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#cloudserviceconfiguration) или [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#virtualmachineconfiguration). "virtualMachineConfiguration" — Рекомендуемая конфигурация, так как она поддерживает все возможности пакета. пулы "cloudServiceConfiguration" не поддерживают все функции, и новые функции не планируются.
+Пулы пакетной службы можно создавать с помощью [cloudServiceConfiguration](/rest/api/batchservice/pool/add#cloudserviceconfiguration) или [virtualMachineConfiguration](/rest/api/batchservice/pool/add#virtualmachineconfiguration). "virtualMachineConfiguration" — Рекомендуемая конфигурация, так как она поддерживает все возможности пакета. пулы "cloudServiceConfiguration" не поддерживают все функции, и новые функции не планируются.
 
 Если вы используете пулы "cloudServiceConfiguration", настоятельно рекомендуется перейти к использованию пулов "virtualMachineConfiguration". Это позволит вам воспользоваться всеми возможностями пакетной службы, такими как расширенный [Выбор серии виртуальных машин](batch-pool-vm-sizes.md), виртуальных машин Linux, [контейнеров](batch-docker-container-workloads.md), [Azure Resource Manager виртуальных сетей](batch-virtual-network.md)и [шифрования дисков узла](disk-encryption.md).
 
@@ -37,8 +37,8 @@ ms.locfileid: "98234313"
 
 - Время запуска и удаления пулов и узлов может немного отличаться между пулами "cloudServiceConfiguration" и пулами "virtualMachineConfiguration".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [конфигурациях пулов](nodes-and-pools.md#configurations).
 - Дополнительные сведения о рекомендациях по работе с [пулами](best-practices.md#pools).
-- REST API Справочник по [добавлению](https://docs.microsoft.com/rest/api/batchservice/pool/add) и [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#virtualmachineconfiguration)пула.
+- REST API Справочник по [добавлению](/rest/api/batchservice/pool/add) и [virtualMachineConfiguration](/rest/api/batchservice/pool/add#virtualmachineconfiguration)пула.
