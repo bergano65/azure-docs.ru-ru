@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: jgao
-ms.openlocfilehash: e5449dc26197a0aa2e2b0da49ad9e5ca4fb19e82
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: fb8cd45842e2f9b64048aa939f7b6adc9b0e6e0a
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185765"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703688"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure PowerShell
 
@@ -69,7 +69,7 @@ Remove-AzResourceGroup -Name $resourceGroupName
 
 См. раздел [развертывание ресурсов в существующей группе ресурсов](manage-resources-powershell.md#deploy-resources-to-an-existing-resource-group).
 
-Сведения о проверке развертывания группы ресурсов см. в разделе [Test-азресаурцеграупдеплоймент](/powershell/module/Az.Resources/Test-AzResourceGroupDeployment?view=azps-1.3.0).
+Сведения о проверке развертывания группы ресурсов см. в разделе [Test-азресаурцеграупдеплоймент](/powershell/module/Az.Resources/Test-AzResourceGroupDeployment).
 
 ## <a name="deploy-a-resource-group-and-resources"></a>Развертывание группы ресурсов и ресурсов
 
@@ -214,7 +214,7 @@ Export-AzResourceGroup `
 
 Управление [доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о Azure Resource Manager см. в разделе [Общие сведения о Azure Resource Manager](overview.md).
 - Сведения о синтаксисе шаблона диспетчер ресурсов см. в разделе [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../templates/template-syntax.md).

@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Azure Resource Manager
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Resource Manager. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 4bbd65801cac300a11d4fb1e62503ac1c9e5a574
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 069263a0c12dfd439c3fbf9215bb275b0a1526b1
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046030"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704608"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-resource-manager"></a>Встроенные определения в Политике Azure для Azure Resource Manager
 

@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 9dcabe10822fd09c8f7a0da6259d81a089c1a042
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 4a817f386d68c144968540dd05f3fa6859bb0acc
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936300"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704175"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -43,7 +43,7 @@ ms.locfileid: "97936300"
 | --- | --- |
 |Служба развертывания виртуальных машин Azure|[Развертывание сертификатов на виртуальных машинах из хранилища ключей, управляемого пользователем](/archive/blogs/kv/updated-deploy-certificates-to-vms-from-customer-managed-key-vault)|
 |Служба развертывания шаблонов Azure Resource Manager|[Передача защищенных значений в процессе развертывания](../../azure-resource-manager/templates/key-vault-parameter.md).|
-|SKU шлюза приложений Azure версии 2|[Завершение TLS с сертификатами Key Vault](../../application-gateway/key-vault-certs.md)|
+|SKU шлюза приложений Azure версии 2|[Завершение TLS-запросов с помощью сертификатов из Key Vault](../../application-gateway/key-vault-certs.md)|
 |Служба шифрования томов для шифрования дисков Azure|Разрешение доступа к ключу BitLocker (виртуальная машина Windows), парольной фразе DM (виртуальная машина Linux) и ключу шифрования ключей во время развертывания виртуальной машины. Это позволяет включить [шифрование дисков Azure](../../security/fundamentals/encryption-overview.md).|
 |Azure Backup|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../../backup/backup-overview.md).|
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](/microsoft-365/compliance/customer-key-overview).|
@@ -53,17 +53,17 @@ ms.locfileid: "97936300"
 |Хранилище Azure|[Шифрование службы хранилища использование ключей, управляемых клиентом, в Azure Key Vault](../../storage/common/customer-managed-keys-configure-key-vault.md).|
 |Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
 |Azure Databricks|[Быстрая и простая служба аналитики на основе Apache Spark для совместной работы](/azure/databricks/scenarios/what-is-azure-databricks).|
-|Служба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
+|Управление API Azure|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../../api-management/api-management-howto-use-managed-service-identity.md#use-ssl-tls-certificate-from-azure-key-vault)|
 |Фабрика данных Azure|[Выбор учетных данных хранилища данных в Key Vault из фабрики данных](https://go.microsoft.com/fwlink/?linkid=2109491)|
 |Центры событий Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../event-hubs/configure-customer-managed-key.md)|
-|Azure Service Bus|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../service-bus-messaging/configure-customer-managed-key.md)|
-|Импорт и экспорт Microsoft Azure| [Использование управляемых клиентом ключей в Azure Key Vault для службы импорта и экспорта](../../storage/common/storage-import-export-encryption-key-portal.md)
+|Служебная шина Azure|[Разрешить доступ к хранилищу ключей для сценария с управляемыми клиентом ключами](../../service-bus-messaging/configure-customer-managed-key.md)|
+|Импорт и экспорт Microsoft Azure| [Использование управляемых клиентом ключей в Azure Key Vault для службы импорта и экспорта](../../import-export/storage-import-export-encryption-key-portal.md)
 |Реестр контейнеров Azure|[Шифрование реестра с помощью управляемых клиентом ключей](../../container-registry/container-registry-customer-managed-keys.md)
 
 > [!NOTE]
 > Настройте политики доступа в Key Vault так, чтобы разрешить доступ к Key Vault соответствующим службам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Пошаговые инструкции см. в разделе [Настройка брандмауэров Azure Key Vault и виртуальных сетей](network-security.md) .
 - см. [Azure Key Vault Обзор безопасности](security-overview.md) .

@@ -3,12 +3,12 @@ title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: bd84ff553b486d200ec4501b89b42335335b223f
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: dbe6ce95427b559c037e38525f9f48195a2a76a4
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98572533"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703425"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -60,7 +60,7 @@ ms.locfileid: "98572533"
 
 ### <a name="how-can-i-move-data-from-the-recovery-services-vault-to-on-premises"></a>Как переместить данные из хранилища служб восстановления в локальную среду?
 
-Экспорт данных непосредственно из хранилища служб восстановления в локальную среду с помощью Data Box не поддерживается. Данные необходимо восстановить в учетную запись хранения, после чего их можно переместить в локальную среду с помощью [Data Box](../databox/data-box-overview.md) или [импорта и экспорта](../storage/common/storage-import-export-service.md).
+Экспорт данных непосредственно из хранилища служб восстановления в локальную среду с помощью Data Box не поддерживается. Данные необходимо восстановить в учетную запись хранения, после чего их можно переместить в локальную среду с помощью [Data Box](../databox/data-box-overview.md) или [импорта и экспорта](../import-export/storage-import-export-service.md).
 
 ### <a name="what-is-the-difference-between-a-geo-redundant-storage-grs-vault-with-and-without-the-cross-region-restore-crr-capability-enabled"></a>В чем разница между хранилищем геоизбыточного хранилища (GRS) с включенной возможностью восстановления между регионами (КРР) и без нее?
 
@@ -119,7 +119,7 @@ Windows 8 или более поздняя версия | 54 400 ГБ
 Windows 7 |1700 ГБ
 Windows Server 2012 или более поздней версии; | 54 400 ГБ
 Windows Server 2008, Windows Server 2008 R2 | 1700 ГБ
-Azure | См. [таблицу поддержки для резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md#vm-storage-support) .
+Виртуальная машина Azure | См. [таблицу поддержки для резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md#vm-storage-support) .
 
 ### <a name="how-is-the-data-source-size-determined"></a>Как вычисляется размер источника данных?
 

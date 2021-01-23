@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 01/22/2021
 ms.author: victorh
-ms.openlocfilehash: dc1eb64b5cfb527c10967a1a46525a418fdc37e3
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6910fda855402d2f99994da1e835560be84ca2dd
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674003"
+ms.locfileid: "98703383"
 ---
 # <a name="ip-groups-in-azure-firewall"></a>IP-группы в брандмауэре Azure
 
@@ -28,7 +28,7 @@ IP-группа может иметь один IP-адрес, несколько
 IP-группы можно повторно использовать в правилах брандмауэра Azure ДНаТ, сети и приложений для нескольких брандмауэров в разных регионах и подписках в Azure. Имена групп должны быть уникальными. IP-группу можно настроить в портал Azure, Azure CLI или REST API. Пример шаблона поможет вам приступить к работе.
 
 > [!NOTE]
-> В настоящее время IP-группы недоступны в средах национальных облаков Azure.
+> IP-группы в настоящее время недоступны в национальных облачных средах Azure.
 
 ## <a name="sample-format"></a>Формат выборки
 

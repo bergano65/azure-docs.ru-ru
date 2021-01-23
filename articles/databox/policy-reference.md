@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Azure Data Box
 description: Выводит список встроенных определений политик Azure для Azure Data Box. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/13/2021
+ms.date: 01/21/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
 ms.service: databox
 author: alkohli
 ms.author: alkohli
-ms.openlocfilehash: c67d7a359bc805f62e932adad847a4ab2484033b
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: ce607d8036fa7dd4f6c0878d9ec028b880089355
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626314"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703804"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-data-box"></a>Встроенные определения политики Azure для Azure Data Box
 

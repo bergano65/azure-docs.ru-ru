@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для сетевых служб Azure
 description: Выводит список встроенных определений политик Azure для сетевых служб Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 author: KumudD
 ms.author: kumud
 ms.service: virtual-network
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 0a65f575ba999bcdbcf1b742b34593fd106fd3e4
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 0c66540553be01ec55b5e2b43a0aeb28d9edb471
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045886"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703719"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-networking-services"></a>Встроенные определения политики Azure для сетевых служб Azure
 

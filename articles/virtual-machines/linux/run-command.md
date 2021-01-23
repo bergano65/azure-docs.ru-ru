@@ -8,12 +8,12 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: how-to
 manager: carmonm
-ms.openlocfilehash: 5baa6d57bd3895640f1654cf7a5ebca52f101cbe
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: dae77dfb72fb6b11721500686991f2b199606b99
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970577"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737869"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-by-using-run-command"></a>Выполнение скриптов оболочки в виртуальной машине Linux с помощью функции выполнения команд
 
@@ -21,7 +21,7 @@ ms.locfileid: "91970577"
 
 ## <a name="benefits"></a>Преимущества
 
-Доступ к виртуальным машинам можно получить несколькими способами. Выполнение команд может удаленно реализовывать скрипты на виртуальных машинах с помощью их агента. Выполнение команд можно использовать на портале Microsoft Azure, в [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand) или в [Azure CLI](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) для виртуальных машин Linux.
+Доступ к виртуальным машинам можно получить несколькими способами. Выполнение команд может удаленно реализовывать скрипты на виртуальных машинах с помощью их агента. Выполнение команд можно использовать на портале Microsoft Azure, в [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand) или в [Azure CLI](/cli/azure/vm/run-command#az_vm_run_command_invoke) для виртуальных машин Linux.
 
 Эта возможность полезна во всех сценариях, где требуется выполнить скрипт на виртуальной машине. Это один из способов устранения неполадок и исправления виртуальной машины, на которой не открыт порт RDP или SSH из-за неправильной настройки сети или пользователя с правами администратора.
 
@@ -56,7 +56,7 @@ The entity was not found in this Azure location
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Ниже приведен пример с использованием команды [az vm run-command](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) для запуска скрипта оболочки на виртуальной машине Azure Linux.
+Ниже приведен пример с использованием команды [az vm run-command](/cli/azure/vm/run-command#az_vm_run_command_invoke) для запуска скрипта оболочки на виртуальной машине Azure Linux.
 
 ```azurecli-interactive
 az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript --scripts "apt-get update && apt-get install -y nginx"

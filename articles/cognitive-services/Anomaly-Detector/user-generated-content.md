@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
-ms.date: 06/17/2019
+ms.date: 01/22/2021
 ms.author: mbullwin
-ms.openlocfilehash: df526c23460e7146cd630afcb8b29a380c568250
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: fcd4f73a9cea75877360b2b537776bf59fb22363
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017442"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704462"
 ---
 # <a name="featured-user-generated-content-for-the-anomaly-detector-api"></a>Рекомендуемое создаваемое пользователем содержимое для API Детектора аномалий
 
@@ -27,7 +27,7 @@ ms.locfileid: "92017442"
 
 ## <a name="open-source-projects"></a>Проекты с открытым кодом
 
-* [Записная книжка Jupyter, демонстрирующая обнаружение аномалий и потоковую передачу в Power BI](https://github.com/marvinbuss/MS-AnomalyFinder)
+* [Записная книжка Jupyter, демонстрирующая обнаружение аномалий и потоковую передачу в Power BI](https://github.com/marvinbuss/MS-AnomalyDetector)
 
 Если вы хотите зарегистрировать ресурс, заполните [короткую форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxSkyhztUNZCtaivu8nmhd1UMENTMEJWTkRORkRGQUtGQzlWQ1dSV1JLTS4u).
 Обратитесь по адресу AnomalyDetector@microsoft.com или сообщите о проблеме на сайте GitHub, если необходимо удалить содержимое.

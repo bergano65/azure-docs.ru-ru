@@ -9,12 +9,12 @@ author: samkemp
 ms.author: samkemp
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 17418b0255182934045acc9174b34cff2aefff99
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 7726fce7ac69ebfaabf44049abc49c53f8175718
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307451"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704546"
 ---
 # <a name="track-experiments-and-deploy-models-in-azure-machine-learning"></a>Отслеживание экспериментов и развертывание моделей в Машинное обучение Azure
 
@@ -24,13 +24,13 @@ ms.locfileid: "93307451"
 
 ![Прослеживание экспериментов](./media/how-to-track-experiments/mlflow-diagram-track.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Необходимо [подготавливать Рабочая область машинного обучения Azure](../how-to-manage-workspace.md#create-a-workspace)
 
 ## <a name="create-a-new-notebook"></a>Создание записной книжки
 
-Пакет SDK для Машинное обучение Azure и Млфлов предварительно установлен на виртуальной машине обработки и анализа данных и доступен в среде * *azureml_py36_ \** _ conda. В Jupyterlab щелкните средство запуска и выберите следующий kernel:
+Пакет SDK для Машинное обучение Azure и Млфлов предварительно установлен на виртуальной машине обработки и анализа данных и доступен в среде **azureml_py36_ \** _ conda. В JupyterLab щелкните средство запуска и выберите следующий kernel:
 
 ![Выбор ядра](./media/how-to-track-experiments/experiment-tracking-1.png)
 
@@ -165,7 +165,7 @@ _ Имя вычислений
 
 Затем нажмите кнопку __развернуть__ в области сведения о модели:
 
-![Развернуть](./media/how-to-track-experiments/mlflow-experiments-4.png)
+![Развертывание](./media/how-to-track-experiments/mlflow-experiments-4.png)
 
 Мы выполним развертывание модели в кластере вывода (служба Azure Kubernetes), созданном на шаге 1. Заполните приведенные ниже сведения, указав имя службы и имя кластера вычислений AKS (созданного на шаге 1). Также рекомендуется увеличить __емкость резерва ЦП__ до 1 (от 0,1) и __емкость резерва памяти__ равна 1 (из 0,5). Вы можете увеличить это увеличение, щелкнув __Дополнительно__ и заполнив подробные сведения. Затем нажмите кнопку __развернуть__.
 
@@ -202,6 +202,6 @@ print(output)
 
 Удалите вычисление, созданное на шаге 1, чтобы не вычислять непрерывные затраты на вычисления. В меню слева в Машинное обучение Azure Studio щелкните вычисления кластеры вывода > > выберите вычисления > удалить.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [развертывании моделей в AzureML](../how-to-deploy-and-where.md)

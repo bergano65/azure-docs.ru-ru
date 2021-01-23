@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: blobs
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 453eaa816ad48626b476fa392999f44e3c1a10cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 536cd01fbcf2c5d18a8c12030b709427d9bb91b1
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91714567"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703612"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью Azure CLI
 
@@ -103,7 +103,7 @@ az storage blob generate-sas \
     --permissions acdrw \
     --expiry <date-time> \
     --auth-mode login \
-    --as-user
+    --as-user \
     --full-uri
 ```
 
@@ -132,7 +132,7 @@ az storage account revoke-delegation-keys \
 > [!IMPORTANT]
 > Как ключ делегирования пользователя, так и назначение ролей Azure кэшируются службой хранилища Azure, поэтому при инициации процесса отзыва может возникнуть задержка, и если существующее сопоставление безопасности делегирования пользователя станет недействительным.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание SAS для делегирования пользователей (REST API)](/rest/api/storageservices/create-user-delegation-sas)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

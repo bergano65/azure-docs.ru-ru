@@ -11,12 +11,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: sstein
-ms.openlocfilehash: 36c12fa7dd37ce1ffebde16cf6ca856d9fcdca0a
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 607b588d3371b20c2b3fa9854e27a7ccdfe2e551
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93391999"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703773"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Что нового в базе данных SQL Azure & Управляемый экземпляр SQL?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "93391999"
 |**Управляемый экземпляр SQL Azure** | *Управляемый экземпляр* базы данных SQL Azure| Управляемый экземпляр Azure SQL — это собственный продукт в семействе SQL Azure, а не только вариант развертывания в базе данных SQL Azure. | 
 |**База данных SQL Azure**|*Единая база* данных SQL Azure| Если явно не указано иное, имя продукта в базе данных SQL Azure включает как отдельные базы данных, так и базы данных, развернутые в эластичном пуле. |
 |**База данных SQL Azure**|*Эластичный пул* базы данных SQL Azure| Если явно не указано иное, имя продукта в базе данных SQL Azure включает как отдельные базы данных, так и базы данных, развернутые в эластичном пуле.  |
-|**База данных SQL Azure** |База данных SQL Azure. | Несмотря на то что термин остается прежним, он применяется только к развертыванию одиночной базы данных и пула эластичных БД и не включает управляемый экземпляр. |
+|**База данных SQL Azure** |База данных SQL Azure | Несмотря на то что термин остается прежним, он применяется только к развертыванию одиночной базы данных и пула эластичных БД и не включает управляемый экземпляр. |
 | **Azure SQL**| Н/Д | Это относится к семейству SQL Server продуктов ядра СУБД, доступных в Azure: база данных SQL Azure, Управляемый экземпляр SQL Azure и SQL Server на виртуальных машинах Azure. | 
 
 ## <a name="features-in-public-preview"></a>Возможности общедоступной предварительной версии
@@ -67,7 +67,7 @@ ms.locfileid: "93391999"
 | <a href="/azure/azure-sql/database/elastic-transactions-overview">Распределенные транзакции</a> | Распределенные транзакции между управляемыми экземплярами. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Пулы экземпляров</a> | Удобный и экономичный способ переноса небольших экземпляров SQL в облако. |
 | <a href="/en-gb/sql/t-sql/statements/create-login-transact-sql">Участники сервера Azure AD уровня экземпляра (имена для входа)</a> | Создайте имена для входа на уровне экземпляра, используя инструкцию <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени входа из внешнего поставщика</a> . |
-| [репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
+| [Репликация транзакций](../managed-instance/replication-transactional-overview.md) | Репликация изменений из таблиц в другие базы данных в SQL Управляемый экземпляр, базе данных SQL или SQL Server. Или обновлять таблицы при изменении некоторых строк в других экземплярах SQL Управляемый экземпляр или SQL Server. Дополнительные сведения см. [в статье Настройка репликации в Azure SQL управляемый экземпляр](../managed-instance/replication-between-two-instances-configure-tutorial.md). |
 | Обнаружение угроз |Дополнительные сведения см. [в статье Настройка обнаружения угроз в Azure SQL управляемый экземпляр](../managed-instance/threat-detection-configure.md).|
 | Долгосрочное хранение резервных копий | Дополнительные сведения см. в статье [Настройка долгосрочного резервного копирования в Azure SQL управляемый экземпляр](../managed-instance/long-term-backup-retention-configure.md), которая в настоящее время ограничена общедоступной предварительной версией. | 
 
@@ -78,7 +78,7 @@ ms.locfileid: "93391999"
 ### <a name="sql-managed-instance-h2-2019-updates"></a>Обновления SQL Управляемый экземпляр H2 2019
 
 - [Конфигурация подсети](https://azure.microsoft.com/updates/service-aided-subnet-configuration-for-managed-instance-in-azure-sql-database-available/) с учетом службы — это безопасный и удобный способ управления конфигурацией подсети, в которой вы управляете трафиком данных, а управляемый экземпляр SQL обеспечивает непрерывный поток трафика управления.
-- [Прозрачное шифрование данных (TDE) с помощью создание собственных ключей (BYOK)](https://azure.microsoft.com/updates/general-avilability-transparent-data-encryption-with-customer-managed-keys-for-azure-sql-database-managed-instance/) позволяет применять собственный ключ (BYOK) для защиты данных в неактивных целях и позволяет организациям отделить обязанности по управлению ключами и данными.
+- [Прозрачное шифрование данных (TDE) с создание собственных ключей (BYOK)](https://azure.microsoft.com/updates/general-avilability-transparent-data-encryption-with-customer-managed-keys-for-azure-sql-database-managed-instance/) позволяет применять собственный ключ (BYOK) для защиты данных в неактивных целях и позволяет организациям отделить обязанности по управлению ключами и данными.
 - [Группы автоматической отработки отказа](https://azure.microsoft.com/updates/azure-sql-database-auto-failover-groups-feature-now-available-in-all-regions/) позволяют реплицировать все базы данных с первичного экземпляра на дополнительный экземпляр в другом регионе.
 - [Глобальные флаги трассировки](https://azure.microsoft.com/updates/global-trace-flags-are-now-available-in-azure-sql-database-managed-instance/) позволяют настроить поведение SQL управляемый экземпляр.
 
@@ -92,12 +92,13 @@ ms.locfileid: "93391999"
   - Настройте Управляемый экземпляр SQL для использования [общедоступных конечных точек](../managed-instance/public-endpoint-configure.md), [Переопределение прокси-сервера](connectivity-architecture.md#connection-policy) для повышения производительности сети, <a href="https://aka.ms/four-cores-sql-mi-update"> 4 виртуальных ядер на го поколения поколение оборудования</a> или <a href="/azure/azure-sql/database/automated-backups-overview">настройте срок хранения резервных копий до 35 дней</a> для восстановления на момент времени. [Долгосрочное хранение резервных копий](long-term-retention-overview.md#sql-managed-instance-support) (до 10 лет) сейчас ограничено общедоступной предварительной версией.  
   - Новые возможности позволяют выполнять <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">геовосстановление базы данных в другом центре обработки данных с помощью PowerShell</a>, [переименования базы данных](https://azure.microsoft.com/updates/azure-sql-database-managed-instance-database-rename-is-supported/), [удаления виртуального кластера](../managed-instance/virtual-cluster-delete.md).
   - Новая встроенная [роль участника «экземпляр](../../role-based-access-control/built-in-roles.md#sql-managed-instance-contributor) » обеспечивает соответствие требованиям к разделению (разделения обязанностей) с учетом принципов безопасности и соответствия стандартам предприятия.
-  - SQL Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)), а также в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Народно-Восточная, Южная Африка, Северная Африка, Юго-Африканская Республика.
+  - SQL Управляемый экземпляр доступен в следующих регионах Azure для государственных организаций (US Gov (Техас), US Gov (Аризона)) и в Северный Китай 2 и Восточный Китай 2. Она также доступна в следующих общедоступных регионах: Центральная Австралия, Центральная Австралия 2, Южная Бразилия, Юго-Восточная часть Франции, Центральная ОАЭ, Северная Народно-Восточная, Южная Африка, Северная Африка, Юго-Африканская Республика.
 
 ## <a name="known-issues"></a>Известные проблемы
 
 |Проблема  |Дата обнаружения  |Состояние  |Дата разрешения  |
 |---------|---------|---------|---------|
+|[При использовании параметра процедура sp_send_dbmail может выполнить неустранимую ошибку @query](#procedure-sp_send_dbmail-may-transiently-fail-when--parameter-is-used)|Янв 2021|Есть обходной путь||
 |[Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Октябрь 2020|Есть обходной путь||
 |[Распределенные транзакции не могут быть выполнены после Управляемый экземпляр операции масштабирования](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Октябрь 2020|Есть обходной путь||
 |[BULK INSERT](/sql/t-sql/statements/bulk-insert-transact-sql) / [Функция OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15) в Azure SQL и `BACKUP` / `RESTORE` инструкция в управляемый экземпляр не может использовать удостоверение управления Azure AD для проверки подлинности в службе хранилища Azure|Sep 2020|Есть обходной путь||
@@ -115,7 +116,7 @@ ms.locfileid: "93391999"
 |[Resource Governor на уровне служб критически важный для бизнеса может потребоваться перенастроить после отработки отказа](#resource-governor-on-business-critical-service-tier-might-need-to-be-reconfigured-after-failover)|Sep 2019|Есть обходной путь||
 |[После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker](#cross-database-service-broker-dialogs-must-be-reinitialized-after-service-tier-upgrade)|Авг 2019|Есть обходной путь||
 |[Олицетворение типов входа Azure AD не поддерживается](#impersonation-of-azure-ad-login-types-is-not-supported)|Июл 2019|Обходной путь отсутствует||
-|[@query параметр не поддерживается в sp_send_db_mail](#-parameter-not-supported-in-sp_send_db_mail)|Апр 2019|Обходной путь отсутствует||
+|[@query параметр не поддерживается в sp_send_db_mail](#-parameter-not-supported-in-sp_send_db_mail)|Апр 2019|"Разрешено"|Янв 2021|
 |[После географической отработки отказа необходимо перенастроить репликацию транзакций](#transactional-replication-must-be-reconfigured-after-geo-failover)|Мар 2019|Обходной путь отсутствует||
 |[Во время операции восстановления используется временная база данных](#temporary-database-is-used-during-restore-operation)||Есть обходной путь||
 |[Структура и содержимое базы данных TEMPDB создано повторно](#tempdb-structure-and-content-is-re-created)||Обходной путь отсутствует||
@@ -128,6 +129,29 @@ ms.locfileid: "93391999"
 |Восстановление базы данных на момент времени с уровня критически важный для бизнеса на уровень общего назначения не будет выполняться, если база данных-источник содержит объекты OLTP в памяти.||"Разрешено"|Октябрь 2019|
 |Компонент Database Mail с внешними (не Azure) почтовыми серверами с использованием безопасного подключения||"Разрешено"|Октябрь 2019|
 |Автономные базы данных не поддерживаются в SQL Управляемый экземпляр||"Разрешено"|Авг 2019|
+
+### <a name="procedure-sp_send_dbmail-may-transiently-fail-when-query-parameter-is-used"></a>При использовании параметра процедура sp_send_dbmail может выполнить неустранимую ошибку @query
+
+При использовании параметра процедура sp_send_dbmail может выполнить неустранимую ошибку `@query` . При возникновении этой проблемы каждое второе выполнение процедуры sp_send_dbmail завершается ошибкой `Msg 22050, Level 16, State 1` и сообщением `Failed to initialize sqlcmd library with error number -2147467259` . Чтобы эта ошибка могла отображаться правильно, процедуру следует вызывать со значением по умолчанию 0 для параметра `@exclude_query_output` , в противном случае ошибка не будет распространена.
+Эта проблема вызвана известной ошибкой, связанной с тем, как sp_send_dbmail использует олицетворение и пулы соединений.
+Чтобы обойти эту ошибку, заключите код для отправки электронной почты в логику повторных попыток, основанную на параметре OUTPUT `@mailitem_id` . Если выполнение завершается ошибкой, то значение параметра будет равно NULL, что означает, что sp_send_dbmail должен быть вызван еще раз для успешной отправки сообщения электронной почты. Ниже приведен пример этой логики повторных попыток.
+```sql
+CREATE PROCEDURE send_dbmail_with_retry AS
+BEGIN
+    DECLARE @miid INT
+    EXEC msdb.dbo.sp_send_dbmail
+        @recipients = 'name@mail.com', @subject = 'Subject', @query = 'select * from dbo.test_table',
+        @profile_name ='AzureManagedInstance_dbmail_profile', @execute_query_database = 'testdb',
+        @mailitem_id = @miid OUTPUT
+
+    -- If sp_send_dbmail returned NULL @mailidem_id then retry sending email.
+    --
+    IF (@miid is NULL)
+    EXEC msdb.dbo.sp_send_dbmail
+        @recipients = 'name@mail.com', @subject = 'Subject', @query = 'select * from dbo.test_table',
+        @profile_name ='AzureManagedInstance_dbmail_profile', @execute_query_database = 'testdb',
+END
+```
 
 ### <a name="distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group"></a>Распределенные транзакции могут выполняться после удаления Управляемый экземпляр из группы доверия сервера
 
@@ -156,7 +180,7 @@ BULK INSERT Sales.Invoices FROM 'inv-2017-12-08.csv' WITH (DATA_SOURCE = 'MyAzur
 
 В некоторых обстоятельствах может существовать ошибка субъекта-службы, используемого для доступа к службам Azure AD и Azure Key Vault (AKV). В результате эта проблема влияет на использование проверки подлинности Azure AD и прозрачного шифрования базы данных (TDE) с помощью SQL Управляемый экземпляр. Это может быть вызвано нерегулярной проблемой подключения или невозможностью выполнения таких инструкций, как создание имени входа или пользователя от внешнего поставщика или выполнение от имени входа или пользователя. Настройка TDE с помощью управляемого клиентом ключа на новом Управляемый экземпляр Azure SQL может также не работать в некоторых обстоятельствах.
 
-**Решение**. чтобы предотвратить возникновение этой проблемы в управляемый экземпляр SQL перед выполнением каких-либо команд обновления или на тот случай, если эта проблема уже возникла после выполнения команд UPDATE, перейдите в колонку портал Azure, доступ к [колонке администрирования](./authentication-aad-configure.md?tabs=azure-powershell#azure-portal)SQL управляемый экземпляр Active Directory. Убедитесь, что отображается сообщение об ошибке "Управляемый экземпляр требуется субъект-служба для доступа к Azure Active Directory. Щелкните здесь, чтобы создать субъект-службу. Если вы столкнулись с этим сообщением об ошибке, щелкните его и выполните пошаговые инструкции, указанные до устранения этой ошибки.
+**Решение**. чтобы предотвратить возникновение этой проблемы в управляемый экземпляр SQL перед выполнением каких-либо команд обновления или на тот случай, если эта проблема уже возникла после выполнения команд UPDATE, перейдите в колонку портал Azure, доступ к [колонке администрирования](./authentication-aad-configure.md?tabs=azure-powershell#azure-portal)SQL управляемый экземпляр Active Directory. Убедитесь, что отображается сообщение об ошибке "Управляемый экземпляр требуется субъект-служба для доступа к Azure Active Directory. Щелкните здесь, чтобы создать субъект-службу. Если вы столкнулись с этим сообщением об ошибке, щелкните его и следуйте пошаговым инструкциям, указанным до устранения этой ошибки.
 
 ### <a name="restoring-manual-backup-without-checksum-might-fail"></a>Восстановление резервной копии вручную без КОНТРОЛЬной суммы может завершиться ошибкой
 
@@ -210,7 +234,7 @@ GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name]
 
 SQL Server и SQL Управляемый экземпляр [не позволяют пользователю удалять непустые файлы](/sql/relational-databases/databases/delete-data-or-log-files-from-a-database#Prerequisites). Если попытаться удалить непустой файл данных с помощью `ALTER DATABASE REMOVE FILE` инструкции, эта ошибка `Msg 5042 – The file '<file_name>' cannot be removed because it is not empty` не будет немедленно возвращена. SQL Управляемый экземпляр будет пытаться удалить файл, и операция завершится ошибкой через 30 минут с `Internal server error` .
 
-Инструкции по **решению** : удалите содержимое файла с помощью `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)` команды. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой группой файлов, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
+Инструкции по **решению**: удалите содержимое файла с помощью `DBCC SHRINKFILE (N'<file_name>', EMPTYFILE)` команды. Если это единственный файл в файловой группе, необходимо удалить данные из таблицы или секции, связанной с этой группой файлов, перед сжатием файла и при необходимости загрузить эти данные в другую таблицу или секцию.
 
 ### <a name="change-service-tier-and-create-instance-operations-are-blocked-by-ongoing-database-restore"></a>Изменение уровня служб и операций создания экземпляра заблокировано текущим восстановлением базы данных
 
@@ -224,11 +248,11 @@ SQL Server и SQL Управляемый экземпляр [не позволя
 
 Функция [Resource Governor](/sql/relational-databases/resource-governor/resource-governor) , которая позволяет ограничить ресурсы, назначенные пользовательской рабочей нагрузке, может неправильно классифицировать определенную рабочую нагрузку пользователя после отработки отказа или изменения уровня обслуживания, инициированного пользователем (например, изменение максимального Виртуальное ядро или максимального размера хранилища экземпляра).
 
-Инструкции по **решению** : периодически запускайте `ALTER RESOURCE GOVERNOR RECONFIGURE` или как часть задания агента SQL, которое выполняет задачу SQL при запуске экземпляра, если используется [Resource Governor](/sql/relational-databases/resource-governor/resource-governor).
+Инструкции по **решению**: периодически запускайте `ALTER RESOURCE GOVERNOR RECONFIGURE` или как часть задания агента SQL, которое выполняет задачу SQL при запуске экземпляра, если используется [Resource Governor](/sql/relational-databases/resource-governor/resource-governor).
 
 ### <a name="cross-database-service-broker-dialogs-must-be-reinitialized-after-service-tier-upgrade"></a>После обновления уровня службы необходимо повторно инициализировать диалоговые окна межбазовых Service Broker
 
-Межбазовые Service Broker диалоговые окна перестают предоставлять сообщения службам в других базах данных после изменения уровня служб. Сообщения *не теряются* , и их можно найти в очереди отправителя. Любое изменение размера хранилища виртуальных ядер или экземпляра в SQL Управляемый экземпляр приведет к `service_broke_guid` изменению значения в представлении [sys. databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Все `DIALOG` созданные с помощью инструкции [BEGIN DIALOG](/sql/t-sql/statements/begin-dialog-conversation-transact-sql) , которая ссылается на брокеры служб в другой базе данных, перестает доставлять сообщения целевой службе.
+Межбазовые Service Broker диалоговые окна перестают предоставлять сообщения службам в других базах данных после изменения уровня служб. Сообщения *не теряются*, и их можно найти в очереди отправителя. Любое изменение размера хранилища виртуальных ядер или экземпляра в SQL Управляемый экземпляр приведет к `service_broke_guid` изменению значения в представлении [sys. databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql) для всех баз данных. Все `DIALOG` созданные с помощью инструкции [BEGIN DIALOG](/sql/t-sql/statements/begin-dialog-conversation-transact-sql) , которая ссылается на брокеры служб в другой базе данных, перестает доставлять сообщения целевой службе.
 
 **Решение**. перед обновлением уровня службы завершите все действия, использующие диалоговые окна межбазовых Service Broker, и повторно инициализируйте их. Если остались сообщения, которые не доставляются после изменения уровня службы, прочтите сообщения из очереди источника и повторно отправьте их в целевую очередь.
 
@@ -324,7 +348,7 @@ using (var scope = new TransactionScope())
 
 ```
 
-**Обходной путь (не требуется с 2020 марта)** : используйте [SqlConnection. чанжедатабасе (String)](/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase) для использования другой базы данных в контексте соединения вместо двух соединений.
+**Обходной путь (не требуется с 2020 марта)**: используйте [SqlConnection. чанжедатабасе (String)](/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase) для использования другой базы данных в контексте соединения вместо двух соединений.
 
 ### <a name="clr-modules-and-linked-servers-sometimes-cant-reference-a-local-ip-address"></a>Модули CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес.
 

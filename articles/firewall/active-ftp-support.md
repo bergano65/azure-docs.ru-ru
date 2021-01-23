@@ -5,20 +5,23 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 01/22/2021
 ms.author: victorh
-ms.openlocfilehash: 2ff61d06885c182454c99ee7e982a3a1a1f5013c
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2c89eb19025212490d29c97a061da52e779ecf42
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690710"
+ms.locfileid: "98704403"
 ---
 # <a name="azure-firewall-active-ftp-support"></a>Поддержка Active FTP в брандмауэре Azure
 
 При использовании Active FTP сервер FTP инициирует подключение данных к назначенному порту данных FTP-клиента. Брандмауэры в сети на стороне клиента обычно блокируют внешний запрос на подключение к внутреннему порту клиента. Дополнительные сведения см. [в разделе Active FTP и пассивный FTP, подробное объяснение](https://slacksite.com/other/ftp.html).
 
 По умолчанию поддержка Active FTP в брандмауэре Azure отключена для защиты от атак с использованием FTP-сервера с помощью `PORT` команды FTP. Однако можно включить Active FTP при развертывании с помощью Azure PowerShell, Azure CLI или шаблона Azure ARM.
+
+> [!NOTE]
+> В настоящее время активный FTP поддерживается только для брандмауэров, развернутых в виртуальной сети. Поддержка виртуальной глобальной сети будет добавлена позже.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 

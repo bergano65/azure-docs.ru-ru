@@ -8,12 +8,12 @@ ms.custom: REST
 ms.topic: how-to
 ms.date: 06/13/2018
 ms.author: routlaw
-ms.openlocfilehash: 0a448d4b4538d62c1631cf16d88ec0a7e7f2a399
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 9430eaeb3ba22bd0d9fc0675ab97c84944a0cf7c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508039"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737852"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
 
@@ -42,7 +42,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 | Имя | Описание |
 | :--- | :---------- |
-| subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
+| subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli). |
 | имя_группы_ресурсов | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |
 | vmname | Имя виртуальной машины. |
 | metricnames | Разделенный запятыми список допустимых [метрик Load Balancer](../../load-balancer/load-balancer-standard-diagnostics.md). |

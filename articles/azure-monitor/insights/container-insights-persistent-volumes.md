@@ -3,16 +3,16 @@ title: Настройка мониторинга PV с помощью Azure Moni
 description: В этой статье описывается, как можно настроить мониторинг кластеров Kubernetes с постоянными томами с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 10/20/2020
-ms.openlocfilehash: e7c547c137fc84e6e6dfb2807b871ef0329a3c13
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d7da6bc88e7c8526e3940714502d3c92d2f37dd8
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186853"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704479"
 ---
 # <a name="configure-pv-monitoring-with-azure-monitor-for-containers"></a>Настройка мониторинга ПС с помощью Azure Monitor для контейнеров
 
-Начиная с агента версии *ciprod10052020*, Azure Monitor for Containers Integrated Agent теперь поддерживает мониторинг использования ПС (постоянный том).
+Начиная с версии агента *ciprod10052020*, Azure Monitor для интегрированного агента контейнеров теперь поддерживает мониторинг использования ПС (постоянный том).
 
 ## <a name="pv-metrics"></a>Метрики PV
 
@@ -28,6 +28,6 @@ Azure Monitor для контейнеров содержит предварит�
 
 ![Пример книги рабочей нагрузки Azure Monitor PV](./media/container-insights-persistent-volumes/pv-workload-example.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о собранных метриках ПС см. [здесь](./container-insights-agent-config.md).

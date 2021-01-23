@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 06/8/2020
 ms.author: chenyl
-ms.openlocfilehash: 4f70cbacf686210c1188cb0a87e6116af8ed4b01
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: dee15977318eda7bcd0b1950286bb33f621221dd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763191"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731590"
 ---
 # <a name="managed-identities-for-azure-signalr-service"></a>Управляемые удостоверения для службы Azure SignalR
 
@@ -104,13 +104,13 @@ ms.locfileid: "97763191"
 
 1. Добавьте удостоверение, назначенное системой, или назначенное пользователем удостоверение для службы Azure SignalR.
 
-2. Предоставьте секретное разрешение на чтение для управляемого удостоверения в политиках доступа в Key Vault. См. раздел [Назначение политики доступа Key Vault с помощью портал Azure](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+2. Предоставьте секретное разрешение на чтение для управляемого удостоверения в политиках доступа в Key Vault. См. раздел [Назначение политики доступа Key Vault с помощью портал Azure](../key-vault/general/assign-access-policy-portal.md)
 
 В настоящее время эту функцию можно использовать в следующих сценариях:
 
 - [Справочный секрет в шаблоне вышестоящего URL-адреса](./concept-upstream.md#key-vault-secret-reference-in-url-template-settings)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Azure Functions development and configuration with Azure SignalR Service](signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)

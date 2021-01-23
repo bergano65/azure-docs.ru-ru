@@ -7,16 +7,16 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 8942735ed65f8aa0cf6d315568e00412adcb353a
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: a31ef69d84f64e4bcaa46adac26a29d2cc367351
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060543"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731706"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Запрос данных в Azure Monitor с помощью Azure Data Explorer (предварительная версия)
 
-Обозреватель данных Azure поддерживает запросы между службами между Azure обозреватель данных, [Application Insights (AI)](/azure/azure-monitor/app/app-insights-overview)и [log Analytics (La)](/azure/azure-monitor/platform/data-platform-logs). Затем вы можете запросить рабочую область Log Analytics/Application Insights с помощью средств обозреватель данных Azure и обратиться к ней в запросе кросс-обслуживания. В этой статье показано, как создать запрос между службами и как добавить рабочую область Log Analytics/Application Insights в веб-интерфейс Azure обозреватель данных.
+Обозреватель данных Azure поддерживает запросы между службами между Azure обозреватель данных, [Application Insights (AI)](../app/app-insights-overview.md)и [log Analytics (La)](./data-platform-logs.md). Затем вы можете запросить рабочую область Log Analytics/Application Insights с помощью средств обозреватель данных Azure и обратиться к ней в запросе кросс-обслуживания. В этой статье показано, как создать запрос между службами и как добавить рабочую область Log Analytics/Application Insights в веб-интерфейс Azure обозреватель данных.
 
 Поток запросов между службами в Azure обозреватель данных: :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-data-explorer-monitor-flow.png" alt-text="поток прокси обозревателя данных Azure.":::
 
@@ -62,7 +62,7 @@ ms.locfileid: "98060543"
 > * Имя базы данных должно совпадать с именем ресурса, указанным в запросе Cross Service. В именах учитывается регистр.
 > * При использовании межкластерных запросов убедитесь в правильности именования приложений Application Insights и рабочих областей Log Analytics.
 > * Если имена содержат специальные символы, они заменяются на кодировку URL-адресов в запросе Cross Service.
-> * Если имена содержат символы, которые не соответствуют [правилам для именования идентификаторов KQL](https://docs.microsoft.com/azure/data-explorer/kusto/query/schema-entities/entity-names), они заменяются символом тире **-** .
+> * Если имена содержат символы, которые не соответствуют [правилам для именования идентификаторов KQL](/azure/data-explorer/kusto/query/schema-entities/entity-names), они заменяются символом тире **-** .
 
 ### <a name="direct-query-on-your-log-analytics-or-application-insights-workspaces-from-azure-data-explorer-client-tools"></a>Отправка прямых запросов к рабочим областям Log Analytics или Application Insights из клиентских средств Azure Data Explorer
 
@@ -90,7 +90,7 @@ union <Azure Data Explorer table>, cluster(CL1).database(<workspace-name>).<tabl
 
 :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-data-explorer-cross-query-proxy.png" alt-text="Запрос между службами из обозреватель данных Azure.":::
 
-Использование [оператора `join`](https://docs.microsoft.com/azure/data-explorer/kusto/query/joinoperator) вместо union может потребовать наличия [`hint`](https://docs.microsoft.com/azure/data-explorer/kusto/query/joinoperator#join-hints) для его выполнения в собственном кластере Azure Data Explorer.
+Использование [оператора `join`](/azure/data-explorer/kusto/query/joinoperator) вместо union может потребовать наличия [`hint`](/azure/data-explorer/kusto/query/joinoperator#join-hints) для его выполнения в собственном кластере Azure Data Explorer.
 
 ### <a name="join-data-from-an-azure-data-explorer-cluster-in-one-tenant-with-an-azure-monitor-resource-in-another"></a>Объединение данных из кластера Azure Data Explorer в одном арендаторе с ресурсом Azure Monitor в другом
 
@@ -98,9 +98,9 @@ union <Azure Data Explorer table>, cluster(CL1).database(<workspace-name>).<tabl
 
 Если ресурс Azure Data Explorer находится в арендаторе A, а рабочая область Log Analytics — в арендаторе B, используйте один из следующих двух методов:
 
-1. Azure Data Explorer позволяет добавлять роли для субъектов в разные арендаторы. Добавьте свой идентификатор пользователя в арендаторе B в качестве полномочного пользователя в кластере Azure Data Explorer. Убедитесь, что свойство *[TrustedExternalTenant](https://docs.microsoft.com/powershell/module/az.kusto/update-azkustocluster)* в кластере Azure Data Explorer содержит арендатор B. Выполните полный перекрестный запрос в арендаторе B.
+1. Azure Data Explorer позволяет добавлять роли для субъектов в разные арендаторы. Добавьте свой идентификатор пользователя в арендаторе B в качестве полномочного пользователя в кластере Azure Data Explorer. Убедитесь, что свойство *[TrustedExternalTenant](/powershell/module/az.kusto/update-azkustocluster)* в кластере Azure Data Explorer содержит арендатор B. Выполните полный перекрестный запрос в арендаторе B.
 
-2. Используйте [Lighthouse](https://docs.microsoft.com/azure/lighthouse/) для проецирования ресурса Azure Monitor в арендатор A.
+2. Используйте [Lighthouse](../../lighthouse/index.yml) для проецирования ресурса Azure Monitor в арендатор A.
 ### <a name="connect-to-azure-data-explorer-clusters-from-different-tenants"></a>Подключение к кластерам Azure Data Explorer из разных арендаторов
 
 Kusto Explorer автоматически выполняет за вас вход в арендатор, которому изначально принадлежит учетная запись пользователя. Чтобы получить доступ к ресурсам в других арендаторах с помощью одной учетной записи пользователя, для `tenantId` необходимо явно указать в строке подключения следующее: `Data Source=https://ade.applicationinsights.io/subscriptions/SubscriptionId/resourcegroups/ResourceGroupName;Initial Catalog=NetDefaultDB;AAD Federated Security=True;Authority ID=`**TenantId**
@@ -134,4 +134,4 @@ Kusto Explorer автоматически выполняет за вас вхо�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [структуре данных рабочих областей log Analytics и Application Insights](data-platform-logs.md).
-- Узнайте, как [писать запросы в Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/write-queries).
+- Узнайте, как [писать запросы в Azure обозреватель данных](/azure/data-explorer/write-queries).
