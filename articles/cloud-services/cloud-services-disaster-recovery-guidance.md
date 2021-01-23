@@ -1,23 +1,25 @@
 ---
-title: Обработка прерываний служб Azure, влияющих на облачные службы Azure
-titleSuffix: Azure Cloud Services
+title: Обработка прерываний служб Azure, влияющих на облачные службы Azure (классические)
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на облачные службы Azure.
-services: cloud-services
-documentationcenter: ''
-author: mmccrory
-ms.service: cloud-services
-ms.workload: cloud-services
 ms.topic: article
-ms.date: 04/04/2017
-ms.author: memccror
-ms.openlocfilehash: 6ae1509d552de1d5473c7d995af2db68d7113e79
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: cdd6c9da5a1895d4aadd73133734cd4c8204ecf1
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077530"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742171"
 ---
-# <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
+# <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services-classic"></a>Что делать в случае прерывания работы службы Azure, влияющего на облачные службы Azure (классические)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
 
 Корпорация Майкрософт предоставляет соглашения об уровне обслуживания (SLA) для своих служб, в которых гарантируется их время бесперебойной работы и доступность. Соглашения об уровне обслуживания для отдельных служб Azure можно найти в разделе [Соглашения об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/).
@@ -53,7 +55,7 @@ ms.locfileid: "92077530"
 ## <a name="option-3-wait-for-recovery"></a>Вариант 3. Ожидание восстановления
 В этом случае вам не нужно ничего делать. Однако служба будет недоступна до восстановления региона. Текущее состояние службы можно просмотреть на [панели мониторинга работоспособности служб Azure](https://azure.microsoft.com/status/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы больше узнать о том, как реализовать стратегию обеспечения аварийного восстановления и высокого уровня доступности, ознакомьтесь с разделом [Аварийное восстановление и высокий уровень доступности для приложений на платформе Azure](/azure/architecture/framework/resiliency/backup-and-recovery).
 
 Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](/azure/architecture/checklist/resiliency-per-service).

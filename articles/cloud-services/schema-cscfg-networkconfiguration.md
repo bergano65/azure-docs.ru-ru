@@ -1,22 +1,25 @@
 ---
-title: Схема NetworkConfiguration для облачных служб Azure | Документация Майкрософт
+title: Схема NetworkConfiguration (классическая модель) облачных служб Azure | Документация Майкрософт
 description: Сведения о дочерних элементах элемента NetworkConfiguration в файле конфигурации службы, который указывает виртуальную сеть и значения DNS.
-ms.custom: ''
-ms.date: 12/07/2016
-services: cloud-services
+ms.topic: article
 ms.service: cloud-services
-ms.topic: reference
-caps.latest.revision: 28
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: a3f62bb33332e818cc40c5195a1cc2f667f819b4
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+'---thor': tagore
+ms.openlocfilehash: acf4c050ade21a6e5fc51ee6ace512eff00360ab
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072583"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743463"
 ---
-# <a name="azure-cloud-services-config-networkconfiguration-schema"></a>Схема элемента конфигурации NetworkConfiguration для облачных служб Azure
+# <a name="azure-cloud-services-classic-config-networkconfiguration-schema"></a>Схема NetworkConfiguration для облачных служб Azure (классическая конфигурация)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 
 Элемент `NetworkConfiguration` в файле конфигурации службы задает параметры для виртуальной сети и DNS. Эти параметры необязательны для облачных служб.
 

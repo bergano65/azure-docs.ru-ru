@@ -1,26 +1,25 @@
 ---
-title: Схема DEF. WorkerRole для облачных служб Azure | Документация Майкрософт
+title: Схема DEF. WorkerRole (классическая модель) облачных служб Azure | Документация Майкрософт
 description: Рабочая роль Azure используется для обобщенной разработки и может выполнять фоновую обработку веб-роли. Сведения о схеме рабочей роли Azure.
-services: cloud-services
-ms.custom: ''
-ms.date: 04/14/2015
-ms.reviewer: ''
+ms.topic: article
 ms.service: cloud-services
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: reference
-ms.assetid: 41cd46bc-c479-43fa-96e5-d6c83e4e6d89
-caps.latest.revision: 55
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 26225442c72fb209bb1ac4cd2bf4777fb39542fb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 0871527187a3d678cb2b94bd8dc342cf2abde1ba
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005169"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743140"
 ---
-# <a name="azure-cloud-services-definition-workerrole-schema"></a>Схема WorkerRole для определения облачных служб Azure
+# <a name="azure-cloud-services-classic-definition-workerrole-schema"></a>Схема WorkerRole определения облачных служб Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Рабочая роль Azure используется для обобщенной разработки. Она может выполнять фоновую обработку для веб-роли.
 
 По умолчанию определения службы хранятся в файле с расширением .csdef.
@@ -279,7 +278,7 @@ ms.locfileid: "96005169"
 | attribute | Тип | Описание |
 | --------- | ---- | ----------- |
 |name|строка|Обязательный. Имя этого сертификата, которое используется для ссылки на него, когда оно связано с элементом HTTPS `InputEndpoint`.|
-|storeLocation|строка|Обязательный. Расположение хранилища сертификатов, в котором размещается этот сертификат на локальном компьютере. Возможными значениями являются `CurrentUser` и `LocalMachine`.|
+|storeLocation|строка|Обязательный. Расположение хранилища сертификатов, в котором размещается этот сертификат на локальном компьютере. Возможные значения: `CurrentUser` и `LocalMachine`.|
 |storeName|строка|Обязательный. Имя хранилища сертификатов, в котором размещается этот сертификат на локальном компьютере. Возможные значения включают стандартные имена хранилищ `My`, `Root`, `CA`, `Trust`, `Disallowed`, `TrustedPeople`, `TrustedPublisher`, `AuthRoot`, `AddressBook` или любое пользовательское имя хранилища. Если указано пользовательское имя хранилища, хранилище создается автоматически.|
 |permissionLevel|строка|Необязательный параметр. Указывает права доступа, предоставленные процессам роли. Если вы хотите, чтобы только процессы с повышенными привилегиями имели доступ к закрытому ключу, укажите разрешение `elevated`. Разрешение `limitedOrElevated` позволяет всем процессам роли получать доступ к закрытому ключу. Возможные значения: `limitedOrElevated` или `elevated`. Значение по умолчанию — `limitedOrElevated`.|
 
@@ -416,7 +415,7 @@ ms.locfileid: "96005169"
 | --------- | ---- | ----------- |
 |path|строка|Обязательный. Относительный или абсолютный путь к локальному каталогу, содержимое которого копируется на виртуальную машину Azure. В пути к каталогу поддерживается использование переменных среды.|
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
 
 

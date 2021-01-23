@@ -1,21 +1,24 @@
 ---
-title: Мониторинг облачной службы Azure | Документация Майкрософт
+title: Мониторинг облачной службы Azure (классическая модель) | Документация Майкрософт
 description: Сведения о задачах и механизмах для мониторинга облачной службы Azure.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 01/29/2018
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 61c794ba03934ae1828ba310f3f776bfb61b652b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 60f320f86860cca482cdf25c7d93f84dae8c4e5f
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847245"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743378"
 ---
-# <a name="introduction-to-cloud-service-monitoring"></a>Введение в мониторинг облачных служб
+# <a name="introduction-to-cloud-service-classic-monitoring"></a>Общие сведения о мониторинге облачной службы (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 
 Вы можете отслеживать для облачных служб ключевые показатели производительности. Каждая роль облачной службы собирает минимальный набор данных: использование ЦП, сетевых и дисковых ресурсов. Если к роли облачной службы применено расширение `Microsoft.Azure.Diagnostics`, эта роль может собирать дополнительные элементы данных. В этой статье содержатся базовые сведения о системе диагностике Azure для облачных служб.
 
@@ -92,7 +95,7 @@ ms.locfileid: "85847245"
 Обратите внимание, что в Application Insights могут отображаться счетчики производительности (и другие параметры), настроенные в расширении службы диагностики Azure, но по-настоящему широкие возможности вы получите только при интеграции пакета SDK для Application Insights в рабочие роли и веб-роли.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Подробнее об Application Insights для облачных служб Azure](../azure-monitor/app/cloudservices.md)
 - [Настройка счетчиков производительности](diagnostics-performance-counters.md)

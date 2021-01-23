@@ -2,23 +2,23 @@
 title: Создание группы для назначения ролей в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как создать назначаемую ролью группу в Azure AD. Управляйте ролями Azure на портале Azure, в PowerShell или API Graph.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: article
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc2c42f407ee31a792a6634a813358d428120b46
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 3f06a1e9ea83fc7ad758ad17245ffa5d7ca973f6
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378624"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742104"
 ---
 # <a name="create-a-role-assignable-group-in-azure-active-directory"></a>Создание назначаемой роли группы в Azure Active Directory
 
@@ -46,7 +46,7 @@ ms.locfileid: "93378624"
 
 Группа создается с любыми ролями, которые могли быть назначены ей.
 
-## <a name="using-powershell"></a>Регистрация с помощью PowerShell
+## <a name="using-powershell"></a>Использование PowerShell
 
 ### <a name="install-the-azure-ad-preview-module"></a>Установка модуля предварительной версии Azure AD
 
@@ -124,7 +124,7 @@ POST https://graph.microsoft.com/beta/groups
 
 Для группы этого типа всегда будет `isPublic` иметь значение false и `isSecurityEnabled` всегда будет иметь значение true.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначение роли облачной группе](groups-assign-role.md)
 - [Использование облачных групп для управления назначениями ролей](groups-concept.md)

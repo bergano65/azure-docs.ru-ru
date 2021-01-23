@@ -1,22 +1,25 @@
 ---
-title: Обмен данными между ролями в облачных службах | Документация Майкрософт
+title: Обмен данными для ролей в облачных службах (классическая модель) | Документация Майкрософт
 description: Для экземпляров ролей в облачных службах могут быть определены конечные точки (http, https, tcp, udp), взаимодействующие с внешней средой или с другими экземплярами ролей.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-manager: carmonm
-ms.service: cloud-services
 ms.topic: article
-ms.date: 12/14/2016
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 094e08becf4f3a60c98d89bfae7e7c3a69b677f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 82aa1579a1f7feb36732153341e1eacf266a7218
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75386346"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743038"
 ---
-# <a name="enable-communication-for-role-instances-in-azure"></a>Включение обмена данными между экземплярами роли в Azure
+# <a name="enable-communication-for-role-instances-in-azure-cloud-services-classic"></a>Включение взаимодействия для экземпляров ролей в облачных службах Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Ролей облачной службы взаимодействуют через внутренние и внешние подключения. Внешние подключения называются **входными конечными точками**, а внутренние подключения — **внутренними конечными точками**. В этом разделе описывается изменение [определения службы](cloud-services-model-and-package.md#csdef) для создания конечных точек.
 
 ## <a name="input-endpoint"></a>Входная конечная точка
@@ -106,7 +109,7 @@ int port = RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["StandardWeb"].
 > 
 > 
 
-Чтобы определить номер порта внутренней конечной точки экземпляра роли, можно использовать свойство [InstanceEndpoints](/previous-versions/azure/reference/ee741917(v=azure.100)) , чтобы вернуть объект Dictionary, содержащий имена конечных точек и их IP-адреса и порты. Свойство [IPEndpoint](/previous-versions/azure/reference/ee741919(v=azure.100)) возвращает IP-адрес и порт указанной конечной точкой. Свойство **PublicIPEndpoint** возвращает порт для конечной точки с балансировкой нагрузки. Часть IP-адреса в свойстве **PublicIPEndpoint** не используется.
+Чтобы определить номер порта для внутренней конечной точки в экземпляре роли, можно использовать [`InstanceEndpoints`](/previous-versions/azure/reference/ee741917(v=azure.100)) свойство, чтобы вернуть объект Dictionary, содержащий имена конечных точек и соответствующие им IP-адреса и порты. [`IPEndpoint`](/previous-versions/azure/reference/ee741919(v=azure.100))Свойство возвращает IP-адрес и порт для указанной конечной точки. `PublicIPEndpoint`Свойство возвращает порт для конечной точки с балансировкой нагрузки. Часть IP-адреса `PublicIPEndpoint` свойства не используется.
 
 Вот пример, в котором выполняется итерация экземпляров роли.
 
@@ -124,7 +127,7 @@ foreach (RoleInstance roleInst in RoleEnvironment.CurrentRoleInstance.Role.Insta
 Ниже приведен пример рабочей роли, которая получает конечную точку, предоставляемую через определение службы, и начинает прослушивание подключений.
 
 > [!WARNING]
-> Этот код будет работать только для развернутой службы. При выполнении в эмуляторе вычислений Azure элементы конфигурации службы, создающие конечные точки прямых портов (элементы**InstanceInputEndpoint** ), игнорируются.
+> Этот код будет работать только для развернутой службы. При выполнении в эмуляторе вычислений Azure элементы конфигурации службы, создающие конечные точки прямых портов (элементы **InstanceInputEndpoint** ), игнорируются.
 > 
 > 
 
@@ -365,7 +368,7 @@ namespace WorkerRole1
 
 Справочник по схеме XML для элементов, используемых выше, можно найти [здесь](/previous-versions/azure/reference/gg557551(v=azure.100)).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительная информация о [модели](cloud-services-model-and-package.md)облачной службы
 
 

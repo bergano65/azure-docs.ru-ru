@@ -1,25 +1,24 @@
 ---
-title: Использование Visual Studio для включения удаленный рабочий стол роли (облачные службы Azure)
+title: С помощью Visual Studio включите удаленный рабочий стол для роли (классическая облачная служба Azure)
 description: Настройка подключения к удаленному рабочему столу в приложении облачной службы Azure.
-services: cloud-services
-author: ghogen
-manager: jillfra
-ms.assetid: f5727ebe-9f57-4d7d-aff1-58761e8de8c1
-ms.prod: visual-studio-dev15
-ms.technology: vs-azure
-ms.custom: vs-azure
-ms.topic: conceptual
-ms.workload: azure-vs
-ms.date: 03/06/2018
-ms.author: ghogen
-ms.openlocfilehash: f4622e44c795182ee68c617f335c9e1651d3adcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: article
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: ad95cefbdf839c28b0979b051e217a1dfec76eea
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80294385"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743242"
 ---
-# <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-visual-studio"></a>Включение подключения к удаленному рабочему столу для роли в облачных службах Azure с помощью Visual Studio
+# <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-classic-using-visual-studio"></a>Включение подключение к удаленному рабочему столу для роли в облачных службах Azure (классическая модель) с помощью Visual Studio
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 
 > [!div class="op_single_selector"]
 > * [Портал Azure](cloud-services-role-enable-remote-desktop-new-portal.md)
@@ -40,14 +39,14 @@ ms.locfileid: "80294385"
 
 2. Войдите в подписку Azure, если потребуется, и выберите **Далее**.
 
-3. На странице **Параметры** выберите **Включить удаленный рабочий стол для всех ролей**, а затем ссылку **Параметры... **, чтобы открыть диалоговое окно **Конфигурация удаленного рабочего стола**.
+3. На странице **Параметры** выберите **Включить удаленный рабочий стол для всех ролей**, а затем ссылку **Параметры...**, чтобы открыть диалоговое окно **Конфигурация удаленного рабочего стола**.
 
 4. В нижней части этого диалогового окна выберите **Дополнительно**. Это действие отобразит раскрывающийся список, в котором можно создать или выбрать сертификат, чтобы шифровать учетные данные при подключении через удаленный рабочий стол.
 
    > [!Note]
    > Сертификаты, необходимые для подключения к удаленному рабочему столу, отличаются от сертификатов, используемых для других операций в Azure. Сертификат удаленного доступа должен иметь закрытый ключ.
 
-5. Выберите сертификат из списка или нажмите кнопку ** &lt; создать... &gt; **. Если вы создаете новый сертификат, укажите для него понятное имя и нажмите **ОК**. Новый сертификат появится в раскрывающемся списке.
+5. Выберите сертификат из списка или нажмите кнопку **&lt; создать... &gt;**. Если вы создаете новый сертификат, укажите для него понятное имя и нажмите **ОК**. Новый сертификат появится в раскрывающемся списке.
 
 6. Предоставьте имя пользователя и пароль. Нельзя использовать существующую учетную запись. Не указывайте для новой учетной записи имя Administrator.
 
@@ -86,7 +85,7 @@ Certificate with thumbprint [thumbprint] doesn't exist.
 
 Чтобы использовать расширение удаленного рабочего стола из Azure DevOps Services, включите в конвейер сборки следующие данные:
 
-1. Добавьте `/p:ForceRDPExtensionOverPlugin=true` в аргументы MSBuild, чтобы развертывание выполнялось через расширение удаленного рабочего стола, а не подключаемый модуль удаленного рабочего стола. Пример:
+1. Добавьте `/p:ForceRDPExtensionOverPlugin=true` в аргументы MSBuild, чтобы развертывание выполнялось через расширение удаленного рабочего стола, а не подключаемый модуль удаленного рабочего стола. Например:
 
     ```
     msbuild AzureCloudService5.ccproj /t:Publish /p:TargetProfile=Cloud /p:DebugType=None

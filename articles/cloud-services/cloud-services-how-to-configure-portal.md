@@ -1,21 +1,24 @@
 ---
-title: Настройка облачной службы с помощью портала | Документация Майкрософт
+title: Настройка облачной службы (классическая модель) — портал | Документация Майкрософт
 description: Узнайте, как настроить облачные службы в Azure. Как обновить конфигурацию облачной службы и настроить удаленный доступ к экземплярам роли. В этих примерах используется портал Azure.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 12/07/2016
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 4f2b5716e253f2810ff953a10c879574c6a6c342
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: f16fcfe227663958279281659b09929a4cd2d386
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576665"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743429"
 ---
-# <a name="how-to-configure-cloud-services"></a>Настройка облачных служб
+# <a name="how-to-configure-and-azure-cloud-service-classic"></a>Как настроить и облачную службу Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 
 Часто используемые параметры облачной службы можно настроить на портале Azure. Также можно напрямую изменить файлы конфигурации. Для этого загрузите и измените нужный файл, а затем отправьте его для обновления конфигурации облачной службы. В любом случае обновления конфигурации применяются ко всем экземплярам ролей.
 
@@ -62,7 +65,7 @@ ms.locfileid: "91576665"
 
 ### <a name="configure-monitoring-from-a-metric-tile"></a>Настройка мониторинга с использованием плиток метрик
 
-Вместо использования **параметров**  >  **Правила оповещений**можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
+Вместо использования **параметров**  >  **Правила оповещений** можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
 
 ![Мониторинг облачной службы](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
 
@@ -92,13 +95,13 @@ ms.locfileid: "91576665"
     ![Колонка «Конфигурация»](./media/cloud-services-how-to-configure-portal/cs-settings-config.png)
 3. Нажмите кнопку **Загрузить** .
 
-    ![Скачивание](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
+    ![Скачать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
 4. Чтобы применить обновления конфигурации, передайте новый файл в службу:
 
-    ![Передать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
+    ![Отправка](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
 5. Выберите файл .cscfg и нажмите **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).

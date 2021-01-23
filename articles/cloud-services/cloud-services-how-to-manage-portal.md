@@ -1,21 +1,25 @@
 ---
 title: Общие задачи управления облачными службами | Документация Майкрософт
 description: Узнайте, как управлять облачными службами с помощью портала Azure. В этих примерах используется портал Azure.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/05/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 84e450a55f9482c3a713943adfcc4d7940ab873f
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 306da8dae31c2bbdb487e7128e3a2e24424c239d
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076714"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743395"
 ---
-# <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
+# <a name="manage-cloud-services-classic-in-the-azure-portal"></a>Управление облачными службами (классическая модель) в портал Azure
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 В области **Облачные службы** портала Azure вы можете:
 
 * Обновлять роли или развертывания облачной службы.
@@ -77,7 +81,7 @@ ms.locfileid: "92076714"
 
 - Если вы хотите использовать статический IP-адрес для вашего рабочего слота, необходимо также зарезервировать такой адрес для промежуточного слота. В противном случае переключение завершится ошибкой.
 
-- Все экземпляры роли должны быть запущены перед выполнением переключения. Состояние экземпляров можно проверить в колонке **Обзор** на портале Azure. Также можно использовать команду [Get-AzureRole](/powershell/module/servicemanagement/azure.service/get-azurerole?view=azuresmps-3.7.0) в Windows PowerShell.
+- Все экземпляры роли должны быть запущены перед выполнением переключения. Состояние экземпляров можно проверить в колонке **Обзор** на портале Azure. Также можно использовать команду [Get-AzureRole](/powershell/module/servicemanagement/azure.service/get-azurerole?view=azuresmps-3.7.0&preserve-view=true) в Windows PowerShell.
 
 Обратите внимание, что обновления гостевой ОС и операции восстановления службы также могут быть причиной сбоя переключения развертывания. Дополнительные сведения см. в статье [Устранение неполадок, которые могут возникнуть при развертывании облачной службы](cloud-services-troubleshoot-deployment-problems.md).
 
@@ -119,7 +123,7 @@ ms.locfileid: "92076714"
 
 [Azure portal]: https://portal.azure.com
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).

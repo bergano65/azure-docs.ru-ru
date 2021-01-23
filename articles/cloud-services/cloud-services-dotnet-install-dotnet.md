@@ -1,39 +1,40 @@
 ---
-title: Установка .NET для ролей облачных служб Azure | Документация Майкрософт
+title: Установка .NET в облачных службах Azure (классические роли) | Документация Майкрософт
 description: В этой статье описывается, как вручную установить платформу .NET Framework для веб-роли и рабочей роли облачной службы.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-manager: carmonm
-ms.service: cloud-services
-ms.devlang: dotnet
-ms.custom: devx-track-dotnet
 ms.topic: article
-ms.date: 06/22/2018
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 6de4b79560557fc86edb9e1a25e32a6a1983ceb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 18665fabad079a8759f26be8834b2fe029ab5f49
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88932242"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742783"
 ---
-# <a name="install-net-on-azure-cloud-services-roles"></a>Установка .NET для ролей облачных служб Azure
+# <a name="install-net-on-azure-cloud-services-classic-roles"></a>Установка .NET в облачных службах Azure (классические роли)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 В этой статье описывается установка версий платформы .NET Framework, которые не входят в состав гостевой ОС Azure. .NET в гостевой ОС можно использовать для настройки веб-ролей и рабочих ролей облачной службы.
 
-Например, можно установить .NET Framework 4.6.2 в семействе 4 гостевой ОС, который не поставляется с выпуском .NET Framework 4,6. (Семейство гостевых ОС версии 5 поставляется с .NET Framework 4,6). Последние сведения о выпусках гостевой ОС Azure см. в [статье новости о выпуске гостевой ОС Azure](cloud-services-guestos-update-matrix.md). 
+Например, можно установить платформа .NET Framework 4.6.2 в семействе 4 гостевой ОС, который не поставляется с выпуском платформа .NET Framework 4,6. (Семейство гостевых ОС версии 5 поставляется с платформа .NET Framework 4,6). Последние сведения о выпусках гостевой ОС Azure см. в [статье новости о выпуске гостевой ОС Azure](cloud-services-guestos-update-matrix.md). 
 
 >[!IMPORTANT]
->Пакет Azure SDK 2,9 содержит ограничение на развертывание .NET Framework 4,6 на гостевой ОС семейства 4 или более ранней версии. Исправление ограничения доступно на сайте [документации Майкрософт](https://github.com/MicrosoftDocs/azure-cloud-services-files/tree/master/Azure%20Targets%20SDK%202.9).
+>Пакет Azure SDK 2,9 содержит ограничение на развертывание платформа .NET Framework 4,6 на гостевой ОС семейства 4 или более ранней версии. Исправление ограничения доступно на сайте [документации Майкрософт](https://github.com/MicrosoftDocs/azure-cloud-services-files/tree/master/Azure%20Targets%20SDK%202.9).
 
 Чтобы установить .NET для веб-ролей и рабочих ролей, включите веб-установщик .NET в качестве части проекта облачной службы. Запустите установщик в рамках задач запуска роли. 
 
 ## <a name="add-the-net-installer-to-your-project"></a>Добавление установщика .NET в проект
 Чтобы скачать веб-установщик для платформы .NET Framework, выберите версию, которую требуется установить:
 
-* [Веб-установщик .NET Framework 4,8](https://dotnet.microsoft.com/download/thank-you/net48)
-* [Веб-установщик .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863262)
-* [Веб-установщик .NET Framework 4.6.2](https://www.microsoft.com/download/details.aspx?id=53345)
+* [Веб-установщик платформа .NET Framework 4,8](https://dotnet.microsoft.com/download/thank-you/net48)
+* [Веб-установщик платформа .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863262)
+* [Веб-установщик платформа .NET Framework 4.6.2](https://www.microsoft.com/download/details.aspx?id=53345)
 
 Чтобы добавить установщик для *веб*-роли:
   1. В **обозревателе решений** в разделе **Роли** проекта облачной службы щелкните правой кнопкой мыши *веб-роль* и выберите **Добавить** > **Новая папка**. Создайте папку с именем **bin**.
@@ -45,7 +46,7 @@ ms.locfileid: "88932242"
 При добавлении файлов таким образом в папку содержимого роли они автоматически добавляются в пакет облачной службы. Файлы затем развертываются в согласованное расположение на виртуальной машине. Повторите эту процедуру для каждой веб-роли и рабочей роли в облачной службе, чтобы у всех ролей была копия установщика.
 
 > [!NOTE]
-> Необходимо установить .NET Framework 4.6.2 в роли облачной службы, даже если приложение предназначено для .NET Framework 4,6. Гостевая ОС включает [обновление 3098779](https://support.microsoft.com/kb/3098779) и [обновление 3097997](https://support.microsoft.com/kb/3097997) базы знаний. При запуске приложений .NET могут возникнуть проблемы, если .NET Framework 4,6 устанавливается поверх обновлений базы знаний. Чтобы избежать этих проблем, установите .NET Framework 4.6.2, а не версию 4,6. Дополнительные сведения см. в статьях базы знаний [3118750](https://support.microsoft.com/kb/3118750) и [4340191](https://support.microsoft.com/kb/4340191).
+> Необходимо установить платформа .NET Framework 4.6.2 в роли облачной службы, даже если приложение предназначено для платформа .NET Framework 4,6. Гостевая ОС включает [обновление 3098779](https://support.microsoft.com/kb/3098779) и [обновление 3097997](https://support.microsoft.com/kb/3097997) базы знаний. При запуске приложений .NET могут возникнуть проблемы, если платформа .NET Framework 4,6 устанавливается поверх обновлений базы знаний. Чтобы избежать этих проблем, установите платформа .NET Framework 4.6.2, а не версию 4,6. Дополнительные сведения см. в статьях базы знаний [3118750](https://support.microsoft.com/kb/3118750) и [4340191](https://support.microsoft.com/kb/4340191).
 > 
 > 
 
@@ -83,7 +84,7 @@ ms.locfileid: "88932242"
 
 2. Создайте файл с именем **install.cmd** и добавьте в него следующий скрипт установки.
 
-   Скрипт путем поиска по реестру проверяет, установлена ли на компьютере выбранная версия .NET Framework. Если .NET Framework версия не установлена, открывается веб-установщик .NET Framework. Для помощи в устранении возникших проблем скрипт регистрирует все действия в файл startuptasklog-(текущая дата и время).txt, который хранится в локальном хранилище **InstallLogs**.
+   Скрипт путем поиска по реестру проверяет, установлена ли на компьютере выбранная версия .NET Framework. Если платформа .NET Framework версия не установлена, открывается веб-установщик платформа .NET Framework. Для помощи в устранении возникших проблем скрипт регистрирует все действия в файл startuptasklog-(текущая дата и время).txt, который хранится в локальном хранилище **InstallLogs**.
    
    > [!IMPORTANT]
    > Для создания файла install.cmd используйте простой текстовый редактор, например Блокнот. Если для создания текстового файла и изменения расширения на .cmd используется Visual Studio, файл по-прежнему может содержать метку порядка байтов UTF-8. Эта метка может вызвать ошибку при выполнении первой строки скрипта. Чтобы избежать этой ошибки, сделайте первую строку скрипта оператором REM, который может быть пропущен при обработке порядка байтов. 
@@ -226,7 +227,7 @@ ms.locfileid: "88932242"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Установка платформы .NET Framework][Installing the .NET Framework]
 * [Определение установленных версий платформы .NET Framework][How to: Determine Which .NET Framework Versions Are Installed]
-* [Устранение неполадок .NET Framework установки][Troubleshooting .NET Framework Installations]
+* [Устранение неполадок платформа .NET Framework установки][Troubleshooting .NET Framework Installations]
 
 [How to: Determine Which .NET Framework Versions Are Installed]: /dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
 [Installing the .NET Framework]: /dotnet/framework/install/guide-for-developers

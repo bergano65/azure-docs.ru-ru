@@ -1,21 +1,25 @@
 ---
-title: Создание и развертывание облачной службы | Документация Майкрософт
+title: Создание и развертывание облачной службы (классическая модель) | Документация Майкрософт
 description: Узнайте, как использовать метод быстрого создания для создания облачной службы и отправки и развертывания пакета облачной службы в Azure с помощью инструкции upload.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 05/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 66938975784f1de2abdc0ac22e62aaca82279f86
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 879b86714adf50b5a4da4398389405063ac046dc
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164170"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743412"
 ---
-# <a name="how-to-create-and-deploy-a-cloud-service"></a>Создание и развертывание облачной службы
+# <a name="how-to-create-and-deploy-an-azure-cloud-service-classic"></a>Создание и развертывание облачной службы Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Портал Azure предоставляет два способа создания и развертывания облачной службы: *быстрое создание* и *настраиваемое создание*.
 
 В этой статье описывается быстрое создание облачной службы с последующим развертыванием соответствующего ей пакета в Azure с помощью функции **Отправка** . При выборе этого способа на портале Azure отображаются все необходимые для работы ссылки. Чтобы одновременно выполнить развертывание создаваемой облачной службы, воспользуйтесь функцией Настраиваемое создание.
@@ -48,7 +52,7 @@ ms.locfileid: "92164170"
 
 Чтобы создать облачную службу с развертыванием веб-ролей или рабочих ролей, необходимо [создать соответствующий пакет службы](cloud-services-model-and-package.md#servicepackagecspkg).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 * Если пакет SDK для Azure не установлен, щелкните **Install Azure SDK** (Установить пакет Azure SDK). Откроется [страница загрузок Azure](https://azure.microsoft.com/downloads/), откуда можно скачать пакет SDK для языка, выбранного для разработки кода приложения. (Также это можно сделать позднее.)
 * Для экземпляров роли с сертификатами создайте сертификаты. В облачных службах используется PFX-файл с закрытым ключом. Сертификаты можно отправить в Azure при создании или развертывании облачной службы.
 
@@ -56,7 +60,8 @@ ms.locfileid: "92164170"
 1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Щелкните **Создать ресурс > Вычисления**, затем прокрутите вниз и щелкните **Облачная служба**.
 
-    ![Снимок экрана, посвященный параметру облачной службы в разделе Создание ресурса > вычислений.](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
+    ![Публикация облачной Service1](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
+
 3. В новой области **облачной службы** введите **DNS-имя**.
 4. Создайте новую **группу ресурсов** или выберите существующую.
 5. Выберите **расположение**.
@@ -65,7 +70,7 @@ ms.locfileid: "92164170"
 8. Нажмите кнопку **ОК**. После этого область **Отправить пакет** закроется.
 9. Если у вас нет сертификатов, нажмите кнопку **Создать**.
 
-    ![Публикация облачной службы](media/cloud-services-how-to-create-deploy-portal/select-package.png)
+    ![Публикация облачной S2](media/cloud-services-how-to-create-deploy-portal/select-package.png)
 
 ## <a name="upload-a-certificate"></a>Загрузить сертификат
 Если пакет развертывания был [настроен для использования сертификатов](cloud-services-configure-ssl-certificate-portal.md#modify), теперь можно передать сертификат.
@@ -74,7 +79,7 @@ ms.locfileid: "92164170"
 2. Последовательно щелкните **Присоединить сертификат** и нажмите кнопку **ОК** в области **Добавить сертификаты**.
 3. Щелкните **Создать** в области **Облачная служба**. Когда развертывание получит статус **Готово** можно выполнять следующие шаги.
 
-    ![Снимок экрана, посвященный процессу отправки сертификата.](media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
+    ![Публикация облачной S3](media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
 
 ## <a name="verify-your-deployment-completed-successfully"></a>Проверка успешного завершения развертывания
 1. Щелкните экземпляр облачной службы.
@@ -86,7 +91,7 @@ ms.locfileid: "92164170"
 
 [TFSTutorialForCloudService]: ./cloud-services-choose-me.md
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).

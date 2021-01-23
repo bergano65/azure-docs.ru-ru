@@ -1,28 +1,24 @@
 ---
 title: Вопросы, связанные с настройкой и управлением
-titleSuffix: Azure Cloud Services
 description: В этой статье приведены часто задаваемые вопросы по конфигурации и управлению для облачных служб Microsoft Azure.
-services: cloud-services
-documentationcenter: ''
-author: genlin
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
-ms.service: cloud-services
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/23/2018
-ms.author: genli
-ms.openlocfilehash: c4497805e64ef303c9d7340c48a49027b3a26bef
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: c5dd09292897d69f90606e8661b4e6cb28090612
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011033"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742596"
 ---
-# <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
+# <a name="configuration-and-management-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Проблемы настройки и управления для облачных служб Azure (классическая модель): часто задаваемые вопросы
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 
 В этой статье приведены часто задаваемые вопросы по конфигурации и управлению для [облачных служб Microsoft Azure](https://azure.microsoft.com/services/cloud-services). Сведения о размерах приводятся в статье [Размеры для облачных служб](cloud-services-sizes-specs.md) .
 
@@ -62,7 +58,7 @@ ms.locfileid: "96011033"
 
 **Универсальный шаблон**
 
-- [Как добавить на веб-сайт запрет на сканирование?](#how-do-i-add-nosniff-to-my-website)
+- [Разделы справки добавить `nosniff` в мой веб-сайт?](#how-do-i-add-nosniff-to-my-website)
 - [Как настроить IIS для веб-роли?](#how-do-i-customize-iis-for-a-web-role)
 - [Какова предельная квота для облачной службы?](#what-is-the-quota-limit-for-my-cloud-service)
 - [Почему диск на виртуальной машине облачной службы отображает очень мало свободного дискового пространства?](#why-does-the-drive-on-my-cloud-service-vm-show-very-little-free-disk-space)
@@ -128,7 +124,7 @@ $cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net -CertStoreLoc
 $password = ConvertTo-SecureString -String "your-password" -Force -AsPlainText
 Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $password
 ```
-В ближайшее время появится возможность выбора BLOB-объектов или локального расположения в качестве расположения для передачи csdef и cscfg. С помощью командлета [New-AzureDeployment](/powershell/module/servicemanagement/azure.service/new-azuredeployment?view=azuresmps-4.0.0) можно задать значение каждого расположения.
+В ближайшее время появится возможность выбора BLOB-объектов или локального расположения в качестве расположения для передачи csdef и cscfg. С помощью командлета [New-AzureDeployment](/powershell/module/servicemanagement/azure.service/new-azuredeployment?view=azuresmps-4.0.0&preserve-view=true) можно задать значение каждого расположения.
 
 Возможность наблюдать за метриками на уровне экземпляра. Дополнительные возможности мониторинга см. в статье [Мониторинг облачных служб](cloud-services-how-to-monitor.md).
 
@@ -146,9 +142,9 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 Вы можете включить ведение журнала Диагностики Azure для Windows (WAD) такими способами:
 1. [С помощью Visual Studio](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
 2. [Включить с помощью кода .NET](./cloud-services-dotnet-diagnostics.md)
-3. [С помощью PowerShell](./cloud-services-diagnostics-powershell.md).
+3. [Включение с помощью PowerShell](./cloud-services-diagnostics-powershell.md)
 
-Чтобы получить текущие параметры WAD облачной службы, можно использовать команду PS [Get-AzureServiceDiagnosticsExtensions](./cloud-services-diagnostics-powershell.md#get-current-diagnostics-extension-configuration) или просмотреть их на портале в колонке "Облачные службы --> Расширения".
+Чтобы получить текущие параметры WAD для облачной службы, можно использовать командлет [Get-азуресервицедиагностиксекстенсионс](./cloud-services-diagnostics-powershell.md#get-current-diagnostics-extension-configuration) PowerShell cmd или просмотреть его с помощью портала в колонке облачные службы — расширения >.
 
 
 ## <a name="network-configuration"></a>Сетевая конфигурация
@@ -254,7 +250,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 
 ## <a name="generic"></a>Универсальный шаблон
 
-### <a name="how-do-i-add-nosniff-to-my-website"></a>Как добавить на веб-сайт запрет на сканирование?
+### <a name="how-do-i-add-nosniff-to-my-website"></a>Разделы справки добавить `nosniff` в мой веб-сайт?
 Чтобы помешать клиентам сканировать типы MIME, добавьте соответствующий параметр в файл *web.config*.
 
 ```xml
@@ -284,11 +280,11 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 ### <a name="why-does-the-drive-on-my-cloud-service-vm-show-very-little-free-disk-space"></a>Почему на диске виртуальной машины облачной службы отображается очень мало свободного места?
 Это ожидаемое поведение, и оно не должно приводить к проблемам с вашим приложением. Для диска %uproot% в виртуальных машинах PaaS Azure включено ведение журнала, что фактически вдвое увеличивает размер файлов. Однако существует несколько моментов, которые следует учитывать, чтобы это не стало проблемой.
 
-Размер диска% approot% вычисляется как \<size of .cspkg + max journal size + a margin of free space> , или 1,5 ГБ, в зависимости от того, какое из значений больше. Размер вашей ВМ никак не влияет на этот расчет. (Размер виртуальной машины влияет на размер временного диска C.) 
+Размер диска %approot% вычисляется как <размер .cspkg + максимальный размер журнала + запас свободного пространства> или 1,5 ГБ, в зависимости от того, какое значение больше. Размер вашей ВМ никак не влияет на этот расчет. (Размер виртуальной машины влияет на размер временного диска C.) 
 
 Запись на диск %approot% не поддерживается. Если вы записываете данные на виртуальную машину Azure, это необходимо делать во временный ресурс LocalStorage (или выбрать другой вариант, например хранилище BLOB-объектов, файлы Azure и т. п.). Поэтому объем свободного пространства в папке %approot% не имеет значения. Если вы не уверены, записывает ли ваше приложение данные на диск %approot%, всегда можно позволить службе поработать в течение нескольких дней, а затем сравнить размеры до и после. 
 
-Azure ничего не будет записывать на диск %approot%. После создания VHD из CSPKG-файла и подключения его к виртуальной машине Azure запись данных на этот виртуальный жесткий диск может выполнять только ваше приложение. 
+Azure ничего не будет записывать на диск %approot%. После создания виртуального жесткого диска `.cspkg` и подключения его к виртуальной машине Azure единственным действием, которое может записать на этот диск, является ваше приложение. 
 
 Параметры ведения журнала не подлежат настройке, поэтому его нельзя отключить.
 
@@ -297,7 +293,7 @@ Azure ничего не будет записывать на диск %approot%.
 Вы можете включить антивредоносное расширение с помощью сценария PowerShell в задаче запуска. Чтобы реализовать этот механизм, выполните действия в следующих статьях. 
  
 - [Создание задачи запуска PowerShell](cloud-services-startup-tasks-common.md#create-a-powershell-startup-task).
-- [Set-AzureServiceAntimalwareExtension](/powershell/module/servicemanagement/azure.service/Set-AzureServiceAntimalwareExtension?view=azuresmps-4.0.0 ).
+- [Set-AzureServiceAntimalwareExtension](/powershell/module/servicemanagement/azure.service/Set-AzureServiceAntimalwareExtension?view=azuresmps-4.0.0&preserve-view=true).
 
 Дополнительные сведения о сценариях развертывания защиты от вредоносных программ и о том, как включить эту защиту на портале, вы найдете в разделе [Сценарии развертывания антивредоносного ПО](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios).
 

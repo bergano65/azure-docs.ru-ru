@@ -1,31 +1,32 @@
 ---
 title: Использование приложения Node.js с Socket.IO в Azure
 description: Используйте этот учебник, чтобы узнать, как разместить сокет. Приложение чата на основе операций ввода-вывода в Azure. Socket.IO обеспечивает обмен данными в режиме реального времени для сервера node.js и клиентов.
-services: cloud-services
-documentationcenter: nodejs
-author: tgore03
-ms.service: cloud-services
-ms.devlang: nodejs
 ms.topic: article
-ms.date: 08/17/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.custom: devx-track-js
-ms.openlocfilehash: ef7325b53f7d6450acdff4664f3e338c31be9612
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: abc02769d7d978e14975d90ae0f98547bdc4faf7
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077224"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743327"
 ---
-# <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
+# <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service-classic"></a>Создание приложения Node.js чата с помощью Socket.IO в облачной службе Azure (классическая модель)
 
-Socket.IO обеспечивает связь в режиме реального времени между клиентами и сервером Node.js. В этом руководстве описано, как разместить приложения чата на основе Socket.IO в Azure. См. дополнительные сведения о [socket.io](https://socket.io).
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
+Socket.IO обеспечивает обмен данными между сервером node.js и клиентами в реальном времени. В этом руководстве описано, как разместить приложения чата на основе Socket.IO в Azure. См. дополнительные сведения о [socket.io](https://socket.io).
 
 Снимок экрана завершенного приложения приведен ниже:
 
 ![Окно браузера со службой, размещенной в Azure][completed-app]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
 * установить [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx);
@@ -50,7 +51,7 @@ Socket.IO обеспечивает связь в режиме реального
     PS C:\> cd node
     ```
 
-4. Введите указанные ниже команды для создания нового решения с именем **chatapp** и рабочей роли с именем **WorkerRole1**.
+4. Введите следующие команды, чтобы создать новое решение с именем `chatapp` и рабочую роль с именем `WorkerRole1` :
 
     ```powershell
     PS C:\node> New-AzureServiceProject chatapp
@@ -92,7 +93,7 @@ Socket.IO обеспечивает связь в режиме реального
 3. Чтобы приложение прослушивало правильный порт, откройте файл server.js в Блокноте или другом текстовом редакторе, а затем измените следующую строку, заменив **3000** на **process.env.port**, как показано ниже:
 
     ```js
-    //app.listen(3000, function () {            //Original
+    //app.listen(3000, function () {            //Original
     app.listen(process.env.port, function () {  //Updated
       var addr = app.address();
       console.log('   app listening on http://' + addr.address + ':' + addr.port);
@@ -139,7 +140,7 @@ Socket.IO обеспечивает связь в режиме реального
     PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
     ```
 
-5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Например.
+5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Например:
 
     ```powershell
     PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
@@ -166,7 +167,7 @@ Socket.IO обеспечивает связь в режиме реального
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Чтобы узнать, как разместить это приложение на веб-сайте Azure, см. статью [Создание приложения для разговора Node.js с Socket.IO на веб-сайте Azure][chatwebsite].
 
 Дополнительные сведения см. также в [центре по разработке для Node.js](/azure/developer/javascript/).

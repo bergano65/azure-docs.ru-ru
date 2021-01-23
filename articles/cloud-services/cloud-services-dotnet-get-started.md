@@ -1,26 +1,27 @@
 ---
-title: Начало работы с облачными службами Azure и ASP.NET | Документация Майкрософт
+title: Приступая к работе с облачными службами Azure (классическая модель) и ASP.NET | Документация Майкрософт
 description: 'Узнайте, как можно создать многоуровневое приложение с помощью ASP.NET MVC и Azure. Такое приложение выполняется в облачной службе и обладает веб-ролью и рабочей ролью. В его работе используются: Entity Framework, база данных SQL, очереди и BLOB-объекты службы хранилища Azure.'
-services: cloud-services, storage
-documentationcenter: .net
-author: tgore03
-manager: carmonm
+ms.topic: article
 ms.service: cloud-services
-ms.devlang: dotnet
-ms.custom: devx-track-csharp
-ms.topic: conceptual
-ms.date: 05/15/2017
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: a875c036c79419357f1134c32f62fdb060fec7c6
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: ae7fd5a7c9bc858cb18473374e7bd5589717eac6
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562299"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742086"
 ---
-# <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
+# <a name="get-started-with-azure-cloud-services-classic-and-aspnet"></a>Приступая к работе с облачными службами Azure (классическая модель) и ASP.NET
 
 ## <a name="overview"></a>Обзор
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Это руководство описывает, как создавать многоуровневое приложение .NET с внешним ASP.NET MVC и как развернуть его в [облачной службе Azure](cloud-services-choose-me.md). Приложение использует [базу данных Azure SQL](/previous-versions/azure/ee336279(v=azure.100)), [службу BLOB-объектов Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) и [службу очередей Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). Можно [загрузить проект Visual Studio](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) из галереи кода MSDN.
 
 В руководстве показано, как строить и запускать приложение локально, как разворачивать его в Azure и запускать в облаке и как создавать его с нуля. Можно начать с построения с нуля и затем выполнить шаги по тестированию и развертыванию по желанию.
@@ -28,7 +29,7 @@ ms.locfileid: "97562299"
 ## <a name="contoso-ads-application"></a>Приложение Contoso Ads
 Приложение представляет собой рекламную доску объявлений. Пользователи создают рекламу, вводя текст и загружая изображения. Они могут видеть список рекламы по эскизам изображений, и они могут видеть изображения в полном размере, когда выбирают рекламу для просмотра деталей.
 
-![Список рекламы](./media/cloud-services-dotnet-get-started/list.png)
+![Изображение показывает список рекламы](./media/cloud-services-dotnet-get-started/list.png)
 
 Приложение использует [рабочий шаблон на основе очередей](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
@@ -43,7 +44,7 @@ ms.locfileid: "97562299"
 * Как отправлять файлы и хранить их в службе BLOB-объектов Azure.
 * Как использовать службу очередей Azure для связи между уровнями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 В руководстве предполагается, что вы понимаете [базовые концепции облачной службы Azure](cloud-services-choose-me.md), такие как термины *веб-роль* и *рабочая роль*.  Кроме того, предполагается, что вы знаете, как работать с проектами [ASP.NET MVC](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) или [веб-форм](https://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) в Visual Studio. Пример приложения использует MVC, но многое в руководство также применимо к веб-формам.
 
 Вы можете запускать приложение локально без подписки Azure, но она понадобится для развертывания приложения в облаке. Если у вас нет учетной записи, можно [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) или [подписаться на бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
@@ -60,7 +61,7 @@ ms.locfileid: "97562299"
 ## <a name="application-architecture"></a>Архитектура приложения
 Приложение хранит рекламу в базе данных SQL, используя Entity Framework Code First для создания таблиц и доступа к данным. Для каждого рекламного объявления база данных хранит два URL-адреса: один для полноразмерного изображения, другой для эскиза.
 
-![Таблица рекламы](./media/cloud-services-dotnet-get-started/adtable.png)
+![Это изображение таблицы AD](./media/cloud-services-dotnet-get-started/adtable.png)
 
 Когда пользователь отправляет изображение, внешнее приложение, работающее в веб-роли, сохраняет его в [большой двоичный объект Azure](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage), а информацию о рекламе с URL-адресом, который указывает на большой двоичный объект, — в базе данных. В это же время оно записывает сообщение в очередь Azure. Фоновый процесс, работающий в рабочей роли, периодически опрашивает очередь о новых сообщениях. Когда появляется новое сообщение, рабочая роль создает эскиз для изображения и обновляет поле базы данных с URL-адресом эскиза для этой рекламы. На схеме ниже показано, как взаимодействуют части приложения.
 
@@ -83,11 +84,11 @@ ms.locfileid: "97562299"
 
     При первом запуске проекта облачной службы, запуск эмулятора займет порядка одной минуты. После завершения работы эмулятора стандартный браузер открывается с домашней страницей приложения.
 
-    ![Архитектура Contoso Ads](./media/cloud-services-dotnet-get-started/home.png)
+    ![Архитектура Contoso ADS 1](./media/cloud-services-dotnet-get-started/home.png)
 8. Нажмите кнопку **Create an Ad** (Создать приложение AD).
 9. Введите тестовые данные, выберите файл изображения с расширением *.jpg* , предназначенный для загрузки, и нажмите **Создать**.
 
-    ![Страница "Создать"](./media/cloud-services-dotnet-get-started/create.png)
+    ![Изображение показывает страницу создания](./media/cloud-services-dotnet-get-started/create.png)
 
     Приложение переходит к странице индексации, но не показывает эскиз для новой рекламы, поскольку индексирование еще не проводилось.
 10. Подождите немного и затем обновите страницу индексации, чтобы увидеть эскиз.
@@ -129,7 +130,7 @@ ms.locfileid: "97562299"
 
     На следующем рисунке показано, как создается облачная служба с использованием URL-адреса CSvccontosoads.cloudapp.net.
 
-    ![Новая облачная служба](./media/cloud-services-dotnet-get-started/newcs.png)
+    ![На рисунке показана новая облачная служба](./media/cloud-services-dotnet-get-started/newcs.png)
 
 ### <a name="create-a-database-in-azure-sql-database"></a>Создание базы данных в службе "База данных SQL Azure"
 Когда приложение запускается в облаке, оно использует расположенную в облаке базу данных.
@@ -230,7 +231,7 @@ ms.locfileid: "97562299"
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши пункт **ContosoAdsWeb** в области **Роли** проекта **ContosoAdsCloudService**, а затем выберите **Свойства**.
 
-    ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
+    ![Изображение показывает свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
 2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите **облако**.
 
     ![Конфигурация облака](./media/cloud-services-dotnet-get-started/sccloud.png)
@@ -378,7 +379,8 @@ ms.locfileid: "97562299"
 2. Сохраните изменения.
 3. В проекте ContosoAdsCloudService щелкните правой кнопкой мыши ContosoAdsWeb в разделе **Роли**, а затем выберите **Свойства**.
 
-    ![Снимок экрана, посвященный пункту меню "Свойства" в разделе "роли".](./media/cloud-services-dotnet-get-started/roleproperties.png)
+    ![Изображение свойств роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
+
 4. В окне свойств **ContosoAdsWeb [роль]** щелкните вкладку **Настройки** и затем щелкните **Добавить настройку**.
 
     В раскрывающемся списке **Конфигурация службы** выберите значение **Все конфигурации**.
@@ -760,7 +762,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для запуска приложения с полным эмулятором следует открыть Visual Studio с правами администратора.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](https://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:

@@ -9,14 +9,15 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 5/21/2017
 ms.author: raiye
-ms.openlocfilehash: 6de03969a22c5b699fdfd2be17a6ba65905d23e6
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 7f6d3feee95d4cce654b2cc1547b8bd7f4eb45d2
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073399"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743021"
 ---
 # <a name="guest-os-family-1-retirement-notice"></a>Уведомление о прекращении использования семейства версий 1 гостевой ОС
+
 О прекращении использования семейства версий 1 операционной системы было впервые объявлено 1 июня 2013 г.
 
 **2 сентября 2014 г.** Официально прекращено использование семейства версий 1.x гостевой ОС Azure, основанной на ОС Windows Server 2008. Все попытки развертывать новые и обновлять существующие службы, используя операционную систему из семейства версий 1, приведут к сбою с ошибкой, в которой сообщается о прекращении использования семейства версий 1 гостевой ОС.

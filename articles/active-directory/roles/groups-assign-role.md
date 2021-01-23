@@ -2,23 +2,23 @@
 title: Назначение роли для облачной группы в Azure Active Directory | Документация Майкрософт
 description: Назначьте роль Azure AD для назначаемой роли группе в портал Azure, PowerShell или API Graph.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: article
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb81b5dc98bf75a17e55abafdebfbeca68774a99
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 816009abb688525cd7663311c79300a6d12cf146
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379151"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742953"
 ---
 # <a name="assign-a-role-to-a-cloud-group-in-azure-active-directory"></a>Назначение роли для облачной группы в Azure Active Directory
 
@@ -30,7 +30,7 @@ ms.locfileid: "93379151"
 
 1. Войдите в [центр администрирования Azure AD](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 
-1. Выберите **Azure Active Directory**  >  **роли и администраторы** , а затем выберите роль, которую нужно назначить.
+1. Выберите **Azure Active Directory**  >  **роли и администраторы**, а затем выберите роль, которую нужно назначить.
 
 1. На странице **_имя роли_*_ Выберите > _* добавить назначение**.
 
@@ -44,7 +44,7 @@ ms.locfileid: "93379151"
 
 Дополнительные сведения о назначении разрешений роли пользователям см. в статье [назначение ролей администратора и пользователей, не являющихся администраторами](../fundamentals/active-directory-users-assign-role-azure-portal.md).
 
-## <a name="using-powershell"></a>Регистрация с помощью PowerShell
+## <a name="using-powershell"></a>Использование PowerShell
 
 ### <a name="create-a-group-that-can-be-assigned-to-role"></a>Создание группы, которой можно назначить роль
 
@@ -99,7 +99,7 @@ POST https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 "directoryScopeId":"/"
 }
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Использование облачных групп для управления назначениями ролей](groups-concept.md)
 - [Устранение неполадок ролей, назначенных облачным группам](groups-faq-troubleshooting.md)

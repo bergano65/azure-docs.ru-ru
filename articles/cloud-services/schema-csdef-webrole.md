@@ -1,26 +1,25 @@
 ---
-title: Схема DEF. для облачных служб Azure | Документация Майкрософт
+title: Схема DEF-сервера облачных служб Azure (классическая модель) | Документация Майкрософт
 description: Веб-роль Azure настроена для программирования веб-приложений с поддержкой ASP.NET, PHP, WCF и FastCGI. Сведения об элементах определения службы веб-роли.
-ms.custom: ''
-ms.date: 04/14/2015
-services: cloud-services
-ms.reviewer: ''
+ms.topic: article
 ms.service: cloud-services
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: reference
-ms.assetid: 85368e4e-a0db-4c02-8dbc-8e2928fa6091
-caps.latest.revision: 60
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 4368bb38a280461fdd77348de60a0e5793ee9582
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 3c5811649d7d6c0aa1e90ed34c61be6a7f9339f8
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011325"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743157"
 ---
-# <a name="azure-cloud-services-definition-webrole-schema"></a>Схема WebRole для определения облачных служб Azure
+# <a name="azure-cloud-services-classic-definition-webrole-schema"></a>Схема ролей для определения облачных служб Azure (классическая модель)
+
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
+
 Веб-роль Azure — это роль, которая настраивается для программирования веб-приложений с поддержкой IIS 7, например ASP.NET, PHP, Windows Communication Foundation и FastCGI.
 
 По умолчанию определения службы хранятся в файле с расширением .csdef.
@@ -136,7 +135,7 @@ ms.locfileid: "96011325"
 
 [нетфксентрипоинт](#NetFxEntryPoint)
 
-[Черн](#Sites)
+[Сайты](#Sites)
 
 [Сайт](#Site)
 
@@ -146,7 +145,7 @@ ms.locfileid: "96011325"
 
 [Привязки](#Bindings)
 
-[Привязка](#Binding)
+[Вязывания](#Binding)
 
 [Запуск](#Startup)
 
@@ -293,7 +292,7 @@ ms.locfileid: "96011325"
 | attribute | Тип | Описание |  
 | --------- | ---- | ----------- |  
 |name|строка|Обязательный. Имя этого сертификата, которое используется для ссылки на него, когда оно связано с элементом HTTPS `InputEndpoint`.|  
-|storeLocation|строка|Обязательный. Расположение хранилища сертификатов, в котором размещается этот сертификат на локальном компьютере. Возможными значениями являются `CurrentUser` и `LocalMachine`.|  
+|storeLocation|строка|Обязательный. Расположение хранилища сертификатов, в котором размещается этот сертификат на локальном компьютере. Возможные значения: `CurrentUser` и `LocalMachine`.|  
 |storeName|строка|Обязательный. Имя хранилища сертификатов, в котором размещается этот сертификат на локальном компьютере. Возможные значения включают стандартные имена хранилищ `My`, `Root`, `CA`, `Trust`, `Disallowed`, `TrustedPeople`, `TrustedPublisher`, `AuthRoot`, `AddressBook` или любое пользовательское имя хранилища. Если указано пользовательское имя хранилища, хранилище создается автоматически.|  
 |permissionLevel|строка|Необязательный параметр. Указывает права доступа, предоставленные процессам роли. Если вы хотите, чтобы только процессы с повышенными привилегиями имели доступ к закрытому ключу, укажите разрешение `elevated`. Разрешение `limitedOrElevated` позволяет всем процессам роли получать доступ к закрытому ключу. Возможные значения: `limitedOrElevated` или `elevated`. Значение по умолчанию — `limitedOrElevated`.|  
 
@@ -474,7 +473,7 @@ ms.locfileid: "96011325"
 | --------- | ---- | ----------- |  
 |path|строка|Обязательный. Относительный или абсолютный путь к локальному каталогу, содержимое которого копируется на виртуальную машину Azure. В пути к каталогу поддерживается использование переменных среды.|  
   
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
 
 

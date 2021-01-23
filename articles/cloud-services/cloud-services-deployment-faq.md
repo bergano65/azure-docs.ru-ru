@@ -1,28 +1,24 @@
 ---
 title: Вопросы и ответы по проблемам развертывания для облачных служб Microsoft Azure | Документы Майкрософт
 description: В этой статье приведены часто задаваемые вопросы по развертыванию для облачных служб Microsoft Azure.
-services: cloud-services
-documentationcenter: ''
-author: genlin
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
-ms.service: cloud-services
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 10/31/2018
-ms.author: genli
-ms.openlocfilehash: 63a219078927e9001a8eb4085c722e7ec8d2fac9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 67c20823d1f80360b2ab23dc3f208673d36a7374
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75980626"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742222"
 ---
-# <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы развертывания для облачных служб Azure. Вопросы и ответы (FAQ)
+# <a name="deployment-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Проблемы развертывания для облачных служб Azure (классическая модель): часто задаваемые вопросы
 
+> [!IMPORTANT]
+> [Облачные службы Azure (Расширенная поддержка)](../cloud-services-extended-support/overview.md) — это новая модель развертывания на основе Azure Resource Manager для продукта облачных служб Azure.После этого изменения облачные службы Azure, работающие в модели развертывания на основе Service Manager Azure, были переименованы как облачные службы (классические), и все новые развертывания должны использовать [облачные службы (Расширенная поддержка)](../cloud-services-extended-support/overview.md).
 В этой статье приведены часто задаваемые вопросы по проблемам развертывания для [облачных служб Microsoft Azure](https://azure.microsoft.com/services/cloud-services). Сведения о размерах приводятся в статье [Размеры для облачных служб](cloud-services-sizes-specs.md) .
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
@@ -63,9 +59,9 @@ ms.locfileid: "75980626"
 
 Дополнительные сведения см. в разделе [Как обновить облачную службу](cloud-services-update-azure-service.md).
 
-## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Почему я не могу развернуть облачные службы с помощью API управления службами или PowerShell, когда я использую учетную запись хранения Azure Resource Manager? 
+## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Почему я не могу развернуть облачные службы с помощью API управления службами или PowerShell, когда я использую учетную запись хранения Azure Resource Manager? 
 
-Так как облачная служба является классическим ресурсом, который не совместим с моделью Azure Resource Manager напрямую, его нельзя связать с Azure Resource Manager учетными записями хранения. Возможные сценарии: 
+Так как облачная служба является классическим ресурсом, который не совместим с моделью Azure Resource Manager напрямую, его нельзя связать с Azure Resource Manager учетными записями хранения. Возможные сценарии: 
 
 - Развертывание с помощью REST API.
 
@@ -73,7 +69,7 @@ ms.locfileid: "75980626"
 
 - Развертывание с помощью [портала Azure](https://portal.azure.com).
 
-    Это будет работать из [портал Azure](https://portal.azure.com) , так как вызов проходит через прокси-сервер или оболочку совместимости, которая обеспечивает обмен данными между Azure Resource Manager и классическими ресурсами. 
+    Это будет работать из [портал Azure](https://portal.azure.com) , так как вызов проходит через прокси-сервер или оболочку совместимости, которая обеспечивает обмен данными между Azure Resource Manager и классическими ресурсами. 
 
 ## <a name="why-does-azure-portal-require-me-to-provide-a-storage-account-for-deployment"></a>Почему на портале Azure требуется предоставить учетную запись хранения для развертывания?
 
