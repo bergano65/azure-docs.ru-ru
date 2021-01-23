@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для портал Azure
 description: Выводит список встроенных определений политик Azure для портал Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 34cfeadb301b520e0884333e32a30ec49f663106
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 1baef4965dce2935f68d24c86585a9cfd12fb1a9
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043922"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98701072"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-portal"></a>Встроенные определения политики Azure для портал Azure
 

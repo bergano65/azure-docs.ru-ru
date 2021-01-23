@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 01/15/2021
 ms.custom: generated
-ms.openlocfilehash: 36f266a8402721dffecc9e80c4f769bd51b0e172
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: a521623447f4415e35a06c5c60e3723a69b4aa15
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539086"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98700607"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "98539086"
 
 ## <a name="all"></a>Все
 
-| Общее |
+| Общие сведения |
 | --- |
 | [Microsoft.Addons](#microsoftaddons) |
 | [Microsoft.Marketplace](#microsoftmarketplace) |
@@ -36,7 +36,7 @@ ms.locfileid: "98539086"
 | [Microsoft.ClassicCompute](#microsoftclassiccompute) |
 | [Microsoft.Compute](#microsoftcompute) |
 | [Microsoft.ServiceFabric](#microsoftservicefabric) |
-| **Сеть** |
+| **Сетевое взаимодействие** |
 | [Microsoft.Cdn](#microsoftcdn) |
 | [Microsoft.ClassicNetwork](#microsoftclassicnetwork) |
 | [Microsoft.Network](#microsoftnetwork) |
@@ -162,7 +162,7 @@ ms.locfileid: "98539086"
 | [Microsoft.DigitalTwins](#microsoftdigitaltwins) |
 
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие сведения
 
 ### <a name="microsoftaddons"></a>Microsoft.Addons
 
@@ -1464,7 +1464,7 @@ ms.locfileid: "98539086"
 
 ### <a name="microsoftimportexport"></a>Microsoft.ImportExport
 
-Служба Azure: [Импорт и экспорт Azure](../storage/common/storage-import-export-service.md)
+Служба Azure: [Импорт и экспорт Azure](../import-export/storage-import-export-service.md)
 
 > [!div class="mx-tableFixed"]
 > | Действие | Описание |

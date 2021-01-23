@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 04ca8d515dbc5a28a7d3a30369d97877928c9dc1
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 1178b0ab5af3642026fe78c7de788f354691b13a
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683924"
+ms.locfileid: "98701172"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Подключение приложений функций в Azure для обработки данных
 
@@ -36,21 +36,21 @@ ms.locfileid: "98683924"
 
 ## <a name="create-a-function-app-in-visual-studio"></a>Создание приложения-функции в Visual Studio
 
-В Visual Studio 2019 выберите _файл > создать > проект_ и выполните поиск по шаблону _функции Azure_ . Нажмите _Далее_.
+В Visual Studio 2019 выберите _файл > создать > проект_ и выполните поиск по шаблону _функции Azure_ . Выберите _Далее_.
 
-:::image type="content" source="media/how-to-create-azure-function/create-azure-function-project.png" alt-text="Visual Studio: диалоговое окно создания проекта":::
+:::image type="content" source="media/how-to-create-azure-function/create-azure-function-project.png" alt-text="Снимок экрана Visual Studio, показывающий диалоговое окно &quot;новый проект&quot;. Шаблон проекта функций Azure выделяется.":::
 
 Укажите имя для приложения-функции и нажмите кнопку _создать_.
 
-:::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Visual Studio: Настройка нового проекта":::
+:::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Снимок экрана Visual Studio, показывающий диалоговое окно для настройки нового проекта, включая имя проекта, расположение для сохранения, возможность создания нового решения и имени решения.":::
 
 Выберите тип приложения функции *триггера сетки событий* и нажмите кнопку _создать_.
 
-:::image type="content" source="media/how-to-create-azure-function/event-grid-trigger-function.png" alt-text="Visual Studio: диалоговое окно триггера проекта функций Azure":::
+:::image type="content" source="media/how-to-create-azure-function/event-grid-trigger-function.png" alt-text="Снимок экрана Visual Studio с отображением диалогового окна для создания нового приложения функций Azure. Параметр триггера сетки событий выделен.":::
 
 После создания приложения-функции Visual Studio создаст пример кода в файле **function1.CS** в папке проекта. Эта небольшая функция используется для записи событий в журнал.
 
-:::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Visual Studio: окно проекта с образцом кода":::
+:::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Снимок экрана Visual Studio в окне проекта для нового проекта, который был создан. Существует код для примера функции с именем функция1." lightbox="media/how-to-create-azure-function/visual-studio-sample-code.png":::
 
 ## <a name="write-a-function-with-an-event-grid-trigger"></a>Написать функцию с помощью триггера сетки событий
 
@@ -150,27 +150,27 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 В [портал Azure](https://portal.azure.com/)найдите _приложение функции_ в строке поиска с именем приложения функции, созданным ранее. Выберите *приложение-функция* из списка. 
 
-:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Портал Azure: Поиск приложения функции":::
+:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Снимок экрана портал Azure: имя приложения-функции ищется на панели поиска портала, а результат поиска выделяется.":::
 
 В окне приложение функции выберите _удостоверение_ на панели навигации слева, чтобы включить управляемое удостоверение.
 На вкладке _назначенная система_ переключите _состояние_ на вкл. и _Сохраните_ его. Вы увидите всплывающее окно для _включения управляемого удостоверения, назначенного системой_.
 Нажмите кнопку _Да_ . 
 
-:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Портал Azure: Включить управляемое системой удостоверение":::
+:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Снимок экрана портал Azure. на странице удостоверение для приложения-функции параметр Включить управляемое удостоверение, назначенный системе, имеет значение Да. Параметр Status имеет значение ON.":::
 
 Вы можете проверить в уведомлениях о том, что функция успешно зарегистрирована в Azure Active Directory.
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Портал Azure: уведомления":::
+:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Снимок экрана портал Azure. в списке уведомлений выберите значок колокольчика на верхней панели портала. Имеется уведомление о том, что пользователь включил управляемое удостоверение, назначенное системой.":::
 
 Также обратите внимание на **идентификатор объекта** , показанный на странице _удостоверений_ , как он будет использоваться в следующем разделе.
 
-:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="Скопируйте идентификатор объекта для использования в будущем":::
+:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="Снимок экрана портал Azure: выделение поля &quot;идентификатор объекта&quot; на странице удостоверений функции Azure.":::
 
 ### <a name="assign-access-roles-using-azure-portal"></a>Назначение ролей доступа с помощью портал Azure
 
 Нажмите кнопку _назначения ролей Azure_ , после чего откроется страница *назначения ролей Azure* . Затем выберите _+ добавить назначение ролей (Предварительная версия)_.
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Портал Azure: Добавление назначения ролей":::
+:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Снимок экрана портал Azure. в разделе &quot;разрешения&quot; на странице удостоверений функции Azure выделит кнопку назначения ролей Azure.":::
 
 На открывшейся странице _Добавление назначения ролей (Предварительная версия)_ выберите:
 
@@ -181,7 +181,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 Затем сохраните сведения, нажав кнопку Save ( _сохранить_ ).
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Портал Azure: Добавление назначения ролей (Предварительная версия) ":::
+:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Снимок экрана портал Azure: диалоговое окно для добавления нового назначения роли (Предварительная версия). Существуют поля для области, подписки, группы ресурсов и роли.":::
 
 ### <a name="configure-application-settings-using-azure-portal"></a>Настройка параметров приложения с помощью портал Azure
 
@@ -189,37 +189,37 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 Чтобы задать переменную среды с URL-адресом своего экземпляра, сначала получите URL-адрес, находя имя узла своего экземпляра Azure Digital двойников. Найдите свой экземпляр на панели поиска [портал Azure](https://portal.azure.com) . Затем на левой панели навигации выберите _Обзор_ , чтобы просмотреть _имя узла_. Скопируйте это значение.
 
-:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Портал Azure: Overview — > Копировать имя узла для использования в поле _Value_.":::
+:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Снимок экрана портал Azure: на странице &quot;Обзор&quot; для экземпляра Azure Digital двойников выделяется значение имени узла.":::
 
 Теперь можно создать параметр приложения, выполнив следующие действия:
 
-1. Найдите приложение, используя имя приложения функции в строке поиска, и выберите приложение функции из списка.
+1. Найдите приложение функции на панели поиска портала и выберите его из результатов.
 1. Выберите пункт _Конфигурация_ на панели навигации слева, чтобы создать новый параметр приложения.
 1. На вкладке _Параметры приложения_ выберите _+ создать параметр приложения_ .
 
-:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Портал Azure: Поиск существующего приложения функции" lightbox="media/how-to-create-azure-function/search-for-azure-function.png":::
+:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Снимок экрана портал Azure: имя приложения-функции ищется на панели поиска портала, а результат поиска выделяется.":::
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Портал Azure: Настройка параметров приложения":::
+:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Снимок экрана портал Azure. на странице конфигурации для приложения-функции будет выделена кнопка для создания нового параметра приложения.":::
 
 В открывшемся окне используйте скопированное выше значение имя узла, чтобы создать параметр приложения.
-* _Имя_ : ADT_SERVICE_URL
-* _Значение_: https://{ваш-Azure-Digital-двойников-Host-Name}
+* **Имя**: ADT_SERVICE_URL
+* **Значение**: https://{ваш-Azure-Digital-двойников-Host-Name}
 
 Нажмите кнопку _ОК_ , чтобы создать параметр приложения.
 
-:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Портал Azure: Добавление параметров приложения.":::
+:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Снимок экрана портал Azure. Кнопка &quot;ОК&quot; выделяется после заполнения полей &quot;имя&quot; и &quot;значение&quot; на странице &quot;Добавление и изменение параметров приложения&quot;.":::
 
 Параметры приложения можно просмотреть с помощью имени приложения в поле _имя_ . Затем сохраните параметры приложения, нажав кнопку _сохранить_ .
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Портал Azure: Просмотр созданного приложения и перезапуск приложения":::
+:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Снимок экрана портал Azure: страница &quot;Параметры приложения&quot; с выделенным параметром &quot;новый ADT_SERVICE_URL&quot;. Кнопка сохранить также выделяется.":::
 
-Все изменения параметров приложения требуют перезапуска приложения. Нажмите кнопку _продолжить_ , чтобы перезапустить приложение.
+Чтобы изменения параметров приложения вступили в силу, потребуется перезапуск приложения. Нажмите кнопку _продолжить_ , чтобы перезапустить приложение.
 
-:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Портал Azure: сохранение параметров приложения":::
+:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Снимок экрана портал Azure. Обратите внимание, что все изменения параметров приложения с перезапуском приложения. Кнопка продолжить выделена.":::
 
 Вы можете просмотреть параметры приложения, щелкнув значок _уведомления_ . Если параметр приложения не создан, можно повторно добавить параметр приложения, выполнив описанный выше процесс.
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Портал Azure: уведомления об обновлении параметров приложения":::
+:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Снимок экрана портал Azure. в списке уведомлений выберите значок колокольчика на верхней панели портала. Существует уведомление о том, что параметры веб-приложения успешно обновлены.":::
 
 ## <a name="next-steps"></a>Следующие шаги
 

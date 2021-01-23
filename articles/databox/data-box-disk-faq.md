@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 3df8f75a726639e87157a1aa7fd9ff4d35c0ef4f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 103e4453ecf848822db0d82bc13e93b0c8c68331
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654631"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702140"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Диск Azure Data Box Часто задаваемые вопросы
 
@@ -66,7 +66,7 @@ A. Диск Data Box поддерживает прием данных тольк
 
 ### <a name="option-1"></a>Вариант 1. 
 
-Отправьте [поддерживаемый диск](../storage/common/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) , содержащий данные, с помощью [службы импорта и экспорта Azure](../storage/common/storage-import-export-service.md) из исходного расположения в Канаде в центр обработки данных в регионе Azure "Западная часть США".
+Отправьте [поддерживаемый диск](../import-export/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) , содержащий данные, с помощью [службы импорта и экспорта Azure](../import-export/storage-import-export-service.md) из исходного расположения в Канаде в центр обработки данных в регионе Azure "Западная часть США".
 
 ### <a name="option-2"></a>Вариант 2.
 
@@ -84,7 +84,7 @@ A. При возникновении проблем с Data Boxными диск
 ### <a name="q-how-do-i-get-data-box-disk"></a>У. Разделы справки получить Диск Data Box? 
 A.  Чтобы получить Диск Azure Data Box, войдите в портал Azure и создайте заказ Диск Data Box. Введите свои контактные данные и сведения об уведомлениях. Поместив заказ на основе доступности, Диск Data Box поставляются вам в течение 10 дней. Дополнительные сведения см. в описании [процесса заказа Data Box](data-box-disk-deploy-ordered.md).
 
-### <a name="q-i-couldnt-create-a-data-box-disk-order-in-the-azure-portal-why"></a>У. Не удалось создать порядок Диск Data Box в портал Azure. Почему?
+### <a name="q-i-couldnt-create-a-data-box-disk-order-in-the-azure-portal-why"></a>У. Не удалось создать порядок Диск Data Box в портал Azure. С чем было связано это заблуждение?
 A. Если вы не можете создать Диск Data Box заказ, существует проблема с типом подписки или доступом.
 
 Сначала проверьте подписку. Диск Data Box доступен только для предложений по подписке Соглашение Enterprise (EA) и поставщика облачных решений (CSP). Если у вас нет ни одного из этих типов подписки, обратитесь в служба поддержки Майкрософт, чтобы обновить подписку.

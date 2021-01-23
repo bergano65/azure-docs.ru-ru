@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: swmachan
-ms.openlocfilehash: 60da61d094316b29c8fbc5454472bb898d693937
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e8e54a97c13a69fce2e80676fa68d6d795736a83
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681589"
+ms.locfileid: "98703128"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Поддержка языков и регионов для перевода текста и речи
 
@@ -194,6 +194,7 @@ ms.locfileid: "98681589"
 | Язык    | Код языка | Сценарий | В/Из | Сценарий|
 |:----------- |:-------------:|:-------------:|:-------------:|:-------------:|
 | Арабский | `ar` | Арабский `Arab` | <--> | Латиница `Latn` |
+| Ассамский | `as` | Бенгальский `Beng` | <--> | Латиница `Latn` |
 | Бенгальский  | `bn` | Бенгальский `Beng` | <--> | Латиница `Latn` |
 |Белорусский| `be` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |
 |Болгарский| `bg` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |
@@ -208,6 +209,7 @@ ms.locfileid: "98681589"
 | Японский | `ja` | Японский `Jpan` | <--> | Латиница `Latn` |
 | Каннада | `kn` | Каннада `Knda` | <--> | Латиница `Latn` |
 |Казахский| `kk` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |
+|Корейский| `ko` | корейский `Kore`  | <--> | Латиница `Latn` |
 |Киргизский| `ky` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |
 |Macedonian| `mk` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |
 | Малаялам | `ml` | Малаялам `Mlym` | <--> | Латиница `Latn` |
@@ -220,6 +222,7 @@ ms.locfileid: "98681589"
 | Сербский (кириллица) | `sr-Cyrl` | Кириллица `Cyrl`  | --> | Латиница `Latn` |
 | Сербский (латиница) | `sr-Latn` | Латиница `Latn` | --> | Кириллица `Cyrl`|
 |Синдхи| `sd` | Арабский `Arab`  | <--> | Латиница `Latn` |
+|Сингальский| `si` | Синхала `Sinh`  | <--> | Латиница `Latn` |
 |Таджикский| `tg` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |
 | Тамильский | `ta` | Тамильский `Taml` | <--> | Латиница `Latn` |
 |Татарский| `tt` | Кириллица `Cyrl`  | <--> | Латиница `Latn` |

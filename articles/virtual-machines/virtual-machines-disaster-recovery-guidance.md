@@ -1,19 +1,21 @@
 ---
-title: Сценарии аварийного восстановления
+title: Перерывы в работе служб Azure
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на виртуальные машины Azure.
 author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 05/31/2017
 ms.author: cynthn
-ms.openlocfilehash: 0d659f0bc65d3dbe7cbb656d505275a52a9742eb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.reviewer: ''
+ms.openlocfilehash: 5c6036a65fa449986f5c085202fefa752e3a414a
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976629"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98701039"
 ---
 # <a name="what-if-an-azure-service-disruption-impacts-azure-vms"></a>Что делать, если прерывание работы службы Azure влияет на виртуальные машины Azure
+
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
 
 Корпорация Майкрософт предоставляет соглашения об уровне обслуживания (SLA) для своих служб, в которых гарантируется их время бесперебойной работы и доступность. Соглашения об уровне обслуживания для отдельных служб Azure можно найти в разделе [Соглашения об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/).
@@ -39,7 +41,7 @@ ms.locfileid: "91976629"
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Начните [защищать приложения, работающие на виртуальных машинах Azure](../site-recovery/azure-to-azure-quickstart.md), с помощью Azure Site Recovery
 

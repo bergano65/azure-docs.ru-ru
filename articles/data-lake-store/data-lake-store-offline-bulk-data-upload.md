@@ -6,16 +6,16 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: d04a5c0e53e9a5db8bba03a5a9e9d95b87a8b5a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 940b7ac90f85e0254d59459b70ccc15312cd69f4
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85855677"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98700845"
 ---
 # <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>Используйте службу импорта и экспорта Azure для автономной копии данных в Data Lake Storage 1-го поколения
 
-В этой статье вы узнаете, как скопировать огромные наборы данных (>200 ГБ) в Data Lake Storage 1-го поколения с помощью методов автономного копирования, таких как [Служба импорта и экспорта Azure](../storage/common/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
+В этой статье вы узнаете, как скопировать огромные наборы данных (>200 ГБ) в Data Lake Storage 1-го поколения с помощью методов автономного копирования, таких как [Служба импорта и экспорта Azure](../import-export/storage-import-export-service.md). В частности, в качестве примера в этой статье используется файл размером 339 420 860 416 байт, т. е. 319 ГБ на диске. Давайте назовем этот файл 319GB.tsv.
 
 Служба импорта и экспорта Azure позволяет безопасно переносить большие объемы данных в хранилище BLOB-объектов Azure, отправляя жесткие диски в центр обработки данных Azure.
 
@@ -44,7 +44,7 @@ split -b 100m 319GB.tsv
 
 ## <a name="get-disks-ready-with-data"></a>Подготовка дисков с данными
 
-Для подготовки жестких дисков следуйте инструкциям в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md) в подразделе **Подготовка дисков**. Вот общая последовательность действий:
+Для подготовки жестких дисков следуйте инструкциям в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../import-export/storage-import-export-service.md) в подразделе **Подготовка дисков**. Вот общая последовательность действий:
 
 1. Приобретите жесткий диск, который отвечает требованиям к использованию в службе импорта и экспорта Azure.
 2. Определите учетную запись хранения Azure, в которую будут скопированы данные после доставки диска в центр обработки данных Azure.
@@ -53,12 +53,12 @@ split -b 100m 319GB.tsv
     ```
     WAImportExport PrepImport /sk:<StorageAccountKey> /t: <TargetDriveLetter> /format /encrypt /logdir:e:\myexportimportjob\logdir /j:e:\myexportimportjob\journal1.jrn /id:myexportimportjob /srcdir:F:\demo\ExImContainer /dstdir:importcontainer/vf1/
     ```
-    Дополнительные фрагменты кода см. в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md).
+    Дополнительные фрагменты кода см. в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../import-export/storage-import-export-service.md).
 4. Приведенная выше команда создает файл журнала в указанном расположении. С его помощью вы создадите задание импорта из [портала Azure](https://portal.azure.com).
 
 ## <a name="create-an-import-job"></a>создание задания импорта;
 
-Теперь можно создать задание импорта, воспользовавшись инструкциями в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../storage/common/storage-import-export-service.md) в подразделе **Создание задания импорта**. Помимо других сведений укажите для этого задания импорта файл журнала, созданный при подготовке дисков.
+Теперь можно создать задание импорта, воспользовавшись инструкциями в статье [Использование службы импорта и экспорта Azure для передачи данных в хранилище BLOB-объектов](../import-export/storage-import-export-service.md) в подразделе **Создание задания импорта**. Помимо других сведений укажите для этого задания импорта файл журнала, созданный при подготовке дисков.
 
 ## <a name="physically-ship-the-disks"></a>Физическая доставка дисков
 
@@ -218,7 +218,7 @@ Register-AzResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
 Join-AzDataLakeStoreItem -AccountName "<adlsg1_account_name" -Paths "/importeddatafeb8job/319GB.tsv-part-aa","/importeddatafeb8job/319GB.tsv-part-ab", "/importeddatafeb8job/319GB.tsv-part-ac", "/importeddatafeb8job/319GB.tsv-part-ad" -Destination "/importeddatafeb8job/MergedFile.csv"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
