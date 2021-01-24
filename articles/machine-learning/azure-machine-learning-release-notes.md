@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 38f37ff2fe150a9e1998fbe5e963b8737a6e1533
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 11aa739beeb07c3de056d8a2430b556fcc40b178
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737971"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746736"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -493,8 +493,8 @@ ms.locfileid: "98737971"
     + Теперь пользователи могут указать частоту временных рядов для задач прогнозирования с помощью `freq` параметра.
   + **azureml-train-automl-runtime**
     + Улучшенный вывод на консоль при неудачном выполнении наилучшего объяснения модели.
-    + Переименованный входной параметр "backlist_models" в "blocked_models".
-      + Переименованный входной параметр "whitelist_models" в "allowed_models".
+    + Переименованный входной параметр в "blocked_models" для удаления конфиденциального термина.
+      + Переименованный входной параметр в "allowed_models" для удаления конфиденциального термина.
     + Теперь пользователи могут указать частоту временных рядов для задач прогнозирования с помощью `freq` параметра.
 
   

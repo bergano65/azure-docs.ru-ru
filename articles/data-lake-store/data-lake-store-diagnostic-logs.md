@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: aac0139e09866ce44d25989119b2eafb31e76961
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 07bf22cfc683d8c6f2c765364334ed1594e2fdaa
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610460"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745890"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-storage-gen1"></a>Доступ к журналам диагностики Azure Data Lake Storage 1-го поколения
 Узнайте, как включить ведение журнала диагностики для учетной записи Azure Data Lake Storage 1-го поколения и просматривать журналы, собранные для этой учетной записи.
 
 Организации могут включить ведение журнала диагностики для учетной записи Azure Data Lake Storage 1-го поколения для сбора журналов аудита доступа к данным, в котором содержатся такие сведения, как список пользователей, обращающихся к данным, как часто осуществляется доступ к данным, сколько данных хранится в учетной записи и т. д. Если этот параметр включен, диагностика и (или) запросы записываются в журнал на основе наилучшей силы. Записи запросов и диагностики журнала создаются только при получении запроса к конечной точке службы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 
@@ -50,7 +50,7 @@ ms.locfileid: "98610460"
      
    * Укажите, что вы хотите получать: журналы аудита, журналы запросов либо и те, и другие журналы.
    * Укажите число дней, в течение которых должны храниться данные. Период удержания применяется, только если учетная запись хранения Azure используется для архивации данных журнала.
-   * Выберите команду **Сохранить**.
+   * Нажмите кнопку **Сохранить**.
 
 Включив параметры диагностики, вы сможете просматривать журналы на вкладке **Журналы диагностики** .
 
@@ -106,7 +106,7 @@ ms.locfileid: "98610460"
         "callerIpAddress": "::ffff:1.1.1.1",
         "correlationId": "4a11c709-05f5-417c-a98d-6e81b3e29c58",
         "identity": "1808bd5f-62af-45f4-89d8-03c5e81bac30",
-        "properties": {"HttpMethod":"GET","Path":"/webhdfs/v1/Samples/Outputs/Drivers.csv","RequestContentLength":0,"ClientRequestId":"3b7adbd9-3519-4f28-a61c-bd89506163b8","StartTime":"2016-07-07T21:02:52.472Z","EndTime":"2016-07-07T21:02:53.456Z"}
+        "properties": {"HttpMethod":"GET","Path":"/webhdfs/v1/Samples/Outputs/Drivers.csv","RequestContentLength":0,"StoreIngressSize":0 ,"StoreEgressSize":4096,"ClientRequestId":"3b7adbd9-3519-4f28-a61c-bd89506163b8","StartTime":"2016-07-07T21:02:52.472Z","EndTime":"2016-07-07T21:02:53.456Z","QueryParameters":"api-version=<version>&op=<operationName>"}
     }
     ,
     . . . .
@@ -115,7 +115,7 @@ ms.locfileid: "98610460"
 ```
 
 #### <a name="request-log-schema"></a>Схема журнала запросов
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция. |
@@ -128,16 +128,17 @@ ms.locfileid: "98610460"
 | properties |JSON |Дополнительные сведения см. ниже. |
 
 #### <a name="request-log-properties-schema"></a>Схема свойств журнала запросов
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | HttpMethod |Строка |Метод HTTP, использованный для операции. Например, GET. |
 | Путь |Строка |Путь выполнения операции. |
-| RequestContentLength |int |Длина содержимого HTTP-запроса. |
+| RequestContentLength |INT |Длина содержимого HTTP-запроса. |
 | ClientRequestId |Строка |Идентификатор, однозначно определяющий данный запрос. |
 | StartTime |Строка |Время получения запроса сервером. |
 | EndTime |Строка |Время отправки ответа сервером. |
 | стореингресссизе |Long |Размер в байтах, входящий Data Lake Store |
 | сторигресссизе |Long |Размер в байтах, егрессед от Data Lake Store |
+| QueryParameters |Строка |Описание. это параметры HTTP-запроса. Пример 1. API-Version = 2014-01-01&Op = жетфилестатус пример 2: Op = APPEND&Append = true&Синкфлаг = DATA&филесессионид = bee3355a-4925-4435-bb4d-ceea52811aeb&леасеид = bee3355a-4925-4435-bb4d-ceea52811aeb&смещение = 28313319&API-Version = 2017-08-01 |
 
 ### <a name="audit-logs"></a>Журналы аудита
 Ниже приведен пример записи журнала аудита в формате JSON. У каждого большого двоичного объекта есть один корневой объект с именем **Records** , содержащий массив объектов Log.
@@ -166,7 +167,7 @@ ms.locfileid: "98610460"
 ```
 
 #### <a name="audit-log-schema"></a>Схема журнала аудита
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | time |Строка |Метка времени журнала (в формате UTC). |
 | resourceId |Строка |Идентификатор ресурса, с которым была выполнена операция. |
@@ -179,7 +180,7 @@ ms.locfileid: "98610460"
 | properties |JSON |Дополнительные сведения см. ниже. |
 
 #### <a name="audit-log-properties-schema"></a>Схема свойств журнала аудита
-| Имя | Тип | Описание |
+| Имя | Type | Описание |
 | --- | --- | --- |
 | StreamName |Строка |Путь выполнения операции. |
 

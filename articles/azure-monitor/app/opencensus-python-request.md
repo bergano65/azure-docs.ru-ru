@@ -6,21 +6,18 @@ author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 4b88550ad489607bb66eb737067190d45a466a43
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 4abb795335bfcb2c9b335d4fb09ddc9fdb2476b4
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607081"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746583"
 ---
 # <a name="track-incoming-requests-with-opencensus-python"></a>Мониторинг входящих запросов с помощью Опенценсус Python
 
 Данные входящего запроса собираются с помощью Опенценсус Python и различных интеграций. Отследите данные входящего запроса, отправляемые в веб-приложения, созданные на основе популярных веб-платформ `django` , `flask` и `pyramid` . Затем данные отправляются в Application Insights под Azure Monitor в качестве `requests` телеметрии.
 
 Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](./opencensus-python.md).
-
-> [!NOTE]
-> Эта статья содержит ссылки на термин « *черный* список», термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
 
 ## <a name="tracking-django-applications"></a>Отслеживание Django приложений
 
@@ -36,7 +33,7 @@ ms.locfileid: "96607081"
     )
     ```
 
-3. Убедитесь, что Азурикспортер правильно настроен в вашей `settings.py` среде `OPENCENSUS` . Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `BLACKLIST_PATHS` .
+3. Убедитесь, что Азурикспортер правильно настроен в вашей `settings.py` среде `OPENCENSUS` . Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `EXCLUDELIST_PATHS` .
 
     ```python
     OPENCENSUS = {
@@ -45,7 +42,7 @@ ms.locfileid: "96607081"
             'EXPORTER': '''opencensus.ext.azure.trace_exporter.AzureExporter(
                 connection_string="InstrumentationKey=<your-ikey-here>"
             )''',
-            'BLACKLIST_PATHS': ['https://example.com'],  <--- These sites will not be traced if a request is sent to it.
+            'EXCLUDELIST_PATHS': ['https://example.com'],  <--- These sites will not be traced if a request is sent to it.
         }
     }
     ```
@@ -77,7 +74,7 @@ ms.locfileid: "96607081"
     
     ```
 
-2. Вы также можете настроить `flask` приложение с помощью `app.config` . Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `BLACKLIST_PATHS` .
+2. Вы также можете настроить `flask` приложение с помощью `app.config` . Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `EXCLUDELIST_PATHS` .
 
     ```python
     app.config['OPENCENSUS'] = {
@@ -86,7 +83,7 @@ ms.locfileid: "96607081"
             'EXPORTER': '''opencensus.ext.azure.trace_exporter.AzureExporter(
                 connection_string="InstrumentationKey=<your-ikey-here>",
             )''',
-            'BLACKLIST_PATHS': ['https://example.com'],  <--- These sites will not be traced if a request is sent to it.
+            'EXCLUDELIST_PATHS': ['https://example.com'],  <--- These sites will not be traced if a request is sent to it.
         }
     }
     ```
@@ -103,7 +100,7 @@ ms.locfileid: "96607081"
                          '.pyramid_middleware.OpenCensusTweenFactory')
     ```
 
-2. Вы можете настроить `pyramid` анимацию непосредственно в коде. Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `BLACKLIST_PATHS` .
+2. Вы можете настроить `pyramid` анимацию непосредственно в коде. Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `EXCLUDELIST_PATHS` .
 
     ```python
     settings = {
@@ -113,7 +110,7 @@ ms.locfileid: "96607081"
                 'EXPORTER': '''opencensus.ext.azure.trace_exporter.AzureExporter(
                     connection_string="InstrumentationKey=<your-ikey-here>",
                 )''',
-                'BLACKLIST_PATHS': ['https://example.com'],  <--- These sites will not be traced if a request is sent to it.
+                'EXCLUDELIST_PATHS': ['https://example.com'],  <--- These sites will not be traced if a request is sent to it.
             }
         }
     }
@@ -175,7 +172,7 @@ ms.locfileid: "96607081"
         uvicorn.run("example:app", host="127.0.0.1", port=5000, log_level="info")
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Схема сопоставления приложений](./app-map.md)
 * [Доступность](./monitor-web-app-availability.md)

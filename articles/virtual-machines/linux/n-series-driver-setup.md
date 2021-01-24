@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: vikancha
-ms.openlocfilehash: 7af13147804fd1e50a033635985c08b9c62f76ba
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 22c7a70379649876de4af88080543438e58998a6
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200997"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746651"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -22,9 +22,6 @@ ms.locfileid: "98200997"
 Если вы решили установить драйверы GPU NVIDIA вручную, то в этой статье вы найдете сведения о поддерживаемых дистрибутивах, ссылки на драйверы и инструкции по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Windows](../windows/n-series-driver-setup.md).
 
 Характеристики виртуальных машин серии N, сведения о дисках и объеме памяти см. в статье [Размеры виртуальных машин Linux, оптимизированных для GPU](../sizes-gpu.md?toc=/azure/virtual-machines/linux/toc.json). 
-
-> [!NOTE]
-> Эта статья содержит ссылки на термин « *черный* список», термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
 
 [!INCLUDE [virtual-machines-n-series-linux-support](../../../includes/virtual-machines-n-series-linux-support.md)]
 

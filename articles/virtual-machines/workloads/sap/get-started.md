@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/18/2021
+ms.date: 01/23/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0b323268c625ed25236cf4a9f9faa17606bd967c
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: 0a0f17df13b5b101aebf585b7f1f3fb2a5b48006
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570071"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746059"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -84,6 +84,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 01/23/2021. Опишите функциональные возможности секционирования тома данных HANA в качестве функций для чередующихся операций ввода-вывода для файлов данных HANA на разных дисках Azure или общих ресурсах NFS без использования диспетчера томов дисков в статьях [SAP HANA конфигурации хранилища виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) и [томов NFS версии 4.1 на Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 - 01/18/2021: добавлена поддержка файлов Azure NET Apps на основе NFS для Oracle на [виртуальных машинах Azure развертывание СУБД Oracle для рабочей нагрузки SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle) и корректировка десятичных знаков в таблице в документе [NFS версии 4.1 на Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 - 01/11/2021: незначительные изменения в [HA для SAP NW на виртуальных машинах Azure в RHEL для приложений SAP](./high-availability-guide-rhel.md), [HA для SAP NW на виртуальных машинах Azure в RHEL с использовании](./high-availability-guide-rhel-netapp-files.md) и [HA для SAP NW на ВИРТУАЛЬНЫХ машинах Azure в RHEL с несколькими идентификаторами безопасности](./high-availability-guide-rhel-multi-sid.md) , чтобы настроить команды для работы как в RHEL8, так и в RHEL7, а также в ENSA1 и ENSA2
 - 01/05/2021: изменение [масштаба SAP HANA с резервным узлом на виртуальных машинах Azure с помощью использовании в SLES](./sap-hana-scale-out-standby-netapp-files-suse.md) и [SAP HANA горизонтального масштабирования с резервным узлом на виртуальных машинах Azure с использовании в RHEL](./sap-hana-scale-out-standby-netapp-files-rhel.md), исходе рекомендуемой конфигурации, чтобы позволить агенту узла SAP управлять диапазоном локальных портов.  
