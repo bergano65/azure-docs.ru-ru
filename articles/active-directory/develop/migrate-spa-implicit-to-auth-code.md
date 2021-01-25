@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 2c03e6940d392e3e2c03bf6508de41a7a19aef3b
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: e6bbebafab45080a2076f33d66dd96296a761e4f
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063779"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754948"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Перенос одностраничного приложения JavaScript из неявного потока предоставления разрешения в поток кода авторизации
 
@@ -90,7 +90,7 @@ const msalInstance = new msal.PublicClientApplication(config);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о потоке кода авторизации, в том числе о различиях между неявными потоками кода и потоками кода авторизации, см. в статье [Поток кода авторизации для платформы удостоверений Майкрософт и OAuth 2.0](v2-oauth2-auth-code-flow.md).
+Дополнительные сведения о потоке кода авторизации, включая различия между неявными потоками кода и проверки подлинности, см. в статье [поток кода авторизации для платформы Microsoft Identity и OAuth 2,0](v2-oauth2-auth-code-flow.md).
 
 Если вы хотите узнать больше о разработке одностраничных приложений JavaScript на платформе удостоверений Майкрософт, см. серию статей [Сценарий: одностраничное приложение](scenario-spa-overview.md).
 

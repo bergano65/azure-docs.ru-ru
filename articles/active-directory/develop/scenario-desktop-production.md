@@ -1,5 +1,6 @@
 ---
-title: Перемещение классического приложения, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
+title: Переместить классическое приложение, вызывающее веб-API, в рабочую среду | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как переместить классическое приложение, вызывающее веб-API, в рабочую среду.
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 325f95f2830ef021a4ac79de48695dda570f7817
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 05b93848bff66adc49d2855ee98fff6c9b7a2d3d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629788"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756516"
 ---
 # <a name="desktop-app-that-calls-web-apis-move-to-production"></a>Классическое приложение, вызывающее веб-API: переместить в рабочую среду
 
@@ -31,7 +32,7 @@ ms.locfileid: "97629788"
 > [!NOTE]
 > Получение согласия для нескольких ресурсов работает для платформы Microsoft Identity, но не для Azure Active Directory (Azure AD) B2C. Azure AD B2C поддерживает только разрешение администратора, а не согласие пользователя.
 
-Невозможно получить маркер для нескольких ресурсов одновременно с конечной точкой платформы Microsoft Identity Platform (v 2.0). `scopes`Параметр может содержать области только для одного ресурса. Вы можете убедиться, что пользователь заранее предоставил несколько ресурсов с помощью `extraScopesToConsent` параметра.
+Вы не можете получить маркер для нескольких ресурсов одновременно с платформой Microsoft Identity. `scopes`Параметр может содержать области только для одного ресурса. Вы можете убедиться, что пользователь заранее предоставил несколько ресурсов с помощью `extraScopesToConsent` параметра.
 
 Например, у вас может быть два ресурса с двумя областями:
 
@@ -40,7 +41,7 @@ ms.locfileid: "97629788"
 
 В этом примере используйте `.WithAdditionalPromptToConsent` Модификатор с `extraScopesToConsent` параметром.
 
-например
+Например:
 
 ### <a name="in-msalnet"></a>В MSAL.NET
 
@@ -105,6 +106,6 @@ AcquireTokenSilent(scopesForVendorApi, accounts.FirstOrDefault()).ExecuteAsync()
 
 Для пользователей личных учетных записей Майкрософт необходимо повторно запрашивать согласие на каждое собственное клиентское (настольное или мобильное приложение) обращение к авторизации. Идентификация собственного клиента по своей природе небезопасна, что противоречит конфиденциальному удостоверению клиентского приложения. Конфиденциальные клиентские приложения обмениваются секретом с платформой Microsoft Identity, чтобы доказать их подлинность. Платформа Microsoft Identity решила устранить эту небезопасность для потребительских услуг, запрашивая согласие пользователя при каждой авторизации приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]

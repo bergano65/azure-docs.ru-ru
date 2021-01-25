@@ -1,5 +1,6 @@
 ---
-title: Вызов веб-API из управляющего приложения — платформа Microsoft Identity | Службы
+title: Вызов веб-API из приложения управляющей программы | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать управляющее приложение, вызывающее веб-API.
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 0dfd729a48b7e81028078fd035b3b900f4d7b9bc
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: a94cbebffbe2c735515d9758a2353a9857676311
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444126"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756578"
 ---
 # <a name="daemon-app-that-calls-web-apis---call-a-web-api-from-the-app"></a>Управляющее приложение, вызывающее веб-API — вызов веб-API из приложения
 
@@ -65,7 +66,7 @@ JSONObject responseObject = HttpClientHelper.processResponse(responseCode, respo
 
 Для приложений управляющей программы необходимо предварительно утвердить веб-API, которые вызываются. Нет добавочного согласия с приложениями управляющей программы. (Нет взаимодействия с пользователем.) Администратор клиента должен заранее предоставить согласие на доступ к приложению и всем разрешениям API. Если требуется вызвать несколько API, необходимо получить маркер для каждого ресурса, каждый раз вызывая `AcquireTokenForClient` . MSAL будет использовать кэш маркеров приложений, чтобы избежать ненужных вызовов служб.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 

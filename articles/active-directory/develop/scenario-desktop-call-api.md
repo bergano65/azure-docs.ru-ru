@@ -1,5 +1,6 @@
 ---
-title: Вызов веб-API из классического приложения — платформа Microsoft Identity | Службы
+title: Вызов веб-API из классического приложения | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать классическое приложение, вызывающее веб-API
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 274dc731b69686a67a9ac5dba25a5d9c98581652
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 51619fe049d580c21b338af2f86b2afea6765b04
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444050"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756520"
 ---
 # <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Классическое приложение, вызывающее веб-API: вызов веб-API
 
@@ -127,6 +128,6 @@ catch(MsalUiRequiredException ex)
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии, [перейдите в рабочую среду](scenario-desktop-production.md).

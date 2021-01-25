@@ -1,5 +1,6 @@
 ---
-title: Сценарий приложения с одной страницей JavaScript — платформа Microsoft Identity | Службы
+title: Сценарий приложения с одной страницей JavaScript
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать одностраничное приложение (обзор сценария) с помощью платформы Microsoft Identity.
 services: active-directory
 author: navyasric
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 17acb2bc5e96a136f31371c0be912c2c758c0f76
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 47b8c8c074a5e0ce3ed73a2a9a4b06aa307cdff3
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443863"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756420"
 ---
 # <a name="scenario-single-page-application"></a>Scenario: Одностраничное приложение
 
@@ -34,7 +35,7 @@ ms.locfileid: "94443863"
 
 Платформа Microsoft Identity предоставляет **два** варианта для включения одностраничных приложений для входа пользователей и получения маркеров для доступа к серверным службам или веб-API:
 
-- [Поток кода авторизации OAuth 2.0 (с PKCE)](./v2-oauth2-auth-code-flow.md). Поток кода авторизации позволяет приложению обмениваться кодом авторизации для маркеров **ID** для представления пользователя, прошедшего проверку подлинности, и маркеров **доступа** , необходимых для вызова защищенных интерфейсов API. Кроме того, он возвращает маркеры **обновления** , которые предоставляют долгосрочный доступ к ресурсам от имени пользователей без необходимости взаимодействия с этими пользователями. **Рекомендуем** использовать этот подход.
+- [Поток кода авторизации OAuth 2.0 (с PKCE)](./v2-oauth2-auth-code-flow.md). Поток кода авторизации позволяет приложению обмениваться кодом авторизации для маркеров **ID** для представления пользователя, прошедшего проверку подлинности, и маркеров **доступа**, необходимых для вызова защищенных интерфейсов API. Кроме того, он возвращает маркеры **обновления**, которые предоставляют долгосрочный доступ к ресурсам от имени пользователей без необходимости взаимодействия с этими пользователями. **Рекомендуем** использовать этот подход.
 
 ![Авторизация в одностраничных приложениях](./media/scenarios/spa-app-auth.svg)
 
@@ -56,6 +57,6 @@ ms.locfileid: "94443863"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии — [Регистрация приложения](scenario-spa-app-registration.md).

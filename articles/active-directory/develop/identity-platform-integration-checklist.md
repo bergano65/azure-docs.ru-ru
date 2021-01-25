@@ -1,5 +1,5 @@
 ---
-title: Рекомендации для платформы Microsoft Identity | Службы
+title: Рекомендации по платформе Microsoft Identity | Службы
 description: Ознакомьтесь с рекомендациями, рекомендациями и общими сведениями при интеграции с платформой идентификации Майкрософт.
 services: active-directory
 author: rwike77
@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 011acdf98c8430bfb7ba1b02ec24a170f829e48f
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: cefcf6b1bcd7ac5f81fa4e872b30660183a46a82
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063796"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755262"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и советы по платформе удостоверений Майкрософт
 
@@ -30,7 +30,7 @@ ms.locfileid: "98063796"
 > [!TIP]
 > *Помощник по интеграции* в портал Azure может помочь в применении многих из этих рекомендаций и рекомендаций. Выберите любую [регистрацию приложения](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure, а затем выберите пункт меню **помощника по интеграции** , чтобы начать работу с помощником.
 
-## <a name="basics"></a>Основы
+## <a name="basics"></a>Основные сведения
 
 ![CheckBox ](./media/active-directory-integration-checklist/checkbox-two.svg) Прочтите и изучите [политики платформы Майкрософт](/legal/microsoft-identity-platform/terms-of-use). Убедитесь, что ваше приложение соответствует условиям, которые были разработаны для защиты пользователей и платформы.
 
@@ -38,7 +38,7 @@ ms.locfileid: "98063796"
 
 ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Убедитесь, что сведения, связанные с учетной записью, используемой для регистрации и управления приложениями, обновлены.
 
-## <a name="branding"></a>Фирменная символика
+## <a name="branding"></a>Branding
 
 ![](./media/active-directory-integration-checklist/checkbox-two.svg)должен соответствовать [рекомендациям по фирменной символике для приложений](howto-add-branding-in-azure-ad-apps.md).
 
@@ -72,9 +72,9 @@ ms.locfileid: "98063796"
 
 ![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) переносить существующие приложения из библиотеки проверки подлинности [Azure Active Directory (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) в [библиотеку проверки подлинности Майкрософт](msal-overview.md). MSAL — это новейшее решение для платформы идентификации Майкрософт, которое является предпочтительным для ADAL. Он доступен на платформах .NET, JavaScript, Android, iOS и macOS, а также в общедоступной предварительной версии для Python и Java. Узнайте больше о миграции [ADAL.NET](msal-net-migration.md), [ADAL.js](msal-compare-msal-js-and-adal-js.md)и [ADAL.NET и приложений брокера iOS](msal-net-migration-ios-broker.md) .
 
-![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Для мобильных приложений настройте каждую платформу с помощью процесса регистрации приложения. Чтобы в приложении можно было воспользоваться преимуществами Microsoft Authenticator или Microsoft корпоративный портал для единого входа, приложению необходимо настроить "URI перенаправления брокера". Это позволяет корпорации Майкрософт возвращать управление приложению после проверки подлинности. При настройке каждой платформы процедура регистрации приложения поможет вам выполнить эти действия. Загрузите рабочий пример с помощью краткого руководства. В iOS при возможности используйте брокеры и System WebView.
+![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) Для мобильных приложений настройте каждую платформу с помощью процесса регистрации приложения. Чтобы в приложении можно было воспользоваться преимуществами Microsoft Authenticator или Microsoft Корпоративный портал для единого входа, приложению необходимо настроить "URI перенаправления брокера". Это позволяет корпорации Майкрософт возвращать управление приложению после проверки подлинности. При настройке каждой платформы процедура регистрации приложения поможет вам выполнить эти действия. Загрузите рабочий пример с помощью краткого руководства. В iOS при возможности используйте брокеры и System WebView.
 
-![](./media/active-directory-integration-checklist/checkbox-two.svg)в веб-приложениях или веб-API, для каждой учетной записи следует использовать один кэш маркеров.  Для веб-приложений кэш маркера должен быть снабжен ключом идентификатора учетной записи.  Для веб-API учетная запись должна быть привязана к хэшу маркера, используемого для вызова API. MSAL.NET обеспечивает сериализацию кэша пользовательской лексемы на платформах .NET Framework и .NET Core. По соображениям безопасности и производительности нашей рекомендацией является сериализация одного кэша на пользователя. Дополнительные сведения см. в статье о [сериализации кэша маркеров](msal-net-token-cache-serialization.md#token-cache-for-a-web-app-confidential-client-application).
+![](./media/active-directory-integration-checklist/checkbox-two.svg)в веб-приложениях или веб-API, для каждой учетной записи следует использовать один кэш маркеров.  Для веб-приложений кэш маркера должен быть снабжен ключом идентификатора учетной записи.  Для веб-API учетная запись должна быть привязана к хэшу маркера, используемого для вызова API. MSAL.NET обеспечивает сериализацию кэша пользовательской лексемы на платформах платформа .NET Framework и .NET Core. По соображениям безопасности и производительности нашей рекомендацией является сериализация одного кэша на пользователя. Дополнительные сведения см. в статье о [сериализации кэша маркеров](msal-net-token-cache-serialization.md#token-cache-for-a-web-app-confidential-client-application).
 
 ![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) Если данные, необходимые приложению, доступны через [Microsoft Graph](https://developer.microsoft.com/graph), запросите разрешения для этих данных, используя конечную точку Microsoft Graph, а не отдельный API.
 
@@ -104,7 +104,7 @@ ms.locfileid: "98063796"
 
 Ниже приведены ресурсы с подробными сведениями о версии 2.0:
 
-* [Платформа Microsoft Identity (версия 2.0)](v2-overview.md)
+* [Платформа Microsoft Identity (обзор)](v2-overview.md)
 * [Справочник по протоколам платформы удостоверений Майкрософт](active-directory-v2-protocols.md)
 * [Справочник по маркерам доступа](access-tokens.md)
 * [Справочник по токенам идентификаторов](id-tokens.md)

@@ -1,7 +1,7 @@
 ---
 title: Проверка подлинности и авторизация | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте об основах проверки подлинности и авторизации на платформе Microsoft Identity Platform (v 2.0).
+description: Узнайте об основах проверки подлинности и авторизации на платформе Microsoft Identity.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 05/22/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 5087278e5c89514cd43b7ca871a58f18e0fa98f2
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: b81b34010736bce33085cb1ebf0faa3da6a41bd6
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678152"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755394"
 ---
 # <a name="authentication-vs-authorization"></a>Проверка подлинности и авторизация
 

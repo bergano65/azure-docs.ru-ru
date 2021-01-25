@@ -1,6 +1,7 @@
 ---
-title: Единый вход между приложениями ADAL & MSAL (iOS/macOS) — платформа Microsoft Identity | Службы
-description: ''
+title: Единый вход между приложениями ADAL & MSAL (iOS/macOS) | Службы
+titleSuffix: Microsoft identity platform
+description: Узнайте, как совместно использовать единый вход для приложений ADAL и MSAL
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -12,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: ''
 ms.custom: aaddev
-ms.openlocfilehash: 7a8a1667ba1ca2a99c053c6941e3ba778299fd53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60189b8ba952bc3315bf514c5d0786601840665a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80880756"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756203"
 ---
 # <a name="how-to-sso-between-adal-and-msal-apps-on-macos-and-ios"></a>Практические руководства. единый вход между приложениями ADAL и MSAL в macOS и iOS
 

@@ -1,5 +1,6 @@
 ---
-title: Регистрация веб-приложения, которое входит в систему пользователей — платформа Microsoft Identity | Службы
+title: Регистрация веб-приложения, которое входит в систему пользователей | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как зарегистрировать веб-приложение, которое входит в систему пользователей
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7ca294d3d7764737d4e2be55aae25bc8ff08a8d1
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: b6240f88d309cbf4f26375c5f961d716b472755d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011532"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756274"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое входит в систему пользователей: регистрация приложения
 
@@ -41,7 +42,7 @@ ms.locfileid: "98011532"
 > Используемый портал отличается в зависимости от того, выполняется ли ваше приложение в Microsoft Azure общедоступном облаке или в национальной или независимых облаке. Дополнительные сведения см. в статье [местные облака](./authentication-national-cloud.md#app-registration-endpoints).
 
 
-1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. 
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>. 
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
@@ -68,7 +69,7 @@ ms.locfileid: "98011532"
    1. Выберите **Зарегистрировать**, чтобы создать приложение.
 1. В разделе **Управление** выберите **Проверка подлинности**.
 1. В разделе **неявное предоставление** выберите **токены идентификации**. Для работы с этим образцом необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md) для входа пользователя.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 # <a name="java"></a>[Java](#tab/java)
 

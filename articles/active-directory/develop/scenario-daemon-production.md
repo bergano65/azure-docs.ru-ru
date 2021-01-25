@@ -1,5 +1,6 @@
 ---
-title: Перемещение управляющего приложения, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
+title: Перемещение управляющего приложения, вызывающего веб-API, в рабочую среду | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как переместить управляющее приложение, которое вызывает веб-API в рабочую среду.
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 72e6d0a8677f7a8175223b80541c99026a9eb16f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99fd79fb6c51f577d9b62d15ac006b068a685bcf
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119170"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756543"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Приложение управляющей программы, вызывающее веб-API — переместить в рабочую среду
 
@@ -33,7 +34,7 @@ ms.locfileid: "88119170"
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Вот несколько ссылок, которые помогут вам получить дополнительные сведения:
 

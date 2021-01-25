@@ -1,5 +1,6 @@
 ---
-title: Перемещение веб-приложения, которое выполняет вход пользователей в рабочую среду — платформа Microsoft Identity | Службы
+title: Переместить веб-приложение, которое выполняет вход пользователей в рабочую среду | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (переходит в рабочую среду).
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: fd9890cb94bf6bb4b82ebbb585ab8bbb9d5ba46a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c7abad31c9936729b8d9c19ed2efcb841ac103ca
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169296"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756235"
 ---
 # <a name="web-app-that-signs-in-users-move-to-production"></a>Веб-приложение, которое входит в систему пользователей: перейти в рабочую среду
 

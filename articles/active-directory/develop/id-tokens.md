@@ -14,12 +14,12 @@ ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: eec24ca19af8c41a842b1db3db4b9e16f748f029
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 6a1f4a02ebf42c0f181b595aae0a5fa0bcc9b41d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653255"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755912"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Маркеры ИДЕНТИФИКАТОРов платформы Microsoft Identity
 
@@ -89,7 +89,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 |`groups:src1`|Объект JSON | Для запросов маркеров, которые не ограничены по длине (см. `hasgroups` выше), но все еще слишком большие для маркеров, будет добавлена ссылка на полный список групп, в которые входит пользователь. Используется для JWT в качестве распределенного утверждения и для SAML в качестве нового утверждения вместо `groups`. <br><br>**Пример значения JWT**: <br> `"groups":"src1"` <br> `"_claim_sources`: `"src1" : { "endpoint" : "https://graph.microsoft.com/v1.0/users/{userID}/getMemberObjects" }`<br><br> Дополнительные сведения см. в разделе [Групповая заявка](#groups-overage-claim).|
 
 > [!NOTE]
-> Версии 1.0 и 2.0 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. Версия основана на конечной точке, из которой она была запрошена. Хотя существующие приложения, вероятно, используют конечную точку Azure AD, новые приложения должны использовать конечную точку версии 2.0 "платформа Microsoft Identity".
+> Версии 1.0 и 2.0 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. Версия основана на конечной точке, из которой она была запрошена. Хотя существующие приложения, скорее всего, используют конечную точку Azure AD, новые приложения должны использовать "платформу Microsoft Identity".
 >
 > - v 1.0: конечные точки Azure AD: `https://login.microsoftonline.com/common/oauth2/authorize`
 > - Версия 2.0: конечные точки платформы Microsoft Identity: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
@@ -135,7 +135,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 * Аудитория. Утверждение `aud` должно соответствовать идентификатору вашего приложения.
 * Nonce. Утверждение `nonce` в полезных данных должно соответствовать параметру nonce, переданному в конечную точку, или авторизации конечной точки во время первоначального запроса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [маркерах доступа](access-tokens.md)
 * Настройте утверждения JWT в id_token с помощью [необязательных утверждений](active-directory-optional-claims.md).

@@ -13,16 +13,16 @@ ms.date: 12/3/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: f3222c790ccd0cee936b246253a16b5c434c61c8
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 50a2f56824db67b73199439922e662339ff30872
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602212"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755283"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт
 
-Платформа удостоверений Майкрософт позволяет приложению использовать собственные учетные данные для проверки подлинности в любой точке мира, например, в потоке  [предоставления учетных данных клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0 и потоке "от [имени](v2-oauth2-on-behalf-of-flow.md) " (OBO).
+Платформа Microsoft Identity позволяет приложению использовать собственные учетные данные для проверки подлинности в любом месте, где можно использовать секрет клиента, например в потоке  [предоставления учетных данных клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0 и потоке " [от имени](v2-oauth2-on-behalf-of-flow.md) " (OBO).
 
 Одним из форм учетных данных, которые приложение может использовать для проверки подлинности, является утверждение [JSON Web Token](./security-tokens.md#json-web-tokens-jwts-and-claims) (JWT), подписанное с помощью сертификата, которому принадлежит приложение.
 
@@ -89,7 +89,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 
 ## <a name="register-your-certificate-with-microsoft-identity-platform"></a>Зарегистрируйте сертификат на платформе удостоверений Майкрософт
 
-Учетные данные сертификата можно связать с клиентским приложением на платформе удостоверений Майкрософт через портал Azure с помощью любого из следующих методов:
+Учетные данные сертификата можно связать с клиентским приложением на платформе Microsoft Identity с помощью портал Azure одним из следующих способов.
 
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
@@ -136,7 +136,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 |`client_assertion_type`|`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`| Это фиксированное значение, указывающее, что используются учетные данные сертификата. |
 |`client_assertion`| JWT |Это созданное выше JWT. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Библиотека MSAL.NET обрабатывает этот сценарий](msal-net-client-assertions.md) в одной строке кода.
 
