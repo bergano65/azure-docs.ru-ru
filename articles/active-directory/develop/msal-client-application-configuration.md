@@ -13,12 +13,12 @@ ms.date: 11/20/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 9ec8a5fe5de751e40ebaa17629ff72c5f6b2adca
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 46626c3ebe9d70600be1cc5f73c43677f67bcd09
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94979993"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761374"
 ---
 # <a name="application-configuration-options"></a>Параметры конфигурации приложения
 
@@ -147,9 +147,21 @@ URI перенаправления можно переопределить с п
 Этот параметр указывает секрет клиента для конфиденциального клиентского приложения. Этот секрет (пароль приложения) предоставляется порталом регистрации приложений или предоставляется Azure AD во время регистрации приложения с помощью PowerShell AzureAD, PowerShell AzureRM или Azure CLI.
 
 ## <a name="logging"></a>Ведение журнала
+Для упрощения отладки и устранения ошибок проверки подлинности в библиотеке проверки подлинности Майкрософт предусмотрена встроенная поддержка ведения журнала. Ведение журнала — каждая библиотека рассматривается в следующих статьях:
 
-Другие параметры конфигурации включают ведение журнала и устранение неполадок. Дополнительные сведения об их использовании см. в статье [ведение журнала](msal-logging.md) .
+:::row:::
+    :::column:::
+        - [Ведение журнала в MSAL.NET](msal-logging-dotnet.md)
+        - [Ведение журналов в MSAL для Android](msal-logging-android.md)
+        - [Ведение журнала в MSAL.js](msal-logging-js.md)
+    :::column-end:::
+    :::column:::
+        - [Вход в MSAL для iOS или macOS](msal-logging-ios.md)
+        - [Вход в MSAL для Java](msal-logging-java.md)
+        - [Ведение журналов в MSAL для Python](msal-logging-python.md)
+    :::column-end:::
+:::row-end:::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о [создании экземпляров клиентских приложений](msal-net-initializing-client-applications.md) с помощью MSAL.NET и [создании экземпляров клиентских приложений с помощью MSAL.js](msal-js-initializing-client-applications.md).

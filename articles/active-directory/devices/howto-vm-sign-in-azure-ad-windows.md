@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22a4bdc92ea2a91425c1070a5837c672307de665
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 3e22e5fc4bc7211d905dbe8775b0ef6e893bd2cc
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683782"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761005"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -350,7 +350,9 @@ az role assignment create \
 > [!NOTE]
 > В Windows 10 Build 20H1 добавлена поддержка компьютера, зарегистрированного в Azure AD, для инициирования подключения RDP к виртуальной машине. Если вы используете зарегистрированный Azure AD (не присоединенный к Azure AD или Гибридный компьютер с Azure AD) в качестве клиента RDP для запуска подключений к виртуальной машине, необходимо ввести учетные данные в формате Азуреад\упн (например, AzureAD\john@contoso.com ).
 
-Кроме того, убедитесь, что расширение Аадлогинфорвиндовс не было удалено после завершения приподключения к Azure AD.
+Убедитесь, что расширение Аадлогинфорвиндовс не было удалено после завершения присоединение к Azure AD.
+
+Кроме того, убедитесь, что политика безопасности "Сетевая безопасность: разрешить запросы проверки подлинности PKU2U на этот компьютер для использования сетевых удостоверений" включена как на сервере *, так и* на клиенте.
  
 #### <a name="mfa-sign-in-method-required"></a>Требуется метод входа MFA
 
@@ -371,6 +373,6 @@ az role assignment create \
 
 Поделитесь своими отзывами об этой предварительной версии функции или сообщите о проблемах с ее помощью на [форуме обратной связи Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../fundamentals/active-directory-whatis.md).

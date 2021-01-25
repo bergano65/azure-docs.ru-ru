@@ -4,16 +4,16 @@ description: Настройка действия GitHub, которое авто
 ms.topic: article
 ms.date: 08/20/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: c6c030e05953dc98c82c573704018c3b482d2fea
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 1409d8fc1430cd9bf67bd735d9826a74979d495b
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814284"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762962"
 ---
 # <a name="configure-a-github-action-to-create-a-container-instance"></a>Настройка действия GitHub для создания экземпляра контейнера
 
-[Действия GitHub](https://docs.github.com/en/free-pro-team@latest/actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
+[Действия GitHub](https://docs.github.com/en/actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
 
 Чтобы автоматизировать развертывание одного контейнера в службе "экземпляры контейнеров Azure", используйте действие GitHub " [развернуть в Azure Container](https://github.com/azure/aci-deploy) ". Это действие позволяет задать свойства для экземпляра контейнера, аналогичные тем, которые находятся в команде [AZ Container Create][az-container-create] .
 
@@ -177,7 +177,7 @@ jobs:
 
 ![Просмотр хода выполнения рабочего процесса](./media/container-instances-github-action/github-action-progress.png)
 
-Сведения о просмотре состояния и результатов каждого шага в рабочем процессе см. в статье [Просмотр журнала выполнения рабочего процесса](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/viewing-workflow-run-history) . Если рабочий процесс не завершен, см. раздел [Просмотр журналов для диагностики сбоев](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/using-workflow-run-logs#viewing-logs-to-diagnose-failures).
+Сведения о просмотре состояния и результатов каждого шага в рабочем процессе см. в статье [Просмотр журнала выполнения рабочего процесса](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history) . Если рабочий процесс не завершен, см. раздел [Просмотр журналов для диагностики сбоев](https://docs.github.com/en/actions/managing-workflow-runs/using-workflow-run-logs#viewing-logs-to-diagnose-failures).
 
 Когда рабочий процесс завершится успешно, получите сведения об экземпляре контейнера с именем *ACI-SampleApp* , выполнив команду [AZ Container показывать][az-container-show] . Замените имя группы ресурсов: 
 
@@ -237,7 +237,7 @@ az container app up \
 
 ### <a name="command-progress"></a>Ход выполнения команд
 
-* При появлении запроса укажите учетные данные GitHub или предоставьте [личный маркер доступа GitHub](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) (PAT), который содержит *репозиторий* и области *пользователей* для проверки подлинности в учетной записи GitHub. При предоставлении учетных данных GitHub команда создает PAT. Следуйте дополнительным запросам, чтобы настроить рабочий процесс.
+* При появлении запроса укажите учетные данные GitHub или предоставьте [личный маркер доступа GitHub](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) (PAT), который содержит *репозиторий* и области *пользователей* для проверки подлинности в учетной записи GitHub. При предоставлении учетных данных GitHub команда создает PAT. Следуйте дополнительным запросам, чтобы настроить рабочий процесс.
 
 * Команда создает секреты репозитория для рабочего процесса:
 
@@ -258,7 +258,7 @@ Workflow succeeded
 Your app is deployed at:  http://acr-build-helloworld-node.eastus.azurecontainer.io:8080/
 ```
 
-Чтобы просмотреть состояние рабочего процесса и результаты каждого шага в пользовательском интерфейсе GitHub, см. раздел [Просмотр журнала выполнения рабочего процесса](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs/viewing-workflow-run-history).
+Чтобы просмотреть состояние рабочего процесса и результаты каждого шага в пользовательском интерфейсе GitHub, см. раздел [Просмотр журнала выполнения рабочего процесса](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history).
 
 ### <a name="validate-workflow"></a>Проверка рабочего процесса
 

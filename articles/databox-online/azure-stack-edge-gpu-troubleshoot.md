@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 10/07/2020
+ms.date: 01/21/2021
 ms.author: alkohli
-ms.openlocfilehash: d07d9dccb0aa273f79b251f2ffb4a920f3cac2e7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0976dd9f3c4d0228ec0f170a755ec13800da435b
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447619"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761553"
 ---
 # <a name="troubleshoot-issues-on-your-azure-stack-edge-pro-gpu-device"></a>Устранение неполадок на устройстве GPU Azure Stack с пограничными устройствами 
 
@@ -26,7 +26,7 @@ ms.locfileid: "96447619"
 
 Чтобы диагностировать и устранить любые ошибки устройства, можно запустить диагностические тесты. Чтобы запустить диагностические тесты, сделайте следующее в локальном веб-интерфейсе устройства.
 
-1. В локальном веб-интерфейсе выберите **Устранение неполадок > Diagnostic tests** (Диагностические тесты). Выберите тест, который нужно запустить, и щелкните **запустить тест**. Это действие запускает тесты для выявления возможных проблем с настройками сети, устройства, веб-прокси, времени или облака. Вы получаете уведомление о том, что устройство тестируется.
+1. В локальном веб-интерфейсе выберите **Устранение неполадок > Diagnostic tests** (Диагностические тесты). Выберите тест, который нужно запустить, и щелкните **запустить тест**. Этот тест позволяет диагностировать возможные проблемы с сетью, устройством, веб-прокси, временем или параметрами облака. Вы получаете уведомление о том, что устройство тестируется.
 
     ![Выбор тестов ](media/azure-stack-edge-gpu-troubleshoot/run-diag-1.png)
  
@@ -143,7 +143,7 @@ ms.locfileid: "96447619"
 | **Проблемы и ошибки** |  **Решение** | 
 |------------|-----------------|
 |Общие проблемы|<li>[Убедитесь, что Пограничное устройство настроено правильно](#verify-the-device-is-configured-properly).<li> [Проверка правильности настройки клиента](#verify-the-client-is-configured-properly)|
-|Add-AzureRmEnvironment: произошла ошибка при отправке запроса.<br>В строке: 1 символ: 1<br>+ Add-AzureRmEnvironment-Name Az3-ARMEndpoint " https://management.dbe ...|Эта ошибка означает, что устройство Azure Stack пограничной Pro недоступно или неправильно настроено. Убедитесь, что пограничные устройства и клиент настроены правильно. Инструкции см. в строке **Общие проблемы** в этой таблице.|
+|Add-AzureRmEnvironment: при отправке запроса произошла ошибка.<br>В строке: 1 символ: 1<br>+ Add-AzureRmEnvironment-Name Az3-ARMEndpoint " https://management.dbe ...|Эта ошибка означает, что устройство Azure Stack пограничной Pro недоступно или неправильно настроено. Убедитесь, что пограничные устройства и клиент настроены правильно. Инструкции см. в строке **Общие проблемы** в этой таблице.|
 |Служба вернула ошибку. Дополнительные сведения см. в описании внутреннего подключения: не удалось установить доверительные отношения для защищенного канала SSL/TLS. |   Вероятно, эта ошибка возникла из-за того, что один или несколько неверно переводят собственные шаги сертификата. Руководство можно найти [здесь](./azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates). |
 |Операция вернула недопустимый код состояния "ServiceUnavailable" <br> Код состояния ответа не указывает на успешное выполнение: 503 (служба недоступна). | Эта ошибка может быть результатом любого из этих условий.<li>Армстспул находится в остановленном состоянии.</li><li>Один из веб-сайтов службы маркеров Azure Resource Manager и безопасности не работает.</li><li>Ресурс кластера Azure Resource Manager не работает.</li><br><strong>Примечание.</strong> Перезапуск устройства может решить проблему, но вы должны получить пакет поддержки, чтобы его можно было отладить.|
 |AADSTS50126: недопустимое имя пользователя или пароль.<br>Идентификатор трассировки: 29317da9-52fc-4ba0-9778-446ae5625e5a<br>Идентификатор корреляции: 1b9752c4-8cbf-4304-a714-8a16527410f4<br>Метка времени: 2019-11-15 09:21:57Z: удаленный сервер вернул ошибку: (400) неверный запрос.<br>В строке: 1 символ: 1 |Эта ошибка может быть результатом любого из этих условий.<li>Для неправильного имени пользователя и пароля проверьте, что клиент изменил пароль с портал Azure, выполнив действия, описанные [здесь](./azure-stack-edge-j-series-set-azure-resource-manager-password.md) , и используя правильный пароль.<li>Для недопустимого идентификатора клиента идентификатор клиента является фиксированным GUID и должен иметь значение `c0257de7-538f-415c-993a-1b87a031879d`</li>|
@@ -187,7 +187,7 @@ ms.locfileid: "96447619"
 | **Проблемы и ошибки** |  **Решение** | 
 |--------------------|-----------------|
 |Не удалось получить дочерние ресурсы. Значение одного из заголовков HTTP имеет неправильный формат.| В меню **Правка** выберите пункт **целевые Azure Stack API**. Затем перезапустите Обозреватель службы хранилища Azure.|
-|функцию getaddrinfo ЕНОТФАУНД <accountname> . BLOB. <serialnumber> microsoftdatabox.com|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по указанному пути: `C:\Windows\System32\drivers\etc\hosts` в Windows или `/etc/hosts` Linux.|
+|`getaddrinfo ENOTFOUND <accountname>.blob.<serialnumber>.microsoftdatabox.com`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по указанному пути: `C:\Windows\System32\drivers\etc\hosts` в Windows или `/etc/hosts` Linux.|
 |Не удалось получить дочерние ресурсы.<br> Сведения: самозаверяющий сертификат |Импортируйте SSL-сертификат для устройства в Обозреватель службы хранилища Azure: <ol><li>Скачайте сертификат из портал Azure. Дополнительные сведения см. [в разделе скачивание сертификата](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate).</li><li>В меню **Правка** выберите SSL-сертификаты и щелкните **Импорт сертификатов**.</li></ol>|
 |Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка:<br>`Failed to enumerate directory https://… The remote name could not be resolved <accountname>.blob.<serialnumber>.microsoftdatabox.com`|Убедитесь, что имя конечной точки `<accountname>.blob.<serialnumber>.microsoftdatabox.com` Добавлено в файл hosts по адресу: `C:\Windows\System32\drivers\etc\hosts` .|
 |Команда AzCopy перестает отвечать на минуты, прежде чем отобразится эта ошибка:<br>`Error parsing source location. The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel`. |Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate).|
@@ -197,8 +197,11 @@ ms.locfileid: "96447619"
 |Команда AzCopy перестает отвечать на запросы в течение 20 минут, после чего отображается следующее сообщение об ошибке: `Error parsing source location… The SSL connection could not be established` .|Импортируйте SSL-сертификат для устройства в хранилище сертификатов системы. Дополнительные сведения см. [в разделе скачивание сертификата](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate).|
 |Значение одного из заголовков HTTP имеет неправильный формат.|Установленная версия библиотеки служба хранилища Microsoft Azure для Python не поддерживается Data Box. Поддерживаемые версии см. в разделе Azure Data Box требования к хранилищу BLOB-объектов.|
 |… [SSL: CERTIFICATE_VERIFY_FAILED]...| Перед запуском Python присвойте переменной среды REQUESTS_CA_BUNDLE путь к файлу SSL-сертификата в кодировке Base64 (см. раздел [Загрузка сертификата](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate)). Пример:<br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer`<br>`python`<br>Кроме того, добавьте сертификат в хранилище сертификатов системы, а затем задайте для этой переменной среды путь к этому хранилищу. Например, в Ubuntu: <br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`<br>`python`.|
-|Время ожидания соединения истекло.|Войдите в Azure Stack пограничная Pro и убедитесь, что она разблокирована. При каждом перезапуске устройства он остается заблокированным до тех пор, пока пользователь не войдет в систему.|
+|Время ожидания соединения истекло.|Войдите в Azure Stack пограничная Pro и убедитесь, что она разблокирована. Когда устройство перезапускается, оно остается заблокированным до тех пор, пока пользователь не войдет в систему.|
 
+## <a name="troubleshoot-iot-edge-errors"></a>Устранение ошибок IoT Edge
+
+[!INCLUDE [Troubleshoot IoT Edge runtime](../../includes/azure-stack-edge-iot-troubleshoot-compute.md)]
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

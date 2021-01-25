@@ -9,16 +9,16 @@ ms.reviewer: dineshm
 ms.date: 01/11/2021
 ms.subservice: blobs
 ms.custom: devx-track-javascript, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d8727bd747ef6d035cabbccf2ad42b80937a06a8
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: d3aa0ca83b28708fde81cba12993ac6e79e79a88
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180206"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760607"
 ---
 # <a name="set-up-a-github-actions-workflow-to-deploy-your-static-website-in-azure-storage"></a>Настройка рабочего процесса GitHub Actions для развертывания статического веб-сайта в службе хранилища Azure
 
-Начните работу с [действиями GitHub](https://docs.github.com/en/free-pro-team@latest/actions) , используя рабочий процесс для развертывания статического сайта в учетной записи хранения Azure. После настройки рабочего процесса для действий GitHub вы сможете автоматически развернуть сайт в Azure из GitHub при внесении изменений в код сайта.
+Начните работу с [действиями GitHub](https://docs.github.com/en/actions) , используя рабочий процесс для развертывания статического сайта в учетной записи хранения Azure. После настройки рабочего процесса для действий GitHub вы сможете автоматически развернуть сайт в Azure из GitHub при внесении изменений в код сайта.
 
 > [!NOTE]
 > Если вы используете [статические веб-приложения Azure](../../static-web-apps/index.yml), вам не нужно вручную настраивать рабочий процесс для действий GitHub.

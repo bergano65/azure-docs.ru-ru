@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 25356e7101293fc27d4107b3a618cfc481aee969
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 223d119786d99eac611ece597fc0e8de4fcaf6bd
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779589"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762407"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -147,7 +147,7 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
-Где:
+где:
 
 -   `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы пытаетесь выполнить резервное копирование;
 -   `resourceGroupName` — имя группы ресурсов службы управления API Azure
@@ -177,7 +177,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
-Где:
+где:
 
 -   `subscriptionId` — идентификатор подписки, включающей в себя службу управления API, которую нужно восстановить из резервной копии;
 -   `resourceGroupName` — имя группы ресурсов, включающей в себя службу управления API Azure, в которую нужно восстановить резервную копию;
@@ -221,8 +221,8 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 
 ## <a name="what-is-not-backed-up"></a>Что резервное копирование не выполнено
 -   **Данные об использовании**, применяемые при создании аналитических отчетов, **не включаются** в резервную копию. Для периодического извлечения аналитических отчетов с целью их дальнейшего помещения на хранение используйте [API REST Azure API Management][azure api management rest api] .
--   Сертификаты [TLS/SSL пользовательского домена](configure-custom-domain.md)
--   [Пользовательский сертификат ЦС](api-management-howto-ca-certificates.md), который включает промежуточные или корневые сертификаты, загруженные клиентом
+-   Сертификаты [TLS/SSL пользовательского домена](configure-custom-domain.md) .
+-   [Пользовательский сертификат ЦС](api-management-howto-ca-certificates.md), который включает промежуточные или корневые сертификаты, загруженные клиентом.
 -   Параметры интеграции [виртуальной сети](api-management-using-with-vnet.md) .
 -   Конфигурация [управляемого удостоверения](api-management-howto-use-managed-service-identity.md) .
 -   [Диагностика Azure Monitor](api-management-howto-use-azure-monitor.md) Настройка.

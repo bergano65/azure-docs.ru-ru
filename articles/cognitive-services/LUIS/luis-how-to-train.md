@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/15/2019
-ms.openlocfilehash: a53857061110d5a77ac3d166277e7076f4f7f9c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47b006932aace3149dd94e136e334c1b6e5bfcef
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541379"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762718"
 ---
 # <a name="train-your-active-version-of-the-luis-app"></a>Обучение активной версии приложения LUIS
 
@@ -40,9 +40,15 @@ ms.locfileid: "91541379"
 
 ## <a name="train-with-all-data"></a>Обучение на основе всех данных
 
-При обучении используется небольшой процент отрицательных выборок. Если вы хотите использовать все данные вместо небольшой отрицательной выборки, используйте [API](#version-settings-api-use-of-usealltrainingdata).
+При обучении используется небольшой процент отрицательных выборок. Вместо этого можно использовать все доступные данные с помощью портала или API. 
 
-### <a name="version-settings-api-use-of-usealltrainingdata"></a>Параметры версии API использования Усеаллтраинингдата
+### <a name="using-the-luis-portal"></a>Использование портала LUIS
+
+Войдите на [портал Luis](https://www.luis.ai/) и щелкните свое приложение. Выберите **Управление** в верхней части экрана, а затем выберите **Параметры** и включите или отключите параметр " **использовать детерминированное обучение** ". При отключении обучения будет использовать все доступные данные.
+
+![Кнопка для включения или отключения недетерминированного обучения](./media/non-determinstic-training.png)
+
+### <a name="using-the-version-settings-api"></a>Использование API параметров версии
 
 Используйте [API параметров версии](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с параметром, имеющим значение `UseAllTrainingData` true, чтобы отключить эту функцию.
 
@@ -56,7 +62,7 @@ ms.locfileid: "91541379"
 
 Чтобы узнать о завершении обучения, необходимо выполнять опрос состояния до тех пор, пока все модели не будут успешно обучены.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Интерактивное тестирование](luis-interactive-test.md)
 * [Пакетное тестирование](luis-how-to-batch-test.md)

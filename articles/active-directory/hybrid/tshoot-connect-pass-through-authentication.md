@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 07/27/2020
+ms.date: 01/25/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 251f9a2b075189f19b9e943ff660baaba93ec33b
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 9a014bd5c8f1edbfb00019b8541cef552271d65b
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652047"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762847"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "97652047"
 
 Если пользователи не могут выполнить вход с использованием сквозной аутентификации, для них могут отображаться следующие ошибки на экране входа в Azure AD: 
 
-|Ошибка|Описание|Решение
+|Error|Описание|Решение
 | --- | --- | ---
 |AADSTS80001|Не удалось подключиться к Active Directory|Убедитесь, что серверы с агентами являются членами того же леса, что и пользователи, чьи пароли должны быть проверены, и могут подключиться к Active Directory.  
 |AADSTS8002|Истекло время ожидания подключения к Active Directory|Убедитесь, что служба Active Directory доступна и отвечает на запросы агентов.
@@ -157,7 +157,7 @@ ms.locfileid: "97652047"
 
 Для получения подробных сведений включите журнал "Сеанс" (кликните правой кнопкой мыши в приложении "Просмотр событий", чтобы найти этот параметр). Не запускайте агент аутентификации со включенным журналом во время обычной работы. Используйте его только для устранения неполадок. Содержимое этого журнала будет видно только после того, как он снова будет отключен.
 
-Манифест событий агента PTA можно найти [здесь](https://msazure.visualstudio.com/One/_git/AD-AppProxy?path=%2Fsrc%2FProduct%2FMUC%2FPTADiagnosticsResource%2FPTADiagnosticsResource%2FPTAConnectorDiagnosticsResource%2FPTAConnectorEventManifest.man&_a=contents&version=GBmaster).
+
 
 ### <a name="detailed-trace-logs"></a>Подробные журналы трассировки
 

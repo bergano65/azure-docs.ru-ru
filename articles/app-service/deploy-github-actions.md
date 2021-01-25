@@ -7,16 +7,16 @@ ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 0c10cc683d8c8c2496ca8fdbd00f0e5065e2db35
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 59eb56dd188edf258c3631cde957c0864454ad76
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97604929"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762660"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в Службе приложений с помощью GitHub Actions
 
-Начните работу с [действиями GitHub](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions) , чтобы автоматизировать рабочий процесс и развернуть его в [службе приложений Azure](overview.md) из GitHub. 
+Начните работу с [действиями GitHub](https://docs.github.com/en/actions/learn-github-actions) , чтобы автоматизировать рабочий процесс и развернуть его в [службе приложений Azure](overview.md) из GitHub. 
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -63,7 +63,7 @@ ms.locfileid: "97604929"
 
 Рекомендуемый способ проверки подлинности в службе приложений Azure для действий GitHub — профиль публикации. Вы также можете пройти проверку подлинности с помощью субъекта-службы, но процесс требует дополнительных действий. 
 
-Сохраните учетные данные профиля публикации или субъекта-службы в качестве [секрета GitHub](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) для аутентификации в Azure. Вы получите доступ к секрету в рабочем процессе. 
+Сохраните учетные данные профиля публикации или субъекта-службы в качестве [секрета GitHub](https://docs.github.com/en/actions/reference/encrypted-secrets) для аутентификации в Azure. Вы получите доступ к секрету в рабочем процессе. 
 
 # <a name="publish-profile"></a>[Опубликовать профиль](#tab/applevel)
 
@@ -114,7 +114,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 Чтобы использовать [учетные данные уровня приложения](#generate-deployment-credentials), вставьте содержимое скачанного файла профиля публикации в поле значение секрета. Назовите секрет `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
-При настройке рабочего процесса GitHub используйте `AZURE_WEBAPP_PUBLISH_PROFILE` в действии развертывание веб-приложения Azure. Пример.
+При настройке рабочего процесса GitHub используйте `AZURE_WEBAPP_PUBLISH_PROFILE` в действии развертывание веб-приложения Azure. Пример:
     
 ```yaml
 - uses: azure/webapps-deploy@v2
@@ -746,7 +746,7 @@ jobs:
 
 - [Вход в Docker и выход из него](https://github.com/Azure/docker-login)
 
-- [События, инициирующие рабочие процессы](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows)
+- [События, инициирующие рабочие процессы](https://docs.github.com/en/actions/reference/events-that-trigger-workflows)
 
 - [Развертывание Kubernetes](https://github.com/Azure/k8s-deploy)
 

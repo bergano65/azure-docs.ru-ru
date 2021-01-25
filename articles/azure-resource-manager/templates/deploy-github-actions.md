@@ -4,16 +4,16 @@ description: Описывает, как развертывать шаблоны 
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 4c1f59e9a18e7359ae543b0311baea0c2a4ab8d6
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 67d4ac51e3e1f84f6a9acd0fc94d5818355d3954
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674338"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762084"
 ---
 # <a name="deploy-arm-templates-by-using-github-actions"></a>Развертывание шаблонов ARM с помощью действий GitHub
 
-[Действия GitHub](https://docs.github.com/en/free-pro-team@latest/actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
+[Действия GitHub](https://docs.github.com/en/actions) — это набор функций в GitHub для автоматизации рабочих процессов разработки программного обеспечения в том же месте, где вы храните код и работаете над запросами на вытягивание и проблемами.
 
 Чтобы автоматизировать развертывание шаблона Azure Resource Manager (шаблона ARM) в Azure, воспользуйтесь [действием развертывание Azure Resource Manager шаблона](https://github.com/marketplace/actions/deploy-azure-resource-manager-arm-template) .
 
@@ -21,7 +21,7 @@ ms.locfileid: "97674338"
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 - Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).
-    - Репозиторий GitHub для хранения шаблонов диспетчер ресурсов и файлов рабочего процесса. Чтобы создать его, см. раздел [Создание нового репозитория](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
+    - Репозиторий GitHub для хранения шаблонов диспетчер ресурсов и файлов рабочего процесса. Чтобы создать его, см. раздел [Создание нового репозитория](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-new-repository).
 
 
 ## <a name="workflow-file-overview"></a>Общие сведения о файле рабочего процесса
@@ -154,7 +154,7 @@ https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-st
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если группа ресурсов и репозиторий больше не требуются, очистите развернутые ресурсы, удалив группу ресурсов и репозиторий GitHub.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание первого шаблона ARM](./template-tutorial-create-first-template.md)

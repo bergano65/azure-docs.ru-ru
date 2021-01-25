@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 08/11/2020
+ms.date: 01/21/2021
 ms.author: alkohli
-ms.openlocfilehash: f668136713024ba57d72bf5a457cd249742a3b11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09325289dd5cb83bfc26dd26b266d50b622fe098
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742032"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763089"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-pro-issues"></a>Устранение неполадок Azure Stack пограничных Pro
 
@@ -26,6 +26,7 @@ ms.locfileid: "91742032"
 > * Запуск диагностики
 > * Сбор пакета поддержки
 > * Использование журналов для устранения неполадок.
+> * Устранение ошибок IoT Edge
 
 ## <a name="run-diagnostics"></a>Запуск диагностики
 
@@ -82,6 +83,10 @@ ms.locfileid: "91742032"
 
     [!INCLUDE [data-box-edge-edge-upload-error-reference](../../includes/data-box-edge-gateway-upload-error-reference.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="troubleshoot-iot-edge-errors"></a>Устранение ошибок IoT Edge
+
+[!INCLUDE [Troubleshoot IoT Edge runtime](../../includes/azure-stack-edge-iot-troubleshoot-compute.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об [известных проблемах в этом выпуске](data-box-gateway-release-notes.md).

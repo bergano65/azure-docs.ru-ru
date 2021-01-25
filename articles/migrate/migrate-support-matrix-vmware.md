@@ -1,17 +1,17 @@
 ---
 title: Поддержка оценки VMware в службе "Миграция Azure"
 description: Узнайте о поддержке оценки виртуальных машин VMware с помощью средства оценки сервера службы "Миграция Azure".
-author: rashi-ms
-ms.author: rajosh
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 02757477ca4a07f4526df0339291122eda57c9b5
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: ce8a1d77ae74a3946174ef58abf9add2e81eb90b
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567433"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763001"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Таблица поддержки для оценки виртуальных машин VMware 
 
@@ -37,7 +37,7 @@ ms.locfileid: "98567433"
 **VMware** | **Сведения**
 --- | ---
 **vCenter Server** | Компьютеры, которые требуется обнаружить и оценить, должны управляться с помощью vCenter Server версии 5,5, 6,0, 6,5, 6,7 или 7,0.<br/><br/> Обнаружение виртуальных машин VMware путем предоставления сведений об узле ESXi в устройстве в настоящее время не поддерживается.
-**Разрешения** | Для оценки сервера требуется vCenter Server учетную запись только для чтения для обнаружения и оценки.<br/><br/> Если вы хотите выполнить обнаружение приложений или визуализацию зависимостей, учетной записи необходимы права доступа для  >  **гостевых операций** виртуальных машин.
+**Разрешения** | Для оценки сервера требуется vCenter Server учетную запись только для чтения для обнаружения и оценки.<br/><br/> Если вы хотите выполнить обнаружение приложений или визуализацию зависимостей, учетной записи требуются права для   >  **гостевых операций** виртуальных машин.
 
 ## <a name="vm-requirements"></a>Требования к виртуальной машине
 **VMware** | **Сведения**

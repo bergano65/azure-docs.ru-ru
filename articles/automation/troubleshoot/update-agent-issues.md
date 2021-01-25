@@ -4,17 +4,17 @@ description: В этой статье содержатся сведения об
 services: automation
 author: mgoedtel
 ms.author: magoedte
-ms.date: 01/16/2020
+ms.date: 01/25/2020
 ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 92020313fccf1b8be0add58a7bafab62b5daa4d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5c2cc014c87a345507e9c0f99c507d151d59b86
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187138"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762125"
 ---
 # <a name="troubleshoot-windows-update-agent-issues"></a>Устранение неполадок с агентом обновления Windows
 
@@ -27,10 +27,10 @@ ms.locfileid: "86187138"
 > [!NOTE]
 > Между отображением на портале Azure и текущим состоянием компьютера может быть небольшая задержка.
 
-В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure на портале Azure и сторонних компьютеров в [автономных сценариях](#troubleshoot-offline). 
+В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure на портале Azure и сторонних компьютеров в [автономных сценариях](#troubleshoot-offline).
 
 > [!NOTE]
-> Сценарий устранения неполадок теперь включает проверки для Служб обновлений Windows Server (WSUS), а также для ключей автоматической загрузки и установки. 
+> Сценарий устранения неполадок теперь включает проверки для Служб обновлений Windows Server (WSUS), а также для ключей автоматической загрузки и установки.
 
 ## <a name="start-the-troubleshooter"></a>Запуск средства устранения неполадок
 
@@ -110,7 +110,7 @@ ms.locfileid: "86187138"
 
 ## <a name="troubleshoot-offline"></a><a name="troubleshoot-offline"></a>Автономное устранение неполадок
 
-Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Получите следующий сценарий из коллекции PowerShell: [Troubleshoot-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration). Чтобы запустить сценарий, необходимо установить WMF версии 4.0 или более поздней версии. Сведения о загрузке последней версии PowerShell см. в статье [Установка разных версий PowerShell](/powershell/scripting/install/installing-powershell).
+Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Получите следующий скрипт из GitHub: [UM_Windows_Troubleshooter_Offline.ps1](https://github.com/Azure/updatemanagement/blob/main/UM_Windows_Troubleshooter_Offline.ps1). Чтобы запустить сценарий, необходимо установить WMF версии 4.0 или более поздней версии. Сведения о загрузке последней версии PowerShell см. в статье [Установка разных версий PowerShell](/powershell/scripting/install/installing-powershell).
 
 Выходные данные этого скрипта выглядят так:
 

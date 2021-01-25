@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: bc80a4f5c6c2919f0cb3faa15958fb75eed70270
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: cc356b307a752b10ba6f1c1a7151381c5644ca1e
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98035229"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762734"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
 Используйте [действия GitHub](https://github.com/features/actions) , чтобы определить рабочий процесс для автоматической сборки и развертывания кода в приложении-функции в функциях Azure. 
 
-В действиях GitHub [Рабочий процесс](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функции на GitHub. 
+В действиях GitHub [Рабочий процесс](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функции на GitHub. 
 
 Рабочий процесс определяется файлом YAML (.yml) по пути `/.github/workflows/` в вашем репозитории. Это определение содержит разные шаги и параметры рабочего процесса. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "98035229"
 
 Рекомендуемый способ аутентификации с помощью функций Azure для действий GitHub — использование профиля публикации. Также можно пройти проверку подлинности с помощью субъекта-службы. Дополнительные сведения см. в [этом репозитории действий GitHub](https://github.com/Azure/functions-action). 
 
-После сохранения учетных данных профиля публикации в качестве [секрета GitHub](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)вы будете использовать этот секрет в рабочем процессе для проверки подлинности в Azure. 
+После сохранения учетных данных профиля публикации в качестве [секрета GitHub](https://docs.github.com/en/actions/reference/encrypted-secrets)вы будете использовать этот секрет в рабочем процессе для проверки подлинности в Azure. 
 
 #### <a name="download-your-publish-profile"></a>Скачивание профиля публикации
 

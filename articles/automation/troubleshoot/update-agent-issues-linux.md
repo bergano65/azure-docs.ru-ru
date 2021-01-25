@@ -4,17 +4,17 @@ description: В этой статье содержатся сведения об
 services: automation
 author: mgoedtel
 ms.author: magoedte
-ms.date: 12/03/2019
+ms.date: 01/25/2021
 ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: f1351b29a0102a374b75d832687d66c3b5572c75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7ac5e8324d9979b17ee93d16b3e007fe7916a8a
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83680873"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762626"
 ---
 # <a name="troubleshoot-linux-update-agent-issues"></a>Устранение неполадок с агентом обновления Linux
 
@@ -27,7 +27,7 @@ ms.locfileid: "83680873"
 > [!NOTE]
 > Между отображением на портале Azure и текущим состоянием компьютера может быть небольшая задержка.
 
-В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure на портале Azure и компьютеров вне Azure в [сценарии изолированной среды](#troubleshoot-offline). 
+В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure на портале Azure и компьютеров вне Azure в [сценарии изолированной среды](#troubleshoot-offline).
 
 > [!NOTE]
 > В настоящее время сценарий устранения неполадок не направляет трафик через прокси-сервер, если он настроен.
@@ -90,7 +90,6 @@ sudo /opt/microsoft/omsagent/bin/service_control restart
 
 Эта проверка гарантирует, что гибридная рабочая роль Runbook выполняется на компьютере. Процессы в примере ниже должны отображаться, если гибридная рабочая роль Runbook работает правильно.
 
-
 ```bash
 nxautom+   8567      1  0 14:45 ?        00:00:00 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py /var/opt/microsoft/omsagent/state/automationworker/oms.conf rworkspace:<workspaceId> <Linux hybrid worker version>
 nxautom+   8593      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/state/automationworker/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
@@ -129,7 +128,7 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 
 ## <a name="troubleshoot-offline"></a><a name="troubleshoot-offline"></a>Автономное устранение неполадок
 
-Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив сценарий локально. Сценарий Python [update_mgmt_health_check.py](https://gallery.technet.microsoft.com/scriptcenter/Troubleshooting-utility-3bcbefe6) можно найти в центре сценариев. Ниже показан пример выходных данных этого сценария:
+Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив сценарий локально. Сценарий Python, [UM_Linux_Troubleshooter_Offline. Корректировка](https://github.com/Azure/updatemanagement/blob/main/UM_Linux_Troubleshooter_Offline.py), можно найти на сайте GitHub. Ниже показан пример выходных данных этого сценария:
 
 ```output
 Debug: Machine Information:   Static hostname: LinuxVM2

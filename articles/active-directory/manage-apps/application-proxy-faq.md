@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 49388ee75fa3e5570a906998fdeaa579208fd636
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: f1a1d43f9bfc960628447a3c20e7dab2ac701dc5
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588596"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762575"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -87,7 +87,7 @@ ms.locfileid: "97588596"
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
 ```
 
-## <a name="application-configuration"></a>Конфигурация приложений
+## <a name="application-configuration"></a>Настройка приложения
 
 ### <a name="i-am-receiving-an-error-about-an-invalid-certificate-or-possible-wrong-password"></a>Я получаю сообщение об ошибке: Недопустимый сертификат или возможный неверный пароль
 
@@ -101,6 +101,10 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\W
 ### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Какова длина значения по умолчанию и времени ожидания серверной части "Long"? Можно ли увеличить время ожидания?
 
 Длина по умолчанию составляет 85 секунд. Значение параметра "Long" составляет 180 секунд. Ограничение времени ожидания не может быть расширено.
+
+### <a name="can-a-service-principal-manage-application-proxy-using-powershell-or-microsoft-graph-apis"></a>Может ли субъект-служба управлять прокси приложения с помощью PowerShell или Microsoft Graph API?
+
+Нет, в настоящее время такая возможность не поддерживается.
 
 ### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Разделы справки изменить целевую страницу, с которой загружается приложение?
 

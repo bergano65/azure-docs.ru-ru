@@ -7,12 +7,12 @@ ms.date: 05/14/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 1fb17d56c546511fee291f30b103a5310c8015cc
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 12485e07bc3cad9d420141ecc6ee66763ac010b7
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122271"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760765"
 ---
 # <a name="monitor-the-overall-health-of-the-devices-connected-to-an-iot-central-application"></a>Отслеживание общей работоспособности устройств, подключенных к IoT Centralному приложению
 
@@ -60,4 +60,4 @@ ms.locfileid: "96122271"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как использовать шаблоны приложений, предлагаем следующий шаг — Узнайте, как [управлять IOT Central из портал Azure](howto-manage-iot-central-from-portal.md)
+Теперь, когда вы узнали, как использовать шаблоны приложений, предлагаем следующий шаг — Узнайте, как [управлять IOT Central из портал Azure](howto-manage-iot-central-from-portal.md).
