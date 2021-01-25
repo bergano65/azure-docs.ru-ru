@@ -6,16 +6,16 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: de0c48bb775b96052fe16d60aa58049bfd58ca4d
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 750cf0a938fffd4e5bfe25811bb276f7cb1b5583
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567780"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757565"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
-В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) ". Если вы используете классические проекты службы "миграция Azure", удалите эти проекты и следуйте инструкциям по созданию нового проекта службы "миграция Azure". Вы не можете обновить классические проекты или компоненты службы "миграция Azure" в службу "миграция Azure".
+В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) ". Если вы используете классические проекты службы "миграция Azure", удалите эти проекты и следуйте инструкциям по созданию нового проекта службы "миграция Azure". Вы не можете обновить классические проекты или компоненты службы "миграция Azure" в службу "миграция Azure". Просмотрите [вопросы и ответы](https://docs.microsoft.com/azure/migrate/resources-faq#i-have-a-project-with-the-previous-classic-experience-of-azure-migrate-how-do-i-start-using-the-new-version) перед началом процесса создания.
 
 Проект Миграции Azure используется для хранения метаданных обнаружения, оценки и миграции, собранных из среды, для которой выполняется оценка или миграция. В проекте можно контролировать обнаруженные ресурсы, создавать оценки и управлять миграцией в Azure.  
 
@@ -127,6 +127,6 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
        
 2. [Следуйте инструкциям](../azure-monitor/platform/delete-workspace.md) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

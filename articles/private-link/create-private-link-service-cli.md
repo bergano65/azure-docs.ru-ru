@@ -2,164 +2,274 @@
 title: Создание службы частной связи Azure с помощью Azure CLI
 description: Узнайте, как создать службу частной связи Azure с помощью Azure CLI
 services: private-link
-author: malopMSFT
+author: asudbring
 ms.service: private-link
 ms.topic: how-to
-ms.date: 09/16/2019
+ms.date: 01/22/2021
 ms.author: allensu
-ms.openlocfilehash: cfffafaab2e2d4ef6b165ef03beb827342c94608
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 567ed736c52e8b3cbb03edeb19b3c0e2364e4112
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96018058"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757363"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Создание службы частной связи с помощью Azure CLI
-В этой статье показано, как создать службу частной связи в Azure с помощью Azure CLI.
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+Приступите к созданию службы приватного канала, которая ссылается на вашу службу.  Предоставьте Приватному каналу доступ к службе или ресурсу, которые развернуты за Azure Load Balancer (цен. категория "Стандартный").  Пользователи службы имеют закрытый доступ из своей виртуальной сети.
 
-- Для работы с этой статьей требуется последняя версия Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"
-### <a name="create-a-resource-group"></a>Создание группы ресурсов
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)] 
 
-Перед созданием виртуальной сети необходимо создать группу ресурсов, которая будет содержать эту виртуальную сеть. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). В этом примере создается группа ресурсов с именем *myResourceGroup* в расположении *westcentralus*.
+- Для работы с этим кратким руководством требуется Azure CLI версии 2.0.28 или более поздней. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 
-```azurecli-interactive
-az group create --name myResourceGroup --location westcentralus
-```
-### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с одной подсетью с именем *mySubnet*:
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-```azurecli-interactive
-az network vnet create --resource-group myResourceGroup --name myVirtualNetwork --address-prefix 10.0.0.0/16  
-```
-### <a name="create-a-subnet"></a>Создание подсети
-Создайте подсеть для виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). В этом примере создается подсеть с именем *mySubnet* в виртуальной сети *myVirtualNetwork* :
+Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create):
+
+* С именем **креатепривлинксервице-RG**. 
+* в расположении **eastus**.
 
 ```azurecli-interactive
-az network vnet subnet create --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --address-prefixes 10.0.0.0/24    
+  az group create \
+    --name CreatePrivLinkService-rg \
+    --location eastus2
+
 ```
-### <a name="create-a-internal-load-balancer"></a>Создание внутренней Load Balancer 
-Создайте внутреннюю подсистему балансировки нагрузки с помощью команды [AZ Network фунтов Create](/cli/azure/network/lb#az-network-lb-create). В этом примере создается внутренний балансировщик нагрузки с именем *милб* в группе ресурсов с именем *myResourceGroup*. 
+
+## <a name="create-an-internal-load-balancer"></a>Создание внутреннего балансировщика нагрузки
+
+В этом разделе показано, как создать виртуальную сеть и внутренний экземпляр Azure Load Balancer.
+
+### <a name="virtual-network"></a>Виртуальная сеть
+
+В этом разделе показано, как создать виртуальную сеть и подсеть для размещения подсистемы балансировки нагрузки, которая используется для доступа к службе приватного канала.
+
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create):
+
+* с именем **myVNet**;
+* с префиксом подсети **10.1.0.0/16**;
+* Подсеть с именем **mySubnet**.
+* с префиксом подсети **10.1.0.0/24**;
+* В группе ресурсов **креатепривлинксервице-RG** .
+* Расположение **eastus2**.
+* Отключите сетевую политику для службы частной связи в подсети.
 
 ```azurecli-interactive
-az network lb create --resource-group myResourceGroup --name myILB --sku standard --vnet-name MyVirtualNetwork --subnet mySubnet --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool
+  az network vnet create \
+    --resource-group CreatePrivLinkService-rg \
+    --location eastus2 \
+    --name myVNet \
+    --address-prefixes 10.1.0.0/16 \
+    --subnet-name mySubnet \
+    --subnet-prefixes 10.1.0.0/24
+
 ```
 
-### <a name="create-a-load-balancer-health-probe"></a>Создание пробы работоспособности балансировщика нагрузки
+Чтобы обновить подсеть для отключения сетевых политик службы частной связи, используйте команду [AZ Network vnet подсеть Update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update):
 
-Зонд работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут принимать трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
+```azurecli-interactive
+az network vnet subnet update \
+    --name mySubnet \
+    --resource-group CreatePrivLinkService-rg \
+    --vnet-name myVNet \
+    --disable-private-link-service-network-policies true
+```
+
+### <a name="create-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки (цен. категория "Стандартный")
+
+В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
+
+  * интерфейсный пул IP-адресов, который получает входящий трафик в подсистеме балансировки нагрузки;
+  * внутренний пул IP-адресов, на который интерфейсный пул отправляет трафик с балансировкой нагрузки;
+  * проверка работоспособности, определяющая работоспособность внутренних экземпляров виртуальной машины;
+  * правило подсистемы балансировки нагрузки, определяющее порядок распределения трафика между виртуальными машинами.
+
+### <a name="create-the-load-balancer-resource"></a>Создание ресурса подсистемы балансировки нагрузки
+
+С помощью команды [az network lb create](/cli/azure/network/lb#az-network-lb-create) создайте общедоступную подсистему балансировки нагрузки:
+
+* с именем **myLoadBalancer**,
+* пулом переднего плана **myFrontEnd**
+* и серверным пулом **myBackEndPool**,
+* связанную с виртуальной сетью **myVNet**
+* Связан с внутренней подсетью **mySubnet**.
+
+```azurecli-interactive
+  az network lb create \
+    --resource-group CreatePrivLinkService-rg \
+    --name myLoadBalancer \
+    --sku Standard \
+    --vnet-name myVnet \
+    --subnet mySubnet \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool
+```
+
+### <a name="create-the-health-probe"></a>Создание зонда работоспособности
+
+При пробе работоспособности выполняется проверка всех экземпляров виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. 
+
+Виртуальная машина с неудачной пробой удаляется из подсистемы балансировки нагрузки и снова добавляется в нее после устранения сбоя.
+
+Создайте пробу работоспособности с помощью команды [az network lb probe create](/cli/azure/network/lb/probe#az-network-lb-probe-create), которая:
+
+* отслеживает работоспособность виртуальных машин;
+* имеет имя **myHealthProbe**;
+* использует протокол **TCP**;
+* отслеживает **порт 80**.
 
 ```azurecli-interactive
   az network lb probe create \
-    --resource-group myResourceGroup \
-    --lb-name myILB \
+    --resource-group CreatePrivLinkService-rg \
+    --lb-name myLoadBalancer \
     --name myHealthProbe \
     --protocol tcp \
-    --port 80   
+    --port 80
 ```
 
-### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
+### <a name="create-the-load-balancer-rule"></a>Создание правила подсистемы балансировки нагрузки
 
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest) создайте правило LB с именем *myHTTPRule* для ожидания передачи данных на порту 80, используемого внешним пулом *myFrontEnd*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80. 
+Правило подсистемы балансировки нагрузки определяет:
+
+* конфигурацию интерфейсных IP-адресов для входящего трафика;
+* серверный пул IP-адресов для приема трафика;
+* требуемые порты источника и назначения. 
+
+С помощью команды [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки, которое:
+
+* имеет имя **myHTTPRule**;
+* ожидает передачи данных от **порта 80**, используемого интерфейсным пулом **myFrontEnd**;
+* перенаправляет трафик, для которого настроена балансировка нагрузки, ко внутреннему пулу адресов **myBackEndPool**, который использует **порт 80**; 
+* использует пробу работоспособности **myHealthProbe**;
+* использует протокол **TCP**;
+* с временем ожидания перед переходом в режим простоя **15 минут**;
+* и включенной функцией сброса подключений TCP.
 
 ```azurecli-interactive
   az network lb rule create \
-    --resource-group myResourceGroup \
-    --lb-name myILB \
+    --resource-group CreatePrivLinkService-rg \
+    --lb-name myLoadBalancer \
     --name myHTTPRule \
     --protocol tcp \
     --frontend-port 80 \
     --backend-port 80 \
     --frontend-ip-name myFrontEnd \
     --backend-pool-name myBackEndPool \
-    --probe-name myHealthProbe  
+    --probe-name myHealthProbe \
+    --idle-timeout 15 \
+    --enable-tcp-reset true
 ```
-### <a name="create-backend-servers"></a>Создание внутренних серверов
 
-В этом примере мы не рассмотрим создание виртуальной машины. Вы можете выполнить действия, описанные в разделе [Краткое руководство. создание внутренней подсистемы балансировки нагрузки для балансировки нагрузки виртуальных машин с помощью Azure CLI](../load-balancer/quickstart-load-balancer-standard-internal-cli.md) , чтобы создать две виртуальные машины, которые будут использоваться в качестве внутренних серверов для балансировщика нагрузки. 
+## <a name="create-a-private-link-service"></a>Создание службы "Приватный канал"
 
+В этом разделе вы создадите службу частной связи, которая использует Azure Load Balancer, созданную на предыдущем шаге.
 
-### <a name="disable-private-link-service-network-policies-on-subnet"></a>Отключить сетевые политики службы частной связи в подсети 
-Для службы частной связи требуется IP-адрес из любой подсети, выбранной в виртуальной сети. Сейчас мы не поддерживаем сетевые политики для этих IP-адресов.  Поэтому необходимо отключить сетевые политики в подсети. Обновите подсеть, чтобы отключить сетевые политики службы частной связи, с помощью команды [AZ Network vnet подсети Update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
+Создайте службу частной связи, используя конфигурацию интерфейсного IP-адреса стандартной подсистемы балансировки нагрузки с помощью команды [AZ Network Private-Link-Service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create):
 
-```azurecli-interactive
-az network vnet subnet update --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --disable-private-link-service-network-policies true 
-```
- 
-## <a name="create-a-private-link-service-using-standard-load-balancer"></a>Создание службы частной связи с помощью Load Balancer (цен. категория "Стандартный") 
- 
-Создайте службу частной связи с помощью многосерверной IP-конфигурации Load Balancer (цен. категория "Стандартный") с помощью команды [AZ Network Private-Link-Service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create). В этом примере создается служба частной связи с именем *миплс* , использующая Load Balancer (цен. Категория "Стандартный") с именем *myLoadBalancer* в группе ресурсов с именем *myResourceGroup*. 
+* С именем **мипривателинксервице**.
+* виртуальная сеть **myVNet**;
+* Связан с **myLoadBalancer** балансировкой нагрузки "Стандартный" и **myFrontEnd**"интерфейсная конфигурация".
+* В расположении **eastus2** .
  
 ```azurecli-interactive
 az network private-link-service create \
---resource-group myResourceGroup \
---name myPLS \
---vnet-name myVirtualNetwork \
---subnet mySubnet \
---lb-name myILB \
---lb-frontend-ip-configs myFrontEnd \
---location westcentralus 
+    --resource-group CreatePrivLinkService-rg \
+    --name myPrivateLinkService \
+    --vnet-name myVNet \
+    --subnet mySubnet \
+    --lb-name myLoadBalancer \
+    --lb-frontend-ip-configs myFrontEnd \
+    --location eastus2
 ```
-После создания запишите идентификатор службы частной связи. Он потребуется позже для запроса подключения к этой службе.  
- 
-На этом этапе служба закрытых ссылок успешно создана и готова к получению трафика. Обратите внимание, что в примере выше показано только создание службы Private Link с помощью Azure CLI.  Мы не настроили серверные пулы подсистемы балансировки нагрузки или любое приложение в серверных пулах для прослушивания трафика. Если вы хотите просмотреть сквозные потоки трафика, настоятельно рекомендуем настроить приложение за Load Balancer (цен. категория "Стандартный").  
- 
-Далее будет продемонстрировано, как сопоставлять эту службу с частной конечной точкой в другой виртуальной сети с помощью Azure CLI. Опять же, пример ограничен созданием частной конечной точки и подключением к службе Private Link, созданной выше с помощью Azure CLI. Кроме того, можно создать виртуальные машины в виртуальной сети для отправки и получения трафика в частную конечную точку.        
- 
-## <a name="private-endpoints"></a>Частные конечные точки
 
-### <a name="create-the-virtual-network"></a>Создание виртуальной сети 
-Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). В этом примере создается виртуальная сеть с именем  *мипевнет*   в группе ресурсов с именем *myResourcegroup*: 
+Служба частной связи создается и может принимать трафик. Если вы хотите просмотреть потоки трафика, настройте приложение для своей стандартной подсистемы балансировки нагрузки.
+
+
+## <a name="create-private-endpoint"></a>Создание частной конечной точки
+
+В этом разделе вы будете сопоставлять службу закрытых ссылок с частной конечной точкой. Виртуальная сеть содержит закрытую конечную точку для службы закрытых ссылок. Эта виртуальная сеть содержит ресурсы, которые будут обращаться к службе частной связи.
+
+### <a name="create-private-endpoint-virtual-network"></a>Создание виртуальной сети частной конечной точки
+
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create):
+
+* С именем **мивнетпе**.
+* Префикс адреса **11.1.0.0/16**.
+* Подсеть с именем **мисубнетпе**.
+* Префикс подсети **11.1.0.0/24**.
+* В группе ресурсов **креатепривлинксервице-RG** .
+* Расположение **eastus2**.
+
 ```azurecli-interactive
-az network vnet create \
---resource-group myResourceGroup \
---name myPEVnet \
---address-prefix 10.0.0.0/16  
+  az network vnet create \
+    --resource-group CreatePrivLinkService-rg \
+    --location eastus2 \
+    --name myVNetPE \
+    --address-prefixes 11.1.0.0/16 \
+    --subnet-name mySubnetPE \
+    --subnet-prefixes 11.1.0.0/24
 ```
-### <a name="create-the-subnet"></a>Создание подсети 
-Создайте подсеть в виртуальной сети с помощью команды [AZ Network vnet подсети Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). В этом примере создается подсеть с именем  *mySubnet*   в виртуальной сети с именем *мипевнет* в группе ресурсов с именем *myResourcegroup*: 
 
-```azurecli-interactive 
-az network vnet subnet create \
---resource-group myResourceGroup \
---vnet-name myPEVnet \
---name myPESubnet \
---address-prefixes 10.0.0.0/24 
-```   
-## <a name="disable-private-endpoint-network-policies-on-subnet"></a>Отключить политики сети частной конечной точки в подсети 
-Частная конечная точка может быть создана в любой подсети по вашему выбору в виртуальной сети. В настоящее время в частных конечных точках не поддерживаются сетевые политики.  Поэтому необходимо отключить сетевые политики в подсети. Обновите подсеть, чтобы отключить политики сети частной конечной точки, с [обновлением подсети AZ Network vnet](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update). 
+Чтобы обновить подсеть для отключения политик сети частной конечной точки, используйте команду [AZ Network vnet подсеть Update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update):
 
 ```azurecli-interactive
 az network vnet subnet update \
---resource-group myResourceGroup \
---vnet-name myPEVnet \
---name myPESubnet \
---disable-private-endpoint-network-policies true 
+    --name mySubnetPE \
+    --resource-group CreatePrivLinkService-rg \
+    --vnet-name myVNetPE \
+    --disable-private-endpoint-network-policies true
 ```
-## <a name="create-private-endpoint-and-connect-to-private-link-service"></a>Создание частной конечной точки и подключение к службе частной связи 
-Создайте закрытую конечную точку для использования службы закрытых ссылок, созданной в виртуальной сети.
-  
+
+### <a name="create-endpoint-and-connection"></a>Создание конечной точки и подключения
+
+* Чтобы получить идентификатор ресурса для службы частной ссылки, выполните команду [AZ Network Private-Link-Service](/cli/azure/network/private-link-service#az_network_private_link_service_show) . Команда помещает идентификатор ресурса в переменную для последующего использования.
+
+* Чтобы создать частную конечную точку в созданной ранее виртуальной сети, выполните команду [AZ Network Private-Endpoint Create](/cli/azure/network/private-endpoint#az_network_private_endpoint_create) .
+
+* С именем **миприватиндпоинт**.
+* В группе ресурсов **креатепривлинксервице-RG** .
+* Имя подключения **мипеконнектионтоплс**.
+* Расположение **eastus2**.
+* В **мивнетпе** виртуальной сети и подсети **мисубнетпе**.
+
 ```azurecli-interactive
-az network private-endpoint create \
---resource-group myResourceGroup \
---name myPE \
---vnet-name myPEVnet \
---subnet myPESubnet \
---private-connection-resource-id {PLS_resourceURI} \
---connection-name myPEConnectingPLS \
---location westcentralus 
+  export resourceid=$(az network private-link-service show \
+    --name myPrivateLinkService \
+    --resource-group CreatePrivLinkService-rg \
+    --query id \
+    --output tsv)
+
+  az network private-endpoint create \
+    --connection-name myPEconnectiontoPLS \
+    --name myPrivateEndpoint \
+    --private-connection-resource-id $resourceid \
+    --resource-group CreatePrivLinkService-rg \
+    --subnet mySubnetPE \
+    --manual-request false \
+    --vnet-name myVNetPE 
+
 ```
-Вы можете получить *частный-Connection-Resource-id* с помощью `az network private-link-service show` службы Private Link. Идентификатор будет выглядеть следующим образом:   
-/Субскриптионс/субид/ресаурцеграупс/*resourcegroupname*/провидерс/Микрософт.Нетворк/привателинксервицес/**privatelinkservicename** 
- 
-## <a name="show-private-link-service-connections"></a>Показывать подключения службы частной связи 
- 
-Просмотрите запросы на подключение к службе частной связи с помощью команды [AZ Network Private-Link-Service Показать](/cli/azure/network/private-link-service#az-network-private-link-service-show).    
-```azurecli-interactive 
-az network private-link-service show --resource-group myResourceGroup --name myPLS 
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если она больше не нужна, используйте команду [AZ Group Delete](/cli/azure/group#az-group-delete) , чтобы удалить группу ресурсов, службу Private Link, подсистему балансировки нагрузки и все связанные с ней ресурсы.
+
+```azurecli-interactive
+  az group delete \
+    --name CreatePrivLinkService-rg 
 ```
-## <a name="next-steps"></a>Следующие шаги
-- Дополнительные сведения о [службе частной связи Azure](private-link-service-overview.md)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В этом кратком руководстве показано, как:
+
+* создать виртуальную сеть и внутренний экземпляр Azure Load Balancer;
+* создать службу приватного канала.
+
+Чтобы узнать больше о частной конечной точке Azure, ознакомьтесь со следующей статьей:
+> [!div class="nextstepaction"]
+> [Краткое руководство. Создание частной конечной точки с помощью Azure CLI](create-private-endpoint-cli.md)

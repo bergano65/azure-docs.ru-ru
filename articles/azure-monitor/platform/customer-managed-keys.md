@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: f2807501b1e18d4cbffaa34d70bccf8d70565266
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: b6836eee7e0e6ccbfa2628e0e371152f31ddf9d2
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747229"
+ms.locfileid: "98757548"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -126,7 +126,7 @@ Authorization: Bearer <token>
 ## <a name="create-cluster"></a>Создание кластера
 
 Кластеры поддерживают два [управляемых типа удостоверений](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types): назначенные системой и назначенные пользователем, тогда как одно удостоверение может быть определено в кластере в зависимости от вашего сценария. 
-- Управляемое системой удостоверение проще и создается автоматически при создании кластера, когда `type` для Identity задано значение "*SystemAssigned*". Это удостоверение можно использовать позже для предоставления кластеру доступа к Key Vault. 
+- Управляемое системой удостоверение проще и создается автоматически при создании кластера, когда `type` для Identity задано значение "*SystemAssigned*". Это удостоверение можно использовать позже для предоставления доступа к хранилищу Key Vault для операций переноса и распаковки. 
   
   Параметры удостоверений в кластере для управляемого удостоверения, назначенного системой
   ```json
@@ -137,7 +137,7 @@ Authorization: Bearer <token>
   }
   ```
 
-- Если вы хотите настроить ключ, управляемый клиентом при создании кластера, необходимо заранее Key Vault предоставить ключ и назначенный пользователю идентификатор, а затем создать кластер со следующими параметрами: Identity `type` как "*усерассигнед*" `UserAssignedIdentities` с идентификатором ресурса удостоверения.
+- Если вы хотите настроить ключ, управляемый клиентом при создании кластера, необходимо заранее Key Vault предоставить ключ и назначенный пользователю идентификатор, а затем создать кластер со следующими параметрами: Identity `type` как "*усерассигнед*" `UserAssignedIdentities` с *идентификатором ресурса* вашего удостоверения.
 
   Параметры удостоверений в кластере для назначенного пользователем управляемого удостоверения
   ```json
@@ -151,27 +151,7 @@ Authorization: Bearer <token>
   ```
 
 > [!IMPORTANT]
-> Нельзя использовать ключ, управляемый клиентом, с управляемым удостоверением, назначенным пользователем, если Key Vault находится в Private-Link (vNet). В этом сценарии можно использовать управляемое системой удостоверение.
-
-```json
-{
-  "identity": {
-    "type": "SystemAssigned"
-}
-```
- 
-На:
-
-```json
-{
-  "identity": {
-  "type": "UserAssigned",
-    "userAssignedIdentities": {
-      "subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft. ManagedIdentity/UserAssignedIdentities/<user-assigned-managed-identity-name>"
-      }
-}
-```
-
+> Вы не можете использовать управляемое удостоверение, назначенное пользователем, если Key Vault находится в Private-Link (vNet). В этом сценарии можно использовать управляемое системой удостоверение.
 
 Выполните процедуру, показанную в [статье выделенные кластеры](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
@@ -518,7 +498,7 @@ Customer-Managed ключ предоставляется в выделенном
   **Удалить связь рабочей области**
   -  404--Рабочая область не найдена. Указанная Рабочая область не существует или была удалена.
   -  409--ссылка на рабочую область или отмена связи в процессе.
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [log Analytics выставлении счетов за выделенный кластер](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)
 - Сведения о [правильном проектировании рабочих областей log Analytics](../platform/design-logs-deployment.md)

@@ -1,25 +1,25 @@
 ---
 title: Встроенные определения политик для Центра безопасности Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Центра безопасности Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/21/2021
+ms.date: 01/24/2021
 ms.topic: reference
 author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 3f667ed48a5188ce63665025786e990c47a9690b
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 1192e765dc3cc001f8d1a1c6a28fe1a5cf4c9ecc
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98700798"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757277"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Встроенные определения в Политике Azure для Центра безопасности Azure
 
 Эта страница является индексом встроенных в [политику Azure](../governance/policy/overview.md) определений политик, связанных с центром безопасности Azure. Доступны следующие группы определений политик:
 
 - В группе " [инициативы](#azure-security-center-initiatives) " перечислены определения инициатив политики Azure в категории "Центр безопасности".
-- Группа [инициатив по умолчанию](#azure-security-center-initiatives) перечисляет все определения политик Azure, которые входят в инициативу [центра безопасности Azure](./index.yml) по умолчанию.
+- Группа [инициатив по умолчанию](#azure-security-center-initiatives) перечисляет все определения политик Azure, которые входят в инициативу центра безопасности по умолчанию, производительность [системы безопасности Azure](../security/benchmarks/introduction.md). Это разработанное корпорацией Майкрософт, которое в значительной степени соблюдается в отношении элементов управления от [центра безопасности Интернета (CIS)](https://www.cisecurity.org/benchmark/azure/) и [национального института стандартов и технологий (NIST)](https://www.nist.gov/) с целью сосредоточиться на обеспечении безопасности на основе облака.
 - Группа [категорий](#azure-security-center-category) содержит все определения политик Azure в категории "Центр безопасности".
 
 Дополнительные сведения об использовании политик безопасности см. в статье [Использование политик безопасности](./tutorial-security-policy.md). Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).

@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: c2eddf75f99b751773220ae677d66fe8c09abb0e
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: f9029a36dc3b778e139b4553524e8e2ca6b4bbad
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744832"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757175"
 ---
 # <a name="extensions-for-cloud-services-extended-support"></a>Расширения для облачных служб (Расширенная поддержка)
 
@@ -35,7 +35,7 @@ ms.locfileid: "98744832"
 
 Расширенный уровень мониторинга включает сбор дополнительных метрик с интервалами в 5 минут, 1 час и 12 часов. Статистические данные хранятся в таблицах в учетной записи хранения и удаляются по прошествии 10 дней. Учетная запись хранения настраивается отдельно для каждой роли. 
 
-Расширение система диагностики Azure Windows можно включить для облачных служб (Расширенная поддержка) с помощью [PowerShell](deploy-powershell.md) или [шаблона ARM](deploy-template.md) .
+Дополнительные сведения см. [в статье применение расширения системы диагностики Windows Azure в облачных службах (Расширенная поддержка)](enable-wad.md) .
 
 
 ## <a name="next-steps"></a>Следующие шаги 

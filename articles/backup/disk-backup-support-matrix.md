@@ -4,12 +4,12 @@ description: Содержит сводку параметров поддержк
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 2030ee3f098317da9cda8b15fec1562f31cae7ee
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 5281a5f0b833759c2594b6748cf06f2e12c03822
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746042"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757480"
 ---
 # <a name="azure-disk-backup-support-matrix-in-preview"></a>Матрица поддержки резервного копирования дисков Azure (Предварительная версия)
 
@@ -22,7 +22,7 @@ ms.locfileid: "98746042"
 
 ## <a name="supported-regions"></a>Поддерживаемые регионы
 
-Резервное копирование дисков Azure доступно в предварительной версии в следующих регионах: Западная Центральная часть США, Центральная Корея, Южная Корея. 
+Резервное копирование дисков Azure доступно в предварительной версии в следующих регионах: Западная Центральная часть США, восток США 2, Центральная Корея, Южная Корея, Юго-Восточная Япония, Северная ОАЭ. 
 
 Когда они станут доступны, будут объявлены дополнительные регионы.
 

@@ -3,18 +3,18 @@ title: Часто задаваемые вопросы о резервном ко
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure с помощью службы Azure Backup.
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: ba2779305302e91f68cb2664c90f53fdf9a9ca55
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: edc48aaf0a05867de81bd7d5f64f8be4e54ddb8a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008356"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757514"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](./backup-overview.md) .
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Резервное копирование
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 
@@ -113,6 +113,10 @@ Azure Backup теперь поддерживает выборочное резе
 ### <a name="are-managed-identities-preserved-if-a-tenant-change-occurs-during-backup"></a>Сохраняются ли управляемые удостоверения, если изменение клиента происходит во время резервного копирования?
 
 Если происходит [изменение клиента](/azure/devops/organizations/accounts/change-azure-ad-connection) , необходимо отключить и повторно включить [управляемые удостоверения](../active-directory/managed-identities-azure-resources/overview.md) , чтобы сделать резервные копии еще раз.
+
+### <a name="does-azure-backup-support-backing-up-nfs-files-mounted-from-storage"></a>Поддерживает ли Azure Backup Резервное копирование файлов NFS, смонтированных из хранилища?
+
+Azure Backup не поддерживает резервное копирование файлов NFS, которые подключены из хранилища или с любого другого сервера NFS, на компьютеры Linux или Windows. Она выполняет резервное копирование только тех дисков, которые локально подключены к виртуальной машине.
 
 ## <a name="restore"></a>Восстановить
 
