@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 4b34477a40530a0e6f26b59dd9707c019418b2a4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6010242e7fbd14aa117c481dee0d05e92928ef1b
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655856"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747497"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -48,11 +48,11 @@ ms.locfileid: "94655856"
 
 Чтобы использовать TLS-связь между источником syslog и сервером пересылки syslog, необходимо настроить управляющую программу syslog (rsyslog или syslog-ng) для взаимодействия в TLS: [шифрование трафика syslog с помощью TLS — rsyslog](https://www.rsyslog.com/doc/v8-stable/tutorials/tls_cert_summary.html), [Шифрование сообщений журнала с помощью TLS – syslog-ng](https://support.oneidentity.com/technical-documents/syslog-ng-open-source-edition/3.22/administration-guide/60#TOPIC-1209298).
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Убедитесь, что компьютер Linux, используемый в качестве сервера пересылки журналов, работает под управлением одной из следующих операционных систем:
 
-- 64-разрядная версия
+- 64-разрядная система
   - CentOS 7 и 8, включая дополнительные версии (не 6)
   - Amazon Linux 2017.09
   - Oracle Linux 7
@@ -61,7 +61,7 @@ ms.locfileid: "94655856"
   - Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
   - SUSE Linux Enterprise Server 12, 15
 
-- 32-разрядная версия
+- 32-битная
   - CentOS 7 и 8, включая дополнительные версии (не 6)
   - Oracle Linux 7
   - Red Hat Enterprise Linux (RHEL) Server 7 и 8, включая дополнительные версии (не 6)
@@ -78,13 +78,19 @@ ms.locfileid: "94655856"
  
 Убедитесь, что компьютер соответствует следующим требованиям: 
 
+- Capacity
+  - На компьютере должно быть не менее **4 ядер ЦП и 8 ГБ ОЗУ**.
+
+    > [!NOTE]
+    > - Один компьютер сервера пересылки журналов, использующий управляющую программу **rsyslog** , имеет поддерживаемую емкость **до 8500 событий в секунду (EPS)** .
+
 - Разрешения
   - Необходимо иметь повышенные разрешения (sudo) на компьютере. 
 
 - Требования к программному обеспечению
   - Убедитесь, что на компьютере установлен Python 2,7 или 3.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали, как Azure Sentinel собирает журналы CEF из решений и устройств безопасности. Сведения о том, как подключить решение к Azure Sentinel, см. в следующих статьях:
 

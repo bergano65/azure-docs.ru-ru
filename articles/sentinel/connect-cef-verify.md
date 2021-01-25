@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: 557f53e39781406674b9903dcf0bb3cb536cd804
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: f9fb1c917a0719cb9d250b997329d3415b5872eb
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897490"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747480"
 ---
 # <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
 После развертывания сервера пересылки журналов (на шаге 1) и настройки решения безопасности для отправки сообщений CEF (на шаге 2) выполните следующие инструкции, чтобы проверить подключение между решением безопасности и Sentinel. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Необходимо иметь повышенные разрешения (sudo) на компьютере сервера пересылки журналов.
 
@@ -44,7 +44,7 @@ ms.locfileid: "97897490"
 1. Выполните следующий скрипт на стороне сервера пересылки журналов (вместо заполнителя используйте идентификатор рабочей области), чтобы проверить подключение между решением безопасности, пересылкой журнала и Sentinel Azure. Этот сценарий проверяет, что управляющая программа прослушивает правильные порты, что пересылка настроена правильно и что ничто не блокирует обмен данными между управляющей программой и агентом Log Analytics. Он также отправляет фиктивные сообщения "Тесткоммоневентформат" для проверки сквозного подключения. <br>
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]
+    sudo wget -O cef_troubleshoot.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]
     ```
 
    - Вы можете получить сообщение с запросом на выполнение команды для устранения проблемы с **сопоставлением поля *компьютер***. Дополнительные сведения см. в описании [в скрипте проверки](#mapping-command) .
@@ -243,7 +243,7 @@ ms.locfileid: "97897490"
     ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: 617599e3eb6dcca74324a7bdfd51e604904a2fa1
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 8261856598a155e97f90ea350cedcd4c10e6893c
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897507"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747312"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Шаг 1. Развертывание сервера пересылки журналов
 
@@ -34,13 +34,18 @@ ms.locfileid: "97897507"
     - Прослушивание сообщений системного журнала в решениях безопасности через TCP-порт 514
     - Пересылка только тех сообщений, которые он идентифицирует как CEF агенту Log Analytics на localhost с помощью TCP-порта 25226
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Необходимо иметь повышенные разрешения (sudo) на назначенном компьютере Linux.
 
 - На компьютере Linux должен быть установлен **python 2,7** или **3** .<br>Используйте `python -version` команду для проверки.
 
 - Перед установкой агента Log Analytics компьютер Linux не должен быть подключен к рабочим областям Azure.
+
+- На компьютере Linux должно быть не менее **4 ядер ЦП и 8 ГБ ОЗУ**.
+
+    > [!NOTE]
+    > - Один компьютер сервера пересылки журналов, использующий управляющую программу **rsyslog** , имеет поддерживаемую емкость **до 8500 событий в секунду (EPS)** .
 
 - В этом процессе может потребоваться идентификатор рабочей области и первичный ключ рабочей области. Их можно найти в ресурсе рабочей области в разделе **Управление агентами**.
 
@@ -51,7 +56,7 @@ ms.locfileid: "97897507"
 1. В разделе **1,2 Установка СБОРЩИКА CEF на компьютере Linux** скопируйте ссылку, указанную в разделе **выполните следующий скрипт, чтобы установить и применить сборщик CEF**, или из приведенного ниже текста (применение идентификатора рабочей области и первичного ключа вместо заполнителей):
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]
+    sudo wget -O cef_installer.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]
     ```
 
 1. Во время выполнения скрипта убедитесь, что не получены сообщения об ошибках и предупреждения.
@@ -73,7 +78,7 @@ ms.locfileid: "97897507"
 > [!NOTE]
 > **Изменение источника поля TimeGenerated**
 >
-> - По умолчанию агент Log Analytics заполняет поле *timegenerated* в схеме временем получения агентом события из управляющей программы syslog. В результате время, когда событие было создано в исходной системе, не записывается в метку Azure.
+> - По умолчанию агент Log Analytics заполняет поле *timegenerated* в схеме временем получения агентом события из управляющей программы syslog. В результате время, когда событие было создано в исходной системе, не записывается в Azure Sentinel.
 >
 > - Тем не менее, можно выполнить следующую команду, которая загрузит и запустит `TimeGenerated.py` скрипт. Этот сценарий настраивает агент Log Analytics для заполнения поля *timegenerated* исходным временем события в исходной системе, а не временем получения агентом.
 >
@@ -94,8 +99,8 @@ ms.locfileid: "97897507"
     - Скачивает скрипт установки для агента Log Analytics (OMS) Linux.
 
         ```bash
-        wget -O https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/
-            onboard_agent.sh
+        wget -O onboard_agent.sh https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/
+            master/installer/scripts/onboard_agent.sh
         ```
 
     - Устанавливает агент Log Analytics.
@@ -160,8 +165,8 @@ ms.locfileid: "97897507"
     - Скачивает скрипт установки для агента Log Analytics (OMS) Linux.
 
         ```bash
-        wget -O https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/
-            onboard_agent.sh
+        wget -O onboard_agent.sh https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/
+            master/installer/scripts/onboard_agent.sh
         ```
 
     - Устанавливает агент Log Analytics.
@@ -221,7 +226,7 @@ ms.locfileid: "97897507"
         ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе вы узнали, как развернуть агент Log Analytics, чтобы подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 553151aebeadf4ad4764e747b1bf6dcd8c552721
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 9fde0ecd8b6670e43aa3970b2df27a402b9c1a5c
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98126858"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747246"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Защитите свои конечные точки с помощью интегрированного решения ЕДР центра безопасности: защитник Майкрософт для конечной точки
 
@@ -94,7 +94,7 @@ ms.locfileid: "98126858"
 
 ## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Доступ к Microsoft Defender для портала конечной точки
 
-1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
+1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее.](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access)
 
 1. Проверьте наличие прокси-сервера или брандмауэра, блокирующего анонимный трафик. Защитник для датчика конечных точек подключается к системному контексту, поэтому необходимо разрешить анонимный трафик. Чтобы обеспечить неограниченный доступ к защитнику для портала конечной точки, следуйте инструкциям в разделе [Включение доступа к URL-адресам служб на прокси-сервере](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server).
 
@@ -118,27 +118,29 @@ ms.locfileid: "98126858"
 1. Чтобы ознакомиться с оповещением в центре безопасности, перейдите в раздел **оповещения системы безопасности**  >  **подозрительные команды PowerShell**.
 1. В окне расследования выберите ссылку для перехода к Microsoft Defender для портала конечной точки.
 
+    > [!TIP]
+    > Оповещение активируется **с уровнем** серьезности.
 
 ## <a name="faq-for-security-centers-integrated-microsoft-defender-for-endpoint"></a>Часто задаваемые вопросы об интегрированном защитнике Майкрософт для конечных точек центра безопасности
 
 - [Каковы требования к лицензированию защитника Майкрософт для конечной точки?](#what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint)
-- [Если у меня есть лицензия на использование защитника Майкрософт для конечной точки, можно ли получить скидку для защитника Azure?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
+- [Если у меня уже есть лицензия на Microsoft Defender для конечной точки, могу ли я получить скидку на Azure Defender?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
 - [Разделы справки переключаться от стороннего средства ЕДР?](#how-do-i-switch-from-a-third-party-edr-tool)
 
 ### <a name="what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint"></a>Каковы требования к лицензированию защитника Майкрософт для конечной точки?
 Защитник для конечной точки включен без дополнительных затрат на службу **"защитник Azure для серверов"**. Кроме того, его можно приобрести отдельно для 50 компьютеров или более.
 
-### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Если у меня есть лицензия на использование защитника Майкрософт для конечной точки, можно ли получить скидку для защитника Azure?
-Если у вас уже есть лицензия на использование защитника Майкрософт для конечной точки, вам не придется платить за эту часть лицензии на защитник Azure.
+### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Если у меня уже есть лицензия на Microsoft Defender для конечной точки, могу ли я получить скидку на Azure Defender?
+Если у вас уже есть лицензия на Microsoft Defender для конечной точки, вам не придется платить за эту часть лицензии для Azure Defender.
 
-Чтобы подтвердить скидку, обратитесь в службу поддержки центра безопасности и предоставьте соответствующий идентификатор рабочей области, регион и сведения о лицензии для каждой соответствующей лицензии.
+Чтобы получить эту скидку, обратитесь в службу поддержки Центра безопасности и укажите соответствующий идентификатор рабочей области, регион и сведения о лицензии для каждой соответствующей лицензии.
 
 ### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Разделы справки переключаться от стороннего средства ЕДР?
 Полные инструкции по переключению с решения конечной точки, отличной от Майкрософт, доступны в документации защитника Майкрософт для конечной точки: [Общие сведения о миграции](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration).
   
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Поддерживаемые платформы и возможности в Центре безопасности Azure](security-center-os-coverage.md)
 - [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md) — сведения об использовании рекомендаций для защиты ресурсов Azure.
