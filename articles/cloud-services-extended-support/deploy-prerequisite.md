@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 45f2b75be9a0090b883c5cc62a0886366e81a302
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 28c7f2c0a61150b2014f669f37ac84ee3a94aebf
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744671"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752154"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Необходимые условия для развертывания облачных служб Azure (Расширенная поддержка)
 
@@ -42,12 +42,12 @@ CloudServices           Microsoft.Compute    Registered
 ## <a name="required-service-configuration-cscfg-file-updates"></a>Обновления файлов требуемой конфигурации службы (. cscfg)
 
 ### <a name="1-virtual-network"></a>1) виртуальная сеть;
-Развертывания облачной службы (Расширенная поддержка) должны находиться в виртуальной сети. Виртуальную сеть можно создать с помощью шаблона [портал Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal), [PowerShell](https://docs.microsoft.com/azure/virtual-network/quick-create-powershell), [Azure CLI](https://docs.microsoft.com/azure/virtual-network/quick-create-cli) или [ARM](https://docs.microsoft.com/azure/virtual-network/quick-create-template). На виртуальную сеть и подсети также необходимо ссылаться в конфигурации службы (cscfg) в `NetworkConfiguration` разделе. 
+Развертывания облачной службы (Расширенная поддержка) должны находиться в виртуальной сети. Виртуальную сеть можно создать с помощью шаблона [портал Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal), [PowerShell](https://docs.microsoft.com/azure/virtual-network/quick-create-powershell), [Azure CLI](https://docs.microsoft.com/azure/virtual-network/quick-create-cli) или [ARM](https://docs.microsoft.com/azure/virtual-network/quick-create-template). На виртуальную сеть и подсети также необходимо ссылаться в конфигурации службы (cscfg) в разделе [NetworkConfiguration](schema-cscfg-networkconfiguration.md) . 
 
 Для виртуальных сетей, принадлежащих к той же группе ресурсов, что и облачная служба, достаточно ссылаться только на имя виртуальной сети в файле конфигурации службы (cscfg). Если виртуальная сеть и облачная служба находятся в двух разных группах ресурсов, то полный идентификатор Azure Resource Manager виртуальной сети необходимо указать в файле конфигурации службы (cscfg).
  
 #### <a name="virtual-network-located-in-same-resource-group"></a>Виртуальная сеть, расположенная в той же группе ресурсов
-```json
+```xml
 <VirtualNetworkSite name="<vnet-name>"/> 
 <AddressAssignments> 
 <InstanceAddress roleName="<role-name>"> 
@@ -58,8 +58,8 @@ CloudServices           Microsoft.Compute    Registered
 ```
 
 #### <a name="virtual-network-located-in-different-resource-group"></a>Виртуальная сеть, расположенная в другой группе ресурсов
-```json
-“/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>/> 
+```xml
+<VirtualNetworkSite name="/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>"/> 
 <AddressAssignments> 
 <InstanceAddress roleName="<role-name>"> 
 <Subnets> 

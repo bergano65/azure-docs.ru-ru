@@ -93,6 +93,11 @@
           href: export-data.md
         - name: Обезличенный экспорт
           href: de-identified-export.md
+    - name: Преобразование данных
+      expanded: false
+      items:
+        - name: $convert-data и шаблоны расширения преобразователя FHIR
+          href: convert-data.md
     - name: Поиск идентификаторов объектов удостоверений
       href: find-identity-object-ids.md
     - name: Ведение журналов диагностики и метрики

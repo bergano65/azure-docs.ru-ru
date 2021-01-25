@@ -1,34 +1,1872 @@
 - name: Документация по Виртуальным машинам
   href: index.yml
-- name: Виртуальные машины Linux в Azure
-  href: ./linux/index.yml
-- name: Виртуальные машины Windows в Azure
-  href: ./windows/index.yml
-- name: Документация по расширениям виртуальных машин
-  href: ./extensions/overview.md
+- name: Обзор
+  items:
+    - name: Сведения о Виртуальных машинах Linux
+      href: ./linux/overview.md
+    - name: Сведения о Виртуальных машинах Windows
+      href: ./windows/overview.md
+- name: Краткие руководства
+  items:
+    - name: Создание виртуальной машины Linux
+      items:
+        - name: CLI
+          href: ./linux/quick-create-cli.md
+        - name: Портал
+          href: ./linux/quick-create-portal.md
+        - name: PowerShell
+          href: ./linux/quick-create-powershell.md
+        - name: Шаблон ARM
+          displayName: 'Resource Manager, template, json'
+          href: ./linux/quick-create-template.md
+    - name: Создание виртуальной машины Windows
+      items:
+        - name: CLI
+          href: ./windows/quick-create-cli.md
+        - name: Портал
+          href: ./windows/quick-create-portal.md
+        - name: PowerShell
+          href: ./windows/quick-create-powershell.md
+        - name: Шаблон ARM
+          displayName: 'Resource Manager, template, json'
+          href: ./windows/quick-create-template.md
+  expanded: true
+- name: Учебники
+  items:
+    - name: Linux
+      items:
+        - name: "1.\_Создание виртуальных машин и управление ими"
+          href: ./linux/tutorial-manage-vm.md
+        - name: "2.\_Создание дисков и управление ими"
+          href: ./linux/tutorial-manage-disks.md
+        - name: "3.\_Автоматизация настройки"
+          href: ./linux/tutorial-automate-vm-deployment.md
+        - name: "4.\_Создание образов виртуальных машин"
+          href: ./linux/tutorial-custom-images.md
+        - name: "5.\_Высокодоступные виртуальные машины"
+          href: ./linux/tutorial-availability-sets.md
+        - name: "6.\_Создание масштабируемого набора"
+          href: ./linux/tutorial-create-vmss.md
+        - name: "7.\_Распределение нагрузки виртуальных машин"
+          href: ./linux/tutorial-load-balancer.md
+        - name: "8.\_Управление сетями"
+          href: ./linux/tutorial-virtual-network.md
+    - name: Windows
+      items:
+        - name: "1.\_Создание виртуальной машины и управление ею"
+          href: ./windows/tutorial-manage-vm.md
+        - name: "2.\_Создание дисков и управление ими"
+          href: ./windows/tutorial-manage-data-disk.md
+        - name: "3.\_Автоматизация настройки"
+          href: ./windows/tutorial-automate-vm-deployment.md
+        - name: "4.\_Создание образов виртуальных машин"
+          href: ./windows/tutorial-custom-images.md
+        - name: "5.\_Высокодоступные виртуальные машины"
+          href: ./windows/tutorial-availability-sets.md
+        - name: "6.\_Создание масштабируемого набора"
+          href: ./windows/tutorial-create-vmss.md
+        - name: "7.\_Распределение нагрузки виртуальных машин"
+          href: ./windows/tutorial-load-balancer.md
+        - name: "8.\_Управление сетями"
+          href: ./windows/tutorial-virtual-network.md
 - name: Рабочие нагрузки
   items:
     - name: Red Hat
       href: ./workloads/redhat/overview.md
-    - name: Высокопроизводительные вычисления
-      href: ./workloads/hpc/overview.md
-    - name: SAP
-      href: ./workloads/sap/get-started.md
+    - name: Cloud Foundry
+      href: ../cloudfoundry/index.yml
+    - name: Cassandra
+      href: /azure/architecture/reference-architectures/n-tier/n-tier-cassandra
+    - name: OpenShift
+      items:
+        - name: Обзор OpenShift
+          href: ./linux/openshift-get-started.md
+        - name: Платформа контейнеров OpenShift 4.х
+          href: ./linux/openshift-container-platform-4x.md
+        - name: Платформа контейнеров OpenShift 3.11. Предварительные требования
+          href: ./linux/openshift-container-platform-3x-prerequisites.md
+        - name: Платформа контейнеров OpenShift 3.11
+          href: ./linux/openshift-container-platform-3x.md
+        - name: Платформа контейнеров OpenShift 3.11. Самостоятельное управление Marketplace
+          href: ./linux/openshift-container-platform-3x-marketplace-self-managed.md
+        - name: Azure Stack
+          href: ./linux/openshift-azure-stack.md
+        - name: Платформа контейнеров OpenShift 3.11. Задачи после развертывания
+          href: ./linux/openshift-container-platform-3x-post-deployment.md
+        - name: Платформа контейнеров OpenShift 3.11. Устранение неполадок с развертываниями
+          href: ./linux/openshift-container-platform-3x-troubleshooting.md
+        - name: Развертывание OKD
+          href: ./linux/openshift-okd.md
+    - name: SAP в Azure
+      items:
+        - name: Начало работы
+          href: ./workloads/sap/get-started.md
+        - name: Сертификаты
+          href: ./workloads/sap/sap-certifications.md
+        - name: SAP HANA в Azure (крупные экземпляры)
+          items:
+            - name: Обзор
+              items:
+                - name: Что такое SAP HANA в Azure (большие экземпляры)?
+                  href: ./workloads/sap/hana-overview-architecture.md
+                - name: Определение терминов
+                  href: ./workloads/sap/hana-know-terms.md
+                - name: Сертификация
+                  href: ./workloads/sap/hana-certification.md
+                - name: Доступные номера SKU для HLI
+                  href: ./workloads/sap/hana-available-skus.md
+                - name: Определение размера
+                  href: ./workloads/sap/hana-sizing.md
+                - name: Требования для подключения
+                  href: ./workloads/sap/hana-onboarding-requirements.md
+                - name: Узлы расширения и распределение данных по уровням SAP HANA
+                  href: ./workloads/sap/hana-data-tiering-extension-nodes.md
+                - name: Модель операций и обязанности
+                  href: ./workloads/sap/hana-operations-model.md
+                - name: Совместимые операционные системы
+                  href: ./workloads/sap/os-compatibility-matrix-hana-large-instance.md
+        - name: Architecture
+          items:
+            - name: Общая архитектура
+              href: ./workloads/sap/hana-architecture.md
+            - name: Сетевая архитектура
+              href: ./workloads/sap/hana-network-architecture.md
+            - name: Архитектура хранилища
+              href: ./workloads/sap/hana-storage-architecture.md
+            - name: Поддерживаемые сценарии HLI
+              href: ./workloads/sap/hana-supported-scenario.md
+        - name: Инфраструктура и возможности подключения
+          items:
+            - name: Развертывание HLI
+              href: ./workloads/sap/hana-overview-infrastructure-connectivity.md
+            - name: Подключение виртуальных машин Azure к крупным экземплярам HANA
+              href: ./workloads/sap/hana-connect-azure-vm-large-instances.md
+            - name: Подключение виртуальной сети к каналу ExpressRoute крупных экземпляров HANA
+              href: ./workloads/sap/hana-connect-vnet-express-route.md
+            - name: Дополнительные требования к сети
+              href: ./workloads/sap/hana-additional-network-requirements.md
+        - name: Установка SAP HANA
+          items:
+            - name: Проверка конфигурации
+              href: ./workloads/sap/hana-installation.md
+            - name: Пример установки HANA
+              href: ./workloads/sap/hana-example-installation.md
+        - name: Высокая доступность и аварийное восстановление
+          items:
+            - name: Параметры и рекомендации
+              href: ./workloads/sap/hana-overview-high-availability-disaster-recovery.md
+            - name: Резервное копирование и восстановление
+              href: ./workloads/sap/hana-backup-restore.md
+            - name: Принципы и подготовка
+              href: ./workloads/sap/hana-concept-preparation.md
+            - name: Процедура отработки отказа при аварийном восстановлении
+              href: ./workloads/sap/hana-failover-procedure.md
+        - name: Устранение неполадок и мониторинг
+          items:
+            - name: Мониторинг HLI
+              href: ./workloads/sap/troubleshooting-monitoring.md
+            - name: Мониторинг и устранение неполадок со стороны HANA
+              href: ./workloads/sap/hana-monitor-troubleshoot.md
+        - name: Практическое руководство
+          items:
+            - name: Управление крупными экземплярами HANA в Azure с помощью портала Azure
+              href: ./workloads/sap/hana-li-portal.md
+            - name: Обеспечение высокого уровня доступности с помощью STONITH
+              href: ./workloads/sap/ha-setup-with-stonith.md
+            - name: "Резервное копирование ОС для номеров SKU типа\_II"
+              href: ./workloads/sap/os-backup-type-ii-skus.md
+            - name: Включение kdump для крупных экземпляров HANA
+              href: ./workloads/sap/hana-large-instance-enable-kdump.md
+            - name: Обновление ОС для HLI
+              href: ./workloads/sap/os-upgrade-hana-large-instance.md
+            - name: Настройка сервера SMT для SUSE Linux
+              href: ./workloads/sap/hana-setup-smt.md
+            - name: Миграция виртуальных машин из HLI в Azure
+              href: ./workloads/sap/hana-large-instance-virtual-machine-migration.md
+            - name: Приобретение резервирования для SAP HANA (крупные экземпляры)
+              href: ../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md?context=/azure/virtual-machines/context/context
+    - name: SAP HANA на виртуальных машинах Azure
+      items:
+        - name: Установка SAP HANA на виртуальных машинах Azure
+          href: ./workloads/sap/hana-get-started.md
+        - name: "Руководство по развертыванию S/4\_HANA или BW/4\_HANA SAP CAL"
+          href: ./workloads/sap/cal-s4h.md
+        - name: Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
+          href: ./workloads/sap/hana-vm-operations.md
+        - name: Конфигурации хранилища виртуальных машин SAP HANA в Azure
+          href: ./workloads/sap/hana-vm-operations-storage.md
+        - name: "Тома NFS версии\_4.1 в Azure NetApp Files для SAP HANA"
+          href: ./workloads/sap/hana-vm-operations-netapp.md
+        - name: Доступность SAP HANA в Виртуальных машинах Azure
+          items:
+            - name: Общие сведения о доступности SAP HANA в Azure
+              href: ./workloads/sap/sap-hana-availability-overview.md
+            - name: Доступность SAP HANA в Azure в пределах одного региона Azure
+              href: ./workloads/sap/sap-hana-availability-one-region.md
+            - name: Доступность SAP HANA в Azure в разных регионах Azure
+              href: ./workloads/sap/sap-hana-availability-across-regions.md
+            - name: Настройка репликации SAP HANA в SLES
+              href: ./workloads/sap/sap-hana-high-availability.md
+            - name: Настройка репликации SAP HANA в RHEL
+              href: ./workloads/sap/sap-hana-high-availability-rhel.md
+            - name: Настройка репликации системы SAP HANA с ANF в RHEL
+              href: ./workloads/sap/sap-hana-high-availability-netapp-files-red-hat.md
+            - name: Устранение неполадок с горизонтальным масштабированием SAP HANA и Pacemaker в SLES
+              href: ./workloads/sap/hana-vm-troubleshoot-scale-out-ha-on-sles.md
+            - name: HSR для горизонтального увеличения масштаба SAP HANA с использованием Pacemaker в RHEL
+              href: ./workloads/sap/sap-hana-high-availability-scale-out-hsr-rhel.md
+            - name: Горизонтальное масштабирование SAP HANA с использованием резервного узла и Azure NetApp Files в SLES
+              href: ./workloads/sap/sap-hana-scale-out-standby-netapp-files-suse.md
+            - name: Горизонтальное масштабирование SAP HANA с использованием резервного узла и Azure NetApp Files в RHEL
+              href: ./workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel.md
+        - name: Общие сведения о резервном копировании SAP HANA
+          href: ./workloads/sap/sap-hana-backup-guide.md
+        - name: Резервное копирование SAP HANA на уровне файлов
+          href: ./workloads/sap/sap-hana-backup-file-level.md
+    - name: Использование SAP NetWeaver и Business One на виртуальных машинах Azure
+      items:
+        - name: Контрольный список для планирования и развертывания рабочей нагрузки SAP
+          href: ./workloads/sap/sap-deployment-checklist.md
+        - name: Планирование и реализация SAP NetWeaver в Azure
+          href: ./workloads/sap/planning-guide.md
+          items:
+            - name: Типы Службы хранилища Azure для рабочей нагрузки SAP
+              href: ./workloads/sap/planning-guide-storage.md
+            - name: Поддерживаемые сценарии использования рабочей нагрузки SAP в виртуальных машинах Azure
+              href: ./workloads/sap/sap-planning-supported-configurations.md
+            - name: 'Программное обеспечение SAP, поддерживаемое для развертываний Azure'
+              href: ./workloads/sap/sap-supported-product-on-azure.md
+        - name: Руководство по развертыванию SAP NetWeaver
+          href: ./workloads/sap/deployment-guide.md
+        - name: Руководства по развертыванию СУБД для рабочих нагрузок SAP
+          items:
+            - name: Общие сведения о развертывании СУБД на Виртуальных машинах Azure для рабочих нагрузок SAP
+              href: ./workloads/sap/dbms_guide_general.md
+            - name: Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
+              href: ./workloads/sap/dbms_guide_sqlserver.md
+            - name: Развертывание СУБД на Виртуальных машинах Azure в Oracle для рабочей нагрузки SAP
+              href: ./workloads/sap/dbms_guide_oracle.md
+            - name: Развертывание СУБД IBM DB2 на Виртуальных машинах Azure для рабочей нагрузки SAP
+              href: ./workloads/sap/dbms_guide_ibm.md
+            - name: Обеспечение высокого уровня доступности IBM DB2 LUW на Виртуальных машинах Azure в SUSE Linux Enterprise Server
+              href: ./workloads/sap/dbms-guide-ha-ibm.md
+            - name: Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в Red Hat Enterprise Linux Server
+              href: ./workloads/sap/high-availability-guide-rhel-ibm-db2-luw.md
+            - name: Развертывание СУБД на Виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
+              href: ./workloads/sap/dbms_guide_sapase.md
+            - name: 'Развертывание SAP MaxDB, liveCache и сервера содержимого в Azure'
+              href: ./workloads/sap/dbms_guide_maxdb.md
+            - name: Доступность SAP HANA в Виртуальных машинах Azure
+              items:
+                - name: Общие сведения о доступности SAP HANA в Azure
+                  href: ./workloads/sap/sap-hana-availability-overview.md
+                - name: Доступность SAP HANA в Azure в пределах одного региона Azure
+                  href: ./workloads/sap/sap-hana-availability-one-region.md
+                - name: Доступность SAP HANA в Azure в разных регионах Azure
+                  href: ./workloads/sap/sap-hana-availability-across-regions.md
+        - name: Использование SAP Business One на виртуальных машинах Azure
+          href: ./workloads/sap/business-one-azure.md
+        - name: "Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL\_Server"
+          href: ./workloads/sap/cal-ides-erp6-erp7-sp3-sql.md
+        - name: Соединитель SAP LaMa для Azure
+          href: ./workloads/sap/lama-installation.md
+        - name: Высокий уровень доступности в Windows и Linux
+          items:
+            - name: Обзор
+              href: ./workloads/sap/sap-high-availability-guide-start.md
+            - name: Архитектура высокого уровня доступности
+              items:
+                - name: Архитектура и сценарии высокого уровня доступности
+                  href: ./workloads/sap/sap-high-availability-architecture-scenarios.md
+                - name: Архитектура и сценарии более высокого уровня доступности
+                  href: ./workloads/sap/sap-higher-availability-architecture-scenarios.md
+                - name: Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure
+                  href: ./workloads/sap/sap-ha-availability-zones.md
+                - name: Обеспечение высокого уровня доступности в Windows с общим диском для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-high-availability-guide-wsfc-shared-disk.md
+                - name: Обеспечение высокого уровня доступности в Windows с общей папкой SOFS для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-high-availability-guide-wsfc-file-share.md
+                - name: Обеспечение высокого уровня доступности для SAP NetWeaver в Windows с использованием Azure NetApp Files (SMB)
+                  href: ./workloads/sap/high-availability-guide-windows-netapp-files-smb.md
+                - name: Обеспечение высокого уровня доступности в SUSE Linux для экземпляра (A)SCS
+                  href: ./workloads/sap/high-availability-guide-suse.md
+                - name: Обеспечение высокого уровня доступности в SUSE Linux для экземпляра (A)SCS с использованием Azure NetApp Files
+                  href: ./workloads/sap/high-availability-guide-suse-netapp-files.md
+                - name: Обеспечение высокого уровня доступности в Red Hat Enterprise Linux для экземпляра (A)SCS
+                  href: ./workloads/sap/high-availability-guide-rhel.md
+                - name: HA в Red Hat Enterprise Linux для экземпляра (A)SCS с использованием Azure NetApp Files
+                  href: ./workloads/sap/high-availability-guide-rhel-netapp-files.md
+            - name: Подготовка инфраструктуры Azure
+              items:
+                - name: Использование Windows с общим диском для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk.md
+                - name: Использование Windows с общей папкой SOFS для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-high-availability-infrastructure-wsfc-file-share.md
+                - name: Обеспечение высокого уровня доступности для NFS на виртуальных машинах Azure в SLES
+                  href: ./workloads/sap/high-availability-guide-suse-nfs.md
+                - name: GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
+                  href: ./workloads/sap/high-availability-guide-rhel-glusterfs.md
+                - name: Pacemaker в SLES
+                  href: ./workloads/sap/high-availability-guide-suse-pacemaker.md
+                - name: Pacemaker в RHEL
+                  href: ./workloads/sap/high-availability-guide-rhel-pacemaker.md
+                - name: Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP
+                  href: ./workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections.md
+            - name: Установка SAP
+              items:
+                - name: Использование Windows с общим диском для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-high-availability-installation-wsfc-shared-disk.md
+                - name: Использование Windows с общей папкой SOFS для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-high-availability-installation-wsfc-file-share.md
+                - name: Обеспечение высокого уровня доступности для SAP NetWeaver в Windows с использованием Azure NetApp Files (SMB)
+                  href: ./workloads/sap/high-availability-guide-windows-netapp-files-smb.md
+                - name: Использование SUSE Linux с NFS для экземпляра (A)SCS
+                  href: ./workloads/sap/high-availability-guide-suse.md
+                - name: Использование SUSE Linux с NFS для экземпляра (A)SCS с Azure NetApp Files
+                  href: ./workloads/sap/high-availability-guide-suse-netapp-files.md
+                - name: Обеспечение высокого уровня доступности для SAP NetWeaver в Red Hat Enterprise Linux
+                  href: ./workloads/sap/high-availability-guide-rhel.md
+                - name: Red Hat Enterprise Linux с NFS для экземпляра (A)SCS с использованием Azure NetApp Files
+                  href: ./workloads/sap/high-availability-guide-rhel-netapp-files.md
+            - name: Использование нескольких SID в SAP
+              items:
+                - name: Использование Windows с общим диском для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md
+                - name: Использование Windows с общим диском для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-ascs-ha-multi-sid-wsfc-shared-disk.md
+                - name: Использование Windows с общей папкой SOFS для экземпляра (A)SCS
+                  href: ./workloads/sap/sap-ascs-ha-multi-sid-wsfc-file-share.md
+                - name: Использование SLES с несколькими ИД безопасности Pacemaker для экземпляра ASCS
+                  href: ./workloads/sap/high-availability-guide-suse-multi-sid.md
+                - name: Использование RHEL с несколькими ИД безопасности Pacemaker для экземпляра ASCS
+                  href: ./workloads/sap/high-availability-guide-rhel-multi-sid.md
+        - name: Использование Azure Site Recovery для аварийного восстановления SAP
+          href: ../site-recovery/site-recovery-workload.md#protect-sap
+        - name: Группа размещения близкого взаимодействия Azure для оптимизации сетевой задержки с использованием приложений SAP
+          href: ./workloads/sap/sap-proximity-placement-scenarios.md
+        - name: Платформа SAP BusinessObjects Business Intelligence в Azure
+          items:
+            - name: Руководство по планированию внедрения и внедрению платформы SAP BusinessObjects BI в Azure
+              href: ./workloads/sap/businessobjects-deployment-guide.md
+            - name: Руководство по развертыванию платформы SAP BusinessObjects BI для Linux в Azure
+              href: ./workloads/sap/businessobjects-deployment-guide-linux.md
+        - name: Интеграция Azure AD с приложениями SAP
+          items:
+            - name: Подготовка пользователей из SAP SuccessFactors в Active Directory
+              href: ../active-directory/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: "Подготовка пользователей из SAP SuccessFactors в Azure\_AD"
+              href: ../active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: "Обратная запись данных пользователей из Azure\_AD в SAP SuccessFactors"
+              href: ../active-directory/saas-apps/sap-successfactors-writeback-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Подготовка пользователей в службе SAP Cloud Platform Identity Authentication
+              href: ../active-directory/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для службы SAP Cloud Platform Identity Authentication
+              href: ../active-directory/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP SuccessFactors
+              href: ../active-directory/saas-apps/successfactors-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Analytics Cloud
+              href: ../active-directory/saas-apps/sapboc-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Fiori
+              href: ../active-directory/saas-apps/sap-fiori-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Qualtrics
+              href: ../active-directory/saas-apps/qualtrics-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Ariba
+              href: ../active-directory/saas-apps/ariba-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Concur Travel and Expense
+              href: ../active-directory/saas-apps/concur-travel-and-expense-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Cloud Platform
+              href: ../active-directory/saas-apps/sap-hana-cloud-platform-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP NetWeaver
+              href: ../active-directory/saas-apps/sap-netweaver-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Business ByDesign
+              href: ../active-directory/saas-apps/sapbusinessbydesign-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP HANA
+              href: ../active-directory/saas-apps/saphana-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для SAP Cloud for Customer
+              href: ../active-directory/saas-apps/sap-customer-cloud-tutorial.md?context=/azure/virtual-machines/context/context
+            - name: Настройка единого входа для панели запуска SAP Fiori
+              href: 'https://blogs.sap.com/2017/02/20/your-s4hana-environment-part-7-fiori-launchpad-saml-single-sing-on-with-azure-ad'
+        - name: Интеграция служб Azure с SAP
+          items:
+            - name: "Использование SAP HANA в Power\_BI Desktop"
+              href: /power-bi/desktop-sap-hana
+            - name: DirectQuery и SAP HANA
+              href: /power-bi/desktop-directquery-sap-hana
+            - name: "Использование соединителя SAP\_BW в Power\_BI Desktop"
+              href: /power-bi/desktop-sap-bw-connector
+            - name: Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure
+              href: 'https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration'
+        - name: Azure Monitor для решений SAP
+          items:
+            - name: Общие сведения об Azure Monitor для решений SAP
+              href: ./workloads/sap/azure-monitor-overview.md
+            - name: Поставщики Azure Monitor для решений SAP
+              href: ./workloads/sap/azure-monitor-providers.md
+            - name: Настройка Azure Monitor для решений SAP (портал)
+              href: ./workloads/sap/azure-monitor-sap-quickstart.md
+            - name: Настройка Azure Monitor для решений SAP (Azure PowerShell)
+              href: ./workloads/sap/azure-monitor-sap-quickstart-powershell.md
+            - name: 'Вопросы и ответы, касающиеся Azure Monitor для решений SAP'
+              href: ./workloads/sap/azure-monitor-faq.md
+        - name: Справочник
+          items:
+            - name: Azure CLI
+              href: /cli/azure/ext/sap-hana/hanainstance
+            - name: Azure PowerShell
+              href: /powershell/module/az.hanaonazure/#sap-hana-on-azure
     - name: Oracle;
-      href: ./workloads/oracle/oracle-overview.md
-    - name: Повторное размещение мейнфреймов
-      href: ./workloads/mainframe-rehosting/overview.md
-- name: Классические развертывания
+      href: ./workloads/oracle/oracle-database-quick-create.md
+    - name: Elasticsearch
+      href: ./linux/tutorial-elasticsearch.md
+    - name: Фильтр пакетов в FreeBSD
+      href: ./linux/freebsd-pf-nat.md
+    - name: Базы данных
+      items:
+        - name: MySQL в SUSE
+          href: ./linux/mysql-on-opensuse.md
+        - name: MongoDB
+          items:
+            - name: Linux
+              href: ./linux/install-mongodb.md
+            - name: Windows
+              href: ./windows/install-mongodb.md
+        - name: PostgreSQL
+          href: ./linux/postgresql-install.md
+        - name: MS SQL в Linux
+          href: /sql/linux/sql-server-linux-azure-virtual-machine
+    - name: Высокопроизводительные вычисления (HPC)
+      href: /azure/architecture/topics/high-performance-computing/
+    - name: IBM Db2 pureScale
+      items:
+        - name: Architecture
+          href: ./linux/ibm-db2-purescale-azure.md
+        - name: Развертывание
+          href: ./linux/deploy-ibm-db2-purescale-azure.md
+    - name: Контейнеры
+      items:
+        - name: Создание узла Docker
+          href: 'https://github.com/Azure/azure-docker-extension/blob/master/README.md'
+        - name: Использование виртуальной машины Docker
+          href: ./linux/docker-machine.md
+        - name: Использование Docker Compose
+          href: ./linux/docker-compose-quickstart.md
+    - name: Visual Studio
+      href: ./windows/using-visual-studio-vm.md
+- name: Экземпляры
   items:
-    - name: Виртуальные машины Linux (классическое развертывание)
-      href: /previous-versions/azure/virtual-machines/linux/classic/
-    - name: Виртуальные машины Windows (классическое развертывание)
-      href: /previous-versions/azure/virtual-machines/windows/classic/
+    - name: Размеры
+      items:
+        - name: Обзор
+          href: sizes.md
+        - name: Изменение размера виртуальной машины
+          items:
+            - name: CLI
+              href: ./linux/change-vm-size.md
+            - name: Портал или PowerShell
+              href: ./windows/resize-vm.md
+        - name: Виртуальные машины 2-го поколения
+          href: generation-2.md
+        - name: Общего назначения
+          items:
+            - name: Обзор
+              href: sizes-general.md
+            - name: Серия Av2
+              href: av2-series.md
+            - name: Серия B с накапливаемыми ресурсами
+              href: sizes-b-series-burstable.md
+            - name: Серия DCv2
+              href: dcv2-series.md
+            - name: Серии Dv2 и DSv2
+              href: dv2-dsv2-series.md
+            - name: Серии Dv3 и Dsv3
+              href: dv3-dsv3-series.md
+            - name: Серии Dav4 и Dasv4
+              href: dav4-dasv4-series.md
+            - name: Серии Ddv4 и Ddsv4
+              href: ddv4-ddsv4-series.md
+            - name: Серии Dv4 и Dsv4
+              href: dv4-dsv4-series.md
+        - name: Оптимизированные для вычислений
+          items:
+            - name: Обзор
+              href: sizes-compute.md
+            - name: Серия Fsv2
+              href: fsv2-series.md
+        - name: Оптимизированные для операций в памяти
+          displayName: Esv3 Ev3 Easv4 Eav4 M-series GS G-series DSv2 Dv2
+          items:
+            - name: Обзор
+              href: sizes-memory.md
+            - name: Серии Dv2 и DSv2 (11–15)
+              href: dv2-dsv2-series-memory.md
+            - name: Серии Ev3 и Esv3
+              href: ev3-esv3-series.md
+            - name: Серии Eav4 и Easv4
+              href: eav4-easv4-series.md
+            - name: Серии Edv4 и Edsv4
+              href: edv4-edsv4-series.md
+            - name: Серии Ev4 и Esv4
+              href: ev4-esv4-series.md
+            - name: Серия M
+              href: m-series.md
+            - name: Серия Mv2
+              href: mv2-series.md
+            - name: Ограниченное число виртуальных ЦП
+              href: constrained-vcpu.md
+        - name: Оптимизированные для операций в хранилище
+          items:
+            - name: Обзор
+              href: sizes-storage.md
+            - name: Серия Lsv2
+              href: lsv2-series.md
+            - name: Оптимизация производительности
+              items:
+                - name: Linux
+                  href: ./linux/storage-performance.md
+                - name: Windows
+                  href: ./windows/storage-performance.md
+        - name: 'GPU: ускорение вычислений'
+          items:
+            - name: Обзор
+              href: sizes-gpu.md?context=/azure/virtual-machines/context/context
+            - name: Серия NC
+              href: nc-series.md
+            - name: Серия NCv2
+              href: ncv2-series.md
+            - name: Серия NCv3
+              href: ncv3-series.md
+            - name: Серия NCasT4_v3
+              href: nct4-v3-series.md
+            - name: Серия ND
+              href: nd-series.md
+            - name: Серия NDv2
+              href: ndv2-series.md
+            - name: Серия NV
+              href: nv-series.md
+            - name: Серия NVv3
+              href: nvv3-series.md
+            - name: Серия NVv4
+              href: nvv4-series.md
+            - name: Настройка драйверов NVIDIA для GPU
+              items:
+                - name: Linux
+                  href: ./linux/n-series-driver-setup.md
+                - name: Windows
+                  href: ./windows/n-series-driver-setup.md
+            - name: Настройка драйверов GPU AMD
+              href: ./windows/n-series-amd-driver-setup.md
+        - name: Для высокопроизводительных вычислений
+          displayName: H-series
+          items:
+            - name: Обзор
+              href: sizes-hpc.md
+            - name: Серия H
+              href: h-series.md
+            - name: "Серия\_HB"
+              href: hb-series.md
+            - name: Серия HBv2
+              href: hbv2-series.md
+            - name: "Серия\_HC"
+              href: hc-series.md
+        - name: Квоты на виртуальные ЦП
+          items:
+            - name: CLI
+              href: ./linux/quotas.md
+            - name: PowerShell
+              href: ./windows/quotas.md
+        - name: Виртуальные машины Azure без временных дисков
+          href: azure-vms-no-temp-disk.md
+        - name: Соглашения об именовании для размеров виртуальных машин Azure
+          href: vm-naming-conventions.md
+        - name: Предыдущие поколения
+          displayName: D-series Ds-series A-series Basic
+          href: sizes-previous-gen.md
+        - name: Размеры изолированных виртуальных машин
+          href: isolation.md
+        - name: Единицы вычислений Azure (ACU)
+          href: acu.md
+        - name: Результаты теста производительности
+          items:
+            - name: Linux
+              href: ./linux/compute-benchmark-scores.md
+            - name: Windows
+              href: ./windows/compute-benchmark-scores.md
+    - name: Выделенные узлы
+      items:
+        - name: Обзор
+          href: ./linux/dedicated-hosts.md
+        - name: CLI
+          href: ./linux/dedicated-hosts-cli.md
+        - name: Портал
+          href: dedicated-hosts-portal.md
+        - name: PowerShell
+          href: ./windows/dedicated-hosts-powershell.md
+    - name: Варианты приобретения
+      items:
+        - name: Точечные виртуальные машины
+          displayName: 'pre-empt, preempt, spot'
+          items:
+            - name: Обзор
+              href: spot-vms.md
+            - name: CLI
+              href: ./linux/spot-cli.md
+            - name: Портал
+              href: spot-portal.md
+            - name: PowerShell
+              href: ./windows/spot-powershell.md
+            - name: Шаблон ARM
+              displayName: template ARM
+              href: ./linux/spot-template.md
+            - name: Коды ошибок
+              href: error-codes-spot.md
+        - name: Преимущество гибридного использования Azure
+          items:
+            - name: Linux
+              href: ./linux/azure-hybrid-benefit-linux.md
+            - name: Windows
+              items:
+                - name: Использование лицензии с Преимуществом гибридного использования Azure
+                  href: ./windows/hybrid-use-benefit-licensing.md
+                - name: "Использование прав на мультитенантное размещение для Windows\_10"
+                  href: ./windows/windows-desktop-multitenant-hosting-deployment.md
+        - name: Зарезервированные экземпляры
+          items:
+            - name: Предоплата за виртуальные машины
+              href: ./linux/prepay-reserved-vm-instances.md
+            - name: Предоплата за выделенные узлы
+              href: prepay-dedicated-hosts-reserved-instances.md
+            - name: Основные сведения о резервировании в Azure
+              href: ../cost-management-billing/reservations/save-compute-costs-reservations.md?context=/azure/virtual-machines/context/context
+            - name: Гибкость размера экземпляра виртуальной машины
+              href: reserved-vm-instance-size-flexibility.md
+    - name: Создание виртуальных машин Linux
+      items:
+        - name: Рекомендуемые дистрибутивы
+          href: ./linux/endorsed-distros.md
+        - name: Использование CLI
+          href: ./linux/create-cli-complete.md
+        - name: Использование шаблона ARM
+          displayName: Azure Resource Manager
+          href: ./linux/create-ssh-secured-vm-from-template.md
+        - name: Использование REST API
+          href: ./linux/create-vm-rest-api.md
+        - name: Копирование виртуальной машины с помощью CLI
+          href: ./linux/copy-vm.md
+        - name: Сборка с помощью Jenkins
+          href: /azure/developer/jenkins/pipeline-with-github-and-docker
+        - name: Интеграция Jenkins с Azure DevOps
+          href: /azure/developer/jenkins/deploy-to-linux-vm-using-azure-devops-services
+        - name: Настройка стратегии последовательного развертывания
+          href: ./linux/tutorial-devops-azure-pipelines-classic.md
+        - name: Настройка стратегии раннего развертывания
+          href: ./linux/tutorial-azure-devops-canary-strategy.md
+        - name: Настройка стратегии развертывания по схеме Blue-Green
+          href: ./linux/tutorial-azure-devops-blue-green-strategy.md
+        - name: CI/CD с использованием Azure Pipelines (YAML)
+          href: ./linux/tutorial-build-deploy-azure-pipelines.md
+        - name: Создание стека LAMP
+          href: ./linux/tutorial-lamp-stack.md
+        - name: Secure a web server with SSL certificates on a Linux virtual machine in Azure (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
+          items:
+            - name: Linux
+              href: ./linux/tutorial-secure-web-server.md
+            - name: Windows
+              href: ./windows/tutorial-secure-web-server.md
+    - name: Подключение к виртуальным машинам Linux
+      items:
+        - name: SSH-подключение для виртуальных машин Linux
+          items:
+            - name: В Linux и macOS
+              href: ./linux/mac-create-ssh-keys.md
+            - name: В Windows
+              href: ./linux/ssh-from-windows.md
+            - name: Просмотр на портале
+              href: ssh-keys-portal.md
+            - name: Подробные инструкции
+              href: ./linux/create-ssh-keys-detailed.md
+        - name: Удаленный рабочий стол для Linux
+          href: ./linux/use-remote-desktop.md
+    - name: Создание виртуальных машин Windows
+      items:
+        - name: Использование C#
+          href: ../azure-resource-manager/templates/deploy-rest.md?context=/azure/virtual-machines/context/context
+        - name: Использование специализированного диска
+          items:
+            - name: Портал
+              href: ./windows/create-vm-specialized-portal.md
+            - name: PowerShell
+              href: ./windows/create-vm-specialized.md
+        - name: Создание виртуальной машины с помощью Chef
+          href: /azure/developer/chef/windows-vm-configure
+        - name: Использование Java
+          href: ./windows/java.md
+        - name: Использование Python
+          href: ./windows/python.md
+        - name: Использование шаблона ARM
+          displayName: Azure Resource Manager template
+          href: ./windows/ps-template.md
+    - name: Подключение к виртуальным машинам Windows
+      href: ./windows/connect-logon.md
+      items:
+        - name: WinRM
+          href: ./windows/winrm.md
+    - name: Расширения
+      items:
+        - name: Обзор
+          href: ./extensions/overview.md
+        - name: Linux
+          items:
+            - name: Функции Linux
+              href: ./extensions/features-linux.md
+            - name: Агент виртуальной машины Linux
+              href: ./extensions/agent-linux.md
+        - name: Windows
+          items:
+            - name: компоненты Windows
+              href: ./extensions/features-windows.md
+            - name: Агент виртуальной машины Windows
+              href: ./extensions/agent-windows.md
+        - name: Шифрование дисков Azure
+          items:
+            - name: Linux
+              href: ./extensions/azure-disk-enc-linux.md
+            - name: Windows
+              href: ./extensions/azure-disk-enc-windows.md
+        - name: Azure Key Vault
+          items:
+            - name: Linux
+              href: ./extensions/key-vault-linux.md
+            - name: Windows
+              href: ./extensions/key-vault-windows.md
+        - name: Azure Backup для SQL Server
+          items:
+            - name: Azure Backup для SQL Server
+              href: ./extensions/backup-azure-sql-server-running-azure-vm.md
+        - name: Пользовательский скрипт
+          items:
+            - name: "Linux\_— версия\_2"
+              href: ./extensions/custom-script-linux.md
+            - name: Windows
+              href: ./extensions/custom-script-windows.md
+        - name: Антивредоносное ПО IaaS для Windows
+          href: ./extensions/iaas-antimalware-windows.md
+        - name: Моментальный снимок виртуальной машины
+          items:
+            - name: Linux
+              href: ./extensions/vmsnapshot-linux.md
+            - name: Windows
+              href: ./extensions/vmsnapshot-windows.md
+        - name: Расширение "Наблюдатель за сетями"
+          items:
+            - name: Linux
+              href: ./extensions/network-watcher-linux.md
+            - name: Windows
+              href: ./extensions/network-watcher-windows.md
+            - name: Обновление до последней версии
+              href: ./extensions/network-watcher-update.md
+        - name: Драйверы InfiniBand
+          items:
+            - name: Linux
+              href: ./extensions/hpc-compute-infiniband-linux.md
+            - name: Windows
+              href: ./extensions/hpc-compute-infiniband-windows.md
+        - name: Драйверы NVIDIA для GPU
+          items:
+            - name: Linux
+              href: ./extensions/hpccompute-gpu-linux.md
+            - name: Windows
+              href: ./extensions/hpccompute-gpu-windows.md
+        - name: Драйверы для GPU AMD
+          items:
+            - name: Windows
+              href: ./extensions/hpccompute-amd-gpu-windows.md
+        - name: Azure Monitor
+          items:
+            - name: Агент Azure Monitor
+              href: ../azure-monitor/platform/azure-monitor-agent-install.md?context=/azure/virtual-machines/context/context
+            - name: Расширение системы диагностики
+              href: ../azure-monitor/platform/diagnostics-extension-overview.md?context=/azure/virtual-machines/context/context
+            - name: Log Analytics
+              items:
+                - name: Linux
+                  href: ./extensions/oms-linux.md
+                - name: Windows
+                  href: ./extensions/oms-windows.md
+            - name: Azure Monitor для виртуальных машин
+              items:
+                - name: Агент зависимостей Linux
+                  href: ./extensions/agent-dependency-linux.md
+                - name: Агент зависимостей Windows
+                  href: ./extensions/agent-dependency-windows.md
+        - name: "PowerShell\_DSC"
+          href: ./extensions/dsc-overview.md
+          items:
+            - name: DSC и Linux
+              href: ./extensions/dsc-linux.md
+            - name: DSC и Windows
+              href: ./extensions/dsc-windows.md
+            - name: Обработка учетных данных
+              href: ./extensions/dsc-credentials.md
+            - name: Использование шаблонов
+              href: ./extensions/dsc-template.md
+        - name: Доступ к виртуальной машине
+          href: ./extensions/vmaccess.md
+        - name: Расширения сторонних разработчиков
+          items:
+            - name: Chef
+              href: ./extensions/chef.md
+            - name: Функция повторного отслеживания от Stackify
+              href: ./extensions/stackify-retrace-linux.md
+            - name: Symantec
+              href: ./extensions/symantec.md
+        - name: Ограничение установки расширения
+          items:
+            - name: Linux
+              href: ./extensions/extensions-rmpolicy-howto-cli.md
+            - name: Windows
+              href: ./extensions/extensions-rmpolicy-howto-ps.md
+        - name: Обновление агента Linux
+          href: ./extensions/update-linux-agent.md
+        - name: Экспорт расширений
+          href: ./extensions/export-templates.md
+        - name: Диагностика
+          href: ./extensions/troubleshoot.md
+        - name: "Проблемы с системами Linux с поддержкой Python\_3"
+          href: ./extensions/issues-using-vm-extensions-python-3.md
+    - name: Перейдите с классической модели развертывания на модель Azure Resource Manager
+      items:
+        - name: "Прекращение поддержки с 1\_марта 2023\_г."
+          href: classic-vm-deprecation.md
+        - name: Общие сведения о переносе
+          href: migration-classic-resource-manager-overview.md
+        - name: Подробный обзор миграции
+          href: migration-classic-resource-manager-deep-dive.md
+        - name: Планирование миграции
+          href: migration-classic-resource-manager-plan.md
+        - name: Миграция с помощью интерфейса командной строки
+          href: migration-classic-resource-manager-cli.md
+        - name: Миграция с помощью PowerShell
+          href: migration-classic-resource-manager-ps.md
+        - name: Распространенные ошибки миграции
+          href: migration-classic-resource-manager-errors.md
+        - name: 'Средства миграции, созданные сообществом'
+          href: migration-classic-resource-manager-community-tools.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: migration-classic-resource-manager-faq.md
+    - name: Основы управления
+      items:
+        - name: Управление ресурсами
+          items:
+            - name: Linux
+              href: ./linux/tutorial-govern-resources.md
+            - name: Windows
+              href: ./windows/tutorial-govern-resources.md
+        - name: Синхронизация времени
+          items:
+            - name: Linux
+              href: ./linux/time-sync.md
+            - name: Windows
+              href: ./windows/time-sync.md
+        - name: Выполнение скриптов на виртуальной машине
+          items:
+            - name: Расширение пользовательских сценариев
+              items:
+                - name: Linux
+                  href: ./extensions/custom-script-linux.md
+                - name: Windows
+                  href: ./extensions/custom-script-windows.md
+            - name: Запуск команды
+              items:
+                - name: Linux
+                  href: ./linux/run-command.md
+                - name: Windows
+                  href: ./windows/run-command.md
+            - name: Гибридная рабочая роль Runbook
+              href: ../automation/automation-hybrid-runbook-worker.md
+            - name: Последовательная консоль
+              items:
+                - name: Linux
+                  href: ./troubleshooting/serial-console-linux.md
+                - name: Windows
+                  href: ./troubleshooting/serial-console-windows.md
+        - name: Включение вложенной виртуализации
+          href: ./windows/nested-virtualization.md
+        - name: Хранилище файлов
+          items:
+            - name: Подключение Linux с помощью SMB
+              href: ./linux/mount-azure-file-storage-on-linux-using-smb.md
+            - name: Копирование файлов на виртуальную машину Linux
+              href: ./linux/copy-files-to-linux-vm-using-scp.md
+        - name: Обновления и исправления
+          items:
+            - name: Инфраструктура обновления Red Hat
+              href: ./workloads/redhat/redhat-rhui.md
+- name: Изображения
+  items:
+    - name: Поиск образов из Azure Marketplace
+      items:
+        - name: CLI
+          href: ./linux/cli-ps-findimage.md
+        - name: PowerShell
+          href: ./windows/cli-ps-findimage.md
+        - name: Образы клиентских версий Windows
+          href: ./windows/client-images.md
+    - name: Пользовательские образы Linux
+      items:
+        - name: Обзор
+          href: ./linux/imaging.md
+        - name: Подготовка Linux
+          href: ./linux/provisioning.md
+        - name: Требования к дистрибутиву Linux
+          items:
+            - name: Общие инструкции
+              href: ./linux/create-upload-generic.md
+            - name: CentOS
+              href: ./linux/create-upload-centos.md
+            - name: Debian
+              href: ./linux/debian-create-upload-vhd.md
+            - name: Flatcar Container Linux
+              href: ./linux/flatcar-create-upload-vhd.md
+            - name: FreeBSD
+              href: ./linux/freebsd-intro-on-azure.md
+            - name: Oracle Linux
+              href: ./linux/oracle-create-upload-vhd.md
+            - name: OpenBSD
+              href: ./linux/create-upload-openbsd.md
+            - name: Red Hat
+              href: ./linux/redhat-create-upload-vhd.md
+            - name: SUSE
+              href: ./linux/suse-create-upload-vhd.md
+            - name: Ubuntu
+              href: ./linux/create-upload-ubuntu.md
+        - name: Использование cloud-init
+          items:
+            - name: Обзор cloud-Init
+              href: ./linux/using-cloud-init.md
+            - name: Подробный обзор
+              href: ./linux/cloud-init-deep-dive.md
+            - name: Устранение неполадок
+              href: ./linux/cloud-init-troubleshooting.md
+            - name: Настройка имени узла для виртуальной машины
+              href: ./linux/cloudinit-update-vm-hostname.md
+            - name: Пакеты обновления на виртуальной машине
+              href: ./linux/cloudinit-update-vm.md
+            - name: Добавление пользователя виртуальной машины
+              href: ./linux/cloudinit-add-user.md
+            - name: Настройка файла подкачки
+              href: ./linux/cloudinit-configure-swapfile.md
+            - name: Запуск существующего bash-скрипта
+              href: ./linux/cloudinit-bash-script.md
+            - name: Подготовка существующей виртуальной машины для cloud-init
+              href: ./linux/cloudinit-prepare-custom-image.md
+        - name: Создание образов Linux без агента подготовки
+          href: ./linux/no-agent.md
+        - name: Отключение подготовки агента Linux
+          href: ./linux/disable-provisioning.md
+        - name: Запись управляемого образа виртуальной машины
+          href: ./linux/capture-image.md
+    - name: Управление пользовательскими образами Windows
+      items:
+        - name: Подготовка виртуального жесткого диска к передаче
+          href: ./windows/prepare-for-upload-vhd-image.md
+        - name: Отправка виртуального жесткого диска и создание управляемого образа
+          href: ./windows/upload-generalized-managed.md
+        - name: Захват управляемого образа
+          href: ./windows/capture-image-resource.md
+        - name: Создание виртуальной машины из управляемого образа
+          href: ./windows/create-vm-generalized-managed.md
+    - name: Общая коллекция образов
+      items:
+        - name: Обзор
+          href: ./linux/shared-image-galleries.md
+        - name: CLI
+          items:
+            - name: Создание коллекции
+              href: shared-images-cli.md
+            - name: Создание образа
+              items:
+                - name: Из виртуальной машины
+                  href: image-version-vm-cli.md
+                - name: На основе управляемого диска или моментального снимка
+                  href: image-version-snapshot-cli.md
+                - name: Клонирование управляемого образа
+                  href: image-version-managed-image-cli.md
+                - name: Копирование из другой коллекции
+                  href: image-version-another-gallery-cli.md
+            - name: Создание виртуальной машины
+              items:
+                - name: Универсальный
+                  href: vm-generalized-image-version-cli.md
+                - name: Специализированный
+                  href: vm-specialized-image-version-cli.md
+            - name: Обновление ресурсов образа
+              href: update-image-resources-cli.md
+            - name: Регистрация приложения для совместного использования
+              items:
+                - name: Linux
+                  href: ./linux/share-images-across-tenants.md
+                - name: Windows
+                  href: ./windows/share-images-across-tenants.md
+        - name: PowerShell
+          items:
+            - name: Создание коллекции
+              href: shared-images-powershell.md
+            - name: Создание версии образа
+              items:
+                - name: Из виртуальной машины
+                  href: image-version-vm-powershell.md
+                - name: На основе управляемого диска или моментального снимка
+                  href: image-version-snapshot-powershell.md
+                - name: Клонирование управляемого образа
+                  href: image-version-managed-image-powershell.md
+                - name: Копирование из другой коллекции
+                  href: image-version-another-gallery-powershell.md
+            - name: Создание виртуальной машины
+              items:
+                - name: Универсальный
+                  href: vm-generalized-image-version-powershell.md
+                - name: Специализированный
+                  href: vm-specialized-image-version-powershell.md
+                - name: Обновление ресурсов образа
+                  href: update-image-resources-powershell.md
+                - name: Регистрация приложения для совместного использования
+                  href: windows/share-images-across-tenants.md
+        - name: Портал
+          items:
+            - name: 'Создание коллекции, образа и виртуальной машины'
+              items:
+                - name: Linux
+                  href: ./linux/shared-images-portal.md
+                - name: Windows
+                  href: ./windows/shared-images-portal.md
+        - name: Шаблоны Resource Manager
+          items:
+            - name: Создание Общей коллекции образов.
+              href: 'https://azure.microsoft.com/resources/templates/101-sig-create/'
+            - name: Создание определения образа в Общей коллекции образов
+              href: 'https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/'
+            - name: Создание версии образа в Общей коллекции образов
+              href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
+            - name: Создание виртуальной машины из версии образа
+              href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
+        - name: Устранение неполадок с общими образами
+          href: troubleshooting-shared-images.md
+        - name: Использование управляемых клиентом ключей
+          displayName: 'SSE, CMK, encrypt'
+          href: image-version-encryption.md
+        - name: Создание управляемого диска на основе определенной версии образа
+          href: managed-disk-from-image-version.md
+        - name: Сведения о плане покупки
+          href: marketplace-images.md
+    - name: Конструктор изображений (предварительная версия)
+      items:
+        - name: Обзор
+          href: image-builder-overview.md
+        - name: CLI
+          items:
+            - name: Linux
+              href: ./linux/image-builder.md
+            - name: Windows
+              href: ./windows/image-builder.md
+        - name: PowerShell
+          href: ./windows/image-builder-powershell.md
+        - name: Использование виртуальной сети
+          items:
+            - name: CLI
+              href: ./linux/image-builder-vnet.md
+            - name: PowerShell
+              href: ./windows/image-builder-vnet.md
+        - name: Сетевые параметры
+          href: ./linux/image-builder-networking.md
+        - name: Настройка разрешений
+          items:
+            - name: CLI
+              href: ./linux/image-builder-permissions-cli.md
+            - name: PowerShell
+              href: ./linux/image-builder-permissions-powershell.md
+        - name: Задание DevOps
+          href: ./linux/image-builder-devops-task.md
+        - name: Справочник по шаблонам Конструктора образов
+          displayName: json
+          href: ./linux/image-builder-json.md
+        - name: Сборка для коллекций образов
+          items:
+            - name: Linux
+              href: ./linux/image-builder-gallery.md
+            - name: Windows
+              href: ./windows/image-builder-gallery.md
+        - name: Обновление существующего образа
+          items:
+            - name: Linux
+              href: ./linux/image-builder-gallery-update-image-version.md
+            - name: Windows
+              href: ./windows/image-builder-gallery-update-image-version.md
+        - name: Хранение скриптов
+          href: ./linux/image-builder-user-assigned-identity.md
+        - name: Диагностика
+          href: ./linux/image-builder-troubleshoot.md
+    - name: Создание образа с помощью Packer
+      items:
+        - name: Linux
+          href: ./linux/build-image-with-packer.md
+        - name: Windows
+          href: ./windows/build-image-with-packer.md
+- name: Высокая доступность и масштабирование
+  items:
+    - name: Масштабируемые наборы
+      href: ../virtual-machine-scale-sets/overview.md?context=/azure/virtual-machines/context/context
+    - name: Доступность
+      href: availability.md
+    - name: Совместное размещение
+      href: ./linux/co-location.md
+    - name: проблемы с производительностью сети;
+      href: ../virtual-network/virtual-network-optimize-network-bandwidth.md?context=/azure/virtual-machines/context/context
+    - name: Состояния и жизненный цикл
+      href: states-lifecycle.md
+    - name: Автомасштабирование
+      href: ../virtual-machine-scale-sets/overview.md?context=/azure/virtual-machines/context/context
+    - name: Высокий уровень доступности
+      href: manage-availability.md
+    - name: Группы доступности
+      items:
+        - name: Linux
+          href: ./linux/tutorial-availability-sets.md
+        - name: Windows
+          items:
+            - name: '"Создать группу доступности"'
+              href: ./windows/tutorial-availability-sets.md
+            - name: Изменение группы доступности
+              href: ./windows/change-availability-set.md
+    - name: Создание группы размещения близкого взаимодействия
+      displayName: PPG aligned colocation co-location
+      items:
+        - name: CLI
+          href: ./linux/proximity-placement-groups.md
+        - name: Портал
+          href: ./windows/proximity-placement-groups-portal.md
+        - name: PowerShell
+          href: ./windows/proximity-placement-groups.md
+    - name: Создание виртуальной машины в зоне доступности
+      href: ./linux/create-cli-availability-zone.md
+- name: Диски
+  items:
+    - name: Общие сведения об управляемых дисках
+      href: managed-disks-overview.md
+    - name: Выбор типа диска для виртуальных машин IaaS
+      href: disks-types.md
+    - name: Общие диски
+      href: disks-shared.md
+    - name: Включение общих дисков
+      href: disks-shared-enable.md
+    - name: Шифрование
+      items:
+        - name: Шифрование на стороне сервера
+          items:
+            - name: Общие сведения о шифровании на стороне сервера
+              href: disk-encryption.md
+            - name: Активация управляемых клиентом ключей
+              items:
+                - name: Портал
+                  href: disks-enable-customer-managed-keys-portal.md
+                - name: PowerShell
+                  href: windows/disks-enable-customer-managed-keys-powershell.md
+                - name: CLI
+                  href: linux/disks-enable-customer-managed-keys-cli.md
+            - name: Включение шифрования в узле
+              items:
+                - name: Портал
+                  href: disks-enable-host-based-encryption-portal.md
+                - name: PowerShell
+                  href: windows/disks-enable-host-based-encryption-powershell.md
+                - name: CLI
+                  href: linux/disks-enable-host-based-encryption-cli.md
+            - name: Активация шифрования неактивных данных
+              items:
+                - name: Портал
+                  href: disks-enable-double-encryption-at-rest-portal.md
+                - name: PowerShell
+                  href: windows/disks-enable-double-encryption-at-rest-powershell.md
+                - name: CLI
+                  href: linux/disks-enable-double-encryption-at-rest-cli.md
+        - name: Сценарии Шифрования дисков Azure
+          items:
+            - name: Общие сведения о Шифровании дисков Azure
+              items:
+                - name: Windows
+                - name: Linux
+            - name: Linux
+              href: ./linux/disk-encryption-linux.md
+            - name: Windows
+              href: ./windows/disk-encryption-windows.md
+            - name: CLI
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-cli-quickstart.md
+                - name: Windows
+                  href: ./windows/disk-encryption-cli-quickstart.md
+            - name: PowerShell
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-powershell-quickstart.md
+                - name: Windows
+                  href: ./windows/disk-encryption-powershell-quickstart.md
+            - name: Портал
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-portal-quickstart.md
+                - name: Windows
+                  href: ./windows/disk-encryption-portal-quickstart.md
+            - name: Хранилище ключей для шифрования дисков Azure
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-key-vault.md
+                - name: Windows
+                  href: ./windows/disk-encryption-key-vault.md
+            - name: Примеры сценариев
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-sample-scripts.md
+                - name: Windows
+                  href: ./windows/disk-encryption-sample-scripts.md
+            - name: Шифрование дисков Disk в изолированной сети
+              href: ./linux/disk-encryption-isolated-network.md
+            - name: Проверка состояния шифрования
+              href: ./linux/how-to-verify-encryption-status.md
+            - name: Настройка LVM и RAID поверх зашифрованных устройств
+              href: ./linux/how-to-configure-lvm-raid-on-crypt.md
+            - name: Как изменить размер зашифрованных томов LVM
+              href: ./linux/how-to-resize-encrypted-lvm.md
+            - name: Изменение размера разделов ОС GPT Linux
+              href: linux/resize-os-disk-gpt-partition.md
+            - name: Устранение неполадок
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-troubleshooting.md
+                - name: Windows
+                  href: ./windows/disk-encryption-troubleshooting.md
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              items:
+                - name: Linux
+                  href: ./linux/disk-encryption-faq.md
+                - name: Windows
+                  href: ./windows/disk-encryption-faq.md
+            - name: 'Шифрование дисков Azure, предыдущая версия'
+              items:
+                - name: Обзор
+                  items:
+                    - name: Linux
+                      href: ./linux/disk-encryption-overview-aad.md
+                    - name: Windows
+                      href: ./windows/disk-encryption-overview-aad.md
+                - name: Хранилище ключей для шифрования дисков Azure
+                  items:
+                    - name: Linux
+                      href: ./linux/disk-encryption-key-vault-aad.md
+                    - name: Windows
+                      href: ./windows/disk-encryption-key-vault-aad.md
+                - name: Сценарии шифрования дисков
+                  items:
+                    - name: Linux
+                      href: ./linux/disk-encryption-linux-aad.md
+                    - name: Windows
+                      href: ./windows/disk-encryption-windows-aad.md
+    - name: Производительность и оптимизация затрат
+      items:
+        - name: Диски категории "Ультра"
+          href: disks-enable-ultra-ssd.md
+        - name: Производительность диска и виртуальной машины
+          href: disks-performance.md
+        - name: Резервирования Хранилища дисков
+          href: ../cost-management-billing/reservations/understand-disk-reservations.md?context=/azure/virtual-machines/context/context
+        - name: Зарезервировать Хранилище дисков
+          href: disks-reserved-capacity.md
+        - name: Проектирование для обеспечения высокой производительности
+          href: premium-storage-performance.md
+        - name: Всплеск активности диска
+          href: disk-bursting.md
+        - name: Уровни производительности дисков
+          href: disks-change-performance.md
+        - name: Изменение уровня производительности дисков
+          items:
+            - name: Интерфейс командной строки и PowerShell
+              href: disks-performance-tiers.md
+            - name: Портал
+              href: disks-performance-tiers-portal.md
+        - name: Включение ускорителя записи
+          href: how-to-enable-write-accelerator.md
+        - name: Тест производительности диска
+          href: disks-benchmarks.md
+    - name: Целевые показатели масштабируемости для дисков
+      href: disks-scalability-targets.md
+    - name: Резервное копирование и хранение данных
+      items:
+        - name: Резервное копирование и аварийное восстановление дисков
+          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+        - name: Включение добавочных моментальных снимков
+          href: disks-incremental-snapshots.md
+        - name: 'Создание моментального снимка диска, CLI'
+          href: ./linux/snapshot-copy-managed-disk.md
+        - name: 'Создание моментального снимка диска, PowerShell'
+          href: ./windows/snapshot-copy-managed-disk.md
+        - name: Резервное копирование неуправляемых дисков
+          href: ./linux/incremental-snapshots.md
+    - name: Временные диски ОС
+      href: ephemeral-os-disks.md
+    - name: Миграция и преобразование
+      items:
+        - name: Переход между хранилищами ценовых категорий "Стандартный" и "Премиум" для дисков
+          items:
+            - name: CLI
+              href: ./linux/convert-disk-storage.md
+            - name: PowerShell
+              href: ./windows/convert-disk-storage.md
+        - name: Миграция на диски SSD ценовой категории "Премиум"с помощью Azure Site Recovery
+          items:
+            - name: Linux
+              href: ./linux/migrate-to-premium-storage-using-azure-site-recovery.md
+            - name: Windows
+              href: ./windows/migrate-to-premium-storage-using-azure-site-recovery.md
+        - name: Переход на Управляемые диски
+          href: ./windows/migrate-to-managed-disks.md
+        - name: Переключение виртуальной машины с неуправляемых дисков на управляемые
+          items:
+            - name: CLI
+              href: ./linux/convert-unmanaged-to-managed-disks.md
+            - name: PowerShell
+              href: ./windows/convert-unmanaged-to-managed-disks.md
+    - name: Добавление диска данных
+      items:
+        - name: Linux
+          items:
+            - name: Azure CLI
+              href: ./linux/add-disk.md
+            - name: Портал Azure
+              href: ./linux/attach-disk-portal.md
+        - name: Windows
+          items:
+            - name: Azure PowerShell
+              href: ./windows/attach-disk-ps.md
+            - name: Портал Azure
+              href: ./windows/attach-managed-disk-portal.md
+            - name: Изменение буквы временного диска
+              href: ./windows/change-drive-letter.md
+    - name: Отсоединение диска
+      items:
+        - name: Linux
+          href: ./linux/detach-disk.md
+        - name: Windows
+          href: ./windows/detach-disk.md
+    - name: Расширение диска операционной системы
+      items:
+        - name: Linux
+          href: ./linux/expand-disks.md
+        - name: Windows
+          href: ./windows/expand-os-disk.md
+    - name: Управление хранилищем
+      items:
+        - name: Развертывание дисков с помощью шаблона ARM
+          displayName: Azure Resource Manager
+          href: using-managed-disks-template-deployments.md
+        - name: Безопасный импорт и экспорт диска
+          items:
+            - name: 'Настройка приватных каналов для дисков, CLI'
+              href: ./linux/disks-export-import-private-links-cli.md
+            - name: 'Настройка приватных каналов для дисков, портал'
+              href: disks-enable-private-links-for-import-export-portal.md
+            - name: "Отправка VHD на диск\_— PowerShell"
+              href: ./windows/disks-upload-vhd-to-managed-disk-powershell.md
+            - name: "Отправка VHD-файла на диск\_— CLI"
+              href: ./linux/disks-upload-vhd-to-managed-disk-cli.md
+            - name: Загрузка VHD
+              items:
+                - name: Linux
+                  href: ./linux/download-vhd.md
+                - name: Windows
+                  href: ./windows/download-vhd.md
+        - name: Использование Обозревателя службы хранилища для управления дисками
+          href: disks-use-storage-explorer-managed-disks.md
+        - name: 'Замена диска ОС, CLI'
+          href: ./linux/os-disk-swap.md
+        - name: 'Замена диска ОС, PowerShell'
+          href: ./windows/os-disk-swap.md
+        - name: 'Сопоставление управляемого диска с гостевым, Linux'
+          href: ./linux/azure-to-guest-disk-mapping.md
+        - name: 'Сопоставление управляемого диска с гостевым, Windows'
+          href: ./windows/azure-to-guest-disk-mapping.md
+        - name: Обнаружение неприсоединенных дисков
+          items:
+            - name: CLI
+              href: ./linux/find-unattached-disks.md
+            - name: PowerShell
+              href: ./windows/find-unattached-disks.md
+            - name: Портал
+              href: disks-find-unattached-portal.md
+        - name: Часто задаваемые вопросы о дисках
+          href: faq-for-disks.md
+    - name: Примеры кода
+      items:
+        - name: CLI
+          items:
+            - name: Создание управляемого диска на основе VHD
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-managed-disk-from-vhd.md'
+            - name: Создание управляемого диска на основе моментального снимка
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-managed-disk-from-snapshot.md'
+            - name: Копирование управляемого диска в ту же или другую подписку
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-to-same-or-different-subscription.md'
+            - name: Копирование моментального снимка в ту же или другую подписку
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-snapshot-to-same-or-different-subscription.md'
+            - name: Экспорт моментального снимка в виде VHD в учетную запись хранения
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-snapshot-to-storage-account.md'
+            - name: Экспорт управляемого диска в виде VHD в учетную запись хранения
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-cli-sample-copy-managed-disks-vhd.md'
+        - name: PowerShell
+          items:
+            - name: Создание управляемого диска на основе VHD
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-powershell-sample-create-managed-disk-from-vhd.md'
+            - name: Создание управляемого диска на основе моментального снимка
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-powershell-sample-create-managed-disk-from-snapshot.md'
+            - name: Копирование моментального снимка в ту же или другую подписку
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-powershell-sample-copy-snapshot-to-same-or-different-subscription.md'
+            - name: Экспорт моментального снимка в виде VHD в учетную запись хранения
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-powershell-sample-copy-snapshot-to-storage-account.md'
+            - name: Экспорт управляемого диска в виде VHD в учетную запись хранения
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-powershell-sample-copy-managed-disks-vhd.md'
+            - name: Создание моментального снимка на основе VHD
+              href: 'https://github.com/microsoft/azure-docs/blob/master/articles/virtual-machines/scripts/virtual-machines-linux-powershell-sample-create-snapshot-from-vhd.md'
+- name: Сеть
+  items:
+    - name: Обзор
+      href: network-overview.md
+    - name: Создание виртуальной сети
+      href: ../virtual-network/quick-create-cli.md?context=/azure/virtual-machines/context/context
+    - name: Открытие портов для виртуальной машины
+      items:
+        - name: CLI
+          href: ./linux/nsg-quickstart.md
+        - name: PowerShell
+          href: ./windows/nsg-quickstart-powershell.md
+        - name: Портал
+          href: ./windows/nsg-quickstart-portal.md
+    - name: Назначение общедоступного IP-адреса
+      href: ../virtual-network/virtual-network-deploy-static-pip-arm-cli.md?context=/azure/virtual-machines/context/context
+    - name: Использование нескольких сетевых адаптеров
+      items:
+        - name: 'Linux, использование CLI'
+          href: ./linux/multiple-nics.md
+        - name: 'Windows, использование PowerShell'
+          href: ./windows/multiple-nics.md
+    - name: Использование ускорения работы в сети
+      href: ../virtual-network/create-vm-accelerated-networking-cli.md?context=/azure/virtual-machines/context/context
+    - name: Назначение общедоступного DNS-имени
+      href: create-fqdn.md
+    - name: Поиск и удаление неподключенных сетевых адаптеров
+      href: ./linux/find-unattached-nics.md
+    - name: Разрешение DNS
+      href: ./linux/azure-dns.md
+    - name: Использование внутренней службы DNS
+      href: ./linux/static-dns-name-resolution-for-linux-on-azure.md
+- name: Безопасность
+  items:
+    - name: Центр безопасности Azure
+      href: ../security-center/security-center-introduction.md
+    - name: Базовые конфигурации безопасности
+      items:
+        - name: Linux
+          href: ./linux/security-baseline.md
+        - name: Windows
+          href: ./windows/security-baseline.md
+    - name: Рекомендации
+      href: security-recommendations.md
+    - name: JIT-доступ
+      href: ../security-center/security-center-just-in-time.md
+    - name: Политика
+      items:
+        - name: Обзор
+          href: security-policy.md
+        - name: Элементы управления по политике
+          displayName: 'regulatory, compliance, standards, domains'
+          href: security-controls-policy.md
+        - name: Справочник по политикам
+          href: policy-reference.md
+        - name: Использование политик
+          items:
+            - name: Linux
+              href: ./linux/policy.md
+            - name: Windows
+              href: ./windows/policy.md
+    - name: Бастион
+      items:
+        - name: Обзор
+          href: ../bastion/bastion-overview.md
+        - name: Создание узла-бастиона
+          items:
+            - name: Портал
+              href: ../bastion/bastion-create-host-portal.md
+            - name: PowerShell
+              href: ../bastion/bastion-create-host-powershell.md
+            - name: CLI
+              href: ../bastion/create-host-cli.md
+            - name: Подключение SSH через бастион
+              href: ../bastion/bastion-connect-vm-ssh.md
+              items: null
+            - name: Подключение RDP через бастион
+              href: ../bastion/bastion-connect-vm-rdp.md
+        - name: Использование элементов управления доступом
+          href: ../role-based-access-control/overview.md
+        - name: Создание хранилища ключей
+          items:
+            - name: CLI
+              href: ./linux/key-vault-setup.md
+            - name: PowerShell
+              href: ./windows/key-vault-setup.md
+    - name: 'Устранение уязвимостей, связанных со спекулятивным выполнением команд'
+      href: mitigate-se.md
+    - name: Присоединение виртуальной машины Linux к Azure Active Directory
+      displayName: Azure AD
+      items:
+        - name: Red Hat Enterprise Linux
+          href: ../active-directory-domain-services/join-rhel-linux-vm.md
+        - name: CentOS
+          href: ../active-directory-domain-services/join-centos-linux-vm.md
+        - name: Ubuntu
+          href: ../active-directory-domain-services/join-ubuntu-linux-vm.md
+    - name: Настройка управляемых удостоверений
+      items:
+        - name: Портал
+          href: ../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md?context=/azure/virtual-machines/context/context
+        - name: CLI
+          href: ../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md?context=/azure/virtual-machines/context/context
+        - name: PowerShell
+          href: ../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md?context=/azure/virtual-machines/context/context
+        - name: Шаблон Azure Resource Manager
+          displayName: ARM
+          href: ../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md?context=/azure/virtual-machines/context/context
+        - name: REST
+          href: ../active-directory/managed-identities-azure-resources/qs-configure-rest-vm.md?context=/azure/virtual-machines/context/context
+        - name: Пакеты Azure SDK
+          href: ../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md?context=/azure/virtual-machines/context/context
+    - name: 'Вход в Active Directory, Linux'
+      href: ./linux/login-using-aad.md
+- name: Обслуживание и обновления
+  items:
+    - name: Обзор
+      href: maintenance-and-updates.md
+    - name: Автоматизация исправлений гостевой системы виртуальной машины (предварительная версия)
+      href: ./windows/automatic-vm-guest-patching.md
+    - name: Управление обслуживанием
+      items:
+        - name: Уведомления об обслуживании
+          items:
+            - name: Обзор
+              href: maintenance-notifications.md
+            - name: CLI
+              href: maintenance-notifications-cli.md
+            - name: Портал
+              href: maintenance-notifications-portal.md
+            - name: PowerShell
+              href: maintenance-notifications-powershell.md
+        - name: Обслуживание платформы
+          items:
+            - name: Обзор
+              href: maintenance-control.md
+            - name: CLI
+              href: maintenance-control-cli.md
+            - name: PowerShell
+              href: maintenance-control-powershell.md
+            - name: Портал
+              href: maintenance-control-portal.md
+        - name: Запланированные события
+          items:
+            - name: Linux
+              href: ./linux/scheduled-events.md
+            - name: Windows
+              href: ./windows/scheduled-events.md
+        - name: Отслеживание и обновление виртуальных машин
+          items:
+            - name: Linux
+              href: ./linux/tutorial-config-management.md
+            - name: Windows
+              href: ./windows/tutorial-config-management.md
+        - name: Обновления образов ОС масштабируемого набора виртуальных машин
+          items:
+            - name: Автоматические обновления ОС
+              href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?context=/azure/virtual-machines/context/context
+            - name: Управление обслуживанием
+              items:
+                - name: Обзор (предварительная версия)
+                  href: virtual-machine-scale-sets-maintenance-control.md
+                - name: PowerShell (предварительная версия)
+                  href: virtual-machine-scale-sets-maintenance-control-powershell.md
+- name: Наблюдение
+  items:
+    - name: Обзор
+      href: ../azure-monitor/insights/monitor-vm-azure.md?context=/azure/virtual-machines/context/context
+    - name: Мониторинг виртуальных машин
+      items:
+        - name: Linux
+          href: ./linux/tutorial-monitor.md
+        - name: Windows
+          href: ./windows/tutorial-monitor.md
+    - name: Агенты
+      items:
+        - name: Общие сведения об агентах
+          href: ../azure-monitor/platform/agents-overview.md?context=/azure/virtual-machines/context/context
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: ../azure-monitor/faq.md?context=/azure/virtual-machines/context/context#agents
+        - name: Расширение службы "Диагностика Azure"
+          items:
+            - name: Обзор
+              href: ../azure-monitor/platform/diagnostics-extension-overview.md?context=/azure/virtual-machines/context/context
+            - name: Расширение для диагностики Linux
+              items:
+                - name: Обзор
+                  href: ../virtual-machines/extensions/diagnostics-linux.md?context=/azure/virtual-machines/context/context
+                - name: Сбор метрик с помощью Telegraf
+                  href: ../azure-monitor/platform/collect-custom-metrics-linux-telegraf.md?context=/azure/virtual-machines/context/context
+                  displayname: diagnostics extension
+        - name: Агент Log Analytics
+          items:
+            - name: Обзор
+              href: ../azure-monitor/platform/log-analytics-agent.md?context=/azure/virtual-machines/context/context
+            - name: Агенты Linux
+              href: ../azure-monitor/platform/agent-linux.md?context=/azure/virtual-machines/context/context
+            - name: Шлюз службы анализа журналов
+              href: ../azure-monitor/platform/gateway.md?context=/azure/virtual-machines/context/context
+            - name: Управление агентами
+              href: ../azure-monitor/platform/agent-manage.md?context=/azure/virtual-machines/context/context
+            - name: Работоспособность агентов
+              href: ../azure-monitor/insights/solution-agenthealth.md?context=/azure/virtual-machines/context/context
+            - name: Источники данных
+              items:
+                - name: Обзор
+                  href: ../azure-monitor/platform/agent-data-sources.md?context=/azure/virtual-machines/context/context
+                - name: Настраиваемые данные JSON
+                  href: ../azure-monitor/platform/data-sources-json.md?context=/azure/virtual-machines/context/context
+                - name: Сбор данных о производительности
+                  href: ../azure-monitor/platform/data-sources-collectd.md?context=/azure/virtual-machines/context/context
+                - name: Системный журнал
+                  href: ../azure-monitor/platform/data-sources-syslog.md?context=/azure/virtual-machines/context/context
+                - name: Счетчики производительности
+                  href: ../azure-monitor/platform/data-sources-performance-counters.md?context=/azure/virtual-machines/context/context
+                - name: Производительность приложений Linux
+                  href: ../azure-monitor/platform/data-sources-linux-applications.md?context=/azure/virtual-machines/context/context
+                - name: Пользовательские журналы
+                  href: ../azure-monitor/platform/data-sources-custom-logs.md?context=/azure/virtual-machines/context/context
+                - name: Пользовательские поля
+                  href: ../azure-monitor/platform/custom-fields.md?context=/azure/virtual-machines/context/context
+        - name: Диагностика
+          items:
+            - name: Расширение службы анализа журналов для виртуальной машины
+              href: ../azure-monitor/platform/vmext-troubleshoot.md?context=/azure/virtual-machines/context/context
+              displayname: 'troubleshoot, troubleshooting'
+            - name: Агент службы анализа журналов для Linux
+              href: ../azure-monitor/platform/agent-linux-troubleshoot.md?context=/azure/virtual-machines/context/context
+              displayname: 'troubleshoot, troubleshooting'
+        - name: Azure Monitor для виртуальных машин
+          items:
+            - name: Обзор
+              href: ../azure-monitor/insights/vminsights-overview.md?context=/azure/virtual-machines/context/context
+            - name: Часто задаваемые вопросы об общедоступной версии
+              href: ../azure-monitor/insights/vminsights-ga-release-faq.md?context=/azure/virtual-machines/context/context
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: ../azure-monitor/faq.md?context=/azure/virtual-machines/context/context#azure-monitor-for-vms
+            - name: Включение мониторинга
+              items:
+                - name: Общие сведения о включении мониторинга
+                  href: ../azure-monitor/insights/vminsights-enable-overview.md?context=/azure/virtual-machines/context/context
+                - name: Включение для отдельной виртуальной машины Azure
+                  href: ../azure-monitor/insights/vminsights-enable-portal.md?context=/azure/virtual-machines/context/context
+                - name: Включение при помощи Политики Azure
+                  href: ../azure-monitor/insights/vminsights-enable-policy.md?context=/azure/virtual-machines/context/context
+                - name: Включить при помощи Azure PowerShell
+                  href: ../azure-monitor/insights/vminsights-enable-powershell.md?context=/azure/virtual-machines/context/context
+                - name: Включение в гибридной среде
+                  href: ../azure-monitor/insights/vminsights-enable-hybrid.md?context=/azure/virtual-machines/context/context
+            - name: Сопоставление зависимостей
+              href: ../azure-monitor/insights/vminsights-maps.md?context=/azure/virtual-machines/context/context
+            - name: Мониторинг производительности
+              href: ../azure-monitor/insights/vminsights-performance.md?context=/azure/virtual-machines/context/context
+            - name: Анализ данных с помощью запросов к журналу
+              href: ../azure-monitor/insights/vminsights-log-search.md?context=/azure/virtual-machines/context/context
+            - name: Визуализация данных с помощью книг
+              href: ../azure-monitor/insights/vminsights-workbooks.md?context=/azure/virtual-machines/context/context
+            - name: Создание правил генерации оповещений
+              href: ../azure-monitor/insights/vminsights-alerts.md?context=/azure/virtual-machines/context/context
+            - name: Обновление агента зависимостей
+              href: ../azure-monitor/insights/vminsights-dependency-agent-maintenance.md?context=/azure/virtual-machines/context/context
+            - name: Отключение мониторинга
+              href: ../azure-monitor/insights/vminsights-optout.md?context=/azure/virtual-machines/context/context
+    - name: Использование виртуальных машин
+      href: vm-usage.md
+    - name: Добавление тега для виртуальной машины
+      items:
+        - name: CLI
+          href: tag-cli.md
+        - name: Портал
+          href: tag-portal.md
+        - name: PowerShell
+          href: tag-powershell.md
+        - name: Шаблон
+          href: tag-template.md
+    - name: Монитор метаданных
+      items:
+        - name: CLI
+          href: ./linux/instance-metadata-service.md
+        - name: PowerShell
+          href: ./windows/instance-metadata-service.md
+    - name: Получение метрик потребления с помощью REST
+      href: ./linux/metrics-vm-usage-rest.md
+    - name: Диагностика загрузки
+      href: boot-diagnostics.md
+- name: Резервное копирование и восстановление
+  items:
+    - name: Обзор
+      href: backup-recovery.md
+    - name: Прерывания в работе служб
+      href: virtual-machines-disaster-recovery-guidance.md
+    - name: Резервное копирование виртуальных машин
+      items:
+        - name: Обзор
+          href: ../backup/backup-azure-vms-introduction.md
+        - name: Краткие руководства
+          items:
+            - name: CLI
+              href: ../backup/quick-backup-vm-cli.md
+            - name: PowerShell
+              href: ../backup/quick-backup-vm-powershell.md
+            - name: Портал
+              href: ../backup/quick-backup-vm-portal.md
+            - name: Шаблон
+              href: ../backup/quick-backup-vm-template.md
+        - name: Резервное копирование нескольких виртуальных машин
+          href: ../backup/tutorial-backup-vm-at-scale.md
+        - name: Параметры восстановления
+          href: /backup/backup-azure-arm-restore-vms.md
+        - name: Матрица поддержки
+          href: ../backup/backup-support-matrix-iaas.md
+        - name: Цены
+          href: ../backup/azure-backup-pricing.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: ../backup/backup-azure-vm-backup-faq.md
+    - name: Аварийное восстановление
+      items:
+        - name: Обзор
+          href: ../site-recovery/site-recovery-overview.md
+        - name: Включение аварийного восстановления
+          items:
+            - name: Linux
+              href: ./linux/tutorial-disaster-recovery.md
+            - name: Windows
+              href: ./windows/tutorial-disaster-recovery.md
+        - name: Включение аварийного восстановления для виртуальной машины
+          href: ../site-recovery/azure-to-azure-tutorial-enable-replication.md
+        - name: Выполнение отработки аварийного восстановления для виртуальной машины
+          href: ../site-recovery/azure-to-azure-tutorial-dr-drill.md
+        - name: Отработка отказа виртуальной машины в другой регион
+          href: ../site-recovery/azure-to-azure-tutorial-failover-failback.md
+    - name: Перемещение и миграция виртуальных машин
+      items:
+        - name: Изменение подписки или группы ресурсов
+          items:
+            - name: CLI
+              href: ./linux/move-vm.md
+            - name: PowerShell
+              href: ./windows/move-vm.md
+        - name: Перемещение виртуальных машин в другой регион
+          href: ../site-recovery/azure-to-azure-tutorial-migrate.md
+        - name: Перемещение в зону доступности
+          href: ../site-recovery/move-azure-vms-avset-azone.md
+        - name: Перемещение конфигураций управления обслуживанием в другой регион
+          href: move-region-maintenance-configuration.md
+        - name: Перемещение ресурсов конфигураций управления обслуживанием в другой регион
+          href: move-region-maintenance-configuration-resources.md
+        - name: Миграция AWS и локальных виртуальных машин
+          href: ./windows/on-prem-to-azure.md
+          items:
+            - name: Перенос из Amazon Web Services (AWS) в Azure
+              href: ./windows/aws-to-azure.md
+            - name: Отправка VHD для создания локальной виртуальной машины
+              href: ./linux/upload-vhd.md
+            - name: Использование Azure Site Recovery
+              href: ../site-recovery/migrate-overview.md?context=/azure/virtual-machines/context/context
+- name: Автоматизация инфраструктуры
+  items:
+    - name: Обзор
+      href: infrastructure-automation.md
+    - name: Пользовательские данные
+      href: custom-data.md
+    - name: Ansible
+      items:
+        - name: Установка и настройка.
+          href: /azure/developer/ansible/install-on-linux-vm
+        - name: Создание виртуальной машины Linux
+          href: /azure/developer/ansible/vm-configure
+        - name: Управление виртуальной машиной Linux
+          href: /azure/developer/ansible/vm-manage
+    - name: Terraform
+      items:
+        - name: Установка и настройка.
+          href: /azure/developer/terraform/install-configure
+        - name: Создание готовой виртуальной машины
+          href: /azure/developer/terraform/create-linux-virtual-machine-with-infrastructure
+    - name: Jenkins
+      href: /azure/developer/jenkins/overview
+      items:
+        - name: Создание сервера Jenkins
+          href: /azure/developer/jenkins/configure-on-linux-vm
+        - name: Масштабирование с помощью агентов виртуальных машин
+          href: /azure/developer/jenkins/scale-deployments-using-vm-agents
+        - name: Публикация артефактов в службе хранилища Azure
+          href: /azure/developer/jenkins/azure-storage-blobs-as-build-artifact-repository
+        - name: Обеспечение безопасности в Jenkins
+          href: 'https://jenkins.io/blog/2017/04/20/secure-jenkins-on-azure/'
+    - name: Azure DevOps
+      href: ./linux/tutorial-azure-devops-blue-green-strategy.md
+- name: Диагностика
+  href: ./troubleshooting/index.yml
 - name: Ресурсы
   items:
+    - name: Cloud Adoption Framework
+      href: /azure/cloud-adoption-framework/get-started/
+    - name: Центр архитектуры
+      href: /azure/architecture/
+    - name: 'Майкрософт: вопросы и ответы'
+      href: /answers/topics/azure-virtual-machines.html
+    - name: Шаблоны быстрого запуска Azure
+      href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/#Linux'
+    - name: Доступность по регионам
+      href: 'https://azure.microsoft.com/regions/services/'
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-virtual-machines
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=compute'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Примеры
+      items:
+        - name: "Репозиторий примеров для Azure\_CLI"
+          href: 'https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine'
+        - name: Репозиторий примеров для PowerShell
+          href: 'https://github.com/Azure/azure-docs-powershell-samples/tree/master/virtual-machine'
+    - name: Распространенные команды CLI
+      href: ./linux/cli-manage.md
+    - name: Распространенные команды PowerShell
+      href: ./windows/ps-common-ref.md
+    - name: Распространенные сетевые команды PowerShell
+      href: ./windows/ps-common-network-ref.md
+    - name: Описание шаблона виртуальной машины
+      href: ./windows/template-description.md
+    - name: Классические развертывания
+      items:
+        - name: Виртуальные машины Linux (классическое развертывание)
+          href: /previous-versions/azure/virtual-machines/linux/classic/
+        - name: Виртуальные машины Windows (классическое развертывание)
+          href: /previous-versions/azure/virtual-machines/windows/classic/
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      items:
+        - name: Linux
+          href: ./linux/faq.md
+        - name: Windows
+          href: ./windows/faq.md

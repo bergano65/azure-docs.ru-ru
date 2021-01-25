@@ -4,20 +4,23 @@ description: Дополнительные сведения о предостав
 author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
-ms.reviewer: amberb
+ms.reviewer: andalmia
 ms.topic: conceptual
-ms.date: 08/26/2020
+ms.date: 01/13/2021
 ms.author: banders
-ms.openlocfilehash: c13670df26e5d0f7774b5a2aac81f656de94c960
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 039e728f6518d21ddfb9c7c359a6cf2ec743f232
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844716"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185110"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Предоставление доступа к созданию подписок Azure Enterprise (предварительная версия)
 
 Пользователь Azure на [Соглашение Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/) может предоставлять разрешение другому пользователю или субъекту-службе на создание подписок, оплаченных от имени своей учетной записи. В этой статье рассказывается об использовании [управления доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) для совместного создания подписок и их аудита. Необходима роль владельца для учетной записи, к которой вы хотите предоставить общий доступ.
+
+> [!NOTE]
+> Этот интерфейс API работает только с [предварительными версиями интерфейсов API для создания подписки](programmatically-create-subscription-preview.md). Если вы хотите использовать [общедоступную версию](programmatically-create-subscription-enterprise-agreement.md), используйте последнюю версию API [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Если вы выполняете миграцию для использования новых версий API, необходимо предоставить разрешения владельца для использования [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Предыдущая конфигурация, в которой используются описанные ниже интерфейсы API, не преобразуется автоматически для использования новых версий API.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

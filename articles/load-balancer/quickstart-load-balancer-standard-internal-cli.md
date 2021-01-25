@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 12/19/2020
 ms.author: allensu
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 15060a367bba2d50d7054730321f7f20d4c25e46
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: edf893f1f6ba0691da5764420017282d7a8bde84
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916683"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562817"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -53,6 +53,12 @@ ms.locfileid: "97916683"
 
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
+
+В этом разделе показано, как создать подсистему балансировки нагрузки, которая распределяет нагрузку между виртуальными машинами. 
+
+При создании внутренней подсистемы балансировки нагрузки виртуальная сеть настраивается в качестве сети для подсистемы балансировки нагрузки. 
+
+На следующей схеме показаны ресурсы, созданные при работе с этим кратким руководством:
 
 :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal.png" alt-text="Ресурсы подсистемы балансировки нагрузки ценовой категории &quot;Стандартный&quot;, созданные для работы с этим кратким руководством." border="false":::
 
@@ -316,12 +322,9 @@ az network bastion create \
     --frontend-ip-name myFrontEnd \
     --backend-pool-name myBackEndPool \
     --probe-name myHealthProbe \
-    --disable-outbound-snat true \
     --idle-timeout 15 \
     --enable-tcp-reset true
 ```
->[!NOTE]
->Виртуальные машины во внутреннем пуле не смогут создавать исходящие подключения к Интернету с такой конфигурацией. </br> Дополнительные сведения о включении исходящих подключений см. в следующих статьях: </br> **[Исходящие подключения в Azure](load-balancer-outbound-connections.md)**</br> Варианты обеспечения подключений: </br> **[Конфигурация подсистемы балансировки нагрузки только для исходящего трафика](egress-only.md)** </br> **[Что такое NAT виртуальной сети?](../virtual-network/nat-overview.md)**
 
 ### <a name="add-virtual-machines-to-load-balancer-backend-pool"></a>Добавление виртуальных машин во внутренний пул подсистемы балансировки нагрузки
 
@@ -350,6 +353,12 @@ az network bastion create \
 
 >[!NOTE]
 >Для производственных рабочих нагрузок рекомендуется использовать подсистему балансировки нагрузки ценовой категории "Стандартный". Дополнительные сведения о доступных ценовых категориях см. в статье **[Номера SKU для Azure Load Balancer](skus.md)** .
+
+В этом разделе показано, как создать подсистему балансировки нагрузки, которая распределяет нагрузку между виртуальными машинами. 
+
+При создании внутренней подсистемы балансировки нагрузки виртуальная сеть настраивается в качестве сети для подсистемы балансировки нагрузки. 
+
+На следующей схеме показаны ресурсы, созданные при работе с этим кратким руководством:
 
 :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal-basic.png" alt-text="Ресурсы подсистемы балансировки нагрузки ценовой категории &quot;Базовый&quot;, созданные при работе с этим кратким руководством." border="false":::
 

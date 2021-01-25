@@ -154,9 +154,9 @@
           href: howto-password-ban-bad-on-premises-faq.md
         - name: Журнал версий агента
           href: howto-password-ban-bad-on-premises-agent-versions.md
-    - name: Использование проверки подлинности с помощью SMS (предварительная версия)
+    - name: Использование проверки подлинности на основе SMS
       href: howto-authentication-sms-signin.md
-    - name: Вход с использованием адреса электронной почты (предварительная версия)
+    - name: Вход с использованием адреса электронной почты
       href: howto-authentication-use-email-signin.md
     - name: Смарт-блокировка Azure AD
       href: howto-password-smart-lockout.md

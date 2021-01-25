@@ -50,6 +50,8 @@
           href: create-data-controller-using-azdata.md
         - name: Средства Kubernetes
           href: create-data-controller-using-kubernetes-native-tools.md
+        - name: Применение SCC (OpenShift)
+          href: how-to-apply-security-context-constraint.md
     - name: "Распространенные возможности в службах данных с поддержкой Azure\_Arc"
       items:
         - name: Мониторинг с помощью панелей мониторинга (Azure Data Studio)
@@ -233,4 +235,4 @@
 - name: Ресурсы
   items:
     - name: "Начало работы с Azure\_Arc"
-      href: 'https://github.com/microsoft/azure_arc'
+      href: 'https://azurearcjumpstart.io'

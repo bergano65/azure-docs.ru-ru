@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 946908bf28a50bc8b523c4efd853e8720b115c7b
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: c071cb9a8a27964a93e039e4d1536e078730bfc9
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063082"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753632"
 ---
 # <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>Получение маркера для мобильного приложения, вызывающего веб-API
 
@@ -243,7 +243,7 @@ catch(MsalUiRequiredException)
 
 ##### <a name="withextrascopetoconsent"></a>WithExtraScopeToConsent
 
-Используйте `WithExtraScopeToConsent` Модификатор в расширенном сценарии, в котором пользователь должен предоставить предварительное согласие на несколько ресурсов. Этот модификатор можно использовать, если вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET или Microsoft Identity Platform 2,0. Дополнительные сведения см. в разделе [Получение согласия пользователя на несколько ресурсов заранее](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+Используйте `WithExtraScopeToConsent` Модификатор в расширенном сценарии, в котором пользователь должен предоставить предварительное согласие на несколько ресурсов. Этот модификатор можно использовать, если вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET или платформой идентификации Майкрософт. Дополнительные сведения см. в разделе [Получение согласия пользователя на несколько ресурсов заранее](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
 
 Приведем пример кода:
 
@@ -292,6 +292,6 @@ client_id=<CLIENT_ID>
 &grant_type=authorization_code
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии, [вызвав веб-API](scenario-mobile-call-api.md).

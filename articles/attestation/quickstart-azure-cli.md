@@ -7,16 +7,16 @@ ms.service: attestation
 ms.topic: quickstart
 ms.date: 11/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: fb8b0f12844ce1057bd3cfc4716a32ee64ec5586
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: df1064128d6a4eca8497ebf3ea0c6ae8cd42255c
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937225"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208443"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-cli"></a>Краткое руководство. Настройка службы "Аттестация Azure" с помощью Azure CLI
 
-Приступайте к работе с Аттестацией Azure, настроив аттестацию с помощью Azure CLI.
+Начните работу со [службой "Аттестация Azure" с помощью Azure CLI](/cli/azure/ext/attestation/attestation?view=azure-cli-latest).
 
 ## <a name="get-started"></a>Начало работы
 
@@ -65,7 +65,7 @@ ms.locfileid: "96937225"
 
 Ниже приведены команды, которые можно использовать для создания поставщика аттестации и управления им.
 
-1. Выполните команду [az attestation create](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_create), чтобы создать поставщик аттестации:
+1. Выполните команду [az attestation create](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_create), чтобы создать поставщик аттестации с требованием подписывания политик:
 
    ```azurecli
    az attestation create --name "myattestationprovider" --resource-group "MyResourceGroup" --location westus
@@ -128,7 +128,7 @@ az attestation policy set --name testatt1 --resource-group testrg --attestation-
 
 ```azurecli
 az attestation policy set --name "myattestationprovider" --resource-group "MyResourceGroup" \
---attestation-type SGX-IntelSDK --new-attestation-policy-file "{file_path}" --policy-format JWT
+--attestation-type SGX-IntelSDK -f "{file_path}" --policy-format JWT
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

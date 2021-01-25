@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Документация по QnA Maker
   description: QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на вопросы, сформулированные на естественном языке, сопоставляя их с наиболее точными ответами в разделе вопросов и ответов вашей базы знаний.
-  ms.openlocfilehash: d1236b8a40d43ac5203cd4cac8aa607c925a04d7
-  ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+  ms.openlocfilehash: 6bc5587612a953f2e0bb43765f579adb56fab336
+  ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/09/2020
-  ms.locfileid: "96932733"
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98703393"
 landingContent:
 - title: Сведения о QnA Maker
   linkLists:
@@ -60,9 +60,7 @@ landingContent:
     links:
     - text: Краткое руководство. С использованием Postman или cURL
       url: quickstarts/get-answer-from-knowledge-base-using-url-tool.md
-    - text: Краткое руководство. Использование REST и cURL
-      url: quickstarts/quickstart-rest-curl.md
-    - text: Краткое руководство. Использование пакета SDK
+    - text: Краткое руководство. Использование пакета SDK и REST API
       url: quickstarts/quickstart-sdk.md
   - linkListType: how-to-guide
     links:

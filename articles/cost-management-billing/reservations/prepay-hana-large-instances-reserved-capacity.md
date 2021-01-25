@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: d6d0d0a4c4b3328fa50777b5106bac202c9972ef
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ea1ee2311d8655ce17017c73309bc69e89f4b5f4
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151496"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599119"
 ---
 # <a name="save-on-sap-hana-large-instances-with-an-azure-reservation"></a>Экономия на SAP HANA (крупные экземпляры) благодаря резервированию Azure
 
@@ -224,7 +224,7 @@ armclient get /providers/microsoft.capacity/reservationOrders/22222222-2222-2222
 
   **Reserved Resource type** (Зарезервированный тип ресурса) — `SapHana`.
 
-  **Subscription** (Подписка) — подписка, используемая для оплаты резервирования. Резервирование оплачивается с помощью метода оплаты, указанного для подписки. Нужно выбрать подписку с соглашением Enterprise (номера предложений: MS-AZR-0017P или MS-AZR-0148P) или Клиентским соглашением Майкрософт. Плата вычитается из остатка денежных обязательств (при наличии такового) или относится к избыточным расходам.
+  **Subscription** (Подписка) — подписка, используемая для оплаты резервирования. Резервирование оплачивается с помощью метода оплаты, указанного для подписки. Нужно выбрать подписку с соглашением Enterprise (номера предложений: MS-AZR-0017P или MS-AZR-0148P) или Клиентским соглашением Майкрософт. Плата вычитается из остатка на счете предоплаты Azure (прежнее название — денежное обязательство), при его наличии, или относится к избыточным расходам.
 
   **Scope** (Область) — единственная область резервирования.
 

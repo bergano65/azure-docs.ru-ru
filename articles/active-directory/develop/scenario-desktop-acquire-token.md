@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 040f9fa67617b058138926310706f4bc56c4ff62
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a2048a509bdbe11c948ac8eb2daa6e78013c2fa5
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98680979"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753773"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -439,7 +439,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 
 - Этот поток включен для классических приложений .NET, приложений .NET Core и UWP.
 
-Сведения о согласии см. в разделе [Разрешения и согласие на платформе удостоверений Майкрософт](./v2-permissions-and-consent.md).
+Дополнительные сведения о согласии см. в разделе [разрешения и согласие платформы Microsoft Identity](./v2-permissions-and-consent.md).
 
 ### <a name="learn-how-to-use-it"></a>Сведения об использовании
 

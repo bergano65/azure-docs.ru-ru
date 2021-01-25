@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 34af3a7b6c3dd9420c07b6b29ff114b8139fea39
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 293a8d8b8add37f78e5a900b093ec89e95851aec
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011974"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178642"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -38,7 +38,7 @@ ms.locfileid: "98011974"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Откройте [Регистрация приложений](https://aka.ms/aspnetcore2-1-aad-quickstart-v2) на портале Azure.
+> 1. Перейдите к интерфейсу быстрого запуска <a href="https://aka.ms/aspnetcore2-1-aad-quickstart-v2/" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
 >
@@ -52,11 +52,11 @@ ms.locfileid: "98011974"
 > 1. Найдите и выберите **Azure Active Directory**.
 > 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 > 1. Введите **имя** приложения, например `AspNetCore-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
-> 1. Введите **URI перенаправления** `https://localhost:44321/`
+> 1. Введите **URI перенаправления** `https://localhost:44321/`.
 > 1. Выберите **Зарегистрировать**.
 > 1. В разделе **Управление** выберите **Проверка подлинности**.
-> 1. В разделе **URI перенаправления** выберите **Добавить URI** и введите `https://localhost:44321/signin-oidc`
-> 1. Введите **URL-адрес выхода** `https://localhost:44321/signout-oidc`
+> 1. В разделе **URI перенаправления** выберите **Добавить URI** и введите `https://localhost:44321/signin-oidc`.
+> 1. Введите **URL-адрес выхода** `https://localhost:44321/signout-oidc`.
 > 1. В разделе **Неявное предоставление разрешения** установите флажок **Токены идентификатора**.
 > 1. Щелкните **Сохранить**.
 

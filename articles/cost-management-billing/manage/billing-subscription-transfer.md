@@ -8,15 +8,15 @@ tags: billing,top-support-issue
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/11/2020
+ms.date: 01/06/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: d37225f988cc906bdd92467afcf3f286220eebda
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: ae588708a41c1259628b726a3a471034dba7d131
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027872"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601535"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -72,6 +72,18 @@ ms.locfileid: "97027872"
    1. Ключи доступа для служб, таких как служба хранилища. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../../storage/common/storage-account-create.md).
    1. Учетные данные удаленного доступа для служб, таких как Виртуальные машины Azure.
 1. Если вы работаете с партнером, мы рекомендуем изменить идентификатор партнера для этой подписки. Вы можете обновить идентификатор партнера на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Link a partner ID to your Azure accounts](link-partner-id.md) (Привязка идентификатора партнера к учетной записи Azure).
+
+## <a name="cancel-a-transfer-request"></a>Отмена запроса на перемещение
+
+В один момент времени активным может быть только один запрос на передачу. Запрос на передачу действителен в течение 15 дней. По истечении 15 дней срок действия запроса на передачу истекает.
+
+Чтобы отменить запрос на передачу, сделайте следующее:
+
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Перейдите в раздел **Подписки**, выберите подписку, для которой вы отправили запрос на передачу, щелкните **Передача прав на выставление счетов**.
+1. В нижней части страницы выберите **Отменить запрос на передачу**.
+
+:::image type="content" source="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" alt-text="Пример: окно &quot;Передача прав на выставление счетов&quot; с параметром &quot;Отменить запрос на передачу&quot;" lightbox="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" :::
 
 ## <a name="troubleshooting"></a>Диагностика
 

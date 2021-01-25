@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: 62f4f629e44d317d36e182adb48f8f00b9f1c2b3
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 4665e4240d7563a585b7c224365172d69d7efddf
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063065"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753889"
 ---
 # <a name="how-to-configure-single-sign-on-for-an-application"></a>Настройка единого входа для приложения
 
@@ -31,7 +31,7 @@ ms.locfileid: "98063065"
 
 Для iOS см. раздел [Включение единого входа для нескольких приложений в iOS](../azuread-dev/howto-v1-enable-sso-ios.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Единый вход Azure AD](../manage-apps/what-is-single-sign-on.md)<br>
 
@@ -41,6 +41,6 @@ ms.locfileid: "98063065"
 
 [Интеграция приложений с Azure AD](./quickstart-register-app.md)<br>
 
-[Разрешения и согласие для конечной точки платформы удостоверений Майкрософт](./v2-permissions-and-consent.md)<br>
+[Разрешения и согласие для платформы удостоверений Майкрософт](./v2-permissions-and-consent.md)<br>
 
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

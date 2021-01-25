@@ -1,119 +1,85 @@
-### YamlMime:Hub
-title: Документация по Виртуальным машинам
-summary: Узнайте, как создавать, развертывать и администрировать виртуальные машины Windows и Linux в Azure.
-brand: azure
+### YamlMime:Landing
+title: Виртуальные машины в Azure
+summary: Документация по созданию и администрированию виртуальных машинах в Azure.
 metadata:
-  title: Виртуальные машины Azure
-  description: Узнайте, как создавать, развертывать и администрировать виртуальные машины Windows и Linux в Azure.
+  title: Виртуальные машины в Azure
+  description: Документация по созданию и администрированию виртуальных машинах Linux в Azure.
   services: virtual-machines
   ms.service: virtual-machines
-  ms.topic: hub-page
+  ms.topic: landing-page
   author: cynthn
   ms.author: cynthn
-  ms.date: 02/14/2020
-  ms.openlocfilehash: c9750ddc5c5fba9808c70ba6dbeac03b03ca5227
-  ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+  ms.date: 11/05/2020
+  ms.openlocfilehash: 2672ad70ad76e12870a2a176331e58579443b952
+  ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 01/22/2021
-  ms.locfileid: "98675951"
-highlightedContent:
-  items:
-  - title: Создание виртуальной машины Linux с помощью Azure CLI
-    itemType: quickstart
-    url: ./linux/quick-create-cli.md
-  - title: Создание виртуальной машины Windows с помощью PowerShell
-    itemType: quickstart
-    url: ./windows/quick-create-powershell.md
-  - title: Создание масштабируемого набора виртуальных машин на портале
-    itemType: quickstart
-    url: ../virtual-machine-scale-sets/quick-create-portal.md
-  - title: Точечные виртуальные машины — работайте с нашей неиспользуемой емкостью и обеспечьте значительную экономию.
-    itemType: concept
-    url: ./spot-vms.md
-  - title: Выделенные узлы — физические серверы для размещения одной или более виртуальных машин.
-    itemType: concept
-    url: ./dedicated-hosts.md
-  - title: Группы размещения с учетом расположения — размещение виртуальных машин в ближайшем расположении для уменьшения задержки.
-    itemType: how-to-guide
-    url: ./linux/proximity-placement-groups.md
-conceptualContent:
-  items:
-  - title: Виртуальные машины Linux
+  ms.locfileid: "98702091"
+landingContent:
+- title: Новые возможности
+  linkLists:
+  - linkListType: whats-new
     links:
-    - url: ./linux/endorsed-distros.md
-      itemType: concept
-      text: Рекомендуемые дистрибутивы
-    - url: ./linux/tutorial-manage-disks.md
-      itemType: tutorial
-      text: Создание дисков и управление ими
-    - url: ./linux/image-builder.md
-      itemType: how-to-guide
-      text: Средство создания образов Azure
-    - url: ./troubleshooting/linux-index.yml
-      itemType: how-to-guide
-      text: Устранение неполадок с виртуальными машинами Linux
-    footerLink:
-      url: ./linux/index.yml
-      text: Подробнее
-  - title: Виртуальные машины Windows
+    - text: Точечные виртуальные машины
+      url: spot-vms.md
+    - text: Выделенные узлы
+      url: dedicated-hosts.md
+    - text: Группы размещения близкого взаимодействия
+      url: co-location.md
+- title: Краткие руководства для Linux
+  linkLists:
+  - linkListType: quickstart
     links:
-    - url: ./windows/quick-create-powershell.md
-      itemType: how-to-guide
-      text: Создание виртуальной машины с помощью PowerShell
-    - url: ./windows/tutorial-manage-data-disk.md
-      itemType: tutorial
-      text: Создание дисков и управление ими
-    - url: ../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md?context=%2fazure/virtual-machines/windows/context/windows-vm-context
-      itemType: how-to-guide
-      text: Настройка управляемых удостоверений
-    - url: ./troubleshooting/index.yml
-      itemType: how-to-guide
-      text: Устранение неполадок с виртуальными машинами Windows
-    footerLink:
-      url: ./windows/index.yml
-      text: Подробнее
-  - title: Масштабируемые наборы виртуальных машин
+    - text: Azure CLI
+      url: ./linux/quick-create-cli.md
+    - text: Портал Azure
+      url: ./linux/quick-create-portal.md
+    - text: Azure PowerShell
+      url: ./linux/quick-create-powershell.md
+- title: Краткие руководства для Windows
+  linkLists:
+  - linkListType: quickstart
     links:
-    - url: ../virtual-machine-scale-sets/quick-create-powershell.md
-      itemType: how-to-guide
-      text: Создание масштабируемого набора с помощью PowerShell
-    - url: /previous-versions/azure/virtual-machine-scale-sets/orchestration-modes
-      itemType: concept
-      text: Режимы оркестрации
-    - url: ../virtual-machine-scale-sets/use-spot.md
-      itemType: how-to-guide
-      text: Использование точечных экземпляров
-    footerLink:
-      url: ../virtual-machine-scale-sets/index.yml
-      text: Подробнее
-tools:
-  title: Инструменты
-  summary: Инструменты для работы с виртуальными машинами Azure.
-  items:
-  - title: Azure CLI
-    imageSrc: https://docs.microsoft.com/azure/virtual-machines/linux/media/index/cli.svg
-    url: /cli/azure/vm?view=azure-cli-latest
-  - title: Azure PowerShell
-    imageSrc: https://docs.microsoft.com/azure/virtual-machines/linux/media/index/logo_powershell.svg
-    url: /powershell/module/az.compute#virtual_machines
-  - title: REST API
-    imageSrc: https://docs.microsoft.com/azure/media/index/azure_dev-6.svg
-    url: /rest/api/compute/virtualmachines
-additionalContent:
-  sections:
-  - title: Другие ресурсы
-    summary: Дополнительные ресурсы для работы с виртуальными машинами Azure.
-    items:
-    - title: Обучение
-      links:
-      - text: Обзор модулей обучения
-        url: /learn/browse/?products=azure-virtual-machines
-    - title: Коллекция шаблонов
-      links:
-      - text: Обзор коллекции шаблонов быстрого запуска
-        url: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular
-    - title: Диагностика
-      links:
-      - text: Сведения об устранении ошибок
-        url: ./troubleshooting/index.yml
+    - text: Портал Azure
+      url: ./windows/quick-create-portal.md
+    - text: Azure PowerShell
+      url: ./windows/quick-create-powershell.md
+    - text: Azure CLI
+      url: ./windows/quick-create-cli.md
+- title: Обучение в произвольном темпе
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: " Создание виртуальной машины Linux в Azure"
+      url: /learn/modules/create-linux-virtual-machine-in-azure/
+    - text: " Создание виртуальной машины Windows в Azure"
+      url: /learn/modules/create-windows-virtual-machine-in-azure/
+- title: Устранение неполадок
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Устранение проблем с SSH
+      url: ./troubleshooting/troubleshoot-ssh-connection.md
+    - text: Устранение неполадок с протоколом удаленного рабочего стола
+      url: ./troubleshooting/rdp.md
+    - text: Виртуальная машина Linux не загружается
+      url: ./troubleshooting/boot-error-troubleshoot-linux.md
+    - text: Виртуальная машина Windows не загружается
+      url: /troubleshooting/boot-error-troubleshoot.md
+    - text: 'Майкрософт: вопросы и ответы'
+      url: /answers/topics/azure-virtual-machines.html
+- title: Ресурсы
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Cloud Adoption Framework
+      url: /azure/cloud-adoption-framework/get-started/
+    - text: Центр архитектуры Azure
+      url: /azure/architecture/
+    - text: Шаблоны быстрого запуска Azure
+      url: https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular
+    - text: Цены
+      url: https://azure.microsoft.com/pricing/details/#Linux
+    - text: Доступность по регионам
+      url: https://azure.microsoft.com/regions/services/

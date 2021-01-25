@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 02194bd6122cc97ac9dfd6887c6ae2161182c13a
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 0fbf5c07b2d8fd5d754a46484d6b072cc9b682d6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120433"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599843"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Использование внешних таблиц в Synapse SQL
 
@@ -381,7 +381,7 @@ SELECT TOP 1 * FROM census_external_table
 
 ## <a name="create-and-query-external-tables-from-a-file-in-azure-data-lake"></a>Создание внешних таблиц из файла в Azure Data Lake и запросы по ним
 
-Используя возможности просмотра Data Lake, вы можете создавать внешнюю таблицу и выполнять запросы к ней через выделенный или бессерверный пул SQL, просто щелкнув файл правой кнопкой мыши.
+Используя возможности просмотра Data Lake, вы можете создавать внешнюю таблицу и выполнять запросы к ней через выделенный или бессерверный пул SQL, просто щелкнув файл правой кнопкой мыши. Создание внешних таблиц одним щелчком в учетной записи хранения ADLS 2-го поколения поддерживается только для файлов Parquet. 
 
 ### <a name="prerequisites"></a>Предварительные требования
 

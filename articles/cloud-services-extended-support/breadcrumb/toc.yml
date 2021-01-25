@@ -1,0 +1,11 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Облачные службы (расширенная поддержка)
+      tocHref: /azure/cloud-services-extended-support/
+      topicHref: /azure/cloud-services-extended-support/index
+      items:
+        - name: Облачные службы
+          tocHref: /azure/cloud-services/
+          topicHref: /azure/cloud-services/index

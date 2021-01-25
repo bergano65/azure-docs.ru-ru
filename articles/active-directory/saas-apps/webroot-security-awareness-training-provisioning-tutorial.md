@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 143c1a183ba697cbf5d9b19d7e0868a638650bc8
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: f015718c59178b8094f535280edadd641d22a806
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632018"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741933"
 ---
 # <a name="tutorial-configure-webroot-security-awareness-training-for-automatic-user-provisioning"></a>Руководство по настройке Webroot Security Awareness Training для автоматической подготовки пользователей
 
@@ -157,7 +157,10 @@ ms.locfileid: "98632018"
 
 1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
 2. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).  
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).
+
+## <a name="change-log"></a>Журнал изменений
+* 21.01.2021 — добавлена поддержка для основного атрибута "userName" для пользователей.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

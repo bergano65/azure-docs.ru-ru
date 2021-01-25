@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: rest-api
 ms.topic: quickstart
-ms.date: 06/10/2019
+ms.date: 01/18/2021
 ms.author: jingwang
-ms.openlocfilehash: 48928c5c4f3a2787e8f00e4084daacf6a64f1ea7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 34a2e423e06782b0d43766cccac9319ce68239d4
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461575"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569476"
 ---
 # <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Краткое руководство. Создание фабрики данных Azure и конвейера с помощью REST API
 
@@ -303,7 +303,7 @@ $response | ConvertTo-Json
 ```
 ## <a name="create-pipeline"></a>Создание конвейера
 
-В этом примере этот конвейер содержит одно действие и принимает два параметра: путь входного и выходного большого двоичного объекта. Значения для этих параметров устанавливаются при активации или выполнении конвейера. Действие копирования ссылается на тот же набор данных большого двоичного объекта, который был создан на предыдущем шаге, в качестве входного и выходного. Если набор данных используется в качестве входного, указывается путь к входным данным. И если набор данных используется в качестве выходного, указывается путь к выходным данным.
+В нашем примере конвейер содержит одно действие Copy. Действие Copy ссылается на наборы данных InputDataset и OutputDataset, созданные на предыдущем шаге.
 
 ```powershell
 $request = "https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.DataFactory/factories/${dataFactoryName}/pipelines/Adfv2QuickStartPipeline?api-version=${apiVersion}"
@@ -383,10 +383,7 @@ $response | ConvertTo-Json
 
 ## <a name="create-pipeline-run"></a>Создание конвейера
 
-В этом шаге параметрам **inputPath** и **outputPath** задаются значения, указываемые в конвейере с фактическими значениями путей большого двоичного объекта источника и приемника, а также активируется конвейер. Идентификатор контейнера, возвращаемый в теле ответа, используется позже при мониторинге API.
-
-Замените значения **inputPath** и **outputPath** своими путями к источнику и приемнику больших двоичных объектов для копирования данных до сохранения файла.
-
+На этом шаге вы активируете выполнение конвейера. Идентификатор контейнера, возвращаемый в теле ответа, используется позже при мониторинге API.
 
 ```powershell
 $request = "https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.DataFactory/factories/${factoryName}/pipelines/Adfv2QuickStartPipeline/createRun?api-version=${apiVersion}"

@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 4dd22427038bc7c4052ee714c3ec3ce45d7a1837
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: fc9b6c4edc5d08c30b1eadb5084155b10d0e55a3
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132828"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601506"
 ---
 # <a name="how-to-optimize-your-cloud-investment-with-azure-cost-management"></a>Как оптимизировать инвестиции в облако с помощью службы "Управление затратами Azure"
 
@@ -103,7 +103,7 @@ Azure предоставляет средства, помогающие с пр�
 
 #### <a name="enterprise-agreement"></a>[Соглашение Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/)
 
-- Варианты для предварительных денежных обязательств.
+- Варианты предоплаты Azure (прежнее название — денежное обязательство)
 - Доступ к сниженным ценам на предложения Azure.
 
 #### <a name="azure-in-csp"></a>[Azure в CSP](https://azure.microsoft.com/offers/ms-azr-0145p/)

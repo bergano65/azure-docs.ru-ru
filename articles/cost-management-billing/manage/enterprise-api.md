@@ -8,19 +8,19 @@ ms.subservice: enterprise
 ms.topic: reference
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: b78b046e2991fa4ebfb575e4f6a1cc900df0d298
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
+ms.openlocfilehash: a1c420eed89b7b45ea6c50345737b8615f39ad8c
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686910"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602071"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Обзор API- интерфейсов отчетов для корпоративных клиентов
 
 > [!Note]
 > Корпорация Майкрософт больше не обновляет API-интерфейсы для корпоративной отчетности (выставление счетов). Вместо них используйте интерфейсы API [потребления ресурсов Azure](/rest/api/consumption).
 
-Интерфейсы API отчетов позволяют корпоративным клиентам Azure извлекать данные о потреблении и выставлении счетов программным способом и передавать их в предпочитаемые средства анализа данных. Клиенты, которые принадлежат к типу Enterprise, подписали [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) с Azure и тем самым приняли согласованные денежные обязательства, и получили доступ к пользовательским тарифам на ресурсы Azure.
+Интерфейсы API отчетов позволяют корпоративным клиентам Azure извлекать данные о потреблении и выставлении счетов программным способом и передавать их в предпочитаемые средства анализа данных. Клиенты, которые подписали [Соглашение Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) с Azure и тем самым согласовали предоплату Azure (прежнее название — денежное обязательство) и получили доступ к пользовательским тарифам на ресурсы Azure.
 
 Все параметры даты и времени, используемые API, должны быть представлены в виде значений времени в формате UTC. Значения, возвращаемые API, отображаются в формате UTC.
 

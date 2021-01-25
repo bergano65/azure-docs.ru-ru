@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 8ae5bcf103bbb2d2b952fa647ba591e49002f2ff
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: c6c09dc771692cb2fc2f36840e729874cfaf2d09
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921613"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572822"
 ---
 # <a name="basic-concepts"></a>Основные понятия
 
@@ -28,9 +28,7 @@ ms.locfileid: "96921613"
 
 ## <a name="attestation-provider"></a>Поставщик аттестации
 
-Поставщик аттестации относится к поставщику ресурсов Azure с именем Microsoft.Attestation. Поставщик ресурсов — это конечная точка службы, которая предоставляет контракт Аттестации Azure с поддержкой REST и развертывается с помощью [Azure Resource Manager](../azure-resource-manager/management/overview.md). Каждый поставщик аттестации обеспечивает соблюдение определенной политики с поддержкой обнаружения. 
-
-Поставщики аттестации с политикой по умолчанию создаются для каждого типа аттестации (обратите внимание, что для анклав VBS не имеет политики по умолчанию). Дополнительные сведения о политике по умолчанию для SGX см. в разделе с [примерами политик аттестации](policy-examples.md).
+Поставщик аттестации относится к поставщику ресурсов Azure с именем Microsoft.Attestation. Поставщик ресурсов — это конечная точка службы, которая предоставляет контракт Аттестации Azure с поддержкой REST и развертывается с помощью [Azure Resource Manager](../azure-resource-manager/management/overview.md). Каждый поставщик аттестации обеспечивает соблюдение определенной политики с поддержкой обнаружения. Поставщики аттестации с политикой по умолчанию создаются для каждого типа аттестации (обратите внимание, что для анклав VBS не имеет политики по умолчанию). Дополнительные сведения о политике по умолчанию для SGX см. в разделе с [примерами политик аттестации](policy-examples.md).
 
 ### <a name="regional-default-provider"></a>Региональный поставщик по умолчанию
 
@@ -38,11 +36,16 @@ ms.locfileid: "96921613"
 
 | Регион | URI для аттестации | 
 |--|--|
+| Восточная часть США | `https://sharedeus.eus.attest.azure.net` | 
+| западная часть США | `https://sharedwus.wus.attest.azure.net` | 
 | южная часть Соединенного Королевства | `https://shareduks.uks.attest.azure.net` | 
+| западная часть Соединенного Королевства| `https://sharedukw.ukw.attest.azure.net  ` | 
+| Восточная Канада | `https://sharedcae.cae.attest.azure.net` | 
+| Центральная Канада | `https://sharedcac.cac.attest.azure.net` | 
+| Северная Европа | `https://sharedneu.neu.attest.azure.net` | 
+| Западная Европа| `https://sharedweu.weu.attest.azure.net` | 
 | Восточная часть США 2 | `https://sharedeus2.eus2.attest.azure.net` | 
 | Центральная часть США | `https://sharedcus.cus.attest.azure.net` | 
-| Восточная часть США| `https://sharedeus.eus.attest.azure.net` | 
-| Центральная Канада | `https://sharedcac.cac.attest.azure.net` | 
 
 ## <a name="attestation-request"></a>Запрос на аттестацию
 
@@ -58,7 +61,7 @@ ms.locfileid: "96921613"
 
 Если политика по умолчанию в поставщике аттестации не соответствует требованиям, клиенты смогут создавать пользовательские политики в любом из регионов, поддерживаемых Аттестацией Azure. Управление политиками — это ключевая возможность для клиентов, предоставляемая Аттестацией Azure. Политики зависят от конкретного типа аттестации и могут применяться для идентификации анклавов, добавления утверждений в исходящие токены или изменения уже включенных в них утверждений. 
 
-Содержимое стандартных политики и примеры использования см. [здесь](policy-examples.md).
+Примеры политик см. в статье [Примеры политики аттестации](policy-examples.md).
 
 ## <a name="benefits-of-policy-signing"></a>Преимущества подписывания политик
 
@@ -80,25 +83,55 @@ API получения метаданных OpenID возвращает отве
 
 ```
 {
-  “alg”: “RS256”,
-  “jku”: “https://tradewinds.us.attest.azure.net/certs”,
-  “kid”: “f1lIjBlb6jUHEUp1/Nh6BNUHc6vwiUyMKKhReZeEpGc=”,
-  “typ”: “JWT”
+  "alg": "RS256",
+  "jku": "https://tradewinds.us.attest.azure.net/certs",
+  "kid": <self signed certificate reference to perform signature verification of attestation token,
+  "typ": "JWT"
 }.{
-  “maa-ehd”: <input enclave held data>,
-  “exp”: 1568187398,
-  “iat”: 1568158598,
-  “is-debuggable”: false,
-  “iss”: “https://tradewinds.us.attest.azure.net”,
-  “nbf”: 1568158598,
-  “product-id”: 4639,
-  “sgx-mrenclave”: “”,
-  “sgx-mrsigner”: “”,
-  “svn”: 0,
-  “tee”: “sgx”
+  "aas-ehd": <input enclave held data>,
+  "exp": 1568187398,
+  "iat": 1568158598,
+  "is-debuggable": false,
+  "iss": "https://tradewinds.us.attest.azure.net",
+  "maa-attestationcollateral": 
+    {
+      "qeidcertshash": <SHA256 value of QE Identity issuing certs>,
+      "qeidcrlhash": <SHA256 value of QE Identity issuing certs CRL list>,
+      "qeidhash": <SHA256 value of the QE Identity collateral>,
+      "quotehash": <SHA256 value of the evaluated quote>, 
+      "tcbinfocertshash": <SHA256 value of the TCB Info issuing certs>, 
+      "tcbinfocrlhash": <SHA256 value of the TCB Info issuing certs CRL list>, 
+      "tcbinfohash": <SHA256 value of the TCB Info collateral>
+     },
+  "maa-ehd": <input enclave held data>,
+  "nbf": 1568158598,
+  "product-id": 4639,
+  "sgx-mrenclave": <SGX enclave mrenclave value>,
+  "sgx-mrsigner": <SGX enclave msrigner value>,
+  "svn": 0,
+  "tee": "sgx"
+  "x-ms-attestation-type": "sgx", 
+  "x-ms-policy-hash": <>,
+  "x-ms-sgx-collateral": 
+    {
+      "qeidcertshash": <SHA256 value of QE Identity issuing certs>,
+      "qeidcrlhash": <SHA256 value of QE Identity issuing certs CRL list>,
+      "qeidhash": <SHA256 value of the QE Identity collateral>,
+      "quotehash": <SHA256 value of the evaluated quote>, 
+      "tcbinfocertshash": <SHA256 value of the TCB Info issuing certs>, 
+      "tcbinfocrlhash": <SHA256 value of the TCB Info issuing certs CRL list>, 
+      "tcbinfohash": <SHA256 value of the TCB Info collateral>
+     },
+  "x-ms-sgx-ehd": <>, 
+  "x-ms-sgx-is-debuggable": true,
+  "x-ms-sgx-mrenclave": <SGX enclave mrenclave value>,
+  "x-ms-sgx-mrsigner": <SGX enclave msrigner value>, 
+  "x-ms-sgx-product-id": 1, 
+  "x-ms-sgx-svn": 1,
+  "x-ms-ver": "1.0"
 }.[Signature]
 ```
-Некоторые утверждения, например exp, iat, iss и nbf, определены в стандарте [JWT RFC](https://tools.ietf.org/html/rfc7517), а остальные создаются Аттестацией Azure. См. [описание утверждений, создаваемых Аттестацией Azure](claim-sets.md).
+Некоторые из использованных выше утверждений считаются нерекомендуемыми, но полностью поддерживаются.  Но мы не советуем в будущем коде и инструментах использовать нерекомендуемые имена утверждений. См. [описание утверждений, создаваемых Аттестацией Azure](claim-sets.md).
 
 ## <a name="encryption-of-data-at-rest"></a>Шифрование неактивных данных
 

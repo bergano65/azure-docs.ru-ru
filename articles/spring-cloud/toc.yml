@@ -71,6 +71,8 @@
           href: spring-cloud-howto-launch-from-source.md
         - name: Использование IntelliJ для развертывания приложений
           href: spring-cloud-tutorial-intellij-deploy-apps.md
+        - name: Развертывание приложений с помощью VS Code
+          href: 'https://code.visualstudio.com/docs/java/java-spring-cloud'
         - name: "Развертывание Azure Spring Cloud с помощью Azure\_PowerShell"
           href: spring-cloud-howto-deploy-powershell.md
     - name: Configure

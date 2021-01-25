@@ -1,5 +1,6 @@
 ---
-title: Регистрация классических приложений, вызывающих веб-API, платформы Microsoft Identity | Службы
+title: Регистрация классических приложений, вызывающих веб-API | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать классическое приложение, вызывающее веб-API (регистрация приложений)
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c769fd86f432d135542c1f09b83ea5a01c6ab0a6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 46c8127a93cef8f662930fffd07a2fa3d22b8871
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250610"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753718"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Классическое приложение, вызывающее веб-API: регистрация приложения
 
@@ -57,6 +58,6 @@ URI перенаправления для использования в клас
 
 Классические приложения вызывают интерфейсы API для пользователя, выполнившего вход. Они должны запрашивать делегированные разрешения. Они не могут запрашивать разрешения приложения, которые обрабатываются только в [управляющих приложениях](scenario-daemon-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии: [Конфигурация кода приложения](scenario-desktop-app-configuration.md).

@@ -3,12 +3,12 @@ title: Выполнение пакетной службой Azure больших
 description: Узнайте об использовании пакетной службы Azure для крупномасштабных параллельных рабочих нагрузок и рабочих нагрузок HPC.
 ms.topic: overview
 ms.date: 07/30/2020
-ms.openlocfilehash: 93dcf19b3b6af0f369fe19b7823bf43d597a9c21
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: dbd27dc1a00966a2d71952335cfb47c7ca55bc24
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106654"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743106"
 ---
 # <a name="what-is-azure-batch"></a>Что такое пакетная служба Azure?
 
@@ -74,6 +74,9 @@ ms.locfileid: "97106654"
 Помните, что описанный выше рабочий процесс является одним из способов использования пакетной службы и что есть много других возможностей и вариантов. Например, можно выполнить [несколько задач параллельно](batch-parallel-node-tasks.md) на каждом вычислительном узле. Кроме того, для подготовки узлов для заданий и последующей очистки [можно использовать подготовку заданий и выполнение задач](batch-job-prep-release.md).
 
 В статье [Рабочий процесс и ресурсы пакетной службы](batch-service-workflow-features.md) описаны такие концепции, как пулы, узлы, задания и задачи. Также см. последние [обновления пакетной службы](https://azure.microsoft.com/updates/?product=batch).
+
+## <a name="in-region-data-residency"></a>Место расположения данных в регионе
+Пакетная служба Azure не перемещает и не хранит данные клиентов за пределами региона, в котором она развернута. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

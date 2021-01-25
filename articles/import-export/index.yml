@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Документация по службе "Импорт и экспорт Azure"
+summary: Служба "Импорт и экспорт Azure" обеспечивает безопасный импорт больших объемов данных в Хранилище BLOB-объектов Azure и службу "Файлы Azure" путем отправки дисков в центр обработки данных Azure.
+metadata:
+  title: Документация по службе "Импорт и экспорт Azure"
+  description: Документация по службе "Импорт и экспорт Azure", которая поможет выполнять безопасный импорт и экспорт больших объемов данных в центры обработки данных Azure и из них путем доставки физических дисков.
+  services: storage
+  ms.service: storage
+  ms.subservice: storage
+  ms.topic: landing-page
+  ms.collection: collection
+  author: v-dalc
+  ms.author: alkohli
+  ms.date: 01/08/201
+  ms.openlocfilehash: fe86eab66b0f03cb23072a7a34c4be161ca4fb38
+  ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/23/2021
+  ms.locfileid: "98725743"
+landingContent:
+- title: Сведения о службе "Импорт и экспорт Azure"
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет служба "Импорт и экспорт"?
+      url: storage-import-export-service.md
+  - linkListType: architecture
+    links:
+    - text: Выбор вариантов перемещения данных
+      url: /azure/storage/common/storage-choose-data-transfer-solution
+    - text: Использование передачи данных по сети или вне сети
+      url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
+- title: Требования
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Требования
+      url: storage-import-export-requirements.md
+    - text: ВОПРОСЫ И ОТВЕТЫ
+      url: storage-import-export-service-faq.md
+- title: Развертывание
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Импорт данных в большие двоичные объекты
+      url: storage-import-export-data-to-blobs.md
+    - text: Импорт данных в файлы
+      url: storage-import-export-data-to-files.md
+    - text: Экспорт данных из больших двоичных объектов
+      url: storage-import-export-data-from-blobs.md
+  - linkListType: learn
+    links:
+    - text: Экспорт данных в автономном режиме с помощью службы "Импорт и экспорт"
+      url: /learn/modules/export-data-with-azure-import-export/
+- title: Azure Monitor
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр состояния диска
+      url: storage-import-export-view-drive-status.md
+    - text: Просмотр состояния задания
+      url: storage-import-export-tool-reviewing-job-status-v1.md
+- title: Диагностика
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Диагностика
+      url: storage-import-export-contact-microsoft-support.md
+    - text: Обращение в службу поддержки
+      url: storage-import-export-contact-microsoft-support.md

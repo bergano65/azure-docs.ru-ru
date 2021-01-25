@@ -1,5 +1,6 @@
 ---
-title: Настройка веб-приложения, которое входит в систему пользователей — платформа Microsoft Identity | Службы
+title: Настройка веб-приложения, которое входит в систему пользователей | Службы
+titleSuffix: Microsoft identity platform
 description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (конфигурация кода)
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: dad7b0563fd1ca0dbf60403bc6172e7616e278b2
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 45f3a066283a921f60909a4aa3cfdc76f3faad06
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443659"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753272"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое входит в систему пользователей: конфигурация кода
 
@@ -29,7 +30,7 @@ ms.locfileid: "94443659"
 
 | Платформа | Библиотека | Описание |
 |----------|---------|-------------|
-| ![.NET](media/sample-v2-code/logo_NET.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | По ASP.NET и ASP.NET Core, расширения модели идентификации Майкрософт для .NET предлагают набор библиотек DLL, выполняющихся как в .NET Framework, так и в .NET Core. Из веб-приложения ASP.NET или ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях партнеров). На практике сложность инкапсулирована в библиотеке [Microsoft. Identity. Web](https://aka.ms/ms-identity-web) . |
+| ![.NET](media/sample-v2-code/logo_NET.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | По ASP.NET и ASP.NET Core, расширения модели идентификации Майкрософт для .NET предлагают набор библиотек DLL, выполняющихся как в платформа .NET Framework, так и в .NET Core. Из веб-приложения ASP.NET или ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях партнеров). На практике сложность инкапсулирована в библиотеке [Microsoft. Identity. Web](https://aka.ms/ms-identity-web) . |
 | ![Java](media/sample-v2-code/small_logo_java.png) | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | Поддержка веб-приложений Java |
 | ![Python](media/sample-v2-code/small_logo_python.png) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | Поддержка веб-приложений Python |
 
@@ -202,7 +203,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 
 ## <a name="initialization-code"></a>Код инициализации
 
-Код инициализации различается в зависимости от платформы. Для ASP.NET Core и ASP.NET при входе в систему пользователи делегируются по промежуточного слоя OpenID Connect Connect. Шаблон ASP.NET или ASP.NET Core создает веб-приложения для конечной точки Azure Active Directory (Azure AD) v 1.0. Для адаптации их к конечной точке платформы Microsoft Identity Platform (v 2.0) требуется определенная конфигурация. В случае с Java оно обрабатывается пружиной с совместным использованием приложения.
+Код инициализации различается в зависимости от платформы. Для ASP.NET Core и ASP.NET при входе в систему пользователи делегируются по промежуточного слоя OpenID Connect Connect. Шаблон ASP.NET или ASP.NET Core создает веб-приложения для конечной точки Azure Active Directory (Azure AD) v 1.0. Для адаптации к платформе Microsoft Identity требуется определенная конфигурация. В случае с Java оно обрабатывается пружиной с совместным использованием приложения.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -262,7 +263,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 - `AddMicrosoftIdentityWebAppAuthentication`Метод расширения определен в **Microsoft. Identity. Web**. Им
   - Добавляет службу проверки подлинности.
   - Настраивает параметры для чтения файла конфигурации (здесь из раздела "AzureAD").
-  - Настраивает параметры OpenID Connect Connect, чтобы центр сертификации был конечной точкой платформы Microsoft Identity.
+  - Настраивает параметры OpenID Connect Connect, чтобы центр сертификации был платформой Microsoft Identity.
   - Проверяет издателя маркера.
   - Гарантирует, что утверждения, соответствующие имени, сопоставляются с `preferred_username` утверждением в маркере идентификации.
 
@@ -291,7 +292,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
   app.UseOpenIdConnectAuthentication(
     new OpenIdConnectAuthenticationOptions
     {
-     // `Authority` represents the identity platform endpoint - https://login.microsoftonline.com/common/v2.0.
+     // Authority` represents the identity platform endpoint - https://login.microsoftonline.com/common/v2.0.
      // `Scope` describes the initial permissions that your app will need.
      //  See https://azure.microsoft.com/documentation/articles/active-directory-v2-scopes/.
      ClientId = clientId,
@@ -316,7 +317,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 > [!NOTE]
 > Код `doFilter()` написан немного иначе, но последовательность описана в этом порядке.
 
-Дополнительные сведения о потоке кода авторизации, который запускается этим методом, см. в [статье поток кода авторизации платформы Microsoft Identity и OAuth 2,0](v2-oauth2-auth-code-flow.md).
+Дополнительные сведения о потоке кода авторизации, который запускается этим методом, см. в [статье поток кода авторизации для платформы Microsoft Identity и OAuth 2,0](v2-oauth2-auth-code-flow.md).
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -338,7 +339,7 @@ Session(app)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующей статье вы узнаете, как активировать вход и выход.
 

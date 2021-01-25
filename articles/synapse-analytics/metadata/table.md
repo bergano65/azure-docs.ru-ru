@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9ee18edd563d94a85dedf48b7a4d6df394c09707
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b93addfe659847187dffe61f12f5a2bfac9dca21
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461383"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209633"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Таблицы общих метаданных Azure Synapse Analytics
 
@@ -32,7 +32,7 @@ Azure Synapse Analytics позволяет различным вычислите
 
 Используйте Spark для управления созданными в Spark базами данных. Например, можно удалить таблицу из задания бессерверного пула Apache Spark или создать в ней таблицы средствами Spark.
 
-Если вы создадите в такой базе данных объекты, используя бессерверный пул SQL, или попытаетесь удалить эту базу данных, операция будет выполнена успешно, но это никак не отразится на исходной базе данных Spark.
+Если вы создадите объекты в такой базе данных из бессерверного пула SQL или попытаетесь удалить базу данных, операция завершится ошибкой. Исходную базу данных Spark нельзя изменить с помощью бессерверного пула SQL.
 
 ## <a name="expose-a-spark-table-in-sql"></a>Предоставление таблицы Spark в SQL
 

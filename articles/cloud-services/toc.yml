@@ -1,8 +1,8 @@
-- name: Документация по Облачным службам
+- name: Документация по Облачным службам (классическая версия)
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Облачные службы
+    - name: Что такое Облачные службы (классическая версия)?
       href: cloud-services-choose-me.md
     - name: Упаковка и файлы конфигурации облачной службы
       href: cloud-services-model-and-package.md

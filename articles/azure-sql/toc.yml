@@ -973,6 +973,8 @@
           href: managed-instance/virtual-cluster-delete.md
         - name: Настройка пользовательской службы DNS
           href: managed-instance/custom-dns-configure.md
+        - name: Синхронизация конфигурации DNS
+          href: managed-instance/synchronize-vnet-dns-servers-setting-on-virtual-cluster.md
         - name: Синхронизация конфигурации сети
           href: managed-instance/azure-app-sync-network-configuration.md
         - name: Определение IP-адреса конечной точки управления

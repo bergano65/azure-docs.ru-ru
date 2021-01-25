@@ -7,40 +7,50 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 252026f7c59f73dfb37f69d7708a80be827ce104
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 51e8f01726c732604199ff08323f073d508da66e
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748796"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602318"
 ---
 # <a name="examples-of-an-attestation-policy"></a>Примеры политики аттестации
 
 Политика аттестации используется для обработки свидетельств аттестации и определения того, будет ли Аттестация Azure выдавать токен аттестации. Созданием токенов аттестации можно управлять с помощью настраиваемых политик. Ниже приведены некоторые примеры политики аттестации.
 
-## <a name="default-policy-for-an-sgx-enclave-with-policyformattext"></a>Политика для анклава SGX по умолчанию с PolicyFormat=Text
+## <a name="default-policy-for-an-sgx-enclave"></a>Политика по умолчанию для анклава SGX 
 
 ```
-Version= 1.0;
+version= 1.0;
 authorizationrules
 {
-    c:[type==”$is-debuggable”] => permit();
+    c:[type=="$is-debuggable"] => permit();
 };
+
 issuancerules
 {
-    c:[type==”$is-debuggable”] => issue(type=”is-debuggable”, value=c.value);
-    c:[type==”$sgx-mrsigner”] => issue(type=”sgx-mrsigner”, value=c.value);
-    c:[type==”$sgx-mrenclave”] => issue(type=”sgx-mrenclave”, value=c.value);
-    c:[type==”$product-id”] => issue(type=”product-id”, value=c.value);
-    c:[type==”$svn”] => issue(type=”svn”, value=c.value);
-    c:[type==”$tee”] => issue(type=”tee”, value=c.value);
+    c:[type=="$is-debuggable"] => issue(type="is-debuggable", value=c.value);
+    c:[type=="$sgx-mrsigner"] => issue(type="sgx-mrsigner", value=c.value);
+    c:[type=="$sgx-mrenclave"] => issue(type="sgx-mrenclave", value=c.value);
+    c:[type=="$product-id"] => issue(type="product-id", value=c.value);
+    c:[type=="$svn"] => issue(type="svn", value=c.value);
+    c:[type=="$tee"] => issue(type="tee", value=c.value);
 };
 ```
 
-## <a name="default-policy-for-vbs-enclave"></a>Политика по умолчанию для анклава VBS
+## <a name="sample-custom-policy-for-an-sgx-enclave"></a>Пример пользовательской политики по умолчанию для анклава SGX 
 
-Отсутствие политики по умолчанию для анклава VBS
-
+```
+version= 1.0;
+authorizationrules
+{
+       [ type=="x-ms-sgx-is-debuggable", value==false ]
+        && [ type=="x-ms-sgx-product-id", value==<product-id> ]
+        && [ type=="x-ms-sgx-svn", value>= 0 ]
+        && [ type=="x-ms-sgx-mrsigner", value=="<mrsigner>"]
+    => permit();
+};
+```
 
 ## <a name="unsigned-policy-for-an-sgx-enclave-with-policyformatjwt"></a>Неподписанная политика для анклава SGX с PolicyFormat=JWT
 

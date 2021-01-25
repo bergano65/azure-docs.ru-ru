@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: e055287f069c477318a54aedf3d9a2fe22343367
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: bcbff131706854c079a5af2f38cad98f97018167
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509161"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753318"
 ---
 # <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает веб-API. Конфигурация кода
 
@@ -175,7 +175,7 @@ ms.locfileid: "97509161"
    }
    ```
 
-### <a name="summary"></a>Итоги
+### <a name="summary"></a>Сводка
 
 Как и в случае с веб-API, можно выбрать различные реализации кэша маркеров. Дополнительные сведения см. в [статье сериализация кэша маркеров в Microsoft. Identity. Web](https://aka.ms/ms-id-web/token-cache-serialization) .
 

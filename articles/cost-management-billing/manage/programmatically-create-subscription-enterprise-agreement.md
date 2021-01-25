@@ -5,16 +5,16 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 01/13/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 0cdd25b2937dd1fb2cc70ef7b1c5a9e9ddaef375
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: bd155ea3c98231cf20fa7c62325e3c2ecfb89920
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780626"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185926"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Программное создание подписок Azure для Соглашения Enterprise с помощью новейших API
 
@@ -31,7 +31,9 @@ ms.locfileid: "96780626"
 Для создания подписки необходимо иметь роль владельца учетной записи регистрации. Ее можно получить двумя способами.
 
 * Администратор регистрации, отвечающий за вашу регистрацию, [может назначить роль владельца учетной записи](https://ea.azure.com/helpdocs/addNewAccount) (требуется вход в систему), что сделает вас владельцем учетной записи регистрации.
-* Текущий владелец учетной записи регистрации может [предоставить вам права доступа](grant-access-to-create-subscription.md). Аналогично, чтобы использовать субъект-службу для создания подписки с EA, необходимо [предоставить ему возможность создания подписки](grant-access-to-create-subscription.md).
+* Текущий владелец учетной записи регистрации может [предоставить вам права доступа](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Аналогично, чтобы использовать субъект-службу для создания подписки с EA, необходимо [предоставить ему возможность создания подписки](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). 
+  > [!NOTE]
+  > Убедитесь, что вы используете правильную версию API, чтобы предоставить учетной записи регистрации права владельца. При изучении этой статьи и для интерфейсов API, приведенных в ней, используйте API версии [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Если вы выполняете миграцию для использования новых версий API, необходимо предоставить разрешение владельца для использования [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Предыдущая конфигурация, выполненная с помощью [версии 2015-07-01](grant-access-to-create-subscription.md), не преобразуется автоматически для использования новых версий API.
 
 ## <a name="find-accounts-you-have-access-to"></a>Поиск учетных записей, к которым у вас есть доступ
 

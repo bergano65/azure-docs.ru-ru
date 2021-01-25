@@ -1,14 +1,14 @@
 ---
 title: Общие сведения о Политике Azure
 description: "\"Политика Azure\" — это служба в Azure, которая используется для создания, присваивания определений политик, а также управления ими в среде Azure."
-ms.date: 10/05/2020
+ms.date: 01/14/2021
 ms.topic: overview
-ms.openlocfilehash: 96fd29b5e3d24bc3e678461a95005e004a8a3a80
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: df430586af2e701ec2881f6ea760095fd2ca79d0
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803958"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220734"
 ---
 # <a name="what-is-azure-policy"></a>Что такое служба "Политика Azure"?
 
@@ -83,7 +83,7 @@ Azure RBAC контролирует [действия](../../role-based-access-c
 
 ### <a name="resources-covered-by-azure-policy"></a>Какие ресурсы охватывает Политика Azure
 
-Политика Azure оценивает все ресурсы в Azure и ресурсы с поддержкой Arc. Для некоторых поставщиков ресурсов, таких как [гостевая конфигурация](./concepts/guest-configuration.md), [Служба Azure Kubernetes](../../aks/intro-kubernetes.md) и [Azure Key Vault](../../key-vault/general/overview.md), поддерживается более глубокая интеграция для управления параметрами и объектами. См. сведения о [режимах поставщиков ресурсов](./concepts/definition-structure.md).
+Политика Azure оценивает все ресурсы Azure на уровне подписки или ниже, включая ресурсы с поддержкой Arc. Для некоторых поставщиков ресурсов, таких как [гостевая конфигурация](./concepts/guest-configuration.md), [Служба Azure Kubernetes](../../aks/intro-kubernetes.md) и [Azure Key Vault](../../key-vault/general/overview.md), поддерживается более глубокая интеграция для управления параметрами и объектами. См. сведения о [режимах поставщиков ресурсов](./concepts/definition-structure.md).
 
 ### <a name="recommendations-for-managing-policies"></a>Рекомендации по управлению политиками
 

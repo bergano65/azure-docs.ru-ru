@@ -4,14 +4,14 @@ titleSuffix: Azure Kubernetes Service
 description: Узнайте, как быстро создать кластер Kubernetes, развертывать приложение и отслеживать производительность в Службе Azure Kubernetes (AKS) с помощью портала Azure.
 services: container-service
 ms.topic: quickstart
-ms.date: 10/06/2020
+ms.date: 01/13/2021
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: f4cbfb78ec0900e757683fff35403dfcbd38b391
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 9304d3ee3cac364bfec3f2686de0cf84fb1d7d92
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97824683"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249131"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure
 
@@ -68,6 +68,9 @@ ms.locfileid: "97824683"
 Откройте Cloud Shell с помощью кнопки `>_` в верхней части портала Azure.
 
 ![Открытие Azure Cloud Shell на портале](media/kubernetes-walkthrough-portal/aks-cloud-shell.png)
+
+> [!NOTE]
+> Чтобы выполнить эти операции в локальной оболочке, необходимо сначала проверить наличие Azure CLI в системе, а затем подключиться к Azure с помощью команды `az login`.
 
 Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования. В следующем примере возвращаются учетные данные для имени кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
@@ -278,7 +281,7 @@ az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
 
 <!-- LINKS - internal -->
 [kubernetes-concepts]: concepts-clusters-workloads.md
-[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
+[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-get-credentials
 [az-aks-delete]: /cli/azure/aks#az-aks-delete
 [aks-monitor]: ../azure-monitor/insights/container-insights-overview.md
 [aks-network]: ./concepts-network.md

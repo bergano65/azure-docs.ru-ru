@@ -5,9 +5,9 @@
   items:
     - name: Что собой представляет Когнитивный поиск?
       href: search-what-is-azure-search.md
-    - name: Функции в Когнитивном поиске
+    - name: Список функций
       href: search-features-list.md
-    - name: Новые возможности Когнитивного поиска
+    - name: Новые возможности в службе "Поиск"
       href: whats-new.md
 - name: Краткие руководства
   items:

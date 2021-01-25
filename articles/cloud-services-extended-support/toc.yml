@@ -1,0 +1,97 @@
+- name: Документация по Облачным службам (расширенная поддержка)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения об Облачных службах (расширенная поддержка)
+      href: overview.md
+    - name: Предварительные требования для развертывания
+      href: deploy-prerequisite.md
+    - name: Файлы конфигурации и упаковка
+      href: cloud-services-model-and-package.md
+- name: Учебники
+  items:
+    - name: 'Развертывание облачной службы, портал'
+      href: deploy-portal.md
+    - name: 'Развертывание облачной службы, PowerShell'
+      href: deploy-powershell.md
+    - name: 'Развертывание облачной службы, шаблон'
+      href: deploy-template.md
+    - name: 'Развертывание облачной службы, Visual Studio'
+      href: deploy-visual-studio.md
+  expanded: true
+- name: Основные понятия
+  items:
+    - name: Доступные размеры виртуальных машин
+      href: available-sizes.md
+    - name: Часто задаваемые вопросы
+      href: faq.md
+    - name: Исправления гостевой ОС
+      href: ../cloud-services/cloud-services-guestos-msrc-releases.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
+    - name: Прекращение использования гостевой ОС
+      href: ../cloud-services/cloud-services-guestos-retirement-policy.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
+    - name: Новости о выпуске гостевой ОС
+      href: ../cloud-services/cloud-services-guestos-update-matrix.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
+    - name: схема XML
+      items:
+        - name: Схема XML (CSDEF-файл)
+          href: schema-csdef-file.md
+        - name: Схема LoadBalancerProbe
+          href: schema-csdef-loadbalancerprobe.md
+        - name: Схема WebRole
+          href: schema-csdef-webrole.md
+        - name: Схема WorkerRole
+          href: schema-csdef-workerrole.md
+        - name: Схема NetworkTrafficRules
+          href: schema-csdef-networktrafficrules.md
+        - name: Схема XML (CSCFG-файл)
+          href: schema-cscfg-file.md
+        - name: Схема Role
+          href: schema-cscfg-role.md
+        - name: Схема NetworkConfiguration
+          href: schema-cscfg-networkconfiguration.md
+- name: Инструкции
+  items:
+    - name: Обзор расширений
+      href: extensions.md
+    - name: Применение расширения удаленного рабочего стола
+      href: enable-rdp.md
+    - name: Применение расширения WAD
+      href: enable-wad.md
+    - name: Включение оповещений
+      href: enable-alerts.md
+    - name: Настройка масштабирования
+      href: configure-scaling.md
+    - name: Сертификаты
+      href: certificates-and-key-vault.md
+- name: Примеры
+  items:
+    - name: создание новой облачной службы.
+      href: sample-create-cloud-service.md
+    - name: Получение сведений об облачной службе
+      href: sample-get-cloud-service.md
+    - name: Сброс облачной службы
+      href: sample-reset-cloud-service.md
+- name: Справочник
+  items:
+    - name: Модуль Az.CloudService
+      href: 'https://www.powershellgallery.com/packages/Az.CloudService/0.1.0'
+    - name: Командлеты PowerShell
+      href: 'https://docs.microsoft.com/powershell/module/az.cloudservice/?view=azps-5.4.0#cloudservice'
+    - name: Справочник по шаблонам ARM
+      href: 'https://docs.microsoft.com/azure/templates/microsoft.compute/cloudservices'
+    - name: REST
+      href: 'https://docs.microsoft.com/rest/api/compute/cloudservices'
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=compute'
+    - name: Схема обучения
+      href: /learn/paths/azure-fundamentals/
+    - name: 'Майкрософт: вопросы и ответы'
+      href: 'https://docs.microsoft.com/answers/topics/azure-cloud-services.html'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=cloud-services&updatetype=&platform='

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 9ffb77db4f7bcd5a07e25085eed17e8972aa9a33
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 3a26157949ff6ef69c9c009dfdd40781b47bc761
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683765"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753577"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -55,7 +55,7 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 ```
 
 > [!IMPORTANT]
-> Клиентское приложение запрашивает токен носителя в конечной точке платформы идентификации Майкрософт *для веб-API*. Веб-API — это единственное приложение, которое должно проверять маркер и просматривать содержащиеся в нем утверждения. Клиентские приложения никогда не должны пытаться проверить утверждения в токенах.
+> Клиентское приложение запрашивает токен носителя на платформе идентификации Майкрософт *для веб-API*. Веб-API — это единственное приложение, которое должно проверять маркер и просматривать содержащиеся в нем утверждения. Клиентские приложения никогда не должны пытаться проверить утверждения в токенах.
 >
 > В будущем для веб-API может потребоваться шифрование маркера. Это требование помешает доступу к клиентским приложениям, которые могут просматривать маркеры доступа.
 
@@ -140,7 +140,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
- В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования конечной точки платформы идентификации Майкрософт с помощью [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) замените код в *Startup.CS*:
+ В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования платформы Microsoft Identity, используя [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) Замена кода в *Startup.CS*:
 
 ```csharp
 using Microsoft.Identity.Web;

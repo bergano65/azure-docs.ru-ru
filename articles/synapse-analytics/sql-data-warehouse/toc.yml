@@ -366,6 +366,8 @@
           href: sql-data-warehouse-restore-deleted-dw.md
         - name: восстановление из геоизбыточной резервной копии;
           href: sql-data-warehouse-restore-from-geo-backup.md
+        - name: Отключение геоизбыточного резервного копирования
+          href: disable-geo-backup.md
     - name: Интеграция
       items:
         - name: Использование машинного обучения

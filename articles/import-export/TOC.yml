@@ -1,0 +1,54 @@
+- name: Документация по службе "Импорт и экспорт Azure"
+  href: ./index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что собой представляет служба "Импорт и экспорт"?
+      href: storage-import-export-service.md
+- name: Основные понятия
+  items:
+    - name: Обзор требований
+      href: storage-import-export-requirements.md
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: storage-import-export-service-faq.md
+- name: Практическое руководство
+  expanded: true
+  items:
+    - name: Развертывание
+      items:
+        - name: Импорт данных в большие двоичные объекты
+          href: storage-import-export-data-to-blobs.md
+        - name: Импорт данных в файлы
+          href: storage-import-export-data-to-files.md
+        - name: Экспорт данных из больших двоичных объектов
+          href: storage-import-export-data-from-blobs.md
+    - name: Использование ключей управляемых клиентом
+      href: storage-import-export-encryption-key-portal.md
+    - name: Azure Monitor
+      items:
+        - name: Просмотр состояния диска
+          href: storage-import-export-view-drive-status.md
+        - name: Просмотр состояния задания
+          href: storage-import-export-tool-reviewing-job-status-v1.md
+    - name: Диагностика
+      items:
+        - name: Исправление распространенных ошибок
+          href: storage-import-export-tool-troubleshooting-v1.md
+        - name: Исправление задания импорта
+          href: storage-import-export-tool-repairing-an-import-job-v1.md
+        - name: Исправление задания экспорта
+          href: storage-import-export-tool-repairing-an-export-job-v1.md
+        - name: Обращение в службу поддержки
+          href: storage-import-export-contact-microsoft-support.md
+- name: Справочник
+  items:
+    - name: REST API
+      href: /rest/api/storageimportexport/jobs
+    - name: Azure PowerShell
+      href: /powershell/module/Az.ImportExport
+- name: Ресурсы
+  items:
+    - name: Экспорт данных в автономном режиме
+      href: /learn/modules/export-data-with-azure-import-export
+    - name: Другие параметры переноса в автономном режиме
+      href: ../databox/index.yml

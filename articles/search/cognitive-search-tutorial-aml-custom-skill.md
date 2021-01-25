@@ -1,23 +1,23 @@
 ---
-title: Руководство по созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure"
+title: Пример созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure"
 titleSuffix: Azure Cognitive Search
-description: В этом учебнике показано, как использовать Машинное обучение Azure для создания и развертывания настраиваемого навыка для конвейера обогащения с помощью ИИ в Когнитивном поиске Azure.
+description: В этом примере показано, как использовать Машинное обучение Azure для создания и развертывания настраиваемого навыка для конвейера обогащения с помощью ИИ в Когнитивном поиске Azure.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 09/25/2020
-ms.openlocfilehash: fa961a5a6d3a3b827a082fbac2acc3431ac40949
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 98d8395236bf955eed88f36c03c96981fa0e4b6b
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057609"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745639"
 ---
-# <a name="tutorial-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Руководство по созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure" 
+# <a name="example-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Пример созданию и развертыванию настраиваемого навыка с помощью службы "Машинное обучение Azure" 
 
-В этом учебнике рассказывается о том, как с помощью Машинного обучения Azure создать [настраиваемый навык](./cognitive-search-aml-skill.md) для извлечения аспектной тональности из [отзывов об отеле в наборе данных](https://www.kaggle.com/datafiniti/hotel-reviews) (распространяется по лицензии Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)). Это позволит правильно назначать положительные и отрицательные тональности определенным сущностям, например персоналу, номеру, холлу или бассейну, в пределах одного отзыва.
+В этом примере рассказывается о том, как с помощью Машинного обучения Azure создать [настраиваемый навык](./cognitive-search-aml-skill.md) для извлечения аспектной тональности из [набора данных с отзывами об отеле](https://www.kaggle.com/datafiniti/hotel-reviews) (распространяется по лицензии Creative Commons [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)). Это позволит правильно назначать положительные и отрицательные тональности определенным сущностям, например персоналу, номеру, холлу или бассейну, в пределах одного отзыва.
 
 Для обучения аспектной модели тональности в службе "Машинное обучение Azure" вы будете использовать [репозиторий рецептов NLP](https://github.com/microsoft/nlp-recipes/tree/master/examples/sentiment_analysis/absa). Затем модель будет развернута в качестве конечной точки в кластере Azure Kubernetes. После развертывания конечная точка добавляется в конвейер обогащения в качестве навыка Машинного обучения Azure для использования службой "Когнитивный поиск".
 

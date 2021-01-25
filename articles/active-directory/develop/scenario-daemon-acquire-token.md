@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 9416005c708cafe5adbad2b09ce70c41fae66fd7
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 295897be03a7dd8e397e8202ff1cf10e6d59cdfb
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936028"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753871"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
@@ -235,7 +235,7 @@ Content: {
 
 Дополнительные сведения см. в статьях [предоставление разрешений приложению (роли приложений)](scenario-protected-web-api-app-registration.md#exposing-application-permissions-app-roles) и, в частности, [обеспечение того, что Azure AD выдает маркеры для веб-API только для клиентов](scenario-protected-web-api-app-registration.md#ensuring-that-azure-ad-issues-tokens-for-your-web-api-to-only-allowed-clients).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 

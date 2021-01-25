@@ -298,8 +298,6 @@
       href: template-best-practices.md
     - name: Часто задаваемые вопросы
       href: frequently-asked-questions.md
-    - name: Спецификации шаблонов
-      href: template-specs.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
       href: templates-cloud-consistency.md
     - name: Режимы развертывания
@@ -423,6 +421,12 @@
           href: test-toolkit.md
         - name: Проверочные варианты
           href: test-cases.md
+    - name: Спецификации шаблонов
+      items:
+        - name: Создание и развертывание спецификации шаблона
+          href: template-specs.md
+        - name: Преобразование коллекции шаблонов портала
+          href: convert-to-template-spec.md
     - name: CI/CD
       items:
         - name: Шаблоны ARM с конвейерами

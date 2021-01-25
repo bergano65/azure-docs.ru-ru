@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f60e21f98092df65ef01e68fe9c2e64833a24855
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: a678e8545f761e98abbdf026886afa624f9d2b4e
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063218"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753639"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Scenario: Создание мобильного приложения, которое вызывает веб-API
 
@@ -34,7 +34,7 @@ ms.locfileid: "98063218"
 
 ## <a name="overview"></a>Обзор
 
-Для мобильных приложений очень важно персонализированный и удобный пользовательский интерфейс.  Платформа Microsoft Identity позволяет разработчикам мобильных приложений создавать такие возможности для пользователей iOS и Android. Приложение может выполнять вход Azure Active Directory пользователей (Azure AD), пользователей личных учетная запись Майкрософт и пользователей Azure AD B2C. Он также может получать маркеры для вызова веб-API от их имени. Для реализации этих потоков мы будем использовать библиотеку проверки подлинности Майкрософт (MSAL). MSAL реализует [поток кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md)отраслевого стандарта.
+Для мобильных приложений очень важно персонализированный и удобный пользовательский интерфейс. Платформа Microsoft Identity позволяет разработчикам мобильных приложений создавать такие возможности для пользователей iOS и Android. Приложение может выполнять вход Azure Active Directory пользователей (Azure AD), пользователей личных учетная запись Майкрософт и пользователей Azure AD B2C. Он также может получать маркеры для вызова веб-API от их имени. Для реализации этих потоков мы будем использовать библиотеку проверки подлинности Майкрософт (MSAL). MSAL реализует [поток кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md)отраслевого стандарта.
 
 ![Управляющие программы](./media/scenarios/mobile-app.svg)
 
@@ -57,6 +57,6 @@ ms.locfileid: "98063218"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии — [Регистрация приложения](scenario-mobile-app-registration.md).

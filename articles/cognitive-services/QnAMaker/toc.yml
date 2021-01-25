@@ -14,9 +14,7 @@
           href: Quickstarts/create-publish-knowledge-base.md
         - name: Запрос к базе знаний
           href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
-    - name: Использование REST
-      href: Quickstarts/quickstart-rest-curl.md
-    - name: Использование пакета SDK
+    - name: "Использование клиентских библиотек или REST\_API"
       href: Quickstarts/quickstart-sdk.md
 - name: Учебники
   items:

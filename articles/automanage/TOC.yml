@@ -19,6 +19,8 @@
       href: virtual-machines-custom-preferences.md
     - name: Включение на виртуальных машинах с помощью Политики Azure
       href: virtual-machines-policy-enable.md
+    - name: Устранение ошибок подключения
+      href: common-errors.md
     - name: Восстановление неработающей учетной записи Автоматического управления
       href: repair-automanage-account.md
 - name: Ресурсы

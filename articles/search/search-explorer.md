@@ -7,41 +7,41 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/25/2020
-ms.openlocfilehash: adcd07ad370ad9f1301caa41c494a33958743dd8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 01/12/2021
+ms.openlocfilehash: e9607a71ed6b045ac704c43bf4ea54c9f181bbf4
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91398414"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179781"
 ---
 # <a name="quickstart-use-search-explorer-to-run-queries-in-the-portal"></a>Краткое руководство. Использование проводника поиска для выполнения запросов на портале
 
 **Проводник поиска** — это встроенное средство обработки запросов, используемое для выполнения запросов к индексу поиска в Когнитивном поиске Azure. Это средство упрощает изучение синтаксиса запроса, проверку выражения запроса или фильтра, а также подтверждение результатов обновления с помощью проверки наличия в индексе нового содержимого.
 
-Для демонстрации проводника поиска в этом кратком руководстве используется существующий индекс. Запросы формулируются с помощью [REST API поиска](/rest/api/searchservice/), а ответы возвращаются в виде документов JSON.
+Для демонстрации проводника поиска в этом кратком руководстве используется существующий индекс. Запросы формулируются с помощью [REST API поиска](/rest/api/searchservice/search-documents), а ответы возвращаются в виде подробных документов JSON.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы убедитесь, что у вас есть такие компоненты.
+Прежде чем приступить к работе, подготовьте указанные ниже необходимые компоненты:
 
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/) бесплатно.
 
 + Служба "Когнитивный поиск Azure". [Создайте службу](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
-+ В этом кратком руководстве используется *realestate-us-sample-index*. Используйте мастер [**импорта данных**](search-import-data-portal.md) для создания индекса. На первом шаге при запросе источника данных выберите **Примеры**, а затем выберите источник данных **realestate-us-sample**. Примите все параметры мастера по умолчанию, чтобы создать индекс.
++ В этом кратком руководстве используется *realestate-us-sample-index*. Воспользуйтесь [кратким руководством по созданию индекса](search-import-data-portal.md), чтобы создать индекс с применением значений по умолчанию. Данные можно найти во встроенном примере источника данных, размещенном Майкрософт (**realestate-us-sample**).
 
 ## <a name="start-search-explorer"></a>Запуск проводника поиска
 
-1. На [портале Azure](https://portal.azure.com) откройте страницу службы поиска на панели мониторинга или [найдите свою службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices).
+1. На [портале Azure](https://portal.azure.com) откройте страницу обзора службы поиска на панели мониторинга или [найдите свою службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices).
 
 1. Щелкните проводник поиска на панели команд:
 
-   :::image type="content" source="media/search-explorer/search-explorer-cmd2.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-cmd2.png" alt-text="Команда проводника поиска на портале" border="true":::
 
     Или используйте встроенную вкладку **проводника поиска** в открытом индексе:
 
-   :::image type="content" source="media/search-explorer/search-explorer-tab.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-tab.png" alt-text="Вкладка проводника поиска" border="true":::
 
 ## <a name="unspecified-query"></a>Неуказанный запрос
 
@@ -55,7 +55,7 @@ ms.locfileid: "91398414"
 
    **Результаты**
    
-   :::image type="content" source="media/search-explorer/search-explorer-example-empty.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-empty.png" alt-text="Пример запроса поиска с неполными или пустыми условиями" border="true":::
 
 ## <a name="free-text-search"></a>Поиск произвольного текста
 
@@ -71,11 +71,11 @@ ms.locfileid: "91398414"
 
    С помощью клавиш CTRL-F можно искать определенные условия в результатах поиска.
 
-   :::image type="content" source="media/search-explorer/search-explorer-example-freetext.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-freetext.png" alt-text="Пример запроса поиска произвольного текста" border="true":::
 
 ## <a name="count-of-matching-documents"></a>Количество соответствующих документов 
 
-Добавьте **$count=true** для получения числа совпадений, найденных в индексе. При поиске с пустыми условиями это значение равно общему количеству документов в индексе. При поиске с полными условиями это значение равно количеству документов, соответствующих входному запросу.
+Добавьте **$count=true** для получения числа совпадений, найденных в индексе. При поиске с пустыми условиями это значение равно общему количеству документов в индексе. При поиске с полными условиями это значение равно количеству документов, соответствующих входному запросу. Учитывайте, что служба возвращает первые 50 соответствий по умолчанию, поэтому в индексе может содержаться больше совпадений, чем в результатах.
 
    ```http
    $count=true
@@ -83,7 +83,7 @@ ms.locfileid: "91398414"
 
    **Результаты**
 
-   :::image type="content" source="media/search-explorer/search-explorer-example-count.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-count.png" alt-text="Количество соответствующих документов в индексе" border="true":::
 
 ## <a name="limit-fields-in-search-results"></a>Ограничение полей в результатах поиска
 
@@ -95,11 +95,13 @@ ms.locfileid: "91398414"
 
    **Результаты**
 
-   :::image type="content" source="media/search-explorer/search-explorer-example-selectfield.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-selectfield.png" alt-text="Ограничение полей в результатах поиска" border="true":::
 
 ## <a name="return-next-batch-of-results"></a>Возвращение следующего пакета результатов
 
-Когнитивный поиск Azure возвращает первые 50 совпадений в соответствии с рейтингом поиска. Чтобы получить следующий набор соответствующих документов, добавьте в запрос **$top=100,&$skip=50**. Это позволит увеличить результирующий набор до 100 документов (значение по умолчанию — 50, максимальное значение — 1000), пропустив первые 50 документов. Как вы помните, чтобы получить ранжированные результаты, необходимо указать критерии поиска, например термин запроса или выражение. Обратите внимание на то, что рейтинг поиска уменьшается по мере углубления в результаты поиска.
+Когнитивный поиск Azure возвращает первые 50 совпадений в соответствии с рейтингом поиска. Чтобы получить следующий набор соответствующих документов, добавьте в запрос **$top=100,&$skip=50**. Это позволит увеличить результирующий набор до 100 документов (значение по умолчанию — 50, максимальное значение — 1000), пропустив первые 50 документов. Чтобы определить документ, просмотрите ключ документа (listingID). 
+
+Как вы помните, чтобы получить ранжированные результаты, необходимо указать критерии поиска, например термин запроса или выражение. Обратите внимание на то, что рейтинг поиска уменьшается по мере углубления в результаты поиска.
 
    ```http
    search=seattle condo&$select=listingId,beds,baths,description,street,city,price&$count=true&$top=100&$skip=50
@@ -107,7 +109,7 @@ ms.locfileid: "91398414"
 
    **Результаты**
 
-   :::image type="content" source="media/search-explorer/search-explorer-example-topskip.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-topskip.png" alt-text="Возвращение следующего пакета результатов поиска" border="true":::
 
 ## <a name="filter-expressions-greater-than-less-than-equal-to"></a>Выражения фильтра (больше, меньше, равно)
 
@@ -119,7 +121,7 @@ ms.locfileid: "91398414"
    
    **Результаты**
 
-   :::image type="content" source="media/search-explorer/search-explorer-example-filter.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-filter.png" alt-text="Фильтрация по критериям" border="true":::
 
 ## <a name="order-by-expressions"></a>Выражения OrderBy
 
@@ -131,7 +133,7 @@ ms.locfileid: "91398414"
    
    **Результаты**
 
-   :::image type="content" source="media/search-explorer/search-explorer-example-ordery.png" alt-text="Команда проводника поиска на портале" border="false":::
+   :::image type="content" source="media/search-explorer/search-explorer-example-ordery.png" alt-text="Изменение порядка сортировки" border="true":::
 
 Выражения **$filter** и **$orderby** являются конструкциями OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 
@@ -141,13 +143,13 @@ ms.locfileid: "91398414"
 
 В этом кратком руководстве вы использовали **проводник поиска** для выполнения запроса к индексу с помощью REST API.
 
-+ Результаты возвращаются в виде подробных документов JSON, чтобы можно было полностью просмотреть структуру и содержимое документа. Можно использовать выражения запросов, как показано в примерах, чтобы ограничить возвращаемые поля.
++ Результаты возвращаются в виде подробных документов JSON, чтобы можно было полностью просмотреть структуру и содержимое документа. Параметр **$select** в выражении запроса может ограничивать возвращаемые данные указанными полями.
 
 + Документы содержат все поля, помеченные как **Доступный для получения** в индексе. Чтобы просмотреть атрибуты индекса на портале, на странице "Общие сведения о поиске" в списке **Индексы** щелкните *realestate-us-sample*.
 
 + Запросы в свободной форме, аналогичные вводимым в коммерческом веб-браузере, можно использовать для тестирования взаимодействия с пользователем. Например, при использовании встроенного примера индекса недвижимости, можно ввести "Seattle apartments lake washington", а затем с помощью клавиш CTRL-F искать условия в результатах поиска. 
 
-+ Синтаксис выражений запросов и фильтров поддерживается Когнитивным поиском Azure. По умолчанию используется [простой синтаксис](/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
++ Синтаксис выражений запросов и фильтров реализуется Когнитивным поиском Azure. По умолчанию используется [простой синтаксис](/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -159,7 +161,7 @@ ms.locfileid: "91398414"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше о структурах запросов и синтаксисе, используйте Postman или аналогичное средство для создания выражений запросов, использующих больше элементов API. [REST API поиска](/rest/api/searchservice/) особенно полезно для обучения и исследований.
+Чтобы узнать больше о структурах запросов и синтаксисе, используйте Postman или аналогичное средство для создания выражений запросов, использующих больше элементов API. [REST API поиска](/rest/api/searchservice/search-documents) особенно полезно для обучения и исследований.
 
 > [!div class="nextstepaction"]
-> [Создание простого запроса в Postman](search-query-simple-examples.md)
+> [Создание простого запроса в Postman](search-get-started-rest.md)

@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: feb7be6ad5dbd0dfbd04b05836842d0476780d40
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: fb463d80e8cb980505df825d6f22d75f8a5c5f5a
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151531"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599196"
 ---
 # <a name="save-costs-for-azure-app-service-isolated-stamp-fee-with-reserved-capacity"></a>Экономия расходов на гербовый сбор Службы приложений Azure (цен. категория "Изолированный") с резервной мощностью
 
@@ -48,7 +48,7 @@ ms.locfileid: "92151531"
 
 1. Перейдите на [портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22AppService%22%7D).
 1. Выберите подписку. Из списка **Подписка** выберите подписку, которая используется для оплаты резервной мощности. Резервная мощность оплачивается с помощью метода оплаты, указанного для подписки. Нужно выбрать подписку с соглашением Enterprise (номера предложений: MS-AZR-0017P или MS-AZR-0148P) или подписку с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR-0023P) или подписка CSP.
-    - Для подписки с соглашением Enterprise плата вычитается из баланса денежных обязательств или относится к избыточным расходам.
+    - для подписки Enterprise плата будет вычитана из остатка на счете предоплаты Azure (прежнее название — денежное обязательство) по Соглашению о регистрации или будет относится к избыточным расходам.
     - Для подписки с оплатой по мере использования плата взимается с помощью метода оплаты (кредитной карты или счета), указанного для подписки.
 1. Выберите **Область** для выбора диапазона подписки.
     - **Одна группа ресурсов** — скидка по резервированию применяется к подходящим ресурсам только в выбранной группе ресурсов.

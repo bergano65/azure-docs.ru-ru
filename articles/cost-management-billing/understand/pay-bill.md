@@ -8,14 +8,14 @@ tags: billing, past due, pay now, bill, invoice, pay
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 01/13/2021
 ms.author: banders
-ms.openlocfilehash: 2983f870d6ab20dac4da487ba03ebf84905f8dcc
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 8117f3ca70f51f2d9b11c479803ac33b49f416e7
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680314"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98540045"
 ---
 # <a name="how-to-pay-your-bill-for-microsoft-azure"></a>Как оплатить счет за Microsoft Azure
 
@@ -24,6 +24,8 @@ ms.locfileid: "97680314"
 [Проверка доступа к Клиентскому соглашению Майкрософт](#check-access-to-a-microsoft-customer-agreement).
 
 Существует два способа оплаты счета за использование Azure. Вы можете выполнить оплату используя метод оплаты по умолчанию своего профиля выставления счетов или выполнить однократную оплату, которая называется **Платить сейчас**.
+
+Если вы зарегистрировались в Azure через представителя Майкрософт, то в качестве метода оплаты по умолчанию всегда будет использоваться *чек или банковский перевод*.
 
 Если у вас есть кредиты Azure, они автоматически применяются к вашему счету за каждый расчетный период.
 

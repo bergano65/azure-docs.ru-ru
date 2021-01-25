@@ -1,0 +1,83 @@
+### YamlMime:Landing
+title: Документация по Облачным службам Azure (расширенная поддержка)
+summary: Узнайте, как использовать Облачные службы для размещения и запуска облачных приложений и API-интерфейсов с высоким уровнем доступности и масштабируемости. Узнайте, как управлять узлами виртуальных машин, а также настраивать, исправлять и устанавливать программное обеспечение.
+metadata:
+  title: Документация по Облачным службам Azure (расширенная поддержка)
+  description: Узнайте, как использовать Облачные службы для размещения и запуска облачных приложений и API с высоким уровнем доступности и масштабируемости.
+  ms.service: cloud-services-extended-support
+  service: cloud-services-extended-support
+  ms.topic: landing-page
+  author: mimckitt
+  ms.author: mimckitt
+  ms.date: 03/06/2020
+  ms.openlocfilehash: 8f999851c1566b2a488daa4bdc5da73761f7ce0b
+  ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/23/2021
+  ms.locfileid: "98743670"
+landingContent:
+- title: Сведения об Облачных службах (расширенная поддержка)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляют Облачные службы (расширенная поддержка)?
+      url: overview.md
+    - text: Предварительные требования для развертывания
+      url: deploy-prerequisite.md
+    - text: Файлы конфигурации и упаковка
+      url: cloud-services-model-and-package.md
+- title: Учебники
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Развертывание с помощью PowerShell
+      url: deploy-powershell.md
+    - text: развертывание с помощью портала Azure;
+      url: deploy-portal.md
+    - text: Развертывание с помощью шаблонов ARM
+      url: deploy-template.md
+    - text: Развертывание с помощью Visual Studio
+      url: deploy-visual-studio.md
+- title: Основные понятия
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Доступные размеры
+      url: available-sizes.md
+    - text: Часто задаваемые вопросы
+      url: faq.md
+- title: Руководства
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Расширения
+      url: extensions.md
+    - text: Включение оповещений
+      url: enable-alerts.md
+    - text: Настройка масштабирования
+      url: configure-scaling.md
+    - text: Сертификаты
+      url: certificates-and-key-vault.md
+- title: Примеры
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Создание развертывания облачной службы
+      url: sample-create-cloud-service.md
+    - text: Получение сведений о развертывании облачной службы
+      url: sample-get-cloud-service.md
+    - text: Обновление развертывания облачной службы
+      url: sample-update-cloud-service.md
+    - text: Сброс развертывания облачной службы
+      url: sample-reset-cloud-service.md
+- title: Сведения о схеме
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Схема конфигурации
+      url: schema-cscfg-file.md
+    - text: Схема определения
+      url: schema-csdef-file.md
+    - text: Схема роли конфигурации
+      url: schema-cscfg-role.md

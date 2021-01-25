@@ -1,5 +1,6 @@
 ---
-title: Различия в проверке по поддерживаемым типам учетных записей — платформа Microsoft Identity | Службы
+title: Различия в проверке по поддерживаемым типам учетных записей | Службы
+titleSuffix: Microsoft identity platform
 description: Сведения о различиях в проверке различных свойств для различных поддерживаемых типов учетных записей при регистрации приложения на платформе Microsoft Identity.
 author: SureshJa
 ms.author: sureshja
@@ -10,12 +11,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
-ms.openlocfilehash: e794e277f6731c7b6e57a4710eea437f65be0340
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77521150e73014c5568003597059a9d32f6e80ee
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87336350"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752965"
 ---
 # <a name="validation-differences-by-supported-account-types-signinaudience"></a>Различия в проверке по поддерживаемым типам счетов (Сигнинаудиенце)
 
@@ -47,7 +48,7 @@ ms.locfileid: "87336350"
 
 * Существует глобальное ограничение в 1000 элементов во всех свойствах коллекции в объекте App.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о [регистрации приложений](app-objects-and-service-principals.md)
 - Узнайте больше о [манифесте приложения](reference-app-manifest.md)

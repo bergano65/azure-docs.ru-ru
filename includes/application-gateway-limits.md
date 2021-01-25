@@ -4,12 +4,12 @@ ms.service: application-gateway
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: victorh
-ms.openlocfilehash: ff97aa6c6f04ad41ba6e1b986f3cc0734ec7a326
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 4c7c68bf690097004f2f3310a8d89ce954d7f87f
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92526154"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98612911"
 ---
 | Ресурс | Ограничение | Примечание |
 | --- | --- | --- |
@@ -32,6 +32,9 @@ ms.locfileid: "92526154"
 | Количество сопоставлений URL-адреса на прослушиватель |1 | |
 | Максимальное количество правил на основе путей на сопоставление URL-адреса|100||
 | Конфигурации перенаправления |100<sup>1</sup>| |
+| Количество наборов правил перезаписи |400| |
+| Количество конфигураций заголовков и URL-адресов на набор правил перезаписи|40| |
+| Количество условий на набор правил для переопределения|40| |
 | Одновременные подключения WebSocket |Средние шлюзы, 20 тыс.<br> Крупные шлюзы, 50 тыс.| |
 | Максимальная длина URL-адреса|32 КБ| |
 | Максимальный размер заголовка для HTTP/2 |4 КБ| |

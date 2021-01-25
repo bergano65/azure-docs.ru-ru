@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 11/27/2020
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 78b94dad03200d25bd29861acc92b10037a81238
-ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
+ms.openlocfilehash: e63d5140fd68f9210aa54315b75e4b2fd4c0099b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "96309717"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738929"
 ---
 |Язык                                 |1.x         |2.x| 3.x |
 |-----------------------------------------|------------|---| --- |
@@ -23,7 +23,7 @@ ms.locfileid: "96309717"
 |[F#](../articles/azure-functions/functions-reference-fsharp.md)|Общедоступная версия (.NET Framework 4.7)|Общедоступная версия (.NET Core 2.2)| Общедоступная версия (.NET Core 3.1) |
 |[Java](../articles/azure-functions/functions-reference-java.md)|Недоступно|Общедоступная версия (Java 8)| Общедоступная версия (Java 11 и Java 8)|
 |[PowerShell](../articles/azure-functions/functions-reference-powershell.md) |Недоступно|Общедоступная версия (PowerShell Core 6)| Общедоступная версия (PowerShell 7 и Core 6)|
-|[Python](../articles/azure-functions/functions-reference-python.md#python-version)|Недоступно|Общедоступная версия (Python 3.7 и 3.6)| Общедоступная версия (Python 3.8, 3.7 и 3.6)|
+|[Python](../articles/azure-functions/functions-reference-python.md#python-version)|Недоступно|Общедоступная версия (Python 3.7 и 3.6)| Общедоступная версия (Python 3.8, 3.7 и 3.6) <br/> Предварительная версия (Python 3.9)|
 |[TypeScript](../articles/azure-functions/functions-reference-node.md#typescript) |Недоступно|Общедоступная версия<sup>*</sup>| Общедоступная версия<sup>*</sup> |
 
 <sup>*</sup> Поддерживается посредством транскомпиляции в JavaScript.
