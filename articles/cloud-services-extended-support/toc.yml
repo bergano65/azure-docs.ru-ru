@@ -21,10 +21,10 @@
   expanded: true
 - name: Основные понятия
   items:
+    - name: Модули
+      href: extensions.md
     - name: Доступные размеры виртуальных машин
       href: available-sizes.md
-    - name: Часто задаваемые вопросы
-      href: faq.md
     - name: Исправления гостевой ОС
       href: ../cloud-services/cloud-services-guestos-msrc-releases.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
     - name: Прекращение использования гостевой ОС
@@ -49,10 +49,10 @@
           href: schema-cscfg-role.md
         - name: Схема NetworkConfiguration
           href: schema-cscfg-networkconfiguration.md
+    - name: Часто задаваемые вопросы
+      href: faq.md
 - name: Инструкции
   items:
-    - name: Обзор расширений
-      href: extensions.md
     - name: Применение расширения удаленного рабочего стола
       href: enable-rdp.md
     - name: Применение расширения WAD
@@ -83,6 +83,8 @@
       href: 'https://docs.microsoft.com/azure/templates/microsoft.compute/cloudservices'
     - name: REST
       href: 'https://docs.microsoft.com/rest/api/compute/cloudservices'
+    - name: SDK
+      href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Compute/43.0.0-preview'
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

@@ -11,12 +11,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: e73126cfc54294a7b9d54ff62c406d5e686ac470
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a8928f9d52fd8e721ac770dda8f0cbf0162a0f61
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95982728"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797918"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 
@@ -73,7 +73,10 @@ ms.locfileid: "95982728"
 
 ## <a name="access-to-data-sources-protected-by-ip-firewall-rule"></a>Доступ к источникам данных, защищенным правилом брандмауэра IP
 
-Если пакеты служб SSIS обращаются к хранилищам данных и ресурсам, которые разрешают только определенные статические общедоступные IP-адреса и вы хотите защитить доступ к этим ресурсам из Azure-SSIS IR, вы можете использовать собственные [общедоступные IP-адреса](../virtual-network/virtual-network-public-ip-address.md) для Azure-SSIS IR при присоединении к виртуальной сети, а затем добавить правило брандмауэра IP к соответствующим ресурсам, чтобы разрешить доступ с этих IP-адресов.
+Если пакеты служб SSIS обращаются к хранилищам данных и ресурсам, которые разрешают только определенные статические общедоступные IP-адреса и вы хотите защитить доступ к этим ресурсам из Azure-SSIS IR, можно связать [общедоступные IP-адреса](../virtual-network/virtual-network-public-ip-address.md) с Azure-SSIS IR при присоединении к виртуальной сети, а затем добавить правило брандмауэра IP к соответствующим ресурсам, чтобы разрешить доступ с этих IP-адресов. Существует два альтернативных способа сделать это: 
+
+- При создании Azure-SSIS IR можно использовать собственные общедоступные IP-адреса и указать их с помощью [пользовательского интерфейса фабрики данных или пакета SDK](#join-the-azure-ssis-ir-to-a-virtual-network). Только исходящее подключение к Интернету Azure-SSIS IR будет использовать предоставленные общедоступные IP-адреса, а другие устройства в подсети не будут их использовать.
+- Можно также настроить [NAT виртуальной сети](../virtual-network/nat-overview.md) для подсети, которая Azure-SSIS IR будет присоединяться, и все исходящие подключения в этой подсети будут использовать указанные общедоступные IP-адреса.
 
 Во всех случаях виртуальную сеть можно развернуть только с помощью модели развертывания Azure Resource Manager.
 
@@ -597,7 +600,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Выполнение этой команды занимает от 20 до 30 минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure-SSIS IR см. в следующих статьях: 
 - [Azure-SSIS IR](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о IRs, включая Azure-SSIS IR. 

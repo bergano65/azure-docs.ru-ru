@@ -8,15 +8,15 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 08/10/2020
+ms.date: 01/25/2021
 ms.author: juliako
 ms.custom: devx-track-js
-ms.openlocfilehash: 1bc751ae293abbb7aa330a99a4b66a917d150906
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b13086e11e1181bba91a3255e68e9f8a32e78450
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994984"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797784"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Внедрение графических мини-приложений индексатора видео в приложения
 
@@ -34,7 +34,7 @@ ms.locfileid: "95994984"
 |---|---|---|
 |`widgets` | Строки, разделенные запятыми. | Позволяет управлять аналитическими сведениями, которые необходимо визуализировать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` визуализирует только пользователей и ключевые слова UI Insights.<br/>Доступные варианты: люди, Аниматедчарактерс, ключевые слова, метки, тональности, эмоции, темы, опорные кадры, транскрипция, OCR, динамики, сцены и Намедентитиес.|
 |`controls`|Строки, разделенные запятыми.|Позволяет управлять элементами управления, которые необходимо визуализировать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` отображает только параметры поиска и кнопку Скачать.<br/>Доступные параметры: Поиск, скачивание, предустановка, язык.|
-|`language`|Короткий код языка (имя языка)|Язык управления аналитикой.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es` <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
+|`language`|Короткий код языка (имя языка)|Язык управления аналитикой.<br/>Например, `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es`. <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
 |`locale` | Короткий код языка | Управляет языком пользовательского интерфейса. Значение по умолчанию — `en`. <br/>Например, `locale=de`.|
 |`tab` | Выбранная по умолчанию вкладка | Управляет вкладкой **Insights** , которая отображается по умолчанию. <br/>Пример: `tab=timeline` подготавливает аналитику к выбранной вкладке **временной шкалы** .|
 |`location` ||`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial` значение по умолчанию для `location` параметра.| 
@@ -70,7 +70,7 @@ ms.locfileid: "95994984"
 
 В этом разделе обсуждается внедрение открытого и закрытого содержимого в приложения.
 
-`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial` значение по умолчанию для `location` параметра. Например, так: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
+`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial` значение по умолчанию для `location` параметра. Например: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
 
 > [!IMPORTANT]
 > Совместное использование ссылки на мини-приложение **Player** или **Insights** будет включать маркер доступа и предоставлять учетной записи разрешения только для чтения.
@@ -304,7 +304,11 @@ URL-адрес внедрения будет выглядеть так:
 | `url-generator`                   | Создает URL-адрес настраиваемого внедрения для мини-приложений на основе заданных пользователем параметров.             |
 | `html5-player`                    | Внедрение "VI Insights" с видеопроигрывателем HTML5 по умолчанию.                           |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="supported-browsers"></a>Поддерживаемые браузеры
+
+Дополнительные сведения см. в разделе [Поддерживаемые браузеры](video-indexer-overview.md#supported-browsers).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о просмотре и редактировании индексатора видео см. в статье [Просмотр и изменение индексаторов видео](video-indexer-view-edit.md).
 

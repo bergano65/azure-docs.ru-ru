@@ -3,19 +3,19 @@ title: SQL Server SQL Server на виртуальной машине Azure (О�
 description: Узнайте о различных стратегиях миграции, когда вы хотите перенести SQL Server в SQL Server на виртуальных машинах Azure.
 ms.custom: ''
 ms.service: virtual-machines-sql
-ms.subservice: ''
+ms.subservice: migration-guide
 ms.devlang: ''
 ms.topic: how-to
 author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: d08cb2761a8d8010c455ff959d6c247e8b64ef20
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 0eabb48aabcb50557b342385068807eb67a9b165
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746581"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797850"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Обзор миграции: SQL Server для SQL Server на виртуальных машинах Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "97746581"
 Вы можете сэкономить на затратах, применяя собственную лицензию [преимущество гибридного использования Azure модели лицензирования](../../virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change.md) или расширяя поддержку SQL Server 2008 и SQL Server 2008 R2, получая [Бесплатные обновления для системы безопасности](../../virtual-machines/windows/sql-server-2008-extend-end-of-support.md). 
 
 
-## <a name="choosing-appropriate-target"></a>Выбор подходящего целевого объекта
+## <a name="choose-appropriate-target"></a>Выберите подходящий целевой объект
 
 Виртуальные машины Azure работают в различных регионах Azure, а также предлагают различные [размеры компьютеров](../../../virtual-machines/sizes.md) и [возможности хранения](../../../virtual-machines/disks-types.md). При определении правильного размера виртуальной машины и хранилища для рабочей нагрузки SQL Server см [. рекомендации по производительности SQL Server на виртуальных машинах Azure.](../../virtual-machines/windows/performance-guidelines-best-practices.md#vm-size-guidance) Чтобы определить размер виртуальной машины и требования к хранению для рабочей нагрузки. рекомендуется изменять их размер с помощью Performance-Based оценки службы " [Миграция Azure](../../../migrate/concepts-assessment-calculation.md#types-of-assessments)". Если этот параметр недоступен, ознакомьтесь со следующей статьей о создании собственного [базового плана для повышения производительности](https://azure.microsoft.com/services/virtual-machines/sql-server/).
 
