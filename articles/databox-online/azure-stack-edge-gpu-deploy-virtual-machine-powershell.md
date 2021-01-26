@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/23/2020
+ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 32685207f8d6e81d03c90d01b186337ce79f843a
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 1d286e7661fa14dd63bd55b133c39414e04decc6
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763918"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802990"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью Azure PowerShell
 
-В этой статье описывается, как создать виртуальную машину на устройстве Azure Stack пограничной Pro и управлять ею с помощью Azure PowerShell. Эта статья относится к Azure Stackным графическим процессорам версии Pro, Azure Stackным устройствам с пограничными устройствами r и Azure Stack пограничных устройств R.
+В этой статье описывается, как создать виртуальную машину на устройстве Azure Stack пограничной Pro и управлять ею с помощью Azure PowerShell. Эта статья относится к Azure Stackным графическим процессорам версии Pro, Azure Stackм пограничных Pro R и Azure Stack пограничных устройств R.
 
 ## <a name="vm-deployment-workflow"></a>Рабочий процесс развертывания виртуальной машины
 
@@ -118,7 +118,7 @@ Successfully created Resource Group:rg191113014333
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте новую учетную запись хранения с помощью группы ресурсов, созданной на предыдущем шаге. Это **Локальная учетная запись хранения** , которая будет использоваться для отправки образа виртуального диска для виртуальной машины.
+Создайте новую учетную запись хранения с помощью группы ресурсов, созданной на предыдущем шаге. Эта учетная запись представляет собой **локальную учетную запись хранения** , которая будет использоваться для отправки образа виртуального диска для виртуальной машины.
 
 ```powershell
 New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resource group name> -Location DBELocal -SkuName Standard_LRS
@@ -177,7 +177,7 @@ key2 gd34TcaDzDgsY9JtDNMUgLDOItUU0Qur3CBo6Q...
 
 ## <a name="add-blob-uri-to-hosts-file"></a>Добавление URI BLOB-объекта в файл hosts.
 
-Вы уже добавили URI BLOB-объекта в файл hosts для клиента, который используется для подключения к хранилищу BLOB-объектов в разделе [изменение файла узла для разрешения имен конечных точек](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Это была запись для URI большого двоичного объекта:
+Вы уже добавили URI BLOB-объекта в файл hosts для клиента, который используется для подключения к хранилищу BLOB-объектов в разделе [изменение файла узла для разрешения имен конечных точек](azure-stack-edge-j-series-connect-resource-manager.md#step-5-modify-host-file-for-endpoint-name-resolution). Эта запись была использована для добавления URI большого двоичного объекта:
 
 \<Azure consistent network services VIP \>\<storage name\>. BLOB. \<appliance name\> .\<dnsdomain\>
 
@@ -256,7 +256,7 @@ $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –S
 New-AzureRMDisk -ResourceGroupName <Resource group name> -DiskName <Disk name> -Disk $DiskConfig
 ```
 
-Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0).
+Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0&preserve-view=true).
 
 ```powershell
 Tags               :
@@ -296,7 +296,7 @@ Set-AzureRmImageOsDisk -Image $imageConfig -OsType 'Linux' -OsState 'Generalized
 New-AzureRmImage -Image $imageConfig -ImageName <Image name>  -ResourceGroupName <Resource group name>
 ```
 
-Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0).
+Результат выполнения команды показан ниже. Дополнительные сведения об этом командлете см. в подразделе [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0&preserve-view=true).
 
 ```powershell
 New-AzureRmImage -Image Microsoft.Azure.Commands.Compute.Automation.Models.PSImage -ImageName ig191113014333  -ResourceGroupName rg191113014333
@@ -319,8 +319,8 @@ Tags                 : {}
 > [!IMPORTANT]
 > При создании виртуальной сети и виртуального сетевого интерфейса применяются следующие правила.
 > - Можно создать только одну виртуальную сеть (даже для групп ресурсов), и она должна точно соответствовать логической сети с точки зрения адресного пространства.
-> -   В виртуальной сети будет разрешена только одна подсеть. Подсеть должна быть точно таким же адресным пространством, что и в виртуальной сети.
-> -   При создании vNIC будет разрешен только статический метод выделения, и пользователь должен предоставить частный IP-адрес.
+> - В виртуальной сети будет разрешена только одна подсеть. Подсеть должна быть точно таким же адресным пространством, что и в виртуальной сети.
+> - При создании vNIC будет разрешен только статический метод выделения, и пользователь должен предоставить частный IP-адрес.
 
  
 **Запрос автоматически созданной виртуальной сети**
@@ -498,7 +498,7 @@ The public IP in this case will be the same as the private IP that you passed du
 `Start-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>`
 
 
-Дополнительные сведения об этом командлете см. в подразделе [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0).
+Дополнительные сведения об этом командлете см. в подразделе [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0&preserve-view=true).
 
 ### <a name="suspend-or-shut-down-the-vm"></a>Приостановка или завершение работы виртуальной машины
 
@@ -510,7 +510,7 @@ Stop-AzureRmVM [-Name] <String> [-StayProvisioned] [-ResourceGroupName] <String>
 ```
 
 
-Дополнительные сведения об этом командлете см. в подразделе [командлета AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0).
+Дополнительные сведения об этом командлете см. в подразделе [командлета AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0&preserve-view=true).
 
 ### <a name="add-a-data-disk"></a>Добавление диска данных
 
@@ -530,10 +530,10 @@ Update-AzureRmVM -ResourceGroupName "<Resource Group Name string>" -VM $VirtualM
 Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ```
 
-Чтобы получить дополнительные сведения об этом командлете, перейдите к [командлету Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0).
+Чтобы получить дополнительные сведения об этом командлете, перейдите к [командлету Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0&preserve-view=true).
 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 20de08ee30deae74954f2857b4de756b8cf46f08
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: baef641a741d12185029436e5a74039427c69f68
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964201"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802899"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -402,7 +402,7 @@ ms.locfileid: "97964201"
 
 #### <a name="disk-encryption-sets"></a>Наборы шифрования дисков
 
-Существует ограничение в 50 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](../../virtual-machines/disk-encryption.md#restrictions) или [Windows](../../virtual-machines/disk-encryption.md#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
+Существует ограничение в 1000 наборов шифрования дисков на регион для каждой подписки. Дополнительные сведения см. в документации по шифрованию виртуальных машин [Linux](../../virtual-machines/disk-encryption.md#restrictions) или [Windows](../../virtual-machines/disk-encryption.md#restrictions) . Если вам нужно увеличить квоту, обратитесь в службу поддержки Azure.
 
 ### <a name="managed-virtual-machine-disks"></a>Управляемые диски виртуальной машины
 
@@ -446,7 +446,7 @@ ms.locfileid: "97964201"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

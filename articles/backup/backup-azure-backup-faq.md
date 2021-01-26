@@ -3,12 +3,12 @@ title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: dbe6ce95427b559c037e38525f9f48195a2a76a4
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: f819440001180a3c446f366e61e3ac0f983fa67f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703425"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806648"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -70,7 +70,7 @@ ms.locfileid: "98703425"
 
 ### <a name="where-can-i-find-common-questions-about-the-azure-backup-agent-for-azure-vm-backup"></a>Где мне найти вопросы и ответы об агенте Azure Backup для резервного копирования виртуальных машин Azure?
 
-- Вопросы и ответы об агенте, выполняемом на виртуальных машинах Azure см. [в этой статье](backup-azure-vm-backup-faq.md).
+- Вопросы и ответы об агенте, выполняемом на виртуальных машинах Azure см. [в этой статье](backup-azure-vm-backup-faq.yml).
 - Информацию об агенте, который используется для резервного копирования папок службы файлов Azure, см. [здесь](backup-azure-file-folder-backup-faq.md).
 
 ## <a name="general-backup"></a>Общие вопросы о резервном копировании
@@ -232,9 +232,9 @@ Exchange |Сумма размеров всех баз данных Exchange на
 
 Ключ, используемый для шифрования резервных копий, хранится только у вас. Корпорация Майкрософт не сохраняет копию в Azure и не имеет доступа к ключу. Если вы утратите этот ключ, корпорация Майкрософт не сможет восстановить данные резервной копии.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие статьи с вопросами и ответами:
 
-- [Распространенные вопросы](backup-azure-vm-backup-faq.md) о резервном копировании виртуальных машин Azure
+- [Распространенные вопросы](backup-azure-vm-backup-faq.yml) о резервном копировании виртуальных машин Azure
 - [Распространенные вопросы](backup-azure-file-folder-backup-faq.md) об агенте Azure Backup

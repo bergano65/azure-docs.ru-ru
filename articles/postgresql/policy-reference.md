@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Базы данных Azure для PostgreSQL
 description: Здесь приведены встроенные определения политик в Политике Azure для Базы данных Azure для PostgreSQL. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 43697fbc7df0af1d260e57dc202c9c8be871b59f
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 66657b5d10a1b0249ddb46506f9cc6eab90a92f8
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703363"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806748"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-database-for-postgresql"></a>Встроенные определения в Политике Azure для Базы данных Azure для PostgreSQL
 

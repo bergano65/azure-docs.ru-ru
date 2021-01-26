@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: 409a316bd9c4222dd9b8ff30e42e37d23805c38b
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: eb89d2a4e719e34ad5ea31656dc9e3c02472b07d
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757768"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802252"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad"></a>Подключение данных из Azure Active Directory (Azure AD)
 
@@ -28,7 +28,7 @@ ms.locfileid: "98757768"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Любой лицензии Azure AD (Free/O365/P1/P2) достаточно для приема журналов входа в Azure Sentinel. Для Azure Monitor (Log Analytics) и Azure Sentinel может взиматься дополнительная плата за гигабайт.
+- Для приема журналов входа в Azure Sentinel необходимо иметь подписку [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/) . Для Azure Monitor (Log Analytics) и Azure Sentinel может взиматься дополнительная плата за гигабайт.
 
 - Пользователю должна быть назначена роль "участник Sentinel Azure" в рабочей области.
 
@@ -46,10 +46,6 @@ ms.locfileid: "98757768"
 
     - **Журналы входа**: сведения об использовании управляемых приложений и действиях входа пользователей.
     - **Журналы аудита**. сведения о действиях системы для управления пользователями и группами, управляемыми приложениями и действиями с каталогами.
-    - **Неинтерактивные журналы входа пользователя**. сведения о входах, выполняемых клиентом от имени пользователя, который не требует взаимодействия или фактора проверки подлинности от пользователя.
-    - **Журналы входа субъекта-службы**. сведения о входах в приложения и субъекты-службы, не использующие каких-либо пользователей. В этих операциях входа приложение или служба предоставляют учетные данные от своего имени для проверки подлинности или доступа к ресурсам.
-    - **Журналы входа управляемых удостоверений**. входы в систему по ресурсам Azure с секретами, которыми управляет Azure.
-    - **Журналы подготовки**: сведения о действиях системы для пользователей, групп и ролей, подготовленных службой подготовки Azure AD.
 
 ## <a name="find-your-data"></a>Поиск данных
 
@@ -57,10 +53,6 @@ ms.locfileid: "98757768"
 
 - `SigninLogs`
 - `AuditLogs`
-- `AADNonInteractiveUserSignInLogs`
-- `AADServicePrincipalSignInLogs`
-- `AADManagedIdentitySignInLogs`
-- `AADProvisioningLogs`
 
 Чтобы запросить журналы Azure AD, введите соответствующее имя таблицы в верхней части окна запроса.
 
