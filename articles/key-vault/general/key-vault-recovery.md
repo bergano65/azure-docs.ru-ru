@@ -8,12 +8,12 @@ ms.author: mbaldwin
 author: msmbaldwin
 manager: rkarlin
 ms.date: 09/30/2020
-ms.openlocfilehash: 4a6b3e4c6354c292d000a307bc25f8532aa9a096
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: a8e8e791f0dbe18322ad43364ae4ffd09b430caf
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250797"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790390"
 ---
 # <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault Управление восстановлением с обратимым удалением и защитой от вирусов
 
@@ -26,10 +26,15 @@ ms.locfileid: "98250797"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/dotnet).
-* [Модуль PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+* [Модуль PowerShell](/powershell/azure/install-az-ps).
 * [Azure CLI](/cli/azure/install-azure-cli)
 * Хранилище Key Vault можно создать с помощью [портала Azure](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) или [Azure PowerShell](../general/quick-create-powershell.md).
-* Для выполнения операций с обратимо удаленными хранилищами пользователь должен иметь следующие разрешения (на уровне подписки): | Microsoft. KeyVault/Locations/deletedVaults/Read | Просмотр свойств обратимо удаленного хранилища ключей | | Microsoft. KeyVault/Locations/deletedVaults/очистить/действие | Очистка обратимо удаленного хранилища ключей |
+* Для выполнения операций с обратимо удаленными хранилищами пользователь должен иметь следующие разрешения (на уровне подписки):
+
+  | Разрешение | Описание |
+  |---|---|
+  |Microsoft.KeyVault/locations/deletedVaults/read|Отображает свойства обратимо удаленного Key Vault.|
+  |Microsoft.KeyVault/locations/deletedVaults/purge/action|Очищает обратимо удаленное хранилище Key Vault.|
 
 
 ## <a name="what-are-soft-delete-and-purge-protection"></a>Что такое обратимое удаление и защита от очистки
@@ -390,8 +395,8 @@ ms.locfileid: "98250797"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Key Vault командлетов PowerShell](https://docs.microsoft.com/powershell/module/az.keyvault)
-- [Key Vault команды Azure CLI](https://docs.microsoft.com/cli/azure/keyvault)
+- [Azure Key Vault командлетов PowerShell](/powershell/module/az.keyvault)
+- [Key Vault команды Azure CLI](/cli/azure/keyvault)
 - [Резервное копирование в Azure Key Vault](backup.md)
 - [Включение ведения журнала Key Vault](howto-logging.md)
 - [Безопасный доступ к хранилищу ключей](secure-your-key-vault.md)

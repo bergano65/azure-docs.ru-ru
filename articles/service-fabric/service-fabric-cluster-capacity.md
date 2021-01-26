@@ -4,12 +4,12 @@ description: Типы узлов, устойчивость, надежность
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
-ms.openlocfilehash: 731dcfdf25efc4b2f44669dacd8a400037ed47f4
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 03ec9b411f13f22a74b864a745acfed922e78b12
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576338"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790704"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Рекомендации по планированию загрузки кластера Service Fabric
 
@@ -146,7 +146,7 @@ _ ***Любая из служб приложений должна масштаб
 | 7 или 8 | Золотая |
 | 9 и более | Platinum |
 
-При увеличении или уменьшении размера кластера (сумма экземпляров виртуальных машин во всех типах узлов) рекомендуется обновить надежность кластера с одного уровня на другой. Это активирует обновления кластера, необходимые для изменения числа реплик системных служб. Подождите, пока обновление не будет завершено, прежде чем вносить другие изменения в кластер, например добавлять узлы.  Ход выполнения обновления можно отслеживать в Service Fabric Explorer или с помощью командлета [Get-ServiceFabricClusterUpgrade](/powershell/module/servicefabric/get-servicefabricclusterupgrade?view=azureservicefabricps).
+При увеличении или уменьшении размера кластера (сумма экземпляров виртуальных машин во всех типах узлов) рекомендуется обновить надежность кластера с одного уровня на другой. Это активирует обновления кластера, необходимые для изменения числа реплик системных служб. Подождите, пока обновление не будет завершено, прежде чем вносить другие изменения в кластер, например добавлять узлы.  Ход выполнения обновления можно отслеживать в Service Fabric Explorer или с помощью командлета [Get-ServiceFabricClusterUpgrade](/powershell/module/servicefabric/get-servicefabricclusterupgrade).
 
 ### <a name="capacity-planning-for-reliability"></a>Планирование емкости для обеспечения надежности
 

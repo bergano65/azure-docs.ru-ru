@@ -3,12 +3,12 @@ title: Сведения о политике Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде.
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: e2b9253d8ce60d5dc77d406e3c9d0469539f2c77
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: f25b64bc28535d125c7883f16c9e747d6250ca96
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511337"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789744"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Общие сведения о политике Azure для кластеров Kubernetes
 
@@ -55,7 +55,7 @@ ms.locfileid: "96511337"
 - Максимальное число несоответствующих записей в каждой политике на один кластер: **500**
 - Максимальное число несоответствующих записей на подписку: **1 000 000**
 - Установки привратника вне надстройки политики Azure не поддерживаются. Перед включением надстройки политики Azure удалите все компоненты, установленные предыдущей установкой привратника.
-- [Reasons for non-compliance](../how-to/determine-non-compliance.md#compliance-reasons) В `Microsoft.Kubernetes.Data` 
+- [](../how-to/determine-non-compliance.md#compliance-reasons) В `Microsoft.Kubernetes.Data` 
    [режиме поставщика ресурсов](./definition-structure.md#resource-provider-modes)не предусмотрены причины несоответствия требованиям. Используйте [сведения о компоненте](../how-to/determine-non-compliance.md#component-details-for-resource-provider-modes).
 - [Исключения](./exemption-structure.md) не поддерживаются для [режимов поставщика ресурсов](./definition-structure.md#resource-provider-modes).
 
@@ -463,7 +463,7 @@ kubectl logs <gatekeeper pod name> -n gatekeeper-system
 
 ## <a name="troubleshooting-the-add-on"></a>Устранение неполадок в надстройке
 
-Дополнительные сведения об устранении неполадок надстройки для Kubernetes см. в [разделе Kubernetes](/azure/governance/policy/troubleshoot/general#add-on-for-kubernetes-general-errors) статьи об устранении неполадок политики Azure.
+Дополнительные сведения об устранении неполадок надстройки для Kubernetes см. в [разделе Kubernetes](../troubleshoot/general.md#add-on-for-kubernetes-general-errors) статьи об устранении неполадок политики Azure.
 
 ## <a name="remove-the-add-on"></a>Удаление надстройки
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 286c59938413a912c005181fca12f6698a7bc55e
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 6bed26227542cbf3ffc13ecc018aef9e659d026e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042882"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791634"
 ---
 # <a name="query-eventstore-apis-for-cluster-events"></a>Выполнение запросов к интерфейсам API EventStore для получения событий кластера
 
@@ -111,7 +111,7 @@ Body:
 
 ## <a name="query-the-eventstore-programmatically"></a>Отправка запроса к EventStore программным способом
 
-Можно также выполнить запрос к EventStore программно при помощи [ клиентской библиотеки Service Fabric](/dotnet/api/overview/azure/service-fabric?view=azure-dotnet#client-library).
+Можно также выполнить запрос к EventStore программно при помощи [ клиентской библиотеки Service Fabric](/dotnet/api/overview/azure/service-fabric#client-library).
 
 Настроив клиент Service Fabric, вы сможете запрашивать события, обращаясь к EventStore следующим образом: `sfhttpClient.EventStore.<request>`.
 

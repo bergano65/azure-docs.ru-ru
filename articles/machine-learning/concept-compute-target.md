@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/29/2020
-ms.openlocfilehash: 1d3a7be429f730dd4dbd71bade1e3e51ea73c10f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1ff20ab19390dcdadb9a4aa79822f7ace3d31989
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188655"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791178"
 ---
 # <a name="what-are-compute-targets-in-azure-machine-learning"></a>Что такое целевые объекты вычислений в Машинном обучении Azure?
 
@@ -100,21 +100,21 @@ ms.locfileid: "96188655"
 
 | **Поддерживаемые серии виртуальных машин**  | **Ограничения** |
 |------------|------------|
-| D | Отсутствует. |
-| Dv2 | Отсутствует. |  
-| Dv3 | Отсутствует.|
-| DSv2 | Отсутствует. | 
-| DSv3 | Отсутствует.|
-| Серия fsv2 | Отсутствует. | 
+| D | Нет. |
+| Dv2 | Нет. |  
+| Dv3 | Нет.|
+| DSv2 | Нет. | 
+| DSv3 | Нет.|
+| Серия fsv2 | Нет. | 
 | HBv2 | Требуется утверждение. |  
 | HCS | Требуется утверждение. |  
 | M | Требуется утверждение. |
-| NC | Отсутствует. |    
+| NC | Нет. |    
 | NCsv2 | Требуется утверждение. |
 | NCsv3 | Требуется утверждение. |  
 | Структура | Требуется утверждение. |
 | NDv2 | Требуется утверждение. |
-| NV | Отсутствует. |
+| NV | Нет. |
 | NVv3 | Требуется утверждение. | 
 
 
@@ -123,7 +123,7 @@ ms.locfileid: "96188655"
 > [!NOTE]
 > Машинное обучение Azure не поддерживает все размеры виртуальных машин, поддерживаемые в Azure COMPUTE. Чтобы получить список доступных размеров виртуальных машин, используйте один из следующих методов.
 > * [REST API](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable/2020-08-01/examples/ListVMSizesResult.json)
-> * [Пакет SDK для Python](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py.md#supported-vmsizes-workspace--location-none-)
+> * [Пакет SDK для Python](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py.md#supported-vmsizes-workspace--location-none-)
 >
 
 ### <a name="compute-isolation"></a>Изоляция вычислений

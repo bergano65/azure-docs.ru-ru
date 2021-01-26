@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/04/2021
 ms.author: trbye
-ms.openlocfilehash: 786f9587ab223cf87a48cd791f366049b94af59b
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: c770ca3d619ea443fd5a320f91f3bfae56732bac
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97866029"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98792424"
 ---
 Сначала загрузите файл модели ключевых слов с помощью `FromFile()` статической функции, которая возвращает `KeywordRecognitionModel` . Используйте путь к файлу, `.table` скачанному из Speech Studio. Кроме того, вы создаете `AudioConfig` с помощью микрофона по умолчанию, создаете новый экземпляр `KeywordRecognizer` с помощью конфигурации аудио.
 
@@ -35,6 +35,6 @@ KeywordRecognitionResult result = await keywordRecognizer.RecognizeOnceAsync(key
 
 Другие классы в пакете SDK для распознавания речи поддерживают непрерывное распознавание (для распознавания речи и намерений) с помощью распознавания ключевых слов. Это позволяет использовать тот же код, который обычно используется для непрерывного распознавания, с возможностью ссылаться на `.table` файл для модели ключевых слов.
 
-Для преобразования речи в текст Используйте тот же шаблон проектирования, что и в [кратком руководстве](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-speech-to-text?tabs=script%2Cbrowser%2Cwindowsinstall&pivots=programming-language-csharp#continuous-recognition) , чтобы настроить непрерывное распознавание. Затем замените вызов на `recognizer.StartContinuousRecognitionAsync()` `recognizer.StartKeywordRecognitionAsync(KeywordRecognitionModel)` и передайте `KeywordRecognitionModel` объект. Чтобы предотвратить постоянное распознавание с помощью ключевых слов, используйте `recognizer.StopKeywordRecognitionAsync()` вместо `recognizer.StopContinuousRecognitionAsync()` .
+Для преобразования речи в текст Используйте тот же шаблон проектирования, что и в [кратком руководстве](../../../get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=script%2cbrowser%2cwindowsinstall#continuous-recognition) , чтобы настроить непрерывное распознавание. Затем замените вызов на `recognizer.StartContinuousRecognitionAsync()` `recognizer.StartKeywordRecognitionAsync(KeywordRecognitionModel)` и передайте `KeywordRecognitionModel` объект. Чтобы предотвратить постоянное распознавание с помощью ключевых слов, используйте `recognizer.StopKeywordRecognitionAsync()` вместо `recognizer.StopContinuousRecognitionAsync()` .
 
-При распознавании намерения используется идентичный шаблон [`StartKeywordRecognitionAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.intent.intentrecognizer.startkeywordrecognitionasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Intent_IntentRecognizer_StartKeywordRecognitionAsync_Microsoft_CognitiveServices_Speech_KeywordRecognitionModel_) с [`StopKeywordRecognitionAsync`](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.intent.intentrecognizer.stopkeywordrecognitionasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Intent_IntentRecognizer_StopKeywordRecognitionAsync) функциями и.
+При распознавании намерения используется идентичный шаблон [`StartKeywordRecognitionAsync`](/dotnet/api/microsoft.cognitiveservices.speech.intent.intentrecognizer.startkeywordrecognitionasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Intent_IntentRecognizer_StartKeywordRecognitionAsync_Microsoft_CognitiveServices_Speech_KeywordRecognitionModel_) с [`StopKeywordRecognitionAsync`](/dotnet/api/microsoft.cognitiveservices.speech.intent.intentrecognizer.stopkeywordrecognitionasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Intent_IntentRecognizer_StopKeywordRecognitionAsync) функциями и.

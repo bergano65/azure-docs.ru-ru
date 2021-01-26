@@ -4,12 +4,12 @@ description: Узнайте, как упаковать приложение Serv
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 11a3fdd5dbaef53af321342952f786ed8119689c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 168e6d6dc7ab5bfeccc4e1dabc7bd50efcbe8f34
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021067"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789708"
 ---
 # <a name="package-an-application"></a>Создание пакета приложения
 
@@ -75,7 +75,7 @@ D:\Temp> msbuild HelloWorld.sfproj /t:Package
 
 ## <a name="test-the-package"></a>Тестирование пакета
 
-Структуру пакета можно проверить локально средствами PowerShell, используя команду [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) .
+Структуру пакета можно проверить локально средствами PowerShell, используя команду [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage) .
 Эта команда проверит манифест на наличие ошибок при анализе, а также все ссылки. Эта команда позволяет проверить только правильность структуры каталогов и файлов в пакете.
 Она не проверяет содержимое пакетов кода или данных, а только наличие всех необходимых файлов.
 
@@ -121,7 +121,7 @@ Test-ServiceFabricApplicationPackage .\MyApplicationType
 True
 ```
 
-Если для приложения определены [параметры приложения](service-fabric-manage-multiple-environment-app-configuration.md), их можно передать в командлет [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) для полной проверки.
+Если для приложения определены [параметры приложения](service-fabric-manage-multiple-environment-app-configuration.md), их можно передать в командлет [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage) для полной проверки.
 
 Если вы уже знаете, в какой кластер будет развернуто приложение, мы советуем передать параметр `ImageStoreConnectionString`. В этом случае для пакета будет выполнена проверка на совместимость с предыдущими версиями приложения, уже запущенными в кластере. Например, такая проверка позволит обнаружить, если пакет имеет одинаковую версию, но разное содержимое с развернутым ранее пакетом.  
 
@@ -135,9 +135,9 @@ True
 Для сжатых и несжатых пакетов используется одинаковый механизм развертывания. Если пакет сжат, он хранится в хранилище образов кластера именно в таком виде, а перед запуском приложения распаковывается на целевом узле.
 Сжатие заменяет допустимый пакет Service Fabric его сжатой версией. Для этого нужны права на запись в папку. Если выполнить сжатие для уже сжатого пакета, никаких изменений не происходит.
 
-Чтобы сжать пакет, выполните команду Powershell [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) с параметром `CompressPackage`. Чтобы распаковать сжатый пакет, выполните эту же команду с параметром `UncompressPackage`.
+Чтобы сжать пакет, выполните команду Powershell [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) с параметром `CompressPackage`. Чтобы распаковать сжатый пакет, выполните эту же команду с параметром `UncompressPackage`.
 
-Следующая команда сжимает пакет, не копируя его в хранилище образов. Сжатый пакет можно скопировать в один или несколько кластеров Service Fabric, выполняя по мере необходимости командлет [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) без флага `SkipCopy`.
+Следующая команда сжимает пакет, не копируя его в хранилище образов. Сжатый пакет можно скопировать в один или несколько кластеров Service Fabric, выполняя по мере необходимости командлет [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) без флага `SkipCopy`.
 Теперь пакет содержит ZIP-файлы для пакетов `code`, `config` и `data`. Манифест приложения и манифесты служб не упаковываются в ZIP-файлы, так как они требуются для многих внутренних операций. Например, при совместном использовании пакетов, извлечении имени типа приложения и версии для определенных проверок всегда требуется доступ к манифестам. Сжатие манифеста снизит эффективность таких операций.
 
 ```
@@ -179,7 +179,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 
 ```
 
-Кроме того, сжатие и копирование пакета можно выполнить одним действием, используя командлет [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps).
+Кроме того, сжатие и копирование пакета можно выполнить одним действием, используя командлет [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage).
 Если пакет имеет большой размер, обеспечьте достаточное время ожидания для сжатия пакета и его отправки в кластер.
 
 ```powershell
@@ -212,7 +212,7 @@ Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\MyApplicationType
 Файл `sfpkg` — это ZIP-архив, содержащий изначальный пакет приложения с расширением .sfpkg.
 Внутри ZIP-архива пакет приложения может быть сжатым или несжатым. Сжатие пакета приложения внутри ZIP-архива выполняется на уровнях кода, конфигурации и пакетов данных, как [упоминалось ранее](service-fabric-package-apps.md#compress-a-package).
 
-Чтобы создать `sfpkg`, начните с папки, содержащей исходный пакет приложения, будь он сжатым или нет. Затем с помощью любой программы упакуйте папку в ZIP-архив с расширением .sfpkg. Например, используйте метод [ZipFile.CreateFromDirectory](/dotnet/api/system.io.compression.zipfile.createfromdirectory?view=netcore-3.1#System_IO_Compression_ZipFile_CreateFromDirectory_System_String_System_String_System_IO_Compression_CompressionLevel_System_Boolean_).
+Чтобы создать `sfpkg`, начните с папки, содержащей исходный пакет приложения, будь он сжатым или нет. Затем с помощью любой программы упакуйте папку в ZIP-архив с расширением .sfpkg. Например, используйте метод [ZipFile.CreateFromDirectory](/dotnet/api/system.io.compression.zipfile.createfromdirectory#System_IO_Compression_ZipFile_CreateFromDirectory_System_String_System_String_System_IO_Compression_CompressionLevel_System_Boolean_).
 
 ```csharp
 ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
@@ -225,7 +225,7 @@ ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);
 >[!NOTE]
 > Сейчас подготовка на основе относительного пути в хранилище образов не поддерживает файлы `sfpkg`. Таким образом, `sfpkg` не следует копировать в хранилище образов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Развертывание и удаление приложений][10] описание использования PowerShell для управления экземплярами приложения
 

@@ -5,12 +5,12 @@ ms.subservice: heavy
 ms.topic: include
 ms.date: 09/30/2020
 ms.author: alkohli
-ms.openlocfilehash: 80411ac191d0385ddafd4a3cc490d322ce039689
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80e34c117c02c2126b46297c4219effa85e9caa6
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91642605"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98792423"
 ---
 - Не копируйте файлы непосредственно в созданные общие ресурсы. Необходимо создать папку в общей папке, а затем скопировать в нее файлы.
 - Папка в разделах *StorageAccount_BlockBlob* и *StorageAccount_PageBlob* — это контейнер. Например, контейнеры создаются в виде *StorageAccount_BlockBlob/container* и *StorageAccount_PageBlob/container*.

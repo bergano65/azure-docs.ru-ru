@@ -4,12 +4,12 @@ description: Узнайте, как развернуть кластер Service 
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 52eba2e5780b1a66f3884a764631908335372273
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 77cc49c1b79e5c24e78a67a69493aa0b0059d565
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738956"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791077"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 
@@ -75,7 +75,7 @@ ms.locfileid: "92738956"
 
 ### <a name="virtual-network-and-subnet"></a>Виртуальная сеть и подсеть
 
-В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks** :
+В параметрах шаблона объявляются имена виртуальной сети и подсети.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**:
 
 * адресное пространство виртуальной сети: 10.0.0.0/16;
 * адресное пространство подсети Service Fabric: 10.0.2.0/24.
@@ -106,7 +106,7 @@ ms.locfileid: "92738956"
 
 ### <a name="create-a-cluster-using-an-existing-certificate"></a>Создание кластера с помощью имеющегося сертификата
 
-В приведенном ниже сценарии используется команда [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest) и шаблон, которые позволяют развернуть новый кластер с помощью имеющегося сертификата. Эта команда также создает хранилище ключей в Azure и отправляет сертификат.
+В приведенном ниже сценарии используется команда [az sf cluster create](/cli/azure/sf/cluster) и шаблон, которые позволяют развернуть новый кластер с помощью имеющегося сертификата. Эта команда также создает хранилище ключей в Azure и отправляет сертификат.
 
 ```azurecli
 ResourceGroupName="sflinuxclustergroup"
@@ -132,7 +132,7 @@ az sf cluster create --resource-group $ResourceGroupName --location $Location \
 
 ### <a name="create-a-cluster-using-a-new-self-signed-certificate"></a>Создание кластера с помощью нового самозаверяющего сертификата
 
-В приведенном ниже сценарии используется команда [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest) и шаблон, которые позволяют развернуть в Azure новый кластер. Кроме того, при помощи этой команды создается хранилище ключей в Azure, в него добавляется новый самозаверяющий сертификат и локально скачивается файл сертификата.
+В приведенном ниже сценарии используется команда [az sf cluster create](/cli/azure/sf/cluster) и шаблон, которые позволяют развернуть в Azure новый кластер. Кроме того, при помощи этой команды создается хранилище ключей в Azure, в него добавляется новый самозаверяющий сертификат и локально скачивается файл сертификата.
 
 ```azurecli
 ResourceGroupName="sflinuxclustergroup"

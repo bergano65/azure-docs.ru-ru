@@ -3,12 +3,12 @@ title: Базовый план безопасности Azure для Azure DevTe
 description: Базовый план безопасности Azure для Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: eabb55956f97f40312c894ccabd7a341ecc5688c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 09b4e28437c79961d53cf07b068e3169d20fe0c4
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202017"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789910"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Базовый план безопасности Azure для Azure DevTest Labs
 
@@ -619,7 +619,7 @@ _ *Мониторинг центра безопасности Azure:** не пр
 
 - [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](../security-center/deploy-vulnerability-assessment-vm.md)
 - [Обзор службы State Configuration службы автоматизации Azure](../automation/automation-dsc-overview.md)
-- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
+- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 - [Создание фабрики изображений в DevTest Labs](image-factory-create.md)
 
 **Мониторинг центра безопасности Azure:** Да

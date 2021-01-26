@@ -1,20 +1,20 @@
 ---
 title: Управление версиями и ветви разработки — LUIS
-description: Сведения о поддержке приложения Language Understanding (LUIS) в системе управления версиями. Как применить обновления к приложению LUIS при работе в ветви разработки.
+description: Сведения о поддержке приложения Распознавание речи (LUIS) в системе управления версиями. Как применить обновления к приложению LUIS при работе в ветви разработки.
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 1f5c0c7a877964eeb480fa958c7e76eb5706122f
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 0466105ab99d191b5dd9beab1d5d5b61f4b3225e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561279"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790890"
 ---
 # <a name="devops-practices-for-luis"></a>Рекомендации по использованию DevOps с LUIS
 
-Разработчики программного обеспечения, которые разрабатывают приложение Language Understanding (LUIS), могут применять DevOps рекомендации по управлению [версиями](luis-concept-devops-sourcecontrol.md), [автоматизированным сборкам](luis-concept-devops-automation.md), [тестированию](luis-concept-devops-testing.md)и [управлению выпусками](luis-concept-devops-automation.md#release-management) , следуя этим рекомендациям.
+Разработчики программного обеспечения, которые разрабатывают приложение Распознавание речи (LUIS), могут применять DevOps рекомендации по управлению [версиями](luis-concept-devops-sourcecontrol.md), [автоматизированным сборкам](luis-concept-devops-automation.md), [тестированию](luis-concept-devops-testing.md)и [управлению выпусками](luis-concept-devops-automation.md#release-management) , следуя этим рекомендациям.
 
 ## <a name="source-control-and-branch-strategies-for-luis"></a>Управление исходным кодом и стратегии создания ветвей для LUIS
 
@@ -72,7 +72,7 @@ ms.locfileid: "97561279"
 
 - [Файлы определения модульных тестов](luis-concept-devops-testing.md#writing-tests) (фразы продолжительностью и ожидаемые результаты)
 
-- [Файлы пакетного теста](./luis-concept-batch-test.md#batch-file-format) (фразы продолжительностью и ожидаемые результаты), используемые для тестирования производительности
+- [Файлы пакетного теста](./luis-how-to-batch-test.md#batch-test-file) (фразы продолжительностью и ожидаемые результаты), используемые для тестирования производительности
 
 ### <a name="credentials-and-keys-are-not-checked-in"></a>Учетные данные и ключи не возвращены
 
@@ -201,7 +201,7 @@ ms.locfileid: "97561279"
 
 Определив номер версии для последней редакции основного приложения LUIS, необходимо создать и протестировать новую версию приложения и опубликовать ее в конечной точке, где ее можно использовать в различных средах сборки, например в контроле качества или в рабочей среде. Настоятельно рекомендуется автоматизировать все эти действия в рабочем процессе непрерывной интеграции (CI).
 
-См.
+Пример
 - [Рабочие процессы автоматизации](luis-concept-devops-automation.md) . подробные сведения о реализации рабочего процесса CI для тестирования и выпуска приложения Luis.
 - [Release Management](luis-concept-devops-automation.md#release-management) сведения о развертывании приложения Luis.
 
@@ -211,7 +211,7 @@ ms.locfileid: "97561279"
 
 Если изменения в запросе на вытягивание объединяются в Main, то это необходимо, когда следует применить управление версиями, чтобы все обновления для main были установлены независимо.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [тестировании для Luis DevOps](luis-concept-devops-testing.md)
 * Узнайте, как [реализовать DevOps для Luis с GitHub](luis-how-to-devops-with-github.md)

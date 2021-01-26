@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: mbaldwin
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: d881394391b7967fe602155eefc9844e013de34e
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 23be8e667d435c2d91d32ebeac30b1e96b45a77e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724771"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790297"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Перемещение Azure Key Vault в другую подписку
 
@@ -29,7 +29,7 @@ ms.locfileid: "97724771"
 > Прежде чем принять решение о перемещении хранилища ключей в новую подписку, убедитесь, что вы понимаете последствия этого изменения, и внимательно следуйте указаниям в этой статье.
 > Если вы используете управляемые удостоверения службы (MSI), ознакомьтесь с инструкциями после перемещения в конце документа. 
 
-[Azure Key Vault](overview.md) автоматически привязывается к идентификатору клиента [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) по умолчанию для подписки, в которой он создается. Вы можете найти идентификатор клиента, связанный с подпиской, следуя [указаниям](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)в этом разделе. Все записи политики доступа и назначения ролей также привязаны к этому ИДЕНТИФИКАТОРу клиента.  Если вы перемещаете подписку Azure из клиента а в клиент б, существующие хранилища ключей будут недоступны субъектам-службам (пользователям и приложениям) в клиенте б. Чтобы устранить эту проблему, необходимо выполнить следующие действия.
+[Azure Key Vault](overview.md) автоматически привязывается к идентификатору клиента [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md) по умолчанию для подписки, в которой он создается. Вы можете найти идентификатор клиента, связанный с подпиской, следуя [указаниям](../../active-directory/fundamentals/active-directory-how-to-find-tenant.md)в этом разделе. Все записи политики доступа и назначения ролей также привязаны к этому ИДЕНТИФИКАТОРу клиента.  Если вы перемещаете подписку Azure из клиента а в клиент б, существующие хранилища ключей будут недоступны субъектам-службам (пользователям и приложениям) в клиенте б. Чтобы устранить эту проблему, необходимо выполнить следующие действия.
 
 * Измените идентификатор клиента, связанный со всеми существующими хранилищами ключей в этой подписке, для клиента Б.
 * Удалите все существующие записи политики доступа.
@@ -37,8 +37,8 @@ ms.locfileid: "97724771"
 
 Дополнительные сведения о Azure Key Vault и Azure Active Directory см. в разделе.
 - [Об Azure Key Vault](overview.md)
-- [Что такое Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
-- [Как найти идентификатор клиента](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)
+- [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)
+- [Как найти идентификатор клиента](../../active-directory/fundamentals/active-directory-how-to-find-tenant.md)
 
 ## <a name="limitations"></a>Ограничения
 
@@ -49,11 +49,11 @@ ms.locfileid: "97724771"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Уровень [участника](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) доступа или выше текущей подписки, в которой существует хранилище ключей. Роль можно назначить с помощью [портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)или [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
-* Доступ на уровне [участника](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) или более высокий уровень к подписке, в которую необходимо переместить хранилище ключей. Роль можно назначить с помощью [портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)или [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
-* Группа ресурсов в новой подписке. Его можно создать с помощью [портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-powershell)или [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-cli).
+* Уровень [участника](../../role-based-access-control/built-in-roles.md#contributor) доступа или выше текущей подписки, в которой существует хранилище ключей. Роль можно назначить с помощью [портал Azure](../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../role-based-access-control/role-assignments-cli.md)или [PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+* Доступ на уровне [участника](../../role-based-access-control/built-in-roles.md#contributor) или более высокий уровень к подписке, в которую необходимо переместить хранилище ключей. Роль можно назначить с помощью [портал Azure](../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../role-based-access-control/role-assignments-cli.md)или [PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+* Группа ресурсов в новой подписке. Его можно создать с помощью [портал Azure](../../azure-resource-manager/management/manage-resource-groups-portal.md), [PowerShell](../../azure-resource-manager/management/manage-resource-groups-powershell.md)или [Azure CLI](../../azure-resource-manager/management/manage-resource-groups-cli.md).
 
-Можно проверить существующие роли с помощью [портал Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-portal), [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-powershell), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-cli)или [REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-rest).
+Можно проверить существующие роли с помощью [портал Azure](../../role-based-access-control/role-assignments-list-portal.md), [PowerShell](../../role-based-access-control/role-assignments-list-powershell.md), [Azure CLI](../../role-based-access-control/role-assignments-list-cli.md)или [REST API](../../role-based-access-control/role-assignments-list-rest.md).
 
 
 ## <a name="moving-a-key-vault-to-a-new-subscription"></a>Перемещение хранилища ключей в новую подписку
@@ -96,7 +96,7 @@ az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Upd
 ### <a name="update-access-policies-and-role-assignments"></a>Обновление политик доступа и назначений ролей
 
 > [!NOTE]
-> Если Key Vault использует модель разрешений [RBAC Azure](https://docs.microsoft.com/azure/role-based-access-control/overview) . Необходимо также удалить назначения ролей хранилища ключей. Назначения ролей можно удалить с помощью [портала Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)или [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell). 
+> Если Key Vault использует модель разрешений [RBAC Azure](../../role-based-access-control/overview.md) . Необходимо также удалить назначения ролей хранилища ключей. Назначения ролей можно удалить с помощью [портала Azure](../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../role-based-access-control/role-assignments-cli.md)или [PowerShell](../../role-based-access-control/role-assignments-powershell.md). 
 
 Теперь, когда хранилище связано с правильным ИДЕНТИФИКАТОРом клиента, старые записи политики доступа или назначения ролей будут удалены, задайте новые записи политики доступа или назначения ролей.
 
@@ -106,9 +106,9 @@ az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Upd
 - [Назначение политики доступа с помощью PowerShell](assign-access-policy-powershell.md)
 
 Сведения о добавлении назначений ролей см. в следующих статьях:
-- [Добавление назначения ролей с помощью портала](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
-- [Добавление назначения ролей с помощью Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
-- [Добавление назначения ролей с помощью PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell)
+- [Добавление назначения ролей с помощью портала](../../role-based-access-control/role-assignments-portal.md)
+- [Добавление назначения ролей с помощью Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+- [Добавление назначения ролей с помощью PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
 
 ### <a name="update-managed-identities"></a>Обновление управляемых удостоверений

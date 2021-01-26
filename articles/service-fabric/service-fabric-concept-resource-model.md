@@ -3,12 +3,12 @@ title: Модель ресурсов приложения Service Fabric Azure
 description: В этой статье содержатся общие сведения об управлении приложением Service Fabric Azure с помощью Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: f4fbd775ab479437c350dc24b9b5511f7a614c8b
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 0019f154f301d2b688d4c16c9adb36ec386adef2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576100"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790729"
 ---
 # <a name="service-fabric-application-resource-model"></a>Модель ресурсов приложения Service Fabric
 
@@ -171,13 +171,13 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
 
 Чтобы удалить приложение, которое было развернуто с помощью модели ресурсов приложения, в диспетчер ресурсов:
 
-1. Используйте командлет [Get-азресаурце](/powershell/module/az.resources/get-azresource?view=azps-2.5.0) , чтобы получить идентификатор ресурса для приложения:
+1. Используйте командлет [Get-азресаурце](/powershell/module/az.resources/get-azresource) , чтобы получить идентификатор ресурса для приложения:
 
     ```powershell
     Get-AzResource  -Name <String> | f1
     ```
 
-1. Удалите ресурсы приложения с помощью командлета [Remove-азресаурце](/powershell/module/az.resources/remove-azresource?view=azps-2.5.0) :
+1. Удалите ресурсы приложения с помощью командлета [Remove-азресаурце](/powershell/module/az.resources/remove-azresource) :
 
     ```powershell
     Remove-AzResource  -ResourceId <String> [-Force] [-ApiVersion <String>]

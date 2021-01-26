@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 05/12/2020
 ms.author: victorh
-ms.openlocfilehash: e51cc8905a7b4a88bb7f7dabaf24bb30159ff86c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77e36d5ab98f1177b5a0b89ee10b3e6bd22560c2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83655093"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791465"
 ---
 # <a name="azure-firewall-threat-intelligence-based-filtering"></a>Фильтрация на основе аналитики угроз в Брандмауэре Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "83655093"
 
 По умолчанию фильтрация на основе аналитики угроз работает в режиме оповещения. Вы не сможете отключить эту функцию или изменить режим, пока соответствующий раздел интерфейса портала не станет доступен в вашем регионе.
 
-:::image type="content" source="media/threat-intel/threat-intel-ui.png" alt-text="Аналитика угроз в брандмауэре":::
+:::image type="content" source="media/threat-intel/threat-intel-ui.png" alt-text="Интерфейс портала для фильтрации на основе аналитики угроз":::
 
 ## <a name="logs"></a>Журналы
 
@@ -53,6 +53,6 @@ ms.locfileid: "83655093"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь с [примерами запросов Log Analytics для Брандмауэра Azure](log-analytics-samples.md).
+- Ознакомьтесь с [примерами запросов Log Analytics для Брандмауэра Azure](./firewall-workbook.md).
 - Узнайте, как [развернуть и настроить Брандмауэр Azure](tutorial-firewall-deploy-portal.md).
 - Изучите [аналитический отчет Microsoft Security](https://www.microsoft.com/en-us/security/operations/security-intelligence-report).

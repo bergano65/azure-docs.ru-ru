@@ -3,12 +3,12 @@ title: Удаление доступа к делегированию
 description: Узнайте, как удалить доступ к ресурсам, которые были делегированы поставщику услуг для Azure Лигхсаусе.
 ms.date: 12/03/2020
 ms.topic: how-to
-ms.openlocfilehash: d3442bb9fd2f6e7423fd4bf28cace1f7fd91ad80
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 7218c8829c9b2500e8311fbb3d5e9ff4eb986529
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608458"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791362"
 ---
 # <a name="remove-access-to-a-delegation"></a>Удаление доступа к делегированию
 
@@ -41,7 +41,7 @@ ms.locfileid: "96608458"
     ] 
 ```
 
-Эту роль можно также выбрать в **авторизации** при [создании предложения управляемой службы](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#authorization) для публикации в Azure Marketplace.
+Эту роль можно также выбрать в **авторизации** при [создании предложения управляемой службы](../../marketplace/plan-managed-service-offer.md) для публикации в Azure Marketplace.
 
 Пользователь с этим разрешением может удалить делегирование одним из следующих способов.
 

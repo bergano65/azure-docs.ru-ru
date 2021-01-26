@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: d6e52da7fce39a259107fe60a21fb5ead7b18709
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 36724e518f1bae636c2d2602a227b53a11257591
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127827"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791060"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление защищенного источника данных SharePoint в базу знаний
 
@@ -132,7 +132,7 @@ The Active Directory manager will get a pop-up window requesting permissions to 
 
 Ниже приведены действия по добавлению последнего содержимого SharePoint через API с помощью хранилища BLOB-объектов Azure. 
 1.  Скачайте файлы SharePoint локально. Пользователь, обращающийся к API, должен иметь доступ к SharePoint. 
-1.  Отправьте их в стоарже BLOB-объектов Azure. При этом будет создан безопасный общий доступ с [помощью маркера SAS.](https://docs.microsoft.com/azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works) 
+1.  Отправьте их в стоарже BLOB-объектов Azure. При этом будет создан безопасный общий доступ с [помощью маркера SAS.](../../../storage/common/storage-sas-overview.md#how-a-shared-access-signature-works) 
 1. Передайте URL-адрес большого двоичного объекта, созданный с помощью маркера SAS, в API службы QnA Maker. Чтобы разрешить ответ на вопрос из файлов, необходимо добавить в конце URL-адреса тип файла суффикса "&ext = PDF" или "&ext = doc", прежде чем передать его в API службы QnA Maker>  
 
 

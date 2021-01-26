@@ -3,12 +3,12 @@ title: Azure DevTest Labsное использование в нескольки
 description: Узнайте, как сообщать об использовании Azure DevTest Labs в нескольких лабораториях и подписках.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 9640dc3fd74095a737f382994201dc5610af921a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: d789b9849ec798a396e99420649792937422470f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152194"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789944"
 ---
 # <a name="report-azure-devtest-labs-usage-across-multiple-labs-and-subscriptions"></a>Использование отчетов Azure DevTest Labs в нескольких лабораториях и подписках
 
@@ -82,5 +82,5 @@ ms.locfileid: "92152194"
     Выбирают ли пользователи высокопроизводительные (более ресурсоемкие) размеры виртуальных машин?
 -   Какие образы Marketplace используются?
 
-    Являются ли пользовательские образы наиболее распространенной базой виртуальных машин, если хранилище общих образов строится как [Коллекция общих образов](../virtual-machines/windows/shared-image-galleries.md) или [фабрика образов](image-factory-create.md).
+    Являются ли пользовательские образы наиболее распространенной базой виртуальных машин, если хранилище общих образов строится как [Коллекция общих образов](../virtual-machines/shared-image-galleries.md) или [фабрика образов](image-factory-create.md).
 -   Какие пользовательские образы используются или не используются?

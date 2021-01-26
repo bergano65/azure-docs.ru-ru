@@ -5,22 +5,22 @@ author: abhishekram
 ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: abhisram
-ms.openlocfilehash: a38a11d9cf062cd0a45890d43afe9b2530b2b7bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ebaedb5369f3b39372262bfde526706e8d069418
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258462"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789622"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Диагностика и мониторинг производительности в Reliable Actors
-В среде выполнения субъектов Reliable Actors предусмотрены события [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) и [счетчики производительности](/dotnet/api/system.diagnostics.performancecounter?view=dotnet-plat-ext-3.1). содержащие полезную информацию о работоспособности среды выполнения и помогающие устранять неполадки и контролировать производительность.
+В среде выполнения субъектов Reliable Actors предусмотрены события [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource) и [счетчики производительности](/dotnet/api/system.diagnostics.performancecounter). содержащие полезную информацию о работоспособности среды выполнения и помогающие устранять неполадки и контролировать производительность.
 
 ## <a name="eventsource-events"></a>События EventSource
 Имя поставщика EventSource для среды выполнения Reliable Actors — Microsoft-ServiceFabric-Actors. События из этого источника отображаются в окне [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) (События диагностики) при [отладке приложения субъекта в Visual Studio](service-fabric-debugging-your-application.md).
 
 Для сбора и просмотра событий EventSource вы можете использовать такие инструменты и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md), [семантическое ведение журналов](/previous-versions/msp-n-p/dn774980(v=pandp.10)) и [библиотеки Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
-### <a name="keywords"></a>Keywords
+### <a name="keywords"></a>Ключевые слова
 Все события EventSource надежных субъектов связаны с одним или несколькими ключевыми словами. Это позволяет фильтровать собранные события. Определены указанные ниже биты ключевых слов.
 
 | bit | Описание |
@@ -50,7 +50,7 @@ ms.locfileid: "86258462"
 
 `ServiceFabricPartitionID_ActorsRuntimeInternalID`
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) метода с описателем формата "D".
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) метода с описателем формата "D".
 
 *ActorRuntimeInternalID* — это строковое представление 64-разрядного целого числа. Оно создается средой выполнения субъектов Service Fabric для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
@@ -69,7 +69,7 @@ ms.locfileid: "86258462"
 
 *ActorsRuntimeMethodId* — это строковое представление 32-разрядного целого числа. Оно создается средой выполнения субъектов Service Fabric для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) метода с описателем формата "D".
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) метода с описателем формата "D".
 
 *ActorRuntimeInternalID* — это строковое представление 64-разрядного целого числа. Оно создается средой выполнения субъектов Service Fabric для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
@@ -162,5 +162,5 @@ ms.locfileid: "86258462"
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Использование платформы Service Fabric надежными субъектами](service-fabric-reliable-actors-platform.md)
 * [Справочная документация по API субъектов](/previous-versions/azure/dn971626(v=azure.100))
-* [Пример кода](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Образец кода](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Поставщики EventSource в PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

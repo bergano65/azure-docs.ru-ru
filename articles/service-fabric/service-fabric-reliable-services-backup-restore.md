@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: mcoskun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a60ebff06562c12415b2a106a9a11127feb94dab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2674d1285544e4bc9b6fcb3d0b2e6f4b607786a2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021992"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791617"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Резервное копирование и восстановление Reliable Services и Reliable Actors
 Azure Service Fabric — это платформа высокой доступности, которая реплицирует состояние между несколькими узлами для обеспечения высокой доступности.  Таким образом, даже в случае сбоя одного узла в кластере службы будут оставаться доступными. Хотя иногда предоставленной платформой встроенной избыточности достаточно, в некоторых случаях желательно выполнять резервное копирование данных службы (во внешнее хранилище).
@@ -150,7 +150,7 @@ protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, C
 > 
 
 ## <a name="deleted-or-lost-service"></a>Удаленная или утерянная служба
-Если служба удалена, прежде чем восстанавливать данные, необходимо заново создать службу.  Важно создать службу с такой же конфигурацией, например с такой же схемой секционирования, чтобы можно было легко восстановить данные.  После запуска службы для восстановления данных службы необходимо вызвать интерфейс API (`OnDataLossAsync` выше) в каждой секции этой службы. Один из способов сделать это — использовать [FabricClient.TestManagementClient.StartPartitionDataLossAsync](/dotnet/api/system.fabric.fabricclient.testmanagementclient?view=azure-dotnet#System_Fabric_FabricClient_TestManagementClient_StartPartitionDataLossAsync_System_Guid_System_Fabric_PartitionSelector_System_Fabric_DataLossMode_) в каждой секции.  
+Если служба удалена, прежде чем восстанавливать данные, необходимо заново создать службу.  Важно создать службу с такой же конфигурацией, например с такой же схемой секционирования, чтобы можно было легко восстановить данные.  После запуска службы для восстановления данных службы необходимо вызвать интерфейс API (`OnDataLossAsync` выше) в каждой секции этой службы. Один из способов сделать это — использовать [FabricClient.TestManagementClient.StartPartitionDataLossAsync](/dotnet/api/system.fabric.fabricclient.testmanagementclient#System_Fabric_FabricClient_TestManagementClient_StartPartitionDataLossAsync_System_Guid_System_Fabric_PartitionSelector_System_Fabric_DataLossMode_) в каждой секции.  
 
 С этого момента реализация осуществляется по описанному выше сценарию. Необходимо восстановить последнюю соответствующую резервную копию из внешнего хранилища для каждого раздела. Следует учитывать один недостаток: идентификатор раздела, возможно, изменен, так как среда выполнения создает идентификаторы разделов динамически. Таким образом, служба должна хранить сведения о соответствующем разделе и имени службы, чтобы правильно определить последнюю резервную копию, которую необходимо восстановить для каждого раздела.
 
@@ -259,5 +259,5 @@ class MyCustomActorService : ActorService
   - [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
   - [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)
   - [Конфигурация Reliable Services](service-fabric-reliable-services-configuration.md)
-  - [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  - [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)
   - [Periodic backup and restore in Azure Service Fabric](service-fabric-backuprestoreservice-quickstart-azurecluster.md) (Периодическое резервное копирование и восстановление в Azure Service Fabric)

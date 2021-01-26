@@ -1,5 +1,5 @@
 ---
-title: Обновление или удаление существующих Azure Load Balancer, используемых в масштабируемом наборе виртуальных машин
+title: Обновление или удаление существующих экземпляров Azure Load Balancer, используемых в масштабируемом наборе виртуальных машин
 titleSuffix: Update or delete existing Azure Load Balancer used by Virtual Machine Scale Set
 description: В этом пошаговом руководстве приступите к работе с Azure Load Balancer (цен. категория "Стандартный") и масштабируемыми наборами виртуальных машин.
 services: load-balancer
@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/30/2020
 ms.author: irenehua
-ms.openlocfilehash: f8f664375e53a1cef28b0c7b95207770434f67fa
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: d5614490bfd2cfb67b6b7afd7b7b8643bbf754bd
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97893284"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790095"
 ---
 # <a name="how-to-updatedelete-azure-load-balancer-used-by-virtual-machine-scale-sets"></a>Обновление и удаление Azure Load Balancer, используемых масштабируемыми наборами виртуальных машин
 
 ## <a name="how-to-set-up-azure-load-balancer-for-scaling-out-virtual-machine-scale-sets"></a>Как настроить Azure Load Balancer для масштабирования масштабируемых наборов виртуальных машин
-  * Убедитесь, что в Load Balancer настроен [входящий пул NAT](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest) и что масштабируемый набор виртуальных машин размещен в серверном пуле Load Balancer. Azure Load Balancer автоматически создаст новые правила NAT для входящего трафика в пуле входящих подключений NAT при добавлении новых экземпляров виртуальных машин в масштабируемый набор виртуальных машин. 
+  * Убедитесь, что в Load Balancer настроен [входящий пул NAT](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest) и что масштабируемый набор виртуальных машин размещен в серверном пуле Load Balancer. Azure Load Balancer автоматически создаст новые правила NAT для входящего трафика в пуле входящих подключений NAT при добавлении новых экземпляров виртуальных машин в масштабируемый набор виртуальных машин. 
   * Чтобы проверить, правильно ли настроен входящий пул NAT, 
   1. Войдите на портал Azure по адресу https://portal.azure.com.
   
@@ -35,7 +35,7 @@ ms.locfileid: "97893284"
 ## <a name="how-to-add-inbound-nat-rules"></a>Как добавить правила NAT для входящего трафика? 
   * Невозможно добавить отдельное правило NAT для входящего трафика. Однако можно добавить набор правил NAT для входящего трафика с определенным диапазоном внешних портов и внутренним портом для всех экземпляров в масштабируемом наборе виртуальных машин.
   * Чтобы добавить весь набор правил NAT для входящего трафика для масштабируемых наборов виртуальных машин, необходимо сначала создать входящий в Load Balancer пул NAT, а затем указать ссылку на пул NAT для входящего трафика из сетевого профиля масштабируемого набора виртуальных машин. Полный пример использования CLI показан ниже.
-  * Новый пул NAT для входящего трафика не должен перекрывать диапазон интерфейсных портов с помощью существующих пулов NAT для входящего трафика. Чтобы просмотреть настроенные пулы NAT для входящего трафика, можно использовать эту [команду CLI](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest#az_network_lb_inbound_nat_pool_list) .
+  * Новый пул NAT для входящего трафика не должен перекрывать диапазон интерфейсных портов с помощью существующих пулов NAT для входящего трафика. Чтобы просмотреть настроенные пулы NAT для входящего трафика, можно использовать эту [команду CLI](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest#az_network_lb_inbound_nat_pool_list) .
 ```azurecli-interactive
 az network lb inbound-nat-pool create 
         -g MyResourceGroup 
@@ -92,7 +92,7 @@ az network lb inbound-nat-pool update
    
 1. На странице **Добавление внешнего IP-адреса** введите значения и нажмите кнопку **ОК** .
 
-1. Выполните [Шаг 5](https://docs.microsoft.com/azure/load-balancer/load-balancer-multiple-ip#step-5-configure-the-health-probe) и [Шаг 6](https://docs.microsoft.com/azure/load-balancer/load-balancer-multiple-ip#step-5-configure-the-health-probe) в этом учебнике, если требуются новые правила балансировки нагрузки.
+1. Выполните [Шаг 5](./load-balancer-multiple-ip.md#step-5-configure-the-health-probe) и [Шаг 6](./load-balancer-multiple-ip.md#step-5-configure-the-health-probe) в этом учебнике, если требуются новые правила балансировки нагрузки.
 
 1. При необходимости создайте новый набор правил NAT для входящего трафика, используя только что созданные IP-конфигурации внешнего интерфейса. Пример можно найти здесь в [предыдущем разделе].
 

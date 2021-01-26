@@ -2,13 +2,13 @@
 title: Связывание шаблонов для развертывания
 description: Описывает, как использовать связанные шаблоны в шаблоне Azure Resource Manager (шаблон ARM) для создания решения модульного шаблона. Показывает, как передавать значения параметров, указывать файл параметров и динамически создаваемые URL-адреса.
 ms.topic: conceptual
-ms.date: 01/20/2021
-ms.openlocfilehash: dd810167e07f1bb23f9563936cb481652953ccd1
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 01/25/2021
+ms.openlocfilehash: 7d4df67b7f69b3e58799f45ad72bd9ed68540dc2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624864"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790941"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
@@ -111,6 +111,10 @@ ms.locfileid: "98624864"
   },
   ...
 ```
+
+> [!NOTE]
+>
+> Если параметр scope имеет значение `outer` , нельзя использовать `reference` функцию в разделе Outputs вложенного шаблона для ресурса, развернутого во вложенном шаблоне. Чтобы получить значения для развернутого ресурса во вложенном шаблоне, используйте `inner` область или преобразуйте вложенный шаблон в связанный шаблон.
 
 В следующем шаблоне показано, как выражения шаблона разрешаются в соответствии с областью. Он содержит переменную с именем `exampleVar` , которая определена как в родительском, так и во вложенном шаблоне. Он возвращает значение переменной.
 
@@ -399,10 +403,6 @@ ms.locfileid: "98624864"
   ]
 }
 ```
-
-> [!NOTE]
->
-> Если параметр scope имеет значение `outer` , нельзя использовать `reference` функцию в разделе Outputs вложенного шаблона для ресурса, развернутого во вложенном шаблоне. Чтобы получить значения для развернутого ресурса во вложенном шаблоне, используйте `inner` область или преобразуйте вложенный шаблон в связанный шаблон.
 
 ## <a name="linked-template"></a>Связанный шаблон
 
@@ -803,7 +803,7 @@ az deployment group create --resource-group ExampleGroup --template-uri $url?$to
 |[Подсистема балансировки нагрузки с общедоступным IP-адресом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Возвращает общедоступный IP-адрес из связанного шаблона и задает это значение в подсистеме балансировки нагрузки. |
 |[Несколько IP-адресов](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip-parent.json) | [связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/static-public-ip.json) |Создает несколько общедоступных IP-адресов в связанном шаблоне.  |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы пройти обучение, см. раздел [учебник. Развертывание связанного шаблона](./deployment-tutorial-linked-template.md).
 * Дополнительные сведения о том, как определить порядок развертывания ресурсов, см. в разделе [Определение заказа для развертывания ресурсов в шаблонах ARM](define-resource-dependency.md).

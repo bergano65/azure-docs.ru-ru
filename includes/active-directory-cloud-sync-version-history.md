@@ -1,14 +1,42 @@
 ---
-ms.openlocfilehash: 77866fcb72515d5167d9f06b7d9ad91c59bc7945
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 35cb7ba4523cfbc88daf958fd972b127519385ce
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97700577"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98792418"
 ---
 В этой статье перечислены версии и возможности выпущенного агента подготовки Azure Active Directory Connect. Команда Azure AD регулярно обновляет агент подготовки с помощью новых функций и функций. Агент подготовки обновляется автоматически при выпуске новой версии. 
 
 Корпорация Майкрософт предоставляет прямую поддержку последней версии агента и одной версии.
+
+## <a name="113540"></a>1.1.354.0
+
+20 января 2021 г., выпущенных для скачивания
+
+### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
+- Улучшение возможностей GMSA, включая поддержку предварительно настроенной учетной записи GMSA
+- Поддержка [командлетов PowerShell](../articles/active-directory/cloud-sync/how-to-gmsa-cmdlets.md) для установки GMSA
+- [Поддержка интерфейса командной строки](../articles/active-directory/cloud-sync/how-to-install-pshell.md) для установки агента (автоматическая установка)
+- Дополнительные диагностические сведения о проблемах карантина для источника агента
+- Исправления ошибок, включающие уменьшение использования памяти фильтрами области подразделений, запуск PHS только для пользователей в области, обработку вложенных объектов в подразделении при использовании области подразделений и т. д. 
+
+
+### <a name="fixed-issues"></a>Устраненные проблемы
+-    Запретить помещение в карантин, если группа областей выходит за пределы области
+-   Если фильтры области настроены — задание PHS теперь работает только для пользователей в области
+-   Агент может зависнуть во время обновления
+-   Начальная синхронизация объектов во вложенных подразделениях при использовании области подразделений
+-   Сделайте Repair-AADCloudSyncToolsAccount более надежным
+-   Уменьшение объема используемой памяти для фильтров области подразделений
+-   Проверка роли администратора завершается сбоем, если участники роли содержат группу безопасности
+-   Устранение проблемы с разрешениями папки GMSA, препятствующей продлению сертификата агента
+
+
+
+
+
+
 
 ## <a name="112810"></a>1.1.281.0
 
@@ -18,18 +46,18 @@ ms.locfileid: "97700577"
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
 
-* Поддержка [gMSA](../articles/active-directory/cloud-provisioning/how-to-prerequisites.md#group-managed-service-accounts)
+* Поддержка [gMSA](../articles/active-directory/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
 * Поддержка групп до размера менее 1500 членов во время добавочного или разностного цикла синхронизации. Это применимо при использовании фильтра области групп
 * Поддержка больших групп с размером членов до 15 000
 * Улучшения начальной синхронизации
 * Расширенное подробное ведение журнала
-* Знакомство с [модулем PowerShell для аадклаудсинктулс](../articles/active-directory/cloud-provisioning/reference-powershell.md)
+* Знакомство с [модулем PowerShell для аадклаудсинктулс](../articles/active-directory/cloud-sync/reference-powershell.md)
 * Исправлены ограничения, позволяющие устанавливать агент на сервере, отличном от английского.
 * Поддержка фильтрации PHS только для объектов в области (изначально мы синхронизируем хэши паролей для всех объектов).
 * Исправлена проблема утечки памяти в агенте
 * Улучшенные журналы подготовки
-* Поддержка настройки [времени ожидания подключения LDAP](../articles/active-directory/cloud-provisioning/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
-* Поддержка настройки [прослеживания ссылок](../articles/active-directory/cloud-provisioning/how-to-manage-registry-options.md#configure-referral-chasing) 
+* Поддержка настройки [времени ожидания подключения LDAP](../articles/active-directory/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
+* Поддержка настройки [прослеживания ссылок](../articles/active-directory/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
 
 
 ## <a name="11960"></a>1.1.96.0
@@ -40,7 +68,7 @@ ms.locfileid: "97700577"
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
 
-* Включает поддержку [Azure AD Connect подготовки облака](../articles/active-directory/cloud-provisioning/what-is-cloud-provisioning.md) для синхронизации данных пользователей, контактов и групп из локальной Active Directory в Azure AD.
+* Включает поддержку [Azure AD Connect облачной синхронизации](../articles/active-directory/cloud-sync/what-is-cloud-sync.md) для синхронизации пользователей, контактов и групп данных из локальной Active Directory в Azure AD.
 
 
 ## <a name="11670"></a>1.1.67.0

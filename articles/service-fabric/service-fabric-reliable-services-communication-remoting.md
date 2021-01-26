@@ -4,12 +4,12 @@ description: Удаленное взаимодействие Service Fabric по
 ms.topic: conceptual
 ms.date: 09/20/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c3659fea73abae3c9c5264f227b90d0af95a93e7
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: a0486a27d76c978a65c4a3cfd81df52a12e4ea1d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576661"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791583"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -160,7 +160,7 @@ string message = await helloWorldClient.HelloWorldAsync();
    </Resources>
    ```
 
-2. Используйте [FabricTransportServiceRemotingListener](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.runtime.fabrictransportserviceremotinglistener?view=azure-dotnet) из пространства имен `Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Runtime`.
+2. Используйте [FabricTransportServiceRemotingListener](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.runtime.fabrictransportserviceremotinglistener) из пространства имен `Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Runtime`.
 
    ```csharp
    protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -176,7 +176,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
    ```
 
-3. Используйте [FabricTransportServiceRemotingClientFactory](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.client.fabrictransportserviceremotingclientfactory?view=azure-dotnet) из пространства имен `Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Client`, чтобы создать клиенты.
+3. Используйте [FabricTransportServiceRemotingClientFactory](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.client.fabrictransportserviceremotingclientfactory) из пространства имен `Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Client`, чтобы создать клиенты.
 
    ```csharp
    var proxyFactory = new ServiceProxyFactory((c) =>
@@ -192,7 +192,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 1. Обновите службу версии 1 до версии 2 с помощью указанного атрибута.
 Такое изменение гарантирует, что служба будет ожидать передачу данных от прослушивателей версии 1 и 2.
 
-    a. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2.
+    а. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2.
       ```xml
       <Resources>
         <Endpoints>
@@ -255,7 +255,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
    ```
 
-3. Добавьте [атрибут сборки](/dotnet/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportserviceremotingproviderattribute?view=azure-dotnet) в интерфейсы удаленного взаимодействия.
+3. Добавьте [атрибут сборки](/dotnet/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportserviceremotingproviderattribute) в интерфейсы удаленного взаимодействия.
 
    ```csharp
     [assembly:  FabricTransportServiceRemotingProvider(RemotingListenerVersion=  RemotingListenerVersion.V2_1, RemotingClientVersion= RemotingClientVersion.V2_1)]
@@ -267,7 +267,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 
 ### <a name="use-explicit-remoting-classes-to-create-a-listenerclient-factory-for-the-v2-interface-compatible-version"></a>Использование явных классов удаленного взаимодействия для создания прослушивателя и фабрики клиента для версии 2 (с совместимым интерфейсом)
 
-Выполните следующие действия:
+Выполните следующие действия.
 
 1. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
 
@@ -279,7 +279,7 @@ string message = await helloWorldClient.HelloWorldAsync();
    </Resources>
    ```
 
-2. Используйте [прослушиватель удаленного взаимодействия версии 2](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.runtime.fabrictransportserviceremotinglistener?view=azure-dotnet). По умолчанию используется ресурс конечной точки службы с именем ServiceEndpointV2. Он должен быть определен в манифесте службы.
+2. Используйте [прослушиватель удаленного взаимодействия версии 2](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.runtime.fabrictransportserviceremotinglistener). По умолчанию используется ресурс конечной точки службы с именем ServiceEndpointV2. Он должен быть определен в манифесте службы.
 
    ```csharp
    protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -297,7 +297,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
    ```
 
-3. Используйте [фабрику клиента](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.client.fabrictransportserviceremotingclientfactory?view=azure-dotnet) версии 2.
+3. Используйте [фабрику клиента](/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.client.fabrictransportserviceremotingclientfactory) версии 2.
    ```csharp
    var proxyFactory = new ServiceProxyFactory((c) =>
           {
@@ -319,7 +319,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 1. Обновите службу версии 1 до версии 2_1 с помощью указанного ниже атрибута.
 Это изменение гарантирует, что служба будет ожидать передачи данных от прослушивателей версии 1 и 2_1.
 
-    a. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
+    а. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
       ```xml
       <Resources>
         <Endpoints>
@@ -356,7 +356,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 ### <a name="use-custom-serialization-with-a-remoting-wrapped-message"></a>Использование настраиваемой сериализации с упакованным сообщением удаленного взаимодействия
 
 В упакованном сообщении удаленного взаимодействия мы создаем отдельный упакованный объект, в поле которого хранятся все параметры.
-Выполните следующие действия:
+Выполните следующие действия.
 
 1. Реализуйте интерфейс `IServiceRemotingMessageSerializationProvider`, чтобы обеспечить пользовательскую сериализацию.
     В этом фрагменте кода показан пример такой реализации.

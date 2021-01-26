@@ -4,12 +4,12 @@ description: В этой статье описывается структура 
 ms.topic: conceptual
 ms.date: 3/9/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c3bd67e0f71e20a8b5a74b4b38e5b423a14dc08d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e204b47b7fa9f528341507c315c926159d524e13
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575624"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789588"
 ---
 # <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Использование платформы Service Fabric надежными субъектами
 В этой статье объясняется, как работают субъекты Reliable Actors на платформе Azure Service Fabric. Reliable Actors выполняться в инфраструктуре, размещенной в реализации надежной службы с отслеживанием состояния, которая называется *службой субъекта*. Служба субъектов содержит все компоненты, необходимые для управления жизненным циклом и диспетчеризации относящихся к субъектам сообщений:
@@ -89,7 +89,7 @@ ActorProxyBase.create(MyActor.class, new ActorId(1234));
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
-* [Справочная документация по API субъектов](/dotnet/api/microsoft.servicefabric.actors?view=azure-dotnet)
+* [Справочная документация по API субъектов](/dotnet/api/microsoft.servicefabric.actors)
 * [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 

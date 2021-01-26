@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 985f9e741a1491a812c1d2b20de96381f8af3fa4
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 084ca039e7f388a11e15b29c579606c6ed3086db
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359852"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790433"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
@@ -34,7 +34,7 @@ ms.locfileid: "97359852"
 
 Прежде чем приступать к началу работы, важно отметить, что можно развернуть пример средства создания меток в экземпляре контейнера Azure (ACI) двумя способами. Оба параметра используются для запуска примера средства создания меток с помощью ACI: 
 
-* [Использование портал Azure](#azure-portal)
+* [Использование портала Azure](#azure-portal)
 * [Использование Azure CLI](#azure-cli)
 
 ### <a name="azure-portal"></a>Портал Azure
@@ -80,7 +80,7 @@ ms.locfileid: "97359852"
    * Непрерывное развертывание — задайте значение **On** , если вы хотите получить автоматические обновления, когда команда разработчиков вносит изменения в пример средства создания меток.
    * Команда запуска — задает значение `./run.sh eula=accept`
 
-    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
+    # <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1) 
    * Параметры — выберите **один контейнер**
    * Источник образа — выберите **частный реестр** 
    * URL-адрес сервера — установите значение `https://mcr.microsoft.com`
@@ -101,7 +101,7 @@ ms.locfileid: "97359852"
 > При создании веб-приложения можно также настроить авторизацию и проверку подлинности. Это не обязательно, чтобы начать работу. 
 
 > [!IMPORTANT]
-> Может потребоваться включить TLS для веб-приложения, чтобы просмотреть его по `https` адресу. Следуйте инструкциям в разделе [Включение конечной точки TLS](https://docs.microsoft.com/azure/container-instances/container-instances-container-group-ssl) для настройки контейнера расширения, чем включение TLS/SSL для веб-приложения.
+> Может потребоваться включить TLS для веб-приложения, чтобы просмотреть его по `https` адресу. Следуйте инструкциям в разделе [Включение конечной точки TLS](../../container-instances/container-instances-container-group-ssl.md) для настройки контейнера расширения, чем включение TLS/SSL для веб-приложения.
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -132,7 +132,7 @@ az container create \
   --memory 8 \
   --command-line "./run.sh eula=accept"
 ``` 
-# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
+# <a name="v21-preview"></a>[Предварительная версия 2.1](#tab/v2-1)    
 ```azurecli
 DNS_NAME_LABEL=aci-demo-$RANDOM
 

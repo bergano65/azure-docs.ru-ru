@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5a4586c9c1be51b0ebbdebcf0c23289fc39f9eda
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 263e45928642aa74d682fc490e424a24deeb8076
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485507"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790687"
 ---
 # <a name="placement-policies-for-service-fabric-services"></a>Политики размещения для служб Service Fabric
 Политики размещения — это дополнительные правила, с помощью которых можно управлять размещением служб в некоторых специальных, менее распространенных сценариях. Вот несколько примеров.
@@ -150,7 +150,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 >
 
 > [!NOTE]
-> В настоящее время политика поддерживается только для служб без отслеживания состояния с [режимом активации пакета службы](/dotnet/api/system.fabric.description.servicepackageactivationmode?view=azure-dotnet)ExclusiveProcess.
+> В настоящее время политика поддерживается только для служб без отслеживания состояния с [режимом активации пакета службы](/dotnet/api/system.fabric.description.servicepackageactivationmode)ExclusiveProcess.
 >
 
 > [!WARNING]
@@ -158,7 +158,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 >
 
 > [!NOTE]
-> Использование высокого значения [мининстанцекаунт](/dotnet/api/system.fabric.description.statelessservicedescription.mininstancecount?view=azure-dotnet) с этой политикой размещения может привести к зависанию обновлений приложений. Например, если имеется кластер с пятью узлами и Set InstanceCount = 10, на каждом узле будет два экземпляра. Если задать Мининстанцекаунт = 9, попытка обновления приложения может быть задержана; с Мининстанцекаунт = 8 это можно избежать.
+> Использование высокого значения [мининстанцекаунт](/dotnet/api/system.fabric.description.statelessservicedescription.mininstancecount) с этой политикой размещения может привести к зависанию обновлений приложений. Например, если имеется кластер с пятью узлами и Set InstanceCount = 10, на каждом узле будет два экземпляра. Если задать Мининстанцекаунт = 9, попытка обновления приложения может быть задержана; с Мининстанцекаунт = 8 это можно избежать.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия

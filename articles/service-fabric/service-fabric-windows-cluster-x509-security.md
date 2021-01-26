@@ -3,12 +3,12 @@ title: Защита кластера в Windows с помощью сертифи
 description: Безопасный обмен данными в автономном или частном кластере Azure Service Fabric, а также между клиентами и кластером.
 ms.topic: conceptual
 ms.date: 10/15/2017
-ms.openlocfilehash: 34ba457ce0f39705393962d5c5ec8fa11668f413
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: d75c644be47ea44f6a8a6ccac91b785af0132833
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686129"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791043"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-x509-certificates"></a>Защита автономного кластера под управлением Windows с помощью сертификатов X.509
 В этой статье описано, как обезопасить обмен данными между разными узлами автономного кластера Windows. Кроме того, здесь рассматриваются способы аутентификации для клиентов, которые подключаются к кластеру при помощи сертификатов X.509. Аутентификация гарантирует, что только авторизованные пользователи могут получить доступ к кластеру и развернутым приложениям для выполнения задач управления. Безопасность на основе сертификатов необходимо включить в кластере при его создании.  
@@ -355,7 +355,7 @@ $ConnectArgs = @{  ConnectionEndpoint = '10.7.0.5:19000';  X509Credential = $Tru
 Connect-ServiceFabricCluster $ConnectArgs
 ```
 
-Затем можно выполнить другие команды PowerShell для работы с этим кластером. Например, вы можете выполнить [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps) для отображения списка узлов в этом защищенном кластере.
+Затем можно выполнить другие команды PowerShell для работы с этим кластером. Например, вы можете выполнить [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode) для отображения списка узлов в этом защищенном кластере.
 
 
 Чтобы удалить кластер, подключитесь к узлу в кластере, в который вы скачали пакет Service Fabric, откройте командную строку и перейдите в папку с пакетом. Теперь выполните следующую команду.

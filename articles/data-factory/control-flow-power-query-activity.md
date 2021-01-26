@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/18/2021
-ms.openlocfilehash: 3314053e5b81c597d6d29015a5ebda6e171731d1
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: c0ad769ceba4fc3fa7f602d70188ea1942ca73aa
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98634411"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791700"
 ---
 # <a name="power-query-activity-in-data-factory"></a>Активность Power Query в фабрике данных
 
@@ -22,6 +22,8 @@ ms.locfileid: "98634411"
 ![Снимок экрана, на котором показано Power Query в области "ресурсы фабрики".](media/data-flow/power-query-wrangling.png)
 
 Ранее структурирование данных в фабрике данных Azure был создан с помощью пункта меню поток данных. Это было изменено для создания новой Power Query действия. Вы можете работать непосредственно внутри Power Query комбинированного редактора, чтобы выполнить интерактивное исследование данных, а затем сохранить работу. После завершения можно выполнить действие Power Query и добавить его в конвейер. Фабрика данных Azure автоматически масштабирует ее и эксплуатацию данные структурирование с помощью среды потока данных фабрики данных Azure.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4MFYn]
 
 ## <a name="translation-to-data-flow-script"></a>Преобразование в скрипт потока данных
 

@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.author: tisande
-ms.openlocfilehash: c78e15a0656abd510bbc241d39ffd026afddfd96
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c687b5b18c9cf7b0920b23f49e3c7a2607e0a89f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353669"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791026"
 ---
 # <a name="getting-started-with-sql-queries"></a>Getting started with SQL queries (Начало работы с запросами SQL)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -177,7 +177,7 @@ ms.locfileid: "96353669"
     ]
 ```
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Remarks
 
 В предыдущих примерах показано несколько аспектов языка запросов Cosmos DB:  
 
@@ -187,7 +187,7 @@ ms.locfileid: "96353669"
 
 * Azure Cosmos DB поддерживает только элементы, строго соответствующие JSON. Система типов и выражения могут обрабатывать только типы JSON. Дополнительные сведения см. в [спецификациях JSON](https://www.json.org/).  
 
-* Контейнер Cosmos — это коллекция элементов JSON без схемы. Отношения внутри и между элементами контейнера неявно фиксируются с помощью включения, а не связей первичного и внешнего ключей. Эта функция важна для соединений внутри элемента, обсуждаемых далее в этой статье.
+* Контейнер Cosmos — это коллекция элементов JSON без схемы. Отношения внутри и между элементами контейнера неявно фиксируются с помощью включения, а не связей первичного и внешнего ключей. Эта функция важна для соединений внутри элемента, описанных в разделе [объединения в Azure Cosmos DB](sql-query-join.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
