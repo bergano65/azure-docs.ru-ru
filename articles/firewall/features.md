@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 10/08/2020
 ms.author: victorh
-ms.openlocfilehash: 6c71d9325ff7c1c5d2e7eff03a587a28335efd72
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 69eaf3ca60378afd810d712d85ea7ef732e41e3e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94652150"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788236"
 ---
 # <a name="azure-firewall-features"></a>Функции службы "Брандмауэр Azure"
 
@@ -101,7 +101,7 @@ ms.locfileid: "94652150"
 
 ## <a name="azure-monitor-logging"></a>ведение журналов Azure Monitor;
 
-Все события интегрируются с Azure Monitor, позволяя архивировать журналы в учетную запись хранения, передавать события в концентратор событий или отправлять их в журналы Azure Monitor. Примеры журналов Azure Monitor см. в разделе [журналы Azure Monitor для брандмауэра Azure](log-analytics-samples.md).
+Все события интегрируются с Azure Monitor, позволяя архивировать журналы в учетную запись хранения, передавать события в концентратор событий или отправлять их в журналы Azure Monitor. Примеры журналов Azure Monitor см. в разделе [журналы Azure Monitor для брандмауэра Azure](./firewall-workbook.md).
 
 Дополнительные сведения см. в статье [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./firewall-diagnostics.md). 
 

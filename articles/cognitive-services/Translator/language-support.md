@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: swmachan
-ms.openlocfilehash: e8e54a97c13a69fce2e80676fa68d6d795736a83
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: a359c4f0de6dab70b334da7e7d29ad4b273385ab
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703128"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789285"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Поддержка языков и регионов для перевода текста и речи
 
@@ -91,7 +91,7 @@ ms.locfileid: "98703128"
 | Пушту | `ps` |
 | Персидский | `fa` |
 | Польский | `pl` |
-| Португальский (Бразилия) | `pt-br` |
+| Португальский (Бразилия) | `pt` |
 | Португальский (Португалия) | `pt-pt` |
 | Панджаби | `pa` |
 | Керетарский диалект отоми | `otq` |
@@ -343,7 +343,7 @@ ms.locfileid: "98703128"
 | Норвежский      | `nb`          |
 | Персидский      | `fa`          |
 | Польский      | `pl`          |
-| Португальский (Бразилия) | `pt-br` |
+| Португальский (Бразилия) | `pt` |
 | Панджаби|`pa`|
 | Румынский      | `ro`          |
 | Русский      | `ru`          |

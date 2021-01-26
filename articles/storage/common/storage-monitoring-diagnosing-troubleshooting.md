@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 18d36e37554a5d2b37488b7a1525f8290dc03da0
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 50d78e83bbbeb4b0252c83f9f52e94599ea6946c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763274"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787966"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -767,7 +767,7 @@ sqllocaldb create v11.0
 >
 
 ### <a name="appendix-4-using-excel-to-view-metrics-and-log-data"></a><a name="appendix-4"></a>Приложение 4. Просмотр метрик и данных журналов с помощью Excel
-Многие средства позволяют загружать данные метрик хранилища из хранилища таблиц Azure в формате с разделителями. Данные в таком формате можно легко загрузить в Excel для просмотра и анализа. Данные журналов хранилища, полученные из хранилища BLOB-объектов Azure, уже имеют формат с разделителями, и их можно загрузить в Excel. Однако вам нужно добавить соответствующие заголовки столбцов согласно информации в статьях [Формат журналов аналитики хранилища](/rest/api/storageservices/Storage-Analytics-Log-Format) и [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/Storage-Analytics-Metrics-Table-Schema).
+Многие средства позволяют загружать данные метрик хранилища из хранилища таблиц Azure в формате с разделителями. Данные в таком формате можно легко загрузить в Excel для просмотра и анализа. Данные журнала хранилища из хранилища BLOB-объектов Azure уже находятся в формате с разделителями, который можно загрузить в Excel. Однако вам нужно добавить соответствующие заголовки столбцов согласно информации в статьях [Формат журналов аналитики хранилища](/rest/api/storageservices/Storage-Analytics-Log-Format) и [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/Storage-Analytics-Metrics-Table-Schema).
 
 Чтобы импортировать данные журналов хранилища в Excel после их загрузки из хранилища BLOB-объектов, выполните указанные ниже действия.
 

@@ -1,7 +1,7 @@
 ---
 title: Миграция в ключ создания ресурсов Azure
 titleSuffix: Azure Cognitive Services
-description: В этой статье описывается, как перенести Language Understanding (LUIS) Создание проверки подлинности из учетной записи электронной почты в ресурс Azure.
+description: В этой статье описывается, как перенести Распознавание речи (LUIS) Создание проверки подлинности из учетной записи электронной почты в ресурс Azure.
 services: cognitive-services
 author: aahill
 ms.author: aahi
@@ -11,19 +11,19 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: 086bc17938064571e8759ecda633fb5f87d1060f
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 3ff48ff5a3f46d8ec0fbf81b4cd20d20c217344b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616819"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787643"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Миграция в ключ создания ресурсов Azure
 
 > [!IMPORTANT]
 >  Начиная с 3 декабря существующие пользователи LUIS должны завершить процесс миграции, чтобы продолжить создание LUIS приложений.
 
-Language Understanding (LUIS) создание аутентификации изменено с учетной записи электронной почты на ресурс Azure. Используйте эту статью, чтобы узнать, как перенести учетную запись, если она еще не перенесена.  
+Распознавание речи (LUIS) создание аутентификации изменено с учетной записи электронной почты на ресурс Azure. Используйте эту статью, чтобы узнать, как перенести учетную запись, если она еще не перенесена.  
 
 
 ## <a name="what-is-migration"></a>Что такое миграция?
@@ -81,7 +81,7 @@ Language Understanding (LUIS) создание аутентификации из
    > ![Экспортируйте приложения.](./media/migrate-authoring-key/migration-export-apps.png)
 
 
-4. В окне для миграции регионов вам будет предложено перенести приложения в ресурс Azure в том же регионе, в котором они были созданы. LUIS имеет три области разработки [и порталы](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-authoring-regions). В окне будут показаны регионы, в которых были созданы ваши приложения. Отображаемые регионы миграции могут отличаться в зависимости от используемого регионального портала и созданных вами приложений. 
+4. В окне для миграции регионов вам будет предложено перенести приложения в ресурс Azure в том же регионе, в котором они были созданы. LUIS имеет три области разработки [и порталы](./luis-reference-regions.md#luis-authoring-regions). В окне будут показаны регионы, в которых были созданы ваши приложения. Отображаемые регионы миграции могут отличаться в зависимости от используемого регионального портала и созданных вами приложений. 
 
    > [!div class="mx-imgBorder"]
    > ![Миграция в нескольких регионах.](./media/migrate-authoring-key/migration-regional-flow.png)

@@ -7,12 +7,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 50e8dfd2998b50bfff7341e49ac4d0770c115166
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2020205357c68e007a1a375c4853e8c04afd2019
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530868"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789066"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств
 
@@ -58,7 +58,7 @@ ms.locfileid: "90530868"
 > [!IMPORTANT]
 > Кроме выполнения проверки принадлежности, скрипты PowerShell и Bash, упомянутые выше, позволяют создать корневые, промежуточные и конечные сертификаты, которые можно использовать для проверки подлинности и подготовки устройств. Эти сертификаты следует использовать только для разработки. Их не следует использовать в рабочей среде. 
 
-Скрипты PowerShell и Bash, описанные в документации, и пакеты SDK используют [OpenSSL](https://www.openssl.org/). Вы также можете использовать OpenSSL или другие сторонние средства для подтверждения владением. Дополнительные сведения о средствах, предоставляемых с пакетом SDK, см. в статье [Упрощение разработки для процесса подготовки с использованием инструментов, предоставляемых в пакетах SDK](how-to-use-sdk-tools.md). 
+Скрипты PowerShell и Bash, описанные в документации, и пакеты SDK используют [OpenSSL](https://www.openssl.org/). Вы также можете использовать OpenSSL или другие сторонние средства для подтверждения владением. Пример использования инструментария, предоставляемого с пакетами SDK, см. в разделе [Создание цепочки сертификатов X. 509](tutorial-custom-hsm-enrollment-group-x509.md#create-an-x509-certificate-chain). 
 
 
 ## <a name="upload-the-signed-verification-certificate"></a>Передача подписанного сертификата проверки
@@ -69,7 +69,7 @@ ms.locfileid: "90530868"
 
    ![Проверка отправки сертификата](./media/how-to-verify-certificates/upload-cert-verification.png)  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о создании группы регистрации на портале см. в статье [Как управлять регистрацией устройств с помощью портала Azure](how-to-manage-enrollments.md).
 - Дополнительные сведения о создании группы регистрации с помощью пакетов SDK для служб см. в статье [Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure](how-to-manage-enrollments-sdks.md).

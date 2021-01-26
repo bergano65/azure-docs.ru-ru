@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 2d0b66d2b4d89b512b34cb33a5607b471b7d1e84
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 12e57361b9e275fc441df27a3a1381989d48751c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040940"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788576"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Выходная привязка служебной шины Azure для функций Azure
 
@@ -40,7 +40,7 @@ public static string ServiceBusOutput([HttpTrigger] dynamic input, ILogger log)
 
 В следующем примере показаны выходная привязка служебной шины в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция использует триггер таймера для отправки сообщения очереди каждые 15 секунд.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -87,11 +87,46 @@ public static async Task Run(TimerInfo myTimer, ILogger log, IAsyncCollector<str
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+В следующем примере показана функция Java, которая отправляет сообщение в очередь служебной шины `myqueue` при срабатывании HTTP-запроса.
+
+```java
+@FunctionName("httpToServiceBusQueue")
+@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
+public String pushToQueue(
+  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+  final String message,
+  @HttpOutput(name = "response") final OutputBinding<T> result ) {
+      result.setValue(message + " has been sent.");
+      return message;
+ }
+```
+
+ В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров функции, значение которых будут записываться в очередь Служебной шины Microsoft Azure.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
+
+Функции Java также могут записывать в раздел служебной шины. В следующем примере `@ServiceBusTopicOutput` заметка используется для описания конфигурации выходной привязки. 
+
+```java
+@FunctionName("sbtopicsend")
+    public HttpResponseMessage run(
+            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
+            @ServiceBusTopicOutput(name = "message", topicName = "mytopicname", subscriptionName = "mysubscription", connection = "ServiceBusConnection") OutputBinding<String> message,
+            final ExecutionContext context) {
+        
+        String name = request.getBody().orElse("Azure Functions");
+
+        message.setValue(name);
+        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+        
+    }
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны выходная привязка служебной шины в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует триггер таймера для отправки сообщения очереди каждые 15 секунд.
 
-Данные привязки в файле *function.json* :
+Данные привязки в файле *function.json*:
 
 ```json
 {
@@ -137,6 +172,39 @@ module.exports = function (context, myTimer) {
     context.bindings.outputSbQueue.push("2 " + message);
     context.done();
 };
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В следующем примере показана выходная привязка служебной шины в *function.jsв* файле и [функция PowerShell](functions-reference-powershell.md) , которая использует эту привязку. 
+
+Данные привязки в файле *function.json*:
+
+```json
+{
+  "bindings": [
+    {
+      "type": "serviceBus",
+      "direction": "out",
+      "connection": "AzureServiceBusConnectionString",
+      "name": "outputSbMsg",
+      "queueName": "outqueue",
+      "topicName": "outtopic"
+    }
+  ]
+}
+```
+
+Ниже приведена оболочка PowerShell, которая создает сообщение в качестве выходных данных функции.
+
+```powershell
+param($QueueItem, $TriggerMetadata) 
+
+Push-OutputBinding -Name outputSbMsg -Value @{ 
+    name = $QueueItem.name 
+    employeeId = $QueueItem.employeeId 
+    address = $QueueItem.address 
+} 
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -189,41 +257,6 @@ def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
     return 'OK'
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
-В следующем примере показана функция Java, которая отправляет сообщение в очередь служебной шины `myqueue` при срабатывании HTTP-запроса.
-
-```java
-@FunctionName("httpToServiceBusQueue")
-@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
-public String pushToQueue(
-  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
-  final String message,
-  @HttpOutput(name = "response") final OutputBinding<T> result ) {
-      result.setValue(message + " has been sent.");
-      return message;
- }
-```
-
- В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров функции, значение которых будут записываться в очередь Служебной шины Microsoft Azure.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
-
-Функции Java также могут записывать в раздел служебной шины. В следующем примере `@ServiceBusTopicOutput` заметка используется для описания конфигурации выходной привязки. 
-
-```java
-@FunctionName("sbtopicsend")
-    public HttpResponseMessage run(
-            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
-            @ServiceBusTopicOutput(name = "message", topicName = "mytopicname", subscriptionName = "mysubscription", connection = "ServiceBusConnection") OutputBinding<String> message,
-            final ExecutionContext context) {
-        
-        String name = request.getBody().orElse("Azure Functions");
-
-        message.setValue(name);
-        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
-        
-    }
-```
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
@@ -262,17 +295,21 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 В скрипте C# атрибуты не поддерживаются.
 
+# <a name="java"></a>[Java](#tab/java)
+
+`ServiceBusQueueOutput`Заметки и `ServiceBusTopicOutput` доступны для записи сообщения в качестве выходных данных функции. Параметр, снабженный этими заметками, должен быть объявлен как, `OutputBinding<T>` где `T` — тип, соответствующий типу сообщения.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В JavaScript атрибуты не поддерживаются.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+В PowerShell не поддерживаются атрибуты.
+
 # <a name="python"></a>[Python](#tab/python)
 
 В Python атрибуты не поддерживаются.
-
-# <a name="java"></a>[Java](#tab/java)
-
-`ServiceBusQueueOutput`Заметки и `ServiceBusTopicOutput` доступны для записи сообщения в качестве выходных данных функции. Параметр, снабженный этими заметками, должен быть объявлен как, `OutputBinding<T>` где `T` — тип, соответствующий типу сообщения.
 
 ---
 
@@ -287,8 +324,8 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 |**name** | Недоступно | Имя переменной, представляющей сообщение очереди или раздела в коде функции. Задайте значение "$return", ссылающееся на возвращаемое значение функции. |
 |**queueName**|**QueueName**|Имя очереди.  Задается только в случае отправки сообщений очереди, а не раздела.
 |**topicName**|**топикнаме**|Имя раздела. Задается только в случае отправки сообщений раздела, а не очереди.|
-|**connection** ;|**Соединение**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "мисервицебус", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмисервицебус". Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом.|
-|**accessRights** (только v1)|**Доступ**|Права доступа для строки подключения. Доступные значения: `manage` и `listen`. Значение по умолчанию — `manage`. Это означает, что у свойства `connection` есть разрешение на **управление** . При использовании строки подключения без разрешения на **управление** задайте для свойства `accessRights` значение "listen". В противном случае выполнение операций, для которых требуются права на управление, в среде выполнения Функций Azure может завершиться ошибкой. В функциях Azure версии 2. x и более поздних это свойство недоступно, поскольку последняя версия пакета SDK служебной шины не поддерживает операции управления.|
+|**connection**;|**Соединение**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "мисервицебус", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмисервицебус". Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом.|
+|**accessRights** (только v1)|**Доступ**|Права доступа для строки подключения. Доступные значения: `manage` и `listen`. Значение по умолчанию — `manage`. Это означает, что у свойства `connection` есть разрешение на **управление**. При использовании строки подключения без разрешения на **управление** задайте для свойства `accessRights` значение "listen". В противном случае выполнение операций, для которых требуются права на управление, в среде выполнения Функций Azure может завершиться ошибкой. В функциях Azure версии 2. x и более поздних это свойство недоступно, поскольку последняя версия пакета SDK служебной шины не поддерживает операции управления.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -330,15 +367,19 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 * Чтобы получить доступ к ИДЕНТИФИКАТОРу сеанса, выполните привязку к [`Message`](/dotnet/api/microsoft.azure.servicebus.message) типу и используйте `sessionId` свойство.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Используйте [пакет SDK служебной шины Azure](../service-bus-messaging/index.yml) , а не встроенную выходную привязку.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Доступ к очереди или разделу с помощью `context.bindings.<name from function.json>` . В можно назначить строку, массив байтов или объект JavaScript (десериализовать в JSON) `context.binding.<name>` .
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Выходные данные в служебную шину можно получить с помощью `Push-OutputBinding` командлета, в который передаются аргументы, совпадающие с именем, назначенным параметром имени привязки в *function.js* в файле.
+
 # <a name="python"></a>[Python](#tab/python)
-
-Используйте [пакет SDK служебной шины Azure](../service-bus-messaging/index.yml) , а не встроенную выходную привязку.
-
-# <a name="java"></a>[Java](#tab/java)
 
 Используйте [пакет SDK служебной шины Azure](../service-bus-messaging/index.yml) , а не встроенную выходную привязку.
 
@@ -388,7 +429,7 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 |---------|---------|---------|
 |prefetchCount|0|Возвращает или задает количество сообщений, которые получатель сообщения может одновременно запрашивать.|
 |maxAutoRenewDuration|00:05:00|Максимальный период времени, в течение которого блокировка сообщения будет продлеваться автоматически.|
-|autoComplete|true|Должен ли триггер автоматически вызывать Complete после обработки или код функции будет вызываться вручную.<br><br>Параметр to `false` поддерживается только в C#.<br><br>Если задано значение `true` , то триггер автоматически завершает сообщение, если выполнение функции завершается успешно, и сообщение отменяется в противном случае.<br><br>Если задано значение `false` , вы несете ответственность за вызов методов [MessageReceiver](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet) для завершения, отмены или недоставленного сообщения. Если возникает исключение (и ни один из `MessageReceiver` методов не вызван), блокировка остается. После истечения срока действия блокировки сообщение снова помещается в очередь с `DeliveryCount` увеличением, и блокировка автоматически обновляется.<br><br>В функциях, отличных от C #, исключения в функции приводят к вызовам `abandonAsync` в фоновом режиме. Если исключение не возникает, то `completeAsync` вызывается в фоновом режиме. |
+|autoComplete|Да|Должен ли триггер автоматически вызывать Complete после обработки или код функции будет вызываться вручную.<br><br>Параметр to `false` поддерживается только в C#.<br><br>Если задано значение `true` , то триггер автоматически завершает сообщение, если выполнение функции завершается успешно, и сообщение отменяется в противном случае.<br><br>Если задано значение `false` , вы несете ответственность за вызов методов [MessageReceiver](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet&preserve-view=true) для завершения, отмены или недоставленного сообщения. Если возникает исключение (и ни один из `MessageReceiver` методов не вызван), блокировка остается. После истечения срока действия блокировки сообщение снова помещается в очередь с `DeliveryCount` увеличением, и блокировка автоматически обновляется.<br><br>В функциях, отличных от C #, исключения в функции приводят к вызовам `abandonAsync` в фоновом режиме. Если исключение не возникает, то `completeAsync` вызывается в фоновом режиме. |
 |maxConcurrentCalls|16|Максимальное количество одновременных вызовов функции обратного вызова, которую конвейер сообщений должен инициировать для каждого масштабируемого экземпляра. По умолчанию в среде выполнения службы "Функции" одновременно обрабатывается несколько сообщений очереди.|
 |maxConcurrentSessions|2000|Максимальное количество сеансов, которые могут обрабатываться одновременно для каждого масштабируемого экземпляра.|
 

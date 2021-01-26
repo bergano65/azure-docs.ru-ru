@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
 ms.custom: seodec18,references_regions
-ms.openlocfilehash: f11ccafd58cc64e6186ef590bbbccbfab3335ea4
-ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
+ms.openlocfilehash: 646d29e72b91cd6afcde8e70ad8fd8715442b88e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854865"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786797"
 ---
 # <a name="speech-service-supported-regions"></a>Регионы, поддерживаемые речевыми службами
 
@@ -62,19 +62,19 @@ ms.locfileid: "97854865"
 | Северная Америка | Центрально-южная часть США | `southcentralus`     |
 | Северная Америка | центрально-западная часть США  | `westcentralus`      |
 | Северная Америка | западная часть США          | `westus`             |
-| Северная Америка | Западная часть США 2        | `westus2`            |
-| Южная Америка | Brazil South     | `brazilsouth`        |
+| Северная Америка | Западная часть США 2        | `westus2`            |
+| Южная Америка | Южная Бразилия     | `brazilsouth`        |
 
 Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](../luis/luis-reference-regions.md).
 
 ### <a name="voice-assistants"></a>Голосовые помощники
 
-[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **голосового помощника** через [прямую речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/direct-line-speech) в следующих регионах:
+[Пакет SDK для распознавания речи](speech-sdk.md) поддерживает возможности **голосового помощника** через [прямую речь](./direct-line-speech.md) в следующих регионах:
 
 | Глобальный регион | Регион           | Идентификатор региона    |
 | ------------- | ---------------- | -------------------- |
 | Северная Америка | западная часть США          | `westus`             |
-| Северная Америка | Западная часть США 2        | `westus2`            |
+| Северная Америка | Западная часть США 2        | `westus2`            |
 | Северная Америка | Восточная часть США          | `eastus`             |
 | Северная Америка | восточная часть США 2        | `eastus2`            |
 | Северная Америка | центрально-западная часть США  | `westcentralus`      |
@@ -85,7 +85,7 @@ ms.locfileid: "97854865"
 | Азия          | Юго-Восточная Азия   | `southeastasia`      |
 | Индия         | Центральная Индия    | `centralindia`       |
 
-### <a name="speaker-recognition"></a>API Распознавания говорящего
+### <a name="speaker-recognition"></a>Распознавание говорящего
 
 Распознавание говорящего в настоящее время доступно только в `westus` регионе.
 

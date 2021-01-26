@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: af9087f0dd45212ec88b620dcd965c895b86bbce
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: baa071c8967c97cb5df2b8f522b3737436bdb359
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108198"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787711"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -130,12 +130,12 @@ ms.locfileid: "98108198"
 ### <a name="configure-app-service-environment-to-host-qna-maker-app-service"></a>Настройка Среда службы приложений для размещения службы приложений QnA Maker
 Среда службы приложений (ASE) можно использовать для размещения службы приложений QnA Maker. Выполните следующие действия.
 
-1. Создайте Среда службы приложений и пометьте ее как "внешний". Инструкции см. в [руководстве](https://docs.microsoft.com/azure/app-service/environment/create-external-ase) .
+1. Создайте Среда службы приложений и пометьте ее как "внешний". Инструкции см. в [руководстве](../../../app-service/environment/create-external-ase.md) .
 2.  Создайте службу приложений в Среда службы приложений.
     * Проверьте конфигурацию службы приложений и добавьте "Примарендпоинткэй" в качестве параметра приложения. Для параметра "Примарендпоинткэй" должно быть задано значение " \<app-name\> -примарендпоинткэй". Имя приложения определяется в URL-адресе службы приложений. Например, если URL-адрес службы приложений имеет значение "mywebsite.myase.p.azurewebsite.net", то имя приложения — "mywebsite". В этом случае для параметра "Примарендпоинткэй" должно быть задано значение "mywebsite-Примарендпоинткэй".
     * Создайте службу поиска Azure.
     * Убедитесь, что параметры поиска Azure и приложения настроены соответствующим образом. 
-      Следуйте указаниям в этом [руководстве](https://docs.microsoft.com/azure/cognitive-services/qnamaker/reference-app-service?tabs=v1#app-service).
+      Следуйте указаниям в этом [руководстве](../reference-app-service.md?tabs=v1#app-service).
 3.  Обновите группу безопасности сети, связанную с Среда службы приложений
     * Обновите предварительно созданные правила безопасности для входящего трафика в соответствии с вашими требованиями.
     * Добавьте новое правило безопасности входящего трафика с исходным кодом как тег службы и тегом исходной службы как "Когнитивесервицесманажемент".

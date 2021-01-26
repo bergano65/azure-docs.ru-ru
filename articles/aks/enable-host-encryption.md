@@ -4,12 +4,12 @@ description: Узнайте, как настроить шифрование на
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 6b23bf285d89a5f3285825feef849b3d168ed62f
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 531d1dc4169b5f4adecfb29c3e116049cb99c3c9
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762037"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787830"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Шифрование на основе узла в службе Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "98762037"
 - Убедитесь, что `aks-preview` установлено расширение CLI v 0.4.55 или более поздней версии.
 - Убедитесь, что в `EnableEncryptionAtHostPreview` разделе включено установлен флаг компонента `Microsoft.ContainerService` .
 
-Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты encryptionAtHost@microsoft.com с идентификаторами подписки, чтобы включить функцию для ваших подписок.
+Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Для этого отправьте электронное письмо на адрес encryptionAtHost@microsoft.com и укажите идентификаторы нужных подписок.
 
 ### <a name="register-encryptionathost--preview-features"></a>Регистрация `EncryptionAtHost`  функций предварительной версии
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: alexeyo
-ms.openlocfilehash: 61be4b45df94c902c0473b94a6dd83237c72da3c
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 51989a9219cdbfebf833c99849dba67c939cf77a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196131"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786848"
 ---
 # <a name="use-speech-services-through-a-private-endpoint"></a>Использование речевых служб через закрытую конечную точку
 
@@ -293,7 +293,7 @@ az cognitiveservices account update --name my-speech-resource-name --resource-gr
 Речь-to-Text имеет два интерфейса API для других интерфейсов. Каждый API-интерфейс служит другой целью, использует разные конечные точки и требует другого подхода при использовании в сценарии с поддержкой закрытой конечной точки.
 
 API-интерфейсы RESTFUL для преобразования речи в текст:
-- Преобразование [речи в текст REST API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30), используемое для записи [пакетов](batch-transcription.md) и [пользовательское распознавание речи](custom-speech-overview.md). Версия 3.0 является [последователем версии 2.0](/azure/cognitive-services/speech-service/migrate-v2-to-v3)
+- Преобразование [речи в текст REST API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30), используемое для записи [пакетов](batch-transcription.md) и [пользовательское распознавание речи](custom-speech-overview.md). Версия 3.0 является [последователем версии 2.0](./migrate-v2-to-v3.md)
 - [REST API преобразования речи в текст для коротких аудиофайлов](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio), используемых для записи в Интернете 
 
 Использование REST API преобразования речи в текст для коротких аудио и преобразования текста в REST API речь в сценарии частной конечной точки аналогично. Это эквивалентно [случаю речевого пакета SDK](#speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk) , описанного далее в этой статье. 

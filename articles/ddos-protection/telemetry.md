@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 86e4a111be7585373ecf4c2fe9508f2bfca7de16
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: a3f6c14b7ed2686a262f28510efb37068cfb9cb3
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915085"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787304"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии
 
@@ -34,10 +34,10 @@ ms.locfileid: "97915085"
 > [!NOTE]
 > Хотя в портал Azure отображается несколько параметров **агрегирования** , для каждой метрики поддерживаются только типы агрегирования, перечисленные в таблице ниже. Приносим извинения за эту путаницу, и мы работаем над ее устранением.
 
-Для стандарта защиты Azure от атак DDoS доступны следующие [метрики](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetworkpublicipaddresses) . Эти метрики также можно экспортировать с помощью параметров диагностики (см. раздел [Просмотр и Настройка ведения журнала диагностики от атак DDoS](diagnostic-logging.md)).
+Для стандарта защиты Azure от атак DDoS доступны следующие [метрики](../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses) . Эти метрики также можно экспортировать с помощью параметров диагностики (см. раздел [Просмотр и Настройка ведения журнала диагностики от атак DDoS](diagnostic-logging.md)).
 
 
-| Метрика | Отображаемое имя метрики | Единицы | Тип статистической обработки | Описание |
+| Метрика | Отображаемое имя метрики | Unit | Тип статистической обработки | Описание |
 | --- | --- | --- | --- | --- |
 | ByteCount | Количество байтов | Count | Итог | Общее количество байтов, переданных за период времени |
 | BytesDroppedDDoS | Удаленные входящие байты (атака DDoS) | Байт/с | Максимальная | Удаленные входящие байты (атака DDoS)| 

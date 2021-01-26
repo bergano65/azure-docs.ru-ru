@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: aac1fb8e2da7a3c84b3abff47c8f476b9fb9049c
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 42476e2689cc503edc19e8e299a01ce922f1bf42
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704344"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789201"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box"></a>Учебник. создание порядка экспорта для Azure Data Box
 
@@ -28,7 +28,7 @@ Azure Data Box — это гибридное решение, которое по
 > * Отслеживание порядка экспорта
 > * Отменить порядок экспорта
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед тем как заказать устройство, выполните следующие необходимые условия для настройки службы Data Box и устройства.
 
@@ -58,7 +58,7 @@ Azure Data Box — это гибридное решение, которое по
 
    ![Создание ресурса](media/data-box-deploy-export-ordered/azure-data-box-export-order-create-resource.png)
 
-3. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
    ![Создание ресурса Azure Data Box](media/data-box-deploy-export-ordered/azure-data-box-export-order-create-data-box-resource.png)
 
@@ -179,7 +179,7 @@ Azure Data Box — это гибридное решение, которое по
 
 15. Выберите удостоверение пользователя, которое будет использоваться для управления доступом к этому ресурсу. Щелкните **Выбрать удостоверение пользователя**. На панели справа выберите подписку и управляемое удостоверение для использования. Затем щелкните **Выбрать**.
 
-    Назначаемое пользователем управляемое удостоверение — это автономный ресурс Azure, который можно использовать для управления несколькими ресурсами. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview)  
+    Назначаемое пользователем управляемое удостоверение — это автономный ресурс Azure, который можно использовать для управления несколькими ресурсами. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)  
 
     Если вам нужно создать управляемое удостоверение, следуйте указаниям в статье [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     
@@ -242,7 +242,7 @@ Azure Data Box — это гибридное решение, которое по
 
    ![Выбор параметра экспорта, новые параметры контейнера](media/data-box-deploy-export-ordered/azure-data-box-export-sms-use-xml-file-container-settings.png)
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
    ![Выберите параметр экспорт, создать контейнер.](media/data-box-deploy-export-ordered/azure-data-box-export-sms-use-xml-create-container.png)
 

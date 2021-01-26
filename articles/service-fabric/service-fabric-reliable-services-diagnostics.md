@@ -3,15 +3,15 @@ title: Диагностика Reliable Services с отслеживанием с
 description: Диагностические функции для надежных служб с отслеживанием состояния в Azure Service Fabric
 ms.topic: conceptual
 ms.date: 8/24/2018
-ms.openlocfilehash: 5a3831dd4f8d5402980fac3daf8c35d9884c852d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 774a771d0c9701076a5d6c070963bf6224a571dd
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840767"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789336"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
-Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
+Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
 
 ## <a name="eventsource-events"></a>События EventSource
 Имя EventSource для класса StatefulServiceBase надежных служб с отслеживанием состояния — Microsoft-ServiceFabric-Services. При [отладке службы в Visual Studio](service-fabric-debugging-your-application.md). события из этого источника отображаются в окне [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) (События диагностики).
@@ -25,7 +25,7 @@ ms.locfileid: "91840767"
 | StatefulRunAsyncCancellation |2 |Informational |Генерируется, когда отменяется задача RunAsync службы. |
 | StatefulRunAsyncCompletion |3 |Informational |Генерируется, когда завершается задача RunAsync службы. |
 | StatefulRunAsyncSlowCancellation |4 |Предупреждение |Генерируется, когда отмена задачи RunAsync службы выполняется слишком долго. |
-| StatefulRunAsyncFailure |5 |Ошибка |Генерируется, когда задача RunAsync службы вызывает исключение. |
+| StatefulRunAsyncFailure |5 |Error |Генерируется, когда задача RunAsync службы вызывает исключение. |
 
 ## <a name="interpret-events"></a>Интерпретация событий
 События StatefulRunAsyncInvocation, StatefulRunAsyncCompletion и StatefulRunAsyncCancellation полезны для разработчика служб тем, что позволяют понять жизненный цикл службы и правильно определить время запуска, отмены или завершения службы. Эти сведения могут быть полезными при отладке службы и анализе ее жизненного цикла.
@@ -58,7 +58,7 @@ Service Fabric TStore — это компонент, который исполь
 
 `ServiceFabricPartitionId:ServiceFabricReplicaId`
 
-*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) описателя формата "D".
+*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) описателя формата "D".
 
 *ServiceFabricReplicaId* — идентификатор, связанный с конкретной репликой надежной службы. Идентификатор реплики включается в имя экземпляра счетчика производительности, чтобы обеспечить его уникальность и избежать конфликтов с другими экземплярами счетчиков производительности, созданными той же секцией. Дополнительные сведения о репликах и их роли в надежных службах см. в [этой статье](service-fabric-concepts-replica-lifecycle.md).
 
@@ -73,7 +73,7 @@ Service Fabric TStore — это компонент, который исполь
 
 `ServiceFabricPartitionId:ServiceFabricReplicaId:StateProviderId_PerformanceCounterInstanceDifferentiator_StateProviderName`
 
-*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) описателя формата "D".
+*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление формируется с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) описателя формата "D".
 
 *ServiceFabricReplicaId* — идентификатор, связанный с конкретной репликой надежной службы. Идентификатор реплики включается в имя экземпляра счетчика производительности, чтобы обеспечить его уникальность и избежать конфликтов с другими экземплярами счетчиков производительности, созданными той же секцией. Дополнительные сведения о репликах и их роли в надежных службах см. в [этой статье](service-fabric-concepts-replica-lifecycle.md).
 
@@ -113,5 +113,5 @@ Service Fabric TStore — это компонент, который исполь
 | Запись в файл контрольной точки, байт/с | Число байтов, записываемых в секунду в последний файл контрольной точки.|
 | Передача на диск при копировании (байт/с) | Число байтов, считываемых (с первичной реплики) или записываемых (на вторичную реплику) в секунду при копировании хранилища.|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Поставщики EventSource в PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

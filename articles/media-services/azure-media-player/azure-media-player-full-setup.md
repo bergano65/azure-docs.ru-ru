@@ -1,5 +1,5 @@
 ---
-title: Полная настройка Проигрыватель мультимедиа Azure
+title: Полная настройка Проигрывателя мультимедиа Azure
 description: Узнайте, как настроить Проигрыватель мультимедиа Azure.
 author: IngridAtMicrosoft
 ms.author: inhenkel
@@ -7,21 +7,26 @@ ms.service: media-services
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 15f5918748df80cec01ccf89835a0ef51da64529
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13abe333bcf3f67ea1a1ba823c693deaa60bc723
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91296252"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788813"
 ---
 # <a name="azure-media-player-full-setup"></a>Полная настройка Проигрывателя мультимедиа Azure #
 
 Проигрыватель мультимедиа Azure можно легко настроить. Для получения базового воспроизведения мультимедийного содержимого прямо из учетной записи служб мультимедиа Azure требуется несколько секунд. [Примеры](https://github.com/Azure-Samples/azure-media-player-samples) также предоставляются в каталоге Samples выпуска.
 
+<!--//aka.ms/ampembed?url=https%3A%2F%2Fxpouyatdemo-euwe.streaming.media.azure.net%2Fc9b6ac82-c187-4882-a3d3-1a67204ac58e%2Fconnect2017-v3.ism%2Fmanifest-->
+
+Ниже приведен пример видео AMS.
+
+> [!VIDEO https://aka.ms/ampembed?url=https%3A%2F%2Fxpouyatdemo-euwe.streaming.media.azure.net%2Fc9b6ac82-c187-4882-a3d3-1a67204ac58e%2Fconnect2017-v3.ism%2Fmanifest]
 
 ## <a name="step-1-include-the-javascript-and-css-files-in-the-head-of-your-page"></a>Шаг 1. Включение файлов JavaScript и CSS в заголовок страницы ##
 
-С Проигрыватель мультимедиа Azure можно получить доступ к скриптам из размещенной версии CDN. Теперь рекомендуется помечать JavaScript перед закрывающим тегом Body `<body>` , а не в `<head>` , но проигрыватель мультимедиа Azure включает "HTML5 Шив", который должен находиться в заголовке для более старых версий IE, чтобы учитывать тег video в качестве допустимого элемента.
+С Проигрыватель мультимедиа Azure можно получить доступ к скриптам из размещенной версии CDN. Теперь рекомендуется размещать JavaScript перед тегом Body `<body>` , а не с `<head>` , но проигрыватель Azure меиа включает "HTML5 Шив", который должен находиться в головном офисе для более старых версий IE, чтобы учитывать тег video в качестве допустимого элемента.
 
 > [!NOTE]
 > Если вы уже используете HTML5 Шив, например [Modernizr](https://modernizr.com/) , можно включить проигрыватель мультимедиа Azure JavaScript в любом месте. Однако убедитесь, что ваша версия Modernizr включает в себя Шив для видео.

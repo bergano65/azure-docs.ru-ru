@@ -4,12 +4,12 @@ description: Найдите ответы на часто задаваемые в
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 56dcf29a5c703a72fd137a5f1bf129f568a03b4b
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: ca785e217da4355a44ffbb26b813d55d942c5c14
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735815"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787626"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о SQL Server базах данных, работающих в резервной копии виртуальной машины Azure
 
@@ -101,7 +101,10 @@ ms.locfileid: "98735815"
 База данных, [добавляемая в автозащищаемый экземпляр](backup-sql-server-database-azure-vms.md#enable-auto-protection) , может не сразу отображаться в разделе защищенные элементы. Это обусловлено тем, что обнаружение обычно выполняется раз в 8 часов. Однако вы можете сразу обнаружить и защитить новые базы данных, если вручную запустить обнаружение, выбрав команду повторно **обнаружить баз данных**, как показано на следующем рисунке.
 
   ![Обнаружение вновь добавленной базы данных вручную](./media/backup-azure-sql-database/view-newly-added-database.png)
-  
+
+## <a name="can-i-protect-databases-on-virtual-machines-that-have-azure-disk-encryption-ade-enabled"></a>Можно ли защитить базы данных на виртуальных машинах с включенным шифрованием дисков Azure (ADE)?
+Да, можно защитить базы данных на виртуальных машинах с включенным шифрованием дисков Azure (ADE).
+
 ## <a name="can-i-protect-databases-that-have-tde-transparent-data-encryption-turned-on-and-will-the-database-stay-encrypted-through-the-entire-backup-process"></a>Можно ли защитить базы данных с включенной TDE (прозрачное шифрование данных), и база данных останется зашифрованной по всему процессу резервного копирования?
 
 Да, Azure Backup поддерживает резервное копирование баз данных SQL Server или сервера с включенным TDE. Служба архивации поддерживает [TDE](/sql/relational-databases/security/encryption/transparent-data-encryption) с ключами, управляемыми Azure, или с ключами, управляемыми клиентом (BYOK).  Резервное копирование не выполняет шифрование SQL в рамках процесса резервного копирования, поэтому база данных остается зашифрованной при резервном копировании.
@@ -111,6 +114,6 @@ ms.locfileid: "98735815"
 Мы выполняем операцию вычисления контрольной суммы для потока данных. Однако это не следует путать с [контрольной суммой SQL](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
 Резервная копия рабочей нагрузки Azure вычислит контрольную сумму потока данных и сохранит ее явным образом во время операции резервного копирования. Затем этот поток контрольной суммы принимается в виде ссылки и перекрестно проверяется с помощью контрольной суммы потока данных во время операции восстановления, чтобы обеспечить согласованность данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать резервную копию базы данных SQL Server](backup-azure-sql-database.md) , которая работает на виртуальной машине Azure.

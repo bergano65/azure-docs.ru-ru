@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/24/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: eca243a9a83ad5d2bfa006b46499470cf06e808a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b8dc91851ee736fd15f1fed8ef50c2cd7c7ab778
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203037"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788304"
 ---
 # <a name="azure-security-baseline-for-azure-firewall-manager"></a>Базовый план безопасности Azure для диспетчера брандмауэра Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "98203037"
 
 ## <a name="identity-management"></a>Управление удостоверениями
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md).*
 
 ### <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1: стандартизация Azure Active Directory в качестве централизованной системы идентификации и проверки подлинности
 
@@ -40,7 +40,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 - [Создание и настройка экземпляра Azure AD](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
-- [Использование внешних поставщиков удостоверений для приложения](/azure/active-directory/b2b/identity-providers)
+- [Использование внешних поставщиков удостоверений для приложения](../active-directory/external-identities/identity-providers.md)
 
 - [Оценка безопасности удостоверений в Azure Active Directory](../active-directory/fundamentals/identity-secure-score.md)
 
@@ -96,11 +96,11 @@ Azure AD поддерживает внешние удостоверения, к�
 
 - [Отчеты о действиях аудита в Azure Active Directory](../active-directory/reports-monitoring/concept-audit-logs.md)
 
-- [Просмотр рискованных входов в Azure AD](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Просмотр рискованных входов в Azure AD](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Мониторинг пользовательских действий идентификации и доступа в Центре безопасности Azure](../security-center/security-center-identity-access.md)
 
-- [Как интегрировать журналы действий Azure в Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 - [Известные проблемы диспетчера брандмауэра Azure](overview.md#known-issues)
 
@@ -124,7 +124,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 ## <a name="privileged-access"></a>Привилегированный доступ
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: привилегированный доступ](../security/benchmarks/security-controls-v2-privileged-access.md).*
 
 ### <a name="pa-1-protect-and-limit-highly-privileged-users"></a>PA-1: защита и ограничение пользователей с высоким уровнем привилегий
 
@@ -136,11 +136,11 @@ Azure AD поддерживает внешние удостоверения, к�
 
 Вы можете разрешить пользователям привилегированный JIT-доступ к ресурсам Azure и Azure AD с помощью Azure AD Privileged Identity Management (PIM). JIT-доступ предоставляет временные разрешения на выполнение привилегированных задач только в том случае, если это необходимо пользователям. PIM также может создавать оповещения безопасности при обнаружении подозрительных или небезопасных действий в организации Azure AD.
 
-- [Разрешения роли администратора в Azure Active Directory](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)
+- [Разрешения роли администратора в Azure Active Directory](../active-directory/roles/permissions-reference.md)
 
 - [Использование оповещений системы безопасности в рамках управления привилегированными пользователями Azure](../active-directory/privileged-identity-management/pim-how-to-configure-security-alerts.md)
 
-- [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](/azure/active-directory/users-groups-roles/directory-admin-roles-secure)
+- [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../active-directory/roles/security-planning.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -188,7 +188,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 Следует убедиться, что учетные данные (например, пароль, сертификат или смарт-карта) для учетных записей аварийного доступа защищены и известны только тем лицам, которые имеют право использовать их только в экстренной ситуации.
 
-- [Управление учетными записями для аварийного доступа в Azure AD](/azure/active-directory/users-groups-roles/directory-emergency-access)
+- [Управление учетными записями для аварийного доступа в Azure AD](../active-directory/roles/security-emergency-access.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -212,7 +212,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 - [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [Развертывание рабочей станции с привилегированным доступом](../active-directory/devices/howto-azure-managed-workstation.md)
+- [Развертывание рабочей станции с привилегированным доступом](/security/compass/privileged-access-deployment)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -234,7 +234,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: защита данных](/azure/security/benchmarks/security-controls-v2-data-protection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: защита данных](../security/benchmarks/security-controls-v2-data-protection.md).*
 
 ### <a name="dp-2-protect-sensitive-data"></a>DP-2: защита конфиденциальных данных
 
@@ -284,7 +284,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 ## <a name="asset-management"></a>управление ресурсами.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1. Предоставление группе безопасности возможности просматривать угрозы безопасности для ресурсов
 
@@ -314,7 +314,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 - [Управление инвентаризацией активов в центре безопасности Azure](../security-center/asset-inventory.md) 
 
-- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Дополнительные сведения о разметке ресурсов см. в разделе Описание принятия решений по именованию и маркировке.](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -338,9 +338,9 @@ Azure AD поддерживает внешние удостоверения, к�
 
 **Руководство**. Удалите ресурсы диспетчера брандмауэра Azure, если они больше не нужны для снижения уязвимой зоны. Пользователи могут управлять ресурсами диспетчера брандмауэра Azure с помощью портал Azure, интерфейса командной строки или интерфейсов API.
 
-- [Интерфейс командной строки политики брандмауэра Azure](https://docs.microsoft.com/cli/azure/ext/azure-firewall/network/firewall/policy?view=azure-cli-latest&amp;preserve-view=true)
+- [Интерфейс командной строки политики брандмауэра Azure](/cli/azure/ext/azure-firewall/network/firewall/policy?preserve-view=true&view=azure-cli-latest)
 
-- [CLI сети Azure](https://docs.microsoft.com/powershell/module/az.network/?view=azps-5.1.0#networking&amp;preserve-view=true)
+- [CLI сети Azure](/powershell/module/az.network/?preserve-view=true&view=azps-5.1.0#networking)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -358,7 +358,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 ## <a name="logging-and-threat-detection"></a>Ведение журналов и обнаружение угроз
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](../security/benchmarks/security-controls-v2-logging-threat-detection.md).*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: Включение обнаружения угроз для ресурсов Azure
 
@@ -391,7 +391,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 - [Включение Защиты идентификации Azure](../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Защита от угроз с помощью Центра безопасности Azure](/azure/security-center/threat-protection)
+- [Защита от угроз с помощью Центра безопасности Azure](../security-center/azure-defender.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -437,7 +437,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 - [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](/azure/azure-monitor/platform/resource-logs-collect-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -445,7 +445,7 @@ Azure AD поддерживает внешние удостоверения, к�
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md).*
 
 ### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: подготовка — процесс обновления реагирования на инциденты для Azure
 
@@ -527,7 +527,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -549,7 +549,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="posture-and-vulnerability-management"></a>Управление состоянием защиты и уязвимостью
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md).*
 
 ### <a name="pv-1-establish-secure-configurations-for-azure-services"></a>PV-1: Настройка безопасных конфигураций для служб Azure 
 
@@ -557,7 +557,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Справочник по шаблону политики брандмауэра Azure](/azure/templates/microsoft.network/firewallpolicies)
 
-- [Интерфейс командной строки политики брандмауэра Azure](https://docs.microsoft.com/cli/azure/ext/azure-firewall/network/firewall/policy?view=azure-cli-latest&amp;preserve-view=true)
+- [Интерфейс командной строки политики брандмауэра Azure](/cli/azure/ext/azure-firewall/network/firewall/policy?preserve-view=true&view=azure-cli-latest)
 
 - [Иллюстрация реализации снятие в целевой зоне корпоративного масштаба](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture#landing-zone-expanded-definition)
 
@@ -608,7 +608,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="backup-and-recovery"></a>Архивация и восстановление
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: резервное копирование и восстановление](/azure/security/benchmarks/security-controls-v2-backup-recovery).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: резервное копирование и восстановление](../security/benchmarks/security-controls-v2-backup-recovery.md).*
 
 ### <a name="br-1-ensure-regular-automated-backups"></a>BR-1: обеспечение регулярного автоматического резервного копирования
 
@@ -640,7 +640,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="governance-and-strategy"></a>Система управления и стратегия
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление и стратегия](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление и стратегия](../security/benchmarks/security-controls-v2-governance-strategy.md).*
 
 ### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: определение стратегии управления ресурсами и защиты данных 
 
@@ -665,15 +665,15 @@ Azure Sentinel предоставляет широкие возможности 
 -   Соответствующие криптографические стандарты
 
 Дополнительные сведения см. в следующих ресурсах.
-- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
 
 - [Основы безопасности Azure — безопасность, шифрование и хранение данных в Azure](../security/fundamentals/encryption-overview.md)
 
-- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
-- [Azure Security Benchmark — управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
+- [Azure Security Benchmark — управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md)
 
-- [Azure Security Benchmark — защита данных](/azure/security/benchmarks/security-controls-v2-data-protection)
+- [Azure Security Benchmark — защита данных](../security/benchmarks/security-controls-v2-data-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -701,7 +701,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Инструкции**: непрерывно измеряйте и снижайте риски для отдельных ресурсов и сред, в которых они размещены. Определите приоритеты для важных ресурсов и областей, где существует высокий риск атак, таких как опубликованные приложения, точки входа в сеть и выхода из нее, конечные точки пользователя и администратора и т. д.
 
-- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
+- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -742,7 +742,7 @@ Azure Sentinel предоставляет широкие возможности 
 Дополнительные сведения см. в следующих ресурсах.
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark — безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security)
+- [Azure Security Benchmark — безопасность сети](../security/benchmarks/security-controls-v2-network-security.md)
 
 - [Обзор сетевой безопасности Azure](../security/fundamentals/network-overview.md)
 
@@ -770,9 +770,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management)
+- [Azure Security Benchmark — управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md)
 
-- [Azure Security Benchmark — привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access)
+- [Azure Security Benchmark — привилегированный доступ](../security/benchmarks/security-controls-v2-privileged-access.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -804,9 +804,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
+- [Azure Security Benchmark — ведение журнала и обнаружение угроз](../security/benchmarks/security-controls-v2-logging-threat-detection.md)
 
-- [Azure Security Benchmark — реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
+- [Azure Security Benchmark — реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 4 — процесс: обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
@@ -820,5 +820,5 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- См. [Обзор Azure Security Benchmark версии 2](/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- См. [Обзор Azure Security Benchmark версии 2](../security/benchmarks/overview.md)
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

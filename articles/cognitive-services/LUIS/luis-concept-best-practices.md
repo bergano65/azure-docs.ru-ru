@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/17/2020
-ms.openlocfilehash: fc4475eb64744688e901d2b37e30632d044b0115
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2f6ed85416cc5d7c3c2baba2b2cfe489e301d7e5
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019319"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788491"
 ---
 # <a name="best-practices-for-building-a-language-understanding-luis-app"></a>Рекомендации по созданию приложения для понимания языка (LUIS)
 Создайте приложение LUIS с помощью процесса создания приложений:
@@ -141,7 +141,7 @@ API создания версии v3 позволяет декомпозицию
 
 ## <a name="do-monitor-the-performance-of-your-app"></a>Отслеживайте производительность своего приложения
 
-Отслеживайте точность прогнозирования с помощью [набора тестов пакета](luis-concept-batch-test.md).
+Отслеживайте точность прогнозирования с помощью [набора тестов пакета](./luis-how-to-batch-test.md).
 
 Не используйте отдельный набор фразы продолжительностью, который не используется в качестве [примера фразы продолжительностью](luis-concept-utterance.md) или конечной точки фразы продолжительностью. Продолжайте улучшать приложение для своего набора тестов. Адаптируйте набор тестов, так чтобы он отражал настоящие высказывания пользователей. Используйте набор тестов для оценки каждой итерации или версии приложения.
 

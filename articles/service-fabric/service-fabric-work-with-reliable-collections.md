@@ -3,12 +3,12 @@ title: Работа с Reliable Collections
 description: Ознакомьтесь с рекомендациями по работе с надежными коллекциями в приложении Service Fabric Azure.
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 2d027dc432d1a0a20888bfca4f59bc41866e358d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 908f24cc22c969a34a513ff3fd3ceaa788420620
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651912"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787881"
 ---
 # <a name="working-with-reliable-collections"></a>Работа с Reliable Collections
 Платформа Service Fabric предлагает модель программирования с отслеживанием состояния, которая доступна разработчикам .NET через API-интерфейсы Reliable Collections. В частности, Service Fabric предоставляет такие классы, как Reliable Dictionaries (далее — надежные словари) и Reliable Queues (далее — надежные очереди). При использовании этих классов состояние секционируется (для масштабируемости), реплицируется (для доступности) и обрабатывается в ходе транзакции в секции (для семантики ACID). Давайте взглянем на типичное использование объекта надежного словаря и посмотрим, что он реально делает.
@@ -226,4 +226,4 @@ public struct ItemId
 
 Указания по реализации контрактов данных, которые не зависят от версий, см. в статье [Обратные вызовы сериализации, независимые от версий](/dotnet/framework/wcf/feature-details/version-tolerant-serialization-callbacks).
 
-Указания по предоставлению структуры данных, которые могут взаимодействовать в нескольких версиях, см. в статье [Интерфейс IExtensibleDataObject](/dotnet/api/system.runtime.serialization.iextensibledataobject?view=netcore-3.1).
+Указания по предоставлению структуры данных, которые могут взаимодействовать в нескольких версиях, см. в статье [Интерфейс IExtensibleDataObject](/dotnet/api/system.runtime.serialization.iextensibledataobject).

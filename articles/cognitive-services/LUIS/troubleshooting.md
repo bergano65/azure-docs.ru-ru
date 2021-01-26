@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: troubleshooting
 ms.date: 05/06/2020
-ms.openlocfilehash: e803fa393d85f7f0b4849aed96356b7a4e77d83f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e4de77a8a56ce21511ad099af59a77e10ab1815d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96000136"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787542"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -18,7 +18,7 @@ ms.locfileid: "96000136"
 
 ## <a name="whats-new"></a>Новые возможности
 
-[Узнайте больше](whats-new.md) о новых возможностях Language UNDERSTANDING (Luis).
+[Узнайте больше](whats-new.md) о новых возможностях распознавание речи (Luis).
 
 <a name="luis-authoring"></a>
 
@@ -87,7 +87,7 @@ ms.locfileid: "96000136"
 
 ### <a name="i-received-an-http-403-error-status-code-how-do-i-fix-it"></a>Я получил код состояния ошибки HTTP 403. Как ее исправить?
 
-Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории. Увеличьте ценовую категорию или используйте [контейнеры](luis-container-howto.md)Language Understanding.
+Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории. Увеличьте ценовую категорию или используйте [контейнеры](luis-container-howto.md)распознавание речи.
 
 При использовании всех этих бесплатных запросов к конечной точке 1000 или превышении квоты месячных транзакций для ценовой категории вы получаете код состояния ошибки HTTP 403.
 
@@ -95,22 +95,22 @@ ms.locfileid: "96000136"
 
 Ниже приведены решения для этой ошибки.
 
-* В [портал Azure](https://portal.azure.com)на ресурсе Language Understanding в **ценовой категории управление ресурсами — >** измените ценовую категорию на более высокий уровень технической спецификации. Вам не нужно ничего делать на портале Language Understanding, если ресурс уже назначен вашему Language Understanding приложению.
-*  Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
+* В [портал Azure](https://portal.azure.com)на ресурсе распознавание речи в **ценовой категории управление ресурсами — >** измените ценовую категорию на более высокий уровень технической спецификации. Вам не нужно ничего делать на портале Распознавание речи, если ресурс уже назначен вашему Распознавание речи приложению.
+*  Если вы превысили максимальную ценовую категорию, добавьте дополнительные Распознавание речи ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер распознавание речи](luis-container-howto.md) с Kubernetes или DOCKER Compose.
 
 ### <a name="i-received-an-http-429-error-status-code-how-do-i-fix-it"></a>Я получил код состояния ошибки HTTP 429. Как ее исправить?
 
-Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории. Увеличьте ценовую категорию или используйте [контейнеры](luis-container-howto.md)Language Understanding.
+Вы получаете коды состояния ошибок 403 и 429 при превышении числа транзакций в секунду или транзакций в месяц для ценовой категории. Увеличьте ценовую категорию или используйте [контейнеры](luis-container-howto.md)распознавание речи.
 
 Этот код состояния возвращается, если количество транзакций в секунду превышает вашу ценовую категорию.
 
 Решения включают:
 
 * Вы можете [увеличить ценовую категорию](luis-how-to-azure-subscription.md#change-the-pricing-tier), если вы не на самом высшем уровне.
-* Если вы превысили максимальную ценовую категорию, добавьте дополнительные Language Understanding ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер Language Understanding](luis-container-howto.md) с Kubernetes или DOCKER Compose.
+* Если вы превысили максимальную ценовую категорию, добавьте дополнительные Распознавание речи ресурсы с подсистемой балансировки нагрузки перед ними. В этом может помочь [контейнер распознавание речи](luis-container-howto.md) с Kubernetes или DOCKER Compose.
 * Вы можете настроить запрос клиентского приложения с помощью [политики повтора](/azure/architecture/best-practices/transient-faults#general-guidelines) , которая реализуется при получении этого кода состояния.
 
-### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты.   Что следует делать?
+### <a name="my-endpoint-query-returned-unexpected-results-what-should-i-do"></a>Запрос конечной точки вернул непредвиденные результаты. Что следует делать?
 
 Непредвиденные результаты прогнозирования, полученные при запросе, основаны на состоянии опубликованной модели. Чтобы скорректировать модель, потребуется изменить ее, обучить и опубликовать повторно.
 
@@ -155,11 +155,11 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ### <a name="what-is-the-maximum-number-of-intents-and-entities-that-a-luis-app-can-support"></a>Какое максимальное число намерений и сущностей, поддерживаемых приложением LUIS?
 Подробные сведения см. в разделе по [этой](luis-limits.md) ссылке.
 
-### <a name="i-want-to-build-a-luis-app-with-more-than-the-maximum-number-of-intents-what-should-i-do"></a>Я хочу создать приложение LUIS с количеством намерений, которое превышает допустимое количество.   Что следует делать?
+### <a name="i-want-to-build-a-luis-app-with-more-than-the-maximum-number-of-intents-what-should-i-do"></a>Я хочу создать приложение LUIS с количеством намерений, которое превышает допустимое количество. Что следует делать?
 
 Подробнее см. в [этом](luis-concept-intent.md#if-you-need-more-than-the-maximum-number-of-intents) разделе с рекомендациями.
 
-### <a name="i-want-to-build-an-app-in-luis-with-more-than-the-maximum-number-of-entities-what-should-i-do"></a>Я хочу создать в LUIS приложение с количеством сущностей, которое превышает допустимое количество.   Что следует делать?
+### <a name="i-want-to-build-an-app-in-luis-with-more-than-the-maximum-number-of-entities-what-should-i-do"></a>Я хочу создать в LUIS приложение с количеством сущностей, которое превышает допустимое количество. Что следует делать?
 
 Подробнее см. в [этом](luis-concept-entity-types.md#if-you-need-more-than-the-maximum-number-of-entities) разделе с рекомендациями.
 
@@ -177,7 +177,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 * Чтобы LUIS лучше дискриминировал намерения, добавьте дополнительные метки.
 * Чтобы LUIS обучался быстрее, добавьте компоненты списка фраз, которые вводят словарь на основе доменов.
 
-Дополнительные сведения см. в руководстве по [пакетному тестированию](luis-tutorial-batch-testing.md).
+Дополнительные сведения см. в руководстве по [пакетному тестированию](./luis-how-to-batch-test.md).
 
 ### <a name="when-an-app-is-exported-then-reimported-into-a-new-app-with-a-new-app-id-the-luis-prediction-scores-are-different-why-does-this-happen"></a>Если приложение экспортировано, затем повторно импортировано в новое приложение (с новым идентификатором приложения), прогнозирующие оценки LUIS отличаются. Почему это происходит?
 
@@ -330,8 +330,8 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Как использовать службу Azure Conversational AI для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
-* [Страница вопросов и ответов по Microsoft Q&для MSDN Language Understanding Intelligent Services (LUIS)](/answers/topics/azure-language-understanding.html)
+* [Страница вопросов и ответов по Microsoft Q&для MSDN Распознавание речи Intelligent Services (LUIS)](/answers/topics/azure-language-understanding.html)

@@ -1,18 +1,18 @@
 ---
 title: Пользовательские метрики в Azure Monitor (Предварительная версия)
 description: Сведения о пользовательских метриках в Azure Monitor и их моделировании.
-author: ancav
+author: anirudhcavale
 ms.author: ancav
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 06/01/2020
+ms.date: 01/25/2021
 ms.subservice: metrics
-ms.openlocfilehash: 73c9b2bf8cf88ca5e8576c451c9d9ac5f0eae8a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce081896292ec92c41dabc735df828ed167d86e7
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88639908"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788508"
 ---
 # <a name="custom-metrics-in-azure-monitor-preview"></a>Пользовательские метрики в Azure Monitor (Предварительная версия)
 
@@ -54,7 +54,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 > [!TIP]  
 > Когда для создания настраиваемых метрик вы запрашиваете маркер Azure AD, убедитесь, что он запрашивает аудиторию или ресурс, которые совпадают с `https://monitoring.azure.com/`. Убедитесь, что адрес содержит завершающую косую черту (/).
 
-### <a name="subject"></a>Тема
+### <a name="subject"></a>Субъект
 Это свойство содержит ИД ресурса Azure, для которого предоставляется пользовательская метрика. Эти сведения будут закодированы в URL-адресе совершаемого вызова API. Каждый API может отправлять значения метрик для одного ресурса Azure.
 
 > [!NOTE]  
@@ -105,7 +105,6 @@ Azure Monitor настраиваемые метрики актуальны в о
 |Транзакция 1|Транзакция 2|Транзакция 3|Транзакция 4|
 |---|---|---|---|
 |7 мс|4 мс|13 мс|16 мс|
-|
 
 Результаты публикации метрики в Azure Monitor будут следующими:
 * "Минимум": 4;
@@ -134,7 +133,8 @@ Azure Monitor настраиваемые метрики актуальны в о
         "metric": "Memory Bytes in Use",
         "namespace": "Memory Profile",
         "dimNames": [
-          "Process"        ],
+          "Process"
+        ],
         "series": [
           {
             "dimValues": [
@@ -174,7 +174,7 @@ Azure Monitor настраиваемые метрики актуальны в о
 После отправки пользовательских метрик в Azure Monitor их можно просмотреть на портале Azure и запросить через REST API Azure Monitor. Также для них можно создать оповещения, чтобы уведомлять об определенных условиях.
 
 > [!NOTE]
-> Для просмотра пользовательских метрик необходимо быть участником роли читателя или участника.
+> Для просмотра пользовательских метрик необходимо быть участником роли читателя или участника. См. раздел [Monitoring Reader](../../role-based-access-control/built-in-roles.md#monitoring-reader). 
 
 ### <a name="browse-your-custom-metrics-via-the-azure-portal"></a>Просмотр пользовательских метрик на портале Azure
 1.    Перейдите на [портал Azure](https://portal.azure.com).
@@ -184,34 +184,19 @@ Azure Monitor настраиваемые метрики актуальны в о
 5.    Выберите пространство имен для пользовательской метрики.
 6.    Выберите пользовательскую метрику.
 
+> [!NOTE]
+> Дополнительные сведения о просмотре метрик в портал Azure см. в статье [Приступая к работе с Azure обозреватель метрик](./metrics-getting-started.md) .
+
 ## <a name="supported-regions"></a>Поддерживаемые регионы
-В общедоступной предварительной версии публиковать пользовательские метрики возможно только в некоторых регионах Azure. Это означает, что публиковать метрики возможно только для ресурсов в одном из поддерживаемых регионов. В следующей таблице перечислены наборы поддерживаемых регионов Azure для пользовательских метрик. В ней также перечислены соответствующие конечные точки, в которых необходимо опубликовать маркеры для ресурсов в этих регионах.
+В общедоступной предварительной версии публиковать пользовательские метрики возможно только в некоторых регионах Azure. Это означает, что публиковать метрики возможно только для ресурсов в одном из поддерживаемых регионов. Дополнительные сведения о регионах Azure см. в разделе [географические диаграммы Azure](https://azure.microsoft.com/global-infrastructure/geographies/) . Код региона Azure, используемый в следующих конечных точках, — это просто имя региона с удаленным пробелом. в следующей таблице приведен набор поддерживаемых регионов Azure для пользовательских метрик. В ней также перечислены соответствующие конечные точки, в которых необходимо опубликовать маркеры для ресурсов в этих регионах.
 
 |Регион Azure |Префикс региональной конечной точки|
 |---|---|
-| **США и Канада** | |
-|центрально-западная часть США | HTTPS: \/ /westcentralus.Monitoring.Azure.com |
-|западная часть США 2       | HTTPS: \/ /westus2.Monitoring.Azure.com |
-|Центрально-северная часть США | HTTPS: \/ /northcentralus.Monitoring.Azure.com
-|Центрально-южная часть США| HTTPS: \/ /southcentralus.Monitoring.Azure.com |
-|Центральная часть США      | HTTPS: \/ /centralus.Monitoring.Azure.com |
-|Центральная Канада | HTTPS: \/ /canadacentral.Monitoring.Azure.com |
-|Восточная часть США| HTTPS: \/ /eastus.Monitoring.Azure.com |
-|восточная часть США 2 | HTTPS: \/ /eastus2.Monitoring.Azure.com |
-| **Европа** | |
-|Северная Европа    | HTTPS: \/ /northeurope.Monitoring.Azure.com |
-|Западная Европа     | HTTPS: \/ /westeurope.Monitoring.Azure.com |
-|южная часть Соединенного Королевства | HTTPS: \/ /uksouth.Monitoring.Azure.com
-|Центральная Франция | HTTPS: \/ /francecentral.Monitoring.Azure.com |
-| **Африка** | |
-|Северная часть ЮАР; | HTTPS: \/ /southafricanorth.Monitoring.Azure.com |
-| **Азия** | |
-|Центральная Индия | HTTPS: \/ /centralindia.Monitoring.Azure.com |
-|Восточная Австралия | HTTPS: \/ /australiaeast.Monitoring.Azure.com |
-|Japan East | HTTPS: \/ /japaneast.Monitoring.Azure.com |
-|Юго-Восточная Азия  | HTTPS: \/ /SoutheastAsia.Monitoring.Azure.com |
-|Восточная Азия | HTTPS: \/ /eastasia.Monitoring.Azure.com |
-|Республика Корея, центральный регион   | HTTPS: \/ /koreacentral.Monitoring.Azure.com |
+| Все регионы общедоступного облака | https://<azure_region_code>. monitoring.azure.com |
+| **Azure для государственных организаций** | |
+| US Gov (Аризона) | HTTPS: \/ /usgovarizona.Monitoring.Azure.US |
+| **Китай** | |
+| Восточный Китай 2 | HTTPS: \/ /chinaeast2.Monitoring.Azure.CN |
 
 ## <a name="latency-and-storage-retention"></a>Задержка и хранение хранилища
 

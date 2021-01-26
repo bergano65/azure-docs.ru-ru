@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 06/02/2020
 ms.author: sebansal
-ms.openlocfilehash: 4635bcc51d2ab626b16ddcf02e772bf3df3cad4d
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: c36353448c140450044f352062c3349939e3f7b5
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763746"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789016"
 ---
 # <a name="integrating-key-vault-with-digicert-certificate-authority"></a>Интеграция Key Vault с центром сертификации DigiCert
 
@@ -129,7 +129,7 @@ Add-AzKeyVaultCertificate -VaultName "Contoso-Vaultname" -Name "ExampleCertifica
  ![Операция с сертификатом](../media/certificates/how-to-integrate-certificate-authority/certificate-operation-select.png)
 
 Сообщение об ошибке "Выполните объединение, чтобы завершить этот запрос на сертификат".
-Чтобы выполнить этот запрос, вам нужно объединить запрос CSR, подписанный центром сертификации. Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate-signing-request).
+Чтобы выполнить этот запрос, вам нужно объединить запрос CSR, подписанный центром сертификации. Дополнительные сведения см. [здесь](./create-certificate-signing-request.md).
 
 Дополнительные сведения о работе с сертификатами см. в [справочнике по работе с Azure Key Vault с помощью REST API](/rest/api/keyvault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа).
 
