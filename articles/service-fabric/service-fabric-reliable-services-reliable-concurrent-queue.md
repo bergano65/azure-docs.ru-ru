@@ -3,17 +3,17 @@ title: Надежная параллельная очередь в Azure Service
 description: ReliableConcurrentQueue — это очередь с высокой пропускной способностью, которая позволяет параллельно ставить в очередь и выводить на нее очереди.
 ms.topic: conceptual
 ms.date: 5/1/2017
-ms.openlocfilehash: 423ef3d1898176d7c25c596ad186a9c000108aa4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d6852982621d3efd3f4a8597a2959fceb13abd12
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997126"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784297"
 ---
 # <a name="introduction-to-reliableconcurrentqueue-in-azure-service-fabric"></a>Введение в надежные параллельные очереди в Azure Service Fabric
-Надежная параллельная очередь — это асинхронная, транзакционная и реплицируемая очередь, которая обладает высокой степенью параллелизма при операциях постановки в очередь и вывода из нее. Она предназначена для обеспечения высокой пропускной способности и низкой задержки. Она ослабляет строгое упорядочение FIFO, гарантируемое [надежной очередью](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1), и вместо этого обеспечивает упорядочение наилучшим возможным образом.
+Надежная параллельная очередь — это асинхронная, транзакционная и реплицируемая очередь, которая обладает высокой степенью параллелизма при операциях постановки в очередь и вывода из нее. Она предназначена для обеспечения высокой пропускной способности и низкой задержки. Она ослабляет строгое упорядочение FIFO, гарантируемое [надежной очередью](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1), и вместо этого обеспечивает упорядочение наилучшим возможным образом.
 
-## <a name="apis"></a>API-интерфейсы
+## <a name="apis"></a>Программные интерфейсы
 
 |Параллельная очередь                |Надежная параллельная очередь                                         |
 |--------------------------------|------------------------------------------------------------------|
@@ -21,11 +21,11 @@ ms.locfileid: "95997126"
 | bool TryDequeue(out T result)  | Task< ConditionalValue < T > > TryDequeueAsync(ITransaction tx)  |
 | int Count()                    | long Count()                                                     |
 
-## <a name="comparison-with-reliable-queue"></a>Сравнение с [надежной очередью](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1)
+## <a name="comparison-with-reliable-queue"></a>Сравнение с [надежной очередью](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1)
 
-Надежная параллельная очередь предлагается в качестве альтернативы [надежной очереди](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1). Ее следует использовать в случаях, когда строгое упорядочение FIFO не требуется, так как модель FIFO требует уменьшения степени параллелизма.  [Надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1) использует блокировки для принудительного упорядочивания FIFO, разрешая ставить в очередь и выводить из нее одновременно максимум одну транзакцию за раз. Для сравнения надежная параллельная очередь снижает ограничения упорядочивания и позволяет чередовать операции постановки в очередь и вывода из нее любому количеству параллельных транзакций. Так обеспечивается упорядочивание наилучшим возможным образом, однако относительный порядок двух значений в надежной параллельной очереди не гарантируется.
+Надежная параллельная очередь предлагается в качестве альтернативы [надежной очереди](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1). Ее следует использовать в случаях, когда строгое упорядочение FIFO не требуется, так как модель FIFO требует уменьшения степени параллелизма.  [Надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1) использует блокировки для принудительного упорядочивания FIFO, разрешая ставить в очередь и выводить из нее одновременно максимум одну транзакцию за раз. Для сравнения надежная параллельная очередь снижает ограничения упорядочивания и позволяет чередовать операции постановки в очередь и вывода из нее любому количеству параллельных транзакций. Так обеспечивается упорядочивание наилучшим возможным образом, однако относительный порядок двух значений в надежной параллельной очереди не гарантируется.
 
-Надежная параллельная очередь обеспечивает высокую пропускную способность и более низкую задержку, чем [надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1), во всех случаях, когда имеется несколько параллельных транзакций, выполняющих постановку в очередь и вывод из нее.
+Надежная параллельная очередь обеспечивает высокую пропускную способность и более низкую задержку, чем [надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1), во всех случаях, когда имеется несколько параллельных транзакций, выполняющих постановку в очередь и вывод из нее.
 
 Пример использования надежной параллельной очереди — это сценарий с [очередью сообщений](https://en.wikipedia.org/wiki/Message_queue). В этом сценарии один или несколько отправителей создают и добавляют элементы в очередь и один или несколько получателей извлекают сообщения из очереди и обрабатывают их. Несколько отправителей и получателей могут работать независимо, используя параллельные транзакции для обработки очередей.
 
@@ -340,4 +340,4 @@ using (var txn = this.StateManager.CreateTransaction())
 * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
 * [начало работы с Service Fabric служб веб-API](./service-fabric-reliable-services-communication-aspnetcore.md)
 * [Дополнительные возможности использования модели программирования надежных служб](./service-fabric-reliable-services-lifecycle.md)
-* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

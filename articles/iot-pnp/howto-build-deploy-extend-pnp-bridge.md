@@ -7,12 +7,12 @@ ms.date: 1/20/2021
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b7947eab93ebc8e523e163af601893522132e06a
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 4612e1236af5fbe47db9a3569e2f4da2378017e2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98745673"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784903"
 ---
 # <a name="build-and-deploy-the-iot-plug-and-play-bridge"></a>Создание и развертывание моста самонастраивающийся IoT
 
@@ -35,7 +35,7 @@ ms.locfileid: "98745673"
 
 |Платформа  |Поддерживаемые версии  |
 |---------|---------|
-|быть под управлением ОС Windows 10; |     Поддерживаются все номера SKU Windows. Например: IoT Корпоративная, сервер, Настольный компьютер, IoT Core. *Для функций мониторинга работоспособности камеры рекомендуется использовать 20H1 или более позднюю сборку. Все остальные функции доступны во всех сборках Windows 10.*  |
+|Windows 10 |     Поддерживаются все номера SKU Windows. Например: IoT Корпоративная, сервер, Настольный компьютер, IoT Core. *Для функций мониторинга работоспособности камеры рекомендуется использовать 20H1 или более позднюю сборку. Все остальные функции доступны во всех сборках Windows 10.*  |
 |Linux     |Протестированные и поддерживаемые в Ubuntu 18,04, но не тестировали функциональность других дистрибутивов.         |
 ||
 
@@ -212,7 +212,7 @@ Debug\pnpbridge_bin.exe
 
 В действиях, описанных в этом разделе, предполагается, что на компьютере с Windows 10 установлена следующая среда разработки. Эти средства позволяют создавать и развертывать модуль IoT Edge на устройстве IoT Edge.
 
-- Подсистема Windows для Linux (WSL) 2 под управлением Ubuntu 18,04 LTS. Дополнительные сведения см. в статье [подсистема Windows для Linux](https://docs.microsoft.com/windows/wsl/install-win10), посвященная установке Windows 10.
+- Подсистема Windows для Linux (WSL) 2 под управлением Ubuntu 18,04 LTS. Дополнительные сведения см. в статье [подсистема Windows для Linux](/windows/wsl/install-win10), посвященная установке Windows 10.
 - DOCKER Desktop для Windows, настроенный для использования WSL 2. Дополнительные сведения см. в разделе [сервер DOCKER Desktop WSL 2](https://docs.docker.com/docker-for-windows/wsl/).
 - [Visual Studio Code установлен в среде Windows](https://code.visualstudio.com/docs/setup/windows) с установленными следующими тремя расширениями:
 
@@ -448,6 +448,6 @@ az group delete -n bridge-edge-resources
 
 *пнпбридже\срк\адаптерс*: исходный код для различных адаптеров моста интернета вещей Самонастраивающийся.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Bridge самонастраивающийся центра Интернета вещей см. в репозитории GitHub [Самонастраивающийся Bridge](https://github.com/Azure/iot-plug-and-play-bridge) .

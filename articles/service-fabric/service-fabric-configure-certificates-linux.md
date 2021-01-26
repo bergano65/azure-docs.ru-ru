@@ -4,12 +4,12 @@ description: Настройка сертификатов для приложен
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: pepogors
-ms.openlocfilehash: a97c8b8315fe3be405aed9c6570004afb8fafd1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70f9cc38d84681f68c10882889214648a4dd2624
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258664"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785572"
 ---
 # <a name="certificates-and-security-on-linux-clusters"></a>Сертификаты и безопасность в кластерах Linux
 
@@ -21,7 +21,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 Для кластеров Linux платформа Service Fabric ожидает, что сертификаты должны быть либо PEM-файлом, содержащим сертификат и закрытый ключ, либо CRT-файлом, который содержит сертификат, и KEY-файлом, который содержит закрытый ключ. Все файлы должны быть в формате PEM. 
 
-Если вы устанавливаете сертификат из Azure Key Vault с помощью [шаблона Resource Manager](./service-fabric-cluster-creation-create-template.md) или команд [PowerShell](/powershell/module/az.servicefabric/?view=azps-2.6.0), то сертификат установится в правильном формате в каталог */var/lib/sfcerts* на каждом узле. Если вы устанавливаете сертификат другим способом, то вам следует убедиться в его правильной установке на узлах кластера.
+Если вы устанавливаете сертификат из Azure Key Vault с помощью [шаблона Resource Manager](./service-fabric-cluster-creation-create-template.md) или команд [PowerShell](/powershell/module/az.servicefabric/), то сертификат установится в правильном формате в каталог */var/lib/sfcerts* на каждом узле. Если вы устанавливаете сертификат другим способом, то вам следует убедиться в его правильной установке на узлах кластера.
 
 ## <a name="certificates-referenced-in-the-application-manifest"></a>Сертификаты, на которые имеются ссылки в манифесте приложения
 
@@ -33,7 +33,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 ### <a name="using-x509-securitycredentialstype"></a>Использование SecurityCredentialsType X509
 
-При использовании пакетов SDK для .NET или Java вы можете указать **X509** для **SecurityCredentialsType**. Соответствует `X509Credentials` типу (.NET Java[.NET](/previous-versions/azure/reference/mt124925(v=azure.100)) / [)](/java/api/system.fabric.x509credentials) `SecurityCredentials` ([.NET](/previous-versions/azure/reference/mt124894(v=azure.100)) / [Java](/java/api/system.fabric.securitycredentials)).
+При использовании пакетов SDK для .NET или Java вы можете указать **X509** для **SecurityCredentialsType**. Соответствует `X509Credentials` типу (.NET Java[](/previous-versions/azure/reference/mt124925(v=azure.100)) / [)](/java/api/system.fabric.x509credentials) `SecurityCredentials` ([.NET](/previous-versions/azure/reference/mt124894(v=azure.100)) / [Java](/java/api/system.fabric.securitycredentials)).
 
 Ссылка **X509** определяет местонахождение сертификата в хранилище сертификатов. В следующем коде XML показаны параметры, используемые для указания расположения сертификата:
 

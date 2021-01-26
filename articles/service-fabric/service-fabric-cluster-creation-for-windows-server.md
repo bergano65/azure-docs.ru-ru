@@ -3,12 +3,12 @@ title: Создание изолированного кластера Azure Serv
 description: Создание кластера Azure Service Fabric на любом компьютере (физическом сервере или виртуальной машине) под управлением Windows Server, расположенном в локальной системе или любом облаке.
 ms.topic: conceptual
 ms.date: 2/21/2019
-ms.openlocfilehash: 36883f2c8b09fa3f8f013e0267dafa2a8220e5d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41af655be07ccae2b66e75f5bfe87629cdb54924
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843198"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785690"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Создание изолированного кластера под управлением Windows Server
 Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server. Традиционные кластеры Service Fabric в Azure доступны в виде управляемой службы, а изолированные являются самостоятельными. Дополнительные сведения об их различиях см. статье [Сравнение традиционных и изолированных кластеров Service Fabric в Azure под управлением Windows Server и Linux](./service-fabric-deploy-anywhere.md).
@@ -116,7 +116,7 @@ Service Fabric можно развернуть на кластере с одни
 *.\ClusterConfig.json* и *.\MicrosoftAzureServiceFabric.cab* — это пути к файлу конфигурации кластера и CAB-файлу среды выполнения соответственно.
 
 ### <a name="step-2-connect-to-the-cluster"></a>Шаг 2. Подключение к кластеру
-Подключитесь к кластеру, чтобы убедиться, что кластер запущен и доступен. Модуль PowerShell ServiceFabric устанавливается вместе со средой выполнения.  Вы можете подключиться к кластеру с одного из узлов кластера или с удаленного компьютера с помощью среды выполнения Service Fabric.  Подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps).
+Подключитесь к кластеру, чтобы убедиться, что кластер запущен и доступен. Модуль PowerShell ServiceFabric устанавливается вместе со средой выполнения.  Вы можете подключиться к кластеру с одного из узлов кластера или с удаленного компьютера с помощью среды выполнения Service Fabric.  Подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster).
 
 Для подключения к незащищенному кластеру выполните следующую команду PowerShell.
 
@@ -129,7 +129,7 @@ Connect-ServiceFabricCluster -ConnectionEndpoint <*IPAddressofaMachine*>:<Client
 Connect-ServiceFabricCluster -ConnectionEndpoint 192.13.123.234:19000
 ```
 
-Примеры других способов подключения к кластеру см. в статье о [безопасном подключении к кластеру](service-fabric-connect-to-secure-cluster.md). После подключения к кластеру используйте командлет [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps), чтобы отобразить список узлов в кластере и сведения о состоянии каждого узла. **Состояние работоспособности** каждого узла должно иметь значение *ОК*.
+Примеры других способов подключения к кластеру см. в статье о [безопасном подключении к кластеру](service-fabric-connect-to-secure-cluster.md). После подключения к кластеру используйте командлет [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode), чтобы отобразить список узлов в кластере и сведения о состоянии каждого узла. **Состояние работоспособности** каждого узла должно иметь значение *ОК*.
 
 ```powershell
 PS C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer> Get-ServiceFabricNode |Format-Table

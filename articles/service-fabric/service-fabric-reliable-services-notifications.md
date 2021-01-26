@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 6/29/2017
 ms.author: mcoskun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4a336daf9bd7400d049233a22a04d64d561b42c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5b48cc6cca2e143c48ed7bdfc99de936be2a227
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021958"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784585"
 ---
 # <a name="reliable-services-notifications"></a>Уведомления Reliable Services
 Уведомления позволяют клиентам отслеживать изменения, которые вносятся в интересующий их объект. Существует два типа объектов, поддерживающих уведомления: *диспетчер надежных состояний* и *надежный словарь*.
@@ -211,4 +211,4 @@ public void OnDictionaryChangedHandler(object sender, NotifyDictionaryChangedEve
 * [Надежные коллекции](service-fabric-work-with-reliable-collections.md)
 * [Быстрый запуск Reliable Services](service-fabric-reliable-services-quick-start.md)
 * [Архивация и восстановление (аварийное восстановление) надежных служб](service-fabric-reliable-services-backup-restore.md)
-* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

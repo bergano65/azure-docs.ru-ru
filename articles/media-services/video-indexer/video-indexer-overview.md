@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 09/11/2020
 ms.author: juliako
-ms.openlocfilehash: 6b5a228c12cfc874673dda854de6d4dcc25f28c1
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 06f5e19718445f44dd2302faf280f083cce0774f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014541"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783807"
 ---
 # <a name="what-is-azure-media-services-video-indexer"></a>Общие сведения об Индексаторе видео в Службах мультимедиа Azure
 
@@ -115,6 +115,21 @@ ms.locfileid: "98014541"
     Дополнительные сведения см. в разделе  [Внедрение визуальных мини-приложений в собственное приложение](video-indexer-embed-widgets.md).
 
 Если вы используете веб-сайт, аналитические сведения добавляются в виде метаданных и отображаются на портале. Если вы используете API, аналитические сведения доступны в виде JSON-файла.
+
+## <a name="supported-browsers"></a>Поддерживаемые браузеры
+
+В следующем списке приведены поддерживаемые браузеры, которые можно использовать для веб-сайта индексатора видео, а также для приложений, которые внедряют графические элементы. В списке также показана минимальная поддерживаемая версия браузера:
+
+- Ребро, версия: 16
+- Firefox, версия: 54
+- Chrome, версия: 58
+- Safari, версия: 11
+- Opera, версия: 44
+- Opera Mobile, версия: 59
+- Браузер Android, версия: 81
+- Браузер Samsung, версия: 7
+- Chrome для Android, версия: 87
+- Firefox для Android, версия: 83
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,12 +8,12 @@ ms.author: jehollan
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: 2fae7d2526e6c95efe83ca8fa742a6d92457b897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22e0c7304f7a53a86bc5c6739a2061352d738d29
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86520755"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784818"
 ---
 # <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps.
 
@@ -67,7 +67,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
 ## <a name="process-data-with-azure-functions"></a>Обработка данных с помощью Функций Azure
 
-Перед созданием функции создайте приложение-функцию в вашей подписке Azure. Кроме того, чтобы ваше приложение логики могло непосредственно вызывать функцию, она должна иметь привязку триггера HTTP, например, используйте шаблон **HttpTrigger**. Узнайте, [как создать свое первое приложение-функцию и функцию на портале Azure](../azure-functions/functions-create-first-azure-function.md).
+Перед созданием функции создайте приложение-функцию в вашей подписке Azure. Кроме того, чтобы ваше приложение логики могло непосредственно вызывать функцию, она должна иметь привязку триггера HTTP, например, используйте шаблон **HttpTrigger**. Узнайте, [как создать свое первое приложение-функцию и функцию на портале Azure](../azure-functions/functions-get-started.md).
 
 Для этого сценария используйте текст твита в качестве текста запроса для вашей функции Azure. В коде функции задайте логику, определяющую, что содержит текст твита: ключевое слово или фразу. Используйте простую или сложную функцию в зависимости от реализуемого сценария.
 В конце функции верните в приложение логики ответ с данными, например, простое логическое значение, такое как `containsKeyword`, или cоставной объект.

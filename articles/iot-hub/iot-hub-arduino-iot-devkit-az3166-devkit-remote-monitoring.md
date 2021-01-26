@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: a5a69c35e5c7e33443c3810cad9ab4e21b048328
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 6912124ce8d1741731d625dccfea445417b2488d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148821"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785022"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга
 
@@ -120,7 +120,7 @@ ms.locfileid: "92148821"
 
 ## <a name="change-device-id"></a>Изменение идентификатора устройства
 
-Если необходимо изменить указанный в коде идентификатор **AZ3166** на пользовательский идентификатор устройства, измените строку кода, как показано в [примере удаленного мониторинга](../iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md).
+Если необходимо изменить указанный в коде идентификатор **AZ3166** на пользовательский идентификатор устройства, измените строку кода, как показано в [примере удаленного мониторинга](/previous-versions/azure/iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2).
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 

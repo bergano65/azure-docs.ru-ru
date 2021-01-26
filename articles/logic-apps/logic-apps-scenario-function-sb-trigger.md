@@ -7,12 +7,12 @@ ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 25f761d85ebfd0ac16f182941c5b5c29636066bf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a7df9ba1318f40de8af392cfaedbe51d7a5df755
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000340"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784941"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "96000340"
 
 * Пространство имен служебной шины Azure. Если у вас нет пространства имен, [сначала создайте пространство имен](../service-bus-messaging/service-bus-create-namespace-portal.md).
 
-* Приложение-функция, представляющее собой контейнер для функций. Если у вас нет приложения-функции, [сначала создайте приложение-функцию](../azure-functions/functions-create-first-azure-function.md)и убедитесь, что в качестве стека среды выполнения выбрано .NET.
+* Приложение-функция, представляющее собой контейнер для функций. Если у вас нет приложения-функции, [сначала создайте приложение-функцию](../azure-functions/functions-get-started.md)и убедитесь, что в качестве стека среды выполнения выбрано .NET.
 
 * Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -149,6 +149,6 @@ ms.locfileid: "96000340"
 
    Приложение логики должно активироваться сразу же, как только функция получит это сообщение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)

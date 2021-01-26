@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: d749c901b21651eec7b3e25ce111fb107e09b754
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 5c414a11085a6a37dee6be522dcf513e8990e5e2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883356"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786357"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -48,7 +48,7 @@ Azure HDInsight является одной из самых популярных
 
 ## <a name="behavior-changes"></a>Изменения в поведении
 ### <a name="add-nsg-rule-checking-before-scaling-operation"></a>Добавить проверку правил NSG до операции масштабирования
-В HDInsight добавлена проверка групп безопасности сети (группы безопасности сети) и определяемых пользователем маршрутов (определяемые пользователем маршруты) с операцией масштабирования. Такая же проверка выполняется для масштабирования кластера, помимо создания кластера. Эта проверка помогает предотвратить непредсказуемые ошибки. Если проверка не пройдена, масштабирование завершается сбоем. Дополнительные сведения о том, как правильно настроить группы безопасности сети и определяемые пользователем маршруты, см. в разделе [IP-адреса управления HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses).
+В HDInsight добавлена проверка групп безопасности сети (группы безопасности сети) и определяемых пользователем маршрутов (определяемые пользователем маршруты) с операцией масштабирования. Такая же проверка выполняется для масштабирования кластера, помимо создания кластера. Эта проверка помогает предотвратить непредсказуемые ошибки. Если проверка не пройдена, масштабирование завершается сбоем. Дополнительные сведения о том, как правильно настроить группы безопасности сети и определяемые пользователем маршруты, см. в разделе [IP-адреса управления HDInsight](./hdinsight-management-ip-addresses.md).
 
 ## <a name="upcoming-changes"></a>Предстоящие изменения
 В предстоящих выпусках будут внесены описанные ниже изменения.
@@ -84,4 +84,3 @@ HDInsight — это развертывание исправлений и при
 https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/replace_cacert_script.sh
 https://healingscriptssa.blob.core.windows.net/healingscripts/ChangeOOMPolicyAndApplyLatestConfigForClamav.sh
 ```
-

@@ -12,16 +12,16 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/03/2021
-ms.openlocfilehash: b1a732350c69d366458af6e388102e1f67395abf
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 9c79a1ab46513da54d61f1da5c1ba3a6dd480a95
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120736"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785369"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Руководство. Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS
 
-Azure Database Migration Service позволяет переносить базы данных из экземпляра SQL Server в [Базу данных SQL Azure](/azure/sql-database/). Из этого руководства вы узнаете, как перенести базу данных [Adventureworks2016](https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms#download-backup-files), восстановленную в локальном экземпляре SQL Server 2016 (или более поздней версии), в отдельную базу данных или базу данных в пуле в службе "База данных SQL Azure" с помощью Azure Database Migration Service.
+Azure Database Migration Service позволяет переносить базы данных из экземпляра SQL Server в [Базу данных SQL Azure](/azure/sql-database/). Из этого руководства вы узнаете, как перенести базу данных [Adventureworks2016](/sql/samples/adventureworks-install-configure?tabs=ssms&view=sql-server-ver15#download-backup-files), восстановленную в локальном экземпляре SQL Server 2016 (или более поздней версии), в отдельную базу данных или базу данных в пуле в службе "База данных SQL Azure" с помощью Azure Database Migration Service.
 
 Вы научитесь:
 > [!div class="checklist"]

@@ -3,18 +3,18 @@ title: Знакомство с надежными коллекциями
 description: Службы с отслеживанием состояния Service Fabric предоставляют надежные коллекции, которые позволяют создавать высокодоступные и масштабируемые облачные приложения с низкой задержкой.
 ms.topic: conceptual
 ms.date: 3/10/2020
-ms.openlocfilehash: 6e0f39b994087fe44038e62e85326945589c719a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d705f81b4ad31559886e43226febcd4cf1d345d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86245132"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784382"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Введение в надежные коллекции в службах с отслеживанием состояния Azure Service Fabric
 
 Надежные коллекции позволяют создавать высокодоступные и масштабируемые облачные приложения с низкой задержкой точно так же, как приложения для одного компьютера. Классы в пространстве имен **Microsoft.ServiceFabric.Data.Collections** предоставляют набор коллекций, которые автоматически обеспечивают состояние высокой доступности. Разработчикам нужно только создать интерфейсы API для надежных коллекций и разрешить надежным коллекциям управлять реплицированным и локальным состояниями.
 
-Основное различие между надежными коллекциями и другими технологиями обеспечения высокой доступности (например, Redis, службы таблиц и очередей Azure) заключается в том, что состояние хранится локально в экземпляре службы и одновременно делается высокодоступным. Это означает следующее:
+Основное различие между надежными коллекциями и другими технологиями обеспечения высокой доступности (например, Redis, службы таблиц и очередей Azure) заключается в том, что состояние хранится локально в экземпляре службы и одновременно делается высокодоступным. Это означает следующее.
 
 * Все операции чтения выполняются локально, что позволяет достичь низкой задержки и высокой пропускной способности при чтении.
 * Все операции записи создают минимальное количество сетевых операций ввода-вывода, что позволяет достичь низкой задержки и высокой пропускной способности при записи.
@@ -40,8 +40,8 @@ API надежных коллекций являются развитием API 
 
 Сейчас пространство имен **Microsoft.ServiceFabric.Data.Collections** содержит три коллекции:
 
-* [надежный словарь](/dotnet/api/microsoft.servicefabric.data.collections.ireliabledictionary-2?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliabledictionary_2) (реплицируемая, транзакционная и асинхронная коллекция пар "ключ-значение"; как и в **ConcurrentDictionary**, ключ и значение могут быть любого типа);
-* [надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO; как и в **ConcurrentQueue**, значение может быть любого типа).
+* [надежный словарь](/dotnet/api/microsoft.servicefabric.data.collections.ireliabledictionary-2#microsoft_servicefabric_data_collections_ireliabledictionary_2) (реплицируемая, транзакционная и асинхронная коллекция пар "ключ-значение"; как и в **ConcurrentDictionary**, ключ и значение могут быть любого типа);
+* [надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO; как и в **ConcurrentQueue**, значение может быть любого типа).
 * [Надежная параллельная очередь](service-fabric-reliable-services-reliable-concurrent-queue.md) — реплицируемая, транзакционная и асинхронная упорядочивающая очередь для обеспечения высокой пропускной способности. Как и в **ConcurrentQueue**, значение может быть любого типа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -57,4 +57,4 @@ API надежных коллекций являются развитием API 
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
 * Другие
   * [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
-  * [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  * [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

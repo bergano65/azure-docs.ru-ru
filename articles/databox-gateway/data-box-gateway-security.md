@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: alkohli
-ms.openlocfilehash: 11122b57a1971f328a8a83c3dea136813426c060
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 13d3809611714992f24a66a96c22074e69fba9bd
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96583078"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786662"
 ---
 # <a name="azure-data-box-gateway-security-and-data-protection"></a>Шлюз Azure Data Box безопасность и защита данных
 
@@ -55,7 +55,7 @@ ms.locfileid: "96583078"
 
 Пароли гарантируют, что только полномочные пользователи могут получить доступ к вашим данным. Шлюз Data Box устройства загружаются в заблокированном состоянии.
 
-Можно сделать следующее:
+Вы можете выполнить следующие действия:
 
 - Подключитесь к локальному веб-ИНТЕРФЕЙСу устройства через браузер, а затем укажите пароль для входа на устройство.
 - Удаленное подключение к интерфейсу PowerShell устройства через HTTP. Удаленное управление включено по умолчанию. Затем можно указать пароль устройства для входа на устройство. Дополнительные сведения см. [в статье удаленное подключение к устройству шлюз Data Box](data-box-gateway-connect-powershell-interface.md#connect-to-the-powershell-interface).
@@ -63,7 +63,7 @@ ms.locfileid: "96583078"
 [!INCLUDE [data-box-gateway-password-best-practices](../../includes/data-box-gateway-password-best-practices.md)]
 - Используйте локальный веб-интерфейс для [изменения пароля](data-box-gateway-manage-access-power-connectivity-mode.md#manage-device-access). Если вы измените пароль, не забудьте уведомить всех пользователей удаленного доступа, чтобы у них не было проблем при входе в систему.
 
-## <a name="protect-your-data"></a>Защита данных
+## <a name="protect-your-data"></a>Защита своих данных
 
 В этом разделе описаны функции безопасности Шлюз Data Box, защищающие транзитные и хранимые данные.
 
@@ -85,7 +85,7 @@ ms.locfileid: "96583078"
 
 Чтобы защитить виртуальные диски на Шлюз Data Box виртуальной машине, рекомендуется включить BitLocker. По умолчанию средство BitLocker выключено. Дополнительные сведения см. в разделе:
 
-- [Параметры поддержки шифрования в диспетчере Hyper-V](hhttps://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
+- [Параметры поддержки шифрования в диспетчере Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
 - [BitLocker support in a virtual machine (Поддержка BitLocker на виртуальной машине)](https://kb.vmware.com/s/article/2036142)
 
 ## <a name="manage-personal-information"></a>Управление личными сведениями

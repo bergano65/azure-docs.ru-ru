@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 10/14/2020
 ms.author: alkohli
-ms.openlocfilehash: f6daee6d4cfc3c074e004fb3835f62218e48d9ff
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 3bf137f968082e677f45c20947793232b9181220
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96583114"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786618"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Сценарии использования для шлюза Azure Data Box
 
@@ -40,7 +40,7 @@ ms.locfileid: "96583114"
 
 Шлюз Data Box позволяет длительное время хранить данные в облаке. Для долгосрочного хранения можно использовать архивный уровень хранилища.
 
-Уровень архива оптимизирован для хранения редко запрашиваемых данных в течение не менее 180 дней. Архивный уровень требует наименьших затрат на хранение, но наибольших — на доступ. Дополнительные сведения см. в разделе [Архивный уровень доступа](/azure/storage/blobs/storage-blob-storage-tiers#archive-access-tier).
+Уровень архива оптимизирован для хранения редко запрашиваемых данных в течение не менее 180 дней. Архивный уровень требует наименьших затрат на хранение, но наибольших — на доступ. Дополнительные сведения см. в разделе [Архивный уровень доступа](../storage/blobs/storage-blob-storage-tiers.md#archive-access-tier).
 
 ### <a name="move-data-to-the-archive-tier"></a>Перемещение данных на уровень архива
 
@@ -48,14 +48,14 @@ ms.locfileid: "96583114"
 
 - Отправьте данные в Azure с помощью Шлюза Data Box, используя обычные процедуры передачи данных, как описано в [этом руководстве](data-box-gateway-deploy-add-shares.md).
 - После отправки данных переведите хранилище на архивный уровень. Задать уровень больших двоичных объектов можно двумя способами: с помощью скрипта Azure PowerShell или политики управления жизненным циклом службы хранилища Azure.  
-    - При использовании Azure PowerShell выполните следующие [действия](/azure/databox/data-box-how-to-set-data-tier#use-azure-powershell-to-set-the-blob-tier) , чтобы переместить данные на уровень архива.
+    - При использовании Azure PowerShell выполните следующие [действия](../databox/data-box-how-to-set-data-tier.md#use-azure-powershell-to-set-the-blob-tier) , чтобы переместить данные на уровень архива.
     - Если вы используете управление жизненным циклом Azure, выполните следующие действия, чтобы переместить данные на уровень архива.
-        - [Зарегистрируйтесь](/azure/storage/common/storage-lifecycle-management-concepts) для получения предварительной версии службы управления жизненным циклом больших двоичных объектов, чтобы использовать уровень архива.
-        - Используйте описанную ниже политику [архивации данных при приеме](/azure/storage/blobs/storage-lifecycle-management-concepts#archive-data-after-ingest).
+        - [Зарегистрируйтесь](../storage/blobs/storage-lifecycle-management-concepts.md) для получения предварительной версии службы управления жизненным циклом больших двоичных объектов, чтобы использовать уровень архива.
+        - Используйте описанную ниже политику [архивации данных при приеме](../storage/blobs/storage-lifecycle-management-concepts.md#archive-data-after-ingest).
 - После того как большие двоичные объекты помечены как архивные, они больше не могут быть изменены шлюзом, пока они не будут перемещены на горячий или холодный уровень. Если файл находится в локальном хранилище, любые изменения, внесенные в локальную копию (включая удаления), не передаются на архивный уровень.
 - Чтобы считать данные в архивном хранилище, необходимо выполнить восстановление данных, изменив уровень больших двоичных объектов на "горячий" или "холодно". При [обновлении общей папки](data-box-gateway-manage-shares.md#refresh-shares) в шлюзе большой двоичный объект не восстанавливается.
 
-Дополнительные сведения см. в статье [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](/azure/storage/common/storage-lifecycle-management-concepts).
+Дополнительные сведения см. в статье [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](../storage/blobs/storage-lifecycle-management-concepts.md).
 
 ## <a name="initial-bulk-transfer-followed-by-incremental-transfer"></a>Начальная массовая передача данных с последующей передачей добавочных данных
 
@@ -65,10 +65,10 @@ ms.locfileid: "96583114"
 
 Выполните указанные ниже действия, чтобы скопировать данные в Data Box и отправить их в службу хранилища Azure.
 
-1. [Заказ Data Box](/azure/databox/data-box-deploy-ordered).
-2. [Настройка Data Box](/azure/databox/data-box-deploy-set-up).
-3. [Копирование данных на Data Box по SMB](/azure/databox/data-box-deploy-copy-data).
-4. [Передача Data Box и проверка отправки данных в Azure](/azure/databox/data-box-deploy-picked-up).
+1. [Заказ Data Box](../databox/data-box-deploy-ordered.md).
+2. [Настройка Data Box](../databox/data-box-deploy-set-up.md).
+3. [Копирование данных на Data Box по SMB](../databox/data-box-deploy-copy-data.md).
+4. [Передача Data Box и проверка отправки данных в Azure](../databox/data-box-deploy-picked-up.md).
 5. Когда передача данных в Azure завершится, все данные будут расположены в контейнерах хранилища Azure. В учетной записи хранения для Data Box перейдите к контейнеру больших двоичных объектов (и файлов) и убедитесь, что все данные успешно скопированы. Запомните или запишите имя контейнера, так как оно потребуется вам позже. Например, на следующем снимке экрана контейнер `databox` будет использоваться для добавочной передачи.
 
     ![Контейнер с данными в Data Box](media/data-box-gateway-use-cases/data-container.png)

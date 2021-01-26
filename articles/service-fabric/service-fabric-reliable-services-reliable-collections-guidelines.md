@@ -3,12 +3,12 @@ title: Рекомендации для надежных коллекций
 description: Рекомендации и рекомендации по использованию Service Fabric надежных коллекций в приложении Service Fabric Azure.
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 63e6de436bdaceed7f1d2a78e8385dd14bfc0ed6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f12db76f324d07c178b49150d4e574476e7d9929
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260924"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784331"
 ---
 # <a name="guidelines-and-recommendations-for-reliable-collections-in-azure-service-fabric"></a>Инструкции и рекомендации для надежных коллекций в Azure Service Fabric
 В этом разделе приведены инструкции по использованию надежных коллекций и диспетчера надежных состояний. Цель этого руководства — помочь пользователям избежать распространенных ошибок.
@@ -64,4 +64,4 @@ ms.locfileid: "86260924"
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
 * Другие
   * [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
-  * [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  * [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

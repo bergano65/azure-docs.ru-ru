@@ -3,12 +3,12 @@ title: Транзакции и режимы блокировки в надежн
 description: Транзакции и блокировка диспетчера надежных состояний и надежных коллекций Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 5/1/2017
-ms.openlocfilehash: 57ca46047641b79d5e4c50ede4a27e16dcec5d89
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 5d2cbb517ea5ca45697cd9124b82e9ef13dd32db
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576729"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784348"
 ---
 # <a name="transactions-and-lock-modes-in-azure-service-fabric-reliable-collections"></a>Транзакции и режимы блокировки в надежных коллекциях Azure Service Fabric
 
@@ -18,7 +18,7 @@ ms.locfileid: "96576729"
 
 * **Атомарность**. Транзакция должна быть атомарной единицей работы. Другими словами, должны выполняться либо все ее изменения данных, либо ни одно из них.
 * **Согласованность**. По завершении транзакция должна оставить все данные в согласованном состоянии. Все внутренние структуры данных должны быть правильными на момент завершения транзакции.
-* **Изоляция**. Изменения, выполняемые одной параллельной транзакцией, должны быть изолированы от изменений, выполняемых прочими параллельными транзакциями. Уровень изоляции, используемый для операции в [ITransaction](/dotnet/api/microsoft.servicefabric.data.itransaction?view=azure-dotnet) , определяется [ирелиаблестате](/dotnet/api/microsoft.servicefabric.data.ireliablestate?view=azure-dotnet) , выполняющим операцию.
+* **Изоляция**. Изменения, выполняемые одной параллельной транзакцией, должны быть изолированы от изменений, выполняемых прочими параллельными транзакциями. Уровень изоляции, используемый для операции в [ITransaction](/dotnet/api/microsoft.servicefabric.data.itransaction) , определяется [ирелиаблестате](/dotnet/api/microsoft.servicefabric.data.ireliablestate) , выполняющим операцию.
 * **Устойчивость**. После завершения транзакции ее результаты постоянно сохраняются в системе. Изменения сохраняются даже в случае системного сбоя.
 
 ### <a name="isolation-levels"></a>Уровни изоляции
@@ -67,10 +67,10 @@ ms.locfileid: "96576729"
 
 Ниже приведена таблица совместимости блокировок.
 
-| Запрос \ Предоставлено | Нет | Общий | Обновление | Монопольная блокировка |
+| Запрос \ Предоставлено | Нет | Совмещаемая блокировка | Update | Монопольная блокировка |
 | --- |:--- |:--- |:--- |:--- |
-| Общий |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
-| Обновление |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
+| Совмещаемая блокировка |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
+| Update |Нет конфликтов |Нет конфликтов |Conflict |Conflict |
 | Монопольная блокировка |Нет конфликтов |Conflict |Conflict |Conflict |
 
 Аргумент timeout в API-интерфейсах надежных коллекций используется для обнаружения взаимоблокировок.
@@ -84,4 +84,4 @@ ms.locfileid: "96576729"
 * [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)
 * [Архивация и восстановление (аварийное восстановление) надежных служб](service-fabric-reliable-services-backup-restore.md)
 * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
-* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: a2048a509bdbe11c948ac8eb2daa6e78013c2fa5
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: c58f4a553073eb3ed062ef9ec2a66c8e4f40e57b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753773"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785131"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -451,7 +451,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 AcquireTokenByIntegratedWindowsAuth(IEnumerable<string> scopes)
 ```
 
-Обычно требуется только один параметр (`scopes`). В зависимости от способа настройки политик администратором Windows приложениям на компьютере Windows может быть запрещено выполнять поиск пользователя, выполнившего вход. В этом случае используйте второй метод, `.WithUsername()`, и передайте имя пользователя, выполнившего вход, в формате UPN, например `joe@contoso.com`. В .NET Core доступна только перегрузка, принимающая имя пользователя, так как платформа .NET Core не может запросить имя пользователя для операционной системы.
+Обычно требуется только один параметр (`scopes`). В зависимости от способа настройки политик администратором Windows приложениям на компьютере Windows может быть запрещено выполнять поиск пользователя, выполнившего вход. В этом случае используйте второй метод, `.WithUsername()`, и передайте имя пользователя, выполнившего вход, в формате UPN, например `joe@contoso.com`.
 
 В следующем примере представлен наиболее актуальный вариант с объяснениями типов исключений, которые могут возникать, и их устранения.
 
@@ -1405,6 +1405,6 @@ namespace CommonCacheMsalV3
 
 [!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующей статье в этом сценарии, [вызовите веб-API из классического приложения](scenario-desktop-call-api.md).
