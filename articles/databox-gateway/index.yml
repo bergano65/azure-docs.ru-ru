@@ -12,12 +12,12 @@ metadata:
   author: v-dalc
   ms.author: alkohli
   ms.date: 10/29/2020
-  ms.openlocfilehash: 811d0555e6fd39f372b4742501a3114bbc9a25b4
-  ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+  ms.openlocfilehash: d0a02f92957d133afc107a1a82a9ad05bb0c0332
+  ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/03/2020
-  ms.locfileid: "96579951"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98786509"
 landingContent:
 - title: О Шлюзе Data Box
   linkLists:
@@ -28,9 +28,9 @@ landingContent:
   - linkListType: architecture
     links:
     - text: Выбор вариантов перемещения данных
-      url: /azure/storage/common/storage-choose-data-transfer-solution
+      url: ../storage/common/storage-choose-data-transfer-solution.md
     - text: Использование передачи данных по сети или вне сети
-      url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
+      url: ../storage/common/storage-solution-large-dataset-low-network.md#offline-transfer-or-network-transfer
   - linkListType: whats-new
     links:
     - text: Заметки о выпуске за 2007 г. — актуальное

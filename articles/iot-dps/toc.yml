@@ -124,8 +124,6 @@
       items:
         - name: Управление регистрациями с помощью портала
           href: how-to-manage-enrollments.md
-        - name: Управление регистрациями с помощью пакетов SDK для служб
-          href: how-to-manage-enrollments-sdks.md
         - name: Настройка проверенных сертификатов ЦС
           href: how-to-verify-certificates.md
         - name: Развертывание сертификатов устройств
@@ -150,10 +148,6 @@
         - name: Windows
           href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
           maintainContext: true
-    - name: Использование механизмов аттестации и пакетов SDK
-      href: use-hsm-with-sdk.md
-    - name: Использование пакетов SDK для разработки
-      href: how-to-use-sdk-tools.md
     - name: Как отправлять дополнительные данные с устройств
       href: how-to-send-additional-data.md
     - name: Устранение неполадок

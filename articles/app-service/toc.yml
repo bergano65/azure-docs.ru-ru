@@ -102,7 +102,7 @@
   items:
     - name: Планы службы приложений
       href: overview-hosting-plans.md
-    - name: управления затратами;
+    - name: Управление затратами
       href: overview-manage-costs.md
     - name: Функции ОС
       href: operating-system-functionality.md
@@ -259,6 +259,8 @@
           href: troubleshoot-diagnostic-logs.md
         - name: Получение данных о событиях ресурса
           href: get-resource-events.md
+        - name: Проверка работоспособности
+          href: monitor-instances-health-check.md
         - name: Открытие сеанса SSH для контейнера Linux
           href: configure-linux-open-ssh-session.md
     - name: Управление приложением

@@ -15,7 +15,7 @@
         - name: Windows
           href: ../../virtual-machines/windows/quick-create-portal.md
     - name: Бессерверные приложения
-      href: ../../azure-functions/functions-create-first-azure-function.md
+      href: ../../azure-functions/functions-get-started.md
     - name: Микрослужбы
       items:
         - name: Service Fabric
@@ -53,17 +53,17 @@
         - name: Веб-приложения
           href: ../../app-service/samples-cli.md
         - name: Виртуальная машина Linux
-          href: ../../virtual-machines/linux/cli-samples.md
+          href: 'https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine'
         - name: Виртуальная машина Windows
-          href: ../../virtual-machines/windows/cli-samples.md
+          href: 'https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine'
     - name: Azure PowerShell
       items:
         - name: Веб-приложения
           href: ../../app-service/samples-powershell.md
         - name: Виртуальная машина Linux
-          href: ../../virtual-machines/linux/powershell-samples.md
+          href: 'https://github.com/Azure/azure-docs-powershell-samples/tree/master/virtual-machine'
         - name: Виртуальная машина Windows
-          href: ../../virtual-machines/windows/powershell-samples.md
+          href: 'https://github.com/Azure/azure-docs-powershell-samples/tree/master/virtual-machine'
 - name: Основные понятия
   items:
     - name: Выставление счетов и подписки
