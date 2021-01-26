@@ -3,16 +3,16 @@ title: Подключение учетной записи GCP к Центру б
 description: Мониторинг ресурсов GCP в Центре безопасности Azure
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 01/24/2021
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 1095222f332e7a66f684feddf1fdab17704ca658
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: d5f8278765c3f62fded44e4b89fb5fded6137c94
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573550"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757616"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Подключение учетных записей GCP к Центру безопасности Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "96573550"
 
 |Аспект|Подробнее|
 |----|:----|
-|Состояние выпуска:|Предварительный просмотр<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
 |Требуемые роли и разрешения|**Владелец** или **Участник** в соответствующей подписке Azure|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|

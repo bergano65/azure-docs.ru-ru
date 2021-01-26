@@ -7,12 +7,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: f0699ed065da4c63bc88945d75a866abcfbb9053
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: f4981036ca92f6efe2d3e23ea1f507a3a1f3c70a
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121368"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234262"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Руководство по настройке и запуску поставщика Azure Key Vault для драйвера CSI хранилища секретов в Kubernetes
 
@@ -37,6 +37,8 @@ ms.locfileid: "98121368"
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 * Перед началом работы с этим руководством установите [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest).
+
+В этом руководстве предполагается, что Служба Azure Kubernetes выполняется на узлах Linux.
 
 ## <a name="use-managed-identities"></a>Использование управляемых удостоверений
 
@@ -77,6 +79,8 @@ ms.locfileid: "98121368"
     ![Снимок экрана Azure CLI с выделенными значениями principalId и clientId](../media/kubernetes-key-vault-2.png) ![Снимок экрана Azure CLI с выделенными значениями subscriptionId и nodeResourceGroup](../media/kubernetes-key-vault-3.png)
     
 ## <a name="install-helm-and-the-secrets-store-csi-driver"></a>Установка драйвера CSI Helm и хранилища секретов.
+> [!NOTE]
+> Приведенная ниже процедура установки применима только к AKS в Linux. Дополнительные сведения об установке драйвера CSI хранилища секретов см. в статье [Поставщик Azure Key Vault для драйвера CSI хранилища секретов](https://github.com/Azure/secrets-store-csi-driver-provider-azure). 
 
 Чтобы установить драйвер CSI хранилища секретов, сначала необходимо установить [Helm](https://helm.sh/docs/intro/install/).
 

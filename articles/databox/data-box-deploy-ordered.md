@@ -2,24 +2,24 @@
 title: Учебник по заказу Azure Data Box | Документация Майкрософт
 description: Из этого руководства вы узнаете о гибридном решении Azure Data Box, которое позволяет импортировать локальные данные в Azure. Здесь также описано, как заказать Azure Data Box.
 services: databox
-author: alkohli
+author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 11/19/2020
+ms.date: 01/13/2021
 ms.author: alkohli
-ms.openlocfilehash: aad6a3ef754b5ba2c65a9b93fbdfcfdc26348487
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: fd165795be85c26cdfcaee3c4fd01427274a7316
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186164"
+ms.locfileid: "98210347"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство по Заказ Azure Data Box
 
 Azure Data Box — это гибридное решение, которое позволяет импортировать локальные данные в Azure быстрым, простым и надежным способом. Вы переносите свои данные на накопитель с доступной емкостью 80 ТБ, поставляемый Майкрософт, и затем отправляете устройство обратно. Затем эти данные передаются в Azure.
 
-В этом руководстве описано, как заказать Azure Data Box. В этом руководстве вы рассмотрите следующее:
+В этом руководстве описано, как заказать Azure Data Box. В этом руководстве вы рассмотрите следующее:  
 
 > [!div class="checklist"]
 >
@@ -245,7 +245,7 @@ PS C:\Windows\System32>
     |Группа ресурсов    | Группа ресурсов, выбранная ранее. |
     |Импорт имени заказа | Введите понятное имя для отслеживания заказа. <br> Имя может содержать от 3 до 24 знаков, среди которых могут быть буквы, цифры и дефисы. <br> Имя должно начинаться и заканчиваться буквой или цифрой.    |
 
-    ![Мастер заказа на импорт Data Box, экран "Основы" с правильно заполненными данными](media/data-box-deploy-ordered/select-data-box-import-06.png)<!--Generic subscription. Cut note. Box command.-->
+    ![Мастер заказа на импорт Data Box, экран "Основы" с правильно заполненными данными](media/data-box-deploy-ordered/select-data-box-import-06.png)
 
 7. На экране **Назначение данных** выберите **Назначение данных** — учетные записи хранения либо управляемые диски.
 
@@ -253,7 +253,11 @@ PS C:\Windows\System32>
 
     ![Мастер заказа на импорт Data Box, экран "Назначение данных" с выбранными учетными записями хранения](media/data-box-deploy-ordered/select-data-box-import-07.png)
 
-    Исходя из заданного региона Azure, выберите в отфильтрованном списке существующую учетную запись хранения. Data Box можно связать с 10 учетными записями хранения. Вы также можете создать новую **Учетную запись общего назначения версии 1**, **Учетную запись общего назначения версии 2** или **Учетную запись хранения BLOB-объекта**.
+    С учетом заданного региона Azure выберите в отфильтрованном списке существующую учетную запись хранения. Data Box можно связать с 10 учетными записями хранения. Вы также можете создать новую **Учетную запись общего назначения версии 1**, **Учетную запись общего назначения версии 2** или **Учетную запись хранения BLOB-объекта**.
+
+   > [!NOTE]
+   > - Если выбрать учетные записи хранения для хранилища Azure категории "Премиум", подготовленная квота в общем ресурсе учетной записи хранения увеличится до размера данных, копируемых в общую папку. После увеличения квоты она не изменяется, например, если по какой-либо причине Data Box не может скопировать данные.
+   > - Эта квота используется для выставления счетов. Когда данные будут переданы в центр обработки данных, необходимо настроить квоту в соответствии с вашими потребностями. Дополнительные сведения см. в статье [Общие сведения о выставлении счетов](../../articles/storage/files/understanding-billing.md).
 
     Поддерживаются учетные записи хранения в виртуальных сетях. Чтобы служба Data Box могла работать с защищенными учетными записями хранения, включите доверенные службы в настройках сетевого брандмауэра учетной записи хранения. Дополнительные сведения см. в статье о [добавлении Azure Data Box в качестве доверенной службы](../storage/common/storage-network-security.md#exceptions).
 
@@ -419,7 +423,7 @@ PS C:\Windows\System32>
    |sku| Конкретное устройство Data Box, которое вы заказываете. Допустимые значения: "DataBox", "DataBoxDisk" и "DataBoxHeavy"| "DataBox" |
    |email-list| Адреса электронной почты, связанные с этим заказом.| "gusp@contoso.com" |
    |street-address1| Физический адрес, по которому будет отправлен заказ. | "15700 NE 39th St" |
-   |street-address2| Дополнительные сведения об адресе, например номер корпуса или квартиры. | "Bld 123" |
+   |street-address2| Дополнительные сведения об адресе, например номер корпуса или квартиры. | "Building 123" |
    |city| Город, в который будет отправлено устройство. | "Redmond" |
    |state-or-province| Штат или регион, в который будет отправлено устройство.| "WA" |
    |country| Страна, в которую будет отправлено устройство. | "Соединенные Штаты" |
@@ -538,7 +542,7 @@ PS C:\Windows\System32>
     |DataBoxType [обязательный]| Конкретное устройство Data Box, которое вы заказываете. Допустимые значения: "DataBox", "DataBoxDisk" и "DataBoxHeavy"| "DataBox" |
     |EmailId [обязательный]| Адреса электронной почты, связанные с этим заказом.| "gusp@contoso.com" |
     |StreetAddress1 [обязательный]| Физический адрес, по которому будет отправлен заказ. | "15700 NE 39th St" |
-    |StreetAddress2| Дополнительные сведения об адресе, например номер корпуса или квартиры. | "Bld 123" |
+    |StreetAddress2| Дополнительные сведения об адресе, например номер корпуса или квартиры. | "Building 123" |
     |StreetAddress3| Сведения о третьестепенном адресе. | |
     |City [обязательный]| Город, в который будет отправлено устройство. | "Redmond" |
     |StateOrProvinceCode [обязательный]| Штат или регион, в который будет отправлено устройство.| "WA" |
@@ -601,7 +605,7 @@ PS C:\Windows\System32>
 
 ### <a name="track-a-single-order"></a>Отслеживание одного заказа
 
-Чтобы получить сведения об одном уже существующем заказе на Azure Data Box, выполните команду [az databox job show](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show&preserve-view=true). Эта команда отображает различные сведения о заказе, в том числе следующие: имя, группа ресурсов, сведения для отслеживания, идентификатор подписки, контактная информация, тип доставки и ценовая категория устройства.
+Чтобы получить сведения об одном уже сделанном заказе на Azure Data Box, выполните команду [`az databox job show`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show&preserve-view=true). Эта команда отображает различные сведения о заказе, в том числе следующие: имя, группа ресурсов, сведения для отслеживания, идентификатор подписки, контактная информация, тип доставки и ценовая категория устройства.
 
    ```azurecli
    az databox job show --resource-group <resource-group> --name <order-name>
@@ -642,7 +646,7 @@ PS C:\Windows\System32>
 
 ### <a name="list-all-orders"></a>Список всех заказов
 
-Если вы заказали несколько устройств, с помощью команды [az databox job list](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list&preserve-view=true) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
+Если вы заказали несколько устройств, с помощью команды [`az databox job list`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list&preserve-view=true) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
 Среди прочего, эта команда отображает для каждого заказа отметки времени.
 
 ```azurecli
@@ -718,7 +722,7 @@ az databox job list --resource-group <resource-group>
 
 ### <a name="list-all-orders"></a>Список всех заказов
 
-Если вы заказали несколько устройств, с помощью команды [Get-AzDataBoxJob](/powershell/module/az.databox/Get-AzDataBoxJob) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
+Если вы заказали несколько устройств, с помощью команды [`Get-AzDataBoxJob`](/powershell/module/az.databox/Get-AzDataBoxJob) можно просмотреть все заказы на Azure Data Box. Эта команда выводит список всех заказов, которые относятся к определенной группе ресурсов. В выходные данные также включаются следующие сведения: имя заказа, состояние доставки, регион Azure, тип доставки, состояние заказа. Отмененные заказы также включаются в список.
 Среди прочего, эта команда отображает для каждого заказа отметки времени.
 
 ```azurepowershell
@@ -761,7 +765,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="cancel-an-order"></a>Отмена заказа
 
-Чтобы отменить заказ на Azure Data Box, выполните команду [az databox job cancel](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel&preserve-view=true). Вам придется указать причину отмены заказа.
+Чтобы отменить заказ на Azure Data Box, выполните команду [`az databox job cancel`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel&preserve-view=true). Вам придется указать причину отмены заказа.
 
    ```azurecli
    az databox job cancel --resource-group <resource-group> --name <order-name> --reason <cancel-description>
@@ -798,7 +802,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="delete-an-order"></a>Удаление заказа
 
-Если вы отменили заказ на Azure Data Box, с помощью команды [az databox job delete](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete&preserve-view=true) вы можете удалить этот заказ.
+Если вы отменили заказ на Azure Data Box, его можно удалить с помощью команды [`az databox job delete`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete&preserve-view=true).
 
    ```azurecli
    az databox job delete --name [-n] <order-name> --resource-group <resource-group> [--yes] [--verbose]
@@ -871,7 +875,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="delete-an-order"></a>Удаление заказа
 
-Если вы отменили заказ на Azure Data Box, его можно удалить с помощью команды [Remove-AzDataBoxJob](/powershell/module/az.databox/remove-azdataboxjob).
+Если вы отменили заказ на Azure Data Box, его можно удалить с помощью команды [`Remove-AzDataBoxJob`](/powershell/module/az.databox/remove-azdataboxjob).
 
 ```azurepowershell
 Remove-AzDataBoxJob -Name <String> -ResourceGroup <String>

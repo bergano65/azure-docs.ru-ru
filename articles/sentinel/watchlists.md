@@ -10,14 +10,17 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.custom: mvc
 ms.date: 09/06/2020
-ms.openlocfilehash: fd3c8a08e5512d15be4dfb26ca3eff151d08386f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e31128687cfcc1f4e32879328ad3227182efb9ce
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651368"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797358"
 ---
 # <a name="use-azure-sentinel-watchlists"></a>Использование Azure Sentinel ватчлистс
+
+> [!IMPORTANT]
+> Функция ватчлистс сейчас доступна в **предварительной версии**. Ознакомьтесь с дополнительными [условиями использования Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) предварительных версий для дополнительных юридических условий, которые относятся к функциям Azure, которые доступны в бета-версии, предварительном просмотре или еще не выпущены в общедоступную версию.
 
 Azure Sentinel ватчлистс включает сбор данных из внешних источников данных для корреляции с событиями в среде Azure Sentinel. После создания можно использовать ватчлистс в поиске, правилах обнаружения, поиске угроз и отклике модули PlayBook. Ватчлистс хранятся в рабочей области Sentinel Azure в виде пар "имя-значение" и кэшируются для обеспечения оптимальной производительности запросов и низкой задержки.
 
@@ -33,7 +36,7 @@ Azure Sentinel ватчлистс включает сбор данных из в
 
 ## <a name="create-a-new-watchlist"></a>Создание нового списка воспроизведения
 
-1. В портал Azure перейдите к конфигурации **Sentinel Azure**  >  **Configuration**  >  **списка воспроизведения** , а затем выберите **Добавить новый**.
+1. В портал Azure перейдите к конфигурации **Sentinel Azure**  >    >  **списка воспроизведения** , а затем выберите **Добавить новый**.
 
     > [!div class="mx-imgBorder"]
     > ![создать списка воспроизведения](./media/watchlists/sentinel-watchlist-new.png)
@@ -62,7 +65,7 @@ Azure Sentinel ватчлистс включает сбор данных из в
 
 ## <a name="use-watchlists-in-queries"></a>Использование ватчлистс в запросах
 
-1. В портал Azure перейдите в раздел Конфигурация **Sentinel Azure**  >  **Configuration**  >  **списка воспроизведения**, выберите списка воспроизведения, который требуется использовать, а затем щелкните **Просмотр в log Analytics**.
+1. В портал Azure перейдите в раздел Конфигурация **Sentinel Azure**  >    >  **списка воспроизведения**, выберите списка воспроизведения, который требуется использовать, а затем щелкните **Просмотр в log Analytics**.
 
     :::image type="content" source="./media/watchlists/sentinel-watchlist-queries-list.png" alt-text="Использование ватчлистс в запросах" lightbox="./media/watchlists/sentinel-watchlist-queries-list.png":::
 
@@ -73,15 +76,47 @@ Azure Sentinel ватчлистс включает сбор данных из в
 
     :::image type="content" source="./media/watchlists/sentinel-watchlist-queries-fields.png" alt-text="запросы с полями списка воспроизведения" lightbox="./media/watchlists/sentinel-watchlist-queries-fields.png":::
     
+1. Вы можете запросить данные в любой таблице для данных из списка воспроизведения, рассматривая списка воспроизведения как таблицу для соединений и уточняющих запросов.
+
+    ```kusto
+    Heartbeat
+    | lookup kind=leftouter _GetWatchlist('IPlist') 
+     on $left.ComputerIP == $right.IPAddress
+    ```
+    :::image type="content" source="./media/watchlists/sentinel-watchlist-queries-join.png" alt-text="запросы к списка воспроизведения как подстановка":::
+
 ## <a name="use-watchlists-in-analytics-rules"></a>Использование ватчлистс в правилах аналитики
 
-Чтобы использовать ватчлистс в правилах аналитики, в портал Azure перейдите в раздел **Azure Sentinel**  >  **Configuration**  >  **аналитика** конфигурации Sentinel Azure и создайте правило с помощью `_GetWatchlist('<watchlist>')` функции в запросе.
+Чтобы использовать ватчлистс в правилах аналитики, в портал Azure перейдите в раздел   >    >  **аналитика** конфигурации Sentinel Azure и создайте правило с помощью `_GetWatchlist('<watchlist>')` функции в запросе.
 
-:::image type="content" source="./media/watchlists/sentinel-watchlist-analytics-rule.png" alt-text="Использование ватчлистс в правилах аналитики" lightbox="./media/watchlists/sentinel-watchlist-analytics-rule.png":::
+1. В этом примере создайте списка воспроизведения с именем "ипватчлист" со следующими значениями:
+
+    :::image type="content" source="./media/watchlists/create-watchlist.png" alt-text="список четырех элементов для списка воспроизведения":::
+
+    :::image type="content" source="./media/watchlists/sentinel-watchlist-new-2.png" alt-text="Создание списка воспроизведения с четырьмя элементами":::
+
+1. Затем создайте правило аналитики.  В этом примере мы включаем события только с IP-адресов в списка воспроизведения:
+
+    ```kusto
+    //Watchlist as a variable
+    let watchlist = (_GetWatchlist('ipwatchlist') | project IPAddress);
+    Heartbeat
+    | where ComputerIP in (watchlist)
+    ```
+    ```kusto
+    //Watchlist inline with the query
+    Heartbeat
+    | where ComputerIP in ( 
+        (_GetWatchlist('ipwatchlist')
+        | project IPAddress)
+    )
+    ```
+
+:::image type="content" source="./media/watchlists/sentinel-watchlist-analytics-rule-2.png" alt-text="Использование ватчлистс в правилах аналитики":::
 
 ## <a name="view-list-of-watchlists-aliases"></a>Просмотреть список псевдонимов ватчлистс
 
-Чтобы получить список псевдонимов списка воспроизведения, в портал Azure перейдите в раздел Общие журналы **Azure Sentinel**  >  **General**  >  **Logs** и выполните следующий запрос: `_GetWatchlistAlias` . Список псевдонимов можно просмотреть на вкладке **результаты** .
+Чтобы получить список псевдонимов списка воспроизведения, в портал Azure перейдите в раздел Общие журналы **Azure Sentinel**  >  **General**  >  и выполните следующий запрос: `_GetWatchlistAlias` . Список псевдонимов можно просмотреть на вкладке **результаты** .
 
 > [!div class="mx-imgBorder"]
 > ![ватчлистс списка](./media/watchlists/sentinel-watchlist-alias.png)

@@ -7,16 +7,14 @@ ms.date: 9/30/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: d9c8df4fe296bcd40f26847233fcd49bcab573c0
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: 23d00acc03ee879036a823f0c3d7fe2f67902e31
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709457"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797020"
 ---
 # <a name="introduction-to-azure-defender"></a>Общие сведения об Azure Defender
-
-[!INCLUDE [Solorigate banner](../../includes/security-center-solorigate.md)]
 
 Функции Центра безопасности Azure охватывают два основных аспекта безопасности в облаке:
 
@@ -101,4 +99,4 @@ Azure Defender предоставляет возможность выполня�
 Из этой статьи вы узнали о преимуществах Azure Defender. 
 
 > [!div class="nextstepaction"]
-> [Включение Azure Defender](security-center-pricing.md)
+> [Включение Azure Defender](security-center-pricing.md#enable-azure-defender)

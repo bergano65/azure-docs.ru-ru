@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 63d56d8afc584a760f4b31c6021d4c764afd52b3
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: bbcebfd69789eb6ec03e565b347d05533043781c
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064425"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232341"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Руководство по Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
@@ -59,8 +59,8 @@ ms.locfileid: "98064425"
 
 В этом руководстве показано, как создать приложение с кнопкой для запроса к API Graph и кнопкой выхода. В приложении также есть текстовые поля, содержащие результаты вызовов.
 
-> [!NOTE]
-> Вы можете скачать этот пример проекта Visual Studio, а не создавать его заново. [Скачайте проект](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip) и переходите к [регистрации приложения](#register-your-application "Шаг регистрации приложения"), чтобы настроить пример кода перед выполнением.
+> [!Tip]
+> Чтобы просмотреть полную версию проекта, созданного в этом руководстве, можете скачать его на сайте [GitHub](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip).
 
 ### <a name="create-your-application"></a>Создание приложения
 
@@ -292,8 +292,7 @@ private async void SignOutButton_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-> [!NOTE]
-> MSAL.NET использует асинхронные методы для получения маркеров или управления учетными записями. Вам нужно поддерживать действия пользовательского интерфейса в потоке пользовательского интерфейса. Именно поэтому нужно вызвать `Dispatcher.RunAsync` и соблюдать меры предосторожности при вызове `ConfigureAwait(false)`.
+MSAL.NET использует асинхронные методы для получения маркеров или управления учетными записями. Вам нужно поддерживать действия пользовательского интерфейса в потоке пользовательского интерфейса. Именно поэтому нужно вызвать `Dispatcher.RunAsync` и соблюдать меры предосторожности при вызове `ConfigureAwait(false)`.
 
 #### <a name="more-information-about-signing-out"></a>Дополнительные сведения о выходе<a name="more-information-on-sign-out"></a>
 
@@ -477,8 +476,7 @@ private async Task DisplayMessageAsync(string message)
 
 Чтобы из контекста приложения получать доступ к календарям пользователя, добавьте делегированное разрешение `Calendars.Read` в сведения о регистрации приложения. Затем добавьте область `Calendars.Read` в вызов `acquireTokenSilent`.
 
-> [!NOTE]
-> При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
+При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
 
 ## <a name="known-issues"></a>Известные проблемы
 

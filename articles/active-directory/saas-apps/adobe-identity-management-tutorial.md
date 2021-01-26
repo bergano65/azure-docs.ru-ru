@@ -2,26 +2,21 @@
 title: Руководство по интеграции единого входа Azure Active Directory с Adobe Identity Management | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Adobe Identity Management.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9db7f01d-7f15-492f-a839-55963790a12e
+manager: CelesteDG
+ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/26/2019
+ms.date: 01/15/2021
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96a49df85f02083571e84ec884b37fb43b0d4001
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 18c626a11724b585bf699f8be470b439177991ae
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618409"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250912"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adobe-identity-management"></a>Руководство по интеграции единого входа Azure Active Directory с Adobe Identity Management
 
@@ -30,8 +25,6 @@ ms.locfileid: "97618409"
 * Управление доступом к Adobe Identity Management с Azure AD.
 * Автоматический вход пользователей в Adobe Identity Management с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
-
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,18 +43,18 @@ ms.locfileid: "97618409"
 
 Чтобы настроить интеграцию Adobe Identity Management с Azure AD, необходимо добавить Adobe Identity Management из коллекции в список управляемых приложений SaaS.
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. Войдите на портал Azure с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** введите **Adobe Identity Management** в поле поиска.
 1. Выберите **Adobe Identity Management** на панели результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-adobe-identity-management"></a>Настройка и проверка единого входа Azure AD для Adobe Identity Management
+## <a name="configure-and-test-azure-ad-sso-for-adobe-identity-management"></a>Настройка и проверка единого входа Azure AD для Adobe Identity Management
 
 Настройте и проверьте единый вход Azure AD в Adobe Identity Management с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Identity Management.
 
-Чтобы настроить и проверить единый вход Azure AD в Adobe Identity Management, выполните действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Adobe Identity Management, выполните следующие действия:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
@@ -74,15 +67,15 @@ ms.locfileid: "97618409"
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Adobe Identity Management** найдите раздел **Управление** и выберите **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **Adobe Identity Management** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** для изменения параметров.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://adobe.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://adobe.com`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://federatedid-na1.services.adobe.com/federated/saml/metadata/alias/<CUSTOM_ID>`.
 
@@ -116,38 +109,63 @@ ms.locfileid: "97618409"
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Adobe Identity Management**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-adobe-identity-management-sso"></a>Настройка единого входа в Adobe Identity Management
 
-Чтобы настроить единый вход на стороне **Adobe Identity Management**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Adobe Identity Management](mailto:identity@adobe.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы автоматизировать настройку в Adobe Identity Management, необходимо установить **расширение браузера для защищенного входа на страницу "Мои приложения"** , нажав кнопку **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. Чтобы перейти к приложению Adobe Identity Management после добавления расширения в браузер, щелкните **Настройка Adobe Identity Management**. После этого укажите учетные данные администратора для входа в Adobe Identity Management. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–8.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если вы хотите настроить Adobe Identity Management вручную, в другом окне браузера войдите на свой корпоративный сайт Adobe Identity Management с правами администратора.
+
+4. Перейдите на вкладку **Settings** (Параметры) и нажмите кнопку **Create Directory** (Создать каталог).
+
+    ![Параметры Adobe Identity Management](./media/adobe-identity-management-tutorial/settings.png)
+
+5. Укажите имя каталога в текстовом поле, выберите **Federated ID** (Федеративный идентификатор) и щелкните **Next** (Далее).
+
+    ![Создание каталога Adobe Identity Management](./media/adobe-identity-management-tutorial/create-directory.png)
+
+6. Выберите **Other SAML Providers** (Другие поставщики SAML) и щелкните **Next** (Далее).
+ 
+    ![Поставщики SAML в Adobe Identity Management](./media/adobe-identity-management-tutorial/saml-providers.png)
+
+7. Щелкните ссылку **select** (Выбрать), чтобы передать **XML-файл метаданных**, скачанный на портале Azure.
+
+    ![Настройка SAML в Adobe Identity Management](./media/adobe-identity-management-tutorial/saml-configuration.png)
+
+8. Нажмите кнопку **Готово**.
 
 ### <a name="create-adobe-identity-management-test-user"></a>Создание тестового пользователя Adobe Identity Management
 
-В этом разделе вы узнаете, как создать пользователя B. Simon в приложении Adobe Identity Management. Обратитесь в [службу поддержки Adobe Identity Management](mailto:identity@adobe.com), чтобы добавить пользователей на платформу Adobe Identity Management. Перед использованием единого входа необходимо создать и активировать пользователей.
+1. Перейдите на вкладку **Users** (Пользователи) и нажмите кнопку **Add User** (Добавить пользователя).
 
-## <a name="test-sso"></a>Проверка единого входа 
+    ![Добавление пользователя в Adobe Identity Management](./media/adobe-identity-management-tutorial/add-user.png)
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+2. В текстовом поле **Enter user’s email address** (Введите адрес электронной почты пользователя) укажите **адрес электронной почты**.
 
-Щелкнув плитку Adobe Identity Management на Панели доступа, вы автоматически войдете в приложение Adobe Identity Management, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+    ![Сохранение данных пользователя в Adobe Identity Management](./media/adobe-identity-management-tutorial/save-user.png)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+3. Выберите команду **Сохранить**.
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+## <a name="test-sso"></a>Проверка единого входа
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью указанных ниже способов.
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* Выберите **Тестировать приложение** на портале Azure. Вы будете перенаправлены по URL-адресу для входа в Adobe Identity Management, где можно инициировать поток входа.
 
-- [Adobe Identity Management с Azure AD](https://aad.portal.azure.com/)
+* Перейдите непосредственно по URL-адресу входа в Adobe Identity Management и запустите поток входа.
 
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Adobe Identity Management на портале "Мои приложения", вы перейдете по URL-адресу для входа в Adobe Identity Management. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+После настройки Adobe Identity Management вы можете применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

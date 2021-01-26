@@ -5,31 +5,31 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 1/21/2021
 ms.author: baanders
-ms.openlocfilehash: 069a29f49172cf3bad6b7f7b6aca28f32f5d63b3
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
-ms.translationtype: MT
+ms.openlocfilehash: 63b393f519ad29baa05fef046ee1e8ba9e5330d8
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683910"
+ms.locfileid: "98701171"
 ---
 Чтобы опубликовать проект в приложении-функции в Azure, щелкните правой кнопкой мыши проект в *Обозревателе решений* и выберите элемент **Опубликовать**.
 
 > [!IMPORTANT] 
 > При публикации в приложении-функции в Azure будет взиматься дополнительная плата за подписку, не зависящая от Azure Digital Twins.
 
-:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-1.png" alt-text="Visual Studio: публикация проекта":::
+:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-1.png" alt-text="Снимок экрана: Visual Studio с меню выбора решений справа. В меню выделен пункт публикации.":::
 
 Откроется страница *Публикация*. Оставьте выбранный по умолчанию целевой объект **Azure** и нажмите кнопку *Далее*. 
 
 В качестве конкретного целевого объекта выберите **Приложение-функция Azure (Windows)** и нажмите кнопку *Далее*.
 
-:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-2.png" alt-text="Публикация функции Azure в Visual Studio: конкретный целевой объект":::
+:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-2.png" alt-text="Снимок экрана: Visual Studio в диалоговом окне публикации функции Azure. На странице &quot;Указанный целевой объект&quot; выбрано приложение-функция Azure (Windows).":::
 
 На странице *экземпляра Функций* выберите свою подписку. При этом в соответствующем поле в вашей подписке должны появиться *группы ресурсов*.
 
 Выберите группу ресурсов своего экземпляра и нажмите *+* , чтобы создать функцию Azure.
 
-:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Публикация функции Azure в Visual Studio: экземпляр Функций (до создания приложения-функции)":::
+:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Снимок экрана: Visual Studio в диалоговом окне публикации функции Azure. На странице экземпляра Функций выделена кнопка &quot;+&quot; для создания новой функции.":::
 
 В окне *Приложение-функция (Windows) — создать* заполните поля следующим образом.
 * **Имя** — имя плана потребления, который Azure будет использовать для размещения вашего приложения Функций Azure. Оно также станет именем приложения-функции, в котором будет находиться ваша фактическая функция. Можно выбрать собственное уникальное значение или оставить предоставленное по умолчанию.
@@ -39,7 +39,7 @@ ms.locfileid: "98683910"
 * В поле **Расположение** выберите расположение вашей группы ресурсов.
 * Создайте новый ресурс **службы хранилища Azure**, нажав ссылку *Создать...* . Задайте расположение, соответствующее расположению вашей группы ресурсов, оставьте остальные значения по умолчанию и нажмите кнопку "ОК".
 
-:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-4.png" alt-text="Публикация функции Azure в Visual Studio: Приложение-функция (Windows) — создать":::
+:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-4.png" alt-text="Снимок экрана: Visual Studio в диалоговом окне публикации функции Azure. Вводятся сведения о новом приложении-функции, в том числе об имени, подписке, группе ресурсов, типе плана, расположении и службе хранилища Azure.":::
 
 Затем выберите **Создать**.
 
@@ -49,10 +49,10 @@ ms.locfileid: "98683910"
 
 На странице *Публикация*, которая снова открывается в главном окне Visual Studio, проверьте все сведения, и если они верны, нажмите кнопку **Опубликовать**.
 
-:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Публикация функции Azure в Visual Studio: публикация":::
+:::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Снимок экрана: Visual Studio в диалоговом окне публикации функции Azure. Новое приложение-функция отображается в списке приложений-функций. Кроме того, отображается кнопка &quot;Готово&quot;.":::
 
 > [!NOTE]
-> Если увидите следующее всплывающее окно, выполните указанные ниже действия: :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Публикация функции Azure в Visual Studio: учетные данные для публикации" border="false":::
+> Если увидите следующее всплывающее окно, выполните указанные ниже действия: :::image type="content" source="../articles/digital-twins/media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Снимок экрана: всплывающее окно Visual Studio &quot;Опубликовать учетные данные&quot;. Оно содержит поля для имени пользователя и пароля, а также кнопку для получения учетных данных из Azure." border="false":::
 > Выберите **Attempt to retrieve credentials from Azure** (Пытаться извлечь учетные данные из Azure) и нажмите кнопку **Сохранить**.
 >
 > Если вы видите предупреждение о том, что необходимо *обновить версию Функции Azure* или что *ваша версия среды выполнения функций не соответствует версии, работающей в Azure*, выполните следующие действия:

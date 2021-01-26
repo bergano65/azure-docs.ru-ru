@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
-ms.date: 11/17/2020
-ms.openlocfilehash: 9014469ca063ca52be0965ecbd4e8b21709d10a0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.date: 12/31/2020
+ms.openlocfilehash: 683da659dcfa07c0a105382f4cc93d1f4dfb21b5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455159"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219543"
 ---
 # <a name="analyze-data-with-dedicated-sql-pools"></a>Анализ данных с помощью выделенных пулов SQL
 
@@ -23,8 +23,8 @@ Azure Synapse Analytics позволяет анализировать данны
 
 ## <a name="load-the-nyc-taxi-data-into-sqlpool1"></a>Загрузка данных такси Нью-Йорка в SQLPOOL1
 
-1. В Synapse Studio перейдите в центр **Разработка**, а затем создайте скрипт SQL.
-1. В разделе Connect to (Подключиться к) скрипта выберите пул SQLPOOL1 (создан на [шаге 1](https://docs.microsoft.com/azure/synapse-analytics/get-started-create-workspace#create-a-sql-pool) этого учебника).
+1. В Synapse Studio перейдите в центр **Разработка**, нажмите кнопку **+** для добавления нового ресурса, а затем создайте скрипт SQL.
+1. В раскрывающемся списке "Подключение к" над скриптом выберите пул SQLPOOL1 (создан на [шаге 1](./get-started-create-workspace.md) этого руководства).
 1. Введите приведенный ниже код.
     ```
     CREATE TABLE [dbo].[Trip]
@@ -71,12 +71,13 @@ Azure Synapse Analytics позволяет анализировать данны
     )
     OPTION (LABEL = 'COPY : Load [dbo].[Trip] - Taxi dataset');
     ```
-1. Этот скрипт завершит работу приблизительно через 60 секунд. Он загружает 2 млн строк данных такси Нью-Йорка в таблицу с именем **dbo.Trip**.
+1. Нажмите кнопку "Выполнить", чтобы выполнить скрипт.
+1. Выполнение скрипта займет менее 60 секунд. Скрипт загружает 2 млн строк данных о такси Нью-Йорка в таблицу с именем **dbo.Trip**.
 
 ## <a name="explore-the-nyc-taxi-data-in-the-dedicated-sql-pool"></a>Обзор данных о такси Нью-Йорка в выделенном пуле SQL
 
 1. В Synapse Studio перейдите в центр **Данные**.
-1. Выберите **SQLPOOL1** > **Таблицы**. Вы увидите, что несколько таблиц загружены.
+1. Выберите **SQLPOOL1** > **Таблицы**. 
 1. Щелкните правой кнопкой мыши таблицу **dbo.Trip** и выберите команду **Создать скрипт SQL** > **Выбрать первые 100 строк**.
 1. Подождите, пока новый скрипт SQL будет создан и запущен.
 1. Обратите внимание, что в верхней части скрипта SQL для параметра **Connect to** (Подключиться к) автоматически задано значение пула SQL с именем **SQLPOOL1**.
@@ -89,7 +90,7 @@ Azure Synapse Analytics позволяет анализировать данны
     FROM  dbo.Trip
     WHERE TripDistanceMiles > 0 AND PassengerCount > 0
     GROUP BY PassengerCount
-    ORDER BY PassengerCount
+    ORDER BY PassengerCount;
     ```
 
     Этот запрос показывает, как общее время поездки и среднее расстояние поездки связаны с количеством пассажиров.
@@ -102,4 +103,3 @@ Azure Synapse Analytics позволяет анализировать данны
 
 > [!div class="nextstepaction"]
 > [Анализ с помощью Spark](get-started-analyze-spark.md)
-

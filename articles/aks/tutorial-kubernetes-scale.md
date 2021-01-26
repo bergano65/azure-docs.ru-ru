@@ -3,14 +3,14 @@ title: Руководство по Kubernetes в Azure. Масштабирова
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как выполнить масштабирование узлов и модулей pod в Kubernetes и реализовать горизонтальное автомасштабирование модулей pod.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc
-ms.openlocfilehash: 7f16ba3ffe6b6f96f17df540eb67e9cec0bfea8c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: dfebb6561e83c51063515ec655153aaaa7a09c0c
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825692"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251375"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство по Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
@@ -21,7 +21,7 @@ ms.locfileid: "97825692"
 > * Масштабирование модулей pod Kubernetes вручную для выполнения приложения.
 > * Настройка модулей pod для автоматического масштабирования, которые запускают внешний интерфейс приложения.
 
-В дополнительных руководствах описано, как обновить приложение Azure для голосования до новой версии.
+В последующих руководствах описано, как обновить приложение Azure для голосования до новой версии.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -39,7 +39,7 @@ kubectl get pods
 
 В следующем примере выходных данных показано по одному интерфейсному и серверному модулю pod:
 
-```
+```output
 NAME                               READY     STATUS    RESTARTS   AGE
 azure-vote-back-2549686872-4d2r5   1/1       Running   0          31m
 azure-vote-front-848767080-tf34m   1/1       Running   0          31m
@@ -51,7 +51,7 @@ azure-vote-front-848767080-tf34m   1/1       Running   0          31m
 kubectl scale --replicas=5 deployment/azure-vote-front
 ```
 
-Выполните команду [kubectl get pods][kubectl-get] еще раз, чтобы убедиться, что AKS создает дополнительные модули pod. Они становятся доступными примерно через минуту.
+Выполните команду [kubectl get pods][kubectl-get] еще раз, чтобы убедиться, что AKS успешно создает дополнительные модули pod. Они станут доступны в кластере примерно через минуту.
 
 ```console
 kubectl get pods
@@ -131,7 +131,7 @@ spec:
 
 Используйте `kubectl apply`, чтобы применить инструмент автомасштабирования, определенный в файле манифеста `azure-vote-hpa.yaml`.
 
-```
+```console
 kubectl apply -f azure-vote-hpa.yaml
 ```
 
@@ -158,7 +158,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 3
 
 Если кластер успешно масштабирован, выходные данные будут соответствовать приведенным ниже:
 
-```
+```output
 "agentPoolProfiles": [
   {
     "count": 3,

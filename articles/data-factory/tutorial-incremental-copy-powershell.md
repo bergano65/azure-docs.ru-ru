@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: 65a2d06acc3461d881ad6f100f3720b217ef7634
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 50608870fa397ad5586c626f1d1fe5c9d893b4ca
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510215"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222825"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-powershell"></a>Пошаговая загрузка данных из Базы данных SQL Azure в Хранилище BLOB-объектов Azure с помощью PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом руководстве показано, как создать фабрику данных Azure с конвейером, который загружает разностные данные из таблицы в Базе данных SQL Azure в Хранилище BLOB-объектов Azure.
+В этом руководстве показано, как с помощью Фабрики данных Azure создать конвейер, который загружает разностные данные из таблицы в службе "База данных SQL Azure" в Хранилище BLOB-объектов Azure.
 
 В этом руководстве вы выполните следующие шаги:
 

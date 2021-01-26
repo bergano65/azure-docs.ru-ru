@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 881309c040f6c1bdff758d17ab7f51e935437192
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: a49258208f7a5945ac71c8f17db56fccfdcd6515
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607887"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662006"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Руководство по Настройка MediusFlow для автоматической подготовки пользователей
 
@@ -155,17 +155,25 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 
 9. В разделе **Сопоставление атрибутов** просмотрите пользовательские атрибуты, которые синхронизируются из Azure AD в MediusFlow. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в MediusFlow в операциях обновления. Если вы решили изменить [целевой атрибут сопоставления](../app-provisioning/customize-application-attributes.md), сначала убедитесь, что API MediusFlow поддерживает фильтрацию пользователей по этому атрибуту. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |attribute|Тип|
-   |---|---|
-   |userName|Строка|
+   |attribute|Тип|Поддерживается для фильтрации|
+   |---|---|---|
+   |userName|Строка|&check;|
    |emails[type eq "work"].value|Строка|
    |name.displayName|Строка|
    |active|Логическое|
    |name.givenName|Строка|
    |name.familyName|Строка|
    |name.formatted|Строка|
-   |externalID|Строка|
+   |externalId|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Справочник|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:configurationFilter|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:identityProvider|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:nameIdentifier|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:customFieldText1|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:customFieldText2|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:customFieldText3|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:customFieldText4|Строка|
+   |urn:ietf:params:scim:schemas:extension:medius:2.0:User:customFieldText5|Строка|
 
 
 10. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с MediusFlow**.
@@ -195,11 +203,15 @@ https://success.mediusflow.com/documentation/administration_guide/user_login_and
 После этого начнется цикл начальной синхронизации всех пользователей и групп, определенных в поле **Область** в разделе **Параметры**. Начальный цикл занимает больше времени, чем последующие циклы. Пока служба подготовки Azure AD запущена, они выполняются примерно каждые 40 минут. 
 
 ## <a name="step-6-monitor-your-deployment"></a>Шаг 6. Мониторинг развертывания
-Настроив подготовку, используйте следующие ресурсы для мониторинга развертывания:
+После настройки подготовки используйте следующие ресурсы для мониторинга развертывания.
 
-1. Используйте [Журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
+1. Используйте [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md), чтобы определить, какие пользователи были подготовлены успешно или неудачно.
 2. Используйте [индикатор выполнения](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
-3. Если конфигурация подготовки находится в неработоспособном состоянии, приложение перейдет в режим карантина. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).
+3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](../app-provisioning/application-provisioning-quarantine-status.md).
+
+## <a name="change-log"></a>Журнал изменений
+
+* 21.01.2021: добавлены пользовательские атрибуты расширения **configurationFilter**, **identityProvider**, **nameIdentifier**, **customFieldText1**, **customFieldText2**, **customFieldText3**, **customFieldText4** и **customFieldText5**.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: feda969a5818402f4a5f2dadc80c70c324ad7492
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: eafa2187308c0324b85596ce25e8310fd8506a97
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559970"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249608"
 ---
 # <a name="tutorial-scan-data-with-azure-purview-preview"></a>Руководство по сканированию данных с помощью Azure Purview (предварительная версия)
 
@@ -189,6 +189,8 @@ ms.locfileid: "97559970"
 1. Повторите предыдущие шаги для Azure Data Lake Storage 2-го поколения.
 
 ### <a name="scan-your-data-sources"></a>Сканирование источников данных
+
+1. Перейдите к ресурсу Azure Purview на [портале Azure](https://portal.azure.com) и выберите элемент *Open Purview Studio* (Открыть Purview Studio). Вы автоматически перейдете на домашнюю страницу Purview Studio.
 
 1. На веб-странице каталога выберите **Источники** и щелкните **Зарегистрировать**. Теперь выберите вариант **Хранилище BLOB-объектов Azure** и щелкните **Продолжить**.
 

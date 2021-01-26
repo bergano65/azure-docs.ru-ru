@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: dcb8675350442274418920bb9439b65643f1b046
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 8b12df62a7080e57e47b52cb79ed8a67e12bd526
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178251"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753095"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Руководство по Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -119,7 +119,7 @@ ms.locfileid: "98178251"
         // Tenant is the tenant ID (e.g. contoso.onmicrosoft.com, or 'common' for multi-tenant)
         static string tenant = System.Configuration.ConfigurationManager.AppSettings["Tenant"];
 
-        // Authority is the URL for authority, composed by Microsoft identity platform endpoint and the tenant name (e.g. https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0)
+        // Authority is the URL for authority, composed of the Microsoft identity platform and the tenant name (e.g. https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0)
         string authority = String.Format(System.Globalization.CultureInfo.InvariantCulture, System.Configuration.ConfigurationManager.AppSettings["Authority"], tenant);
 
         /// <summary>
@@ -406,14 +406,13 @@ ms.locfileid: "98178251"
 <br/><br/>
 ![Войдите в учетную запись Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
 
-#### <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Разрешения и согласие для конечной точки платформы удостоверений Майкрософт
-
-Приложения, которые интегрируются с платформой удостоверений Майкрософт, следуют модели авторизации, при которой пользователи и администраторы контролируют доступ к данным. Когда пользователь выполнит аутентификацию на платформе удостоверений Майкрософт для доступа к этому приложению, ему будет предложено подтвердить запрошенные приложением разрешения ("Просмотр базового профиля" и "Ведение доступа к данным, к которым вам был предоставлен доступ"). Подтвердив разрешения, пользователь может продолжать работу с результатами приложения. Но вместо этого пользователь может увидеть страницу **Требуется согласие администратора**, если выполняется любое из следующих условий:
+#### <a name="permissions-and-consent-in-the-microsoft-identity-platform"></a>Разрешения и согласие для платформы удостоверений Майкрософт
+Приложения, которые интегрируются с платформой удостоверений Майкрософт, следуют модели авторизации, при которой пользователи и администраторы контролируют доступ к данным. Когда пользователь будет выполнять аутентификацию на платформе удостоверений Майкрософт для доступа к этому приложению, ему будет предложено подтвердить запрошенные приложением разрешения ("Просмотр базового профиля" и "Сохранение доступа к данным, к которым вам был предоставлен доступ"). Подтвердив разрешения, пользователь может продолжать работу с результатами приложения. Но вместо этого пользователь может увидеть страницу **Требуется согласие администратора**, если выполняется любое из следующих условий:
 
 - Разработчик приложения добавил дополнительные разрешения, для которых требуется **согласие администратора**.
 - Клиент настроен (в разделе **Корпоративные приложения -> Параметры пользователя**) так, что пользователи не могут разрешать приложениям доступ к корпоративным данным от своего имени.
 
-См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](./v2-permissions-and-consent.md).
+См. сведения о [разрешениях и согласии для платформы удостоверений Майкрософт](./v2-permissions-and-consent.md).
 
 ### <a name="view-application-results"></a>Просмотр результатов приложения
 

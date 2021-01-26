@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/17/2021
+ms.date: 01/21/2021
 ms.author: memildin
-ms.openlocfilehash: 48e7093c30ffb135231f5843cb0767848f242d89
-ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.openlocfilehash: d171e3a7f1f0d63d0a5d130c6e19b246bf0cd795
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98541395"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661820"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -35,27 +35,17 @@ ms.locfileid: "98541395"
 
 В декабре добавлены следующие обновления:
 
+- [Выпущена общедоступная версия (GA) оценки уязвимостей для компьютеров в локальной среде и нескольких облаках](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga).
+- [Выпущена общедоступная версия (GA) API Оценки безопасности](#secure-score-api-is-released-for-general-availability-ga).
 - [Экспорт отфильтрованного списка рекомендаций в CSV-файл](#csv-export-of-filtered-list-of-recommendations)
-- [Оценка уязвимостей для компьютеров в локальной среде и нескольких облаках уже общедоступна](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-generally-available)
+- ["Неприменимые" ресурсы теперь отображаются с состоянием "Соответствует" в результатах оценки в Политике Azure](#not-applicable-resources-now-reported-as-compliant-in-azure-policy-assessments).
 
 
-### <a name="csv-export-of-filtered-list-of-recommendations"></a>Экспорт отфильтрованного списка рекомендаций в CSV-файл 
-
-В ноябре 2020 года мы добавили фильтры на страницу рекомендаций (см. раздел [В списке рекомендаций теперь можно применять фильтры](#recommendations-list-now-includes-filters)). В декабре мы расширили эти фильтры (см. раздел [На странице "Рекомендации" доступны новые фильтры для среды, серьезности и доступных ответов](#recommendations-page-has-new-filters-for-environment-severity-and-available-responses)). 
-
-Объявляем о том, что мы изменяем поведение кнопки **Скачать в CSV**, чтобы экспорт в CSV-файл включал только те рекомендации, которые сейчас отображаются в отфильтрованном списке. 
-
-Например, на приведенном ниже изображении видно, что список отфильтрован по двум рекомендациям. Генерируемый CSV-файл содержит сведения о состоянии для каждого ресурса, которого касаются эти две рекомендации.   
-
-:::image type="content" source="media/security-center-managing-and-responding-alerts/export-to-csv-with-filters.png" alt-text="Экспорт отфильтрованных рекомендаций в CSV-файл":::
-
-Дополнительные сведения см. в статье [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md).
-
-### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-generally-available"></a>Оценка уязвимостей для компьютеров в локальной среде и нескольких облаках уже общедоступна
+### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga"></a>Выпущена общедоступная версия (GA) оценки уязвимостей для компьютеров в локальной среде и нескольких облаках
 
 В октябре мы объявили о выпуске предварительной версии для проверки серверов с поддержкой Azure Arc с интегрированным сканером оценки уязвимостей [Azure Defender для серверов](defender-for-servers-introduction.md) (на основе Qualys).
 
-Теперь это решение общедоступно. 
+Теперь выпущена общедоступная версия (GA) функции.
 
 Когда вы включаете Azure Arc на компьютерах, не относящихся к Azure, Центр безопасности предлагает развернуть на них встроенный сканер уязвимостей — вручную и в большом масштабе.
 
@@ -71,6 +61,36 @@ ms.locfileid: "98541395"
 См. дополнительные сведения о [развертывании интегрированного сканера уязвимостей на гибридных компьютерах](deploy-vulnerability-assessment-vm.md#deploy-the-integrated-scanner-to-your-azure-and-hybrid-machines).
 
 См. дополнительные сведения о [серверах с поддержкой Azure Arc](../azure-arc/servers/index.yml).
+
+
+### <a name="secure-score-api-is-released-for-general-availability-ga"></a>Выпущена общедоступная версия (GA) API Оценки безопасности
+
+Теперь вы можете получить доступ к оценке через [API оценки безопасности](/rest/api/securitycenter/securescores/). Методы этого API позволяют гибко выполнять запросы к данным и создавать собственные механизмы создания отчетов об оценках безопасности за разные периоды. Например, API **оценки безопасности** позволяет получить оценку для конкретной подписки. Кроме того, через API **элементов управления оценкой безопасности** позволяет перечислить элементы управления безопасностью и текущие оценки для всех подписок.
+
+Примеры внешних средств, которые можно реализовать с помощью API оценки безопасности, см. в [разделе оценок безопасности в сообществе GitHub](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score).
+
+См. сведения об [оценке безопасности и элементах управления безопасностью в Центре безопасности Azure](secure-score-security-controls.md).
+
+
+### <a name="csv-export-of-filtered-list-of-recommendations"></a>Экспорт отфильтрованного списка рекомендаций в CSV-файл 
+
+В ноябре 2020 года мы добавили фильтры на страницу рекомендаций (см. раздел [В списке рекомендаций теперь можно применять фильтры](#recommendations-list-now-includes-filters)). В декабре мы расширили эти фильтры (см. раздел [На странице "Рекомендации" доступны новые фильтры для среды, серьезности и доступных ответов](#recommendations-page-has-new-filters-for-environment-severity-and-available-responses)). 
+
+Объявляем о том, что мы изменяем поведение кнопки **Скачать в CSV**, чтобы экспорт в CSV-файл включал только те рекомендации, которые сейчас отображаются в отфильтрованном списке. 
+
+Например, на приведенном ниже изображении видно, что список отфильтрован по двум рекомендациям. Генерируемый CSV-файл содержит сведения о состоянии для каждого ресурса, которого касаются эти две рекомендации.   
+
+:::image type="content" source="media/security-center-managing-and-responding-alerts/export-to-csv-with-filters.png" alt-text="Экспорт отфильтрованных рекомендаций в CSV-файл":::
+
+Дополнительные сведения см. в статье [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md).
+
+
+### <a name="not-applicable-resources-now-reported-as-compliant-in-azure-policy-assessments"></a>"Неприменимые" ресурсы теперь отображаются с состоянием "Соответствует" в результатах оценки в Политике Azure
+
+Ранее ресурсы, которые оценивались для рекомендации и определялись как **неприменимые**, отображались в Политике Azure с состоянием "Не соответствует". Пользователь не мог изменить их состояние на "Соответствует". В результате этого изменения ресурсы отображаются с состоянием "Соответствует" для большей ясности.
+
+Это повлияет только на то, что в Политике Azure увеличится количество соответствующих ресурсов. Но это никак не отразится на оценке безопасности в Центре безопасности Azure.
+
 
 
 ## <a name="december-2020"></a>Декабрь 2020 г.

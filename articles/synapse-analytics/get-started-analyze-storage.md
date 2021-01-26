@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
-ms.date: 07/20/2020
-ms.openlocfilehash: 5e3fbd1868cc1216cb7b9d02b2aa8e690af33952
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.date: 12/31/2020
+ms.openlocfilehash: ad16b63360364acd88ab12fb4715d1fd3115c0fb
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917687"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209378"
 ---
 # <a name="analyze-data-in-a-storage-account"></a>Анализируйте данные в учетной записи хранения
 
@@ -30,7 +30,7 @@ ms.locfileid: "94917687"
 
 ### <a name="create-csv-and-parquet-files-in-your-storage-account"></a>Создание файлов CSV и Parquet в учетной записи хранения
 
-Выполните приведенный ниже код в записной книжке. Он создает CSV-файл и Parquet-файл в учетной записи хранения.
+Выполните приведенный ниже код в записной книжке в новой ячейке кода. Он создает CSV-файл и Parquet-файл в учетной записи хранения.
 
 ```py
 %%pyspark
@@ -48,26 +48,27 @@ df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats_parquetformat")
 1. Перейдите в раздел **Учетные записи хранения** > **myworkspace (Primary — contosolake)** .
 1. Выберите **Пользователи (Основной)** . Вы увидите папку **NYCTaxi**. Внутри вы увидите две папки: **PassengerCountStats_csvformat** и **PassengerCountStats_parquetformat**.
 1. Откройте папку **PassengerCountStats_parquetformat**. Внутри вы увидите PARQUET-файл следующего вида `part-00000-2638e00c-0790-496b-a523-578da9a15019-c000.snappy.parquet`.
-1. Щелкните правой кнопкой мыши **.parquet**, а затем выберите пункт **Создать записную книжку**. Он создает записную книжку с ячейкой следующего вида:
+1. Щелкните правой кнопкой мыши файл **Parquet**, а затем последовательно выберите элементы **Новая записная книжка** и **Load to DataFrame** (Загрузить в DataFrame). Будет создана записная книжка с примерно такой ячейкой:
 
     ```py
     %%pyspark
-    data_path = spark.read.load('abfss://users@contosolake.dfs.core.windows.net/NYCTaxi/PassengerCountStats.parquet/part-00000-1f251a58-d8ac-4972-9215-8d528d490690-c000.snappy.parquet', format='parquet')
-    data_path.show(100)
+    df = spark.read.load('abfss://users@contosolake.dfs.core.windows.net/NYCTaxi/PassengerCountStats.parquet/part-00000-1f251a58-d8ac-4972-9215-8d528d490690-c000.snappy.parquet', format='parquet')
+    display(df.limit(10))
     ```
 
-1. Запустите эту ячейку.
-1. Щелкните правой кнопкой мыши файл Parquet и выберите команду **Новый скрипт SQL** > **Выбрать первые 100 строк**. Он создает скрипт SQL таким образом:
+1. Подключитесь к пулу Spark с именем **Spark1**. Запустите эту ячейку.
+1. Снова щелкните папку **users**. Щелкните правой кнопкой мыши файл **Parquet** и последовательно выберите элементы **New SQL script (Новый скрипт SQL)**  > **SELECT TOP 100 rows (Выбрать первые 100 строк)** . Он создает скрипт SQL таким образом:
 
     ```sql
-    SELECT TOP 100 *
+    SELECT 
+        TOP 100 *
     FROM OPENROWSET(
         BULK 'https://contosolake.dfs.core.windows.net/users/NYCTaxi/PassengerCountStats.parquet/part-00000-1f251a58-d8ac-4972-9215-8d528d490690-c000.snappy.parquet',
         FORMAT='PARQUET'
-    ) AS [r];
+    ) AS [result]
     ```
 
-    В окне скрипта для поля **Подключить к** будет установлено значение **бессерверный пул SQL**.
+    В окне скрипта проверьте, указано ли в поле **Подключить к** значение **встроенного** бессерверного пула SQL.
 
 1. Выполните скрипт.
 

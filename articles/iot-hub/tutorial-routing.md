@@ -13,12 +13,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 892dad3963e9da3560acc2c782c3d14db246ea78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13130a7ea473b260ddc4f0ebca2ef5b496b34c66
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500595"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203012"
 ---
 # <a name="tutorial-use-the-azure-cli-and-azure-portal-to-configure-iot-hub-message-routing"></a>Руководство по Использование Azure CLI и портала Azure для настройки маршрутизации сообщений Центра Интернета вещей
 
@@ -140,13 +140,13 @@ az servicebus queue create --name $sbQueueName \
 
 2. Выберите центр Интернета вещей в списке ресурсов. В этом руководстве используется **ContosoTestHub**.
 
-3. Выберите **Маршрутизация сообщений**. В области **Маршрутизация сообщений** выберите +**Добавить**. В области **Добавление маршрута** выберите +**Добавить** рядом с полем "Конечная точка", чтобы отобразить поддерживаемые конечные точки, как показано на следующем рисунке:
+3. Выберите **Маршрутизация сообщений**. В области **Маршрутизация сообщений** выберите +**Добавить**. В области **Добавление маршрута** выберите **+Добавить конечную точку** рядом с полем "Конечная точка", чтобы появились поддерживаемые конечные точки, как показано на следующем рисунке:
 
-   ![Добавление конечной точки для маршрута](./media/tutorial-routing/message-routing-add-a-route-w-storage-ep.png)
+   ![Добавление конечной точки для маршрута](./media/tutorial-routing/message-routing-add-a-route-with-storage-endpoint-ver2.png)
 
-4. Выберите **Хранилище BLOB-объектов**. Затем вы увидите панель **Добавление конечной точки хранилища**.
+4. Выберите **Хранилище**. Затем вы увидите панель **Добавление конечной точки хранилища**.
 
-   ![Добавление конечной точки](./media/tutorial-routing/message-routing-add-storage-ep.png)
+   ![Добавление конечной точки](./media/tutorial-routing/message-routing-add-storage-endpoint-ver2.png)
 
 5. Введите имя для конечной точки. В этом руководстве используется **ContosoStorageEndpoint**.
 

@@ -3,14 +3,14 @@ title: Руководство по работе с Kubernetes в Azure. Созд
 description: С помощью этого руководства Azure Kubernetes Service (AKS) вы создадите экземпляр Реестра контейнеров Azure и отправите образ контейнера примера приложения.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: b0f78c3969f3d02c19824fdb6d1e3b786dceb43c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: d1dce1c59c4bf40eaead89e4a8a088e9a8ea4f76
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747062"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250627"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
 
@@ -22,7 +22,7 @@ ms.locfileid: "92747062"
 > * отправка образа в реестр контейнеров Azure.
 > * просмотр образов в реестре.
 
-В дополнительных руководствах этот экземпляр ACR интегрируется с кластером Kubernetes в AKS, а приложение развертывается из образа.
+В последующих руководствах этот экземпляр ACR интегрируется с кластером Kubernetes в AKS, а приложение развертывается из образа.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -34,7 +34,7 @@ ms.locfileid: "92747062"
 
 Для создания Реестра контейнеров Azure сначала необходимо создать группу ресурсов. Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus* .
+Создайте группу ресурсов с помощью команды [az group create][az-group-create]. В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -60,12 +60,12 @@ az acr login --name <acrName>
 
 Чтобы просмотреть список сохраненных образов, используйте команду [docker images][docker-images]:
 
-```azurecli
+```console
 $ docker images
 ```
 В выходных данных команды выше приведен список текущих локальных образов:
 
-```
+```output
 REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE
 mcr.microsoft.com/azuredocs/azure-vote-front   v1                  84b41c268ad9        7 minutes ago       944MB
 mcr.microsoft.com/oss/bitnami/redis            6.0.8               3a54a920bb6c        2 days ago          103MB
@@ -74,13 +74,13 @@ tiangolo/uwsgi-nginx-flask                     python3.6           a16ce562e863 
 
 Чтобы использовать образ контейнера *azure-vote-front* с ACR, образ нужно отметить тегом с адресом сервера входа в реестр. Данный тег используется для маршрутизации при отправке образов контейнеров в реестр образов.
 
-Чтобы получить адрес сервера входа, используйте команду [az acr list][az-acr-list] и запросите *loginServer* , как показано ниже:
+Чтобы получить адрес сервера входа, используйте команду [az acr list][az-acr-list] и запросите *loginServer*, как показано ниже:
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
 ```
 
-Теперь пометьте тегом локальный образ *azure-vote-front* , используя адрес *acrLoginServer* реестра контейнеров. Чтобы указать номер версии образа, добавьте *:v1* в конец имени образа:
+Теперь пометьте тегом локальный образ *azure-vote-front*, используя адрес *acrLoginServer* реестра контейнеров. Чтобы указать номер версии образа, добавьте *:v1* в конец имени образа:
 
 ```console
 docker tag mcr.microsoft.com/azuredocs/azure-vote-front:v1 <acrLoginServer>/azure-vote-front:v1
@@ -122,7 +122,7 @@ az acr repository list --name <acrName> --output table
 
 В следующем примере выводятся образы *azure-vote-front* по доступности в реестре:
 
-```
+```output
 Result
 ----------------
 azure-vote-front
@@ -134,9 +134,9 @@ azure-vote-front
 az acr repository show-tags --name <acrName> --repository azure-vote-front --output table
 ```
 
-В следующем примере показан образ *v1* , отмеченный на предыдущем шаге:
+В следующем примере показан образ *v1*, отмеченный на предыдущем шаге:
 
-```
+```output
 Result
 --------
 v1

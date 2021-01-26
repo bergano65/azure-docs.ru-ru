@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/08/2019
-ms.openlocfilehash: 5f1332255ae83a32f9b71d24d812b00fad9b7fa1
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 34fd595a03f67201b303c94764668bf86a6c244b
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637927"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796899"
 ---
 # <a name="troubleshoot-ssis-integration-runtime-management-in-azure-data-factory"></a>Устранение неполадок управления Integration Runtime SSIS в фабрике данных Azure
 
@@ -151,7 +151,7 @@ ms.locfileid: "92637927"
 
 При сбое подготовки служб SSIS IR все созданные ресурсы удаляются. Однако при наличии блокировки удаления ресурса на уровне подписки или группы ресурсов, ресурсы виртуальной сети не удаляются должным образом. Чтобы устранить эту ошибку, удалите блокировку удаления и перезапустите IR.
 
-### <a name="vnetresourcegrouplockedduringstop"></a>VNetResourceGroupLockedDuringStop
+### <a name="vnetresourcegrouplockedduringstopvnetdeletelock"></a>Внетресаурцеграуплоккеддурингстоп/Внетделетелокк
 
 При остановке служб SSIS IR все ресурсы, связанные с виртуальной сетью, удаляются. Но удаление может завершиться ошибкой, если на уровне подписки или группы ресурсов имеется блокировка удаления ресурса. Здесь клиент также управляет и устанавливает блокировку удаления. Поэтому он должен удалить блокировку удаления, а затем еще раз остановить службу SSIS IR.
 
