@@ -3,12 +3,12 @@ title: Мониторинг и ведение журналов — Azure
 description: В этой статье приводятся общие сведения о мониторинге и ведении журналов в службе Live Video Analytics на IoT Edge.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: 6a7251b62421642ad9f5dba4f4c2a15ce74cd5cf
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 6dc0a6d499d06c95bdccbc9e386d7f9288971ee8
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900881"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878110"
 ---
 # <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
 
@@ -163,7 +163,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 События происходят на пограничном устройстве, и их можно использовать на границе или в облаке. События, создаваемые функцией Live Video Analytics на IoT Edge соответствуют [шаблону обмена сообщениями потоковой передачи](../../iot-hub/iot-hub-devguide-messages-construct.md) , установленному центром Интернета вещей Azure. Шаблон состоит из системных свойств, свойств приложений и текста.
 
-### <a name="summary"></a>Сводка
+### <a name="summary"></a>Итоги
 
 Каждое событие, наблюдаемое через центр Интернета вещей, имеет набор общих свойств:
 
@@ -232,7 +232,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 |Имя метрики|Тип|Метка|Описание|
 |-----------|----|-----|-----------|
-|lva_active_graph_instances|Датчик|iothub, edge_device, module_name, graph_topology|Общее число активных графиков на топологию.|
+|lva_active_graph_instances|Индикаторная диаграмма|iothub, edge_device, module_name, graph_topology|Общее число активных графиков на топологию.|
 |lva_received_bytes_total|Счетчик|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node|Общее число байтов, полученных узлом. Поддерживается только для источников RTSP.|
 |lva_data_dropped_total|Счетчик|iothub, edge_device, module_name, graph_topology, graph_instance, graph_node, data_kind|Счетчик любых удаленных данных (событий, носителей и т. д.).|
 
@@ -269,7 +269,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 1. Используйте команды DOCKER CLI, чтобы создать файл DOCKER и опубликовать образ в реестре контейнеров Azure.
     
-   Дополнительные сведения об использовании DOCKER CLI для отправки в реестр контейнеров см. в разделе [Отправка и извлечение образов DOCKER](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-docker-cli). Дополнительные сведения о реестре контейнеров Azure см. в [документации](https://docs.microsoft.com/azure/container-registry/).
+   Дополнительные сведения об использовании DOCKER CLI для отправки в реестр контейнеров см. в разделе [Отправка и извлечение образов DOCKER](../../container-registry/container-registry-get-started-docker-cli.md). Дополнительные сведения о реестре контейнеров Azure см. в [документации](../../container-registry/index.yml).
 
 
 1. После завершения отправки в реестр контейнеров Azure добавьте следующий узел в файл манифеста развертывания:
@@ -355,7 +355,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 
 Теперь модуль будет записывать журналы отладки в двоичном формате в путь к хранилищу устройства `/var/local/mediaservices/debuglogs/` . Вы можете поделиться этими журналами с помощью службы поддержки Azure.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 Если у вас есть вопросы, см. [вопросы и ответы по мониторингу и метрикам](faq.md#monitoring-and-metrics).
 

@@ -45,6 +45,14 @@
           href: security-baseline.md
 - name: Практические руководства
   items:
+    - name: Действия клиента
+      items:
+        - name: Просмотр поставщиков служб и управление ими
+          displayName: 'customer, update, visibility, control'
+          href: ./how-to/view-manage-service-providers.md
+        - name: Просмотр действий поставщика служб
+          displayName: 'monitor, log, customer, visibility, transparency, control'
+          href: ./how-to/view-service-provider-activity.md
     - name: Подключение клиента к Azure Lighthouse
       displayName: resource management
       href: ./how-to/onboard-customer.md
@@ -87,14 +95,6 @@
           href: ./how-to/deploy-policy-remediation.md
     - name: Интеграция Azure Sentinel
       href: ./how-to/manage-sentinel-workspaces.md
-    - name: Действия клиента
-      items:
-        - name: Просмотр поставщиков служб и управление ими
-          displayName: 'customer, update'
-          href: ./how-to/view-manage-service-providers.md
-        - name: Просмотр действий поставщика служб
-          displayName: 'monitor, log'
-          href: ./how-to/view-service-provider-activity.md
 - name: Справочник
   items:
     - name: Azure CLI

@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 841247c03d9f3b151a0c75430715c03b009d831a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e360ae3cf0c463add9e6445a96c118d9f40ce9cb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287072"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878042"
 ---
 # <a name="create-a-scale-set-from-a-generalized-image-with-azure-cli"></a>Создание масштабируемого набора из обобщенного образа с помощью Azure CLI
 
-Создайте масштабируемый набор из обобщенной версии образа, хранящейся в [общей коллекции образов](shared-image-galleries.md) , с помощью Azure CLI. Если требуется создать масштабируемый набор с помощью специализированной версии образа, см. раздел [Создание экземпляров масштабируемых наборов на основе специализированного образа](instance-specialized-image-version-cli.md).
+Создайте масштабируемый набор из обобщенной версии образа, хранящейся в [общей коллекции образов](../virtual-machines/shared-image-galleries.md) , с помощью Azure CLI. Если требуется создать масштабируемый набор с помощью специализированной версии образа, см. раздел [Создание экземпляров масштабируемых наборов на основе специализированного образа](instance-specialized-image-version-cli.md).
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.4.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
@@ -54,8 +54,8 @@ az vmss create \
 
 Создание и настройка всех ресурсов и виртуальных машин масштабируемого набора занимает несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-С помощью [построителя образов Azure (Предварительная версия)](../virtual-machines/linux/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](../virtual-machines/linux/image-builder-gallery-update-image-version.md). 
+## <a name="next-steps"></a>Дальнейшие действия
+С помощью [построителя образов Azure (Предварительная версия)](../virtual-machines/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](../virtual-machines/linux/image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
@@ -63,4 +63,4 @@ az vmss create \
 - [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
 - [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 
-Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](../virtual-machines/troubleshooting-shared-images.md).
+Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](../virtual-machines/shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](../virtual-machines/troubleshooting-shared-images.md).

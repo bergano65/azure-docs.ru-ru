@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2499a89907eb63f01adbc80a6d206911c09c1259
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 982c33c5c55e32ce48131a4b2f0911e4f23dd408
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91265958"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98877294"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: Блокировка устаревших методов проверки подлинности
 
@@ -36,7 +36,7 @@ ms.locfileid: "91265958"
    1. Нажмите кнопку **Готово**.
 1. В разделе **Облачные приложения или действия** выберите **Все облачные приложения**.
    1. Нажмите кнопку **Готово**.
-1. В разделе **условия**  >  **клиентские приложения**задайте для параметра **настроить** значение **Да**.
+1. В разделе **условия**  >  **клиентские приложения** задайте для параметра **настроить** значение **Да**.
    1. Проверьте только списки **клиентов Exchange ActiveSync** и **других клиентов**.
    1. Нажмите кнопку **Готово**.
 1. В разделе **Управление доступом** > **Предоставить разрешение** выберите **Блокировать доступ**.
@@ -52,4 +52,4 @@ ms.locfileid: "91265958"
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 
-[Как настроить многофункциональное устройство или приложение для отправки электронной почты с помощью Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-office-3)
+[Как настроить многофункциональное устройство или приложение для отправки электронной почты с помощью Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)

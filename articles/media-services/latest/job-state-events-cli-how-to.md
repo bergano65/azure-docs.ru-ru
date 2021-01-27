@@ -1,5 +1,5 @@
 ---
-title: Мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и интерфейса командной строки | Документация Майкрософт
+title: Мониторинг событий служб мультимедиа Azure с помощью службы "Сетка событий" с использованием интерфейса командной строки
 description: В этой статье показано, как подписываться на службу "Сетка событий", чтобы отслеживать события служб мультимедиа Azure с помощью Azure CLI.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b646965be03b5d3f57483887e256d33262192375
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: d7148841083cccf4197fe353d077e5149e4afac5
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92013293"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895328"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-cli"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и Azure CLI
 

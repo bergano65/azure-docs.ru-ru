@@ -4,19 +4,19 @@ description: В этой статье показано, как добавить 
 ms.topic: how-to
 ms.date: 11/24/2020
 ms.custom: references_regions
-ms.openlocfilehash: 00e679b07a44b799b6ac6677201bb59eeddcd6cf
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 9edcf75451f43f2a00cd01d5ca7f385704b1ea7f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841566"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878432"
 ---
 # <a name="add-a-managed-identity-to-a-service-fabric-managed-cluster-node-type-preview"></a>Добавление управляемого удостоверения в тип узла управляемого кластера Service Fabric (Предварительная версия)
 
-Каждый тип узла в управляемом кластере Service Fabric поддерживается масштабируемым набором виртуальных машин. Чтобы разрешить использование управляемых удостоверений с типом узла управляемого кластера, в `vmManagedIdentity` определения типа узла было добавлено свойство, содержащее список удостоверений, которые могут использоваться `userAssignedIdentities` . Функция отражает, как управляемые удостоверения могут использоваться в неуправляемых кластерах, например, с помощью управляемого удостоверения с [Azure Key Vault расширением масштабируемого набора виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows).
+Каждый тип узла в управляемом кластере Service Fabric поддерживается масштабируемым набором виртуальных машин. Чтобы разрешить использование управляемых удостоверений с типом узла управляемого кластера, в `vmManagedIdentity` определения типа узла было добавлено свойство, содержащее список удостоверений, которые могут использоваться `userAssignedIdentities` . Функция отражает, как управляемые удостоверения могут использоваться в неуправляемых кластерах, например, с помощью управляемого удостоверения с [Azure Key Vault расширением масштабируемого набора виртуальных машин](../virtual-machines/extensions/key-vault-windows.md).
 
 
-Пример Service Fabric развертывания управляемого кластера, использующего управляемое удостоверение для типа узла, см. в [этом шаблоне](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-1-NT-MI). Список поддерживаемых регионов см. в разделе [часто задаваемые вопросы об управляемом кластере](https://docs.microsoft.com/azure/service-fabric/faq-managed-cluster#what-regions-are-supported-in-the-preview).
+Пример Service Fabric развертывания управляемого кластера, использующего управляемое удостоверение для типа узла, см. в [этом шаблоне](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-1-NT-MI). Список поддерживаемых регионов см. в разделе [часто задаваемые вопросы об управляемом кластере](./faq-managed-cluster.md#what-regions-are-supported-in-the-preview).
 
 > [!NOTE]
 > Для этой функции сейчас поддерживаются только удостоверения, назначенные пользователем.
@@ -26,7 +26,7 @@ ms.locfileid: "96841566"
 Перед началом работы
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
-* Если вы планируете использовать PowerShell, [установите](https://docs.microsoft.com/cli/azure/install-azure-cli) Azure CLI, чтобы выполнить справочные команды CLI.
+* Если вы планируете использовать PowerShell, [установите](/cli/azure/install-azure-cli) Azure CLI, чтобы выполнить справочные команды CLI.
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем 
 
@@ -54,9 +54,9 @@ az identity create --name <userAssignedIdentityName> --resource-group <resourceG
 
 При необходимости следует использовать следующие значения:
 
-|name|Соответствующее значение поставщика ресурсов Service Fabric|
+|Имя|Соответствующее значение поставщика ресурсов Service Fabric|
 |----|-------------------------------------|
-|Идентификатор приложения|74cb6831-0dbb-4be1-8206-fd4df301cdc2|
+|Идентификатор приложения|74cb6831-0dbb-4be1-8206-fd4df301cdc2|
 |Идентификатор объекта.|fbc587f2-66f5-4459-a027-bcd908b9d278|
 
 
@@ -131,4 +131,4 @@ New-AzRoleAssignment -PrincipalId fbc587f2-66f5-4459-a027-bcd908b9d278 -RoleDefi
 ## <a name="next-steps"></a>Next Steps
 
 > [!div class="nextstepaction"]
-> [Развертывание приложения в управляемом кластере Service Fabric](https://docs.microsoft.com/azure/service-fabric/tutorial-managed-cluster-deploy-app) 
+> [Развертывание приложения в управляемом кластере Service Fabric](./tutorial-managed-cluster-deploy-app.md)

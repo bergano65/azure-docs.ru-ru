@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: eb7db3c95fb56ebbd62d6cf882a75ce03baeb75d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 3b6928b759d2349051dbb69258952f2f1ee10a31
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736060"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878144"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure для виртуальных машин Linux
 
@@ -412,6 +412,7 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - Диски NVMe виртуальных машин серии Lsv2 (см. раздел [Lsv2-Series](../lsv2-series.md)).
 - Виртуальная машина с "вложенными точками подключения"; то есть несколько точек подключения находятся по одному пути (например, "/1stmountpoint/Data/2stmountpoint").
 - Виртуальная машина с диском данных, подключенным поверх папки ОС.
+- Виртуальная машина, на которой был расширен логический том корня (диска ОС) с помощью диска данных.
 - Виртуальные машины серии M с Ускоритель записиными дисками.
 - Применение ADE к виртуальной машине с дисками, зашифрованными с помощью [шифрования на стороне сервера, с помощью ключей, управляемых клиентом](../disk-encryption.md) (SSE + CMK). Применение SSE + CMK к диску данных на виртуальной машине, зашифрованном с помощью ADE, также является неподдерживаемым сценарием.
 - Перенос виртуальной машины, зашифрованной с помощью ADE, или **когда-либо** зашифрованный с помощью ade, для [шифрования на стороне сервера с ключами, управляемыми клиентом](../disk-encryption.md).

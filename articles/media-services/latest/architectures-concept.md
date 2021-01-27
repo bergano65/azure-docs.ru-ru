@@ -1,6 +1,5 @@
 ---
-title: Архитектуры служб мультимедиа
-titleSuffix: Azure Media Services
+title: Архитектуры Служб мультимедиа
 description: В этой статье описываются архитектуры служб мультимедиа.
 services: media-services
 documentationcenter: ''
@@ -12,14 +11,14 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: inhenkel
-ms.openlocfilehash: c14dbe4253696e01e99111a24319e455c1d551e9
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: ad464eb1c0b6dec694c7c40868a0f95fcfeaf6e8
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96534001"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98891494"
 ---
-# <a name="media-services-architectures"></a>Архитектуры служб мультимедиа
+# <a name="media-services-architectures"></a>Архитектуры Служб мультимедиа
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
@@ -29,7 +28,7 @@ ms.locfileid: "96534001"
 
 Это решение основано на управляемых службах Azure: службах мультимедиа и сети доставки содержимого. Эти службы работают в среде с высоким уровнем доступности, исправленной и поддерживаемой, что позволяет сосредоточиться на решении, а не на среде, в которой они работают.
 
-См. раздел [Live Streaming Digital Media](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/digital-media-live-stream) в центре архитектуры Azure.
+См. раздел [Live Streaming Digital Media](/azure/architecture/solution-ideas/articles/digital-media-live-stream) в центре архитектуры Azure.
 
 ## <a name="video-on-demand-digital-media"></a>Цифровое медиаустройство для предоставления видео по запросу
 
@@ -37,13 +36,13 @@ ms.locfileid: "96534001"
 
 Это решение основано на управляемых службах Azure: хранилище BLOB-объектов, сеть доставки содержимого и Проигрыватель мультимедиа Azure. Эти службы работают в среде с высоким уровнем доступности, исправленной и поддерживаемой, что позволяет сосредоточиться на решении, а не на среде, в которой они работают.
 
-Ознакомьтесь с [цифровыми носителями видео по запросу](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/digital-media-video) в центре архитектуры Azure.
+Ознакомьтесь с [цифровыми носителями видео по запросу](/azure/architecture/solution-ideas/articles/digital-media-video) в центре архитектуры Azure.
 
 ## <a name="gridwich-media-processing-system"></a>Система обработки мультимедиа Gridwich
 
 Гридвич System воплощены рекомендации по обработке и доставке ресурсов мультимедиа в Azure. Несмотря на то, что система Гридвич является относящейся к носителю, платформа обработки сообщений и событий может применяться к любому рабочему процессу обработки событий без отслеживания состояния.
 
-См. раздел [гридвич Media Processing System](https://docs.microsoft.com/azure/architecture/reference-architectures/media-services/gridwich-architecture) в центре архитектуры Azure.
+См. раздел [гридвич Media Processing System](/azure/architecture/reference-architectures/media-services/gridwich-architecture) в центре архитектуры Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Схема выходных метаданных служб мультимедиа Azure | Документация Майкрософт
+title: Схема выходных метаданных служб мультимедиа Azure
 description: В этой статье приводятся общие сведения о схеме выходных метаданных служб мультимедиа Azure версии 3.
 author: IngridAtMicrosoft
 manager: femila
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: aa6d4edc4348fa850eeb7e8d91ce0791ee4c7170
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a27db81866760bff56c900a908162f356c01a66
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91336417"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895209"
 ---
 # <a name="output-metadata"></a>Выходные метаданные
 
@@ -38,11 +38,11 @@ ms.locfileid: "91336417"
 
 | Имя | Описание |
 | --- | --- |
-| **Sources** |Коллекция входных и исходных файлов мультимедиа, которая обрабатывалась для создания AssetFile.<br />Например, `"Sources": [{"Name": "Ignite-short_1280x720_AACAudio_3551.mp4"}]`.|
+| **Источники** |Коллекция входных и исходных файлов мультимедиа, которая обрабатывалась для создания AssetFile.<br />Например, `"Sources": [{"Name": "Ignite-short_1280x720_AACAudio_3551.mp4"}]`.|
 | **VideoTracks**|Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса-контейнера. <br />См. [VideoTracks](#videotracks). |
 | **AudioTracks**|Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Это коллекция всех звуковых дорожек.<br /> Дополнительные сведения см. в разделе [AudioTracks](#audiotracks). |
 | **Имя**<br />Обязательно |Имя файла ресурса мультимедиа. <br /><br />Например, `"Name": "Ignite-short_1280x720_AACAudio_3551.mp4"`.|
-| **Размер**<br />Обязательно |Размер файла ресурса-контейнера в байтах. <br /><br />Например, `"Size": 32414631`.|
+| **Size**<br />Обязательно |Размер файла ресурса-контейнера в байтах. <br /><br />Например, `"Size": 32414631`.|
 | **Длительность**<br />Обязательно |Длительность воспроизведения содержимого. Дополнительные сведения см. в разделе Формат [ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) . <br /><br />Например, `"Duration": "PT1M10.315S"`.|
 
 ## <a name="videotracks"></a>VideoTracks 
@@ -260,6 +260,6 @@ ms.locfileid: "91336417"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание входных данных задания из URL-адреса HTTPS](job-input-from-http-how-to.md)

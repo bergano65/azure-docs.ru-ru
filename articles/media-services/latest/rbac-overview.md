@@ -1,5 +1,5 @@
 ---
-title: Управление доступом на основе ролей в Azure для учетных записей служб мультимедиа в Azure | Документация Майкрософт
+title: Управление доступом на основе ролей в Azure для учетных записей служб мультимедиа в Azure
 description: В этой статье рассматривается управление доступом на основе ролей Azure (Azure RBAC) для учетных записей служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 8fba3db14c2a950dd230a4721841b4baa9f64636
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1fab743c647c3628a79fffb3bf1060983c34d0aa
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426794"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895192"
 ---
 # <a name="azure-role-based-access-control-azure-rbac-for-media-services-accounts"></a>Управление доступом на основе ролей Azure (Azure RBAC) для учетных записей служб мультимедиа
 

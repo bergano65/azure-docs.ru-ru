@@ -9,16 +9,16 @@ ms.subservice: availability
 ms.date: 07/01/2019
 ms.reviewer: zivr
 ms.custom: mimckitt
-ms.openlocfilehash: 1525ef7c1e19aa9821df3f111fdce3518d37afd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3a7b50c82b3deffa7526bfcfe799972c3b02762
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87011062"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98877872"
 ---
 # <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Предварительный просмотр: Создание и использование групп размещения близкого взаимодействия с помощью PowerShell
 
-Чтобы виртуальные машины были максимально близки для обеспечения наименьшей задержки, необходимо развернуть масштабируемый набор в [группе размещения близкого взаимодействия](co-location.md#preview-proximity-placement-groups).
+Чтобы виртуальные машины были максимально близки для обеспечения наименьшей задержки, необходимо развернуть масштабируемый набор в [группе размещения близкого взаимодействия](../virtual-machines/co-location.md#proximity-placement-groups).
 
 Группа размещения близкого взаимодействия — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группа размещения близкого взаимодействия удобны для рабочих нагрузок, где требуется низкая задержка.
 

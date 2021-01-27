@@ -1,5 +1,5 @@
 ---
-title: Кодирование видео с помощью Standard Encoder в Службах мультимедиа — Azure | Документация Майкрософт
+title: Кодирование видео со стандартным кодировщиком в службах мультимедиа
 description: В этой статье показано, как с помощью кодировщика по плану Standard в Службах мультимедиа закодировать входные видео, используя автоматически созданную схему скоростей, на основе разрешений и скорости входных данных.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 05accd69f1868b8b0e0f6dbd4fb5c21ee843ec5e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5b973d17e10f3dbb75f5208d9003b4f8118b37c7
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297730"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98891409"
 ---
 #  <a name="encode-with-an-auto-generated-bitrate-ladder"></a>Кодирование с помощью автоматически созданной схемы скоростей
 
@@ -71,7 +71,7 @@ ms.locfileid: "89297730"
 |2|270|480|440|
 |3|180|320|230|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
