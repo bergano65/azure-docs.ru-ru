@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/26/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 81a52b26c5291f788ac81caeb2ca5416a2f58d36
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e009369f6223e171984d1142419101fdd82879b0
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448879"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804915"
 ---
 # <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-storageclass-on-your-azure-stack-edge-pro-gpu-device"></a>Использование kubectl для запуска приложения Kubernetes с отслеживанием состояния с помощью Сторажекласс на устройстве Azure Stack ребра Pro GPU
 
@@ -24,7 +24,7 @@ ms.locfileid: "96448879"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед развертыванием приложения с отслеживанием состояния убедитесь, что выполнены следующие необходимые условия на устройстве и клиент, который будет использоваться для доступа к устройству:
+Перед развертыванием приложения с отслеживанием состояния выполните следующие предварительные требования на устройстве и клиенте, которые будут использоваться для доступа к устройству.
 
 ### <a name="for-device"></a>Для устройств
 
@@ -35,7 +35,7 @@ ms.locfileid: "96448879"
 ### <a name="for-client-accessing-the-device"></a>Для клиента, обращающегося к устройству
 
 - У вас есть клиентская система Windows, которая будет использоваться для доступа к устройству Azure Stack погранично Pro.
-    - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+    - Клиент работает под управлением Windows PowerShell 5,0 или более поздней версии. Чтобы скачать последнюю версию Windows PowerShell, перейдите к разделу [Установка Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-7&preserve-view=true).
     
     - Также можно использовать любой другой клиент с [поддерживаемой операционной системой](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) . В этой статье описывается процедура использования клиента Windows. 
     
@@ -157,7 +157,7 @@ ms.locfileid: "96448879"
     persistentvolumeclaim/mysql-pv-claim-sc created
     C:\Users\user>
     ```
-   Обратите внимание на имя созданной PVC `mysql-pv-claim-sc` . Вы будете использовать его на более позднем этапе. 
+   Запишите имя созданной PVC, в этом примере — `mysql-pv-claim-sc` . Вы будете использовать его на более позднем этапе.
 
 4. Разверните содержимое `mysql-deployment.yml` файла.
 

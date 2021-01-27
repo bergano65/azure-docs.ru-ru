@@ -1,5 +1,5 @@
 ---
-title: Улучшение разрешения имен портов и виртуальных ЛС
+title: Улучшение разрешения имен портов и виртуальных ЛС
 description: Настройте имена портов и виртуальных ЛС на датчиках, чтобы расширить разрешение устройства.
 author: shhazam-ms
 manager: rkarlin
@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/13/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 1747af77468ebe41f59892dea4bb49ce24757f37
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9c976671bccb420ae24d8def7a6574098d86ce6d
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97842429"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98803578"
 ---
-# <a name="enhance-port-and-vlan-name-resolution"></a>Улучшение разрешения имен портов и виртуальных ЛС
+# <a name="enhance-port-and-vlan-name-resolution"></a>Улучшение разрешения имен портов и виртуальных ЛС
 
 Вы можете настроить имена портов и виртуальных ЛС на датчиках, чтобы расширить разрешение устройства.
 
@@ -50,7 +50,7 @@ ms.locfileid: "97842429"
 
 3. Введите номер порта, выберите **TCP/UDP** или выберите **оба** и добавьте имя.
 
-4. Нажмите кнопку **Сохранить**.
+4. Щелкните **Сохранить**.
 
 ## <a name="configure-vlan-names"></a>Настройка имен виртуальных ЛС
 
@@ -84,7 +84,8 @@ ms.locfileid: "97842429"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотр подробных сведений об устройстве в отчетах по инвентаризации устройств и интеллектуальному анализу данных:
+Просмотр подробной информации об устройствах в различных отчетах:
 
-- [Изучение обнаружений датчиков в инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)
-- [Создание отчетов](how-to-generate-reports.md)
+- [Изучение обнаруженных датчиков в данных инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+- [Тенденции и статистические отчеты датчиков](how-to-create-trends-and-statistics-reports.md)
+- [Запросы интеллектуального анализа данных датчика](how-to-create-data-mining-queries.md)

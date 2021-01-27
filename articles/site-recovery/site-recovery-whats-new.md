@@ -2,13 +2,13 @@
 title: Новые возможности Azure Site Recovery
 description: Содержит сводку новых функций и последних обновлений в службе Azure Site Recovery.
 ms.topic: conceptual
-ms.date: 01/20/2021
-ms.openlocfilehash: 2778f1af99512c4594d2d688eea7e04b3b81ae47
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 01/26/2021
+ms.openlocfilehash: 51d54ca4d46af3b9e0746f36114fadc47edd5b1f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621766"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805049"
 ---
 # <a name="whats-new-in-site-recovery"></a>Новые возможности в Site Recovery
 
@@ -22,7 +22,7 @@ ms.locfileid: "98621766"
 
 **Обновление** |  **Единая установка** | **OVA сервера конфигурации** | **Агент службы Mobility Service** | **Site Recovery** | **Агент служб восстановления**
 --- | --- | --- | --- | --- | ---
-[Свертка 53](https://support.microsoft.com/help/4602881/)  | 9.40.5850.1 | 5.1.6537.0 | 9.40.5850.1 | 5.1.6537.0  | 2.0.9202.0
+[Свертка 53](https://support.microsoft.com/topic/update-rollup-53-for-azure-site-recovery-060268ef-5835-bb49-7cbc-e8c1e6c6e12a)  | 9.40.5850.1 | 5.1.6537.0 | 9.40.5850.1 | 5.1.6537.0  | 2.0.9202.0
 [Свертка 52](https://support.microsoft.com/help/4597409/)  | 9.39.5796.1 | 5.1.6458.0 | 9.39.5796.1 | 5.1.6458.0  | 2.0.9196.0
 [Свертка 51](https://support.microsoft.com/help/4590304)  | 9.38.5761.1 | 5.1.6400.0 | 9.38.5761.1 | 5.1.6400.0  | 2.0.9193.0
 [Свертка 50](https://support.microsoft.com/help/4582666/) | 9.37.5724.1 | 5.1.6347.0 | 9.37.5724.1 | 5.1.6347.0  | 2.0.9192.0
@@ -35,7 +35,7 @@ ms.locfileid: "98621766"
 
 ### <a name="update-rollup-53"></a>Накопительный пакет обновления 53
 
-[Накопительный пакет обновления 53](https://support.microsoft.com/help/4602881/update-rollup-53-for-azure-site-recovery) предоставляет следующие обновления:
+[Накопительный пакет обновления 53](https://support.microsoft.com/topic/update-rollup-53-for-azure-site-recovery-060268ef-5835-bb49-7cbc-e8c1e6c6e12a) предоставляет следующие обновления:
 
 **Обновление** | **Сведения**
 --- | ---
@@ -205,7 +205,7 @@ ms.locfileid: "98621766"
 --- | --- | ---
 **Windows 2008 R2 SP1** | [Обновление стека обслуживания](https://support.microsoft.com/help/4490628)<br/> [SHA-2](https://support.microsoft.com/help/4474419)| [Обновление стека обслуживания](https://support.microsoft.com/help/4490628)<br/> [SHA-2](https://support.microsoft.com/help/4474419)
 **Windows 2008 SP2** | [Обновление стека обслуживания](https://support.microsoft.com/help/4493730)<br/> [SHA-2](https://support.microsoft.com/help/4474419)| [Обновление стека обслуживания](https://support.microsoft.com/help/4493730)<br/> [SHA-2](https://support.microsoft.com/help/4474419)
-**Windows 7 SP1** | [Обновление стека обслуживания](https://support.microsoft.com/help/4490628)<br/> [SHA-2](https://support.microsoft.com/help/4474419)| [Обновление стека обслуживания](https://support.microsoft.com/help/4490628)<br/> [SHA-2](https://support.microsoft.com/help/4474419).
+**Windows 7 с пакетом обновления 1 (SP1);** | [Обновление стека обслуживания](https://support.microsoft.com/help/4490628)<br/> [SHA-2](https://support.microsoft.com/help/4474419)| [Обновление стека обслуживания](https://support.microsoft.com/help/4490628)<br/> [SHA-2](https://support.microsoft.com/help/4474419).
 
 
 
@@ -620,6 +620,6 @@ Site Recovery теперь поддерживает использование �
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Будьте в курсе наших обновлений, посетив страницу [обновлений Azurе](https://azure.microsoft.com/updates/?product=site-recovery).

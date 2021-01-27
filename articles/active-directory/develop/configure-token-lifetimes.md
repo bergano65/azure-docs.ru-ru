@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 883a06bdffcd0afcbc1be6f2c761d6a1c2c2ea2a
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2529c6c3b0f9d188e1ce8062c05f62f3e980ef50
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681881"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805222"
 ---
 # <a name="configure-token-lifetime-policies-preview"></a>Настройка политик времени жизни токенов (Предварительная версия)
 Можно указать время существования маркера доступа, SAML или идентификатора, выданного платформой идентификации Майкрософт. Время жизни маркеров можно настроить для всех приложений в организации, для многопользовательского приложения (приложения для нескольких организаций) или для определенного субъекта-службы в организации. Дополнительные сведения см. в статье [Настраиваемые времена жизни маркеров](active-directory-configurable-token-lifetimes.md).
@@ -210,5 +210,5 @@ ms.locfileid: "98681881"
 
     Теперь ваша исходная политика связана с субъектом-службой, а организации назначена новая политика по умолчанию. Важно помнить, что политики, примененные к субъектам-службам, имеют более высокий приоритет, чем политики по умолчанию для организации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте о [возможностях управления сеансами проверки подлинности](../conditional-access/howto-conditional-access-session-lifetime.md) в условном доступе Azure AD.

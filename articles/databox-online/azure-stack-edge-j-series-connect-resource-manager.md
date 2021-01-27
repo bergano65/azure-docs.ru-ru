@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 6bf0da8716233178889d47ec3d57e9b29bc2658f
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 54aad90cf86f1a20d76f04f3a829f29c47023558
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763223"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805803"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro
 
@@ -34,7 +34,7 @@ Azure Resource Manager предоставляет последовательны
 
 В следующей таблице перечислены различные конечные точки, предоставляемые на устройстве, Поддерживаемые протоколы и порты для доступа к этим конечным точкам. На протяжении всей статьи вы найдете ссылки на эти конечные точки.
 
-| # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Используется для |
+| # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Назначение |
 | --- | --- | --- | --- | --- |
 | 1. | Azure Resource Manager | HTTPS | 443 | Подключение к Azure Resource Manager для автоматизации |
 | 2. | Служба маркеров безопасности | HTTPS | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
@@ -138,9 +138,9 @@ Azure Resource Manager предоставляет последовательны
 
     Сравните **основную** версию и убедитесь, что она 5,0 или более поздней версии.
 
-    Если у вас более старая версия, см. раздел [Обновление существующей версии Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+    Если у вас более старая версия, см. раздел [Обновление существующей версии Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6&preserve-view=true#upgrading-existing-windows-powershell).
 
-    Если у вас \' нет PowerShell 5,0, следуйте инструкциям по [установке Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6).
+    Если у вас \' нет PowerShell 5,0, следуйте инструкциям по [установке Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6&preserve-view=true).
 
     Результат выполнения команды показан ниже.
 
@@ -156,7 +156,7 @@ Azure Resource Manager предоставляет последовательны
     
 2. Вы можете получить доступ к коллекция PowerShell.
 
-    Запустите оболочку PowerShell от имени администратора. Проверьте, зарегистрирован ли PSGallery в качестве репозитория.
+    Запустите оболочку PowerShell от имени администратора. Проверьте, зарегистрирован ли объект в `PSGallery` качестве репозитория.
 
     ```powershell
     Import-Module -Name PowerShellGet -ErrorAction Stop
@@ -175,7 +175,7 @@ Azure Resource Manager предоставляет последовательны
     PSGallery                 Trusted              https://www.powershellgallery.com/api/v2
     ```
     
-Если репозиторий не является доверенным или требуются дополнительные сведения, см. [статью Проверка специальных возможностей коллекция PowerShell](/azure-stack/operator/azure-stack-powershell-install?view=azs-1908#2-validate-the-powershell-gallery-accessibility).
+Если репозиторий не является доверенным или требуются дополнительные сведения, см. [статью Проверка специальных возможностей коллекция PowerShell](/azure-stack/operator/azure-stack-powershell-install?view=azs-1908&preserve-view=true&preserve-view=true#2-validate-the-powershell-gallery-accessibility).
 
 ## <a name="step-4-set-up-azure-powershell-on-the-client"></a>Шаг 4. Настройка Azure PowerShell на клиенте 
 
@@ -327,7 +327,7 @@ Binary     1.48.204.0 AzureInformationProtection          {Clear-RMSAuthenticati
     Set-AzureRMEnvironment -Name <Environment Name>
     ```
     
-    Дополнительные сведения см. в подразделе [Set-AzureRMEnvironment](/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0).
+    Дополнительные сведения см. в подразделе [Set-AzureRMEnvironment](/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0&preserve-view=true).
 
     - Определите встроенную среду для каждого выполняемого командлета. Это гарантирует, что все вызовы API будут проходить через правильную среду. По умолчанию вызовы будут проходить через общедоступную версию Azure, но вы хотите, чтобы они перейдут в среду, настроенную для Azure Stack устройства Pro.
 

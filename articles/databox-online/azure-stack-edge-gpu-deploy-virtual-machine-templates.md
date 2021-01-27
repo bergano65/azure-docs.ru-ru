@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 69d5a0a69bcd820fd59da0a18b3838b65a6a0460
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 66d537b79819aecab4ce88a56ed465679363f421
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763441"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805203"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью шаблонов
 
@@ -29,7 +29,7 @@ ms.locfileid: "97763441"
 
 Общая сводка по рабочему процессу развертывания с использованием шаблонов выглядит следующим образом:
 
-1. **Настройка необходимых компонентов** . Существуют 3 типа необходимых компонентов. устройство, клиент и для виртуальной машины.
+1. **Настройка необходимых компонентов** . Существуют три типа необходимых компонентов: устройство, клиент и виртуальная машина.
 
     1. **Предварительные требования для устройства**
 
@@ -47,7 +47,7 @@ ms.locfileid: "97763441"
         1. Создайте группу ресурсов в расположении устройства, которая будет содержать все ресурсы виртуальной машины.
         1. Создайте учетную запись хранения для отправки виртуального жесткого диска, используемого для создания образа виртуальной машины.
         1. Добавьте URI учетной записи локального хранилища в DNS или файл hosts на клиенте, обращающемся к устройству.
-        1. Установите сертификат хранилища BLOB-объектов на устройстве, а также на локальном клиенте, обращающемся к устройству. При необходимости установите сертификат хранилища BLOB-объектов на Обозреватель службы хранилища.
+        1. Установите сертификат хранилища BLOB-объектов на устройстве и на локальном клиенте, обращающемся к устройству. При необходимости установите сертификат хранилища BLOB-объектов на Обозреватель службы хранилища.
         1. Создайте и отправьте виртуальный жесткий диск в созданную ранее учетную запись хранения.
 
 2. **Создание виртуальной машины из шаблонов**
@@ -71,7 +71,7 @@ ms.locfileid: "97763441"
 
 ## <a name="vm-prerequisites"></a>Необходимые компоненты для виртуальной машины
 
-Настройте эти компоненты, чтобы создать ресурсы, которые понадобятся для создания виртуальной машины. 
+Настройте эти компоненты, чтобы создать ресурсы, необходимые для создания виртуальной машины. 
 
     
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
@@ -101,7 +101,7 @@ PS C:\windows\system32>
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте новую учетную запись хранения с помощью группы ресурсов, созданной на предыдущем шаге. Это **Локальная учетная запись хранения** , которая будет использоваться для отправки образа виртуального диска для виртуальной машины.
+Создайте новую учетную запись хранения с помощью группы ресурсов, созданной на предыдущем шаге. Эта учетная запись представляет собой **локальную учетную запись хранения** , которая будет использоваться для отправки образа виртуального диска для виртуальной машины.
 
 ```powershell
 New-AzureRmStorageAccount -Name <Storage account name> -ResourceGroupName <Resource group name> -Location DBELocal -SkuName Standard_LRS
@@ -159,7 +159,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 ### <a name="use-storage-explorer-for-upload"></a>Использовать Обозреватель службы хранилища для отправки
 
-1. Откройте обозреватель хранилищ. Перейдите в раздел **Edit (изменить** ) и убедитесь, что для приложения задано значение **Target Azure Stack API**.
+1. Откройте Обозреватель службы хранилища. Перейдите в раздел **Edit (изменить** ) и убедитесь, что для приложения задано значение **Target Azure Stack API**.
 
     ![Задайте для параметра target значение Azure Stack API](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/set-target-apis-1.png)
 
@@ -209,7 +209,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
     ![Отправить VHD-файл 3](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/upload-vhd-file-3.png)
 
-12. Скопируйте и сохраните **универсальный код ресурса (URI)** , как это можно будет использовать на следующих шагах.
+12. Скопируйте и сохраните **URI**, который будет использоваться на последующих шагах.
 
     ![Копировать URI](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/copy-uri-1.png)
 
@@ -237,7 +237,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
     }
 ```
 
-Измените файл, `CreateImage.parameters.json` включив в него следующие сведения для устройства Azure Stack ребра Pro:
+Измените файл, `CreateImage.parameters.json` включив в него следующие значения для устройства Azure Stack ребра Pro:
 
 1. Укажите тип операционной системы, соответствующий загружаемому виртуальному жесткому диску. Типом операционной системы может быть Windows или Linux.
 
@@ -250,16 +250,17 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 2. Измените URI образа на URI образа, отправленного на предыдущем шаге:
 
-    ```json
-    "imageUri": {
-        "value": "https://myasegpusavm.blob.myasegpu1.wdshcsso.com/windows/WindowsServer2016Datacenter.vhd"
-        },
-    ```
-    Если вы используете *http* с обозреватель службы хранилища, измените его на URI *http* .
+   ```json
+   "imageUri": {
+       "value": "https://myasegpusavm.blob.myasegpu1.wdshcsso.com/windows/WindowsServer2016Datacenter.vhd"
+       },
+   ```
+
+   Если вы используете *http* с обозреватель службы хранилища, измените универсальный код ресурса (URI) на *http* .
 
 3. Укажите уникальное имя образа. Этот образ используется для создания виртуальной машины в последующих шагах. 
 
-    Ниже приведен пример JSON, который используется в этой статье.
+   Ниже приведен пример JSON, который используется в этой статье.
 
     ```json
     {
@@ -278,6 +279,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
       }
     }
     ```
+
 5. Сохраните файл параметров.
 
 
@@ -588,4 +590,4 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 610049ec14243abb296aef431eb37533c6169817
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 90bb6f60712fc59aec05ff2e85364fccf00ff1df
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797066"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804797"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -149,7 +149,7 @@ $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" 
 $targetVault.ID
 ```
 
-либо
+Или
 
 ```powershell
 $targetVaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" -Name "testvault" | select -ExpandProperty ID
@@ -228,7 +228,7 @@ NewPolicy           AzureVM            AzureVM              4/24/2016 1:30:00 AM
 После определения политики защиты по-прежнему необходимо включить политику для элемента. Используйте [Enable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) , чтобы включить защиту. Защита включается для двух объектов: элемента и политики. После того как политика сопоставится с хранилищем, рабочий процесс архивации будет активироваться по времени, определенному в политике расписания.
 
 > [!IMPORTANT]
-> При использовании PowerShell для одновременного включения резервного копирования нескольких виртуальных машин убедитесь, что с одной политикой не связано более 100 виртуальных машин. Это [рекомендуемый метод](./backup-azure-vm-backup-faq.md#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-the-same-backup-policy). В настоящее время клиент PowerShell не выполняет явную блокировку при наличии более 100 виртуальных машин, но в будущем планируется добавить проверку.
+> При использовании PowerShell для одновременного включения резервного копирования нескольких виртуальных машин убедитесь, что с одной политикой не связано более 100 виртуальных машин. Это [рекомендуемый метод](./backup-azure-vm-backup-faq.yml#is-there-a-limit-on-number-of-vms-that-can-be-associated-with-the-same-backup-policy). В настоящее время клиент PowerShell не выполняет явную блокировку при наличии более 100 виртуальных машин, но в будущем планируется добавить проверку.
 
 В следующих примерах включается защита для элемента V2VM с помощью политики NewPolicy. Примеры отличаются в зависимости от того, зашифрована ли виртуальная машина и какой у нее тип шифрования.
 

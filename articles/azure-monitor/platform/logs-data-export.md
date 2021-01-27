@@ -7,18 +7,18 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 4ae69ddeb46d484a64edc4ccabfa6740b36c4264
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: bb4987550e4962ba044e0a6aafbfd00145319e94
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98663270"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804947"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
 
 ## <a name="overview"></a>Обзор
-После настройки экспорта данных для рабочей области Log Analytics все новые данные, отправляемые в выбранные таблицы в рабочей области, автоматически экспортируются в учетную запись хранения каждый час или в концентратор событий в ближайшем режиме реального времени.
+После настройки экспорта данных для рабочей области Log Analytics все новые данные, отправляемые в выбранные таблицы в рабочей области, автоматически экспортируются в вашу учетную запись хранения или в концентратор событий практически в реальном времени.
 
 ![Общие сведения о экспорте данных](media/logs-data-export/data-export-overview.png)
 
@@ -67,7 +67,7 @@ Log Analytics экспорт данных рабочей области непр
 ## <a name="export-destinations"></a>Экспорт назначений
 
 ### <a name="storage-account"></a>Учетная запись хранения
-Данные отправляются в учетные записи хранения каждый час. Конфигурация экспорта данных создает контейнер для каждой таблицы в учетной записи хранения с именем *, за которым следует имя таблицы* . Например, таблица *SecurityEvent* будет отправлена в контейнер с именем *AM-SecurityEvent*.
+Данные отправляются в учетные записи хранения практически в реальном времени по мере достижения Azure Monitor. Конфигурация экспорта данных создает контейнер для каждой таблицы в учетной записи хранения с именем *, за которым следует имя таблицы* . Например, таблица *SecurityEvent* будет отправлена в контейнер с именем *AM-SecurityEvent*.
 
 Путь к BLOB-объекту учетной записи хранения — *воркспацересаурцеид =/субскриптионс/субскриптион-ИД/ресаурцеграупс/ \<resource-group\> /провидерс/Микрософт.оператионалинсигхтс/воркспацес/ \<workspace\> /y = \<four-digit numeric year\> /m = \<two-digit numeric month\> /d = \<two-digit numeric day\> /h = \<two-digit 24-hour clock hour\> /m = 00/PT1H.json*. Так как добавление больших двоичных объектов ограничено 50 000 записью в хранилище, количество экспортируемых больших двоичных объектов может расширяться, если число добавлений велико. Шаблон именования для больших двоичных объектов в таком случае будет PT1H_ #. JSON, где # — добавочное число больших двоичных объектов.
 
@@ -84,7 +84,7 @@ Log Analytics экспорт данных может записывать Доб
 1. SKU концентратора событий "базовый" поддерживает более низкий [предел](../../event-hubs/event-hubs-quotas.md#basic-vs-standard-tiers) размера событий, и некоторые журналы в рабочей области могут превыситься и быть удалены. В качестве назначения экспорта рекомендуется использовать концентратор событий "Стандартный" или "выделенный".
 2. Объем экспортированных данных часто увеличивается со временем, а масштаб концентратора событий должен быть увеличен для обработки больших скоростей передачи и предотвращения ситуаций регулирования и задержки данных. Для автоматического масштабирования и увеличения количества единиц пропускной способности и удовлетворения потребностей в использовании следует использовать функцию автоматического расширения концентраторов событий. Дополнительные сведения см. в статье [Автоматическое масштабирование единиц пропускной способности концентраторов событий Azure](../../event-hubs/event-hubs-auto-inflate.md) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Ниже приведены предварительные требования, которые необходимо выполнить перед настройкой Log Analytics экспорта данных.
 
 - Учетная запись хранения и концентратор событий уже должны быть созданы и должны находиться в том же регионе, что и Рабочая область Log Analytics. Если вам нужно реплицировать данные в другие учетные записи хранения, можно использовать любые [параметры избыточности хранилища Azure](../../storage/common/storage-redundancy.md).  
@@ -123,7 +123,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -405,7 +405,7 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -429,7 +429,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -437,7 +437,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -484,7 +484,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -508,7 +508,7 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -516,7 +516,7 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -540,7 +540,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Н/Д
+Недоступно
 
 ---
 
@@ -556,61 +556,61 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 | Таблица | Ограничения |
 |:---|:---|
-| ааддомаинсервицесаккаунтлогон | |
+| AADDomainServicesAccountLogon | |
 | ааддомаинсервицесаккаунтманажемент | |
-| ааддомаинсервицесдиректорисервицеакцесс | |
+| AADDomainServicesDirectoryServiceAccess | |
 | ааддомаинсервицеслогонлогофф | |
 | ааддомаинсервицесполицичанже | |
-| ааддомаинсервицеспривилежеусе | |
-| аадманажедидентитисигнинлогс | |
-| ааднонинтерактивеусерсигнинлогс | |
-| аадпровисионинглогс | |
-| аадсервицепринЦипалсигнинлогс | |
-| адассессментрекоммендатион | |
+| AADDomainServicesPrivilegeUse | |
+| AADManagedIdentitySignInLogs | |
+| AADNonInteractiveUserSignInLogs | |
+| AADProvisioningLogs | |
+| AADServicePrincipalSignInLogs | |
+| ADAssessmentRecommendation | |
 | адфактивитирун | |
 | адфпипелинерун | |
 | адфтригжеррун | |
-| адрепликатионресулт | |
+| ADReplicationResult | |
 | адсекуритяссессментрекоммендатион | |
-| адтдигиталтвинсоператион | |
-| адтевентраутесоператион | |
-| адтмоделсоператион | |
-| адткуерйоператион | |
-| адкскомманд | |
-| адкскуери | |
-| аегделиверифаилурелогс | |
-| аегпублишфаилурелогс | |
+| ADTDigitalTwinsOperation | |
+| ADTEventRoutesOperation | |
+| ADTModelsOperation | |
+| ADTQueryOperation | |
+| ADXCommand | |
+| ADXQuery | |
+| AegDeliveryFailureLogs | |
+| AegPublishFailureLogs | |
 | Предупреждение |Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
 | Аномалии | |
 | апиманажементгатевайлогс | |
 | аппцентереррор | |
-| аппплатформсистемлогс | |
-| аппсервицеапплогс | |
-| аппсервицеаудитлогс | |
-| аппсервицеконсолелогс | |
-| аппсервицефилеаудитлогс | |
-| аппсервицехттплогс | |
-| аппсервицеипсекаудитлогс | |
-| аппсервицеплатформлогс | |
+| AppPlatformSystemLogs | |
+| AppServiceAppLogs | |
+| AppServiceAuditLogs | |
+| AppServiceConsoleLogs | |
+| AppServiceFileAuditLogs | |
+| AppServiceHTTPLogs | |
+| AppServiceIPSecAuditLogs | |
+| AppServicePlatformLogs | |
 | AuditLogs | |
 | аутоскаливалуатионслог | |
 | аутоскалескалеактионслог | |
 | AWSCloudTrail | |
 | азуреассессментрекоммендатион | |
-| азуредевопсаудитинг | |
-| бехавиораналитикс | |
-| блоккчаинаппликатионлог | |
-| блоккчаинпроксилог | |
-| блоккчаинпроксилог | |
+| AzureDevOpsAuditing | |
+| BehaviorAnalytics | |
+| BlockchainApplicationLog | |
+| BlockchainProxyLog | |
+| BlockchainProxyLog | |
 | CommonSecurityLog | |
 | CommonSecurityLog | |
 | ComputerGroup | |
 | ConfigurationData | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
 | ContainerImageInventory | |
 | ContainerInventory | |
-| контаинерлог | |
-| контаинернодеинвентори | |
-| контаинерсервицелог | |
+| ContainerLog | |
+| ContainerNodeInventory | |
+| ContainerServiceLog | |
 | кореазуребаккуп | |
 | датабрикксаккаунтс | |
 | датабрикксклустерс | |
@@ -623,65 +623,65 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | датабриккссш | |
 | датабрикксворкспаце | |
 | DnsEvents | |
-| днсинвентори | |
+| DnsInventory | |
 | Dynamics365Activity | |
 | Событие | Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
-| ексчанжеассессментрекоммендатион | |
-| фаилединжестион | |
-| функтионапплогс | |
-| хдинсигхтамбариклустералертс | |
-| хдинсигхтамбарисистемметрикс | |
-| хдинсигхтгатевайаудитлогс | |
-| хдинсигхсадупандярнлогс | |
-| хдинсигхсадупандярнметрикс | |
-| хдинсигхсбаселогс | |
-| хдинсигхсбасеметрикс | |
+| ExchangeAssessmentRecommendation | |
+| FailedIngestion | |
+| FunctionAppLogs | |
+| HDInsightAmbariClusterAlerts | |
+| HDInsightAmbariSystemMetrics | |
+| HDInsightGatewayAuditLogs | |
+| HDInsightHadoopAndYarnLogs | |
+| HDInsightHadoopAndYarnMetrics | |
+| HDInsightHBaseLogs | |
+| HDInsightHBaseMetrics | |
 | хдинсигхсивеандллаплогссампле | |
-| хдинсигхткафкалогс | |
-| хдинсигхткафкаметрикс | |
-| хдинсигхтузиелогс | |
-| хдинсигхтсекуритилогс | |
-| хдинсигхтспаркаппликатионевентс | |
-| хдинсигхтспаркблоккманажеревентс | |
-| хдинсигхтспаркенвиронментевентс | |
+| HDInsightKafkaLogs | |
+| HDInsightKafkaMetrics | |
+| HDInsightOozieLogs | |
+| HDInsightSecurityLogs | |
+| HDInsightSparkApplicationEvents | |
+| HDInsightSparkBlockManagerEvents | |
+| HDInsightSparkEnvironmentEvents | |
 | хдинсигхтспаркевентслог | |
-| хдинсигхтспаркексекуторевентс | |
-| хдинсигхтспаркекстраевентс | |
-| хдинсигхтспаркжобевентс | |
-| хдинсигхтспарклогс | |
-| хдинсигхтспарксклексекутионевентс | |
-| хдинсигхтспаркстажеевентс | |
-| хдинсигхтспаркстажетаскаккумулаблес | |
-| хдинсигхтспарктаскевентс | |
-| хдинсигхтстормлогс | |
-| хдинсигхтстормметрикс | |
-| хдинсигхтстормтопологиметрикс | |
+| HDInsightSparkExecutorEvents | |
+| HDInsightSparkExtraEvents | |
+| HDInsightSparkJobEvents | |
+| HDInsightSparkLogs | |
+| HDInsightSparkSQLExecutionEvents | |
+| HDInsightSparkStageEvents | |
+| HDInsightSparkStageTaskAccumulables | |
+| HDInsightSparkTaskEvents | |
+| HDInsightStormLogs | |
+| HDInsightStormMetrics | |
+| HDInsightStormTopologyMetrics | |
 | Пульс | |
-| хунтингбукмарк | |
+| HuntingBookmark | |
 | InsightsMetrics | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эта часть в настоящее время отсутствует в экспорте. |
 | интунеаудитлогс | |
-| интунедевицекомплианцеорг | |
-| интунеоператионаллогс | |
-| кубивентс | |
-| кубехеалс | |
-| кубемонажентевентс | |
-| кубенодеинвентори | |
-| кубеподинвентори | |
-| кубесервицес | |
-| кубесервицес | |
-| лакуерилогс | |
+| IntuneDeviceComplianceOrg | |
+| IntuneOperationalLogs | |
+| KubeEvents | |
+| KubeHealth | |
+| KubeMonAgentEvents | |
+| KubeNodeInventory | |
+| KubePodInventory | |
+| KubeServices | |
+| KubeServices | |
+| LAQueryLogs | |
 | McasShadowItReporting | |
-| микрософтазуребастионаудитлогс | |
-| микрософтдаташаререцеиведснапшотлог | |
-| микрософтдаташаресентснапшотлог | |
-| микрософтдаташарешарелог | |
-| микрософсеалскареаписаудитлогс | |
-| нвконнектионмонитордестинатионлистенерресулт | |
-| нвконнектионмониторднсресулт | |
-| нвконнектионмониторпасресулт | |
-| нвконнектионмониторпасресулт | |
-| нвконнектионмонитортестресулт | |
-| нвконнектионмонитортестресулт | |
+| MicrosoftAzureBastionAuditLogs | |
+| MicrosoftDataShareReceivedSnapshotLog | |
+| MicrosoftDataShareSentSnapshotLog | |
+| MicrosoftDataShareShareLog | |
+| MicrosoftHealthcareApisAuditLogs | |
+| NWConnectionMonitorDestinationListenerResult | |
+| NWConnectionMonitorDNSResult | |
+| NWConnectionMonitorPathResult | |
+| NWConnectionMonitorPathResult | |
+| NWConnectionMonitorTestResult | |
+| NWConnectionMonitorTestResult | |
 | OfficeActivity | Частичная поддержка. Некоторые данные, принимаемые через веб-перехватчики из Office 365 в Log Analytics. Эти данные в настоящее время не экспортируются. |
 | Операция | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
 | Perf | Частичная поддержка. В настоящее время поддерживаются только данные о производительности Windows. Данные производительности Linux в настоящее время не экспортируются. |
@@ -693,41 +693,41 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 | SecurityBaselineSummary | |
 | секуритидетектион | |
 | SecurityEvent | |
-| секуритинЦидент | |
+| SecurityIncident | |
 | секуритиотравевент | |
-| секуритинестедрекоммендатион | |
+| SecurityNestedRecommendation | |
 | секуритирекоммендатион | |
 | сфбассессментрекоммендатион | |
 | сфбонлинеассессментрекоммендатион | |
 | шарепоинтонлинеассессментрекоммендатион | |
-| сигналрсервицедиагностиклогс | |
+| SignalRServiceDiagnosticLogs | |
 | SigninLogs | |
 | спассессментрекоммендатион | |
-| склассессментрекоммендатион | |
-| сукцеедединжестион | |
-| синапсегатевайевентс | |
-| синапсербацевентс | |
+| SQLAssessmentRecommendation | |
+| SucceededIngestion | |
+| SynapseGatewayEvents | |
+| SynapseRBACEvents | |
 | Системный журнал | Частичная поддержка. Некоторые данные из этой таблицы принимаются через учетную запись хранения. Эти данные в настоящее время не экспортируются. |
 | ThreatIntelligenceIndicator | |
 | Update | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
 | UpdateRunProgress | |
 | UpdateSummary | |
 | Использование | |
-| усеракцессаналитикс | |
-| усерпираналитикс | |
-| Списка воспроизведения | |
-| виндовсевент | |
+| UserAccessAnalytics | |
+| UserPeerAnalytics | |
+| Watchlist | |
+| WindowsEvent | |
 | WindowsFirewall | |
 | Данные передачи | Частичная поддержка. Некоторые данные принимаются через внутренние службы, которые не поддерживаются для экспорта. Эти данные в настоящее время не экспортируются. |
 | ворклоадмониторингперф | |
-| ввдаженсеалсстатус | |
-| ввдчеккпоинтс | |
-| ввдконнектионс | |
-| ввдеррорс | |
-| ввдфидс | |
-| ввдманажемент | |
+| WVDAgentHealthStatus | |
+| WVDCheckpoints | |
+| WVDConnections | |
+| WVDErrors | |
+| WVDFeeds | |
+| WVDManagement | |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запросите экспортированные данные из обозреватель данных Azure](azure-data-explorer-query-storage.md).

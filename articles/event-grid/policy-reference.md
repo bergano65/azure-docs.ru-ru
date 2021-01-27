@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Сетки событий Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Сетки событий Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 36f86cc1291e49796c0b6edcb8e955b13bca3ef8
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 12e67d2212acb1de0e67eaec8c915e505d5594f9
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703541"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805959"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-event-grid"></a>Встроенные определения в Политике Azure для Сетки событий Azure
 

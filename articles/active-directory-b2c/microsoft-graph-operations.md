@@ -12,18 +12,18 @@ ms.date: 01/21/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1dc5b8dc8930d75456f307324ef97bd60e78eca9
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 96772020e70aeb32fa1a8ae18bf3818396887877
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98660163"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805233"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Управление Azure AD B2C с помощью Microsoft Graph
 
 Microsoft Graph позволяет управлять ресурсами в каталоге Azure AD B2C. Следующие операции API Microsoft Graph поддерживаются для управления Azure AD B2C ресурсами, включая пользователей, поставщиков удостоверений, потоки пользователей, пользовательские политики и ключи политики. Каждая ссылка в следующих разделах предназначена для соответствующей страницы в справочнике по Microsoft Graph API для этой операции. 
 
-## <a name="perquisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать MS API Graph и взаимодействовать с ресурсами в клиенте Azure AD B2C, необходима регистрация приложения, предоставляющая разрешения на это. Выполните действия, описанные в статье [управление Azure AD B2C с Microsoft Graph](microsoft-graph-get-started.md) , чтобы создать регистрацию приложения, которую может использовать приложение управления. 
 
@@ -40,7 +40,7 @@ Microsoft Graph позволяет управлять ресурсами в ка
 - [Добавление](/graph/api/authentication-post-phonemethods)
 - [Получить](/graph/api/b2cauthenticationmethodspolicy-get)
 - [Обновление](/graph/api/b2cauthenticationmethodspolicy-update)
-- [Удалить](/graph/api/phoneauthenticationmethod-delete)
+- [Удаление](/graph/api/phoneauthenticationmethod-delete)
 
 Дополнительные сведения об управлении номером телефона для входа пользователя см. в разделе [B2C Authentication Methods](/graph/api/resources/b2cauthenticationmethodspolicy).
 

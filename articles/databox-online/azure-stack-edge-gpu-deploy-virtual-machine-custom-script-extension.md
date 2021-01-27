@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/05/2021
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: d601c6191da9d555e54c1d58c122420510d288fc
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 8b233211f47250d4742d35cd0782cdd241839496
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955558"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98804861"
 ---
 # <a name="deploy-custom-script-extension-on-vms-running-on-your-azure-stack-edge-pro-device"></a>Развертывание расширения настраиваемых скриптов на виртуальных машинах, работающих на устройстве Azure Stack ребра Pro
 
@@ -35,7 +35,7 @@ ms.locfileid: "97955558"
 
 | Distribution | Версия |
 |---|---|
-| Windows Server 2019 | Основные сведения |
+| Windows Server 2019 | Основные сведения |
 | Windows Server 2016 | Основные сведения |
 
 #### <a name="supported-os-for-custom-script-extension-on-linux"></a>Поддерживаемая ОС для расширения пользовательских сценариев в Linux
@@ -62,13 +62,13 @@ If your script is on a local server, then you may still need additional firewall
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. [Скачайте шаблоны виртуальных машин и файлы параметров](https://aka.ms/ase-vm-templates) на клиентский компьютер. Распакуйте его в каталог, который будет использоваться в качестве рабочего каталога.
+1. [Скачайте шаблоны виртуальных машин и файлы параметров](https://aka.ms/ase-vm-templates) на клиентский компьютер. Распакуйте загружаемый файл в каталог, который будет использоваться в качестве рабочего каталога.
 
 1. На устройстве должна быть создана и развернута виртуальная машина. Чтобы создать виртуальные машины, выполните все действия, описанные в статье [развертывание виртуальной машины на Azure Stack пограничных Pro с помощью шаблонов](azure-stack-edge-gpu-deploy-virtual-machine-templates.md).
 
-    Если вам нужно скачать сценарий извне, например из GitHub или службы хранилища Azure, при настройке среды выполнения вычислений включите порт, подключенный к Интернету, для вычислений. Это позволяет скачать скрипт.
+    Если вам нужно скачать сценарий, например из GitHub или службы хранилища Azure извне, во время настройки вычислений в сети включите порт, подключенный к Интернету для вычислений. Это позволяет скачать скрипт.
 
-    Ниже приведен пример, в котором порт 2 был подключен к Интернету и был использован для включения вычислений в сети. Если вы определили, что на предыдущем шаге Kubernetes не требуется, можно пропустить назначение IP-адреса и внешней службы для узла Kubernetes.    
+    В следующем примере порт 2 был подключен к Интернету и использовался для включения вычислений в сети. Если вы определили, что Kubernetes не требуется на предыдущем шаге, можно пропустить назначение IP-адреса и внешней службы для узла Kubernetes.
 
     ![Включить параметры вычислений для порта, подключенного к Интернету](media/azure-stack-edge-gpu-deploy-gpu-virtual-machine/enable-compute-network-1.png)
 
@@ -115,7 +115,7 @@ If your script is on a local server, then you may still need additional firewall
 ```
 Укажите имя виртуальной машины, имя расширения и команду, которую требуется выполнить.
 
-Ниже приведен пример файла параметров, который использовался в этой статье. 
+Ниже приведен пример файла параметров, который использовался в этой статье.
 
 ```powershell
 {
@@ -158,7 +158,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile $tem
 > [!NOTE]
 > Развертывание расширения — это длительное задание, выполнение которого занимает около 10 минут.
 
-Пример выходных данных:
+Ниже приведен пример выходных данных:
 
 ```powershell
 PS C:\WINDOWS\system32> $templateFile = "C:\12-09-2020\ExtensionTemplates\addCSExtensiontoVM.json"
@@ -196,7 +196,7 @@ PS C:\WINDOWS\system32>
 ```powershell
 Get-AzureRmVMExtension -ResourceGroupName <Name of resource group> -VMName <Name of VM> -Name <Name of the extension>
 ```
-Пример выходных данных:
+Ниже приведен пример выходных данных:
 
 ```powershell
 PS C:\WINDOWS\system32> Get-AzureRmVMExtension -ResourceGroupName myasegpuvm1 -VMName VM5 -Name CustomScriptExtension
@@ -293,7 +293,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile $tem
 > [!NOTE]
 > Развертывание расширения — это длительное задание, выполнение которого занимает около 10 минут.
 
-Пример выходных данных:
+Ниже приведен пример выходных данных:
 
 ```powershell
 PS C:\WINDOWS\system32> $templateFile = "C:\12-09-2020\ExtensionTemplates\addCSExtensionToVM.json"
@@ -342,7 +342,7 @@ Administrator@VM6:
 ```powershell
 Get-AzureRmVMExtension -ResourceGroupName myResourceGroup -VMName <VM Name> -Name <Extension Name>
 ```
-Пример выходных данных: 
+Ниже приведен пример выходных данных: 
 
 ```powershell
 PS C:\WINDOWS\system32> Get-AzureRmVMExtension -ResourceGroupName myasegpuvm1 -VMName VM5 -Name CustomScriptExtension
@@ -381,7 +381,7 @@ PS C:\WINDOWS\system32>
 
 `Remove-AzureRmVMExtension -ResourceGroupName <Resource group name> -VMName <VM name> -Name <Extension name>`
 
-Пример выходных данных:
+Ниже приведен пример выходных данных:
 
 ```powershell
 PS C:\WINDOWS\system32> Remove-AzureRmVMExtension -ResourceGroupName myasegpuvm1 -VMName VM6 -Name LinuxCustomScriptExtension
@@ -396,4 +396,4 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

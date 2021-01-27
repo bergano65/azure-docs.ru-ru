@@ -1,5 +1,5 @@
 ---
-title: Просмотр данных в хранилище BLOB-объектов Azure с помощью Pandas — Процесс обработки и анализа данных группы
+title: Просмотр данных в хранилище BLOB-объектов Azure с помощью Pandas процесса обработки и анализа данных
 description: Как исследовать данные, которые хранятся в контейнере BLOB-объектов Azure, с помощью пакета Python Pandas.
 services: machine-learning
 author: marktab
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 3d80ff9f5f96bbc642aed6598c86cb682d606695
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 855998b887f1d446ee8d196ff4628e066cb5d675
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410680"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805674"
 ---
 # <a name="explore-data-in-azure-blob-storage-with-pandas"></a>Просмотр данных в хранилище BLOB-объектов Azure с помощью Pandas
 
@@ -28,7 +28,7 @@ ms.locfileid: "94410680"
 В этой статье предполагается, что вы:
 
 * Создали учетную запись хранения Azure. Инструкции см. в разделе [Создание учетной записи хранения](../../storage/common/storage-account-create.md).
-* Сохранили данные в учетной записи хранилища больших двоичных объектов Azure. Инструкции можно найти в статье [Перемещение данных в службу хранилища Azure и обратно](../../storage/common/storage-choose-data-transfer-solution.md)
+* Сохранение данных в учетной записи хранилища BLOB-объектов Azure. Инструкции можно найти в статье [Перемещение данных в службу хранилища Azure и обратно](../../storage/common/storage-choose-data-transfer-solution.md)
 
 ## <a name="load-the-data-into-a-pandas-dataframe"></a>Загрузка данных в кадр данных Pandas
 Для просмотра набора данных и управления им набор необходимо сначала скачать из источника больших двоичных объектов в локальный файл, который в последствии можно загрузить в кадр данных Pandas. Ниже приведен порядок выполнения данной процедуры.
@@ -120,7 +120,7 @@ ms.locfileid: "94410680"
         {'<column_name>': dataframe_blobdata['<column_name>'].mode()[0]})
     ```
 
-1. Создайте **гистограмму** , используя переменное количество ячеек, чтобы построить распределение переменной.
+1. Создайте **гистограмму**, используя переменное количество ячеек, чтобы построить распределение переменной.
 
     ```python
     dataframe_blobdata['<column_name>'].value_counts().plot(kind='bar')
