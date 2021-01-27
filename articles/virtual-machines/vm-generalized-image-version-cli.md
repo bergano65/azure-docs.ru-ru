@@ -9,16 +9,16 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 090b041c605c2328add8b46a97b6f151bae268c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec589848625e1114dedd8c58b41f7ecbc991f311
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87501088"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881980"
 ---
 # <a name="create-a-vm-from-a-generalized-image-version-using-the-cli"></a>Создание виртуальной машины из универсальной версии образа с помощью интерфейса командной строки
 
-Создайте виртуальную машину из [универсальной версии образа](./linux/shared-image-galleries.md#generalized-and-specialized-images) , хранящейся в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью специализированного образа, см. раздел [Создание виртуальной машины на основе специализированного образа](vm-specialized-image-version-powershell.md). 
+Создайте виртуальную машину из [универсальной версии образа](./shared-image-galleries.md#generalized-and-specialized-images) , хранящейся в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью специализированного образа, см. раздел [Создание виртуальной машины на основе специализированного образа](vm-specialized-image-version-powershell.md). 
 
 
 ## <a name="get-the-image-id"></a>Получение идентификатора образа
@@ -59,4 +59,4 @@ az vm create\
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью [построителя образов Azure (Предварительная версия)](./linux/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md). 
+С помощью [построителя образов Azure (Предварительная версия)](./image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md).

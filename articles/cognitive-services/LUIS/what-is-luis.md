@@ -7,12 +7,12 @@ ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 11/23/2020
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: fb36ab8a86a89d6383f93ad58c23956472841de2
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: f21a2cc8218dde8b0cf7203a1fcb1f5cfb9424a2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95539266"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790873"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -66,7 +66,7 @@ ms.locfileid: "95539266"
 |`When does your store open?`|StoreHoursAndLocation|открыт|
 |`Schedule a meeting at 1pm with Bob in Distribution`|ScheduleMeeting|13:00, Боб|
 
-Создайте модель с помощью API [разработки](https://go.microsoft.com/fwlink/?linkid=2092087 "Разработка"), **[портала LUIS](https://www.luis.ai "Портал LUIS")** или обоих этих средств. Узнайте больше о том, как выполнить сборку с помощью [портала](get-started-portal-build-app.md "портал") и [клиентских библиотек пакета SDK](azure-sdk-quickstart.md "Клиентские библиотеки пакета SDK").
+Создайте модель с помощью API [разработки](https://go.microsoft.com/fwlink/?linkid=2092087 "Разработка"), **[портала LUIS](https://www.luis.ai "Портал LUIS")** или обоих этих средств. Узнайте больше о том, как выполнить сборку с помощью [портала](get-started-portal-build-app.md "портал") и [клиентских библиотек пакета SDK](./client-libraries-rest-api.md?pivots=rest-api "Клиентские библиотеки пакета SDK").
 
 ## <a name="step-2-get-the-query-prediction"></a>Шаг 2. Получение прогноза запросов
 
@@ -128,7 +128,7 @@ LUIS предоставляет инструменты, функцию упра�
 
 ## <a name="learn-with-the-quickstarts"></a>Изучение по кратким руководствам
 
-Узнайте о LUIS из практичных кратких руководств, воспользовавшись [порталом](get-started-portal-build-app.md "портал") и [клиентскими библиотеками SDK](azure-sdk-quickstart.md "Клиентские библиотеки пакета SDK").
+Узнайте о LUIS из практичных кратких руководств, воспользовавшись [порталом](get-started-portal-build-app.md "портал") и [клиентскими библиотеками SDK](./client-libraries-rest-api.md?pivots=rest-api "Клиентские библиотеки пакета SDK").
 
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>Развертывание в локальной среде с помощью контейнеров Docker

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/17/2021
-ms.openlocfilehash: aede7e3dec886d6a6213c64b386cacd725dd74f5
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: 1b2e914057aa72934524cc4977e3d2292394d0b7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562800"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882075"
 ---
 # <a name="how-to-manually-fix-sync-problems"></a>Устранение проблем с синхронизацией вручную
 
@@ -22,16 +22,16 @@ Azure Monitor может подключаться к поставщикам уп
 
 1. Найдите решение в верхнем баннере поиска, а затем выберите соответствующие решения.
 
-    ![Снимок экрана, на котором показан верхний баннер поиска и где можно выбрать соответствующие решения.](media/itsmc-resync-servicenow/solution-search-8bit.png)
+    ![Снимок экрана, на котором показан верхний баннер поиска и где можно выбрать соответствующие решения.](media/itsmc-resync-servicenow/solution-search-8-bit.png)
 
 1. На экране решения выберите "выделить все" в фильтре подписки, а затем отфильтруйте по "ServiceDesk".
 
-    ![Снимок экрана, на котором показано, где выбрать пункт Выбрать все и где фильтровать по ServiceDesk.](media/itsmc-resync-servicenow/solutions-list-8bit.png)
+    ![Снимок экрана, на котором показано, где выбрать пункт Выбрать все и где фильтровать по ServiceDesk.](media/itsmc-resync-servicenow/solutions-list-8-bit.png)
 
 1. Выберите решение для подключения ITSM.
 1. Выберите подключение ITSM в левом баннере.
 
-    ![Снимок экрана, на котором показано, где можно выбрать подключения ITSM.](media/itsmc-resync-servicenow/itsm-connector-8bit.png)
+    ![Снимок экрана, на котором показано, где можно выбрать подключения ITSM.](media/itsmc-resync-servicenow/itsm-connector-8-bit.png)
 
 1. Выберите каждый соединитель из списка. 
     1. Щелкните имя соединителя, чтобы настроить его.
@@ -41,10 +41,10 @@ Azure Monitor может подключаться к поставщикам уп
 
     1. Щелкните "синхронизировать"
 
-       ![Снимок экрана, на котором наделена кнопка "синхронизировать".](media/itsmc-resync-servicenow/resync-8bit2.png)
+       ![Снимок экрана, на котором наделена кнопка "синхронизировать".](media/itsmc-resync-servicenow/resync-8-bit-2.png)
 
     1. Щелкните "Сохранить"
 
-        ![Новое подключение](media/itsmc-resync-servicenow/save-8bit.png)
+        ![Новое подключение](media/itsmc-resync-servicenow/save-8-bit.png)
 
 е)    Просмотрите уведомления, чтобы узнать, запущен ли процесс.

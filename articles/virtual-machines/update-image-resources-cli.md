@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6fcd7ba0e3582a614acab46bffd5f76e5baa982f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6099afc82e76ed28e8557ac0eee3e64cb292a715
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87496361"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882014"
 ---
 # <a name="list-update-and-delete-image-resources"></a>Перечисление, обновление и удаление ресурсов изображений 
 
@@ -27,4 +27,4 @@ ms.locfileid: "87496361"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью [построителя образов Azure (Предварительная версия)](./linux/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md). 
+С помощью [построителя образов Azure (Предварительная версия)](./image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](./linux/image-builder-gallery-update-image-version.md).

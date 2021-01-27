@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 33987be39258adc74cf4f88dbb0544f7026f6086
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: d59826ba0e53c4b4146c13b354a85a124ac29b23
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183359"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738107"
 ---
 # <a name="whats-new-in-computer-vision"></a>Новые возможности Компьютерного зрения
 
@@ -91,7 +91,7 @@ ms.locfileid: "98183359"
 * Оценка достоверности каждого извлеченного слова.
 * Поддержка испанского и английского языков с дополнительным языковым параметром.
 
-Выполните указания [Краткого руководства по извлечению текста](./quickstarts/csharp-hand-text.md?tabs=version-3), чтобы начать использовать API 3.0.
+Выполните указания [Краткого руководства по извлечению текста](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/ComputerVision/REST/CSharp-hand-text.md?tabs=version-3), чтобы начать использовать API 3.0.
 
 ## <a name="cognitive-service-updates"></a>Обновления Cognitive Service
 
