@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 878e6f11645a6478c0d536e9d6d6dac4518c5349
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 7c5544ec5f89cfbf2451c19430a99b64825f90bc
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740969"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98872610"
 ---
 # <a name="set-up-a-development-environment-with-azure-databricks-and-automl-in-azure-machine-learning"></a>Настройка среды разработки с помощью Azure Databricks и Аутомл в Машинное обучение Azure 
 
@@ -48,7 +48,7 @@ Azure Databricks интегрируется с Машинное обучение
 
 **Создание кластера занимает несколько минут.**
 
-Используйте следующие параметры:
+Используйте следующие параметры.
 
 | Параметр |Область применения| Значение |
 |----|---|---|
@@ -119,13 +119,13 @@ Azure Databricks интегрируется с Машинное обучение
 + Импортируйте эти примеры непосредственно из рабочей области. См. ниже: ![ выберите Импорт ](./media/how-to-configure-environment/azure-db-screenshot.png)
  ![ панели импорта](./media/how-to-configure-environment/azure-db-import.png)
 
-+ Узнайте, как [создать конвейер с модулями обработки в качестве обучающего вычислений](how-to-create-your-first-pipeline.md).
++ Узнайте, как [создать конвейер с модулями обработки в качестве обучающего вычислений](./how-to-create-machine-learning-pipelines.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 * **Сбой при установке пакетов**
 
-    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример
+    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример.
     
     ```python
     psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0

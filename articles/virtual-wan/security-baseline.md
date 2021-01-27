@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/24/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 0f124c0b4af69338ad10f7247a4260b4a348beb5
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: a0acbe84a98bc63e5806d25241811c0a7591b897
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131208"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98872627"
 ---
 # <a name="azure-security-baseline-for-virtual-wan"></a>Базовый уровень безопасности Azure для виртуальной глобальной сети
 
@@ -22,7 +22,7 @@ ms.locfileid: "98131208"
 
 ## <a name="network-security"></a>Безопасность сети
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: безопасность сети](../security/benchmarks/security-controls-v2-network-security.md).*
 
 ### <a name="ns-1-implement-security-for-internal-traffic"></a>NS-1: реализация безопасности для внутреннего трафика
 
@@ -62,9 +62,9 @@ ms.locfileid: "98131208"
 
 Выберите Azure от атак DDoS Protection для защиты ресурсов от атак в виртуальных сетях Azure. Используйте центр безопасности Azure для обнаружения рисков, связанных с сетевыми ресурсами.
 
-- [Документация по брандмауэру Azure](/azure/firewall)
+- [Документация по брандмауэру Azure](../firewall/index.yml)
 
-- [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](/azure/virtual-network/manage-ddos-protection) 
+- [Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure](../ddos-protection/manage-ddos-protection.md) 
 
 - [Рекомендации Центра безопасности Azure](../security-center/recommendations-reference.md#recs-networking)
 
@@ -88,9 +88,9 @@ ms.locfileid: "98131208"
 
 - [Общие сведения и использование тегов служб](../virtual-network/service-tags-overview.md)
 
-- [Общие сведения и использование групп безопасности приложений](/azure/virtual-network/security-overview#application-security-groups)
+- [Общие сведения и использование групп безопасности приложений](../virtual-network/network-security-groups-overview.md#application-security-groups)
 
-- [Документация по брандмауэру Azure](/azure/firewall/)
+- [Документация по брандмауэру Azure](../firewall/index.yml)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -100,9 +100,9 @@ ms.locfileid: "98131208"
 
 **Рекомендации**. безопасные возможности DNS предоставляются для виртуальной глобальной сети с помощью брандмауэра Azure. Настройте брандмауэр Azure так, чтобы он действовал в качестве DNS-прокси, который станет посредником для DNS-запросов от клиентских виртуальных машин к DNS-серверу. Для настраиваемых конфигураций DNS-серверов включите прокси-сервер DNS, чтобы избежать несоответствия разрешений DNS, и включите фильтрацию полного доменного имени в правилах сети. 
 
-- [Документация по брандмауэру Azure](/azure/firewall/)
+- [Документация по брандмауэру Azure](../firewall/index.yml)
 
-- [Параметры DNS брандмауэра Azure](/azure/firewall/dns-settings)
+- [Параметры DNS брандмауэра Azure](../firewall/dns-settings.md)
 
 - [Использование брандмауэра Azure в качестве DNS-сервера пересылки с закрытой ссылкой](https://github.com/adstuart/azure-privatelink-dns-azurefirewall)
 
@@ -112,7 +112,7 @@ ms.locfileid: "98131208"
 
 ## <a name="identity-management"></a>Управление удостоверениями
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md).*
 
 ### <a name="im-1-standardize-azure-active-directory-as-the-central-identity-and-authentication-system"></a>IM-1: стандартизация Azure Active Directory в качестве централизованной системы идентификации и проверки подлинности
 
@@ -189,7 +189,7 @@ Azure AD рекомендует использовать следующие ср
 
 ## <a name="privileged-access"></a>Привилегированный доступ
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: привилегированный доступ](/azure/security/benchmarks/security-controls-v2-privileged-access).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: привилегированный доступ](../security/benchmarks/security-controls-v2-privileged-access.md).*
 
 ### <a name="pa-2-restrict-administrative-access-to-business-critical-systems"></a>PA-2: ограничение административного доступа к системам, критически важным для бизнеса
 
@@ -211,7 +211,7 @@ Azure AD рекомендует использовать следующие ср
 
 ## <a name="data-protection"></a>Защита данных
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: защита данных](/azure/security/benchmarks/security-controls-v2-data-protection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: защита данных](../security/benchmarks/security-controls-v2-data-protection.md).*
 
 ### <a name="dp-4-encrypt-sensitive-information-in-transit"></a>DP-4: шифрование конфиденциальной информации во время передачи
 
@@ -229,7 +229,7 @@ Azure AD рекомендует использовать следующие ср
 
 ## <a name="asset-management"></a>управление ресурсами.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1. Предоставление группе безопасности возможности просматривать угрозы безопасности для ресурсов
 
@@ -253,7 +253,7 @@ Azure AD рекомендует использовать следующие ср
 
 **Руководство**. применение тегов к ресурсам Azure, группам ресурсов и подпискам для логической организации их в таксономию. Каждый тег состоит из пары "имя — значение". Например, имя Environment и значение Production можно применить ко всем ресурсам в рабочей среде. Виртуальная глобальная сеть Azure также поддерживает развертывания ресурсов на основе Azure Resource Manager, с помощью которых можно экспортировать шаблоны ресурсов. 
 
-- [Руководство по именованию ресурсов и присвоению тегов](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
+- [Руководство по именованию ресурсов и присвоению тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 - [Управление инвентаризацией активов в центре безопасности Azure](../security-center/asset-inventory.md)
 
@@ -284,7 +284,7 @@ Azure AD рекомендует использовать следующие ср
 
 ## <a name="logging-and-threat-detection"></a>Ведение журналов и обнаружение угроз
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: ведение журнала и обнаружение угроз](../security/benchmarks/security-controls-v2-logging-threat-detection.md).*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: Включение обнаружения угроз для ресурсов Azure
 
@@ -337,7 +337,7 @@ Azure AD рекомендует использовать следующие ср
 
 - [Журналы и метрики виртуальной глобальной сети](logs-metrics.md)
 
-- [Журналы и метрики Брандмауэра Azure](/azure/firewall/logs-and-metrics)
+- [Журналы и метрики Брандмауэра Azure](../firewall/logs-and-metrics.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -368,11 +368,11 @@ Azure AD рекомендует использовать следующие ср
 
 - [Журналы и метрики виртуальной глобальной сети](logs-metrics.md)
 
-- [Журналы и метрики Брандмауэра Azure](/azure/firewall/logs-and-metrics)
+- [Журналы и метрики Брандмауэра Azure](../firewall/logs-and-metrics.md)
 
 Безопасность виртуальной глобальной сети Azure обеспечивается через брандмауэр Azure. 
 
-- [Документация по брандмауэру Azure](/azure/firewall/overview)
+- [Документация по брандмауэру Azure](../firewall/overview.md)
 
 **Мониторинг центра безопасности Azure**: Сейчас это недоступно
 
@@ -394,7 +394,7 @@ Azure AD рекомендует использовать следующие ср
 
 ## <a name="incident-response"></a>реагирование на инциденты.
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md).*
 
 ### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: подготовка — процесс обновления реагирования на инциденты для Azure
 
@@ -476,7 +476,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Оповещения безопасности в Центре безопасности Azure](../security-center/security-center-alerts-overview.md)
 
-- [использование тегов для упорядочения ресурсов в Azure](/azure/azure-resource-manager/resource-group-using-tags)
+- [использование тегов для упорядочения ресурсов в Azure](../azure-resource-manager/management/tag-resources.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -498,7 +498,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="posture-and-vulnerability-management"></a>Управление состоянием защиты и уязвимостью
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление состоянием защиты и уязвимостью](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md).*
 
 ### <a name="pv-8-conduct-regular-attack-simulation"></a>PV-8: регулярное моделирование атак
 
@@ -517,7 +517,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="endpoint-security"></a>Безопасность конечных точек
 
-*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность конечных точек](/azure/security/benchmarks/security-controls-v2-endpoint-security).*
+*Дополнительные сведения см. в статье о [производительности системы безопасности Azure: безопасность конечных точек](../security/benchmarks/security-controls-v2-endpoint-security.md).*
 
 ### <a name="es-1-use-endpoint-detection-and-response-edr"></a>ES-1. Использование обнаружения конечных точек и ответа (ЕДР)
 
@@ -535,7 +535,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="governance-and-strategy"></a>Система управления и стратегия
 
-*Дополнительные сведения см. в статье [Azure Security Benchmark: управление и стратегия](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
+*Дополнительные сведения см. в статье [Azure Security Benchmark: управление и стратегия](../security/benchmarks/security-controls-v2-governance-strategy.md).*
 
 ### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: определение стратегии управления ресурсами и защиты данных 
 
@@ -560,15 +560,15 @@ Azure Sentinel предоставляет широкие возможности 
 -   Соответствующие криптографические стандарты
 
 Дополнительные сведения см. в следующих ресурсах.
-- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Рекомендации по архитектуре безопасности Azure — хранилище, данные и шифрование](/azure/architecture/framework/security/storage-data-encryption?bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json)
 
 - [Основы безопасности Azure — безопасность, шифрование и хранение данных в Azure](../security/fundamentals/encryption-overview.md)
 
-- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Cloud Adoption Framework — рекомендации по защите и шифрованию данных в Azure](../security/fundamentals/data-encryption-best-practices.md?bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
-- [Azure Security Benchmark — управление ресурсами](/azure/security/benchmarks/security-controls-v2-asset-management)
+- [Azure Security Benchmark — управление ресурсами](../security/benchmarks/security-controls-v2-asset-management.md)
 
-- [Azure Security Benchmark — защита данных](/azure/security/benchmarks/security-controls-v2-data-protection)
+- [Azure Security Benchmark — защита данных](../security/benchmarks/security-controls-v2-data-protection.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -596,7 +596,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 **Инструкции**: непрерывно измеряйте и снижайте риски для отдельных ресурсов и сред, в которых они размещены. Определите приоритеты для важных ресурсов и областей, где существует высокий риск атак, таких как опубликованные приложения, точки входа в сеть и выхода из нее, конечные точки пользователя и администратора и т. д.
 
-- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
+- [Azure Security Benchmark — управление состоянием защиты и уязвимостью](../security/benchmarks/security-controls-v2-posture-vulnerability-management.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -637,7 +637,7 @@ Azure Sentinel предоставляет широкие возможности 
 Дополнительные сведения см. в следующих ресурсах.
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark — безопасность сети](/azure/security/benchmarks/security-controls-v2-network-security)
+- [Azure Security Benchmark — безопасность сети](../security/benchmarks/security-controls-v2-network-security.md)
 
 - [Обзор сетевой безопасности Azure](../security/fundamentals/network-overview.md)
 
@@ -665,9 +665,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — управление удостоверениями](/azure/security/benchmarks/security-controls-v2-identity-management)
+- [Azure Security Benchmark — управление удостоверениями](../security/benchmarks/security-controls-v2-identity-management.md)
 
-- [Azure Security Benchmark — привилегированный доступ](/azure/security/benchmarks//security-controls-v2-privileged-access)
+- [Azure Security Benchmark — привилегированный доступ](../security/benchmarks//security-controls-v2-privileged-access.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 11 — архитектура: единая стратегия обеспечения безопасности](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -699,9 +699,9 @@ Azure Sentinel предоставляет широкие возможности 
 
 Дополнительные сведения см. в следующих ресурсах.
 
-- [Azure Security Benchmark — ведение журнала и обнаружение угроз](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
+- [Azure Security Benchmark — ведение журнала и обнаружение угроз](../security/benchmarks/security-controls-v2-logging-threat-detection.md)
 
-- [Azure Security Benchmark — реагирование на инциденты](/azure/security/benchmarks/security-controls-v2-incident-response)
+- [Azure Security Benchmark — реагирование на инциденты](../security/benchmarks/security-controls-v2-incident-response.md)
 
 - [Рекомендации по обеспечению безопасности в Azure 4 — процесс: обновление процессов реагирования на инциденты для облака](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
@@ -715,5 +715,5 @@ Azure Sentinel предоставляет широкие возможности 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-- См. [Обзор Azure Security Benchmark версии 2](/azure/security/benchmarks/overview)
-- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).
+- См. [Обзор Azure Security Benchmark версии 2](../security/benchmarks/overview.md)
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

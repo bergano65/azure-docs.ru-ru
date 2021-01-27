@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python, data4ml
-ms.openlocfilehash: 8b73676adbb9aa12e6f3b42dd26bed94b22780a8
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 9e4722933ec224712c8d649c0d9d850a9ee3e322
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539888"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98872015"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -101,8 +101,8 @@ ms.locfileid: "98539888"
      + [автоматические эксперименты ML](how-to-use-automated-ml-for-ml-models.md)
      + [конструктор](tutorial-designer-automobile-price-train-score.md#import-data)
      + [Компьютеры](how-to-train-with-datasets.md)
-     + [Конвейеры Машинное обучение Azure](how-to-create-your-first-pipeline.md)
-+ Доступ к наборам данных для оценки с помощью [вывода пакетов](./tutorial-pipeline-batch-scoring-classification.md) в [конвейерах машинного обучения](how-to-create-your-first-pipeline.md).
+     + [Конвейеры Машинное обучение Azure](./how-to-create-machine-learning-pipelines.md)
++ Доступ к наборам данных для оценки с помощью [вывода пакетов](./tutorial-pipeline-batch-scoring-classification.md) в [конвейерах машинного обучения](./how-to-create-machine-learning-pipelines.md).
 + Настройте монитор набора данных для обнаружения [несмещенных данных](#drift) .
 
 <a name="label"></a>

@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.subservice: workloads
 ms.date: 4/17/2020
 ms.author: jencook
-ms.openlocfilehash: 9df3d9771029e6d72e9d0092a129cddc27be6cd7
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 38bf12b46002e767bba50cf833637e2c8ace078f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564112"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98872338"
 ---
 # <a name="frequently-asked-questions-for-azure-confidential-computing"></a>Вопросы и ответы о конфиденциальных вычислениях Azure
 
@@ -44,6 +44,14 @@ ms.locfileid: "94564112"
 **Не удается найти виртуальные машины DCsv2 в средстве выбора размера на портале.**
 
 Убедитесь, что выбран [доступный регион](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines). Также убедитесь, что в средстве выбора размера выбрано "Очистить все фильтры". 
+
+**Можно ли включить ускоренную сеть с помощью конфиденциальных вычислений в Azure?**
+
+ Нет. Ускоренная сеть не поддерживается на виртуальных машинах DC-Series и DCsv2-Series. Ускоренная сеть не может быть включена для любых конфиденциальных вычислительных ресурсов развертывания виртуальных машин или развертывания кластера службы Azure Kubernetes, работающих на конфиденциальных вычислениях.
+
+**Можно ли использовать выделенный узел Azure на этих компьютерах?**
+
+Да. Выделенный узел Azure поддерживает виртуальные машины серии DCsv2. Выделенный узел Azure предоставляет физический сервер с одним клиентом для выполнения виртуальных машин. Обычно пользователи используют выделенный узел Azure для обеспечения соответствия требованиям физической безопасности, целостности данных и мониторинга. 
 
 **Выводится следующее сообщение об ошибке развертывания шаблона Azure Resource Manager: "Operation could not be completed as it results in exceeding approved standard DcsV2 Family Cores Quota" (Операция не может быть выполнена, так как она приводит к превышению квоты на ядра для семейства Standard DcsV2)** .
 
