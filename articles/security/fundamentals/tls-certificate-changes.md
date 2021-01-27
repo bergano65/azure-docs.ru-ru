@@ -9,12 +9,12 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 11/10/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 4e64d866b5bd2f725db3be31d0fdd2f8663cfd7c
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: bb49523858f07e54887a67d9df68eb894e27ad34
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029699"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881254"
 ---
 # <a name="azure-tls-certificate-changes"></a>Изменения TLS-сертификатов Azure  
 
@@ -30,7 +30,7 @@ ms.locfileid: "96029699"
 - [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub) и [DPS](../../iot-dps/index.yml) будут связаны с корневым ЦС Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://techcommunity.microsoft.com/t5/internet-of-things/azure-iot-tls-changes-are-coming-and-why-you-should-care/ba-p/1658456)
 - [Хранилище Azure](../../storage/index.yml) будет связано с корневым ЦС Baltimore CyberTrust, но его промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://techcommunity.microsoft.com/t5/azure-storage/azure-storage-tls-changes-are-coming-and-why-you-care/ba-p/1705518)
 - [Кэш Azure для Redis](../../azure-cache-for-redis/index.yml) останется в КОРНЕВОМ центре сертификации Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](../../azure-cache-for-redis/cache-whats-new.md)
-- Служба метаданных экземпляров Azure останется в корневом центре сертификации Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://docs.microsoft.com/answers/questions/172717/action-required-for-attested-data-tls-with-azure-i.html)
+- Служба метаданных экземпляров Azure останется в корневом центре сертификации Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](/answers/questions/172717/action-required-for-attested-data-tls-with-azure-i.html)
 
 > [!IMPORTANT]
 > Возможно, клиентам потребуется обновить свои приложения после этого изменения, чтобы предотвратить сбои при попытке подключения к службам Azure.
@@ -89,6 +89,6 @@ TLS-сертификаты, используемые службами Azure, б�
     - http://ocsp&#46;msocsp&#46;com.
     - http://www&#46; Microsoft&#46;com/пкиопс
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас есть дополнительные вопросы, свяжитесь с нами через [службу поддержки](https://azure.microsoft.com/support/options/).

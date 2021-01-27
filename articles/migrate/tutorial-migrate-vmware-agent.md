@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: cdc22520852118c6af823b42600a2f540b89a10c
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 15bf8f4fde2128181664fa7b94f2479bac7ad5b9
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233803"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881523"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Миграция виртуальных машин VMware в Azure (на основе агента)
 
@@ -256,7 +256,7 @@ ms.locfileid: "98233803"
     - Double encryption with platform-managed and customer-managed keys (Двойное шифрование с помощью ключей, управляемых платформой и управляемых клиентом).
 
    > [!NOTE]
-   > Чтобы реплицировать виртуальные машины с помощью CMK, вам потребуется [создать набор шифрования дисков](https://go.microsoft.com/fwlink/?linkid=2151800) в целевой группе ресурсов. Объект набора шифрования дисков сопоставляет управляемые диски с Key Vault, где содержится CMK для использования в SSE.
+   > Чтобы реплицировать виртуальные машины с помощью CMK, вам потребуется [создать набор шифрования дисков](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) в целевой группе ресурсов. Объект набора шифрования дисков сопоставляет управляемые диски с Key Vault, где содержится CMK для использования в SSE.
   
 14. Для параметра **Преимущество гибридного использования Azure**
 

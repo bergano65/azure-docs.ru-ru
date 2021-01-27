@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: aa6429e27faf92f047c580986d5b434c9a418730
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: d38e631a5a12381b407dca4dd9e2f2ae63365453
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044379"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882458"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Настройка экземпляра и проверки подлинности Azure Digital двойников (портал)
 
@@ -71,13 +71,13 @@ ms.locfileid: "98044379"
 
 [!INCLUDE [digital-twins-setup-role-assignment.md](../../includes/digital-twins-setup-role-assignment.md)]
 
-Сначала откройте страницу для своего экземпляра Azure Digital двойников в портал Azure. В меню экземпляра выберите *Управление доступом (IAM)*. Нажмите кнопку  *Добавить* в разделе *Добавление назначения роли*.
+Сначала откройте страницу для своего экземпляра Azure Digital двойников в портал Azure. В меню экземпляра выберите *Управление доступом (IAM)*. Нажмите кнопку  **+ Добавить** , чтобы добавить новое назначение роли.
 
 :::image type="content" source="media/how-to-set-up-instance/portal/add-role-assignment-1.png" alt-text="Добавление назначения роли на странице &quot;Управление доступом (IAM)&quot;":::
 
 На следующей странице *Добавление назначения ролей* введите значения (они должны быть выполнены пользователем с [достаточными разрешениями](#prerequisites-permission-requirements) в подписке Azure):
 * **Роль**: выберите *Azure Digital двойников Data Owner* в раскрывающемся меню.
-* **Назначение доступа к**: выберите *пользователя Azure AD, группу или субъект-службу* в раскрывающемся меню
+* **Назначение доступа к**: использование *пользователя, группы или субъекта-службы*
 * **Выберите**: найдите имя или адрес электронной почты пользователя, которого нужно назначить. При выборе результата пользователь будет отображаться в разделе *Выбранные элементы* .
 
 :::row:::

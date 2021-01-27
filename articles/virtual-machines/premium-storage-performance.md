@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 26ef07269c9451c2e9d05d42e2247fbfcdae4844
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 7e93c659ad58db8d82e68380ab6a0855af27e1bf
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201966"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882388"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Хранилище Azure класса "Премиум": разработка, обеспечивающая повышенную производительность
 
@@ -35,8 +35,8 @@ ms.locfileid: "98201966"
 >
 > Если вы хотите протестировать производительность диска, ознакомьтесь с нашими статьями о тестировании диска:
 >
-> * Для Linux: [Тестирование производительности приложения на хранилище дисков Azure](linux/disks-benchmarks.md)
-> * Для Windows: [Тестирование производительности диска](windows/disks-benchmarks.md).
+> * Для Linux: [Тестирование производительности приложения на хранилище дисков Azure](./disks-benchmarks.md)
+> * Для Windows: [Тестирование производительности диска](./disks-benchmarks.md).
 >
 > Если виртуальная машина поддерживает ускоренную сеть, необходимо включить эту функцию. Если она не включена, ее можно включить на уже развернутых виртуальных машинах под управлением [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md#enable-accelerated-networking-on-existing-vms) и [Linux](../virtual-network/create-vm-accelerated-networking-cli.md#enable-accelerated-networking-on-existing-vms).
 
@@ -380,8 +380,8 @@ ms.locfileid: "98201966"
 
 Если вы хотите протестировать производительность диска, ознакомьтесь с нашими статьями о тестировании диска:
 
-* Для Linux: [Тестирование производительности приложения на хранилище дисков Azure](linux/disks-benchmarks.md)
-* Для Windows: [Тестирование производительности диска](windows/disks-benchmarks.md).
+* Для Linux: [Тестирование производительности приложения на хранилище дисков Azure](./disks-benchmarks.md)
+* Для Windows: [Тестирование производительности диска](./disks-benchmarks.md).
 
 См. дополнительные сведения о доступных типах дисков:
 

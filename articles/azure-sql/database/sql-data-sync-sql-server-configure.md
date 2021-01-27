@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/14/2019
-ms.openlocfilehash: f5192176a6a0e174d5878c51defce70d949c1eb1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: d6b5bab1c1b6c8db4821fdf84728eb66eb55b899
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922316"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882235"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-databases-in-azure-sql-database-and-sql-server"></a>Руководство по настройке Синхронизации данных SQL между базами данных в Базе данных SQL Azure и SQL Server
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -178,10 +178,6 @@ ms.locfileid: "96922316"
     ![Синхронизация вручную](./media/sql-data-sync-sql-server-configure/datasync-sync.png)
 
 ## <a name="faq"></a>Вопросы и ответы
-
-**Как часто Синхронизация данных может синхронизировать данные?**
-
-Минимальный интервал времени между запусками синхронизации составляет пять минут.
 
 **Создает ли Синхронизация данных SQL полные таблицы?**
 

@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: ab3cb403a8757f424a141206f99f9c29bf3e0b49
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 87cc8af9206daa1f1e959b8abd8beb3e7f8ff2f2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108154"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881000"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -79,7 +79,7 @@ AzCopy — это служебная программа командной ст
 Этот параметр доступен только для хранилища BLOB-объектов. С помощью Azure Active Directory можно указать учетные данные один раз вместо того, чтобы добавлять маркер SAS к каждой команде.  
 
 > [!NOTE]
-> В текущем выпуске, если вы планируете копировать большие двоичные объекты между учетными записями хранения, необходимо добавить маркер SAS к каждому исходному URL-адресу. Маркер SAS можно опустить только из URL-адреса назначения. Примеры см. в разделе [копирование больших двоичных объектов между учетными записями хранения](storage-use-azcopy-blobs.md).
+> В текущем выпуске, если вы планируете копировать большие двоичные объекты между учетными записями хранения, необходимо добавить маркер SAS к каждому исходному URL-адресу. Маркер SAS можно опустить только из URL-адреса назначения. Примеры см. в разделе [копирование больших двоичных объектов между учетными записями хранения](#transfer-data).
 
 Чтобы авторизовать доступ с помощью Azure AD, см. статью [авторизация доступа к BLOB-объектам с помощью AzCopy и Azure Active Directory (Azure AD)](storage-use-azcopy-authorize-azure-active-directory.md).
 

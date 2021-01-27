@@ -12,12 +12,12 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 01/05/2021
 ms.author: inhenkel
-ms.openlocfilehash: 36593efd4f2583f28dffbb4f5b491fbeec7ba21d
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 55a49d48af95c103d2a28d5106af5f3166605514
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916326"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882252"
 ---
 # <a name="azure-storage-accounts"></a>Учетные записи хранения Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "97916326"
 <sup>1</sup> в службах мультимедиа v3 шифрование хранилища (AES-256) поддерживается только для обратной совместимости, когда ресурсы были созданы с помощью служб мультимедиа версии 2. Это означает, что v3 работает с существующими зашифрованными ресурсами хранилища, но не позволяет создавать новые.
 
 ## <a name="double-encryption"></a>Двойное шифрование
-Службы мультимедиа поддерживают двойное шифрование.  Дополнительные сведения о двойном шифровании см. в статье [двойное шифрование Azure](https://docs.microsoft.com/azure/security/fundamentals/double-encryption).
+Службы мультимедиа поддерживают двойное шифрование.  Дополнительные сведения о двойном шифровании см. в статье [двойное шифрование Azure](../../security/fundamentals/double-encryption.md).
 
 ## <a name="storage-account-errors"></a>Ошибки учетной записи хранения
 

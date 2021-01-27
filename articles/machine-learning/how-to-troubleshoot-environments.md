@@ -10,12 +10,12 @@ ms.author: sagopal
 ms.date: 12/3/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python
-ms.openlocfilehash: 71061c056b499f79727f70fb855db7a81a65f3bd
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 7ddd5dec87a122a0b36fee17b5434c8a49dcf434
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98572176"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881641"
 ---
 # <a name="troubleshoot-environment-image-builds"></a>Устранение неполадок сборок образов среды
 
@@ -153,12 +153,12 @@ ERROR: Cannot uninstall 'mypackage'. It is a distutils installed project and thu
 
 Возможные проблемы:
 - Возможно, путь к реестру контейнеров неправильно разрешается. Убедитесь, что в именах образов используются двойные косые черты и направление косой черты на узлах Linux и Windows является правильным.
-- Если в реестре контейнеров, расположенном за виртуальной сетью, используется частная конечная точка в [неподдерживаемом регионе](https://docs.microsoft.com/azure/private-link/private-link-overview#availability), настройте реестр контейнеров с помощью конечной точки службы (общедоступного доступа) на портале и повторите попытку.
-- После размещения реестра контейнеров для виртуальной сети запустите [шаблон Azure Resource Manager](https://docs.microsoft.com/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry) , чтобы Рабочая область могла взаимодействовать с экземпляром реестра контейнеров.
+- Если в реестре контейнеров, расположенном за виртуальной сетью, используется частная конечная точка в [неподдерживаемом регионе](/azure/private-link/private-link-overview#availability), настройте реестр контейнеров с помощью конечной точки службы (общедоступного доступа) на портале и повторите попытку.
+- После размещения реестра контейнеров для виртуальной сети запустите [шаблон Azure Resource Manager](/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry) , чтобы Рабочая область могла взаимодействовать с экземпляром реестра контейнеров.
 
 ### <a name="you-get-a-401-error-from-a-workspace-container-registry"></a>Вы получаете ошибку 401 из реестра контейнеров рабочих областей.
 
-Повторно синхронизируйте ключи хранилища с помощью [WS.sync_keys ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#sync-keys--).
+Повторно синхронизируйте ключи хранилища с помощью [WS.sync_keys ()](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#sync-keys--).
 
 ### <a name="the-environment-keeps-throwing-a-waiting-for-other-conda-operations-to-finish-error"></a>Среда продолжает выдачу "ожидания завершения других операций conda..." план
 
@@ -166,7 +166,7 @@ ERROR: Cannot uninstall 'mypackage'. It is a distutils installed project and thu
 
 ### <a name="your-custom-docker-image-isnt-in-the-registry"></a>Пользовательский образ DOCKER отсутствует в реестре
 
-Проверьте, используется ли [правильный тег](https://docs.microsoft.com/azure/machine-learning/how-to-use-environments#create-an-environment) `user_managed_dependencies = True` . `Environment.python.user_managed_dependencies = True` отключает conda и использует установленные пользователем пакеты.
+Проверьте, используется ли [правильный тег](/azure/machine-learning/how-to-use-environments#create-an-environment) `user_managed_dependencies = True` . `Environment.python.user_managed_dependencies = True` отключает conda и использует установленные пользователем пакеты.
 
 ### <a name="you-get-one-of-the-following-common-virtual-network-issues"></a>Вы получаете одну из следующих распространенных проблем виртуальной сети.
 
@@ -184,15 +184,15 @@ ERROR: Cannot uninstall 'mypackage'. It is a distutils installed project and thu
 
 ### <a name="you-cant-run-experiments-when-storage-has-network-security-enabled"></a>Вы не можете запускать эксперименты, если для хранилища включена безопасность сети
 
-Если вы используете образы DOCKER по умолчанию и включаете управляемые пользователем зависимости, используйте [теги службы](https://docs.microsoft.com/azure/machine-learning/how-to-enable-virtual-network) Микрософтконтаинеррегистри и Азурефронтдур. фирстпарти для разрешенных реестра контейнеров Azure и его зависимостей.
+Если вы используете образы DOCKER по умолчанию и включаете управляемые пользователем зависимости, используйте [теги службы](/azure/machine-learning/how-to-enable-virtual-network) Микрософтконтаинеррегистри и Азурефронтдур. фирстпарти для разрешенных реестра контейнеров Azure и его зависимостей.
 
- Дополнительные сведения см. в разделе [Включение виртуальных сетей](https://docs.microsoft.com/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry).
+ Дополнительные сведения см. в разделе [Включение виртуальных сетей](/azure/machine-learning/how-to-enable-virtual-network#azure-container-registry).
 
 ### <a name="you-need-to-create-an-icm"></a>Необходимо создать ICM
 
 При создании или назначении ICM для хранилище метаданных включите запрос в службу поддержки CSS, чтобы мы могли лучше понять эту ошибку.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели машинного обучения для категоризации цветов](how-to-train-scikit-learn.md)
 - [Обучение модели машинного обучения с помощью пользовательского образа DOCKER](how-to-train-with-custom-image.md)

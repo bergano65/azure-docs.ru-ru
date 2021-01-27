@@ -4,12 +4,12 @@ description: Узнайте, как устранять неполадки аге
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 788eea17cabbea46578d0f59919ae95a59f2223f
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 90e0ceb6ba9d696eb446d607ed2f2f134733618e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625353"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881142"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Руководство по устранению неполадок: Azure Monitor Application Insights для Java
 
@@ -49,36 +49,66 @@ ms.locfileid: "98625353"
 
 ## <a name="import-ssl-certificates"></a>Импорт SSL-сертификатов
 
-Если вы используете хранилище ключей Java по умолчанию, он уже будет иметь все корневые сертификаты ЦС. Вам не нужно импортировать больше SSL-сертификатов.
+Этот раздел поможет устранить неполадки и, возможно, исправить исключения, связанные с SSL-сертификатами при использовании агента Java.
 
-Если вы используете настраиваемый хранилище ключей Java, может потребоваться импортировать в него сертификаты SSL Application Insights конечной точки.
+Для устранения этой проблемы существует два разных пути.
 
-### <a name="key-terminology"></a>Ключевая терминология
-*Хранилище ключей* — это репозиторий сертификатов, открытых ключей и закрытых ключей. Обычно дистрибутивы пакета разработки Java имеют исполняемый файл для управления ими: `keytool` .
+### <a name="if-using-a-default-java-keystore"></a>При использовании хранилища ключей Java по умолчанию:
 
-Ниже приведен пример простой команды для импорта SSL-сертификата в хранилище ключей.
+Как правило, хранилище ключей Java по умолчанию уже содержит все корневые сертификаты ЦС. Однако могут возникнуть некоторые исключения, например сертификат конечной точки приема может быть подписан другим корневым сертификатом. Чтобы устранить эту проблему, мы рекомендуем выполнить следующие три шага:
 
-`keytool -importcert -alias your_ssl_certificate -file "your downloaded SSL certificate name".cer -keystore "Your KeyStore name" -storepass "Your keystore password" -noprompt`
+1.  Убедитесь, что корневой сертификат, использованный для подписывания конечной точки Application Insights, уже существует в хранилище ключей по умолчанию. Сертификаты доверенного ЦС по умолчанию хранятся в `$JAVA_HOME/jre/lib/security/cacerts` . Чтобы получить список сертификатов в хранилище ключей Java, используйте следующую команду:
+    > `keytool -list -v -keystore $PATH_TO_KEYSTORE_FILE`
+ 
+    Выходные данные можно перенаправить во временный файл, как в этом случае (будет легко выполнить поиск в дальнейшем)
+    > `keytool -list -v -keystore $JAVA_HOME/jre/lib/security/cacerts > temp.txt`
 
-### <a name="steps-to-download-and-add-an-ssl-certificate"></a>Действия по скачиванию и добавлению SSL-сертификата
+2. Получив список сертификатов, выполните следующие [действия](#steps-to-download-ssl-certificate) , чтобы скачать корневой сертификат, который использовался для подписания конечной точки Application Insights.
+
+    После загрузки сертификата создайте хэш SHA-1 для сертификата с помощью следующей команды:
+    > `keytool -printcert -v -file "your_downloaded_root_certificate.cer"`
+ 
+    Скопируйте значение SHA-1 и проверьте, есть ли это значение в ранее сохраненном файле "temp.txt".  Если вы не можете найти значение SHA-1 во временном файле, это означает, что скачанный корневой сертификат отсутствует в хранилище ключей Java по умолчанию.
+
+
+3. Импортируйте корневой сертификат в хранилище ключей Java по умолчанию с помощью следующей команды:
+    >   `keytool -import -file "the cert file" -alias "some meaningful name" -keystore "path to cacerts file"`
+ 
+    В этом случае он будет
+ 
+    > `keytool -import -file "your downloaded root cert file" -alias "some meaningful name" $JAVA_HOME/jre/lib/security/cacerts`
+
+
+### <a name="if-using-a-custom-java-keystore"></a>При использовании пользовательского хранилища ключей Java:
+
+Если вы используете настраиваемый хранилище ключей Java, может потребоваться импортировать в него корневые сертификаты SSL Application Insights конечных точек.
+Для решения этой проблемы рекомендуется выполнить следующие два действия.
+1. Выполните следующие [действия](#steps-to-download-ssl-certificate) , чтобы скачать корневой сертификат из конечной точки Application Insights.
+2. Используйте следующую команду, чтобы импортировать корневой SSL-сертификат в настраиваемый хранилище ключей Java:
+    > `keytool -importcert -alias your_ssl_certificate -file "your downloaded SSL certificate name.cer" -keystore "Your KeyStore name" -storepass "Your keystore password" -noprompt`
+
+### <a name="steps-to-download-ssl-certificate"></a>Действия по скачиванию SSL-сертификата
 
 1.  Откройте свой любимый браузер и перейдите по `IngestionEndpoint` URL-адресу, указанному в строке подключения, используемой для инструментирования приложения.
 
-    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-url.png" alt-text="Снимок экрана, на котором показана строка подключения Application Insights.":::
+    :::image type="content" source="media/java-ipa/troubleshooting/ingestion-endpoint-snippet.png" alt-text="Снимок экрана, на котором показана строка подключения Application Insights." lightbox="media/java-ipa/troubleshooting/ingestion-endpoint-snippet.png":::
 
 2.  Выберите значок **Просмотр сведений о сайте** (блокировка) в браузере, а затем выберите параметр **сертификат** .
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Снимок экрана с параметром сертификата в сведениях о сайте.":::
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-icon-capture.png" alt-text="Снимок экрана с параметром сертификата в сведениях о сайте." lightbox="media/java-ipa/troubleshooting/certificate-icon-capture.png":::
 
-3.  Перейдите на вкладку **сведения** и выберите **Копировать в файл**.
-4.  Нажмите кнопку **Далее** , выберите **base-64 Encoded X. 509 (. CER)** , а затем снова нажмите кнопку **Далее** .
+3.  Вместо загрузки конечного сертификата необходимо скачать корневой сертификат, как показано ниже. Позже необходимо щелкнуть "путь к сертификату" — > выбрать корневой сертификат, > щелкните "Просмотр сертификата". Откроется меню нового сертификата, и вы сможете скачать сертификат из меню создать.
 
-    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="Снимок экрана мастера экспорта сертификатов с выбранным форматом.":::
+    :::image type="content" source="media/java-ipa/troubleshooting/root-certificate-selection.png" alt-text="Снимок экрана выбора корневого сертификата." lightbox="media/java-ipa/troubleshooting/root-certificate-selection.png":::
 
-5.  Укажите файл, в котором вы хотите сохранить SSL-сертификат. Затем нажмите кнопку **Далее**  >  **Готово**. Вы увидите сообщение "Экспорт выполнен успешно".
-6.  После создания сертификата необходимо импортировать сертификат в хранилище ключей Java. Используйте [предыдущую команду](#key-terminology) для импорта сертификатов.
+4.  Перейдите на вкладку **сведения** и выберите **Копировать в файл**.
+5.  Нажмите кнопку **Далее** , выберите **base-64 Encoded X. 509 (. CER)** , а затем снова нажмите кнопку **Далее** .
+
+    :::image type="content" source="media/java-ipa/troubleshooting/certificate-export-wizard.png" alt-text="Снимок экрана мастера экспорта сертификатов с выбранным форматом." lightbox="media/java-ipa/troubleshooting/certificate-export-wizard.png":::
+
+6.  Укажите файл, в котором вы хотите сохранить SSL-сертификат. Затем нажмите кнопку **Далее**  >  **Готово**. Вы увидите сообщение "Экспорт выполнен успешно".
 
 > [!WARNING]
 > Чтобы получить новый сертификат до истечения срока действия текущего сертификата, необходимо повторить эти действия. Сведения об истечении срока действия можно найти на вкладке **сведения** в диалоговом окне **сертификат** .
 >
-> :::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Снимок экрана, показывающий сведения о SSL-сертификате.":::
+> :::image type="content" source="media/java-ipa/troubleshooting/certificate-details.png" alt-text="Снимок экрана, показывающий сведения о SSL-сертификате." lightbox="media/java-ipa/troubleshooting/certificate-details.png":::

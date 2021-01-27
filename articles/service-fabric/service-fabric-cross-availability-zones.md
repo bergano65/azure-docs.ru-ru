@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: 82161a8f66dd717a9dc448a743b818a9ab9938db
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 3db31431c24edd3377f6299046cc31067310b2ef
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250984"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876217"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Развертывание кластера Azure Service Fabric в Зоны доступности
 Зоны доступности в Azure — это высокодоступное предложение, защищающее приложения и данные от сбоев центров обработки данных. Зона доступности — это уникальное физическое расположение, оснащенное независимым питанием, охлаждением и сетью в регионе Azure.
@@ -345,7 +345,7 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 
 * Первое значение — это свойство **Zones** , которое указывает зоны доступности, присутствующую в масштабируемом наборе виртуальных машин.
 * Вторым значением является свойство "singlePlacementGroup", которое должно иметь значение true. **Масштабируемый набор, развернутый в 3 AZ, может масштабировать до 300 виртуальных машин, даже если "singlePlacementGroup = true".**
-* Третье значение — "zoneBalance", которое обеспечивает ограниченную балансировку зоны, если имеет значение true. Рекомендуется задать значение true, чтобы избежать несбалансированного распределения виртуальных машин между зонами. Прочитайте о [зонебаланЦинг](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
+* Третье значение — "zoneBalance", которое обеспечивает ограниченную балансировку зоны, если имеет значение true. Рекомендуется задать значение true, чтобы избежать несбалансированного распределения виртуальных машин между зонами. Прочитайте о [зонебаланЦинг](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md#zone-balancing).
 * Переопределения FaultDomain и UpgradeDomain не обязательно должны быть настроены.
 
 ```json
@@ -416,9 +416,9 @@ Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
 
 ### <a name="migration-to-the-node-type-with-multiple-availability-zones"></a>Миграция на тип узла с несколькими Зоны доступности
 Для всех сценариев миграции необходимо добавить новый nodeType, который будет иметь несколько поддерживаемых зон доступности. Невозможно перенести существующий nodeType для поддержки нескольких зон.
-В этой [статье содержатся](https://docs.microsoft.com/azure/service-fabric/service-fabric-scale-up-primary-node-type ) подробные инструкции по добавлению нового узла NodeType, а также добавлению других ресурсов, необходимых для нового типа узла, такого как ресурсы IP и балансировки нагрузки. В этой же статье также описывается снятие существующего узла nodeType после добавления в кластер типа nodeType с несколькими зонами доступности.
+В этой [статье содержатся](./service-fabric-scale-up-primary-node-type.md) подробные инструкции по добавлению нового узла NodeType, а также добавлению других ресурсов, необходимых для нового типа узла, такого как ресурсы IP и балансировки нагрузки. В этой же статье также описывается снятие существующего узла nodeType после добавления в кластер типа nodeType с несколькими зонами доступности.
 
-* Миграция с узла nodeType, который использует основные ресурсы балансировки нагрузки и IP-адресов: этот процесс уже описан [здесь](https://docs.microsoft.com/azure/service-fabric/service-fabric-cross-availability-zones#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) для решения с одним типом узла на AZ. 
+* Миграция с узла nodeType, который использует основные ресурсы балансировки нагрузки и IP-адресов: этот процесс уже описан [здесь](#migrate-to-using-availability-zones-from-a-cluster-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) для решения с одним типом узла на AZ. 
     Единственное отличие от нового типа узла состоит в том, что существует только 1 масштабируемый набор виртуальных машин и 1 NodeType для всех AZ, а не 1 каждого в AZ.
 * Миграция с узла nodeType, который использует стандартные ресурсы SKU и IP с NSG: выполните ту же процедуру, которая описана выше, за исключением того, что нет необходимости добавлять новые ресурсы фунтов, IP и NSG, и те же ресурсы можно повторно использовать в новом nodeType.
 

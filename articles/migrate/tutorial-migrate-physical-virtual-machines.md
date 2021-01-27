@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: c0f4f1d7f0213ad24d25d8d34235475bbdb0316a
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 3e098e64eacf8b126d6a6d72b1f242443e88d55c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567104"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881101"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Перенос компьютеров в качестве физических серверов в Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "98567104"
 
 **Задача** | **Сведения**
 --- | ---
-**Создание проекта службы "Миграция Azure"** | [Для создания проекта](https://docs.microsoft.com/azure/migrate/create-manage-projects) учетная запись Azure должна иметь разрешения участника или владельца.
+**Создание проекта службы "Миграция Azure"** | [Для создания проекта](./create-manage-projects.md) учетная запись Azure должна иметь разрешения участника или владельца.
 **Проверка разрешений учетной записи Azure** | Учетная запись Azure должна иметь разрешения на создание виртуальной машины и на запись на управляемый диск Azure.
 
 
@@ -239,7 +239,7 @@ ms.locfileid: "98567104"
     - Double encryption with platform-managed and customer-managed keys (Двойное шифрование с помощью ключей, управляемых платформой и управляемых клиентом).
 
    > [!NOTE]
-   > Чтобы реплицировать виртуальные машины с помощью CMK, вам потребуется [создать набор шифрования дисков](https://go.microsoft.com/fwlink/?linkid=2151800) в целевой группе ресурсов. Объект набора шифрования дисков сопоставляет управляемые диски с Key Vault, где содержится CMK для использования в SSE.
+   > Чтобы реплицировать виртуальные машины с помощью CMK, вам потребуется [создать набор шифрования дисков](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) в целевой группе ресурсов. Объект набора шифрования дисков сопоставляет управляемые диски с Key Vault, где содержится CMK для использования в SSE.
   
 13. Для параметра **Преимущество гибридного использования Azure**
 

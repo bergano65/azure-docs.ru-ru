@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: tibasham
-ms.openlocfilehash: f16e34f372016f284d4af79443e84d9d5cdea957
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 373fd26c36bf2f77de6a376f738bd3caaf735f00
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523678"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881878"
 ---
 # <a name="how-to-map-azure-disks-to-windows-vm-guest-disks"></a>Как сопоставлять диски Azure с гостевыми дисками виртуальной машины Windows
 
@@ -29,11 +29,11 @@ ms.locfileid: "96523678"
 
 ## <a name="finding-the-lun"></a>Поиск LUN
 
-Существует два способа поиска LUN, который, по вашему выбору, будет зависеть от того, используется [дисковые пространства](https://docs.microsoft.com/windows-server/storage/storage-spaces/overview) или нет.
+Существует два способа поиска LUN, который, по вашему выбору, будет зависеть от того, используется [дисковые пространства](/windows-server/storage/storage-spaces/overview) или нет.
 
 ### <a name="disk-management"></a>Управление дисками
 
-Если пулы носителей не используются, можно найти LUN с помощью [оснастки "Управление дисками](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management) ".
+Если пулы носителей не используются, можно найти LUN с помощью [оснастки "Управление дисками](/windows-server/storage/disk-management/overview-of-disk-management) ".
 
 1. Подключитесь к виртуальной машине и откройте оснастку "Управление дисками". Щелкните правой кнопкой мыши кнопку Пуск и выберите пункт "Управление дисками". Можно также ввести `diskmgmt.msc` в поле начать поиск.
 1. В нижней области щелкните правой кнопкой мыши любой из дисков и выберите "Свойства".
@@ -55,7 +55,7 @@ ms.locfileid: "96523678"
 1. Выберите виртуальную машину.
 1. Выберите "диски"
 1. Выберите диск данных из списка подключенных дисков.
-1. LUN диска будет отображаться в области сведений о диске. Показанные здесь LUN сопоставляются с LUN, которые были просмотрены в гостевой системе с помощью Device Manager или диспетчер сервера.
+1. LUN диска будет отображаться в области сведений о диске. Показанные здесь LUN сопоставляются с LUN, которые были просмотрены в гостевой системе с помощью диспетчер устройств или диспетчер сервера.
 
 ### <a name="finding-an-azure-disks-lun-using-azure-cli-or-azure-powershell"></a>Поиск LUN диска Azure с помощью Azure CLI или Azure PowerShell
 

@@ -3,12 +3,12 @@ title: Управляемые удостоверения для Azure
 description: Узнайте, как использовать управляемые удостоверения для Azure с Service Fabric.
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 28c992792d4572a43e12f5d32855f8411b0f4c6f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 71fa9ef4da8081a167b68553e2e3eac8477e8aee
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96574757"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881726"
 ---
 # <a name="using-managed-identities-for-azure-with-service-fabric"></a>Использование управляемых удостоверений для Azure с Service Fabric
 
@@ -56,7 +56,7 @@ ms.locfileid: "96574757"
 
 - Удаление или изменение удостоверений, назначенных приложению; Если необходимо внести изменения, отправьте отдельные развертывания, чтобы сначала добавить новое назначение удостоверений, а затем удалить ранее назначенное. Удаление удостоверения из существующего приложения может привести к нежелательным последствиям, включая сохранение приложения в состоянии, которое не обновляется. Можно полностью удалить приложение, если требуется удалить удостоверение. Обратите внимание, что при этом будет удалено назначенное системой удостоверение (если оно определено), связанное с приложением, и будут удалены все связи с назначенными пользователем удостоверениями, назначенными приложению.
 
-- Service Fabric поддержка управляемых удостоверений в данный момент не интегрирована в [AzureServiceTokenProvider](../key-vault/general/service-to-service-authentication.md).
+- Service Fabric поддержка управляемых удостоверений в данный момент не интегрирована в [AzureServiceTokenProvider](/dotnet/api/overview/azure/service-to-service-authentication).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,12 +3,12 @@ title: Руководство по устранению неполадок в с
 description: Ознакомьтесь с советами и рекомендациями по устранению некоторых проблем, которые могут возникнуть при использовании служебной шины Azure.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: 8c31d252d75a2ba75528cd12d3a94bad5bd9f677
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: c5813f901f31f96633e11c2ed8162338bdd9bbf7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98126875"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881220"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Руководство по устранению неполадок в служебной шине Azure
 В этой статье содержатся советы и рекомендации по устранению некоторых проблем, которые могут возникнуть при использовании служебной шины Azure. 
@@ -80,7 +80,7 @@ Service Bus Error: Unauthorized access. 'Send' claim\(s\) are required to perfor
 Удостоверение не имеет разрешений на доступ к разделу служебной шины. 
 
 ### <a name="resolution"></a>Решение
-Чтобы устранить эту ошибку, установите библиотеку [Microsoft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) .  Дополнительные сведения см. в статье [Проверка подлинности локальной разработки](../key-vault/general/service-to-service-authentication.md#local-development-authentication). 
+Чтобы устранить эту ошибку, установите библиотеку [Microsoft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication/) .  Дополнительные сведения см. в статье [Проверка подлинности локальной разработки](/dotnet/api/overview/azure/service-to-service-authentication#local-development-authentication). 
 
 Сведения о назначении разрешений ролям см. в статье [Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам служебной шины Azure](service-bus-managed-service-identity.md).
 
@@ -101,4 +101,4 @@ Service Bus Error: Unauthorized access. 'Send' claim\(s\) are required to perfor
 См. следующие статьи: 
 
 - [Azure Resource Manager исключения](service-bus-resource-manager-exceptions.md). В нем перечислены исключения, созданные при взаимодействии с служебной шиной Azure с помощью Azure Resource Manager (через шаблоны или прямые вызовы).
-- [Исключения обмена сообщениями](service-bus-messaging-exceptions.md). Он предоставляет список исключений, созданных .NET Framework для служебной шины Azure.
+- [Исключения обмена сообщениями](service-bus-messaging-exceptions.md). Он предоставляет список исключений, созданных платформа .NET Framework для служебной шины Azure.

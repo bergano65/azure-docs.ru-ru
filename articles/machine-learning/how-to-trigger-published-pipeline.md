@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 12/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 9038d6bc9cd061200ef4553242889776f30d2dc1
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: a006dfd4f78f90ed323e5780b173cffb6daeac4a
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964564"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881743"
 ---
 # <a name="trigger-machine-learning-pipelines-with-azure-machine-learning-sdk-for-python"></a>Активация конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure для Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "97964564"
 
 * Среда Python, в которой установлен пакет SDK для Машинное обучение Azure для Python. Дополнительные сведения см [. в статьях создание повторно используемых сред для обучения и развертывания с помощью машинное обучение Azure и управление ими.](how-to-use-environments.md)
 
-* Рабочая область Машинное обучение с опубликованным конвейером. Вы можете использовать встроенную [программу создания и запуска конвейеров машинного обучения с помощью пакета SDK для машинное обучение Azure](how-to-create-your-first-pipeline.md).
+* Рабочая область Машинное обучение с опубликованным конвейером. Вы можете использовать встроенную [программу создания и запуска конвейеров машинного обучения с помощью пакета SDK для машинное обучение Azure](./how-to-create-machine-learning-pipelines.md).
 
 ## <a name="initialize-the-workspace--get-data"></a>Инициализация рабочей области & получения данных
 
@@ -142,7 +142,7 @@ stop_by_schedule_id(ws, schedule_id)
 
 Более сложные правила триггера или поведение можно создать с помощью [приложения логики Azure](../logic-apps/logic-apps-overview.md).
 
-Чтобы использовать приложение логики Azure для активации конвейера Машинное обучение, требуется конечная точка RESTFUL для опубликованного конвейера Машинное обучение. [Создайте и опубликуйте свой конвейер](how-to-create-your-first-pipeline.md). Затем найдите конечную точку RESTFUL `PublishedPipeline` , используя идентификатор конвейера:
+Чтобы использовать приложение логики Azure для активации конвейера Машинное обучение, требуется конечная точка RESTFUL для опубликованного конвейера Машинное обучение. [Создайте и опубликуйте свой конвейер](./how-to-create-machine-learning-pipelines.md). Затем найдите конечную точку RESTFUL `PublishedPipeline` , используя идентификатор конвейера:
 
 ```python
 # You can find the pipeline ID in Azure Machine Learning studio

@@ -7,12 +7,12 @@ ms.date: 10/02/2020
 ms.topic: troubleshooting
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 73984694d764234e9e1ec11e6b189a9ad85d97a8
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 52801d0d7b02bb3637b5edb03072bde04a023de9
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737410"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881794"
 ---
 # <a name="troubleshoot-azure-image-builder-service"></a>Устранение неполадок службы Azure Image Builder
 
@@ -209,7 +209,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
     ```
 5. Стадия отмены подготовки. В построителе образов Azure добавлен скрытый элемент настройки. Этот этап отмены подготовки отвечает за подготовку виртуальной машины для отмены подготовки. Он запускает Windows Sysprep (с помощью c:\DeprovisioningScript.ps1) или в Linux waagent unготовить (с помощью/ТМП/депровисионингскрипт.ш). 
 
-    Например:
+    Пример:
     ```text
     PACKER ERR 2020/03/04 23:05:04 [INFO] (telemetry) Starting provisioner powershell
     PACKER ERR 2020/03/04 23:05:04 packer: 2020/03/04 23:05:04 Found command: if( TEST-PATH c:\DeprovisioningScript.ps1 ){cat c:\DeprovisioningScript.ps1} else {echo "Deprovisioning script [c:\DeprovisioningScript.ps1] could not be found. Image build may fail or the VM created from the Image may not boot. Please make sure the deprovisioning script is not accidentally deleted by a Customizer in the Template."}
@@ -247,7 +247,7 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 
 Проверьте журнал на обнаружение сбоев настраиваемых типов. Выполните поиск по запросу *(телеметрии)*. 
 
-Например:
+Пример:
 ```text
 (telemetry) Starting provisioner windows-update
 (telemetry) ending windows-update
@@ -672,6 +672,6 @@ Support Topic: Azure Features
 Support Subtopic: Azure Image Builder
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в разделе [Общие сведения о построителе образов Azure](image-builder-overview.md).
+Дополнительные сведения см. в разделе [Общие сведения о построителе образов Azure](../image-builder-overview.md).

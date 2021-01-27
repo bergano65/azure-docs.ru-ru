@@ -6,16 +6,16 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: a864ce42888aace385cf60a4122f204c8f76831d
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: e0d1789d61bbe57c735f4dd2a70a1c2a8f183d90
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240432"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881067"
 ---
 # <a name="private-link-for-azure-database-for-postgresql-single-server"></a>Частная ссылка на сервер базы данных Azure для PostgreSQL-Single
 
-Частная ссылка позволяет создавать частные конечные точки для базы данных Azure для PostgreSQL-Single Server и, таким образом, предоставляет службы Azure в частной виртуальной сети (VNet). Частная конечная точка предоставляет частный IP-адрес, который можно использовать для подключения к серверу базы данных, как и любой другой ресурс в виртуальной сети.
+Частная ссылка позволяет создавать частные конечные точки для базы данных Azure для PostgreSQL-Single Server, чтобы перевести их в виртуальную сеть. Частная конечная точка предоставляет частный IP-адрес в подсети, которую можно использовать для подключения к серверу базы данных так же, как и к любому другому ресурсу в виртуальной сети.
 
 Чтобы получить список служб PaaS, поддерживающих функции закрытых ссылок, ознакомьтесь с [документацией по](../private-link/index.yml)частному каналу. Частная конечная точка — это частный IP-адрес в определенной [виртуальной сети](../virtual-network/virtual-networks-overview.md) и подсети.
 
@@ -72,21 +72,21 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 * Выберите отдельное PEC из списка, щелкнув его.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link.png" alt-text="Выберите закрытую конечную точку, ожидающие утверждения":::
 
 * Администратор сервера PostgreSQL может одобрить или отклонить PEC и при необходимости добавить короткий текст ответа.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/select-private-link-message.png" alt-text="Выберите сообщение частной конечной точки":::
 
 * После утверждения или отклонения список будет отражать соответствующее состояние вместе с текстом ответа.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-approved-connection.png" alt-text="выберите конечное состояние частной конечной точки":::
 
 ## <a name="use-cases-of-private-link-for-azure-database-for-postgresql"></a>Варианты использования частной ссылки для базы данных Azure для PostgreSQL
 
 Клиенты могут подключаться к частной конечной точке из той же виртуальной сети, одноранговой виртуальной сети в том же регионе или через подключение между виртуальными сетями в разных регионах. Кроме того, клиенты могут подключаться из локальной среды с помощью ExpressRoute, частного пиринга или VPN-туннелирования. Ниже приведена упрощенная схема, на которой показаны распространенные варианты использования.
 
-:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выбор закрытого портала конечной точки":::
+:::image type="content" source="media/concepts-data-access-and-security-private-link/show-private-link-overview.png" alt-text="Выберите Общие сведения о конечной точке частного назначения":::
 
 ### <a name="connecting-from-an-azure-vm-in-peered-virtual-network-vnet"></a>Подключение из виртуальной машины Azure в одноранговой виртуальной сети (VNet)
 Настройте [пиринг виртуальных сетей](../virtual-network/tutorial-connect-virtual-networks-powershell.md) , чтобы установить подключение к базе данных Azure для PostgreSQL-Single Server из виртуальной машины Azure в одноранговой виртуальной сети.
@@ -113,7 +113,7 @@ Data ex-фильтрация в базе данных Azure для PostgreSQL Si
 
 ## <a name="deny-public-access-for-azure-database-for-postgresql-single-server"></a>Запретить общий доступ для базы данных Azure для PostgreSQL на одном сервере
 
-Если вы хотите использовать только частные конечные точки для доступа к своей базе данных Azure для PostgreSQL, можно отключить настройку всех общедоступных конечных точек ( [правил брандмауэра](concepts-firewall-rules.md) и [конечных точек службы виртуальной](concepts-data-access-and-security-vnet.md)сети), установив параметр запретить общедоступную **сеть** на сервере базы данных. 
+Если вы хотите использовать только частные конечные точки для доступа к своей базе данных Azure для PostgreSQL, можно отключить настройку всех общедоступных конечных точек ([правил брандмауэра](concepts-firewall-rules.md) и [конечных точек службы виртуальной](concepts-data-access-and-security-vnet.md)сети), установив параметр запретить общедоступную **сеть** на сервере базы данных. 
 
 Если для этого параметра задано значение *Да* , то для базы данных Azure для PostgreSQL разрешены только подключения через частные конечные точки. Если для этого параметра установлено значение *нет* , клиенты могут подключаться к базе данных Azure для PostgreSQL на основе параметров брандмауэра или конечной точки службы виртуальной сети. Кроме того, после установки значения "доступ к частной сети" клиенты не смогут добавлять и обновлять существующие правила брандмауэра и "правила конечной точки службы виртуальной сети".
 

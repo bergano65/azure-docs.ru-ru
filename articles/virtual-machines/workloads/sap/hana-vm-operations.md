@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 10/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9a907f2a6fc54c96dbef9f2091a91cac50bbd4ca
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6e28b23f20a0336498abbc357f4c96bdfa5b089f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486527"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881844"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
 Этот документ содержит рекомендации по настройке архитектуры и работе с системами SAP HANA, развернутыми на виртуальных машинах Azure. Здесь также приведены сведения о настройке горизонтального масштабирования SAP HANA для номера SKU виртуальных машин M128s. Он не предназначен для замены стандартной документации SAP, к которой относятся следующие ресурсы:
@@ -46,7 +46,7 @@ ms.locfileid: "96486527"
 Как описано в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](./planning-guide.md), есть два основных метода подключения к виртуальным машинам Azure:
 
 - Подключение через Интернет и общедоступные конечные точки на виртуальной машине перехода или виртуальной машине, работающей под управлением SAP HANA.
-- Подключение через [VPN](../../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) или Azure [ExpressRoute](https://azure.microsoft.com/services/expressroute/).
+- Подключение через [VPN](../../../vpn-gateway/tutorial-site-to-site-portal.md) или Azure [ExpressRoute](https://azure.microsoft.com/services/expressroute/).
 
 Подключение "сеть — сеть" через VPN или ExpressRoute необходимо для производственных сценариев. Этот тип подключения также необходим для нерабочих сценариев, связанных с производственными сценариями, в которых используется программное обеспечение SAP. Пример межсайтового подключения приведен на следующем рисунке:
 

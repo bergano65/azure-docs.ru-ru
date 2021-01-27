@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 380aa826030df14b4b88b86ac2962c988796c0f9
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 025a94cf7d163d41486ef218e70d9eb48e93d31c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202646"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881322"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Базовый план безопасности Azure для Машинное обучение Azure
 
@@ -879,9 +879,9 @@ Azure Resource Manager может экспортировать шаблон в �
 
 - [Создание виртуальной машины Windows на портал Azure ](../virtual-machines/windows/quick-create-portal.md)
 
-- [Сведения о том, как скачать шаблон виртуальной машины](../virtual-machines/windows/download-template.md)
+- [Сведения о том, как скачать шаблон виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template)
 
-- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
+- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -911,7 +911,7 @@ Azure Resource Manager может экспортировать шаблон в �
 
 - [Настройка Azure RBAC](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-- [Общие сведения о коллекции общих образов](../virtual-machines/windows/shared-image-galleries.md)
+- [Общие сведения о коллекции общих образов](../virtual-machines/shared-image-galleries.md)
 
 - [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
 

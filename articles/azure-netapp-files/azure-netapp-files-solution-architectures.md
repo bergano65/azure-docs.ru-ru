@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.author: b-juche
-ms.openlocfilehash: 41e0f996bcd75ba1663bb8eb3880d550bed01f94
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 5984727f123da6e1d35d862c3f396bd85ce9e7f2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703442"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881458"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
@@ -96,7 +96,7 @@ ms.locfileid: "98703442"
 
 ## <a name="azure-vmware-solutions"></a>Решения Azure VMware
 
-* [Azure NetApp Files с помощью решения VMware для Azure. Подключение гостевых ОС](../azure-vmware/net-app-files-with-azure-vmware-solution.md)
+* [Azure NetApp Files с помощью решения VMware для Azure. Подключение гостевых ОС](../azure-vmware/netapp-files-with-azure-vmware-solution.md)
 
 ## <a name="virtual-desktop-infrastructure-solutions"></a>Решения инфраструктуры виртуальных рабочих столов
 

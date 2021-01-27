@@ -5,13 +5,13 @@ ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 03/17/2020
-ms.openlocfilehash: f9f95a5e85ec4eebf82cca707476750595331d73
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 01/25/2021
+ms.openlocfilehash: bc59c639856de6a5ce5adda1f78266eb7e4d5dd3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522674"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881237"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -46,9 +46,9 @@ ms.locfileid: "95522674"
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AslH]
 
 ### <a name="advantages"></a>Преимущества
-- Глубокая интеграция в Azure. Визуализации можно закрепить на панелях мониторинга на нескольких страницах Azure, включая обозреватель метрик, Log Analytics и Application Insights.
+- Глубокая интеграция в Azure. Визуализации можно закреплять на панелях мониторинга из нескольких страниц Azure, включая [Обозреватель метрик](platform/metrics-charts.md), [log Analytics](log-query/log-analytics-overview.md)и [Application Insights](app/app-insights-overview.md).
 - Поддержка метрик и журналов.
-- Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](platform/metrics-charts.md), [запросы Log Analytics](log-query/log-query-overview.md) и данные о [сопоставлениях](app/app-map.md) и доступности в Application Insights.
+- Объедините данные из нескольких источников, включая выходные данные [Обозреватель метрик](platform/metrics-charts.md), [запросы журнала](log-query/log-query-overview.md), а также [карты](app/app-map.md) и доступность в [Application Insights](app/app-insights-overview.md).
 - Возможность использования личных или общих панелей мониторинга. Интеграция с управлением [доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md).
 - Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Журналы обновляются каждый час с возможностью ручного обновления по запросу. Для этого щелкните значок "Обновить" в данной визуализации или обновите полную панель мониторинга.
 - Панели мониторинга параметризованных метрик с отметкой времени и пользовательскими параметрами.
@@ -57,7 +57,7 @@ ms.locfileid: "95522674"
 
 
 ### <a name="limitations"></a>Ограничения
-- Ограниченный контроль визуализаций журналов без поддержки таблиц данных. Общее максимальное число рядов данных — 10, последующие ряды данных группируются в _другие_ контейнеры.
+- Ограниченный контроль визуализаций журналов без поддержки таблиц данных. Общее число рядов данных ограничено 50 с дополнительными рядами данных, сгруппированными под _другим_ контейнером.
 - Отсутствие поддержки пользовательских параметров для диаграмм журналов.
 - На диаграммах журналов отображаются сведения за последние 30 дней.
 - Диаграммы журналов можно закреплять только на общих панелях мониторинга.
@@ -140,8 +140,9 @@ ms.locfileid: "95522674"
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [данных, собранных Azure Monitor](platform/data-platform.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
-- Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).
+- Дополнительные сведения о [Обозреватель метрик](platform/metrics-getting-started.md)
 - Дополнительные сведения о [Книгах](./platform/workbooks-overview.md).
 - Дополнительные сведения об [импорте данных журналов в Power BI](./platform/powerbi.md).
 - Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](./platform/grafana-plugin.md).
+- Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).
 

@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: 31398a49de871ad44499a796adfef1be618ccab9
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: ae07f51a91745acdaf2601d3a50bf282129dac71
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685180"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881811"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Источники событий Gen2 для службы "аналитика временных рядов Azure"
 
@@ -59,7 +59,7 @@ ms.locfileid: "98685180"
 
 - Увеличьте срок хранения данных центра Интернета вещей или концентратора событий до 7 дней.
 
-- Создание предупреждений среды в портал Azure. Оповещения, основанные на [метриках](https://docs.microsoft.com/azure/time-series-insights/how-to-monitor-tsi-reference#metrics) платформы, позволяют проверять сквозное поведение конвейера. [Ниже](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency#monitor-latency-and-throttling-with-alerts)приведены инструкции по созданию оповещений и управлению ими. Предлагаемые условия оповещения:
+- Создание предупреждений среды в портал Azure. Оповещения, основанные на [метриках](./how-to-monitor-tsi-reference.md#metrics) платформы, позволяют проверять сквозное поведение конвейера. [Ниже](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts)приведены инструкции по созданию оповещений и управлению ими. Предлагаемые условия оповещения:
 
   - Ингрессрецеиведмессажестимелаг больше 5 минут
   - Ингрессрецеиведбитес 0
@@ -92,7 +92,7 @@ ms.locfileid: "98685180"
 ± ЧЧ: ММ</br>
 ± ЧЧ: ММЗ</br>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [правилами преобразования и экранирования JSON](./concepts-json-flattening-escaping-rules.md) , чтобы понять, как будут храниться события.
 

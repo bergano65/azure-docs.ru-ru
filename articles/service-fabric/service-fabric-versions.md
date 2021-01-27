@@ -3,12 +3,12 @@ title: Обновление версии кластера Azure Service Fabric
 description: Узнайте о версиях кластера в Azure Service Fabric, включая ссылку на последние выпуски из блога группы Service Fabric.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: c9a29a97238164b9f6daf9dda66a1f314a7673ce
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: cd9c4be285c68e5482f7276429dd5514c72ae135
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804240"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881556"
 ---
 # <a name="upgrade-your-azure-service-fabric-cluster-version"></a>Обновление версии кластера Azure Service Fabric
 
@@ -55,7 +55,7 @@ ms.locfileid: "98804240"
 
 ### <a name="upgrade-alert-for-versions-later-than-63"></a>Оповещение об обновлении для версий более поздней версии, чем 6,3
 
-Для повышения безопасности и доступности инфраструктура Azure внесла изменения, которые могут повлиять на Service Fabric клиентов. Это изменение повлияет на все кластеры Service Fabric, в которых используется [режим открытого сетевого подключения для контейнеров](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode) и версии 6,3 до 7,0 или несовместимые Поддерживаемые версии позднее 7,0. Обновление среды выполнения Service Fabric доступно для всех поддерживаемых версий Service Fabric во всех регионах.
+Для повышения безопасности и доступности инфраструктура Azure внесла изменения, которые могут повлиять на Service Fabric клиентов. Это изменение повлияет на все кластеры Service Fabric, в которых используется [режим открытого сетевого подключения для контейнеров](./service-fabric-networking-modes.md#set-up-open-networking-mode) и версии 6,3 до 7,0 или несовместимые Поддерживаемые версии позднее 7,0. Обновление среды выполнения Service Fabric доступно для всех поддерживаемых версий Service Fabric во всех регионах.
 
 #### <a name="if-you-dont-upgrade-to-a-supported-version"></a>Если не выполнить обновление до поддерживаемой версии
 
