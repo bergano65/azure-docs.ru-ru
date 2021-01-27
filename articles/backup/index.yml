@@ -9,12 +9,12 @@ metadata:
   author: dcurwin
   ms.author: dacurwin
   ms.date: 12/01/2019
-  ms.openlocfilehash: ea54d6e4a08ff5baa2a46051a8ec342128175de3
-  ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+  ms.openlocfilehash: 077fcfd38c42b722b73937d75eb65276fa93d2c8
+  ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/21/2021
-  ms.locfileid: "98624925"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98807045"
 landingContent:
 - title: См. дополнительные сведения о службе архивации Azure
   linkLists:
@@ -79,7 +79,7 @@ landingContent:
     - text: Матрица поддержки для резервного копирования виртуальных машин Azure
       url: backup-support-matrix-iaas.md
     - text: Вопросы и ответы о резервном копировании виртуальных машин Azure
-      url: backup-azure-vm-backup-faq.md
+      url: backup-azure-vm-backup-faq.yml
     - text: Управление резервными копиями виртуальных машин Azure
       url: backup-azure-manage-vms.md
 - title: Резервное копирование управляемых дисков Azure (предварительная версия)

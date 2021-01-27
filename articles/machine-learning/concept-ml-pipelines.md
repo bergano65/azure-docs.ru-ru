@@ -10,12 +10,12 @@ ms.author: laobri
 author: lobrien
 ms.date: 01/12/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: a6ee4c08a7ecf9bcfcbc9cf6f630efe126248e9f
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: e3f92f445068b98c12069577ddf61a71568e403b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185712"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871559"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Что такое Машинное обучение Azure конвейеров?
 
@@ -118,7 +118,7 @@ pipeline_run = experiment.submit(pipeline)
 pipeline_run.wait_for_completion()
 ```
 
-Фрагмент кода начинается с общих Машинное обучение Azure объектов,, a, `Workspace` `Datastore` [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)и `Experiment` . Затем код создает объекты для хранения `input_data` и `output_data` . `input_data`Является экземпляром [филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py&preserve-view=true) , а `output_data` — экземпляром [аутпутфиледатасетконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true). Для `OutputFileDatasetConfig` поведения по умолчанию необходимо скопировать выходные данные в хранилище данных по `workspaceblobstore` пути `/dataset/{run-id}/{output-name}` , где `run-id` — идентификатор выполнения, а `output-name` — автоматически сформированное значение, если оно не указано разработчиком.
+Фрагмент кода начинается с общих Машинное обучение Azure объектов,, a, `Workspace` `Datastore` [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)и `Experiment` . Затем код создает объекты для хранения `input_data` и `output_data` . `input_data`Является экземпляром [филедатасет](/python/api/azureml-core/azureml.data.filedataset?preserve-view=true&view=azure-ml-py) , а `output_data` — экземпляром [аутпутфиледатасетконфиг](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py). Для `OutputFileDatasetConfig` поведения по умолчанию необходимо скопировать выходные данные в хранилище данных по `workspaceblobstore` пути `/dataset/{run-id}/{output-name}` , где `run-id` — идентификатор выполнения, а `output-name` — автоматически сформированное значение, если оно не указано разработчиком.
 
 Массив `steps` содержит один элемент, `PythonScriptStep` который будет использовать объекты данных и выполняется в `compute_target` . Затем код создает экземпляр `Pipeline` самого объекта, передавая в него рабочую область и массив шагов. Вызов начинается с `experiment.submit(pipeline)` запуска конвейера машинного обучения Azure. Вызов `wait_for_completion()` блокируется до завершения конвейера. 
 
@@ -149,7 +149,7 @@ pipeline_run.wait_for_completion()
 
 Машинное обучение Azure конвейеры — это мощное средство, которое начинает доставку ценности на стадии раннего развертывания. Значение увеличивается по мере роста группы и проекта. В этой статье объясняется, как указать конвейеры с помощью пакета SDK для Машинное обучение Azure Python и в Azure. Вы увидели простой исходный код и предоставили несколько `PipelineStep` доступных классов. Вы должны иметь представление о том, когда использовать конвейеры Машинное обучение Azure и как они работают в Azure. 
 
-+ Узнайте, как [создать свой первый конвейер](how-to-create-your-first-pipeline.md).
++ Узнайте, как [создать свой первый конвейер](./how-to-create-machine-learning-pipelines.md).
 
 + Узнайте, как [выполнять пакетные прогнозы для больших данных](tutorial-pipeline-batch-scoring-classification.md ).
 

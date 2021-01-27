@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 01/11/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
-ms.openlocfilehash: 7285ab338e978f0de467f79bbce1d41409683b1e
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 80a995b488f335ac2eb60ae18621acb2b1df58e2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132959"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871542"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Перемещение данных в этапы конвейера машинного обучения и между ними (Python)
 
@@ -53,7 +53,7 @@ ms.locfileid: "98132959"
 
 - Некоторые существовавшие ранее данные. В этой статье кратко показано использование [контейнера больших двоичных объектов Azure](../storage/blobs/storage-blobs-overview.md).
 
-- Необязательно. существующий конвейер машинного обучения, например, описанный в статье [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для машинное обучение Azure](how-to-create-your-first-pipeline.md).
+- Необязательно. существующий конвейер машинного обучения, например, описанный в статье [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для машинное обучение Azure](./how-to-create-machine-learning-pipelines.md).
 
 ## <a name="use-dataset-objects-for-pre-existing-data"></a>Использование `Dataset` объектов для уже существующих данных 
 
@@ -154,7 +154,7 @@ ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 
 ## <a name="use-outputfiledatasetconfig-for-intermediate-data"></a>Использовать `OutputFileDatasetConfig` для промежуточных данных
 
-Хотя `Dataset` объекты представляют только постоянные данные, [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) можно использовать объекты для временных выходных данных этапов конвейера **и** постоянных выходных данных. `OutputFileDatasetConfig` поддерживает запись данных в хранилище BLOB-объектов, общую папку, adlsgen1 или adlsgen2. Он поддерживает режим подключения и режим передачи. В режиме монтирования файлы, записанные в подключенный каталог, сохраняются окончательно при закрытии файла. В режиме передачи файлы, записанные в выходной каталог, передаются в конце задания. Если задание завершается сбоем или отменяется, выходной каталог не отправляется.
+Хотя `Dataset` объекты представляют только постоянные данные, [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) можно использовать объекты для временных выходных данных этапов конвейера **и** постоянных выходных данных. `OutputFileDatasetConfig` поддерживает запись данных в хранилище BLOB-объектов, общую папку, adlsgen1 или adlsgen2. Он поддерживает режим подключения и режим передачи. В режиме монтирования файлы, записанные в подключенный каталог, сохраняются окончательно при закрытии файла. В режиме передачи файлы, записанные в выходной каталог, передаются в конце задания. Если задание завершается сбоем или отменяется, выходной каталог не отправляется.
 
  `OutputFileDatasetConfig` поведение объекта по умолчанию — запись в хранилище данных по умолчанию рабочей области. Передайте `OutputFileDatasetConfig` объекты в `PythonScriptStep` с помощью `arguments` параметра.
 
@@ -184,7 +184,7 @@ OutputFileDatasetConfig(name="clean_data", destination=blob_store).as_upload(ove
 
 ### <a name="use-outputfiledatasetconfig-as-outputs-of-a-training-step"></a>Использование `OutputFileDatasetConfig` в качестве выходных данных для этапа обучения
 
-В конвейере `PythonScriptStep` можно получить доступные выходные пути с помощью аргументов программы. Если этот шаг является первым и будет инициализировать выходные данные, необходимо создать каталог по указанному пути. Затем можно записать все файлы, которые должны содержаться в `OutputFileDatasetConfig` .
+В `PythonScriptStep` конвейера можно получить доступные пути вывода с помощью аргументов программы. Если этот шаг является первым и будет инициализировать выходные данные, необходимо создать каталог по указанному пути. Затем можно записать все файлы, которые должны содержаться в `OutputFileDatasetConfig` .
 
 ```python
 parser = argparse.ArgumentParser()
@@ -244,4 +244,4 @@ step1_output_ds = step1_output_data.register_on_complete(name='processed_data',
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание набора данных Машинного обучения Azure](how-to-create-register-datasets.md)
-* [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](how-to-create-your-first-pipeline.md)
+* [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](./how-to-create-machine-learning-pipelines.md)

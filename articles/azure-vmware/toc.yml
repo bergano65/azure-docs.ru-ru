@@ -85,7 +85,7 @@
         - name: Управление жизненным циклом виртуальных машин
           href: lifecycle-management-of-azure-vmware-solution-vms.md
         - name: Azure NetApp Files
-          href: net-app-files-with-azure-vmware-solution.md
+          href: netapp-files-with-azure-vmware-solution.md
         - name: Шлюз приложений
           href: protect-azure-vmware-solution-with-application-gateway.md
         - name: Диспетчер трафика

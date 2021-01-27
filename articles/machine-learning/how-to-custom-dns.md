@@ -11,12 +11,12 @@ author: jhirono
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 8d3145639d2d4fb64bdb374f1dea0a7b70e4151c
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 2215c47fcd250a9ac1d6621f7e4b434bd33b3832
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724720"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871101"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Использование рабочей области с пользовательским DNS-сервером
 
@@ -116,4 +116,4 @@ $workspaceDns.CustomDnsConfigs | format-table
 
 Дополнительные сведения об использовании Машинное обучение Azure с виртуальной сетью см. в [обзоре виртуальной сети](how-to-network-security-overview.md).
 
-Дополнительные сведения об интеграции частных конечных точек в конфигурацию DNS см. в статье [Настройка DNS для частной конечной точки Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-dns).
+Дополнительные сведения об интеграции частных конечных точек в конфигурацию DNS см. в статье [Настройка DNS для частной конечной точки Azure](../private-link/private-endpoint-dns.md).

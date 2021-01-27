@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: cynthn
-ms.openlocfilehash: 6a14e2bd7385430c3d0fbec06259a876af556e38
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 45d7977dda4870be9a087b3277dd1db828c91178
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010730"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871440"
 ---
 # <a name="create-a-proximity-placement-group-using-the-portal"></a>Создание группы размещения близкого взаимодействия с помощью портала
 
-Чтобы виртуальные машины максимально близки к максимально возможной задержке, следует развернуть их в [группе размещения](co-location.md#proximity-placement-groups)с учетом расположения.
+Чтобы виртуальные машины максимально близки к максимально возможной задержке, следует развернуть их в [группе размещения](../co-location.md#proximity-placement-groups)с учетом расположения.
 
 Группа размещения близкого взаимодействия — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группа размещения близкого взаимодействия удобны для рабочих нагрузок, где требуется низкая задержка.
 
@@ -74,7 +74,6 @@ ms.locfileid: "96010730"
 
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Можно также использовать [Azure PowerShell](proximity-placement-groups.md) для создания групп размещения с учетом расположения.
-

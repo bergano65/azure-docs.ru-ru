@@ -3,12 +3,12 @@ title: Использование управляемого удостовере�
 description: Использование управляемых удостоверений в коде приложения Azure Service Fabric для доступа к службам Azure.
 ms.topic: article
 ms.date: 10/09/2019
-ms.openlocfilehash: bec640077a17ccef822afb85fc104728aabb13b1
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: e26a29020f26583f7e4aa16434c7e8647ba9a5a3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791328"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871067"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>Как использовать управляемое удостоверение приложения Service Fabric для доступа к службам Azure
 
@@ -30,7 +30,7 @@ Service Fabric приложения могут использовать упра
 Поддержка Service Fabric доступна в следующих версиях для следующих языков: 
 - [C# в версии 1.3.0](https://www.nuget.org/packages/Azure.Identity). См. [пример на C#](https://github.com/Azure-Samples/service-fabric-managed-identity).
 - [Python в версии 1.5.0](https://pypi.org/project/azure-identity/). См. [Пример Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/identity/azure-identity/tests/managed-identity-live/service-fabric/service_fabric.md).
-- [Java в версии 1.2.0](https://docs.microsoft.com/java/api/overview/azure/identity-readme).
+- [Java в версии 1.2.0](/java/api/overview/azure/identity-readme).
 
 Пример инициализации учетных данных на C# и использование учетных данных для выборки секрета из Azure Key Vault:
 
