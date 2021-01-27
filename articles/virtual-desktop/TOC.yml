@@ -120,6 +120,10 @@
       href: azure-monitor.md
     - name: Подготовка плана аварийного восстановления
       href: disaster-recovery.md
+    - name: Настройка прокси-сервера KDC
+      href: key-distribution-center-proxy.md
+    - name: Настройка роли шлюза RD
+      href: rd-gateway-role.md
 - name: Основные понятия
   items:
     - name: Встроенные роли
@@ -170,6 +174,10 @@
       href: azure-monitor-glossary.md
     - name: Расположения данных
       href: data-locations.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
 - name: Диагностика
   items:
     - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'

@@ -601,24 +601,24 @@
           href: dedicated-hosts-portal.md
         - name: PowerShell
           href: ./windows/dedicated-hosts-powershell.md
+    - name: Точечные виртуальные машины
+      displayName: 'pre-empt, preempt, spot'
+      items:
+        - name: Обзор
+          href: spot-vms.md
+        - name: CLI
+          href: ./linux/spot-cli.md
+        - name: Портал
+          href: spot-portal.md
+        - name: PowerShell
+          href: ./windows/spot-powershell.md
+        - name: Шаблон ARM
+          displayName: template ARM
+          href: ./linux/spot-template.md
+        - name: Коды ошибок
+          href: error-codes-spot.md
     - name: Варианты приобретения
       items:
-        - name: Точечные виртуальные машины
-          displayName: 'pre-empt, preempt, spot'
-          items:
-            - name: Обзор
-              href: spot-vms.md
-            - name: CLI
-              href: ./linux/spot-cli.md
-            - name: Портал
-              href: spot-portal.md
-            - name: PowerShell
-              href: ./windows/spot-powershell.md
-            - name: Шаблон ARM
-              displayName: template ARM
-              href: ./linux/spot-template.md
-            - name: Коды ошибок
-              href: error-codes-spot.md
         - name: Преимущество гибридного использования Azure
           items:
             - name: Linux
@@ -1747,7 +1747,7 @@
         - name: Цены
           href: ../backup/azure-backup-pricing.md
         - name: ВОПРОСЫ И ОТВЕТЫ
-          href: ../backup/backup-azure-vm-backup-faq.md
+          href: ../backup/backup-azure-vm-backup-faq.yml
     - name: Аварийное восстановление
       items:
         - name: Обзор

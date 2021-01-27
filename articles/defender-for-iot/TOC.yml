@@ -3,13 +3,12 @@
 - name: Обзор
   href: overview.md
   items:
-    - name: Новые возможности
-      href: release-notes.md
     - name: Архитектура решения
       href: architecture.md
-- name: Краткие руководства
-  expanded: true
-  items:
+    - name: Новые возможности
+      href: release-notes.md
+    - name: Краткие руководства
+      expanded: true
     - name: Безагентное решение для организаций
       items:
         - name: Предварительные требования к системе
@@ -154,6 +153,16 @@
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
         - name: Работа с оповещениями на локальной консоли управления
           href: how-to-work-with-alerts-on-premises-management-console.md
+        - name: Создавать отчеты
+          items:
+            - name: Создание отчетов по оценке рисков
+              href: how-to-create-risk-assessment-reports.md
+            - name: Создание отчетов о векторах атак
+              href: how-to-create-attack-vector-reports.md
+            - name: Создание отчетов интеллектуального анализа данных
+              href: how-to-create-data-mining-queries.md
+            - name: Создание отчетов о тенденциях и статистических отчетов
+              href: how-to-create-data-mining-queries.md
         - name: Обогащение сведений об устройстве
           items:
             - name: Работа с уведомлениями об устройствах
@@ -168,8 +177,6 @@
         - name: Отслеживание действий датчика
           href: how-to-track-sensor-activity.md
           displayName: 'timeline, time line, time-line, event'
-        - name: Создание отчетов
-          href: how-to-generate-reports.md
         - name: Устранение неполадок с датчиком и локальной консолью управления
           href: how-to-troubleshoot-the-sensor-and-on-premises-management-console.md
         - name: Настройка мониторинга SNMP MIB

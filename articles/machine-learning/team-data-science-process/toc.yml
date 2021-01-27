@@ -134,7 +134,7 @@
               items:
                 - name: Обзор
                   href: explore-data.md
-                - name: Изучение данных в хранилище BLOB-объектов Azure
+                - name: Знакомство с Хранилищем BLOB-объектов Azure
                   href: explore-data-blob.md
                 - name: Изучение данных в базе данных SQL на виртуальной машине
                   href: explore-data-sql-server.md
@@ -144,7 +144,7 @@
               items:
                 - name: Обзор
                   href: sample-data.md
-                - name: Использование хранилища BLOB-объектов
+                - name: Использование Хранилища BLOB-объектов
                   href: sample-data-blob.md
                 - name: Использование сервера SQL
                   href: sample-data-sql-server.md

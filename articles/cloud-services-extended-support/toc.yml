@@ -16,8 +16,10 @@
       href: deploy-powershell.md
     - name: 'Развертывание облачной службы, шаблон'
       href: deploy-template.md
+    - name: "Развертывание облачной службы\_— пакет SDK"
+      href: deploy-sdk.md
     - name: 'Развертывание облачной службы, Visual Studio'
-      href: deploy-visual-studio.md
+      href: 'https://docs.microsoft.com/visualstudio/azure/cloud-services-extended-support?context=/azure/cloud-services-extended-support/context/context'
   expanded: true
 - name: Основные понятия
   items:
@@ -26,11 +28,11 @@
     - name: Доступные размеры виртуальных машин
       href: available-sizes.md
     - name: Исправления гостевой ОС
-      href: ../cloud-services/cloud-services-guestos-msrc-releases.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
+      href: ../cloud-services/cloud-services-guestos-msrc-releases.md?context=/azure/cloud-services-extended-support/context/context
     - name: Прекращение использования гостевой ОС
-      href: ../cloud-services/cloud-services-guestos-retirement-policy.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
+      href: ../cloud-services/cloud-services-guestos-retirement-policy.md?context=/azure/cloud-services-extended-support/context/context
     - name: Новости о выпуске гостевой ОС
-      href: ../cloud-services/cloud-services-guestos-update-matrix.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
+      href: ../cloud-services/cloud-services-guestos-update-matrix.md?context=/azure/cloud-services-extended-support/context/context
     - name: схема XML
       items:
         - name: Схема XML (CSDEF-файл)
@@ -65,6 +67,8 @@
       href: certificates-and-key-vault.md
 - name: Примеры
   items:
+    - name: Примеры шаблонов
+      href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
     - name: создание новой облачной службы.
       href: sample-create-cloud-service.md
     - name: Получение сведений об облачной службе
@@ -83,6 +87,8 @@
       href: 'https://docs.microsoft.com/azure/templates/microsoft.compute/cloudservices'
     - name: REST
       href: 'https://docs.microsoft.com/rest/api/compute/cloudservices'
+    - name: .NET
+      href: 'https://docs.microsoft.com/dotnet/api/overview/azure/virtualmachines/management?view=azure-dotnet-preview'
     - name: SDK
       href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Compute/43.0.0-preview'
 - name: Ресурсы

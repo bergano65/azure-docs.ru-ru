@@ -33,8 +33,6 @@
       href: spring-cloud-tutorial-custom-domain.md
     - name: Использование управляемого удостоверения для подключения Key Vault к приложению Azure Spring Cloud
       href: spring-cloud-tutorial-managed-identities-key-vault.md
-    - name: Развертывание Azure Spring Cloud в виртуальной сети
-      href: spring-cloud-tutorial-deploy-in-azure-virtual-network.md
     - name: Использование управляемого удостоверения для вызова Функций Azure из приложения Azure Spring Cloud
       href: spring-cloud-tutorial-managed-identities-functions.md
 - name: Основные понятия
@@ -101,6 +99,18 @@
           href: spring-cloud-howto-application-insights.md
         - name: Метрики автоматического выключения Resilience4J
           href: spring-cloud-howto-circuit-breaker-metrics.md
+    - name: Сеть
+      items:
+        - name: развертыванию Azure Spring Cloud в виртуальной сети
+          href: spring-cloud-tutorial-deploy-in-azure-virtual-network.md
+        - name: Доступ к приложению в частной сети
+          href: spring-cloud-access-app-virtual-network.md
+        - name: Предоставление доступа к приложениям через Интернет
+          href: spring-cloud-expose-apps-gateway-azure-firewall.md
+        - name: Обязательства клиентов в отношении запуска Azure Spring Cloud в виртуальной сети
+          href: spring-cloud-vnet-customer-responsibilities.md
+        - name: Устранение неполадок с Azure Spring Cloud в виртуальных сетях
+          href: spring-cloud-troubleshooting-vnet.md
     - name: Безопасность
       items:
         - name: 'Включение управляемого удостоверения, назначаемого системой'
@@ -140,7 +150,7 @@
         - name: Spring Boot
           href: /azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud
         - name: Tomcat
-          href: 'https://docs.microsoft.com/azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud'
+          href: /azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud
 - name: Развертывание DevOps
   items:
     - name: CI/CD и Azure DevOps
