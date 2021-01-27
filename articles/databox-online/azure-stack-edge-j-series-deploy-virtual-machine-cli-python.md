@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/07/2020
+ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 54a4a938be18d39993652cecb87b3604e268fcef
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: daf44afbb322cb30ab3a663dce4e935aefa7be13
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678959"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808054"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure CLI и Python
 
@@ -29,7 +29,7 @@ ms.locfileid: "98678959"
 
 ![Рабочий процесс развертывания виртуальной машины](media/azure-stack-edge-gpu-deploy-virtual-machine-powershell/vm-workflow-r.svg)
 
-Общая сводка по рабочему процессу развертывания включает следующие шаги:
+Общая сводка по рабочему процессу развертывания включает следующие действия:
 
 1. Подключение к Azure Resource Manager.
 2. Создание группы ресурсов
@@ -70,9 +70,9 @@ ms.locfileid: "98678959"
 
 3. Создайте и установите все сертификаты на устройстве Azure Stack Edge Pro и в надежном хранилище клиента (см. раздел [Шаг 2. Создание и установка сертификатов](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates)).
 
-4. Создайте сертификат с расширением *CER* в кодировке Base-64 (формат PEM) для устройства Azure Stack Edge Pro. Он уже отправлен как цепочка подписывания на устройство и установлен в доверенном корневом хранилище на клиенте. Этот сертификат в формате *PEM* также обеспечивает поддержку Python на этом клиенте.
+4. Создайте сертификат с расширением *CER* в кодировке Base-64 (формат PEM) для устройства Azure Stack Edge Pro. Этот сертификат уже отправлен как цепочка подписывания на устройство и установлен в доверенном корневом хранилище в клиенте. Этот сертификат в формате *PEM* также обеспечивает поддержку Python на этом клиенте.
 
-    Преобразуйте этот сертификат в формат PEM с помощью команды `certutil`. Эту команду необходимо выполнить в каталоге, содержащем сертификат.
+    Преобразуйте этот сертификат в формат `pem` с помощью команды `certutil`. Эту команду необходимо выполнить в каталоге, содержащем сертификат.
 
     ```powershell
     certutil.exe <SourceCertificateName.cer> <DestinationCertificateName.pem>
@@ -86,9 +86,9 @@ ms.locfileid: "98678959"
     CertUtil: -encode command completed successfully.
     PS C:\Certificates>
     ```    
-    Этот сертификат в формате PEM позже будет добавлен в хранилище Python.
+    Этот сертификат в формате `pem` позже будет добавлен в хранилище Python.
 
-5. Назначьте IP-адрес устройства на странице **Сеть** в локальном пользовательском веб-интерфейсе. Этот IP-адрес нужно добавить в:
+5. Назначьте IP-адрес устройства на странице **Сеть** в локальном пользовательском веб-интерфейсе. Добавьте этот IP-адрес в:
 
     - файл узла на клиенте ИЛИ
     - конфигурацию DNS-сервера.
@@ -117,7 +117,7 @@ ms.locfileid: "98678959"
 
 ### <a name="verify-profile-and-install-azure-cli"></a>Проверка профиля и установка Azure CLI
 
-<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
+<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908&preserve-view=true#azure-resource-manager-api-profiles).-->
 
 1. Установите Azure CLI на клиенте. В этом примере используется Azure CLI 2.0.80. Чтобы проверить версию Azure CLI, выполните команду `az --version`.
 
@@ -149,7 +149,7 @@ ms.locfileid: "98678959"
 
     Если у вас нет Azure CLI, скачайте и [установите Azure CLI в Windows](/cli/azure/install-azure-cli-windows). Azure CLI можно запускать с помощью командной строки Windows или Windows PowerShell.
 
-2. Запишите расположение Python в интерфейсе командной строки. Оно потребуется для определения расположения хранилища доверенных корневых сертификатов для Azure CLI.
+2. Запишите расположение Python в интерфейсе командной строки. Расположение Python потребуется для определения расположения хранилища доверенных корневых сертификатов для Azure CLI.
 
 3. Чтобы запустить пример скрипта, используемый в этой статье, вам понадобятся следующие версии библиотеки Python:
 
@@ -342,7 +342,7 @@ ms.locfileid: "98678959"
    ]
    PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
    ```
-   Запишите значения `id` и `tenantId`, так как они соответствуют идентификатору подписки и идентификатору арендатора Azure Resource Manager соответственно и будут использоваться на следующем шаге.
+   Запишите значения `id` и `tenantId`, так как они соответствуют идентификатору подписки и идентификатору арендатора Azure Resource Manager соответственно и будут использоваться на следующем этапе.
        
    Следующие переменные среды нужно настроить в качестве *субъекта-службы*:
 

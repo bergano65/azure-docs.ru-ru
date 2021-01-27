@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: cbc22f9b55f8d20880b43516a2a5bc8f55d389f5
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: b4b2a3bf8c9a3a2e2ec7f1b22785a037f8dedc60
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814505"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98873966"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
@@ -38,7 +38,7 @@ ms.locfileid: "97814505"
 
 Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, в концентратор событий Azure или в учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, которые выполнялись в кэше Azure для экземпляров Redis на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для экземпляров защиты Azure от атак DDoS.
 
-- [Просмотр и Настройка ведения журнала диагностики от атак DDoS](../../ddos-protection/diagnostic-logging.md)
+- [Просмотр и настройка журнала диагностики атак DDoS](../../ddos-protection/diagnostic-logging.md)
 
 - [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
 
@@ -164,7 +164,7 @@ ms.locfileid: "97814505"
 
 **Руководство**. Использование защищенной рабочей станции, управляемой Azure, с поддержкой многофакторной идентификации Azure AD (MFA) для входа и настройки запросов защищенное хранилище Azure.
 
-- [Развертывание защищенной рабочей станции, управляемой Azure](../../active-directory/devices/howto-azure-managed-workstation.md)
+- [Развертывание защищенной рабочей станции, управляемой Azure](/security/compass/privileged-access-deployment)
 
 - [Планирование развертывания облачной службы Многофакторной идентификации Azure AD](../../active-directory/authentication/howto-mfa-getstarted.md)
 

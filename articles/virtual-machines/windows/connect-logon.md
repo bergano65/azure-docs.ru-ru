@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/26/2018
 ms.author: cynthn
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1b29cdda66186587c43471d6d6e819dfbde658e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dacf34d7098472e98c7f68f7f60fa9bac1a4e5ec
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89075026"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875777"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее
 Чтобы запустить сеанс удаленного рабочего стола, на портале Azure нажмите кнопку **Подключиться** на рабочем столе Windows. Сначала подключитесь к виртуальной машине, а затем войдите в систему.
@@ -41,7 +41,7 @@ ms.locfileid: "89075026"
 
 
    > [!TIP]
-   > Если кнопка **Подключиться** на портале неактивна и вы не используете канал [Express Route](../../expressroute/expressroute-introduction.md) или [VPN-подключение типа "сеть — сеть"](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) для обмена данными с Azure, вам сначала нужно будет создать общедоступный IP-адрес и назначить его виртуальной машине. Только после этого вы сможете использовать протокол RDP. Дополнительные сведения см. в статье [Типы IP-адресов и методы распределения в Azure](../../virtual-network/public-ip-addresses.md).
+   > Если кнопка **Подключиться** на портале неактивна и вы не используете канал [Express Route](../../expressroute/expressroute-introduction.md) или [VPN-подключение типа "сеть — сеть"](../../vpn-gateway/tutorial-site-to-site-portal.md) для обмена данными с Azure, вам сначала нужно будет создать общедоступный IP-адрес и назначить его виртуальной машине. Только после этого вы сможете использовать протокол RDP. Дополнительные сведения см. в статье [Типы IP-адресов и методы распределения в Azure](../../virtual-network/public-ip-addresses.md).
    > 
    > 
 
@@ -64,4 +64,4 @@ Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -LocalPath "C
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Если у вас возникли проблемы с подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../troubleshooting/troubleshoot-rdp-connection.md?toc=/azure/virtual-machines/windows/toc.json). 
+Если у вас возникли проблемы с подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](../troubleshooting/troubleshoot-rdp-connection.md?toc=/azure/virtual-machines/windows/toc.json).

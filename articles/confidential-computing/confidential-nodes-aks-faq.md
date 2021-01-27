@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: amgowda
-ms.openlocfilehash: b4b6c04a1e35031387a006b6350ebf6cbe502fee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51e2095b0df8fdc965926c6c612c45f582c9b9d2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90997904"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874490"
 ---
 # <a name="frequently-asked-questions-about-confidential-computing-nodes-on-azure-kubernetes-service-aks"></a>Часто задаваемые вопросы о конфиденциальных вычислительных узлах в службе Kubernetes Azure (AKS)
 
@@ -24,6 +24,10 @@ ms.locfileid: "90997904"
 ## <a name="what-is-attestation-and-how-can-we-do-attestation-of-apps-running-in-enclaves"></a>Что такое аттестация и как можно выполнить аттестацию приложений, работающих в енклавес? 
 
 Аттестация — это процесс демонстрации и проверки правильности создания экземпляра программного обеспечения на конкретной аппаратной платформе. Это также гарантирует, что его свидетельство будет проверено, чтобы гарантировать, что оно выполняется на защищенной платформе и не было фальсифицировано. [Узнайте больше](attestation.md) о том, как аттестация выполняется для приложений анклава.
+
+## <a name="can-i-enable-accelerated-networking-with-azure-confidential-computing-aks-clusters"></a>Можно ли включить ускоренную сеть с использованием кластеров AKS для конфиденциальных вычислений Azure? 
+
+Нет. Ускоренная сеть не поддерживается на узлах конфиденциальных вычислений в AKS. Убедитесь, что в развертывании отключена функция ускорения сети. 
 
 ## <a name="can-i-bring-my-existing-containerized-applications-and-run-it-on-aks-with-azure-confidential-computing"></a>Можно ли переносить существующие контейнерные приложения и запускать их в AKS с помощью конфиденциальных вычислений в Azure? 
 

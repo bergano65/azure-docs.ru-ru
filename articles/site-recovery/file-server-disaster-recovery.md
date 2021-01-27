@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: sharrai
 ms.custom: mvc
-ms.openlocfilehash: 1c88a7e78d37556f0f1f89e16154dc1808f24323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9cef163c1b53360222ca32a827552fa361e9dd40
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89425523"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874253"
 ---
 # <a name="protect-a-file-server-by-using-azure-site-recovery"></a>Защита файлового сервера с помощью Azure Site Recovery 
 
@@ -77,7 +77,7 @@ DFSR применяет алгоритм сжатия (известный как
 
 
 
-**Подключение "сеть — сеть".** Необходимо установить прямое соединение между локальным сайтом и сетью Azure, чтобы разрешить обмен данными между серверами. Используйте защищенное подключение VPN "сеть — сеть" к виртуальной сети Azure, которая выступает в качестве сайта аварийного восстановления. Дополнительные сведения см. в статье [Создание подключения типа "сеть — сеть" на портале Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+**Подключение "сеть — сеть".** Необходимо установить прямое соединение между локальным сайтом и сетью Azure, чтобы разрешить обмен данными между серверами. Используйте защищенное подключение VPN "сеть — сеть" к виртуальной сети Azure, которая выступает в качестве сайта аварийного восстановления. Дополнительные сведения см. в статье [Создание подключения типа "сеть — сеть" на портале Azure](../vpn-gateway/tutorial-site-to-site-portal.md).
 
 **Active Directory.** DFSR зависит от Active Directory. Это означает, что лес Active Directory с локальными контроллерами домена распространяется на сайт аварийного восстановления в Azure. Даже если вы не используете DFSR, а предполагаемым пользователям нужно предоставить доступ, необходимо выполнить эти действия. Дополнительные сведения см. в статье [Защита Active Directory и DNS с помощью Azure Site Recovery](./site-recovery-active-directory.md).
 

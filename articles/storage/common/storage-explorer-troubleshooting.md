@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: 4e87e99f16a89cab95f9bd07b75b80f1c13d47f1
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 9a20db58846ca48afb4fb256adae58e1fccdff3a
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900660"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875742"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок в обозревателе хранилищ Azure
 
@@ -70,13 +70,13 @@ ms.locfileid: "97900660"
 ### <a name="recommended-azure-built-in-roles"></a>Рекомендуемые встроенные роли Azure
 
 Существует несколько встроенных ролей Azure, которые могут предоставить разрешения, необходимые для использования Обозреватель службы хранилища. Ниже приведены некоторые из этих ролей.
-- [Владелец](/azure/role-based-access-control/built-in-roles#owner): управление всеми ресурсами, включая доступ к ресурсам.
-- [Участник](/azure/role-based-access-control/built-in-roles#contributor): управление всеми ресурсами без доступа к ресурсам.
-- [Читатель](/azure/role-based-access-control/built-in-roles#reader): чтение и вывод списка ресурсов.
-- [Участник учетной записи хранения](/azure/role-based-access-control/built-in-roles#storage-account-contributor). полное управление учетными записями хранения.
-- [Владелец данных BLOB-объекта хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner): полный доступ к контейнерам и данным больших двоичных объектов службы хранилища Azure.
-- [Участник данных BLOB-объектов службы хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor): чтение, запись и удаление контейнеров и больших двоичных объектов службы хранилища Azure.
-- [Модуль чтения BLOB-объектов хранилища](/azure/role-based-access-control/built-in-roles#storage-blob-data-reader): чтение и перечисление контейнеров хранилища Azure и больших двоичных объектов.
+- [Владелец](../../role-based-access-control/built-in-roles.md#owner): управление всеми ресурсами, включая доступ к ресурсам.
+- [Участник](../../role-based-access-control/built-in-roles.md#contributor): управление всеми ресурсами без доступа к ресурсам.
+- [Читатель](../../role-based-access-control/built-in-roles.md#reader): чтение и вывод списка ресурсов.
+- [Участник учетной записи хранения](../../role-based-access-control/built-in-roles.md#storage-account-contributor). полное управление учетными записями хранения.
+- [Владелец данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner): полный доступ к контейнерам и данным больших двоичных объектов службы хранилища Azure.
+- [Участник данных BLOB-объектов службы хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor): чтение, запись и удаление контейнеров и больших двоичных объектов службы хранилища Azure.
+- [Модуль чтения BLOB-объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader): чтение и перечисление контейнеров хранилища Azure и больших двоичных объектов.
 
 > [!NOTE]
 > Роли участников "владелец", "участник" и "учетная запись хранения" предоставляют доступ к ключу учетной записи.
@@ -150,7 +150,7 @@ ms.locfileid: "97900660"
 
     ![Значок замка](./media/storage-explorer-troubleshooting/unlockingkeychain.png)
 
-5. Откройте обозреватель хранилищ.
+5. Откройте Обозреватель службы хранилища.
 6. Вам будет предложено сообщение, например "концентратору услуг требуется получить доступ к цепочке ключей". Введите пароль учетной записи администратора Mac и установите флажок **всегда разрешать** (или **Разрешить** , если **всегда разрешить** недоступно).
 7. Попробуйте выполнить вход.
 
@@ -361,7 +361,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
      sudo apt-get install -y dotnet-runtime-2.1
    ```
 
-# <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
+# <a name="ubuntu-1804"></a>[Ubuntu 18.04](#tab/1804)
 
 1. Скачайте файл Обозреватель службы хранилища. tar. gz.
 2. Установите [среду выполнения .NET Core](/dotnet/core/install/linux):
@@ -419,7 +419,7 @@ snap connect storage-explorer:password-manager-service :password-manager-service
 ## <a name="open-in-explorer-from-the-azure-portal-doesnt-work"></a>"Открыть в проводнике" из портал Azure не работает
 
 Если кнопка **Открыть в обозревателе** на портал Azure не работает, убедитесь, что вы используете совместимый браузер. Следующие браузеры прошли проверку на совместимость:
-* Microsoft Edge;
+* Microsoft Edge
 * Mozilla Firefox;
 * Google Chrome;
 * Microsoft Internet Explorer

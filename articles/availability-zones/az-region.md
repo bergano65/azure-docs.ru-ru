@@ -7,20 +7,18 @@ ms.topic: article
 ms.date: 12/17/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: c63ea4f9cdb961ca492d5dcf22a89627864236cd
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 2a2e4ac57eec866d9857f564d6c76ad4a775d223
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733206"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874614"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Службы Azure с поддержкой Зон доступности
 
-Зоны доступности — это предложение высокого уровня доступности, защищающее приложения и данные от сбоев центров обработки данных. Список существующих и предстоящих регионов, которые поддерживают Зоны доступности, см. [в статье регионы и зоны доступности в Azure](az-overview.md).  
+Microsoft Azure Глобальная инфраструктура разрабатывается и создается на каждом уровне, чтобы обеспечить высочайший уровень избыточности и устойчивость к своим клиентам. Инфраструктура Azure состоит из географических областей, регионов и Зоны доступности, которые ограничивают радиус сбоя и, таким образом, ограничивают потенциальное воздействие на клиентские приложения и данные. Конструкция Зоны доступности Azure была разработана, чтобы обеспечить программное и сетевое решение для защиты от сбоев центра обработки данных и повышения высокого уровня доступности для наших клиентов.
 
-В этом разделе перечислены службы Azure, которые поддерживают Зоны доступности. 
-
-Службы, доступные в каждом регионе, а также предстоящие планы по доступности, можно найти в [продуктах, доступных по регионам](https://azure.microsoft.com/global-infrastructure/services/).
+Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных с независимым питанием, охлаждением и сетью. Физическое разделение Зоны доступности в пределах региона ограничивает влияние на приложения и данные из сбоев зоны, таких как крупномасштабное переполнение, основные степени и подмножества, а также другие события, которые могут нарушить доступ к сайту, безопасность, расширенные служебные программы и доступность ресурсов. Зоны доступности и связанные с ними центры обработки данных спроектированы таким образом, что если одна зона скомпрометирована, службы, емкость и доступность поддерживаются другими Зоны доступности в регионе.
 
 Все службы управления Azure спроектированы как устойчивые к сбоям на уровне региона. В спектре сбоев один или несколько сбоев зоны доступности в регионе имеют меньший радиус сбоя по сравнению со всем сбоем региона. Azure может выполнить восстановление после сбоя на уровне зоны для служб управления в пределах региона. Azure выполняет критическое обслуживание по одной зоне за раз в пределах региона, чтобы предотвратить сбои, влияющие на ресурсы клиента, развернутые в Зоны доступности в пределах региона.
 
@@ -34,165 +32,143 @@ ms.locfileid: "98733206"
 
 - **Службы, избыточные** в пределах зоны — Платформа Azure реплицирует ресурсы и данные между зонами.  Корпорация Майкрософт управляет доставкой высокого уровня доступности, так как Azure автоматически реплицирует и распространяет экземпляры в пределах региона.  ZRS, например, реплицирует данные по трем зонам, чтобы сбой зоны не влиял на высокую доступность данных. 
 
-- **Службы, не являющиеся региональными** , — это службы, не зависящие от конкретного региона Azure, что делает их устойчивыми к простоям в пределах зоны, а также по различным регионам.
+- Службы, **не предназначенные для регионального региона** — службы всегда доступны в географических регионах Azure и устойчивы к простоям в пределах зоны, а также по сбоям в рамках всего региона. 
 
 
 Чтобы обеспечить всестороннюю непрерывность бизнес-процессов в Azure, создайте архитектуру приложений, используя сочетание зон доступности с парами регионов Azure. Можно синхронно реплицировать приложения и данные с помощью зон доступности в регионе Azure, чтобы обеспечить высокий уровень доступности, и асинхронно реплицировать их между регионами Azure, чтобы обеспечить защиту с помощью аварийного восстановления. Дополнительные сведения см. в статье [Создание решений для обеспечения высокой доступности с помощью зоны доступности](/azure/architecture/high-availability/building-solutions-for-high-availability). 
 
+## <a name="azure-services-supporting-availability-zones"></a>Службы Azure, поддерживающие Зоны доступности
 
-### <a name="azure-services-supporting-availability-zones"></a>Службы Azure, поддерживающие Зоны доступности
+ - Виртуальные машины старого поколения не перечислены. Дополнительные сведения см. в статье [Размеры виртуальных машин предыдущих поколений](../virtual-machines/sizes-previous-gen.md).
+ - Как упоминалось в [регионах и зоны доступности в Azure](az-overview.md), некоторые службы не являются региональными. Эти службы не имеют зависимости от конкретного региона Azure, так как они устойчивы к простоям на уровне зоны, а также к простоям в рамках всего региона.  Список нерегиональный службы можно найти в списке [продуктов, доступных по регионам](https://azure.microsoft.com/global-infrastructure/services/).
+
+
+## <a name="azure-regions-with-availability-zones"></a>Регионы Azure с Зоны доступности
+
+
+| Северная и Южная Америка           | Европа         | Германия              | Африка              | Азиатско-Тихоокеанский регион   |
+|--------------------|----------------|----------------------|---------------------|----------------|
+|                    |                |                      |                     |                |
+| Центральная Канада     | Центральная Франция | Центрально-Западная Германия | Южная Африка, Северный * | Japan East     |
+| Центральная часть США         | Северная Европа   |                      |                     | Юго-Восточная Азия |
+| Восточная часть США            | южная часть Соединенного Королевства       |                      |                     | Восточная Австралия |
+| восточная часть США 2          | Западная Европа    |                      |                     |                |
+| Юго-Центральный регион США |                |                      |                     |                |
+| US Gov (Вирджиния) * |                |                      |                     |                |
+| Западная часть США 2        |                |                      |                     |                |
+
+
+Чтобы узнать больше о Зоны доступности и доступных службах в этих регионах, обратитесь к специалистам Майкрософт по продажам или клиентам. Сведения о следующих регионах, которые будут поддерживать Зоны доступности, см. в разделе [географические диаграммы Azure](https://azure.microsoft.com/en-us/global-infrastructure/geographies/).
+
+
+## <a name="azure-services-supporting-availability-zones"></a>Службы Azure, поддерживающие Зоны доступности
 
 - Виртуальные машины старого поколения не перечислены ниже. Дополнительные сведения см. в статье [предыдущие поколения размеров виртуальных машин](../virtual-machines/sizes-previous-gen.md).
 
 - Некоторые службы не являются региональными. Дополнительные сведения см. [в разделе регионы и зоны доступности в Azure](az-overview.md) . Эти службы не имеют зависимости от конкретного региона Azure, что делает их устойчивыми к простоям на уровне зоны и по всему региону.  Список нерегиональный службы можно найти в списке [продуктов, доступных по регионам](https://azure.microsoft.com/global-infrastructure/services/).
 
 
+### <a name="zone-resilient-services"></a>Отказоустойчивые службы зоны 
 
-## <a name="americas"></a>Северная и Южная Америка
+: globe_with_meridians: службы, не являющиеся региональными, — службы всегда доступны в географических регионах Azure и устойчивы к простоям на уровне зоны, а также к сбоям в рамках всего региона.
 
-| **Продукты** | **Центральная часть США** | **Восточная часть США** | **Восточная часть США 2** | **Западная часть США 2** | **Центральная Канада** |
-|--|--|--|--|--|--|
-| **Compute** |  |  |  |  |  |
-| [Среды службы приложений (ILB)](../app-service/environment/zone-redundancy.md#how-to-deploy-an-app-service-environment-in-an-availability-zone) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Service Fabric](../service-fabric/service-fabric-cross-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальные машины](https://azure.microsoft.com/services/virtual-machines/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
-| **Контейнеры** |  |  |  |
-| [Служба Azure Kubernetes (AKS)](../aks/availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Реестр контейнеров](../container-registry/zone-redundancy.md) |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  | 
-| **Хранилище** |  |  |  |  |  |
-| [Azure Data Lake Storage 2-го поколения](../storage/common/storage-account-create.md?tabs=azure-portal)  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Хранилище файлов Premium](../storage/files/storage-files-planning.md) |  | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Хранилище BLOB-объектов](../storage/blobs/storage-blobs-introduction.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Управляемые диски](https://azure.microsoft.com/en-gb/updates/azure-managed-snapshots-images-ga/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Сетевое взаимодействие** |  |  |  |  |  |
-| [Шлюз приложений версии 2](../application-gateway/application-gateway-autoscaling-zone-redundant.md)  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Express Route](../expressroute/designing-for-high-availability-with-expressroute.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Брандмауэр Azure](../firewall/deploy-availability-zone-powershell.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Стандартный IP-адрес](../virtual-network/public-ip-addresses.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Load Balancer](../load-balancer/load-balancer-standard-availability-zones.md#concepts) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальная сеть](../vpn-gateway/create-zone-redundant-vnet-gateway.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [NAT виртуальной сети](../virtual-network/nat-gateway-resource.md#availability-zones) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальная глобальная сеть](../virtual-wan/virtual-wan-faq.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [VPN-шлюз](../vpn-gateway/about-zone-redundant-vnet-gateways.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Базы данных** |  |  |  |  |  |
-| [Кэш Azure для Redis](../azure-cache-for-redis/cache-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Cosmos DB](../cosmos-db/high-availability.md#availability-zone-support) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [База данных Azure для MySQL — гибкий сервер](../mysql/flexible-server/concepts-high-availability.md) | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [Гибкий сервер Базы данных Azure для PostgreSQL](../postgresql/flexible-server/overview.md) | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [База данных SQL Azure (уровень общего назначения)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | :x: | : heavy_check_mark: (Предварительная версия) | : heavy_check_mark: (Предварительная версия) | : heavy_check_mark: (Предварительная версия) | :x: |
-| [База данных SQL Azure (уровни критически важный для бизнеса Premium &)](../azure-sql/database/high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Аналитика** |  |  |  |  |  |
-| [Центры событий](../event-hubs/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Интеграция** |  |  |  |  |  |
-| [Сетка событий](../event-grid/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Служебная шина](../service-fabric/service-fabric-cross-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Управление** |  |  |  |  |  |
-| [Наблюдатель за сетями](../network-watcher/frequently-asked-questions.md) | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| **Безопасность** |  |  |  |  |  |
-| [Доменные службы Azure Active Directory](../active-directory-domain-services/overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+: large_blue_diamond: устойчивость к простоям в пределах зоны 
 
-## <a name="europe"></a>Европа
+**Базовые службы**
 
-| **Продукты** | **Центральная Франция** | **Северная Европа** | **южная часть Соединенного Королевства** | **Западная Европа** |
-|--|--|--|--|--|
-| **Compute** |  |  |  |  |
-| [Среды службы приложений (ILB)](../app-service/environment/zone-redundancy.md#how-to-deploy-an-app-service-environment-in-an-availability-zone) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Служба Azure Kubernetes (AKS)](../aks/availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Service Fabric](../service-fabric/service-fabric-cross-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальные машины](https://azure.microsoft.com/services/virtual-machines/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Хранилище** |  |  |  |  |
-| [Azure Data Lake Storage 2-го поколения](../storage/common/storage-account-create.md?tabs=azure-portal)  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Хранилище файлов Premium](../storage/files/storage-files-planning.md) |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Хранилище BLOB-объектов](../storage/blobs/storage-blobs-introduction.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Управляемые диски](https://azure.microsoft.com/en-gb/updates/azure-managed-snapshots-images-ga/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Сетевое взаимодействие** |  |  |  |  |
-| [Шлюз приложений версии 2](../application-gateway/application-gateway-autoscaling-zone-redundant.md)  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Express Route](../expressroute/designing-for-high-availability-with-expressroute.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Брандмауэр Azure](../firewall/deploy-availability-zone-powershell.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Стандартный IP-адрес](../virtual-network/public-ip-addresses.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Load Balancer](../load-balancer/load-balancer-standard-availability-zones.md#concepts) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальная сеть](../vpn-gateway/create-zone-redundant-vnet-gateway.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [NAT виртуальной сети](../virtual-network/nat-gateway-resource.md#availability-zones) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальная глобальная сеть](../virtual-wan/virtual-wan-faq.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [VPN-шлюз](../vpn-gateway/about-zone-redundant-vnet-gateways.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Базы данных** |  |  |  |  |
-| [Кэш Azure для Redis](../azure-cache-for-redis/cache-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Cosmos DB](../cosmos-db/high-availability.md#availability-zone-support) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [База данных Azure для MySQL — гибкий сервер](../mysql/flexible-server/concepts-high-availability.md) | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Гибкий сервер Базы данных Azure для PostgreSQL](../postgresql/flexible-server/overview.md) | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [База данных SQL Azure (уровень общего назначения)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | : heavy_check_mark: (Предварительная версия) | : heavy_check_mark: (Предварительная версия) | :x: | : heavy_check_mark: (Предварительная версия) |
-| [База данных SQL Azure (уровни критически важный для бизнеса Premium &)](../azure-sql/database/high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Аналитика** |  |  |  |  |
-| [Центры событий](../event-hubs/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Интеграция** |  |  |  |  |
-| [Сетка событий](../event-grid/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Служебная шина](../service-fabric/service-fabric-cross-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Управление** |  |  |  |  |
-| [Наблюдатель за сетями](../network-watcher/frequently-asked-questions.md) | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| **Безопасность** |  |  |  |  |
-| [Доменные службы Azure Active Directory](../active-directory-domain-services/overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
-
-## <a name="asia-pacific"></a>Азиатско-Тихоокеанский регион
+|     Продукты                                                    | Устойчивость             |
+|-----------------------------------------------------------------|:----------------------------:|
+|     Учетная запись хранения                                           | : large_blue_diamond:  |
+|     Шлюз приложений (v2)                                  | : large_blue_diamond:  |
+|     Azure Backup                                                | : large_blue_diamond:  |
+|     Azure Cosmos DB                                           | : large_blue_diamond:  |
+|     Azure Data Lake Storage Gen 2                             | : large_blue_diamond:  |
+|     Azure Express Route                                       | : large_blue_diamond:  |
+|     Общедоступный IP-адрес Azure                                           | : large_blue_diamond:  |
+|     База данных SQL Azure (уровень общего назначения)                 | : large_blue_diamond:  |
+|     База данных SQL Azure (уровень критически важный для бизнеса Premium &)     | : large_blue_diamond:  |
+|     Хранилище дисков                                                | : large_blue_diamond:  |
+|     Центры событий                                                  | : large_blue_diamond:  |
+|     Key Vault                                                   | : large_blue_diamond:  |
+|     Load Balancer                                               | : large_blue_diamond:  |
+|     Служебная шина                                                 | : large_blue_diamond:  |
+|     Service Fabric                                            | : large_blue_diamond:  |
+|     Хранилище: уровни "горячий" и "холодного" хранилища BLOB-объектов                      | : large_blue_diamond:  |
+|     Хранилище: управляемые диски                                    | : large_blue_diamond:  |
+|     Масштабируемые наборы виртуальных машин                               | : large_blue_diamond:  |
+|     Виртуальные машины                                          | : large_blue_diamond:  |
+|     Виртуальные машины: Av2-Series                              | : large_blue_diamond:  |
+|     Виртуальные машины: Bs-Series                               | : large_blue_diamond:  |
+|     Виртуальные машины: DSv2-Series                             | : large_blue_diamond:  |
+|     Виртуальные машины: DSv3-Series                             | : large_blue_diamond:  |
+|     Виртуальные машины: Dv2-Series                              | : large_blue_diamond:  |
+|     Виртуальные машины: Dv3-Series                              | : large_blue_diamond:  |
+|     Виртуальные машины: ESv3-Series                             | : large_blue_diamond:  |
+|     Виртуальные машины: Ev3-Series                              | : large_blue_diamond:  |
+|     Виртуальная сеть                                           | : large_blue_diamond:  |
+|     VPN-шлюз                                                 | : large_blue_diamond:  |
 
 
+**Самые распространенные службы**
 
-| **Продукты** | **Восточная Япония** | **Юго-Восточная Азия** | **Восточная Австралия** |
-|--|--|--|--|
-| **Compute** |  |  |  |
-| [Среды службы приложений (ILB)](../app-service/environment/zone-redundancy.md#how-to-deploy-an-app-service-environment-in-an-availability-zone) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Служба Azure Kubernetes (AKS)](../aks/availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Service Fabric](../service-fabric/service-fabric-cross-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальные машины](https://azure.microsoft.com/services/virtual-machines/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Хранилище** |  |  |  |
-| [Azure Data Lake Storage 2-го поколения](../storage/common/storage-account-create.md?tabs=azure-portal)  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Хранилище файлов Premium](../storage/files/storage-files-planning.md) |  | :heavy_check_mark: | :heavy_check_mark: |
-| [Хранилище BLOB-объектов](../storage/blobs/storage-blobs-introduction.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Управляемые диски](https://azure.microsoft.com/en-gb/updates/azure-managed-snapshots-images-ga/) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Сетевое взаимодействие** |  |  |  |
-| [Шлюз приложений версии 2](../application-gateway/application-gateway-autoscaling-zone-redundant.md)  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Express Route](../expressroute/designing-for-high-availability-with-expressroute.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Брандмауэр Azure](../firewall/deploy-availability-zone-powershell.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Стандартный IP-адрес](../virtual-network/public-ip-addresses.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Load Balancer](../load-balancer/load-balancer-standard-availability-zones.md#concepts) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальная сеть](../vpn-gateway/create-zone-redundant-vnet-gateway.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [NAT виртуальной сети](../virtual-network/nat-gateway-resource.md#availability-zones) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Виртуальная глобальная сеть](../virtual-wan/virtual-wan-faq.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [VPN-шлюз](../vpn-gateway/about-zone-redundant-vnet-gateways.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Базы данных** |  |  |  |
-| [Кэш Azure для Redis](../azure-cache-for-redis/cache-overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Cosmos DB](../cosmos-db/high-availability.md#availability-zone-support) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [База данных Azure для MySQL — гибкий сервер](../mysql/flexible-server/concepts-high-availability.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Гибкий сервер Базы данных Azure для PostgreSQL](../postgresql/flexible-server/overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [База данных SQL Azure (уровень общего назначения)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | : heavy_check_mark: (Предварительная версия) | : heavy_check_mark: (Предварительная версия) | : heavy_check_mark: (Предварительная версия) |
-| [База данных SQL Azure (уровни критически важный для бизнеса Premium &)](../azure-sql/database/high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Аналитика** |  |  |  |
-| [Центры событий](../event-hubs/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Интеграция** |  |  |  |
-| [Сетка событий](../event-grid/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Служебная шина](../service-fabric/service-fabric-cross-availability-zones.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| **Управление** |  |  |  |
-| [Наблюдатель за сетями](../network-watcher/frequently-asked-questions.md) | :heavy_check_mark: | :x: | :x: |
-| **Безопасность** |  |  |  |
-| [Доменные службы Azure Active Directory](../active-directory-domain-services/overview.md) | :heavy_check_mark: | :heavy_check_mark: |  |
+| Продукты                                        | Устойчивость |
+|-------------------------------------------------|:------------:|
+| Среда службы приложений                        |      : large_blue_diamond:  |
+| Доменные службы Azure Active Directory          |      : large_blue_diamond:  |
+| Бастион Azure                                   |      : large_blue_diamond:  |
+| Кэш Azure для Redis                           |      : large_blue_diamond:  |
+| Azure Cognitive Services: Анализ текста        |      : large_blue_diamond:  |
+| Azure Data Explorer                             |      : large_blue_diamond:  |
+| База данных Azure для MySQL — гибкий сервер      |      : large_blue_diamond:  |
+| База данных Azure для PostgreSQL — гибкий сервер |      : large_blue_diamond:  |
+| Защита от атак DDoS Azure                           |      : large_blue_diamond:  |
+| Брандмауэр Azure                                  |      : large_blue_diamond:  |
+| Диспетчер брандмауэра Azure                          |      : large_blue_diamond:  |
+| Служба Azure Kubernetes (AKS)                  |      : large_blue_diamond:  |
+| Приватный канал Azure                              |      : large_blue_diamond:  |
+| Azure Red Hat OpenShift                         |      : large_blue_diamond:  |
+| Azure Site Recovery                             |      : large_blue_diamond:  |
+| Реестр контейнеров                              |      : large_blue_diamond:  |
+| Сетка событий Azure                                      |      : large_blue_diamond:  |
+| Наблюдатель за сетями                                 |      : large_blue_diamond:  |
+| Power BI Embedded                               |      : large_blue_diamond:  |
+| Хранилище BLOB-объектов класса Premium                            |      : large_blue_diamond:  |
+| Виртуальные машины: Ddsv4-Series                  |      : large_blue_diamond:  |
+| Виртуальные машины: Ddv4-Series                   |      : large_blue_diamond:  |
+| Виртуальные машины: Dsv4-Series                   |      : large_blue_diamond:  |
+| Виртуальные машины: Dv4-Series                    |      : large_blue_diamond:  |
+| Виртуальные машины: Edsv4-Series                  |      : large_blue_diamond:  |
+| Виртуальные машины: Edv4-Series                   |      : large_blue_diamond:  |
+| Виртуальные машины: Esv4-Series                   |      : large_blue_diamond:  |
+| Виртуальные машины: Ev4-Series                    |      : large_blue_diamond:  |
+| Виртуальные машины: Fsv2-Series                   |      : large_blue_diamond:  |
+| Виртуальные машины: серия M                      |      : large_blue_diamond:  |
+| Виртуальная глобальная сеть                                     |      : large_blue_diamond:  |
 
 
-## <a name="upcoming-availability-zones"></a>Предстоящие Зоны доступности 
+**Не региональный**
 
-Azure предлагает поддержку Зоны доступности в следующих регионах:
-- US Gov (Вирджиния)
-- Северная часть ЮАР;
-- Центрально-южная часть США
-- Центрально-Западная Германия
-
-Список существующих и будущих регионов, которые поддерживают Зоны доступности, можно найти [здесь](https://azure.microsoft.com/global-infrastructure/geographies/).    
-
-Чтобы узнать больше о поддержке Зоны доступности в этих регионах, обратитесь к специалисту по продажам или сотруднику корпорации Майкрософт.
+|     Продукты                                  |     Устойчивость    |
+|-----------------------------------------------|:-------------------:|
+|     Azure DNS                                 |     : globe_with_meridians:             |
+|     Azure Active Directory                  |     : globe_with_meridians:             |
+|     Помощник по Azure                             |     : globe_with_meridians:             |
+|     Служба Azure Bot                        |     : globe_with_meridians:             |
+|     Защитник Azure для IoT                  |     : globe_with_meridians:             |
+|     Azure Information Protection            |     : globe_with_meridians:             |
+|     Azure Лигхсаусе                        |     : globe_with_meridians:             |
+|     Управляемые приложения Azure              |     : globe_with_meridians:             |
+|     Azure Maps                                |     : globe_with_meridians:             |
+|     Политика Azure                              |     : globe_with_meridians:             |
+|     Граф ресурсов Azure                    |     : globe_with_meridians:             |
+|     Azure Stack                               |     : globe_with_meridians:             |
+|     Azure Stackная граница                        |     : globe_with_meridians:             |
+|     Cloud Shell                               |     : globe_with_meridians:             |
+|     защищенное хранилище для Microsoft Azure    |     : globe_with_meridians:             |
+|     Служба пиринга Microsoft Azure         |     : globe_with_meridians:             |
+|     портал Microsoft Azure                  |     : globe_with_meridians:             |
+|     Центр безопасности                         |     : globe_with_meridians:             |
+|     Диспетчер трафика                         |     : globe_with_meridians:             |
 
 
 ## <a name="pricing-for-vms-in-availability-zones"></a>Цены на виртуальные машины в Зоны доступности
@@ -218,7 +194,7 @@ Azure предлагает поддержку Зоны доступности в
 - [Создание кластера Azure Kubernetes Service (AKS), использующего Зоны доступности](../aks/availability-zones.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Регионы и зоны доступности в Azure](az-overview.md)

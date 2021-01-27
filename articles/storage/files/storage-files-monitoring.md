@@ -10,12 +10,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 2af4f5467cb0f604f16d1faf841618a14d292806
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: cc1e4bf44827f82b3ca592e41fc3e6640f36e1bb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585740"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875150"
 ---
 # <a name="monitoring-azure-files"></a>Мониторинг файлов Azure
 
@@ -677,6 +677,6 @@ Azure Monitor оповещения заблаговременно уведомл
 - [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md)
 - [Миграция метрик службы хранилища Azure](../common/storage-metrics-migration.md)
 - [Планирование развертывания Файлов Azure](./storage-files-planning.md)
-- [Как развернуть службу файлов Azure](./storage-files-deployment-guide.md)
+- [Как развернуть службу файлов Azure](./storage-how-to-create-file-share.md)
 - [Устранение неполадок в работе службы "Файлы Azure" в Windows](./storage-troubleshoot-windows-file-connection-problems.md)
 - [Устранение неполадок в работе службы "Файлы Azure" в Linux](./storage-troubleshoot-linux-file-connection-problems.md)

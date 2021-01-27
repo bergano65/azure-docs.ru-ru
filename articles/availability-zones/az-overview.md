@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 485042c795fd94ef7daa8e00b9869190e9df61c8
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: b19f5c3ae0666a0b0e9b0255f848f5924d9d3910
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97678539"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874745"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Регионы и Зоны доступности в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "97678539"
 
 Регион — это набор центров обработки данных, развернутый в пределах периметра, определяемого заданной задержкой, который подключается через выделенную региональную сеть с низкой задержкой. Azure предоставляет гибкие возможности развертывания приложений, которые необходимо включить в несколько регионов для обеспечения отказоустойчивости между регионами. Дополнительные сведения см. [в разделе Обзор основы устойчивости](/azure/architecture/framework/resiliency/overview).
 
-## <a name="availability-zones"></a>Зоны доступности
+## <a name="availability-zones"></a>зоны доступности;
 
 Зона доступности — это предложение высокого уровня доступности, которое защищает приложения и данные от сбоев центров обработки данных. Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить устойчивость, во всех включенных областях используются минимум три отдельные зоны. Физическое разделение зон доступности в пределах региона защищает приложения и данные от сбоев центров обработки данных. Избыточные между зонами службы реплицируют приложения и данные в зонах доступности, чтобы обеспечить защиту от возникновения единых точек отказа. Благодаря зонам доступности Azure предлагает наилучшее в отрасли соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
 
@@ -76,7 +76,7 @@ ms.locfileid: "97678539"
 
 Если предложение услуги недоступно в определенном регионе, вы можете поделиться своим интересом, обратившись к торговому представителя корпорации Майкрософт.
 
-| Тип области | Не региональный | Основное | Основной | Специализированный | Зоны доступности | Местонахождение данных |
+| Тип области | Не региональный | Основное | Основной | Специализированный | зоны доступности; | Местонахождение данных |
 | --- | --- | --- | --- | --- | --- | --- |
 | Рекомендуемая | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | :heavy_check_mark: | :heavy_check_mark: |
 | Альтернативный | :heavy_check_mark: | :heavy_check_mark: | На основе спроса | На основе спроса | Недоступно | :heavy_check_mark: |
@@ -86,104 +86,76 @@ ms.locfileid: "97678539"
 Как упоминалось ранее, Azure классифицирует службы на три категории: фундамент, основная и специализированная. Категории служб назначаются в общедоступной доступности. Часто службы запускают жизненный цикл в качестве специализированной службы, а по мере роста спроса и использования могут повыситься до уровня "основной" или "базовый". В следующей таблице перечислены категории для служб в качестве базовых, основных или специализированных. Обратите внимание на следующие сведения о таблице:
 
 - Некоторые службы не являются региональными. Сведения и список служб, не являющихся региональными, см. в разделе [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/).
-- Виртуальные машины старого поколения не перечислены. Дополнительные сведения см. в документации по [предыдущим поколениям размеров виртуальных машин](../virtual-machines/sizes-previous-gen.md).
+- Виртуальные машины старого поколения не перечислены. Дополнительные сведения см. в документации по [предыдущим поколениям размеров виртуальных машин](../virtual-machines/sizes-previous-gen.md) .
+- . Службам не назначается категория до общедоступной версии. Дополнительные сведения и список предварительных версий служб см. в разделе [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/). 
 
 > [!div class="mx-tableFixed"]
-> | Основное | Основной | Специализированный |
-> | --- | --- | --- |
-> | Хранилище учетных записей | Управление API | Azure API для FHIR |
-> | Шлюз приложений | Конфигурация приложений | Службы Azure Analysis Services |
-> | Azure Backup | Служба приложений | Служба Блокчейн Azure |
-> | Azure Cosmos DB | Служба автоматизации | Azure Blueprints |
-> | Azure Data Lake Storage 2-го поколения | Доменные службы Azure Active Directory | База данных Azure для MariaDB |
-> | Azure ExpressRoute | Бастион Azure | Выделенное устройство HSM Azure |
-> | База данных SQL Azure | Кэш Redis для Azure | Azure Dev Spaces |
-> | Облачные службы | Когнитивный поиск Azure | Azure Digital Twins |
-> | Облачные службы: Av2-Series | Azure Data Explorer | Службы лабораторий Azure |
-> | Облачные службы: Dv2-Series | Azure Data Share | Azure NetApp Files |
-> | Облачные службы: Dv3-Series | База данных Azure для MySQL | Такт Azure |
-> | Облачные службы: Ev3-Series | База данных Azure для PostgreSQL | Облачная служба Azure весны |
-> | Облачные службы: IP-адреса уровня экземпляра | Azure Database Migration Service | Azure Time Series Insights |
-> | Облачные службы: зарезервированный IP-адрес | Azure Databricks | Решение VMware в Azure от CloudSimple |
-> | Хранилище дисков | Защита от атак DDoS Azure | Облачные службы: серия G |
-> | Центры событий | Azure DevTest Labs | Облачные службы: Серия H |
-> | Key Vault | Брандмауэр Azure | Cognitive Services: Пользовательское визуальное распознавание |
-> | Подсистема балансировки нагрузки | Диспетчер брандмауэра Azure | Cognitive Services: Распознавание говорящего |
-> | Cлужебная шина | Функции Azure | Data Box Heavy |
-> | Service Fabric | Azure HPC Cache | Каталог данных |
-> | Масштабируемые наборы виртуальных машин | Центр Интернета вещей Azure | Фабрика данных: фабрика данных v1 |
-> | Виртуальные машины | Служба Azure Kubernetes (AKS) | Data Lake Analytics |
-> | Виртуальные машины: Av2-Series | Машинное обучение Azure | Машинное обучение Azure Studio (классическая модель)|
-> | Виртуальные машины: Bs-Series | Приватный канал Azure | Microsoft Genomics |
-> | Виртуальные машины: DSv2-Series | Azure Red Hat OpenShift | Удаленная отрисовка |
-> | Виртуальные машины: DSv3-Series | Служба Azure SignalR | Пространственные привязки |
-> | Виртуальные машины: Dv2-Series | Azure Site Recovery | StorSimple |
-> | Виртуальные машины: Dv3-Series | Azure Stack Hub | Индексатор видео |
-> | Виртуальные машины: ESv3-Series | Azure Stream Analytics | Виртуальные машины: DASv4-Series |
-> | Виртуальные машины: Ev3-Series | Azure Synapse Analytics | Виртуальные машины: DAv4-Series |
-> | Виртуальные машины: серии F | Пакетная служба | Виртуальные машины: серия DCsv2 |
-> | Виртуальные машины: FS-Series | Облачные службы: серия M | Виртуальные машины: EASv4-Series |
-> | Виртуальные машины: IP-адреса уровня экземпляра | Службы Cognitive Services | Виртуальные машины: EAv4-Series |
-> | Виртуальные машины: зарезервированный IP-адрес | Cognitive Services: Компьютерное зрение | Виртуальные машины: серия G |
-> | Виртуальная сеть | Cognitive Services: Content Moderator | Виртуальные машины: GS-Series |
-> | VPN-шлюз | Cognitive Services: лицо | Виртуальные машины: HBv1-Series |
-> |  | Cognitive Services: распознаватель форм | Виртуальные машины: HBv2-Series |
-> |  | Cognitive Services: Language Understanding | Виртуальные машины: HCv1-Series |
-> |  | Cognitive Services: QnA Maker | Виртуальные машины: Серия H |
-> |  | Cognitive Services: речевые службы | Виртуальные машины: LS-Series |
-> |  | Экземпляры контейнеров | Виртуальные машины: LSv2-Series |
-> |  | Реестр контейнеров | Виртуальные машины: Mv2-Series |
-> |  | Фабрика данных | Виртуальные машины: NC-Series |
-> |  | Сетка событий Azure | Виртуальные машины: NCv2-Series |
-> |  | HDInsight | Виртуальные машины: NCv3-Series |
-> |  | Logic Apps | Виртуальные машины: NDs-Series |
-> |  | Службы мультимедиа | Виртуальные машины: NDv2-Series |
-> |  | Наблюдатель за сетями | Виртуальные машины: NV-Series |
-> |  | Центры уведомлений | Виртуальные машины: NVv3-Series |
-> |  | Power BI Embedded | Виртуальные машины: NVv4-Series |
-> |  | Хранилище BLOB-объектов класса Premium | Виртуальные машины: SAP HANA на крупных экземплярах Azure |
-> |  | Хранилище файлов Premium | Центр приложений Visual Studio |
-> |  | Хранилище: Архивное хранилище |  |
-> |  | Ultra Хранилище дисков |  |
-> |  | Виртуальные машины: Ddsv4-Series |  |
-> |  | Виртуальные машины: Ddv4-Series |  |
-> |  | Виртуальные машины: Dsv4-Series |  |
-> |  | Виртуальные машины: Dv4-Series |  |
-> |  | Виртуальные машины: Edsv4-Series |  |
-> |  | Виртуальные машины: Edv4-Series |  |
-> |  | Виртуальные машины: Esv4-Series |  |
-> |  | Виртуальные машины: Ev4-Series |  |
-> |  | Виртуальные машины: Fsv2-Series |  |
-> |  | Виртуальные машины: серия M |  |
-> |  | Виртуальная глобальная сеть |  |
+> | Основное                          | Основной                                        | Специализированный                                          |
+> |---------------------------------------|---------------------------------------------------|------------------------------------------------------|
+> | Учетные записи хранения                      | Управление API                                    | Azure API для FHIR                                   |
+> | Шлюз приложений                   | Конфигурация приложений                                 | Azure Analysis Services                              |
+> | Azure Backup                          | Служба приложений                                       | Cognitive Services Azure: детектор аномалий           |
+> | Azure Cosmos DB                       | Служба автоматизации                                        | Cognitive Services Azure: Пользовательское визуальное распознавание              |
+> | Azure Data Lake Storage 2-го поколения          | Доменные службы Azure Active Directory            | Cognitive Services Azure: распознаватель форм            |
+> | Azure ExpressRoute                    | Бастион Azure                                     | Cognitive Services Azure: Персонализация               |
+> | Общедоступный IP-адрес Azure                       | Кэш Azure для Redis                             | Cognitive Services Azure: QnA Maker                  |
+> | База данных SQL Azure                    | Когнитивный поиск Azure                            | База данных Azure для MariaDB                           |
+> | SQL Azure: Управляемый экземпляр          | Azure Cognitive Services                          | Azure Database Migration Service                     |
+> | Облачные службы                        | Azure Cognitive Services: Компьютерное зрение         | Выделенное устройство HSM Azure                                  |
+> | Облачные службы: Av2-Series            | Cognitive Services Azure: Content Moderator       | Azure Digital Twins                                  |
+> | Облачные службы: Dv2-Series            | Cognitive Services Azure: лицо                    | Программа-робот работоспособности Azure                                     |
+> | Облачные службы: Dv3-Series            | Cognitive Services Azure: иммерсивное средство чтения        | Azure HPC Cache                                      |
+> | Облачные службы: Ev3-Series            | Cognitive Services Azure: Распознавание речи  | Службы лабораторий Azure                                   |
+> | Облачные службы: IP-адреса уровня экземпляра    | Cognitive Services Azure: речевые службы         | Azure NetApp Files                                   |
+> | Облачные службы: зарезервированный IP-адрес           | Azure Cognitive Services: Анализ текста          | Служба Azure SignalR                                |
+> | Хранилище дисков                          | Cognitive Services Azure: Переводчик              | Облачная служба Azure весны                           |
+> | Центры событий                            | Azure Data Explorer                               | Azure Time Series Insights                           |
+> | Key Vault                             | Azure Data Share                                  | Решение Azure VMware                                |
+> | Подсистема балансировки нагрузки                         | База данных Azure для MySQL                          | Решение VMware в Azure от CloudSimple                 |
+> | Служебная шина                           | База данных Azure для PostgreSQL                     | Облачные службы: Серия H                             |
+> | Service Fabric                        | Azure Databricks                                  | Каталог данных                                         |
+> | Хранилище: уровни "горячий" и "холодного" хранилища BLOB-объектов  | Защита от атак DDoS Azure                             | Data Lake Analytics                                  |
+> | Хранилище: управляемые диски                | Azure DevTest Labs                                | Машинное обучение Azure Studio (классическая модель)              |
+> | Масштабируемые наборы виртуальных машин            | Брандмауэр Azure                                    | Пространственные привязки                                      |
+> | Виртуальные машины                      | Диспетчер брандмауэра Azure                            | Хранилище: Архивное хранилище                             |
+> | Виртуальные машины: Av2-Series          | Функции Azure                                   | StorSimple                                           |
+> | Виртуальные машины: Bs-Series           | Центр Интернета вещей Azure                                     | Ultra Хранилище дисков                                   |
+> | Виртуальные машины: DSv2-Series         | Служба Azure Kubernetes (AKS)                    | Индексатор видео                                        |
+> | Виртуальные машины: DSv3-Series         | Машинное обучение Azure                            | Виртуальные машины: DASv4-Series                       |
+> | Виртуальные машины: Dv2-Series          | Azure Monitor: Application Insights               | Виртуальные машины: DAv4-Series                        |
+> | Виртуальные машины: Dv3-Series          | Azure Monitor: Log Analytics                      | Виртуальные машины: серия DCsv2                       |
+> | Виртуальные машины: ESv3-Series         | Приватный канал Azure                                | Виртуальные машины: EASv4-Series                       |
+> | Виртуальные машины: Ev3-Series          | Azure Red Hat OpenShift                           | Виртуальные машины: EAv4-Series                        |
+> | Виртуальные машины: IP-адреса уровня экземпляра  | Azure Site Recovery                               | Виртуальные машины: HBv1-Series                        |
+> | Виртуальные машины: зарезервированный IP-адрес         | Azure Stream Analytics                            | Виртуальные машины: HBv2-Series                        |
+> | Виртуальная сеть                       | Azure Synapse Analytics                           | Виртуальные машины: HCv1-Series                        |
+> | VPN-шлюз                           | Пакетная служба Azure                                             | Виртуальные машины: Серия H                           |
+> |                                       | Облачные службы: серия M                          | Виртуальные машины: LSv2-Series                        |
+> |                                       | Экземпляры контейнеров                               | Виртуальные машины: Mv2-Series                         |
+> |                                       | Реестр контейнеров                                | Виртуальные машины: NCv3-Series                        |
+> |                                       | Фабрика данных                                      | Виртуальные машины: NDv2-Series                        |
+> |                                       | Сетка событий Azure                                        | Виртуальные машины: NVv3-Series                        |
+> |                                       | HDInsight                                         | Виртуальные машины: NVv4-Series                        |> 
+> |                                       | Logic Apps                                        | Виртуальные машины: SAP HANA на крупных экземплярах Azure  |
+> |                                       | Службы мультимедиа                                    |                                                      |
+> |                                       | Наблюдатель за сетями                                   |                                                      |
+> |                                       | Центры уведомлений                                 |                                                      |
+> |                                       | Хранилище BLOB-объектов класса Premium                              |                                                      |
+> |                                       | Хранилище файлов Premium                             |                                                      |
+> |                                       | Виртуальные машины: Ddsv4-Series                    |                                                      |
+> |                                       | Виртуальные машины: Ddv4-Series                     |                                                      |
+> |                                       | Виртуальные машины: Dsv4-Series                     |                                                      |
+> |                                       | Виртуальные машины: Dv4-Series                      |                                                      |
+> |                                       | Виртуальные машины: Edsv4-Series                    |                                                      |
+> |                                       | Виртуальные машины: Edv4-Series                     |                                                      |
+> |                                       | Виртуальные машины: Esv4-Series                     |                                                      |
+> |                                       | Виртуальные машины: Ev4-Series                      |                                                      |
+> |                                       | Виртуальные машины: Fsv2-Series                     |                                                      |
+> |                                       | Виртуальные машины: серия M                        |                                                      |
+> |                                       | Виртуальная глобальная сеть                                       |                                                      |
 
-###  <a name="services-resiliency"></a>Устойчивость служб
 
-Все службы управления Azure спроектированы как устойчивые к сбоям на уровне региона. В спектре сбоев один или несколько сбоев зоны доступности в регионе имеют меньший радиус сбоя по сравнению со всем сбоем региона. Azure может выполнить восстановление после сбоя на уровне зоны для служб управления в регионе или другом регионе Azure. Azure выполняет критическое обслуживание по одной зоне за раз в пределах региона, чтобы предотвратить сбои, влияющие на ресурсы клиента, развернутые в Зоны доступности в пределах региона.
-
-### <a name="pricing-for-vms-in-availability-zones"></a>Цены на виртуальные машины в Зоны доступности
-
-За виртуальные машины, развернутые в зоне доступности, не взимается дополнительная плата. Соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин предлагается при развертывании двух или более виртуальных машин в двух или более зонах доступности внутри региона Azure. За передачу данных между виртуальными машинами, размещенными в пределах каждой зоны доступности, будет взиматься дополнительная плата. Дополнительные сведения см. на странице [Сведения о стоимости пропускной способности](https://azure.microsoft.com/pricing/details/bandwidth/).
-
-### <a name="get-started-with-availability-zones"></a>Приступая к работе с зонами доступности
-
-- [Создание виртуальной машины](../virtual-machines/windows/create-portal-availability-zone.md)
-- [Добавление управляемого диска с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
-- [Создание избыточного между зонами масштабируемого набора виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным между зонами внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
-- [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/quickstart-load-balancer-standard-public-cli.md).
-- [Хранилище, избыточное между зонами](../storage/common/storage-redundancy.md)
-- [Уровень общего назначения базы данных SQL](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
-- [Географическое аварийное восстановление в Центрах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones)
-- [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)
-- [Создание шлюза виртуальной сети, избыточного между зонами](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
-- [Добавление области, избыточной в пределах зоны, для Azure Cosmos DB](../cosmos-db/high-availability.md#availability-zone-support)
-- [начало работы кэша Azure для Redis Зоны доступности](https://aka.ms/redis/az/getstarted)
-- [Создание экземпляра доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-create-instance.md)
-- [Создание кластера Azure Kubernetes Service (AKS), использующего Зоны доступности](../aks/availability-zones.md)
-- [Включение избыточности зоны в реестре контейнеров Azure](../container-registry/zone-redundancy.md)
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Регионы, поддерживающие Зоны доступности в Azure](az-region.md)
 - [Шаблоны быстрого запуска](https://aka.ms/azqs)

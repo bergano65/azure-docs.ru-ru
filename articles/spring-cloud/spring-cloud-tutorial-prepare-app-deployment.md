@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 37753265afa7e76e87dbcdc5893595bea66798f4
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 4e9c84efe7b96cf61a69c54e3f5ecbc469ac7d8d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610256"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874148"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Подготовка приложения к развертыванию в Azure Веснного облака
 
@@ -151,7 +151,7 @@ Azure Spring Cloud поддерживает только приложения Sp
 2.4.1 + | 2020.0.0
 
 > [!NOTE]
-> Обнаружена ошибка с пружинным загрузкой 2.4.0 при проверке подлинности TLS между приложениями и Еурека, используйте 2.4.1 или более позднюю версию. Если вы настаиваете на использовании 2.4.0, обратитесь к нашим [часто задаваемым](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) вопросам.
+> Обнаружена ошибка с пружинным загрузкой 2.4.0 при проверке подлинности TLS между приложениями и Еурека, используйте 2.4.1 или более позднюю версию. Если вы настаиваете на использовании 2.4.0, обратитесь к нашим [часто задаваемым](./spring-cloud-faq.md?pivots=programming-language-java#development) вопросам.
 
 ### <a name="dependencies-for-spring-boot-version-2223"></a>Зависимости для пружинной загрузки версии 2.2/2.3
 

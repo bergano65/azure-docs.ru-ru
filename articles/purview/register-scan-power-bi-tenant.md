@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 3370215e9a69e62596f214ba4330fc4914a2837f
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 5f42b5f2b2a7660ee0de975068f64572c470503a
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539686"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874912"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Регистрация и сканирование клиента Power BI (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "98539686"
 Чтобы настроить проверку подлинности, создайте группу безопасности и добавьте в нее управляемое удостоверение каталога.
 
 1. В [портал Azure](https://portal.azure.com)найдите **Azure Active Directory**.
-1. Создайте новую группу безопасности в Azure Active Directory, выполнив инструкции по [созданию базовой группы и добавив члены с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
+1. Создайте новую группу безопасности в Azure Active Directory, выполнив инструкции по [созданию базовой группы и добавив члены с помощью Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
     > [!Tip]
     > Этот шаг можно пропустить, если у вас уже есть группа безопасности, которую вы хотите использовать.
