@@ -2,19 +2,19 @@
 title: Что такое словарь? — Custom Translator
 titleSuffix: Azure Cognitive Services
 description: Словарь — это документ в согласованном формате, который содержит список фраз или предложений (вместе с переводами этих фраз), чтобы Microsoft Translator всегда переводил эти фразы одинаково. Словари также называют глоссариями и терминологическими базами.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 14ff76e090e628a880290bb0e9f90026260de0c7
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 160aa372cec2d018d5a3558f99e079624d965098
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368990"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895566"
 ---
 # <a name="what-is-a-dictionary"></a>Что такое словарь?
 
@@ -43,6 +43,6 @@ ms.locfileid: "94368990"
 - При использовании словаря предложений окончание пунктуации предложения игнорируется. Например, если исходный словарь содержит "это предложение заканчивается знаками препинания!", все запросы на перевод, содержащие "это предложение заканчивается знаками препинания", будут соответствовать.
 - Если слово встречается в файле словаря более одного раза, система всегда использует последнюю из таких записей. Поэтому словарь не должен содержать несколько переводов одного и того же слова.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [рекомендации по форматам документов](document-formats-naming-convention.md).

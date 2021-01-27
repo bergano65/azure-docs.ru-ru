@@ -1,5 +1,5 @@
 ---
-title: Политики потоковой передачи в Службах мультимедиа Azure | Документация Майкрософт
+title: Политики потоковой передачи в службах мультимедиа Azure
 description: В этой статье приведены общие сведения о политиках потоковой передачи и их использовании в Службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: inhenkel
-ms.openlocfilehash: 9ecb4e0b8a74a163632967781c84d1a110ab3a9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2873486b95f0bb4a9a27e2e050cc6f6d5473a44e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297218"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898178"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
@@ -83,7 +83,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md)

@@ -1,26 +1,11 @@
 ---
-title: Метрики и журналы диагностики служб мультимедиа с Azure Monitor
-titleSuffix: Azure Media Services
-description: Узнайте, как отслеживать метрики и журналы диагностики служб мультимедиа Azure с помощью Azure Monitor.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: conceptual
-ms.date: 11/02/2020
-ms.author: inhenkel
-ms.openlocfilehash: ed436336b9b1f9f5815938d13315e821694e5f1c
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685194"
+Title: метрики служб мультимедиа и журналы диагностики с помощью Azure Monitor: Описание служб мультимедиа Azure. Узнайте, как отслеживать метрики и журналы диагностики служб мультимедиа Azure с помощью Azure Monitor.
+службы: мультимедиа-службы documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor редактор: ' '
+
+MS. Service: Media-Services MS. Рабочая нагрузка: носитель ms.tgt_pltfrm: Na MS. devlang: Na MS. Topic: концептуальная МС. Дата: 11/02/2020 MS. author: инхенкел
+
 ---
+
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-with-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -98,7 +83,7 @@ ms.locfileid: "94685194"
 
 ### <a name="key-delivery"></a>Доставка ключей
 
-|Имя|Описание|
+|Название|Описание|
 |---|---|
 |Запрос службы доставки ключей|Журналы, отображающие сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 

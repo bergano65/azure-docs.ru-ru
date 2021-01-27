@@ -1,5 +1,5 @@
 ---
-title: Терминология и изменения сущностей между службами мультимедиа Azure версии 2 и v3 | Документация Майкрософт
+title: Терминология и изменения сущностей между службами мультимедиа Azure версии 2 и v3
 description: В этой статье описываются различия в терминологии между службами мультимедиа Azure версии 2 и 3.
 services: media-services
 author: IngridAtMicrosoft
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 9f657b853298cf0065da931835ea56ef2e0e0fe7
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: b53fbcb62004a8af9b2470c76f64f1ace845c1a8
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690599"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898398"
 ---
 # <a name="terminology-and-entity-changes-between-media-services-v2-and-v3"></a>Терминология и изменения сущностей между службами мультимедиа версии 2 и v3
 
@@ -91,6 +91,6 @@ ms.locfileid: "98690599"
 | Выставление счетов за прямые мероприятия <!--new row --> | <!-- empty-->| Выставление счетов за интерактивные мероприятия основано на счетчиках Live Channel. |
 | Выходные данные в реальном времени <!--new row --> | Программы должны были запускаться после создания. | Выходные данные потоковой трансляции запускаются при создании и останавливаются при удалении. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]

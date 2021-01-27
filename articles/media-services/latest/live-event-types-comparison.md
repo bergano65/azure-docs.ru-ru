@@ -1,5 +1,5 @@
 ---
-title: Типы LiveEvent в Службах мультимедиа Azure | Документация Майкрософт
+title: Типы Лививент служб мультимедиа Azure
 description: В службах мультимедиа Azure для интерактивного события можно задать кодирование или *передачу* в *реальном времени*. В этой статье показана подробная таблица, сравнивающая типы событий в реальном времени.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: c79d45cfac22f41f05071b619c444e7b7ab7956a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3126cbf4f9d87e9baa7267e309210b751a47069d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89397310"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897804"
 ---
 # <a name="live-event-types-comparison"></a>Сравнение типов событий потоковой трансляции
 
@@ -130,6 +130,6 @@ ms.locfileid: "89397310"
 
 Динамический кодировщик настроен для учета параметров скорости в предустановленной конфигурации независимо от скорости канала передачи данных. В результате скорость выходных слоев может превысить длину веб-канала публикации. Например, если отправить в веб-канале публикаций с разрешением 720p в 1 Мбит/с, то выходные слои останутся такими же, как в [таблице](live-event-types-comparison.md#output-video-streams-for-default720p) выше.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о потоковой трансляции](live-streaming-overview.md)

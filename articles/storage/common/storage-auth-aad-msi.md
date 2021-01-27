@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: e58cbef74aa9b6f58207abf780fd63176d5edd7d
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 552d2587f35ed391b470c6d5b1693b79fd57306b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680928"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879584"
 ---
 # <a name="authorize-access-to-blob-and-queue-data-with-managed-identities-for-azure-resources"></a>Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure
 
@@ -166,9 +166,9 @@ async static Task CreateBlockBlobAsync(string accountName, string containerName,
 > [!NOTE]
 > Для авторизации запросов к данным большого двоичного объекта или очереди с помощью Azure AD необходимо использовать протокол HTTPS для этих запросов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление правами доступа к данным хранилища с помощью Azure RBAC](./storage-auth-aad-rbac-portal.md).
 - [Используйте Azure AD с приложениями службы хранилища](storage-auth-aad-app.md).
 - [Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным большого двоичного объекта](../blobs/authorize-data-operations-powershell.md)
-- [Руководство. доступ к хранилищу из службы приложений с помощью управляемого идентиес](/azure/app-service/scenario-secure-app-access-storage)
+- [Руководство. доступ к хранилищу из службы приложений с помощью управляемого идентиес](../../app-service/scenario-secure-app-access-storage.md)

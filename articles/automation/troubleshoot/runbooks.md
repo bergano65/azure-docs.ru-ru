@@ -2,16 +2,16 @@
 title: Устранение неполадок с runbook службы автоматизации Azure
 description: В этой статье рассказывается, как устранять проблемы с последовательностями runbook службы автоматизации Azure.
 services: automation
+ms.subservice: ''
 ms.date: 11/03/2020
-ms.topic: conceptual
-ms.service: automation
+ms.topic: troubleshooting
 ms.custom: has-adal-ref
-ms.openlocfilehash: c7ab093f601ebcd33d184b9a9008f9de447534a1
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 116677354009c538eece02184d801cfda11574a0
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368089"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896314"
 ---
 # <a name="troubleshoot-runbook-issues"></a>Устранение неполадок с последовательностями runbook
 
@@ -155,7 +155,7 @@ Run Login-AzureRMAccount to login.
 
     ![Управление доступом](../media/troubleshoot-runbooks/access-control.png)
 
-1. Добавьте **идентификатор приложения** , полученный ранее. Выберите разрешения на уровне **Участник**.
+1. Добавьте **идентификатор приложения**, полученный ранее. Выберите разрешения на уровне **Участник**.
 
     ![Добавление назначения роли](../media/troubleshoot-runbooks/add-role-assignment.png)
 
@@ -505,8 +505,8 @@ The quota for the monthly total job run time has been reached for this subscript
 
 1. Войдите в свою подписку Azure.
 1. Выберите учетную запись службы автоматизации, которую вы хотите обновить.
-1. Выберите **Параметры** , а затем — **Цены**.
-1. В нижней части страницы нажмите кнопку **Включить** , чтобы обновить свою учетную запись до уровня "Базовый".
+1. Выберите **Параметры**, а затем — **Цены**.
+1. В нижней части страницы нажмите кнопку **Включить**, чтобы обновить свою учетную запись до уровня "Базовый".
 
 ## <a name="scenario-runbook-output-stream-greater-than-1-mb"></a><a name="output-stream-greater-1mb"></a>Сценарий: поток вывода Runbook больше 1 МБ
 

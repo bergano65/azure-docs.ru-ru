@@ -6,12 +6,12 @@ services: automation
 ms.subservice: dsc
 ms.date: 08/21/2018
 ms.topic: conceptual
-ms.openlocfilehash: 9c5524d2847f59dda1f2c24f67e1e18f18d49b1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b1bbb12412deec6ecac8cf1ffd47a00f778862e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185574"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98894734"
 ---
 # <a name="compose-dsc-configurations"></a>Создание конфигураций DSC
 
@@ -46,4 +46,4 @@ ms.locfileid: "86185574"
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе State Configuration службы автоматизации Azure](automation-dsc-compile.md).
 - Пример использования службы State Configuration в службе автоматизации Azure в конвейере непрерывного развертывания см. в статье [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).
 - Сведения о ценах см. на странице [с ценами на использование State Configuration службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).

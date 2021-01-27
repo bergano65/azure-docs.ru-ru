@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 7ebe56b95b0c4b938c31c0ece04d27fd1b234b05
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1861a4e75f34cfd7fe386c094cce3a638b3e1a1e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729918"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880799"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "98729918"
 - [REST API — назначение схемы](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
 
 
-### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
+### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -159,8 +159,6 @@ ms.locfileid: "98729918"
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
 - [Пакет SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
 
-
-
 ### <a name="azure-event-grid"></a>Сетка событий Azure
 
 Тип управляемого удостоверения |Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
@@ -168,13 +166,12 @@ ms.locfileid: "98729918"
 | Назначено системой | Preview (Предварительный просмотр) | Preview (Предварительный просмотр) | Недоступно | Preview (Предварительный просмотр) |
 | Назначено пользователем | Недоступно | Недоступно  | Недоступно  | Недоступно |
 
+### <a name="azure-firewall-policy"></a>Политика брандмауэра Azure
 
-
-
-
-
-
-
+Тип управляемого удостоверения |Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | Недоступно | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Preview (Предварительный просмотр) | Недоступно  | Недоступно  | Недоступно |
 
 ### <a name="azure-functions"></a>Функции Azure
 

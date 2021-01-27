@@ -8,12 +8,12 @@ ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 23c62562299768afb5f5d87bbcf4f7b19b3235ce
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 1a319c728b918dbad7dd5f240bc7a0bfeb0c4c09
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897864"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881050"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Configure, optimize, and troubleshoot AzCopy (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -22,7 +22,7 @@ AzCopy — это служебная программа командной ст
 > [!NOTE]
 > Если вы ищете содержимое, которое поможет приступить к работе с AzCopy, ознакомьтесь со следующими статьями:
 > - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-> - [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
+> - [Transfer data with AzCopy and blob storage](./storage-use-azcopy-v10.md#transfer-data) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
 > - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 > - [Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)
 
@@ -30,7 +30,7 @@ AzCopy — это служебная программа командной ст
 
 Чтобы настроить параметры прокси-сервера для AzCopy, задайте `HTTPS_PROXY` переменную среды. Если AzCopy выполняется в среде Windows, средство AzCopy автоматически определяет параметры прокси-сервера, поэтому в Windows этот параметр не нужно использовать. Если вы укажете этот параметр в Windows, он переопределит автоматически определяемое значение.
 
-| Операционная система | Get-Help  |
+| Операционная система | Команда  |
 |--------|-----------|
 | **Windows** | В командной строке используйте `set HTTPS_PROXY=<proxy IP>:<proxy port>`.<br> В PowerShell используйте `$env:HTTPS_PROXY="<proxy IP>:<proxy port>"`.|
 | **Linux** | `export HTTPS_PROXY=<proxy IP>:<proxy port>` |
@@ -91,7 +91,7 @@ azcopy jobs resume <job-id> --cap-mbps 10
 
 Если на компьютере установлено менее 5 ЦП, значение этой переменной будет равно `32` . В противном случае значение по умолчанию равно 16, умноженному на число ЦП. Максимальное значение по умолчанию для этой переменной равно `3000` , но можно вручную задать это значение выше или ниже. 
 
-| Операционная система | Get-Help  |
+| Операционная система | Команда  |
 |--------|-----------|
 | **Windows** | `set AZCOPY_CONCURRENCY_VALUE=<value>` |
 | **Linux** | `export AZCOPY_CONCURRENCY_VALUE=<value>` |
@@ -106,7 +106,7 @@ azcopy jobs resume <job-id> --cap-mbps 10
 Задайте `AZCOPY_BUFFER_GB` переменную среды, чтобы указать максимальный объем системной памяти, который будет использоваться AzCopy при скачивании и отправке файлов.
 Выразить это значение в гигабайтах (ГБ).
 
-| Операционная система | Get-Help  |
+| Операционная система | Команда  |
 |--------|-----------|
 | **Windows** | `set AZCOPY_BUFFER_GB=<value>` |
 | **Linux** | `export AZCOPY_BUFFER_GB=<value>` |
@@ -189,7 +189,7 @@ azcopy jobs resume <job-id> --destination-sas="<sas-token>"
 
 Используйте любую из этих команд.
 
-| Операционная система | Get-Help  |
+| Операционная система | Команда  |
 |--------|-----------|
 | **Windows** | Оболочк`$env:AZCOPY_JOB_PLAN_LOCATION="<value>"` <br> В командной строке используйте: `set AZCOPY_JOB_PLAN_LOCATION=<value>` |
 | **Linux** | `export AZCOPY_JOB_PLAN_LOCATION=<value>` |
@@ -201,7 +201,7 @@ azcopy jobs resume <job-id> --destination-sas="<sas-token>"
 
 Используйте любую из этих команд.
 
-| Операционная система | Get-Help  |
+| Операционная система | Команда  |
 |--------|-----------|
 | **Windows** | Оболочк`$env:AZCOPY_LOG_LOCATION="<value>"` <br> В командной строке используйте: `set AZCOPY_LOG_LOCATION=<value>`|
 | **Linux** | `export AZCOPY_LOG_LOCATION=<value>` |
@@ -220,5 +220,3 @@ azcopy jobs resume <job-id> --destination-sas="<sas-token>"
 Если вы хотите удалить все файлы планов и журналов с локального компьютера, чтобы сэкономить место на диске, используйте `azcopy jobs clean` команду.
 
 Чтобы удалить файлы плана и журнала, связанные только с одним заданием, используйте `azcopy jobs rm <job-id>` . Замените `<job-id>` заполнитель в этом примере идентификатором задания.
-
-

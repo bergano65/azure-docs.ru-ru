@@ -2,19 +2,19 @@
 title: Фильтрация данных. Пользовательский переводчик
 titleSuffix: Azure Cognitive Services
 description: При отправке документов, которые будут использоваться для обучения пользовательской системы, документы проходят ряд этапов по обработке и фильтрации для подготовки к обучению.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 1076a4fe3a460fa07e061e9ec0ec41b088ec7eca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53dea20e356f735a521dec8c22edf8cb2aa7122d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88507269"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895872"
 ---
 # <a name="data-filtering"></a>Фильтрация данных
 
@@ -56,6 +56,6 @@ ms.locfileid: "88507269"
 ## <a name="invalid-characters"></a>Недопустимые знаки
 Пользовательский переводчик удаляет предложения, содержащие символ Юникода U+FFFD. Символ U+FFFD указывает на сбой преобразования кодировки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](how-to-train-model.md) в пользовательском переводчике.

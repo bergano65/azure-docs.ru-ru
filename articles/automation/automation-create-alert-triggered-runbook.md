@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: acf31af6d3ba3d78a6435210fa17562aaddac0a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03f24bf4cf379504479e554b129f34d94ca423cd
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186611"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896365"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Использование оповещения для активации runbook службы автоматизации Azure
 
-С помощью [Azure Monitor](../azure-monitor/overview.md?toc=%2fazure%2fautomation%2ftoc.json) можно отслеживать метрики и журналы базового уровня большинства служб Microsoft Azure. Модули runbook службы автоматизации Azure можно вызывать с помощью [групп действий](../azure-monitor/platform/action-groups.md?toc=%2fazure%2fautomation%2ftoc.json) или с помощью классических оповещений, чтобы автоматизировать задачи на основе оповещений. В этой статье показано, как настроить и запустить runbook с помощью оповещений.
+С помощью [Azure Monitor](../azure-monitor/overview.md) можно отслеживать метрики и журналы базового уровня большинства служб Microsoft Azure. Модули runbook службы автоматизации Azure можно вызывать с помощью [групп действий](../azure-monitor/platform/action-groups.md) или с помощью классических оповещений, чтобы автоматизировать задачи на основе оповещений. В этой статье показано, как настроить и запустить runbook с помощью оповещений.
 
 ## <a name="alert-types"></a>Типы оповещений
 
@@ -31,9 +31,9 @@ ms.locfileid: "86186611"
 
 |Предупреждение  |Описание|Схема полезных данных  |
 |---------|---------|---------|
-|[Общее оповещение](../azure-monitor/platform/alerts-common-schema.md?toc=%2fazure%2fautomation%2ftoc.json)|Общая схема оповещений, которая стандартизирует возможности использования уведомлений об оповещениях в Azure в настоящее время.|Общая схема полезных данных оповещений|
-|[Оповещение журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление, когда какое-либо новое событие в журнале действий Azure соответствует определенным условиям. Например, если в **myProductionResourceGroup** выполняется операция `Delete VM` или возникает новое событие службы "Работоспособность служб Azure" в состоянии "Активно".| [Схема полезных данных оповещения журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
-|[Оповещения на основе метрик практически в реальном времени](../azure-monitor/platform/alerts-metric-near-real-time.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление быстрее, чем оповещения о метриках, когда одна или несколько метрик уровня платформы удовлетворяют указанным условиям. Например, если за последние 5 минут значение метрики **% ЦП** на виртуальной машине превышает 90 и значение метрики **Сеть (входящий трафик)** превышает 500 МБ.| [Схема полезны данных оповещения на основе метрик почти в реальном времени](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
+|[Общее оповещение](../azure-monitor/platform/alerts-common-schema.md)|Общая схема оповещений, которая стандартизирует возможности использования уведомлений об оповещениях в Azure в настоящее время.|Общая схема полезных данных оповещений|
+|[Оповещение журнала действий](../azure-monitor/platform/activity-log-alerts.md)    |Отправляет уведомление, когда какое-либо новое событие в журнале действий Azure соответствует определенным условиям. Например, если в **myProductionResourceGroup** выполняется операция `Delete VM` или возникает новое событие службы "Работоспособность служб Azure" в состоянии "Активно".| [Схема полезных данных оповещения журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
+|[Оповещения на основе метрик практически в реальном времени](../azure-monitor/platform/alerts-metric-near-real-time.md)    |Отправляет уведомление быстрее, чем оповещения о метриках, когда одна или несколько метрик уровня платформы удовлетворяют указанным условиям. Например, если за последние 5 минут значение метрики **% ЦП** на виртуальной машине превышает 90 и значение метрики **Сеть (входящий трафик)** превышает 500 МБ.| [Схема полезны данных оповещения на основе метрик почти в реальном времени](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
 
 Так как данные, предоставляемые для каждого типа оповещения, различны, оповещения разных типов обрабатываются по-разному. В следующем разделе вы узнаете, как создать runbook для обработки различных типов оповещений.
 
@@ -185,7 +185,7 @@ ms.locfileid: "86186611"
 
     ![Страница добавления группы действий](./media/automation-create-alert-triggered-runbook/add-action-group.png)
 
-    Можно использовать эту группу действий в создаваемых [оповещениях журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json) и [оповещениях почти в реальном времени](../azure-monitor/platform/alerts-overview.md?toc=%2fazure%2fautomation%2ftoc.json).
+    Можно использовать эту группу действий в создаваемых [оповещениях журнала действий](../azure-monitor/platform/activity-log-alerts.md) и [оповещениях почти в реальном времени](../azure-monitor/platform/alerts-overview.md).
 
 1. В разделе **Сведения об оповещении** добавьте имя и описание правила генерации оповещений и нажмите **Создать правило оповещения**.
 
@@ -193,6 +193,6 @@ ms.locfileid: "86186611"
 
 * Сведения о том, как запустить модуль runbook с помощью веб-перехватчика, см. в разделе [Запуск модуля runbook с помощью веб-перехватчика](automation-webhooks.md).
 * Сведения о различных способах запуска модуля runbook см. разделе [Запуск модуля runbook](./start-runbooks.md).
-* Сведения о создании оповещения журнала действий см. в разделе [Создание оповещений журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json).
+* Сведения о создании оповещения журнала действий см. в разделе [Создание оповещений журнала действий](../azure-monitor/platform/activity-log-alerts.md).
 * Дополнительные сведения о том, как создать оповещение почти в реальном времени, см. в разделе [Создание правила оповещения с помощью портала Azure](../azure-monitor/platform/alerts-metric.md?toc=/azure/azure-monitor/toc.json).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).

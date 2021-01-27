@@ -8,16 +8,16 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: b8da0b5c55b291af42d9a30db23d6f55f7c0bf2d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8c5281b4fe596cf9807d6f0dacb844562dc152dc
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022791"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880630"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
 
-## <a name="assumptions"></a>Предположения
+## <a name="assumptions"></a>Допущения
 
 - У вас есть представление о структуре Oracle Data Guard и средах Azure.
 
@@ -89,7 +89,7 @@ ms.locfileid: "96022791"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_03.png)
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Design and implement an Oracle database in Azure](oracle-design.md) (Разработка базы данных Oracle и ее реализация в Azure)
 - [Настройка Oracle Data Guard](configure-oracle-dataguard.md)
@@ -97,7 +97,7 @@ ms.locfileid: "96022791"
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](./oracle-overview.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
-- [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).
+- [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine).

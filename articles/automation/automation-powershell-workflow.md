@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/14/2018
 ms.topic: conceptual
-ms.openlocfilehash: f175e495af8e925c0d5a6c61669a5e2f44f73ae7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 483d4c16f1b77bf7328857eb25e1571a741d144e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186012"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896924"
 ---
 # <a name="learn-powershell-workflow-for-azure-automation"></a>Рабочий процесс PowerShell для службы автоматизации Azure
 
@@ -290,7 +290,7 @@ workflow CreateTestVms
 ```
 
 > [!NOTE]
-> Для неграфических модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана. Использовать эти командлеты необязательно, если вы проходите проверку подлинности с помощью учетной записи запуска от имени, настроенной с помощью субъекта-службы.
+> Для неграфических модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана. Использовать эти командлеты необязательно, если вы проходите проверку подлинности с помощью учетной записи запуска от имени, настроенной с помощью субъекта-службы.
 
 Дополнительные сведения о контрольных точках см. в статье [Добавление контрольных точек в рабочий процесс сценария](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574114(v=ws.11)).
 

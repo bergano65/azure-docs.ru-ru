@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
 ms.date: 12/2/2020
-ms.openlocfilehash: 3693ff8ea213d0823237956c532e65d5094bf1ce
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 7969f5ffd3064a5af97a101185b6229c81c7613d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746324"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880293"
 ---
 # <a name="co-sell-partner-engagement"></a>Участие партнеров в совместных продажах
 
@@ -49,14 +49,14 @@ ms.locfileid: "96746324"
 ||Dynamics|<ul><li>У вас есть активная регистрация на уровне ISV Connect Premium.</li></ul>|Business Applications совместных продаж выгодно|
 |||
 
-Дополнительные сведения о требованиях к предложениям для совместной продажи см. в разделе [требования для статуса совместной продажи](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
+Дополнительные сведения о требованиях к предложениям для совместной продажи см. в разделе [требования для статуса совместной продажи](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status).
 
 ## <a name="how-to-submit-co-sell-materials-in-partner-center"></a>Как отправлять материалы для совместной продажи в центре партнеров
 
 Начните путешествие прямо в центре партнеров, выполнив приведенные ниже действия. Дополнительные сведения см. [в статье вариант совместной продажи в коммерческом магазине](commercial-marketplace-co-sell.md).
 
 1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/home).
-1. На левой панели выберите Обзор **коммерческого рынка**  >  **Overview**, а затем выберите предложение для совместной продажи.
+1. На левой панели выберите Обзор **коммерческого рынка**  >  , а затем выберите предложение для совместной продажи.
 
     > [!NOTE]
     > Вы можете присоединиться к программе совместной продажи с новым предложением, которое еще не опубликовано, или с уже опубликованным предложением.

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: cherylmc
-ms.openlocfilehash: 62ceafad0210065700e5c9734cfe9a055208ef35
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 01d87bcb5697326fa87b25b20354897049900d9d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657896"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880531"
 ---
 # <a name="configure-a-site-to-site-vpn-connection-over-expressroute-private-peering"></a>Настройка VPN-подключения типа "сеть — сеть" через частный пиринг ExpressRoute
 
@@ -72,7 +72,7 @@ ms.locfileid: "94657896"
 
 ## <a name="portal-steps"></a><a name="portal"></a>Шаги на портале
 
-1. Настройте подключение типа "сеть — сеть". Инструкции см. в статье [Конфигурация "сеть — сеть](vpn-gateway-howto-site-to-site-resource-manager-portal.md) ". Не забудьте выбрать для шлюза SKU шлюза, избыточное в зоне. 
+1. Настройте подключение типа "сеть — сеть". Инструкции см. в статье [Конфигурация "сеть — сеть](./tutorial-site-to-site-portal.md) ". Не забудьте выбрать для шлюза SKU шлюза, избыточное в зоне. 
 
    Избыточные в зонах номера SKU имеют значение AZ в конце номера SKU. Например, **VpnGw1AZ**. Шлюзы, избыточные в зонах, доступны только в регионах, где доступна служба зоны доступности. Сведения о регионах, в которых поддерживаются зоны доступности, см. в разделе [регионы, поддерживающие зоны доступности](../availability-zones/az-region.md).
 
@@ -89,7 +89,7 @@ ms.locfileid: "94657896"
 
 ## <a name="powershell-steps"></a><a name="powershell"></a>PowerShell, шаги
 
-1. Настройте подключение типа "сеть — сеть". Инструкции см. в статье [Настройка VPN-подключения типа "сеть — сеть](vpn-gateway-howto-site-to-site-resource-manager-portal.md) ". Не забудьте выбрать для шлюза SKU шлюза, избыточное в зоне. Избыточные в зонах номера SKU имеют значение AZ в конце номера SKU. Например, VpnGw1AZ.
+1. Настройте подключение типа "сеть — сеть". Инструкции см. в статье [Настройка VPN-подключения типа "сеть — сеть](./tutorial-site-to-site-portal.md) ". Не забудьте выбрать для шлюза SKU шлюза, избыточное в зоне. Избыточные в зонах номера SKU имеют значение AZ в конце номера SKU. Например, VpnGw1AZ.
 1. Установите флаг для использования частного IP-адреса шлюза с помощью следующих команд PowerShell:
 
    ```azurepowershell-interactive

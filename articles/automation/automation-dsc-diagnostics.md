@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f66c710901b129cb6b138fff126e67615c790714
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 34bbf34d53c44dcef7b8e128a93ee64201423c3e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183674"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897043"
 ---
 # <a name="integrate-with-azure-monitor-logs"></a>Интеграция с журналами Azure Monitor
 
@@ -196,7 +196,7 @@ ms.locfileid: "96183674"
 - Общие сведения см. в статье [Обзор State Configuration службы автоматизации Azure](automation-dsc-overview.md).
 - Чтобы приступить к работе со службой State Configuration службы автоматизации Azure, см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе State Configuration службы автоматизации Azure](automation-dsc-compile.md).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).
 - Сведения о ценах см. на странице [с расценками для службы State Configuration службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).
 - Пример использования службы State Configuration в службе автоматизации Azure в конвейере непрерывного развертывания см. в разделе [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).
 - Чтобы узнать больше о том, как создавать различные поисковые запросы и просматривать журналы заданий State Configuration службы автоматизации с помощью журналов Azure Monitor, ознакомьтесь со статьей [Основные сведения о поисках по журналам Azure Monitor](../azure-monitor/log-query/log-query-overview.md).

@@ -3,19 +3,19 @@ title: Метод преобразования переводчика
 titleSuffix: Azure Cognitive Services
 description: Сведения о параметрах, заголовках и тексте сообщений для метода преобразования в Azure Cognitive Services Translator для перевода текста.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
-ms.author: swmachan
-ms.openlocfilehash: 15f20bab91a4feab056a9f8cd6b012792f036be2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: d46fef0159b983f2685be40e2a0ab5471b96883b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016553"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895447"
 ---
 # <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 

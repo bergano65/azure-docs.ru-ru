@@ -5,12 +5,12 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 41aa7f251bc12fd889a71f65da83c4730ebda9a7
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 0eedd5ce67e96c9d732cf24cbe56a8c3c5e92aaa
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789639"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880497"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric выпуски
 
@@ -47,8 +47,7 @@ ms.locfileid: "98789639"
 | 9 ноября 2020 г. | [Обновление второго выпуска Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-second-refresh-release/ba-p/1874738) | [Заметки о выпуске](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU2-releasenotes.md) |
 | 10 ноября 2020 г.  | Обновление третьего выпуска Azure Service Fabric 7,2 | [Заметки о выпуске](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU3-releasenotes.md) |
 | 2 декабря 2020 г. | [Обновление четвертого выпуска Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-fourth-refresh-release/ba-p/1950584) | [Заметки о выпуске](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU4.md)
-
-
+| 25 января 2021 г. | [Azure Service Fabric 7,2 пятое обновление](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-fifth-refresh-release/ba-p/2096575) | [Заметки о выпуске](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU5-ReleaseNotes.md)
 
 ## <a name="previous-versions"></a>предыдущих версий
 

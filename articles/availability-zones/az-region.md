@@ -4,15 +4,15 @@ description: Для создания высокодоступного и отк�
 author: cynthn
 ms.service: azure
 ms.topic: article
-ms.date: 12/17/2020
+ms.date: 01/26/2021
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 2a2e4ac57eec866d9857f564d6c76ad4a775d223
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5883dc8b34cd1aa00ba1c5de25a09a017a130c0a
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874614"
+ms.locfileid: "98896890"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Службы Azure с поддержкой Зон доступности
 
@@ -58,7 +58,7 @@ Microsoft Azure Глобальная инфраструктура разраба
 | Западная часть США 2        |                |                      |                     |                |
 
 
-Чтобы узнать больше о Зоны доступности и доступных службах в этих регионах, обратитесь к специалистам Майкрософт по продажам или клиентам. Сведения о следующих регионах, которые будут поддерживать Зоны доступности, см. в разделе [географические диаграммы Azure](https://azure.microsoft.com/en-us/global-infrastructure/geographies/).
+\* Чтобы узнать больше о Зоны доступности и доступных службах в этих регионах, обратитесь к специалистам Майкрософт по продажам или клиентам. Сведения о следующих регионах, которые будут поддерживать Зоны доступности, см. в разделе [географические диаграммы Azure](https://azure.microsoft.com/en-us/global-infrastructure/geographies/).
 
 
 ## <a name="azure-services-supporting-availability-zones"></a>Службы Azure, поддерживающие Зоны доступности
@@ -129,7 +129,7 @@ Microsoft Azure Глобальная инфраструктура разраба
 | Azure Red Hat OpenShift                         |      : large_blue_diamond:  |
 | Azure Site Recovery                             |      : large_blue_diamond:  |
 | Реестр контейнеров                              |      : large_blue_diamond:  |
-| Сетка событий Azure                                      |      : large_blue_diamond:  |
+| Сетка событий                                      |      : large_blue_diamond:  |
 | Наблюдатель за сетями                                 |      : large_blue_diamond:  |
 | Power BI Embedded                               |      : large_blue_diamond:  |
 | Хранилище BLOB-объектов класса Premium                            |      : large_blue_diamond:  |

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: ramamill
-ms.openlocfilehash: 90862a74e5fb6521a95292d50fc5cc11bd0082b5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8c90427e2dd4ecf23cb803c4f75dbee34c38f992
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547662"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898585"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
@@ -91,7 +91,7 @@ ms.locfileid: "92547662"
 
     :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility4.png" alt-text="Страница регистрации службы Mobility Service.":::
 
-1. Выберите **Зарегистрировать** , чтобы завершить регистрацию.
+1. Выберите **Зарегистрировать**, чтобы завершить регистрацию.
 
     :::image type="content" source="./media/vmware-physical-mobility-service-install-manual/mobility5.png" alt-text="Последняя страница регистрации службы Mobility Service.":::
 
@@ -104,7 +104,7 @@ ms.locfileid: "92547662"
 
 ### <a name="windows-machine"></a>Компьютер Windows
 
-- В командной строке выполните следующие команды, чтобы скопировать установщик в локальную папку, например _C:\temp_ , на сервер, который требуется защитить. Замените имя файла установщика фактическим именем файла.
+- В командной строке выполните следующие команды, чтобы скопировать установщик в локальную папку, например _C:\temp_, на сервер, который требуется защитить. Замените имя файла установщика фактическим именем файла.
 
   ```cmd
   cd C:\Temp
@@ -228,11 +228,11 @@ ms.locfileid: "92547662"
 В качестве **необходимого компонента для обновления или защиты SUSE Linux Enterprise Server 11 SP3 компьютеров** с версии 9,36 и выше:
 
 1. Убедитесь, что последний установщик агента мобильности скачан из центра загрузки Майкрософт и размещен в репозитории Push Installer на сервере конфигурации и всех серверах обработки Scale out.
-2. [Скачайте](site-recovery-whats-new.md) последнюю версию установщика агента SUSE Linux Enterprise Server 11 SP3. Последняя версия агента мобильности — [9,37](https://support.microsoft.com/help/4582666/)
+2. [Скачайте](site-recovery-whats-new.md) последнюю версию установщика агента SUSE Linux Enterprise Server 11 SP3.
 3. Перейдите к серверу конфигурации, скопируйте установщик агента SUSE Linux Enterprise Server 11 SP3 на путь — INSTALL_DIR \home\svsystems\pushinstallsvc\repository
 1. После копирования последнего установщика перезапустите службу Inmage PushInstall Service. 
 1. Теперь перейдите к связанным серверам обработки масштабирования, повторите шаг 3 и шаг 4.
-1. **Например** , если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
+1. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
     1. C:\Program Files (x86) \Microsoft Azure site Recovery\home\svsystems\pushinstallsvc\repository
 
 ### <a name="rhel-5-or-centos-5-server"></a>Сервер RHEL 5 или CentOS 5
@@ -240,11 +240,11 @@ ms.locfileid: "92547662"
 В качестве **необходимого компонента для обновления или защиты компьютеров RHEL 5** с версии 9,36 и выше:
 
 1. Убедитесь, что последний установщик агента мобильности скачан из центра загрузки Майкрософт и размещен в репозитории Push Installer на сервере конфигурации и всех серверах обработки Scale out.
-2. [Скачайте](site-recovery-whats-new.md) последнюю версию УСТАНОВЩИКА агента RHEL 5 или CentOS 5. Последняя версия агента мобильности — [9,37](https://support.microsoft.com/help/4582666/)
+2. [Скачайте](site-recovery-whats-new.md) последнюю версию УСТАНОВЩИКА агента RHEL 5 или CentOS 5. 
 3. Перейдите на сервер конфигурации, скопируйте установщик агента RHEL 5 или CentOS 5 на страницу Path-INSTALL_DIR \home\svsystems\pushinstallsvc\repository
 1. После копирования последнего установщика перезапустите службу Inmage PushInstall Service. 
 1. Теперь перейдите к связанным серверам обработки масштабирования, повторите шаг 3 и шаг 4.
-1. **Например** , если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
+1. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
     1. C:\Program Files (x86) \Microsoft Azure site Recovery\home\svsystems\pushinstallsvc\repository
 
 ## <a name="debian-7-server"></a>Сервер Debian 7
@@ -252,11 +252,11 @@ ms.locfileid: "92547662"
 В качестве **необходимого компонента для обновления или защиты компьютеров Debian 7** с версии 9,36 и выше:
 
 1. Убедитесь, что последний установщик агента мобильности скачан из центра загрузки Майкрософт и размещен в репозитории Push Installer на сервере конфигурации и всех серверах обработки Scale out.
-2. [Скачайте](site-recovery-whats-new.md) последнюю версию установщика агента Debian 7. Последняя версия агента мобильности — [9,37](https://support.microsoft.com/help/4582666/)
+2. [Скачайте](site-recovery-whats-new.md) последнюю версию установщика агента Debian 7.
 3. Перейдите на сервер конфигурации, скопируйте установщик агента Debian 7 на путь-INSTALL_DIR \home\svsystems\pushinstallsvc\repository
 1. После копирования последнего установщика перезапустите службу Inmage PushInstall Service. 
 1. Теперь перейдите к связанным серверам обработки масштабирования, повторите шаг 3 и шаг 4.
-1. **Например** , если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
+1. **Например**, если путь установки — C:\Program Files (x86) \Microsoft Azure Site Recovery, то упомянутые выше каталоги будут
     1. C:\Program Files (x86) \Microsoft Azure site Recovery\home\svsystems\pushinstallsvc\repository
 
 ## <a name="next-steps"></a>Дальнейшие действия

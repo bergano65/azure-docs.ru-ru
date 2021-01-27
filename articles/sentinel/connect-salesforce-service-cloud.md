@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: d323af2695a41e685e722c98603cf5df09866a15
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 152fee2e4e72cee6a7bc1c768c0a8ca7b031ec39
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98568007"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878924"
 ---
 # <a name="connect-your-salesforce-service-cloud-to-azure-sentinel"></a>Подключение облака службы Salesforce к Azure Sentinel
 
@@ -37,7 +37,7 @@ ms.locfileid: "98568007"
 
 - Необходимо иметь разрешения на чтение общих ключей для рабочей области. Дополнительные [сведения о ключах рабочих областей](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
 
-- Чтобы создать приложение-функция, необходимо иметь разрешения на чтение и запись для функций Azure. Дополнительные [сведения о функциях Azure](/azure/azure-functions/).
+- Чтобы создать приложение-функция, необходимо иметь разрешения на чтение и запись для функций Azure. Дополнительные [сведения о функциях Azure](../azure-functions/index.yml).
 
 - Необходимо иметь следующие учетные данные Salesforce REST API: **имя пользователя API Salesforce**, **пароль API Salesforce**, **токен безопасности Salesforce**, **ключ потребителя** Salesforce, **секрет потребителя Salesforce**. Дополнительные [сведения о Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart.htm).
 

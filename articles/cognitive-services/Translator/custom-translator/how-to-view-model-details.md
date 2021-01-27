@@ -2,19 +2,19 @@
 title: Просмотр сведений о модели Custom Translator
 titleSuffix: Azure Cognitive Services
 description: На вкладке "Модели" в любом проекте показаны подробные сведения о каждой модели, такие как название модели, статус модели, оценка BLEU, обучение, настройка, подсчет количества тестов.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 52e305f9d50ab0f383810778be681ac41be97c72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11f39aa480e3ba6508bf730c61891e80ea689e8b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88509806"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895957"
 ---
 # <a name="view-model-details"></a>Просмотр сведений о модели
 
@@ -91,6 +91,6 @@ ms.locfileid: "88509806"
 
 2.  **Тестирование:** на этой вкладке отображаются сведения о тестировании успешно обученной модели.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите [результаты тестирования](how-to-view-system-test-results.md) и проанализируйте результаты обучения.

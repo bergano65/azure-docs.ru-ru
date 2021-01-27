@@ -8,12 +8,12 @@ ms.date: 12/11/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: 382adb36712fbf4bee83044c8b2d096223eb6269
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 20da05399eed4cb9c5a4b69a82b0b1e799997751
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630043"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880124"
 ---
 # <a name="download-blobs-from-azure-blob-storage-by-using-azcopy-v10"></a>Скачивание больших двоичных объектов из хранилища BLOB-объектов Azure с помощью AzCopy V10
 
@@ -143,7 +143,7 @@ ms.locfileid: "97630043"
 
 #### <a name="download-a-blob-snapshot"></a>Скачивание моментального снимка большого двоичного объекта
 
-[Моментальный снимок BLOB-объекта](/azure/storage/blobs/snapshots-overview) можно скачать, ссылаясь на значение **DateTime** моментального снимка большого двоичного объекта. 
+[Моментальный снимок BLOB-объекта](../blobs/snapshots-overview.md) можно скачать, ссылаясь на значение **DateTime** моментального снимка большого двоичного объекта. 
 
 |    |     |
 |--------|-----------|
@@ -158,7 +158,7 @@ ms.locfileid: "97630043"
 
 Вы можете настроить операцию загрузки с помощью необязательных флагов. Вот несколько примеров.
 
-|Сценарий|Флаг|
+|Сценарий|Flag|
 |---|---|
 |Автоматическое распаковка файлов.|**--Распаковка**|
 |Укажите, насколько подробными должны быть записи журнала, связанные с копированием.|**--уровень** = \[ ведения журнала ПРЕДУПРЕЖДЕНИЕ \| об ошибке \| \| нет\]|

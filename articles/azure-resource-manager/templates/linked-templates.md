@@ -2,13 +2,13 @@
 title: Связывание шаблонов для развертывания
 description: Описывает, как использовать связанные шаблоны в шаблоне Azure Resource Manager (шаблон ARM) для создания решения модульного шаблона. Показывает, как передавать значения параметров, указывать файл параметров и динамически создаваемые URL-адреса.
 ms.topic: conceptual
-ms.date: 01/25/2021
-ms.openlocfilehash: 7d4df67b7f69b3e58799f45ad72bd9ed68540dc2
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.date: 01/26/2021
+ms.openlocfilehash: aae3947656e475d15bc4f0da770d0398fafa13c5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790941"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880443"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
@@ -495,6 +495,91 @@ ms.locfileid: "98790941"
 ```
 
 Нельзя использовать одновременно встроенные параметры и ссылку на их файл. Развертывание завершается сбоем с ошибкой когда указываются `parametersLink` и `parameters`.
+
+### <a name="use-relative-path-for-linked-templates"></a>Использовать относительный путь для связанных шаблонов
+
+`relativePath`Свойство класса `Microsoft.Resources/deployments` упрощает создание связанных шаблонов. Это свойство можно использовать для развертывания удаленного связанного шаблона в расположении относительно родительского элемента. Эта функция требует, чтобы все файлы шаблонов были промежуточными и доступны на удаленном URI, таком как GitHub или учетная запись хранения Azure. При вызове основного шаблона с помощью URI из Azure PowerShell или Azure CLI URI дочернего развертывания является сочетанием родительского и relativePath.
+
+> [!NOTE]
+> При создании Темплатеспек все шаблоны, на которые ссылается `relativePath` свойство, упаковываются в ресурс темплатеспек с Azure PowerShell или Azure CLI. Файлы для промежуточного размещения не требуются. Дополнительные сведения см. в статье [Создание шаблона спецификации со связанными шаблонами](./template-specs.md#create-a-template-spec-with-linked-templates).
+
+Предположим, что такая структура папок выглядит следующим образом:
+
+![относительный путь связанного шаблона диспетчера ресурсов](./media/linked-templates/resource-manager-linked-templates-relative-path.png)
+
+В следующем шаблоне показано, как *mainTemplate.jsдля* развертываний *nestedChild.js* , как показано на предыдущем рисунке.
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "childLinked",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "children/nestedChild.json"
+        }
+      }
+    }
+  ],
+  "outputs": {}
+}
+```
+
+В следующем развертывании URI связанного шаблона в предыдущем шаблоне имеет значение **https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/linked-template-relpath/children/nestedChild.json** .
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name linkedTemplateWithRelativePath `
+  -ResourceGroupName "myResourceGroup" `
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/linked-template-relpath/mainTemplate.json"
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --name linkedTemplateWithRelativePath \
+  --resource-group myResourceGroup \
+  --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/linked-template-relpath/mainTemplate.json"
+```
+
+---
+
+Чтобы развернуть связанные шаблоны с относительным путем, хранящимся в учетной записи хранения Azure, используйте `QueryString` / `query-string` параметр, чтобы указать маркер SAS, который будет использоваться с параметром TemplateUri. Этот параметр поддерживается только Azure CLI версии 2,18 или более поздней, а также Azure PowerShell версии 5,4 или более поздней.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell
+New-AzResourceGroupDeployment `
+  -Name linkedTemplateWithRelativePath `
+  -ResourceGroupName "myResourceGroup" `
+  -TemplateUri "https://stage20210126.blob.core.windows.net/template-staging/mainTemplate.json" `
+  -QueryString $sasToken
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli
+az deployment group create \
+  --name linkedTemplateWithRelativePath \
+  --resource-group myResourceGroup \
+  --template-uri "https://stage20210126.blob.core.windows.net/template-staging/mainTemplate.json" \
+  --query-string $sasToken
+```
+
+---
+
+Убедитесь, что в строке запроса отсутствует начальный знак "?". Развертывание добавляет его при сборке URI для развертываний.
 
 ## <a name="template-specs"></a>Спецификации шаблонов
 

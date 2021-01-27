@@ -8,12 +8,12 @@ ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 29f7f241f119ca7fab50409881b517961b00cf20
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: cfeb124aeb614906cef1dc710eb8485e63806539
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610477"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880581"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 
@@ -387,6 +387,6 @@ $validation.Results | Select-Object -Property Type, Path, Level, Description, Re
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md)
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)
-* [Как развернуть службу файлов Azure](storage-files-deployment-guide.md)
+* [Как развернуть службу файлов Azure](./storage-how-to-create-file-share.md)
 * [Как развернуть службу синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md)
 * [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

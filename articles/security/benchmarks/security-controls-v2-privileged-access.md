@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 7721100d902948364c9e4b1373f1fa805c680a50
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 619f2c2670d8e376ad0bca7cf8b93b971be067a0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202221"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880731"
 ---
 # <a name="security-control-v2-privileged-access"></a>Управление безопасностью v2: привилегированный доступ
 
@@ -159,7 +159,7 @@ ms.locfileid: "98202221"
 
 - [Общие сведения о рабочих станциях с привилегированным доступом](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [Развертывание рабочей станции с привилегированным доступом](../../active-directory/devices/howto-azure-managed-workstation.md)
+- [Развертывание рабочей станции с привилегированным доступом](/security/compass/privileged-access-deployment)
 
 **Ответственность**: Customer
 
@@ -217,4 +217,3 @@ ms.locfileid: "98202221"
 - [Управление соответствием требованиям безопасности](/azure/cloud-adoption-framework/organize/cloud-security-compliance-management) 
 
 - [Управление удостоверениями и ключами](/azure/cloud-adoption-framework/organize/cloud-security-identity-keys)
-

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 9fc5c115486c7cbf84fc0bd98ff7996c674f2e24
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: b27b46c68d018d2ddf79d284b20cc05b51640891
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694815"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880647"
 ---
 # <a name="register-and-scan-azure-blob-storage"></a>Регистрация и проверка Хранилища BLOB-объектов Azure
 
@@ -41,11 +41,11 @@ ms.locfileid: "97694815"
 
 1. Войдите в свою учетную запись хранения.
 1. Щелкните **Управление доступом (IAM)** в области навигации слева. 
-1. Нажмите кнопку **+ Добавить**.
+1. Щелкните **+ Добавить**.
 1. Задайте **роль** для **модуля чтения данных большого двоичного объекта хранилища** и введите имя учетной записи Azure зрения в поле **выберите** вход. Затем щелкните **Сохранить**, чтобы назначить эту роль учетной записи Purview.
 
 > [!Note]
-> Дополнительные сведения см. в статье [авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](https://docs.microsoft.com/azure/storage/common/storage-auth-aad)
+> Дополнительные сведения см. в статье [авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](../storage/common/storage-auth-aad.md)
 
 ### <a name="account-key"></a>Ключ учетной записи
 
@@ -91,7 +91,7 @@ ms.locfileid: "97694815"
 
 1. Войдите в свою учетную запись хранения.
 1. Щелкните **Управление доступом (IAM)** в области навигации слева. 
-1. Нажмите кнопку **+ Добавить**.
+1. Щелкните **+ Добавить**.
 1. Задайте **роль** для **модуля чтения данных большого двоичного объекта хранилища** и введите имя или идентификатор объекта субъекта-службы в поле **выберите** вход. Затем выберите **сохранить** , чтобы назначить эту роль субъекту-службе.
 
 ## <a name="firewall-settings"></a>Параметры брандмауэра

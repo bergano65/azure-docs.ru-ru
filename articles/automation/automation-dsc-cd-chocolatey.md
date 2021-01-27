@@ -6,12 +6,12 @@ ms.subservice: dsc
 ms.date: 08/08/2018
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 87504625c298c4fb858ff90430d707081e87cd5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb5f7b5e8214bd3b04bd7b9544ab4bc589f6c4bf
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186577"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896331"
 ---
 # <a name="set-up-continuous-deployment-with-chocolatey"></a>Настройка непрерывного развертывания с помощью Chocolatey
 
@@ -213,5 +213,5 @@ Get-AzAutomationDscCompilationJob `
 - Общие сведения см. в статье [Обзор State Configuration службы автоматизации Azure](automation-dsc-overview.md).
 - Чтобы использовать эту функцию, см. раздел [Начало работы со службой State Configuration службы автоматизации Azure](automation-dsc-getting-started.md).
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе State Configuration службы автоматизации Azure](automation-dsc-compile.md).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).
 - Сведения о ценах см. на странице [с расценками для службы State Configuration службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).

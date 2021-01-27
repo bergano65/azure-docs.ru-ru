@@ -10,12 +10,12 @@ ms.date: 01/15/2021
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: e463328df195b5a91db8ce272d138f980d000e79
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c3c126a96c0eb2214f63a56120d0966b9a97efed
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232069"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895396"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
@@ -27,6 +27,9 @@ ms.locfileid: "98232069"
 
 > [!TIP]
 > Мы рекомендуем не параметризировать пароли или секреты. Вместо этого храните все строки подключения в Azure Key Vault и параметризируйте *Имя секрета*.
+
+> [!Note]
+> Есть открытая ошибка для использования "-" в именах параметров. рекомендуется использовать имена без "-", пока ошибка не будет устранена.
 
 Уделите 7 минут своего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции.
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 46bcfd48d8fdfb228670b87df166c1ad8de61e52
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 0ef4faf14ec01a25419fd22ba8c73a8a033b4172
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94626356"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879988"
 ---
 # <a name="migrate-from-linux-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Переход с Linux на гибридное облачное развертывание с помощью Синхронизация файлов Azure
 
@@ -220,5 +220,5 @@ Robocopy /MT:32 /UNILOG:<file name> /TEE /B /MIR /COPYALL /DCOPY:DAT <SourcePath
 Дополнительные сведения о файловых ресурсах Azure и Синхронизация файлов Azure см. здесь. В следующих статьях содержатся дополнительные параметры, рекомендации и Справка по устранению неполадок. В этих статьях содержатся ссылки на [документацию по общей папке Azure](storage-files-introduction.md) .
 
 * [Обзор Синхронизация файлов Azure](./storage-sync-files-planning.md)
-* [Синхронизация файлов Azure рекомендации по развертыванию](storage-files-deployment-guide.md)
+* [Синхронизация файлов Azure рекомендации по развертыванию](./storage-how-to-create-file-share.md)
 * [Устранение неполадок службы "Синхронизация файлов Azure"](storage-sync-files-troubleshoot.md)

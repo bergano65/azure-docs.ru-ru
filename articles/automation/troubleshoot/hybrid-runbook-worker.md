@@ -2,19 +2,15 @@
 title: Устранение неполадок гибридной рабочей роли Runbook в службе автоматизации Azure
 description: В этой статье описано, как устранять неполадки, которые могут возникать для гибридных рабочих ролей Runbook в службе автоматизации Azure.
 services: automation
-ms.service: automation
 ms.subservice: ''
-author: mgoedtel
-ms.author: magoedte
 ms.date: 11/25/2019
-ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 1386dd820b10b63862ddab38c441f251bea1d83d
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.topic: troubleshooting
+ms.openlocfilehash: 214501c447632232dc00b61643ea21083bd0e4ac
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428393"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896500"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Устранение неполадок с гибридной рабочей ролью runbook
 
@@ -46,7 +42,7 @@ ms.locfileid: "92428393"
 
 #### <a name="resolution"></a>Решение
 
-Убедитесь, что компьютер имеет исходящий доступ к ** \* . Azure-Automation.NET** через порт 443.
+Убедитесь, что компьютер имеет исходящий доступ к **\* . Azure-Automation.NET** через порт 443.
 
 Прежде чем настраивать гибридную рабочую роль Runbook для данной функции, необходимо убедиться, что компьютеры, на которых будет выполняться эта рабочая роль, соответствуют минимальным требованиям к оборудованию. Модули runbook и используемый ими фоновый процесс могут привести к слишком интенсивному использованию системы, что вызовет задержки или увеличение времени ожидания при выполнении заданий runbook.
 
@@ -58,7 +54,7 @@ ms.locfileid: "92428393"
 
 #### <a name="issue"></a>Проблема
 
-Гибридная рабочая роль Runbook получает событие 15011, указывающее, что результат запроса недействителен. Приведенная ниже ошибка возникает, когда рабочая роль пытается открыть подключение к [серверу SignalR](/aspnet/core/signalr/introduction?view=aspnetcore-3.1).
+Гибридная рабочая роль Runbook получает событие 15011, указывающее, что результат запроса недействителен. Приведенная ниже ошибка возникает, когда рабочая роль пытается открыть подключение к [серверу SignalR](/aspnet/core/signalr/introduction).
 
 ```error
 [AccountId={c7d22bd3-47b2-4144-bf88-97940102f6ca}]
@@ -226,7 +222,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="cause"></a>Причина
 
-Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Убедитесь, что компьютер имеет исходящий доступ к ** \* . Azure-Automation.NET** через порт 443.
+Эта проблема может быть вызвана тем, что прокси-сервер или сетевой брандмауэр блокируют подключение к Microsoft Azure. Убедитесь, что компьютер имеет исходящий доступ к **\* . Azure-Automation.NET** через порт 443.
 
 #### <a name="resolution"></a>Решение
 
@@ -238,7 +234,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="issue"></a>Проблема
 
-Сценарий, выполняющийся в гибридной рабочей роли Runbook Windows, не может подключиться, как ожидалось, Microsoft 365 в песочнице Orchestrator. Для подключения сценарий использует [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0). 
+Сценарий, выполняющийся в гибридной рабочей роли Runbook Windows, не может подключиться, как ожидалось, Microsoft 365 в песочнице Orchestrator. Для подключения сценарий использует [Connect-MsolService](/powershell/module/msonline/connect-msolservice). 
 
 При настройке **Orchestrator.Sandbox.exe.config** для задания прокси-сервера и списка обхода песочница по-прежнему не подключается должным образом. Файл **Powershell_ise.exe.config** с теми же параметрами прокси-сервера и списка обхода работает ожидаемым образом. Журналы Service Management Automation (SMA) и журналы PowerShell не предоставляют никаких сведений о прокси-сервере.
 
@@ -250,7 +246,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 Вы можете устранить проблему в песочнице Orchestrator, перенеся сценарий, чтобы использовать модули Azure Active Directory вместо модуля MSOnline для командлетов PowerShell. Дополнительные сведения см. в разделе [Миграция из Orchestrator в службу автоматизации Azure (бета-версия)](../automation-orchestrator-migration.md).
 
-Если вы хотите продолжить использовать командлеты модуля MSOnline, измените сценарий так, чтобы он использовал [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7). Укажите значения параметров `ComputerName` и `Credential`. 
+Если вы хотите продолжить использовать командлеты модуля MSOnline, измените сценарий так, чтобы он использовал [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command). Укажите значения параметров `ComputerName` и `Credential`. 
 
 ```powershell
 $Credential = Get-AutomationPSCredential -Name MyProxyAccessibleCredential
@@ -339,7 +335,7 @@ Failed to deregister worker. [response_status=404]
 
 1. Удалите агент `sudo sh onboard_agent.sh --purge` .
 
-1. Выполните следующие команды.
+1. Выполните следующие команды:
 
    ```
    sudo mv -f /home/nxautomation/state/worker.conf /home/nxautomation/state/worker.conf_old

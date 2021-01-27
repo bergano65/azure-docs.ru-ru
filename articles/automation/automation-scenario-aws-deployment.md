@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 456a7e4f07b2416e1d2037205574f2e7149e70e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 03f1f1659d120a2aa1b827063cb2bc84138f3655
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185948"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896076"
 ---
 # <a name="deploy-an-amazon-web-services-vm-with-a-runbook"></a>Развертывание виртуальных машин Amazon Web Services с помощью модуля runbook
 
@@ -103,4 +103,4 @@ ms.locfileid: "86185948"
 * Сведения о работе с модулями runbook см. в статье [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 * Дополнительные сведения о PowerShell см. в [документации PowerShell](/powershell/scripting/overview).
 * Сведения о поддержке сценариев см. в [Встроенная поддержка скриптов PowerShell в службе автоматизации Azure](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).

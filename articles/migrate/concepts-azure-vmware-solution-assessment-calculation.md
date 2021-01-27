@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: f52c0296023098c755feb1bf0baba980f2988bd7
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: a489902372b0b88a0ffec07fa685ee745ec59c50
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567718"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880463"
 ---
 # <a name="server-assessment-overview-migrate-to-azure-vmware-solution"></a>Обзор оценки сервера (миграция в решение VMware для Azure)
 
@@ -207,7 +207,7 @@ ms.locfileid: "98567718"
 
 Если используется *как локальное изменение размера*, то при оценке сервера не учитывается журнал производительности виртуальных машин и дисков. Вместо этого он выделяет узлы AVS на основе размера, выделенного в локальной среде. Тип хранилища по умолчанию — vSAN в AVS.
 
-[Узнайте больше](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware-azure-vmware-solution#review-an-assessment) о том, как ознакомиться с оценкой решения Azure VMware.
+[Узнайте больше](./tutorial-assess-vmware-azure-vmware-solution.md#review-an-assessment) о том, как ознакомиться с оценкой решения Azure VMware.
 
 ## <a name="confidence-ratings"></a>Оценки достоверности
 

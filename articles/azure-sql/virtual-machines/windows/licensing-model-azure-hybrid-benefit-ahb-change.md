@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: da136c1f3ce36bf85592c3c73c9e8f92c41c7442
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: ea274914ac70540d5763884bbd01e41e349a530d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357914"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879836"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL в Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "97357914"
 
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью [расширения агента IaaS SQL](./sql-server-iaas-agent-extension-automate-management.md).
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Существует три модели лицензирования для виртуальной машины Azure, на которой размещена SQL Server: оплата по мере использования, Преимущество гибридного использования Azure (АХБ), высокая доступность и аварийное восстановление (HA/DR). Вы можете изменить модель лицензирования для виртуальной машины SQL Server с помощью портала Azure, Azure CLI или PowerShell. 
 
@@ -37,7 +37,7 @@ ms.locfileid: "97357914"
 
 Преимущество гибридного использования Azure позволяет применять на виртуальных машинах Azure лицензии SQL Server с поддержкой Software Assurance ("соответствующие лицензии"). В рамках Преимущества гибридного использования Azure клиентам не нужно платить за лицензию SQL Server на виртуальной машине. При этом клиенты должны платить за использование базовых облачных вычислительных ресурсов (базовый тариф), хранилищ и резервных копий. Кроме того, клиент оплачивает входящий и исходящий трафик, связанный с использованием служб (если это применимо).
 
-Условия использования продуктов Майкрософт определяют следующее. Клиенты должны указать, что используют Базу данных SQL Azure (Управляемый экземпляр, Эластичный пул и Отдельная база данных), Фабрику данных Azure, SQL Server Integration Services или виртуальные машины SQL Server в рамках Преимущества гибридного использования Azure для SQL Server при настройке рабочих нагрузок в Azure.
+Согласно [условиям продукта](https://www.microsoft.com/licensing/terms/productoffering/MicrosoftAzureServices/EAEAS)Майкрософт: "клиенты должны указать, что они используют базу данных SQL azure (Управляемый экземпляр, Эластичный пул и отдельная база данных), фабрику данных azure, SQL Server Integration Services или SQL Server виртуальные машины в Преимущество гибридного использования Azure для SQL Server при настройке рабочих нагрузок в Azure".
 
 Обеспечить соблюдение требований и сообщить об использовании Преимущества гибридного использования Azure для SQL Server на виртуальной машине Azure можно тремя способами.
 

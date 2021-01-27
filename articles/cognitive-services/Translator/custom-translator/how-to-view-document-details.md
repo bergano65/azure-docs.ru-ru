@@ -2,19 +2,19 @@
 title: Сведения о документе — Custom Translator
 titleSuffix: Azure Cognitive Services
 description: На странице списка документов отображаются первые 10 документов в рабочей области. Для каждого из документов отображается имя, тип связывания, тип, язык, метка времени передачи и адрес электронной почты пользователя, который отправил документ.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 87b999069ef9088a731a4e972c5d548cac0b917c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56093204516e156d670097c22b4edab42db54bde
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88509584"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895617"
 ---
 # <a name="view-document-details"></a>Просмотр сведений о документе
 
@@ -40,6 +40,6 @@ ms.locfileid: "88509584"
 
     ![Подтверждение удаления](media/how-to/how-to-delete-document-confirm.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об обучении модели см. в [этой статье](how-to-train-model.md).

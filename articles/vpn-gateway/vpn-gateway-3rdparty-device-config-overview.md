@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 01ceb067f589ef04b04ff0bf05e2971ee30f407c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 484dad65310efaa60e8744b2f122b5e44ae13565
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400166"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880158"
 ---
 # <a name="overview-of-partner-vpn-device-configurations"></a>Обзор конфигураций партнерских VPN-устройств
 В этой статье содержится обзор процесса настройки локальных VPN-устройств для подключения к VPN-шлюзам Azure. Для демонстрации подключения к различным конфигурациям локальных VPN-устройств с помощью одинаковых параметров используются примеры виртуальной сети Azure и настройки VPN-шлюза.
@@ -27,7 +27,7 @@ ms.locfileid: "89400166"
 
 ![Схема одиночного VPN-туннеля S2S](./media/vpn-gateway-3rdparty-device-config-overview/singletunnel.png)
 
-Пошаговые инструкции по настройке одиночного VPN-туннеля см. в статье [Создание подключения типа "сеть — сеть" на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md). В следующих разделах указаны параметры подключения для примера конфигурации, а также приводится сценарий PowerShell для начала работы.
+Пошаговые инструкции по настройке одиночного VPN-туннеля см. в статье [Создание подключения типа "сеть — сеть" на портале Azure](./tutorial-site-to-site-portal.md). В следующих разделах указаны параметры подключения для примера конфигурации, а также приводится сценарий PowerShell для начала работы.
 
 ### <a name="connection-parameters"></a>Параметры подключения
 В этом разделе перечислены параметры для примеров, описанных в предыдущих разделах.
@@ -148,6 +148,5 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG
     New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng5gw -Location $Location1 -ConnectionType IPsec -SharedKey 'AzureA1b2C3' -EnableBGP $True
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Пошаговые инструкции по настройке VPN-шлюзов в режиме "активный — активный" см. в статье [Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure](vpn-gateway-activeactive-rm-powershell.md).
-

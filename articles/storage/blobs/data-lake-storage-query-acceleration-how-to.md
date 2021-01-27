@@ -9,12 +9,12 @@ ms.date: 01/06/2021
 ms.author: normesta
 ms.reviewer: jamsbak
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: cc63a9787a3611f28e6466564735d029bf65b757
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 0340ab0a13d7c639d5e5bba49b3cdd445bad5a83
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968404"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879887"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage
 
@@ -437,7 +437,7 @@ def dump_query_csv(blob: BlobClient, query: str, headers: bool):
 
 ### <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-В этом примере запрос отправляется в API ускорения запросов, а затем потоки возвращаются обратно. `blob`Объект, переданный в `queryHemingway` вспомогательную функцию, имеет тип [блоккблобклиент](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient). Дополнительные сведения о том, как получить объект [блоккблобклиент](https://docs.microsoft.com/javascript/api/@azure/storage-blob/blockblobclient) , см. [в разделе Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](storage-quickstart-blobs-nodejs.md).
+В этом примере запрос отправляется в API ускорения запросов, а затем потоки возвращаются обратно. `blob`Объект, переданный в `queryHemingway` вспомогательную функцию, имеет тип [блоккблобклиент](/javascript/api/@azure/storage-blob/blockblobclient). Дополнительные сведения о том, как получить объект [блоккблобклиент](/javascript/api/@azure/storage-blob/blockblobclient) , см. [в разделе Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](storage-quickstart-blobs-nodejs.md).
 
 ```javascript
 async function queryHemingway(blob)

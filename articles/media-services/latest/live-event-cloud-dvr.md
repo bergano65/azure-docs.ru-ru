@@ -1,6 +1,5 @@
 ---
 title: Используйте сдвиги времени и динамические выходные данные, чтобы создать воспроизведение видео по запросу
-titleSuffix: Azure Media Services
 description: В этой статье описывается, как использовать сдвиги времени и динамические выходные данные для записи динамических потоков и создания воспроизведения по запросу.
 services: media-services
 documentationcenter: ''
@@ -14,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 11485ebac449cbde0a4f31e2a099a153476577b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5b475f15a5dc751de154965e3d1e78a85fbd4c9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289517"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897872"
 ---
 # <a name="use-time-shifting-and-live-outputs-to-create-on-demand-video-playback"></a>Используйте сдвиги времени и динамические выходные данные, чтобы создать воспроизведение видео по запросу
 
@@ -55,7 +54,7 @@ ms.locfileid: "89289517"
 > [!NOTE]
 > Когда вы удаляете динамический выход, вы не удаляете базовый ресурс и содержимое в ресурсе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подрежьте видео](subclip-video-rest-howto.md).
 * [Определите фильтры для своих ресурсов](filters-dynamic-manifest-rest-howto.md).

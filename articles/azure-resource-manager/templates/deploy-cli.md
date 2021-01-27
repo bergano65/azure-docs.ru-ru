@@ -2,13 +2,13 @@
 title: Развертывание ресурсов с помощью Azure CLI и шаблона
 description: Используйте Azure Resource Manager и Azure CLI для развертывания ресурсов в Azure. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.openlocfilehash: d79a5c93bf79c5851beabbba2eb3a663c6ab5999
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/26/2021
+ms.openlocfilehash: f01409db36ca29deb2f6938ce3118cdcb20cd1a1
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251086"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881305"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Развертывание ресурсов с помощью шаблонов ARM и Azure CLI
 
@@ -103,6 +103,18 @@ az deployment group create \
 ```
 
 В предыдущем примере для шаблона требуется общедоступный код URI, который подходит для большинства сценариев, так как шаблон не должен содержать конфиденциальные данные. Если необходимо указать конфиденциальные данные (например, пароль администратора), то передайте это значение с помощью безопасного параметра. Однако если вы хотите управлять доступом к шаблону, рассмотрите возможность использования [спецификаций шаблонов](#deploy-template-spec).
+
+Чтобы развернуть удаленные связанные шаблоны с относительным путем, хранящимся в учетной записи хранения, используйте `query-string` для указания маркера SAS:
+
+```azurepowershell
+az deployment group create \
+  --name linkedTemplateWithRelativePath \
+  --resource-group myResourceGroup \
+  --template-uri "https://stage20210126.blob.core.windows.net/template-staging/mainTemplate.json" \
+  --query-string $sasToken
+```
+
+Дополнительные сведения см. в разделе [использование относительного пути для связанных шаблонов](./linked-templates.md#linked-template).
 
 ## <a name="deployment-name"></a>Deployment name (Имя развертывания)
 

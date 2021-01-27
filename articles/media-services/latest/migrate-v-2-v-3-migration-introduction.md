@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о миграции из служб мультимедиа Azure v2 в v3 | Документация Майкрософт
+title: Общие сведения о миграции из служб мультимедиа Azure v2 в v3
 description: Эта статья содержит вводные сведения о переходе с служб мультимедиа версии 2 на v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: fb9abd8f3186405edc31b4af48ee98482e080c68
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: d96644b4df5475192c3b7d90bd055e63bf869faa
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690585"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898347"
 ---
 # <a name="migrate-from-media-services-v2-to-v3-introduction"></a>Общие сведения о переходе с служб мультимедиа v2 на v3
 
@@ -59,8 +59,8 @@ ms.locfileid: "98690585"
 Ознакомьтесь с различиями между API служб мультимедиа версии 2 и API V3.
 
 - [Доступ через API](migrate-v-2-v-3-differences-api-access.md)
-- [Зазоры функций](migrate-v-2-v-3-differences-feature-gaps.md)
-- [Терминология и изменения сущностей](migrate-v-2-v-3-differences-terminology.md)
+- [Недостатки функций](migrate-v-2-v-3-differences-feature-gaps.md)
+- [Изменения терминологии и сущностей](migrate-v-2-v-3-differences-terminology.md)
 
 ## <a name="step-3-sdk-setup"></a>Этап 3. Установка пакета SDK
 
@@ -75,11 +75,11 @@ ms.locfileid: "98690585"
 Приложение служб мультимедиа версии 2 может быть уникальным. Поэтому мы предоставили рекомендации на основе сценариев на основе того, как вы *могли* использовать службы мультимедиа в прошлом, и действия для каждого компонента службы, например:
 
 - [Кодирование](migrate-v-2-v-3-migration-scenario-based-encoding.md)
-- [Потоковая трансляция](migrate-v-2-v-3-migration-scenario-based-live-streaming.md)
+- [Потоковая передача в реальном времени](migrate-v-2-v-3-migration-scenario-based-live-streaming.md)
 - [Упаковка и доставка](migrate-v-2-v-3-migration-scenario-based-publishing.md)
 - [Защита содержимого](migrate-v-2-v-3-migration-scenario-based-content-protection.md)
-- [Зарезервированные единицы мультимедиа (MRU)](migrate-v-2-v-3-migration-scenario-based-media-reserved-units.md)
+- [Зарезервированные единицы мультимедиа](migrate-v-2-v-3-migration-scenario-based-media-reserved-units.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]
