@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 76b83a608c7178b42b762d5fd5bb94d14a6ee41b
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: a19e90a15991cdc03999bf43d5bece63325aab05
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797759"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916580"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Общие сведения об Azure Defender для Kubernetes
 
@@ -28,7 +28,7 @@ ms.locfileid: "98797759"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Плата за использование **Azure Defender для Kubernetes** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
 |Требуемые роли и разрешения|**Администратор безопасности** может отклонять предупреждения.<br>**Читатель сведений о безопасности** может просматривать результаты.|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|

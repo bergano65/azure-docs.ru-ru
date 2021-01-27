@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 01/14/2020
 ms.author: danlep
-ms.openlocfilehash: f3294698f6973437a23fab798e8daf5642cc9b49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f2749a18a5ac6aed0822553d59beaacc9060228
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77111768"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915953"
 ---
 # <a name="use-an-azure-managed-identity-in-acr-tasks"></a>Использование удостоверения, управляемого Azure, в задачах контроля доступа 
 
@@ -58,7 +58,7 @@ ms.locfileid: "77111768"
 az acr task create \
     --image hello-world:{{.Run.ID}} \
     --name hello-world --registry MyRegistry \
-    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git \
+    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git#main \
     --file Dockerfile \
     --commit-trigger-enabled false \
     --assign-identity
@@ -70,7 +70,7 @@ az acr task create \
 az acr task create \
     --image hello-world:{{.Run.ID}} \
     --name hello-world --registry MyRegistry \
-    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git \
+    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git#main \
     --file Dockerfile \
     --commit-trigger-enabled false
     --assign-identity <resourceID>
@@ -84,7 +84,7 @@ az acr task create \
 
 ### <a name="3-grant-the-identity-permissions-to-access-other-azure-resources"></a>3. Предоставьте разрешения удостоверениям для доступа к другим ресурсам Azure.
 
-В зависимости от требований задачи предоставьте удостоверениям разрешения на доступ к другим ресурсам Azure. Примеры приведены ниже.
+В зависимости от требований задачи предоставьте удостоверениям разрешения на доступ к другим ресурсам Azure. Примеры приведены ниже:
 
 * Назначьте управляемому удостоверению роль с запросом на включение внесенных изменений, принудительную отправку и извлечение или другие разрешения для целевого реестра контейнеров в Azure. Полный список ролей реестра см. в статье [роли и разрешения реестра контейнеров Azure](container-registry-roles.md). 
 * Назначьте управляемому удостоверению роль для чтения секретов в хранилище ключей Azure.
@@ -115,7 +115,7 @@ az acr task credential add \
     --use-identity [system]
 ```
 
-Чтобы добавить учетные данные для назначенного пользователем удостоверения для проверки подлинности в реестре *таржетрегистри*, передайте `use-identity` значение *идентификатора клиента* удостоверения. Пример:
+Чтобы добавить учетные данные для назначенного пользователем удостоверения для проверки подлинности в реестре *таржетрегистри*, передайте `use-identity` значение *идентификатора клиента* удостоверения. Пример.
 
 ```azurecli
 az acr task credential add \

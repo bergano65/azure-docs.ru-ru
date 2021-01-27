@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 55e9d2d1af863084b080c2de7833712413221050
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 60ae36d80e34f27ed68c679f47edacf3e402417c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445649"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916156"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Защита портов управления с помощью JIT-доступа
 
@@ -33,7 +33,7 @@ ms.locfileid: "96445649"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
 |Поддерживаемые виртуальные машины:|![Да ](./media/icons/yes-icon.png) , виртуальные машины развернуты с помощью Azure Resource Manager.<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, развернутых с помощью классических моделей развертывания. Дополнительные [сведения об этих моделях развертывания](../azure-resource-manager/management/deployment-models.md).<br>![Нет ](./media/icons/no-icon.png) виртуальных машин, защищенных брандмауэрами Azure, которыми управляет [Диспетчер брандмауэра Azure](../firewall-manager/overview.md)|
 |Требуемые роли и разрешения|Роли **Reader** и **секуритиреадер** могут просматривать состояние JIT и параметры.<br>Сведения о создании настраиваемых ролей, которые могут работать с JIT-компилятором, см. в разделе [какие разрешения необходимы для настройки и использования JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit).<br>Чтобы создать роль с минимальными привилегиями для пользователей, которым требуется запросить JIT-доступ к виртуальной машине, и не выполнять другие операции JIT, используйте [Скрипт Set-житлеастпривилежедроле](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) на страницах сообщества центра безопасности GitHub.|
@@ -95,7 +95,7 @@ ms.locfileid: "96445649"
 
      1. Настройте Безопасность порта в отношении ваших потребностей.
 
-     1. Щелкните **ОК**.
+     1. Нажмите кнопку **ОК**.
 
 1. Щелкните **Сохранить**.
 

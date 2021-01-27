@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 500fa45db7e0e6bffb587d9d352ee1ab49f14703
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b30e08a2739000d2a7ec14a95742f2654e1d2ea1
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91712278"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916240"
 ---
 # <a name="harden-your-docker-hosts"></a>Защита узлов Docker
 
@@ -27,9 +27,9 @@ ms.locfileid: "91712278"
 
 ## <a name="availability"></a>Доступность
 
-|Аспект|Подробнее|
+|Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
 |Требуемые роли и разрешения|**Читатель** в рабочей области, к которой подключается узел|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
@@ -43,35 +43,25 @@ ms.locfileid: "91712278"
 
     На странице рекомендации отображаются затронутые ресурсы (узлы DOCKER). 
 
-    :::image type="content" source="./media/monitor-container-security/docker-host-vulnerabilities-found.png" alt-text="Рекомендации по исправлению уязвимостей в конфигурациях безопасности контейнеров &quot;:::
+    :::image type="content" source="./media/monitor-container-security/docker-host-vulnerabilities-found.png" alt-text="Рекомендации по исправлению уязвимостей в конфигурациях безопасности контейнеров ":::
 
 1. Чтобы просмотреть и исправить элементы управления CI, которые не удалось выполнить на определенном узле, выберите узел, который нужно исследовать. 
 
     > [!TIP]
-    > Если вы начали работу на странице &quot;Инвентаризация активов" и достигли этой рекомендации, ыделить на странице рекомендаций кнопку **предпринять действие** .
+    > Если вы начали работу на странице "Инвентаризация активов" и достигли этой рекомендации, ыделить на странице рекомендаций кнопку **предпринять действие** .
     >
-    > :::image type="content" source="./media/monitor-container-security/host-security-take-action-button.png" alt-text="Рекомендации по исправлению уязвимостей в конфигурациях безопасности контейнеров &quot;:::
-
-1. Чтобы просмотреть и исправить элементы управления CI, которые не удалось выполнить на определенном узле, выберите узел, который нужно исследовать. 
-
-    > [!TIP]
-    > Если вы начали работу на странице &quot;Инвентаризация активов":::
+    > :::image type="content" source="./media/monitor-container-security/host-security-take-action-button.png" alt-text="Воспользуйтесь кнопкой &quot;действие&quot;, чтобы запустить Log Analytics":::
 
     Log Analytics открывается с настраиваемой операцией, готовой к запуску. Пользовательский запрос по умолчанию содержит список всех проверенных правил, которые были оценены, а также рекомендации, помогающие устранить эти проблемы.
 
-    :::image type="content" source="./media/monitor-container-security/docker-host-vulnerabilities-in-query.png" alt-text="Рекомендации по исправлению уязвимостей в конфигурациях безопасности контейнеров &quot;:::
-
-1. Чтобы просмотреть и исправить элементы управления CI, которые не удалось выполнить на определенном узле, выберите узел, который нужно исследовать. 
-
-    > [!TIP]
-    > Если вы начали работу на странице &quot;Инвентаризация активов":::
+    :::image type="content" source="./media/monitor-container-security/docker-host-vulnerabilities-in-query.png" alt-text="Страница Log Analytics с запросом, содержащим все неудачные элементы управления CI":::
 
 1. При необходимости настройте параметры запроса.
 
 1. Если вы уверены, что команда подходит и готова для вашего узла, выберите **выполнить**.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Усиление защиты DOCKER — это лишь один аспект функций безопасности контейнера центра безопасности. 
 

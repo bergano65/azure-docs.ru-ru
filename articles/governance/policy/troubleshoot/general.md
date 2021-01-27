@@ -1,14 +1,14 @@
 ---
 title: Устранение распространенных ошибок
 description: Узнайте, как устранять неполадки при создании определений политик, различных пакетах SDK и надстройки для Kubernetes.
-ms.date: 12/01/2020
+ms.date: 01/26/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 6f31f6e6f8d24f83f44dc14112f1bdc90c8af859
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 0a64346188696cc7cc16d832474ec4ee6befdae2
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897077"
+ms.locfileid: "98917749"
 ---
 # <a name="troubleshoot-errors-with-using-azure-policy"></a>Устранение ошибок при использовании политики Azure
 
@@ -36,13 +36,14 @@ ms.locfileid: "98897077"
 
 #### <a name="resolution"></a>Решение
 
-Сначала убедитесь, что свойство диспетчер ресурсов имеет псевдоним. Чтобы найти доступные псевдонимы, перейдите к [расширению политики Azure для Visual Studio Code](../how-to/extension-for-vscode.md) или пакета SDK. Если псевдоним для свойства диспетчер ресурсов не существует, создайте запрос в службу поддержки.
+Сначала убедитесь, что свойство диспетчер ресурсов имеет псевдоним. Чтобы найти доступные псевдонимы, перейдите к [расширению политики Azure для Visual Studio Code](../how-to/extension-for-vscode.md) или пакета SDK.
+Если псевдоним для свойства диспетчер ресурсов не существует, создайте запрос в службу поддержки.
 
 ### <a name="scenario-evaluation-details-arent-up-to-date"></a>Сценарий: сведения об оценке не актуальны
 
 #### <a name="issue"></a>Проблема
 
-Ресурс находится в состоянии " *не запущено* " или сведения о соответствии не являются актуальными.
+Ресурс находится в состоянии " _не запущено_ " или сведения о соответствии не являются актуальными.
 
 #### <a name="cause"></a>Причина
 
@@ -90,7 +91,8 @@ ms.locfileid: "98897077"
 
 #### <a name="cause"></a>Причина
 
-Назначение политики настроено для параметра [**Енфорцементмоде**](../concepts/assignment-structure.md#enforcement-mode) _Disabled (отключено_). Хотя **енфорцементмоде** отключен, этот результат политики не применяется, и в журнале действий нет записи.
+Назначение политики настроено для параметра [**Енфорцементмоде**](../concepts/assignment-structure.md#enforcement-mode) _Disabled (отключено_).
+Хотя **енфорцементмоде** отключен, этот результат политики не применяется, и в журнале действий нет записи.
 
 #### <a name="resolution"></a>Решение
 
@@ -186,7 +188,7 @@ ms.locfileid: "98897077"
 
 #### <a name="resolution"></a>Решение
 
-Определения, которые ранее вызывали эту неполадку, отображаются как *[устарело]* и заменяются определениями политик, которые управляют необходимыми компонентами без удаления назначенных пользователю управляемых удостоверений. Требуется выполнить шаг вручную. Удалите все существующие назначения политик, помеченные как *[устаревшие]*, и замените их обновленной инициативой и определениями политик, имена которых совпадают с именем исходной.
+Определения, которые ранее вызывали эту неполадку, отображаются как _\[ устаревшие \]_ и заменяются определениями политик, которые управляют необходимыми компонентами без удаления назначенных пользователем управляемых удостоверений. Требуется выполнить шаг вручную. Удалите все существующие назначения политик, помеченные как _\[ устаревшие \]_, и замените их обновленными инициативами и определениями политик, имена которых совпадают с именами исходных файлов.
 
 Подробное описание см. в записи блога [важные изменения, выпущенные для политик аудита настройки гостя](https://techcommunity.microsoft.com/t5/azure-governance-and-management/important-change-released-for-guest-configuration-audit-policies/ba-p/1655316).
 
@@ -226,11 +228,11 @@ ms.locfileid: "98897077"
 Эта ошибка возникает, если в кластере установлена _надстройка Add-Pod-Identity_ , а _KUBE-System_ не исключены в _AAD-Pod-Identity_.
 
 Модули управления " _AAD-Pod-Identity_ " с узлом компонента идентификации (NMI) изменяют узлы "Iptables" для перехвата вызовов к конечной точке метаданных экземпляра Azure. Такая настройка означает, что любой запрос, отправленный в конечную точку метаданных, перехватывается функцией NMI, даже если в Pod не используется _AAD-Pod-Identity_.
-*Азуреподидентитексцептион* КУСТОМРЕСАУРЦЕДЕФИНИТИОН (CRD) можно настроить для информирования _AAD-Pod_ о том, что любые запросы к конечной точке метаданных, которые берутся из Pod, соответствующей МЕТКАМ, указанным в CRD, должны быть прокси без какой-либо обработки в NMI.
+_Азуреподидентитексцептион_ КУСТОМРЕСАУРЦЕДЕФИНИТИОН (CRD) можно настроить для информирования _AAD-Pod_ о том, что любые запросы к конечной точке метаданных, которые берутся из Pod, соответствующей МЕТКАМ, указанным в CRD, должны быть прокси без какой-либо обработки в NMI.
 
 #### <a name="resolution"></a>Решение
 
-Исключите системные модули, имеющие `kubernetes.azure.com/managedby: aks` метку в пространстве имен _KUBE-System_ в _AAD-Pod-Identity_ , настроив *азуреподидентитексцептион* CRD.
+Исключите системные модули, имеющие `kubernetes.azure.com/managedby: aks` метку в пространстве имен _KUBE-System_ в _AAD-Pod-Identity_ , настроив _азуреподидентитексцептион_ CRD.
 
 Дополнительные сведения см. [в разделе Отключение удостоверения pod Azure Active Directory (Azure AD) для конкретного Pod или приложения](https://azure.github.io/aad-pod-identity/docs/configure/application_exception).
 
@@ -264,11 +266,11 @@ spec:
 Надстройка может получить доступ к конечной точке службы политики Azure, но в журналах надстроек отображается одна из следующих ошибок:
 
 - `The resource provider 'Microsoft.PolicyInsights' is not registered in subscription '{subId}'. See
-https://aka.ms/policy-register-subscription for how to register subscriptions.`
+  https://aka.ms/policy-register-subscription for how to register subscriptions.`
 
 - `policyinsightsdataplane.BaseClient#CheckDataPolicyCompliance: Failure responding to request:
-StatusCode=500 -- Original Error: autorest/azure: Service returned an error. Status=500
-Code="InternalServerError" Message="Encountered an internal server error.`
+  StatusCode=500 -- Original Error: autorest/azure: Service returned an error. Status=500
+  Code="InternalServerError" Message="Encountered an internal server error.`
 
 #### <a name="cause"></a>Причина
 

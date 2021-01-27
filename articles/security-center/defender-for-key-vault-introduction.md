@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 91a0ea19f53d1da7631154cb71f96e495cc93857
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: b1dd559db2d736fa27de2884d2fe82edaaeaaf3c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789001"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916648"
 ---
 # <a name="introduction-to-azure-defender-for-key-vault"></a>Общие сведения об Azure Defender для Key Vault
 
@@ -25,7 +25,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Плата за использование **Azure Defender для Key Vault** начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака).|
 |||

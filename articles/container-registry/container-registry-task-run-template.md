@@ -3,12 +3,12 @@ title: Быстрое выполнение задачи с помощью шаб
 description: Поставить в очередь запуск задачи записи контроля доступа для создания образа с помощью шаблона Azure Resource Manager
 ms.topic: article
 ms.date: 04/22/2020
-ms.openlocfilehash: 7ad40d2e925d5e1443af9bce4115d45b0e8c06e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e8023c088ac328c2b6e95fccd0230c4d40325c1
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82927774"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916071"
 ---
 # <a name="run-acr-tasks-using-resource-manager-templates"></a>Выполнение задач контроля доступа с помощью шаблонов диспетчер ресурсов
 
@@ -16,7 +16,7 @@ ms.locfileid: "82927774"
 
 В этой статье приведены Azure Resource Manager примеры шаблонов для постановки в очередь выполнения быстрых задач, аналогичные тому, что можно создать вручную с помощью команды [AZ запись контроля][az-acr-build] доступа.
 
-Шаблон диспетчер ресурсов для очереди запуска задачи полезен в сценариях автоматизации и расширяет функциональные возможности `az acr build` . Пример:
+Шаблон диспетчер ресурсов для очереди запуска задачи полезен в сценариях автоматизации и расширяет функциональные возможности `az acr build` . Пример.
 
 * Использование шаблона для создания реестра контейнеров и немедленного постановки в очередь запуска задачи для сборки и отправки образа контейнера
 * Создание или включение дополнительных ресурсов, которые можно использовать при выполнении быстрого выполнения задачи, например управляемое удостоверение для ресурсов Azure.
@@ -58,7 +58,7 @@ az deployment group create \
     registryName=mycontainerregistry \
     repository=helloworld-node \
     taskRunName=testrun \
-    sourceLocation=https://github.com/Azure-Samples/acr-build-helloworld-node.git
+    sourceLocation=https://github.com/Azure-Samples/acr-build-helloworld-node.git#main
  ```
 
 Предыдущая команда передает параметры в командной строке. При необходимости передайте их в [файл параметров](../azure-resource-manager/templates/parameter-files.md).
@@ -112,7 +112,7 @@ az acr task logs \
 Журнал выполнения задач также можно просмотреть в портал Azure. 
 
 1. Перейдите к реестру контейнеров.
-2. В разделе **службы**выберите **задачи**  >  **запуски**.
+2. В разделе **службы** выберите **задачи**  >  **запуски**.
 3. Выберите идентификатор запуска, в данном случае *CA1*. 
 
 На портале отображается журнал выполнения задач.
@@ -187,7 +187,7 @@ az role assignment create \
 |усерассигнедидентити |Идентификатор ресурса назначенного пользователем удостоверения, включенного в задаче|
 |кустомрегистридентити | Идентификатор клиента, которому назначено пользовательское удостоверение, которое включено в задаче и используется для проверки подлинности с помощью пользовательского реестра |
 |кустомрегистри |Имя сервера входа пользовательского реестра, доступ к которому осуществляется в задаче, например *mybaseregistry.azurecr.IO*|
-|sourceLocation     |Удаленный контекст для задачи сборки, например * https://github.com/ \<your-GitHub-ID\> /Акр-буилд-хелловорлд-Ноде.* |
+|sourceLocation     |Удаленный контекст для задачи сборки, например *https://github.com/ \<your-GitHub-ID\> /Акр-буилд-хелловорлд-Ноде.* |
 |Параметре dockerfilepath | Путь к Dockerfile в удаленном контексте, используемый для сборки образа. |
 
 ### <a name="deploy-the-template"></a>Развертывание шаблона
@@ -204,7 +204,7 @@ az deployment group create \
     taskRunName=basetask \
     userAssignedIdentity=$resourceID \
     customRegistryIdentity=$clientID \
-    sourceLocation=https://github.com/<your-GitHub-ID>/acr-build-helloworld-node.git \
+    sourceLocation=https://github.com/<your-GitHub-ID>/acr-build-helloworld-node.git#main \
     dockerFilePath=Dockerfile-test \
     customRegistry=mybaseregistry.azurecr.io
 ```

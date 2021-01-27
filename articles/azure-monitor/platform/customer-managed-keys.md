@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: b6836eee7e0e6ccbfa2628e0e371152f31ddf9d2
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9d8d37e1b161dfc8344d7ff03bc0093d23f86101
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757548"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917838"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Ключ Azure Monitor, управляемый клиентом 
 
@@ -30,9 +30,6 @@ Azure Monitor гарантирует, что все данные и сохран
 Данные, полученные за последние 14 дней, также хранятся в кэше горячего уровня доступа (с поддержкой SSD) для эффективной работы обработчика запросов. Эти данные остаются зашифрованными с помощью ключей Майкрософт независимо от управляемой клиентом конфигурации ключа, но контроль над данными SSD соответствует [отзыву ключа](#key-revocation). Мы работаем над тем, чтобы данные SSD были зашифрованы с помощью ключа, управляемого клиентом, в первой половине 2021.
 
 В Log Analytics выделенных кластерах используется [модель ценообразования](../log-query/logs-dedicated-clusters.md#cluster-pricing-model) резервирования емкости, начиная с 1000 ГБ в день.
-
-> [!IMPORTANT]
-> В связи с временными ограничениями емкости перед созданием кластера необходимо предварительно зарегистрироваться в. Используйте свои контакты в Майкрософт или откройте запрос в службу поддержки, чтобы зарегистрировать идентификаторы подписок.
 
 ## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Как работает ключ, управляемый клиентом, в Azure Monitor
 
@@ -68,7 +65,6 @@ Azure Monitor использует управляемое удостоверен
 
 ### <a name="customer-managed-key-provisioning-steps"></a>Customer-Managed действия по подготовке ключа
 
-1. Регистрация подписки для разрешения создания кластера
 1. Создание Azure Key Vault и ключа хранилища.
 1. Создание кластера
 1. Предоставление разрешений для вашего Key Vault.
@@ -83,11 +79,11 @@ Azure Monitor использует управляемое удостоверен
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Н/Д
+Недоступно
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
@@ -107,10 +103,6 @@ Authorization: Bearer <token>
 ```
 
 ---
-
-### <a name="allowing-subscription"></a>Разрешение подписки
-
-Используйте свои контакты в Майкрософт или откройте запрос в службу поддержки в Log Analytics, чтобы указать идентификаторы подписок.
 
 ## <a name="storing-encryption-key-kek"></a>Хранение ключа шифрования (KEK)
 
@@ -182,7 +174,7 @@ Authorization: Bearer <token>
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -303,7 +295,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -347,7 +339,7 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Н/Д
+Недоступно
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 

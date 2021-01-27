@@ -3,17 +3,17 @@ title: REST API Azure Enterprise
 description: В этой статье описываются интерфейсы REST API для использования с Соглашением о регистрации Azure Enterprise.
 author: bandersmsft
 ms.author: banders
-ms.date: 09/03/2020
+ms.date: 01/21/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: c4c99142c64278514066efa8925ed8e3f6617235
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 1fdf64053a55eb33d80ed461c231e8c6dd84d63b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132590"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677737"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API Azure Enterprise
 
@@ -93,14 +93,6 @@ ms.locfileid: "92132590"
 
 Файлы данных об использовании и выставлении счетов обновляются каждые 24 часа для текущего месяца выставления счетов. Однако задержка передачи данных может продолжаться до трех дней. Например, если ресурс используется в понедельник, данные могут не отображаться в файле данных до четверга.
 
-### <a name="test-enrollment-for-development"></a>Тестовая регистрация для разработки
-
-Если вы являетесь партнером или разработчиком без Соглашения о регистрации Azure Enterprise и хотите получить доступ к API-интерфейсу, вы можете использовать тестовую регистрацию. Имя регистрации — _EnrollmentNumber 100_. Вы можете найти и протестировать данные об использовании давностью вплоть до июня 2018 г. Затем вы можете воспользоваться следующим ключом для вызова API и просмотра образца данных.
-
-```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5byJ9.eyJFbnJvbGxtZW50TnVtYmVyIjoiMTAwIiwiSWQiOiI1ZTc2ZmNiMy0xN2I4LTQ5ZDItYjdkOC0zMDU0YjUwOWY0MWYiLCJSZXBvcnRWaWV3IjoiU3lzdGVtIiwiUGFydG5lcklkIjoiIiwiRGVwYXJ0bWVudElkIjoiIiwiQWNjb3VudElkIjoiIiwiaXNzIjoiZWEubWljcm9zb2Z0YXp1cmUuY29tIiwiYXVkIjoiY2xpZW50LmVhLm1pY3Jvc29mdGF6dXJlLmNvbSIsImV4cCI6MTU4NjM5MDA2OSwibmJmIjoxNTcwNTc4ODY5fQ.lENR5pCBph6iZCVexUlN1b-j7StaILCyBewVHoILD-_fn8S2o2bHY1qUseGOkBwNlaFQfk2OZIo-jQYvnf3eP3UNrNVTCINT0APbc1RqgwSjZSxugVVHH9jnSzEjONkJaSKmi4tlidk6zkF1-uY-TPJkKxYN_9ar7BgLshF9JGXk7t8OZhxSCxDZc-smntu6ORFDl4gRZZVBKXhqOGjOAdYX5tPiGDF2Bxb68RSzh9Xyr5PXxKLx5yivZzUdo0-GFHo13V9w6a5VQM4R1w4_ro8jF8WAo3mpGZ_ovx_U5IY6zMNmi_AoA1mUyvTGotgcu94RragutoJRxAGHbNJZ0Q
-```
-
 ### <a name="azure-service-catalog"></a>Каталог служб Azure
 
 Все службы Azure размещаются в каталоге в формате CSV в блоге хранилища Azure. Каталог можно использовать, если необходимо создать проверенный каталог всех служб Azure для системы. Текущий каталог находится по адресу [https://azurecatalog.blob.core.windows.net/catalog/AzureCatalog.csv](https://azurecatalog.blob.core.windows.net/catalog/AzureCatalog.csv).
@@ -113,7 +105,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5
 
 Формат JSON создается из отчета в формате CSV. В результате формат совпадает со сводным форматом CSV. Используется имя столбца, поэтому вам следует выполнить десериализацию в таблицу данных при использовании сводных данных JSON.
 
-| Имя столбца CSV | Имя столбца JSON | Новый столбец JSON | Комментарий |
+| Имя столбца CSV | Имя столбца JSON | Новый столбец JSON | Комментировать |
 | --- | --- | --- | --- |
 | AccountOwnerId | AccountOwnerLiveId | AccountOwnerLiveId |   |
 | Имя учетной записи | AccountName | AccountName |   |
@@ -125,25 +117,25 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5
 | Месяц | Месяц | Месяц |   |
 | День | День | День |   |
 | Год | Год | Год |   |
-| Продукт | BillableItemName | Продукт |   |
-| Идентификатор средства измерения | ResourceGuid | Значение MeterId |   |
+| Product | BillableItemName | Product |   |
+| Meter ID | ResourceGuid | MeterId |   |
 | Категория средства измерения | Служба | MeterCategory | Это позволяет найти службы. Относится к службам, имеющим несколько ServiceType. Например, виртуальные машины. |
-| Подкатегория средства измерения | ServiceType | MeterSubCategory | Предоставляет второй уровень детализации для службы. Например, виртуальная машина A1 (не Windows).  |
-| Регион средства измерения | ServiceRegion | MeterRegion | Третий уровень детализации, необходимый для службы. Позволяет найти контекст региона ResourceGUID. |
-| Имя средства измерения | ServiceResource | MeterName | Имя службы. |
-| Потребленный объем | ResourceQtyConsumed | ConsumedQuantity |   |
+| Meter Sub-Category | ServiceType | MeterSubCategory | Предоставляет второй уровень детализации для службы. Например, виртуальная машина A1 (не Windows).  |
+| Meter Region | ServiceRegion | MeterRegion | Третий уровень детализации, необходимый для службы. Позволяет найти контекст региона ResourceGUID. |
+| Название индикатора | ServiceResource | MeterName | Имя службы. |
+| Consumed Quantity | ResourceQtyConsumed | ConsumedQuantity |   |
 | ResourceRate | ResourceRate | ResourceRate |   |
 | ExtendedCost | ExtendedCost | ExtendedCost |   |
-| Расположение ресурса | ServiceSubRegion | ResourceLocation |   |
-| Потребленная служба | ServiceInfo | ConsumedService |   |
-| Идентификатор экземпляра | Компонент | InstanceId |   |
+| Resource Location | ServiceSubRegion | ResourceLocation |   |
+| Consumed Service | ServiceInfo | ConsumedService |   |
+| Instance ID | Компонент | InstanceId |   |
 | ServiceInfo1 | ServiceInfo1 | ServiceInfo1 |   |
 | ServiceInfo2 | ServiceInfo2 | ServiceInfo2 |   |
 | AdditionalInfo | AdditionalInfo | AdditionalInfo |   |
 | Теги | Теги | Теги |   |
-| Идентификатор службы хранилища   | OrderNumber | StoreServiceIdentifier   |   |
+| Store Service Identifier   | OrderNumber | StoreServiceIdentifier   |   |
 | Название отдела | DepartmentName | DepartmentName |   |
-| Центр затрат | CostCenter | CostCenter |   |
+| Cost Center | CostCenter | CostCenter |   |
 | Единица измерения | UnitOfMeasure | UnitOfMeasure | Примеры значений: часы, ГБ, события, push-уведомления, единица, часы по единицам, МБ, ежедневные единицы |
 | ResourceGroup | ResourceGroup | ResourceGroup |   |
 
@@ -160,25 +152,25 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5
 | Месяц | Месяц |  Месяц |
 | День | День |  День |
 | Год | Год |  Год |
-| Идентификатор средства измерения | MeterResourceId |  Значение MeterId |
+| Meter ID | MeterResourceId |  MeterId |
 | Имя издателя | PublisherFriendlyName |  PublisherName |
 | Название предложения | OfferFriendlyName |  OfferName |
 | Имя плана | PlanFriendlyName |  PlanName |
-| Потребленный объем | BilledQty |  ConsumedQuantity |
+| Consumed Quantity | BilledQty |  ConsumedQuantity |
 | ResourceRate | ResourceRate | ResourceRate |
 | ExtendedCost | ExtendedCost | ExtendedCost |
 | Единица измерения | UnitOfMeasure | UnitOfMeasure |
-| Идентификатор экземпляра | InstanceId | InstanceId |
+| Instance ID | InstanceId | InstanceId |
 | Дополнительные сведения | AdditionalInfo | AdditionalInfo |
 | Теги | Теги | Теги |
 | Номер заказа | OrderNumber | OrderNumber |
 | Название отдела | DepartmentNames | DepartmentName |
-| Центр затрат | CostCenters |  CostCenter |
+| Cost Center | CostCenters |  CostCenter |
 | Группа ресурсов | ResourceGroup |  ResourceGroup |
 
 #### <a name="price-sheet"></a>прейскурант;
 
-| Имя столбца CSV | Имя столбца JSON | Комментарий |
+| Имя столбца CSV | Имя столбца JSON | Комментировать |
 | --- | --- | --- |
 | Служба | Служба |  Без изменений в ценах |
 | Единица измерения | UnitOfMeasure |   |

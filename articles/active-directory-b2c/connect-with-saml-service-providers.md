@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 01/17/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 80e6dbdc02b68c279452127933532106b0f78ab8
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 96a72dbc0e45ebd50a49000ae66e3713cb28aa9a
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654665"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916933"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -71,28 +71,9 @@ Azure AD B2C обеспечивает взаимодействие с SAML од�
 
 Можно использовать сертификат, выданный общедоступным центром сертификации или (для этого учебника) самозаверяющим сертификатом.
 
-### <a name="11-prepare-a-self-signed-certificate"></a>1.1 Подготовка самозаверяющего сертификата
+### <a name="11-create-a-self-signed-certificate"></a>1,1. Создание самозаверяющего сертификата
 
-Если у вас еще нет сертификата, для работы с этим учебником можно использовать самозаверяющий сертификат. В Windows для создания сертификата можно использовать командлет PowerShell [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate).
-
-1. Выполните эту команду PowerShell, чтобы создать самозаверяющий сертификат. Измените аргумент `-Subject` соответствующим образом для своего приложения и имени клиента Azure AD B2C. Можно также скорректировать дату `-NotAfter`, чтобы указать другой срок действия сертификата.
-
-    ```PowerShell
-    New-SelfSignedCertificate `
-        -KeyExportPolicy Exportable `
-        -Subject "CN=yourappname.yourtenant.onmicrosoft.com" `
-        -KeyAlgorithm RSA `
-        -KeyLength 2048 `
-        -KeyUsage DigitalSignature `
-        -NotAfter (Get-Date).AddMonths(12) `
-        -CertStoreLocation "Cert:\CurrentUser\My"
-    ```
-
-1. Откройте **Управление сертификатами пользователя** > **Текущий пользователь** > **Персональные** > **Сертификаты** > *yourappname.yourtenant.onmicrosoft.com*.
-1. Выберите сертификат > **Действие** > **Все задачи** > **Экспорт**.
-1. Нажмите **Да** > **Далее** > **Да, экспортировать закрытый ключ** > **Далее**.
-1. Примите значения по умолчанию для **формата файла экспорта**.
-1. Укажите пароль для сертификата.
+[!INCLUDE [active-directory-b2c-create-self-signed-certificate](../../includes/active-directory-b2c-create-self-signed-certificate.md)]
 
 ### <a name="12-upload-the-certificate"></a>1.2 Загрузка сертификата
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: c640478170049bd06e11f7f89b1e213b7b305642
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 210f7daa9305f2fb343dfae050354264e2fd823e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032819"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898568"
 ---
 # <a name="plan-to-manage-azure-costs"></a>Планирование управления затратами на Azure
 
@@ -125,7 +125,7 @@ ms.locfileid: "97032819"
 
 ## <a name="integrate-with-billing-and-consumption-apis"></a>Интеграция с API выставления счетов и потребления
 
-Примените API [выставления счетов](/rest/api/billing/) и [потребления](/rest/api/consumption/) Azure, чтобы программным способом получить данные о счетах и затратах. Для получения сведений об использовании, влияющих на сумму счета, воспользуйтесь совместно API RateCard и API использования. Дополнительные сведения см. в статье [Получение ценных сведений о потреблении ресурсов Microsoft Azure](../manage/usage-rate-card-overview.md).
+Примените API [выставления счетов](/rest/api/billing/) и [потребления](/rest/api/consumption/) Azure, чтобы программным способом получить данные о счетах и затратах. Для получения сведений об использовании, влияющих на сумму счета, воспользуйтесь совместно API RateCard и API использования. Дополнительные сведения см. в статье [Получение ценных сведений о потреблении ресурсов Microsoft Azure](../manage/consumption-api-overview.md#usage-details-api).
 
 ## <a name="additional-resources-and-special-cases"></a><a name="other-offers"></a> Дополнительные ресурсы и особые случаи
 

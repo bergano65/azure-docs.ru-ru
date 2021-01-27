@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/05/2020
+ms.date: 01/27/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 980e830716b66b63c8f2dc6e641a88af26d44871
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 80be5ca22f3dfb673f09327108e66fccc9de6ddd
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027070"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918049"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Политики паролей и ограничения учетных записей в Azure Active Directory
 
@@ -49,7 +49,7 @@ ms.locfileid: "97027070"
 
 Определены следующие параметры политики паролей Azure AD. Если не указано иное, эти параметры изменить нельзя.
 
-| Свойство | Требования |
+| Свойство | Requirements (Требования) |
 | --- | --- |
 | Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [] {} &#124; \: ",. ? / \` ~ " ( ) ;</li> <li>пустое пространство</li></ul> |
 | Недопустимые символы | Знаки Юникода. |
@@ -75,6 +75,7 @@ ms.locfileid: "97027070"
   * Служба поддержка партнеров уровня 1
   * Служба поддержка партнеров уровня 2
   * администратор Exchange;
+  * администратор почтовых ящиков;
   * администратор Skype для бизнеса;
   * Администратор пользователей
   * создатели каталогов;
@@ -85,10 +86,12 @@ ms.locfileid: "97027070"
   * администратор безопасности;
   * администратор привилегированных ролей;
   * Администратор Intune
+  * Локальный администратор присоединенного к Azure AD устройства
   * администратор прокси-сервера приложений;
   * Администратор Dynamics 365
   * администратор службы Power BI.
   * Администратор проверки подлинности
+  * Администратор паролей
   * Администратор привилегированной проверки подлинности
 
 * если прошло 30 дней с момента установки пробной подписки; или

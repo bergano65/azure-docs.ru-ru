@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: 473353c3f61d1096beb11c521c08ac723d54b780
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 103f2c87cf9d14f81462fed145ff8df3d69bfca0
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071612"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916139"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Использование адаптивных элементов управления приложениями для сокращения поверхностей атак на компьютерах
 
@@ -50,7 +50,7 @@ ms.locfileid: "98071612"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
 |Поддерживаемые компьютеры:|![Да ](./media/icons/yes-icon.png) , Azure и не-Azure компьютеры под управлением Windows и Linux<br>![Да ](./media/icons/yes-icon.png) машины в [Azure Arc](../azure-arc/index.yml)|
 |Требуемые роли и разрешения|Роли " **читатель безопасности** " и " **читатель** " могут просматривать группы и списки известных приложений.<br>Роли администраторов **участников** и **безопасности** могут изменять группы и списки известных приложений.|
@@ -209,7 +209,7 @@ ms.locfileid: "98071612"
 
 1. Выберите целевую группу и щелкните **переместить компьютер**.
 
-1. Чтобы сохранить изменения, нажмите кнопку **сохранить**.
+1. Выберите **Сохранить**, чтобы сохранить изменения.
 
 
 

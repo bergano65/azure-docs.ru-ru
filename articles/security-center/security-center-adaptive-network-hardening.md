@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/11/2020
 ms.author: memildin
-ms.openlocfilehash: e2b17e15c5548b4c9b93a62a7d4dfe62ff44404c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: ca60d5afa38a560492c8574aadd43d6170eca253
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341759"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916190"
 ---
 # <a name="adaptive-network-hardening-in-azure-security-center"></a>Адаптивное усиление защиты сети в центре безопасности Azure
 Узнайте, как настроить Адаптивное усиление защиты сети в центре безопасности.
@@ -26,7 +26,7 @@ ms.locfileid: "92341759"
 ## <a name="availability"></a>Доступность
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Требуется [Azure Defender для серверов](defender-for-servers-introduction.md)|
 |Требуемые роли и разрешения|Разрешения на запись в группе безопасности сети для компьютера|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
@@ -60,7 +60,7 @@ ms.locfileid: "92341759"
       * **Недостаточно данных**: для создания точных рекомендаций по усилению защиты трафика центр безопасности требует не менее 30 дней передачи данных трафика.
       * **Виртуальная машина не защищена защитником Azure**: для этой функции подходят только виртуальные машины, защищенные с помощью [защитника Azure для серверов](defender-for-servers-introduction.md) .
 
-    :::image type="content" source="./media/security-center-adaptive-network-hardening/recommendation-details-page.png" alt-text="Доступ к адаптивным средствам усиления защиты сети":::
+    :::image type="content" source="./media/security-center-adaptive-network-hardening/recommendation-details-page.png" alt-text="На виртуальных машинах, подключенных к Интернету, следует использовать страницу сведений рекомендации по адаптивной настройке защиты сети.":::
 
 1. На вкладке **неработоспособные ресурсы** выберите виртуальную машину, чтобы просмотреть ее оповещения и Рекомендуемые правила усиления защиты, которые необходимо применить.
 
@@ -78,12 +78,12 @@ ms.locfileid: "92341759"
     > [!TIP]
     > Если допустимые диапазоны исходных IP-адресов отображаются как "нет", это означает, что рекомендуемым правилом является *запрещающее* правило, в противном случае это правило *разрешения* .
 
-    :::image type="content" source="./media/security-center-adaptive-network-hardening/hardening-alerts.png" alt-text="Доступ к адаптивным средствам усиления защиты сети":::
+    :::image type="content" source="./media/security-center-adaptive-network-hardening/hardening-alerts.png" alt-text="Управление адаптивными правилами усиления защиты сети":::
 
       > [!NOTE]
       > Принудительные правила добавляются в NSG (ы), защищающие виртуальную машину. (Виртуальная машина может быть защищена NSG, связанным с сетевой картой, или подсетью, в которой находится виртуальная машина, или и то, и другое).
 
-### <a name="modify-a-rule"></a>Изменение правила <a name ="modify-rule"> </a>
+### <a name="modify-a-rule"></a>Изменение правила <a name ="modify-rule"></a>
 
 Может потребоваться изменить параметры правила, которое было рекомендовано. Например, может потребоваться изменить Рекомендуемые диапазоны IP-адресов.
 
@@ -116,7 +116,7 @@ ms.locfileid: "92341759"
 
     ![применить правило](./media/security-center-adaptive-network-hardening/enforce-hard-rule.png)
 
-### <a name="add-a-new-rule"></a>Добавить новое правило <a name ="add-rule"> </a>
+### <a name="add-a-new-rule"></a>Добавить новое правило <a name ="add-rule"></a>
 
 Можно добавить правило "разрешить", которое не рекомендуется центром безопасности.
 
@@ -139,7 +139,7 @@ ms.locfileid: "92341759"
     ![применить правило](./media/security-center-adaptive-network-hardening/enforce-hard-rule.png)
 
 
-### <a name="delete-a-rule"></a>Удаление правила <a name ="delete-rule"> </a>
+### <a name="delete-a-rule"></a>Удаление правила <a name ="delete-rule"></a>
 
 При необходимости можно удалить рекомендуемое правило для текущего сеанса. Например, можно определить, что применение предлагаемого правила может привести к блокировке легального трафика.
 
