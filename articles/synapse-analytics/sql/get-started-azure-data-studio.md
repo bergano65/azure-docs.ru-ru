@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: ff7b07cb1a4f480907bb51e741a05deeaae8e66b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: cfd0476d3462fc902acb7238fcc1947c85af041f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116489"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676185"
 ---
 # <a name="connect-to-synapse-sql-with-azure-data-studio"></a>Подключение к Synapse SQL с помощью Azure Data Studio
 
@@ -26,7 +26,7 @@ ms.locfileid: "98116489"
 > * [sqlcmd](get-started-connect-sqlcmd.md)
 > * [SSMS](get-started-ssms.md)
 
-Вы можете использовать [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) в Azure Synapse Analytics для подключения и отправки запросов к Synapse SQL. 
+Вы можете использовать [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в Azure Synapse Analytics для подключения и отправки запросов к Synapse SQL. 
 
 ## <a name="connect"></a>Подключение
 
@@ -73,7 +73,7 @@ ms.locfileid: "98116489"
 
 ## <a name="query"></a>Запрос
 
-После подключения Synapse SQL можно запросить с помощью поддерживаемых для экземпляра инструкций [Transact-SQL (T-SQL)](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Чтобы начать работу, выберите в представлении панели мониторинга **Новый запрос**.
+После подключения Synapse SQL можно запросить с помощью поддерживаемых для экземпляра инструкций [Transact-SQL (T-SQL)](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Чтобы начать работу, выберите в представлении панели мониторинга **Новый запрос**.
 
 ![Новый запрос](./media/get-started-azure-data-studio/5-new-query.png)
 

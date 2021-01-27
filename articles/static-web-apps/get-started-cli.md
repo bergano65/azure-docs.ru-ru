@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: 00892b61cd23ee38ff3d63f8b61391ff1bffdc90
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: eec893321dd39511e1cfc20cb5a6713377ff5167
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616411"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680626"
 ---
 # <a name="quickstart-building-your-first-static-site-using-the-azure-cli"></a>Краткое руководство. Создание первого статического сайта с помощью Azure CLI
 
@@ -25,7 +25,7 @@ ms.locfileid: "97616411"
 - [GitHub](https://github.com) .
 - [Личный маркер доступа GitHub](https://docs.github.com/github/authenticating-to-github/creating-a-personal-access-token)
 - Учетная запись [Azure](https://portal.azure.com)
-- Установленное средство [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) (версии 2.8.0 или выше)
+- Установленное средство [Azure CLI](/cli/azure/install-azure-cli) (версии 2.8.0 или выше)
 
 [!INCLUDE [create repository from template](../../includes/static-web-apps-get-started-create-repo.md)]
 
@@ -46,7 +46,7 @@ cd my-first-static-web-app
 
 1. Войти в Azure CLI с помощью следующей команды.
 
-    ```bash
+    ```azurecli
     az login
     ```
 
@@ -54,7 +54,7 @@ cd my-first-static-web-app
 
     # <a name="no-framework"></a>[Без платформы](#tab/vanilla-javascript)
 
-    ```bash
+    ```azurecli
     az staticwebapp create \
         -n my-first-static-web-app \
         -g <RESOURCE_GROUP_NAME> \
@@ -66,7 +66,7 @@ cd my-first-static-web-app
 
     # <a name="angular"></a>[Angular](#tab/angular)
 
-    ```bash
+    ```azurecli
     az staticwebapp create \
         -n my-first-static-web-app \
         -g <RESOURCE_GROUP_NAME> \
@@ -79,7 +79,7 @@ cd my-first-static-web-app
 
     # <a name="react"></a>[React](#tab/react)
 
-    ```bash
+    ```azurecli
     az staticwebapp create \
         -n my-first-static-web-app \
         -g <RESOURCE_GROUP_NAME> \
@@ -92,7 +92,7 @@ cd my-first-static-web-app
 
     # <a name="vue"></a>[Vue](#tab/vue)
 
-    ```bash
+    ```azurecli
     az staticwebapp create \
         -n my-first-static-web-app \
         -g <RESOURCE_GROUP_NAME> \
@@ -127,7 +127,7 @@ cd my-first-static-web-app
 
 Если вы не собираетесь использовать это приложение в дальнейшем, вы можете удалить экземпляр службы "Статические веб-приложения Azure" с помощью следующей команды.
 
-```bash
+```azurecli
 az staticwebapp delete \
     --name my-first-static-web-app \
     --resource-group my-first-static-web-app

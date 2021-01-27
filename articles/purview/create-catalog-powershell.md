@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: quickstart
 ms.date: 11/23/2020
-ms.openlocfilehash: 7db546ec9038403bd9e34f637e9d9de368277d52
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 0698295688a4587a704e8cdba0a4796e8d1e6fcd
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400308"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880005"
 ---
 # <a name="quickstart-create-an-azure-purview-account-using-azure-powershellazure-cli"></a>Краткое руководство. Создание учетной записи Azure Purview с помощью Azure PowerShell и Azure CLI
 
@@ -27,9 +27,9 @@ ms.locfileid: "97400308"
 
 * Учетная запись пользователя, используемая для входа в Azure, должна быть назначена на роль участника, владельца либо администратора подписки Azure.
 
-* Собственный [клиент Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant).
+* Собственный [клиент Azure Active Directory](../active-directory/fundamentals/active-directory-access-create-new-tenant.md).
 
-* Для развертывания шаблона установите на клиентском компьютере Azure PowerShell или Azure CLI. [Развертывание из командной строки](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-cli#command-line-deployment)
+* Для развертывания шаблона установите на клиентском компьютере Azure PowerShell или Azure CLI. [Развертывание из командной строки](../azure-resource-manager/templates/template-tutorial-create-first-template.md?tabs=azure-cli#command-line-deployment)
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

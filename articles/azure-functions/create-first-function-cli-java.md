@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: 504d3a834760605149c93c0beea84bbe1b59e263
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
+ms.openlocfilehash: 5ebb30101d191bb254017db7b0de2f9b8bce145d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97707560"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755166"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Краткое руководство. Создание функции Java в Azure из командной строки
 
@@ -113,7 +113,7 @@ ms.locfileid: "97707560"
 
 Параметры ресурсов Azure, созданных для размещения приложения, определяются в элементе **конфигурации** подключаемого модуля с **groupId** `com.microsoft.azure` в созданном файле pom.xml. Например, элемент конфигурации ниже указывает развертыванию на основе Maven, что приложение-функцию необходимо создать в группе ресурсов `java-functions-group` в области `westus`. Само приложение-функция работает в Windows, размещенном в плане `java-functions-app-service-plan`, который по умолчанию является бессерверным планом потребления.
 
-:::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-102":::
+:::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-107":::
 
 Вы можете изменить эти параметры, чтобы управлять созданием ресурсов в Azure, например, изменив `runtime.os` с `windows` на `linux` перед первоначальным развертыванием. Полный список параметров, поддерживаемых подключаемым модулем Maven, см. в [сведениях о конфигурации](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details).
 

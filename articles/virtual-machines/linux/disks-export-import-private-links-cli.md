@@ -8,12 +8,12 @@ ms.date: 08/11/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 9a005712eda1e735608e3ddf93be2bba98fbdcd3
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 68b96401fc4fc6ea8916664978dbd4c094d9e5b4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630043"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684531"
 ---
 # <a name="azure-cli---restrict-importexport-access-for-managed-disks-with-private-links"></a>Ограничение доступа на импорт и экспорт управляемых дисков с помощью Приватного канала — Azure CLI
 
@@ -155,4 +155,4 @@ az snapshot create -n $snapshotNameSecuredWithPL \
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вопросы и ответы о Приватных каналах](../faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
-- [Экспорт или копирование управляемых моментальных снимков в виде VHD-файлов в учетную запись хранения в другом регионе с помощью интерфейса командной строки](../scripts/virtual-machines-cli-sample-copy-managed-disks-vhd.md)
+- [Экспорт или копирование управляемых моментальных снимков в виде VHD-файлов в учетную запись хранения в другом регионе с помощью интерфейса командной строки](/previous-versions/azure/virtual-machines/scripts/virtual-machines-cli-sample-copy-managed-disks-vhd)

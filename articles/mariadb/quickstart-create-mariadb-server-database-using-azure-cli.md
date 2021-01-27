@@ -3,17 +3,17 @@ title: Краткое руководство. Создание сервера Б
 description: В этом кратком руководстве описывается создание сервера Базы данных Azure для MariaDB в группе ресурсов Azure с помощью Azure CLI.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 3/18/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3279150d0cb7b287f0a78581094a51356033596c
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 2242b0842bda9587915fc949046b8fa7effb725c
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435745"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662166"
 ---
 # <a name="quickstart-create-an-azure-database-for-mariadb-server-by-using-the-azure-cli"></a>Краткое руководство. Создание сервера Базы данных Azure для MariaDB с помощью Azure CLI
 
@@ -61,7 +61,7 @@ admin-password | *ваш пароль* | Пароль администратор
 
 Значение параметра sku-name соответствует соглашению {ценовая категория}\_{поколение вычислительных ресурсов}\_{количество виртуальных ядер}, как показано в примерах ниже:
 + `--sku-name B_Gen5_1` — "Базовый", поколение 5, 1 виртуальное ядро; Это номер SKU наименьший по размеру из доступных.
-+ `--sku-name GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
++ `--sku-name GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра;
 + `--sku-name MO_Gen5_2` — "Оптимизированная для операций в памяти", поколение 5, 2 виртуальных ядра.
 
 Сведения о допустимых значениях по регионам и ценовым категориям см. на странице [ценовых категорий](./concepts-pricing-tiers.md).

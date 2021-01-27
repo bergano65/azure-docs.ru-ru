@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7e7dce7ec4b8d4d55e734487595bb330e97ab18b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 2ead7291f52f33c271768ae2f470af65aca98030
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120450"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734753"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Использование OPENROWSET с бессерверным пулом SQL в Azure Synapse Analytics
 
@@ -171,7 +171,7 @@ WITH (
 )
 ```
 
-json_path = [выражение пути JSON](/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15) к столбцу или вложенному свойству. [Режим пути](/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15#PATHMODE) по умолчанию является нестрогим.
+json_path = [выражение пути JSON](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true) к столбцу или вложенному свойству. [Режим пути](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true#PATHMODE) по умолчанию является нестрогим.
 
 > [!NOTE]
 > В строгом режиме выполнение запроса завершится сбоем, если указанный путь не существует. В нестрогом режиме запрос будет выполнен, и выражение пути JSON получит значение NULL.
@@ -371,7 +371,7 @@ WITH (
 
 ### <a name="specify-columns-using-json-paths"></a>Определение столбцов с помощью путей JSON
 
-В следующем примере показано, как можно использовать выражения пути [JSON](/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15) в предложении WITH и в чем заключается различие между строгими и нестрогими режимами пути: 
+В следующем примере показано, как можно использовать выражения пути [JSON](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true) в предложении WITH и в чем заключается различие между строгими и нестрогими режимами пути: 
 
 ```sql
 SELECT 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 11/18/2020
 ms.author: spelluru
 ms.custom: devx-track-python
-ms.openlocfilehash: 43f633e427e20cfb0b044bd42b77f866e4cc0c61
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 4eba3ea055e78888d482927fa6eed5c7d41fa0ba
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489417"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630053"
 ---
 # <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-python"></a>Отправка сообщений в раздел Служебной шины Azure и прием сообщений из подписок в разделе (Python)
 Из этой статьи вы узнаете, как с помощью Python отправлять сообщения в раздел служебной шины и получать сообщения из подписки в разделе. 
@@ -217,4 +217,4 @@ Received: Message inside a ServiceBusMessageBatch
 - [Примеры.](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples) 
     - В папке **sync_samples** приведены примеры, демонстрирующие взаимодействие со служебной шиной в синхронном режиме. Проходя краткое руководство, вы использовали этот метод. 
     - В папке **async_samples** приведены примеры, демонстрирующие взаимодействие со служебной шиной в асинхронном режиме. 
-- [Справочная документация по использованию пакета azure-servicebus](/python/api/azure-servicebus/azure.servicebus?preserve-view=true&view=azure-python-preview)
+- [Справочная документация по использованию пакета azure-servicebus](/python/api/azure-servicebus/azure.servicebus?preserve-view=true)

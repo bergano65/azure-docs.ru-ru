@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 34ce36f0ff348f896b7c2ea680c113b5e9e4ea09
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 87f592f0cff8504fbafba392d20f405640e2578a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463167"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682976"
 ---
 # <a name="serverless-sql-pool-in-azure-synapse-analytics"></a>Использование бессерверного пула SQL в Azure Synapse Analytics 
 
@@ -75,7 +75,7 @@ ms.locfileid: "96463167"
 
 Поддерживаемые аспекты T-SQL.
 
-- Поддерживается полная контактная зона операции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), включая большинство функций SQL.
+- Поддерживается полная контактная зона операции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), включая большинство функций SQL.
 - CETAS (CREATE EXTERNAL TABLE AS SELECT).
 - Инструкции DDL, относящиеся только к представлениям и безопасности.
 
@@ -89,7 +89,7 @@ ms.locfileid: "96463167"
 
 ### <a name="extensions"></a>Модули
 
-Чтобы обеспечить беспроблемное выполнение запросов "на месте" по данным, которые хранятся в файлах озера данных, существующая функция [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) в бессерверном пуле SQL дополнена следующими возможностями:
+Чтобы обеспечить беспроблемное выполнение запросов "на месте" по данным, которые хранятся в файлах озера данных, существующая функция [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) в бессерверном пуле SQL дополнена следующими возможностями:
 
 [Запрашивание нескольких файлов или папок](query-data-storage.md#query-multiple-files-or-folders)
 
@@ -125,7 +125,7 @@ ms.locfileid: "96463167"
 
 - **Аутентификация Azure Active Directory**.
 
-  Этот метод проверки подлинности использует удостоверения, управляемые Azure Active Directory. Для пользователей Azure AD можно включить многофакторную проверку подлинности. [По возможности](/sql/relational-databases/security/choose-an-authentication-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) используйте проверку подлинности Active Directory (встроенная безопасность).
+  Этот метод проверки подлинности использует удостоверения, управляемые Azure Active Directory. Для пользователей Azure AD можно включить многофакторную проверку подлинности. [По возможности](/sql/relational-databases/security/choose-an-authentication-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) используйте проверку подлинности Active Directory (встроенная безопасность).
 
 #### <a name="authorization"></a>Авторизация
 

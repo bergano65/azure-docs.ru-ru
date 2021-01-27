@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: overview
 ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: aa68b746ef5c22c97fcfdcca889bf71577c19479
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: adb0e12b81701acbdb33018f055bfe8fda2efc52
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96583218"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786645"
 ---
 # <a name="what-is-azure-data-box-gateway"></a>Что такое Шлюз Azure Data Box?
 
@@ -89,7 +89,7 @@ ms.locfileid: "96583218"
 
 Физическое устройство Шлюза Data Box, ресурс Azure и целевая учетная запись хранения, в которую вы передаете данные, необязательно должны находиться в одном и том же регионе.
 
-- **Доступность ресурсов.** Список всех регионов, в которых доступен ресурс Шлюза Azure Data Box, см. на странице [Доступность продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Шлюз Data Box также можно развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
+- **Доступность ресурсов.** Список всех регионов, в которых доступен ресурс Шлюза Azure Data Box, см. на странице [Доступность продуктов Azure по регионам](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Шлюз Data Box также можно развернуть в облаке Azure для государственных организаций. Дополнительные сведения см. в обзорной статье об [Azure для государственных организаций](../azure-government/documentation-government-welcome.md).
 
 - **Целевые учетные записи хранения**. Учетные записи хранения, в которых хранятся данные, доступны во всех регионах Azure.
 
@@ -101,4 +101,3 @@ ms.locfileid: "96583218"
 - Просмотрите [системные требования для Шлюза Data Box](data-box-gateway-system-requirements.md).
 - Ознакомьтесь с общими сведениями об [ограничениях Шлюза Data Box](data-box-gateway-limits.md).
 - Разверните [Шлюз Azure Data Box](data-box-gateway-deploy-prep.md) на портале Azure.
-

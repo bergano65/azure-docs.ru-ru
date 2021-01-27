@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 4ded48fe8f04d2cdba40650974fd5002d659e381
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 78e9c50cb0601f6be69ae61f3a8e02621c7dd808
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705274"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786045"
 ---
 # <a name="about-azure-key-vault-secrets"></a>Сведения о секретах Azure Key Vault
 
@@ -84,7 +84,7 @@ Key Vault также поддерживает поле contentType для сек
 
 ## <a name="azure-storage-account-key-management"></a>Управление ключами учетных записей хранения Azure
 
-Key Vault может управлять ключами [учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-account-overview):
+Key Vault может управлять ключами [учетных записей хранения Azure](../../storage/common/storage-account-overview.md):
 
 - На внутреннем уровне Key Vault может выводить список ключей (синхронизировать их) с помощью учетной записи хранения Azure. 
 - Key Vault периодически повторно создает (сменяет) ключи.
@@ -92,7 +92,7 @@ Key Vault может управлять ключами [учетных запи�
 - Azure Key Vault управляет ключами как учетных записей хранения, так и классических учетных записей хранения.
 
 Дополнительные сведения можно найти в разделе
-- [Ключи доступа к учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- [Ключи доступа к учетной записи хранения](../../storage/common/storage-account-keys-manage.md)
 - [Управление ключами учетных записей хранения в Azure Key Vault](../secrets/overview-storage-keys.md)
 
 

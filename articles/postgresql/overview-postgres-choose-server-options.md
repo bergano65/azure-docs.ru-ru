@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 09/21/2020
-ms.openlocfilehash: 8bc303f619d145cc280e6caab65781bd42d1b314
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: db80ae66761e49ce90f25a22f0e74cf8a1300796
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489699"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797228"
 ---
 # <a name="choose-the-right-postgresql-server-option-in-azure"></a>Выбор оптимального параметра сервера PostgreSQL в Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "92489699"
 Принимая решение, рассмотрите следующие три варианта в PaaS или на виртуальных машинах Azure (IaaS).
 - [База данных Azure для PostgreSQL — Отдельный сервер](./overview-single-server.md)
 - [Гибкий сервер Базы данных Azure для PostgreSQL](./flexible-server/overview.md)
-- [База данных Azure для PostgreSQL с Гипермасштабированием (Citus)]()
+- [База данных Azure для PostgreSQL с Гипермасштабированием (Citus)](hyperscale/index.yml)
 
 Вариант **PostgreSQL на виртуальных машинах Azure** относится к отраслевым категориям IaaS. С помощью этой службы можно запустить сервер PostgreSQL внутри полностью управляемой виртуальной машины в облачной платформе Azure. Все последние версии и выпуски PostgreSQL можно установить на виртуальной машине IaaS. Наиболее существенным отличием от Базы данных Azure для PostgreSQL является то, что PostgreSQL на виртуальных машинах Azure позволяет контролировать ядро СУБД. Однако эти возможности контроля означают дополнительные обязанности по управлению виртуальными машинами и многими задачами администрирования баз данных (DBA). Эти задачи включают в себя обслуживание и исправление серверов баз данных, восстановление баз данных и проектирование высокого уровня доступности.
 

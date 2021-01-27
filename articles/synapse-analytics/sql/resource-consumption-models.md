@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 249f124dc7d4d789ca4396a67fba63fbdd144ba6
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 6fbc4179bcfc36f094b36966c8e5dd0acac66075
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120059"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683048"
 ---
 # <a name="synapse-sql-resource-consumption"></a>Потребление ресурсов Synapse SQL
 
@@ -38,7 +38,7 @@ ms.locfileid: "98120059"
 
 - Насколько быстро стандартным запросом хранения данных сканируется большое количество строк и выполняется их сложное агрегирование. Это требует интенсивного использования операций ввода-вывода и ресурсов ЦП.
 - Насколько быстро хранилище данных может принять данные из больших двоичных объектов хранилища Azure или Azure Data Lake. Это сетевая операция, которая требует интенсивного использования ресурсов ЦП.
-- Насколько быстро команда T-SQL [`CREATE TABLE AS SELECT`](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) может скопировать таблицу. Эта операция предусматривает чтение данных из хранилища, их распространение в различные узлы устройства и повторную запись в хранилище. Эта операция выполняется ЦП и требует интенсивного использования операций ввода-вывода и сетевых ресурсов.
+- Насколько быстро команда T-SQL [`CREATE TABLE AS SELECT`](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) может скопировать таблицу. Эта операция предусматривает чтение данных из хранилища, их распространение в различные узлы устройства и повторную запись в хранилище. Эта операция выполняется ЦП и требует интенсивного использования операций ввода-вывода и сетевых ресурсов.
 
 При увеличении единиц DWU происходит следующее:
 
@@ -98,7 +98,7 @@ CREATE DATABASE mySQLDW
 
 ### <a name="permissions"></a>Разрешения
 
-Чтобы изменить единицы использования хранилища данных, требуются разрешения, описанные в статье об [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+Чтобы изменить единицы использования хранилища данных, требуются разрешения, описанные в статье об [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 Встроенные роли Azure, такие как участник базы данных SQL и участник SQL Server, позволяют изменять параметры DWU.
 
@@ -150,7 +150,7 @@ Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServi
 Изменение DWU:
 
 1. Подключитесь к базе данных master, связанной с вашим сервером.
-2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). В приведенном ниже примере для базы данных MySQLDW устанавливается целевой уровень обслуживания DW1000c.
+2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). В приведенном ниже примере для базы данных MySQLDW устанавливается целевой уровень обслуживания DW1000c.
 
 ```Sql
 ALTER DATABASE MySQLDW
@@ -160,7 +160,7 @@ MODIFY (SERVICE_OBJECTIVE = 'DW1000c')
 
 #### <a name="rest-apis"></a>Интерфейсы REST API
 
-Чтобы изменить число DWU, используйте REST API [создания или обновления базы данных](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). В приведенном ниже примере для базы данных MySQLDW, размещенной на сервере MyServer, устанавливается целевой уровень обслуживания DW1000c. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
+Чтобы изменить число DWU, используйте REST API [создания или обновления базы данных](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). В приведенном ниже примере для базы данных MySQLDW, размещенной на сервере MyServer, устанавливается целевой уровень обслуживания DW1000c. Сервер находится в группе ресурсов Azure с именем ResourceGroup1.
 
 ```
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Sql/servers/{server-name}/databases/{database-name}?api-version=2014-04-01-preview HTTP/1.1

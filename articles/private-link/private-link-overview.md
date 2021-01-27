@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: b3ca4f11b02f32e65cf80adc65ec12d25e6e7905
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 974631f9cba66404a3881caed1382be7ff3c00d1
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573179"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881339"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -72,7 +72,7 @@ ms.locfileid: "98573179"
 | Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |  | GA   <br/> [Создание частной конечной точки для Azure Monitor](../azure-monitor/platform/private-link-security.md).   | 
 | Пакетная служба Azure | Все общедоступные регионы, кроме: ЦЕНТРАЛЬНАЯ ГЕРМАНИЯ, СЕВЕРО-ВОСТОЧНАЯ ГЕРМАНИЯ <br/> Регионы для государственных организаций  | | GA <br/> [Создание частной конечной точки для пакетной службы Azure](../batch/private-connectivity.md). |
 |Фабрика данных Azure | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая    | Учетные данные должны храниться в хранилище ключей Azure| GA   <br/> [Создание частной конечной точки для Фабрики данных Azure](../data-factory/data-factory-private-link.md).   |
-|управляемые диски Azure. | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая    | [Щелкните здесь, чтобы узнать об известных ограничениях](https://docs.microsoft.com/azure/virtual-machines/disks-enable-private-links-for-import-export-portal#limitations) | GA   <br/> [Создание частной конечной точки для Управляемых дисков Azure.](https://docs.microsoft.com/azure/virtual-machines/disks-enable-private-links-for-import-export-portal)   |
+|управляемые диски Azure. | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая    | [Щелкните здесь, чтобы узнать об известных ограничениях](../virtual-machines/disks-enable-private-links-for-import-export-portal.md#limitations) | GA   <br/> [Создание частной конечной точки для Управляемых дисков Azure.](../virtual-machines/disks-enable-private-links-for-import-export-portal.md)   |
 
 
 
@@ -110,5 +110,3 @@ ms.locfileid: "98573179"
 
 - [Краткое руководство. Создание частной конечной точки с помощью портала Azure](create-private-endpoint-portal.md).
 - [Краткое руководство. Создание службы "Приватный канал" с помощью портала Azure](create-private-link-service-portal.md).
-
-

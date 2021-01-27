@@ -8,12 +8,12 @@ ms.topic: overview
 author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
-ms.openlocfilehash: f59ed16f98a22f77b2e67ec2bf829f58dccef611
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 4212c76d052fe1f272963003e836425b50d6f105
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740510"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677620"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>Что такое студия Машинного обучения Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "97740510"
 | Компонент | Студии машинного обучения (классической) | Машинное обучение Azure |
 |---| --- | --- |
 | Интерфейс перетаскивания | Классический интерфейс | Обновленный интерфейс — [конструктор Машинного обучения Azure](concept-designer.md)| 
-| Пакеты SDK для кода | Не поддерживается | Полная интеграция с пакетами SDK [Машинного обучения Azure для Python](/python/api/overview/azure/ml/) и [R](tutorial-1st-r-experiment.md) |
+| Пакеты SDK для кода | Не поддерживается | Полная интеграция с пакетами SDK [Машинного обучения Azure для Python](/python/api/overview/azure/ml/) и [R](https://github.com/Azure/azureml-sdk-for-r) |
 | Эксперимент | Масштабируемый (ограничение на объем данных для обучения: 10 ГБ) | Масштабирование с помощью целевого объекта вычислений |
 | Обучение целевых объектов вычислений | Собственный целевой объект, поддерживающий только ЦП | Обширный набор настраиваемых [целевых объектов вычислений для обучения](concept-compute-target.md#train). Включает поддержку GPU и ЦП. | 
 | Развертывание целевых объектов вычислений | Собственный формат веб-службы, без возможности настройки | Обширный набор настраиваемых [целевых объектов вычислений для развертывания](concept-compute-target.md#deploy). Включает поддержку GPU и ЦП. |

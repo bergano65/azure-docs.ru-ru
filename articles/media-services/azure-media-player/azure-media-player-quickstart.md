@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: quickstart
 ms.date: 04/20/2020
-ms.openlocfilehash: 3d8ff1d2f121501152673c8375ef3d26aab10f1a
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 1634731381be6ebbb8750746f88b8ff9e761025d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511745"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879196"
 ---
 # <a name="azure-media-player-quickstart"></a>Краткое руководство по Проигрывателю мультимедиа Azure
 Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа Azure требуется всего несколько минут. В этом разделе приведено общее описание основных этапов. В следующих разделах содержатся подробные сведения о настройке Проигрывателя мультимедиа Azure.  Просто добавьте указанные ниже включаемые файлы в `<head>` документа:
@@ -63,4 +63,4 @@ ms.locfileid: "97511745"
 
 ## <a name="next-steps"></a>Дальнейшие действия ##
 
-- [Полная настройка Проигрывателя мультимедиа Azure](https://docs.microsoft.com/azure/media-services/azure-media-player/azure-media-player-full-setup)
+- [Полная настройка Проигрывателя мультимедиа Azure](./azure-media-player-full-setup.md)

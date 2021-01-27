@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 8/26/2020
 ms.author: alkemper
-ms.openlocfilehash: 6996fdd9dce4314e9365177815d7d310ac80c7cb
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 96efc0ea6300e482ddeeda8fa177847f02b7e126
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046079"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724260"
 ---
 # <a name="quickstart-add-feature-flags-to-an-azure-functions-app"></a>Краткое руководство. Добавление флагов функций в приложение "Функции Azure"
 
@@ -46,7 +46,7 @@ ms.locfileid: "98046079"
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
-В этом проекте будет использоваться [внедрение зависимостей в Функциях Azure .NET](/azure/azure-functions/functions-dotnet-dependency-injection). При этом в качестве дополнительного источника конфигурации, в котором хранятся флаги функций, добавляется служба "Конфигурация приложений Azure".
+В этом проекте будет использоваться [внедрение зависимостей в Функциях Azure .NET](../azure-functions/functions-dotnet-dependency-injection.md). При этом в качестве дополнительного источника конфигурации, в котором хранятся флаги функций, добавляется служба "Конфигурация приложений Azure".
 
 1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet:
    - [Microsoft.Extensions.Configuration.AzureAppConfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureAppConfiguration/) 4.1.0 или более поздней версии;

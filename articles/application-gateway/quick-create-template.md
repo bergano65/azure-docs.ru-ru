@@ -6,15 +6,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 08/27/2020
+ms.date: 01/20/2021
 ms.author: victorh
 ms.custom: mvc, subject-armqs
-ms.openlocfilehash: 3ea5c891a0e3709c1ce469be2e9101a0825acfcb
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 05e7cd8d7018759a3c8670a610b4c98ac0a86a7a
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093877"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660061"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---arm-template"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure и шаблона ARM
 
@@ -46,7 +46,7 @@ ms.locfileid: "92093877"
 
 - [**Microsoft.Network/applicationgateways**](/azure/templates/microsoft.network/applicationgateways);
 - [**Microsoft.Network/publicIPAddresses**](/azure/templates/microsoft.network/publicipaddresses): один для шлюза приложений и два для виртуальных машин;
-- [**Microsoft.Network/networkSecurityGroups;** ](/azure/templates/microsoft.network/networksecuritygroups)
+- [**Microsoft.Network/networkSecurityGroups;**](/azure/templates/microsoft.network/networksecuritygroups)
 - [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks);
 - [**Microsoft.Compute/virtualMachines**](/azure/templates/microsoft.compute/virtualmachines): две виртуальные машины;
 - [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces): два для виртуальных машин;

@@ -5,12 +5,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 11/09/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: d95c96e76a3463a77cc64234a909cc1e3d093837
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: a910f61389183b77af1f73f8d3553f6c5bbc8452
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630230"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881590"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-java"></a>Отправка сообщений в очереди Служебной шины и получение сообщений из них (Java)
 В этом кратком руководстве описывается создание приложения Java для отправки сообщений в очередь служебной шины Azure и получения сообщений из нее. 
@@ -220,7 +220,7 @@ Stopping and closing the processor
 Ознакомьтесь со следующими примерами и документацией:
 
 - [Клиентская библиотека Служебной шины Azure для Java: файл сведений](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/README.md)
-- [Примеры на GitHub](https://docs.microsoft.com/samples/azure/azure-sdk-for-java/servicebus-samples/)
+- [Примеры на GitHub](/samples/azure/azure-sdk-for-java/servicebus-samples/)
 - [Справочник по API Java](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-messaging-servicebus/7.0.0/index.html)
 
 [Azure SDK for Java]: /azure/developer/java/sdk/java-sdk-azure-get-started

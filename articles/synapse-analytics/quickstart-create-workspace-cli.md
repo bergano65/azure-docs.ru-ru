@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 08/25/2020
 ms.author: alehall
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2658240e670e617f7296881f733ff369b9bf8f87
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: d4beef9383b8e51e1295639c18e745fd0fdf8588
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219034"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796952"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-cli"></a>Краткое руководство. Создание рабочей области Azure Synapse с помощью Azure CLI
 
@@ -50,31 +50,12 @@ Azure CLI — это интерфейс командной строки Azure д
     |SqlPassword| Выберите надежный пароль.|
     |||
 
-2. Создайте группу ресурсов в форме контейнера для рабочей области Azure Synapse:
+1. Создайте группу ресурсов в форме контейнера для рабочей области Azure Synapse:
     ```azurecli
     az group create --name $SynapseResourceGroup --location $Region
     ```
-3. Выведите на экран ключ учетной записи хранения Azure Data Lake Storage 2-го поколения:
-    ```azurecli
-    StorageAccountKey=$(az storage account keys list \
-      --account-name $StorageAccountName \
-      | jq -r '.[0] | .value')
-    ```
-4. Выведите на экран URL-адрес конечной точки хранилища ADLS 2-го поколения:
-    ```azurecli
-    StorageEndpointUrl=$(az storage account show \
-      --name $StorageAccountName \
-      --resource-group $StorageAccountResourceGroup \
-      | jq -r '.primaryEndpoints | .dfs')
-    ```
 
-5. (Дополнительно) Вы можете проверить значения для ключа и конечной точки учетной записи хранения Azure Data Lake Storage 2-го поколения, выполнив такие команды:
-    ```azurecli
-    echo "Storage Account Key: $StorageAccountKey"
-    echo "Storage Endpoint URL: $StorageEndpointUrl"
-    ```
-
-6. Создайте рабочую область Azure Synapse:
+1. Создайте рабочую область Azure Synapse:
     ```azurecli
     az synapse workspace create \
       --name $SynapseWorkspaceName \
@@ -86,14 +67,14 @@ Azure CLI — это интерфейс командной строки Azure д
       --location $Region
     ```
 
-7. Получите URL-адрес Web и Dev для рабочей области Azure Synapse:
+1. Получите URL-адрес Web и Dev для рабочей области Azure Synapse:
     ```azurecli
     WorkspaceWeb=$(az synapse workspace show --name $SynapseWorkspaceName --resource-group $SynapseResourceGroup | jq -r '.connectivityEndpoints | .web')
 
     WorkspaceDev=$(az synapse workspace show --name $SynapseWorkspaceName --resource-group $SynapseResourceGroup | jq -r '.connectivityEndpoints | .dev')
     ```
 
-8. Создайте правило брандмауэра, которое разрешит доступ к рабочей области Azure Synapse с компьютера:
+1. Создайте правило брандмауэра, которое разрешит доступ к рабочей области Azure Synapse с компьютера:
 
     ```azurecli
     ClientIP=$(curl -sb -H "Accept: application/json" "$WorkspaceDev" | jq -r '.message')
@@ -103,7 +84,7 @@ Azure CLI — это интерфейс командной строки Azure д
     az synapse workspace firewall-rule create --end-ip-address $ClientIP --start-ip-address $ClientIP --name "Allow Client IP" --resource-group $SynapseResourceGroup --workspace-name $SynapseWorkspaceName
     ```
 
-9. Чтобы получить доступ к рабочей области, откройте URL-адрес Web рабочей области Azure Synapse, который хранится в переменной среды`WorkspaceWeb`:
+1. Чтобы получить доступ к рабочей области, откройте URL-адрес Web рабочей области Azure Synapse, который хранится в переменной среды`WorkspaceWeb`:
 
     ```azurecli
     echo "Open your Azure Synapse Workspace Web URL in the browser: $WorkspaceWeb"

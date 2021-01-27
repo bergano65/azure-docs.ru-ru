@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 4da99200079557ab9d1674635c0df26c9e62d488
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: ecab573f7a98bcee79231b8e20077bb32bffd48c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120280"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680120"
 ---
 # <a name="quickstart-create-and-query-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-the-azure-portal"></a>Краткое руководство. Создание выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics и отправка в него запросов с помощью портала Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "98120280"
    > [!NOTE]
    > Создание выделенного пула SQL (ранее — Хранилище данных SQL) в Azure Synapse может повлечь дополнительные расходы. Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/synapse-analytics/).
 
-2. Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
+2. Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "98120280"
    | :------ | :-------------- | :---------- |
    | **Подписка** | Ваша подписка | Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
    | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
-   | **Имя пула SQL** | Любое глобально уникальное имя (например, *mySampleDataWarehouse*). | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  |
+   | **Имя пула SQL** | Любое глобально уникальное имя (например, *mySampleDataWarehouse*). | Допустимые имена баз данных см. в статье об [идентификаторах базы данных](/sql/relational-databases/databases/database-identifiers?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  |
    | **Server** | Любое глобально уникальное имя | Выберите существующий сервер или создайте сервер с новым именем, щелкнув ссылку **Создать новый**. Допустимые имена серверов см. в статье о [правилах и ограничениях именования](/azure/architecture/best-practices/resource-naming?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). |
 
    ![Основные сведения при создании хранилища данных](./media/create-data-warehouse-portal/create-sql-pool-basics.png)
@@ -128,7 +128,7 @@ ms.locfileid: "98120280"
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
+В этом разделе для подключения к серверу используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 

@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: a1732f42ea95c16cdec7a1d7569c954667e52cb4
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 416f997475e35f8e784679ca0826f7af38d756c7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750906"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880310"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Краткое руководство. Развертывание первого приложения Azure Spring Cloud
 
@@ -351,9 +351,6 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4
 ```
 
   ![Страница Initializr](media/spring-cloud-quickstart-java/initializr-page.png)
-
-> [!NOTE]
-> Мы выявили проблему со Spring Boot 2.4 при аутентификации TLS между вашими приложениями и Eureka и в настоящее время вместе с сообществом Spring пытаемся устранить ее. Временное решение проблемы см. в нашем документе с [часто задаваемыми вопросами](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development).
 
 1. Щелкните **Создать**, если все зависимости заданы. Загрузите и распакуйте пакет, а затем создайте веб-контроллер для простого веб-приложения, добавив `src/main/java/com/example/hellospring/HelloController.java` следующим образом:
 

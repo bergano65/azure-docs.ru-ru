@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: f3eaa6383b174e06ff6ce9b1b08c4eba9108d770
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: ffffeb38aeb9d1f01f376d58a52323bb7b84b306
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115520"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676329"
 ---
 # <a name="quickstart-scale-compute-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в выделенном пуле SQL (ранее — Хранилище данных SQL) в Azure Synapse Analytics с помощью T-SQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "98115520"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
+Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS).
 
 ## <a name="create-a-dedicated-sql-pool-formerly-sql-dw"></a>Создание выделенного пула SQL (ранее — Хранилище данных SQL)
 
@@ -34,7 +34,7 @@ ms.locfileid: "98115520"
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS).
+В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 
@@ -90,7 +90,7 @@ ms.locfileid: "98115520"
 Изменить число единиц использования хранилища данных можно так:
 
 1. Щелкните правой кнопкой мыши **master** и выберите **Создать запрос**.
-2. Чтобы изменить целевой уровень обслуживания, используйте инструкцию T-SQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Выполните следующий запрос, чтобы изменить значение целевого уровня обслуживания на DW300.
+2. Чтобы изменить целевой уровень обслуживания, используйте инструкцию T-SQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Выполните следующий запрос, чтобы изменить значение целевого уровня обслуживания на DW300.
 
     ```Sql
     ALTER DATABASE mySampleDataWarehouse
@@ -136,7 +136,7 @@ ms.locfileid: "98115520"
 
 ## <a name="check-operation-status"></a>Проверка состояния операции
 
-Чтобы получить сведения о различных операциях управления, выполняемых в выделенном пуле SQL (ранее — Хранилище данных SQL), отправьте следующий запрос в динамическом административном представлении [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Например, это представление возвращает сведения о разных операциях, а также их состояние со значением IN_PROGRESS или COMPLETED.
+Чтобы получить сведения о различных операциях управления, выполняемых в выделенном пуле SQL (ранее — Хранилище данных SQL), отправьте следующий запрос в динамическом административном представлении [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Например, это представление возвращает сведения о разных операциях, а также их состояние со значением IN_PROGRESS или COMPLETED.
 
 ```sql
 SELECT *

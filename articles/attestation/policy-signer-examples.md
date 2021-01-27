@@ -7,17 +7,17 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 0b32158ad58a663f7d85b9814bb4f2c1c55e4178
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 5cb767c639c7ff1d9888085caa036571376cc596
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922454"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734154"
 ---
 # <a name="examples-of-an-attestation-policy-signer-certificate"></a>Примеры сертификата аттестации пользователя, подписавшего политику
 
 Сертификаты пользователя, подписавшего политику, связанные с поставщиком аттестации, будут использоваться Аттестацией Microsoft Azure для проверки подписанных политик.
-См. подробные сведения о [преимуществах подписания политик](/azure/attestation/basic-concepts/#benefits-of-policy-signing).
+См. подробные сведения о [преимуществах подписания политик](./basic-concepts.md#benefits-of-policy-signing).
 
 **Формат файла сертификата для подписывания политик для использования в потоке создания поставщика**
 

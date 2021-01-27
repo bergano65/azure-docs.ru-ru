@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: cf21ed73d74adb9f9a5a7229a45192bc63aca2c3
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 5c2b88ad7bef5fb8f7ba576e5f7b416f7458378c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104251"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731607"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-powershell"></a>Краткое руководство. Создание частной конечной точки с помощью Azure PowerShell
 
@@ -22,8 +22,8 @@ ms.locfileid: "98104251"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подробнее о [Приватном канале Azure](/azure/private-link/private-link-overview)
-* [Настройка службы "Аттестация Azure" с помощью Azure PowerShell](/azure/attestation/quickstart-powershell)
+* Подробнее о [Приватном канале Azure](../private-link/private-link-overview.md)
+* [Настройка службы "Аттестация Azure" с помощью Azure PowerShell](./quickstart-powershell.md)
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -207,4 +207,3 @@ New-AzPrivateDnsZoneGroup -ResourceGroupName $rg -PrivateEndpointName "myPrivate
     Non-authoritative answer:
     Name:    myattestationprovider.eastus.test.attest.azure.net
     ```
-

@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 88ee95789bdc1c6ee9884a021067318caab203d4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b78c2d5c03c95249c7f708f2d660d32c834f123e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451649"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676101"
 ---
 # <a name="connect-to-synapse-sql-with-sqlcmd"></a>Подключение к Synapse SQL с помощью sqlcmd
 
@@ -25,10 +25,10 @@ ms.locfileid: "96451649"
 > * [sqlcmd](../sql/get-started-connect-sqlcmd.md)
 > * [SSMS](get-started-ssms.md)
 
-В Synapse SQL для подключения и отправки запроса к бессерверному и выделенному пулам SQL можно использовать служебную программу командной строки [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).  
+В Synapse SQL для подключения и отправки запроса к бессерверному и выделенному пулам SQL можно использовать служебную программу командной строки [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  
 
 ## <a name="1-connect"></a>1. Подключение
-Чтобы начать использовать [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), откройте командную строку и введите **sqlcmd** и строку подключения к базе данных Synapse SQL. В строке подключения обязательно укажите следующие параметры.
+Чтобы начать использовать [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), откройте командную строку и введите **sqlcmd** и строку подключения к базе данных Synapse SQL. В строке подключения обязательно укажите следующие параметры.
 
 * **Server (-S):** сервер в формате `<`имя_сервера`>`.database.windows.net
 * **Database (-d):** Имя базы данных
@@ -78,7 +78,7 @@ C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -G -I
 
 ### <a name="use-dedicated-sql-pool"></a>Использование выделенного пула SQL
 
-После подключения можно подавать любые поддерживаемые инструкции [Transact-SQL](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) (T-SQL) для экземпляра. В этом примере запросы отправляются в интерактивном режиме.
+После подключения можно подавать любые поддерживаемые инструкции [Transact-SQL](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (T-SQL) для экземпляра. В этом примере запросы отправляются в интерактивном режиме.
 
 ```sql
 C:\>sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I
@@ -99,7 +99,7 @@ sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@sswor
 
 ### <a name="use-serverless-sql-pool"></a>Использование бессерверного пула SQL
 
-После подключения для экземпляра можно подавать любые поддерживаемые инструкции [Transact-SQL](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) (T-SQL).  В следующем примере запросы отправляются в интерактивном режиме.
+После подключения для экземпляра можно подавать любые поддерживаемые инструкции [Transact-SQL](/sql/t-sql/language-reference?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (T-SQL).  В следующем примере запросы отправляются в интерактивном режиме.
 
 ```sql
 C:\>sqlcmd -S partyeunrt.database.windows.net -d demo -U Enter_Your_Username_Here -P Enter_Your_Password_Here -I
@@ -120,4 +120,4 @@ sqlcmd -S partyeunrt.database.windows.net -d demo -U Enter_Your_Username_Here -P
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о параметрах sqlcmd см. в [документации по sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+Дополнительные сведения о параметрах sqlcmd см. в [документации по sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).

@@ -11,12 +11,12 @@ ms.date: 05/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 302249b7d8490e43b841116c52500e686626433d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5773691852ddc723ec84503edee37c678bbbcfd9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460616"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677510"
 ---
 # <a name="quickstart-configure-dedicated-sql-pool-workload-isolation-using-a-workload-group-in-the-azure-portal"></a>Краткое руководство. Настройка изоляции рабочих нагрузок выделенного пула SQL с помощью группы рабочей нагрузки на портале Azure
 
@@ -93,7 +93,7 @@ ms.locfileid: "96460616"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы использовать группу рабочей нагрузки `DataLoads`, необходимо создать [классификатор рабочих нагрузок](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для направления запросов к группе рабочей нагрузки.  См. сведения о [создании классификатора рабочих нагрузок](quickstart-create-a-workload-classifier-portal.md) для `DataLoads`.
+Чтобы использовать группу рабочей нагрузки `DataLoads`, необходимо создать [классификатор рабочих нагрузок](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для направления запросов к группе рабочей нагрузки.  См. сведения о [создании классификатора рабочих нагрузок](quickstart-create-a-workload-classifier-portal.md) для `DataLoads`.
 
 ## <a name="see-also"></a>См. также раздел
 См. сведения о [мониторинге рабочих нагрузок для управления рабочими нагрузками](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).

@@ -2,23 +2,23 @@
 title: Удаление ограничений на создание регистраций приложений в Azure AD | Документация Майкрософт
 description: Назначение настраиваемой роли для предоставления неограниченного числа регистраций приложений в Azure Active Directory
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: quickstart
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, devx-track-azurepowershell
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a78296d3fd040b047c2a6cc3761d429883aa9d1
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 260b0621bf204c6d7593b3696c602665c42ad77e
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378794"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740862"
 ---
 # <a name="quickstart-grant-permission-to-create-unlimited-app-registrations"></a>Краткое руководство. Предоставление разрешения на создание неограниченного количества регистраций приложений
 
@@ -29,7 +29,7 @@ ms.locfileid: "93378794"
 ## <a name="create-a-custom-role-using-the-azure-ad-portal"></a>Создание настраиваемой роли с помощью портала Azure AD
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с разрешениями "Администратор привилегированных ролей" или "Глобальный администратор" в организации Azure AD.
-1. Последовательно выберите **Azure Active Directory** , **Роли и администраторы** и **Новая пользовательская роль**.
+1. Последовательно выберите **Azure Active Directory**, **Роли и администраторы** и **Новая пользовательская роль**.
 
     ![Создание или изменение ролей на странице "Роли и администраторы"](./media/quickstart-app-registration-limits/new-custom-role.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "93378794"
 ### <a name="assign-the-role-in-the-azure-ad-portal"></a>Назначение роли на портале Azure AD
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с разрешениями "Администратор привилегированных ролей" или "Глобальный администратор" в своей организации Azure AD.
-1. Выберите **Azure Active Directory** , а затем — **Роли и администраторы**.
+1. Выберите **Azure Active Directory**, а затем — **Роли и администраторы**.
 1. Выберите роль "Создатель регистрации приложения" и щелкните **добавить назначения**.
 1. Чтобы назначить необходимого пользователя на роль, выберите его, а затем щелкните **Выбрать**.
 

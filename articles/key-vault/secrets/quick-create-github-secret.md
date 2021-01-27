@@ -8,12 +8,12 @@ ms.date: 11/24/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 9509f84b14a42180189a529282b5db348deab279
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c1e8062210de1d7d99f57a4e0b155492f7dfdd9a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95920239"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785982"
 ---
 # <a name="use-key-vault-secrets-in-github-actions-workflows"></a>Использование секретов Key Vault в рабочих процессах GitHub Actions
 
@@ -25,7 +25,7 @@ Key Vault и GitHub Actions предоставляют средство цент
 ## <a name="prerequisites"></a>Предварительные требования 
 - Учетная запись GitHub. Если у вас ее нет, зарегистрируйтесь [бесплатно](https://github.com/join).  
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
-- Приложение Azure, подключенное к репозиторию GitHub. В этом примере используются инструкции из статьи [Развертывание контейнеров в Службе приложений Azure](https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01). 
+- Приложение Azure, подключенное к репозиторию GitHub. В этом примере используются инструкции из статьи [Развертывание контейнеров в Службе приложений Azure](/azure/developer/javascript/tutorial-vscode-docker-node-01). 
 - Хранилище ключей Azure.  Azure Key Vault можно создать с помощью портала Azure, Azure CLI или Azure PowerShell.
 
 ## <a name="workflow-file-overview"></a>Общие сведения о файле рабочего процесса

@@ -7,14 +7,14 @@ ms.subservice: core
 ms.topic: overview
 ms.author: larryfr
 author: BlackMist
-ms.date: 11/04/2019
+ms.date: 11/04/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 9b4cb3117464bfd32e17df4a1dbfdf7efd4ecbe6
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: a9d471e81c348bfaa92c5d15774517f0d9e0e43f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127776"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683363"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -25,8 +25,6 @@ ms.locfileid: "98127776"
 Начните обучение на локальном компьютере, а затем перенесите его в облако. 
 
 Служба также взаимодействует с популярными средствами для глубокого обучения с подкреплением с открытым кодом, такими как PyTorch, TensorFlow, scikit-learn и Ray RLlib. 
-
-> [!VIDEO https://channel9.msdn.com/Events/Connect/Microsoft-Connect--2018/D240/player]
 
 > [!Tip]
 > **Бесплатная пробная версия!**  Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня. Вы получаете кредиты, которые можно потратить на службы Azure. После того, как кредиты израсходованы, ваша учетная запись не исчезнет. Вы сможете использовать ее для работы с [бесплатными службами Azure](https://azure.microsoft.com/free/). С вашей кредитной карты не будет взиматься плата, если вы явно не измените параметры и не попросите снимать плату.
@@ -130,7 +128,6 @@ ms.locfileid: "98127776"
 - Создайте свой первый эксперимент предпочитаемым способом.
 - + [Начало работы в собственной среде разработки](tutorial-1st-experiment-sdk-setup-local.md)
   + [Использование записных книжек Jupyter на вычислительном экземпляре для обучения и развертывании моделей машинного обучения](tutorial-1st-experiment-sdk-setup.md)
-  + [Использование R Markdown для обучения и развертывания моделей машинного обучения](tutorial-1st-r-experiment.md). 
   + [Использование автоматизированного машинного обучения для обучения и развертывания моделей](tutorial-first-experiment-automated-ml.md). 
   + [Использование возможностей перетаскивания конструктора для обучения и развертывания](tutorial-designer-automobile-price-train-score.md). 
   + [Использование CLI машинного обучения для обучения и развертывания модели](tutorial-train-deploy-model-cli.md).

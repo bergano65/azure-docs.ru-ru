@@ -7,12 +7,12 @@ ms.date: 12/07/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 18d9cb3c64eb41b33a58b248f3826bd9a80c6d90
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 957e39f7629337182c3e19a1a514c42883666301
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754823"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797001"
 ---
 # <a name="introduction-to-azure-defender-for-dns"></a>Общие сведения об Azure Defender для DNS
 
@@ -47,7 +47,7 @@ Azure Defender для DNS защищает от проблем, в том чис
 
 В Azure Defender для DNS не используются агенты. 
 
-Чтобы защитить свой уровень DNS, включите Azure Defender для DNS для каждой из подписок, как описано в разделе о [включении Azure Defender](security-center-pricing.md).
+Чтобы защитить свой уровень DNS, включите Azure Defender для DNS для каждой из подписок, как описано в разделе о [включении Azure Defender](security-center-pricing.md#enable-azure-defender).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -57,4 +57,4 @@ Azure Defender для DNS защищает от проблем, в том чис
 - Оповещения системы безопасности могут создаваться самим Центром безопасности или приниматься центром безопасности от различных продуктов по обеспечению безопасности. Чтобы экспортировать все эти оповещения в Azure Sentinel, любое стороннее средство SIEM или другие внешние инструменты, следуйте инструкциям в статье [Экспорт оповещений о безопасности и рекомендаций](continuous-export.md).
 
 - > [!div class="nextstepaction"]
-    > [Включение Azure Defender](security-center-pricing.md)
+    > [Включение Azure Defender](security-center-pricing.md#enable-azure-defender)

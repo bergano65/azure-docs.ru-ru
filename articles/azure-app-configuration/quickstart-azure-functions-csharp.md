@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 09/28/2020
 ms.author: alkemper
-ms.openlocfilehash: b5c659a673ece8fd7fbb9566d8bb84201a668a7f
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 9d378b21132e6646329c459401255ef9a3ed9426
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964088"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724250"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
@@ -44,7 +44,7 @@ ms.locfileid: "97964088"
 [!INCLUDE [Create a project using the Azure Functions template](../../includes/functions-vstools-create.md)]
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
-Этот проект будет использовать [внедрение зависимостей в Функциях Azure .NET](/azure/azure-functions/functions-dotnet-dependency-injection) и добавит Конфигурацию приложений Azure в качестве дополнительного источника конфигурации.
+Этот проект будет использовать [внедрение зависимостей в Функциях Azure .NET](../azure-functions/functions-dotnet-dependency-injection.md) и добавит Конфигурацию приложений Azure в качестве дополнительного источника конфигурации.
 
 1. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. На вкладке **Обзор** найдите и добавьте в проект следующие пакеты NuGet:
    - [Microsoft.Extensions.Configuration.AzureAppConfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureAppConfiguration/) 4.1.0 или более поздней версии;

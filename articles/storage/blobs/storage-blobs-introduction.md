@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 06/24/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 8e3f0435d9856d2b602a4f2b6f604aee05e040ba
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: b55ea814214397e12e50e7bc5047988394623940
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505211"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703595"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Общие сведения о хранилище BLOB-объектов Azure
 
@@ -70,7 +70,7 @@ http://mystorageaccount.blob.core.windows.net
 - **Фабрика данных Azure** поддерживает копирование данных в хранилище BLOB-объектов и из него с использованием ключа учетной записи, подписанного URL-адреса, субъекта-службы или управляемых удостоверений для ресурсов Azure. Дополнительные сведения см. в статье [Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью Фабрики данных Azure](../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 - **blobfuse** — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. Blobfuse можно использовать для доступа к существующим данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Дополнительные сведения см. в статье [Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md).
 - Служба **Azure Data Box** предназначена для передачи локальных данных в хранилище BLOB-объектов. Она используется, когда из-за больших наборов данных или ограничений сети отправка данных по сети невозможна. В зависимости от размера данных вы можете запросить у корпорации Майкрософт устройства [Диск Azure Data Box](../../databox/data-box-disk-overview.md), [Azure Data Box](../../databox/data-box-overview.md) или [Azure Data Box Heavy](../../databox/data-box-heavy-overview.md). Вы сможете скопировать данные на эти устройства и отправить их обратно в корпорацию Майкрософт для передачи данных в хранилище BLOB-объектов.
-- **Служба импорта и экспорта Azure** позволяет импортировать большие объемы данных в учетную запись хранения или экспортировать их из нее, используя предоставленные вами жесткие диски. Дополнительные сведения см. в статье [Что такое служба "Импорт и экспорт Azure"?](../common/storage-import-export-service.md).
+- **Служба импорта и экспорта Azure** позволяет импортировать большие объемы данных в учетную запись хранения или экспортировать их из нее, используя предоставленные вами жесткие диски. Дополнительные сведения см. в статье [Что такое служба "Импорт и экспорт Azure"?](../../import-export/storage-import-export-service.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

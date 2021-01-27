@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a63cd95fdcee7c9ed0c49ba41b4d7e7e6de8f4bf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e757c8047bf6d634ab6d7cbc8963087c0eccc46a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458740"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677374"
 ---
 # <a name="quickstart-create-a-workload-classifier-using-t-sql"></a>Краткое руководство. Создание рабочей нагрузки классификатора с помощью T-SQL
 
@@ -39,7 +39,7 @@ ms.locfileid: "96458740"
 
 ## <a name="create-login-for-theceo"></a>Создание имени для входа TheCEO
 
-Создайте имя для входа с проверкой подлинности SQL Server в базу данных `master`, используя функцию [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) для TheCEO.
+Создайте имя для входа с проверкой подлинности SQL Server в базу данных `master`, используя функцию [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) для TheCEO.
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE name = 'TheCEO')
@@ -51,7 +51,7 @@ END
 
 ## <a name="create-user"></a>Создать пользователя
 
-[Создайте пользователя](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) TheCEO в mySampleDataWarehouse.
+[Создайте пользователя](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) TheCEO в mySampleDataWarehouse.
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'THECEO')
@@ -63,7 +63,7 @@ END
 
 ## <a name="create-a-workload-classifier"></a>Создание классификатора рабочих нагрузок
 
-Для пользователя TheCEO создайте [классификатор рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), задав его параметру относительной важности запроса IMPORTANCE значение HIGH.
+Для пользователя TheCEO создайте [классификатор рабочей нагрузки](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), задав его параметру относительной важности запроса IMPORTANCE значение HIGH.
 
 ```sql
 DROP WORKLOAD CLASSIFIER [wgcTheCEO];
@@ -104,6 +104,6 @@ DROP USER [TheCEO]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Теперь вы создали классификатор рабочей нагрузки. Выполните несколько запросов как TheCEO, чтобы проверить, как они работают. Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Теперь вы создали классификатор рабочей нагрузки. Выполните несколько запросов как TheCEO, чтобы проверить, как они работают. Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 - Дополнительные сведения об управлении рабочей нагрузкой выделенного пула SQL см. в статьях [Важность рабочих нагрузок](sql-data-warehouse-workload-importance.md) и [Классификация рабочих нагрузок](sql-data-warehouse-workload-classification.md).
 - См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
