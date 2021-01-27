@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/02/2019
+ms.date: 01/27/2021
 ms.author: yelevin
-ms.openlocfilehash: 2465cf74dbf4fbf074aed8f8e4097a236e628425
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 11c5c77623fcc693210d5a42bf94c968e884fec3
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660650"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920026"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Полезные ресурсы для работы с Azure Sentinel
 
@@ -28,7 +28,7 @@ ms.locfileid: "94660650"
 
 В этой статье перечислены ресурсы, которые могут помочь получить дополнительные сведения о работе с Sentinel.
 
-Соединители Azure Logic Apps: <https://docs.microsoft.com/connectors/>
+- **Соединители Azure Logic Apps**: <https://docs.microsoft.com/connectors/>
 
 
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
@@ -86,10 +86,25 @@ ms.locfileid: "94660650"
 
 ## <a name="blogs-and-forums"></a>Блоги и форумы
 
-Опубликуйте свои вопросы в [течкоммунити пространстве](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bd-p/AzureSentinel) для Azure Sentinel.
+Мы любим слышать наших пользователей!
 
-Просмотрите записи в блоге с метками Azure из [течкоммунити](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog) и [Microsoft Azure](https://azure.microsoft.com/blog/tag/azure-sentinel/).
+- **Опубликуйте свои вопросы** в [Течкоммунити пространстве](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bd-p/AzureSentinel) для Azure Sentinel. 
+
+- **Отправьте предложения для улучшения** с помощью нашей [пользовательской](https://feedback.azure.com/forums/920458-azure-sentinel) программы.
+
+- **Просмотр и комментирование** в записях блога Azure Sentinel:
+
+    - [течкоммунити](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog) 
+    - [Microsoft Azure](https://azure.microsoft.com/blog/tag/azure-sentinel/)
+
+Дополнительные сведения о безопасности и соответствии требованиям Azure см. в [блоге Microsoft Azure безопасность и соответствие требованиям](https://techcommunity.microsoft.com/t5/microsoft-security-and/bg-p/MicrosoftSecurityandCompliance).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом документе вы получили список ресурсов, которые полезны при работе с Azure Sentinel. Дополнительные сведения о безопасности и соответствии требованиям Azure см. в [блоге Microsoft Azure безопасность и соответствие требованиям](/archive/blogs/azuresecurity/).
+
+> [!div class="nextstepaction"]
+> [Получите сертификацию!](/learn/paths/security-ops-sentinel/)
+
+> [!div class="nextstepaction"]
+> [Чтение истории вариантов использования клиента](https://customers.microsoft.com/en-us/search?sq=%22Azure%20Sentinel%20%22&ff=&p=0&so=story_publish_date%20desc)
+

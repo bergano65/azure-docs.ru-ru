@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: ba971919037230cb6c09e627fde448647063b5b9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: a08b5db19aab19402aa3c93cfa23ce7b39a0a838
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498427"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918694"
 ---
 # <a name="lsv2-series"></a>Серия Lsv2
 
@@ -32,6 +32,7 @@ ms.locfileid: "96498427"
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 Разбивка на пакеты: поддерживается<br>
+[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
 <br>
 
 | Размер | vCPU | Память, ГиБ | Временный диск <sup>1</sup> (ГиБ) | Диски NVMe <sup>2</sup> | Пропускная способность диска NVMe<sup>3</sup> (операций чтения в секунду/Мбит/с) | Пропускная способность диска с некэшированными данными (операций ввода-вывода в секунду)<sup>4</sup> | Максимальная пропускная способность некэшированного диска данных (операций ввода-вывода в секунду/Мбит/с)<sup>5</sup>| Максимальное число дисков данных | Максимальное число сетевых адаптеров | Ожидаемая пропускная способность сети (Мбит/с) |

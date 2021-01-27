@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: jushiman
-ms.openlocfilehash: fe63f9d5a9d215a31a56d7214170d86f46a4e4a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 972eaf3aa20324bc68ce24d2b7c0db041bb8baa4
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653661"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918642"
 ---
 # <a name="m-series"></a>Серия M
 
@@ -27,6 +27,7 @@ ms.locfileid: "91653661"
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоритель записи](./how-to-enable-write-accelerator.md): поддерживается<br>
+[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность кэшированного и временного хранилища: операций ввода-вывода в секунду (размер кэша в гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное число сетевых адаптеров|Ожидаемая пропускная способность сети (Мбит/с) |
@@ -46,7 +47,7 @@ ms.locfileid: "91653661"
 | Standard_M128 <sup>1</sup>     | 128 | 2048   | 14336 | 64 | 250000/1600 (2456)  | 80000/2000 | 8|32000 |
 | Standard_M128m <sup>1</sup>    | 128 | 3892   | 14336 | 64 | 250000/1600 (2456)  | 80000/2000 | 8|32000 |
 
-<sup>1</sup> более 64 виртуальных ЦП требуется одна из этих поддерживаемых гостевых ОС: Windows Server 2016, Ubuntu 16,04 LTS, SLES 12 SP2 и Red Hat Enterprise Linux, CentOS 7,3 или Oracle Linux 7,3 с LIS 4.2.1.
+<sup>1</sup> более 64 виртуальных ЦП требуется одна из этих поддерживаемых гостевых версий: Windows Server 2016, Ubuntu 16,04 LTS, SLES 12 SP2 и Red Hat Enterprise Linux, CentOS 7,3 или Oracle Linux 7,3 с LIS 4.2.1.
 
 <sup>2</sup> Экземпляр изолирован на оборудовании, выделенном единственному заказчику.
 

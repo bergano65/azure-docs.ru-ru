@@ -3,13 +3,13 @@ title: Включение шифрования на основе узла в с�
 description: Узнайте, как настроить шифрование на основе узла в кластере Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/10/2020
-ms.openlocfilehash: 531d1dc4169b5f4adecfb29c3e116049cb99c3c9
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.date: 01/27/2021
+ms.openlocfilehash: 1d071305b457cddde56a11982e08c9331e1d5463
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787830"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919654"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Шифрование на основе узла в службе Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "98787830"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Убедитесь, что `aks-preview` установлено расширение CLI v 0.4.55 или более поздней версии.
+- Убедитесь, что `aks-preview` установлено расширение CLI v 0.4.73 или более поздней версии.
 - Убедитесь, что в `EnableEncryptionAtHostPreview` разделе включено установлен флаг компонента `Microsoft.ContainerService` .
 
 Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Для этого отправьте электронное письмо на адрес encryptionAtHost@microsoft.com и укажите идентификаторы нужных подписок.
@@ -35,18 +35,18 @@ ms.locfileid: "98787830"
 > [!IMPORTANT]
 > encryptionAtHost@microsoftЧтобы включить функцию для ресурсов вычислений, необходимо отправить email. com с идентификаторами подписки. Вы не можете включить его самостоятельно для этих ресурсов. Вы можете включить его самостоятельно в службе контейнеров.
 
-Чтобы создать кластер AKS, использующий шифрование на основе узла, необходимо включить `EnableEncryptionAtHostPreview` `EncryptionAtHost` Флаги компонентов и в подписке.
+Чтобы создать кластер AKS, использующий шифрование на основе узла, необходимо включить `EncryptionAtHost` флаг компонента в подписке.
 
 Зарегистрируйте `EncryptionAtHost` флаг функции с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 ```azurecli-interactive
-az feature register --namespace "Microsoft.ContainerService"  --name "EnableEncryptionAtHostPreview"
+az feature register --namespace "Microsoft.ContainerService"  --name "EnableEncryptionAtHost"
 ```
 
 Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
 
 ```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEncryptionAtHostPreview')].{Name:name,State:properties.state}"
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableEncryptionAtHost')].{Name:name,State:properties.state}"
 ```
 
 Когда все будет готово, обновите регистрацию `Microsoft.ContainerService` `Microsoft.Compute` поставщиков ресурсов и с помощью команды [AZ Provider Register][az-provider-register] :
@@ -80,7 +80,7 @@ az extension update --name aks-preview
 Настройте узлы агента кластера для использования шифрования на основе узла при создании кластера. Используйте `--aks-custom-headers` флаг, чтобы задать `EnableEncryptionAtHost` заголовок.
 
 ```azurecli-interactive
-az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --aks-custom-headers EnableEncryptionAtHost=true
+az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --aks-custom-headers --enable-encryption-at-host
 ```
 
 Если вы хотите создавать кластеры без шифрования на основе узла, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.
@@ -90,7 +90,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup -s Standard_D
 Вы можете включить шифрование на основе узла в существующих кластерах, добавив новый пул узлов в кластер. Настройте новый пул узлов для использования шифрования на основе узла с помощью `--aks-custom-headers` флага.
 
 ```azurecli
-az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --aks-custom-headers EnableEncryptionAtHost=true
+az aks nodepool add --name hostencrypt --cluster-name myAKSCluster --resource-group myResourceGroup -s Standard_DS2_v2 -l westus2 --aks-custom-headers --enable-encryption-at-host
 ```
 
 Если вы хотите создать новые пулы узлов без функции шифрования на основе узла, это можно сделать, опустив пользовательский `--aks-custom-headers` параметр.

@@ -8,12 +8,12 @@ ms.author: memildin
 ms.date: 09/10/2020
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: 1ca2ded69b0279a60d8ed83cf310a58dadf1a337
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 12cc2de6cd1a8e9ddf40b358c94b720b8b2cf594
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751994"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920449"
 ---
 # <a name="suppress-alerts-from-azure-defender"></a>Отключение оповещений от Azure Defender
 
@@ -23,7 +23,7 @@ ms.locfileid: "96751994"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:| Общедоступная версия |
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Free<br>(Большинство предупреждений системы безопасности доступны только в защитнике Azure)|
 |Требуемые роли и разрешения|**Администратор безопасности** и **владелец** могут создавать и удалять правила.<br>**Читатель сведений о безопасности** и **Читатель** могут просматривать правила.|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|

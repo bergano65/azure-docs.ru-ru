@@ -11,16 +11,21 @@ ms.date: 04/20/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5db99f5e8ed2ea5844acba5500bc94d8fb0db2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26112b1e799cbde3145e7137c686b4b336db4bab
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85358350"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919941"
 ---
-# <a name="disable-pta-when-using-azure-ad-connect-do-not-configure"></a>Отключить PTA при использовании Azure AD Connect "не настраивать"
+# <a name="disable-pta-when-using-azure-ad-connect"></a>Отключить PTA при использовании Azure AD Connect
 
-Если используется сквозная проверка подлинности с Azure AD Connect и для нее задано значение "не настраивать", его можно отключить. Отключение PTA можно выполнить с помощью следующих командлетов. 
+Если используется сквозная проверка подлинности с Azure AD Connect и для нее задано значение **"не настраивать"**, его можно отключить. 
+
+>[!NOTE]
+>Если вы уже включили PHS, то отключение PTA приведет к возврату клиента в PHS.
+
+Отключение PTA можно выполнить с помощью следующих командлетов. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 Ниже перечислены необходимые компоненты.
@@ -34,7 +39,7 @@ ms.locfileid: "85358350"
 > [!IMPORTANT]
 > Если вы используете облако Azure для государственных организаций, вам потребуется передать параметр ENVIRONMENTNAME со следующим значением. 
 >
->| Имя среды | Облако |
+>| Имя среды | Cloud |
 >| - | - |
 >| AzureUSGovernment; | US Gov|
 

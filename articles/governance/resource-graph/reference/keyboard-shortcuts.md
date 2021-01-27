@@ -1,15 +1,15 @@
 ---
 title: Сочетания клавиш в портал Azure для обозревателя графа ресурсов Azure
 description: Обозреватель графа ресурсов Azure в портал Azure поддерживает сочетания клавиш, помогающие выполнять действия и переходы.
-ms.date: 10/21/2020
+ms.date: 01/27/2021
 ms.topic: reference
 ms.custom: accessibility
-ms.openlocfilehash: fdb53e079adf2f65180c15ab93da4f8343e3bab5
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 70777db630a654dc61aad697561583a02c0ccc25
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340127"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919097"
 ---
 # <a name="keyboard-shortcuts-for-azure-resource-graph-explorer"></a>Сочетания клавиш для обозревателя графа ресурсов Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "92340127"
 |Переключиться на линейчатую диаграмму  |<kbd>ALT</kbd> + <kbd>Б</kbd> | <kbd>Параметр</kbd> + <kbd>Б</kbd> |
 |Перейти к диаграмме соответствия  |<kbd>ALT</kbd> + <kbd>N</kbd> | <kbd>Параметр</kbd> + <kbd>М</kbd> |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сочетания клавиш на портале Azure](../../../azure-portal/azure-portal-keyboard-shortcuts.md)
 - [Язык запросов для графа ресурсов](../concepts/query-language.md)

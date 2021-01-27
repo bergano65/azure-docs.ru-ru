@@ -3,12 +3,12 @@ title: Элементы управления безопасностью для A
 description: В этой статье представлен контрольный список встроенных средств управления безопасностью для оценки Azure Relay.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 5d55026bfb6e3d6fe955a540b7596a85707398d6
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: ce5053366ac1d3536a152610d8ed7f76fad62b84
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133350"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919584"
 ---
 # <a name="security-controls-for-azure-relay"></a>Элементы управления безопасностью для Azure Relay
 
@@ -16,12 +16,12 @@ ms.locfileid: "98133350"
 
 [!INCLUDE [Security controls Header](../../includes/security-controls-header.md)]
 
-## <a name="network"></a>Network (Сеть)
+## <a name="network"></a>Сеть
 
 | Управление безопасностью | Да/нет | Примечания | Документация |
 |---|---|--|--|
-| Поддержка частных конечных точек| Нет |  |   |
-| Поддержка сетевой изоляции и брандмауэров| Нет |  |   |
+| Поддержка частных конечных точек| Да |  |   |
+| Поддержка сетевой изоляции и брандмауэров| Да |  |   |
 | Поддержка принудительного туннелирования| Недоступно | Ретранслятором является туннель TLS.  |   |
 
 ## <a name="monitoring--logging"></a>Мониторинг & ведения журнала

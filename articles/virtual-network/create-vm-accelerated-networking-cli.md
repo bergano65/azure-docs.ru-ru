@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: 5b91d6e58f4ae93bbf020f202991f878e7773114
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 643a52c9be04fb325b8e1d088faeb68e473aa673
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222961"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919958"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking-using-azure-cli"></a>Создание виртуальной машины Linux с функцией ускорения сети с помощью Azure CLI
 
@@ -56,11 +56,9 @@ ms.locfileid: "98222961"
 ## <a name="limitations-and-constraints"></a>Ограничения
 
 ### <a name="supported-vm-instances"></a>Поддерживаемые экземпляры виртуальных машин
-Функция ускорения сети поддерживается для большинства размеров экземпляров, оптимизированных для вычислений, и экземпляров общего назначения с количеством виртуальных ЦП от 2.  Поддерживаемые серии: D/DSv2 и F/Fs
+Функция ускорения сети поддерживается для большинства размеров экземпляров, оптимизированных для вычислений, и экземпляров общего назначения с количеством виртуальных ЦП от 2. На экземплярах, поддерживающих технологию Hyper-Threading, функция ускорения сети поддерживается в экземплярах виртуальных машин с количеством виртуальных ЦП от 4. 
 
-На экземплярах, поддерживающих технологию Hyper-Threading, функция ускорения сети поддерживается в экземплярах виртуальных машин с количеством виртуальных ЦП от 4. Поддерживаются следующие серии: D/Dsv3, D/Dsv4, DD/Ddv4, Da/Dasv4, E/Esv3, E/Esv4, ED/Edsv4, EA/Easv4, серия fsv2, Lsv2, MS/MMS и MS/Mmsv2.
-
-Дополнительные сведения см. в статье [Размеры виртуальных машин Linux в Azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Поддержку ускорения сети можно найти в документации по [размерам отдельных виртуальных машин](../virtual-machines/sizes.md) . 
 
 ### <a name="custom-images"></a>Пользовательские образы
 Если вы используете пользовательский образ, а образ поддерживает ускоренную работу в сети, убедитесь, что у вас есть необходимые драйверы для работы с сетевыми адаптерами Mellanox ConnectX-3 и ConnectX-4 LX в Azure.

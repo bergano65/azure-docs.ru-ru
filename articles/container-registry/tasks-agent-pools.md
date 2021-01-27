@@ -4,12 +4,12 @@ description: Настройте выделенный пул вычислений
 ms.topic: article
 ms.date: 10/12/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 94956af14aad2b62e6455f443329bcd3232095c0
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: eeb9a71854f52da5c1a9f4befae93c377ad67b05
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844920"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920313"
 ---
 # <a name="run-an-acr-task-on-a-dedicated-agent-pool"></a>Выполнение задачи записи контроля доступа в выделенном пуле агентов
 
@@ -96,7 +96,7 @@ az acr agentpool update \
 | Направление | Протокол | Источник         | Исходный порт | Назначение          | Порт приемника | Используется    |
 |-----------|----------|----------------|-------------|----------------------|-----------|---------|
 | Исходящие  | TCP      | Виртуальная сеть | Любой         | AzureKeyVault        | 443       | По умолчанию |
-| Исходящие  | TCP      | Виртуальная сеть | Любой         | Хранение              | 443       | По умолчанию |
+| Исходящие  | TCP      | Виртуальная сеть | Любой         | Память              | 443       | По умолчанию |
 | Исходящие  | TCP      | Виртуальная сеть | Любой         | концентратор событий.             | 443       | По умолчанию |
 | Исходящие  | TCP      | Виртуальная сеть | Любой         | AzureActiveDirectory | 443       | По умолчанию |
 | Исходящие  | TCP      | Виртуальная сеть | Любой         | AzureMonitor         | 443       | По умолчанию |
@@ -139,7 +139,7 @@ az acr build \
     --agent-pool myagentpool \
     --image myimage:mytag \
     --file Dockerfile \
-    https://github.com/Azure-Samples/acr-build-helloworld-node.git
+    https://github.com/Azure-Samples/acr-build-helloworld-node.git#main
 ```
 
 ### <a name="automatically-triggered-task"></a>Автоматически активируемая задача
@@ -153,7 +153,7 @@ az acr task create \
     --image myimage:mytag \
     --schedule "0 21 * * *" \
     --file Dockerfile \
-    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git \
+    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git#main \
     --commit-trigger-enabled false
 ```
 

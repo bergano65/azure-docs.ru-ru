@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 3adbf34e4c19a76c2b5b2b1968c7821f37965929
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c72e17e601ebf87b0f344a4723159ae22abc81d1
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965635"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919890"
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Настройка обратного просмотра DNS для размещенных в Azure служб
 
@@ -33,7 +33,7 @@ ms.locfileid: "94965635"
 В Azure DNS вычислительные ресурсы (например, виртуальные машины, масштабируемые наборы виртуальных машин или кластеры Service Fabric) предоставляются с помощью ресурса PublicIpAddress. Обратный просмотр DNS настраивается с помощью свойства ReverseFqdn ресурса PublicIpAddress.
 
 
-Служба приложений Azure пока не поддерживает обратную зону DNS.
+Обратная DNS в настоящее время не поддерживается для службы приложений Azure и шлюза приложений.
 
 ## <a name="validation-of-reverse-dns-records"></a>Проверка записей обратной зоны DNS
 
@@ -249,7 +249,7 @@ Set-AzureService –ServiceName "contosoapp1" –Description "App1 with Reverse 
 
 Техническая возможность непосредственной отправки по электронной почте из развертывания Azure зависит от типа подписки. Независимо от типа подписки корпорация Майкрософт рекомендует использовать доверенные службы ретрансляции для отправки исходящей почты. Дополнительные сведения см. в [обновлении за ноябрь 2017 г. для усиленной безопасности Azure для отправки электронных сообщений](../virtual-network/troubleshoot-outbound-smtp-connectivity.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. [в статье Википедии об обратном просмотре DNS](https://en.wikipedia.org/wiki/Reverse_DNS_lookup).
 <br>

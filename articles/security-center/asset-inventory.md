@@ -8,14 +8,14 @@ ms.author: memildin
 ms.date: 12/22/2020
 ms.service: security-center
 ms.topic: how-to
-ms.openlocfilehash: d5820af1efd91efd79fb2a860d6aad8d2eeed80d
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 5b8d167992e57cd0fae35c57212ea700cd677afa
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740884"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920432"
 ---
-# <a name="explore-and-manage-your-resources-with-asset-inventory"></a>Просмотр ресурсов и управление ими с помощью инвентаризации активов
+# <a name="explore-and-manage-your-resources-with-asset-inventory"></a>Изучение ресурсов и управление ими с помощью инвентаризации активов
 
 Страница инвентаризации ресурсов в Центре безопасности Azure позволяет просматривать состояние безопасности всех ресурсов, подключенных к Центру безопасности. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "97740884"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены|Free|
 |Требуемые роли и разрешения|все пользователи|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
