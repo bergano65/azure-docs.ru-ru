@@ -12,18 +12,18 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 2d6282c527293abdb8b21e0591548cb51e1339a9
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 688bec24cbcd88130470634abff0688ead8005ef
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539666"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881692"
 ---
 # <a name="train-models-with-azure-machine-learning-datasets"></a>Обучение моделей с помощью наборов данных Машинное обучение Azure 
 
 Из этой статьи вы узнаете, как работать с [машинное обучение Azureными наборами данных](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) для обучения моделей машинного обучения.  Наборы данных можно использовать в локальном или удаленном целевом объекте вычислений, не беспокоясь о строках подключения или путях к данным. 
 
-Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) как [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), а также [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
+Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azureными функциями [обучения, такими](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) как [скриптрунконфиг](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), а также [конвейеры и машинное обучение Azure](./how-to-create-machine-learning-pipelines.md).
 
 Если вы не готовы сделать данные доступными для обучения модели, но хотите загрузить данные в записную книжку для просмотра данных, см. статью [изучение данных в наборе](how-to-create-register-datasets.md#explore-data)данных. 
 
@@ -263,7 +263,7 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 * **Ошибка инициализации набора данных: время ожидания готовности точки подключения** истекло: 
-  * Если у вас нет исходящих правил [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview) и используется `azureml-sdk>=1.12.0` , обновление `azureml-dataset-runtime` и его зависимости будут актуальными для конкретной дополнительной версии или если вы используете ее в запуске, воссоздайте среду, чтобы она могла установить последнее исправление с исправлением. 
+  * Если у вас нет исходящих правил [группы безопасности сети](../virtual-network/network-security-groups-overview.md) и используется `azureml-sdk>=1.12.0` , обновление `azureml-dataset-runtime` и его зависимости будут актуальными для конкретной дополнительной версии или если вы используете ее в запуске, воссоздайте среду, чтобы она могла установить последнее исправление с исправлением. 
   * Если вы используете `azureml-sdk<1.12.0` , обновите до последней версии.
   * Если у вас есть правила исходящего трафика NSG, убедитесь, что имеется правило исходящего трафика, разрешающее весь трафик для тега службы `AzureResourceMonitor` .
 
@@ -293,4 +293,4 @@ src.run_config.source_directory_data_store = "workspaceblobstore"
 
 * [Обучение моделей классификации изображений](https://aka.ms/filedataset-samplenotebook) с помощью филедатасетс.
 
-* [Обучение с наборами данных с помощью конвейеров](how-to-create-your-first-pipeline.md).
+* [Обучение с наборами данных с помощью конвейеров](./how-to-create-machine-learning-pipelines.md).

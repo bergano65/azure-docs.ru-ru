@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: c29c043a3af46086751629b31ce68217e7226442
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 30176e2df850e6d2794ab9c1542bcb6a89d8f89f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96355058"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880412"
 ---
 # <a name="best-practices-for-optimal-performance-of-your-azure-database-for-mysql---single-server"></a>Рекомендации по оптимальной производительности базы данных Azure для MySQL — одиночный сервер
 
@@ -46,9 +46,9 @@ ms.locfileid: "96355058"
 
 Для обеспечения производительности базы данных Azure для MySQL рекомендуется выделить достаточно ОЗУ, чтобы рабочий набор находился почти полностью в памяти. 
 
-- Проверьте, используется ли процент использования памяти для достижения [лимитов](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers) с помощью [метрик для сервера MySQL](https://docs.microsoft.com/azure/mysql/concepts-monitoring). 
+- Проверьте, используется ли процент использования памяти для достижения [лимитов](./concepts-pricing-tiers.md) с помощью [метрик для сервера MySQL](./concepts-monitoring.md). 
 - Настройте оповещения по таким числам, чтобы гарантировать, что по мере того, как серверы будут превышены, можно предпринять действия по приглашению для их исправления. В зависимости от определенных ограничений проверьте, масштабируется ли размер SKU базы данных — либо до более высокого размера вычислений, либо до лучшей ценовой категории, что приводит к значительному увеличению производительности. 
-- Увеличение масштаба до тех пор, пока номера производительности больше не будут значительно удалены после операции масштабирования. Сведения о мониторинге метрик экземпляра базы данных см. в разделе [метрики базы данных MySQL](https://docs.microsoft.com/azure/mysql/concepts-monitoring#metrics).
+- Увеличение масштаба до тех пор, пока номера производительности больше не будут значительно удалены после операции масштабирования. Сведения о мониторинге метрик экземпляра базы данных см. в разделе [метрики базы данных MySQL](./concepts-monitoring.md#metrics).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

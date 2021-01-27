@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/17/2020
-ms.openlocfilehash: 0232682661387e635e6ce8bfb5fc6e03301d130c
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 4b7f71b5405708cc1988fafa5ca9c4628fe0d80b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694811"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882405"
 ---
 # <a name="register-and-scan-azure-data-lake-storage-gen2"></a>Регистрация и сканирование Azure Data Lake Storage 2-го поколения
 
@@ -48,7 +48,7 @@ ms.locfileid: "97694811"
 1. Задайте **роль** для **модуля чтения данных большого двоичного объекта хранилища** и введите имя учетной записи Azure зрения в поле **выберите** вход. Затем щелкните **Сохранить**, чтобы назначить эту роль учетной записи Purview.
 
 > [!Note]
-> Дополнительные сведения см. в статье [авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](https://docs.microsoft.com/azure/storage/common/storage-auth-aad)
+> Дополнительные сведения см. в статье [авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](../storage/common/storage-auth-aad.md)
 
 #### <a name="account-key"></a>Ключ учетной записи
 

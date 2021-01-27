@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: 67c20823d1f80360b2ab23dc3f208673d36a7374
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: dd7b19a2c9e872b811c1aab6e504accb7de383b2
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742222"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896483"
 ---
 # <a name="deployment-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Проблемы развертывания для облачных служб Azure (классическая модель): часто задаваемые вопросы
 
@@ -52,7 +52,7 @@ ms.locfileid: "98742222"
 
 Вы также можете отслеживание текущего использования или квоты подписки на портале: портал Azure => Subscriptions => \<appropriate subscription>   => "использование + квота".
 
-Информацию об использовании ресурсов можно также получить через API выставления счетов Azure. См. раздел [API использования ресурсов Azure (предварительная версия)](../cost-management-billing/manage/usage-rate-card-overview.md#azure-resource-usage-api-preview).
+Информацию об использовании ресурсов можно также получить через API выставления счетов Azure. См. [Обзор API потребления Azure](../cost-management-billing/manage/consumption-api-overview.md).
 
 ## <a name="how-can-i-change-the-size-of-a-deployed-cloud-service-vm-without-redeploying-it"></a>Как изменить размер виртуальной машины развернутой облачной службы без ее повторного развертывания?
 Нельзя изменить размер виртуальной машины развернутой облачной службы без ее повторного развертывания. Размер ВМ встроен в CSDEF, который может быть обновлен только путем повторного развертывания.

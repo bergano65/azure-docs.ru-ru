@@ -3,19 +3,19 @@ title: Метод Translator Бреаксентенце
 titleSuffix: Azure Cognitive Services
 description: Метод Translator Бреаксентенце определяет положение границ предложения в фрагменте текста.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 08/06/2020
-ms.author: swmachan
-ms.openlocfilehash: 27069cf38da2567a3af3ed0fb65baead43665186
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.author: lajanuar
+ms.openlocfilehash: 2da614fe829d0aa82bfa57337baf44491993c68f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369483"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895549"
 ---
 # <a name="translator-30-breaksentence"></a>Переводчик 3,0: Бреаксентенце
 
@@ -33,10 +33,10 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 В таблице ниже приведены параметры, которые передаются в строке запроса.
 
-| Параметр запроса | Description |
+| Параметр запроса | Описание |
 | -------| ----------- |
 | api-version <img width=200/>   | **Обязательный параметр запроса**.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`. |
-| Язык | **Необязательный параметр запроса**.<br/>Тег языка, определяющий язык входного текста. Если код не указан, будет применено автоматическое распознавание языка. |
+| язык | **Необязательный параметр запроса**.<br/>Тег языка, определяющий язык входного текста. Если код не указан, будет применено автоматическое распознавание языка. |
 | скрипт    | **Необязательный параметр запроса**.<br/>Тег набора символов, определяющий набор символов, используемый во входном тексте. Если набор символов не указан, предполагается заданный для языка набор символов по умолчанию.  | 
 
 Заголовки запроса:

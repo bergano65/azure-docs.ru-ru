@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 03/11/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 562ea5e0e9e4851ed59bd3ef917be2f9c48cd2a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8454c5a5bb5b44d2a60ae0095a9b82a19ed27c8d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86185557"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896652"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>Перемещение учетной записи службы автоматизации Azure в другую подписку
 
@@ -41,7 +41,7 @@ ms.locfileid: "86185557"
 
     ![Снимок экрана: удаление ресурсов компонентов на портале Azure](../media/move-account/delete-solutions.png)
 
-Кроме того, ресурсы можно удалить с помощью командлета [Remove-AzResource](/powershell/module/Az.Resources/Remove-AzResource?view=azps-3.7.0).
+Кроме того, ресурсы можно удалить с помощью командлета [Remove-AzResource](/powershell/module/Az.Resources/Remove-AzResource).
 
 ```azurepowershell-interactive
 $workspaceName = <myWorkspaceName>
@@ -80,7 +80,7 @@ Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -Reso
 
     ![Снимок экрана: страница "Группа действий"](../media/move-account/delete-action-group.png)
 
-Кроме того, группу действий можно удалить с помощью командлета [Remove-AzActionGroup](/powershell/module/az.monitor/remove-azactiongroup?view=azps-3.7.0).
+Кроме того, группу действий можно удалить с помощью командлета [Remove-AzActionGroup](/powershell/module/az.monitor/remove-azactiongroup).
 
 ```azurepowershell-interactive
 Remove-AzActionGroup -ResourceGroupName <myResourceGroup> -Name StartStop_VM_Notification

@@ -1,5 +1,5 @@
 ---
-title: Создание входных данных задания Служб мультимедиа Azure из URL-адреса HTTPS | Документация Майкрософт
+title: Создание входных данных задания служб мультимедиа Azure из URL-адреса HTTPS
 description: В этом разделе показано, как создать входные данные задания служб мультимедиа Azure из URL-адреса HTTPS.
 services: media-services
 documentationcenter: ''
@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: e440e4393065d2bc1cad1a96b4f8c975624faa11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b71262b57e9e07c58eb6b3f6e0506151063d77d5
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295518"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895362"
 ---
 # <a name="create-a-job-input-from-an-https-url"></a>Создание входных данных задания из URL-адреса HTTPS
 
@@ -37,6 +37,6 @@ ms.locfileid: "89295518"
 
 См. статью о [кодах ошибок](/rest/api/media/jobs/get#joberrorcode).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md).

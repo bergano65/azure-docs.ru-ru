@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: alzam
-ms.openlocfilehash: 028250e25f4d67628c08970e25b4621e78526b6a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb0291b18952efc643de18e111154ebe58f041af
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440826"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880090"
 ---
 # <a name="remote-work-using-azure-vpn-gateway-point-to-site"></a>Удаленная работа с использованием VPN-шлюза Azure "точка — сеть"
 
@@ -30,7 +30,7 @@ ms.locfileid: "91440826"
 
 В таблице ниже показаны клиентские операционные системы и доступные для них параметры проверки подлинности. Было бы полезно выбрать метод проверки подлинности на основе уже используемой клиентской ОС. Например, выберите Опенвпн с проверкой подлинности на основе сертификата, если у вас есть сочетание клиентских операционных систем, к которым необходимо подключиться. Кроме того, обратите внимание, что VPN типа "точка — сеть" поддерживается только для VPN-шлюзов на основе маршрутов.
 
-![Снимок экрана, на котором показаны клиентские операционные системы и доступные варианты проверки подлинности.](./media/working-remotely-support/ostable.png "OS")
+![Снимок экрана, на котором показаны клиентские операционные системы и доступные варианты проверки подлинности.](./media/working-remotely-support/ostable.png "Операционная система")
 
 ## <a name="scenario-1---users-need-access-to-resources-in-azure-only"></a><a name="scenario1"></a>Сценарий 1. пользователям требуется доступ к ресурсам только в Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "91440826"
 4. Настройте локальное устройство для подключения к шлюзу виртуальной сети Azure.
 5. Скачайте профиль "точка — сеть" из портал Azure и распространите на клиенты.
 
-Чтобы узнать, как настроить туннель VPN типа "сеть — сеть", см. [эту ссылку](vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+Чтобы узнать, как настроить туннель VPN типа "сеть — сеть", см. [эту ссылку](./tutorial-site-to-site-portal.md).
 
 ## <a name="faq-for-native-azure-certificate-authentication"></a><a name="faqcert"></a>Часто задаваемые вопросы о собственной аутентификации Azure на основе сертификата
 

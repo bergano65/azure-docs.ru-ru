@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: ac9a1b43ba4ffb537afd658c84edb48ed59a3694
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a84e4e767092a1507ef0608c21ff1896cb1dde0d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683488"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880950"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "98683488"
 Конвейеры машинного обучения могут использовать упомянутые выше методы обучения. Конвейеры скорее предназначены для создания рабочего процесса, поэтому они охватывают не только обучение моделей. В конвейере можно обучить модель с помощью автоматического машинного обучения или конфигураций запуска.
 
 * [Что такое конвейеры Машинного обучения Azure?](concept-ml-pipelines.md)
-* [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](how-to-create-your-first-pipeline.md)
+* [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](./how-to-create-machine-learning-pipelines.md)
 * [Руководство. Создание конвейеров Машинного обучения Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md)
 * [Примеры. Примеры Jupyter Notebook для конвейеров машинного обучения](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 * [Примеры. Конвейер с автоматизированным машинным обучением](https://aka.ms/pl-automl)
@@ -141,6 +141,6 @@ ms.locfileid: "98683488"
 
 Вы можете использовать расширение VS Code для запуска заданий обучения и управления ими. Дополнительные сведения см. в разделе [руководство по управлению ресурсами VS Code](how-to-manage-resources-vscode.md#experiments) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить обучающий запуск](how-to-set-up-training-targets.md).

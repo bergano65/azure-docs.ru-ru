@@ -3,12 +3,12 @@ title: Интерактивная аналитика видео на IoT Edge ч
 description: В этой статье содержатся ответы на часто задаваемые вопросы о службе Live Video Analytics на IoT Edge.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: f9ef26b9b64bd8a0bad7c83960f2d235ed6461cb
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 0cb378bf614582070dd1bdd0a11706b26437af53
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762883"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880056"
 ---
 # <a name="live-video-analytics-on-iot-edge-faq"></a>Интерактивная аналитика видео на IoT Edge часто задаваемые вопросы
 
@@ -230,7 +230,7 @@ microsoft.azure.media.live_video_analytics.extensibility.grpc.v1
 
 **Можно ли использовать Azure Monitor для просмотра работоспособности, метрик и производительности графов мультимедиа в облаке или на границе?**
 
-Да, мы поддерживаем этот подход. Дополнительные сведения см. в разделе [Общие сведения о метриках Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics).
+Да, мы поддерживаем этот подход. Дополнительные сведения см. в разделе [Общие сведения о метриках Azure Monitor](../../azure-monitor/platform/data-platform-metrics.md).
 
 **Существуют ли инструменты, облегчающие мониторинг модуля IoT Edge служб мультимедиа?**
 

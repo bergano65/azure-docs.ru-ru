@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 98f8554d6313147c03d4a0bec74e36043cdce342
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4740870dd2d9748aad55150ce1946e3eb666619
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87285277"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878364"
 ---
 # <a name="azcopy-login"></a>azcopy login
 
@@ -37,7 +37,7 @@ azcopy login [flags]
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
 - [Начало работы с AzCopy](storage-use-azcopy-v10.md)
-- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](./storage-use-azcopy-v10.md#transfer-data)
 - [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -97,7 +97,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert --applicati
 
 `--certificate-path` является обязательным при выполнении проверки подлинности субъекта-службы на основе сертификата.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 **--AAD — строка конечной точки** , используемая Azure Active Directoryой конечной точкой. Значение по умолчанию ( https://login.microsoftonline.com) является верным для глобального облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. Не требуется для Управляемое удостоверение службы.
 
@@ -127,6 +127,6 @@ azcopy login --service-principal --certificate-path /path/to/my/cert --applicati
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
 |--Trusted-Microsoft-суффикс строка   |Указывает дополнительные суффиксы домена, в которых могут быть отправлены Azure Active Directory токены входа.  Значение по умолчанию — "*. Core.Windows.NET;*". core.chinacloudapi.cn; *. Core.cloudapi.de;*. core.usgovcloudapi.net ". Все перечисленные здесь значения добавляются к значениям по умолчанию. В целях безопасности следует размещать только Microsoft Azureные домены. Несколько записей разделяются точкой с запятой.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [azcopy](storage-ref-azcopy.md)

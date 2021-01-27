@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 349456b0a4de65520dd633efe0573d24ea1c89c4
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: f945699256b4de9bd87ee4ab7500268302e93089
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409031"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880175"
 ---
 # <a name="security-control-secure-configuration"></a>Управление безопасностью: безопасная конфигурация
 
@@ -88,9 +88,9 @@ ms.locfileid: "94409031"
 
 - [Создание виртуальной машины Windows на портале Azure](../../virtual-machines/windows/quick-create-portal.md)
 
-- [Сведения о том, как скачать шаблон виртуальной машины](../../virtual-machines/windows/download-template.md)
+- [Сведения о том, как скачать шаблон виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template)
 
-- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](../../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
+- [Пример сценария для отправки VHD в Azure и создания виртуальной машины](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 
 ## <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
 
@@ -118,7 +118,7 @@ ms.locfileid: "94409031"
 
 - [Настройка Azure RBAC](../../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-- [Обзор коллекции общих образов](../../virtual-machines/windows/shared-image-galleries.md)
+- [Общие сведения о коллекции общих образов](../../virtual-machines/shared-image-galleries.md)
 
 ## <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
 

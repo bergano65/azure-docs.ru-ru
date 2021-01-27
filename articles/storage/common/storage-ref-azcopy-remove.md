@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: d79b647d216fe28241e5891def574ab598304828
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d28a20a6afc78939491e56f46a32782b4c0844cc
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078226"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879009"
 ---
 # <a name="azcopy-remove"></a>azcopy remove
 
@@ -28,7 +28,7 @@ azcopy remove [resourceURL] [flags]
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
 - [Начало работы с AzCopy](storage-use-azcopy-v10.md)
-- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](storage-use-azcopy-blobs.md)
+- [Перенос данных с помощью AzCopy и хранилища BLOB-объектов](./storage-use-azcopy-v10.md#transfer-data)
 - [Перенос данных с помощью AzCopy и хранилища файлов](storage-use-azcopy-files.md)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
@@ -85,11 +85,11 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/file]?[SA
 azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory]?[SAS]"
 ```
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Варианты
 
 **--Delete — строка моментальных снимков** по умолчанию операция удаления завершается ошибкой, если BLOB-объект имеет моментальные снимки. Укажите `include` , чтобы удалить корневой BLOB-объект и все его моментальные снимки. Кроме того, можно указать `only` , чтобы удалить только моментальные снимки, но сохранив корневой большой двоичный объект.
 
-**--Строка исключения-путь** исключает эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Например: `myFolder;myFolder/subDirName/file.pdf`
+**--Строка исключения-путь** исключает эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Пример: `myFolder;myFolder/subDirName/file.pdf`
 
 **--исключение-шаблон** строка исключает файлы, имя которых совпадает со списком шаблонов. Например: `*.jpg` ; `*.pdf` ;`exactName`
 
@@ -97,9 +97,9 @@ azcopy rm "https://[account].dfs.core.windows.net/[container]/[path/to/directory
 
 **--**   Справка по удалению.
 
-**--include строка-Path** включает только эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Например: `myFolder;myFolder/subDirName/file.pdf`
+**--include строка-Path** включает только эти пути при удалении. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути. Пример: `myFolder;myFolder/subDirName/file.pdf`
 
-**--include — строка шаблона** включает только файлы, имена которых совпадают с списком шаблонов. Например: * `.jpg` ;* `.pdf` ;`exactName`
+**--include — строка шаблона** включает только файлы, имена которых совпадают с списком шаблонов. Например: *`.jpg` ;* `.pdf` ;`exactName`
 
 **--List-of-Files** определяет расположение файла, который содержит список удаляемых файлов и каталогов. Относительные пути должны быть разделены разрывами строк, а пути не должны быть закодированы в виде URL-адресов. 
 

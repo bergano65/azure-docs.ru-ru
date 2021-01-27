@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: ba3005b1ec36e4b2406084368a3aabd778c17716
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 27af230f8fa157f76865bd38a48c17640491d7db
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449430"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896195"
 ---
 # <a name="manage-an-azure-stack-edge-pro-gpu-device-via-windows-powershell"></a>Управление устройством GPU Azure Stack с помощью Windows PowerShell
 
@@ -424,6 +424,116 @@ DEBUG 2020-05-14T20:42:14Z: loop process - 0 events, 0.000s
 
 [10.100.10.10]: PS>
 ```
+
+### <a name="change-memory-processor-limits-for-kubernetes-worker-node"></a>Изменение памяти, ограничение на число процессоров для рабочего узла Kubernetes
+
+Чтобы изменить ограничения памяти или процессора для рабочего узла Kubernetes, выполните следующие действия.
+
+1. [Подключитесь к интерфейсу PowerShell устройства](#connect-to-the-powershell-interface).
+1. Чтобы получить текущие ресурсы для рабочего узла и параметров роли, выполните следующую команду:
+
+    `Get-AzureDataBoxEdgeRole`
+
+    Ниже приведен пример выходных данных. Обратите внимание на значения параметров `Name` и `Compute` в `Resources` разделе. `MemoryInBytes` и `ProcessorCount` запишите текущее значение объема памяти и процессоров для рабочего узла Kubernetes.  
+
+    ```powershell
+    [10.100.10.10]: PS>Get-AzureDataBoxEdgeRole
+    ImageDetail                : Name:mcr.microsoft.com/azureiotedge-agent
+                                 Tag:1.0
+                                 PlatformType:Linux
+    EdgeDeviceConnectionString :
+    IotDeviceConnectionString  :
+    HubHostName                : ase-srp-007.azure-devices.net
+    IotDeviceId                : srp-007-storagegateway
+    EdgeDeviceId               : srp-007-edge
+    Version                    :
+    Id                         : 6ebeff9f-84c5-49a7-890c-f5e05520a506
+    Name                       : IotRole
+    Type                       : IOT
+    Resources                  : Compute:
+                                 MemoryInBytes:34359738368
+                                 ProcessorCount:12
+                                 VMProfile:
+    
+                                 Storage:
+                                 EndpointMap:
+                                 EndpointId:c0721210-23c2-4d16-bca6-c80e171a0781
+                                 TargetPath:mysmbedgecloudshare1
+                                 Name:mysmbedgecloudshare1
+                                 Protocol:SMB
+    
+                                 EndpointId:6557c3b6-d3c5-4f94-aaa0-6b7313ab5c74
+                                 TargetPath:mysmbedgelocalshare
+                                 Name:mysmbedgelocalshare
+                                 Protocol:SMB
+                                 RootFileSystemStorageSizeInBytes:0
+    
+    HostPlatform               : KubernetesCluster
+    State                      : Created
+    PlatformType               : Linux
+    HostPlatformInstanceId     : 994632cb-853e-41c5-a9cd-05b36ddbb190
+    IsHostPlatformOwner        : True
+    IsCreated                  : True    
+    [10.100.10.10]: PS>
+    ```
+    
+1. Чтобы изменить значения памяти и процессоров для рабочего узла, выполните следующую команду:
+
+    Set-AzureDataBoxEdgeRoleCompute-Name <Name value from the output of Get-AzureDataBoxEdgeRole> -Memory <Value in Bytes> -ProcessorCount <нет. ядер>
+
+    Ниже приведен пример выходных данных. 
+    
+    ```powershell
+    [10.100.10.10]: PS>Set-AzureDataBoxEdgeRoleCompute -Name IotRole -MemoryInBytes 32GB -ProcessorCount 16
+    
+    ImageDetail                : Name:mcr.microsoft.com/azureiotedge-agent
+                                 Tag:1.0
+                                 PlatformType:Linux
+    
+    EdgeDeviceConnectionString :
+    IotDeviceConnectionString  :
+    HubHostName                : ase-srp-007.azure-devices.net
+    IotDeviceId                : srp-007-storagegateway
+    EdgeDeviceId               : srp-007-edge
+    Version                    :
+    Id                         : 6ebeff9f-84c5-49a7-890c-f5e05520a506
+    Name                       : IotRole
+    Type                       : IOT
+    Resources                  : Compute:
+                                 MemoryInBytes:34359738368
+                                 ProcessorCount:16
+                                 VMProfile:
+    
+                                 Storage:
+                                 EndpointMap:
+                                 EndpointId:c0721210-23c2-4d16-bca6-c80e171a0781
+                                 TargetPath:mysmbedgecloudshare1
+                                 Name:mysmbedgecloudshare1
+                                 Protocol:SMB
+    
+                                 EndpointId:6557c3b6-d3c5-4f94-aaa0-6b7313ab5c74
+                                 TargetPath:mysmbedgelocalshare
+                                 Name:mysmbedgelocalshare
+                                 Protocol:SMB
+    
+                                 RootFileSystemStorageSizeInBytes:0
+    
+    HostPlatform               : KubernetesCluster
+    State                      : Created
+    PlatformType               : Linux
+    HostPlatformInstanceId     : 994632cb-853e-41c5-a9cd-05b36ddbb190
+    IsHostPlatformOwner        : True
+    IsCreated                  : True
+    
+    [10.100.10.10]: PS>    
+    ```
+
+При изменении использования памяти и процессора следуйте приведенным ниже рекомендациям.
+
+- Объем памяти по умолчанию составляет 25% от спецификации устройства.
+- Число процессоров по умолчанию составляет 30% от спецификации устройства.
+- При изменении значений количества памяти и процессоров рекомендуется изменять значения от 15% до 65% памяти устройства и числа процессоров. 
+- Мы рекомендуем использовать верхний предел, равный 65%, чтобы иметь достаточно ресурсов для системных компонентов. 
 
 ## <a name="connect-to-bmc"></a>Подключение к BMC
 

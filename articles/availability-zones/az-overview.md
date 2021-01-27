@@ -4,15 +4,15 @@ description: Сведения о регионах и Зоны доступнос
 author: cynthn
 ms.service: azure
 ms.topic: article
-ms.date: 08/27/2020
+ms.date: 01/26/2021
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: b19f5c3ae0666a0b0e9b0255f848f5924d9d3910
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 0b67f113fb8ab3835419a75697e60a732d4ee390
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874745"
+ms.locfileid: "98896059"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Регионы и Зоны доступности в Azure
 
@@ -129,12 +129,12 @@ ms.locfileid: "98874745"
 > | Виртуальные машины: IP-адреса уровня экземпляра  | Azure Site Recovery                               | Виртуальные машины: HBv1-Series                        |
 > | Виртуальные машины: зарезервированный IP-адрес         | Azure Stream Analytics                            | Виртуальные машины: HBv2-Series                        |
 > | Виртуальная сеть                       | Azure Synapse Analytics                           | Виртуальные машины: HCv1-Series                        |
-> | VPN-шлюз                           | Пакетная служба Azure                                             | Виртуальные машины: Серия H                           |
+> | VPN-шлюз                           | Пакетная служба                                             | Виртуальные машины: Серия H                           |
 > |                                       | Облачные службы: серия M                          | Виртуальные машины: LSv2-Series                        |
 > |                                       | Экземпляры контейнеров                               | Виртуальные машины: Mv2-Series                         |
 > |                                       | Реестр контейнеров                                | Виртуальные машины: NCv3-Series                        |
 > |                                       | Фабрика данных                                      | Виртуальные машины: NDv2-Series                        |
-> |                                       | Сетка событий Azure                                        | Виртуальные машины: NVv3-Series                        |
+> |                                       | Сетка событий                                        | Виртуальные машины: NVv3-Series                        |
 > |                                       | HDInsight                                         | Виртуальные машины: NVv4-Series                        |> 
 > |                                       | Logic Apps                                        | Виртуальные машины: SAP HANA на крупных экземплярах Azure  |
 > |                                       | Службы мультимедиа                                    |                                                      |

@@ -9,12 +9,12 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: ff023ad98c7ffa269223b5d0b4a1cecc5fde1feb
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d7d438b369c863660a032f101e466b6fadf639fa
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410221"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879720"
 ---
 # <a name="azure-encryption-overview"></a>Общие сведения о шифровании в Azure
 
@@ -181,7 +181,7 @@ VPN-подключения типа "точка — сеть" позволяют
 
 Дополнительные сведения см. в разделе:
 
-[Создание подключения типа "сеть — сеть" на портале Azure](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+[Создание подключения типа "сеть — сеть" на портале Azure](../../vpn-gateway/tutorial-site-to-site-portal.md)
 
 [Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell](../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
 

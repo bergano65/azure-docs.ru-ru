@@ -2,19 +2,19 @@
 title: Просмотр результатов тестов системы и развертывания — Custom Translator
 titleSuffix: Azure Cognitive Services
 description: Если обучение прошло успешно, ознакомьтесь с тестами системы, чтобы проанализировать результаты обучения. Если вы удовлетворены результатами обучения, разместите запрос на развертывание обученной модели.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 542f62f04adc7d4858e4b4621b0ae85e906434ad
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: cae2c95e56312c58d396d1e578f4677ce2b14aa2
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369330"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895940"
 ---
 # <a name="view-system-test-results"></a>Просмотр результатов теста системы
 
@@ -100,7 +100,7 @@ ms.locfileid: "94369330"
 >[!Note]
 >При выборе **Не развернуто** во всех регионах отменяется развертывание модели для всех регионов и модель переводится в неразвернутое состояние. После этого модель недоступна для использования.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Майкрософт версии 3](../reference/v3-0-translate.md?tabs=curl).
 - Узнайте, как [настроить параметры](how-to-manage-settings.md) для предоставления общего доступа к рабочей области и управлять ключом подписки.

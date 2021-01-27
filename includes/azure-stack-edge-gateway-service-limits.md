@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 02/07/2019
 ms.author: alkohli
-ms.openlocfilehash: 1f1f4a97e3955c2cc7181eddbc50909b61dd092a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c4f479c190d9dd02a4340a64c09e7b5382deea2f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96467606"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901159"
 ---
 - Учетная запись хранения должна быть физически ближе всего к региону, где развернуто устройство (может отличаться от места развертывания службы).
-- Перемещение ресурса Azure Stack ребра в другую подписку или группу ресурсов не поддерживается. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
+- Перемещение ресурса Azure Stack ребра в другую подписку или группу ресурсов не поддерживается. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../articles/azure-resource-manager/management/move-resource-group-and-subscription.md).

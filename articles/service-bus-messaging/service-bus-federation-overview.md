@@ -3,12 +3,12 @@ title: Репликация сообщений и Федерация между 
 description: В этой статье представлен обзор репликации событий и Федерации между регионами с помощью служебной шины Azure.
 ms.topic: article
 ms.date: 12/12/2020
-ms.openlocfilehash: d5153820feab8b7901356838ec435d992aa82116
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: e47f633fcd9248eab6f47936aa7c45877decc1fe
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803278"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880833"
 ---
 # <a name="message-replication-and-cross-region-federation"></a>Репликация сообщений и федерация между регионами
 
@@ -150,7 +150,7 @@ az servicebus topic subscription rule create --resource-group myresourcegroup \
 
 Функции Azure Кроме того позволяют задачам репликации напрямую интегрироваться с виртуальными сетями и [конечными точками службы](../virtual-network/virtual-network-service-endpoints-overview.md) Azure для всех служб обмена сообщениями Azure, и они легко интегрируются с [Azure Monitor](../azure-monitor/overview.md).
 
-Что важнее всего, функции Azure имеют предварительно созданные, масштабируемые триггеры и выходные привязки для [концентраторов событий Azure](../azure-functions/functions-bindings-service-bus.md), [центра Интернета вещей](../azure-functions/functions-bindings-event-iot.md)Azure, [служебной шины Azure, службы](../azure-functions/functions-bindings-service-bus.md)" [Сетка событий Azure](../azure-functions/functions-bindings-event-grid.md)" и [хранилища очередей Azure](/azure/azure-functions/functions-bindings-storage-queue), пользовательские расширения для [RabbitMQ](https://github.com/azure/azure-functions-rabbitmq-extension)и [Apache Kafka](https://github.com/azure/azure-functions-kafka-extension). Большинство триггеров динамически адаптируются к потребностям пропускной способности путем масштабирования количества параллельно выполняемых экземпляров на основе документированных метрик. 
+Что важнее всего, функции Azure имеют предварительно созданные, масштабируемые триггеры и выходные привязки для [концентраторов событий Azure](../azure-functions/functions-bindings-service-bus.md), [центра Интернета вещей](../azure-functions/functions-bindings-event-iot.md)Azure, [служебной шины Azure, службы](../azure-functions/functions-bindings-service-bus.md)" [Сетка событий Azure](../azure-functions/functions-bindings-event-grid.md)" и [хранилища очередей Azure](../azure-functions/functions-bindings-storage-queue.md), пользовательские расширения для [RabbitMQ](https://github.com/azure/azure-functions-rabbitmq-extension)и [Apache Kafka](https://github.com/azure/azure-functions-kafka-extension). Большинство триггеров динамически адаптируются к потребностям пропускной способности путем масштабирования количества параллельно выполняемых экземпляров на основе документированных метрик. 
 
 При использовании плана потребления функций Azure готовые триггеры могут даже масштабироваться до нуля, а для репликации нет доступных сообщений. Это означает отсутствие затрат на поддержание готовности к масштабированию. Ключевым недостатком использования плана потребления является то, что задержка задач репликации, "Пробуждение" из этого состояния, значительно выше, чем планы размещения, в которых работает инфраструктура.  
 
@@ -167,4 +167,4 @@ az servicebus topic subscription rule create --resource-group myresourcegroup \
 - [Маршрутизация событий в концентраторы событий Azure](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/ServiceBusCopyToEventHub)
 - [Получение событий из концентраторов событий Azure](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config/EventHubCopyToServiceBus)
 
-[1]: ./media/service-bus-auto-forwarding/IC628632.gif 
+[1]: ./media/service-bus-auto-forwarding/IC628632.gif

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 52cb701312f598b1b8492226709a7d2767db9600
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5c5166785ad8c82c114fb7193cd49716536b408
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187274"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896602"
 ---
 # <a name="start-a-runbook-in-azure-automation"></a>Запуск модуля Runbook в службе автоматизации Azure
 
@@ -145,13 +145,13 @@ jsmith
 
 ## <a name="start-a-runbook-with-powershell"></a>Запуск модуля Runbook с помощью PowerShell
 
-Чтобы запустить последовательность runbook с помощью Windows PowerShell, воспользуйтесь командлетом [Start-AzureRmAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0). В следующем примере кода будет запущена последовательность runbook с именем **Test-Runbook**.
+Чтобы запустить последовательность runbook с помощью Windows PowerShell, воспользуйтесь командлетом [Start-AzureRmAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook). В следующем примере кода будет запущена последовательность runbook с именем **Test-Runbook**.
 
 ```azurepowershell-interactive
 Start-AzAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -ResourceGroupName "ResourceGroup01"
 ```
 
-Командлет `Start-AzAutomationRunbook` возвращает объект задания, с помощью которого можно отслеживать состояние runbook после запуска. Затем этот объект задания можно указать в командлете [Get-AzureAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0), чтобы определить состояние задания, и в командлете Get-[AzureAutomationJobOutput](/powershell/module/az.automation/get-azautomationjoboutput?view=azps-3.7.0), чтобы получить выходные данные. В следующем примере будет запущена последовательность runbook с именем **Test-Runbook**, а после ее завершения выводится результат.
+Командлет `Start-AzAutomationRunbook` возвращает объект задания, с помощью которого можно отслеживать состояние runbook после запуска. Затем этот объект задания можно указать в командлете [Get-AzureAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob), чтобы определить состояние задания, и в командлете Get-[AzureAutomationJobOutput](/powershell/module/az.automation/get-azautomationjoboutput), чтобы получить выходные данные. В следующем примере будет запущена последовательность runbook с именем **Test-Runbook**, а после ее завершения выводится результат.
 
 ```azurepowershell-interactive
 $runbookName = "Test-Runbook"

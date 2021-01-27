@@ -3,19 +3,19 @@ title: Ограничения запросов — переводчик
 titleSuffix: Azure Cognitive Services
 description: В этой статье перечислены ограничения запросов для транслятора. Плата взимается на основе количества знаков, а не частоты запроса с ограничением 5000 знаков на запрос. Ограничения знаков определяются подпиской, а F0 ограничивается 2 миллионами знаков в час.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.author: swmachan
-ms.openlocfilehash: 8841c55d8f276f048db53a531bd2e9218e498b34
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: 2bc2c1361c7d2f73ff8a67e906a6db725f669d52
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016502"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895413"
 ---
 # <a name="request-limits-for-translator"></a>Ограничения запросов для переводчика
 

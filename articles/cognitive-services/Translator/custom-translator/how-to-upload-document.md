@@ -2,19 +2,19 @@
 title: Отправка документа с помощью Custom Translator
 titleSuffix: Azure Cognitive Services
 description: Функция отправки документов отправляет параллельные документы (два документа, где один из них является источником, а другой — переводом) в службу.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 08/17/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 8597b3e4ffab44672e88374010fa829211fbc18b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83cce31d3eee9b5cca7b54e996e41a270fec0030
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88507335"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896400"
 ---
 # <a name="upload-a-document"></a>Отправка документа
 
@@ -35,7 +35,7 @@ ms.locfileid: "88507335"
 
 2.  В диалоговом окне заполните следующие сведения:
 
-    a.  Типы документа:
+    а.  Типы документа:
 
     -  Обучающий. Этот документ будет использоваться для обучения набора.
     -  Настраиваемый. Этот документ будет использоваться для настройки набора.
@@ -84,7 +84,7 @@ ms.locfileid: "88507335"
 
 3. Щелкните любую запись истории отправок. На странице сведений об истории отправок вы можете просматривать файлы, переданные как часть отправки, состояние отправки файла, язык файла и сообщения об ошибке (при наличии каких-либо ошибок во время отправки).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь со списком извлеченных предложений [на странице сведений о документе](how-to-view-document-details.md).
 - Сведения об обучении модели см. в [этой статье](how-to-train-model.md).

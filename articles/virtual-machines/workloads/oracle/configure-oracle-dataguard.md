@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: cc7579b48307325e25d8914ea4c722a9641883f3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 303244d153877ba71796ff1f075e2e58a5084469
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952154"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880327"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
@@ -22,7 +22,7 @@ Azure CLI используется для создания ресурсов Azur
 Прежде чем начать, убедитесь, что установлен интерфейс командной строки Azure CLI. Дополнительные сведения см. в разделе [руководства по установке Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
-### <a name="assumptions"></a>Предположения
+### <a name="assumptions"></a>Допущения
 
 Чтобы установить Oracle Data Guard, необходимо создать две виртуальные машины Azure в одной группе доступности:
 
@@ -693,8 +693,8 @@ SQL>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание полной среды Linux с помощью Azure CLI 2.0](../../linux/create-cli-complete.md)
 
-[Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).
+[Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](https://github.com/Azure-Samples/azure-cli-samples/tree/master/virtual-machine).

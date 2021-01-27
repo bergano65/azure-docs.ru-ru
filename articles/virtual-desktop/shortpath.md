@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: bfcd8b3c482b4d429a9e3a4d7bc75e27ada63a98
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: c1cdafe2929502293aada32dbae06e342761862b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134404"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98876704"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>Виртуальный рабочий стол RDP Шортпас (Предварительная версия)
 
@@ -58,7 +58,7 @@ UDP-порт 3390 используется только для входящег�
 Для поддержки протокола RDP Шортпас клиенту виртуальных рабочих столов Windows требуется прямая информация об узле сеансов. Вы можете получить прямую информацию, используя одну из следующих технологий:
 
 * [Частный пиринг ExpressRoute](../expressroute/expressroute-circuit-peerings.md)
-* [VPN типа "сеть — сеть" (на основе IPsec)](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+* [VPN типа "сеть — сеть" (на основе IPsec)](../vpn-gateway/tutorial-site-to-site-portal.md)
 * [VPN типа "точка — сеть" (на основе IPsec)](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md)
 * [Присвоение общедоступного IP-адреса](../virtual-network/virtual-network-public-ip-address.md)
 

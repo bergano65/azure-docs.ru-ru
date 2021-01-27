@@ -39,7 +39,7 @@
     - name: Создание пользовательского десериализатора .NET
       href: custom-deserializer.md
     - name: Создание задания IoT Edge
-      href: /azure/iot-edge/tutorial-deploy-stream-analytics?view=iotedge-2018-06
+      href: ../iot-edge/tutorial-deploy-stream-analytics.md?view=iotedge-2018-06
       maintainContext: true
 - name: Примеры
   items:

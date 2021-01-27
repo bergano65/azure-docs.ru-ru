@@ -2,19 +2,19 @@
 title: Необходимо перенести рабочую область и проекты Microsoft Translator Hub? — Custom Translator
 titleSuffix: Azure Cognitive Services
 description: В этой статье объясняется, как перенести рабочую область и проекты центра в Azure Cognitive Services настраиваемого транслятора.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 05/26/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.topic: conceptual
-ms.openlocfilehash: 64c449bdefe6fb067a7c0e26b155b58b6f00c399
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 89658ce88b4f1ac9d5bacac7bd45511b4aa0a1be
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368293"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895717"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -80,7 +80,7 @@ ms.locfileid: "94368293"
 
 4. На следующей странице выберите любой из этих двух параметров:
 
-    a. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
+    а. Только развернутые учебные курсы: при выборе этого параметра будут перенесены только развернутые системы и связанные документы.
 
     b. Все успешные учебные курсы: при выборе этого параметра будут перенесены все успешные учебные курсы и связанные документы.
 
@@ -143,7 +143,7 @@ ms.locfileid: "94368293"
 
 Если вы являетесь сообществом или организацией, работающими над созданием новой языковой системы для переводчика, обратитесь к [custommt@microsoft.com](mailto:custommt@microsoft.com) для получения дополнительных сведений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обучение модели](how-to-train-model.md).
 - Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](../reference/v3-0-translate.md?tabs=curl).

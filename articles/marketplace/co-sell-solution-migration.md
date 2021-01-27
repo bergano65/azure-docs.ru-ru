@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 12/07/2020
-ms.openlocfilehash: 0114c75d99d79041631e5078deb33f77863dc35a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 84d98eedb3ea6f3faaeaecf832811f9f4c78c7c5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043784"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880361"
 ---
 # <a name="migration-of-co-sell-solutions-from-ocp-gtm-to-the-commercial-marketplace"></a>Перенос решений для совместной продажи из OCP GTM в коммерческий рынок
 
@@ -44,7 +44,7 @@ ms.locfileid: "98043784"
 
 Перед импортом решений из OCP GTM выполните следующие действия:
 
-1. Посетите [список издателей](https://partner.microsoft.com/dashboard/account/v3/publishers/list)вашей компании. Он включает в себя владельца учетной записи, руководителей и разработчиков, имеющих доступ к публикации. Дополнительные сведения о [ролях пользователей центра партнеров](/azure/marketplace/partner-center-portal/manage-account#define-user-roles-and-permissions).
+1. Посетите [список издателей](https://partner.microsoft.com/dashboard/account/v3/publishers/list)вашей компании. Он включает в себя владельца учетной записи, руководителей и разработчиков, имеющих доступ к публикации. Дополнительные сведения о [ролях пользователей центра партнеров](./partner-center-portal/manage-account.md#define-user-roles-and-permissions).
 2. Попросите одного из перечисленных контактов [Добавить пользователей](https://partner.microsoft.com/dashboard/account/usermanagement) в коммерческий магазин в качестве *руководителей* или *разработчиков*, так как только эти роли могут изменять и публиковать решения.
 3. Работайте с разработчиками, чтобы перенести решения из учетной записи OCP GTM на коммерческий рынок.
 4. Определите, какие из следующих действий необходимо выполнить.
@@ -156,4 +156,3 @@ ms.locfileid: "98043784"
 - [Перепродажа через партнеров CSP](cloud-solution-providers.md)
 - [Как отправлять материалы для совместной продажи в центре партнеров](marketplace-co-sell.md#how-to-submit-co-sell-materials-in-partner-center)
 - Просмотреть эти [вопросы и ответы](https://partner.microsoft.com/resources/detail/co-sell-requirements-publish-commercial-marketplace-faq-pdf) (PDF)
-

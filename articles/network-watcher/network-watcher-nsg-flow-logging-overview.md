@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: 987281bd13b7ac053f07a4ef1fb7605c85686d56
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 4deda838d229081ccd23c123f75d0c0ada2383bb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898629"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878669"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 
@@ -362,7 +362,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 
 **Входящие потоки, зарегистрированные с IP-адресов из Интернета на виртуальных машинах без общедоступных** IP: виртуальных машин, которым не назначен общедоступный IP адрес, связанный с сетевым адаптером в качестве общедоступного IP-адреса уровня экземпляра или входящих в состав пула серверной части базового балансировщика нагрузки, используют [значение SNAT по умолчанию](../load-balancer/load-balancer-outbound-connections.md) и назначаются Azure для упрощения исходящего подключения. В результате вы можете увидеть записи журнала потоков для последовательностей из IP-адресов Интернета, если последовательность направлена на порт в диапазоне портов, назначенных для SNAT. В то время как Azure не разрешает передачу этих потоков на виртуальную машину, попытка записи в журнал и появляется в журнале потоков NSG для наблюдателя за сетями. Рекомендуется явно заблокировать нежелательный входящий Интернет для NSG.
 
-**Ошибка в подсети шлюза приложений версии 2 (NSG**): ведение журнала потоков в подсети шлюза приложений версии 2 NSG в настоящее время [не поддерживается](https://docs.microsoft.com/azure/application-gateway/application-gateway-faq#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) . Эта проблема не влияет на шлюз приложений версии v1.
+**Ошибка в подсети шлюза приложений версии 2 (NSG**): ведение журнала потоков в подсети шлюза приложений версии 2 NSG в настоящее время [не поддерживается](../application-gateway/application-gateway-faq.yml#are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet) . Эта проблема не влияет на шлюз приложений версии v1.
 
 **Несовместимые службы**. из-за ограничений текущей платформы небольшой набор служб Azure не поддерживается журналами потоков NSG. Текущий список несовместимых служб:
 - [Службы Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service/)

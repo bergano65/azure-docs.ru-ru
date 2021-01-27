@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: db4f49c1b788cd7a55fd6fbbd48f845f2c94d757
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: df19f32be41b17e13a9da575e828830e29da4e55
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073535"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98894768"
 ---
 # <a name="start-a-runbook-from-a-webhook"></a>Запуск модуля runbook с помощью веб-перехватчика
 
@@ -151,7 +151,7 @@ http://<Webhook Server>/token?=<Token Value>
 Следующий пример модуля Runbook принимает данные веб-перехватчика и запускает виртуальные машины, указанные в тексте запроса. Для тестирования этой последовательности runbook в учетной записи службы автоматизации в разделе **Модули Runbook** нажмите кнопку **Создать Runbook**. Если вы не знаете, как создать модуль Runbook, ознакомьтесь с [этой статьей](automation-quickstart-create-runbook.md).
 
 > [!NOTE]
-> Для неграфических runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
+> Для неграфических runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Вы можете использовать эти командлеты или [обновить модули](automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
 
 ```powershell
 param

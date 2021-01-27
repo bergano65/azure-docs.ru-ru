@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 7e59c8ecc0d7af341ddc1ea79aa42460e00fa444
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 467c2b9fe8758db5c1da43a65c1bfde133df0823
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89419781"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880107"
 ---
 # <a name="vpn-gateway-faq"></a>VPN-шлюз: вопросы и ответы
 
@@ -38,7 +38,7 @@ ms.locfileid: "89419781"
 
 Поддерживаются следующие подключения между организациями:
 
-* Сеть — сеть. VPN-подключение по протоколу IPsec (протоколы IKE v1 и IKE v2). Для этого типа подключения требуется VPN-устройство или RRAS. Дополнительные сведения см. в статье [Создание подключения типа "сеть — сеть" на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+* Сеть — сеть. VPN-подключение по протоколу IPsec (протоколы IKE v1 и IKE v2). Для этого типа подключения требуется VPN-устройство или RRAS. Дополнительные сведения см. в статье [Создание подключения типа "сеть — сеть" на портале Azure](./tutorial-site-to-site-portal.md).
 * Точка — сеть. VPN-подключение по протоколу SSTP (Secure Socket Tunneling Protocol) или IKE v2. Для этого подключения не требуется VPN-устройство. Дополнительные сведения см. в статье [Настройка подключения типа "точка — сеть" к виртуальной сети с помощью портала Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md).
 * Виртуальная сеть — виртуальная сеть. Этот тип подключения аналогичен конфигурации "сеть — сеть". Конфигурация «Виртуальная сеть — виртуальная сеть» — это VPN-подключение по протоколу IPsec (протоколы IK v1 и IKE v2). Для этого варианта подключения не требуется VPN-устройство. Дополнительные сведения см. в статье [Настройка подключения между виртуальными сетями на портале Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md).
 * Несколько сайтов. Это вариация конфигурации "сеть — сеть", позволяющая подключить несколько локальных сайтов к виртуальной сети. Дополнительные сведения см. в статье [Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью имеющегося подключения VPN-шлюза](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md).
@@ -70,13 +70,13 @@ VPN-шлюз — это тип шлюза виртуальной сети. Он
 
 ### <a name="can-i-update-my-policy-based-vpn-gateway-to-route-based"></a>Можно ли обновить VPN-шлюз на основе политик, чтобы он был основан на маршрутах?
 
-Нет.Тип шлюза виртуальной сети Azure нельзя изменить со шлюза на основе политик или наоборот. Шлюз необходимо удалить и создать заново, процесс занимает около 60 минут. IP-адрес шлюза и общий ключ не сохранится.
+Нет. Тип шлюза виртуальной сети Azure нельзя изменить со шлюза на основе политик или наоборот. Шлюз необходимо удалить и создать заново, процесс занимает около 60 минут. IP-адрес шлюза и общий ключ не сохранится.
 1. Удалите все подключения, связанные с удаляемым шлюзом.
 1. Удалите шлюз:
    - [Портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
    - [Azure PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
    - [Azure PowerShell-классическая](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
-1. [Создайте новый шлюз нужного типа и завершите настройку VPN](vpn-gateway-howto-site-to-site-resource-manager-portal.md#VNetGateway).
+1. [Создайте новый шлюз нужного типа и завершите настройку VPN](./tutorial-site-to-site-portal.md#VNetGateway).
 
 ### <a name="do-i-need-a-gatewaysubnet"></a>Требуется ли параметр GatewaySubnet?
 
@@ -127,9 +127,9 @@ VPN Azure использует проверку подлинности с пом
 
 Да. См. руководство по использованию [принудительного туннелирования](vpn-gateway-about-forced-tunneling.md).
 
-### <a name="can-i-use-nat-t-on-my-vpn-connections"></a>Можно ли использовать NAT-T в моих VPN-подключениях?
+### <a name="can-i-use-nat-t-on-my-vpn-connections"></a>Можно ли использовать NAT-T для моих VPN-подключений?
 
-Да, поддерживается обход NAT (NAT-T). VPN-шлюз Azure не будет выполнять никаких функций NAT, таких как внутренние пакеты, в туннели IPsec и обратно.  В этой конфигурации убедитесь, что локальное устройство инициирует туннель IPSec.
+Да, обход NAT (NAT-T) поддерживается. VPN-шлюз Azure не будет выполнять никаких функций NAT, таких как внутренние пакеты, в туннели IPsec и обратно.  В этой конфигурации убедитесь, что локальное устройство инициирует использование туннеля IPSec.
 
 ### <a name="can-i-set-up-my-own-vpn-server-in-azure-and-use-it-to-connect-to-my-on-premises-network"></a>Можно ли настроить собственный VPN-сервер в Azure и использовать его для подключения к локальной сети?
 
@@ -251,7 +251,7 @@ VPN Azure использует проверку подлинности с пом
 
 Дополнительные сведения о виртуальных сетях см. в статье [Часто задаваемые вопросы по виртуальной сети](../virtual-network/virtual-networks-faq.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о VPN-шлюзах см. в [этой статье](vpn-gateway-about-vpngateways.md).
 * Дополнительные сведения о параметрах конфигурации VPN-шлюза см. в [этой статье](vpn-gateway-about-vpn-gateway-settings.md).

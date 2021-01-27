@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: d49f048df7a624dc490acf7cb4c8e5f33aa5f1c6
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: d23294c21d49b1c2ab83c4bf8f110d5d4bc7aafb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060237"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878296"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
 
@@ -66,7 +66,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
     * 500 — в среде выполнения IoT Edge произошла ошибка.
 
     > [!TIP]
-    > При возникновении проблем с Azure IoT Edgeными модулями в среде используйте **[Azure IOT Edge Стандартные диагностические действия](https://docs.microsoft.com/azure/iot-edge/troubleshoot?view=iotedge-2018-06&preserve-view=true)** в качестве руководств по устранению неполадок и диагностике.
+    > При возникновении проблем с Azure IoT Edgeными модулями в среде используйте **[Azure IOT Edge Стандартные диагностические действия](../../iot-edge/troubleshoot.md?preserve-view=true&view=iotedge-2018-06)** в качестве руководств по устранению неполадок и диагностике.
 ### <a name="post-deployment-direct-method-error-code"></a>После развертывания: код ошибки прямого метода
 1. Если вы получаете состояние `501 code` , убедитесь, что имя прямого метода является точным. Если имя метода и полезные данные запроса являются точными, необходимо получить результаты вместе с кодом успешного выполнения = 200. 
 1. Если полезные данные запроса неточны, вы получите состояние `400 code` и полезные данные ответа, которые указывают код ошибки и сообщение, которое должно помочь при диагностике проблемы с помощью вызова прямого метода.
@@ -96,7 +96,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 * [Модуль IOT Edge развертывается успешно, а затем исчезает с устройства](../../iot-edge/troubleshoot-common-errors.md#iot-edge-module-deploys-successfully-then-disappears-from-device).
 
     > [!TIP]
-    > При возникновении проблем с Azure IoT Edgeными модулями в среде используйте **[Azure IOT Edge Стандартные диагностические действия](https://docs.microsoft.com/azure/iot-edge/troubleshoot?view=iotedge-2018-06&preserve-view=true)** в качестве руководств по устранению неполадок и диагностике.
+    > При возникновении проблем с Azure IoT Edgeными модулями в среде используйте **[Azure IOT Edge Стандартные диагностические действия](../../iot-edge/troubleshoot.md?preserve-view=true&view=iotedge-2018-06)** в качестве руководств по устранению неполадок и диагностике.
 ### <a name="live-video-analytics-working-with-external-modules"></a>Интерактивная аналитика видео работает с внешними модулями
 
 Интерактивная аналитика видео с помощью обработчиков расширения Media Graph может расширить граф мультимедиа для отправки и получения данных из других модулей IoT Edge с помощью протоколов HTTP или gRPC. В качестве [конкретного примера](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/httpExtension)этот граф мультимедиа может отправлять видеоматериалы в виде изображений во внешний модуль вывода, например Йоло v3, и получать результаты анализа на основе JSON с помощью протокола HTTP. В такой топологии назначением для событий является преимущественно центр Интернета вещей. В ситуациях, когда вы не видите события вывода в концентраторе, проверьте следующее:
@@ -216,7 +216,7 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 1. Нажмите кнопку **создания**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
-    a. В таблице **модули** выберите **лваедже**.  
+    а. В таблице **модули** выберите **лваедже**.  
     b. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
     c. В разделе **требуемый ключ** добавьте следующую пару "ключ-значение":  
     `"DebugLogsDirectory": "/var/lib/azuremediaservices/logs"`
@@ -272,7 +272,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ``` 
 
-[Ведение журналов и диагностики в gRPC на платформе .NET](https://docs.microsoft.com/aspnet/core/grpc/diagnostics?view=aspnetcore-3.1&preserve-view=true) предоставляет некоторые рекомендации по сбору журналов диагностики с сервера gRPC. 
+[Ведение журналов и диагностики в gRPC на платформе .NET](/aspnet/core/grpc/diagnostics?preserve-view=true&view=aspnetcore-3.1) предоставляет некоторые рекомендации по сбору журналов диагностики с сервера gRPC. 
 
 ### <a name="a-failed-grpc-connection"></a>Неудачное подключение gRPC 
 
@@ -282,7 +282,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 Интерактивная аналитика видео не отслеживает и не обеспечивает мониторинг аппаратных ресурсов. Разработчики должны будут использовать решения для мониторинга изготовителей оборудования. Однако если вы используете контейнеры Kubernetes, вы можете отслеживать устройство с помощью [панели мониторинга Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/). 
 
-gRPC в документах .NET Core также имеют полезную информацию о [рекомендациях по повышению производительности](https://docs.microsoft.com/aspnet/core/grpc/performance?view=aspnetcore-3.1&preserve-view=true) и [балансировке нагрузки](https://docs.microsoft.com/aspnet/core/grpc/performance?view=aspnetcore-3.1#load-balancing&preserve-view=true).  
+gRPC в документах .NET Core также имеют полезную информацию о [рекомендациях по повышению производительности](/aspnet/core/grpc/performance?preserve-view=true&view=aspnetcore-3.1) и [балансировке нагрузки](/aspnet/core/grpc/performance?preserve-view=true&view=aspnetcore-3.1#load-balancing).  
 
 ### <a name="troubleshooting-an-inference-server-when-it-does-not-receive-any-frames-and-you-are-receiving-an-unknown-protocol-error"></a>Устранение неполадок сервера вывода, когда он не получает никаких кадров и вы получаете сообщение об ошибке "Неизвестный" протокол 
 
@@ -296,7 +296,7 @@ gRPC в документах .NET Core также имеют полезную и
    ```
 
    Если команда выводит короткую строку текста жумблед, программа Telnet успешно смогла открыть подключение к серверу вывода и открыть двоичный канал gRPC. Если вы не видите это, Telnet сообщит о сетевой ошибке. 
-* На сервере вывода можно включить дополнительное ведение журнала в библиотеке gRPC. Это может дать дополнительные сведения о самом канале gRPC. Это зависит от языка и инструкций для [C#](https://docs.microsoft.com/aspnet/core/grpc/diagnostics?view=aspnetcore-3.1&preserve-view=true). 
+* На сервере вывода можно включить дополнительное ведение журнала в библиотеке gRPC. Это может дать дополнительные сведения о самом канале gRPC. Это зависит от языка и инструкций для [C#](/aspnet/core/grpc/diagnostics?preserve-view=true&view=aspnetcore-3.1). 
 
 ### <a name="picking-more-images-from-buffer-of-grpc-without-sending-back-result-for-first-buffer"></a>Выбор дополнительных изображений из буфера gRPC без отправки результата для первого буфера
 

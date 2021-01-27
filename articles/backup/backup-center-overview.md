@@ -3,14 +3,14 @@ title: Обзор центра архивации
 description: В этой статье представлен обзор центра архивации для Azure.
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: 7eab2e8f9694ca83d0e050f55bc6f6dd802a7331
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: b42fcc782eb50c061ab7617ea0ef1f3344fee4e9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173728"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893615"
 ---
-# <a name="overview-of-backup-center"></a>Обзор центра архивации
+# <a name="overview-of-backup-center-preview"></a>Обзор центра архивации (Предварительная версия)
 
 Центр архивации предоставляет **единую единую среду управления** Azure для предприятий, которая позволяет управлять, отслеживать и анализировать резервные копии в нужном масштабе. Таким образом, он согласуется с собственными интерфейсами управления Azure.
 
@@ -22,7 +22,7 @@ ms.locfileid: "92173728"
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 
-* Сейчас для резервного копирования виртуальных машин Azure и базы данных Azure для PostgreSQL Server поддерживается резервное копирование.
+* В настоящее время поддерживается резервное копирование виртуальных машин Azure, SQL в службе архивации виртуальных машин Azure, SAP HANA в службе архивации виртуальных машин Azure, резервное копирование файлов Azure и резервное копирование сервера базы данных Azure для PostgreSQL.
 * Подробный список поддерживаемых и неподдерживаемых сценариев см. в [матрице поддержки](backup-center-support-matrix.md) .
 
 ## <a name="get-started"></a>Начало работы

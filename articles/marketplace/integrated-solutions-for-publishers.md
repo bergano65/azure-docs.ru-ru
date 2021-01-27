@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 04/16/2020
-ms.openlocfilehash: 70dfccb32389d2f1fb492669c9f84a3e6ae77bbb
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 0a3188d5dc2c34c9959ae488ad5a5f962a99f02f
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621354"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880276"
 ---
 # <a name="publish-an-integrated-solution"></a>Публикация интегрированного решения
 
@@ -32,8 +32,8 @@ ms.locfileid: "96621354"
 ## <a name="eligibility-criteria"></a>Условия для участия
 
 * Участвующие партнеры должны иметь идентификатор MPN.
-* Поставщики участвующих служб должны быть [готовыми к совместной продаже](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
-* Участвующие поставщики программного обеспечения должны быть [готовы к совместной продаже](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
+* Поставщики участвующих служб должны быть [готовыми к совместной продаже](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status).
+* Участвующие поставщики программного обеспечения должны быть [готовы к совместной продаже](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status).
 * По меньшей мере один участвующий партнер должен иметь компетенцию Gold в одной из следующих областей:
     - Разработка приложений
     - Интеграция приложений

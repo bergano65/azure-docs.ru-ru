@@ -8,12 +8,12 @@ ms.author: pafarley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 58f1c2621165a7074c04752832c6560b2fd3e423
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a3b073cdb90e0c427bfbca15c1440b9122672610
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011971"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880141"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Пример. Создание пользовательского навыка распознавателя форм
 
@@ -30,7 +30,7 @@ ms.locfileid: "96011971"
 
 ## <a name="train-your-model"></a>Обучение модели
 
-Прежде чем использовать этот навык, необходимо обучить модель распознавателя форм в формах ввода. Чтобы узнать, как обучить модель, следуйте инструкциям из [краткого руководства по фигурам](../cognitive-services/form-recognizer/quickstarts/curl-train-extract.md) . Можно использовать образцы форм, предоставляемые в этом кратком руководстве, или использовать собственные данные. После обучения модели скопируйте ее значение идентификатора в безопасное расположение.
+Прежде чем использовать этот навык, необходимо обучить модель распознавателя форм в формах ввода. Чтобы узнать, как обучить модель, следуйте инструкциям из [краткого руководства по фигурам](../cognitive-services/form-recognizer/quickstarts/client-library.md?pivots=programming-language-rest-api) . Можно использовать образцы форм, предоставляемые в этом кратком руководстве, или использовать собственные данные. После обучения модели скопируйте ее значение идентификатора в безопасное расположение.
 
 ## <a name="set-up-the-custom-skill"></a>Настройка пользовательского навыка
 
@@ -160,7 +160,7 @@ POST https://localhost:7071/api/analyze-form
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом пошаговом окне вы создали пользовательский навык из службы распознавателя форм Azure. Дополнительные сведения о пользовательских навыках см. в следующих ресурсах. 
 
