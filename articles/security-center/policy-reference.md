@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Центра безопасности Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Центра безопасности Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/24/2021
+ms.date: 01/25/2021
 ms.topic: reference
 author: memildin
 ms.author: memildin
 ms.service: security-center
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 1192e765dc3cc001f8d1a1c6a28fe1a5cf4c9ecc
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 568b8761f2b528b1f5d8e3971503834ab5321ed5
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757277"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806975"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-security-center"></a>Встроенные определения в Политике Azure для Центра безопасности Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "98757277"
 
 [!INCLUDE [azure-policy-reference-category-securitycenter](../../includes/policy/reference/bycat/policies-security-center.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали об определениях политик безопасности в Azure в центре безопасности. Дополнительные сведения см. в следующих статьях.
 

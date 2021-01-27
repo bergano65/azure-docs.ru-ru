@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 0542d7e0ea204d1e9279e89c9f36b9bc6c6c88fa
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: c34410fcb5e1992f8b7a358801a354a1e1cf190c
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165864"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808006"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -27,6 +27,13 @@ ms.locfileid: "98165864"
 ## <a name="status-updates"></a>Обновления состояния
 
 # <a name="in-progress"></a>[Выполняется](#tab/in-progress-ip)
+## <a name="february-2021"></a>Февраль 2021 г.
+Новые шлюзы SQL добавляются в следующие регионы:
+
+- Центральная американская: 13.89.169.20
+
+Эти шлюзы SQL должны начать принимать клиентский трафик 28 февраля 2021.
+
 ## <a name="january-2021"></a>Январь 2021 г.
 Новые шлюзы SQL добавляются в следующие регионы:
 
@@ -41,7 +48,7 @@ ms.locfileid: "98165864"
 - Центральная Корея: 52.231.17.22, 52.231.17.23
 - Западная Индия: 104.211.144.4
 
-Эти шлюзы SQL начинают принимать трафик клиентов на 31 января 2021
+Эти шлюзы SQL начинают принимать трафик клиентов на 31 января 2021.
 
 # <a name="completed"></a>[Завершено](#tab/completed-ip)
 Следующие миграции шлюза завершены: 
@@ -102,7 +109,7 @@ ms.locfileid: "98165864"
 
 ### <a name="october-2019"></a>Октябрь 2019 г.
 - Brazil South
-- Западная часть США
+- западная часть США
 - Западная Европа
 - Восточная часть США
 - Центральная часть США

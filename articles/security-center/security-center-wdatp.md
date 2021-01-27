@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 9fde0ecd8b6670e43aa3970b2df27a402b9c1a5c
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 4b8141d99d654705450a14767b04ae6265766af9
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747246"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807083"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Защитите свои конечные точки с помощью интегрированного решения ЕДР центра безопасности: защитник Майкрософт для конечной точки
 
@@ -43,7 +43,8 @@ ms.locfileid: "98747246"
 | Состояние выпуска:                  | Общедоступная версия (GA)                                                                                                                                                                                                                                                                                      |
 | Цены                        | Требуется [Azure Defender для серверов](security-center-pricing.md)                                                                                                                                                                                                                                             |
 | Поддерживаемые платформы:            | Компьютеры Azure под Windows<br>Компьютеры ARC в Azure под Windows|
-| Поддерживаемые версии Windows:  |  • Центр безопасности поддерживает обнаружение в Windows Server 2016, 2012 R2 и 2008 R2 с пакетом обновления 1 (SP1)<br> • Мониторинг конечных точек сервера с помощью этой интеграции отключен для Office 365 GCC Customers<br> • Поддержка Windows Server 2019, Windows 10 1703 (и более поздних версий) и Linux не поддерживается.|
+| Поддерживаемые версии Windows:  |  • Центр безопасности поддерживает обнаружение в Windows Server 2016, 2012 R2 и 2008 R2 с пакетом обновления 1 (SP1)<br> • Мониторинг конечных точек сервера с помощью этой интеграции отключен для Office 365 GCC Customers|
+| Неподдерживаемые операционные системы:  |  • Windows Server 2019<br> • Windows 10<br> • Linux|
 | Требуемые роли и разрешения | Включение и отключение интеграции: **администратор безопасности** или **владелец**<br>Просмотр оповещений МДАТП в центре безопасности: **читатель безопасности**, **читатель**, **участник группы ресурсов**, **владелец группы ресурсов**, **администратор безопасности**, **владелец подписки** или **участник подписки**|
 | Облако.                         | ![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) US Gov<br>![Нет](./media/icons/no-icon.png) China Gov и другие правительственные облака<br>![Нет](./media/icons/no-icon.png) GCC клиенты, выполняющие рабочие нагрузки в глобальных облаках Azure                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
@@ -94,7 +95,7 @@ ms.locfileid: "98747246"
 
 ## <a name="access-the-microsoft-defender-for-endpoint-portal"></a>Доступ к Microsoft Defender для портала конечной точки
 
-1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее.](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access)
+1. Убедитесь, что учетная запись пользователя имеет необходимые разрешения. [Подробнее](/windows/security/threat-protection/microsoft-defender-atp/assign-portal-access).
 
 1. Проверьте наличие прокси-сервера или брандмауэра, блокирующего анонимный трафик. Защитник для датчика конечных точек подключается к системному контексту, поэтому необходимо разрешить анонимный трафик. Чтобы обеспечить неограниченный доступ к защитнику для портала конечной точки, следуйте инструкциям в разделе [Включение доступа к URL-адресам служб на прокси-сервере](/windows/security/threat-protection/microsoft-defender-atp/configure-proxy-internet#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server).
 
@@ -105,7 +106,7 @@ ms.locfileid: "98747246"
 Создание некритического защитника Майкрософт для тестового оповещения конечной точки:
 
 1. Создайте папку "К:\тест-мдатп-тест".
-1. Используйте удаленный рабочий стол для доступа к виртуальной машине Windows Server 2012 R2 или Windows Server 2016.
+1. Используйте удаленный рабочий стол для доступа к компьютеру.
 1. Откройте окно командной строки.
 1. В командной строке скопируйте и выполните следующую команду: Окно командной строки закроется автоматически.
 
@@ -140,7 +141,7 @@ ms.locfileid: "98747246"
   
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Поддерживаемые платформы и возможности в Центре безопасности Azure](security-center-os-coverage.md)
 - [Управление рекомендациями по безопасности в центре безопасности Azure](security-center-recommendations.md) — сведения об использовании рекомендаций для защиты ресурсов Azure.

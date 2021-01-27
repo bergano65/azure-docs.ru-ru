@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: ac4763a2d79059eb2608595b616c945af274627e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 88d44f4f8cedbad604eb59cde91f4eed79918c0f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928517"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806665"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -78,9 +78,9 @@ ms.locfileid: "96928517"
 |**Сетка событий Azure** | Microsoft.EventGrid/topics    | Раздел |
 |**Сетка событий Azure** | Microsoft.EventGrid/domains    | домен |
 |**Служба приложений Azure** | Microsoft.Web/sites    | sites |
-|**Машинное обучение Azure** | Microsoft.MachineLearningServices/workspaces    | Рабочая область |
+|**Машинное обучение Azure** | Microsoft.MachineLearningServices/workspaces    | амлворкспаце |
 |**SignalR** | Microsoft.SignalRService/SignalR    | signalR |
-|**Azure Monitor**; | Microsoft. Insights/Привателинкскопес    | азуремонитор |
+|**Azure Monitor** | Microsoft. Insights/Привателинкскопес    | азуремонитор |
 |**Cognitive Services** | (Microsoft. CognitiveServices/Accounts    | account |
 |**Синхронизация файлов Azure** | Microsoft. StorageSync/Сторажесинксервицес    | AFS |
     

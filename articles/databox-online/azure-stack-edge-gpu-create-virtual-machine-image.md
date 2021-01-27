@@ -6,24 +6,24 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/08/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: fd55110bbfaed72051bfc388692421cd8209609d
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 0985779aeb14fd4f3d6a12cf152e4c63c909d613
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763870"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806682"
 ---
 # <a name="create-custom-vm-images-for-your-azure-stack-edge-pro-device"></a>Создание пользовательских образов виртуальных машин для устройства Azure Stack Edge Pro
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Для развертывания виртуальных машин на устройстве Azure Stack Edge Pro требуется возможность создавать пользовательские образы виртуальных машин, которые можно использовать для создания виртуальных машин. В этой статье показано, как создавать пользовательские образы виртуальных машин Linux и Windows, которые можно использовать для развертывания виртуальных машин на устройстве Azure Stack Edge Pro.
+Для развертывания виртуальных машин на устройстве Azure Stack Edge Pro требуется возможность создавать пользовательские образы виртуальных машин, которые можно использовать для создания виртуальных машин. В этой статье описываются действия, которые необходимо выполнить для создания пользовательских образов виртуальных машин Linux или Windows, которые можно использовать для развертывания виртуальных машин на устройстве Azure Stack пограничной Pro.
 
 ## <a name="vm-image-workflow"></a>Рабочий процесс создания образа виртуальной машины
 
-Рабочий процесс предусматривает создание виртуальной машины в Azure, ее настройку и подготовку к использованию, а также скачивание виртуального жесткого диска, соответствующего этой виртуальной машине. Этот подготовленный виртуальный жесткий диск передается в Azure Stack Edge Pro. Затем на его основе создается управляемый диск, а на его основе — образ, из которого в конечном итоге создаются виртуальные машины.   
+Рабочий процесс предусматривает создание виртуальной машины в Azure, ее настройку и подготовку к использованию, а также скачивание виртуального жесткого диска, соответствующего этой виртуальной машине. Этот обобщенный виртуальный жесткий диск отправляется в Azure Stack пограничной Pro. На основе этого виртуального жесткого диска создается управляемый диск. Образ создается из управляемого диска. И, наконец, виртуальные машины создаются из этого образа.
 
 Дополнительные сведения см. в статье [Развертывание виртуальных машин на устройстве GPU Azure Stack Edge Pro с помощью Azure PowerShell](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md).
 
@@ -76,7 +76,7 @@ ms.locfileid: "97763870"
 |[Сервер Ubuntu](https://azuremarketplace.microsoft.com/marketplace/apps/canonical.ubuntuserver) |Ubuntu Server является самой популярной в мире системой Linux для облачных сред.|Canonical|
 |[Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.debian) |Debian GNU/Linux является одним из наиболее распространенных дистрибутивов Linux.     |credativ|
 
-Полный список рабочих образов из Azure Marketplace (пока не протестированы) см. в статье [Элементы Azure Marketplace, доступные для Azure Stack Hub](/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1910).
+Полный список рабочих образов из Azure Marketplace (пока не протестированы) см. в статье [Элементы Azure Marketplace, доступные для Azure Stack Hub](/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1910&preserve-view=true).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: allensu
-ms.openlocfilehash: 49e1b45ca3953d008542c2ed508537d1a3ea0bf3
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: a7b55981514ea216f251a0819c1881d58013a0f6
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218983"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806437"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>Конфигурация DNS частной конечной точки Azure
 
@@ -72,7 +72,7 @@ Azure создает каноническое имя DNS-записи (CNAME) н
 | Сетка событий Azure (Microsoft.EventGrid/topics) / тема | privatelink.eventgrid.azure.net | eventgrid.azure.net |
 | Сетка событий Azure (Microsoft.EventGrid/domains) / домен | privatelink.eventgrid.azure.net | eventgrid.azure.net |
 | Веб-приложения Azure (Microsoft. Web/Sites) и сайты | privatelink.azurewebsites.net | azurewebsites.net; |
-| Машинное обучение Azure (Microsoft.MachineLearningServices/workspaces)/Рабочая область | privatelink.api.azureml.ms | api.azureml.ms |
+| Машинное обучение Azure (Microsoft. Мачинелеарнингсервицес/workspaces)/амлворкспаце | privatelink.api.azureml.ms | api.azureml.ms |
 | Центр Интернета вещей (Microsoft. Devices/IotHubs)/IotHub | privatelink.azure-devices.net | azure-devices.net |
 | SignalR (Microsoft. Сигналрсервице/SignalR)/SignalR | privatelink.service.signalr.net | service.signalr.net |
 | Azure Monitor (Microsoft. Insights/Привателинкскопес)/азуремонитор | privatelink.monitor.azure.com<br/> privatelink.oms.opinsights.azure.com <br/> privatelink.ods.opinsights.azure.com <br/> privatelink.agentsvc.azure-automation.net | monitor.azure.com<br/> oms.opinsights.azure.com<br/> ods.opinsights.azure.com<br/> agentsvc.azure-automation.net |

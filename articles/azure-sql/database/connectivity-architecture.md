@@ -11,13 +11,13 @@ ms.topic: conceptual
 author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
-ms.date: 06/26/2020
-ms.openlocfilehash: 74dd3a6b19d241fdf05e6438226227147ba4afbd
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.date: 01/25/2021
+ms.openlocfilehash: da21fd2b6f8d427369cee89e0ad93d63e8608784
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165949"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808266"
 ---
 # <a name="azure-sql-database-and-azure-synapse-analytics-connectivity-architecture"></a>Архитектура подключения к Базе данных SQL Azure и Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -66,7 +66,7 @@ ms.locfileid: "98165949"
 ![Схема, показывающая, как сеанс TCP устанавливается через шлюз базы данных SQL Azure и все последующие пакеты проходят через шлюз.](./media/connectivity-architecture/connectivity-onprem.png)
 
 > [!IMPORTANT]
-> Кроме того, можно открыть TCP-порты 1434 и 14000-14999, чтобы включить [подключение с помощью DAC](/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators?view=sql-server-2017#connecting-with-dac) .
+> Кроме того, можно открыть TCP-порты 1434 и 14000-14999, чтобы включить [подключение с помощью DAC](/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators#connecting-with-dac) .
 
 ## <a name="gateway-ip-addresses"></a>IP-адреса шлюза
 
@@ -83,7 +83,7 @@ ms.locfileid: "98165949"
 | Brazil South         | 104.41.11.5, 191.233.200.14, 191.234.144.16, 191.234.152.3 |
 | Центральная Канада       | 40.85.224.249, 52.246.152.0, 20.38.144.1 |
 | Восточная Канада          | 40.86.226.166, 52.242.30.154, 40.69.105.9, 40.69.105.10 |
-| Центральная часть США           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1 |
+| Центральная часть США           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1, 13.89.169.20 |
 | Восточный Китай           | 139.219.130.35     |
 | Восточный Китай 2         | 40.73.82.1         |
 | Северный Китай          | 139.219.15.17      |
@@ -119,7 +119,7 @@ ms.locfileid: "98165949"
 | западная часть Соединенного Королевства              | 51.141.8.11        |
 | центрально-западная часть США      | 13.78.145.25, 13.78.248.43        |
 | Западная Европа          | 40.68.37.158, 191.237.232.75, 104.40.168.105, 52.236.184.163  |
-| Западная часть США              | 104.42.238.205, 23.99.34.75, 13.86.216.196   |
+| западная часть США              | 104.42.238.205, 23.99.34.75, 13.86.216.196   |
 | Западная часть США 2            | 13.66.226.202, 40.78.240.8, 40.78.248.10  |
 |                      |                    |
 

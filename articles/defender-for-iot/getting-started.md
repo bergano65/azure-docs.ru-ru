@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/26/2020
 ms.author: shhazam
-ms.openlocfilehash: ed6c88826b41df0bdfef8cbbcb2569b3cea8f868
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 82fcf7f129d5caba471d6d72da83a317b26c638c
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832392"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807889"
 ---
-# <a name="getting-started-with-defender-for-iot"></a>Начало работы с защитником для Интернета вещей
+# <a name="get-started-with-defender-for-iot"></a>Начало работы с защитником для Интернета вещей
 
 В этой статье представлен обзор действий, которые необходимо выполнить для настройки защитника Azure для IoT. Процесс требует:
 
@@ -127,7 +127,7 @@ ms.locfileid: "97832392"
 
 Отправьте сведения об оповещении в Azure Sentinel, настроив метку Azure. См. статью [подключение данных из защитника для Интернета вещей к Azure Sentinel](how-to-configure-with-sentinel.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Добро пожаловать в защитник Azure для IoT](overview.md)
 

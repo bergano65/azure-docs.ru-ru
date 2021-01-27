@@ -4,12 +4,12 @@ description: В этой статье вы узнаете о выборочно�
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 1f4d27563cf292632c6b14c82e36542b86c5d356
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 38ead1591bf2ecadc8bfca5875ac1fa3e69d56ef
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127725"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806370"
 ---
 # <a name="selective-disk-backup-and-restore-for-azure-virtual-machines"></a>Выборочное резервное копирование и восстановление для виртуальных машин Azure
 
@@ -185,7 +185,7 @@ az backup item show -c {vmname} -n {vmname} --vault-name {vaultname} --resource-
 
 При выполнении этих команд вы увидите `"diskExclusionProperties": null` .
 
-## <a name="using-powershell"></a>Использование PowerShell
+## <a name="using-powershell"></a>Регистрация с помощью PowerShell
 
 Убедитесь, что вы используете Azure PowerShell версии 3.7.0 или более поздней.
 
@@ -337,4 +337,4 @@ Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Матрица поддержки для резервного копирования виртуальных машин Azure](backup-support-matrix-iaas.md)
-- [Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure](backup-azure-vm-backup-faq.md)
+- [Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure](backup-azure-vm-backup-faq.yml)

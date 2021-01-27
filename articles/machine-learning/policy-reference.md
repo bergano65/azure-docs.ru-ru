@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Машинное обучение Azure
 description: Выводит список встроенных определений политик Azure для Машинное обучение Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.author: larryfr
 author: BlackMist
 ms.topic: reference
 ms.service: machine-learning
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 778930d7370496387067823e88aa63f840b46782
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 09350ae9482ea89c0a0012a338a5a06832f0becc
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703574"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807025"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-machine-learning"></a>Встроенные определения политик Azure для Машинное обучение Azure
 

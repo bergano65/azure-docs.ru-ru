@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для масштабируемых наборов виртуальных машин Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для масштабируемых наборов виртуальных машин Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 author: ju-shim
 ms.author: jushiman
 ms.service: virtual-machine-scale-sets
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 8e3d0722a66c58a724d3a48ab79f1628ab7f0cec
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 5e6fbfd9f55def3517cf07ee5b743cc80ccf43bd
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704386"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806998"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-virtual-machine-scale-sets"></a>Встроенные определения в Политике Azure для масштабируемых наборов виртуальных машин Azure
 
