@@ -1,5 +1,5 @@
 ---
-title: Коды ошибок динамических событий служб мультимедиа Azure | Документация Майкрософт
+title: Коды ошибок динамических событий служб мультимедиа Azure
 description: В этой статье перечислены коды динамических событий.
 author: IngridAtMicrosoft
 manager: femila
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: error-reference
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 13277c3d46d5b68aa5705699f45a2bf9e97a78d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 310e70bc8c7ddbf3bcd37d4f0276fe04c2979e73
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291543"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897855"
 ---
 # <a name="media-services-live-event-error-codes"></a>Коды ошибок динамических событий служб мультимедиа
 
@@ -56,10 +56,10 @@ ms.locfileid: "89291543"
 |Неизвестные коды ошибок|Эти коды ошибок могут варьироваться от ошибки памяти до дублирования записей в карте хэшей.|
 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 [Коды ошибок конечной точки потоковой передачи (исходного кода)](streaming-endpoint-error-codes.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Руководство. потоковая передача в реальном времени с помощью служб мультимедиа](stream-live-tutorial-with-api.md)

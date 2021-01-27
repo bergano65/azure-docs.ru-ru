@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: 7bb0b9b4645be7e548fe116d9e9a2c92fae7dc96
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 57999ce53e536d422e6502a77aaccdc66b4c5077
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120960"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898500"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Создание, разработка и обслуживание записных книжек синапсе Studio в Azure синапсе Analytics
 
@@ -304,6 +304,8 @@ ms.locfileid: "98120960"
 
 Вы можете использовать ```%run <notebook path>``` команду Magic для ссылки на другую записную книжку в контексте текущей записной книжки. Все переменные, определенные в справочной записной книжке, доступны в текущей записной книжке. ```%run``` Команда Magic поддерживает вложенные вызовы, но не поддерживает рекурсивные вызовы. Если глубина инструкции больше пяти, вы получите исключение. ```%run``` в настоящее время команда поддерживается только для передачи пути к записной книжке в качестве параметра. 
 
+Например, ``` %run /path/notebookA ```.
+
 ---
 
 
@@ -510,7 +512,7 @@ df = spark.read.option("header", "true") \
 |--|--|
 |Запуск текущей ячейки и выбор ниже | SHIFT+ВВОД |
 |Запуск текущей ячейки и вставка ниже | ALT+ВВОД |
-|Выполнить текущую ячейку| CTRL+ВВОД |
+|Выполнить текущую ячейку| Ctrl+ВВОД |
 |Выбор ячейки выше| Вверх |
 |Выбор ячейки ниже| Вниз |
 |Выбрать предыдущую ячейку| K |

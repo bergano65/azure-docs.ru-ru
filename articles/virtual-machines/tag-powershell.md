@@ -7,17 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 11/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 1efb512923caed97126bdb4ee6267c6a9b57f251
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: bf13d5c0caeb0bf31a383cd23155a6856c81c53b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94595033"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897397"
 ---
 # <a name="how-to-tag-a-virtual-machine-in-azure-using-powershell"></a>Пометка виртуальной машины в Azure с помощью PowerShell
 
 В этой статье описывается, как пометить виртуальную машину в Azure с помощью PowerShell. Теги — это определяемые пользователем пары "ключ-значение", которые можно помещать непосредственно в ресурс или группу ресурсов. В настоящее время Azure поддерживает до 50 тегов на ресурс и группу ресурсов. Теги можно добавлять к ресурсу во время его создания или к уже существующему ресурсу. Если вы хотите пометить виртуальную машину с помощью Azure CLI, см. раздел [как разметить виртуальную машину в Azure с помощью Azure CLI](tag-cli.md).
-
 
 Используйте `Get-AzVM` командлет, чтобы просмотреть текущий список тегов для виртуальной машины.
 
@@ -84,8 +83,7 @@ Environment   Production
 Location      MyLocation
 ```
 
-
-**Дальнейшие действия**
+### <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о добавлении тегов для ресурсов Azure см. в статьях [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md) и [Использование тегов для организации ресурсов в Azure](../azure-resource-manager/management/tag-resources.md).
-- Сведения о том, как теги могут помочь в управлении использованием ресурсов Azure, см. в статьях [Расшифровка счета за использование Microsoft Azure](../cost-management-billing/understand/review-individual-bill.md) и [Получение ценных сведений о потреблении ресурсов Microsoft Azure](../cost-management-billing/manage/usage-rate-card-overview.md).
+- Чтобы узнать, как теги могут помочь в управлении использованием ресурсов Azure, см. статью [понимание счета Azure](../cost-management-billing/understand/review-individual-bill.md).

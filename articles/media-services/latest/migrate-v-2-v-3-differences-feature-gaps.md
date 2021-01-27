@@ -1,5 +1,5 @@
 ---
-title: Разрывы функций между службами мультимедиа Azure версии 2 и v3 | Документация Майкрософт
+title: Разрывы функций между службами мультимедиа Azure версии 2 и v3
 description: В этой статье описываются зазоры функций между службами мультимедиа Azure версии 2 и 3.
 services: media-services
 author: IngridAtMicrosoft
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 0f15c2bcd921c431dba1d1cce0454a6b2e752141
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2fa827bc2841a0bae4c9646c8a70e42dc2b500e3
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690655"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898415"
 ---
 # <a name="feature-gaps-between-azure-media-services-v2-and-v3"></a>Разрывы функций между службами мультимедиа Azure версии 2 и v3
 
@@ -48,6 +48,6 @@ ms.locfileid: "98690655"
 
 - Шифрование хранилища на стороне клиента для защиты неактивных ресурсов было удалено в API V3 и заменено шифрованием службы хранения для неактивных данных. Интерфейсы API V3 продолжают работать с существующими зашифрованными ресурсами хранилища, но не позволяют создавать новые.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]

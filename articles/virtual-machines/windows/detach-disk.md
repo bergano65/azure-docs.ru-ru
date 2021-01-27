@@ -6,14 +6,14 @@ ms.service: virtual-machines-windows
 ms.subservice: disks
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 01/08/2020
+ms.date: 01/26/2021
 ms.author: cynthn
-ms.openlocfilehash: cae75c88b4803912565e010f744a7757a3b98f04
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 95f6ce2fefacd20102abe9bbe818f228139ca33d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201558"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898517"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-windows-virtual-machine"></a>Отключение диска от виртуальной машины Windows
 
@@ -60,4 +60,6 @@ Update-AzVM `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы хотите повторно использовать диск данных, то можете просто [подключить его к другой виртуальной машине](attach-managed-disk-portal.md)
+Если нужно повторно использовать диск данных, можно просто [подключить его к другой виртуальной машине](attach-managed-disk-portal.md).
+
+Если вы хотите удалить диск, чтобы больше не взимается плата за хранение, см. раздел [Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure — портал Azure](../disks-find-unattached-portal.md).

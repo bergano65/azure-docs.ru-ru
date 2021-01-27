@@ -1,24 +1,9 @@
 ---
-title: Учетные записи хранения Azure
-titleSuffix: Azure Media Services
-description: Узнайте, как создать учетную запись хранения Azure для использования со службами мультимедиа Azure.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: conceptual
-ms.date: 01/05/2021
-ms.author: inhenkel
-ms.openlocfilehash: 55a49d48af95c103d2a28d5106af5f3166605514
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98882252"
+# <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Обязательные поля. Дополнительные сведения см. на aka.ms/skyeye/meta.
+Title: учетные записи хранения Azure: Описание служб мультимедиа Azure. Узнайте, как создать учетную запись хранения Azure для использования со службами мультимедиа Azure.
+службы: Media-Services documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor Editor: ' ' MS. Service: Media-Services MS. Рабочая нагрузка: MS. Topic: концептуальная МС. Дата: 01/05/2021 MS. author: инхенкел
 ---
+
 # <a name="azure-storage-accounts"></a>Учетные записи хранения Azure
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

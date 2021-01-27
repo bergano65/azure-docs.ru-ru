@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: b338b8ee93fb24cff54968630d4ff00deca0b64b
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 675751433657a7d630d0c42482716702f520ff82
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606731"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881390"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Общие сведения об Azure Defender для службы хранилища
 
@@ -54,7 +54,7 @@ Azure Defender для службы хранилища обеспечивает �
 Оповещения содержат сведения об инциденте, который привел к их активации, а также рекомендации по определению причины угроз и их устранению. Оповещения можно экспортировать в Azure Sentinel, сторонние средства SIEM или любые другие внешние средства.
 
 > [!TIP]
-> [Azure Defender для службы хранилища рекомендуется настроить](https://docs.microsoft.com/azure/storage/common/azure-defender-storage-configure?tabs=azure-security-center) на уровне подписки, но это средство также можно [настроить в отдельных учетных записях хранения](https://docs.microsoft.com/azure/storage/common/azure-defender-storage-configure?tabs=azure-portal).
+> [Azure Defender для службы хранилища рекомендуется настроить](../storage/common/azure-defender-storage-configure.md?tabs=azure-security-center) на уровне подписки, но это средство также можно [настроить в отдельных учетных записях хранения](../storage/common/azure-defender-storage-configure.md?tabs=azure-portal).
 
 
 ## <a name="what-is-hash-reputation-analysis-for-malware"></a>Что такое анализ репутации хэша для вредоносных программ?

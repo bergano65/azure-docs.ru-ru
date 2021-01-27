@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/20/2020
 ms.topic: conceptual
 ms.custom: how-to, automl
-ms.openlocfilehash: 4539936007de0b45ab33dbd391baacc8f7d2ce2a
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 1a40fe01240474c2a6df3e028b7d03f3e8bb73fc
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796063"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879753"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Создание, проверка и развертывание моделей автоматизированного машинного обучения с помощью Машинного обучения Azure
 
@@ -216,7 +216,7 @@ ms.locfileid: "97796063"
 1. Выберите **Развернуть**. Развертывание может занять около 20 минут.
     После начала развертывания появится вкладка **Сводка по модели**. Сведения о ходе развертывания см. в разделе **Состояние развертывания**. 
 
-Теперь у вас есть рабочая веб-служба для создания прогнозов! Вы можете проверить прогнозы, запросив соответствующую услугу с помощью [встроенной функции поддержки Машинного обучение Azure в Power BI](https://docs.microsoft.com/power-bi/connect-data/service-aml-integrate?context=azure/machine-learning/context/ml-context).
+Теперь у вас есть рабочая веб-служба для создания прогнозов! Вы можете проверить прогнозы, запросив соответствующую услугу с помощью [встроенной функции поддержки Машинного обучение Azure в Power BI](/power-bi/connect-data/service-aml-integrate?context=azure%2fmachine-learning%2fcontext%2fml-context).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

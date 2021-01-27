@@ -7,15 +7,15 @@ ms.service: automation
 ms.subservice: dsc
 author: mgoedtel
 ms.author: magoedte
-ms.date: 06/22/2020
+ms.date: 01/26/2021
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 437a917e0f9b6e7a7370e828c8e3ee95218cea3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 752d7f86941967c218b3a57fa163698b9f502057
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079746"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897026"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы State Configuration службы автоматизации Azure
 
@@ -37,7 +37,7 @@ State Configuration службы автоматизации Azure — это с
 
 Служба State Configuration службы автоматизации Azure предоставляет ряд преимуществ по сравнению с использованием DSC за пределами Azure. Она обеспечивает быструю и простую масштабируемость тысяч компьютеров из безопасного центрального расположения. Вы можете легко переносить компьютеры в облачную среду, присваивать им декларативные конфигурации, а также просматривать отчеты, отражающие соответствие каждого компьютера требуемому состоянию.
 
-Служба State Configuration службы автоматизации Azure связана с DSC так же, как модули runbook со скриптами PowerShell. Другими словами, служба автоматизации Azure помогает управлять сценариями PowerShell так же, как и конфигурациями DSC. 
+Служба State Configuration службы автоматизации Azure связана с DSC так же, как модули runbook со скриптами PowerShell. Другими словами, служба автоматизации Azure помогает управлять сценариями PowerShell так же, как и конфигурациями DSC.
 
 ### <a name="built-in-pull-server"></a>Встроенный опрашивающий сервер
 
@@ -83,20 +83,11 @@ State Configuration службы автоматизации Azure — это с
 
 ### <a name="configuration-of-private-networks"></a><a name="network-planning"></a>Настройка частных сетей
 
-Если узлы находятся в частной сети, требуются следующие порты и URL-адреса. Эти ресурсы обеспечивают сетевое подключение для управляемого узла и позволяют DSC обмениваться данными со службой автоматизации Azure.
-
-* Порт: только исходящий интернет-трафик через TCP-порт 443
-* Глобальный URL-адрес: * **.azure-automation.net**
-* Глобальный URL-адрес US Gov (Вирджиния): * **.azure automation.us**
-* Служба агента: **https:// \<workspaceId\> . agentsvc.Azure-Automation.NET**
-
-При использовании ресурсов DSC, взаимодействующих между узлами, например [ресурсов WaitFor*](/powershell/scripting/dsc/reference/resources/windows/waitForAllResource), необходимо также разрешить трафик между узлами. Сведения об этих требованиях к сети см. в документации по каждому ресурсу DSC.
-
-Сведения о требованиях клиента к TLS 1,2 см. в разделе [Принудительная поддержка tls 1,2 для службы автоматизации Azure](automation-managing-data.md#tls-12-enforcement-for-azure-automation).
+Дополнительные сведения о портах, URL-адресах и других данных о сети, необходимых для узлов в частной сети, см. в [конфигурации сети службы автоматизации Azure](automation-network-configuration.md#hybrid-runbook-worker-and-state-configuration) .
 
 #### <a name="proxy-support"></a>Поддержка прокси-сервера
 
-Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях. Этот параметр включается путем установки значений свойств `ProxyURL` и `ProxyCredential` в [скрипте метаконфигурации](automation-dsc-onboarding.md#generate-dsc-metaconfigurations), используемом для регистрации узлов. 
+Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях. Этот параметр включается путем установки значений свойств `ProxyURL` и `ProxyCredential` в [скрипте метаконфигурации](automation-dsc-onboarding.md#generate-dsc-metaconfigurations), используемом для регистрации узлов.
 
 >[!NOTE]
 >В службе State Configuration службы автоматизации Azure не предусмотрена поддержка прокси-сервера DSC для предыдущих версий Windows.
@@ -114,4 +105,4 @@ State Configuration службы автоматизации Azure — это с
 - Сведения о компилировании конфигураций DSC, которые затем можно назначить целевым узлам, см. в статье [Компилирование конфигураций DSC в службе State Configuration службы автоматизации Azure](automation-dsc-compile.md).
 - Пример использования службы State Configuration в службе автоматизации Azure в конвейере непрерывного развертывания см. в статье [Настройка непрерывного развертывания с помощью Chocolatey](automation-dsc-cd-chocolatey.md).
 - Сведения о ценах см. на странице [с ценами на использование State Configuration службы автоматизации Azure](https://azure.microsoft.com/pricing/details/automation/).
-- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+- Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).

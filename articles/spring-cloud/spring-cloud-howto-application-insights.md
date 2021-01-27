@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/04/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: fb1c6f2b541e537bcb52c55fcfd87bbebe37b8e5
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: c4871c3de8028eec1b6184c1d03ac2180b50f57d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831947"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881356"
 ---
 # <a name="application-insights-java-in-process-agent-in-azure-spring-cloud-preview"></a>Application Insights агента In-Process Java в Azure Веснного облака (Предварительная версия)
 
@@ -83,7 +83,7 @@ Application Insights предоставить множество наблюда�
 
   [![IPA 8](media/spring-cloud-application-insights/petclinic-microservices-live-metrics.jpg)](media/spring-cloud-application-insights/petclinic-microservices-live-metrics.jpg)
 
-* В левой области навигации щелкните **доступность** , чтобы отслеживать доступность и скорость реагирования веб-приложений путем создания [тестов доступности в Application Insights](/azure/azure-monitor/app/monitor-web-app-availability).
+* В левой области навигации щелкните **доступность** , чтобы отслеживать доступность и скорость реагирования веб-приложений путем создания [тестов доступности в Application Insights](../azure-monitor/app/monitor-web-app-availability.md).
 
   [![IPA 9](media/spring-cloud-application-insights/petclinic-microservices-availability.jpg)](media/spring-cloud-application-insights/petclinic-microservices-availability.jpg)
 

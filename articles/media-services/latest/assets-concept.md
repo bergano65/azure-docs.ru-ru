@@ -1,6 +1,5 @@
 ---
-title: Активы
-titleSuffix: Azure Media Services
+title: Ресурсы в службах мультимедиа Azure
 description: Сведения о том, какие ресурсы и как они используются службами мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -13,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: f6f4cfcc07496179908c8349f4282a7633379cd3
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 5159432107e60f6c21bcf70e0bbc9a9e2123a728
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98695832"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897702"
 ---
 # <a name="assets-in-azure-media-services-v3"></a>Ресурсы в службах мультимедиа Azure v3
 
@@ -42,7 +41,7 @@ ms.locfileid: "98695832"
 
 Имена файлов и больших двоичных объектов в ресурсе должны соответствовать как [требованиям к именованию больших двоичных объектов](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata), так и [требованиям к именованию для NTFS](/windows/win32/fileio/naming-a-file). Это связано с тем, что такие файлы могут копироваться для обработки из хранилища BLOB-объектов на локальный диск NTFS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)
 

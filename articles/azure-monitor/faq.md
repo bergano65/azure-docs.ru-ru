@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: bc229974cf14ba364e5e7111dc1d2704e03c3635
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 2ca8a814fbaf2d8c257d094f81d17a5c871793b0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746804"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878941"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -380,6 +380,12 @@ WireData
 * Если скрипт на стороне клиента отсутствует, вы можете [задать файлы cookie на сервере](https://apmtips.com/posts/2016-07-09-tracking-users-in-api-apps/).
 * Если один реальный пользователь работает с вашим сайтом в разных браузерах, на разных компьютерах либо использует конфиденциальный режим просмотра или режим инкогнито, то он будет учитываться несколько раз.
 * Для определения вошедшего в систему пользователя на разных компьютерах и в разных браузерах добавьте вызов [setAuthenticatedUserContext()](app/api-custom-events-metrics.md#authenticated-users).
+
+### <a name="how-does-application-insights-generate-device-information-browser-os-language-model"></a>Как Application Insights создает сведения об устройстве (браузер, ОС, язык, модель)?
+
+Браузер передает строку агента пользователя в HTTP-заголовке запроса, а служба приема Application Insights использует [средство синтаксического анализа UA](https://github.com/ua-parser/uap-core) для создания полей, отображаемых в таблицах данных и интерфейсах. В результате Application Insights пользователи не могут изменить эти поля.
+
+Иногда эти данные могут отсутствовать или быть неточными, если пользователь или предприятие отключает отправку агента пользователя в параметрах браузера. Кроме того, [регулярное выражение средства синтаксического анализа UA](https://github.com/ua-parser/uap-core/blob/master/regexes.yaml) может не включать все сведения об устройстве или Application Insights может не использовать последние обновления.
 
 ### <a name="have-i-enabled-everything-in-application-insights"></a><a name="q17"></a> Все ли активировано в Application Insights?
 | Что вы должны видеть | Как это получить | Для чего это нужно |

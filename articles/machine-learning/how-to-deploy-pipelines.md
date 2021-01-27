@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1
-ms.openlocfilehash: 9eb07721f9d507d69de10b6de6c8c2a358dab020
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 5dc14873f8863332d37a6ced6ce4013e76640dea
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034094"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879399"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>Публикация и мониторинг конвейеров машинного обучения
 
@@ -32,7 +32,7 @@ ms.locfileid: "97034094"
 
 * [Настройка среды разработки](how-to-configure-environment.md) для установки пакета SDK машинное обучение Azure или использование [машинное обучение Azure вычислительного экземпляра](concept-compute-instance.md) с уже установленным пакетом SDK
 
-* Создайте и запустите конвейер машинного обучения, как описано в следующем [руководстве. создание конвейера машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md). Другие варианты см. [в статье Создание и запуск конвейеров машинного обучения с помощью пакета SDK для машинное обучение Azure](how-to-create-your-first-pipeline.md) .
+* Создайте и запустите конвейер машинного обучения, как описано в следующем [руководстве. создание конвейера машинное обучение Azure для пакетной оценки](tutorial-pipeline-batch-scoring-classification.md). Другие варианты см. [в статье Создание и запуск конвейеров машинного обучения с помощью пакета SDK для машинное обучение Azure](./how-to-create-machine-learning-pipelines.md) .
 
 ## <a name="publish-a-pipeline"></a>Публикация конвейера
 

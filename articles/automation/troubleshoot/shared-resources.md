@@ -2,18 +2,15 @@
 title: Устранение проблем c общими ресурсами службы автоматизации Azure
 description: В этой статье рассказывается, как устранять проблемы с общими ресурсами службы автоматизации Azure.
 services: automation
-author: mgoedtel
-ms.author: magoedte
+ms.subservice: ''
 ms.date: 03/12/2019
-ms.topic: conceptual
-ms.service: automation
-manager: carmonm
-ms.openlocfilehash: c6bdc09d37cf29458346eaea360b4cd9e0d1226f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: troubleshooting
+ms.openlocfilehash: c4ede0bffedc256f4af621d4945ebbbea0f8a4b6
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187172"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896297"
 ---
 # <a name="troubleshoot-shared-resource-issues"></a>Устранение проблем с общими ресурсами
 
@@ -33,7 +30,7 @@ ms.locfileid: "86187172"
 
 #### <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, необходимо удалить зависший модуль с помощью командлета [Remove-AzAutomationModule](/powershell/module/Az.Automation/Remove-AzAutomationModule?view=azps-3.7.0). Затем можно повторить импорт модуля.
+Чтобы устранить эту проблему, необходимо удалить зависший модуль с помощью командлета [Remove-AzAutomationModule](/powershell/module/Az.Automation/Remove-AzAutomationModule). Затем можно повторить импорт модуля.
 
 ```azurepowershell-interactive
 Remove-AzAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
@@ -70,7 +67,7 @@ Azure modules are being updated
 * Структура не соответствует той, которая требуется для службы автоматизации.
 * Модуль зависит от другого модуля, который не был развернут в учетной записи службы автоматизации.
 * В папке отсутствуют зависимости модуля.
-* Командлет [New-AzAutomationModule](/powershell/module/Az.Automation/New-AzAutomationModule?view=azps-3.7.0) используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
+* Командлет [New-AzAutomationModule](/powershell/module/Az.Automation/New-AzAutomationModule) используется для передачи модуля, при этом полный путь для хранения не указан или модуль не загружен с помощью общедоступного URL-адреса.
 
 #### <a name="resolution"></a>Решение
 

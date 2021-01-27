@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40269f6b1553d73af43b4cf86127eaa97524dd57
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 535b49cb20d60bd9ab294543b82bdb24b040eb7b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740913"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879483"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -429,7 +429,7 @@ EDR и ATP в Защитнике Windows | Назначение ролей<br>У
 В | Может
 --- | ---
 [Центр безопасности Microsoft 365](https://protection.office.com) | Все разрешения роли читателя сведений о безопасности.<br>Просмотр, исследование и реагирование на оповещения об угрозах безопасности.
-Центр защиты идентификации | Все разрешения роли читателя сведений о безопасности.<br>А также возможность выполнять все операции центра защиты идентификации, кроме сброса паролей.
+Защита идентификации Azure AD | Все разрешения роли читателя сведений о безопасности.<br>Кроме того, возможность выполнять все операции центра защиты идентификации, за исключением сброса паролей и настройки оповещений.
 [Управление привилегированными пользователями](../privileged-identity-management/pim-configure.md) | Все разрешения роли читателя сведений о безопасности.
 [Центр безопасности и соответствия требованиям Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Все разрешения роли читателя сведений о безопасности.<br>Просмотр, исследование и реагирование на оповещения системы безопасности.
 EDR и ATP в Защитнике Windows | Все разрешения роли читателя сведений о безопасности.<br>Просмотр, исследование и реагирование на оповещения системы безопасности.

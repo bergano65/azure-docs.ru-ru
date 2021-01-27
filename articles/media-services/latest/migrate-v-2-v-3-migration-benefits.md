@@ -1,5 +1,5 @@
 ---
-title: Шаг 1. Узнайте о преимуществах перехода на API служб мультимедиа v3 | Документация Майкрософт
+title: Шаг 1. Узнайте о преимуществах перехода на API служб мультимедиа v3
 description: В этой статье перечислены преимущества перехода с служб мультимедиа версии 2 на v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: c1e3fae35ff249b4435cf2fdcd2bf691bc393d56
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 5980da900cd1394d5d9a9ddf99063662cad3c88b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690674"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898381"
 ---
 # <a name="step-1---understand-the-benefits-of-migrating-to-media-services-api-v3"></a>Шаг 1. Узнайте о преимуществах перехода на API служб мультимедиа v3
 
@@ -61,6 +61,6 @@ ms.locfileid: "98690674"
 | Поддержка уведомлений [Azure EventGrid](reacting-to-media-services-events.md) | Уведомления EventGrid — это более широкие возможности. Существует больше типов уведомлений, расширенная поддержка пакетов SDK для получения уведомлений в собственном приложении и более существующих служб Azure, которые могут действовать как обработчики событий. |
 | [Azure Monitor поддержки и интеграции в портал Azure](monitor-events-portal-how-to.md) | Это позволяет клиентам визуализировать использование квот учетной записи служб мультимедиа, статистику конечных точек потоковой передачи в реальном времени, а затем получать и архивировать статистику для интерактивных событий. Теперь клиенты могут настраивать оповещения и выполнять необходимые действия на основе данных метрик в реальном времени. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [migration guide next steps](./includes/migration-guide-next-steps.md)]

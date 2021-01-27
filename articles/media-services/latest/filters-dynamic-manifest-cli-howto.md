@@ -1,5 +1,5 @@
 ---
-title: Использование CLI для создания фильтров с помощью служб мультимедиа Azure | Документация Майкрософт
+title: Использование интерфейса командной строки для создания фильтров с помощью служб мультимедиа Azure
 description: В этой статье показано, как использовать интерфейс командной строки для создания фильтров с помощью служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: f86b3fbebfaa2eb6fc35d5373eab2bb296ff5043
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 75df01ff65a0910dab140942b520978cd7728775
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740615"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897583"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI
 
@@ -128,10 +128,10 @@ az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocat
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 [Потоковая передача видео](stream-files-tutorial-with-api.md) 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 [Azure CLI](/cli/azure/ams?view=azure-cli-latest)

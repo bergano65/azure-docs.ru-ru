@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a47f720344a16d0f77559d6aabfb2b0245e62976
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ee4a09df0f95cb809db0e5c0e63d195ee5cfdff
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426339"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896941"
 ---
 # <a name="migrate-from-orchestrator-to-azure-automation-beta"></a>Миграция из Orchestrator в службу автоматизации Azure (бета-версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "89426339"
 
 ## <a name="import-the-standard-activities-module"></a>Импорт модуля стандартных действий
 
-Импортируйте [модуль стандартных действий](/system-center/orchestrator/standard-activities?view=sc-orch-2019) в службу автоматизации Azure. В него входят преобразованные версии стандартных действий Orchestrator, которые могут использоваться в преобразованных графических модулях runbook.
+Импортируйте [модуль стандартных действий](/system-center/orchestrator/standard-activities) в службу автоматизации Azure. В него входят преобразованные версии стандартных действий Orchestrator, которые могут использоваться в преобразованных графических модулях runbook.
 
 ## <a name="import-orchestrator-integration-modules"></a>Импорт модулей интеграции Orchestrator
 
@@ -32,7 +32,7 @@ ms.locfileid: "89426339"
 
 ## <a name="convert-integration-packs"></a>Преобразование пакетов интеграции
 
-Примените [преобразователь пакетов интеграции](/system-center/orchestrator/orch-integration-toolkit/integration-pack-wizard?view=sc-orch-2019), чтобы преобразовать все пакеты интеграции, созданные при помощи [Orchestrator Integration Toolkit (OIT)](/previous-versions/system-center/developer/hh855853(v=msdn.10)), в модули интеграции на основе PowerShell, которые вы сможете импортировать в службу автоматизации Azure или в Service Management Automation. При запуске преобразователя пакетов интеграции отобразится мастер, который позволяет выбрать OIP-файл пакета интеграции. После этого мастер выводит список действий, включенных в этот пакет интеграции, и позволяет выбрать действия для миграции. После завершения работы мастера создается модуль интеграции, содержащий соответствующий командлет для каждого действия в исходном пакете интеграции.
+Примените [преобразователь пакетов интеграции](/system-center/orchestrator/orch-integration-toolkit/integration-pack-wizard), чтобы преобразовать все пакеты интеграции, созданные при помощи [Orchestrator Integration Toolkit (OIT)](/previous-versions/system-center/developer/hh855853(v=msdn.10)), в модули интеграции на основе PowerShell, которые вы сможете импортировать в службу автоматизации Azure или в Service Management Automation. При запуске преобразователя пакетов интеграции отобразится мастер, который позволяет выбрать OIP-файл пакета интеграции. После этого мастер выводит список действий, включенных в этот пакет интеграции, и позволяет выбрать действия для миграции. После завершения работы мастера создается модуль интеграции, содержащий соответствующий командлет для каждого действия в исходном пакете интеграции.
 
 > [!NOTE]
 > Вы не сможете с помощью преобразователя пакетов интеграции преобразовать пакеты интеграции, которые были созданы не через OIT. Кроме того, он пока не может преобразовывать некоторые пакеты интеграции, предоставляемые Майкрософт. Преобразованные версии этих пакетов интеграции предоставляются для скачивания отдельно, что позволит вам установить их в службе автоматизации Azure или в Service Management Automation.
@@ -118,7 +118,7 @@ ConvertFrom-SCORunbook -RunbookPath "c:\runbooks\MyRunbooks.ois_export" -Module 
 
 ### <a name="invoke-runbook-activity"></a>Действие вызова модуля Runbook
 
-Модули runbook в Orchestrator запускают другие модули runbook с помощью действия `Invoke Runbook`. Если преобразуемый модуль runbook содержит такое действие и включен параметр `Wait for completion`, то в преобразованном модуле runbook для него создается действие runbook.  Если параметр `Wait for completion` не включен, создается действие скрипта рабочего процесса, которое запускает модуль runbook с помощью командлета [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0). После импорта преобразованного модуля Runbook в службу автоматизации Azure измените это действие с учетом указанной в этом действии информации.
+Модули runbook в Orchestrator запускают другие модули runbook с помощью действия `Invoke Runbook`. Если преобразуемый модуль runbook содержит такое действие и включен параметр `Wait for completion`, то в преобразованном модуле runbook для него создается действие runbook.  Если параметр `Wait for completion` не включен, создается действие скрипта рабочего процесса, которое запускает модуль runbook с помощью командлета [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook). После импорта преобразованного модуля Runbook в службу автоматизации Azure измените это действие с учетом указанной в этом действии информации.
 
 ## <a name="create-orchestrator-assets"></a>Создание ресурсов Orchestrator
 

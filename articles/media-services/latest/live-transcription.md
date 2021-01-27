@@ -1,26 +1,9 @@
 ---
-title: Транскрибирование в реальном времени
-titleSuffix: Azure Media Services
-description: Сведения о динамической транскрипции служб мультимедиа Azure.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: ne
-ms.topic: how-to
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: c3465e294af104c4d9c3b34960f5e95cf41e7cb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291421"
+Title: транскрипция в реальном времени: Описание служб мультимедиа Azure: Дополнительные сведения о транскрипции в службе мультимедиа Azure.  
+службы: Media-Services documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor Editor: ' ' MS. Service: Media-Services MS. Рабочая нагрузка: Media ms.tgt_pltfrm: Na MS. devlang: NE MS. Topic: "как в мс. Дата: 08/31/2020 MS. author: инхенкел
+
 ---
+
 # <a name="live-transcription-preview"></a>Динамическая транскрипция (Предварительная версия)
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -35,14 +18,14 @@ ms.locfileid: "89291421"
 
 Динамическая транскрипция доступна в следующих регионах:
 
-- Юго-Восточная Азия
+- Southeast Asia
 - Западная Европа
 - Северная Европа
 - Восточная часть США
 - Центральная часть США
 - Центрально-южная часть США
 - западная часть США 2
-- Южная Бразилия
+- Brazil South
 
 Это список доступных языков, которые можно расшифрованной, использовать код языка в API.
 

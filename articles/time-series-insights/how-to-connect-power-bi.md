@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: 07e79dbde142400677901ee02903144f9a42cd6b
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: b4ed5a419df97f98b883a07825184122945e092e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740770"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879567"
 ---
 # <a name="visualize-data-from-azure-time-series-insights-in-power-bi"></a>Визуализация данных из службы "аналитика временных рядов Azure" в Power BI
 
@@ -112,10 +112,10 @@ ms.locfileid: "97740770"
 После создания отчета его можно опубликовать в Power BI Reporting Services и предоставить другим пользователям в Организации.
 
 ## <a name="advanced-editing"></a>Расширенное редактирование
-Если вы уже загрузили набор данных в Power BI, но хотите изменить запрос (например, параметры даты и времени или идентификатора среды), это можно сделать с помощью функций Расширенный редактор Power BI. Дополнительные сведения о том, как вносить изменения с помощью **редактора Power Query**, см. в [документации по Power BI](https://docs.microsoft.com/power-bi/desktop-query-overview) . 
+Если вы уже загрузили набор данных в Power BI, но хотите изменить запрос (например, параметры даты и времени или идентификатора среды), это можно сделать с помощью функций Расширенный редактор Power BI. Дополнительные сведения о том, как вносить изменения с помощью **редактора Power Query**, см. в [документации по Power BI](/power-bi/desktop-query-overview) . 
 
 ## <a name="next-steps"></a>Next Steps
 
-* Дополнительные сведения о [Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-query-overview).
+* Дополнительные сведения о [Power BI Desktop](/power-bi/desktop-query-overview).
 
 * Узнайте, как [отправлять запросы к данным](concepts-query-overview.md) в Gen2 службы "аналитика временных рядов Azure".

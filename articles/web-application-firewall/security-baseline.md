@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b44ea6f55717712cfba4045205e02bd9f2b851df
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 4bda3622c1bb1cb66e83b82df0d13cbfee9e20a3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202663"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878127"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Базовые показатели безопасности Azure для брандмауэра веб-приложения Azure
 
@@ -406,7 +406,7 @@ Azure WAF обеспечивает централизованную защиту
 
 WAF Azure, в режиме предотвращения, блокирует вторжения и атаки, обнаруженные правилами. Злоумышленник получает сообщение "403 unauthorized access" (несанкционированный доступ) и такое подключение прерывается. В режиме предотвращения подобные атаки также заносятся в журналы WAF.
 
-- [Общие сведения об интеграции шлюза приложений с центром безопасности Azure](../application-gateway/application-gateway-integration-security-center.md#overview)
+- [Общие сведения об интеграции шлюза приложений с центром безопасности Azure](../security-center/security-center-partner-integration.md)
 
 - [Режимы WAF в шлюзе приложений](ag/ag-overview.md#waf-modes)
 

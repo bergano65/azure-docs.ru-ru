@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/21/2021
 ms.author: b-juche
-ms.openlocfilehash: a8286768dac33e48bc4d7c4dce0d9934da08c319
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: ec6a03673112dfb5397f6fae947f1fbf65fd6791
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736077"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881424"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -263,13 +263,13 @@ NetApp предлагает решение на основе SaaS, [NetApp об�
 
 ### <a name="can-i-use-azure-netapp-files-nfs-or-smb-volumes-with-azure-vmware-solution-avs"></a>Можно ли использовать Azure NetApp Files NFS или томов SMB с решением VMware для Azure (AVS)?
 
-Тома Azure NetApp Files NFS можно подключить на виртуальных машинах Windows или виртуальных машинах Linux. Вы можете сопоставлять Azure NetApp Files общие ресурсы SMB на виртуальных машинах Windows AVS. Дополнительные сведения см. [в статье Azure NetApp Files с помощью решения VMware для Azure]( ../azure-vmware/net-app-files-with-azure-vmware-solution.md).  
+Тома Azure NetApp Files NFS можно подключить на виртуальных машинах Windows или виртуальных машинах Linux. Вы можете сопоставлять Azure NetApp Files общие ресурсы SMB на виртуальных машинах Windows AVS. Дополнительные сведения см. [в статье Azure NetApp Files с помощью решения VMware для Azure]( ../azure-vmware/netapp-files-with-azure-vmware-solution.md).  
 
 ### <a name="what-regions-are-supported-for-using-azure-netapp-files-nfs-or-smb-volumes-with-azure-vmware-solution-avs"></a>Какие регионы поддерживаются при использовании Azure NetApp Files NFS или томов SMB с решением VMware для Azure (AVS)?
 
 Использование Azure NetApp Files NFS или томов SMB с AVS поддерживается в следующих регионах: Восточная часть США, Западная часть США, Западная Европа и Восточная Австралия.
 
-## <a name="next-steps"></a>Следующие шаги  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Microsoft Azure ExpressRoute часто задаваемые вопросы](../expressroute/expressroute-faqs.md)
 - [Вопросы и ответы по виртуальная сеть Microsoft Azure](../virtual-network/virtual-networks-faq.md)

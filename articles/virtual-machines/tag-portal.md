@@ -7,12 +7,12 @@ author: cynthn
 ms.service: virtual-machines
 ms.date: 11/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 7c3e779c152a967452f86b55f06d38076102085c
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 9c220814ae1f714e9eac0c0c11a50d9cf68a621d
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94595038"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897414"
 ---
 # <a name="tagging-a-vm-using-the-portal"></a>Добавление тегов для виртуальной машины с помощью портала
 
@@ -28,9 +28,7 @@ ms.locfileid: "94595038"
 
     :::image type="content" source="media/tag/key-value.png" alt-text="Снимок экрана страницы для добавления пары &quot;ключ-значение&quot; в качестве тега.":::
 
-
-
-**Дальнейшие действия**
+### <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о добавлении тегов для ресурсов Azure см. в статьях [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md) и [Использование тегов для организации ресурсов в Azure](../azure-resource-manager/management/tag-resources.md).
-- Сведения о том, как теги могут помочь в управлении использованием ресурсов Azure, см. в статьях [Расшифровка счета за использование Microsoft Azure](../cost-management-billing/understand/review-individual-bill.md) и [Получение ценных сведений о потреблении ресурсов Microsoft Azure](../cost-management-billing/manage/usage-rate-card-overview.md).
+- Чтобы узнать, как теги могут помочь в управлении использованием ресурсов Azure, см. статью [понимание счета Azure](../cost-management-billing/understand/review-individual-bill.md).

@@ -1,5 +1,5 @@
 ---
-title: Сигнальные звуковые дорожки с помощью служб мультимедиа Azure v3 | Документация Майкрософт
+title: Сигнальные звуковые дорожки с помощью служб мультимедиа Azure v3
 description: Выполните действия, описанные в этом руководстве, чтобы отправить файл, закодировать видео, добавить описательные звуковые дорожки и выполнить потоковую передачу содержимого с помощью служб мультимедиа v3.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 0bd2002e8f6f233361dd85cc08cfbd97ca23ed60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 155e79f8d42988d8498c52c0f930bc03bc599cf0
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291268"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898228"
 ---
 # <a name="signal-descriptive-audio-tracks"></a>Сигнальные звуковые дорожки сигнала
 
@@ -36,7 +36,7 @@ ms.locfileid: "89291268"
 
 ## <a name="create-an-input-asset-and-upload-a-local-file-into-it"></a>Создание входного ресурса и отправка в него локального файла 
 
-Функция **CreateInputAsset** создает входной [ресурс](/rest/api/media/assets) и отправляет в него определенный локальный видеофайл. Этот **ресурс** используется в качестве входных данных для задания кодирования. В службах мультимедиа v3 входные данные для **задания** могут быть **активны**или доступны для учетной записи служб мультимедиа через URL-адреса HTTPS. 
+Функция **CreateInputAsset** создает входной [ресурс](/rest/api/media/assets) и отправляет в него определенный локальный видеофайл. Этот **ресурс** используется в качестве входных данных для задания кодирования. В службах мультимедиа v3 входные данные для **задания** могут быть **активны** или доступны для учетной записи служб мультимедиа через URL-адреса HTTPS. 
 
 Если вы хотите узнать, как кодировать URL-адрес HTTPS, ознакомьтесь с [этой статьей](job-input-from-http-how-to.md) .  
 
@@ -243,6 +243,6 @@ await UpoadAudioIntoOutputAsset(client, config.ResourceGroup, config.AccountName
 
 Проигрыватель мультимедиа Azure можно использовать для тестирования, но его нельзя применять в рабочей среде. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Анализ видео](analyze-videos-tutorial-with-api.md)

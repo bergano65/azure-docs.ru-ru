@@ -2,13 +2,13 @@
 title: Учетные записи пакетной службы и учетные записи службы хранилища Azure
 description: Сведения об учетных записях пакетной службы Azure и их использовании с точки зрения разработки.
 ms.topic: conceptual
-ms.date: 05/12/2020
-ms.openlocfilehash: 20a2a28d0eaa2c7997ea93e66d07ecb99bf297a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/26/2021
+ms.openlocfilehash: 83108a265f91c9feef2fab424f1819939c2d58c9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83790911"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896754"
 ---
 # <a name="batch-accounts-and-azure-storage-accounts"></a>Учетные записи пакетной службы и учетные записи службы хранилища Azure
 
@@ -20,9 +20,10 @@ ms.locfileid: "83790911"
 
 В одной учетной записи пакетной службы можно выполнять несколько рабочих нагрузок Пакетной службы. Можно также распределить рабочие нагрузки между учетными записями пакетной службы в рамках одной подписки, но в разных регионах Azure.
 
+Вы можете создать учетную запись пакетной службы с помощью [портала Azure](batch-account-create-portal.md) или программными средствами, например с помощью [библиотеки .NET управления пакетной службой](batch-management-dotnet.md). При создании учетной записи можно связать учетную запись хранения Azure для хранения связанных с заданием входных и выходных данных или приложений.
+
 [!INCLUDE [batch-account-mode-include](../../includes/batch-account-mode-include.md)]
 
-Вы можете создать учетную запись пакетной службы с помощью [портала Azure](batch-account-create-portal.md) или программными средствами, например с помощью [библиотеки .NET управления пакетной службой](batch-management-dotnet.md). При создании учетной записи можно связать учетную запись хранения Azure для хранения связанных с заданием входных и выходных данных или приложений.
 
 ## <a name="azure-storage-accounts"></a>Учетные записи службы хранилища Azure
 
@@ -41,4 +42,5 @@ ms.locfileid: "83790911"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте подробнее об [узлах и пулах](nodes-and-pools.md).
-- Узнайте, как создать учетную запись пакетной службы с помощью [портала Azure](batch-account-create-portal.md).
+- Узнайте, как создавать учетные записи пакетной службы и управлять ими с помощью [портал Azure](batch-account-create-portal.md) или [.NET для управления пакетной](batch-management-dotnet.md)службой.
+- Узнайте, как использовать [частные конечные точки](private-connectivity.md) с учетными записями пакетной службы Azure.

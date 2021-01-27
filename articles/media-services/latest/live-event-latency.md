@@ -1,5 +1,5 @@
 ---
-title: Лививент параметры низкой задержки в службах мультимедиа Azure | Документация Майкрософт
+title: Лививент параметры низкой задержки в службах мультимедиа Azure
 description: В этом разделе приводятся общие сведения о параметрах низкой задержки Лививент и показано, как задать низкую задержку.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 114efe668fba47e9d83741b8fa45e1f396725198
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 023b0f4d7f0367882e0a5bb2be89c485c18bc03c
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291523"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897838"
 ---
 # <a name="live-event-low-latency-settings"></a>Параметры низкой задержки в динамических событиях
 
@@ -78,7 +78,7 @@ LiveEvent liveEvent = new LiveEvent(
 > [!NOTE]
 > Значение сквозной задержки может зависеть от условий локальной сети или наличия уровня кэширования CDN. Следует протестировать используемые конфигурации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о потоковой трансляции](live-streaming-overview.md)
 - [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)

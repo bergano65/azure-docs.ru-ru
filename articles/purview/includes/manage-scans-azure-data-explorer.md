@@ -1,16 +1,16 @@
 ---
-author: hophanms
-ms.author: hophan
+author: amberz
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: include
 ms.date: 1/20/2021
-ms.openlocfilehash: ac83f455d2af82c3f6970077fccb17f07e53cccc
+ms.author: amberz
+ms.openlocfilehash: bf872feae9c3a7ca94e5252872adee2b653f5524
 ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98901174"
+ms.locfileid: "98896121"
 ---
 ## <a name="creating-and-running-a-scan"></a>Создание и выполнение проверки
 
@@ -27,19 +27,19 @@ ms.locfileid: "98901174"
 
 1. Введите учетные данные для подключения к источнику данных. 
 
-   :::image type="content" source="media/manage-scans/set-up-scan.png" alt-text="Настройка проверки":::
+   :::image type="content" source="media/manage-scans/set-up-scan-data-explorer.png" alt-text="Настройка проверки":::
 
 1. Вы можете задать область проверки для отдельных частей источника данных, таких как папки, коллекции или схемы, проверив соответствующие элементы в списке.
 
-   :::image type="content" source="media/manage-scans/scope-your-scan.png" alt-text="Определение области для проверки":::
+   :::image type="content" source="media/manage-scans/scope-your-scan-data-explorer.png" alt-text="Определение области для проверки":::
 
 1. Выберите набор правил проверки. Можно выбрать вариант по умолчанию, существующий пользовательский набор или создать встроенный.
 
-   :::image type="content" source="media/manage-scans/scan-rule-set.png" alt-text="Набор правил проверки":::
+   :::image type="content" source="media/manage-scans/scan-rule-set-data-explorer.png" alt-text="Набор правил проверки":::
 
 1. Выберите триггер проверки. Можно настроить расписание или запустить проверку один раз.
 
-   :::image type="content" source="media/manage-scans/trigger-scan.png" alt-text="Триггер":::
+   :::image type="content" source="media/manage-scans/trigger-scan-data-explorer.png" alt-text="Триггер":::
 
 1. Просмотрите параметры проверки и выберите **Сохранить и выполнить**.
 

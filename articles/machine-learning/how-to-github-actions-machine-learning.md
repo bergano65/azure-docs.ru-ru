@@ -10,12 +10,12 @@ ms.author: jukullam
 ms.date: 10/19/2020
 ms.topic: conceptual
 ms.custom: github-actions-azure
-ms.openlocfilehash: 8bce95b65d9b944505d7f9153159b342e49427cd
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: f5abeee3b1e1e44f5ce0423fc7f8170644d74508
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762915"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880480"
 ---
 # <a name="use-github-actions-with-azure-machine-learning"></a>Использование GitHub Actions с Машинным обучением Azure
 
@@ -228,4 +228,4 @@ jobs:
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](how-to-create-your-first-pipeline.md)
+> [Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure](./how-to-create-machine-learning-pipelines.md)

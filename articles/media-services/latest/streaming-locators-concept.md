@@ -1,5 +1,5 @@
 ---
-title: Указатели потоковой передачи в Службах мультимедиа Azure | Документация Майкрософт
+title: Указатели потоковой передачи в службах мультимедиа Azure
 description: В этой статье приведены общие сведения об указателях потоковой передачи и их использовании в Службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 68df5256949db44b2b347002570c64d1aa0d55ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b711b9a6923a1923562a282dcaffe7cecb0c58b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297966"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898144"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -25,7 +25,7 @@ ms.locfileid: "89297966"
 
 Процесс создания **указателя потоковой передачи** называется публикацией. По умолчанию **указатель потоковой передачи** действителен сразу же после выполнения вызовов API и продолжается до тех пор, пока не будет настроено дополнительное время начала и окончания. 
 
-При создании **указателя потоковой передачи**необходимо указать имя **ресурса** и имя **политики потоковой передачи** . Дополнительные сведения см. в следующих разделах:
+При создании **указателя потоковой передачи** необходимо указать имя **ресурса** и имя **политики потоковой передачи** . Дополнительные сведения см. в следующих разделах:
 
 * [Ресурсы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
@@ -106,6 +106,6 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 * [Политики ключей содержимого](content-key-policy-concept.md)
 * [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание указателя потоковой передачи и URL-адресов сборки](create-streaming-locator-build-url.md)

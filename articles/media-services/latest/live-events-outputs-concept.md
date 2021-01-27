@@ -1,25 +1,9 @@
 ---
-title: Основные понятия Live Events и Live Output в службах мультимедиа Azure v3
-titleSuffix: Azure Media Services
-description: В этом разделе приводятся общие сведения о динамических событиях и динамических выходах в службах мультимедиа Azure v3.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: ne
-ms.topic: conceptual
-ms.date: 10/23/2020
-ms.author: inhenkel
-ms.openlocfilehash: a74dcb3cae74605e747a63f8fbb102404d8cc80e
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94741830"
+Title: Live Events and Live Output концепция в службах мультимедиа Azure V3: Описание служб мультимедиа Azure. в этом разделе содержится обзор динамических событий и динамических выходов в службах мультимедиа Azure v3.
+службы: мультимедиа-службы documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor редактор: ' '
+
+MS. Service: Media-Services MS. Рабочая нагрузка: носитель ms.tgt_pltfrm: Na MS. devlang: NE MS. Topic: концептуальная МС. Дата: 10/23/2020 MS. author: инхенкел
+
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>События и выходные данные прямой трансляции в Службах мультимедиа
 
@@ -150,7 +134,7 @@ ms.locfileid: "94741830"
     |---|---|---|
     |REST|[Properties. Ванитюрл](/rest/api/media/liveevents/create#liveevent)|[Лививентинпут. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
     |CLI|[--именного — URL-адрес](/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access — токен](/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
-    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent.md?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    |.NET|[Лививент. Ванитюрл](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[Лививентинпут. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
 
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема
 

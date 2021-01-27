@@ -3,19 +3,19 @@ title: Начало работы — переводчик
 titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как зарегистрироваться для работы с Azure Cognitive Services Translator и получить ключ подписки.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.author: swmachan
-ms.openlocfilehash: 6773c6b29ecfd8354c54a6214cfe0b4050edcd38
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.author: lajanuar
+ms.openlocfilehash: 8932c389138c1fb86509a59bc055a2ce147c51a3
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602648"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896720"
 ---
 # <a name="how-to-sign-up-for-translator"></a>Как зарегистрироваться для работы с переводчиком
 
@@ -57,7 +57,7 @@ Microsoft Translator обычно выполняет первые несколь
 
 ## <a name="customization"></a>Настройка
 
-Используйте пользовательский переводчик, чтобы настроить переводы и создать систему переводов, оптимизированную для собственной терминологии и стиля, начав с универсальных систем нейронного машинного перевода Microsoft Translator. [Подробнее](customization.md)
+Используйте пользовательский переводчик, чтобы настроить переводы и создать систему переводов, оптимизированную для собственной терминологии и стиля, начав с универсальных систем нейронного машинного перевода Microsoft Translator. [Дополнительные сведения](customization.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
