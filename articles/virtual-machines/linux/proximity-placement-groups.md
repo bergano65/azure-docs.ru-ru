@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: cynthn
-ms.openlocfilehash: ea50d0fdc5a772cae449951901af36eed4e93771
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a264996c3a2d907e58746c0fcf3eb8b2aefe43ba
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737631"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878873"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-azure-cli"></a>Развертывание виртуальных машин в группах размещения близкого взаимодействия с помощью Azure CLI
 
-Чтобы виртуальные машины максимально близки к максимально возможной задержке, следует развернуть их в [группе размещения](co-location.md#proximity-placement-groups)с учетом расположения.
+Чтобы виртуальные машины максимально близки к максимально возможной задержке, следует развернуть их в [группе размещения](../co-location.md#proximity-placement-groups)с учетом расположения.
 
 Группа размещения близкого взаимодействия — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группа размещения близкого взаимодействия удобны для рабочих нагрузок, где требуется низкая задержка.
 
@@ -69,6 +69,6 @@ az ppg show --name myppg --resource-group myppggroup --query "virtualMachines"
 
 Вы также можете создать масштабируемый набор в группе размещения с учетом расположения. Используйте тот же `--ppg` параметр команды [AZ vmss Create](/cli/azure/vmss#az_vmss_create) , чтобы создать масштабируемый набор, и все экземпляры будут созданы в той же группе размещения близости.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о командах [Azure CLI](/cli/azure/ppg) для групп размещения с учетом расположения.

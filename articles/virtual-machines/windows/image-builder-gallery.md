@@ -7,16 +7,16 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: 6699db280c4d82867d5559255eab08fd6b55b65a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: e3a7ea2cd696f54b032a3f17eceff466a6201436
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201524"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878686"
 ---
 # <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Windows и его распространение в Общей коллекции образов 
 
-В этой статье описано, как можно использовать Конструктор образов Azure и Azure PowerShell для создания версии образа в [Общей коллекции образов](shared-image-galleries.md) и распространения этого образа. Это также можно сделать с помощью [Azure CLI](../linux/image-builder-gallery.md).
+В этой статье описано, как можно использовать Конструктор образов Azure и Azure PowerShell для создания версии образа в [Общей коллекции образов](../shared-image-galleries.md) и распространения этого образа. Это также можно сделать с помощью [Azure CLI](../linux/image-builder-gallery.md).
 
 Для настройки образа мы будем использовать шаблон JSON. JSON-файл, который мы используем: [armTemplateWinSIG.json](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json). Мы скачаем и изменим локальную версию шаблона, поэтому в этой статье используется локальный сеанс PowerShell.
 

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 8e657386c417ce3407aea9b3765419e1d2b70bb9
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 242c0819e916f3ea7912d4d57b7d3e338152e4d9
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962454"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878516"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Устранение неполадок службы файлов Azure в Windows (SMB)
 
@@ -26,7 +26,7 @@ ms.locfileid: "97962454"
 
 При попытке подключить файловый ресурс может выдаваться следующая ошибка:
 
-- "Произошла системная ошибка 5. Отказано в доступе".
+- "Произошла системная ошибка 5. Отказано в доступе.
 
 ### <a name="cause-1-unencrypted-communication-channel"></a>Причина 1: незашифрованный коммуникационный канал
 
@@ -263,7 +263,7 @@ $leaseClient.Break() | Out-Null
 -   Если окончательный размер файла, в который выполняются операции записи, известен, а у программного обеспечения нет проблем совместимости, и если еще не записанный заключительный фрагмент файла содержит нули, укажите размер файла заранее вместо того, чтобы расширять его для каждой операции записи.
 -   Используйте правильный метод копирования:
     -   Используйте [AZCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) для передачи данных между двумя файловыми ресурсами.
-    -   Используйте [Robocopy](./storage-files-deployment-guide.md#robocopy) для передачи данных между файловыми ресурсами и локальным компьютером.
+    -   Используйте [Robocopy](./storage-how-to-create-file-share.md) для передачи данных между файловыми ресурсами и локальным компьютером.
 
 ### <a name="considerations-for-windows-81-or-windows-server-2012-r2"></a>Рекомендации для Windows 8.1 или Windows Server 2012 R2
 
@@ -406,8 +406,8 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 5. Чекксидхасаадусер: Убедитесь, что вошедший в систему пользователь AD синхронизирован с Azure AD. Если вы хотите узнать, синхронизирован ли конкретный пользователь AD с Azure AD, можно указать параметры-UserName и-domain во входных параметрах. 
 6. Чеккжеткерберостиккет: попытка получить билет Kerberos для подключения к учетной записи хранения. Если нет допустимого маркера Kerberos, выполните командлет klist Get CIFS/Storage-Account-Name. File. Core. Windows. NET и изучите код ошибки, чтобы вызвать ошибку получения билета.
 7. Чекксторажеаккаунтдомаинжоинед: Проверка включения проверки подлинности AD и заполнение свойств учетной записи AD. Если [это](./storage-files-identity-ad-ds-enable.md) не так, см. инструкции по включению AD DS проверки подлинности в службе файлов Azure. 
-8. Чеккусеррбакассигнмент: Проверьте, имеет ли пользователь AD правильное назначение роли RBAC, чтобы предоставить разрешение на уровне общего ресурса для доступа к службе "файлы Azure". Если это не так, см. [инструкции по настройке разрешения на уровне](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-assign-permissions) общего ресурса. (Поддерживается в версии Азфилешибрид v 0.2.3 +)
-9. Чеккусерфилеакцесс: Проверьте, имеет ли пользователь AD соответствующие разрешения на доступ к файлам и каталогам (ACL Windows) для пользователя Active Directory. Если это не так, см. [инструкции по настройке разрешения на уровне](https://docs.microsoft.com/azure/storage/files/storage-files-identity-ad-ds-configure-permissions) каталога и файлов. (Поддерживается в версии Азфилешибрид v 0.2.3 +)
+8. Чеккусеррбакассигнмент: Проверьте, имеет ли пользователь AD правильное назначение роли RBAC, чтобы предоставить разрешение на уровне общего ресурса для доступа к службе "файлы Azure". Если это не так, см. [инструкции по настройке разрешения на уровне](./storage-files-identity-ad-ds-assign-permissions.md) общего ресурса. (Поддерживается в версии Азфилешибрид v 0.2.3 +)
+9. Чеккусерфилеакцесс: Проверьте, имеет ли пользователь AD соответствующие разрешения на доступ к файлам и каталогам (ACL Windows) для пользователя Active Directory. Если это не так, см. [инструкции по настройке разрешения на уровне](./storage-files-identity-ad-ds-configure-permissions.md) каталога и файлов. (Поддерживается в версии Азфилешибрид v 0.2.3 +)
 
 ## <a name="unable-to-configure-directoryfile-level-permissions-windows-acls-with-windows-file-explorer"></a>Не удается настроить разрешения на уровне каталога или файла (списки управления доступом Windows) с помощью проводника Windows
 

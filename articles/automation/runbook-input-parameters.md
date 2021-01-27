@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/14/2019
 ms.topic: conceptual
-ms.openlocfilehash: 84e2eaf71326f59102800428479768aeba9ef9ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73e4dbb24b4e7c0c651f7d082c75b0f4a17158b5
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87042157"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98890887"
 ---
 # <a name="configure-runbook-input-parameters"></a>Настройка входных параметров runbook
 
@@ -75,7 +75,7 @@ Param
 В графической последовательности runbook используются следующие основные действия runbook:
 
 * настройка учетной записи запуска от имени Azure для проверки подлинности в Azure; 
-* определение командлета [Get-AzVM](/powershell/module/az.compute/get-azvm?view=azps-3.5.0) для получения свойств виртуальной машины;
+* определение командлета [Get-AzVM](/powershell/module/az.compute/get-azvm) для получения свойств виртуальной машины;
 * использование действия [Write-Output](/powershell/module/microsoft.powershell.utility/write-output) для вывода имен виртуальных машин. 
 
 Действие `Get-AzVM` определяет два входных значения: имя виртуальной машины и имя группы ресурсов. Так как эти имена могут отличаться при каждом запуске последовательности runbook, необходимо добавить входные параметры, чтоб она их принимала. См. статью [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
@@ -140,7 +140,7 @@ Param
 
 #### <a name="start-a-published-runbook-using-powershell-cmdlets-and-assign-parameters"></a>Запуск опубликованной последовательности runbook с помощью командлетов PowerShell и назначение параметров
 
-* **Командлеты Azure Resource Manager.** Последовательность runbook службы автоматизации, созданную в группе ресурсов, вы можете запустить с помощью командлета [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook?view=azps-3.5.0).
+* **Командлеты Azure Resource Manager.** Последовательность runbook службы автоматизации, созданную в группе ресурсов, вы можете запустить с помощью командлета [Start-AzAutomationRunbook](/powershell/module/Az.Automation/Start-AzAutomationRunbook).
 
    ```powershell
      $params = @{"VMName"="WSVMClassic";"resourceGroupeName"="WSVMClassicSG"}
@@ -272,7 +272,7 @@ Param
 
 Иногда может быть полезным хранить данные, которые необходимо передать в модуль runbook, в файле JSON. Например, можно создать файл JSON, который содержит все параметры, которые необходимо передать в runbook. Чтобы сделать это, необходимо преобразовать код JSON в строку, а затем преобразовать строку в объект PowerShell перед его передачей в последовательность runbook.
 
-В этом разделе используется пример, в котором скрипт PowerShell вызывает [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.5.0) для запуска runbook PowerShell, передавая содержимое файла JSON в runbook. Последовательность runbook PowerShell запускает виртуальную машину Azure, получая параметры для нее из объекта JSON.
+В этом разделе используется пример, в котором скрипт PowerShell вызывает [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook) для запуска runbook PowerShell, передавая содержимое файла JSON в runbook. Последовательность runbook PowerShell запускает виртуальную машину Azure, получая параметры для нее из объекта JSON.
 
 ### <a name="create-the-json-file"></a>Создание файла JSON
 
@@ -327,7 +327,7 @@ Start-AzVM -Name $json.VMName -ResourceGroupName $json.ResourceGroup
 1. Получите содержимое сохраненного файла JSON и преобразуйте его в строку. `JsonPath` указывает путь, по которому был сохранен файл JSON.
 
    ```powershell
-   $json =  (Get-content -path 'JsonPath\test.json' -Raw) | Out-string
+   $json =  (Get-content -path 'JsonPath\test.json' -Raw) | Out-string
    ```
 
 1. Преобразуйте содержимое строки `$json` в объект PowerShell.

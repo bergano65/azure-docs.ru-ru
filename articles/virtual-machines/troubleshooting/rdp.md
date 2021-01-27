@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/13/2018
 ms.author: genli
-ms.openlocfilehash: 2fd2efa9de3deff1fcf983ac0fa45e412357d312
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 512130928c8e18aad90bce351e3be85d6fbe03f0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "71057270"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878652"
 ---
 # <a name="troubleshoot-rdp-issues"></a>Устранение неполадок с протоколом удаленного рабочего стола
 
@@ -36,7 +36,7 @@ ms.locfileid: "71057270"
 - [Устранение внутренней ошибки](Troubleshoot-rdp-internal-error.md)
 - [Устранение проблем с частыми отключениями](troubleshoot-rdp-intermittent-connectivity.md)
 - [Устранение общей ошибки](troubleshoot-rdp-general-error.md)
-- [Устранение ошибок аутентификации](troubleshoot-authentication-error-rdp-vm.md)
+- [Устранение ошибок аутентификации](/troubleshoot/azure/virtual-machines/cannot-connect-rdp-azure-vm)
 - [Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события](event-id-troubleshoot-vm-rdp-connecton.md)
 - [Устранение ошибок RDP-подключения, возникающих из-за статического IP-адреса](troubleshoot-rdp-static-ip.md)
 - [Устранение ошибок RDP-подключения к виртуальной машине, возникающих из-за отключенного сетевого адаптера](troubleshoot-rdp-nic-disabled.md)
@@ -46,4 +46,3 @@ ms.locfileid: "71057270"
 - [Входящий трафик блокируется брандмауэром гостевой ОС](guest-os-firewall-blocking-inbound-traffic.md)
 - [Брандмауэр гостевой ОС настроен неправильно](guest-os-firewall-misconfigured.md) 
 - [Устранение ошибки файла netvsc.sys при RDP-подключениях](troubleshoot-rdp-driver-netvsc.md)
-

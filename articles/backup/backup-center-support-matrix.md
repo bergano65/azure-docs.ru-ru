@@ -3,12 +3,12 @@ title: Матрица поддержки для центра архивации
 description: В этой статье перечислены сценарии, поддерживаемые центром архивации для каждого типа рабочей нагрузки.
 ms.topic: conceptual
 ms.date: 09/07/2020
-ms.openlocfilehash: 40582ddc1187082230e2887edcd24b3716811be2
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 672f0e127f173260f25978497198fd7b554aa390
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173983"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893598"
 ---
 # <a name="support-matrix-for-backup-center"></a>Матрица поддержки для центра архивации
 
@@ -18,16 +18,16 @@ ms.locfileid: "92173983"
 
 | **Категория** | **Сценарий**  | **Поддерживаемые рабочие нагрузки**  | **Ограничения** |
 | -------------| ------------- | ----------------------- |------------|
-| Наблюдение   | Просмотреть все задания | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | <li> в течение 7 дней все задания доступны. <br> <li> Каждый фильтр/раскрывающийся список поддерживает не более 1000 элементов. Поэтому Центр архивации можно использовать для мониторинга максимум 1000 подписок и 1000 хранилищ между клиентами. |
-| Наблюдение | Просмотреть все экземпляры резервного копирования | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | То же, что и выше |
-| Наблюдение | Просмотреть все политики архивации | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | То же, что и выше |
-| Наблюдение | Просмотреть все хранилища | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | То же, что и выше |
-| Действия | Настройка резервного копирования | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
-| Действия | Восстановление экземпляра резервной копии | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
-| Действия | Создать хранилище | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Дополнительные сведения см. в статье матрицы поддержки для [хранилища служб восстановления](./backup-support-matrix.md#vault-support) . |
-| Действия | Создание политики архивации | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Дополнительные сведения см. в статье матрицы поддержки для [хранилища служб восстановления](./backup-support-matrix.md#vault-support) . |
-| Действия | Выполнение резервного копирования по запросу для экземпляра резервной копии | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
-| Действия | Завершение резервного копирования экземпляра резервной копии | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
+| Наблюдение   | Просмотреть все задания | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Службы файлов Azure | <li> в течение 7 дней все задания доступны. <br> <li> Каждый фильтр/раскрывающийся список поддерживает не более 1000 элементов. Поэтому Центр архивации можно использовать для мониторинга максимум 1000 подписок и 1000 хранилищ между клиентами. |
+| Наблюдение | Просмотреть все экземпляры резервного копирования | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | То же, что и выше |
+| Наблюдение | Просмотреть все политики архивации | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | То же, что и выше |
+| Наблюдение | Просмотреть все хранилища | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | То же, что и выше |
+| Actions | Настройка резервного копирования | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
+| Actions | Восстановление экземпляра резервной копии | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
+| Actions | Создать хранилище | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | Дополнительные сведения см. в статье матрицы поддержки для [хранилища служб восстановления](./backup-support-matrix.md#vault-support) . |
+| Actions | Создание политики архивации | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | Дополнительные сведения см. в статье матрицы поддержки для [хранилища служб восстановления](./backup-support-matrix.md#vault-support) . |
+| Actions | Выполнение резервного копирования по запросу для экземпляра резервной копии | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
+| Actions | Завершение резервного копирования экземпляра резервной копии | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure | Дополнительные сведения см. в статье матрицы поддержки для [резервного копирования виртуальных машин Azure](./backup-support-matrix-iaas.md) и [базы данных Azure для PostgreSQL Server](backup-azure-database-postgresql.md#support-matrix) . |
 | Аналитика | Просмотр отчетов по резервному копированию | <li> Виртуальная машина Azure <br><br> <li> SQL на виртуальной машине Azure <br><br> <li> SAP HANA на виртуальной машине Azure <br><br> <li> Файлы Azure <br><br> <li> System Center Data Protection Manager <br><br> <li> Агент Azure Backup (режим MARS) <br><br> <li> Azure Backup Server (MABS) | См. [Поддерживаемые сценарии резервного копирования отчетов](./configure-reports.md#supported-scenarios) |
 | Система управления | Просмотр и назначение встроенных и пользовательских политик Azure в категории "Архивация" | Недоступно | Недоступно |
 | Система управления | Просмотр источников данных, не настроенных для архивации | <li> Виртуальная машина Azure <br><br> <li> Сервер базы данных Azure для PostgreSQL | Недоступно |
@@ -37,8 +37,8 @@ ms.locfileid: "92173983"
 | **Категория** | **Сценарий**  |
 |--------------|---------------|
 | Наблюдение | Просмотр предупреждений в масштабе |
-| Действия | Настройка параметров хранилища в масштабе |
-| Действия | Выполнение задания по восстановлению между регионами из центра архивации |
+| Actions | Настройка параметров хранилища в масштабе |
+| Actions | Выполнение задания по восстановлению между регионами из центра архивации |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

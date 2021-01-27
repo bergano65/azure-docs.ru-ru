@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: cynthn
-ms.openlocfilehash: cd3ff3fce80e66d7cd61636b4416cb2fc28f5e77
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 61af1f1a97e0ffad0332a34034f5dd1d007d1a5c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97956537"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901169"
 ---
 | Ресурс | Ограничение |
 | --- | --- |
@@ -19,13 +19,13 @@ ms.locfileid: "97956537"
 | Количество виртуальных машин на ядра серий, таких как Dv2 и F, на [подписку](https://azure.microsoft.com/pricing/) |20<sup>1</sup> на регион. Чтобы увеличить значение ограничения, обратитесь в службу поддержки. |
 | Количество [наборов доступности](../articles/virtual-machines/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2500 на регион. |
 | Количество виртуальных машин на одну группу доступности | 200 |
-| [Количество групп размещения близкого взаимодействия](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups-portal) на [группу ресурсов](../articles/azure-resource-manager/management/overview.md#resource-groups) | 800 | 
+| [Количество групп размещения близкого взаимодействия](../articles/virtual-machines/windows/proximity-placement-groups-portal.md) на [группу ресурсов](../articles/azure-resource-manager/management/overview.md#resource-groups) | 800 | 
 | Количество сертификатов на одну группу доступности | 199<sup>2</sup> |
 | Сертификатов на подписку |Не ограничено<sup>3</sup> |
 
 <sup>1</sup> Ограничения по умолчанию зависят от типа категории предложения (например, бесплатная пробная версия и оплата по мере использования), а также серии (Dv2, F, G или другой). Например, значение по умолчанию для подписок в рамках Соглашения Enterprise — 350.
 
-<sup>2</sup> Такие свойства, как открытые SSH-ключи, также отправляются как сертификаты и учитываются в этом ограничении. Чтобы обойти это ограничение, для установки сертификатов используйте расширение Azure Key Vault для [Windows](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-windows) или для [Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/key-vault-linux).
+<sup>2</sup> Такие свойства, как открытые SSH-ключи, также отправляются как сертификаты и учитываются в этом ограничении. Чтобы обойти это ограничение, для установки сертификатов используйте расширение Azure Key Vault для [Windows](../articles/virtual-machines/extensions/key-vault-windows.md) или для [Linux](../articles/virtual-machines/extensions/key-vault-linux.md).
 
 <sup>3</sup> При использовании Azure Resource Manager сертификаты хранятся в Azure Key Vault. Количество сертификатов для подписки не ограничено. Действует ограничение в 1 МБ на развертывание одной виртуальной машины или группы доступности.
 

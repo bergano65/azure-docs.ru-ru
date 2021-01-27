@@ -1,24 +1,11 @@
 ---
-title: Преобразования и задания в службах мультимедиа
-titleSuffix: Azure Media Services
-description: Узнайте, как создать преобразования для описания правил обработки видео в службах мультимедиа Azure.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: conceptual
-ms.date: 08/19/2019
-ms.author: inhenkel
-ms.openlocfilehash: 4cb4bcf5eb205d27cbca764d5ec16890a23be5c6
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426783"
+# <a name="mandatory-fields-see-more-on-akamsskyeyemeta"></a>Обязательные поля. Дополнительные сведения см. на aka.ms/skyeye/meta.
+Title: преобразования и задания в службах мультимедиа. Описание служб мультимедиа Azure. Узнайте, как создать преобразования для описания правил обработки видео в службах мультимедиа Azure.
+службы: мультимедиа-службы documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor редактор: ' '
+
+MS. Service: мультимедиа-службы MS. Рабочая нагрузка: MS. Topic: концептуальная МС. Дата: 08/19/2019 MS. author: инхенкел
 ---
+
 # <a name="transforms-and-jobs-in-media-services"></a>Преобразования и задания в службах мультимедиа
 
 В этом разделе приводятся сведения о [преобразованиях](/rest/api/media/transforms) и [заданиях](/rest/api/media/jobs) , а также объясняется связь между этими сущностями.

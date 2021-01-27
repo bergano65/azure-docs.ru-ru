@@ -11,23 +11,23 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/17/2020
 ms.author: axelg
-ms.openlocfilehash: 247324c30bbe0edaef78c0b0d5e6a6d593e8cac9
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 62b462d8e75fc291ac599ac99dbe4fb3a74fde2b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586403"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878703"
 ---
 # <a name="troubleshoot-the-azure-linux-agent"></a>Устранение неполадок агента Linux для Azure
 
-[Агент Linux для Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux) позволяет виртуальной машине взаимодействовать с контроллером структуры (базовым физическим сервером, на котором РАЗМЕЩЕНа виртуальная машина) на IP-адресе 168.63.129.16.
+[Агент Linux для Azure](../extensions/agent-linux.md) позволяет виртуальной машине взаимодействовать с контроллером структуры (базовым физическим сервером, на котором РАЗМЕЩЕНа виртуальная машина) на IP-адресе 168.63.129.16.
 
 >[!NOTE]
 >Этот IP-адрес является виртуальным общедоступным IP-адресом, который упрощает обмен данными и не должен блокироваться. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16?](../../virtual-network/what-is-ip-address-168-63-129-16.md).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-Проверьте состояние и версию агента, чтобы убедиться, что она все еще поддерживается. Инструкции по поиску состояния и [версии см.](https://github.com/Azure/WALinuxAgent/wiki/FAQ#what-does-goal-state-agent-mean-in-waagent---version-output) в статье о [минимальной поддержке версий для агентов виртуальных машин в Azure](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/support-extensions-agent-version) .
+Проверьте состояние и версию агента, чтобы убедиться, что она все еще поддерживается. Инструкции по поиску состояния и [версии см.](https://github.com/Azure/WALinuxAgent/wiki/FAQ#what-does-goal-state-agent-mean-in-waagent---version-output) в статье о [минимальной поддержке версий для агентов виртуальных машин в Azure](/troubleshoot/azure/virtual-machines/support-extensions-agent-version) .
 
 ## <a name="troubleshoot-a-not-ready-status"></a>Устранение неполадок состояния "не готово"
 
@@ -64,7 +64,7 @@ ms.locfileid: "97586403"
    AutoUpdate.Enabled=y
    ```
 
-   Дополнительные сведения об обновлении агента Linux для Azure см. в [статье обновление агента Linux для Azure на виртуальной машине](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent).
+   Дополнительные сведения об обновлении агента Linux для Azure см. в [статье обновление агента Linux для Azure на виртуальной машине](../extensions/update-linux-agent.md).
 
 1. Убедитесь, что виртуальная машина может подключаться к контроллеру структуры. Используйте такое средство, как фигурная скобка, чтобы проверить, может ли виртуальная машина подключаться к 168.63.129.16 через порты 80, 443 и 32526. Если виртуальная машина не подключается должным образом, проверьте, открыт ли Исходящая связь через порты 80, 443 и 32526 в локальном брандмауэре на виртуальной машине. Если этот IP-адрес заблокирован, агент виртуальной машины может отобразить непредвиденное поведение.
 

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 1/15/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 71de1d17731e086d012da5365fa6671bcb9e6e3b
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 49184778c7d6592f074e04df535b9bc221f3162e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539253"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878805"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -206,8 +206,8 @@ Set-AzStorageSyncServerEndpoint `
     - Если сервер находится за прокси-сервером, настройте параметры прокси-сервера для компьютера или конкретного приложения, выполнив действия, описанные в [документации](./storage-sync-files-firewall-and-proxy.md#proxy) прокси-сервера.
     - Используйте командлет Test-StorageSyncNetworkConnectivity, чтобы проверить сетевое подключение к конечным точкам службы. Дополнительные сведения см. в разделе [Проверка сетевого подключения к конечным точкам службы](./storage-sync-files-firewall-and-proxy.md#test-network-connectivity-to-service-endpoints).
     - Если порядок комплекта шифров TLS настроен на сервере, для добавления комплектов шифров можно использовать групповые политики или командлеты TLS:
-        - Сведения об использовании групповой политики см. в разделе [Настройка порядка комплектов шифров TLS с помощью групповая политика](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-group-policy).
-        - Инструкции по использованию командлетов TLS см. в разделе [Настройка порядка комплектов шифров TLS с помощью командлетов TLS PowerShell](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets).
+        - Сведения об использовании групповой политики см. в разделе [Настройка порядка комплектов шифров TLS с помощью групповая политика](/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-group-policy).
+        - Инструкции по использованию командлетов TLS см. в разделе [Настройка порядка комплектов шифров TLS с помощью командлетов TLS PowerShell](/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets).
     
         В настоящее время Синхронизация файлов Azure поддерживает следующие комплекты шифров для протокола TLS 1,2:  
         - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P384  
@@ -931,7 +931,7 @@ PerItemErrorCount: 1006.
 Если каталог удален, выполните следующие действия, чтобы удалить существующую конечную точку сервера и создать новую конечную точку сервера, используя новый путь:
 
 1. Удалите конечную точку сервера в группе синхронизации, выполнив действия, описанные в разделе [Удаление конечной точки сервера](./storage-sync-files-server-endpoint.md#remove-a-server-endpoint).
-2. Создайте новую конечную точку сервера в группе синхронизации, выполнив действия, описанные в разделе [Добавление конечной точки сервера](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-endpoint#add-a-server-endpoint).
+2. Создайте новую конечную точку сервера в группе синхронизации, выполнив действия, описанные в разделе [Добавление конечной точки сервера](./storage-sync-files-server-endpoint.md#add-a-server-endpoint).
 
 ### <a name="common-troubleshooting-steps"></a>Распространенные действия по устранению неполадок
 <a id="troubleshoot-storage-account"></a>**Проверьте наличие учетной записи хранения.**  

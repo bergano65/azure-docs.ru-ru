@@ -39,8 +39,6 @@
       href: restart-resize-error-troubleshooting.md
     - name: 'Перезапуск, завершение работы или остановка служб'
       href: boot-error-troubleshoot-windows.md
-    - name: Проблемы с полным диском ОС на виртуальной машине Linux
-      href: os-disk-full-linux.md
 - name: Непредвиденный перезапуск
   items:
     - name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
@@ -153,7 +151,7 @@
         - name: Устранение общей ошибки
           href: troubleshoot-rdp-general-error.md
         - name: Устранение ошибок аутентификации
-          href: troubleshoot-authentication-error-rdp-vm.md
+          href: /troubleshoot/azure/virtual-machines/cannot-connect-rdp-azure-vm
         - name: Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события
           href: event-id-troubleshoot-vm-rdp-connecton.md
         - name: 'Устранение ошибок RDP-подключения, возникающих из-за статического IP-адреса'

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 04/16/2020
-ms.openlocfilehash: 4a3d0ef3c112da87e73f83c6c87de8f3fce1fea0
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 465f00400c28de9642a95ebcb7bc6b2349d64bc5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621371"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878720"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 
@@ -30,7 +30,7 @@ ms.locfileid: "96621371"
 1. *Убедитесь, что ваше приложение или служба соответствующим образом классифицированы*: выберите три категории, которые представляют возможности приложения или службы.
 2. *Приложения Microsoft Azure Marketplace: увеличивайте потребление ресурсов Azure месяц за месяцем.* Если вы можете достичь 1000 часов использования Azure в месяц, вы значительно увеличите вероятность размещения в списке.
 3. *Приложения AppSource: увеличьте приобретения, поступающие на ваше предложение.* Если вы можете достичь 10 приобретений в месяц, вы значительно увеличите вероятность размещения в списке.
-4. *Достижение Co-Sell состояние готовности*. выполните [требования к готовности к совместной продаже](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
+4. *Достижение Co-Sell состояние готовности*. выполните [требования к готовности к совместной продаже](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status).
 5. *Улучшите качество своего предложения*: сведения о том, как изменить предложение, см. в разделе [рекомендаций по публикации в Azure Marketplace](marketplace-criteria-content-validation.md).
 6. Опубликуйте несколько предложений в Microsoft Azure Marketplace: все основные приложения и службы уже в списке? У вас есть пробная версия?
 7. Рекомендуйте своим заказчикам писать отзывы.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 10/06/2020
-ms.openlocfilehash: 2191a4df5b319ec16a4a6116aa99cfac50c87d9b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3be967b611f6b75705a60bfa14523832b0652931
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462918"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879230"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Руководство по публикации разных типов предложений
 
@@ -36,7 +36,7 @@ ms.locfileid: "96462918"
 | [**Консультационная служба**](./plan-consulting-service-offer.md) | Консультационные услуги помогают подключать клиентов со службами для поддержки и расширения возможностей использования служб Azure, Dynamics 365 или Power Suite.|
 | [**Dynamics 365**](appsource-offer-publishing-guide.md) | Вы можете опубликовать предложения AppSource, которые Разрабатывайте или расширяют возможности Dynamics 365 Business Central, поддержки Dynamics 365, приложений для управления питанием, а также финансовых и операционных приложений.|
 | [**Модуль IoT Edge**](iot-edge-module.md) | Модули Azure IoT Edge — это наименьшая единица вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Майкрософт (например, Azure Stream Analytics), сторонние службы или пользовательский код для конкретного решения. |
-| [**Управляемая служба**](partner-center-portal/create-new-managed-service-offer.md) | Вы можете создавать предложения управляемой службы и управлять подписками, делегированными клиентом, или группами ресурсов через [Azure лигхсаусе](../lighthouse/overview.md).|
+| [**Управляемая служба**](./plan-managed-service-offer.md) | Вы можете создавать предложения управляемой службы и управлять подписками, делегированными клиентом, или группами ресурсов через [Azure лигхсаусе](../lighthouse/overview.md).|
 | [**Приложение Power BI** <br/> **Microsoft 365**](appsource-offer-publishing-guide.md) | Вы можете опубликовать предложения AppSource, которые будут создаваться или расширяться Power BI и Microsoft 365.|
 | [**Программное обеспечение как услуга**](plan-saas-offer.md) | Используйте тип предложения "программное обеспечение как услуга" (SaaS), чтобы позволить клиенту покупать в качестве подписки техническое решение на основе SaaS. Сведения о требованиях единого входа для предложений SaaS см. в статье [Azure AD и предложения SaaS, предоставляемые в коммерческом магазине](azure-ad-saas.md). |
 

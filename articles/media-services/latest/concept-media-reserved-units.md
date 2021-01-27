@@ -1,5 +1,5 @@
 ---
-title: Зарезервированные единицы мультимедиа в Azure | Документация Майкрософт
+title: Зарезервированные единицы мультимедиа — Azure
 description: Зарезервированные единицы мультимедиа позволяют масштабировать процесс мультимедиа и определять скорость выполнения задач обработки мультимедиа.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: df691f5b9e74432f683e52fbb896dd4d44efe2aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e0cfc47b546c31e6b93d224e64de20b79baacfd9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91622107"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98891303"
 ---
 # <a name="media-reserved-units"></a>Зарезервированные единицы мультимедиа
 
@@ -50,7 +50,7 @@ ms.locfileid: "91622107"
 
 Вы платите за количество минут, в течение которых зарезервированные единицы мультимедиа подготавливаются в вашей учетной записи независимо от того, выполняются ли какие-либо задания. Подробное описание см. в разделе часто задаваемых вопросов на странице [цен на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/).
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 [Масштабирование зарезервированных единиц мультимедиа с помощью интерфейса командной строки](media-reserved-units-cli-how-to.md) 
  [Анализ видео](analyze-videos-tutorial-with-api.md)
 

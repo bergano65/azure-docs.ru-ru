@@ -8,12 +8,12 @@ author: Microsoft-BradleyWright
 ms.author: brwrigh
 ms.reviewer: anbene
 ms.date: 12/23/2020
-ms.openlocfilehash: a504969d23fce8000119aadf9e45d599da0894f0
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 57a6883a2c4fff14507df27b55ac0f6621306bf5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918308"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879281"
 ---
 # <a name="how-to-plan-a-managed-service-offer-for-the-microsoft-commercial-marketplace"></a>Планирование предложения управляемой службы для коммерческого рынка Майкрософт
 
@@ -25,7 +25,7 @@ ms.locfileid: "97918308"
 
 Для публикации управляемой службы необходимо получить золотую или серебристую компетенцию Майкрософт на облачной платформе. Эта компетенция демонстрирует ваш опыт для клиентов. Дополнительные сведения см. в статье [Microsoft Partner Network компетенции](https://partner.microsoft.com/membership/competencies).
 
-Предложения должны соответствовать всем применимым [политикам сертификации коммерческого рынка](https://docs.microsoft.com/legal/marketplace/certification-policies) , опубликованным в Azure Marketplace.
+Предложения должны соответствовать всем применимым [политикам сертификации коммерческого рынка](/legal/marketplace/certification-policies) , опубликованным в Azure Marketplace.
 
 ## <a name="customer-leads"></a>Потенциальные клиенты
 

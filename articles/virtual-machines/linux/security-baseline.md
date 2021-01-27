@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f0ae4ac4cf50eb6e54d41ff25e1cc671e76819ee
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 62030d1c208fc778476f49e5b3165e46e6aa0d66
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200810"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878856"
 ---
 # <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
@@ -852,7 +852,7 @@ ms.locfileid: "98200810"
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-* [Сведения о том, как скачать шаблон виртуальной машины](../windows/download-template.md)
+* [Сведения о том, как скачать шаблон виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -896,7 +896,7 @@ ms.locfileid: "98200810"
 
 В большинстве случаев шаблоны базовых виртуальных машин Майкрософт, Объединенные с конфигурацией требуемого состояния службы автоматизации Azure, могут помочь в собрании и обслуживании требований безопасности.
 
-* [Сведения о том, как скачать шаблон виртуальной машины](../windows/download-template.md)
+* [Сведения о том, как скачать шаблон виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template)
 
 * [Сведения о создании шаблонов ARM](../windows/ps-template.md)
 

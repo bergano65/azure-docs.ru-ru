@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: b487dcad83ccbc31adf2d7ec2dd77c490db2c68e
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 9bc641d680d927c44814f6814ebf6a6dde958c9e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935206"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98901163"
 ---
 Функции Azure позволяют создавать задачи репликации, предназначенные только для конфигурации и направленные на предварительно созданную точку входа. [Примеры репликации на основе конфигурации для службы "функции Azure](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config) " иллюстрируют использование [готовых вспомогательных](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/src/Azure.Messaging.Replication) функций в коде или старайтесь не обрабатывать код и просто использовать конфигурацию.
 
@@ -198,7 +198,7 @@ ms.locfileid: "97935206"
 
 ### <a name="configure-the-entry-point"></a>Настройка точки входа
 
-Конфигурация точки входа выбирает одну из стандартных задач репликации. При изменении `Azure.Messaging.Replication` проекта можно также добавить задачи и ссылаться на них здесь. например
+Конфигурация точки входа выбирает одну из стандартных задач репликации. При изменении `Azure.Messaging.Replication` проекта можно также добавить задачи и ссылаться на них здесь. Например:
 
 ```JSON
     ...
@@ -212,19 +212,18 @@ ms.locfileid: "97935206"
 | Источник      | Назначение      | Точка входа 
 |-------------|-------------|------------------------------------------------------------------------
 | Концентратор событий   | Концентратор событий   | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToEventHub`
-| Концентратор событий   | Cлужебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
-| Cлужебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
-| Cлужебная шина | Cлужебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
+| Концентратор событий   | Служебная шина | `Azure.Messaging.Replication.EventHubReplicationTasks.ForwardToServiceBus`
+| Служебная шина | Концентратор событий   | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToEventHub`
+| Служебная шина | Служебная шина | `Azure.Messaging.Replication.ServiceBusReplicationTasks.ForwardToServiceBus`
 
 ### <a name="retry-policy"></a>Политика повтора
 
-Дополнительные сведения о настройке политики повторных попыток см. в [документации по функциям Azure](/azure/azure-functions/functions-bindings-error-pages) . Параметры политики, выбранные во всех проектах в этом репозитории, настраивают стратегию экспоненциальной задержки с интервалами повтора от 5 секунд до 5 минут с бесконечными повторными попытками, чтобы избежать потери данных.
+Дополнительные сведения о настройке политики повторных попыток см. в [документации по функциям Azure](../articles/azure-functions/functions-bindings-error-pages.md) . Параметры политики, выбранные во всех проектах в этом репозитории, настраивают стратегию экспоненциальной задержки с интервалами повтора от 5 секунд до 5 минут с бесконечными повторными попытками, чтобы избежать потери данных.
 
-Для служебной шины ознакомьтесь с разделом ["использование поддержки повторов на основе устойчивости триггеров"](/azure/azure-functions/functions-bindings-error-pages#using-retry-support-on-top-of-trigger-resilience) , чтобы понять взаимодействие триггеров и максимальное число доставок, определенное для очереди.
+Для служебной шины ознакомьтесь с разделом ["использование поддержки повторов на основе устойчивости триггеров"](../articles/azure-functions/functions-bindings-error-pages.md#using-retry-support-on-top-of-trigger-resilience) , чтобы понять взаимодействие триггеров и максимальное число доставок, определенное для очереди.
 
 ### <a name="build-deploy-and-configure"></a>Сборка, развертывание и настройка
 
 Хотя вы занимаетесь настройкой, задачи по-прежнему требуют создания развертываемого приложения и настройки узлов службы "функции Azure" таким, чтобы они получили все необходимые сведения для подключения к указанным конечным точкам. 
 
 Это проиллюстрировано вместе с многократно используемыми скриптами в [примерах репликации на основе конфигурации для функций Azure](https://github.com/Azure-Samples/azure-messaging-replication-dotnet/tree/main/functions/config).
-

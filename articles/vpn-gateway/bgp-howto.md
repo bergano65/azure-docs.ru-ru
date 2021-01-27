@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: yushwang
-ms.openlocfilehash: f52d684d1e6ef63fdf4287c610608061f30395f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: db19b1ae017fa7981747b0e7b4c82e97efc61ed3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90996872"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878890"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways"></a>Настройка BGP на VPN-шлюзах Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "90996872"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
+Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="part-1-configure-bgp-on-the-virtual-network-gateway"></a><a name ="config"></a>Часть 1. Настройка BGP в шлюзе виртуальной сети
 
@@ -45,19 +45,19 @@ ms.locfileid: "90996872"
 
 **Схема 2**
 
-:::image type="content" source="./media/bgp-howto/bgp-gateway.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры" border="false":::
+:::image type="content" source="./media/bgp-howto/bgp-gateway.png" alt-text="Схема, показывающая параметры шлюза виртуальной сети" border="false":::
 
 ### <a name="1-create-and-configure-testvnet1"></a>1. Создание и настройка TestVNet1
 
-На этом шаге вы создадите и настроите TestVNet1. Выполните действия, описанные в [руководстве по созданию шлюза](vpn-gateway-tutorial-create-gateway-powershell.md) , чтобы создать и настроить виртуальную сеть Azure и VPN-шлюз. Используйте параметры ссылок на снимках экрана ниже.
+На этом шаге вы создадите и настроите TestVNet1. Выполните действия, описанные в [руководстве по созданию шлюза](./tutorial-create-gateway-portal.md) , чтобы создать и настроить виртуальную сеть Azure и VPN-шлюз. Используйте параметры ссылок на снимках экрана ниже.
 
 * Виртуальная сеть
 
-   :::image type="content" source="./media/bgp-howto/testvnet-1.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+   :::image type="content" source="./media/bgp-howto/testvnet-1.png" alt-text="TestVNet1 с соответствующими префиксами адресов":::
 
 * Подсети:
 
-   :::image type="content" source="./media/bgp-howto/testvnet-1-subnets.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+   :::image type="content" source="./media/bgp-howto/testvnet-1-subnets.png" alt-text="Подсети TestVNet1":::
 
 ### <a name="2-create-the-vpn-gateway-for-testvnet1-with-bgp-parameters"></a>2. Создание VPN-шлюза для TestVNet1 с параметрами BGP
 
@@ -67,11 +67,19 @@ ms.locfileid: "90996872"
 
 1. Заполните параметры, как показано ниже:
 
-   :::image type="content" source="./media/bgp-howto/create-gateway-1.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+   :::image type="content" source="./media/bgp-howto/create-gateway-1.png" alt-text="Создание VNG1":::
 
 1. В выделенном разделе **Настройка BGP** настройте следующие параметры.
 
-   :::image type="content" source="./media/bgp-howto/create-gateway-1-bgp.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры" в разделе BGP будет показан дополнительный **второй настраиваемый IP-адрес BGP для Azure APIPA**. Укажите другой адрес из разрешенного APIPA-диапазона (**169.254.21.0** to **169.254.22.255**).
+   :::image type="content" source="./media/bgp-howto/create-gateway-1-bgp.png" alt-text="Настройка BGP":::
+
+   * Выберите **настроить BGP**  -  **Enabled** , чтобы отобразить раздел конфигурации BGP.
+
+   * Заполните ASN (номер автономной системы).
+
+   * Поле **IP-адрес BGP APIPA Azure** является необязательным. Если локальные VPN-устройства используют APIPA-адрес для BGP, необходимо выбрать адрес из диапазона адресов APIPA, зарезервированных в Azure для VPN, который находится в диапазоне от **169.254.21.0** до **169.254.22.255**. В этом примере используется 169.254.21.11.
+
+   * При создании VPN-шлюза "активный — активный" в разделе BGP будет показан дополнительный **второй настраиваемый IP-адрес BGP для Azure APIPA**. Укажите другой адрес из разрешенного APIPA-диапазона (**169.254.21.0** to **169.254.22.255**).
 
    > [!IMPORTANT]
    >
@@ -80,7 +88,7 @@ ms.locfileid: "90996872"
    > * Адреса BGP APIPA не должны пересекаться между локальными VPN-устройствами и всеми подключенными VPN-шлюзами Azure.
    >
 
-1. Выберите **проверить и создать** , чтобы запустить проверку. После завершения проверки выберите **создать** , чтобы развернуть VPN-шлюз. Для полного создания и развертывания шлюза может потребоваться до 45 минут. Состояние развертывания можно просмотреть на странице Обзор шлюза.
+1. Выберите **Просмотр и создание**, чтобы выполнить проверку. Затем щелкните **Создать**, чтобы развернуть шлюз виртуальной частной сети. Это может занять до 45 минут. Состояние развертывания можно отслеживать на странице обзора шлюза.
 
 ### <a name="3-obtain-the-azure-bgp-peer-ip-addresses"></a>3. получение IP-адресов однорангового узла BGP Azure
 
@@ -88,7 +96,7 @@ ms.locfileid: "90996872"
 
 1. Перейдите к ресурсу шлюза виртуальной сети и выберите страницу **Конфигурация** , чтобы просмотреть сведения о конфигурации BGP, как показано на следующем снимке экрана. На этой странице можно просмотреть все сведения о конфигурации BGP на VPN-шлюзе Azure: ASN, общедоступный IP-адрес и соответствующие IP-адреса однорангового узла BGP на стороне Azure (по умолчанию и APIPA).
 
-   :::image type="content" source="./media/bgp-howto/vnet-1-gw-bgp.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+   :::image type="content" source="./media/bgp-howto/vnet-1-gw-bgp.png" alt-text="Шлюз BGP":::
 
 1. На странице **Конфигурация** можно внести следующие изменения в конфигурацию:
 
@@ -99,17 +107,17 @@ ms.locfileid: "90996872"
 
 ## <a name="part-2-configure-bgp-on-cross-premises-s2s-connections"></a><a name ="crosspremises"></a>Часть 2. Настройка BGP для распределенных подключений S2S
 
-Чтобы установить распределенное подключение, необходимо создать *локальный сетевой шлюз* , который будет представлять ваше локальное VPN-устройство, а также *Подключение* к VPN-шлюзу с помощью шлюза локальной сети, как описано в разделах [Создание подключения типа "сеть — сеть](vpn-gateway-howto-site-to-site-resource-manager-portal.md)". Эта статья содержит дополнительные свойства, необходимые для указания параметров конфигурации BGP.
+Чтобы установить распределенное подключение, необходимо создать *локальный сетевой шлюз* , который будет представлять ваше локальное VPN-устройство, а также *Подключение* к VPN-шлюзу с помощью шлюза локальной сети, как описано в разделах [Создание подключения типа "сеть — сеть](./tutorial-site-to-site-portal.md)". Эта статья содержит дополнительные свойства, необходимые для указания параметров конфигурации BGP.
 
 **Схема 3**
 
-:::image type="content" source="./media/bgp-howto/bgp-crosspremises.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры" border="false":::
+:::image type="content" source="./media/bgp-howto/bgp-crosspremises.png" alt-text="Схема, показывающая IPsec" border="false":::
 
 ### <a name="1-configure-bgp-on-the-local-network-gateway"></a>1. Настройка BGP в шлюзе локальной сети
 
 На этом шаге вы настроите BGP на шлюзе локальной сети. Используйте следующий снимок экрана в качестве примера. На снимке экрана показан шлюз локальной сети (site5) с параметрами, указанными в схеме 3.
 
-:::image type="content" source="./media/bgp-howto/create-local-bgp.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+:::image type="content" source="./media/bgp-howto/create-local-bgp.png" alt-text="Настройка BGP для шлюза локальной сети":::
 
 #### <a name="important-configuration-considerations"></a>Важные рекомендации по конфигурации
 
@@ -122,7 +130,7 @@ ms.locfileid: "90996872"
 
 В этом примере используется адрес APIPA (169.254.100.1) в качестве IP-адреса локального узла BGP:
 
-:::image type="content" source="./media/bgp-howto/local-apipa.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+:::image type="content" source="./media/bgp-howto/local-apipa.png" alt-text="Шлюз локальной сети APIPA и BGP":::
 
 ### <a name="2-configure-a-s2s-connection-with-bgp-enabled"></a>2. Настройка подключения S2S с включенным BGP
 
@@ -132,13 +140,13 @@ ms.locfileid: "90996872"
 
 Чтобы создать новое подключение с включенным BGP, на странице " **Добавление подключения** " введите значения, а затем установите флажок **включить BGP** , чтобы включить BGP для этого подключения. Нажмите кнопку **ОК**, чтобы создать подключение.
 
-:::image type="content" source="./media/bgp-howto/ipsec-connection-bgp.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+:::image type="content" source="./media/bgp-howto/ipsec-connection-bgp.png" alt-text="Распределенное подключение IPsec с BGP":::
 
 #### <a name="to-update-an-existing-connection"></a><a name ="update"></a>Обновление существующего подключения
 
 Если вы хотите изменить параметр BGP для подключения, перейдите на страницу **конфигурации** ресурса подключения, а затем переключите параметр **BGP** , как показано в следующем примере. Щелкните **Сохранить**, чтобы сохранить все изменения.
 
-:::image type="content" source="./media/bgp-howto/update-bgp.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры":::
+:::image type="content" source="./media/bgp-howto/update-bgp.png" alt-text="Обновление BGP для подключения":::
 
 ## <a name="part-3-configure-bgp-on-vnet-to-vnet-connections"></a><a name ="v2v"></a>Часть 3. Настройка подключений BGP при подключении между виртуальными сетями
 
@@ -152,8 +160,8 @@ ms.locfileid: "90996872"
 
 **Схема 4**
 
-:::image type="content" source="./media/bgp-howto/bgp-crosspremises-v2v.png" alt-text="Схема, демонстрирующая сетевую архитектуру и параметры" border="false":::
+:::image type="content" source="./media/bgp-howto/bgp-crosspremises-v2v.png" alt-text="Схема, показывающая полную сеть" border="false":::
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/windows/quick-create-portal.md).

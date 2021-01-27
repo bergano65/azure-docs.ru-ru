@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 58a907a2ae17966f50a037f49a807ac0a3ad6867
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 2b195d865a07af9f3166c5225e8de3d0a9b0e749
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545839"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879315"
 ---
 # <a name="blob-storage-features-available-in-azure-data-lake-storage-gen2"></a>Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения
 
@@ -35,7 +35,7 @@ ms.locfileid: "96545839"
 |Команды PowerShell для хранилища BLOB-объектов|Общедоступная версия|Общедоступная версия|[Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью PowerShell](storage-quickstart-blobs-powershell.md)|
 |Команды Azure CLI для хранилища BLOB-объектов|Общедоступная версия|Общедоступная версия|[Краткое руководство. Создание, скачивание и составление списка больших двоичных объектов с помощью Azure CLI](storage-quickstart-blobs-cli.md)|
 |API хранилища BLOB-объектов|Общедоступная версия|Общедоступная версия|[Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET](storage-quickstart-blobs-dotnet.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12](storage-quickstart-blobs-java.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12](storage-quickstart-blobs-python.md)<br>[Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js](storage-quickstart-blobs-nodejs.md)|
-|Журналы диагностики|Общедоступная версия|Preview (Предварительный просмотр) |[Ведение журнала Аналитики Службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Журналы диагностики|Общедоступная версия|Preview (Предварительный просмотр) |[Ведение журнала аналитики службы хранилища Azure](../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |Архивный уровень доступа|Общедоступная версия|Не поддерживается|[Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни доступа](storage-blob-storage-tiers.md)|
 |Политики управления жизненным циклом (многоуровневое управление)|Общедоступная версия|Еще не поддерживается|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
 |Политики управления жизненным циклом (удаление большого двоичного объекта)|Общедоступная версия|Общедоступная версия|[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](storage-lifecycle-management-concepts.md)|
@@ -45,7 +45,7 @@ ms.locfileid: "96545839"
 |Неизменяемое хранилище|Preview (Предварительный просмотр)<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|Preview (Предварительный просмотр)<div role="complementary" aria-labelledby="preview-form"><sup>1</sup></div>|[Хранение критически важных для бизнеса данных большого двоичного объекта с помощью неизменяемого хранилища](storage-blob-immutable-storage.md)|
 |Обратимое удаление контейнера|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Обратимое удаление для контейнеров (Предварительная версия)](soft-delete-container-overview.md)|
 |Инвентаризация службы хранилища Azure|Preview (Предварительный просмотр)|Preview (Предварительный просмотр)|[Использование инвентаризации хранилища Azure для управления данными большого двоичного объекта (Предварительная версия)](blob-inventory.md)|
-|Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](storage-blob-soft-delete.md)|
+|Обратимое удаление BLOB-объекта|Еще не поддерживается|Еще не поддерживается|[Обратимое удаление для больших двоичных объектов](./soft-delete-blob-overview.md)|
 |Blobfuse|Общедоступная версия|Общедоступная версия|[Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md)|
 |Анонимный открытый доступ |Общедоступная версия|Общедоступная версия| См. раздел [Настройка анонимного общего доступа на чтение для контейнеров и больших двоичных объектов](anonymous-read-access-configure.md).|
 |Отработка отказа учетной записи, управляемой клиентом|Еще не поддерживается|Еще не поддерживается|[Аварийное восстановление и отработка отказа учетной записи](../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
