@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: 49b7bae1a0cc224b92f292b891fae210f2cffa4e
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 91915f204a68d59a603b8bdea383b497a5b33d34
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400613"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664033"
 ---
 # <a name="what-is-azure-digital-twins"></a>Что такое Azure Digital Twins?
 
@@ -33,6 +33,8 @@ ms.locfileid: "97400613"
 В Azure Digital Twins вы определяете цифровые сущности, которые представляют людей, места и предметы в вашей физической среде, с помощью настраиваемых типов двойников, которые называются [**моделями**](concepts-models.md). 
 
 Вы можете считать эти определения моделей специальным словарем для описания вашего бизнеса. Например, для решения управления зданием можно определить такие модели, как "здание", "этаж" и "лифт". Затем на основе этих моделей можно создать **цифровые двойники**, представляющие вашу конкретную среду.
+
+[!INCLUDE [digital-twins-versus-device-twins](../../includes/digital-twins-versus-device-twins.md)]
 
 Модели определяются на JSON-подобном языке, который называется [языком определения цифровых двойников или DTDL (Digital Twins Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md) и описывают двойники с точки зрения их свойств состояния, событий телеметрии, команд, компонентов и связей.
 * Модели определяют семантические **связи** между сущностями, чтобы можно было подключить двойники к графу знаний, отражающему их взаимодействие. Модели можно представить как существительные в описании мира, а связи — как глаголы.
