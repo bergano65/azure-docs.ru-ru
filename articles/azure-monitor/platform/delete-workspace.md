@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/20/2020
-ms.openlocfilehash: ed5e4d05a693ff9b0bf8823ba31de17d000d0fb6
-ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
+ms.openlocfilehash: 5bb072d0ea710e35b4f741836aed143e962a326e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97706887"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927704"
 ---
 # <a name="delete-and-recover-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -41,7 +41,7 @@ ms.locfileid: "97706887"
 > [!NOTE] 
 > Установленные решения и связанные службы, такие как учетная запись службы автоматизации Azure, окончательно удаляются из рабочей области в процессе удаления, и их невозможно восстановить. После процедуры восстановления их необходимо будет перенастроить, чтобы вернуть рабочую область в ранее настроенное состояние.
 
-Удалить рабочую область можно с помощью [PowerShell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0&preserve-view=true), [REST API](/rest/api/loganalytics/workspaces/delete) или через [портал Azure](https://portal.azure.com).
+Удалить рабочую область можно с помощью [PowerShell](/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace), [REST API](/rest/api/loganalytics/workspaces/delete) или через [портал Azure](https://portal.azure.com).
 
 ### <a name="azure-portal"></a>Портал Azure
 

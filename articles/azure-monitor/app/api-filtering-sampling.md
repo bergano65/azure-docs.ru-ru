@@ -4,12 +4,12 @@ description: Напишите обработчики телеметрии и и�
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: b3ccc3516d5b31f4c119c2d5a2bd11a63dbdc611
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cb9159b98b219c6fb04beb7bbbaade64fc72a30b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758036"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927749"
 ---
 # <a name="filter-and-preprocess-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка телеметрии в пакете SDK для Application Insights
 
@@ -20,7 +20,7 @@ ms.locfileid: "91758036"
 * [Инициализаторы телеметрии добавляют или изменяют свойства](#add-properties) к любым данным телеметрии, отправляемым из приложения, включая данные телеметрии из стандартных модулей. Например, можно добавить вычисляемые значения или номера версий для фильтрации данных на портале.
 * [API пакета SDK](./api-custom-events-metrics.md) используется для отправки пользовательских событий и показателей.
 
-Перед началом:
+Перед началом работы
 
 * Установите соответствующий пакет SDK для приложения: [ASP.NET](asp-net.md), [ASP.NET Core](asp-net-core.md), [не HTTP/Worker для .NET, .NET Core](worker-service.md)или [JavaScript](javascript.md).
 
@@ -497,7 +497,7 @@ public void Initialize(ITelemetry telemetry)
 
 #### <a name="add-information-from-httpcontext"></a>Добавление сведений из HttpContext
 
-Следующий пример инициализатора считывает данные из [`HttpContext`](/aspnet/core/fundamentals/http-context?view=aspnetcore-3.1) и добавляет их к `RequestTelemetry` экземпляру. Объект `IHttpContextAccessor` автоматически предоставляется посредством внедрения зависимостей конструктора.
+Следующий пример инициализатора считывает данные из [`HttpContext`](/aspnet/core/fundamentals/http-context) и добавляет их к `RequestTelemetry` экземпляру. Объект `IHttpContextAccessor` автоматически предоставляется посредством внедрения зависимостей конструктора.
 
 ```csharp
 public class HttpContextRequestTelemetryInitializer : ITelemetryInitializer

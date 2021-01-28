@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 2db93ec6806d4b9cc8c8ac17cfb2c15458bf4dc9
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 050c16670ea0c6df53345216d8dd450c159792ea
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401157"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927468"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -86,9 +86,9 @@ ms.locfileid: "97401157"
 - **Python/объектив-C**: добавлена поддержка `KeywordRecognizer` API. Документация будет [здесь](./custom-keyword-basics.md).
 - **C++/Жава/к #**: добавлена поддержка для установки любых `HttpHeader` ключей и значений через `ServicePropertyChannel::HttpHeader` .
 - **JavaScript**: добавлена поддержка `ConversationTranscriber` API. Ознакомьтесь с документацией [здесь](./how-to-use-conversation-transcription.md?pivots=programming-language-javascript). 
-- **C++/c #**: добавлен новый `AudioDataStream FromWavFileInput` метод (для чтения. Файлы WAV) [здесь (C++)](/cpp/cognitive-services/speech/audiodatastream) и [здесь (C#)](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
--  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), здесь ( [Java](/java/api/com.microsoft.cognitiveservices.speech)), здесь (на языке [Python)](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python)и [здесь (цель-C/SWIFT)](/objectivec/cognitive-services/speech/).
-- **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [здесь (C++)](/cpp/cognitive-services/speech/connection)и [здесь (Java)](/java/api/com.microsoft.cognitiveservices.speech.connection).
+- **C++/c #**: добавлен новый `AudioDataStream FromWavFileInput` метод (для чтения. Файлы WAV) [здесь (C++)](/cpp/cognitive-services/speech/audiodatastream) и [здесь (C#)](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream).
+-  **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлен `stopSpeakingAsync()` метод для отмены синтеза текста в речь. Прочитайте справочную документацию [здесь (C++](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace)), здесь ( [C#](/dotnet/api/microsoft.cognitiveservices.speech)), здесь ( [Java](/java/api/com.microsoft.cognitiveservices.speech)), здесь (на языке [Python)](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech)и [здесь (цель-C/SWIFT)](/objectivec/cognitive-services/speech/).
+- **C#, C++, Java**: в `FromDialogServiceConnector()` класс добавлена функция `Connection` , которая может использоваться для наблюдения за подключениями и событиями отключения `DialogServiceConnector` . Ознакомьтесь с справочной документацией [здесь (C#)](/dotnet/api/microsoft.cognitiveservices.speech.connection), [здесь (C++)](/cpp/cognitive-services/speech/connection)и [здесь (Java)](/java/api/com.microsoft.cognitiveservices.speech.connection).
 - **C++/c #/Жава/Писон/обжективе-к/Свифт**: добавлена поддержка оценки произношения, которая оценивает произношение речи и дает отзыв о точности и владениее речевого звука. Ознакомьтесь с документацией [здесь](how-to-pronunciation-assessment.md).
 
 **Критическое изменение**
@@ -136,7 +136,7 @@ SPX — это интерфейс командной строки для исп�
 
 ## <a name="text-to-speech-2020-september-release"></a>Преобразование текста в речь 2020-Сентябрь
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * **Нейронный TTS** 
     * **Расширена для поддержки 18 новых языков и национальных настроек.** Это болгарский, чешский, немецкий (Австрия), немецкий (Швейцария), Греческий, Английский (Ирландия), французский (Швейцария), иврит, хорватский, венгерский, индонезийский, малайский, Румынский, словацкий, словенский, тамильский, телугу и вьетнамский. 
@@ -149,7 +149,7 @@ SPX — это интерфейс командной строки для исп�
 
 ## <a name="text-to-speech-2020-august-release"></a>Преобразование текста в речь 2020-выпуск за Август
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * **Нейронный TTS: новый стиль речи для `en-US` Aria Voice**. При чтении новостей Арианеурал может показаться новостной. Стиль "невскаст-formal" звучит более серьезным, а стиль "невскаст-необычный" является более нестрогим и неформальным. См. раздел [Использование стилей произнесений в SSML](speech-synthesis-markup.md).
 
@@ -177,7 +177,7 @@ SPX — это интерфейс командной строки для исп�
 
 * Обновлен вокодерс для следующих голосов с улучшенными качествами и общей скоростью производительности на 40%.
 
-    | Языковой стандарт | Голосовая связь |
+    | Locale | Голосовая связь |
     |---|---|    
     | `en-GB` | Миа |
     | `es-MX` | далиа |
@@ -257,7 +257,7 @@ SPX — это интерфейс командной строки для исп�
 
 ## <a name="text-to-speech-2020-july-release"></a>Выпуски преобразования текста в речь 2020 — Июль
 
-### <a name="new-features"></a>Новые функции
+### <a name="new-features"></a>новые функции;
 
 * **Нейронный TTS, 15 новых нейронных голосов**. новые голоса, добавленные в портфель НЕЙРОНного TTS, Салма на `ar-EG` арабском языке (Египет), зарийах на `ar-SA` арабском языке (Саудовская Аравия), Алба в `ca-ES` каталанского (Испания), Чристел в `da-DK` датском (Дания), ниржа на `es-IN` английском языке (Индия), Нура в `fi-FI` Финляндии (Финляндия), свара в `hi-IN` хинди (Индия), колетте в нидерландском (Нидерланды), зофиа в польском (Польша), Фернанда на португальском языке (Португалия), дарийа в России (Россия), Хиллеви в `nl-NL` Швеции ( `pl-PL` Швеция), Ачара `pt-PT` `ru-RU` `sv-SE` в `th-TH` тайском (Таиланд), HiuGaai в `zh-HK` китайском (кантонский, традиционном) и HsiaoYu в `zh-TW` китайском (тайваньский мандаринский диалект). Проверьте все [Поддерживаемые языки](./language-support.md#neural-voices).  
 
@@ -387,18 +387,18 @@ SPX — это интерфейс командной строки для исп�
 **Новые функции**
 - Linux: добавлена поддержка Red Hat Enterprise Linux (RHEL)/Центос 7 x64 с [инструкциями](./how-to-configure-rhel-centos-7.md) по настройке системы для работы с ГОЛОСОВыми пакетами SDK.
 - Linux: добавлена поддержка .NET Core C# в Linux ARM32 и ARM64. Дополнительные сведения см. [здесь](./speech-sdk.md?tabs=linux). 
-- C#, C++: добавлен `UtteranceId` в `ConversationTranscriptionResult` , согласованный идентификатор для всех промежуточных и конечных результатов распознавания речи. Сведения для [C#](/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult?preserve-view=true&view=azure-dotnet), [C++](/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
+- C#, C++: добавлен `UtteranceId` в `ConversationTranscriptionResult` , согласованный идентификатор для всех промежуточных и конечных результатов распознавания речи. Сведения для [C#](/dotnet/api/microsoft.cognitiveservices.speech.transcription.conversationtranscriptionresult), [C++](/cpp/cognitive-services/speech/transcription-conversationtranscriptionresult).
 - Python: добавлена поддержка `Language ID` . См. раздел speech_sample. корректировка в [репозитории GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/python/console).
 - Windows: добавлена поддержка сжатого звукового входного формата на платформе Windows для всех консольных приложений Win32. Подробные сведения см. [здесь](./how-to-use-codec-compressed-audio-input-streams.md). 
 - JavaScript: поддержка синтеза речи (преобразование текста в речь) в NodeJS. Дополнительные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript/node/text-to-speech). 
 - JavaScript. Добавьте новый API, чтобы включить проверку всех сообщений об отправке и полученных сообщениях. Дополнительные сведения см. [здесь](https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/quickstart/javascript). 
         
 **Исправления ошибок**
-- C#, C++: Исправлена проблема, поэтому `SendMessageAsync` теперь отправляет двоичное сообщение как двоичный тип. Сведения для [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync?view=azure-dotnet#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](/cpp/cognitive-services/speech/connection).
-- C#, C++: Исправлена проблема, из-за которой использование `Connection MessageReceived` события может вызвать сбой `Recognizer` , если удаляется перед `Connection` объектом. Сведения для [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived?preserve-view=true&view=azure-dotnet), [C++](/cpp/cognitive-services/speech/connection#messagereceived).
+- C#, C++: Исправлена проблема, поэтому `SendMessageAsync` теперь отправляет двоичное сообщение как двоичный тип. Сведения для [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.sendmessageasync#Microsoft_CognitiveServices_Speech_Connection_SendMessageAsync_System_String_System_Byte___System_UInt32_), [C++](/cpp/cognitive-services/speech/connection).
+- C#, C++: Исправлена проблема, из-за которой использование `Connection MessageReceived` события может вызвать сбой `Recognizer` , если удаляется перед `Connection` объектом. Сведения для [C#](/dotnet/api/microsoft.cognitiveservices.speech.connection.messagereceived), [C++](/cpp/cognitive-services/speech/connection#messagereceived).
 - Android: размер звукового буфера с микрофона уменьшился с 800ms до 100 мс для улучшения задержки.
 - Android: Исправлена [проблема](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/563) с эмулятором Android для платформы x86 в Android Studio.
-- JavaScript: добавлена поддержка регионов в Китае с помощью `fromSubscription` API. Подробные сведения см. [здесь](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?preserve-view=true&view=azure-node-latest#fromsubscription-string--string-). 
+- JavaScript: добавлена поддержка регионов в Китае с помощью `fromSubscription` API. Подробные сведения см. [здесь](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig#fromsubscription-string--string-). 
 - JavaScript: Добавление дополнительных сведений об ошибках для ошибок подключения из NodeJS.
         
 **Примеры**

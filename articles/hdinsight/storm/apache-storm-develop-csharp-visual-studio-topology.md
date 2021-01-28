@@ -2,19 +2,16 @@
 title: Разработка топологий Apache Storm с помощью Visual Studio и C# в Azure HDInsight
 description: Сведения о создании топологий Storm в C#. Создайте топологию подсчета слов в Visual Studio с помощью средств Hadoop для Visual Studio.
 ROBOTS: NOINDEX
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/31/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 271f62625433a6651ba0e3230a62be51e5147f3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a81f2b21545a5362168482f3f0a65fbbbf381c10
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89000198"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929155"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
 
@@ -27,7 +24,7 @@ ms.locfileid: "89000198"
 | Версия HDInsight | Версия Apache Storm | Версия SCP.NET | Версия Mono по умолчанию |
 |:-----------------:|:-------------:|:---------------:|:--------------------:|
 | 3.4 | 0.10.0.x | 0.10.0.x | 3.2.8 |
-| 3,5 | 1.0.2.x | 1.0.0.x | 4.2.1 |
+| 3.5 | 1.0.2.x | 1.0.0.x | 4.2.1 |
 | 3,6 | 1.1.0.x | 1.0.0.x | 4.2.8 |
 
 ## <a name="prerequisite"></a>Предварительное требование
@@ -59,30 +56,30 @@ using System;
 using System.IO;
 namespace ConsoleApplication2
 {
-   class Program
-   {
-       static void Main(string[] args)
-       {
-           string javaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
-           if (!string.IsNullOrEmpty(javaHome))
-           {
-               string jarExe = Path.Combine(javaHome + @"\bin", "jar.exe");
-               if (File.Exists(jarExe))
-               {
-                   Console.WriteLine("JAVA Is Installed properly");
-                    return;
-               }
-               else
-               {
-                   Console.WriteLine("A valid JAVA JDK is not found. Looks like JRE is installed instead of JDK.");
-               }
-           }
-           else
-           {
-             Console.WriteLine("A valid JAVA JDK is not found. JAVA_HOME environment variable is not set.");
-           }
-       }  
-   }
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           string javaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
+           if (!string.IsNullOrEmpty(javaHome))
+           {
+               string jarExe = Path.Combine(javaHome + @"\bin", "jar.exe");
+               if (File.Exists(jarExe))
+               {
+                   Console.WriteLine("JAVA Is Installed properly");
+                    return;
+               }
+               else
+               {
+                   Console.WriteLine("A valid JAVA JDK is not found. Looks like JRE is installed instead of JDK.");
+               }
+           }
+           else
+           {
+             Console.WriteLine("A valid JAVA JDK is not found. JAVA_HOME environment variable is not set.");
+           }
+       }  
+   }
 }
 ```
 
@@ -221,7 +218,7 @@ namespace ConsoleApplication2
 
 1. Удалите существующий файл *Bolt.cs* из проекта.
 
-2. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите команду **Добавить**  >  **новый элемент**. Выберите в списке **Storm Bolt** (Сито воронки) и введите имя *Splitter.cs*. В коде нового файла измените имя пространства имен на `WordCount` . Затем повторите эту процедуру, чтобы создать вторую молнию с именем *Counter.CS*.
+2. В **Обозреватель решений** щелкните правой кнопкой мыши проект и выберите команду **Добавить**  >  **новый элемент**. Выберите в списке **Storm Bolt** (Сито воронки) и введите имя *Splitter.cs*. В коде нового файла измените имя пространства имен на `WordCount` . Затем повторите эту процедуру, чтобы создать вторую молнию с именем *Counter.CS*.
 
    * *Splitter.CS*: реализует молнию, который разделяет предложения на отдельные слова и создает новый поток слов.
 
@@ -410,7 +407,7 @@ return topologyBuilder;
 
 1. Щелкните правой кнопкой мыши **Azure**, выберите **подключиться к Microsoft Azure подписке...** и завершите процесс входа.
 
-1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **отправить в кластер HDInsight**.
+1. В **Обозреватель решений** щелкните правой кнопкой мыши проект и выберите **отправить в кластер HDInsight**.
 
 1. В диалоговом окне **Отправка топологии** в раскрывающемся списке **кластер кластера** выберите свой вариант в кластере HDInsight, а затем нажмите кнопку **Отправить**. Можно проверить успешность отправки, просмотрев область **вывода** .
 
@@ -531,14 +528,14 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
 Последние версии SCP.NET поддерживают обновление пакета через NuGet. Если доступно новое обновление, вы получите уведомление об обновлении. Чтобы вручную проверить обновления, выполните указанные ниже действия.
 
-1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
+1. В **Обозреватель решений** щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 
 2. Из диспетчера пакетов выберите **Обновления**. Если обновление для пакета поддержки SCP.NET доступно, оно отображается в списке. Выберите **Обновить** для пакета, а затем в диалоговом окне **Предварительный просмотр изменений** нажмите кнопку **ОК** , чтобы установить его.
 
 > [!IMPORTANT]  
 > Если проект был создан с помощью предыдущей версии SCP.NET, в которой не использовалось средство NuGet, выполните следующие действия для обновления до новой версии.
 >
-> 1. В **Обозреватель решений**щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
+> 1. В **Обозреватель решений** щелкните правой кнопкой мыши проект и выберите **Управление пакетами NuGet**.
 > 2. С помощью поля **поиска** найдите и добавьте `Microsoft.SCP.Net.SDK` в проект.
 
 ## <a name="troubleshoot-common-issues-with-topologies"></a>Устранение распространенных неполадок с топологиями
@@ -575,9 +572,9 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
    > [!NOTE]
    > Перед развертыванием топологии в кластере не забудьте вернуть для параметра **Тип выходных данных** значение **Библиотеки классов**.
 
-1. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите пункты **Добавить** > **Новый элемент**. Выберите **класс**и введите *LocalTest.CS* в качестве имени класса. Наконец, выберите **Добавить**.
+1. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите пункты **Добавить** > **Новый элемент**. Выберите **класс** и введите *LocalTest.CS* в качестве имени класса. Наконец, выберите **Добавить**.
 
-1. Откройте *LocalTest.CS*и добавьте в начало следующую `using` инструкцию:
+1. Откройте *LocalTest.CS* и добавьте в начало следующую `using` инструкцию:
 
     ```csharp
     using Microsoft.SCP;
@@ -664,7 +661,7 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
     Ознакомьтесь с комментариями в коде. Этот код использует `LocalContext` для запуска компонентов в среде разработки. Он сохраняет поток данных между компонентами в текстовые файлы на локальном диске.
 
-1. Откройте *Program.CS*и добавьте в метод следующий код `Main` :
+1. Откройте *Program.CS* и добавьте в метод следующий код `Main` :
 
     ```csharp
     Console.WriteLine("Starting tests");
@@ -687,7 +684,7 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
 1. Сохраните изменения, а затем нажмите **клавишу F5** или выберите **Отладка**  >  **начать отладку** , чтобы запустить проект. Должно появится окно консоли, а также данные о состоянии журнала в ходе выполнения тестов. Когда `Tests finished` отобразится, выберите любой ключ, чтобы закрыть окно.
 
-1. Используйте **проводник** для поиска каталога, который содержит проект, (Например, *C: \\ Users \\ \<your_user_name> \\ \\ репозиториев \\ \\ *WordCount WordCount.) Затем в этом каталоге откройте *bin*и выберите *Отладка*. Вы должны увидеть текстовые файлы, созданные при выполнении тестов: *sentences.txt*, *counter.txt*и *splitter.txt*. Откройте каждый текстовый файл и проверьте данные.
+1. Используйте **проводник** для поиска каталога, который содержит проект, (Например, *C: \\ Users \\ \<your_user_name> \\ \\ репозиториев \\ \\* WordCount WordCount.) Затем в этом каталоге откройте *bin* и выберите *Отладка*. Вы должны увидеть текстовые файлы, созданные при выполнении тестов: *sentences.txt*, *counter.txt* и *splitter.txt*. Откройте каждый текстовый файл и проверьте данные.
 
    > [!NOTE]  
    > Строковые данные сохраняются в этих файлах как массив значений типа decimal. Например, `[[97,103,111]]` в файле **splitter.txt** представляет слово « *назад*».
@@ -710,7 +707,7 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
 Чтобы просмотреть ошибки, произошедшие в работающей топологии, сделайте следующее.
 
-1. В **Обозреватель сервера**щелкните его в кластере HDInsight правой кнопкой мыши и выберите пункт **Просмотр топологий**.
+1. В **Обозреватель сервера** щелкните его в кластере HDInsight правой кнопкой мыши и выберите пункт **Просмотр топологий**.
 
    Для элементов **spout** и **bolt** столбец **Последняя ошибка** содержит сведения о последней ошибке.
 

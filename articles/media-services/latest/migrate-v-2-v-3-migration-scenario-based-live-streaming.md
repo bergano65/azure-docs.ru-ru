@@ -1,5 +1,5 @@
 ---
-title: Руководство по сценариям миграции служб мультимедиа версии 2 и v3 для потоковой трансляции в реальном времени
+title: Руководство по миграции служб мультимедиа v2 на v3 для потоковой передачи в реальном времени
 description: Эта статья содержит инструкции по использованию сценария потоковой передачи в реальном времени, которые помогут вам в минимальном переходе с служб мультимедиа Azure версии 2 на v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 65b1c8906463002e144ee520855121ce18693e03
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 02ae0f7e8723e9c4543a4ef681e3a1164b183a7a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898279"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927130"
 ---
 # <a name="live-streaming-scenario-based-migration-guidance"></a>Руководство по миграции на основе сценариев динамической потоковой передачи
 

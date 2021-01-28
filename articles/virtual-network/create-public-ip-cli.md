@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 70fb502e45a6cdcc196f5fb97ee4c8c59ba6c27d
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 4d2f339f5a1339b5f249172170fed54c91f1dc24
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223556"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927189"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-cli"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью Azure CLI
 
@@ -30,7 +30,7 @@ ms.locfileid: "98223556"
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Создайте группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group?view=azure-cli-latest#az-group-create) с именем **myResourceGroup** в расположении **eastus2** .
+Создайте группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group#az-group-create) с именем **myResourceGroup** в расположении **eastus2** .
 
 ```azurecli-interactive
   az group create \
@@ -46,7 +46,7 @@ ms.locfileid: "98223556"
 >[!NOTE]
 >Следующая команда работает для API версии 2020-08-01 или более поздней.  Дополнительные сведения о текущей используемой версии API см. в разделе [поставщики и типы ресурсов](../azure-resource-manager/management/resource-providers-and-types.md).
 
-Чтобы создать стандартный общедоступный IP-адрес, избыточный в виде зоны, с именем **мистандардзрпублиЦип** в **myResourceGroup**, используйте команду [AZ Network public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) .
+Чтобы создать стандартный общедоступный IP-адрес, избыточный в виде зоны, с именем **мистандардзрпублиЦип** в **myResourceGroup**, используйте команду [AZ Network public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) .
 
 ```azurecli-interactive
   az network public-ip create \
@@ -76,7 +76,7 @@ ms.locfileid: "98223556"
 >[!NOTE]
 >Следующая команда работает для API версии 2020-08-01 или более поздней.  Дополнительные сведения о текущей используемой версии API см. в разделе [поставщики и типы ресурсов](../azure-resource-manager/management/resource-providers-and-types.md).
 
-Чтобы создать стандартный общедоступный IP-адрес в качестве ресурса, отличного от зональные, с именем **мистандардпублиЦип** в **myResourceGroup**, используйте команду [AZ Network public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) .
+Чтобы создать стандартный общедоступный IP-адрес в качестве ресурса, отличного от зональные, с именем **мистандардпублиЦип** в **myResourceGroup**, используйте команду [AZ Network public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) .
 
 ```azurecli-interactive
   az network public-ip create \
@@ -88,7 +88,7 @@ ms.locfileid: "98223556"
 
 # <a name="basic-sku"></a>[**SKU "Базовый"**](#tab/option-create-public-ip-basic)
 
-Чтобы создать базовый статический общедоступный IP-адрес с именем **мибасикпублиЦип** в **myResourceGroup**, выполните команду [AZ Network public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) .  Основные общедоступные IP-адреса не имеют концепции зон доступности.
+Чтобы создать базовый статический общедоступный IP-адрес с именем **мибасикпублиЦип** в **myResourceGroup**, выполните команду [AZ Network public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) .  Основные общедоступные IP-адреса не имеют концепции зон доступности.
 
 ```azurecli-interactive
   az network public-ip create \

@@ -1,19 +1,16 @@
 ---
 title: Пример топологии Java для Apache Storm в Azure HDInsight
 description: Узнайте, как создать топологии Apache Storm на языке Java с помощью создания примера топологии подсчета слов.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017,seoapr2020,devx-track-java
 ms.date: 04/27/2020
-ms.openlocfilehash: 881ec4aa36261958b566dc2d7c4d06475a76bad4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 620a4e1627b25af22db68173f35924376e26f5f8
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545503"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929129"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -24,7 +21,7 @@ ms.locfileid: "92545503"
 > [!NOTE]  
 > Завершенная версия примеров топологии, созданных в этом документе, доступна по адресу [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount) .
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Java Developer Kit (JDK) версии 8](/azure/developer/java/fundamentals/java-jdk-long-term-support)
 
@@ -43,7 +40,7 @@ cd C:\HDI
 
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
-Введите следующую команду, чтобы создать проект Maven с именем **WordCount** :
+Введите следующую команду, чтобы создать проект Maven с именем **WordCount**:
 
 ```cmd
 mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.microsoft.example -DartifactId=WordCount -DinteractiveMode=false
@@ -201,7 +198,7 @@ Maven позволяет определить значения на уровне
 
   * Для HDInsight __3.4 или более ранней версии__ задайте версию __1.7__ в качестве исходной и целевой версий Java.
 
-  * Для HDInsight __3.5__ в качестве исходной и целевой версий Java задайте версию __1.8__ .
+  * Для HDInsight __3.5__ в качестве исходной и целевой версий Java задайте версию __1.8__.
 
   Добавьте следующий код в раздел `<plugins>` файла `pom.xml`, чтобы добавить в него подключаемый модуль Apache Maven Compiler. Этот пример задает версию 1.8, поэтому целевой версией HDInsight является 3.5.
 
@@ -237,11 +234,11 @@ Maven позволяет определить значения на уровне
 
 Топология Apache Storm на платформе Java состоит из трех компонентов, которые необходимо создать или указать как зависимость.
 
-* **Воронки** — чтение данных из внешних источников и отправка потоков данных в топологию.
+* **Воронки**— чтение данных из внешних источников и отправка потоков данных в топологию.
 
-* « **Винты** »: обработка потоков, созданных с помощью порождений или других «винтов», и эмиссия одного или нескольких потоков.
+* « **Винты**»: обработка потоков, созданных с помощью порождений или других «винтов», и эмиссия одного или нескольких потоков.
 
-* **Топология** — определяет взаимное расположение воронок и сит и предоставляет точку входа для топологии.
+* **Топология**— определяет взаимное расположение воронок и сит и предоставляет точку входа для топологии.
 
 ### <a name="create-the-spout"></a>Создание «воронки»
 
@@ -327,9 +324,9 @@ public class RandomSentenceSpout extends BaseRichSpout {
 
 Сита выполняют обработку данных. Элементы bolt могут выполнять любые операции, например вычисление, сохранение, а также взаимодействие с внешними компонентами. Эта топология включает два сита.
 
-* **SplitSentence**  — разделяет предложения, отправленные **RandomSentenceSpout** , на отдельные слова;
+* **SplitSentence** — разделяет предложения, отправленные **RandomSentenceSpout**, на отдельные слова;
 
-* **WordCount** — подсчитывает частоту употребления каждого слова.
+* **WordCount**— подсчитывает частоту употребления каждого слова.
 
 #### <a name="splitsentence"></a>SplitSentence
 

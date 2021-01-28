@@ -1,19 +1,16 @@
 ---
 title: Отправка заданий в кластер Spark в Azure HDInsight с помощью Livy Spark
 description: Узнайте, как выполнить удаленную отправку заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
-ms.openlocfilehash: b5795172517ba2e707d66ebe486c51d31575bd0d
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: ff63f4fbadd7cb9e7584e2aa045583a35e0363fd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97821882"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930131"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API
 
@@ -97,7 +94,7 @@ Livy обеспечивает высокую доступность задани
 * Вы уже скопировали JAR-файл приложения в учетную запись хранения, связанную с кластером.
 * Вы установили фигурные скобки на компьютере, где вы пытаетесь выполнить эти действия.
 
-Выполните следующие шаги.
+Выполните следующие действия:
 
 1. Для простоты использования задайте переменные среды. Этот пример основан на среде Windows, изменяя переменные по мере необходимости для вашей среды. Замените `CLUSTERNAME` и `PASSWORD` соответствующими значениями.
 

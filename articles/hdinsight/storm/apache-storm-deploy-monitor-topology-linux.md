@@ -1,19 +1,16 @@
 ---
 title: Развертывание и администрирование топологий Apache Storm в Azure HDInsight
 description: Узнайте, как развертывать, отслеживать и управлять топологиями Apache Storm с помощью панели мониторинга "многофактория" в HDInsight под управлением Linux. Использование инструментов Hadoop для Visual Studio.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
-ms.openlocfilehash: 9b190b5847c7412344e2bb09fd4000985816219b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 417819cad3bc2ee258381426dfcee7c800b69d42
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995596"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98929181"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight
 
@@ -38,7 +35,7 @@ ms.locfileid: "95995596"
     >
     > Средства Azure Data Lake и Stream Analytics для Visual Studio включены в рабочую нагрузку **разработки Azure** для visual Studio 2019.
 
-1. Запустите среду Visual Studio.
+1. Запустите Visual Studio.
 
 1. В окне **Начало работы** выберите **Создать проект**.
 
@@ -252,10 +249,10 @@ storm rebalance TOPOLOGYNAME
 | Метод обнаружения FQDN | Описание |
 | --- | --- |
 | Сеанс SSH | Из сеанса SSH в кластер примените команду `headnode -f`. |
-| Веб-Ambari | На веб-странице кластера Ambari ( `https://CLUSTERNAME.azurehdinsight.net` ) выберите **службы** в верхней части страницы, а затем выберите множество. **Storm** На вкладке **Summary** (Сводка) выберите **Storm UI Server** (Сервер пользовательского интерфейса Storm). Полное доменное имя узла, на котором размещены пользовательский интерфейс Storm и REST API, отображено в верхней части страницы. |
+| Веб-Ambari | На веб-странице кластера Ambari ( `https://CLUSTERNAME.azurehdinsight.net` ) выберите **службы** в верхней части страницы, а затем выберите множество.  На вкладке **Summary** (Сводка) выберите **Storm UI Server** (Сервер пользовательского интерфейса Storm). Полное доменное имя узла, на котором размещены пользовательский интерфейс Storm и REST API, отображено в верхней части страницы. |
 | Ambari REST API | Используйте команду `curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/services/STORM/components/STORM_UI_SERVER"`, чтобы получить сведения об узле с выполняемыми пользовательскими интерфейсами Storm и REST API. Замените два экземпляра *имя_кластера* именем кластера. При появлении запроса введите пароль для учетной записи пользователя (администратора). В ответе запись "host_name" выходных данных JSON содержит полное доменное имя узла. |
 
-### <a name="authentication"></a>Аутентификация
+### <a name="authentication"></a>Проверка подлинности
 
 Запросы к REST API должны использовать *обычную проверку подлинности*, поэтому необходимо использовать имя администратора и пароль для кластера HDInsight.
 
@@ -266,7 +263,7 @@ storm rebalance TOPOLOGYNAME
 
 Сведения, возвращаемые из REST API, могут использоваться только в пределах кластера. Например, полное доменное имя (FQDN), возвращенное для серверов [Apache ZooKeeper](https://zookeeper.apache.org/) , недоступно из Интернета.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [разработке топологий на основе Java с помощью Apache Maven](apache-storm-develop-java-topology.md).
 

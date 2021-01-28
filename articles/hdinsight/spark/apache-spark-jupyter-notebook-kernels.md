@@ -1,19 +1,16 @@
 ---
 title: Ядра для Jupyter Notebook в кластерах Spark в Azure HDInsight
 description: Сведения о ядрах PySpark, PySpark3 и Spark для Jupyter Notebook, доступных в кластерах Spark в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/24/2020
-ms.openlocfilehash: b1139ce2358d5e5b3b52376892524e7ee0dd5611
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: a16ec623d7475a80e546df43495db1a357a5fa66
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822239"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930392"
 ---
 # <a name="kernels-for-jupyter-notebook-on-apache-spark-clusters-in-azure-hdinsight"></a>Ядра для Jupyter Notebook в кластерах Apache Spark в Azure HDInsight
 
@@ -98,7 +95,7 @@ ms.locfileid: "97822239"
 | -r |`-r <FRACTION>` |Здесь **FRACTION** — это число с плавающей запятой от 0,0 до 1,0. Если для SQL-запроса используется метод выборки `sample`, то ядро выбирает заданную долю элементов из результирующего набора случайным образом. Например, при выполнении SQL-запроса с аргументами `-m sample -r 0.01` из результирующего набора данных случайным образом отбирается 1 % строк. |
 | -n |`-n <MAXROWS>` |**MAXROWS** должно быть выражено целым числом. Число выходных строк для параметра **MAXROWS** ограничивается ядром. Если **MAXROWS** является отрицательным числом, например **-1**, то число строк в результирующем наборе не ограничено. |
 
-**Пример**.
+**Пример.**
 
 ```sql
 %%sql -q -m sample -r 0.1 -n 500 -o query2
@@ -125,7 +122,7 @@ SELECT * FROM hivesampletable
 
 Записные книжки сохраняются в учетной записи хранения, совместимой с [Apache Hadoop HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html). Если вы подключитесь к кластеру по протоколу SSH, вы можете использовать команды управления файлами:
 
-| Get-Help | Описание |
+| Команда | Описание |
 |---------|-------------|
 | `hdfs dfs -ls /HdiNotebooks` | # Выводить все в корневом каталоге — все, что находится в этом каталоге, является видимым для Jupyter с домашней страницы. |
 | `hdfs dfs –copyToLocal /HdiNotebooks` | # Скачивание содержимого папки Хдинотебукс|
