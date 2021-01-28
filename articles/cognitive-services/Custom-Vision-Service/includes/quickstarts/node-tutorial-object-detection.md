@@ -4,12 +4,12 @@ ms.author: areddish
 ms.service: cognitive-services
 ms.date: 10/26/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: be3f199b1b8442da38b4ad0b6b6495b533c6dfe1
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 3ac9182b3566df531778c73a86171f4dfcea1def
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98256547"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947589"
 ---
 Это руководство содержит инструкции и пример кода, которые помогут вам приступить к работе с клиентской библиотекой Пользовательского визуального распознавания для Node.js и создать модель обнаружения объекта. Здесь объясняется, как создать проект, добавить теги, обучить проект и использовать URL-адрес конечной точки прогнозирования проекта для тестирования программными средствами. Этот пример можно использовать как шаблон при создании собственного приложения для распознавания изображений.
 
@@ -25,7 +25,7 @@ ms.locfileid: "98256547"
 * Публикация текущей итерации
 * Тестирование конечной точки прогнозирования
 
-Справочная документация [(обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/?view=azure-node-latest) [(прогноз)](/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest) | Исходный код библиотеки [(обучение)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-training) [(прогноз)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-prediction) | Пакет (npm) [(обучение)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training) [(прогноз)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction) | [Примеры](/samples/browse/?products=azure&terms=custom%20vision&languages=javascript)
+Справочная документация [(обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/) [(прогноз)](/javascript/api/@azure/cognitiveservices-customvision-prediction/) | Исходный код библиотеки [(обучение)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-training) [(прогноз)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-prediction) | Пакет (npm) [(обучение)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training) [(прогноз)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction) | [Примеры](/samples/browse/?products=azure&terms=custom%20vision&languages=javascript)
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -87,9 +87,9 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 |Имя|Описание|
 |---|---|
-|[TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient?view=azure-node-latest) | Этот класс обрабатывает создание, обучение и публикацию ваших моделей. |
-|[PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient?view=azure-node-latest)| Этот класс обрабатывает запросы ваших моделей для прогнозов обнаружения объектов.|
-|[Прогнозирование](/javascript/api/@azure/cognitiveservices-customvision-prediction/prediction?view=azure-node-latest)| Этот интерфейс определяет один прогноз для одного изображения. Он содержит свойства идентификатора и имени объекта, а также оценку доверительного уровня.|
+|[TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient) | Этот класс обрабатывает создание, обучение и публикацию ваших моделей. |
+|[PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient)| Этот класс обрабатывает запросы ваших моделей для прогнозов обнаружения объектов.|
+|[Прогнозирование](/javascript/api/@azure/cognitiveservices-customvision-prediction/prediction)| Этот интерфейс определяет один прогноз для одного изображения. Он содержит свойства идентификатора и имени объекта, а также оценку доверительного уровня.|
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -105,7 +105,7 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Создайте экземпляры клиентских объектов с использованием конечной точки и ключа. Создайте объект **ApiKeyCredentials** с ключом и используйте его с конечной точкой, чтобы создать объект [TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient?view=azure-node-latest) и [PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient?view=azure-node-latest).
+Создайте экземпляры клиентских объектов с использованием конечной точки и ключа. Создайте объект **ApiKeyCredentials** с ключом и используйте его с конечной точкой, чтобы создать объект [TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient) и [PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient).
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/CustomVision/ObjectDetection/CustomVisionQuickstart.js?name=snippet_auth)]
 
@@ -187,5 +187,5 @@ node index.js
 
 * Что собой представляет Пользовательское визуальное распознавание
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/CustomVision/ObjectDetection/CustomVisionQuickstart.js)
-* [Справочная документация по пакету SDK (обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/?view=azure-node-latest)
-* [Справочная документация по пакету SDK (прогнозирование)](/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest)
+* [Справочная документация по пакету SDK (обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/)
+* [Справочная документация по пакету SDK (прогнозирование)](/javascript/api/@azure/cognitiveservices-customvision-prediction/)
