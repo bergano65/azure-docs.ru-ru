@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для Azure RBAC
 description: Содержит список элементов управления соответствием Политики Azure, доступных для управления доступом на основе ролей Azure (Azure RBAC). Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 01/08/2021
+ms.date: 01/25/2021
 ms.topic: sample
 author: rolyon
 ms.author: rolyon
 ms.service: role-based-access-control
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 824b3975d4c8c192aeb87ae02c4a6dd4fc1177df
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 955e2216bbdf67cf8c10db72f2288a9da765700a
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050314"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796091"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-rbac"></a>Элементы управления соответствием Политики Azure для Azure RBAC
 

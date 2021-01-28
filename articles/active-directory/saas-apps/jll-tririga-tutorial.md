@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/17/2020
 ms.author: jeedes
-ms.openlocfilehash: fbf0b6f929fc0999249298f5f271a86ccf3bef39
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: b33db1b766d99aeb8d0a08f6396b5384948f118e
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602914"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736874"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jll-tririga"></a>Руководство по интеграции единого входа Azure Active Directory с JLL TRIRIGA
 
@@ -140,11 +140,9 @@ ms.locfileid: "96602914"
 
 * На портале Azure выберите Тестировать приложение и вы автоматически войдете в приложение JLL TRIRIGA, для которого настроен единый вход.
 
-* Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку JLL TRIRIGA на Панели доступа, вы автоматически войдете в приложение JLL TRIRIGA, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+* Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку JLL TRIRIGA на Панели доступа, вы автоматически войдете в приложение JLL TRIRIGA, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки JLL TRIRIGA вы сможете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки JLL TRIRIGA вы сможете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

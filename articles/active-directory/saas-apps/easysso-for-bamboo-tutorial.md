@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/21/2020
 ms.author: jeedes
-ms.openlocfilehash: fec95dc033eb5eacaf79f5bbd2b6b294628667b9
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 3d784979876857e94c1e09ffc5b7bef11c0a0d04
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725101"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735975"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-bamboo"></a>Руководство по интеграции единого входа Azure Active Directory с EasySSO for Bamboo
 
@@ -199,7 +199,7 @@ ms.locfileid: "97725101"
 
 В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала "Мои приложения".
 
-Щелкнув плитку EasySSO для Bamboo на портале "Мои приложения", вы автоматически войдете в приложение Bamboo, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку EasySSO для Bamboo на портале "Мои приложения", вы автоматически войдете в приложение Bamboo, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ### <a name="sp-initiated-workflow"></a>Рабочий процесс, инициированный поставщиком услуг
 

@@ -5,12 +5,12 @@ author: jjbfour
 ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: jobreen
-ms.openlocfilehash: 6e11e08d861538ddf395f522495798546e04ca7c
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 55554678047faeedd16b78dea61a42d50fd59491
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91948958"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737325"
 ---
 # <a name="set-up-azure-functions-for-azure-custom-providers"></a>Настройка Функций Azure для настраиваемых поставщиков Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "91948958"
 > [!NOTE]
 > Выполнив инструкции из этого руководства, вы создадите простую конечную точку службы, которая использует приложение-функцию Azure. При этом настраиваемый поставщик может использовать любую общедоступную конечную точку. Это может быть Azure Logic Apps, Azure API Management или функция Web Apps в Службе приложений Azure.
 
-Прежде чем начать работу с этим руководством, выполните инструкции из руководства [Создание первой функции Azure на портале Azure](../../azure-functions/functions-create-first-azure-function.md), чтобы создать функцию веб-перехватчика .NET Core, которую можно изменить на портале Azure. Это является предварительным требованиям для начала работы.
+Прежде чем начать работу с этим руководством, выполните инструкции из руководства [Создание первой функции Azure на портале Azure](../../azure-functions/functions-get-started.md), чтобы создать функцию веб-перехватчика .NET Core, которую можно изменить на портале Azure. Это является предварительным требованиям для начала работы.
 
 ## <a name="install-azure-table-storage-bindings"></a>Установка привязок к табличному хранилищу Azure
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 475973c7c883c0d8c1b0930aff68710328886b32
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 144e121b140e47ebda62530354943d5d27cce094
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97364458"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735416"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aruba-user-experience-insight"></a>Руководство. Интеграция единого входа Azure Active Directory с Aruba User Experience Insight
 
@@ -153,10 +153,8 @@ ms.locfileid: "97364458"
 
 * На портале Azure выберите элемент **Тестировать приложение**, и вы автоматически войдете в приложение Aruba User Experience Insight, для которого настроен единый вход. 
 
-Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Если вы щелкнете плитку Aruba User Experience Insight на портале "Мои приложения", будет выполнено перенаправление на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика службы) или автоматический вход в приложение Aruba User Experience Insight, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Если вы щелкнете плитку Aruba User Experience Insight на портале "Мои приложения", будет выполнено перенаправление на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика службы) или автоматический вход в приложение Aruba User Experience Insight, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Aruba User Experience Insight вы можете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки Aruba User Experience Insight вы можете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

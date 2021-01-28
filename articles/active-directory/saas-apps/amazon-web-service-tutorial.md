@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: 3db6fd2e6df96590d7d405157cbb33900c7d8531
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 286dc20ba70c78f8248f611abd75e0acc303c068
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127810"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736193"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -120,7 +120,7 @@ ms.locfileid: "98127810"
     | SessionDuration | "Укажите значение от 900 секунд (15 минут) до 43 200 секунд (12 часов)." |  `https://aws.amazon.com/SAML/Attributes` |
 
     > [!NOTE]
-    > AWS ожидает роли для пользователей, назначенных приложению. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Сведения о том, как настроить роли в Azure AD, см. [здесь](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui).
+    > AWS ожидает роли для пользователей, назначенных приложению. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Сведения о том, как настроить роли в Azure AD, см. [здесь](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview).
 
 1. На странице **Настройка единого входа с помощью SAML** в диалоговом окне **Сертификат SAML для подписи** (шаг 3) выберите **Добавить сертификат**.
 

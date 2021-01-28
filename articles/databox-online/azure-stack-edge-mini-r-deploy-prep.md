@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/05/2021
+ms.date: 01/22/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Mini R device so I can use it to transfer data to Azure.
-ms.openlocfilehash: 4535368b7d8d044469a4b0effee914176aca78e4
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: b6745ed879f02a341027417b54eb459b5bfed705
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935413"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762939"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-mini-r"></a>Руководство по подготовке к развертыванию Azure Stack Edge Mini R
 
@@ -121,11 +121,11 @@ ms.locfileid: "97935413"
 
 7. По завершении выберите **Next: Shipping address** (Далее. Адрес доставки).
 
-    - Если у вас уже есть устройство, установите флажок **У меня уже есть устройство**.
+   - Если у вас уже есть устройство, установите флажок **У меня уже есть устройство**.
 
      ![Создание ресурса 5](media/azure-stack-edge-mini-r-deploy-prep/create-resource-5.png)
 
-    - Если вы заказываете новое устройство, введите имя контактного лица, название компании, адрес для отправки устройства и контактные данные.
+   - Если вы заказываете новое устройство, введите имя контактного лица, название компании, адрес для отправки устройства и контактные данные.
 
      ![Создание ресурса 6](media/azure-stack-edge-mini-r-deploy-prep/create-resource-6.png)
 
@@ -145,9 +145,12 @@ ms.locfileid: "97935413"
     
     ![Переход к ресурсу Azure Stack Edge Pro](media/azure-stack-edge-mini-r-deploy-prep/azure-stack-edge-resource-1.png)
     
-    После того как вы разместите заказ, корпорация Майкрософт просмотрит его и отправит вам сведения о доставке (по электронной почте).
+После того как вы разместите заказ, корпорация Майкрософт просмотрит его и отправит вам сведения о доставке (по электронной почте).
 
-   Если во время процесса заказа возникли проблемы, ознакомьтесь со статьей [Устранение неполадок с заказами в Azure Stack Edge](azure-stack-edge-troubleshoot-ordering.md).
+> [!NOTE]
+> Чтобы создать несколько заказов за один раз или клонировать существующий заказ, используйте [скрипты из репозитория примеров для Azure](https://github.com/Azure-Samples/azure-stack-edge-order). Дополнительные сведения см. в файле сведений.
+
+Если во время процесса заказа возникли проблемы, ознакомьтесь со статьей [Устранение неполадок с заказами в Azure Stack Edge](azure-stack-edge-troubleshoot-ordering.md).
 
 ## <a name="get-the-activation-key"></a>Получение ключа активации.
 

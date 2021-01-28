@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 6599abd6282d0d1eb7cb81002c34ddd5158dab6b
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 4682396f68d6ff1af0b2fb6a5b1a8419d6963529
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511065"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735347"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-awarego"></a>Руководство по интеграции единого входа Azure Active Directory в AwareGo
 
@@ -139,11 +139,9 @@ ms.locfileid: "97511065"
 
 * Перейдите непосредственно на страницу входа в AwareGo и инициируйте поток входа.
 
-* Перейдите на портал "Мои приложения" корпорации Майкрософт. При выборе плитки **AwareGo** на портале "Мои приложения" вы будете перенаправлены на страницу входа AwareGo. Дополнительные сведения см. в статье о [входе на портал "Мои приложения" и запуске приложений на нем](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Перейдите на портал "Мои приложения" корпорации Майкрософт. При выборе плитки **AwareGo** на портале "Мои приложения" вы будете перенаправлены на страницу входа AwareGo. Дополнительные сведения см. в статье о [входе на портал "Мои приложения" и запуске приложений на нем](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки AwareGo вы можете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции Управления условным доступом к приложениям. Подробные сведения см. в статье об [управлении сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки AwareGo вы можете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции Управления условным доступом к приложениям. Подробные сведения см. в статье об [управлении сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

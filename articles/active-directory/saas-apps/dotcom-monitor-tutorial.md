@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 1dc321200c7fe85b3f4bd5099d6ca0714e4ca63a
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 6f7b2abecdfae1e8f943cd45df7e4c42f1ddd978
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914337"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736632"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-dotcom-monitor"></a>Руководство по Интеграции единого входа Azure Active Directory с Dotcom-Monitor
 
@@ -93,7 +93,7 @@ ms.locfileid: "97914337"
     | Роли | user.assignedroles |
 
     > [!NOTE]
-    > [Здесь](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) приведены дополнительные рекомендации о создании настраиваемых ролей в Azure AD.
+    > [Здесь](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) приведены дополнительные рекомендации о создании настраиваемых ролей в Azure AD.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -143,7 +143,7 @@ ms.locfileid: "97914337"
 
 * Перейдите по URL-адресу для входа в Dotcom-Monitor и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Dotcom-Monitor на портале "Мои приложения", вы перейдете по URL-адресу для входа в Dotcom-Monitor. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Dotcom-Monitor на портале "Мои приложения", вы перейдете по URL-адресу для входа в Dotcom-Monitor. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для Виртуальных машин Azure
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Виртуальных машин Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 01/08/2021
+ms.date: 01/25/2021
 ms.topic: sample
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 195624cff98fb8142b475e455e0df47e427f683a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 9f57b4adcdc2c7eda45a439b8655d88b5afc2827
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044815"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797663"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-virtual-machines"></a>Элементы управления соответствием Политики Azure для Виртуальных машин Azure 
 

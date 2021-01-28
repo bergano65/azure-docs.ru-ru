@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/27/2020
 ms.author: jeedes
-ms.openlocfilehash: 65efc47fcb8c9751342db04b270eb877d10c6886
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: b0c772b3f30b211cf83512ca2ff2f10325fb4bc1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97364495"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735099"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-equinix-federation-app"></a>Руководство по интеграции единого входа Azure Active Directory с Equinix Federation App
 
@@ -132,11 +132,9 @@ ms.locfileid: "97364495"
 
 * Перейдите по URL-адресу для входа в Equinix Federation App и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Если щелкнуть плитку Equinix Federation App в области "Мои приложения", вы будете перенаправлены по URL-адресу для входа в Equinix Federation App. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Если щелкнуть плитку Equinix Federation App в области "Мои приложения", вы будете перенаправлены по URL-адресу для входа в Equinix Federation App. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Equinix Federation App вы сможете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки Equinix Federation App вы сможете применить функцию управления сеансом, которая защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

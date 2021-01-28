@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 54386bd7431c2003dd29a905b3b696f69a39d2d9
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: c87eb3b52843f4de39d0c037bdf452160be1ca2b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914439"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735976"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-colortokens-ztna"></a>Руководство по интеграции единого входа Azure Active Directory с ColorTokens ZTNA
 
@@ -92,7 +92,7 @@ ms.locfileid: "97914439"
     | Группа | user.groups |
 
     > [!NOTE]
-    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui), чтобы понять, как создать роли в Azure AD.
+    > Перейдите по [этой ссылке](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview), чтобы понять, как создать роли в Azure AD.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -142,7 +142,7 @@ ms.locfileid: "97914439"
 
 * Перейдите по URL-адресу для входа в ColorTokens ZTNA и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку ColorTokens ZTNA на портале "Мои приложения", вы перейдете по URL-адресу для входа в ColorTokens ZTNA. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку ColorTokens ZTNA на портале "Мои приложения", вы перейдете по URL-адресу для входа в ColorTokens ZTNA. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 68de75f25c70db9e2f5fcdb524e6b55fb6939e9a
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: c87f66e48aa7b39a7f3fc5f9b8572dd6925abbc0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186302"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732165"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-a-github-enterprise-cloud-organization"></a>Руководство по интеграции единого входа Azure Active Directory с GitHub Enterprise Cloud Organization
 
@@ -205,7 +205,7 @@ ms.locfileid: "98186302"
 
 * Перейдите по URL-адресу для входа в GitHub и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку GitHub на портале "Мои приложения", вы перейдете по URL-адресу для входа в GitHub. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку GitHub на портале "Мои приложения", вы перейдете по URL-адресу для входа в GitHub. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

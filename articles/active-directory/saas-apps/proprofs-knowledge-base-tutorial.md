@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/27/2020
 ms.author: jeedes
-ms.openlocfilehash: f91f3b1af5631ea168ce59791e516d434ee0b7e8
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9747abb5b614c5a59b56159399c3386a831b3337
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96354811"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735055"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-proprofs-knowledge-base"></a>Руководство по интеграции единого входа Azure Active Directory с ProProfs Knowledge Base
 
@@ -124,11 +124,9 @@ ms.locfileid: "96354811"
 
 * На портале Azure выберите "Тестировать приложение", и вы автоматически войдете в приложение ProProfs Knowledge Base, для которого настроен единый вход.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку ProProfs Knowledge Base в разделе "Мои приложения", вы автоматически войдете в приложение ProProfs Knowledge Base, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку ProProfs Knowledge Base в разделе "Мои приложения", вы автоматически войдете в приложение ProProfs Knowledge Base, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки ProProfs Knowledge Base вы можете применить управление сеансами, которое в реальном времени защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки ProProfs Knowledge Base вы можете применить управление сеансами, которое в реальном времени защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/27/2020
+ms.date: 01/11/2021
 ms.author: jeedes
-ms.openlocfilehash: eeb5f3e2a87dcc56b8e2ef0bf17309e184c3d65b
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: a846899ba8f9b9e7c0d2e54744f5e5044ca7a2d6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019403"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732111"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-google-cloud-g-suite-connector"></a>Руководство по интеграции единого входа Azure Active Directory с Google Cloud (G Suite) Connector
 
@@ -132,8 +132,8 @@ ms.locfileid: "98019403"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
 
     ```http
-    https://www.google.com
-    https://www.google.com/a/<yourdomain.com>
+    https://www.google.com/acs
+    https://www.google.com/a/<yourdomain.com>/acs
     ```
 
 1. Чтобы настроить **Google Cloud Platform**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
@@ -152,8 +152,8 @@ ms.locfileid: "98019403"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: . 
     
     ```http
-    https://www.google.com
-    https://www.google.com/a/<yourdomain.com>
+    https://www.google.com/acs
+    https://www.google.com/a/<yourdomain.com>/acs
     ```
 
     > [!NOTE]
@@ -249,7 +249,7 @@ Google Cloud (G Suite) Connector также поддерживает автом
 
 * Перейдите по URL-адресу для входа в Google Cloud (G Suite) Connector и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Google Cloud (G Suite) Connector в области "Мои приложения", вы перейдете по URL-адресу Google Cloud (G Suite) Connector. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Google Cloud (G Suite) Connector в области "Мои приложения", вы перейдете по URL-адресу Google Cloud (G Suite) Connector. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

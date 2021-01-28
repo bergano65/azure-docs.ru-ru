@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ec98762ac5918437e8fdb8426b54b79b1fb5b222
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.openlocfilehash: 961e30cf17bf385647f4482c6f767641c6b891af
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2020
-ms.locfileid: "91939728"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791683"
 ---
 # <a name="tutorial-create-your-first-search-app-using-the-net-sdk"></a>Руководство по Создание первого приложения поиска с помощью пакета SDK для .NET
 
@@ -77,7 +77,7 @@ model.resultList = searchResult.Value.GetResults().ToList();
 
 1. Это индекс гостиниц, поэтому введите несколько слов, которые вы могли бы использовать для поиска гостиниц (например, "wifi", "view", "bar", "parking"), и изучите результаты.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-wifi.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-wifi.png" alt-text="Поиск по запросу &quot;Wi-Fi&quot;" border="true":::
 
 Мы надеемся, что проблем с проектом не возникло и веб-приложение успешно работает. В этом приложении присутствует ряд основных компонентов расширенных поисковых функций, поэтому рекомендуется последовательно выполнить все инструкции из этого руководства. Они приведены в следующих разделах.
 
@@ -87,17 +87,17 @@ model.resultList = searchResult.Value.GetResults().ToList();
 
 1. В Visual Studio выберите **Создать** > **Проект**, а затем — **Веб-приложение ASP.NET Core**.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-project1.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-project1.png" alt-text="Создание облачного проекта" border="true":::
 
 1. Присвойте проекту имя, например "FirstSearchApp", и задайте расположение. Нажмите кнопку **создания**.
 
 1. Используйте шаблон проекта **Веб-приложение (модель — представление — контроллер)** .
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-project2.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-project2.png" alt-text="Создание проекта MVC" border="true":::
 
 1. Установите клиентскую библиотеку. Выберите **Средства** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения**. Щелкните **Обзор** и выполните поиск пакета "Azure.Search.Documents". Установите пакет **Azure.Search.Documents** (версии 11 или более поздней версии), приняв условия лицензионного соглашения и использования зависимостей.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-nuget-azure.png" alt-text="Добавление библиотек Azure с помощью NuGet" border="true":::
 
 ### <a name="initialize-azure-cognitive-search"></a>Инициализация Когнитивного поиска Azure
 
@@ -114,7 +114,7 @@ model.resultList = searchResult.Value.GetResults().ToList();
 
 1. Выберите файл в обозревателе решений и в окне "Свойства" измените значение параметра **Копировать в выходной каталог** на **Копировать более новые**.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-copy-if-newer.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-copy-if-newer.png" alt-text="Копирование параметров приложения в выходные данные" border="true":::
 
 ## <a name="model-data-structures"></a>Моделирование структур данных
 
@@ -534,11 +534,11 @@ model.resultList = searchResult.Value.GetResults().ToList();
 
 1. Выберите **Отладка** > **Запустить без отладки** или нажмите клавишу **F5**. Если приложение выполнится ожидаемым образом, отобразится исходное представление индекса.
 
-     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-index.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-index.png" alt-text="Открытие приложения" border="true":::
 
 1. Введите строку запроса, например "beach" (или любой другой вариант, который придет вам в голову), и щелкните значок поиска, чтобы отправить запрос.
 
-     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-beach.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-beach.png" alt-text="Поиск по запросу &quot;пляж&quot;" border="true":::
 
 1. Попробуйте ввести five star (пятизвездочный). Обратите внимание на то, что этот запрос не возвращает результатов. Более сложный поиск будет воспринимать "пятизвездочный" как синоним слова "первоклассный" и возвратит соответствующие результаты. Поддержка [синонимов](search-synonyms.md) доступна в Когнитивном поиске Azure, но не рассматривается в этой серии руководств.
 
@@ -554,7 +554,7 @@ model.resultList = searchResult.Value.GetResults().ToList();
 
 2. Откройте приложение, введите для поиска слово bar и щелкните значок поиска. Исключение сразу откроет представление ошибки.
 
-     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-error.png" alt-text="Поиск по запросу &quot;бассейн&quot;" border="true":::
+     :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-error.png" alt-text="Принудительный вызов ошибки" border="true":::
 
     > [!Important]
     > Считается, что отображение внутренних номеров ошибок на страницах ошибок, несет угрозу безопасности. Если вы планируете сделать это приложение общедоступным, изучите рекомендации по безопасности для отображения сообщений об ошибках.

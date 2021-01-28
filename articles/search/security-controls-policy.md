@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием Политики Azure для Когнитивного поиска Azure
 description: Содержит список элементов управления соответствием Политики Azure, доступных для Когнитивного поиска Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 01/08/2021
+ms.date: 01/25/2021
 ms.topic: sample
 author: HeidiSteen
 ms.author: heidist
 ms.service: search
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: b4a5b3171e324248fa55ff469b16b4fe22ff4970
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 1f06865fc0b4f982c2e2653e471c75d2a1f88c9e
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045860"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98795426"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-cognitive-search"></a>Элементы управления соответствием Политики Azure для Когнитивного поиска Azure
 

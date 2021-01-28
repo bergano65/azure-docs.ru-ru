@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: srrengar
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: f9ad0f443b1647499f7085693f34f4da9ec85398
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: ecd05a838425d57e0eaff2fa571d72b5a87e92a6
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331997"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791783"
 ---
 # <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство по Мониторинг кластера Service Fabric в Azure
 
@@ -55,7 +55,7 @@ Azure Monitor собирает и анализирует данные телем
 
 Выберите ресурс **ServiceFabric(mysfomsworkspace)** .
 
-На вкладке **Обзор** вы увидите плитки в форме графа для каждого включенного решения, в том числе одну для Service Fabric. Щелкните граф **Service Fabric** , чтобы продолжить решение службы Fabric Analytics.
+На вкладке **Обзор** вы увидите плитки в форме графа для каждого включенного решения, в том числе одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 
 ![Снимок экрана: граф Service Fabric](media/service-fabric-tutorial-monitor-cluster/oms-service-fabric-summary.png)
 
@@ -74,7 +74,7 @@ Azure Monitor собирает и анализирует данные телем
 
 ### <a name="view-service-fabric-events-including-actions-on-nodes"></a>Просмотр событий Service Fabric, включая действия на узлах
 
-На странице Аналитики Service Fabric щелкните диаграмму, касающуюся **событий кластера** .  Появятся журналы всех системных событий, которые были получены. Эти данные взяты из таблицы **WADServiceFabricSystemEventsTable** в учетной записи хранения Azure, а события служб Reliable Services и субъектов Reliable Actors, которые показаны далее, также взяты из этих соответствующих таблиц.
+На странице Аналитики Service Fabric щелкните диаграмму, касающуюся **событий кластера**.  Появятся журналы всех системных событий, которые были получены. Эти данные взяты из таблицы **WADServiceFabricSystemEventsTable** в учетной записи хранения Azure, а события служб Reliable Services и субъектов Reliable Actors, которые показаны далее, также взяты из этих соответствующих таблиц.
     
 ![Операционный канал запроса](media/service-fabric-tutorial-monitor-cluster/oms-service-fabric-events.png)
 
@@ -183,7 +183,7 @@ app('PlunkoServiceFabricCluster').traces
 
 ### <a name="view-service-fabric-application-events"></a>Просмотр событий приложения Service Fabric
 
-Вы можете просматривать события для приложений Reliable Services и Reliable Actors, развернутых в кластере.  На странице аналитики Service Fabric щелкните диаграмму, касающуюся **событий приложений** .
+Вы можете просматривать события для приложений Reliable Services и Reliable Actors, развернутых в кластере.  На странице аналитики Service Fabric щелкните диаграмму, касающуюся **событий приложений**.
 
 Выполните следующий запрос, чтобы просмотреть события из ваших приложений Reliable Services:
 ```kusto
@@ -227,20 +227,20 @@ ServiceFabricReliableActorEvent
 ## <a name="view-performance-counters-with-azure-monitor-logs"></a>Просмотр счетчиков производительности с использованием журналов Azure Monitor
 Чтобы просмотреть счетчики производительности на [портале Azure](https://portal.azure.com), перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". 
 
-Выберите ресурс **ServiceFabric(mysfomsworkspace)** , **Рабочая область Log Analytics** , а затем — **Дополнительные параметры** .
+Выберите ресурс **ServiceFabric(mysfomsworkspace)** , **Рабочая область Log Analytics**, а затем — **Дополнительные параметры**.
 
-Нажмите кнопку **Данные** , а затем щелкните **Счетчики производительности Windows** . Существует список счетчиков по умолчанию, которые можно выбрать. Вы также можете задать интервал коллекции. Можно также выбрать [дополнительные счетчики производительности](service-fabric-diagnostics-event-generation-perf.md), чтобы они выполняли сбор данных. Правильный формат см. в [этой статье](/windows/desktop/PerfCtrs/specifying-a-counter-path). Нажмите кнопку **Сохранить** , затем нажмите кнопку **ОК** .
+Нажмите кнопку **Данные**, а затем щелкните **Счетчики производительности Windows**. Существует список счетчиков по умолчанию, которые можно выбрать. Вы также можете задать интервал коллекции. Можно также выбрать [дополнительные счетчики производительности](service-fabric-diagnostics-event-generation-perf.md), чтобы они выполняли сбор данных. Правильный формат см. в [этой статье](/windows/desktop/PerfCtrs/specifying-a-counter-path). Нажмите кнопку **Сохранить**, затем нажмите кнопку **ОК**.
 
-Закройте колонку "Дополнительные параметры" и выберите **Сводка рабочей области** под заголовком **Общие** . Для каждого из включенных решений есть графическая плитка, в том числе для Service Fabric. Щелкните граф **Service Fabric** , чтобы продолжить решение службы Fabric Analytics.
+Закройте колонку "Дополнительные параметры" и выберите **Сводка рабочей области** под заголовком **Общие**. Для каждого из включенных решений есть графическая плитка, в том числе для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 
-Существуют графические плитки для операционного канала и событий Reliable Services. Графическое представление данных, поступающих от выбранных счетчиков, будет отображаться в **метриках узла** . 
+Существуют графические плитки для операционного канала и событий Reliable Services. Графическое представление данных, поступающих от выбранных счетчиков, будет отображаться в **метриках узла**. 
 
-Для просмотра дополнительных сведений выберите граф **метрики контейнера** . Вы можете запрашивать данные счетчиков производительности аналогично событиям кластера и задавать фильтры по узлам, именам счетчиков производительности и значениям с помощью языка запросов Kusto.
+Для просмотра дополнительных сведений выберите граф **метрики контейнера**. Вы можете запрашивать данные счетчиков производительности аналогично событиям кластера и задавать фильтры по узлам, именам счетчиков производительности и значениям с помощью языка запросов Kusto.
 
 ## <a name="query-the-eventstore-service"></a>Отправка запросов к службе EventStore
 [Служба EventStore](service-fabric-diagnostics-eventstore.md) предоставляет способ для оценки состояния кластера или рабочих нагрузок в определенный момент времени. EventStore — это служба Service Fabric с отслеживанием состояния, сохраняющая события из кластера. Событие предоставляется через [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md), REST и API. Служба EventStore запрашивает кластер напрямую, чтобы получить диагностические данные о любом объекте в кластере. Чтобы просмотреть полный список событий, доступных в EventStore, обратитесь к статье о [событиях Service Fabric](service-fabric-diagnostics-event-generation-operational.md).
 
-API-интерфейсы EventStore можно запрашивать программно с помощью [клиентской библиотеки Service Fabric](/dotnet/api/overview/azure/service-fabric?view=azure-dotnet#client-library).
+API-интерфейсы EventStore можно запрашивать программно с помощью [клиентской библиотеки Service Fabric](/dotnet/api/overview/azure/service-fabric#client-library).
 
 Вот пример запроса для получения всех событий кластера между 2018-04-03T18:00:00Z и 2018-04-04T18:00:00Z с использованием функции GetClusterEventListAsync.
 
@@ -299,10 +299,10 @@ foreach (var nodeEvent in nodesEvents)
 
 Кластер автоматически заполняется отчетами о работоспособности, отправляемыми компонентами системы. Подробнее об этом см. в статье [Использование отчетов о работоспособности системы для устранения неполадок](service-fabric-understand-and-troubleshoot-with-system-health-reports.md).
 
-Service Fabric предоставляет запросы о работоспособности по каждому поддерживаемому [типу сущностей](service-fabric-health-introduction.md#health-entities-and-hierarchy). Их можно просмотреть с помощью API (используя методы в [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager?view=azure-dotnet)), командлетов PowerShell и REST. Эти запросы возвращают все сведения о работоспособности сущности: сводное состояние работоспособности, события работоспособности сущности, состояние работоспособности дочерних элементов (если применимо) и оценки неработоспособности (если сущность неработоспособна) и статистику работоспособности дочерних элементов (если применимо).
+Service Fabric предоставляет запросы о работоспособности по каждому поддерживаемому [типу сущностей](service-fabric-health-introduction.md#health-entities-and-hierarchy). Их можно просмотреть с помощью API (используя методы в [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager)), командлетов PowerShell и REST. Эти запросы возвращают все сведения о работоспособности сущности: сводное состояние работоспособности, события работоспособности сущности, состояние работоспособности дочерних элементов (если применимо) и оценки неработоспособности (если сущность неработоспособна) и статистику работоспособности дочерних элементов (если применимо).
 
 ### <a name="get-cluster-health"></a>Получение сведений о работоспособности кластера
-[Командлет Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth) возвращает сведения о сущности кластера. В них содержатся данные о состоянии работоспособности приложений и узлов (дочерних элементов кластера).  Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps).
+[Командлет Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth) возвращает сведения о сущности кластера. В них содержатся данные о состоянии работоспособности приложений и узлов (дочерних элементов кластера).  Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster).
 
 В этом примере кластер состоит из 11 узлов, а приложение системы и fabric:/Voting настроены, как описано выше.
 
@@ -454,7 +454,7 @@ HealthEvents            : None
 ```
 
 ### <a name="get-node-health"></a>Получение сведений о работоспособности узла
-[Командлет Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth) возвращает сведения о работоспособности сущности узла и содержит события работоспособности, связанные с узлом. Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps). Следующий пример возвращает сведения о работоспособности определенного узла с помощью политик работоспособности по умолчанию:
+[Командлет Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth) возвращает сведения о работоспособности сущности узла и содержит события работоспособности, связанные с узлом. Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster). Следующий пример возвращает сведения о работоспособности определенного узла с помощью политик работоспособности по умолчанию:
 
 ```powershell
 Get-ServiceFabricNodeHealth _nt1vm_3

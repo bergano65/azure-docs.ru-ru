@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.author: jeedes
-ms.openlocfilehash: 32ca39685772272ae93ccbe0c2afcbd1f66894b1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 786925799d19bf01e8edebbf85de04d92213298b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96354801"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732850"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-retrievermediadatabase"></a>Руководство по интеграции единого входа Azure Active Directory с RetrieverMediaDatabase
 
@@ -118,10 +118,8 @@ ms.locfileid: "96354801"
 
 1. Выберите "Тестировать приложение" на портале Azure, и вы автоматически войдете в RetrieverMediaDatabase, для которого настроен единый вход.
 
-1. Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку RetrieverMediaDatabase в разделе "Мои приложения", вы автоматически войдете в приложение RetrieverMediaDatabase, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+1. Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку RetrieverMediaDatabase в разделе "Мои приложения", вы автоматически войдете в приложение RetrieverMediaDatabase, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки RetrieverMediaDatabase вы можете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки RetrieverMediaDatabase вы можете применить функцию управления сеансом, чтобы в реальном времени защищать конфиденциальные данные своей организации от кражи и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

@@ -4,12 +4,12 @@ description: В этом руководстве вы узнаете, как ра
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.custom: mvc, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c2e2b2883bfa01d3a36de5d58425449f6f973010
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 48cb7df49fb918ebd30883edc573cc63b6e35e4a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97702163"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789402"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по Развертывание приложения Java в кластере Service Fabric в Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "97702163"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Установка Azure CLI](/cli/azure/install-azure-cli)
 * Установите пакет SDK для Service Fabric для [Mac](service-fabric-get-started-mac.md) или [Linux](service-fabric-get-started-linux.md).
 * [Установите Python 3](https://wiki.python.org/moin/BeginnersGuide/Download).
 

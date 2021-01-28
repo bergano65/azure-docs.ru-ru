@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: 39081bc7bec7cfd76ccfc9107d5c2286affb7df0
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: e7e63ea56edc2b76383ee4c034fd39dd8b8259c1
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913776"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786010"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-have-two-sets-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с двумя наборами учетных данных для аутентификации
 
@@ -234,8 +234,8 @@ az storage account keys list -n vaultrotationstorage
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Руководство по [Чередование секретов для одного набора учетных данных](https://docs.microsoft.com/azure/key-vault/secrets/tutorial-rotation)
+- Руководство по [Чередование секретов для одного набора учетных данных](./tutorial-rotation.md)
 - Общие сведения. [Мониторинг Key Vault с помощью Сетки событий Azure](../general/event-grid-overview.md)
-- Руководство. [Создание первой функции на портале Azure](../../azure-functions/functions-create-first-azure-function.md)
+- Руководство. [Создание первой функции на портале Azure](../../azure-functions/functions-get-started.md)
 - Практическое руководство. [Получение сообщения электронной почты при смене секрета в Key Vault](../general/event-grid-logicapps.md)
 - Справочные материалы. [Схема событий Сетки событий Azure для Azure Key Vault](../../event-grid/event-schema-key-vault.md)

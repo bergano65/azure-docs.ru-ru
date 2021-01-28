@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 18d75d5c49eecb0fe198ce2afc432870fb3783e6
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 2d046f5f039555e58d9ce4c028e750ce083fd5f4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97969050"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733694"
 ---
 # <a name="tutorial-integrate-qlik-sense-enterprise-with-azure-active-directory"></a>Руководство по интеграции Azure Active Directory с Qlik Sense Enterprise
 
@@ -251,7 +251,7 @@ Qlik Sense Enterprise поддерживает **JIT-подготовку**: п�
 
 * Перейдите по URL-адресу для входа в Qlik Sense Enterprise и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Qlik Sense Enterprise на портале "Мои приложения", вы перейдете по URL-адресу для входа в Qlik Sense Enterprise. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Qlik Sense Enterprise на портале "Мои приложения", вы перейдете по URL-адресу для входа в Qlik Sense Enterprise. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

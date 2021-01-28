@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: e5477b0ce45b1e888e472ebf7582607034c55800
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 325f6ad7d9685fac17e17b28c4ffbe31b1245cca
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813468"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734551"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-confluence"></a>Руководство по интеграции единого входа Azure Active Directory с EasySSO for Confluence
 
@@ -197,7 +197,7 @@ ms.locfileid: "97813468"
 
 В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала "Мои приложения".
 
-Щелкнув элемент EasySSO для Confluence на портале "Мои приложения", вы автоматически войдете в экземпляр Confluence, для которого настроен единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув элемент EasySSO для Confluence на портале "Мои приложения", вы автоматически войдете в экземпляр Confluence, для которого настроен единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ### <a name="sp-initiated-workflow"></a>Рабочий процесс, инициированный поставщиком услуг
 

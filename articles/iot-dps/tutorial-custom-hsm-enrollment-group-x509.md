@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 25d084b8af148707685b2cbb4368394a12d99db2
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 64064a584681d84eb6ba023c4777c0fdc4e6ec3d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97005313"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791935"
 ---
 # <a name="tutorial-provision-multiple-x509-devices-using-enrollment-groups"></a>Руководство по инициализации нескольких устройств X.509 с помощью групп регистрации
 
@@ -46,7 +46,7 @@ ms.locfileid: "97005313"
 
 Приведенные ниже предварительные требования касаются среды разработки Windows. При использовании Linux или macOS ознакомьтесь с соответствующим разделом в статье [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) из документации к пакету SDK.
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) с включенной рабочей нагрузкой [Разработка классических приложений на C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development). Visual Studio 2015 или Visual Studio 2017 также поддерживаются.
 
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
@@ -56,7 +56,7 @@ ms.locfileid: "97005313"
 
 1. Скачайте [систему сборки CMake](https://cmake.org/download/).
 
-    **Перед** установкой `CMake` очень важно установить на компьютер необходимые компоненты Visual Studio ([Visual Studio](https://visualstudio.microsoft.com/vs/) с рабочей нагрузкой [Разработка классических приложений на C++](https://docs.microsoft.com/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development)). После установки компонентов и проверки загрузки установите систему сборки CMake.
+    **Перед** установкой `CMake` очень важно установить на компьютер необходимые компоненты Visual Studio ([Visual Studio](https://visualstudio.microsoft.com/vs/) с рабочей нагрузкой [Разработка классических приложений на C++](/cpp/ide/using-the-visual-studio-ide-for-cpp-desktop-development)). После установки компонентов и проверки загрузки установите систему сборки CMake.
 
 2. Найдите имя тега для [последнего выпуска](https://github.com/Azure/azure-iot-sdk-c/releases/latest) пакета SDK Azure IoT для C.
 
@@ -87,7 +87,7 @@ ms.locfileid: "97005313"
     $ cmake -Duse_prov_client:BOOL=ON -Dhsm_custom_lib=/d/azure-iot-sdk-c/cmake/provisioning_client/samples/custom_hsm_example/Debug/custom_hsm_example.lib ..
     ```
 
-    Если `cmake` не удастся найти компилятор C++, могут возникнуть ошибки сборки во время выполнения предыдущей команды. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs).
+    Если `cmake` не удастся найти компилятор C++, могут возникнуть ошибки сборки во время выполнения предыдущей команды. В этом случае попробуйте, выполнить эту команду в [командной строке Visual Studio](/dotnet/framework/tools/developer-command-prompt-for-vs).
 
     После завершения сборки в каталоге `cmake` будет создано решение Visual Studio. Последние несколько строк выходных данных выглядят следующим образом:
 
@@ -351,7 +351,7 @@ ms.locfileid: "97005313"
 
 На устройствах с ОС, отличной от Windows, цепочку сертификатов можно передать из кода в качестве хранилища сертификатов.
 
-На устройствах с Windows необходимо добавить сертификаты подписи (корневой и промежуточный) в [хранилище сертификатов](https://docs.microsoft.com/windows/win32/secauthn/certificate-stores) Windows. В противном случае сертификаты для подписи не будут перенесены в службу DPS по безопасному каналу, использующему протокол TLS.
+На устройствах с Windows необходимо добавить сертификаты подписи (корневой и промежуточный) в [хранилище сертификатов](/windows/win32/secauthn/certificate-stores) Windows. В противном случае сертификаты для подписи не будут перенесены в службу DPS по безопасному каналу, использующему протокол TLS.
 
 Чтобы добавить сертификаты для подписи в хранилище сертификатов на устройствах с Windows, выполните следующие действия.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: df52e18c602e1054ecc53146080e56cab4781d78
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 60381c7d8c452277b53e1af67ae7fc85349521c8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97963833"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735679"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-cloud-for-customer"></a>Руководство по интеграции единого входа Azure Active Directory с SAP Cloud for Customer
 
@@ -188,7 +188,7 @@ ms.locfileid: "97963833"
 
 * Вручную введите URL-адрес для входа в SAP Cloud for Customer и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку SAP Cloud for Customer в разделе "Мои приложения", вы автоматически будете перенаправлены по URL-адресу для входа в приложение SAP Cloud for Customer. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку SAP Cloud for Customer в разделе "Мои приложения", вы автоматически будете перенаправлены по URL-адресу для входа в приложение SAP Cloud for Customer. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

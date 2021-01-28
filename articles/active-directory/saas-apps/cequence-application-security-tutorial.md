@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.author: jeedes
-ms.openlocfilehash: af1c2fc3c7dcafe538f87527e04d1c3a78ab1a28
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 967ad66434a09252c1b7afa195facee20279f4dd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607870"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735300"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cequence-application-security-platform"></a>Руководство по интеграции единого входа Azure Active Directory с Cequence Application Security Platform
 
@@ -139,11 +139,9 @@ ms.locfileid: "97607870"
 
 2. Перейдите по URL-адресу для входа в Cequence Application Security Platform и инициируйте поток входа.
 
-3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Cequence Application Security Platform на Панели доступа, вы перейдете по URL-адресу входа в Cequence Application Security Platform. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+3. Вы можете использовать Панель доступа (Майкрософт). Щелкнув плитку Cequence Application Security Platform на Панели доступа, вы перейдете по URL-адресу входа в Cequence Application Security Platform. См. дополнительные сведения о [панели доступа](../user-help/my-apps-portal-end-user-access.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Cequence Application Security Platform вы сможете применить функцию управления сеансами, которая защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+После настройки Cequence Application Security Platform вы сможете применить функцию управления сеансами, которая защищает конфиденциальные данные вашей организации от кражи и несанкционированного доступа в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 8afbf80fb6fa57db9de57122d7a4bfdb64e456bc
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 7b85cc064babf44b14e80abc02669573b4730da2
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185518"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736910"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft-v52"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2)
 
@@ -229,7 +229,7 @@ ms.locfileid: "98185518"
 
 * Перейдите по URL-адресу для входа в JIRA SAML SSO by Microsoft (V5.2) и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку JIRA SAML SSO by Microsoft (V5.2) в разделе "Мои приложения", вы перейдете к URL-адресу для входа в приложение JIRA SAML SSO by Microsoft (V5.2). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку JIRA SAML SSO by Microsoft (V5.2) в разделе "Мои приложения", вы перейдете к URL-адресу для входа в приложение JIRA SAML SSO by Microsoft (V5.2). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

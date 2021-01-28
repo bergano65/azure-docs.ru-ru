@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: ed41a2f3e967cc947f671b73e3f44aabf8c4034c
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 8ae693d7f6974415eac294289288879d9668604c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967731"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735609"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ultipro"></a>Руководство. Интеграция Azure Active Directory с UltiPro
 
@@ -153,7 +153,7 @@ ms.locfileid: "97967731"
 
 * Перейдите по URL-адресу для входа в UltiPro и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув элемент UltiPro на портале "Мои приложения", вы перейдете по URL-адресу входа UltiPro. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув элемент UltiPro на портале "Мои приложения", вы перейдете по URL-адресу входа UltiPro. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

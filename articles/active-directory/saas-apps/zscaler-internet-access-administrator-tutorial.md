@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: c3a2f2b04827fac06a0729e45b46765928aedd34
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 8af8d92ca66cfbd3d6223bc9a73125c457164d82
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539789"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735550"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Internet Access Administrator
 
@@ -119,7 +119,7 @@ ms.locfileid: "98539789"
     d. Выберите команду **Сохранить**.
 
     > [!NOTE]
-    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui), чтобы прочитать о настройке роли в Azure AD.
+    > Перейдите по [этой ссылке](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview), чтобы прочитать о настройке роли в Azure AD.
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -189,7 +189,7 @@ https://help.zscaler.com/zia/adding-admins
 
 * На портале Azure выберите "Тестировать приложение" и вы автоматически войдете в приложение Zscaler Internet Access Administrator, для которого настроен единый вход.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Zscaler Internet Access Administrator на портале "Мои приложения", вы автоматически войдете в приложение Zscaler Internet Access Administrator, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Zscaler Internet Access Administrator на портале "Мои приложения", вы автоматически войдете в приложение Zscaler Internet Access Administrator, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

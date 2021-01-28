@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: f043f7ed63353dcb9cf9fd26690da97b902f32a6
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 2c19ee2b8e7ec3c695b2c76c46402c118c559b40
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108625"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736243"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -130,7 +130,7 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.4.0
 - Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и _\<db-name>_ именем вашего сервера и именем базы данных.
 
 > [!NOTE]
-> Только что зарегистрированный класс SqlAuthenticationProvider основывается на библиотеке AppAuthentication, установленной ранее. По умолчанию он использует назначенное системой удостоверение. Чтобы использовать назначенное пользователем удостоверение, необходимо предоставить дополнительную конфигурацию. Сведения о библиотеке AppAuthentication см. в разделе [Поддержка строки подключения](../key-vault/general/service-to-service-authentication.md#connection-string-support).
+> Только что зарегистрированный класс SqlAuthenticationProvider основывается на библиотеке AppAuthentication, установленной ранее. По умолчанию он использует назначенное системой удостоверение. Чтобы использовать назначенное пользователем удостоверение, необходимо предоставить дополнительную конфигурацию. Сведения о библиотеке AppAuthentication см. в разделе [Поддержка строки подключения](/dotnet/api/overview/azure/service-to-service-authentication#connection-string-support).
 
 Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите Базу данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
 

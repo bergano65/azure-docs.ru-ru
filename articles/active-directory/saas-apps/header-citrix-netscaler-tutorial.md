@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 73e895928beee288a4531f00347832967d0eab15
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 9cab0597aeb3bc28f391de558240e5d894f5a49c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608261"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735253"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-citrix-adc-header-based-authentication"></a>Руководство. Интеграция единого входа Azure Active Directory с Citrix ADC (аутентификация на основе заголовков)
 
@@ -431,7 +431,7 @@ ms.locfileid: "97608261"
 
 * Перейдите по URL-адресу для входа в Citrix ADC и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Citrix ADC в окне "Мои приложения", вы перейдете по URL-адресу для входа в Citrix ADC. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Citrix ADC в окне "Мои приложения", вы перейдете по URL-адресу для входа в Citrix ADC. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

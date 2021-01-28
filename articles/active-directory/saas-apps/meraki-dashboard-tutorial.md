@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 0c43e085725ceb5db718c9b4c9c9d83787964d63
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: f635a4c4c6e0b1dcb4d4842d3cddb337d2b26407
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813536"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735168"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-meraki-dashboard"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Meraki Dashboard
 
@@ -97,7 +97,7 @@ ms.locfileid: "97813536"
     | `https://dashboard.meraki.com/saml/attributes/role` | user.assignedroles |
 
     > [!NOTE]
-    > Чтобы понять, как настроить роли в Azure AD, см. [здесь](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui).
+    > Чтобы понять, как настроить роли в Azure AD, см. [здесь](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview).
 
 1. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
@@ -191,7 +191,7 @@ ms.locfileid: "97813536"
 
 * На портале Azure выберите "Тестировать приложение", и вы автоматически войдете в приложение Meraki Dashboard, для которого настроили единый вход.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Meraki Dashboard в области "Мои приложения", вы автоматически войдете в приложение Meraki Dashboard, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Meraki Dashboard в области "Мои приложения", вы автоматически войдете в приложение Meraki Dashboard, для которого настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

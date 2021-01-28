@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием в службе "Политика Azure" для службы хранилища Azure
 description: Содержит список элементов управления соответствием из службы "Политика Azure", доступных для службы хранилища Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 01/08/2021
+ms.date: 01/25/2021
 ms.topic: sample
 author: twooley
 ms.author: twooley
 ms.service: storage
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 5b32ef1075dedd7eb1075a754bb491e84fcb35b1
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: e75afab48bd4ae18e536b013d9b75f252de641f6
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051266"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98795402"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-storage"></a>Элементы управления соответствием в службе "Политика Azure" для службы хранилища Azure
 

@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: 94923b13181290a290f13339da5b05f6fdddff38
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: d9c2bec575f2c7a948f3eb6e65be6a735a3c03e8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98252163"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733821"
 ---
 # <a name="tutorial-getting-started-with-always-encrypted-with-secure-enclaves-in-azure-sql-database"></a>Руководство. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "98252163"
 > [!NOTE]
 > Always Encrypted с безопасными анклавами для Базы данных SQL Azure в настоящее время предоставляется в **общедоступной предварительной версии**.
 
-Из этого руководства вы узнаете, как приступить к работе с [Always Encrypted с безопасными анклавами](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves) в Базе данных SQL Azure. Буду рассмотрены следующие темы.
+Из этого руководства вы узнаете, как приступить к работе с [Always Encrypted с безопасными анклавами](/sql/relational-databases/security/encryption/always-encrypted-enclaves) в Базе данных SQL Azure. Буду рассмотрены следующие темы.
 
 > [!div class="checklist"]
 > - Создание среды для тестирования и оценки Always Encrypted с безопасными анклавами.
@@ -33,11 +33,11 @@ ms.locfileid: "98252163"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством требуются Azure PowerShell и [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
+Для работы с этим руководством требуются Azure PowerShell и [SSMS](/sql/ssms/download-sql-server-management-studio-ssms).
 
 ### <a name="powershell-requirements"></a>Требования для PowerShell
 
-Сведения о том, как установить и запустить Azure PowerShell, см. в статье [Общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure). 
+Сведения о том, как установить и запустить Azure PowerShell, см. в статье [Общие сведения об Azure PowerShell](/powershell/azure). 
 
 Минимально необходимые версии модулей Az для поддержки операций с аттестацией:
 
@@ -66,7 +66,7 @@ Get-InstalledModule
 
 ### <a name="ssms-requirements"></a>Требования для SSMS
 
-Сведения о том, как скачать SSMS, см. на странице [Скачивание SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
+Сведения о том, как скачать SSMS, см. на странице [Скачивание SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
 
 Требуемая минимальная версия SSMS — 18.8.
 
@@ -75,7 +75,7 @@ Get-InstalledModule
 
  На этом шаге вы создадите логический сервер Базы данных SQL Azure и новую базу данных, используя аппаратную конфигурацию серии DC. Always Encrypted с безопасными анклавами в Базе данных SQL Azure использует анклавы Intel SGX, которые поддерживаются в аппаратной конфигурации серии DC. Подробные сведения см. в разделе о [серии DC](service-tiers-vcore.md#dc-series).
 
-1. Откройте консоль PowerShell и войдите в Azure. При необходимости [перейдите в подписку](https://docs.microsoft.com/powershell/azure/manage-subscriptions-azureps), используемую для работы с этим руководством.
+1. Откройте консоль PowerShell и войдите в Azure. При необходимости [перейдите в подписку](/powershell/azure/manage-subscriptions-azureps), используемую для работы с этим руководством.
 
   ```PowerShell
   Connect-AzAccount
@@ -356,10 +356,10 @@ Get-InstalledModule
 ## <a name="next-steps"></a>Следующие шаги
 
 После завершения работы с этим учебником вы можете обратиться к одному из следующих учебников:
-- [Руководство. Разработка приложения .NET с помощью Always Encrypted с безопасными анклавами](https://docs.microsoft.com/sql/connect/ado-net/sql/tutorial-always-encrypted-enclaves-develop-net-apps)
-- [Руководство. Разработка приложения .NET Framework с помощью Always Encrypted с безопасными анклавами](https://docs.microsoft.com/sql/relational-databases/security/tutorial-always-encrypted-enclaves-develop-net-framework-apps)
-- [Руководство. Создание и использование индексов в столбцах с поддержкой анклава с помощью случайного шифрования](https://docs.microsoft.com/sql/relational-databases/security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption)
+- [Руководство. Разработка приложения .NET с помощью Always Encrypted с безопасными анклавами](/sql/connect/ado-net/sql/tutorial-always-encrypted-enclaves-develop-net-apps)
+- [Руководство. Разработка приложения .NET Framework с помощью Always Encrypted с безопасными анклавами](/sql/relational-databases/security/tutorial-always-encrypted-enclaves-develop-net-framework-apps)
+- [Руководство. Создание и использование индексов в столбцах с поддержкой анклава с помощью случайного шифрования](/sql/relational-databases/security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption)
 
 ## <a name="see-also"></a>См. также:
 
-- [Настройка и использование Always Encrypted с безопасными анклавами](https://docs.microsoft.com/sql/relational-databases/security/encryption/configure-always-encrypted-enclaves)
+- [Настройка и использование Always Encrypted с безопасными анклавами](/sql/relational-databases/security/encryption/configure-always-encrypted-enclaves)

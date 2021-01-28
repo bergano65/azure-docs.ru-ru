@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 12/21/2020
 ms.author: alkohli
-ms.openlocfilehash: 9d1d22d57464266239aea96f427020351eb749d5
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 22d7ee518a458143fe25b677b680a964c538904f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740663"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791566"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-hyper-v"></a>Руководство по Подготовка Шлюза Azure Data Box в Hyper-V
 
@@ -84,7 +84,7 @@ ms.locfileid: "97740663"
 ## <a name="bitlocker-considerations"></a>Рекомендации по BitLocker
 
 * Рекомендуется включить BitLocker на виртуальной машине Шлюза Azure Data Box. По умолчанию средство BitLocker выключено. Дополнительные сведения см. в разделе:
-  * [Параметры поддержки шифрования в диспетчере Hyper-V](hhttps://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
+  * [Параметры поддержки шифрования в диспетчере Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
   * [BitLocker support in a virtual machine (Поддержка BitLocker на виртуальной машине)](https://kb.vmware.com/s/article/2036142)
 
 ## <a name="provision-a-virtual-device-in-hypervisor"></a>подготовка к работе виртуального устройства в гипервизоре;
