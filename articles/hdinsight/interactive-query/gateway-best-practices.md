@@ -1,18 +1,15 @@
 ---
 title: Подробный обзор шлюза и рекомендации по Apache Hive в Azure HDInsight
 description: Узнайте, как перейти к рекомендациям по выполнению запросов Hive через шлюз Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/01/2020
-ms.openlocfilehash: 3db411df69a754857220867865522f8e4fa24030
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 63484d882d8ccd387257c6f246c2048a09c77bc8
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011495"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933106"
 ---
 # <a name="gateway-deep-dive-and-best-practices-for-apache-hive-in-azure-hdinsight"></a>Подробный обзор шлюза и рекомендации по Apache Hive в Azure HDInsight
 
@@ -78,7 +75,7 @@ _ Попробуйте выполнить запрос по интересу ч�
 
 * Рассмотрите возможность включения сжатия Hive с помощью конфигураций `hive.exec.compress.output` и `hive.exec.compress.intermediate` .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Apache Beeline в HDInsight](../hadoop/apache-hadoop-use-hive-beeline.md)
 * [Этапы устранения неполадок со временем ожидания шлюза HDInsight](./troubleshoot-gateway-timeout.md)

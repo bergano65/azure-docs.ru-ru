@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 author: cartacioS
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: 31e9ff3fd07a7d305c88d28629f3252db5d857c8
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 2653161b5828d89858234a9ca98fe432e0eacb5c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695451"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879365"
 ---
 # <a name="tutorial-forecast-demand-with-automated-machine-learning"></a>Руководство по Прогнозирование спроса с помощью автоматизированного машинного обучения
 
@@ -240,7 +240,7 @@ ms.locfileid: "97695451"
 В этой статье приведены инструкции о том, как создать схему с поддержкой Power BI для облегчения использования новой развернутой веб-службы:
 
 > [!div class="nextstepaction"]
-> [Использование веб-службы](https://docs.microsoft.com/power-bi/connect-data/service-aml-integrate?context=azure/machine-learning/context/ml-context)
+> [Использование веб-службы](/power-bi/connect-data/service-aml-integrate?context=azure%2fmachine-learning%2fcontext%2fml-context)
 
 + Дополнительные сведения [об автоматическом машинном обучении](concept-automated-ml.md).
 + Дополнительные сведения о классификационных метриках и графиках см. в статье [Общие сведения об автоматических результатах машинного обучения](how-to-understand-automated-ml.md).

@@ -1,19 +1,16 @@
 ---
 title: Оптимизация хранилища данных для Apache Spark (Azure HDInsight)
 description: Сведения о том, как оптимизировать хранилище данных для Apache Spark в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/20/2020
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: ad09cdc2c0054c9d9a58e6bfa00252862f1e8c0f
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 10f99bdc4a5d418ae1b432a6799c5979e473c5ed
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028229"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98926988"
 ---
 # <a name="data-storage-optimization-for-apache-spark"></a>Оптимизация хранилища данных для Apache Spark
 

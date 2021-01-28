@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
 ms.reviewer: akjosh
-ms.openlocfilehash: 22609465abfa0cbf30165bc9327d786b3244357e
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 956e7c18deb597f6347dfd5dfdca99709a7052a0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844784"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880983"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Руководство по Создание пользовательского образа виртуальной машины Azure с помощью Azure CLI
 
@@ -35,7 +35,7 @@ ms.locfileid: "94844784"
 
 ## <a name="overview"></a>Обзор
 
-[Коллекция общих образов](shared-image-galleries.md) упрощает обмен пользовательскими образами в вашей организации. Пользовательские образы похожи на образы магазина, однако их можно создавать самостоятельно. Пользовательские образы можно использовать для начальной загрузки конфигураций, например при предварительной загрузке приложений, конфигураций приложений и других конфигураций операционной системы. 
+[Коллекция общих образов](../shared-image-galleries.md) упрощает обмен пользовательскими образами в вашей организации. Пользовательские образы похожи на образы магазина, однако их можно создавать самостоятельно. Пользовательские образы можно использовать для начальной загрузки конфигураций, например при предварительной загрузке приложений, конфигураций приложений и других конфигураций операционной системы. 
 
 Общая коллекция образов позволяет предоставить другим пользователям общий доступ к пользовательским образам. Выберите образы, к которым нужно предоставить общий доступ, регионы, где они будут доступны, и пользователей, которым будет доступно совместное использование. 
 
@@ -90,11 +90,11 @@ az vm get-instance-view -g MyResourceGroup -n MyVm --query id
 
 В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. 
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./shared-image-galleries.md#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](../shared-image-galleries.md#image-definitions).
 
 Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create). 
 
-В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](./shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. 
+В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](../shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. 
 
 ```azurecli-interactive 
 az sig image-definition create \
@@ -180,7 +180,7 @@ az role assignment create \
 
 ## <a name="azure-image-builder"></a>Средство создания образов Azure
 
-Azure также предлагает службу на основе Packer — [Конструктор образов виртуальных машин Azure](./image-builder-overview.md). Просто опишите настройки в шаблоне, и эта служба автоматически создаст образ. 
+Azure также предлагает службу на основе Packer — [Конструктор образов виртуальных машин Azure](../image-builder-overview.md). Просто опишите настройки в шаблоне, и эта служба автоматически создаст образ. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

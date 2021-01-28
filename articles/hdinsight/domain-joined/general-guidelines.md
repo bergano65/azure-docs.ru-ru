@@ -1,18 +1,15 @@
 ---
 title: Общие рекомендации по корпоративной безопасности в Azure HDInsight
 description: Некоторые рекомендации, которые должны упростить Корпоративный пакет безопасности развертывания и управления.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: 8d97886232eecc369746e33df484cbfb9d40da72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92ad8362f75cdf0613d4ee95f39c23aa6d4819bb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87530271"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933568"
 ---
 # <a name="enterprise-security-general-information-and-guidelines-in-azure-hdinsight"></a>Общие сведения и рекомендации по корпоративной безопасности в Azure HDInsight
 
@@ -20,7 +17,7 @@ ms.locfileid: "87530271"
 
 ## <a name="use-of-secure-cluster"></a>Использование безопасного кластера
 
-### <a name="recommended"></a>Рекомендуется
+### <a name="recommended"></a>Рекомендуемая
 
 * Кластер будет использоваться несколькими пользователями одновременно.
 * Пользователи имеют разные уровни доступа к одним и тем же данным.
@@ -149,7 +146,7 @@ Azure AD DS периодически синхронизирует объекты
 
 Инструкции по установке средств администрирования Active Directory на виртуальной машине Windows Server см. в разделе [Установка средств управления](../../active-directory-domain-services/tutorial-create-management-vm.md).
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="cluster-creation-fails-repeatedly"></a>Создание кластера завершается сбоем повторно
 

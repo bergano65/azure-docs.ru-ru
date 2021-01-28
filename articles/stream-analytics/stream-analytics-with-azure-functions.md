@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 01/27/2020
-ms.openlocfilehash: ffc056a97d3c0fd14bab186614015a9352a34077
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 74e09e61a6132858d716686bdb6687bb670f0d33
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015153"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879516"
 ---
 # <a name="tutorial-run-azure-functions-from-azure-stream-analytics-jobs"></a>Руководство по Запуск решения "Функции Azure" из заданий Azure Stream Analytics 
 
@@ -53,7 +53,7 @@ Stream Analytics вызывает службу "Функции" с помощь�
 
 ## <a name="create-a-function-in-azure-functions-that-can-write-data-to-azure-cache-for-redis"></a>Создание функции в службе "Функции Azure", которая может записывать данные в кэш Azure для Redis
 
-1. Сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-create-first-azure-function.md#create-a-function-app) документации по службе "Функции". В этом разделе описано, как создать приложение-функцию и [функцию, активируемую с помощью HTTP, в службе "Функции Azure"](../azure-functions/functions-create-first-azure-function.md#create-function) с помощью языка CSharp.  
+1. Сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-get-started.md) документации по службе "Функции". В этом разделе описано, как создать приложение-функцию и [функцию, активируемую с помощью HTTP, в службе "Функции Azure"](../azure-functions/functions-get-started.md) с помощью языка CSharp.  
 
 2. Перейдите к функции **run.csx**. Обновите ее, используя следующий код. Замените **"\<your Azure Cache for Redis connection string goes here\>"** основной строкой подключения кэша Azure для Redis, полученной ранее. 
 

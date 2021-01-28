@@ -6,12 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.openlocfilehash: a1b0dff9421f493958554c659043c49ff2874379
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 896b4db433164471f41aa09791ede5d677028bfb
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87015006"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896618"
 ---
 # <a name="tutorial-create-a-powershell-runbook"></a>Руководство по Создание модуля runbook в PowerShell
 
@@ -131,7 +131,7 @@ ms.locfileid: "87015006"
 
 Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Для этого последовательность runbook должна поддерживать проверку подлинности с учетной записью запуска от имени, которая создается автоматически при создании учетной записи службы автоматизации.
 
-Как показано в примере ниже, подключение запуска от имени устанавливается с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.5.0). Если вы управляете ресурсами в нескольких подписках, вам нужно использовать параметр `AzContext` в команде [Get-AzContext](/powershell/module/Az.Accounts/Get-AzContext?view=azps-3.5.0).
+Как показано в примере ниже, подключение запуска от имени устанавливается с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Если вы управляете ресурсами в нескольких подписках, вам нужно использовать параметр `AzContext` в команде [Get-AzContext](/powershell/module/Az.Accounts/Get-AzContext).
 
 > [!NOTE]
 > Для модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для `Connect-AzAccount`. Вы можете использовать эти командлеты или [обновить модули](../automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
@@ -198,7 +198,7 @@ ms.locfileid: "87015006"
 
 Теперь, когда модуль runbook прошел аутентификацию в подписке Azure, вы можете управлять ресурсами. Добавьте команду для запуска виртуальной машины. Вы можете выбрать любую виртуальную машину в своей подписке Azure. Пока просто пропишите имя этой виртуальной машины в последовательности runbook.
 
-1. Чтобы запустить виртуальную машину, добавьте в скрипт runbook командлет [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM?view=azps-3.5.0). Как показано ниже, этот командлет запускает виртуальную машину с именем `VMName` и группой ресурсов `ResourceGroupName`.
+1. Чтобы запустить виртуальную машину, добавьте в скрипт runbook командлет [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM). Как показано ниже, этот командлет запускает виртуальную машину с именем `VMName` и группой ресурсов `ResourceGroupName`.
 
    ```powershell
    # Ensures you do not inherit an AzContext in your runbook
@@ -275,7 +275,7 @@ ms.locfileid: "87015006"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. сведения о [PowerShell, включая справочник по языку и обучающие модули](/powershell/scripting/overview).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).
 * Чтобы начать работу с графическими модулями runbook, см. инструкции в [этой статье](automation-tutorial-runbook-graphical.md).
 * Чтобы приступить к работе с runbook рабочего процесса PowerShell, обратитесь к [этом руководству](automation-tutorial-runbook-textual.md).
 * См. сведения о типах runbook, их преимуществах и ограничениях в описании [типов последовательностей runbook в службе автоматизации Azure](../automation-runbook-types.md)

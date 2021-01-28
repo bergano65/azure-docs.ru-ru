@@ -11,12 +11,12 @@ ms.author: sacartac
 ms.reviewer: nibaccam
 ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: 90c827774f38f07b9791a6399a53b0304bbe28c8
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: ff9bd328dd98fbd614a3bb63a1edddc2027d97b2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695191"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879786"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Руководство по Создание модели классификации с использованием автоматизированного машинного обучения в службе "Машинное обучение Azure".
 
@@ -252,7 +252,7 @@ ms.locfileid: "97695191"
 В ходе работы с этим руководством по автоматизированному машинному обучению вы создали и развернули модель классификации с помощью интерфейса автоматизированного машинного обучения в службе "Машинное обучение Azure". Дополнительные сведения и дальнейшие процедуры вы найдете в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Использование веб-службы](https://docs.microsoft.com/power-bi/connect-data/service-aml-integrate?context=azure/machine-learning/context/ml-context)
+> [Использование веб-службы](/power-bi/connect-data/service-aml-integrate?context=azure%2fmachine-learning%2fcontext%2fml-context)
 
 + Дополнительные сведения [об автоматическом машинном обучении](concept-automated-ml.md).
 + Дополнительные сведения о классификационных метриках и графиках см. в статье [Общие сведения об автоматических результатах машинного обучения](how-to-understand-automated-ml.md).

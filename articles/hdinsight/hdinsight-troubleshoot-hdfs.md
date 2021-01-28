@@ -1,19 +1,16 @@
 ---
 title: Устранение неполадок HDFS в Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с HDFS и Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 04/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: add8bc14c1810d4b0d5894a840f2b815230f31cc
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 0be7805493e5acc41254c57ca912b5a2ecf02dae
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288992"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931464"
 ---
 # <a name="troubleshoot-apache-hadoop-hdfs-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop HDFS с помощью Azure HDInsight
 
@@ -25,7 +22,7 @@ ms.locfileid: "93288992"
 
 Вместо хранилища BLOB-объектов Azure или Azure Data Lake Storage для доступа к локальной системе HDFS в пределах кластера HDInsight используется командная строка и код приложения.
 
-### <a name="resolution-steps"></a>Способы устранения
+### <a name="resolution-steps"></a>Действия по устранению
 
 1. Вставьте в командную строку `hdfs dfs -D "fs.default.name=hdfs://mycluster/" ...` без изменений, как в следующей команде:
 
@@ -115,8 +112,8 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 Можно также глобально увеличить значение `fs.azure.write.request.size` с помощью Apache Ambari. Чтобы изменить значение в веб-интерфейсе Ambari, сделайте следующее:
 
 1. В браузере перейдите к веб-интерфейсу Ambari для кластера URL-адрес — `https://CLUSTERNAME.azurehdinsight.net` , где `CLUSTERNAME` — имя кластера. При появлении запроса введите имя и пароль администратора для кластера.
-2. В левой части экрана выберите **HDFS** , а затем перейдите на вкладку **Configs** (Конфигурации).
-3. В поле **Фильтр...** введите `fs.azure.write.request.size`.
+2. В левой части экрана выберите **HDFS**, а затем перейдите на вкладку **Configs** (Конфигурации).
+3. В поле **фильтр...** введите `fs.azure.write.request.size` .
 4. Измените значение с 262 144 (256 КБ) на новое. Например, 4 194 304 (4 MB).
 
     ![Изображение смены значения через веб-интерфейс Ambari](./media/hdinsight-troubleshoot-hdfs/hbase-change-block-write-size.png)
@@ -130,7 +127,7 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 `-s`Параметр создает сводную сводку по длине файлов.  
 `-h`Параметр форматирует размеры файлов.
 
-Пример
+Пример.
 
 ```bash
 hdfs dfs -du -s -h hdfs://mycluster/

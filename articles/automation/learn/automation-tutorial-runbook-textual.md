@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/19/2020
 ms.topic: tutorial
-ms.openlocfilehash: 613ce41820dc5f388af441836bdb4a93e43e5d07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e822e17f154b72854c5150e071301d7bbd53072e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987632"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98890820"
 ---
 # <a name="tutorial-create-a-powershell-workflow-runbook"></a>Руководство по Создание runbook рабочего процесса PowerShell
 
@@ -113,9 +113,17 @@ ms.locfileid: "90987632"
 
 7. Как только состояние runbook изменится на "Выполнено", щелкните **Выходные данные**. Откроется область "Выходные данные", где отображается сообщение `Hello World`.
 
-   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-outputtile.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенный раздел сводки по заданию." и "Ошибка", если этот модуль runbook записывает в них какие-то данные.
+   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-outputtile.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенную кнопку выходных данных.":::
 
-   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-alllogstile.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенный раздел сводки по заданию." для этого модуля runbook. Откроется страница со списком всех заданий, созданных этим модулем runbook. Список должен содержать одно задание, так как вы запустили задание только один раз.
+8. Закройте страницу выходных данных.
+
+9. Щелкните **Все журналы** , чтобы открыть область "Потоки" для задания Runbook. В потоке выходных данных должно отобразиться только `Hello World`. Но не забывайте, что на панели "Потоки" могут присутствовать и другие потоки задания runbook, например потоки "Подробные сведения" и "Ошибка", если этот модуль runbook записывает в них какие-то данные.
+
+   :::image type="content" source="../media/automation-tutorial-runbook-textual/job-pane-status-blade-alllogstile.png" alt-text="Снимок экрана: область задания runbook, отображающая выделенную кнопку всех журналов.":::
+
+10. Закройте панель потоков и область заданий, чтобы вернуться на страницу MyFirstRunbook.
+
+11. Щелкните **Задания** в области **Ресурсы**, чтобы открыть страницу "Задания" для этого модуля runbook. Откроется страница со списком всех заданий, созданных этим модулем runbook. Список должен содержать одно задание, так как вы запустили задание только один раз.
 
    ![Задания](../media/automation-tutorial-runbook-textual/runbook-control-job-tile.png)
 
@@ -123,7 +131,7 @@ ms.locfileid: "90987632"
 
 ## <a name="step-5---add-authentication-to-manage-azure-resources"></a>Шаг 5. Добавление проверки подлинности для управления ресурсами Azure
 
-Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Модуль не сможет выполнять эту задачу, пока не проведена проверка подлинности с использованием учетных данных для подписки. Для проверки подлинности используется командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.7.0).
+Вы протестировали и опубликовали свой модуль runbook, но пока он не выполняет никаких полезных действий. Нужно, чтобы он управлял ресурсами Azure. Модуль не сможет выполнять эту задачу, пока не проведена проверка подлинности с использованием учетных данных для подписки. Для проверки подлинности используется командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
 
 >[!NOTE]
 >Для модулей runbook PowerShell `Add-AzAccount` и `Add-AzureRMAccount` являются псевдонимами для `Connect-AzAccount`. Вы можете использовать эти командлеты или [обновить модули](../automation-update-azure-modules.md) в учетной записи службы автоматизации до последних версий. Обновление модулей может потребоваться, даже если учетная запись службы автоматизации только что создана.
@@ -157,7 +165,7 @@ ms.locfileid: "90987632"
 
 Теперь, когда модуль runbook прошел аутентификацию в подписке Azure, вы можете управлять ресурсами. Добавьте команду для запуска виртуальной машины. Вы можете выбрать любую виртуальную машину в своей подписке Azure. Имя этой машины вы жестко пропишете в runbook. Если вы управляете ресурсами в нескольких подписках, вам нужно использовать параметр `AzContext` в командлете [Get-AzContext](/powershell/module/az.accounts/get-azcontext).
 
-1. Укажите имя запускаемой виртуальной машины и имя группы ресурсов для нее, вызвав командлет [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM?view=azps-3.5.0) такой строкой, как показано ниже. 
+1. Укажите имя запускаемой виртуальной машины и имя группы ресурсов для нее, вызвав командлет [Start-AzVM](/powershell/module/Az.Compute/Start-AzVM) такой строкой, как показано ниже. 
 
    ```powershell-interactive
    workflow MyFirstRunbook-Workflow
@@ -219,7 +227,7 @@ ms.locfileid: "90987632"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о PowerShell, включая справочник по языку и обучающие модули, вы найдете в [этой документации](/powershell/scripting/overview).
-* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](/powershell/module/az.automation).
 * Чтобы начать работу с графическими модулями runbook, см. инструкции в [этой статье](automation-tutorial-runbook-graphical.md).
 * Сведения о том, как начать работу с runbook, см. в статье о [создании runbook PowerShell](automation-tutorial-runbook-textual-powershell.md).
 * Дополнительные сведения о типах модулей runbook в службе автоматизации Azure, а также об их преимуществах и ограничениях см. в [этой статье](../automation-runbook-types.md).

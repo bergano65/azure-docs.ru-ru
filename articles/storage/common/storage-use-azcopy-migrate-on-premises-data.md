@@ -8,12 +8,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: eddee58d70cf621bd6c82d54fe75434f4e596d9e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 682394329205d74859c1af0c0a68a37539da7872
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498172"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881033"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-with-azcopy"></a>Руководство по Перенос локальных данных в облачное хранилище с помощью AzCopy
 
@@ -108,7 +108,7 @@ azcopy sync "<local-folder-path>" "https://<storage-account-name>.blob.core.wind
 
 * Замените заполнитель `<container-name>` именем созданного контейнера.
 
-См. подробнее о команде `sync` в руководстве по [синхронизации файлов](storage-use-azcopy-blobs.md#synchronize-files).
+См. подробнее о команде `sync` в руководстве по [синхронизации файлов](./storage-use-azcopy-v10.md#transfer-data).
 
 ## <a name="create-a-scheduled-task"></a>Создание запланированной задачи
 
@@ -182,7 +182,7 @@ schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\script.bat
 
 * [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 
-* [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
+* [Transfer data with AzCopy and blob storage](./storage-use-azcopy-v10.md#transfer-data) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
 
 * [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 

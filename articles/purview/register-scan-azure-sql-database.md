@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 36781e7f975ee9d4a03cf899650701bf2d3940ac
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: b3503dead21eeca32d82e896f889b99d11435642
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555956"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879736"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Регистрация и сканирование Базы данных SQL Azure
 
@@ -39,7 +39,7 @@ Azure Purview не поддерживает сканирование [предс
 
 ### <a name="set-up-authentication-for-a-scan"></a>Настройка проверки подлинности для сканирования
 
-Настройте проверку подлинности для сканирования Базы данных SQL Azure. Если вам нужно создать новую проверку подлинности, [авторизуйте доступ к базе данных в Базе данных SQL](https://docs.microsoft.com/azure/azure-sql/database/logins-create-manage). Сейчас служба Purview поддерживает три метода проверки подлинности:
+Настройте проверку подлинности для сканирования Базы данных SQL Azure. Если вам нужно создать новую проверку подлинности, [авторизуйте доступ к базе данных в Базе данных SQL](../azure-sql/database/logins-create-manage.md). Сейчас служба Purview поддерживает три метода проверки подлинности:
 
 - Проверка подлинности SQL
 - Субъект-служба
@@ -88,8 +88,8 @@ Azure Purview не поддерживает сканирование [предс
 
 Субъект-служба или управляемое удостоверение должны иметь разрешение на получение метаданных для базы данных, схем и таблиц. Кроме того, требуется возможность запрашивать из таблиц примеры для классификации.
 
-- [Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-configure)
-- Если вы предпочитаете использовать управляемое удостоверение, для этой цели учетная запись Purview имеет собственное управляемое удостоверение, которое по сути является именем Purview, указанным при создании ресурса. Вы должны создать пользователя Azure AD в Базе данных SQL Azure, указав для его точное значение управляемого удостоверения Purview или собственный субъект-службу, по инструкциям из раздела [Создание пользователя субъекта-службы в службе "База данных SQL Azure"](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial#create-the-service-principal-user-in-azure-sql-database). Вам нужно назначить удостоверению соответствующие разрешения (например, `db_owner` или `db_datareader`). Пример синтаксиса SQL для создания пользователя и предоставления разрешений:
+- [Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL](../azure-sql/database/authentication-aad-configure.md)
+- Если вы предпочитаете использовать управляемое удостоверение, для этой цели учетная запись Purview имеет собственное управляемое удостоверение, которое по сути является именем Purview, указанным при создании ресурса. Вы должны создать пользователя Azure AD в Базе данных SQL Azure, указав для его точное значение управляемого удостоверения Purview или собственный субъект-службу, по инструкциям из раздела [Создание пользователя субъекта-службы в службе "База данных SQL Azure"](../azure-sql/database/authentication-aad-service-principal-tutorial.md#create-the-service-principal-user-in-azure-sql-database). Вам нужно назначить удостоверению соответствующие разрешения (например, `db_owner` или `db_datareader`). Пример синтаксиса SQL для создания пользователя и предоставления разрешений:
 
     ```sql
     CREATE USER [Username] FROM EXTERNAL PROVIDER

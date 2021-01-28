@@ -1,5 +1,5 @@
 ---
-title: Руководство по миграции на основе сценариев зарезервированных единиц мультимедиа (Мрус)
+title: Руководство по миграции зарезервированных единиц мультимедиа (Мрус)
 description: В этой статье приводятся рекомендации на основе сценариев, которые помогут вам перейти с служб мультимедиа Azure версии 2 на v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: 375b4ecdc6153162b3a819b831af152ce390a5dc
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 5ca01bcea348b866c0f40f82ebe90dc31d032739
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898330"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927078"
 ---
 # <a name="media-reserved-units-mrus-scenario-based-migration-guidance"></a>Руководство по миграции на основе сценариев зарезервированных единиц мультимедиа (Мрус)
 

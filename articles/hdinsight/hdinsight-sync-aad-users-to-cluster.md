@@ -1,19 +1,17 @@
 ---
 title: Синхронизация пользователей Azure Active Directory с кластером HDInsight
 description: Синхронизация пользователей, прошедших проверку подлинности, от Azure Active Directory к кластеру HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: 19466174faeef20b8ac29882b047d74ad2adc5ff
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a3307c5d677028c17717c0d591790f0373f131d6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535184"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931632"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
 
@@ -37,7 +35,7 @@ ms.locfileid: "92535184"
 
     ![портал Azure область пользователя "Выбор групп"](./media/hdinsight-sync-aad-users-to-cluster/hdinsight-new-user-form.png)
 
-4. Щелкните **Создать** .
+4. Нажмите кнопку **Создать**.
 
 ## <a name="use-the-apache-ambari-rest-api-to-synchronize-users"></a>Синхронизация пользователей с помощью REST API Apache Ambari
 
@@ -120,7 +118,7 @@ ms.locfileid: "92535184"
     }
     ```
 
-1. В результате отобразится состояние " **завершено** ", был создан один пользователь, и ему было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
+1. В результате отобразится состояние " **завершено**", был создан один пользователь, и ему было назначено членство. В этом примере пользователь назначен для группы HiveUsers, синхронизированной по протоколу LDAP, так как он был добавлен в ту же группу в Azure AD.
 
     > [!NOTE]  
     > Предыдущий метод синхронизирует только группы Azure AD, указанные в свойстве **доступа к группе пользователей** параметров домена во время создания кластера. Дополнительные сведения см. в статье [Настройка среды с присоединенной к домену песочницей HDInsight](./domain-joined/apache-domain-joined-configure-using-azure-adds.md).
@@ -129,7 +127,7 @@ ms.locfileid: "92535184"
 
 Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-ИНТЕРФЕЙСу Ambari, перейдя по адресу **`https://CLUSTERNAME.azurehdinsight.net`** . Укажите имя администратора и пароль кластера.
 
-1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin** .
+1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin**.
 
     ![Панель мониторинга Apache Ambari управление Ambari](./media/hdinsight-sync-aad-users-to-cluster/manage-apache-ambari.png)
 

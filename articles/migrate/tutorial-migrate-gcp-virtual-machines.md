@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: MVC
-ms.openlocfilehash: 892b731f662af57916d067c562d48f4ec25e2210
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 12b8e30b0107b6b008cbd6467ada7c2d44f5e6d6
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233055"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871643"
 ---
 # <a name="discover-assess-and-migrate-google-cloud-platform-gcp-vms-to-azure"></a>Обнаружение, оценка готовности и миграция виртуальных машин Google Cloud Platform (GCP) в Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "98233055"
 
 **Задача** | **Сведения**
 --- | ---
-**Создание проекта службы "Миграция Azure"** | [Для создания проекта](https://docs.microsoft.com/azure/migrate/create-manage-projects) учетная запись Azure должна иметь разрешения участника или владельца.
+**Создание проекта службы "Миграция Azure"** | [Для создания проекта](./create-manage-projects.md) учетная запись Azure должна иметь разрешения участника или владельца.
 **Проверка разрешений учетной записи Azure** | Учетная запись Azure должна иметь разрешения на создание виртуальной машины и на запись на управляемый диск Azure.
 
 ### <a name="assign-permissions-to-create-project"></a>Назначение разрешений для создания проекта
@@ -252,7 +252,7 @@ ms.locfileid: "98233055"
     - Double encryption with platform-managed and customer-managed keys (Двойное шифрование с помощью ключей, управляемых платформой и управляемых клиентом).
 
    > [!NOTE]
-   > Чтобы реплицировать виртуальные машины с помощью CMK, вам потребуется [создать набор шифрования дисков](https://go.microsoft.com/fwlink/?linkid=2151800) в целевой группе ресурсов. Объект набора шифрования дисков сопоставляет управляемые диски с Key Vault, где содержится CMK для использования в SSE.
+   > Чтобы реплицировать виртуальные машины с помощью CMK, вам потребуется [создать набор шифрования дисков](../virtual-machines/disks-enable-customer-managed-keys-portal.md#set-up-your-disk-encryption-set) в целевой группе ресурсов. Объект набора шифрования дисков сопоставляет управляемые диски с Key Vault, где содержится CMK для использования в SSE.
   
 12. Для параметра **Преимущество гибридного использования Azure**
 

@@ -6,12 +6,12 @@ ms.author: cherylmc
 ms.service: vpn-gateway
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 933b71d75eacdca015a38524870f25a345e76d22
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 820482a268af038737557c517ccda086cd65d943
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746171"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880564"
 ---
 # <a name="tutorial-create-and-manage-a-vpn-gateway-using-azure-portal"></a>Руководство по созданию VPN-шлюза и управление им с помощью портала Azure
 
@@ -103,7 +103,7 @@ VPN-шлюзы Azure предоставляют распределенное п�
 После создания VPN-шлюза можно настроить подключения. С помощью инструкций в приведенных ниже статьях можно создать несколько наиболее распространенных конфигураций:
 
 > [!div class="nextstepaction"]
-> [VPN-подключения типа "сеть —сеть"](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+> [VPN-подключения типа "сеть —сеть"](./tutorial-site-to-site-portal.md)
 
 > [!div class="nextstepaction"]
 > [VPN-подключения типа "точка — сеть"](vpn-gateway-howto-point-to-site-resource-manager-portal.md)

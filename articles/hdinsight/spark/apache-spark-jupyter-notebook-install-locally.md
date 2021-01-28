@@ -1,19 +1,16 @@
 ---
 title: Установка записной книжки Jupyter в локальной среде и ее подключение к Spark в Azure HDInsight
 description: Узнайте, как установить Jupyter Notebook локально на компьютере и подключить его к кластеру Apache Spark.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: de11e6f9fd9acc81f7be6d23bb1019f88f9e1322
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d5915316ee9d393b2481eeca6a5da7923b271d9f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657215"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930407"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка Jupyter Notebook на компьютере и подключение к Apache Spark в HDInsight
 
@@ -69,7 +66,7 @@ ms.locfileid: "97657215"
     |PySpark|`jupyter-kernelspec install sparkmagic/kernels/pysparkkernel`|
     |PySpark3|`jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel`|
 
-1. Необязательный параметр. Введите следующую команду, чтобы включить расширение сервера:
+1. Необязательный элемент. Введите следующую команду, чтобы включить расширение сервера:
 
     ```cmd
     jupyter serverextension enable --py sparkmagic

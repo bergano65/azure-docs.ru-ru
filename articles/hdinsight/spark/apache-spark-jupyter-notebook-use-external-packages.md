@@ -1,19 +1,16 @@
 ---
 title: Использование пользовательских пакетов Maven с Jupyter в Spark — Azure HDInsight
 description: Пошаговые инструкции по настройке записных книжек Jupyter, доступных в кластерах HDInsight Spark, для использования пользовательских пакетов Maven.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/22/2019
-ms.openlocfilehash: 82c61fe77e7bffea6a20e47c71561ab6dc86d12b
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: a3d787059345b5971d99ebd7a1e26a9135b61bed
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822256"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98930340"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight
 
@@ -48,7 +45,7 @@ ms.locfileid: "97822256"
     >[!IMPORTANT]  
     >Если вы забыли настроить ядро в первой ячейке, можно использовать `%%configure` с параметром `-f`, но при этом сеанс будет перезапущен и все изменения будут утеряны.
 
-    | Версия HDInsight | Get-Help |
+    | Версия HDInsight | Команда |
     |-------------------|---------|
     | Для HDInsight 3.5 и HDInsight 3.6 | `%%configure`<br>`{ "conf": {"spark.jars.packages": "com.databricks:spark-csv_2.11:1.5.0" }}`|
     |Для HDInsight 3.3 и HDInsight 3.4 | `%%configure` <br>`{ "packages":["com.databricks:spark-csv_2.10:1.4.0"] }`|

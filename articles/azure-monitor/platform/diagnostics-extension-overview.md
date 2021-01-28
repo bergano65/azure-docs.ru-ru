@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 6201a4e0551f0f75dde65b2bc4b8b560a0f5ea20
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d424a22a26119dcb3ef6a0e5c4f3dc0c13b1aa4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87008002"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927587"
 ---
 # <a name="azure-diagnostics-extension-overview"></a>Обзор расширения "Диагностика Azure"
 Расширение "Диагностика Azure" — это [агент в Azure Monitor](agents-overview.md), собирающий данные мониторинга из гостевой операционной системы на вычислительных ресурсах Azure, включая виртуальные машины. В этой статье представлен обзор расширения "Диагностика Azure", в том числе его специальных функциональных возможностей и параметров установки и настройки. 
@@ -50,7 +50,7 @@ ms.locfileid: "87008002"
 | Счетчики производительности | Числовые значения, представляющие собой оценки производительности разных элементов операционной системы и рабочих нагрузок. |
 | Журналы IIS             | Информация о потреблении для веб-сайтов на IIS, которые выполняются в гостевой ОС. |
 | Журналы приложений     | Сообщения трассировки, записанные вашим приложением. |
-| Журналы .NET EventSource |События записи кода с использованием класса .NET [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) |
+| Журналы .NET EventSource |События записи кода с использованием класса .NET [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource) |
 | [Журналы трассировки событий Windows на основе манифеста](/windows/desktop/etw/about-event-tracing) |События трассировки событий Windows, созданные любым процессом. |
 | Аварийные дампы (журналы)   | Информация о состоянии процесса, собираемая при сбое приложения. |
 | Файловые журналы    | Журналы, созданные вашим приложением или службой. |

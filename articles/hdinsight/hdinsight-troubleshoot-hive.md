@@ -3,17 +3,14 @@ title: Устранение неполадок в Hive с помощью Azure H
 description: Получите ответы на распространенные вопросы о работе с Apache Hive и Azure HDInsight.
 keywords: Azure HDInsight, Hive, вопросы и ответы, руководство по устранению неполадок, часто задаваемые вопросы
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: f1a26e3323e4d1db2e9b2bda9afaa2756307749b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: a76974b8daddf225b0d9b8b581475d657322847e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288964"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931437"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
 
@@ -21,7 +18,7 @@ ms.locfileid: "93288964"
 
 ## <a name="how-do-i-export-a-hive-metastore-and-import-it-on-another-cluster"></a>Как экспортировать хранилище метаданных Hive и импортировать его в другой кластер?
 
-### <a name="resolution-steps"></a>Способы устранения
+### <a name="resolution-steps"></a>Действия по устранению
 
 1. Подключитесь к кластеру HDInsight с помощью клиента Secure Shell (SSH). Подробные сведения см. в разделе [Дополнительные материалы](#additional-reading-end).
 
@@ -41,13 +38,13 @@ ms.locfileid: "93288964"
 
 Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути к данным различаются, можно вручную изменить созданный `alltables.sql` файл, чтобы отразить любые изменения.
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 ## <a name="how-do-i-locate-hive-logs-on-a-cluster"></a>Как найти журналы Hive в кластере?
 
-### <a name="resolution-steps"></a>Способы устранения
+### <a name="resolution-steps"></a>Действия по устранению
 
 1. Подключитесь к кластеру HDInsight с помощью протокола SSH. Подробные сведения см. в разделе **Дополнительные материалы**.
 
@@ -69,13 +66,13 @@ ms.locfileid: "93288964"
    /var/log/hive/hiveserver2.log
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 ## <a name="how-do-i-launch-the-hive-shell-with-specific-configurations-on-a-cluster"></a>Как запустить оболочку Hive с определенными конфигурациями в кластере?
 
-### <a name="resolution-steps"></a>Способы устранения
+### <a name="resolution-steps"></a>Действия по устранению
 
 1. Укажите пару "ключ-значение" конфигурации при запуске оболочки Hive. Подробные сведения см. в разделе [Дополнительные материалы](#additional-reading-end).
 
@@ -95,13 +92,13 @@ ms.locfileid: "93288964"
    hive -hiveconf hive.root.logger=ALL,console
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Свойства конфигурации Hive](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 
 ## <a name="how-do-i-analyze-apache-tez-dag-data-on-a-cluster-critical-path"></a><a name="how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path"></a>Как анализировать данные направленного ациклического графа Apache Tez по критическому пути кластера?
 
-### <a name="resolution-steps"></a>Способы устранения
+### <a name="resolution-steps"></a>Действия по устранению
 
 1. Чтобы проанализировать направленный ациклический граф (DAG) Apache Tez по критическому графу кластера, подключитесь к кластеру HDInsight с помощью SSH. Подробные сведения см. в разделе [Дополнительные материалы](#additional-reading-end).
 
@@ -132,13 +129,13 @@ ms.locfileid: "93288964"
     - **TaskConcurrencyAnalyzer** — печать сведений о параллельных задачах в DAG;
     - **VertexLevelCriticalPathAnalyzer** — поиск критического пути на уровне вершины в DAG.
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
 ## <a name="how-do-i-download-tez-dag-data-from-a-cluster"></a>Как скачать данные направленного ациклического графа Tez из кластера?
 
-#### <a name="resolution-steps"></a>Способы устранения
+#### <a name="resolution-steps"></a>Действия по устранению
 
 Сбор данных направленного ациклического графа Tez можно выполнить двумя способами:
 
@@ -157,7 +154,7 @@ ms.locfileid: "93288964"
   3. Выберите направленный ациклический граф, который необходимо просмотреть.
   4. Выберите **Скачать данные**.
 
-### <a name="additional-reading"></a><a name="additional-reading-end"></a>Дополнительные материалы
+### <a name="additional-reading"></a><a name="additional-reading-end"></a>Дополнительные материалы для чтения
 
 [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 

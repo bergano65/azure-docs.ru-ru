@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/11/2020
 ms.author: allensu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e99ee28460c1639a7f0b9dd989bbe5a287a9158c
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 457749b353b9b7fabfb137ebe907463bb17158ba
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221884"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98926941"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-cli-and-test-the-nat-service"></a>Руководство по созданию шлюза NAT с помощью Azure CLI и проверке NAT
 
@@ -61,7 +61,7 @@ ms.locfileid: "98221884"
 
 ### <a name="create-a-public-ip-prefix"></a>Создание префикса общедоступного IP-адреса
 
-Со шлюзом NAT можно использовать один или несколько ресурсов общедоступных IP-адресов, префиксов общедоступных IP-адресов или оба варианта. Для демонстрации в этот сценарий будет добавлен ресурс префикса общедоступного IP-адреса.   Выполните команду [az network public-ip prefix create](/cli/azure/network/public-ip/prefix?view=azure-cli-latest#az-network-public-ip-prefix-create) для создания ресурса префикса общедоступного IP-адреса с именем **myPublicIPprefixsource** в группе **myResourceGroupNAT**.
+Со шлюзом NAT можно использовать один или несколько ресурсов общедоступных IP-адресов, префиксов общедоступных IP-адресов или оба варианта. Для демонстрации в этот сценарий будет добавлен ресурс префикса общедоступного IP-адреса.   Выполните команду [az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create) для создания ресурса префикса общедоступного IP-адреса с именем **myPublicIPprefixsource** в группе **myResourceGroupNAT**.
 
 ```azurecli-interactive
   az network public-ip prefix create \
@@ -77,7 +77,7 @@ ms.locfileid: "98221884"
   - пул общедоступных IP-адресов и префикс общедоступного IP-адреса, которые будут использоваться для исходящих потоков, преобразованных ресурсом шлюза NAT;
   - изменение значения времени ожидания простоя с 4 минут по умолчанию на 10 минут.
 
-Создайте глобальный шлюз Azure NAT с помощью команды [az network nat gateway create](/cli/azure/network/nat?view=azure-cli-latest) с именем **myNATgateway**. В команде используется общедоступный IP-адрес **myPublicIP** и префикс общедоступного IP-адреса **myPublicIPprefix**. В команде также задается значение 10 минут для времени ожидания простоя.
+Создайте глобальный шлюз Azure NAT с помощью команды [az network nat gateway create](/cli/azure/network/nat) с именем **myNATgateway**. В команде используется общедоступный IP-адрес **myPublicIP** и префикс общедоступного IP-адреса **myPublicIPprefix**. В команде также задается значение 10 минут для времени ожидания простоя.
 
 ```azurecli-interactive
   az network nat gateway create \
@@ -144,7 +144,7 @@ NAT теперь используется для всего исходящего
 
 ### <a name="create-an-nsg-for-source-vm"></a>Создание группы безопасности сети (NSG) для исходной виртуальной машины
 
-Так как стандартные общедоступные IP-адреса безопасны по умолчанию, необходимо создать группу безопасности сети (NSG), чтобы разрешить входящий доступ по протоколу SSH.  В NAT учитывается направление потоков. Эта NSG не будет использоваться для исходящего трафика, если шлюз NAT настроен в той же подсети. Чтобы создать ресурс NSG с именем **myNSGsource** в группе **myResourceGroupNAT**, используйте команду [az network nsg create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create).
+Так как стандартные общедоступные IP-адреса безопасны по умолчанию, необходимо создать группу безопасности сети (NSG), чтобы разрешить входящий доступ по протоколу SSH.  В NAT учитывается направление потоков. Эта NSG не будет использоваться для исходящего трафика, если шлюз NAT настроен в той же подсети. Чтобы создать ресурс NSG с именем **myNSGsource** в группе **myResourceGroupNAT**, используйте команду [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create).
 
 ```azurecli-interactive
   az network nsg create \
@@ -155,7 +155,7 @@ NAT теперь используется для всего исходящего
 
 ### <a name="expose-ssh-endpoint-on-source-vm"></a>Предоставление конечной точки SSH на исходной виртуальной машине
 
-Мы создадим правило в NSG для SSH-подключения к исходной виртуальной машине. Чтобы создать правило NSG с именем **ssh**, используйте команду [az network nsg rule create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create). Это правило будет создано в NSG с именем **myNSGsource** в группе ресурсов **myResourceGroupNAT**.
+Мы создадим правило в NSG для SSH-подключения к исходной виртуальной машине. Чтобы создать правило NSG с именем **ssh**, используйте команду [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create). Это правило будет создано в NSG с именем **myNSGsource** в группе ресурсов **myResourceGroupNAT**.
 
 ```azurecli-interactive
   az network nsg rule create \
@@ -237,7 +237,7 @@ NAT теперь используется для всего исходящего
 
 ### <a name="create-an-nsg-for-destination-vm"></a>Создание NSG для виртуальной машины назначения
 
-Так как стандартные общедоступные IP-адреса безопасны по умолчанию, необходимо создать NSG, чтобы разрешить входящий доступ по протоколу SSH. В NAT учитывается направление потоков. Эта NSG не будет использоваться для исходящего трафика, если шлюз NAT настроен в той же подсети. Чтобы создать ресурс NSG с именем **myNSGdestination** в группе **myResourceGroupNAT**, используйте команду [az network nsg create](/cli/azure/network/nsg?view=azure-cli-latest#az-network-nsg-create).
+Так как стандартные общедоступные IP-адреса безопасны по умолчанию, необходимо создать NSG, чтобы разрешить входящий доступ по протоколу SSH. В NAT учитывается направление потоков. Эта NSG не будет использоваться для исходящего трафика, если шлюз NAT настроен в той же подсети. Чтобы создать ресурс NSG с именем **myNSGdestination** в группе **myResourceGroupNAT**, используйте команду [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create).
 
 ```azurecli-interactive
     az network nsg create \
@@ -248,7 +248,7 @@ NAT теперь используется для всего исходящего
 
 ### <a name="expose-ssh-endpoint-on-destination-vm"></a>Предоставление конечной точки SSH для виртуальной машины назначения
 
-Мы создадим правило в NSG для SSH-подключения к виртуальной машине назначения. Чтобы создать правило NSG с именем **ssh**, используйте команду [az network nsg rule create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create). Это правило будет создано в NSG с именем **myNSGdestination** в группе ресурсов **myResourceGroupNAT**.
+Мы создадим правило в NSG для SSH-подключения к виртуальной машине назначения. Чтобы создать правило NSG с именем **ssh**, используйте команду [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create). Это правило будет создано в NSG с именем **myNSGdestination** в группе ресурсов **myResourceGroupNAT**.
 
 ```azurecli-interactive
     az network nsg rule create \
@@ -266,7 +266,7 @@ NAT теперь используется для всего исходящего
 
 ### <a name="expose-http-endpoint-on-destination-vm"></a>Предоставление конечной точки HTTP на виртуальной машине назначения
 
-Мы создадим правило в NSG для HTTP-доступа к виртуальной машине назначения. Чтобы создать правило NSG с именем **http** в NSG **myNSGdestination** в группе **myResourceGroupNAT**, используйте команду [az network nsg rule create](/cli/azure/network/nsg/rule?view=azure-cli-latest#az-network-nsg-rule-create).
+Мы создадим правило в NSG для HTTP-доступа к виртуальной машине назначения. Чтобы создать правило NSG с именем **http** в NSG **myNSGdestination** в группе **myResourceGroupNAT**, используйте команду [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create).
 
 ```azurecli-interactive
     az network nsg rule create \

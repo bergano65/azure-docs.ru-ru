@@ -2,18 +2,15 @@
 title: Руководство по Запись данных HDInsight Apache Storm в хранилище в Azure или Data Lake
 description: Учебник. Сведения об использовании Apache Storm для записи данных в HDFS-совместимое хранилище для Azure HDInsight.
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/24/2019
-ms.openlocfilehash: 8cdcc60e6eeec22e202d670c3fc057711bd432a6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 4e648c57be699620e669ce7db0845dad2b876095
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545452"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932548"
 ---
 # <a name="tutorial-write-to-apache-hadoop-hdfs-from-apache-storm-on-azure-hdinsight"></a>Руководство по записи данных в Apache Hadoop HDFS из Apache Storm в Azure HDInsight
 
@@ -160,7 +157,7 @@ bolts:
     hdfs.url: wasbs:///
     ```
 
-    Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__ , введите __Y__ и нажмите клавишу __ВВОД__ . Значения в этом файле позволяют задать URL-адрес хранилища и имя каталога, в который записываются данные.
+    Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__, введите __Y__ и нажмите клавишу __ВВОД__. Значения в этом файле позволяют задать URL-адрес хранилища и имя каталога, в который записываются данные.
 
 1. Запустите топологию, используя следующую команду.
 
@@ -205,7 +202,7 @@ storm kill hdfswriter
 
 Чтобы удалить группу ресурсов с помощью портала Azure, сделайте следующее:
 
-1. На портале Azure разверните меню слева, чтобы открыть меню служб, а затем выберите __Группы ресурсов__ , чтобы просмотреть список групп ресурсов.
+1. На портале Azure разверните меню слева, чтобы открыть меню служб, а затем выберите __Группы ресурсов__, чтобы просмотреть список групп ресурсов.
 2. Найдите группу ресурсов, которую нужно удалить, и щелкните правой кнопкой мыши кнопку __Дополнительно__ (…) справа от списка.
 3. Выберите __Удалить группу ресурсов__ и подтвердите выбор.
 

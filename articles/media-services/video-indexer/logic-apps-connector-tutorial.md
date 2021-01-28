@@ -8,12 +8,12 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: tutorial
 ms.date: 09/21/2020
-ms.openlocfilehash: 5c545fa7d58d925dfcb9fa98b301c3bb0a20833e
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: f3504ca4a706e92081209f4eaaa86af9f71c52b3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358577"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880916"
 ---
 # <a name="tutorial-use-video-indexer-with-logic-app-and-power-automate"></a>Руководство по использованию Индексатора видео с приложением Logic Apps и Power Automate
 
@@ -137,4 +137,4 @@ URL-адрес обратного вызова пока не указывайт�
 > [!div class="nextstepaction"]
 > [Использование API Индексатора видео](video-indexer-use-apis.md)
 
-Дополнительные ресурсы см. в [этом документе по индексатору видео](https://docs.microsoft.com/connectors/videoindexer-v2/).
+Дополнительные ресурсы см. в [этом документе по индексатору видео](/connectors/videoindexer-v2/).

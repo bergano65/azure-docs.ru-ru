@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: tutorial
-ms.date: 03/06/2020
+ms.date: 01/26/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 303f02e0c6b72b7061a996b3ce8e70799954b435
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: d3da63503c80652bc8737f2cb4894e25d8bc6fc0
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861057"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98893411"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -90,23 +90,21 @@ ms.locfileid: "96861057"
 
 1. Запустите Azure AD Connect и выберите **Настройка**.
 
-   ![Экран приветствия](./media/hybrid-azuread-join-managed-domains/welcome-azure-ad-connect.png)
-
 1. На странице **Дополнительные задачи** выберите раздел **Настройка параметров устройств**, а затем нажмите кнопку **Далее**.
 
    ![Дополнительные задачи](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-additional-tasks.png)
 
 1. В разделе **Обзор** нажмите кнопку **Далее**.
 
-   ![Обзор](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-overview.png)
-
 1. На странице **Подключение к Azure AD** укажите учетные данные глобального администратора для клиента Azure AD.  
-
-   ![Подключение к Azure AD](./media/hybrid-azuread-join-managed-domains/connect-to-azure-ad-username-password.png)
 
 1. На странице **Device options** (Параметры устройств) установите параметр **Настроить гибридное присоединение к Azure AD** и нажмите кнопку **Далее**.
 
    ![Параметры устройств](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-device-options.png)
+
+1. На странице **Операционные системы устройств** выберите операционные системы, используемые устройствами в вашей среде Active Directory, и нажмите кнопку **Далее**.
+
+   ![Операционная система устройства](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-device-operating-systems.png)
 
 1. На странице **Конфигурация точки подключения службы** выполните приведенные ниже действия с каждым лесом, для которого требуется настроить точку подключения службы с помощью Azure AD Connect, а затем нажмите кнопку **Далее**.
 
@@ -116,17 +114,9 @@ ms.locfileid: "96861057"
 
    ![SCP](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-scp-configuration.png)
 
-1. На странице **Операционные системы устройств** выберите операционные системы, используемые устройствами в вашей среде Active Directory, и нажмите кнопку **Далее**.
-
-   ![Операционная система устройства](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-device-operating-systems.png)
-
 1. На странице **Готово к настройке** нажмите кнопку **Настроить**.
 
-   ![Готово к настройке](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-ready-to-configure.png)
-
 1. На странице **Конфигурация завершена** нажмите кнопку **Выйти**.
-
-   ![Завершение настройки](./media/hybrid-azuread-join-managed-domains/azure-ad-connect-configuration-complete.png)
 
 ## <a name="enable-windows-down-level-devices"></a>Включение устройств Windows нижнего уровня.
 
