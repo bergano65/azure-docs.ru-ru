@@ -1,18 +1,16 @@
 ---
 title: Теги службы группы безопасности сети (NSG) для Azure HDInsight
 description: Используйте теги службы HDInsight, чтобы разрешить входящий трафик в кластер из узлов служб работоспособности и управления, не добавляя IP-адреса в группы безопасности сети.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: 1a90bc6636dcb3aa81f09b0489850c1a95b3256d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d17d067b88add3006bc5c7fb10caa6b80a80a827
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022757"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931768"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>Теги службы NSG для Azure HDInsight
 
@@ -99,7 +97,7 @@ ms.locfileid: "96022757"
 | Country | Region | Тег службы |
 | ---- | ---- | ---- |
 | США | восточная часть США 2 | HDInsight. EastUS2 |
-| &nbsp; | Центральная часть США | HDInsight. CentralUS |
+| &nbsp; | Центральная часть США | HDInsight. CentralUS |
 | &nbsp; | Норсцентрал США | HDInsight. NorthCentralUS |
 | &nbsp; | Центрально-южная часть США | HDInsight. SouthCentralUS |
 | &nbsp; | Восточная часть США | HDInsight. EastUS |
@@ -123,7 +121,7 @@ ms.locfileid: "96022757"
 
 Для кластеров в регионах *центрального региона Германии* и *северо в Германии* необходимо разрешить два тега службы: `HDInsight.GermanyCentral` и `HDInsight.GermanyNortheast` .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Группы безопасности сети: Теги служб](../virtual-network/network-security-groups-overview.md#security-rules)
 - [Создание виртуальных сетей для кластеров Azure HDInsight](hdinsight-create-virtual-network.md)

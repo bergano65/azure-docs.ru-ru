@@ -3,12 +3,12 @@ title: Мониторинг производительности на вирту
 description: Мониторинг производительности приложений для ВИРТУАЛЬНОЙ машины Azure и масштабируемых наборов виртуальных машин Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: ed56bc88a9d2e8a9490331605cd4a72aef6930db
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 0ea005427348e5265867a9e7ee805b0e6aa202f2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677949"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933912"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>Развертывание агента Azure Monitor Application Insights на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "98677949"
 > Перед установкой агента Application Insights вам потребуется строка подключения. [Создайте новый Application Insights ресурс](./create-new-resource.md) или скопируйте строку подключения из существующего ресурса Application Insights.
 
 > [!NOTE]
-> Не знакомы с PowerShell? Ознакомьтесь с [руководством по началу работы](/powershell/azure/get-started-azureps?view=azps-2.5.0).
+> Не знакомы с PowerShell? Ознакомьтесь с [руководством по началу работы](/powershell/azure/get-started-azureps).
 
 Установка или обновление агента Application Insights как расширения для виртуальных машин Azure
 ```powershell
@@ -175,6 +175,6 @@ Get-AzResource -ResourceId /subscriptions/<mySubscriptionId>/resourceGroups/<myR
 C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.ApplicationMonitoringWindows\<version>\
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [развернуть приложение в масштабируемом наборе виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app.md).
 * [Настройте веб-тесты доступности](monitor-web-app-availability.md) , которые будут оповещены, если ваша конечная точка не работает.

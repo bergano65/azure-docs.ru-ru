@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 2cf28565818f6de4d52b57040a80c21d0e03a76c
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 61076b49d396c83a67635e46eb4f1b928b3f9e1d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218525"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933977"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -44,7 +44,7 @@ ms.locfileid: "98218525"
 ### <a name="can-i-perform-wan-optimization-between-vnets-or-a-vnet-and-my-on-premises-data-center"></a>Можно ли выполнять оптимизацию глобальной сети между виртуальными сетями или между виртуальной сетью и локальным центром обработки данных?
 Да. Вы можете развернуть [виртуальные сетевые устройства оптимизации глобальной сети](https://azuremarketplace.microsoft.com/en-us/marketplace/?term=wan%20optimization), предоставляемые несколькими поставщиками через Azure Marketplace.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="what-tools-do-i-use-to-create-a-vnet"></a>Какие средства необходимо использовать для создания виртуальной сети?
 Для создания или настройки виртуальной сети можно использовать указанные ниже средства.
@@ -239,7 +239,7 @@ DNS, предоставленная Azure, — это мультитенант�
 ### <a name="is-there-tooling-support-for-vnets"></a>Существуют ли специальные программные средства для работы с виртуальными сетями?
 Да. Дополнительные сведения об использовании средств:
 - Развертывание виртуальных сетей по модели [Azure Resource Manager](manage-virtual-network.md#create-a-virtual-network) или [классической модели развертывания](/previous-versions/azure/virtual-network/virtual-networks-create-vnet-classic-pportal) с помощью портала Azure.
-- Управление виртуальными сетями, развернутыми по модели [Azure Resource Manager](/powershell/module/az.network) или [классической модели развертывания](/powershell/module/servicemanagement/azure.service/?view=azuresmps-3.7.0), с помощью PowerShell.
+- Управление виртуальными сетями, развернутыми по модели [Azure Resource Manager](/powershell/module/az.network) или [классической модели развертывания](/powershell/module/servicemanagement/azure.service/), с помощью PowerShell.
 - Развертывание виртуальных сетей, развернутых по модели [Azure Resource Manager](/cli/azure/network/vnet) или [классической модели развертывания](/previous-versions/azure/virtual-machines/azure-cli-arm-commands?toc=%2fazure%2fvirtual-network%2ftoc.json#network-resources), и управление ими с помощью интерфейса командной строки Azure.  
 
 ## <a name="vnet-peering"></a>Пиринговая связь между виртуальными сетями
@@ -416,13 +416,13 @@ Azure Active Directory (Azure AD) не поддерживает конечные
 
 |Служба Azure| Ограничения на правила виртуальной сети|
 |---|---|
-|Служба хранилища Azure| 100|
+|Хранилище Azure| 100|
 |Azure SQL| 128|
 |Azure Synapse Analytics|   128|
 |Azure Key Vault|    127|
 |Azure Cosmos DB|   64|
 |концентратору событий Azure|   128|
-|Azure Service Bus| 128|
+|Служебная шина Azure| 128|
 |Azure Data Lake Store V1|  100|
  
 >[!NOTE]

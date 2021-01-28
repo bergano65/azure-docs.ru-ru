@@ -1,19 +1,16 @@
 ---
 title: Архивные заметки о выпуске Azure HDInsight
 description: Заархивированные заметки о выпуске для Azure HDInsight. Ознакомьтесь с советами по разработке и подробными сведениями о Hadoop, Spark, R Server, Hive и т. д.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 10/07/2020
-ms.openlocfilehash: d5103cbbeb5a8ab12f9ce497ee4ed227ca180728
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 8e6f27c378a6cea8fffbdcda58c4fc3bb865e51e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350302"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932173"
 ---
 # <a name="archived-release-notes"></a>Архивные заметки о выпуске
 
@@ -594,7 +591,7 @@ HDInsight постоянно повышает надежность и произ
 
 *  ***Обновление Hadoop и других проектов с открытым исходным кодом** _ — в дополнение к исправлениям 1000 + ошибок в 20 проектах с открытым кодом это обновление содержит новую версию _ *Spark (2,3)** и **Kafka (1,0)**.
 
-    a.  [**Новые функции в Apache Spark 2.3**](https://spark.apache.org/releases/spark-release-2-3-0.html)
+    а.  [**Новые функции в Apache Spark 2.3**](https://spark.apache.org/releases/spark-release-2-3-0.html)
 
     b.  [**Новые функции в Apache Kafka 1.0**](https://kafka.apache.org/downloads#1.0.0)
 
@@ -1953,7 +1950,7 @@ _ *Пакеты исправлений для Hive 1.2.1:**
         
       В примере ниже будет создана политика с тегами как \`tag-test\`. Она будет назначена группе \`public\` с условием политики astags.attr\['type'\]=='abc' путем выбора всех разрешений компонента Hive, например select, update, create, drop, alter, index, lock, all.
         
-      **Пример**.
+      **Пример.**
         
       ```bash
         curl -H "Content-Type: application/json" -X POST http://localhost:6080/service/plugins/policies -u admin:admin -d '{"policyType":"0","name":"P100","isEnabled":true,"isAuditEnabled":true,"description":"","resources":{"tag":{"values":["tags-test"],"isRecursive":"","isExcludes":false}},"policyItems":[{"groups":["public"],"conditions":[{"type":"accessed-after-expiry","values":[]},{"type":"tag-expression","values":["tags.attr['type']=='abc'"]}],"accesses":[{"type":"hive:select","isAllowed":true},{"type":"hive:update","isAllowed":true},{"type":"hive:create","isAllowed":true},{"type":"hive:drop","isAllowed":true},{"type":"hive:alter","isAllowed":true},{"type":"hive:index","isAllowed":true},{"type":"hive:lock","isAllowed":true},{"type":"hive:all","isAllowed":true}]}],"denyPolicyItems":[],"allowExceptions":[],"denyExceptions":[],"service":"tagdev"}'
@@ -1965,7 +1962,7 @@ _ *Пакеты исправлений для Hive 1.2.1:**
         
       URL-адрес REST: http://&lt;host-name&gt;:6080/service/plugins/policies/&lt;policy-id&gt;
         
-      **Пример**.
+      **Пример.**
         
       ```bash
         curl -H "Content-Type: application/json" -X PUT http://localhost:6080/service/plugins/policies/18 -u admin:admin -d '{"id":18,"guid":"ea78a5ed-07a5-447a-978d-e636b0490a54","isEnabled":true,"createdBy":"Admin","updatedBy":"Admin","createTime":1490802077000,"updateTime":1490802077000,"version":1,"service":"tagdev","name":"P0101","policyType":0,"description":"","resourceSignature":"e5fdb911a25aa7f77af5a9546938d9ed","isAuditEnabled":true,"resources":{"tag":{"values":["tags"],"isExcludes":false,"isRecursive":false}},"policyItems":[{"accesses":[{"type":"hive:select","isAllowed":true},{"type":"hive:update","isAllowed":true},{"type":"hive:create","isAllowed":true},{"type":"hive:drop","isAllowed":true},{"type":"hive:alter","isAllowed":true},{"type":"hive:index","isAllowed":true},{"type":"hive:lock","isAllowed":true},{"type":"hive:all","isAllowed":true}],"users":[],"groups":["public"],"conditions":[{"type":"ip-range","values":["tags.attributes['type']=abc"]}],"delegateAdmin":false}],"denyPolicyItems":[],"allowExceptions":[],"denyExceptions":[],"dataMaskPolicyItems":[],"rowFilterPolicyItems":[]}'

@@ -1,19 +1,16 @@
 ---
 title: Журналы Azure Monitor для Apache Kafka Azure HDInsight
 description: Узнайте, как использовать журналы Azure Monitor для анализа журналов из кластера Apache Kafka в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
-ms.openlocfilehash: 5128ac7608dfce08471f7a7f97ed28a7971e62b2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: d577e96c3ae95103a412b96eba3e1293142f1acd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534453"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932780"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -50,7 +47,7 @@ ms.locfileid: "92534453"
 
 1. В [портал Azure](https://portal.azure.com)выберите рабочую область log Analytics.
 
-2. В меню слева в разделе **Общие** выберите **журналы** . Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить** . Ниже приведены некоторые примеры поисковых запросов:
+2. В меню слева в разделе **Общие** выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить**. Ниже приведены некоторые примеры поисковых запросов:
 
 * Использование диска:
 

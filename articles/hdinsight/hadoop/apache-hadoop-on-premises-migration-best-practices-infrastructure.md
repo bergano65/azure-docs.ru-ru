@@ -1,19 +1,16 @@
 ---
 title: 'Инфраструктура: локальное Apache Hadoop в Azure HDInsight'
 description: Ознакомьтесь с рекомендациями по использованию инфраструктуры в рамках миграции локальных кластеров Hadoop в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: e412b82be911f0b4ba2e5cda51495cdcd7826917
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: f66e13046a34bddfd27912e23ce51f75006fd9fa
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542307"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932141"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 
@@ -80,7 +77,7 @@ ms.locfileid: "92542307"
 
 ## <a name="customize-hdinsight-clusters-using-script-actions"></a>Настройка кластеров HDInsight с помощью действий сценариев
 
-HDInsight предоставляет метод конфигурации кластера с именем **действие сценария** . Действие сценария — это bash-скрипт, который выполняется на узлах в кластере HDInsight и может использоваться для установки дополнительных компонентов и изменения параметров конфигурации.
+HDInsight предоставляет метод конфигурации кластера с именем **действие сценария**. Действие сценария — это bash-скрипт, который выполняется на узлах в кластере HDInsight и может использоваться для установки дополнительных компонентов и изменения параметров конфигурации.
 
 Действия сценариев должны храниться в URI, доступном из кластера HDInsight. Они могут использоваться во время создания или после создания кластера, а также могут быть ограничены только для определенных типов узлов.
 
@@ -152,7 +149,7 @@ New—AzHDInsightCluster `
 
 ## <a name="use-scale-up-and-scale-down-feature-of-clusters"></a>Использование функции увеличения и уменьшения масштаба кластеров
 
-HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта функция позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях. Дополнительные сведения см. на странице
+HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Эта функция позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях. Дополнительные сведения см. в разделе:
 
 * [Масштабирование кластеров HDInsight](../hdinsight-scaling-best-practices.md).
 * [Масштабирование кластеров](../hdinsight-administer-use-portal-linux.md#scale-clusters).

@@ -1,25 +1,22 @@
 ---
 title: Отправка данных для заданий Apache Hadoop в HDInsight
 description: Узнайте, как отправлять данные для заданий Apache Hadoop в HDInsight и получать к ним доступ. Используйте классический интерфейс командной строки Azure, Обозреватель службы хранилища Azure, Azure PowerShell, командную строку Hadoop или Sqoop.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdiseo17may2017,seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 47262e0dc7247e1d514eeb64512c21ff1ae527ab
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a8d21b88298b6092c869b89d48fe4c259c2365b6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534827"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931341"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
 HDInsight предоставляет распределенную файловую систему Hadoop (HDFS) в службе хранилища Azure и Azure Data Lake Storage. Это хранилище включает Gen1 и Gen2. Службы хранилища Azure и Data Lake Storage 1-го поколения и Gen2 разработаны как расширения HDFS. Они позволяют полному набору компонентов в среде Hadoop взаимодействовать непосредственно с данными, которыми он управляет. Служба хранилища Azure, Data Lake Storage 1-го поколения и Gen2 — это разные файловые системы. Системы оптимизированы для хранения данных и вычислений на этих данных. Дополнительные сведения о преимуществах использования службы хранилища Azure см. в статье [Использование службы хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md). См. также [использование Data Lake Storage 1-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-storage-gen1.md)и [Использование Data Lake Storage 2-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы необходимо ознакомиться со следующими требованиями:
 
@@ -58,7 +55,7 @@ HDInsight предоставляет распределенную файлову
 hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 ```
 
-Например, `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
+Например: `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
 
 Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure,/ексампле/Дата/data.txt на самом деле находится в службе хранилища Azure. Можно также использовать следующую ссылку на файл:
 
@@ -99,7 +96,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 |Тип хранилища|Документация|
 |----|----|
 |Хранилище BLOB-объектов Azure|[Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md)|
-|Azure Data Lake Storage 1-го поколения|[Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
+|Хранилище Azure Data Lake Storage 1-го поколения|[Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
 |Azure Data Lake Storage 2-го поколения |[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../data-factory/load-azure-data-lake-storage-gen2.md)|
 
 ### <a name="apache-sqoop"></a>Apache Sqoop

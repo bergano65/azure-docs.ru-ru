@@ -1,18 +1,15 @@
 ---
 title: Исключение при выполнении запросов из представления Hive Apache Ambari в Azure HDInsight
 description: Инструкции по устранению неполадок при выполнении запросов Apache Hive через представление Hive Apache Ambari в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 12/23/2019
-ms.openlocfilehash: aeedda5c26a2e9dc0fa2b228285cfda45d880d29
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 40ef380cd2bd4743b92daf44a0a5b70ade1cbb35
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547390"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98933001"
 ---
 # <a name="exception-when-running-queries-from-apache-ambari-hive-view-in-azure-hdinsight"></a>Исключение при выполнении запросов из представления Hive Apache Ambari в Azure HDInsight
 
@@ -54,13 +51,13 @@ Cannot create property 'errors' on string '<!DOCTYPE html PUBLIC '-//W3C//DTD XH
 
 * Если используется внешний хранилище метаданных Hive, проверьте метрики БД и убедитесь, что база данных не перегружена. Рассмотрите возможность масштабирования уровня базы данных хранилище метаданных.
 
-* Убедитесь, что параллельные Ops включены (это позволяет потокам обработчика HTTP выполняться параллельно). Чтобы проверить это значение, запустите [Apache Ambari](../hdinsight-hadoop-manage-ambari.md) и **перейдите к**  >  **Configs**  >  **расширенному**  >  **пользовательскому кусту** Hive. Значение для `hive.server2.parallel.ops.in.session` должно быть `true` .
+* Убедитесь, что параллельные Ops включены (это позволяет потокам обработчика HTTP выполняться параллельно). Чтобы проверить это значение, запустите [Apache Ambari](../hdinsight-hadoop-manage-ambari.md) и **перейдите к**  >    >  **расширенному**  >  **пользовательскому кусту** Hive. Значение для `hive.server2.parallel.ops.in.session` должно быть `true` .
 
 * Убедитесь, что номер SKU виртуальной машины кластера слишком мал для загрузки. Рассмотрите возможность разделения работы между несколькими кластерами. Дополнительные сведения см. [в разделе Выбор типа кластера](../hdinsight-capacity-planning.md#choose-a-cluster-type).
 
 * Если Ranger установлен в кластере, проверьте наличие слишком большого количества политик Ranger, которые необходимо вычислить для каждого запроса. Найдите дублирующиеся или ненужные политики.
 
-* Проверьте значение **размера кучи HiveServer2** из Ambari. Выберите параметры **Hive**  >  **конфигурации** Hive  >  **Settings**  >  **Оптимизация** . Убедитесь, что значение превышает 10 ГБ. Внесите необходимые изменения, чтобы оптимизировать производительность.
+* Проверьте значение **размера кучи HiveServer2** из Ambari. Выберите параметры   >  **конфигурации** Hive  >    >  **Оптимизация**. Убедитесь, что значение превышает 10 ГБ. Внесите необходимые изменения, чтобы оптимизировать производительность.
 
 * Убедитесь, что запрос Hive настроен правильно. Дополнительные сведения см. [в статье Оптимизация запросов Apache Hive в Azure HDInsight](../hdinsight-hadoop-optimize-hive-query.md).
 
@@ -72,4 +69,4 @@ Cannot create property 'errors' on string '<!DOCTYPE html PUBLIC '-//W3C//DTD XH
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -1,20 +1,20 @@
 ---
 title: Непрерывные рабочие процессы для приложений LUIS
-description: Как реализовать рабочие процессы CI/CD для DevOps для Language Understanding (LUIS).
+description: Как реализовать рабочие процессы CI/CD для DevOps для Распознавание речи (LUIS).
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/5/2020
-ms.openlocfilehash: 1ce78e02c652777b524964559b579530f3e022fa
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 215399e4b131162097e54c15b84cb6fa7dac72e3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561313"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932533"
 ---
 # <a name="continuous-integration-and-continuous-delivery-workflows-for-luis-devops"></a>Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps
 
-Разработчики программного обеспечения, разрабатывающих приложение Language Understanding (LUIS), могут применять DevOps рекомендации по управлению [версиями](luis-concept-devops-sourcecontrol.md), [автоматизированным сборкам](luis-concept-devops-automation.md), [тестированию](luis-concept-devops-testing.md)и [управлению выпусками](luis-concept-devops-automation.md#release-management). В этой статье описываются основные понятия реализации автоматизированных сборок для LUIS.
+Разработчики программного обеспечения, разрабатывающих приложение Распознавание речи (LUIS), могут применять DevOps рекомендации по управлению [версиями](luis-concept-devops-sourcecontrol.md), [автоматизированным сборкам](luis-concept-devops-automation.md), [тестированию](luis-concept-devops-testing.md)и [управлению выпусками](luis-concept-devops-automation.md#release-management). В этой статье описываются основные понятия реализации автоматизированных сборок для LUIS.
 
 ## <a name="build-automation-workflows-for-luis"></a>Создание рабочих процессов автоматизации для LUIS
 
@@ -41,7 +41,7 @@ ms.locfileid: "97561313"
 
 * [Инструменты Luis Framework CLI](https://github.com/microsoft/botbuilder-tools/tree/master/packages/LUIS) позволяют работать с приложениями и версиями Luis, обучать, тестировать и публиковать их в службе Luis.
 
-* [Azure CLI](/cli/azure/?view=azure-cli-latest) , чтобы запросить подписки Azure, получить ключи создания и прогнозирования Luis, а затем создать [субъект-службу](/cli/azure/ad/sp?view=azure-cli-latest) Azure, используемый для проверки подлинности с помощью автоматизации.
+* [Azure CLI](/cli/azure/) , чтобы запросить подписки Azure, получить ключи создания и прогнозирования Luis, а затем создать [субъект-службу](/cli/azure/ad/sp) Azure, используемый для проверки подлинности с помощью автоматизации.
 
 * [НЛУ. Средство DevOps](https://github.com/microsoft/NLU.DevOps) для [тестирования приложения Luis](luis-concept-devops-testing.md) и анализа результатов теста.
 
@@ -96,7 +96,7 @@ ms.locfileid: "97561313"
 
 Как правило, рекомендуется непрерывная доставка только в нерабочие среды, например в разработку и промежуточное хранение. Большинству команд требуется процесс проверки и утверждения вручную для развертывания в рабочей среде. В рабочем развертывании может потребоваться убедиться, что это происходит, когда основные пользователи команды разработчиков доступны для поддержки или в периоды низкой нагрузки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [реализовать DevOps для Luis с GitHub](luis-how-to-devops-with-github.md)
 * Узнайте, как написать [Рабочий процесс для действий GitHub с помощью НЛУ. DevOps](https://github.com/Azure-Samples/LUIS-DevOps-Template/blob/master/docs/4-pipeline.md)

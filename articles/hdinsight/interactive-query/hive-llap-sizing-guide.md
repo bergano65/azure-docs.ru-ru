@@ -7,12 +7,12 @@ author: aniket-ms
 ms.author: aadnaik
 ms.reviewer: HDI HiveLLAP Team
 ms.date: 05/05/2020
-ms.openlocfilehash: 626b061cc237f7238d47863a3e1ed88961d2f742
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 7df75077785c66215008e045ef0b1e451ba29f57
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680537"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98931110"
 ---
 # <a name="azure-hdinsight-interactive-query-cluster-hive-llap-sizing-guide"></a>Руководство по настройке размера кластера Azure HDInsight Interactive Query (Hive LLAP)
 
@@ -216,7 +216,7 @@ _ *num_llap_nodes** — указывает количество узлов, ис
  - Емкость очереди управления рабочей нагрузкой = 20 ГБ
  - Емкость очереди по умолчанию = 10 ГБ
 
-При наличии 20 ГБ в очереди управления рабочей нагрузкой план ресурсов может указать `QUERY_PARALLELISM` значение 5, что означает, что Управление рабочей нагрузкой может запускать пять Tez AMs с размером контейнера 4 ГБ каждый. Если `QUERY_PARALLELISM` значение превышает емкость, вы можете увидеть некоторые Tez AMs в состоянии зависания `ACCEPTED` . Hiveserver2 Interactive не может отправить фрагменты запросов в AMs Tez, которые не находятся в `RUNNING` состоянии.
+При наличии 20 ГБ в очереди управления рабочей нагрузкой план ресурсов может указать `QUERY_PARALLELISM` значение 5, что означает, что Управление рабочей нагрузкой может запускать пять Tez AMs с размером контейнера 4 ГБ каждый. Если `QUERY_PARALLELISM` значение превышает емкость, может появиться, что некоторые Tez AMs перестают отвечать в `ACCEPTED` состоянии. Hiveserver2 Interactive не может отправить фрагменты запросов в AMs Tez, которые не находятся в `RUNNING` состоянии.
 
 
 #### <a name="next-steps"></a>**Следующие шаги**

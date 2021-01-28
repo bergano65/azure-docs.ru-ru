@@ -1,19 +1,16 @@
 ---
 title: Использование Apache Kafka в HDInsight с Центром Интернета вещей
 description: Узнайте, как использовать Apache Kafka в HDInsight с Центром Интернета вещей. Проект Центра Интернета вещей Kafka Connect предоставляет соединитель источника и приемника для Kafka. Соединитель источника считывает данные из Центра Интернета вещей, а соединитель приемника записывает данные в Центр Интернета вещей.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/26/2019
-ms.openlocfilehash: 0722119b35ecebf3ed1e7a377707de02a6c127bf
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 7980003dd63e5e51d87f85542029a1f25e7223df
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825201"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98932870"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
@@ -123,7 +120,7 @@ API Kafka Connect позволяет реализовать соединител
     |`bootstrap.servers=localhost:9092`|Замените `localhost:9092` значение на узлы брокера из предыдущего шага.|Настраивает изолированную конфигурацию для пограничных узлов, чтобы найти брокеры Kafka.|
     |`key.converter=org.apache.kafka.connect.json.JsonConverter`|`key.converter=org.apache.kafka.connect.storage.StringConverter`|Это изменение можно проверить с помощью отправителя консоли, входящего в состав Kafka. Для различных отправителей и потребителей вам могут понадобиться различные преобразователи. Сведения об использовании других значений преобразователей см. в разделе [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md) .|
     |`value.converter=org.apache.kafka.connect.json.JsonConverter`|`value.converter=org.apache.kafka.connect.storage.StringConverter`|То же, что и выше.|
-    |Недоступно|`consumer.max.poll.records=10`|Добавить в конец файла. Это изменение предназначено для предотвращения времени ожидания в соединителе приемника, ограничивая его 10 записями за раз. Дополнительные сведения см. в статье [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).|
+    |Недоступно|`consumer.max.poll.records=10`|Добавить в конец файла. Это изменение предназначено для предотвращения времени ожидания в соединителе приемника, ограничивая его 10 записями за раз. Дополнительные сведения см. на веб-сайте [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).|
 
 1. Чтобы сохранить файл, нажмите клавиши __CTRL+X__, затем — __Y__ и __ВВОД__.
 
