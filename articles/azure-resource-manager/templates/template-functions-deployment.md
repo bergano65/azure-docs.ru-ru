@@ -2,13 +2,13 @@
 title: Функции шаблонов — развертывание
 description: Описывает функции, используемые в шаблоне Azure Resource Manager (шаблон ARM) для получения сведений о развертывании.
 ms.topic: conceptual
-ms.date: 11/18/2020
-ms.openlocfilehash: e63caef669a2c28d29cd0bbd649b0997cea14ee1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 01/27/2021
+ms.openlocfilehash: 438afc947b07ac7425de365a2d63c427cf53e2ff
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920506"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943476"
 ---
 # <a name="deployment-functions-for-arm-templates"></a>Функции развертывания для шаблонов ARM
 
@@ -33,6 +33,7 @@ ms.locfileid: "96920506"
 
 Эта функция возвращает объект, который передается во время развертывания. Свойства возвращаемого объекта различаются в зависимости от того, что вы используете:
 
+* Развертывание шаблона или спецификации шаблона.
 * Развертывание шаблона, который является локальным файлом, или развертывание шаблона, который является удаленным файлом, доступ к которому осуществляется через универсальный код ресурса (URI).
 * развертывание в группе ресурсов или развертывание в одной из других областей ([Подписка Azure](deploy-to-subscription.md), [Группа управления](deploy-to-management-group.md)или [клиент](deploy-to-tenant.md)).
 
@@ -66,6 +67,31 @@ ms.locfileid: "96920506"
   "properties": {
     "templateLink": {
       "uri": ""
+    },
+    "template": {
+      "$schema": "",
+      "contentVersion": "",
+      "parameters": {},
+      "variables": {},
+      "resources": [],
+      "outputs": {}
+    },
+    "templateHash": "",
+    "parameters": {},
+    "mode": "",
+    "provisioningState": ""
+  }
+}
+```
+
+При развертывании спецификации шаблона в группе ресурсов: функция возвращает следующий формат:
+
+```json
+{
+  "name": "",
+  "properties": {
+    "templateLink": {
+      "id": ""
     },
     "template": {
       "$schema": "",
@@ -426,12 +452,12 @@ output crossOutput string = crossParameter
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | stringOutput | Строка | вариант 1 |
 | intOutput | Int | 1 |
 | objectOutput | Объект | {"one": "a", "two": "b"} |
-| arrayOutput | Массив | [1, 2, 3] |
+| arrayOutput | Array | [1, 2, 3] |
 | crossOutput | Строка | вариант 1 |
 
 Дополнительные сведения об использовании параметров см. [в разделе Параметры в шаблонах ARM](template-parameters.md).
@@ -444,7 +470,7 @@ output crossOutput string = crossParameter
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Описание: |
+| Параметр | Обязательно | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | variableName |Да |Строка |Имя переменной, которую необходимо вернуть. |
 
@@ -564,15 +590,15 @@ output exampleOutput4 object = var4
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Type | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
 | exampleOutput1 | Строка | myVariable |
-| exampleOutput2 | Массив | [1, 2, 3, 4] |
+| exampleOutput2 | Array | [1, 2, 3, 4] |
 | exampleOutput3 | Строка | myVariable |
 | exampleOutput4 |  Объект | {"property1": "value1", "property2": "value2"} |
 
 Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне ARM](template-variables.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Описание разделов в шаблоне ARM см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

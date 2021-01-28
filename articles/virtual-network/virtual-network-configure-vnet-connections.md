@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: d9a87eca6a6c66d116817ced0f534a75033d48b9
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 9975e40f7d4f3b69c9281efd0288389740bf92ec
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221482"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943655"
 ---
 # <a name="configure-and-validate-virtual-network-or-vpn-connections"></a>Настройка и проверка виртуальной сети или VPN-подключений
 
@@ -64,7 +64,7 @@ VPN-шлюзы Azure обеспечивают гибкость при Орган
 
 ![Параметры для проверки конфигурации пиринга виртуальной сети](./media/virtual-network-configure-vnet-connections/4034496_en_1.png)
  
-Для Azure PowerShell выполните команду [Get-azurermvirtualnetworkpeering —](/powershell/module/azurerm.network/get-azurermvirtualnetworkpeering?view=azurermps-4.1.0) , чтобы получить пиринг виртуальной сети. Ниже приведен пример:
+Для Azure PowerShell выполните команду [Get-azurermvirtualnetworkpeering —](/powershell/module/azurerm.network/get-azurermvirtualnetworkpeering) , чтобы получить пиринг виртуальной сети. Ниже приведен пример:
 
 ```
 PS C:\Users\User1> Get-AzureRmVirtualNetworkPeering -VirtualNetworkName Vnet10-01 -ResourceGroupName dev-vnets
@@ -248,17 +248,17 @@ BGP также может включить транзитную маршрути
 
 Сведения о настройке VPN-подключения, использующего BGP, см. в статье [Настройка BGP на VPN-шлюзах Azure с помощью PowerShell](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md).
 
-Включите протокол BGP для шлюза виртуальной сети, создав для него автономную систему (как). Основные шлюзы не поддерживают BGP. Чтобы проверить номер SKU шлюза, перейдите к разделу **Обзор** колонки **VPN-шлюза** в портал Azure. Если номер SKU является **базовым**, необходимо изменить номер SKU (см. раздел изменение [размера шлюза](/powershell/module/azurerm.network/resize-azurermvirtualnetworkgateway?view=azurermps-4.1.0&viewFallbackFrom=azurermps-4.0.0)) на **VpnGw1**. 
+Включите протокол BGP для шлюза виртуальной сети, создав для него автономную систему (как). Основные шлюзы не поддерживают BGP. Чтобы проверить номер SKU шлюза, перейдите к разделу **Обзор** колонки **VPN-шлюза** в портал Azure. Если номер SKU является **базовым**, необходимо изменить номер SKU (см. раздел изменение [размера шлюза](/powershell/module/azurerm.network/resize-azurermvirtualnetworkgateway?viewFallbackFrom=azurermps-4.0.0)) на **VpnGw1**. 
 
-Проверка номера SKU приведет к простою 20 – 30 минут. Как только шлюз будет иметь правильный номер SKU, его можно добавить с помощью командлета PowerShell [Set-AzureRmVirtualNetworkGateway](/powershell/module/azurerm.network/set-azurermvirtualnetworkgateway?view=azurermps-3.8.0) . Когда вы настроите значение AS, IP-адрес узла BGP для шлюза будет предоставляться автоматически.
+Проверка номера SKU приведет к простою 20 – 30 минут. Как только шлюз будет иметь правильный номер SKU, его можно добавить с помощью командлета PowerShell [Set-AzureRmVirtualNetworkGateway](/powershell/module/azurerm.network/set-azurermvirtualnetworkgateway) . Когда вы настроите значение AS, IP-адрес узла BGP для шлюза будет предоставляться автоматически.
 
-Необходимо вручную указать `LocalNetworkGateway` номер AS и адрес узла BGP. Значения и можно задать `ASN` с `-BgpPeeringAddress` помощью команды [New-азурермлокалнетворкгатевай](/powershell/module/azurerm.network/new-azurermlocalnetworkgateway?view=azurermps-4.1.0) или [Set-азурермлокалнетворкгатевай](/powershell/module/azurerm.network/set-azurermlocalnetworkgateway?view=azurermps-4.1.0) PowerShell командлет. Некоторые цифры зарезервированы для Azure, и их нельзя использовать, как описано в статье [о BGP с VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md#faq).
+Необходимо вручную указать `LocalNetworkGateway` номер AS и адрес узла BGP. Значения и можно задать `ASN` с `-BgpPeeringAddress` помощью команды [New-азурермлокалнетворкгатевай](/powershell/module/azurerm.network/new-azurermlocalnetworkgateway) или [Set-азурермлокалнетворкгатевай](/powershell/module/azurerm.network/set-azurermlocalnetworkgateway) PowerShell командлет. Некоторые цифры зарезервированы для Azure, и их нельзя использовать, как описано в статье [о BGP с VPN-шлюзом Azure](../vpn-gateway/vpn-gateway-bgp-overview.md#faq).
 
-Для объекта соединения должен быть включен BGP. Можно задать значение с `-EnableBGP` `$True` помощью [New-AzureRmVirtualNetworkGatewayConnection](/powershell/module/azurerm.network/new-azurermvirtualnetworkgatewayconnection?view=azurermps-4.1.0) или [Set-AzureRmVirtualNetworkGatewayConnection](/powershell/module/azurerm.network/set-azurermvirtualnetworkgatewayconnection?view=azurermps-4.1.0).
+Для объекта соединения должен быть включен BGP. Можно задать значение с `-EnableBGP` `$True` помощью [New-AzureRmVirtualNetworkGatewayConnection](/powershell/module/azurerm.network/new-azurermvirtualnetworkgatewayconnection) или [Set-AzureRmVirtualNetworkGatewayConnection](/powershell/module/azurerm.network/set-azurermvirtualnetworkgatewayconnection).
 
 ### <a name="validate-the-bgp-configuration"></a>Проверка конфигурации BGP
 
-Чтобы проверить, правильно ли настроен протокол BGP, можно запустить `get-AzureRmVirtualNetworkGateway` и `get-AzureRmLocalNetworkGateway` командлеты. Затем Обратите внимание на выходные данные, связанные с BGP, в `BgpSettingsText` части. Пример:
+Чтобы проверить, правильно ли настроен протокол BGP, можно запустить `get-AzureRmVirtualNetworkGateway` и `get-AzureRmLocalNetworkGateway` командлеты. Затем Обратите внимание на выходные данные, связанные с BGP, в `BgpSettingsText` части. Пример.
 
 ```
 {

@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/24/2020
-ms.openlocfilehash: 2a4f24da51b9e9e78c3df3e7d1437a380306e300
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 571dcd41da9be578e69d9a8ad40ed05784ae26a8
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95975588"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941976"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Подключение Operations Manager к Azure Monitor
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Чтобы сохранить существующие инвестиции в [System Center Operations Manager](/system-center/scom/key-concepts?view=sc-om-1807) и использовать расширенные возможности с Azure Monitor, можно интегрировать Operations Manager с рабочей областью log Analytics. Это позволяет использовать возможности журналов в Azure Monitor при продолжении использования Operations Manager:
+Чтобы сохранить существующие инвестиции в [System Center Operations Manager](/system-center/scom/key-concepts) и использовать расширенные возможности с Azure Monitor, можно интегрировать Operations Manager с рабочей областью log Analytics. Это позволяет использовать возможности журналов в Azure Monitor при продолжении использования Operations Manager:
 
 * мониторинг работоспособности ИТ-служб с помощью Operations Manager;
 * управление интеграцией с решениями ITSM, поддерживающими управление различными инцидентами и неполадками;
@@ -104,7 +104,7 @@ ms.locfileid: "95975588"
 Во время первой регистрации группы управления Operations Manager в рабочей области Log Analytics параметр для указания конфигурации прокси-сервера для группы управления недоступен в консоли управления.  Этот параметр станет доступным после успешной регистрации группы управления в службе.  Для обхода этой проблемы вам необходимо обновить конфигурацию прокси-сервера системы с помощью Netsh в системе, в которой выполняется консоль управления, чтобы настроить интеграцию, и обновить все серверы управления в группе управления.  
 
 1. Откройте командную строку с повышенными привилегиями.
-   a. Перейдите в **Пуск** и введите **cmd**.
+   а. Перейдите в **Пуск** и введите **cmd**.
    b. Щелкните правой кнопкой мыши пункт **Командная строка** и выберите команду Запуск от имени администратора * *.
 1. Введите следующую команду и нажмите клавишу **ВВОД**:
 
@@ -342,7 +342,7 @@ union *
 * В исходном носителе в папке `\ManagementPacks` для System Center Operations Manager 2016 и более поздних версий.
 * От последнего накопительного пакета обновления, примененного к вашей группе управления. Для Operations Manager 2012, исходная папка —, `%ProgramFiles%\Microsoft System Center 2012\Operations Manager\Server\Management Packs for Update Rollups` а для 2012 R2 она находится в папке `System Center 2012 R2\Operations Manager\Server\Management Packs for Update Rollups` .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о добавлении функций и сборе данных см. в разделе [добавление Azure Monitor решений из коллекция решений](../insights/solutions.md).
 

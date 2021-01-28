@@ -6,12 +6,12 @@ ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 5008da99b63cabba41dade9a745fbd5853345737
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 637e66956eadf57199d2e5191368d6355e2cd118
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734972"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941896"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Использование Приватного канала Azure для безопасного подключения сетей к Azure Monitor
 
@@ -217,13 +217,13 @@ ms.locfileid: "98734972"
 
 Процесс, описанный выше, можно автоматизировать с помощью шаблонов Azure Resource Manager, интерфейсов RESTFUL и командной строки.
 
-Чтобы создать области частной связи и управлять ими, используйте [REST API](/rest/api/monitor/private%20link%20scopes%20(preview)) или [Azure CLI (AZ отслеживать частную ссылку на область)](/cli/azure/monitor/private-link-scope?view=azure-cli-latest).
+Чтобы создать области частной связи и управлять ими, используйте [REST API](/rest/api/monitor/private%20link%20scopes%20(preview)) или [Azure CLI (AZ отслеживать частную ссылку на область)](/cli/azure/monitor/private-link-scope).
 
-Для управления доступом к сети используйте флаги `[--ingestion-access {Disabled, Enabled}]` и `[--query-access {Disabled, Enabled}]` в [рабочих областях Log Analytics](/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest) или [компонентах Application Insights](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest).
+Для управления доступом к сети используйте флаги `[--ingestion-access {Disabled, Enabled}]` и `[--query-access {Disabled, Enabled}]` в [рабочих областях Log Analytics](/cli/azure/monitor/log-analytics/workspace) или [компонентах Application Insights](/cli/azure/ext/application-insights/monitor/app-insights/component).
 
 ## <a name="collect-custom-logs-over-private-link"></a>Получение пользовательских журналов по частной ссылке
 
-Учетные записи хранения используются в процессе приема пользовательских журналов. По умолчанию используются учетные записи хранения, управляемые службой. Однако для приема пользовательских журналов через приватные каналы необходимо использовать собственные учетные записи хранения и связать их с рабочими областями Log Analytics. Дополнительные сведения о настройке таких учетных записей см. в разделе об [использовании командной строки](/cli/azure/monitor/log-analytics/workspace/linked-storage?view=azure-cli-latest).
+Учетные записи хранения используются в процессе приема пользовательских журналов. По умолчанию используются учетные записи хранения, управляемые службой. Однако для приема пользовательских журналов через приватные каналы необходимо использовать собственные учетные записи хранения и связать их с рабочими областями Log Analytics. Дополнительные сведения о настройке таких учетных записей см. в разделе об [использовании командной строки](/cli/azure/monitor/log-analytics/workspace/linked-storage).
 
 Дополнительные сведения об использовании собственной учетной записи хранения см. в разделе [Принадлежащие заказчику учетные записи хранения для приема журналов](private-storage.md).
 
@@ -252,7 +252,7 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 ### <a name="programmatic-access"></a>Программный доступ
 
-Чтобы использовать REST API, [CLI](/cli/azure/monitor?view=azure-cli-latest) или PowerShell с Azure Monitor в частных сетях, добавьте в свой брандмауэр [теги службы](../../virtual-network/service-tags-overview.md) **AzureActiveDirectory** и **AzureResourceManager**.
+Чтобы использовать REST API, [CLI](/cli/azure/monitor) или PowerShell с Azure Monitor в частных сетях, добавьте в свой брандмауэр [теги службы](../../virtual-network/service-tags-overview.md) **AzureActiveDirectory** и **AzureResourceManager**.
 
 Добавление этих тегов позволяет выполнять такие действия, как запрос данных журнала, создание рабочих областей Log Analytics и компонентов искусственного интеллекта и управление ими.
 
@@ -264,6 +264,6 @@ $ sudo /opt/microsoft/omsagent/bin/omsadmin.sh -w <workspace id> -s <workspace k
 
 Если вы подключаетесь к ресурсам Azure Monitor по частной ссылке, трафик к этому ресурсу должен пройти через закрытую конечную точку, настроенную в сети. Чтобы включить частную конечную точку, обновите параметры DNS, как описано в [подсоединении к частной конечной точке](#connect-to-a-private-endpoint). Некоторые браузеры используют собственные параметры DNS вместо заданных. Браузер может попытаться подключиться к Azure Monitor общедоступным конечным точкам и полностью обойти частную ссылку. Убедитесь, что параметры браузера не переопределяют или кэшируют старые параметры DNS. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [закрытом хранилище](private-storage.md)

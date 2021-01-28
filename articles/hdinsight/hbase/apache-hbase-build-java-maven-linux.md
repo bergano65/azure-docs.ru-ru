@@ -1,19 +1,16 @@
 ---
 title: Создание клиента Java HBase для Azure HDInsight с помощью Apache Maven
 description: Сведения об использовании Apache Maven для создания приложения Java для Apache HBase и его последующем развертывании в HBase в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seodec18, devx-track-java
 ms.date: 12/24/2019
-ms.openlocfilehash: 61b8aaf9ea61ebe85eac6708d7390c386dea2696
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 13616cf99db39ec4dac1d13e3dcd2cefc5a44614
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547917"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942966"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
@@ -21,7 +18,7 @@ ms.locfileid: "92547917"
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache HBase в HDInsight. См. статью [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
 
@@ -48,7 +45,7 @@ cd C:\HDI
 
 ## <a name="create-a-maven-project"></a>Создание проекта Maven
 
-1. Введите следующую команду, чтобы создать проект Maven с именем **hbaseapp** :
+1. Введите следующую команду, чтобы создать проект Maven с именем **hbaseapp**:
 
     ```cmd
     mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -95,7 +92,7 @@ notepad pom.xml
 </dependency>
 ```  
 
-В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core** . При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](https://search.maven.org/artifact/org.apache.hbase/hbase-client/1.1.2/jar) , чтобы получить дополнительную информацию об этой зависимости.
+В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core**. При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](https://search.maven.org/artifact/org.apache.hbase/hbase-client/1.1.2/jar) , чтобы получить дополнительную информацию об этой зависимости.
 
 > [!IMPORTANT]  
 > Номер версии hbase-client должен соответствовать версии Apache HBase, которая поставляется с кластером HDInsight. Воспользуйтесь следующей таблицей, чтобы найти правильный номер версии.
@@ -645,8 +642,8 @@ public class DeleteTable {
 
     Этот файл содержит два модуля:
 
-   * **Add-HDInsightFile**  — используется для загрузки файлов в кластер;
-   * **Start-HBaseExample**  — используется для запуска классов, созданных ранее.
+   * **Add-HDInsightFile** — используется для загрузки файлов в кластер;
+   * **Start-HBaseExample** — используется для запуска классов, созданных ранее.
 
 2. Сохраните `hbase-runner.psm1` файл в `hbaseapp` каталоге.
 

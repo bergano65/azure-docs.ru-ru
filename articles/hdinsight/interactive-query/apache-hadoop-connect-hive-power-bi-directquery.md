@@ -1,19 +1,16 @@
 ---
 title: См. статью интерактивный запрос данных Hive с помощью Power BI в Azure HDInsight.
 description: Использование Microsoft Power BI для визуализации данных Interactive Query Hive из Azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
-ms.openlocfilehash: 92e94c911acb701b1ccf8e39636d152cc5bfb575
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7f249bb0e81bf3a371b8743a304ef49baffaed7a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534810"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941394"
 ---
 # <a name="visualize-interactive-query-apache-hive-data-with-microsoft-power-bi-using-direct-query-in-hdinsight"></a>Визуализация интерактивных запросов Apache Hive данных с помощью Microsoft Power BI с использованием прямого запроса в HDInsight
 
@@ -26,8 +23,8 @@ ms.locfileid: "92534810"
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить действия, указанные в этой статье, вам потребуется:
 
-* **Кластер HDInsight** . Это может быть кластер HDInsight с Apache Hive или новый кластер Interactive Query. Сведения о создании кластеров см. в [этом разделе](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
-* **[Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/)** . Копию этой программы можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=45331).
+* **Кластер HDInsight**. Это может быть кластер HDInsight с Apache Hive или новый кластер Interactive Query. Сведения о создании кластеров см. в [этом разделе](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* **[Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/)**. Копию этой программы можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=45331).
 
 ## <a name="load-data-from-hdinsight"></a>Загрузка данных из HDInsight
 
@@ -35,29 +32,29 @@ ms.locfileid: "92534810"
 
 1. Запустите Power BI Desktop.
 
-2. В строке меню выберите **Домашняя страница**  >  **получить**  >  **Дополнительные данные.** ...
+2. В строке меню выберите **Домашняя страница**  >  **получить**  >  **Дополнительные данные.**...
 
     ![Power BI получения данных в HDInsight](./media/apache-hadoop-connect-hive-power-bi-directquery/hdinsight-power-bi-open-odbc.png)
 
 3. В окне **Получение данных** введите **hdinsight** в поле поиска.  
 
-4. В результатах поиска выберите **HDInsight Interactive Query** и нажмите кнопку **подключить** .  Если вы не видите **интерактивный запрос HDInsight** , необходимо обновить Power BI Desktop до последней версии.
+4. В результатах поиска выберите **HDInsight Interactive Query** и нажмите кнопку **подключить**.  Если вы не видите **интерактивный запрос HDInsight**, необходимо обновить Power BI Desktop до последней версии.
 
 5. Нажмите кнопку **продолжить** , чтобы закрыть диалоговое окно " **Подключение к службе стороннего производителя** ".
 
-6. В окне " **интерактивный запрос HDInsight** " введите следующие сведения и нажмите кнопку " **ОК** ":
+6. В окне " **интерактивный запрос HDInsight** " введите следующие сведения и нажмите кнопку " **ОК**":
 
-    |Свойство. | Значение |
+    |Свойство | Значение |
     |---|---|
-    |Сервер |Введите имя кластера, например *myiqcluster.azurehdinsight.NET* .|
+    |Сервер |Введите имя кластера, например *myiqcluster.azurehdinsight.NET*.|
     |База данных |Введите **значение по умолчанию** для этой статьи.|
     |Режим подключения к данным |Выберите **DirectQuery** для этой статьи.|
 
     ![Интерактивный запрос HDInsight, подключение DirectQuery в Power BI](./media/apache-hadoop-connect-hive-power-bi-directquery/hdinsight-interactive-query-power-bi-connect.png)
 
-7. Введите учетные данные HTTP и нажмите кнопку **подключить** . Имя пользователя по умолчанию — **admin** .
+7. Введите учетные данные HTTP и нажмите кнопку **подключить**. Имя пользователя по умолчанию — **admin**.
 
-8. В окне **навигатора** в левой области выберите **хивесамплетале** .
+8. В окне **навигатора** в левой области выберите **хивесамплетале**.
 
 9. В главном окне выберите **Load (загрузить** ).
 
@@ -67,11 +64,11 @@ ms.locfileid: "92534810"
 
 Продолжите из последней процедуры.
 
-1. В области визуализации выберите **Map** — значок земного шара. В главном окне появится Универсальная схема.
+1. В области визуализации выберите **Map**— значок земного шара. В главном окне появится Универсальная схема.
 
     ![Настройка отчета HDInsight Power BI](./media/apache-hadoop-connect-hive-power-bi-directquery/hdinsight-power-bi-customize.png)
 
-2. В области "Поля" выберите **страна** и **devicemake** . Через несколько секунд в главном окне появится геосхема мира с точками данных.
+2. В области "Поля" выберите **страна** и **devicemake**. Через несколько секунд в главном окне появится геосхема мира с точками данных.
 
 3. Разверните карту.
 

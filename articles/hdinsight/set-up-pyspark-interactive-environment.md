@@ -2,25 +2,22 @@
 title: PySpark интерактивной среды с помощью средств Azure HDInsight
 description: Сведения о создании и отправке запросов и скриптов с помощью средств Azure HDInsight для Visual Studio Code.
 keywords: VScode,средства Azure HDInsight,Hive,Python,PySpark,Spark,HDInsight,Hadoop,LLAP,Interactive Hive,Interactive Query
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-python
 ms.date: 04/23/2020
-ms.openlocfilehash: 7cf86824bef5b6f521df0f0446d5337e2b7c418a
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 337a9f3f2ea25e5a4d4fa4204a0f3fa4dcc9369b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130142"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940647"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
 Ниже описано, как настроить интерактивную среду PySpark в VSCode. Этот шаг предназначен только для пользователей, не являющихся пользователями Windows.
 
-Мы используем команду **python или pip** для сборки виртуального окружения в основной папке. Если вы хотите использовать другую версию, вам нужно вручную изменить версию по умолчанию команды **python или pip** . Дополнительные сведения см. в статье о команде [update-alternatives](https://linux.die.net/man/8/update-alternatives).
+Мы используем команду **python или pip** для сборки виртуального окружения в основной папке. Если вы хотите использовать другую версию, вам нужно вручную изменить версию по умолчанию команды **python или pip**. Дополнительные сведения см. в статье о команде [update-alternatives](https://linux.die.net/man/8/update-alternatives).
 
 1. Установите [Python](https://www.python.org/downloads/) и [PIP](https://pip.pypa.io/en/stable/installing/).
 
@@ -31,7 +28,7 @@ ms.locfileid: "93130142"
      > [!NOTE]
      > Рекомендуется вручную установить Python вместо использования версии macOS по умолчанию.
 
-2. Установите **virtualenv** , выполнив команду, приведенную ниже.
+2. Установите **virtualenv**, выполнив команду, приведенную ниже.
 
    ```bash
    pip install virtualenv
@@ -59,7 +56,7 @@ sudo apt-get install python-dev
 
 * HDInsight для VS Code: [видео](https://go.microsoft.com/fwlink/?linkid=858706)
 
-### <a name="tools-and-extensions"></a>Средства и расширения
+### <a name="tools-and-extensions"></a>Инструменты и расширения
 
 * [Использование средств Azure HDInsight для Visual Studio Code](hdinsight-for-vscode.md)
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](spark/apache-spark-intellij-tool-plugin.md)

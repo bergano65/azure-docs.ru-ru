@@ -1,5 +1,5 @@
 - name: Документация по Шлюзу Azure Data Box
-  href: /azure/databox-gateway/
+  href: ./index.yml
 - name: Обзор
   Expanded: true
   items:

@@ -1,18 +1,15 @@
 ---
 title: Сбой создания кластера с ошибкой Домаиннотфаунд в Azure HDInsight
 description: Действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/23/2020
-ms.openlocfilehash: 79cd3b687dc8a2eb838146a6dc8a40b184a55fe6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 54096e6d1741a7be9f50d4b4f7f0fcabbe880588
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005951"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943353"
 ---
 # <a name="scenario-cluster-creation-fails-with-domainnotfound-error-in-azure-hdinsight"></a>Сценарий: сбой создания кластера с ошибкой Домаиннотфаунд в Azure HDInsight
 
@@ -22,11 +19,11 @@ ms.locfileid: "96005951"
 
 При создании кластера HDI Secure (Корпоративный пакет безопасности) происходит сбой с `DomainNotFound` сообщением об ошибке.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Неверные параметры DNS.
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 При развертывании кластеров, присоединенных к домену, HDI создает внутреннее имя пользователя и пароль в AAD DS (для каждого кластера) и присоединяет все узлы кластера к этому домену. Присоединение к домену выполняется с помощью средств Samba. Выполните указанные ниже предварительные требования.
 
@@ -46,6 +43,6 @@ ms.locfileid: "96005951"
   * Запуск скрипта с именем пользователя и паролем
   * Сценарий выполнит проверку связи, создаст необходимые файлы конфигурации, а затем — домен. В случае удачного завершения настройки DNS будут хорошими.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

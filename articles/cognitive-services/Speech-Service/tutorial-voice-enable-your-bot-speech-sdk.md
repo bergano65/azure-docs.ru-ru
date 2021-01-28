@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6b231b5af208a51cbe8f4370c2dc532be1ba3af9
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 9ee7116efe931d101a1505bc2d9d866d8ea5b92a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024931"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943446"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Учебник. Включение программы-робота с помощью речевого пакета SDK
 
@@ -60,7 +60,7 @@ ms.locfileid: "95024931"
 
 - КОМПЬЮТЕР с Windows 10 с рабочим микрофоном и динамиками (или наушниками)
 - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии с установленной рабочей нагрузкой **ASP.NET и Web Development**
-- [.NET Framework среды выполнения 4.6.1](https://dotnet.microsoft.com/download) или выше
+- [Платформа .NET Framework среды выполнения 4.6.1](https://dotnet.microsoft.com/download) или выше
 - Учетная запись Azure. [Зарегистрируйтесь бесплатно](https://azure.microsoft.com/free/cognitive-services/)
 - Учетная запись [GitHub](https://github.com/)
 - [Git для Windows](https://git-scm.com/download/win)
@@ -107,9 +107,9 @@ ms.locfileid: "95024931"
 
 На этом этапе убедитесь, что в группе ресурсов (**спичечоботтуториал-ResourceGroup**) есть ресурс речи:
 
-| Имя | Type  | Расположение |
+| Название | Тип  | Расположение |
 |------|-------|----------|
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 ### <a name="create-an-azure-app-service-plan"></a>Создание плана службы приложений Azure
 
@@ -128,10 +128,10 @@ ms.locfileid: "95024931"
 
 На этом этапе убедитесь, что ваша группа ресурсов (**спичечоботтуториал-ResourceGroup**) имеет два ресурса:
 
-| Имя | Type  | Расположение |
+| Название | Тип  | Расположение |
 |------|-------|----------|
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 ## <a name="build-an-echo-bot"></a>Создание эхо-робота
 
@@ -167,7 +167,7 @@ ms.locfileid: "95024931"
 1. Установка [эмулятора Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases/latest) версии 4.3.0 или более поздней
 2. Запустите эмулятор Bot Framework и откройте программу Bot:
    * **Файл**  ->  **Откройте Bot**.
-3. Введите URL-адрес для Bot. Пример:
+3. Введите URL-адрес для Bot. Пример.
 
    ```
    http://localhost:3978/api/messages
@@ -213,11 +213,11 @@ ms.locfileid: "95024931"
 1. Браузер по умолчанию должен открыть и отобразить страницу, которая читает: "ваш робот готов!".
 1. На этом этапе проверьте группу ресурсов **спичечоботтуториал-ResourceGroup** в портал Azure и убедитесь, что эти три ресурса:
 
-| Имя | Type  | Расположение |
+| Название | Тип  | Расположение |
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 ## <a name="enable-web-sockets"></a>Включение протокола WebSocket
 
@@ -227,14 +227,14 @@ ms.locfileid: "95024931"
 2. В области навигации слева в разделе **Параметры** щелкните **Конфигурация**.
 3. Перейдите на вкладку **Общие параметры** .
 4. Выберите переключатель для **веб-сокетов** и установите для него значение **вкл**.
-5. Выберите команду **Сохранить**.
+5. Нажмите **Сохранить**.
 
 > [!TIP]
 > Вы можете использовать элементы управления в верхней части страницы службы приложений Azure, чтобы прерывать или перезапускать службу. Это может быть полезным при устранении неполадок.
 
 ## <a name="create-a-channel-registration"></a>Создание регистрации канала
 
-Теперь, когда вы создали службу приложений Azure для размещения программы Bot, следующим шагом является создание **регистрации каналов Bot**. Создание регистрации канала является необходимым условием для регистрации программы-робота с каналами ленты, включая прямой канал речи. Если вы хотите узнать больше о том, как программы-роботы использовать каналы, см. статью [Подключение канала Bot к каналам](/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0).
+Теперь, когда вы создали службу приложений Azure для размещения программы Bot, следующим шагом является создание **регистрации каналов Bot**. Создание регистрации канала является необходимым условием для регистрации программы-робота с каналами ленты, включая прямой канал речи. Если вы хотите узнать больше о том, как программы-роботы использовать каналы, см. статью [Подключение канала Bot к каналам](/azure/bot-service/bot-service-manage-channels).
 
 1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Создание регистрации каналов Azure Bot <span class="docon docon-navigate-external x-hidden-focus"></span></a>
 2. Вам будет предложено ввести некоторые сведения:
@@ -244,18 +244,18 @@ ms.locfileid: "95024931"
    * В качестве **расположения** выберите **Западная часть США**.
      * В качестве **ценовой** категории выберите **F0**.
      * В поле **Конечная точка обмена сообщениями** введите URL-адрес для веб – приложения, `/api/messages` к которому добавляется путь в конце. Например, если глобально уникальное имя приложения было **EchoBot20190805125647**, конечная точка обмена сообщениями будет выглядеть так: `https://EchoBot20190805125647.azurewebsites.net/api/messages/` .
-     * Для **Application Insights** можно установить значение **Off**. Дополнительные сведения см. в статье [Bot Analytics](/azure/bot-service/bot-service-manage-analytics?view=azure-bot-service-4.0).
+     * Для **Application Insights** можно установить значение **Off**. Дополнительные сведения см. в статье [Bot Analytics](/azure/bot-service/bot-service-manage-analytics).
      * Игнорировать **Автоматическое создание идентификатора приложения и пароля**.
 5. В нижней части колонки **регистрации каналов Bot** щелкните **создать**.
 
 На этом этапе проверьте группу ресурсов **спичечоботтуториал-ResourceGroup** в портал Azure. Теперь он должен отображать по крайней мере четыре ресурса:
 
-| Имя | Type  | Расположение |
+| Название | Тип  | Расположение |
 |------|-------|----------|
 | EchoBot20190805125647 | Служба приложений | западная часть США |
 | SpeechEchoBotTutorial-AppServicePlan | План службы приложений | западная часть США |
 | Спичечоботтуториал-Ботрегистратион-8726 | Регистрация каналов Bot | Глобальный |
-| SpeechEchoBotTutorial-Speech | Службы Cognitive Services | западная часть США |
+| SpeechEchoBotTutorial-Speech | Cognitive Services | западная часть США |
 
 > [!IMPORTANT]
 > В ресурсе регистрации каналов Bot будет показан глобальный регион, даже если вы выбрали "Западная часть США". Это ожидаемое поведение.
@@ -291,14 +291,14 @@ ms.locfileid: "95024931"
    * Просмотрите текст на странице **Настройка прямого перевода строки**, а затем раскройте раскрывающееся меню **учетной записи службы** .
    * Выберите созданный ранее ресурс речи (например, **спичечоботтуториал-Speech**) в меню, чтобы связать робот с ключом подписки на речь.
    * Игнорировать остальные необязательные поля.
-   * Выберите команду **Сохранить**.
+   * Нажмите **Сохранить**.
 
 1. На панели навигации по **управлению Bot** щелкните **Параметры**.
    * Установите флажок **включить конечную точку потоковой передачи**. Это необходимо для создания протокола связи, созданного на основе веб-сокетов между программой Bot и каналом голосовой речи прямой линии.
-   * Выберите команду **Сохранить**.
+   * Нажмите **Сохранить**.
 
 > [!TIP]
-> Дополнительные сведения см. в статье [Подключение программы-робота к прямой речи](/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0). На этой странице содержатся дополнительные сведения и известные проблемы.
+> Дополнительные сведения см. в статье [Подключение программы-робота к прямой речи](/azure/bot-service/bot-service-channel-connect-directlinespeech). На этой странице содержатся дополнительные сведения и известные проблемы.
 
 ## <a name="run-the-windows-voice-assistant-client"></a>Запуск клиента Windows Voice Assistant
 
@@ -323,7 +323,7 @@ ms.locfileid: "95024931"
 
 Если в главном окне приложения появляется сообщение об ошибке, используйте следующую таблицу для обнаружения и устранения ошибки:
 
-| Error | Что следует сделать? |
+| Ошибка | Что следует сделать? |
 |-------|----------------------|
 |Ошибка (Аусентикатионфаилуре): сбой обновления WebSocket с ошибкой проверки подлинности (401). Проверьте правильность ключа подписки (или маркера авторизации) и имя региона.| На странице Параметры приложения убедитесь, что вы правильно указали ключ подписки на речь и его регион.<br>Убедитесь, что ваш ключ речи и область ключей введены правильно. |
 |Ошибка (Коннектионфаилуре): соединение было закрыто удаленным узлом. Код ошибки: 1011. Сведения об ошибке: не удалось подключиться к Bot перед отправкой сообщения | Убедитесь, что [установлен флажок "включить конечную точку потоковой передачи"](#register-the-direct-line-speech-channel) и/или [переключаемые **веб-сокеты**](#enable-web-sockets) .<br>Убедитесь, что служба приложений Azure запущена. Если это так, попробуйте перезапустить службу приложений.|
@@ -412,7 +412,7 @@ ms.locfileid: "95024931"
 
 В исходном коде клиента помощника Windows Voice просмотрите эти файлы, чтобы просмотреть код, используемый для включения обнаружения ключевых слов:
 
-1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel?preserve-view=true&view=azure-node-latest#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
+1. [`VoiceAssistantClient\Models.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/Models.cs) включает вызов метода Speech SDK [`KeywordRecognitionModel.fromFile()`](/javascript/api/microsoft-cognitiveservices-speech-sdk/keywordrecognitionmodel#fromfile-string-) , который используется для создания экземпляра модели из локального файла на диске.
 1. [`VoiceAssistantClient\MainWindow.xaml.cs`](https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant/blob/master/clients/csharp-wpf/VoiceAssistantClient/MainWindow.xaml.cs) включает в себя вызов метода Speech SDK [`DialogServiceConnector.StartKeywordRecognitionAsync()`](/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector.startkeywordrecognitionasync) , который активирует непрерывное обнаружение ключевых слов.
 
 ## <a name="optional-change-the-language-and-bot-voice"></a>Используемых Изменение языка и Bot-голоса
@@ -480,5 +480,5 @@ ms.locfileid: "95024931"
   * [Расценки службы ботов](https://azure.microsoft.com/pricing/details/bot-service/)
   * [Служба распознавания речи](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/)
 * Создание и развертывание собственного робота с поддержкой голоса:
-  * Создайте [оболочку](https://dev.botframework.com/)Bot-Bot. Зарегистрируйте его с помощью прямого голосового [канала](/azure/bot-service/bot-service-channel-connect-directlinespeech?view=azure-bot-service-4.0) и [Настройте робот для голосовой связи](/azure/bot-service/directline-speech-bot?view=azure-bot-service-4.0)
+  * Создайте [оболочку](https://dev.botframework.com/)Bot-Bot. Зарегистрируйте его с помощью прямого голосового [канала](/azure/bot-service/bot-service-channel-connect-directlinespeech) и [Настройте робот для голосовой связи](/azure/bot-service/directline-speech-bot)
   * Знакомство с существующими [решениями для Bot-платформы](https://microsoft.github.io/botframework-solutions/index): создание [виртуального помощника](https://microsoft.github.io/botframework-solutions/overview/virtual-assistant-solution/) и [его расширение для перевода голосовых голосов](https://microsoft.github.io/botframework-solutions/clients-and-channels/tutorials/enable-speech/1-intro/)

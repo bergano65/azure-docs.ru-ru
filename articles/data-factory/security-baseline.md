@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ff777f079116942eba32e49f359c7f7e0b99f65d
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 690dcca23aedb129090b3bf4f0da8874705b5fcc
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555786"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941470"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
 
@@ -960,7 +960,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 В большинстве случаев шаблоны базовых виртуальных машин Майкрософт, Объединенные с конфигурацией требуемого состояния службы автоматизации Azure, могут помочь в собрании и обслуживании требований безопасности.
 
-* [Сведения о том, как скачать шаблон виртуальной машины](../virtual-machines/windows/download-template.md)
+* [Сведения о том, как скачать шаблон виртуальной машины](/previous-versions/azure/virtual-machines/windows/download-template)
 
 * [Сведения о создании шаблонов Azure Resource Manager](../virtual-machines/windows/ps-template.md)
 

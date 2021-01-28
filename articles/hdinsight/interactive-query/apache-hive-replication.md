@@ -1,18 +1,15 @@
 ---
 title: Как использовать репликацию Apache Hive в кластерах Azure HDInsight
 description: Узнайте, как использовать репликацию Hive в кластерах HDInsight для репликации хранилище метаданных Hive и Azure Data Lake Storage Gen 2 Data Lake.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/08/2020
-ms.openlocfilehash: af74392b3368a25e5d238f774292c80de5f91c65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3dd894a46b666703f64e44336c0bf022da8a063a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857747"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941331"
 ---
 # <a name="how-to-use-apache-hive-replication-in-azure-hdinsight-clusters"></a>Как использовать репликацию Apache Hive в кластерах Azure HDInsight
 
@@ -140,7 +137,7 @@ repl dump tpcds_orc from 2925;
 
 Репликация обычно настраивается однонаправленным способом между первичной и вторичной репликой, где основная подсчитывает запросы на чтение и запись. Дополнительный кластер предназначен только для запросов на чтение. Операции записи разрешены на сервере-получателе в случае аварии, но обратная репликация должна быть настроена обратно в базу данных-источник.
 
-:::image type="content" source="media/apache-hive-replication/replication-pattern.png" alt-text="Схема репликации Hive":::
+:::image type="content" source="media/apache-hive-replication/replication-pattern.png" alt-text="Шаблон репликации Hive":::
 
 Для репликации Hive доступно множество шаблонов, в том числе первичная — вторичная, Центральная и резервная.
 
@@ -220,7 +217,7 @@ repl dump tpcds_orc from 2925;
    |-|
    |2960|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 

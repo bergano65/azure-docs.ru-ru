@@ -1,19 +1,16 @@
 ---
 title: Запуск настраиваемых программ MapReduce в Azure HDInsight
 description: Когда и как выполнять пользовательские программы Apache MapReduce в кластерах Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
-ms.openlocfilehash: 1dcc2a944fc527e4cbc8c7c1072503377ecb5798
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0f7a3676db14dbf61d3976690c8f9c71a660f889
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89505273"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943230"
 ---
 # <a name="run-custom-mapreduce-programs"></a>Запуск настраиваемых программ MapReduce
 
@@ -70,7 +67,7 @@ ms.locfileid: "89505273"
 
     Эта команда отправляет задание MapReduce в YARN. Входной файл — `/example/data/sample.log`, а выходной каталог — `/example/data/logoutput`. Файлы ввода и любые файлы вывода хранятся в хранилище кластера по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight](apache-hadoop-dotnet-csharp-mapreduce-streaming.md)
 * [Разработка программ MapReduce на Java для Apache Hadoop в HDInsight](apache-hadoop-develop-deploy-java-mapreduce-linux.md)

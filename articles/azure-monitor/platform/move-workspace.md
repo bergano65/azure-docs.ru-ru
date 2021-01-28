@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/12/2020
-ms.openlocfilehash: 8d7fde6661a4a133f689016559f010767c662417
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 4915fd69940450f22548ae326879b5729b687248
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699752"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942075"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
@@ -49,7 +49,7 @@ ms.locfileid: "94699752"
 > **Обновление путей к ресурсам**
 > - После перемещения рабочей области все Azure или внешние ресурсы, указывающие на рабочую область, необходимо проверить и обновить, чтобы она указывала на новый целевой путь ресурса.
 > 
->   *Примеры*
+>   *Примеры:*
 >   - [Azure Monitor правила генерации оповещений](alerts-resource-move.md)
 >   - Сторонние приложения
 >   - Пользовательские сценарии
@@ -66,7 +66,7 @@ ms.locfileid: "94699752"
 
 ### <a name="delete-using-powershell"></a>Удаление с помощью PowerShell
 
-Чтобы удалить решения с помощью PowerShell, используйте командлет [Remove-азресаурце](/powershell/module/az.resources/remove-azresource?view=azps-2.8.0) , как показано в следующем примере:
+Чтобы удалить решения с помощью PowerShell, используйте командлет [Remove-азресаурце](/powershell/module/az.resources/remove-azresource) , как показано в следующем примере:
 
 ``` PowerShell
 Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -ResourceName "ChangeTracking(<workspace-name>)" -ResourceGroupName <resource-group-name>
@@ -120,5 +120,5 @@ Move-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000
 > После операции перемещения удаленные решения и ссылки на учетную запись службы автоматизации необходимо перенастроить, чтобы восстановить предыдущее состояние рабочей области.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](../../azure-resource-manager/management/move-support-resources.md).

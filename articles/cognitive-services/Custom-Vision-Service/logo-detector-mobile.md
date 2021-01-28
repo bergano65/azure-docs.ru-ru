@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: e5e344aa84bfc6912266720083f0cd15f575883c
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 76e7b061670f603007cefd6d7aed503e0e0d3d6b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95740256"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98941783"
 ---
 # <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство по Распознавание логотипов служб Azure на изображениях с камеры
 
@@ -36,7 +36,7 @@ ms.locfileid: "95740256"
 - [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/)
 - Рабочая нагрузка Xamarin для Visual Studio (см. дополнительные сведения в статье [Установка Xamarin в Visual Studio 2017](/xamarin/cross-platform/get-started/installation/windows)).
 - эмулятор iOS или Android для Visual Studio;
-- [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) (необязательно).
+- [Azure CLI](/cli/azure/install-azure-cli-windows) (необязательно).
 
 ## <a name="get-the-source-code"></a>Получение исходного кода
 

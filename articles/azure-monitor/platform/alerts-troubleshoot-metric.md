@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: troubleshooting
 ms.date: 01/21/2021
 ms.subservice: alerts
-ms.openlocfilehash: 11dc71578b3d94ce41fe040557184ff32bcf3240
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: f7425e1cf34348b7742b739ef5440a5cb0355077
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661803"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942094"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Устранение неполадок в оповещениях метрик Azure Monitor 
 
@@ -107,7 +107,7 @@ Azure Monitor оповещения заблаговременно уведомл
 
 ## <a name="make-metric-alerts-occur-every-time-my-condition-is-met"></a>Создавать оповещения метрик при каждом выполнении условия
 
-Оповещения метрик по умолчанию имеют состояние, поэтому дополнительные предупреждения не запускаются, если в заданный временной ряд уже произошло оповещение. Если вы хотите сделать определенное правило оповещений метрик без отслеживания состояния и получать оповещение о каждой оценке, в которой выполняется условие предупреждения, создайте правило оповещения программным способом (например, с помощью [Диспетчер ресурсов](./alerts-metric-create-templates.md), [PowerShell](/powershell/module/az.monitor/?view=azps-3.6.1), службы [RESTful](/rest/api/monitor/metricalerts/createorupdate), [интерфейса командной строки](/cli/azure/monitor/metrics/alert?view=azure-cli-latest)) и задайте для свойства " *автосмягчение* " значение "false".
+Оповещения метрик по умолчанию имеют состояние, поэтому дополнительные предупреждения не запускаются, если в заданный временной ряд уже произошло оповещение. Если вы хотите сделать определенное правило оповещений метрик без отслеживания состояния и получать оповещение о каждой оценке, в которой выполняется условие предупреждения, создайте правило оповещения программным способом (например, с помощью [Диспетчер ресурсов](./alerts-metric-create-templates.md), [PowerShell](/powershell/module/az.monitor/), службы [RESTful](/rest/api/monitor/metricalerts/createorupdate), [интерфейса командной строки](/cli/azure/monitor/metrics/alert)) и задайте для свойства " *автосмягчение* " значение "false".
 
 > [!NOTE] 
 > Если правило генерации оповещений метрики не позволяет устранить неполадки, запущенные предупреждения, поэтому даже после того, как условие не будет выполнено, события будут оставаться в состоянии срабатывания до истечения 30 дней.
@@ -175,9 +175,9 @@ Azure Monitor оповещения заблаговременно уведомл
 
 ### <a name="from-api"></a>Из API
 
-- PowerShell: используйте [Get-AzMetricAlertRuleV2](/powershell/module/az.monitor/get-azmetricalertrulev2?view=azps-3.7.0).
+- PowerShell: используйте [Get-AzMetricAlertRuleV2](/powershell/module/az.monitor/get-azmetricalertrulev2).
 - REST API: [выведите список по подписке](/rest/api/monitor/metricalerts/listbysubscription).
-- Azure CLI: используйте [az monitor metrics alert list](/cli/azure/monitor/metrics/alert?view=azure-cli-latest#az-monitor-metrics-alert-list).
+- Azure CLI: используйте [az monitor metrics alert list](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-list).
 
 ## <a name="managing-alert-rules-using-resource-manager-templates-rest-api-powershell-or-azure-cli"></a>Управление правилами генерации оповещений с помощью диспетчер ресурсов шаблонов, REST API, PowerShell или Azure CLI
 
@@ -196,14 +196,14 @@ Azure Monitor оповещения заблаговременно уведомл
 
 Убедитесь, что вы используете правильные командлеты PowerShell для оповещений метрик:
 
-- Командлеты PowerShell для оповещений метрик доступны в модуле [Az.Monitor](/powershell/module/az.monitor/?view=azps-3.6.1)
-- Обязательно используйте командлеты, которые заканчиваются на "v2", для новых (не классической) оповещений метрик (например, [Add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2?view=azps-3.6.1)).
+- Командлеты PowerShell для оповещений метрик доступны в модуле [Az.Monitor](/powershell/module/az.monitor/)
+- Обязательно используйте командлеты, которые заканчиваются на "v2", для новых (не классической) оповещений метрик (например, [Add-AzMetricAlertRuleV2](/powershell/module/az.monitor/add-azmetricalertrulev2)).
 
 ### <a name="azure-cli"></a>Azure CLI
 
 Убедитесь, что вы используете команды CLI правой кнопкой мыши для оповещений метрик:
 
-- Команды интерфейса командной строки для оповещений метрик начинаются с `az monitor metrics alert`. Ознакомьтесь со [справочником по Azure CLI](/cli/azure/monitor/metrics/alert?view=azure-cli-latest), в котором описывается синтаксис.
+- Команды интерфейса командной строки для оповещений метрик начинаются с `az monitor metrics alert`. Ознакомьтесь со [справочником по Azure CLI](/cli/azure/monitor/metrics/alert), в котором описывается синтаксис.
 - Ознакомьтесь с [примером, в котором показано, как использовать CLI для оповещений метрик](./alerts-metric.md#with-azure-cli).
 - Чтобы создать оповещение для пользовательской метрики, обязательно добавьте к имени метрики соответствующее пространство имен метрики: NAMESPACE.METRIC
 
@@ -253,7 +253,7 @@ Azure Monitor оповещения заблаговременно уведомл
 - В каждом условии можно выбрать только одно значение для каждого измерения.
 - Параметр "выбрать все текущие и будущие значения" нельзя использовать (Select \* ).
 - Если метрики, настроенные в различных условиях, поддерживают одно и то же измерение, то настроенное значение измерения должно быть явно задано одинаково для всех этих метрик (в соответствующих условиях).
-Пример:
+Пример.
     - Рассмотрим правило генерации оповещений метрик, которое определено в учетной записи хранения и отслеживает два условия:
         * Всего **транзакций** > 5
         * Среднее **SuccessE2ELatency** > 250 мс
@@ -284,6 +284,6 @@ Azure Monitor оповещения заблаговременно уведомл
 
 Если нижняя граница имеет отрицательное значение, это означает, что она правдоподобные, чтобы метрика достигла нулевого значения, учитывая неравномерное поведение метрики. Вы можете выбрать более высокий уровень чувствительности или большую *степень гранулярности статистической обработки (период)* , чтобы сделать модель менее конфиденциальной, или воспользоваться функцией *пропустить данные перед тем* , как исключить последние иррегулаити из исторических данных, используемых для построения модели.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с предупреждениями и уведомлениями см. [в разделе Устранение неполадок в Azure Monitor оповещениях](alerts-troubleshoot.md).

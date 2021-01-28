@@ -116,10 +116,16 @@
       href: concepts-device-oem-security-practices.md
 - name: Практические руководства
   items:
-    - name: Подключение MXChip IoT DevKit к Центру Интернета вещей
-      href: how-to-connect-mxchip-iot-devkit.md
-    - name: Подготовка устройств с помощью пользовательских политик распределения
-      href: how-to-use-custom-allocation-policies.md
+    - name: Разработка
+      items:
+        - name: Подключение MXChip IoT DevKit к Центру Интернета вещей
+          href: how-to-connect-mxchip-iot-devkit.md
+        - name: Как отправлять дополнительные данные с устройств
+          href: how-to-send-additional-data.md
+        - name: Подготовка устройств с помощью пользовательских политик распределения
+          href: how-to-use-custom-allocation-policies.md
+        - name: Взаимодействие с DPS через протокол MQTT
+          href: iot-dps-mqtt-support.md
     - name: Управление службой подготовки устройств
       items:
         - name: Управление регистрациями с помощью портала
@@ -138,8 +144,6 @@
           href: how-to-control-access.md
         - name: Настройка фильтрации IP
           href: iot-dps-ip-filtering.md
-        - name: Настройка службы подготовки устройств с помощью Azure CLI
-          href: how-to-manage-dps-with-cli.md
     - name: Подготовка устройств IoT Edge
       items:
         - name: Linux
@@ -148,12 +152,8 @@
         - name: Windows
           href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
           maintainContext: true
-    - name: Как отправлять дополнительные данные с устройств
-      href: how-to-send-additional-data.md
     - name: Устранение неполадок
       href: how-to-troubleshoot-dps.md
-    - name: Взаимодействие с DPS через протокол MQTT
-      href: iot-dps-mqtt-support.md
 - name: Справочник
   items:
     - name: REST API

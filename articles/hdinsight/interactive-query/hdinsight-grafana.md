@@ -1,18 +1,15 @@
 ---
 title: Использование Grafana в Azure HDInsight
 description: Узнайте, как получить доступ к панели мониторинга Grafana с кластерами Apache Hadoop в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 12/27/2019
-ms.openlocfilehash: 7750544367044cab2a0243577c200025bb9ff693
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd2a09b6c3196302dcb74fd363481706021a4d4d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86083038"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940871"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Доступ к Grafana в Azure HDInsight
 
@@ -24,7 +21,7 @@ ms.locfileid: "86083038"
 
 ## <a name="create-an-apache-hadoop-cluster"></a>Создание кластера Apache Hadoop
 
-См. [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md). Для **типа кластера**выберите **Spark**, **Kafka**, **HBase**или **Interactive Query**.
+См. [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md). Для **типа кластера** выберите **Spark**, **Kafka**, **HBase** или **Interactive Query**.
 
 ## <a name="access-the-grafana-dashboard"></a>Доступ к панели мониторинга Grafana
 
