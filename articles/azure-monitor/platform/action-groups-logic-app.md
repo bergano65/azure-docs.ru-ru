@@ -6,12 +6,12 @@ ms.author: dukek
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.subservice: alerts
-ms.openlocfilehash: f76d28018fdf55314593dabc44ef1e9a1dab9494
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f8e5b557c2d307659c086dc41480c6bed25430c3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995103"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936422"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -41,7 +41,7 @@ ms.locfileid: "95995103"
 
 3.  Присвойте **Имя** приложению логики, выберите значение **Группа ресурсов** и т. д.
 
-    ![Создайте приложение логики](media/action-groups-logic-app/create-logic-app-dialog.png "Создайте приложение логики")
+    ![Создайте приложение логики](media/action-groups-logic-app/create-logic-app-dialog.png "Создание приложения логики")
 
 4.  Выберите **Создать**, чтобы создать приложение логики. Отображается всплывающее сообщение, указывающее на создание приложения логики. Выберите **Launch Resource** (Запустить ресурс), чтобы открыть **Конструктор Logic Apps**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "95995103"
                         "trackingId": "...",
                         "impactStartTime": "2018-03-22T21:40:00.0000000Z",
                         "impactMitigationTime": "2018-03-22T21:41:00.0000000Z",
-                        "impactedServices": "[{"ImpactedRegions"}]",
+                        "impactedServices": "[{\"ImpactedRegions\"}]",
                         "defaultLanguageTitle": "...",
                         "defaultLanguageContent": "...",
                         "stage": "Active",
@@ -293,7 +293,7 @@ ms.locfileid: "95995103"
 ## <a name="calling-other-applications-besides-microsoft-teams"></a>Вызов других приложений помимо Microsoft Teams
 Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../../connectors/apis-list.md).  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите [обзор оповещений журнала действий Azure](./alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../service-health/alerts-activity-log-service-notifications-portal.md).
 * Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](./action-groups.md).

@@ -3,12 +3,12 @@ title: Мониторинг с помощью многошаговых веб-т
 description: Настройка многошаговых веб-тестов для мониторинга веб-приложений в Azure Application Insights
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.openlocfilehash: 2df8b7450423c901665090608da83f68b43b30e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0031971dc2ccd2a9e681220dd835f46d33e36dbb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87024782"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98934854"
 ---
 # <a name="multi-step-web-tests"></a>Многошаговые веб-тесты
 
@@ -37,7 +37,7 @@ ms.locfileid: "87024782"
 > [!WARNING]
 > Мы не рекомендуем использовать средство записи многошаговых веб-тестов. Оно было разработано для статических страниц HTML с простыми взаимодействиями и не предоставляет возможностей для работы с современными веб-страницами.
 
-Рекомендации по созданию веб-тестов в Visual Studio см. в [официальной документации по Visual Studio 2019](/visualstudio/test/how-to-create-a-web-service-test?view=vs-2019).
+Рекомендации по созданию веб-тестов в Visual Studio см. в [официальной документации по Visual Studio 2019](/visualstudio/test/how-to-create-a-web-service-test).
 
 ## <a name="upload-the-web-test"></a>Отправка веб-теста
 

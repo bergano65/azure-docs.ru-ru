@@ -393,7 +393,7 @@
     - name: Сценарии автоматизации выставления счетов
       href: manage/cost-management-automation-scenarios.md
     - name: Общие сведения об API выставления счетов Azure
-      href: manage/usage-rate-card-overview.md
+      href: /rest/api/cost-management/retail-prices/azure-retail-prices
     - name: REST API выставления счетов Azure
       href: /rest/api/billing
     - name: Общие сведения об API потребления ресурсов Azure

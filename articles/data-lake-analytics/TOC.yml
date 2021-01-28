@@ -68,7 +68,7 @@
             - name: Основы
               href: data-lake-analytics-u-sql-get-started.md
             - name: Справочник по языку
-              href: 'https://docs.microsoft.com/u-sql'
+              href: /u-sql
             - name: Каталог
               href: data-lake-analytics-u-sql-catalog.md
             - name: Определяемые пользователем операторы

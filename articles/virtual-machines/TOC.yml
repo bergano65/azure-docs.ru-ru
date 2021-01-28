@@ -474,7 +474,7 @@
               href: av2-series.md
             - name: Серия B с накапливаемыми ресурсами
               href: sizes-b-series-burstable.md
-            - name: Серия DCv2
+            - name: "Серия\_DCsv2"
               href: dcv2-series.md
             - name: Серии Dv2 и DSv2
               href: dv2-dsv2-series.md

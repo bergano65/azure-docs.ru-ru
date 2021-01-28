@@ -6,12 +6,12 @@ ms.service: virtual-network
 ms.topic: how-to
 ms.date: 08/26/2019
 ms.author: allensu
-ms.openlocfilehash: bc504034f8d4565dd365b8d92dc2b2e6eadc1dae
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: fa89a458b23d18bc6fddfca9cf6d9f2a16f91669
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223335"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98934928"
 ---
 # <a name="move-an-azure-virtual-network-to-another-region-by-using-azure-powershell"></a>Перемещение виртуальной сети Azure в другой регион с помощью Azure PowerShell
 
@@ -42,19 +42,19 @@ ms.locfileid: "98223335"
 
 Чтобы экспортировать виртуальную сеть и развернуть целевую виртуальную сеть с помощью PowerShell, выполните следующие действия.
 
-1. Войдите в подписку Azure с помощью команды [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) , а затем следуйте инструкциям на экране.
+1. Войдите в подписку Azure с помощью команды [Connect-азаккаунт](/powershell/module/az.accounts/connect-azaccount) , а затем следуйте инструкциям на экране.
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
 
-1. Получите идентификатор ресурса виртуальной сети, которую необходимо переместить в целевой регион, а затем поместите ее в переменную с помощью команды [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+1. Получите идентификатор ресурса виртуальной сети, которую необходимо переместить в целевой регион, а затем поместите ее в переменную с помощью команды [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork):
 
     ```azurepowershell-interactive
     $sourceVNETID = (Get-AzVirtualNetwork -Name <source-virtual-network-name> -ResourceGroupName <source-resource-group-name>).Id
     ```
 
-1. Экспортируйте исходную виртуальную сеть в файл JSON в каталоге, в котором выполняется команда [Export-азресаурцеграуп](/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0):
+1. Экспортируйте исходную виртуальную сеть в файл JSON в каталоге, в котором выполняется команда [Export-азресаурцеграуп](/powershell/module/az.resources/export-azresourcegroup):
    
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
@@ -98,7 +98,7 @@ ms.locfileid: "98223335"
 
     ```
   
-1. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
+1. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](/powershell/module/az.resources/get-azlocation), выполнив следующую команду:
 
     ```azurepowershell-interactive
 
@@ -195,20 +195,20 @@ ms.locfileid: "98223335"
 
 1. Сохраните файл *\<resource-group-name>.json*.
 
-1. Создайте группу ресурсов в целевом регионе для развертывания целевой виртуальной сети с помощью команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0):
+1. Создайте группу ресурсов в целевом регионе для развертывания целевой виртуальной сети с помощью команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup):
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-1. Разверните отредактированный *\<resource-group-name> JSON* -файл в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+1. Разверните отредактированный *\<resource-group-name> JSON* -файл в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment):
 
     ```azurepowershell-interactive
 
     New-AzResourceGroupDeployment -ResourceGroupName <target-resource-group-name> -TemplateFile <source-resource-group-name>.json
     ```
 
-1. Чтобы убедиться, что ресурсы были созданы в целевом регионе, используйте [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+1. Чтобы убедиться, что ресурсы были созданы в целевом регионе, используйте [Get-азресаурцеграуп](/powershell/module/az.resources/get-azresourcegroup) и [Get-азвиртуалнетворк](/powershell/module/az.network/get-azvirtualnetwork):
     
     ```azurepowershell-interactive
 
@@ -224,7 +224,7 @@ ms.locfileid: "98223335"
 
 После развертывания виртуальной сети для запуска или удаления виртуальной сети в целевом регионе удалите группу ресурсов, созданную в целевом регионе, и перемещенная виртуальная сеть будет удалена. 
 
-Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
+Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup):
 
 ```azurepowershell-interactive
 
@@ -235,14 +235,14 @@ Remove-AzResourceGroup -Name <target-resource-group-name>
 
 Чтобы зафиксировать изменения и завершить перемещение виртуальной сети, выполните одно из следующих действий.
 
-* Удалите группу ресурсов с помощью команды [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
+* Удалите группу ресурсов с помощью команды [Remove-азресаурцеграуп](/powershell/module/az.resources/remove-azresourcegroup):
 
     ```azurepowershell-interactive
 
     Remove-AzResourceGroup -Name <source-resource-group-name>
     ```
 
-* Удалите исходную виртуальную сеть с помощью [Remove-азвиртуалнетворк](/powershell/module/az.network/remove-azvirtualnetwork?view=azps-2.6.0):  
+* Удалите исходную виртуальную сеть с помощью [Remove-азвиртуалнетворк](/powershell/module/az.network/remove-azvirtualnetwork):  
     ``` azurepowershell-interactive
 
     Remove-AzVirtualNetwork -Name <source-virtual-network-name> -ResourceGroupName <source-resource-group-name>

@@ -10,21 +10,21 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 12/03/2020
 ms.author: mbullwin
-ms.openlocfilehash: 370883b90902dad5a6e222897e68e1d3e9dd2acf
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b4153b07b153a9ee0b16dc032ab5e7810e236d7d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98738021"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936267"
 ---
 # <a name="deploy-an-anomaly-detector-module-to-iot-edge"></a>Развертывание модуля детектора аномалий для IoT Edge
 
 Узнайте, как развернуть модуль [обнаружения аномалий](../anomaly-detector-container-howto.md) Cognitive Services на устройстве IOT Edge. После развертывания в IoT Edge модуль выполняется в IoT Edge вместе с другими модулями в качестве экземпляров контейнера. Он предоставляет те же интерфейсы API, что и экземпляр контейнера детекторов аномалий, выполняющийся в стандартной среде контейнера DOCKER. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
-* Установка [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
+* Установка [Azure CLI](/cli/azure/install-azure-cli).
 * [Центр Интернета вещей](../../../iot-hub/iot-hub-create-through-portal.md) и устройство [IOT Edge](../../../iot-edge/quickstart-linux.md) .
 
 [!INCLUDE [Create a Cognitive Services Anomaly Detector resource](../includes/create-anomaly-detector-resource.md)]
@@ -88,7 +88,7 @@ ms.locfileid: "98738021"
 
 ![Домашняя страница контейнера](../../../../includes/media/cognitive-services-containers-api-documentation/container-webpage.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Проверьте раздел [Установка и запуск контейнеров](../anomaly-detector-container-configuration.md) , чтобы получить образ контейнера и запустить контейнер.
 * Ознакомьтесь со статьей о [конфигурации контейнеров](../anomaly-detector-container-configuration.md).

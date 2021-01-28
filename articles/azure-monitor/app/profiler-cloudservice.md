@@ -7,12 +7,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 69a9ba316a1fda14a2e85d4d981321d4b2f9f289
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75927534bf62fa4733bb552906ffa7e3a6e76286
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88930321"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935617"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
@@ -24,7 +24,7 @@ ms.locfileid: "88930321"
 Application Insights Profiler поставляется с расширением системы диагностики Azure. Вам достаточно настроить систему диагностики Azure, чтобы установить Profiler и отправлять профили в ресурс Application Insights.
 
 ## <a name="enable-profiler-for-azure-cloud-services"></a>Включение Profiler для облачных служб Azure
-1. Убедитесь, что вы используете [.NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Если используется семейство ОС 4, необходимо установить .NET Framework 4.6.1 или более поздней версии с [задачей запуска](../../cloud-services/cloud-services-dotnet-install-dotnet.md). Семейство ОС версии 5 включает совместимую версию .NET Framework по умолчанию. 
+1. Убедитесь, что вы используете [платформа .NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Если используется семейство ОС 4, необходимо установить платформа .NET Framework 4.6.1 или более поздней версии с [задачей запуска](../../cloud-services/cloud-services-dotnet-install-dotnet.md). Семейство ОС версии 5 включает совместимую версию платформа .NET Framework по умолчанию. 
 
 1. Добавьте [Application Insights для облачных служб Azure](./cloudservices.md?toc=%2fazure%2fazure-monitor%2ftoc.json).
 
@@ -38,11 +38,11 @@ Application Insights Profiler поставляется с расширением
 
 1. Настройте расширение система диагностики Azure, чтобы включить профилировщик:
 
-    a. Выберите файл [система диагностики Azure](../platform/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
+    а. Выберите файл [система диагностики Azure](../platform/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
 
       ![Расположение файла конфигурации диагностики](./media/profiler-cloudservice/cloudservice-solutionexplorer.png)  
 
-      Если вы не можете найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?view=vs-2019).
+      Если вы не можете найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
 
     b. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
 

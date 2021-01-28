@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: 516f858c8f95ec3f7cfd8ffc1592358716986519
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 54ec676da3311473f86a47aae600c2ec29192bb2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223318"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935126"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-powershell"></a>Руководство по Создание шлюза NAT с помощью Azure PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "98223318"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup?view=latest). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 В следующем примере создается группа ресурсов с именем **myResourceGroupNAT** в расположении **eastus2**:
 
@@ -59,7 +59,7 @@ New-AzResourceGroup -Name $rsg -Location $loc
 
 ### <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 
-Для доступа к Интернету требуется один или несколько общедоступных IP-адресов для шлюза NAT. Выполните командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=latest), чтобы создать ресурс общедоступного IP-адреса с именем **myPublicIP** в группе **myResourceGroupNAT**. Результат этого командлета будет храниться в переменной **$publicIP** для последующего использования.
+Для доступа к Интернету требуется один или несколько общедоступных IP-адресов для шлюза NAT. Выполните командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress), чтобы создать ресурс общедоступного IP-адреса с именем **myPublicIP** в группе **myResourceGroupNAT**. Результат этого командлета будет храниться в переменной **$publicIP** для последующего использования.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -73,7 +73,7 @@ New-AzPublicIpAddress -Name $pbnm -ResourceGroupName $rsg -AllocationMethod Stat
 
 ### <a name="create-a-public-ip-prefix"></a>Создание префикса общедоступного IP-адреса
 
-Выполните командлет [New-AzPublicIpPrefix](/powershell/module/az.network/new-azpublicipprefix?view=latest), чтобы создать ресурс префикса общедоступного IP-адреса с именем **myPublicIPprefix** в группе **myResourceGroupNAT**.  Результат этой команды будет храниться в переменной с именем **$publicIPPrefix** для последующего использования.
+Выполните командлет [New-AzPublicIpPrefix](/powershell/module/az.network/new-azpublicipprefix), чтобы создать ресурс префикса общедоступного IP-адреса с именем **myPublicIPprefix** в группе **myResourceGroupNAT**.  Результат этой команды будет храниться в переменной с именем **$publicIPPrefix** для последующего использования.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -108,7 +108,7 @@ New-AzNatGateway -Name $gnm -ResourceGroupName $rsg -PublicIpAddress $publicIP -
 
 Создайте виртуальную сеть и свяжите подсеть со шлюзом.
 
-Создайте виртуальную сеть с именем **myVnet** и подсетью **mySubnet** с помощью командлета [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) в группе **myResourceGroup**, используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork?view=latest). Диапазон IP-адресов для виртуальной сети — **192.168.0.0/16**. Подсеть в виртуальной сети — **192.168.0.0/24**.  Результаты команд будут храниться в переменных с именами **$subnet** и **$vnet** для последующего использования.
+Создайте виртуальную сеть с именем **myVnet** и подсетью **mySubnet** с помощью командлета [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) в группе **myResourceGroup**, используя командлет [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). Диапазон IP-адресов для виртуальной сети — **192.168.0.0/16**. Подсеть в виртуальной сети — **192.168.0.0/24**.  Результаты команд будут храниться в переменных с именами **$subnet** и **$vnet** для последующего использования.
 
 ```azurepowershell-interactive
 $sbnm = 'mySubnet'
@@ -133,7 +133,7 @@ NAT теперь используется для всего исходящего
 
 ### <a name="create-public-ip-for-source-vm"></a>Создание общедоступного IP-адреса для исходной виртуальной машины
 
-Мы создадим общедоступный IP-адрес для доступа к виртуальной машине.  Выполните командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=latest), чтобы создать ресурс общедоступного IP-адреса с именем **myPublicIPVM** в группе **myResourceGroupNAT**.  Результат этой команды будет храниться в переменной с именем **$publicIpVM** для последующего использования.
+Мы создадим общедоступный IP-адрес для доступа к виртуальной машине.  Выполните командлет [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress), чтобы создать ресурс общедоступного IP-адреса с именем **myPublicIPVM** в группе **myResourceGroupNAT**.  Результат этой команды будет храниться в переменной с именем **$publicIpVM** для последующего использования.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -147,7 +147,7 @@ New-AzPublicIpAddress -Name $ipnm -ResourceGroupName $rsg -AllocationMethod Stat
 
 ### <a name="create-an-nsg-and-expose-ssh-endpoint-for-vm"></a>Создание группы безопасности сети (NSG) и предоставление конечной точки SSH для виртуальной машины
 
-Так как стандартные общедоступные IP-адреса безопасны по умолчанию, необходимо создать NSG, чтобы разрешить входящий доступ по протоколу SSH. Выполните командлет [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup?view=latest), чтобы создать ресурс NSG с именем **myNSG**. Выполните командлет [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig?view=latest), чтобы создать правило NSG доступа по протоколу SSH с именем **ssh** в группе **myResourceGroupNAT**.  Результат этого командлета будет храниться в переменной с именем **$nsg** для последующего использования.
+Так как стандартные общедоступные IP-адреса безопасны по умолчанию, необходимо создать NSG, чтобы разрешить входящий доступ по протоколу SSH. Выполните командлет [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup), чтобы создать ресурс NSG с именем **myNSG**. Выполните командлет [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig), чтобы создать правило NSG доступа по протоколу SSH с именем **ssh** в группе **myResourceGroupNAT**.  Результат этого командлета будет храниться в переменной с именем **$nsg** для последующего использования.
 
 ```azurepowershell-interactive
 $rnm = 'ssh'
@@ -170,7 +170,7 @@ New-AzNetworkSecurityGroup -ResourceGroupName $rsg -Name $rnm -Location $loc -Se
 
 ### <a name="create-nic-for-vm"></a>Создание сетевой карты для виртуальной машины
 
-С помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface?view=azps-2.8.0) создайте сетевой интерфейс с именем **myNic**. Эта команда свяжет общедоступный IP-адрес и группу безопасности сети. Результат этого командлета будет храниться в переменной с именем **$nic** для последующего использования.
+С помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) создайте сетевой интерфейс с именем **myNic**. Эта команда свяжет общедоступный IP-адрес и группу безопасности сети. Результат этого командлета будет храниться в переменной с именем **$nic** для последующего использования.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -236,7 +236,7 @@ $sshPublicKey = cat ~/.ssh/id_rsa.pub
 Add-AzVMSshPublicKey -VM $vmconfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
 
 ```
-Объедините определения конфигурации, чтобы создать виртуальную машину с именем **myVM** с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm?view=azps-2.8.0) в группе **myResourceGroupNAT**.
+Объедините определения конфигурации, чтобы создать виртуальную машину с именем **myVM** с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm) в группе **myResourceGroupNAT**.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -249,7 +249,7 @@ New-AzVM -ResourceGroupName $rsg -Location $loc -VM $vmconfig
 
 ## <a name="discover-the-ip-address-of-the-vm"></a>Обнаружение IP-адреса виртуальной машины
 
-Сначала необходимо найти IP-адрес виртуальной машины, которую вы создали. Чтобы получить его, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress?view=latest). 
+Сначала необходимо найти IP-адрес виртуальной машины, которую вы создали. Чтобы получить его, выполните командлет [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress). 
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -273,7 +273,7 @@ ssh azureuser@<ip-address-destination>
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить группу ресурсов и все ресурсы в ней, если они больше не нужны, выполнив команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=latest).
+Вы можете удалить группу ресурсов и все ресурсы в ней, если они больше не нужны, выполнив команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
 
 ```azurepowershell-interactive 
 Remove-AzResourceGroup -Name myResourceGroupNAT
