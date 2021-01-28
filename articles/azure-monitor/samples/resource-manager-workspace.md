@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2020
-ms.openlocfilehash: 3cc79edf50c4f056f413292d2d43aa8cf8e65136
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: c755ee0ee91156da9910a9d43c891c87f86cd430
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683486"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945032"
 ---
 # <a name="resource-manager-template-samples-for-log-analytics-workspaces-in-azure-monitor"></a>Примеры шаблонов Resource Manager для рабочей области Log Analytics в Azure Monitor
 В этой статье представлены примеры [шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для создания и настройки рабочих областей Log Analytics в Azure Monitor. Каждый пример включает файл шаблона и файл параметров с примерами значений для предоставления шаблона.
@@ -610,7 +610,7 @@ ms.locfileid: "97683486"
 
 ### <a name="notes"></a>Примечания
 
-- Конфигурация разделителей и извлечений может быть сложной. Для справки вы можете определить пользовательский журнал на портале Azure и получить его конфигурацию с помощью команды [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.8.0), задав параметру **-Kind** значение **CustomLog**.
+- Конфигурация разделителей и извлечений может быть сложной. Для справки вы можете определить пользовательский журнал на портале Azure и получить его конфигурацию с помощью команды [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource), задав параметру **-Kind** значение **CustomLog**.
 
   
 ### <a name="template-file"></a>Файл шаблона

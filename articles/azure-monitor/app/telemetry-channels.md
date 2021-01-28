@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.custom: devx-track-csharp
 ms.reviewer: mbullwin
-ms.openlocfilehash: fec7bfc16e2cc36d19c84b93b5b93c3c1365b166
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a22a0d112671019d73eb4c9a3853462e4e9c8c75
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90564021"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937362"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Каналы телеметрии в Application Insights
 
@@ -18,7 +18,7 @@ ms.locfileid: "90564021"
 
 ## <a name="what-are-telemetry-channels"></a>Что такое каналы телеметрии?
 
-Каналы телеметрии отвечают за буферизацию элементов телеметрии и их отправку в службу Application Insights, где они хранятся для выполнения запросов и анализа. Канал телеметрии — это любой класс, реализующий [`Microsoft.ApplicationInsights.ITelemetryChannel`](/dotnet/api/microsoft.applicationinsights.channel.itelemetrychannel?view=azure-dotnet) интерфейс.
+Каналы телеметрии отвечают за буферизацию элементов телеметрии и их отправку в службу Application Insights, где они хранятся для выполнения запросов и анализа. Канал телеметрии — это любой класс, реализующий [`Microsoft.ApplicationInsights.ITelemetryChannel`](/dotnet/api/microsoft.applicationinsights.channel.itelemetrychannel) интерфейс.
 
 `Send(ITelemetry item)`Метод канала телеметрии вызывается после вызова всех инициализаторов телеметрии и обработчиков данных телеметрии. Таким образом, все элементы, отброшенные обработчиком данных телеметрии, не будут обращаться к каналу. `Send()` обычно не отправляет элементы в серверную части мгновенно. Как правило, он помещает их в память и отправляет их пакетами для эффективной передачи.
 

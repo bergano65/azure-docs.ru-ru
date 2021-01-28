@@ -3,12 +3,12 @@ author: PatrickFarley
 ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 09/15/2020
-ms.openlocfilehash: d177f667f7bae2d061dfe7d79247c5cc2fd40d5b
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 66934d61ea4e47df0fec8a6a347c676dc85a5b0a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98256348"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947137"
 ---
 Начало работы с клиентской библиотекой "Пользовательское визуальное распознавание" для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для сборки модели обнаружения объектов. Здесь объясняется, как создать проект, добавить теги, обучить проект в примерах изображений и использовать URL-адрес конечной точки прогнозирования проекта для тестирования программными средствами. Этот пример можно использовать как шаблон при создании собственного приложения для распознавания изображений.
 
@@ -24,7 +24,7 @@ ms.locfileid: "98256348"
 * Публикация текущей итерации
 * Тестирование конечной точки прогнозирования
 
-[Справочная документация](/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet) | Исходный код библиотеки [(обучение)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.CustomVision.Training) [(прогноз)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.CustomVision.Prediction) | Пакет (NuGet) [(обучение)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/) [(прогноз)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/) | [Примеры](/samples/browse/?products=azure&term=vision&terms=vision)
+[Справочная документация](/dotnet/api/overview/azure/cognitiveservices/client/customvision) | Исходный код библиотеки [(обучение)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.CustomVision.Training) [(прогноз)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.CustomVision.Prediction) | Пакет (NuGet) [(обучение)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/) [(прогноз)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/) | [Примеры](/samples/browse/?products=azure&term=vision&terms=vision)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -105,9 +105,9 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Predict
 
 |Имя|Описание|
 |---|---|
-|[CustomVisionTrainingClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclient?view=azure-dotnet) | Этот класс обрабатывает создание, обучение и публикацию ваших моделей. |
-|[CustomVisionPredictionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclient?view=azure-dotnet-preview)| Этот класс обрабатывает запросы ваших моделей для прогнозов обнаружения объектов.|
-|[PredictionModel](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.prediction.models.predictionmodel?view=azure-dotnet-preview)| Этот класс определяет прогнозирование одного объекта на одном изображении. Он содержит свойства для идентификатора объекта и его имени, расположение ограничивающего прямоугольника объекта и оценку достоверности.|
+|[CustomVisionTrainingClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclient) | Этот класс обрабатывает создание, обучение и публикацию ваших моделей. |
+|[CustomVisionPredictionClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.prediction.customvisionpredictionclient)| Этот класс обрабатывает запросы ваших моделей для прогнозов обнаружения объектов.|
+|[PredictionModel](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.prediction.models.predictionmodel)| Этот класс определяет прогнозирование одного объекта на одном изображении. Он содержит свойства для идентификатора объекта и его имени, расположение ограничивающего прямоугольника объекта и оценку достоверности.|
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -129,7 +129,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Predict
 
 ## <a name="create-a-new-custom-vision-project"></a>Создание проекта службы "Пользовательское визуальное распознавание"
 
-Следующий метод создает проект обнаружения объектов. Созданный проект будет отображаться на [веб-сайте Пользовательской службы визуального распознавания](https://customvision.ai/). Ознакомьтесь с методом [CreateProject](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclientextensions.createproject?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_CustomVisionTrainingClientExtensions_CreateProject_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_ICustomVisionTrainingClient_System_String_System_String_System_Nullable_System_Guid__System_String_System_Collections_Generic_IList_System_String__&preserve-view=true), чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию средства обнаружения объектов с помощью веб-портала](../../get-started-build-detector.md)).  
+Следующий метод создает проект обнаружения объектов. Созданный проект будет отображаться на [веб-сайте Пользовательской службы визуального распознавания](https://customvision.ai/). Ознакомьтесь с методом [CreateProject](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclientextensions.createproject#Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_CustomVisionTrainingClientExtensions_CreateProject_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_ICustomVisionTrainingClient_System_String_System_String_System_Nullable_System_Guid__System_String_System_Collections_Generic_IList_System_String__&preserve-view=true), чтобы указать другие параметры при создании проекта (см. пояснения в руководстве по [созданию средства обнаружения объектов с помощью веб-портала](../../get-started-build-detector.md)).  
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/CustomVision/ObjectDetection/Program.cs?name=snippet_create)]
 
@@ -168,7 +168,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.CustomVision.Predict
 > [!TIP]
 > Обучение с использованием выбранных тегов
 >
-> При необходимости вы можете выполнить обучение с использованием только некоторых из примененных тегов. Это может потребоваться, если вы еще не применили достаточное количество определенных тегов, но у вас достаточно других. В вызове [TrainProject](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclientextensions.trainproject?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_CustomVisionTrainingClientExtensions_TrainProject_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_ICustomVisionTrainingClient_System_Guid_System_String_System_Nullable_System_Int32__System_Nullable_System_Boolean__System_String_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_Models_TrainingParameters_&preserve-view=true) используйте параметр *trainingParameters*. Создайте [TrainingParameters](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.models.trainingparameters?preserve-view=true&view=azure-dotnet) и задайте для свойства **SelectedTags** список идентификаторов тегов, которые хотите использовать. Модель будет обучаться с распознаванием только тегов в этом списке.
+> При необходимости вы можете выполнить обучение с использованием только некоторых из примененных тегов. Это может потребоваться, если вы еще не применили достаточное количество определенных тегов, но у вас достаточно других. В вызове [TrainProject](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.customvisiontrainingclientextensions.trainproject#Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_CustomVisionTrainingClientExtensions_TrainProject_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_ICustomVisionTrainingClient_System_Guid_System_String_System_Nullable_System_Int32__System_Nullable_System_Boolean__System_String_Microsoft_Azure_CognitiveServices_Vision_CustomVision_Training_Models_TrainingParameters_&preserve-view=true) используйте параметр *trainingParameters*. Создайте [TrainingParameters](/dotnet/api/microsoft.azure.cognitiveservices.vision.customvision.training.models.trainingparameters) и задайте для свойства **SelectedTags** список идентификаторов тегов, которые хотите использовать. Модель будет обучаться с распознаванием только тегов в этом списке.
 
 ## <a name="publish-the-current-iteration"></a>Публикация текущей итерации
 
@@ -226,4 +226,4 @@ Making a prediction:
 
 * Что собой представляет Пользовательское визуальное распознавание
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/CustomVision/ObjectDetection/Program.cs)
-* [Справочная документация по пакету SDK](/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet)
+* [Справочная документация по пакету SDK](/dotnet/api/overview/azure/cognitiveservices/client/customvision)

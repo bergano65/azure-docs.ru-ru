@@ -1,19 +1,16 @@
 ---
 title: Запрос данных из HDFS-совместимой службы хранилища Azure в Azure HDInsight
 description: Узнайте, как запрашивать данные из службы хранилища Azure и Azure Data Lake Storage для сохранения результатов анализа.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: ead9b775b8c61d0d89abd4821bef2b1aaaea0d76
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: cedc0ff1b3c2aa64f32445eabc800748a753981d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547441"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945422"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Использование службы хранилища Azure с кластерами Azure HDInsight
 
@@ -44,23 +41,23 @@ ms.locfileid: "92547441"
 
 ## <a name="access-files-from-within-cluster"></a>Доступ к файлам из кластера
 
-Существует несколько способов доступа к файлам в Data Lake Storage из кластера HDInsight. Эта схема URI предоставляет как незашифрованный доступ с префиксом *wasb:* , так и доступ с использованием TLS-шифрования с *wasbs* . Мы рекомендуем использовать *wasbs* всегда, когда это возможно, даже при обращении к данным, которые хранятся в том же регионе Azure.
+Существует несколько способов доступа к файлам в Data Lake Storage из кластера HDInsight. Эта схема URI предоставляет как незашифрованный доступ с префиксом *wasb:* , так и доступ с использованием TLS-шифрования с *wasbs*. Мы рекомендуем использовать *wasbs* всегда, когда это возможно, даже при обращении к данным, которые хранятся в том же регионе Azure.
 
-* **С помощью полного доменного имени** . При таком подходе необходимо указать полный путь к файлу, к которому требуется доступ.
+* **С помощью полного доменного имени**. При таком подходе необходимо указать полный путь к файлу, к которому требуется доступ.
 
     ```
     wasb://<containername>@<accountname>.blob.core.windows.net/<file.path>/
     wasbs://<containername>@<accountname>.blob.core.windows.net/<file.path>/
     ```
 
-* **Используя сокращенный формат пути** . При таком подходе путь до корня кластера заменяется на следующий:
+* **Используя сокращенный формат пути**. При таком подходе путь до корня кластера заменяется на следующий:
 
     ```
     wasb:///<file.path>/
     wasbs:///<file.path>/
     ```
 
-* **С помощью относительного пути** . При таком подходе указывается только относительный путь к файлу, к которому требуется доступ.
+* **С помощью относительного пути**. При таком подходе указывается только относительный путь к файлу, к которому требуется доступ.
 
     ```
     /<file.path>/

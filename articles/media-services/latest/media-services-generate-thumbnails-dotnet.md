@@ -1,5 +1,5 @@
 ---
-title: Создание эскизов с помощью кодировщика служб мультимедиа Azure Standard с использованием .NET
+title: Создание эскизов с помощью кодировщика служб мультимедиа Standard на платформе .NET
 description: В этой статье показано, как использовать .NET для кодирования ресурса и создания эскизов в то же время с помощью Media Encoder Standard.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 887ac4197321b4015eff7cc839abd8f57ae67760
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: fe051ceec43ec919ddf92a4d7f7e4bfab0b351f5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512024"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938767"
 ---
 # <a name="how-to-generate-thumbnails-using-encoder-standard-with-net"></a>Создание эскизов с помощью кодировщика Standard в .NET
 
@@ -95,5 +95,5 @@ private static Transform EnsureTransformExists(IAzureMediaServicesClient client,
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Создание эскизов с помощью функции "ОСТАВШАЯся"](media-services-generate-thumbnails-rest.md)

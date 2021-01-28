@@ -1,19 +1,16 @@
 ---
 title: Руководство по операциям извлечения, преобразования и загрузки (ETL) с помощью Interactive Query в Azure HDInsight
 description: Из этого руководства вы узнаете, как извлекать данные из набора необработанных данных формата CSV, преобразовывать их с помощью Interactive Query в HDInsight и загружать преобразованные данные в Базу данных SQL Azure с помощью Apache Sqoop.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,mvc
 ms.date: 07/02/2019
-ms.openlocfilehash: 730a6bfa627eafcab799fc811db4e20a1d4cec48
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 13b6b8658aa2d896ec154cfa3c7a961e37df6cbf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534589"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935910"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Руководство по извлечению, преобразованию и загрузке данных с помощью интерактивного запроса в Azure HDInsight
 
@@ -30,7 +27,7 @@ ms.locfileid: "92534589"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер интерактивного запроса в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Интерактивные запросы** для параметра **Тип кластера** .
+* Кластер интерактивного запроса в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Интерактивные запросы** для параметра **Тип кластера**.
 
 * База данных в службе "База данных SQL Azure". Вы используете базу данных в качестве конечного хранилища данных. Если у вас нет базы данных в Базе данных SQL Azure, вы можете создать ее, выполнив инструкции из статьи [Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure](../../azure-sql/database/single-database-create-quickstart.md).
 
@@ -48,7 +45,7 @@ ms.locfileid: "92534589"
    | Период фильтра |Январь |
    | Поля |`Year, FlightDate, Reporting_Airline, DOT_ID_Reporting_Airline, Flight_Number_Reporting_Airline, OriginAirportID, Origin, OriginCityName, OriginState, DestAirportID, Dest, DestCityName, DestState, DepDelayMinutes, ArrDelay, ArrDelayMinutes, CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay`. |
 
-3. Выберите **Скачать** . Вы получите ZIP-файл с выбранными полями данных.
+3. Выберите **Скачать**. Вы получите ZIP-файл с выбранными полями данных.
 
 ## <a name="upload-data-to-an-hdinsight-cluster"></a>Отправка данных в кластер HDInsight
 
@@ -95,9 +92,9 @@ ms.locfileid: "92534589"
 
 Существует множество способов запуска задания Hive в кластере HDInsight. В этом разделе для выполнения задания используется клиент [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline%E2%80%93CommandLineShell). Сведения о других методах выполнения задания Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](../hadoop/hdinsight-use-hive.md).
 
-В рамках задания Hive вы импортируете данные из CSV-файла в таблицу Hive с именем **Delays** .
+В рамках задания Hive вы импортируете данные из CSV-файла в таблицу Hive с именем **Delays**.
 
-1. В командной строке SSH, которую вы уже использовали для кластера HDInsight, выполните следующую команду для создания и редактирования нового файла **flightdelays.hql** .
+1. В командной строке SSH, которую вы уже использовали для кластера HDInsight, выполните следующую команду для создания и редактирования нового файла **flightdelays.hql**.
 
     ```bash
     nano flightdelays.hql
@@ -165,7 +162,7 @@ ms.locfileid: "92534589"
     FROM delays_raw;
     ```
 
-3. Чтобы сохранить файл, нажмите клавиши **Ctrl + X** , затем **Y** и "Ввод".
+3. Чтобы сохранить файл, нажмите клавиши **Ctrl + X**, затем **Y** и "Ввод".
 
 4. Для запуска Hive и выполнения файла **flightdelays.hql** используйте следующую команду:
 

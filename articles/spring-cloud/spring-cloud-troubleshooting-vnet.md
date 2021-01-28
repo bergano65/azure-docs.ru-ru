@@ -7,14 +7,14 @@ ms.topic: how-to
 ms.date: 09/19/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: c2b0488663233546411b3a1b5ac1b1eb6c0b899c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 8491eb02fd61f291904d57990b3785ce93239964
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887262"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98935264"
 ---
-# <a name="troubleshooting-azure-spring-cloud-in-virtual-networks"></a>Устранение неполадок в Azure Веснного облака в виртуальных сетях
+# <a name="troubleshooting-azure-spring-cloud-in-virtual-networks"></a>Устранение неполадок с Azure Spring Cloud в виртуальных сетях
 
 Этот документ поможет решить различные проблемы, которые могут возникнуть при использовании Azure Веснного облака в виртуальных сетях.
 
@@ -39,7 +39,7 @@ ms.locfileid: "98887262"
 |------|------|
 | Ресурсы, созданные с помощью Azure Веснного облака, запрещены политикой. | Сетевые ресурсы будут созданы при развертывании Azure Веснного облака в своей виртуальной сети. Проверьте, определена ли [Политика Azure](https://docs.microsoft.com/azure/governance/policy/overview) для блокировки этих операций создания. Не удалось создать ресурсы, которые можно найти в сообщении об ошибке. |
 | Указанные подсети связаны с таблицами маршрутов, отмените их связь. | Сейчас не поддерживается развертывание Azure Веснного облака в подсети, связанной с существующими таблицами маршрутов, отмените их связь и повторите попытку. |
-| Требуемый трафик не список разрешений. | Чтобы убедиться в том, что требуемый трафик список разрешений, обратитесь к [обязанностям клиентов для запуска Azure веснного облака в виртуальной сети](spring-cloud-vnet-customer-responsibilities.md) . |
+| Требуемый трафик не алловлистед. | Чтобы убедиться в том, что требуемый трафик алловлистед, обратитесь к [обязанностям клиентов для запуска Azure веснного облака в виртуальной сети](spring-cloud-vnet-customer-responsibilities.md) . |
 
 ## <a name="my-application-cant-be-registered"></a>Не удается зарегистрировать приложение
 

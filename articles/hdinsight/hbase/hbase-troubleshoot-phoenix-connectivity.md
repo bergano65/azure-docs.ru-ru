@@ -3,16 +3,13 @@ title: Проблемы с подключением к Apache Phoenix в Azure H
 description: Проблемы с подключением между Apache HBase и Apache Phoenix в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/14/2019
-ms.openlocfilehash: ed12c9629506fa8defb23b987fe672bb3b384418
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2cc6556f681ece170bdfe02b985f56274c0faa1e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540097"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98936966"
 ---
 # <a name="scenario-apache-phoenix-connectivity-issues-in-azure-hdinsight"></a>Сценарий: Apache Phoenix проблемы с подключением в Azure HDInsight
 
@@ -28,7 +25,7 @@ ms.locfileid: "92540097"
 
 ### <a name="resolution"></a>Решение
 
-IP-адрес активного узла Zookeeper можно определить из пользовательского интерфейса Ambari, следуя ссылкам на **HBase**  >  **краткие ссылки** на HBase  >  **ZK (Active)**  >  **Zookeeper info** . При необходимости исправьте IP-адрес.
+IP-адрес активного узла Zookeeper можно определить из пользовательского интерфейса Ambari, следуя ссылкам на   >  **краткие ссылки** на HBase  >  **ZK (Active)**  >  **Zookeeper info**. При необходимости исправьте IP-адрес.
 
 ---
 
@@ -50,11 +47,11 @@ ERROR: org.apache.hadoop.hbase.NotServingRegionException: Region SYSTEM.CATALOG,
 
 В пользовательском интерфейсе Apache Ambari выполните следующие действия, чтобы перезапустить службу HMaster на всех узлах ZooKeeper:
 
-1. В разделе **Сводка** по HBase перейдите в раздел **HBase**  >  **Active HBase Master** .
+1. В разделе **Сводка** по HBase перейдите в раздел **HBase**  >  **Active HBase Master**.
 
 1. В разделе **компоненты** перезапустите службу HBase Master.
 
-1. Повторите описанные выше шаги для остальных служб **главного узла HBase в режиме ожидания** .
+1. Повторите описанные выше шаги для остальных служб **главного узла HBase в режиме ожидания**.
 
 Для стабилизации и завершения восстановления службы HBase Master может потребоваться до пяти минут. После `SYSTEM.CATALOG` возврата таблицы в нормальное состояние проблемы с подключением к Apache Phoenix должно быть разрешено автоматически.
 
@@ -66,4 +63,4 @@ ERROR: org.apache.hadoop.hbase.NotServingRegionException: Region SYSTEM.CATALOG,
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

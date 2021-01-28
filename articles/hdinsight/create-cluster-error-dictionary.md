@@ -3,17 +3,16 @@ title: Создание словаря ошибок кластера Azure HDIns
 description: Узнайте, как устранять ошибки, возникающие при создании кластеров Azure HDInsight.
 author: karkrish
 ms.author: v-todmc
-ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 08/24/2020
-ms.openlocfilehash: 97cad12ad1854df37b54ff663385fe79ca15b7c2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 6b8c0069d619d3ebd87e3c54b4f653812199f590
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92543106"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943329"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: ошибки создания кластера
 
@@ -24,7 +23,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-codedeploymentdocument-csmdocument_2_0-failed-the-validation"></a>Код ошибки: Деплойментдокумент "CsmDocument_2_0" не прошел проверку
 
-**Ошибка** : "не удается получить доступ к расположению действия скрипта: \<SCRIPT ACTION URL\> "
+**Ошибка**: "не удается получить доступ к расположению действия скрипта: \<SCRIPT ACTION URL\> "
 
 ### <a name="error-message-1"></a>Сообщение об ошибке 1
 
@@ -72,7 +71,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-codeinvalidvirtualnetworkid"></a>Код ошибки: Инвалидвиртуалнетворкид  
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 "VirtualNetworkId является недопустимым. VirtualNetworkId ' \<USER_VIRTUALNETWORKID\> ' * '
 
@@ -96,7 +95,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-code-customizationfailederrorcode"></a>Код ошибки: Кустомизатионфаиледерроркоде
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 "Сбой развертывания кластера из-за ошибки в действии пользовательского скрипта. Действия, завершившиеся сбоем: \<SCRIPT_NAME\> . для дальнейшей отладки ошибки перейдите в пользовательский интерфейс Ambari. "
 
@@ -112,7 +111,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-codeinvaliddocumenterrorcode"></a>Код ошибки: Инвалиддокументерроркоде
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 " \<META_STORE_TYPE\> Версия схемы хранилище метаданных \<METASTORE_MAJOR_VERSION\> в базе данных \<DATABASE_NAME\> несовместима с версией кластера \<CLUSTER_VERSION\> "
 
@@ -128,7 +127,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-code-failedtoconnectwithclustererrorcode"></a>Код ошибки: Фаиледтоконнектвисклустерерроркоде 
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 "Не удалось подключиться к конечной точке управления кластера для выполнения операции масштабирования. Убедитесь, что правила сетевой безопасности не блокируют внешний доступ к кластеру, и что доступ к пользовательскому интерфейсу диспетчера кластеров (Ambari) возможен успешно».
 
@@ -149,7 +148,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-code-storagepermissionsblockedformsi"></a>Код ошибки: Сторажепермиссионсблоккедформси
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 "У управляемого удостоверения нет разрешений на учетную запись хранения. Убедитесь, что роль "владелец данных BLOB-объекта хранилища" назначена управляемому удостоверению для учетной записи хранения. Хранилище:/Subscriptions/ \<Subscription ID\> /ResourceGroups/ \< Resource Group Name\> /Провидерс/Микрософт.стораже/сторажеаккаунтс/ \<Storage Account Name\> , управляемое удостоверение:/Subscriptions/ \<Subscription ID\> /resourceGroups// \< Resource Group Name\> /провидерс/Микрософт.манажедидентити/усерассигнедидентитиес/ \<User Managed Identity Name\> "
 
@@ -159,9 +158,9 @@ ms.locfileid: "92543106"
 
 ### <a name="resolution"></a>Решение
 
-1. Перейдите на портал Azure.
+1. Откройте портал Azure.
 1. Войдите в свою учетную запись хранения.
-1. Просмотрите раздел **Управление доступом (IAM)** .
+1. Просмотрите раздел **Управление доступом (IAM)**.
 1. Убедитесь, что пользователь имеет роль участника данных BLOB-объекта хранилища или назначенную ему роль владельца данных BLOB-объекта хранилища.
 
 Дополнительные сведения см. в разделе [Настройка разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](hdinsight-hadoop-use-data-lake-storage-gen2.md).
@@ -170,7 +169,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-code-invalidnetworksecuritygroupsecurityrules"></a>Код ошибки: InvalidNetworkSecurityGroupSecurityRules
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 "Правила безопасности в группе безопасности сети/Subscriptions/ \<SubscriptionID\> /resourceGroups/<имя группы ресурсов \> по умолчанию/поставщики/Microsoft. Network/networkSecurityGroups/ \<Network Security Group Name\> настроены с подсетью/Subscriptions/ \<SubscriptionID\> /resourceGroups/ \<Resource Group name\> РГ-вестеуропе-внет-ТомТом-дефаулт/providers/Microsoft. Network/virtualNetworks/ \<Virtual Network Name\> /субнетс/не \<Subnet Name\> разрешают обязательное входящее и/или исходящее подключение. Дополнительные сведения см. в [Подплане плана виртуальной сети для Azure HDInsight](./hdinsight-plan-virtual-network-deployment.md)или обратитесь в службу поддержки ".
 
@@ -190,7 +189,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-code-cluster-setup-failed-to-install-components-on-one-or-more-hosts"></a>Код ошибки: программе установки кластера не удалось установить компоненты на одном или нескольких узлах
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 "Программе установки кластера не удалось установить компоненты на одном или нескольких узлах. Повторите запрос ".
 
@@ -206,7 +205,7 @@ ms.locfileid: "92543106"
 
 ## <a name="error-code-failedtoconnectwithclustererrorcode"></a>Код ошибки: Фаиледтоконнектвисклустерерроркоде
 
-### <a name="error"></a>Error
+### <a name="error"></a>Ошибка
 
 Не удалось подключиться к конечной точке управления кластера. Повторите попытку позже.
 

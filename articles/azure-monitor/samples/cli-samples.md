@@ -7,19 +7,19 @@ author: bwren
 ms.author: bwren
 ms.date: 05/16/2018
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: abfac23ad37d750a6d7ef84e5dec2559904ebb1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 196a1d580bd5888a6604c3f98b108e39c08a3412
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87496310"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945021"
 ---
 # <a name="azure-monitor-cli-samples"></a>Примеры CLI для Azure Monitor
 В этой статье приведены примеры команд интерфейса командной строки для работы с функциями Azure Monitor. Azure Monitor позволяет выполнять автомасштабирование облачных служб, виртуальных машин и веб-приложений, отправлять оповещения и осуществлять вызов URL-адресов на основе значений настроенных данных телеметрии.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы еще не установили Azure CLI, выполните инструкции по [установке Azure CLI](/cli/azure/install-azure-cli). Для запуска CLI в качестве интерактивного интерфейса в браузере вы также можете использовать [Azure Cloud Shell](/azure/cloud-shell). Сведения обо всех доступных командах см. в [справке по интерфейсу командной строки Azure Monitor](/cli/azure/monitor?view=azure-cli-latest). 
+Если вы еще не установили Azure CLI, выполните инструкции по [установке Azure CLI](/cli/azure/install-azure-cli). Для запуска CLI в качестве интерактивного интерфейса в браузере вы также можете использовать [Azure Cloud Shell](/azure/cloud-shell). Сведения обо всех доступных командах см. в [справке по интерфейсу командной строки Azure Monitor](/cli/azure/monitor). 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 Прежде всего войдите в учетную запись Azure.

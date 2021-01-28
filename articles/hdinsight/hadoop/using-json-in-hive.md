@@ -1,19 +1,16 @@
 ---
 title: Анализ & процесса JSON с помощью Apache Hive Azure HDInsight
 description: Узнайте, как использовать документы JSON и анализировать их с помощью Apache Hive в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 9a7d3992ecd2c74947eaa1071b97b2032000c749
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5bc9acea219e5d111700840149a26c127b47514d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547611"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943071"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -88,13 +85,13 @@ SELECT * FROM StudentsOneLine
 
 Необработанный файл JSON находится в `wasb://processjson@hditutorialdata.blob.core.windows.net/`. Таблица Hive **studentsraw указывает** указывает на необработанный документ JSON, который не является плоским.
 
-Таблица Hive **StudentsOneLine** сохраняет данные в файловой системе по умолчанию HDInsight в каталоге **/json/students/** .
+Таблица Hive **StudentsOneLine** сохраняет данные в файловой системе по умолчанию HDInsight в каталоге **/json/students/**.
 
 Инструкция **INSERT** заполняет таблицу **StudentOneLine** плоскими данными JSON.
 
 Инструкция **SELECT** возвращает всего одну строку.
 
-Вот результат выполнения инструкции **SELECT** :
+Вот результат выполнения инструкции **SELECT**:
 
 ![Обработка документа JSON с помощью HDInsight](./media/using-json-in-hive/hdinsight-flatten-json.png)
 
@@ -129,7 +126,7 @@ FROM StudentsOneLine;
 * Так как каждое поле в запросе требует повторного синтаксического анализа запроса, это влияет на производительность.
 * **GET\_JSON_OBJECT()** возвращает строковое представление массива. Для преобразования этого массива в массив Hive необходимо использовать регулярные выражения для замены квадратных скобок "[" и "]", а затем также выполнить разбиение для получения массива.
 
-Это преобразование объясняется тем, почему вики-узел Hive рекомендует использовать **json_tuple** .  
+Это преобразование объясняется тем, почему вики-узел Hive рекомендует использовать **json_tuple**.  
 
 ### <a name="use-the-json_tuple-udf"></a>Использование определяемой пользователем функции JSON_TUPLE
 
@@ -152,9 +149,9 @@ LATERAL VIEW JSON_TUPLE(jt.json_body, 'StudentId', 'Grade') q1
 
 SerDe отлично подходит для синтаксического анализа вложенных документов JSON. Он позволяет определить схему JSON, а затем использовать ее для синтаксического анализа документов. См. инструкции по [использованию пользовательского формата SerDe JSON с Microsoft Azure HDInsight](https://web.archive.org/web/20190217104719/https://blogs.msdn.microsoft.com/bigdatasupport/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight/).
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
-Тип оператора JSON в выбранном Hive зависит от сценария. Используя простой документ JSON и одно поле для поиска, выберите параметр UDF **Get_json_object** Hive. При наличии нескольких ключей для поиска можно использовать **json_tuple** . Для вложенных документов используйте **JSON SerDe** .
+Тип оператора JSON в выбранном Hive зависит от сценария. Используя простой документ JSON и одно поле для поиска, выберите параметр UDF **Get_json_object** Hive. При наличии нескольких ключей для поиска можно использовать **json_tuple**. Для вложенных документов используйте **JSON SerDe**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

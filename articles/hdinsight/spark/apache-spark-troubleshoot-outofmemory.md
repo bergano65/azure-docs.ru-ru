@@ -3,16 +3,13 @@ title: Исключения OutOfMemoryError для Apache Spark в Azure HDInsi
 description: Различные исключения OutOfMemoryError для кластера Apache Spark в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/15/2019
-ms.openlocfilehash: 156d3ce4b7f8b6eaa297f2cddd0d5a93f382f78e
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: a15d79f2ae9c3d20a73ec557c57a5c189b18111b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547288"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946345"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
 
@@ -60,7 +57,7 @@ java.lang.OutOfMemoryError
 
 1. Определите максимальный объем данных, которые будет обрабатывать приложение Spark. Оценка размера в зависимости от максимального размера входных данных — промежуточных данных, полученных путем преобразования входных данных и выходных данных, созданных для преобразования промежуточных данных. Если начальная оценка недостаточна, увеличьте размер и выполните итерацию до подчасти ошибок памяти.
 
-1. Убедитесь, что в кластере HDInsight, который должен использоваться, достаточно ресурсов, таких как память и количество ядер, для работы приложения Spark. Это можно определить, просмотрев раздел метрики кластера в пользовательском интерфейсе YARN в кластере на предмет значений **используемой памяти** и **общего объема памяти** , а также **виртуальных ядер, используемых** в сравнении с **виртуальных ядер** .
+1. Убедитесь, что в кластере HDInsight, который должен использоваться, достаточно ресурсов, таких как память и количество ядер, для работы приложения Spark. Это можно определить, просмотрев раздел метрики кластера в пользовательском интерфейсе YARN в кластере на предмет значений **используемой памяти** и **общего объема памяти** , а также **виртуальных ядер, используемых** в сравнении с **виртуальных ядер**.
 
     ![представление памяти Yarn Core](./media/apache-spark-ts-outofmemory/yarn-core-memory-view.png)
 
@@ -255,4 +252,4 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

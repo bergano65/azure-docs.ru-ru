@@ -1,19 +1,16 @@
 ---
 title: Руководство по Использование runbook службы автоматизации Azure для создания кластеров (Azure HDInsight)
 description: Узнайте, как создавать и удалять кластеры Azure HDInsight с помощью выполняемых в облаке скриптов, оформленных в виде runbook службы автоматизации Azure.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 12/27/2019
-ms.openlocfilehash: 05c0aaf6cc33442fa4f36eb38eb0d6d593fc6c1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 255542d820d135d1a88e193a8ef13ae590ce4016
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75553124"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944046"
 ---
 # <a name="tutorial-create-azure-hdinsight-clusters-with-azure-automation"></a>Руководство по Создание кластеров Azure HDInsight с помощью службы автоматизации
 

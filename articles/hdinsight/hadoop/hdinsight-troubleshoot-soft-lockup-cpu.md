@@ -3,16 +3,13 @@ title: Ошибка устройства наблюдения "Мягкая бл
 description: В журналах ядра в кластере Azure HDInsight отображаются счетчики производительности "Мягкая блокировка" для ошибок наблюдения
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: 33990e40507f088962fd8d8efd241de5d2fcc63b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 5d9d7b0fc21660dd22ff92bbe2de38c759c440ec
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289060"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944342"
 ---
 # <a name="scenario-watchdog-bug-soft-lockup---cpu-error-from-an-azure-hdinsight-cluster"></a>Сценарий: ошибка "устройство наблюдения: ошибка: кратковременная блокировка — ЦП" из кластера Azure HDInsight
 
@@ -39,14 +36,14 @@ ms.locfileid: "93289060"
     | Свойство | Значение |
     | --- | --- |
     | Тип скрипта | — Пользовательский |
-    | Имя |Исправление проблемы с мягкой блокировкой ядра |
+    | ИМЯ |Исправление проблемы с мягкой блокировкой ядра |
     | URI bash-скрипта |`https://raw.githubusercontent.com/hdinsight/hdinsight.github.io/master/ClusterCRUD/KernelSoftLockFix/scripts/KernelSoftLockIssue_FixAndReboot.sh` |
     | Типы узлов |Worker, Zookeeper |
     | Параметры |Недоступно |
 
     Выберите **сохранить это действие скрипта...** , если требуется выполнять скрипт при добавлении новых узлов.
 
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 
 1. Дождитесь завершения выполнения.
 

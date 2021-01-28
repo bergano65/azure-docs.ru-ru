@@ -4,12 +4,12 @@ description: Поиск в журналах, созданных с помощь�
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/08/2019
-ms.openlocfilehash: 90777da4d0b67587afebaa7111e3503af2afcb9a
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 083ddbd06561550f89e414d6c679cdc6433fa338
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920349"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937559"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Python, .NET или .NET Core в Application Insights
 
@@ -85,7 +85,7 @@ System.Diagnostics.Trace.TraceWarning("Slow response - database01");
 ```
 
 ## <a name="use-eventsource-events"></a>Использование событий EventSource
-Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](./configuration-with-applicationinsights-config.md).
+Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](/dotnet/api/system.diagnostics.tracing.eventsource) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](./configuration-with-applicationinsights-config.md).
 
 ```xml
     <Add Type="Microsoft.ApplicationInsights.EventSourceListener.EventSourceTelemetryModule, Microsoft.ApplicationInsights.EventSourceListener">
@@ -203,7 +203,7 @@ logger.warning('Hello, World!')
 
 ### <a name="theres-no-log-adapter-option-in-the-configuration-tool"></a>В средстве настройки нет параметра для адаптера журналов
 * Сначала установите платформу ведения журналов.
-* Если вы используете класс System.Diagnostics.Trace, убедитесь, что он [настроен в *web.config*](/dotnet/api/system.diagnostics.eventlogtracelistener?view=dotnet-plat-ext-3.1).
+* Если вы используете класс System.Diagnostics.Trace, убедитесь, что он [настроен в *web.config*](/dotnet/api/system.diagnostics.eventlogtracelistener).
 * У вас должна быть установлена последняя версия Application Insights. В Visual Studio выберите **Сервис** > **Расширения и обновления** и откройте вкладку **Обновления**. Если в списке есть расширение **Developer Analytics Tools**, выберите его, чтобы обновить.
 
 ### <a name="i-get-the-instrumentation-key-cannot-be-empty-error-message"></a><a name="emptykey">Я получаю сообщение об ошибке "Instrumentation key cannot be empty" (Ключ инструментирования не может быть пустым)</a>

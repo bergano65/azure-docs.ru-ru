@@ -1,19 +1,16 @@
 ---
 title: Руководство по Apache Storm с Apache Kafka — Azure HDInsight
 description: Узнайте, как создать конвейер потоковой передачи с помощью Apache Storm и Apache Kafka в HDInsight. В этом руководстве используются компоненты KafkaBolt и KafkaSpout, чтобы выполнять потоковую передачу данных из Kafka.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: 6c600c4cfe96b849786664aa878ec1f84407da5b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 304ba791d107ca497e65905657e87e84cdb9567d
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85963535"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942727"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 

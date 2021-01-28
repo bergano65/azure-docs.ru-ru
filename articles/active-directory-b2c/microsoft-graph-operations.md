@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/21/2021
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 96772020e70aeb32fa1a8ae18bf3818396887877
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 50042b749c917752d08198c31ada3c73a5ef540b
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805233"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938482"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Управление Azure AD B2C с помощью Microsoft Graph
 
@@ -35,18 +35,29 @@ Microsoft Graph позволяет управлять ресурсами в ка
 - [Обновление пользователя](/graph/api/user-update)
 - [Удаление пользователя](/graph/api/user-delete)
 
-## <a name="user-phone-number-management"></a>Управление номером телефона пользователя
+## <a name="user-phone-number-management-beta"></a>Управление номером телефона пользователя (бета-версия)
+
+Номер телефона, который может использоваться пользователем для входа с помощью [SMS или голосовой связи](identity-provider-local.md#phone-sign-in-preview)или [многофакторной проверки подлинности](multi-factor-authentication.md). Дополнительные сведения см. в статье [API методов проверки подлинности Azure AD](/graph/api/resources/phoneauthenticationmethod).
 
 - [Добавление](/graph/api/authentication-post-phonemethods)
-- [Получить](/graph/api/b2cauthenticationmethodspolicy-get)
-- [Обновление](/graph/api/b2cauthenticationmethodspolicy-update)
+- [Список](/graph/api/authentication-list-phonemethods)
+- [Получить](/graph/api/phoneauthenticationmethod-get)
+- [Обновление](/graph/api/phoneauthenticationmethod-update)
 - [Удаление](/graph/api/phoneauthenticationmethod-delete)
 
-Дополнительные сведения об управлении номером телефона для входа пользователя см. в разделе [B2C Authentication Methods](/graph/api/resources/b2cauthenticationmethodspolicy).
+## <a name="self-service-password-reset-email-address-beta"></a>Самостоятельный адрес электронной почты для сброса пароля (бета-версия)
 
-## <a name="identity-providers-user-flow"></a>Поставщики удостоверений (поток пользователя)
+Адрес электронной почты, который может использоваться пользователем для ввода пароля для [учетной записи входа пользователя](identity-provider-local.md#username-sign-in). Дополнительные сведения см. в статье [API методов проверки подлинности Azure AD](/graph/api/resources/emailauthenticationmethod).
 
-Управление поставщиками удостоверений, доступными для пользователя, в клиенте Azure AD B2C.
+- [Добавление](/graph/api/emailauthenticationmethod-post)
+- [Список](/graph/api/emailauthenticationmethod-list)
+- [Получить](/graph/api/emailauthenticationmethod-get)
+- [Обновление](/graph/api/emailauthenticationmethod-update)
+- [Удаление](/graph/api/emailauthenticationmethod-delete)
+
+## <a name="identity-providers"></a>Поставщики удостоверений
+
+Управление [поставщиками удостоверений](add-identity-provider.md) , доступными для пользователя, в клиенте Azure AD B2C.
 
 - [Список поставщиков удостоверений, зарегистрированных в клиенте Azure AD B2C](/graph/api/identityprovider-list)
 - [Создание поставщика удостоверений](/graph/api/identityprovider-post-identityproviders)
@@ -62,6 +73,13 @@ Microsoft Graph позволяет управлять ресурсами в ка
 - [Создание потока пользователей](/graph/api/identitycontainer-post-b2cuserflows)
 - [Получение потока пользователя](/graph/api/b2cidentityuserflow-get)
 - [Удаление потока пользователя](/graph/api/b2cidentityuserflow-delete)
+
+## <a name="user-flow-authentication-methods-beta"></a>Методы проверки подлинности потока пользователей (бета-версия)
+
+Выберите механизм, позволяющий регистрировать пользователей с помощью локальных учетных записей. Локальные учетные записи — это учетные записи, в которых Azure AD выполняет утверждение удостоверения. Дополнительные сведения см. в разделе [тип ресурса b2cAuthenticationMethodsPolicy](/graph/api/resources/b2cauthenticationmethodspolicy).
+
+- [Получить](/graph/api/b2cauthenticationmethodspolicy-get)
+- [Обновление](/graph/api/b2cauthenticationmethodspolicy-update)
 
 ## <a name="custom-policies"></a>Пользовательские политики
 

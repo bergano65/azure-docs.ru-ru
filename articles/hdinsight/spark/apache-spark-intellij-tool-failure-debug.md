@@ -2,19 +2,17 @@
 title: Отладка задания Spark с помощью набора средств Azure IntelliJ (Предварительная версия) — HDInsight
 description: Руководство по использованию средств HDInsight в Azure Toolkit for IntelliJ для отладки приложений
 keywords: удаленная отладка intellij, ssh, intellij, hdinsight, отладка intellij, отладка
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: c8ce1a66d6dbf215c3d49740f2aec47ab01f7591
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 5abbb26e7582d8ddabb73f3a178cf6d87e24db21
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822324"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942537"
 ---
 # <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия)
 

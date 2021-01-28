@@ -1,18 +1,15 @@
 ---
 title: Кластеры Azure HDInsight с шифрованием дисков теряют Key Vault доступ
 description: Действия по устранению неполадок и возможные способы устранения проблем с Key Vault доступом при взаимодействии с кластерами Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/30/2020
-ms.openlocfilehash: bc8162f3a7ca8744a94aba039996275b5f13c727
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: ce2929ca84746de1ab8b51882f3004c3699f17ca
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533416"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943110"
 ---
 # <a name="scenario-azure-hdinsight-clusters-with-disk-encryption-lose-key-vault-access"></a>Сценарий. потеря доступа к кластерам Azure HDInsight с шифрованием диска Key Vault доступ
 
@@ -26,7 +23,7 @@ ms.locfileid: "92533416"
 
 Предупреждение гарантирует, что KV будет доступен с узлов кластера, таким образом обеспечивая подключение к сети, работоспособность KV и политику доступа для управляемого удостоверения, назначенного пользователем. Это оповещение является лишь предупреждением о некотором завершении работы компонента Service Broker при последующих перезагрузках узла. работа кластера будет продолжаться до перезагрузки узлов.
 
-Перейдите к пользовательскому интерфейсу Apache Ambari, чтобы получить дополнительные сведения о предупреждении, связанные с **шифрованием диска Key Vault состояние** . Это оповещение будет содержать подробные сведения о причине сбоя проверки.
+Перейдите к пользовательскому интерфейсу Apache Ambari, чтобы получить дополнительные сведения о предупреждении, связанные с **шифрованием диска Key Vault состояние**. Это оповещение будет содержать подробные сведения о причине сбоя проверки.
 
 ## <a name="resolution"></a>Решение
 
@@ -88,4 +85,4 @@ ms.locfileid: "92533416"
 
 * Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка** . Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

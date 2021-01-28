@@ -1,19 +1,16 @@
 ---
 title: Руководство по Потоковая передача Apache Spark c Apache Kafka в Azure HDInsight
 description: Узнайте об использовании потоковой передачи Apache Spark для двунаправленного обмена данными с Apache Kafka. В этом учебнике показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter Notebook из Spark в HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,seodec18,seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: 9af0349326cf82ed9d050c367b6ed784c9ea9ce9
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: d352fc86f4451f60951b84929ad5d9450c1003d6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97821134"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942794"
 ---
 # <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Руководство по Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight
 

@@ -1,19 +1,16 @@
 ---
 title: Устранение сбоев при создании кластера с помощью Azure HDInsight
 description: Узнайте, как устранять неполадки при создании кластера Apache для Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 04/14/2020
-ms.openlocfilehash: b8be230044d868cc3ec03f6dc3fc2d21e102f121
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e12b96883ae26b6c10e3622c35914ce498afca48
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856302"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944426"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -21,7 +18,7 @@ ms.locfileid: "91856302"
 
 - Проблемы с разрешениями
 - Ограничения политики ресурсов
-- Брандмауэры
+- брандмауэры;
 - Блокировки ресурсов
 - Неподдерживаемые версии компонентов
 - Ограничения имен учетных записей хранения
@@ -45,18 +42,18 @@ ms.locfileid: "91856302"
 * Политика, препятствующая созданию учетной записи хранения.
 * Политика, препятствующая удалению сетевых ресурсов (подсистемы балансировки IP-адресов/лоад).
 
-## <a name="firewalls"></a>Брандмауэры
+## <a name="firewalls"></a>брандмауэры;
 
 Брандмауэры в виртуальной сети или учетной записи хранения могут запретить обмен данными с IP-адресами управления HDInsight.
 
 Разрешить трафик с IP-адресов, указанных в таблице ниже.
 
-| Исходный IP-адрес | Назначение | Direction |
+| Исходный IP-адрес | Назначение | Направление |
 |---|---|---|
-| 168.61.49.99 | *: 443 | Входящий |
-| 23.99.5.239 | *: 443 | Входящий |
-| 168.61.48.131 | *: 443 | Входящий |
-| 138.91.141.162 | *: 443 | Входящий |
+| 168.61.49.99 | *: 443 | Входящий трафик |
+| 23.99.5.239 | *: 443 | Входящий трафик |
+| 168.61.48.131 | *: 443 | Входящий трафик |
+| 138.91.141.162 | *: 443 | Входящий трафик |
 
 Также добавьте IP-адреса, относящиеся к региону, в котором создается кластер. Список адресов для каждого региона Azure см. в разделе [IP-адреса управления HDInsight](../hdinsight-management-ip-addresses.md) .
 
@@ -80,7 +77,7 @@ ms.locfileid: "91856302"
 
 Проверьте [состояние Azure](https://status.azure.com) на наличие потенциальных сбоев или проблем со службой.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Расширение возможностей HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
 * [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  
