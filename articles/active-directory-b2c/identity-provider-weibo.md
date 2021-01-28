@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 36b7618fbacc18ec506f12eabc642246d3148ce0
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 26c4e154deec02b0642e6c131ced50acb02f9899
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98537923"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98951545"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Weibo через Azure Active Directory B2C
 
@@ -57,7 +57,7 @@ ms.locfileid: "98537923"
 
 ::: zone pivot="b2c-user-flow"
 
-## <a name="configure-a-weibo-account-as-an-identity-provider"></a>Настройка учетной записи Weibo в качестве поставщика удостоверений
+## <a name="configure-weibo-as-an-identity-provider"></a>Настройка Weibo в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
@@ -67,6 +67,16 @@ ms.locfileid: "98537923"
 1. В поле **идентификатор клиента** введите ключ приложения приложения Weibo, созданного ранее.
 1. В поле **Секрет клиента** введите секрет приложения, записанный ранее.
 1. Щелкните **Сохранить**.
+
+## <a name="add-weibo-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Weibo в поток пользователя 
+
+1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Weibo.
+1. В разделе **поставщики удостоверений социальных сетей** выберите **Weibo**.
+1. Щелкните **Сохранить**.
+1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
+1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Щелкните **выполнить поток пользователя**
 
 ::: zone-end
 
@@ -87,9 +97,9 @@ ms.locfileid: "98537923"
 9. Для параметра **Использование ключа** выберите `Signature`.
 10. Нажмите кнопку **Создать**.
 
-## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
+## <a name="configure-weibo-as-an-identity-provider"></a>Настройка Weibo в качестве поставщика удостоверений
 
-Если вы хотите, чтобы пользователи вошли с помощью учетной записи Weibo, необходимо определить учетную запись в качестве поставщика утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
+Чтобы пользователи могли входить с помощью учетной записи Weibo, необходимо определить учетную запись как поставщика утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Вы можете определить учетную запись Weibo в качестве поставщика утверждений, добавив ее в элемент **клаимспровидерс** в файле расширения политики.
 
@@ -99,49 +109,10 @@ ms.locfileid: "98537923"
 
     ```xml
     <ClaimsProvider>
-      <Domain>Weibo.com</Domain>
-      <DisplayName>Weibo</DisplayName>
-      <TechnicalProfiles>
-        <TechnicalProfile Id="Weibo-OAUTH">
-          <DisplayName>Weibo</DisplayName>
-          <Protocol Name="OAuth2" />
-          <Metadata>
-            <Item Key="ProviderName">Weibo</Item>
-            <Item Key="authorization_endpoint">https://accounts.Weibo.com/o/oauth2/auth</Item>
-            <Item Key="AccessTokenEndpoint">https://accounts.Weibo.com/o/oauth2/token</Item>
-            <Item Key="ClaimsEndpoint">https://www.Weiboapis.com/oauth2/v1/userinfo</Item>
-            <Item Key="scope">email profile</Item>
-            <Item Key="HttpBinding">POST</Item>
-            <Item Key="UsePolicyInRedirectUri">false</Item>
-            <Item Key="client_id">Your Weibo application ID</Item>
-          </Metadata>
-          <CryptographicKeys>
-            <Key Id="client_secret" StorageReferenceId="B2C_1A_WeiboSecret" />
-          </CryptographicKeys>
-          <OutputClaims>
-            <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="id" />
-            <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="email" />
-            <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="given_name" />
-            <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="family_name" />
-            <OutputClaim ClaimTypeReferenceId="displayName" PartnerClaimType="name" />
-            <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="Weibo.com" />
-            <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="socialIdpAuthentication" />
-          </OutputClaims>
-          <OutputClaimsTransformations>
-            <OutputClaimsTransformation ReferenceId="CreateRandomUPNUserName" />
-            <OutputClaimsTransformation ReferenceId="CreateUserPrincipalName" />
-            <OutputClaimsTransformation ReferenceId="CreateAlternativeSecurityId" />
-            <OutputClaimsTransformation ReferenceId="CreateSubjectClaimFromAlternativeSecurityId" />
-          </OutputClaimsTransformations>
-          <UseTechnicalProfileForSessionManagement ReferenceId="SM-SocialLogin" />
-        </TechnicalProfile>
-      </TechnicalProfiles>
-    </ClaimsProvider>
-    <ClaimsProvider>
       <Domain>weibo.com</Domain>
       <DisplayName>Weibo (Preview)</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="Weibo-OAUTH">
+        <TechnicalProfile Id="Weibo-OAuth2">
           <DisplayName>Weibo</DisplayName>
           <Protocol Name="OAuth2" />
           <Metadata>
@@ -212,79 +183,28 @@ ms.locfileid: "98537923"
 </BuildingBlocks>
 ```
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-Теперь вы настроили политику так, чтобы Azure AD B2C знала, как взаимодействовать с вашей учетной записью Weibo. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
-
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
-
-На этом этапе поставщик удостоверений уже настроен, но еще не доступен ни на одном экране регистрации или входа. Чтобы сделать его доступным, создайте дубликат существующего шаблона пути взаимодействия пользователя, а затем измените его, чтобы у него также был поставщик удостоверений Weibo.
-
-1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
-2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInWeibo`.
-
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экранах регистрации и входа. Если добавить элемент **клаимспровидерселектион** для учетной записи Weibo, то при переходе пользователя на страницу появится новая кнопка.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-2. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `WeiboExchange`:
-
-    ```xml
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
     <ClaimsProviderSelection TargetClaimsExchangeId="WeiboExchange" />
-    ```
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="WeiboExchange" TechnicalProfileReferenceId="Weibo-OAuth2" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. Действие, в данном случае, предназначено для Azure AD B2C для взаимодействия с учетной записью Weibo для получения маркера.
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
-
-    ```xml
-    <ClaimsExchange Id="WeiboExchange" TechnicalProfileReferenceId="Weibo-OAuth" />
-    ```
-
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Weibo-OAuth`.
-
-3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-weibo-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Weibo в поток пользователя 
-
-1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Weibo.
-1. В разделе **поставщики удостоверений социальных сетей** выберите **Weibo**.
-1. Щелкните **Сохранить**.
-1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
-1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Щелкните **выполнить поток пользователя**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
-
-Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
-
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте его в *SignUpSignInWeibo.xml*.
-1. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInWeibo`.
-1. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_Weibo`.
-1. Обновите значение атрибута **ReferenceId** в **дефаултусержаурнэй** , чтобы оно совпадало с идентификатором нового пути взаимодействия пользователя, созданного пользователем (сигнупсигнвеибо).
-1. Сохраните изменения и отправьте файл.
-1. В разделе **Настраиваемые политики** выберите **B2C_1A_signup_signin**.
-1. В поле **выберите приложение** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Выберите **Запустить сейчас** и выберите Weibo, чтобы войти в систему с помощью Weibo и проверить настраиваемую политику.
+[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
 
 ::: zone-end

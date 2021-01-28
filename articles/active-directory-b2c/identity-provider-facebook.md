@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 64a4404fa881181f92d442a73e5da4c16ae87ae3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: e0e71bc0e3a81b5ab2f455224ed2ed4281532d55
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598877"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98952680"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C
 
@@ -84,6 +84,21 @@ ms.locfileid: "98598877"
 ::: zone-end
 
 ::: zone pivot="b2c-custom-policy"
+
+## <a name="create-a-policy-key"></a>Создание ключа политики
+
+Необходимо сохранить секрет приложения, записанный ранее в клиент Azure AD B2C.
+
+1. Войдите на [портал Azure](https://portal.azure.com/).
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню и выберите каталог, который содержит ваш клиент.
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
+4. На странице "Обзор" выберите **Identity Experience Framework**.
+5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
+6. Для пункта **Параметры** выберите `Manual`.
+7. Введите **имя** ключа политики. Например, `FacebookSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
+8. В качестве **секрета** введите ранее записанный секрет приложения.
+9. Для параметра **Использование ключа** выберите `Signature`.
+10. Нажмите кнопку **Создать**.
 
 ## <a name="configure-a-facebook-account-as-an-identity-provider"></a>Настройка учетной записи Facebook в качестве поставщика удостоверений
 

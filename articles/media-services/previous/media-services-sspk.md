@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: eb88d2cf96cc8557f2b8c729554106530cf6f956
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 51d2c4553a745d9a9dfb477694da4526588ed0ea
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629629"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98951484"
 ---
 # <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Лицензирование &reg; пакета Microsoft Smooth Streaming Client Licensing Kit
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
  
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 Пакет для переноса клиента бесперебойной потоковой передачи Microsoft Smooth Streaming (далее для краткости называется **SSPK**) представляет собой реализацию клиента Smooth Streaming. Он оптимизирован так, чтобы помочь производителям встроенных устройств, операторам кабельной и мобильной связи, поставщикам служб содержимого, производителям мобильных устройств, независимым поставщикам программного обеспечения и поставщикам решений создавать продукты и услуги, которые поддерживают потоковую передачу адаптивного содержимого в формате Smooth Streaming. Клиент SSPK не зависит от оборудования и платформы. Лицензиат может легко перенести его на любое устройство и любую платформу. 
 
 Ниже вы видите схему архитектуры высокого уровня. Поле IIS Smooth Streaming Porting Kit здесь обозначает клиента Smooth Streaming, который предоставляет корпорация Майкрософт. Этот клиент содержит всю основную логику для воспроизведения контента Smooth Streaming. Затем партнеры переносят содержимое на конкретное устройство или платформу, создавая соответствующие интерфейсы. 
@@ -123,7 +123,8 @@ ms.locfileid: "98629629"
 * С ОГРАНИЧЕННЫМ ЧИСЛОМ ТЕХНОЛОГИЙ EXPRESS
 * Fluendo S.A.
 * ФУНАИ ЭЛЕКТРИЧЕСКИЙ CO, LTD
-* Hisense International Co., Ltd. 
+* Hisense International Co., Ltd.
+* Хисенсе визуальных технологий для совместной работы, Ltd
 * Ограниченная корпорация ХКК
 * Гонконг, Конка Ltd
 * Корпорация иннолукс

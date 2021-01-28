@@ -3,12 +3,12 @@ title: Создание ресурса Azure Application Insights | Докуме
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 2924ccbbf591020d7872d3e9cca62a9c271db7c0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: adc40db493c701a21fd30d10a4452edee1b87ab9
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944595"
+ms.locfileid: "98951278"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -36,6 +36,7 @@ Azure Application Insights отображает данные о приложен
 
 Введите соответствующие значения в обязательные поля, а затем выберите **проверить и создать**.
 
+[!div class="mx-imgBorder"]
 ![Введите значения в обязательные поля, а затем выберите "Проверка + создать".](./media/create-new-resource/review-create.png)
 
 После создания приложения откроется новая область. В этой области отображаются данные о производительности и использовании отслеживаемого приложения. 

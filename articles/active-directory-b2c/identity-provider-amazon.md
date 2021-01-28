@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.custom: project-no-code
-ms.date: 01/15/2021
+ms.date: 01/27/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 79fcbb6d2bf10da566139b0d103a4f31930f3200
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 23867ac6eb6941e2d132ae885fccd0e938fef907
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98537985"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98953112"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Amazon через Azure Active Directory B2C
 
@@ -47,7 +47,7 @@ ms.locfileid: "98537985"
 
 ::: zone pivot="b2c-user-flow"
 
-## <a name="configure-an-amazon-account-as-an-identity-provider"></a>Настройка учетной записи Amazon в качестве поставщика удостоверений
+## <a name="configure-amazon-as-an-identity-provider"></a>Настройка Amazon в качестве поставщика удостоверений
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
@@ -57,6 +57,16 @@ ms.locfileid: "98537985"
 1. В поле **идентификатор клиента** введите идентификатор клиента приложения Amazon, созданного ранее.
 1. В качестве **секрета клиента** введите записанный секрет клиента.
 1. Щелкните **Сохранить**.
+
+## <a name="add-amazon-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Amazon в поток пользователя 
+
+1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
+1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Amazon.
+1. В разделе **поставщики удостоверений социальных сетей** выберите **Amazon**.
+1. Щелкните **Сохранить**.
+1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
+1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Щелкните **выполнить поток пользователя**
 
 ::: zone-end
 
@@ -77,9 +87,9 @@ ms.locfileid: "98537985"
 9. Для параметра **Использование ключа** выберите `Signature`.
 10. Нажмите кнопку **Создать**.
 
-## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
+## <a name="configure-amazon-as-an-identity-provider"></a>Настройка Amazon в качестве поставщика удостоверений
 
-Если необходимо разрешить пользователям входить в систему с помощью учетной записи Amazon, определите учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
+Чтобы разрешить пользователям входить с помощью учетной записи Amazon, необходимо определить учетную запись как поставщика утверждений. Это Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Чтобы определить учетную запись Amazon в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики.
 
@@ -93,7 +103,7 @@ ms.locfileid: "98537985"
       <Domain>amazon.com</Domain>
       <DisplayName>Amazon</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="Amazon-OAUTH">
+        <TechnicalProfile Id="Amazon-OAuth2">
         <DisplayName>Amazon</DisplayName>
         <Protocol Name="OAuth2" />
         <Metadata>
@@ -130,77 +140,28 @@ ms.locfileid: "98537985"
 4. Задайте для параметра **client_id** значение идентификатора приложения из регистрации приложения.
 5. Сохраните файл.
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-К этому моменту политика настроена, так что Azure AD B2C знает, как взаимодействовать с каталогом Azure AD. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
-
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
-
-На этом этапе поставщик удостоверений уже настроен, но еще не доступен ни на одном экране регистрации или входа. Чтобы сделать его доступным, необходимо создать дубликат существующего шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений Amazon.
-
-1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
-2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInAmazon`.
-
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экранах регистрации и входа. Если вы добавите элемент **ClaimsProviderSelection** для учетной записи Amazon, при переходе пользователя на страницу отобразится новая кнопка.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-2. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `AmazonExchange`:
-
-    ```xml
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
     <ClaimsProviderSelection TargetClaimsExchangeId="AmazonExchange" />
-    ```
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="AmazonExchange" TechnicalProfileReferenceId="Amazon-OAuth2" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В этом случае действие — это возможность взаимодействия Azure AD B2C с учетной записью Amazon для получения токена.
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
-
-    ```xml
-    <ClaimsExchange Id="AmazonExchange" TechnicalProfileReferenceId="Amazon-OAuth" />
-    ```
-
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Amazon-OAuth`.
-
-3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-amazon-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Amazon в поток пользователя 
-
-1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните поток пользователя, для которого требуется добавить поставщик удостоверений Amazon.
-1. В разделе **поставщики удостоверений социальных сетей** выберите **Amazon**.
-1. Щелкните **Сохранить**.
-1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
-1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Щелкните **выполнить поток пользователя**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
-
-Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
-
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInAmazon.xml*.
-1. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInAmazon`.
-1. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_amazon`.
-1. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами пути взаимодействия пользователя (SignUpSignAmazon).
-1. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
-1. Убедитесь, что созданное приложение Azure AD B2C выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.
+[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
 
 ::: zone-end

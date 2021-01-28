@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 01/28/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 50042b749c917752d08198c31ada3c73a5ef540b
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a7e9e523d3aae7cf1444c048c023ca1d85fde41f
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98938482"
+ms.locfileid: "98952242"
 ---
 # <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Управление Azure AD B2C с помощью Microsoft Graph
 
@@ -45,9 +45,13 @@ Microsoft Graph позволяет управлять ресурсами в ка
 - [Обновление](/graph/api/phoneauthenticationmethod-update)
 - [Удаление](/graph/api/phoneauthenticationmethod-delete)
 
+Обратите внимание, что операция [List](/graph/api/authentication-list-phonemethods) возвращает только включенные номера телефонов. Следующий номер телефона должен быть включен для использования с операциями списка. 
+
+![Включить вход с помощью телефона](./media/microsoft-graph-operations/enable-phone-sign-in.png)
+
 ## <a name="self-service-password-reset-email-address-beta"></a>Самостоятельный адрес электронной почты для сброса пароля (бета-версия)
 
-Адрес электронной почты, который может использоваться пользователем для ввода пароля для [учетной записи входа пользователя](identity-provider-local.md#username-sign-in). Дополнительные сведения см. в статье [API методов проверки подлинности Azure AD](/graph/api/resources/emailauthenticationmethod).
+Адрес электронной почты, который может использоваться [учетной записью входа пользователя](identity-provider-local.md#username-sign-in) для сброса пароля. Дополнительные сведения см. в статье [API методов проверки подлинности Azure AD](/graph/api/resources/emailauthenticationmethod).
 
 - [Добавление](/graph/api/emailauthenticationmethod-post)
 - [Список](/graph/api/emailauthenticationmethod-list)
