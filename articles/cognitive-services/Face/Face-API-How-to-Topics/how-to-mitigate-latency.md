@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 1/5/2021
 ms.author: v-jawe
-ms.openlocfilehash: b4035e2039afb6fe66d2658ebfcd3206d46e1de5
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e7f4293955772697ddeea5fce9daac4b04755274
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98682468"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937291"
 ---
 # <a name="how-to-mitigate-latency-when-using-the-face-service"></a>Как уменьшить задержку при использовании службы распознавания лиц
 
@@ -34,7 +34,7 @@ ms.locfileid: "98682468"
 
 ### <a name="slow-connection-between-the-cognitive-service-and-a-remote-url"></a>Снижение скорости подключения между службой и удаленным URL-адресом
 
-Некоторые Cognitive Services Azure предоставляют методы, которые получают данные из предоставленного удаленного URL-адреса. Например, при вызове [метода детектвисурласинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithUrlAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) службы Face можно указать URL-адрес изображения, в котором служба пытается обнаружить грани.
+Некоторые Cognitive Services Azure предоставляют методы, которые получают данные из предоставленного удаленного URL-адреса. Например, при вызове [метода детектвисурласинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithUrlAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) службы Face можно указать URL-адрес изображения, в котором служба пытается обнаружить грани.
 
 ```csharp
 var faces = await client.Face.DetectWithUrlAsync("https://www.biography.com/.image/t_share/MTQ1MzAyNzYzOTgxNTE0NTEz/john-f-kennedy---mini-biography.jpg");
@@ -42,7 +42,7 @@ var faces = await client.Face.DetectWithUrlAsync("https://www.biography.com/.ima
 
 Затем служба распознавания лиц должна загрузить образ с удаленного сервера. Если подключение из службы "лица" к удаленному серверу работает слишком долго, то оно повлияет на время отклика метода обнаружения.
 
-Чтобы устранить эту проблемы, рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Пример:
+Чтобы устранить эту проблемы, рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Пример.
 
 ``` csharp
 var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
@@ -50,7 +50,7 @@ var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows
 
 ### <a name="large-upload-size"></a>Большой размер передачи
 
-Некоторые Cognitive Services Azure предоставляют методы, которые получают данные из отправляемого файла. Например, при вызове [метода детектвисстреамасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithStreamAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_IO_Stream_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) службы распознавания изображений можно передать изображение, в котором служба пытается обнаружить лиц.
+Некоторые Cognitive Services Azure предоставляют методы, которые получают данные из отправляемого файла. Например, при вызове [метода детектвисстреамасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync#Microsoft_Azure_CognitiveServices_Vision_Face_FaceOperationsExtensions_DetectWithStreamAsync_Microsoft_Azure_CognitiveServices_Vision_Face_IFaceOperations_System_IO_Stream_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Collections_Generic_IList_System_Nullable_Microsoft_Azure_CognitiveServices_Vision_Face_Models_FaceAttributeType___System_String_System_Nullable_System_Boolean__System_String_System_Threading_CancellationToken_) службы распознавания изображений можно передать изображение, в котором служба пытается обнаружить лиц.
 
 ```csharp
 using FileStream fs = File.OpenRead(@"C:\images\face.jpg");
@@ -62,7 +62,7 @@ System.Collections.Generic.IList<DetectedFace> faces = await client.Face.DetectW
 - Она занимает больше времени для обработки файла, пропорционально размеру файла.
 
 Устранение рисков:
-- Рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Пример:
+- Рекомендуется [сохранить образ в хранилище BLOB-объектов Azure Premium](https://docs.microsoft.com/azure/storage/blobs/storage-upload-process-images?tabs=dotnet). Пример.
 ``` csharp
 var faces = await client.Face.DetectWithUrlAsync("https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Daughter1.jpg");
 ```
@@ -87,7 +87,7 @@ IEnumerable<DetectedFace> results = faces_1.Result.Concat (faces_2.Result);
 - При создании подписки на приложение необходимо выбрать регион, ближайший к месту размещения приложения.
 - Если необходимо вызвать несколько методов службы, рекомендуется вызывать их параллельно, если проект приложения допускает его. Пример см. в предыдущем разделе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как уменьшить задержку при использовании службы распознавания лиц. Далее Узнайте, как масштабироваться от существующих объектов Персонграуп и Фацелист до объектов Ларжеперсонграуп и LargeFaceList соответственно.
 
@@ -97,4 +97,4 @@ IEnumerable<DetectedFace> results = faces_1.Result.Concat (faces_2.Result);
 ## <a name="related-topics"></a>Связанные темы
 
 - [Справочная документация (ОСТАВШАЯся)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
-- [Справочная документация (пакет SDK для .NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)
+- [Справочная документация (пакет SDK для .NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)

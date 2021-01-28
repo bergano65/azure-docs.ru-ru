@@ -1,19 +1,16 @@
 ---
 title: Использование MapReduce и PowerShell с Apache Hadoop в Azure HDInsight
 description: Узнайте, как использовать PowerShell для удаленного выполнения заданий MapReduce с помощью Apache Hadoop в HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/08/2020
-ms.openlocfilehash: 8b5f5a9fb8ddd25f750b19044bac7253bbff2f98
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 16c6c5e317591b70c3a1300453093fc715e213fb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545214"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939680"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-powershell"></a>Выполнение заданий MapReduce с помощью PowerShell и Apache Hadoop в HDInsight
 
@@ -36,14 +33,14 @@ Azure PowerShell предоставляет *командлеты* , позво�
 |Командлет | Описание |
 |---|---|
 |Connect-AzAccount|выполняет аутентификацию Azure PowerShell для подписки Azure.|
-|New-AzHDInsightMapReduceJobDefinition|создает *определение задания* , используя заданную информацию MapReduce.|
-|Start-AzHDInsightJob|отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания* .|
+|New-AzHDInsightMapReduceJobDefinition|создает *определение задания*, используя заданную информацию MapReduce.|
+|Start-AzHDInsightJob|отправляет определение задания в HDInsight и запускает задание. Будет возвращен объект *задания*.|
 |Wait-AzHDInsightJob|проверяет состояние задания с помощью объекта-задания. Он ожидает завершения задания или превышения времени ожидания.|
 |Get-AzHDInsightJobOutput|используется для получения выходных данных задания.|
 
 Следующие шаги показывают, как использовать эти командлеты для выполнения задания в кластере HDInsight:
 
-1. С помощью редактора Сохраните следующий код как **mapreducejob.ps1** .
+1. С помощью редактора Сохраните следующий код как **mapreducejob.ps1**.
 
     [!code-powershell[main](../../../powershell_scripts/hdinsight/use-mapreduce/use-mapreduce.ps1?range=5-69)]
 

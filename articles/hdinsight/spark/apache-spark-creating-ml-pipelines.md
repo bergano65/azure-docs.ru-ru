@@ -2,18 +2,15 @@
 title: Создание конвейера машинного обучения Apache Spark в Azure HDInsight
 description: Используйте библиотеку машинного обучения Apache Spark для создания конвейеров данных в Azure HDInsight.
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 07/22/2019
-ms.openlocfilehash: c270e9865aff30184ea236f56ab20ede78c5d577
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9897c7ba14e6190698cf10792a94acc759699d4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86075456"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940184"
 ---
 # <a name="create-an-apache-spark-machine-learning-pipeline"></a>Создание конвейера машинного обучения Apache Spark
 
@@ -132,6 +129,6 @@ only showing top 20 rows
 
 Теперь объект `model` можно использовать для создания прогнозов. Полный пример этого приложения машинного обучения и пошаговые инструкции по его выполнению см. в статье [Создание приложений машинного обучения Apache Spark в Azure HDInsight](apache-spark-ipython-notebook-machine-learning.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Обработка и анализ данных с использованием Scala и Spark в Azure](../../machine-learning/team-data-science-process/scala-walkthrough.md)

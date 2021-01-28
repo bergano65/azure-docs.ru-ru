@@ -1,18 +1,15 @@
 ---
 title: Часто задаваемые вопросы об Apache Kafka в Azure HDInsight
 description: Получите ответы на часто задаваемые вопросы о Apache Kafka в Azure HDInsight — управляемой облачной службе Hadoop.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: 84c48f14ae57cfa4aa3290924d3d170c075fe3a6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 851d7ceb44d2466ed31e26c1442fde9acea9fd22
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92532552"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939096"
 ---
 # <a name="frequently-asked-questions-about-apache-kafka-in-azure-hdinsight"></a>Frequently asked questions about Apache Kafka in Azure HDInsight (Часто задаваемые вопросы о Apache Kafka в Azure HDInsight)
 

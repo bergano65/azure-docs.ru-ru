@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: 2a6e7ee125cac66b48e666a766c39813aa38fb1a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6918218d8434c06f59b0738e60cad53b94b0a0b5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968508"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939836"
 ---
 # <a name="deploy-the-text-analytics-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера обнаружения языка Анализ текста в службе Kubernetes Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "94968508"
 
 * Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services), прежде чем начинать работу.
 * [Git](https://git-scm.com/downloads) для вашей операционной системы, чтобы клонировать [пример](https://github.com/Azure-Samples/cognitive-services-containers-samples) для этой процедуры.
-* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Azure CLI](/cli/azure/install-azure-cli).
 * [Модуль Docker](https://www.docker.com/products/docker-engine), для которого нужно проверить работоспособность Docker CLI в окне консоли.
 * [kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/windows/amd64/kubectl.exe).
 * Ресурс Azure с правильной ценовой категорией. Не все ценовые категории поддерживают этот контейнер.
@@ -311,14 +311,14 @@ ms.locfileid: "94968508"
 
 1. Измените строки развертывания интерфейса распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
-    Параметры развертывания интерфейса распознавания языка|Назначение|
+    Параметры развертывания интерфейса распознавания языка|Цель|
     |--|--|
     |Строка 32<br> Свойство`image`|Расположение образа интерфейса в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language-frontend:v1`|
     |Строка 44<br> Свойство`name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
 
 1. Измените строки развертывания распознавания языка в файле `language.yml`, используя данные из следующей таблицы, чтобы добавить имена образов реестров контейнеров, секрет клиента и параметры анализа текста.
 
-    |Параметры развертывания распознавания языка|Назначение|
+    |Параметры развертывания распознавания языка|Цель|
     |--|--|
     |Строка 78<br> Свойство`image`|Расположение образа распознавания языка в Реестре контейнеров<br>`<container-registry-name>.azurecr.io/language:1.1.006770001-amd64-preview`|
     |Строка 95<br> Свойство`name`|Секрет Реестра контейнера для образа, который указан в параметре `<client-secret>` в предыдущем разделе.|
@@ -401,7 +401,7 @@ az group delete --name cogserv-container-rg
 
 * [kubectl для пользователей Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

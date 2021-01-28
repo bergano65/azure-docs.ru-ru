@@ -1,19 +1,17 @@
 ---
 title: 'Безопасность: Миграция локальных Apache Hadoop в Azure HDInsight'
 description: Рекомендации по обеспечению безопасности и операциям DevOps в контексте миграции локальных кластеров Hadoop в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: ashishth
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
-ms.openlocfilehash: 6fd59a346a36a304f699894c493d8ba9800489b2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: fa6a4a8686fe5a33a6f240a8e972a687e872732a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545265"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98939735"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -116,9 +114,9 @@ ms.locfileid: "92545265"
 
 ## <a name="post-migration"></a>Действия после миграции
 
-1. **Исправление приложений** . Внесите необходимые изменения в заданиях, процессах и сценариях в итеративном режиме.
-2. **Выполнение тестов** . Выполните функциональные тесты и тесты производительности в итеративном режиме.
-3. **Оптимизация** . Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
+1. **Исправление приложений**. Внесите необходимые изменения в заданиях, процессах и сценариях в итеративном режиме.
+2. **Выполнение тестов**. Выполните функциональные тесты и тесты производительности в итеративном режиме.
+3. **Оптимизация**. Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

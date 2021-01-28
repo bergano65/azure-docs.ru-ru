@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 5b0b86321f7f2b320c3fea8e7c5bfa45bd936b77
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f8fa5532a5664741c9ddb9b78b35d5eed8e2e4e0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752993"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937853"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое входит в систему пользователей: вход и выход
 
@@ -222,19 +222,19 @@ def _get_token_from_cache(scope=None):
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Во время регистрации приложения вы регистрируете URI после выхода. В нашем руководстве вы зарегистрировались `https://localhost:44321/signout-oidc` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ". Дополнительные сведения см. [ в разделе Регистрация приложения webApp](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg#register-the-webapp-app-webapp).
+Во время регистрации приложения вы регистрируете URL-адрес выхода для внешнего канала. В нашем руководстве вы зарегистрировались `https://localhost:44321/signout-oidc` в поле **URL-адрес внешнего канала для выхода** на странице **Проверка подлинности** . Дополнительные сведения см. [в разделе Регистрация приложения webApp](scenario-web-app-sign-user-app-registration.md#register-an-app-by-using-the-azure-portal).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Во время регистрации приложения вы регистрируете URI после выхода. В нашем руководстве вы зарегистрировались `https://localhost:44308/Account/EndSession` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ". Дополнительные сведения см. [в разделе Регистрация приложения webApp](https://github.com/Azure-Samples/active-directory-dotnet-web-single-sign-out#register-the-service-app-webapp-distributedsignout-dotnet).
+Во время регистрации приложения не нужно регистрировать дополнительный URL-адрес для выхода на переднюю канал. Приложение будет вызываться обратно по его основному URL-адресу. 
 
 # <a name="java"></a>[Java](#tab/java)
 
-Во время регистрации приложения вы регистрируете URI после выхода. В нашем руководстве вы зарегистрировались `http://localhost:8080/msal4jsample/sign_out` в поле " **URL-адрес выхода** " в разделе " **Дополнительные параметры** " на странице " **Проверка подлинности** ".
+В регистрации приложения не требуется URL-адрес для выхода из внешнего канала.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Во время регистрации приложения не нужно регистрировать дополнительный URL-адрес для выхода. Приложение будет вызываться обратно по его основному URL-адресу.
+Во время регистрации приложения не нужно регистрировать дополнительный URL-адрес для выхода на переднюю канал. Приложение будет вызываться обратно по его основному URL-адресу.
 
 ---
 
@@ -336,7 +336,7 @@ else
 - Вызовы `Signout()` , которые позволяют по промежуточного слоя OpenID Connect Connect обращаться к `logout` конечной точке платформы идентификации Майкрософт. Затем конечная точка:
 
   - Удаляет файл cookie сеанса из браузера.
-  - Вызывает обратный URL-адрес выхода. По умолчанию в поле "URL-адрес выхода" отображается страница просмотра выходного представления [SignedOut.cshtml.CS](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Pages/Account/SignedOut.cshtml.cs). Эта страница также предоставляется как часть MIcrosoft. Identity. Web.
+  - Вызывает обратный URI перенаправления после выхода. По умолчанию URI перенаправления после выхода отображает страницу представления выхода [SignedOut.cshtml.CS](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Pages/Account/SignedOut.cshtml.cs). Эта страница также предоставляется как часть Microsoft. Identity. Web.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
@@ -431,6 +431,6 @@ public class AccountController : Controller
 
 Если вы хотите узнать больше о выходе, прочитайте документацию по протоколу, доступную по адресу [Open ID Connect](./v2-protocols-oidc.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующей статье в этом сценарии, [перейдите в рабочую среду](scenario-web-app-sign-user-production.md).

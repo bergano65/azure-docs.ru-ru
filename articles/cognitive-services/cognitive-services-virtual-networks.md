@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 12/04/2020
+ms.date: 01/27/2021
 ms.author: aahi
-ms.openlocfilehash: 3b6c2a5a50cedadd8818eae735df55b661e794ef
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 8fa10164ae2d697f68156777f224b92f0562475f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97034026"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98940041"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -44,7 +44,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 > [!div class="checklist"]
 > * Детектор аномалий
-> * API Компьютерного зрения
+> * Компьютерное зрение
 > * Content Moderator
 > * Custom Vision
 > * Распознавание лиц
@@ -340,9 +340,6 @@ Cognitive Services ресурс и виртуальные сети, которы
    > Небольшие адреса, использующие размеры с префиксом /31 или /32, не поддерживаются. Эти диапазоны следует настраивать с помощью отдельных правил для IP-адресов.
 
 Правила IP-сети можно применять только для **общедоступных** IP-адресов в Интернете. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)), запрещено использовать в правилах IP. Частные сети включают адреса, которые начинаются с `10.*` , `172.16.*`  -  `172.31.*` и `192.168.*` .
-
-   > [!NOTE]
-   > Правила IP-сети не влияют на запросы, исходящие из того же региона Azure, что и ресурс Cognitive Services. Используйте [правила виртуальной сети](#grant-access-from-a-virtual-network) для разрешения запросов из того же региона.
 
 Сейчас поддерживаются только IPV4-адреса. Каждый ресурс Cognitive Services поддерживает до 100 правил сети IP, которые могут сочетаться с [правилами виртуальной сети](#grant-access-from-a-virtual-network).
 
