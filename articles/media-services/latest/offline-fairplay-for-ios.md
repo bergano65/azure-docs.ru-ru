@@ -1,5 +1,5 @@
 ---
-title: Автономная потоковая передача FairPlay для iOS с помощью служб мультимедиа Azure v3
+title: Служба мультимедиа v3 автономная FairPlay потоковая передача для iOS
 description: В этом разделе приводится обзор и демонстрируется использование служб мультимедиа Azure версии 3 для динамического шифрования содержимого HTTP Live Streaming (HLS) с помощью Apple FairPlay в автономном режиме.
 services: media-services
 keywords: HLS, DRM, потоковая передача FairPlay (FPS), Offline, iOS 10
@@ -16,12 +16,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 886a8aa1a6f062b5fe01476e387742f34efc0c56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 399f9b0184217db8180fcec38e4f78917d5c9bc8
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532245"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955245"
 ---
 # <a name="offline-fairplay-streaming-for-ios-with-media-services-v3"></a>Автономная потоковая передача FairPlay для iOS с помощью служб мультимедиа v3
 
@@ -209,6 +209,6 @@ func requestApplicationCertificate() throws -> Data {
 
 См. [часто задаваемые вопросы по устранению неполадок](frequently-asked-questions.md#why-does-only-audio-play-but-not-video-during-offline-mode).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о возможностях [использования динамического шифрования AES-128 и службы доставки ключей](protect-with-aes128.md).

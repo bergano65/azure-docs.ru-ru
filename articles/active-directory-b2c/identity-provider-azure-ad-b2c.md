@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/27/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 8a0d69ea57eb5b8b2a074c37d4798a99c576ce95
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: ea4def3cfaa19e27dc05e955bf97b41976ec2190
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538180"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98953926"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-azure-ad-b2c-account-from-another-azure-ad-b2c-tenant"></a>Настройка регистрации и входа с учетной записью Azure AD B2C из другого клиента Azure AD B2C
 
@@ -107,6 +107,17 @@ ms.locfileid: "98538180"
 
 1. Щелкните **Сохранить**.
 
+## <a name="add-azure-ad-b2c-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Azure AD B2C в поток пользователя 
+
+1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
+1. Щелкните поток пользователя, который требуется добавить Azure AD B2C поставщика удостоверений.
+1. В разделе **поставщики удостоверений социальных сетей** выберите **Fabrikam**.
+1. Щелкните **Сохранить**.
+1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
+1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Щелкните **выполнить поток пользователя**
+1. На странице Регистрация или вход выберите *Fabrikam* , чтобы войти с другим клиентом Azure AD B2C.
+
 ::: zone-end
 
 ::: zone pivot="b2c-custom-policy"
@@ -125,9 +136,9 @@ ms.locfileid: "98538180"
 1. Для параметра **Использование ключа** выберите `Signature`.
 1. Нажмите кнопку **создания**.
 
-## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
+## <a name="configure-azure-ad-b2c-as-an-identity-provider"></a>Настройка Azure AD B2C в качестве поставщика удостоверений
 
-Чтобы пользователи могли выполнять вход с помощью других Azure AD B2C (Fabrikam), необходимо определить другие Azure AD B2C как поставщик утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
+Чтобы пользователи могли входить с помощью учетной записи из другого клиента Azure AD B2C (Fabrikam), необходимо определить другие Azure AD B2C как поставщик утверждений, который Azure AD B2C может взаимодействовать с помощью конечной точки. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Вы можете определить Azure AD B2C в качестве поставщика утверждений, добавив Azure AD B2C в элемент **поставщика утверждений** в файле расширения политики.
 
@@ -139,7 +150,7 @@ ms.locfileid: "98538180"
       <Domain>fabrikam.com</Domain>
       <DisplayName>Federation with Fabrikam tenant</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="Fabrikam-OpenIdConnect">
+        <TechnicalProfile Id="AzureADB2CFabrikam-OpenIdConnect">
         <DisplayName>Fabrikam</DisplayName>
         <Protocol Name="OpenIdConnect"/>
         <Metadata>
@@ -188,86 +199,32 @@ ms.locfileid: "98538180"
     |CryptographicKeys| Измените значение **идентификатором storagereferenceid** на имя созданного ранее ключа политики. Например, `B2C_1A_FabrikamAppSecret`.| 
     
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-Теперь вы настроили политику так, чтобы Azure AD B2C знала, как взаимодействовать с другим Azure AD B2C клиентом. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-1. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-1. Щелкните **Отправить**.
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
+    <ClaimsProviderSelection TargetClaimsExchangeId="AzureADB2CFabrikamExchange" />
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
+    <ClaimsExchange Id="AzureADB2CFabrikamExchange" TechnicalProfileReferenceId="AzureADB2CFabrikam-OpenIdConnect" />
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-На этом этапе поставщик удостоверений настроен, но еще не доступен ни на одной из страниц регистрации и входа. Чтобы сделать его доступным, создайте дубликат существующего шаблона, а затем измените его, чтобы у него также был поставщик удостоверений Azure AD:
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
-1. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-1. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-1. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-1. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInFabrikam`.
-
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **клаимспровидерселектион** аналогичен кнопке поставщика удостоверений на странице регистрации или входа. Если добавить элемент **клаимспровидерселектион** для Azure AD B2C, то при переходе пользователя на страницу появится новая кнопка.
-
-1. Найдите элемент **орчестратионстеп** , содержащийся `Order="1"` в пути взаимодействия пользователя, созданного в *TrustFrameworkExtensions.xml*.
-1. Добавьте следующий элемент под элементом **ClaimsProviderSelections**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `FabrikamExchange`:
-
-    ```xml
-    <ClaimsProviderSelection TargetClaimsExchangeId="FabrikamExchange" />
-    ```
-
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
-
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. Действие, в данном случае, предназначено для Azure AD B2C для взаимодействия с другими Azure AD B2C получения маркера. Свяжите кнопку с действием, связав технический профиль для поставщика утверждений Azure AD B2C:
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-1. Добавьте следующий элемент **ClaimsExchange** , убедившись, что используется то же значение **идентификатора** , которое использовалось для **таржетклаимсексчанжеид**:
-
-    ```xml
-    <ClaimsExchange Id="FabrikamExchange" TechnicalProfileReferenceId="Fabrikam-OpenIdConnect" />
-    ```
-
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее **идентификатора** технического профиля. Например, `Fabrikam-OpenIdConnect`.
-
-1. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
+[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
 
 ::: zone-end
 
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-azure-ad-b2c-identity-provider-to-a-user-flow"></a>Добавление поставщика удостоверений Azure AD B2C в поток пользователя 
-
-1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
-1. Щелкните поток пользователя, который требуется добавить Azure AD B2C поставщика удостоверений.
-1. В разделе **поставщики удостоверений социальных сетей** выберите **Fabrikam**.
-1. Щелкните **Сохранить**.
-1. Чтобы проверить политику, выберите пункт **выполнить пользовательскую последовательность**.
-1. Для **приложения** выберите веб-приложение с именем *testapp1* , которое вы зарегистрировали ранее. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
-1. Щелкните **выполнить поток пользователя**
-1. На странице Регистрация или вход выберите *Fabrikam* , чтобы войти с другим клиентом Azure AD B2C.
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
-
-
-## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
-
-Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
-
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте его в *SignUpSignInFabrikam.xml*.
-1. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInFabrikam`.
-1. Обновите значение **PublicPolicyUri**, указав URI для политики. Например, `http://contoso.com/B2C_1A_signup_signin_fabrikam`.
-1. Обновите значение атрибута **ReferenceId** в **дефаултусержаурнэй** , чтобы оно совпадало с идентификатором пути взаимодействия пользователя, созданного ранее. Например, *сигнупсигнинфабрикам*.
-1. Сохраните изменения и отправьте файл.
-1. В разделе **пользовательские политики** выберите новую политику в списке.
-1. В раскрывающемся списке **Выбор приложения** выберите созданное ранее приложение Azure AD B2C. Например, *testapp1*.
-1. Выберите " **Запустить сейчас** " 
-1. На странице Регистрация или вход выберите *Fabrikam* , чтобы войти с другим клиентом Azure AD B2C.
-
-::: zone-end
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как [передать в приложение другой токен Azure AD B2C](idp-pass-through-user-flow.md).

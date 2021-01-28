@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: ce48d87c6e04e6c349b681e953647feb5e7ddda5
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: 7b59e0ae2fbb73f341d5254fd2804d50ad141a19
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570122"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98953807"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей Active Directory 
 В этом учебнике описаны действия, необходимые для выполнения подготовки пользователей из SuccessFactors Employee Central в Active Directory (AD) и Azure AD с необязательной обратной записью электронного адреса в SuccessFactors. 
@@ -186,7 +186,7 @@ ms.locfileid: "98570122"
 
 Чтобы подготовить локальную службу Active Directory, необходимо установить агент подготовки на присоединенном к домену сервере с сетевым доступом к нужным доменам Active Directory.
 
-Перенесите скачанный установщик агента на узел сервера и следуйте инструкциям из [раздела об установке агента](../cloud-provisioning/how-to-install.md), чтобы завершить настройку агента.
+Перенесите скачанный установщик агента на узел сервера и следуйте инструкциям из [раздела об установке агента](../cloud-sync/how-to-install.md), чтобы завершить настройку агента.
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-successfactors-and-active-directory"></a>Часть 3. В приложении подготовки настройте подключения к SuccessFactors и Active Directory
 На этом шаге мы устанавливаем подключение с SuccessFactors и Active Directory на портале Azure. 
@@ -209,12 +209,12 @@ ms.locfileid: "98570122"
         > Этот параметр используется только при создании учетных записей, если в сопоставлениях атрибутов не настроен атрибут *parentDistinguishedName*. Этот параметр не используется для операций обновления и поиска пользователей. Областью действия операции поиска является все дочернее дерево домена.
 
    * **Адрес электронной почты для уведомлений —** введите адрес электронной почты и установите флажок "send email if failure occurs" (Отправлять по электронной почте в случае сбоя).
-    > [!NOTE]
-    > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](../app-provisioning/application-provisioning-quarantine-status.md).
+     > [!NOTE]
+     > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](../app-provisioning/application-provisioning-quarantine-status.md).
 
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае неудачи убедитесь, что учетные данные SuccessFactors и AD, заданные в настройках агента, действительны.
-    >[!div class="mx-imgBorder"]
-    >![Портал Azure](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
+     >[!div class="mx-imgBorder"]
+     >![Портал Azure](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
 
    * После успешного сохранения учетных данных в разделе **Сопоставления** отобразится сопоставление по умолчанию **Synchronize SuccessFactors Users to Azure Active Directory** (Синхронизировать пользователей SuccessFactors с локальной службой Active Directory).
 
@@ -250,9 +250,8 @@ ms.locfileid: "98570122"
 
 1. В разделе **Сопоставление атрибутов** можно определить, как отдельные атрибуты SuccessFactors сопоставляются с атрибутами Active Directory.
 
-  >[!NOTE]
-  >Полный список атрибутов SuccessFactors, поддерживаемых приложением, см. в [справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
-
+     >[!NOTE]
+     >Полный список атрибутов SuccessFactors, поддерживаемых приложением, см. в [справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
 
 1. Щелкните существующее сопоставление атрибута, чтобы его обновить, или **Добавить новое сопоставление** в нижней части экрана, чтобы добавить новые сопоставления. Отдельное сопоставление атрибутов поддерживает следующие свойства:
 

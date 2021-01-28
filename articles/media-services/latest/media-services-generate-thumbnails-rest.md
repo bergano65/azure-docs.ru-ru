@@ -1,5 +1,5 @@
 ---
-title: Получение ключа подписывания из политики с помощью служб мультимедиа Azure v3 .NET
+title: Создание эскизов с помощью Media Encoder Standard RESTFUL
 description: В этой статье показано, как использовать функции RESTFUL для кодирования ресурса и создания эскизов одновременно с помощью Media Encoder Standard.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 75b8fd53836cce02816413afaeb656c3ac3f8796
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: f4456a65f422c23da73f36dd74680fbb598db186
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935403"
+ms.locfileid: "98955840"
 ---
 # <a name="how-to-generate-thumbnails-using-encoder-standard-with-rest"></a>Создание эскизов с помощью кодировщика Standard
 

@@ -1,11 +1,25 @@
 ---
-Title: метрики служб мультимедиа и журналы диагностики с помощью Azure Monitor: Описание служб мультимедиа Azure. Узнайте, как отслеживать метрики и журналы диагностики служб мультимедиа Azure с помощью Azure Monitor.
-службы: мультимедиа-службы documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor редактор: ' '
-
-MS. Service: Media-Services MS. Рабочая нагрузка: носитель ms.tgt_pltfrm: Na MS. devlang: Na MS. Topic: концептуальная МС. Дата: 11/02/2020 MS. author: инхенкел
-
+title: Метрики и журналы диагностики с Azure Monitor
+description: Узнайте, как отслеживать метрики и журналы диагностики служб мультимедиа Azure с помощью Azure Monitor.
+services: media-services
+documentationcenter: ''
+author: IngridAtMicrosoft
+manager: femila
+editor: ''
+ms.service: media-services
+ms.workload: media
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: conceptual
+ms.date: 11/02/2020
+ms.author: inhenkel
+ms.openlocfilehash: 35b0d9c2937024341be6183ac1438b7c4500d6ef
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954992"
 ---
-
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-with-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

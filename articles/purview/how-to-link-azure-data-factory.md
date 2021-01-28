@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: dbd7937667a3c4d5af9f13e15cdd4ff2081241f0
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0e993cb1e53645f7081a20fc6a2785b8cfef1cce
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98723886"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954194"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Подключение фабрики данных Azure и Azure зрения
 
@@ -69,12 +69,22 @@ ms.locfileid: "98723886"
 >[!Note]
 >Теперь поддерживается добавление не более 10 фабрик данных одновременно. Если вы хотите добавить более 10 фабрик данных одновременно, отправьте запрос в службу поддержки.
 
+### <a name="how-does-the-authentication-work"></a>Как работает проверка подлинности?
+
+Когда пользователь зрения регистрирует фабрику данных, к которой у них есть доступ, в серверной части происходит следующее:
+
+1. **MSI фабрики данных** добавляется в роль зрения RBAC: **зрения Data пленку**.
+
+    :::image type="content" source="./media/how-to-link-azure-data-factory/adf-msi.png" alt-text="Снимок экрана, показывающий MSI фабрики данных Azure." lightbox="./media/how-to-link-azure-data-factory/adf-msi.png":::
+     
+2. Конвейер фабрики данных должен быть выполнен повторно, чтобы метаданные журнала преобразований могли быть переданы обратно в зрения.
+3. После выполнения метаданные фабрики данных помещаются в зрения.
 
 ### <a name="remove-data-factory-connections"></a>Удаление подключений фабрики данных
 Чтобы удалить подключение фабрики данных, выполните следующие действия.
 
 1. На странице **Подключение к фабрике данных** нажмите кнопку **Удалить** рядом с одним или несколькими подключениями к фабрике данных.
-1. Выберите пункт **подтвердить** во всплывающем окне, чтобы удалить выбранные подключения к фабрике данных.
+2. Выберите пункт **подтвердить** во всплывающем окне, чтобы удалить выбранные подключения к фабрике данных.
 
     :::image type="content" source="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png" alt-text="Снимок экрана, показывающий, как выбрать фабрики данных для удаления подключения." lightbox="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png":::
 
@@ -212,7 +222,7 @@ Azure зрения захватывает журналы выполнения и
 
 :::image type="content" source="./media/how-to-link-azure-data-factory/adf-resource-set-lineage.png" alt-text="Снимок экрана, показывающий журнал обращений и преобразований для набора ресурсов." lightbox="./media/how-to-link-azure-data-factory/adf-resource-set-lineage.png":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пользовательская структура журнала преобразований каталога](catalog-lineage-user-guide.md)
 - [Ссылка на общую папку данных Azure для журнала обращений и преобразований](how-to-link-azure-data-share.md)

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 09ce611b5bca6c04d55da95a82a8fcd7ae348db3
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 8933dd6655223db092597aedf839fd800119864a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049222"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684011"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -117,49 +117,9 @@ Query
 
 ### <a name="publish-the-app"></a>Публикация приложения
 
-Вернитесь в окно Visual Studio, где открыт проект _**AdtE2ESample**_, в области *Обозреватель решений* щелкните правой кнопкой мыши файл проекта _**SampleFunctionsApp**_ и выберите пункт **Опубликовать**.
+Вернитесь в окно Visual Studio, где открыт проект _**AdtE2ESample**_, и найдите проект _**SampleFunctionsApp**_ в области *Обозреватель решений*.
 
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-1.png" alt-text="Visual Studio: публикация проекта":::
-
-Откроется страница *Публикация*. Оставьте выбранный по умолчанию целевой объект **Azure** и нажмите кнопку *Далее*. 
-
-В качестве конкретного целевого объекта выберите **Приложение-функция Azure (Windows)** и нажмите кнопку *Далее*.
-
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-2.png" alt-text="Публикация функции Azure в Visual Studio: конкретный целевой объект":::
-
-На странице *экземпляра Функций* выберите свою подписку. При этом в соответствующем поле в вашей подписке должны появиться *группы ресурсов*.
-
-Выберите группу ресурсов своего экземпляра и нажмите *+* , чтобы создать функцию Azure.
-
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Публикация функции Azure в Visual Studio: экземпляр Функций (до создания приложения-функции)":::
-
-В окне *Приложение-функция (Windows) — создать* заполните поля следующим образом.
-* **Имя** — имя плана потребления, который Azure будет использовать для размещения вашего приложения Функций Azure. Оно также станет именем приложения-функции, в котором будет находиться ваша фактическая функция. Можно выбрать собственное уникальное значение или оставить предоставленное по умолчанию.
-* В поле **Подписка** должна быть указана подписка, которую вы хотите использовать. 
-* В поле **Группа ресурсов** должна быть указана нужная вам группа ресурсов.
-* В поле **Тип плана** оставьте значение *Потребление*.
-* В поле **Расположение** выберите расположение вашей группы ресурсов.
-* Создайте новый ресурс **службы хранилища Azure**, нажав ссылку *Создать...* . Задайте расположение, соответствующее расположению вашей группы ресурсов, оставьте остальные значения по умолчанию и нажмите кнопку "ОК".
-
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-4.png" alt-text="Публикация функции Azure в Visual Studio: Приложение-функция (Windows) — создать":::
-
-Затем выберите **Создать**.
-
-В результате вы должны вернуться на страницу *экземпляра Функций*, где в узле вашей группы ресурсов будет отображаться новое приложение-функция. Нажмите кнопку *Готово*.
-
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-5.png" alt-text="Публикация функции Azure в Visual Studio: экземпляр Функций (после создания приложения-функции)":::
-
-На странице *Публикация*, которая снова открывается в главном окне Visual Studio, проверьте все сведения, и если они верны, нажмите кнопку **Опубликовать**.
-
-:::image type="content" source="media/tutorial-end-to-end/publish-azure-function-6.png" alt-text="Публикация функции Azure в Visual Studio: публикация":::
-
-> [!NOTE]
-> Если увидите следующее всплывающее окно, выполните указанные ниже действия: :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-7.png" alt-text="Публикация функции Azure в Visual Studio: учетные данные для публикации" border="false":::
-> Выберите **Attempt to retrieve credentials from Azure** (Пытаться извлечь учетные данные из Azure) и нажмите кнопку **Сохранить**.
->
-> Если вы видите предупреждение о том, что необходимо *обновить версию Функции Azure* или что *ваша версия среды выполнения функций не соответствует версии, работающей в Azure*, выполните следующие действия:
->
-> Следуйте инструкциям на экране, чтобы выполнить обновление до последней версии среды выполнения Функций Azure. Эта проблема может возникать, если вы используете более раннюю версию Visual Studio, чем та, которая рекомендована в разделе *Необходимые компоненты* в начале этого руководства.
+[!INCLUDE [digital-twins-publish-azure-function.md](../../includes/digital-twins-publish-azure-function.md)]
 
 ### <a name="assign-permissions-to-the-function-app"></a>Назначение разрешений для приложения-функции
 
@@ -167,11 +127,13 @@ Query
 
 [!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
-В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру Azure Digital Twins, с помощью следующей команды.
+В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру Azure Digital Twins, с помощью следующей команды. Вместо заполнителей укажите сведения о своих ресурсах. Помните, что URL-адрес экземпляра Azure Digital Twins — это имя узла, которому предшествует *https://* .
 
 ```azurecli-interactive
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
 ```
+
+В выходных данных будет представлен список параметров функции Azure, в котором теперь должна присутствовать запись *ADT_SERVICE_URL*.
 
 С помощью следующей команды создайте управляемое системой удостоверение. Запишите значение поля *principalId* в выходных данных команды.
 

@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 473b2e4ac3443d204b39331d9cefaa6c71122439
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 225cb8d7bc35491ceefe444664afe175c7f7ea01
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881675"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954941"
 ---
 # <a name="troubleshooting-with-a-local-model-deployment"></a>Устранение неполадок при развертывании локальной модели
 
@@ -25,12 +25,14 @@ ms.locfileid: "98881675"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Попробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree).
-* [Пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
-* [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
-* [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
-* Чтобы выполнить отладку локально, можно развернуть модель для [машинное обучение Azure вычислительного экземпляра](./how-to-deploy-local-container-notebook-vm.md) или иметь рабочую установку DOCKER в локальной системе.
-
-    Чтобы проверить установку Docker, выполните команду `docker run hello-world` в терминале или командной строке. Сведения об установке Docker или устранении ошибок Docker см. в [документации Docker](https://docs.docker.com/).
+* Параметр A (**рекомендуется**) — локальное отладка машинное обучение Azure вычислительного экземпляра
+   * Рабочая область машинного обучения Azure с выполняющимся [вычислительным экземпляром](how-to-deploy-local-container-notebook-vm.md)
+* Вариант б. Отладка локально на основе вычислений
+   * [Пакет SDK для Машинного обучения Azure](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+   * [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+   * [Расширение CLI для Машинного обучения Azure](reference-azure-machine-learning-cli.md).
+   * Запросите рабочую установку DOCKER в локальной системе. 
+   * Чтобы проверить установку Docker, выполните команду `docker run hello-world` в терминале или командной строке. Сведения об установке Docker или устранении ошибок Docker см. в [документации Docker](https://docs.docker.com/).
 
 ## <a name="debug-locally"></a>Отладка в локальной среде
 

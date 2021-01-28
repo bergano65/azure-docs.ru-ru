@@ -1,16 +1,16 @@
 ---
 title: Совместная работа с другими пользователями — QnA Maker
-description: ''
+description: Узнайте, как совместно работать с другими авторами и редакторами с помощью управления доступом на основе ролей в Azure.
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: ecf81152605d77e1036c9fbf5d3308af2b1fb988
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: cb6d0ee9c651ca1dcc554f5951a5733727af2d6b
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96346161"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954112"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Совместная работа с другими авторами и редакторами
 
@@ -52,6 +52,6 @@ ms.locfileid: "96346161"
 
 При создании и совместной работе с использованием API-интерфейсов с помощью функций RESTFUL или пакетов SDK необходимо [создать субъект-службу](../../authentication.md#assign-a-role-to-a-service-principal) для управления проверкой подлинности.
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 * Разработка базы знаний для [языков](../index.yml) и [клиентских приложений](../index.yml)

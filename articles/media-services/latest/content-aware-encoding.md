@@ -1,5 +1,5 @@
 ---
-title: Предустановка для кодировки с учетом содержимого — службы мультимедиа Azure
+title: Предустановка для кодировки с учетом содержимого
 description: В этой статье рассматривается кодировка с учетом содержимого в Cлужбы мультимедиа Microsoft Azure v3.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5d08e09905841f6068f2bac45680a8e5a011c158
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c63ada9621fc1485742a7683fd6742f0e896854
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297371"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954435"
 ---
 # <a name="use-the-content-aware-encoding-preset-to-find-the-optimal-bitrate-value-for-a-given-resolution"></a>Используйте предустановку кодирования с поддержкой содержимого, чтобы найти оптимальное значение скорости для заданного разрешения.
 
@@ -81,7 +81,7 @@ TransformOutput[] output = new TransformOutput[]
 > [!NOTE]
 > Счета для заданий кодирования, использующих `ContentAwareEncoding` предустановку, выставляются на основе выходных минут. 
   
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Учебник. Отправка, кодирование и потоковая передача видео со службами мультимедиа v3](stream-files-tutorial-with-api.md)
 * [Руководство. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)

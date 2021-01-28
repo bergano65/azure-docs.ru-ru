@@ -43,6 +43,8 @@
       href: automation-runbook-types.md
     - name: "PowerShell\_DSC"
       href: /powershell/scripting/dsc/overview/overview
+    - name: Сведения о конфигурации сети службы автоматизации
+      href: automation-network-configuration.md
     - name: Безопасность
       items:
         - name: Элементы управления безопасностью службы "Политика Azure"

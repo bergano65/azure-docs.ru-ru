@@ -1,18 +1,19 @@
 ---
 title: Службы Azure с поддержкой Зон доступности
 description: Для создания высокодоступного и отказоустойчивого приложения в Azure Зоны доступности предоставляет физически разделенные зоны, которые можно использовать для выполнения ресурсов.
-author: cynthn
+author: prsandhu
 ms.service: azure
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/26/2021
-ms.author: cynthn
+ms.author: prsandhu
+ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 5883dc8b34cd1aa00ba1c5de25a09a017a130c0a
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: e8e62d92afb70ec9d4df40f677de05583ef472b0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896890"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955789"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Службы Azure с поддержкой Зон доступности
 
@@ -129,7 +130,7 @@ Microsoft Azure Глобальная инфраструктура разраба
 | Azure Red Hat OpenShift                         |      : large_blue_diamond:  |
 | Azure Site Recovery                             |      : large_blue_diamond:  |
 | Реестр контейнеров                              |      : large_blue_diamond:  |
-| Сетка событий                                      |      : large_blue_diamond:  |
+| Сетка событий Azure                                      |      : large_blue_diamond:  |
 | Наблюдатель за сетями                                 |      : large_blue_diamond:  |
 | Power BI Embedded                               |      : large_blue_diamond:  |
 | Хранилище BLOB-объектов класса Premium                            |      : large_blue_diamond:  |

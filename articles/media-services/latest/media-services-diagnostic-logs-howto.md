@@ -1,5 +1,5 @@
 ---
-title: Мониторинг журналов диагностики служб мультимедиа с помощью Azure Monitor
+title: Мониторинг журналов диагностики с помощью Azure Monitor
 description: В этой статье показано, как маршрутизировать и просматривать журналы диагностики с помощью Azure Monitor.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6c666228a8a82083c319aa6c2d7fd161f7e623f4
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1d9252a5fdf7b1c68c1bb64bd22ede8640184a0c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897974"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98953960"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
@@ -52,7 +52,7 @@ ms.locfileid: "98897974"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Выберите команду **Сохранить**.
+1. Нажмите **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 

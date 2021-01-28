@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 9021d933e3808867ec784ad3c6d0f8810d608ea3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6971d67204beb39ff0afa6c68dbecf278d86b299
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600058"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954721"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -203,15 +203,53 @@ dataset = Dataset.Tabular.from_delimited_files(data)
 ### <a name="primary-metric"></a>Основная метрика
 `primary metric`Параметр определяет метрику, используемую во время обучения модели для оптимизации. Доступные для выбора метрики определяются выбранным типом задачи. В приведенной ниже таблице показаны допустимые основные метрики для каждого типа задачи.
 
+Выбор основной метрики для автоматизированного машинного обучения для оптимизации зависит от многих факторов. Рекомендуется выбрать метрику, которая лучше соответствует потребностям вашего бизнеса. Затем рассмотрите, подходит ли метрика для профиля набора данных (размер данных, диапазон, распределение классов и т. д.).
+
 Сведения об определениях этих метрик см. в статье [Общие сведения о результатах автоматизированного машинного обучения](how-to-understand-automated-ml.md).
 
 |Классификация | Регрессия | Прогнозирование временных рядов
 |--|--|--
-|accuracy| spearman_correlation; | spearman_correlation;
-|AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
-|average_precision_score_weighted | r2_score; | r2_score;
-|norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
-|precision_score_weighted |
+|`accuracy`| `spearman_correlation` | `spearman_correlation`
+|`AUC_weighted` | `normalized_root_mean_squared_error` | `normalized_root_mean_squared_error`
+|`average_precision_score_weighted` | `r2_score` | `r2_score`
+|`norm_macro_recall` | `normalized_mean_absolute_error` | `normalized_mean_absolute_error`
+|`precision_score_weighted` |
+
+### <a name="primary-metrics-for-classification-scenarios"></a>Основные метрики для сценариев классификации 
+
+Помещать пороговые метрики, такие как `accuracy` ,, `average_precision_score_weighted` и, могут быть `norm_macro_recall` `precision_score_weighted` не оптимизированы для наборов данных, которые очень малы, имеют очень большой наклон класса (дисбаланс класса) или если ожидаемое значение метрики очень близко к 0,0 или 1,0. В таких случаях `AUC_weighted` может быть лучшим выбором для основной метрики. После завершения автоматизированного машинного обучения можно выбрать эффективную модель на основе метрики, наиболее подходящей для бизнес-нужд.
+
+| Метрика | Примеры вариантов использования |
+| ------ | ------- |
+| `accuracy` | Классификация изображений, анализ Тональностиности, прогнозирование обновлений |
+| `AUC_weighted` | Обнаружение мошенничества, классификация образов, обнаружение аномалий и обнаружение нежелательной почты |
+| `average_precision_score_weighted` | Анализ мнений |
+| `norm_macro_recall` | Прогнозирование обновлений |
+| `precision_score_weighted` |  |
+
+### <a name="primary-metrics-for-regression-scenarios"></a>Основные метрики для сценариев регрессии
+
+Такие метрики `r2_score` , как и, `spearman_correlation` могут лучше представлять качество модели, если шкала значений для прогнозирования охватывает много порядков. Для оценки заработной платы экземпляра, где у многих сотрудников есть заработка в диапазоне от $20 000 до $100 долл., но масштабы очень высоки с некоторыми окладами из диапазона $100 млн. 
+
+`normalized_mean_absolute_error` и `normalized_root_mean_squared_error` в этом случае ошибка предсказания $20 000 будет одинаковой для работника с заработкой $30 тысяч в качестве работника, выполняющего $20 млн. Хотя на самом деле, предсказание только $20 000 из зарплаты $20 млн очень близко (незначительное относительное различие в 0,1%), тогда как $20 000 от $30 тысяч не закрывается (большое различие в 67%). `normalized_mean_absolute_error` и `normalized_root_mean_squared_error` полезны, когда значения для прогнозирования имеют подобный масштаб.
+
+| Метрика | Примеры вариантов использования |
+| ------ | ------- |
+| `spearman_correlation` | |
+| `normalized_root_mean_squared_error` | Прогноз цен (дом, продукт или подсказка), оценка оценки |
+| `r2_score` | Задержка авиакомпании, оценка зарплаты, время разрешения ошибки |
+| `normalized_mean_absolute_error` |  |
+
+### <a name="primary-metrics-for-time-series-forecasting-scenarios"></a>Основные метрики для сценариев прогнозирования временных рядов
+
+См. примечания по регрессии выше.
+
+| Метрика | Примеры вариантов использования |
+| ------ | ------- |
+| `spearman_correlation` | |
+| `normalized_root_mean_squared_error` | Прогнозирование цен (прогнозирование), оптимизация запасов, прогнозирование спроса |
+| `r2_score` | Прогнозирование цен (прогнозирование), оптимизация запасов, прогнозирование спроса |
+| `normalized_mean_absolute_error` | |
 
 ### <a name="data-featurization"></a>Конструирование признаков
 

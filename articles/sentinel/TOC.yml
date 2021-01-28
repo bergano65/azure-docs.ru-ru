@@ -225,7 +225,7 @@
           href: livestream.md
     - name: Удаление Azure Sentinel
       href: offboard.md
-- name: Справочник (новый)
+- name: Справочник
   items:
     - name: Роли RBAC Azure
       items:
@@ -241,10 +241,20 @@
           href: hunting-with-rest-api.md
         - name: Управление списками видео к просмотру с помощью REST API
           href: watchlist-with-rest-api.md
+    - name: Справочник по данным Azure Monitor
+      href: /azure/azure-monitor/reference/
     - name: "Соединитель Logic Apps для Azure\_Sentinel"
       href: /connectors/azuresentinel/
     - name: Схема нормализации сети
       href: normalization-schema.md
+    - name: Справочник по схеме источника данных
+      href: data-source-schema-reference.md
+    - name: Язык запросов Kusto
+      items:
+        - name: Обзор запросов Kusto
+          href: /azure/data-explorer/kusto/query/
+        - name: Краткий справочник по языку запросов Kusto
+          href: /azure/data-explorer/kql-quick-reference
     - name: Обогащение данных UEBA
       href: ueba-enrichments.md
 - name: Ресурсы

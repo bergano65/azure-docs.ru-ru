@@ -1,5 +1,5 @@
 ---
-title: Кодирование настраиваемого преобразования с помощью служб мультимедиа v3 Azure CLI
+title: Кодирование интерфейса командной строки настраиваемого преобразования
 description: В этом разделе показано, как использовать службы мультимедиа Azure v3 для кодирования пользовательского преобразования с помощью Azure CLI.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.custom: devx-track-azurecli
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 9758ed7403e11ca30732377a65bbde1944368cb2
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 91ee605035dbc81c2302aa0350763e68dc73ecb3
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897196"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956112"
 ---
 # <a name="how-to-encode-with-a-custom-transform---azure-cli"></a>Как кодировать с помощью пользовательского преобразования Azure CLI
 

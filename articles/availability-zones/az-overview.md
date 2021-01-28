@@ -1,18 +1,19 @@
 ---
 title: Регионы и Зоны доступности в Azure
 description: Сведения о регионах и Зоны доступности в Azure в соответствии с вашими техническими и нормативными требованиями.
-author: cynthn
+author: prsandhu
 ms.service: azure
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/26/2021
-ms.author: cynthn
+ms.author: prsandhu
+ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 0b67f113fb8ab3835419a75697e60a732d4ee390
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: dae5319e6c8b87d6a9eef98875ad7e8da623e65c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896059"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955806"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Регионы и Зоны доступности в Azure
 
@@ -95,11 +96,11 @@ ms.locfileid: "98896059"
 > | Учетные записи хранения                      | Управление API                                    | Azure API для FHIR                                   |
 > | Шлюз приложений                   | Конфигурация приложений                                 | Azure Analysis Services                              |
 > | Azure Backup                          | Служба приложений                                       | Cognitive Services Azure: детектор аномалий           |
-> | Azure Cosmos DB                       | Служба автоматизации                                        | Cognitive Services Azure: Пользовательское визуальное распознавание              |
+> | Azure Cosmos DB                       | Автоматизация                                        | Cognitive Services Azure: Пользовательское визуальное распознавание              |
 > | Azure Data Lake Storage 2-го поколения          | Доменные службы Azure Active Directory            | Cognitive Services Azure: распознаватель форм            |
 > | Azure ExpressRoute                    | Бастион Azure                                     | Cognitive Services Azure: Персонализация               |
 > | Общедоступный IP-адрес Azure                       | Кэш Azure для Redis                             | Cognitive Services Azure: QnA Maker                  |
-> | База данных SQL Azure                    | Когнитивный поиск Azure                            | База данных Azure для MariaDB                           |
+> | База данных SQL Azure                    | Когнитивный поиск Azure                            | База данных Azure для MariaDB                           |
 > | SQL Azure: Управляемый экземпляр          | Azure Cognitive Services                          | Azure Database Migration Service                     |
 > | Облачные службы                        | Azure Cognitive Services: Компьютерное зрение         | Выделенное устройство HSM Azure                                  |
 > | Облачные службы: Av2-Series            | Cognitive Services Azure: Content Moderator       | Azure Digital Twins                                  |
@@ -129,12 +130,12 @@ ms.locfileid: "98896059"
 > | Виртуальные машины: IP-адреса уровня экземпляра  | Azure Site Recovery                               | Виртуальные машины: HBv1-Series                        |
 > | Виртуальные машины: зарезервированный IP-адрес         | Azure Stream Analytics                            | Виртуальные машины: HBv2-Series                        |
 > | Виртуальная сеть                       | Azure Synapse Analytics                           | Виртуальные машины: HCv1-Series                        |
-> | VPN-шлюз                           | Пакетная служба                                             | Виртуальные машины: Серия H                           |
+> | VPN-шлюз                           | Пакетная служба Azure                                             | Виртуальные машины: Серия H                           |
 > |                                       | Облачные службы: серия M                          | Виртуальные машины: LSv2-Series                        |
 > |                                       | Экземпляры контейнеров                               | Виртуальные машины: Mv2-Series                         |
 > |                                       | Реестр контейнеров                                | Виртуальные машины: NCv3-Series                        |
 > |                                       | Фабрика данных                                      | Виртуальные машины: NDv2-Series                        |
-> |                                       | Сетка событий                                        | Виртуальные машины: NVv3-Series                        |
+> |                                       | Сетка событий Azure                                        | Виртуальные машины: NVv3-Series                        |
 > |                                       | HDInsight                                         | Виртуальные машины: NVv4-Series                        |> 
 > |                                       | Logic Apps                                        | Виртуальные машины: SAP HANA на крупных экземплярах Azure  |
 > |                                       | Службы мультимедиа                                    |                                                      |

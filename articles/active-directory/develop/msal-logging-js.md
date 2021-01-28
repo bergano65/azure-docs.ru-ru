@@ -13,12 +13,12 @@ ms.date: 01/25/2021
 ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 8604a38bc310cc884c2b5e99efe7a47ae5e787d7
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: d7463e3376847a219750254548c25ca79f4cdfb6
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763497"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954823"
 ---
 # <a name="logging-in-msaljs"></a>Ведение журнала в MSAL.js
 
@@ -58,4 +58,4 @@ var UserAgentApplication = new Msal.UserAgentApplication(msalConfig);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные примеры кода см. в статье [примеры кода платформы удостоверений Microsoft Identity](sample-v2-code.md).
+Дополнительные примеры кода см. в статье [примеры кода платформы идентификации Майкрософт](sample-v2-code.md).

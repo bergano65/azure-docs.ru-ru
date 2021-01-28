@@ -3,12 +3,12 @@ title: Матрица поддержки для VMware или физическо
 description: Содержит сводку по поддержке аварийного восстановления виртуальных машин VMware и физического сервера в Azure с помощью Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: 0a96d20d1b614f444ffa36cd6f8d83393c7c4f7a
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f525666e91a482a6c23128e266b4f5669437a502
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897298"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956027"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -133,7 +133,8 @@ Debian 7 | [9,36](https://support.microsoft.com/help/4578241/), [9,37](https://
 Debian 8 | [9,36](https://support.microsoft.com/help/4578241/), [9,37](https://support.microsoft.com/help/4582666/), [9,38](https://support.microsoft.com/help/4590304/), [9,39](https://support.microsoft.com/help/4597409/), [9,40](https://support.microsoft.com/en-us/topic/update-rollup-53-for-azure-site-recovery-060268ef-5835-bb49-7cbc-e8c1e6c6e12a)  | 3.16.0-4-AMD64 – 3.16.0-11-AMD64, 4.9.0 -0. BPO. 4-AMD64 до 4.9.0 -0. BPO. 11 — AMD64 |
 |||
 Debian 9,1 | [9,40](https://support.microsoft.com/en-us/topic/update-rollup-53-for-azure-site-recovery-060268ef-5835-bb49-7cbc-e8c1e6c6e12a) | 4.9.0-1-AMD64 – 4.9.0-14-AMD64 </br> 4.19.0 -0. BPO. 1 — AMD64 – 4.19.0 -0. BPO. 13-AMD64 </br> 4.19.0 -0. BPO. 1 — Cloud-AMD64 — 4.19.0 -0. BPO. 13 — Cloud-AMD64 </br>
-Debian 9,1 | [9,39](https://support.microsoft.com/help/4597409/) | 4.9.0-1-AMD64 – 4.9.0-14-AMD64 </br> 4.19.0 -0. BPO. 1 — AMD64 – 4.19.0 -0. BPO. 12 — AMD64 </br> 4.19.0 -0. BPO. 1 — Cloud-AMD64 — 4.19.0 -0. BPO. 12 — Cloud-AMD64 </br> Debian 9,1 | [9,38](https://support.microsoft.com/help/4590304/) | 4.9.0-1-AMD64 – 4.9.0-13-AMD64 </br> 4.19.0 -0. BPO. 1 — AMD64 – 4.19.0 -0. BPO. 11 — AMD64 </br> 4.19.0 -0. BPO. 1 — Cloud-AMD64 — 4.19.0 -0. BPO. 11 — Cloud-AMD64 </br> 
+Debian 9,1 | [9,39](https://support.microsoft.com/help/4597409/) | 4.9.0-1-AMD64 – 4.9.0-14-AMD64 </br> 4.19.0 -0. BPO. 1 — AMD64 – 4.19.0 -0. BPO. 12 — AMD64 </br> 4.19.0 -0. BPO. 1 — Cloud-AMD64 — 4.19.0 -0. BPO. 12 — Cloud-AMD64 </br> 
+Debian 9,1 | [9,38](https://support.microsoft.com/help/4590304/) | 4.9.0-1-AMD64 – 4.9.0-13-AMD64 </br> 4.19.0 -0. BPO. 1 — AMD64 – 4.19.0 -0. BPO. 11 — AMD64 </br> 4.19.0 -0. BPO. 1 — Cloud-AMD64 — 4.19.0 -0. BPO. 11 — Cloud-AMD64 </br> 
 Debian 9,1 | [9,37](https://support.microsoft.com/help/4582666/) | 4.9.0-3-amd64 для 4.9.0-13-AMD64, 4.19.0 -0. BPO. 6-AMD64 до 4.19.0 -0. BPO. 10-AMD64, 4.19.0 -0. BPO. 6-Cloud-AMD64 до 4.19.0 -0. BPO. 10-Cloud-AMD64
 
 ### <a name="suse-linux-enterprise-server-12-supported-kernel-versions"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12

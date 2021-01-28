@@ -3,12 +3,12 @@ title: Заметки о выпуске Live Video Analytics в IoT Edge. Azure
 description: В этом разделе содержатся заметки о выпуске Live Video Analytics на IoT Edge выпусках, улучшениях, исправлениях ошибок и известных проблемах.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 328fe97c4e03f039a1224d13ce6712ccff06b3b7
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: f130b93b8d799c371a640f2b29c22c0d77834cba
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629782"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954401"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Заметки о выпуске Live Video Analytics в IoT Edge
 
@@ -35,7 +35,7 @@ mcr.microsoft.com/media/live-video-analytics:2.0.1
 > В кратком руководстве и учебниках в манифестах развертывания используется тег 2 (Live-Video-Analytics: 2). Поэтому простое повторное развертывание таких манифестов должно обновить модуль на пограничном > устройствах.
 ### <a name="bug-fixes"></a>Исправления ошибок 
 
-* Поля `ActivationSignalOffset` `MinimumActivationTime` и `MaximumActivationTime` в обработчиках сигнального шлюза были неправильно заданы как обязательные свойства. Теперь они являются **необязательными** свойствами.
+* Поля `ActivationSignalOffset` , `MinimumActivationTime` и `MaximumActivationTime` в обработчиках сигнального шлюза были неправильно заданы как обязательные свойства. Теперь они являются **необязательными** свойствами.
 * Исправлена ошибка использования, из-за которой при развертывании в определенных регионах модуль анализа видео в реальном времени IoT Edgeся к сбою.
 
 <hr width=100%>
@@ -48,7 +48,7 @@ mcr.microsoft.com/media/live-video-analytics:2.0.1
 ```
 ### <a name="module-updates"></a>Обновления модулей
 * Добавлена поддержка использования нескольких процессоров расширений HTTP и процессора расширений gRPC на топологию графа.
-* Добавлена поддержка управления дисковым пространством для узлов приемника.
+* Добавлена поддержка [управления дисковым пространством для узлов приемника](upgrading-lva-module.md#disk-space-management-with-sink-nodes).
 * `MediaGraphGrpcExtension` Теперь узел поддерживает свойство [екстенсионконфигуратион](grpc-extension-protocol.md) для использования нескольких моделей AI на одном сервере gRPC.
 * Добавлена поддержка сбора метрик модуля Live Video Analytics в [формате Prometheus](https://prometheus.io/docs/practices/naming/). Узнайте больше о том, как [получать метрики и просматривать их в Azure Monitor.](monitoring-logging.md#azure-monitor-collection-via-telegraf) 
 * Добавлена возможность фильтрации выбора выходных данных. С помощью любого узла графа можно передавать данные **только из аудио** или **видео** либо **аудио и видео** `outputSelectors` . 
@@ -56,7 +56,7 @@ mcr.microsoft.com/media/live-video-analytics:2.0.1
     * Управление частотой кадров теперь доступно в самих узлах процессора расширения графа.
 
 ### <a name="visual-studio-code-extension"></a>Расширение Visual Studio Code
-* Выпущена [интерактивная аналитика видео на IOT Edge](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.live-video-analytics-edge) — расширение Visual Studio Code, помогающее управлять графами мультимедиа лва. Это расширение работает с **модулем лва 2,0** и позволяет редактировать графы мультимедиа и управлять ими с помощью очень изящного и простого в использовании графического интерфейса.
+* Выпущена [интерактивная аналитика видео на IOT Edge](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.live-video-analytics-edge) — расширение Visual Studio Code, помогающее управлять графами мультимедиа лва. Это расширение работает с **модулем лва 2,0** и позволяет редактировать графы мультимедиа и управлять ими с помощью изящного и простого в использовании графического интерфейса.
 ## <a name="september-22-2020"></a>22 сентября 2020 г.
 
 Этот тег выпуска предназначен для обновления модуля за Сентябрь 2020:
@@ -76,7 +76,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.4
 ### <a name="documentation-updates"></a>Обновления документации
 
 * [Инструкции](deploy-azure-stack-edge-how-to.md) по использованию функции Live Video Analytics на IoT Edge на Azure Stack пограничных устройствах.
-* Новый учебник по разработке моделей компьютерных концепций на основе сценария с помощью [службы пользовательское визуальное распознавание Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) и его использования для [анализа реального видео](custom-vision-tutorial.md) в реальном времени.
+* Новый учебник по разработке моделей компьютерных концепций, связанных с сценариями, с помощью [службы пользовательское визуальное распознавание Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) и его использования для [анализа реального видео](custom-vision-tutorial.md) в реальном времени.
 
 <hr width=100%>
 
@@ -93,15 +93,15 @@ mcr.microsoft.com/media/live-video-analytics:1.0.3
 
 ### <a name="module-updates"></a>Обновления модулей
 
-* Теперь вы можете получить высокую производительность передачи содержимого данных между интерактивной аналитикой видео на IoT Edge и пользовательским расширением с помощью gRPC Framework. Чтобы приступить к [работе, см](analyze-live-video-use-your-grpc-model-quickstart.md) . раздел.
+* Теперь вы можете получить высокую производительность передачи содержимого данных между интерактивной аналитикой видео на IoT Edge и пользовательским расширением с помощью gRPC Framework. Чтобы приступить к работе, ознакомьтесь [с кратким](analyze-live-video-use-your-grpc-model-quickstart.md) руководством.
 * Обновлено Расширенное региональное развертывание для аналитики в реальном времени и только облачная служба.  
-* Интерактивная аналитика видео теперь доступна в 25 дополнительных регионах по всему миру. Ниже приведен [список](https://azure.microsoft.com/global-infrastructure/services/?products=media-services) всех доступных регионов.  
+* Интерактивная аналитика видео теперь доступна в 25 других регионах по всему миру. Ниже приведен [список](https://azure.microsoft.com/global-infrastructure/services/?products=media-services) всех доступных регионов.  
 * [Настройка](https://aka.ms/lva-edge/setup-resources-for-samples) для быстрого запуска была обновлена и поддерживает новые регионы.
     * Нет вызова действий для тех, кто уже настроил ресурсы.
 
 ### <a name="bug-fixes"></a>Исправления ошибок 
 
-* Снятие использования устаревшего расширения Azure в скрипте настройки
+* Снятие использования устаревшего расширения Azure в скрипте установки
 
 <hr width=100%>
 
@@ -118,7 +118,7 @@ mcr.microsoft.com/media/live-video-analytics:1.0.2
 
 ### <a name="module-updates"></a>Обновления модулей
 
-* Теперь можно создавать топологии графов, которые имеют узел приемника ресурса, а также узел приемника файлов, расположенный на узле процессора сигнального шлюза. См. пример в [этом](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-motion-assets-files) разделе.
+* Теперь можно создавать топологии графов, в которых есть узел приемника ресурса и узел приемника файлов, расположенные на узле процессора сигнального шлюза. См. пример [топологии](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-motion-assets-files) .
 
 ### <a name="bug-fixes"></a>Исправления ошибок
 

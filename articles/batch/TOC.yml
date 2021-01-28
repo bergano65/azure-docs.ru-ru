@@ -101,13 +101,11 @@
   items:
     - name: Управление учетными записями пакетной службы
       items:
-        - name: Управление учетной записью
-          href: batch-manage-account-basics.md
-        - name: Управление учетными записями пакетной службы с помощью портала
+        - name: Управление учетными записями пакетной службы на портале Azure
           href: batch-account-create-portal.md
         - name: Управление учетными записями пакетной службы с помощью библиотеки .NET для управления пакетной службой
           href: batch-management-dotnet.md
-        - name: Анализ затрат и бюджеты
+        - name: Анализ затрат и установка бюджетов
           href: budget.md
         - name: Использование частных конечных точек с учетными записями пакетной службы
           href: private-connectivity.md
@@ -291,16 +289,18 @@
       href: 'https://azure.microsoft.com/updates/'
     - name: 'Пакетная служба: сообщество'
       href: 'https://github.com/Azure/Batch'
+    - name: Batch Explorer
+      href: 'https://azure.github.io/BatchExplorer/'
     - name: 'Пакетная служба: отзывы'
       href: 'https://feedback.azure.com/forums/269742-batch'
-    - name: Страница с вопросами о пакетной службе (раздел вопросов и ответов на сайте Майкрософт)
-      href: /answers/topics/azure-batch.html
     - name: Batch Shipyard
       href: 'https://github.com/Azure/batch-shipyard'
     - name: Блог
       href: /archive/blogs/windowshpc/
     - name: HPC в Azure
       href: /azure/architecture/topics/high-performance-computing/
+    - name: Страница с вопросами о пакетной службе (раздел вопросов и ответов на сайте Майкрософт)
+      href: /answers/topics/azure-batch.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/batch/'
     - name: Калькулятор цен

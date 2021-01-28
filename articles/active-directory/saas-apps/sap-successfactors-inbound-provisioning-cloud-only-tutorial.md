@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 6a73ecf18a4bd89567dc603758d9ff8501267a1f
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: a39f7701d0244eff7f914908a6708dfc14873b35
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570050"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954862"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей Azure AD
 В этом учебнике описаны действия, необходимые для выполнения подготовки данных работников из SuccessFactors Employee Central в Azure Active Directory с необязательной обратной записью электронного адреса в SuccessFactors. 
@@ -223,9 +223,8 @@ ms.locfileid: "98570050"
 
 1. В разделе **Сопоставление атрибутов** можно определить, как отдельные атрибуты SuccessFactors сопоставляются с атрибутами Active Directory.
 
-  >[!NOTE]
-  >Полный список атрибутов SuccessFactors, поддерживаемых приложением, см. в [справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
-
+     >[!NOTE]
+     >Полный список атрибутов SuccessFactors, поддерживаемых приложением, см. в [справочнике по атрибутам SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
 
 1. Щелкните существующее сопоставление атрибута, чтобы его обновить, или **Добавить новое сопоставление** в нижней части экрана, чтобы добавить новые сопоставления. Отдельное сопоставление атрибутов поддерживает следующие свойства:
 

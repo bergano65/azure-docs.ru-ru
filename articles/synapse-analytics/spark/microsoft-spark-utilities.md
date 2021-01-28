@@ -10,12 +10,12 @@ ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: 262177d8cde3a5eee2721f2af8a0511c205da9b9
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: d36086052f4e5719fd17989e3326a4b5728ee3ca
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98890535"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954299"
 ---
 # <a name="introduction-to-microsoft-spark-utilities"></a>Введение в служебные программы Microsoft Spark
 
@@ -39,10 +39,6 @@ Microsoft Spark Utilities (Мсспаркутилс) — это встроенн
 
 <code>abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path></code>
 
-<!-- ### Configure access to Azure Blob Storage  -->
-
-:::zone pivot = "programming-language-python"
-
 ### <a name="configure-access-to-azure-blob-storage"></a>Настройка доступа к хранилищу BLOB-объектов Azure  
 
 Синапсе использовать **подписанный URL-адрес (SAS)** для доступа к хранилищу больших двоичных объектов Azure. Чтобы избежать предоставления ключей SAS в коде, мы рекомендуем создать новую связанную службу в рабочей области синапсе в учетной записи хранилища BLOB-объектов Azure, к которой вы хотите получить доступ.
@@ -62,6 +58,8 @@ Microsoft Spark Utilities (Мсспаркутилс) — это встроенн
 <code>wasb[s]://<container_name>@<storage_account_name>.blob.core.windows.net/<path></code>
 
 Ниже приведен пример кода:
+
+:::zone pivot = "programming-language-python"
 
 ```python
 from pyspark.sql import SparkSession
@@ -86,26 +84,6 @@ print('Remote blob path: ' + wasb_path)
 
 :::zone pivot = "programming-language-scala"
 
-### <a name="configure-access-to-azure-blob-storage"></a>Настройка доступа к хранилищу BLOB-объектов Azure  
-
-Синапсе использовать **подписанный URL-адрес (SAS)** для доступа к хранилищу больших двоичных объектов Azure. Чтобы избежать предоставления ключей SAS в коде, мы рекомендуем создать новую связанную службу в рабочей области синапсе в учетной записи хранилища BLOB-объектов Azure, к которой вы хотите получить доступ.
-
-Чтобы добавить новую связанную службу для учетной записи хранилища BLOB-объектов Azure, выполните следующие действия.
-
-1. Откройте [Azure синапсе Studio](https://web.azuresynapse.net/).
-2. Выберите **Управление** на левой панели и выберите **связанные службы** в списке **внешние подключения**.
-3. Найдите **хранилище BLOB-объектов Azure** на **новой панели связанная служба** справа.
-4. Выберите **Continue** (Продолжить).
-5. Выберите учетную запись хранилища BLOB-объектов Azure для доступа и настройте имя связанной службы. Рекомендуется использовать **ключ учетной записи** для **метода проверки подлинности**.
-6. Выберите **проверить подключение** , чтобы проверить правильность параметров.
-7. Сначала выберите **создать** , а затем щелкните **опубликовать все** , чтобы сохранить изменения. 
-
-Вы можете получить доступ к данным в хранилище больших двоичных объектов Azure с помощью синапсе Spark по следующему URL-адресу:
-
-<code>wasb[s]://<container_name>@<storage_account_name>.blob.core.windows.net/<path></code>
-
-Ниже приведен пример кода:
-
 ```scala
 val blob_account_name = "" // replace with your blob name
 val blob_container_name = "" //replace with your container name
@@ -123,27 +101,6 @@ spark.conf.set(f"fs.azure.sas.$blob_container_name.$blob_account_name.blob.core.
 ::: zone-end
 
 :::zone pivot = "programming-language-csharp"
-
-
-### <a name="configure-access-to-azure-blob-storage"></a>Настройка доступа к хранилищу BLOB-объектов Azure  
-
-Синапсе использовать **подписанный URL-адрес (SAS)** для доступа к хранилищу больших двоичных объектов Azure. Чтобы избежать предоставления ключей SAS в коде, мы рекомендуем создать новую связанную службу в рабочей области синапсе в учетной записи хранилища BLOB-объектов Azure, к которой вы хотите получить доступ.
-
-Чтобы добавить новую связанную службу для учетной записи хранилища BLOB-объектов Azure, выполните следующие действия.
-
-1. Откройте [Azure синапсе Studio](https://web.azuresynapse.net/).
-2. Выберите **Управление** на левой панели и выберите **связанные службы** в списке **внешние подключения**.
-3. Найдите **хранилище BLOB-объектов Azure** на **новой панели связанная служба** справа.
-4. Выберите **Continue** (Продолжить).
-5. Выберите учетную запись хранилища BLOB-объектов Azure для доступа и настройте имя связанной службы. Рекомендуется использовать **ключ учетной записи** для **метода проверки подлинности**.
-6. Выберите **проверить подключение** , чтобы проверить правильность параметров.
-7. Сначала выберите **создать** , а затем щелкните **опубликовать все** , чтобы сохранить изменения. 
-
-Вы можете получить доступ к данным в хранилище больших двоичных объектов Azure с помощью синапсе Spark по следующему URL-адресу:
-
-<code>wasb[s]://<container_name>@<storage_account_name>.blob.core.windows.net/<path></code>
-
-Ниже приведен пример кода:
 
 ```csharp
 var blob_account_name = "";  // replace with your blob name

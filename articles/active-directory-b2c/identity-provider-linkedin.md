@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/19/2021
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a378a95a28b1299502ef15cadca60f3807f99429
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 1ce9c00cb58253e2cca9a7d60c4cce9b77709688
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674405"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98953858"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "98674405"
 
 ::: zone-end
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
@@ -43,7 +43,7 @@ ms.locfileid: "98674405"
 1. Введите **имя приложения**, **страницу LinkedIn**, **URL-адрес политики конфиденциальности** и **эмблему приложения**.
 1. Примите **условия использования API** LinkedIn и нажмите кнопку **создать приложение**.
 1. Перейдите на вкладку **Проверка подлинности** . В разделе **ключи проверки подлинности** СКОПИРУЙТЕ значения **идентификатор клиента** и **секрет клиента**. Оба они понадобятся для настройки LinkedIn в качестве поставщика удостоверений в клиенте. **Секрет клиента**— важный элемент обеспечения безопасности.
-1. Щелкните значок изменить карандаш рядом с **разадресованными URL-адресами перенаправления для приложения**, а затем выберите **Добавить URL-адрес перенаправления**. Введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` , заменив `your-tenant-name` именем своего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами. Выберите **Обновить**.
+1. Щелкните значок изменить карандаш рядом с **разадресованными URL-адресами перенаправления для приложения**, а затем выберите **Добавить URL-адрес перенаправления**. Введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` , заменив `your-tenant-name` именем своего клиента. При вводе имени вашего клиента необходимо использовать только строчные буквы, даже если в Azure AD B2C имя клиента определено с прописными буквами. Нажмите кнопку **Обновить**.
 2. По умолчанию приложение LinkedIn не утверждается для областей, связанных с входом. Чтобы запросить проверку, перейдите на вкладку **продукты** и выберите **Вход с помощью LinkedIn**. После завершения проверки необходимые области будут добавлены в приложение.
    > [!NOTE]
    > Вы можете просмотреть области, которые в настоящее время разрешены для приложения, на вкладке **Проверка подлинности** в разделе **области OAuth 2,0** .
@@ -211,7 +211,9 @@ ms.locfileid: "98674405"
 </OrchestrationStep>
 ```
 
-[!INCLUDE [active-directory-b2c-create-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
+
+[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
 
 ## <a name="migration-from-v10-to-v20"></a>Миграция с версии 1.0 на v 2.0
 

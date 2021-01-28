@@ -1,5 +1,5 @@
 ---
-title: Система защиты содержимого с несколькими цифровыми правами (DRM). службы мультимедиа Azure v3
+title: Система защиты содержимого с несколькими DRM
 description: В этой статье приводится подробное описание того, как спроектировать систему защиты содержимого с несколькими цифровыми правами с помощью служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: 58edf1e0257cf9de8d8f3a3b56f295dcaf1f6cbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e0104dd2761f74fbd84486aebbf8c3c4e128eb08
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89298204"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954907"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом
 
@@ -50,7 +50,7 @@ ms.locfileid: "89298204"
 | **Платформа клиента** | **Собственная подсистема DRM** | **EME** |
 | --- | --- | --- |
 | **Смарт-ТВ, STB** | PlayReady, Widevine и др. | Встроенный браузер и EME для PlayReady и/или Widevine|
-| **Windows 10** | PlayReady | Microsoft Edge и IE 11 для PlayReady|
+| **Windows 10** | PlayReady | Microsoft Edge и IE 11 для PlayReady|
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome для Widevine |
 | **iOS** | FairPlay | Safari для FairPlay (начиная с iOS версии 11.2) |
 | **macOS** | FairPlay | Safari для FairPlay (начиная с Safari 9+ на Mac OS X 10.11+ El Capitan)|
@@ -207,7 +207,7 @@ ms.locfileid: "89298204"
     | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Ошибка |
     | **Widevine** |Chrome, Firefox, Opera |Успешно |Ошибка |
     | **FairPlay** |Safari в macOS      |Успешно |Ошибка |
-    | **AES-128;** |Большинство современных браузеров  |Успешно |Ошибка |
+    | **AES-128** |Большинство современных браузеров  |Успешно |Ошибка |
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 
@@ -284,7 +284,7 @@ ms.locfileid: "89298204"
 
 Так как Azure AD доверяет домену учетных записей Майкрософт, можно добавить любые учетные записи из любого из следующих доменов в пользовательский клиент Azure AD и использовать учетную запись для входа:
 
-| **Имя домена** | **Доменная** |
+| **Доменное имя** | **Доменная** |
 | --- | --- |
 | **Домен пользовательского клиента Azure AD** |somename.onmicrosoft.com |
 | **Домен организации** |microsoft.com |

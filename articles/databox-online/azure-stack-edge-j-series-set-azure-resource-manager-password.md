@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 01/27/2021
 ms.author: alkohli
-ms.openlocfilehash: 915146cd17b90272daea4ce57f5243baf1d49cb3
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8ecd1a99d41dc1391e6dba129d50eb53a67843d1
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578796"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955385"
 ---
 # <a name="set-azure-resource-manager-password-on-azure-stack-edge-pro-gpu-device"></a>Задание Azure Resource Manager пароля для устройства GPU Pro на Azure Stack
 
@@ -21,53 +21,55 @@ ms.locfileid: "94578796"
 
 В этой статье описывается, как задать пароль Azure Resource Manager. Этот пароль необходимо задать при подключении к локальным API-интерфейсам устройства через Azure Resource Manager.
 
-Процедура задания пароля может отличаться в зависимости от того, что используется: портал Azure или командлеты PowerShell. Каждая из этих процедур описана в следующих разделах.
+<!--The procedure to set the password can be different depending upon whether you use the Azure portal or the PowerShell cmdlets. Each of these procedures is described in the following sections.-->
 
 
 ## <a name="reset-password-via-the-azure-portal"></a>Сброс пароля с помощью портал Azure
 
-1. В портал Azure перейдите к ресурсу Azure Stackного периметра, созданному для управления устройством. Поочередно выберите **Вычисления Edge > Начало работы**.
-
-2. В области справа на панели команд выберите **Сбросить пароль Edge ARM**. 
+1. В портал Azure перейдите к ресурсу Azure Stackного периметра, созданному для управления устройством. Выберите **службы пограничных служб > шлюз облачного хранилища**.
 
     ![Сброс пароля пользователя Еджеарм 1](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-1.png)
 
-3. В колонке **Сброс пароля пользователя еджеарм** введите пароль для подключения к локальным API-интерфейсам устройства через Azure Resource Manager. Подтвердите пароль и нажмите кнопку **сбросить**.
+2. В области справа на панели команд выберите **Сбросить пароль Edge ARM**. 
 
     ![Сброс пароля пользователя Еджеарм 2](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-2.png)
 
+3. В колонке **Сброс пароля пользователя еджеарм** введите пароль для подключения к локальным API-интерфейсам устройства через Azure Resource Manager. Подтвердите пароль и нажмите кнопку **сбросить**.
+
+    ![Сброс пароля пользователя Еджеарм 3](media/azure-stack-edge-j-series-set-azure-resource-manager-password/set-edgearm-password-3.png)
 
 
-## <a name="reset-password-via-powershell"></a>Сброс пароля с помощью PowerShell
 
-1. На портале Azure перейдите к ресурсу Azure Stack ребра, созданному для управления устройством. Запишите следующие параметры на странице **Обзор** .
+<!--## Reset password via PowerShell
 
-    - Имя ресурса Azure Stack ребра
-    - Идентификатор подписки
+1. In the Azure Portal, go to the Azure Stack Edge resource you created to manage your device. Make a note of the following parameters in the **Overview** page.
 
-2. Последовательно выберите **параметры > свойства**. Запишите следующие параметры на странице **свойств** .
+    - Azure Stack Edge resource name
+    - Subscription ID
 
-    - Группа ресурсов
-    - Ключ шифрования ЦИК: выберите представление, а затем скопируйте **ключ шифрования**.
+2. Go to **Settings > Properties**. Make a note of the following parameters in the **Properties** page.
 
-    ![Получение ключа шифрования ЦИК](media/azure-stack-edge-j-series-set-azure-resource-manager-password/get-cik-portal.png)
+    - Resource group
+    - CIK encryption key: Select view and then copy the **Encryption Key**.
+
+    ![Get CIK encryption key](media/azure-stack-edge-j-series-set-azure-resource-manager-password/get-cik-portal.png)
  
-3. Укажите пароль, который будет использоваться для подключения к Azure Resource Manager.
+3. Identify a password that you will use to connect to Azure Resource Manager.
 
-4. Запустите Cloud Shell. Щелкните значок в правом верхнем углу.
+4. Start the cloud shell. Select on the icon in the top right corner:
 
-    ![Запуск Cloud Shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/start-cloud-shell.png) 
+    ![Start cloud shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/start-cloud-shell.png) 
 
-    После запуска Cloud Shell может потребоваться переключиться в PowerShell.
+    Once the cloud shell has started, you may need to switch to PowerShell.
 
-    ![Cloud Shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/cloud-shell.png)   
+    ![Cloud shell](media/azure-stack-edge-j-series-set-azure-resource-manager-password/cloud-shell.png)   
 
 
-5. Задать контекст. Тип:
+5. Set context. Type:
 
     `Set-AzContext -SubscriptionId <Subscription ID>`
 
-    Пример выходных данных:
+    Here is a sample output:
 
     
     ```azurepowershell
@@ -80,11 +82,11 @@ ms.locfileid: "94578796"
         PS Azure:/
     ```
     
-5.  Если у вас есть старые модули PS, их необходимо установить.
+5.  If you have any old PS modules, you need to install those.
 
     `Remove-Module  Az.DataBoxEdge -force`
 
-    Ниже приведен пример выходных данных. В этом примере нет старых модулей для установки.
+    Here is a sample output. In this example, there were no old modules to be installed.
 
     
     ```azurepowershell
@@ -99,7 +101,7 @@ ms.locfileid: "94578796"
         PS Azure:\
     ```
 
-6. Следующий набор команд загрузит и запустит сценарий для установки модулей PowerShell.
+6. Next set of commands will download and run a script to install PowerShell modules.
     
     ```azurepowershell
         cd ~/clouddrive
@@ -108,7 +110,7 @@ ms.locfileid: "94578796"
         Import-Module ~/clouddrive/Az.DataBoxEdge/Az.DataBoxEdge.psd1 -Force
     ```
 
-7. В следующем наборе команд необходимо указать имя ресурса, имя группы ресурсов, ключ шифрования и пароль, указанный на предыдущем шаге.
+7. In the next set of commands, you'll need to provide the resource name, resource group name, encryption key, and the password you identified in the previous step.
 
     ```azurepowershell
     $devicename = "<Azure Stack Edge resource name>"
@@ -116,18 +118,18 @@ ms.locfileid: "94578796"
     $cik = "<Encryption key>"
     $password = "<Password>"
     ```
-    Параметры пароля и ключа шифрования должны передаваться как защищенные строки. Используйте следующие командлеты для преобразования пароля и ключа шифрования в защищенные строки.
+    The password and encryption key parameters must be passed as secure strings. Use the following cmdlets to convert the password and encryption key to secure strings.
 
     ```azurepowershell
     $pass = ConvertTo-SecureString $password -AsPlainText -Force
     $key = ConvertTo-SecureString $cik -AsPlainText -Force
     ```
-    Используйте приведенные выше защищенные строки в качестве параметров в командлете Set-AzDataBoxEdgeUser, чтобы сбросить пароль. Используйте ту же группу ресурсов, которая использовалась при создании ресурса Azure Stack ребра Pro/Шлюз Data Box.
+    Use the above generated secure strings as parameters in the Set-AzDataBoxEdgeUser cmdlet to reset the password. Use the same resource group that you used when creating the Azure Stack Edge Pro/Data Box Gateway resource.
 
     ```azurepowershell
     Set-AzDataBoxEdgeUser -ResourceGroupName $resourceGroup -DeviceName $devicename -Name EdgeARMUser  -Password $pass -EncryptionKey $key
     ```
-    Ниже приведен пример выходных данных.
+    Here is the sample output.
     
     ```azurepowershell
     PS /home/aseuser/clouddrive> $devicename = "myaseresource"
@@ -144,7 +146,7 @@ ms.locfileid: "94578796"
     
         PS /home/aseuser/clouddrive>
     ```
-Используйте новый пароль для подключения к Azure Resource Manager.
+Use the new password to connect to Azure Resource Manager.-->
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

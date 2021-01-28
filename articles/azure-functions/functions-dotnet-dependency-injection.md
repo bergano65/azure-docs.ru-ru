@@ -4,15 +4,15 @@ description: Узнайте, как использовать внедрение 
 author: ggailey777
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.date: 08/15/2020
+ms.date: 01/27/2021
 ms.author: glenga
 ms.reviewer: jehollan
-ms.openlocfilehash: 70ec9248db002823e969fa5f4fba8bf1074a9af7
-ms.sourcegitcommit: 0830e02635d2f240aae2667b947487db01f5fdef
+ms.openlocfilehash: 66e2cd22f4bcb95be65d6d04345dcac622436a04
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97706938"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955094"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
@@ -256,6 +256,24 @@ public class HttpTrigger
 ```
 
 Дополнительные сведения о работе с параметрами см. в [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options).
+
+## <a name="using-aspnet-core-user-secrets"></a>Использование ASP.NET Core пользовательских секретов
+
+При локальной разработке ASP.NET Core предоставляет [средство диспетчера секретов](/aspnet/core/security/app-secrets#secret-manager) , позволяющее хранить секретные данные вне корневого каталога проекта. Это уменьшает вероятность того, что секреты случайно фиксируются в системе управления версиями. Azure Functions Core Tools (версия 3.0.3233 или более поздняя) автоматически считывает секреты, созданные диспетчером секретов ASP.NET Core.
+
+Чтобы настроить проект функций Azure .NET для использования секретов пользователя, выполните следующую команду в корневом каталоге проекта.
+
+```bash
+dotnet user-secrets init
+```
+
+Затем используйте `dotnet user-secrets set` команду для создания или обновления секретов.
+
+```bash
+dotnet user-secrets set MySecret "my secret value"
+```
+
+Для доступа к значениям секретов пользователя в коде приложения функции используйте `IConfiguration` или `IOptions` .
 
 ## <a name="customizing-configuration-sources"></a>Настройка источников конфигурации
 

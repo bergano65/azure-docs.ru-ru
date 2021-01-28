@@ -11,12 +11,12 @@ ms.author: mnark
 author: MrudulaN
 ms.reviewer: larryfr
 ms.date: 03/05/2020
-ms.openlocfilehash: 17b2d717ac6f244cb3ddddfdbc2f29581aa1f59f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: d8b1c2a5384e479e39d169d368554f16c300a33e
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95527315"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954552"
 ---
 # <a name="deploy-a-model-to-azure-machine-learning-compute-instances"></a>Развертывание модели для Машинное обучение Azureных экземпляров вычислений
 
@@ -30,7 +30,7 @@ ms.locfileid: "95527315"
 > [!TIP]
 > Развертывание модели из Jupyter Notebook на вычислительном экземпляре в веб-службу на той же виртуальной машине является _локальным развертыванием_. В этом случае "локальный" компьютер является вычислительным экземпляром. Дополнительные сведения о развертываниях см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область Машинное обучение Azure с выполняющимся вычислительным экземпляром. Дополнительные сведения см. в статье [Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md).
 
@@ -38,11 +38,12 @@ ms.locfileid: "95527315"
 
 Пример записной книжки, демонстрирующий локальные развертывания, включается в вычислительный экземпляр. Чтобы загрузить записную книжку и развернуть ее в качестве веб-службы на виртуальной машине, выполните следующие действия.
 
-1. В [машинное обучение Azure Studio](https://ml.azure.com)выберите машинное обучение Azureные экземпляры вычислений.
+1. В [машинное обучение Azure Studio](https://ml.azure.com)выберите "записные книжки", а затем выберите хов-то-усе-азуремл/Deployment/деплой-то-локал/регистер-МОДЕЛ-деплой-локал. ipynb в разделе "примеры записных книжек". Клонировать эту записную книжку в папку пользователя.
 
-1. Откройте `samples-*` подкаталог, а затем откройте `how-to-use-azureml/deployment/deploy-to-local/register-model-deploy-local.ipynb` . После открытия запустите записную книжку.
+1. Найдите записную книжку, клонированную на шаге 1, выберите или создайте вычислительный экземпляр для запуска записной книжки.
 
     ![Снимок экрана: выполняемая локальная служба в записной книжке](./media/how-to-deploy-local-container-notebook-vm/deploy-local-service.png)
+
 
 1. В записной книжке отображается URL-адрес и порт, на котором запущена служба. Например, `https://localhost:6789`. Можно также выполнить ячейку, содержащую `print('Local service port: {}'.format(local_service.port))` порт, чтобы отобразить его.
 
@@ -52,7 +53,7 @@ ms.locfileid: "95527315"
     * Виртуальная машина записной книжки: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.notebooks.azureml.net/score` . 
     * Вычислительный экземпляр: `https://<vm_name>-<local_service_port>.<azure_region_of_workspace>.instances.azureml.net/score` . 
 
-    Например, 
+    Например, примененная к объекту директива 
     * Виртуальная машина записной книжки: `https://vm-name-6789.northcentralus.notebooks.azureml.net/score` 
     * Вычислительный экземпляр: `https://vm-name-6789.northcentralus.instances.azureml.net/score`
 
@@ -93,7 +94,7 @@ resp = requests.post(service_url, test_sample, headers=headers)
 print("prediction:", resp.text)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

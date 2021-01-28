@@ -1,5 +1,5 @@
 ---
-title: Управление конечными точками потоковой передачи с помощью служб мультимедиа Azure v3
+title: Управление конечными точками потоковой передачи
 description: В этой статье показано, как управлять конечными точками потоковой передачи с помощью служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 8d3835d78ec55f120f6b9439aea9c29434e6bd47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d656ce23cf68a1eec23421b769d5847f9b661bb4
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289483"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955908"
 ---
 # <a name="manage-streaming-endpoints-with--media-services-v3"></a>Управление конечными точками потоковой передачи с помощью служб мультимедиа v3
 
@@ -62,7 +62,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 1. В левой области выберите  **конечные точки потоковой передачи**.
 1. Выберите конечную точку потоковой передачи, которую необходимо запустить, и нажмите кнопку **запустить**.
 
-## <a name="use-the-azure-cli"></a>Использование командной строки Azure CLI
+## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
 ```cli
 az ams streaming-endpoint start [--account-name]
@@ -106,7 +106,7 @@ if (streamingEndpoint != null)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Спецификация OpenAPI служб мультимедиа v3 (Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01)
 * [Операции конечной точки потоковой передачи](/rest/api/media/streamingendpoints)

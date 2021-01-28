@@ -7,12 +7,12 @@ ms.date: 01/25/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 200e1fd7bfffef403fa459d3de13dc31145b8a33
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 99da711038e1fcea3e14584fde09ccd1f79feffa
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98796634"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916719"
 ---
 # <a name="introduction-to-azure-defender-for-app-service"></a>Общие сведения об Azure Defender для Службы приложений
 
@@ -25,7 +25,7 @@ ms.locfileid: "98796634"
 
 |Аспект|Сведения|
 |----|:----|
-|Состояние выпуска:|Общедоступная версия (GA)|
+|Состояние выпуска:|Общедоступная версия|
 |Цены:|Плата за использование [Azure Defender для Службы приложений](azure-defender.md) начисляется по тарифам, приведенным на [странице с ценами](security-center-pricing.md).<br>На странице с ценами и параметрами перечислены некоторые экземпляры для вашего **количества ресурсов**. Это общее число вычислительных экземпляров во всех планах Службы приложений в этой подписке, выполняющихся в момент открытия страницы ценовой категории.<br>Чтобы узнать количество, перейдите к разделу **Планы Службы приложений** на портале Azure и просмотрите число вычислительных экземпляров, используемых каждым планом.|
 |Поддерживаемые планы Службы приложений:|![Да](./media/icons/yes-icon.png) "Базовый", "Стандартный", "Премиум", "Изолированный" или Linux<br>![Нет](./media/icons/no-icon.png) "Бесплатный", "Общий" или "Потребление"<br>[Подробнее о планах Службы приложений](https://azure.microsoft.com/pricing/details/app-service/plans/)|
 |Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|

@@ -1,9 +1,24 @@
 ---
-Title: Live Events and Live Output концепция в службах мультимедиа Azure V3: Описание служб мультимедиа Azure. в этом разделе содержится обзор динамических событий и динамических выходов в службах мультимедиа Azure v3.
-службы: мультимедиа-службы documentationcenter: ' ' author: Ингридатмикрософт Manager: femila Editor редактор: ' '
-
-MS. Service: Media-Services MS. Рабочая нагрузка: носитель ms.tgt_pltfrm: Na MS. devlang: NE MS. Topic: концептуальная МС. Дата: 10/23/2020 MS. author: инхенкел
-
+title: Основные понятия Live Events и Live Outputs
+description: В этом разделе приводятся общие сведения о динамических событиях и динамических выходах в службах мультимедиа Azure v3.
+services: media-services
+documentationcenter: ''
+author: IngridAtMicrosoft
+manager: femila
+editor: ''
+ms.service: media-services
+ms.workload: media
+ms.tgt_pltfrm: na
+ms.devlang: ne
+ms.topic: conceptual
+ms.date: 10/23/2020
+ms.author: inhenkel
+ms.openlocfilehash: 0b223fcedfdead991f7ce374f7f7814749388f90
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955959"
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>События и выходные данные прямой трансляции в Службах мультимедиа
 

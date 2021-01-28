@@ -1,5 +1,5 @@
 ---
-title: Управляемые удостоверения и доверенное хранилище с помощью служб мультимедиа
+title: Управляемые удостоверения и доверенное хранилище
 description: Службы мультимедиа можно использовать с управляемыми удостоверениями, чтобы включить доверенное хранилище.
 services: media-services
 author: IngridAtMicrosoft
@@ -8,12 +8,12 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.author: inhenkel
-ms.openlocfilehash: d0811e8f9183ee334d413bcad69f2c7b32023be3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 291508a6beaa687b3a10f55df4591ce601ab51a0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499362"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956180"
 ---
 # <a name="managed-identities-and-trusted-storage-with-media-services"></a>Управляемые удостоверения и доверенное хранилище с помощью служб мультимедиа
 
@@ -52,7 +52,7 @@ ms.locfileid: "96499362"
 
 В эти учебники входят оба сценария, упомянутые выше.
 
-- [Использование портал Azure для использования управляемых клиентом ключей или BYOK с помощью служб мультимедиа](tutorial-byok-portal.md)
+- [Использование портала Azure для использования ключей, управляемых клиентом, или BYOK для Служб мультимедиа](tutorial-byok-portal.md)
 - [Используйте управляемые клиентом ключи или BYOK с помощью служб мультимедиа REST API](tutorial-byok-postman.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия

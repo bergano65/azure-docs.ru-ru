@@ -1,5 +1,5 @@
 ---
-title: Облака и регионы, в которых доступны службы мультимедиа Azure v3
+title: Облака и регионы для служб мультимедиа Azure v3
 description: В этой статье рассказывается об URL-адресах, используемых для конечных точек и кода для регионов.
 services: media-services
 author: IngridAtMicrosoft
@@ -8,14 +8,14 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 10/28/2020
 ms.author: inhenkel
-ms.openlocfilehash: c17eeda91af46c4159f7c4b1747416298f24c703
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 74f30ebb766ea34603c0a30455837c47222967c0
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319647"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954333"
 ---
-# <a name="regional-code-names-and-endpoints"></a>Региональные имена и конечные точки кода
+# <a name="regional-code-names-and-endpoints"></a>Региональные кодовые имена и конечные точки
 
 ### <a name="region-code-name"></a>Кодовое имя региона
 
@@ -25,7 +25,7 @@ ms.locfileid: "93319647"
 az account list-locations
 ```
 
-Когда вы запустите показанную выше строку, вы увидите список всех регионов Azure. Перейдите к региону Azure со значением *displayName* , которое вы ищете, и используйте его *имя* для параметра **location**.
+Когда вы запустите показанную выше строку, вы увидите список всех регионов Azure. Перейдите к региону Azure со значением *displayName*, которое вы ищете, и используйте его *имя* для параметра **location**.
 
 Например, для региона Azure "западная часть США 2" (показан ниже) для параметра **location** нужно использовать значение westus2.
 
@@ -81,10 +81,10 @@ az account list-locations
 | Проверка подлинности | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
-* [Региональные имена и конечные точки кода](azure-regions-code-names.md)
+* [Региональные кодовые имена и конечные точки](azure-regions-code-names.md)
 * [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
 

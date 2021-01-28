@@ -1,5 +1,5 @@
 ---
-title: Кодирование настраиваемого преобразования с помощью служб мультимедиа v3 .NET — Azure
+title: Кодирование пользовательского преобразования .NET
 description: В этом разделе показано, как использовать службы мультимедиа Azure v3 для кодирования пользовательского преобразования с помощью .NET.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 035afd43b49c05f51149ad568a0eb16991dbaf85
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: c8c9f1deb1b776a818269909b3feb19f00a2c356
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897179"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954282"
 ---
 # <a name="how-to-encode-with-a-custom-transform---net"></a>Кодирование с помощью пользовательского преобразования — .NET
 

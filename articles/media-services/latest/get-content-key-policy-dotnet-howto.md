@@ -1,5 +1,5 @@
 ---
-title: Получение ключа подписывания из политики с помощью служб мультимедиа Azure v3 .NET
+title: Получение ключа подписывания из политики .NET
 description: В этом разделе показано, как получить ключ подписи из существующей политики с помощью пакета SDK для .NET Служб мультимедиа v3.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 7107a2acdc0ca430797245125ca903f7414908da
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1436561f7c82446038c231fadec3bd62c94d4ff9
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427073"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98955111"
 ---
 # <a name="get-a-signing-key-from-the-existing-policy"></a>Получение ключа подписи из существующей политики
 

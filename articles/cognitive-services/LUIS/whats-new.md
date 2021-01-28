@@ -4,13 +4,13 @@ description: Эта статья регулярно обновляется по�
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 01/12/2021
-ms.openlocfilehash: 4bcd25e96aba1ca103737679540cb9ff67674914
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.date: 01/21/2021
+ms.openlocfilehash: 5fdde81d31eae4c50b86a5553742f9b599f32505
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179135"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693601"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
@@ -21,6 +21,7 @@ ms.locfileid: "98179135"
 ### <a name="january-2021"></a>Январь 2021 г.
 
 * API прогнозирования версии 3 теперь поддерживает [API Bing для проверки орфографии](luis-how-to-publish-app.md#spelling-correction).
+* Региональные порталы (au.luis.ai и eu.luis.ai) объединены в один портал и имеют один URL-адрес. Если вы использовали один из этих порталов, вы будете автоматически перенаправлены на сайт luis.ai.
 
 ### <a name="december-2020"></a>Декабрь 2020 г.
 

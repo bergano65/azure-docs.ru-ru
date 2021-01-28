@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: adcc894db630bba11e84e2f277705d2f31caf7dc
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 1222108694ff7274e5d8fd063635b70a76ffc59c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920229"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954755"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
 
@@ -81,10 +81,12 @@ Authorization: Bearer <token>
 
 После создания ресурса *кластера* можно изменить дополнительные свойства, такие как *SKU*, * кэйваултпропертиес или *биллингтипе*. Дополнительные сведения см. ниже.
 
+У вас может быть до 2 активных кластеров на одну подписку для каждого региона. Если кластер удален, он по-прежнему резервируется в течение 14 дней. Можно использовать до 4 зарезервированных кластеров на одну подписку в каждом регионе (активная или недавно удаленная).
+
 > [!WARNING]
 > Создание кластера вызывает выделение ресурсов и подготовку. Выполнение этой операции может занять до часа. Рекомендуется выполнять его асинхронно.
 
-Учетная запись пользователя, которая создает кластеры, должна иметь стандартное разрешение на создание ресурсов Azure `Microsoft.Resources/deployments/*` и разрешение на запись в кластер `(Microsoft.OperationalInsights/clusters/write)` .
+Учетная запись пользователя, которая создает кластеры, должна иметь стандартное разрешение на создание ресурсов Azure: `Microsoft.Resources/deployments/*` и разрешение на запись в кластере `Microsoft.OperationalInsights/clusters/write` , используя назначения ролей для этого конкретного действия или `Microsoft.OperationalInsights/*` `*/write` .
 
 ### <a name="create"></a>Создание 
 
@@ -503,7 +505,9 @@ Remove-AzOperationalInsightsLinkedService -ResourceGroupName {resource-group-nam
 
 ## <a name="limits-and-constraints"></a>Ограничения
 
-- Максимальное число кластеров на регион и подписку равно 2
+- Максимальное число активных кластеров на регион и подписку равно 2
+
+- Максимальное число зарезервированных кластеров (активных или недавно удаленных) для каждого региона и подписки равно 4. 
 
 - Максимальное число связанных рабочих областей в кластере — 1000
 
