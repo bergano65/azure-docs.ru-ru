@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 9578793c88c069b885f03dd682c47ae9f1f1b0a1
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: bc2f802a902212633fdbc081d33a51407d374e36
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802632"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696368"
 ---
 # <a name="install-software-and-set-up-resources-for-the-tutorial"></a>Установка программного обеспечения и настройка ресурсов для учебника
 
@@ -32,7 +32,6 @@ ms.locfileid: "97802632"
 5. Установите [последнюю версию](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020) Azure CLI. Для следующих сценариев требуется, чтобы зона доступности PowerShell была последней версией (3.5.0, февраль 2020).
 6. Настройте среду для отладки, запуска и тестирования решения IoT Edge, установив [средство разработки Azure IoT EdgeHub](https://pypi.org/project/iotedgehubdev/).
 7. Установить Docker.
-8. Скачайте файл DACPAC, который вам понадобится для работы с этим учебником. 
 
 ## <a name="deploy-azure-resources-using-powershell-script"></a>Развертывание ресурсов Azure с помощью скрипта PowerShell
 

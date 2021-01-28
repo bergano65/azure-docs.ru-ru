@@ -3,12 +3,12 @@ title: Центры событий Azure. Визуализации аномал�
 description: Руководство по визуализации аномалий данных в событиях реального времени, отправляемых в Центры событий Microsoft Azure
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: b72b82f3959565e6bd0598fef8e21bb64fedb053
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: bd08d611761e125fdd03173ce6027c60e82baed6
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655685"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623464"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>Руководство по визуализации аномальных данных в событиях реального времени, отправляемых в Центры событий Azure
 
@@ -349,7 +349,7 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 ### <a name="clean-up-resources-using-azure-cli"></a>Очистка ресурсов с помощью Azure CLI
 
-Чтобы удалить группу ресурсов, используйте команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Чтобы удалить группу ресурсов, используйте команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

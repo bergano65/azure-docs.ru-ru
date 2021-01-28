@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/19/2021
 ms.author: zhchia
-ms.openlocfilehash: f9e462d66e438e42c40b16ba9b818ddd330e9e5a
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 7afcf6c5814917b3356d86e7288fd2920a04cad7
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98612437"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695997"
 ---
 # <a name="tutorial-configure-templafy-openid-connect-for-automatic-user-provisioning"></a>Руководство по настройке Templafy OpenID Connect для автоматической подготовки пользователей
 
@@ -133,7 +133,26 @@ ms.locfileid: "98612437"
 
 9. В разделе **Сопоставление атрибутов** просмотрите атрибуты пользователей, которые синхронизированы из Azure AD в Templafy OpenID Connect. Атрибуты, выбранные как **совпадающие** свойства, используются для сопоставления учетных записей пользователей в Templafy OpenID Connect для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователей в Templafy OpenID Connect](media/templafy-openid-connect-provisioning-tutorial/user-attribute.png)
+   |attribute|Тип|Поддерживается для фильтрации|
+   |---|---|---|
+   |userName|Строка|&check;|
+   |active|Логическое|
+   |displayName|Строка|
+   |title|Строка|
+   |preferredLanguage|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
+   |phoneNumbers[type eq "mobile"].value|Строка|
+   |phoneNumbers[type eq "fax"].value|Строка|
+   |externalId|Строка|
+   |addresses[type eq "work"].locality|Строка|
+   |addresses[type eq "work"].postalCode|Строка|
+   |addresses[type eq "work"].region|Строка|
+   |addresses[type eq "work"].streetAddress|Строка|
+   |addresses[type eq "work"].country|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
 
 10. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Templafy**.
 
@@ -141,7 +160,11 @@ ms.locfileid: "98612437"
 
 11. В разделе **Сопоставление атрибутов** просмотрите атрибуты групп, которые синхронизированы из Azure AD в Templafy OpenID Connect. Атрибуты, выбранные как **совпадающие** свойства, используются для сопоставления групп в Templafy OpenID Connect для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты групп в Templafy OpenID Connect](media/templafy-openid-connect-provisioning-tutorial/group-attribute.png)
+      |attribute|Тип|Поддерживается для фильтрации|
+      |---|---|---|
+      |displayName|Строка|&check;|
+      |members|Справочник|
+      |externalId|Строка|      
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

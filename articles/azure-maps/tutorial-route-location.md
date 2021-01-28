@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 0004a250173ce6707462b852016d205782479717
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d8aaf093a7e2a0ad1470d72d815e919f5b4e2d05
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896686"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624988"
 ---
 # <a name="tutorial-how-to-display-route-directions-using-azure-maps-route-service-and-map-control"></a>Руководство по отображению направлений маршрута с помощью службы "Построение маршрутов" Azure Maps и элемента управления картой
 
@@ -183,7 +183,7 @@ ms.locfileid: "92896686"
 Из этого раздела вы узнаете, как использовать API направлений маршрута Azure Maps, чтобы получить направление маршрута и предполагаемое время прибытия от одной точки к другой.
 
 >[!TIP]
->API-интерфейсы предлагают службы "Построение маршрутов" Azure Maps для планирования маршрутов на основе различных типов, таких как *самые быстрые* , *кратчайшие* , *экономичные* или *захватывающие* маршруты на основе расстояния, плотности трафика и способа перемещения. Кроме того, с помощью этой службы пользователи могут планировать маршруты с учетом исторических данных о плотности трафика. Пользователь может получить прогноз продолжительности поездки для любого заданного времени. Дополнительные сведения см. в статье [Route — Get Route Directions](/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута).
+>API-интерфейсы предлагают службы "Построение маршрутов" Azure Maps для планирования маршрутов на основе различных типов, таких как *самые быстрые*, *кратчайшие*, *экономичные* или *захватывающие* маршруты на основе расстояния, плотности трафика и способа перемещения. Кроме того, с помощью этой службы пользователи могут планировать маршруты с учетом исторических данных о плотности трафика. Пользователь может получить прогноз продолжительности поездки для любого заданного времени. Дополнительные сведения см. в статье [Route — Get Route Directions](/rest/api/maps/route/getroutedirections) (Маршрут. Получение направления маршрута).
 
 1. В функции `GetMap` внутри обработчика событий `ready` элемента управления добавьте в код JavaScript следующее:
 
@@ -219,6 +219,10 @@ ms.locfileid: "92896686"
      :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Элемент управления картой в Azure и служба &quot;Построение маршрутов&quot;":::
 
 Полный исходный код для этого примера можно получить [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html). Работающий пример можно изучить [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов, требующих очистки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

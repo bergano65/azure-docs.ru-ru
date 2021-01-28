@@ -9,12 +9,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: akjosh
-ms.openlocfilehash: 8a0ee8565d22e935535bbe1e830d8399b2489f5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 803bbf485d783fc160d1f2644a56e1339f73690e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86527529"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678310"
 ---
 # <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство по Создание и использование пользовательского образа для масштабируемых наборов виртуальных машин с помощью Azure PowerShell
 
@@ -80,7 +80,7 @@ $gallery = New-AzGallery `
 
 ## <a name="create-an-image-definition"></a>Создание определения образа 
 
-Образы можно объединять в логические группы с помощью определений образов. Определения образов используются для управления сведениями о версиях созданных в них образов. В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](../virtual-machines/windows/shared-image-galleries.md#image-definitions).
+Образы можно объединять в логические группы с помощью определений образов. Определения образов используются для управления сведениями о версиях созданных в них образов. В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](../virtual-machines/shared-image-galleries.md#image-definitions).
 
 Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). В этом примере образ коллекции называется *myGalleryImage* и создается для специализированного образа. 
 
@@ -256,7 +256,7 @@ Remove-AzResourceGroup -Name myResoureceGroup
 
 ## <a name="azure-image-builder"></a>Средство создания образов Azure
 
-Azure также предлагает службу на основе Packer — [Конструктор образов виртуальных машин Azure](../virtual-machines/windows/image-builder-overview.md). Просто опишите настройки в шаблоне, и эта служба автоматически создаст образ. 
+Azure также предлагает службу на основе Packer — [Конструктор образов виртуальных машин Azure](../virtual-machines/image-builder-overview.md). Просто опишите настройки в шаблоне, и эта служба автоматически создаст образ. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как создавать и использовать пользовательский образ виртуальной машины для масштабируемых наборов с помощью Azure PowerShell, в частности, как выполнять такие задачи:

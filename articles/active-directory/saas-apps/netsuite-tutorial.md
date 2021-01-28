@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/09/2020
+ms.date: 01/20/2021
 ms.author: jeedes
-ms.openlocfilehash: 9272114dd472717e59680b40c07d8435dea19682
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d99a19efcef0cae518d8d21d3371adaf37d32ff7
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181974"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625486"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство по Интеграция единого входа Azure AD с NetSuite
 
@@ -41,7 +41,6 @@ NetSuite поддерживает следующие технологии:
 
 * единый вход, инициированный поставщиком удостоверений;
 * JIT-подготовка пользователей;
-* [автоматическая подготовка пользователей](NetSuite-provisioning-tutorial.md).
 
 > [!NOTE]
 > Так как идентификатор этого приложения является фиксированным строковым значением, в одном клиенте можно настроить только один экземпляр.
@@ -132,7 +131,7 @@ NetSuite поддерживает следующие технологии:
    а. В поле **Имя** введите **B.Simon**.  
    b. В поле **Имя пользователя** введите username@companydomain.extension (например, B.Simon@contoso.com).  
    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.  
-   d. Нажмите кнопку **создания**.
+   d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

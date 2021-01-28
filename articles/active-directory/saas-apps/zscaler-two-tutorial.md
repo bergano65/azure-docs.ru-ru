@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: 971c093363ddbb4cbc6622be40479a108c16116f
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 8c3d76f24cce860538dc3bd5dcf29b59708bdb5d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936521"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726281"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-two"></a>Руководство по интеграции Azure Active Directory с Zscaler Two
 
@@ -109,7 +109,7 @@ ms.locfileid: "97936521"
     е) Выберите команду **Сохранить**.
 
     > [!NOTE]
-    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui), чтобы прочитать о настройке роли в Azure AD.
+    > Перейдите по [этой ссылке](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview), чтобы прочитать о настройке роли в Azure AD.
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -247,7 +247,7 @@ ms.locfileid: "97936521"
 
 * Перейдите по URL-адресу для входа в Zscaler Two и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Zscaler Two на портале "Мои приложения", вы перейдете по URL-адресу для входа в Zscaler Two. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Zscaler Two на портале "Мои приложения", вы перейдете по URL-адресу для входа в Zscaler Two. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

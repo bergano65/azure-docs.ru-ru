@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/19/2021
 ms.author: zhchia
-ms.openlocfilehash: 057b437c5d88c4f292e08828482e5dca0d2ca5b4
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 0e7275ee92431e791fec7bd2c9ec07dd623b0f9e
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98612345"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696013"
 ---
 # <a name="tutorial-configure-templafy-saml2-for-automatic-user-provisioning"></a>Руководство. Настройка Templafy SAML2 для автоматической подготовки пользователей
 
@@ -133,7 +133,26 @@ ms.locfileid: "98612345"
 
 9. В разделе **Сопоставления атрибутов** просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Templafy SAML2. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Templafy SAML2 для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя Templafy SAML2](media/templafy-saml-2-provisioning-tutorial/user-attribute.png)
+   |attribute|Тип|Поддерживается для фильтрации|
+   |---|---|---|
+   |userName|Строка|&check;|
+   |active|Логическое|
+   |displayName|Строка|
+   |title|Строка|
+   |preferredLanguage|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
+   |phoneNumbers[type eq "mobile"].value|Строка|
+   |phoneNumbers[type eq "fax"].value|Строка|
+   |externalId|Строка|
+   |addresses[type eq "work"].locality|Строка|
+   |addresses[type eq "work"].postalCode|Строка|
+   |addresses[type eq "work"].region|Строка|
+   |addresses[type eq "work"].streetAddress|Строка|
+   |addresses[type eq "work"].country|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Строка|
 
 10. В разделе **Сопоставления** выберите **Синхронизировать группы Azure Active Directory с Templafy**.
 
@@ -141,7 +160,12 @@ ms.locfileid: "98612345"
 
 11. В разделе **Сопоставления атрибутов** просмотрите атрибуты групп, которые синхронизированы из Azure AD в Templafy SAML2. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления групп в Templafy SAML2 для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты групп Templafy SAML2](media/templafy-saml-2-provisioning-tutorial/group-attribute.png)
+      |attribute|Тип|Поддерживается для фильтрации|
+      |---|---|---|
+      |displayName|Строка|&check;|
+      |members|Справочник|
+      |externalId|Строка|      
+
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

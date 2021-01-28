@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: 06b538f0f218beab2549b027a5da9dcc594969a4
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 12752e3d3cc08e8a13e9679725fbb6678c4bbd71
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586879"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728709"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-academy-attendance"></a>Руководство по интеграции единого входа Azure Active Directory с Academy Attendance
 
@@ -97,7 +97,7 @@ ms.locfileid: "97586879"
     | роль      | user.assignedroles |
 
     > [!NOTE]
-    > Academy Attendance поддерживает две роли для пользователей: **Учитель** и **Учащийся**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Подробные сведения о создании пользовательских ролей в Azure AD см. в [этом](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) документе.
+    > Academy Attendance поддерживает две роли для пользователей: **Учитель** и **Учащийся**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Подробные сведения о создании пользовательских ролей в Azure AD см. в [этом](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) документе.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -147,9 +147,9 @@ ms.locfileid: "97586879"
 
 * Перейдите по URL-адресу для входа в приложение Academy Attendance и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Academy Attendance в окне "Мои приложения", вы перейдете по URL-адресу входа в приложение Academy Attendance. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Academy Attendance в окне "Мои приложения", вы перейдете по URL-адресу входа в приложение Academy Attendance. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Academy Attendance можно применять элемент управления сеансами, который в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+После настройки Academy Attendance можно применять элемент управления сеансами, который в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

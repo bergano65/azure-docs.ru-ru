@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 7640b7a6053532360da4c908089aecfe163bd3de
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f8210c3bc0437180ace110f8decd9f83e18650ed
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912660"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661938"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-hdinsight"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure HDInsight
 
@@ -40,7 +40,7 @@ ms.locfileid: "95912660"
 
 * **База данных SQL Azure**. Вы используете Базу данных SQL Azure в качестве целевого хранилища данных. Если у вас нет базы данных в Базе данных SQL, вы можете создать ее, выполнив инструкции из статьи [Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure](../../azure-sql/database/single-database-create-quickstart.md).
 
-* **Azure CLI.** Если вы не установили интерфейс командной строки Azure, обратитесь к разделу [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* **Azure CLI.** Если вы не установили интерфейс командной строки Azure, обратитесь к разделу [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 * **Клиент Secure Shell (SSH)** . Дополнительные сведения см. в руководстве по [подключению к HDInsight (Hadoop) с помощью SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 

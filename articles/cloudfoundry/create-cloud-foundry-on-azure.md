@@ -14,12 +14,12 @@ ms.service: azure
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: 65d8ade438228d7af71de1fc66639e5b6de2edda
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 735c0955a25a3995c94c73bd6471643ce2783df3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040790"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682619"
 ---
 # <a name="create-a-pivotal-cloud-foundry-cluster-on-azure"></a>Создание кластера Pivotal Cloud Foundry в Azure
 
@@ -42,11 +42,13 @@ ssh-keygen -t rsa -b 2048
 
 > [!NOTE]
 >
-> Для создания субъекта-службы требуется разрешение владельца учетной записи. Можно также написать сценарий для автоматизации создания субъекта-службы. Например, можно использовать команду [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest) Azure CLI.
+> Для создания субъекта-службы требуется разрешение владельца учетной записи. Можно также написать сценарий для автоматизации создания субъекта-службы. Например, можно использовать команду [az ad sp create-for-rbac](/cli/azure/ad/sp) Azure CLI.
 
 1. Войдите в учетную запись Azure.
 
-    `az login`
+    ```azurecli
+    az login
+    ```
 
     ![Вход в Azure CLI](media/deploy/az-login-output.png )
  
@@ -54,11 +56,15 @@ ssh-keygen -t rsa -b 2048
 
 2. Определите подписку по умолчанию для этой конфигурации.
 
-    `az account set -s {id}`
+    ```azurecli
+    az account set -s {id}
+    ```
 
 3. Создайте приложение Azure Active Directory для вашего PCF. Укажите уникальный буквенно-цифровой пароль. Сохраните пароль как **clientSecret** для дальнейшего использования.
 
-    `az ad app create --display-name "Svc Principal for OpsManager" --password {enter-your-password} --homepage "{enter-your-homepage}" --identifier-uris {enter-your-homepage}`
+    ```azurecli
+    az ad app create --display-name "Svc Principal for OpsManager" --password {enter-your-password} --homepage "{enter-your-homepage}" --identifier-uris {enter-your-homepage}
+    ```
 
     Скопируйте значение appId в выходных данных как **clientID** для дальнейшего использования.
 
@@ -68,23 +74,31 @@ ssh-keygen -t rsa -b 2048
 
 4. Создайте субъект-службу с новым идентификатором приложения.
 
-    `az ad sp create --id {appId}`
+    ```azurecli
+    az ad sp create --id {appId}
+    ```
 
 5. Задайте для субъекта-службы роль разрешения "Участник".
 
-    `az role assignment create --assignee "{enter-your-homepage}" --role "Contributor"`
+    ```azurecli
+    az role assignment create --assignee "{enter-your-homepage}" --role "Contributor"
+    ```
 
     Можно также использовать:
 
-    `az role assignment create --assignee {service-principal-name} --role "Contributor"`
+    ```azurecli
+    az role assignment create --assignee {service-principal-name} --role "Contributor"
+    ```
 
     ![Назначение роли субъекту-службе](media/deploy/svc-princ.png )
 
 6. Убедитесь, что вы можете успешно войти в субъект-службу с помощью идентификатора приложения, пароля и идентификатора клиента.
 
-    `az login --service-principal -u {appId} -p {your-password}  --tenant {tenantId}`
+    ```azurecli
+    az login --service-principal -u {appId} -p {your-password}  --tenant {tenantId}
+    ```
 
-7. Создайте JSON-файл в следующем формате. Используйте значения **subscriptionID** , **tenantID** , **clientID** и **clientSecret** , скопированные ранее. Сохраните файл.
+7. Создайте JSON-файл в следующем формате. Используйте значения **subscriptionID**, **tenantID**, **clientID** и **clientSecret**, скопированные ранее. Сохраните файл.
 
     ```json
     {
@@ -99,7 +113,7 @@ ssh-keygen -t rsa -b 2048
 
 1. Зарегистрируйтесь или войдите в учетную запись [Pivotal Network](https://network.pivotal.io).
 2. Выберите имя профиля в правом верхнем углу страницы. Выберите команду **Edit Profile** (Изменить профиль).
-3. Прокрутите до нижней части страницы и скопируйте значение **Legacy API token** (Устаревший токен API). Это ваше значение **токена Pivotal Network** , которое будет использоваться позже.
+3. Прокрутите до нижней части страницы и скопируйте значение **Legacy API token** (Устаревший токен API). Это ваше значение **токена Pivotal Network**, которое будет использоваться позже.
 
 ## <a name="provision-your-cloud-foundry-cluster-on-azure"></a>Подготовка кластера Cloud Foundry к работе в Azure
 
@@ -113,7 +127,7 @@ ssh-keygen -t rsa -b 2048
     ![Состояние развертывания в Azure](media/deploy/deployment.png )
 
 2. Выберите ссылку **Развертывания** в области навигации слева, чтобы получить учетные данные для вашего диспетчера PCF Ops Manager. Выберите **Имя развертывания** на следующей странице.
-3. На панели навигации слева выберите ссылку **Выходные данные** , чтобы отобразить URL-адрес, имя пользователя и пароль для PCF Ops Manager. Значение OPSMAN-FQDN является URL-адресом.
+3. На панели навигации слева выберите ссылку **Выходные данные**, чтобы отобразить URL-адрес, имя пользователя и пароль для PCF Ops Manager. Значение OPSMAN-FQDN является URL-адресом.
  
     ![Выходные данные развертывания Cloud Foundry](media/deploy/deploy-outputs.png )
  

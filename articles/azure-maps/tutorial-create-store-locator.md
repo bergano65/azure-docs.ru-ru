@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 398e964ad773e4c015129c6dd3d4784f1300e16b
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 801c2fe1710952a12584bf10dd8e5c77de3b839c
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905780"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625103"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Руководство по Создание указателя магазинов с помощью Azure Maps
 
@@ -935,6 +935,10 @@ ms.locfileid: "96905780"
  * Храните свои данные в базе данных и выполняйте поиск ближайших расположений. Дополнительные сведения см. в статьях [Основные сведения о типах пространственных данных](/sql/relational-databases/spatial/spatial-data-types-overview?preserve-view=true&view=sql-server-2017) и [Запросы пространственных данных для ближайшего соседа](/sql/relational-databases/spatial/query-spatial-data-for-nearest-neighbor?preserve-view=true&view=sql-server-2017).
 
 Вы можете [просмотреть весь исходный код](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator), [просмотреть работающий пример](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Store%20Locator) и узнать больше об охвате и возможностях Azure Maps, используя [уровни увеличения и сетку фрагментов](zoom-levels-and-tile-grid.md). Вы также можете [использовать стилистические выражения на основе данных](data-driven-style-expressions-web-sdk.md) для применения бизнес-логики.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов, требующих очистки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

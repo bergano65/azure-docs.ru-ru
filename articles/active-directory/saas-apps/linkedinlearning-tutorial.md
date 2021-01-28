@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 33ac21eb87b57487277e598e899061e8757e82fc
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: e5c6bf41e1a3bf92c9141c0d3b54dd58ead2bf3c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050414"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98727305"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-learning"></a>Руководство по Интеграция единого входа Azure Active Directory с LinkedIn Learning
 
@@ -167,7 +167,7 @@ ms.locfileid: "98050414"
 
 * На портале Azure выберите **Тестировать приложение**, и вы автоматически войдете в приложение LinkedIn Learning, для которого настроен единый вход. 
 
-Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку LinkedIn Learning на портале "Мои приложения", вы перейдете на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика служб) или автоматически войдете в приложение LinkedIn Learning, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку LinkedIn Learning на портале "Мои приложения", вы перейдете на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика служб) или автоматически войдете в приложение LinkedIn Learning, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: ce854c8f2d1d317c3660aaab9c0a6569aae0bb36
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 4d6401c53071235784a5371a4a6315e4e25a438f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895977"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680270"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Руководство. Выполнение входа от имени пользователя и вызов защищенного API из приложения Blazor WebAssembly
 
@@ -26,7 +26,7 @@ ms.locfileid: "97895977"
 > * создание нового приложения Blazor WebAssembly, в котором настроено использование Azure Active Directory (Azure AD) для [аутентификации и авторизации](authentication-vs-authorization.md) с помощью платформы удостоверений Майкрософт;
 > * получение данных из защищенного веб-API (на примере [Microsoft Graph](/graph/overview)).
 
-В этом руководстве используется .NET Core 3.1. Документация по .NET содержит инструкции по [защите приложения Blazor WebAssembly](https://docs.microsoft.com/aspnet/core/blazor/security/webassembly/graph-api) с помощью ASP.NET Core 5.0. 
+В этом руководстве используется .NET Core 3.1. Документация по .NET содержит инструкции по [защите приложения Blazor WebAssembly](/aspnet/core/blazor/security/webassembly/graph-api) с помощью ASP.NET Core 5.0. 
 
 Кроме того, у нас есть руководство по [Blazor Server](tutorial-blazor-server.md). 
 
@@ -80,7 +80,7 @@ dotnet run --framework netstandard2.1
 
 [Microsoft Graph](/graph/overview) включает интерфейсы API, которые предоставляют доступ к данным Microsoft 365 для пользователей, и поддерживает маркеры, выданные платформой удостоверений Майкрософт, благодаря чему этот API хорошо использовать в качестве примера. В этом разделе описано, как добавить код для вызова Microsoft Graph и отображения адресов электронной почты пользователей на странице Fetch data (Получение данных) в приложении.
 
-Этот раздел написан с использованием общего подхода к вызову защищенного API с помощью именованного клиента. Этот же метод можно использовать для других защищенных API, которые вы хотите вызывать. Но если вы планируете вызывать Microsoft Graph из приложения, вы можете использовать пакет SDK Graph для уменьшения объема кода. В документации по .NET приведены инструкции по [использованию пакета SDK Graph](https://docs.microsoft.com/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0).
+Этот раздел написан с использованием общего подхода к вызову защищенного API с помощью именованного клиента. Этот же метод можно использовать для других защищенных API, которые вы хотите вызывать. Но если вы планируете вызывать Microsoft Graph из приложения, вы можете использовать пакет SDK Graph для уменьшения объема кода. В документации по .NET приведены инструкции по [использованию пакета SDK Graph](/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0).
 
 Прежде чем начать, выйдите из приложения, так как вы будете вносить изменения в обязательные разрешения, и текущий маркер не будет работать. Если вы этого еще не сделали, прежде чем обновлять код ниже, запустите приложение еще раз и выберите **Выйти**.
 

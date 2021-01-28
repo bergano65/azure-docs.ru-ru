@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 259db10aa8f5cd2b711eca001bc6d48057d5280d
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 276dd5b7eba33081c5131eba722df91d8685adff
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683204"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678168"
 ---
 # <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Руководство по Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python)
 
@@ -27,7 +27,7 @@ ms.locfileid: "97683204"
 Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
-> * Работать с файлами данных в [Записных книжках Azure](../notebooks/index.yml) в облаке.
+> * Работать с файлами данных в [Записных книжках Azure](https://notebooks.azure.com) в облаке.
 > * Загружать примеры данных из файла.
 > * Вызывать REST API Azure Maps с помощью Python.
 > * Отображать на карте данные о местоположении.
@@ -197,9 +197,13 @@ windsPlot.set_ylabel("Wind direction")
 
 Полный список API-интерфейсов Azure Maps вы найдете на [этой странице](./consumption-model.md).
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов, требующих очистки.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе "Записные книжки Azure" см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Записные книжки Azure](../notebooks/index.yml)
+> [Записные книжки Azure](https://notebooks.azure.com)

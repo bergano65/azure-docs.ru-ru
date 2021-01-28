@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/29/2020
 ms.author: jeedes
-ms.openlocfilehash: ccad668476ecf3311d51a476138a2b2190ac7966
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 160c7514b095a330a52dd1607dca6f2eb87215d8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97364455"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98727349"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-talent-solutions"></a>Руководство. Интеграция единого входа Azure Active Directory с LinkedIn Talent Solutions
 
@@ -174,8 +174,8 @@ ms.locfileid: "97364455"
 
 * На портале Azure выберите **Тестировать приложение**, и вы автоматически войдете в приложение LinkedIn Talent Solutions, для которого настроен единый вход. 
 
-Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку LinkedIn Talent Solutions на портале "Мои приложения", вы перейдете на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика служб) или автоматически войдете в приложение LinkedIn Talent Solutions, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Вы можете также использовать портал "Мои приложения" корпорации Майкрософт для тестирования приложения в любом режиме. Щелкнув плитку LinkedIn Talent Solutions на портале "Мои приложения", вы перейдете на страницу входа приложения для инициации потока входа (при настройке в режиме поставщика служб) или автоматически войдете в приложение LinkedIn Talent Solutions, для которого настроен единый вход (при настройке в режиме поставщика удостоверений). Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки LinkedIn Talent Solutions можно применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+После настройки LinkedIn Talent Solutions можно применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

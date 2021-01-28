@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 8cc7c1e0b776574ec7908557108e2cda49bb2a11
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 31dd1c06b0f17b469454593131ccdc93b45b2446
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896666"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624972"
 ---
 # <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство по Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -41,7 +41,7 @@ ms.locfileid: "92896666"
 
 Map Control API является удобной клиентской библиотекой. Этот API позволяет легко интегрировать Maps в веб-приложение. Она скрывает сложность "чистых" вызовов службы REST и ускоряет работу с помощью компонентов, поддерживающих настройку. Чтобы создать статическую HTML-страницу со встроенным API элементов управления картой, сделайте следующее.
 
-1. На локальном компьютере создайте файл **MapSearch.html** .
+1. На локальном компьютере создайте файл **MapSearch.html**.
 2. Добавьте в него следующие компоненты HTML.
 
    ```HTML
@@ -246,6 +246,10 @@ Map Control API является удобной клиентской библи
     ![Azure Map Control и служба поиска](./media/tutorial-search-location/popup-map.png)
 
 Чтобы просмотреть весь код для этого руководства, щелкните [здесь](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/search.html). Чтобы просмотреть рабочий пример, щелкните [здесь](https://azuremapscodesamples.azurewebsites.net/?sample=Search%20for%20points%20of%20interest).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Нет ресурсов, требующих очистки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
