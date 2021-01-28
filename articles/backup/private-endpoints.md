@@ -3,12 +3,12 @@ title: Частные конечные точки
 description: Изучите процесс создания частных конечных точек для Azure Backup и сценариев, в которых использование частных конечных точек помогает обеспечить безопасность ресурсов.
 ms.topic: conceptual
 ms.date: 05/07/2020
-ms.openlocfilehash: 3ed71e49ebc550cb7bc2041e25aa6b9bde77b1ef
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: b1412a79fa6137ce1f8c73d5875e52b6382048fa
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629720"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986977"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Частные конечные точки для Azure Backup
 
@@ -440,7 +440,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
     ![Добавьте запись для полного доменного имени и частного IP-адреса в качестве записи типа для служба очередей](./media/private-endpoints/add-type-a-record-for-queue.png)
 
-## <a name="frequently-asked-questions"></a>Вопросы и ответы
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
 У. Можно ли создать частную конечную точку для существующего резервного хранилища?<br>
 A. Нет, частные конечные точки можно создавать только для новых резервных хранилищ. Поэтому хранилище не должно иметь каких-либо элементов, защищенных в нем. На самом деле, перед созданием частных конечных точек не попытается защитить какие бы то ни было элементы в хранилище.

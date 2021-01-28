@@ -4,19 +4,19 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: barclayn
 ms.author: barclayn
-ms.date: 10/07/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 1861a4e75f34cfd7fe386c094cce3a638b3e1a1e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 0f7c97e5d84b3ee2d40c714625d0158fe60f2c95
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880799"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986079"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "98880799"
 - [REST API — назначение схемы](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
 
 
-### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
+### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -111,6 +111,14 @@ ms.locfileid: "98880799"
 | --- | :-: | :-: | :-: | :-: |
 | Назначено системой | ![Доступно][check] | ![Доступно][check] | Недоступно | ![Доступно][check] |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
+
+### <a name="azure-communication-services"></a>Службы коммуникации Azure
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | ![Доступно][check] | Недоступно | Недоступно | Недоступно |
 
 
 ### <a name="azure-container-instances"></a>Экземпляры контейнеров Azure
@@ -158,6 +166,17 @@ ms.locfileid: "98880799"
 - [PowerShell](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-powershell)
 - [REST](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-rest-api)
 - [Пакет SDK](~/articles/data-factory/data-factory-service-identity.md#generate-managed-identity-using-sdk)
+
+### <a name="azure-digital-twins"></a>Azure Digital Twins
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | ![Доступно][check] | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
+См. следующий список, чтобы настроить управляемое удостоверение для Azure Digital двойников (в регионах, где это возможно):
+
+- [Портал Azure](~/articles/digital-twins/how-to-enable-managed-identities.md)
 
 ### <a name="azure-event-grid"></a>Сетка событий Azure
 

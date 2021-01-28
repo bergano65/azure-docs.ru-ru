@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: bd9199bc73e56ec36343b30d9b24f0b48799835e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 06614fc33910eda44bf6bf8369c4ad4b3c0b25fe
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445187"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986028"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Создание рабочей области для Машинного обучения Azure с помощью шаблона Azure Resource Manager
 
@@ -73,7 +73,7 @@ ms.locfileid: "96445187"
 > [!TIP]
 > Хотя шаблон, связанный с этим документом, создает новый Реестр контейнеров Azure, вы можете создать рабочую область и без реестра контейнеров. Он будет создан автоматически при выполнении любой операции, для которой реестр контейнеров обязателен. Например, при обучении или развертывании модели.
 >
-> Вы также можете указать в шаблоне Azure Resource Manager существующий реестр контейнеров или учетную запись хранения, а не создавать новые. Однако для используемого реестра контейнеров необходимо включить __учетную запись администратора__ . Сведения о включении учетной записи администратора см. в разделе [учетная запись администратора](../container-registry/container-registry-authentication.md#admin-account).
+> Вы также можете указать в шаблоне Azure Resource Manager существующий реестр контейнеров или учетную запись хранения, а не создавать новые. При этом необходимо либо [использовать управляемое удостоверение](how-to-use-managed-identities.md) (Предварительная версия), либо [включить учетную запись администратора](../container-registry/container-registry-authentication.md#admin-account) для реестра контейнеров.
 
 [!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
 
@@ -553,7 +553,7 @@ New-AzResourceGroupDeployment `
    * Регион: Выберите регион Azure, в котором будут создаваться ресурсы.
    * Имя рабочей области: Это имя, которое будет присвоено созданному рабочему пространству Службы машинного обучения Azure. Для имени рабочего пространства допускается длина от 3 до 33 символов. Имя может содержать только буквы, цифры и дефис ("-").
    * Расположение. Выберите расположение, в котором будут созданы ресурсы.
-1. Выберите __Проверить и создать__.
+1. Выберите __Review + create__ (Просмотреть и создать).
 1. На экране " __Проверка и создание__ " примите указанные выше условия и нажмите кнопку __создать__.
 
 Дополнительные сведения см. в разделе [Развертывание ресурсов с помощью настраиваемого шаблона](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template).

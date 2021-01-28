@@ -5,20 +5,20 @@ services: storage
 author: santoshc
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/08/2020
-ms.author: tamram
+ms.date: 01/27/2021
+ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 9032576f3705c360ebf53d8fdb4d6c15f77f450e
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 5a1ad898b745bbb49421c1bc0b5a9b2e5c8ec0f6
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703510"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986008"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
-Служба хранилища Azure предоставляет многоуровневую модель безопасности. Эта модель позволяет защищать ваши учетные записи хранения и контролировать уровень доступа к ним, который требуется приложениям и корпоративным средам, в зависимости от типа и подмножества используемых сетей. После настройки сетевых правил доступ к учетной записи хранения могут получать только приложения, запрашивающие данные через этот определенный набор сетей. Вы можете разрешать доступ к учетной записи хранения только для запросов, исходящих из указанных IP-адресов, диапазонов IP-адресов или из списка подсетей в виртуальной сети Azure (VNet).
+Служба хранилища Azure предоставляет многоуровневую модель безопасности. Эта модель позволяет защищать и контролировать уровень доступа к учетным записям хранения, которые требуются приложениям и корпоративным средам, в зависимости от типа и подмножества используемых сетей или ресурсов. При настройке сетевых правил только приложения, запрашивающие данные через указанный набор сетей или через указанный набор ресурсов Azure, могут получить доступ к учетной записи хранения. Вы можете ограничить доступ к учетной записи хранения запросами, источником которых являются указанные IP-адреса, диапазоны IP-адресов, подсети в виртуальной сети Azure или экземпляры ресурсов некоторых служб Azure.
 
 Учетные записи хранения имеют общедоступную конечную точку, доступную через Интернет. Вы также можете создать [частные конечные точки для учетной записи хранения](storage-private-endpoints.md), которые назначают учетной записи хранения частный IP-адрес из вашей виртуальной сети, а также защищают весь трафик между виртуальной сетью и учетной записью хранения с помощью приватного канала. Брандмауэр службы хранилища Azure предоставляет контроль доступа для общедоступной конечной точки вашей учетной записи хранения. Вы также можете использовать брандмауэр, чтобы блокировать доступ через общедоступную конечную точку при использовании частных конечных точек. Конфигурация брандмауэра службы хранилища также позволяет выбрать доверенные службы платформы Azure для безопасного доступа к учетной записи хранения.
 
@@ -27,7 +27,7 @@ ms.locfileid: "98703510"
 > [!IMPORTANT]
 > Включение правил брандмауэра для учетной записи хранения по умолчанию блокирует входящие запросы данных, за исключением запросов от служб, работающих внутри виртуальной сети Azure (VNet), или запросов, поступающих из разрешенных общедоступных IP-адресов. Запросы от других служб Azure, в том числе портала Azure, служб метрики и ведения журналов, блокируются.
 >
-> Вы можете предоставить доступ службам Azure, работающим в рамках виртуальной сети, разрешая трафик из подсети, в которой размещен экземпляр службы. Вы также можете разрешать ограниченное количество сценариев с помощью механизма [исключений](#exceptions), который описывается ниже. Доступ к данным учетной записи хранения через портал Azure возможен только с компьютера, находящегося в пределах настроенной доверенной границы (на основе протокола IP или VNet).
+> Вы можете предоставить доступ службам Azure, работающим в рамках виртуальной сети, разрешая трафик из подсети, в которой размещен экземпляр службы. Можно также включить ограниченное количество сценариев с помощью механизма исключений, описанного ниже. Доступ к данным учетной записи хранения через портал Azure возможен только с компьютера, находящегося в пределах настроенной доверенной границы (на основе протокола IP или VNet).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "98703510"
 
 Классические учетные записи хранения не поддерживают брандмауэры и виртуальные сети.
 
-Чтобы использовать неуправляемые диски в учетных записях хранения с действующими правилами сети относительно резервного копирования и восстановления виртуальных машин, необходимо создать исключение. Эта процедура описана в разделе [Исключения](#exceptions) данной статьи. Исключения брандмауэра не применяются к управляемым дискам, так как ими уже управляет Azure.
+Вы можете использовать неуправляемые диски в учетных записях хранения с правилами сети, применяемыми для резервного копирования и восстановления виртуальных машин, создав исключение. Этот процесс описан в разделе " [Управление исключениями](#manage-exceptions) " этой статьи. Исключения брандмауэра не применяются к управляемым дискам, так как ими уже управляет Azure.
 
 ## <a name="change-the-default-network-access-rule"></a>Изменение сетевого правила доступа по умолчанию
 
@@ -60,59 +60,62 @@ ms.locfileid: "98703510"
 
 Вы можете управлять сетевыми правилами доступа по умолчанию для учетных записей хранения с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
-1. В меню Параметры выберите пункт **сети**.
+2. Выберите в меню Параметры пункт **Сетевые подключения**.
 
-1. Чтобы запретить доступ по умолчанию, разрешите доступ в разделе **Выбранные сети**. Чтобы разрешить передачу трафика из всех сетей, разрешите доступ в разделе **Все сети**.
+3. Чтобы запретить доступ по умолчанию, разрешите доступ в разделе **Выбранные сети**. Чтобы разрешить передачу трафика из всех сетей, разрешите доступ в разделе **Все сети**.
 
-1. Щелкните **Сохранить**, чтобы применить изменения.
+4. Выберите **Сохранить**, чтобы применить изменения.
 
-#### <a name="powershell"></a>PowerShell
+<a id="powershell"></a>
+
+#### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-Az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).
 
-1. Отобразите состояние правила по умолчанию для учетной записи хранения.
+2. Отобразите состояние правила по умолчанию для учетной записи хранения.
 
     ```powershell
     (Get-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount").DefaultAction
     ```
 
-1. Настройте в правиле по умолчанию запрет сетевого доступа по умолчанию.
+3. Настройте в правиле по умолчанию запрет сетевого доступа по умолчанию.
 
     ```powershell
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -DefaultAction Deny
     ```
 
-1. Настройте в правиле по умолчанию разрешение сетевого доступа по умолчанию.
+4. Настройте в правиле по умолчанию разрешение сетевого доступа по умолчанию.
 
     ```powershell
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -DefaultAction Allow
     ```
 
-#### <a name="cliv2"></a>CLI 2.0
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
-1. Отобразите состояние правила по умолчанию для учетной записи хранения.
+2. Отобразите состояние правила по умолчанию для учетной записи хранения.
 
     ```azurecli
     az storage account show --resource-group "myresourcegroup" --name "mystorageaccount" --query networkRuleSet.defaultAction
     ```
 
-1. Настройте в правиле по умолчанию запрет сетевого доступа по умолчанию.
+3. Настройте в правиле по умолчанию запрет сетевого доступа по умолчанию.
 
     ```azurecli
     az storage account update --resource-group "myresourcegroup" --name "mystorageaccount" --default-action Deny
     ```
 
-1. Настройте в правиле по умолчанию разрешение сетевого доступа по умолчанию.
+4. Настройте в правиле по умолчанию разрешение сетевого доступа по умолчанию.
 
     ```azurecli
     az storage account update --resource-group "myresourcegroup" --name "mystorageaccount" --default-action Allow
     ```
+---
 
 ## <a name="grant-access-from-a-virtual-network"></a>Предоставление доступа из виртуальной сети
 
@@ -144,42 +147,42 @@ ms.locfileid: "98703510"
 
 Правилами виртуальной сети для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
-1. В меню Параметры выберите пункт **сети**.
+2. Выберите в меню Параметры пункт **Сетевые подключения**.
 
-1. Убедитесь, что вы разрешили доступ в разделе **Выбранные сети**.
+3. Убедитесь, что вы разрешили доступ в разделе **Выбранные сети**.
 
-1. Чтобы предоставить доступ виртуальной сети с новым сетевым правилом, в разделе **Виртуальные сети** выберите команду **Добавить существующую виртуальную сеть**, укажите параметры для пунктов **Виртуальные сети** и **Подсети**, а затем нажмите **Добавить**. Чтобы создать виртуальную сеть и предоставить ей доступ, выберите команду **Добавить новую виртуальную сеть**. Укажите сведения, необходимые для создания виртуальной сети, а затем нажмите **Создать**.
+4. Чтобы предоставить доступ к виртуальной сети с помощью нового правила сети, в разделе **виртуальные сети** выберите **Добавить существующую виртуальную сеть**, выберите **Параметры виртуальных сетей** и **подсетей** , а затем нажмите кнопку **Добавить**. Чтобы создать новую виртуальную сеть и предоставить ей доступ, выберите **Добавить новую виртуальную сеть**. Укажите сведения, необходимые для создания новой виртуальной сети, а затем нажмите кнопку **создать**.
 
     > [!NOTE]
     > Если конечная точка службы для службы хранилища Azure еще не настроена для выбранной виртуальной сети и подсетей, ее можно настроить в ходе этой операции.
     >
     > В настоящее время при создании правила можно выбирать только из виртуальных сетей, принадлежащих одному и тому же клиенту Azure Active Directory. Чтобы предоставить доступ к подсети в виртуальной сети, принадлежащей другому клиенту, используйте PowerShell, интерфейс командной строки или интерфейсы REST API.
 
-1. Если нужно удалить правила виртуальной сети или подсети, щелкните **...** , чтобы открыть контекстное меню для виртуальной сети или подсети, и выберите пункт **Удалить**.
+5. Чтобы удалить правило виртуальной сети или подсети, выберите **...** , чтобы открыть контекстное меню для виртуальной сети или подсети, и выберите **Удалить**.
 
-1. Щелкните **Сохранить**, чтобы применить изменения.
+6. Нажмите кнопку **сохранить** , чтобы применить изменения.
 
-#### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-Az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).
 
-1. Выведите список правил виртуальной сети.
+2. Выведите список правил виртуальной сети.
 
     ```powershell
     (Get-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount").VirtualNetworkRules
     ```
 
-1. Включите конечную точку службы для службы хранилища Azure в имеющейся виртуальной сети и подсети.
+3. Включите конечную точку службы для службы хранилища Azure в имеющейся виртуальной сети и подсети.
 
     ```powershell
     Get-AzVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Set-AzVirtualNetworkSubnetConfig -Name "mysubnet" -AddressPrefix "10.0.0.0/24" -ServiceEndpoint "Microsoft.Storage" | Set-AzVirtualNetwork
     ```
 
-1. Добавьте сетевое правило для виртуальной сети и подсети.
+4. Добавьте сетевое правило для виртуальной сети и подсети.
 
     ```powershell
     $subnet = Get-AzVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Get-AzVirtualNetworkSubnetConfig -Name "mysubnet"
@@ -189,7 +192,7 @@ ms.locfileid: "98703510"
     > [!TIP]
     > Чтобы добавить сетевое правило для подсети, принадлежащей другому клиенту Azure AD, используйте полный параметр **VirtualNetworkResourceId** в форме "/подписки/ИД_подписки/группыРесурсов/Имя_группыРесурсов/поставщики/Microsoft.Network/виртуальныеСети/имя_виртуальнойСети/подсети/имя_подсети".
 
-1. Удалите сетевое правило для виртуальной сети и подсети.
+5. Удалите сетевое правило для виртуальной сети и подсети.
 
     ```powershell
     $subnet = Get-AzVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Get-AzVirtualNetworkSubnetConfig -Name "mysubnet"
@@ -199,23 +202,23 @@ ms.locfileid: "98703510"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-#### <a name="cliv2"></a>CLI 2.0
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
-1. Выведите список правил виртуальной сети.
+2. Выведите список правил виртуальной сети.
 
     ```azurecli
     az storage account network-rule list --resource-group "myresourcegroup" --account-name "mystorageaccount" --query virtualNetworkRules
     ```
 
-1. Включите конечную точку службы для службы хранилища Azure в имеющейся виртуальной сети и подсети.
+3. Включите конечную точку службы для службы хранилища Azure в имеющейся виртуальной сети и подсети.
 
     ```azurecli
     az network vnet subnet update --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --service-endpoints "Microsoft.Storage"
     ```
 
-1. Добавьте сетевое правило для виртуальной сети и подсети.
+4. Добавьте сетевое правило для виртуальной сети и подсети.
 
     ```azurecli
     subnetid=$(az network vnet subnet show --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --query id --output tsv)
@@ -227,7 +230,7 @@ ms.locfileid: "98703510"
     >
     > Чтобы получить идентификатор подсети для виртуальной сети, принадлежащей другому клиенту Azure AD, можно использовать параметр **subscription**.
 
-1. Удалите сетевое правило для виртуальной сети и подсети.
+5. Удалите сетевое правило для виртуальной сети и подсети.
 
     ```azurecli
     subnetid=$(az network vnet subnet show --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --query id --output tsv)
@@ -236,6 +239,8 @@ ms.locfileid: "98703510"
 
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
+
+---
 
 ## <a name="grant-access-from-an-internet-ip-range"></a>Предоставление доступа из диапазона IP-адресов в Интернете
 
@@ -268,49 +273,49 @@ ms.locfileid: "98703510"
 
 Правилами IP-сети для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
-1. В меню Параметры выберите пункт **сети**.
+2. Выберите в меню Параметры пункт **Сетевые подключения**.
 
-1. Убедитесь, что вы разрешили доступ в разделе **Выбранные сети**.
+3. Убедитесь, что вы разрешили доступ в разделе **Выбранные сети**.
 
-1. Чтобы предоставить доступ к диапазону IP-адресов в Интернете, введите IP-адрес или диапазон адресов (в формате CIDR) в разделе **Брандмауэр** > **Диапазон адресов**.
+4. Чтобы предоставить доступ к диапазону IP-адресов в Интернете, введите IP-адрес или диапазон адресов (в формате CIDR) в разделе **Брандмауэр** > **Диапазон адресов**.
 
-1. Чтобы удалить правило IP-сети, щелкните значок корзины рядом с диапазоном адресов.
+5. Чтобы удалить правило IP-сети, щелкните значок корзины рядом с диапазоном адресов.
 
-1. Щелкните **Сохранить**, чтобы применить изменения.
+6. Выберите **Сохранить**, чтобы применить изменения.
 
-#### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-Az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).
 
-1. Выведите список правил IP-сети.
+2. Выведите список правил IP-сети.
 
     ```powershell
     (Get-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount").IPRules
     ```
 
-1. Добавьте правило сети для отдельного IP-адреса.
+3. Добавьте правило сети для отдельного IP-адреса.
 
     ```powershell
     Add-AzStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" -IPAddressOrRange "16.17.18.19"
     ```
 
-1. Добавьте правило сети для диапазона IP-адресов.
+4. Добавьте правило сети для диапазона IP-адресов.
 
     ```powershell
     Add-AzStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" -IPAddressOrRange "16.17.18.0/24"
     ```
 
-1. Удалите правило сети для отдельного IP-адреса.
+5. Удалите правило сети для отдельного IP-адреса.
 
     ```powershell
     Remove-AzStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" -IPAddressOrRange "16.17.18.19"
     ```
 
-1. Удалите правило сети для диапазона IP-адресов.
+6. Удалите правило сети для диапазона IP-адресов.
 
     ```powershell
     Remove-AzStorageAccountNetworkRule -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" -IPAddressOrRange "16.17.18.0/24"
@@ -319,7 +324,7 @@ ms.locfileid: "98703510"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-#### <a name="cliv2"></a>CLI 2.0
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -329,25 +334,25 @@ ms.locfileid: "98703510"
     az storage account network-rule list --resource-group "myresourcegroup" --account-name "mystorageaccount" --query ipRules
     ```
 
-1. Добавьте правило сети для отдельного IP-адреса.
+2. Добавьте правило сети для отдельного IP-адреса.
 
     ```azurecli
     az storage account network-rule add --resource-group "myresourcegroup" --account-name "mystorageaccount" --ip-address "16.17.18.19"
     ```
 
-1. Добавьте правило сети для диапазона IP-адресов.
+3. Добавьте правило сети для диапазона IP-адресов.
 
     ```azurecli
     az storage account network-rule add --resource-group "myresourcegroup" --account-name "mystorageaccount" --ip-address "16.17.18.0/24"
     ```
 
-1. Удалите правило сети для отдельного IP-адреса.
+4. Удалите правило сети для отдельного IP-адреса.
 
     ```azurecli
     az storage account network-rule remove --resource-group "myresourcegroup" --account-name "mystorageaccount" --ip-address "16.17.18.19"
     ```
 
-1. Удалите правило сети для диапазона IP-адресов.
+5. Удалите правило сети для диапазона IP-адресов.
 
     ```azurecli
     az storage account network-rule remove --resource-group "myresourcegroup" --account-name "mystorageaccount" --ip-address "16.17.18.0/24"
@@ -356,19 +361,199 @@ ms.locfileid: "98703510"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-## <a name="exceptions"></a>Исключения
+---
 
-Сетевые правила помогают создать безопасную среду для подключений между вашими приложениями и данными в большинстве сценариев. Однако некоторые приложения зависят от служб Azure, которые не могут быть однозначно изолированы с помощью правил виртуальной сети или IP-адресов. Но эти службы должны быть предоставлены службе хранилища для обеспечения полной функциональности приложения. В таких ситуациях можно использовать **_Разрешить доверенные службы Майкрософт..._* _ параметр, позволяющий таким службам получать доступ к данным, журналам или аналитике.
+<a id="grant-access-specific-instances"></a>
 
-### <a name="trusted-microsoft-services"></a>Доверенные службы Майкрософт
+## <a name="grant-access-from-azure-resource-instances-preview"></a>Предоставление доступа из экземпляров ресурсов Azure (Предварительная версия)
 
-Некоторые службы Майкрософт работают с сетями, которые нельзя включить в сетевые правила. Вы можете предоставить подмножеству таких доверенных служб Майкрософт доступ к учетной записи хранения, поддерживая сетевые правила для других приложений. Эти доверенные службы будут затем использовать строгую проверку подлинности для безопасного подключения к вашей учетной записи хранения. Мы включили два режима доверенного доступа для служб Майкрософт.
+В некоторых случаях приложение может зависеть от ресурсов Azure, которые не могут быть изолированы с помощью виртуальной сети или правила IP-адресов. Тем не менее вы по-прежнему хотите защитить и ограничить доступ к учетной записи хранения только ресурсами Azure вашего приложения. Вы можете настроить учетные записи хранения, чтобы разрешить доступ к определенным экземплярам ресурсов некоторых служб Azure, создав правило экземпляра ресурса. 
 
-- Ресурсы некоторых служб, _ * при регистрации в подписке * *, могут получить доступ к вашей учетной записи хранения **в той же подписке** для операций выбора, таких как запись журналов или резервное копирование.
-- Ресурсам некоторых служб можно предоставить явный доступ к учетной записи хранения, **назначив роли Azure** управляемому удостоверению, назначенному системой.
+Типы операций, которые может выполнять экземпляр ресурса в данных учетной записи хранения, определяются [назначениями ролей Azure](storage-auth-aad.md#assign-azure-roles-for-access-rights) экземпляра ресурса. Экземпляры ресурсов должны находиться в том же клиенте, что и учетная запись хранения, но они могут принадлежать любой подписке в клиенте.
 
+Список поддерживаемых служб Azure отображается в разделе [доверенный доступ на основе управляемого системой удостоверения, назначенного](#trusted-access-system-assigned-managed-identity) в этой статье.
 
-При включении параметра **Разрешить доверенные службы Майкрософт...** ресурсам следующих служб, зарегистрированным в той же подписке, что и ваша учетная запись хранения, предоставляется доступ для выполнения ограниченного набора операций, как описано ниже.
+> [!NOTE]
+> Эта функция доступна в общедоступной предварительной версии и доступна во всех регионах общедоступного облака. 
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
+Вы можете добавить или удалить правила сети ресурсов в портал Azure.
+
+1. Чтобы начать, войдите на [портал Azure](https://portal.azure.com/).
+
+2. Найдите учетную запись хранения и отобразите общие сведения о ней.
+
+3. Выберите **сеть** , чтобы отобразить страницу конфигурации сети.
+
+4. В раскрывающемся списке **тип ресурса** выберите тип ресурса для экземпляра ресурса. 
+
+5. В раскрывающемся списке **имя экземпляра** выберите экземпляр ресурса. Также можно выбрать включение всех экземпляров ресурсов в активный клиент, подписку или группу ресурсов.
+
+6. Выберите **Сохранить**, чтобы применить изменения. Экземпляр ресурса отображается в разделе " **экземпляры ресурсов** " страницы "Параметры сети". 
+
+Чтобы удалить экземпляр ресурса, щелкните значок удаления ( :::image type="icon" source="media/storage-network-security/delete-icon.png"::: ) рядом с экземпляром ресурса.
+
+### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Для добавления или удаления правил сети ресурсов можно использовать команды PowerShell.
+
+> [!IMPORTANT]
+> Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
+
+#### <a name="install-the-preview-module"></a>Установка модуля предварительной версии
+
+Установите последнюю версию модуля PowershellGet. Затем закройте и снова откройте консоль PowerShell.
+
+```powershell
+install-Module PowerShellGet –Repository PSGallery –Force  
+```
+
+Установите **AZ. Storage,** выполнив предварительную версию модуля.
+
+```powershell
+Install-Module Az.Storage -Repository PsGallery -RequiredVersion 3.0.1-preview -AllowClobber -AllowPrerelease -Force 
+```
+
+Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) .
+
+#### <a name="grant-access"></a>Предоставление доступа
+
+Добавьте сетевое правило, предоставляющее доступ из экземпляра ресурса.
+
+```powershell
+$resourceId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.DataFactory/factories/myDataFactory"
+$tenantId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+$resourceGroupName = "myResourceGroup"
+$accountName = "mystorageaccount"
+
+Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $accountName -TenantId $tenantId -ResourceId $resourceId
+
+```
+
+Одновременное указание нескольких экземпляров ресурсов путем изменения набора правил сети.
+
+```powershell
+$resourceId1 = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.DataFactory/factories/myDataFactory"
+$resourceId2 = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/mySQLServer"
+$tenantId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+$resourceGroupName = "myResourceGroup"
+$accountName = "mystorageaccount"
+
+Update-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName -ResourceAccessRule (@{ResourceId=$resourceId1;TenantId=$tenantId},@{ResourceId=$resourceId2;TenantId=$tenantId}) 
+```
+
+#### <a name="remove-access"></a>Запрет доступа
+
+Удаление сетевого правила, предоставляющего доступ из экземпляра ресурса.
+
+```powershell
+$resourceId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.DataFactory/factories/myDataFactory"
+$tenantId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+$resourceGroupName = "myResourceGroup"
+$accountName = "mystorageaccount"
+
+Remove-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $accountName -TenantId $tenantId -ResourceId $resourceId  
+```
+
+Удалите все правила сети, которые предоставляют доступ к экземплярам ресурсов.
+
+```powershell
+$resourceGroupName = "myResourceGroup"
+$accountName = "mystorageaccount"
+
+Update-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName -ResourceAccessRule @()  
+```
+
+#### <a name="view-a-list-of-allowed-resource-instances"></a>Просмотр списка разрешенных экземпляров ресурсов
+
+Просмотрите полный список экземпляров ресурсов, которым был предоставлен доступ к учетной записи хранения.
+
+```powershell
+$resourceGroupName = "myResourceGroup"
+$accountName = "mystorageaccount"
+
+$rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName
+$rule.ResourceAccessRules 
+```
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Для добавления или удаления правил сети ресурсов можно использовать команды Azure CLI.
+
+#### <a name="install-the-preview-extension"></a>Установка расширения предварительной версии
+
+1. Откройте [Azure Cloud Shell](../../cloud-shell/overview.md) или, если вы [установили](/cli/azure/install-azure-cli) Azure CLI локально, командное консольное приложение (например, Windows PowerShell).
+
+2. Затем убедитесь, что установленная версия Azure CLI `2.13.0` или более поздняя, используя следующую команду.
+
+   ```azurecli
+   az --version
+   ```
+
+   Если ваша версия Azure CLI ниже чем `2.13.0`, установите более позднюю версию. Подробнее см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
+
+3. Введите следующую команду, чтобы установить расширение предварительной версии.
+
+   ```azurecli
+   az extension add -n storage-preview
+   ```
+
+#### <a name="grant-access"></a>Предоставление доступа
+
+Добавьте сетевое правило, предоставляющее доступ из экземпляра ресурса.
+
+```azurecli
+az storage account network-rule add \
+    --resource-id /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Synapse/workspaces/testworkspace \
+    --tenant-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    -g myResourceGroup \
+    --account-name mystorageaccount
+```
+
+#### <a name="remove-access"></a>Запрет доступа
+
+Удаление сетевого правила, предоставляющего доступ из экземпляра ресурса.
+
+```azurecli
+az storage account network-rule remove \
+    --resource-id /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Synapse/workspaces/testworkspace \
+    --tenant-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx \
+    -g myResourceGroup \
+    --account-name mystorageaccount
+```
+
+#### <a name="view-a-list-of-allowed-resource-instances"></a>Просмотр списка разрешенных экземпляров ресурсов
+
+Просмотрите полный список экземпляров ресурсов, которым был предоставлен доступ к учетной записи хранения.
+
+```azurecli
+az storage account network-rule list \
+    -g myResourceGroup \
+    --account-name mystorageaccount
+```
+
+---
+
+<a id="exceptions"></a>
+<a id="trusted-microsoft-services"></a>
+
+## <a name="grant-access-to-azure-services"></a>Предоставление доступа к службам Azure 
+
+Некоторые службы Azure работают с сетями, которые не могут быть добавлены в правила сети. Вы можете предоставить подмножеству таких доверенных служб Azure доступ к учетной записи хранения, сохраняя сетевые правила для других приложений. Затем эти доверенные службы будут использовать строгую проверку подлинности для безопасного подключения к учетной записи хранения. 
+
+Вы можете предоставить доступ к доверенным службам Azure, создав исключение правила сети. Пошаговые инструкции см. в разделе [Управление исключениями](#manage-exceptions) этой статьи. 
+
+При предоставлении доступа к доверенным службам Azure вы предоставляете следующие типы доступа:
+
+- Доверенный доступ для операций SELECT к ресурсам, зарегистрированным в вашей подписке.
+- Доверенный доступ к ресурсам на основе управляемого системой удостоверения.
+
+<a id="trusted-access-resources-in-subscription"></a>
+
+### <a name="trusted-access-for-resources-registered-in-your-subscription"></a>Доверенный доступ для ресурсов, зарегистрированных в вашей подписке
+
+Ресурсы некоторых служб **при регистрации в вашей подписке** могут получить доступ к вашей учетной записи хранения **в той же подписке** для выполнения некоторых операций, например для записи в журналы или резервного копирования.  В следующей таблице описаны все службы и разрешенные операции. 
 
 | Служба                  | Имя поставщика ресурсов     | Разрешенные операции                 |
 |:------------------------ |:-------------------------- |:---------------------------------- |
@@ -384,11 +569,19 @@ ms.locfileid: "98703510"
 | Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика, в том числе с помощью наблюдателя за сетями и служб Аналитика трафика. [Подробнее](../../network-watcher/network-watcher-nsg-flow-logging-overview.md). |
 | Azure Site Recovery      | Microsoft.SiteRecovery     | Включение репликации для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Подробнее](../../site-recovery/azure-to-azure-tutorial-enable-replication.md). |
 
-Параметр **Разрешить доверенные службы Майкрософт...** также позволяет определенному экземпляру следующих служб получить доступ к учетной записи хранения, если [роль Azure](storage-auth-aad.md#assign-azure-roles-for-access-rights) явно назначена [управляемому удостоверению, назначенному системой](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В таком случае область доступа для этого экземпляра соответствует роли Azure, назначенной управляемому удостоверению.
+<a id="trusted-access-system-assigned-managed-identity"></a>
+
+### <a name="trusted-access-based-on-system-assigned-managed-identity"></a>Доверенный доступ на основе управляемого системой удостоверения
+
+В следующей таблице перечислены службы, которые могут иметь доступ к данным учетной записи хранения, если экземплярам этих служб предоставлено соответствующее разрешение. Чтобы предоставить разрешение, необходимо явно [назначить роль Azure](storage-auth-aad.md#assign-azure-roles-for-access-rights) [управляемому удостоверению, назначенному системой](../../active-directory/managed-identities-azure-resources/overview.md) , для каждого экземпляра ресурса. В таком случае область доступа для этого экземпляра соответствует роли Azure, назначенной управляемому удостоверению. 
+
+> [!TIP]
+> Рекомендуемый способ предоставления доступа к конкретным ресурсам — использование правил экземпляра ресурса. Сведения о предоставлении доступа к конкретным экземплярам ресурсов см. в разделе [предоставление доступа из экземпляров ресурсов Azure (Предварительная версия)](#grant-access-specific-instances) этой статьи.
+
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Управление API Azure           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее.](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy) |
+| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Azure Cognitive Services       | Microsoft. Когнитивесервице             | Разрешает Cognitive Services доступ к учетным записям хранения. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
@@ -397,49 +590,50 @@ ms.locfileid: "98703510"
 | Центр Интернета вещей Azure                  | Microsoft.Devices/IotHubs              | Позволяет записывать данные из центра Интернета вещей в хранилище BLOB-объектов. [Дополнительные сведения](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Подробнее](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
 | Служба "Машинное обучение Azure" | Microsoft.MachineLearningServices      | Авторизованные рабочие области Машинного обучения Azure записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов и читают данные. [Подробнее](../../machine-learning/how-to-network-security-overview.md#secure-the-workspace-and-associated-resources). | 
-| Azure Synapse Analytics       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных баз данных SQL с помощью инструкции COPY или Polybase. [Подробнее.](../../azure-sql/database/vnet-service-endpoint-rule-overview.md) |
+| Azure Synapse Analytics       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных баз данных SQL с помощью инструкции COPY или Polybase. [Подробнее](../../azure-sql/database/vnet-service-endpoint-rule-overview.md). |
 | База данных SQL Azure       | Microsoft.Sql                          | Позволяет [импортировать](/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) данные из учетных записей хранения и [записывать](../../azure-sql/database/audit-write-storage-account-behind-vnet-firewall.md) данные аудита в учетные записи хранения, защищенные брандмауэром. |
 | Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. [Подробнее](../../stream-analytics/blob-output-managed-identity.md). |
 | Azure Synapse Analytics        | Microsoft.Synapse/workspaces          | Обеспечивает доступ к данным в службе хранилища Azure из Azure синапсе Analytics. |
 
+## <a name="grant-access-to-storage-analytics"></a>Предоставление доступа к аналитике хранилища
 
-### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища
+В некоторых случаях для чтения метрик и журналов ресурсов требуется доступ из-за пределов границ сети. При настройке доверенных служб для доступа к учетной записи хранения можно разрешить доступ для чтения к файлам журнала, таблицам метрик или обоим параметрам, создав исключение правила сети. Пошаговые инструкции см. в разделе **Управление исключениями** ниже. Дополнительные сведения о работе с аналитикой хранилища см. в статье [использование аналитики службы хранилища Azure для сбора данных журналов и метрик](./storage-analytics.md). 
 
-В некоторых случаях для чтения метрик и журналов ресурсов требуется доступ из-за пределов границ сети. При настройке доступа доверенных служб к учетной записи хранения можно разрешить доступ на чтение файлов журнала, таблиц метрик или и того, и другого. Дополнительные сведения о работе с аналитикой хранилища см. в [этой статье](./storage-analytics.md).
+<a id="manage-exceptions"></a>
 
-### <a name="managing-exceptions"></a>Управление исключениями
+## <a name="manage-exceptions"></a>управление исключениями.
 
 Исключениями из правил сети можно управлять с помощью портала Azure, PowerShell или Azure CLI v2.
 
-#### <a name="azure-portal"></a>Портал Azure
+#### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
-1. В меню Параметры выберите пункт **сети**.
+2. Выберите в меню Параметры пункт **Сетевые подключения**.
 
-1. Убедитесь, что вы разрешили доступ в разделе **Выбранные сети**.
+3. Убедитесь, что вы разрешили доступ в разделе **Выбранные сети**.
 
-1. В разделе **Исключения** выберите те исключения, которые нужно предоставить.
+4. В разделе **Исключения** выберите те исключения, которые нужно предоставить.
 
-1. Щелкните **Сохранить**, чтобы применить изменения.
+5. Выберите **Сохранить**, чтобы применить изменения.
 
-#### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Установите [Azure PowerShell](/powershell/azure/install-Az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).
 
-1. Отобразите исключения для сетевых правил учетной записи хранения.
+2. Отобразите исключения для сетевых правил учетной записи хранения.
 
     ```powershell
     (Get-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount").Bypass
     ```
 
-1. Настройте исключения для сетевых правил учетной записи хранения.
+3. Настройте исключения для сетевых правил учетной записи хранения.
 
     ```powershell
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -Bypass AzureServices,Metrics,Logging
     ```
 
-1. Удалите исключения для сетевых правил учетной записи хранения.
+4. Удалите исключения для сетевых правил учетной записи хранения.
 
     ```powershell
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -Bypass None
@@ -448,23 +642,23 @@ ms.locfileid: "98703510"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе исключение не будет действовать.
 
-#### <a name="cliv2"></a>CLI 2.0
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
-1. Отобразите исключения для сетевых правил учетной записи хранения.
+2. Отобразите исключения для сетевых правил учетной записи хранения.
 
     ```azurecli
     az storage account show --resource-group "myresourcegroup" --name "mystorageaccount" --query networkRuleSet.bypass
     ```
 
-1. Настройте исключения для сетевых правил учетной записи хранения.
+3. Настройте исключения для сетевых правил учетной записи хранения.
 
     ```azurecli
     az storage account update --resource-group "myresourcegroup" --name "mystorageaccount" --bypass Logging Metrics AzureServices
     ```
 
-1. Удалите исключения для сетевых правил учетной записи хранения.
+4. Удалите исключения для сетевых правил учетной записи хранения.
 
     ```azurecli
     az storage account update --resource-group "myresourcegroup" --name "mystorageaccount" --bypass None
@@ -472,6 +666,8 @@ ms.locfileid: "98703510"
 
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе исключение не будет действовать.
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

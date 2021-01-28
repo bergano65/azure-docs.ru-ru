@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 7ea871428fffe685cc9d43dd698bfefb8d8a511a
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 19128f0372f9a5bda0d16155167a507eccaf436a
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756684"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986626"
 ---
 # <a name="manage-security-policies"></a>Управление политиками безопасности
 
@@ -54,7 +54,7 @@ ms.locfileid: "98756684"
 
 1. Откроется страница Политика безопасности для этой подписки или группы управления. В нем отображаются доступные и назначенные политики.
 
-   ![страница политики](./media/tutorial-security-policy/security-policy-page.png)
+    :::image type="content" source="./media/tutorial-security-policy/security-policy-page.png" alt-text="Страница политики безопасности центра безопасности" lightbox="./media/tutorial-security-policy/security-policy-page.png":::
 
     > [!NOTE]
     > При наличии метки "MG Inherited" вместе с политикой по умолчанию это означает, что политика была назначена группе управления и унаследована просматриваемой подпиской.
@@ -102,7 +102,7 @@ ms.locfileid: "98756684"
 
 1. В центре безопасности в разделе **политика & соответствие** выберите **Политика безопасности**.
 
-   ![Управление политиками](./media/tutorial-security-policy/policy-management.png)
+    :::image type="content" source="./media/tutorial-security-policy/policy-management.png" alt-text="Запуск процесса управления политиками в центре безопасности Azure":::
 
 2. Выберите подписку или группу управления, для которых необходимо отключить рекомендацию.
 
@@ -111,7 +111,7 @@ ms.locfileid: "98756684"
 
 1. Выберите **Просмотреть действующую политику**.
 
-   ![Просмотреть политику](./media/tutorial-security-policy/view-effective-policy.png)
+    :::image type="content" source="./media/tutorial-security-policy/view-effective-policy.png" alt-text="Как открыть действующую политику, назначенную вашей подписке":::
 
 1. Выберите назначенную политику.
 
@@ -126,10 +126,8 @@ ms.locfileid: "98756684"
    > [!NOTE]
    > Для вступления в силу изменений политики отключения может потребоваться до 12 часов.
 
-
-
-## <a name="next-steps"></a>Следующие шаги
-В этой статье описаны политики безопасности. Связанные сведения см. в следующих статьях:
+## <a name="next-steps"></a>Дальнейшие действия
+На этой странице описаны политики безопасности. Связанные сведения см. на следующих страницах:
 
 - [Сведения о настройке политик с помощью PowerShell](../governance/policy/assign-policy-powershell.md) - 
 - [Узнайте, как изменить политику безопасности в политике Azure.](../governance/policy/tutorials/create-and-manage.md) - 

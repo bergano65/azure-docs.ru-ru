@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: d432f29e91097491fc4719ec59a11cb96948f431
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 45bb045e7bad2d5f8a56b71787b3abb5921cb7d5
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609060"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985892"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы сервера с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
@@ -78,9 +78,16 @@ azdata arc postgres server create -n <name> --workers <# worker nodes with #>=2>
 #azdata arc postgres server create -n postgres01 --workers 2
 ```
 
+> [!IMPORTANT]
+> - Класс хранения, используемый для резервного копирования (_--Storage-Class-Backups-СКБ_), по умолчанию использует класс хранения данных контроллера данных, если он не указан.
+> - Чтобы восстановить группу серверов в отдельной группе серверов (например, восстановление до точки во времени), необходимо настроить группу серверов для использования постоянных виртуальных цепей с режимом доступа Реадвритемани. Это необходимо сделать при создании группы серверов. Его нельзя изменить после создания. Дополнительные сведения см. в статье:
+>    - [Этот раздел о резервном копировании и восстановлении](https://docs.microsoft.com/azure/azure-arc/data/backup-restore-postgresql-hyperscale#create-a-server-group-that-is-ready-for-backups-and-restores)
+>    - [В этом разделе об ограничениях PostgreSQL с поддержкой ARC в Azure](https://docs.microsoft.com/azure/azure-arc/data/limitations-postgresql-hyperscale)
+
+
 > [!NOTE]
 > - **Доступны другие параметры командной строки.  Просмотрите полный список параметров, выполнив `azdata arc postgres server create --help` .**
-> - Класс хранения, используемый для резервного копирования (_--Storage-Class-Backups-СКБ_), по умолчанию использует класс хранения данных контроллера данных, если он не указан.
+
 > - Единица, принимаемая параметрами--Volume-Size-*, — это Kubernetes ресурсное количество (целое число, за которым следует одно из этих данных, достаточное (T, G, M, K, M) или их степень-два эквивалента (Ti, МВт, MI, KI)).
 > - Длина имени не должна превышать 12 символов и соответствовать соглашениям об именовании DNS.
 > - Вам будет предложено ввести пароль для пользователя с правами администратора _postgres_ Standard.  Интерактивную строку можно пропустить, задав `AZDATA_PASSWORD` переменную среды сеанса перед выполнением команды Create.
@@ -112,7 +119,7 @@ postgres01  Ready     2
 ```console
 azdata arc postgres endpoint list -n <server group name>
 ```
-Пример.
+Пример:
 ```console
 [
   {

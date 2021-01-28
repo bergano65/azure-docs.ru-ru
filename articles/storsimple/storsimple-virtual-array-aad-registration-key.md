@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: d750b3a85741bb4761b640848f01e5917760b5aa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75332498ac59dc46a7a079eff4c25e02b2a6cb9b
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91261096"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986943"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
 
@@ -53,7 +53,7 @@ ms.locfileid: "91261096"
 
 | Если на вашем устройстве используется  | Сделайте следующее                                    |
 |----------------------------|--------------------------------------------------------------|
-| Обновление 1.0 или более поздней версии. Устройство не в сети. <br> Отображается оповещение о том, что URL-адрес не включен в список разрешений.| 1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication). <br> 2. [получите ключ регистрации AAD из службы](#aad-based-registration-keys). <br> 3. Выполните шаги 1-5, чтобы [подключиться к интерфейсу Windows PowerShell виртуального массива](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor).<br> 4. Используйте `Invoke-HcsReRegister` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
+| Обновление 1.0 или более поздней версии. Устройство не в сети. <br> Вы увидите предупреждение о том, что URL-адрес не алловлистед.| 1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication). <br> 2. [получите ключ регистрации AAD из службы](#aad-based-registration-keys). <br> 3. Выполните шаги 1-5, чтобы [подключиться к интерфейсу Windows PowerShell виртуального массива](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor).<br> 4. Используйте `Invoke-HcsReRegister` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 1.0 или более поздней версии. Устройство подключено к сети.| Никаких действий не требуется.                                       |
 | Обновление 0.6 или более поздней версии. Устройство отключено от сети. | 1. [Загрузите обновление 1,0 через сервер каталога](storsimple-virtual-array-install-update-1.md#download-the-update-or-the-hotfix).<br>2. [Примените обновление 1,0 через локальный веб-интерфейс](storsimple-virtual-array-install-update-1.md#install-the-update-or-the-hotfix).<br>3. [получите ключ регистрации AAD из службы](#aad-based-registration-keys). <br>4. Выполните шаги 1-5, чтобы [подключиться к интерфейсу Windows PowerShell виртуального массива](storsimple-virtual-array-deploy2-provision-hyperv.md#step-2-provision-a-virtual-array-in-hypervisor).<br>5. Используйте `Invoke-HcsReRegister` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 0.6 или более ранней версии. Устройство подключено к сети. | Измените правила брандмауэра, чтобы включить в них URL-адрес аутентификации.<br> Установите обновление 1.0 с помощью портала Azure. |
@@ -84,6 +84,6 @@ ms.locfileid: "91261096"
 
     ![Подтверждение повторного создания](./media/storsimple-virtual-array-aad-registration-key/aad-registration-key2.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с дополнительными сведениями о развертывании [виртуального массива StorSimple](storsimple-virtual-array-deploy1-portal-prep.md).

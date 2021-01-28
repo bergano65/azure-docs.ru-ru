@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 1fc768890e932d1f17ad111b4681b75721ae1e06
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ecc2e98d4c6c58e11b2bdc86b623f31d828cabc0
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148095"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98985926"
 ---
 # <a name="azure-arc-enabled-postgresql-hyperscale-server-group-placement"></a>Размещение группы серверов PostgreSQL в службе "Дуга Azure" с поддержкой масштабирования
 
@@ -22,7 +22,7 @@ ms.locfileid: "92148095"
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 В этом примере мы используем кластер Azure Kubernetes Service (AKS) с четырьмя физическими узлами. 
 
@@ -46,7 +46,7 @@ aks-agentpool-42715708-vmss000003   Ready    agent   11h   v1.17.9
 
 Архитектура может быть представлена следующим образом:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/2_logical_cluster.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/2_logical_cluster.png" alt-text="Логическое представление 4 узлов, сгруппированных в кластере Kubernetes":::
 
 В кластере Kubernetes размещается один контроллер данных ARC в Azure и одна группа PostgreSQL Scale. Эта группа серверов состоит из трех экземпляров PostgreSQL: одного координатора и двух рабочих ролей.
 
@@ -60,30 +60,30 @@ kubectl get pods -n arc3
 ```output
 NAME                 READY   STATUS    RESTARTS   AGE
 …
-postgres01-0         3/3     Running   0          9h
-postgres01-1         3/3     Running   0          9h
-postgres01-2         3/3     Running   0          9h
+postgres01c-0         3/3     Running   0          9h
+postgres01w-0         3/3     Running   0          9h
+postgres01w-1         3/3     Running   0          9h
 ```
 Каждый из этих модулей Pod размещает экземпляр PostgreSQL. Вместе они формируют группу серверов PostgreSQL в службе "Дуга Azure Enabled".
 
 ```output
 Pod name        Role in the server group
-postgres01-0  Coordinator
-postgres01-1    Worker
-postgres01-2    Worker
+postgres01c-0 Coordinator
+postgres01w-0   Worker
+postgres01w-1   Worker
 ```
 
 ## <a name="placement"></a>Размещение
 Рассмотрим, как Kubernetes помещает модули из группы серверов. Опишите каждый модуль и выясните, на каком физическом узле кластера Kubernetes они размещены. Например, для координатора выполните следующую команду:
 
 ```console
-kubectl describe pod postgres01-0 -n arc3
+kubectl describe pod postgres01c-0 -n arc3
 ```
 
 В результате будут возвращены следующие выходные данные:
 
 ```output
-Name:         postgres01-0
+Name:         postgres01c-0
 Namespace:    arc3
 Priority:     0
 Node:         aks-agentpool-42715708-vmss000000
@@ -101,7 +101,7 @@ Start Time:   Thu, 17 Sep 2020 00:40:33 -0700
 Кроме того, обратите внимание, что в описании модулей Pod имена контейнеров, размещаемых каждым из них. Например, для второго рабочего процесса выполните следующую команду:
 
 ```console
-kubectl describe pod postgres01-2 -n arc3
+kubectl describe pod postgres01w-1 -n arc3
 ```
 
 В результате будут возвращены следующие выходные данные:
@@ -129,7 +129,7 @@ Containers:
 
 Архитектура выглядит следующим образом:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/3_pod_placement.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/3_pod_placement.png" alt-text="3 модули, каждая из которых размещена на отдельных узлах":::
 
 Это означает, что на этом этапе каждый экземпляр PostgreSQL, образующей группу комасштабируемых серверов в Azure Arc, размещается на определенном физическом узле в контейнере Kubernetes. Это лучшая конфигурация, которая позволяет максимально эффективно использовать группу серверов PostgreSQL с поддержкой дуги Azure, так как каждая роль (координатор и рабочие роли) использует ресурсы каждого физического узла. Эти ресурсы не являются общими для нескольких PostgreSQL ролей.
 
@@ -172,23 +172,23 @@ kubectl get pods -n arc3
 ```output
 NAME                 READY   STATUS    RESTARTS   AGE
 …
-postgres01-0         3/3     Running   0          11h
-postgres01-1         3/3     Running   0          11h
-postgres01-2         3/3     Running   0          11h
-postgres01-3         3/3     Running   0          5m2s
+postgres01c-0         3/3     Running   0          11h
+postgres01w-0         3/3     Running   0          11h
+postgres01w-1         3/3     Running   0          11h
+postgres01w-2         3/3     Running   0          5m2s
 ```
 
 И опишите новый модуль, определяющий, на каких физических узлах кластера Kubernetes он размещается.
 Выполните приведенную ниже команду.
 
 ```console
-kubectl describe pod postgres01-3 -n arc3
+kubectl describe pod postgres01w-2 -n arc3
 ```
 
 Чтобы узнать имя узла размещения, выполните следующие действия.
 
 ```output
-Name:         postgres01-3
+Name:         postgres01w-2
 Namespace:    arc3
 Priority:     0
 Node:         aks-agentpool-42715708-vmss000000
@@ -203,11 +203,11 @@ Node:         aks-agentpool-42715708-vmss000000
 |Рабочий узел|postgres01-2|AKS-ажентпул-42715708-vmss000003
 |Рабочий узел|postgres01-3|AKS-ажентпул-42715708-vmss000000
 
-И обратите внимание, что модуль нового рабочего процесса (postgres01-3) был размещен на том же узле, что и координатор. 
+И обратите внимание, что модуль нового рабочего процесса (postgres01w-2) размещен на том же узле, что и координатор. 
 
 Архитектура выглядит следующим образом:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/4_pod_placement_.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/4_pod_placement_.png" alt-text="Четвертый модуль на том же узле, что и координатор":::
 
 Почему новый исполнитель или модуль не помещается на оставшийся физический узел кластера Kubernetes AKS-ажентпул-42715708-vmss000003?
 
@@ -235,7 +235,14 @@ Node:         aks-agentpool-42715708-vmss000000
 
 Архитектура выглядит следующим образом:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/5_full_list_of_pods.png" alt-text="кластер AKS с 4 узлами в портал Azure" с поддержкой дуги Azure. В таком случае вам не придется выполнять масштабирование по горизонтали. Производительность, получаемая из системы, не только заключается в размещении или физических характеристиках физических узлов или системы хранения. Производительность, которую вы получаете, также связана с настройкой каждого из ресурсов, которые выполняются в кластере Kubernetes (в том числе с помощью PostgreSQLного масштабирования Azure), например запросов и ограничений, заданных для памяти и виртуальное ядро. Объем рабочей нагрузки, которую можно разместить в данном кластере Kubernetes, зависит от характеристик кластера Kubernetes, природы рабочих нагрузок, числа пользователей, способа выполнения операций кластера Kubernetes...
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/5_full_list_of_pods.png" alt-text="Все модули Pod в пространстве имен на различных узлах":::
+
+Это означает, что узлы координатора (Pod 1) для группы серверов postgres в службе "Дуга Azure" используют те же физические ресурсы, что и третий рабочий узел (Pod 4) группы серверов. Это допустимо, так как узел координатор обычно использует очень небольшие ресурсы в сравнении с тем, что может использоваться рабочим узлом. В этом случае вы можете определить, что следует тщательно выбрать:
+- Размер кластера Kubernetes и характеристики каждого из его физических узлов (память, виртуальное ядро)
+- число физических узлов в кластере Kubernetes
+- приложения или рабочие нагрузки, размещенные в кластере Kubernetes.
+
+При размещении слишком большого количества рабочих нагрузок в кластере Kubernetes может произойти регулирование для группы серверов PostgreSQL в службе "Дуга" с поддержкой дуги Azure. В таком случае вам не придется выполнять масштабирование по горизонтали. Производительность, получаемая из системы, не только заключается в размещении или физических характеристиках физических узлов или системы хранения. Производительность, которую вы получаете, также связана с настройкой каждого из ресурсов, которые выполняются в кластере Kubernetes (в том числе с помощью PostgreSQLного масштабирования Azure), например запросов и ограничений, заданных для памяти и виртуальное ядро. Объем рабочей нагрузки, которую можно разместить в данном кластере Kubernetes, зависит от характеристик кластера Kubernetes, природы рабочих нагрузок, числа пользователей, способа выполнения операций кластера Kubernetes...
 
 ## <a name="scale-out-aks"></a>Масштабирование AKS
 
@@ -252,16 +259,16 @@ Node:         aks-agentpool-42715708-vmss000000
 :::row-end:::
 :::row:::
     :::column:::
-        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/6_layout_before.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/6_layout_before.png" alt-text="портал Azure макет до":::
     :::column-end:::
     :::column:::
-        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/7_layout_after.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+        :::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/7_layout_after.png" alt-text="портал Azure макет после":::
     :::column-end:::
 :::row-end:::
 
 Архитектура выглядит следующим образом:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/8_logical_layout_after.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/8_logical_layout_after.png" alt-text="Логическая структура в кластере Kubernetes после обновления":::
 
 Давайте посмотрим, какие модули пространства имен ARC для контроллера данных размещаются на новом физическом узле AKS, выполнив команду:
 
@@ -271,7 +278,7 @@ kubectl describe node aks-agentpool-42715708-vmss000004
 
 А теперь изменим представление архитектуры нашей системы:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/9_updated_list_of_pods.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/9_updated_list_of_pods.png" alt-text="Все модули Pod на логической схеме кластера":::
 
 Мы можем заметить, что новый физический узел кластера Kubernetes размещает только тот модуль метрик, который необходим для служб данных Azure ARC. Обратите внимание, что в этом примере основное внимание уделяется только пространству имен контроллера данных ARC. Другие модули не представляют собой другие модули.
 
@@ -311,42 +318,42 @@ kubectl get pods -n arc3
 
 NAME                 READY   STATUS    RESTARTS   AGE
 …
-postgres01-0         3/3     Running   0          13h
-postgres01-1         3/3     Running   0          13h
-postgres01-2         3/3     Running   0          13h
-postgres01-3         3/3     Running   0          179m
-postgres01-4         3/3     Running   0          3m13s
+postgres01c-0         3/3     Running   0          13h
+postgres01w-0         3/3     Running   0          13h
+postgres01w-1         3/3     Running   0          13h
+postgres01w-2         3/3     Running   0          179m
+postgres01w-3         3/3     Running   0          3m13s
 ```
 
 Теперь форма группы серверов:
 
 |Роль группы серверов|Модуль группы серверов
 |----|-----
-|Распределен|postgres01-0
-|Рабочий узел|postgres01-1
-|Рабочий узел|postgres01-2
-|Рабочий узел|postgres01-3
-|Рабочий узел|postgres01-4
+|Распределен|postgres01c-0
+|Рабочий узел|postgres01w-0
+|Рабочий узел|postgres01w-1
+|Рабочий узел|postgres01w-2
+|Рабочий узел|postgres01w-3
 
-Давайте Опишите модуль postgres01-4, чтобы определить, на каком физическом узле он размещен:
+Давайте Опишите модуль postgres01w-3, чтобы определить, на каком физическом узле он размещен:
 
 ```console
-kubectl describe pod postgres01-4 -n arc3
+kubectl describe pod postgres01w-3 -n arc3
 ```
 
 И обратите внимание на то, какие модули в нем выполняются:
 
 |Роль группы серверов|Модуль группы серверов| Pod
 |----|-----|------
-|Распределен|postgres01-0|AKS-ажентпул-42715708-vmss000000
-|Рабочий узел|postgres01-1|AKS-ажентпул-42715708-vmss000002
-|Рабочий узел|postgres01-2|AKS-ажентпул-42715708-vmss000003
-|Рабочий узел|postgres01-3|AKS-ажентпул-42715708-vmss000000
-|Рабочий узел|postgres01-4|AKS-ажентпул-42715708-vmss000004
+|Распределен|postgres01c-0|AKS-ажентпул-42715708-vmss000000
+|Рабочий узел|postgres01w-0|AKS-ажентпул-42715708-vmss000002
+|Рабочий узел|postgres01w-1|AKS-ажентпул-42715708-vmss000003
+|Рабочий узел|postgres01w-2|AKS-ажентпул-42715708-vmss000000
+|Рабочий узел|postgres01w-3|AKS-ажентпул-42715708-vmss000004
 
 Архитектура выглядит следующим образом:
 
-:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/10_kubernetes_schedules_newest_pod.png" alt-text="кластер AKS с 4 узлами в портал Azure":::
+:::image type="content" source="media/migrate-postgresql-data-into-postgresql-hyperscale-server-group/10_kubernetes_schedules_newest_pod.png" alt-text="Kubernetes планирует новейшие модульные работы в узле с самым низким уровнем использования":::
 
 Kubernetes запланировал новый модуль PostgreSQL на наименее загруженном физическом узле кластера Kubernetes.
 

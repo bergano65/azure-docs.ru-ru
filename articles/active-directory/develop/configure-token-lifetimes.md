@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 2529c6c3b0f9d188e1ce8062c05f62f3e980ef50
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 19330af5e4c0e4962993d0ed89ec9bcd4a50514a
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805222"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986419"
 ---
 # <a name="configure-token-lifetime-policies-preview"></a>Настройка политик времени жизни токенов (Предварительная версия)
 Можно указать время существования маркера доступа, SAML или идентификатора, выданного платформой идентификации Майкрософт. Время жизни маркеров можно настроить для всех приложений в организации, для многопользовательского приложения (приложения для нескольких организаций) или для определенного субъекта-службы в организации. Дополнительные сведения см. в статье [Настраиваемые времена жизни маркеров](active-directory-configurable-token-lifetimes.md).
@@ -38,7 +38,7 @@ ms.locfileid: "98805222"
 1. Чтобы просмотреть все политики, созданные в Организации, выполните командлет [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true) .  Все результаты с определенными значениями свойств, которые отличаются от указанных выше значений по умолчанию, находятся в области выбытия.
 
     ```powershell
-    Get-AzureADPolicy -All
+    Get-AzureADPolicy -All $true
     ```
 
 1. Чтобы узнать, какие приложения и субъекты-службы связаны с определенной политикой, вы определили следующий командлет [Get-AzureADPolicyAppliedObject](/powershell/module/azuread/get-azureadpolicyappliedobject?view=azureadps-2.0-preview&preserve-view=true) , заменив **1a37dad8-5da7-4cc8-87c7-efbc0326cf20** на любой из идентификаторов политик. Затем можно решить, следует ли настроить частоту входа условного доступа или оставить параметры по умолчанию в Azure AD.

@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 05/21/2018
+ms.date: 01/28/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 0b7fee330f93097b561714ecc938eaf3fee8f2b5
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 04c26609b046f7525c513796622be74633a20e91
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657335"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986774"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Проблема при установке соединителя агента прокси приложения
 
@@ -24,7 +24,7 @@ ms.locfileid: "94657335"
 
 ## <a name="general-problem-areas-with-connector-installation"></a>Общие проблемные области при установке соединителя
 
-При сбое установки соединителя первопричина обычно относится к одной из следующих областей:
+При сбое установки соединителя основная причина обычно является одной из следующих областей. **В качестве основы при устранении неполадок обязательно перезагрузите соединитель.**
 
 1.  **Подключение** — для успешной установки новому соединителю нужно зарегистрироваться и установить свойства доверия. Это делается путем подключения к Azure Active Directory Application Proxy облачной службе.
 

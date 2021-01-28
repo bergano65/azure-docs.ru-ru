@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 6fb2e5c0193bc4e66f8fb4215732a69c43731146
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 5f70f74accba5df439351547fda7497656e2c06e
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756605"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986690"
 ---
 # <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
 
@@ -73,9 +73,11 @@ ms.locfileid: "98756605"
 
     - **NIST SP 800-53, ред. 4**
     - **NIST SP 800 171 R2**
-    - **SWIFT CSP-CSCF, версия 2020**
+    - **SWIFT CSP-CSCF, версия 2020**
     - **UKO и UK NHS**
-    - **Canada PBMM**
+    - **Canada Federal PBMM**
+    - **HIPAA HITRUST**
+    - **Azure CIS 1.1.0**
     
     ![Добавление нормативных стандартов на панель мониторинга соответствия нормативным требованиям центра безопасности Azure](./media/update-regulatory-compliance-packages/dynamic-regulatory-compliance-additional-standards.png)
 
@@ -88,8 +90,7 @@ ms.locfileid: "98756605"
     > [!NOTE]
     > Стандарт, добавленный на панель мониторинга соответствия, может отобразиться через несколько часов.
 
-    [![Панель мониторинга соответствия нормативным требованиям, где отображаются старые и новые представления Azure CIS](media/update-regulatory-compliance-packages/regulatory-compliance-dashboard-with-benchmark-small.png)](media/update-regulatory-compliance-packages/regulatory-compliance-dashboard-with-benchmark.png#lightbox)
-
+    :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Панель мониторинга соответствия нормативным требованиям" lightbox="./media/security-center-compliance-dashboard/compliance-dashboard.png":::
 
 ## <a name="removing-a-standard-from-your-dashboard"></a>Удаление стандарта из панели мониторинга
 
@@ -115,7 +116,7 @@ ms.locfileid: "98756605"
 1. Выберите ответ **Да**. Стандартный будет удален. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как **Добавить стандарты соответствия** требованиям, чтобы отслеживать соответствие нормативным и отраслевым стандартам.
 

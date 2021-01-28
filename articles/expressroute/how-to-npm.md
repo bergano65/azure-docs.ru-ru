@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 01/25/2019
 ms.author: duau
-ms.openlocfilehash: c8127a60a4685a615bc07e21a1efb4dd216c5b8c
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 837d1f78a9fde72137383e6c22adb8870997dc9b
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92201058"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98986045"
 ---
 # <a name="configure-network-performance-monitor-for-expressroute"></a>Настройка решения "Монитор производительности сети" для ExpressRoute
 
@@ -20,7 +20,7 @@ ms.locfileid: "92201058"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Можно сделать следующее:
+Вы можете выполнить следующие действия:
 
 * отслеживать потери и задержки в различных виртуальных сетях и настроить оповещения;
 
@@ -169,7 +169,7 @@ ms.locfileid: "92201058"
 
 ## <a name="step-4-discover-peering-connections"></a><a name="setupmonitor"></a>Шаг 4. Обнаружение пиринговых подключений
 
-1. Перейдите на плитку обзора монитора производительности сети, используя страницу **Все ресурсы**, а затем нажмите рабочую область NPM из списка разрешенных.
+1. Перейдите на плитку обзор Монитор производительности сети, перейдя на страницу **все ресурсы** , а затем щелкните рабочую область алловлистед NPM.
 
    ![рабочая область npm](./media/how-to-npm/npm.png)
 2. Щелкните плитку обзора **Монитор производительности сети**, чтобы открыть панель мониторинга. Она будет содержать страницу ExpressRoute, на которой будет указано состояние ExpressRoute "Не настроено". Щелкните **Настройка функций**, чтобы открыть страницу конфигурации монитора производительности сети.
