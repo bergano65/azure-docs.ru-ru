@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 07/14/2020
 ms.author: v-demjoh
 ms.custom: devx-track-js
-ms.openlocfilehash: c7e9f1ee6a347caa71be2057905eb4ec6e6a1b0b
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 25a3613f2aa45d31f47a8a4f288abbb1e9ee78fa
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425125"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947704"
 ---
 Одной из основных функций речевой службы является возможность распознавания речи и перевода их на другие языки. В этом кратком руководстве вы узнаете, как использовать речевой пакет SDK в приложениях и продуктах для выполнения высококачественного перевода речи. В этом кратком руководстве рассматриваются такие темы, как:
 
@@ -66,18 +66,18 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 ## <a name="create-a-translation-configuration"></a>Создание конфигурации перевода
 
-Чтобы вызвать службу перевода с помощью речевого пакета SDK, необходимо создать [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?preserve-view=true&view=azure-node-latest) . Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
+Чтобы вызвать службу перевода с помощью речевого пакета SDK, необходимо создать [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig) . Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
 > [!NOTE]
 > Независимо от того, используете ли вы распознавание речи, синтез речи, перевод или распознавание намерения, вы всегда создаете конфигурацию.
-Существует несколько способов инициализации [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?preserve-view=true&view=azure-node-latest).
+Существует несколько способов инициализации [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig).
 
 * С помощью подписки: передайте ключ и связанный с ним регион.
 * С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-Давайте посмотрим, как создается [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?preserve-view=true&view=azure-node-latest) с помощью ключа и региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free).
+Давайте посмотрим, как создается [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig) с помощью ключа и региона. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free).
 
 ```javascript
 const speechTranslationConfig = SpeechTranslationConfig.fromSubscription("YourSubscriptionKey", "YourServiceRegion");
@@ -85,15 +85,15 @@ const speechTranslationConfig = SpeechTranslationConfig.fromSubscription("YourSu
 
 ## <a name="initialize-a-translator"></a>Инициализация транслятора
 
-После создания [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?preserve-view=true&view=azure-node-latest), следующим шагом является инициализация [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest). При инициализации [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest)ему необходимо передать `speechTranslationConfig`. Это предоставляет учетные данные, необходимые службе перевода для проверки запроса.
+После создания [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig), следующим шагом является инициализация [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer). При инициализации [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer)ему необходимо передать `speechTranslationConfig`. Это предоставляет учетные данные, необходимые службе перевода для проверки запроса.
 
-Если речь идет о переводе речи, предоставленных через микрофон по умолчанию для вашего устройства, это [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest) должно быть так:
+Если речь идет о переводе речи, предоставленных через микрофон по умолчанию для вашего устройства, это [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer) должно быть так:
 
 ```javascript
 const translator = new TranslationRecognizer(speechTranslationConfig);
 ```
 
-Если вы хотите указать входное аудиоустройство, необходимо создать [`AudioConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest) и указать параметр `audioConfig` при инициализации [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest).
+Если вы хотите указать входное аудиоустройство, необходимо создать [`AudioConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig) и указать параметр `audioConfig` при инициализации [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer).
 
 > [!TIP]
 > [Узнайте, как получить идентификатор устройства для входного аудиоустройства](../../../how-to-select-audio-input-devices.md).
@@ -104,7 +104,7 @@ const audioConfig = AudioConfig.fromDefaultMicrophoneInput();
 const recognizer = new TranslationRecognizer(speechTranslationConfig, audioConfig);
 ```
 
-Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить `audioConfig`. Но это можно сделать только при разработке для **Node.js** и при создании [`AudioConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest). Вместо вызова `fromDefaultMicrophoneInput` необходимо вызвать `fromWavFileOutput` и передать параметр `filename`.
+Если вы хотите предоставить звуковой файл, а не использовать микрофон, вам по-прежнему потребуется предоставить `audioConfig`. Но это можно сделать только при разработке для **Node.js** и при создании [`AudioConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig). Вместо вызова `fromDefaultMicrophoneInput` необходимо вызвать `fromWavFileOutput` и передать параметр `filename`.
 
 ```javascript
 const audioConfig = AudioConfig.fromWavFileInput("YourAudioFile.wav");
@@ -113,10 +113,10 @@ const recognizer = new TranslationRecognizer(speechTranslationConfig, audioConfi
 
 ## <a name="translate-speech"></a>Преобразование текста
 
-[Класс транслатионрекогнизер](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest) для РЕЧЕВОГО пакета SDK для JavaScript предоставляет несколько методов, которые можно использовать для перевода речи.
+[Класс транслатионрекогнизер](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer) для РЕЧЕВОГО пакета SDK для JavaScript предоставляет несколько методов, которые можно использовать для перевода речи.
 
 * Преобразование с одним снимком (Async) — выполняет перевод в неблокирующем (асинхронном) режиме. Это приведет к преобразованию одного utterance. Конец одного речевого фрагмента определяется путем прослушивания до тишины в конце, или пока не будет обработано максимум 15 секунд аудио.
-* Непрерывный перевод (асинхронный) — асинхронно инициирует операцию непрерывного перевода. Пользователь регистрируется в событиях и обрабатывает различные состояния приложения. Чтобы отключить асинхронный непрерывный перевод, вызовите [`stopContinuousRecognitionAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#stopcontinuousrecognitionasync) .
+* Непрерывный перевод (асинхронный) — асинхронно инициирует операцию непрерывного перевода. Пользователь регистрируется в событиях и обрабатывает различные состояния приложения. Чтобы отключить асинхронный непрерывный перевод, вызовите [`stopContinuousRecognitionAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#stopcontinuousrecognitionasync) .
 
 > [!NOTE]
 > Узнайте больше о том, как [выбрать режим распознавания речи](../../../get-started-speech-to-text.md).
@@ -132,7 +132,7 @@ speechTranslationConfig.addTargetLanguage("de");
 
 ### <a name="single-shot-recognition"></a>Одноразовое распознавание
 
-Ниже приведен пример асинхронного преобразования с одним снимком с помощью [`recognizeOnceAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#recognizeonceasync) :
+Ниже приведен пример асинхронного преобразования с одним снимком с помощью [`recognizeOnceAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#recognizeonceasync) :
 
 ```javascript
 recognizer.recognizeOnceAsync(result => {
@@ -140,7 +140,7 @@ recognizer.recognizeOnceAsync(result => {
 });
 ```
 
-Вам понадобиться написать код, чтобы вычислить результат. В этом примере вычисляется [`result.reason`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognitionresult?preserve-view=true&view=azure-node-latest) для перевода на немецкий язык:
+Вам понадобиться написать код, чтобы вычислить результат. В этом примере вычисляется [`result.reason`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognitionresult) для перевода на немецкий язык:
 
 ```javascript
 recognizer.recognizeOnceAsync(
@@ -179,20 +179,20 @@ recognizer.recognized = function (s, e) {
 
 ### <a name="continuous-translation"></a>Непрерывный перевод
 
-Непрерывный перевод является более сложным, чем распознавание с одним снимком. Для получения результатов распознавания необходимо подписаться на события `recognizing`, `recognized`и `canceled`. Чтобы прерывать перевод, необходимо вызвать [`stopContinuousRecognitionAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#stopcontinuousrecognitionasync) . Ниже приведен пример того, как непрерывный перевод выполняется для входного звукового файла.
+Непрерывный перевод является более сложным, чем распознавание с одним снимком. Для получения результатов распознавания необходимо подписаться на события `recognizing`, `recognized`и `canceled`. Чтобы прерывать перевод, необходимо вызвать [`stopContinuousRecognitionAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#stopcontinuousrecognitionasync) . Ниже приведен пример того, как непрерывный перевод выполняется для входного звукового файла.
 
-Начнем с определения входных данных и инициализации [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest):
+Начнем с определения входных данных и инициализации [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer):
 
 ```javascript
 const translator = new TranslationRecognizer(speechTranslationConfig);
 ```
 
-Мы будем подписываться на события, отправленные из [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest).
+Мы будем подписываться на события, отправленные из [`TranslationRecognizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer).
 
-* [`recognizing`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#recognizing): Сигнал для событий, содержащих промежуточные результаты перевода.
-* [`recognized`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#recognized): Сигнал для событий, содержащих окончательные результаты перевода (указывает на успешную попыток перевода).
-* [`sessionStopped`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#sessionstopped): Сигнал для событий, указывающих на окончание сеанса трансляции (операция).
-* [`canceled`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer?preserve-view=true&view=azure-node-latest#canceled): Сигнал для событий, содержащих отмененные результаты перевода (показывающий попытку перевода, которая была отменена в результате запроса или прямой отмены, или, в случае сбоя транспорта или протокола).
+* [`recognizing`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#recognizing): Сигнал для событий, содержащих промежуточные результаты перевода.
+* [`recognized`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#recognized): Сигнал для событий, содержащих окончательные результаты перевода (указывает на успешную попыток перевода).
+* [`sessionStopped`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#sessionstopped): Сигнал для событий, указывающих на окончание сеанса трансляции (операция).
+* [`canceled`](/javascript/api/microsoft-cognitiveservices-speech-sdk/translationrecognizer#canceled): Сигнал для событий, содержащих отмененные результаты перевода (показывающий попытку перевода, которая была отменена в результате запроса или прямой отмены, или, в случае сбоя транспорта или протокола).
 
 ```javascript
 recognizer.recognizing = (s, e) => {
@@ -221,7 +221,7 @@ recognizer.sessionStopped = (s, e) => {
 };
 ```
 
-Если все настроено, можно вызвать [`startContinuousRecognitionAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?preserve-view=true&view=azure-node-latest#startcontinuousrecognitionasync).
+Если все настроено, можно вызвать [`startContinuousRecognitionAsync`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer#startcontinuousrecognitionasync).
 
 ```javascript
 // Starts continuous recognition. Uses stopContinuousRecognitionAsync() to stop recognition.
@@ -232,13 +232,13 @@ recognizer.startContinuousRecognitionAsync();
 
 ## <a name="choose-a-source-language"></a>Выбор исходного языка
 
-Распространенной задачей для перевода речи является указание языка ввода (или исходного кода). Давайте посмотрим, как изменить язык ввода на итальянский. Найдите в коде [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?preserve-view=true&view=azure-node-latest) , а затем добавьте следующую строку непосредственно под ней.
+Распространенной задачей для перевода речи является указание языка ввода (или исходного кода). Давайте посмотрим, как изменить язык ввода на итальянский. Найдите в коде [`SpeechTranslationConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig) , а затем добавьте следующую строку непосредственно под ней.
 
 ```javascript
 speechTranslationConfig.speechRecognitionLanguage = "it-IT";
 ```
 
-Свойство [`speechRecognitionLanguage`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig?preserve-view=true&view=azure-node-latest#speechrecognitionlanguage) принимает строку формата языкового стандарта. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
+Свойство [`speechRecognitionLanguage`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechtranslationconfig#speechrecognitionlanguage) принимает строку формата языкового стандарта. Вы можете указать любое значение в столбце **Языковой стандарт** в списке поддерживаемых [языковых стандартов/языков](../../../language-support.md).
 
 ## <a name="choose-one-or-more-target-languages"></a>Выберите один или несколько целевых языков
 

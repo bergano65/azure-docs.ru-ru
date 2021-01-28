@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 08/18/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dd1552dda28291112a2412bdf956bc49a0b541d7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 167e33ff4a3af463e2537e2714e9e9bf5e125b61
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95996454"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947698"
 ---
 Контейнер предоставляет интерфейсы API конечной точки запроса на основе WebSocket, доступ к которым осуществляется через [пакет SDK для распознавания речи](../index.yml). По умолчанию в пакете SDK для речевых функций используются службы речевого перевода. Чтобы использовать контейнер, вам необходимо изменить метод инициализации.
 
@@ -29,7 +29,7 @@ ms.locfileid: "95996454"
 var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 ```
 
-Чтобы использовать этот вызов с [узлом](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.fromhost?preserve-view=true&view=azure-dotnet)контейнера, выполните следующие действия.
+Чтобы использовать этот вызов с [узлом](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.fromhost)контейнера, выполните следующие действия.
 
 ```csharp
 var config = SpeechConfig.FromHost(
@@ -45,7 +45,7 @@ speech_config = speechsdk.SpeechConfig(
     subscription=speech_key, region=service_region)
 ```
 
-Для использования этого вызова с [конечной точкой](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-python)контейнера:
+Для использования этого вызова с [конечной точкой](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig)контейнера:
 
 ```python
 speech_config = speechsdk.SpeechConfig(

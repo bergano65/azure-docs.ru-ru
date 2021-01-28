@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 972609b0a1b2249c9da9ab6da9309c0950e76734
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: a01afdcb54ff124bf4141d6ceb34b77303bef104
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697916"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947378"
 ---
 В этом руководстве описано, как приступить к работе с клиентской библиотекой API "Распознавание лиц" для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
@@ -25,7 +25,7 @@ ms.locfileid: "98697916"
 * [Создание группы людей](#create-a-person-group)
 * [опознание лица](#identify-a-face);
 
-[Справочная документация](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.Face) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.6.0-preview.1) | [Примеры](/samples/browse/?products=azure&term=face)
+[Справочная документация](/dotnet/api/overview/azure/cognitiveservices/client/faceapi) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.Face) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.6.0-preview.1) | [Примеры](/samples/browse/?products=azure&term=face)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -110,12 +110,12 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.6.0
 
 |Имя|Описание|
 |---|---|
-|[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) | Этот класс реализует авторизацию для использования Распознавания лиц и требуется для реализации всех ее функций. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов. |
-|[FaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperations?view=azure-dotnet)|Этот класс обрабатывает основные задачи по обнаружению и распознаванию лиц. |
-|[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet)|Этот класс представляет все данные об отдельном лице, обнаруженном на изображении. Его можно использовать для получения подробных сведений о лице.|
-|[FaceListOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet)|Этот класс управляет хранимыми в облаке конструкциями **FaceList**, которые включают систематизированную коллекцию лиц. |
-|[PersonGroupPersonExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongrouppersonextensions?view=azure-dotnet)| Этот класс управляет хранимыми в облаке конструкциями **Person**, в которых хранится коллекция лиц одного человека.|
-|[PersonGroupOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet)| Этот класс управляет хранимыми в облаке конструкциями **PersonGroup**, в которых хранится систематизированная коллекция объектов **Person**. |
+|[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient) | Этот класс реализует авторизацию для использования Распознавания лиц и требуется для реализации всех ее функций. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов. |
+|[FaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperations)|Этот класс обрабатывает основные задачи по обнаружению и распознаванию лиц. |
+|[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface)|Этот класс представляет все данные об отдельном лице, обнаруженном на изображении. Его можно использовать для получения подробных сведений о лице.|
+|[FaceListOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations)|Этот класс управляет хранимыми в облаке конструкциями **FaceList**, которые включают систематизированную коллекцию лиц. |
+|[PersonGroupPersonExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongrouppersonextensions)| Этот класс управляет хранимыми в облаке конструкциями **Person**, в которых хранится коллекция лиц одного человека.|
+|[PersonGroupOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations)| Этот класс управляет хранимыми в облаке конструкциями **PersonGroup**, в которых хранится систематизированная коллекция объектов **Person**. |
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -129,7 +129,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.6.0
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-В новом методе создайте экземпляр клиента с использованием конечной точки и ключа. Создайте объект **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.apikeyserviceclientcredentials?view=azure-dotnet)** с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект **[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet)** .
+В новом методе создайте экземпляр клиента с использованием конечной точки и ключа. Создайте объект **[ApiKeyServiceClientCredentials](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.apikeyserviceclientcredentials)** с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект **[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient)** .
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_auth)]
 
@@ -147,16 +147,16 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.6.0
 
 ### <a name="get-detected-face-objects"></a>Получение обнаруженных объектов лиц
 
-Создайте новый метод для обнаружения лиц. Метод `DetectFaceExtract` обрабатывает три изображения, размещенные по указанному URL-адресу, и создает список объектов **[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet)** в памяти программы. В списке значений **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet)** указано, какие признаки следует извлечь. 
+Создайте новый метод для обнаружения лиц. Метод `DetectFaceExtract` обрабатывает три изображения, размещенные по указанному URL-адресу, и создает список объектов **[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface)** в памяти программы. В списке значений **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype)** указано, какие признаки следует извлечь. 
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_detect)]
 
 > [!TIP]
-> Обнаружение лиц можно также выполнить, используя локальное изображение. Изучите информацию о методах класса [IFaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ifaceoperations?view=azure-dotnet), например о **DetectWithStreamAsync**.
+> Обнаружение лиц можно также выполнить, используя локальное изображение. Изучите информацию о методах класса [IFaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ifaceoperations), например о **DetectWithStreamAsync**.
 
 ### <a name="display-detected-face-data"></a>Отображение обнаруженных данных о лицах
 
-Оставшаяся часть метода `DetectFaceExtract` анализирует и выводит данные атрибутов для каждого обнаруженного лица. Каждый атрибут должен быть указан отдельно в исходном вызове API обнаружения лиц (в списке **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype?view=azure-dotnet)** ). Следующий код обрабатывает каждый атрибут, но вам, скорее всего, потребуются лишь один-два из них.
+Оставшаяся часть метода `DetectFaceExtract` анализирует и выводит данные атрибутов для каждого обнаруженного лица. Каждый атрибут должен быть указан отдельно в исходном вызове API обнаружения лиц (в списке **[FaceAttributeType](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.faceattributetype)** ). Следующий код обрабатывает каждый атрибут, но вам, скорее всего, потребуются лишь один-два из них.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_detect_parse)]
 
@@ -205,7 +205,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.Vision.Face --version 2.6.0
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_persongroup_create)]
 
 > [!TIP]
-> Объект **PersonGroup** можно также создать, используя локальные изображения. Изучите информацию о методах класса [IPersonGroupPerson](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ipersongroupperson?view=azure-dotnet), например о **AddFaceFromStreamAsync**.
+> Объект **PersonGroup** можно также создать, используя локальные изображения. Изучите информацию о методах класса [IPersonGroupPerson](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.ipersongroupperson), например о **AddFaceFromStreamAsync**.
 
 ### <a name="train-the-persongroup"></a>Обучение PersonGroup
 
@@ -264,7 +264,7 @@ dotnet run
 Из этого краткого руководство вы узнали, как с помощью клиентской библиотеки Распознавания лиц для .NET выполнять базовые задачи по распознаванию лиц. Далее ознакомьтесь со справочной документацией, чтобы узнать больше о библиотеке.
 
 > [!div class="nextstepaction"]
-> [Справочник по API распознавания лиц (.NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)
+> [Справочник по API распознавания лиц (.NET)](/dotnet/api/overview/azure/cognitiveservices/client/faceapi)
 
 * [Что представляет собой служба "Распознавание лиц"?](../../overview.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/Face/FaceQuickstart.cs).
