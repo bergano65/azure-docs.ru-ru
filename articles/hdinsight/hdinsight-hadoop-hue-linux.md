@@ -1,19 +1,16 @@
 ---
 title: Использование Hue с Hadoop в кластерах HDInsight на платформе Linux в Azure
 description: Узнайте, как установить Hue на кластер HDInsight и задействовать туннелирование для направления запросов на Hue. Используйте Hue для просмотра хранилища и выполнения Hive или Pig.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 03/31/2020
-ms.openlocfilehash: e80df5d1c3d2b2195e76622964406cc65c933a63
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8d4663aac6af4abb8d9855d2f972965e997d9c92
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546200"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945677"
 ---
 # <a name="install-and-use-hue-on-hdinsight-hadoop-clusters"></a>Установка и использование Hue на кластерах HDInsight Hadoop
 
@@ -87,11 +84,11 @@ Hue — это набор веб-приложений, используемых
 
 ### <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
-1. На портале Hue щелкните **Query Editors** (Редакторы запросов), а затем выберите **Hive** , чтобы открыть редактор Hive.
+1. На портале Hue щелкните **Query Editors** (Редакторы запросов), а затем выберите **Hive**, чтобы открыть редактор Hive.
 
     ![Редактор Hive на портале Hue для HDInsight](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-use-hive.png "Использование Hive")
 
-2. На вкладке **Assist** (Помощь) в разделе **Database** (База данных) отобразится элемент **hivesampletable** . Это пример таблицы, входящей в состав всех кластеров Hadoop в HDInsight. В правой области введите запрос и просмотрите выходные данные на нижней вкладке **Results** (Результаты), как показано на приведенном снимке экрана.
+2. На вкладке **Assist** (Помощь) в разделе **Database** (База данных) отобразится элемент **hivesampletable**. Это пример таблицы, входящей в состав всех кластеров Hadoop в HDInsight. В правой области введите запрос и просмотрите выходные данные на нижней вкладке **Results** (Результаты), как показано на приведенном снимке экрана.
 
     ![Запрос Hive на портале Hue для HDInsight](./media/hdinsight-hadoop-hue-linux/hdinsight-hue-portal-hive-query.png "Выполнение запросов Hive")
 
@@ -125,7 +122,7 @@ Hue — это набор веб-приложений, используемых
 
    Это известная проблема. В качестве обходного решения можно изменить Ambari, чтобы активный Resource Manager также запускался на основном головном узле.
 
-1. Hue понимает WebHDFS, а кластеры HDInsight используют службу хранилища Azure с приставкой `wasbs://`в начале пути. Таким образом, пользовательский сценарий, используемый со сценарием действия, устанавливает службу WebWasb, совместимую с WebHDFS и предназначенную для обмена данными с WASB. Поэтому несмотря на то, что в некоторых местах на портале Hue используется надпись HDFS (например, при наведении указателя мыши на **File Browser** (Обозреватель файлов)), ее следует читать как WASB.
+1. Hue понимает WebHDFS, а кластеры HDInsight используют службу хранилища Azure с приставкой `wasbs://`в начале пути. Таким образом, пользовательский сценарий, используемый со сценарием действия, устанавливает службу WebWasb, совместимую с WebHDFS и предназначенную для обмена данными с WASB. Поэтому несмотря на то, что в некоторых местах на портале Hue используется надпись HDFS (например, при наведении указателя мыши на **File Browser**(Обозреватель файлов)), ее следует читать как WASB.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

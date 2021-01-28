@@ -1,18 +1,15 @@
 ---
 title: Настройка сетевого виртуального устройства в Azure HDInsight
 description: Узнайте, как настроить ряд дополнительных функций для сетевого виртуального устройства в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 557f0a6a37747d3a461ced8de16fd1fcf0d1abab
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 7fe266c3c7b75762133fca4645e0675845c28972
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95524119"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943969"
 ---
 # <a name="configure-network-virtual-appliance-in-azure-hdinsight"></a>Настройка сетевого виртуального устройства в Azure HDInsight
 
@@ -62,7 +59,7 @@ ms.locfileid: "95524119"
 |login.windows.net:443                                                  |
 |login.microsoftonline.com:443                                          |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ограничение исходящего трафика с помощью брандмауэра](./hdinsight-restrict-outbound-traffic.md)
 * [Архитектура виртуальной сети Azure HDInsight](hdinsight-virtual-network-architecture.md)

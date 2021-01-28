@@ -1,19 +1,16 @@
 ---
 title: Использование .NET с Hadoop MapReduce в HDInsight на основе Linux в Azure
 description: Узнайте, как использовать приложения .NET для потоковой передачи MapReduce в HDInsight под управлением Linux.
-author: hrasheed-msft
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 02/27/2018
-ms.author: hrasheed
-ms.openlocfilehash: a6e9bea5d600771a7754142a4df4c0af503ccf5d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ceb5d323ecfed54b4e01d13d66c640769a224ee
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86075490"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945594"
 ---
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>Перенос решений .NET из HDInsight под управлением Windows в HDInsight под управлением Linux
 
@@ -34,7 +31,7 @@ Mono версии 4.2.1 входит в состав HDInsight версии 3.6.
 
 1. Установите [.NET Portability Analyzer](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Во время установки выберите используемую версию Visual Studio.
 
-2. В Visual Studio 2015 выберите __анализ__  >  __параметров анализатора переносимости__и убедитесь, что в разделе __Mono__ установлен флажок __4,5__ .
+2. В Visual Studio 2015 выберите __анализ__  >  __параметров анализатора переносимости__ и убедитесь, что в разделе __Mono__ установлен флажок __4,5__ .
 
     ![Установленный флажок "4.5" для Mono в разделе параметров анализатора](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-settings.png)
 

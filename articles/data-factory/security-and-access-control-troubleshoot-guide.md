@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 01/05/2021
 ms.author: lle
 ms.reviewer: craigg
-ms.openlocfilehash: 3b7b405e34b6ca82da593507ad6103d360c5df1e
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 70e4d0c1a9f26f83924c1343e4e8e51c5595b324
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968591"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944519"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Устранение неполадок, связанных с управлением безопасностью и доступом в фабрике данных Azure
 
@@ -49,13 +49,13 @@ ms.locfileid: "97968591"
 
 * Если используется локальная **Среда IR**, проверьте параметры прокси-сервера, брандмауэра и сети, так как подключение к тому же хранилищу данных может быть продолжено, если вы используете Azure IR. Сведения об устранении этой ситуации см. в следующих статьях:
 
-   * [Локальные ИК-порты и брандмауэры](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#ports-and-firewalls)
-   * [Соединитель Azure Data Lake Storage](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store)
+   * [Локальные ИК-порты и брандмауэры](./create-self-hosted-integration-runtime.md#ports-and-firewalls)
+   * [Соединитель Azure Data Lake Storage](./connector-azure-data-lake-store.md)
   
 * Если вы используете **Azure IR**, попробуйте отключить параметр брандмауэра хранилища данных. Этот подход может устранить проблемы в следующих двух ситуациях.
   
-   * [Azure IR IP-адреса](https://docs.microsoft.com/azure/data-factory/azure-integration-runtime-ip-addresses) отсутствуют в списке разрешений.
-   * Функция *разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения* отключена для [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#supported-capabilities) и [Azure Data Lake Storage Gen 2](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#supported-capabilities).
+   * [Azure IR IP-адреса](./azure-integration-runtime-ip-addresses.md) отсутствуют в списке разрешений.
+   * Функция *разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения* отключена для [хранилища BLOB-объектов Azure](./connector-azure-blob-storage.md#supported-capabilities) и [Azure Data Lake Storage Gen 2](./connector-azure-data-lake-storage.md#supported-capabilities).
    * Параметр " *Разрешить доступ к службам Azure* " не включен для Azure Data Lake Storage 1-го поколения.
 
 Если ни один из вышеперечисленных методов не работает, обратитесь в корпорацию Майкрософт за помощью.
@@ -88,7 +88,7 @@ ms.locfileid: "97968591"
 #### <a name="resolution"></a>Решение
 
 Чтобы устранить эту проблему, выполните следующие действия.
-- См. статью [Частная ссылка Azure для фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/data-factory-private-link#dns-changes-for-private-endpoints) . Инструкция предназначена для настройки частной зоны DNS или сервера для разрешения полного доменного имени фабрики данных в частный IP-адрес.
+- См. статью [Частная ссылка Azure для фабрики данных Azure](./data-factory-private-link.md#dns-changes-for-private-endpoints) . Инструкция предназначена для настройки частной зоны DNS или сервера для разрешения полного доменного имени фабрики данных в частный IP-адрес.
 
 - В качестве долгосрочного решения рекомендуется использовать пользовательский DNS-сервер. Однако если вы не хотите настраивать частную зону или сервер DNS, попробуйте следующее временное решение:
 
@@ -120,7 +120,7 @@ ms.locfileid: "97968591"
  
 Чтобы устранить эту проблему, выполните следующие действия.
 
-1. Перейдите на страницу [фабрики — обновление](https://docs.microsoft.com/rest/api/datafactory/Factories/Update) .
+1. Перейдите на страницу [фабрики — обновление](/rest/api/datafactory/Factories/Update) .
 
 1. В правом верхнем углу нажмите кнопку **попробовать** .
 1. В разделе **Параметры** заполните необходимые сведения. 
@@ -146,7 +146,7 @@ ms.locfileid: "97968591"
 
 **Решение 2**
 
-Чтобы устранить эту проблему, перейдите в раздел " [Частная связь Azure" для фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/data-factory-private-link).
+Чтобы устранить эту проблему, перейдите в раздел " [Частная связь Azure" для фабрики данных Azure](./data-factory-private-link.md).
 
 Попробуйте включить доступ к общедоступной сети в пользовательском интерфейсе, как показано на следующем снимке экрана:
 

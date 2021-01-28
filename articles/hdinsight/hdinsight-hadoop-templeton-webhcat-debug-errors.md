@@ -1,19 +1,16 @@
 ---
 title: Понимание и устранение ошибок WebHCat в HDInsight в Azure
 description: Узнайте о наиболее распространенных ошибках, возвращаемых WebHCat в HDInsight, и о способах их устранения.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
-ms.openlocfilehash: 951dba6e64561301dc7dbb6ebd6fd6b641c90a47
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: ce7a21a2b5401c68c6b58bc934fb20b0225ba8ad
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285684"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945467"
 ---
 # <a name="understand-and-resolve-errors-received-from-webhcat-on-hdinsight"></a>Понимание и устранение ошибок, полученных из WebHCat в HDInsight
 
@@ -39,7 +36,7 @@ ms.locfileid: "93285684"
 
 ## <a name="too-many-requests"></a>Слишком много запросов
 
-**Код состояния HTTP** : 429
+**Код состояния HTTP**: 429
 
 | Причина | Решение |
 | --- | --- |
@@ -47,7 +44,7 @@ ms.locfileid: "93285684"
 
 ## <a name="server-unavailable"></a>Сервер недоступен
 
-**Код состояния HTTP** : 503
+**Код состояния HTTP**: 503
 
 | Причина | Решение |
 | --- | --- |
@@ -55,7 +52,7 @@ ms.locfileid: "93285684"
 
 ## <a name="bad-request-content-could-not-find-job"></a>Недопустимый запрос. Содержимое: не удалось найти задание
 
-**Код состояния HTTP** : 400
+**Код состояния HTTP**: 400
 
 | Причина | Решение |
 | --- | --- |
@@ -65,7 +62,7 @@ ms.locfileid: "93285684"
 
 ## <a name="bad-gateway"></a>Недопустимый шлюз
 
-**Код состояния HTTP** : 502
+**Код состояния HTTP**: 502
 
 | Причина | Решение |
 | --- | --- |

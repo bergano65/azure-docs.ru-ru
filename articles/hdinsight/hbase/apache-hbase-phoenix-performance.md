@@ -1,19 +1,16 @@
 ---
 title: Производительность Phoenix в Azure HDInsight
 description: Рекомендации по оптимизации производительности Apache Phoenix для кластеров Azure HDInsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/27/2019
-ms.openlocfilehash: 0dfb93db1af807459c37653189a90b754c933aa4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ffba3b986b35c375d0404d9d2bae5af79f93c54f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89504797"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944802"
 ---
 # <a name="apache-phoenix-performance-best-practices"></a>Рекомендации по оптимизации производительности Apache Phoenix
 
@@ -33,21 +30,21 @@ ms.locfileid: "89504797"
 
 |rowkey|       address|   phone| firstName| lastName|
 |------|--------------------|--------------|-------------|--------------|
-|  1000|Владимирская, 34|1-425-000-0002|    Виталий|Кузнецов|
+|  1000|Владимирская, 34|1-425-000-0002|    Джон|Кузнецов|
 |  8396|Владимирская, 54|1-230-555-0191|  Виктор|Игнатьев|
 
 Однако, если часто запрашивать по фамилии (lastName), первичный ключ может работать неправильно, так как для каждого запроса требуется полное сканирование таблицы для чтения значения каждой фамилии. Вместо этого можно определить первичный ключ для столбцов фамилии (lastName), имени (firstName) и номера социального страхования (socialSecurityNum). Последний столбец позволяет различать двух жителей с одним адресом и одним именем, например отца и сына.
 
 |rowkey|       address|   phone| firstName| lastName| socialSecurityNum |
 |------|--------------------|--------------|-------------|--------------| ---|
-|  1000|Владимирская, 34|1-425-000-0002|    Виталий|Кузнецов| 111 |
+|  1000|Владимирская, 34|1-425-000-0002|    Джон|Кузнецов| 111 |
 |  8396|Владимирская, 54|1-230-555-0191|  Виктор|Игнатьев| 222 |
 
 При использовании нового первичного ключа ключи записей, созданные Phoenix, будут такими:
 
 |rowkey|       address|   phone| firstName| lastName| socialSecurityNum |
 |------|--------------------|--------------|-------------|--------------| ---|
-|  Kuznetsov-Artem-111|Владимирская, 34|1-425-000-0002|    Виталий|Кузнецов| 111 |
+|  Kuznetsov-Artem-111|Владимирская, 34|1-425-000-0002|    Джон|Кузнецов| 111 |
 |  Ignatiev-Victor-222|Владимирская, 54|1-230-555-0191|  Виктор|Игнатьев| 222 |
 
 В первой строке выше данные rowkey представлены следующим образом:
@@ -56,7 +53,7 @@ ms.locfileid: "89504797"
 |------|--------------------|---|
 |  Kuznetsov-Artem-111|address |Владимирская, 34|  
 |  Kuznetsov-Artem-111|phone |1-425-000-0002|  
-|  Kuznetsov-Artem-111|firstName |Виталий|  
+|  Kuznetsov-Artem-111|firstName |Джон|  
 |  Kuznetsov-Artem-111|lastName |Кузнецов|  
 |  Kuznetsov-Artem-111|socialSecurityNum |111|
 
@@ -119,7 +116,7 @@ CREATE TABLE CONTACTS (...) SPLIT ON ('CS','EU','NA')
 
 |rowkey|       address|   phone| firstName| lastName| socialSecurityNum |
 |------|--------------------|--------------|-------------|--------------| ---|
-|  Kuznetsov-Artem-111|Владимирская, 34|1-425-000-0002|    Виталий|Кузнецов| 111 |
+|  Kuznetsov-Artem-111|Владимирская, 34|1-425-000-0002|    Джон|Кузнецов| 111 |
 |  Ignatiev-Victor-222|Владимирская, 54|1-230-555-0191|  Виктор|Игнатьев| 222 |
 
 Тем не менее, если необходимо найти имя и фамилию по номеру социального страхования, можно создать охватывающий индекс, который включает столбцы имени и фамилии в качестве фактических данных в таблице индексов:
@@ -256,7 +253,7 @@ CREATE TABLE CONTACTS (...) DISABLE_WAL=true;
 
 Дополнительные сведения об этом и других вариантах см. в статье о [грамматике Apache Phoenix](https://phoenix.apache.org/language/index.html#options).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Руководство по настройке Apache Phoenix](https://phoenix.apache.org/tuning_guide.html)
 * [Вторичные индексы](https://phoenix.apache.org/secondary_indexing.html)

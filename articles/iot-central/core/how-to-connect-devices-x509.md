@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: d36cf2344891bb70ab5499e77699b111429a936b
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: bffff099e8df2b944cbef50a074ef625267ed238
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96121823"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944638"
 ---
 # <a name="how-to-connect-devices-with-x509-certificates-using-nodejs-device-sdk-for-iot-central-application"></a>Как подключить устройства с сертификатами X. 509 с помощью пакета SDK для Node.js устройств для IoT Central приложения
 
@@ -63,7 +63,7 @@ IoT Central поддерживает подписанные URL-адрес (SAS)
 
 Эти команды создают по три файла для корня и сертификата устройства.
 
-filename | содержимое
+имя_файла | содержимое
 -------- | --------
 \<name\>_cert PEM | Открытая часть сертификата X509.
 \<name\>_key PEM | Закрытый ключ для сертификата X509
@@ -199,7 +199,7 @@ filename | содержимое
 
 1. Скопируйте файлы _mytestselfcertprimary_key. pem_ и _mytestselfcertprimary_cert. pem_ в папку _Azure-IOT-SDK-node/Device/Samples/pnp_ , которая содержит приложение **simple_thermostat.js** . Это приложение использовалось при завершении [учебника подключение устройства (JavaScript)](./tutorial-connect-device.md).
 
-1. Измените переменные среды, используемые в, следующим образом:
+1. Измените переменные среды, использованные в примере выше, следующим образом:
 
     ```cmd/sh
     set IOTHUB_DEVICE_DPS_DEVICE_ID=mytestselfcertprimary

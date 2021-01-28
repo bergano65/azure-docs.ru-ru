@@ -7,16 +7,16 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 19c27dc80f9af013c458663c9c7afb0033683acd
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: d8944c9e49bde8c452a10a1886cae316a0f7a33f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97348073"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945068"
 ---
 # <a name="create-luis-resources"></a>Создание ресурсов LUIS
 
-Создание и запрос ресурсов среды выполнения прогнозирующих запросов обеспечивает проверку подлинности для приложения Language Understanding (LUIS) и конечной точки прогнозирования.
+Создание и запрос ресурсов среды выполнения прогнозирующих запросов обеспечивает проверку подлинности для приложения Распознавание речи (LUIS) и конечной точки прогнозирования.
 
 <a name="azure-resources-for-luis"></a>
 <a name="programmatic-key" ></a>
@@ -135,7 +135,7 @@ LUIS позволяет выполнять три типа ресурсов Azur
 
 Среда выполнения частного приложения доступна только для следующих ключей:
 
-|Ключ и пользователь|Объяснение|
+|Ключ и пользователь|Описание|
 |--|--|
 |Ключ разработки владельца| До 1 000 конечных точек|
 |Ключи для совместной работы и создания участников| До 1 000 конечных точек|
@@ -173,7 +173,7 @@ LUIS позволяет выполнять три типа ресурсов Azur
 
 ### <a name="create-resources-in-the-azure-cli"></a>Создание ресурсов в Azure CLI
 
-Используйте [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы создать каждый ресурс по отдельности.
+Используйте [Azure CLI](/cli/azure/install-azure-cli) , чтобы создать каждый ресурс по отдельности.
 
 Ресурс `kind` :
 
@@ -255,9 +255,9 @@ LUIS позволяет выполнять три типа ресурсов Azur
 
     |Тип|Параметр|Значение|
     |--|--|--|
-    |Заголовок|`Authorization`|Значение `Authorization` равно `Bearer {token}`. Значению маркера должно предшествовать слово `Bearer` и пробел.|
-    |Заголовок|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
-    |Заголовок|`Content-type`|`application/json`|
+    |Header|`Authorization`|Значение `Authorization` равно `Bearer {token}`. Значению маркера должно предшествовать слово `Bearer` и пробел.|
+    |Header|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
+    |Header|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS.
     |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 

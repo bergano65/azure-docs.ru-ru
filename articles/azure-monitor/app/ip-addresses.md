@@ -1,17 +1,17 @@
 ---
-title: IP-адреса, используемые Application Insights и Log Analytics | Документация Майкрософт
+title: IP-адреса, используемые Azure Monitor
 description: Исключения брандмауэра сервера, требуемые для Application Insights
 ms.topic: conceptual
-ms.date: 09/15/2020
-ms.openlocfilehash: eb0739cb44b9f67258069a574ed0bedb95eac5a4
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 01/27/2020
+ms.openlocfilehash: 5a6cc190f84b74cc8a1d4ff24d10cbfa07f3c2fb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625188"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945054"
 ---
-# <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
-Служба [Azure Application Insights](./app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.
+# <a name="ip-addresses-used-by-azure-monitor"></a>IP-адреса, используемые Azure Monitor
+[Azure Monitor](../overview.md) использует несколько IP-адресов. Azure Monitor состоит из основных метрик платформы и журналов, а также Log Analytics и Application Insights. Может потребоваться знать эти адреса, если наблюдаемое приложение или инфраструктура размещается за брандмауэром.
 
 > [!NOTE]
 > Эти адреса статические, но время от времени мы можем их менять. Весь трафик Application Insights представляет исходящий трафик, за исключением сценариев с отслеживанием доступности и веб-перехватчиками, для которых требуются правила брандмауэра для входящего трафика.

@@ -1,19 +1,16 @@
 ---
 title: Мониторинг и администрирование кластеров Azure HDInsight с помощью веб-интерфейса Ambari
 description: Узнайте, как использовать пользовательский интерфейс Apache Ambari для мониторинга кластеров HDInsight и управления ими.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 01/12/2021
-ms.openlocfilehash: 8195cffed077a77c0ad66fda1126e2f3ea53d5f0
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 087f284bed7ab0c9eb551c1629ab4f9196c80d76
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179152"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945691"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari
 
@@ -27,7 +24,7 @@ Apache Ambari упрощает управление и мониторинг кл
 
 [Apache Ambari](https://ambari.apache.org) упрощает управление Hadoop, предоставляя простой в использовании веб-интерфейс. Ambari можно использовать для отслеживания кластеров Hadoop, а также для управления ими. Разработчики могут интегрировать эти возможности в своих приложениях с помощью [интерфейсов REST API Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
-## <a name="connectivity"></a>Подключение
+## <a name="connectivity"></a>Соединение
 
 Веб-интерфейс Ambari доступен в кластере HDInsight по адресу `https://CLUSTERNAME.azurehdinsight.net` , где `CLUSTERNAME` — это имя кластера.
 
@@ -162,7 +159,7 @@ Apache Ambari упрощает управление и мониторинг кл
     |Включить режим обслуживания|Подавляет предупреждения для узла. Этот режим должен быть включен, если выполняются действия, создающие предупреждения. Например, остановка и запуск службы.|
     |Отключение режима обслуживания|Возвращает узел для обычного оповещения.|
     |Стоп|Останавливает узел или NodeManagers на узле.|
-    |Запуск|Запускает node или NodeManagers на узле.|
+    |Начать|Запускает node или NodeManagers на узле.|
     |Перезагрузить|Останавливает и запускает узел или NodeManagers на узле.|
     |Вывести из эксплуатации|Удаляет узел из кластера. **Не используйте это действие в кластерах HDInsight.**|
     |Перекомиссия|Добавляет ранее списанный узел в кластер. **Не используйте это действие в кластерах HDInsight.**|

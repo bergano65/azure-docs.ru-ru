@@ -1,31 +1,28 @@
 ---
 title: Apache Hive библиотек во время создания кластера Azure HDInsight
 description: Узнайте, как добавить библиотеки Apache Hive (JAR-файлы) в кластер HDInsight во время создания кластера.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 02/14/2020
-ms.openlocfilehash: c678372fbd54e528a8a16eacc601e815cfd32e58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b6695e5e985a30d6f912095225c4899e1c910e34
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86082239"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945949"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
 Узнайте, как предварительно загрузить библиотеки [Apache Hive](https://hive.apache.org/) в HDInsight. Этот документ содержит сведения об использовании действия скрипта по предварительной загрузке библиотек во время создания кластера. Библиотеки, добавленные с помощью действий, описанных в этом документе, глобально доступны в Hive — нет необходимости использовать [Добавление JAR](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli) -файла для их загрузки.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 При создании кластера можно использовать действие скрипта для изменения узлов кластера по мере их создания. Скрипт в этом документе принимает один параметр, определяющий расположение библиотек. Это расположение должно быть в пределах учетной записи хранилища Azure, а библиотеки должны быть в формате JAR.
 
 Во время создания кластера сценарий перечисляет файлы, копирует их в каталог `/usr/lib/customhivelibs/` на головных и рабочих узлах, а затем добавляет их в свойство `hive.aux.jars.path` в файле `core-site.xml`. Для кластеров под управлением Linux он также обновляет файл `hive-env.sh` расположением файлов.
 
-Использование действия сценария в этой статье делает библиотеки доступными при использовании клиента Hive для **WebHCat**и **HiveServer2**.
+Использование действия сценария в этой статье делает библиотеки доступными при использовании клиента Hive для **WebHCat** и **HiveServer2**.
 
 ## <a name="the-script"></a>Сценарий
 
@@ -33,7 +30,7 @@ ms.locfileid: "86082239"
 
 [https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1](https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1)
 
-### <a name="requirements"></a>Требования
+### <a name="requirements"></a>Requirements (Требования)
 
 * Скрипты необходимо применять к **головным узлам** и **рабочим узлам**.
 
@@ -54,7 +51,7 @@ ms.locfileid: "86082239"
 
 1. Для **хранилища**, если учетная запись хранения, содержащая библиотеку JAR-файлов, будет отличаться от учетной записи, используемой для кластера, завершите **дополнительные учетные записи хранения**.
 
-1. Для **действий сценария**укажите следующие сведения.
+1. Для **действий сценария** укажите следующие сведения.
 
     |Свойство |Значение |
     |---|---|

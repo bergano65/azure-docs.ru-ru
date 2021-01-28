@@ -1,19 +1,16 @@
 ---
 title: Настройка кластеров Azure HDInsight с помощью действий сценариев
 description: Добавление пользовательских компонентов в кластеры HDInsight с помощью действий сценария. Действия скрипта — это скрипты bash, которые можно использовать для настройки конфигурации кластера. Или добавьте дополнительные службы и служебные программы, такие как оттенок, Solr или R.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, contperf-fy21q2
 ms.date: 09/02/2020
-ms.openlocfilehash: 70918d1dc829ff0114a8c1019524feb934c9f915
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 46be3349490f04660d4fc8b69e4cdc295d8ecc1c
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630944"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945803"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценариев
 
@@ -128,7 +125,7 @@ Status            : Succeeded
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| Имя | Скрипт |
+| ИМЯ | Сценарий |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
@@ -153,7 +150,7 @@ Status            : Succeeded
     | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | Имя |Укажите имя для действия сценария. |
+    | ИМЯ |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной/рабочий/ZooKeeper |Укажите узлы, на которых выполняется скрипт: **head**, **Worker** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -226,7 +223,7 @@ Status            : Succeeded
     | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Пользовательский__. В противном случае выберите предоставленный скрипт. |
-    | Имя |Укажите имя для действия сценария. |
+    | ИМЯ |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной, рабочий или Zookeeper |Укажите узлы, на которых выполняется скрипт: **head**, **Worker** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |

@@ -2,18 +2,15 @@
 title: Решения службы хранилища Azure для служб ML в HDInsight — Azure
 description: Сведения о разных вариантах хранилищ, доступных для служб машинного обучения в HDInsight.
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 01/02/2020
-ms.openlocfilehash: 1b684fde9123d3c12d5d69c1daec1c53c6519c44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ddc48025de164ff68fb539a293e06bae09171742
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855299"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943909"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб ML в Azure HDInsight
 
@@ -120,7 +117,7 @@ hadoop fs -mkdir wasbs://container2@storage2.blob.core.windows.net/user/RevoShar
 
 1. При создании кластера HDInsight выберите пункт **Удостоверение кластера Azure AD** на вкладке **источник данных** .
 
-2. В диалоговом окне **Удостоверение кластера Azure AD** в разделе **Выбор субъекта-службы AD**выберите **создать**.
+2. В диалоговом окне **Удостоверение кластера Azure AD** в разделе **Выбор субъекта-службы AD** выберите **создать**.
 
 Присвоив имя субъекту-службе и создав для него пароль, щелкните **Управление доступом ADLS**, чтобы связать субъект-службу с Data Lake Storage.
 
@@ -174,7 +171,7 @@ hadoop fs –ls adl://rkadl1.azuredatalakestore.net/share
 - [Использование хранилища файлов Azure с Linux](../../storage/files/storage-how-to-use-files-linux.md)
 - [Использование хранилища файлов Azure в Windows](../../storage/files/storage-dotnet-how-to-use-files.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о кластере служб машинного обучения в HDInsight](r-server-overview.md)
 - [Варианты контекста вычислений для кластера служб машинного обучения в HDInsight](r-server-compute-contexts.md)

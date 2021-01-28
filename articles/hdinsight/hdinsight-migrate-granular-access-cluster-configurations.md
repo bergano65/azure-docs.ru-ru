@@ -3,16 +3,15 @@ title: Детализация конфигураций кластера Azure HD
 description: Изучите изменения, необходимые в процессе миграции, чтобы детально получить доступ к конфигурациям кластера HDInsight на основе ролей.
 author: tylerfox
 ms.author: tyfox
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/20/2020
-ms.openlocfilehash: d2e9c1fe89866511f8eae0b900563471cd6e52e9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 08be42f4f0801fc700b3e0fc645c1bbc1b747e91
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533314"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944091"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -26,7 +25,7 @@ ms.locfileid: "92533314"
 
 Мы также представляем новую роль [оператора кластера HDInsight](../role-based-access-control/built-in-roles.md#hdinsight-cluster-operator) , которая сможет получать секреты без предоставления административных разрешений участнику или владельцу. Подведение итогов.
 
-| Role                                  | Раньше назывался .                                                                                       | Переход вперед       |
+| Роль                                  | Раньше назывался .                                                                                       | Переход вперед       |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|-----------|
 | Читатель                                | — Доступ на чтение, включая секреты.                                                                   | — Доступ на чтение, **исключение** секретов |           |   |   |
 | Оператор кластера HDInsight<br>(Новая роль) | Недоступно                                                                                              | — Доступ на чтение и запись, включая секреты         |   |   |
@@ -80,7 +79,7 @@ ms.locfileid: "92533314"
 
 Если вы используете версию 1.1.1 или ниже, обновите до [последней версии средств Azure HDInsight для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=mshdinsight.azure-hdinsight&ssr=false) , чтобы избежать перерывов.
 
-### <a name="azure-toolkit-for-intellij"></a>Набор средств Azure для IntelliJ
+### <a name="azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ
 
 Если вы используете версию 3.20.0 или ниже, обновите [последнюю версию подключаемого модуля Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij) , чтобы избежать перерывов.
 
@@ -88,7 +87,7 @@ ms.locfileid: "92533314"
 
 Обновите [Azure Data Lake и средства Stream Analytics для Visual Studio](https://marketplace.visualstudio.com/items?itemName=ADLTools.AzureDataLakeandStreamAnalyticsTools&ssr=false#overview) до версии 2.3.9000.1 или более поздней, чтобы избежать перерывов в работе.  Справку по обновлению см. в нашей документации, а также в [статье обновление средств Data Lake для Visual Studio](./hadoop/apache-hadoop-visual-studio-tools-get-started.md#update-data-lake-tools-for-visual-studio).
 
-### <a name="azure-toolkit-for-eclipse"></a>Набор средств Azure для Eclipse
+### <a name="azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
 
 Если вы используете версию 3.15.0 или ниже, обновите ее до [последней версии Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse) во избежание перерывов.
 

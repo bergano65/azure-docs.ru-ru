@@ -1,19 +1,16 @@
 ---
 title: Компоненты и версии Apache Hadoop в Azure HDInsight
 description: Узнайте о компонентах и версиях Apache Hadoop в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 08/13/2020
-ms.openlocfilehash: 82297b81ebe99301574e99ef438cc81c711dbeff
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 07db57ee36d39454e8a247be11dac4a9c51af3af
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95533690"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946103"
 ---
 # <a name="apache-components-and-versions-available-for-azure-hdinsight"></a>Компоненты и версии Apache, доступные в Azure HDInsight
 
@@ -88,11 +85,11 @@ Azure HDInsight поддерживает несколько версий кла�
 | HDInsight 3,6 Spark             | 2.3               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | HDInsight 3,6 Spark             | 2.2               | Прекращено 30 июня 2020 г.          |                             |
 | HDInsight 3,6 Spark             | 2.1               | Прекращено 30 июня 2020 г.          |                             |
-| HDInsight 3,6 Kafka             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6 Kafka             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | HDInsight 3,6 Kafka             | 1.0               | Прекращено 30 июня 2020 г.         |                             |
-| HDInsight 3,6 HBase             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6 HBase             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | Интерактивный запрос HDInsight 3,6 | 2.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
-| HDInsight 3,6             | 1.1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
+| HDInsight 3,6             | 1,1               | 31 декабря 2020 г.                      | 30 июня 2021 г.               |
 | Службы машинного обучения HDInsight 3,6      | 9.3               | 31 декабря 2020 г.                      | 31 декабря 2020 г.                |
 
 > [!NOTE]

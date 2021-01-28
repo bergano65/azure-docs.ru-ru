@@ -1,19 +1,16 @@
 ---
 title: Использование представления Hive Apache Ambari с Apache Hadoop в Azure HDInsight
 description: Узнайте, как использовать представление Hive в веб-браузере для отправки запросов Hive. Представление Hive — это компонент веб-интерфейса Ambari, поставляемого с кластером HDInsight на основе Linux.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: cc04a891bb32ede6c7bb72a339b728642cf343ed
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1f2dbef014f1b48b554e6bc30af83b936fe532a7
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000527"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944866"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -159,7 +156,7 @@ create temporary function myawesomeudf as 'com.myudfs.Awesome';
 
 Вы можете изменять различные настройки Hive. Например, для изменения механизма выполнения для Hive с Tez (значение по умолчанию) на MapReduce.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общая информация о Hive в HDInsight:
 

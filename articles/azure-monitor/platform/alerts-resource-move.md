@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/26/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4ea5c8552d35db67a1d2caf20c0143c74cdd642e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 36cf5882913426062e281194b61a8c760141512a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86505488"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944167"
 ---
 # <a name="how-to-update-alert-rules-or-action-rules-when-their-target-resource-moves-to-a-different-azure-region"></a>Как обновить правила генерации оповещений или правила действий при перемещении их целевого ресурса в другой регион Azure
 
@@ -76,9 +76,9 @@ ms.locfileid: "86505488"
 ### <a name="change-scope-of-a-rule-from-the-azure-portal"></a>Изменение области действия правила из портал Azure
 
 1. Откройте правило, определенное на предыдущем шаге, щелкнув его.
-2. В разделе **ресурс**щелкните **изменить** и при необходимости измените область.
+2. В разделе **ресурс** щелкните **изменить** и при необходимости измените область.
 3. При необходимости настройте другие свойства правила.
-4. Выберите команду **Сохранить**.
+4. Нажмите **Сохранить**.
 
 ![Изменить область действия правила оповещения](media/alerts-resource-move/change-alert-rule-scope.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "86505488"
    1. Перейдите к разделу "группы ресурсов" на портале и откройте группу ресурсов, содержащую правило.
    2. В разделе Обзор установите флажок **Показывать скрытый тип** и отфильтруйте соответствующий тип правила.
    3. Выберите соответствующее правило, чтобы просмотреть сведения о нем.
-   4. В разделе **Параметры**выберите **Экспорт шаблона**.
+   4. В разделе **Параметры** выберите **Экспорт шаблона**.
 2. Измените шаблон. При необходимости разделите их на два правила (относящиеся к некоторым случаям оповещений метрик, как указано выше).
 3. Повторно разверните шаблон.
 
@@ -106,7 +106,7 @@ ms.locfileid: "86505488"
 
 ### <a name="change-the-scope-of-a-rule-using-azure-cli"></a>Изменение области действия правила с помощью Azure CLI
 
-1.  Получение существующего правила ([оповещения метрик](/cli/azure/monitor/metrics/alert?view=azure-cli-latest#az-monitor-metrics-alert-show), [оповещения журнала действий](/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)).
+1.  Получение существующего правила ([оповещения метрик](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-show), [оповещения журнала действий](/cli/azure/monitor/activity-log/alert#az-monitor-activity-log-alert-list)).
 2.  Непосредственное обновление области действия правила ([оповещения метрик](/cli/azure/monitor/metrics/alert#az-monitor-metrics-alert-update), [оповещения журнала действий](/cli/azure/monitor/activity-log/alert/scope))
 3.  При необходимости разделите их на два правила (относящиеся к некоторым случаям оповещений метрик, как указано выше).
 

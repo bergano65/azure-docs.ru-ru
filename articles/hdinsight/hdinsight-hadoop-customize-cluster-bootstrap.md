@@ -1,19 +1,16 @@
 ---
 title: Настройка конфигураций кластера Azure HDInsight с помощью начальной загрузки
 description: Узнайте, как программно настроить конфигурацию кластера HDInsight с помощью .NET, PowerShell и шаблонов диспетчер ресурсов.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/01/2020
-ms.openlocfilehash: 246c5600da3b554ba65872780f0719a58f3f4be2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 306ebcf7db3c11f783af8cf4c1779bd3d1a013a4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547492"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945746"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -21,7 +18,7 @@ ms.locfileid: "92547492"
 
 Существует три подхода к установке параметров файла конфигурации при создании кластера HDInsight:
 
-* Использование Azure Powershell
+* Использование Azure PowerShell
 * Использование пакета SDK для .NET
 * Использование шаблона Azure Resource Manager
 
@@ -50,7 +47,7 @@ ms.locfileid: "92547492"
 
 * При использовании PowerShell вам потребуется [модуль Az](/powershell/azure/).
 
-## <a name="use-azure-powershell"></a>Использование Azure Powershell
+## <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
 Следующий код PowerShell настраивает конфигурацию [Apache Hive](https://hive.apache.org/).
 
@@ -86,9 +83,9 @@ New-AzHDInsightCluster `
 **Чтобы проверить изменения, выполните следующие действия:**
 
 1. Перейдите в `https://CLUSTERNAME.azurehdinsight.net/` папку `CLUSTERNAME` , где — имя кластера.
-1. В меню слева перейдите к разделу **Hive**  >  **конфигурации** Hive  >  **Дополнительно** .
-1. Разверните узел **Расширенный Hive — сайт** .
-1. Нахождение **Hive. хранилище метаданных. Client. Socket. timeout** и подтвердите, что значение равно **90-х** .
+1. В меню слева перейдите к разделу   >  **конфигурации** Hive  >  **Дополнительно**.
+1. Разверните узел **Расширенный Hive — сайт**.
+1. Нахождение **Hive. хранилище метаданных. Client. Socket. timeout** и подтвердите, что значение равно **90-х**.
 
 Вот еще несколько примеров изменения других файлов конфигурации:
 

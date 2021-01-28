@@ -6,12 +6,12 @@ ms.author: harelbr
 ms.topic: conceptual
 ms.date: 01/11/2021
 ms.subservice: alerts
-ms.openlocfilehash: 0518d3a2e1b67b33b9cb6bceb9754df302710f70
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 6919040308dcd3a80c3c0b05ec729744099b6d8f
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071040"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944491"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -53,7 +53,7 @@ ms.locfileid: "98071040"
 
 10. При необходимости уточните условие, изменив **гранулярность статистической обработки** и **частоту вычисления**. 
 
-11. Нажмите кнопку **Готово**.
+11. Нажмите кнопку **Done**(Готово).
 
 12. При необходимости добавьте еще один критерий, если вы хотите отслеживать сложное правило генерации оповещений. Сейчас пользователи могут применять правила оповещения с одиночным условием динамического порогового значения.
 
@@ -91,7 +91,7 @@ ms.locfileid: "98071040"
 
 ## <a name="with-azure-cli"></a>С помощью Azure CLI
 
-В предыдущих разделах были описаны способы создания, просмотра и управления правилами оповещений метрик с помощью портал Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](../../cloud-shell/overview.md?view=azure-cli-latest). В этой статье мы будем использовать Cloud Shell.
+В предыдущих разделах были описаны способы создания, просмотра и управления правилами оповещений метрик с помощью портал Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](/cli/azure/get-started-with-azure-cli). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](../../cloud-shell/overview.md). В этой статье мы будем использовать Cloud Shell.
 
 1. Перейдите в портал Azure, щелкните **Cloud Shell**.
 

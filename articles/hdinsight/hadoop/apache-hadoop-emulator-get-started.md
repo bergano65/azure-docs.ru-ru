@@ -2,25 +2,22 @@
 title: Узнайте, как использовать песочницу Apache Hadoop, эмулятор — Azure HDInsight.
 description: 'Чтобы начать ознакомление с экосистемой Hadoop, настройте на виртуальной машине Azure песочницу Hadoop от Hortonworks. '
 keywords: эмулятор hadoop,песочница hadoop
-ms.reviewer: jasonh
-author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: how-to
 ms.date: 05/29/2019
-ms.author: hrasheed
-ms.openlocfilehash: 4f19797fa1c79261dc3459e2b924ed45d0b7e36e
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: eb286adfd7267a78fcf80bcf5ad34f8f1cc9f493
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547968"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946613"
 ---
 # <a name="get-started-with-an-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Начало работы с Apache Hadoop песочницой, эмулятором на виртуальной машине
 
 Узнайте, как настроить на виртуальной машине песочницу Apache Hadoop от Hortonworks, чтобы ознакомиться с экосистемой Hadoop. Песочница представляет собой локальную среду разработки для ознакомления с Hadoop, распределенной файловой системой Hadoop (HDFS) и отправкой заданий. Если вы знакомы с Hadoop, вы можете начать использовать Hadoop в Azure, создав кластер HDInsight. Дополнительные сведения см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [VirtualBox Oracle](https://www.virtualbox.org/). Скачайте и установите приложение [отсюда](https://www.virtualbox.org/wiki/Downloads).
 
@@ -34,7 +31,7 @@ ms.locfileid: "92547968"
 
 Инструкции по настройке "песочницы" см. в статье [развертывание и установка песочницы](https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/1/).
 
-Чтобы скачать более раннюю версию песочницы HDP, ознакомьтесь со ссылками в **более ранних версиях** .
+Чтобы скачать более раннюю версию песочницы HDP, ознакомьтесь со ссылками в **более ранних версиях**.
 
 ## <a name="start-the-virtual-machine"></a>Запуск виртуальной машины
 

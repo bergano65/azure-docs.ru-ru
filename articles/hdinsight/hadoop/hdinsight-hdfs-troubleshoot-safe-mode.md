@@ -3,16 +3,13 @@ title: Локальная служба HDFS зависает в защищенн
 description: Устранение неполадок локального Apache HDFS в защищенном режиме в кластере Apache в Azure HDInsight
 ms.service: hdinsight
 ms.topic: troubleshooting
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.date: 08/14/2019
-ms.openlocfilehash: 0f4a7702c4f85c162b0485e06cabc99b963ff210
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d34bf8d82aee14f5ba835f68a061555d24ee2621
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014709"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944441"
 ---
 # <a name="scenario-local-hdfs-stuck-in-safe-mode-on-azure-hdinsight-cluster"></a>Сценарий: локальная служба HDFS зависает в защищенном режиме в кластере Azure HDInsight
 
@@ -32,11 +29,11 @@ It was turned on manually. Use "hdfs dfsadmin -safemode leave" to turn safe mode
 mkdir: Cannot create directory /temp. Name node is in safe mode.
 ```
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Кластер HDInsight был уменьшен до нескольких узлов ниже, или количество узлов близко к фактору репликации HDFS.
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 1. Сообщите о состоянии HDFS в кластере HDInsight с помощью следующей команды:
 
@@ -56,6 +53,6 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
     hdfs dfsadmin -D "fs.default.name=hdfs://mycluster/" -safemode leave
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [troubleshooting next steps](../../../includes/hdinsight-troubleshooting-next-steps.md)]

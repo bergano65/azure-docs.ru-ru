@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: bwren
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: e6ccba27fb599cb26da86e94d3500f4f806ecb76
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14f37d0779f245301b3750329658a580dc3f9e42
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91328876"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946200"
 ---
 # <a name="install-and-configure-windows-azure-diagnostics-extension-wad"></a>Установка и настройка расширения "Диагностика Microsoft Azure" (WAD)
 [Расширение "Диагностика Microsoft Azure"](diagnostics-extension-overview.md) — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок виртуальных машин Azure и других вычислительных ресурсов. В этой статье приводятся сведения об установке и настройке расширения диагностики Windows, а также описание того, как данные хранятся в учетной записи хранения и Azure.
@@ -78,7 +78,7 @@ ms.locfileid: "91328876"
 Сведения о развертывании расширения диагностики с помощью шаблонов Azure Resource Manager см. в статье [Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../../virtual-machines/extensions/diagnostics-template.md). 
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
-Azure CLI можно использовать для развертывания расширения системы диагностики Azure на существующей виртуальной машине с помощью [az vm extension set](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-set), как в примере ниже. 
+Azure CLI можно использовать для развертывания расширения системы диагностики Azure на существующей виртуальной машине с помощью [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set), как в примере ниже. 
 
 ```azurecli
 az vm extension set \

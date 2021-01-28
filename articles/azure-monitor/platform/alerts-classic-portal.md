@@ -5,12 +5,12 @@ author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.openlocfilehash: 613620ddf4889efb7cf3df95150be97f79724a98
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4b0d3acda56c3f45128d1cc7cefcc4eb938281a0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013111"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943782"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -56,7 +56,7 @@ ms.locfileid: "96013111"
 
 ## <a name="with-azure-cli"></a>С помощью Azure CLI
 
-В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](../../cloud-shell/overview.md?view=azure-cli-latest).
+В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](/cli/azure/get-started-with-azure-cli). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](../../cloud-shell/overview.md).
 
 ### <a name="get-all-classic-metric-alert-rules-in-a-resource-group"></a>Получение всех классических правил генерации оповещений метрики в группе ресурсов
 
@@ -132,7 +132,7 @@ az monitor alert delete --name <alert name> --resource-group <group name>
 
 8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новую команду [Add-азметрикалертруле](/powershell/module/az.monitor/add-azmetricalertrule) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](./alerts-enable-template.md).
 - [Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure](./alerts-webhooks.md).

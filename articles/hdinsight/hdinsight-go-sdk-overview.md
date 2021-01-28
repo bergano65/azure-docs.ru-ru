@@ -1,19 +1,16 @@
 ---
 title: Пакет Azure HDInsight SDK для Go
 description: Справочные материалы по использованию пакета SDK Azure HDInsight для Go и Apache Hadoop кластеров
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seodec18, devx-track-azurecli
 ms.date: 01/03/2020
-ms.openlocfilehash: 6fdd7b9e5fda92bd75e54ea5b4aad6a3ba6ecbea
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: dc8528c40fe7e3b32e2f38152afc8abb0ae18ba5
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748748"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945991"
 ---
 # <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
 
@@ -34,7 +31,7 @@ ms.locfileid: "92748748"
 
 Из расположения GOPATH запустите следующий файл: `go get github.com/Azure/azure-sdk-for-go/tree/master/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight`
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient` , который содержит множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
 
@@ -142,7 +139,7 @@ func main() {
 
 Кластер можно создать, вызвав `client.Create()`. 
 
-#### <a name="example"></a>Например, .
+#### <a name="example"></a>Пример
 
 В этом примере показано, как создать кластер [Apache Spark](https://spark.apache.org/) с двумя головными узлами и одним рабочим узлом.
 
@@ -261,7 +258,7 @@ client.Create(context.Background(), resourceGroupName, clusterName, parameters)
 client.Get(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 ```
 
-#### <a name="example"></a>Например, .
+#### <a name="example"></a>Пример
 
 Вы можете использовать `get` для подтверждения успешного создания кластера.
 
@@ -298,7 +295,7 @@ client.ListByResourceGroup("<Resource Group Name>")
 > [!NOTE]  
 > `List()` и `ListByResourceGroup()` возвращают структуры `ClusterListResultPage`. Чтобы перейти на следующую страницу, можно вызвать `Next()`. Команду можно повторять, пока для экземпляра `ClusterListResultPage.NotDone()` не будет возвращено значение `false`, как показано ниже.
 
-#### <a name="example"></a>Например, .
+#### <a name="example"></a>Пример
 
 В следующем примере выводятся свойства всех кластеров в пределах текущей подписки:
 
@@ -334,7 +331,7 @@ client.Delete(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 client.Update(context.Background(), "<Resource Group Name>", "<Cluster Name>", hdi.ClusterPatchParameters{<map[string]*string} of Tags>)
 ```
 
-#### <a name="example"></a>Например, .
+#### <a name="example"></a>Пример
 
 ```golang
 client.Update(context.Background(), "SDKTestRG", "SDKTest", hdi.ClusterPatchParameters{map[string]*string{"tag1Name" : to.StringPtr("tag1Value"), "tag2Name" : to.StringPtr("tag2Value")}})
@@ -433,7 +430,7 @@ scriptActionsClient.Delete(context.Background(), "<Resource Group Name>", "<Clus
 scriptActionsClient.ListByCluster(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 ```
 
-#### <a name="example"></a>Например, .
+#### <a name="example"></a>Пример
 
 ```golang
 page, err := scriptActionsClient.ListByCluster(context.Background(), resourceGroupName, clusterName)
@@ -469,7 +466,7 @@ scriptExecutionHistoryClient.Authorizer, _ = credentials.Authorizer()
 scriptExecutionHistoryClient.ListByCluster(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 ```
 
-#### <a name="example"></a>Например, .
+#### <a name="example"></a>Пример
 
 В этом примере выводятся сведения обо всех выполнявшихся скриптах.
 

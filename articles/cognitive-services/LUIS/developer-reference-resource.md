@@ -6,12 +6,12 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 01/12/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: db9a915749799ee366d645994bd0d18c53530f40
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 08a1965aadf8f50625e54d7c5e3b3f6a44c0bbd4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98730910"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946181"
 ---
 # <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Распознавание речи (LUIS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "98730910"
 
 * [Azure CLI](/cli/azure/cognitiveservices#az-cognitiveservices-list)
 
-* [Azure RM PowerShell](/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services)
+* [Azure RM PowerShell](/powershell/module/azurerm.cognitiveservices/#cognitive_services)
 
 
 ## <a name="language-understanding-authoring-and-prediction-requests"></a>Распознавание речи создания и прогнозирования запросов
@@ -47,7 +47,7 @@ ms.locfileid: "98730910"
 
 Интерфейсы API для конечных точек создания и прогнозирования доступны в API-интерфейсах:
 
-|Type|Версия|
+|Тип|Версия|
 |--|--|
 |Разработка|[Шаблон](https://go.microsoft.com/fwlink/?linkid=2092087)<br>[Предварительный просмотр v3](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview)|
 |Прогнозирование|[Шаблон](https://go.microsoft.com/fwlink/?linkid=2092356)<br>[Том](https://westcentralus.dev.cognitive.microsoft.com/docs/services/luis-endpoint-api-v3-0/)|
@@ -69,7 +69,7 @@ ms.locfileid: "98730910"
 
 В следующей таблице описаны параметры, обозначенные фигурными скобками `{}` в предыдущей таблице.
 
-|Параметр|Назначение|
+|Параметр|Цель|
 |--|--|
 |`your-resource-name`|Имя ресурса Azure|
 |`q` или `query`|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
@@ -88,10 +88,10 @@ ms.locfileid: "98730910"
 
 |Язык |Справочная документация|Пакет|Краткие руководства|
 |--|--|--|--|
-|C#|[Работы](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирование](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Работы](./client-libraries-rest-api.md?pivots=rest-api)<br>[Прогнозирование запросов](./client-libraries-rest-api.md?pivots=rest-api)|
+|C#|[Работы](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring)</br>[Прогнозирование](/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Работы](./client-libraries-rest-api.md?pivots=rest-api)<br>[Прогнозирование запросов](./client-libraries-rest-api.md?pivots=rest-api)|
 |Go|[Создание и прогнозирование](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[Пакет SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)||
-|Java|[Создание и прогнозирование](/java/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-java-stable)|[Создание Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Прогноз Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
-|JavaScript|[Работы](/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest)<br>[Прогнозирование](/javascript/api/@azure/cognitiveservices-luis-runtime/?view=azure-node-latest)|[Создание NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Работы](./client-libraries-rest-api.md?pivots=rest-api)<br>[Прогнозирование](./client-libraries-rest-api.md?pivots=rest-api)|
+|Java|[Создание и прогнозирование](/java/api/overview/azure/cognitiveservices/client/languageunderstanding)|[Создание Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-authoring)<br>[Прогноз Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-luis-runtime)|
+|JavaScript|[Работы](/javascript/api/@azure/cognitiveservices-luis-authoring/)<br>[Прогнозирование](/javascript/api/@azure/cognitiveservices-luis-runtime/)|[Создание NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)<br>[Прогноз NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime)|[Работы](./client-libraries-rest-api.md?pivots=rest-api)<br>[Прогнозирование](./client-libraries-rest-api.md?pivots=rest-api)|
 |Python|[Создание и прогнозирование](./client-libraries-rest-api.md?pivots=rest-api)|[PIP](https://pypi.org/project/azure-cognitiveservices-language-luis/)|[Работы](./client-libraries-rest-api.md?pivots=rest-api)<br>[Прогнозирование](./client-libraries-rest-api.md?pivots=rest-api)|
 
 
@@ -123,7 +123,7 @@ ms.locfileid: "98730910"
 * [Композитор Framework Composer](https://github.com/microsoft/BotFramework-Composer/blob/stable/README.md) — интегрированное средство разработки для разработчиков и групп могут, предназначенное для создания программы-роботы и общения с помощью платформы Microsoft Bot Framework
 * [Примеры для платформы Bot](https://github.com/microsoft/botbuilder-samples) в #C, JavaScript, TypeScript и Python
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об общих [кодах ошибок HTTP](luis-reference-response-codes.md)
 * [Справочная документация](../../index.yml) по всем API и пакетам SDK

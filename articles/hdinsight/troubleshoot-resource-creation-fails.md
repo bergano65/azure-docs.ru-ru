@@ -1,19 +1,16 @@
 ---
 title: Устранение сбоев при создании ресурсов в Azure HDInsight
 description: В этой статье приведены общие ошибки и методы устранения проблем с емкостью.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: seoapr2020
 ms.date: 04/22/2020
-ms.openlocfilehash: 2e9f6898dba559f557f49cc0ee9ff39644da243f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bad934e02184c46c19dcda91e18e7c7ce2f1c884
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000697"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944647"
 ---
 # <a name="troubleshoot-resource-creation-failures-in-azure-hdinsight"></a>Устранение сбоев при создании ресурсов в Azure HDInsight
 
@@ -45,6 +42,6 @@ ms.locfileid: "96000697"
 
 См. сведения о [создании запроса в службу поддержки для увеличения количества ядер](hdinsight-capacity-planning.md#quotas).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [troubleshooting next steps](../../includes/hdinsight-troubleshooting-next-steps.md)]

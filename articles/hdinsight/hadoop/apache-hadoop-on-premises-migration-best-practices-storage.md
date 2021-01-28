@@ -1,19 +1,17 @@
 ---
 title: 'Хранилище: Миграция локальных Apache Hadoop в Azure HDInsight'
 description: Ознакомьтесь с рекомендациями по использованию хранилища в рамках миграции локальных кластеров Hadoop в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
 ms.reviewer: ashishth
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/10/2019
-ms.openlocfilehash: 0594774533f306421f6f3d1260d074bd92b9c919
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 8d87d2164a5131b71a2000243c37553610497750
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92544874"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944851"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight"></a>Миграция локальных Apache Hadoop кластеров в Azure HDInsight
 
@@ -79,7 +77,7 @@ keytool -list -v -keystore /path/to/jre/lib/security/cacerts
 - [Наблюдение, диагностика и устранение неисправностей хранилища Microsoft Azure](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md)
 - [Мониторинг учетной записи хранения на портале Azure](../../storage/common/storage-monitor-storage-account.md)
 
-### <a name="azure-data-lake-storage-gen1"></a>Azure Data Lake Storage 1-го поколения
+### <a name="azure-data-lake-storage-gen1"></a>Хранилище Azure Data Lake Storage 1-го поколения
 
 Azure Data Lake Storage 1-го поколения реализует модель управления доступом в стиле HDFS и POSIX. Она обеспечивает интеграцию первого класса с Azure AD для детального контроля доступа. Нет ограничений на размер данных, которые можно хранить, или на способность запускать аналитику с массовым параллелизмом.
 
@@ -98,15 +96,15 @@ Azure Data Lake Storage Gen 2 построена на основе [хранил
 
 Раньше облачная аналитика влияла на производительность, возможности управления и безопасность. Далее приведены основные функции ADLS 2-го поколения.
 
-- **Доступ, совместимый с Hadoop** . Azure Data Lake Storage 2-го поколения позволяет управлять данными и получать к ним доступ так же, как и с [Распределенная ФАЙЛОВАЯ система Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Новый [драйвер абфс](../../storage/blobs/data-lake-storage-abfs-driver.md) доступен во всех Apache Hadoop средах, включенных в [Azure HDInsight](../index.yml). Этот драйвер позволяет получать доступ к данным в ADLS 2-го поколения.
+- **Доступ, совместимый с Hadoop**. Azure Data Lake Storage 2-го поколения позволяет управлять данными и получать к ним доступ так же, как и с [Распределенная ФАЙЛОВАЯ система Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Новый [драйвер абфс](../../storage/blobs/data-lake-storage-abfs-driver.md) доступен во всех Apache Hadoop средах, включенных в [Azure HDInsight](../index.yml). Этот драйвер позволяет получать доступ к данным в ADLS 2-го поколения.
 
-- **Надмножество разрешений POSIX** . Модель безопасности Data Lake 2-го поколения полностью поддерживает разрешения ACL и POSIX, а также некоторую дополнительную детализацию, относящуюся к Data Lake Storage 2-го поколения. Параметры могут быть настроены через средства администрирования или с помощью платформ, таких как Hive и Spark.
+- **Надмножество разрешений POSIX**. Модель безопасности Data Lake 2-го поколения полностью поддерживает разрешения ACL и POSIX, а также некоторую дополнительную детализацию, относящуюся к Data Lake Storage 2-го поколения. Параметры могут быть настроены через средства администрирования или с помощью платформ, таких как Hive и Spark.
 
 - **Экономичность.** Data Lake Storage Gen2 отличается низкой стоимостью приобретения емкости хранилища и выполнения транзакций. По мере перехода данных через весь жизненный цикл тарифные тарифы изменяются для снижения затрат благодаря встроенным функциям, таким как [жизненный цикл хранилища BLOB-объектов Azure](../../storage/blobs/storage-lifecycle-management-concepts.md).
 
 - **Поддержка средств, платформ и приложений хранилища BLOB-объектов.** Хранилище Data Lake Storage Gen2 поддерживает большое количество средств, платформ и приложений хранилища BLOB-объектов.
 
-- **Оптимизированный драйвер** . драйвер файловой системы BLOB-объектов Azure (абфс) [оптимизирован специально](../../storage/blobs/data-lake-storage-abfs-driver.md) для анализа больших данных. Соответствующие интерфейсы REST API подключены через конечную точку dfs — dfs.core.windows.net.
+- **Оптимизированный драйвер**. драйвер файловой системы BLOB-объектов Azure (абфс) [оптимизирован специально](../../storage/blobs/data-lake-storage-abfs-driver.md) для анализа больших данных. Соответствующие интерфейсы REST API подключены через конечную точку dfs — dfs.core.windows.net.
 
 Для доступа к данным, хранящимся в ADLS 2-го поколения, может использоваться один из следующих форматов:
 - `abfs:///`: доступ к хранилищу Data Lake Storage, используемому по умолчанию для кластера.
@@ -173,9 +171,9 @@ HDInsight по умолчанию имеет полный доступ к дан
 
 6. В полях **Key** (Ключ) и **Value** (Значение) укажите следующие значения.
 
-    **Ключ** : `fs.azure.sas.YOURCONTAINER.YOURACCOUNT.blob.core.windows.net` **значение** : ключ SAS, возвращенный приложением Python из шага 4 выше.
+    **Ключ**: `fs.azure.sas.YOURCONTAINER.YOURACCOUNT.blob.core.windows.net` **значение**: ключ SAS, возвращенный приложением Python из шага 4 выше.
 
-7. Нажмите кнопку **Add** (Добавить), чтобы сохранить этот ключ и значение, а затем кнопку **Save** (Сохранить), чтобы сохранить изменения в конфигурации. При появлении запроса добавьте описание внесенного изменения (например, "Добавление доступа к хранилищу SAS") и нажмите кнопку **Сохранить** .
+7. Нажмите кнопку **Add** (Добавить), чтобы сохранить этот ключ и значение, а затем кнопку **Save** (Сохранить), чтобы сохранить изменения в конфигурации. При появлении запроса добавьте описание внесенного изменения (например, "Добавление доступа к хранилищу SAS") и нажмите кнопку **Сохранить**.
 
 8. В пользовательском веб-интерфейсе Ambari выберите HDFS в списке слева, а затем щелкните **Restart All Affected** (Перезапустить все затронутые) в раскрывающемся списке Service Actions (Действия службы) справа. Когда появится запрос, выберите **Conform Restart All** (Подтвердить перезапуск всех).
 

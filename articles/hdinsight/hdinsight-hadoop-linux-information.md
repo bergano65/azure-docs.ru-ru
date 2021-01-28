@@ -1,19 +1,16 @@
 ---
 title: Советы по использованию Hadoop в HDInsight под управлением Linux в Azure
 description: Советы по использованию кластеров HDInsight (Hadoop) на базе Linux в привычной среде Linux, выполняемой в облаке Azure.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,seoapr2020
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.openlocfilehash: 0f0073c72c28395d89cec74a489cbc36a8f3ffe7
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2d2619c7bd7bc09eeab3845599758db7134b4134
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546115"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945656"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -24,9 +21,9 @@ ms.locfileid: "92546115"
 При выполнении многих действий, описанных в этом документе, используются следующие служебные программы, которые может потребоваться установить в системе:
 
 * [cURL](https://curl.haxx.se/) — используется для взаимодействия с веб-службами.
-* **jq**  — обработчик командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
+* **jq** — обработчик командной строки JSON.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 * [Azure CLI](/cli/azure/install-azure-cli) используется для удаленного управления службами Azure.
-* **Клиент SSH** . Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="users"></a>Пользователи
 
@@ -92,8 +89,8 @@ curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTER
 
 Связанные с Hadoop файлы можно найти на узлах кластера в папке `/usr/hdp`. Этот каталог содержит следующие подкаталоги:
 
-* **2.6.5.3009-43** : именем каталога является версия платформы Hadoop, используемая HDInsight. Это число для вашего кластера может отличаться от указанного здесь.
-* **current** : этот каталог содержит ссылки на подкаталоги в каталоге **2.6.5.3009-43** . Он позволяет вам не запоминать номер версии.
+* **2.6.5.3009-43**: именем каталога является версия платформы Hadoop, используемая HDInsight. Это число для вашего кластера может отличаться от указанного здесь.
+* **current**: этот каталог содержит ссылки на подкаталоги в каталоге **2.6.5.3009-43**. Он позволяет вам не запоминать номер версии.
 
 Примеры данных и JAR-файлы можно найти в распределенной файловой системе Hadoop в папках `/example` и `/HdiSamples`.
 
@@ -183,13 +180,13 @@ curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTER
 
 1. На [портале Azure](https://portal.azure.com/)выберите свой кластер HDInsight.
 
-2. В разделе **Свойства** выберите **Учетные записи хранения** . Отобразится информация о хранилище для кластера.
+2. В разделе **Свойства** выберите **Учетные записи хранения**. Отобразится информация о хранилище для кластера.
 
 ### <a name="how-do-i-access-files-from-outside-hdinsight"></a>Доступ к файлам за пределами HDInsight
 
 Для доступа к данным из-за пределов кластера HDInsight есть несколько методов. Ниже приводятся ссылки на служебные программы и пакеты SDK, которые можно использовать для работы с данными.
 
-Если вы используете __хранилище BLOB-объектов Azure__ , ознакомьтесь со следующими ссылками, чтобы получить доступ к данным.
+Если вы используете __хранилище BLOB-объектов Azure__, ознакомьтесь со следующими ссылками, чтобы получить доступ к данным.
 
 * [Azure CLI.](/cli/azure/install-az-cli2) это набор команд интерфейса командной строки для работы с Azure. После установки используйте команду `az storage` для получения информации по использованию хранилища, а команду `az storage blob` — для получения информации о больших двоичных объектах.
 * [blobxfer.py](https://github.com/Azure/blobxfer): сценарий Python для работы с большими двоичными объектами в службе хранилища Azure.
@@ -203,7 +200,7 @@ curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTER
     * [.NET](https://github.com/Azure/azure-sdk-for-net)
     * [REST API службы хранилища](/rest/api/storageservices/Blob-Service-REST-API)
 
-Если вы используете __Azure Data Lake Storage 1-го поколения__ , ознакомьтесь со следующими ссылками, чтобы получить доступ к данным.
+Если вы используете __Azure Data Lake Storage 1-го поколения__, ознакомьтесь со следующими ссылками, чтобы получить доступ к данным.
 
 * [веб-браузер](../data-lake-store/data-lake-store-get-started-portal.md);
 * [PowerShell](../data-lake-store/data-lake-store-get-started-powershell.md)

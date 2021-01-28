@@ -4,12 +4,12 @@ description: В этой статье описывается, как настр�
 ms.topic: conceptual
 ms.date: 01/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: d5b978e7138e10ed88f5748b84ff62ddd22bebec
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 3c176b2db659577d585ac077eebe0484203eb9cf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050788"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943861"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -19,7 +19,7 @@ ms.locfileid: "98050788"
 
 - AKS без включенной авторизации Kubernetes RBAC;
 - AKS со включенной авторизацией Kubernetes RBAC;
-    - AKS, настроенный с привязкой к роли кластера **[клустермониторингусер](/rest/api/aks/managedclusters/listclustermonitoringusercredentials?view=azurermps-5.2.0&preserve-view=true)**
+    - AKS, настроенный с привязкой к роли кластера **[клустермониторингусер](/rest/api/aks/managedclusters/listclustermonitoringusercredentials)**
 - AKS с поддержкой единого входа Azure Active Directory (AD) на основе SAML
 
 Для этих инструкций требуется административный доступ к кластеру Kubernetes, а при настройке на использование Azure Active Directory (AD) для проверки подлинности пользователей — административный доступ к Azure AD.

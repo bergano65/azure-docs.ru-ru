@@ -1,18 +1,15 @@
 ---
 title: Перенос Apache Storm Azure HDInsight 3,6 в HDInsight 4,0 Apache Spark
 description: Различия и последовательность миграции для миграции Apache Storm рабочих нагрузок в потоковую передачу Spark или структурированную потоковую передачу Spark.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/16/2019
-ms.openlocfilehash: e1262a4699bc42cb5b9a4398be2254854c5d5ff2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa57c01558cfdcf069b17fad9e86f7640553dcfd
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86081202"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944787"
 ---
 # <a name="migrate-azure-hdinsight-36-apache-storm-to-hdinsight-40-apache-spark"></a>Перенос Apache Storm Azure HDInsight 3,6 в HDInsight 4,0 Apache Spark
 
@@ -39,7 +36,7 @@ Apache Storm может обеспечить различные уровни г�
 |---|---|---|---|
 |**Гарантия обработки событий**|По крайней мере один раз <br> Ровно один раз (Trident) |[Только один раз](https://spark.apache.org/docs/latest/streaming-programming-guide.html)|[Только один раз](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)|
 |**Обработка модели**|В режиме реального времени <br> Micro Batch (Trident) |Micro Batch |Micro Batch |
-|**Поддержка времени событий**|[Да](https://storm.apache.org/releases/2.0.0/Windowing.html)|нет|[Да](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)|
+|**Поддержка времени событий**|[Да](https://storm.apache.org/releases/2.0.0/Windowing.html)|Нет|[Да](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)|
 |**Языки**|Java и т. д.|Scala, Java, Python|Python, R, Scala, Java, SQL|
 
 ### <a name="spark-streaming-vs-spark-structured-streaming"></a>Потоковая передача Spark и структурированной потоковой передачи Spark

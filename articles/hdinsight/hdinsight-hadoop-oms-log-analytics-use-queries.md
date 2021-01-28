@@ -1,19 +1,16 @@
 ---
 title: Запрос журналов Azure Monitor для мониторинга кластеров Azure HDInsight
 description: Узнайте, как выполнять запросы к журналам Azure Monitor для мониторинга заданий, выполняемых в кластере HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
-ms.openlocfilehash: c2ddcd8ea3524b4afdfa7f70d21f0cba96975f72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9213f36ec33939c3df3b56d21822aa3b6a17c03
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085367"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945607"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Мониторинг кластеров HDInsight с помощью запросов к журналам Azure Monitor
 
@@ -34,7 +31,7 @@ ms.locfileid: "86085367"
 
 1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
 1. В разделе **Общие** щелкните **Журналы**.
-1. Введите следующий запрос в поле поиска, чтобы найти все метрики всех доступных метрик для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**. Просмотрите результаты операции.
+1. Введите следующий запрос в поле поиска, чтобы найти все метрики всех доступных метрик для всех кластеров HDInsight, настроенных для использования журналов Azure Monitor, а затем выберите **выполнить**. Просмотрите результаты.
 
     ```kusto
     search *
@@ -44,7 +41,7 @@ ms.locfileid: "86085367"
 
 1. В меню слева выберите вкладку **Фильтр** .
 
-1. В разделе **тип**выберите **пульс**. Затем выберите **применить & выполнить**.
+1. В разделе **тип** выберите **пульс**. Затем выберите **применить & выполнить**.
 
     ![Поиск конкретных метрик в log Analytics](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-metrics.png "Поиск конкретных метрик")
 
@@ -55,7 +52,7 @@ ms.locfileid: "86085367"
     | where Type == "Heartbeat"
     ```
 
-1. Более глубокие знания можно получить с помощью параметров, доступных в меню слева. Пример:
+1. Более глубокие знания можно получить с помощью параметров, доступных в меню слева. Пример.
 
     - Чтобы просмотреть журналы из определенного узла, выполните следующие действия.
 
@@ -115,7 +112,7 @@ search in (metrics_resourcemanager_queue_root_default_CL) *
 
 1. Откройте рабочую область Log Analytics на портале Azure.
 
-1. В меню слева в разделе **мониторинг**выберите **оповещения**.
+1. В меню слева в разделе **мониторинг** выберите **оповещения**.
 
 1. В верхней части выберите **Управление правилами оповещений**.
 
@@ -127,7 +124,7 @@ search in (metrics_resourcemanager_queue_root_default_CL) *
 
 Дополнительные сведения см. в статье [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Начало работы с запросами к журналам Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 * [Создание пользовательских представлений с помощью конструктора представлений в Azure Monitor](../azure-monitor/platform/view-designer.md)

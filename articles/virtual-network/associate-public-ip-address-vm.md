@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
-ms.openlocfilehash: 76f92b5da2331748fbbbfc68f1e456fd50dd71ee
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 6ea16da3844b8098d87d65e1016f92c69ae34067
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223029"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945149"
 ---
 # <a name="associate-a-public-ip-address-to-a-virtual-machine"></a>Связывание общедоступного IP-адреса с виртуальной машиной
 
@@ -65,7 +65,7 @@ ms.locfileid: "98223029"
 Установите [Azure CLI](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json) или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующих командах интерфейса командной строки. Кнопка **Попробовать** вызывает Cloud Shell, с помощью которого можно войти в учетную запись Azure.
 
 1. При локальном использовании интерфейса командной строки в Bash войдите в Azure с помощью `az login`.
-2. Общедоступный IP-адрес связан с конфигурацией IP сетевого интерфейса, подключенного к виртуальной машине. Используйте команду [AZ Network NIC-IP-config Update](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-update) , чтобы связать общедоступный IP-адрес с IP-конфигурацией. В следующем примере существующий общедоступный IP-адрес, именуемый *myVMPublicIP* , связывается с IP-конфигурацией с именем *ипконфигмивм* существующего сетевого интерфейса с именем *myVMVMNic* , который существует в группе ресурсов с именем *myResourceGroup*.
+2. Общедоступный IP-адрес связан с конфигурацией IP сетевого интерфейса, подключенного к виртуальной машине. Используйте команду [AZ Network NIC-IP-config Update](/cli/azure/network/nic/ip-config#az-network-nic-ip-config-update) , чтобы связать общедоступный IP-адрес с IP-конфигурацией. В следующем примере существующий общедоступный IP-адрес, именуемый *myVMPublicIP* , связывается с IP-конфигурацией с именем *ипконфигмивм* существующего сетевого интерфейса с именем *myVMVMNic* , который существует в группе ресурсов с именем *myResourceGroup*.
   
    ```azurecli-interactive
    az network nic ip-config update \
@@ -75,7 +75,7 @@ ms.locfileid: "98223029"
      --public-ip-address myVMPublicIP
    ```
 
-   - Если у вас нет общедоступного IP-адреса, создайте его с помощью команды [AZ Network public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) . Например, следующая команда создает общедоступный IP-адрес с именем *myVMPublicIP* в группе ресурсов с именем *myResourceGroup*.
+   - Если у вас нет общедоступного IP-адреса, создайте его с помощью команды [AZ Network public-IP Create](/cli/azure/network/public-ip#az-network-public-ip-create) . Например, следующая команда создает общедоступный IP-адрес с именем *myVMPublicIP* в группе ресурсов с именем *myResourceGroup*.
   
      ```azurecli-interactive
      az network public-ip create --name myVMPublicIP --resource-group myResourceGroup
@@ -84,7 +84,7 @@ ms.locfileid: "98223029"
      > [!NOTE]
      > Предыдущая команда создает общедоступный IP-адрес со значениями по умолчанию для нескольких параметров, которые можно настроить. Дополнительные сведения о параметрах общедоступного IP-адреса см. в разделе [Создание общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address). Адрес назначается из пула общедоступных IP-адресов, используемых для каждого региона Azure. Список пулов адресов, используемых в каждом регионе, см. в разделе [Microsoft Azure IP ranges Center](https://www.microsoft.com/download/details.aspx?id=41653).
 
-   - Если вы не знаете имя сетевого интерфейса, подключенного к виртуальной машине, воспользуйтесь командой [az vm nic list](/cli/azure/vm/nic?view=azure-cli-latest#az-vm-nic-list). Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине *myVM* в группе ресурсов *myResourceGroup*:
+   - Если вы не знаете имя сетевого интерфейса, подключенного к виртуальной машине, воспользуйтесь командой [az vm nic list](/cli/azure/vm/nic#az-vm-nic-list). Например, следующая команда выводит список имен сетевых интерфейсов, подключенных к виртуальной машине *myVM* в группе ресурсов *myResourceGroup*:
 
      ```azurecli-interactive
      az vm nic list --vm-name myVM --resource-group myResourceGroup
@@ -98,13 +98,13 @@ ms.locfileid: "98223029"
 
      В предыдущем примере *myVMVMNic* — это имя сетевого интерфейса.
 
-   - Если вы не знаете имя конфигурации IP для сетевого интерфейса, используйте команду [az network nic ip-config list](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-list). Например, следующая команда выводит список имен конфигурации IP для сетевого интерфейса, подключенного к виртуальной машине *myVMVMNic* в группе ресурсов *myResourceGroup*:
+   - Если вы не знаете имя конфигурации IP для сетевого интерфейса, используйте команду [az network nic ip-config list](/cli/azure/network/nic/ip-config#az-network-nic-ip-config-list). Например, следующая команда выводит список имен конфигурации IP для сетевого интерфейса, подключенного к виртуальной машине *myVMVMNic* в группе ресурсов *myResourceGroup*:
 
      ```azurecli-interactive
      az network nic ip-config list --nic-name myVMVMNic --resource-group myResourceGroup --out table
      ```
 
-3. Просмотрите общедоступный IP-адрес, назначенный конфигурации IP-адресов, с помощью команды [AZ VM List-IP-](/cli/azure/vm?view=azure-cli-latest#az-vm-list-ip-addresses) addresss. В следующем примере показаны IP-адреса, назначенные существующей виртуальной машине с именем *myVM* в группе ресурсов с именем *myResourceGroup*.
+3. Просмотрите общедоступный IP-адрес, назначенный конфигурации IP-адресов, с помощью команды [AZ VM List-IP-](/cli/azure/vm#az-vm-list-ip-addresses) addresss. В следующем примере показаны IP-адреса, назначенные существующей виртуальной машине с именем *myVM* в группе ресурсов с именем *myResourceGroup*.
 
    ```azurecli-interactive
    az vm list-ip-addresses --name myVM --resource-group myResourceGroup --out table

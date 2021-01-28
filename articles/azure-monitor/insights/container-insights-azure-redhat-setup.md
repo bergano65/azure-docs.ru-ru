@@ -3,12 +3,12 @@ title: Настройка Azure Red Hat OpenShift v3. x с Azure Monitor для 
 description: В этой статье описывается настройка мониторинга кластера Kubernetes с Azure Monitor, размещенных в Azure Red Hat OpenShift версии 3 и выше.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 5141ef3a96d39f16a2a9f005dd580b952046e7bf
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: f21a338a06d4a0947e2623854d828c720fb2d4bb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695676"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944539"
 ---
 # <a name="configure-azure-red-hat-openshift-v3-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v3 с Azure Monitor для контейнеров
 
@@ -30,7 +30,7 @@ Azure Monitor для контейнеров предоставляет широ�
 Azure Monitor для контейнеров можно включить для новых или нескольких существующих развертываний Azure Red Hat OpenShift, используя следующие поддерживаемые методы:
 
 - Для существующего кластера из портал Azure или с помощью шаблона Azure Resource Manager.
-- Для нового кластера с помощью шаблона Azure Resource Manager или при создании нового кластера с помощью [Azure CLI](/cli/azure/openshift?view=azure-cli-latest#az-openshift-create).
+- Для нового кластера с помощью шаблона Azure Resource Manager или при создании нового кластера с помощью [Azure CLI](/cli/azure/openshift#az-openshift-create).
 
 ## <a name="supported-and-unsupported-features"></a>Поддерживаемые и неподдерживаемые функции
 

@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.subservice: alerts
-ms.openlocfilehash: 9df5d702019063ffba6d79cc63370cd25a7242fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60a721af9acf980e88ad60504e75d2488c8a4d81
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358791"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944484"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Prepare your logic apps and runbooks for migration of classic alert rules (Подготовка приложений логики и модулей runbook для миграции классических правил генерации оповещений)
 
@@ -30,7 +30,7 @@ ms.locfileid: "91358791"
 | Тип скрипта развертывания | Классические оповещения | Новые оповещения метрик |
 | ---------------------- | -------------- | ----------------- |
 |REST API     | [microsoft.insights/alertrules](/rest/api/monitor/alertrules)         | [microsoft.insights/metricalerts](/rest/api/monitor/metricalerts)       |
-|Azure CLI     | [az monitor alert](/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
+|Azure CLI     | [az monitor alert](/cli/azure/monitor/alert)        | [предупреждение о метриках монитора AZ](/cli/azure/monitor/metrics/alert)        |
 |PowerShell      | [Ссылки](/powershell/module/az.monitor/add-azmetricalertrule)       |  [Ссылки](/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Шаблон Azure Resource Manager | [Для классических оповещений](./alerts-enable-template.md)|[Для новых оповещений метрик](./alerts-metric-create-templates.md)|
 
@@ -53,7 +53,7 @@ ms.locfileid: "91358791"
 | Статистическая обработка времени (вычисление метрики в окне оценки)| **context. Condition. timeAggregation** | **context. Condition. timeAggregation** |
 | Период оценки | **context. Condition. windowSize** | **Data. Context. Condition. windowSize** |
 | Оператор (как агрегированное значение метрики сравнивается с пороговым значением) | **context. Condition. оператор** | **Data. Context. Condition. оператор** |
-| Порог | **context. Condition. threshold** | **Data. Context. Condition. allOf [0]. пороговое значение** |
+| Пороговое значение | **context. Condition. threshold** | **Data. Context. Condition. allOf [0]. пороговое значение** |
 | Значение метрики | **context. Condition. Метриквалуе** | **Data. Context. Condition. allOf [0]. Метриквалуе** |
 | Идентификатор подписки | **context. subscriptionId** | **Data. Context. subscriptionId** |
 | Группа ресурсов затронутого ресурса | **context. resourceGroup** | **Data. Context. resourceGroup** |
@@ -161,7 +161,7 @@ else {
 
 Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

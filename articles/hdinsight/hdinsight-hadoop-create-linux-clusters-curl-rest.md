@@ -1,19 +1,16 @@
 ---
 title: Создание кластеров Apache Hadoop с помощью REST API Azure в Azure
 description: Узнайте, как создавать кластеры HDInsight, отправив шаблоны Azure Resource Manager в Azure REST API.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 12/10/2019
-ms.openlocfilehash: 3ce104e9340c3e93d64b68dcab6f5bd6d2f62493
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fa5675104d9614e1bd917585ea537c92dddd88cc
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020639"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945786"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -345,7 +342,7 @@ curl -X "GET" "https://management.azure.com/subscriptions/$SUBSCRIPTIONID/resour
 
 Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](./hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы успешно создали кластер HDInsight, используйте следующую информацию, чтобы узнать, как работать с кластером.
 

@@ -1,19 +1,16 @@
 ---
 title: Использование туннелирования SSH для доступа к Azure HDInsight
 description: Узнайте, как безопасно просматривать веб-ресурсы, размещенные на узлах HDInsight под управлением Linux, с помощью туннеля SSH.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/14/2020
-ms.openlocfilehash: 09fef350a0ff8cc8c2481acd7b8f74cee15d1b9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5bbc770fa6ae5ac69b2aa939f9d2c70bb01f5403
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86075558"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945291"
 ---
 # <a name="use-ssh-tunneling-to-access-apache-ambari-web-ui-jobhistory-namenode-apache-oozie-and-other-uis"></a>Использование туннелирования SSH для доступа к веб-интерфейсу Apache Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским интерфейсам
 
@@ -62,7 +59,7 @@ ms.locfileid: "86075558"
 ssh -C2qTnNf -D 9876 sshuser@CLUSTERNAME-ssh.azurehdinsight.net
 ```
 
-Эта команда создает подключение, через которое направляется трафик, поступающий на локальный порт 9876, в кластер по протоколу SSH. Доступны следующие параметры.
+Эта команда создает подключение, через которое направляется трафик, поступающий на локальный порт 9876, в кластер по протоколу SSH. Допустимые значения:
 
 |Параметр |Описание |
 |---|---|
@@ -72,7 +69,7 @@ ssh -C2qTnNf -D 9876 sshuser@CLUSTERNAME-ssh.azurehdinsight.net
 |q|Тихий режим.|
 |T|Отключите выделение псевдо-TTY, так как вы просто пересылаете порт.|
 |n|Запрет на чтение STDIN, так как выполняется только пересылка порта.|
-|N|Не выполняйте удаленную команду, так как выполняется только пересылка порта.|
+|Нет|Не выполняйте удаленную команду, так как выполняется только пересылка порта.|
 |f|Запустите в фоновом режиме.|
 
 После завершения команды трафик, отправленный на порт 9876 локального компьютера, будет направляться на головной узел кластера.

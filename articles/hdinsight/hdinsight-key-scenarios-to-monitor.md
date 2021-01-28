@@ -1,19 +1,16 @@
 ---
 title: Мониторинг производительности кластера в Azure HDInsight
 description: Как отслеживать работоспособность и производительность кластеров Apache Hadoop в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/09/2020
-ms.openlocfilehash: 1da86e36cf20dc15152aea74be6c43a4cb43d3b4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f910054c803093eb62db494a596219c50791d136
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014250"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945350"
 ---
 # <a name="monitor-cluster-performance-in-azure-hdinsight"></a>Мониторинг производительности кластера в Azure HDInsight
 
@@ -122,7 +119,7 @@ YARN позволяет выделять ресурсы для этих очер
 > [!NOTE]  
 > Если у вас есть большие файлы, которые вы хотите защитить, но в которых возникли проблемы с нехваткой места на диске, необходимо увеличить масштаб кластера HDInsight и перезапустить службы. После выполнения этой процедуры и ожидания в течение нескольких минут вы заметите, что хранилище будет освобождено и что восстанавливается обычная производительность узла.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите по следующим ссылкам, чтобы получить дополнительные сведения об устранении неполадок и мониторинге кластеров:
 

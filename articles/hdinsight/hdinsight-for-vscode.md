@@ -1,19 +1,16 @@
 ---
 title: Azure HDInsight для Visual Studio Code
 description: Узнайте, как использовать средства & Hive (Azure HDInsight) Spark для Visual Studio Code. Используйте средства для создания и отправки запросов и сценариев.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 30c13adfebb911e443fb042821e09628da3b9405
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 1209c49cbd988a02b1e3503994fdbdac3f26216a
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610987"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946146"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Использование Spark & средств Hive для Visual Studio Code
 
@@ -360,7 +357,7 @@ Spark & Hive Tools можно установить на платформах, 
   | args | Аргументы командной строки для приложения | Список строк |
   | jars | JAR для использования в этом сеансе | Список строк | 
   | pyFiles | Файлы Python для использования в этом сеансе | Список строк |
-  | files | Файлы, используемые в этом сеансе | Список строк |
+  | файлы | Файлы, используемые в этом сеансе | Список строк |
   | driverMemory | Объем памяти, используемый для процесса драйвера | Строка |
   | driverCores | Число ядер, используемых для процесса драйвера | Int |
   | executorMemory | Объем памяти, используемый для каждого процесса исполнителя | Строка |

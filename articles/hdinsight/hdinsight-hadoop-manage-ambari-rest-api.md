@@ -1,19 +1,16 @@
 ---
 title: Мониторинг и администрирование Hadoop с помощью REST API Ambari в Azure HDInsight
 description: Сведения об использовании Ambari для отслеживания и администрирования кластеров Hadoop в Azure HDInsight. В этом документе вы узнаете, как использовать REST API Ambari, поставляемый с кластерами HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: 6ba1d1e15b1dbb3efb24219b6c09a6827e701d46
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 1d4e6f0d6a0242cda919364965a61e4314927d87
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546081"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945575"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -25,7 +22,7 @@ ms.locfileid: "92546081"
 
 Apache Ambari упрощает управление кластерами Hadoop и их мониторинг, предоставляя простой в использовании интерфейс веб-интерфейса, поддерживаемый его [интерфейсами API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).  Ambari предоставляется по умолчанию с кластерами HDInsight на платформе Linux.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -37,11 +34,11 @@ Apache Ambari упрощает управление кластерами Hadoop 
 
 ## <a name="base-uniform-resource-identifier-for-ambari-rest-api"></a>Базовый универсальный идентификатор ресурса для Ambari API-интерфейса RESTful
 
- Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр** .  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
+ Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME` , где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI () в полном доменном имени ( `CLUSTERNAME.azurehdinsight.net` ) не учитывает регистр, другие вхождения в URI учитывают регистр.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
-Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin** ) и пароль, указанные при создании кластера.
+Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin**) и пароль, указанные при создании кластера.
 
 Для Корпоративный пакет безопасности кластеров вместо `admin` используйте полное имя пользователя, например `username@domain.onmicrosoft.com` .
 
@@ -335,7 +332,7 @@ $resp.Content
 
    * Создает корневой документ для новой конфигурации.
 
-   * Возвращает содержимое массива `.items[]` и добавляет его в элемент **desired_config** .
+   * Возвращает содержимое массива `.items[]` и добавляет его в элемент **desired_config**.
 
    * Удаляет элементы `href`, `version` и `Config`, так как они не нужны для отправки новой конфигурации.
 

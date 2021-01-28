@@ -6,12 +6,12 @@ ms.topic: reference
 author: bwren
 ms.author: bwren
 ms.date: 01/20/2020
-ms.openlocfilehash: d2b1afea746410e966b43bef01a039a8471d4ae7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: eccd4010d796e541e4a0a2c0b0c485b5f18f0366
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008826"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943718"
 ---
 # <a name="windows-diagnostics-extension-schema"></a>Схема расширения диагностики Windows
 Расширение система диагностики Azure — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок ресурсов вычислений Azure. В этой статье подробно описывается схема, используемая для настройки расширения системы диагностики на виртуальных машинах Windows и других ресурсов вычислений.
@@ -157,7 +157,7 @@ ms.locfileid: "96008826"
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
-|**EtwEventSourceProviderConfiguration**|Позволяет настроить сбор событий, создаваемых из [класса EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1). Обязательный атрибут:<br /><br /> **provider**: имя класса события EventSource.<br /><br /> Необязательные атрибуты:<br /><br /> - **scheduledTransferLogLevelFilter**: минимальный уровень серьезности события для переноса в вашу учетную запись хранения.<br /><br /> - **scheduledTransferPeriod** — интервал между запланированными передачами в хранилище, округленный до ближайшей минуты. Значение относится к [типу данных XML "Duration"](https://www.w3schools.com/xml/schema_dtypes_date.asp). |  
+|**EtwEventSourceProviderConfiguration**|Позволяет настроить сбор событий, создаваемых из [класса EventSource](/dotnet/api/system.diagnostics.tracing.eventsource). Обязательный атрибут:<br /><br /> **provider**: имя класса события EventSource.<br /><br /> Необязательные атрибуты:<br /><br /> - **scheduledTransferLogLevelFilter**: минимальный уровень серьезности события для переноса в вашу учетную запись хранения.<br /><br /> - **scheduledTransferPeriod** — интервал между запланированными передачами в хранилище, округленный до ближайшей минуты. Значение относится к [типу данных XML "Duration"](https://www.w3schools.com/xml/schema_dtypes_date.asp). |  
 |**EtwManifestProviderConfiguration**|Обязательный атрибут:<br /><br /> **provider**: GUID поставщика событий.<br /><br /> Необязательные атрибуты:<br /><br /> - **scheduledTransferLogLevelFilter**: минимальный уровень серьезности события для переноса в вашу учетную запись хранения.<br /><br /> - **scheduledTransferPeriod** — интервал между запланированными передачами в хранилище, округленный до ближайшей минуты. Значение относится к [типу данных XML "Duration"](https://www.w3schools.com/xml/schema_dtypes_date.asp). |  
 
 
@@ -165,7 +165,7 @@ ms.locfileid: "96008826"
 ## <a name="etweventsourceproviderconfiguration-element"></a>Элемент EtwEventSourceProviderConfiguration  
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — EtwProviders — EtwEventSourceProviderConfiguration*
 
- Позволяет настроить сбор событий, создаваемых из [класса EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1).  
+ Позволяет настроить сбор событий, создаваемых из [класса EventSource](/dotnet/api/system.diagnostics.tracing.eventsource).  
 
 |Дочерние элементы|Описание|  
 |--------------------|-----------------|  
@@ -208,7 +208,7 @@ ms.locfileid: "96008826"
 
 |Дочерний элемент|Описание|  
 |-------------------|-----------------|  
-|**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Например, `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика. Значения доступны в [классе единицах UnitType](/dotnet/api/microsoft.azure.management.sql.models.unittype?view=azure-dotnet) |
+|**PerformanceCounterConfiguration**|Ниже приведены обязательные атрибуты.<br /><br /> - **counterSpecifier** — имя счетчика производительности. Например, `\Processor(_Total)\% Processor Time`. Чтобы получить список счетчиков производительности на узле, выполните команду `typeperf`.<br /><br /> - **sampleRate**: частота выборки для счетчика.<br /><br /> Необязательный атрибут:<br /><br /> **unit**: единица измерения счетчика. Значения доступны в [классе единицах UnitType](/dotnet/api/microsoft.azure.management.sql.models.unittype) |
 |**sinks** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Azure Monitor или Центры событий. Обратите внимание, что необходимо добавить свойство *resourceId* в элемент *метрики* , если требуется, чтобы события, отправляемые в концентраторы событий, имели идентификатор ресурса.|    
 
 
@@ -223,7 +223,7 @@ ms.locfileid: "96008826"
 
 |Дочерний элемент|Описание|  
 |-------------------|-----------------|  
-|**DataSource**|Собираемые журналы событий Windows. Обязательный атрибут:<br /><br /> **name** — запрос XPath, описывающий собираемые события Windows. Пример:<br /><br /> `Application!*[System[(Level <=3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level <= 3)]`<br /><br /> Для сбора всех событий укажите "*". |
+|**DataSource**|Собираемые журналы событий Windows. Обязательный атрибут:<br /><br /> **name** — запрос XPath, описывающий собираемые события Windows. Пример.<br /><br /> `Application!*[System[(Level <=3)]], System!*[System[(Level <=3)]], System!*[System[Provider[@Name='Microsoft Antimalware']]], Security!*[System[(Level <= 3)]`<br /><br /> Для сбора всех событий укажите "*". |
 |**sinks** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных для всех дочерних элементов с соответствующей поддержкой. Пример приемника — Application Insights или Центры событий Azure.|  
 
 
@@ -236,7 +236,7 @@ ms.locfileid: "96008826"
 
 |attribute|Тип|Описание|  
 |---------------|----------|-----------------|  
-|**bufferQuotaInMB**|**unsignedInt**|Необязательный элемент. Указывает максимальный объем хранилища файловой системы, который доступен для указанных данных.<br /><br /> Значение по умолчанию равно 0.|  
+|**bufferQuotaInMB**|**unsignedInt**|Необязательный элемент. Указывает максимальный объем хранилища файловой системы, который доступен для указанных данных.<br /><br /> Значение по умолчанию — 0.|  
 |**scheduledTransferLogLevelFilter**|**строка**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
 |**scheduledTransferPeriod**|**duration**|Необязательный элемент. Указывает интервал между запланированными передачами данных, округленный с точностью до ближайшей минуты.<br /><br /> По умолчанию используется значение PT0S.|  
 |**sinks** |**строка**| Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Application Insights или Центры событий Azure. Обратите внимание, что необходимо добавить свойство *resourceId* в элемент *метрики* , если требуется, чтобы события, отправляемые в концентраторы событий, имели идентификатор ресурса.|  

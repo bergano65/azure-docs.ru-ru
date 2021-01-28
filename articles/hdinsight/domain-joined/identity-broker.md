@@ -2,23 +2,20 @@
 title: Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 description: Сведения об Azure HDInsight ID Broker для упрощения проверки подлинности присоединенных к домену кластеров Apache Hadoop.
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: b8dfe9a23e5c6697323142212156006cb65d2f9b
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 47ba11260c3b58566963e5a3ffac80ca461a8a23
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556534"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946819"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Брокер ИДЕНТИФИКАТОРов Azure HDInsight (ХИБ)
 
 В этой статье описывается, как настроить и использовать компонент брокера ИДЕНТИФИКАТОРов Azure HDInsight. Эту функцию можно использовать для получения современной проверки подлинности OAuth в Apache Ambari с применением многофакторной проверки подлинности без использования хэшей паролей прежних версий в Azure Active Directory доменных служб (Azure AD DS).
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Брокер ИДЕНТИФИКАТОРов HDInsight упрощает сложные настройки проверки подлинности в следующих сценариях:
 
@@ -138,7 +135,7 @@ curl -k -v -H "Authorization: Bearer Access_TOKEN" -H "Content-Type: application
 
 Для использования Beeline и Livy можно также воспользоваться приведенными [здесь](https://github.com/Azure-Samples/hdinsight-enterprise-security/tree/main/HIB/HIBSamples) кодами примеров, чтобы настроить клиент для использования OAuth и подключения к кластеру.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 ### <a name="what-app-is-created-by-hdinsight-in-aad"></a>Какое приложение создано в HDInsight в AAD?
 Для каждого кластера стороннее приложение будет зарегистрировано в AAD с универсальным кодом ресурса (URI) кластера в качестве identifierUri (например, `https://clustername.azurehdinsight.net` ).
 

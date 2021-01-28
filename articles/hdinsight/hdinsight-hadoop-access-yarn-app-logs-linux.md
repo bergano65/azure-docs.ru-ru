@@ -1,19 +1,16 @@
 ---
 title: Доступ к журналам приложений Apache Hadoop YARN в Azure HDInsight
 description: Узнайте, как получить доступ к журналам приложений YARN в кластере HDInsight (Apache Hadoop) под управлением Linux с помощью как командной строки, так и веб-браузера.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 726cf362e62f0ef914dfaea090a08c224bd5d8d6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0eb7dec2fd4ee327905acdea7a07456221bcbd46
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001955"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946006"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux
 
@@ -163,7 +160,7 @@ YARN Timeline Server содержит следующие типы данных:
 
     Вы увидите список ссылок на журналы YARN.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Архитектура Apache Hadoop в HDInsight](hdinsight-hadoop-architecture.md)
 * [Устранение неполадок рабочих нагрузок Apache Hadoop YARN с помощью Azure HDInsight](hdinsight-troubleshoot-yarn.md)

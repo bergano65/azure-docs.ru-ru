@@ -1,19 +1,16 @@
 ---
 title: Репликация кластера HBase в виртуальных сетях — Azure HDInsight
 description: Сведения о том, как настроить репликацию HBase с одной версии HDInsight на другую для балансировки нагрузки, обеспечения высокого уровня доступности, переноса или обновления без простоя и аварийного восстановления.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 12/06/2019
-ms.openlocfilehash: 8fc5ba2280b5ad68a40f4992adc170408e80e5a6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: cfcb3a5a601afadb9f3fcd71c24e18a9d7f27b9e
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021798"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946413"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -78,7 +75,7 @@ ms.locfileid: "96021798"
 | Имя шлюза. | vnet1gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | Basic |
+| Gateway SKU | Основные |
 | Gateway IP | vnet1gwip |
 
 **VNet 2**
@@ -95,7 +92,7 @@ ms.locfileid: "96021798"
 | Имя шлюза. | vnet2gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | Basic |
+| Gateway SKU | Основные |
 | Gateway IP | vnet1gwip |
 
 ## <a name="setup-dns"></a>Настройка службы доменных имен (DNS)
@@ -305,11 +302,11 @@ sudo service bind9 status
       >
       > В этом пошаговом руководстве предполагается, что HN1 является активным головного узла. Проверьте кластер, чтобы определить активный головной узел.
 
-6. Выберите **Создать**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
+6. Нажмите кнопку **Создать**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
 
 Ниже приведены обязательные аргументы.
 
-|Имя|Описание|
+|Название|Описание|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -318,7 +315,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|Имя|Описание|
+|Название|Описание|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -406,7 +403,7 @@ sudo service bind9 status
 > Если планируется удалить целевой кластер, убедитесь, что он удален из однорангового списка исходного кластера. Это можно сделать, выполнив команду remove_peer "1" в оболочке HBase в исходном кластере. Сбой в исходном кластере может работать неправильно.
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как настроить репликацию Apache HBase в виртуальной сети или между двумя виртуальными сетями. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 

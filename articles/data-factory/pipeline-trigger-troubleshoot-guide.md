@@ -7,12 +7,12 @@ ms.date: 12/15/2020
 ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
-ms.openlocfilehash: 0ceee3c65e8c4df5d843bb441fb6426a0f4eb696
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 1a5f665627da1b08ec57b04863a58f227c673af4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220269"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944903"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Устранение неполадок оркестрации конвейера и триггеров в фабрике данных Azure
 
@@ -60,7 +60,7 @@ Source=Microsoft.DataTransfer.Common,'
 Type=Microsoft.DataTransfer.Execution.Core.ExecutionException,Message=There are substantial concurrent MappingDataflow executions which is causing failures due to throttling under Integration Runtime 'AutoResolveIntegrationRuntime'.
 `
 
-**Причина**: достигнуто ограничение емкости среды выполнения интеграции. Возможно, вы используете большой объем потока данных, одновременно используя одну и ту же среду выполнения интеграции. Дополнительные сведения см. [в разделе Подписка Azure и ограничения службы, квоты и ограничения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#version-2) .
+**Причина**: достигнуто ограничение емкости среды выполнения интеграции. Возможно, вы используете большой объем потока данных, одновременно используя одну и ту же среду выполнения интеграции. Дополнительные сведения см. [в разделе Подписка Azure и ограничения службы, квоты и ограничения](../azure-resource-manager/management/azure-subscription-service-limits.md#version-2) .
 
 **Решение**.
  
@@ -76,13 +76,13 @@ Type=Microsoft.DataTransfer.Execution.Core.ExecutionException,Message=There are 
 **Решение**
 
 1. Реализуйте проверки на уровне действий, следуя [процедуре обработки ошибок и ошибок конвейера](https://techcommunity.microsoft.com/t5/azure-data-factory/understanding-pipeline-failures-and-error-handling/ba-p/1630459).
-1. Используйте Azure Logic Apps для мониторинга конвейеров через регулярные интервалы [, следующие за запросом фабрики](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory).
+1. Используйте Azure Logic Apps для мониторинга конвейеров через регулярные интервалы [, следующие за запросом фабрики](/rest/api/datafactory/pipelineruns/querybyfactory).
 
 ## <a name="monitor-pipeline-failures-in-regular-intervals"></a>Мониторинг ошибок конвейера через равные промежутки времени
 
 Может потребоваться мониторинг конвейеров фабрики данных с ошибками в интервале, скажем 5 минут. Вы можете запрашивать и фильтровать запуски конвейера из фабрики данных с помощью конечной точки. 
 
-Настройте приложение логики Azure для запроса всех конвейеров со сбоями каждые 5 минут, как описано в разделе [запрос по фабрике](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory). Затем вы можете сообщить о происшествиях в систему билетов.
+Настройте приложение логики Azure для запроса всех конвейеров со сбоями каждые 5 минут, как описано в разделе [запрос по фабрике](/rest/api/datafactory/pipelineruns/querybyfactory). Затем вы можете сообщить о происшествиях в систему билетов.
 
 Дополнительные сведения см. в [разделе Отправка уведомлений из фабрики данных, часть 2](https://www.mssqltips.com/sqlservertip/5962/send-notifications-from-an-azure-data-factory-pipeline--part-2/).
 

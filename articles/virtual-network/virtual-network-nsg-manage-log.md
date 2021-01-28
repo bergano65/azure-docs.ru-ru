@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: 5d06c251ce16aff56a3645f5032cce4e27d5fc9e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 412556f3bd517539fc8ccad94c4de52226f16597
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216909"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946224"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Ведение журнала ресурсов для группы безопасности сети
 
@@ -30,7 +30,7 @@ ms.locfileid: "98216909"
 
 Ведение журнала ресурсов включается отдельно для *каждого* NSG, для которого требуется сбор диагностических данных. Если вы заинтересованы в журналах активности (операционных), см. статью [ведение журнала действий](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)Azure.
 
-## <a name="enable-logging"></a>Включение ведения журнала
+## <a name="enable-logging"></a>Включение ведения журналов
 
 Для включения ведения журнала ресурсов можно использовать [портал Azure](#azure-portal), [PowerShell](#powershell)или [Azure CLI](#azure-cli) .
 
@@ -47,7 +47,7 @@ ms.locfileid: "98216909"
 
     | Параметр                                                                                     | Значение                                                          |
     | ---------                                                                                   |---------                                                       |
-    | Имя                                                                                        | Имя на ваш выбор.  Например: *myNsgDiagnostics*.      |
+    | Название                                                                                        | Имя на ваш выбор.  Например: *myNsgDiagnostics*.      |
     | **Архивировать в учетной записи хранения**, **Передать в концентратор событий** и **Отправить в Log Analytics** | Можно выбрать любые назначения. Узнайте больше в разделе [Целевое расположение для журналов](#log-destinations).                                                                                                                                           |
     | LOG                                                                                         | Выберите одну или обе категории журналов. Чтобы узнать больше о данных, записываемых в каждую категорию, ознакомьтесь с разделом [Категории журналов](#log-categories).                                                                                                                                             |
 6. Просмотрите и проанализируйте журналы. Дополнительные сведения см. в разделе [Просмотр и анализ журналов](#view-and-analyze-logs).
@@ -93,7 +93,7 @@ Set-AzDiagnosticSetting `
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/bash) или Azure CLI на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для запуска CLI на компьютере требуется версия 2.0.38 или выше. Выполните `az --version` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). Если CLI работает локально, необходимо также выполнить `az login`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/bash) или Azure CLI на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для запуска CLI на компьютере требуется версия 2.0.38 или выше. Выполните `az --version` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Если CLI работает локально, необходимо также выполнить `az login`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
 Чтобы включить ведение журнала ресурсов, необходим идентификатор существующего NSG. Если у вас нет NSG, ее можно создать, выполнив команду [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create).
 

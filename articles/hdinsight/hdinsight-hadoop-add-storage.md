@@ -1,19 +1,16 @@
 ---
 title: Добавление дополнительных учетных записей хранения Azure в HDInsight
 description: Узнайте, как добавить дополнительные учетные записи хранения Azure в существующий кластер HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 51977c00dc8c9932def89d54ec1b6ec34afad652
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 11852046442901c70112b5e80fef371671546412
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542001"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945945"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -28,7 +25,7 @@ ms.locfileid: "92542001"
 * Имя и ключ учетной записи хранения. См. [раздел Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md).
 * При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](/powershell/azure/).
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Во время обработки скрипт выполняет следующие действия:
 
@@ -49,7 +46,7 @@ ms.locfileid: "92542001"
 
 Используйте [действие скрипта](hdinsight-hadoop-customize-cluster-linux.md#script-action-to-a-running-cluster) , чтобы применить изменения со следующими соображениями.
 
-|Свойство. | Значение |
+|Свойство | Значение |
 |---|---|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`|
 |Типы узлов|Head|
@@ -97,7 +94,7 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. Перейдите в **HDFS** раздел  >  **конфигурации** HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт** .
+1. Перейдите в раздел  >  **конфигурации** HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт**.
 
 1. Обратите внимание на ключи, которые начинаются с `fs.azure.account.key` . Имя учетной записи будет частью ключа, как показано в этом образце образа:
 
@@ -107,7 +104,7 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 
 1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. Перейдите в **HDFS** раздел  >  **конфигурации** HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт** .
+1. Перейдите в раздел  >  **конфигурации** HDFS  >  **Расширенные**  >  **пользовательские основные компоненты — сайт**.
 
 1. Удалите следующие разделы:
     * `fs.azure.account.key.<STORAGE_ACCOUNT_NAME>.blob.core.windows.net`
@@ -119,7 +116,7 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 
 ### <a name="storage-firewall"></a>Брандмауэр хранилища
 
-Если вы решили защитить учетную запись хранения с ограничениями **брандмауэра и виртуальной сети** в **выбранных сетях** , обязательно включите исключение **Разрешить доверенные службы Майкрософт...** , чтобы HDInsight могла получить доступ к вашей учетной записи хранения.`.`
+Если вы решили защитить учетную запись хранения с ограничениями **брандмауэра и виртуальной сети** в **выбранных сетях**, обязательно включите исключение **Разрешить доверенные службы Майкрософт...** , чтобы HDInsight могла получить доступ к вашей учетной записи хранения.`.`
 
 ### <a name="unable-to-access-storage-after-changing-key"></a>Не удается получить доступ к хранилищу после изменения ключа
 

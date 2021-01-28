@@ -7,12 +7,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
 ms.date: 12/18/2020
-ms.openlocfilehash: d23b2f65f25b704beaee12c53e47706653dcc208
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 9706bee07f028c36b4d03311a7abbb969a1be685
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858592"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98944997"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Руководство по настройке производительности потоков данных для сопоставления
 
@@ -161,7 +161,7 @@ ms.locfileid: "97858592"
 
 #### <a name="isolation-level"></a>Уровень изоляции
 
-Уровень изоляции считывания в исходной системе Azure SQL оказывает влияние на производительность. Выбор параметра "READ UNCOMMITTED" обеспечит максимальную производительность и предотвращает блокировку базы данных. Дополнительные сведения об уровнях изоляции SQL см. в статье [Основные сведения о уровнях изоляции](https://docs.microsoft.com/sql/connect/jdbc/understanding-isolation-levels).
+Уровень изоляции считывания в исходной системе Azure SQL оказывает влияние на производительность. Выбор параметра "READ UNCOMMITTED" обеспечит максимальную производительность и предотвращает блокировку базы данных. Дополнительные сведения об уровнях изоляции SQL см. в статье [Основные сведения о уровнях изоляции](/sql/connect/jdbc/understanding-isolation-levels).
 
 #### <a name="read-using-query"></a>Чтение с помощью запроса
 
@@ -208,7 +208,7 @@ ms.locfileid: "97858592"
 ![Отключение индексов](media/data-flow/disable-indexes-sql.png "Отключение индексов")
 
 > [!WARNING]
-> При отключении индексов поток данных эффективно управляет базой данных, и запросы в данный момент вряд ли будут выполняться. В результате многие задания ETL активируются в середине ночь, чтобы избежать этого конфликта. Дополнительные сведения см. в статье [ограничения для отключения индексов](https://docs.microsoft.com/sql/relational-databases/indexes/disable-indexes-and-constraints) .
+> При отключении индексов поток данных эффективно управляет базой данных, и запросы в данный момент вряд ли будут выполняться. В результате многие задания ETL активируются в середине ночь, чтобы избежать этого конфликта. Дополнительные сведения см. в статье [ограничения для отключения индексов](/sql/relational-databases/indexes/disable-indexes-and-constraints) .
 
 #### <a name="scaling-up-your-database"></a>Масштабирование базы данных
 
@@ -216,7 +216,7 @@ ms.locfileid: "97858592"
 
 ### <a name="azure-synapse-analytics-sinks"></a>Приемники Azure синапсе Analytics
 
-При записи в Azure синапсе Analytics убедитесь, что для параметра **включить промежуточное хранение** задано значение true. Это позволяет ADF записывать с помощью [команды SQL Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql) , которая эффективно загружает данные. Необходимо сослаться на Azure Data Lake Storage Gen2 или учетную запись хранилища BLOB-объектов Azure, чтобы выполнить промежуточное хранение данных при использовании промежуточного хранения.
+При записи в Azure синапсе Analytics убедитесь, что для параметра **включить промежуточное хранение** задано значение true. Это позволяет ADF записывать с помощью [команды SQL Copy](/sql/t-sql/statements/copy-into-transact-sql) , которая эффективно загружает данные. Необходимо сослаться на Azure Data Lake Storage Gen2 или учетную запись хранилища BLOB-объектов Azure, чтобы выполнить промежуточное хранение данных при использовании промежуточного хранения.
 
 В отличие от промежуточного хранения, те же рекомендации применяются к Azure синапсе Analytics в качестве базы данных SQL Azure.
 

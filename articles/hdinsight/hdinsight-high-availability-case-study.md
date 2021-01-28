@@ -1,19 +1,16 @@
 ---
 title: Пример использования архитектуры высокодоступного решения Azure HDInsight
 description: Эта статья представляет собой вымышленное исследование возможной архитектуры высокодоступного решения Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 keywords: Высокая доступность Hadoop
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/08/2020
-ms.openlocfilehash: 4b98b03c2d7eb4a0403b4595c1376656ed42511b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0616694d05e3fc9d2255ad97647ebe3bce545a93
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91855044"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945352"
 ---
 # <a name="azure-hdinsight-highly-available-solution-architecture-case-study"></a>Пример использования архитектуры высокодоступного решения Azure HDInsight
 
@@ -68,7 +65,11 @@ HDInsight An кластер Hadoop, выполняющий Hive и MapReduce, п
 
 На следующем рисунке показана архитектура аварийного восстановления высокого уровня доступности для розничной торговли contoso.
 
-:::image type="content" source="./media/hdinsight-high-availability-case-study/contoso-solution.png" alt-text="Архитектура Contoso Retail" в](hdinsight-business-continuity-architecture.md#apache-spark) нормальных случаях. Процесс репликации Hive выполняется периодически и сопровождается репликацией учетной записи хранения хранилище метаданных Azure SQL и Hive. Учетная запись хранения Spark периодически реплицируется с помощью ADF DistCP. Временная природа этих кластеров помогает оптимизировать затраты. Репликация выполняется каждые 4 часа и поступает на RPO, который хорошо подходит для пяти-часового требования.
+:::image type="content" source="./media/hdinsight-high-availability-case-study/contoso-solution.png" alt-text="Решение contoso":::
+
+**Kafka** использует режим " [Активный — пассивная](hdinsight-business-continuity-architecture.md#apache-kafka) репликация" для зеркального отражения разделов Kafka из основного региона в дополнительный. В качестве альтернативы репликации Kafka можно создать Kafka в обоих регионах.
+
+**Hive и Spark** используют модели [вторичной репликации "активный основной — по запросу" в](hdinsight-business-continuity-architecture.md#apache-spark) нормальных случаях. Процесс репликации Hive выполняется периодически и сопровождается репликацией учетной записи хранения хранилище метаданных Azure SQL и Hive. Учетная запись хранения Spark периодически реплицируется с помощью ADF DistCP. Временная природа этих кластеров помогает оптимизировать затраты. Репликация выполняется каждые 4 часа и поступает на RPO, который хорошо подходит для пяти-часового требования.
 
 Репликация **HBase** использует модель « [лидер-след](hdinsight-business-continuity-architecture.md#apache-hbase) » в обычном режиме, чтобы гарантировать, что данные всегда обслуживаются независимо от региона, а значение RPO равно нулю.
 
@@ -78,7 +79,7 @@ HDInsight An кластер Hadoop, выполняющий Hive и MapReduce, п
 
 Решение для отработки отказа не должно быть спроектировано для внутренних отчетов, поскольку оно не является критически важным для обеспечения непрерывности бизнес-процессов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 
