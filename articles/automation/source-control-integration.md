@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: c2ddb0143bb9cba0dc2fc48ff9b9df94dc55c29c
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: e7a6b6d3e753352820cdcb910dcbfa9362793493
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579459"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050776"
 ---
 # <a name="use-source-control-integration"></a>Использование интеграции системы управления версиями
 
@@ -29,7 +29,7 @@ ms.locfileid: "94579459"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Репозиторий системы управления версиями (GitHub или Azure Repos)
-* [Учетная запись запуска от имени](manage-runas-account.md)
+* [Учетная запись запуска от имени](automation-security-overview.md#run-as-accounts)
 * [Последние модули Azure](automation-update-azure-modules.md) в учетной записи службы автоматизации, включая модуль `Az.Accounts` (модуль Az, эквивалентный `AzureRM.Profile`)
 
 > [!NOTE]
@@ -69,7 +69,7 @@ ms.locfileid: "94579459"
    ![Сводка по системе управления версиями](./media/source-control-integration/source-control-summary.png)
 
 > [!NOTE]
-> Имя входа для репозитория системы управления версиями может отличаться от имени входа для портала Azure. Не забудьте выполнить вход с использованием правильной учетной записи при настройке системы управления версиями. Если есть сомнения, откройте новую вкладку в браузере, выйдите из **dev.azure.com** , **visualstudio.com** или **github.com** и повторите попытку подключиться к системе управления версиями.
+> Имя входа для репозитория системы управления версиями может отличаться от имени входа для портала Azure. Не забудьте выполнить вход с использованием правильной учетной записи при настройке системы управления версиями. Если есть сомнения, откройте новую вкладку в браузере, выйдите из **dev.azure.com**, **visualstudio.com** или **github.com** и повторите попытку подключиться к системе управления версиями.
 
 ### <a name="configure-source-control-in-powershell"></a>Настройка системы управления версиями в PowerShell
 
@@ -86,7 +86,7 @@ New-AzAutomationSourceControl -Name SCGitHub -RepoUrl https://github.com/<accoun
 #### <a name="create-source-control-connection-for-azure-repos-git"></a>Создание подключения к системе управления версиями для Azure Repos (Git)
 
 > [!NOTE]
-> Azure Repos (Git) использует URL-адрес, который обращается к **dev.azure.com** вместо **visualstudio.com** , использовавшегося в более ранних форматах. Старый формат URL-адреса `https://<accountname>.visualstudio.com/<projectname>/_git/<repositoryname>` устарел, но по-прежнему поддерживается. Предпочтительно использовать новый формат.
+> Azure Repos (Git) использует URL-адрес, который обращается к **dev.azure.com** вместо **visualstudio.com**, использовавшегося в более ранних форматах. Старый формат URL-адреса `https://<accountname>.visualstudio.com/<projectname>/_git/<repositoryname>` устарел, но по-прежнему поддерживается. Предпочтительно использовать новый формат.
 
 
 ```powershell-interactive
@@ -96,7 +96,7 @@ New-AzAutomationSourceControl -Name SCReposGit -RepoUrl https://dev.azure.com/<a
 #### <a name="create-source-control-connection-for-azure-repos-tfvc"></a>Создание подключения к системе управления версиями для Azure Repos (TFVC)
 
 > [!NOTE]
-> Azure Repos (TFVC) использует URL-адрес, который обращается к **dev.azure.com** вместо **visualstudio.com** , использовавшегося в более ранних форматах. Старый формат URL-адреса `https://<accountname>.visualstudio.com/<projectname>/_versionControl` устарел, но по-прежнему поддерживается. Предпочтительно использовать новый формат.
+> Azure Repos (TFVC) использует URL-адрес, который обращается к **dev.azure.com** вместо **visualstudio.com**, использовавшегося в более ранних форматах. Старый формат URL-адреса `https://<accountname>.visualstudio.com/<projectname>/_versionControl` устарел, но по-прежнему поддерживается. Предпочтительно использовать новый формат.
 
 ```powershell-interactive
 New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<accountname>/<adoprojectname>/_git/<repositoryname> -SourceType VsoTfvc -AccessToken <secureStringofPAT> -ResourceGroupName <ResourceGroupName> -AutomationAccountName <AutomationAccountName> -FolderPath "/Runbooks"
@@ -143,7 +143,7 @@ New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<
 
 1. Выберите источник из таблицы на странице системы управления версиями.
 
-2. Нажмите кнопку **Начать синхронизацию** , чтобы запустить процесс.
+2. Нажмите кнопку **Начать синхронизацию**, чтобы запустить процесс.
 
 3. Просмотрите состояние текущего задания синхронизации или предыдущих заданий, щелкнув вкладку **Задания синхронизации**.
 
@@ -209,4 +209,4 @@ New-AzAutomationSourceControl -Name SCReposTFVC -RepoUrl https://dev.azure.com/<
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об интеграции системы управления версиями со службой автоматизации Azure см. в [Служба автоматизации Azure. Интеграция системы управления версиями и службы автоматизации Azure](https://azure.microsoft.com/blog/azure-automation-source-control-13/).  
-* Сведения об интеграции системы управления версиями runbook с помощью Visual Studio Online см. в [Служба автоматизации Azure. Интеграция системы управления версиями runbook с использованием службы Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/).
+* Сведения об интеграции системы управления версиями Runbook с Visual Studio Кодеспацес см. в статье Служба [автоматизации Azure: интеграция системы управления версиями Runbook с помощью Visual Studio кодеспацес](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/).

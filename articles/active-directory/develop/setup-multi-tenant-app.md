@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: a075cfa921a17d47cbef84f1e7e8ec8e306c38d5
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 9564727cfe59f243fd1096c93d7eadf1d830be9e
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063031"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052555"
 ---
 # <a name="how-to-configure-a-new-multi-tenant-application"></a>Настройка нового мультитенантного приложения
 
@@ -29,4 +29,4 @@ ms.locfileid: "98063031"
 - Узнайте подробнее [о процедуре настройки и кодирования мультитенантного приложения](./howto-convert-app-to-be-multi-tenant.md), включая регистрацию, использование простой конечной точки, предоставление согласия пользователя и администратора, реализацию более сложных многоуровневых сценариев.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)
+[AzureAD Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)

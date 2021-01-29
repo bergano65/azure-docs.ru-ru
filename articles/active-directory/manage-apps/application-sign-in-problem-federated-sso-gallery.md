@@ -12,17 +12,17 @@ ms.date: 02/18/2019
 ms.author: kenwith
 ms.reviewer: luleon, asteen
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 596af29fe72a41b5a86a09e4e6d5072d63b6ac71
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 62b828a23805c6d3ab544dd2b9f78b45a3327cde
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586352"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053403"
 ---
 # <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Проблемы при входе в приложения, настроенные для единого входа на основе SAML
 Чтобы устранить проблемы при входе ниже, рекомендуется выполнить следующие действия для оптимизации диагностики и автоматизации действий по устранению неполадок.
 
-- Установите [расширение браузера "Безопасный вход в мои приложения"](./access-panel-deployment-plan.md), чтобы помочь Azure Active Directory (Azure AD) обеспечить лучшую диагностику и решения при использовании средств тестирования на портале Azure.
+- Установите [расширение браузера "Безопасный вход в мои приложения"](my-apps-deployment-plan.md), чтобы помочь Azure Active Directory (Azure AD) обеспечить лучшую диагностику и решения при использовании средств тестирования на портале Azure.
 - Воспроизведите ошибку с помощью средств тестирования на странице конфигурации приложения портала Azure. Дополнительные сведения об [отладке приложений единого входа на основе SAML](./debug-saml-sso-issues.md)
 
 Если вы используете [опыт тестирования](./debug-saml-sso-issues.md) в портал Azure с расширением "Защищенный браузер" Мои приложения ", вам не нужно вручную выполнять указанные ниже действия, чтобы открыть страницу настройки единого входа на основе SAML.

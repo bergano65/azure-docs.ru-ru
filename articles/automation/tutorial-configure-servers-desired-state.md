@@ -5,12 +5,12 @@ services: automation
 ms.subservice: dsc
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 2e09607dde118ce25e5d2e5311e7614f2f18a590
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f16db3f55ebd0f09e4d7b75750fa319daf03977e
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98890736"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053573"
 ---
 # <a name="configure-machines-to-a-desired-state"></a>Настройка требуемого состояния компьютеров
 
@@ -27,7 +27,7 @@ ms.locfileid: "98890736"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](./manage-runas-account.md).
+- Учетная запись службы автоматизации Azure. Дополнительные сведения о учетной записи службы автоматизации и ее требованиях см. в разделе [Обзор проверки подлинности учетной записи службы автоматизации](./automation-security-overview.md).
 - Виртуальная машина Azure Resource Manager (не классическая) под управлением Windows Server 2008 R2 или более поздней версии. Для ее создания воспользуйтесь статьей [Краткое руководство. Создание виртуальной машины Windows на портале Azure](../virtual-machines/windows/quick-create-portal.md).
 - Azure PowerShell 3.6.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 - Знакомство с платформой Desired State Configuration (DSC) Дополнительную информацию о DSC см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview).
@@ -49,7 +49,6 @@ Connect-AzAccount
 ```
 
 ## <a name="create-and-upload-a-configuration-to-azure-automation"></a>Создание и передача конфигурации в службе автоматизации Azure
-
 
 В текстовом редакторе введите следующий код и сохраните его локально в виде файла **TestConfig.ps1**.
 

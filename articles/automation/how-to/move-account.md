@@ -2,19 +2,15 @@
 title: Перемещение учетной записи службы автоматизации Azure в другую подписку
 description: Узнайте, как переместить учетную запись службы автоматизации в другую подписку.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
-ms.date: 03/11/2019
+ms.date: 01/07/2021
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 8454c5a5bb5b44d2a60ae0095a9b82a19ed27c8d
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: a86d876a723c89eb8dcdf18c8318f2a9c740a229
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896652"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051030"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>Перемещение учетной записи службы автоматизации Azure в другую подписку
 
@@ -108,7 +104,7 @@ Remove-AzActionGroup -ResourceGroupName <myResourceGroup> -Name StartStop_VM_Not
 
 ## <a name="re-create-run-as-accounts"></a>Повторное создание учетных записей запуска от имени
 
-[Учетные записи запуска от имени](../manage-runas-account.md) создают субъект-службу в Azure Active Directory для аутентификации в ресурсах Azure. После изменения подписок учетная запись службы автоматизации не использует существующую учетную запись запуска от имени. Чтобы повторно создать учетные записи запуска от имени, сделайте следующее.
+[Учетные записи запуска от имени](../automation-security-overview.md#run-as-accounts) создают субъект-службу в Azure Active Directory для аутентификации в ресурсах Azure. После изменения подписок учетная запись службы автоматизации не использует существующую учетную запись запуска от имени. Чтобы повторно создать учетные записи запуска от имени, сделайте следующее.
 
 1. Перейдите к учетной записи службы автоматизации в новой подписке и выберите **Учетные записи запуска от имени** в разделе **Параметры учетной записи**. Вы увидите, что учетные записи запуска от имени отображаются как незавершенные.
 
@@ -117,7 +113,7 @@ Remove-AzActionGroup -ResourceGroupName <myResourceGroup> -Name StartStop_VM_Not
 2. Поочередно удалите учетные записи запуска от имени, выбрав **Удалить** на странице **Свойства**. 
 
     > [!NOTE]
-    > Если у вас нет разрешений на создание или просмотр учетных записей запуска от имени, отобразится следующее сообщение: `You do not have permissions to create an Azure Run As account (service principal) and grant the Contributor role to the service principal.` См. сведения в разделе [Разрешения учетной записи запуска от имени](../manage-runas-account.md#permissions).
+    > Если у вас нет разрешений на создание или просмотр учетных записей запуска от имени, отобразится следующее сообщение: `You do not have permissions to create an Azure Run As account (service principal) and grant the Contributor role to the service principal.` См. сведения в разделе [Разрешения учетной записи запуска от имени](../automation-security-overview.md#permissions).
 
 3. После удаления учетных записей запуска от имени выберите **Создать** в разделе **Учетная запись запуска от имени Azure**. 
 

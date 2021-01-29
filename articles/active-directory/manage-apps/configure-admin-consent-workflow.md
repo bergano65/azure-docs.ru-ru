@@ -12,12 +12,12 @@ ms.date: 10/29/2019
 ms.author: kenwith
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fc688ca0981024e5e08c9fb20ecb6704efbd7f2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9552d1a0c7bdb73dbcf739144a3ab9f746705664
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997500"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053369"
 ---
 # <a name="configure-the-admin-consent-workflow-preview"></a>Настройка рабочего процесса согласия администратора (Предварительная версия)
 
@@ -149,7 +149,7 @@ ms.locfileid: "95997500"
  
 Если вы собираетесь предоставить согласие администратора и разрешить всем пользователям в клиенте использовать приложение, рекомендуется отклонить запрос. Затем вручную предоставьте согласие администратора, запретив доступ к приложению, запросив назначение пользователей и назначив приложению пользователей или группы. Подробнее см. статью [Методы назначения пользователей и групп](./assign-user-or-group-access-portal.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
@@ -159,4 +159,4 @@ ms.locfileid: "95997500"
 
 [Разрешения и согласие для платформы удостоверений Майкрософт](../develop/v2-permissions-and-consent.md)
 
-[Azure AD в StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
+[Azure AD в Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html)

@@ -10,12 +10,12 @@ ms.workload: data-services
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: 70be8d8be48f2b1e1cc275c06e4abff09e3e62f6
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 30e07b645701cf560534b152ae42559213daf838
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498597"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053777"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Роли и разрешения для службы "Фабрика данных Azure"
 
@@ -56,6 +56,12 @@ ms.locfileid: "96498597"
 
 > [!IMPORTANT]
 > Если вы в роли **участника Фабрики данных** выполняете развертывание с помощью шаблона Resource Manager, это не повышает уровень ваших разрешений. Например, если вы развертываете шаблон, создающий виртуальную машину Azure, но у вас нет разрешения на создание виртуальных машин, развертывание завершается с ошибкой авторизации.
+
+> [!IMPORTANT]
+> Разрешение **Microsoft. объект фактов/фабрики/запись** требуется в обоих режимах в контексте публикации.
+
+- Это разрешение требуется только в режиме реального времени, когда клиент изменяет глобальные параметры.
+- Это разрешение всегда требуется в режиме Git, так как каждый раз после публикации клиента происходит обновление объекта фабрики с последним идентификатором фиксации.
 
 ### <a name="custom-scenarios-and-custom-roles"></a>Пользовательские сценарии и пользовательские роли
 

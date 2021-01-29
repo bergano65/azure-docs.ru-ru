@@ -5,12 +5,12 @@ author: IngridAtMicrosoft
 ms.topic: how-to
 ms.author: inhenkel
 ms.date: 12/04/2020
-ms.openlocfilehash: d519193d55c9535dc71206d2d9f72661d7a40d71
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: ee5ae7ca8b52d44f21c35df23ef92f61d38fc3c3
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954418"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051301"
 ---
 # <a name="troubleshoot-live-video-analytics-on-iot-edge"></a>Устранение неполадок в Live Video Analytics на IoT Edge
 
@@ -107,7 +107,8 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
 * Скрипт установки не может создать субъект-службу или ресурсы Azure.
     * Чтобы устранить эту ошибку, убедитесь, что ваша подписка и клиент Azure не достигли максимального предела службы. Дополнительные сведения об ограничениях и ограничениях [службы Azure AD](https://docs.microsoft.com/azure/active-directory/enterprise-users/directory-service-limits-restrictions) , а так: [ограничениях, квотах и ограничениях для подписок Azure и служб.](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits)
 
-
+> [!TIP]
+> Если имеются дополнительные проблемы, с которыми может потребоваться помощь, **[собирайте журналы и отправьте запрос в службу поддержки](#collect-logs-for-submitting-a-support-ticket)**. Вы также можете обратиться к нам, отправив нам электронное письмо по адресу **[amshelp@microsoft.com](mailto:amshelp@microsoft.com)** .
 ### <a name="live-video-analytics-working-with-external-modules"></a>Интерактивная аналитика видео работает с внешними модулями
 
 Интерактивная аналитика видео с помощью обработчиков расширения Media Graph может расширить граф мультимедиа для отправки и получения данных из других модулей IoT Edge с помощью протоколов HTTP или gRPC. В качестве [конкретного примера](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/httpExtension)этот граф мультимедиа может отправлять видеоматериалы в виде изображений во внешний модуль вывода, например Йоло v3, и получать результаты анализа на основе JSON с помощью протокола HTTP. В такой топологии назначением для событий является преимущественно центр Интернета вещей. В ситуациях, когда вы не видите события вывода в концентраторе, проверьте следующее:
@@ -222,12 +223,12 @@ az iot edge set-modules --hub-name <iot-hub-name> --device-id lva-sample-device 
     > [!NOTE] 
     > Эта команда привязывает папки журналов между граничным устройством и контейнером. Чтобы сохранить журналы в другом расположении, используйте следующую команду, заменив **$LOG _LOCATION_ON_EDGE_DEVICE** на расположение, которое вы хотите использовать. `/var/$LOG_LOCATION_ON_EDGE_DEVICE:/var/lib/azuremediaservices/logs`
 
-1. Нажмите кнопку **Обновить**.
+1. Выберите **Обновить**.
 1. Выберите **Review + Create** (Просмотреть и создать). Сообщение об успешной проверке публикуется под зеленым баннером.
 1. Нажмите кнопку **Создать**.
 1. Обновите **двойника удостоверений модуля** , чтобы он указывал на параметр дебуглогсдиректори, указывающий на каталог, в котором собираются журналы.
 
-    а. В таблице **модули** выберите **лваедже**.  
+    a. В таблице **модули** выберите **лваедже**.  
     b. В верхней части панели выберите **модуль удостоверение двойника**. Откроется Редактируемая панель.  
     c. В разделе **требуемый ключ** добавьте следующую пару "ключ-значение":  
     `"DebugLogsDirectory": "/var/lib/azuremediaservices/logs"`

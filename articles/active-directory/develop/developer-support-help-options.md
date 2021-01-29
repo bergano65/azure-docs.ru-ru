@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: af363bb30d6515ce969afe146c780baa4b31cd83
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d50e0ed6ac67ed1595b289d27bd08a089840308
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88117215"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051912"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
 
@@ -26,20 +26,20 @@ ms.locfileid: "88117215"
 > [!div class="checklist"]
 > * Как узнать, есть ли ответ на ваш вопрос в сообществе, или найти документацию по возможности, которую вы намерены реализовать.
 > * В некоторых случаях для решения конкретной проблемы вам могут потребоваться наши средства технической поддержки.
-> * Если вам не удается найти нужный ответ, вы можете задать вопрос на сайте *Stack Overflow*.
+> * Если вам не удается найти нужный ответ, можно задать вопрос в *Microsoft Q&a*
 > * Если возникла проблема с одной из наших библиотек аутентификации, сообщите об этом на сайте *GitHub*.
 > * И, наконец, если вам требуется консультация, подайте запрос в службу поддержки.
 
-## <a name="search"></a>Поиск
+## <a name="search"></a>Система поиска
 
-Если у вас есть вопрос по разработке, вы можете найти ответ на него в нашей документации, [примерах на сайте GitHub](https://github.com/azure-samples) или на сайте [Stack Overflow](https://www.stackoverflow.com).
+Если у вас есть вопрос, связанный с разработкой, возможно, вы сможете найти ответ в документации, [примеры GitHub](https://github.com/azure-samples)или ответы на вопросы в [Microsoft Q&](https://docs.microsoft.com/answers/products/) .
 
 ### <a name="scoped-search"></a>Поиск в заданных областях
 
-Чтобы получить результаты быстрее, задайте области поиска, указав Stack Overflow, нашу документацию и примеры кода в удобной для вас поисковой системе, используя следующий запрос:
+Для ускорения поиска заполните Поиск в Microsoft Q&A, документацию и примеры кода, используя следующий запрос в вашей любимой поисковой подсистеме:
 
 ```
-{Your Search Terms} (site:stackoverflow.com OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)
+{Your Search Terms} (site:http://www.docs.microsoft.com/answers/products/ OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)
 ```
 
 *{Your Search Terms}*  — это ключевые слова для поиска.
@@ -51,26 +51,26 @@ ms.locfileid: "88117215"
 | [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |
 
-## <a name="post-a-question-to-stack-overflow"></a>Публикация вопроса на сайте Stack Overflow
+## <a name="post-a-question-to-microsoft-qa"></a>Публикация вопроса в Microsoft Q&A
 
-Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Здесь члены сообщества разработчиков и команды Майкрософт постараются помочь вам решить проблемы.
+Microsoft Q&A — предпочтительный канал для вопросов, связанных с разработкой. Здесь члены сообщества разработчиков и команды Майкрософт постараются помочь вам решить проблемы.
 
-Если вы не нашли ответ на свой вопрос через поиск, опубликуйте его на сайте Stack Overflow. При этом используйте один из указанных ниже тегов. Это поможет сообществу своевременно определить ваш вопрос и ответить на него.
+Если вы не можете найти ответ на свой вопрос с помощью поиска, отправьте новый вопрос в Microsoft Q&A. При этом используйте один из указанных ниже тегов. Это поможет сообществу своевременно определить ваш вопрос и ответить на него.
 
 |Компонент/область  | Теги |
 |---------|---------|
-| Библиотека ADAL | [ADAL](https://stackoverflow.com/questions/tagged/adal) |
-| Библиотека MSAL     | [msal](https://stackoverflow.com/questions/tagged/msal) |
-| ПО промежуточного слоя OWIN  | [[Azure-Active-Directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
-| [Azure B2B](../external-identities/what-is-b2b.md)  | [[azure-ad-b2b]](https://stackoverflow.com/questions/tagged/azure-ad-b2b) |
-| [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://stackoverflow.com/questions/tagged/azure-ad-b2c) |
-| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[Microsoft-Graph]](https://stackoverflow.com/questions/tagged/microsoft-graph) |
-| Любая другая область, которая относится к аутентификации или авторизации | [[Azure-Active-Directory]](https://stackoverflow.com/questions/tagged/azure-active-directory) |
+| Библиотека ADAL | [ADAL](https://docs.microsoft.com/answers/topics/azure-ad-adal-deprecation.html) |
+| Библиотека MSAL     | [msal](https://docs.microsoft.com/answers/topics/azure-ad-msal.html) |
+| ПО промежуточного слоя OWIN  | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-active-directory.html) |
+| [Azure B2B](../external-identities/what-is-b2b.md)  | [[azure-ad-b2b]](https://docs.microsoft.com/answers/topics/azure-ad-b2b.html) |
+| [Azure B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[azure-ad-b2c]](https://docs.microsoft.com/answers/topics/azure-ad-b2c.html) |
+| [API Microsoft Graph](https://developer.microsoft.com/graph/) | [[Azure-AD-Graph]](https://docs.microsoft.com/answers/topics/azure-ad-graph.html) |
+| Любая другая область, которая относится к аутентификации или авторизации | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-ad-graph.html) |
 
-Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества быстро отреагируют на ваш вопрос.
+Следующие сообщения от Microsoft Q&A содержат советы по заданию вопросов и добавлению исходного кода. Следуя этим рекомендациям, вы повысите вероятность того, что участники сообщества быстро отреагируют на ваш вопрос.
 
-* [Разделы справки задать хороший вопрос](https://stackoverflow.com/help/how-to-ask)
-* [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример)
+* [Разделы справки задать хороший вопрос](https://docs.microsoft.com/answers/articles/24951/how-to-write-a-quality-question.html)
+* [How to create a Minimal, Complete, and Verifiable example](https://docs.microsoft.com/answers/articles/24907/how-to-write-a-quality-answer.html) (Как создать минимальный, полный и доступный для проверки пример)
 
 ## <a name="create-a-github-issue"></a>Сообщение о проблеме на GitHub
 
@@ -87,6 +87,6 @@ Stack Overflow — это идеальное место для вопросов
 
 * Если у вас уже есть план поддержки Azure, [подайте запрос в службу поддержки здесь](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-* Если вы не являетесь клиентом Azure, можно подать запрос в корпорацию Майкрософт на странице [коммерческой поддержки](https://support.microsoft.com/en-us/gp/contactus81?Audience=Commercial).
+* Если вы не являетесь клиентом Azure, можно подать запрос в корпорацию Майкрософт на странице [коммерческой поддержки](https://support.serviceshub.microsoft.com/supportforbusiness).
 
 Также можно получить поддержку или задать вопрос при помощи [виртуального агента](https://support.microsoft.com/contactus/?ws=support).

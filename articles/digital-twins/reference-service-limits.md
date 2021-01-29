@@ -7,19 +7,19 @@ ms.author: baanders
 ms.date: 05/05/2020
 ms.topic: article
 ms.service: digital-twins
-ms.openlocfilehash: 87061d378be97bf669fd569c0408f247b9e8dc5d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 165fa23cf3965d3017b15c27fedc2846f97d8d11
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091790"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054405"
 ---
-# <a name="service-limits"></a>Ограничения службы
+# <a name="azure-digital-twins-service-limits"></a>Ограничения службы цифровых двойников Azure
 
 Это ограничения службы цифровых двойников Azure.
 
 > [!NOTE]
-> Некоторые области этой службы имеют регулируемые ограничения. Это представлено в приведенных ниже таблицах с *изменяемым* столбцом?. Если ограничение может быть скорректировано *, это значение равно* *Да* .
+> Некоторые области этой службы имеют регулируемые ограничения. Это представлено в приведенных ниже таблицах с *изменяемым* столбцом?. Если ограничение может быть скорректировано *, это значение равно* *Да*.
 >
 > Если для вашего бизнеса требуется увеличить лимит или квоту выше лимита по умолчанию, можно запросить дополнительные ресурсы, отправив запрос [в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

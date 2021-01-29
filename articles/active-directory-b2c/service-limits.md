@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 01/29/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b980624ebf55c3666bcc7dd1d60f681d788c95ae
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 866af8b992374492286f47357f108a01f35e560b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98987064"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051047"
 ---
 # <a name="azure-active-directory-b2c-service-limits-and-restrictions"></a>Ограничения службы Azure Active Directory B2C и ограничения
 
@@ -40,17 +40,15 @@ ms.locfileid: "98987064"
 |Категория  |Ограничение  |
 |---------|---------|
 |Число приложений на Azure AD B2C клиенте   |250           |
-|Число политик на Azure AD B2C клиента       |200          |
-|Максимальный размер файла политики      |400 КБ          |
 |Число областей на приложение        |1000          |
-|Число настраиваемых атрибутов на пользователя <sup>1</sup>       |100         |
+|Число [настраиваемых атрибутов](user-profile-attributes.md#extension-attributes)   на пользователя <sup>1</sup>       |100         |
 |Число URL-адресов перенаправления для каждого приложения       |100         |
 |Число URL-адресов выхода для каждого приложения        |1          |
 |Ограничение строки на атрибут      |250 знаков          |
 |Число клиентов B2C на подписку      |20         |
 |Уровни [наследования](custom-policy-overview.md#inheritance-model) в пользовательских политиках     |10         |
-|Число политик на Azure AD B2C клиента      |200         |
-|Максимальный размер файла политики      |400 КБ         |
+|Число политик на Azure AD B2C клиента      |200          |
+|Максимальный размер файла политики      |400 КБ          |
 
 <sup>1</sup> см. также [ограничения службы Azure AD](../active-directory/enterprise-users/directory-service-limits-restrictions.md).
 

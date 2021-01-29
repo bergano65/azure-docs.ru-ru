@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: aa3466456b99664b1b39bd415680a6a291f85acd
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: c51f8c894c9a88b6ae81460623eec616d29b62ff
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049292"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050521"
 ---
 # <a name="route-events-within-and-outside-of-azure-digital-twins"></a>Маршрутизация событий внутри и за пределами Azure Digital двойников
 
@@ -55,7 +55,7 @@ Azure Digital двойников использует **маршруты соб�
 * Концентратор событий
 * Служебная шина
 
-Чтобы создать конечную точку, можно использовать [**API-интерфейсы плоскости управления**](how-to-manage-routes-apis-cli.md#create-an-endpoint-for-azure-digital-twins)цифровыми двойников Azure, [**команды интерфейса командной строки**](how-to-manage-routes-apis-cli.md#manage-endpoints-and-routes-with-cli)или [**портал Azure**](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins). 
+Чтобы создать конечную точку, можно использовать интерфейсы API-интерфейса двойников для службы цифровых учетных записи Azure [, команды интерфейса командной строки](how-to-manage-routes-apis-cli.md#create-an-endpoint-for-azure-digital-twins)или [портал Azure](how-to-manage-routes-portal.md#create-an-endpoint-for-azure-digital-twins).
 
 При определении конечной точки необходимо предоставить:
 * Имя конечной точки
@@ -71,7 +71,7 @@ Azure Digital двойников использует **маршруты соб�
 
 ## <a name="create-an-event-route"></a>Создание маршрута события
  
-Чтобы создать маршрут событий, можно использовать [**API-интерфейсы плоскости данных**](how-to-manage-routes-apis-cli.md#create-an-event-route)Digital двойников, [**команды интерфейса командной строки**](how-to-manage-routes-apis-cli.md#manage-endpoints-and-routes-with-cli)или [**портал Azure**](how-to-manage-routes-portal.md#create-an-event-route). 
+Чтобы создать маршрут событий, можно использовать интерфейсы API-интерфейса двойников для Azure Digital [, команды интерфейса командной строки](how-to-manage-routes-apis-cli.md#create-an-event-route)или [портал Azure](how-to-manage-routes-portal.md#create-an-event-route).
 
 Ниже приведен пример создания маршрута события в клиентском приложении с помощью `CreateOrReplaceEventRouteAsync` вызова [.NET (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true) : 
 
@@ -85,8 +85,6 @@ Azure Digital двойников использует **маршруты соб�
 
 > [!TIP]
 > Все функции пакета SDK имеют синхронные и асинхронные версии.
-
-Маршруты также могут создаваться с помощью [интерфейса командной строки Azure Digital двойников](how-to-use-cli.md).
 
 ## <a name="dead-letter-events"></a>События недоставленных сообщений
 

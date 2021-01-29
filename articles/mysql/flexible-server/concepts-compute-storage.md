@@ -1,17 +1,17 @@
 ---
 title: Варианты вычислений и хранения — гибкий сервер в базе данных Azure для MySQL
 description: В этой статье описываются варианты вычислений и хранения в службе "база данных Azure для MySQL — гибкий сервер".
-author: savjani
-ms.author: pariks
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/27/2021
-ms.openlocfilehash: 267b362c94b04b3be634f7e61c2b6d67604d7854
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.date: 1/28/2021
+ms.openlocfilehash: b1e8093a1991a97220060c2b6936368f9a4be796
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954687"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052352"
 ---
 # <a name="compute-and-storage-options-in-azure-database-for-mysql---flexible-server-preview"></a>Варианты вычислений и хранения в базе данных Azure для MySQL — гибкий сервер (Предварительная версия)
 
@@ -72,7 +72,7 @@ ms.locfileid: "98954687"
 Дополнительные сведения о доступных сериях вычислений см. в документации по виртуальной машине Azure для [пакетной службы (серии B)](../../virtual-machines/sizes-b-series-burstable.md), [общего назначения (серии Ddsv4)](../../virtual-machines/ddv4-ddsv4-series.md)и [оптимизированной для памяти (Edsv4 Series)](../../virtual-machines/edv4-edsv4-series.md).
 
 >[!NOTE]
->Для уровня вычислений [(серии B)](../../virtual-machines/sizes-b-series-burstable.md) при перезапуске сервера по какой-либо причине, например инициированным пользователем, запланированным или незапланированным обслуживанием, накопленный кредит может быть потерян. Причина заключается в том, что каждый раз, когда база данных Azure для MySQL перезапускается на том же узле, накопленный кредит будет храниться. Контрарили. при каждом запуске сервера базы данных Azure для MySQL на новом узле он получает первоначальный кредит. Дополнительные сведения см. в статье [часто задаваемые вопросы для чтения (серии B)](https://docs.microsoft.com/azure/virtual-machines/sizes-b-series-burstable#q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart).
+>Для [уровня нагрузки (серии B)](../../virtual-machines/sizes-b-series-burstable.md) при запуске или остановке или перезапуске виртуальной машины могут быть утрачены кредиты. Дополнительные сведения см. в статье [часто задаваемые вопросы о пакетной (серии B)](https://docs.microsoft.com/azure/virtual-machines/sizes-b-series-burstable#q-why-is-my-remaining-credit-set-to-0-after-a-redeploy-or-a-stopstart).
 
 ## <a name="storage"></a>Память
 
@@ -139,7 +139,7 @@ ms.locfileid: "98954687"
 
 Вы можете отслеживать потребление операций ввода-вывода в портал Azure (с Azure Monitor), используя метрику [процента](./concepts-monitoring.md) . Если требуется больше операций ввода-вывода, необходимо понимать, ограничен ли размер вычислений или подготовленное хранилище. Соответствующим образом масштабируйте вычисление или хранилище сервера.
 
-## <a name="backup"></a>Резервное копирование
+## <a name="backup"></a>Backup
 
 В службе автоматически создаются резервные копии сервера. Можно выбрать срок хранения в диапазоне от 1 до 35 дней. Дополнительные сведения о резервном копировании см. в [статье основные понятия резервного копирования и восстановления](concepts-backup-restore.md).
 

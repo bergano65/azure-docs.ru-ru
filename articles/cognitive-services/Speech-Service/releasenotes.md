@@ -8,17 +8,67 @@ manager: jhakulin
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/17/2020
+ms.date: 01/27/2021
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 050c16670ea0c6df53345216d8dd450c159792ea
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: eec2919eddc4c9631c3153d6016485d64d368902
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927468"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050860"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
+
+## <a name="speech-sdk-1150-2021-january-release"></a>Пакет SDK для распознавания речи 1.15.0:2021-выпуск за Январь
+
+**Примечание**. РЕЧЕВОЙ пакет SDK в Windows зависит от общего Microsoft Visual C++ распространяемого пакета для Visual Studio 2015, 2017 и 2019. Его можно скачать [здесь](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
+
+**Улучшения**
+- Мы начали работать с несколькими выпусками, чтобы сократить использование памяти и дискового пакета речевого SDK. В качестве первого шага мы внесли значительные сокращения размера файла в общие библиотеки на большинстве платформ. По сравнению с выпуском 1,14:
+  - 64-разрядные библиотеки Windows, совместимые с UWP, меньше 30%;
+  - в 32-разрядных библиотеках Windows еще не видны улучшения размера.
+  - Библиотеки Linux на 20-25% меньше;
+  - Библиотеки Android меньше 3-5%;
+
+**Новые функции**
+- **Все**: добавлен формат 48kHz для пользовательских голосов TTS, что повышает качество звука для пользовательских голосов, для которых скорость выборки данных выше, чем 24kHz.
+- **Все**: добавлена поддержка настройки пользовательского голоса через `EndpointId` ([C++](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setendpointid), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.endpointid?view=azure-dotnet#Microsoft_CognitiveServices_Speech_SpeechConfig_EndpointId), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setendpointid?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setEndpointId_String_), [JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#endpointId), [Цель-C](https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#endpointid), [Python](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#endpoint-id)). Перед этим изменением пользовательским голосовым пользователям необходимо задать URL-адрес конечной точки с помощью `FromEndpoint` метода. Теперь клиенты могут использовать `FromSubscription` метод так же, как и открытые голоса, а затем указать идентификатор развертывания с помощью параметра `EndpointId` . Это упрощает настройку пользовательских голосов. 
+- **C++/c #/Жава/обжективе-к/Писон**: `IntentRecognizer` теперь поддерживает настройку результатов JSON, содержащих все цели, а не только наиболее намеренное `LanguageUnderstandingModel FromEndpoint` использование метода с помощью `verbose=true` параметра URI. Это решает [проблемы GitHub #880](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/880). См. обновленную документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition/#add-a-languageunderstandingmodel-and-intents).
+- **C++/c #/Жава**: `DialogServiceConnector` ([c++](https://docs.microsoft.com/cpp/cognitive-services/speech/dialog-dialogserviceconnector), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-dotnet), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-java-stable)) теперь содержит `StopListeningAsync()` метод для сопровождения `ListenOnceAsync()` . Это немедленно останавливает запись звука и постепенно ждет результата, делая его идеальным для использования с нажатием кнопки "закончить сейчас".
+- **C++/c #/Жава/жаваскрипт**: `DialogServiceConnector` ([c++](https://docs.microsoft.com/cpp/cognitive-services/speech/dialog-dialogserviceconnector), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-dotnet), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-java-stable), [JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/dialogserviceconnector?view=azure-node-latest)) теперь содержит новый `TurnStatusReceived` обработчик событий. Эти необязательные события соответствуют каждому [`ITurnContext`](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.iturncontext?view=botbuilder-dotnet-stable) разрешению программы-робота и сообщают о сбоях при выполнении, например, в результате необработанного исключения, времени ожидания или сетевого переключения между прямыми голосовыми и Bot-роботами. `TurnStatusReceived` упрощает реагирование на условия сбоя. Например, если программа Bot занимает слишком много времени в запросе серверной базы данных (например, при поиске продукта), `TurnStatusReceived` клиент может узнать о необходимости повторного запроса: "Увы, я не получил этого, попробовать еще раз" или что-то подобное.
+- **C++/c #**: [пакет NuGet SDK для распознавания речи](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech) теперь поддерживает собственные двоичные файлы Windows ARM/ARM64 Desktop (UWP уже поддерживается), чтобы сделать речевой пакет SDK более полезным для других типов компьютеров.
+- **Java**: [`DialogServiceConnector`](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-java-stable) теперь имеет `setSpeechActivityTemplate()` метод, непреднамеренно исключенный из ранее определенного языка. Это эквивалентно установке `Conversation_Speech_Activity_Template` Свойства и запрашивает, что все будущие действия платформы Bot, порожденные прямой голосовой службой речи, объединяют предоставленное содержимое в свои полезные данные JSON.
+- **Java**: [`Connection`](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection?view=azure-java-stable) Теперь класс имеет `MessageReceived` событие, аналогичное другим языкам программирования (C++, C#). Это событие обеспечивает низкоуровневый доступ к входящим данным из службы и может быть полезен для диагностики и отладки.
+- **JavaScript**: [`BotFrameworkConfig`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/botframeworkconfig) теперь существуют `fromHost()` и `fromEndpoint()` фабричные методы, упрощающие использование пользовательских расположений служб и настройку свойств вручную. Мы также стандартизованы необязательную спецификацию `botId` для использования программы-робота, отличной от используемой по умолчанию, между фабриками конфигурации.
+- **JavaScript**: Добавлено свойство элемента управления строки для сжатия WebSocket. По соображениям производительности мы отключили сжатие WebSocket по умолчанию. Его можно включить повторно для сценариев с низкой пропускной способностью. Дополнительные сведения см. [здесь](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/propertyid). Это решает [проблемы GitHub #242](https://github.com/microsoft/cognitive-services-speech-sdk-js/issues/242).
+- **JavaScript**: добавлена поддержка оценки произношения, позволяющая оценить произношение речи. Ознакомьтесь с кратким руководством [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment?pivots=programming-language-javascript).
+
+**Исправления ошибок**
+- **Все** (кроме JavaScript): Исправлена регрессия в версии 1,14, в которой слишком много памяти были выделены распознавателем.
+- **C++**: Исправлена ошибка сборки мусора с устранением `DialogServiceConnector` [проблемы с #794](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/794).
+- **C#**: Исправлена проблема с завершением работы потока, из-за которой объекты блокируются около секунды при удалении.
+- **C++/c #/Жава**: Исправлена ошибка, из-за которой приложению не удается задать маркер авторизации речи или шаблон действия более одного раза в `DialogServiceConnector` .
+- **C++/c #/Жава**: Исправлена ошибка распознавателя из-за состояния гонки при уничтожении.
+- **JavaScript**: [`DialogServiceConnector`](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/dialogserviceconnector) ранее не учитывался необязательный `botId` параметр, указанный в `BotFrameworkConfig` фабриках. Это сделало необходимость в задании `botId` параметра строки запроса вручную для использования ленты, отличной от используемой по умолчанию. Ошибка исправлена, и `botId` значения, предоставленные `BotFrameworkConfig` фабрикам, будут учитываться и использованы, включая новые `fromHost()` и `fromEndpoint()` добавленные. Это также относится к `applicationId` параметру для `CustomCommandsConfig` .
+- **JavaScript**: исправлена [проблема #881 в GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/881), которая позволяет повторно использовать распознаватель объектов.
+- **JavaScript**: Исправлена проблема, при которой SKD отправлял `speech.config` несколько раз в одном сеансе TTS, что приводит к расходу пропускной способности.
+- **JavaScript**: упрощенная обработка ошибок при авторизации микрофона, позволяющая создавать более описательные сообщения, когда пользователь не разрешил ввод с микрофона в браузере.
+- **JavaScript**: Исправлена ошибка [GitHub #249](https://github.com/microsoft/cognitive-services-speech-sdk-js/issues/249) , где ошибки типов в `ConversationTranslator` и `ConversationTranscriber` вызывали ошибку компиляции для пользователей TypeScript.
+- **Цель-C**: Исправлена проблема, при которой произошел сбой сборки Гстреамер для iOS в Xcode 11,4, которая обращается к [проблемам GitHub #911](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/911).
+- **Python**: Исправлена [ошибка в GitHub #870](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/870), удаление "депрекатионварнинг: модуль Imp устарел в фаваур importlib".
+
+**Примеры**
+- [Образец from-file для браузера JavaScript](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/quickstart/javascript/browser/from-file/index.html) теперь использует файлы для распознавания речи. Это решает [проблемы GitHub #884](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/884).
+
+## <a name="speech-cli-also-known-as-spx-2021-january-release"></a>Речевой интерфейс командной строки (также известный как SPX): 2021 — выпуск за Январь
+
+**Новые функции**
+- Оболочка речи теперь доступна в виде [пакета NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech.CLI/) и может быть установлена с помощью .net CLI в качестве глобального средства .NET, которое можно вызвать из командной строки.
+- [Репозиторий шаблонов пользовательское распознавание речи DevOps](https://github.com/Azure-Samples/Speech-Service-DevOps-Template) был обновлен для использования речевого интерфейса командной строки для своих пользовательское распознавание речи рабочих процессов.
+
+**Ковид-19 краткие тестирование**: так как текущая гриппа по-своему, необходимо, чтобы наши инженеры работали из дома, предварительно гриппа сценарии ручной проверки были значительно сокращены. Мы протестируем меньшее количество устройств с меньшим количеством конфигураций, и вероятность ошибок, связанных с конкретными средами, может увеличиться. Мы по-прежнему тщательно проверяемся при большом наборе автоматизации. В маловероятном случае, если мы пропустили что-нибудь, сообщите нам об этом на [GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues?q=is%3Aissue+is%3Aopen).<br>
+Оставайтесь в курсе событий!
 
 ## <a name="text-to-speech-2020-december-release"></a>Преобразование текста в речь 2020-Декабрь
 

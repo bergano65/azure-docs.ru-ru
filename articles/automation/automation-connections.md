@@ -6,12 +6,12 @@ ms.subservice: shared-capabilities
 ms.date: 12/22/2020
 ms.topic: conceptual
 ms.custom: has-adal-ref
-ms.openlocfilehash: 8deb249dc042701ec02c3e5e30f3603be132d0ec
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 5f6494eb72084c683ddbb8b27a49acdb1fbc2bfc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734000"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054269"
 ---
 # <a name="manage-connections-in-azure-automation"></a>Управление подключениями в службе автоматизации Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "97734000"
 * `AzureServicePrincipal` — подключение, используемое учетной записью запуска от имени Azure.
 * `AzureClassicCertificate` — подключение, используемое классической версией учетной записи запуска от имени Azure.
 
-В большинстве случаев создавать ресурс подключения не нужно, так как он создается вместе с [учетной записью запуска от имени](manage-runas-account.md).
+В большинстве случаев создавать ресурс подключения не нужно, так как он создается вместе с [учетной записью запуска от имени](automation-security-overview.md).
 
 ## <a name="powershell-cmdlets-to-access-connections"></a>Командлеты PowerShell для доступа к подключениям
 

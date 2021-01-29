@@ -1,33 +1,33 @@
 ---
-title: Настройка пользовательского интерфейса
+title: Настройка пользовательского интерфейса с помощью HTML-шаблонов
 titleSuffix: Azure AD B2C
-description: Узнайте, как настроить пользовательский интерфейс для приложений, использующих Azure Active Directory B2C.
+description: Узнайте, как настроить пользовательский интерфейс с помощью HTML-шаблонов для приложений, использующих Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 01/28/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 4a789574b736eb22bd8d13fcf1a9facec5e241c9
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 78ad2540029d78084485ae2004194f9f7c2d6052
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98058673"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050555"
 ---
-# <a name="customize-the-user-interface-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса в Azure Active Directory B2C
+# <a name="customize-the-user-interface-with-html-templates-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса с помощью HTML-шаблонов в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-choose-user-flow-or-custom-policy](../../includes/active-directory-b2c-choose-user-flow-or-custom-policy.md)]
 
 Фирменная символика и настройка пользовательского интерфейса, который Azure Active Directory B2C (Azure AD B2C) для клиентов, помогает обеспечить удобство работы пользователей в приложении. Эти возможности включают регистрацию, вход, изменение профиля и сброс пароля. В этой статье описываются методы настройки пользовательского интерфейса. 
 
 > [!TIP]
-> Если вы хотите изменить только эмблему баннера, фоновое изображение и цвет фона страниц потока пользователя, можно попробовать функцию [фирменной символики компании](company-branding.md) .
+> Если вы хотите изменить только эмблему баннера, фоновое изображение и цвет фона страниц потока пользователя, можно попробовать функцию [фирменной символики компании](customize-ui.md) .
 
 ## <a name="custom-html-and-css-overview"></a>Общие сведения о пользовательском HTML и CSS
 
@@ -116,7 +116,7 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 1. настройка общего доступа к ресурсам независимо от источника (CORS) для своего веб-приложения;
 1. Наведите политику на универсальный код ресурса (URI) содержимого настраиваемой политики.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [active-directory-b2c-customization-prerequisites](../../includes/active-directory-b2c-customization-prerequisites.md)]
 
@@ -228,7 +228,7 @@ https://contoso.blob.core.windows.net/fr/myHTML/unified.html
 
 1. Повторите шаг configure CORS. Для **разрешенных источников** введите `https://www.test-cors.org`
 1. Перейдите по адресу [www.Test-CORS.org](https://www.test-cors.org/) 
-1. В поле **удаленный URL-адрес** вставьте URL-адрес HTML-файла. Например `https://your-account.blob.core.windows.net/root/azure-ad-b2c/unified.html`.
+1. В поле **удаленный URL-адрес** вставьте URL-адрес HTML-файла. Например: `https://your-account.blob.core.windows.net/root/azure-ad-b2c/unified.html`
 1. Выберите **Отправить запрос**.
     Результат должен быть `XHR status: 200` . 
     Если произошла ошибка, проверьте правильность параметров CORS. Кроме того, вам может потребоваться очистить кэш браузера или открыть закрытый сеанс, нажав CTRL+SHIFT+P.
@@ -387,7 +387,15 @@ git clone https://github.com/Azure-Samples/Azure-AD-B2C-page-templates
 1. Теперь измените политику, указав HTML-файл, как упоминалось ранее.
 1. Если вы видите отсутствующие шрифты, изображения или CSS, проверьте ссылки в политике расширения и \* HTML-файлах.
 
+## <a name="use-company-branding-assets-in-custom-html"></a>Использование активов фирменной символики компании в пользовательском HTML
+
+Чтобы использовать активы [фирменной символики](customize-ui.md#configure-company-branding) в пользовательском HTML-коде, добавьте следующие теги за пределами `<div id="api">` тега. Источник изображения заменяется на изображение фонового изображения и логотипа баннера.
+
+```HTML
+<img data-tenant-branding-background="true" />
+<img data-tenant-branding-logo="true" alt="Company Logo" />
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как включить [код JavaScript на стороне клиента](javascript-and-page-layout.md).
-

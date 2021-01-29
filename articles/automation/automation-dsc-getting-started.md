@@ -2,19 +2,15 @@
 title: Начало работы со службой State Configuration службы автоматизации Azure
 description: В этой статье объясняется, как выполнять самые распространенные задачи в службе State Configuration службы автоматизации Azure.
 services: automation
-ms.service: automation
 ms.subservice: dsc
-author: mgoedtel
-ms.author: magoedte
 ms.date: 04/15/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 25f5e92aa8aa211782bc238781c59b9ca0511173
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 95072970004ae53663f130a78af36a84a6fab685
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897247"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051504"
 ---
 # <a name="get-started-with-azure-automation-state-configuration"></a>Начало работы со службой State Configuration службы автоматизации Azure
 
@@ -26,7 +22,7 @@ ms.locfileid: "98897247"
 
 Для выполнения примеров из этой статьи необходимо следующее.
 
-- Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](./manage-runas-account.md).
+- Учетная запись службы автоматизации Azure. Дополнительные сведения о учетной записи службы автоматизации и ее требованиях см. в разделе [Обзор проверки подлинности учетной записи службы автоматизации](./automation-security-overview.md).
 - Виртуальная машина Azure Resource Manager (неклассическая) под управлением поддерживаемой [операционной системы](automation-dsc-overview.md#operating-system-requirements). Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Windows на портале Azure](../virtual-machines/windows/quick-create-portal.md).
 
 ## <a name="create-a-dsc-configuration"></a>Создание конфигурации DSC

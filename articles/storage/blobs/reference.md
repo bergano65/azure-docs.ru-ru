@@ -1,5 +1,5 @@
 ---
-title: Справочная документация по хранилищу BLOB-объектов Azure
+title: Справочник по хранилищу BLOB-объектов Azure
 description: Найдите Справочник по API хранилища BLOB-объектов Azure, файлы readme и пакеты клиентских библиотек.
 author: mhopkins-msft
 ms.author: mhopkins
@@ -8,14 +8,14 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: 04eca391fd02e18d4faed5e4f435e44e5675c4bd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 70178a955fe4afcfc0c695d34e3c1466773d802d
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912286"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054082"
 ---
-# <a name="azure-blob-storage-reference"></a>Справочная документация по хранилищу BLOB-объектов Azure
+# <a name="azure-blob-storage-reference"></a>Справочник по хранилищу BLOB-объектов Azure
 
 Найдите Справочник по API хранилища BLOB-объектов Azure, пакеты библиотек, файлы readme и статьи о начале работы.
 
@@ -25,8 +25,8 @@ ms.locfileid: "95912286"
 
 |  Версия  | Справочная документация | Пакет | Краткое руководство |
 | :-------: | ----------------------- | ------- | ---------- |
-| 12.x | [Клиентская библиотека хранилища BLOB-объектов Azure для .NET](/dotnet/api/overview/azure/storage.blobs-readme) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs/) | [Краткое руководство. Клиентская библиотека службы хранилища BLOB-объектов Azure v12 для .NET](./storage-quickstart-blobs-dotnet.md) |
-| 11. x | [Пространство имен Microsoft. Azure. Storage. BLOB](/dotnet/api/microsoft.azure.storage.blob) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 11 для .NET](./storage-quickstart-blobs-dotnet-legacy.md) |
+| 12.x | [Клиентская библиотека хранилища BLOB-объектов Azure для .NET](/dotnet/api/overview/azure/storage.blobs-readme) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Blobs/) | [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 12 для .NET](./storage-quickstart-blobs-dotnet.md) |
+| 11. x | [Пространство имен Microsoft. Azure. Storage. BLOB](/dotnet/api/microsoft.azure.storage.blob) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) | [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure версии 11 для .NET](./storage-quickstart-blobs-dotnet-legacy.md) |
 
 ### <a name="storage-management"></a>Управление хранением
 

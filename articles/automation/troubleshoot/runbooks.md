@@ -6,12 +6,12 @@ ms.subservice: ''
 ms.date: 11/03/2020
 ms.topic: troubleshooting
 ms.custom: has-adal-ref
-ms.openlocfilehash: 116677354009c538eece02184d801cfda11574a0
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: e154284df8eaad798c5cfaf4de69c40601863cf4
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896314"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053675"
 ---
 # <a name="troubleshoot-runbook-issues"></a>Устранение неполадок с последовательностями runbook
 
@@ -134,7 +134,7 @@ Run Login-AzureRMAccount to login.
 
 ### <a name="cause"></a>Причина
 
-Эта ошибка может произойти, если вы не используете учетную запись запуска от имени или срок ее действия истек. Дополнительные сведения см. в статье [Управление учетными записями запуска от имени службы автоматизации Azure](../manage-runas-account.md).
+Эта ошибка может произойти, если вы не используете учетную запись запуска от имени или срок ее действия истек. Дополнительные сведения см. в статье [Общие сведения об учетных записях запуска от имени службы автоматизации Azure](../automation-security-overview.md#run-as-accounts).
 
 Эта ошибка происходит по двум основным причинам.
 

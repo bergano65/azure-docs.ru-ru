@@ -13,12 +13,12 @@ ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 85c4488c4e8e1e2f9591b7d734c522c34ea4ba2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15a4dd56b509571094ef202fbce781104bda9188
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88116331"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052250"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
 
@@ -106,16 +106,16 @@ ms.locfileid: "88116331"
 
 Дополнительные сведения о пробной версии AppSource см. [в этом видео](https://aka.ms/trialexperienceforwebapps). 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](./v1-authentication-scenarios.md).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).
 
 ## <a name="get-support"></a>Получение поддержки
 
-Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку.
+Для интеграции Azure AD мы используем [Microsoft Q&A](https://docs.microsoft.com/answers/products/) с сообществом для предоставления поддержки.
 
-Мы настоятельно рекомендуем сначала задавать вопросы на сайте Stack Overflow и просмотреть имеющиеся проблемы, чтобы узнать, не задавал ли кто-то аналогичные вопросы раньше. Убедитесь, что ваши вопросы или комментарии помечены как [ `[azure-active-directory]` и `[appsource]` ](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource).
+Мы настоятельно рекомендуем задать свои вопросы в Microsoft Q&и просмотреть существующие проблемы, чтобы узнать, не запрашивал ли пользователь вопрос. Убедитесь, что ваши вопросы или комментарии помечены как [`[azure-active-directory]`](https://docs.microsoft.com/answers/topics/azure-active-directory.html) .
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 

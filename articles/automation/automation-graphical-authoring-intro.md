@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 161272fe35ee9ea1e0880b991273e5d1a79eafb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec74ca19978a4164289276d44b34eb14b694687f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987324"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051587"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Создание графических модулей Runbook в службе автоматизации Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "90987324"
 
 Условие повтора — это выражение PowerShell, которое вычисляется после каждого выполнения действия. Если выражение возвращает значение True, действие выполняется повторно. Если выражение возвращает значение False, действие не выполняется повторно, а модуль Runbook переходит к следующему действию.
 
-:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Снимок экрана: включение параметров функции &quot;включить повторы&quot;.":::
+:::image type="content" source="media/automation-graphical-authoring-intro/retry-condition.png" alt-text="Снимок экрана, показывающий повторную попытку до наступления этого условия, и примеры выражений PowerShell, которые могут использоваться в условии повтора.":::
 
 В качестве условия повтора может использоваться переменная с именем `RetryData`, которая предоставляет доступ к сведениям о попытках выполнить действие. У этой переменной есть свойства, приведенные в таблице ниже.
 
@@ -373,7 +373,7 @@ $h
 
 ## <a name="authenticate-to-azure-resources"></a>Проверка подлинности в ресурсах Azure
 
-В службе автоматизации Azure для модулей runbook, которые управляют ресурсами Azure, требуется проверка подлинности. Для доступа к ресурсам Azure Resource Manager в подписке с помощью модулей Runbook службы автоматизации по умолчанию используется [учетная запись запуска от имени](./manage-runas-account.md) (также называемая субъектом-службой). Эту функцию можно включить в графический модуль Runbook, добавив ресурс-контейнер подключения `AzureRunAsConnection`, который использует для работы с холстом командлет PowerShell [Get-AutomationConnection](/system-center/sma/manage-global-assets). Можно также добавить командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Этот сценарий показан в примере ниже.
+В службе автоматизации Azure для модулей runbook, которые управляют ресурсами Azure, требуется проверка подлинности. Для доступа к ресурсам Azure Resource Manager в подписке с помощью модулей Runbook службы автоматизации по умолчанию используется [учетная запись запуска от имени](./automation-security-overview.md) (также называемая субъектом-службой). Эту функцию можно включить в графический модуль Runbook, добавив ресурс-контейнер подключения `AzureRunAsConnection`, который использует для работы с холстом командлет PowerShell [Get-AutomationConnection](/system-center/sma/manage-global-assets). Можно также добавить командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Этот сценарий показан в примере ниже.
 
 ![Действия аутентификации запуска от имени](media/automation-graphical-authoring-intro/authenticate-run-as-account.png)
 

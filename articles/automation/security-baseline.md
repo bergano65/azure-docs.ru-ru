@@ -4,15 +4,15 @@ description: Базовый уровень безопасности Azure для
 author: msmbaldwin
 ms.service: security
 ms.topic: conceptual
-ms.date: 06/22/2020
+ms.date: 01/07/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ea984e527eb526e49c87ce5385ba5715803cc72d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 79282e99894bccad4f3c265cdffe4bee2e465950
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737258"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052759"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Базовый уровень безопасности Azure для автоматизации
 
@@ -336,11 +336,11 @@ ms.locfileid: "98737258"
 
 **Рекомендации**. Используйте Azure Active Directory встроенные роли администратора, которые могут быть явно назначены и доступны для запроса. Используйте модуль Azure AD PowerShell для выполнения нерегламентированных запросов для обнаружения учетных записей, входящих в группы администраторов. При каждом использовании учетных записей запуска от имени учетной записи службы автоматизации для модулей Runbook убедитесь, что эти субъекты-службы также отправляются в инвентаризацию, так как они часто имеют более высокий уровень разрешений. Удалите все неиспользуемые учетные записи запуска от имени, чтобы избежать уязвимой уязвимости.
 
-* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+* [Как получить роль каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./delete-run-as-account.md)
 
 * [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
@@ -364,7 +364,7 @@ ms.locfileid: "98737258"
 
 * [Дополнительные сведения о управление привилегированными пользователями](../active-directory/privileged-identity-management/index.yml)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./delete-run-as-account.md)
 
 * [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
@@ -454,7 +454,7 @@ ms.locfileid: "98737258"
 
 * [Использование проверок доступа для идентификации Azure](../active-directory/governance/access-reviews-overview.md)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./delete-run-as-account.md)
 
 * [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
@@ -696,7 +696,7 @@ ms.locfileid: "98737258"
 
 * [Как создавать запросы с помощью Azure Resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Как просматривать подписки Azure](/powershell/module/az.accounts/get-azsubscription)
 
 * [Общие сведения об Azure RBAC](../role-based-access-control/overview.md)
 
@@ -724,7 +724,7 @@ ms.locfileid: "98737258"
 
 * [Создание и использование тегов](../azure-resource-manager/management/tag-resources.md)
 
-* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./manage-runas-account.md#delete-a-run-as-or-classic-run-as-account)
+* [Удаление учетной записи запуска от имени или классической учетной записи запуска от имени](./delete-run-as-account.md)
 
 * [Управление учетной записью запуска от имени службы автоматизации Azure](./manage-runas-account.md)
 
@@ -836,7 +836,7 @@ ms.locfileid: "98737258"
 
 **Руководство**. при использовании функции гибридной рабочей роли Runbook и в зависимости от типа сценариев вы можете использовать конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure. Можно также использовать адаптивные элементы управления приложениями центра безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
-* [Управление выполнением скриптов PowerShell в средах Windows](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+* [Управление выполнением скриптов PowerShell в средах Windows](/powershell/module/microsoft.powershell.security/set-executionpolicy)
 
 * [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](../security-center/security-center-adaptive-application.md)
 
@@ -878,7 +878,7 @@ ms.locfileid: "98737258"
 
 Вы также можете использовать рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для ресурсов Azure.
 
-* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Просмотр доступных псевдонимов политик Azure](/powershell/module/az.resources/get-azpolicyalias)
 
 * [Руководство по Создание политик и управление ими для обеспечения соответствия требованиям](../governance/policy/tutorials/create-and-manage.md)
 
@@ -942,7 +942,7 @@ ms.locfileid: "98737258"
 
 * [Сведения о создании шаблонов ARM](../virtual-machines/windows/ps-template.md)
 
-* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Как отправить пользовательский виртуальный жесткий диск виртуальной машины в Azure](/azure-stack/operator/azure-stack-add-vm-image)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -952,7 +952,7 @@ ms.locfileid: "98737258"
 
 **Руководство**. Использование Azure DevOps для безопасного хранения и управления кодом, например пользовательскими политиками Azure, Azure Resource Manager шаблонами и скриптами настройки требуемого состояния. Чтобы получить доступ к ресурсам, которыми вы управляете в Azure DevOps, вы можете предоставить или отклонить разрешения для определенных пользователей, встроенных групп безопасности или групп, определенных в Azure Active Directory, если они интегрированы с Azure DevOps или Active Directory при интеграции с TFS. Используйте функцию интеграции системы управления версиями, чтобы синхронизировать модули Runbook в учетной записи службы автоматизации с сценариями в репозитории системы управления версиями.
 
-* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
 * [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 
@@ -1134,7 +1134,7 @@ ms.locfileid: "98737258"
 
 * [Введение в службу автоматизации Azure](./automation-intro.md)
 
-* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 * [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
@@ -1160,7 +1160,7 @@ ms.locfileid: "98737258"
 
 * [Введение в службу автоматизации Azure](./automation-intro.md)
 
-* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как создать резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 * [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
@@ -1176,7 +1176,7 @@ ms.locfileid: "98737258"
 
 * [Развертывание ресурсов с помощью шаблонов ARM и портал Azure](../azure-resource-manager/templates/deploy-portal.md)
 
-* [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Как восстановить резервную копию ключей хранилища ключей в Azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey)
 
 * [Использование управляемых клиентом ключей для учетной записи службы автоматизации Azure](./automation-secure-asset-encryption.md#use-of-customer-managed-keys-for-an-automation-account)
 
@@ -1190,7 +1190,7 @@ ms.locfileid: "98737258"
 
 Используйте функцию интеграции системы управления версиями, чтобы синхронизировать модули Runbook в учетной записи службы автоматизации с сценариями в репозитории системы управления версиями.
 
-* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Как хранить код в Azure DevOps](/azure/devops/repos/git/gitworkflow)
 
 * [О разрешениях и группах в Azure DevOps](/azure/devops/organizations/security/about-permissions)
 

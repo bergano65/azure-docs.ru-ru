@@ -1,18 +1,16 @@
 ---
-title: Включение Управления обновлениями с помощью шаблона Azure Resource Manager | Документация Майкрософт
+title: Включение Управления обновлениями с помощью шаблона Azure Resource Manager
 description: В этой статье описывается, как использовать шаблон Azure Resource Manager для включения Управления обновлениями.
-ms.service: automation
+services: automation
 ms.subservice: update-management
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 09/18/2020
-ms.openlocfilehash: e2ebdd3d0f4a4461521ee5f412d5b4c4f872b8a0
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 47c982bff45838617b9a55f9129d4dc55d58b0d2
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183240"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050337"
 ---
 # <a name="enable-update-management-using-azure-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Azure Resource Manager
 
@@ -29,7 +27,7 @@ ms.locfileid: "98183240"
 Если у вас уже есть рабочая область Log Analytics и учетная запись службы автоматизации, развернутая в поддерживаемом регионе в вашей подписке, они не связаны между собой. Использование этого шаблона позволяет успешно создавать ссылку и развертывать Управление обновлениями.
 
 >[!NOTE]
->Создание учетной записи запуска от имени службы автоматизации на основе шаблона Azure Resource Manager не поддерживается. Сведения о создании учетной записи запуска от имени вручную на портале или с помощью PowerShell см. в статье [Управление учетными записями запуска от имени](../manage-runas-account.md).
+>Создание учетной записи запуска от имени службы автоматизации на основе шаблона Azure Resource Manager не поддерживается. Сведения о создании учетной записи запуска от имени вручную с портала или с помощью PowerShell см. в разделе [Создание учетной записи запуска от имени](../create-run-as-account.md).
 
 После выполнения этих действий необходимо [настроить параметры диагностики](../automation-manage-send-joblogs-log-analytics.md), чтобы учетная запись службы автоматизации могла отправлять состояния заданий Runbook и потоки заданий в связанную рабочую область Log Analytics.
 

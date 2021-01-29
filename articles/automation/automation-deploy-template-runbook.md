@@ -6,12 +6,12 @@ ms.subservice: process-automation
 ms.date: 09/22/2020
 ms.topic: conceptual
 keywords: powershell, runbook, json, служба автоматизации azure
-ms.openlocfilehash: 18f1d4ced2a80f9adb5da2c209987fc1997a3f22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d9b443d1840840d3d6202140da235589c73453cc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91304157"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99051402"
 ---
 # <a name="deploy-an-azure-resource-manager-template-in-a-powershell-runbook"></a>Развертывание шаблона Azure Resource Manager в runbook PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "91304157"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* [Учетная запись службы автоматизации](./manage-runas-account.md) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
+* [Учетная запись службы автоматизации](./automation-security-overview.md) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
 * [Учетная запись хранения Azure](../storage/common/storage-account-create.md) , в которой будет храниться шаблон диспетчер ресурсов.
 * Azure PowerShell, установленный на локальном компьютере. Дополнительные сведения о получении Azure PowerShell см. в статье [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 

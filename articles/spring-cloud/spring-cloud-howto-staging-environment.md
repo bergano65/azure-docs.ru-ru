@@ -1,18 +1,18 @@
 ---
 title: Настройка промежуточной среды в Azure Spring Cloud | Документация Майкрософт
 description: Узнайте, как использовать развертывание по методу Blue-Green с помощью Azure Spring Cloud
-author: bmitchell287
+author: MikeDodaro
 ms.service: spring-cloud
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 01/14/2021
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 72cf5553bec5985ba0310b4a347b0d2c60da6924
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 8cae73e03fee0b59be0c7596f0783570ac14f6ee
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090715"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99053115"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Настройка промежуточной среды в облаке Azure весны
 
@@ -22,7 +22,8 @@ ms.locfileid: "92090715"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этой статье предполагается, что вы уже развернули приложение Пиггиметрикс из нашего [руководства по запуску облачного приложения Azure весны](./spring-cloud-quickstart.md). Пиггиметрикс состоит из трех приложений: "шлюз", "учетная запись-служба" и "auth-Service".  
+* Выполняющееся приложение.  См. раздел [Краткое руководство. развертывание первого облачного приложения Azure](spring-cloud-quickstart.md).
+* [Расширение Azure CLI ASC](https://docs.microsoft.com/cli/azure/azure-cli-extensions-overview)
 
 Если вы хотите использовать другое приложение в этом примере, необходимо внести простое изменение в общедоступную часть приложения.  Это изменение отличает промежуточное развертывание от развертывания в рабочей среде.
 
@@ -39,34 +40,61 @@ ms.locfileid: "92090715"
 az extension add --name spring-cloud
 ```
     
-## <a name="view-all-deployments"></a>Просмотр всех развертываний
+## <a name="view-apps-and-deployments"></a>Просмотр приложений и развертываний
 
-Перейдите к экземпляру службы в портал Azure и выберите **Управление развертыванием** , чтобы просмотреть все развертывания. Для просмотра дополнительных сведений можно выбрать каждое развертывание.
+Просмотрите развернутые приложения, выполнив следующие процедуры.
+
+1. Перейдите к облачному экземпляру Azure весны в портал Azure.
+
+1. В левой области навигации откройте **развертывания**.
+
+    [![Развертывание — нерекомендуемый](media/spring-cloud-blue-green-staging/deployments.png)](media/spring-cloud-blue-green-staging/deployments.png)
+
+1. Откройте колонку "приложения", чтобы просмотреть приложения для своего экземпляра службы.
+
+    [![Приложения — панель мониторинга](media/spring-cloud-blue-green-staging/app-dashboard.png)](media/spring-cloud-blue-green-staging/app-dashboard.png)
+
+1. Можно щелкнуть приложение и просмотреть сведения.
+
+    [![Общие сведения о приложениях](media/spring-cloud-blue-green-staging/app-overview.png)](media/spring-cloud-blue-green-staging/app-overview.png)
+
+1. Откройте колонку **развертывания** , чтобы просмотреть все развертывания приложения. В сетке развертывания показано, является ли развертывание производственным или промежуточным.
+
+    [![Панель мониторинга развертываний](media/spring-cloud-blue-green-staging/deployments-dashboard.png)](media/spring-cloud-blue-green-staging/deployments-dashboard.png)
+
+1. Можно щелкнуть имя развертывания, чтобы просмотреть общие сведения о развертывании. В этом случае единственное развертывание называется *Default*.
+
+    [![Общие сведения о развертываниях](media/spring-cloud-blue-green-staging/deployments-overview.png)](media/spring-cloud-blue-green-staging/deployments-overview.png)
+    
 
 ## <a name="create-a-staging-deployment"></a>Создание промежуточного развертывания
 
-1. В локальной среде разработки внесите небольшие изменения в приложение шлюза Пиггиметрикс. Например, измените цвет в файле *Gateway/src/Main/Resources/static/CSS/Launch. CSS* . Это позволяет легко различать два развертывания. Чтобы создать пакет JAR, выполните следующую команду: 
+1. В локальной среде разработки внесите небольшие изменения в приложение. Это позволяет легко различать два развертывания. Чтобы создать пакет JAR, выполните следующую команду: 
 
     ```console
-    mvn clean package
+    mvn clean package -DskipTests
     ```
 
 1. В Azure CLI создайте новое развертывание и присвойте ему имя промежуточного развертывания "Green".
 
     ```azurecli
-    az spring-cloud app deployment create -g <resource-group-name> -s <service-instance-name> --app gateway -n green --jar-path gateway/target/gateway.jar
+    az spring-cloud app deployment create -g <resource-group-name> -s <service-instance-name> --app default -n green --jar-path gateway/target/gateway.jar
     ```
 
-1. После успешного завершения развертывания откройте страницу шлюза на **панели мониторинга приложения**и просмотрите все экземпляры на вкладке **экземпляры приложения** слева.
+1. После успешного завершения развертывания CLI откройте страницу приложения на **панели мониторинга приложения** и просмотрите все экземпляры на вкладке **развертывания** слева.
+
+   [![Панель мониторинга развертываний после зеленого развертывания](media/spring-cloud-blue-green-staging/deployments-dashboard-2.png)](media/spring-cloud-blue-green-staging/deployments-dashboard-2.png)
+
   
 > [!NOTE]
 > Состояние обнаружения — *OUT_OF_SERVICE* , поэтому трафик не будет направляться в это развертывание до завершения проверки.
 
 ## <a name="verify-the-staging-deployment"></a>Проверка промежуточного развертывания
 
-1. Вернитесь на страницу **Управление развертыванием** и выберите новое развертывание. Для состояния развертывания должно отображаться значение *Выполняется*. Кнопка **назначить или отменить назначение домена** должна отображаться серым цветом, так как среда является промежуточной.
-
-1. В области **Обзор** вы увидите **конечную точку теста**. Скопируйте и вставьте его в новое окно браузера, после чего должна отобразиться новая страница Пиггиметрикс.
+Чтобы проверить работу зеленого промежуточного развертывания, выполните следующие действия.
+1. Перейдите в раздел **развертывания** и щелкните `green` **промежуточное развертывание**.
+1. На странице **Обзор** щелкните **конечную точку теста**.
+1. Откроется промежуточная сборка, в которой отобразятся изменения.
 
 >[!TIP]
 > * Убедитесь, что конечная точка теста заканчивается косой чертой (/), чтобы убедиться, что CSS-файл загружен правильно.  
@@ -79,11 +107,17 @@ az extension add --name spring-cloud
     
 ## <a name="set-the-green-deployment-as-the-production-environment"></a>Установка зеленого развертывания в качестве рабочей среды
 
-1. После проверки изменений в промежуточной среде ее можно отправить в рабочую среду. Вернитесь в окно **Управление развертыванием**и установите флажок Приложение **шлюза** .
+1. После проверки изменений в промежуточной среде ее можно отправить в рабочую среду. Вернитесь в **Управление развертыванием** и выберите приложение в данный момент `Production` .
 
-2. Выберите **задать развертывание**.
-3. В списке **рабочее развертывание** выберите **зеленый**и нажмите кнопку **Применить**.
-4. Перейдите на страницу **Обзор** приложения шлюза. Если вы уже назначили домен для приложения шлюза, URL-адрес появится в области **Обзор** . Чтобы просмотреть измененную страницу Пиггиметрикс, выберите URL-адрес и перейдите на сайт.
+1. Нажмите кнопку с многоточием после **состояния регистрации** и задайте для рабочей сборки значение `staging` .
+
+   [Развертывание ![ Настройка промежуточного развертывания](media/spring-cloud-blue-green-staging/set-staging-deployment.png)](media/spring-cloud-blue-green-staging/set-staging-deployment.png)
+
+1. Вернитесь на страницу **Управление развертыванием** .  `green`Отобразится состояние развертывания развертывания.  Теперь это выполняемая рабочая сборка.
+
+   [![Результаты задания промежуточного развертывания для развертывания](media/spring-cloud-blue-green-staging/set-staging-deployment-result.png)](media/spring-cloud-blue-green-staging/set-staging-deployment-result.png)
+
+1. Скопируйте и вставьте URL-адрес в новое окно браузера. После внесения изменений отобразится страница новое приложение.
 
 >[!NOTE]
 > После настройки зеленого развертывания в качестве рабочей среды, предыдущее развертывание станет промежуточным развертыванием.
@@ -108,4 +142,4 @@ az spring-cloud app deployment delete -n <staging-deployment-name> -g <resource-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Развертывание первого приложения Azure Spring Cloud](spring-cloud-quickstart.md)
+* [CI/CD для Azure Веснного облака](https://review.docs.microsoft.com/azure/spring-cloud/spring-cloud-howto-cicd?branch=pr-en-us-142929&pivots=programming-language-java)
