@@ -2,15 +2,16 @@
 title: Включение Управления обновлениями службы автоматизации Azure в учетной записи службы автоматизации
 description: В этой статье описывается, как включить управление обновлениями в учетной записи службы автоматизации.
 services: automation
+ms.subservice: update-management
 ms.date: 11/09/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: b97e1e61401697204f79004e4678e6f2286f4a98
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 06a29cd07a870e7553d599b5f719943acb259c2a
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380544"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054929"
 ---
 # <a name="enable-update-management-from-an-automation-account"></a>Включение Управления обновлениями в учетной записи службы автоматизации
 
@@ -22,7 +23,7 @@ ms.locfileid: "94380544"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись службы автоматизации](../index.yml) для управления компьютерами.
+* [Учетная запись службы автоматизации](../automation-security-overview.md) для управления компьютерами.
 * [Виртуальная машина Azure](../../virtual-machines/windows/quick-create-portal.md)или виртуальная машина или сервер, зарегистрированные на серверах с поддержкой ARC. На виртуальных машинах или серверах, не относящихся к Azure, необходимо установить [агент log Analytics](../../azure-monitor/platform/log-analytics-agent.md) для Windows или Linux и создавать отчеты для рабочей области, связанной с учетной записью службы автоматизации Управление обновлениями включен в. Рекомендуется установить агент Log Analytics для Windows или Linux, сначала подключив компьютер к [серверам с поддержкой дуги Azure](../../azure-arc/servers/overview.md), а затем с помощью политики Azure назначить встроенную политику [развертывания log Analytics Agent для *Linux* или *Windows* Azure Arc](../../governance/policy/samples/built-in-policies.md#monitoring) . Кроме того, если планируется отслеживать компьютеры с Azure Monitor для виртуальных машин, используйте инициативу [Enable Azure Monitor для виртуальных машин](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure

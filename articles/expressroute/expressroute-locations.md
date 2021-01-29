@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 01/22/2021
 ms.author: duau
-ms.openlocfilehash: 4856b572182646827b8016212bbb4c1b28f440ab
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 1eeb4542242415c38a585643fd74a6a60e8e526f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740879"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054997"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению и одноранговые расположения ExpressRoute
 
@@ -132,7 +132,7 @@ ms.locfileid: "98740879"
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Поддерживается |Поддерживается |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Ньюпорт (Уэльс), Сан-Паулу, Сингапур, Сиэтл, Чикаго |
 | **LG CNS** |Поддерживается |Поддерживается |Пусан, Сеул |
 | **[Liquid Telecom](https://www.liquidtelecom.com/products-and-services/cloud.html)** |Поддерживается |Поддерживается |Кейптаун, Йоханнесбург |
-| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Атланта, о., Чикаго, Далласе, Денвер, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, Гонконг Kong2, Лас-деньги, Лондон, London2, Лос-Анджелес, Мельбурн, Майами, Монреаль, Нью-Йорк, Осака, Oslo, Перт, Квебек City, San Сан Антонио, Сиэтл,, Сингапур, Сингапур 2, ставанжер, Стокгольм, Сидней, Sydney2, Токио, Tokyo2, Вашингтон, округ Колумбия, штат Вашингтон |
+| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживается |Поддерживается |Амстердам, Атланта, "Денвер", Чикаго, Далласе, Dubai2, Дублин, Франкфурт, Geneva, Гонконг, Гонконг Kong2, Лас-деньги, Лондон, London2, Лос-Анджелес, Мельбурн, Майами, Миннеаполисе, Монреаль, Нью-Йорк, Осака, Oslo, Перт, Квебек City, Сан Сан Антонио, Сиэтл, Silicon впадин, Сингапур, Сингапур 2, ставанжер, Стокгольм, Сидней, Вашингтон, округ Колумбия, штат Вашингтон, Sydney2 |
 | **[MTN](https://www.mtnbusiness.co.za/en/Cloud-Solutions/Pages/microsoft-express-route.aspx)** |Поддерживается |Поддерживается |London |
 | **[Neutrona Networks](https://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживается |Поддерживается |Даллас, Лос-Анджелес, Майами, Сан-Паулу, Вашингтон (округ Колумбия) |
 | **[Next Generation Data](https://vantage-dc-cardiff.co.uk/)** |Поддерживается |Поддерживается |Ньюпорт (Уэльс) |

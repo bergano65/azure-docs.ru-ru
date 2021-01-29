@@ -2,15 +2,16 @@
 title: Включение Управление обновлениями службы автоматизации Azure из портал Azure
 description: Эта статья содержит сведения о том, как включить функцию "Управление обновлениями" на портале Azure.
 services: automation
-ms.date: 04/11/2019
-ms.topic: article
+ms.subservice: update-management
+ms.date: 01/07/2021
+ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: ac402587c8346c14f34b683ba10832c7779b660b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 089c5fea6ac4a6fc4fb25af2d631335ef51cf4cc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182773"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054912"
 ---
 # <a name="enable-update-management-from-the-azure-portal"></a>Включение Управления обновлениями на портале Azure
 
@@ -24,7 +25,7 @@ ms.locfileid: "96182773"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Учетная запись службы автоматизации](../index.yml) для управления компьютерами.
+* [Учетная запись службы автоматизации](../automation-security-overview.md) для управления компьютерами.
 * [Виртуальная машина](../../virtual-machines/windows/quick-create-portal.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure

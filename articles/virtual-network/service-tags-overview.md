@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 39645e8bd370dfd518d570c3088c56a22aa77748
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b353fad64b08f5fc50af2b8d31abab77cd797e25
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927033"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055048"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -58,7 +58,7 @@ ms.locfileid: "98927033"
 | **AzureBotService** | Служба Azure Bot. | Исходящие | Нет | Нет |
 | **AzureCloud** | Все [общедоступные IP-адреса центра обработки данных](https://www.microsoft.com/download/details.aspx?id=56519). | Исходящие | Да | Да |
 | **AzureCognitiveSearch** | Когнитивный поиск Azure. <br/><br/>Этот тег или IP-адреса, охватываемые этим тегом, можно использовать для предоставления индексаторам безопасного доступа к источникам данных. Дополнительные сведения см. в [документации по подключению индексатора](../search/search-indexer-troubleshooting.md#connection-errors) . <br/><br/> *Примечание.* IP-адрес службы поиска не включен в список диапазонов IP-адресов для этого тега службы, и его **также необходимо добавить** в брандмауэр IP-адресов источников данных. | Входящий трафик | Нет | Нет |
-| **AzureConnectors** | Соединители Azure Logic Apps для пробных и серверных подключений. | Входящий трафик | Да | Да |
+| **AzureConnectors** | Этот тег представляет IP-адреса, используемые для управляемых соединителей, которые выполняют обратные вызовы входящего веб-перехватчика в службу Azure Logic Apps и исходящие вызовы соответствующих служб, например службы хранилища Azure или концентраторов событий Azure. | Входящий или исходящий трафик | Да | Да |
 | **AzureContainerRegistry** | Реестр контейнеров Azure. | Исходящие | Да | Да |
 | **AzureCosmosDB** | Azure Cosmos DB. | Исходящие | Да | Да |
 | **AzureDatabricks** | Azure Databricks. | both | Нет | Нет |

@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 65d6151536eb92e2ab9b740a99984fb0b5977cab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3dfeca64804ceb522046e5c0dc10702575f60aad
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91256880"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054591"
 ---
 # <a name="get-appsource-certified-for-azure-active-directory"></a>Получить сертификат AppSource для Azure Active Directory
 
@@ -104,13 +104,13 @@ ms.locfileid: "91256880"
 
 ## <a name="get-support"></a>Получение поддержки
 
-Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку.
+Для интеграции Azure AD мы используем [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html) с сообществом для предоставления поддержки.
 
-Мы настоятельно рекомендуем сначала задавать вопросы на сайте Stack Overflow и просмотреть имеющиеся проблемы, чтобы узнать, не задавал ли кто-то аналогичные вопросы раньше. Убедитесь, что ваши вопросы или комментарии помечены как [ `[azure-active-directory]` и `[appsource]` ](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource).
+Мы настоятельно рекомендуем задать свои вопросы в Microsoft Q&и просмотреть существующие проблемы, чтобы узнать, не запрашивал ли пользователь вопрос. Убедитесь, что ваши вопросы или комментарии помечены как [`[azure-active-directory]`](https://docs.microsoft.com/answers/topics/azure-active-directory.html) .
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](authentication-flows-app-scenarios.md).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).

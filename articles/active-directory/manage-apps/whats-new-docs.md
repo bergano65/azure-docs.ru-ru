@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: bad312b777c57a48c3205de588325d477b5773af
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: ea2e08db91d23e9523b7bc95e01b7adc9c93b3cc
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563404"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054827"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
@@ -67,7 +67,7 @@ ms.locfileid: "97563404"
 ### <a name="new-articles"></a>Новые статьи
 - [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
 - [Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений](add-application-portal-assign-users.md)
-- [Новые возможности в документах](whats-new-docs.md)
+- [Новые возможности в Документации Майкрософт](whats-new-docs.md)
 
 
 ### <a name="updated-articles"></a>Обновленные статьи
@@ -90,7 +90,7 @@ ms.locfileid: "97563404"
 - [Использование самостоятельного доступа к приложениям](access-panel-manage-self-service-access.md)
 - [Устранение неполадок при входе в приложение из моих приложений Azure AD](application-sign-in-other-problem-access-panel.md)
 - [Устранение неполадок с единым входом на основе пароля в Azure AD](troubleshoot-password-based-sso.md)
-- [Планирование Azure Active Directory развертывания приложений](access-panel-deployment-plan.md)
+- [Планирование Azure Active Directory развертывания приложений](my-apps-deployment-plan.md)
 - [Что собой представляет единый вход?](what-is-single-sign-on.md)
 - [Выполнение действий с недостаточными или подозрительными приложениями в Azure Active Directory](manage-application-permissions.md)
 - [Краткое руководство. Настройка свойств приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-configure.md)

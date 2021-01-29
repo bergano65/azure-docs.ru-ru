@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 05/08/2020
+ms.date: 01/28/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 10609f2706d257dbe5d8f43b85da5f06cb986cae
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: dd1edc001e51bf20f3ff7745baa520b3844c139b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756180"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054675"
 ---
 # <a name="troubleshoot-publisher-verification"></a>Устранение неполадок с проверкой издателя
 Если не удается завершить процесс или возникло непредвиденное поведение при [проверке издателя](publisher-verification-overview.md), следует начать с следующих действий, если возникают ошибки или возникает непредвиденное поведение. 
@@ -149,87 +149,95 @@ HTTP/1.1 200 OK
 
 Ниже приведен список возможных кодов ошибок, которые могут быть получены при устранении неполадок в Microsoft Graph или в процессе регистрации приложений на портале.
 
-### <a name="mpnaccountnotfoundornoaccess"></a>MPNAccountNotFoundOrNoAccess     
+### <a name="mpnaccountnotfoundornoaccess"></a>MPNAccountNotFoundOrNoAccess
 
-Указанный идентификатор MPN (<MPNID>) не существует, или у вас нет доступа к нему. Укажите допустимый идентификатор MPN и повторите попытку.
+Указанный идентификатор MPN (`MPNID`) не существует, или у вас нет доступа к нему. Укажите допустимый идентификатор MPN и повторите попытку.
     
 Чаще всего это вызвано тем, что пользователь, выполнивший вход, не является членом правильной роли для учетной записи MPN в центре партнеров. см. раздел [требования](publisher-verification-overview.md#requirements) для получения списка соответствующих ролей и просмотрите [распространенные проблемы](#common-issues) , чтобы получить дополнительные сведения. Также может быть вызвано тем, что клиент регистрируется в не добавлении в учетную запись MPN или является недопустимым ИДЕНТИФИКАТОРом MPN.
 
-### <a name="mpnglobalaccountnotfound"></a>MPNGlobalAccountNotFound     
+### <a name="mpnglobalaccountnotfound"></a>MPNGlobalAccountNotFound
 
-Указан недопустимый идентификатор MPN (<MPNID>). Укажите допустимый идентификатор MPN и повторите попытку.
+Указан недопустимый идентификатор MPN (`MPNID`). Укажите допустимый идентификатор MPN и повторите попытку.
     
 Чаще всего возникает, когда предоставляется идентификатор MPN, соответствующий учетной записи расположения партнера (PLA). Поддерживаются только глобальные учетные записи партнеров. Дополнительные сведения см. в разделе [Структура учетной записи центра партнеров](/partner-center/account-structure) .
 
-### <a name="mpnaccountinvalid"></a>MPNAccountInvalid    
+### <a name="mpnaccountinvalid"></a>MPNAccountInvalid
 
-Указан недопустимый идентификатор MPN (<MPNID>). Укажите допустимый идентификатор MPN и повторите попытку.
+Указан недопустимый идентификатор MPN (`MPNID`). Укажите допустимый идентификатор MPN и повторите попытку.
     
 Чаще всего это вызвано неправильным ИДЕНТИФИКАТОРом MPN.
 
-### <a name="mpnaccountnotvetted"></a>MPNAccountNotVetted  
+### <a name="mpnaccountnotvetted"></a>MPNAccountNotVetted
 
-Указанный идентификатор MPN (<MPNID>) не завершил процесс проверки. Завершите этот процесс в Центре партнеров и повторите попытку. 
+Указанный идентификатор MPN (`MPNID`) не завершил процесс проверки. Завершите этот процесс в Центре партнеров и повторите попытку. 
     
 Чаще всего происходит, когда учетная запись MPN не завершила процесс [проверки](/partner-center/verification-responses) .
 
-### <a name="nopublisheridonassociatedmpnaccount"></a>NoPublisherIdOnAssociatedMPNAccount  
+### <a name="nopublisheridonassociatedmpnaccount"></a>NoPublisherIdOnAssociatedMPNAccount
 
-Указан недопустимый идентификатор MPN (<MPNID>). Укажите допустимый идентификатор MPN и повторите попытку. 
+Указан недопустимый идентификатор MPN (`MPNID`). Укажите допустимый идентификатор MPN и повторите попытку. 
    
 Чаще всего это вызвано неправильным ИДЕНТИФИКАТОРом MPN.
 
-### <a name="mpniddoesnotmatchassociatedmpnaccount"></a>MPNIdDoesNotMatchAssociatedMPNAccount    
+### <a name="mpniddoesnotmatchassociatedmpnaccount"></a>MPNIdDoesNotMatchAssociatedMPNAccount
 
-Указан недопустимый идентификатор MPN (<MPNID>). Укажите допустимый идентификатор MPN и повторите попытку.
+Указан недопустимый идентификатор MPN (`MPNID`). Укажите допустимый идентификатор MPN и повторите попытку.
     
 Чаще всего это вызвано неправильным ИДЕНТИФИКАТОРом MPN.
 
-### <a name="applicationnotfound"></a>ApplicationNotFound  
+### <a name="applicationnotfound"></a>ApplicationNotFound
 
-Не удается найти целевое приложение (<AppId>). Укажите допустимый идентификатор приложения и повторите попытку.
+Не удается найти целевое приложение (`AppId`). Укажите допустимый идентификатор приложения и повторите попытку.
     
 Чаще всего возникает, если проверка выполняется с помощью API Graph, а идентификатор предоставленного приложения неверен. Примечание. необходимо указать идентификатор приложения, а не AppId/ClientId.
 
-### <a name="b2ctenantnotallowed"></a>B2CTenantNotAllowed  
+### <a name="b2ctenantnotallowed"></a>B2CTenantNotAllowed
 
-Эта функция не поддерживается в клиенте Azure AD B2C. 
+Эта функция не поддерживается в клиенте Azure AD B2C.
 
-### <a name="emailverifiedtenantnotallowed"></a>EmailVerifiedTenantNotAllowed    
+### <a name="emailverifiedtenantnotallowed"></a>EmailVerifiedTenantNotAllowed
 
-Эта функция не поддерживается в клиенте, проверенном по электронной почте. 
+Эта функция не поддерживается в клиенте, проверенном по электронной почте.
 
-### <a name="nopublisherdomainonapplication"></a>NoPublisherDomainOnApplication   
+### <a name="nopublisherdomainonapplication"></a>NoPublisherDomainOnApplication
 
-Целевое приложение ( \<AppId\> ) должно иметь набор доменов издателя. Укажите домен издателя и повторите попытку.
+Целевое приложение ( `AppId` ) должно иметь набор доменов издателя. Укажите домен издателя и повторите попытку.
 
 Происходит, когда [домен издателя](howto-configure-publisher-domain.md) не настроен в приложении.
 
-### <a name="publisherdomainmismatch"></a>PublisherDomainMismatch  
+### <a name="publisherdomainmismatch"></a>PublisherDomainMismatch
 
-Домен издателя целевого приложения (<publisherDomain>) не соответствует домену, используемому для проверки электронной почты в Центре партнеров (<pcDomain>). Убедитесь, что эти домены совпадают, и повторите попытку. 
+Домен издателя целевого приложения (`publisherDomain`) не соответствует домену, используемому для проверки электронной почты в Центре партнеров (`pcDomain`). Убедитесь, что эти домены совпадают, и повторите попытку. 
     
 Происходит, когда ни [домен издателя](howto-configure-publisher-domain.md) приложения, ни один из [пользовательских доменов](../fundamentals/add-custom-domain.md) , добавленных в клиент Azure AD, не совпадают с доменом, используемым для проверки электронной почты в центре партнеров.
 
-### <a name="notauthorizedtoverifypublisher"></a>NotAuthorizedToVerifyPublisher   
+### <a name="notauthorizedtoverifypublisher"></a>NotAuthorizedToVerifyPublisher
 
-Вы не имеете права устанавливать свойство проверенного издателя в приложении (<AppId>) 
+Вы не имеете права устанавливать проверенное свойство издателя в приложении (<`AppId` ) 
   
 Чаще всего это вызвано тем, что пользователь, выполнивший вход, не является членом соответствующей роли для учетной записи MPN в Azure AD. Дополнительные сведения см. в статье [требования](publisher-verification-overview.md#requirements) к списку соответствующих ролей и [Общие вопросы](#common-issues) .
 
-### <a name="mpnidwasnotprovided"></a>MPNIdWasNotProvided  
+### <a name="mpnidwasnotprovided"></a>MPNIdWasNotProvided
 
-Идентификатор MPN не указан в тексте запроса, или тип содержимого запроса не имел значения application/JSON. 
+Идентификатор MPN не указан в тексте запроса, или тип содержимого запроса не имел значения application/JSON.
 
-### <a name="msanotsupported"></a>MSANotSupported  
+### <a name="msanotsupported"></a>MSANotSupported 
 
 Эта функция не поддерживается для учетных записей потребителей Майкрософт. Поддерживаются только приложения, зарегистрированные в Azure AD пользователем Azure AD.
 
 ### <a name="interactionrequired"></a>InteractionRequired
 
-Происходит, когда многофакторная проверка подлинности не была выполнена перед попыткой добавить проверенного издателя в приложение. Дополнительные сведения см. в разделе [распространенные проблемы](#common-issues) . Примечание. MFA необходимо выполнять в том же сеансе при попытке добавить проверенного издателя. Если MFA включен, но не требуется для выполнения в сеансе, запрос завершится ошибкой.   
+Происходит, когда многофакторная проверка подлинности не была выполнена перед попыткой добавить проверенного издателя в приложение. Дополнительные сведения см. в разделе [распространенные проблемы](#common-issues) . Примечание. MFA необходимо выполнять в том же сеансе при попытке добавить проверенного издателя. Если MFA включен, но не требуется для выполнения в сеансе, запрос завершится ошибкой. 
 
 Отобразится следующее сообщение об ошибке: "из-за изменения конфигурации, внесенного администратором, или при перемещении в новое расположение для продолжения необходимо использовать многофакторную проверку подлинности".
+
+### <a name="unabletoaddpublisher"></a>унаблетоаддпублишер
+
+Отображается сообщение об ошибке: "проверенный издатель не может быть добавлен в это приложение. Обратитесь за помощью к администратору ".
+
+Сначала убедитесь, что выполнены [требования к проверке издателя](publisher-verification-overview.md#requirements).
+
+Когда выполняется запрос на добавление проверенного издателя, для оценки рисков безопасности используется ряд сигналов. Если запрос определен как рискованный, будет возвращена ошибка. По соображениям безопасности корпорация Майкрософт не раскрывает определенные критерии, используемые для определения того, является ли запрос рискованным или нет.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
