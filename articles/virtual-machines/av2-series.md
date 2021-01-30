@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: b3419b54fa18058583d81909f7fca0f20dc4b0dd
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: d0972c9ed48f56a495804052c1ffc2b28e1db083
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917139"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095330"
 ---
 # <a name="av2-series"></a>Серия Av2
 
@@ -25,6 +25,7 @@ ms.locfileid: "98917139"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается <br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 <br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): не поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 | Размер | Виртуальное ядро | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальная пропускная способность хранилища: операций ввода-вывода/чтения Мбит/с | Максимальное число дисков данных/пропускная способность: операций ввода-вывода | Максимальное число сетевых адаптеров | Ожидаемая пропускная способность сети (Мбит/с)

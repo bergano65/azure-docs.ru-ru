@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/21/2020
 keywords: секрет по запросу, АТО, openshift, Red Hat
-ms.openlocfilehash: 769b7589fb6496fc2f4123665ad1f6fe61d0cce2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1a8e45a2eab1b7b4c8a5936049f404d5bd3441c
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89294753"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071092"
 ---
 # <a name="add-or-update-your-red-hat-pull-secret-on-an-azure-red-hat-openshift-4-cluster"></a>Добавление или обновление секрета по запросу Red Hat в кластере Azure Red Hat OpenShift 4
 
@@ -20,7 +20,7 @@ ms.locfileid: "89294753"
 
 При создании кластера в первый раз можно добавить свой секрет при создании кластера. Дополнительные сведения о создании кластера АТО с секретом по запросу Red Hat см. в статье [Создание кластера Azure Red Hat OpenShift 4](tutorial-create-cluster.md#get-a-red-hat-pull-secret-optional).
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 В этом учебнике предполагается наличие существующего кластера Azure Red Hat OpenShift 4. Убедитесь, что у вас есть доступ администратора к кластеру.
 
@@ -230,7 +230,7 @@ openshift-marketplace   redhat-operators      Red Hat Operators     grpc   Red H
 
 Чтобы убедиться, что секрет по запросу обновлен и работает правильно, откройте Операторхуб и проверьте любой оператор проверки Red Hat. Например, проверьте, доступен ли оператор хранилища контейнера OpenShift, и проверьте, есть ли у вас разрешения на установку.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения о важных секретах для Red Hat см. в разделе [использование секретных ключей образа](https://docs.openshift.com/container-platform/4.5/openshift_images/managing_images/using-image-pull-secrets.html).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения о важных секретах для Red Hat см. в разделе [использование секретных ключей образа](https://docs.openshift.com/container-platform/4.6/openshift_images/managing_images/using-image-pull-secrets.html).
 
-Дополнительные сведения о Red Hat OpenShift 4 см. в статье [Azure Red Hat OpenShift 4](https://docs.openshift.com/aro/4/welcome/index.html).
+Дополнительные сведения о Red Hat OpenShift 4 см. в [документации по платформе контейнеров Red Hat OpenShift](https://docs.openshift.com/container-platform/4.6/welcome/index.html).

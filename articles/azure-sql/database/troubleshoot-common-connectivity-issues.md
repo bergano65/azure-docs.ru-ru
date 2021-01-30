@@ -12,12 +12,12 @@ author: dalechen
 ms.author: ninarn
 ms.reviewer: sstein, vanto
 ms.date: 01/14/2020
-ms.openlocfilehash: f8c94e36a1a6d1f675e9d6a7dde456dbf6eb8897
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9f2e755047910aefa89c2f187cda956aca608b98
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791364"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093763"
 ---
 # <a name="troubleshoot-transient-connection-errors-in-sql-database-and-sql-managed-instance"></a>Устранение временных ошибок подключения в базе данных SQL и Управляемый экземпляр SQL
 
@@ -39,7 +39,7 @@ ms.locfileid: "92791364"
 
 Повторите попытку подключения к базе данных SQL и SQL Управляемый экземпляр или установите ее снова в зависимости от следующих действий.
 
-- **Временная ошибка возникает при попытке подключения** .
+- **Временная ошибка возникает при попытке подключения**.
 
 Через несколько секунд повторите попытку подключения.
 
@@ -126,7 +126,7 @@ ms.locfileid: "92791364"
 
 ## <a name="net-sqlconnection-parameters-for-connection-retry"></a>Параметры .NET SqlConnection для повторной попытки подключения
 
-Если клиентская программа подключается к базе данных в базе данных SQL с помощью .NET Framework класса **System. Data. SqlClient. SqlConnection** , используйте .NET 4.6.1 или более поздней версии (или .NET Core), чтобы можно было использовать функцию повторного подключения. Дополнительные сведения об этой функции см. в разделе [свойство SqlConnection. ConnectionString](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring?view=netframework-4.8&preserve-view=true).
+Если клиентская программа подключается к базе данных в базе данных SQL с помощью платформа .NET Framework класса **System. Data. SqlClient. SqlConnection**, используйте .NET 4.6.1 или более поздней версии (или .NET Core), чтобы можно было использовать функцию повторного подключения. Дополнительные сведения об этой функции см. в разделе [свойство SqlConnection. ConnectionString](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring?view=netframework-4.8&preserve-view=true).
 
 <!--
 2015-11-30, FwLink 393996 points to dn632678.aspx, which links to a downloadable .docx related to SqlClient and SQL Server 2014.
@@ -134,9 +134,9 @@ ms.locfileid: "92791364"
 
 При создании [строки подключения](/dotnet/api/system.data.sqlclient.sqlconnection.connectionstring) для объекта **SqlConnection** нужно правильно настроить значения следующих параметров.
 
-- **ConnectRetryCount** : &nbsp; &nbsp; значение по умолчанию — 1. Диапазон — от 0 до 255.
-- **ConnectRetryInterval** : &nbsp; &nbsp; значение по умолчанию — 10 секунд. Диапазон — от 1 до 60.
-- **Время ожидания подключения** : &nbsp; &nbsp; по умолчанию — 15 секунд. Диапазон — от 0 до 2147483647.
+- **ConnectRetryCount**: &nbsp; &nbsp; значение по умолчанию — 1. Диапазон — от 0 до 255.
+- **ConnectRetryInterval**: &nbsp; &nbsp; значение по умолчанию — 10 секунд. Диапазон — от 1 до 60.
+- **Время ожидания подключения**: &nbsp; &nbsp; по умолчанию — 15 секунд. Диапазон — от 0 до 2147483647.
 
 В частности, выбранные значения должны обеспечивать равенство Connection Timeout = ConnectRetryCount * ConnectionRetryIntervall.
 
@@ -189,7 +189,7 @@ ms.locfileid: "92791364"
 Например, если ваша клиентская программа размещена на компьютере Windows, можно использовать брандмауэр Windows на этом узле, чтобы открыть порт 1433.
 
 1. Откройте панель управления.
-2. Выберите **все элементы панели управления**  >  **Брандмауэр Windows**  >  **Дополнительные параметры**  >  **правила для исходящих подключений**  >  **действия**  >  **новое правило** .
+2. Выберите **все элементы панели управления**  >  **Брандмауэр Windows**  >  **Дополнительные параметры**  >  **правила для исходящих подключений**  >  **действия**  >  **новое правило**.
 
 Если клиентская программа находится на виртуальной машине Azure, см. статью [Порты для ADO.NET 4.5, отличные от порта 1433](adonet-v12-develop-direct-route-ports.md).
 
@@ -199,7 +199,7 @@ ms.locfileid: "92791364"
 
 ### <a name="connection-adonet-462-or-later"></a>Подключение: ADO.NET 4.6.2 или более поздней версии
 
-Если для подключения к Базе данных SQL программа применяет классы ADO.NET, например **System.Data.SqlClient.SqlConnection** , мы рекомендуем использовать .NET Framework 4.6.2 или более позднюю версию.
+Если для подключения к Базе данных SQL программа применяет классы ADO.NET, например **System.Data.SqlClient.SqlConnection**, мы рекомендуем использовать .NET Framework 4.6.2 или более позднюю версию.
 
 #### <a name="starting-with-adonet-462"></a>Начиная с ADO.NET 4.6.2:
 
@@ -207,7 +207,7 @@ ms.locfileid: "92791364"
 
 #### <a name="starting-with-adonet-461"></a>Начиная с ADO.NET 4.6.1:
 
-- Предлагает повышенную надежность подключения к базам данных SQL с помощью метода **SqlConnection.Open** . В методе **Open** теперь реализованы лучшие механизмы повторных попыток при временных сбоях, в частности для некоторых ошибок, которые возникают при ожидании соединения.
+- Предлагает повышенную надежность подключения к базам данных SQL с помощью метода **SqlConnection.Open**. В методе **Open** теперь реализованы лучшие механизмы повторных попыток при временных сбоях, в частности для некоторых ошибок, которые возникают при ожидании соединения.
 - Поддерживается работа с пулами подключений, а также эффективная проверка функционирования объекта соединения, который видит ваша программа.
 
 Когда вы используете объект соединения, входящий в пул подключений, программе следует временно закрывать подключение, если она его сейчас не использует. Повторное открытие подключения не требует высоких затрат, нужно просто создать новое подключение.
@@ -278,8 +278,8 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 | Запрос у журнала | Описание |
 |:--- |:--- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](/sql/relational-databases/system-catalog-views/sys-event-log-azure-sql-database) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master* . |
-| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](/sql/relational-databases/system-catalog-views/sys-database-connection-stats-azure-sql-database) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master* . |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](/sql/relational-databases/system-catalog-views/sys-event-log-azure-sql-database) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
+| `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](/sql/relational-databases/system-catalog-views/sys-database-connection-stats-azure-sql-database) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
 
 <a id="d-search-for-problem-events-in-the-sql-database-log" name="d-search-for-problem-events-in-the-sql-database-log"></a>
 
@@ -331,7 +331,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 Одна из областей, в которой может помочь EntLib60, — логика повторных попыток для обработки временных ошибок. Дополнительные сведения см. в статье [4 - Perseverance, Secret of All Triumphs: Using the Transient Fault Handling Application Block](/previous-versions/msp-n-p/dn440719(v=pandp.60)) (4. Настойчивость — секрет всех побед. Использование блока приложения для обработки временных ошибок).
 
 > [!NOTE]
-> Исходный код для EntLib60 доступен для открытого скачивания в [Центре загрузки](https://go.microsoft.com/fwlink/p/?LinkID=290898). Корпорация Майкрософт не планирует обновлять функции и менять характер обслуживания библиотеки EntLib.
+> Исходный код для EntLib60 доступен для открытого скачивания в [Центре загрузки](https://github.com/MicrosoftArchive/enterprise-library). Корпорация Майкрософт не планирует обновлять функции и менять характер обслуживания библиотеки EntLib.
 
 <a id="entlib60-classes-for-transient-errors-and-retry" name="entlib60-classes-for-transient-errors-and-retry"></a>
 
@@ -339,7 +339,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 Следующие классы EntLib60 особенно полезны для логики повторных ошибок. Все эти классы входят в пространство имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling** или во вложенные пространства.
 
-В пространстве имен **Microsoft. Practices. EnterpriseLibrary. TransientFaultHandling** :
+В пространстве имен **Microsoft. Practices. EnterpriseLibrary. TransientFaultHandling**:
 
 - **RetryPolicy** ;
   - **ExecuteAction** ;
@@ -348,7 +348,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 - **ReliableSqlConnection** ;
   - **ExecuteCommand** ;
 
-В пространстве имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.TestSupport** :
+В пространстве имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.TestSupport**:
 
 - **AlwaysTransientErrorDetectionStrategy** ;
 - **NeverTransientErrorDetectionStrategy** ;
@@ -375,7 +375,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 ### <a name="entlib60-istransient-method-source-code"></a>Исходный код метода EntLib60 IsTransient
 
-Ниже приведен исходный код (на языке C#) метода **IsTransient** из класса **SqlDatabaseTransientErrorDetectionStrategy** . Исходный код поясняет, какие ошибки считаются временными и приемлемыми для повторной попытки (версия за апрель 2013 г.).
+Ниже приведен исходный код (на языке C#) метода **IsTransient** из класса **SqlDatabaseTransientErrorDetectionStrategy**. Исходный код поясняет, какие ошибки считаются временными и приемлемыми для повторной попытки (версия за апрель 2013 г.).
 
 ```csharp
 public bool IsTransient(Exception ex)

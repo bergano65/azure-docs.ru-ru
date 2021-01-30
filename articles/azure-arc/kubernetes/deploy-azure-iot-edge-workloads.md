@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Развертывание рабочих нагрузок Azure IoT Edge
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
-ms.openlocfilehash: bfaa43a03ddd98616b22fc3fc7b4dccb4c38f44c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 88c480f93bfe28a424441a1c5857c623efb4e1d3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86103982"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091653"
 ---
 # <a name="deploy-azure-iot-edge-workloads-preview"></a>Развертывание рабочих нагрузок Azure IoT Edge (предварительная версия)
 
@@ -29,7 +29,7 @@ Azure Arc и Azure IoT Edge дополняют возможности друг �
 
 * Для развертывания Kubernetes с помощью оператора Flux в Azure Arc используйте [поддержку IoT Edge](https://aka.ms/edgek8sdoc).
 
-* Скачайте файл [**values.yaml**](https://github.com/Azure/iotedge/blob/master/kubernetes/charts/edge-kubernetes/values.yaml) для диаграммы IoT Edge Helm и замените заполнитель **deviceConnectionString** в конце файла на тот, который указан на шаге 1. При необходимости можно задать любые другие поддерживаемые параметры установки диаграммы. Создайте пространство имен для рабочей нагрузки IoT Edge и создайте в ней секрет:
+* Скачайте файл [**values.yaml**](https://github.com/Azure/iotedge/blob/preview/iiot/kubernetes/charts/edge-kubernetes/values.yaml) для диаграммы IoT Edge Helm и замените заполнитель **deviceConnectionString** в конце файла на тот, который указан на шаге 1. При необходимости можно задать любые другие поддерживаемые параметры установки диаграммы. Создайте пространство имен для рабочей нагрузки IoT Edge и создайте в ней секрет:
 
     ```
     $ kubectl create ns iotedge

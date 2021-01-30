@@ -15,12 +15,12 @@ ms.date: 08/23/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff2651d2fed9c307bbb90623572b4a74d750d3a4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1fa195fd8d40c6b67a9c446f0b2320fe47d75259
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94836076"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092672"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -162,8 +162,8 @@ ms.locfileid: "94836076"
 **Вопрос. Почему атрибут userPrincipalName (UPN) в Azure AD не соответствует локальному имени участника-пользователя ?**  
 Дополнительные сведения вы найдете в следующих статьях:
 
-* [Имена пользователей в Microsoft 365, Azure или Intune не соответствуют локальному имени участника-пользователя или альтернативному ИДЕНТИФИКАТОРу входа](https://support.microsoft.com/kb/2523192)
-* [Изменения не синхронизированы с помощью средства Azure Active Directory Sync после изменения имени участника-пользователя учетной записи пользователя для использования другого федеративного домена](https://support.microsoft.com/kb/2669550)
+* [Имена пользователей в Microsoft 365, Azure или Intune не соответствуют локальному имени участника-пользователя или альтернативному ИДЕНТИФИКАТОРу входа](https://mskb.pkisolutions.com/kb/2523192)
+* [Изменения не синхронизированы с помощью средства Azure Active Directory Sync после изменения имени участника-пользователя учетной записи пользователя для использования другого федеративного домена](https://mskb.pkisolutions.com/kb/2669550)
 
 Можно также настроить Azure AD так, чтобы модуль синхронизации обновлял UPN, как описано в статье [Функции службы синхронизации Azure AD Connect](how-to-connect-syncservice-features.md).
 

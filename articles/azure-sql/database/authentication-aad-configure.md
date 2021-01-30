@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: e19bf5b4ee5b6c48f002ca79711646cca7b0ec5f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b8711b3995c322614c547434850d7c031abfadd5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729149"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094949"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Настройка и администрирование проверки подлинности Azure Active Directory с помощью Azure SQL
 
@@ -71,7 +71,7 @@ ms.locfileid: "98729149"
 ## <a name="provision-azure-ad-admin-sql-managed-instance"></a>Инициализация администратора Azure AD (Управляемый экземпляр SQL)
 
 > [!IMPORTANT]
-> Выполните следующие действия, только если вы подготавливаете Управляемый экземпляр Azure SQL. Эта операция может выполняться только глобально/администратором или администратором привилегированных ролей в Azure AD.
+> Выполните следующие действия, только если вы подготавливаете Управляемый экземпляр Azure SQL. Эта операция может выполняться только глобальным администратором или администратором привилегированных ролей в Azure AD.
 >
 > В **общедоступной предварительной версии** роль " **читатели каталога** " можно назначить группе в Azure AD. Владельцы групп могут добавить удостоверение управляемого экземпляра в качестве члена этой группы, что позволит вам подготавливать администратора Azure AD для Управляемый экземпляр SQL. Дополнительные сведения об этой функции см. в статье [Роль "Читатели каталогов" в Azure Active Directory для Azure SQL](authentication-aad-directory-readers-role.md).
 
@@ -126,7 +126,7 @@ ms.locfileid: "98729149"
 
 ```powershell
 # Gives Azure Active Directory read permission to a Service Principal representing the SQL Managed Instance.
-# Can be executed only by a "Company Administrator", "Global Administrator", or "Privileged Role Administrator" type of user.
+# Can be executed only by a "Global Administrator" or "Privileged Role Administrator" type of user.
 
 $aadTenant = "<YourTenantId>" # Enter your tenant ID
 $managedInstanceName = "MyManagedInstance"
@@ -532,7 +532,7 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyA
 
 Руководство по устранению неполадок с аутентификацией Azure AD можно найти в следующем блоге: <https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о именах входа, пользователях, ролях базы данных и разрешениях в базе данных SQL см. в разделе [имена входа, пользователи, роли базы данных и учетные записи пользователей](logins-create-manage.md).
 - Дополнительные сведения о субъектах базы данных см. в [этой статье](/sql/relational-databases/security/authentication-access/principals-database-engine).

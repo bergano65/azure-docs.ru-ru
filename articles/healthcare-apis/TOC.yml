@@ -127,6 +127,10 @@
           href: iot-data-flow.md
         - name: Шаблоны сопоставления для соединителя "Azure IoT для FHIR" (предварительная версия)
           href: iot-mapping-templates.md
+    - name: Безопасность
+      items:
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          href: ./security-controls-policy.md
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ

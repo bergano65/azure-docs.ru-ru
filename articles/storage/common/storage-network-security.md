@@ -9,12 +9,12 @@ ms.date: 01/27/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 5a1ad898b745bbb49421c1bc0b5a9b2e5c8ec0f6
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: c8807f0200f96dc12a3b3d43fa50a91bec85ed38
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986008"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071188"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -581,7 +581,7 @@ az storage account network-rule list \
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
+| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее.](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy) |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Azure Cognitive Services       | Microsoft. Когнитивесервице             | Разрешает Cognitive Services доступ к учетным записям хранения. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
@@ -590,8 +590,8 @@ az storage account network-rule list \
 | Центр Интернета вещей Azure                  | Microsoft.Devices/IotHubs              | Позволяет записывать данные из центра Интернета вещей в хранилище BLOB-объектов. [Дополнительные сведения](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Подробнее](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
 | Служба "Машинное обучение Azure" | Microsoft.MachineLearningServices      | Авторизованные рабочие области Машинного обучения Azure записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов и читают данные. [Подробнее](../../machine-learning/how-to-network-security-overview.md#secure-the-workspace-and-associated-resources). | 
-| Azure Synapse Analytics       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных баз данных SQL с помощью инструкции COPY или Polybase. [Подробнее](../../azure-sql/database/vnet-service-endpoint-rule-overview.md). |
-| База данных SQL Azure       | Microsoft.Sql                          | Позволяет [импортировать](/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) данные из учетных записей хранения и [записывать](../../azure-sql/database/audit-write-storage-account-behind-vnet-firewall.md) данные аудита в учетные записи хранения, защищенные брандмауэром. |
+| Azure Synapse Analytics       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных баз данных SQL с помощью инструкции COPY или Polybase (в выделенном пуле), а также `openrowset` функции и внешних таблиц в бессерверном пуле. [Подробнее.](../../azure-sql/database/vnet-service-endpoint-rule-overview.md) |
+| База данных SQL Azure       | Microsoft.Sql                          | Позволяет [записывать](../../azure-sql/database/audit-write-storage-account-behind-vnet-firewall.md) данные аудита в учетные записи хранения за брандмауэром. |
 | Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. [Подробнее](../../stream-analytics/blob-output-managed-identity.md). |
 | Azure Synapse Analytics        | Microsoft.Synapse/workspaces          | Обеспечивает доступ к данным в службе хранилища Azure из Azure синапсе Analytics. |
 

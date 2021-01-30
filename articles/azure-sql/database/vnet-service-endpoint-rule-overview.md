@@ -11,18 +11,18 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: d480239c0eb99ed48c13ec2fdb5b052574acc318
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 0dcffe6731c177d1d45c569361fcb200f23af86c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092505"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095364"
 ---
-# <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
+# <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в Базе данных SQL Azure
 
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-*Правила виртуальной сети* — это функция безопасности брандмауэра, которая определяет, принимает ли сервер для баз данных и эластичных пулов в [базе данных SQL Azure](sql-database-paas-overview.md) или для баз данных в [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) обмен данными, отправляемый из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для безопасного подключения к базе данных в базе данных SQL и Azure синапсе Analytics.
+*Правила виртуальной сети* — это функция безопасности брандмауэра, которая управляет тем, что сервер для баз данных и эластичных пулов в [базе данных SQL Azure](sql-database-paas-overview.md) или для выделенных баз данных пула SQL (ранее SQL DW) в [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) принимает подключения, отправляемые из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для безопасного подключения к базе данных в базе данных SQL и Azure синапсе Analytics.
 
 > [!NOTE]
 > Эта статья относится как к базе данных SQL, так и к Azure синапсе Analytics. Для простоты термин " *база данных* " относится к обеим базам данных SQL и Azure синапсе Analytics. Аналогичным образом все ссылки на *сервер* относятся к [ЛОГИЧЕСКОМу серверу SQL](logical-servers.md) Server, на котором размещается база данных SQL и Azure синапсе Analytics.
@@ -280,7 +280,7 @@ Polybase и инструкция COPY обычно используются дл
 
 <a name="anchor-how-to-links-60h"></a>
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 - [Правила брандмауэра уровня сервера и базы данных][sql-db-firewall-rules-config-715d]

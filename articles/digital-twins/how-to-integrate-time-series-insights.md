@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 97f1f5d0f1f351164e05d18b9f80c7f26450f31b
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 951c52cdba191aa291061259e1c15b9190513770
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661605"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092726"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Интеграция Azure Digital двойников со службой "аналитика временных рядов Azure"
 
@@ -20,7 +20,7 @@ ms.locfileid: "98661605"
 
 Решение, описанное в этой статье, позволит собирать и анализировать исторические данные о решении IoT. Azure Digital Twins отлично подходит для передачи данных в Аналитику временных рядов, так как позволяет сопоставлять несколько потоков данных и стандартизировать информацию перед отправкой в Аналитику временных рядов. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем можно будет настроить связь со службой "аналитика временных рядов", необходимо иметь **экземпляр Digital двойников для Azure**. Этот экземпляр следует настроить с возможностью обновлять сведения о цифровом двойника на основе данных, так как вам потребуется обновить информацию двойника несколько раз, чтобы увидеть, что данные отписываются в службе "аналитика временных рядов". 
 
@@ -112,7 +112,7 @@ ms.locfileid: "98661605"
 
 1. Подготовьте *пространство имен концентраторов событий* и имя *группы ресурсов* из ранее в этой статье.
 
-2. Создайте новый концентратор событий. Укажите имя концентратора событий.
+2. Создайте Центр событий. Укажите имя концентратора событий.
 
     ```azurecli-interactive
     az eventhubs eventhub create --name <name for your TSI event hub> --resource-group <resource group name from earlier> --namespace-name <Event Hubs namespace from earlier>
@@ -120,7 +120,7 @@ ms.locfileid: "98661605"
 3. Создайте [правило авторизации](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) с разрешениями Send и Receive. Укажите имя правила.
 
     ```azurecli-interactive
-        az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from earlier> --eventhub-name <TSI event hub name from above> --name <name for your TSI auth rule>
+    az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from earlier> --eventhub-name <TSI event hub name from above> --name <name for your TSI auth rule>
     ```
 
 ## <a name="configure-your-function"></a>Настройка функции
@@ -149,7 +149,7 @@ ms.locfileid: "98661605"
     az eventhubs eventhub authorization-rule keys list --resource-group <resource group name> --namespace-name <Event Hubs namespace> --eventhub-name <TSI event hub name> --name <TSI auth rule>
     ```
 
-2. В приложении-функции создайте параметр приложения, содержащий строку подключения:
+2. Используйте значение *примариконнектионстринг* из результата, чтобы создать параметр приложения в приложении функции, который содержит строку подключения:
 
     ```azurecli-interactive
     az functionapp config appsettings set --settings "EventHubAppSetting-TSI=<TSI event hub connection string>" -g <resource group> -n <your App Service (function app) name>
@@ -163,7 +163,9 @@ ms.locfileid: "98661605"
     1. Выберите ценовую категорию **Gen2 (L1)** .
     2. Для этого окружения необходимо выбрать **идентификатор временного ряда** . Идентификатор временных рядов может содержать до трех значений, которые будут использоваться для поиска данных в аналитике временных рядов. В этом руководстве можно использовать **$dtId**. Дополнительные сведения о выборе идентификатора [*временных рядов*](../time-series-insights/how-to-select-tsid.md)см. в этой статье.
     
-        :::image type="content" source="media/how-to-integrate-time-series-insights/create-twin-id.png" alt-text="Пользовательский интерфейс портала создания для среды &quot;аналитика временных рядов&quot;. Выбрана ценовая категория Gen2 (L1) и имя свойства идентификатора временных рядов $dtId" lightbox="media/how-to-integrate-time-series-insights/create-twin-id.png":::
+        :::image type="content" source="media/how-to-integrate-time-series-insights/create-time-series-insights-environment-1.png" alt-text="Пользовательский интерфейс портала создания для среды &quot;аналитика временных рядов&quot;. Выберите подписку, группу ресурсов и расположение в соответствующих раскрывающихся списках и выберите имя для своей среды." lightbox="media/how-to-integrate-time-series-insights/create-time-series-insights-environment-1.png":::
+        
+        :::image type="content" source="media/how-to-integrate-time-series-insights/create-time-series-insights-environment-2.png" alt-text="Пользовательский интерфейс портала создания для среды &quot;аналитика временных рядов&quot;. Выбрана ценовая категория Gen2 (L1) и имя свойства идентификатора временных рядов $dtId" lightbox="media/how-to-integrate-time-series-insights/create-time-series-insights-environment-2.png":::
 
 2. Выберите **Далее: источник события** и выберите сведения о концентраторе событий TSI ранее. Также потребуется создать группу потребителей концентраторов событий.
     
@@ -195,7 +197,7 @@ ms.locfileid: "98661605"
     
     :::image type="content" source="media/how-to-integrate-time-series-insights/day-data.png" alt-text="Данные температуры для каждого двойника отображаются в виде трех параллельных линий различных цветов.":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Цифровые двойников по умолчанию хранятся в виде плоской иерархии в службе "аналитика временных рядов", но их можно расширить с помощью сведений о модели и многоуровневого дерева для Организации. Дополнительные сведения об этом процессе см. в следующих статье: 
 
