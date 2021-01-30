@@ -586,10 +586,12 @@
                   href: platform/it-service-management-connector-secure-webhook-connections.md
                 - name: Безопасный экспорт конфигурации Azure
                   href: platform/itsm-connector-secure-webhook-connections-azure-configuration.md
-                - name: Контроллер управления основной платой (BMC)
-                  href: platform/itsmc-secure-webhook-connections-bmc.md
-                - name: ServiceNow
-                  href: platform/itsmc-secure-webhook-connections-servicenow.md
+                - name: Настройка партнерских решений с помощью соединителя ITSM
+                  items:
+                    - name: Контроллер управления основной платой (BMC)
+                      href: platform/itsmc-secure-webhook-connections-bmc.md
+                    - name: ServiceNow
+                      href: platform/itsmc-secure-webhook-connections-servicenow.md
         - name: Перенос классических правил генерации оповещений
           items:
             - name: Сведения о классических оповещениях

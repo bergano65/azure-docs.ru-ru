@@ -86,6 +86,8 @@
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          href: ./security-controls-policy.md
 - name: Практические руководства
   items:
     - name: Масштабирование

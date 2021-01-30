@@ -4,12 +4,12 @@ description: Не отображаются данные в Azure Application Ins
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: 26ba586715c7b76ff8972c6574c3c29b837713a1
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: e41b0a9ce1ff86bc6010e12fdf5d3320f303fd87
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904471"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092457"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET/.NET Core не отображаются данные
 
@@ -188,7 +188,7 @@ _When я щелкаю правой кнопкой мыши существующ�
 * Проверьте, что вы фактически скопировали все библиотеки DLL Microsoft. ApplicationInsights на сервер вместе с Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll
 * В брандмауэре может потребоваться [открыть некоторые порты TCP](./ip-addresses.md).
 * Если для отправки из корпоративной сети необходимо использовать прокси-сервер, установите значение [defaultProxy](/previous-versions/dotnet/netframework-1.1/aa903360(v=vs.71)) в файле Web.config.
-* Для Windows Server 2008. Убедитесь, что установлены следующие обновления: [KB2468871](https://support.microsoft.com/kb/2468871), [KB2533523](https://support.microsoft.com/kb/2533523), [KB2600217](https://support.microsoft.com/kb/2600217).
+* Для Windows Server 2008. Убедитесь, что установлены следующие обновления: [KB2468871](https://support.microsoft.com/kb/2468871), [KB2533523](https://support.microsoft.com/kb/2533523), [KB2600217](https://web.archive.org/web/20150129090641/http://support.microsoft.com/kb/2600217).
 
 ## <a name="i-used-to-see-data-but-it-has-stopped"></a>Ранее видимые данные перестали отображаться
 * Вы достигли месячной квоты точек данных? Чтобы выяснить это, последовательно выберите «Параметры», «Квота и расценки». Если вы достигли квоты, вы можете изменить свой тарифный план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).

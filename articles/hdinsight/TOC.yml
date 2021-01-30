@@ -278,6 +278,8 @@
           href: /rest/api/hdinsightspark/
         - name: Шаблон Resource Manager
           href: /azure/templates/microsoft.hdinsight/allversions
+        - name: Встроенные компоненты Политики Azure
+          href: ./policy-reference.md
     - name: Ресурсы
       items:
         - name: Выпуски

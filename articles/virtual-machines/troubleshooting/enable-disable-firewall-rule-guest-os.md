@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 17616a223292ec07186b0a3fba264400423977ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ee27f429dbfd1e550a45bbc26413a1c259c4fbe
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87058762"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092374"
 ---
 # <a name="enable-or-disable-a-firewall-rule-on-an-azure-vm-guest-os"></a>Включение или отключение правила брандмауэра в гостевой ОС на виртуальной машине Azure
 
@@ -95,11 +95,11 @@ ms.locfileid: "87058762"
 
 #### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр
 
-Если виртуальная машина подключена к сети и к ней есть доступ с другой виртуальной машины в той же виртуальной сети, можно применить [удаленный реестр](https://support.microsoft.com/help/314837/how-to-manage-remote-access-to-the-registry) на второй виртуальной машине.
+Если виртуальная машина подключена к сети и к ней есть доступ с другой виртуальной машины в той же виртуальной сети, можно применить [удаленный реестр](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/314837) на второй виртуальной машине.
 
 1.  На виртуальной машине для устранения неполадок запустите редактор реестра (regedit.exe), а затем выберите **файл**  >  **Подключить сетевой реестр**.
 
-2.  Откройте ветвь \SYSTEM *целевого компьютера*и укажите следующие значения:
+2.  Откройте ветвь \SYSTEM *целевого компьютера* и укажите следующие значения:
 
     * Чтобы включить правило, откройте следующий параметр реестра:
     

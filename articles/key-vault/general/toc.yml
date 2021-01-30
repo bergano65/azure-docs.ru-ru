@@ -43,9 +43,11 @@
   items:
     - name: Основные понятия
       href: basic-concepts.md
+    - name: Рекомендации
+      href: best-practices.md
     - name: Безопасность
       items:
-        - name: Общие сведения о безопасности
+        - name: Обзор
           href: security-overview.md
         - name: Безопасный доступ к хранилищу ключей
           href: secure-your-key-vault.md

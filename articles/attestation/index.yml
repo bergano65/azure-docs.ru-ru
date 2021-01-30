@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Аттестация Microsoft Azure (предварительная версия)
+title: Аттестация Microsoft Azure
 summary: Сведения об использовании службы "Аттестация Azure"
 metadata:
   title: Документация по службе "Аттестация Azure"
@@ -10,12 +10,12 @@ metadata:
   author: msmbaldwin
   ms.author: mbaldwin
   ms.date: 07/20/2020
-  ms.openlocfilehash: 9740c315333d3f24e43a35b476243f323b6e3821
-  ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+  ms.openlocfilehash: 47e1a1cc838a7d8153c8dbea71a0aae576166f2e
+  ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/14/2021
-  ms.locfileid: "98209922"
+  ms.lasthandoff: 01/30/2021
+  ms.locfileid: "99093548"
 landingContent:
 - title: Сведения о службе "Аттестация Microsoft Azure"
   linkLists:

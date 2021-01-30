@@ -1742,7 +1742,7 @@
         - name: Резервное копирование нескольких виртуальных машин
           href: ../backup/tutorial-backup-vm-at-scale.md
         - name: Параметры восстановления
-          href: ../backup/backup-azure-arm-restore-vms.md
+          href: /azure/backup/backup-azure-arm-restore-vms
         - name: Матрица поддержки
           href: ../backup/backup-support-matrix-iaas.md
         - name: Цены
