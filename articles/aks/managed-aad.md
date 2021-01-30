@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/26/2020
 ms.author: thomasge
-ms.openlocfilehash: f229075d0bad4f9522e02e30bdabc1d42bb086cf
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 534c355961bb87a816f5ba50a3cc2d397e544a15
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684191"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072360"
 ---
 # <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
@@ -47,8 +47,7 @@ kubelogin --version
 
 Используйте [эти инструкции](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для других операционных систем.
 
-
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 Для кластера требуется группа Azure AD. Эта группа необходима в качестве группы администраторов кластера для предоставления разрешений администратора кластера. Вы можете использовать существующую группу Azure AD или создать новую. Запишите идентификатор объекта вашей группы Azure AD.
 
@@ -188,6 +187,50 @@ az aks update -g myResourceGroup -n myManagedCluster --enable-aad --aad-admin-gr
 
 Существуют некоторые неинтерактивные сценарии, например конвейеры непрерывной интеграции, которые в настоящее время недоступны в kubectl. Вы можете использовать [`kubelogin`](https://github.com/Azure/kubelogin) для доступа к кластеру с неинтерактивным входом субъекта-службы.
 
+## <a name="use-conditional-access-with-azure-ad-and-aks"></a>Использование условного доступа с помощью Azure AD и AKS
+
+При интеграции Azure AD с кластером AKS можно также использовать [Условный доступ][aad-conditional-access] для управления доступом к кластеру.
+
+> [!NOTE]
+> Условный доступ Azure AD является Azure AD Premiumной возможностью.
+
+Чтобы создать пример политики условного доступа для использования с AKS, выполните следующие действия.
+
+1. В верхней части портал Azure найдите и выберите Azure Active Directory.
+1. В меню для Azure Active Directory на левой стороне выберите *корпоративные приложения*.
+1. В меню для корпоративных приложений с левой стороны выберите *Условный доступ*.
+1. В меню для условного доступа на левой стороне выберите *политики* , а затем — *Новая политика*.
+    :::image type="content" source="./media/managed-aad/conditional-access-new-policy.png" alt-text="Добавление политики условного доступа":::
+1. Введите имя политики, например *AKS-Policy*.
+1. Выберите *Пользователи и группы*, а затем в разделе *включить* выберите *выбрать пользователей и группы*. Выберите пользователей и группы, для которых необходимо применить политику. В этом примере выберите ту же группу Azure AD с административным доступом к кластеру.
+    :::image type="content" source="./media/managed-aad/conditional-access-users-groups.png" alt-text="Выбор пользователей или групп для применения политики условного доступа":::
+1. Выберите *облачные приложения или действия*, а затем в разделе *включить* выберите *выберите приложения*. Найдите *службу Azure Kubernetes* и выберите *Azure Kubernetes Service AAD Server*.
+    :::image type="content" source="./media/managed-aad/conditional-access-apps.png" alt-text="Выбор Azure Kubernetes Service AD для применения политики условного доступа":::
+1. В разделе *Элементы управления доступом* выберите *Предоставить*. Выберите *предоставить доступ* , а затем *устройство должно быть помечено как соответствующее*.
+    :::image type="content" source="./media/managed-aad/conditional-access-grant-compliant.png" alt-text="Включение только соответствующих устройств для политики условного доступа":::
+1. В разделе *включить политику* выберите *включить* , а затем — *создать*.
+    :::image type="content" source="./media/managed-aad/conditional-access-enable-policy.png" alt-text="Включение политики условного доступа":::
+
+Получите учетные данные пользователя для доступа к кластеру, например:
+
+```azurecli-interactive
+ az aks get-credentials --resource-group myResourceGroup --name myManagedCluster
+```
+
+Следуйте инструкциям по входу.
+
+Используйте `kubectl get nodes` команду для просмотра узлов в кластере:
+
+```azurecli-interactive
+kubectl get nodes
+```
+
+Следуйте инструкциям, чтобы войти снова. Обратите внимание на сообщение об ошибке, сообщающее, что вы успешно выполнили вход, но администратору требуется, чтобы устройство, запрашивающее доступ, управлялось Azure AD для доступа к ресурсу.
+
+В портал Azure перейдите к Azure Active Directory, выберите *корпоративные приложения* и в разделе *действие* выберите *входы*. Обратите внимание на запись в верхней части с *состоянием* *Failed (сбой* ) и *условным доступом* *успешно*. Выберите запись, а затем в области *сведения* выберите *Условный доступ* . Обратите внимание, что в списке указана политика условного доступа.
+
+:::image type="content" source="./media/managed-aad/conditional-access-sign-in-activity.png" alt-text="Ошибка входа в систему из-за политики условного доступа":::
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об [интеграции с Azure RBAC для авторизации Kubernetes][azure-rbac-integration]
@@ -202,6 +245,7 @@ az aks update -g myResourceGroup -n myManagedCluster --enable-aad --aad-admin-gr
 [aks-arm-template]: /azure/templates/microsoft.containerservice/managedclusters
 
 <!-- LINKS - Internal -->
+[aad-conditional-access]: ../active-directory/conditional-access/overview.md
 [azure-rbac-integration]: manage-azure-rbac.md
 [aks-concepts-identity]: concepts-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md

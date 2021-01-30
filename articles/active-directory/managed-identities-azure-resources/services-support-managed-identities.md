@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 0f7c97e5d84b3ee2d40c714625d0158fe60f2c95
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 520d572478074a86c9b5cececacd34d7cd41539d
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986079"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071619"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -402,6 +402,15 @@ ms.locfileid: "98986079"
 | Azure для государственных организаций | `https://database.usgovcloudapi.net/` | ![Доступно][check] |
 | Azure для Германии | `https://database.cloudapi.de/` | ![Доступно][check] |
 | Azure China 21Vianet | `https://database.chinacloudapi.cn/` | ![Доступно][check] |
+
+### <a name="azure-data-explorer"></a>Azure Data Explorer
+
+| Cloud | Идентификатор ресурса | Состояние |
+|--------|------------|:-:|
+| Azure (глобальный) | `https://<account>.<region>.kusto.windows.net` | ![Доступно][check] |
+| Azure для государственных организаций | `https://<account>.<region>.kusto.usgovcloudapi.net` | ![Доступно][check] |
+| Azure для Германии | `https://<account>.<region>.kusto.cloudapi.de` | ![Доступно][check] |
+| Azure China 21Vianet | `https://<account>.<region>.kusto.chinacloudapi.cn` | ![Доступно][check] |
 
 ### <a name="azure-event-hubs"></a>Центры событий Azure
 

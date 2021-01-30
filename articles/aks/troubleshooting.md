@@ -4,12 +4,12 @@ description: Узнайте, как устранить распростране�
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: 02ff1581bafe62a092be87d16df51c7ca8c020b4
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 7dfb9e34daeb92d57a61c570055695867c4a8107
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830944"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071873"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -20,11 +20,11 @@ ms.locfileid: "97830944"
 [Вот официальное руководство по устранению неполадок с кластерами Kubernetes](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 [Это руководство по устранению неполадок](https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/index.md) модулей pod, узлов, кластеров и т. д., опубликованное инженером Майкрософт.
 
-## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Я получаю ошибку превышения квоты во время создания или обновления. Что делать? 
+## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>`quota exceeded`Произошла ошибка во время создания или обновления. Что делать? 
 
  [Запросить еще ядер](../azure-portal/supportability/resource-manager-core-quotas-request.md).
 
-## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку insufficientSubnetSize при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что делать?
+## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Произошла `insufficientSubnetSize` Ошибка при развертывании кластера AKS с расширенными сетевыми возможностями. Что следует делать?
 
 Эта ошибка указывает, что подсеть, используемая для кластера, больше не имеет доступных IP-адресов в пределах CIDR для успешного назначения ресурсов. Для кластеров Кубенет требуется достаточное пространство IP-адресов для каждого узла в кластере. Для кластеров Azure CNI требуется достаточное пространство IP-адресов для каждого узла и Pod в кластере.
 Узнайте больше о [проектировании Azure CNI для назначения IP-адресов для модулей](configure-azure-cni.md#plan-ip-addressing-for-your-cluster)Pod.

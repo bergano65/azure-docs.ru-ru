@@ -4,12 +4,12 @@ description: Узнайте, как создать политику гостев
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 705c12cff5f4377249674ef9db155d1ed321ce42
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: 38579bb43f012cac2b373bbbbb6ad757604f4c07
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755877"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070695"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Создание политик гостевой конфигурации для Windows
 
@@ -204,7 +204,17 @@ Test-GuestConfigurationPackage `
 New-GuestConfigurationPackage -Name AuditFilePathExists -Configuration ./Config/AuditFilePathExists.mof -ChefInspecProfilePath './' | Test-GuestConfigurationPackage
 ```
 
-Следующим шагом является публикация файла в хранилище BLOB-объектов Azure.  Для команды `Publish-GuestConfigurationPackage` требуется `Az.Storage` модуль.
+Следующим шагом является публикация файла в хранилище BLOB-объектов Azure. Для команды `Publish-GuestConfigurationPackage` требуется `Az.Storage` модуль.
+
+Командлет `Publish-GuestConfigurationPackage` принимает следующие параметры:
+
+- **Путь**: расположение публикуемого пакета
+- **ResourceGroupName**: имя группы ресурсов, в которой находится учетная запись хранения.
+- **StorageAccountName**: имя учетной записи хранения, в которую должен быть опубликован пакет
+- **StorageContainerName**: (по умолчанию: *гуестконфигуратион*) имя контейнера хранилища в учетной записи хранения.
+- **Force**: перезаписать существующий пакет в учетной записи хранения с тем же именем
+
+В приведенном ниже примере пакет публикуется в имя контейнера хранилища "гуестконфигуратион".
 
 ```azurepowershell-interactive
 Publish-GuestConfigurationPackage -Path ./AuditBitlocker.zip -ResourceGroupName myResourceGroupName -StorageAccountName myStorageAccountName
@@ -243,7 +253,7 @@ New-GuestConfigurationPolicy `
 
 В выходных данных командлета возвращается объект, содержащий отображаемое имя инициативы и путь к файлам политики.
 
-Наконец, опубликуйте определения политики с помощью командлета `Publish-GuestConfigurationPolicy`. Командлет содержит только параметр **Path**, указывающий расположение JSON-файлов, созданных `New-GuestConfigurationPolicy`.
+Опубликуйте определения политики с помощью командлета `Publish-GuestConfigurationPolicy`. Командлет содержит только параметр **Path**, указывающий расположение JSON-файлов, созданных `New-GuestConfigurationPolicy`.
 
 Чтобы выполнить команду публикации, необходим доступ к созданию политик в Azure. Требования к авторизации описаны на странице [Общие сведения о Политике Azure](../overview.md). Наиболее подходящей встроенной ролью является **Участник политики ресурсов**.
 
@@ -252,7 +262,7 @@ Publish-GuestConfigurationPolicy `
   -Path './policies'
 ```
 
- Командлет `Publish-GuestConfigurationPolicy` принимает путь из конвейера PowerShell. Эта функция означает, что вы можете создать файлы политики и опубликовать их в одном наборе последовательных команд.
+ Командлет `Publish-GuestConfigurationPolicy` принимает путь из конвейера PowerShell. Эта функция позволяет создать файлы политики и опубликовать их в одном наборе последовательных команд.
 
  ```azurepowershell-interactive
  New-GuestConfigurationPolicy `

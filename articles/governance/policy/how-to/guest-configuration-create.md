@@ -3,12 +3,12 @@ title: Создание политик гостевой конфигурации
 description: Узнайте, как создать политику гостевой конфигурации в службе "Политика Azure" для Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: 85ffda54d58db0544858ca8ab61335b61f18299e
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: ae9af51ad3b2eb237f8655c996a1345140a8a635
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881792"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070650"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Создание политик гостевой конфигурации для Windows
 
@@ -261,6 +261,16 @@ New-GuestConfigurationPackage -Name AuditBitlocker -Configuration ./Config/Audit
 ```
 
 Следующим шагом является публикация файла в хранилище BLOB-объектов Azure. Для команды `Publish-GuestConfigurationPackage` требуется `Az.Storage` модуль.
+
+Командлет `Publish-GuestConfigurationPackage` принимает следующие параметры:
+
+- **Путь**: расположение публикуемого пакета
+- **ResourceGroupName**: имя группы ресурсов, в которой находится учетная запись хранения.
+- **StorageAccountName**: имя учетной записи хранения, в которую должен быть опубликован пакет
+- **StorageContainerName**: (по умолчанию: *гуестконфигуратион*) имя контейнера хранилища в учетной записи хранения.
+- **Force**: перезаписать существующий пакет в учетной записи хранения с тем же именем
+
+В приведенном ниже примере пакет публикуется в имя контейнера хранилища "гуестконфигуратион".
 
 ```azurepowershell-interactive
 Publish-GuestConfigurationPackage -Path ./AuditBitlocker.zip -ResourceGroupName myResourceGroupName -StorageAccountName myStorageAccountName

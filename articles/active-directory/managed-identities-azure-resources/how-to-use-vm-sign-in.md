@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/01/2017
+ms.date: 01/29/2021
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 08fe856fd43baad4189d81f7743396a71cd5de48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61e83bd27c9434c4222e0161e3b643b183d1aa84
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266329"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090966"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-for-sign-in"></a>Использование управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для входа 
 
@@ -90,13 +90,8 @@ ms.locfileid: "89266329"
 - PowerShell: *Invoke-WebRequest : Unable to connect to the remote server* (Invoke-WebRequest: Unable to connect to the remote server)
 - CLI: *MSI: не удалось получить маркер из- `http://localhost:50342/oauth2/token` за ошибки "HTTPConnectionPool (узел =" localhost ", порт = 50342)* 
 
-Если вы встретите любую из этих ошибок, найдите виртуальную машину Azure на [портале Azure](https://portal.azure.com) и выполните на ней следующие действия:
+Если вы получаете одну из этих ошибок, вернитесь на виртуальную машину Azure в [портал Azure](https://portal.azure.com) и перейдите на страницу **удостоверение** и убедитесь, что для параметра **назначено системой** задано значение "Да".
 
-- Перейдите на страницу **Удостоверение** и убедитесь, что параметр **Назначено системой** имеет значение "Да".
-- Откройте страницу **Расширения** и убедитесь, что расширение управляемых удостоверений для ресурсов Azure **(прекращение поддержки запланировано на январь 2019 г.)** успешно развернуто.
-
-Если какое-либо из условий не выполнено, может потребоваться повторно развернуть управляемые удостоверения для ресурсов Azure для ресурса или устранить неполадки развертывания. Дополнительные сведения о настройке виртуальных машин см. [в статье Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портал Azure](qs-configure-portal-windows-vm.md) .
-
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы включить управляемые удостоверения для ресурсов Azure на виртуальной машине Azure, обратитесь к статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell](qs-configure-powershell-windows-vm.md) или [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI](qs-configure-cli-windows-vm.md).
