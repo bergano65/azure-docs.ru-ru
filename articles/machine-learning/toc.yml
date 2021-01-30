@@ -172,6 +172,8 @@
           href: concept-enterprise-security.md
         - name: Базовые средства безопасности
           href: security-baseline.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          href: ./security-controls-policy.md
     - name: Ответственный подход к машинному обучению
       items:
         - name: Общие сведения об ответственном подходе к машинному обучению
@@ -609,6 +611,8 @@
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Форум пользователей
       href: /answers/topics/azure-machine-learning.html
+    - name: Microsoft Learn
+      href: /learn/browse/?expanded=azure&products=azure-machine-learning
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning-service'
     - name: Сравнить наши продукты Машинного обучения
