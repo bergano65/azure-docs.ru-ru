@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы
 description: Содержит ответы на некоторые распространенные вопросы о решении Azure VMware.
 ms.topic: conceptual
 ms.date: 1/14/2021
-ms.openlocfilehash: 8245cd8da983ce48ba88d7faef76ab9b7ceb8c26
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 090b29b1e013ffbceb9296250fed99a04d15a82c
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218592"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062093"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Часто задаваемые вопросы о решении Azure VMware
 
@@ -258,7 +258,7 @@ VMware ХККС Enterprise доступен в составе решения Azu
 
 ### <a name="how-do-i-request-a-host-quota-increase-for-azure-vmware-solution"></a>Разделы справки запросить увеличение квоты узла для решения VMware для Azure?
 
-Для подписок, управляемых CSP, клиент должен отправить запрос партнеру. Затем Партнерская группа Взаимодействуйте с корпорацией Майкрософт, чтобы увеличить квоту для подписки. Дополнительные сведения см. в [статье Включение ресурсов для решения VMware в Azure](enable-azure-vmware-solution.md) . 
+Для подписок, управляемых CSP, клиент должен отправить запрос партнеру. Затем Партнерская группа Взаимодействуйте с корпорацией Майкрософт, чтобы увеличить квоту для подписки. Дополнительные сведения см. в статье [Включение ресурса Решения Azure VMware](enable-azure-vmware-solution.md). 
 
 Для подписок EA используйте следующую процедуру. Во первых, вам потребуется:
 

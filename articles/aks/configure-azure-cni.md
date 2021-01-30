@@ -4,12 +4,12 @@ description: Узнайте, как настроить сеть Azure CNI (ра�
 services: container-service
 ms.topic: article
 ms.date: 06/03/2019
-ms.openlocfilehash: 0a6ea45156477c0d0e95b9d345cffe1a75c773b6
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: afb98acf903f90ead137c9b372d33ce82b89f7b5
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917813"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062223"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -63,7 +63,7 @@ IP-адреса для контейнеров pod и узлов кластера
 | -- | :--: | :--: | -- |
 | Azure CLI | 110 | 30 | Да (до 250) |
 | Шаблон Resource Manager | 110 | 30 | Да (до 250) |
-| Портал | 110 | 30 | нет |
+| Портал | 110 | 110 (настраивается на вкладке "пулы узлов") | Нет |
 
 ### <a name="configure-maximum---new-clusters"></a>Настройка максимального числа. Новые кластеры
 

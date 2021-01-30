@@ -3,12 +3,12 @@ title: Защита виртуальных машин решения Azure VMwar
 description: Узнайте, как защитить виртуальные машины Azure VMware с помощью собственных средств безопасности Azure на одной панели мониторинга в центре безопасности Azure.
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: e461e7e49619f7063c0583975f36a2e3dfe5a724
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 66270c5abef48f9d9f30ed1b262a6b4f2f8144c8
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937344"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061470"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Защита виртуальных машин решения Azure VMware с помощью интеграции с центром безопасности Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "96937344"
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
-Для получения данных из различных источников потребуется Рабочая область Log Analytics. См. инструкции по [созданию log Analytics рабочей области из портал Azure](../azure-monitor/learn/quick-create-workspace.md). 
+Для получения данных из различных источников потребуется Рабочая область Log Analytics. Дополнительные сведения см. в статье [создание log Analytics рабочей области из портал Azure](../azure-monitor/learn/quick-create-workspace.md). 
 
 ## <a name="deploy-security-center-and-configure-azure-vmware-solution-vms"></a>Развертывание центра безопасности и настройка виртуальных машин решения VMware для Azure
 
@@ -154,10 +154,10 @@ Azure Sentinel построен на основе рабочей области 
 
 4. На вкладке **Общие** введите необходимые сведения.
 
-    - Имя
+    - name
     - Описание
-    - Прием
-    - Severity
+    - Тактика
+    - Уровень серьезности
     - Состояние
 
     Нажмите кнопку **Далее: Задайте логику правила >**.
@@ -173,7 +173,7 @@ Azure Sentinel построен на основе рабочей области 
         |where count_ > 3
         ```
         
-    - Сопоставлять сущности
+    - Сопоставление сущностей
     - Планирование запросов
     - Порог оповещения
     - Группирование событий
@@ -225,13 +225,13 @@ Azure Sentinel построен на основе рабочей области 
 
 2. Введите следующие сведения, чтобы создать пользовательский запрос.
 
-    - Имя
+    - name
     - Описание
     - Пользовательский запрос
     - Введите сопоставление
-    - Прием
+    - Тактика
     
-3. Нажмите кнопку **создания**. Затем можно выбрать созданный запрос, **выполнить запрос** и **Просмотреть результаты**.
+3. Нажмите кнопку **Создать**. Затем можно выбрать созданный запрос, **выполнить запрос** и **Просмотреть результаты**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
