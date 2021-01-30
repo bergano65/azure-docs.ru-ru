@@ -113,6 +113,8 @@
           href: reference-data-guidelines.md
     - name: Формат отображения
       href: reference-markdown-format.md
+    - name: Приватные каналы
+      href: reference-private-endpoint.md
     - name: Формат пакетного тестирования
       href: reference-tsv-format-batch-testing.md
     - name: Шифрование

@@ -27,7 +27,7 @@
           href: virtual-wan-locations-partners.md
         - name: Рекомендации по автоматизации для партнеров
           href: virtual-wan-configure-automation-providers.md
-    - name: Архитектура
+    - name: Architecture
       items:
         - name: Переход на Виртуальную глобальную сеть
           href: migrate-from-hub-spoke-topology.md
@@ -41,22 +41,22 @@
       items:
         - name: Сведения о маршрутизации виртуальных концентраторов
           href: about-virtual-hub-routing.md
-        - name: Сценарии маршрутизации
-          items:
-            - name: Подключение "любой к любому"
-              href: scenario-any-to-any.md
-            - name: Изоляция виртуальных сетей
-              href: scenario-isolate-vnets.md
-            - name: Изоляция виртуальных сетей (пользовательская)
-              href: scenario-isolate-vnets-custom.md
-            - name: Виртуальные сети с общими службами
-              href: scenario-shared-services-vnet.md
-            - name: Маршрутизация через сетевой виртуальный модуль
-              href: scenario-route-through-nva.md
-            - name: Маршрутизация через сетевой виртуальный модуль (пользовательская)
-              href: scenario-route-through-nvas-custom.md
-            - name: "Брандмауэр Azure\_— пользовательская конфигурация"
-              href: scenario-route-between-vnets-firewall.md
+    - name: Сценарии маршрутизации
+      items:
+        - name: Подключение "любой к любому"
+          href: scenario-any-to-any.md
+        - name: Изоляция виртуальных сетей
+          href: scenario-isolate-vnets.md
+        - name: Изоляция виртуальных сетей (пользовательская)
+          href: scenario-isolate-vnets-custom.md
+        - name: Виртуальные сети с общими службами
+          href: scenario-shared-services-vnet.md
+        - name: Маршрутизация через сетевой виртуальный модуль
+          href: scenario-route-through-nva.md
+        - name: Маршрутизация через сетевой виртуальный модуль (пользовательская)
+          href: scenario-route-through-nvas-custom.md
+        - name: "Брандмауэр Azure\_— пользовательская конфигурация"
+          href: scenario-route-between-vnets-firewall.md
     - name: Наблюдение
       items:
         - name: Сведения об аналитике Azure Monitor для Виртуальной глобальной сети

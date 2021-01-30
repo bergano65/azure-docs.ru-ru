@@ -96,6 +96,8 @@
       items:
         - name: "Что такое Гипермасштабирование для PostgreSQL с поддержкой Azure\_Arc"
           href: what-is-azure-arc-enabled-postgres-hyperscale.md
+        - name: Ограничения
+          href: limitations-postgresql-hyperscale.md
     - name: Краткие руководства
       items:
         - name: Поддерживаемые версии

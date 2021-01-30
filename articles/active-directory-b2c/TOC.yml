@@ -188,14 +188,17 @@
       items:
         - name: Настройка пользовательского ввода
           href: configure-user-input.md
-        - name: Настройка пользовательского интерфейса с использованием фирменной символики компании
-          href: company-branding.md
+        - name: Настройка пользовательского интерфейса
+          displayName: company branding
+          href: customize-ui.md
         - name: Настройка пользовательского интерфейса с использованием HTML-шаблона
+          displayName: content definitions
           href: customize-ui-with-html.md
         - name: JavaScript и макеты страниц
           href: javascript-and-page-layout.md
         - name: Настройка языка
           href: language-customization.md
+          displayName: localization
         - name: Сложность пароля
           href: password-complexity.md
         - name: Отключение проверки по электронной почте
@@ -259,12 +262,13 @@
           items:
             - name: Сбор журналов с помощью Application Insights
               href: troubleshoot-with-application-insights.md
-              displayName: troubleshooting
+              displayName: 'troubleshooting, app insights'
             - name: Проверка политики
               href: troubleshoot-custom-policies.md
               displayName: troubleshooting
         - name: Аналитика использования
           href: analytics-with-application-insights.md
+          displayName: 'application insights, app insights'
         - name: Справочник
           items:
             - name: TrustFrameworkPolicy
@@ -452,6 +456,8 @@
           href: user-migration.md
 - name: Справочник
   items:
+    - name: Ограничения службы
+      href: service-limits.md
     - name: Регистрация приложений
       href: app-registrations-training-guide.md
     - name: Модель выставления счетов

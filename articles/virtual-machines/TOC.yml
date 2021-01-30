@@ -957,8 +957,6 @@
               href: ./linux/cloudinit-configure-swapfile.md
             - name: Запуск существующего bash-скрипта
               href: ./linux/cloudinit-bash-script.md
-            - name: Подготовка существующей виртуальной машины для cloud-init
-              href: ./linux/cloudinit-prepare-custom-image.md
         - name: Создание образов Linux без агента подготовки
           href: ./linux/no-agent.md
         - name: Отключение подготовки агента Linux
@@ -1070,6 +1068,10 @@
               href: ./windows/image-builder.md
         - name: PowerShell
           href: ./windows/image-builder-powershell.md
+        - name: Безопасность
+          items:
+            - name: Элементы управления безопасностью службы "Политика Azure"
+              href: ./security-controls-policy-image-builder.md
         - name: Использование виртуальной сети
           items:
             - name: CLI
@@ -1508,7 +1510,6 @@
               href: ../bastion/create-host-cli.md
             - name: Подключение SSH через бастион
               href: ../bastion/bastion-connect-vm-ssh.md
-              items: null
             - name: Подключение RDP через бастион
               href: ../bastion/bastion-connect-vm-rdp.md
         - name: Использование элементов управления доступом
@@ -1741,7 +1742,7 @@
         - name: Резервное копирование нескольких виртуальных машин
           href: ../backup/tutorial-backup-vm-at-scale.md
         - name: Параметры восстановления
-          href: /backup/backup-azure-arm-restore-vms.md
+          href: ../backup/backup-azure-arm-restore-vms.md
         - name: Матрица поддержки
           href: ../backup/backup-support-matrix-iaas.md
         - name: Цены

@@ -50,7 +50,7 @@
         - name: 'Планирование использования приложений, не указанных в коллекции'
           href: non-gallery-apps.md
         - name: Планирование развертывания "Мои приложения"
-          href: access-panel-deployment-plan.md
+          href: my-apps-deployment-plan.md
     - name: Единый вход
       items:
         - name: Планирование развертывания единого входа
