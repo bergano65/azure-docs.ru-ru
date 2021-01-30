@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 398cbd49f79cbeb5f486e3f8ca33987d5357add6
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 35d985ee31fba52a57614cf62668d5355caf5ffa
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789452"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097629"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Учебник. Загрузка набора данных такси в Нью Йорк
 
@@ -82,7 +82,7 @@ ms.locfileid: "98789452"
 
 2. Введите полное имя сервера и в качестве имени для входа укажите **LoaderRC20**.  Введите пароль для LoaderRC20.
 
-3. Выберите **Подключиться**.
+3. Щелкните **Подключить**.
 
 4. Когда подключение будет готово, вы увидите в обозревателе объектов два подключения к серверу. Одно подключение — как ServerAdmin, а второе — как MedRCLogin.
 
@@ -393,7 +393,7 @@ ms.locfileid: "98789452"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы использовали простую [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql&preserve-view=true?view=azure-sqldw-latest&preserve-view=true#examples) для загрузки данных в хранилище данных.
+Из этого руководства вы узнали, как создать хранилище данных, а также как создать пользователя для загрузки данных. Вы использовали простую [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#examples) для загрузки данных в хранилище данных.
 
 Вы выполнили такие действия:
 > [!div class="checklist"]

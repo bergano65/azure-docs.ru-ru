@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/04/2020
-ms.openlocfilehash: 53b4b09a95d99bc0fb84f495d1105653f61010c1
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: fc410ef903ac7eca2457516df2c71260a4b19b89
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920364"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097495"
 ---
 # <a name="edv4-and-edsv4-series"></a>Серии Edv4 и Edsv4
 
@@ -31,6 +31,7 @@ ms.locfileid: "98920364"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | <sup>**</sup> Максимальная пропускная способность кэшированного и временного хранилища: операций ввода-вывода в секунду | Максимальное число сетевых адаптеров|Ожидаемая пропускная способность сети (Мбит/с) |
@@ -58,6 +59,7 @@ ms.locfileid: "98920364"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): поддерживаются <br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | <sup>**</sup> Максимальная пропускная способность кэшированного и временного хранилища: операций ввода-вывода в секунду (размер кэша в гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное число сетевых адаптеров|Ожидаемая пропускная способность сети (Мбит/с) |

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 41290952350111464bb8137568d158a76585f25c
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: f94e7860bff67218c9629e76b06b7293974e491d
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917964"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097529"
 ---
 # <a name="eav4-and-easv4-series"></a>Серии Eav4 и Easv4
 
@@ -27,6 +27,7 @@ ms.locfileid: "98917964"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколения 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 Размеры серии Eav4 основаны на процессоре AMD ЕПИК<sup>TM</sup> 7452 с частотой 2.35 ГГц, что может повысить максимальную частоту в 3.35 ГГц. Размеры серии Eav4 идеально подходят для корпоративных приложений с большим объемом памяти. Хранилище данных диска оплачивается отдельно от виртуальных машин. Чтобы использовать SSD уровня "Премиум", используйте размеры серии Easv4. Показатели ценообразования и выставления счетов для размеров Easv4 совпадают с серией Eav3.
@@ -52,6 +53,7 @@ ms.locfileid: "98917964"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколения 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 Размеры серии Easv4 основаны на процессоре AMD ЕПИК<sup>TM</sup> 7452 с тактовой частотой 2.35 ГГц, который может обеспечить повышенный максимум в 3.35 ГГц и использовать SSD уровня "Премиум". Размеры серии Easv4 идеально подходят для корпоративных приложений с большим объемом памяти.

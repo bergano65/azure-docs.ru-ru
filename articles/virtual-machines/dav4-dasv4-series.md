@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 06440c49971c1347e2bad11fcc186220b21e0145
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: e5ce9597802f88bacbe03cffac77fdfbee3a9357
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917473"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097612"
 ---
 # <a name="dav4-and-dasv4-series"></a>Серии Dav4 и Dasv4
 
@@ -27,6 +27,7 @@ ms.locfileid: "98917473"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 Размеры серии Dav4 основаны на процессоре AMD ЕПИК<sup>TM</sup> 7452 с частотой 2.35 ГГц, что может повысить максимальную частоту в 3.35 ГГц. Размеры серии Dav4 предлагают сочетание виртуальных ЦП, памяти и временного хранилища для большинства рабочих нагрузок. Хранилище данных диска оплачивается отдельно от виртуальных машин. Чтобы использовать SSD уровня "Премиум", используйте размеры Dasv4. Показатели ценообразования и выставления счетов для размеров Dasv4 совпадают с серией Dav4.
@@ -51,6 +52,7 @@ ms.locfileid: "98917473"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 Размеры серии Dasv4 основаны на процессоре AMD ЕПИК<sup>TM</sup> 7452 с тактовой частотой 2.35 ГГц, который может обеспечить повышенный максимум в 3.35 ГГц и использовать SSD уровня "Премиум". Размеры серии Dasv4 предлагают сочетание виртуальных ЦП, памяти и временного хранилища для большинства рабочих нагрузок.
