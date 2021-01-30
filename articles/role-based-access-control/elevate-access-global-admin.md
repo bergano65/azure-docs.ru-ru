@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 06/09/2020
 ms.author: rolyon
-ms.openlocfilehash: 6e57e495d34a265b5e0691106996206029656c5a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 850d50bc9e427ff559782d587d74b33089332a8d
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371126"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091669"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
@@ -33,7 +33,7 @@ ms.locfileid: "92371126"
 
 ## <a name="how-does-elevated-access-work"></a>Как работает повышение прав доступа?
 
-Azure AD и ресурсы Azure защищены независимо друг от друга. То есть назначения ролей Azure AD не предоставляют доступ к ресурсам Azure, а назначения ролей Azure не предоставляют доступ к Azure AD. Однако, если вы являетесь [глобальным администратором](../active-directory/roles/permissions-reference.md#company-administrator-permissions) в Azure AD, вы можете назначить себе доступ ко всем подпискам Azure и группам управления в каталоге. Эту возможность следует использовать, если у вас нет доступа к ресурсам в подписке Azure, например к виртуальным машинам или учетным записям хранения, и вы хотите использовать свои привилегии глобального администратора для получения доступа к этим ресурсам.
+Azure AD и ресурсы Azure защищены независимо друг от друга. То есть назначения ролей Azure AD не предоставляют доступ к ресурсам Azure, а назначения ролей Azure не предоставляют доступ к Azure AD. Однако, если вы являетесь [глобальным администратором](../active-directory/roles/permissions-reference.md#global-administrator-permissions) в Azure AD, вы можете назначить себе доступ ко всем подпискам Azure и группам управления в каталоге. Эту возможность следует использовать, если у вас нет доступа к ресурсам в подписке Azure, например к виртуальным машинам или учетным записям хранения, и вы хотите использовать свои привилегии глобального администратора для получения доступа к этим ресурсам.
 
 При повышении прав доступа вам будет назначена роль [администратора доступа пользователей](built-in-roles.md#user-access-administrator) в Azure, охватывающая корень каталога (`/`).Это позволяет просматривать все ресурсы и назначать доступ в любой подписке или группе управления в каталоге. Назначения ролей администратора доступа пользователей можно удалить с помощью Azure PowerShell, Azure CLI или REST API.
 
@@ -53,7 +53,7 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
 1. Откройте **Azure Active Directory**.
 
-1. В разделе **Управление**выберите **свойства**.
+1. В разделе **Управление** выберите **Свойства**.
 
    ![Выберите свойства для Azure Active Directory свойства — снимок экрана](./media/elevate-access-global-admin/azure-active-directory-properties.png)
 
@@ -327,7 +327,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     DELETE https://management.azure.com/providers/Microsoft.Authorization/roleAssignments/11111111-1111-1111-1111-111111111111?api-version=2015-07-01
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о различных ролях](rbac-and-directory-admin-roles.md)
 - [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)

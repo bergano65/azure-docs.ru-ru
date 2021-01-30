@@ -18,12 +18,12 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: 34962686ae36764a6dc16b164e91004be9ef038d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7ef6ef85ea9d256303852e4b281071da455ebb0
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250425"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097679"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 
@@ -109,7 +109,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Дополнительные сведения о формате полезных данных см. в [документации по полезной нагрузке](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload).
+Дополнительные сведения о формате полезных данных см. в [документации по полезной нагрузке](https://payload.readthedocs.io/en/latest/).
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 
@@ -155,7 +155,7 @@ notificationHubService.apns.send(null, payload, function(error){
 
 - **Tags** — идентификатор тега. Если тег отсутствует, уведомление отправляется всем клиентам.
 - **Payload** — полезные данные XML сообщения.
-- **TargetName**  -  TargetName `toast` для всплывающих уведомлений. `token` для уведомлений на плитке.
+-   -  TargetName `toast` для всплывающих уведомлений. `token` для уведомлений на плитке.
 - **NotificationClass** — приоритет уведомления. Допустимые значения см. в разделе **HTTP Header Elements** (Элементы заголовка HTTP) документа [Pushing Notifications from a Server (Windows Phone)](/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)) (Push-уведомления от сервера (Windows Phone)).
 - **Options** — необязательные заголовки запроса.
 - **Callback** — функция обратного вызова.
@@ -196,7 +196,7 @@ notificationHubService.wns.send(null, payload , 'wns/toast', function(error){
 });
 ```
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Примеры фрагментов выше позволяют легко создать инфраструктуру службы для отправки push-уведомлений на широкий спектр устройств. Теперь, когда вы познакомились с основами использования центров уведомлений с Node.js, используйте следующие ссылки для получения дополнительных сведений о том, как можно дальше расширить эти возможности.
 

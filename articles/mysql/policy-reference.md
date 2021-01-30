@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Базы данных Azure для MySQL
 description: Здесь приведены встроенные определения политик в Политике Azure для Базы данных Azure для MySQL. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 3eb7ec9ff8db28abb58136e0492bd9ce3cdeeff7
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 28d6f180d388ee958b59799d5dec53d869d47459
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808176"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096374"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-database-for-mysql"></a>Встроенные определения в Политике Azure для Базы данных Azure для MySQL
 

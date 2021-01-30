@@ -6,12 +6,12 @@ ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 8105988cd2036f44d214befad3365cf9ee96ee0d
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 07df391e664fe04b9c7d2eda34960666c44a2e06
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015986"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094095"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Уровень совместимости заданий Azure Stream Analytics
 
@@ -43,7 +43,7 @@ ms.locfileid: "98015986"
 4. Выберите нужное значение уровня совместимости.
 5. Нажмите кнопку **сохранить** в нижней части страницы.
 
-![Уровень совместимости Stream Analytics на портале Azure](media/stream-analytics-compatibility-level/stream-analytics-compatibility.png)
+![Уровень совместимости Stream Analytics на портале Azure](media/stream-analytics-compatibility-level/stream-analytics-compat-level-1-2.png)
 
 При обновлении уровня совместимости T-компилятор проверяет задание с помощью синтаксиса, соответствующего выбранному уровню совместимости.
 
@@ -121,11 +121,11 @@ Azure Stream Analytics поддерживает индексирование г�
 
 ### <a name="service-bus-xml-format"></a>Формат служебной шины XML
 
-**уровень 1,0:** Azure Stream Analytics использовало DataContractSerializer, поэтому содержимое сообщения включало XML-теги. Пример:
+**уровень 1,0:** Azure Stream Analytics использовало DataContractSerializer, поэтому содержимое сообщения включало XML-теги. Например:
 
 `@\u0006string\b3http://schemas.microsoft.com/2003/10/Serialization/\u0001{ "SensorId":"1", "Temperature":64\}\u0001`
 
-**уровень 1,1:** Содержимое сообщения содержит поток непосредственно без дополнительных тегов. Пример: `{ "SensorId":"1", "Temperature":64}`
+**уровень 1,1:** Содержимое сообщения содержит поток непосредственно без дополнительных тегов. Например: `{ "SensorId":"1", "Temperature":64}`
 
 ### <a name="persisting-case-sensitivity-for-field-names"></a>Учет регистра в именах полей
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/14/2019
-ms.openlocfilehash: 4d0ceacd37748e9761903d02fd7e052d70b10e15
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 15d01a8ac21264bf57ee7e65147e3989cd631b15
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011886"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095562"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
@@ -22,7 +22,7 @@ ms.locfileid: "96011886"
 
 | Среда | Метод установки | Метод перехода |
 |--------|----------|-------------|
-| Azure | Расширение виртуальной машины агента Log Analytics для Windows и Linux | Агент автоматически обновляется по умолчанию, если не настроен шаблон Azure Resource Manager для отказаться от установки свойства *autoUpgradeMinorVersion* в **значение false**. |
+| Виртуальная машина Azure | Расширение виртуальной машины агента Log Analytics для Windows и Linux | Агент автоматически обновляется по умолчанию, если не настроен шаблон Azure Resource Manager для отказаться от установки свойства *autoUpgradeMinorVersion* в **значение false**. |
 | Пользовательские образы виртуальных машин Azure | Ручная установка агента Log Analytics для Windows и Linux | Обновление виртуальных машин до последней версии агента необходимо выполнить из командной строки, в которой выполняется пакет установщика Windows или самораспаковывающийся и устанавливаемый комплект сценариев оболочки для Linux.|
 | Виртуальные машины, не относящиеся к Azure | Ручная установка агента Log Analytics для Windows и Linux | Обновление виртуальных машин до последней версии агента необходимо выполнить из командной строки, в которой выполняется пакет установщика Windows или самораспаковывающийся и устанавливаемый комплект сценариев оболочки для Linux. |
 
@@ -243,7 +243,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 1. Войдите в систему компьютера, используя учетную запись с правами администратора.
 
-2. Чтобы извлечь файлы установки агента из командной строки с повышенными привилегиями, запустите файл `extract MMASetup-<platform>.exe`. После этого вы сможете выбрать путь для извлечения файлов. Кроме того, путь можно указать, передав аргументы `extract MMASetup-<platform>.exe /c:<Path> /t:<Path>`. Дополнительные сведения о параметрах командной строки, поддерживаемых IExpress, см. в [этой статье](https://support.microsoft.com/help/197147/command-line-switches-for-iexpress-software-update-packages). Затем обновите пример в соответствии со своими потребностями.
+2. Чтобы извлечь файлы установки агента из командной строки с повышенными привилегиями, запустите файл `extract MMASetup-<platform>.exe`. После этого вы сможете выбрать путь для извлечения файлов. Кроме того, путь можно указать, передав аргументы `extract MMASetup-<platform>.exe /c:<Path> /t:<Path>`. Дополнительные сведения о параметрах командной строки, поддерживаемых IExpress, см. в [этой статье](https://www.betaarchive.com/wiki/index.php?title=Microsoft_KB_Archive/197147). Затем обновите пример в соответствии со своими потребностями.
 
 3. В командной строке введите следующую команду: `%WinDir%\System32\msiexec.exe /x <Path>:\MOMAgent.msi /qb`.
 
@@ -290,7 +290,7 @@ $healthServiceSettings.SetProxyInfo($ProxyDomainName, $ProxyUserName, $cred.GetN
 
 3. Перезапустите сервер OMI: `sudo /opt/omi/bin/service_control restart`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь [с разрешениями по устранению неполадок агента Linux в](agent-linux-troubleshoot.md) случае возникновения проблем при установке агента Linux или управлении им.
 

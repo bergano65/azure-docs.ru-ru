@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, sstein
 ms.date: 12/22/2020
-ms.openlocfilehash: 08cab806d6ad8b75821a92994dde0fa07db8b960
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 7bb754b892715adffc6ead99f3d866f9f9d8af9b
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233599"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096497"
 ---
 # <a name="manage-file-space-for-databases-in-azure-sql-database"></a>Управление пространством для баз данных в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -219,7 +219,7 @@ DBCC SHRINKDATABASE (N'db1');
 
 Кроме того, следует учитывать потенциальную негативную производительность сжатия файлов базы данных, см. раздел [**Перестроение индексов**](#rebuild-indexes) ниже.
 
-Дополнительные сведения об этой команде см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql.md).
+Дополнительные сведения об этой команде см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql).
 
 ### <a name="auto-shrink"></a>Автоматическое сжатие
 

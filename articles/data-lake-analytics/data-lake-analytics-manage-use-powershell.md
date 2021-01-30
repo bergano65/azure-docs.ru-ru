@@ -5,12 +5,12 @@ ms.service: data-lake-analytics
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 06/29/2018
-ms.openlocfilehash: afa21e6aae769e69e8bc83b9fa0d4f9b76396f7e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 2f56fc285ed263b4b58985b5df620740a33cb3f5
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220318"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092357"
 ---
 # <a name="manage-azure-data-lake-analytics-using-azure-powershell"></a>Управление аналитикой озера данных Azure с помощью Azure PowerShell
 
@@ -18,7 +18,7 @@ ms.locfileid: "92220318"
 
 В этой статье описано, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics с помощью Azure PowerShell.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -240,9 +240,9 @@ Get-AdlJob -Account $adla -State Accepted,Compiling,New,Paused,Scheduling,Start
 Используйте параметр `-Result`, чтобы определить, успешно ли выполнено завершенное задание. Возможны следующие значения:
 
 * Отменено
-* Failed
-* None
-* Успешно
+* Сбой
+* Нет
+* Выполнено
 
 ``` powershell
 # List Successful jobs.
@@ -298,7 +298,7 @@ Wait-AdlJob -Account $adla -JobId $job.JobId
 
 ## <a name="analyzing-job-history"></a>Анализ журнала заданий
 
-Использование Azure PowerShell для анализа журнала заданий, выполненных в Azure Data Lake является эффективным методом. Это удобный инструмент для анализа использования и затрат. Дополнительные сведения см. в [примере репозитория для выполнения анализа журнала заданий](https://github.com/Azure-Samples/data-lake-analytics-powershell-job-history-analysis)  
+Использование Azure PowerShell для анализа журнала заданий, выполненных в Azure Data Lake является эффективным методом. Это удобный инструмент для анализа использования и затрат. Дополнительные сведения см. в [примере репозитория для выполнения анализа журнала заданий](https://github.com/jpalbright31/data-lake-analytics-powershell-job-history-analysis)  
 
 ## <a name="list-job-pipelines-and-recurrences"></a>Получение списка конвейеров и повторений заданий
 
@@ -551,5 +551,5 @@ foreach ($sub in $subs)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
-* Приступая к работе с Data Lake Analytics с помощью Azure PowerShell [портал Azure](data-lake-analytics-get-started-portal.md)  |  [Azure PowerShell](data-lake-analytics-get-started-powershell.md)  |  [Azure CLI](data-lake-analytics-get-started-cli.md)
+* Приступая к работе с Data Lake Analytics с помощью Azure PowerShell [портал Azure](data-lake-analytics-get-started-portal.md)  |  [](data-lake-analytics-get-started-powershell.md)  |  [Azure CLI](data-lake-analytics-get-started-cli.md)
 * Управление Azure Data Lake Analytics с помощью [портал Azure](data-lake-analytics-manage-use-portal.md)  |  [Azure PowerShell](data-lake-analytics-manage-use-powershell.md)  |  [CLI](data-lake-analytics-manage-use-cli.md)

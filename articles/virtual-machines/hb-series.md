@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/09/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 86841910e7fee1cebc2f081a7a9f2159c689437b
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 964ed9b7d2631d4a545a53a0dc2d89d978406c49
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919839"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096837"
 ---
 # <a name="hb-series"></a>Серия HB
 
@@ -28,11 +28,12 @@ ms.locfileid: "98919839"
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 | Размер | vCPU | Процессор | Память, ГиБ | Пропускная способность памяти ГБ/с | Базовая частота ЦП (ГГц) | Частота ядер (ГГц, пик) | Частота с одним ядром (ГГц, пик) | Производительность RDMA (ГБ/с) | Поддержка MPI | Временное хранилище, Гиб | Максимальное число дисков данных | Макс. vNIC Ethernet |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_HB60rs | 60 | AMD ЕПИК 7551 | 240 | 263 | 2.0 | 2.55 | 2.55 | 100 | All | 700 | 4 | 8 |
+| Standard_HB60rs | 60 | AMD ЕПИК 7551 | 240 | 263 | 2.0 | 2.55 | 2.55 | 100 | Все | 700 | 4 | 8 |
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 

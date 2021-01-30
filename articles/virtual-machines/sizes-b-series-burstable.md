@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 31a65cab7dfdd478560b7babba156cec7645cf33
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 833d96b8ca252cff5384cde114390aba8c2f51c3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98917257"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097696"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -28,6 +28,7 @@ ms.locfileid: "98917257"
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается * *<br>
+[Временные диски ОС](ephemeral-os-disks.md): поддерживаются <br>
 
 * Виртуальные машины серии B являются пакетными, поэтому ACU числа будут зависеть от рабочих нагрузок и основных показателей использования.<br>
 * * Поддержка ускорения сети поддерживается только для *Standard_B12ms*, *Standard_B16ms* и *Standard_B20ms*.

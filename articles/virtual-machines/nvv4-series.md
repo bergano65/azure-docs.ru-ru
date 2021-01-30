@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 01/12/2020
 ms.author: vikancha
-ms.openlocfilehash: bff754211cb1a8bf9336a9ada4db2c8189d13a21
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: c751f67e9f442669ff3f6828de0a5b350d1706fa
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919686"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99097713"
 ---
 # <a name="nvv4-series"></a>Серия NVv4 
 
@@ -28,6 +28,7 @@ ms.locfileid: "98919686"
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
 | Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Графический процессор | Память GPU: ГиБ | Максимальное число дисков данных | Максимальное количество сетевых адаптеров/ожидаемая пропускная способность сети (Мбит/с) |

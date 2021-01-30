@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: jushiman
-ms.openlocfilehash: 3821ef790728117df52bf534d75729347a0d8c9f
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: fecd707d96b03eef4f093c0b256e32f11bb8a3f7
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98919907"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095862"
 ---
 # <a name="dcsv2-series"></a>Серия DCsv2
 
@@ -27,6 +27,7 @@ ms.locfileid: "98919907"
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 2<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Временные диски ОС](ephemeral-os-disks.md): поддерживаются <br>
 
 * За исключением Standard_DC8_v2
 

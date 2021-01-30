@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 75b62eb00b1a1a534be01f9f118b4d5066e44a37
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: cb5ce421b6a38edcb8d92866f749a544eff927d6
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222893"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096395"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Устранение неполадок с пирингом виртуальной сети
 
@@ -87,7 +87,7 @@ ms.locfileid: "98222893"
 Дополнительные сведения см. в разделе [Цепочка служб](./virtual-network-peering-overview.md#service-chaining).
 
 > [!Note]
-> Если вам нужна помощь по настройке сетевого виртуального модуля, [обратитесь к его поставщику](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+> Если вам нужна помощь по настройке сетевого виртуального модуля, [обратитесь к его поставщику](https://mskb.pkisolutions.com/kb/2984655).
 
 Дополнительные сведения об устранении неполадок при настройке и маршрутизации устройств NVA см. в статье [Неполадки сетевого виртуального модуля в Azure](./virtual-network-troubleshoot-nva.md).
 
@@ -190,7 +190,7 @@ ms.locfileid: "98222893"
 
 Центральная сеть должна включать NVA. Настройте маршруты UDR в периферийных сетях, для которых в качестве места назначения следующего прыжка задан сетевой виртуальный модуль, и активируйте параметр **Разрешить перенаправленный трафик** в центральной виртуальной сети.
 
-Дополнительные сведения см. в разделе [Цепочка служб](./virtual-network-peering-overview.md#service-chaining). Указанные требования следует обсудить с выбранным [поставщиком NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Дополнительные сведения см. в разделе [Цепочка служб](./virtual-network-peering-overview.md#service-chaining). Указанные требования следует обсудить с выбранным [поставщиком NVA](https://mskb.pkisolutions.com/kb/2984655).
 
 ## <a name="troubleshoot-a-hub-spoke-network-connectivity-issue-between-spoke-virtual-networks-in-different-regions"></a>Устранение неполадок с сетевым подключением между периферийными виртуальными сетями в разных регионах в звездообразной топологии
 

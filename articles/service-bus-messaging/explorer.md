@@ -3,12 +3,12 @@ title: Использование Azure Service Bus Explorer для выполн
 description: Эта статья содержит сведения об использовании Azure Service Bus Explorer на портале для доступа к данным Служебной шины Azure.
 ms.topic: conceptual
 ms.date: 01/20/2020
-ms.openlocfilehash: eb6610945ba4b09543308ab351d3a36ec7e587dd
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 06bc2ffffc6b467aa730e16599099bc95117dac9
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684847"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092223"
 ---
 # <a name="use-service-bus-explorer-to-perform-data-operations-on-service-bus-preview"></a>Использование Service Bus Explorer для выполнения операций с данными в Служебной шине (предварительная версия)
 
@@ -37,9 +37,9 @@ Azure Service Bus Explorer расширяет функциональные во�
     - [Краткое руководство. Создание очередей](service-bus-quickstart-portal.md)
     - [Краткое руководство. Создание разделов](service-bus-quickstart-topics-subscriptions-portal.md)
 - Убедитесь, что вы являетесь членом одной из этих ролей в пространстве имен: 
-    - [Владелец данных служебной шины](../role-based-access-control/built-in-roles.md#azure-service-bus-data-owner) 
-    - [Участник](../role-based-access-control/built-in-roles.md#contributor) 
-    - [Владелец](/role-based-access-control/built-in-roles.md#owner)
+    - [Владелец данных служебной шины](/azure/role-based-access-control/built-in-roles#azure-service-bus-data-owner) 
+    - [Участник](/azure/role-based-access-control/built-in-roles#contributor) 
+    - [Владелец](/azure/role-based-access-control/built-in-roles#owner)
 
 
 ## <a name="using-the-service-bus-explorer"></a>Использование Service Bus Explorer

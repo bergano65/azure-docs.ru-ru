@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 01/29/2021
 ms.author: b-juche
-ms.openlocfilehash: aaffc63690894f43329763064ae89a105274953c
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: c82e834c0af3737c1e5ef19c7aa789b94d87f6d8
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511939"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095397"
 ---
 # <a name="resource-limits-for-azure-netapp-files"></a>Ограничения ресурсов для службы Azure NetApp Files
 
@@ -48,6 +48,8 @@ ms.locfileid: "96511939"
 |  Минимальная назначенная пропускная способность для тома QoS вручную     |    1 MiB/с   |    Нет    |    
 |  Максимальная назначенная пропускная способность для тома QoS вручную     |    4 500 MiB/с    |    Нет    |    
 |  Число томов защиты данных репликации между регионами (конечные тома)     |    5    |    Да    |     
+
+Чтобы узнать, приближается ли каталог к максимальному размеру метаданных каталога (320 МБ), ознакомьтесь с [разделом разделы справки определить, насколько приближается размер каталога](azure-netapp-files-faqs.md#how-do-i-determine-if-a-directory-is-approaching-the-limit-size).   
 
 Дополнительные сведения см. в разделе [вопросы и ответы по управлению емкостью](azure-netapp-files-faqs.md#capacity-management-faqs).
 

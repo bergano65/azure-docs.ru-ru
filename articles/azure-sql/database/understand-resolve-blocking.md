@@ -14,12 +14,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 1/14/2020
-ms.openlocfilehash: b73e72969a851428034499d447ecb162a61aa9ab
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1341d0e64a01ff428fe42735d198c5e6b74b0ce8
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725792"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99093315"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Изучение и устранение проблем с блокировкой базы данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -225,11 +225,11 @@ AND object_name(p.object_id) = '<table_name>';
 
     -   `sys.dm_exec_requests.wait_resource` В этом поле указывается ресурс, который ожидает заблокированный запрос. В следующей таблице перечислены стандартные  `wait_resource`   форматы и их значения.
 
-    | Ресурс | Формат | Пример | Объяснение | 
+    | Ресурс | Формат | Пример | Описание | 
     |:-|:-|:-|:-|
     | Таблица | DatabaseID: ObjectID: Индексид | ВКЛАДКА: 5:261575970:1 | В этом случае база данных с ИДЕНТИФИКАТОРом 5 является образцом базы данных pubs, а объект с ИДЕНТИФИКАТОРом 261575970 — таблицей titles, а 1 — кластеризованным индексом. |
     | Страница | DatabaseID: ИД: идентификатор страницы | СТРАНИЦА: 5:1:104 | В этом случае база данных с ИДЕНТИФИКАТОРом 5 — Pubs, файл с ИДЕНТИФИКАТОРом 1 — первичный файл данных, а страница 104 — страница, принадлежащая таблице titles. Чтобы указать object_id, к которой принадлежит страница, используйте функцию динамического управления [sys.dm_db_page_info](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-page-info-transact-sql), передав DatabaseID, идентификаторы идентификатор страницы из `wait_resource` . | 
-    | Ключ | DatabaseID: Hobt_id (хэш-значение для ключа индекса) | КЛЮЧ: 5:72057594044284928 (3300a4f361aa) | В этом случае база данных с ИДЕНТИФИКАТОРом 5 — это Pubs, Hobt_ID 72057594044284928 соответствует index_id 2 для object_id 261575970 (таблица titles). Используйте представление каталога sys. partitions, чтобы связать hobt_id с определенным index_id и object_id. Невозможно выполнить дехэширование хэша ключа индекса до определенного значения ключа. |
+    | Клавиши | DatabaseID: Hobt_id (хэш-значение для ключа индекса) | КЛЮЧ: 5:72057594044284928 (3300a4f361aa) | В этом случае база данных с ИДЕНТИФИКАТОРом 5 — это Pubs, Hobt_ID 72057594044284928 соответствует index_id 2 для object_id 261575970 (таблица titles). Используйте представление каталога sys. partitions, чтобы связать hobt_id с определенным index_id и object_id. Невозможно выполнить дехэширование хэша ключа индекса до определенного значения ключа. |
     | Строка | DatabaseID: ИД столбца: идентификатор страницы: слот (строка) | RID: 5:1:104:3 | В этом случае база данных с ИДЕНТИФИКАТОРом 5 — Pubs, файл с ИДЕНТИФИКАТОРом 1 — первичный файл данных, страница 104 — страница, принадлежащая таблице titles, а в слоте 3 — расположение строки на странице. |
     | Компилятор  | DatabaseID: ИД столбца: идентификатор страницы: слот (строка) | RID: 5:1:104:3 | В этом случае база данных с ИДЕНТИФИКАТОРом 5 — Pubs, файл с ИДЕНТИФИКАТОРом 1 — первичный файл данных, страница 104 — страница, принадлежащая таблице titles, а в слоте 3 — расположение строки на странице. |
 
@@ -371,14 +371,14 @@ AND object_name(p.object_id) = '<table_name>';
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Мониторинг и настройка производительности Базы данных SQL Azure и Управляемого экземпляра SQL Azure](/monitor-tune-overview.md)
+* [Мониторинг и настройка производительности Базы данных SQL Azure и Управляемого экземпляра SQL Azure](/azure/azure-sql/database/monitor-tune-overview)
 * [Мониторинг производительности с использованием хранилища запросов](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store)
 * [Руководство по блокировке и управлению версиями строк транзакций](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)
 * [SET TRANSACTION ISOLATION LEVEL](/sql/t-sql/statements/set-transaction-isolation-level-transact-sql)
 * [Краткое руководство. Расширенные события в SQL Server](/sql/relational-databases/extended-events/quick-start-extended-events-in-sql-server)
 * [Функция Intelligent Insights использует искусственный интеллект для мониторинга производительности базы данных и устранения связанных с ней проблем.](intelligent-insights-overview.md)
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
 * [База данных SQL Azure: улучшение настройки производительности с помощью автоматической настройки](https://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Improving-Performance-Tuning-with-Automatic-Tuning)
 * [Повышение производительности базы данных SQL Azure с помощью автоматической настройки](https://channel9.msdn.com/Shows/Azure-Friday/Improve-Azure-SQL-Database-Performance-with-Automatic-Tuning)
