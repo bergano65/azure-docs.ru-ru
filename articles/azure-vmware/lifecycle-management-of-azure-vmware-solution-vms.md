@@ -3,12 +3,12 @@ title: Управление жизненным циклом виртуальны
 description: Узнайте, как управлять всеми аспектами жизненного цикла виртуальных машин решения Azure VMware с помощью Microsoft Azure собственных средств.
 ms.topic: conceptual
 ms.date: 09/11/2020
-ms.openlocfilehash: ff1032900fa936895f3adfcb0d8a872f24948aca
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 5bba9cbbc8783cc285ff09f790ee1b35b20ba358
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326817"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062902"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Управление жизненным циклом виртуальных машин Azure VMware
 
@@ -81,13 +81,13 @@ Azure Управление обновлениями в службе автома
 
 Служба "Дуга Azure" расширяет возможности управления Azure до любой инфраструктуры, включая решение VMware для Azure, локально или другие облачные платформы.
 
-- См. раздел [подключение гибридных компьютеров к Azure в масштабе](../azure-arc/servers/onboard-service-principal.md) , чтобы включить серверы с поддержкой ARC в Azure для нескольких виртуальных машин Windows или Linux.
+- Сведения о включении серверов с поддержкой ARC в Azure для нескольких виртуальных машин Windows или Linux см. в статье [подключение гибридных компьютеров к Azure в масштабе](../azure-arc/servers/onboard-service-principal.md).
 
 ### <a name="onboard-hybrid-kubernetes-clusters-with-arc-enabled-kubernetes"></a>Подключение гибридных кластеров Kubernetes с поддержкой Arc Kubernetes
 
 Вы можете подключить кластер Kubernetes, размещенный в среде решения Azure VMware, с помощью Kubernetes с поддержкой дуги Azure. 
 
-- См. статью [Создание субъекта-службы адаптации Azure с поддержкой дуги](../azure-arc/kubernetes/create-onboarding-service-principal.md).
+- Дополнительные сведения см. в статье [Создание субъекта-службы адаптации с поддержкой ARC в Azure](../azure-arc/kubernetes/create-onboarding-service-principal.md).
 
 ### <a name="deploy-the-log-analytics-agent"></a>Развертывание агента Log Analytics
 

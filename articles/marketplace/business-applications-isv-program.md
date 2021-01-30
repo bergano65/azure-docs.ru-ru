@@ -7,12 +7,12 @@ ms.topic: article
 author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 11/19/2020
-ms.openlocfilehash: a20c495553dfe9a16c34a2972575d21cc95eef44
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 2d58ed26a4d2c03c8d0261426a410fcb11c09ee5
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95537141"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063051"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 
@@ -73,12 +73,12 @@ ms.locfileid: "95537141"
 > [!IMPORTANT]
 > Необходимо повторно сертифицировать приложения каждые 6 месяцев, чтобы они оставались на AppSource. Дополнительные сведения см. в статье политика [сертификации коммерческого магазина](/legal/marketplace/certification-policies)Marketplace.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Обратитесь к менеджеру по работе с партнерами или обратитесь в [службу поддержки партнеров Майкрософт](https://aka.ms/marketplacepublishersupport) за помощью к вашей учетной записи. Общие сведения о программе Business Applications ISV Connect см. в следующих статьях:
 
 - [Business Applications для независимых поставщиков программных продуктов](https://partner.microsoft.com/solutions/business-applications/isv-overview) (статья в Интернете)
 - [Обзор новой программы для Business Applications ISV](https://aka.ms/BizAppsISVProgram) (PDF)
-- [Часто задаваемые вопросы о программе Business APPLICATIONS ISV Connect](https://assetsprod.microsoft.com/business-applications-partner-faq.pdf) (PDF)
 - [Предстоящие программы для Business Applications независимых поставщиков программных продуктов](https://cloudblogs.microsoft.com/dynamics365/bdm/2019/04/17/upcoming-program-for-business-applications-isvs/) (запись блога)
 - [Политики программы подключения ISV](https://aka.ms/bizappsisvpolicies) (PDF)
+<!-- - [Business Applications ISV Connect Program FAQ](https://assetsprod.microsoft.com/business-applications-partner-faq.pdf) (PDF) AWAITING NEW LINK; MAKE 3rd BULLET-->

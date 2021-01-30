@@ -7,12 +7,12 @@ ms.reviewers: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 11/19/2020
 tags: connectors
-ms.openlocfilehash: 4997853fea97d14491bd9e9101f79f324807a6a1
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 83ffccb7bae4fabc10796c36e782e72c661bd346
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920819"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063018"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Получение входящих HTTP-запросов и ответ на них в Azure Logic Apps
 
@@ -216,7 +216,7 @@ ms.locfileid: "96920819"
 > Если действие ответа включает эти заголовки, Logic Apps удаляет их из создаваемого ответного сообщения без вывода предупреждения или ошибки:
 >
 > * `Allow`
-> * `Content-*` со следующими исключениями: `Content-Disposition`, `Content-Encoding` и `Content-Type`
+> * `Content-*` заголовки, за исключением `Content-Disposition` , `Content-Encoding` и `Content-Type` при использовании операций POST и постановки, но не включаемых в операции Get.
 > * `Cookie`
 > * `Expires`
 > * `Last-Modified`

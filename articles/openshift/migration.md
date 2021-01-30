@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 08/13/2020
 keywords: миграция, АТО, openshift, Red Hat
-ms.openlocfilehash: 322c0cf5ece2a9c950e71b947e2aa6088a165cb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9bfc924581d5dbe33c7c2683a0f6083cb2abc23
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89469751"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071041"
 ---
 # <a name="migrate-from-azure-red-hat-openshift-311-to-azure-red-hat-openshift-4"></a>Миграция из Azure Red Hat OpenShift 3,11 в Azure Red Hat OpenShift 4
 
@@ -25,7 +25,7 @@ Azure Red Hat OpenShift в OpenShift 4 включает Kubernetes 1,16 в ОС 
 > [!NOTE]
 > Средства миграции Red Hat OpenShift, такие как средство поддержки миграции плоскости управления и средство переноса приложений кластера (камера), не могут использоваться с кластерами Azure Red Hat OpenShift 3,11.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Перед началом работы
 
 В этой статье предполагается, что у вас уже есть кластер Azure Red Hat OpenShift 3,11.
 
@@ -71,15 +71,15 @@ az aro create \
 
 ## <a name="configure-the-target-openshift-4-cluster"></a>Настройка целевого кластера OpenShift 4
 
-### <a name="authentication"></a>Аутентификация
+### <a name="authentication"></a>Проверка подлинности
 
 Чтобы пользователи могли взаимодействовать с Azure Red Hat OpenShift, они должны сначала пройти проверку подлинности в кластере. Уровень проверки подлинности определяет пользователя, связанного с запросами к API-интерфейсу Azure Red Hat OpenShift. Затем уровень авторизации использует сведения о запрашивающем пользователе, чтобы определить, разрешен ли запрос.
 
-При создании кластера Azure Red Hat OpenShift 4 создается временный пользователь с правами администратора. [Подключитесь к кластеру](tutorial-connect-cluster.md), добавьте пользователей и группы и [настройте соответствующие разрешения](https://docs.openshift.com/aro/4/authentication/understanding-authentication.html) для обоих служб.
+При создании кластера Azure Red Hat OpenShift 4 создается временный пользователь с правами администратора. [Подключитесь к кластеру](tutorial-connect-cluster.md), добавьте пользователей и группы и [настройте соответствующие разрешения](https://docs.openshift.com/container-platform/4.6/authentication/understanding-authentication.html) для обоих служб.
 
 ### <a name="networking"></a>Сеть
 
-Azure Red Hat OpenShift 4 использует несколько различных операторов для настройки сети в кластере: [оператор сети кластера](https://docs.openshift.com/aro/4/networking/cluster-network-operator.html#nw-cluster-network-operator_cluster-network-operator), [оператор DNS](https://docs.openshift.com/aro/4/networking/dns-operator.html)и [оператор](https://docs.openshift.com/aro/4/networking/ingress-operator.html)входящего трафика. Дополнительные сведения о настройке сети в кластере Azure Red Hat OpenShift 4 см. в статье [Схема сетей](concepts-networking.md) и [Общие сведения о](https://docs.openshift.com/aro/4/networking/understanding-networking.html)работе в сети.
+Azure Red Hat OpenShift 4 использует несколько различных операторов для настройки сети в кластере: [оператор сети кластера](https://docs.openshift.com/container-platform/4.6/networking/cluster-network-operator.html#nw-cluster-network-operator_cluster-network-operator), [оператор DNS](https://docs.openshift.com/container-platform/4.6/networking/dns-operator.html)и [оператор](https://docs.openshift.com/container-platform/4.6/networking/ingress-operator.html)входящего трафика. Дополнительные сведения о настройке сети в кластере Azure Red Hat OpenShift 4 см. в статье [Схема сетей](concepts-networking.md) и [Общие сведения о](https://docs.openshift.com/container-platform/4.6/networking/understanding-networking.html)работе в сети.
 
 ### <a name="storage"></a>Память
 Azure Red Hat OpenShift 4 поддерживает следующие подключаемые модули Персистентволуме:
@@ -98,13 +98,13 @@ Azure Red Hat OpenShift 4 поддерживает следующие подкл
 
 ### <a name="registry"></a>Реестр
 
-Azure Red Hat OpenShift 4 может создавать образы из исходного кода, развертывать их и управлять жизненным циклом. Для этого Azure Red Hat OpenShift предоставляет 4 [внутренний встроенный реестр образов контейнеров](https://docs.openshift.com/aro/4/registry/registry-options.html) , который можно развернуть в среде Azure Red Hat OpenShift для локального управления образами.
+Azure Red Hat OpenShift 4 может создавать образы из исходного кода, развертывать их и управлять жизненным циклом. Для этого Azure Red Hat OpenShift предоставляет 4 [внутренний встроенный реестр образов контейнеров](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html) , который можно развернуть в среде Azure Red Hat OpenShift для локального управления образами.
 
-Если вы используете такие внешние реестры, как [Реестр контейнеров Azure](../container-registry/index.yml), [Red Hat Quay](https://docs.openshift.com/aro/4/registry/registry-options.html#registry-quay-overview_registry-options)или [Реестр Red Hat с поддержкой проверки подлинности](https://docs.openshift.com/aro/4/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), выполните действия по предоставлению учетных данных в кластер, чтобы разрешить кластеру доступ к репозиториям.
+Если вы используете такие внешние реестры, как [Реестр контейнеров Azure](../container-registry/index.yml), [Red Hat Quay](ttps://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)или [Реестр Red Hat с поддержкой проверки подлинности](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), выполните действия по предоставлению учетных данных в кластер, чтобы разрешить кластеру доступ к репозиториям.
 
 ### <a name="monitoring"></a>Наблюдение
 
-Azure Red Hat OpenShift включает предварительно настроенный, предварительно установленный и самообновляемый стек мониторинга, основанный на проекте с открытым исходным кодом Prometheus и его более широкой системе. Он обеспечивает мониторинг компонентов кластера и включает набор предупреждений для немедленного уведомления администратора кластера о возникших проблемах и наборе панелей мониторинга Grafana. Стек мониторинга кластера поддерживается только для мониторинга кластеров Azure Red Hat OpenShift. Дополнительные сведения см. в статье [мониторинг кластера для Azure Red Hat OpenShift](https://docs.openshift.com/aro/4/monitoring/cluster_monitoring/about-cluster-monitoring.html).
+Azure Red Hat OpenShift включает предварительно настроенный, предварительно установленный и самообновляемый стек мониторинга, основанный на проекте с открытым исходным кодом Prometheus и его более широкой системе. Он обеспечивает мониторинг компонентов кластера и включает набор предупреждений для немедленного уведомления администратора кластера о возникших проблемах и наборе панелей мониторинга Grafana. Стек мониторинга кластера поддерживается только для мониторинга кластеров Azure Red Hat OpenShift. Дополнительные сведения см. в статье [мониторинг кластера для Azure Red Hat OpenShift](https://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html).
 
 Если вы используете [Azure Monitor для контейнеров для Azure Red Hat OpenShift 3,11](../azure-monitor/insights/container-insights-azure-redhat-setup.md), можно также включить Azure Monitor для контейнеров для [кластеров Azure Red Hat OpenShift 4](../azure-monitor/insights/container-insights-azure-redhat4-setup.md) и продолжить использовать ту же log Analytics рабочую область.
 
@@ -126,5 +126,5 @@ az openshift delete --name $CLUSTER_NAME
                     [--subscription]
                     [--yes]
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
-Ознакомьтесь с документацией по Azure Red Hat OpenShift, предоставленной Red Hat [здесь](https://docs.openshift.com/aro/4/welcome/index.html).
+## <a name="next-steps"></a>Дальнейшие действия
+Ознакомьтесь с документацией по Red Hat OpenShift [здесь](https://docs.openshift.com/container-platform/4.6/welcome/index.html).

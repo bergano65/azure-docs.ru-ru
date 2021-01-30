@@ -3,12 +3,12 @@ title: Azure NetApp Files с помощью решения VMware для Azure
 description: Используйте Azure NetApp Files с виртуальными машинами Azure VMware для переноса и синхронизации данных между локальными серверами, виртуальными машинами Azure VMware и облачными инфраструктурами.
 ms.topic: how-to
 ms.date: 01/20/2021
-ms.openlocfilehash: 97a9172dfbed2722d4af0abbd6231a0367dc4e3c
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: b712b25130a8bed19bd784d2c45c18a55a582be6
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98798497"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99062984"
 ---
 # <a name="azure-netapp-files-with-azure-vmware-solution"></a>Azure NetApp Files с помощью решения VMware для Azure
 
@@ -102,7 +102,7 @@ Azure NetApp Files доступен во многих регионах Azure и 
 - Общие файловые ресурсы в решении VMware для Azure
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения об [ограничениях ресурсов для Azure NetApp Files](../azure-netapp-files/azure-netapp-files-resource-limits.md#resource-limits).
-- См. раздел [рекомендации по Azure NetApp Files планировании сети](../azure-netapp-files/azure-netapp-files-network-topologies.md).
-- Сведения о [репликации Azure NetApp Files томов в разных регионах](../azure-netapp-files/cross-region-replication-introduction.md). 
-- См. [вопросы и ответы о Azure NetApp Files](../azure-netapp-files/azure-netapp-files-faqs.md).
+- [Ограничения ресурсов для службы Azure NetApp Files](../azure-netapp-files/azure-netapp-files-resource-limits.md#resource-limits)
+- [Рекомендации по планированию сети Azure NetApp Files](../azure-netapp-files/azure-netapp-files-network-topologies.md)
+- [Репликация Azure NetApp Files томов между регионами](../azure-netapp-files/cross-region-replication-introduction.md) 
+- [Вопросы и ответы об Azure NetApp Files](../azure-netapp-files/azure-netapp-files-faqs.md)

@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fd102bad45bf482cb9a9750bf05e862b9c91e8e
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: eaf8f92ec2c7d9653595b3249521582620670aaf
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055218"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089960"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
@@ -27,7 +27,7 @@ ms.locfileid: "99055218"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../roles/permissions-reference.md#global-administrator--company-administrator), [Администратор приложения](../roles/permissions-reference.md#application-administrator)или [Администратор облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
+Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../roles/permissions-reference.md#global-administrator), [Администратор приложения](../roles/permissions-reference.md#application-administrator)или [Администратор облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 
 > [!IMPORTANT]
 > Когда приложению было предоставлено согласие администратора на уровне клиента, все пользователи смогут войти в приложение, если оно не настроено для обязательного назначения пользователей. Чтобы ограничить круг пользователей, которые могут входить в приложение, требуется назначение пользователей и назначьте приложению пользователей или группы. Подробнее см. статью [Методы назначения пользователей и групп](./assign-user-or-group-access-portal.md).
@@ -47,7 +47,7 @@ ms.locfileid: "99055218"
 
 Чтобы предоставить согласие администратора на уровне клиента для приложения, указанного в **корпоративном приложении**:
 
-1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../roles/permissions-reference.md#global-administrator--company-administrator), [администратора приложения](../roles/permissions-reference.md#application-administrator)или [администратора облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../roles/permissions-reference.md#global-administrator), [администратора приложения](../roles/permissions-reference.md#application-administrator)или [администратора облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 2. Выберите **Azure Active Directory** **корпоративные приложения**.
 3. Выберите приложение, которому необходимо предоставить согласие администратора на уровне клиента.
 4. Выберите **разрешения** и щелкните **предоставить согласие администратора**.
@@ -63,7 +63,7 @@ ms.locfileid: "99055218"
 
 Чтобы предоставить согласие администратора на уровне клиента от **Регистрация приложений**:
 
-1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../roles/permissions-reference.md#global-administrator--company-administrator), [администратора приложения](../roles/permissions-reference.md#application-administrator)или [администратора облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве [глобального администратора](../roles/permissions-reference.md#global-administrator), [администратора приложения](../roles/permissions-reference.md#application-administrator)или [администратора облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 2. Выберите **Azure Active Directory** затем **Регистрация приложений**.
 3. Выберите приложение, которому необходимо предоставить согласие администратора на уровне клиента.
 4. Выберите **разрешения API** и щелкните **предоставить согласие администратора**.

@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: ff8aa6688d8a838fa2e06d2eef546025cdd9213f
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 762db9d165358f3347fc9b7f3aaaf39f0c762308
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340059"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063202"
 ---
 # <a name="make-indexer-connections-through-a-private-endpoint"></a>Создание подключений индексатора через частную конечную точку
 
@@ -47,7 +47,7 @@ ms.locfileid: "92340059"
 
 Вы также можете запросить ресурсы Azure, для которых поддерживаются исходящие подключения к частным конечным точкам, с помощью [списка поддерживаемых интерфейсов API](/rest/api/searchmanagement/privatelinkresources/listsupported).
 
-В оставшейся части этой статьи для демонстрации REST APIных вызовов используется сочетание API-интерфейсов [ARMClient](https://github.com/projectkudu/ARMClient) и [POST](https://www.postman.com/) .
+В оставшейся части этой статьи для демонстрации REST APIных вызовов используется сочетание [Azure CLI](https://docs.microsoft.com/cli/azure/) (или [ARMClient](https://github.com/projectkudu/ARMClient) , если вы предпочитаете), и [POST](https://www.postman.com/) (или любой другой HTTP-клиент [, например,](https://curl.se/) с помощью элемента «текст»).
 
 > [!NOTE]
 > Примеры в этой статье основаны на следующих допущениях:
@@ -69,7 +69,11 @@ ms.locfileid: "92340059"
 
 ### <a name="step-1-create-a-shared-private-link-resource-to-the-storage-account"></a>Шаг 1. Создание общего ресурса частной ссылки для учетной записи хранения
 
-Чтобы запросить Когнитивный поиск Azure, чтобы создать исходящее подключение частной конечной точки к учетной записи хранения, сделайте следующий вызов API: 
+Чтобы запросить Azure Когнитивный поиск для создания исходящего подключения частной конечной точки к учетной записи хранения, выполните следующий вызов API, например с [Azure CLI](https://docs.microsoft.com/cli/azure/): 
+
+`az rest --method put --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01 --body @create-pe.json`
+
+Или, если вы предпочитаете использовать [ARMClient](https://github.com/projectkudu/ARMClient):
 
 `armclient PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01 create-pe.json`
 
@@ -99,6 +103,10 @@ ms.locfileid: "92340059"
 `"Azure-AsyncOperation": "https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe/operationStatuses/08586060559526078782?api-version=2020-08-01"`
 
 Вы можете периодически опрашивать этот URI, чтобы получить состояние операции. Прежде чем продолжать, рекомендуется подождать, пока состояние операции ресурса общей частной ссылки достигнет состояния терминала (то есть состояние операции — " *выполнено*").
+
+`az rest --method get --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe/operationStatuses/08586060559526078782?api-version=2020-08-01`
+
+Или с помощью ARMClient:
 
 `armclient GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe/operationStatuses/08586060559526078782?api-version=2020-08-01"`
 
@@ -130,6 +138,10 @@ ms.locfileid: "92340059"
 ### <a name="step-2b-query-the-status-of-the-shared-private-link-resource"></a>Шаг 2b. запрос состояния общего ресурса частной ссылки
 
 Чтобы убедиться, что общий ресурс частной ссылки был обновлен после утверждения, получите его состояние с помощью [API Get](/rest/api/searchmanagement/sharedprivatelinkresources/get).
+
+`az rest --method get --uri https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01`
+
+Или с помощью ARMClient:
 
 `armclient GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Search/searchServices/contoso-search/sharedPrivateLinkResources/blob-pe?api-version=2020-08-01`
 
@@ -183,7 +195,7 @@ ms.locfileid: "92340059"
 
 [Квоты и ограничения](search-limits-quotas-capacity.md) определяют, сколько общих ресурсов частной ссылки могут быть созданы и зависят от номера SKU службы поиска.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о частных конечных точках:
 

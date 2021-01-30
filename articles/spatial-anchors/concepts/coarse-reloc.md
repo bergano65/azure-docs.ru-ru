@@ -5,360 +5,106 @@ author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
 ms.author: parkerra
-ms.date: 11/20/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4a65b2ca4ba9f1912adeaf60df123bcd3c8833bd
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: fc04242e61c748d7ae52e61e40206ba338a1b6aa
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95496908"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071151"
 ---
 # <a name="coarse-relocalization"></a>Простое уточнение расположения
 
-Грубая Локализация — это функция, которая предоставляет исходный ответ на вопрос: *где мое устройство сейчас и какое содержимое следует наблюдать?* Ответ не является точным, а вместо этого находится в форме: *близко к этим привязкам; попробуйте найти один из них*.
+Грубая Локализация — это функция, которая обеспечивает крупномасштабную локализацию, предоставляя приблизительный, но быстрый ответ на вопрос: *где мое устройство сейчас и какое содержимое следует наблюдать?* Ответ не является точным, а вместо этого находится в форме: *близко к этим привязкам; попробуйте найти один из них*.
 
-Грубая локализация работает путем связывания различных считанных датчиков устройств с созданием и запросом привязок. В сценариях для общего использования данные датчика обычно являются позицией GPS (Глобальная система позиционирования) устройства. Если GPS недоступен или ненадежен (например, "крышки"), данные датчика состоят из точек доступа WiFi и маяков Bluetooth в диапазоне. Все собранные данные датчика вносят вклад в поддержание пространственного индекса, который используется пространственными привязками Azure для быстрого определения привязок, которые находятся на расстоянии приблизительно 100 метров устройства.
+Грубая локализация работает с помощью привязок тегов с различными считанными датчиками устройств, которые позже используются для быстрого выполнения запросов. В сценариях для общего использования данные датчика обычно являются позицией GPS (Глобальная система позиционирования) устройства. Если GPS недоступен или ненадежен (например, "крышки"), данные датчика состоят из точек доступа WiFi и маяков Bluetooth в диапазоне. Собранные данные датчика вносят вклад в хранение пространственного индекса, используемого пространственными привязками Azure, чтобы быстро определить, какие привязки находятся в близком к устройству.
 
-Быстрый поиск привязок, включенных грубой локализацией, упрощает разработку приложений, поддерживающих коллекции мирового масштаба (скажем, миллионы геораспределенных якорей). Сложность управления привязкой скрыта, что позволяет сосредоточиться на более подробной логике приложения. Вся работа привязок выполняется за кулисами с помощью пространственных привязок Azure.
+## <a name="when-to-use-coarse-relocalization"></a>Когда следует использовать грубую локализацию
 
-## <a name="collected-sensor-data"></a>Собранные данные датчика
+Если вы планируете работать с более чем 35 пространственными привязками в пространстве, превышающем судебный зал, скорее всего, вы получите преимущество от грубой перелокализации пространственного индексирования.
 
-Данные датчика, которые можно отправить в службу привязки, являются одним из следующих:
+Быстрый поиск привязок, включенных в результате грубой локализации, предназначен для упрощения разработки приложений, поддерживающих коллекции мирового масштаба (скажем, миллионы геораспределенных географических точек). Сложность пространственного индексирования скрыта, что позволяет сосредоточиться на логике приложения. Вся работа привязок выполняется за кулисами с помощью пространственных привязок Azure.
+
+## <a name="using-coarse-relocalization"></a>Использование грубой локализации
+
+Типичный рабочий процесс для создания и запроса пространственных привязок Azure с грубой локализацией:
+1.  Создайте и настройте поставщик отпечатков пальцев с датчика, чтобы собираются выбранные данные датчика.
+2.  Запустите сеанс пространственной привязки Azure и создайте привязки. Так как отпечаток датчика включен, привязки на пространственной основе индексируются с помощью грубой локализации.
+3.  Выполнение запросов к привязкам с помощью грубой локализации с использованием выделенных критериев поиска в сеансе пространственной привязки Azure.
+
+Для настройки грубой локализации в приложении можно обратиться к соответствующему учебнику:
+* [Грубая локализация в Unity](../how-tos/set-up-coarse-reloc-unity.md)
+* [Грубая перелокализация в цели — C](../how-tos/set-up-coarse-reloc-objc.md)
+* [Грубая перелокализация в SWIFT](../how-tos/set-up-coarse-reloc-swift.md)
+* [Грубая локализация в Java](../how-tos/set-up-coarse-reloc-java.md)
+* [Грубая локализация в C++/НДК](../how-tos/set-up-coarse-reloc-cpp-ndk.md)
+* [Грубая локализация в C++/WinRT](../how-tos/set-up-coarse-reloc-cpp-winrt.md)
+
+## <a name="sensors-and-platforms"></a>Датчики и платформы
+
+### <a name="platform-availability"></a>Доступность платформы
+
+Ниже перечислены типы данных датчика, которые можно отправить в службу привязки.
 
 * Расположение GPS: Широта, Долгота, высота.
 * Сила сигнала точек доступа WiFi в диапазоне.
 * Сила сигнала сигналов маяков Bluetooth в диапазоне.
 
-В общем случае приложению потребуется получить разрешения для конкретного устройства для доступа к данным GPS, Wi-Fi или BLE. Кроме того, некоторые из приведенных выше данных датчиков недоступны для определенных платформ. Чтобы учитывать эти ситуации, сбор данных датчика является необязательным и по умолчанию отключен.
+В таблице ниже сведены сведения о доступности датчиков на поддерживаемых платформах, а также предупреждения, относящиеся к конкретной платформе.
 
-## <a name="set-up-the-sensor-data-collection"></a>Настройка сбора данных датчика
+|                 | HoloLens | Android | iOS |
+|-----------------|----------|---------|-----|
+| **GPS**         | НЕТ<sup>1</sup>  | Да<sup>2</sup> | Да<sup>3</sup> |
+| **Wi-Fi**        | Да<sup>4</sup> | Да<sup>5</sup> | NO  |
+| **BLE маяки** | Да<sup>6</sup> | Да<sup>6</sup> | Да<sup>6</sup>|
 
-Начнем с создания поставщика отпечатков пальцев с датчика и создания сеанса, осведомленного о нем:
 
-# <a name="c"></a>[C#](#tab/csharp)
+<sup>1</sup> внешнее устройство GPS может быть связано с HoloLens. Если вы пожелаете использовать HoloLens с помощью средства регистрации GPS, обратитесь в [службу поддержки](../spatial-anchor-support.md) .<br/>
+<sup>2</sup> поддерживается через API [ЛОКАТИОНМАНАЖЕР][3] (как GPS, так и Network)<br/>
+<sup>3</sup> поддерживается через API-интерфейсы [кллокатионманажер][4]<br/>
+<sup>4</sup> поддерживается с частотой приблизительно одного сканирования каждые 3 секунды <br/>
+<sup>5</sup> начиная с уровня API 28, сканирование Wi-Fi регулируется до 4 вызовов каждые 2 минуты. С Android 10 регулирование можно отключить в меню "Параметры разработчика". Дополнительные сведения см. в [документации по Android][5].<br/>
+<sup>6</sup> с ограничениями на [еддистоне][1] и [ибеакон][2]
 
-```csharp
-// Create the sensor fingerprint provider
-sensorProvider = new PlatformLocationProvider();
+### <a name="which-sensor-to-enable"></a>Выбор датчика для включения
 
-// Create and configure the session
-cloudSpatialAnchorSession = new CloudSpatialAnchorSession();
+Выбранный датчик зависит от разрабатываемого приложения и платформы.
+На следующей схеме показана отправная точка, в которой можно включить сочетание датчиков в зависимости от сценария локализации.
 
-// Inform the session it can access sensor data from your provider
-cloudSpatialAnchorSession.LocationProvider = sensorProvider;
-```
+![Схема выбора включенных датчиков](media/coarse-relocalization-enabling-sensors.png)
 
-# <a name="objc"></a>[ObjC](#tab/objc)
+Следующие разделы содержат более подробные сведения о преимуществах и ограничениях для каждого типа датчика.
 
-```objc
-// Create the sensor fingerprint provider
-ASAPlatformLocationProvider *sensorProvider;
-sensorProvider = [[ASAPlatformLocationProvider alloc] init];
+### <a name="gps"></a>GPS
 
-// Create and configure the session
-cloudSpatialAnchorSession = [[ASACloudSpatialAnchorSession alloc] init];
-
-// Inform the session it can access sensor data from your provider
-cloudSpatialAnchorSession.locationProvider = sensorProvider;
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-// Create the sensor fingerprint provider
-var sensorProvider: ASAPlatformLocationProvider?
-sensorProvider = ASAPlatformLocationProvider()
-
-// Create and configure the session
-cloudSpatialAnchorSession = ASACloudSpatialAnchorSession()
-
-// Inform the session it can access sensor data from your provider
-cloudSpatialAnchorSession!.locationProvider = sensorProvider
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-// Create the sensor fingerprint provider
-PlatformLocationProvider sensorProvider = new PlatformLocationProvider();
-
-// Create and configure the session
-cloudSpatialAnchorSession = new CloudSpatialAnchorSession();
-
-// Inform the session it can access sensor data from your provider
-cloudSpatialAnchorSession.setLocationProvider(sensorProvider);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-// Create the sensor fingerprint provider
-std::shared_ptr<PlatformLocationProvider> sensorProvider;
-sensorProvider = std::make_shared<PlatformLocationProvider>();
-
-// Create and configure the session
-cloudSpatialAnchorSession = std::make_shared<CloudSpatialAnchorSession>();
-
-// Inform the session it can access sensor data from your provider
-cloudSpatialAnchorSession->LocationProvider(sensorProvider);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-```cpp
-// Create the sensor fingerprint provider
-PlatformLocationProvider sensorProvider = PlatformLocationProvider();
-
-// Create and configure the session
-cloudSpatialAnchorSession = CloudSpatialAnchorSession();
-
-// Inform the session it can access sensor data from your provider
-cloudSpatialAnchorSession.LocationProvider(sensorProvider);
-```
----
-
-Далее необходимо решить, какие датчики вы хотели бы использовать для грубой локализации. Это решение относится только к разрабатываемому приложению, но рекомендации, приведенные в следующей таблице, помогут вам получить хорошую отправную точку:
-
-|                 | Выдвижки | Туризм |
-|-----------------|---------|----------|
-| **GPS**         | Выкл. | С |
-| **Wi-Fi**        | Включено | Включено (необязательно) |
-| **BLE маяки** | Вкл. (необязательно с предупреждениями см. ниже) | Выключено |
-
-### <a name="enabling-gps"></a>Включение GPS
-
-Если у вашего приложения уже есть разрешение на доступ к точке GPS устройства, можно настроить пространственные привязки Azure для его использования:
-
-# <a name="c"></a>[C#](#tab/csharp)
-
-```csharp
-sensorProvider.Sensors.GeoLocationEnabled = true;
-```
-
-# <a name="objc"></a>[ObjC](#tab/objc)
-
-```objc
-ASASensorCapabilities *sensors = locationProvider.sensors;
-sensors.geoLocationEnabled = true;
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-let sensors = locationProvider?.sensors
-sensors.geoLocationEnabled = true
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-SensorCapabilities sensors = sensorProvider.getSensors();
-sensors.setGeoLocationEnabled(true);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-const std::shared_ptr<SensorCapabilities>& sensors = sensorProvider->Sensors();
-sensors->GeoLocationEnabled(true);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-SensorCapabilities sensors = sensorProvider.Sensors()
-sensors.GeoLocationEnabled(true);
-```
-
----
-
+GPS — это вариант для одностороннего сценария.
 При использовании GPS в приложении следует помнить, что в нем используются следующие средства чтения:
 
 * Асинхронная и низкая частота (менее 1 Гц).
 * ненадежный/шум (для среднего стандартного отклонения в 7-м).
 
-Как правило, как ОС устройства, так и пространственные привязки Azure будут выполнять некоторую фильтрацию и экстраполяцию на необработанном сигнале GPS, пытаясь устранить эти проблемы. Эта дополнительная обработка требует дополнительного времени для конвергенции, поэтому для получения наилучших результатов выполните следующие действия.
+Как правило, как ОС устройства, так и пространственные привязки Azure будут выполнять некоторую фильтрацию и экстраполяцию на необработанном сигнале GPS, пытаясь устранить эти проблемы. Для этой дополнительной обработки требуется время для конвергенции, поэтому для получения наилучших результатов необходимо выполнить следующие действия.
 
 * Создание одного поставщика отпечатков пальцев с датчика как можно раньше в приложении
 * обеспечение активности поставщика отпечатков пальцев датчика между несколькими сеансами
 * Совместное использование поставщика отпечатков пальцев с датчика между несколькими сеансами
 
-Если вы планируете использовать поставщик отпечатков пальцев с датчика вне сеанса привязки, убедитесь, что вы запускаете его перед запросом оценки датчика. Например, следующий код позаботится об обновлении позиции устройства на карте в режиме реального времени:
+Устройства GPS класса "потребитель" обычно неточны. Исследование, [занденбержен и барбеау (2011)][6] , сообщает медианную точность мобильных телефонов с помощью GPS (A-GPS), которая составляет около 7 метров. это довольно большое значение. Чтобы учитывать эти ошибки измерения, служба рассматривает привязки как распределения вероятностей в пространстве GPS. Таким образом, привязка теперь является областью пространства, которая, вероятнее всего, (то есть более 95% достоверности) содержит свою истинную, неизвестную точку GPS.
 
-# <a name="c"></a>[C#](#tab/csharp)
+Та же причина применяется при выполнении запросов с помощью GPS. Устройство представляется в виде другой геопространственной области достоверности в отношении истинной, неизвестной координаты GPS. Обнаружение ближайших привязок преобразуется в простой поиск привязок с областями достоверности, *достаточно близкой* к региону достоверности устройства, как показано на рисунке ниже:
 
-```csharp
-// Game about to start, start tracking the sensors
-sensorProvider.Start();
+![Выбор кандидатов привязки с помощью GPS](media/coarse-reloc-gps-separation-distance.png)
 
-// Game loop
-while (m_isRunning)
-{
-    // Get the GPS estimate
-    GeoLocation geoPose = sensorProvider.GetLocationEstimate();
+### <a name="wifi"></a>WiFi
 
-    // Paint it on the map
-    drawCircle(
-        x: geoPose.Longitude,
-        y: geoPose.Latitude,
-        radius: geoPose.HorizontalError);
-}
+В HoloLens и Android сила сигнала Wi-Fi может быть хорошим вариантом для включения грубой локализации.
+Его преимущество заключается в потенциальной доступности точек доступа WiFi (например, в приложениях Office Spaces или центрах) без дополнительной настройки.
 
-// Game ended, no need to track the sensors anymore
-sensorProvider.Stop();
-```
-
-# <a name="objc"></a>[ObjC](#tab/objc)
-
-```objc
-// Game about to start, start tracking the sensors
-[sensorProvider start];
-
-// Game loop
-while (m_isRunning)
-{
-    // Get the GPS estimate
-    ASAGeoLocation *geoPose = [sensorProvider getLocationEstimate];
-
-    // Paint it on the map
-    drawCircle(geoPose.longitude, geoPose.latitude, geoPose.horizontalError);
-}
-
-// Game ended, no need to track the sensors anymore
-[sensorProvider stop];
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-// Game about to start, start tracking the sensors
-sensorProvider?.start()
-
-// Game loop
-while m_isRunning
-{
-    // Get the GPS estimate
-    var geoPose: ASAGeoLocation?
-    geoPose = sensorProvider?.getLocationEstimate()
-
-    // Paint it on the map
-    drawCircle(geoPose.longitude, geoPose.latitude, geoPose.horizontalError)
-}
-
-// Game ended, no need to track the sensors anymore
-sensorProvider?.stop()
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-// Game about to start, start tracking the sensors
-sensorProvider.start();
-
-// Game loop
-while (m_isRunning)
-{
-    // Get the GPS estimate
-    GeoLocation geoPose = sensorProvider.getLocationEstimate();
-
-    // Paint it on the map
-    drawCircle(geoPose.getLongitude(), geoPose.getLatitude(), geoPose.getHorizontalError());
-}
-
-// Game ended, no need to track the sensors anymore
-sensorProvider.stop();
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-// Game about to start, start tracking the sensors
-sensorProvider->Start();
-
-// Game loop
-while (m_isRunning)
-{
-    // Get the GPS estimate
-    std::shared_ptr<GeoLocation> geoPose = sensorProvider->GetLocationEstimate();
-
-    // Paint it on the map
-    drawCircle(geoPose->Longitude(), geoPose->Latitude(), geoPose->HorizontalError());
-}
-
-// Game ended, no need to track the sensors anymore
-sensorProvider->Stop();
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-// Game about to start, start tracking the sensors
-sensorProvider.Start();
-
-// Game loop
-while (m_isRunning)
-{
-    // Get the GPS estimate
-    GeoLocation geoPose = sensorProvider.GetLocationEstimate();
-
-    // Paint it on the map
-    drawCircle(geoPose.Longitude(), geoPose.Latitude(), geoPose.HorizontalError());
-}
-
-// Game ended, no need to track the sensors anymore
-sensorProvider.Stop();
-```
-
----
-
-### <a name="enabling-wifi"></a>Включение WiFi
-
-Если у вашего приложения уже есть разрешение на доступ к состоянию Wi-Fi устройства, можно настроить пространственные привязки Azure для его использования:
-
-# <a name="c"></a>[C#](#tab/csharp)
-
-```csharp
-sensorProvider.Sensors.WifiEnabled = true;
-```
-
-# <a name="objc"></a>[ObjC](#tab/objc)
-
-```objc
-ASASensorCapabilities *sensors = locationProvider.sensors;
-sensors.wifiEnabled = true;
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-let sensors = locationProvider?.sensors
-sensors.wifiEnabled = true
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-SensorCapabilities sensors = sensorProvider.getSensors();
-sensors.setWifiEnabled(true);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-const std::shared_ptr<SensorCapabilities>& sensors = sensorProvider->Sensors();
-sensors->WifiEnabled(true);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-SensorCapabilities sensors = sensorProvider.Sensors()
-sensors.WifiEnabled(true);
-```
-
----
+> [!NOTE]
+> iOS не предоставляет API для чтения силы сигнала Wi-Fi, поэтому его нельзя использовать для грубой локализации с поддержкой WiFi.
 
 При использовании Wi-Fi в приложении помните о том, что для оборудования обычно используются следующие данные:
 
@@ -371,319 +117,36 @@ sensors.WifiEnabled(true);
 * Создайте сеанс, прежде чем поместить первую привязку.
 * Обеспечьте активность сеанса в течение всего времени (то есть создайте все привязки и запрос в одном сеансе).
 
-### <a name="enabling-bluetooth-beacons"></a>Включение маяков Bluetooth
+### <a name="bluetooth-beacons"></a>Маяки Bluetooth
+<a name="beaconsDetails"></a>
 
-Если у вашего приложения уже есть разрешение на доступ к состоянию Bluetooth устройства, можно настроить пространственные привязки Azure для его использования:
+Тщательное развертывание маяков Bluetooth является хорошим решением для крупномасштабных сценариев перелокализации больших масштабов, где GPS отсутствует или неточно. Он также является единственным методом, поддерживаемым на всех трех платформах.
 
-# <a name="c"></a>[C#](#tab/csharp)
-
-```csharp
-sensorProvider.Sensors.BluetoothEnabled = true;
-```
-
-# <a name="objc"></a>[ObjC](#tab/objc)
-
-```objc
-ASASensorCapabilities *sensors = locationProvider.sensors;
-sensors.bluetoothEnabled = true;
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-let sensors = locationProvider?.sensors
-sensors.bluetoothEnabled = true
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-SensorCapabilities sensors = sensorProvider.getSensors();
-sensors.setBluetoothEnabled(true);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-const std::shared_ptr<SensorCapabilities>& sensors = sensorProvider->Sensors();
-sensors->BluetoothEnabled(true);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-SensorCapabilities sensors = sensorProvider.Sensors();
-sensors.BluetoothEnabled(true);
-```
-
----
-
-Маяки обычно являются универсальными устройствами, где все, включая UUID и MAC-адреса, можно настроить. Эта гибкость может быть проблемой для пространственных привязок Azure, так как считает, что маяки однозначно идентифицируются по их UUID. Невозможность гарантировать эту уникальность скорее всего приведет к пространственной Норке. Для получения лучших результатов следует:
+Маяки обычно являются универсальными устройствами, где все, включая UUID и MAC-адреса, можно настроить. Пространственные привязки Azure предполагают уникальную идентификацию маркеров UUID. Невозможность гарантировать такую уникальность скорее всего приведет к неверным результатам. Для получения лучших результатов следует:
 
 * Присвойте вашим маякам уникальные идентификаторы UUID.
-* разверните их, как правило, в обычном шаблоне, например в виде сетки.
-* Передайте список уникальных идентификаторов UUID маяка поставщику отпечатков пальцев:
+* разверните их таким образом, чтобы обеспечить единообразное последовательное пространство, и так, чтобы по крайней мере 3 маяка были доступны из любой точки в пространстве.
+* Передача списка уникальных идентификаторов UUID маяка поставщику отпечатков пальцев с датчика
 
-# <a name="c"></a>[C#](#tab/csharp)
+На радиосигналы, такие как Bluetooth, влияют препятствия и могут мешать другим радиосигналам. По этим причинам может быть трудно угадать, является ли ваша сфера равномерной. Чтобы обеспечить лучшее взаимодействие с клиентами, рекомендуется вручную протестировать покрытие маяков. Это можно сделать путем прохода по модулю с устройствами-кандидатами и приложением, которое показывает Bluetooth в диапазоне. При тестировании покрытия убедитесь, что вы можете связаться по крайней мере с тремя маяками из любой стратегической позиции вашего пространства. Настройка слишком большого количества маяков может привести к увеличению количества помех между ними и не обязательно повысит точность перелокализации.
 
-```csharp
-sensorProvider.Sensors.KnownBeaconProximityUuids = new[]
-{
-    "22e38f1a-c1b3-452b-b5ce-fdb0f39535c1",
-    "a63819b9-8b7b-436d-88ec-ea5d8db2acb0",
-    . . .
-};
-```
+Если в пространстве нет препятствий, то у маркеров Bluetooth обычно есть 80 метров.
+Это означает, что для пробела, не имеющего больших препятствий, один из них может развернуть маяки для шаблона сетки каждые 40 метров.
 
-# <a name="objc"></a>[ObjC](#tab/objc)
+Затронутый батарея затронет результаты отрицательно, поэтому следите за периодическим наблюдением за развертыванием с низкими или неработающими батареями.
 
-```objc
-NSArray *uuids = @[@"22e38f1a-c1b3-452b-b5ce-fdb0f39535c1", @"a63819b9-8b7b-436d-88ec-ea5d8db2acb0"];
+Пространственные привязки Azure будут отслеживанием только маяков Bluetooth, которые находятся в списке идентификаторов UUID с известным сходством маркеров. Вредоносные маяки, запрограммированные на наличие ИДЕНТИФИКАТОРов, которые разрешено использовать в списке, могут негативно повлиять на качество службы. По этой причине вы получите лучшие результаты в проверенных пространствах, где можно управлять развертыванием.
 
-ASASensorCapabilities *sensors = locationProvider.sensors;
-sensors.knownBeaconProximityUuids = uuids;
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-let uuids = [String]()
-uuids.append("22e38f1a-c1b3-452b-b5ce-fdb0f39535c1")
-uuids.append("a63819b9-8b7b-436d-88ec-ea5d8db2acb0")
-
-let sensors = locationProvider?.sensors
-sensors.knownBeaconProximityUuids = uuids
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-String uuids[] = new String[2];
-uuids[0] = "22e38f1a-c1b3-452b-b5ce-fdb0f39535c1";
-uuids[1] = "a63819b9-8b7b-436d-88ec-ea5d8db2acb0";
-
-SensorCapabilities sensors = sensorProvider.getSensors();
-sensors.setKnownBeaconProximityUuids(uuids);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-std::vector<std::string> uuids;
-uuids.push_back("22e38f1a-c1b3-452b-b5ce-fdb0f39535c1");
-uuids.push_back("a63819b9-8b7b-436d-88ec-ea5d8db2acb0");
-
-const std::shared_ptr<SensorCapabilities>& sensors = sensorProvider->Sensors();
-sensors->KnownBeaconProximityUuids(uuids);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-std::vector<winrt::hstring> uuids;
-uuids.emplace_back("22e38f1a-c1b3-452b-b5ce-fdb0f39535c1");
-uuids.emplace_back("a63819b9-8b7b-436d-88ec-ea5d8db2acb0");
-
-SensorCapabilities sensors = sensorProvider.Sensors();
-sensors.KnownBeaconProximityUuids(uuids);
-```
-
----
-
-Пространственные привязки Azure будут отслеживанием только маяков Bluetooth, которые находятся в списке идентификаторов UUID с известным сходством маркеров. Вредоносные маяки, запрограммированные для предоставления идентификаторов UUID, могут негативно повлиять на качество службы. По этой причине вы должны использовать маяки только в проверенных пространствах, где можно управлять развертыванием.
-
-## <a name="querying-with-sensor-data"></a>Запросы с данными датчика
-
-После создания привязок со связанными данными датчика их можно начать с помощью считывания датчиков, сообщаемых вашим устройством. Вам больше не требуется предоставлять службе список известных привязок, которые вы ожидаете найти. Вы просто предоставляете службе сведения о расположении устройства, о которых сообщили встроенные датчики. Затем пространственные привязки Azure будут вычислить набор привязок, близких к устройству, и попытаться визуально сопоставить их.
-
-Чтобы запросы использовали данные датчика, начните с создания критериев "близкого устройства":
-
-# <a name="c"></a>[C#](#tab/csharp)
-
-```csharp
-NearDeviceCriteria nearDeviceCriteria = new NearDeviceCriteria();
-
-// Choose a maximum exploration distance between your device and the returned anchors
-nearDeviceCriteria.DistanceInMeters = 5;
-
-// Cap the number of anchors returned
-nearDeviceCriteria.MaxResultCount = 25;
-
-anchorLocateCriteria = new AnchorLocateCriteria();
-anchorLocateCriteria.NearDevice = nearDeviceCriteria;
-```
-
-# <a name="objc"></a>[ObjC](#tab/objc)
-
-```objc
-ASANearDeviceCriteria *nearDeviceCriteria = [[ASANearDeviceCriteria alloc] init];
-
-// Choose a maximum exploration distance between your device and the returned anchors
-nearDeviceCriteria.distanceInMeters = 5.0f;
-
-// Cap the number of anchors returned
-nearDeviceCriteria.maxResultCount = 25;
-
-ASAAnchorLocateCriteria *anchorLocateCriteria = [[ASAAnchorLocateCriteria alloc] init];
-anchorLocateCriteria.nearDevice = nearDeviceCriteria;
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-let nearDeviceCriteria = ASANearDeviceCriteria()!
-
-// Choose a maximum exploration distance between your device and the returned anchors
-nearDeviceCriteria.distanceInMeters = 5.0
-
-// Cap the number of anchors returned
-nearDeviceCriteria.maxResultCount = 25
-
-let anchorLocateCriteria = ASAAnchorLocateCriteria()!
-anchorLocateCriteria.nearDevice = nearDeviceCriteria
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-NearDeviceCriteria nearDeviceCriteria = new NearDeviceCriteria();
-
-// Choose a maximum exploration distance between your device and the returned anchors
-nearDeviceCriteria.setDistanceInMeters(5.0f);
-
-// Cap the number of anchors returned
-nearDeviceCriteria.setMaxResultCount(25);
-
-AnchorLocateCriteria anchorLocateCriteria = new AnchorLocateCriteria();
-anchorLocateCriteria.setNearDevice(nearDeviceCriteria);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-auto nearDeviceCriteria = std::make_shared<NearDeviceCriteria>();
-
-// Choose a maximum exploration distance between your device and the returned anchors
-nearDeviceCriteria->DistanceInMeters(5.0f);
-
-// Cap the number of anchors returned
-nearDeviceCriteria->MaxResultCount(25);
-
-auto anchorLocateCriteria = std::make_shared<AnchorLocateCriteria>();
-anchorLocateCriteria->NearDevice(nearDeviceCriteria);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-NearDeviceCriteria nearDeviceCriteria = NearDeviceCriteria();
-
-// Choose a maximum exploration distance between your device and the returned anchors
-nearDeviceCriteria.DistanceInMeters(5.0f);
-
-// Cap the number of anchors returned
-nearDeviceCriteria.MaxResultCount(25);
-
-// Set the session's locate criteria
-anchorLocateCriteria = AnchorLocateCriteria();
-anchorLocateCriteria.NearDevice(nearDeviceCriteria);
-```
-
----
-
-`DistanceInMeters`Параметр определяет, как далеко будет рассмотрен граф привязки для получения содержимого. Предположим, что для экземпляра заполнено пространство с привязками с постоянной плотностью 2 каждого счетчика. Более того, Камера на устройстве выполняет наблюдение за одной привязкой, и служба успешно размещает ее. Скорее всего, вы захотите получить все привязки, которые вы поместили поблизости, а не одну привязку, которую вы сейчас просматриваете. При условии, что размещенные привязки подключены к графу, служба может получить все соседние привязки, следуя краям графа. Количество выполненных проходов графа управляется `DistanceInMeters` . вам будут предоставлены все привязки, подключенные к расположению, которое вы находили ближе, чем `DistanceInMeters` .
-
-Помните, что большие значения для `MaxResultCount` могут негативно сказаться на производительности. Задайте для него разумное значение для приложения.
-
-Наконец, необходимо сообщить сеансу, что будет использоваться Поиск на основе датчика:
-
-# <a name="c"></a>[C#](#tab/csharp)
-
-```csharp
-cloudSpatialAnchorSession.CreateWatcher(anchorLocateCriteria);
-```
-
-# <a name="objc"></a>[ObjC](#tab/objc)
-
-```objc
-[cloudSpatialAnchorSession createWatcher:anchorLocateCriteria];
-```
-
-# <a name="swift"></a>[Swift](#tab/swift)
-
-```swift
-cloudSpatialAnchorSession!.createWatcher(anchorLocateCriteria)
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-cloudSpatialAnchorSession.createWatcher(anchorLocateCriteria);
-```
-
-# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
-
-```cpp
-cloudSpatialAnchorSession->CreateWatcher(anchorLocateCriteria);
-```
-
-# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
-
-```cpp
-cloudSpatialAnchorSession.CreateWatcher(anchorLocateCriteria);
-```
-
----
-
-## <a name="expected-results"></a>Ожидаемые результаты
-
-Устройства GPS класса "потребитель" обычно довольно неточны. Исследование, [занденбержен и барбеау (2011)][6] , сообщает медианную точность мобильных телефонов с помощью GPS (A-GPS), которая составляет около 7 метров. это довольно большое значение. Чтобы учитывать эти ошибки измерения, служба рассматривает привязки как распределения вероятностей в пространстве GPS. Таким образом, привязка теперь является областью пространства, которая, вероятнее всего, (то есть более 95% достоверности) содержит свою истинную, неизвестную точку GPS.
-
-Та же причина применяется при выполнении запросов с помощью GPS. Устройство представляется в виде другой геопространственной области достоверности в отношении истинной, неизвестной координаты GPS. Обнаружение ближайших привязок преобразуется в простой поиск привязок с областями достоверности, *достаточно близкой* к региону достоверности устройства, как показано на рисунке ниже:
-
-![Выбор кандидатов привязки с помощью GPS](media/coarse-reloc-gps-separation-distance.png)
+### <a name="sensors-accuracy"></a>Точность датчиков
 
 Точность сигнала GPS, как при создании привязки, так и во время запросов, сильно влияет на набор возвращаемых привязок. В отличие от них, запросы, основанные на WiFi/маяках, будут рассматривать все привязки, имеющие по крайней мере одну точку доступа или Маяк с запросом. В этом смысле результат запроса, основанного на Wi-Fi/маяках, в основном определяется физическим диапазоном точек доступа, маркеров маяка и препятствий на окружающей среде.
-
 В таблице ниже вычисляется ожидаемое пространство поиска для каждого типа датчика:
 
 | Sensor      | Область поиска радиус пространства (примерно) | Сведения |
 |-------------|:-------:|---------|
 | GPS         | 20 м – 30 м | Определяется неуверенностью GPS среди других факторов. Сообщаемые числа оцениваются по срединной точности GPS для мобильных телефонов с помощью A-GPS, т. е. 7 метров. |
-| Wi-Fi        | 50 м-100 м | Определяется диапазоном точек беспроводного доступа. Зависит от частоты, силы передатчика, физических препятствий, помех и т. д. |
+| WiFi        | 50 м-100 м | Определяется диапазоном точек беспроводного доступа. Зависит от частоты, силы передатчика, физических препятствий, помех и т. д. |
 | BLE маяки |  70 м | Определяется диапазоном сигналов маяка. Зависит от частоты, силы передачи, физических препятствий, помех и т. д. |
-
-## <a name="per-platform-support"></a>Поддержка на уровне платформы
-
-В следующей таблице перечислены данные датчика, собранные на каждой из поддерживаемых платформ, а также предупреждения, относящиеся к конкретной платформе.
-
-|                 | HoloLens | Android | iOS |
-|-----------------|----------|---------|-----|
-| **GPS**         | Недоступно | Поддерживается через API-интерфейсы [локатионманажер][3] (как GPS, так и Network) | Поддерживается через API-интерфейсы [кллокатионманажер][4] |
-| **Wi-Fi**        | Поддерживается с частотой приблизительно одного сканирования каждые 3 секунды. | Поддерживается. Начиная с уровня API 28, сканирование Wi-Fi регулируется до 4 вызовов каждые 2 минуты. С Android 10 регулирование можно отключить в меню "Параметры разработчика". Дополнительные сведения см. в [документации по Android][5]. | Н/д — нет открытого API |
-| **BLE маяки** | Ограничено [еддистоне][1] и [ибеакон][2] | Ограничено [еддистоне][1] и [ибеакон][2] | Ограничено [еддистоне][1] и [ибеакон][2] |
-
-## <a name="next-steps"></a>Следующие шаги
-
-Используйте грубую перелокализацию в приложении.
-
-> [!div class="nextstepaction"]
-> [Unity](../how-tos/set-up-coarse-reloc-unity.md)
-
-> [!div class="nextstepaction"]
-> [Objective-C](../how-tos/set-up-coarse-reloc-objc.md)
-
-> [!div class="nextstepaction"]
-> [Swift](../how-tos/set-up-coarse-reloc-swift.md)
-
-> [!div class="nextstepaction"]
-> [Java](../how-tos/set-up-coarse-reloc-java.md)
-
-> [!div class="nextstepaction"]
-> [C++ (NDK)](../how-tos/set-up-coarse-reloc-cpp-ndk.md)
-
-> [!div class="nextstepaction"]
-> [C++/WinRT](../how-tos/set-up-coarse-reloc-cpp-winrt.md)
 
 <!-- Reference links in article -->
 [1]: https://developers.google.com/beacons/eddystone

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 11/04/2020
+ms.date: 01/28/2021
 ms.author: alkohli
-ms.openlocfilehash: 34165071238ca3edf78ab9cca43639c23ce5ed2a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2d079f2fa3e67f1ec915a02de3e195ccac538209
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448705"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063322"
 ---
 # <a name="kubernetes-storage-management-on-your-azure-stack-edge-pro-gpu-device"></a>Управление хранилищем Kubernetes на устройстве GPU для Azure Stack ребра
 
@@ -79,11 +79,11 @@ ms.locfileid: "96448705"
 
 На устройстве Azure Stack пограничной Pro создаются статически подготовленные `PersistentVolumes` с помощью возможностей хранилища устройства. При подготовке общей папки и включении параметра **общий доступ с помощью вычислений с границей** , это действие автоматически создает ресурс ПС в кластере Kubernetes.
 
-![Создание локальной общей папки в портал Azure для статической подготовки](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-2.png)
+![Создание локальной общей папки в портал Azure для статической подготовки](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-1.png)
 
 Чтобы использовать распределение по уровням в облаке, можно создать пограничные облачные ресурсы с включенным параметром использовать общий доступ с помощью COMPUTE. ПС снова создается для этой общей папки автоматически. Все данные приложений, которые вы пишете в общую сетевую папку, распределены по уровням в облаке. 
 
-![Создание облачного ресурса в портал Azure для статической подготовки](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-1.png)
+![Создание облачного ресурса в портал Azure для статической подготовки](./media/azure-stack-edge-gpu-kubernetes-storage/static-provisioning-azure-portal-2.png)
 
 Вы можете создать общие папки SMB и NFS для статической инициализации постоянного хранилища версий на устройстве с Azure Stack пограничным Pro. После подготовки ПС вы отправите PVC, чтобы затребовать это хранилище. Ниже приведен пример развертывания PVC `yaml` , который заявляет хранилище и использует подготовленные вами общие ресурсы.
 

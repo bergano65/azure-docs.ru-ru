@@ -4,12 +4,12 @@ description: Узнайте, как подключить приложение ф
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 73ed679288d9d03b81a0b01670aa0f574a14839f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e24f2b1a61d77dafd7a23b04d225d0301f82ca59
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684714"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070146"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Настройка мониторинга для функций Azure
 
@@ -246,7 +246,7 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 <a id="manually-connect-an-app-insights-resource"></a>
 ### <a name="add-to-an-existing-function-app"></a>Добавление имеющегося приложения-функции 
 
-Если ресурсы Application Insights не были созданы с помощью приложения функции, выполните следующие действия, чтобы создать ресурс. Затем ключ инструментирования из этого ресурса можно добавить в качестве [параметра приложения](functions-how-to-use-azure-function-app-settings.md#settings) в приложение-функцию.
+Если ресурс Application Insights не был создан с помощью приложения функции, выполните следующие действия, чтобы создать ресурс. Затем ключ инструментирования из этого ресурса можно добавить в качестве [параметра приложения](functions-how-to-use-azure-function-app-settings.md#settings) в приложение-функцию.
 
 1. В [портал Azure](https://portal.azure.com)найдите и выберите **приложение функции**, а затем выберите приложение функции. 
 
@@ -271,6 +271,30 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 
 > [!NOTE]
 > Ранние версии решения "Функции" использовали встроенный мониторинг, который больше не рекомендуется. При включении интеграции Application Insights для такого приложения-функции необходимо также [отключить встроенное ведение журналов](#disable-built-in-logging).  
+
+## <a name="query-scale-controller-logs"></a>Журналы контроллера масштабирования запросов
+
+После включения ведения журнала контроллера масштабирования и интеграции Application Insights можно использовать поиск по журналам Application Insights, чтобы запросить созданные журналы контроллера масштабирования. Журналы контроллера масштабирования сохраняются в коллекции в `traces` категории **скалеконтроллерлогс** .
+
+Следующий запрос можно использовать для поиска всех журналов контроллера масштабирования для текущего приложения функции в течение указанного периода времени:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+```
+
+Следующий запрос расширяет предыдущий запрос, чтобы продемонстрировать, как получить только журналы, указывающие на изменение масштаба:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+| where message == "Instance count changed"
+| extend Reason = CustomDimensions.Reason
+| extend PreviousInstanceCount = CustomDimensions.PreviousInstanceCount
+| extend NewInstanceCount = CustomDimensions.CurrentInstanceCount
+```
 
 ## <a name="disable-built-in-logging"></a>Отключение встроенного ведения журнала
 

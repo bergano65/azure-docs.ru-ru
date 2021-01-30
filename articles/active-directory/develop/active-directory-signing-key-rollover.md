@@ -12,12 +12,12 @@ ms.date: 8/11/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: bd2bd67774eb55051e55e4433984c0fd1fda5240
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f3bf9ffeb8da8e877a27ab8758572b2c8277146d
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755586"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090321"
 ---
 # <a name="signing-key-rollover-in-the-microsoft-identity-platform"></a>Смена ключей подписывания на платформе Microsoft Identity
 В этой статье рассказывается о том, что необходимо знать об открытых ключах, используемых платформой Microsoft Identity для подписи маркеров безопасности. Важно отметить, что эти ключи переносятся на периодический основе, и в экстренной ситуации можно сразу же выполнить откат. Все приложения, использующие платформу Microsoft Identity, должны быть способны программно обрабатывать процесс смены ключей. Здесь вы узнаете принцип действия ключей, а также то, как оценить степень влияния их смены на приложение и как обновить приложение или настроить периодический запуск процесса смены ключей в ручном режиме, чтобы приложение могло обрабатывать этот процесс.
@@ -297,7 +297,7 @@ namespace JWTValidation
 
 Ниже приведены инструкции по использованию FedUtil для обновления конфигурации.
 
-1. Убедитесь, что на компьютере для разработки для Visual Studio 2008 или 2010 установлен пакет SDK для Windows Identity Foundation v1.0. Если этот пакет не установлен, его можно [скачать отсюда](https://www.microsoft.com/en-us/download/details.aspx?id=4451).
+1. Убедитесь, что на компьютере для разработки для Visual Studio 2008 или 2010 установлен пакет SDK для Windows Identity Foundation v1.0. Если этот пакет не установлен, его можно [скачать отсюда](https://www.softpedia.com/get/Programming/Other-Programming-Files/Windows-Identity-Foundation-SDK.shtml).
 2. Откройте в Visual Studio решение, щелкните правой кнопкой мыши соответствующий проект и выберите пункт **Update federation metadata** (Обновление метаданных федерации). Если этот параметр недоступен, средство FedUtil и/или пакет SDK для Windows Identity Foundation v1.0 не установлен.
 3. Выберите в информационном сообщении пункт **Обновить**, чтобы начать обновление метаданных федерации. При наличии доступа к среде сервера, где размещено приложение, можно использовать [планировщик автоматического обновления метаданных](/previous-versions/windows-identity-foundation/ee517272(v=msdn.10))средства FedUtil.
 4. Чтобы завершить процесс обновления, нажмите кнопку **Готово**.

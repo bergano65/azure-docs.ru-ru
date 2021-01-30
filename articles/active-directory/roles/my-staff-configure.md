@@ -13,12 +13,12 @@ ms.date: 05/08/2020
 ms.author: rolyon
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: 304d88dfcf0c72769f27911186df04c66224419e
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 501fe17734be1e73ffc516a7b94300445c331e86
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740148"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090949"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Управляйте своими пользователями с помощью моих сотрудников (Предварительная версия)
 
@@ -89,7 +89,7 @@ ms.locfileid: "98740148"
 
 - [Администратор проверки подлинности](permissions-reference.md#authentication-administrator)
 - [Привилегированный администратор проверки подлинности](permissions-reference.md#privileged-authentication-administrator)
-- [Глобальный администратор](permissions-reference.md#global-administrator--company-administrator)
+- [Глобальный администратор](permissions-reference.md#global-administrator)
 - [администратор службы технической поддержки;](permissions-reference.md#helpdesk-administrator)
 - [Администратор пользователей](permissions-reference.md#user-administrator)
 - [Администратор паролей](permissions-reference.md#password-administrator)
@@ -117,9 +117,9 @@ ms.locfileid: "98740148"
 
 - [Администратор проверки подлинности](permissions-reference.md#authentication-administrator)
 - [Привилегированный администратор проверки подлинности](permissions-reference.md#privileged-authentication-administrator)
-- [Глобальный администратор](permissions-reference.md#global-administrator--company-administrator)
+- [Глобальный администратор](permissions-reference.md#global-administrator)
 
-## <a name="search"></a>Поиск
+## <a name="search"></a>Система поиска
 
 С помощью панели поиска в моем персонале вы можете выполнять поиск по Au и пользователям в Организации. Можно выполнять поиск по всем Австралия и пользователям в Организации, но вы можете вносить изменения только для тех пользователей, которые находятся в AU, для которых предоставлены разрешения администратора.
 
@@ -129,7 +129,7 @@ ms.locfileid: "98740148"
 
 Вы можете просматривать журналы аудита для действий, выполненных в моем персонале на портале Azure Active Directory. Если журнал аудита был создан действием, выполненным в моем персонале, вы увидите, что это указано в разделе Дополнительные сведения в событии аудита.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Моя документация](../user-help/my-staff-team-manager.md) 
  для пользователя [Документация по административным единицам](administrative-units.md)

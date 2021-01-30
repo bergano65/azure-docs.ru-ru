@@ -14,19 +14,19 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ebe34de0fa7847a23d9335dcdb0a38a33e006fdc
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: aa0d0d032c2ab6ae1d6c5e6b1c8b1793a6b3bd7c
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355211"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090643"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
 В этой статье описаны способы устранения распространенных проблем, возникающих в службе совместной работы Azure Active Directory (Azure AD) B2B.
 
    > [!IMPORTANT]
-   > - **Начиная с 4 января 2021** г. Компания Google не [WebView поддержку входа в систему](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете Google Federation или самостоятельную регистрацию с помощью Gmail, необходимо [протестировать собственные бизнес-приложения для обеспечения совместимости](google-federation.md#deprecation-of-webview-sign-in-support).
+   > - **Начиная с 4 января 2021 г.** компания Google [прекращает поддержку входа через веб-представление](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете федерацию Google или самостоятельную регистрацию с помощью Gmail, вам нужно [проверить нативные бизнес-приложения на совместимость](google-federation.md#deprecation-of-webview-sign-in-support).
    > - **Начиная с 31 марта 2021 г.** корпорация Майкрософт не будет поддерживать активацию через приглашение при создании неуправляемых учетных записей и арендаторов Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам перейти на [проверку подлинности с использованием одноразового секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам об этой функции, предоставляемой в общедоступной предварительной версии, и с радостью создадим другие способы для совместной работы.
 
 ## <a name="ive-added-an-external-user-but-do-not-see-them-in-my-global-address-book-or-in-the-people-picker"></a>После добавления внешнего пользователя он не отображается в глобальной адресной книге или в средстве выбора пользователей
@@ -92,7 +92,7 @@ ms.locfileid: "97355211"
     AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
 ```
 
-Пользователь имеет учетную запись пользователя Azure и является вирусным клиентом, который был отменен или неуправляем. Кроме того, в клиенте нет глобальных или корпоративных администраторов.
+Пользователь имеет учетную запись пользователя Azure и является вирусным клиентом, который был отменен или неуправляем. Кроме того, в клиенте нет глобальных администраторов.
 
 Чтобы устранить эту проблему, необходимо принять отброшенный клиент. Ознакомьтесь с  [разработкой неуправляемого каталога от имени администратора в Azure Active Directory](../enterprise-users/domains-admin-takeover.md). Кроме того, необходимо получить доступ к Интернету DNS для суффикса домена, чтобы предоставить прямые доказательства, которыми вы управляете пространством имен. После возвращения клиента в управляемое состояние следует обсудить с клиентом, следует ли выпустить пользователей и проверенное доменное имя, наилучшим способом для своей организации.
 

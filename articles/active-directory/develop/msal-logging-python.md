@@ -13,12 +13,12 @@ ms.date: 01/25/2021
 ms.author: marsma
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 560caa7e29ce12b58e151a1362aaf2c662646f13
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 8488325613b05d54b352a19a06860e08f1779877
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954806"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063120"
 ---
 # <a name="logging-in-msal-for-python"></a>Ведение журналов в MSAL для Python
 
@@ -55,5 +55,3 @@ MSAL для Python не регистрирует персональные дан
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры кода см. в статье [примеры кода платформы идентификации Майкрософт](sample-v2-code.md).
-
----
