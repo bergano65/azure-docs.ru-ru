@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/27/2021
-ms.openlocfilehash: 5567cf3bf606b08ce430f9189467d796498ae691
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: cbb84a4934eed4d258cf07772753315785f98019
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98953909"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218168"
 ---
 # <a name="net-c-code-samples-for-azure-cognitive-search"></a>Примеры кода .NET (C#) для Azure Когнитивный поиск
 
@@ -69,3 +69,4 @@ ms.locfileid: "98953909"
 | [Акселератор решений для интеллектуального анализа знаний](/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Включает шаблоны, файлы поддержки и аналитические отчеты для создания прототипа комплексного решения по интеллектуальному анализу знаний.  |
 | [Репозиторий приложений для поиска ковид-19](https://github.com/liamca/covid19search) | Репозиторий исходного кода для [приложения поиска ковид-19](https://covid19search.azurewebsites.net/) на основе когнитивный Поиск |
 | [JFK](https://github.com/Microsoft/AzureSearch_JFK_Files) | Дополнительные сведения о [решении ЖФК](https://www.microsoft.com/ai/ai-lab-jfk-files). |
+| [Поиск + QnA Maker Accelerator](https://github.com/Azure-Samples/search-qna-maker-accelerator) | [Решение](https://techcommunity.microsoft.com/t5/azure-ai/qna-with-azure-cognitive-search/ba-p/2081381) , объединяющее возможности поиска и QnA Maker. См. [веб-сайт демонстрации](https://aka.ms/qnaWithAzureSearchDemo)в реальном времени. |

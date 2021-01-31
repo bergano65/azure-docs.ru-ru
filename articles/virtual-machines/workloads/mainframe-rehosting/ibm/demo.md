@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: dcd354b906b4d6c92d8b3186fc8e09c94a31ca55
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c76768fa94b524763ac8ad94c9c3f5bb3a73dddb
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968406"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219444"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Настройка управляемого распределения для разработчиков приложений (АДКД) в IBM зд&T v1
 
@@ -57,7 +57,7 @@ ms.locfileid: "94968406"
 
 4. Введите описание части или номер части и нажмите кнопку **Finder**.
 
-5. При необходимости щелкните список в алфавитном порядке, чтобы отобразить и просмотреть сепродукт по имени.
+5. При необходимости щелкните список в алфавитном порядке, чтобы отобразить и просмотреть продукт по имени.
 
 6. Выберите **все операционные системы** в **поле операционная система**, а **все языки** — в **поле языки**. Затем нажмите кнопку **Go (начать**).
 
@@ -187,10 +187,10 @@ ms.locfileid: "94968406"
 
 Поздравляем! Теперь вы используете среду IBM мэйнфреймов в Azure.
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
 - [Миграция мэйнфреймов: мифы и факты](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
-- [IBM DB2 Пурескале в Azure](../../../linux/ibm-db2-purescale-azure.md)
+- [IBM DB2 Пурескале в Azure](ibm-db2-purescale-azure.md)
 - [Устранение неполадок](../../../troubleshooting/index.yml)
 - [Декрытие мэйнфрейма с миграцией Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/)
 

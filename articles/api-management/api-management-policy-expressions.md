@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: ab83344f779f93107b59ca28348da3a66f1efc1a
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: aec1967f0652e18c4a24ca258c14a103355b22af
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076867"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219321"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье рассматривается синтаксис выражений политики в C# 7. Каждому выражению предоставлен доступ к неявно заданной переменной [context](api-management-policy-expressions.md#ContextVariables) и допустимому [подмножеству](api-management-policy-expressions.md#CLRTypes) типов платформы .NET Framework.
@@ -65,7 +65,7 @@ ms.locfileid: "92076867"
 }
 ```
 
-## <a name="usage"></a><a name="PolicyExpressionsUsage"></a>Использование
+## <a name="usage"></a><a name="PolicyExpressionsUsage"></a>Загрузка
 Выражения можно использовать в качестве значений атрибутов или текстовых значений в любой [политике](api-management-policies.md) службы управления API, если в справочнике по политике не указано иное.
 
 > [!IMPORTANT]
@@ -156,7 +156,7 @@ ms.locfileid: "92076867"
 |System. Security. Cryptography. SymmetricAlgorithm|Все|
 |System. Security. Cryptography. X509Certificates. PublicKey|Все|
 |System. Security. Cryptography. X509Certificates. Рсацертификатикстенсионс|Все|
-|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Имя|
+|System. Security. Cryptography. X509Certificates. X500DistinguishedName|name|
 |System. Security. Cryptography. X509Certificates. X509Certificate|Все|
 |System.Security.Cryptography.X509Certificates.X509Certificate2|Все|
 |System. Security. Cryptography. X509Certificates. X509ContentType|Все|
@@ -210,7 +210,7 @@ ms.locfileid: "92076867"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|контекст|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Deployment](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [lastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка<IReadOnlyDictionary, объект><br /><br /> void Trace(message: строка)|
+|контекст|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка<IReadOnlyDictionary, объект><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>context.Api|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>context.Deployment|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>context.LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
@@ -220,7 +220,7 @@ ms.locfileid: "92076867"
 |<a id="ref-context-request-headers"></a>string context.Request.Headers.GetValueOrDefault(headerName: строка, defaultValue: строка)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков запросов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
 |<a id="ref-context-response"></a>context.Response|Текст: [имессажебоди](#ref-imessagebody)<br /><br /> [Заголовки](#ref-context-response-headers): IReadOnlyDictionary<строка, String [] ><br /><br /> StatusCode: целое число<br /><br /> StatusReason: строка|
 |<a id="ref-context-response-headers"></a>string context.Response.Headers.GetValueOrDefault(headerName: строка, defaultValue: строка)|headerName: строка<br /><br /> defaultValue: строка<br /><br /> Возвращает значения заголовков ответов, разделенные запятыми, или значение `defaultValue`, если заголовок не найден.|
-|<a id="ref-context-subscription"></a>context.Subscription|CreatedTime: дата и время<br /><br /> EndDate: дата и время?<br /><br /> Id: строка<br /><br /> Key: строка<br /><br /> Name: строка<br /><br /> PrimaryKey: строка<br /><br /> SecondaryKey: строка<br /><br /> StartDate: дата и время?|
+|<a id="ref-context-subscription"></a>context.Subscription|CreatedDate: Дата и время<br /><br /> EndDate: дата и время?<br /><br /> Id: строка<br /><br /> Key: строка<br /><br /> Name: строка<br /><br /> PrimaryKey: строка<br /><br /> SecondaryKey: строка<br /><br /> StartDate: дата и время?|
 |<a id="ref-context-user"></a>context.User|Email: строка<br /><br /> FirstName: строка<br /><br /> Группы: IEnumerable<[играуп](#ref-igroup)\><br /><br /> Id: строка<br /><br /> Удостоверения: IEnumerable<[иусеридентити](#ref-iuseridentity)\><br /><br /> LastName: строка<br /><br /> Note: строка<br /><br /> RegistrationDate: дата и время|
 |<a id="ref-iapi"></a>IApi|Id: строка<br /><br /> Name: строка<br /><br /> Path: строка<br /><br /> Protocols: IEnumerable<string\><br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Субскриптионкэйпараметернамес: [исубскриптионкэйпараметернамес](#ref-isubscriptionkeyparameternames)|
 |<a id="ref-igroup"></a>IGroup|Id: строка<br /><br /> Name: строка|

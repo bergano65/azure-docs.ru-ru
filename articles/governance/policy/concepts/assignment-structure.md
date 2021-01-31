@@ -1,14 +1,14 @@
 ---
 title: Сведения о структуре назначения политики
 description: Описывает определение назначения политики, используемое политикой Azure, для связывания определений политик и параметров с ресурсами для оценки.
-ms.date: 09/22/2020
+ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: e930e9ddcc04846a35c8db7784a349007c71580b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12acbe368c9ccd6fa5654d3394e0fecb286984bf
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90904076"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219572"
 ---
 # <a name="azure-policy-assignment-structure"></a>Структура назначения в службе "Политика Azure"
 
@@ -22,6 +22,7 @@ ms.locfileid: "90904076"
 - режим принудительного применения
 - исключенные области
 - определение политики
+- сообщения о несоответствии
 - параметры
 
 Например, в следующем JSON показано назначение политики в режиме _донотенфорце_ с динамическими параметрами:
@@ -37,6 +38,11 @@ ms.locfileid: "90904076"
         "enforcementMode": "DoNotEnforce",
         "notScopes": [],
         "policyDefinitionId": "/subscriptions/{mySubscriptionID}/providers/Microsoft.Authorization/policyDefinitions/ResourceNaming",
+        "nonComplianceMessages": [
+            {
+                "message": "Resource names must start with 'DeptA' and end with '-LC'."
+            }
+        ],
         "parameters": {
             "prefix": {
                 "value": "DeptA"
@@ -63,7 +69,7 @@ ms.locfileid: "90904076"
 
 |Режим |Значение JSON |Тип |Исправить вручную |Запись журнала действий |Описание |
 |-|-|-|-|-|-|
-|Активировано |По умолчанию |строка |Да |Да |Этот результат политики применяется во время создания или обновления ресурса. |
+|Включено |Значение по умолчанию |строка |Да |Да |Этот результат политики применяется во время создания или обновления ресурса. |
 |Выключено |донотенфорце |строка |Да |Нет | Этот результат политики не применяется во время создания или обновления ресурса. |
 
 Если **енфорцементмоде** не указан в политике или в определении инициативы, используется значение _по умолчанию_ . [Задачи исправления](../how-to/remediate-resources.md) можно запустить для политик [deployIfNotExists](./effects.md#deployifnotexists) , даже если для **енфорцементмоде** задано значение _донотенфорце_.
@@ -79,6 +85,32 @@ ms.locfileid: "90904076"
 
 Это поле должно быть полным путем к имени политики или определению инициативы.
 `policyDefinitionId` является строкой, а не массивом. Если несколько политик часто назначаются вместе, рекомендуется использовать [инициативу](./initiative-definition-structure.md) .
+
+## <a name="non-compliance-messages"></a>Сообщения о несоответствии
+
+Чтобы задать пользовательское сообщение, описывающее, почему ресурс не соответствует политике или определению инициативы, задайте `nonComplianceMessages` в определении назначения. Этот узел представляет собой массив `message` записей. Это пользовательское сообщение добавляется в дополнение к сообщению об ошибке по умолчанию для несоответствия и является необязательным.
+
+```json
+"nonComplianceMessages": [
+    {
+        "message": "Default message"
+    }
+]
+```
+
+Если назначение предназначено для инициативы, для каждого определения политики в инициативе можно настроить различные сообщения. В сообщениях используется `policyDefinitionReferenceId` значение, настроенное в определении инициативы. Дополнительные сведения см. в разделе [свойства определений свойств](./initiative-definition-structure.md#policy-definition-properties).
+
+```json
+"nonComplianceMessages": [
+    {
+        "message": "Default message"
+    },
+    {
+        "message": "Message for just this policy definition by reference ID",
+        "policyDefinitionReferenceId": "10420126870854049575"
+    }
+]
+```
 
 ## <a name="parameters"></a>Параметры
 

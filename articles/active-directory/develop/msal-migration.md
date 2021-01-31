@@ -13,12 +13,12 @@ ms.date: 08/07/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 3280952636a915cca4bade40d3e56b795050c321
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: f32c81d4d247eb6c819adf5015cf36c846f4e83b
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053471"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99218236"
 ---
 # <a name="migrate-applications-to-the-microsoft-authentication-library-msal"></a>Перенос приложений в библиотеку проверки подлинности Майкрософт (MSAL)
 
@@ -73,7 +73,7 @@ __Вопрос. как MSAL работает с AD FS?__
 Ответ. MSAL.NET поддерживает определенные сценарии для проверки подлинности в AD FS 2019. Если приложению необходимо получать маркеры непосредственно из более ранней версии AD FS, вы должны остаться на ADAL. [Подробнее.](msal-net-adfs-support.md)
 
 __Вопрос. Разделы справки получить справку по переносу приложения?__  
-Ответ. см. раздел [руководство по миграции](#migration-guidance) этой статьи. Если после ознакомления с руководством для платформы вашего приложения у вас возникнут дополнительные вопросы, вы можете отправить сообщение в Microsoft Q&A с тегом `[azure-ad-adal-deprecation]` или открыть ошибку в репозитории GitHub библиотеки. Ссылки на репозиторий каждой библиотеки см. в разделе [языки и платформы](msal-overview.md#languages-and-frameworks) статьи Обзор MSAL.
+Ответ. см. раздел [руководство по миграции](#migration-guidance) этой статьи. Если после ознакомления с руководством для платформы вашего приложения у вас возникнут дополнительные вопросы, вы можете отправить сообщение в [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-ad-adal-deprecation.html) с тегом `[azure-ad-adal-deprecation]` или открыть ошибку в репозитории GitHub библиотеки. Ссылки на репозиторий каждой библиотеки см. в разделе [языки и платформы](msal-overview.md#languages-and-frameworks) статьи Обзор MSAL.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -4,16 +4,16 @@ description: Спланируйте развертывание с помощью
 author: roygara
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/15/2020
+ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 28b7419dfc889d1149765b884f1a5990a1e28f03
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 65293df5fae523bff36240273afb93c4dd8485df
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98898110"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219482"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 
@@ -302,48 +302,16 @@ $validation.Results | Select-Object -Property Type, Path, Level, Description, Re
 [!INCLUDE [storage-files-tiers-large-file-share-availability](../../../includes/storage-files-tiers-large-file-share-availability.md)]
 
 ## <a name="azure-file-sync-region-availability"></a>Доступность Синхронизации файлов Azure по регионам
-Синхронизация файлов Azure доступна в следующих регионах:
 
-| Облако Azure | Географический регион | Регион Azure | Код региона |
-|-------------|-------------------|--------------|-------------|
-| Общедоступные | Азия | Восточная Азия | `eastasia` |
-| Общедоступные | Азия | Юго-Восточная Азия | `southeastasia` |
-| Общедоступные | Австралия | Восточная Австралия | `australiaeast` |
-| Общедоступные | Австралия | Юго-Восточная часть Австралии | `australiasoutheast` |
-| Общедоступные | Бразилия | Южная Бразилия | `brazilsouth` |
-| Общедоступные | Canada | Центральная Канада | `canadacentral` |
-| Общедоступные | Canada | Восточная Канада | `canadaeast` |
-| Общедоступные | Европа | Северная Европа | `northeurope` |
-| Общедоступные | Европа | Западная Европа | `westeurope` |
-| Общедоступные | Франция | Центральная Франция | `francecentral` |
-| Общедоступные | Франция | Южная Франция* | `francesouth` |
-| Общедоступные | Индия | Центральная Индия | `centralindia` |
-| Общедоступные | Индия | Южная Индия | `southindia` |
-| Общедоступные | Япония | Восточная Япония | `japaneast` |
-| Общедоступные | Япония | Западная Япония | `japanwest` |
-| Общедоступные | Корея | Республика Корея, центральный регион | `koreacentral` |
-| Общедоступные | Корея | Республика Корея, южный регион | `koreasouth` |
-| Общедоступные | ЮАР | Северная часть ЮАР; | `southafricanorth` |
-| Общедоступные | ЮАР | Западная часть ЮАР* | `southafricawest` |
-| Общедоступные | ОАЭ | Центральная часть ОАЭ* | `uaecentral` |
-| Общедоступные | ОАЭ | Северная часть ОАЭ; | `uaenorth` |
-| Общедоступные | Соединенное Королевство | южная часть Соединенного Королевства | `uksouth` |
-| Общедоступные | Соединенное Королевство | западная часть Соединенного Королевства | `ukwest` |
-| Общедоступные | США | Центральная часть США | `centralus` |
-| Общедоступные | США | Восточная часть США | `eastus` |
-| Общедоступные | США | восточная часть США 2 | `eastus2` |
-| Общедоступные | США | Центрально-северная часть США | `northcentralus` |
-| Общедоступные | США | Центрально-южная часть США | `southcentralus` |
-| Общедоступные | США | центрально-западная часть США | `westcentralus` |
-| Общедоступные | США | западная часть США | `westus` |
-| Общедоступные | США | западная часть США 2 | `westus2` |
-| US Gov | США | US Gov (Аризона) | `usgovarizona` |
-| US Gov | США | US Gov (Техас) | `usgovtexas` |
-| US Gov | США | US Gov (Вирджиния) | `usgovvirginia` |
+Сведения о региональной доступности см. [в разделе продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=storage).
 
-Синхронизация файлов Azure поддерживает только синхронизацию с файловым ресурсом Azure в том же регионе, что и служба синхронизации хранилища.
+Для следующих регионов требуется запросить доступ к службе хранилища Azure, прежде чем вы сможете использовать Синхронизация файлов Azure с ними:
 
-Необходимо обратиться в службу поддержки Azure, чтобы запросить доступ к службе хранилища Azure в регионах, помеченных звездочками. Данная процедура рассмотрена в [этом документе](https://azure.microsoft.com/global-infrastructure/geographies/).
+- Южная Франция
+- Западная часть ЮАР
+- Центральная часть ОАЭ.
+
+Чтобы запросить доступ к этим регионам, выполните процедуру, описанную в [этом документе](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 ## <a name="redundancy"></a>Избыточность
 [!INCLUDE [storage-files-redundancy-overview](../../../includes/storage-files-redundancy-overview.md)]

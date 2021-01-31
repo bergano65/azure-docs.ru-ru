@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: cefcf6b1bcd7ac5f81fa4e872b30660183a46a82
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: a6a7bf24571660d8e728c1acba29af2504539a18
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755262"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219966"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Рекомендации и советы по платформе удостоверений Майкрософт
 
@@ -68,7 +68,7 @@ ms.locfileid: "98755262"
 
 ![Установите флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) использовать современные решения проверки подлинности (OAuth 2,0, [OpenID Connect Connect](v2-protocols-oidc.md)) для безопасного входа пользователей.
 
-![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) не программировать напрямую для таких протоколов, как OAuth 2,0 и Open ID. Вместо этого используйте [библиотеку проверки подлинности Майкрософт (MSAL)](msal-overview.md). Библиотеки MSAL безопасно заключают протоколы безопасности в удобной библиотеке и получают встроенную поддержку сценариев [условного доступа](../conditional-access/overview.md) , единого [входа на уровне устройства (SSO)](../manage-apps/what-is-single-sign-on.md)и встроенной поддержки кэширования маркеров. Дополнительные сведения см. в списке [клиентских библиотек](reference-v2-libraries.md#microsoft-supported-client-libraries) , поддерживаемых корпорацией Майкрософт, и в списке [библиотек по промежуточного слоя](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries) и списка [совместимых сторонних клиентских библиотек](reference-v2-libraries.md#compatible-client-libraries).<br/><br/>Если необходимо выполнить код для протоколов проверки подлинности, следует использовать такую методологию, как [Microsoft SDL](https://www.microsoft.com/sdl/default.aspx). Обратите особое внимание на вопросы безопасности в спецификациях стандартов для каждого протокола.
+![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) не программировать напрямую для таких протоколов, как OAuth 2,0 и Open ID. Вместо этого используйте [библиотеку проверки подлинности Майкрософт (MSAL)](msal-overview.md). Библиотеки MSAL безопасно заключают протоколы безопасности в удобной библиотеке и получают встроенную поддержку сценариев [условного доступа](../conditional-access/overview.md) , единого [входа на уровне устройства (SSO)](../manage-apps/what-is-single-sign-on.md)и встроенной поддержки кэширования маркеров. Дополнительные сведения см. в списке [клиентских библиотек](reference-v2-libraries.md), поддерживаемых корпорацией Майкрософт. Если необходимо выполнить код для протоколов проверки подлинности, следует следовать рекомендациям [Microsoft SDL](https://www.microsoft.com/sdl/default.aspx) или аналогичной методологии разработки. Обратите особое внимание на вопросы безопасности в спецификациях стандартов для каждого протокола.
 
 ![флажок ](./media/active-directory-integration-checklist/checkbox-two.svg) переносить существующие приложения из библиотеки проверки подлинности [Azure Active Directory (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) в [библиотеку проверки подлинности Майкрософт](msal-overview.md). MSAL — это новейшее решение для платформы идентификации Майкрософт, которое является предпочтительным для ADAL. Он доступен на платформах .NET, JavaScript, Android, iOS и macOS, а также в общедоступной предварительной версии для Python и Java. Узнайте больше о миграции [ADAL.NET](msal-net-migration.md), [ADAL.js](msal-compare-msal-js-and-adal-js.md)и [ADAL.NET и приложений брокера iOS](msal-net-migration-ios-broker.md) .
 
