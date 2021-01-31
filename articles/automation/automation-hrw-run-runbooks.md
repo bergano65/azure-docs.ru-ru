@@ -3,14 +3,14 @@ title: Выполнение runbook службы автоматизации Azur
 description: В этой статье описывается, как запускать модули Runbook на компьютерах в локальном центре обработки данных или другом поставщике облачных служб с помощью гибридной рабочей роли Runbook.
 services: automation
 ms.subservice: process-automation
-ms.date: 10/06/2020
+ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 4a080505f780e724bfd2ab997f5c823e467c4bec
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 8ea668ab2266a1deae108542687c89f3a221568e
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896975"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220979"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей Runbook в гибридной рабочей роли Runbook
 
@@ -94,6 +94,10 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 ## <a name="install-run-as-account-certificate"></a><a name="runas-script"></a>Установка сертификата учетной записи запуска от имени
 
 В ходе автоматизированного процесса сборки для развертывания ресурсов в Azure вам может потребоваться доступ к локальным системам для выполнения задачи или набора действий, входящих в последовательность развертывания. Чтобы обеспечить поддержку аутентификации в Azure с использованием учетной записи запуска от имени, необходимо установить соответствующий сертификат.
+
+>[!NOTE]
+>Сейчас Runbook PowerShell не выполняется на компьютерах LInux. Она выполняется только на компьютерах Windows.
+>
 
 Следующий runbook PowerShell с именем **Export-RunAsCertificateToHybridWorker** экспортирует сертификат запуска от имени из учетной записи службы автоматизации Azure. Также этот runbook скачивает сертификат и импортирует его в хранилище сертификатов локального компьютера, относящегося к гибридной рабочей роли Runbook, которая подключена к той же учетной записи. После этого runbook проверяет, может ли рабочая роль успешно выполнять аутентификацию в Azure с использованием учетной записи запуска от имени.
 

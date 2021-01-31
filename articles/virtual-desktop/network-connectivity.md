@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: 4c0017a36d84973a4d99c49a5ea33faeb189b35f
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: e4149864e16196b695d38a8c46ab5af835453412
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94639337"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99221216"
 ---
 # <a name="understanding-windows-virtual-desktop-network-connectivity"></a>Общие сведения о сетевом подключении к виртуальным рабочим столам Windows
 
@@ -50,7 +50,7 @@ ms.locfileid: "94639337"
 
 ## <a name="connection-security"></a>Безопасность подключения
 
-TLS 1,2 используется для всех подключений, инициированных клиентами и узлами сеансов, к компонентам инфраструктуры виртуальных рабочих столов Windows.
+TLS 1,2 используется для всех подключений, инициированных клиентами и узлами сеансов, к компонентам инфраструктуры виртуальных рабочих столов Windows. Виртуальный рабочий стол Windows использует те же шифры TLS 1,2, что и [Передняя дверца Azure](../frontdoor/front-door-faq.md#what-are-the-current-cipher-suites-supported-by-azure-front-door). Важно убедиться, что на клиентских компьютерах и узлах сеансов эти шифры могут использоваться.
 Для транспорта с обратным подключением клиент и узел сеансов подключаются к шлюзу виртуальных рабочих столов Windows. После установления TCP-подключения клиент или узел сеансов проверяет сертификат шлюза виртуальных рабочих столов Windows.
 После установки базового транспорта RDP устанавливает вложенное TLS-соединение между клиентом и узлом сеансов, используя сертификаты узла сеанса. По умолчанию сертификат, используемый для шифрования RDP, создается автоматически операционной системой во время развертывания. При необходимости клиенты могут развертывать централизованно управляемые сертификаты, выданные центром сертификации предприятия. Дополнительные сведения о настройке сертификатов см. в [документации по Windows Server](/troubleshoot/windows-server/remote/remote-desktop-listener-certificate-configurations).
 
