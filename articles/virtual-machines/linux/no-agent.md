@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: edbcabfe4d0b633a784163562f52b303120916ca
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 1c9ac872587804adbd9e62a3dc3ef3daed9e0c25
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685074"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223057"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Создание обобщенных образов без агента подготовки
 
@@ -154,7 +154,7 @@ wireserver_conn.close()
 
 Если на виртуальной машине нет установленного или доступного Python, можно программно воспроизвести эту логику скрипта, выполнив следующие действия:
 
-1. Извлеките `ContainerId` и `InstanceId` , анализируя ответ от виресервер: `curl -X GET -H 'x-ms-version: 2012-11-30' http://$168.63.129.16/machine?comp=goalstate` .
+1. Извлеките `ContainerId` и `InstanceId` , анализируя ответ от виресервер: `curl -X GET -H 'x-ms-version: 2012-11-30' http://168.63.129.16/machine?comp=goalstate` .
 
 2. Создайте следующие XML-данные, подставляемые с помощью синтаксического анализа `ContainerId` и указанного `InstanceId` выше шага.
    ```xml
@@ -271,6 +271,6 @@ Jun 11 20:28:56 thstringnopa2 systemd[1]: Started Azure Provisioning.
 
 Если вы реализуете собственный код подготовки или агента, вы владеете поддержкой этого кода, поддержка Майкрософт будет исследовать только проблемы, связанные с интерфейсами подготовки, которые недоступны. Мы постоянно делаем улучшения и изменения в этой области, поэтому необходимо отслеживать изменения в Cloud-init и агенте Linux для Azure для подготовки изменений API.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [Подготовка Linux](provisioning.md).

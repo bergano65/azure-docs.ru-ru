@@ -45,6 +45,14 @@
       items:
         - name: Использование приложения Spring Boot Initializer
           href: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache
+    - name: Сетка событий Azure
+      items:
+        - name: Маршрутизация событий с помощью портала Azure
+          href: cache-event-grid-quickstart-portal.md
+        - name: Маршрутизация событий с помощью Azure CLI
+          href: cache-event-grid-quickstart-cli.md
+        - name: Маршрутизация событий с помощью PowerShell
+          href: cache-event-grid-quickstart-powershell.md
     - name: Создание списка лидеров
       href: cache-web-app-cache-aside-leaderboard.md
     - name: Развертывание модели машинного обучения
@@ -128,6 +136,8 @@
           href: cache-administration.md#schedule-updates
         - name: Настройка доступа redis cli.exe
           href: cache-how-to-redis-cli-tool.md
+        - name: Публикация событий Кэша Azure для Redis
+          href: cache-event-grid.md
         - name: "Удаление TLS\_1.0 и 1.1"
           href: cache-remove-tls-10-11.md
         - name: Часто задаваемые вопросы об управлении

@@ -4,8 +4,6 @@
   items:
     - name: Сведения об Azure Digital Twins
       href: overview.md
-    - name: Отличия от предыдущего выпуска
-      href: overview-differences.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -53,6 +51,8 @@
               href: how-to-set-up-instance-powershell.md
             - name: Версия в виде скрипта
               href: how-to-set-up-instance-scripted.md
+        - name: Включить частного доступа с помощью Приватного канала
+          href: how-to-enable-private-link.md
         - name: Написание кода проверки подлинности приложения
           href: how-to-authenticate-client.md
         - name: Регистрация приложения
@@ -107,6 +107,8 @@
               href: how-to-manage-routes-apis-cli.md
             - name: Версия для портала
               href: how-to-manage-routes-portal.md
+        - name: Включение управляемого удостоверения для событий маршрутизации
+          href: how-to-enable-managed-identities.md
         - name: Интеграция с Azure Maps
           href: how-to-integrate-maps.md
         - name: Интеграция со службой "Аналитика временных рядов Azure"
@@ -153,6 +155,20 @@
       href: /cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true
 - name: Ресурсы
   items:
+    - name: Ограничения службы Digital Twins
+      href: reference-service-limits.md
+    - name: Цены и доступность
+      items:
+        - name: Цены
+          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
+        - name: Соглашение об уровне обслуживания
+          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
+        - name: Регионы и доступность
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
+    - name: Запросы данных клиентов
+      href: resources-customer-data-requests.md
+    - name: Отличия от первоначального выпуска
+      href: resources-compare-original-release.md
     - name: API и SDK
       items:
         - name: Уровень управления
@@ -243,22 +259,10 @@
           href: /samples/azure-samples/dtdl-validator/dtdl-validator/
         - name: Спецификация DTMI
           href: 'https://github.com/Azure/digital-twin-model-identifier'
-    - name: Запросы данных клиентов
-      href: resources-customer-data-requests.md
-    - name: Ограничения службы Digital Twins
-      href: reference-service-limits.md
-    - name: Цены и доступность
-      items:
-        - name: Цены
-          href: 'https://azure.microsoft.com/pricing/details/digital-twins'
-        - name: Соглашение об уровне обслуживания
-          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
-        - name: Регионы и доступность
-          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'
-    - name: Истории клиентов
-      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
     - name: Видео на Channel 9
       href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22'
+    - name: Истории клиентов
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Digital%20Twins%22&ff=&p=0&so=story_publish_date%20desc'
     - name: Инструменты Azure
       items:
         - name: Azure Cloud Shell
@@ -267,7 +271,5 @@
           href: /powershell/azure/
         - name: Портал Azure
           href: 'https://portal.azure.com'
-    - name: Документация по Azure RBAC
-      href: ../role-based-access-control/overview.md
     - name: Возможности получения поддержки и справки
       href: ../iot-fundamentals/iot-support-help.md

@@ -1,0 +1,7 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Хранилище и передача данных через Интернет с помощью Data Box
+      tocHref: /azure/databox-gateway/
+      topicHref: /azure/databox-online/index

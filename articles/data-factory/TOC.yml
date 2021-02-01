@@ -698,10 +698,12 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: 'Создание зависимости триггера, который запускает конвейер в "переворачивающемся" окне'
           href: tumbling-window-trigger-dependency.md
-    - name: Журнал преобразований
+    - name: Каталог данных и управление
       items:
         - name: Подключение Фабрики данных к Azure Purview
           href: connect-data-factory-to-azure-purview.md
+        - name: Обнаружение и изучение данных в ADF с помощью Purview
+          href: how-to-discover-explore-purview-data.md
     - name: Сценарии
       items:
         - name: Перенос данных для озера данных и EDW
@@ -796,10 +798,6 @@
       href: /python/api/overview/azure/datafactory
 - name: Ресурсы
   items:
-    - name: "Поток данных\_— общие сведения о зарезервированной емкости"
-      href: data-flow-reserved-capacity-overview.md
-    - name: "Поток данных\_— общие сведения о расходах на резервирование"
-      href: data-flow-understand-reservation-charges.md
     - name: Технические документы
       href: whitepapers.md
     - name: ВОПРОСЫ И ОТВЕТЫ

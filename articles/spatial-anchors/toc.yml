@@ -83,6 +83,8 @@
           href: how-tos/set-up-coarse-reloc-cpp-ndk.md
         - name: В C++/WinRT
           href: how-tos/set-up-coarse-reloc-cpp-winrt.md
+    - name: Использование простого уточнения расположения без сеанса привязки
+      href: how-tos/use-coarse-relocalization-without-anchor-session.md
     - name: Настройка проекта
       items:
         - name: C++/WinRT

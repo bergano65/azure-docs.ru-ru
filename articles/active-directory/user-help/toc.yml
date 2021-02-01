@@ -50,6 +50,8 @@
       href: auth-app-android-china.md
     - name: Резервное копирование и восстановление учетных записей
       href: user-help-auth-app-backup-recovery.md
+    - name: Импорт паролей в приложение Authenticator
+      href: user-help-authenticator-app-import-passwords.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: user-help-auth-app-faq.md
 - name: Справка по порталу "Моя учетная запись"

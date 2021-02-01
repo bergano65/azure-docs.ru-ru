@@ -68,6 +68,8 @@
           href: quickstart-v2-netcore-daemon.md
         - name: Управляющая программа консоли Python
           href: quickstart-v2-python-daemon.md
+        - name: Управляющая программа консоли Java
+          href: quickstart-v2-java-daemon.md
 - name: Учебники
   items:
     - name: Одностраничное приложение (SPA)

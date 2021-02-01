@@ -16,6 +16,10 @@
       href: tutorial-delete-cluster.md
 - name: Практические руководства
   items:
+    - name: Операции с кластером
+      items:
+        - name: Обновление кластера ARO
+          href: howto-upgrade.md
     - name: Сеть
       items:
         - name: Создание частного кластера ARO
@@ -28,6 +32,8 @@
           href: howto-create-a-storageclass.md
         - name: Использование встроенного реестра контейнеров
           href: built-in-container-registry.md
+        - name: Использование Реестра контейнеров Azure
+          href: howto-use-acr-with-aro.md
     - name: Безопасность и проверка подлинности
       items:
         - name: Настройка аутентификации Azure Active Directory (CLI)

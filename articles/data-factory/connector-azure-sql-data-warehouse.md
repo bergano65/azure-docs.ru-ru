@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/22/2021
-ms.openlocfilehash: 48450218975f2c6ee14e12af8d722942e8db1347
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.date: 01/29/2021
+ms.openlocfilehash: 386547aa6e815ad6ba7d860c513a3e24c4040cca
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98695854"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223241"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure синапсе Analytics с помощью фабрики данных Azure
 
@@ -376,10 +376,10 @@ GO
 ![Параметры копирования приемника Azure синапсе Analytics](./media/connector-azure-sql-data-warehouse/sql-dw-sink-copy-options.png)
 
 - [Использование PolyBase](#use-polybase-to-load-data-into-azure-synapse-analytics)
-- [Использование инструкции COPY (предварительная версия)](#use-copy-statement)
+- [Использовать инструкцию COPY](#use-copy-statement)
 - Использование массовой вставки
 
-Самым быстрым и масштабируемым способом загрузки данных является использование [Polybase](/sql/relational-databases/polybase/polybase-guide) или [инструкции COPY](/sql/t-sql/statements/copy-into-transact-sql) (предварительная версия).
+Самый быстрый и масштабируемый способ загрузки данных — с помощью [polybase](/sql/relational-databases/polybase/polybase-guide) или [инструкции Copy](/sql/t-sql/statements/copy-into-transact-sql).
 
 Чтобы скопировать данные в Azure синапсе Analytics, задайте для параметра тип приемника в действии копирования значение **SqlDWSink**. В разделе **sink** действия копирования поддерживаются следующие свойства:
 
@@ -388,7 +388,7 @@ GO
 | type              | Свойство **type** приемника действия копирования должно иметь значение **SqlDWSink**. | Да                                           |
 | allowPolyBase     | Указывает, следует ли использовать Polybase для загрузки данных в Azure синапсе Analytics. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Ограничения и сведения см. в разделе [Загрузка данных в Azure синапсе Analytics с помощью polybase](#use-polybase-to-load-data-into-azure-synapse-analytics) .<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br/>Применяется при использовании PolyBase.     |
 | polyBaseSettings  | Группа свойств, которые можно задать, если свойство `allowPolybase` имеет значение **true**. | Нет.<br/>Применяется при использовании PolyBase. |
-| allowCopyCommand | Указывает, следует ли использовать [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql) (Предварительная версия) для загрузки данных в Azure синапсе Analytics. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Ограничения и сведения см. [в разделе Использование инструкции Copy для загрузки данных в Azure синапсе Analytics](#use-copy-statement) .<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br>Применяется при использовании инструкции COPY. |
+| allowCopyCommand | Указывает, следует ли использовать [инструкцию Copy](/sql/t-sql/statements/copy-into-transact-sql) для загрузки данных в Azure синапсе Analytics. Свойства `allowCopyCommand` и `allowPolyBase` не могут одновременно иметь значение true. <br/><br/>Ограничения и сведения см. [в разделе Использование инструкции Copy для загрузки данных в Azure синапсе Analytics](#use-copy-statement) .<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет.<br>Применяется при использовании инструкции COPY. |
 | copyCommandSettings | Группа свойств, которые можно задать, если свойство `allowCopyCommand` имеет значение TRUE. | Нет.<br/>Применяется при использовании инструкции COPY. |
 | writeBatchSize    | Число строк для вставки в таблицу SQL **в одном пакете**.<br/><br/>Допустимое значение: **целое число** (количество строк). По умолчанию Фабрика данных динамически определяет соответствующий размер пакета в зависимости от размера строки. | Нет.<br/>Применяется при использовании массовой вставки.     |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/><br/>Допустимое значение — **timespan**. Пример "00:30:00" (30 минут). | Нет.<br/>Применяется при использовании массовой вставки.        |
@@ -674,9 +674,9 @@ All columns of the table must be specified in the INSERT BULK statement.
 
 Значение NULL рассматривается как вариант значения по умолчанию. Если столбец допускает значение NULL, входные данные большого двоичного объекта для этого столбца могут быть пустыми. Но они не могут отсутствовать во входном наборе данных. Для отсутствующих значений PolyBase будет вставлять в Azure Synapse Analytics значения NULL.
 
-## <a name="use-copy-statement-to-load-data-into-azure-synapse-analytics-preview"></a><a name="use-copy-statement"></a> Использование инструкции COPY для загрузки данных в Azure синапсе Analytics (Предварительная версия)
+## <a name="use-copy-statement-to-load-data-into-azure-synapse-analytics"></a><a name="use-copy-statement"></a> Использование инструкции COPY для загрузки данных в Azure синапсе Analytics
 
-[Инструкция копирования](/sql/t-sql/statements/copy-into-transact-sql) Azure синапсе Analytics (Предварительная версия) напрямую поддерживает загрузку данных из **большого двоичного объекта Azure и Azure Data Lake Storage 2-го поколения**. Если исходные данные соответствуют критериям, описанным в этом разделе, можно выбрать использование инструкции COPY в ADF для загрузки данных в Azure синапсе Analytics. Фабрика данных Azure проверяет параметры и не выполняет действие копирования, если условия не выполнены.
+[Инструкция копирования](/sql/t-sql/statements/copy-into-transact-sql) Azure синапсе Analytics напрямую поддерживает загрузку данных из **большого двоичного объекта Azure и Azure Data Lake Storage 2-го поколения**. Если исходные данные соответствуют критериям, описанным в этом разделе, можно выбрать использование инструкции COPY в ADF для загрузки данных в Azure синапсе Analytics. Фабрика данных Azure проверяет параметры и не выполняет действие копирования, если условия не выполнены.
 
 >[!NOTE]
 >В настоящее время Фабрика данных поддерживает копирование только из источников, совместимых с инструкцией COPY, которые приведены ниже.
@@ -796,9 +796,10 @@ All columns of the table must be specified in the INSERT BULK statement.
 - Read Committed (чтение зафиксированных данных)
 - Read Uncommitted (чтение незафиксированных данных)
 - Повторяющаяся операция чтения
-- Serializable *-None (игнорировать уровень изоляции)
+- Упорядочиваемый уровень изоляции
+- None (игнорировать уровень изоляции)
 
-![Уровень изоляции](media/data-flow/isolationlevel.png "Уровень изоляции")
+![Уровень изоляции](media/data-flow/isolationlevel.png)
 
 ### <a name="sink-transformation"></a>Преобразование приемника
 

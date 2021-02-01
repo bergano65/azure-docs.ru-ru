@@ -210,14 +210,20 @@
               href: service-bus-auto-forwarding.md
             - name: Обработка транзакций
               href: service-bus-transactions.md
-        - name: Комплексная трассировка и диагностика
-          href: service-bus-end-to-end-tracing.md
         - name: Создание многоуровневого приложения Служебной шины
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
     - name: Миграция
       items:
         - name: Миграция из ActiveMQ в Служебную шину Azure
           href: migrate-jms-activemq-to-servicebus.md
+    - name: Монитор
+      items:
+        - name: Комплексная трассировка и диагностика
+          href: service-bus-end-to-end-tracing.md
+        - name: Журналы диагностики
+          href: service-bus-diagnostic-logs.md
+        - name: Метрики Azure Monitor
+          href: service-bus-metrics-azure-monitor.md
     - name: Интеграция
       items:
         - name: Интеграция с RabbitMQ
@@ -228,12 +234,8 @@
           href: automate-update-messaging-units.md
         - name: Подготовка сущностей с помощью Azure PowerShell
           href: service-bus-manage-with-ps.md
-        - name: Мониторинг Служебной шины с помощью Azure Monitor
-          href: service-bus-metrics-azure-monitor.md
         - name: Библиотеки управления служебной шины
           href: service-bus-management-libraries.md
-        - name: Журналы ресурсов
-          href: service-bus-diagnostic-logs.md
         - name: Приостановка и повторная активация сущностей обмена сообщениями
           href: entity-suspend.md
         - name: Использование Service Bus Explorer для выполнения операций с данными в Служебной шине

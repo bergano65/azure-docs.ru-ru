@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы
+title: Вопросы и ответы
 titleSuffix: Azure SQL Managed Instance
 description: Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 services: sql-database
@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 5d15947254d80d97b6a241a717fb7d33a3d5ccb5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d3f859590b30aaeeaebaed7b1f2f85e1a86a92c9
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98724022"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223412"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -363,7 +363,7 @@ SQL Управляемый экземпляр отвечает за настро
 
 **Можно ли выполнить обновление DNS?**
 
-Сейчас мы не предоставляем компонент для обновления конфигурации DNS-сервера для Управляемый экземпляр SQL.
+Да. См. раздел [Синхронизация параметра DNS-серверов виртуальной сети в SQL управляемый экземпляр виртуального кластера](./synchronize-vnet-dns-servers-setting-on-virtual-cluster.md).
 
 В конечном итоге обновляется конфигурация DNS:
 

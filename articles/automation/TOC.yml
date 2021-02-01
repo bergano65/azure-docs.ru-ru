@@ -66,14 +66,20 @@
           href: automation-create-standalone-account.md
         - name: Создание учетной записи службы автоматизации с помощью шаблона Resource Manager
           href: quickstart-create-automation-account-template.md
+        - name: учетная запись запуска от имени
+          items:
+            - name: Создание учетной записи запуска от имени
+              href: create-run-as-account.md
+            - name: Удаление учетной записи запуска от имени
+              href: delete-run-as-account.md
+            - name: Управление учетной записью запуска от имени
+              href: manage-runas-account.md
         - name: Настройка аутентификации с помощью Amazon Web Services
           href: automation-config-aws-account.md
         - name: "Настройка проверки подлинности с помощью Azure\_AD"
           href: automation-use-azure-ad.md
-        - name: 'Управление записью DNS, используемой Службой автоматизации'
+        - name: 'Управление записями DNS, используемыми службой автоматизации'
           href: how-to/automation-region-dns-records.md
-        - name: Управление учетной записью запуска от имени в службе автоматизации
-          href: manage-runas-account.md
         - name: Частное подключение к учетной записи службы автоматизации
           href: how-to/private-link-security.md
         - name: Управление разрешениями ролей и безопасностью

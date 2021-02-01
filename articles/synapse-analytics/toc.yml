@@ -96,6 +96,8 @@
           href: ./cicd/continuous-integration-deployment.md
         - name: Безопасность
           items:
+            - name: Средства управления безопасностью с помощью Политики Azure
+              href: ./security-controls-policy.md
             - name: Encryption
               href: ./security/workspaces-encryption.md
             - name: Безопасность сети

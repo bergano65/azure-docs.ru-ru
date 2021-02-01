@@ -42,6 +42,8 @@
       href: ../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
     - name: Обработка событий Служб коммуникации Azure
       href: ../communication-services/quickstarts/telephony-sms/handle-sms-events.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - name: События Кэша Azure для Redis
+      href: ../azure-cache-for-redis/cache-event-grid-quickstart-portal.md?toc=%2fazure%2fevent-grid%2ftoc.json
 - name: Учебники
   items:
     - name: Сообщение электронной почты при изменении виртуальной машины
@@ -138,6 +140,8 @@
               href: event-schema-azure-signalr.md
             - name: Подписки Azure
               href: event-schema-subscriptions.md
+            - name: Кэш Azure для Redis
+              href: event-schema-azure-cache.md
     - name: События партнеров
       items:
         - name: Общие сведения о событиях партнеров
@@ -188,6 +192,8 @@
       items:
         - name: Базовые средства безопасности
           href: security-baseline.md
+        - name: Элементы управления безопасностью службы "Политика Azure"
+          href: ./security-controls-policy.md
         - name: Проверка подлинности для доставки событий в обработчики событий
           href: security-authentication.md
         - name: Проверка подлинности клиентов при публикации

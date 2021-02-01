@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 12/14/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b6e2ac9d80c1c3bf76b4a3d4c44f0654100670f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 82247ae9817e5ff2e26d0862230654021876406b
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89567424"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223294"
 ---
 # <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD
 
@@ -86,14 +86,14 @@ ms.locfileid: "89567424"
 
     ![Доступ к пакету — Добавление ролей ресурсов — выбор групп](./media/entitlement-management-access-package-resources/group-select.png)
 
-1. Нажмите кнопку **Выбрать**.
+1. Щелкните **Выбрать**.
 
     После выбора группы или группы в столбце **подтипа** будет отображаться один из следующих подтипов:
 
     | Подтип | Описание |
     | --- | --- |
     | Безопасность | Используется для предоставления доступа к ресурсам. |
-    | Distribution | Используется для отправки уведомлений группе людей. |
+    | Распределение | Используется для отправки уведомлений группе людей. |
     | Microsoft 365 | Группа Microsoft 365, не поддерживающая команды. Используется для совместной работы пользователей как внутри организации, так и за ее пределами. |
     | Группа | Группа Microsoft 365, поддерживающая команды. Используется для совместной работы пользователей как внутри организации, так и за ее пределами. |
 
@@ -128,7 +128,7 @@ Azure AD может автоматически назначать пользов
 
     ![Доступ к пакету — Добавление ролей ресурсов — выбор приложений](./media/entitlement-management-access-package-resources/application-select.png)
 
-1. Нажмите кнопку **Выбрать**.
+1. Щелкните **Выбрать**.
 
 1. В списке **роль** выберите роль приложения.
 
@@ -144,11 +144,17 @@ Azure AD может автоматически назначать пользов
 
 1. На странице **Добавление ролей ресурсов для доступа к пакету** щелкните **сайты SharePoint** , чтобы открыть панель "Выбор сайтов SharePoint Online".
 
-1. Выберите сайты SharePoint Online, которые необходимо включить в пакет Access.
+    :::image type="content" source="media/entitlement-management-access-package-resources/sharepoint-multigeo-portal.png" alt-text="Доступ к пакету — Добавление ролей ресурсов — выбор сайтов SharePoint — представление портала":::
+
+1. Если для SharePoint включена [Поддержка нескольких географических](https://docs.microsoft.com/microsoft-365/enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-microsoft-365?view=o365-worldwide) сред, выберите среду, из которой вы хотите выбрать сайты.
+    
+    :::image type="content" source="media/entitlement-management-access-package-resources/sharepoint-multigeo-select.png" alt-text="Доступ к пакету — Добавление ролей ресурсов. Выберите SharePoint с несколькими географическими сайтами.":::
+
+1. Если поддержка нескольких географических объектов не включена, выбирать среду не нужно. Выберите сайты SharePoint Online, которые необходимо включить в пакет Access.
 
     ![Доступ к пакету — Добавление ролей ресурсов. Выбор сайтов SharePoint Online](./media/entitlement-management-access-package-resources/sharepoint-site-select.png)
 
-1. Нажмите кнопку **Выбрать**.
+1. Щелкните **Выбрать**.
 
 1. В списке **роль** выберите роль сайта SharePoint Online.
 
@@ -180,7 +186,7 @@ Azure AD может автоматически назначать пользов
 
 При удалении члена команды они также удаляются из группы Microsoft 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](/microsoftteams/office-365-groups#group-membership).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../fundamentals/active-directory-groups-create-azure-portal.md)
 - [Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений](../develop/active-directory-enterprise-app-role-management.md)

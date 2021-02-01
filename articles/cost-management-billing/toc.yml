@@ -384,15 +384,15 @@
       href: /rest/api/cost-management
     - name: REST API потребления Azure
       href: /rest/api/consumption
-    - name: Шаблон Resource Manager
+    - name: Использование шаблона бюджета REST API ARM
       href: /azure/templates/microsoft.consumption/budgets
     - name: "Примеры REST\_API службы \"Управление затратами\""
       href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
-    - name: "Управление затратами\_— Azure PowerShell"
+    - name: Командлеты Azure PowerShell для Управления затратами
       href: /powershell/module/Az.CostManagement
     - name: Сценарии автоматизации выставления счетов
       href: manage/cost-management-automation-scenarios.md
-    - name: Общие сведения об API выставления счетов Azure
+    - name: "Розничные цены Azure\_— REST API"
       href: /rest/api/cost-management/retail-prices/azure-retail-prices
     - name: REST API выставления счетов Azure
       href: /rest/api/billing
@@ -400,11 +400,7 @@
       href: manage/consumption-api-overview.md
     - name: REST API потребления Azure
       href: /rest/api/consumption
-    - name: REST API RateCard
-      href: /previous-versions/azure/reference/mt219005(v=azure.100)
-    - name: REST API использования ресурсов
-      href: /previous-versions/azure/reference/mt219003(v=azure.100)
-    - name: Общие сведения о корпоративной отчетности
+    - name: Обзор REST API для корпоративной отчетности
       href: manage/enterprise-api.md
     - name: REST API для корпоративной отчетности
       href: /rest/api/billing/enterprise/billing-enterprise-api-balance-summary
@@ -412,13 +408,13 @@
       items:
         - name: "Резервирования\_— REST API"
           href: reservations/reservation-apis.md?toc=/azure/cost-management-billing/toc.json
-        - name: "Резервирования\_— Azure PowerShell"
+        - name: Командлеты Azure PowerShell для резервирований
           href: /powershell/module/azurerm.reservations
-        - name: "Резервирования\_— CLI"
+        - name: Azure CLI для резервирований
           href: /cli/azure/reservations/reservation
-        - name: "Управление затратами\_— REST API сведений о потреблении"
+        - name: "Сведения об использовании\_— REST API"
           href: /rest/api/consumption/usagedetails
-        - name: "Управление затратами\_— REST API сведений о резервировании"
+        - name: "Сведения о резервированиях\_— REST API"
           href: /rest/api/consumption/reservationsdetails
 - name: Ресурсы
   items:

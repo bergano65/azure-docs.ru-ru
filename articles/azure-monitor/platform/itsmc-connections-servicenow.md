@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 221678da819d32539d0078b72a87c61851ed3e8f
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: cc4f961c399e9ac5e853085106924584eb3935d0
+ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089264"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223395"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>Подключение ServiceNow с Соединитель управления ИТ-услугами
 
@@ -29,10 +29,11 @@ ms.locfileid: "99089264"
 
 ### <a name="oauth-setup"></a>Установка OAuth
 
-Поддерживаемые версии ServiceNow включают в себя Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки и Geneva.
+Поддерживаемые версии ServiceNow включают Париж, Орландо, Нью Йорк, Мадрид, Лондон, Kingston), Джакарта, Стамбул, Хельсинки и Geneva.
 
 Администраторы ServiceNow должны создать идентификатор клиента и секрет клиента для своего экземпляра ServiceNow. При необходимости ознакомьтесь со следующими сведениями.
 
+- [Настройка OAuth для Париж](https://docs.servicenow.com/bundle/paris-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
 - [Настройка OAuth для Орландо](https://docs.servicenow.com/bundle/orlando-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
 - [Настройка OAuth для версии New York](https://docs.servicenow.com/bundle/newyork-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
 - [Настройка OAuth для версии Madrid](https://docs.servicenow.com/bundle/madrid-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)

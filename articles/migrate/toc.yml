@@ -190,6 +190,8 @@
           href: how-to-delete-project.md
         - name: Работа с предыдущей версией службы "Миграция Azure"
           href: migrate-v1.md
+        - name: Управление проектами миграции с помощью Azure Lighthouse
+          href: ../lighthouse/how-to/migration-at-scale.md?toc=/azure/migrate/toc.json&bc=/azure/migrate/breadcrumb/toc.json
 - name: Диагностика
   items:
     - name: Общие сведения
