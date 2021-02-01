@@ -128,3 +128,9 @@
       href: production-readiness.md
     - name: Принципы прозрачного и ответственного использования ИИ
       href: 'https://azure.microsoft.com/resources/transparency-note-live-video-analytics-lva/'
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/updates/?category=media'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/media-services/'
