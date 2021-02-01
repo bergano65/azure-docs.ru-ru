@@ -6,14 +6,14 @@ author: amitbapat
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 02/01/2021
 ms.author: ambapat
-ms.openlocfilehash: 3c727b75e0d1b1e05638617d6e460dade15fc3c5
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 444f279f8e96486bd6ad61a2ea2640a18b491c9c
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413485"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222240"
 ---
 # <a name="import-hsm-protected-keys-to-managed-hsm-byok"></a>Импорт ключей, защищенных с АППАРАТным модулем безопасности, в управляемый HSM (BYOK)
 
@@ -45,7 +45,7 @@ ms.locfileid: "94413485"
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
 * подписка на Microsoft Azure. Если у вас ее нет, зарегистрируйтесь, чтобы воспользоваться [бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial).
-* Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+* Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 * Управляемый модуль HSM — [поддерживаемый список HSM](#supported-hsms) в вашей подписке. См. [Краткое руководство. Подготовка и активация управляемого устройства HSM с помощью Azure CLI](quick-create-cli.md) для выполнения соответствующих действий.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
@@ -68,7 +68,8 @@ az login
 |Marvell|Изготовитель|Все модули HSM LiquidSecurity со<ul><li>встроенным ПО версии 2.0.4 или более поздней</li><li>встроенным ПО версии 3.2 или более новой</li></ul>|[Новое средство BYOK и документация для Marvell](https://www.marvell.com/products/security-solutions/nitrox-hs-adapters/exporting-marvell-hsm-keys-to-cloud-azure-key-vault.html)|
 |Cryptomathic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>nCipher</li><li>Thales</li><li>Utimaco</li></ul>Дополнительные сведения см. на [сайте Cryptomathic](https://www.cryptomathic.com/azurebyok).|[Новое средство BYOK и документация для Cryptomathic](https://www.cryptomathic.com/azurebyok)|
 |Securosys SA|Производитель, HSM как услуга|Семейство Primus HSM, Securosys Clouds HSM|[Новое средство BYOK и документация для Primus](https://www.securosys.com/primus-azure-byok)|
-|стормагик|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Дополнительные [сведения см. на сайте стормагик](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|[Свкмс и Azure Key Vault BYOK](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
+|StorMagic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Дополнительные сведения см. на [сайте StorMagic](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm).|[SvKMS и Azure Key Vault (BYOK)](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
+|IBM|Изготовитель|IBM 476x, Криптоекспресс|[IBM Enterprise Key Management Foundation](https://www.ibm.com/security/key-management/ekmf-bring-your-own-key-azure)|
 ||||
 
 
@@ -90,7 +91,7 @@ az login
 
 ### <a name="step-1-generate-a-kek"></a>Шаг 1. Создание KEK
 
-KEK — это ключ RSA, который создается в управляемом HSM. KEK используется для шифрования ключа, который необходимо импортировать ( *целевого* ключа).
+KEK — это ключ RSA, который создается в управляемом HSM. KEK используется для шифрования ключа, который необходимо импортировать (*целевого* ключа).
 
 Ключ KEK должен:
 - быть ключом RSA-HSM (2048-, 3072- или 4096-разрядным);

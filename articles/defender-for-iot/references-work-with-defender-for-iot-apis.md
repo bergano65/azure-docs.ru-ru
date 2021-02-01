@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/14/2020
 ms.topic: reference
 ms.service: azure
-ms.openlocfilehash: 44ea6e8343203a9cb18947f31f45aa0b023178b0
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 73c5d1f31d9e0651ee710593aa4e1b68fe972560
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624580"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222136"
 ---
 # <a name="defender-for-iot-sensor-and-management-console-apis"></a>API-интерфейсы для датчиков IoT и консоли управления
 
@@ -56,33 +56,31 @@ ms.locfileid: "98624580"
 
 В этом разделе описаны следующие API-интерфейсы датчика:
 
-- /api/v1/devices
+- [Получение сведений об устройстве —/API/V1/Devices](#retrieve-device-information---apiv1devices)
 
-- /api/v1/devices/connections
+- [Получение сведений о подключении устройства —/API/V1/Devices/Connections](#retrieve-device-connection-information---apiv1devicesconnections)
 
-- /api/v1/devices/cves
+- [Получение сведений о CVE-/API/V1/Devices/cves](#retrieve-information-on-cves---apiv1devicescves)
 
-- /api/v1/alerts
+- [Получение сведений о предупреждении —/API/V1/Alerts](#retrieve-alert-information---apiv1alerts)
 
-- /api/v1/events
+- [Получение событий временной шкалы —/API/V1/Events](#retrieve-timeline-events---apiv1events)
 
-- /api/v1/reports/vulnerabilities/devices
+- [Получение сведений об уязвимости —/API/V1/Reports/Vulnerabilities/Devices](#retrieve-vulnerability-information---apiv1reportsvulnerabilitiesdevices)
 
-- /api/v1/reports/vulnerabilities/security
+- [Получение уязвимостей безопасности —/API/V1/Reports/Vulnerabilities/Security](#retrieve-security-vulnerabilities---apiv1reportsvulnerabilitiessecurity)
 
-- /api/v1/reports/vulnerabilities/operational
+- [Получение операционных уязвимостей —/API/V1/Reports/Vulnerabilities/Operational](#retrieve-operational-vulnerabilities---apiv1reportsvulnerabilitiesoperational)
 
-- /апи/екстернал/аусентикатион/валидатион
+- [Проверка учетных данных пользователя —/АПИ/екстернал/аусентикатион/валидатион](#validate-user-credentials---apiexternalauthenticationvalidation)
 
-- /екстернал/аусентикатион/set_password
+- [Изменение пароля —/екстернал/аусентикатион/set_password](#change-password---externalauthenticationset_password)
 
-- /екстернал/аусентикатион/set_password_by_admin
+- [Обновление пароля пользователя по системному администратору —/екстернал/аусентикатион/set_password_by_admin](#user-password-update-by-system-admin---externalauthenticationset_password_by_admin)
 
-### <a name="retrieve-device-information"></a>Получение сведений об устройстве
+### <a name="retrieve-device-information---apiv1devices"></a>Получение сведений об устройстве —/API/V1/Devices
 
 Используйте этот API для запроса списка всех устройств, обнаруженных защитником для центра Интернета вещей.
-
-#### <a name="apiv1devices"></a>/api/v1/devices
 
 #### <a name="method"></a>Метод
 
@@ -110,7 +108,7 @@ ms.locfileid: "98624580"
 
 #### <a name="device-fields"></a>Поля устройства
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **id** | Числовой | Нет | - |
 | **ipAddresses** | Массив JSON | Да | IP-адреса (могут быть более одного адреса в случае адресов Интернета или устройства с двумя сетевыми картами) |
@@ -118,23 +116,23 @@ ms.locfileid: "98624580"
 | **type** | Строка | Нет | Неизвестный, Инженерная станция, ХМИ, historian, контроллер домена, сервер базы данных, точка беспроводного доступа, маршрутизатор, коммутатор, сервер, Рабочая станция, IP-камера, принтер, брандмауэр, станция терминала, шлюз VPN, Интернет или многоадресная рассылка и широковещательная рассылка |
 | **макаддрессес** | Массив JSON | Да | MAC-адреса (могут быть более одного адреса в случае устройства с двумя сетевыми картами) |
 | **operatingSystem** | Строка | Да | - |
-| **енгинирингстатион** | Логическое | Нет | Значение true или false |
-| **вирусов** | Логическое | Нет | Значение true или false |
-| **авторизовано** | Логическое | Нет | Значение true или false |
+| **енгинирингстатион** | Логическое значение | Нет | Значение true или false |
+| **вирусов** | Логическое значение | Нет | Значение true или false |
+| **авторизовано** | Логическое значение | Нет | Значение true или false |
 | **разработчика** | Строка | Да | - |
 | **CHAP** | Массив JSON | Да | Объект протокола |
 | **встроенного по** | Массив JSON | Да | Объект встроенного по |
 
 #### <a name="protocol-fields"></a>Поля протокола
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **Имя** | Строка | Нет |  |
 | **Адреса** | Массив JSON | Да | Основные или числовые значения |
 
 #### <a name="firmware-fields"></a>Поля встроенного по
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **подключение** | Строка | Нет | Н/д или фактическое значение |
 | **model** | Строка | Нет | Н/д или фактическое значение |
@@ -279,11 +277,15 @@ ms.locfileid: "98624580"
 ]
 ```
 
-### <a name="retrieve-device-connection-information"></a>Получение сведений о подключении устройства
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Devices | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https: <span> //127 <span> . 0.0.1/API/V1/Devices? authorizationed = true |
+
+### <a name="retrieve-device-connection-information---apiv1devicesconnections"></a>Получение сведений о подключении устройства —/API/V1/Devices/Connections
 
 Используйте этот API, чтобы запросить список всех подключений для каждого устройства.
-
-#### <a name="apiv1devicesconnections"></a>/api/v1/devices/connections
 
 #### <a name="method"></a>Метод
 
@@ -331,7 +333,7 @@ ms.locfileid: "98624580"
 
 #### <a name="fields"></a>Поля
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| name | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **фирстдевицеид** | Числовой | Нет | - |
 | **секонддевицеид** | Числовой | Нет | - |
@@ -342,7 +344,7 @@ ms.locfileid: "98624580"
 
 #### <a name="protocol-field"></a>Поле протокола
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **name** | Строка | Нет | - |
 | **меню** | Массив строк | Нет | - |
@@ -447,11 +449,17 @@ ms.locfileid: "98624580"
 ]
 ```
 
-### <a name="retrieve-information-on-cves"></a>Получение сведений о CVE
+#### <a name="curl-command"></a>Команда cURL
+
+> [!div class="mx-tdBreakAll"]
+> | Тип | Программные интерфейсы | Пример |
+> |--|--|--|
+> | GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Devices/Connections | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/V1/Devices/Connections |
+> | GET | фигурная-k-H "Авторизация: <AUTH_TOKEN>" "https://<IP_ADDRESS>/API/V1/Devices/ <deviceId> /коннектионс? ластактивеинминутес =&дисковередбефоре =&дисковередафтер =" | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/API/V1/Devices/2/Connections? ластактивеинминутес = 20&дисковередбефоре = 1594550986000&дисковередафтер = 1594550986000" |
+
+### <a name="retrieve-information-on-cves---apiv1devicescves"></a>Получение сведений о CVE-/API/V1/Devices/cves
 
 Этот API используется для запроса списка всех известных CVE, обнаруженных на устройствах в сети.
-
-#### <a name="apiv1devicescves"></a>/api/v1/devices/cves
 
 #### <a name="method"></a>Метод
 
@@ -489,7 +497,7 @@ ms.locfileid: "98624580"
 
 #### <a name="fields"></a>Поля
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| name | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **квеид** | Строка | Нет | - |
 | **IP** | Строка | Нет | IP-адрес |
@@ -557,11 +565,16 @@ ms.locfileid: "98624580"
 ]
 ```
 
-### <a name="retrieve-alert-information"></a>Получение сведений о предупреждении
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Devices/cves | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/V1/Devices/cves |
+| GET | фигурная-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Devices/ <deviceIpAddress> /квес? Top = | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/V1/Devices/10.10.10.15/cves? Top = 50 |
+
+### <a name="retrieve-alert-information---apiv1alerts"></a>Получение сведений о предупреждении —/API/V1/Alerts
 
 Используйте этот API для запроса списка всех предупреждений, обнаруженных защитником для центра Интернета вещей.
-
-#### <a name="apiv1alerts"></a>/api/v1/alerts
 
 #### <a name="method"></a>Метод
 
@@ -603,9 +616,9 @@ ms.locfileid: "98624580"
 
 #### <a name="alert-fields"></a>Поля предупреждений
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
-| **ID** | Числовой | Нет | - |
+| **Идентификатор** | Числовой | Нет | - |
 | **time** | Числовой | Нет | Эпоха (UTC) |
 | **title** | Строка | Нет | - |
 | **message** | Строка | Нет | - |
@@ -617,10 +630,10 @@ ms.locfileid: "98624580"
 
 #### <a name="additional-information-fields"></a>Поля дополнительных сведений
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **description** | Строка | Нет | - |
-| **об** | Массив JSON | нет | Строка |
+| **сведения** | Массив JSON | нет | Строка |
 
 #### <a name="response-example"></a>Пример ответа
 
@@ -685,11 +698,16 @@ ms.locfileid: "98624580"
 
 ```
 
-### <a name="retrieve-timeline-events"></a>Получение событий временной шкалы
+#### <a name="curl-command"></a>Команда cURL
+
+> [!div class="mx-tdBreakAll"]
+> | Тип | Программные интерфейсы | Пример |
+> |--|--|--|
+> | GET | фигурная-k-H "Авторизация: <AUTH_TOKEN>" "https://<IP_ADDRESS>/API/V1/Alerts? State =&Фромтиме =&Тотиме =&Type =" | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/API/V1/Alerts? State = необработанные&фромтиме = 1594550986000&тотиме = 1594550986001&Type = отсоединений" |
+
+### <a name="retrieve-timeline-events---apiv1events"></a>Получение событий временной шкалы —/API/V1/Events
 
 Этот API используется для запроса списка событий, передаваемых на временную шкалу событий.
-
-#### <a name="apiv1events"></a>/api/v1/events
 
 #### <a name="method"></a>Метод
 
@@ -721,7 +739,7 @@ ms.locfileid: "98624580"
 
 #### <a name="event-fields"></a>Поля событий
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|--|
 | **timestamp** | Числовой | Нет | Эпоха (UTC) |
 | **title** | Строка | Нет | - |
@@ -802,11 +820,15 @@ ms.locfileid: "98624580"
 
 ```
 
-### <a name="retrieve-vulnerability-information"></a>Получение сведений об уязвимости
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурная-k-H "Авторизация: <AUTH_TOKEN>" "https://<IP_ADDRESS>/API/V1/Events? Минутестимефраме =&Type =" | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/API/V1/Events? минутестимефраме = 20&Type = DEVICE_CONNECTION_CREATED" |
+
+### <a name="retrieve-vulnerability-information---apiv1reportsvulnerabilitiesdevices"></a>Получение сведений об уязвимости —/API/V1/Reports/Vulnerabilities/Devices
 
 Используйте этот API для запроса результатов оценки уязвимостей для каждого устройства.
-
-#### <a name="apiv1reportsvulnerabilitiesdevices"></a>/api/v1/reports/vulnerabilities/devices
 
 #### <a name="method"></a>Метод
 
@@ -830,7 +852,7 @@ ms.locfileid: "98624580"
 
 #### <a name="device-fields"></a>Поля устройства
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **name** | Строка | Нет | - |
 | **ipAddresses** | Массив JSON | Нет | - |
@@ -838,13 +860,13 @@ ms.locfileid: "98624580"
 | **разработчика** | Строка | Да |  |
 | **FirmwareVersion** | Строка | Да | - |
 | **model** | Строка | Да | - |
-| **исвирелессакцесспоинт** | Логическое | Нет | Значение true или false |
+| **исвирелессакцесспоинт** | Логическое значение | Нет | Значение true или false |
 | **operatingSystem** | Объект операционной системы | Да | - |
 | **делают** | Объект уязвимостей | Да | - |
 
 #### <a name="operating-system-fields"></a>Поля операционной системы
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **Имя** | Строка | Да | - |
 | **Тип** | Строка | Да | - |
@@ -853,23 +875,23 @@ ms.locfileid: "98624580"
 
 #### <a name="vulnerabilities-fields"></a>Поля уязвимостей
  
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **антивирусные программы** | Массив JSON | Да | Имена антивирусных программ |
 | **плаинтекстпассвордс** | Массив JSON | Да | Объекты пароля |
 | **Доступа** | Массив JSON | Да | Объекты удаленного доступа |
-| **исбаккупсервер** | Логическое | Нет | Значение true или false |
+| **исбаккупсервер** | Логическое значение | Нет | Значение true или false |
 | **опенедпортс** | Массив JSON | Да | Открытые объекты порта |
-| **исенгинирингстатион** | Логическое | Нет | Значение true или false |
-| **искновнсканнер** | Логическое | Нет | Значение true или false |
+| **исенгинирингстатион** | Логическое значение | Нет | Значение true или false |
+| **искновнсканнер** | Логическое значение | Нет | Значение true или false |
 | **CVE** | Массив JSON | Да | CVE объектов |
-| **не санкционировано** | Логическое | Нет | Значение true или false |
-| **малвареиндикатионсдетектед** | Логическое | Нет | Значение true или false |
+| **не санкционировано** | Логическое значение | Нет | Значение true или false |
+| **малвареиндикатионсдетектед** | Логическое значение | Нет | Значение true или false |
 | **веакаусентикатион** | Массив JSON | Да | Обнаруженные приложения, использующие слабую проверку подлинности |
 
 #### <a name="password-fields"></a>Поля пароля
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **password** | Строка | Нет | - |
 | **protocol** | Строка | Нет | - |
@@ -877,7 +899,7 @@ ms.locfileid: "98624580"
 
 #### <a name="remote-access-fields"></a>Поля удаленного доступа
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **port** | Числовой | Нет | - |
 | **перемещения** | Строка | Нет | TCP или UDP |
@@ -886,18 +908,18 @@ ms.locfileid: "98624580"
 
 #### <a name="open-port-fields"></a>Открыть поля порта
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **port** | Числовой | Нет | - |
 | **перемещения** | Строка | Нет | TCP или UDP |
 | **protocol** | Строка | Да | - |
-| **исконфликтингвисфиревалл** | Логическое | Нет | Значение true или false |
+| **исконфликтингвисфиревалл** | Логическое значение | Нет | Значение true или false |
 
 #### <a name="cve-fields"></a>CVE Fields
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
-| **ID** | Строка | Нет | - |
+| **Идентификатор** | Строка | Нет | - |
 | **понять** | Числовой | Нет | Double |
 | **description** | Строка | Нет | - |
 
@@ -1052,13 +1074,17 @@ ms.locfileid: "98624580"
 
 ```
 
-### <a name="retrieve-security-vulnerabilities"></a>Получение уязвимостей системы безопасности
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Reports/Vulnerabilities/Devices | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/V1/Reports/Vulnerabilities/Devices |
+
+### <a name="retrieve-security-vulnerabilities---apiv1reportsvulnerabilitiessecurity"></a>Получение уязвимостей безопасности —/API/V1/Reports/Vulnerabilities/Security
 
 Используйте этот API для запроса результатов общей оценки уязвимостей. Эта оценка позволяет понять уровень безопасности системы.
 
 Эта оценка основана на общих сетевых и системных данных, а не на оценке конкретных устройств.
-
-#### <a name="apiv1reportsvulnerabilitiessecurity"></a>/api/v1/reports/vulnerabilities/security
 
 #### <a name="method"></a>Метод
 
@@ -1133,7 +1159,7 @@ ms.locfileid: "98624580"
 | Имя поля | Тип | Список значений |
 | ---------- | ---- | -------------- |
 | **интерналаддресс** | Строка | IP-адрес |
-| **авторизовано** | Логическое | "Да" или "Нет". | 
+| **авторизовано** | Логическое значение | "Да" или "Нет". | 
 | **екстерналаддрессес** | Массив JSON | IP-адрес |
 
 #### <a name="response-example"></a>Пример ответа
@@ -1295,11 +1321,15 @@ ms.locfileid: "98624580"
 
 ```
 
-### <a name="retrieve-operational-vulnerabilities"></a>Получение операционных уязвимостей
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Reports/Vulnerabilities/Security | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/V1/Reports/Vulnerabilities/Security |
+
+### <a name="retrieve-operational-vulnerabilities---apiv1reportsvulnerabilitiesoperational"></a>Получение операционных уязвимостей —/API/V1/Reports/Vulnerabilities/Operational
 
 Используйте этот API для запроса результатов общей оценки уязвимостей. Эта оценка позволяет понять операционное состояние сети. Он основан на общей сетевой и системной информации, а не на оценке конкретного устройства.
-
-#### <a name="apiv1reportsvulnerabilitiesoperational"></a>/api/v1/reports/vulnerabilities/operational
 
 #### <a name="method"></a>Метод
 
@@ -1488,13 +1518,17 @@ ms.locfileid: "98624580"
 
 ```
 
-### <a name="validate-user-credentials"></a>Проверка учетных данных пользователя
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/API/V1/Reports/Vulnerabilities/Operational | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/V1/Reports/Vulnerabilities/Operational |
+
+### <a name="validate-user-credentials---apiexternalauthenticationvalidation"></a>Проверка учетных данных пользователя —/АПИ/екстернал/аусентикатион/валидатион
 
 Используйте этот API для проверки имени пользователя и пароля IoT в защитнике. С API можно работать все роли пользователей в защитнике IoT.
 
 Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
-
-#### <a name="apiexternalauthenticationvalidation"></a>/апи/екстернал/аусентикатион/валидатион
 
 #### <a name="method"></a>Метод
 
@@ -1551,11 +1585,15 @@ response:
 
 ```
 
-### <a name="change-password"></a>Изменить пароль
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурный-k-H "Авторизация: <AUTH_TOKEN>" https://<IP_ADDRESS>/АПИ/екстернал/аусентикатион/валидатион | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/API/External/Authentication/Validation |
+
+### <a name="change-password---externalauthenticationset_password"></a>Изменение пароля —/екстернал/аусентикатион/set_password
 
 Используйте этот API, чтобы позволить пользователям изменять свои пароли. С API можно работать все роли пользователей в защитнике IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
-
-#### <a name="externalauthenticationset_password"></a>/екстернал/аусентикатион/set_password
 
 #### <a name="method"></a>Метод
 
@@ -1621,11 +1659,15 @@ response:
 | **password** | Строка | Нет |
 | **new_password** | Строка | Нет |
 
-### <a name="user-password-update-by-system-admin"></a>Обновление пароля пользователя администратором системы
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| POST | фигурная-k-d "{" имя_пользователя ":" <USER_NAME> "," пароль ":" <CURRENT_PASSWORD> "," new_password ":" <NEW_PASSWORD> "}"-H "Content-Type: Application/JSON" https://<IP_ADDRESS>/АПИ/екстернал/аусентикатион/set_password | фигурная-k-d "{" имя_пользователя ":" myUser "," Password ":" 1234@abcd "," new_password ":" abcd@1234 "}"-H "тип содержимого: Application/JSON" https:/ <span> /127.0.0.1/API/External/Authentication/set_password |
+
+### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Обновление пароля пользователя по системному администратору —/екстернал/аусентикатион/set_password_by_admin
 
 Используйте этот API, чтобы позволить системным администраторам изменять пароли для указанных пользователей. С API могут работать защитник для ролей пользователей с правами администратора IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
-
-#### <a name="externalauthenticationset_password_by_admin"></a>/екстернал/аусентикатион/set_password_by_admin
 
 #### <a name="method"></a>Метод
 
@@ -1697,6 +1739,13 @@ response:
 | **username** | Строка | Нет |
 | **new_password** | Строка | Нет |
 
+#### <a name="curl-command"></a>Команда cURL
+
+> [!div class="mx-tdBreakAll"]
+> | Тип | Программные интерфейсы | Пример |
+> |--|--|--|
+> | POST | фигурная скобка-d "{" admin_username ":" <ADMIN_USERNAME> "," admin_password ":" <ADMIN_PASSWORD> "," Username ":" <user_name> "," new_password ":" <NEW_PASSWORD> "}"-H "тип содержимого: Application/JSON" https://<IP_ADDRESS>/АПИ/екстернал/аусентикатион/set_password_by_admin | фигурная-k-d "{" admin_user ":" adminUser "," admin_password ":" 1234@abcd "," Username ":" myuser "," new_password ":" abcd@1234 "}"-H "тип содержимого: Application/JSON" https:/ <span> /127.0.0.1/API/External/Authentication/set_password_by_admin |
+
 ## <a name="on-premises-management-console-api-specifications"></a>Спецификации API локальной консоли управления
 
 В этом разделе описаны следующие API-интерфейсы локальной консоли управления:
@@ -1726,23 +1775,17 @@ response:
 
 ```
 
-#### <a name="change-password"></a>Изменить пароль
+#### <a name="change-password---externalauthenticationset_password"></a>Изменение пароля —/екстернал/аусентикатион/set_password
 
 Используйте этот API, чтобы позволить пользователям изменять свои пароли. С API можно работать все роли пользователей в защитнике IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
 
-- **/екстернал/аусентикатион/set_password**
-
-#### <a name="user-password-update-by-system-admin"></a>Обновление пароля пользователя администратором системы
+#### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Обновление пароля пользователя по системному администратору —/екстернал/аусентикатион/set_password_by_admin
 
 Используйте этот API, чтобы позволить системным администраторам изменять пароли для конкретных пользователей. С API может работать защитник для ролей пользователей с правами администратора IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
 
-- **/екстернал/аусентикатион/set_password_by_admin**
-
-### <a name="retrieve-device-information"></a>Получение сведений об устройстве
+### <a name="retrieve-device-information---externalv1devices"></a>Получение сведений об устройстве —/External/v1/Devices
 
 Этот API запрашивает список всех устройств, обнаруженных защитником для датчиков Интернета вещей, подключенных к локальной консоли управления.
-
-- **/external/v1/devices**
 
 #### <a name="method"></a>Метод
 
@@ -1782,7 +1825,7 @@ response:
 
 #### <a name="device-fields"></a>Поля устройства
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **sensorId** | Числовой | Нет | - |
 | **КодЗоны** | Числовой | Да | - |
@@ -1792,23 +1835,23 @@ response:
 | **type** | Строка | Нет | Неизвестный, Инженерная станция, ХМИ, historian, контроллер домена, сервер базы данных, точка беспроводного доступа, маршрутизатор, коммутатор, сервер, Рабочая станция, IP-камера, принтер, брандмауэр, станция терминала, шлюз VPN, Интернет или многоадресная рассылка и широковещательная рассылка |
 | **макаддрессес** | Массив JSON | Да | MAC-адреса (могут быть более одного адреса в случае устройства с двумя сетевыми картами) |
 | **operatingSystem** | Строка | Да | - |
-| **енгинирингстатион** | Логическое | Нет | Значение true или false |
-| **вирусов** | Логическое | Нет | Значение true или false |
-| **авторизовано** | Логическое | Нет | Значение true или false |
+| **енгинирингстатион** | Логическое значение | Нет | Значение true или false |
+| **вирусов** | Логическое значение | Нет | Значение true или false |
+| **авторизовано** | Логическое значение | Нет | Значение true или false |
 | **разработчика** | Строка | Да | - |
 | **Протоколы** | Массив JSON | Да | Объект протокола |
 | **встроенного по** | Массив JSON | Да | Объект встроенного по |
 
 #### <a name="protocol-fields"></a>Поля протокола
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | name | Строка | Нет | - |
 | Адреса | Массив JSON | Да | Основные или числовые значения |
 
 #### <a name="firmware-fields"></a>Поля встроенного по
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **подключение** | Строка | Нет | Н/д или фактическое значение |
 | **model** | Строка | Нет | Н/д или фактическое значение |
@@ -1959,11 +2002,15 @@ response:
 ]
 ```
 
-### <a name="retrieve-alert-information"></a>Получение сведений о предупреждении
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| GET | фигурная-k-H "Авторизация: <AUTH_TOKEN>" "https://<>IP_ADDRESS>/External/v1/Devices? идентификатор сайта =&КодЗоны =&Сенсорид =&авторизованный =" | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/External/v1/Devices? код сайта = 1&КодЗоны = 2&сенсорид = 5&авторизованный = true" |
+
+### <a name="retrieve-alert-information---externalv1alerts"></a>Получение сведений о предупреждении —/External/v1/Alerts
 
 Этот API используется для получения всех или отфильтрованных предупреждений из локальной консоли управления.
-
-#### <a name="externalv1alerts"></a>/external/v1/alerts
 
 #### <a name="method"></a>Метод
 
@@ -1999,9 +2046,9 @@ response:
 
 #### <a name="alert-fields"></a>Поля предупреждений
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
-| **ID** | Числовой | Нет | - |
+| **Идентификатор** | Числовой | Нет | - |
 | **time** | Числовой | Нет | Эпоха (UTC) |
 | **title** | Строка | Нет | - |
 | **message** | Строка | Нет | - |
@@ -2013,10 +2060,10 @@ response:
 
 #### <a name="additional-information-fields"></a>Поля дополнительных сведений
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **description** | Строка | Нет | - |
-| **об** | Массив JSON | нет | Строка |
+| **сведения** | Массив JSON | нет | Строка |
 
 #### <a name="response-example"></a>Пример ответа
 
@@ -2116,6 +2163,13 @@ response:
 ]
 ```
 
+#### <a name="curl-command"></a>Команда cURL
+
+> [!div class="mx-tdBreakAll"]
+> | Тип | Программные интерфейсы | Пример |
+> |--|--|--|
+> | GET | Парный-k-H "Авторизация: <AUTH_TOKEN>" "https://<>IP_ADDRESS>/External/v1/Alerts? State =&КодЗоны =&Фромтиме =&Тотиме =&идентификатор сайта =&датчика =" | изогнутый-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/External/v1/Alerts? State = необработанные&КодЗоны = 1&фромтиме = 0&тотиме = 1594551777000&ИД сайта = 1&датчика = 1" |
+
 ### <a name="qradar-alerts"></a>QRadar оповещения
 
 Интеграция QRadar с защитником для Интернета вещей помогает находить предупреждения, созданные защитником для Интернета вещей, и выполнять действия с этими предупреждениями. QRadar получает данные от защитника для Интернета вещей, а затем обращается к компоненту локальной консоли управления API.
@@ -2154,7 +2208,7 @@ response:
 
 #### <a name="action-fields"></a>Поля действий
 
-| Имя | Тип | Допускает значения NULL | Список значений |
+| Название | Тип | Допускает значения NULL | Список значений |
 |--|--|--|--|
 | **action** | Строка | Нет | Handle или Хандлеандлеарн |
 
@@ -2178,7 +2232,7 @@ response:
 #### <a name="response-fields"></a>Поля ответа
 
 
-| Имя | Тип | Допускает значения NULL | Описание |
+| Название | Тип | Допускает значения NULL | Описание |
 |--|--|--|--|
 | **содержимое/ошибка** | Строка | Нет | Если запрос выполнен успешно, отображается свойство Content. В противном случае отображается свойство Error. |
 
@@ -2213,15 +2267,19 @@ response:
 }
 ```
 
-### <a name="alert-exclusions-maintenance-window"></a>Исключения оповещений (период обслуживания)
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| PUT | фигурная-k-X размещение-d "{" Action ":" <ACTION> "} '-H" Авторизация: <AUTH_TOKEN> "https://<IP_ADDRESS>/External/v1/Alerts/<UUID> | фигурная-k-X размещение-d "{" Action ":" Handle "} '-H" Авторизация: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/External/v1/Alerts/1-1594550943000 |
+
+### <a name="alert-exclusions-maintenance-window---externalv1maintenancewindow"></a>Исключения оповещений (период обслуживания) —/external/v1/maintenanceWindow
 
 Определите условия, при которых оповещения не будут отправляться. Например, определите и обновите время окончания и начала работы, устройства или подсети, которые должны быть исключены при активации оповещений, или защитник для механизмов Интернета вещей, которые следует исключить. Например, в течение периода обслуживания может потребоваться отключить доставку предупреждений для всех предупреждений, за исключением оповещений о вредоносных программах на критических устройствах.
 
 Интерфейсы API, которые вы определяете здесь, отображаются в окне **исключения предупреждений** локальной консоли управления как правило исключения только для чтения.
 
 :::image type="content" source="media/references-work-with-defender-for-iot-apis/alert-exclusion-window.png" alt-text="В окне исключения предупреждений отображается список всех правил исключения. ":::
-
-#### <a name="externalv1maintenancewindow"></a>/external/v1/maintenanceWindow
 
 #### <a name="method---post"></a>Метод — POST
 
@@ -2356,7 +2414,7 @@ response:
 
 #### <a name="response-structure"></a>Структура ответа
 
-| Имя | Тип | Комментировать | Допускает значения NULL |
+| Название | Тип | Комментировать | Допускает значения NULL |
 |--|--|--|--|
 | **dateTime** | Строка | Пример: "2012-04-23T18:25:43.511 Z" | нет |
 | **тиккетид** | Строка | Пример: "9a5fe99c-D914-4bda-9332-307384fe40bf" | нет |
@@ -2367,11 +2425,18 @@ response:
 | **ttl** | Числовой | - | да |
 | **operationType** | Строка | Значения: "OPEN", "UPDATE" и "CLOSE" | нет |
 
-### <a name="authenticate-user-credentials"></a>Проверка подлинности учетных данных пользователя
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| POST | фигурная-k-X после-d "{" Тиккетид ":" <TICKET_ID> ", TTL": <TIME_TO_LIVE>, "Engines": [<ENGINE1, ENGINE2... Енгинен>], "Сенсоридс": [<SENSOR_ID1, SENSOR_ID2... SENSOR_IDn>], "подсети": [<SUBNET1, подсети 2... Субнетн>]} '-H ' авторизация: <AUTH_TOKEN> "https:/ <span> /127.0.0.1/External/v1/maintenanceWindow | фигурная-k-X после-d "{" Тиккетид ":" a5fe99c-D914-4bda-9332-307384fe40bf "," TTL ":" 20 "," Engines ": [" АНОМАЛИя "]," Сенсоридс ": [" 5 "," 3 "]," подсети ": [" 10.0.0.3 "]}"-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/External/v1/maintenanceWindow |
+| PUT | фигурная-k-X размещение-d "{" Тиккетид ":" <TICKET_ID> ", TTL": "<TIME_TO_LIVE>"} "-H" Authorization: <AUTH_TOKEN> "https:/ <span> /127.0.0.1/External/v1/maintenanceWindow | -k-X размещение-d "{" Тиккетид ":" a5fe99c-D914-4bda-9332-307384fe40bf "," TTL ":" 20 "}"-H "Authorization: 1234b734a9244d54ab8d40aedddcabcd" https:/ <span> /127.0.0.1/External/v1/maintenanceWindow |
+| DELETE | прилистывание-k-X удаление-d "{" Тиккетид ":" <TICKET_ID> "}"-H "Authorization: <AUTH_TOKEN>" https:/ <span> /127.0.0.1/External/v1/maintenanceWindow | фигурный-k-X удаление-d "{" Тиккетид ":" a5fe99c-D914-4bda-9332-307384fe40bf "} '-H" Authorization: 1234b734a9244d54ab8d40aedddcabcd "https:/ <span> /127.0.0.1/External/v1/maintenanceWindow |
+| GET | фигурная-k-H "Авторизация: <AUTH_TOKEN>" "https://<IP_ADDRESS>/external/v1/maintenanceWindow? fromDate =&toDate =&Тиккетид =&tokenName =" | фигурная-k-H "Авторизация: 1234b734a9244d54ab8d40aedddcabcd" "https:/ <span> /127.0.0.1/External/v1/maintenanceWindow? fromDate = 2020-01-01&toDate = 2020-07-14&тиккетид = a5fe99c-D914-4bda-9332-307384fe40bf&tokenName = a" |
+
+### <a name="authenticate-user-credentials---externalauthenticationvalidation"></a>Проверка подлинности учетных данных пользователя —/екстернал/аусентикатион/валидатион
 
 Используйте этот API для проверки учетных данных пользователя. С API можно работать все роли пользователей в защитнике IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
-
-#### <a name="externalauthenticationvalidation"></a>/екстернал/аусентикатион/валидатион
 
 #### <a name="method"></a>Метод
 
@@ -2426,11 +2491,15 @@ response:
 }
 ```
 
-### <a name="change-password"></a>Изменить пароль
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| POST | фигурная-k-d "{" имя_пользователя ":" <USER_NAME> "," Password ":" пароль "}" ' https://<IP_ADDRESS>/екстернал/аусентикатион/валидатион " | фигурная-k-d "{" имя_пользователя ":" myUser "," Password ":" 1234@abcd "}" "https:/ <span> /127.0.0.1/External/Authentication/Validation" |
+
+### <a name="change-password---externalauthenticationset_password"></a>Изменение пароля —/екстернал/аусентикатион/set_password
 
 Используйте этот API, чтобы позволить пользователям изменять свои пароли. С API можно работать все роли пользователей в защитнике IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
-
-#### <a name="externalauthenticationset_password"></a>/екстернал/аусентикатион/set_password
 
 #### <a name="method"></a>Метод
 
@@ -2496,11 +2565,15 @@ response:
 | **password** | Строка | Нет |
 | **new_password** | Строка | Нет |
 
-### <a name="user-password-update-by-system-admin"></a>Обновление пароля пользователя администратором системы
+#### <a name="curl-command"></a>Команда cURL
+
+| Тип | Программные интерфейсы | Пример |
+|--|--|--|
+| POST | фигурная-k-d "{" имя_пользователя ":" <USER_NAME> "," пароль ":" <CURRENT_PASSWORD> "," new_password ":" <NEW_PASSWORD> "}"-H "Content-Type: Application/JSON" https://<IP_ADDRESS>/екстернал/аусентикатион/set_password | фигурная-k-d "{" имя_пользователя ":" myUser "," Password ":" 1234@abcd "," new_password ":" abcd@1234 "}"-H "тип содержимого: Application/JSON" https:/ <span> /127.0.0.1/External/Authentication/set_password |
+
+### <a name="user-password-update-by-system-admin---externalauthenticationset_password_by_admin"></a>Обновление пароля пользователя по системному администратору —/екстернал/аусентикатион/set_password_by_admin
 
 Используйте этот API, чтобы позволить системным администраторам изменять пароли для указанных пользователей. С API может работать защитник для ролей пользователей с правами администратора IoT. Для использования этого API нет необходимости в защитнике для маркера доступа IoT.
-
-#### <a name="externalauthenticationset_password_by_admin"></a>/екстернал/аусентикатион/set_password_by_admin
 
 #### <a name="method"></a>Метод
 
@@ -2572,6 +2645,15 @@ response:
 | **username** | Строка | Нет |
 | **new_password** | Строка | Нет |
 
-## <a name="see-also"></a>См. также раздел
-[Изучение обнаружений датчиков в инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md) 
- [Исследование всех обнаружений датчиков предприятия в инвентаризации устройств](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
+#### <a name="curl-command"></a>Команда cURL
+
+> [!div class="mx-tdBreakAll"]
+> | Тип | Программные интерфейсы | Пример |
+> |--|--|--|
+> | POST | фигурная скобка-d "{" admin_username ":" <ADMIN_USERNAME> "," admin_password ":" <ADMIN_PASSWORD> "," Username ":" <user_name> "," new_password ":" <NEW_PASSWORD> "}"-H "тип содержимого: Application/JSON" https://<IP_ADDRESS>/екстернал/аусентикатион/set_password_by_admin | фигурная-k-d "{" admin_user ":" adminUser "," admin_password ":" 1234@abcd "," Username ":" myuser "," new_password ":" abcd@1234 "}"-H "тип содержимого: Application/JSON" https:/ <span> /127.0.0.1/External/Authentication/set_password_by_admin |
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Изучение обнаруженных датчиков в данных инвентаризации устройств](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+
+- [Изучение всех обнаруженных датчиков предприятия в данных инвентаризации устройств](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)

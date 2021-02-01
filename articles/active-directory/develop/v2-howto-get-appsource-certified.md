@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 3dfeca64804ceb522046e5c0dc10702575f60aad
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: d366664981894933f9afb177e9147ccae6695872
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054591"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222172"
 ---
 # <a name="get-appsource-certified-for-azure-active-directory"></a>Получить сертификат AppSource для Azure Active Directory
 
@@ -106,7 +106,7 @@ ms.locfileid: "99054591"
 
 Для интеграции Azure AD мы используем [Microsoft Q&A](https://docs.microsoft.com/answers/topics/azure-active-directory.html) с сообществом для предоставления поддержки.
 
-Мы настоятельно рекомендуем задать свои вопросы в Microsoft Q&и просмотреть существующие проблемы, чтобы узнать, не запрашивал ли пользователь вопрос. Убедитесь, что ваши вопросы или комментарии помечены как [`[azure-active-directory]`](https://docs.microsoft.com/answers/topics/azure-active-directory.html) .
+Мы настоятельно рекомендуем задать свои вопросы в [Microsoft Q&](https://docs.microsoft.com/answers/topics/azure-active-directory.html) и просмотреть существующие проблемы, чтобы узнать, не запрашивал ли пользователь вопрос. Убедитесь, что ваши вопросы или комментарии помечены как [`[azure-active-directory]`](https://docs.microsoft.com/answers/topics/azure-active-directory.html) .
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 

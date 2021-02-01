@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: dfa562be4561e8aaec66d4bff51aadeba77cf35f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: ce0808bc53ae663b80da793bf33b5b371d881961
+ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131344"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99222189"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Защита рабочих нагрузок Kubernetes
 
@@ -21,7 +21,7 @@ ms.locfileid: "98131344"
 
 Дополнительные сведения об этих функциях см. в статье [рекомендации по защите рабочих нагрузок с помощью управления допуском Kubernetes](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
 
-Центр безопасности предлагает больше функций безопасности контейнеров, если вы включаете защитник Azure. В частности:
+Центр безопасности предлагает больше функций безопасности контейнеров, если вы включаете защитник Azure. В частности, внесены следующие изменения.
 
 - Проверка реестров контейнеров на наличие уязвимостей с помощью [защитника Azure для реестров контейнеров](defender-for-container-registries-introduction.md)
 - Получение оповещений об обнаружении угроз в реальном времени для вашего кластера K8s в [защитнике Azure для Kubernetes](defender-for-kubernetes-introduction.md)
@@ -102,7 +102,7 @@ ms.locfileid: "98131344"
     1. Выберите "ASC Default".
     1. Откройте вкладку **Параметры** и при необходимости измените значения.
     1. Выберите **Проверить и сохранить**.
-    1. Выберите **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
 
 
 1. Чтобы применить любые рекомендации, 
