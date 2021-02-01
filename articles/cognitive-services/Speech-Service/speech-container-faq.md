@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/12/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 85534d1f64b273e42a2ea063e67286ee7bb4a90a
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: 59429358469e4c236755f37b9c992439472d9aa7
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827161"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226327"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о контейнерах речевых служб
 
@@ -399,25 +399,25 @@ https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/6805d96bf69d
 
 # <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
-| Контейнер      | Минимальные             | Рекомендуется         |
+| Контейнер      | Минимальные             | Рекомендуемая         |
 |----------------|---------------------|---------------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
 # <a name="custom-speech-to-text"></a>[пользовательское преобразование речи в текст;](#tab/cstt)
 
-| Контейнер             | Минимальные             | Рекомендуется         |
+| Контейнер             | Минимальные             | Рекомендуемая         |
 |-----------------------|---------------------|---------------------|
 | пользовательское преобразование речи в текст; | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
 # <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
-| Контейнер      | Минимальные             | Рекомендуется         |
+| Контейнер      | Минимальные             | Рекомендуемая         |
 |----------------|---------------------|---------------------|
 | Преобразование текста в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
 # <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
-| Контейнер             | Минимальные             | Рекомендуется         |
+| Контейнер             | Минимальные             | Рекомендуемая         |
 |-----------------------|---------------------|---------------------|
 | Пользовательский текст в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
@@ -577,10 +577,10 @@ auto result = synthesizer->SpeakTextAsync("{{{text2}}}").get();
 ### <a name="fromendpoint-apis"></a>`FromEndpoint` Интерфейсы
 | Язык | Сведения об API |
 |----------|:------------|
-| C++ | <a href="https://docs.microsoft.com/en-us/cpp/cognitive-services/speech/speechconfig#fromendpoint" target="_blank">`SpeechConfig::FromEndpoint` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
+| C++ | <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#fromendpoint" target="_blank">`SpeechConfig::FromEndpoint` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | C# | <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.fromendpoint?view=azure-dotnet" target="_blank">`SpeechConfig.FromEndpoint` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | Java | <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.fromendpoint" target="_blank">`SpeechConfig.fromendpoint` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
-| Objective-C | <a href="https://docs.microsoft.com/en-us/objectivec/cognitive-services/speech/spxspeechconfiguration#initwithendpoint" target="_blank">`SPXSpeechConfiguration:initWithEndpoint;` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
+| Objective-C | <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#initwithendpoint" target="_blank">`SPXSpeechConfiguration:initWithEndpoint;` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | Python | <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python" target="_blank">`SpeechConfig;` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | JavaScript | В настоящее время не поддерживается и не планируется. |
 
@@ -599,9 +599,9 @@ auto result = synthesizer->SpeakTextAsync("{{{text2}}}").get();
 | Язык | Сведения об API |
 |--|:-|
 | C# | <a href="https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.fromhost?view=azure-dotnet" target="_blank">`SpeechConfig.FromHost` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
-| C++ | <a href="https://docs.microsoft.com/en-us/cpp/cognitive-services/speech/speechconfig#fromhost" target="_blank">`SpeechConfig::FromHost` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
+| C++ | <a href="https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#fromhost" target="_blank">`SpeechConfig::FromHost` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | Java | <a href="https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.fromhost" target="_blank">`SpeechConfig.fromHost` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
-| Objective-C | <a href="https://docs.microsoft.com/en-us/objectivec/cognitive-services/speech/spxspeechconfiguration#initwithhost" target="_blank">`SPXSpeechConfiguration:initWithHost;` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
+| Objective-C | <a href="https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#initwithhost" target="_blank">`SPXSpeechConfiguration:initWithHost;` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | Python | <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python" target="_blank">`SpeechConfig;` <span class="docon docon-navigate-external x-hidden-focus"></span></a> |
 | JavaScript | Сейчас не поддерживается |
 

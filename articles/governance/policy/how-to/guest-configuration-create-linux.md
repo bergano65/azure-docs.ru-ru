@@ -4,12 +4,12 @@ description: Узнайте, как создать политику гостев
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 38579bb43f012cac2b373bbbbb6ad757604f4c07
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 9d9a66ddad5bd3511d5372f62558af35cfcb5616
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070695"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226613"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Создание политик гостевой конфигурации для Windows
 
@@ -291,6 +291,27 @@ describe file(attr_path) do
 end
 ```
 
+Добавьте в конфигурацию свойство **аттрибутесимлконтент** с любой строкой в качестве значения.
+Агент гостевой конфигурации автоматически создает файл YAML, используемый InSpec для хранения атрибутов. См. пример ниже.
+
+```powershell
+Configuration AuditFilePathExists
+{
+    Import-DscResource -ModuleName 'GuestConfiguration'
+
+    Node AuditFilePathExists
+    {
+        ChefInSpecResource 'Audit Linux path exists'
+        {
+            Name = 'linux-path'
+            AttributesYmlContent = "fromParameter"
+        }
+    }
+}
+```
+
+Перескомпилируйте MOF-файл, используя примеры, приведенные в этом документе.
+
 Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` включают параметр с именем **Parameter**. Этот параметр принимает хэш-таблицу, содержащую все сведения о каждом параметре, и автоматически создает все необходимые разделы файлов, используемых для создания каждого определения Политики Azure.
 
 В следующем примере создается определение политики для аудита пути к файлу, где пользователь предоставляет путь во время назначения политики.
@@ -300,10 +321,10 @@ $PolicyParameterInfo = @(
     @{
         Name = 'FilePath'                             # Policy parameter name (mandatory)
         DisplayName = 'File path.'                    # Policy parameter display name (mandatory)
-        Description = "File path to be audited."      # Policy parameter description (optional)
-        ResourceType = "ChefInSpecResource"           # Configuration resource type (mandatory)
+        Description = 'File path to be audited.'      # Policy parameter description (optional)
+        ResourceType = 'ChefInSpecResource'           # Configuration resource type (mandatory)
         ResourceId = 'Audit Linux path exists'        # Configuration resource property name (mandatory)
-        ResourcePropertyName = "AttributesYmlContent" # Configuration resource property name (mandatory)
+        ResourcePropertyName = 'AttributesYmlContent' # Configuration resource property name (mandatory)
         DefaultValue = '/tmp'                         # Policy parameter default value (optional)
     }
 )
@@ -316,26 +337,10 @@ New-GuestConfigurationPolicy
     -Description 'Audit that a file path exists on a Linux machine.' `
     -Path './policies' `
     -Parameter $PolicyParameterInfo `
+    -Platform 'Linux' `
     -Version 1.0.0
 ```
 
-Для политик Linux Включите свойство **AttributesYmlContent** в конфигурацию и при необходимости перезапишите значения. Агент гостевой конфигурации автоматически создает файл YAML, используемый InSpec для хранения атрибутов. См. пример ниже.
-
-```powershell
-Configuration AuditFilePathExists
-{
-    Import-DscResource -ModuleName 'GuestConfiguration'
-
-    Node AuditFilePathExists
-    {
-        ChefInSpecResource 'Audit Linux path exists'
-        {
-            Name = 'linux-path'
-            AttributesYmlContent = "path: /tmp"
-        }
-    }
-}
-```
 
 ## <a name="policy-lifecycle"></a>Жизненный цикл политики
 

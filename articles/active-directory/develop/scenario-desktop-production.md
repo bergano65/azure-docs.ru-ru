@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 05b93848bff66adc49d2855ee98fff6c9b7a2d3d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: ddd676a1e0b3d8f554b007974b62eb8c0c2ca9c1
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756516"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226361"
 ---
 # <a name="desktop-app-that-calls-web-apis-move-to-production"></a>Классическое приложение, вызывающее веб-API: переместить в рабочую среду
 
@@ -39,7 +39,7 @@ ms.locfileid: "98756516"
 - `https://mytenant.onmicrosoft.com/customerapi` с областями `customer.read` и `customer.write`
 - `https://mytenant.onmicrosoft.com/vendorapi` с областями `vendor.read` и `vendor.write`
 
-В этом примере используйте `.WithAdditionalPromptToConsent` Модификатор с `extraScopesToConsent` параметром.
+В этом примере используйте `.WithExtraScopesToConsent` Модификатор с `extraScopesToConsent` параметром.
 
 Например:
 
@@ -106,6 +106,11 @@ AcquireTokenSilent(scopesForVendorApi, accounts.FirstOrDefault()).ExecuteAsync()
 
 Для пользователей личных учетных записей Майкрософт необходимо повторно запрашивать согласие на каждое собственное клиентское (настольное или мобильное приложение) обращение к авторизации. Идентификация собственного клиента по своей природе небезопасна, что противоречит конфиденциальному удостоверению клиентского приложения. Конфиденциальные клиентские приложения обмениваются секретом с платформой Microsoft Identity, чтобы доказать их подлинность. Платформа Microsoft Identity решила устранить эту небезопасность для потребительских услуг, запрашивая согласие пользователя при каждой авторизации приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+[!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
 
-[!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
+## <a name="next-steps"></a>Дальнейшие действия
+
+Чтобы испытать дополнительные примеры, см. раздел [общедоступные клиентские приложения для настольных систем и мобильных устройств](sample-v2-code.md#desktop-and-mobile-public-client-apps).
+
+
+

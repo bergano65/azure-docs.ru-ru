@@ -7,23 +7,23 @@ manager: celestedg
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 09/01/2020
+ms.date: 02/01/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: edff5354d0565bd32cd0332b4aa0f215c2980d73
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a54ed9dc6557d9b613485bf28e74af0c59fc9e5e
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949791"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225214"
 ---
 # <a name="billing-model-for-azure-active-directory-b2c"></a>Модель выставления счетов для Azure Active Directory B2C
 
 Цены на Azure Active Directory B2C (Azure AD B2C) основаны на месячных активных пользователях (MAU), который представляет собой число уникальных пользователей с проверкой подлинности в течение календарного месяца. Эта модель выставления счетов применяется как к клиентам Azure AD B2C, так и к [службе совместной работы Azure AD Guest (B2B)](../active-directory/external-identities/external-identities-pricing.md). MAU Billing помогает сократить расходы, предлагая бесплатный уровень и гибкие, прогнозируемые цены. В этой статье вы узнаете о выставлении счетов MAU, связывании клиентов Azure AD B2C с подпиской и изменении ценовой категории.
 
 > [!IMPORTANT]
-> В этой статье не содержатся сведения о ценах. Последние сведения о выставлении счетов и ценах на использование см. в разделе [цены на Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
+> В этой статье не содержатся сведения о ценах. Последние сведения о выставлении счетов и ценах на использование см. в разделе [цены на Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/). Дополнительные сведения о доступности Azure AD B2Cной службы и о том, где хранятся данные пользователя, см. в разделе [доступность Azure AD B2C региона и местонахождение данных](data-residency.md) .
 
 ## <a name="what-do-i-need-to-do"></a>Что мне нужно сделать?
 
@@ -186,6 +186,6 @@ Azure AD B2C клиенты могут быть перемещены в друг
 1. Повторно установите ссылку для выставления счетов в конечной подписке, следуя приведенной выше процедуре [Create a Link](#create-the-link) .
 1. Теперь ресурс Azure AD B2C перемещен в целевую подписку Azure (связанную с целевой Azure Active Directory) и будет взиматься через эту подписку с этого момента.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Последние сведения о ценах см. на странице [цен на Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/).

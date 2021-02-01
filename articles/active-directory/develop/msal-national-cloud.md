@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: marsma, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 5a032f45027cc4bffc7f2bc46c6ea1a69a1b83e4
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 2f9396e20ae0f426dddd57b32297cfe98e135c44
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178625"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225822"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -34,7 +34,7 @@ ms.locfileid: "98178625"
 
 В этом руководстве показано, как войти в рабочие и учебные учетные записи, получить маркер доступа и вызвать API Microsoft Graph в [облачной среде Azure для государственных организаций](https://azure.microsoft.com/global-infrastructure/government/) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начать, убедитесь, что выполнены все необходимые условия.
 
@@ -84,14 +84,14 @@ ms.locfileid: "98178625"
 1. На странице **Обзор** запишите значение **идентификатора приложения (клиента)** для последующего использования.
     Для работы с этим руководством необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md). 
 1. В разделе **Управление** выберите **Проверка подлинности**.
-1. В разделе **неявное предоставление** выберите **токены идентификации** и **маркеры доступа**. Маркеры идентификации и маркеры доступа являются обязательными, так как это приложение должно входить в систему пользователей и вызывать API.
-1. Щелкните **Сохранить**.
+1. В разделе **неявное предоставление и гибридные потоки** выберите **токены идентификации** и **маркеры доступа**. Маркеры идентификации и маркеры доступа являются обязательными, так как это приложение должно входить в систему пользователей и вызывать API.
+1. Нажмите **Сохранить**.
 
 ### <a name="step-2--set-up-your-web-server-or-project"></a>Шаг 2. Настройка веб-сервера или проекта
 
 - [Скачайте файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip) для локального веб-сервера, например node.
 
-  or
+  или
 
 - [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip).
 

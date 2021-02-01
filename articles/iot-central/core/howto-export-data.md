@@ -8,12 +8,12 @@ ms.date: 11/05/2020
 ms.topic: how-to
 ms.service: iot-central
 ms.custom: contperf-fy21q1, contperf-fy21q3
-ms.openlocfilehash: 74de0481bf6786d245fb96f5d102ab72a00031c8
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 350cd7c14a4f1ee5058a60ccf60c1205ce97916a
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760895"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226069"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export"></a>Экспорт данных IoT в облачные назначения с помощью экспорта данных
 
@@ -32,7 +32,7 @@ ms.locfileid: "98760895"
 > [!Tip]
 > При включении экспорта данных вы получаете только данные из этого момента. В настоящее время невозможно получить данные за время отключения экспорта данных. Чтобы хранить более исторические данные, включите экспорт данных на раннем этапе.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы использовать функции экспорта данных, необходимо иметь [приложение v3](howto-get-app-info.md)и иметь разрешение на [Экспорт данных](howto-manage-users-roles.md) .
 
@@ -42,7 +42,7 @@ ms.locfileid: "98760895"
 
 Назначение экспорта должно существовать до настройки экспорта данных. В настоящее время доступны следующие типы назначения:
 
-- Центры событий Azure
+- центры событий Azure;
 - Очередь служебной шины Azure
 - Раздел служебной шины Azure
 - хранилище BLOB-объектов Azure
@@ -96,10 +96,10 @@ ms.locfileid: "98760895"
 
     |Уровень производительности|Тип учетной записи|
     |-|-|
-    |Standard|общего назначения v2|
-    |Standard|общего назначения v1|
-    |Standard|Хранилище BLOB-объектов|
-    |Premium|Блочное хранилище BLOB-объектов|
+    |Стандартный|общего назначения v2|
+    |Стандартный|общего назначения v1|
+    |Стандартный|Хранилище BLOB-объектов|
+    |Премиум|Блочное хранилище BLOB-объектов|
 
 1. Чтобы создать контейнер в учетной записи хранения, перейдите к своей учетной записи хранения. Выберите **Обзор BLOB-объектов** в разделе **Служба BLOB-объектов**. Выберите **+ Контейнер** в верхней части экрана, чтобы создать контейнер.
 
@@ -160,13 +160,13 @@ ms.locfileid: "98760895"
     - Для веб-перехватчика вставьте URL обратного вызова для конечной точки веб-перехватчика. При необходимости можно настроить авторизацию веб-перехватчика (OAuth 2,0 и токен авторизации) и добавить пользовательские заголовки. 
         - Для OAuth 2,0 поддерживается только поток учетных данных клиента. После сохранения места назначения IoT Central будет взаимодействовать с поставщиком OAuth для получения маркера авторизации. Этот маркер будет присоединен к заголовку "Authorization" для каждого сообщения, отправленного в это место назначения.
         - Для маркера авторизации можно указать значение маркера, которое будет напрямую присоединен к заголовку Authorization для каждого сообщения, отправляемого в это место назначения.
-    - Нажмите кнопку **создания**.
+    - Нажмите кнопку **Создать**.
 
 1. Выберите **+ назначение** и выберите назначение из раскрывающегося списка. В один экспорт можно добавить до пяти назначений.
 
 1. Завершив настройку экспорта, нажмите кнопку **сохранить**. Через несколько минут данные отобразятся в местах назначения.
 
-## <a name="export-contents-and-format"></a>Экспорт содержимого и формата
+## <a name="destinations"></a>Места назначения
 
 ### <a name="azure-blob-storage-destination"></a>Назначение хранилища BLOB-объектов Azure
 
@@ -187,7 +187,7 @@ ms.locfileid: "98760895"
 
 Для назначений веб-перехватчиков данные также экспортируются практически в режиме реального времени. Данные в тексте сообщения имеют тот же формат, что и для концентраторов событий и служебной шины.
 
-### <a name="telemetry-format"></a>Формат телеметрии
+## <a name="telemetry-format"></a>Формат телеметрии
 
 Каждое экспортированное сообщение содержит нормализованную форму полного сообщения, отправленного устройством в тексте сообщения. Сообщение представлено в формате JSON и кодируется как UTF-8. В каждом сообщении содержатся следующие сведения:
 
@@ -234,6 +234,102 @@ ms.locfileid: "98760895"
 }
 ```
 
+### <a name="message-properties"></a>Свойства сообщений
+
+Сообщения телеметрии имеют свойства метаданных в дополнение к полезным данным телеметрии. В предыдущем фрагменте показаны примеры системных сообщений, таких как `deviceId` и `enqueuedTime` . Дополнительные сведения о свойствах системных сообщений см. в разделе [Свойства системы сообщений центра Интернета вещей D2C](../../iot-hub/iot-hub-devguide-messages-construct.md#system-properties-of-d2c-iot-hub-messages).
+
+Вы можете добавить свойства в сообщения телеметрии, если необходимо добавить пользовательские метаданные в сообщения телеметрии. Например, необходимо добавить отметку времени при создании сообщения устройством.
+
+В следующем фрагменте кода показано, как добавить `iothub-creation-time-utc` свойство в сообщение при его создании на устройстве:
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+```javascript
+async function sendTelemetry(deviceClient, index) {
+  console.log('Sending telemetry message %d...', index);
+  const msg = new Message(
+    JSON.stringify(
+      deviceTemperatureSensor.updateSensor().getCurrentTemperatureObject()
+    )
+  );
+  msg.properties.add("iothub-creation-time-utc", new Date().toISOString());
+  msg.contentType = 'application/json';
+  msg.contentEncoding = 'utf-8';
+  await deviceClient.sendEvent(msg);
+}
+```
+
+# <a name="java"></a>[Java](#tab/java)
+
+```java
+private static void sendTemperatureTelemetry() {
+  String telemetryName = "temperature";
+  String telemetryPayload = String.format("{\"%s\": %f}", telemetryName, temperature);
+
+  Message message = new Message(telemetryPayload);
+  message.setContentEncoding(StandardCharsets.UTF_8.name());
+  message.setContentTypeFinal("application/json");
+  message.setProperty("iothub-creation-time-utc", Instant.now().toString());
+
+  deviceClient.sendEventAsync(message, new MessageIotHubEventCallback(), message);
+  log.debug("My Telemetry: Sent - {\"{}\": {}°C} with message Id {}.", telemetryName, temperature, message.getMessageId());
+  temperatureReadings.put(new Date(), temperature);
+}
+```
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+```csharp
+private async Task SendTemperatureTelemetryAsync()
+{
+  const string telemetryName = "temperature";
+
+  string telemetryPayload = $"{{ \"{telemetryName}\": {_temperature} }}";
+  using var message = new Message(Encoding.UTF8.GetBytes(telemetryPayload))
+  {
+      ContentEncoding = "utf-8",
+      ContentType = "application/json",
+  };
+  message.Properties.Add("iothub-creation-time-utc", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+  await _deviceClient.SendEventAsync(message);
+  _logger.LogDebug($"Telemetry: Sent - {{ \"{telemetryName}\": {_temperature}°C }}.");
+}
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+```python
+async def send_telemetry_from_thermostat(device_client, telemetry_msg):
+    msg = Message(json.dumps(telemetry_msg))
+    msg.custom_properties["iothub-creation-time-utc"] = datetime.now(timezone.utc).isoformat()
+    msg.content_encoding = "utf-8"
+    msg.content_type = "application/json"
+    print("Sent message")
+    await device_client.send_message(msg)
+```
+
+---
+
+В следующем фрагменте кода показано это свойство в сообщении, экспортированном в хранилище BLOB-объектов:
+
+```json
+{
+  "applicationId":"5782ed70-b703-4f13-bda3-1f5f0f5c678e",
+  "messageSource":"telemetry",
+  "deviceId":"sample-device-01",
+  "schema":"default@v1",
+  "templateId":"urn:modelDefinition:mkuyqxzgea:e14m1ukpn",
+  "enqueuedTime":"2021-01-29T16:45:39.143Z",
+  "telemetry":{
+    "temperature":8.341033560421833
+  },
+  "messageProperties":{
+    "iothub-creation-time-utc":"2021-01-29T16:45:39.021Z"
+  },
+  "enrichments":{}
+}
+```
+
 ## <a name="property-changes-format"></a>Формат изменения свойства
 
 Каждое сообщение или запись представляет одно изменение в свойстве устройства или облака. Для свойств устройства только изменения в сообщаемом значении экспортируются как отдельное сообщение. В экспортированном сообщении содержатся следующие сведения:
@@ -275,11 +371,11 @@ ms.locfileid: "98760895"
 
 В следующей таблице показаны различия между [экспортом устаревших данных](howto-export-data-legacy.md) и новыми функциями экспорта данных.
 
-| Возможности  | Экспорт устаревших данных | Новый экспорт данных |
+| Характеристики  | Экспорт устаревших данных | Новый экспорт данных |
 | :------------- | :---------- | :----------- |
 | Доступные типы данных | Данные телеметрии, устройства, шаблоны устройств | Данные телеметрии, изменения свойств |
-| Фильтрация | Нет | Зависит от типа экспортируемых данных. Для телеметрии, фильтрации по телеметрии, свойствам сообщений, значениям свойств |
-| Усовершенствования | Нет | Улучшение с помощью пользовательской строки или значения свойства на устройстве |
+| Фильтрация | Отсутствуют | Зависит от типа экспортируемых данных. Для телеметрии, фильтрации по телеметрии, свойствам сообщений, значениям свойств |
+| Усовершенствования | Отсутствуют | Улучшение с помощью пользовательской строки или значения свойства на устройстве |
 | Места назначения | Концентраторы событий Azure, очереди и разделы служебной шины Azure, хранилище BLOB-объектов Azure | То же, что и для экспорта устаревших данных и веб-перехватчиков|
 | Версии поддерживаемых приложений | V2, V3 | Только версия 3 |
 | Важные ограничения | 5 экспортов на приложение, 1 назначение на экспорт | 10 экспортов — подключений назначения на приложение |

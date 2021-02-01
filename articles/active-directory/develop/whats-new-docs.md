@@ -11,12 +11,12 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 0beaef9162f4bdb540764a100243c579b40d1324
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 11f32d893ccc26dd30d9997d4348661d45f84eb8
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755960"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225485"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Документация по платформе Microsoft Identity: новые возможности
 
@@ -24,13 +24,25 @@ ms.locfileid: "98755960"
 
 ## <a name="january-2021"></a>Январь 2021 г.
 
+### <a name="new-articles"></a>Новые статьи
+
+- [Ведение журналов в MSAL для Android](msal-logging-android.md)
+- [Ведение журнала в MSAL.NET](msal-logging-dotnet.md)
+- [Вход в MSAL для iOS или macOS](msal-logging-ios.md)
+- [Вход в MSAL для Java](msal-logging-java.md)
+- [Ведение журнала в MSAL.js](msal-logging-js.md)
+- [Ведение журналов в MSAL для Python](msal-logging-python.md)
+
 ### <a name="updated-articles"></a>Обновленные статьи
 
+- [Устранение неполадок с проверкой издателя](troubleshoot-publisher-verification.md)
+- [Модель приложения](application-model.md)
 - [Проверка подлинности и авторизация](authentication-vs-authorization.md)
 - [Как ограничить приложение Azure AD набором пользователей в клиенте Azure AD](howto-restrict-your-app-to-a-set-of-users.md)
 - [Разрешения и согласие для конечной точки платформы удостоверений Майкрософт](v2-permissions-and-consent.md)
 - [Настраиваемое время существования маркеров в платформе Microsoft Identity (Предварительная версия)](active-directory-configurable-token-lifetimes.md)
 - [Настройка политик времени жизни токенов (Предварительная версия)](configure-token-lifetimes.md)
+- [Библиотеки проверки подлинности платформы Microsoft Identity](reference-v2-libraries.md)
 - [Поток кода авторизации OAuth 2.0 и платформа удостоверений Майкрософт](v2-oauth2-auth-code-flow.md)
 
 ## <a name="december-2020"></a>Декабрь 2020 г.

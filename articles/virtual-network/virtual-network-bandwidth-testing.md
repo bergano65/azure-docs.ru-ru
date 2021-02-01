@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/06/2020
 ms.author: steveesp
-ms.openlocfilehash: 7a2f6750a4d0a48c6971f60241976fb55410b65c
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 27cc55978582468c759603571bd8b0e69f29db5d
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221448"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226579"
 ---
 # <a name="bandwidththroughput-testing-ntttcp"></a>Проверка пропускной способности (NTTTCP)
 
@@ -52,9 +52,9 @@ ms.locfileid: "98221448"
 
 #### <a name="get-ntttcp-onto-the-vms"></a>Скопируйте NTTTCP на виртуальные машины.
 
-Скачайте последнюю версию: <https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769>
+Скачайте последнюю версию: https://github.com/microsoft/ntttcp/releases/download/v5.35/NTttcp.exe
 
-Или попытайтесь найти ее, если она перемещена: <https://www.bing.com/search?q=ntttcp+download>\< (должна появиться в первых строках результатов).
+Или просмотрите страницу GitHub верхнего уровня: <https://github.com/microsoft/ntttcp>\
 
 Рекомендуется поместить NTTTCP в отдельную папку, например c:\\tools.
 

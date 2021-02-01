@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: steveesp
-ms.openlocfilehash: f8f167a7947c42ce837ec83b336ae636f593f2e4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 7dc8aac730fdf46cab47a3297b8c001cb0b8e314
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219264"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226411"
 ---
 # <a name="test-vm-network-latency"></a>Проверка задержки сети виртуальной машины
 
@@ -45,7 +45,7 @@ ms.locfileid: "98219264"
 ### <a name="tools-for-testing"></a>Средства для тестирования
 Для измерения задержки у вас есть два различных инструмента:
 
-* Для систем на основе Windows: [latte.exe (Windows)](https://gallery.technet.microsoft.com/Latte-The-Windows-tool-for-ac33093b)
+* Для систем на основе Windows: [latte.exe (Windows)](https://github.com/microsoft/latte/releases/download/v0/latte.exe)
 * Для систем на основе Linux: [соккперф (Linux)](https://github.com/mellanox/sockperf)
 
 С помощью этих средств можно гарантировать, что измеряется только время доставки полезных данных TCP или UDP, а не ICMP (проверка связи) или другие типы пакетов, которые не используются приложениями и не влияют на их производительность.

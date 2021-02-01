@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 8cae73e03fee0b59be0c7596f0783570ac14f6ee
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 991a335207fc29cef7b243d7e520dd5f62ff691f
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053115"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226120"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Настройка промежуточной среды в облаке Azure весны
 
@@ -20,8 +20,9 @@ ms.locfileid: "99053115"
 
 В этой статье описывается настройка промежуточного развертывания с помощью шаблона развертывания "синий-зеленый" в Azure Веснного облака. Сине-зеленое развертывание — это шаблон непрерывной поставки Azure DevOps, который предполагает сохранение существующей (синей) версии при развертывании новой (зеленой). В этой статье показано, как разместить промежуточное развертывание в рабочей среде, не изменяя рабочее развертывание напрямую.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
+* Экземпляр Azure Веснного облака с **ценовой категорией**" *стандартный* ".
 * Выполняющееся приложение.  См. раздел [Краткое руководство. развертывание первого облачного приложения Azure](spring-cloud-quickstart.md).
 * [Расширение Azure CLI ASC](https://docs.microsoft.com/cli/azure/azure-cli-extensions-overview)
 
@@ -78,7 +79,7 @@ az extension add --name spring-cloud
 1. В Azure CLI создайте новое развертывание и присвойте ему имя промежуточного развертывания "Green".
 
     ```azurecli
-    az spring-cloud app deployment create -g <resource-group-name> -s <service-instance-name> --app default -n green --jar-path gateway/target/gateway.jar
+    az spring-cloud app deployment create -g <resource-group-name> -s <service-instance-name> --app <appName> -n green --jar-path gateway/target/gateway.jar
     ```
 
 1. После успешного завершения развертывания CLI откройте страницу приложения на **панели мониторинга приложения** и просмотрите все экземпляры на вкладке **развертывания** слева.
@@ -113,11 +114,11 @@ az extension add --name spring-cloud
 
    [Развертывание ![ Настройка промежуточного развертывания](media/spring-cloud-blue-green-staging/set-staging-deployment.png)](media/spring-cloud-blue-green-staging/set-staging-deployment.png)
 
-1. Вернитесь на страницу **Управление развертыванием** .  `green`Отобразится состояние развертывания развертывания.  Теперь это выполняемая рабочая сборка.
+1. Вернитесь на страницу **Управление развертыванием** . Задайте `green` для развертывания значение `production` . После завершения настройки `green` состояние развертывания должно отобразиться.  Теперь это выполняемая рабочая сборка.
 
    [![Результаты задания промежуточного развертывания для развертывания](media/spring-cloud-blue-green-staging/set-staging-deployment-result.png)](media/spring-cloud-blue-green-staging/set-staging-deployment-result.png)
 
-1. Скопируйте и вставьте URL-адрес в новое окно браузера. После внесения изменений отобразится страница новое приложение.
+1. URL-адрес приложения должен отображать изменения.
 
 >[!NOTE]
 > После настройки зеленого развертывания в качестве рабочей среды, предыдущее развертывание станет промежуточным развертыванием.

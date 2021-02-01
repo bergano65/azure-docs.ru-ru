@@ -12,12 +12,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein
 ms.date: 04/20/2020
-ms.openlocfilehash: 76bb4ffb4ebeb01baf8236d6be84c900b23ffbc0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3e4b4fc3d4a6c9529c7c0ac0daef8a28173e0bf3
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790820"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225349"
 ---
 # <a name="transactional-replication-with-azure-sql-managed-instance-preview"></a>Репликация транзакций с помощью Управляемый экземпляр Azure SQL (Предварительная версия)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -39,11 +39,11 @@ ms.locfileid: "92790820"
 
 ### <a name="components"></a>Компоненты
 
-Ключевыми компонентами в репликации транзакций являются **Издатель** , **распространитель** и **подписчик** , как показано на следующем рисунке:  
+Ключевыми компонентами в репликации транзакций являются **Издатель**, **распространитель** и **подписчик**, как показано на следующем рисунке:  
 
 ![Репликация с Базой данных SQL](./media/replication-transactional-overview/replication-to-sql-database.png)
 
-| Роль | База данных SQL Azure | Управляемый экземпляр SQL Azure |
+| Роль | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | **Издатель** | Нет | Да |
 | **Распространитель** | Нет | Да|
@@ -72,7 +72,7 @@ ms.locfileid: "92790820"
 
 Существуют разные [типы репликации](/sql/relational-databases/replication/types-of-replication).
 
-| Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
+| Репликация | База данных SQL Azure | Управляемый экземпляр SQL Azure |
 | :----| :------------- | :--------------- |
 | [**Стандартная транзакционная**](/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да |
 | [**Моментальный снимок**](/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
@@ -109,7 +109,7 @@ ms.locfileid: "92790820"
 | Категория | Синхронизация данных | репликация транзакций |
 |---|---|---|
 | Преимущества | — Поддержка режима "активный — активный"<br/>— Двусторонняя передача данных между локальной базой данных и службой "База данных SQL Azure" | — Низкая задержка<br/>— Согласованность транзакций<br/>— Повторное использование существующей топологии после миграции |
-| Недостатки | — Задержка 5 мин или дольше<br/>— Отсутствует согласованность транзакций<br/>— Большее влияние на производительность | -Не удается опубликовать из базы данных SQL Azure <br/>— Дорогое обслуживание |
+| Недостатки | — Отсутствует согласованность транзакций<br/>— Большее влияние на производительность | -Не удается опубликовать из базы данных SQL Azure <br/>— Дорогое обслуживание |
 
 ## <a name="common-configurations"></a>Распространенные конфигурации
 
@@ -197,9 +197,9 @@ ms.locfileid: "92790820"
 - [Настройка репликации между издателем SQL Управляемый экземпляр и подписчиком](../managed-instance/replication-between-two-instances-configure-tutorial.md)
 - [Настройка репликации между издателем SQL Управляемый экземпляр, распространителем SQL Управляемый экземпляр и подписчиком SQL Server](../managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md)
 - [Создайте публикацию](/sql/relational-databases/replication/publish/create-a-publication).
-- [Создайте принудительную подписку](/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks** ). )
+- [Создайте принудительную подписку](/sql/relational-databases/replication/create-a-push-subscription) , используя имя сервера в качестве подписчика (например, `N'azuresqldbdns.database.windows.net` и базу данных в имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**). )
 
-## <a name="see-also"></a>См. также статью  
+## <a name="see-also"></a>См. также  
 
 - [Репликация с помощью Управляемый экземпляр SQL и группы отработки отказа](transact-sql-tsql-differences-sql-server.md#replication)
 - [Репликация в Базу данных SQL](../database/replication-to-sql-database.md)
