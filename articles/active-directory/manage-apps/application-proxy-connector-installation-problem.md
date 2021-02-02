@@ -3,7 +3,7 @@ title: Проблема при установке соединителя аге�
 description: Устранение неполадок, которые могут возникнуть при установке соединителя агента прокси приложения для Azure Active Directory.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 01/28/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 04c26609b046f7525c513796622be74633a20e91
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 0f76f03883746b6f4b87bb817f8adde850ed28b3
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986774"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99253670"
 ---
 # <a name="problem-installing-the-application-proxy-agent-connector"></a>Проблема при установке соединителя агента прокси приложения
 

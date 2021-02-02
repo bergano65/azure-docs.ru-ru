@@ -1,14 +1,14 @@
 ---
 title: Индекс примеров схем
 description: Индексы соответствия и стандартные примеры для развертывания сред, политик и базовых решений Cloud Adoption Framework с помощью Azure Blueprints.
-ms.date: 01/27/2021
+ms.date: 02/01/2021
 ms.topic: sample
-ms.openlocfilehash: 7865a3ea5be374f36de70e62c7bc215fc88d04a5
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 17bacecf8fcf7c0f1969a489561a3a3ac976872e
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98915698"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225147"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -28,7 +28,7 @@ ms.locfileid: "98915698"
 | [FedRAMP — высокий уровень](./fedramp-h/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям FedRAMP высокого уровня. |
 | [HIPAA HITRUST 9.2](./hipaa-hitrust-9-2.md) | Набор политик, которые помогут обеспечить соответствие требованиям HIPAA HITRUST. |
 | [IRS 1075](./irs-1075/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям IRS 1075.|
-| [ISO 27001](./iso27001/index.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям ISO 27001. |
+| [ISO 27001](./iso-27001-2013.md) | В этом документе описаны средства защиты для обеспечения соответствия требованиям ISO 27001. |
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |
 | [Носитель](./media/index.md) | Набор политик, которые помогут обеспечить соответствие требованиям Media MPAA. |

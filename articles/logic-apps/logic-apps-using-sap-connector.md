@@ -7,20 +7,20 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
-ms.date: 01/25/2021
+ms.date: 02/01/2021
 tags: connectors
-ms.openlocfilehash: 93e705eea39443ffc15fbdd079e1376ec46cb51c
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: edf4ce188c9239e697e2148d4fff51966d91f85a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786696"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252616"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
 
 В этой статье объясняется, как можно получить доступ к ресурсам SAP из Logic Apps с помощью [соединителя SAP](https://docs.microsoft.com/connectors/sap/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [получите бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -529,6 +529,18 @@ E2EDP19   300                16    E2EDP19   0     3   00AAAA-11111</idocData>
 
 Для выпусков локальных шлюзов данных из июня 2020 и более поздних версий можно [включить журналы шлюза в параметрах приложения](/data-integration/gateway/service-gateway-tshoot#collect-logs-from-the-on-premises-data-gateway-app). 
 
+* Уровень ведения журнала по умолчанию — **warning**.
+
+* Если включить  **дополнительное ведение журнала** в параметрах **диагностики** для локального приложения шлюза данных, уровень ведения журнала будет увеличен до **информационного**.
+
+* Чтобы увеличить уровень ведения журнала до уровня **verbose**, обновите следующий параметр в файле конфигурации. Как правило, файл конфигурации находится в папке `C:\Program Files\On-premises data gateway\Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config` .
+
+```json
+<setting name="SapTraceLevel" serializeAs="String">
+   <value>Verbose</value>
+</setting>
+```
+
 Для выпусков локального шлюза данных с 2020 апреля и более ранних версий журналы по умолчанию отключены.
 
 ### <a name="extended-sap-logging-in-on-premises-data-gateway"></a>Расширенное ведение журнала SAP в локальном шлюзе данных
@@ -697,7 +709,7 @@ E2EDP19   300                16    E2EDP19   0     3   00AAAA-11111</idocData>
 
 1. Чтобы открыть **средство тестирования для параметров обработки iDoc** , в интерфейсе SAP используйте код транзакции **we19** (T-Code) с префиксом **/n** .
 
-1. В разделе **шаблон для теста** выберите **тип сообщения** и введите тип сообщения, например **кремас**. Нажмите кнопку **создания**.
+1. В разделе **шаблон для теста** выберите **тип сообщения** и введите тип сообщения, например **кремас**. Нажмите кнопку **Создать**.
 
 1. Подтвердите, **какой тип iDoc?** сообщение, выбрав **продолжить**.
 

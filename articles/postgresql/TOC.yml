@@ -611,6 +611,8 @@
           items:
             - name: Мониторинг и настройка
               href: concepts-hyperscale-monitoring.md
+            - name: Журналы аудита
+              href: concepts-hyperscale-audit.md
         - name: Варианты настройки
           href: concepts-hyperscale-configuration-options.md
         - name: Предварительная оплата резервной мощности

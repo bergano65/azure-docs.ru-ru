@@ -3,7 +3,7 @@ title: Параметры файла cookie прокси приложения (A
 description: Azure Active Directory (Azure AD) имеет файлы cookie доступа и сеанса для доступа к локальным приложениям через прокси-сервер приложения. В этой статье вы узнаете, как использовать и настраивать параметры файлов cookie.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 01/16/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 656841fc8e62e81318ffd568069c0664192b1747
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62afe97b44f45bc0b7aa12b33b6a65dd94ecf095
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764899"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252208"
 ---
 # <a name="cookie-settings-for-accessing-on-premises-applications-in-azure-active-directory"></a>Параметры файлов cookie для доступа к локальным приложениям в Azure Active Directory
 

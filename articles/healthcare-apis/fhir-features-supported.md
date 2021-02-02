@@ -6,14 +6,14 @@ author: caitlinv39
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
-ms.date: 1/21/2021
+ms.date: 1/30/2021
 ms.author: cavoeg
-ms.openlocfilehash: 28c01e99c0e8708750341b445b4a31f6eaeab3ce
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 0ee32d37ca8e3a32ba603fd84cee81890ddac98b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747531"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252123"
 ---
 # <a name="features"></a>Компоненты
 
@@ -41,8 +41,8 @@ API Azure для FHIR обеспечивает полностью управля
 | create                         | Да       | Да       | Да       | Поддержка как POST, так и постановки                               |
 | создать (условный)           | Да       | Да       | Да       | [#1382](https://github.com/microsoft/fhir-server/issues/1382) проблемы |
 | search                         | Partial   | Partial   | Partial   | См. ниже                                           |
-| цепочка поиска                 | Нет        | Да       | Нет        |                                           |
-| обратный поиск в цепочке         | Нет        | Нет        | Нет        |                                            |
+| цепочка поиска                 | Нет        | Да       | Нет        |                                                     |
+| обратный поиск в цепочке         | Нет        | Да       | Нет        |                                                     |
 | capabilities                   | Да       | Да       | Да       |                                                     |
 | пакет (1)                          | Да       | Да       | Да       |                                                     |
 | transaction                    | Нет        | Да       | Нет        |                                                     |
@@ -58,10 +58,10 @@ API Azure для FHIR обеспечивает полностью управля
 | Число                | Да       | Да       | Да       |         |
 | Date/DateTime         | Да       | Да       | Да       |         |
 | Строка                | Да       | Да       | Да       |         |
-| Маркер                 | Да       | Да       | Да       |         |
+| Токен                 | Да       | Да       | Да       |         |
 | Справочник             | Да       | Да       | Да       |         |
 | Составной             | Да       | Да       | Да       |         |
-| количество;              | Да       | Да       | Да       |         |
+| Количество              | Да       | Да       | Да       |         |
 | URI                   | Да       | Да       | Да       |         |
 | Специальные функции               | Нет        | Нет        | Нет        |         |
 
@@ -72,39 +72,39 @@ API Azure для FHIR обеспечивает полностью управля
 |`:exact`               | Да       | Да       | Да       |         |
 |`:contains`            | Да       | Да       | Да       |         |
 |`:text`                | Да       | Да       | Да       |         |
+|`:[type]` IsReference  | Да       | Да       | Да       |         |
+|`:not`                 | Да       | Да       | Да       |         |
+|`:below` URI         | Да       | Да       | Да       |         |
+|`:above` URI         | Нет        | Нет        | Нет        | [#158](https://github.com/Microsoft/fhir-server/issues/158) проблемы |
 |`:in` Лекс          | Нет        | Нет        | Нет        |         |
 |`:below` Лекс       | Нет        | Нет        | Нет        |         |
 |`:above` Лекс       | Нет        | Нет        | Нет        |         |
 |`:not-in` Лекс      | Нет        | Нет        | Нет        |         |
-|`:[type]` IsReference  | Нет        | Нет        | Нет        |         |
-|`:below` URI         | Да       | Да       | Да       |         |
-|`:not`                 | Нет        | Нет        | Нет        |         |
-|`:above` URI         | Нет        | Нет        | Нет        | [#158](https://github.com/Microsoft/fhir-server/issues/158) проблемы |
 
 | Общий параметр поиска | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментарий |
 |-------------------------| ----------| ----------| ----------|---------|
 | `_id`                   | Да       | Да       | Да       |         |
 | `_lastUpdated`          | Да       | Да       | Да       |         |
 | `_tag`                  | Да       | Да       | Да       |         |
-| `_profile`              | Частично   | Partial   | Partial   | Поддерживается только в STU3 без поддержки в R4 |
+| `_list`                 | Да       | Да       | Да       |         |
+| `_type`                 | Да       | Да       | Да       | [#1562](https://github.com/microsoft/fhir-server/issues/1562) проблемы        |
 | `_security`             | Да       | Да       | Да       |         |
+| `_profile`              | Частично   | Partial   | Partial   | Поддерживается только в STU3 без поддержки в R4 |
 | `_text`                 | Нет        | Нет        | Нет        |         |
 | `_content`              | Нет        | Нет        | Нет        |         |
-| `_list`                 | Да       | Да       | Да       |         |
 | `_has`                  | Нет        | Нет        | Нет        |         |
-| `_type`                 | Да       | Да       | Да       |         |
 | `_query`                | Нет        | Нет        | Нет        |         |
 | `_filter`               | Нет        | Нет        | Нет        |         |
 
 | Параметры результатов поиска | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментарий |
 |-------------------------|-----------|-----------|-----------|---------|
-| `_sort`                 | Partial        | Partial   | Partial        |   `_sort=_lastUpdated` поддерживается.       |
+| `_elements`             | Да       | Да       | Да       | [#1256](https://github.com/microsoft/fhir-server/issues/1256) проблемы        |
 | `_count`                | Да       | Да       | Да       | `_count` длина ограничена 100 символами. Если задано значение выше 100, будет возвращено только 100, а в пакете будет возвращено предупреждение. |
 | `_include`              | Да       | Да       | Да       |Количество включаемых элементов ограничено 100. Включить в PaaS и OSS на Cosmos DB не включает в себя поддержку итераций.|
-| `_revinclude`           | Да       | Да       | Да       | Количество включаемых элементов ограничено 100. Включить в PaaS и OSS на Cosmos DB не включает в себя поддержку итераций.|
+| `_revinclude`           | Да       | Да       | Да       | Количество включаемых элементов ограничено 100. Включить в PaaS и OSS на Cosmos DB [не включает в себя поддержку итераций](https://github.com/microsoft/fhir-server/issues/1313). [#1319](https://github.com/microsoft/fhir-server/issues/1319) проблемы|
 | `_summary`              | Partial   | Partial   | Partial   | `_summary=count` поддерживается. |
-| `_total`                | Partial   | Partial   | Partial   | _total = без и _total = точность      |
-| `_elements`             | Да       | Да       | Да       |         |
+| `_total`                | Partial   | Partial   | Partial   | `_total=none` и `_total=accurate`      |
+| `_sort`                 | Partial   | Partial   | Partial   |   `_sort=_lastUpdated` поддерживается.       |
 | `_contained`            | Нет        | Нет        | Нет        |         |
 | `containedType`         | Нет        | Нет        | Нет        |         |
 | `_score`                | Нет        | Нет        | Нет        |         |
@@ -156,7 +156,7 @@ Cosmos DB — это глобально распределенная база д
 
 Примечание. для каждого Cosmos DB требования предъявляются требования к минимальной пропускной способности, равной 10 единиц запросов в ГБ. Дополнительные сведения см. в [Cosmos DB квоты службы](../cosmos-db/concepts-limits.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы прочитали о поддерживаемых функциях FHIR в API Azure для FHIR. Далее разверните API Azure для FHIR.
  

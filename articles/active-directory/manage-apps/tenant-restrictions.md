@@ -3,7 +3,7 @@ title: Использование ограничений клиентов для
 description: Сведения об использовании ограничений клиентов для управления доступом пользователей к приложениям на основе их клиента Azure AD.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 10/26/2020
 ms.author: kenwith
 ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d69755c36bf37dd591e81bea7983e25905798d4d
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: f605b2bb48855d70ea305dcda194b26da71ee9ec
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286202"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99252480"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Использование ограничений клиентов для управления доступом к облачным приложениям SaaS
 
@@ -85,7 +85,7 @@ ms.locfileid: "93286202"
 >
 > Чтобы проверить, что идентификатор каталога или имя домена относятся к одному и тому же клиенту, используйте этот идентификатор или домен вместо <tenant> в этом URL-адресе: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration` .  Если результаты с доменом и ИДЕНТИФИКАТОРом совпадают, они ссылаются на один и тот же клиент. 
 
-Чтобы запретить пользователям вставлять собственный заголовок HTTP с помощью неутвержденных клиентов, прокси-сервер должен заменять заголовок *Restrict-Access-To-Tenants* , если он уже существует во входящем запросе.
+Чтобы запретить пользователям вставлять собственный заголовок HTTP с помощью неутвержденных клиентов, прокси-сервер должен заменять заголовок *Restrict-Access-To-Tenants*, если он уже существует во входящем запросе.
 
 Клиенты должны принудительно использовать прокси-сервер для всех запросов к login.microsoftonline.com, login.microsoft.com и login.windows.net. Например, если для указания клиентам использовать прокси-сервер применяются PAC-файлы, то пользователи не должны иметь возможности изменить или отключить эти файлы.
 
@@ -124,8 +124,8 @@ ms.locfileid: "93286202"
 - **Дата (UTC)** (где UTC — всемирное скоординированное время)
 - **Способ многофакторной идентификации** (метод многофакторной проверки подлинности)
 - **Сведения о многофакторной идентификации** (сведения о многофакторной проверке подлинности)
-- **Результат MFA** ;
-- **IP-адрес** ;
+- **Результат MFA**;
+- **IP-адрес**;
 - **Клиент**
 - **Имя пользователя**
 - **Расположение**

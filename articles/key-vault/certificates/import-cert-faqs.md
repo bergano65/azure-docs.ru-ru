@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: d7d34b61e584b63c517b6c0f8af4cb4adcc7fefe
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: e75786c42b54882c249b5ed7100ebd12f3f78e78
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289500"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254365"
 ---
 # <a name="importing-azure-key-vault-certificates-faq"></a>Импорт сертификатов Azure Key Vault вопросы и ответы
 
@@ -47,7 +47,7 @@ ms.locfileid: "93289500"
 
 ### <a name="how-can-i-resolve-error-type-access-denied-or-user-is-unauthorized-to-import-certificate"></a>Как разрешить "тип ошибки: отказано в доступе или пользователь не авторизован для импорта сертификата"?
     
-Для операции импорта необходимо предоставить пользователю разрешения на импорт сертификата в политиках доступа. Для этого перейдите в хранилище ключей, выберите **политики доступа**  >  **Добавить политику доступа**  >  **выбрать субъект разрешений сертификата**  >  **Principal** , найдите пользователя, а затем добавьте адрес электронной почты пользователя. 
+Для операции импорта необходимо предоставить пользователю разрешения на импорт сертификата в политиках доступа. Для этого перейдите в хранилище ключей, выберите **политики доступа**  >  **Добавить политику доступа**  >  **выбрать субъект разрешений сертификата**  >  , найдите пользователя, а затем добавьте адрес электронной почты пользователя. 
 
 Дополнительные сведения о политиках доступа, связанных с сертификатами, см. в статье [о сертификатах Azure Key Vault](./about-certificates.md#certificate-access-control).
 
@@ -62,6 +62,10 @@ ms.locfileid: "93289500"
 Эта ошибка может быть вызвана одной из двух причин:    
 * Длина имени субъекта сертификата ограничена 200 символами.
 * Длина пароля сертификата ограничена 200 символами.
+
+
+### <a name="error-the-specified-pem-x509-certificate-content-is-in-an-unexpected-format-please-check-if-certificate-is-in-valid-pem-format"></a>Ошибка "указанное содержимое сертификата PEM X. 509 имеет непредвиденный формат. Убедитесь, что сертификат имеет допустимый формат PEM. "
+Убедитесь, что содержимое в PEM-файле использует разделители строк в стиле UNIX. `(\n)`
 
 ### <a name="can-i-import-an-expired-certificate-to-azure-key-vault"></a>Можно ли импортировать сертификат с истекшим сроком действия для Azure Key Vault?
     

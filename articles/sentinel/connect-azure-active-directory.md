@@ -1,6 +1,6 @@
 ---
 title: Подключение Azure Active Directory данных к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как получать данные из Azure Active Directory и выполнять потоковую передачу журналов входа Azure AD и журналов аудита в Azure Sentinel.
+description: Узнайте, как получать данные из Azure Active Directory и выполнять потоковую передачу журналов входа в Azure AD, аудита и подготовки в Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,20 +15,36 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: eb89d2a4e719e34ad5ea31656dc9e3c02472b07d
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: f8931fedb380cf81d72b7b5280a5795498daaa57
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98802252"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251987"
 ---
-# <a name="connect-data-from-azure-active-directory-azure-ad"></a>Подключение данных из Azure Active Directory (Azure AD)
+# <a name="connect-azure-active-directory-azure-ad-data-to-azure-sentinel"></a>Подключение данных Azure Active Directory (Azure AD) к Azure Sentinel
 
-С помощью встроенного соединителя Azure Sentinel можно собирать данные из [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) и передавать их в поток Azure Sentinel. Соединитель позволяет выполнять потоковую передачу [журналов входа](../active-directory/reports-monitoring/concept-sign-ins.md) и [журналов аудита](../active-directory/reports-monitoring/concept-audit-logs.md).
+С помощью встроенного соединителя Azure Sentinel можно собирать данные из [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) и передавать их в поток Azure Sentinel. Соединитель позволяет выполнять потоковую передачу следующих типов журналов:
 
-## <a name="prerequisites"></a>Предварительные требования
+- [**Журналы входа**](../active-directory/reports-monitoring/concept-all-sign-ins.md), содержащие сведения о [входах интерактивных пользователей](../active-directory/reports-monitoring/concept-all-sign-ins.md#user-sign-ins) , где пользователь предоставляет фактор проверки подлинности.
 
-- Для приема журналов входа в Azure Sentinel необходимо иметь подписку [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/) . Для Azure Monitor (Log Analytics) и Azure Sentinel может взиматься дополнительная плата за гигабайт.
+    Соединитель Azure AD теперь включает в себя следующие три дополнительные категории журналов входа, которые сейчас доступны в **предварительной версии**:
+    
+    - [**Неинтерактивные журналы входа пользователя**](../active-directory/reports-monitoring/concept-all-sign-ins.md#non-interactive-user-sign-ins), содержащие сведения о входах, выполняемых клиентом от имени пользователя без какого-либо взаимодействия или фактора проверки подлинности от пользователя.
+    
+    - [**Журналы входа субъекта-службы**](../active-directory/reports-monitoring/concept-all-sign-ins.md#service-principal-sign-ins), содержащие сведения о входах в приложения и субъекты-службы, не использующие каких-либо пользователей. В этих операциях входа приложение или служба предоставляют учетные данные от своего имени для проверки подлинности или доступа к ресурсам.
+    
+    - [**Журналы входа управляемых удостоверений**](../active-directory/reports-monitoring/concept-all-sign-ins.md#managed-identity-for-azure-resources-sign-ins), которые содержат сведения об операциях входа в ресурсы Azure с секретами, управляемыми Azure. Дополнительные сведения см. в статье [что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
+
+- [**Журналы аудита**](../active-directory/reports-monitoring/concept-audit-logs.md), содержащие сведения о системных действиях, связанных с управлением пользователями и группами, управляемыми приложениями и действиями с каталогами.
+
+- [**Журналы подготовки**](../active-directory/reports-monitoring/concept-provisioning-logs.md) (также в **предварительной версии**), содержащие сведения о действиях системы для пользователей, групп и ролей, подготовленных службой подготовки Azure AD. 
+
+> [!IMPORTANT]
+> Как указано выше, некоторые из доступных типов журналов сейчас доступны в **предварительной версии**. Ознакомьтесь с дополнительными [условиями использования Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) предварительных версий для дополнительных юридических условий, которые относятся к функциям Azure, которые доступны в бета-версии, предварительном просмотре или еще не выпущены в общедоступную версию.
+## <a name="prerequisites"></a>предварительные требования
+
+- Любой лицензии Azure AD (Free/O365/P1/P2) достаточно для приема журналов входа в Azure Sentinel. Для Azure Monitor (Log Analytics) и Azure Sentinel может взиматься дополнительная плата за гигабайт.
 
 - Пользователю должна быть назначена роль "участник Sentinel Azure" в рабочей области.
 
@@ -42,10 +58,7 @@ ms.locfileid: "98802252"
 
 1. В коллекции соединителей данных выберите **Azure Active Directory** а затем щелкните **открыть страницу соединителя**.
 
-1. Установите флажки рядом с типами журналов, которые вы хотите передавать в Azure Sentinel, и нажмите кнопку **подключить**. Ниже приведены типы журналов, которые можно выбрать.
-
-    - **Журналы входа**: сведения об использовании управляемых приложений и действиях входа пользователей.
-    - **Журналы аудита**. сведения о действиях системы для управления пользователями и группами, управляемыми приложениями и действиями с каталогами.
+1. Установите флажки рядом с типами журналов, которые вы хотите передавать в Azure Sentinel (см. выше), и нажмите кнопку **подключить**.
 
 ## <a name="find-your-data"></a>Поиск данных
 
@@ -53,10 +66,14 @@ ms.locfileid: "98802252"
 
 - `SigninLogs`
 - `AuditLogs`
+- `AADNonInteractiveUserSignInLogs`
+- `AADServicePrincipalSignInLogs`
+- `AADManagedIdentitySignInLogs`
+- `AADProvisioningLogs`
 
 Чтобы запросить журналы Azure AD, введите соответствующее имя таблицы в верхней части окна запроса.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Azure Active Directory к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
