@@ -3,7 +3,7 @@ title: Настройка классификаций разрешений с п�
 description: Узнайте, как управлять классификациями делегированных разрешений.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 06/01/2020
 ms.author: phsignor
 ms.reviewer: arvindh, luleon, phsignor
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: c07cc08f086b87e6b4ad35b569eef1a0d6b509ce
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: b2d851f0f4476cd4b24b6ba30c237f9a42252726
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090026"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255261"
 ---
 # <a name="configure-permission-classifications"></a>Настройка классификации разрешений
 

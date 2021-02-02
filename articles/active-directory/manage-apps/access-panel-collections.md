@@ -4,7 +4,7 @@ description: Используйте мои коллекции "Мои прило
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -14,12 +14,12 @@ ms.date: 02/10/2020
 ms.author: kenwith
 ms.reviewer: kasimpso
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 967ac34ddb736f58f66639181cdf10e4aaa8ffab
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7743a1af54b01f848c4ac6f0cb1d4526d66f8132
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656791"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254988"
 ---
 # <a name="create-collections-on-the-my-apps-portal"></a>Создание коллекций на портале "Мои приложения"
 
@@ -93,7 +93,7 @@ ms.locfileid: "94656791"
 
 * Чтобы получить сведения о проблемах со страницей **"Моя учетная запись" Azure AD** , откройте запрос в службу поддержки в портал Azure. Перейдите в **портал Azure**  >  **Azure Active Directory**  >  **новый запрос на поддержку**.
 
-* Чтобы получить сведения о проблемах с страницей **"Моя учетная запись" Office** , откройте запрос в службу поддержки в Microsoft 365 центре администрирования. Перейдите в раздел **Microsoft 365 Поддержка центра администрирования**  >  **Support**. 
+* Чтобы получить сведения о проблемах с страницей **"Моя учетная запись" Office** , откройте запрос в службу поддержки в Microsoft 365 центре администрирования. Перейдите в раздел **Microsoft 365 Поддержка центра администрирования**  >  . 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Возможности для взаимодействия пользователя с приложениями в Azure Active Directory](end-user-experiences.md)

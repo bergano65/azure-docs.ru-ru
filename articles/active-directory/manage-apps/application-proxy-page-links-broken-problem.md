@@ -3,7 +3,7 @@ title: Ссылки на странице приложения прокси пр
 description: Как устранить ошибки, связанные с неработающими ссылками на приложения прокси приложения, которые были интегрированы с Azure AD?
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 09/10/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1922ea9afd69366e534049f5a7a350cf39e52dee
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 9a8ecb908063a40da32c1397fd4249811f9c2712
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371585"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254620"
 ---
 # <a name="links-on-the-page-dont-work-for-an-application-proxy-application"></a>Ссылки на странице приложения прокси приложения не работают
 
@@ -46,6 +46,6 @@ ms.locfileid: "92371585"
 
 3.  Если ни один из этих вариантов вам не подходит, можно включить преобразование встроенных ссылок с помощью несколько вариантов. Эти варианты предусматриваются использование Intune Managed Browser, расширение "Мои приложения" или параметра преобразования ссылок в приложении. Дополнительные сведения о каждом из этих вариантов и их применении, см. в разделе [Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD](application-proxy-configure-hard-coded-link-translation.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Работа с имеющимися локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md)
 

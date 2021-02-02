@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory "Бизнес-клиент" (B2C)
 description: Новая и обновленная документация для Azure Active Directory "Бизнес-клиент" (B2C).
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,53 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 8805caad990cd472b3199bda27130d8d63be3071
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 5e58f54d991cd190aba6eeb851e6cf2aec78e695
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559733"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255175"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: новые возможности
 
 Добро пожаловать в новые возможности Azure Active Directory B2C документации. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы B2C, см. статью [новые возможности в Azure Active Directory](../active-directory/fundamentals/whats-new.md).
+
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="new-articles"></a>Новые статьи
+
+- [Настройка пользовательского интерфейса в Azure Active Directory B2C](customize-ui.md)
+- [Ограничения службы Azure Active Directory B2C и ограничения](service-limits.md)
+- [Настройка регистрации и входа с учетной записью Azure AD B2C из другого клиента Azure AD B2C](identity-provider-azure-ad-b2c.md)
+- [Настройка поставщика удостоверений локальной учетной записи](identity-provider-local.md)
+- [Настройка потока входа в Azure Active Directory B2C](add-sign-in-policy.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+
+- [Отслеживание поведения пользователей в Azure Active Directory B2C с использованием Application Insights](analytics-with-application-insights.md)
+- [TechnicalProfiles](technicalprofiles.md)
+- [Настройка пользовательского интерфейса с помощью HTML-шаблонов в Azure Active Directory B2C](customize-ui-with-html.md)
+- [Управление Azure AD B2C с помощью Microsoft Graph](microsoft-graph-operations.md)
+- [Добавление AD FS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C](identity-provider-adfs.md)
+- [Настройка входа с помощью поставщика SAML SalesForce с помощью протокола SAML в Azure Active Directory B2C](identity-provider-salesforce-saml.md)
+- [Руководство по регистрации веб-приложения в Azure Active Directory B2C](tutorial-register-applications.md)
+- [Настройка регистрации и входа с учетной записью Amazon через Azure Active Directory B2C](identity-provider-amazon.md)
+- [Настройка регистрации и входа с учетной записью Azure AD B2C из другого клиента Azure AD B2C](identity-provider-azure-ad-b2c.md)
+- [Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C](identity-provider-azure-ad-multi-tenant.md)
+- [Настройка входа для определенной Azure Active Directory организации в Azure Active Directory B2C](identity-provider-azure-ad-single-tenant.md)
+- [Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C](identity-provider-facebook.md)
+- [Настройка регистрации и входа с учетной записью GitHub через Azure Active Directory B2C](identity-provider-github.md)
+- [Настройка регистрации и входа с учетной записью Google через Azure Active Directory B2C](identity-provider-google.md)
+- [Настройка регистрации и входа с использованием учетной записи ID.me с помощью Azure Active Directory B2C](identity-provider-id-me.md)
+- [Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C](identity-provider-linkedin.md)
+- [Настройка регистрации и входа с учетной записью Microsoft через Azure Active Directory B2C](identity-provider-microsoft-account.md)
+- [Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C](identity-provider-qq.md)
+- [Настройка регистрации и входа с помощью учетной записи SalesForce с помощью Azure Active Directory B2C](identity-provider-salesforce.md)
+- [Настройка регистрации и входа с учетной записью Twitter через Azure Active Directory B2C](identity-provider-twitter.md)
+- [Настройка регистрации и входа с учетной записью WeChat в Azure Active Directory B2C](identity-provider-wechat.md)
+- [Настройка регистрации и входа с учетной записью Weibo через Azure Active Directory B2C](identity-provider-weibo.md)
+- [Общие сведения о настраиваемой политике Azure AD B2C](custom-policy-trust-frameworks.md)
+
 
 ## <a name="december-2020"></a>Декабрь 2020 г.
 

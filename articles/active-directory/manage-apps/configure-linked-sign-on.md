@@ -3,7 +3,7 @@ title: Знакомство со связанным входом в Azure Active
 description: Знакомство со связанным входом в Azure Active Directory.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/30/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: b5d7cd303c8478f848ee89095d040030b702cde5
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 3e2d3ab6a23ce588c3aa393e5096ac75e88a5365
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219816"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255291"
 ---
 # <a name="understand-linked-sign-on"></a>Общие сведения о связанном входе
 
@@ -31,7 +31,7 @@ ms.locfileid: "98219816"
  
  **Связанный** параметр не предоставляет функции входа с помощью учетных данных Azure AD. Но вы по-прежнему можете использовать некоторые другие функции **корпоративных приложений**. Например, можно использовать журналы аудита и добавить пользовательский логотип и имя приложения.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для быстрого увеличения знаний пошаговые [руководства](view-applications-portal.md) по управлению приложениями. В кратком руководстве по настройке единого входа можно также найти **связанный** параметр. 
 

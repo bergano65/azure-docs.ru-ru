@@ -3,7 +3,7 @@ title: Справочник по атрибутам Workday
 description: Узнайте, какие атрибуты можно получить из Workday с помощью запросов XPATH.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/25/2020
 ms.author: kenwith
 ms.reviewer: celested
-ms.openlocfilehash: 5892100140c6022763453a4141d87e6a7ba4ed75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ff9b3d4cc3bee28c8e5e95d8854f64eaa546b0c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91266570"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255480"
 ---
 # <a name="workday-attribute-reference"></a>Справочник по атрибутам Workday
 
@@ -117,7 +117,7 @@ ms.locfileid: "91266570"
 
 Допустим, вы укажете API WWS версии 30.0 или выше в URL-адресе подключения, как показано ниже:
 
-:::image type="content" source="../saas-apps/media/workday-inbound-tutorial/workday-url-version-info.png" alt-text="Нет сведений о версии Workday":::
+:::image type="content" source="../saas-apps/media/workday-inbound-tutorial/workday-url-version-info.png" alt-text="Сведения о версии Workday":::
 
 Перед включением задания подготовки обязательно обновите **выражения API XPATH** в разделе **Сопоставление атрибутов -> Дополнительные параметры -> Изменить список атрибутов для Workday**, чтобы использовать перечисленные в таблице значения. 
 
@@ -235,12 +235,12 @@ ms.locfileid: "91266570"
 * substring-after
 * начинается с
 * string-length
-* содержит
+* contains
 * translate
 * normalize-space
 * substring-before
-* Логическое
-* Да
+* boolean
+* верно
 * not
 * false
 * number

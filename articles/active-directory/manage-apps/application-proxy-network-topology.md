@@ -4,7 +4,7 @@ description: В этой статье рассматриваются аспек�
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d814a3ce62d7e9b3ce04953e05293d17ecc08d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d67505e7112c41b21b2ae5e8acc834ff047a470d
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764474"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99254811"
 ---
 # <a name="network-topology-considerations-when-using-azure-active-directory-application-proxy"></a>Аспекты топологии сети при использовании прокси приложения Azure Active Directory
 

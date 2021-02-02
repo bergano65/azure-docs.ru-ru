@@ -716,6 +716,10 @@
               href: data-migration-guidance-hdfs-azure-storage.md
             - name: Перенос данных с локального сервера Netezza в Azure
               href: data-migration-guidance-netezza-azure-sqldw.md
+        - name: Машинное обучение Azure
+          items:
+            - name: Прием данных
+              href: ../machine-learning/how-to-data-ingest-adf.md?toc=/azure/data-factory/toc.json&bc=/azure/data-factory/breadcrumb/toc.json
         - name: Преобразование с помощью функции сопоставления потоков данных
           items:
             - name: Обработка текстовых файлов с фиксированной шириной
