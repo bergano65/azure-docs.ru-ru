@@ -1,7 +1,7 @@
 ---
 title: Новые возможности Azure Active Directory внешних удостоверениях
 description: Новая и обновленная документация по Azure Active Directory внешним удостоверениям.
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
@@ -9,21 +9,27 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: e614507fbcfce5fc006983e0be7963223bb0b7ed
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 84adb08231589ae636c6a6926a4019a8a070a62e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562384"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258869"
 ---
 # <a name="azure-active-directory-external-identities-whats-new"></a>Azure Active Directory внешние удостоверения: новые возможности
 
 Добро пожаловать в документацию по внешним удостоверениям Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы внешних удостоверений, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
 
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Разрешение или запрет приглашений для пользователей B2B из определенных организаций](allow-deny-list.md)
+- [Как пользователи в вашей организации могут приглашать гостевых пользователей в приложение](add-users-information-worker.md)
+
+
 ## <a name="december-2020"></a>Декабрь 2020 г.
 
 ### <a name="updated-articles"></a>Обновленные статьи
-
 - [Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B](faq.md)
 - [Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B](google-federation.md)
 - [Поставщики удостоверений для внешних удостоверений](identity-providers.md)

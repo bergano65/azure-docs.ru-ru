@@ -3,7 +3,7 @@ title: Пример PowerShell. Назначение группы приложе
 description: Пример PowerShell, который назначает группу приложению Azure Active Directory (Azure AD) Application Proxy.
 services: active-directory
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 26e0506cbea5cb34efaf516c3f4c01d830a219f0
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: b071bd29c3e66b2d2e504936b3653d15a22ca6f2
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861706"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258479"
 ---
 # <a name="assign-a-group-to-a-specific-azure-ad-application-proxy-application"></a>Назначение группы конкретному приложению Azure AD Application Proxy
 

@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/23/2021
+ms.date: 02/01/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 992115a65ec015ca04990135975e0d4020764184
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 61adb72d043821dfaedca5e5da0b2f880d56811e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98873779"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258926"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -84,6 +84,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 02/01/2021: измените уровень [доступности для SAP HANA с помощью использовании в RHEL](./sap-hana-high-availability-netapp-files-red-hat.md), [SAP HANA Scale-out HSR с Pacemaker на виртуальных машинах Azure в RHEL](./sap-hana-high-availability-scale-out-hsr-rhel.md), [SAP HANA масштабируемый узел с резервным узлом на ВИРТУАЛЬНЫХ машинах Azure с использовании в](./sap-hana-scale-out-standby-netapp-files-suse.md) SLES и [SAP HANA масштабировать с резервным УЗЛОМ на ВИРТУАЛЬНЫХ машинах Azure с использовании на RHEL](./sap-hana-scale-out-standby-netapp-files-rhel.md) , чтобы добавить ссылку на [тома NFS версии 4.1 в Azure NetApp Files для SAP HANA](./hana-vm-operations-netapp.md)
 - 01/23/2021. Опишите функциональные возможности секционирования тома данных HANA в качестве функций для чередующихся операций ввода-вывода для файлов данных HANA на разных дисках Azure или общих ресурсах NFS без использования диспетчера томов дисков в статьях [SAP HANA конфигурации хранилища виртуальных машин Azure](./hana-vm-operations-storage.md) и [томов NFS версии 4.1 на Azure NetApp Files для SAP HANA](./hana-vm-operations-netapp.md)
 - 01/18/2021: добавлена поддержка файлов Azure NET Apps на основе NFS для Oracle на [виртуальных машинах Azure развертывание СУБД Oracle для рабочей нагрузки SAP](./dbms_guide_oracle.md) и корректировка десятичных знаков в таблице в документе [NFS версии 4.1 на Azure NetApp Files для SAP HANA](./hana-vm-operations-netapp.md)
 - 01/11/2021: незначительные изменения в [HA для SAP NW на виртуальных машинах Azure в RHEL для приложений SAP](./high-availability-guide-rhel.md), [HA для SAP NW на виртуальных машинах Azure в RHEL с использовании](./high-availability-guide-rhel-netapp-files.md) и [HA для SAP NW на ВИРТУАЛЬНЫХ машинах Azure в RHEL с несколькими идентификаторами безопасности](./high-availability-guide-rhel-multi-sid.md) , чтобы настроить команды для работы как в RHEL8, так и в RHEL7, а также в ENSA1 и ENSA2

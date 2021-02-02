@@ -1,24 +1,51 @@
 ---
 title: Новые возможности управления приложениями Azure Active Directory
 description: Новая и обновленная документация по управлению Azure Active Directory приложениями.
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
 ms.workload: identity
 ms.author: kenwith
 author: kenwith
-manager: CelesteDG
-ms.openlocfilehash: ea2e08db91d23e9523b7bc95e01b7adc9c93b3cc
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+manager: daveba
+ms.openlocfilehash: 53339623ee435362d248b794776681972000173e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054827"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258580"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory Управление приложениями: новые возможности
 
 Добро пожаловать в документацию по управлению приложениями Azure Active Directory. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы управления приложениями, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="new-articles"></a>Новые статьи
+- [Планирование Azure Active Directory конфигурации моих приложений](my-apps-deployment-plan.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Проблема при установке соединителя агента прокси приложения](application-proxy-connector-installation-problem.md)
+- [Устранение неполадок с единым входом на основе пароля в Azure AD](troubleshoot-password-based-sso.md)
+- [Рекомендации по управлению приложениями](application-management-fundamentals.md)
+- [Руководство по интеграции Azure Active Directory с приложениями](plan-an-application-integration.md)
+- [Что такое управление приложениями?](what-is-application-management.md)
+- [Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)](application-proxy-faq.md)
+- [Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md)
+- [Работа с имеющимися локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md)
+- [Разработка бизнес-приложений для Azure Active Directory](developer-guidance-for-integrating-applications.md)
+- [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
+- [Общие сведения о связанном входе](configure-linked-sign-on.md)
+- [Общие сведения о едином входе на основе пароля](configure-password-single-sign-on-non-gallery-applications.md)
+- [Общие сведения о едином входе на основе SAML](configure-saml-single-sign-on.md)
+- [Устранение распространенных неполадок при добавлении или удалении приложения для Azure Active Directory](troubleshoot-adding-apps.md)
+- [Просмотр приложений с помощью клиента Azure AD для управления удостоверениями](application-types.md)
+- [Узнайте, как пользователи назначаются приложениям в Azure Active Directory](ways-users-get-assigned-to-applications.md)
+- [Краткое руководство. Удаление приложения из арендатора Azure Active Directory (Azure AD)](delete-application-portal.md)
+- [Публикация удаленного рабочего стола с помощью прокси-сервера приложений Azure AD](application-proxy-integrate-with-remote-desktop-services.md)
+- [Выполнение действий с недостаточными или подозрительными приложениями в Azure Active Directory](manage-application-permissions.md)
+
 
 ## <a name="december-2020"></a>Декабрь 2020 г.
 
@@ -67,7 +94,7 @@ ms.locfileid: "99054827"
 ### <a name="new-articles"></a>Новые статьи
 - [Краткое руководство. Настройка единого входа на основе OIDC для приложения в арендаторе Azure Active Directory (Azure AD)](add-application-portal-setup-oidc-sso.md)
 - [Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений](add-application-portal-assign-users.md)
-- [Новые возможности в Документации Майкрософт](whats-new-docs.md)
+- [Новые возможности в документах](whats-new-docs.md)
 
 
 ### <a name="updated-articles"></a>Обновленные статьи

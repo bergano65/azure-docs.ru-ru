@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 8c3c1d28a7fbb3e3c9c449feb03a75d48178b718
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: fdefcabdda64402610f115832976ec9f7af81b80
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609043"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258835"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения миграции при оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL
 
@@ -123,3 +123,4 @@ ms.locfileid: "97609043"
 - Миграция нескольких таблиц с одинаковыми именами, различающимися только регистром символов (например, таблица1, ТАБЛИЦА1 и Таблица1), может привести к непредсказуемым результатам и поэтому не поддерживается.
 - Изменение обработки [CREATE | ALTER | DROP | TRUNCATE] Таблица означающего не поддерживается.
 - В Azure Database Migration Service одно действие миграции может поддерживать только до четырех баз данных.
+- Миграция таблицы pg_largeobject не поддерживается. 

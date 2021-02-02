@@ -118,9 +118,8 @@
         - name: Azure AD и управление пакетной службой
           href: batch-aad-auth-management.md
         - name: Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
+          displayName: 'credential, certificate'
           href: credential-access-key-vault.md
-        - name: Использование сертификатов с пакетной службой
-          href: batch-certificates.md
     - name: Копирование файлов и приложений на узлы пула
       items:
         - name: Копирование приложений и данных в узлы пула
