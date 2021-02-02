@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 05/26/2020
 ms.author: chmutali
-ms.openlocfilehash: 197b7ff0a6c613a019007ba507d678b619c9afd4
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: ef4381f305292b366348aa3729209dc3f5e8c87b
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358598"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954095"
 ---
 # <a name="tutorial-configure-workday-to-azure-ad-user-provisioning"></a>Руководство по Настройка Workday для подготовки пользователей Azure AD
 Цель этого учебника — показать, как подготавливать данные о работниках из Workday в Azure Active Directory. 
@@ -208,11 +208,11 @@ ms.locfileid: "94358598"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
+* [Дополнительные сведения о сценариях интеграции Azure AD и Workday и о вызовах веб-служб](../app-provisioning/workday-integration-reference.md)
 * [Дополнительные сведения о поддерживаемых атрибутах Workday для входящей подготовки](../app-provisioning/workday-attribute-reference.md)
 * [Сведения о настройке обратной записи Workday](workday-writeback-tutorial.md)
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).
-* [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
 * [Узнайте, как экспортировать и импортировать конфигурации подготовки.](../app-provisioning/export-import-provisioning-configuration.md)
 
 

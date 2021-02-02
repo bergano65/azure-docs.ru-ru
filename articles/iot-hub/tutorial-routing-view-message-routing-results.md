@@ -1,6 +1,6 @@
 ---
-title: Просмотр результатов маршрутизации сообщений Центра Интернета вещей Azure (.NET) | Документация Майкрософт
-description: После настройки всех ресурсов с помощью части 1 этого руководства добавьте возможность маршрутизировать сообщения в Azure Stream Analytics и просмотрите результаты в PowerBI.
+title: Руководство. Просмотр результатов маршрутизации сообщений Центра Интернета вещей Azure (.NET) | Документация Майкрософт
+description: Руководство. После настройки всех ресурсов с помощью части 1 этого руководства добавьте возможность перенаправлять сообщения в Azure Stream Analytics и просматривать результаты в Power BI.
 author: robinsh
 manager: philmea
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2018
 ms.author: robinsh
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 14f6fc685e99060474a17503cb13ba09a61a5a9a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: fdfb2470e83cefaeb6df35115f7bb46149d8ffe6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149202"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733997"
 ---
 # <a name="tutorial-part-2---view-the-routed-messages"></a>Руководство по Часть 2. Просмотр маршрутизированных сообщений
 
@@ -48,7 +48,7 @@ ms.locfileid: "92149202"
 
    **Расположение.** Укажите свое расположение. В этом руководстве используется **Западная часть США**.
 
-   **Log Analytics**. Этот переключатель должен быть выключен.
+   **Enable Log Analytics** (Включить Log Analytics). Этот переключатель должен быть выключен.
 
    ![Экран создания приложения логики](./media/tutorial-routing-view-message-routing-results/create-logic-app.png)
 
@@ -151,6 +151,8 @@ ms.locfileid: "92149202"
    **Имя набора данных.** Имя набора данных для использования в Power BI. В этом руководстве используется **contosodataset**. 
 
    **Имя таблицы.** Имя таблицы для использования в Power BI. В этом руководстве используется **contosotable**.
+
+  **Режим проверки подлинности**: выберите нужный режим.
 
    Для остальных полей оставьте значения по умолчанию.
 
@@ -280,7 +282,7 @@ ms.locfileid: "92149202"
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Очистка ресурсов с помощью Azure CLI
 
-Чтобы удалить группу ресурсов, используйте команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete). Значение `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
+Чтобы удалить группу ресурсов, используйте команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true). Значение `$resourceGroup` было присвоено **ContosoResources** в начале работы с этим руководством.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

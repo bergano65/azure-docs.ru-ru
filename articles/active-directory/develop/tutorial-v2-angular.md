@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: c4c7d021c7c3a5a32d537a50fa45449fdee7e817
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 105353598a2af60c407bacf02b4527b2de84e450
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94979935"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756148"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Руководство по входу пользователей в систему и вызову API Microsoft Graph из одностраничного приложения Angular
 
@@ -271,7 +271,7 @@ this.authService.acquireTokenSilent(requestObj).then(function (tokenResponse) {
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-Иногда необходимо, чтобы пользователь взаимодействовал с конечной точкой платформы удостоверений Майкрософт. Пример:
+Иногда необходимо, чтобы пользователь взаимодействовал платформой удостоверений Майкрософт. Пример:
 
 * Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля.
 * Ваше приложение запрашивает доступ к дополнительным областям ресурса, на обращение к которым пользователь должен дать согласие.
@@ -279,7 +279,7 @@ this.authService.acquireTokenSilent(requestObj).then(function (tokenResponse) {
 
 Рекомендуемый шаблон для большинства приложений — вызов `acquireTokenSilent`, перехват исключения, а затем вызов `acquireTokenPopup` (или `acquireTokenRedirect`) для запуска интерактивного запроса.
 
-Вызов `acquireTokenPopup` приводит к появлению всплывающего окна входа в систему. Кроме того, можно использовать `acquireTokenRedirect`, что приведет к перенаправлению пользователей на конечную точку платформы удостоверений Майкрософт. В этом окне пользователям необходимо подтвердить учетные данные, предоставить согласие на требуемый ресурс или выполнить двухфакторную проверку подлинности.
+Вызов `acquireTokenPopup` приводит к появлению всплывающего окна входа в систему. Кроме того, можно использовать `acquireTokenRedirect`, что приведет к перенаправлению пользователей на платформу удостоверений Майкрософт. В этом окне пользователям необходимо подтвердить учетные данные, предоставить согласие на требуемый ресурс или выполнить двухфакторную проверку подлинности.
 
 ```javascript
   const requestObj = {

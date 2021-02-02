@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (Python) | Документация Майкрософт
+title: Краткое руководство. Отправка телеметрии в Центр Интернета вещей Azure (Python) | Документация Майкрософт
 description: В этом кратком руководстве мы рассмотрим процесс отправки имитированных данных телеметрии в Центр Интернета вещей на примере приложения Python и с помощью служебной программы попробуем считать данные телеметрии из Центра Интернета вещей.
 author: wesmc7777
 manager: philmea
@@ -15,12 +15,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 06/16/2020
-ms.openlocfilehash: 71d91ceba48158d2abc688af572dabfc258a2e94
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: c1ea343a2674346e1028f8bb1f3d8ee61cb7e20e
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121446"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624881"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Python)
 

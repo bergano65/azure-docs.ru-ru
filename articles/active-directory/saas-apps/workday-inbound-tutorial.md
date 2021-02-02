@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 8e83841031593d0d1af4499f3ef9a15400ce7794
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: a34881901fd8642fff9ac37512cd2ef260ad9d1c
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569611"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954228"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -157,7 +157,7 @@ ms.locfileid: "98569611"
 
 1. Найдите и выберите группу безопасности, созданную на предыдущем шаге. 
    >[!div class="mx-imgBorder"]
-   >![Выбор группы безопасности](./media/workday-inbound-tutorial/select-security-group-msft-wdad.png)
+   >![Выбор группы безопасности](./media/workday-inbound-tutorial/select-security-group-workday.png)
 
 1. Щелкните многоточие (...) рядом с именем группы и выберите в меню пункт **Security Group > Maintain Domain Permissions for Security Group** (Группа безопасности > Сохранить разрешения домена для группы безопасности).
    >[!div class="mx-imgBorder"]
@@ -228,7 +228,7 @@ ms.locfileid: "98569611"
 
 ## <a name="provisioning-agent-installation-prerequisites"></a>Предварительные требования для установки агента подготовки
 
-Прежде чем переходить к следующему разделу, изучите [предварительные требования для установки агента подготовки](../cloud-provisioning/how-to-prerequisites.md). 
+Прежде чем переходить к следующему разделу, изучите [предварительные требования для установки агента подготовки](../cloud-sync/how-to-prerequisites.md). 
 
 ## <a name="configuring-user-provisioning-from-workday-to-active-directory"></a>Настройка подготовки пользователей из Workday в Active Directory
 
@@ -267,7 +267,7 @@ ms.locfileid: "98569611"
 
 Чтобы подготовить локальную службу Active Directory, необходимо установить агент подготовки на присоединенном к домену сервере с сетевым доступом к нужным доменам Active Directory.
 
-Перенесите скачанный установщик агента на узел сервера и следуйте инструкциям из [раздела об **установке агента**](../cloud-provisioning/how-to-install.md), чтобы завершить настройку агента.
+Перенесите скачанный установщик агента на узел сервера и следуйте инструкциям из [раздела об **установке агента**](../cloud-sync/how-to-install.md), чтобы завершить настройку агента.
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory"></a>Часть 3. В приложении подготовки настройте подключения к Workday и Active Directory
 На этом шаге мы устанавливаем подключение с Workday и Active Directory на портале Azure. 
@@ -336,7 +336,7 @@ ms.locfileid: "98569611"
       * Оператор: IS NOT NULL.
 
    > [!TIP]
-   > При первой настройке приложения подготовки необходимо проверить сопоставления атрибутов и выражения, чтобы получить желаемый результат. Корпорация Майкрософт рекомендует использовать фильтры области действия в разделе **Область исходного объекта** для проверки сопоставлений с несколькими тестовыми пользователями из Workday. После проверки работоспособности сопоставлений можно либо удалить фильтр, либо постепенно расширять его, добавляя больше пользователей.
+   > При первой настройке приложения подготовки необходимо проверить сопоставления атрибутов и выражения, чтобы получить желаемый результат. Корпорация Майкрософт рекомендует использовать [фильтры области действия](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) в разделе **Область исходного объекта** и [подготовку по требованию](../app-provisioning/provision-on-demand.md) для проверки сопоставлений с несколькими тестовыми пользователями из Workday. После проверки работоспособности сопоставлений можно либо удалить фильтр, либо постепенно расширять его, добавляя больше пользователей.
 
    > [!CAUTION] 
    > Поведение по умолчанию обработчика подготовки заключается в том, чтобы отключить или удалить неподходящих пользователей. Это может быть нежелательно в случае интеграции Workday с AD. Сведения о том, как переопределить такое поведение по умолчанию, см. в статье [Пропустить удаление учетных записей неподходящих пользователей](../app-provisioning/skip-out-of-scope-deletions.md).
@@ -1065,7 +1065,8 @@ SelectUniqueValue(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Дополнительные сведения о сценариях интеграции Azure AD и Workday и о вызовах веб-служб](../app-provisioning/workday-integration-reference.md)
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).
-* [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
+* [Сведения о настройке обратной записи Workday](workday-writeback-tutorial.md)
 * [Сведения об использовании API Microsoft Graph для управления конфигурациями подготовки](/graph/api/resources/synchronization-overview)

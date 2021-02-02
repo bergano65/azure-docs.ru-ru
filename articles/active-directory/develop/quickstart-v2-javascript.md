@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 532fcc7db849af192ceddb1c239e99f31a2a3088
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: b475d8072c4103e8a532cdf703e2d75b0c8aafa2
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178472"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754149"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
@@ -37,7 +37,7 @@ ms.locfileid: "98178472"
 >
 > ### <a name="option-1-express-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1 (экспресс-способ). Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">регистрации приложений на портале Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Введите имя приложения.
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите **Зарегистрировать**.
@@ -54,7 +54,7 @@ ms.locfileid: "98178472"
 > 1. Введите значение **Name** (Имя) для приложения. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите **Зарегистрировать**. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** для использования в будущем.
-> 1. Для этого краткого руководства должно быть включено [неявное предоставление разрешения потока](v2-oauth2-implicit-grant-flow.md). В левой области зарегистрированного приложения выберите **Проверка подлинности**.
+> 1. Для этого краткого руководства должно быть включено [неявное предоставление разрешения потока](v2-oauth2-implicit-grant-flow.md). В разделе **Управление** выберите **Проверка подлинности**.
 > 1. В разделе **Конфигурации платформ** щелкните **Добавить платформу**. Откроется панель слева. Выберите регион **веб-приложений**.
 > 1. В этой же левой части задайте для **URI перенаправления** значение `http://localhost:3000/`. Затем выберите **Маркер доступа** и **Токен идентификатора**.
 > 1. Нажмите кнопку **Настроить**.
@@ -266,14 +266,14 @@ myMSALObj.acquireTokenSilent(tokenRequest)
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-Иногда требуется настроить принудительное взаимодействие пользователей с конечной точкой платформы удостоверений Майкрософт. Пример:
+Иногда требуется настроить принудительное взаимодействие пользователей с платформой удостоверений Майкрософт. Пример:
 * Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля.
 * Ваше приложение запрашивает доступ к дополнительным областям ресурса, на обращение к которым пользователь должен дать согласие.
 * Требуется двухфакторная проверка подлинности.
 
 Обычный рекомендуемый шаблон для большинства приложений — вызов `acquireTokenSilent`, перехват исключения, а затем вызов `acquireTokenPopup` (или `acquireTokenRedirect`) для запуска интерактивного запроса.
 
-Вызов `acquireTokenPopup` приводит к появлению всплывающего окна для входа. (Или `acquireTokenRedirect` приводит к перенаправлению пользователей на конечную точку платформы удостоверений Майкрософт.) В этом окне пользователям необходимо подтверждать свои учетные данные, давать согласие на требуемый ресурс и выполнять двухфакторную аутентификацию.
+Вызов `acquireTokenPopup` приводит к появлению всплывающего окна для входа. (Или `acquireTokenRedirect` приводит к перенаправлению пользователей на платформу удостоверений Майкрософт.) В этом окне пользователям необходимо подтверждать свои учетные данные, давать согласие на требуемый ресурс и выполнять двухфакторную аутентификацию.
 
 ```javascript
 // Add here scopes for access token to be used at MS Graph API endpoints.

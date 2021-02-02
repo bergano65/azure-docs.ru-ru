@@ -11,15 +11,16 @@ author: linda33wj
 manager: shwang
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 02/01/2021
-ms.openlocfilehash: d11125ed00491f87844c7b0b344473825ad52a99
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.date: 02/02/2021
+ms.openlocfilehash: 63816a40aa710d26dc036dfe82018883e917beb6
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223480"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428493"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure копировать данные в Microsoft Dynamics 365 и Microsoft Dynamics CRM и обратно. Она основана на статье [Обзор действия копирования](copy-activity-overview.md) , в которой представлен общий обзор действия копирования.
@@ -43,7 +44,7 @@ ms.locfileid: "99223480"
 
 | Версии Dynamics | Типы проверки подлинности | Примеры связанной службы |
 |:--- |:--- |:--- |
-| Common Data Service <br/><br/> Dynamics 365 Online <br/><br/> Dynamics CRM Online | Субъект-служба Azure Active Directory (Azure AD) <br/><br/> Office 365 | [Служба Dynamics Online и Azure AD — проверка подлинности субъекта или Office 365](#dynamics-365-and-dynamics-crm-online) |
+| Common Data Service <br/><br/> Dynamics 365 Online <br/><br/> Dynamics CRM Online | Субъект-служба Azure Active Directory (Azure AD) <br/><br/> Office 365 | [Служба Dynamics Online и Azure AD — проверка подлинности субъекта или Office 365](#dynamics-365-and-dynamics-crm-online) |
 | Локальная среда Dynamics 365 с развертыванием с выходом в Интернет (IFD) <br/><br/> Dynamics CRM 2016 (локальная версия) с IFD <br/><br/> Dynamics CRM 2015 (локальная версия) с IFD | IFD | [Локальная среда Dynamics с IFD и IFD Authentication](#dynamics-365-and-dynamics-crm-on-premises-with-ifd) |
 
 В частности, для Dynamics 365 поддерживаются следующие типы приложений:
@@ -61,11 +62,11 @@ ms.locfileid: "99223480"
 
 Этот соединитель Dynamics построен на основе [инструментов Dynamics XRM](/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы использовать этот соединитель с проверкой подлинности субъекта-службы Azure AD, необходимо настроить проверку подлинности "сервер-сервер" (S2S) в Common Data Service или Dynamics. Подробные инструкции см. в [этой статье](/powerapps/developer/common-data-service/build-web-applications-server-server-s2s-authentication) .
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -88,7 +89,7 @@ ms.locfileid: "99223480"
 | сервицепринЦипалкредентиал | Учетные данные субъекта-службы. <br/><br/>При использовании "СервицепринЦипалкэй" в качестве типа учетных данных `servicePrincipalCredential` может быть строкой, которая шифруется фабрикой данных Azure при развертывании связанной службы. Или это может быть ссылка на секрет в Azure Key Vault. <br/><br/>При использовании "СервицепринЦипалцерт" в качестве учетных данных `servicePrincipalCredential` должен быть ссылкой на сертификат в Azure Key Vault. | Да, если проверка подлинности — "АадсервицепринЦипал" |
 | username | Имя пользователя для подключения к Dynamics. | Да, если проверка подлинности — "Office 365" |
 | password | Пароль для учетной записи пользователя, указанной в качестве имени пользователя. Пометьте это поле "SecureString", чтобы безопасно хранить его в фабрике данных, или [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да, если проверка подлинности — "Office 365" |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если значение не указано, свойство использует среду выполнения интеграции Azure по умолчанию. | Нет для источника и Да для приемника, если у связанной службы источника нет среды выполнения интеграции |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если значение не указано, свойство использует среду выполнения интеграции Azure по умолчанию. | Нет |
 
 >[!NOTE]
 >Соединитель Dynamics ранее использовал необязательное свойство **название_организации** для задания экземпляра Dynamics CRM или Dynamics 365 Online. Хотя это свойство по-прежнему работает, мы рекомендуем указать новое свойство **ServiceUri** , чтобы повысить производительность при обнаружении экземпляра.
@@ -184,7 +185,7 @@ ms.locfileid: "99223480"
 | authenticationType | Тип проверки подлинности для подключения к серверу Dynamics. Укажите Ifd для Dynamics (локальная версия) с IFD. | Да. |
 | username | Имя пользователя для подключения к Dynamics. | Да. |
 | password | Пароль для учетной записи пользователя, указанной для имени пользователя. Вы можете пометить это поле "SecureString", чтобы безопасно хранить его в фабрике данных. Кроме того, можно сохранить пароль в Key Vault и разрешить извлечение действия копирования при копировании данных. Подробнее о [хранении учетных данных в Key Vault](store-credentials-in-key-vault.md). | Да. |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если значение не указано, свойство использует среду выполнения интеграции Azure по умолчанию. | Нет для источника и Да для приемника. |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если значение не указано, свойство использует среду выполнения интеграции Azure по умолчанию. | Нет |
 
 #### <a name="example-dynamics-on-premises-with-ifd-using-ifd-authentication"></a>Пример. Dynamics (локальная версия) с IFD с использованием проверки подлинности
 
@@ -378,21 +379,21 @@ ms.locfileid: "99223480"
 | Тип данных Dynamics | Тип промежуточных данных фабрики данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | Long | ✓ | ✓ |
-| AttributeTypeCode.Boolean | Логическое значение | ✓ | ✓ |
+| AttributeTypeCode.Boolean | Логический | ✓ | ✓ |
 | AttributeType.Customer | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.DateTime | Datetime | ✓ | ✓ |
 | AttributeType.Decimal | Decimal | ✓ | ✓ |
 | AttributeType.Double | Double | ✓ | ✓ |
-| AttributeType.EntityName | Строка | ✓ | ✓ |
+| AttributeType.EntityName | Строковый | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
 | AttributeType.Lookup | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
-| AttributeType.ManagedProperty | Логическое значение | ✓ | |
-| AttributeType.Memo | Строка | ✓ | ✓ |
+| AttributeType.ManagedProperty | Логический | ✓ | |
+| AttributeType.Memo | Строковый | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |
 | AttributeType.Owner | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
 | AttributeType.Uniqueidentifier | Идентификатор GUID | ✓ | ✓ |
-| AttributeType.String | Строка | ✓ | ✓ |
+| AttributeType.String | Строковый | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 

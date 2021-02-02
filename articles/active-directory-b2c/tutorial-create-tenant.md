@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 12/03/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5229175af618f897caeae7310338cbe51966a48d
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 4b8292d99bd16f9b6f98f4ae8ca82edbfc02ff76
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859618"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725759"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство по Создание клиента Azure Active Directory B2C
 
@@ -68,7 +68,7 @@ ms.locfileid: "96859618"
     ![Портал Azure, где отображается форма создания клиента с введенными примерами значений](media/tutorial-create-tenant/review-and-create-tenant.png)
 
 1. Выберите **Review + create** (Просмотреть и создать).
-1. Проверьте параметры каталога. Щелкните **Создать**.
+1. Проверьте параметры каталога. Щелкните **Создать**. Сведения об устранении неполадок при развертывании см. [здесь](https://docs.microsoft.com/azure/azure-resource-manager/templates/common-deployment-errors).
 
 Вы можете связать несколько клиентов Azure AD B2C с одной подпиской Azure для выставления счетов. Чтобы связать клиент, нужно иметь права администратора в клиенте Azure AD B2C и по меньшей мере роль "Участник" в подписке Azure. Дополнительные сведения см. в разделе [Связывание клиента Azure AD B2C с подпиской](billing.md#link-an-azure-ad-b2c-tenant-to-a-subscription).
 

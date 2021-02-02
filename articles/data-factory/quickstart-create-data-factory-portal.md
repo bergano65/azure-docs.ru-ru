@@ -5,18 +5,17 @@ services: data-factory
 documentationcenter: ''
 author: linda33wj
 manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: quickstart
 ms.date: 12/14/2020
 ms.author: jingwang
-ms.openlocfilehash: 76a490ed28f940620db7835c4cec145740f48503
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0f22d4695a6324b0f0cde466e252b1a3a504f433
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509025"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632755"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Краткое руководство. Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure" 
 
@@ -26,7 +25,7 @@ ms.locfileid: "97509025"
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом кратком руководстве описано создание и мониторинг фабрики данных Azure с помощью пользовательского интерфейса службы "Фабрика данных Azure". Конвейер, который вы создадите в этой фабрике данных, *копирует* данные из одной папки в другую в хранилище BLOB-объектов Azure. Сведения о *преобразовании* данных с помощью Фабрики данных Azure см. в статьях [о сопоставлении потока данных](concepts-data-flow-overview.md) и [о структурировании потока данных (предварительная версия)](wrangling-data-flow-overview.md).
+В этом кратком руководстве описано создание и мониторинг фабрики данных Azure с помощью пользовательского интерфейса службы "Фабрика данных Azure". Конвейер, который вы создадите в этой фабрике данных, *копирует* данные из одной папки в другую в хранилище BLOB-объектов Azure. Сведения о *преобразовании* данных с помощью Фабрики данных Azure см. в статье [потоке данных для сопоставления](concepts-data-flow-overview.md).
 
 > [!NOTE]
 > Если вы еще не работали со службой "Фабрика данных Azure", ознакомьтесь с [общими сведениями](introduction.md) о ней перед изучением этого руководства. 

@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: banders
-ms.openlocfilehash: 662e1bf721c93ee1d59946d2fd603551f3f88ad3
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 0d0dd5342cfc57da776e38ddef3df3b9c2199ac2
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503800"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735781"
 ---
 # <a name="cancel-your-azure-subscription"></a>Отмена подписки Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "97503800"
 
 ## <a name="reactivate-a-subscription"></a>Повторная активация подписки
 
-Если вы случайно отменили подписку с оплатой по мере использования, можно [повторно активировать ее в Центре управления учетной записью](subscription-disabled.md).
+Если вы случайно отменили подписку с оплатой по мере использования, можно [повторно активировать ее на портале Azure](subscription-disabled.md).
 
 Если ваша подписка не является подпиской с оплатой по мере использования, обратитесь в службу поддержки в течение 90 дней после отмены подписки для повторной активации.
 
@@ -101,4 +101,4 @@ ms.locfileid: "97503800"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- При необходимости вы можете повторно активировать подписку с оплатой по мере использования в [Центре управления учетной записью](subscription-disabled.md).
+- При необходимости вы можете повторно активировать подписку с оплатой по мере использования на [портале Azure](subscription-disabled.md).

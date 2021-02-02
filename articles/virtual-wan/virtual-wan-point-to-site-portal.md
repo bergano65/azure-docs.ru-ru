@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: tutorial
 ms.date: 11/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: e7e65d5d2941765df98b3bf3b7fb8ff2e89b7e9f
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 1876ab86e6f4c46edc23361dd884d8b32328f36c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411207"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919076"
 ---
 # <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Руководство по созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
 
@@ -24,6 +24,7 @@ ms.locfileid: "94411207"
 > * Создание виртуальной глобальной сети
 > * Создание конфигурации подключения "точка — сеть"
 > * Создание виртуального концентратора
+> * Выбор пулов адресов клиента
 > * Указание DNS-серверов
 > * Создание пакета конфигурации профиля VPN-клиента
 > * Настройка VPN-клиентов
@@ -49,6 +50,11 @@ ms.locfileid: "94411207"
 
 [!INCLUDE [Create hub](../../includes/virtual-wan-p2s-hub-include.md)]
 
+
+## <a name="choose-p2s-client-address-pools"></a><a name="chooseclientpools"></a> Выбор пулов адресов клиента для подключений "точка — сеть"
+
+[!INCLUDE [Choose pools](../../includes/virtual-wan-allocating-p2s-pools.md)]
+
 ## <a name="specify-dns-server"></a><a name="dns"></a>Указание DNS-сервера
 
 Эти параметры можно настроить при создании концентратора или изменить позже. Для этого найдите нужный виртуальный концентратор. В разделе **VPN пользователя (точка — сеть)** щелкните **Настроить** и введите IP-адреса DNS-серверов в текстовые поля **Пользовательские DNS-серверы**. Можно указать до 5 DNS-серверов.
@@ -73,6 +79,8 @@ ms.locfileid: "94411207"
 1. Перейдите к виртуальной глобальной сети.
 1. На странице **Обзор** каждая точка на карте представляет собой концентратор.
 1. В разделе **Концентраторы и подключения** можно просмотреть сведения о состоянии концентратора, сайте, регионе, состоянии VPN-подключения, а также количестве принятых и переданных байтов.
+
+
 
 ## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
 

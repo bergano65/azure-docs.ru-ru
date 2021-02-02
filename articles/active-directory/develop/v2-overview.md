@@ -13,12 +13,12 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40, contperf-fy21q2
-ms.openlocfilehash: e5a9292097933ff35eb8b77445f07f10def6e5c3
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 662523b1544fe3ca9e8bda993efa7b578b9f69cc
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029623"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752572"
 ---
 # <a name="what-is-the-microsoft-identity-platform"></a>Что такое платформа удостоверений Майкрософт?
 
@@ -78,7 +78,7 @@ ms.locfileid: "97029623"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас есть учетная запись Azure, у вас уже есть доступ к клиенту Azure Active Directory, но большинству разработчиков на платформе идентификации Майкрософт при разработке приложений требуется собственный клиент Azure AD — "клиент разработки".
+Если у вас есть учетная запись Azure, у вас уже есть доступ к клиенту Azure Active Directory, но большинству разработчиков на платформе удостоверений Майкрософт при разработке приложений требуется собственный клиент Azure AD — "клиент разработки".
 
 Узнайте, как создать собственный клиент, который будет использоваться при создании приложений:
 

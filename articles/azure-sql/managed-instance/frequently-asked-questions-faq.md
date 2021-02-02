@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: d3f859590b30aaeeaebaed7b1f2f85e1a86a92c9
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: f58811411a447eae4ff9a5c0fd2a9888b4a39a34
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223412"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428679"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об Управляемом экземпляре SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -364,13 +364,6 @@ SQL Управляемый экземпляр отвечает за настро
 **Можно ли выполнить обновление DNS?**
 
 Да. См. раздел [Синхронизация параметра DNS-серверов виртуальной сети в SQL управляемый экземпляр виртуального кластера](./synchronize-vnet-dns-servers-setting-on-virtual-cluster.md).
-
-В конечном итоге обновляется конфигурация DNS:
-
-- По истечении срока аренды DHCP.
-- При обновлении платформы.
-
-В качестве обходного решения можно понизить уровень SQL Управляемый экземпляр до 4 виртуальных ядер и снова обновить его. Это оказывает побочный результат обновления конфигурации DNS.
 
 ## <a name="change-time-zone"></a>Изменить часовой пояс
 

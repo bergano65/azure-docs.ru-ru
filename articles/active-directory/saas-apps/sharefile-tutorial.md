@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/21/2020
+ms.date: 01/18/2021
 ms.author: jeedes
-ms.openlocfilehash: d7cafdcbbf44f3f501d54c13d1b4549c446ed8c8
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 03f2ec7aef1faadcb72d6c7a5a058c7d06596539
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724006"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98729683"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
@@ -32,7 +32,7 @@ ms.locfileid: "97724006"
 Чтобы настроить интеграцию Azure AD с Citrix ShareFile, вам потребуется:
 
 * подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* Подписка Citrix ShareFile с поддержкой единого входа.
+* подписка Citrix ShareFile с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -126,7 +126,7 @@ ms.locfileid: "97724006"
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
+1. Если пользователям необходимо назначить роль, вы можете выбрать ее из раскрывающегося списка **Выберите роль**. Если для этого приложения не настроена ни одна роль, будет выбрана роль "Доступ по умолчанию".
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ## <a name="configure-citrix-sharefile-sso"></a>Настройка единого входа в Citrix ShareFile
@@ -141,7 +141,7 @@ ms.locfileid: "97724006"
 
 3. Если вы хотите настроить Citrix ShareFile вручную, в другом окне браузера войдите на свой корпоративный сайт Citrix ShareFile с правами администратора.
 
-1. В разделе **Панель мониторинга** щелкните пункт **Параметры** и выберите элемент **Параметры администрирования**
+1. В разделе **Dashboard** (Панель мониторинга) щелкните пункт **Settings** (Параметры) и выберите элемент **Admin Settings** (Параметры администрирования).
 
     ![Администрирование](./media/sharefile-tutorial/settings.png)
 
@@ -165,7 +165,9 @@ ms.locfileid: "97724006"
     
     е) В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
-5. Щелкните **Сохранить** на портале управления Citrix ShareFile.
+    ж. В разделе **Optional Settings** (Необязательные параметры) выберите для параметра **SP-Initiated Auth Context** (Контекст проверки подлинности, инициированной поставщиком службы) значение **User Name and Password** (Имя пользователя и пароль) и **Exact** (Точное совпадение).
+
+5. Нажмите **Сохранить**.
 
 ## <a name="create-citrix-sharefile-test-user"></a>Создание тестового пользователя Citrix ShareFile
 
@@ -198,7 +200,7 @@ ms.locfileid: "97724006"
 
 * Перейдите по URL-адресу для входа в Citrix ShareFile и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Citrix ShareFile на портале "Мои приложения", вы перейдете по URL-адресу для входа в Citrix ShareFile. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Citrix ShareFile на портале "Мои приложения", вы перейдете по URL-адресу для входа в Citrix ShareFile. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

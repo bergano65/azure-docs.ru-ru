@@ -9,12 +9,12 @@ ms.reviewer: dseven
 ms.author: matjazl
 author: matjazl
 ms.date: 02/07/2019
-ms.openlocfilehash: 37086a925d65a80f219c8e0a3358c834a2691701
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: b0acfbf9636c2ad1df7df3197a0a1a83ec91b5c3
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145656"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747345"
 ---
 # <a name="access-azure-api-for-fhir-with-postman"></a>Получение доступа к Azure API для FHIR с помощью Postman
 
@@ -32,7 +32,7 @@ ms.locfileid: "93145656"
 
 - URL-адрес сервера FHIR, например `https://MYACCOUNT.azurehealthcareapis.com`.
 - Поставщик удостоверений `Authority` для сервера FHIR, например `https://login.microsoftonline.com/{TENANT-ID}`.
-- Необходимо настроить `audience`. Обычно это URL-адрес сервера FHIR, например `https://MYACCOUNT.azurehealthcareapis.com` или просто `https://azurehealthcareapis.com`.
+- Необходимо настроить `audience`. Обычно это URL-адрес сервера FHIR, например `https://<FHIR-SERVER-NAME>.azurehealthcareapis.com` или просто `https://azurehealthcareapis.com`.
 - `client_id` (или идентификатор приложения) [клиентского приложения](register-confidential-azure-ad-client-app.md), которое будет использоваться для доступа к службе FHIR.
 - `client_secret` (или секрет приложения) клиентского приложения.
 

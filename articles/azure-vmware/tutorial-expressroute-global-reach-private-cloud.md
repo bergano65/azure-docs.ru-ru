@@ -2,13 +2,13 @@
 title: Учебник по настройке пиринга между локальной средой и частным облаком
 description: Создание пиринга ExpressRoute Global Reach к частному облаку в решении Azure VMware.
 ms.topic: tutorial
-ms.date: 1/5/2021
-ms.openlocfilehash: 613aece6ed548f70840349e017de4416883d6cf3
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.date: 01/27/2021
+ms.openlocfilehash: e7b1e349f67fe63f63183c0ff6d1522498c65f8c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913164"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918726"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Руководство по Настройка пиринга между локальной средой и частным облаком
 
@@ -33,7 +33,7 @@ ExpressRoute Global Reach подключает локальную среду к 
 - Установленное подключение к частному облаку решения Azure VMware и из него с помощью канала ExpressRoute, подключенного к шлюзу ExpressRoute в виртуальной сети Azure (VNet) — _канал 2_ из процедур пиринга.  
 - Отдельный работоспособный канал ExpressRoute, используемый для подключения локальных сред к Azure — _канал 1_ с точки зрения процедур пиринга.
 - [блок неперекрывающихся сетевых адресов](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) /29 для пиринга ExpressRoute Global Reach.
-- Убедитесь, что все маршрутизаторы, включая службу поставщика ExpressRoute, поддерживают 4-байтовые номера автономной системы (ASN). Решение Azure VMware использует 4-байтовые общедоступные номера ASN для объявления маршрутов.
+- Убедитесь, что все шлюзы, включая службу поставщика ExpressRoute, поддерживают 4-байтовые номера автономной системы (ASN). Решение Azure VMware использует 4-байтовые общедоступные номера ASN для объявления маршрутов.
 
 > [!TIP]
 > В рамках этих предварительных требований считается, что канал ExpressRoute локальной среды называется _канал 1_, а канал ExpressRoute частного облака находится в другой подписке и обозначается как _канал 2_. 

@@ -4,12 +4,12 @@ description: Обзор службы Azure Backup и ее роль в страт
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 805fa81362b9f90c1d6ba468caaf4b6745e42c62
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 6a30e31dd1462e427faf64966a38c94f9fa56df6
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746120"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624478"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Часто задаваемые вопросы о службе Azure Backup
 
@@ -21,6 +21,7 @@ ms.locfileid: "96746120"
 
 - **Локальное** — резервное копирование файлов, папок, состояния системы с помощью [агента Службы восстановления Microsoft Azure](backup-support-matrix-mars-agent.md). Вы также можете использовать агент DPM или Azure Backup Server (MABS) для защиты локальных виртуальных машин ([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) и [VMware](backup-azure-backup-server-vmware.md)) и других [локальных рабочих нагрузок](backup-mabs-protection-matrix.md).
 - **Виртуальные машины Azure** - [Резервное копирование всех виртуальных машин Windows и Linux](backup-azure-vms-introduction.md) (с помощью расширений резервного копирования) или резервное копирование файлов, папок и состояния системы с помощью [агента MARS](backup-azure-manage-mars.md).
+- **Управляемые диски Azure** - [Резервное копирование управляемых дисков Azure (предварительная версия)](backup-managed-disks.md)
 - **Общие папки Azure** - [Резервное копирование общих папок Azure в учетной записи хранения](backup-afs.md)
 - **SQL Server в виртуальной машине Azure** -  [Резервное копирование баз данных SQL Server, работающих в виртуальных машинах Azure](backup-azure-sql-database.md).
 - **Базы данных SAP HANA на виртуальных машинах Azure** - [Резервное копирование баз данных SAP HANA, выполняемых на виртуальных машинах Azure](backup-azure-sap-hana-database.md)

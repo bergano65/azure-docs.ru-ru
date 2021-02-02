@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по отправке данных телеметрии в Центр Интернета вещей Azure (Android) | Документация Майкрософт
+title: Краткое руководство. Отправка телеметрии в Центр Интернета вещей Azure (Android) | Документация Майкрософт
 description: В рамках этого краткого руководства вы запустите пример приложения Android, которое отправляет имитированные данные телеметрии в центр Интернета вещей и считывает данные телеметрии из этого центра для обработки в облаке.
 author: wesmc7777
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-azurecli
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: d9598f7a0bc8e4a8b92ac53612023585eb19f4c4
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: dd622f0d55be000e2318c53f200bebf49c373724
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121538"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624326"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -100,7 +100,7 @@ ms.locfileid: "98121538"
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 
-В этом разделе объясняется, как использовать Azure Cloud Shell с [расширением Интернета вещей](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) для мониторинга сообщений, отправляемых устройством Android.
+В этом разделе объясняется, как использовать Azure Cloud Shell с [расширением Интернета вещей](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) для мониторинга сообщений, отправляемых устройством Android.
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 

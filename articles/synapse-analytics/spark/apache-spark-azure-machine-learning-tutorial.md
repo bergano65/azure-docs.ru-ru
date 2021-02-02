@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2594e25bff3ca949b329f8b66f4427eb1f6950b0
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: fc9909614a9d557c19a22e215b7513a038f88c33
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118716"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98942338"
 ---
 # <a name="tutorial-train-a-model-in-python-with-automated-machine-learning"></a>Руководство. Обучение модели на Python с помощью автоматизированного машинного обучения
 
@@ -24,8 +24,8 @@ ms.locfileid: "98118716"
 
 В этом руководстве описано следующее.
 - Скачивание данных с помощью Apache Spark и Открытых наборов данных Azure.
-- Преобразование и очистка данных с помощью кадров данных Apache Spark.
-- Обучение автоматизированной регрессионной модели машинного обучения.
+- Преобразование и очистка данных с помощью DataFrame в Apache Spark.
+- Обучение модели регрессии в автоматизированном машинном обучении.
 - Расчет точности модели.
 
 ## <a name="before-you-begin"></a>Подготовка к работе
@@ -39,7 +39,7 @@ ms.locfileid: "98118716"
 
 ### <a name="example-based-on-new-york-city-taxi-data"></a>Пример на основе данных о поездках в такси по Нью-Йорку
 
-В этом примере вы с помощью Spark выполните некоторый анализ данных о чаевых таксистам Нью-Йорка. Данные доступны через [открытые наборы данных Azure](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Это подмножество набора данных содержит сведения о поездках на такси, включая сведения о каждой поездке, время начала и окончания, расположения и стоимость.
+В этом примере показано, как с помощью Spark выполнить анализ данных о чаевых таксистам Нью-Йорка. Данные доступны через [открытые наборы данных Azure](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Это подмножество набора данных содержит сведения о поездках на такси, включая сведения о каждой поездке, время начала и окончания, расположения и стоимость.
 
 > [!IMPORTANT]
 > За извлечение этих данных из хранилища может взиматься дополнительная плата. В следующих шагах вам предстоит разработать модель для прогнозирования тарифов на такси в Нью-Йорке. 
@@ -53,7 +53,7 @@ ms.locfileid: "98118716"
     > [!Note]
     > Ядро PySpark позволяет не задавать контексты явным образом. Контекст Spark будет создан автоматически при выполнении первой ячейки кода.
   
-2. Поскольку необработанные данные имеют формат Parquet, можно использовать контекст Spark, чтобы извлечь файл в память напрямую в виде кадра данных. Создайте кадр данных Spark, извлекая данные с помощью API Открытых наборов данных. Здесь мы будем использовать свойства `schema on read` для кадра данных Spark, чтобы вывести типы и схему данных. 
+2. Так как необработанные данные имеют формат Parquet, можно использовать контекст Spark, чтобы извлечь файл в память напрямую в виде DataFrame. Создайте DataFrame в Spark, получив данные с помощью API Открытых наборов данных. Здесь мы будем использовать свойства `schema on read` DataFrame в Spark, чтобы вывести типы и схему данных. 
    
     ```python
     blob_account_name = "azureopendatastorage"
@@ -61,16 +61,16 @@ ms.locfileid: "98118716"
     blob_relative_path = "yellow"
     blob_sas_token = r""
 
-    # Allow Spark to read from Blob remotely
+    # Allow Spark to read from the blob remotely
     wasbs_path = 'wasbs://%s@%s.blob.core.windows.net/%s' % (blob_container_name, blob_account_name, blob_relative_path)
     spark.conf.set('fs.azure.sas.%s.%s.blob.core.windows.net' % (blob_container_name, blob_account_name),blob_sas_token)
 
-    # Spark read parquet, note that it won't load any data yet by now
+    # Spark read parquet; note that it won't load any data yet
     df = spark.read.parquet(wasbs_path)
 
     ```
 
-3. В зависимости от размера пула Spark объем необработанных данных может быть слишком большим или их обработка может занимать слишком много времени. Эти данные можно сузить до меньшего объема с помощью фильтров ```start_date``` и ```end_date```. Здесь применяется фильтр, который возвращает данные за один месяц. Создав отфильтрованный кадр данных, вы выполните функцию ```describe()``` с новым кадром данных, чтобы просмотреть сводную статистику для каждого поля. 
+3. В зависимости от размера пула Spark объем необработанных данных может быть слишком большим или их обработка может занимать слишком много времени. Для этих данных можно создать выборку (например, за месяц) с помощью фильтров ```start_date``` и ```end_date```. После фильтрации DataFrame вам нужно выполнить функцию ```describe()``` с новым экземпляром DataFrame, чтобы просмотреть сводную статистику для каждого поля. 
 
    В сводной статистике можно заметить, что в данных есть некоторое количество отклонений. Например, минимальное расстояние поездки в этой статистике имеет отрицательное значение. Вам придется отфильтровать эти некорректные точки данных.
    
@@ -84,13 +84,13 @@ ms.locfileid: "98118716"
    filtered_df.describe().show()
    ```
 
-4. Теперь создайте признаки по этому набору данных. Для этого выберите набор столбцов и создайте связанные с временем признаки в поле для выбора дат и времени. Отфильтруйте обнаруженные на предыдущем шаге выбросы, а затем удалите несколько последних столбцов, так как они не нужны для обучения.
+4. Теперь создайте признаки по этому набору данных. Для этого выберите набор столбцов и создайте признаки на основе поля `datetime` с данными о времени посадки. Отфильтруйте обнаруженные на предыдущем шаге выбросы, а затем удалите несколько последних столбцов, так как они не нужны для обучения.
    
    ```python
    from datetime import datetime
    from pyspark.sql.functions import *
 
-   # To make development easier, faster and less expensive down sample for now
+   # To make development easier, faster, and less expensive, downsample for now
    sampled_taxi_df = filtered_df.sample(True, 0.001, seed=1234)
 
    taxi_df = sampled_taxi_df.select('vendorID', 'passengerCount', 'tripDistance',  'startLon', 'startLat', 'endLon' \
@@ -110,16 +110,16 @@ ms.locfileid: "98118716"
    taxi_df.show(10)
    ```
    
-   Как видите, в результате создается новый кадр данных, где есть дополнительные столбцы для дня месяца, часа посадки в такси, дня недели и общего времени поездки. 
+   Как видите, в результате создается новый экземпляр DataFrame, где есть дополнительные столбцы для дня месяца, часа посадки в такси, дня недели и общего времени поездки. 
 
-   ![Изображение кадра данных о такси.](./media/azure-machine-learning-spark-notebook/dataset.png#lightbox)
+   ![Изображение экземпляра DataFrame с данными о такси.](./media/azure-machine-learning-spark-notebook/dataset.png#lightbox)
 
 ## <a name="generate-test-and-validation-datasets"></a>Создание наборов данных для тестирования и проверки
 
 Получив итоговый набор данных, вам нужно разделить эти данные на обучающий и проверочный наборы данных с помощью функции ```random_ split ``` в Spark. Используя предоставленные весовые коэффициенты, эта функция случайным образом разбивает данные на обучающий набор для обучения модели и проверочный набор для тестирования.
 
 ```python
-# Random split dataset using Spark, convert Spark to Pandas
+# Random split dataset using Spark; convert Spark to pandas
 training_data, validation_data = taxi_df.randomSplit([0.8,0.2], 223)
 
 ```
@@ -143,20 +143,20 @@ ws = Workspace(workspace_name = workspace_name,
 
 ```
 
-## <a name="convert-a-dataframe-to-an-azure-machine-learning-dataset"></a>Преобразование кадра данных в набор данных Машинного обучения Azure
-Чтобы отправить удаленный эксперимент, преобразуйте набор данных в формат ```TabularDatset``` для Машинного обучения Azure. [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) переводит данные в табличный формат, выполняя синтаксический анализ предоставленных файлов.
+## <a name="convert-a-dataframe-to-an-azure-machine-learning-dataset"></a>Преобразование DataFrame в набор данных Машинного обучения Azure
+Чтобы отправить удаленный эксперимент, преобразуйте набор данных в экземпляр ```TabularDatset``` для Машинного обучения Azure. [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) представляет данные в табличном формате, выполняя синтаксический анализ предоставленных файлов.
 
-Приведенный ниже код позволяет получить сведения о существующей рабочей области и стандартном хранилище данных Машинного обучения Azure. Затем это хранилище и расположение файлов передаются в параметре path для создания нового ```TabularDataset```. 
+Приведенный ниже код позволяет получить сведения о существующей рабочей области и стандартном хранилище данных Машинного обучения Azure. Затем это хранилище и расположение файлов передаются в параметре path для создания нового экземпляра ```TabularDataset```. 
 
 ```python
 import pandas 
 from azureml.core import Dataset
 
-# Get the Azure Machine Learning Default Datastore
+# Get the Azure Machine Learning default datastore
 datastore = ws.get_default_datastore()
 training_pd = training_data.toPandas().to_csv('training_pd.csv', index=False)
 
-# Convert into Azure Machine Learning Tabular Dataset
+# Convert into an Azure Machine Learning tabular dataset
 datastore.upload_files(files = ['training_pd.csv'],
                        target_path = 'train-dataset/tabular/',
                        overwrite = True,
@@ -215,12 +215,12 @@ local_run = experiment.submit(automl_config, show_output=True, tags = tags)
 # Use the get_details function to retrieve the detailed output for the run.
 run_details = local_run.get_details()
 ```
-После завершения эксперимента возвращаются выходные данные с информацией о завершенных итерациях. Для каждой итерации вы видите тип модели, длительность выполнения и точность обучения. Поле **BEST** позволяет отследить лучшую оценку текущего обучения, основанную на выбранном типе метрики.
+После завершения эксперимента возвращаются выходные данные с информацией о завершенных итерациях. Для каждой итерации вы видите тип модели, длительность выполнения и точность обучения. Поле `BEST` позволяет отследить лучшую оценку текущего обучения, основанную на выбранном типе метрики.
 
 ![Снимок экрана с выходными данными модели.](./media/azure-machine-learning-spark-notebook/model-output.png)
 
 > [!NOTE]
-> После отправки эксперимент автоматизированного машинного обучения будет выполнять разные итерации с разными типами моделей. Выполнение обычно занимает 1–1,5 ч. 
+> После отправки эксперимент автоматизированного машинного обучения будет выполнять разные итерации с разными типами моделей. Выполнение обычно занимает 60–90 мин. 
 
 ### <a name="retrieve-the-best-model"></a>Извлечение наиболее эффективной модели
 Чтобы выбрать лучшую модель из выполненных итераций, примените функцию ```get_output```, которая возвращает лучшее выполнение и полученную в нем модель. В приведенном ниже коде извлекаются данные о лучшем выполнении и соответствующей ему модели по любой зарегистрированной метрике или по определенной итерации.
@@ -231,7 +231,7 @@ best_run, fitted_model = local_run.get_output()
 ```
 
 ### <a name="test-model-accuracy"></a>Проверка точности модели
-1. Чтобы проверить точность модели, примените лучшую из полученных моделей для прогнозирования тарифов на такси по набору проверочных данных. Функция ```predict``` использует лучшую модель и прогнозирует значения Y (стоимость поездки) по набору проверочных данных. 
+1. Чтобы проверить точность модели, примените лучшую из полученных моделей для прогнозирования тарифов на такси по набору проверочных данных. Функция ```predict``` использует лучшую модель и прогнозирует значения `y` (стоимость поездки) по набору проверочных данных. 
 
    ```python
    # Test best model accuracy
@@ -240,15 +240,15 @@ best_run, fitted_model = local_run.get_output()
    y_predict = fitted_model.predict(validation_data_pd)
    ```
 
-1. Для оценки разницы между прогнозируемыми и наблюдаемыми значениями часто используется величина "корень среднеквадратической погрешности". Вычислите корень среднеквадратической погрешности для полученных результатов, сравнив кадр данных `y_test` со значениями, прогнозируемыми моделью. 
+1. Для оценки разницы между прогнозируемыми и наблюдаемыми значениями часто используется величина "корень среднеквадратической погрешности". Вычислите корень среднеквадратической погрешности для полученных результатов, сравнив экземпляр DataFrame `y_test` со значениями, прогнозируемыми моделью. 
 
-   Функция ```mean_squared_error``` принимает два массива значений и вычисляет значение среднеквадратической погрешности между ними. Из полученного результата извлеките квадратный корень. Эта метрика дает грубую оценку того, насколько далеки полученные прогнозы стоимости поездок на такси от фактических значений.
+   Функция ```mean_squared_error``` принимает два массива значений и вычисляет значение среднеквадратической погрешности между ними. Из полученного результата извлеките квадратный корень. Эта метрика дает грубую оценку того, насколько полученные прогнозы стоимости поездок на такси соответствуют фактическим значениями.
 
    ```python
    from sklearn.metrics import mean_squared_error
    from math import sqrt
 
-   # Calculate Root Mean Square Error
+   # Calculate root-mean-square error
    y_actual = y_test.values.flatten().tolist()
    rmse = sqrt(mean_squared_error(y_actual, y_predict))
 
@@ -265,7 +265,7 @@ best_run, fitted_model = local_run.get_output()
 1. Чтобы вычислить среднюю абсолютную погрешность в процентах, выполните следующий код. Эта метрика выражает точность в процентах величины ошибки. Для этого она вычисляет абсолютное отклонение для каждой пары прогнозируемого и фактического значения, а затем суммирует все отклонения. Затем эта сумма выражается в процентах от общей суммы фактических значений.
 
    ```python
-   # Calculate MAPE and Model Accuracy 
+   # Calculate mean-absolute-percent error and model accuracy 
    sum_actuals = sum_errors = 0
 
    for actual_val, predict_val in zip(y_actual, y_predict):
@@ -301,26 +301,26 @@ best_run, fitted_model = local_run.get_output()
    import numpy as np
    from sklearn.metrics import mean_squared_error, r2_score
 
-   # Calculate the R2 score using the predicted and actual fare prices
+   # Calculate the R2 score by using the predicted and actual fare prices
    y_test_actual = y_test["fareAmount"]
    r2 = r2_score(y_test_actual, y_predict)
 
-   # Plot the Actual vs Predicted Fare Amount Values
+   # Plot the actual versus predicted fare amount values
    plt.style.use('ggplot')
    plt.figure(figsize=(10, 7))
    plt.scatter(y_test_actual,y_predict)
    plt.plot([np.min(y_test_actual), np.max(y_test_actual)], [np.min(y_test_actual), np.max(y_test_actual)], color='lightblue')
    plt.xlabel("Actual Fare Amount")
    plt.ylabel("Predicted Fare Amount")
-   plt.title("Actual vs Predicted Fare Amont R^2={}".format(r2))
+   plt.title("Actual vs Predicted Fare Amount R^2={}".format(r2))
    plt.show()
 
    ```
-   ![Снимок экрана с графиком регрессии.](./media/azure-machine-learning-spark-notebook/fare-amount.png)
+   ![Снимок экрана: график регрессии.](./media/azure-machine-learning-spark-notebook/fare-amount.png)
 
    В результатах показано, что величина достоверности аппроксимации составляет 95 % наблюдаемой дисперсии. Также это подтверждается сравнением графиков реальных и наблюдаемых значений. Чем большую часть дисперсии учитывает модель регрессии, тем ближе будут точки данных к графику полученной регрессии.  
 
-## <a name="register-model-to-azure-machine-learning"></a>Регистрация модели в службе "Машинное обучение Azure"
+## <a name="register-the-model-to-azure-machine-learning"></a>Регистрация модели в Машинном обучении Azure
 Выполнив проверку лучшей модели, вы можете зарегистрировать ее в Машинном обучении Azure. После этого можно скачать или развернуть зарегистрированную модель, а также получить все зарегистрированные в ней файлы.
 
 ```python
@@ -333,9 +333,9 @@ print(model.name, model.version)
 NYCGreenTaxiModel 1
 ```
 ## <a name="view-results-in-azure-machine-learning"></a>Просмотр результатов в Машинном обучении Azure
-Наконец, вы можете получить результаты конкретных итераций, перейдя к нужному эксперименту в рабочей области Машинного обучения Azure. Здесь можно подробно изучить дополнительные сведения о состоянии выполнения, проверенных моделях и других метриках модели. 
+Вы можете получить результаты итераций, перейдя к нужному эксперименту в рабочей области Машинного обучения Azure. Здесь можно получить дополнительные сведения о состоянии запуска, проверенных моделях и других метриках модели. 
 
-![Снимок экрана: рабочая область службы "Машинное обучение Azure".](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
+![Снимок экрана: рабочая область Машинного обучения Azure.](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Azure Synapse Analytics](../index.yml)

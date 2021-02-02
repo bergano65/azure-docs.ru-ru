@@ -1,26 +1,9 @@
 ---
-title: Шифрование DRM Служб мультимедиа Azure и служба доставки лицензий
-titleSuffix: Azure Media Services
-description: Узнайте, как использовать динамическое шифрование DRM и службу доставки лицензий для доставки потоков, зашифрованных с помощью лицензий Microsoft PlayReady, Google Widevine или Apple FairPlay.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.custom: seodec18
-ms.openlocfilehash: abaa82d6f5f33a3dc29db50ae6d029dacd3f7c13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289377"
+заголовок: Шифрование DRM Служб мультимедиа Azure и служба доставки лицензий Службы мультимедиа Azure description: Узнайте, как использовать динамическое шифрование DRM и службу доставки лицензий для доставки потоков, зашифрованных с помощью лицензий Microsoft PlayReady, Google Widevine или Apple FairPlay.
+services: media-services documentationcenter: '' author: IngridAtMicrosoft manager: femila editor: ''
+
+ms.service: media-services ms.workload: media ms.tgt_pltfrm: na ms.devlang: na ms.topic: tutorial ms.date: 08/31/2020 ms.author: inhenkel ms.custom: seodec18
+
 ---
 # <a name="tutorial-use-drm-dynamic-encryption-and-license-delivery-service"></a>Руководство по Использование динамического шифрования DRM и службы доставки лицензий
 

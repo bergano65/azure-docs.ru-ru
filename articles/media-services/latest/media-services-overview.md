@@ -1,29 +1,11 @@
 ---
-title: Что такое Службы мультимедиа Azure версии 3?
-titleSuffix: Azure Media Services
-description: Общие сведения о Службах мультимедиа Azure версии 3 со ссылками на краткие руководства, учебники и примеры кода.
-services: media-services
-documentationcenter: na
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-tags: ''
-keywords: azure media services, stream, broadcast, live, offline
-ms.service: media-services
-ms.devlang: multiple
-ms.topic: overview
-ms.tgt_pltfrm: multiple
-ms.workload: media
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.custom: mvc
-ms.openlocfilehash: 01ec0c7c0d2d060bbd930a099fe3db54de6cb150
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308960"
+заголовок: Общие сведения о Службах мультимедиа Azure версии 3: Azure Media Services description: Общие сведения о Службах мультимедиа Azure версии 3 со ссылками на краткие руководства, учебники и примеры кода.
+services: media-services documentationcenter: na author: IngridAtMicrosoft manager: femila editor: '' tags: '' keywords: azure media services, stream, broadcast, live, offline
+
+ms.service: media-services ms.devlang: multiple ms.topic: overview ms.tgt_pltfrm: multiple ms.workload: media ms.date: 08/31/2020 ms.author: inhenkel ms.custom: mvc
+#<a name="customer-intent-as-a-developer-or-a-content-provider-i-want-to-encode-stream-on-demand-or-live-analyze-my-media-content-so-that-my-customers-can-view-the-content-on-a-wide-variety-of-browsers-and-devices-gain-valuable-insights-from-recorded-content"></a>Намерение клиента: Как разработчик или поставщик содержимого, я хочу кодировать, передавать в потоковом режиме (по запросу или в прямой трансляции), анализировать свое мультимедийное содержимое, чтобы мои клиенты могли: просматривать содержимое в различных браузерах и на разных устройствах, получать ценную информацию из записанного содержимого.
 ---
+
 # <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

@@ -1,25 +1,9 @@
 ---
-title: Шифрование видео с помощью AES-128
-titleSuffix: Azure Media Services
-description: Узнайте, как зашифровать видео с помощью 128-разрядного шифрования AES, а также как использовать службу доставки ключей в Службах мультимедиа Azure.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: 5347479d32dc9f4909483dc63891e8057fd7ff86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289350"
+заголовок: Шифрование видео с помощью AES-128 : Службы мультимедиа Azure description: Узнайте, как зашифровать видео с помощью 128-разрядного шифрования AES, а также как использовать службу доставки ключей в Службах мультимедиа Azure.
+services: media-services documentationcenter: '' author: IngridAtMicrosoft manager: femila editor: ''
+
+ms.service: media-services ms.workload: media ms.tgt_pltfrm: na ms.devlang: na ms.topic: tutorial ms.date: 08/31/2020 ms.author: inhenkel
+
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Руководство по шифрованию видео с помощью AES-128 и использованию службы доставки ключей
 

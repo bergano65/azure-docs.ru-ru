@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 8d24ed014dd66235383b58cbcb7404aaf00f863e
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 217872586d09531926b43a13d826efe559c70597
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92308964"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796757"
 ---
 # <a name="tutorial-azure-active-directory-ad-single-sign-on-sso-integration-with-f5"></a>Руководство по интеграции единого входа Azure Active Directory с F5
 
@@ -314,7 +314,7 @@ F5 поддерживает единый вход, инициированный 
 
 ### <a name="create-f5-test-user"></a>Создание тестового пользователя в F5
 
-В этом разделе вы узнаете, как создать пользователя B.Simon в приложении F5. Обратитесь к  [группе поддержки клиентов F5](https://support.f5.com/csp/knowledge-center/software/BIG-IP?module=BIG-IP%20APM45), чтобы добавить пользователей на платформу F5. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе вы узнаете, как создать пользователя B.Simon в приложении F5. Чтобы добавить пользователей на платформу F5, обратитесь в [службу поддержки клиентов F5](https://support.f5.com/csp/knowledge-center/software/BIG-IP?module=BIG-IP%20APM45). Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -335,3 +335,9 @@ F5 поддерживает единый вход, инициированный 
 - [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для приложения Kerberos](kerbf5-tutorial.md)
+
+- [Интеграция F5 BIG-IP APM и Azure AD для обеспечения безопасного гибридного доступа](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-aad-integration)
+
+- [Руководство по развертыванию виртуальной машины F5 BIG-IP Virtual Edition в Azure IaaS для обеспечения безопасного гибридного доступа](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-bigip-deployment-guide)
+
+- [Руководство по интеграции единого входа Azure Active Directory с F5 BIG-IP для обеспечения VPN-подключения без использования пароля](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-aad-password-less-vpn)

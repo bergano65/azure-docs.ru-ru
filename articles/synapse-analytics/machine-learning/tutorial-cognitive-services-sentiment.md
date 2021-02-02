@@ -1,6 +1,6 @@
 ---
 title: Руководство. Анализ тональности с помощью Cognitive Services
-description: Узнайте, как выполнять анализ тональности в Synapse с помощью Cognitive Services
+description: Сведения о том, как использовать Cognitive Services для анализа тональности в Azure Synapse Analytics
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.subservice: machine-learning
@@ -9,100 +9,106 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 6a4833cf0d73939e01fd3e3e7263c6cba3c0a28a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 08d5e53facce172c2287c2e341895f0ee38571f0
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222196"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943701"
 ---
-# <a name="tutorial-sentiment-analysis-with-cognitive-services-preview"></a>Руководство. Анализ тональности с помощью Cognitive Services (предварительная версия)
+# <a name="tutorial-sentiment-analysis-with-cognitive-services-preview"></a>Руководство по анализу тональности с помощью Cognitive Services (предварительная версия)
 
-В этом руководстве показано, как дополнить данные в Azure Synapse с помощью [Cognitive Services](../../cognitive-services/index.yml). Для выполнения анализа тональности мы будем использовать возможности [Анализа текста](../../cognitive-services/text-analytics/index.yml). Чтобы дополнить данные сведениями о тональности, пользователь в Azure Synapse может просто выбрать таблицу с текстовым столбцом. При этом определяются позитивные, негативные, смешанные и нейтральные тональности с оценкой вероятности.
+Из этого руководства вы узнаете, как дополнить данные в Azure Synapse с помощью [Azure Cognitive Services](../../cognitive-services/index.yml). Для анализа тональности вы будете использовать возможности [Анализа текста](../../cognitive-services/text-analytics/index.yml). 
+
+Чтобы дополнить данные сведениями о тональности, пользователь в Azure Synapse может просто выбрать таблицу с текстовым столбцом. Эти тональности могут быть положительными, отрицательными, смешанными или нейтральными. С ними также возвращаются данные о вероятности.
 
 Темы, рассматриваемые в этом руководстве:
 
 > [!div class="checklist"]
 > - получение набора данных из таблицы Spark, содержащей текстовый столбец, для анализа тональности;
-> - использование интерфейса мастера в Azure Synapse для дополнения данных с помощью Анализа текста в Cognitive Services.
+> - использование возможностей мастера в Azure Synapse для дополнения данных с помощью Анализа текста в Cognitive Services.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись, прежде чем начинать работу](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Рабочая область Azure Synapse Analytics](../get-started-create-workspace.md) с учетной записью хранения ADLS 2-го поколения, настроенной в качестве хранилища по умолчанию. Необходимо быть **участником для данных BLOB-объектов хранилища** файловой системы ADLS 2-го поколения, с которой вы работаете.
+- [Рабочая область Azure Synapse Analytics](../get-started-create-workspace.md) с учетной записью хранения Azure Data Lake Storage 2-го поколения, настроенной в качестве хранилища по умолчанию. При работе с файловой системой Data Lake Storage 2-го поколения требуются права *участника данных Хранилища BLOB-объектов*.
 - Пул Spark в рабочей области Azure Synapse Analytics. Дополнительные сведения см. в статье [Создание пула Spark в Azure Synapse](../quickstart-create-sql-pool-studio.md).
-- Прежде чем приступить к работе с этим руководством, нужно выполнить описанные здесь шаги предварительной настройки. [Настройка Cognitive Services для Azure Synapse.](tutorial-configure-cognitive-services-synapse.md)
+- Предварительные действия описаны в руководстве по [настройке Cognitive Services в Azure Synapse](tutorial-configure-cognitive-services-synapse.md).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com/)
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-a-spark-table"></a>Создание таблицы Spark
 
 Для работы с этим руководством вам потребуется таблица Spark.
 
-1. Скачайте следующий CSV-файл с набором данных для анализа текста: [FabrikamComments.csv](https://github.com/Kaiqb/KaiqbRepo0731190208/blob/master/CognitiveServices/TextAnalytics/FabrikamComments.csv).
+1. Скачайте файл [FabrikamComments.csv](https://github.com/Kaiqb/KaiqbRepo0731190208/blob/master/CognitiveServices/TextAnalytics/FabrikamComments.csv), который содержит набор данных для анализа текста. 
 
-1. Отправьте этот файл в учетную запись хранения Azure Synapse ADLS 2-го поколения.
-![Отправка данных](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00a.png)
+1. Отправьте этот файл в учетную запись хранения Azure Synapse в Data Lake Storage 2-го поколения.
+  
+   ![Снимок экрана: варианты для отправки данных.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00a.png)
 
-1. Создайте таблицу Spark из CSV-файла, щелкнув этот файл правой кнопкой мыши и выбрав пункт **Создать записную книжку -> Создать таблицу Spark**.
-![Создание таблицы Spark](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00b.png)
+1. Создайте таблицу Spark из CSV-файла. Для этого щелкните этот файл правой кнопкой мыши и последовательно выберите элементы **Создать записную книжку** > **Создать таблицу Spark**.
 
-1. Присвойте имя таблице в ячейке кода и выполните записную книжку в пуле Spark. Не забудьте установить параметр header = True.
-![Выполнение записной книжки](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00c.png)
+   ![Снимок экрана: варианты для создания таблицы Spark.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00b.png)
 
-```python
-%%pyspark
-df = spark.read.load('abfss://default@azuresynapsesa.dfs.core.windows.net/data/FabrikamComments.csv', format='csv'
-## If header exists uncomment line below
-, header=True
-)
-df.write.mode("overwrite").saveAsTable("default.YourTableName")
-```
+1. Присвойте имя таблице в ячейке кода и выполните записную книжку в пуле Spark. Обязательно задайте значение `header=True`.
 
-## <a name="launch-cognitive-services-wizard"></a>Запуск мастера Cognitive Services
+   ![Снимок экрана: выполнение записной книжки.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00c.png)
 
-1. Щелкните правой кнопкой мыши таблицу Spark, созданную на предыдущем шаге. Выберите "Машинное обучение"-> "Дополнить с использованием существующей модели".
-![Запуск мастера оценки](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00d.png)
+   ```python
+   %%pyspark
+   df = spark.read.load('abfss://default@azuresynapsesa.dfs.core.windows.net/data/FabrikamComments.csv', format='csv'
+   ## If a header exists, uncomment the line below
+   , header=True
+   )
+   df.write.mode("overwrite").saveAsTable("default.YourTableName")
+   ```
 
-2. Появится панель конфигурации и вам будет предложено выбрать модель Cognitive Services. Выберите "Анализ текста — Анализ тональности".
+## <a name="open-the-cognitive-services-wizard"></a>Открытие мастера Cognitive Services
 
-![Запуск мастера оценки — шаг 1](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00e.png)
+1. Щелкните правой кнопкой мыши таблицу Spark, созданную при выполнении предыдущей процедуры. Выберите элементы **Машинное обучение** > **Enrich with existing model (Дополнить с использованием существующей модели)** , чтобы открыть мастер.
+
+   ![Снимок экрана: варианты для открытия мастера оценки.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00d.png)
+
+2. Отобразится панель конфигурации и запрос на выбор модели Cognitive Services. Выберите элемент **Text analytics - Sentiment Analysis** (Анализ текста — анализ тональности).
+
+   ![Снимок экрана: выбор модели Cognitive Services.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00e.png)
 
 ## <a name="provide-authentication-details"></a>Предоставление сведений для проверки подлинности
 
-Для выполнения проверки подлинности в Cognitive Services нужно предоставить ссылку на нужный секрет, размещенный в Key Vault. Указанные ниже входные данные зависят от [предварительных шагов](tutorial-configure-cognitive-services-synapse.md), которые должны быть выполнены до этого шага.
+Для аутентификации в Cognitive Services нужно предоставить ссылку на секрет для хранилища ключей. Указанные ниже входные данные зависят от [предварительных действий](tutorial-configure-cognitive-services-synapse.md), которые должны быть выполнены до этого этапа.
 
-- **Подписка Azure**. Выберите подписку Azure, к которой принадлежит ваше хранилище ключей.
-- **Учетная запись Cognitive Services.** Это ресурс Анализа текста, к которому вы собираетесь подключиться.
-- **Связанная служба Azure Key Vault.** Во время выполнения предварительных шагов вы создали связанную службу для ресурса Анализа текста. Выберите ее.
-- **Имя секрета.** Это имя секрета в хранилище ключей, содержащего ключ для проверки подлинности в ресурсе Cognitive Services.
+- **Подписка Azure**: Выберите подписку Azure, к которой принадлежит ваше хранилище ключей.
+- **Учетная запись Cognitive Services.** Введите ресурс Анализа текста, к которому вы будете подключаться.
+- **Связанная служба Azure Key Vault.** Во время выполнения предварительных действий вы создали связанную службу для ресурса Анализа текста. Выберите ее.
+- **Имя секрета.** Введите имя секрета в хранилище ключей, содержащего ключ для аутентификации в ресурсе Cognitive Services.
 
-![Предоставление сведений об Azure Key Vault](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00f.png)
+![Снимок экрана: сведения об аутентификации для хранилища ключей.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00f.png)
 
 ## <a name="configure-sentiment-analysis"></a>Настройка анализа тональности
 
-Теперь вам следует настроить анализ тональности. Предоставьте следующие данные.
-- **Язык**: Выберите язык текста, на котором нужно выполнять анализ тональности. Выберите **EN**.
-- **Текстовый столбец.** Это текстовый столбец в наборе данных, который будет анализироваться для определения тональности. Выберите в таблице столбец **comment**.
+Затем настройте анализ тональности. Выберите следующие данные:
+- **Язык**: выберите вариант **Английский** в качестве языка текста, для которого нужно выполнить анализ тональности.
+- **Текстовый столбец.** Выберите **комментарий (строка)** в качестве текстового столбца в наборе данных, который будет проанализирован для определения тональности.
 
-Затем щелкните **Открыть записную книжку**. Будет создана записная книжка с кодом PySpark, который выполняет анализ тональности с помощью Azure Cognitive Services.
+Когда все будет готово, выберите элемент **Открыть записную книжку**. Будет создана записная книжка с кодом PySpark, который обеспечивает анализ тональности с помощью Azure Cognitive Services.
 
-![Настройка анализа тональности](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00g.png)
+![Снимок экрана: параметры для настройки анализа тональности.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00g.png)
 
-## <a name="open-notebook-and-run"></a>Открытие и запуск записной книжки
+## <a name="run-the-notebook"></a>Запустите записную книжку
 
-Записная книжка, которую вы только что открыли, использует [библиотеку mmlspark](https://github.com/Azure/mmlspark) для подключения к Cognitive Services.
+Записная книжка, которую вы только что открыли, использует [библиотеку mmlspark](https://github.com/Azure/mmlspark) для подключения к Cognitive Services. Предоставленные сведения об Azure Key Vault позволяют сослаться на секреты из этого интерфейса с поддержкой высокого уровня безопасности, не раскрывая их.
 
-Предоставленные сведения об Azure Key Vault позволяют безопасно сослаться на секреты из этого интерфейса, не раскрывая их.
+Теперь вы можете выполнить все ячейки, чтобы дополнить данные сведениями о тональности. Выберите элемент **Запустить все**. 
 
-Теперь вы можете выбрать **Выполнить все**, чтобы дополнить данные сведениями о тональности. Сведения о тональности возвращаются в виде меток "Позитивная", "Негативная", "Нейтральная" и "Смешанная" с оценкой вероятности для каждой из них. [Дополнительные сведения об анализе тональности в Cognitive Services](../../cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md).
+Тональности возвращаются как **положительные**, **отрицательные**, **нейтральные** или **смешанные**. Вы также получите данные о вероятности для каждой тональности. [Дополнительные сведения об анализе тональности в Cognitive Services.](../../cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md)
 
-![Выполнение анализа тональности](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00h.png)
+![Снимок экрана: анализ тональности.](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00h.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Учебник. Обнаружение аномалий с помощью Cognitive Services](tutorial-cognitive-services-sentiment.md)
-- [Учебник. Оценка моделей машинного обучения в выделенных пулах Azure Synapse SQL](tutorial-sql-pool-model-scoring-wizard.md)
+- [Учебник. Оценка моделей машинного обучения в выделенных пулах Azure Synapse SQL](tutorial-sql-pool-model-scoring-wizard.md)
 - [Возможности машинного обучения в Azure Synapse Analytics](what-is-machine-learning.md)

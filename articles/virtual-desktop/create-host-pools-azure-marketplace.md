@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2830d8b82f5b53300d0af3f48e55b573d78ad295
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 268f1c4bff84a2c9ef67c3f6b5749bc8d0b90e85
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287395"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735186"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Руководство по Создание пула узлов на портале Azure
 
@@ -118,7 +118,7 @@ ms.locfileid: "91287395"
       - Windows 10 Корпоративная с поддержкой нескольких сеансов, версия 2004;
       - Windows 10 Корпоративная с поддержкой нескольких сеансов, версия 2004 и Приложения Microsoft 365.
 
-     Если нужный образ не отображается, щелкните **Обзор всех образов и дисков**, чтобы выбрать другой образ из своей коллекции или один из образов, предоставленных корпорацией Майкрософт и другими издателями.
+     Если нужный образ не отображается, щелкните **Обзор всех образов и дисков**, чтобы выбрать другой образ из своей коллекции или один из образов, предоставленных корпорацией Майкрософт и другими издателями. Убедитесь, что вы выбрали один из [поддерживаемых образов ОС](overview.md#supported-virtual-machine-os-images).
 
      > [!div class="mx-imgBorder"]
      > ![Снимок экрана Marketplace, где отображается список образов, предоставленных корпорацией Майкрософт.](media/marketplace-images.png)

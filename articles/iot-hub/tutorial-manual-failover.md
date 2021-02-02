@@ -1,6 +1,6 @@
 ---
-title: Ручная отработка отказа центра Интернета вещей Azure | Документация Майкрософт
-description: Узнайте, как вручную перенести свой центр Интернета вещей в другой регион и убедиться, что центр работает, а затем вернуть его в исходный регион и снова проверить.
+title: Учебник. Отработка отказа центра Интернета вещей Azure вручную | Документация Майкрософт
+description: Из этого учебника вы узнаете, как вручную перенести свой центр Интернета вещей в другой регион и убедиться, что центр работает, а затем вернуть его в исходный регион и снова проверить.
 author: robinsh
 manager: timlt
 ms.service: iot-hub
@@ -11,12 +11,12 @@ ms.author: robinsh
 ms.custom:
 - mvc
 - mqtt
-ms.openlocfilehash: 69a0795b9c299b5113c39ce2c4556573f730e4b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b6bc972f5c26c78ffff81f5bab8c2812cf2cb11
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013951"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622918"
 ---
 # <a name="tutorial-perform-manual-failover-for-an-iot-hub"></a>Руководство по выполнению отработки отказа вручную для Центра Интернета вещей
 

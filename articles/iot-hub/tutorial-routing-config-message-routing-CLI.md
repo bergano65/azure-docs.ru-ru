@@ -1,6 +1,6 @@
 ---
-title: Настройка маршрутизации сообщений для Центра Интернета вещей Azure с помощью Azure CLI
-description: Настройте маршрутизацию сообщений для Центра Интернета вещей Azure с помощью Azure CLI. В зависимости от свойств сообщения выполняйте маршрутизацию в учетную запись хранения или очередь служебной шины.
+title: Руководство. Настройка маршрутизации сообщений для Центра Интернета вещей Azure с помощью Azure CLI
+description: Руководство по настройке маршрутизации сообщений для Центра Интернета вещей Azure с помощью Azure CLI. В зависимости от свойств сообщения выполняйте маршрутизацию в учетную запись хранения или очередь служебной шины.
 author: robinsh
 manager: philmea
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 239d8f2bcc1422a1098fb8f6cb3fba6706d671f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25c3ff7582ed408776c0ae6904e4bacddd89e40b
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500203"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624176"
 ---
 # <a name="tutorial-use-the-azure-cli-to-configure-iot-hub-message-routing"></a>Руководство по Маршрутизация сообщений Центра Интернета вещей с помощью Azure CLI
 
@@ -147,7 +147,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
 [!INCLUDE [iot-hub-include-create-routing-description](../../includes/iot-hub-include-create-routing-description.md)]
 
-Чтобы создать конечную точку маршрутизации, используйте [az iot hub routing-endpoint create](/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest#az-iot-hub-routing-endpoint-create). Чтобы создать маршрут сообщения для конечной точки, используйте [az iot hub route create](/cli/azure/iot/hub/route?view=azure-cli-latest#az-iot-hub-route-create).
+Чтобы создать конечную точку маршрутизации, используйте [az iot hub routing-endpoint create](/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest#az-iot-hub-routing-endpoint-create&preserve-view=true). Чтобы создать маршрут сообщения для конечной точки, используйте [az iot hub route create](/cli/azure/iot/hub/route?view=azure-cli-latest#az-iot-hub-route-create&preserve-view=true).
 
 ### <a name="route-to-a-storage-account"></a>Маршрутизация в учетную запись хранения
 

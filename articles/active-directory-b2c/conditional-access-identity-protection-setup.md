@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2472183673e5f06f5664a306a69d14c2eaf5f82d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 654206bccd25bf09fcdc5c3e7ee72ba97c75af2a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949774"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785487"
 ---
 # <a name="set-up-identity-protection-and-conditional-access-in-azure-ad-b2c"></a>Настройка защиты идентификации и условного доступа в Azure AD B2C
 
@@ -94,9 +94,7 @@ ms.locfileid: "94949774"
 
 1. В разделе **Безопасность** выберите **Условный доступ (предварительная версия)** . Откроется страница **Политики условного доступа**. 
 
-1. Выберите **Новая политика** и создайте новую политику, как описано в документации по условному доступу для Azure AD. Ниже представлен пример такого кода:
-
-   - [Условный доступ на основе рисков при входе. Реализация с помощью политики условного доступа](../active-directory/conditional-access/howto-conditional-access-policy-risk.md#enable-with-conditional-access-policy)
+1. Выберите **Новая политика** и создайте новую политику, как описано в документации по условному доступу для Azure AD. Для политик на основе рисков необходимо настроить отдельные политики [рисков пользователей](../active-directory/conditional-access/howto-conditional-access-policy-risk-user.md#enable-with-conditional-access-policy) или [рисков при входе](../active-directory/conditional-access/howto-conditional-access-policy-risk.md#enable-with-conditional-access-policy) в зависимости от типа рисков, который вы хотите использовать в качестве условия. Не рекомендуем использовать в одной политике оба типа рисков.
 
    > [!IMPORTANT]
    > При выборе пользователей, к которым нужно применить политику, не выбирайте вариант **Все пользователи**, иначе можете случайно запретить себе доступ.

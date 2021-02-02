@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Реализация входа пользователей и вызова Microsoft Graph в классическом приложении универсальной платформы Windows | Azure
-description: Из этого краткого руководства вы узнаете, как классическое приложение .NET для Windows (XAML) может получить маркер доступа и вызвать API, защищенный конечной точкой платформы удостоверений Майкрософт.
+description: Из этого краткого руководства вы узнаете, как классическое приложение .NET для Windows (XAML) может получить маркер доступа и вызвать API, защищенный платформой удостоверений Майкрософт.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 1cac8ab4ccf23047bd5eb2d15c174a2009f2864a
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: b54438441b0e34cccda7fbec37dc1d1740101e9e
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178302"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754004"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows
 
@@ -145,7 +145,7 @@ PublicClientApplicationBuilder.Create(ClientId)
 
 #### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-В некоторых ситуациях необходимо принудительное взаимодействие пользователя с конечной точкой платформы удостоверений Майкрософт через всплывающее окно, чтобы подтвердить учетные данные или предоставить согласие. Некоторые примеры:
+В некоторых ситуациях необходимо принудительное взаимодействие пользователя с платформой удостоверений Майкрософт через всплывающее окно, чтобы подтвердить учетные данные или предоставить согласие. Некоторые примеры:
 
 - первый вход пользователей в приложение;
 - когда пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля;

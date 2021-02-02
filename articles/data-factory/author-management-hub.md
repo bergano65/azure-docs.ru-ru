@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: dcstwh
 ms.author: weetok
 manager: anandsub
-ms.date: 06/02/2020
-ms.openlocfilehash: aa1246a65dc6971107abe35f4a418b0bbb05641b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 02/01/2021
+ms.openlocfilehash: c3366b7ba0eb0b49d4d5b89481b7bed843e52c8e
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486136"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429009"
 ---
 # <a name="management-hub-in-azure-data-factory"></a>Центр управления в фабрике данных Azure
 
@@ -40,7 +40,11 @@ ms.locfileid: "96486136"
 
 ### <a name="git-configuration"></a>Конфигурация Git
 
-Просмотр и изменение настроенных параметров репозитория Git в центре управления. Дополнительные сведения см. в статье [Управление версиями в фабрике данных Azure](source-control.md).
+Вы можете просмотреть или изменить все сведения, связанные с Git, в параметрах конфигурации Git в центре управления. 
+
+Также перечислены сведения о последней опубликованной фиксации, которые могут помочь понять точную фиксацию, которая была в последний раз опубликована или развернута в разных средах. Он также может быть полезен при устранении критических исправлений в рабочей среде.
+
+Дополнительные сведения см. в статье [Управление версиями в фабрике данных Azure](source-control.md).
 
 ![Управление репозиторием Git](media/author-management-hub/management-hub-git.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Учебник. Развертывание Azure Spring Cloud в виртуальной сети
+title: развертыванию Azure Spring Cloud в виртуальной сети
 description: Развертывание Azure Spring Cloud в виртуальной сети (внедрение виртуальной сети).
 author: MikeDodaro
 ms.author: brendm
@@ -7,14 +7,14 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/21/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 9d72d60bd3a1ef23b8122b2bc5ba4f0c5c701254
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 73dd60dba50d3bd29cda0f538462884822054cf9
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587729"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880609"
 ---
-# <a name="tutorial-deploy-azure-spring-cloud-in-a-virtual-network"></a>Руководство по развертыванию Azure Spring Cloud в виртуальной сети
+# <a name="deploy-azure-spring-cloud-in-a-virtual-network"></a>развертыванию Azure Spring Cloud в виртуальной сети
 
 **Эта статья применима к:** ✔️ Java ✔️ C#
 
@@ -25,6 +25,9 @@ ms.locfileid: "97587729"
 * изоляцию приложений и среды выполнения служб Azure Spring Cloud от Интернета в корпоративной сети;
 * взаимодействие Azure Spring Cloud с системами в локальных центрах обработки данных и (или) службах Azure в других виртуальных сетях;
 * предоставление клиентам возможности контролировать входящие и исходящие сетевые подключения для Azure Spring Cloud.
+
+> [!Note]
+> Вы можете выбрать виртуальную сеть Azure только при создании нового экземпляра облачной службы Azure Spring Cloud. Вы не сможете выбрать другую виртуальную сеть после создания экземпляра Azure Spring Cloud.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -77,6 +80,7 @@ az provider register --namespace Microsoft.ContainerService
 1. Выберите **Review + create** (Просмотреть и создать). Сохраните остальные значения по умолчанию и нажмите **Создать**.
 
 ## <a name="grant-service-permission-to-the-virtual-network"></a>Предоставление службе разрешения на доступ к виртуальной сети
+Azure Spring Cloud требуются разрешения **владельца** для виртуальной сети. Это позволит предоставлять выделенный и динамический субъект-службу в виртуальной сети для дальнейшего развертывания и обслуживания.
 
 Выберите виртуальную сеть **azure-spring-cloud-vnet**, созданную ранее.
 
@@ -160,9 +164,9 @@ az role assignment create \
    > [!Important]
    > Группы ресурсов полностью управляются службой Azure Spring Cloud. *Не* следует вручную удалять или изменять ресурсы внутри.
 
-## <a name="limitations"></a>Ограничения
+## <a name="using-smaller-subnet-ranges"></a>Использование небольших диапазонов подсети
 
-Небольшой диапазон подсети сохраняет IP-адреса, но вместе с тем накладывает ограничения на максимальное количество экземпляров приложения, которое может хранить экземпляр Azure Spring Cloud.
+В этой таблице приведено максимальное число экземпляров приложений, которые поддерживает Azure Spring Cloud при использовании небольших диапазонов подсетей.
 
 | CIDR подсети приложения | Всего IP-адресов | Доступные IP-адреса | Максимальное число экземпляров приложения                                        |
 | --------------- | --------- | ------------- | ------------------------------------------------------------ |

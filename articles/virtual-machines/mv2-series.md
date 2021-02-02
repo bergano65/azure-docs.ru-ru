@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: jushiman
-ms.openlocfilehash: 7ef4a1542a050918249f602bbc63567cc8e13f2a
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 962fb8cbd4c64aa2ef625b478afa587099234617
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99091720"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427640"
 ---
 # <a name="mv2-series"></a>Серия Mv2
 
@@ -24,7 +24,7 @@ ms.locfileid: "99091720"
 [Кэширование хранилища класса Premium](premium-storage-performance.md): поддерживается<br>
 [Динамическая миграция](maintenance-and-updates.md): не поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): не поддерживается<br>
-[Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
+[Поддержка создания виртуальных машин](generation-2.md): поколение 2<br>
 [Ускоритель записи](./how-to-enable-write-accelerator.md): поддерживается<br>
 [Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
 [Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>

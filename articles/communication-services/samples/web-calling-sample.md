@@ -9,12 +9,12 @@ ms.author: mariusu
 ms.date: 10/15/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 8faa6533ba4dc7fad61c045278c5504c5f78d900
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: a00f319c55665695879aac3c8ba711ce13fd5d4e
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888969"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763054"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Начало работы с примером веб-вызова
 
@@ -96,6 +96,7 @@ ms.locfileid: "94888969"
 - Изучите, как правильно [использовать клиентскую библиотеку вызовов](../quickstarts/voice-video-calling/calling-client-samples.md).
 - Узнайте больше о [принципе работы функции вызовов](../concepts/voice-video-calling/about-call-types.md).
 - Ознакомьтесь со [справочной документацией по API](/javascript/api/azure-communication-services/@azure/communication-calling/?view=azure-communication-services-js).
+- Изучите пример приложения [Contoso MED](https://github.com/Azure-Samples/communication-services-contoso-med-app).
 
 ## <a name="additional-reading"></a>Дополнительные материалы
 

@@ -2,17 +2,20 @@
 title: Развертывание и настройка Решения Azure VMware
 description: Узнайте, как использовать собранную на этапе планирования информацию для развертывания частного облака Решения Azure VMware.
 ms.topic: tutorial
-ms.date: 11/09/2020
-ms.openlocfilehash: 7e31b9236a3c75009d15bde35019036b6db55cab
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.date: 12/24/2020
+ms.openlocfilehash: f2b6f3c4ad82117fee96e0c2e5973a7011384d48
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861535"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760889"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Развертывание и настройка Решения Azure VMware
 
-Выполняя шаги, представленные в этой статье, вы будете использовать для развертывания Решения Azure VMware сведения из [раздела о планировании](production-ready-deployment-steps.md). Если вы не определили эти сведения, вернитесь к [разделу планирования](production-ready-deployment-steps.md), прежде чем продолжить работу.
+Выполняя шаги, представленные в этой статье, вы будете использовать для развертывания Решения Azure VMware сведения из [раздела о планировании](production-ready-deployment-steps.md). 
+
+>[!IMPORTANT]
+>Если вы еще не определили эти сведения, вернитесь к [разделу планирования](production-ready-deployment-steps.md), прежде чем продолжить работу.
 
 ## <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 
@@ -40,15 +43,16 @@ ms.locfileid: "96861535"
 
 :::image type="content" source="media/pre-deployment/jump-box-diagram.png" alt-text="Создание инсталляционного сервера в Решении Azure VMware" border="false" lightbox="media/pre-deployment/jump-box-diagram.png":::
 
-Чтобы создать виртуальную машину в виртуальной сети, которую вы [указали или создали при развертывании](production-ready-deployment-steps.md#azure-virtual-network-to-attach-azure-vmware-solution), выполните следующие действия. 
+Чтобы создать виртуальную машину в виртуальной сети, которую вы [указали или создали при развертывании](production-ready-deployment-steps.md#attach-virtual-network-to-azure-vmware-solution), выполните следующие действия: 
 
 [!INCLUDE [create-avs-jump-box-steps](includes/create-jump-box-steps.md)]
 
 ## <a name="connect-to-a-virtual-network-with-expressroute"></a>Подключение к виртуальной сети с помощью ExpressRoute
 
-Если вы не указали виртуальную сеть на шаге развертывания, однако хотите подключить службу ExpressRoute Решения Azure VMware к существующему шлюзу ExpressRoute, выполните следующие действия.
+>[!IMPORTANT]
+>Если вы уже указали виртуальную сеть на экране развертывания в Azure, перейдите к следующему разделу.
 
-Если вы уже указали виртуальную сеть на экране развертывания в Azure, перейдите к следующему разделу.
+Если вы не указали виртуальную сеть на шаге развертывания, однако хотите подключить службу ExpressRoute Решения Azure VMware к существующему шлюзу ExpressRoute, выполните следующие действия.
 
 [!INCLUDE [connect-expressroute-to-vnet](includes/connect-expressroute-vnet.md)]
 
@@ -70,7 +74,7 @@ IP-адреса и учетные данные консоли администр
 
 ## <a name="create-a-network-segment-on-azure-vmware-solution"></a>Создание сегмента сети в Решении Azure VMware
 
-Среда NSX-T используется для создания сегментов сети в среде Решения Azure VMware.  Сети, которые нужно создать, вы определяли при прохождении [раздела планирования](production-ready-deployment-steps.md).  Если вы их не определили, вернитесь в [раздел планирования](production-ready-deployment-steps.md), прежде чем продолжить.
+Среда NSX-T используется для создания сегментов сети в среде Решения Azure VMware.  Сети, которые нужно создать, вы определили при прохождении [раздела планирования](production-ready-deployment-steps.md).  Если вы их не определили, вернитесь в [раздел планирования](production-ready-deployment-steps.md), прежде чем продолжить.
 
 >[!IMPORTANT]
 >Убедитесь, что указанный блок сетевых адресов CIDR не перекрывается с другими адресами в Azure или локальных средах.  
@@ -79,7 +83,7 @@ IP-адреса и учетные данные консоли администр
 
 ## <a name="verify-advertised-nsx-t-segment"></a>Проверка объявленного сегмента NSX-T
 
-Вернитесь к шагу [Проверка объявленных сетевых маршрутов](#verify-network-routes-advertised). В списке вы увидите дополнительные маршруты, представляющие сегменты сети, созданные на предыдущем шаге.  
+Вернитесь к шагу [Проверка объявленных сетевых маршрутов](#verify-network-routes-advertised). В списке вы увидите другие маршруты, представляющие сегменты сети, созданные на предыдущем шаге.  
 
 Для виртуальных машин назначьте сегменты, созданные на шаге [Создание сегмента сети в Решении Azure VMware](#create-a-network-segment-on-azure-vmware-solution).  
 
@@ -120,14 +124,13 @@ IP-адреса и учетные данные консоли администр
 Войдите на виртуальную машину, созданную на предыдущем шаге, и проверьте подключение.
 
 1. Проверьте связь с IP-адресом в Интернете.
-2. Перейдите на веб-сайт через веб-браузер.
+2. Перейдите на веб-сайт в веб-браузере.
 3. Проверьте связь с переходной средой, расположенной в виртуальной сети Azure.
 
->[!IMPORTANT]
->На данный момент Решение Azure VMware готово к работе, и вы успешно установили подключение к виртуальной сети Azure и Интернету, а также из них.
+Теперь Решение Azure VMware готово к работе и вы успешно установили подключение к виртуальной сети Azure и Интернету, а также из них.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из следующего раздела вы узнаете, как подключать Решение Azure VMware к локальной сети через ExpressRoute.
+В следующем разделе вы узнаете, как подключить Решение Azure VMware к локальной сети через ExpressRoute.
 > [!div class="nextstepaction"]
 > [Подключение Решения Azure VMware к локальной среде](azure-vmware-solution-on-premises.md)

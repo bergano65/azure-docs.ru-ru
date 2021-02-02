@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 01/13/2021
 ms.author: alkohli
-ms.openlocfilehash: fd165795be85c26cdfcaee3c4fd01427274a7316
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 26e8f08d4b901a9ea57da826d9441d23508c4a4c
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210347"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797617"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство по Заказ Azure Data Box
 
@@ -231,7 +231,7 @@ PS C:\Windows\System32>
     |Страна или регион отправки    |    Выберите страну/регион, в которой находятся ваши данные.         |
     |Конечный регион Azure     |     Выберите регион Azure, куда вы хотите передать данные. <br> Дополнительные сведения см. в разделе о [доступности по регионам](data-box-overview.md#region-availability).            |
 
-    [![Запуск заказа на импорт Azure Data Box](media/data-box-deploy-ordered/select-data-box-import-04-b.png#lightbox)
+    [ ![Оформление заказа на импорт Azure Data Box](media/data-box-deploy-ordered/select-data-box-import-04-b.png) ](media/data-box-deploy-ordered/select-data-box-import-04-b.png#lightbox)
 
 5. Выберите **Data Box**. Максимальная полезная емкость для одного заказа составляет 80 ТБ. Для больших размеров данных можно создать несколько заказов.
 
@@ -338,9 +338,9 @@ PS C:\Windows\System32>
 
 14. Выберите удостоверение пользователя, которое будет использоваться для управления доступом к этому ресурсу. Щелкните **Выбрать удостоверение пользователя**. На панели справа выберите подписку и управляемое удостоверение для использования. Затем щелкните **Выбрать**.
 
-    Назначаемое пользователем управляемое удостоверение — это автономный ресурс Azure, который можно использовать для управления несколькими ресурсами. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview)  
+    Назначаемое пользователем управляемое удостоверение — это автономный ресурс Azure, который можно использовать для управления несколькими ресурсами. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)  
 
-    Если вам нужно создать управляемое удостоверение, следуйте указаниям в статье [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal).
+    Если вам нужно создать управляемое удостоверение, следуйте указаниям в статье [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     
     ![Выбор удостоверения пользователя](./media/data-box-deploy-ordered/customer-managed-key-10.png)
 

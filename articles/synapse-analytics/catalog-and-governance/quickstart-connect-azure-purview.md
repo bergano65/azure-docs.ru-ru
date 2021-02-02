@@ -8,17 +8,15 @@ ms.topic: quickstart
 ms.date: 12/16/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: f85a76a7ce01c11255f54c6b956088f9328dfc9f
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 55f0d2e8df36cc11f26c5ff6259ebe2215aaffc6
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918472"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880548"
 ---
 # <a name="quickstartconnect-an-azure-purview-account-to-a-synapse-workspace"></a>Краткое руководство. Подключение учетной записи Azure Purview к рабочей области Synapse 
 
-> [!IMPORTANT]
-> Сейчас поддерживается предварительная версия интеграции Azure Synapse Analytics с Azure Purview. Если вы хотите поработать с Azure Purview в Synapse, обратитесь к торговому представителю корпорации Майкрософт.
 
 В этом кратком руководстве показано, как зарегистрировать учетную запись Azure Purview в рабочей области Synapse. Это подключение позволяет обнаруживать ресурсы Azure Purview и взаимодействовать с ними с помощью возможностей Synapse. 
 
@@ -34,11 +32,11 @@ ms.locfileid: "97918472"
 
 ## <a name="signin-toa-synapse-workspace"></a>Вход в рабочую область Synapse 
 
-Перейдите на сайт https://web.azuresynapse.net и войдите в рабочую область. 
+Перейдите на сайт  [https://web.azuresynapse.net](https://web.azuresynapse.net) и войдите в рабочую область. 
 
 ## <a name="permissions-for-connecting-an-azure-purview-account"></a>Разрешения для подключения учетной записи Azure Purview 
 
-- Чтобы подключить учетную запись Azure Purview к рабочей области Synapse, в этой рабочей области у вас должна быть роль **Участник**, назначенная в системе IAM на портале Azure, и права на доступ к этой учетной записи Azure Purview.
+- Чтобы подключить учетную запись Azure Purview к рабочей области Synapse, в этой рабочей области у вас должна быть роль **Участник**, назначенная в системе IAM на портале Azure, и права на доступ к этой учетной записи Azure Purview. Дополнительные сведения см. в статье о [разрешениях Azure Purview](../../purview/catalog-permissions.md).
 
 ## <a name="connect-an-azure-purview-account"></a>Подключение учетной записи Azure Purview  
 

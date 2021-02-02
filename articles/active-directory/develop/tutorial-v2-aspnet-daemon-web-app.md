@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 5f2560cdc062edb41ecda935eb9b8efe630949dc
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 984b85ff831146060f1642b9eeec7079ff966db3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015952"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98937821"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную платформу удостоверений Майкрософт
 
@@ -49,7 +49,7 @@ ms.locfileid: "98015952"
 
 ![Схема, на которой показано приложение UserSync с тремя локальными элементами, подключенными к Azure: Startup.Auth с получением маркера в интерактивном режиме для подключения к Azure AD, AccountController с получением согласия администратора для подключения к Azure AD и SyncController со считыванием данных пользователя для подключения к Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 
-Дополнительные сведения об основных понятиях, используемых в этом примере, см. в [документации по протоколу учетных данных клиента для конечной точки платформы удостоверений](v2-oauth2-client-creds-grant-flow.md).
+Дополнительные сведения об основных понятиях, используемых в этом примере, см. в [документации по протоколу учетных данных клиента для платформы удостоверений](v2-oauth2-client-creds-grant-flow.md).
 
 ## <a name="clone-or-download-this-repository"></a>Клонирование или скачивание этого репозитория
 
@@ -109,7 +109,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2.git
 1. Выберите **Зарегистрировать**, чтобы создать приложение.
 1. На странице приложения **Обзор** найдите **идентификатор приложения (клиента)** и запишите его, чтобы использовать позже. Он понадобится для настройки файла конфигурации Visual Studio для этого проекта.
 1. В разделе **Управление** выберите **Проверка подлинности**.
-1. Для параметра **URL-адрес выхода** укажите значение `https://localhost:44316/Account/EndSession`.
+1. Задайте для параметра **URL-адрес выхода переднего канала** значение `https://localhost:44316/Account/EndSession`.
 1. В разделе **Неявное предоставление** выберите **Маркеры доступа** и **Токен идентификатора**. Для этого примера должен быть включен [поток неявного предоставления](v2-oauth2-implicit-grant-flow.md), чтобы пользователь мог входить в систему и вызывать API.
 1. Щелкните **Сохранить**.
 1. В разделе **Управление** выберите **Сертификаты и секреты**.
@@ -227,7 +227,7 @@ Visual Studio опубликует проект и автоматически о
 1. Вернитесь на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. На панели слева выберите службу **Azure Active Directory**, а затем щелкните **Регистрация приложений**.
 1. Выберите приложение **dotnet-web-daemon-v2**.
-1. На странице **Проверка подлинности** приложения обновите поля **URL-адрес выхода**, указав адрес службы. Например, воспользуйтесь `https://dotnet-web-daemon-v2-contoso.azurewebsites.net`.
+1. На странице **Аутентификация** приложения обновите поля **URL-адрес выхода переднего канала**, указав адрес службы. Например, воспользуйтесь `https://dotnet-web-daemon-v2-contoso.azurewebsites.net/Account/EndSession`.
 1. В меню **Фирменная символика** измените **URL-адрес домашней страницы** на адрес службы. Например, воспользуйтесь `https://dotnet-web-daemon-v2-contoso.azurewebsites.net`.
 1. Сохраните конфигурацию.
 1. Добавьте тот же URL-адрес в список значений в меню **Проверка подлинности** > **URI перенаправления**. При наличии нескольких URL-адресов перенаправления убедитесь, что для каждого из них есть новая запись, в которой указан соответствующий URI службы приложений.

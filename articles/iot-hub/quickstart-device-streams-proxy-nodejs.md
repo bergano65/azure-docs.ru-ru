@@ -1,20 +1,20 @@
 ---
-title: Руководство по потокам устройств центра Интернета вещей в Node.js для SSH и RDP
+title: Краткое руководство. Потоки устройств Центра Интернета вещей в Node.js для SSH и RDP
 description: В этом кратком руководстве описано, как запустить пример приложения Node.js, которое выступает в качестве прокси-сервера, для реализации сценариев SSH и RDP через потоки устройств Центра Интернета вещей.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.custom: mvc, devx-track-js, devx-track-azurecli
+ms.custom: references_regions
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: f32882dcb423c6f42a21a242a7e628ef6acda006
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: ef45a6277adeff09a34fe22b7abeb21d3e603167
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902142"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624360"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-nodejs-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств Центра Интернета вещей с помощью приложения прокси Node.js (предварительная версия)
 

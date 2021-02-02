@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/10/2020
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 84a3ef7b41b17e85c594213246211d45911ac56a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a39230cc65db6ef12b6fa4364454aeb434efddf6
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953055"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918217"
 ---
 # <a name="tutorial-register-a-web-application-in-azure-active-directory-b2c"></a>Руководство по регистрации веб-приложения в Azure Active Directory B2C
 
@@ -98,6 +98,14 @@ ms.locfileid: "94953055"
 1. Чтобы представить ключ, нажмите **Сохранить**. Запишите значение параметра **Ключ приложения**. Это значение используется в качестве секрета приложения в коде приложения.
 
 * * *
+
+## <a name="enable-id-token-implicit-grant"></a>Включение неявного предоставления разрешения для маркера идентификации
+
+Отличительной характеристикой неявного предоставления разрешений является то, что маркеры, например идентификаторы и маркеры доступа, возвращаются непосредственно приложению из Azure AD B2C. Для приложений, таки как веб-приложения ASP.NET Core и [https://jwt.ms](https://jwt.ms), которые запрашивают маркер идентификации непосредственно у конечной точки авторизации, включите поток неявного предоставления разрешений в регистрации приложения.
+
+1. В меню слева в разделе **Управление** выберите **Проверка подлинности**.
+1. В разделе "Неявное предоставление разрешения" установите флажки **Маркеры доступа** и **Маркеры идентификации**.
+1. Щелкните **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

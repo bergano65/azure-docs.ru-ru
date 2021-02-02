@@ -2,15 +2,15 @@
 title: Развертывание шаблона — портал Azure
 description: Узнайте, как создать и развернуть первый шаблон Azure Resource Manager (шаблон ARM) с помощью портала Azure.
 author: mumian
-ms.date: 06/29/2020
+ms.date: 01/26/2021
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: bdbcecc247a4b5318ba44b92befa7e90ac47aa8c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 946156caa7252a89cab006d604eb6b441e09c643
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349628"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98892510"
 ---
 # <a name="quickstart-create-and-deploy-arm-templates-by-using-the-azure-portal"></a>Краткое руководство. Создание и развертывание шаблонов ARM с помощью портала Azure
 
@@ -33,9 +33,11 @@ ms.locfileid: "96349628"
 
     ![Выберите команду "Создать ресурс" в меню на портале Azure.](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-create-a-resource.png)
 
-1. Выберите **Хранилище** > **Учетная запись хранения**.
+1. В поле поиска введите **учетная запись хранения** и нажмите клавишу **[ВВОД]** .
+1. Нажмите кнопку **Создать**.
 
     ![Создание учетной записи хранения Azure](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-create-storage-account-portal.png)
+
 1. Введите следующие сведения:
 
     |Имя|Значение|

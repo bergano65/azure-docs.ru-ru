@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 72c7f1dd6652a51a960c80829a697b97fd74f8de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c806e5d1d9c9242b6ba57496327c672d7fed0654
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500033"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704495"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство по Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
 
@@ -300,7 +300,4 @@ az network nsg rule list --resource-group myRGNetwork --nsg-name myBackendNSG --
 > * защищают сетевой трафик;
 > * Создание внутренней виртуальной машины
 
-Перейдите к следующему руководству, чтобы узнать о защите данных на виртуальных машинах с помощью службы архивации Azure. 
-
-> [!div class="nextstepaction"]
-> [Архивация виртуальных машин Linux в Azure](./tutorial-backup-vms.md)
+Дополнительные сведения о защите дисков виртуальной машины см. в статье [Резервное копирование и аварийное восстановление дисков](backup-and-disaster-recovery-for-azure-iaas-disks.md).

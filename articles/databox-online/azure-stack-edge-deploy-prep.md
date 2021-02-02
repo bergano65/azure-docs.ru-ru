@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/06/2021
+ms.date: 01/22/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: aabc141666fe5c9fb52a3eac5ee1866f390e4551
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 07b526d443b5f1b41bc6f811b7cccc0fbc6165ee
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968504"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761708"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Руководство по подготовке к развертыванию Azure Stack Edge Pro  
 
@@ -118,14 +118,14 @@ ms.locfileid: "97968504"
 
     |Параметр  |Значение  |
     |---------|---------|
-    |Имя   | Понятное имя для идентификации ресурса.<br>Имя включает от 2 до 50 символов, содержащих буквы, цифры и дефисы.<br> Имя начинается и заканчивается буквой или цифрой.        |
+    |Имя   | Понятное имя для идентификации ресурса.<br>Имя содержит от 2 до 50 символов, включая буквы, цифры и дефисы.<br> Имя начинается и заканчивается буквой или цифрой.        |
     |Регион     |Список всех регионов, в которых доступны ресурсы Azure Stack Edge, приведен на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). При использовании Azure для государственных организаций доступны все регионы для государственных организаций, как показано на странице [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/).<br> Выберите расположение, ближайшее к географическому региону, в котором вы хотите развернуть устройство.|
 
     ![Сведения о проекте и экземпляре](media/azure-stack-edge-deploy-prep/data-box-edge-resource.png)
 
 5. По завершении выберите **Next: Shipping address** (Далее. Адрес доставки).
 
-    - Если у вас уже есть устройство, установите флажок **I have a Azure Stack Edge Pro device** (У меня есть устройство Azure Stack Edge Pro).
+    - Если у вас уже есть устройство, установите флажок **I have an Azure Stack Edge device** (У меня есть устройство Azure Stack Edge).
     - Если вы заказываете новое устройство, введите имя контактного лица, компании, адрес для отправки устройства и контактные данные.
 
     ![Адрес доставки для нового устройства](media/azure-stack-edge-deploy-prep/data-box-edge-resource1.png)
@@ -138,19 +138,23 @@ ms.locfileid: "97968504"
 
 8. Нажмите кнопку **создания**.
 
-Создание ресурса займет несколько минут. После успешного создания и развертывания ресурса вы получите уведомление. Выберите **Перейти к ресурсу**.
+   Создание ресурса займет несколько минут. После успешного создания и развертывания ресурса вы получите уведомление. Выберите **Перейти к ресурсу**.
 
-![Переход к ресурсу Azure Stack Edge](media/azure-stack-edge-deploy-prep/data-box-edge-resource3.png)
+   ![Переход к ресурсу Azure Stack Edge](media/azure-stack-edge-deploy-prep/data-box-edge-resource3.png)
 
 После того как вы разместите заказ, корпорация Майкрософт просмотрит его и отправит вам сведения о доставке (по электронной почте).
 
 ![Уведомление для проверки заказа Azure Stack Edge Pro](media/azure-stack-edge-deploy-prep/data-box-edge-resource4.png)
 
+
+> [!NOTE]
+> Чтобы создать несколько заказов за один раз или клонировать существующий заказ, используйте [скрипты из репозитория примеров для Azure](https://github.com/Azure-Samples/azure-stack-edge-order). Дополнительные сведения см. в файле сведений.
+
 ## <a name="get-the-activation-key"></a>Получение ключа активации.
 
 После того как ресурс Azure Stack Edge будет настроен и запущен, вам потребуется получить ключ активации. Этот ключ используется для активации устройства Azure Stack Edge Pro и его подключения к ресурсу. Этот ключ можно получить, пока вы находитесь на портале Azure.
 
-1. Перейдите к созданному вами ресурсу и выберите элемент **Обзор**. Вы увидите уведомление о том, что заказ обрабатывается.
+1. Перейдите к созданному ресурсу и выберите элемент **Обзор**. Вы увидите уведомление о том, что заказ обрабатывается.
 
     ![Выберите элемент "Обзор".](media/azure-stack-edge-deploy-prep/data-box-edge-select-devicesetup.png)
 

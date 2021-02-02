@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 8c0dd9713c673ad676058acc7dbbb3cb5a65362e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 2f141b896ef11fecdf156d062a78252ce6f7ffb3
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929197"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734988"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
 
@@ -37,7 +37,6 @@ ms.locfileid: "96929197"
 ## <a name="set-up-feature-management"></a>Настройка управления функциями
 
 Чтобы использовать диспетчер функций .NET Core, добавьте ссылку на пакеты NuGet `Microsoft.FeatureManagement.AspNetCore` и `Microsoft.FeatureManagement`.
-    
 Диспетчер функций .NET Core `IFeatureManager` возвращает флаги функций из собственной системы конфигурации платформы. Таким образом, вы можете определить флаги функций приложения, используя любой источник конфигурации, поддерживаемый .NET Core, включая локальный файл *appsettings.json* или переменные среды. В `IFeatureManager` используется внедрение зависимостей .NET Core. Вы можете зарегистрировать службы управления функциями с помощью стандартных соглашений:
 
 ```csharp
@@ -106,16 +105,23 @@ public class Startup
               .UseStartup<Startup>();
    ```
 
-2. Откройте файл *Startup.cs* и обновите метод `Configure`, чтобы добавить ПО промежуточного слоя с именем `UseAzureAppConfiguration`. Это ПО позволяет периодически обновлять значения флагов функций, пока веб-приложение ASP.NET Core продолжает получать запросы.
+2. Откройте файл *Startup.cs* и обновите метод `Configure` и `ConfigureServices`, чтобы добавить ПО промежуточного слоя с именем `UseAzureAppConfiguration`. Это ПО позволяет периодически обновлять значения флагов функций, пока веб-приложение ASP.NET Core продолжает получать запросы.
 
    ```csharp
-   public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
    {
        app.UseAzureAppConfiguration();
        app.UseMvc();
    }
    ```
 
+   ```csharp
+   public void ConfigureServices(IServiceCollection services)
+   {
+       services.AddAzureAppConfiguration();
+   }
+   ```
+   
 Значения флагов функций должны изменяться со временем. По умолчанию значения флагов функций кэшируются на 30 секунд, поэтому операция обновления, запущенная в тот момент, когда ПО промежуточного слоя получает запрос, не обновит значение, пока не истечет срок действия кэшированного значения. В приведенном ниже коде показано, как изменить срок действия кэша или интервал опроса на 5 минут в вызове `options.UseFeatureFlags()`.
 
 ```csharp
@@ -189,6 +195,8 @@ if (await featureManager.IsEnabledAsync(nameof(MyFeatureFlags.FeatureA)))
 В MVC ASP.NET Core можно получить доступ к диспетчеру функций `IFeatureManager` с помощью внедрения зависимостей:
 
 ```csharp
+using Microsoft.FeatureManagement;
+
 public class HomeController : Controller
 {
     private readonly IFeatureManager _featureManager;

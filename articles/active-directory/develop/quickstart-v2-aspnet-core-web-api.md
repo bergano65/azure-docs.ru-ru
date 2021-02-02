@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/22/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: ca22d4f1ff48222b33030eb44d7feb62b1d154cd
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 7d38ee1782987afce703fbd8b4203186bbcbb505
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011890"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754482"
 ---
 # <a name="quickstart-protect-an-aspnet-core-web-api-with-microsoft-identity-platform"></a>Краткое руководство. Защита веб-API ASP.NET Core с помощью платформы удостоверений Майкрософт
 
@@ -96,7 +96,7 @@ ms.locfileid: "98011890"
 
 С помощью метода `AddAuthentication()` службу можно настроить так, чтобы она добавляла проверку подлинности на основе JwtBearer.
 
-Строка, содержащая `.AddMicrosoftIdentityWebApi`, добавляет в веб-API функцию авторизации платформы удостоверений Майкрософт. Затем она настраивается для проверки маркеров доступа, созданных конечной точкой платформы удостоверений Майкрософт на основе сведений в разделе `AzureAD` файла конфигурации *appsettings.json*:
+Строка, содержащая `.AddMicrosoftIdentityWebApi`, добавляет в веб-API функцию авторизации через платформу удостоверений Майкрософт. Затем она настраивается для проверки маркеров доступа, созданных платформой удостоверений Майкрософт на основе сведений в разделе `AzureAD` файла конфигурации *appsettings.json*:
 
 | ключ *appsettings.json* | Описание                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|

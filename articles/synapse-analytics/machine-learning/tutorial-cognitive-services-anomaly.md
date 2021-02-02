@@ -1,6 +1,6 @@
 ---
 title: Руководство по обнаружению аномалий с помощью Cognitive Services
-description: Учебник по обнаружению аномалий в Synapse с помощью Cognitive Services
+description: Узнайте, как использовать Cognitive Services для обнаружения аномалий в Azure Synapse Analytics.
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.subservice: machine-learning
@@ -9,97 +9,98 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 5e7b914d459d2452704f93987ce1bf91bfba988c
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: c54300bf37f6f4526c525b1502d902e5f4336ed7
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222213"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98943501"
 ---
 # <a name="tutorial-anomaly-detection-with-cognitive-services-preview"></a>Руководство по обнаружению аномалий с помощью Cognitive Services (предварительная версия)
 
-Из этого учебника вы узнаете, как обогатить данные в Azure Synapse с помощью [Cognitive Services](../../cognitive-services/index.yml). Для обнаружения аномалий мы будем использовать [Детектор аномалий](../../cognitive-services/anomaly-detector/index.yml). Чтобы обнаруживать аномалии, пользователь в Azure Synapse может просто выбрать таблицу для обогащения.
+Из этого учебника вы узнаете, как обогатить данные в Azure Synapse с помощью [Azure Cognitive Services](../../cognitive-services/index.yml). Для поиска аномалий вы будете использовать [Детектор аномалий](../../cognitive-services/anomaly-detector/index.yml). Чтобы обнаруживать аномалии, пользователь в Azure Synapse может просто выбрать таблицу для обогащения.
 
 Темы, рассматриваемые в этом руководстве:
 
 > [!div class="checklist"]
 > - Шаги для получения набора данных таблицы Spark, содержащего данные временных рядов.
-> - Использование интерфейса мастера в Azure Synapse для обогащения данных с помощью Детектора аномалий в Cognitive Service.
+> - Использование интерфейса мастера в Azure Synapse для обогащения данных с помощью Детектора аномалий в Cognitive Services.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись, прежде чем начинать работу](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Рабочая область Azure Synapse Analytics](../get-started-create-workspace.md) с учетной записью хранения ADLS 2-го поколения, настроенной в качестве хранилища по умолчанию. Необходимо быть **участником для данных BLOB-объектов хранилища** файловой системы ADLS 2-го поколения, с которой вы работаете.
+- [Рабочая область Azure Synapse Analytics](../get-started-create-workspace.md) с учетной записью хранения Azure Data Lake Storage 2-го поколения, настроенной в качестве хранилища по умолчанию. При работе с файловой системой Data Lake Storage 2-го поколения вам нужно иметь права *участника для получения данных Хранилища BLOB-объектов*.
 - Пул Spark в рабочей области Azure Synapse Analytics. Дополнительные сведения см. в статье [Создание пула Spark в Azure Synapse](../quickstart-create-sql-pool-studio.md).
-- Прежде чем приступить к работе с этим учебником, необходимо выполнить описанные здесь шаги предварительной настройки. [Настройка Cognitive Services для Azure Synapse](tutorial-configure-cognitive-services-synapse.md).
+- Выполнение действий, предшествующих настройке, указанных в [руководстве по необходимым компонентам для использования Cognitive Services в Azure Synapse](tutorial-configure-cognitive-services-synapse.md).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com/)
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-a-spark-table"></a>Создание таблицы Spark
 
-Для выполнения инструкций из этого учебника вам потребуется таблица Spark.
+Для работы с этим руководством вам потребуется таблица Spark.
 
-1. Скачайте следующий файл записной книжки, содержащий код для создания таблицы Spark: [prepare_anomaly_detector_data.ipynb](https://go.microsoft.com/fwlink/?linkid=2149577).
+1. Загрузите следующий файл записной книжки, содержащий код для создания таблицы Spark: [prepare_anomaly_detector_data.ipynb](https://go.microsoft.com/fwlink/?linkid=2149577).
 
 1. Отправьте файл в рабочую область Azure Synapse.
-![Отправка записной книжки](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00a.png)
 
-1. Откройте файл записной книжки и выберите ячейку **Выполнить все**.
-![Создание таблицы Spark](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00b.png)
+   ![Снимок экрана: варианты для отправки записной книжки.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00a.png)
+
+1. Откройте файл записной книжки и выберите **Выполнить все**, чтобы выполнить все ячейки.
+
+   ![Снимок экрана: варианты для создания таблицы Spark.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00b.png)
 
 1. Таблица Spark с именем **anomaly_detector_testing_data** теперь должна отображаться в базе данных Spark по умолчанию.
 
-## <a name="launch-cognitive-services-wizard"></a>Запуск мастера Cognitive Services
+## <a name="open-the-cognitive-services-wizard"></a>Открытие мастера Cognitive Services
 
-1. Щелкните правой кнопкой мыши таблицу Spark, созданную на предыдущем шаге. Выберите "Машинное обучение" -> Enrich with existing model (Обогатить с помощью существующей модели).
-![Запуск мастера оценки](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00g.png)
+1. Щелкните правой кнопкой мыши таблицу Spark, созданную на предыдущем шаге. Выберите **Машинное обучение** > **Enrich with existing model** (Дополнить с использованием существующей модели), чтобы открыть мастер.
 
-2. Появится панель конфигурации, и вам будет предложено выбрать модель Cognitive Services. Выберите "Детектор аномалий".
+   ![Снимок экрана: варианты для открытия мастера оценки.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00g.png)
 
-![Запуск мастера оценки. Шаг 1](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00c.png)
+2. Появляется панель конфигурации и запрос на выбор модели Cognitive Services. Выберите **Детектор аномалий**.
 
-## <a name="provide-authentication-details"></a>Предоставление сведений о проверке подлинности
+   ![Снимок экрана: выбор Детектора аномалий в качестве модели.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00c.png)
 
-Для выполнения проверки подлинности в Cognitive Services необходимо сослаться на секрет, который будет использоваться в Key Vault. Указанные ниже входные данные зависят от [предварительных шагов](tutorial-configure-cognitive-services-synapse.md), которые должны быть выполнены до этого шага.
+## <a name="provide-authentication-details"></a>Предоставление сведений для проверки подлинности
 
-- **Подписка Azure**. Выберите подписку Azure, к которой принадлежит ваше хранилище ключей.
-- **Учетная запись Cognitive Services**. Это ресурс "Анализ текста", к которому вы собираетесь подключиться.
-- **Связанная служба Azure Key Vault**. Во время выполнения предварительных шагов вы создали связанную службу для ресурса "Анализ текста". Выберите ее.
-- **Имя секрета**. Это имя секрета в хранилище ключей, содержащего ключ для проверки подлинности в ресурсе Cognitive Services.
+Для выполнения проверки подлинности в Cognitive Services нужно предоставить ссылку на секрет, размещенный в хранилище ключей. Указанные ниже входные данные зависят от [предварительных действий](tutorial-configure-cognitive-services-synapse.md), которые вы должны были выполнить до этого этапа.
 
-![Предоставление сведений об Azure Key Vault](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00d.png)
+- **Подписка Azure**: Выберите подписку Azure, к которой принадлежит ваше хранилище ключей.
+- **Учетная запись Cognitive Services.** Введите ресурс "Анализ текста", к которому вы будете подключаться.
+- **Связанная служба Azure Key Vault.** Во время выполнения предварительных действий вы создали связанную службу для ресурса "Анализ текста". Выберите ее.
+- **Имя секрета.** Введите имя секрета в хранилище ключей, содержащего ключ для проверки подлинности в ресурсе Cognitive Services.
 
-## <a name="configure-anomaly-detection"></a>Настройка обнаружения аномалий
+![Снимок экрана: сведения о проверке подлинности для хранилища ключей.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00d.png)
 
-Далее необходимо настроить обнаружение аномалий. Укажите следующие сведения:
+## <a name="configure-anomaly-detector"></a>Настройка Детектора аномалий
 
-- Степень детализации: скорость выборки данных. Например, если данные имеют значение для каждой минуты, степень детализации будет поминутной. Выберите **ежемесячно**. 
+Чтобы настроить Детектор аномалий, укажите следующие сведения:
 
-- Timestamp: столбец, представляющий время ряда. Выберите столбец **метка времени**.
+- **Granularity** (Степень детализации). Скорость выборки данных. Выберите **ежемесячно**. 
 
-- Значение временных рядов: столбец, представляющий значение ряда в момент времени, указанный в столбце "Метка времени". Выберите столбец **значение**.
+- **Столбец метки времени**. Столбец, представляющий временные ряды. Выберите **метки времени (строка)** .
 
-- Группирование: столбец, группирующий ряды. То есть все строки, имеющие одно и то же значение в этом столбце, должны формировать один временной ряд. Выберите столбец **группа**.
+- **Столбец значения временных рядов**. Столбец, представляющий значение ряда в момент времени, указанный в столбце "Метка времени". Выберите **значение (двойной)** .
 
-Затем выберите **Открыть записную книжку**. Будет создана записная книжка с кодом PySpark, который выполняет обнаружение аномалий с помощью Azure Cognitive Services.
+- **Столбец группирования**. Столбец, группирующий ряды. То есть все строки, имеющие одно и то же значение в этом столбце, должны формировать один временной ряд. Выберите **группа (строка)** .
 
-![Настройка детектора аномалий](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00e.png)
+Когда все будет готово, выберите **Открыть записную книжку**. Будет создана записная книжка с кодом PySpark, который использует Azure Cognitive Services для обнаружения аномалий.
 
-## <a name="open-notebook-and-run"></a>Открытие и запуск записной книжки
+![Снимок экрана: подробные сведения о конфигурации для Детектора аномалий.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00e.png)
 
-Записная книжка, которую вы только что открыли, использует [библиотеку mmlspark](https://github.com/Azure/mmlspark) для подключения к Cognitive Services.
+## <a name="run-the-notebook"></a>Запустите записную книжку
 
-Предоставленные сведения об Azure Key Vault позволяют безопасно сослаться на секреты из этого интерфейса, не раскрывая их.
+Записная книжка, которую вы только что открыли, использует [библиотеку mmlspark](https://github.com/Azure/mmlspark) для подключения к Cognitive Services. Предоставленные сведения об Azure Key Vault позволяют безопасно сослаться на секреты из этого интерфейса, не раскрывая их.
 
-Теперь можно **выполнить все** ячейки, чтобы запустить обнаружение аномалий. Дополнительные сведения о [Детекторе аномалий в Cognitive Services](../../cognitive-services/anomaly-detector/index.yml).
+Теперь можно выполнить все ячейки, чтобы запустить обнаружение аномалий. Выберите **Запустить все**. [Дополнительные сведения о Детекторе аномалий в Cognitive Services](../../cognitive-services/anomaly-detector/index.yml).
 
-![Запуск обнаружения аномалий](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00f.png)
+![Снимок экрана: обнаружение аномалий.](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00f.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Учебник. Анализ тональности с помощью Azure Cognitive Services](tutorial-cognitive-services-sentiment.md)
-- [Учебник. Оценка моделей машинного обучения в выделенных пулах Azure Synapse SQL](tutorial-sql-pool-model-scoring-wizard.md).
-- [Возможности Машинного обучения в Azure Synapse Analytics](what-is-machine-learning.md)
+- [Учебник. Оценка моделей машинного обучения в выделенных пулах Azure Synapse SQL](tutorial-sql-pool-model-scoring-wizard.md)
+- [Возможности машинного обучения в Azure Synapse Analytics](what-is-machine-learning.md)

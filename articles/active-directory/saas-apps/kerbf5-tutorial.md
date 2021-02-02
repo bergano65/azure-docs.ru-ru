@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 16fff00f04c4cd57ad46759cceb50134e58d5e01
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 139366277feab0a04c47311b4f0210223b2bc8d9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97933121"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98892054"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
 
@@ -493,3 +493,9 @@ ms.locfileid: "97933121"
 - [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](advance-kerbf5-tutorial.md)
+
+- [Интеграция F5 BIG-IP APM и Azure AD для обеспечения безопасного гибридного доступа](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-aad-integration)
+
+- [Руководство по развертыванию виртуальной машины F5 BIG-IP Virtual Edition в Azure IaaS для обеспечения безопасного гибридного доступа](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-bigip-deployment-guide)
+
+- [Руководство по интеграции единого входа Azure Active Directory с F5 BIG-IP для обеспечения VPN-подключения без использования пароля](https://docs.microsoft.com/azure/active-directory/manage-apps/f5-aad-password-less-vpn)

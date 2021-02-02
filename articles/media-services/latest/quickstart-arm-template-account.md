@@ -1,25 +1,11 @@
 ---
-title: Шаблон Resource Manager учетной записи Служб мультимедиа
-titleSuffix: Azure Media Services
-description: В этой статье описано, как использовать шаблон Resource Manager для создания учетной записи Служб мультимедиа.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: quickstart
-ms.date: 11/24/2020
-ms.author: inhenkel
-ms.custom: subject-armqs
-ms.openlocfilehash: 6a23c3a20e79fe6fff7de8faccf4e4ef78f02585
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185048"
+заголовок: Шаблон ARM для учетной записи Служб мультимедиа Службы мультимедиа Azure description: В этой статье описано, как использовать шаблон Resource Manager для создания учетной записи Служб мультимедиа.
+services: media-services documentationcenter: '' author: IngridAtMicrosoft manager: femila editor: ''
+
+ms.service: media-services ms.workload: ms.topic: quickstart ms.date: 11/24/2020 ms.author: inhenkel ms.custom: subject-armqs
+
 ---
+
 # <a name="quickstart-media-services-account-arm-template"></a>Краткое руководство. Шаблон Resource Manager учетной записи Служб мультимедиа
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -41,7 +27,7 @@ ms.locfileid: "96185048"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-Если вы еще не развертывали шаблон Resource Manager, рекомендуется ознакомиться со статьей о [шаблонах Azure ARM](https://docs.microsoft.com/azure/azure-resource-manager/templates/) и [этим учебником](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell).
+Если вы еще не развертывали шаблон Resource Manager, рекомендуется ознакомиться со статьей о [шаблонах Azure ARM](../../azure-resource-manager/templates/index.yml) и [этим учебником](../../azure-resource-manager/templates/template-tutorial-create-first-template.md?tabs=azure-powershell).
 
 ## <a name="review-the-template"></a>Изучение шаблона
 
@@ -118,8 +104,8 @@ The syntax for the JSON code fence is:
 
 В шаблоне определены три типа ресурса Azure:
 
-- С помощью [Microsoft.Media/mediaservices](https://docs.microsoft.com/azure/templates/microsoft.media/mediaservices) создается учетная запись Служб мультимедиа.
-- С помощью [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения.
+- С помощью [Microsoft.Media/mediaservices](/azure/templates/microsoft.media/mediaservices) создается учетная запись Служб мультимедиа.
+- С помощью [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения.
 
 ## <a name="set-the-account"></a>Настройка учетной записи
 
@@ -277,4 +263,4 @@ az group delete --name {name of the resource group}
 Дополнительные сведения об использовании шаблона Resource Manager, о процессе создания шаблона с параметрами, переменными и т. д. см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Создание и развертывание первого шаблона ARM](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Создание и развертывание первого шаблона ARM](../../azure-resource-manager/templates/template-tutorial-create-first-template.md)

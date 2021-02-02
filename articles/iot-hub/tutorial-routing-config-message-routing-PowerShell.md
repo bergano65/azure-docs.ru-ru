@@ -1,6 +1,6 @@
 ---
-title: Настройка маршрутизации сообщений для Центра Интернета вещей Azure с помощью Azure PowerShell
-description: Настройте маршрутизацию сообщений для Центра Интернета вещей Azure с помощью Azure PowerShell. В зависимости от свойств сообщения выполняйте маршрутизацию в учетную запись хранения или очередь служебной шины.
+title: Руководство. Настройка маршрутизации сообщений для Центра Интернета вещей Azure с помощью Azure PowerShell
+description: Руководство по настройке маршрутизации сообщений для Центра Интернета вещей Azure с помощью Azure PowerShell. В зависимости от свойств сообщения выполняйте маршрутизацию в учетную запись хранения или очередь служебной шины.
 author: robinsh
 manager: philmea
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 92c30287e836ccadda915dab70a4d40e9c4e851a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be1560bcc03ec7a26f4bc374392c746243cd731a
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89073409"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624077"
 ---
 # <a name="tutorial-use-azure-powershell-to-configure-iot-hub-message-routing"></a>Руководство по Маршрутизация сообщений Центра Интернета вещей с помощью Azure PowerShell
 

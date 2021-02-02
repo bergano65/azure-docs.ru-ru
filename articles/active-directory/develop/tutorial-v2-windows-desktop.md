@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 0d759b3af097067ba0c9215b65b212d50474d571
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 5bfdf90ddbd500fd9d1c504bd37ed4ac35d8bf70
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178353"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752769"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Руководство по Вызов API Microsoft Graph из классического приложения для Windows
 
@@ -47,7 +47,7 @@ ms.locfileid: "98178353"
 
 ## <a name="handling-token-acquisition-for-accessing-protected-web-apis"></a>Обработка получения токена для доступа к защищенным веб-API
 
-Когда пользователь пройдет проверку подлинности, пример приложения получит токен, который может использоваться для запроса API Microsoft Graph или веб-API, защищенного с помощью платформы удостоверений Майкрософт для разработчиков.
+Когда пользователь пройдет аутентификацию, пример приложения получит токен, который может использоваться для запрашивания API Microsoft Graph или веб-API, защищенного с помощью платформы удостоверений Майкрософт.
 
 Программным интерфейсам, таким как Microsoft Graph, для доступа к определенным ресурсам требуется маркер. Например, маркер необходим для чтения профиля пользователя, доступа к календарю пользователя и отправки электронной почты. Приложение может запросить маркер доступа с помощью MSAL, чтобы получить доступ к этим ресурсам, указав определенные области API. Затем этот маркер доступа добавляется в заголовок авторизации HTTP для каждого вызова к защищенному ресурсу.
 

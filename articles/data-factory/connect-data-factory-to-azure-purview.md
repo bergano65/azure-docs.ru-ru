@@ -13,12 +13,12 @@ ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 12/3/2020
-ms.openlocfilehash: 36eac4c60e0d7fd54ec304f0f17c2ecb454f0629
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: ce37e26730fbef9e5e40fd95190727062f9044ac
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063453"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428945"
 ---
 # <a name="connect-data-factory-to-azure-purview-preview"></a>Подключение фабрики данных к Azure зрения (Предварительная версия)
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -36,7 +36,7 @@ Azure зрения — это новая облачная служба, кото
 3. После подключения вы сможете увидеть имя учетной записи зрения в **учетной записи зрения** вкладки. 
 4. Для поиска данных можно использовать панель поиска в верхнем центре портала фабрики данных Azure. 
 
-Если вы видите предупреждение на портале коэффициента обработки данных Azure после регистрации учетной записи Azure зрения в фабрике данных, выполните действия ниже, чтобы устранить проблему.
+Если вы видите предупреждение на портале фабрики данных Azure после регистрации учетной записи Azure зрения в фабрике данных, выполните действия ниже, чтобы устранить проблему.
 
 :::image type="content" source="./media/data-factory-purview/register-purview-account-warning.png" alt-text="Снимок экрана с предупреждением о регистрации учетной записи зрения.":::
 

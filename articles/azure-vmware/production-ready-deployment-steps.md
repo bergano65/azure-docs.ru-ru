@@ -3,12 +3,12 @@ title: Планирование развертывания Решения Azure 
 description: В этой статье описывается рабочий процесс развертывания Решения Azure VMware.  Его конечным результатом будет среда, готовая к созданию виртуальной машины и миграции.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 2cc4d40fd8088a632e0c24e3c4b770ebdc9de2e8
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 8b1d69f3f953b43177a3b1d0611b51ca2cfb1a75
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912739"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762860"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>Планирование развертывания Решения Azure VMware
 
@@ -93,28 +93,36 @@ ms.locfileid: "97912739"
 - Если вы планируете расширять сети из локальной среды, эти сети должны быть подключены к [распределенному коммутатору vSphere (vDS)](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-B15C6A13-797E-4BCB-B9D9-5CBC5A60C3A6.html) в локальной среде VMware.  
 - Если сети, которые вы хотите расширить, работают через [стандартный коммутатор vSphere](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-350344DE-483A-42ED-B0E2-C811EE927D59.html), их расширить нельзя.
 
-## <a name="azure-virtual-network-to-attach-azure-vmware-solution"></a>Виртуальная сеть Azure для подключения Решения Azure VMware
+## <a name="attach-virtual-network-to-azure-vmware-solution"></a>Подключение виртуальной сети к Решению Azure VMware
 
-Чтобы получить доступ к частному облаку Решения Azure VMware, необходимо подключить канал ExpressRoute, входящий в состав Решения Azure VMware, к виртуальной сети Azure.  Во время развертывания можно определить новую виртуальную сеть или выбрать существующую.
+На этом шаге вы обнаружите шлюз виртуальной сети ExpressRoute и вспомогательную виртуальную сеть Azure, используемую для подключения канала ExpressRoute Решения Azure VMware.  Канал ExpressRoute упрощает подключение к частному облаку Решения Azure VMware и из него к другим службам Azure, ресурсам Azure и локальным средам.
 
-Канал ExpressRoute из Решения Azure VMware подключается к шлюзу ExpressRoute в виртуальной сети Azure, которую вы определили на этом шаге.  
-
->[!IMPORTANT]
->Для подключения к Решению Azure VMware можно использовать существующий шлюз ExpressRoute, если он не превышает ограничение в четыре канала ExpressRoute на виртуальную сеть.  Но для доступа к Решению Azure VMware из локальной среды через ExpressRoute требуется служба ExpressRoute Global Reach, так как шлюз ExpressRoute не обеспечивает транзитивную маршрутизацию между подключенными каналами.  
-
-Если вы хотите подключить канал ExpressRoute из Решения Azure VMware к существующему шлюзу ExpressRoute, это можно сделать после развертывания.  
-
-Определите, хотите ли вы подключить Решение Azure VMware к существующему шлюзу Express Route.  
-
-* **Да** — определите виртуальную сеть, которая не используется во время развертывания.
-* **Нет** — определите существующую виртуальную сеть или создайте новую во время развертывания.
-
-В любом случае задокументируйте, что требуется сделать на этом шаге.
-
->[!NOTE]
->Эта виртуальная сеть находится в локальной среде и Решении Azure VMware, поэтому убедитесь, что сегменты IP-адресов, используемые в этой виртуальной сети и подсетях, не перекрываются.
+Вы можете использовать *имеющийся* или *новый* шлюз виртуальной сети ExpressRoute.
 
 :::image type="content" source="media/pre-deployment/azure-vmware-solution-expressroute-diagram.png" alt-text="Определение виртуальной сети Azure для подключения Решения Azure VMware" border="false":::
+
+### <a name="use-an-existing-expressroute-virtual-network-gateway"></a>Использование имеющегося шлюза виртуальной сети ExpressRoute
+
+Если вы используете *имеющийся шлюз виртуальной сети* ExpressRoute, настройку канала ExpressRoute Решения Azure VMware нужно будет выполнить после развертывания частного облака. В этом случае оставьте поле **Виртуальная сеть** пустым.  
+
+Запишите шлюз виртуальной сети ExpressRoute, который будете использовать, и перейдите к следующему шагу.
+
+### <a name="create-a-new-expressroute-virtual-network-gateway"></a>Создание нового шлюза виртуальной сети ExpressRoute
+
+При создании *нового шлюза виртуальной сети* ExpressRoute вы можете использовать имеющуюся виртуальную сеть Azure или создать новую.  
+
+- Для имеющейся виртуальной сети Azure:
+   1. Убедитесь, что в виртуальной сети нет ранее созданных шлюзов виртуальной сети ExpressRoute. 
+   1. Выберите имеющуюся виртуальную сеть Azure из списка **Виртуальная сеть**.
+
+- Новую виртуальную сеть Azure можно создать заранее или во время развертывания. Выберите ссылку **Создать** в списке **Виртуальная сеть**.
+
+На рисунке ниже показан экран развертывания **Create a private cloud** (Создание частного облака) с выделенным полем **Виртуальная сеть**.
+
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-deployment-screen-vnet-circle.png" alt-text="Снимок экрана: экран развертывания Решения Azure VMware с выделенным полем &quot;Виртуальная сеть&quot;.":::
+
+>[!NOTE]
+>Все виртуальные сети, используемые или создаваемые, могут находиться в локальной среде и Решении Azure VMware, поэтому убедитесь, что сегменты IP-адресов, используемые в этой виртуальной сети и подсетях, не перекрываются.
 
 ## <a name="vmware-hcx-network-segments"></a>Сегменты сети VMware HCX
 

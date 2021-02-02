@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 09/25/2020
+ms.date: 01/23/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 960657d27be4b9dab9f242428592bbb404a49d86
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: e2ca5f42120661b887d07e697596f41cb7a7fce4
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697175"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745772"
 ---
 # <a name="tutorial-index-azure-sql-data-using-the-net-sdk"></a>Руководство по Индексирование данных SQL Azure с помощью пакета SDK для .NET
 
@@ -107,14 +107,14 @@ ms.locfileid: "94697175"
 
 1. В обозревателе решений откройте файл **appsettings.json**, чтобы предоставить сведения о подключении.
 
-1. Для `searchServiceName`, если у полного URL-адреса формат "https://my-demo-service.search.windows.net", нужно указать имя службы my-demo-service.
+1. Если полный URL-адрес на странице с общими сведениями службы для `SearchServiceEndPoint` имеет значение "https://my-demo-service.search.windows.net", укажите этот URL-адрес.
 
 1. Для `AzureSqlConnectionString` формат строки аналогичен следующему: `"Server=tcp:{your_dbname}.database.windows.net,1433;Initial Catalog=hotels-db;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"`
 
     ```json
     {
-      "SearchServiceName": "<placeholder-Azure-Search-service-name>",
-      "SearchServiceAdminApiKey": "<placeholder-admin-key-for-Azure-Search>",
+      "SearchServiceEndPoint": "<placeholder-search-url>",
+      "SearchServiceAdminApiKey": "<placeholder-admin-key-for-search-service>",
       "AzureSqlConnectionString": "<placeholder-ADO.NET-connection-string",
     }
     ```
@@ -130,11 +130,12 @@ ms.locfileid: "94697175"
 
 ### <a name="in-hotelcs"></a>hotell.cs
 
-Схема индексов определяет коллекцию полей, включая атрибуты, в которых указаны разрешенные операции. Например, в них указывается, поддерживает ли схема полнотекстовый поиск, фильтрацию или сортировку, как в представленном ниже определении для HotelName. 
+Схема индексов определяет коллекцию полей, включая атрибуты, в которых указаны разрешенные операции. Например, в них указывается, поддерживает ли схема полнотекстовый поиск, фильтрацию или сортировку, как в представленном ниже определении для HotelName. [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) — это полнотекстовые данные с возможностью поиска по определению. Другие атрибуты назначаются явно.
 
 ```csharp
 . . . 
-[IsSearchable, IsFilterable, IsSortable]
+[SearchableField(IsFilterable = true, IsSortable = true)]
+[JsonPropertyName("hotelName")]
 public string HotelName { get; set; }
 . . .
 ```
@@ -143,59 +144,73 @@ public string HotelName { get; set; }
 
 ### <a name="in-programcs"></a>Program.cs
 
-Основная программа содержит логику для создания клиента, индекса, источника данных и индексатора. При помощи этого кода проверяется наличие ресурсов с таким же именем. При обнаружении такие ресурсы удаляются, так как есть вероятность, что вы будете запускать эту программу несколько раз.
+Основная программа содержит логику для создания [клиента индексатора](/dotnet/api/azure.search.documents.indexes.models.searchindexer), индекса, источника данных и индексатора. При помощи этого кода проверяется наличие ресурсов с таким же именем. При обнаружении такие ресурсы удаляются, так как есть вероятность, что вы будете запускать эту программу несколько раз.
 
-Объект источника данных настраивается с помощью параметров, относящихся к ресурсам Базы данных Azure SQL, включая [частичное или добавочное индексирование](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) для использования встроенных [функций обнаружения изменений](/sql/relational-databases/track-changes/about-change-tracking-sql-server) SQL Azure. Демонстрационная база данных гостиниц в SQL Azure содержит столбец "обратимого удаления", **IsDeleted**. Если этот столбец имеет значение true в базе данных, индексатор удаляет соответствующий документ из индекса Когнитивного поиска Azure.
+Объект источника данных настраивается с помощью параметров, относящихся к ресурсам Базы данных Azure SQL, включая [частичное или добавочное индексирование](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) для использования встроенных [функций обнаружения изменений](/sql/relational-databases/track-changes/about-change-tracking-sql-server) SQL Azure. Исходная демонстрационная база данных гостиниц в SQL Azure содержит столбец "обратимого удаления", **IsDeleted**. Если этот столбец имеет значение true в базе данных, индексатор удаляет соответствующий документ из индекса Когнитивного поиска Azure.
 
-  ```csharp
-  Console.WriteLine("Creating data source...");
+```csharp
+Console.WriteLine("Creating data source...");
 
-  DataSource dataSource = DataSource.AzureSql(
-      name: "azure-sql",
-      sqlConnectionString: configuration["AzureSQLConnectionString"],
-      tableOrViewName: "hotels",
-      deletionDetectionPolicy: new SoftDeleteColumnDeletionDetectionPolicy(
-          softDeleteColumnName: "IsDeleted",
-          softDeleteMarkerValue: "true"));
-  dataSource.DataChangeDetectionPolicy = new SqlIntegratedChangeTrackingPolicy();
+var dataSource =
+      new SearchIndexerDataSourceConnection(
+         "hotels-sql-ds",
+         SearchIndexerDataSourceType.AzureSql,
+         configuration["AzureSQLConnectionString"],
+         new SearchIndexerDataContainer("hotels"));
 
-  searchService.DataSources.CreateOrUpdateAsync(dataSource).Wait();
-  ```
+indexerClient.CreateOrUpdateDataSourceConnection(dataSource);
+```
 
-Объект индексатора не зависит от платформы. Его настройка, планирование и вызов одинаковы независимо от источника. Этот пример индексатора включает в себя расписание, возможность сброса, которая очищает журнал индексатора и вызывает метод для создания и немедленного запуска индексатора.
+Объект индексатора не зависит от платформы. Его настройка, планирование и вызов одинаковы независимо от источника. Этот пример индексатора включает в себя расписание, возможность сброса, которая очищает журнал индексатора и вызывает метод для создания и немедленного запуска индексатора. Чтобы создать или обновить индексатор, используйте [CreateOrUpdateIndexerAsync](/dotnet/api/azure.search.documents.indexes.searchindexerclient.createorupdateindexerasync).
 
-  ```csharp
-  Console.WriteLine("Creating Azure SQL indexer...");
-  Indexer indexer = new Indexer(
-      name: "azure-sql-indexer",
-      dataSourceName: dataSource.Name,
-      targetIndexName: index.Name,
-      schedule: new IndexingSchedule(TimeSpan.FromDays(1)));
-  // Indexers contain metadata about how much they have already indexed
-  // If we already ran the sample, the indexer will remember that it already
-  // indexed the sample data and not run again
-  // To avoid this, reset the indexer if it exists
-  exists = await searchService.Indexers.ExistsAsync(indexer.Name);
-  if (exists)
-  {
-      await searchService.Indexers.ResetAsync(indexer.Name);
-  }
+```csharp
+Console.WriteLine("Creating Azure SQL indexer...");
 
-  await searchService.Indexers.CreateOrUpdateAsync(indexer);
+var schedule = new IndexingSchedule(TimeSpan.FromDays(1))
+{
+      StartTime = DateTimeOffset.Now
+};
 
-  // We created the indexer with a schedule, but we also
-  // want to run it immediately
-  Console.WriteLine("Running Azure SQL indexer...");
+var parameters = new IndexingParameters()
+{
+      BatchSize = 100,
+      MaxFailedItems = 0,
+      MaxFailedItemsPerBatch = 0
+};
 
-  try
-  {
-      await searchService.Indexers.RunAsync(indexer.Name);
-  }
-  catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
-  {
+// Indexer declarations require a data source and search index.
+// Common optional properties include a schedule, parameters, and field mappings
+// The field mappings below are redundant due to how the Hotel class is defined, but 
+// we included them anyway to show the syntax 
+var indexer = new SearchIndexer("hotels-sql-idxr", dataSource.Name, searchIndex.Name)
+{
+      Description = "Data indexer",
+      Schedule = schedule,
+      Parameters = parameters,
+      FieldMappings =
+      {
+         new FieldMapping("_id") {TargetFieldName = "HotelId"},
+         new FieldMapping("Amenities") {TargetFieldName = "Tags"}
+      }
+};
+
+await indexerClient.CreateOrUpdateIndexerAsync(indexer);
+```
+
+Запуски индексаторов обычно выполняются по расписанию, но если при разработке вам потребуется немедленно запустить индексатор, используйте [RunIndexerAsync](/dotnet/api/azure.search.documents.indexes.searchindexerclient.runindexerasync).
+
+```csharp
+Console.WriteLine("Running Azure SQL indexer...");
+
+try
+{
+      await indexerClient.RunIndexerAsync(indexer.Name);
+}
+catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
+{
       Console.WriteLine("Failed to run indexer: {0}", e.Response.Content);
-  }
-  ```
+}
+```
 
 ## <a name="4---build-the-solution"></a>4. Сборка решения
 
@@ -205,13 +220,13 @@ public string HotelName { get; set; }
 
 Код выполняется локально в Visual Studio. Устанавливается подключение к службе поиска в Azure, которая в свою очередь подключается к Базе данных SQL Azure, чтобы получить набор данных. При таком большом количестве операций есть несколько возможных точек сбоя. Если поступает сообщение об ошибке, прежде всего проверьте следующее:
 
-+ Сведения о подключении для службы поиска, которые следует указать, ограничены именем службы в этом руководстве. Если вы ввели полный URL-адрес, когда создается индекс, выполнение операций прекращается и отображается сообщение о сбое подключения.
++ Выполните поиск данных подключения к службе, которые вы указали в полном URL-адресе. Если вы ввели только имя службы, выполнение операций прекращается на создании индекса и отображается сообщение о сбое подключения.
 
-+ Сведения о подключении к базе данных в **appsettings.json**. Это должна быть строка подключения ADO.NET, полученная на портале, в которую добавлены допустимые для базы данных имя пользователя и пароль. Учетная запись пользователя должна предоставлять разрешение на получение данных. Должен быть разрешен доступ с IP-адреса локального клиента.
++ Сведения о подключении к базе данных в **appsettings.json**. Это должна быть строка подключения ADO.NET, полученная на портале, в которую добавлены допустимые для базы данных имя пользователя и пароль. Учетная запись пользователя должна предоставлять разрешение на получение данных. Для IP-адреса локального клиента должен быть разрешен входящий доступ через брандмауэр.
 
 + Ограничения ресурсов. Помните, что для уровня "Бесплатный" действуют ограничения в три индекса, индексатора и источника данных. В службе с максимальным количеством объектов нельзя создавать новые.
 
-## <a name="5---search"></a>5. Поиск
+## <a name="5---search"></a>5\. Поиск
 
 Проверьте создание объекта на портале Azure и создайте запрос по индексу с помощью **обозревателя поиска**.
 

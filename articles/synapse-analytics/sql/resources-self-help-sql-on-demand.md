@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4c3b5095da4e55dc8f881a610f80f1150422e739
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: c67b0bab554f363b8389c5557eadeac6e4c577a2
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119923"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625237"
 ---
 # <a name="self-help-for-serverless-sql-pool"></a>Самопомощь при использовании бессерверного пула SQL
 
@@ -29,7 +29,9 @@ ms.locfileid: "98119923"
 
 ## <a name="query-fails-because-file-cannot-be-opened"></a>Сбой запроса из-за невозможности открыть файл
 
-Если происходит сбой запроса с сообщением File cannot be opened because it does not exist or it is used by another process (Не удается открыть файл, так как он не существует или используется другим процессом) и вы уверены, что оба файла существуют и не используются другим процессом, это означает, что бессерверный пул SQL не может получить доступ к файлу. Эта проблема обычно возникает из-за того, что у удостоверения Azure Active Directory нет прав доступа к файлу. По умолчанию бессерверный пул SQL пытается получить доступ к файлу, используя удостоверение Azure Active Directory. Чтобы устранить эту проблему, необходимо получить соответствующие права доступа к файлу. Проще всего предоставить себе роль "Участник для данных BLOB-объектов хранилища" в учетной записи хранения, к которой вы пытаетесь выполнить запрос. [Дополнительные сведения см. в полном руководстве по контролю доступа Azure Active Directory к хранилищу](../../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). 
+Если происходит сбой запроса с сообщением File cannot be opened because it does not exist or it is used by another process (Не удается открыть файл, так как он не существует или используется другим процессом) и вы уверены, что оба файла существуют и не используются другим процессом, это означает, что бессерверный пул SQL не может получить доступ к файлу. Эта проблема обычно возникает из-за того, что у удостоверения Azure Active Directory нет прав доступа к файлу. По умолчанию бессерверный пул SQL пытается получить доступ к файлу, используя удостоверение Azure Active Directory. Чтобы устранить эту проблему, необходимо получить соответствующие права доступа к файлу. Проще всего предоставить себе роль "Участник для данных BLOB-объектов хранилища" в учетной записи хранения, к которой вы пытаетесь выполнить запрос. 
+- [Дополнительные сведения см. в полном руководстве по контролю доступа Azure Active Directory к хранилищу](../../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json). 
+- См. статью [Управление доступом к учетной записи хранения в бессерверном пуле SQL в Azure Synapse Analytics](develop-storage-files-storage-access-control.md).
 
 ## <a name="query-fails-because-it-cannot-be-executed-due-to-current-resource-constraints"></a>Сбой выполнения запроса из-за текущих ограничений ресурсов 
 

@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по отправке данных телеметрии в Центр Интернета вещей Azure (iOS)
-description: Вы узнаете, как запустить пример приложения iOS для отправки имитированных данных телеметрии в центр Интернета вещей и считывания данных телеметрии из центра Интернета вещей для обработки в облаке.
+title: Краткое руководство. Отправка данных телеметрии в Центр Интернета вещей Azure (iOS)
+description: В этом кратком руководстве выполняется пример приложения iOS по отправке имитированной телеметрии в Центр Интернета вещей и чтение телеметрии из Центра Интернета вещей для обработки в облаке.
 author: wesmc7777
 manager: philmea
 ms.author: wesmc
@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - devx-track-azurecli
 ms.date: 04/03/2019
-ms.openlocfilehash: 6699015a3c8939f012eb837da3d8b0c3d49527d5
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 4af985d93c5b02ab20df97abd5fa0371edf889f5
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121496"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624258"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-ios"></a>Краткое руководство. Отправка данных телеметрии из устройства в центр Интернета вещей (iOS)
 

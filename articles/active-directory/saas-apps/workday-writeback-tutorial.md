@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: chmutali
-ms.openlocfilehash: c65fddcc90b25f70759fb038a72dad0facfa99a9
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 3a623a487dd31caf8c85b18771d90e3a6306df68
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359737"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954010"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-workday"></a>Руководство по настройке обратной записи из Azure AD в Workday
 Это руководство предназначено для демонстрации процесса, который нужно выполнить для настройки обратной записи атрибутов из Azure AD в Workday. Приложение подготовки обратной записи в Workday поддерживает присвоение значений следующим атрибутам Workday:
@@ -172,6 +172,7 @@ ms.locfileid: "94359737"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Дополнительные сведения о сценариях интеграции Azure AD и Workday и о вызовах веб-служб](../app-provisioning/workday-integration-reference.md)
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).
 * [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).

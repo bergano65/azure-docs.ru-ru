@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 02/01/2021
 ms.author: juliako
-ms.openlocfilehash: b6e18e077b717da65ca8d70b9bda6a133dba1f5c
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: c0d332c00635444ab4d694e46486a498b43137f2
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120093"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427670"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -30,7 +30,23 @@ ms.locfileid: "98120093"
 * Исправления ошибок
 * Нерекомендуемые функции
 
-##  <a name="december-2020"></a>Декабрь 2020 г.
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="video-indexer-is-deployed-on-us-government-cloud"></a>Индексатор видео развернут в облаке для государственных организаций США 
+
+Теперь вы можете создать платную учетную запись индексатора видео в облаке для государственных организаций США в регионах Виргиния и штата правительства. Предложение бесплатной пробной версии индексатора видео недоступно в упомянутом регионе. Дополнительные сведения см. в документации по индексатору видео. 
+
+### <a name="video-indexer-deployed-in-the-india-central-region"></a>Индексатор видео, развернутый в центральном регионе Индии 
+
+Теперь вы можете создать платную учетную запись индексатора видео в центральном регионе Индии. 
+
+### <a name="new-dark-mode-for-the-video-indexer-website-experience"></a>Новый Темный режим работы с веб-сайтом индексатора видео
+
+Возможности веб-сайта индексатора видео теперь доступны в темном режиме. Чтобы включить темный режим, откройте панель Параметры и переключитесь на **режим темного режима** . 
+
+:::image type="content" source="./media/release-notes/dark-mode.png" alt-text="Параметр темного режима":::
+
+## <a name="december-2020"></a>Декабрь 2020 г.
 
 ### <a name="video-indexer-deployed-in-the-switzerland-west-and-switzerland-north"></a>Индексатор видео, развернутый в Западная Швейцария и Северная Швейцария
 
@@ -242,7 +258,7 @@ ms.locfileid: "98120093"
     
     Модель, в которой описывается тема, теперь поддерживает более глубокую детализацию таксономии IPTC. Ознакомьтесь с полными сведениями о [новых нововведениях на основе искусственного интеллекта в службах мультимедиа Azure](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/).
 
-## <a name="august-2019"></a>Август 2019 г.
+## <a name="august-2019"></a>Август 2019 г.
  
 ### <a name="video-indexer-deployed-in-uk-south"></a>Индексатор видео, развернутый в южная часть Соединенного Королевства
 

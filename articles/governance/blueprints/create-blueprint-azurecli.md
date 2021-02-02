@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы с помощью Azure CLI
 description: В рамках этого краткого руководства вы будете использовать Azure Blueprints для создания, определения и развертывания артефактов с помощью Azure CLI.
-ms.date: 10/14/2020
+ms.date: 01/26/2021
 ms.topic: quickstart
-ms.openlocfilehash: 88ccd3fe6271a79d201007954e7997b68d2dc69b
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: a0e44925bdec78b8b02a50c8b3f91db0bb764976
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920565"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875217"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Краткое руководство. Определение и назначение схемы Azure с помощью Azure CLI
 
@@ -16,7 +16,8 @@ ms.locfileid: "94920565"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Если вы ранее не использовали Azure Blueprints, зарегистрируйте поставщик ресурсов, выполнив команду `az provider register --namespace Microsoft.Blueprint` в Azure CLI.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

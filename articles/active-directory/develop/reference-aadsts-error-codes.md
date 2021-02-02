@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/09/2020
+ms.date: 02/01/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: fa6fc11441811589967ddd7728501b521f9f9155
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b948de6ad9e07a650df98ef38104c02462ab532d
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169279"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99428037"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Коды ошибок аутентификации и авторизации Azure AD
 
@@ -95,6 +95,7 @@ ms.locfileid: "96169279"
 | AADSTS50000 | TokenIssuanceError — возникла проблема со службой входа. Чтобы решить эту проблему, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md). |
 | AADSTS50001 | InvalidResource — запрошенный ресурс отключен или не существует. Проверьте код приложения и убедитесь, что вы указали правильный URL-адрес ресурса, к которому пытаетесь получить доступ.  |
 | AADSTS50002 | NotAllowedTenant: не удалось войти из-за ограниченного доступа к прокси на клиенте. Если это ваша собственная политика клиента, вы можете устранить проблему, изменив параметры ограниченного доступа к клиенту. |
+| AADSTS500021 | Доступ к клиенту "{клиент}" запрещен. AADSTS500021 указывает, что функция ограничения клиента настроена и пользователь пытается получить доступ к клиенту, который не входит в список разрешенных клиентов, указанных в заголовке `Restrict-Access-To-Tenant` . Дополнительные сведения см. [в статье Использование ограничений клиента для управления доступом к облачным приложениям SaaS](/azure/active-directory/manage-apps/tenant-restrictions).|
 | AADSTS50003 | MissingSigningKey: не удалось войти из-за отсутствия ключа или сертификата для подписи. Возможно, в приложении не настроен ключ подписывания. Ознакомьтесь с разрешениями, описанными в [. /манаже-АППС/аппликатион-сигн-ин-проблем-федератед-ССО-Галлери.МД # Certificate-или-key-не настроено](../manage-apps/application-sign-in-problem-federated-sso-gallery.md#certificate-or-key-not-configured). Если проблемы не удалось решить, обратитесь к владельцу или администратору приложения. |
 | AADSTS50005 | Девицеполициеррор — пользователь пытался войти на устройство с платформы, которая в настоящее время не поддерживается с помощью политики условного доступа. |
 | AADSTS50006 | InvalidSignature: не удалось проверить подпись по причине ее недействительности. |

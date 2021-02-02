@@ -1,15 +1,15 @@
 ---
 title: Сведения о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 description: Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
-ms.date: 01/08/2021
+ms.date: 01/25/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 4cc68cb3549f5b5dd3342fd3f60214c6e3ca5ae0
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 85467c086225c4d9e7699debb9871dbd197ebfd2
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046215"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807067"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "98046215"
 
 > [!IMPORTANT]
 > Каждый элемент управления ниже связан с одним или несколькими определениями [Политики Azure](../overview.md).
-> Такие политики помогут вам в [оценке соответствия](../how-to/get-compliance-data.md) с помощью элементов управления, но часто полное или точное соответствие между элементом управления и одной или несколькими политиками отсутствует. Поэтому состояние **Совместимый** в Политике Azure применимо только к самим определениям политики и не означает полное соответствие всем требованиям элемента управления. Кроме того, стандарт соответствия включает элементы управления, на которые сейчас не распространяются определения Политики Azure. Следовательно, сведения о соответствии в Политике Azure — это только частичное представление общего состояния соответствия. Связи между областями соответствия нормативным требованиям, элементами управления и определениями Политики Azure для этого стандарта соответствия со временем могут меняться. Историю изменений можно просмотреть на странице [журнала фиксаций в GitHub](https://github.com/Azure/azure-policy/commits/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/CISv1_1_0_audit.json).
+> Такие политики помогут вам в [оценке соответствия](../how-to/get-compliance-data.md) с помощью элементов управления, но часто полное или точное соответствие между элементом управления и одной или несколькими политиками отсутствует. Поэтому состояние **Совместимый** в Политике Azure применимо только к самим определениям политики и не означает полное соответствие всем требованиям элемента управления. Кроме того, стандарт соответствия включает элементы управления, на которые сейчас не распространяются определения Политики Azure. Следовательно, сведения о соответствии в Политике Azure — это только частичное представление общего состояния соответствия. Связи между областями соответствия нормативным требованиям, элементами управления и определениями Политики Azure для этого стандарта соответствия со временем могут меняться. Историю изменений можно просмотреть на странице [журнала фиксаций в GitHub](https://github.com/Azure/azure-policy/commits/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/CISv1_1_0.json).
 
 ## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 
@@ -63,6 +63,14 @@ ms.locfileid: "98046215"
 |[Роли владельца пользовательской подписки не должны существовать](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F10ee2ea2-fb4d-45b8-a7e9-a2e770044cd9) |Эта политика позволяет исключить наличие ролей владельца пользовательской подписки. |Audit, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/General/CustomSubscription_OwnerRole_Audit.json) |
 
 ## <a name="security-center"></a>Центр безопасности
+
+### <a name="ensure-that-standard-pricing-tier-is-selected"></a>Обеспечение того, что выбрана ценовая категория "Стандартный"
+
+**Идентификатор**. CIS Azure 2.1 **Ответственный**: Customer
+
+|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
+|---|---|---|---|
+|[Нужно выбрать Центр безопасности с ценовой категорией "Стандартный"](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa1181c5f-672a-477a-979a-7d58aa086233) |Ценовая категория "Стандартный" включает обнаружение угроз для сетей и виртуальных машин, предоставляя возможности аналитики угроз, обнаружения аномалий и аналитики поведения в Центре безопасности Azure |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Standard_pricing_tier.json) |
 
 ### <a name="ensure-that-automatic-provisioning-of-monitoring-agent-is-set-to-on"></a>Обеспечение того, что включен параметр "Автоматическая подготовка агента мониторинга"
 
@@ -127,7 +135,7 @@ ms.locfileid: "98046215"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Уязвимости должны быть устранены с помощью решения для оценки уязвимостей](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F760a85ff-6162-42b3-8d70-698e268f648c) |Отслеживает уязвимости, обнаруженные решением оценки уязвимости, и виртуальные машины без решения оценки уязвимости в центре безопасности Azure для предоставления рекомендаций. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VMVulnerabilities_Audit.json) |
+|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 
 ### <a name="ensure-asc-default-policy-setting-monitor-jit-network-access-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг JIT-доступа к сети" не имеет значение "Отключено" в политике ASC по умолчанию
 
@@ -169,14 +177,6 @@ ms.locfileid: "98046215"
 |---|---|---|---|
 |[Подписки должны содержать адрес электронной почты контактного лица по вопросам безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4f4f78b8-e367-4b10-a341-d9a4ad5cf1c7) |Чтобы настроить отправку уведомлений соответствующим специалистам о потенциальных нарушениях безопасности в одной из подписок в организации, включите для контактного лица по вопросам безопасности отправку уведомлений по электронной почте в Центре безопасности. |AuditIfNotExists, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_email.json) |
 
-### <a name="ensure-that-security-contact-phone-number-is-set"></a>Обеспечение того, что установлен параметр "Номер телефона" для контактного лица по вопросам безопасности
-
-**Идентификатор**. CIS Azure 2.17 **Ответственный**: Customer
-
-|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
-|---|---|---|---|
-|[Для подписки нужно указать номер телефона контактного лица по вопросам безопасности](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb4d66858-c922-44e3-9566-5cdb7a7be744) |Введите номер телефона для получения уведомлений при обнаружении скомпрометированных ресурсов в Центре безопасности Azure |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_phone_number.json) |
-
 ### <a name="ensure-that-send-email-notification-for-high-severity-alerts-is-set-to-on"></a>Обеспечение того, что включен параметр "Отправлять оповещения высокой серьезности по электронной почте"
 
 **Идентификатор**. CIS Azure 2.18 **Ответственный**: Customer
@@ -202,6 +202,14 @@ ms.locfileid: "98046215"
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Должно выполняться безопасное перемещение в учетные записи хранения](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F404c3081-a854-4457-ae30-26a93ef643f9) |Настройка требования выполнять аудит для безопасного переноса в учетную запись хранения. Безопасная передача данных — это параметр, при включении которого ваша учетная запись хранения принимает запросы только с безопасных подключений (HTTPS). Протокол HTTPS обеспечивает проверку подлинности между сервером и службой, а также защищает перемещаемые данные от атак сетевого уровня, таких как "злоумышленник в середине", прослушивание трафика и перехват сеанса. |Audit, Deny, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/Storage_AuditForHTTPSEnabled_Audit.json) |
+
+### <a name="ensure-that-public-access-level-is-set-to-private-for-blob-containers"></a>Обеспечение того, что для параметра "Уровень общего доступа" задано значение "Частный" для контейнеров BLOB-объектов
+
+**Идентификатор**. CIS Azure 3.6 **Ответственный**: Customer
+
+|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
+|---|---|---|---|
+|[Открытый доступ к учетной записи хранения должен быть запрещен](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4fa4b6c0-31ca-4c0d-b10d-24b96f62a751) |Анонимный общий доступ на чтение к контейнерам и большим двоичным объектам в службе хранилища Azure — это удобный способ обмена данными, но он может представлять угрозу безопасности. Чтобы предотвратить утечки данных, возникающие в результате нежелательного анонимного доступа, корпорация Майкрософт рекомендует запретить общий доступ к учетной записи хранения, если он не требуется для вашего сценария. |Audit, Deny, Disabled |[2.0.1-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/ASC_Storage_DisallowPublicBlobAccess_Audit.json) |
 
 ### <a name="ensure-default-network-access-rule-for-storage-accounts-is-set-to-deny"></a>Обеспечение того, что в правиле сетевого доступа по умолчанию для учетных записей хранения задано значение "Отклонить"
 
@@ -360,6 +368,14 @@ ms.locfileid: "98046215"
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Azure Monitor должен собирать журналы действий из всех регионов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F41388f1c-2db0-4c25-95b2-35d7f5ccbfa9) |Эта политика осуществляет аудит профиля журнала Azure Monitor, который не экспортирует действия из всех поддерживаемых регионов Azure, включая глобальный. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ActivityLog_CaptureAllRegions.json) |
+
+### <a name="ensure-the-storage-container-storing-the-activity-logs-is-not-publicly-accessible"></a>Обеспечение того, что хранение журналов действий в контейнере хранилища не является общедоступным
+
+**Идентификатор**. CIS Azure 5.1.5 **Ответственный**: Customer
+
+|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
+|---|---|---|---|
+|[Открытый доступ к учетной записи хранения должен быть запрещен](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4fa4b6c0-31ca-4c0d-b10d-24b96f62a751) |Анонимный общий доступ на чтение к контейнерам и большим двоичным объектам в службе хранилища Azure — это удобный способ обмена данными, но он может представлять угрозу безопасности. Чтобы предотвратить утечки данных, возникающие в результате нежелательного анонимного доступа, корпорация Майкрософт рекомендует запретить общий доступ к учетной записи хранения, если он не требуется для вашего сценария. |Audit, Deny, Disabled |[2.0.1-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Storage/ASC_Storage_DisallowPublicBlobAccess_Audit.json) |
 
 ### <a name="ensure-the-storage-account-containing-the-container-with-activity-logs-is-encrypted-with-byok-use-your-own-key"></a>Обеспечение того, что учетная запись хранения, содержащая контейнер с журналами действий, зашифрована с помощью BYOK
 
@@ -526,6 +542,22 @@ ms.locfileid: "98046215"
 |[Мониторинг отсутствия Endpoint Protection в Центре безопасности Azure](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Faf6cd1bd-1635-48cb-bde7-5b15693900b9) |Серверы без установленного агента Endpoint Protection будут отслеживаться центром безопасности Azure для предоставления рекомендаций. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_MissingEndpointProtection_Audit.json) |
 
 ## <a name="other-security-considerations"></a>Прочие вопросы по безопасности
+
+### <a name="ensure-that-the-expiration-date-is-set-on-all-keys"></a>Обеспечение того, что дата окончания срока действия задана для всех ключей
+
+**Идентификатор**. CIS Azure 8.1 **Ответственный**: Customer
+
+|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
+|---|---|---|---|
+|[Для ключей Key Vault должна быть задана дата окончания срока действия](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0) |Для криптографических ключей должна быть задана дата окончания срока действия. Они не должны быть постоянными. Если ключи, действительны всегда, у потенциального злоумышленника появляется дополнительное время для их взлома. В целях безопасности для криптографических ключей рекомендуется устанавливать даты истечения срока действия. |Audit, Deny, Disabled |[1.0.1 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Keys_ExpirationSet.json) |
+
+### <a name="ensure-that-the-expiration-date-is-set-on-all-secrets"></a>Обеспечение того, что дата окончания срока действия задана для всех секретов
+
+**Идентификатор**. CIS Azure 8.2 **Ответственный**: Customer
+
+|Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
+|---|---|---|---|
+|[Для секретов Key Vault должна быть задана дата окончания срока действия](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F98728c90-32c7-4049-8429-847dc0f4fe37) |Для секретов должна быть задана дата окончания срока действия. Они не должны быть постоянными. Если секреты действительны всегда, у потенциального злоумышленника появляется дополнительное время для их взлома. В целях безопасности для секретов рекомендуется устанавливать даты истечения срока действия. |Audit, Deny, Disabled |[1.0.1 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Secrets_ExpirationSet.json) |
 
 ### <a name="ensure-the-key-vault-is-recoverable"></a>Обеспечение того, что хранилище ключей поддерживает восстановление
 

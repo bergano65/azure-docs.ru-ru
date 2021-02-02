@@ -1,25 +1,10 @@
 ---
-title: Отправка, кодировка и потоковая передача с помощью Служб мультимедиа версии 3
-titleSuffix: Azure Media Services
-description: Руководство по загрузке файлов, кодированию видео и потоковой передаче контента с помощью Служб мультимедиа Microsoft Azure версии 3.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: ''
-ms.topic: tutorial
-ms.custom: mvc
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: eedbb63f4928c0397150b40a47fdc7c3e87d1991
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256775"
+заголовок: Отправка, кодировка и потоковая передача с помощью Служб мультимедиа версии 3 : Службы мультимедиа Azure description: Руководство по загрузке файлов, кодированию видео и потоковой передаче контента с помощью Служб мультимедиа Microsoft Azure версии 3.
+services: media-services documentationcenter: '' author: IngridAtMicrosoft manager: femila editor: ''
+
+ms.service: media-services ms.workload: ms.topic: tutorial ms.custom: mvc ms.date: 08/31/2020 ms.author: inhenkel
 ---
+
 # <a name="tutorial-upload-encode-and-stream-videos-with-media-services-v3"></a>Руководство по Отправка, кодировка и потоковая передача видео с помощью Служб мультимедиа версии 3
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

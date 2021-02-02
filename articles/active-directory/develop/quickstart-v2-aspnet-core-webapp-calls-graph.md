@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: ae80ddd9efe8274a29a4b8dd91b7a3c391eefc3a
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 8e54f71ef58b3ea76a5fe55347a1caa173046320
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178693"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754491"
 ---
 # <a name="quickstart-aspnet-core-web-app-that-signs-in-users-and-calls-microsoft-graph-on-their-behalf"></a>Краткое руководство. Веб-приложение ASP.NET Core, выполняющее вход пользователей в систему и вызывающее Microsoft Graph от их имени
 
@@ -166,7 +166,7 @@ ms.locfileid: "98178693"
 
 Метод `AddAuthentication()` настраивает службу для добавления аутентификации на основе файлов cookie, которая используется при работе с браузером, и определения запроса для OpenID Connect.
 
-Строка, содержащая `.AddMicrosoftIdentityWebApp`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Этот процесс выполняет [Microsoft.Identity.Web](microsoft-identity-web.md). Затем она настраивается для входа с использованием конечной точки платформы удостоверений Майкрософт на основе сведений в разделе `AzureAD` файла конфигурации *appsettings.json*:
+Строка, содержащая `.AddMicrosoftIdentityWebApp`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Этот процесс выполняет [Microsoft.Identity.Web](microsoft-identity-web.md). Затем она настраивается для входа с использованием платформы удостоверений Майкрософт на основе сведений в разделе `AzureAD` файла конфигурации *appsettings.json*:
 
 | Ключ *appsettings.json* | Описание                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
