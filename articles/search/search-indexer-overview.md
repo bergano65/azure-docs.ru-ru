@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: ceeaad64734099f8669590d39f1629b9f4173e19
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: df393f54e7dfa83c8fc0feab3dbf42a156b296b7
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097154"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430468"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexers in Azure Cognitive Search (Индексаторы в службе "Когнитивный поиск Azure")
 
@@ -47,6 +47,8 @@ ms.locfileid: "99097154"
 + [База данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 + [Управляемый экземпляр SQL](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
 + [SQL Server на Виртуальных машинах Microsoft Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
+
+При использовании виртуальных сетей Azure для клиентских приложений можно устанавливать подключения индексатора к удаленным источникам данных с помощью стандартных подключений к Интернету (общедоступных) или зашифрованных частных подключений. Можно также настроить подключения для проверки подлинности с помощью доверенного удостоверения службы. Дополнительные сведения о безопасных подключениях см. в статьях [предоставление доступа через частные конечные точки](search-indexer-securing-resources.md#granting-access-via-private-endpoints) и [Подключение к источнику данных с помощью управляемого удостоверения](search-howto-managed-identities-data-sources.md).
 
 ## <a name="stages-of-indexing"></a>Этапы индексирования
 

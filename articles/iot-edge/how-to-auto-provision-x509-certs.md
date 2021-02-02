@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 385a67e117bf0cf9508b81d014e3accac4725744
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ee51b31246760e4619eef1e16e800b16ea886de0
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914915"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430719"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-x509-certificates"></a>Создание и инициализация устройства IoT Edge с помощью сертификатов X. 509
 
@@ -29,7 +29,7 @@ ms.locfileid: "97914915"
 
 Применение сертификатов X.509 в качестве механизма аттестации позволяет легко масштабировать производство и упростить подготовку устройств к работе. Обычно сертификаты X. 509 упорядочиваются в цепочку доверенных сертификатов. Начиная с самозаверяющего или доверенного корневого сертификата, каждый сертификат в цепочке подписывает следующий более низкий сертификат. Этот шаблон создает делегированную цепочку доверия от корневого сертификата вниз по каждому промежуточному сертификату до окончательного "конечного" сертификата, установленного на устройстве.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Действующий Центр Интернета вещей.
 * Физическое или виртуальное устройство, которое должно быть устройством IoT Edge.
@@ -248,7 +248,11 @@ Windows:
    #   registration_id: "<OPTIONAL REGISTRATION ID. LEAVE COMMENTED OUT TO REGISTER WITH CN OF identity_cert>"
        identity_cert: "<REQUIRED URI TO DEVICE IDENTITY CERTIFICATE>"
        identity_pk: "<REQUIRED URI TO DEVICE IDENTITY PRIVATE KEY>"
+   #  always_reprovision_on_startup: true
+   #  dynamic_reprovisioning: false
    ```
+
+   При необходимости используйте `always_reprovision_on_startup` `dynamic_reprovisioning` строки или для настройки поведения повторной подготовки устройства. Если устройство настроено для повторной подготовки при запуске, оно всегда будет пытаться подготовиться к службе DPS сначала, а затем вернуться к резервной копии при сбое. Если для устройства настроена динамическая повторная инициализация, IoT Edge будут перезапущены и повторно подготавливаются, если будет обнаружено событие повторной инициализации. Дополнительные сведения см. в разделе [Основные понятия повторной инициализации устройств центра Интернета вещей](../iot-dps/concepts-device-reprovision.md).
 
 1. Обновите значения параметров `scope_id` , `identity_cert` и `identity_pk` с помощью сведений об DP и устройстве.
 

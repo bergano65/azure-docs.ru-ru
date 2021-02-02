@@ -1,6 +1,6 @@
 ---
-title: Использование грубой локализации без сеанса привязки
-description: Использование грубой локализации без сеанса привязки
+title: Использование простого уточнения расположения без сеанса привязки
+description: Использование простого уточнения расположения без сеанса привязки
 author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
@@ -9,14 +9,14 @@ ms.date: 01/28/2021
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3b768a4fba7474c863ff8a9bce538f0a0b67e191
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 0b3959ba3ec80f3113ea0358db550c86f1f276b1
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072701"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430315"
 ---
-# <a name="use-coarse-relocalization-without-an-anchor-session"></a>Использование грубой локализации без сеанса привязки
+# <a name="use-coarse-relocalization-without-an-anchor-session"></a>Использование простого уточнения расположения без сеанса привязки
 
 Объект поставщика отпечатков пальцев датчика, который является частью функции [грубой локализации](../concepts/coarse-reloc.md) , можно использовать без подключения к сеансу пространственных привязок Azure.
 В следующем фрагменте кода показано, как к поставщику датчика можно получить оценку расположения устройства:
@@ -146,3 +146,10 @@ sensorProvider.Stop();
 ```
 
 ---
+
+### <a name="next-steps"></a>Дальнейшие действия
+
+В этой статье показано, как использовать API грубого локализации, чтобы получить оценку расположения устройства. Чтобы узнать больше о простом уточнении расположения, перейдите к руководству ниже.
+
+> [!div class="nextstepaction"]
+> [Простое уточнение расположения](../concepts/coarse-reloc.md)

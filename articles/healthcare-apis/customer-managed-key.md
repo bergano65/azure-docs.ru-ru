@@ -2,18 +2,18 @@
 title: Настройка ключей, управляемых клиентом, для Azure API для FHIR
 description: Поддержка функции создания собственного ключа в Azure API для FHIR с помощью Cosmos DB
 services: healthcare-apis
-author: matjazl
+author: ginalee-dotcom
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: overview
 ms.date: 09/28/2020
-ms.author: matjazl
-ms.openlocfilehash: 3879280f56a4b99d8e6e08a9c9ed852ef2cafa68
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.author: ginle
+ms.openlocfilehash: ae78aa80594e46b02d77adcafed961e801780d4f
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747329"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430265"
 ---
 # <a name="configure-customer-managed-keys-at-rest"></a>Настройка хранимых ключей, управляемых клиентом
 

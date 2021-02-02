@@ -11,15 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 06/12/2020
-ms.openlocfilehash: 3874d3b2b0938b6fd0f763b42ef15f8250b42f1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/02/2021
+ms.openlocfilehash: 9578b87e16f418a7923cd71aa0638fa4e9279cfd
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87529625"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430888"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Копирование данных из SAP Cloud for Customer (C4C) с помощью фабрики данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные в SAP Cloud for Customer (C4C) или из C4C. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
@@ -54,10 +55,7 @@ ms.locfileid: "87529625"
 | url | URL-адрес службы SAP C4C OData. | Да |
 | username | Укажите имя пользователя для подключения к SAP C4C. | Да |
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника |
-
->[!IMPORTANT]
->Чтобы копировать данные в SAP Cloud for Customer, [создайте Azure IR](create-azure-integration-runtime.md#create-azure-ir) явным образом в расположении, близком к вашей системе SAP Cloud for Customer, и сопоставьте его в связанной службе, как показано в следующем примере:
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет |
 
 **Пример**.
 
@@ -167,8 +165,8 @@ ms.locfileid: "87529625"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **SapCloudForCustomerSink**.  | Да |
-| writeBehavior | Поведение операции при записи. Может иметь значение "Insert", "Update". | Нет. По умолчанию "Insert". |
-| writeBatchSize | Размер пакета операции записи. Размер пакета для обеспечения максимальной производительности может различаться для разных таблиц или серверов. | Нет. По умолчанию 10. |
+| writeBehavior | Поведение операции при записи. Может иметь значение "Insert", "Update". | Нет. По умолчанию "Insert". |
+| writeBatchSize | Размер пакета операции записи. Размер пакета для обеспечения максимальной производительности может различаться для разных таблиц или серверов. | Нет. По умолчанию 10. |
 
 **Пример**.
 
@@ -215,14 +213,14 @@ ms.locfileid: "87529625"
 
 | Тип данных OData SAP C4C | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| Edm.Binary | Byte[] |
+| Edm.Binary | Byte[] |
 | Edm.Boolean | Bool |
-| Edm.Byte | Byte[] |
+| Edm.Byte | Byte[] |
 | Edm.DateTime | Дата и время |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
 | Edm.Single | Один |
-| Edm.Guid | Guid |
+| Edm.Guid | Guid |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |

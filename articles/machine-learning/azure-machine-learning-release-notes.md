@@ -9,17 +9,32 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 6e92fb39845944898bebf6446c35f0932e13b5b8
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: a01aab13b87398b7d27af02fa84dd7fadf7b8345
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788881"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99431003"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
 В этой статье вы узнаете о выпусках Машинное обучение Azure.  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) машинное обучение Azure.
 
+ ## <a name="2021-01-31"></a>2021-01-31
+### <a name="azure-machine-learning-studio-notebooks-experience-january-update"></a>Опыт работы с записными книжками Машинное обучение Azure Studio (обновление за январь)
++ **Новые функции**
+  + Собственный редактор Markdown в AzureML. Теперь пользователи могут отображать и редактировать файлы Markdown в машинном виде в AzureML Studio.
+  + [Кнопка "выполнить" для скриптов (. копировать,. R и. sh)](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#run-a-notebook-or-python-script). Теперь пользователи могут с легкостью запускать скрипты Python, R и bash в AzureML
+  + [Обозреватель переменных](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#explore-variables-in-the-notebook). Изучите содержимое переменных и кадров данных во всплывающей панели. Пользователи могут легко проверить тип данных, размер и содержимое.
+  + [Таблица содержимого](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#navigate-with-a-toc). Перейдите к разделам записной книжки, обозначенным заголовками Markdown.
+  + Экспортируйте записную книжку в формате LaTeX/HTML/корректировки. Создание удобных для общего доступа файлов записных книжек путем экспорта в LaTex, HTML или. Корректировка
+  + Интелликоде. Результаты, основанные на МАШИНном обучении, обеспечивают расширенный [интерфейс автоматического завершения](https://docs.microsoft.com/visualstudio/intellicode/overview).
+
++ **Исправления ошибок и улучшения**
+  + Повышение времени загрузки страниц
+  + повышение производительности. 
+  + Повышенная скорость и надежность ядра
+  
  ## <a name="2021-01-25"></a>2021-01-25
 
 ### <a name="azure-machine-learning-sdk-for-python-v1210"></a>Машинное обучение Azure SDK для Python v 1.21.0
@@ -98,7 +113,7 @@ ms.locfileid: "98788881"
     + Начальная цена для нового пакета DNN-NLP
   + **azureml-от участников сообщества-аутомл-DNN-концепция**
     + Введите новый тип задачи Аутомл "Image-instance-сегментирование".
-  + **azureml-от участников сообщества-аутомл-конвейер — шаги**
+  + **azureml-contrib-automl-pipeline-steps**
     + Этот новый пакет отвечает за создание шагов, необходимых для сценариев обучения и вывода для многих моделей. — Он также перемещает код обучения и вывода в пакет azureml. Training. аутомл. Runtime, чтобы все будущие исправления были автоматически доступны в выпусках проверенной среды.
   + **azureml-contrib-dataset**
     + Введите новый тип задачи Аутомл "Image-instance-сегментирование".
@@ -178,7 +193,7 @@ ms.locfileid: "98788881"
     + Улучшена документация по `OutputDatasetConfig.register_on_complete` для включения поведения того, что произойдет, если имя уже существует.
     + Указание входных и выходных имен набора данных, которые могут конфликтовать с общими переменными среды, теперь приведет к появлению предупреждения
     + Переназначенный `grant_workspace_access` параметр при регистрации хранилищ данных. Задайте для него `True` доступ к данным из виртуальной сети из машинное обучение Studio.
-      [Дополнительные сведения](./how-to-enable-studio-virtual-network.md)
+      [Подробнее](./how-to-enable-studio-virtual-network.md)
     + API связанной службы уточнен. Вместо предоставления идентификатора ресурса у нас есть 3 отдельных параметра sub_id, RG и Name, определенных в конфигурации.
     + Чтобы клиенты могли самостоятельно устранять проблемы с повреждением маркеров, включите синхронизацию маркеров рабочей области в качестве общедоступного метода.
     + Это изменение позволяет использовать пустую строку в качестве значения для script_param

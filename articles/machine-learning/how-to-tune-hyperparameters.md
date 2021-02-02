@@ -2,24 +2,23 @@
 title: Настройка модели
 titleSuffix: Azure Machine Learning
 description: Автоматизируйте настройку параметров для моделей глубокого обучения и машинного обучения с помощью Машинное обучение Azure.
-ms.author: swatig
-author: swatig007
+ms.author: anumamah
+author: Aniththa
 ms.reviewer: sgilley
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 03/30/2020
+ms.date: 01/29/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: e9f9f73a8e0dbc851efdba07bf1e103f58ae9e75
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: a4be95561c097191803f2faa271c5d6bba875869
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133867"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430363"
 ---
 # <a name="hyperparameter-tuning-a-model-with-azure-machine-learning"></a>Настройка параметров модели с помощью Машинное обучение Azure
-
 
 Автоматизируйте эффективную настройку параметров с помощью Машинное обучение Azure [пакета](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py). Узнайте, как выполнить шаги, необходимые для настройки параметров с помощью [пакета SDK для машинное обучение Azure](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py).
 
@@ -382,6 +381,30 @@ hd_config = HyperDriveConfig(run_config=src,
 
 ## <a name="visualize-hyperparameter-tuning-runs"></a>Визуализация выполнения настройки параметров
 
+Вы можете визуализировать выполнение настройки параметров в Машинное обучение Azure Studio или использовать мини-приложение записной книжки.
+
+### <a name="studio"></a>Студия
+
+Вы можете визуализировать все запуски настройки параметров в [машинное обучение Azure Studio](https://ml.azure.com). Дополнительные сведения о просмотре эксперимента на портале см. в разделе [Просмотр записей запуска в студии](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal).
+
+- **Диаграмма метрик**. Эта визуализация отслеживает метрики, зарегистрированные для каждого дочернего элемента "помощник", в течение времени настройки параметров. Каждая строка представляет собой дочерний запуск, и каждая точка измеряет значение первичной метрики в этой итерации среды выполнения.  
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-metrics.png" alt-text="Диаграмма метрик настройки параметров":::
+
+- **Диаграмма параллельных координат**. Эта визуализация показывает корреляцию между основной производительностью метрик и отдельными значениями параметров. Диаграмма является интерактивной с помощью перемещения осей (щелкните и перетащите ее по метке оси) и выделяйте значения по одной оси (щелкните и перетащите вертикально вдоль одной оси, чтобы выделить диапазон нужных значений).
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates.png" alt-text="Диаграмма параллельных координат настройки параметров":::
+
+- **плоская точечная диаграмма**. Эта визуализация показывает корреляцию между любыми двумя отдельными параметрами, а также связанным значением первичной метрики.
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-2-dimensional-scatter.png" alt-text="Хипараметер Настройка 2. Точечная диаграмма":::
+
+- **трехмерная точечная диаграмма**. Эта визуализация такая же, как у 2D, но позволяет создавать три измерения параметров корреляции с первичным значением метрики. Можно также щелкнуть и перетащить, чтобы изменить ориентацию диаграммы для просмотра различных корреляций в трехмерном пространстве.
+
+    :::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-3-dimensional-scatter.png" alt-text="Хипараметер Настройка трехмерной точечной диаграммы":::
+
+### <a name="notebook-widget"></a>Мини-приложение записной книжки
+
 Используйте мини-приложение [записной книжки](/python/api/azureml-widgets/azureml.widgets.rundetails?preserve-view=true&view=azure-ml-py) для визуализации хода выполнения обучения. Следующий фрагмент кода визуализирует все запуски по настройке гиперпараметров в одном отображении, создаваемом в записной книжке Jupyter:
 
 ```Python
@@ -391,17 +414,9 @@ RunDetails(hyperdrive_run).show()
 
 Этот код отображает таблицу со сведениями об учебных запусках для каждой из конфигураций гиперпараметров.
 
-![Таблица настройки гиперпараметров](./media/how-to-tune-hyperparameters/hyperparameter-tuning-table.png)
+:::image type="content" source="media/how-to-tune-hyperparameters/hyperparameter-tuning-table.png" alt-text="Таблица настройки параметров":::
 
-Вы также можете визуализировать эффективность каждого прогона в ходе обучения. 
-
-![График настройки гиперпараметров](./media/how-to-tune-hyperparameters/hyperparameter-tuning-plot.png)
-
-Можно визуально вычислить корреляцию между производительностью и значениями отдельных параметров, используя график параллельных координат. 
-
-[![параллельные координаты для настройки гиперпараметров](./media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
-
-Вы также можете визуализировать все запуски настройки параметров на веб-портале Azure. Дополнительные сведения о том, как просмотреть эксперименты на портале, см. в разделе [мониторинг экспериментов](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal).
+Вы также можете визуализировать эффективность каждого прогона в ходе обучения.
 
 ## <a name="find-the-best-model"></a>Поиск наиболее эффективной модели
 

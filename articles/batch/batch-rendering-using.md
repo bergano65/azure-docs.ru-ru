@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 03/05/2020
 ms.topic: how-to
-ms.openlocfilehash: e4f33f0974462197382ea6ac5d2b68d61909f73b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5bf4d0ed2173d048d968f60dea72a1a0c25ab05
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079244"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429791"
 ---
 # <a name="using-azure-batch-rendering"></a>Использование службы рендеринга пакетной службы Azure
 
@@ -51,15 +51,6 @@ ms.locfileid: "87079244"
 ### <a name="file-system-and-data-movement"></a>Файловая система и перемещение данных
 
 В разделе "Данные" Batch Explorer можно копировать файлы между локальной файловой системой и учетными записями хранения Azure.
-
-## <a name="client-application-plug-ins"></a>Подключаемые модули клиентского приложения
-
-Для некоторых клиентских приложений доступны подключаемые модули.  Эти подключаемые модули позволяют создавать пулы и задания непосредственно из приложения или через обозреватель пакетной службы.
-
-* [Blender 2.79](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
-* [Blender 2.8 и более старших версий](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender28)
-* [Autodesk 3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max)
-* [Autodesk Maya](https://github.com/Azure/azure-batch-maya)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

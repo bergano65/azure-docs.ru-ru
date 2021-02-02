@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/11/2021
-ms.openlocfilehash: 2c60e8c71c38e5a6e92939b655cef9fcc1e04f70
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.date: 02/02/2021
+ms.openlocfilehash: 9c85b02ac0e83f3463c458629411989062adc4e6
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072090"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430753"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "98072090"
 
 Соединитель Salesforce построен на основе API-интерфейса SalesForce RESTFUL/Массовы. По умолчанию при копировании данных из Salesforce соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) и автоматически выбирает между API-интерфейсами RESTful и массовыми данными в зависимости от размера данных. Если результирующий набор большой, то для повышения производительности используется групповой API. При записи данных в Salesforce соединитель использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) небольшого API. Можно также явно задать версию API, используемую для чтения и записи данных через [ `apiVersion` свойство](#linked-service-properties) в связанной службе.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 В Salesforce требуется включить разрешение API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 
@@ -75,10 +75,7 @@ ms.locfileid: "98072090"
 | password |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | securityToken |Укажите маркер безопасности для учетной записи пользователя. <br/><br/>Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API). Маркер безопасности можно пропустить, только если добавить IP-адрес Integration Runtime в [список доверенных IP-адресов](https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImplGuide/security_networkaccess.htm) в Salesforce. При использовании Azure IR см. [Azure Integration Runtime IP-адресов](azure-integration-runtime-ip-addresses.md).<br/><br/>Инструкции по получению и сбросу маркера безопасности см. в разделе [Получение маркера безопасности](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |нет |
 | версия_API | Укажите версию API-интерфейса SalesForce RESTFUL или пакета управления для использования, например `48.0` . По умолчанию соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из Salesforce и использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в Salesforce. | Нет |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника, если связанная с источником служба не имеет среды выполнения интеграции |
-
->[!IMPORTANT]
->При копировании данных в Salesforce среду выполнения интеграции Azure по умолчанию нельзя использовать для копирования. Другими словами, если связанная служба источника не имеет указанной среды выполнения интеграции, явным образом [создайте IR Azure](create-azure-integration-runtime.md#create-azure-ir) в расположении вблизи экземпляра Salesforce. Как показано в следующем примере, ассоциируйте связанную службу Salesforce.
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | Нет |
 
 **Пример хранения данных в фабрике данных**
 
@@ -156,7 +153,7 @@ ms.locfileid: "98072090"
 
 ![Фабрика данных — подключение к Salesforce: имя API](media/copy-data-from-salesforce/data-factory-salesforce-api-name.png)
 
-**Пример**.
+**Пример.**
 
 ```json
 {
@@ -202,7 +199,7 @@ ms.locfileid: "98072090"
 
 ![Фабрика данных — подключение к Salesforce: список имен API](media/copy-data-from-salesforce/data-factory-salesforce-api-name-2.png)
 
-**Пример**.
+**Пример.**
 
 ```json
 "activities":[
@@ -305,7 +302,7 @@ ms.locfileid: "98072090"
 | Формат даты и времени |  Подробнее см. [здесь](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm), а примеры — в следующем разделе. | Подробнее см. [здесь](/sql/odbc/reference/develop-app/date-time-and-timestamp-literals), а примеры — в следующем разделе. |
 | Логические значения | Представленные в виде `False` и `True`, например `SELECT … WHERE IsDeleted=True`. | Представленные в значении 0 или 1, например `SELECT … WHERE IsDeleted=1`. |
 | Переименование столбцов | Не поддерживается. | Поддерживается, например, `SELECT a AS b FROM …`. |
-| Relationship | Поддерживается, например, `Account_vod__r.nvs_Country__c`. | Не поддерживается. |
+| Связь | Поддерживается, например, `Account_vod__r.nvs_Country__c`. | Не поддерживается. |
 
 ### <a name="retrieve-data-by-using-a-where-clause-on-the-datetime-column"></a>Извлечение данных с использованием предложения where для столбца даты и времени
 
@@ -324,25 +321,25 @@ ms.locfileid: "98072090"
 
 | Тип данных Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| Автонумерация |Строка |
-| Флажок |Логическое значение |
+| Автонумерация |Строковый |
+| Флажок |Логический |
 | Валюта |Decimal |
 | Дата |Дата и время |
-| Дата и время |DateTime |
-| Адрес эл. почты |Строка |
-| ID |Строка |
-| Связь для подстановки |Строка |
-| Список множественного выбора |Строка |
+| Дата и время |Дата и время |
+| Электронная почта |Строковый |
+| ID |Строковый |
+| Связь для подстановки |Строковый |
+| Список множественного выбора |Строковый |
 | Number |Decimal |
 | Процент |Decimal |
-| Телефон |Строка |
-| Список выбора |Строка |
+| Номер телефона |Строковый |
+| Список выбора |Строковый |
 | Текстовый |Строковый |
-| Текстовое поле |Строка |
-| Текстовое поле (длинное) |Строка |
-| Текстовое поле (расширенное) |Строка |
-| Текст (зашифрованный) |Строка |
-| URL-адрес |Строка |
+| Текстовое поле |Строковый |
+| Текстовое поле (длинное) |Строковый |
+| Текстовое поле (расширенное) |Строковый |
+| Текст (зашифрованный) |Строковый |
+| URL-адрес |Строковый |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 

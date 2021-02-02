@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 1/30/2021
 ms.author: cavoeg
-ms.openlocfilehash: 0ee32d37ca8e3a32ba603fd84cee81890ddac98b
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: e75cf8d6660bf6f2630b83e0c2c812fa7cf59057
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/02/2021
-ms.locfileid: "99252123"
+ms.locfileid: "99430248"
 ---
 # <a name="features"></a>Компоненты
 
@@ -55,7 +55,7 @@ API Azure для FHIR обеспечивает полностью управля
 
 | Тип параметра поиска | Поддерживается — PaaS | Поддерживаемые — OSS (SQL) | Поддерживаемые — OSS (Cosmos DB) | Комментарий |
 |-----------------------|-----------|-----------|-----------|---------|
-| Число                | Да       | Да       | Да       |         |
+| Number                | Да       | Да       | Да       |         |
 | Date/DateTime         | Да       | Да       | Да       |         |
 | Строка                | Да       | Да       | Да       |         |
 | Токен                 | Да       | Да       | Да       |         |
@@ -89,7 +89,7 @@ API Azure для FHIR обеспечивает полностью управля
 | `_list`                 | Да       | Да       | Да       |         |
 | `_type`                 | Да       | Да       | Да       | [#1562](https://github.com/microsoft/fhir-server/issues/1562) проблемы        |
 | `_security`             | Да       | Да       | Да       |         |
-| `_profile`              | Частично   | Partial   | Partial   | Поддерживается только в STU3 без поддержки в R4 |
+| `_profile`              | Partial   | Partial   | Partial   | Поддерживается только в STU3 без поддержки в R4 |
 | `_text`                 | Нет        | Нет        | Нет        |         |
 | `_content`              | Нет        | Нет        | Нет        |         |
 | `_has`                  | Нет        | Нет        | Нет        |         |
@@ -118,6 +118,8 @@ API Azure для FHIR обеспечивает полностью управля
 | $export (вся система) | Да       | Да       | Да       |         |
 | Пациент/$export        | Да       | Да       | Да       |         |
 | Группа или $export          | Да       | Да       | Да       |         |
+| $convert-Data          | Да       | Да       | Да       |         |
+
 
 ## <a name="persistence"></a>Сохраняемость
 

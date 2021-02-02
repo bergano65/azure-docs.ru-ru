@@ -12,12 +12,12 @@ ms.date: 02/18/2019
 ms.author: kenwith
 ms.reviewer: luleon, asteen
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: feeed07021e31dfee44fa9372927e45b53131d1e
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: d5a90909345599b2389d1752e00a7bc917d06822
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/02/2021
-ms.locfileid: "99254059"
+ms.locfileid: "99430417"
 ---
 # <a name="problems-signing-in-to-saml-based-single-sign-on-configured-apps"></a>Проблемы при входе в приложения, настроенные для единого входа на основе SAML
 Чтобы устранить проблемы при входе ниже, рекомендуется выполнить следующие действия для оптимизации диагностики и автоматизации действий по устранению неполадок.
@@ -54,7 +54,7 @@ ms.locfileid: "99254059"
 На странице Настройка единого входа на основе SAML в разделе **Базовая конфигурация SAML** убедитесь, что значение в текстовом поле идентификатор соответствует значению идентификатора, отображаемому в сообщении об ошибке.
 
 ## <a name="the-reply-address-does-not-match-the-reply-addresses-configured-for-the-application"></a>Адрес отклика не соответствует адресам ответа, настроенным для приложения
-`Error AADSTS50011: The reply address 'https:\//contoso.com' does not match the reply addresses configured for the application.`
+`Error AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application: '{application identifier}'.`
 
 **Возможные причины**
 
