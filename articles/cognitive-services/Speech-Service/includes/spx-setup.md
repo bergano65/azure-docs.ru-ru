@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 68362b61aa0d919bd0e95f3cebb1cf1189f9f0f3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: d6ae9585ce5b5a6f666a96ae8c5e7e9e3c5e248a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99095197"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427406"
 ---
 ## <a name="download-and-install"></a>Загрузите и установите
 
@@ -29,14 +29,6 @@ ms.locfileid: "99095197"
 > [!NOTE]
 > В качестве альтернативы NuGet вы можете скачать и извлечь [ZIP-архив](https://aka.ms/speech/spx-zips.zip) CLI службы "Речь", найти и извлечь свою платформу из каталога `spx-zips` и добавить путь `spx` в системную переменную **PATH**.
 
-### <a name="run-the-speech-cli"></a>Запуск интерфейса командной строки службы "Речь"
-
-1. Откройте командную строку или PowerShell, а затем перейдите в каталог, в который вы извлекли интерфейс командной строки службы "Речь".  
-2. Введите `spx`, чтобы получить команды справки по интерфейсу командной строки службы "Речь".
-
-> [!NOTE]
-> При поиске команды PowerShell не проверяет локальный каталог. В PowerShell измените каталог на расположение `spx` и вызовите средство, введя `.\spx`.
-> Если добавить этот каталог в путь, PowerShell и командная строка Windows обнаружат `spx` из любого каталога без префикса `.\`.
 
 ### <a name="font-limitations"></a>Ограничения для шрифтов
 

@@ -11,14 +11,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/16/2020
+ms.date: 02/01/2021
 ms.author: radeltch
-ms.openlocfilehash: cfa68bde2462cefd6f690247cfd1e3bd2e3dbc74
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b90d703a44cf89961eb0dca02abb1b8ea9cff166
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489213"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259208"
 ---
 # <a name="high-availability-of-sap-hana-scale-up-with-azure-netapp-files-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA с Azure NetApp Files на Red Hat Enterprise Linux
 
@@ -91,6 +91,7 @@ ms.locfileid: "96489213"
     - [Установите SAP HANA на Red Hat Enterprise Linux для использования в Microsoft Azure.](https://access.redhat.com/solutions/3193782)
     - [Настройка SAP HANA масштабируемой репликации системы в кластере Pacemaker, если файловые системы HANA находятся в общих папках NFS](https://access.redhat.com/solutions/5156571)
 - [Приложения NetApp SAP в Microsoft Azure. Использование Azure NetApp Files](https://www.netapp.com/us/media/tr-4746.pdf)
+- [Тома NFS версии 4.1 в Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 
 ## <a name="overview"></a>Обзор
 
@@ -564,7 +565,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
    Проверка состояния кластера и всех ресурсов
    > [!NOTE]
-   > Эта статья содержит ссылки на термин « *Ведомый*» термин, который корпорация Майкрософт больше не использует. При удалении термина из программного обеспечения мы удалим его из этой статьи.
+   > Эта статья содержит ссылки на термин « *Ведомый*» термин, который корпорация Майкрософт больше не использует. Когда этот термин будет удален из программного обеспечения, мы удалим его из статьи.
    
     ```
     sudo pcs status
@@ -694,3 +695,10 @@ Azure NetApp Files доступен в нескольких [регионах Az
     ```
 
    Рекомендуется тщательно протестировать конфигурацию кластера SAP HANA, выполняя тесты, описанные в разделе [установка SAP HANA репликацию системы на RHEL](./sap-hana-high-availability-rhel.md#test-the-cluster-setup).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]
+* [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server][dbms-guide]
+* [Тома NFS версии 4.1 в Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)

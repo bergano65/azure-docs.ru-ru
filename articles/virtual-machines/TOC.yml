@@ -1472,30 +1472,11 @@
     - name: Пользовательские данные
       href: custom-data.md
     - name: Ansible
-      items:
-        - name: Установка и настройка.
-          href: /azure/developer/ansible/install-on-linux-vm
-        - name: Создание виртуальной машины Linux
-          href: /azure/developer/ansible/vm-configure
-        - name: Управление виртуальной машиной Linux
-          href: /azure/developer/ansible/vm-manage
+      href: 'https://docs.microsoft.com/azure/developer/ansible/'
     - name: Terraform
-      items:
-        - name: Установка и настройка.
-          href: /azure/developer/terraform/install-configure
-        - name: Создание готовой виртуальной машины
-          href: /azure/developer/terraform/create-linux-virtual-machine-with-infrastructure
+      href: 'https://docs.microsoft.com/azure/developer/terraform/'
     - name: Jenkins
-      href: /azure/developer/jenkins/overview
-      items:
-        - name: Создание сервера Jenkins
-          href: /azure/developer/jenkins/configure-on-linux-vm
-        - name: Масштабирование с помощью агентов виртуальных машин
-          href: /azure/developer/jenkins/scale-deployments-using-vm-agents
-        - name: Публикация артефактов в службе хранилища Azure
-          href: /azure/developer/jenkins/azure-storage-blobs-as-build-artifact-repository
-        - name: Обеспечение безопасности в Jenkins
-          href: 'https://jenkins.io/blog/2017/04/20/secure-jenkins-on-azure/'
+      href: 'https://docs.microsoft.com/en-us/azure/developer/jenkins/'
     - name: Azure DevOps
       href: ./linux/tutorial-azure-devops-blue-green-strategy.md
 - name: Диагностика

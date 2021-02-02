@@ -9,12 +9,12 @@ ms.date: 01/06/2021
 ms.author: normesta
 ms.reviewer: jamsbak
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 0340ab0a13d7c639d5e5bba49b3cdd445bad5a83
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5d5278c33c24c7f95459b9c121bca9e960615b9c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879887"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260186"
 ---
 # <a name="filter-data-by-using-azure-data-lake-storage-query-acceleration"></a>Фильтрация данных с помощью ускорения запросов Azure Data Lake Storage
 
@@ -22,7 +22,7 @@ ms.locfileid: "98879887"
 
 Ускорение запросов позволяет приложениям и платформам аналитики значительно оптимизировать обработку данных, получая только те данные, которые необходимы для выполнения определенной операции. Дополнительные сведения см. в разделе [ускорение запросов Azure Data Lake Storage](data-lake-storage-query-acceleration.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Для доступа к службе хранилища Azure требуется подписка Azure. Если у вас еще нет подписки, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -178,10 +178,10 @@ Update-Module -Name Az
    cd myProject
    ```
 
-2. Установите `12.5.0-preview.6` версию клиентской библиотеки хранилища BLOB-объектов Azure для пакета .NET с помощью `dotnet add package` команды. 
+2. Установите `12.5.0-preview.6` версию или более позднюю версию клиентской библиотеки хранилища BLOB-объектов Azure для пакета .NET с помощью `dotnet add package` команды. 
 
    ```console
-   dotnet add package Azure.Storage.Blobs -v 12.6.0
+   dotnet add package Azure.Storage.Blobs -v 12.8.0
    ```
 
 3. Примеры, представленные в этой статье, анализируют CSV-файл с помощью библиотеки [ксвхелпер](https://www.nuget.org/packages/CsvHelper/) . Чтобы использовать эту библиотеку, используйте следующую команду.
@@ -356,11 +356,11 @@ private static async Task DumpQueryCsv(BlockBlobClient blob, string query, bool 
                 query,
                 options)).Value.Content))
         {
-            using (var parser = new CsvReader(reader, new CsvConfiguration(CultureInfo.CurrentCulture) { HasHeaderRecord = true }))
+            using (var parser = new CsvReader(reader, new CsvConfiguration(CultureInfo.CurrentCulture, hasHeaderRecord: true) { HasHeaderRecord = true }))
             {
                 while (await parser.ReadAsync())
                 {
-                    Console.Out.WriteLine(String.Join(" ", parser.Context.Record));
+                    Console.Out.WriteLine(String.Join(" ", parser.Parser.Record));
                 }
             }
         }

@@ -7,14 +7,14 @@ ms.date: 02/11/2020
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: d94bc2fde63090d66da7e98cc239386d958e6bb2
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a3ee7f3fca3fff1cd401f26489b01fb9cc4e09c5
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950970"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259525"
 ---
-# <a name="how-to-transfer-a-payload-between-device-and-dps"></a>Как передавать полезные данные между устройством и службой DPS
+# <a name="how-to-transfer-payloads-between-devices-and-dps"></a>Передача полезных данных между устройствами и DP
 Иногда служба DPS требует больше данных от устройств, чтобы правильно подготавливать их в нужный центр Интернета вещей, и эти данные должны предоставляться устройством. Наоборот, служба DPS может возвращать данные на устройство для упрощения логики на стороне клиента. 
 
 ## <a name="when-to-use-it"></a>Сценарии использования
@@ -56,5 +56,5 @@ ms.locfileid: "94950970"
 ## <a name="sdk-support"></a>Поддержка пакетов SDK
 Эта функция доступна в пакетах [SDK для клиента](./index.yml)C, C#, JAVA и Node.js.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

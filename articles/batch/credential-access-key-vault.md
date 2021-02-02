@@ -1,17 +1,17 @@
 ---
-title: Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
+title: Использование сертификатов и безопасный доступ к Azure Key Vault с помощью пакетной службы
 description: Сведения о программном доступе к учетным данным в Key Vault с помощью пакетной службы Azure.
 ms.topic: how-to
 ms.date: 10/28/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b8b3d2655e79862c068aa48c29c7e89b7df85482
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: eaaeaa05caca7897eb649b56504b643038f08d53
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350693"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260135"
 ---
-# <a name="securely-access-key-vault-with-batch"></a>Обеспечение безопасного доступа к Key Vault с помощью пакетной службы
+# <a name="use-certificates-and-securely-access-azure-key-vault-with-batch"></a>Использование сертификатов и безопасный доступ к Azure Key Vault с помощью пакетной службы
 
 В этой статье вы узнаете, как настроить узлы пакетной службы для безопасного доступа к учетным данным, хранящимся в [Azure Key Vault](../key-vault/general/overview.md). Нет никакого смысла помещать учетные данные администратора в Key Vault, если сведения для доступа к этому Key Vault будут жестко запрограммированы прямо в коде скрипта. Правильное решение — использовать сертификат, который предоставляет узлам пакетной службы доступ к Key Vault.
 

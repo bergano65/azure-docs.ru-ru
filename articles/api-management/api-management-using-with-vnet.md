@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 12/10/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: d0d5434de747b48464df1c07f8c7b6a7e785c858
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: c63b71ad00a5621babe07597720a1e9ea87f1e4a
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070972"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260254"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -117,7 +117,7 @@ ms.locfileid: "98070972"
 | * / 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | **Зависимость от службы хранилища Azure**                             | Внешний и внутренний  |
 | * / 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureActiveDirectory | [Azure Active Directory](api-management-howto-aad.md) и зависимость Azure KeyVault                  | Внешний и внутренний  |
 | * / 1433                     | Исходящие           | TCP                | VIRTUAL_NETWORK / SQL                 | **Доступ к конечным точкам службы SQL Azure**                           | Внешний и внутренний  |
-| */433                     | Исходящие           | TCP                | VIRTUAL_NETWORK/AzureKeyVault                 | **Доступ к Azure KeyVault**                           | Внешний и внутренний  |
+| * / 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK/AzureKeyVault                 | **Доступ к Azure KeyVault**                           | Внешний и внутренний  |
 | * / 5671, 5672, 443          | Исходящие           | TCP                | VIRTUAL_NETWORK / EventHub            | Зависимость для [политики ведения журнала Центра событий](api-management-howto-log-event-hubs.md) и агента мониторинга | Внешний и внутренний  |
 | * / 445                      | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | Зависимость от общей папки Azure для [GIT](api-management-configuration-repository-git.md)                      | Внешний и внутренний  |
 | */443, 12000                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureCloud            | Расширение работоспособности и мониторинга         | Внешний и внутренний  |

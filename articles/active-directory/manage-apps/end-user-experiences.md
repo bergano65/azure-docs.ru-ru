@@ -3,7 +3,7 @@ title: Взаимодействие с конечным пользователе
 description: Azure Active Directory (Azure AD) предоставляет несколько настраиваемых способов развертывания приложений для пользователей в организации.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: kenwith
 ms.reviewer: arvindh
-ms.openlocfilehash: 9bcf45cdfbadbf16f48f8f2ac3bd0c6320a2803f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 0d3f1cab0637c7409cbc45f4f5a5374b2b5b6a77
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649234"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259259"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
 
@@ -72,5 +72,5 @@ Azure AD также поддерживает ссылки для прямого 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Серия кратких руководств по управлению приложениями](view-applications-portal.md)
-* [Сведения о едином входе](what-is-single-sign-on.md)
+* [Что такое единый вход?](what-is-single-sign-on.md)
 * [Руководство по интеграции Azure Active Directory с приложениями](plan-an-application-integration.md)

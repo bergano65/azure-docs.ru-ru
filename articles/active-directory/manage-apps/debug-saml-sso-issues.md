@@ -4,25 +4,25 @@ description: Отладка единого входа на основе SAML в 
 services: active-directory
 ms.author: kenwith
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: troubleshooting
 ms.workload: identity
 ms.date: 02/18/2019
 ms.reviewer: luleon, hirsin, paulgarn
-ms.openlocfilehash: f8eb00a2a88c6e26dd5361097f17990469caa8f3
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 4a5fbef3380db8c9b357c83b4cb8240a41a0012c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92326063"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259293"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
 Узнайте, как найти и исправить проблемы с [единым входом](what-is-single-sign-on.md) для приложений в Azure Active Directory (Azure AD), использующих единый вход на основе SAML. 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Мы рекомендуем установить [расширение защищенного входа в мои приложения](../user-help/my-apps-portal-end-user-troubleshoot.md#im-having-trouble-installing-the-my-apps-secure-sign-in-extension). Это расширение браузера упрощает сбор данных запроса SAML и ответа SAML, необходимых для разрешения проблем с единым входом. Если вы не можете установить расширение, ознакомьтесь с этой статьей, которая описывает решение проблем при наличии или отсутствии этого расширения.
 

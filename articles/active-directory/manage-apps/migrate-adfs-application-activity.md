@@ -3,7 +3,7 @@ title: Использование отчета о действиях для пе
 description: Отчет о действиях приложений службы федерации Active Directory (AD FS) (AD FS) позволяет быстро перенести приложения из AD FS в Azure Active Directory (Azure AD). Это средство миграции для AD FS определяет совместимость с Azure AD и предоставляет руководство по миграции.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: how-to
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 01/14/2019
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77a43d5bd5f2b228d5ed4384fc1efdca76f8ea0b
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 3665c5b82095004ddf7dc1f503b54f5164d49c7f
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573890"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260068"
 ---
 # <a name="use-the-ad-fs-application-activity-report-preview-to-migrate-applications-to-azure-ad"></a>Использование отчета о действиях приложения (Предварительная версия) AD FS для переноса приложений в Azure AD
 
@@ -33,7 +33,7 @@ ms.locfileid: "96573890"
 
 Данные действия AD FS приложения доступны пользователям, которым назначены следующие роли администратора: глобальный администратор, читатель отчетов, читатель безопасности, администратор приложения или администратор облачных приложений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * В настоящее время ваша организация должна использовать AD FS для доступа к приложениям.
 * Azure AD Connect Health должны быть включены в клиенте Azure AD.
@@ -78,7 +78,7 @@ ms.locfileid: "96573890"
 
 В следующей таблице перечислены все тесты конфигурации, выполняемые в AD FS приложениях.
 
-|Result  |Успех/предупреждение/сбой  |Описание  |
+|Результат  |Успех/предупреждение/сбой  |Описание  |
 |---------|---------|---------|
 |Test-ADFSRPAdditionalAuthenticationRules <br> Для Аддитионалаусентикатион обнаружено по крайней мере одно правило без миграции.       | Успех/предупреждение          | Проверяющая сторона имеет правила для запроса многофакторной проверки подлинности (MFA). Чтобы перейти в Azure AD, преобразовывать эти правила в политики условного доступа. Если вы используете локальный MFA, рекомендуется перейти в Azure AD MFA. Дополнительные [сведения об условном доступе](../authentication/concept-mfa-howitworks.md).        |
 |Test-ADFSRPAdditionalWSFedEndpoint <br> Аддитионалвсфедендпоинт проверяющей стороны имеет значение true.       | Успех или сбой.          | Проверяющая сторона в AD FS допускает несколько конечных точек проверочных утверждений WS-Fed.В настоящее время Azure AD поддерживает только одну.Если у вас есть сценарий, в котором этот результат блокирует миграцию, [сообщите нам о](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695621-allow-multiple-ws-fed-assertion-endpoints)ней.     |
@@ -126,7 +126,7 @@ ms.locfileid: "96573890"
 |UNSUPPORTED_ISSUANCE_CLASS      | Инструкция выдачи использует ADD для добавления утверждений к входящему набору утверждений. В Azure AD это можно настроить как множественные преобразования утверждений.Дополнительные сведения см. [в статье Настройка утверждений, выданных в токене SAML для корпоративных приложений](../develop/active-directory-claims-mapping.md).         |
 |UNSUPPORTED_ISSUANCE_TRANSFORMATION      | Инструкция выдачи использует регулярные выражения для преобразования значения утверждения, которое необходимо выдавать.Для обеспечения аналогичной функциональности в Azure AD можно использовать предварительно определенные преобразования, такие как Extract (), Trim (), ToLower и др. Дополнительные сведения см. [в статье Настройка утверждений, выданных в токене SAML для корпоративных приложений](../develop/active-directory-saml-claims-customization.md).          |
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="cant-see-all-my-ad-fs-applications-in-the-report"></a>Не удается просмотреть все мои AD FS приложения в отчете
 

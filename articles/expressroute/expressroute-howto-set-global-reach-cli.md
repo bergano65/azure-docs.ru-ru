@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 01/07/2021
 ms.author: duau
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 27f16ac7d7d799c5467b11fd93352dc5fdef666c
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 55f1e4c030dc0e7c8d0011dcff0cc1c9f8fec06e
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028069"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260237"
 ---
 # <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка Global Reach ExpressRoute с помощью Azure CLI
 
@@ -56,7 +56,7 @@ az account set --subscription <your subscription ID>
 
 * Параметр *peer-circuit* должен представлять полный идентификатор ресурса. Пример:
 
-  > /subscriptions/{идентификатор_вашей_подписки}/resourceGroups/{ваша_группа_ресурсов}/providers/Microsoft.Network/expressRouteCircuits/{имя_вашего_канала}
+  > /субскриптионс/{your_subscription_id}/Ресаурцеграупс/{your_resource_group}/Провидерс/Микрософт.Нетворк/експрессраутеЦиркуитс/{your_circuit_name}/peerings/AzurePrivatePeering
 
 * *префикс адреса* должен быть подсетью IPv4 "/29" (например, "10.0.0.0/29"). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Вы не можете использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
 

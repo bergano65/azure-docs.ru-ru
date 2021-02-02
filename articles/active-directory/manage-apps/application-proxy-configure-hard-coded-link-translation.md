@@ -4,7 +4,7 @@ description: Узнайте, как перенаправить жестко за
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08c4020fc03f89b2c583a2458c70e18ecbbe0ba1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 44266f7a7485b44ba60a27aadd7422e8d1c3acf4
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498070"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259412"
 ---
 # <a name="redirect-hard-coded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление жестко запрограммированных ссылок для приложений, опубликованных с помощью Azure AD Application Proxy
 
@@ -145,7 +145,7 @@ ms.locfileid: "96498070"
 
 Теперь, когда пользователи получают доступ к этому приложению, прокси будет автоматически проверять внутренние ссылки, которые были опубликованы через прокси приложения на вашем клиенте.
 
-## <a name="send-feedback"></a>Отправка отзывов
+## <a name="send-feedback"></a>Отправить отзыв
 
 Нам нужна ваша помощь, чтобы обеспечить работу функции во всех ваших приложениях. Мы поддерживаем поиск более 30 тегов в HTML и CSS. Если у вас есть пример созданных ссылок, которые не были преобразованы, отправьте фрагмент кода [сюда](mailto:aadapfeedback@microsoft.com). 
 

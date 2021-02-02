@@ -3,7 +3,7 @@ title: Общие сведения и решение проблем AD Applicati
 description: Общие сведения об CORS в Azure AD Application Proxy, а также о том, как выявление и устранение проблем CORS.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,14 +11,14 @@ ms.topic: troubleshooting
 ms.date: 05/23/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 8836295e9f54260c4e9ff6c1da333ef2a86d58fb
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b57fc7e3af99819c9b27b6bc796e501d1db02818
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651861"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259174"
 ---
-# <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Общие сведения и решение проблем Azure Active Directory Application Proxy CORS
+# <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Понимание и решение проблем с механизмом CORS Application Proxy для Azure Active Directory
 
 [Общий доступ к ресурсам между источниками (CORS)](https://www.w3.org/TR/cors/) иногда может представлять проблемы для приложений и API, которые публикуются с помощью Azure Active Directory Application proxy. В этой статье обсуждаются проблемы и решения Azure AD Application Proxy CORS.
 
@@ -43,8 +43,8 @@ ms.locfileid: "94651861"
 Проблемы CORS можно выявление с помощью средств отладки браузера:
 
 1. Запустите браузер и перейдите к веб-приложению.
-1. Нажмите клавишу **F12** , чтобы открыть консоль отладки.
-1. Попробуйте воспроизвести транзакцию и проверьте сообщение консоли. Нарушение CORS приводит к ошибке консоли в отношении источника.
+1. Нажмите клавишу **F12**, чтобы открыть консоль отладки.
+1. Попробуйте возобновить транзакцию и просмотрите сообщение консоли. Нарушение CORS приводит к ошибке консоли в отношении источника.
 
 На следующем снимке экрана при нажатии кнопки **попробовать** вызвать сообщение об ошибке CORS, что HTTPS: \/ /corswebclient-contoso.msappproxy.NET не найден в заголовке Access-Control-Allow-Origin.
 
@@ -112,9 +112,9 @@ X-питание от: ASP.NET \
 
 ### <a name="option-5-extend-the-lifetime-of-the-access-token"></a>Вариант 5. продление времени существования маркера доступа
 
-Некоторые проблемы CORS невозможно разрешить, например, когда приложение перенаправляется на *Login.microsoftonline.com* для проверки подлинности и срок действия маркера доступа истечет. Затем вызов CORS завершается ошибкой. Обходной путь для этого сценария — продлить время существования маркера доступа, чтобы предотвратить истечение срока его действия во время сеанса пользователя. Дополнительные сведения о том, как это сделать, см. [в разделе настраиваемое время существования маркеров в Azure AD](../develop/active-directory-configurable-token-lifetimes.md).
+Некоторые проблемы CORS невозможно разрешить, например, когда приложение перенаправляется на *Login.microsoftonline.com* для проверки подлинности и срок действия маркера доступа истечет. Затем вызов CORS завершается ошибкой. Обходной путь для этого сценария — продлить время существования маркера доступа, чтобы предотвратить истечение срока его действия во время сеанса пользователя. Дополнительные сведения о том, как это сделать, см. [в разделе настраиваемое время существования маркеров в Azure AD](../develop/active-directory-configurable-token-lifetimes.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 - [Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md) 
 - [Планирование развертывания Azure AD Application Proxy](application-proxy-deployment-plan.md) 
 - [Удаленный доступ к локальным приложениям через Azure Active Directory Application Proxy](application-proxy.md)

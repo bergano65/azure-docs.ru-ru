@@ -4,7 +4,7 @@ description: Ознакомьтесь с рекомендациями и рек�
 services: active-directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 11/13/2019
 ms.subservice: app-mgmt
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37b9733c8c48f477efcd42571b2206405efdd5cb
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 23c688d9b2e118ef29303d435bb83ef02ad36105
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055099"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259140"
 ---
 # <a name="application-management-best-practices"></a>Рекомендации по управлению приложениями
 
