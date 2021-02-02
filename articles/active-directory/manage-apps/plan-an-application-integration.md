@@ -3,7 +3,7 @@ title: Приступая к интеграции Azure AD с приложени
 description: Эта статья представляет собой вводное руководство по интеграции Azure Active Directory (AD) с локальными приложениями и облачными приложениями.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.topic: conceptual
 ms.tgt_pltfrm: na
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/16/2018
 ms.author: kenwith
 ms.reviewer: asteen
-ms.openlocfilehash: db3d3623e175d582a2fe271d73aa452ca07b8e8d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 8b321acb00e6e9b4b6cca117afba8bf0c9432719
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735072"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258472"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
 
@@ -38,7 +38,7 @@ ms.locfileid: "98735072"
 ### <a name="user-and-group-inventory"></a>Инвентаризация пользователей и групп
 * Где находятся учетные записи пользователей?
   * Локальная служба Active Directory
-  * Azure AD
+  * Azure AD
   * в отдельной базе данных приложений, владельцем которой вы являетесь;
   * в несанкционированных приложениях;
   * Все вышеперечисленное
@@ -84,7 +84,7 @@ ms.locfileid: "98735072"
 * [Назначение групп для приложения](./assign-user-or-group-access-portal.md)
 * [Совместное использование учетных записей.](../enterprise-users/users-sharing-accounts.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](../fundamentals/active-directory-deployment-plans.md). Для приложений из коллекции можно загрузить планы развертывания для единого входа, условного доступа и подготовки пользователей с помощью [портал Azure](https://portal.azure.com). 
 
 Чтобы скачать план развертывания на портале Azure, сделайте следующее.
