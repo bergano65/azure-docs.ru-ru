@@ -11,16 +11,18 @@ ms.topic: sample
 ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 330bd9b78c2f550ab40f1f4f3679b6c9788ddb64
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 62dae175b529bd54b2f139eece89bbde6f98cd38
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859390"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055014"
 ---
 # <a name="get-all-application-proxy-apps-and-list-extended-information"></a>Получение сведений о приложениях Application Proxy и вывод расширенной информации
 
-Этот пример скрипта PowerShell выводит сведения обо всех приложениях Azure Active Directory (Azure AD) Application Proxy, в том числе данные об идентификаторах приложений (AppId), именах (DisplayName), внешних URL-адресах (ExternalUrl), внутренних URL-адресах (InternalUrl) и типе аутентификации (ExternalAuthenticationType).
+Этот пример скрипта PowerShell позволяет вывести сведения обо всех приложениях Azure Active Directory (Azure AD) Application Proxy, в том числе данные об идентификаторах приложений (AppId), именах (DisplayName), внешних URL-адресах (ExternalUrl), внутренних URL-адресах (InternalUrl), типе аутентификации (ExternalAuthenticationType), режиме единого входа и других параметрах.
+
+Изменение значения переменной ssoMode позволяет фильтровать выходные данные в режиме единого входа. Дополнительные сведения задокументированы в скрипте.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -28,7 +30,7 @@ ms.locfileid: "96859390"
 
 [!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
 
-Для работы с этим примером требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2) (AzureAD) или [предварительная версия модуля Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0-preview) (AzureADPreview).
+Для работы с этим примером требуется [модуль Azure AD PowerShell (версии 2) для Graph](/powershell/azure/active-directory/install-adv2) (Azure AD).
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -40,7 +42,7 @@ ms.locfileid: "96859390"
 |---|---|
 |[Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) | Получает субъект-службу. |
 |[Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Получает приложение Azure AD. |
-|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
+|[Get-AzureADApplicationProxyApplication](/powershell/module/azuread/get-azureadapplicationproxyapplication) | Извлекает приложение, настроенное для Application Proxy в Azure AD. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

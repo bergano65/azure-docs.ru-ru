@@ -3,19 +3,19 @@ title: Справочник по интеграции Azure Active Directory и 
 description: Технический подробный обзор подготовки с учетом часового часа
 services: active-directory
 author: cmmdesai
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
 ms.date: 01/18/2021
 ms.author: chmutali
-ms.openlocfilehash: 38a93d5db6f8331da6e7afdef3e91b2764537459
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: f260bca196839a091ae7d12be6d5f85912bf92db
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954027"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255990"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-workday"></a>Как Azure Active Directory подготовка интегрируется с Workday
 
@@ -377,9 +377,9 @@ Azure AD отправляет следующий запрос на веб-слу
 | 19 | Иерархия бизнес-сайтов              | Нет                  | " \_ \_ Иерархия сайтов предприятия"                                                   |
 | 20 | Матричная организация                  | Нет                  | ТАБЛИЦУ                                                                      |
 | 21 | Группа оплаты                            | Нет                  | " \_ Группа оплаты"                                                                  |
-| 22 | Программы                             | Нет                  | ПРИЛОЖЕНИЯМИ                                                                    |
+| 22 | Programs                             | Нет                  | ПРИЛОЖЕНИЯМИ                                                                    |
 | 23 | Иерархия программы                    | Нет                  | " \_ Иерархия программ"                                                          |
-| 24 | Region                               | Нет                  | " \_ Иерархия регионов"                                                           |
+| 24 | Регион                               | Нет                  | " \_ Иерархия регионов"                                                           |
 | 25 | Иерархия расположений                   | Нет                  | " \_ Иерархия расположения"                                                         |
 | 26 | Данные подготовки учетных записей            | Нет                  | WD: Worker \_ Data/WD: \_ данные подготовки учетной записи \_                                |
 | 27 | Данные фоновой проверки                | Нет                  | WD: \_ данные Worker/WD: данные фоновой \_ проверки \_                                    |

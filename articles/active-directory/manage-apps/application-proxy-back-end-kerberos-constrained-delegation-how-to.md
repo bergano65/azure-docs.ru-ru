@@ -3,7 +3,7 @@ title: Устранение неполадок ограниченного дел
 description: Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 04/23/2019
 ms.author: kenwith
 ms.reviewer: asteen, japere
-ms.openlocfilehash: c28e79c9a6f8c489a97d360c4fe142d431b5ab5d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 65d68924fbc3a777ef7ef59d2532a1ae20e23c48
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656553"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258224"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
 
@@ -33,7 +33,7 @@ ms.locfileid: "94656553"
 - Узлы сервера и приложения находятся в одном домене Azure Active Directory. Подробные сведения для нескольких доменов и лесов см. в [техническом документе об ограниченном делегировании Kerberos](https://aka.ms/KCDPaper).
 - Целевое приложение опубликовано в клиенте Azure с включенной предварительной проверкой подлинности. Пользователи должны входить в Azure с помощью проверки подлинности на основе форм. Расширенные сценарии проверки подлинности клиента не рассматриваются в этой статье, но будут добавлены в будущем.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Компонент Azure AD Application Proxy можно развернуть в инфраструктуре или среде любого из множества типов. Конкретная архитектура зависит от потребностей организации. Наиболее распространенными причинами возникновения проблем, связанных с ограниченным делегированием Kerberos, являются не столько сами среды, сколько неправильная настройка или общий контроль.
 
@@ -57,7 +57,7 @@ ms.locfileid: "94656553"
 
 Оба этих изображения указывают на неработоспособность единого входа. В результате этого пользователь не может получить доступ к приложению.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Диагностика зависит от характера проблемы и наблюдаемых симптомов. Прежде чем продолжить, изучите материалы в приведенных ниже источниках. В них приведены полезные сведения.
 

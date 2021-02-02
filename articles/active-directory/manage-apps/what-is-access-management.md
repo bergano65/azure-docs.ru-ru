@@ -3,19 +3,19 @@ title: Управление доступом к приложениям с пом
 description: Описывает, как Azure Active Directory позволяет организациям задавать приложения, к которым имеет доступ каждый пользователь.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/16/2017
 ms.author: kenwith
-ms.openlocfilehash: c73a5ccd9e16fb5efd9fefca6253701f942c3202
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5afc6aa8f52011eba6d7cfdfaa09b0ab995183e8
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367794"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257429"
 ---
 # <a name="managing-access-to-apps"></a>Управление доступом к приложениям
 
@@ -88,7 +88,7 @@ Azure AD предоставляет [несколько настраиваемы
 
 В некоторых приложениях эти методы сочетаются. Например, некоторые приложения Майкрософт являются частью подписки Microsoft 365, но по-прежнему требуется согласие.
 
-Пользователи могут получать доступ к Microsoft 365 приложениям через порталы Office 365. Можно также показать или скрыть Microsoft 365 приложения в папке Мои приложения с [переключателем видимости Office 365](hide-application-from-user-portal.md) в **параметрах пользователя**каталога. 
+Пользователи могут получать доступ к Microsoft 365 приложениям через порталы Office 365. Можно также показать или скрыть Microsoft 365 приложения в папке Мои приложения с [переключателем видимости Office 365](hide-application-from-user-portal.md) в **параметрах пользователя** каталога. 
 
 Как и в случае с корпоративными приложениями, можно [назначить пользователей](assign-user-or-group-access-portal.md) определенным приложениям Майкрософт через портал Azure или, если действие назначения на портале недоступно, с помощью PowerShell.
 

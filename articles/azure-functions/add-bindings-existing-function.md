@@ -1,16 +1,16 @@
 ---
-title: Добавление привязок в существующую функцию в функциях Azure
-description: Узнайте, как добавлять привязки к существующей функции в проекте функций Azure.
+title: Подключение функций к другим службам Azure
+description: Узнайте, как добавить привязки, которые подключаются к другим службам Azure, к существующей функции в проекте функций Azure.
 ms.topic: how-to
 ms.date: 04/29/2020
-ms.openlocfilehash: 23b7b05f9a9f9da5a48511ee555e3b6184a74179
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1c6f5bb8ca5fcf995b8a8d326abbec96f1d2e35
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91654157"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258207"
 ---
-# <a name="add-bindings-to-an-existing-function-in-azure-functions"></a>Добавление привязок в существующую функцию в функциях Azure
+# <a name="connect-functions-to-azure-services-using-bindings"></a>Подключение функций к службам Azure с помощью привязок
 
 При создании функции код триггера для конкретного языка добавляется в проект из набора шаблонов триггеров. Если вы хотите подключить функцию к другим службам с помощью входных или выходных привязок, необходимо добавить в функцию определенные определения привязки. Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md).
 
@@ -37,6 +37,6 @@ ms.locfileid: "91654157"
 + [Выходная привязка хранилища очередей](functions-integrate-storage-queue-output-binding.md)
 + [Выходная привязка Azure Cosmos DB](functions-integrate-store-unstructured-data-cosmosdb.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 + [Основные понятия. Триггеры и привязки в функциях Azure](functions-triggers-bindings.md)

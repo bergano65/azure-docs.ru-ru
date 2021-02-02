@@ -3,7 +3,7 @@ title: Предоставление согласия администратор�
 description: Узнайте, как предоставить приложению согласие на выполнение приложения, чтобы конечные пользователи не запрашивают согласие при входе в приложение.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 11/04/2019
 ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eaf8f92ec2c7d9653595b3249521582620670aaf
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 66a6317b0cb59d656cdb2e402c5ade1b78ed60aa
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089960"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258326"
 ---
 # <a name="grant-tenant-wide-admin-consent-to-an-application"></a>Предоставление приложению согласия администратора на уровне арендатора
 
@@ -25,7 +25,7 @@ ms.locfileid: "99089960"
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для предоставления согласия администратора на уровне клиента необходимо войти как [глобальный администратор](../roles/permissions-reference.md#global-administrator), [Администратор приложения](../roles/permissions-reference.md#application-administrator)или [Администратор облачных приложений](../roles/permissions-reference.md#cloud-application-administrator).
 

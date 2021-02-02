@@ -3,7 +3,7 @@ title: Пользователи не подготавливаются в мое�
 description: В этой статье описаны способы решения распространенных проблем, когда пользователи, для которых настроена подготовка в Azure AD, не появляются в приложении в коллекции Azure AD.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/03/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 89a5838524daa1959ecf6b4fe3c17d6175ca8553
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 429f993764273d6b6eb23d75d0132b374d5d0ca0
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571782"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256360"
 ---
 # <a name="no-users-are-being-provisioned"></a>Подготовка пользователей не выполняется 
 >[!NOTE]

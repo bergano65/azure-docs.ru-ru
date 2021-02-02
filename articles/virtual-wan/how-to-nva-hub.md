@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to create a Network Virtual Appliance (NVA) in my Virtual WAN hub.
-ms.openlocfilehash: 7a52d3971e4ec0cb8ec104a57ba7fb4057c23b72
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 1f80da4014d4b6b27155db17d32800e54b51f40d
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964649"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258071"
 ---
 # <a name="how-to-create-a-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Создание сетевого виртуального устройства в виртуальном концентраторе глобальной сети Azure (Предварительная версия)
 
@@ -21,8 +21,7 @@ ms.locfileid: "97964649"
 
 Действия, описанные в этой статье, помогут создать виртуальное устройство **Barracuda КЛАУДЖЕН WAN** Network в виртуальном КОНЦЕНТРАТОРе глобальной сети. Для выполнения этого упражнения необходимо иметь Barracuda Cloud Device (CPE) и лицензию для устройства Barracuda Клауджен WAN, которое развертывается в концентраторе перед началом работы.
 
-Документацию по развертыванию **Cisco SD-WAN** в виртуальной глобальной сети Azure см. в статье [Cisco Cloud для нескольких облаков](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701). Чтобы зарегистрировать учетную запись и получить необходимые лицензии Cisco SD-WAN, отправьте сообщение электронной почты Cisco по следующему адресу электронной почты: vwan_public_preview@external.cisco.com
-
+Документацию по развертыванию **Cisco SD-WAN** в виртуальной глобальной сети Azure см. в статье [Cisco Cloud для нескольких облаков](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

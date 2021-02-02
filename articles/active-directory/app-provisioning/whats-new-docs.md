@@ -1,24 +1,36 @@
 ---
 title: Новые возможности Azure Active Directory подготовки приложений
 description: Новая и обновленная документация по подготовке Azure Active Directory приложений.
-ms.date: 12/15/2020
+ms.date: 02/01/2021
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
 ms.author: kenwith
 author: kenwith
-manager: CelesteDG
-ms.openlocfilehash: 053d342c8fbdd506ac5d4ba0916a1ae9361e7189
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+manager: daveba
+ms.openlocfilehash: a127552c47b9e1ee86d2164926971c8628367dc0
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562214"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256007"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory подготовка приложений: новые возможности
 
 Добро пожаловать в Azure Active Directoryную документацию по подготовке приложений. В этой статье перечислены новые документы, которые были добавлены, а также важные обновления за последние три месяца. Чтобы узнать о новых возможностях службы подготовки, см. статью [новые возможности в Azure Active Directory](../fundamentals/whats-new.md).
+
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="new-articles"></a>Новые статьи
+- [Как Azure Active Directory подготовка интегрируется с Workday](workday-integration-reference.md)
+
+### <a name="updated-articles"></a>Обновленные статьи
+- [Руководство. Разработка образца конечной точки SCIM](use-scim-to-build-users-and-groups-endpoints.md)
+- [Руководство. Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](customize-application-attributes.md)
+- [Как Azure Active Directory подготовка интегрируется с SAP SuccessFactors](sap-successfactors-integration-reference.md)
+- [Подготовка приложений в карантинном состоянии](application-provisioning-quarantine-status.md)
+
 
 ## <a name="december-2020"></a>Декабрь 2020 г.
 

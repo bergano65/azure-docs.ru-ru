@@ -3,19 +3,19 @@ title: Справочник по интеграции Azure Active Directory и 
 description: Технический подробный обзор подготовки SAP SuccessFactors — управление с управлением персоналом
 services: active-directory
 author: cmmdesai
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
 ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: e97be7fef09287e6c4f8696e217702b97853fa6a
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: ed97600ca1802629f81f93f4f51c92ad4b1c9bd1
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569459"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256227"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-sap-successfactors"></a>Как Azure Active Directory подготовка интегрируется с SAP SuccessFactors 
 
@@ -78,11 +78,11 @@ ms.locfileid: "98569459"
 > [!div class="mx-tdCol2BreakAll"]
 >| Параметр | Описание |
 >| ----------|-------------|
->| Узел API OData | Добавляет HTTPS к *URL-адресу клиента*. Пример: `https://api4.successfactors.com` |
+>| Узел API OData | Добавляет HTTPS к *URL-адресу клиента*. Например, `https://api4.successfactors.com`. |
 >| Конечная точка API OData | `/odata/v2/PerPerson` |
 >| Параметр запроса $format OData | `json` |
 >| Параметр запроса $filter OData | `(personEmpTerminationInfoNav/activeEmploymentsCount ge 1) and (lastModifiedDateTime le <CurrentExecutionTime>)` |
->| Параметр запроса $expand OData | Значение этого параметра зависит от сопоставленных атрибутов. Пример: `employmentNav/userNav,employmentNav/jobInfoNav,personalInfoNav,personEmpTerminationInfoNav,phoneNav,emailNav,employmentNav/jobInfoNav/companyNav/countryOfRegistrationNav,employmentNav/jobInfoNav/divisionNav,employmentNav/jobInfoNav/departmentNav` |
+>| Параметр запроса $expand OData | Значение этого параметра зависит от сопоставленных атрибутов. Например, `employmentNav/userNav,employmentNav/jobInfoNav,personalInfoNav,personEmpTerminationInfoNav,phoneNav,emailNav,employmentNav/jobInfoNav/companyNav/countryOfRegistrationNav,employmentNav/jobInfoNav/divisionNav,employmentNav/jobInfoNav/departmentNav`. |
 >| Параметр запроса OData Кустомпажесизе | `100` |
 
 > [!NOTE]
@@ -292,11 +292,11 @@ JSONPath — это язык запросов для JSON, похожий на X
 
 | \# | Требование к сценарию | Основной адрес электронной почты <br> значение флага | Рабочий телефон <br> значение основного флага | Мобильный телефон <br> значение основного флага | Рабочий телефон <br> mapping | Мобильный телефон <br> mapping |
 |--|--|--|--|--|--|--|
-| 1 | * Задать только бизнес-адрес электронной почты в качестве основного. <br> * Не устанавливайте номера телефонов. | Да | true | false | \[Не задано\] | \[Не задано\] | 
-| 2 | * В SuccessFactors, бизнес-почта и рабочий телефон являются первичными <br> * Постоянное направление номера телефона Azure AD на рабочий телефон и мобильный телефон. | Да | true | false | TelephoneNumber | mobile | 
+| 1 | * Задать только бизнес-адрес электронной почты в качестве основного. <br> * Не устанавливайте номера телефонов. | true | true | false | \[Не задано\] | \[Не задано\] | 
+| 2 | * В SuccessFactors, бизнес-почта и рабочий телефон являются первичными <br> * Постоянное направление номера телефона Azure AD на рабочий телефон и мобильный телефон. | true | true | false | TelephoneNumber | mobile | 
 | 3 | * В SuccessFactors, бизнес-почта и сотовый телефон являются первичными <br> * Всегда перенаправление номера телефона Azure AD на рабочий телефон и мобильное устройство на сотовый телефон | true | false | true |  TelephoneNumber | mobile | 
-| 4 | * В SuccessFactors Business e-mail является основной <br> * В Azure AD проверьте наличие номера рабочего телефона, если он есть, а затем проверьте, есть ли номер мобильного телефона, и пометьте рабочий телефон как первичный только в том случае, если номер мобильного устройства отсутствует. | Да | Использовать сопоставление выражений: `IIF(IsPresent([telephoneNumber]), IIF(IsPresent([mobile]),"false", "true"), "false")` | Использовать сопоставление выражений: `IIF(IsPresent([mobile]),"false", "true")` | TelephoneNumber | mobile | 
-| 5 | * В SuccessFactors бизнес-почта и рабочий телефон являются первичными. <br> * В Azure AD, если доступны мобильные устройства, установите его в качестве рабочего телефона, в противном случае используйте telephoneNumber. | Да | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | \[Не задано\] | 
+| 4 | * В SuccessFactors Business e-mail является основной <br> * В Azure AD проверьте наличие номера рабочего телефона, если он есть, а затем проверьте, есть ли номер мобильного телефона, и пометьте рабочий телефон как первичный только в том случае, если номер мобильного устройства отсутствует. | верно | Использовать сопоставление выражений: `IIF(IsPresent([telephoneNumber]), IIF(IsPresent([mobile]),"false", "true"), "false")` | Использовать сопоставление выражений: `IIF(IsPresent([mobile]),"false", "true")` | TelephoneNumber | mobile | 
+| 5 | * В SuccessFactors бизнес-почта и рабочий телефон являются первичными. <br> * В Azure AD, если доступны мобильные устройства, установите его в качестве рабочего телефона, в противном случае используйте telephoneNumber. | true | true | false | `IIF(IsPresent([mobile]), [mobile], [telephoneNumber])` | \[Не задано\] | 
 
 * Если отсутствует сопоставление для номера телефона при сопоставлении атрибута обратной записи, в обратную запись включаются только сообщения электронной почты.
 * При переносе нового приема на работу в центральном центре сотрудников, электронная почта и номер телефона могут быть недоступны. Если настройка бизнес-электронной почты и рабочего телефона в качестве основной обязательна во время адаптации, можно задать фиктивное значение для рабочего телефона и электронной почты во время создания нового найма, которое в конечном итоге будет обновлено приложением обратной записи.

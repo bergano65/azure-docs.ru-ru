@@ -3,7 +3,7 @@ title: Соединители прокси приложения отладки-A
 description: Проблемы отладки с соединителями прокси приложения Azure Active Directory (Azure AD).
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -11,18 +11,18 @@ ms.topic: troubleshooting
 ms.date: 05/21/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: cbbb5328f2d7e814be9b5b94ec522bbb01df39e5
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c656bfe7f9cc8923859a99f31210cd554aa66a41
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658253"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256972"
 ---
 # <a name="debug-application-proxy-connector-issues"></a>Устранение проблем с соединителями Application Proxy 
 
 Эта статья поможет вам устранить неполадки с соединителями прокси приложения Azure Active Directory (Azure AD). Если вы используете службу прокси приложения для удаленного доступа к локальному веб-приложению, но у вас возникают проблемы с подключением к приложению, используйте эту блок-схему для отладки проблем соединителя. 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что вы установили соединитель прокси приложения и возникли проблемы. При устранении проблем с прокси-сервером приложений рекомендуется начать с этого потока устранения неполадок, чтобы определить, правильно ли настроены соединители прокси приложения. Если у вас по-прежнему возникают проблемы с подключением к приложению, выполните процедуру устранения неполадок в статье [Отладка приложений прокси приложения](application-proxy-debug-apps.md).  
 

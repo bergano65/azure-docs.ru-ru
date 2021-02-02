@@ -1,5 +1,5 @@
 ---
-title: Новые возможности службы "Мои лица"
+title: Новые возможности службы "Распознавание лиц"
 titleSuffix: Azure Cognitive Services
 description: Заметки о выпуске для службы распознавания лиц включают историю изменений выпуска для различных версий.
 services: cognitive-services
@@ -10,19 +10,31 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 12/11/2020
 ms.author: pafarley
-ms.openlocfilehash: 8a409d66065a7ccd2b34365bd565202f207ac0e8
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 5e537166352f242d54819477a4dc0051aad684b0
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560752"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258088"
 ---
-# <a name="whats-new-in-face-service"></a>Новые возможности службы "Мои лица"
+# <a name="whats-new-in-face-service"></a>Новые возможности службы "Распознавание лиц"
 
 Служба обслуживания лиц Azure обновляется на постоянной основе. В этой статье содержатся сведения об улучшениях, исправлениях и обновлениях документации.
 
+## <a name="january-2021"></a>Январь 2021 г.
+* Снижение задержки при использовании API распознавания лиц: группа лиц опубликовала новую статью с подробными сведениями о возможных причинах задержки при использовании службы и возможных стратегиях устранения рисков. См. раздел [снижение задержки при использовании службы лиц](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/how-to-mitigate-latency).
+
+## <a name="december-2020"></a>Декабрь 2020 г.
+* Конфигурация клиента для хранилища ИДЕНТИФИКАТОРов лиц. в то время как служба лиц не сохраняет образы клиентов, извлеченные функции для лиц будут храниться на сервере. ИДЕНТИФИКАТОР лица — это идентификатор функции лица, который будет использоваться для распознавания [лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [лиц-Verify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a)и [похожего поиска](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237). Срок действия сохраненных функций для лиц истекает и они удаляются через 24 часа после исходного вызова обнаружения. Теперь клиенты могут определить продолжительность кэширования идентификаторов этих лиц. Максимальное значение по-прежнему равно 24 часам, но теперь можно установить минимальное значение в 60 секунд. Новые диапазоны времени для идентификаторов лиц, которые кэшируются, — это любое значение от 60 секунд до 24 часов. Дополнительные сведения можно найти в справочнике по API распознавания [лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) (параметр *фацеидтиметоливе* ).
+
 ## <a name="november-2020"></a>Ноябрь 2020 г.
-* Опубликовал пример приложения регистрации, чтобы продемонстрировать рекомендации по установке осмысленного согласия и созданию высокоточной системы распознавания лиц с высоким уровнем качества. Пример с открытым исходным кодом можно найти в разделе Создание руководств по [приложению регистрации](build-enrollment-app.md) и в [GitHub](https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample), готового для разработчиков к развертыванию или настройке.  
+* Опубликовал пример приложения регистрации, чтобы продемонстрировать рекомендации по установке осмысленного согласия и созданию высокоточной системы распознавания лиц с высоким уровнем качества. Пример с открытым исходным кодом можно найти в разделе [Создание руководств по приложению регистрации](build-enrollment-app.md) и в [GitHub](https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample), готового для разработчиков к развертыванию или настройке. 
+
+## <a name="august-2020"></a>Август 2020 г.
+* Управляемое клиентом шифрование неактивных данных. служба распознавания лиц автоматически шифрует данные при сохранении их в облаке. Шифрование службы лиц защищает ваши данные, чтобы помочь вам удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации. По умолчанию в подписке используются ключи шифрования, управляемые корпорацией Майкрософт. Кроме того, существует новый вариант управления подпиской с помощью собственных ключей, которые называются ключами, управляемыми клиентом (CMK). Дополнительные сведения можно найти в [разделах, управляемых клиентом](https://docs.microsoft.com/azure/cognitive-services/face/face-encryption-of-data-at-rest).
+
+## <a name="april-2020"></a>Апрель 2020 г.
+* Новая модель распознавания API распознавания лиц. Новая модель распознавания 03 — самая точная модель, доступная в настоящее время. Если вы являетесь новым клиентом, мы рекомендуем использовать эту модель. Распознавание 03 обеспечит улучшенную точность сравнения сходства и сравнения пользователей. Дополнительные сведения см. на странице [Выбор модели распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-recognition-model).
 
 ## <a name="june-2019"></a>Июнь 2019 г.
 
@@ -42,7 +54,7 @@ ms.locfileid: "97560752"
 
 * Добавлена функция моментального снимка для поддержки переноса данных между подписками: [snapshot](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/snapshot-get). Дополнительные сведения о [переносе данных о лицах в подписку другого лица](Face-API-How-to-Topics/how-to-migrate-face-data.md).
 
-## <a name="october-2018"></a>Октябрь 2018 г.
+## <a name="october-2018"></a>Октябрь 2018 г.
 
 * Четкое описание для `status`, `createdDateTime`, `lastActionDateTime` и `lastSuccessfulTrainingDateTime` см. в [PersonGroup — Get Training Status](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247) (PersonGroup — получение состояния обучения), [LargePersonGroup — Get Training Status](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599ae32c6ac60f11b48b5aa5) (LargePersonGroup — получение состояния обучения) и [LargeFaceList — Get Training Status](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a1582f8d2de3616c086f2cf) (LargeFaceList — получение состояния обучения).
 
@@ -58,7 +70,7 @@ ms.locfileid: "97560752"
 
 * Увеличено [лицо — обозначить](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) `maxNumOfCandidatesReturned` параметр с [1, 5] на [1, 100] и по умолчанию равен 10.
 
-## <a name="may-2017"></a>Май 2017 г.
+## <a name="may-2017"></a>Май 2017 г.
 
 * Добавлены `hair` атрибуты,,,,, `makeup` `accessory` `occlusion` `blur` `exposure` и `noise` в параметре распознавания [лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) `returnFaceAttributes` .
 

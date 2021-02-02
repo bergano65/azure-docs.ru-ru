@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 8b12df62a7080e57e47b52cb79ed8a67e12bd526
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 17cff66d3f8c816099bcc61322a1d331bfe58872
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753095"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99226310"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Руководство по Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -383,7 +383,7 @@ ms.locfileid: "98753095"
 1. Добавьте URL-адрес SSL, скопированный из Visual Studio на шаге 1 (например, `https://localhost:44368/`), в поле **URI перенаправления**.
 1. Выберите **Зарегистрировать**.
 1. В разделе **Управление** выберите **Проверка подлинности**.
-1. В разделе **Неявное предоставление** выберите **Маркеры идентификации** и щелкните **Сохранить**.
+1. В разделе **Implicit grant and hybrid flows** (Неявное предоставление разрешения и гибридные потоки) выберите **Маркеры идентификации** и щелкните **Сохранить**.
 1. Добавьте следующий код в файл web.config, который расположен в корневой папке в разделе `configuration\appSettings`:
 
     ```xml

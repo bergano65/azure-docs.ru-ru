@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 12/15/2020
-ms.openlocfilehash: 0f428954ac6ef74253e6e6e430977a85a3943f99
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 68c690b9cbd2028f73492550adbe86111f9ec3a7
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589990"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257952"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Общие сведения об обратимом удалении в Azure Key Vault
 
@@ -99,5 +99,6 @@ Azure Key Vault — это отслеживаемые ресурсы, упра�
 
 Следующие два руководства содержат основные сценарии использования обратимого удаления.
 
+- [Использование Key Vault обратимого удаления с помощью портала](https://docs.microsoft.com/azure/key-vault/general/key-vault-recovery?tabs=azure-portal)
 - [Как использовать обратимое удаление в Key Vault с помощью PowerShell](./key-vault-recovery.md) 
 - [Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки](./key-vault-recovery.md)

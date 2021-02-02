@@ -3,7 +3,7 @@ title: Известные проблемы с системой для обесп
 description: Способы устранения распространенных проблем совместимости c протоколом, возникающих при добавлении приложения не из коллекции, которое поддерживает SCIM 2.0, в Azure AD
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 08/05/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 7f400d6959a40361ea3beff8bd21c2fa9ef2996a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d13629b4cb05995b9652e862f769a0ffcae30a8c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90052636"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256904"
 ---
 # <a name="known-issues-and-resolutions-with-scim-20-protocol-compliance-of-the-azure-ad-user-provisioning-service"></a>Известные проблемы соответствия требованиям протокола SCIM 2.0 службы подготовки пользователей Azure AD и способы их устранения
 
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) может выполнять автома�
 ## <a name="flags-to-alter-the-scim-behavior"></a>Флаги для изменения поведения SCIM
 Используйте приведенные ниже флаги в URL-адресе приложения, чтобы изменить поведение клиента SCIM по умолчанию.
 
-:::image type="content" source="media/application-provisioning-config-problem-scim-compatibility/scim-flags.jpg" alt-text="SCIM флаги для последующего поведения.&quot;:::
+:::image type="content" source="media/application-provisioning-config-problem-scim-compatibility/scim-flags.jpg" alt-text="SCIM флаги для последующего поведения.":::
 
 * Используйте следующий URL-адрес, чтобы обновить поведение исправления и обеспечить соответствие SCIM (например, активировать как логическое и правильное удаление членства в группе). Это поведение в настоящее время доступно только при использовании флага, но становится поведением по умолчанию в течение следующих нескольких месяцев. Примечание. Этот флаг предварительной версии сейчас не работает при подготовке по требованию. 
   * **URL-адрес (scim соответствует):** AzureAdScimPatch062020
@@ -58,29 +58,29 @@ Azure Active Directory (Azure AD) может выполнять автома�
   ```json
    PATCH https://[...]/Groups/ac56b4e5-e079-46d0-810e-85ddbd223b09
    {
-    &quot;schemas&quot;: [
-        &quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:PatchOp"
     ],
-    &quot;Operations&quot;: [
+    "Operations": [
         {
-            &quot;op&quot;: &quot;remove&quot;,
-            &quot;path&quot;: &quot;members[value eq \&quot;16b083c0-f1e8-4544-b6ee-27a28dc98761\&quot;]&quot;
+            "op": "remove",
+            "path": "members[value eq \"16b083c0-f1e8-4544-b6ee-27a28dc98761\"]"
         }
     ]
    }
 
     PATCH https://[...]/Groups/ac56b4e5-e079-46d0-810e-85ddbd223b09
     {
-    &quot;schemas&quot;: [
-        &quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:PatchOp"
     ],
-    &quot;Operations&quot;: [
+    "Operations": [
         {
-            &quot;op&quot;: &quot;add&quot;,
-            &quot;path&quot;: &quot;members&quot;,
-            &quot;value&quot;: [
+            "op": "add",
+            "path": "members",
+            "value": [
                 {
-                    &quot;value&quot;: &quot;10263a6910a84ef9a581dd9b8dcc0eae&quot;
+                    "value": "10263a6910a84ef9a581dd9b8dcc0eae"
                 }
             ]
         }
@@ -89,25 +89,25 @@ Azure Active Directory (Azure AD) может выполнять автома�
 
     PATCH https://[...]/Users/ac56b4e5-e079-46d0-810e-85ddbd223b09
     {
-    &quot;schemas&quot;: [
-        &quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:PatchOp"
     ],
-    &quot;Operations&quot;: [
+    "Operations": [
         {
-            &quot;op&quot;: &quot;replace&quot;,
-            &quot;path&quot;: &quot;emails[type eq \&quot;work\&quot;].value&quot;,
-            &quot;value&quot;: &quot;someone@contoso.com&quot;
+            "op": "replace",
+            "path": "emails[type eq \"work\"].value",
+            "value": "someone@contoso.com"
         },
         {
-            &quot;op&quot;: &quot;replace&quot;,
-            &quot;path&quot;: &quot;emails[type eq \&quot;work\&quot;].primary&quot;,
-            &quot;value&quot;: true
+            "op": "replace",
+            "path": "emails[type eq \"work\"].primary",
+            "value": true
         },
         {
-            &quot;op&quot;: &quot;replace&quot;,
-            &quot;value&quot;: {
-                &quot;active&quot;: false,
-                &quot;userName&quot;: &quot;someone&quot;
+            "op": "replace",
+            "value": {
+                "active": false,
+                "userName": "someone"
             }
         }
     ]
@@ -115,28 +115,28 @@ Azure Active Directory (Azure AD) может выполнять автома�
 
     PATCH https://[...]/Users/ac56b4e5-e079-46d0-810e-85ddbd223b09
     {
-    &quot;schemas&quot;: [
-        &quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:PatchOp"
     ],
-    &quot;Operations&quot;: [
+    "Operations": [
         {
-            &quot;op&quot;: &quot;replace&quot;,
-            &quot;path&quot;: &quot;active&quot;,
-            &quot;value&quot;: false
+            "op": "replace",
+            "path": "active",
+            "value": false
         }
     ]
     }
 
     PATCH https://[...]/Users/ac56b4e5-e079-46d0-810e-85ddbd223b09
     {
-    &quot;schemas&quot;: [
-        &quot;urn:ietf:params:scim:api:messages:2.0:PatchOp&quot;
+    "schemas": [
+        "urn:ietf:params:scim:api:messages:2.0:PatchOp"
     ],
-    &quot;Operations&quot;: [
+    "Operations": [
         {
-            &quot;op&quot;: &quot;add&quot;,
-            &quot;path&quot;: &quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department&quot;,
-            &quot;value&quot;: &quot;Tech Infrastructure"
+            "op": "add",
+            "path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department",
+            "value": "Tech Infrastructure"
         }
     ]
     }
@@ -203,5 +203,5 @@ Azure Active Directory (Azure AD) может выполнять автома�
 7. Завершите конфигурации подготовки пользователей, как обычно.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)

@@ -3,7 +3,7 @@ title: Подготавливает пользователя по запросу
 description: Принудительная синхронизация
 services: active-directory
 author: msmimart
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/01/2020
 ms.author: mimart
 ms.reviewer: arvinh
-ms.openlocfilehash: f7cbe9e9f81b3b71ee7da2feac2908c36f1777e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be03a149f34c16621905081a2f9bb663d85bc53c
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629018"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255667"
 ---
 # <a name="on-demand-provisioning"></a>Подготовка по запросу
 Используйте подготовку по требованию для подготовки пользователя в приложении за считаные секунды. Помимо прочего, эту возможность можно использовать в следующих целях:
@@ -124,7 +124,7 @@ ms.locfileid: "91629018"
 
 Ниже приведен пример того, что может появиться после успешной подготовки пользователя по требованию.
 
-:::image type="content" source="media/provision-on-demand/success-on-demand-provision.jpg" alt-text="Снимок экрана, показывающий пользовательский интерфейс портал Azure для подготовки пользователя по запросу.":::
+:::image type="content" source="media/provision-on-demand/success-on-demand-provision.jpg" alt-text="Снимок экрана, на котором показана успешная подготовка пользователя по требованию.":::
 
 #### <a name="view-details"></a>Подробнее
 
@@ -151,6 +151,6 @@ ms.locfileid: "91629018"
 * Подготовка групп и ролей по требованию не поддерживается.
 * Подготовка по требованию поддерживает отключение пользователей, которые не были назначены в приложении. Однако он не поддерживает отключение или удаление пользователей, которые были отключены или удалены из Azure AD. Эти пользователи не будут отображаться при поиске пользователя.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при подготовке](./application-provisioning-config-problem.md)

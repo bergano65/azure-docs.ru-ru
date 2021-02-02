@@ -1,23 +1,23 @@
 ---
-title: Устранение неполадок единого входа на основе SAML в Azure Active Directory
+title: Устранение неполадок с единым входом на основе SAML в Azure Active Directory
 description: Устранение неполадок в приложении Azure AD, настроенном для единого входа на основе SAML.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
-ms.openlocfilehash: 2e8508d4fceb1e7fb580350c726dd70eeaea31c6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b169616042892c379196dd1d38c2343704aa1030
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658882"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257532"
 ---
-# <a name="troubleshoot-saml-based-single-sign-on-in-azure-active-directory"></a>Устранение неполадок единого входа на основе SAML в Azure Active Directory
+# <a name="troubleshoot-saml-based-single-sign-on-in-azure-active-directory"></a>Устранение неполадок с единым входом на основе SAML в Azure Active Directory
 Если при настройке приложения возникла проблема, выполните следующие действия. Убедитесь, что выполнены все шаги в учебнике по приложению. В конфигурации приложения имеется встроенная документация по настройке приложения. Кроме того, подробное пошаговое руководство можно найти в [списке учебников по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md).
 
 ## <a name="cant-add-another-instance-of-the-application"></a>Невозможно добавить другой экземпляр приложения
@@ -46,7 +46,7 @@ ms.locfileid: "94658882"
     * Если шаблон не поддерживается, при попытке ввести значение в текстовом поле появляется красный восклицательный знак. Если навести на него указатель мыши, отображаются поддерживаемые шаблоны.
     * В этом учебнике для приложения также можно получить сведения о поддерживаемых шаблонах. В разделе **Настройка единого входа Azure AD**. Перейдите к шагу для настройки значений в разделе **Домены и URL-адреса приложения**.
 
-Если значения не совпадают с шаблонами, предварительно настроенными в Azure AD. Вы можете:
+Если значения не совпадают с шаблонами, предварительно настроенными в Azure AD. Вы можете выполнить следующие действия:
 -   Обратитесь к поставщику приложения, чтобы получить значения, соответствующие предварительно настроенному шаблону в Azure AD
 -   Кроме того, вы можете обратиться в группу разработчиков Azure AD по адресу <aadapprequest@microsoft.com> или оставить комментарий в руководстве, чтобы запросить обновление поддерживаемых шаблонов для приложения.
 
@@ -69,7 +69,7 @@ Azure AD выбирает формат атрибута NameID (идентифи
 
 Azure AD не предоставляет URL-адреса для получения метаданных. Метаданные можно скачать только в виде XML-файла.
 
-## <a name="customize-saml-claims-sent-to-an-application"></a>Настройка утверждений SAML, отправленных в приложение
+## <a name="customize-saml-claims-sent-to-an-application"></a>Настройка утверждений SAML, отправляемых в приложение
 Чтобы узнать, как настроить утверждения атрибута SAML, отправляемые в приложение, ознакомьтесь с разделом [Сопоставление утверждений в Azure Active Directory](../develop/active-directory-claims-mapping.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия

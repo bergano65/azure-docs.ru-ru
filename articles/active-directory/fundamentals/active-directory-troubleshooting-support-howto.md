@@ -15,12 +15,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9be6efeba101dc922a1045042b64ac64bc6cd093
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e339e88bb62e81b1f873e8cf7e855f4dff8daade
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89322540"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257412"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
 Корпорация Майкрософт предоставляет услуги глобальной технической и предпродажной поддержки, а также поддержки по выставлению счетов и подписке для Azure Active Directory (Azure AD). Поддержка доступна как через Интернет, так и по телефону для платных и пробных подписок Microsoft Azure. Поддержка по телефону и поддержка выставления счетов по сети доступны на дополнительных языках. 
@@ -41,8 +41,8 @@ ms.locfileid: "89322540"
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-azure-portal"></a>Как создать запрос в службу поддержки для Azure AD на портале Azure
 
 > [!NOTE]
-> Для вопросов, связанных с выставлением счетов или подпиской, необходимо использовать [центр администрирования Microsoft 365](https://admin.microsoft.com).
-> 
+> * Для вопросов, связанных с выставлением счетов или подпиской, необходимо использовать [центр администрирования Microsoft 365](https://admin.microsoft.com).  
+> * Если вы используете Azure AD B2C, отправьте запрос в службу поддержки, прежде чем перейти к клиенту Azure AD, с которым связана подписка Azure. Как правило, это ваш клиент сотрудника или клиент по умолчанию, созданный при регистрации в подписке Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](active-directory-how-subscriptions-associated-directory.md).
 
 1. Войдите на [портал Azure](https://portal.azure.com) и откройте **Azure Active Directory**.
    
@@ -52,7 +52,7 @@ ms.locfileid: "89322540"
 
 1. Выберите свою **подписку**.
 
-1. В качестве **службы**выберите **Azure Active Directory**.
+1. В качестве **службы** выберите **Azure Active Directory**.
 
 1. Создайте **сводку** для запроса. Сводка должна содержать не более 140 символов.
   
@@ -74,7 +74,7 @@ ms.locfileid: "89322540"
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Как открыть запрос в службу поддержки для Azure AD в центре администрирования Microsoft 365
 
 > [!NOTE]
-> Поддержка Azure AD в [центре администрирования Microsoft 365](https://admin.microsoft.com) предлагается только для администраторов. 
+> Поддержка Azure AD в [центре администрирования Microsoft 365](https://admin.microsoft.com) предлагается только для администраторов.
 
 1. Войдите в [центр администрирования Microsoft 365](https://admin.microsoft.com) с помощью учетной записи с лицензией Enterprise Mobility + Security (EMS).
 
@@ -96,7 +96,7 @@ ms.locfileid: "89322540"
 
 Чтобы получить номера телефонов службы поддержки, перейдите на страницу [Обратитесь в корпорацию Майкрософт для поддержки](https://portal.office.com/Support/ContactUs.aspx).
 
-##  <a name="next-steps"></a>Дальнейшие шаги
+##  <a name="next-steps"></a>Дальнейшие действия
 
 * [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/)
 

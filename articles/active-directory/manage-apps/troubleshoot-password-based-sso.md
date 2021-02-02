@@ -2,7 +2,7 @@
 title: Устранение неполадок единого входа на основе пароля в Azure Active Directory
 description: Устранение неполадок в приложении Azure AD, настроенном для единого входа на основе пароля.
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -10,12 +10,12 @@ ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
-ms.openlocfilehash: 84aec5031dd8d19f8f2ad0aa32185002add378b1
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: fdbbc6c53e43d3ecc9fd4ecb563bd7ec798f8888
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053985"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257586"
 ---
 # <a name="troubleshoot-password-based-single-sign-on-in-azure-ad"></a>Устранение неполадок с единым входом на основе пароля в Azure AD
 
@@ -98,7 +98,7 @@ ms.locfileid: "99053985"
 7. После загрузки приложения выберите **единый вход** в области навигации в левой части.
 8. Выберите режим **входа на основе пароля** .
 9. Введите URL-адрес **входа**, который является URL страницы, где пользователи вводят имя пользователя и пароль для входа. *Убедитесь, что поля входа отображаются на странице предоставленного URL-адреса*.
-10. Нажмите кнопку **Сохранить**.
+10. Нажмите **Сохранить**.
     Страница автоматически забракована для полей ввода имени пользователя и пароля. Теперь вы можете использовать Azure AD для безопасной передачи паролей в это приложение с помощью расширения браузера "Мои приложения".
 
 ### <a name="manually-capture-sign-in-fields-for-an-app"></a>Ручная запись полей входа для приложения

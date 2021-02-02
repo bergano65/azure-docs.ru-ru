@@ -3,7 +3,7 @@ title: Создание конечной точки SCIM для подготов
 description: System for Cross-domain Identity Management (SCIM) стандартизирует автоматическую подготовку пользователей. Научитесь разрабатывать конечную точку SCIM, интегрировать API SCIM с Azure Active Directory и начать автоматизировать подготовку пользователей и групп в облачных приложениях с помощью Azure Active Directory.
 services: active-directory
 author: kenwith
-manager: CelesteDG
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 34fa76197c4e08cffd1d8c66d6877b3e427e9fd6
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 6b7451b0d664995a6b647f7926d856b0db6090d8
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918150"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256108"
 ---
 # <a name="tutorial-develop-a-sample-scim-endpoint"></a>Руководство. Разработка образца конечной точки SCIM
 
@@ -139,7 +139,7 @@ ms.locfileid: "98918150"
 
 Вот и все! Теперь можно запустить коллекцию **posts** для проверки функции КОНЕЧНОЙ точки scim.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о разработке SCIM-совместимой конечной точки пользователя и группы с поддержкой взаимодействия для клиента см. в описании [реализации клиента scim](http://www.simplecloud.info/#Implementations2).
 

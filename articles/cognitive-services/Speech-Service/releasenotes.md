@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/27/2021
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 1c9c07d3770d2b71bee8f8e789022be6f831cc8f
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 4393607d6714bc4c1b10ac89d5ac69c173f8fef4
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092874"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257327"
 ---
 # <a name="speech-service-release-notes"></a>Заметки о выпуске
 
@@ -26,7 +26,7 @@ ms.locfileid: "99092874"
 
 **Сводка по выделению**
 - Меньший объем памяти и места на диске, что делает пакет SDK более эффективным.
-- Улучшено качество пользовательского голоса и удобство использования. 
+- Форматы вывода более высокого качества доступны для пользовательского частного предварительного просмотра нейронной речи.
 - Распознаватель намерения теперь может возвратить больше, чем самое сложное, что дает возможность выполнить отдельную оценку намерения клиента.
 - Помощник или программа-робот теперь проще в настройке, и вы можете сделать так, чтобы она не прослушивает немедленно, и лучше контролировать реакцию на ошибки.
 - Улучшена производительность устройства благодаря необязательному сжатию.
@@ -43,7 +43,7 @@ ms.locfileid: "99092874"
   - Библиотеки Android на 3-5% меньше.
 
 **Новые функции**
-- **Все**: нестандартное качество голоса обеспечивает лучшую производительность. Добавлен формат 48kHz для пользовательских голосов TTS, что повышает качество звука пользовательских голосов, для которых скорость выборки данных выше, чем 24kHz.
+- **Все**: новые форматы вывода 48KHz доступны для закрытой предварительной версии пользовательского нейронного голоса через API синтеза речи TTS: Audio48Khz192KBitRateMonoMp3, Audio-48KHz-192kbitrate-Mono-MP3, Audio48Khz96KBitRateMonoMp3, Audio-48KHz-96kbitrate-Mono-MP3, Raw48Khz16BitMonoPcm, RAW-48KHz-16-разрядный-Mono-PCM, Riff48Khz16BitMonoPcm, Metallica-48KHz-16-разрядный-Mono-PCM.
 - **Все**. пользовательский Voice также проще в использовании. Добавлена поддержка настройки пользовательского голоса через `EndpointId` ([C++](https://docs.microsoft.com/cpp/cognitive-services/speech/speechconfig#setendpointid), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechconfig.endpointid?view=azure-dotnet#Microsoft_CognitiveServices_Speech_SpeechConfig_EndpointId), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.speechconfig.setendpointid?view=azure-java-stable#com_microsoft_cognitiveservices_speech_SpeechConfig_setEndpointId_String_), [JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#endpointId), [Цель-C](https://docs.microsoft.com/objectivec/cognitive-services/speech/spxspeechconfiguration#endpointid), [Python](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#endpoint-id)). Перед этим изменением пользовательским голосовым пользователям необходимо задать URL-адрес конечной точки с помощью `FromEndpoint` метода. Теперь клиенты могут использовать `FromSubscription` метод так же, как и открытые голоса, а затем указать идентификатор развертывания с помощью параметра `EndpointId` . Это упрощает настройку пользовательских голосов. 
 - **C++/c #/Жава/обжективе-к/Писон**: получить больше, чем самое верхнее назначение из `IntentRecognizer` . Теперь он поддерживает настройку результатов JSON, содержащих все цели, а не только наиболее намеренное `LanguageUnderstandingModel FromEndpoint` использование метода с помощью `verbose=true` параметра URI. Это решает [проблемы GitHub #880](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues/880). См. обновленную документацию [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition/#add-a-languageunderstandingmodel-and-intents).
 - **C++/c #/Жава**: ваш помощник или программа-робот прекратят прослушивание иммедиатедли. `DialogServiceConnector` ([C++](https://docs.microsoft.com/cpp/cognitive-services/speech/dialog-dialogserviceconnector), [C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-dotnet), [Java](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.dialog.dialogserviceconnector?view=azure-java-stable)) теперь имеет `StopListeningAsync()` метод для сопровождения `ListenOnceAsync()` . Это немедленно останавливает запись звука и постепенно ждет результата, делая его идеальным для использования с нажатием кнопки "закончить сейчас".

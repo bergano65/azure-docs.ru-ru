@@ -230,7 +230,7 @@
           items:
             - name: Поиск по большим двоичным объектам
               href: search-blob-storage-integration.md
-            - name: Общие сведения об использовании больших двоичных объектов с AI
+            - name: Обогащение с помощью ИИ и больших двоичных объектов
               href: search-blob-ai-integration.md
             - name: Настройка индексатора больших двоичных объектов
               href: search-howto-indexing-azure-blob-storage.md

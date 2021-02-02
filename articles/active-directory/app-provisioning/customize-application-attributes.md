@@ -3,19 +3,19 @@ title: Руководство. Настройка сопоставлений а�
 description: Узнайте, что такое сопоставление атрибутов для приложений SaaS в Azure Active Directory и как настроить его в соответствии с потребностями вашего бизнеса.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/25/2021
 ms.author: kenwith
-ms.openlocfilehash: 2a27124ea76d6e5aaa7ec4b8ca36c388718ffb94
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 89b40ac68143c2af0d94434ddedec489a2208839
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98761305"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256413"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Руководство. Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory
 

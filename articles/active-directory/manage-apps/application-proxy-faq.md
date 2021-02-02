@@ -3,7 +3,7 @@ title: Azure Active Directory Application Proxy часто задаваемые 
 description: Ознакомьтесь с ответами на часто задаваемые вопросы об использовании AD Application Proxy Azure для публикации внутренних локальных приложений для удаленных пользователей.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: f1a1d43f9bfc960628447a3c20e7dab2ac701dc5
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 121dcdf51374f625ad7393bb181b1be215775a0b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762575"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99257783"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -87,7 +87,7 @@ ms.locfileid: "98762575"
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 (DWORD) Value: 0 
 ```
 
-## <a name="application-configuration"></a>Настройка приложения
+## <a name="application-configuration"></a>Конфигурация приложений
 
 ### <a name="i-am-receiving-an-error-about-an-invalid-certificate-or-possible-wrong-password"></a>Я получаю сообщение об ошибке: Недопустимый сертификат или возможный неверный пароль
 
@@ -137,7 +137,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\W
 
 В этом случае будет использоваться резервное имя участника-пользователя. Дополнительные сведения о сценарии B2B см. в статье [предоставление пользователям B2B в Azure AD доступа к локальным приложениям](../external-identities/hybrid-cloud-to-on-premises.md).
 
-## <a name="pass-through-authentication"></a>Сквозная аутентификация
+## <a name="pass-through-authentication"></a>Сквозная проверка подлинности
 
 ### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
 

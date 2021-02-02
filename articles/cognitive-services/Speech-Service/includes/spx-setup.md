@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 87af99d5136a8bed93854e9396895cddeb22549a
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 68362b61aa0d919bd0e95f3cebb1cf1189f9f0f3
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540465"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095197"
 ---
 ## <a name="download-and-install"></a>Загрузите и установите
 
@@ -19,9 +19,15 @@ ms.locfileid: "98540465"
 Вот как установить интерфейс командной строки службы "Речь" в Windows:
 
 1. В Windows для вашей платформы необходим [распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). При первой установке может потребоваться перезагрузка.
-2. Скачайте и распакуйте [ZIP-архив](https://aka.ms/speech/spx-zips.zip) интерфейса командной строки службы "Речь".
-3. Перейдите в каталог, в который вы извлекли `spx-zips`. Эта папка содержит программные файлы для интерфейса командной строки службы "Речь" на различных платформах. 
-4. Извлеките файлы для своей платформы (`spx-net471` для .NET Framework 4.7 либо `spx-netcore-win-x64` для .NET Core 3.0 на ЦП с архитектурой x64). Помните, что вы будете запускать `spx` из этого каталога.
+1. Установите [.NET Core 3.1](/dotnet/core/install/linux.md).
+2. Установите CLI службы "Речь" с использованием NuGet. Для этого введите следующую команду:
+
+    `dotnet tool install --global Microsoft.CognitiveServices.Speech.CLI --version 1.15.0`
+
+Введите `spx`, чтобы получить справку по интерфейсу командной строки службы "Речь".
+
+> [!NOTE]
+> В качестве альтернативы NuGet вы можете скачать и извлечь [ZIP-архив](https://aka.ms/speech/spx-zips.zip) CLI службы "Речь", найти и извлечь свою платформу из каталога `spx-zips` и добавить путь `spx` в системную переменную **PATH**.
 
 ### <a name="run-the-speech-cli"></a>Запуск интерфейса командной строки службы "Речь"
 
@@ -43,15 +49,16 @@ ms.locfileid: "98540465"
 
 Вот как установить интерфейс командной строки службы "Речь" в Linux (ЦП с архитектурой x64):
 
-1. Установите [.NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
-2. Скачайте и распакуйте [ZIP-архив](https://aka.ms/speech/spx-zips.zip) интерфейса командной строки службы "Речь".
-3. Перейдите в извлеченный корневой каталог `spx-zips` и извлеките `spx-netcore-30-linux-x64` в новый каталог `~/spx`.
-4. В окне терминала введите следующие команды.
-   1. `cd ~/spx`
-   2. `sudo chmod +r+x spx`
-   3. `PATH=~/spx:$PATH`
+1. Установите [.NET Core 3.1](/dotnet/core/install/linux.md).
+2. Установите CLI службы "Речь" с использованием NuGet. Для этого введите следующую команду:
+
+    `dotnet tool install --global Microsoft.CognitiveServices.Speech.CLI --version 1.15.0`
 
 Введите `spx`, чтобы получить справку по интерфейсу командной строки службы "Речь".
+
+> [!NOTE]
+> В качестве альтернативы NuGet вы можете скачать двоичные файлы в [ZIP-архив](https://aka.ms/speech/spx-zips.zip), извлечь `spx-netcore-30-linux-x64` в новый каталог `~/spx`, ввести `sudo chmod +r+x spx` в двоичном файле и добавить путь `~/spx` в системную переменную PATH.
+
 
 #### <a name="docker-install-windows-linux-macos"></a>[Установка Docker (Windows, Linux, macOS)](#tab/dockerinstall)
 

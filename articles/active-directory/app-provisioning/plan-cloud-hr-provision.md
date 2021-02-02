@@ -3,7 +3,7 @@ title: Планирование облачного приложения отде
 description: В этой статье описывается процесс развертывания облачных систем отдела кадров, таких как Workday и SuccessFactors, с Azure Active Directory. Интеграция Azure AD с облачной системой управления персоналом приводит к полному управлению жизненным циклом удостоверений.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/22/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: 64418a727ecb9a300912a4766a9ea2066328ad31
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9c896d4cccf898b8818b4c363c5bc891a8734ca5
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174906"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256717"
 ---
 # <a name="plan-cloud-hr-application-to-azure-active-directory-user-provisioning"></a>Планирование облачного приложения отдела кадров для Azure Active Directory подготовки пользователей
 
@@ -79,7 +79,7 @@ Azure AD использует эту интеграцию для реализа
 
 Кроме того, вам потребуется действительная лицензия на подписку Azure AD Premium P1 или более поздней версии для каждого пользователя, который будет источником из облачного приложения отдела кадров и подготовленных для Active Directory или Azure AD. Любое неправильное количество лицензий, принадлежащих облачному приложению отдела кадров, может привести к ошибкам во время подготовки пользователей.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 - [Администратор гибридных удостоверений](../roles/permissions-reference.md#hybrid-identity-administrator) Azure AD для настройки агента подготовки Azure AD Connect.
 - Роль [администратора приложения](../roles/permissions-reference.md#application-administrator) Azure AD для настройки приложения подготовки в портал Azure

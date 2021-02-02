@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: calui
-ms.openlocfilehash: 0ca5f6a853852acbb4ef97adfce2364592bae270
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 4e39d7f15e3ca3c6e241c767a5f881d7170c6379
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559846"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99255973"
 ---
 # <a name="sign-in-to-azure-active-directory-using-email-as-an-alternate-login-id-preview"></a>Вход в Azure Active Directory использование электронной почты в качестве альтернативного имени для входа (Предварительная версия)
 
@@ -113,7 +113,7 @@ ms.locfileid: "97559846"
 1. Убедитесь, что политика *HomeRealmDiscoveryPolicy* уже существует в клиенте, использовав командлет [Get-AzureADPolicy][Get-AzureADPolicy] следующим образом.
 
     ```powershell
-    Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *
+    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
     ```
 
 1. Если политика в настоящее время не настроена, команда не возвращает ничего. Если возвращается политика, пропустите этот шаг и перейдите к следующему шагу, чтобы обновить существующую политику.
@@ -121,10 +121,22 @@ ms.locfileid: "97559846"
     Чтобы добавить политику *HomeRealmDiscoveryPolicy* в клиент, используйте командлет [New-AzureADPolicy][New-AzureADPolicy] и задайте для атрибута *AlternateIdLogin* значение *"Enabled": true*, как показано в следующем примере.
 
     ```powershell
-    New-AzureADPolicy -Definition @('{"HomeRealmDiscoveryPolicy" :{"AlternateIdLogin":{"Enabled": true}}}') `
-        -DisplayName "BasicAutoAccelerationPolicy" `
-        -IsOrganizationDefault $true `
-        -Type "HomeRealmDiscoveryPolicy"
+    $AzureADPolicyDefinition = @(
+      @{
+         "HomeRealmDiscoveryPolicy" = @{
+            "AlternateIdLogin" = @{
+               "Enabled" = $true
+            }
+         }
+      } | ConvertTo-JSON -Compress
+    )
+    $AzureADPolicyParameters = @{
+      Definition            = $AzureADPolicyDefinition
+      DisplayName           = "BasicAutoAccelerationPolicy"
+      IsOrganizationDefault = $true
+      Type                  = "HomeRealmDiscoveryPolicy"
+    }
+    New-AzureADPolicy @AzureADPolicyParameters
     ```
 
     После успешного создания политики эта команда возвращает идентификатор политики, как показано в следующем примере выходных данных:
@@ -156,17 +168,31 @@ ms.locfileid: "97559846"
     В следующем примере добавляется атрибут  *AlternateIdLogin* и сохраняется атрибут  *AllowCloudPasswordValidation*, который мог быть уже установлен:
 
     ```powershell
-    Set-AzureADPolicy -id b581c39c-8fe3-4bb5-b53d-ea3de05abb4b `
-        -Definition @('{"HomeRealmDiscoveryPolicy" :{"AllowCloudPasswordValidation":true,"AlternateIdLogin":{"Enabled": true}}}') `
-        -DisplayName "BasicAutoAccelerationPolicy" `
-        -IsOrganizationDefault $true `
-        -Type "HomeRealmDiscoveryPolicy"
+    $AzureADPolicyDefinition = @(
+      @{
+         "HomeRealmDiscoveryPolicy" = @{
+            "AllowCloudPasswordValidation" = $true
+            "AlternateIdLogin" = @{
+               "Enabled" = $true
+            }
+         }
+      } | ConvertTo-JSON -Compress
+    )
+    $AzureADPolicyParameters = @{
+      ID                    = "b581c39c-8fe3-4bb5-b53d-ea3de05abb4b"
+      Definition            = $AzureADPolicyDefinition
+      DisplayName           = "BasicAutoAccelerationPolicy"
+      IsOrganizationDefault = $true
+      Type                  = "HomeRealmDiscoveryPolicy"
+    }
+    
+    Set-AzureADPolicy @AzureADPolicyParameters
     ```
 
     Убедитесь, что обновленная политика отображает изменения и атрибут *AlternateIdLogin* включен:
 
     ```powershell
-    Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *
+    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
     ```
 
 После применения политики может пройти до часа, чтобы распространить и предоставить пользователям возможность входа с использованием альтернативного имени пользователя.
@@ -207,7 +233,12 @@ ms.locfileid: "97559846"
 4. Если для этой функции нет существующих политик развертывания с промежуточным развертыванием, создайте новую политику промежуточного развертывания и запишите идентификатор политики:
 
    ```powershell
-   New-AzureADMSFeatureRolloutPolicy -Feature EmailAsAlternateId -DisplayName "EmailAsAlternateId Rollout Policy" -IsEnabled $true
+   $AzureADMSFeatureRolloutPolicy = @{
+      Feature    = "EmailAsAlternateId"
+      DisplayName = "EmailAsAlternateId Rollout Policy"
+      IsEnabled   = $true
+   }
+   New-AzureADMSFeatureRolloutPolicy @AzureADMSFeatureRolloutPolicy
    ```
 
 5. Найдите идентификатор directoryObject для группы, которая будет добавлена в политику промежуточного развертывания. Обратите внимание на значение, возвращаемое для параметра *ID* , так как оно будет использоваться на следующем шаге.
@@ -250,7 +281,7 @@ Remove-AzureADMSFeatureRolloutPolicy -Id "ROLLOUT_POLICY_ID"
 1. Убедитесь, что в политике Azure AD *HomeRealmDiscoveryPolicy* атрибут *AlternateIdLogin* установлен на *"Enabled": true*:
 
     ```powershell
-    Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *
+    Get-AzureADPolicy | Where-Object Type -eq "HomeRealmDiscoveryPolicy" | Format-List *
     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
