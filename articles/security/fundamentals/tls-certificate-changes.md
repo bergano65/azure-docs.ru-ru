@@ -9,16 +9,16 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 11/10/2020
 ms.author: mbaldwin
-ms.openlocfilehash: bb49523858f07e54887a67d9df68eb894e27ad34
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 04b68899b796088bd4b89509a413c7a1fe5369bb
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881254"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475358"
 ---
 # <a name="azure-tls-certificate-changes"></a>Изменения TLS-сертификатов Azure  
 
-Корпорация Майкрософт обновляет службы Azure для использования TLS-сертификатов от других корневых центров сертификации (ЦС). Это изменение связано с тем, что текущие сертификаты ЦС не соответствуют одному из базовых требований организации CA/Browser Forum.
+Корпорация Майкрософт обновляет службы Azure для использования TLS-сертификатов от других корневых центров сертификации (ЦС). Это изменение вызвано тем, что текущие сертификаты ЦС не соответствуют базовым требованиям форума центра сертификации и браузера и будут отозваны 15 февраля 2021.
 
 ## <a name="when-will-this-change-happen"></a>Когда будет применено это изменение?
 

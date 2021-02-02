@@ -3,12 +3,12 @@ title: Основные понятия — сетевое взаимодейст
 description: Узнайте о ключевых аспектах и вариантах использования сети и взаимосвязи в решении VMware для Azure.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 9369c0fff31de4c6575d8e4903420cfa01461bf4
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: eb701a7fca2be08d70e603734b9c4d8e266959cd
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062126"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475426"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Сети решения Azure VMware и основные понятия взаимодействия
 
@@ -58,8 +58,11 @@ ms.locfileid: "99062126"
 Чтобы обеспечить полное взаимодействие с частным облаком, включите ExpressRoute Global Reach а затем запросите ключ авторизации и идентификатор частного пиринга для Global Reach в портал Azure. Ключ авторизации и идентификатор пиринга используются для установления Global Reach между каналом ExpressRoute в подписке и каналом ExpressRoute для нового частного облака. После связывания две цепи ExpressRoute направляют сетевой трафик между локальными средами в частное облако.  Дополнительные сведения о процедурах запроса и использования ключа авторизации и идентификатора пиринга см. в [руководстве по созданию Global REACH пиринга ExpressRoute в частном облаке](tutorial-expressroute-global-reach-private-cloud.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия 
-Узнайте о [концепциях частного облачного хранилища](concepts-storage.md).
 
+Теперь, когда вы узнали о принципах работы сети и взаимодействия, вы можете узнать о следующих возможностях:
+
+- [Основные понятия хранилища решений VMware для Azure](concepts-storage.md).
+- [Концепции Azure VMware для идентификации решений](concepts-identity.md)
 
 <!-- LINKS - external -->
 [enable Global Reach]: ../expressroute/expressroute-howto-set-global-reach.md

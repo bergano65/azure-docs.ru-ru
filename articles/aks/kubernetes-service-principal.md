@@ -4,12 +4,12 @@ description: Создание субъект-службы Azure Active Directory
 services: container-service
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: c6f50b152174cee1ee2cc37baa22432957107d2c
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: b7f8060666612049026f2602ab7c8511aea22757
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614801"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475443"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -128,7 +128,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 - Если вы не передаете субъект-службу в дополнительные команды CLI AKS, используется субъект-служба по умолчанию, расположенный по адресу `~/.azure/aksServicePrincipal.json` .  
 - При необходимости можно также удалить aksServicePrincipal.jsдля файла, и AKS создаст новый субъект-службу.
 - При удалении кластера AKS, созданного с помощью команды [az aks create][az-aks-create], автоматически созданная субъект-служба не удаляется.
-    - Чтобы удалить субъект-службу, выполните запрос для кластера *servicePrincipalProfile.clientId*, а затем удалите субъект-службу с помощью команды [az ad app delete][az-ad-app-delete]. Замените имена группы ресурсов и кластера собственными значениями.
+    - Чтобы удалить субъект-службу, выполните запрос к кластеру *сервицепринЦипалпрофиле. ClientID* , а затем удалите его с помощью команды [AZ AD SP Delete] [AZ-AD-SP-Delete]. Замените имена группы ресурсов и кластера собственными значениями.
 
         ```azurecli
         az ad sp delete --id $(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)

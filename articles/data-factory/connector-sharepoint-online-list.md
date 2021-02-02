@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: jingwang
-ms.openlocfilehash: f560a01c4ec00649157a9c43aedf0ed6cfc2e050
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 440dd561beddc9696ec703142fe82655b69fbb48
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83871916"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99474953"
 ---
 # <a name="copy-data-from-sharepoint-online-list-by-using-azure-data-factory"></a>Копирование данных из списка SharePoint Online с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -182,6 +182,9 @@ ms.locfileid: "83871916"
     }
 ]
 ```
+
+> [!NOTE]
+> В фабрике данных Azure нельзя выбрать более одного типа данных *выборки* для источника списка SharePoint Online.
 
 ## <a name="data-type-mapping-for-sharepoint-online-list"></a>Сопоставление типов данных для списка SharePoint Online
 

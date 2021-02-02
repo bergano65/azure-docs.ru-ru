@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: b353fad64b08f5fc50af2b8d31abab77cd797e25
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 506e568f44d8dd5354ed7bd3ec20d0c71d484b85
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055048"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475190"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -97,6 +97,7 @@ ms.locfileid: "99055048"
 | **LogicAppsManagement** | Трафик управления для Logic Apps. | Входящий трафик | Нет | Нет |
 | **MicrosoftCloudAppSecurity** | Microsoft Cloud App Security. | Исходящие | Нет | Нет |
 | **MicrosoftContainerRegistry** | Реестр контейнеров для образов контейнеров Майкрософт. <br/><br/>*Примечание.* Этот тег зависит от тега **AzureFrontDoor.FirstParty**. | Исходящие | Да | Да |
+| **PowerBI** | PowerBi. *Примечание. Сейчас этот тег нельзя настроить с помощью портала Azure.* | both | Нет | Нет|
 | **PowerQueryOnline** | Power Query Online. | both | Нет | Нет |
 | **Служебная шина** | Трафик служебной шины Azure, использующий уровень служб "Премиум". | Исходящие | Да | Да |
 | **Service Fabric** | Azure Service Fabric.<br/><br/>*Примечание.* Этот тег представляет конечную точку службы Service Fabric для уровня управления для каждого региона. Это позволяет клиентам выполнять операции управления для своих кластеров Service Fabric из виртуальной сети (конечная точка, например, https://westus.servicefabric.azure.com). | both | Нет | Нет |

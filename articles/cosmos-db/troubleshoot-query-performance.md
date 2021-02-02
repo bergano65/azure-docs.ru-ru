@@ -4,16 +4,16 @@ description: Узнайте, как определять, диагностиро
 author: timsander1
 ms.service: cosmos-db
 ms.topic: troubleshooting
-ms.date: 10/12/2020
+ms.date: 02/02/2021
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: 42f01b140a44d7aa6d75dece9a4398fd7b41bf5a
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: d50893fc3bf5d890efbdc1f5b59cf52f35d91a15
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905117"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475732"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Диагностика и устранение проблем с запросами при использовании Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -62,6 +62,8 @@ ms.locfileid: "96905117"
 - [Включите необходимые пути в политику индексирования.](#include-necessary-paths-in-the-indexing-policy)
 
 - [Узнайте, какие системные функции используют индекс.](#understand-which-system-functions-use-the-index)
+
+- [Улучшение выполнения строковой системной функции.](#improve-string-system-function-execution)
 
 - [Узнайте, какие статистические запросы используют индекс.](#understand-which-aggregate-queries-use-the-index)
 
@@ -198,10 +200,11 @@ WHERE c.description = "Malabar spinach, cooked"
 
 Большинство системных функций используют индексы. Ниже приведен список некоторых общих строковых функций, использующих индексы.
 
-- STARTSWITH(str_expr1, str_expr2, bool_expr)  
-- CONTAINS(str_expr, str_expr, bool_expr)
-- LEFT(str_expr, num_expr) = str_expr;
-- SUBSTRING(str_expr, num_expr, num_expr) = str_expr, но только если значение первого num_expr равно 0
+- StartsWith;
+- Содержит
+- режексматч
+- Левый
+- Substring — только в том случае, если первый num_expr равен 0
 
 Ниже приведены некоторые распространенные системные функции, которые не используют индекс и должны загружать каждый документ:
 
@@ -210,11 +213,21 @@ WHERE c.description = "Malabar spinach, cooked"
 | UPPER/LOWER (верхний/нижний регистр)                             | Вместо использования системной функции для нормализации данных при сравнениях следует нормализировать регистр при вставке. Запрос, подобный ```SELECT * FROM c WHERE UPPER(c.name) = 'BOB'```, преобразуется в ```SELECT * FROM c WHERE c.name = 'BOB'```. |
 | Математические функции (кроме статистических выражений) | Если в запросе необходимо часто вычислять значение, рекомендуется сохранить значение как свойство в документе JSON. |
 
-------
+### <a name="improve-string-system-function-execution"></a>Улучшение выполнения строковой системной функции
 
-Если системная функция использует индексы и по-прежнему имеет высокую ЕДИНИЦу оплаты, можно попробовать добавить `ORDER BY` запрос. В некоторых случаях добавление `ORDER BY` может улучшить использование индексов системных функций, особенно если запрос долго выполняется или охватывает несколько страниц.
+Для некоторых системных функций, использующих индексы, можно улучшить выполнение запроса, добавив `ORDER BY` предложение к запросу. 
 
-Например, рассмотрим приведенный ниже запрос с `CONTAINS` . `CONTAINS` следует использовать индекс, но предположим, что после добавления соответствующего индекса вы по-прежнему будете иметь дело с очень высоким тарифом на ЕДИНИЦу при выполнении следующего запроса:
+В частности, любая системная функция, оплата за ЕДИНИЦу которого увеличивается по мере увеличения количества элементов свойства, может оказаться выгодным `ORDER BY` при выполнении запроса. Эти запросы выполняют сканирование индекса, поэтому результаты запроса могут быть более эффективными.
+
+Такая оптимизация может улучшить выполнение следующих системных функций:
+
+- StartsWith (без учета регистра = true)
+- Стринжекуалс (где без учета регистра = true)
+- Содержит
+- режексматч
+- EndsWith
+
+Например, рассмотрим приведенный ниже запрос с `CONTAINS` . `CONTAINS` будет использовать индексы, но иногда даже после добавления соответствующего индекса вы по-прежнему можете столкнуться с очень высоким тарифом на ЕДИНИЦу при выполнении приведенного ниже запроса.
 
 Исходный запрос:
 
@@ -224,13 +237,32 @@ FROM c
 WHERE CONTAINS(c.town, "Sea")
 ```
 
-Обновленный запрос с `ORDER BY` :
+Можно улучшить выполнение запроса, добавив `ORDER BY` :
 
 ```sql
 SELECT *
 FROM c
 WHERE CONTAINS(c.town, "Sea")
 ORDER BY c.town
+```
+
+Такая же оптимизация может помочь в запросах с дополнительными фильтрами. В этом случае лучше также добавлять свойства с фильтрами равенства в `ORDER BY` предложение.
+
+Исходный запрос:
+
+```sql
+SELECT *
+FROM c
+WHERE c.name = "Samer" AND CONTAINS(c.town, "Sea")
+```
+
+Можно улучшить выполнение запроса, добавив `ORDER BY` и [составной индекс](index-policy.md#composite-indexes) для (c.Name, c. городской):
+
+```sql
+SELECT *
+FROM c
+WHERE c.name = "Samer" AND CONTAINS(c.town, "Sea")
+ORDER BY c.name, c.town
 ```
 
 ### <a name="understand-which-aggregate-queries-use-the-index"></a>Узнайте, какие статистические запросы используют индекс.

@@ -1,6 +1,6 @@
 ---
-title: Поддерживаемые размеры виртуальных машин на границе Azure Stack
-description: Описание поддерживаемых размеров виртуальных машин в шаблонах устройств Azure Stack пограничных Pro.
+title: Поддерживаемые размеры виртуальных машин на Azure Stack границе
+description: Описание поддерживаемых размеров виртуальных машин на устройстве Azure Stack пограничной Pro.
 services: databox
 author: alkohli
 ms.service: databox
@@ -8,14 +8,14 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 12/21/2020
 ms.author: alkohli
-ms.openlocfilehash: eace537c3860bb0225b72b0c29be563b4fe08883
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: a52ed05e03176bcb9b2fde9f2da1c746cedd6d49
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763887"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475051"
 ---
-# <a name="vm-sizes-and-types-for-your-azure-stack-edge-pro"></a>Размеры и типы виртуальных машин для Azure Stack пограничных Pro 
+# <a name="vm-sizes-and-types-for-azure-stack-edge-pro"></a>Размеры и типы виртуальных машин для Azure Stack пограничных Pro 
 
 В этой статье описываются поддерживаемые размеры виртуальных машин, работающих на устройствах Azure Stack пограничных Pro. Используйте эту статью перед развертыванием виртуальных машин на устройствах Azure Stack пограничных Pro.
 
@@ -30,4 +30,4 @@ ms.locfileid: "97763887"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Развертывание виртуальной машины на Azure Stack пограничных Pro с помощью портал Azure ](azure-stack-edge-gpu-deploy-virtual-machine-portal.md)
+[Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью портал Azure](azure-stack-edge-gpu-deploy-virtual-machine-portal.md)

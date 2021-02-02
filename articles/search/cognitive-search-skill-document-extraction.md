@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.author: chalton
-ms.openlocfilehash: 5098d897d84ff6af31d430c0ddd2e26d8d6b08a7
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: d6dd2b891cb3bf9ebb5442f541021c20a34ce1a1
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814301"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99474852"
 ---
 # <a name="document-extraction-cognitive-skill"></a>Раскадровка извлечения документов
 
@@ -37,7 +37,7 @@ Microsoft.Skills.Util.DocumentExtractionSkill
 | Входные данные | Допустимые значения | Описание |
 |-----------------|----------------|-------------|
 | `parsingMode`   | `default` <br/> `text` <br/> `json`  | Задайте для значение, чтобы `default` извлечь документ из файлов, не являющихся чистым текстом или JSON. Задайте для значение `text` , чтобы повысить производительность в обычных текстовых файлах. Задайте значение `json` , чтобы извлечь структурированное содержимое из файлов JSON. Если `parsingMode` параметр не определен явным образом, ему будет присвоено значение `default` . |
-| `dataToExtract` | `contentAndMetadata` <br/> `allMetadata` | Задайте значение `contentAndMetadata` , чтобы извлечь все метаданные и текстовое содержимое из каждого файла. Задайте значение `allMetadata` , чтобы извлечь только [метаданные, относящиеся к типу содержимого](search-howto-indexing-azure-blob-storage.md#ContentSpecificMetadata) (например, метаданные, уникальные только для PNG-файлов). Если `dataToExtract` параметр не определен явным образом, ему будет присвоено значение `contentAndMetadata` . |
+| `dataToExtract` | `contentAndMetadata` <br/> `allMetadata` | Задайте значение `contentAndMetadata` , чтобы извлечь все метаданные и текстовое содержимое из каждого файла. Задайте значение `allMetadata` , чтобы извлечь только [Свойства метаданных для типа содержимого](search-blob-metadata-properties.md) (например, метаданные, уникальные только для PNG-файлов). Если `dataToExtract` параметр не определен явным образом, ему будет присвоено значение `contentAndMetadata` . |
 | `configuration` | См. ниже. | Словарь необязательных параметров, определяющих, как выполняется извлечение документа. Описание поддерживаемых свойств конфигурации см. в таблице ниже. |
 
 | Параметр конфигурации   | Допустимые значения | Описание |

@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/02/2020
+ms.date: 02/02/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9276fca62e96395150c9545b8f4dcb5c8c0afb87
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 3315500e0d8ce090b058cbe0cb11d9ab8e56e193
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954248"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475004"
 ---
 # <a name="authentication-methods-in-azure-active-directory---oath-tokens"></a>Методы проверки подлинности в токенах Azure Active Directory-OATH
 
@@ -49,7 +49,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 ```  
 
 > [!NOTE]
-> Убедитесь, что вы включили строку заголовка в CSV-файл.
+> Убедитесь, что вы включили строку заголовка в CSV-файл. Если имя участника-пользователя заключено в одинарную кавычку, оно будет экранировано с помощью другой одинарной кавычки. Например, если имя участника-пользователя — My user@domain.com , измените его на My "" user@domain.com при отправке файла.
 
 После правильного форматирования в виде CSV-файла администратор может выполнить вход на портал Azure и перейти на **Azure Active Directory > Безопасность > MFA > Маркеры OATH** и отправить полученный CSV-файл.
 

@@ -3,18 +3,20 @@ title: Мониторинг производительности на вирту
 description: Мониторинг производительности приложений для ВИРТУАЛЬНОЙ машины Azure и масштабируемых наборов виртуальных машин Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 0ea005427348e5265867a9e7ee805b0e6aa202f2
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 01583cf5ecb85e4f66538afaba6984bff455ea99
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98933912"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475460"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>Развертывание агента Azure Monitor Application Insights на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure
 
-Включение мониторинга для веб-приложений на основе .NET, работающих на [виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/) и [масштабируемых наборах виртуальных машин Azure](../../virtual-machine-scale-sets/index.yml) , теперь стало проще, чем когда бы то ни было. Получите все преимущества использования Application Insights без изменения кода.
+Включение мониторинга для веб-приложений на основе .NET или Java, работающих на [виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/) и [масштабируемых наборах виртуальных машин Azure](../../virtual-machine-scale-sets/index.yml) , теперь стало проще, чем когда бы то ни было. Получите все преимущества использования Application Insights без изменения кода.
 
 В этой статье описывается включение мониторинга Application Insights с помощью агента Application Insights и предоставляются предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
+> [!IMPORTANT]
+> Приложения на основе **Java** , работающие на виртуальных машинах Azure и VMSS, отслеживаются с помощью **[Application Insights агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)**, который является общедоступным.
 
 > [!IMPORTANT]
 > Агент Application Insights Azure для приложений ASP.NET, работающих на **виртуальных машинах Azure и VMSS** , в настоящее время находится в общедоступной предварительной версии. Для мониторинга приложений ASP.Net, работающих **в локальной среде**, используйте [Агент Azure Application Insights для локальных серверов](./status-monitor-v2-overview.md), который является общедоступным и полностью поддерживаемым.
@@ -25,23 +27,47 @@ ms.locfileid: "98933912"
 
 Существует два способа включения мониторинга приложений для виртуальных машин Azure и масштабируемых наборов виртуальных машин Azure, размещенных в приложениях:
 
-* Без **кода** с помощью агента Application Insights
-    * Этот метод является самым простым для включения и не требует дополнительной настройки. Часто это называется мониторингом среды выполнения.
+### <a name="auto-inctrumentation-via-application-insights-agent"></a>Auto-инктрументатион через агент Application Insights
 
-    * Для виртуальных машин Azure и масштабируемых наборов виртуальных машин Azure рекомендуется как минимум включить этот уровень мониторинга. После этого в зависимости от конкретного сценария можно оценить, требуется ли ручное инструментирование.
+* Этот метод является самым простым для включения и не требует дополнительной настройки. Часто это называется мониторингом среды выполнения.
 
-    * Агент Application Insights выполняет автоматическую сбор одинаковых зависимых сигналов в виде пакета SDK для .NET. Дополнительные сведения см. в разделе [Автоматическая коллекция зависимостей](./auto-collect-dependencies.md#net) .
-        > [!NOTE]
-        > В настоящее время поддерживаются только приложения, размещенные в среде .NET IIS. Используйте пакет SDK для инструментирования приложений ASP.NET Core, Java и Node.js, размещенных на виртуальных машинах Azure и масштабируемых наборах виртуальных машин.
-
-* Пакет SDK **на основе кода**
-
-    * Этот подход гораздо более настраиваемый, но требует [добавления зависимости от Application Insights пакетов NUGET SDK](./asp-net.md). Этот метод также означает, что вам нужно самостоятельно управлять обновлениями для последних версий пакетов.
-
-    * Если необходимо выполнить пользовательские вызовы API для отслеживания событий или зависимостей, не отслеживаемых по умолчанию с помощью мониторинга на основе агентов, необходимо использовать этот метод. Дополнительные сведения см. в [статье об API для получения пользовательских событий и метрик](./api-custom-events-metrics.md) .
+* Для виртуальных машин Azure и масштабируемых наборов виртуальных машин Azure рекомендуется как минимум включить этот уровень мониторинга. После этого в зависимости от конкретного сценария можно оценить, требуется ли ручное инструментирование.
 
 > [!NOTE]
-> Если будет обнаружено отслеживание на основе агента и ручное инструментирование на основе пакета SDK, будут учитываться только параметры инструментирования вручную. Это позволяет предотвратить отправку повторяющихся данных. Чтобы узнать больше об этом, ознакомьтесь с [разделом устранение неполадок](#troubleshooting) ниже.
+> Автоматическое Инструментирование в настоящее время доступно только для приложений, размещенных в среде .NET и Java. Используйте пакет SDK для инструментирования приложений ASP.NET Core, Node.js и Python, размещенных на виртуальных машинах Azure и масштабируемых наборах виртуальных машин.
+
+
+#### <a name="net"></a>.NET
+
+  * Агент Application Insights выполняет автоматическую сбор одинаковых зависимых сигналов в виде пакета SDK для .NET. Дополнительные сведения см. в разделе [Автоматическая коллекция зависимостей](./auto-collect-dependencies.md#net) .
+        
+#### <a name="java"></a>Java
+  * Для Java предпочтительным подходом является **[Application Insights агента java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent)** . Самые популярные библиотеки и платформы, а также журналы и зависимости [собираются](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent#auto-collected-requests-dependencies-logs-and-metrics)с множеством [дополнительных конфигураций](https://docs.microsoft.com/azure/azure-monitor/app/java-standalone-config) .
+
+### <a name="code-based-via-sdk"></a>Пакет SDK на основе кода
+    
+#### <a name="net"></a>.NET
+  * Для приложений .NET этот подход гораздо более настраиваемый, но он требует [добавления зависимости от Application Insights пакетов NUGET SDK](./asp-net.md). Этот метод также означает, что вам нужно самостоятельно управлять обновлениями для последних версий пакетов.
+
+  * Если необходимо выполнить пользовательские вызовы API для отслеживания событий или зависимостей, не отслеживаемых по умолчанию с помощью мониторинга на основе агентов, необходимо использовать этот метод. Дополнительные сведения см. в [статье об API для получения пользовательских событий и метрик](./api-custom-events-metrics.md) .
+
+    > [!NOTE]
+    > Только для приложений .NET — при обнаружении средств мониторинга на основе агента и ручного инструментирования на основе пакета SDK будут учитываться только параметры инструментирования вручную. Это позволяет предотвратить отправку повторяющихся данных. Чтобы узнать больше об этом, ознакомьтесь с [разделом устранение неполадок](#troubleshooting) ниже.
+
+#### <a name="net-core"></a>.NET Core
+Для мониторинга приложений .NET Core используйте [пакет SDK](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) 
+
+#### <a name="java"></a>Java 
+
+Если вам требуются дополнительные пользовательские данные телеметрии для приложений Java, см. статью [доступность](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent#send-custom-telemetry-from-your-application), добавление [пользовательских измерений](https://docs.microsoft.com/azure/azure-monitor/app/java-standalone-config#custom-dimensions)или использование [обработчиков данных телеметрии](https://docs.microsoft.com/azure/azure-monitor/app/java-standalone-telemetry-processors). 
+
+#### <a name="nodejs"></a>Node.js
+
+Для инструментирования приложения Node.js используйте [пакет SDK](https://docs.microsoft.com/azure/azure-monitor/app/nodejs).
+
+#### <a name="python"></a>Python
+
+Для мониторинга приложений Python используйте [пакет SDK](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python).
 
 ## <a name="manage-application-insights-agent-for-net-applications-on-azure-virtual-machines-using-powershell"></a>Управление агентом Application Insights для приложений .NET на виртуальных машинах Azure с помощью PowerShell
 
@@ -163,12 +189,12 @@ Get-AzResource -ResourceId /subscriptions/<mySubscriptionId>/resourceGroups/<myR
 # ResourceId        : /subscriptions/<mySubscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/<myVmssName>/extensions/ApplicationMonitoringWindows
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Найдите советы по устранению неполадок для Application Insights расширения агента мониторинга для приложений .NET, выполняющихся на виртуальных машинах Azure и в масштабируемых наборах виртуальных машин.
 
 > [!NOTE]
-> Приложения .NET Core, Java и Node.js поддерживаются только на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure с помощью инструментирования вручную на основе пакета SDK, поэтому приведенные ниже действия не применяются к этим сценариям.
+> Приложения .NET Core, Node.js и Python поддерживаются только на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure с помощью инструментирования вручную на основе пакета SDK, поэтому приведенные ниже действия не применяются к этим сценариям.
 
 Выходные данные выполнения расширения регистрируются в файле, расположенном в следующих каталогах:
 ```Windows
