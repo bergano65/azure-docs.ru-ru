@@ -14,14 +14,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 10/16/2020
+ms.date: 02/01/2021
 ms.author: radeltch
-ms.openlocfilehash: c97975d6920cd0f04a7d2d4e73c00104a2b13235
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6ce169eee4f931d02071a326c65ba94cfe723ae1
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685618"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259039"
 ---
 # <a name="high-availability-of-sap-hana-scale-out-system-on-red-hat-enterprise-linux"></a>Высокий уровень доступности SAP HANA масштабируемой системы на Red Hat Enterprise Linux 
 
@@ -91,7 +91,7 @@ ms.locfileid: "98685618"
   * [Red Hat Enterprise Linux решение для SAP HANA Scale-Out и репликации системы](https://access.redhat.com/solutions/4386601)
 * [Приложения NetApp SAP в Microsoft Azure. Использование Azure NetApp Files][anf-sap-applications-azure]
 * [Документация по Azure NetApp Files][anf-azure-doc] 
-
+* [Тома NFS версии 4.1 в Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 
 ## <a name="overview"></a>Обзор
 
@@ -1172,4 +1172,5 @@ ms.locfileid: "98685618"
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]
 * [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server][dbms-guide]
+* [Тома NFS версии 4.1 в Azure NetApp Files для SAP HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 * Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha].
