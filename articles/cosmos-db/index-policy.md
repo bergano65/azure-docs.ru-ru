@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 02/02/2021
 ms.author: tisande
-ms.openlocfilehash: 79791bf2db888912d5c1f016f4bf357e76bddcba
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 58ee3bcd0ba14359ea9adaa131b8280b81008b57
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475106"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526778"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexing policy in Azure Cosmos DB (Политики индексации в Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -309,8 +309,7 @@ ORDER BY c.firstName, c.lastName
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC``` | `Yes` |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC``` | `No` |
 
-
-## <a name="modifying-the-indexing-policy"></a>Изменение политики индексирования
+## <a name="index-transformationmodifying-the-indexing-policy"></a><преобразование индекса>изменение политики индексирования
 
 Политику индексирования контейнера можно обновить в любое время с [помощью портал Azure или одного из поддерживаемых пакетов SDK](how-to-manage-indexing-policy.md). Обновление политики индексирования активирует преобразование старого индекса в новый, который выполняется в сети и на месте (поэтому дополнительное пространство для хранения данных во время операции не потребляется). Старая политика индексирования эффективно преобразуется в новую политику, не влияя на доступность записи, доступность чтения или пропускную способность, подготовленную в контейнере. Преобразование индекса — это асинхронная операция, а время, необходимое для выполнения, зависит от подготовленной пропускной способности, количества элементов и их размера.
 
@@ -338,7 +337,7 @@ ORDER BY c.firstName, c.lastName
 
 В сценариях, где не требуется индексировать свойства, но требуется TTL, можно использовать политику индексирования с режимом индексирования, для которого задано значение `consistent` , нет включенных путей и `/*` как единственный исключаемый путь.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 

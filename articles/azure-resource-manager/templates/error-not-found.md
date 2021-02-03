@@ -3,12 +3,12 @@ title: Ошибка "ресурс не найден"
 description: Описывает, как устранять ошибки, когда не удается найти ресурс. Эта ошибка может возникать при развертывании шаблона Azure Resource Manager или при выполнении действий управления.
 ms.topic: troubleshooting
 ms.date: 06/10/2020
-ms.openlocfilehash: 224af4ce0fe5053201f25d8207f4ca8cdc73e638
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40f3c2ac61b6a6d5fdbcefdf62761668b013b1db
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84667953"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526252"
 ---
 # <a name="resolve-resource-not-found-errors"></a>Ошибка при устранении ненайденных ресурсов
 
@@ -105,7 +105,7 @@ group {resource group name} was not found.
 
 Шаблон:
 
-`"[reference(resourceId(<resource-provider-namespace>, <resource-name>, <API-version>, 'Full').Identity.propertyName]"`
+`"[reference(resourceId(<resource-provider-namespace>, <resource-name>), <API-version>, 'Full').Identity.propertyName]"`
 
 > [!IMPORTANT]
 > Не используйте шаблон:

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: 6971d67204beb39ff0afa6c68dbecf278d86b299
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 8ac69e6961af4991b250320b7af7cf5a345d3efb
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954721"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526472"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 
@@ -420,7 +420,7 @@ run = experiment.submit(automl_config, show_output=True)
   * Ошибки атрибутов: пример. `AttributeError: 'SimpleImputer' object has no attribute 'add_indicator`
   
   Чтобы обойти эту ошибку, выполните один из следующих двух шагов в зависимости от вашей `AutoML` обучающей версии пакета SDK:
-    * Если ваша `AutoML` учебная версия пакета SDK больше 1.13.0, вам потребуется `pandas == 0.25.1` и `sckit-learn==0.22.1` . Если обнаружено несовпадение версий, обновите scikit-учиться и/или Pandas, чтобы исправить версию, как показано ниже:
+    * Если ваша `AutoML` учебная версия пакета SDK больше 1.13.0, вам потребуется `pandas == 0.25.1` и `scikit-learn==0.22.1` . Если обнаружено несовпадение версий, обновите scikit-учиться и/или Pandas, чтобы исправить версию, как показано ниже:
       
       ```bash
          pip install --upgrade pandas==0.25.1

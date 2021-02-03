@@ -8,12 +8,12 @@ ms.date: 07/13/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 2df401f7871d631ba317fb670783cad086b9a351
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 7b112cc80984a761e780f134731476f9dff4f687
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96017565"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525777"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-not-found-exceptions"></a>Диагностика и устранение неполадок Azure Cosmos DB не найденных исключений
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -102,7 +102,7 @@ while (invalidItemsIterator.HasMoreResults)
 База данных или контейнер, в котором находится элемент, удалена.
 
 #### <a name="solution"></a>Решение.
-1. [Восстановите](./online-backup-and-restore.md#request-data-restore-from-a-backup) родительский ресурс или повторно создайте ресурсы.
+1. [Восстановите](./configure-periodic-backup-restore.md#request-restore) родительский ресурс или повторно создайте ресурсы.
 1. Создайте новый ресурс для замены удаленного ресурса.
 
 ### <a name="7-containercollection-names-are-case-sensitive"></a>7. в именах контейнеров и коллекций учитывается регистр.

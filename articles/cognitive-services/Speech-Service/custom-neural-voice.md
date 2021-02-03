@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/01/2020
 ms.author: trbye
-ms.openlocfilehash: 9e230ff4e84eba7b61846540fef2915765fa4f77
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: baa48ede04b9de98bd69de69753c97b5fcee7329
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509717"
+ms.locfileid: "99525268"
 ---
 # <a name="what-is-custom-neural-voice"></a>Что такое настраиваемый нейронный счет?
 
@@ -51,7 +51,7 @@ ms.locfileid: "99509717"
 
 ## <a name="responsible-use-of-ai"></a>Ответственное использование ИИ
 
-Сведения о том, как использовать настраиваемый нейронный язык, см. в разделе [Примечание о прозрачности](https://docs.microsoft.com/legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice). Заметки о прозрачности корпорации Майкрософт призваны помочь вам понять, как работает наша технология искусственного интеллекта, а также о том, что владельцы системы могут повлиять на производительность и поведение системы, а также на важность думать о всей системе, включая технологию, людей и среду.
+Сведения о том, как использовать настраиваемый нейронный язык, см. в разделе [Примечание о прозрачности](/legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context). Заметки о прозрачности корпорации Майкрософт призваны помочь вам понять, как работает наша технология искусственного интеллекта, а также о том, что владельцы системы могут повлиять на производительность и поведение системы, а также на важность думать о всей системе, включая технологию, людей и среду.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

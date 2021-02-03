@@ -1,6 +1,6 @@
 ---
 title: Настройка локальных метрик и журналов для самостоятельно размещенного шлюза управления API Azure | Документация Майкрософт
-description: Узнайте, как настроить локальные метрики и журналы для самостоятельно размещенного шлюза службы управления API Azure.
+description: Узнайте, как настроить локальные метрики и журналы для самостоятельно размещенного шлюза службы управления API Azure на Kubernetes кластера
 services: api-management
 documentationcenter: ''
 author: miaojiang
@@ -10,18 +10,18 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 04/30/2020
+ms.date: 02/01/2021
 ms.author: apimpm
-ms.openlocfilehash: ac147863fe54be3343eda653fc863ebd08dac54d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e34c25b2e3bfa845e258dc5d9699497d7ffcb004
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86254509"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526676"
 ---
 # <a name="configure-local-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Настройка локальных метрик и журналов для самостоятельно размещенного шлюза службы управления API Azure
 
-В этой статье содержатся сведения о настройке локальных метрик и журналов для [самостоятельно размещенного шлюза](./self-hosted-gateway-overview.md). Сведения о настройке метрик и журналов облака см. в [этой статье](how-to-configure-cloud-metrics-logs.md). 
+В этой статье содержатся сведения о настройке локальных метрик и журналов для [самостоятельно размещенного шлюза](./self-hosted-gateway-overview.md) , развернутого в кластере Kubernetes. Сведения о настройке метрик и журналов облака см. в [этой статье](how-to-configure-cloud-metrics-logs.md). 
 
 ## <a name="metrics"></a>Метрики
 Самостоятельно размещенный шлюз поддерживает [статистику](https://github.com/statsd/statsd), которая стала согласованным протоколом для сбора и агрегирования метрик. В этом разделе описано, как развернуть статистику по Kubernetes, настроить шлюз на выдачу метрик через статистику и использовать [Prometheus](https://prometheus.io/) для мониторинга метрик. 
@@ -65,7 +65,7 @@ spec:
     spec:
       containers:
       - name: sputnik-metrics-statsd
-        image: prom/statsd-exporter
+        image: mcr.microsoft.com/aks/hcp/prom/statsd-exporter
         ports:
         - name: tcp
           containerPort: 9102
@@ -80,7 +80,7 @@ spec:
           - mountPath: /tmp
             name: sputnik-metrics-config-files
       - name: sputnik-metrics-prometheus
-        image: prom/prometheus
+        image: mcr.microsoft.com/oss/prometheus/prometheus
         ports:
         - name: tcp
           containerPort: 9090
@@ -149,7 +149,7 @@ sputnik-metrics-statsd       NodePort       10.0.41.179   <none>          8125:3
 
 Теперь, когда были развернуты и Prometheus, можно обновить конфигурации самостоятельно размещенного шлюза, чтобы начать выдачу метрик через статистику. Эту функцию можно включить или отключить с помощью `telemetry.metrics.local` ключа в ConfigMap развертывания самостоятельного шлюза с дополнительными параметрами. Ниже приведена разбивка доступных вариантов.
 
-| Поле  | По умолчанию | Описание |
+| Поле  | Значение по умолчанию | Описание |
 | ------------- | ------------- | ------------- |
 | данные телеметрии. метрики. локальные  | `none` | Включает ведение журнала с использованием статистики. Значение может быть равно `none` , `statsd` . |
 | телеметрии. метрики. Локальные. statsd. Конечная точка  | Недоступно | Указывает статистику конечной точки. |
@@ -208,7 +208,7 @@ kubectl logs <pod-name>
 
 Шлюз, размещенный на собственном сервере, также поддерживает ряд протоколов `localsyslog` , включая, `rfc5424` и `journal` . В таблице ниже приведены все поддерживаемые параметры. 
 
-| Поле  | По умолчанию | Описание |
+| Поле  | Значение по умолчанию | Описание |
 | ------------- | ------------- | ------------- |
 | данные телеметрии. Logs. STD  | `text` | Включает ведение журнала для стандартных потоков. Значение может быть равно `none` , `text` , `json` |
 | данные телеметрии. Logs. local  | `none` | Включает локальное ведение журнала. Значение может быть `none` , `auto` , `localsyslog` , `rfc5424` , `journal`  |
@@ -232,7 +232,7 @@ kubectl logs <pod-name>
         telemetry.logs.local.localsyslog.facility: "7"
 ```
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Сведения о [настройке и сохранении журналов в облаке](how-to-configure-local-metrics-logs.md)

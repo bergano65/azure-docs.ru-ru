@@ -1,19 +1,19 @@
 ---
 title: Жеткуррентдатетиме на языке запросов Azure Cosmos DB
 description: Дополнительные сведения о функции SQL System Жеткуррентдатетиме в Azure Cosmos DB.
-author: ginamr
+author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 08/18/2020
-ms.author: girobins
+ms.date: 02/03/2021
+ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 03a3183fe3001008cdd3f3caae1b8c3af81668fe
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b48237b5a7eb836c495612758eeb9eaa45029b26
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340215"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526591"
 ---
 # <a name="getcurrentdatetime-azure-cosmos-db"></a>Жеткуррентдатетиме (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -37,18 +37,19 @@ GetCurrentDateTime ()
   |DD|четырехзначный день месяца (от 01 до 31)|
   |T|обозначает начало элементов времени|
   |hh|час с двумя цифрами (от 00 до 23)|
-  |mm|двузначное число минут (от 00 до 59)|
-  |ss|двузначное число секунд (от 00 до 59)|
+  |ММ|двузначное число минут (от 00 до 59)|
+  |сс|двузначное число секунд (от 00 до 59)|
   |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Примечания
 
 Жеткуррентдатетиме () является недетерминированной функцией. Возвращаемый результат — UTC. Точность составляет 7 цифр с точностью 100 наносекунд.
 
-Эта системная функция не будет использовать индекс.
+> [!NOTE]
+> Эта системная функция не будет использовать индекс. Если необходимо сравнить значения с текущим временем, получите текущее время перед выполнением запроса и используйте это постоянное строковое значение в `WHERE` предложении.
 
 ## <a name="examples"></a>Примеры
   
@@ -66,7 +67,7 @@ SELECT GetCurrentDateTime() AS currentUtcDateTime
 }]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

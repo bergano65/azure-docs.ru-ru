@@ -8,12 +8,12 @@ author: cpercy737
 ms.author: camper
 ms.date: 11/4/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 989e50ec03dae5d00961d572b70d524a56b3d64c
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 99e1e77a37afbdc1ed54767700574316ed03fae3
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062242"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525251"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Сведения о партнере коммерческого рынка и использовании клиентов
 
@@ -248,10 +248,8 @@ foreach ($deployment in $deployments){
 
 }
 ```
-
 ## <a name="report"></a>Report
-
-Отчет об отслеживании потребления услуг клиентами можно найти в панели мониторинга Центра партнеров ([https://partner.microsoft.com/dashboard/partnerinsights/analytics/overview](https://partner.microsoft.com/dashboard/partnerinsights/analytics/overview)). Для просмотра отчета необходимо войти с учетными данными Центра партнеров. Если возникли проблемы с отчетом или входом, создайте [запрос в службу поддержки](#get-support).
+В настоящее время отчеты об использовании Azure, которые отправляются с помощью атрибутов использования клиентов, недоступны для партнеров независимых поставщиков программного обеспечения. Добавление отчетов в программу коммерческого рынка в центре партнеров для покрытия атрибутов использования клиентов нацелена на вторую половину 2021.
 
 ## <a name="notify-your-customers"></a>Информирование клиентов
 

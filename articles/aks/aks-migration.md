@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 9e73ca9e485e6926c30a73ba56b24bcd4dc9a836
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 5881d03603002cc8d5bef1680083f6b4145bc77f
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929741"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526693"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Миграция в службу Kubernetes Azure (AKS)
 
@@ -21,7 +21,7 @@ ms.locfileid: "96929741"
 * Миграция кластера AKS, поддерживаемого группами [доступности](../virtual-machines/windows/tutorial-availability-sets.md) , в [масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/overview.md)
 * Миграция кластера AKS для использования [балансировщика нагрузки SKU](./load-balancer-standard.md) уровня "Стандартный"
 * Миграция из [службы контейнеров Azure (ACS) — прекращение 31 января 2020 г](https://azure.microsoft.com/updates/azure-container-service-will-retire-on-january-31-2020/) . до AKS
-* Миграция с [AKS Engine](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview?view=azs-1908) на AKS
+* Миграция с [AKS Engine](/azure-stack/user/azure-stack-kubernetes-aks-engine-overview) на AKS
 * Миграция с кластеров Kubernetes, отличных от Azure, в AKS
 * Перемещение существующих ресурсов в другой регион
 

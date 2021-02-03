@@ -1,14 +1,14 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
-ms.date: 01/08/2021
+ms.date: 02/03/2021
 ms.topic: conceptual
-ms.openlocfilehash: 86d524665b70725108324b1d88521a4c3cb8ff05
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 5f12ea90a4398b63eaa19a1fc5a375c15bdfa8c5
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033971"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526370"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -116,9 +116,9 @@ URL-адреса:
 |`agentserviceapi.azure-automation.net`|Гостевая конфигурация|
 |`*-agentservice-prod-1.azure-automation.net`|Гостевая конфигурация|
 
-Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Дополнительные сведения см. в разделе [Теги служб](../../virtual-network/network-security-groups-overview.md#service-tags).
+Список IP-адресов для каждого тега или региона службы см. в файле JSON [Azure IP Ranges and Service Tags – Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) (Диапазоны IP-адресов и теги служб Azure — общедоступное облако). Корпорация Майкрософт публикует еженедельные обновления, содержащие каждую службу Azure и диапазоны IP-адресов, которые она использует. Эта информация в JSON-файле является текущим списком точек во времени для диапазонов IP-адресов, соответствующих каждому тегу службы. IP-адреса могут быть изменены. Если для настройки брандмауэра требуются диапазоны IP-адресов, то для предоставления доступа ко всем службам Azure следует использовать тег службы **AzureCloud**. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте такие же разрешения, как для интернет-трафика.
 
-URL-адреса в предыдущей таблице необходимы в дополнение к сведениям о диапазоне IP-адресов тега службы, так как у большинства служб в настоящее время нет регистрации тега службы. В связи с этим IP-адреса могут изменяться. Если для настройки брандмауэра требуются диапазоны IP-адресов, то для предоставления доступа ко всем службам Azure следует использовать тег службы **AzureCloud**. Не отключайте мониторинг безопасности или проверку URL-адресов, но предоставьте такие же разрешения, как для интернет-трафика.
+Дополнительные сведения см. в [обзоре тегов служб](../../virtual-network/service-tags-overview.md).
 
 ### <a name="register-azure-resource-providers"></a>Регистрация поставщиков ресурсов Azure
 
@@ -268,7 +268,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

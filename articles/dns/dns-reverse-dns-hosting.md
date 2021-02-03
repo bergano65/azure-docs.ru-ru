@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 6a0aebc727233cdd838f3e1bf8eeb5cd247b9836
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0c85049d6c8921432a753bf08989cab473b7c734
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014029"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525133"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Размещение зон обратного просмотра DNS в Azure DNS
 
@@ -44,7 +44,7 @@ ms.locfileid: "96014029"
 >
 > Например, для диапазона IP-адресов 192.0.2.128/26 в качестве имени зоны нужно использовать `128-26.2.0.192.in-addr.arpa`, а не `128/26.2.0.192.in-addr.arpa`.
 >
-> Несмотря на то что в стандартах DNS поддерживаются оба метода, Azure DNS не поддерживает зоны с именами, содержащими символ косой черты (`/`).
+> Хотя стандарты DNS поддерживают оба метода, Azure DNS не поддерживает имена зон DNS, которые содержат символ косой черты ( `/` ).
 
 В примере ниже показано, как создать зону обратного просмотра DNS класса C с именем `2.0.192.in-addr.arpa` в Azure DNS при помощи портала Azure:
 

@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, mathoma
 ms.date: 08/25/2019
-ms.openlocfilehash: 31be497d017cb60de6f46d7657889c9c1fabef4a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: d3414cb31192211c1663a84e1541f56b63674660
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788355"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525404"
 ---
 # <a name="restore-a-database-in-azure-sql-managed-instance-to-a-previous-point-in-time"></a>Восстановление базы данных в Azure SQL Управляемый экземпляр до предыдущей точки во времени
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -58,12 +58,12 @@ ms.locfileid: "92788355"
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
 2. Перейдите к Управляемый экземпляр SQL и выберите базу данных, которую требуется восстановить.
-3. На странице базы данных выберите **Восстановить** :
+3. На странице базы данных выберите **Восстановить**:
 
     ![Восстановление базы данных на портале Azure](./media/point-in-time-restore/restore-database-to-mi.png)
 
 4. На странице **Восстановление** выберите дату и время для восстановления базы данных.
-5. Чтобы восстановить базу данных, нажмите **Подтвердить** . Это действие запускает процесс восстановления, который создает новую базу данных и заполняет ее данными из исходной базы данных на указанный момент времени. Дополнительные сведения о процессе восстановления см. в статье [Время восстановления](../database/recovery-using-backups.md#recovery-time).
+5. Чтобы восстановить базу данных, нажмите **Подтвердить**. Это действие запускает процесс восстановления, который создает новую базу данных и заполняет ее данными из исходной базы данных на указанный момент времени. Дополнительные сведения о процессе восстановления см. в статье [Время восстановления](../database/recovery-using-backups.md#recovery-time).
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -139,7 +139,7 @@ az sql midb restore -g mygroupname --mi myinstancename -n mymanageddbname |
 ### <a name="portal"></a>Портал 
 
 
-Чтобы восстановить управляемую базу данных с помощью портал Azure, откройте страницу Обзор Управляемый экземпляр SQL и выберите **Удаленные базы данных** . Выберите удаленную базу данных, которую требуется восстановить, и введите имя новой базы данных, которая будет создана из данных, восстановленных из резервной копии.
+Чтобы восстановить управляемую базу данных с помощью портал Azure, откройте страницу Обзор Управляемый экземпляр SQL и выберите **Удаленные базы данных**. Выберите удаленную базу данных, которую требуется восстановить, и введите имя новой базы данных, которая будет создана из данных, восстановленных из резервной копии.
 
   ![Снимок экрана: восстановление удаленной базы данных экземпляра SQL Azure](./media/point-in-time-restore/restore-deleted-sql-managed-instance-annotated.png)
 
@@ -162,7 +162,7 @@ $targetDatabaseName = "<target database name>"
 $deletedDatabase = Get-AzSqlDeletedInstanceDatabaseBackup -ResourceGroupName $resourceGroupName `
 -InstanceName $managedInstanceName -DatabaseName $deletedDatabaseName
 
-Restore-AzSqlinstanceDatabase -Name $deletedDatabase.Name `
+Restore-AzSqlinstanceDatabase -FromPointInTimeBackup -Name $deletedDatabase.Name `
    -InstanceName $deletedDatabase.ManagedInstanceName `
    -ResourceGroupName $deletedDatabase.ResourceGroupName `
    -DeletionDate $deletedDatabase.DeletionDate `
@@ -176,7 +176,7 @@ Restore-AzSqlinstanceDatabase -Name $deletedDatabase.Name `
 $targetResourceGroupName = "<Resource group of target SQL Managed Instance>"
 $targetInstanceName = "<Target SQL Managed Instance name>"
 
-Restore-AzSqlinstanceDatabase -Name $deletedDatabase.Name `
+Restore-AzSqlinstanceDatabase -FromPointInTimeBackup -Name $deletedDatabase.Name `
    -InstanceName $deletedDatabase.ManagedInstanceName `
    -ResourceGroupName $deletedDatabase.ResourceGroupName `
    -DeletionDate $deletedDatabase.DeletionDate `
@@ -211,7 +211,7 @@ DROP DATABASE WorldWideImporters;
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
-В портал Azure выберите базу данных из Управляемый экземпляр SQL и нажмите кнопку **Удалить** .
+В портал Azure выберите базу данных из Управляемый экземпляр SQL и нажмите кнопку **Удалить**.
 
    ![Удаление базы данных на портале Azure](./media/point-in-time-restore/delete-database-from-mi.png)
 

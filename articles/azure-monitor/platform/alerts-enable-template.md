@@ -6,17 +6,17 @@ ms.author: robb
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.subservice: alerts
-ms.openlocfilehash: 4bb44b7133e5644991d7413f4f824a8b55ffdd75
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: f7822d11903d37b11f1bd5d80f4569d85c7cb323
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108377"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526574"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 
 > [!WARNING]
-> В этой статье объясняется, как создавать классические оповещения метрик прежней версии. Azure Monitor теперь поддерживает новые [оповещения метрик практически в реальном времени и новые возможности оповещений](./alerts-overview.md). Классические оповещения удаляются, но по-прежнему используются для [ресурсов, которые](./monitoring-classic-retirement.md)пока не поддерживают новые оповещения.
+> В этой статье объясняется, как создавать классические оповещения метрик прежней версии. Azure Monitor теперь поддерживает новые [оповещения метрик практически в реальном времени и новые возможности оповещений](./alerts-overview.md). Классические оповещения отключаются для пользователей общедоступного облака, но по-прежнему [используются для ресурсов](./monitoring-classic-retirement.md) , которые еще не поддерживают новые оповещения.
 >
 
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) , чтобы настроить классические оповещения метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.

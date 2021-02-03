@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 12/16/2020
 ms.author: rolyon
-ms.openlocfilehash: 00fd00112dad9efc31cea83f69bb458a8e1ca935
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 1444ee3643222ceebc67298bdb580955b1432104
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617380"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526421"
 ---
 # <a name="best-practices-for-azure-rbac"></a>Рекомендации по использованию Azure RBAC
 
@@ -42,6 +42,10 @@ ms.locfileid: "97617380"
 
 Дополнительные сведения см. в статье [Что такое Azure AD Privileged Identity Management?](../active-directory/privileged-identity-management/pim-configure.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="assign-roles-to-groups-not-users"></a>Назначение ролей группам, а не пользователям
+
+Чтобы сделать назначения ролей более управляемыми, не назначайте роли непосредственно пользователям. Вместо этого назначьте роли группам. Назначение ролей группам, а не пользователям, также помогает сократить количество назначений ролей, которое имеет [ограничение в 2 000 назначений ролей на подписку](troubleshooting.md#azure-role-assignments-limit). 
+
+## <a name="next-steps"></a>Следующие шаги
 
 - [Устранение неполадок в Azure RBAC](troubleshooting.md)

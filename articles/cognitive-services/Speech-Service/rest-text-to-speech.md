@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/03/2021
+ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 225fc83133aba0a7d669f36dc9c8e7cd20c8e42e
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: b4a4fa8a207320a5867b6cdf1dc347bbb2f453af
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507525"
+ms.locfileid: "99525744"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API преобразования текста в речь.
 
@@ -45,7 +45,7 @@ REST API преобразования текста в речь поддержи�
 
 ### <a name="regions-and-endpoints"></a>Регионы и конечные точки
 
-| Регион | Конечная точка |
+| Region | Конечная точка |
 |--------|----------|
 | Восточная Австралия | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Южная Бразилия | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -60,9 +60,11 @@ REST API преобразования текста в речь поддержи�
 | Республика Корея, центральный регион | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Центрально-северная часть США | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Северная Европа | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Северная часть ЮАР; | `https://southafricanorth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Центрально-южная часть США | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Юго-Восточная Азия | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | южная часть Соединенного Королевства | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| центрально-западная часть США | `https://westcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Западная Европа | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | западная часть США | `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | западная часть США 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -211,8 +213,7 @@ Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY
 
 | Header | Описание | Обязательный или необязательный |
 |--------|-------------|---------------------|
-| `Ocp-Apim-Subscription-Key` | Ключ подписки службы "Речь". | Обязательный, если не предоставлен заголовок `Authorization`. |
-| `Authorization` | Маркеру авторизации предшествует слово `Bearer`. Дополнительные сведения см. в разделе [Authenticate to the Speech API](#authentication) (Аутентификация в API речи). | Обязательный, если не предоставлен заголовок `Ocp-Apim-Subscription-Key`. |
+| `Authorization` | Маркеру авторизации предшествует слово `Bearer`. Дополнительные сведения см. в разделе [Authenticate to the Speech API](#authentication) (Аутентификация в API речи). | Обязательно |
 | `Content-Type` | Указывает тип контента для предоставленного текста. Допустимое значение: `application/ssml+xml`. | Обязательно |
 | `X-Microsoft-OutputFormat` | Указывает формат аудиосигнала. Полный список допустимых значений см. в разделе [Аудиосигналы](#audio-outputs). | Обязательно |
 | `User-Agent` | Имя приложения. Указанное значение должно содержать менее 255 символов. | Обязательно |
@@ -275,8 +276,8 @@ Authorization: Bearer [Base64 access_token]
 
 Если состояние HTTP — `200 OK`, текст ответа содержит звуковой файл в затребованном формате. Этот файл можно воспроизводить при передаче, сохранении в буфер или сохранении в файл.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание бесплатной учетной записи Azure.](https://azure.microsoft.com/free/cognitive-services/)
-- [Асинхронное синтез для больших аудио-форм](./long-audio-api.md)
+- [Асинхронное синтез для больших аудио-форм](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
 - [Начало работы с набором средств "Пользовательский голос"](how-to-custom-voice.md)

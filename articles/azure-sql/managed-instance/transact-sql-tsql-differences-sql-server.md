@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 0a462c7d713ea9285096db48b4a3bb5c5b0d9874
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 66198291420d48e04df0821d8d110812d6aa01d7
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737393"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525811"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>Отличия T-SQL от SQL Server & SQL Azure Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -52,7 +52,7 @@ SQL Управляемый экземпляр обеспечивает высо�
 - [DROP AVAILABILITY GROUP](/sql/t-sql/statements/drop-availability-group-transact-sql)
 - Предложение [Set HADR](/sql/t-sql/statements/alter-database-transact-sql-set-hadr) инструкции [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql)
 
-### <a name="backup"></a>Резервное копирование
+### <a name="backup"></a>Backup
 
 SQL Управляемый экземпляр имеет автоматическое резервное копирование, поэтому пользователи могут создавать полные `COPY_ONLY` резервные копии баз данных. Разностные резервные копии, журналы и моментальные снимки файлов не поддерживаются.
 
@@ -320,7 +320,7 @@ SQL Управляемый экземпляр не удается получит
 
 Следующие типы таблиц не поддерживаются:
 
-- [ПОТОКА](/sql/relational-databases/blob/filestream-sql-server)
+- [FILESTREAM](/sql/relational-databases/blob/filestream-sql-server)
 - [ПРОВЕРОЧ](/sql/relational-databases/blob/filetables-sql-server)
 - [Внешняя таблица](/sql/t-sql/statements/create-external-table-transact-sql) (polybase)
 - [MEMORY_OPTIMIZED](/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables) (не поддерживается только на уровне общего назначения)
@@ -487,6 +487,7 @@ SQL Управляемый экземпляр не может получить �
   - `remote access`
   - `remote data archive`
   - `remote proc trans`
+  - `scan for startup procs`
 - `sp_execute_external_scripts` не поддерживается. См. раздел [Примеры](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql#examples).
 - `xp_cmdshell` не поддерживается. См. раздел [xp_cmdshell (Transact-SQL)](/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
 - `Extended stored procedures` не поддерживаются, в том числе `sp_addextendedproc` и `sp_dropextendedproc` . См. раздел [Расширенные хранимые процедуры](/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
