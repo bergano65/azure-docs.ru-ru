@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 3470e07c1b5673efa6cd015e43e077828da1573e
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: be807c7654123962f93820d9a3d54f3c7c070d97
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703671"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526964"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Установка и инициализация Azure IoT Edge для Linux на устройстве Windows (Предварительная версия)
 
@@ -26,9 +26,9 @@ Azure IoT Edge для Linux в Windows позволяет использоват
 В этой статье перечислены действия по настройке IoT Edge на устройстве Windows. При выполнении этих действий выполняется развертывание виртуальной машины Linux, которая содержит среду выполнения IoT Edge, для запуска на устройстве Windows, а затем подготавливает устройство с удостоверением устройства центра Интернета вещей.
 
 >[!NOTE]
->IoT Edge для Linux в Windows находится в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>IoT Edge для Linux в Windows предоставляется в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure с действительной подпиской. Если у вас еще нет [подписки Azure](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начать работу.
 
@@ -62,11 +62,11 @@ Azure IoT Edge для Linux в Windows позволяет использоват
 
    1. В меню **Параметры** в разделе **шлюз** выберите **расширения**.
 
-   1. Перейдите на вкладку **веб-каналы** и нажмите кнопку **Добавить**.
+   1. Перейдите на вкладку **Веб-каналы** и выберите **Добавить**.
 
-   1. Введите https://aka.ms/wac-insiders-feed в текстовое поле и нажмите кнопку **Добавить**.
+   1. Введите https://aka.ms/wac-insiders-feed в текстовое поле и выберите **Добавить**.
 
-   1. После добавления веб-канала перейдите на вкладку **Доступные расширения** . Обновление списка расширений может занять некоторое время.
+   1. После добавления веб-канала перейдите на вкладку **Доступные расширения**. Обновление списка расширений может занять некоторое время.
 
    1. На вкладке **Доступные расширения** найдите **Azure IOT Edge** в списке расширений. Выберите его и выберите запрос **установки** над списком расширений.
 
@@ -296,7 +296,7 @@ Azure IoT Edge для Linux в Windows поддерживает следующи
 1. Скопируйте приведенную ниже команду в текстовый редактор. Замените текст заполнителя информацией как подробный.
 
    ```azurepowershell-interactive
-   Provision-EflowVm -provisioningType x509 -scopeId <ID_SCOPE_HERE> -registrationId <REGISTRATION_ID_HERE> -identityCertLocWin <ABSOLUTE_CERT_SOURCE_PATH_ON_WINDOWS_MACHINE> -identityPkLocWin <ABSOLUTE_PRIVATE_KEY_SOURCE_PATH_ON_WINDOWS_MACHINE> -identityCertLocWin <ABSOLUTE_CERT_DEST_PATH_ON_LINUX_MACHINE -identityPkLocVm <ABSOLUTE_PRIVATE_KEY_DEST_PATH_ON_LINUX_MACHINE>
+   Provision-EflowVm -provisioningType x509 -scopeId <ID_SCOPE_HERE> -registrationId <REGISTRATION_ID_HERE> -identityCertLocWin <ABSOLUTE_CERT_SOURCE_PATH_ON_WINDOWS_MACHINE> -identityPkLocWin <ABSOLUTE_PRIVATE_KEY_SOURCE_PATH_ON_WINDOWS_MACHINE> -identityCertLocVm <ABSOLUTE_CERT_DEST_PATH_ON_LINUX_MACHINE -identityPkLocVm <ABSOLUTE_PRIVATE_KEY_DEST_PATH_ON_LINUX_MACHINE>
    ```
 
 1. В [портал Azure](https://ms.portal.azure.com/)перейдите к экземпляру DP.

@@ -6,16 +6,16 @@ ms.date: 07/10/2019
 ms.author: yalavi
 author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 6509425f11b09a2fa5229f9dd68a508241391925
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: e57b3dd31455db245103469874c517fe54479110
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91875926"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526913"
 ---
 # <a name="understand-migration-options-to-newer-alerts"></a>Общие сведения о вариантах миграции для новых оповещений
 
-Классические оповещения удаляются, но по-прежнему используются для [ресурсов, которые](./monitoring-classic-retirement.md)пока не поддерживают новые оповещения. Вскоре будет выводится новая дата для миграции оставшихся предупреждений, [облака Azure для государственных организаций](../../azure-government/documentation-government-welcome.md)и [Azure Китая (21vianet](https://docs.azure.cn/)).
+Классические оповещения отключаются для пользователей общедоступного облака, но по-прежнему [используются для ресурсов](./monitoring-classic-retirement.md) , которые еще не поддерживают новые оповещения. Вскоре будет выводится новая дата для миграции оставшихся предупреждений, [облака Azure для государственных организаций](../../azure-government/documentation-government-welcome.md)и [Azure Китая (21vianet](https://docs.azure.cn/)).
 
 В этой статье объясняется, как работает средство миграции вручную и Добровольная миграция, которые будут использоваться для переноса оставшихся правил генерации оповещений. Кроме того, здесь описываются способы устранения некоторых распространенных проблем.
 
@@ -150,7 +150,7 @@ ms.locfileid: "91875926"
 | SASSuccess | Метрика транзакций с измерениями "ResponseType" = "Success" и "Authentication" = "SAS" | |
 | ServerOtherError | Метрика транзакций с измерениями "ResponseType" = "Серверосереррор" | |
 | ServerTimeOutError | Метрика транзакций с измерениями "ResponseType" = "ServerTimeOutError"  | |
-| Успех | Метрика транзакций с измерениями "ResponseType" = "Success" | |
+| Успешное завершение | Метрика транзакций с измерениями "ResponseType" = "Success" | |
 | TotalBillableRequests| Transactions | |
 | TotalEgress | Исходящие | |
 | TotalIngress | Входящий трафик | |
@@ -261,7 +261,7 @@ ms.locfileid: "91875926"
 - Настройте исключение политики Azure (Предварительная версия) для подписок, групп ресурсов или отдельных ресурсов для назначения политики. Дополнительные [сведения о структуре исключения в политике Azure](../../governance/policy/concepts/exemption-structure.md).
 - Удаление или изменение влияния на "Disabled", "Audit", "Append" или "Modify" (например, может решить проблемы, связанные с отсутствующими тегами). Дополнительные [сведения об управлении эффектами политики](../../governance/policy/concepts/definition-structure.md#policy-rule).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
-- [Подготовка к миграции](alerts-prepare-migration.md)
+- [Подготовка к переносу](alerts-prepare-migration.md)

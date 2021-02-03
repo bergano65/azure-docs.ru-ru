@@ -1,0 +1,130 @@
+---
+title: Настройка разрешений для восстановления учетной записи Azure Cosmos DB.
+description: Узнайте, как изолировать и ограничить разрешения на восстановление для учетной записи непрерывного резервного копирования определенной роли или субъекту. В нем показано, как назначить встроенную роль с помощью портал Azure, интерфейса командной строки или определить пользовательскую роль.
+author: kanshiG
+ms.service: cosmos-db
+ms.topic: how-to
+ms.date: 02/01/2021
+ms.author: govindk
+ms.reviewer: sngun
+ms.openlocfilehash: 3614a85a6df2e793a73a2609d6f5762e4dc873fb
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99527864"
+---
+# <a name="manage-permissions-to-restore-an-azure-cosmos-db-account"></a>Управление разрешениями для восстановления учетной записи Azure Cosmos DB
+[!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
+
+Azure Cosmos DB позволяет изолировать и ограничить разрешения на восстановление для учетной записи непрерывного резервного копирования определенной ролью или участником. Владелец учетной записи может активировать восстановление и назначить роль другим участникам для выполнения операции восстановления. Эти разрешения могут быть применены к области действия подписки или более детально в области исходной учетной записи, как показано на следующем рисунке:
+
+:::image type="content" source="./media/continuous-backup-restore-permissions/restore-roles-permissions.png" alt-text="Список ролей, необходимых для выполнения операции восстановления." lightbox="./media/continuous-backup-restore-permissions/restore-roles-permissions.png" border="false":::
+
+Область — это набор ресурсов с доступом. Дополнительные сведения об областях см. в документации по [Azure RBAC](../role-based-access-control/scope-overview.md) . В Azure Cosmos DB применимые области — это исходная подписка и учетная запись базы данных для большинства вариантов использования. Участник, выполняющий действия по восстановлению, должен иметь разрешения на запись в целевую группу ресурсов.
+
+## <a name="assign-roles-for-restore-using-the-azure-portal"></a>Назначение ролей для восстановления с помощью портал Azure
+
+Для выполнения восстановления пользователю или участнику требуется разрешение на восстановление (это разрешение Restore/Action) и разрешение на предоставление новой учетной записи (разрешение на запись).  Чтобы предоставить эти разрешения, владелец может назначить участнику встроенные роли "Космосрестореоператор" и "оператор Cosmos DB".
+
+1. Войдите на [портал Azure](https://portal.azure.com/).
+
+1. Перейдите к своей подписке и перейдите на вкладку **Управление доступом (IAM)** и выберите **Добавить**  >  **Добавление назначения роли** .
+
+1. В области **Добавление назначения ролей** в поле **роль** выберите роль **космосрестореоператор** . Выберите **пользователь, группа или субъект-служба** для поля **назначить доступ к** и найдите имя пользователя или идентификатор электронной почты, как показано на следующем рисунке:
+
+   :::image type="content" source="./media/continuous-backup-restore-permissions/assign-restore-operator-roles.png" alt-text="Назначение ролей операторов Космосрестореоператор и Cosmos DB." border="true":::
+
+1. Выберите **сохранить** , чтобы предоставить разрешение Restore/Action.
+
+1. Повторите шаг 3 с ролью **оператора Cosmos DB** , чтобы предоставить разрешение на запись. При назначении этой роли из портал Azure она предоставляет разрешение на восстановление всей подписки.
+
+## <a name="permission-scopes"></a>Области разрешений
+
+|Область  |Пример  |
+|---------|---------|
+|Подписка | /subscriptions/00000000-0000-0000-0000-000000000000 |
+|Группа ресурсов | /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-cosmosdb-rg |
+|Ресурс учетной записи CosmosDB restorable | /Subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.DocУментдб/Locations/Западная часть США/Ресторабледатабасеаккаунтс/23e99a35-CD36-4df4-9614-f767a03b9995|
+
+Ресурс учетной записи restorable можно извлечь из выходных данных `az cosmosdb restorable-database-account list --name <accountname>` команды в CLI или `Get-AzCosmosDBRestorableDatabaseAccount -DatabaseAccountName <accountname>` командлете в PowerShell. Атрибут Name в выходных данных представляет "instanceID" учетной записи restorable. Дополнительные сведения см. в статье [PowerShell](continuous-backup-restore-powershell.md) или [CLI](continuous-backup-restore-command-line.md) .
+
+## <a name="permissions"></a>Разрешения
+
+Для выполнения различных действий, относящихся к восстановлению учетных записей режима непрерывной архивации, требуются следующие разрешения.
+
+|Разрешение  |Влияние  |Минимальная область  |Максимальная область  |
+|---------|---------|---------|---------|
+|Microsoft. Resources/deployments/проверка/действие, Microsoft. Resources/deployments/Write | Эти разрешения необходимы для развертывания шаблона ARM для создания восстановленной учетной записи. Чтобы задать эту роль, см. пример разрешения [рестораблеактион]() ниже. | Неприменимо | Неприменимо  |
+|Microsoft.DocumentDB/databaseAccounts/write | Это разрешение требуется для восстановления учетной записи в группе ресурсов. | Группа ресурсов, в которой создана восстановленная учетная запись. | Подписка, в которой создана восстановленная учетная запись |
+|Microsoft.DocУментдб/Locations/Ресторабледатабасеаккаунтс/Restore/Action |Это разрешение необходимо в области учетной записи базы данных-источника restorable, чтобы разрешить выполнение действий по восстановлению.  | Ресурс "Ресторабледатабасеаккаунт", принадлежащий к восстанавливаемой исходной учетной записи. Это значение также задается свойством "ID" ресурса учетной записи базы данных restorable. Пример учетной записи restorable: `/subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/regionName/restorableDatabaseAccounts/<guid-instanceid>` | Подписка, содержащая учетную запись базы данных restorable. Невозможно выбрать группу ресурсов в качестве области.  |
+|Microsoft.DocУментдб/Locations/Ресторабледатабасеаккаунтс/Read |Это разрешение необходимо для области учетной записи базы данных-источника restorable, чтобы получить список учетных записей базы данных, которые можно восстановить.  | Ресурс "Ресторабледатабасеаккаунт", принадлежащий к восстанавливаемой исходной учетной записи. Это значение также задается свойством "ID" ресурса учетной записи базы данных restorable. Пример учетной записи restorable: `/subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/regionName/restorableDatabaseAccounts/<guid-instanceid>`| Подписка, содержащая учетную запись базы данных restorable. Невозможно выбрать группу ресурсов в качестве области.  |
+|Microsoft.DocУментдб/Locations/Ресторабледатабасеаккаунтс/*/Реад | Это разрешение необходимо для области учетной записи источника restorable, чтобы разрешить чтение ресурсов restorable, таких как список баз данных и контейнеров для учетной записи restorable.  | Ресурс "Ресторабледатабасеаккаунт", принадлежащий к восстанавливаемой исходной учетной записи. Это значение также задается свойством "ID" ресурса учетной записи базы данных restorable. Пример учетной записи restorable: `/subscriptions/subscriptionId/providers/Microsoft.DocumentDB/locations/regionName/restorableDatabaseAccounts/<guid-instanceid>`| Подписка, содержащая учетную запись базы данных restorable. Невозможно выбрать группу ресурсов в качестве области. |
+
+## <a name="azure-cli-role-assignment-scenarios-to-restore-at-different-scopes"></a>Azure CLI сценариев назначения ролей для восстановления в разных областях
+
+Роли с разрешением могут быть назначены разным областям, чтобы обеспечить детальный контроль над тем, кто может выполнять операции восстановления в рамках подписки или указанной учетной записи.
+
+### <a name="assign-capability-to-restore-from-any-restorable-account-in-a-subscription"></a>Назначение возможности восстановления из любой учетной записи restorable в подписке
+
+Назначение `CosmosRestoreOperator` встроенной роли на уровне подписки
+
+```azurecli-interactive
+az role assignment create --role "CosmosRestoreOperator" --assignee <email> –scope /subscriptions/<subscriptionId>
+```
+
+### <a name="assign-capability-to-restore-from-a-specific-account"></a>Назначение возможности восстановления из определенной учетной записи
+
+* Назначение действия записи пользователя для определенной группы ресурсов. Это действие необходимо для создания новой учетной записи в группе ресурсов.
+
+* Назначьте встроенную роль "Космосрестореоператор" определенной учетной записи базы данных restorable, которую необходимо восстановить. В следующей команде область для "Ресторабледатабасеаккаунт" извлекается из свойства "ID" в выходных данных `az cosmosdb restorable-database-account` (при использовании интерфейса командной строки) или  `Get-AzCosmosDBRestorableDatabaseAccount` (при использовании PowerShell).
+
+  ```azurecli-interactive
+   az role assignment create --role "CosmosRestoreOperator" --assignee <email> –scope <RestorableDatabaseAccount>
+  ```
+
+### <a name="assign-capability-to-restore-from-any-source-account-in-a-resource-group"></a>Назначьте возможность восстановления из любой исходной учетной записи в группе ресурсов.
+Эта операция в настоящее время не поддерживается.
+
+## <a name="custom-role-creation-for-restore-action-with-cli"></a>Создание настраиваемой роли для действия восстановления с помощью интерфейса командной строки
+
+Владелец подписки может предоставить разрешение на восстановление в любое другое удостоверение Azure AD. Разрешение на восстановление основано на действии: "Microsoft.DocУментдб/Locations/Ресторабледатабасеаккаунтс/Restore/Action", и оно должно быть включено в разрешение на восстановление. Существует встроенная роль с именем "Космосрестореоператор", которая включает эту роль. Можно либо назначить разрешение с помощью этой встроенной роли, либо создать настраиваемую роль.
+
+Рестораблеактион ниже представляет пользовательскую роль. Эту роль необходимо создать явным образом. Следующий шаблон JSON создает пользовательскую роль "Рестораблеактион" с разрешением на восстановление:
+
+```json
+{
+  "assignableScopes": [
+    "/subscriptions/23587e98-b6ac-4328-a753-03bcd3c8e744"
+  ],
+  "description": "Can do a restore request for any Cosmos DB database account with continuous backup",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Resources/deployments/validate/action",
+        "Microsoft.DocumentDB/databaseAccounts/write",
+        "Microsoft.Resources/deployments/write",  
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/restore/action",
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read",
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read"
+        ],
+        "dataActions": [],
+        "notActions": [],
+        "notDataActions": []
+      }
+    ],
+    "Name": "RestorableAction",
+    "roleType": "CustomRole"
+}
+```
+
+Затем используйте следующую команду развертывания шаблона, чтобы создать роль с разрешением на восстановление с помощью шаблона ARM:
+
+```azurecli-interactive
+az role definition create --role-definition <JSON_Role_Definition_Path>
+```
+
+## <a name="next-steps"></a>Следующие шаги
+
+* Настройка непрерывного резервного копирования и управление им с помощью [портал Azure](continuous-backup-restore-portal.md), [PowerShell](continuous-backup-restore-powershell.md), [интерфейса командной строки](continuous-backup-restore-command-line.md)или [Azure Resource Manager](continuous-backup-restore-template.md).
+* [Модель ресурсов режима непрерывного резервного копирования](continuous-backup-restore-resource-model.md)

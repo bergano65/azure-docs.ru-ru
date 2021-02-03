@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: mjbrown
-ms.openlocfilehash: 2a5ec03bcd7d5002f85d32ed63614d277e95cfa0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: db6721754802a3eeda387339498dadb9d25b3685
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943753"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526947"
 ---
 # <a name="azure-role-based-access-control-in-azure-cosmos-db"></a>Управление доступом на основе ролей в Azure в Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,7 +26,8 @@ Azure Cosmos DB предоставляет встроенные возможно
 |---------|---------|
 |[Участник учетной записи DocumentDB](../role-based-access-control/built-in-roles.md#documentdb-account-contributor)|Может управлять учетными записями Azure Cosmos DB|
 |[Средство чтения учетных записей Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role)|Позволяет считывать данные учетных записей Azure Cosmos DB.|
-|[Оператор резервного копирования Cosmos](../role-based-access-control/built-in-roles.md#cosmosbackupoperator)|Может отправлять запрос на восстановление для базы данных Azure Cosmos или контейнера. Не удается получить доступ к данным или использовать обозреватель данных.|
+|[Оператор резервного копирования Cosmos](../role-based-access-control/built-in-roles.md#cosmosbackupoperator)| Может отправить запрос на восстановление портал Azure для периодической резервной копии базы данных или контейнера. Может изменять интервал и срок хранения резервных копий на портал Azure. Не удается получить доступ к данным или использовать обозреватель данных.  |
+| [космосрестореоператор](../role-based-access-control/built-in-roles.md) | Можно выполнить действие восстановления для учетной записи Azure Cosmos DB с режимом непрерывного резервного копирования.|
 |[Оператор Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-operator)|Может подготавливать учетные записи, базы данных и контейнеры Azure Cosmos. Не удается получить доступ к данным или использовать обозреватель данных.|
 
 > [!IMPORTANT]
@@ -36,7 +37,7 @@ Azure Cosmos DB предоставляет встроенные возможно
 
 Панель **управления доступом (IAM)** в портал Azure используется для настройки управления доступом на основе ролей Azure в ресурсах Azure Cosmos. Роли применяются к пользователям, группам, субъектам-службам и управляемым удостоверениям в Active Directory. Для частных пользователей и групп можно использовать встроенные роли или пользовательские роли. На следующем снимке экрана показана интеграция Active Directory (Azure RBAC) с использованием управления доступом (IAM) в портал Azure.
 
-:::image type="content" source="./media/role-based-access-control/database-security-identity-access-management-rbac.png" alt-text="Управление доступом (IAM) на портале Azure: демонстрация безопасности базы данных":::
+:::image type="content" source="./media/role-based-access-control/database-security-identity-access-management-rbac.png" alt-text="Управление доступом (IAM) в портал Azure, демонстрирующий безопасность базы данных.":::
 
 ## <a name="custom-roles"></a>Пользовательские роли
 
@@ -112,7 +113,7 @@ az cosmosdb update  --name [CosmosDBAccountName] --resource-group [ResourceGroup
 Update-AzCosmosDBAccount -ResourceGroupName [ResourceGroupName] -Name [CosmosDBAccountName] -DisableKeyBasedMetadataWriteAccess true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md)
 - [Настраиваемые роли Azure](../role-based-access-control/custom-roles.md)
