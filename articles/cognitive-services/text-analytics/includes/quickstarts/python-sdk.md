@@ -3,20 +3,20 @@ author: aahill
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 12/11/2020
+ms.date: 01/20/2021
 ms.author: aahi
-ms.openlocfilehash: 1f99eb203cf4124f3249ab1b74989708bea93c51
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 715b0d16e33412003820044ffa99fee9e2431a7b
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97820622"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090780"
 ---
 <a name="HOLTop"></a>
 
 # <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
-[Справочная документация по версии 3.1](/python/api/azure-ai-textanalytics/azure.ai.textanalytics?preserve-view=true&view=azure-python-preview) | [Исходный код библиотеки версии 3.1](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics) | [Пакет для разработки (PiPy) версии 3.1](https://pypi.org/project/azure-ai-textanalytics/) | [Образцы кода версии 3.1](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/samples)
+[Справочная документация по версии 3.1](/python/api/azure-ai-textanalytics/azure.ai.textanalytics) | [Исходный код библиотеки версии 3.1](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics) | [Пакет для разработки (PiPy) версии 3.1](https://pypi.org/project/azure-ai-textanalytics/) | [Образцы кода версии 3.1](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/samples)
 
 # <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
@@ -943,8 +943,7 @@ Document ID: 4
 
 # <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
-> [!CAUTION]
-> Чтобы использовать операции анализа, вам нужно использовать ресурс Анализа текста ценовой категории "Стандартный" (S).  
+[!INCLUDE [Analyze operation pricing](../analyze-operation-pricing-caution.md)]
 
 Создайте функцию с именем `analyze_example()`, которая принимает клиент в качестве аргумента, а затем вызывает функцию `begin_analyze()`. В результате будет выполняться длительная операция, опрашиваемая на предмет результатов.
 

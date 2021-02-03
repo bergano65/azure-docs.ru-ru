@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 8ca42367db5607faedb4497f0a0fb0ca160464bc
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: a4d29dfb2a57dde2bb21244b2e5335f1a8ea1fcf
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98698018"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947893"
 ---
 > [!IMPORTANT]
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. См. справочную документацию ниже. 
@@ -134,7 +134,7 @@ npm install @azure/ai-form-recognizer
 
 
 > [!TIP]
-> Вы можете также получить содержимое из локального файла. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest), например о **beginRecognizeContent**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
+> Вы можете также получить содержимое из локального файла. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient), например о **beginRecognizeContent**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
 
 ### <a name="output"></a>Выходные данные
 
@@ -161,7 +161,7 @@ cell [1,5] has text PT
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_receipts)]
 
 > [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
+> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
 
 ### <a name="output"></a>Выходные данные
 
@@ -281,7 +281,7 @@ Document errors: undefined
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_analyze)]
 
 > [!TIP]
-> Вы можете также проанализировать локальные файлы. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest), например о **beginRecognizeCustomForms**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
+> Вы можете также проанализировать локальные файлы. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient), например о **beginRecognizeCustomForms**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
 
 
 ### <a name="output"></a>Выходные данные

@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: c84c45605911b74fd2c03a0987341257cae3623e
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: bf28d0abbd20cb170fa7adb6f13aefba8d2238c1
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97731947"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947942"
 ---
 Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
 
@@ -152,7 +152,7 @@ public static void main(String[] args) {
 * частоту выборки;
 * глубину в битах.
 
-Чтобы изменить звуковой формат, используйте функцию `setSpeechSynthesisOutputFormat()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](/java/api/com.microsoft.cognitiveservices.speech.speechsynthesisoutputformat) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisoutputformat?preserve-view=true&view=azure-dotnet).
+Чтобы изменить звуковой формат, используйте функцию `setSpeechSynthesisOutputFormat()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](/java/api/com.microsoft.cognitiveservices.speech.speechsynthesisoutputformat) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisoutputformat).
 
 Различные типы файлов обеспечивают разные возможности для работы с ними в зависимости от требований. Обратите внимание, что по определению звуковые данные в необработанном формате, таком как `Raw24Khz16BitMonoPcm`, не содержат заголовки. Используйте такие форматы, только если вы уверены, что нижестоящие службы способны декодировать необработанный битовый поток, или если вы планируете создавать заголовки вручную на основе глубины в битах, частоты выборки, количества каналов и т. п.
 

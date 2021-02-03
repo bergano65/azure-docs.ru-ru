@@ -6,29 +6,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 12/11/2020
+ms.date: 01/20/2021
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: 805ee7f5b210a09335b2177b83777c5caa805858
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 6e71d9b4006d0353b094306424ba0fe99c581279
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98147490"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090734"
 ---
 <a name="HOLTop"></a>
 
 # <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
-[Справочная документация по версии 3.1](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet-previews) | [Исходный код библиотеки версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics) | [Пакет для разработки (NuGet) версии 3.1](https://www.nuget.org/packages/Azure.AI.TextAnalytics/5.1.0-beta.3) | [Примеры кода версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
+[Справочная документация по версии 3.1](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet-preview) | [Исходный код библиотеки версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics) | [Пакет для разработки (NuGet) версии 3.1](https://www.nuget.org/packages/Azure.AI.TextAnalytics/5.1.0-beta.3) | [Примеры кода версии 3.1](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
 
 # <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
-[Справочная документация версии 3](/dotnet/api/azure.ai.textanalytics) | [Исходный код библиотеки версии 3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.TextAnalytics_5.0.0/sdk/textanalytics/Azure.AI.TextAnalytics) | [Пакет для разработки (NuGet) версии 3](https://www.nuget.org/packages/Azure.AI.TextAnalytics) | [Образцы кода версии 3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.TextAnalytics_5.0.0/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
+[Справочная документация версии 3](/dotnet/api/azure.ai.textanalytics?preserve-view=true&view=azure-dotnet) | [Исходный код библиотеки версии 3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.TextAnalytics_5.0.0/sdk/textanalytics/Azure.AI.TextAnalytics) | [Пакет для разработки (NuGet) версии 3](https://www.nuget.org/packages/Azure.AI.TextAnalytics) | [Образцы кода версии 3](https://github.com/Azure/azure-sdk-for-net/tree/Azure.AI.TextAnalytics_5.0.0/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
 
 # <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
-[Справочная документация версии 2](/dotnet/api/overview/azure/cognitiveservices/client?view=azure-dotnet) | [Исходный код библиотеки версии 2](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Language.TextAnalytics) | [Пакет для разработки (NuGet) версии 2](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics/) | [Образцы кода версии 2](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
+[Справочная документация версии 2](/dotnet/api/overview/azure/cognitiveservices/client) | [Исходный код библиотеки версии 2](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Language.TextAnalytics) | [Пакет для разработки (NuGet) версии 2](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics/) | [Образцы кода версии 2](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
 
 ---
 
@@ -812,8 +812,7 @@ Key phrases:
 
 # <a name="version-31-preview"></a>[Версия 3.1 (предварительная версия)](#tab/version-3-1)
 
-> [!CAUTION]
-> Чтобы использовать операцию анализа, убедитесь, что ресурс Azure относится к ценовой категории "Стандартный".
+[!INCLUDE [Analyze operation pricing](../analyze-operation-pricing-caution.md)]
 
 Создайте функцию с именем `AnalyzeOperationExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `StartAnalyzeOperationBatch()`. Возвращаемый объект `AnalyzeOperation` будет содержать объект интерфейса `Operation` для `AnalyzeOperationResult`. Так как это длительная операция, для `operation.WaitForCompletionAsync()` нужно использовать `await`, чтобы значение обновилось. По завершении `WaitForCompletionAsync()` коллекция должна быть обновлена в `operation.Value`. При появлении ошибки возникает исключение `RequestFailedException`.
 

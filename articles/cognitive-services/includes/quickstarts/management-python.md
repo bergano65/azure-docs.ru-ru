@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: 074df0e79313a570e83ea72239394c1aa4946fc0
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 521f6c39a10259b09d741a61dcd8e81d8a0c35b2
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97956511"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948476"
 ---
-[Справочная документация](/python/api/azure-mgmt-cognitiveservices/azure.mgmt.cognitiveservices?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-mgmt-cognitiveservices) | [Пакет (PyPi)](https://pypi.org/project/azure-mgmt-cognitiveservices/) | [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-mgmt-cognitiveservices/tests)
+[Справочная документация](/python/api/azure-mgmt-cognitiveservices/azure.mgmt.cognitiveservices) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-mgmt-cognitiveservices) | [Пакет (PyPi)](https://pypi.org/project/azure-mgmt-cognitiveservices/) | [Примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-mgmt-cognitiveservices/tests)
 
 ## <a name="python-prerequisites"></a>Предварительные требования Python
 
@@ -100,7 +100,7 @@ python <your-script-name>.py
 
 ## <a name="see-also"></a>См. также
 
-* [Справочная документация по пакету SDK для управления Azure](/python/api/azure-mgmt-cognitiveservices/azure.mgmt.cognitiveservices?view=azure-python)
+* [Справочная документация по пакету SDK для управления Azure](/python/api/azure-mgmt-cognitiveservices/azure.mgmt.cognitiveservices)
 * [Общие сведения об Azure Cognitive Services](../../what-are-cognitive-services.md)
 * [Проверка подлинности запросов к Azure Cognitive Services](../../authentication.md)
 * [Создание ресурса с помощью портала Azure](../../cognitive-services-apis-create-account.md)

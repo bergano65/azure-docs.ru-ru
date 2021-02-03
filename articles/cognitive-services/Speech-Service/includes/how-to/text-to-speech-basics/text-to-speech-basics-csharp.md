@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c62fd0d946d53244809cca3b77496ffa6f3379d2
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: dca444e4590508f74585f4774c3bbda2ca0835c6
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97731951"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947146"
 ---
 Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
 
@@ -52,19 +52,19 @@ using Microsoft.CognitiveServices.Speech.Audio;
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
+Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
 > [!NOTE]
 > Независимо от того, используете ли вы распознавание речи, синтез речи, перевод или распознавание намерения, вы всегда создаете конфигурацию.
 
-Существует несколько способов инициализации [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet).
+Существует несколько способов инициализации [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig).
 
 * С помощью подписки: передайте ключ и связанный с ним регион.
 * С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-В этом примере создается [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet) с использованием ключа и региона подписки. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free). Для оставшейся части этой статьи также создается стандартный код, который необходимо будет изменить, чтобы внести различные настройки.
+В этом примере создается [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig) с использованием ключа и региона подписки. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free). Для оставшейся части этой статьи также создается стандартный код, который необходимо будет изменить, чтобы внести различные настройки.
 
 ```csharp
 public class Program 
@@ -83,7 +83,7 @@ public class Program
 
 ## <a name="synthesize-speech-to-a-file"></a>Синтезирование речи в файл
 
-Далее необходимо создать объект [`SpeechSynthesizer`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesizer?preserve-view=true&view=azure-dotnet), который выполняет преобразование текста в речь и выводит ее на динамики, в файлы или в другие потоки выходных данных. [`SpeechSynthesizer`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesizer?preserve-view=true&view=azure-dotnet) принимает в качестве параметров объект [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig?preserve-view=true&view=azure-dotnet), созданный на предыдущем шаге, и объект [`AudioConfig`](/dotnet/api/microsoft.cognitiveservices.speech.audio.audioconfig?preserve-view=true&view=azure-dotnet), определяющий, как должны обрабатываться выходные результаты.
+Далее необходимо создать объект [`SpeechSynthesizer`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesizer), который выполняет преобразование текста в речь и выводит ее на динамики, в файлы или в другие потоки выходных данных. [`SpeechSynthesizer`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesizer) принимает в качестве параметров объект [`SpeechConfig`](/dotnet/api/microsoft.cognitiveservices.speech.speechconfig), созданный на предыдущем шаге, и объект [`AudioConfig`](/dotnet/api/microsoft.cognitiveservices.speech.audio.audioconfig), определяющий, как должны обрабатываться выходные результаты.
 
 Сначала создайте `AudioConfig` для автоматической записи выходных данных в файл `.wav` с помощью инструкции `FromWavFileOutput()`, а затем создайте экземпляр с использованием инструкции `using`. Инструкция `using` в этом контексте автоматически удаляет неуправляемые ресурсы и выводит объект из области после его удаления.
 
@@ -135,7 +135,7 @@ static async Task SynthesizeAudioAsync()
 > [!NOTE]
 > Передача значения `null` для `AudioConfig` вместо его пропуска, как это сделано в приведенном выше примере с выводом на динамики, не позволит по умолчанию воспроизводить звук на активном устройстве вывода.
 
-В этом случае результат сохраняется в переменной [`SpeechSynthesisResult`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisresult?preserve-view=true&view=azure-dotnet). Свойство `AudioData` содержит `byte []` выходных данных. Вы можете работать с `byte []` вручную или использовать класс [`AudioDataStream`](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?preserve-view=true&view=azure-dotnet) для управления потоком в памяти. В этом примере используется статическая функция `AudioDataStream.FromResult()` для получения потока из результата.
+В этом случае результат сохраняется в переменной [`SpeechSynthesisResult`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisresult). Свойство `AudioData` содержит `byte []` выходных данных. Вы можете работать с `byte []` вручную или использовать класс [`AudioDataStream`](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream) для управления потоком в памяти. В этом примере используется статическая функция `AudioDataStream.FromResult()` для получения потока из результата.
 
 ```csharp
 static async Task SynthesizeAudioAsync() 
@@ -158,14 +158,14 @@ static async Task SynthesizeAudioAsync()
 * частоту выборки;
 * глубину в битах.
 
-Чтобы изменить звуковой формат, используйте функцию `SetSpeechSynthesisOutputFormat()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisoutputformat?preserve-view=true&view=azure-dotnet) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisoutputformat?preserve-view=true&view=azure-dotnet).
+Чтобы изменить звуковой формат, используйте функцию `SetSpeechSynthesisOutputFormat()` для объекта `SpeechConfig`. Эта функция получает `enum` типа [`SpeechSynthesisOutputFormat`](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisoutputformat) для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](/dotnet/api/microsoft.cognitiveservices.speech.speechsynthesisoutputformat).
 
 Различные типы файлов обеспечивают разные возможности для работы с ними в зависимости от требований. Обратите внимание, что по определению звуковые данные в необработанном формате, таком как `Raw24Khz16BitMonoPcm`, не содержат заголовки. Используйте такие форматы, только если вы уверены, что нижестоящие службы способны декодировать необработанный битовый поток, или если вы планируете создавать заголовки вручную на основе глубины в битах, частоты выборки, количества каналов и т. п.
 
 > [!NOTE]
 > Голоса **en-US-AriaRUS** и **en-US-GuyRUS** созданы из примеров с частотой дискретизации `Riff24Khz16BitMonoPcm`.
 
-В этом примере мы укажем формат RIFF высокой точности воспроизведения `Riff24Khz16BitMonoPcm`, задав `SpeechSynthesisOutputFormat` для объекта `SpeechConfig`. Как и в примере из предыдущего раздела, мы будем использовать [`AudioDataStream`](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?preserve-view=true&view=azure-dotnet) для получения результата в виде потока в памяти, а затем записывать его в файл.
+В этом примере мы укажем формат RIFF высокой точности воспроизведения `Riff24Khz16BitMonoPcm`, задав `SpeechSynthesisOutputFormat` для объекта `SpeechConfig`. Как и в примере из предыдущего раздела, мы будем использовать [`AudioDataStream`](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream) для получения результата в виде потока в памяти, а затем записывать его в файл.
 
 ```csharp
 static async Task SynthesizeAudioAsync() 

@@ -36,7 +36,7 @@
   items:
     - name: Частные облака и кластеры
       href: concepts-private-clouds-clusters.md
-    - name: Сети частного облака и взаимодействие
+    - name: Сети и взаимодействие в частном облаке
       href: concepts-networking.md
     - name: Хранилище в частных облаках
       href: concepts-storage.md

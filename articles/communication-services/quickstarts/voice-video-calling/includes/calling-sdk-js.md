@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: c51316b445471c58ae88237b370f5a25fdedf373
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 2c894ea4bcb9701b8b65bcb9cd0b4b82c1898448
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98605040"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500310"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -469,7 +469,7 @@ const deviceManager = await callClient.getDeviceManager();
 
 ### <a name="enumerate-local-devices"></a>Перечисление локальных устройств
 
-Для доступа к локальным устройствам можно использовать методы перечисления в Device Manager. Перечисление является синхронным действием.
+Для доступа к локальным устройствам можно использовать методы перечисления в диспетчер устройств. Перечисление является синхронным действием.
 
 ```js
 
@@ -510,7 +510,7 @@ await deviceManager.setSpeaker(AudioDeviceInfo);
 Вы можете использовать `DeviceManager` и, `Renderer` чтобы начать отрисовку потоков из локальной камеры. Этот поток не будет отправлен другим участникам; Это локальный канал предварительной версии. Это асинхронное действие.
 
 ```js
-const localVideoDevice = deviceManager().getCameraList()[0];
+const localVideoDevice = deviceManager.getCameraList()[0];
 const localCameraStream = new LocalVideoStream(localVideoDevice);
 const renderer = new Renderer(localCameraStream);
 const view = await renderer.createView();

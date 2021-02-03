@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: a1b621b5d5601e6d8bffef48e23d217e0eee1d6a
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 9df4c62a65fd133c6ea8dc84e33d7c7b02d94cbf
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725825"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99494045"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -28,9 +28,9 @@ ms.locfileid: "98725825"
 
 | Ресурс                                                                           | Требование | Справочник по синтаксису и свойствам                                                         |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|
-| Приложение-функция.                                                                     | Обязательный    | [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)                             |
-| Учетная запись [хранения Azure](../storage/index.yml) ;                                   | Обязательный    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
-| Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательно    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |
+| Приложение-функция.                                                                     | Обязательно    | [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)                             |
+| Учетная запись [хранения Azure](../storage/index.yml) ;                                   | Обязательно    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
+| Компонент [Application Insights](../azure-monitor/app/app-insights-overview.md) | Необязательный    | [Microsoft. Insights/компоненты](/azure/templates/microsoft.insights/components)         |
 | [План размещения](./functions-scale.md)                                             | Необязательно<sup>1</sup>    | [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)                 |
 
 <sup>1</sup> План размещения требуется только в том случае, если вы решили запустить приложение-функцию в [плане Premium](./functions-premium-plan.md) или в [плане службы приложений](../app-service/overview-hosting-plans.md).
@@ -473,7 +473,7 @@ ms.locfileid: "98725825"
 |------------------|-------------------------------------------------------|
 | Python           | `python|3.7`      |
 | JavaScript       | `node|12`          |
-| .NET             | `dotnet|3.0` |
+| .NET             | `dotnet|3.1` |
 
 ```json
 {
@@ -686,7 +686,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile
 
 Чтобы протестировать это развертывание, можно использовать [шаблон, аналогичный этому](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , который создает приложение-функцию в Windows в плане потребления. Замените `<function-app-name>` уникальным именем для приложения-функции.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке и настройке Функций Azure:
 

@@ -103,6 +103,8 @@
       href: How-To/change-default-answer.md
     - name: Конфигурация службы
       href: reference-app-service.md
+    - name: Рекомендации по формату содержимого
+      href: reference-document-format-guidelines.md
     - name: Форматы содержимого и данных
       items:
         - name: Рекомендации по формату содержимого

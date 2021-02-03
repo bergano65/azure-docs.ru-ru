@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: fb9d74da6030c430cce4a2a3c4c5e4299183ca15
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: e578cd08177eb9db03e5e4af4a134473a8484a41
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132311"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948183"
 ---
 > [!IMPORTANT]
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. См. справочную документацию ниже. 
@@ -106,7 +106,7 @@ pip install azure-ai-formrecognizer --pre
 * [анализ документов с помощью пользовательской модели](#analyze-forms-with-a-custom-model);
 * [управление пользовательскими моделями](#manage-your-custom-models).
 
-#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 * [аутентификация клиента](#authenticate-the-client);
 * [анализ макета](#analyze-layout);
@@ -146,7 +146,7 @@ pip install azure-ai-formrecognizer --pre
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_getcontent)]
 
 > [!TIP]
-> Можно также получить содержимое из локальных изображений. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python), например о `begin_recognize_content`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
+> Можно также получить содержимое из локальных изображений. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient), например о `begin_recognize_content`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
 
 ### <a name="output"></a>Выходные данные
 
@@ -178,7 +178,7 @@ Confidence score: 1.0
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_receipts)]
 
 > [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python), например о `begin_recognize_receipts`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
+> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient), например о `begin_recognize_receipts`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
 
 ### <a name="output"></a>Выходные данные
 
@@ -210,14 +210,14 @@ Total: 1203.39 has confidence 0.774
 > [!IMPORTANT]
 > Эта функция недоступна в выбранной версии API.
 
-#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в Великобритании визитные карточки и извлекать из них содержимое стандартных полей. Для распознавания визитных карточек по URL-адресу воспользуйтесь методом `begin_recognize_business_cards_from_url`. 
 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_bc)]
 
 > [!TIP]
-> Кроме того, можно распознавать изображения визитных карточек в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python), например о `begin_recognize_business_cards`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
+> Кроме того, можно распознавать изображения визитных карточек в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient), например о `begin_recognize_business_cards`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
 
 ---
 
@@ -228,14 +228,14 @@ Total: 1203.39 has confidence 0.774
 > [!IMPORTANT]
 > Эта функция недоступна в выбранной версии API.
 
-#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
 В этом разделе объясняется, как с помощью предварительно обученной модели распознавать счета на продажу и извлекать из них содержимое стандартных полей. Для распознавания счетов по URL-адресу воспользуйтесь методом `begin_recognize_invoices_from_url`. 
 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_invoice)]
 
 > [!TIP]
-> Кроме того, можно распознавать изображения счетов в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python), например о `begin_recognize_invoices`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
+> Кроме того, можно распознавать изображения счетов в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient), например о `begin_recognize_invoices`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
 
 ---
 
@@ -345,7 +345,7 @@ Document errors: []
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_analyze)]
 
 > [!TIP]
-> Можно также проанализировать локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python), например о `begin_recognize_custom_forms`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
+> Можно также проанализировать локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient), например о `begin_recognize_custom_forms`. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) для сценариев, включающих использование локальных изображений.
 
 
 ### <a name="output"></a>Выходные данные

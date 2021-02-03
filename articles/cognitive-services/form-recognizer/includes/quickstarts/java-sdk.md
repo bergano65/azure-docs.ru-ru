@@ -10,17 +10,17 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 01ac7c01d449cfe794fcdb6c26a8162d3cffd695
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 3923f3d0a65412c23d5fc32d7a4cea8648686df4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697997"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948478"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
 
-[Справочная документация](/java/api/overview/azure/ai-formrecognizer-readme?view=azure-java-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
+[Справочная документация](/java/api/overview/azure/ai-formrecognizer-readme) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src) | [Пакет (Maven)](https://mvnrepository.com/artifact/com.azure/azure-ai-formrecognizer) | [Примеры](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -209,7 +209,7 @@ mkdir -p src/main/java
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_getcontent_call)]
 
 > [!TIP]
-> Вы можете также получить содержимое из локального файла. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeContent**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Вы можете также получить содержимое из локального файла. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeContent**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов **FormPage**: по одному для каждой страницы обработанного документа. Приведенный ниже код обрабатывает эти объекты в цикле и выводит извлеченные из документа пары ключей и значений, а также табличные данные.
 
@@ -242,7 +242,7 @@ Cell has text ET.
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_call)]
 
 > [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов **RecognizedReceipt**: по одному для каждой страницы обработанного документа. Следующий блок кода обрабатывает квитанции в цикле и выводит их данные в консоль.
 
@@ -285,7 +285,7 @@ Total Price: null, confidence: 0.93
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_call)]
 
 > [!TIP]
-> Кроме того, можно распознавать изображения визитных карточек в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeBusinessCards**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Кроме того, можно распознавать изображения визитных карточек в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeBusinessCards**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждой карточки в документе. В следующем блоке кода обрабатывается визитная карточка с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
 
@@ -309,7 +309,7 @@ Total Price: null, confidence: 0.93
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_invoice_call)]
 
 > [!TIP]
-> Кроме того, можно распознавать счета в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeInvoices**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Кроме того, можно распознавать счета в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeInvoices**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждого счета в документе. В следующем блоке кода обрабатывается визитная карточка с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
 
@@ -406,7 +406,7 @@ The model found field 'field-6' with label: VAT ID
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_analyze_call)]
 
 > [!TIP]
-> Вы можете также проанализировать локальные файлы. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeCustomForms**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Вы можете также проанализировать локальные файлы. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeCustomForms**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждой страницы обработанного документа. Следующий код выводит в консоль результаты анализа. Он отображает каждое из распознанных полей с соответствующим значением и коэффициентом достоверности.
 

@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/15/2020
 ms.author: trbye
 ms.custom: devx-track-js
-ms.openlocfilehash: ae2cd72bfde3eb7fdc6b135cbb22d04535a2f251
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: ba61601ba345d554d4898292cb082f71b829b342
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97731948"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947672"
 ---
 Из этого краткого руководства вы узнаете, как работать с распространенными конструктивными шаблонами для синтеза текста в речь, используя пакет SDK службы "Речь". Вы начнете с основных настроек и синтеза, а затем перейдете к более сложным примерам для разработки пользовательских приложений, в том числе к таким задачам:
 
@@ -68,19 +68,19 @@ const sdk = require("microsoft-cognitiveservices-speech-sdk");
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?preserve-view=true&view=azure-node-latest). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
+Чтобы вызвать службу "Речь" с помощью пакета SDK для службы "Речь", необходимо создать [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig). Этот класс содержит сведения о вашей подписке, такие как ключ и связанный регион, конечная точка, узел или маркер авторизации.
 
 > [!NOTE]
 > Независимо от того, используете ли вы распознавание речи, синтез речи, перевод или распознавание намерения, вы всегда создаете конфигурацию.
 
-Существует несколько способов инициализации [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?preserve-view=true&view=azure-node-latest).
+Существует несколько способов инициализации [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig).
 
 * С помощью подписки: передайте ключ и связанный с ним регион.
 * С помощью конечной точки: передайте конечную точку службы "Речь". Ключ или маркер авторизации являются необязательными.
 * С помощью узла: передайте адрес узла. Ключ или маркер авторизации являются необязательными.
 * С помощью маркера авторизации: передайте маркер авторизации и связанный регион.
 
-В этом примере создается [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?preserve-view=true&view=azure-node-latest) с использованием ключа и региона подписки. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free). Для оставшейся части этой статьи также создается стандартный код, который необходимо будет изменить, чтобы внести различные настройки.
+В этом примере создается [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig) с использованием ключа и региона подписки. Чтобы получить эти учетные данные, выполните инструкции из раздела [Бесплатная пробная подписка на службу "Речь"](../../../overview.md#try-the-speech-service-for-free). Для оставшейся части этой статьи также создается стандартный код, который необходимо будет изменить, чтобы внести различные настройки.
 
 ```javascript
 function synthesizeSpeech() {
@@ -92,7 +92,7 @@ synthesizeSpeech();
 
 ## <a name="synthesize-speech-to-a-file"></a>Синтезирование речи в файл
 
-Далее необходимо создать объект [`SpeechSynthesizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer?preserve-view=true&view=azure-node-latest), который выполняет преобразование текста в речь и выводит ее на динамики, в файлы или в другие потоки выходных данных. В качестве параметров объект [`SpeechSynthesizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer?preserve-view=true&view=azure-node-latest) принимает созданный на предыдущем шаге объект [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?preserve-view=true&view=azure-node-latest) и объект [`AudioConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest), определяющий, как должны обрабатываться выходные результаты.
+Далее необходимо создать объект [`SpeechSynthesizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer), который выполняет преобразование текста в речь и выводит ее на динамики, в файлы или в другие потоки выходных данных. В качестве параметров объект [`SpeechSynthesizer`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer) принимает созданный на предыдущем шаге объект [`SpeechConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig) и объект [`AudioConfig`](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig), определяющий, как должны обрабатываться выходные результаты.
 
 Сначала создайте `AudioConfig` для автоматической записи выходных данных в файл `.wav` с помощью статической функции `fromAudioFileOutput()`.
 
@@ -166,7 +166,7 @@ function synthesizeSpeech() {
 > [!NOTE]
 > Передача значения `undefined` для `AudioConfig` вместо его пропуска, как это сделано в приведенном выше примере с выводом на динамики, не позволит по умолчанию воспроизводить звук на активном устройстве вывода.
 
-В этом случае результат сохраняется в переменной [`SpeechSynthesisResult`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisresult?preserve-view=true&view=azure-node-latest). Свойство `SpeechSynthesisResult.audioData` возвращает объект `ArrayBuffer` выходных данных. С `ArrayBuffer` можно работать вручную.
+В этом случае результат сохраняется в переменной [`SpeechSynthesisResult`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisresult). Свойство `SpeechSynthesisResult.audioData` возвращает объект `ArrayBuffer` выходных данных. С `ArrayBuffer` можно работать вручную.
 
 ```javascript
 function synthesizeSpeech() {
@@ -199,7 +199,7 @@ function synthesizeSpeech() {
 * частоту выборки;
 * глубину в битах.
 
-Чтобы изменить звуковой формат, используйте свойство `speechSynthesisOutputFormat` для объекта `SpeechConfig`. Оно получает `enum` типа [`SpeechSynthesisOutputFormat`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat?preserve-view=true&view=azure-node-latest), который используется для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat?preserve-view=true&view=azure-node-latest).
+Чтобы изменить звуковой формат, используйте свойство `speechSynthesisOutputFormat` для объекта `SpeechConfig`. Оно получает `enum` типа [`SpeechSynthesisOutputFormat`](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat), который используется для выбора формата выходных данных. Список доступных звуковых форматов см. в [справочной документации](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat).
 
 Различные типы файлов обеспечивают разные возможности для работы с ними в зависимости от требований. Обратите внимание, что по определению звуковые данные в необработанном формате, таком как `Raw24Khz16BitMonoPcm`, не содержат заголовки. Используйте такие форматы, только если вы уверены, что нижестоящие службы способны декодировать необработанный битовый поток, или если вы планируете создавать заголовки вручную на основе глубины в битах, частоты выборки, количества каналов и т. п.
 

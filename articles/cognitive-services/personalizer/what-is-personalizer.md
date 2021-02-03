@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 08/27/2020
 ms.custom: cog-serv-seo-aug-2020
 keywords: Персонализатор, Персонализатор Azure, машинное обучение
-ms.openlocfilehash: 33c1770c5c8722a55d8f1df4aff9b1637d903977
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 913b4d989865a50b23d58c5493368997248f8db8
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028783"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928545"
 ---
 # <a name="what-is-personalizer"></a>Что такое служба "Персонализатор"?
 
@@ -115,10 +115,10 @@ ms.locfileid: "98028783"
 
 ## <a name="reference"></a>Справочник 
 
-* [Пакет SDK Персонализатора для C#/.NET](/dotnet/api/overview/azure/cognitiveservices/client/personalizer?view=azure-dotnet)
+* [Пакет SDK Персонализатора для C#/.NET](/dotnet/api/overview/azure/cognitiveservices/client/personalizer)
 * [Пакет SDK Персонализатора для Go](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview)
-* [Пакет SDK Персонализатора для JavaScript](/javascript/api/@azure/cognitiveservices-personalizer/?view=azure-node-latest)
-* [Пакет SDK Персонализатора для Python](/python/api/overview/azure/cognitiveservices/personalizer?view=azure-python)
+* [Пакет SDK Персонализатора для JavaScript](/javascript/api/@azure/cognitiveservices-personalizer/)
+* [Пакет SDK Персонализатора для Python](/python/api/overview/azure/cognitiveservices/personalizer)
 * [REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank);
 
 ## <a name="next-steps"></a>Дальнейшие действия

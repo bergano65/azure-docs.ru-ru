@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/26/2020
 ms.custom: devx-track-java, devx-track-csharp
 ms.author: aahi
-ms.openlocfilehash: afac19a6debb3804c99492338428669928f1118b
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: d1c9589265726bae01b86c152853c40f79825ceb
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371600"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947462"
 ---
 Ознакомьтесь с этим кратким руководством, чтобы начать получать аналитические сведения об изображении из службы "Визуальный поиск Bing" с помощью клиентской библиотеки для Java. Так как REST API Визуального поиска Bing совместим с большинством языков программирования, клиентская библиотека обеспечивает простой способ интеграции службы с вашими приложениями. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingVisualSearch).
 
@@ -23,7 +23,7 @@ ms.locfileid: "94371600"
 * загрузить изображение, чтобы отправить запрос на визуальный поиск;
 * получить маркер аналитики изображения и теги визуального поиска.
 
-[Справочная документация](/java/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingVisualSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-visualsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
+[Справочная документация](/java/api/overview/azure/cognitiveservices/client/bingvisualsearch) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingVisualSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-visualsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -43,13 +43,13 @@ ms.locfileid: "94371600"
 mkdir myapp && cd myapp
 ```
 
-Выполните команду `gradle init` из рабочей папки. Эта команда создает необходимые файлы сборки для Gradle, включая *build.gradle.kts* , который используется во время выполнения для создания и настройки приложения.
+Выполните команду `gradle init` из рабочей папки. Эта команда создает необходимые файлы сборки для Gradle, включая *build.gradle.kts*, который используется во время выполнения для создания и настройки приложения.
 
 ```console
 gradle init --type basic
 ```
 
-Когда появится запрос на выбор **предметно-ориентированного языка** , выберите **Kotlin**.
+Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
 
 Найдите файл *build.gradle.kts* и откройте его в предпочитаемой интегрированной среде разработки или текстовом редакторе. Затем скопируйте и вставьте в файл эту конфигурацию сборки:
 
@@ -127,7 +127,7 @@ dependencies {
 > В этом кратком руководстве предполагается, что вы уже [создали переменную среды](../../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) для ключа Визуального поиска Bing, который называется `BING_SEARCH_V7_SUBSCRIPTION_KEY`.
 
 
-В основном методе обязательно используйте ключ подписки для создания экземпляра [объекта BingVisualSearchAPI](/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.bingvisualsearchapi?view=azure-java-stable).
+В основном методе обязательно используйте ключ подписки для создания экземпляра [объекта BingVisualSearchAPI](/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.bingvisualsearchapi).
 
 ```csharp
 BingVisualSearchAPI client = BingVisualSearchManager.authenticate(subscriptionKey);
@@ -135,13 +135,13 @@ BingVisualSearchAPI client = BingVisualSearchManager.authenticate(subscriptionKe
 
 ## <a name="send-a-visual-search-request"></a>Отправка запроса на визуальный поиск
 
-В новом методе отправьте массив байтов образа (созданный в методе `main()`) с помощью метода [bingImages().visualSearch()](/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.bingimages.visualsearch?view=azure-java-stable#com_microsoft_azure_cognitiveservices_search_visualsearch_BingImages_visualSearch__) клиента. 
+В новом методе отправьте массив байтов образа (созданный в методе `main()`) с помощью метода [bingImages().visualSearch()](/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.bingimages.visualsearch#com_microsoft_azure_cognitiveservices_search_visualsearch_BingImages_visualSearch__) клиента. 
 
 [!code-java[visualSearch() method](~/cognitive-services-java-sdk-samples/Search/BingVisualSearch/src/main/java/BingVisualSearchSample.java?name=visualSearch)]
 
 ## <a name="print-the-image-insight-token-and-visual-search-tags"></a>Печать маркера аналитики образа и тегов визуального поиска
 
-Проверьте, имеет ли объект [ImageKnowledge](/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.models.imageknowledge?view=azure-java-stable) значение "null". Если нет, распечатайте маркер аналитики изображения, количество тегов, количество действий и первый тип действия.
+Проверьте, имеет ли объект [ImageKnowledge](/java/api/com.microsoft.azure.cognitiveservices.search.visualsearch.models.imageknowledge) значение "null". Если нет, распечатайте маркер аналитики изображения, количество тегов, количество действий и первый тип действия.
 
 [!code-java[Print token and tags](~/cognitive-services-java-sdk-samples/Search/BingVisualSearch/src/main/java/BingVisualSearchSample.java?name=printVisualSearchResults)]
 

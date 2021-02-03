@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 02/27/2020
 ms.custom: devx-track-java
 ms.author: aahi
-ms.openlocfilehash: d9c5fe2653cff0d83a145964a3ad9eed166d0688
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 300c602a62b0d6b3ba579931b2222d2cd8667656
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371563"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947835"
 ---
 Приступите к работе с клиентской библиотекой службы Пользовательский поиск Bing для Java. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба "API пользовательского поиска Bing" позволяет создавать специально адаптированные интерфейсы поиска без рекламы по темам, которые действительно важны для вас. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingCustomSearch)
 
@@ -22,7 +22,7 @@ ms.locfileid: "94371563"
 
 * Найти результаты поиска в Интернете из вашего экземпляра API Пользовательского поиска Bing.
 
-[Справочная документация](/java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingCustomSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
+[Справочная документация](/java/api/overview/azure/cognitiveservices/client/bingcustomsearch) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingCustomSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,13 +46,13 @@ ms.locfileid: "94371563"
 mkdir myapp && cd myapp
 ```
 
-Выполните команду `gradle init` из рабочей папки. Эта команда создает необходимые файлы сборки для Gradle, включая файл *build.gradle.kts* , который используется во время выполнения для настройки приложения.
+Выполните команду `gradle init` из рабочей папки. Эта команда создает необходимые файлы сборки для Gradle, включая файл *build.gradle.kts*, который используется во время выполнения для настройки приложения.
 
 ```console
 gradle init --type basic
 ```
 
-Когда появится запрос на выбор **предметно-ориентированного языка** , выберите **Kotlin**.
+Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
 
 ## <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
@@ -99,9 +99,9 @@ public class BingCustomSearchSample {
 
 ## <a name="object-model"></a>Объектная модель
 
-Клиент службы "Пользовательский поиск Bing" является объектом [BingCustomSearchAPI](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchapi?view=azure-java-stable), созданным из объекта [BingCustomSearchManager](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchmanager?view=azure-java-stable), а именно его метода [аутентификации ()](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchmanager.authenticate). Запрос поиска можно отправить с помощью метода клиента [BingCustomInstances.search()](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustominstances.search?view=azure-java-stable#com_microsoft_azure_cognitiveservices_search_customsearch_BingCustomInstances_search__).
+Клиент службы "Пользовательский поиск Bing" является объектом [BingCustomSearchAPI](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchapi), созданным из объекта [BingCustomSearchManager](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchmanager), а именно его метода [аутентификации ()](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchmanager.authenticate). Запрос поиска можно отправить с помощью метода клиента [BingCustomInstances.search()](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustominstances.search#com_microsoft_azure_cognitiveservices_search_customsearch_BingCustomInstances_search__).
 
-Ответ API — это объект [SearchResponse](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.models.searchresponse?view=azure-java-stable), содержащий информацию о запросе и результатах поиска.
+Ответ API — это объект [SearchResponse](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.models.searchresponse), содержащий информацию о запросе и результатах поиска.
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -112,7 +112,7 @@ public class BingCustomSearchSample {
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Ваш основной метод должен включать в себя объект [BingCustomSearchManager](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchapi?view=azure-java-stable), который берет ваш ключ и вызывает его `authenticate()`.
+Ваш основной метод должен включать в себя объект [BingCustomSearchManager](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustomsearchapi), который берет ваш ключ и вызывает его `authenticate()`.
 
 ```java
 BingCustomSearchAPI client = BingCustomSearchManager.authenticate(subscriptionKey);
@@ -120,7 +120,7 @@ BingCustomSearchAPI client = BingCustomSearchManager.authenticate(subscriptionKe
 
 ## <a name="get-search-results-from-your-custom-search-instance"></a>Получение результатов поиска из пользовательского экземпляра
 
-Используйте функцию клиента [BingCustomInstances.search()](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustominstances.search?view=azure-java-stable#com_microsoft_azure_cognitiveservices_search_customsearch_BingCustomInstances_search__), чтобы отправить поисковый запрос в пользовательский экземпляр. Установите `withCustomConfig` в свой пользовательский идентификатор конфигурации или по умолчанию на `1`. После получения ответа от API проверьте, были ли найдены результаты поиска. Если да, то получите первый результат поиска, вызвав функцию ответа `webPages().value().get()` и выполнив печать имени результата и URL-адреса.
+Используйте функцию клиента [BingCustomInstances.search()](/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustominstances.search#com_microsoft_azure_cognitiveservices_search_customsearch_BingCustomInstances_search__), чтобы отправить поисковый запрос в пользовательский экземпляр. Установите `withCustomConfig` в свой пользовательский идентификатор конфигурации или по умолчанию на `1`. После получения ответа от API проверьте, были ли найдены результаты поиска. Если да, то получите первый результат поиска, вызвав функцию ответа `webPages().value().get()` и выполнив печать имени результата и URL-адреса.
 
 [!code-java[call the custom search API](~/cognitive-services-java-sdk-samples/Search/BingCustomSearch/src/main/java/BingCustomSearchSample.java?name=runSample)]
 

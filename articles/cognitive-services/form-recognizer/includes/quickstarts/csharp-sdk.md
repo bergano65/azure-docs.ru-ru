@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 9befe33f70341f218c3339a13dcc1d31dc452d34
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 93282e79321f8999ddf8c737ebcb5ea76fbf6e02
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132318"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947470"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
@@ -198,7 +198,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_getcontent_call)]
 
 > [!TIP]
-> Вы можете также получить содержимое из локального файла. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), например о **StartRecognizeContent**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Вы можете также получить содержимое из локального файла. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), например о **StartRecognizeContent**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Оставшаяся часть этой задачи выводит на консоль сведения о содержимом.
 
@@ -248,7 +248,7 @@ Table 0 has 2 rows and 6 columns.
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_receipt_call)]
 
 > [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), например о **StartRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), например о **StartRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов `RecognizedReceipt`: по одному для каждой страницы обработанного документа. В следующем блоке кода обрабатывается квитанция с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
 
@@ -315,7 +315,7 @@ Total: '1203.39', with confidence '0.774'
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_call)]
 
 > [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), например о **StartRecognizeBusinessCards**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), например о **StartRecognizeBusinessCards**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов `RecognizedForm`: по одному для каждой карточки в документе. В следующем блоке кода обрабатывается визитная карточка с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
 
@@ -339,7 +339,7 @@ Total: '1203.39', with confidence '0.774'
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_invoice_call)]
 
 > [!TIP]
-> Кроме того, можно распознавать изображения счетов в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), например о **StartRecognizeInvoices**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Кроме того, можно распознавать изображения счетов в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), например о **StartRecognizeInvoices**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов `RecognizedForm`: по одному для каждого счета в отправленном документе. В приведенном ниже блоке кода обрабатывается счет с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
 
@@ -493,7 +493,7 @@ Submodel Form Type: form-63c013e3-1cab-43eb-84b0-f4b20cb9214c
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_analyze)]
 
 > [!TIP]
-> Вы можете также проанализировать локальные файлы. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), например о **StartRecognizeCustomForms**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Вы можете также проанализировать локальные файлы. Изучите информацию о методах класса [FormRecognizerClient](/dotnet/api/azure.ai.formrecognizer.formrecognizerclient), например о **StartRecognizeCustomForms**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) для сценариев, включающих использование локальных изображений.
 
 Возвращаемое значение представляет собой коллекцию объектов `RecognizedForm`: по одному для каждой страницы обработанного документа. Следующий код выводит в консоль результаты анализа. Он отображает каждое из распознанных полей с соответствующим значением и коэффициентом достоверности.
 

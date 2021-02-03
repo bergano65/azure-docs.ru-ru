@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 10/16/2020
 ms.custom: devx-track-java, cog-serv-seo-aug-2020
 ms.author: pafarley
-ms.openlocfilehash: b45873da5e34c77d3eae706975619df948d84874
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 147985ce5aff54f3784363720a576b7e46d6e647
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98698015"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98947559"
 ---
 Начните работу с клиентской библиотекой Azure Content Moderator для Java. Выполните приведенные здесь действия, чтобы установить пакет Maven и протестировать пример кода для выполнения базовых задач. 
 
@@ -27,7 +27,7 @@ Content Moderator — это служба ИИ, позволяющая упра
 * Модерация текста
 * Модерация изображений
 
-[Справочная документация](/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-contentmoderator) |[Артефакт (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Примеры](/samples/browse/?products=azure&term=content-moderator)
+[Справочная документация](/java/api/overview/azure/cognitiveservices/client/contentmoderator) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-contentmoderator) |[Артефакт (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Примеры](/samples/browse/?products=azure&term=content-moderator)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -116,10 +116,10 @@ mkdir -p src/main/java
 
 |Имя|Описание|
 |---|---|
-|[ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable)|Этот класс требуется для всех функций Content Moderator. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
-|[ImageModeration](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.imagemoderations?view=azure-java-stable)|Этот класс предоставляет функции для анализа изображений на наличие содержимого для взрослых, личной информации или лиц людей.|
-|[TextModerations](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.textmoderations?view=azure-java-stable)|Этот класс предоставляет функции для анализа текста с целью определения языка, наличия ненормативной лексики, ошибок и личной информации.|
-|[Проверки](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.reviews?view=azure-java-stable)|Этот класс предоставляет функциональные возможности API-интерфейсов проверки, в том числе методы создания заданий, настраиваемых рабочих процессов и пользовательских проверок.|
+|[ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient)|Этот класс требуется для всех функций Content Moderator. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
+|[ImageModeration](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.imagemoderations)|Этот класс предоставляет функции для анализа изображений на наличие содержимого для взрослых, личной информации или лиц людей.|
+|[TextModerations](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.textmoderations)|Этот класс предоставляет функции для анализа текста с целью определения языка, наличия ненормативной лексики, ошибок и личной информации.|
+|[Проверки](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.reviews)|Этот класс предоставляет функциональные возможности API-интерфейсов проверки, в том числе методы создания заданий, настраиваемых рабочих процессов и пользовательских проверок.|
 
 
 ## <a name="code-examples"></a>Примеры кода
@@ -133,7 +133,7 @@ mkdir -p src/main/java
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-В методе `main` приложения создайте объект [ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable), используя значение конечной точки подписки и ключа подписки.
+В методе `main` приложения создайте объект [ContentModeratorClient](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient), используя значение конечной точки подписки и ключа подписки.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_client)]
 
@@ -168,7 +168,7 @@ mkdir -p src/main/java
 
 ### <a name="set-up-sample-image"></a>Настройка примера изображения
 
-В новом методе создайте объект **[BodyModelModel](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.models.bodymodelmodel?view=azure-java-stable)** с заданной строкой URL-адреса, указывающей на изображение.
+В новом методе создайте объект **[BodyModelModel](/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.models.bodymodelmodel)** с заданной строкой URL-адреса, указывающей на изображение.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_imagemod)]
 

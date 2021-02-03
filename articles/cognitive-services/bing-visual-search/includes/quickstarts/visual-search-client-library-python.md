@@ -8,16 +8,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/26/2020
 ms.author: aahi
-ms.openlocfilehash: 1d7664160f1cef405f791628bad0b4e76e3c50f8
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 3af9b9e4f07d3d88043dcf7f6a262fdf6a3b316c
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94371670"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98948042"
 ---
 Ознакомьтесь с этим кратким руководством, чтобы настроить получение аналитических сведений об изображении из Визуального поиска Bing с помощью клиентской библиотеки для Python. Так как REST API Визуального поиска Bing совместим с большинством языков программирования, клиентская библиотека обеспечивает простой способ интеграции службы с вашими приложениями. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/search/visual_search_samples.py) 
 
-[Справочная документация](/python/api/azure-cognitiveservices-search-visualsearch/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-search-visualsearch) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-search-visualsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/)
+[Справочная документация](/python/api/azure-cognitiveservices-search-visualsearch/) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-search-visualsearch) | [Пакет (PyPi)](https://pypi.org/project/azure-cognitiveservices-search-visualsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

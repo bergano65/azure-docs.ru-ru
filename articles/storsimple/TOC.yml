@@ -129,7 +129,7 @@
             - name: Изучение ограничений
               href: storsimple-8000-limits.md
             - name: Рекомендации
-              href: 'https://gallery.technet.microsoft.com/Azure-StorSimple-8000-72b01b68'
+              href: 'https://databoxbuilds.blob.core.windows.net/storsimpledocs/MicrosoftAzureStorSimple_BestPractices_V1.1.pdf'
         - name: Установка
           items:
             - name: 'Вопросы, связанные с безопасностью'
@@ -262,11 +262,7 @@
             - name: Автоматизация восстановления данных сервера файлов в Azure
               href: storsimple-disaster-recovery-using-azure-site-recovery.md
             - name: Использование StorSimple с Express Route
-              href: 'https://gallery.technet.microsoft.com/STORESIMPLE-CONFIGURATION-86c04c3b/view/Discussions#content'
-            - name: Использование StorSimple с VMware
-              href: 'https://gallery.technet.microsoft.com/VMWARE-DEPLOYMENT-WITH-2921b463'
-            - name: Использование StorSimple с Hyper-V
-              href: 'https://gallery.technet.microsoft.com/Deploy-Hyper-V-with-Azure-0d1c6df6'
+              href: 'https://databoxbuilds.blob.core.windows.net/storsimpledocs/MicrosoftAzureStorSimple_ExpressRoute.pdf'
             - name: Распределенное глобальное пространство имен
               href: 'https://www.microsoft.com/download/details.aspx?id=45507'
         - name: Монитор

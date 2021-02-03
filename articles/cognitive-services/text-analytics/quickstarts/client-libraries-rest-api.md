@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 12/02/2020
+ms.date: 01/20/2021
 ms.author: aahi
 keywords: Интеллектуальный анализ текста, анализ тональности, анализ текста
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp, cog-serv-seo-aug-2020
 zone_pivot_groups: programming-languages-text-analytics
-ms.openlocfilehash: f93b7954861bf3351d2930132e1391e1f21b2a6f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 78d2f0a7b247ac6a9b7bdf5f4fc8b6c7b5ef6eea
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655124"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090716"
 ---
 # <a name="quickstart-use-the-text-analytics-client-library-and-rest-api"></a>Краткое руководство. Использование клиентской библиотеки и REST API Анализа текста
 

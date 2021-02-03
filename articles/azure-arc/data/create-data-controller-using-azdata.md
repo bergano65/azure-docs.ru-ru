@@ -9,18 +9,18 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 3d2652d2f6c1bb56dd009a9e4de375c42786986d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 50ab5a0d47292e36216a565a5bd39fbe7e850131
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735005"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99494025"
 ---
 # <a name="create-azure-arc-data-controller-using-the-azure-data-cli-azdata"></a>Создание контроллера данных ARC в Azure с помощью [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ознакомьтесь с разделом [Создание контроллера данных ARC в Azure](create-data-controller.md) для получения общих сведений.
 
@@ -30,7 +30,7 @@ ms.locfileid: "98735005"
 
 Независимо от выбранной целевой платформы перед созданием учетной записи администратора контроллера данных необходимо задать следующие переменные среды. Эти учетные данные можно предоставить другим пользователям, которым требуется доступ администратора к контроллеру данных по мере необходимости.
 
-**AZDATA_USERNAME** — имя пользователя, выбранного для администратора контроллера данных. Пример: `arcadmin`
+**AZDATA_USERNAME** — имя пользователя, выбранного для администратора контроллера данных. Например, `arcadmin`.
 
 **AZDATA_PASSWORD** — пароль, выбранный для пользователя администратора контроллера данных. Длина пароля должна составлять не менее восьми символов и содержать символы из трех из следующих четырех наборов: прописные буквы, строчные буквы, числа и символы.
 
@@ -269,6 +269,8 @@ azdata arc dc create --profile-name azure-arc-aks-hci --namespace arc --name arc
 Для Azure Red Hat OpenShift требуется ограничение контекста безопасности.
 
 #### <a name="apply-the-security-context"></a>Применение контекста безопасности
+
+Перед созданием контроллера данных в Azure Red Hat OpenShift необходимо применить определенные ограничения контекста безопасности (SCC). В предварительной версии это ослабляет ограничения безопасности. В будущих выпусках будет предоставляться обновленная версия SCC.
 
 [!INCLUDE [apply-security-context-constraint](includes/apply-security-context-constraint.md)]
 
