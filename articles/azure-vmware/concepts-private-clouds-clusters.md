@@ -3,12 +3,12 @@ title: Основные понятия — частные облака и кла
 description: Узнайте о ключевых возможностях решений Azure VMware, определяемых программными центрами обработки данных и кластерами vSphere.
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: 234e705ad3b39a575c6f8c475bede4b81efa4b96
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 6a2bb0f41bb1809d0f43b08c71766acc914c0689
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99474919"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509271"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Концепции частного облака и кластера решения VMware для Azure
 
@@ -66,10 +66,11 @@ ms.locfileid: "99474919"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали об этих концепциях частного облака Azure VMware, вы можете узнать о следующих возможностях: 
+Теперь, когда вы построили концепции частного облака в решении Azure VMware, вы можете узнать о следующих возможностях: 
 
 - [Решения Azure VMware для сетей и взаимодействия](concepts-networking.md).
 - [Основные понятия хранилища решений VMware для Azure](concepts-storage.md).
+- [Как включить ресурс решения Azure VMware](enable-azure-vmware-solution.md).
 
 <!-- LINKS - internal -->
 

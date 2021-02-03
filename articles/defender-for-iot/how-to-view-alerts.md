@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/02/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 4803691a82a97cd2be5fa3beafd4419010e7a9c9
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: bce83e11a0d4567d37e78388445c108385ca9a61
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97842984"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509081"
 ---
 # <a name="view-alerts"></a>Просмотр оповещений
 
@@ -84,7 +84,7 @@ ms.locfileid: "97842984"
 
 :::image type="content" source="media/how-to-work-with-alerts-sensor/alerts-security.png" alt-text="Безопасность на экране оповещений.":::
 
-## <a name="alert-window-options"></a>Параметры окна предупреждения
+## <a name="alert-page-options"></a>Параметры страницы предупреждений
 
 Предупреждающие сообщения предоставляют следующие действия.
 
@@ -101,6 +101,8 @@ ms.locfileid: "97842984"
 - Выберите, :::image type="icon" source="media/how-to-work-with-alerts-sensor/learn-and-acknowledge-all-alerts.png" border="false"::: чтобы узнать и подтвердить все оповещения.
 
 - Выберите, :::image type="icon" source="media/how-to-work-with-alerts-sensor/export-to-csv.png" border="false"::: чтобы экспортировать список предупреждений в CSV-файл и выбрать параметр экспорт. Выберите **Экспорт предупреждений** для обычного параметра экспорт в CSV. Или выберите **Расширенный экспорт оповещений** , чтобы добавить отдельные строки для получения дополнительных сведений о предупреждении в CSV-файле.
+
+## <a name="alert-pop-up-window-options"></a>Параметры всплывающего окна предупреждения
 
 - Щелкните :::image type="icon" source="media/how-to-work-with-alerts-sensor/export-to-pdf.png" border="false"::: значок, чтобы скачать отчет об оповещениях в виде PDF-файла.
 
@@ -120,6 +122,6 @@ ms.locfileid: "97842984"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Управление событием предупреждения](how-to-manage-the-alert-event.md)
+[Управление событиями оповещений](how-to-manage-the-alert-event.md)
 
 [Ускорение рабочих процессов оповещений](how-to-accelerate-alert-incident-response.md)

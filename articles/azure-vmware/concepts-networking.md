@@ -3,12 +3,12 @@ title: Основные понятия — сетевое взаимодейст
 description: Узнайте о ключевых аспектах и вариантах использования сети и взаимосвязи в решении VMware для Azure.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: eb701a7fca2be08d70e603734b9c4d8e266959cd
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 49261f34f879c68f21b57f9256a58a9b0a44d637
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475426"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509288"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Сети решения Azure VMware и основные понятия взаимодействия
 
@@ -59,10 +59,11 @@ ms.locfileid: "99475426"
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
-Теперь, когда вы узнали о принципах работы сети и взаимодействия, вы можете узнать о следующих возможностях:
+Теперь, когда вы узнали о сети решения Azure VMware и концепции взаимодействия, вы можете узнать о следующих возможностях:
 
 - [Основные понятия хранилища решений VMware для Azure](concepts-storage.md).
-- [Концепции Azure VMware для идентификации решений](concepts-identity.md)
+- [Концепции Azure VMware для идентификации решений](concepts-identity.md).
+- [Как включить ресурс решения Azure VMware](enable-azure-vmware-solution.md).
 
 <!-- LINKS - external -->
 [enable Global Reach]: ../expressroute/expressroute-howto-set-global-reach.md

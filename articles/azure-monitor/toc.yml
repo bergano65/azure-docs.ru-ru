@@ -329,6 +329,8 @@
               href: platform/data-sources-linux-applications.md
             - name: Журналы IIS
               href: platform/data-sources-iis-logs.md
+            - name: Трассировка событий для данных Windows
+              href: platform/data-sources-event-tracing-windows.md
             - name: Пользовательские журналы
               href: platform/data-sources-custom-logs.md
             - name: Пользовательские поля

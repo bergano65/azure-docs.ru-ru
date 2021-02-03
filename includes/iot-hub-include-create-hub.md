@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/14/2020
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: a6a01b3a71a7e391c680e6c9547ccd9649dc0e89
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4ad619fa5f0fb8f8e87333f2681727dabedda42b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98605061"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427437"
 ---
 В этом разделе описывается создание центра Интернета вещей с помощью [портала Azure](https://portal.azure.com).
 
@@ -35,17 +35,17 @@ ms.locfileid: "98605061"
 
    [!INCLUDE [iot-hub-pii-note-naming-hub](iot-hub-pii-note-naming-hub.md)]
 
-   ![Создание Центра Интернета вещей на портале Azure](./media/iot-hub-include-create-hub/iot-hub-create-screen-basics.png)
+   :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-create-screen-basics.png" alt-text="Создание центра на портале Azure.":::
 
 1. По завершении выберите **Next: Networking** (Далее: сеть), чтобы продолжить создание центра.
 
    Выберите, какие конечные точки могут подключаться к Центру Интернета вещей. Можете выбрать параметр по умолчанию **Общедоступная конечная точка (все сети)** либо выбрать **Общедоступная конечная точка (выбранные диапазоны IP-адресов)** или **Частная конечная точка**. Для нашего примера примите параметр по умолчанию.
 
-   ![Выбор конечных точек для подключения](./media/iot-hub-include-create-hub/iot-hub-create-network-screen.png)
+   :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-create-network-screen.png" alt-text="Выбор конечных точек для подключения.":::
 
 1. По завершении выберите **Next: Management** (Далее: управление), чтобы продолжить создание центра.
 
-    ![Настройка параметров размера и масштаба для концентратора на портале Azure](./media/iot-hub-include-create-hub/iot-hub-management-screen.png)
+   :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-management-screen.png" alt-text="Настройка параметров размера и масштаба для нового центра на портале Azure.":::
 
     Здесь вы можете принять настройки по умолчанию. При необходимости можете изменить любое из следующих полей:
 
@@ -60,14 +60,14 @@ ms.locfileid: "98605061"
 
     - **Дополнительные параметры Settings** > **С устройства в облако**: Это свойство привязывает сообщения, отправляемые с устройства в облако, к числу одновременно работающих модулей чтения этих сообщений. Для большинства концентраторов достаточно четырех разделов.
 
-1.  По завершении выберите **Next: Теги**, чтобы перейти к следующему экрану.
+1. По завершении выберите **Next: Теги**, чтобы перейти к следующему экрану.
 
     Теги — это пары "имя — значение". Один и тот же тег можно присвоить нескольким ресурсам и группам ресурсов для их классификации и объединения счетов. Дополнительные сведения см. в статье [Использование тегов для организации ресурсов в Azure](../articles/azure-resource-manager/management/tag-resources.md).
 
-    ![Назначение тегов для центра с помощью портала Azure](./media/iot-hub-include-create-hub/iot-hub-create-tags.png)
+    :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-create-tags.png" alt-text="Назначение тегов для центра с помощью портала Azure.":::
 
-1.  По завершении выберите **Next: Просмотр и создание**, чтобы просмотреть выбранные параметры. Отобразится примерно следующий экран только со значениями, которые вы задали при создании центра. 
+1. По завершении выберите **Next: Просмотр и создание**, чтобы просмотреть выбранные параметры. Отобразится примерно следующий экран только со значениями, которые вы задали при создании центра.
 
-    ![Просмотр сведений при создании концентратора](./media/iot-hub-include-create-hub/iot-hub-review-and-create.png)
+    :::image type="content" source="./media/iot-hub-include-create-hub/iot-hub-review-and-create.png" alt-text="Просмотр сведений при создании центра.":::
 
-1.  Щелкните **Создать**, чтобы создать концентратор. Создание центра занимает несколько минут.
+1. Щелкните **Создать**, чтобы создать концентратор. Создание центра занимает несколько минут.

@@ -8,14 +8,17 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 01/19/2021
 ms.author: ranku
-ms.openlocfilehash: c794af26fdfe2d3706d8d8d266d0756eff391b50
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 7518f5e2984029c087eec1e6697f3237410bda4b
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747615"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430282"
 ---
-# <a name="how-to-convert-data-to-fhir"></a>Преобразование данных для FHIR
+# <a name="how-to-convert-data-to-fhir-preview"></a>Преобразование данных для FHIR (предварительная версия)
+
+> [!IMPORTANT]
+> Эта возможность предоставляется в общедоступной предварительной версии без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Пользовательская конечная точка $convert-data в Azure API для FHIR предназначена для преобразования данных из разных форматов в формат FHIR. В ней применяются модуль шаблонов Liquid и шаблоны из проекта [преобразователя FHIR](https://github.com/microsoft/FHIR-Converter) в качестве шаблонов по умолчанию. Вы можете изменить эти шаблоны в соответствии с конкретными потребностями. Сейчас поддерживается преобразование из HL7v2 в FHIR.
 

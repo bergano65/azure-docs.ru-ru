@@ -49,6 +49,8 @@
           href: scenario-isolate-vnets.md
         - name: Изоляция виртуальных сетей (пользовательская)
           href: scenario-isolate-vnets-custom.md
+        - name: Изоляция виртуальных сетей и ветвей
+          href: scenario-isolate-virtual-networks-branches.md
         - name: Виртуальные сети с общими службами
           href: scenario-shared-services-vnet.md
         - name: Маршрутизация через сетевой виртуальный модуль

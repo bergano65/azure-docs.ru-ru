@@ -3,12 +3,12 @@ title: Основные понятия — обновления и обновл�
 description: Сведения об основных процессах обновления и функциях в решении VMware для Azure.
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 6fb65a0e192fbf1f054857223b3fdaf58fc6a903
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.openlocfilehash: 8338666d70bd0ca4ea3c6b32bd8f8d205feaf7c0
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809655"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509203"
 ---
 # <a name="azure-vmware-solution-private-cloud-updates-and-upgrades"></a>Обновление и обновление частного облака решения VMware для Azure
 
@@ -57,7 +57,10 @@ ms.locfileid: "97809655"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Следующим шагом является [Создание частного облака](tutorial-create-private-cloud.md).
+Теперь, когда вы узнали об основных процессах обновления и функциях в решении Azure VMware, вы можете узнать о следующих возможностях:
+
+- [Как создать частное облако](tutorial-create-private-cloud.md).
+- [Как включить ресурс решения Azure VMware](enable-azure-vmware-solution.md).
 
 <!-- LINKS - external -->
 

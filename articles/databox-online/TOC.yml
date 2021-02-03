@@ -278,6 +278,8 @@
           items:
             - name: Использование диаграмм метрик
               href: azure-stack-edge-monitor.md
+            - name: Управление оповещениями о событиях устройств
+              href: azure-stack-edge-gpu-manage-device-event-alert-notifications.md
             - name: Использование панели мониторинга Kubernetes
               href: azure-stack-edge-gpu-monitor-kubernetes-dashboard.md
             - name: Использование Azure Monitor

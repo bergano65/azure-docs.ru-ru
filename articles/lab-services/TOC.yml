@@ -58,6 +58,8 @@
               href: class-type-matlab.md
             - name: Автоматизированное проектирование (САПР) с использованием SolidWorks
               href: class-type-solidworks.md
+            - name: Организация сети с использованием GNS3
+              href: class-type-networking-gns3.md
             - name: Project Lead the Way
               href: class-type-pltw.md
         - name: Использование Служб лабораторий Azure с Teams

@@ -43,6 +43,8 @@
   items:
     - name: Создание доверенной службы проверки подлинности с помощью Функций Azure
       href: tutorials/trusted-service-tutorial.md
+    - name: Подготовка веб-приложения для Служб коммуникации (Node.js)
+      href: tutorials/building-app-start.md
 - name: Основные понятия
   expanded: false
   items:

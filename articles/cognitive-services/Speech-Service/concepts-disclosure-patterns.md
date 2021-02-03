@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: shlo
-ms.openlocfilehash: 348277d42c543bc45cf98bfeaf7ea8313afe8f6f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5cf933a11956bb8459bf6f5cd1b2b366eb8419d8
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021989"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508648"
 ---
 # <a name="disclosure-design-patterns"></a>Конструктивные шаблоны для раскрытия информации
 Теперь, когда вы&#39;, определили верный [уровень разглашения](concepts-disclosure-guidelines.md#disclosure-assessment) искусственного голоса, он&#39;, чтобы исследовать потенциальные конструктивные шаблоны.
@@ -249,7 +249,6 @@ ms.locfileid: "95021989"
 
 * [Раскрытие голоса для речи](/legal/cognitive-services/speech-service/disclosure-voice-talent)
 * [Рекомендации для ответственного развертывания технологии искусственного голоса](concepts-guidelines-responsible-deployment-synthetic.md)
-* [Обзор ограничения](concepts-gating-overview.md)
 * [Как раскрывать](concepts-disclosure-guidelines.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия

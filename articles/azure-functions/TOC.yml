@@ -281,9 +281,10 @@
               href: functions-create-storage-queue-triggered-function.md
             - name: Триггер таймера
               href: functions-create-scheduled-function.md
-        - name: Добавление привязок
+        - name: Подключение к службам
           items:
-            - name: Как добавить привязку
+            - name: Подключение к службам
+              displayName: 'bindings,integrate'
               href: add-bindings-existing-function.md
             - name: "Azure Cosmos DB\_— портал"
               href: functions-integrate-store-unstructured-data-cosmosdb.md
@@ -395,7 +396,7 @@
           href: configure-encrypt-at-rest-using-cmk.md
     - name: Интеграция
       items:
-        - name: Добавление привязок
+        - name: Подключение к службам
           items:
             - name: "Azure Cosmos DB\_— портал"
               href: functions-integrate-store-unstructured-data-cosmosdb.md

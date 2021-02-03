@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.reviewer: dseven
 ms.author: matjazl
 author: matjazl
-ms.date: 02/07/2019
-ms.openlocfilehash: b0acfbf9636c2ad1df7df3197a0a1a83ec91b5c3
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.date: 02/01/2021
+ms.openlocfilehash: 5771f95da7b63c6c16bb581b84cc28c4b838ec27
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747345"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259022"
 ---
 # <a name="access-azure-api-for-fhir-with-postman"></a>Получение доступа к Azure API для FHIR с помощью Postman
 
@@ -24,6 +24,7 @@ ms.locfileid: "98747345"
 
 - Конечная точка FHIR в Azure. Ее можно настроить с помощью управляемой службы Azure API для FHIR или сервера FHIR с открытым исходным кодом для Azure. Настройте управляемую службу Azure API для FHIR с помощью [портала Azure](fhir-paas-portal-quickstart.md), [PowerShell](fhir-paas-powershell-quickstart.md) или [Azure CLI](fhir-paas-cli-quickstart.md).
 - [Клиентское приложение](register-confidential-azure-ad-client-app.md), которое вы будете использовать для доступа к службе FHIR.
+- Вы должны предоставить клиентскому приложению разрешения (например, участника для данных FHIR) для доступа к службе FHIR. Дополнительные сведения см. в статье [Настройка Azure RBAC для FHIR](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac).
 - Установленное приложение Postman. Его можно получить на сайте [https://www.getpostman.com](https://www.getpostman.com).
 
 ## <a name="fhir-server-and-authentication-details"></a>Сведения о сервере FHIR и проверке подлинности

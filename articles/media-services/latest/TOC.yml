@@ -111,6 +111,8 @@
         - name: Управляемые удостоверения и службы мультимедиа
           displayName: content protection
           href: concept-managed-identities.md
+        - name: Доверенное хранилище
+          href: concept-trusted-storage.md
         - name: Ключами управляет пользователь
           href: concept-use-customer-managed-keys-byok.md
     - name: Активы

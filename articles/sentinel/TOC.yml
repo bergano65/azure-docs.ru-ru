@@ -2,6 +2,8 @@
   href: index.yml
 - name: Обзор
   href: overview.md
+- name: Новые возможности в Azure Sentinel
+  href: whats-new.md
 - name: Краткие руководства
   expanded: true
   items:

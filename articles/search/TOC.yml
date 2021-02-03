@@ -246,6 +246,8 @@
               href: search-howto-index-json-blobs.md
             - name: Индексирование зашифрованных больших двоичных объектов
               href: search-howto-index-encrypted-blobs.md
+            - name: Свойства метаданных для содержимого BLOB-объектов
+              href: search-blob-metadata-properties.md
         - name: Таблицы Azure
           href: search-howto-indexing-azure-tables.md
         - name: Azure Cosmos DB

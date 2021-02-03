@@ -3,12 +3,12 @@ title: Мониторинг и ведение журналов — Azure
 description: В этой статье приводятся общие сведения о мониторинге и ведении журналов в службе Live Video Analytics на IoT Edge.
 ms.topic: reference
 ms.date: 04/27/2020
-ms.openlocfilehash: 6dc0a6d499d06c95bdccbc9e386d7f9288971ee8
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: a77ca6cf9dc66d1efda5741266f1a2eecc2599c0
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878110"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99507828"
 ---
 # <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
 
@@ -254,14 +254,14 @@ Fragments(video=143039375031270,format=m3u8-aapl)
       urls = ["http://edgeHub:9600/metrics", "http://edgeAgent:9600/metrics", "http://{LVA_EDGE_MODULE_NAME}:9600/metrics"]
 
     [[outputs.azure_monitor]]
-      namespace_prefix = ""
+      namespace_prefix = "lvaEdge"
       region = "westus"
       resource_id = "/subscriptions/{SUBSCRIPTON_ID}/resourceGroups/{RESOURCE_GROUP}/providers/Microsoft.Devices/IotHubs/{IOT_HUB_NAME}"
     ```
     > [!IMPORTANT]
     > Не забудьте заменить переменные в файле. томл. Переменные обозначаются фигурными скобками ( `{}` ).
 
-1. В той же папке создайте `.dockerfile` , которая содержит следующие команды:
+1. В той же папке создайте Dockerfile, содержащую следующие команды:
     ```
         FROM telegraf:1.15.3-alpine
         COPY telegraf.toml /etc/telegraf/telegraf.conf
@@ -305,12 +305,27 @@ Fragments(video=143039375031270,format=m3u8-aapl)
      `AZURE_CLIENT_SECRET`: Указывает секрет приложения для использования.  
      
      >[!TIP]
-     > Субъекту-службе можно назначить роль **издателя метрики мониторинга** .
+     > Субъекту-службе можно назначить роль **издателя метрики мониторинга** . Выполните действия, описанные в разделе **[Создание субъекта-службы](https://docs.microsoft.com/azure/azure-arc/data/upload-metrics-and-logs-to-azure-monitor?pivots=client-operating-system-macos-and-linux#create-service-principal)** , чтобы создать субъект-службу и назначить роль.
 
 1. После развертывания модулей в Azure Monitor в одном пространстве имен будут отображаться метрики. Имена метрик будут совпадать с именами, порожденными Prometheus. 
 
    В этом случае в портал Azure перейдите в центр Интернета вещей и выберите **метрики** в левой области. Вы должны увидеть метрики там.
 
+Используя Prometheus вместе с [log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/log-analytics-tutorial), можно создавать и [отслеживать такие метрики](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported) , как используемые cpupercent присутствуют, меморюседперцент и т. д. С помощью языка запросов Kusto можно создавать запросы, как показано ниже, и получать процент загрузки ЦП, используемый модулями IoT ребра.
+```kusto
+let cpu_metrics = promMetrics_CL
+| where Name_s == "edgeAgent_used_cpu_percent"
+| extend dimensions = parse_json(Tags_s)
+| extend module_name = tostring(dimensions.module_name)
+| where module_name in ("lvaEdge","yolov3","tinyyolov3")
+| summarize cpu_percent = avg(Value_d) by bin(TimeGenerated, 5s), module_name;
+cpu_metrics
+| summarize cpu_percent = sum(cpu_percent) by TimeGenerated
+| extend module_name = "Total"
+| union cpu_metrics
+```
+
+[![Схема, на которой показаны метрики с помощью запроса Kusto.](./media/telemetry-schema/metrics.png)](./media/telemetry-schema/metrics.png#lightbox)
 ## <a name="logging"></a>Ведение журнала
 
 Как и в случае с другими IoT Edgeными модулями, вы также можете [изучить журналы контейнеров](../../iot-edge/troubleshoot.md#check-container-logs-for-issues) на пограничном устройстве. Сведения, записываемые в журналы, можно настроить с помощью [следующих свойств модуля двойника](module-twin-configuration-schema.md) :
@@ -327,7 +342,7 @@ Fragments(video=143039375031270,format=m3u8-aapl)
 * `logCategories`
 
    * Список с разделителями-запятыми одного или нескольких следующих значений: `Application` , `Events` , `MediaPipeline` .
-   * Значение по умолчанию — `Application, Events`.
+   * По умолчанию используется значение `Application, Events`.
    * `Application`: Сведения высокого уровня из модуля, например сообщения о запуске модуля, ошибки среды и вызовы прямых методов.
    * `Events`: Все события, описанные ранее в этой статье.
    * `MediaPipeline`: Журналы низкого уровня, которые могут предоставлять аналитические сведения при устранении неполадок, например проблемы с подключением к камере с поддержкой RTSP.

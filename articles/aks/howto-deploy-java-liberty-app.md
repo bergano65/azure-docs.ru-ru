@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/01/2021
 keywords: Java, жакартаи, Java, Микропрофиль, Open-Liberty, WebSphere-Liberty, AKS, kubernetes
-ms.openlocfilehash: 93ffa3ded4d0771438c5d6a2dc23e6e184f04fe2
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 4d6e335cd4b522593091094ac6251acc97873208
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99227627"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508083"
 ---
 # <a name="deploy-a-java-application-with-open-liberty-or-websphere-liberty-on-an-azure-kubernetes-service-aks-cluster"></a>Развертывание приложения Java с помощью Open Liberty или WebSphere Liberty в кластере службы Kubernetes Azure (AKS)
 
@@ -213,7 +213,7 @@ javaee-app-simple-cluster   LoadBalancer   10.0.251.169   52.152.189.57   9080:3
 
 Откройте веб-браузер с внешним IP-адресом и портом службы ( `52.152.189.57:9080` для приведенного выше примера), чтобы просмотреть домашнюю страницу приложения. Имя Pod реплик приложения должно отобразиться в левом верхнем углу страницы. Подождите несколько минут и обновите страницу. Вы, вероятно, увидите другое имя Pod, отображаемое в результате балансировки нагрузки, предоставляемой кластером AKS.
 
-:::image type="content" source="./media/howto-deploy-java-liberty-app/java-liberty-app-aks-deployed-success.png" alt-text="Приложение Java Liberty успешно развернуто в AKS":::
+:::image type="content" source="./media/howto-deploy-java-liberty-app/deploy-succeeded.png" alt-text="Приложение Java Liberty успешно развернуто в AKS":::
 
 >[!NOTE]
 > - В настоящее время приложение не использует протокол HTTPS. Мы рекомендуем использовать [параметр ENABLE TLS и собственные сертификаты](ingress-own-tls.md).

@@ -223,6 +223,8 @@
           href: source-control.md
         - name: Непрерывная интеграция и поставка
           href: continuous-integration-deployment.md
+        - name: Автоматическая публикация
+          href: continuous-integration-deployment-improvements.md
     - name: Соединители
       items:
         - name: Обзор соединителей

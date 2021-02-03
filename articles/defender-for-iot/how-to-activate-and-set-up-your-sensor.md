@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 908460bd0a034e21524b6ea6d3042f362cc810d4
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 7d045ad104f8e2055ae85b74f4aae8f4d3fd61a4
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623595"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509525"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Активация и настройка датчика
 
@@ -81,7 +81,7 @@ ms.locfileid: "98623595"
 
     :::image type="content" source="media/how-to-activate-and-set-up-your-sensor/azure-defender-for-iot-sensor-log-in-screen.png" alt-text="Защитник Azure для датчика IoT.":::
 
-1. Введите учетные данные, определенные во время установки датчика. Если вы приобрели предварительно настроенный датчик со стрелкой, сначала создайте пароль. Дополнительные сведения о восстановлении пароля см. в разделе Проверка [сбоя пароля при первоначальном входе в](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md#investigate-password-failure-at-initial-sign-in)систему.
+1. Введите учетные данные, определенные во время установки датчика, или выберите параметр **восстановления пароля** . Если вы приобрели предварительно настроенный датчик со стрелкой, сначала создайте пароль. Дополнительные сведения о восстановлении пароля см. в разделе Проверка [сбоя пароля при первоначальном входе в](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md#investigate-password-failure-at-initial-sign-in)систему.
 
 1. После входа в систему откроется диалоговое окно **Активация** . Выберите **Отправить** и перейдите к файлу активации, скачанному во время адаптации датчика.
 
@@ -96,9 +96,9 @@ ms.locfileid: "98623595"
 1. Определите имя сертификата.
 1. Отправьте файлы CRT и файл ключей.
 1. Введите парольную фразу и отправьте PEM-файл, если это необходимо.
-1. Нажмите **Далее**. Откроется экран проверка. По умолчанию проверка между консолью управления и подключенными датчиками включена.
+1. Выберите **Далее**. Откроется экран проверка. По умолчанию проверка между консолью управления и подключенными датчиками включена.
 1. Чтобы отключить проверку, отключите переключатель **включить проверку на уровне системы** . Рекомендуется включить проверку.
-1. Выберите **Сохранить**.  
+1. Щелкните **Сохранить**.  
 
 После отправки сертификата, подписанного ЦС, может потребоваться обновить экран.
 
@@ -152,7 +152,7 @@ ms.locfileid: "98623595"
 
 - Если DHCP используется, Определите допустимые диапазоны DHCP.
 
-- Определение интеграции с Active Directory и почтовыми серверами.
+- Определите интеграцию с Active Directory и почтовым сервером соответствующим образом.
 
 ### <a name="disable-learning-mode"></a>Отключить режим обучения
 
@@ -181,7 +181,7 @@ ms.locfileid: "98623595"
 | -----------|--|--|
 | Панель мониторинга | :::image type="icon" source="media/concept-sensor-console-overview/dashboard-icon-azure.png" border="false"::: | Просмотр интуитивно понятного моментального снимка состояния безопасности сети. |
 | Схема устройства | :::image type="icon" source="media/concept-sensor-console-overview/asset-map-icon-azure.png" border="false"::: | Просмотр сетевых устройств, подключений устройств и свойств устройств на карте. Для просмотра сети доступны различные параметры масштабирования, выделения и фильтрации. |
-| Инвентаризация устройств | :::image type="icon" source="media/concept-sensor-console-overview/asset-inventory-icon-azure.png" border="false":::  | В поле инвентаризация устройств отображается широкий спектр атрибутов устройств, которые обнаруживает этот датчик. Доступны следующие параметры: <br /> — Фильтрация сведений в соответствии с полями таблицы и просмотр отфильтрованных данных. <br /> — Экспорт данных в CSV-файл. <br /> — Импорт сведений о реестре Windows.|
+| Инвентаризация устройств | :::image type="icon" source="media/concept-sensor-console-overview/asset-inventory-icon-azure.png" border="false":::  | В поле Инвентаризация устройства отображается список атрибутов устройства, обнаруженных этим датчиком. Доступны следующие параметры: <br /> — Сортировка или фильтрация сведений в соответствии с полями таблицы и просмотр отфильтрованных сведений. <br /> — Экспорт данных в CSV-файл. <br /> — Импорт сведений о реестре Windows.|
 | видны узлы | :::image type="icon" source="media/concept-sensor-console-overview/alerts-icon-azure.png" border="false"::: | Отображение предупреждений при возникновении нарушений политики, возникновение отклонения от базового поведения или обнаружении любого типа подозрительных действий в сети. |
 | Отчеты | :::image type="icon" source="media/concept-sensor-console-overview/reports-icon-azure.png" border="false"::: | Просмотр отчетов, основанных на запросах интеллектуального анализа данных. |
 
@@ -196,7 +196,7 @@ ms.locfileid: "98623595"
 | Окно | Значок | Описание |
 |---|---|---|
 | Интеллектуальный анализ данных | :::image type="icon" source="media/concept-sensor-console-overview/data-mining-icon-azure.png" border="false"::: | Создавайте исчерпывающую и детализированную информацию о сетевых устройствах на различных уровнях. |
-| Тенденции и статистика | :::image type="icon" source="media/concept-sensor-console-overview/trends-and-statistics-icon-azure.jpg" border="false"::: | Просмотр тенденций и статистики в широком спектре мини-приложений. |
+| Исследование | :::image type="icon" source="media/concept-sensor-console-overview/trends-and-statistics-icon-azure.jpg" border="false"::: | Просмотр тенденций и статистики в широком спектре мини-приложений. |
 | Оценка угроз для безопасности | :::image type="icon" source="media/concept-sensor-console-overview/vulnerabilities-icon-azure.png" border="false"::: | Отображение окна **уязвимостей** . |
 
 **Администратор**
@@ -204,7 +204,7 @@ ms.locfileid: "98623595"
 | Окно | Значок | Описание |
 |---|---|---|
 | Пользователи | :::image type="icon" source="media/concept-sensor-console-overview/users-icon-azure.png" border="false"::: | Определите пользователей и роли с различными уровнями доступа. |
-| Сылая | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Пересылка сведений о предупреждениях партнерам, которые интегрируются с защитником для Интернета вещей, на адреса электронной почты, на серверы веб-перехватчиков и многое другое. <br /> Дополнительные сведения см. в разделе [сведения о пересылке оповещений](how-to-forward-alert-information-to-partners.md) . |
+| Сылая | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Перешлите сведения о предупреждениях партнерам и внутренним источникам (например, Sentinel), которые интегрируются с защитником для Интернета вещей, на адреса электронной почты, на серверы веб-перехватчиков и многое другое. <br /> Дополнительные сведения см. в разделе [сведения о пересылке оповещений](how-to-forward-alert-information-to-partners.md) . |
 | Системные параметры | :::image type="icon" source="media/concept-sensor-console-overview/system-settings-icon-azure.png" border="false"::: | Настройте параметры системы. Например, определите параметры DHCP, укажите сведения о почтовом сервере или создайте псевдонимы портов. |
 | Импорт параметров | :::image type="icon" source="media/concept-sensor-console-overview/import-settings-icon-azure.png" border="false"::: | Отображение окна **Параметры импорта** . В сведениях об устройстве можно выполнять ручные изменения.<br /> Дополнительные сведения см. в разделе [Импорт сведений об устройстве](how-to-import-device-information.md) . |
 
@@ -214,7 +214,7 @@ ms.locfileid: "98623595"
 |----|---|---|
 | Поддержка | :::image type="icon" source="media/concept-sensor-console-overview/support-icon-azure.png" border="false"::: | Обратитесь за помощью в [Служба поддержки Майкрософт](https://support.microsoft.com/) . |
 
-### <a name="see-also"></a>См. также статью
+### <a name="see-also"></a>См. также раздел
 
 [Подключение датчика](getting-started.md#4-onboard-a-sensor)
 

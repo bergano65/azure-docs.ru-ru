@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 7cb805f60ba9feb0ae2d1483b2ab2df4e03639d8
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 333ffbf4107dfd005ba7e7fae6a079a618e0c645
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625420"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509441"
 ---
 # <a name="import-device-information-to-a-sensor"></a>Импорт сведений об устройстве в датчик
 
@@ -160,7 +160,7 @@ ms.locfileid: "98625420"
 
    - **Операционная система**: выберите из раскрывающегося списка.
 
-   - **Последнее обновление**: используйте формат гггг-мм-дд.
+   - **Дата последнего обновления**: используйте формат гггг-мм-дд.
 
     :::image type="content" source="media/how-to-import-device-information/last-update-screen.png" alt-text="Содержимое на экране.":::
 
@@ -172,7 +172,7 @@ ms.locfileid: "98625420"
 
 Чтобы импортировать состояние авторизации, выполните следующие действия.
 
-1. Скачайте и сохраните файл [authorized_devices.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) из центра справки "защитник для Интернета вещей". Убедитесь, что файл сохранен в формате CSV.
+1. Скачайте и сохраните файл [authorized_devices-examples.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) из центра справки защитника для Интернета вещей. Убедитесь, что файл сохранен в формате CSV.
 
 2. Введите сведения в виде:
 
@@ -188,7 +188,7 @@ ms.locfileid: "98625420"
 
 При импорте сведений вы получаете оповещения о неавторизованных устройствах для всех устройств, которые не отображаются в этом списке.
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также раздел
 
 [Выбор трафика для мониторинга](how-to-control-what-traffic-is-monitored.md)
 

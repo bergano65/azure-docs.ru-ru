@@ -5,15 +5,15 @@ services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.topic: include
-ms.date: 09/10/2020
+ms.date: 02/01/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 262783e83bdb846a3ea7e3015212c01048a00125
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 45cc5120072f2a8c7742f79cfb79161042345505
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96152637"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99427411"
 ---
 В таблице ниже перечислены квоты и ограничения для [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/). См. сведения о [ценах на Центры событий](https://azure.microsoft.com/pricing/details/event-hubs/).
 
@@ -30,7 +30,8 @@ ms.locfileid: "96152637"
 | Число получателей вне эпохи на группу потребителей |- |5 |
 | Число правил авторизации на каждое пространство имен | Последующие запросы на создание правила авторизации отклоняются.|12 |
 | Количество вызовов метода GetRuntimeInformation |  - | 50 в секунду | 
-| Количество правил виртуальной сети (VNet) и конфигурации IP | - | 128 | 
+| Количество виртуальных сетей (VNet) | - | 128 | 
+| Количество правил конфигурации IP-адресов | - | 128 | 
 
 
 ### <a name="basic-vs-standard-tiers"></a>Сравнение уровней "Базовый" и "Стандартный"

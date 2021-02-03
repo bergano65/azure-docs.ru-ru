@@ -68,6 +68,8 @@
           href: ./security-controls-policy.md
         - name: Базовые средства безопасности
           href: security-baseline.md
+    - name: Серверные системы
+      href: backends.md
     - name: Подписки
       href: api-management-subscriptions.md
     - name: Версии
@@ -104,10 +106,10 @@
           href: import-function-app-as-api.md
         - name: Импорт приложения логики
           href: import-logic-app-as-api.md
-        - name: Импорт приложения Service Fabric
-          href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
         - name: Изменение API
           href: edit-api.md
+        - name: Настройка серверной части Service Fabric
+          href: how-to-configure-service-fabric-backend.md
     - name: Подготовка к работе и масштабирование
       items:
         - name: Метрики емкости

@@ -13,12 +13,12 @@ ms.date: 02/02/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: cb7acb2ab74cc3f1304e5278524918865185463f
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: d544d884a82a7532bf343f38049102dfccae342f
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491305"
+ms.locfileid: "99507285"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
@@ -173,7 +173,8 @@ ms.locfileid: "99491305"
 - `"None"`
 - `"SecurityGroup"` (группы безопасности и роли Azure AD)
 - `"ApplicationGroup"` (этот параметр включает только группы, назначенные приложению)
-- `"All"` (это предоставит все группы безопасности, группы рассылки и роли каталога Azure AD, членом которых является выполнивший вход пользователь).
+- `"DirectoryRole"` (Получает роли каталога Azure AD, в которые входит пользователь)
+- `"All"` (будут получены все группы безопасности, группы рассылки и роли каталога Azure AD, в которые входит вошедший пользователь.
 
 Пример
 

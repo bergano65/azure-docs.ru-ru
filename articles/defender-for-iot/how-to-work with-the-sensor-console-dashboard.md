@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 11/03/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 735b1ce4391598d05a1bf0b4486503092f4de37d
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: c9afc22cd123a782c9ee0247952c78c72ee916c0
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97842919"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509087"
 ---
 # <a name="the-dashboard"></a>Панель мониторинга
 
@@ -20,7 +20,7 @@ ms.locfileid: "97842919"
 
 - Оповещения с разными уровнями серьезности:
 
-- Критические важное
+- Критически важно
 
 - Значительно
 
@@ -28,7 +28,7 @@ ms.locfileid: "97842919"
 
 - Предупреждения
 
-- Два датчика в центре страницы указывают на количество пакетов в секунду (PPS) и неподтвержденных предупреждений (UA). **PPS** — это количество пакетов, подтвержденных системой в секунду. **UA** — это количество предупреждений, которые еще не были подтверждены.
+- Два индикатора в центре страницы показывают количество пакетов в секунду (PPS) и неподтвержденных предупреждений (UA). **PPS** — это количество пакетов, подтвержденных системой в секунду. **UA** — это количество предупреждений, которые еще не были подтверждены.
 
 - Список неподтвержденных оповещений с их описанием.
 
@@ -78,23 +78,23 @@ ms.locfileid: "97842919"
 
 :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/extended-alert-screen.png" alt-text="Сведения об элементах и устройствах оповещений":::
 
-- Выберите устройство или **Показать устройства** , чтобы отобразить карту физического режима. Подсвеченные устройства выделены.
+- Выберите устройство, чтобы отобразить карту физического режима. Подсвеченные устройства выделены.
+
+- Щелкните в любом месте окна оповещения, чтобы отобразить дополнительные сведения о предупреждении. Всплывающее окно будет выглядеть примерно так, как показано ниже.
 
 - Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/excel-icon.png" alt-text="Excel"::: , чтобы экспортировать CSV-файл с предупреждением.
 
 - Только администраторы и аналитики безопасности — выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/approve-all-icon.png" alt-text="подтвердить все"::: , чтобы **подтвердить все** связанные оповещения.
 
-- Выберите запись оповещения, чтобы просмотреть тип и описание оповещения:
-
 - Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/pdf-icon.png" alt-text="PDF":::, чтобы скачать отчет о предупреждениях в PDF-файл.
 
-- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/pin-icon.png" alt-text="закрепить":::, чтобы закрепить или открепить оповещение.
+- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/pin-icon.png" alt-text="закрепить":::, чтобы закрепить или открепить оповещение. При выборе для закрепления он будет добавлен в окно **закрепленные оповещения** на экране **предупреждения** .
 
-- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/download-icon.png" alt-text="скачать"::: , чтобы исследовать оповещение, загрузив файл ПКАП, содержащий анализ сетевого протокола.
+- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/download-icon.png" alt-text="скачать"::: , чтобы исследовать оповещение, загрузив соответствующий файл ПКАП, содержащий анализ сетевого протокола.
 
-- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/cloud-download-icon.png" alt-text="облако"::: , чтобы скачать отфильтрованный файл ПКАП, содержащий только пакеты, относящиеся к предупреждениям, таким образом уменьшая размер выходного файла и обеспечивая более тщательное анализ. Его можно просмотреть с помощью [Wireshark](https://www.wireshark.org/).
+- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/cloud-download-icon.png" alt-text="облако"::: , чтобы скачать связанный фильтрованный файл ПКАП, который содержит только пакеты, относящиеся к предупреждениям, тем самым уменьшая размер выходного файла и позволяя более тщательно выполнять анализ. Его можно просмотреть с помощью [Wireshark](https://www.wireshark.org/).
 
-- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/navigate-icon.png" alt-text="навигацию"::: , чтобы перейти к временной шкале события во время выполнения запрошенного оповещения.
+- Выберите :::image type="content" source="media/how-to-work with-the-sensor-console-dashboard/navigate-icon.png" alt-text="навигацию"::: , чтобы перейти к временной шкале события во время выполнения запрошенного оповещения. Это позволяет оценивать другие события, которые могут возникнуть в отношении конкретного предупреждения.
 
 - Администраторы и аналитики безопасности — измените состояние предупреждения с неподтвержденного на подтвержденное. Выберите "сведения", чтобы утвердить обнаруженные действия.
 

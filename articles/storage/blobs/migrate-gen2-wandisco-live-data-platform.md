@@ -5,16 +5,16 @@ author: normesta
 ms.topic: how-to
 ms.author: normesta
 ms.reviewer: b-pauls
-ms.date: 11/06/2020
+ms.date: 11/17/2020
 ms.service: storage
 ms.custom: references_regions
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: db95f22a17c3776d84f12249693fb23b3d2d94e6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a0d02530ba2b8758b467b77ff639437675e4cc81
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95914445"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508935"
 ---
 # <a name="meet-demanding-migration-requirements-with-wandisco-livedata-platform-for-azure-preview"></a>Соблюдение требований к миграции на платформе Вандиско Ливедата для Azure (Предварительная версия)
 
@@ -34,7 +34,9 @@ ms.locfileid: "95914445"
 
 ## <a name="key-features-of-wandisco-livedata-platform-for-azure"></a>Основные возможности платформы Вандиско Ливедата для Azure
 
-[Платформа Вандиско ливедата для Azure](https://docs.wandisco.com/live-data-platform/docs/landing/) использует уникальную подсистему для обеспечения согласованности данных в глобальной сети, а также выполняет репликацию данных в масштабе, пока приложения могут продолжать изменять данные в процессе репликации.  
+[Платформа Вандиско ливедата для Azure](https://docs.wandisco.com/live-data-platform/docs/landing/) использует уникальную подсистему для обеспечения согласованности данных в глобальной сети, а также выполняет репликацию данных в масштабе, пока приложения могут продолжать изменять данные в процессе репликации. <br><br>
+
+>[!VIDEO https://www.youtube.com/embed/KRrmcYPxEho] 
 
 Ниже перечислены основные функции платформы.
 
@@ -86,7 +88,9 @@ ms.locfileid: "95914445"
 Поддерживайте согласованность данных в локальных кластерах Hadoop и хранилище Azure с помощью Ливедата плоскости для Azure после первоначальной миграции:
 
 1. Подготавливайте плоскость Ливедата для локальной среды Azure и в Azure, начиная с портал Azure. Изменения приложения не требуются.
+
 2. Настройте правила репликации, охватывающие те расположения данных, которые необходимо обеспечить целостность, например: `/user/contoso/sales/region/WA` .
+
 3. Запускайте приложения, которые обращаются и изменяют данные в любом расположении в качестве файловой системы, совместимой с Hadoop, по мере необходимости.
 
 Ливедата плоскость Azure обеспечивает целостность данных без установления значительных затрат на работу кластера или производительность приложения. Изменение или прием данных, пока все изменения реплицируются согласованно.
