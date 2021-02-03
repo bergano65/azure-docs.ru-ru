@@ -3,12 +3,12 @@ title: Сведения о структуре определения полит�
 description: Описывает, как определения политик используются для установки соглашений о ресурсах Azure в организации.
 ms.date: 10/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6e04551a2ef2f890844693fec71d2d3232a456f2
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 607d1d85dbb370305d0337cc311433c37e36c4c0
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220819"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493317"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -306,7 +306,7 @@ ms.locfileid: "98220819"
   - Используйте **global** для ресурсов, которые зависят от расположения.
 - `id`
   - Возвращает идентификатор ресурса, для которого выполняется оценка.
-  - Пример: `/subscriptions/06be863d-0996-4d56-be22-384767287aa2/resourceGroups/myRG/providers/Microsoft.KeyVault/vaults/myVault`
+  - Например, `/subscriptions/06be863d-0996-4d56-be22-384767287aa2/resourceGroups/myRG/providers/Microsoft.KeyVault/vaults/myVault`.
 - `identity.type`
   - Возвращает тип [управляемого удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md), включенный в ресурс.
 - `tags`
@@ -348,7 +348,7 @@ ms.locfileid: "98220819"
                 "value": "[resourcegroup().tags[parameters('tagName')]]"
             }],
             "roleDefinitionIds": [
-                "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+                "/providers/microsoft.authorization/roleDefinitions/4a9ae827-6dc8-4573-8ac7-8239d42aa03f"
             ]
         }
     }
@@ -504,10 +504,10 @@ ms.locfileid: "98220819"
 
 **Использование количества значений**
 
-- `current(<index name defined in count.name>)`. Например, `current('arrayMember')`.
+- `current(<index name defined in count.name>)`. Например: `current('arrayMember')`.
 - `current()`. Допускается только в том случае, если выражение **счетчика значений** не является дочерним элементом другого выражения **Count** . Возвращает то же значение, что и выше.
 
-Если значение, возвращаемое вызовом, является объектом, то поддерживаются методы доступа к свойствам. Например, `current('objectArrayMember').property`.
+Если значение, возвращаемое вызовом, является объектом, то поддерживаются методы доступа к свойствам. Например: `current('objectArrayMember').property`.
 
 **Использование счетчика полей**
 

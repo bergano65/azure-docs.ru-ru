@@ -3,12 +3,12 @@ title: Развертывание Live Video Analytics на IoT Edge устро�
 description: В этой статье перечислены действия, которые помогут вам развернуть службу Live Video Analytics на устройстве IoT Edge. Это можно сделать, например, при наличии доступа к локальной виртуальной машине Linux и (или) ранее созданной учетной записи служб мультимедиа Azure.
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: 38d138b43441016e06fca5003bc09c940cb23efe
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: ff5dbc8e643137008aa7819b455adcf97c05bfc9
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883322"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491796"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Развертывание Live Video Analytics на устройстве IoT Edge
 
@@ -240,7 +240,7 @@ sudo chown -R edgeuser /var/media
     
     ```
     {
-        "@apiVersion" : "1.0"
+        "@apiVersion" : "2.0"
     }
     ```
 1. Щелкните параметр "вызвать метод" в верхней части страницы.

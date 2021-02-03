@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 5b79a777ba8f7e615e4637f94311cba39e8a7f6c
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: ff768bceaba57c119aa88d5d4d99b11608917695
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223709"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492031"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-powershell"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью Azure PowerShell
 
@@ -51,7 +51,7 @@ New-AzResourceGroup -Name $rg -Location $loc
 # <a name="standard-sku---using-zones"></a>[**SKU "Стандартный" — Использование зон**](#tab/option-create-public-ip-standard-zones)
 
 >[!NOTE]
->Следующая команда работает для API версии 2020-08-01 или более поздней.  Дополнительные сведения о текущей используемой версии API см. в разделе [поставщики и типы ресурсов](../azure-resource-manager/management/resource-providers-and-types.md).
+>Следующая команда работает для AZ. Network Module версии 4.5.0 или более поздней.  Дополнительные сведения о модулях PowerShell, используемых в настоящее время, см. в [документации по PowerShellGet](https://docs.microsoft.com/powershell/module/powershellget/?view=powershell-7.1).
 
 Используйте [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) для создания стандартного общедоступного IP-адреса, избыточного в виде зоны, с именем **мистандардзрпублиЦип** в **myResourceGroup**.
 
@@ -67,7 +67,7 @@ $zone = 1,2,3
 New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -AllocationMethod $alloc -SKU $sku -zone $zone
 ```
 > [!IMPORTANT]
-> Для версий API старше 2020-08-01 выполните указанную выше команду, не указывая параметр зоны, чтобы создать IP-адрес, избыточный в виде зоны. 
+> Для AZ. Network modules старше 4.5.0 выполните указанную выше команду без указания параметра зоны, чтобы создать IP-адрес, избыточный в виде зоны. 
 >
 
 Чтобы создать стандартный общедоступный IP-адрес зональные в зона 2 с именем **мистандардзоналпублиЦип** в **myResourceGroup**, используйте следующую команду:
@@ -89,7 +89,7 @@ New-AzPublicIpAddress -ResourceGroupName $rg -Name $pubIP -Location $loc -Alloca
 # <a name="standard-sku---no-zones"></a>[**SKU "Стандартный" — без зон**](#tab/option-create-public-ip-standard)
 
 >[!NOTE]
->Следующая команда работает для API версии 2020-08-01 или более поздней.  Дополнительные сведения о текущей используемой версии API см. в разделе [поставщики и типы ресурсов](../azure-resource-manager/management/resource-providers-and-types.md).
+>Следующая команда работает для AZ. Network Module версии 4.5.0 или более поздней.  Дополнительные сведения о модулях PowerShell, используемых в настоящее время, см. в [документации по PowerShellGet](https://docs.microsoft.com/powershell/module/powershellget/?view=powershell-7.1).
 
 Используйте [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress) для создания стандартного общедоступного IP-адреса в качестве ресурса, отличного от зональные, с именем **мистандардпублиЦип** в **myResourceGroup**.
 

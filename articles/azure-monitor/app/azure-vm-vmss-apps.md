@@ -3,12 +3,12 @@ title: Мониторинг производительности на вирту
 description: Мониторинг производительности приложений для ВИРТУАЛЬНОЙ машины Azure и масштабируемых наборов виртуальных машин Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 01583cf5ecb85e4f66538afaba6984bff455ea99
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 48441711c8c6209b25974108fd91d1023fd6e6be
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475460"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493742"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>Развертывание агента Azure Monitor Application Insights на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "99475460"
 
 Существует два способа включения мониторинга приложений для виртуальных машин Azure и масштабируемых наборов виртуальных машин Azure, размещенных в приложениях:
 
-### <a name="auto-inctrumentation-via-application-insights-agent"></a>Auto-инктрументатион через агент Application Insights
+### <a name="auto-instrumentation-via-application-insights-agent"></a>Автоматическое инструментирование с помощью агента Application Insights
 
 * Этот метод является самым простым для включения и не требует дополнительной настройки. Часто это называется мониторингом среды выполнения.
 

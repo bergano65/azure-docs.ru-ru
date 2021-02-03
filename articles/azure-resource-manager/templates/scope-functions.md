@@ -3,12 +3,12 @@ title: Функции шаблонов в развертываниях с зад
 description: Описание разрешения функций шаблона в развертываниях с заданной областью. Областью может быть клиент, группы управления, подписки и группы ресурсов.
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: cb02a3dc808604a80fd9943138c1cd0d8648904e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: f128448380612bc9b8d9114226e8a3036feeead8
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681707"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492099"
 ---
 # <a name="arm-template-functions-in-deployment-scopes"></a>Функции шаблонов ARM в областях развертывания
 
@@ -40,15 +40,15 @@ ms.locfileid: "92681707"
 * Используйте функцию [екстенсионресаурцеид ()](template-functions-resource.md#extensionresourceid) для ресурсов, которые реализуются как расширения группы управления. Определения настраиваемой политики, развернутые в группе управления, являются расширениями группы управления.
 
   Чтобы получить идентификатор ресурса для определения пользовательской политики на уровне группы управления, используйте:
-  
+
   ```json
   "policyDefinitionId": "[extensionResourceId(variables('mgScope'), 'Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
   ```
 
-* Используйте функцию [тенантресаурцеид](template-functions-resource.md#tenantresourceid) , чтобы получить идентификатор для ресурса, развернутого в клиенте. Встроенные определения политик — это ресурсы уровня клиента. При назначении встроенной политики на уровне группы управления используйте функцию Тенантресаурцеид.
+* Используйте функцию [тенантресаурцеид ()](template-functions-resource.md#tenantresourceid) , чтобы получить идентификатор для ресурса, развернутого в клиенте. Встроенные определения политик — это ресурсы уровня клиента. При назначении встроенной политики на уровне группы управления используйте функцию Тенантресаурцеид.
 
   Чтобы получить идентификатор ресурса для встроенного определения политики, используйте:
-  
+
   ```json
   "policyDefinitionId": "[tenantResourceId('Microsoft.Authorization/policyDefinitions', parameters('policyDefinitionID'))]"
   ```
@@ -138,6 +138,6 @@ az deployment group create \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](template-syntax.md).
+* Сведения о том, как определить параметры в шаблоне, см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).
 * Советы по устранению распространенных ошибок развертывания см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
-* Сведения о развертывании шаблона, которому нужен токен SAS, см. в статье [Развертывание частного шаблона с помощью маркера SAS](secure-template-with-sas-token.md).
+* Сведения о развертывании шаблона, требующего маркер SAS, см. в статье [развертывание закрытого шаблона ARM с помощью маркера SAS](secure-template-with-sas-token.md).

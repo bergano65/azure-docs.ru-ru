@@ -3,24 +3,24 @@ title: Руководство по Создание приложения для 
 titleSuffix: Azure Cognitive Services
 description: В рамках этого руководства вы создадите приложение WPF для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 05/26/2020
-ms.author: swmachan
+ms.author: lajanuar
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d239b89aaf0bc140916d38583f4263f7bf660f1a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: dd5b83908ae7c6d62acd3391933028685facf755
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023622"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98927477"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
-В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы из Переводчика и средства [Проверка орфографии Bing](https://azure.microsoft.com/services/cognitive-services/spell-check/).
+В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](/visualstudio/designers/getting-started-with-wpf), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы из Переводчика и средства [Проверка орфографии Bing](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 
 Что такое WPF? Это инфраструктура пользовательского интерфейса, позволяющая создавать классические клиентские приложения. Платформа разработки WPF поддерживает широкий набор функций для разработки приложений, включая модель приложения, ресурсы, элементы управления, графику, макет, привязку данных, документы и безопасность. Это подмножество платформы .NET. Поэтому, если вы ранее создавали приложения на платформе .NET с помощью ASP.NET или Windows Forms, у вас не возникнет трудностей в процессе программирования. Для реализации декларативной модели программирования приложений, которая рассматривается в следующих разделах, в WPF используется расширяемый язык разметки приложений (XAML).
 
@@ -90,7 +90,7 @@ ms.locfileid: "95023622"
 1. После добавления этих ссылок в проект вы можете нажать кнопку **ОК**, чтобы закрыть **диспетчер ссылок**.
 
 > [!NOTE]
-> Дополнительные сведения о ссылках на сборки см. в [руководстве по добавлению или удалению ссылок с помощью диспетчера ссылок](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager?view=vs-2019).
+> Дополнительные сведения о ссылках на сборки см. в [руководстве по добавлению или удалению ссылок с помощью диспетчера ссылок](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager).
 
 ### <a name="install-newtonsoftjson"></a>Установка Newtonsoft.Json
 

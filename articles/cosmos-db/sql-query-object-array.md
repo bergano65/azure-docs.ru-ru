@@ -5,19 +5,43 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 01/07/2021
+ms.date: 02/02/2021
 ms.author: tisande
-ms.openlocfilehash: f959e4e230c1d9f89ad5141713b6a17a8cbb17a2
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 1dccb8e51fbc578f8f218fe1582f95f7bcaf42d7
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018927"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493796"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Работа с массивами и объектами в Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
-Ключевой функцией API Azure Cosmos DB SQL является создание массивов и объектов.
+Ключевой функцией API Azure Cosmos DB SQL является создание массивов и объектов. В этом документе используются примеры, которые можно создать повторно с помощью [набора данных Family](sql-query-getting-started.md#upload-sample-data).
+
+Ниже приведен пример элемента в этом наборе данных:
+
+```json
+{
+  "id": "AndersenFamily",
+  "lastName": "Andersen",
+  "parents": [
+     { "firstName": "Thomas" },
+     { "firstName": "Mary Kay"}
+  ],
+  "children": [
+     {
+         "firstName": "Henriette Thaulow",
+         "gender": "female",
+         "grade": 5,
+         "pets": [{ "givenName": "Fluffy" }]
+     }
+  ],
+  "address": { "state": "WA", "county": "King", "city": "Seattle" },
+  "creationDate": 1431620472,
+  "isRegistered": true
+}
+```
 
 ## <a name="arrays"></a>Массивы
 
@@ -72,7 +96,7 @@ FROM f
 ]
 ```
 
-## <a name="iteration"></a><a id="Iteration"></a>Итератив
+## <a name="iteration"></a><a id="Iteration"></a>Итерация
 
 API SQL обеспечивает поддержку итерации по массивам JSON с [ключевым словом in](sql-query-keywords.md#in) в источнике from. В следующем примере:
 
@@ -177,6 +201,8 @@ FROM child IN Families.children
 
 > [!NOTE]
 > При использовании ключевого слова IN для итерации нельзя фильтровать или проецировать любые свойства за пределами массива. Вместо этого следует использовать [объединения](sql-query-join.md).
+
+Дополнительные примеры см. [в записи блога о работе с массивами в Azure Cosmos DB](https://devblogs.microsoft.com/cosmosdb/understanding-how-to-query-arrays-in-azure-cosmos-db/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

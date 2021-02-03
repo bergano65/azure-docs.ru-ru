@@ -4,12 +4,12 @@ description: Узнайте, как просматривать и запраши
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 14b6ed3964900e3395ca335c301dfd0285da46e7
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 2a991157962b0588e3d49510e8a82a9abcfb9aed
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937303"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493776"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Анализ телеметрии функций Azure в Application Insights 
 
@@ -65,7 +65,7 @@ ms.locfileid: "97937303"
 | **[Сбои](../azure-monitor/app/asp-net-exceptions.md)** |  Создание диаграмм и оповещений на основе сбоев функции и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях здесь не отображаются, если вы не настроили для них пользовательскую телеметрию. |
 | **[Производительность](../azure-monitor/app/performance-counters.md)** | Анализ проблем с производительностью путем просмотра использования ресурсов и пропускной способности для **экземпляров облачных ролей**. Эти данные производительности могут быть полезны при отладке сценариев, в которых функции тормозя базовыми ресурсами. |
 | **[Метрики](../azure-monitor/platform/metrics-charts.md)** | Создание диаграмм и оповещений на основе метрик. Используются такие метрики: число вызовов функций, время выполнения и частота успешных попыток. |
-| **[Интерактивные метрики](../azure-monitor/app/live-stream.md)** | Просмотр данных метрик по мере их создания практически в реальном времени. |
+| **[Динамические метрики](../azure-monitor/app/live-stream.md)** | Просмотр данных метрик по мере их создания практически в реальном времени. |
 
 ## <a name="query-telemetry-data"></a>Запросы к данным телеметрии
 
@@ -77,18 +77,18 @@ ms.locfileid: "97937303"
 
 В этом примере показано распределение запросов по рабочим ролям за последние 30 минут.
 
-<pre>
+```kusto
 requests
 | where timestamp > ago(30m) 
 | summarize count() by cloud_RoleInstance, bin(timestamp, 1m)
 | render timechart
-</pre>
+```
 
 Доступные таблицы представлены на вкладке **Схема** в области слева. Данные, создаваемые при вызовах функций, вы найдете в следующих таблицах:
 
 | Таблица | Описание |
 | ----- | ----------- |
-| **traces** | Журналы, созданные средой выполнения и трассировки из кода функции. |
+| **traces** | Журналы, созданные средой выполнения, контроллером масштабирования и трассировками кода функции. |
 | **requests** | По одному запросу для каждого вызова функции. |
 | **exceptions** | Любые исключения в среде выполнения. |
 | **customMetrics** | Число успешных и неудачных вызовов, доля успешных попыток, продолжительность. |
@@ -99,12 +99,38 @@ requests
 
 В каждой таблице есть поле `customDimensions`, где хранится часть данных о конкретной функции.  Например, следующий запрос получает все трассировки с уровнем журнала `Error`.
 
-<pre>
+```kusto
 traces 
 | where customDimensions.LogLevel == "Error"
-</pre>
+```
 
 Среда выполнения предоставляет поля `customDimensions.LogLevel` и `customDimensions.Category`. Вы можете указать дополнительные поля в журналах, которые указываются в коде функции. Пример в C# см. в статье [структурированное ведение журнала](functions-dotnet-class-library.md#structured-logging) в разделе Руководство разработчика библиотеки классов .NET.
+
+## <a name="query-scale-controller-logs"></a>Журналы контроллера масштабирования запросов
+
+_Эта функция доступна в виде предварительной версии._
+
+После включения [ведения журнала контроллера масштабирования](configure-monitoring.md#configure-scale-controller-logs) и [интеграции Application Insights](configure-monitoring.md#enable-application-insights-integration)можно использовать поиск по журналам Application Insights, чтобы запросить созданные журналы контроллера масштабирования. Журналы контроллера масштабирования сохраняются в коллекции в `traces` категории **скалеконтроллерлогс** .
+
+Следующий запрос можно использовать для поиска всех журналов контроллера масштабирования для текущего приложения функции в течение указанного периода времени:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+```
+
+Следующий запрос расширяет предыдущий запрос, чтобы продемонстрировать, как получить только журналы, указывающие на изменение масштаба:
+
+```kusto
+traces 
+| extend CustomDimensions = todynamic(tostring(customDimensions))
+| where CustomDimensions.Category == "ScaleControllerLogs"
+| where message == "Instance count changed"
+| extend Reason = CustomDimensions.Reason
+| extend PreviousInstanceCount = CustomDimensions.PreviousInstanceCount
+| extend NewInstanceCount = CustomDimensions.CurrentInstanceCount
+```
 
 ## <a name="consumption-plan-specific-metrics"></a>Метрики, зависящие от плана потребления
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 212a6b0786b371bfb92f2e193e67d9accd432bf8
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c0c7a6b25c15be2e521e0985c315baf819650aa5
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657249"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491762"
 ---
 # <a name="api-management-transformation-policies"></a>Политики преобразования службы управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](./api-management-policies.md).
@@ -207,14 +207,14 @@ ms.locfileid: "97657249"
 <set-backend-service base-url="base URL of the backend service" />
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```xml
 <set-backend-service backend-id="identifier of the backend entity specifying base URL of the backend service" />
 ```
 
 > [!NOTE]
-> Внутренним объектам можно управлять с помощью [API](/rest/api/apimanagement/2019-12-01/backend) управления и [PowerShell](https://www.powershellgallery.com/packages?q=apimanagement).
+> Серверные сущности могут управляться с помощью [портал Azure](how-to-configure-service-fabric-backend.md), [API](/rest/api/apimanagement)управления и [PowerShell](https://www.powershellgallery.com/packages?q=apimanagement).
 
 ### <a name="example"></a>Пример
 
@@ -269,7 +269,7 @@ ms.locfileid: "97657249"
 |Имя|Описание|Обязательно|Значение по умолчанию|
 |----------|-----------------|--------------|-------------|
 |base-url|Новый базовый URL-адрес внутренней службы.|`base-url` `backend-id` Должен присутствовать один из или.|Недоступно|
-|backend-id|Идентификатор серверной части для перенаправления. (Внутренние сущности управляются через [API](/rest/api/apimanagement/2019-12-01/backend) и [PowerShell](https://www.powershellgallery.com/packages?q=apimanagement).)|`base-url` `backend-id` Должен присутствовать один из или.|Недоступно|
+|backend-id|Идентификатор серверной части для перенаправления. (Внутренние сущности управляются с помощью [портал Azure](how-to-configure-service-fabric-backend.md), [API](/rest/api/apimanagement)и [PowerShell](https://www.powershellgallery.com/packages?q=apimanagement).)|`base-url` `backend-id` Должен присутствовать один из или.|Недоступно|
 |sf-partition-key|Применяется только, когда серверной частью является служба Service Fabric и она задана с помощью атрибута backend-id. Используется для разрешения определенной секции в имени службы разрешения имен.|Нет|Недоступно|
 |sf-replica-type|Применяется только, когда серверной частью является служба Service Fabric и она задана с помощью атрибута backend-id. Контролирует, куда должен отправляться запрос: в первичную или вторичную реплику секции. |Нет|Недоступно|
 |sf-resolve-condition|Применяется только, когда серверной частью является служба Service Fabric. Условие, определяющее, необходимо ли повторить вызов к серверной части Service Fabric с новым разрешением.|Нет|Недоступно|
@@ -716,7 +716,7 @@ OriginalUrl.
 |Название|Описание|Обязательно|
 |----------|-----------------|--------------|
 |xsl-transform|Корневой элемент.|Да|
-|параметр|Используется для определения переменных, используемых при преобразовании.|Нет|
+|parameter|Используется для определения переменных, используемых при преобразовании.|Нет|
 |xsl:stylesheet|Корневой элемент таблицы стилей. Все определенные элементы и атрибуты соответствуют стандарту [спецификации XSLT](https://www.w3.org/TR/xslt).|Да|
 
 ### <a name="usage"></a>Использование

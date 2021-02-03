@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: 3485c6ca5c2672fa48b6118a78600b9745994ce1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 171b4dbfb2a5852e270c483a28cad31f97dcb42b
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466982"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493918"
 ---
 # <a name="enable-azure-monitor-on-your-azure-stack-edge-pro-gpu-device"></a>Включение Azure Monitor на устройстве Azure Stackного графического процессора Pro
 
@@ -30,7 +30,7 @@ ms.locfileid: "96466982"
 - Вы завершили **настройку шага вычислений** в соответствии с [руководством: Настройка вычислений на устройстве Azure Stack пограничной Pro](azure-stack-edge-gpu-deploy-configure-compute.md) на устройстве. Устройство должно иметь связанный ресурс центра Интернета вещей, устройство IoT и устройство IoT Edge.
 
 
-## <a name="create-log-analytics-workspace"></a>Создайте рабочую область Log Analytics.
+## <a name="create-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
 Чтобы создать рабочую область log Analytics, выполните следующие действия. Рабочая область log Analytics — это логическая единица хранения, в которой собираются и сохраняются данные журнала.
 
@@ -118,8 +118,8 @@ ms.locfileid: "96466982"
 
 1. Получите идентификатор и расположение ресурса. Перейдите к `Your Log Analytics workspace > General > Properties`. Скопируйте следующие сведения:
 
-    - **идентификатор ресурса** , который представляет собой полный идентификатор ресурса Azure log Analytics рабочей области Azure. 
-    - **Расположение** , которое является регионом Azure.
+    - **идентификатор ресурса**, который является полным идентификатором ресурса Azure log Analytics рабочей области Azure. 
+    - **Расположение**— регион Azure.
 
     ![Свойства рабочей области Log Analytics](media/azure-stack-edge-gpu-enable-azure-monitor/log-analytics-workspace-properties-1.png) 
 
@@ -241,3 +241,4 @@ ms.locfileid: "96466982"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [отслеживать рабочие нагрузки Kubernetes с помощью панели мониторинга Kubernetes](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md).
+- Узнайте, как [управлять уведомлениями о событиях устройств](azure-stack-edge-gpu-manage-device-event-alert-notifications.md). 

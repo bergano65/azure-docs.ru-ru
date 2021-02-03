@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 4d2f339f5a1339b5f249172170fed54c91f1dc24
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 2c469324db11d2e65f8eb958e68f77fd77020865
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927189"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491053"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-cli"></a>Краткое руководство. Создание общедоступного IP-адреса с помощью Azure CLI
 
@@ -53,7 +53,7 @@ ms.locfileid: "98927189"
     --resource-group myResourceGroup \
     --name myStandardZRPublicIP \
     --sku Standard
-    --zone 1,2,3
+    --zone 1 2 3
 ```
 > [!IMPORTANT]
 > Для версий API старше 2020-08-01 выполните указанную выше команду, не указывая параметр зоны, чтобы создать IP-адрес, избыточный в виде зоны. 

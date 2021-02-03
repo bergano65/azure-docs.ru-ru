@@ -11,18 +11,18 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: justinha
-ms.openlocfilehash: e4e7a64b9f9d7283de728216934854f4ef8f8fd1
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 89671d0e69d4e526e30c80619b57d698d5a5acc5
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96619739"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491171"
 ---
 # <a name="frequently-asked-questions-faqs-about-azure-active-directory-ad-domain-services"></a>Часто задаваемые вопросы о доменных службах Azure Active Directory (AD)
 
 На этой странице приведены ответы на часто задаваемые вопросы об Azure Active Directory доменных службах.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 * [Можно ли создать несколько управляемых доменов для одного каталога Azure AD?](#can-i-create-multiple-managed-domains-for-a-single-azure-ad-directory)
 * [Можно ли включить доменные службы Azure AD в классической виртуальной сети?](#can-i-enable-azure-ad-domain-services-in-a-classic-virtual-network)
@@ -106,7 +106,7 @@ ms.locfileid: "96619739"
 Нет. Вы не предоставили права администратора в управляемом домене. Права администратора *домена* и *администратора предприятия* недоступны для использования в домене. Члены групп администраторов домена или администраторов предприятия в локальных Active Directory также не получают права администратора домена или предприятия в управляемом домене.
 
 ### <a name="can-i-modify-group-memberships-using-ldap-or-other-ad-administrative-tools-on-managed-domains"></a>Можно ли изменить членство в группах с помощью LDAP или других инструментов администрирования AD для управляемых доменов?
-Пользователи и группы, синхронизированные из Azure Active Directory в доменные службы Azure AD, не могут быть изменены, так как их источник происхождения Azure Active Directory. Все пользователи или группы, созданные в управляемом домене, могут быть изменены.
+Пользователи и группы, синхронизированные из Azure Active Directory в доменные службы Azure AD, не могут быть изменены, так как их источник происхождения Azure Active Directory. Сюда входит перемещение пользователей или групп из управляемого подразделения пользователей AADDC в пользовательское подразделение. Все пользователи или группы, созданные в управляемом домене, могут быть изменены.  
 
 ### <a name="how-long-does-it-take-for-changes-i-make-to-my-azure-ad-directory-to-be-visible-in-my-managed-domain"></a>Через какое время изменения в каталоге Azure AD будут отображаться в управляемом домене?
 Изменения, внесенные в каталог Azure AD с помощью пользовательского интерфейса Azure AD или PowerShell, автоматически синхронизируются с управляемым доменом. Процесс синхронизации происходит в фоновом режиме. Не определен период времени для этой синхронизации, чтобы выполнить все изменения объекта.

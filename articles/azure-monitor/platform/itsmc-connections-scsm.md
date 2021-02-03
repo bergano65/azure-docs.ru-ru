@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 79706b66dba46253843b1f53a26481170d6ff723
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 907a78b15cca4718308f79bc6be2e6258bc04d19
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97729728"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492677"
 ---
 # <a name="connect-system-center-service-manager-with-it-service-management-connector"></a>Подключение System Center Service Manager к Соединитель управления ИТ-услугами
 
@@ -32,7 +32,7 @@ ms.locfileid: "97729728"
 
 > [!NOTE]
 > - Соединитель ITSM позволяет подключаться только к облачным экземплярам ServiceNow. Локальные экземпляры ServiceNow сейчас не поддерживаются.
-> - Чтобы использовать пользовательские [шаблоны](./itsmc-definition.md#template-definitions) в составе действий, параметр "прожектионтипе" в шаблоне SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
+> - Чтобы использовать пользовательские [шаблоны](./itsmc-definition.md#define-a-template) в составе действий, параметр "прожектионтипе" в шаблоне SCSM должен быть сопоставлен с "IncidentManagement! System. WorkItem. инцидент. Прожектионтипе "
 
 ## <a name="connection-procedure"></a>Процедура подключения
 
@@ -163,8 +163,8 @@ ms.locfileid: "97729728"
 
 ![Проверка гибридного подключения](media/itsmc-connections/itsmc-hybrid-connection-test.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор соединитель ITSM](itsmc-overview.md)
+* [Обзор соединителя ITSM](itsmc-overview.md)
 * [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts)
 * [Устранение неполадок с соединителем ITSM](./itsmc-resync-servicenow.md)

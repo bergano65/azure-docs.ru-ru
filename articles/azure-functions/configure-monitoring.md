@@ -4,12 +4,12 @@ description: Узнайте, как подключить приложение ф
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: e24f2b1a61d77dafd7a23b04d225d0301f82ca59
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 5007009d9aabf9a1c1c6e1d5c2f286c0ba25b340
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070146"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493759"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Настройка мониторинга для функций Azure
 
@@ -229,6 +229,8 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 --setting-names SCALE_CONTROLLER_LOGGING_ENABLED
 ```
 
+Если ведение журнала контроллера масштабирования включено, теперь вы можете [запрашивать журналы контроллера масштабирования](analyze-telemetry-data.md#query-scale-controller-logs). 
+
 ## <a name="enable-application-insights-integration"></a>Включение интеграции с Application Insights
 
 Для отправки данных в Application Insights приложению-функции требуется ключ инструментирования для ресурса Application Insights. В параметре приложения должен быть ключ с именем **APPINSIGHTS_INSTRUMENTATIONKEY**.
@@ -271,30 +273,6 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 
 > [!NOTE]
 > Ранние версии решения "Функции" использовали встроенный мониторинг, который больше не рекомендуется. При включении интеграции Application Insights для такого приложения-функции необходимо также [отключить встроенное ведение журналов](#disable-built-in-logging).  
-
-## <a name="query-scale-controller-logs"></a>Журналы контроллера масштабирования запросов
-
-После включения ведения журнала контроллера масштабирования и интеграции Application Insights можно использовать поиск по журналам Application Insights, чтобы запросить созданные журналы контроллера масштабирования. Журналы контроллера масштабирования сохраняются в коллекции в `traces` категории **скалеконтроллерлогс** .
-
-Следующий запрос можно использовать для поиска всех журналов контроллера масштабирования для текущего приложения функции в течение указанного периода времени:
-
-```kusto
-traces 
-| extend CustomDimensions = todynamic(tostring(customDimensions))
-| where CustomDimensions.Category == "ScaleControllerLogs"
-```
-
-Следующий запрос расширяет предыдущий запрос, чтобы продемонстрировать, как получить только журналы, указывающие на изменение масштаба:
-
-```kusto
-traces 
-| extend CustomDimensions = todynamic(tostring(customDimensions))
-| where CustomDimensions.Category == "ScaleControllerLogs"
-| where message == "Instance count changed"
-| extend Reason = CustomDimensions.Reason
-| extend PreviousInstanceCount = CustomDimensions.PreviousInstanceCount
-| extend NewInstanceCount = CustomDimensions.CurrentInstanceCount
-```
 
 ## <a name="disable-built-in-logging"></a>Отключение встроенного ведения журнала
 

@@ -16,19 +16,19 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions
-ms.openlocfilehash: d6e8c4f4b6646254aeea12cf587f47047e661e3f
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 93d5d422709fad3d4f732b3b232f67d60d79b507
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222876"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493725"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Обновление общедоступных IP-адресов
 
-Общедоступные IP-адреса Azure создаются с номером SKU — Basic или Standard, который определяет аспекты их работы (включая метод распределения, использование в разных зонах доступности и ресурсы, с которыми они могут быть связаны). 
+Общедоступные IP-адреса Azure создаются с номером SKU — Basic или Standard, который определяет характеристики их функциональности (включая метод распределения, поддержку функций и ресурсы, с которыми они могут быть связаны). 
 
 В этой статье рассматриваются следующие сценарии:
-* Обновление общедоступного IP-адреса базового SKU до общедоступного IP-адреса SKU уровня "Стандартный" (с помощью портала, PowerShell или интерфейса командной строки)
+* Обновление общедоступного IP-адреса уровня "базовый" до общедоступного IP-адреса SKU "Стандартный" (с помощью PowerShell или CLI)
 * Как перенести классическую зарезервированный IP-адрес Azure на общедоступный IP-адрес Azure Resource Manager Basic SKU
 
 ## <a name="upgrade-public-ip-address-from-basic-to-standard-sku"></a>Обновление общедоступного IP-адреса с базового на стандартный SKU

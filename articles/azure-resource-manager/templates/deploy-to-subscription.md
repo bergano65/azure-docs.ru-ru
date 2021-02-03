@@ -3,12 +3,12 @@ title: Развертывание ресурсов в подписке
 description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: 1daf95945f619d0e904880d8a8a778810a685d9a
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: b5c99e5dc21c2b93f1c9da3977302a2dd311277f
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183988"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491509"
 ---
 # <a name="subscription-deployments-with-arm-templates"></a>Развертывание подписок с помощью шаблонов ARM
 
@@ -104,7 +104,7 @@ az deployment sub create \
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-В качестве команды развертывания в PowerShell используйте [New-AzDeployment](/powershell/module/az.resources/new-azdeployment) или **New-AzSubscriptionDeployment**. В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
+Для команды развертывания PowerShell используйте [New-аздеплоймент](/powershell/module/az.resources/new-azdeployment) или его псевдоним `New-AzSubscriptionDeployment` . В следующем примере выполняется развертывание шаблона для создания группы ресурсов.
 
 ```azurepowershell-interactive
 New-AzSubscriptionDeployment `
@@ -130,7 +130,7 @@ New-AzSubscriptionDeployment `
 
 Для развертываний на уровне подписки необходимо указать расположение для развертывания. Расположение развертывания отделено от расположения развертываемых ресурсов. В расположении развертывания указывается место хранения данных развертывания. Для развертывания [группы управления](deploy-to-management-group.md) и [клиента](deploy-to-tenant.md) также требуется расположение. Для развертываний [группы](deploy-to-resource-group.md) ресурсов расположение группы ресурсов используется для хранения данных развертывания.
 
-Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
+Можно указать имя развертывания или использовать имя развертывания по умолчанию. Имя по умолчанию — это имя файла шаблона. Например, развернув шаблон с именем _azuredeploy.json_ создается имя развертывания по умолчанию **azuredeploy**.
 
 Для каждого имени развертывания расположение остается неизменным. Нельзя создать развертывание в одном расположении, если в другом уже есть развертывание с таким же именем. Например, если вы создаете развертывание подписки с именем **deployment1** в **centralus**, вы не сможете позднее создать другое развертывание с именем **deployment1** , а расположение **westus**. Если появится код ошибки `InvalidDeploymentLocation`, используйте другое имя или то же расположение, что и для предыдущего развертывания с этим именем.
 
@@ -173,9 +173,9 @@ New-AzSubscriptionDeployment `
 
 ### <a name="scope-to-tenant"></a>Область для клиента
 
-Вы можете создавать ресурсы в клиенте, присвоив параметру `scope` значение `/` . Пользователь, развертывающий шаблон, должен иметь [необходимый доступ для развертывания в клиенте](deploy-to-tenant.md#required-access).
+Чтобы создать ресурсы в клиенте, присвойте свойству значение `scope` `/` . Пользователь, развертывающий шаблон, должен иметь [необходимый доступ для развертывания в клиенте](deploy-to-tenant.md#required-access).
 
-Можно использовать вложенное развертывание с `scope` и `location` задать.
+Чтобы использовать вложенное развертывание, задайте `scope` и `location` .
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/subscription-to-tenant.json" highlight="9,10,14":::
 
@@ -254,7 +254,7 @@ New-AzSubscriptionDeployment `
 }
 ```
 
-Дополнительные сведения см. в статьях [Развертывание нескольких экземпляров ресурса в шаблонах Azure Resource Manager](./copy-resources.md) и [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./template-tutorial-create-multiple-instances.md).
+Сведения о итерации ресурсов см. [в статье итерация ресурсов в шаблонах ARM](./copy-resources.md)и [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов ARM](./template-tutorial-create-multiple-instances.md).
 
 ### <a name="create-resource-group-and-resources"></a>Создание группы ресурсов и ресурсов
 

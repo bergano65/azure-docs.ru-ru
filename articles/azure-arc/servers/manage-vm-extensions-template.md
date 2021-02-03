@@ -1,14 +1,14 @@
 ---
 title: Включение расширения виртуальной машины с помощью шаблона Azure Resource Manager
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, с помощью шаблона Azure Resource Manager.
-ms.date: 11/06/2020
+ms.date: 02/03/2021
 ms.topic: conceptual
-ms.openlocfilehash: d5c7f5055f3e41a91fa00e1e3ad08e7686145b9e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: cfba14ac30553178bd509d0b0e7ba9c60332d299
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94353872"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493334"
 ---
 # <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Включение расширений виртуальной машины Azure с помощью шаблона ARM
 
@@ -700,7 +700,91 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\KeyVaultExtension.json"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="deploy-the-azure-defender-integrated-scanner"></a>Развертывание встроенного сканера защитника Azure
+
+Чтобы использовать расширение встроенного сканера Azure Defender, используйте следующий пример для запуска в Windows и Linux. Если вы не знакомы со встроенным сканером, см. статью [Обзор решения для оценки уязвимостей в защитнике Azure](../../security-center/deploy-vulnerability-assessment-vm.md) для гибридных компьютеров.
+
+### <a name="template-file-for-windows"></a>Файл шаблона для Windows
+
+```json
+{
+  "properties": {
+    "mode": "Incremental",
+    "template": {
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "parameters": {
+        "vmName": {
+          "type": "string"
+        },
+        "apiVersionByEnv": {
+          "type": "string"
+        }
+      },
+      "resources": [
+        {
+          "type": "resourceType/providers/WindowsAgent.AzureSecurityCenter",
+          "name": "[concat(parameters('vmName'), '/Microsoft.Security/default')]",
+          "apiVersion": "[parameters('apiVersionByEnv')]"
+        }
+      ]
+    },
+    "parameters": {
+      "vmName": {
+        "value": "resourceName"
+      },
+      "apiVersionByEnv": {
+        "value": "2015-06-01-preview"
+      }
+    }
+  }
+}
+```
+
+### <a name="template-file-for-linux"></a>Файл шаблона для Linux
+
+```json
+{
+  "properties": {
+    "mode": "Incremental",
+    "template": {
+      "contentVersion": "1.0.0.0",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "parameters": {
+        "vmName": {
+          "type": "string"
+        },
+        "apiVersionByEnv": {
+          "type": "string"
+        }
+      },
+      "resources": [
+        {
+          "type": "resourceType/providers/LinuxAgent.AzureSecurityCenter",
+          "name": "[concat(parameters('vmName'), '/Microsoft.Security/default')]",
+          "apiVersion": "[parameters('apiVersionByEnv')]"
+        }
+      ]
+    },
+    "parameters": {
+      "vmName": {
+        "value": "resourceName"
+      },
+      "apiVersionByEnv": {
+        "value": "2015-06-01-preview"
+      }
+    }
+  }
+}
+```
+
+Сохраните файл шаблона на диске. Затем можно установить расширение на всех подключенных компьютерах в группе ресурсов с помощью следующей команды.
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\AzureDefenderScanner.json"
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Расширения виртуальных машин можно развертывать, администрировать и удалять с помощью [Azure PowerShell](manage-vm-extensions-powershell.md), из [портал Azure](manage-vm-extensions-portal.md)или [Azure CLI](manage-vm-extensions-cli.md).
 

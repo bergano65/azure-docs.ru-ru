@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: 6400d3f3c721619551ba3989a2e5799b72ff9f38
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: e485c2f0a7deeffe68c932688658ef099fec510e
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831930"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99492761"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
 
@@ -70,7 +70,9 @@ ms.locfileid: "97831930"
     - [Ручное масштабирование числа узлов в кластере AKS](../aks/scale-cluster.md)
     - [Настройка автомасштабирования кластера в AKS](../aks/cluster-autoscaler.md)
 
-## <a name="azure-kubernetes-service-version"></a>Версия службы Kubernetes Azure
+- __Не обновляйте кластер напрямую с помощью конфигурации YAML__. Хотя службы Azure Kubernetes Services поддерживают обновления через конфигурацию YAML, Машинное обучение Azure развертывания будут переопределять изменения. Только два поля YAML, которые не будут перезаписаны, — это __ограничения запросов__ , а также __ЦП и память__.
+
+## <a name="azure-kubernetes-service-version"></a>Версия Службы Azure Kubernetes (AKS)
 
 Служба Kubernetes Azure позволяет создавать кластеры с помощью различных версий Kubernetes. Дополнительные сведения о доступных версиях см. [в разделе Supported Kubernetes Versions in Azure Kubernetes Service](../aks/supported-kubernetes-versions.md).
 
@@ -380,8 +382,7 @@ az ml computetarget detach -n myaks -g myresourcegroup -w myworkspace
 
 ---
 
-## <a name="troubleshooting"></a>Устранение неполадок
-
+## <a name="troubleshooting"></a>Диагностика
 ### <a name="update-the-cluster"></a>Обновление кластера
 
 Обновления компонентов Машинное обучение Azure, установленных в кластере службы Azure Kubernetes, необходимо применять вручную. 
