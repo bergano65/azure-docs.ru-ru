@@ -4,18 +4,16 @@ description: В этом кратком руководстве показано,
 ms.topic: quickstart
 ms.date: 04/27/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 8e3f0a5cb6a97ce55d848c2d3311ebab5151e186
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d3ba937abcc7bbfd9bb2afe7b15aec28ebb57446
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494993"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508517"
 ---
 # <a name="quickstart-analyze-live-video-by-using-your-own-http-model"></a>Краткое руководство. Анализ видеотрансляции с помощью собственной модели HTTP
 
 В этом кратком руководстве показано, как использовать Аналитику видеотрансляций в службе IoT Edge для анализа потока видеотрансляции из (имитированной) IP-камеры. Вы узнаете, как применить модель компьютерного зрения для обнаружения объектов. Подмножество кадров в потоке видео в реальном времени отправляется в службу вывода. Результаты отправляются в центр IoT Edge. 
-
-В этом кратком руководстве используется имитация видеотрансляции, а в качестве устройства IoT Edge используется виртуальная машина Azure. Оно основывается на образце кода, написанном на C# для краткого руководства [Создание событий при обнаружении движения](detect-motion-emit-events-quickstart.md). 
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [header](includes/analyze-live-video-your-http-model-quickstart/csharp/header.md)]

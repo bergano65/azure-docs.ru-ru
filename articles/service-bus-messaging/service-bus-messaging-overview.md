@@ -2,13 +2,13 @@
 title: Основные сведения об обмене сообщениями через служебную шину Azure | Документация Майкрософт
 description: В этой статье представлены общие сведения о Служебной шине Azure, полностью управляемом интеграционном брокере сообщений корпоративного типа.
 ms.topic: overview
-ms.date: 11/20/2020
-ms.openlocfilehash: 7453e8dd300ad754fb58489f059670af209314ab
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 01/28/2021
+ms.openlocfilehash: 232f25ca94e9426a20755940caf284426502cfb3
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881607"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219168"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 Служебная шина Microsoft Azure — это полностью управляемый брокер сообщений корпоративного типа с поддержкой очередей сообщений и разделов публикации и подписки. Служебная шина используется для разделения приложений и служб, что предоставляет следующие преимущества:
@@ -152,12 +152,12 @@ ms.locfileid: "98881607"
 
 Служебная шина полностью интегрируется со многими службами Microsoft и Azure, например со следующими:
 
-* [Сетка событий](https://azure.microsoft.com/services/event-grid/)
-* [Logic Apps](https://azure.microsoft.com/services/logic-apps/)
-* [Функции Azure](https://azure.microsoft.com/services/functions/)
-* [Power Platform](https://powerplatform.microsoft.com/)
-* [Dynamics 365](https://dynamics.microsoft.com)
-* [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
+* [Сетка событий](service-bus-to-event-grid-integration-example.md)
+* [Logic Apps](../connectors/connectors-create-api-servicebus.md)
+* [Функции Azure](../azure-functions/functions-bindings-service-bus.md)
+* [Power Platform](../connectors/connectors-create-api-servicebus.md)
+* [Dynamics 365](/dynamics365/fin-ops-core/dev-itpro/business-events/how-to/how-to-servicebus)
+* [Azure Stream Analytics](../stream-analytics/stream-analytics-define-outputs.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,19 +1,16 @@
 ---
 title: Apache Spark в Azure HDInsight
 description: В этой статье представлены общие сведения о Spark в HDInsight и различные сценарии, в которых вы можете использовать кластер Spark в HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: contperf-fy21q1
 ms.topic: overview
 ms.date: 09/21/2020
-ms.openlocfilehash: e75661b54ce9a74013938d11ca7f13d9c3698c76
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: fdc3a94c081d8a02725f145fc6b20ace4c1731ce
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822052"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090559"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -53,7 +50,7 @@ Spark предоставляет примитивы для кластерных 
 * [Записная книжка Jupyter](https://jupyter.org)
 * [Записная книжка Apache Zeppelin](http://zeppelin-project.org/)
 
-Кластеры Spark в HDInsight включают [драйвер ODBC](https://go.microsoft.com/fwlink/?LinkId=616229) для подключения из средств бизнес-аналитики, таких как Microsoft Power BI.
+Кластеры Spark в HDInsight включают [драйвер ODBC](/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15) для подключения из средств бизнес-аналитики, таких как Microsoft Power BI.
 
 ## <a name="spark-cluster-architecture"></a>Архитектура кластера Spark
 

@@ -2,19 +2,16 @@
 title: Краткое руководство. Apache Hadoop, Apache Hive и портал Azure HDInsight
 description: В этом кратком руководстве для создания кластера Hadoop в HDInsight используется портал Azure
 keywords: начало работы с hadoop, hadoop под управлением linux, краткое руководство по hadoop, начало работы с hive, краткое руководство по hive
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.date: 02/24/2020
-ms.openlocfilehash: 02990ce287aa423481c1bfe8ec5e2a8a4cfdb555
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cd3e997bf2fda5f586fdb1ee4dcedff1adbf41f3
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91858495"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98946600"
 ---
 # <a name="quickstart-create-apache-hadoop-cluster-in-azure-hdinsight-using-azure-portal"></a>Краткое руководство. Создание кластера Apache Hadoop в Azure HDInsight с помощью портала Azure
 

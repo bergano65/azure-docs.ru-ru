@@ -3,19 +3,18 @@ title: Краткое руководство. Создание Azure Key Vault �
 description: Краткое руководство по созданию Azure Key Vault с помощью Azure PowerShell.
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: quickstart
-ms.date: 12/08/2020
+ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: 73d247464f167040c6f7129bdf7014b877317fc5
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: e77493bc73bc2d6f590d9bdcf891171fbd71f74e
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936270"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070228"
 ---
 # <a name="quickstart-create-a-key-vault-using-powershell"></a>Краткое руководство. Создание хранилища ключей с помощью PowerShell
 
@@ -33,44 +32,15 @@ Login-AzAccount
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. 
+[!INCLUDE [Create a resource group](../../../includes/key-vault-powershell-rg-creation.md)]
 
-```azurepowershell-interactive
-New-AzResourceGroup -Name 'myResourceGroup" -Location "EastUS"
-```
+## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
-## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
-
-Создайте Key Vault в группе ресурсов, созданной на предыдущем шаге. Необходимо будет указать следующие сведения:
-
-- Имя хранилища ключей: строка длиной от 3 до 24 знаков, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
-
-  > [!Important]
-  > Каждое хранилище ключей должно иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
-
-- Имя группы ресурсов: **myResourceGroup**.
-- Расположение: **EastUS**.
-
-```azurepowershell-interactive
-New-AzKeyVault -Name "<your-unique-key-vault-name>" -ResourceGroupName "myResourceGroup" -Location "East US"
-```
-
-В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
-
-- **Имя хранилища.** Имя, которое вы указали в параметре --name выше.
-- **URI хранилища**. В нашем примере это https://<уникальное_имя_хранилища_ключей>.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
-
-На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-kv-creation.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Другие руководства в этой серии созданы на основе этого документа. Если вы планируете продолжить работу с другими краткими руководствами и статьями, эти ресурсы можно не удалять.
-
-Чтобы удалить группу ресурсов и все связанные с ней ресурсы, выполните команду Azure PowerShell [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup).
-
-```azurepowershell-interactive
-Remove-AzResourceGroup -Name "myResourceGroup"
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-delete-resources.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

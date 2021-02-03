@@ -3,19 +3,19 @@ title: Краткое руководство. Назначение пользо�
 description: В этом кратком руководстве описывается процесс, позволяющий пользователям использовать приложение, которое настроено для использования Azure AD в качестве поставщика удостоверений.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
 ms.workload: identity
 ms.date: 09/01/2020
 ms.author: kenwith
-ms.openlocfilehash: 889ad3b74a2f7c0baa006a0c45e3f14664d6cd0c
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 53dd2d15565149c3a9888ba063a6194ae033d8e0
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91325884"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99258377"
 ---
 # <a name="quickstart-assign-users-to-an-app-that-is-using-azure-ad-as-an-identity-provider"></a>Краткое руководство. Назначение пользователей приложению, которое использует Azure AD в качестве поставщика удостоверений
 

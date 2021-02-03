@@ -5,15 +5,15 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 08/14/2020
+ms.date: 02/03/2021
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 610c545bf25822d27e0a641a1b2631f899502420
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 16004e6e471094c99229c32a63396ac3b0490905
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340164"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524313"
 ---
 # <a name="getcurrentticks-azure-cosmos-db"></a>Жеткурренттиккс (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -30,11 +30,12 @@ GetCurrentTicks ()
 
 Возвращает числовое значение со знаком, текущее число 100-наносекундных тактов, прошедшее с момента создания эпохи UNIX. Иными словами, Жеткурренттиккс возвращает число импульсов 100 наносекунд, истекших с 00:00:00 четверг, 1 января 1970.
 
-## <a name="remarks"></a>Комментарии
+## <a name="remarks"></a>Примечания
 
 Жеткурренттиккс () является недетерминированной функцией. Возвращаемый результат — UTC (всемирное время).
 
-Эта системная функция не будет использовать индекс.
+> [!NOTE]
+> Эта системная функция не будет использовать индекс. Если необходимо сравнить значения с текущим временем, получите текущее время перед выполнением запроса и используйте это постоянное строковое значение в `WHERE` предложении.
 
 ## <a name="examples"></a>Примеры
 
@@ -52,7 +53,7 @@ SELECT GetCurrentTicks() AS CurrentTimeInTicks
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

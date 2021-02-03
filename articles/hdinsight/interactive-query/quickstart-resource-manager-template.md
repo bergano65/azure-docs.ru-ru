@@ -1,19 +1,16 @@
 ---
 title: Краткое руководство. Создание кластера Interactive Query с помощью шаблона в Azure HDInsight
 description: В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager создать кластер Interactive Query в Azure HDInsight.
-author: hrasheed-msft
-ms.author: hrasheed
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 969aadbe342dbfd345930082d56e0af93eea37d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4872dd29442a1503e04672a7c42fd7b49a0c506c
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91854381"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98945246"
 ---
 # <a name="quickstart-create-interactive-query-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера Interactive Query в Azure HDInsight с помощью шаблона ARM
 

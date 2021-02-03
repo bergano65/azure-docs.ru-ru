@@ -3,7 +3,7 @@ title: Распространенные сценарии управления п
 description: Централизованное управление приложениями с помощью Azure Active Directory
 documentationcenter: ''
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-provisioning
@@ -15,12 +15,12 @@ ms.date: 03/02/2019
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b78562bc3590bdf5b15e4061ba23e1284b07c16
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 6372407a5deebefab60e09a9d0c01d977157357b
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835498"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259576"
 ---
 # <a name="centralize-application-management-with-azure-ad"></a>Централизованное управление приложениями с помощью Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "94835498"
 |Компонент  | Описание | Рекомендация |
 |---------|---------|---------|
 |Единый вход|Федеративный единый вход на основе надежных отраслевых стандартов.|Если приложение поддерживает [SAML/OIDC](../develop/v2-howto-app-gallery-listing.md), обязательно используйте их для включения единого входа.|
-|Мои приложения|Предоставляет пользователям простой центр для обнаружения приложений и доступа к ним. Повысьте продуктивность сотрудников, предоставив им возможности самообслуживания. Разрешите им, например, запрашивать доступ к приложениям и группам или управлять доступом к ресурсам от лица других пользователей.| После интеграции приложений с Azure AD для единого входа разверните [Мои приложения](./access-panel-deployment-plan.md) в вашей организации.|
+|Мои приложения|Предоставляет пользователям простой центр для обнаружения приложений и доступа к ним. Повысьте продуктивность сотрудников, предоставив им возможности самообслуживания. Разрешите им, например, запрашивать доступ к приложениям и группам или управлять доступом к ресурсам от лица других пользователей.| После интеграции приложений с Azure AD для единого входа разверните [Мои приложения](my-apps-deployment-plan.md) в вашей организации.|
 
 ## <a name="scenario-2-automate-provisioning-and-deprovisioning"></a>Сценарий 2. Автоматическая подготовка и ее отзыв 
 

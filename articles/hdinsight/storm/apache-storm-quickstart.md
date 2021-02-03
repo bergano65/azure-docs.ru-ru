@@ -1,19 +1,16 @@
 ---
 title: Краткое руководство. Создание и администрирование топологии Apache Storm в Azure HDInsight
 description: В рамках этого краткого руководства вы научитесь создавать и отслеживать топологии Apache Storm в Azure HDInsight.
-author: hrasheed-msft
-ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.date: 06/14/2019
-ms.author: hrasheed
 ms.custom: mvc
-ms.openlocfilehash: 8f13c813eee9bcfde578ba210c5aa2f2fe1cac2c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fe7b1cdc96ae95ac361183342ea491432c3ab4b4
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86045031"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928854"
 ---
 # <a name="quickstart-create-and-monitor-an-apache-storm-topology-in-azure-hdinsight"></a>Краткое руководство. Создание и мониторинг топологии Apache Storm в Azure HDInsight
 
@@ -49,7 +46,7 @@ Storm предоставляет веб-интерфейс для работы �
 
 1. Для отображения пользовательского интерфейса Storm перейдите в веб-браузере по адресу `https://CLUSTERNAME.azurehdinsight.net/stormui`. Замените `CLUSTERNAME` именем кластера.
 
-2. В разделе**Topology summary** (Сводка по топологии) выберите запись **wordcount** в столбце **Name** (Имя). Отобразятся сведения о топологии.
+2. В разделе **Topology summary** (Сводка по топологии) выберите запись **wordcount** в столбце **Name** (Имя). Отобразятся сведения о топологии.
 
     ![Панель мониторинга Storm со сведениями о топологии WordCount в storm-starter.](./media/apache-storm-quickstart/hdi-topology-summary.png)
 

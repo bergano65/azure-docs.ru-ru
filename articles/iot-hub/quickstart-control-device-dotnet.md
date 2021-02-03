@@ -14,12 +14,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 03/04/2020
-ms.openlocfilehash: 88b818a25a0888cc74783a210cc7a1c0acb455ac
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 28d80a20c50f846146aed069028303e86426df27
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623270"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072091"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-net"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (.NET)
 
@@ -99,7 +99,7 @@ ms.locfileid: "98623270"
 Чтобы разрешить приложению-службе подключаться к центру Интернета вещей и получать сообщения, требуется _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
 ```azurecli-interactive
-az iot hub show-connection-string --policy-name service --name {YourIoTHubName} --output table
+az iot hub connection-string show --policy-name service --name {YourIoTHubName} --output table
 ```
 
 Запишите строку подключения к службе, которая выглядит так:

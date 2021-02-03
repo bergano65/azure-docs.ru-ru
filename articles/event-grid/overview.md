@@ -2,13 +2,13 @@
 title: Что такое служба "Сетка событий Azure"?
 description: Сведения об отправке данных событий из источника к обработчикам с помощью службы "Сетка событий Azure", а также о создании приложений на основе событий и интеграции со службами Azure.
 ms.topic: overview
-ms.date: 09/24/2020
-ms.openlocfilehash: a4f614a22fdfa7d2272c70751f56f19145a10fa6
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.date: 01/28/2021
+ms.openlocfilehash: e53665c88c3860d37b3512c6498ab626b02a6400
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576688"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055146"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -20,7 +20,7 @@ ms.locfileid: "94576688"
 
 В статье представлен обзор службы "Сетка событий Azure". Чтобы приступить к использованию службы, см. раздел [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md). 
 
-:::image type="content" source="./media/overview/functional-model.png" alt-text="Модель источников и обработчиков в службе &quot;Сетка событий&quot;" lightbox="./media/overview/functional-model.png":::
+:::image type="content" source="./media/overview/functional-model.png" alt-text="Модель источников и обработчиков в службе &quot;Сетка событий&quot;" lightbox="./media/overview/functional-model-big.png":::
 
 На этом рисунке показано, как служба "Сетка событий" соединяет источники и обработчики. Здесь не предоставлен полный список поддерживаемых интеграций.
 
@@ -42,6 +42,7 @@ ms.locfileid: "94576688"
 - [служебной шине Azure](event-schema-service-bus.md)
 - [Azure SignalR](event-schema-azure-signalr.md)
 - [Подписки Azure](event-schema-subscriptions.md)
+- [Кэш Azure для Redis](event-schema-azure-cache.md)
 
 ## <a name="event-handlers"></a>Обработчики событий
 

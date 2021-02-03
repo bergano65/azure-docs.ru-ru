@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6471108cbbb1ec7fffeb53de61ac71f94927019b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 373b7b8dbf2ccc516edbbb3b87e284d88dfaf0c2
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88684300"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508502"
 ---
 При запуске графа мультимедиа результаты из узла обработчика расширения HTTP отправляются через узел-преемник Центра Интернета вещей в центр Интернета вещей. Сообщения, отображаемые в окне **ВЫХОДНЫЕ ДАННЫЕ**, содержат раздел `body` и раздел `applicationProperties`. Дополнительные сведения см. в статье [Создание и чтение сообщений Центра Интернета вещей](../../../../../iot-hub/iot-hub-devguide-messages-construct.md).
 
@@ -82,20 +82,12 @@ ms.locfileid: "88684300"
         "type": "entity"
       }
     ]
-  },
-  "applicationProperties": {
-    "topic": "/subscriptions/{subscriptionID}/resourceGroups/{name}/providers/microsoft.media/mediaservices/hubname",
-    "subject": "/graphInstances/GRAPHINSTANCENAMEHERE/processors/inferenceClient",
-    "eventType": "Microsoft.Media.Graph.Analytics.Inference",
-    "eventTime": "2020-04-23T06:37:16.097Z"
   }
 }
 ```
 
 В сообщениях обратите внимание на следующие сведения:
 
-* В `applicationProperties` `subject` — это узел в топологии графа, из которого было создано сообщение. 
-* В `applicationProperties` `eventType` указывает, что это событие является событием аналитики.
 * Значение `eventTime` — это время возникновения события.
 * Раздел `body` содержит информацию об аналитическом событии. В этом случае событие является событием вывода, поэтому текст содержит данные `inferences`.
 * Раздел `inferences` указывает, что `type` — это `entity`. Этот раздел содержит дополнительные данные о сущности.

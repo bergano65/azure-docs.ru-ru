@@ -15,12 +15,12 @@ ms.date: 01/04/2021
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 3c320b8faf5ccb0b1aec521909b152dff171cbd7
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 0b43f30c25767a135b98b756d61ed2535e1fbd22
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862603"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092206"
 ---
 # <a name="classic-subscription-administrator-roles-azure-roles-and-azure-ad-roles"></a>Роли классического администратора подписки, роли Azure и роли Azure AD
 
@@ -99,7 +99,7 @@ RBAC Azure — это система авторизации на основе [
 
 | Роль Azure AD | Разрешения | Примечания |
 | --- | --- | --- |
-| [Глобальный администратор](../active-directory/roles/permissions-reference.md#company-administrator-permissions) | <ul><li>Управление доступа ко всем административным функциям в Azure Active Directory, а также к службам, которые включены в федерацию с Azure Active Directory</li><li>Назначение ролей администратора другим пользователям</li><li>Сброс паролей для любого пользователя и других администраторов</li></ul> | Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. |
+| [Глобальный администратор](../active-directory/roles/permissions-reference.md#global-administrator-permissions) | <ul><li>Управление доступа ко всем административным функциям в Azure Active Directory, а также к службам, которые включены в федерацию с Azure Active Directory</li><li>Назначение ролей администратора другим пользователям</li><li>Сброс паролей для любого пользователя и других администраторов</li></ul> | Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. |
 | [Администратор пользователей](../active-directory/roles/permissions-reference.md#user-administrator) | <ul><li>Создание всех аспектов пользователей и групп и управление ими</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности служб</li><li>Изменение паролей для пользователей, администраторов службы технической поддержки и других администраторов пользователей</li></ul> |  |
 | [Администратор выставления счетов](../active-directory/roles/permissions-reference.md#billing-administrator) | <ul><li>Совершение покупок</li><li>Управление подписками</li><li>Управление запросами в службу поддержки</li><li>Мониторинг работоспособности службы</li></ul> |  |
 

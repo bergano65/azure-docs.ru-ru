@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: overview
 ms.date: 04/20/2020
-ms.openlocfilehash: 6d592064729bbdd64e485e0bd0373b2d471597e0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 71fa79cb8847d16ac0890f9aba647cb8f5e2e444
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87282489"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089348"
 ---
 # <a name="azure-media-player-plugin-gallery"></a>Коллекция подключаемых модулей Проигрывателя мультимедиа Azure #
 
@@ -21,7 +21,7 @@ ms.locfileid: "87282489"
 |-------------------------------------|-----------------------------|----------------------------|----------------|
 | Дополнительные функции                 | | | |
 | **Новинка!** AMP360Video                | [Демонстрация](http://www.babylonjs.com/demos/amp360video/)                        | [GitHub](https://github.com/BabylonJS/Extensions/tree/master/Amp360Video)                     | Этот подключаемый модуль позволяет визуализировать панорамные видео в Проигрывателе мультимедиа Azure на компьютере или на устройствах с поддержкой виртуальной реальности. Полная документация доступна [здесь](https://doc.babylonjs.com/extensions/amp360video). |
-|  Всплывающее изображение спрайта                         | [Демонстрация](http://www.skymedia.tv/asset/sprite)                        | [GitHub](https://github.com/RickShahid/SpriteTip)                    | Подключаемый модуль Проигрывателя мультимедиа Azure (AMP) для отображения на временной шкале спрайтового изображения с эскизом видео, созданного с помощью Media Encoder Standard (MES) из пакета Служб мультимедиа Azure. |
+|  Всплывающее изображение спрайта                         | [Демонстрация](https://www.smwcentral.net/?p=section&a=details&id=10301)                        | [GitHub](https://github.com/RickShahid/SpriteTip)                    | Подключаемый модуль Проигрывателя мультимедиа Azure (AMP) для отображения на временной шкале спрайтового изображения с эскизом видео, созданного с помощью Media Encoder Standard (MES) из пакета Служб мультимедиа Azure. |
 | Наложение диагностики                 | [Демонстрация](https://openidconnectweb.azurewebsites.net/Diagnoverlay.html)                        | [GitHub](https://github.com/willzhan/diagnoverlay)                     | Этот подключаемый модуль отображает следующее: все ключевые параметры, статистику по видео, все события жизненного цикла воспроизведения видео и сведения о защите DRM, например идентификатор ключа, URL-адреса для приобретения лицензий, сведения о наличии защиты.                                                                                                                                                                      |
 | Калькулятор частоты кадров и кода времени | Нет доступных демонстраций | [GitHub](https://github.com/mconverti/media-services-javascript-azure-media-player-framerate-timecode-calculator-plugin)                     | Этот подключаемый модуль вычисляет частоту кадров в видео на основе контейнеров MP4 `tfhd`/`trun` в первом фрагменте видео MPEG-DASH, анализирует значение шкалы времени из манифеста клиента MPEG-DASH, а также предоставляет возможность получить код времени для полученного от проигрывателя абсолютного значения времени (и наоборот). |
 | <strike>Скорость воспроизведения</strike>                      | [Демонстрация](https://azure-samples.github.io/media-services-javascript-Azure-Media-Player-playback-rate-plugin/)                        | [GitHub](https://github.com/Azure-Samples/media-services-javascript-azure-media-player-time-tip-plugin)                     | Этот подключаемый модуль позволяет зрителям управлять скоростью воспроизведения видео. *Обратите внимание, что эта функция автоматически предоставляется в AMP версии 2.0.0 или более поздней, но по умолчанию она отключена.* Сведения о том, как включить ее, можно получить в [наших примерах](https://github.com/Azure-Samples/azure-media-player-samples). |
