@@ -1,8 +1,23 @@
 ---
-заголовок: Хранение событий Служб мультимедиа Azure в Azure Log Analytics Службы мультимедиа Azure description: Узнайте, как хранить события Служб мультимедиа Azure в Azure Log Analytics.
-services: media-services documentationcenter: '' author: IngridAtMicrosoft manager: femila editor: '' ms.service: media-services ms.workload: ms.topic: tutorial ms.date: 08/24/2020 ms.author: inhenkel
+title: Хранение событий Служб мультимедиа в Azure Log Analytics
+description: Узнайте, как хранить события Служб мультимедиа Azure в Azure Log Analytics.
+services: media-services
+documentationcenter: ''
+author: IngridAtMicrosoft
+manager: femila
+editor: ''
+ms.service: media-services
+ms.workload: ''
+ms.topic: tutorial
+ms.date: 08/24/2020
+ms.author: inhenkel
+ms.openlocfilehash: 2bfd1064a02f0fb4982c9d2747b85707e98b5bcd
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954535"
 ---
-
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Руководство по хранению событий Служб мультимедиа Azure в Azure Log Analytics
 
 ## <a name="azure-media-services-events"></a>События Служб мультимедиа Azure
