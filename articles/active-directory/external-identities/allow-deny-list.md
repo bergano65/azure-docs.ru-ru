@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 07/15/2018
+ms.date: 02/03/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cc336781e9a55bbcb6c51677b01bfc402126f4a
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: bb5a785cba4a560fc15963363d4e5f6b811af97a
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071906"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548837"
 ---
 # <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Предоставление или отзыв приглашений пользователям B2B из отдельных организаций
 
@@ -27,7 +27,7 @@ ms.locfileid: "99071906"
 
 - Вы можете создать только список разрешенных или запрещенных. Настроить оба типа списков нельзя. По умолчанию все домены, которые не входят в список разрешенных, помещаются в список запрещенных, и наоборот. 
 - Для организации можно создать только одну политику. Ее можно обновить, чтобы включить дополнительные домены. Кроме того, вы можете удалить политику, чтобы создать другую. 
-- Число доменов, которые можно добавить в список разрешений или список запретов, ограничивается только размером политики. Максимальный размер всей политики составляет 25 КБ (25 000 символов), включая список разрешений или список запретов, а также другие параметры, настроенные для других функций.
+- Число доменов, которые можно добавить в список разрешений или список запретов, ограничивается только размером политики. Это ограничение применяется к числу символов, поэтому можно использовать более короткие домены или меньшее число более длинных доменов. Максимальный размер всей политики составляет 25 КБ (25 000 символов), включая список разрешений или список запретов, а также другие параметры, настроенные для других функций.
 - Этот список и список разрешенных и запрещенных OneDrive для бизнеса и SharePoint Online независимы друг от друга. Если вы хотите ограничить общий доступ к отдельным файлам в SharePoint Online, необходимо настроить список разрешенных или запрещенных для OneDrive для бизнеса и SharePoint Online. Дополнительные сведения см. в статье [Ограничение общего доступа для доменов в SharePoint Online и OneDrive для бизнеса](https://support.office.com/article/restricted-domains-sharing-in-sharepoint-online-and-onedrive-for-business-5d7589cd-0997-4a00-a2ba-2320ec49c4e9).
 - Этот список не применяется к внешним пользователям, которые уже активировали приглашение. Список будет действовать после его настройки. Если приглашения пользователей находятся в состоянии ожидания и вы настроили политику, блокирующую их домены, пользователи не смогут активировать приглашение.
 
@@ -45,7 +45,7 @@ ms.locfileid: "99071906"
 2. Выберите **Azure Active Directory**  >  **Пользователи**  >  **Параметры пользователя**.
 3. В разделе **внешние пользователи** выберите **Управление внешними параметрами совместной работы**.
 4. В разделе **Collaboration restrictions** (Ограничения сотрудничества) выберите **Deny invitations to the specified domains** (Запретить отправлять приглашения указанным доменам).
-5. В разделе **Целевые домены** введите имя одного из доменов, который следует заблокировать. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Например:
+5. В разделе **Целевые домены** введите имя одного из доменов, который следует заблокировать. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Пример:
 
    ![Отображение параметра запрета приглашений и добавленных доменов](./media/allow-deny-list/DenyListSettings.png)
  
@@ -66,7 +66,7 @@ ms.locfileid: "99071906"
 2. Выберите **Azure Active Directory**  >  **Пользователи**  >  **Параметры пользователя**.
 3. В разделе **внешние пользователи** выберите **Управление внешними параметрами совместной работы**.
 4. В разделе **Ограничения взаимодействия** выберите **Разрешить отправку приглашений только в указанные домены (максимальное ограничение)**.
-5. В разделе **Целевые домены** введите имя одного из доменов, который следует разрешить. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Например:
+5. В разделе **Целевые домены** введите имя одного из доменов, который следует разрешить. Если нужно заблокировать несколько доменов, вводите каждый из них в новой строке. Пример:
 
    ![Отображение параметра разрешения приглашений и добавленных доменов](./media/allow-deny-list/AllowListSettings.png)
  
@@ -140,13 +140,13 @@ New-AzureADPolicy -Definition $policyValue -DisplayName B2BManagementPolicy -Typ
 New-AzureADPolicy -Definition @("{`"B2BManagementPolicy`":{`"InvitationsAllowedAndBlockedDomainsPolicy`":{`"AllowedDomains`": [],`"BlockedDomains`": [`"live.com`"]}}}") -DisplayName B2BManagementPolicy -Type B2BManagementPolicy -IsOrganizationDefault $true 
 ```
 
-Чтобы настроить политику разрешенных или запрещенных, выполните командлет [Set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true). Например:
+Чтобы настроить политику разрешенных или запрещенных, выполните командлет [Set-AzureADPolicy](/powershell/module/azuread/set-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true). Пример:
 
 ```powershell   
 Set-AzureADPolicy -Definition $policyValue -Id $currentpolicy.Id 
 ```
 
-Чтобы получить политику, выполните командлет [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true). Например:
+Чтобы получить политику, выполните командлет [Get-AzureADPolicy](/powershell/module/azuread/get-azureadpolicy?view=azureadps-2.0-preview&preserve-view=true). Пример:
 
 ```powershell
 $currentpolicy = Get-AzureADPolicy -All $true | ?{$_.Type -eq 'B2BManagementPolicy'} | select -First 1 

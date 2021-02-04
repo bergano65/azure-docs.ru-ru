@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2021
 ms.author: Zhchia
-ms.openlocfilehash: 51410bd86fa9679aea76f6d5c48f267ddec79026
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 67b114ac355b293db61d00b89816ab73aaa2e5b2
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430702"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550274"
 ---
 # <a name="tutorial-configure-atea-for-automatic-user-provisioning"></a>Учебник. Настройка Атеа для автоматической подготовки пользователей
 
@@ -48,7 +48,7 @@ ms.locfileid: "99430702"
 
 ## <a name="step-2-configure-atea-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Атеа для поддержки подготовки с помощью Azure AD
 
-Чтобы настроить интрасеть IRI для поддержки подготовки с помощью Azure AD, необходимо получить **URL-адрес клиента** и **маркер секрета** , оттащив сообщение электронной почты в службу [поддержки Атеа](mailto:servicedesk@atea.dk). Эти значения будут указаны в поле **секретный токен** и **URL-адрес клиента** на вкладке подготовка приложения Атеа в портал Azure.
+Чтобы настроить Атеа для поддержки подготовки с помощью Azure AD, напишите сообщение электронной почты в службу поддержки Атеа. <SSO.Support@atea.com>
 
 ## <a name="step-3-add-atea-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Атеа из коллекции приложений Azure AD
 

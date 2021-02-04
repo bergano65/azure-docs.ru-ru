@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/01/2021
+ms.date: 02/03/2021
 ms.author: alkohli
-ms.openlocfilehash: c23022a1a1ee7796ada32d9111855b9e3bfb7d46
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 6e9e1319b90ab859c63c022e478bc26c4b8aedeb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539628"
+ms.locfileid: "99550224"
 ---
 # <a name="run-existing-iot-edge-modules-from-azure-stack-edge-pro-fpga-devices-on-azure-stack-edge-pro-gpu-device"></a>Запуск существующих модулей IoT Edge из Azure Stack пограничных устройств с пограничными устройствами FPGA на устройстве с Azure Stack ребра Pro GPU
 
@@ -25,7 +25,7 @@ ms.locfileid: "99539628"
 
 При переносе рабочих нагрузок с устройства FPGA на устройство GPU необходимо внести изменения в существующие модули IoT Edge, чтобы они успешно выполнялись на платформе Kubernetes. Может потребоваться по-разному указать требования к хранилищу, сети, использованию ресурсов и веб-прокси. 
 
-## <a name="storage"></a>Память
+## <a name="storage"></a>Служба хранилища
 
 При указании хранилища для модулей IoT Edge учитывайте следующие сведения.
 
@@ -205,8 +205,7 @@ ms.locfileid: "99539628"
 ```
 Спецификация памяти и ЦП не является обязательной, но обычно рекомендуется. Если параметр `requests` не указан, то значения, заданные в ограничениях, используются в качестве минимально необходимого. 
 
-Использование общей памяти для модулей также требует другого способа. <!-- should we give an example-->
-
+Использование общей памяти для модулей также требует другого способа. Например, можно использовать режим IPC узла для доступа к общей памяти между решениями Live Video Analytics и выводом, как описано в статье [развертывание Live Video Analytics на Azure Stack](../media-services/live-video-analytics-edge/deploy-azure-stack-edge-how-to.md#deploy-live-video-analytics-edge-module-using-azure-portal).
 
 
 ## <a name="web-proxy"></a>Веб-прокси 
@@ -245,6 +244,6 @@ ms.locfileid: "99539628"
     - Состояние **создания контейнера** для Kubernetes Pod **приводит к** отправке состояния для модуля в ресурсе центра Интернета вещей. Хотя существует ряд причин, по которым Pod может находиться в этом состоянии, но распространенной причиной является то, что большой образ контейнера передается через медленное подключение с низкой пропускной способностью сети. Когда модуль Pod находится в этом состоянии, состояние модуля отображается как " **отход** " в центре Интернета вещей при запуске модуля.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [настройке GPU для использования модуля](azure-stack-edge-j-series-configure-gpu-modules.md).

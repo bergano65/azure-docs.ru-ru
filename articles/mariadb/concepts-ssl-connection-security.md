@@ -3,15 +3,15 @@ title: Подключение SSL/TLS — база данных Azure для Mar
 description: Сведения о настройке базы данных Azure для MariaDB и связанных приложений для правильного использования SSL-соединений
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 7ada6f5a7b7ece9b8b36ea1bd2e52b5ad7efd12d
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 6c4ee8c6d12a6350c319e40bbe30046af4932311
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98662497"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550646"
 ---
 # <a name="ssltls-connectivity-in-azure-database-for-mariadb"></a>Подключение SSL/TLS в базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных к клиентским приложениям с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -62,7 +62,7 @@ ms.locfileid: "98662497"
 
 ## <a name="cipher-support-by-azure-database-for-mariadb"></a>Поддержка шифра базой данных Azure для MariaDB
 
-При обмене данными по протоколу SSL или TLS комплекты шифров проходят проверку и поддерживают только масти шифров, которые могут обмениваться данными с Serer базы данных. Проверка комплекта шифров контролируется на [уровне шлюза](concepts-connectivity-architecture.md#connectivity-architecture) , а не на самом узле. Если комплекты шифров не соответствуют одному из перечисленных ниже пакетов, входящие клиентские соединения будут отклонены.
+При обмене данными по протоколу SSL и TLS пакеты шифров проверяются, и для связи с сервером базы данных могут поддерживаться только масти шифров. Проверка комплекта шифров контролируется на [уровне шлюза](concepts-connectivity-architecture.md#connectivity-architecture) , а не на самом узле. Если комплекты шифров не соответствуют одному из перечисленных ниже пакетов, входящие клиентские соединения будут отклонены.
 
 ### <a name="cipher-suite-supported"></a>Поддерживаемый набор шифров
 
@@ -71,7 +71,7 @@ ms.locfileid: "98662497"
 *   TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
 *   TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [правилах брандмауэра сервера](concepts-firewall-rules.md)
 - Узнайте, как [настроить SSL](howto-configure-ssl.md)
 - Узнайте, как [настроить TLS](howto-tls-configurations.md)

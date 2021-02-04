@@ -4,8 +4,7 @@ description: В этой статье приводится обзор проце
 services: security
 documentationcenter: na
 author: TerryLanfear
-manager: barbkess
-editor: TomSh
+manager: rkarlin
 ms.assetid: 695d918c-a9ac-4eba-8692-af4526734ccc
 ms.service: security
 ms.subservice: security-fundamentals
@@ -13,22 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/24/2020
+ms.date: 02/03/2021
 ms.author: terrylan
-ms.openlocfilehash: 84229ce3562f9cdcc4b55704eaa4f3b891a43d75
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 9f65133f622c71189f35a1533e278ca09ab02085
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968948"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550207"
 ---
 # <a name="penetration-testing"></a>тест на проникновение;
 
 Одно из преимуществ использования Azure для развертывания и тестирования приложений — возможность быстро создавать среды. Вам не нужно беспокоиться о подаче заявок, приобретении и настройке собственного локального оборудования.
 
 Быстро создавать среды очень удобно, но вам все равно нужно обеспечить нормальную безопасность. Одно из вещей, которые, скорее всего, захочется сделать, — это проверить приложения, развертываемые в Azure.
-
-Возможно, вы уже знаете, что корпорация Майкрософт выполняет [тестирование среды Azure на проникновение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e). Это тестирование помогает улучшить Azure.
 
 Мы не выполним тестирование на проникновение вашего приложения, но мы понимаем, что вам нужно и нужно выполнить тестирование своих приложений. Это хорошая вещь, так как при повышении безопасности ваших приложений вы сможете повысить безопасность всей экосистемы Azure.
 

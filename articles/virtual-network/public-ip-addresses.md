@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: deb9f60cd3f75eacdf0adc06f6f7470819949555
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 702ca4f4c3fc92eca70479ba02b1ddc8f6858857
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223233"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549666"
 ---
 # <a name="public-ip-addresses"></a>Общедоступные IP-адреса
 
@@ -37,7 +37,7 @@ ms.locfileid: "98223233"
 
 Общедоступные IP-адреса создаются с адресами IPv4 или IPv6. 
 
-## <a name="sku"></a>номер SKU
+## <a name="sku"></a>SKU
 
 Дополнительные сведения об обновлении SKU см. в статье [Обновление общедоступного IP-адреса](../virtual-network/virtual-network-public-ip-address-upgrade.md).
 
@@ -54,7 +54,7 @@ ms.locfileid: "98223233"
 - Имеют настраиваемое время ожидания в случае простоя входящего потока 4–30 минут (значение по умолчанию — 4 минуты) и фиксированное время ожидания в случае простоя входящего потока 4 минуты.
 - Обеспечение безопасности по умолчанию и закрытие входящего трафика. Разрешить вывод списка входящего трафика с помощью [группы безопасности сети](./network-security-groups-overview.md#network-security-groups).
 - Назначено сетевым интерфейсам, стандартным подсистемам балансировки нагрузки или шлюзам приложений. Дополнительные сведения о подсистеме балансировки нагрузки "Стандартный" см. в статье [Load Balancer (цен. Категория "Стандартный") Azure](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- Может быть избыточным в виде зоны (из всех трех зон) или зональные (можно создать зональные и гарантировать в определенной зоне доступности). Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json). **IP-адреса, избыточные в зоне, можно создавать только в [регионах, где включены 3 зоны доступности](../availability-zones/az-region.md) .** IP-адреса, созданные до создания зон, не будут избыточными в зоне.
+- Может быть избыточным в виде зоны (из всех трех зон), зональные (гарантированно в определенной предварительно выбранной зоне доступности) или без зоны (не связана с определенной предварительно выбранной зоной доступности). Дополнительные сведения о зонах доступности см. в статьях [с обзорной информацией о зонах доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [об использовании Load Balancer уровня "Стандартный" с зонами доступности](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json). **IP-адреса, избыточные в зоне, можно создавать только в [регионах, где включены 3 зоны доступности](../availability-zones/az-region.md) .** IP-адреса, созданные до создания зон, не будут избыточными в зоне.
 - Может использоваться в качестве IP-адресов рассылки до первого [уровня для подсистем балансировки нагрузки между регионами](../load-balancer/cross-region-overview.md) (Предварительная версия функциональности).
  
 > [!NOTE]

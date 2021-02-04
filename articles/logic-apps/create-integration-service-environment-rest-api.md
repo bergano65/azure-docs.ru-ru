@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 12/30/2020
-ms.openlocfilehash: ee6c116d02a7be1682d9e8379037ef1b8c92bce8
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.date: 02/03/2021
+ms.openlocfilehash: d4500229800fa5d1743779b29927637777647e47
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967044"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550663"
 ---
 # <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Создание среды службы интеграции (ISE) с помощью REST API Logic Apps 
 
@@ -188,17 +188,28 @@ ms.locfileid: "97967044"
 
 ## <a name="add-custom-root-certificates"></a>Добавление пользовательских корневых сертификатов
 
-Интегрированная среда сценариев часто используется для подключения к пользовательским службам в виртуальной сети или локальной среде. Эти пользовательские службы часто защищаются сертификатом, выданным пользовательским корневым центром сертификации, например центром сертификации предприятия или самозаверяющим сертификатом. Дополнительные сведения об использовании самозаверяющих сертификатов см. [в разделе безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Чтобы интегрированная среда сценариев успешно подключались к этим службам через протокол TLS, интегрированной среде сценариев требуется доступ к этим корневым сертификатам. Чтобы обновить интегрированную среду сценариев с помощью пользовательского доверенного корневого сертификата, выполните этот `PATCH` запрос HTTPS:
+Интегрированная среда сценариев часто используется для подключения к пользовательским службам в виртуальной сети или локальной среде. Эти пользовательские службы часто защищаются сертификатом, выданным пользовательским корневым центром сертификации, например центром сертификации предприятия или самозаверяющим сертификатом. Дополнительные сведения об использовании самозаверяющих сертификатов см. [в разделе безопасный доступ и доступ к данным для исходящих вызовов других служб и систем](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests). Чтобы интегрированная среда сценариев успешно подключались к этим службам через протокол TLS, интегрированной среде сценариев требуется доступ к этим корневым сертификатам.
 
-`PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01`
+#### <a name="considerations-for-adding-custom-root-certificates"></a>Рекомендации по добавлению пользовательских корневых сертификатов
 
-Перед выполнением этой операции ознакомьтесь с приведенными ниже замечаниями.
+Перед обновлением интегрированной среды сценариев с пользовательским доверенным корневым сертификатом ознакомьтесь с приведенными ниже замечаниями.
 
 * Обязательно отправьте корневой сертификат *и* все промежуточные сертификаты. Максимальное число сертификатов — 20.
 
 * Отправка корневых сертификатов — это операция замены, при которой Последняя отправка перезаписывает предыдущие передачи. Например, если вы отправляете запрос, который отправляет один сертификат, а затем отправляете другой запрос на отправку другого сертификата, в интегрированной среде сценариев используется только второй сертификат. Если необходимо использовать оба сертификата, добавьте их вместе в один и тот же запрос.  
 
 * Отправка корневых сертификатов — это асинхронная операция, которая может занять некоторое время. Чтобы проверить состояние или результат, можно отправить `GET` запрос, используя тот же универсальный код ресурса (URI). Ответное сообщение содержит `provisioningState` поле, которое возвращает `InProgress` значение, когда операция передачи все еще работает. Если `provisioningState` значение равно `Succeeded` , операция передачи завершена.
+
+#### <a name="request-syntax"></a>Синтаксис запроса
+
+Чтобы обновить интегрированную среду сценариев с помощью пользовательского доверенного корневого сертификата, отправьте следующий запрос исправления HTTPS в [URL-адрес Azure Resource Manager, который отличается в зависимости от среды Azure](../azure-resource-manager/management/control-plane-and-data-plane.md#control-plane), например:
+
+| Среда | URL-адрес Azure Resource Manager |
+|-------------|----------------------------|
+| Глобальные Azure (несколько клиентов) | `PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01` |
+| Azure для государственных организаций | `PATCH https://management.usgovcloudapi.net/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01` |
+| Microsoft Azure China 21Vianet | `PATCH https://management.chinacloudapi.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01` |
+|||
 
 #### <a name="request-body-syntax-for-adding-custom-root-certificates"></a>Синтаксис текста запроса для добавления пользовательских корневых сертификатов
 

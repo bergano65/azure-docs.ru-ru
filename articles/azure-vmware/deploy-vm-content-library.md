@@ -2,13 +2,13 @@
 title: Создание библиотеки содержимого для развертывания виртуальных машин в решении VMware для Azure
 description: Создание библиотеки содержимого для развертывания виртуальной машины в частном облаке решения Azure VMware.
 ms.topic: how-to
-ms.date: 09/21/2020
-ms.openlocfilehash: 57db8ac4da8eef826d85feb11680c9c87823ee36
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.date: 02/03/2021
+ms.openlocfilehash: 9e27529ee355ece62f12cc2e6de491dddb5d3f28
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461691"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550544"
 ---
 # <a name="create-a-content-library-to-deploy-vms-in-azure-vmware-solution"></a>Создание библиотеки содержимого для развертывания виртуальных машин в решении VMware для Azure
 
@@ -92,7 +92,10 @@ ms.locfileid: "92461691"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы планируете использовать VMware ХККС для переноса рабочих нагрузок виртуальных машин в частное облако, используйте процедуру [развертывания и настройки VMware хккс](tutorial-deploy-vmware-hcx.md) .
+Теперь, когда вы узнали, как создать библиотеку содержимого для развертывания виртуальных машин в решении VMware для Azure, вам может потребоваться изучить следующие темы:
+
+- [Развертывание и настройка VMware хккс](tutorial-deploy-vmware-hcx.md) для переноса рабочих нагрузок виртуальных машин в частное облако.
+- [Управление жизненным циклом виртуальных машин Azure VMware](lifecycle-management-of-azure-vmware-solution-vms.md).
 
 <!-- LINKS - external-->
 

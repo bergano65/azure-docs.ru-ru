@@ -63,6 +63,8 @@
       items:
         - name: создавать масштабируемый набор виртуальных машин;
           href: ./scripts/cli-sample-create-simple-scale-set.md
+        - name: Создание масштабируемого набора виртуальных машин и управление им
+          href: ./scripts/cli-sample-manage-scale-set.md
         - name: Создание масштабируемого набора на основе пользовательского образа виртуальной машины
           href: ./scripts/cli-sample-create-scale-set-from-custom-image.md
         - name: Установка приложений в масштабируемом наборе

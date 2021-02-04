@@ -101,6 +101,8 @@
               href: container-registry-access-selected-networks.md
             - name: Ограничение доступа с помощью конечных точек службы (предварительная версия)
               href: container-registry-vnet.md
+            - name: Разрешение доступа по доверенным службам
+              href: allow-access-trusted-services.md
             - name: 'Шифрование с помощью ключей, управляемых клиентом'
               href: container-registry-customer-managed-keys.md
             - name: Доступ за брандмауэром

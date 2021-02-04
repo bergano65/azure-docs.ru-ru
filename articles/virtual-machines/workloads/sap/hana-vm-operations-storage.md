@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 01/23/2021
+ms.date: 02/03/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 01c6a2eb53e82965dd96deaa1a09afb1e70dda24
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 48d1c04e59d316ac19000f5b890c0cb1c96fb213
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746753"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549445"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Конфигурации хранилища виртуальных машин SAP HANA в Azure
 
@@ -81,7 +81,13 @@ Azure предлагает два метода развертывания для
 
 
 ## <a name="linux-io-scheduler-mode"></a>Режим планировщика операций ввода–вывода для Linux
-Linux имеет несколько разных режимов планирования операций ввода-вывода. Распространенная рекомендация поставщиков Linux и SAP предполагает перенастройку режима планировщика ввода-вывода для томов дисков с **mq-deadline** или режима **kyber** в режимы **noop** (без multiqueue) или **none** (multiqueue). Дополнительные сведения см. в [примечании к SAP № 1984787](https://launchpad.support.sap.com/#/notes/1984787). 
+Linux имеет несколько разных режимов планирования операций ввода-вывода. Распространенная рекомендация по поставщикам Linux и SAP заключается в перенастройке режима планировщика ввода-вывода для томов дисков из режима **MQ-крайни** или **кибер** в режим "вне очереди" или " **нет** " для (нескольких очередей **), если** он еще не выполнялся профилями саптуне SLES. Ссылки на подробные сведения приведены в: 
+
+- [Примечание SAP #1984787](https://launchpad.support.sap.com/#/notes/1984787)
+- [Примечание SAP #2578899](https://launchpad.support.sap.com/#/notes/2578899) 
+- [Ошибка с параметром NOOP в SLES 12 SP4](https://www.suse.com/support/kb/doc/?id=000019547)
+
+На Red Hat оставьте параметры в соответствии с конкретными настройками профилей для различных приложений SAP.
 
 
 ## <a name="solutions-with-premium-storage-and-azure-write-accelerator-for-azure-m-series-virtual-machines"></a>Решения с хранилищем класса Premium и Ускоритель записи Azure для виртуальных машин Azure серии M

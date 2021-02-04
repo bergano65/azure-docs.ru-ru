@@ -432,6 +432,9 @@
     - name: Защита API Управления API
       href: secure-api-management.md
       displayName: 'apim, api management, migrate, b2clogin.com'
+    - name: Безопасное выполнение MFA с использованием телефона
+      href: phone-based-mfa.md
+      displayName: 'multi-factor authentication, Azure Monitor, Log Analytics'
     - name: Журналы и мониторинг
       items:
         - name: Журналы аудита

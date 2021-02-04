@@ -5,12 +5,12 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.custom: devx-track-csharp, fasttrack-edit, contperf-fy21q2, devx-track-js
-ms.openlocfilehash: 6dc3c582466fe0646b0350213947ff2173368bde
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 637f09c5ee52928631b965dfa6caea9368b44991
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936844"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550765"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -61,7 +61,7 @@ Application Insights собирает данные журнала, произв�
 Начиная с версии 2. x функций, среда выполнения автоматически собирает данные о зависимостях для привязок, использующих определенные клиентские пакеты SDK. Application Insights собирает данные по следующим зависимостям:
 
 + Azure Cosmos DB; 
-+ Центры событий Azure
++ центры событий Azure;
 + Azure Service Bus
 + Службы хранилища Azure (BLOB-объекты, очереди и таблицы)
 
@@ -88,6 +88,10 @@ Application Insights создает _схему приложения_ собра
 + [JavaScript](functions-reference-node.md#write-trace-output-to-logs) 
 + [PowerShell](functions-reference-powershell.md#logging)
 + [Python](functions-reference-python.md#logging)
+
+## <a name="analyze-data"></a>Анализ данных
+
+По умолчанию данные, собранные из приложения-функции, хранятся в Application Insights. В [портал Azure](https://portal.azure.com)Application Insights предоставляет широкий набор визуализаций данных телеметрии. Вы можете детализировать журналы ошибок и события запросов и метрики. Дополнительные сведения, включая основные примеры просмотра собранных данных и выполнения запросов к ним, см. [в разделе анализ телеметрии функций Azure в Application Insights](analyze-telemetry-data.md). 
 
 ## <a name="streaming-logs"></a>Журналы потоковой передачи
 

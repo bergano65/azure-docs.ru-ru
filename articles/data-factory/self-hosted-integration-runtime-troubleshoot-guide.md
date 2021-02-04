@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 01/25/2021
 ms.author: lle
-ms.openlocfilehash: 8a722550d12d019e25ff39de27cc0df2c2762a01
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 3735d7b21faf62905ed4c06dbef80c9737e7329e
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98942054"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99551082"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -118,14 +118,14 @@ ms.locfileid: "98942054"
         Certutil -verify -urlfetch    <certificate path>   >     <output txt file path> 
         ```
 
-        Пример.
+        Пример:
 
         ```
         Certutil -verify -urlfetch c:\users\test\desktop\servercert02.cer > c:\users\test\desktop\Certinfo.txt
         ```
     4. Проверьте наличие ошибок в выходном TXT файле. Сводку ошибок можно найти в конце файла TXT.
 
-        Пример. 
+        Пример: 
 
         ![Снимок экрана сводки ошибок в конце файла TXT.](media/self-hosted-integration-runtime-troubleshoot-guide/error-summary.png)
 
@@ -244,7 +244,7 @@ ms.locfileid: "98942054"
  
 Если трафик не может пройти через сеть между двумя хранилищами данных (например, они настроены в двух виртуальных сетях), вы можете не завершать копирование в одно действие даже при установленном IR. Если не удается завершить копирование одного действия, можно создать два действия копирования с двумя IRs, каждое в вентиляционном канале: 
 * Копирование одного IR-объекта из хранилища данных 1 в хранилище BLOB-объектов Azure
-* Скопируйте другой IR-объект из хранилища BLOB-объектов Azure в ддатасторе 2. 
+* Скопируйте еще один IR-объект из хранилища BLOB-объектов Azure в хранилище данных 2. 
 
 Это решение может имитировать требование использования IR для создания моста, соединяющего два отсоединенные хранилища данных.
 
@@ -710,7 +710,7 @@ ms.locfileid: "98942054"
 
 Как определить, затрагивается ли ваш компьютер:
 
-- При определении правил брандмауэра на основе полных доменных имен (FQDN), которые используют подход, описанный в разделе [Настройка конфигурации брандмауэра и списка разрешений для IP-адресов](data-movement-security-considerations.md#firewall-configurations-and-allow-list-setting-up-for-ip-address-of-gateway), это *не* повлияет.
+- При определении правил брандмауэра на основе полных доменных имен (FQDN), которые используют подход, описанный в разделе [Настройка конфигурации брандмауэра и списка разрешений для IP-адресов](data-movement-security-considerations.md#firewall-configurations-and-allow-list-setting-up-for-ip-addresses), это *не* повлияет.
 
 - При явном включении списка разрешений для исходящих IP-адресов в корпоративном брандмауэре *возникает проблема.*
 

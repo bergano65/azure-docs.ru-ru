@@ -4,12 +4,12 @@ description: Узнайте, как просматривать и запраши
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 2a991157962b0588e3d49510e8a82a9abcfb9aed
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 9e03a36824853a3e43bbf8628fd12481cfbcaf25
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493776"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549564"
 ---
 # <a name="analyze-azure-functions-telemetry-in-application-insights"></a>Анализ телеметрии функций Azure в Application Insights 
 
@@ -139,6 +139,18 @@ traces
 Следующие запросы телеметрии относятся к метрикам, влияющим на затраты на выполнение функций в плане потребления.
 
 [!INCLUDE [functions-consumption-metrics-queries](../../includes/functions-consumption-metrics-queries.md)]
+
+## <a name="azure-monitor-metrics"></a>Метрики Azure Monitor
+
+Помимо данных телеметрии, собираемых Application Insights, можно также получить данные о запуске приложения-функции из [Azure Monitor метрик](../azure-monitor/platform/data-platform-metrics.md). Наряду с обычными [метриками, доступными для приложений службы приложений](../app-service/web-sites-monitor.md#understand-metrics), существуют две метрики, характерные для интересующих Вас функций:
+
+| Метрика | Описание |
+| ---- | ---- |
+| **FunctionExecutionCount** | Число выполнений функций показывает, сколько раз выполнялось приложение функции. Это соответствует числу времени выполнения функции в приложении. Сейчас эта метрика не поддерживается для планов уровня "Премиум" и "Специальный" (служба приложений), работающих в Linux. |
+| **FunctionExecutionUnits** | Единицы выполнения функции — это сочетание времени выполнения и использования памяти.  Данные памяти не являются метрикой, доступной в настоящее время с помощью Azure Monitor. Однако если вы хотите оптимизировать использование памяти приложением, может использовать данные счетчиков производительности, собранные Application Insights. Сейчас эта метрика не поддерживается для планов уровня "Премиум" и "Специальный" (служба приложений), работающих в Linux.|
+
+Дополнительные сведения о вычислении затрат для плана потребления с помощью Application Insights данных см. в разделе [Оценка затрат на план потребления](functions-consumption-costs.md). Дополнительные сведения об использовании обозревателя мониторинга для просмотра метрик см. в статье [Приступая к работе с Azure обозреватель метрик](../azure-monitor/platform/metrics-getting-started.md).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

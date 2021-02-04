@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: d59826ba0e53c4b4146c13b354a85a124ac29b23
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: f10319de67a105b4b5e4641c4171ccd0a6e63440
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98738107"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99490883"
 ---
 # <a name="whats-new-in-computer-vision"></a>Новые возможности Компьютерного зрения
 
@@ -30,6 +30,12 @@ ms.locfileid: "98738107"
 * Теперь можно настроить [операции пространственного анализа](spatial-analysis-operations.md) для определения того, надето ли на лице человека что-либо, например защитная маска. 
     * Для операций `personcount`, `personcrossingline` и `personcrossingpolygon` можно включить классификатор масок, настроив параметр `ENABLE_FACE_MASK_CLASSIFIER`.
     * Для каждого человека, обнаруженного в видеопотоке, будут возвращаться атрибуты `face_mask` и `face_noMask` как метаданные с оценкой достоверности.
+* Расширена операция *personcrossingpolygon* для вычисления время задержки человека в определенной зоне. В конфигурации зоны для операции можно задать параметру `type` значение `zonedwelltime`, и новое событие типа *personZoneDwellTimeEvent* будет содержать поле `durationMs` с числом миллисекунд, в течение которых пользователь был в определенной зоне.
+* **Критическое изменение.** Событие *personZoneEvent* было переименовано в *personZoneEnterExitEvent*. Это событие вызывается операцией *personcrossingpolygon*, когда человек пересекает определенную зону или выходит из нее, и предоставляет сведения о направлении и сведения о пересеченной пронумерованной стороной зоны.
+* URL-адрес можно указать как частный параметр (замаскированный) во всех операциях. Обфускация является необязательной. Она будет работать, только если `KEY` и `IV` предоставляются в виде переменных среды.
+* Калибровка по умолчанию включена для всех операций. Чтобы отключить ее, укажите `do_calibration: false`.
+* Включена поддержка автоматической рекалибровки (по умолчанию отключена) с помощью параметра `enable_recalibration`. Дополнительные сведения см. в статье [Операции пространственного анализа](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-operations).
+* В `DETECTOR_NODE_CONFIG` добавлены параметры калибровки камеры. Дополнительные сведения см. в статье [Операции пространственного анализа](https://docs.microsoft.com/azure/cognitive-services/computer-vision/spatial-analysis-operations).
 
 
 ## <a name="october-2020"></a>Октябрь 2020 г.

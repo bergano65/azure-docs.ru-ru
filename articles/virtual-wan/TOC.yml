@@ -4,6 +4,15 @@
   items:
     - name: Что такое Виртуальная глобальная сеть?
       href: virtual-wan-about.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Шаблоны ARM
+      expanded: true
+      items:
+        - name: Маршрутизация "любой к любому"
+          displayName: Resource Manager Any-to-any routing
+          href: quickstart-any-to-any-template.md
 - name: Учебники
   expanded: true
   items:

@@ -110,8 +110,38 @@
       href: cosmosdb-jupyter-notebooks.md
     - name: Квоты службы
       href: concepts-limits.md
-    - name: Готовность к работе в масштабах предприятия (соответствие требованиям)
-      href: compliance.md
+    - name: Готовность к работе в масштабах предприятия
+      items:
+        - name: Общие сведения о резервном копировании и восстановлении
+          href: online-backup-and-restore.md
+        - name: Непрерывное резервное копирование
+          items:
+            - name: "Непрерывное резервное копирование\_— общие сведения"
+              href: continuous-backup-restore-introduction.md
+            - name: "Непрерывное резервное копирование\_— вопросы и ответы"
+              href: continuous-backup-restore-frequently-asked-questions.md
+            - name: "Непрерывное резервное копирование\_— модель ресурсов"
+              items:
+                - name: Общие сведения о модели ресурсов
+                  href: continuous-backup-restore-resource-model.md
+                - name: "Учетные записи с поддержкой восстановления\_— список"
+                  href: restorable-database-accounts-list.md
+                - name: "Учетные записи с поддержкой восстановления\_— отображение по расположению"
+                  href: restorable-database-accounts-list-by-location.md
+                - name: "Ресурсы SQL с поддержкой восстановления\_— список"
+                  href: restorable-sql-resources-list.md
+                - name: "Базы данных SQL с поддержкой восстановления\_— список"
+                  href: restorable-sql-databases-list.md
+                - name: "Контейнеры SQL с поддержкой восстановления\_— список"
+                  href: restorable-sql-containers-list.md
+                - name: "Ресурсы MongoDB с поддержкой восстановления\_— список"
+                  href: restorable-mongodb-resources-list.md
+                - name: "Коллекции MongoDB с поддержкой восстановления\_— список"
+                  href: restorable-mongodb-collections-list.md
+                - name: "Базы данных MongoDB с поддержкой восстановления\_— список"
+                  href: restorable-mongodb-databases-list.md
+        - name: Соответствие нормативным требованиям
+          href: compliance.md
     - name: Автоматические рекомендации
       href: automated-recommendations.md
 - name: API SQL (основной)
@@ -1365,8 +1395,20 @@
           href: how-to-setup-cmk.md
     - name: Готовность к работе в масштабах предприятия
       items:
-        - name: Оперативное резервное копирование и восстановление по запросу
-          href: online-backup-and-restore.md
+        - name: Управление непрерывным резервным копированием
+          items:
+            - name: "Непрерывное резервное копирование\_— разрешения и роли"
+              href: continuous-backup-restore-permissions.md
+            - name: "Непрерывное резервное копирование\_— портал"
+              href: continuous-backup-restore-portal.md
+            - name: "Непрерывное резервное копирование\_— PowerShell"
+              href: continuous-backup-restore-powershell.md
+            - name: "Непрерывное резервное копирование\_— CLI"
+              href: continuous-backup-restore-command-line.md
+            - name: "Непрерывное резервное копирование\_— ARM"
+              href: continuous-backup-restore-template.md
+        - name: Управление периодическим резервным копированием
+          href: configure-periodic-backup-restore.md
         - name: Запрашивание увеличения квоты
           href: create-support-request-quota-increase.md
     - name: Монитор

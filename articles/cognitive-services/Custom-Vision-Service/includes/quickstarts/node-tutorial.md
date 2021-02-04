@@ -4,12 +4,12 @@ ms.author: areddish
 ms.service: cognitive-services
 ms.date: 10/26/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 2867fd3a777242218495f8759611178130ae0c17
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 1ba81c77ef0e31178b8acd88a84fa3363ee55c11
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98256464"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500445"
 ---
 Это руководство содержит инструкции и пример кода, которые помогут вам начать работу с клиентской библиотекой Пользовательского визуального распознавания для Node.js и создать модель классификации изображений. Здесь объясняется, как создать проект, добавить теги, обучить проект и использовать URL-адрес конечной точки прогнозирования проекта для тестирования программными средствами. Этот пример можно использовать как шаблон при создании собственного приложения для распознавания изображений.
 
@@ -25,7 +25,7 @@ ms.locfileid: "98256464"
 * Публикация текущей итерации
 * Тестирование конечной точки прогнозирования
 
-Справочная документация [(обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/?view=azure-node-latest) [(прогноз)](/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest) | Исходный код библиотеки [(обучение)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-training) [(прогноз)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-prediction) | Пакет (npm) [(обучение)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training) [(прогноз)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction) | [Примеры](/samples/browse/?products=azure&terms=custom%20vision&languages=javascript)
+Справочная документация [(обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/) [(прогноз)](/javascript/api/@azure/cognitiveservices-customvision-prediction/) | Исходный код библиотеки [(обучение)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-training) [(прогноз)](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-prediction) | Пакет (npm) [(обучение)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-training) [(прогноз)](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction) | [Примеры](/samples/browse/?products=azure&terms=custom%20vision&languages=javascript)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -88,9 +88,9 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 |Имя|Описание|
 |---|---|
-|[TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient?view=azure-node-latest) | Этот класс обрабатывает создание, обучение и публикацию ваших моделей. |
-|[PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient?view=azure-node-latest)| Этот класс обрабатывает запросы ваших моделей для прогноза классификаций изображений.|
-|[Прогнозирование](/javascript/api/@azure/cognitiveservices-customvision-prediction/prediction?view=azure-node-latest)| Этот интерфейс определяет один прогноз для одного изображения. Он содержит свойства идентификатора и имени объекта, а также оценку доверительного уровня.|
+|[TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient) | Этот класс обрабатывает создание, обучение и публикацию ваших моделей. |
+|[PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient)| Этот класс обрабатывает запросы ваших моделей для прогноза классификаций изображений.|
+|[Прогнозирование](/javascript/api/@azure/cognitiveservices-customvision-prediction/prediction)| Этот интерфейс определяет один прогноз для одного изображения. Он содержит свойства идентификатора и имени объекта, а также оценку доверительного уровня.|
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -106,7 +106,7 @@ npm install @azure/cognitiveservices-customvision-prediction
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Создайте экземпляры клиентских объектов с использованием конечной точки и ключа. Создайте объект **ApiKeyCredentials** с ключом и используйте его с конечной точкой, чтобы создать объект [TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient?view=azure-node-latest) и [PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient?view=azure-node-latest).
+Создайте экземпляры клиентских объектов с использованием конечной точки и ключа. Создайте объект **ApiKeyCredentials** с ключом и используйте его с конечной точкой, чтобы создать объект [TrainingAPIClient](/javascript/api/@azure/cognitiveservices-customvision-training/trainingapiclient) и [PredictionAPIClient](/javascript/api/@azure/cognitiveservices-customvision-prediction/predictionapiclient).
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/CustomVision/ImageClassification/CustomVisionQuickstart.js?name=snippet_auth)]
 
@@ -131,7 +131,7 @@ npm install @azure/cognitiveservices-customvision-prediction
 Сначала загрузите примеры изображений для этого проекта. Сохраните содержимое папки [примеров изображений](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/CustomVision/ImageClassification/Images) на локальном устройстве.
 
 > [!NOTE]
-> Trove, проект Microsoft Garage, позволяет создавать и покупать наборы изображений для обучения. После сбора изображений их можно скачать, а затем импортировать в проект Пользовательского визуального распознавания обычным способом. Чтобы узнать больше, посетите [страницу Trove](https://www.microsoft.com/en-us/ai/trove?activetab=pivot1:primaryr3).
+> Вам нужен более широкий набор изображений для выполнения обучения? Trove, проект Microsoft Garage, позволяет создавать и покупать наборы изображений для обучения. После сбора изображений их можно скачать, а затем импортировать в проект Пользовательского визуального распознавания обычным способом. Чтобы узнать больше, посетите [страницу Trove](https://www.microsoft.com/en-us/ai/trove?activetab=pivot1:primaryr3).
 
 Чтобы добавить примеры изображений в проект, вставьте следующий код после создания тегов. Этот код загружает каждое изображение с соответствующим тегом.
 
@@ -201,5 +201,5 @@ Results:
 
 * Что собой представляет Пользовательское визуальное распознавание
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/CustomVision/ImageClassification/CustomVisionQuickstart.js)
-* [Справочная документация по пакету SDK (обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/?view=azure-node-latest)
-* [Справочная документация по пакету SDK (прогнозирование)](/javascript/api/@azure/cognitiveservices-customvision-prediction/?view=azure-node-latest)
+* [Справочная документация по пакету SDK (обучение)](/javascript/api/@azure/cognitiveservices-customvision-training/)
+* [Справочная документация по пакету SDK (прогнозирование)](/javascript/api/@azure/cognitiveservices-customvision-prediction/)

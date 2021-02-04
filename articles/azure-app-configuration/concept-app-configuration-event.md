@@ -7,12 +7,12 @@ ms.author: jimmyca
 ms.date: 02/20/2020
 ms.topic: article
 ms.service: azure-app-configuration
-ms.openlocfilehash: 640be797b2653f9e6c969306b7e2b99393b99c39
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 12a62bbd06cf9adf3b5978bb061e1d014599b44c
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078210"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550748"
 ---
 # <a name="reacting-to-azure-app-configuration-events"></a>Реагирование на события настройки приложения Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "92078210"
 
 Типичные сценарии событий конфигурации приложений включают обновление конфигурации приложения, запуск развертываний или любой рабочий процесс, ориентированный на конфигурацию. Когда изменения вносятся редко, а сценарий требует немедленного реагирования, архитектура на основе событий может быть особенно эффективной.
 
-Краткий пример см. в статьях о [маршрутизации событий конфигурации приложений Azure в настраиваемую веб-конечную точку (CLI)](./howto-app-configuration-event.md) . 
+Для быстрого примера [Используйте сетку событий для уведомлений об изменении данных](./howto-app-configuration-event.md) . 
 
 ![Модель Сетки событий](./media/event-grid-functional-model.png)
 
@@ -87,4 +87,4 @@ ms.locfileid: "92078210"
 Дополнительные сведения о службе "Сетка событий" и о событиях настройки приложений Azure см. в этой статье.
 
 - [An introduction to Azure Event Grid](../event-grid/overview.md) (Общие сведения о службе "Сетка событий Azure")
-- [Маршрутизация событий конфигурации приложения Azure в пользовательскую веб-конечную точку](./howto-app-configuration-event.md)
+- [Использование сетки событий для уведомлений об изменении данных](./howto-app-configuration-event.md)

@@ -412,6 +412,10 @@
       items:
         - name: Что такое Гибкий сервер?
           href: flexible-server/overview.md
+        - name: Поддерживаемые версии
+          href: flexible-server/concepts-supported-versions.md
+        - name: Вычислительные ресурсы и ресурсы хранилища
+          href: flexible-server/concepts-compute-storage.md
     - name: Краткие руководства
       expanded: true
       items:
@@ -437,93 +441,8 @@
               href: flexible-server/connect-java.md
             - name: .NET
               href: flexible-server/connect-csharp.md
-    - name: Учебники
-      items:
-        - name: WordPress в Azure Kubernetes
-          href: flexible-server/tutorial-deploy-wordpress-on-aks.md
-        - name: Создание приложения PHP (Laravel) с базой данных
-          href: flexible-server/tutorial-php-database-app.md
-        - name: Подключение к частному веб-приложению
-          href: flexible-server/tutorial-webapp-server-vnet.md
-    - name: Основные понятия
-      items:
-        - name: Серверы
-          href: flexible-server/concept-servers.md
-        - name: Поддерживаемые версии
-          href: flexible-server/concepts-supported-versions.md
-        - name: Ограничения
-          href: flexible-server/concepts-limitations.md
-        - name: Вычислительные ресурсы и ресурсы хранилища
-          href: flexible-server/concepts-compute-storage.md
-        - name: Сети
-          href: flexible-server/concepts-networking.md
-          displayName: 'virtual network, IP address, public access'
-        - name: Обслуживание
-          href: flexible-server/concepts-maintenance.md
-        - name: Непрерывность бизнес-процессов
-          items:
-            - name: Общие сведения о непрерывности бизнес-процессов
-              href: flexible-server/concepts-business-continuity.md
-            - name: Резервное копирование и восстановление
-              href: flexible-server/concepts-backup-restore.md
-            - name: Высокий уровень доступности
-              href: flexible-server/concepts-high-availability.md
-        - name: Мониторинг и журналы
-          items:
-            - name: Параметры сервера
-              href: flexible-server/concepts-server-parameters.md
-            - name: Журналы медленных запросов
-              href: flexible-server/concepts-slow-query-logs.md
-            - name: Журналы аудита
-              href: flexible-server/concepts-audit-logs.md
-            - name: Метрики
-              href: flexible-server/concepts-monitoring.md
-        - name: Репликация
-          items:
-            - name: Реплики чтения
-              href: flexible-server/concepts-read-replicas.md
-    - name: Практические руководства
-      items:
-        - name: Управление сервером
-          items:
-            - name: Портал Azure
-              href: flexible-server/how-to-manage-server-portal.md
-            - name: Azure CLI
-              href: flexible-server/how-to-manage-server-cli.md
-        - name: Обслуживание
-          items:
-            - name: Портал Azure
-              href: flexible-server/how-to-maintenance-portal.md
-        - name: Запуск и остановка сервера
-          items:
-            - name: Портал Azure
-              href: flexible-server/how-to-stop-start-server-portal.md
-        - name: Восстановление сервера
-          items:
-            - name: Портал Azure
-              href: flexible-server/how-to-restore-server-portal.md
-        - name: Высокий уровень доступности
-          items:
-            - name: Портал Azure
-              href: flexible-server/how-to-configure-high-availability.md
-        - name: Сеть
-          items:
-            - name: Закрытый доступ (интеграция виртуальной сети)
-              items:
-                - name: Портал Azure
-                  href: flexible-server/how-to-manage-virtual-network-portal.md
-                - name: Azure CLI
-                  href: flexible-server/how-to-manage-virtual-network-cli.md
-            - name: Открытый доступ (разрешенные IP-адреса)
-              items:
-                - name: Портал Azure
-                  href: flexible-server/how-to-manage-firewall-portal.md
-                - name: Azure CLI
-                  href: flexible-server/how-to-manage-firewall-cli.md
-            - name: TLS и SSL
-              items:
-                - name: Подключение с использованием TLS или SSL
-                  href: flexible-server/how-to-connect-tls-ssl.md
+        - name: Подключение с использованием TLS или SSL
+          href: flexible-server/how-to-connect-tls-ssl.md
         - name: Настройка параметров сервера
           items:
             - name: Портал Azure
@@ -532,32 +451,104 @@
             - name: Azure CLI
               href: flexible-server/how-to-configure-server-parameters-cli.md
               displayName: 'server parameters, cli'
-        - name: Мониторинг и журналы
-          items:
-            - name: Создание оповещений на основе метрик
-              href: flexible-server/how-to-alert-on-metric.md
-            - name: Журналы медленных запросов
-              items:
-                - name: Портал Azure
-                  href: flexible-server/how-to-configure-slow-query-logs-portal.md
-            - name: Журналы аудита
-              items:
-                - name: Портал Azure
-                  href: flexible-server/how-to-configure-audit-logs-portal.md
-        - name: Перезапуск сервера
+        - name: Создание баз данных и пользователей
+          href: howto-create-users.md
+          displayName: users
+        - name: Сервер мониторинга
+          href: flexible-server/how-to-alert-on-metric.md
+    - name: Разработка приложений
+      items:
+        - name: WordPress в Azure Kubernetes
+          href: flexible-server/tutorial-deploy-wordpress-on-aks.md
+        - name: Создание приложения PHP (Laravel) с базой данных
+          href: flexible-server/tutorial-php-database-app.md
+        - name: Подключение к частному веб-приложению
+          href: flexible-server/tutorial-webapp-server-vnet.md
+    - name: Управление сервером
+      items:
+        - name: Основные понятия
+          href: flexible-server/concept-servers.md
+        - name: Параметры сервера
+          href: flexible-server/concepts-server-parameters.md
+        - name: Ограничения
+          href: flexible-server/concepts-limitations.md
+        - name: Управление сервером
           items:
             - name: Портал Azure
-              href: flexible-server/how-to-restart-server-portal.md
-        - name: Репликация
+              href: flexible-server/how-to-manage-server-portal.md
+            - name: Azure CLI
+              href: flexible-server/how-to-manage-server-cli.md
+        - name: Остановка и запуск сервера с помощью портала Azure
+          href: flexible-server/how-to-stop-start-server-portal.md
+        - name: Перезапуск сервера с помощью портала Azure
+          href: flexible-server/how-to-restart-server-portal.md
+    - name: Сеть
+      items:
+        - name: Основные понятия
+          href: flexible-server/concepts-networking.md
+          displayName: 'virtual network, IP address, public access'
+        - name: Закрытый доступ (интеграция виртуальной сети)
+          items:
+            - name: Настройка закрытого доступа с помощью портала Azure
+              href: flexible-server/how-to-manage-virtual-network-portal.md
+            - name: Настройка закрытого доступа с помощью Azure CLI
+              href: flexible-server/how-to-manage-virtual-network-cli.md
+        - name: Открытый доступ (разрешенные IP-адреса)
+          items:
+            - name: Настройка открытого доступа с помощью портала Azure
+              href: flexible-server/how-to-manage-firewall-portal.md
+            - name: Настройка открытого доступа с помощью Azure CLI
+              href: flexible-server/how-to-manage-firewall-cli.md
+    - name: Обслуживание службы
+      items:
+        - name: Запланированное обслуживание
+          href: flexible-server/concepts-maintenance.md
+        - name: Настройка запланированного обслуживания с помощью портала Azure
+          href: flexible-server/how-to-maintenance-portal.md
+    - name: Высокий уровень доступности
+      items:
+        - name: Общие сведения о непрерывности бизнес-процессов
+          href: flexible-server/concepts-business-continuity.md
+        - name: Высокий уровень доступности
+          href: flexible-server/concepts-high-availability.md
+        - name: Настройка высокого уровня доступности с помощью портала Azure
+          href: flexible-server/how-to-configure-high-availability.md
+    - name: Мониторинг и журналы
+      items:
+        - name: Основные понятия
+          href: flexible-server/concepts-monitoring.md
+        - name: Журналы медленных запросов
+          items:
+            - name: Основные понятия
+              href: flexible-server/concepts-slow-query-logs.md
+            - name: Настройка журналов медленных запросов с помощью портала Azure
+              href: flexible-server/how-to-configure-slow-query-logs-portal.md
+        - name: Журналы аудита
+          items:
+            - name: Основные понятия
+              href: flexible-server/concepts-audit-logs.md
+            - name: Настройка журналов аудита
+              href: flexible-server/how-to-configure-audit-logs-portal.md
+    - name: Репликация
+      items:
+        - name: Реплики чтения
+          href: flexible-server/concepts-read-replicas.md
+        - name: Создание реплик чтения
           items:
             - name: Создание реплик чтения с помощью портала Azure
               href: flexible-server/how-to-read-replicas-portal.md
             - name: Создание реплик чтения с помощью Azure CLI
               href: flexible-server/how-to-read-replicas-cli.md
-        - name: Диагностика
-          items:
-            - name: Ошибки подключения
-              href: flexible-server/how-to-troubleshoot-common-connection-issues.md
+    - name: Резервное копирование и восстановление
+      items:
+        - name: Основные понятия
+          href: flexible-server/concepts-backup-restore.md
+        - name: Восстановление сервера с помощью портала Azure
+          href: flexible-server/how-to-restore-server-portal.md
+    - name: Диагностика
+      items:
+        - name: Устранение ошибок подключения
+          href: flexible-server/how-to-troubleshoot-common-connection-issues.md
 - name: Миграция
   items:
     - name: Перенос данных с помощью mysqldump или phpmyadmin

@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/24/2021
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 5f70f74accba5df439351547fda7497656e2c06e
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 3fca96c6cf11e0b35cd830fe4c0d8ccac8e66bd2
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986690"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548870"
 ---
-# <a name="customizing-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
+# <a name="customize-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
 
 Центр безопасности Azure постоянно сравнивает конфигурацию всех ресурсов на предмет соответствия требованиям отраслевых стандартов, тестам производительности и нормативным требованиям. **Панель мониторинга соответствия нормативным** требованиям предоставляет аналитические сведения о соответствии вашим требованиям в зависимости от того, как вы отвечаете на конкретные требования к соответствию.
 
@@ -113,7 +113,7 @@ ms.locfileid: "98986690"
 
     :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard-confirm.png" alt-text="Подтвердите, что вы действительно хотите удалить выбранный нормативный стандарт.":::
 
-1. Выберите ответ **Да**. Стандартный будет удален. 
+1. Выберите **Да**. Стандартный будет удален. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -123,5 +123,5 @@ ms.locfileid: "98986690"
 Связанные материалы см. на следующих страницах:
 
 - [Общие сведения о Тесте производительности системы безопасности Azure](../security/benchmarks/introduction.md)
-- [Руководство по обеспечению соответствия нормативным требованиям на высоком уровне](security-center-compliance-dashboard.md)
+- [Панель мониторинга соответствия нормам безопасности](security-center-compliance-dashboard.md) . Узнайте, как отслеживанию и экспорту данных о соответствии нормативным требованиям с помощью центра безопасности и внешних средств.
 - [Использование политик безопасности](tutorial-security-policy.md)

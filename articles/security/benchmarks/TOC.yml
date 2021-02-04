@@ -231,3 +231,7 @@
       href: ../../vpn-gateway/security-baseline.md
     - name: Базовые показатели безопасности Виртуального рабочего стола Windows
       href: ../../virtual-desktop/security-baseline.md
+- name: Ресурсы
+  items:
+    - name: Сопоставление тестов производительности ASB и CIS
+      href: v2-cis-benchmark.md

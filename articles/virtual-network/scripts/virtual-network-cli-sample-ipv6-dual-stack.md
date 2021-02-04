@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.date: 04/23/2019
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 537252af6fbcdcb77043ec055ac22db1904790a2
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 9058fb4b9b92719f7abcc534632f983cafe2aae8
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217555"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550816"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети (Предварительная версия)
+# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети
 
 В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя двойную виртуальную сеть с двумя подсетями стека, подсистему балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), ВМ с сетевыми картами с двумя сетевыми конфигурациями, двумя правилами группы безопасности сети и двумя общедоступными IP
 

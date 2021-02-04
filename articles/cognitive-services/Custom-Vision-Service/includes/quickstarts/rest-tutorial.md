@@ -4,12 +4,12 @@ ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 12/09/2020
 ms.topic: include
-ms.openlocfilehash: 8890a0132e5f510a0af2862c483206fd025a68d8
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: fd845778df5ff2f545463e9cb984a739e35f6773
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98256568"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500343"
 ---
 Начало работы с REST API Пользовательского визуального распознавания Выполните описанные ниже действия, чтобы вызвать API и создать модель классификации изображений. Здесь объясняется, как создать проект, добавить теги, обучить проект и использовать URL-адрес конечной точки прогнозирования проекта для тестирования программными средствами. Этот пример можно использовать как шаблон при создании собственного приложения для распознавания изображений.
 
@@ -104,7 +104,7 @@ ms.locfileid: "98256568"
 Теперь скачайте примеры изображений для этого проекта. Сохраните содержимое папки [примеров изображений](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/CustomVision/ImageClassification/Images) на локальном устройстве.
 
 > [!NOTE]
-> Trove, проект Microsoft Garage, позволяет создавать и покупать наборы изображений для обучения. После сбора изображений их можно скачать, а затем импортировать в проект Пользовательского визуального распознавания обычным способом. Чтобы узнать больше, посетите [страницу Trove](https://www.microsoft.com/en-us/ai/trove?activetab=pivot1:primaryr3).
+> Вам нужен более широкий набор изображений для выполнения обучения? Trove, проект Microsoft Garage, позволяет создавать и покупать наборы изображений для обучения. После сбора изображений их можно скачать, а затем импортировать в проект Пользовательского визуального распознавания обычным способом. Чтобы узнать больше, посетите [страницу Trove](https://www.microsoft.com/en-us/ai/trove?activetab=pivot1:primaryr3).
 
 С помощью следующей команды отправьте изображения и примените теги: один раз используйте команду для изображений с тегом Hemlock, а другой — для изображений с тегом Japanese Cherry. Дополнительные варианты см. на странице, посвященной [API CreateImagesFromData](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeb5).
 
@@ -224,5 +224,5 @@ ms.locfileid: "98256568"
 > [Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания](../../test-your-model.md)
 
 * Что собой представляет Пользовательское визуальное распознавание
-* [Справочная документация по API (обучение)](/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet)
+* [Справочная документация по API (обучение)](/dotnet/api/overview/azure/cognitiveservices/client/customvision)
 * [Справочная документация по API (прогнозирование)](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc6548b571998fddeae)

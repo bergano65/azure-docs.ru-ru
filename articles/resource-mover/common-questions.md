@@ -7,18 +7,18 @@ ms.service: resource-move
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: raynew
-ms.openlocfilehash: bb8cfa3e1aa874f807ce46b254a22f3003c2f600
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: ab4b8f5a691bc8e4091e9f3f01b709391deeddb0
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222821"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550714"
 ---
 # <a name="common-questions"></a>Часто задаваемые вопросы
 
 В этой статье содержатся ответы на часто задаваемые вопросы о службе "перемещение [ресурсов Azure](overview.md)".
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="is-resource-mover-generally-available"></a>Доступна ли в общедоступной форме перечисление ресурсов?
 
@@ -49,6 +49,10 @@ ms.locfileid: "99222821"
 ### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Можно ли перемещать ресурсы между подписками при их перемещении между регионами?
 
 Вы можете изменить подписку после перемещения ресурсов в целевой регион. Дополнительные [сведения](../azure-resource-manager/management/move-resource-group-and-subscription.md) о перемещении ресурсов в другую подписку. 
+
+### <a name="does-azure-resource-move-service-store-customer-data"></a>Перемещает ли служба Azure Resource Store данные клиента? 
+Нет. Служба перемещения ресурсов не хранит данные клиента, она хранит только метаданные, которые упрощают отслеживание и продвижение ресурсов, выбранных для перемещения, клиентом.
+
 
 ### <a name="where-is-the-metadata-for-moving-across-regions-stored"></a>Где хранятся метаданные для перемещения между регионами?
 

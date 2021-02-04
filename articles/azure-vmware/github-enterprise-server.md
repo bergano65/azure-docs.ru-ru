@@ -2,17 +2,17 @@
 title: Настройка сервера GitHub Enterprise в частном облаке решения Azure VMware
 description: Узнайте, как настроить GitHub Enterprise Server в частном облаке решения Azure VMware.
 ms.topic: how-to
-ms.date: 09/22/2020
-ms.openlocfilehash: 00b3acf721dd7f7a1a15bcd0d24eccf3ca27ff58
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.date: 02/03/2021
+ms.openlocfilehash: 2b05e352fd8a81d6d180d4c60e67ab48465b284f
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326919"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99549108"
 ---
 # <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>Настройка сервера GitHub Enterprise в частном облаке решения Azure VMware
 
-В этой статье описаны действия по настройке GitHub Enterprise Server, локальной версии [GitHub.com](https://github.com/), в частном облаке решения Azure VMware. Сценарий, рассмотренный в этом пошаговом руководстве, предназначен для экземпляра GitHub Enterprise Server, способного обслуживать до 3 000 разработчиков, использующих до 25 заданий в минуту на действия GitHub. Он включает в себя установку (на момент написания статьи) *предварительных* версий функций, таких как действия GitHub. Чтобы настроить настройку в соответствии с конкретными потребностями, ознакомьтесь с требованиями, приведенными в подразделе [Установка GitHub Enterprise Server в VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations).
+В этой статье описано, как настроить GitHub Enterprise Server, локальную версию [GitHub.com](https://github.com/), в частном облаке решения Azure VMware. Сценарий, рассмотренный в этом пошаговом руководстве, предназначен для экземпляра GitHub Enterprise Server, способного обслуживать до 3 000 разработчиков, использующих до 25 заданий в минуту на действия GitHub. Он включает в себя установку (на момент написания статьи) *предварительных* версий функций, таких как действия GitHub. Чтобы настроить настройку в соответствии с конкретными потребностями, ознакомьтесь с требованиями, приведенными в подразделе [Установка GitHub Enterprise Server в VMware](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#hardware-considerations).
 
 ## <a name="before-you-begin"></a>Подготовка к работе
 
@@ -61,7 +61,7 @@ ms.locfileid: "96326919"
 
 После перезапуска экземпляра создайте новую учетную запись администратора на экземпляре. Также обязательно запишите пароль этого пользователя.
 
-### <a name="additional-configuration-steps"></a>Дополнительные действия по настройке
+### <a name="other-configuration-steps"></a>Другие шаги настройки
 
 Чтобы защитить экземпляр для использования в рабочей среде, рекомендуется выполнить следующие дополнительные действия по установке:
 
@@ -182,7 +182,7 @@ ms.locfileid: "96326919"
 
 ## <a name="optional-configuring-github-connect"></a>Используемых Настройка GitHub Connect
 
-Хотя этот шаг является необязательным, его рекомендуется использовать, если планируется использование действий с открытым исходным кодом, доступных в GitHub.com. Это позволяет создавать решения для других пользователей, ссылаясь на эти многократно используемые действия в рабочих процессах.
+Хотя этот шаг является необязательным, его рекомендуется использовать, если планируется использование действий с открытым кодом, доступных в GitHub.com. Она позволяет создавать решения для других пользователей, ссылаясь на эти многократно используемые действия в рабочих процессах.
 
 Чтобы включить GitHub Connect, выполните действия, описанные в разделе [Включение автоматического доступа к действиям GitHub.com с помощью GitHub Connect](https://docs.github.com/en/enterprise/admin/github-actions/enabling-automatic-access-to-githubcom-actions-using-github-connect).
 
@@ -223,14 +223,12 @@ ms.locfileid: "96326919"
 
 Поздравляем! Вы только что выполнили рабочий процесс первого действия на сервере GitHub Enterprise, работающем в частном облаке решения Azure VMware.
 
-Мы просто измерены за действиями, которые можно выполнять с помощью действий GitHub. Чтобы получить дополнительные сведения, извлеките список действий в [Marketplace](https://github.com/marketplace)или [Создайте свой собственный](https://docs.github.com/en/actions/creating-actions).
+В этой статье мы настроили новый экземпляр GitHub Enterprise Server, самостоятельный аналог GitHub.com, поверх частного облака решения Azure VMware. Этот экземпляр включает поддержку действий GitHub и использует хранилище BLOB-объектов Azure для сохранения журналов и артефактов. Но мы просто изпустим область действия, которую можно выполнить с помощью действий GitHub. Ознакомьтесь со списком действий в [Marketplace](https://github.com/marketplace)или [Создайте свой собственный](https://docs.github.com/en/actions/creating-actions).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье мы настроили новый экземпляр GitHub Enterprise Server, самостоятельный аналог GitHub.com, поверх частного облака решения Azure VMware. Этот экземпляр включает поддержку действий GitHub и использует хранилище BLOB-объектов Azure для сохранения журналов и артефактов. Это отличное сочетание для современных, совместной и безопасной разработки программного обеспечения. Она основана на надежном фундаменте решения VMware для Azure, что позволяет использовать облачные ресурсы в знакомых настройках.
+Теперь, когда вы узнали, как настроить GitHub Enterprise Server в частном облаке решения Azure VMware, вам может потребоваться изучить следующее: 
 
-Дополнительные сведения см. в следующих ресурсах:
-
-- [Приступая к работе с действиями GitHub](https://docs.github.com/en/actions)
-- [Присоединяйтесь к программе бета-тестирования](https://resources.github.com/beta-signup/)
-- [Дополнительные сведения об администрировании сервера GitHub Enterprise Server](https://githubtraining.github.io/admin-training/#/00_getting_started)
+- Начало [работы с действиями GitHub](https://docs.github.com/en/actions).
+- [Присоединение к программе бета-тестирования](https://resources.github.com/beta-signup/).
+- [Администрирование сервера GitHub Enterprise](https://githubtraining.github.io/admin-training/#/00_getting_started).

@@ -176,6 +176,10 @@
               href: azure-stack-edge-gpu-deploy-sample-module.md
             - name: 'Модуля GPU, полученный через Marketplace'
               href: azure-stack-edge-gpu-deploy-sample-module-marketplace.md
+            - name: "Модули\_— устройства ППВМ"
+              href: azure-stack-edge-gpu-modify-fpga-modules-gpu.md
+            - name: "Модуль\_— портал Azure"
+              href: azure-stack-edge-gpu-deploy-compute-module-simple.md
         - name: Развертывание рабочих нагрузок Kubernetes
           items:
             - name: Использование kubectl

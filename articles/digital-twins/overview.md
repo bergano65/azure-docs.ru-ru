@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: 91915f204a68d59a603b8bdea383b497a5b33d34
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: c0bc245a4be1ab7c326fa27cc1422878aca6331d
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664033"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071687"
 ---
 # <a name="what-is-azure-digital-twins"></a>Что такое Azure Digital Twins?
 
@@ -94,10 +94,10 @@ Azure Digital Twins обычно используется в сочетании 
 
 ## <a name="service-limits"></a>Ограничения службы
 
-Список ограничений Azure Digital Twins см. в статье [*Справочные материалы. Ограничения службы*](reference-service-limits.md).
+Список ограничений см. в статье [*Ограничения службы Azure Digital Twins*](reference-service-limits.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вы работали с первым выпуском предварительной версии Azure Digital Twins (за октябрь 2018 г.), узнайте, что изменилось: [*Обзор. Отличия от первого выпуска*](overview-differences.md).
+* Изучите работу с Azure Digital Twins с помощью краткого руководства: [*Краткое руководство. Изучение примера сценария*](quickstart-adt-explorer.md).
 
-Вы также можете приступить к изучению работы с Azure Digital Twins с помощью краткого руководства: [*Краткое руководство. Изучение примера сценария*](quickstart-adt-explorer.md).
+* Либо изучите концепции Azure Digital Twins в статье [*Концепции. Настраиваемые модели*](concepts-models.md).

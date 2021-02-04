@@ -5,18 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 04/11/2017
+ms.date: 02/03/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7cbcdb4b947e4b45a5473dc0f9f0252b5ad1d5c
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8160859bb782ee8ffc4fef5ee03b61b6f54be1bb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442054"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99548667"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>API службы совместной работы Azure Active Directory B2B и настройка
 
@@ -67,6 +66,16 @@ ms.locfileid: "92442054"
     "invitedUserType": "Member"
     ```
 
+## <a name="determine-if-a-user-was-already-invited-to-your-directory"></a>Определение того, был ли пользователь приглашен к вашему каталогу
+
+Вы можете использовать API приглашения, чтобы определить, существует ли пользователь в клиенте ресурсов. Это может быть полезно при разработке приложения, которое использует API приглашения для приглашения пользователя. Если пользователь уже существует в каталоге ресурсов, он не получит приглашения, поэтому можно сначала выполнить запрос, чтобы определить, существует ли уже сообщение электронной почты в качестве имени участника-пользователя или другого свойства входа.
+
+1. Убедитесь, что домен электронной почты пользователя не входит в проверенный домен клиента ресурса.
+2. В клиенте ресурса используйте следующий запрос на получение пользователя, где {0} — это адрес электронной почты, который вы приглашаете:
+
+   ```
+   “userPrincipalName eq '{0}' or mail eq '{0}' or proxyAddresses/any(x:x eq 'SMTP:{0}') or signInNames/any(x:x eq '{0}') or otherMails/any(x:x eq '{0}')"
+   ```
 
 ## <a name="authorization-model"></a>Модель авторизации
 
@@ -115,7 +124,7 @@ Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Proper
 > [!NOTE]
 > Убедитесь, что у вас установлена последняя версия модуля AzureAD PowerShell или AzureADPreview PowerShell. 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 Ознакомьтесь с справочником по API приглашения в [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](/graph/api/resources/invitation) .
 

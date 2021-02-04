@@ -14,8 +14,6 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: Квоты и ограничения
       href: speech-services-quotas-and-limits.md
-    - name: Новые возможности в Документации Майкрософт
-      href: whats-new.md
 - name: Преобразование речи в текст
   items:
     - name: Документация по преобразованию речи в текст
@@ -113,22 +111,10 @@
           href: long-audio-api.md
     - name: Настройка
       items:
-        - name: Ответственное развертывание
-          items:
-            - name: Фильтрация Пользовательского голоса
-              href: concepts-gating-overview.md
-            - name: Развертывание технологии для синтеза
-              href: concepts-guidelines-responsible-deployment-synthetic.md
-            - name: Предоставление сведений специалистам по озвучиванию
-              href: /legal/cognitive-services/speech-service/disclosure-voice-talent
-            - name: Рекомендации по проектированию для раскрытия информации
-              href: concepts-disclosure-guidelines.md
-            - name: Конструктивные шаблоны для раскрытия информации
-              href: concepts-disclosure-patterns.md
-            - name: Правила поведения
-              href: /legal/cognitive-services/speech-service/tts-code-of-conduct
         - name: Портал Пользовательского голоса
           items:
+            - name: Что такое Пользовательский нейронный голос
+              href: custom-neural-voice.md
             - name: Начало работы с настраиваемыми голосовыми моделями
               displayName: 'custom voice, neural voice'
               href: how-to-custom-voice.md
@@ -142,6 +128,32 @@
           items:
             - name: Создание звукового содержимого
               href: how-to-audio-content-creation.md
+    - name: Ответственное использование ИИ
+      items:
+        - name: Что такое Пользовательский нейронный голос
+          items:
+            - name: Примечание о прозрачности
+              items:
+                - name: Варианты использования Пользовательского нейронного голоса
+                  href: /legal/cognitive-services/speech-service/custom-neural-voice/transparency-note-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
+                - name: Характеристики и ограничения
+                  href: /legal/cognitive-services/speech-service/custom-neural-voice/characteristics-and-limitations-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
+            - name: Интеграция и ответственное использование
+              items:
+                - name: Ограниченный доступ
+                  href: /legal/cognitive-services/speech-service/custom-neural-voice/limited-access-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
+                - name: Ответственное развертывание искусственной речи
+                  href: concepts-guidelines-responsible-deployment-synthetic.md
+                - name: Предоставление сведений специалистам по озвучиванию
+                  href: /legal/cognitive-services/speech-service/disclosure-voice-talent?context=/azure/cognitive-services/speech-service/context/context
+                - name: Рекомендации по проектированию для раскрытия информации
+                  href: concepts-disclosure-guidelines.md
+                - name: Конструктивные шаблоны для раскрытия информации
+                  href: concepts-disclosure-patterns.md
+                - name: Правила поведения
+                  href: /legal/cognitive-services/speech-service/tts-code-of-conduct?context=/azure/cognitive-services/speech-service/context/context
+            - name: 'Данные, конфиденциальность и безопасность'
+              href: /legal/cognitive-services/speech-service/custom-neural-voice/data-privacy-security-custom-neural-voice?context=/azure/cognitive-services/speech-service/context/context
     - name: Справочник
       items:
         - name: C++
