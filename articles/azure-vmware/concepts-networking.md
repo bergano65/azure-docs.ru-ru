@@ -2,13 +2,13 @@
 title: Основные понятия — сетевое взаимодействие
 description: Узнайте о ключевых аспектах и вариантах использования сети и взаимосвязи в решении VMware для Azure.
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: 49261f34f879c68f21b57f9256a58a9b0a44d637
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.date: 02/02/2021
+ms.openlocfilehash: bc8a2f8c07a2a4fe37c4899dc33d5173a99dc423
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509288"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538981"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Сети решения Azure VMware и основные понятия взаимодействия
 
@@ -57,7 +57,7 @@ ms.locfileid: "99509288"
 
 Чтобы обеспечить полное взаимодействие с частным облаком, включите ExpressRoute Global Reach а затем запросите ключ авторизации и идентификатор частного пиринга для Global Reach в портал Azure. Ключ авторизации и идентификатор пиринга используются для установления Global Reach между каналом ExpressRoute в подписке и каналом ExpressRoute для нового частного облака. После связывания две цепи ExpressRoute направляют сетевой трафик между локальными средами в частное облако.  Дополнительные сведения о процедурах запроса и использования ключа авторизации и идентификатора пиринга см. в [руководстве по созданию Global REACH пиринга ExpressRoute в частном облаке](tutorial-expressroute-global-reach-private-cloud.md).
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 Теперь, когда вы узнали о сети решения Azure VMware и концепции взаимодействия, вы можете узнать о следующих возможностях:
 

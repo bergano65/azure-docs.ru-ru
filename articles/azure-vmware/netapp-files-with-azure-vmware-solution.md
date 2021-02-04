@@ -2,13 +2,13 @@
 title: Azure NetApp Files с помощью решения VMware для Azure
 description: Используйте Azure NetApp Files с виртуальными машинами Azure VMware для переноса и синхронизации данных между локальными серверами, виртуальными машинами Azure VMware и облачными инфраструктурами.
 ms.topic: how-to
-ms.date: 01/20/2021
-ms.openlocfilehash: b4ffea23606e1829fbf713488f08bc5618180072
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.date: 02/01/2021
+ms.openlocfilehash: 8c101b652ffcefe05e9b6c11f166c1da3df2ede1
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430068"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539372"
 ---
 # <a name="azure-netapp-files-with-azure-vmware-solution"></a>Azure NetApp Files с помощью решения VMware для Azure
 
@@ -37,7 +37,7 @@ Azure NetApp Files доступен во многих регионах Azure и 
 
 В этой статье рассматриваются инструкции по настройке, тестированию и проверке Azure NetApp Filesного тома в качестве файлового ресурса для виртуальных машин Azure VMware. В этом сценарии мы использовали протокол NFS. Azure NetApp Files и решение Azure VMware создаются в одном регионе Azure.
 
-## <a name="prerequisites"></a>Обязательные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 > [!div class="checklist"]
 > * Подписка Azure с включенным Azure NetApp Files
@@ -101,7 +101,7 @@ Azure NetApp Files доступен во многих регионах Azure и 
 - Управление профилем службы удаленных рабочих столов
 - Общие файловые ресурсы в решении VMware для Azure
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После интеграции Azure NetApp Files с рабочими нагрузками решения Azure VMware вы можете получить дополнительные сведения:
 

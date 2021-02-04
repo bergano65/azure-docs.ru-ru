@@ -3,13 +3,13 @@ title: Основные понятия. Мониторинг и восстано
 description: Узнайте, как решение Azure VMware отслеживает и исправляет VMware ESXi серверы в частном облаке решения Azure VMware.
 ms.topic: conceptual
 ms.custom: contperf-fy21q2
-ms.date: 11/20/2020
-ms.openlocfilehash: 7f367a6ef9b86f235a16a698735cfb58a11f6862
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.date: 02/03/2021
+ms.openlocfilehash: 6174df429fd9b21c7f685c8ba14e6d5c0bba4c83
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033601"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538964"
 ---
 # <a name="monitor-and-repair-azure-vmware-solution-private-clouds"></a>Мониторинг и восстановление частных облаков решений VMware для Azure
 
@@ -41,12 +41,9 @@ ms.locfileid: "97033601"
 
 Процесс исправления узла начинается с добавления нового работоспособного узла в кластер. Затем, когда это возможно, неисправный узел помещается в режим VMware vSphere обслуживания. VMware vMotion используется для перемещения виртуальных машин с неисправного узла на другие доступные серверы в кластере, что может привести к нулевому простою при динамической миграции рабочих нагрузок. В сценариях, в которых неисправный узел не может быть помещен в режим обслуживания, узел удаляется из кластера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Ниже приведены некоторые темы, которые могут потребоваться для получения дополнительных сведений.
+Теперь, когда вы узнали, как решение Azure VMware отслеживает и исправляет частные облака, вы можете узнать о следующих возможностях:
 
-- [Обновление частного облака решения VMware для Azure](concepts-upgrades.md)
-- [Управление жизненным циклом виртуальных машин Azure VMware](lifecycle-management-of-azure-vmware-solution-vms.md)
-- [Защита виртуальных машин решения Azure VMware с помощью интеграции с центром безопасности Azure](azure-security-integration.md)
-- [Резервное копирование виртуальных машин решения Azure VMware с помощью Azure Backup Server](backup-azure-vmware-solution-virtual-machines.md)
-- [Завершение аварийного восстановления виртуальных машин с помощью решения VMware для Azure](disaster-recovery-for-virtual-machines.md)
+- [Обновление частного облака решения VMware для Azure](concepts-upgrades.md).
+- [Как включить ресурс решения Azure VMware](enable-azure-vmware-solution.md).

@@ -2,14 +2,14 @@
 title: Комплексная трассировка и диагностика в служебной шине Azure | Документация Майкрософт
 description: Общие сведения о диагностике клиентов служебной шины и сквозной трассировке (клиент с помощью всех служб, участвующих в обработке).
 ms.topic: article
-ms.date: 01/17/2021
+ms.date: 02/03/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: edfd789f8803acf9fc8d76202805dec0187d220e
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 19b284aceb83fbbc2bcf662b2b58941e6a5b36f9
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601262"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539219"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
 
@@ -135,12 +135,6 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 В этом примере прослушиватель записывает длительность, результат, уникальный идентификатор и время начала для каждой операции служебной шины.
 
 ### <a name="events"></a>События
-Для каждой операции отправляются два события: Start и Stop. Скорее всего, вас интересуют только события "останавливаться". Они предоставляют результат операции, а также время и длительность запуска в качестве свойств действия.
-
-Полезные данные события предоставляют событию контекст операции, они реплицируют входящие параметры API и возвращаемое значение. Полезные данные события Stop имеют все свойства полезных данных события Start. Таким образом, вы можете полностью игнорировать событие Start.
-
-Каждое событие Stop имеет свойство `Status` с асинхронной операцией `TaskStatus`, с помощью которой оно завершилось. Для простоты она также указана в таблице ниже.
-
 Все события будут иметь следующие свойства, соответствующие спецификации Open телеметрии: https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/trace/api.md .
 
 - `message_bus.destination` — путь к очереди, разделу или подписке

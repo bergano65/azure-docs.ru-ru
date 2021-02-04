@@ -7,17 +7,22 @@ ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 7a41eb8bdd573ac08b0c76eb9a6c2b0724637c39
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: c0af1db12f3ade2945524f48e4539d2d2e9aa6b9
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527962"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539192"
 ---
-# <a name="frequently-asked-questions-on-the-azure-cosmos-db-point-in-time-restore-feature"></a>Часто задаваемые вопросы о функции восстановления Azure Cosmos DB на момент времени
+# <a name="frequently-asked-questions-on-the-azure-cosmos-db-point-in-time-restore-feature-preview"></a>Часто задаваемые вопросы о функции восстановления Azure Cosmos DB на момент времени (Предварительная версия)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-В этой статье перечислены часто задаваемые вопросы о функции восстановления на момент времени Azure Cosmos DB, которая достигается с помощью режима непрерывной архивации.
+> [!IMPORTANT]
+> Функция восстановления на момент времени (режим непрерывного резервного копирования) для Azure Cosmos DB в настоящее время находится в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+В этой статье перечислены часто задаваемые вопросы о функции восстановления Azure Cosmos DB на момент времени (Предварительная версия), которая достигается с помощью режима непрерывной архивации.
 
 ## <a name="how-much-time-does-it-takes-to-restore"></a>Сколько времени требуется для восстановления?
 Длительность восстановления зависит от размера данных.

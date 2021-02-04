@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: ricmmartins
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 01/22/2021
+ms.date: 02/03/2021
 ms.author: ricmart
-ms.openlocfilehash: a0655ce1d2e9939981bb4fd3280af80e359ea1e1
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 82161ac92566f6589ebfb64dddc221e296ec0992
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737750"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539134"
 ---
 # <a name="create-a-vpn-connection-between-azure-and-aws-using-managed-solutions"></a>Создание VPN-подключения между Azure и AWS с помощью управляемых решений
 
@@ -55,7 +55,7 @@ ms.locfileid: "98737750"
 * **Включить режим "активный — активный":** Включен
 * **Настройка BGP:** Включен
 
-Пример.
+Пример:
 
 :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/summary.png" alt-text="Сводка по шлюзу виртуальной сети":::
 
@@ -219,4 +219,6 @@ AWS создает два туннеля IPsec для обеспечения в�
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о поддержке AWS для IKEv2 см. в [статье AWS](https://aws.amazon.com/about-aws/whats-new/2019/02/aws-site-to-site-vpn-now-supports-ikev2/).
+* Дополнительные сведения о поддержке AWS для IKEv2 см. в [статье AWS](https://aws.amazon.com/about-aws/whats-new/2019/02/aws-site-to-site-vpn-now-supports-ikev2/).
+
+* Дополнительные сведения о создании многооблачных VPN в масштабе см. в видео [Создание оптимального Многооблачного VPN в масштабе](https://www.youtube.com/watch?v=p7h-frLDFE0).

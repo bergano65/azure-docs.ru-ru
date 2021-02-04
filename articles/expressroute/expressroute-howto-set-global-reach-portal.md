@@ -7,18 +7,18 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: duau
-ms.openlocfilehash: 9e943be3544da38788d16e54011e09e1ac3426cc
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 8366978d50875389ce872c2d1402f0defa2a7371
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122456"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539355"
 ---
 # <a name="configure-expressroute-global-reach-using-the-azure-portal"></a>Настройка Global Reach ExpressRoute с помощью портал Azure
 
 Эта статья поможет вам настроить ExpressRoute Global Reach с помощью PowerShell. Дополнительные сведения см. в разделе [Связывание каналов ExpressRoute для включения ExpressRoute Global Reach (предварительная версия)](expressroute-global-reach.md).
 
- ## <a name="before-you-begin"></a>Перед началом работы
+ ## <a name="before-you-begin"></a>Подготовка к работе
 
 Прежде чем начать настройку, подтвердите следующие критерии.
 
@@ -68,7 +68,7 @@ ms.locfileid: "98122456"
 
    :::image type="content" source="./media/expressroute-howto-set-global-reach-portal/create-authorization-expressroute-circuit.png" alt-text="Создать ключ авторизации"::: 
 
-   Запишите идентификатор частного пиринга канала 2 и ключ авторизации.
+   Запишите идентификатор ресурса канала 2 и ключ авторизации.
 
 1. Выберите конфигурацию **частного пиринга Azure** . 
 
@@ -100,7 +100,7 @@ ms.locfileid: "98122456"
 
 После завершения операции вы больше не сможете подключиться к локальной сети через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 1. [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
 2. [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 3. [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).

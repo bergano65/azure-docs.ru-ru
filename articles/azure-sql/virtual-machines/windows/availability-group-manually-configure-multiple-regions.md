@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 60bb5ac652a80b5ae52c91f91fa0c80440e9cc82
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 6f63315c3e9b150a54e122d9a1c6948087603d51
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359087"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537413"
 ---
 # <a name="configure-a-sql-server-always-on-availability-group-across-different-azure-regions"></a>Настройка группы доступности Always On SQL Server в разных регионах Azure
 
@@ -86,6 +86,7 @@ ms.locfileid: "97359087"
    - использовать пробу TCP-порта для IP-адреса;
    - использовать правило балансировки нагрузки для SQL Server в том же регионе.  
    - являться подсистемой Load Balancer уровня "Стандартный", если виртуальные машины в серверном пуле не входят ни в отдельную группу доступности, ни в масштабируемый набор виртуальных машин. Дополнительные сведения см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](../../../load-balancer/load-balancer-overview.md).
+   - Быть Load Balancer (цен. категория "Стандартный"), если две виртуальные сети в двух разных регионах являются равноправными через пиринг глобальной виртуальной сети. Дополнительные сведения см. в статье часто задаваемые [вопросы о виртуальной сети Azure](../../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers).
 
 1. [Добавьте компонент отказоустойчивой кластеризации на новый сервер SQL Server](availability-group-manually-configure-prerequisites-tutorial.md#add-failover-clustering-features-to-both-sql-server-vms).
 
@@ -198,7 +199,7 @@ ms.locfileid: "97359087"
 - [Выполнение запланированного перехода на другой ресурс вручную для группы доступности (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server)
 - [Выполнение принудительного перехода на другой ресурс вручную для группы доступности (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Группы доступности AlwaysOn](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server)
 * [Виртуальные машины Azure](../../../virtual-machines/windows/index.yml)

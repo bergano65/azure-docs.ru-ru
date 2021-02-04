@@ -10,12 +10,12 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3315500e0d8ce090b058cbe0cb11d9ab8e56e193
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: af2c848fe06d9ebc44443bdcce61af0c8de08b2d
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475004"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537007"
 ---
 # <a name="authentication-methods-in-azure-active-directory---oath-tokens"></a>Методы проверки подлинности в токенах Azure Active Directory-OATH
 
@@ -33,7 +33,7 @@ ms.locfileid: "99475004"
 
 Azure AD поддерживает использование токенов OATH-TOTP SHA-1, обновляющих коды каждые 30–60 секунд. Клиенты могут приобрести эти маркеры у любого поставщика по выбору.
 
-Аппаратные маркеры OATH TOTP, как правило, поставляются с предварительно запрограммированным в маркере секретным ключом или начальным значением. Эти ключи необходимо ввести в Azure AD, как описано в следующих шагах. Максимальная длина секретного ключа — 128 символов, что может быть несовместимо с некоторыми маркерами. Секретный ключ может содержать только символы *a–z* или *A–Z* и цифры *1–7*. Кроме того, он должен иметь кодировку *Base32*.
+Аппаратные маркеры OATH TOTP, как правило, поставляются с предварительно запрограммированным в маркере секретным ключом или начальным значением. Эти ключи необходимо ввести в Azure AD, как описано в следующих шагах. Максимальная длина секретного ключа — 128 символов, что может быть несовместимо с некоторыми маркерами. Секретный ключ может содержать только символы *a – z* или *a – z* , цифры *2-7* и должны быть закодированы в *base32*.
 
 Программируемые аппаратные маркеры OATH TOTP с возможностью повторного заполнения также можно настроить для Azure AD в процессе настройки программных маркеров.
 
@@ -45,7 +45,7 @@ Azure AD поддерживает использование токенов OATH
 
 ```csv
 upn,serial number,secret key,time interval,manufacturer,model
-Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
+Helga@contoso.com,1234567,2234567abcdef1234567abcdef,60,Contoso,HardwareKey
 ```  
 
 > [!NOTE]
@@ -59,6 +59,6 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 
 Пользователи могут настроить сочетание до 5 аппаратных маркеров OATH или приложений аутентификации, таких как приложение Microsoft Authenticator, для использования в любое время.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о настройке методов проверки подлинности с помощью [Microsoft Graph REST API бета-версии](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta).

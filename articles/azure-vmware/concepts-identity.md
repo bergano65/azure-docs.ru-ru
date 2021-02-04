@@ -2,13 +2,13 @@
 title: Основные понятия — идентификация и доступ
 description: Сведения о концепциях идентификации и доступа в решении Azure VMware
 ms.topic: conceptual
-ms.date: 11/11/2020
-ms.openlocfilehash: bd1b4cd918ce977cf57d641908b127f7a2d1b0cc
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.date: 02/02/2021
+ms.openlocfilehash: 0f58cbdaa641af24cef53c3cfd9604cf1b0c1c3b
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509305"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538947"
 ---
 # <a name="azure-vmware-solution-identity-concepts"></a>Концепции Azure VMware для идентификации решений
 
@@ -51,7 +51,7 @@ ms.locfileid: "99509305"
 
 Используйте учетную запись "Administrator" для доступа к диспетчеру НСКС-T. Он обладает полными привилегиями и позволяет создавать маршрутизаторы T1, логические коммутаторы и все службы, а также управлять ими. Привилегии предоставляют доступ к маршрутизатору НСКС-T T0. Изменение маршрутизатора t0 может привести к снижению производительности сети или к отсутствию доступа к частному облаку. Откройте запрос в службу поддержки в портал Azure, чтобы запросить изменения в маршрутизаторе НСКС-T T0.
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали о доступе к решениям Azure VMware и концепциям удостоверений, вы можете узнать о следующих возможностях:
 

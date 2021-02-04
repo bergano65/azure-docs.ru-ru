@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 02/03/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: d7f71afd1cf47ab1a94d984090e8fb52ee69c6b4
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: f7ba6363ec3a38d37ea3df0f76409289069638e8
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99088944"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537802"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Как использовать Анализ текста для работоспособности (Предварительная версия)
 
@@ -113,6 +113,9 @@ ms.locfileid: "99088944"
 ### <a name="structure-the-api-request-for-the-hosted-asynchronous-web-api"></a>Структурирование запроса API для размещенного асинхронного веб-API
 
 Для контейнера и размещенного веб-API необходимо создать запрос POST. Чтобы быстро создать и отправить запрос POST в размещенный веб-API в нужном регионе, можно [воспользоваться командой POST](text-analytics-how-to-call-api.md), фигурой или **консолью тестирования API** в [анализ текста](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Health) . 
+
+> [!NOTE]
+> Асинхронные `/analyze` и `/health` конечные точки доступны только в следующих регионах: Западная часть США 2, Восточная часть США 2, Центральная часть США, Северная Европа и Западная Европа.  Для успешного выполнения запросов к этим конечным точкам убедитесь, что ресурс создан в одном из этих регионов.
 
 Ниже приведен пример JSON-файла, присоединенного к Анализ текста для текста POST запроса API работоспособности:
 

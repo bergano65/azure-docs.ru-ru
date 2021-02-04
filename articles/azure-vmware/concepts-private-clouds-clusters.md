@@ -2,13 +2,13 @@
 title: Основные понятия — частные облака и кластеры
 description: Узнайте о ключевых возможностях решений Azure VMware, определяемых программными центрами обработки данных и кластерами vSphere.
 ms.topic: conceptual
-ms.date: 10/27/2020
-ms.openlocfilehash: 6a2bb0f41bb1809d0f43b08c71766acc914c0689
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.date: 02/02/2021
+ms.openlocfilehash: 960187629c5dc1120b720ec9009276fa3f313e5d
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509271"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538930"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Концепции частного облака и кластера решения VMware для Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "99509271"
 
 Настройки частного облака vCenter и НСКС-T имеют расписание почасового резервного копирования.  Резервные копии хранятся в течение трех дней. Если необходимо выполнить восстановление из резервной копии, откройте [запрос в службу поддержки](https://rc.portal.azure.com/#create/Microsoft.Support) в портал Azure, чтобы запросить восстановление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы построили концепции частного облака в решении Azure VMware, вы можете узнать о следующих возможностях: 
 

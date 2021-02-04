@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 9ef339fb0ccd14314a65d03b59e501069446c870
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 02045c7ba2373c57213cc7fffb71a5e6bb5979e6
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493843"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538006"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Защита Машинное обучение Azureной среды обучения с помощью виртуальных сетей
 
@@ -163,15 +163,22 @@ ms.locfileid: "99493843"
 
 * Используйте [NAT виртуальной сети](../virtual-network/nat-overview.md). Шлюз NAT обеспечивает исходящее подключение к Интернету для одной или нескольких подсетей в виртуальной сети. Дополнительные сведения см. в статье [проектирование виртуальных сетей с помощью ресурсов шлюза NAT](../virtual-network/nat-gateway-resource.md).
 
-* Добавьте [определяемые пользователем маршруты (определяемые пользователем маршруты)](../virtual-network/virtual-networks-udr-overview.md) в подсеть, которая содержит ресурс вычислений. Установите UDR для каждого IP-адреса, используемого пакетной службой Azure в регионе, где находятся ваши ресурсы. UDR позволяют пакетной службе взаимодействовать с вычислительными узлами с целью планирования задач. Также добавьте IP-адрес для службы Машинного обучения Azure, где существуют ресурсы, так как это необходимо для доступа к вычислительным экземплярам. Чтобы получить список IP-адресов пакетной службы и службы Машинного обучения Azure, используйте один из следующих методов.
+* Добавьте [определяемые пользователем маршруты (определяемые пользователем маршруты)](../virtual-network/virtual-networks-udr-overview.md) в подсеть, которая содержит ресурс вычислений. Установите UDR для каждого IP-адреса, используемого пакетной службой Azure в регионе, где находятся ваши ресурсы. UDR позволяют пакетной службе взаимодействовать с вычислительными узлами с целью планирования задач. Также добавьте IP-адрес для службы Машинное обучение Azure, так как это требуется для доступа к экземплярам вычислений. При добавлении IP-адреса для службы Машинное обучение Azure необходимо добавить IP-адрес как для __основного, так и для дополнительного__ региона Azure. Основной регион, в котором находится рабочая область.
+
+    Чтобы найти дополнительный регион, см. статью [обеспечение непрерывности бизнес-процессов & аварийное восстановление с помощью парных регионов Azure](../best-practices-availability-paired-regions.md#azure-regional-pairs). Например, если служба Машинное обучение Azure находится в восточной части США 2, дополнительный регион — Центральная часть США. 
+
+    Чтобы получить список IP-адресов пакетной службы и службы Машинного обучения Azure, используйте один из следующих методов.
 
     * Скачайте [диапазоны IP-адресов Azure и теги службы](https://www.microsoft.com/download/details.aspx?id=56519) и найдите в файле `BatchNodeManagement.<region>` и `AzureMachineLearning.<region>`, где `<region>` — ваш регион Azure.
 
-    * Для загрузки информации используйте [интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest). В следующем примере скачиваются сведения об IP-адресе и фильтруются сведения для региона Восток США 2.
+    * Для загрузки информации используйте [интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest). В следующем примере загружаются сведения об IP-адресе и отфильтровываются сведения о регионе "Восточная часть США 2" (основной) и центральном регионе США (дополнительный):
 
         ```azurecli-interactive
         az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'Batch')] | [?properties.region=='eastus2']"
+        # Get primary region IPs
         az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'AzureMachineLearning')] | [?properties.region=='eastus2']"
+        # Get secondary region IPs
+        az network list-service-tags -l "Central US" --query "values[?starts_with(id, 'AzureMachineLearning')] | [?properties.region=='centralus']"
         ```
 
         > [!TIP]
@@ -190,7 +197,6 @@ ms.locfileid: "99493843"
     В дополнение к любым определяемые пользователем маршруты, которые вы определяете, исходящий трафик в службу хранилища Azure должен быть разрешен через Ваше локальное сетевое устройство. В частности, URL-адреса для этого трафика относятся к следующим формам: `<account>.table.core.windows.net` , `<account>.queue.core.windows.net` и `<account>.blob.core.windows.net` . 
 
     См. дополнительные сведения в разделе [Создание пула пакетной службы Azure в виртуальной сети](../batch/batch-virtual-network.md#user-defined-routes-for-forced-tunneling).
-
 
 ### <a name="create-a-compute-cluster-in-a-virtual-network"></a>Создание кластера вычислительных ресурсов в виртуальной сети
 

@@ -6,14 +6,19 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/03/2021
 ms.author: govindk
-ms.openlocfilehash: 90018d3e1b793575830ba34756ad685927612006
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: bba00b10d1a24dc29c1e986de1f0144c00350f5d
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527952"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537430"
 ---
 # <a name="list-restorable-sql-api-containers-in-azure-cosmos-db-using-rest-api"></a>Перечисление контейнеров API SQL restorable в Azure Cosmos DB с помощью REST API
+
+> [!IMPORTANT]
+> Функция восстановления на момент времени (режим непрерывного резервного копирования) для Azure Cosmos DB в настоящее время находится в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Отображение канала событий всех изменений, выполненных для всех Azure Cosmos DB контейнеров SQL в определенной базе данных. Это помогает в ситуации, когда контейнер был случайно удален. Для этого API требуется `Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read` разрешение
 

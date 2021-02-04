@@ -7,17 +7,17 @@ documentationcenter: na
 author: KumudD
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: ff33bf771065e7af209934a5c54b6f8f2e34835e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3e3d3c01ba1190871da39ce27de6a95952d09be1
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91666789"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538212"
 ---
 # <a name="reserved-public-ipv6-address-prefix"></a>Зарезервированный префикс общедоступного IPv6-адреса
 
@@ -49,7 +49,7 @@ ms.locfileid: "91666789"
 
 Рекомендуется использовать стандартные общедоступные IP-адреса и стандартные подсистемы балансировки нагрузки для приложений IPv6.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - Зарезервируйте префикс общедоступного [IPv6-адреса](ipv6-reserve-public-ip-address-prefix.md).
 - Дополнительные сведения об [IPv6-адресах](ipv6-overview.md).
 - Узнайте [, как создавать и использовать общедоступные IP-адреса](virtual-network-public-ip-address.md) (как IPv4, так и IPv6) в Azure.

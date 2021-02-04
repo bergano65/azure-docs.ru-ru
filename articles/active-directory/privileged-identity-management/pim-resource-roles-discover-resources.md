@@ -14,12 +14,12 @@ ms.subservice: pim
 ms.date: 09/29/2020
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: be48e6e175beae751003895e60322a458cfbc8bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42d38990289169412f06b0c7e4bcbdf67f688da7
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91568086"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539015"
 ---
 # <a name="discover-azure-resources-to-manage-in-privileged-identity-management"></a>Обнаружение ресурсов Azure для управления в управление привилегированными пользователями
 
@@ -66,11 +66,11 @@ ms.locfileid: "91568086"
 
     ![Область обнаружения с выбранным ресурсом и выделенным параметром "управление ресурсом"](./media/pim-resource-roles-discover-resources/discovery-manage-resource.png)
 
-1. Если появится сообщение с подтверждением адаптации выбранного ресурса к управлению, выберите **Да**.
+1. Если появится сообщение с подтверждением адаптации выбранного ресурса к управлению, выберите **Да**. После этого PIM будет настроен для управления всеми новыми и существующими дочерними объектами в ресурсах.
 
     ![Сообщение, подтверждающее подключение выбранных ресурсов для управления](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)

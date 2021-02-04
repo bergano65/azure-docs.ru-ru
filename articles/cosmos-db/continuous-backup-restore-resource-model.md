@@ -7,17 +7,22 @@ ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 64033182356e66d6a69bd47c1780b7081416019e
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 91421b66af441ed2c7e9c8b66c16ee83f489b03e
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527813"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538516"
 ---
-# <a name="resource-model-for-the-azure-cosmos-db-point-in-time-restore-feature"></a>Модель ресурсов для функции восстановления на момент времени Azure Cosmos DB
+# <a name="resource-model-for-the-azure-cosmos-db-point-in-time-restore-feature-preview"></a>Модель ресурсов для функции восстановления на момент времени Azure Cosmos DB (Предварительная версия)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
-В этой статье описывается модель ресурсов для функции восстановления на момент времени Azure Cosmos DB. В нем объясняются параметры, поддерживающие непрерывную архивацию и ресурсы, которые можно восстановить в Azure Cosmos DB API для учетных записей SQL и MongoDB.
+> [!IMPORTANT]
+> Функция восстановления на момент времени (режим непрерывного резервного копирования) для Azure Cosmos DB в настоящее время находится в общедоступной предварительной версии.
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+В этой статье объясняется модель ресурсов для функции восстановления Azure Cosmos DB на момент времени (Предварительная версия). В нем объясняются параметры, поддерживающие непрерывную архивацию и ресурсы, которые можно восстановить в Azure Cosmos DB API для учетных записей SQL и MongoDB.
 
 ## <a name="database-accounts-resource-model"></a>Модель ресурсов учетной записи базы данных
 

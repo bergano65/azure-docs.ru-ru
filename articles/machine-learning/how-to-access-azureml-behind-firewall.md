@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 8ffbe5debaa980385a2c6dc0078de5f1cc2e9bde
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 150e1aee38a724a0d52c83219c4d214265be9274
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045518"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538074"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром для Машинное обучение Azure
 
@@ -33,15 +33,22 @@ ms.locfileid: "98045518"
 
 Если вы используете Машинное обучение Azure __вычислительный экземпляр__ или __вычислительный кластер__, добавьте [определяемые пользователем маршруты (определяемые пользователем маршруты)](../virtual-network/virtual-networks-udr-overview.md) для подсети, содержащей ресурсы машинное обучение Azure. Этот маршрут направляет трафик __с__ IP-адресов `BatchNodeManagement` `AzureMachineLearning` ресурсов и на общедоступный IP-адрес вычислительного экземпляра и вычислительного кластера.
 
-UDR позволяют пакетной службе взаимодействовать с вычислительными узлами с целью планирования задач. Также добавьте IP-адрес для службы Машинного обучения Azure, где существуют ресурсы, так как это необходимо для доступа к вычислительным экземплярам. Чтобы получить список IP-адресов пакетной службы и службы Машинного обучения Azure, используйте один из следующих методов.
+UDR позволяют пакетной службе взаимодействовать с вычислительными узлами с целью планирования задач. Также добавьте IP-адрес для службы Машинное обучение Azure, так как это требуется для доступа к экземплярам вычислений. При добавлении IP-адреса для службы Машинное обучение Azure необходимо добавить IP-адрес как для __основного, так и для дополнительного__ региона Azure. Основной регион, в котором находится рабочая область.
+
+Чтобы найти дополнительный регион, см. статью [обеспечение непрерывности бизнес-процессов & аварийное восстановление с помощью парных регионов Azure](../best-practices-availability-paired-regions.md#azure-regional-pairs). Например, если служба Машинное обучение Azure находится в восточной части США 2, дополнительный регион — Центральная часть США. 
+
+Чтобы получить список IP-адресов пакетной службы и службы Машинного обучения Azure, используйте один из следующих методов.
 
 * Скачайте [диапазоны IP-адресов Azure и теги службы](https://www.microsoft.com/download/details.aspx?id=56519) и найдите в файле `BatchNodeManagement.<region>` и `AzureMachineLearning.<region>`, где `<region>` — ваш регион Azure.
 
-* Для загрузки информации используйте [интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest). В следующем примере скачиваются сведения об IP-адресе и фильтруются сведения для региона Восток США 2.
+* Для загрузки информации используйте [интерфейс командной строки Azure](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest). В следующем примере загружаются сведения об IP-адресе и отфильтровываются сведения о регионе "Восточная часть США 2" (основной) и центральном регионе США (дополнительный):
 
     ```azurecli-interactive
     az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'Batch')] | [?properties.region=='eastus2']"
+    # Get primary region IPs
     az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'AzureMachineLearning')] | [?properties.region=='eastus2']"
+    # Get secondary region IPs
+    az network list-service-tags -l "Central US" --query "values[?starts_with(id, 'AzureMachineLearning')] | [?properties.region=='centralus']"
     ```
 
     > [!TIP]

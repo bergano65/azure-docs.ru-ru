@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 849c159f31a14441ef9c6aa19b8704b286727bd7
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 7c89bfab6c4914cee26726006e6928eeb14c0686
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507187"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538193"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -1046,18 +1046,19 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
-| microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
-| microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
-| microsoft.directory/groups/unified/delete | Удаление групп Microsoft 365. |
-| microsoft.directory/groups/unified/members/update | Обновление членства в группах Microsoft 365. |
-| microsoft.directory/groups/unified/owners/update | Обновление владельца групп Microsoft 365. |
+| microsoft.directory/groups/hiddenMembers/read | Чтение скрытых членов группы |
+| Microsoft. каталог/группы. Unified/Basic/Update | Обновление основных свойств групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/CREATE | Создание групп Microsoft 365. |
+| Microsoft. каталог/группы. унифицированная или удаленная | Удаление групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Restore | Восстановление групп Microsoft 365 |
+| Microsoft. каталог/группы. Unified/Members/Update | Обновление членства в группах Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Owners/Update | Обновление владельца групп Microsoft 365. |
 | microsoft.office365.exchange/allEntities/allTasks | Управление всеми аспектами Exchange Online. |
 | microsoft.office365.network/performance/allProperties/read | Чтение страниц производительности сети в Microsoft 365 центре администрирования. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| Microsoft. Office 365. Усажерепортс/Аллентитиес/Аллпропертиес/Read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.webPortal/allEntities/standard/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="external-id-user-flow-administrator-permissions"></a>Внешние ИДЕНТИФИКАТОРы разрешения администратора потока пользователей
 
@@ -1295,23 +1296,24 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | Microsoft. Directory/Devices/атрибутов ExtensionAttribute/Update | Обновите все значения свойства Devices. атрибутов ExtensionAttribute в Azure Active Directory. |
 | microsoft.directory/devices/registeredOwners/update | Изменение свойства devices.registeredOwners в Azure Active Directory. |
 | microsoft.directory/devices/registeredUsers/update | Изменение свойства devices.registeredUsers в Azure Active Directory. |
-| microsoft.directory/groups/appRoleAssignments/update | Изменение свойства groups.appRoleAssignments в Azure Active Directory. |
-| microsoft.directory/groups/basic/update | Обновление базовых свойств в группах в Azure Active Directory. |
-| microsoft.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
-| microsoft.directory/groups/delete | Удаление групп в Azure Active Directory. |
+| Microsoft. Directory/ДевицеманажементполиЦиес/Standard/Read | Чтение стандартных свойств в политиках приложений управления устройствами |
+| Microsoft. Directory/Девицерегистратионполици/Standard/Read | Чтение стандартных свойств в политиках регистрации устройств |
 | microsoft.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
-| microsoft.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
-| microsoft.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.directory/groups/restore | Восстановление групп в Azure Active Directory. |
-| microsoft.directory/groups/settings/update | Изменение свойства groups.settings в Azure Active Directory. |
-| microsoft.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| Microsoft. каталог/группы. Безопасность/базовый/обновление | Обновление базовых свойств в группах в Azure Active Directory. |
+| Microsoft. Directory/Groups. Безопасность/классификация/обновление | Обновление свойства классификации групп безопасности с исключением групп, назначаемых ролью |
+| Microsoft. Directory/Groups. Безопасность/создать | Создание групп в Azure Active Directory. |
+| Microsoft. каталог/группы. Безопасность/удаление | Удаление групп в Azure Active Directory. |
+| Microsoft. Directory/Groups. Security/dynamicMembershipRule/Update | Обновление свойства dynamicMembershipRule групп безопасности с исключением групп, назначаемых ролью |
+| Microsoft. Directory/Groups. Security/groupType/Update | Обновление свойства типа группы групп безопасности с исключением групп, назначаемых ролью |
+| Microsoft. Directory/Groups. безопасность, участники и обновление | Изменение свойства groups.members в Azure Active Directory. |
+| Microsoft. Directory/Groups. Security/Owners/Update | Изменение свойства groups.owners в Azure Active Directory. |
+| Microsoft. Directory/Groups. безопасность, видимость и обновление | Обновление свойства видимости групп безопасности с исключением групп, назначаемых ролью |
 | microsoft.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
 | microsoft.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.intune/allEntities/allTasks | Управление всеми аспектами Intune. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| microsoft.office365.webPortal/allEntities/standard/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="kaizala-administrator-permissions"></a>Разрешения администратора Kaizala
 
@@ -1458,13 +1460,18 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
 | microsoft.directory/groups/create | Создание групп в Azure Active Directory. |
-| microsoft.directory/groups/createAsOwner | Создание групп в Azure Active Directory. Автор добавляется как первый владелец, а созданный объект учитывается в квоте автора на 250 созданных объектов. |
+| microsoft.directory/groups/delete | Удаление групп, за исключением назначаемой ролью группы |
 | microsoft.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
 | microsoft.directory/groups/owners/update | Изменение свойства groups.owners в Azure Active Directory. |
-| microsoft.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| microsoft.directory/groups/restore | Восстановление удаленных групп |
+| microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Создание и удаление разрешений OAuth 2,0, а затем чтение и обновление всех свойств. |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Обновление назначений ролей субъекта-службы |
 | microsoft.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
 | microsoft.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| microsoft.directory/users/create | Добавление пользователей |
 | microsoft.directory/users/delete | Удаление пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/отключить | Отключить пользователей |
+| Microsoft. Directory/пользователи/включить | Разрешить пользователям |
 | microsoft.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
 | microsoft.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
@@ -1472,9 +1479,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
+| microsoft.office365.webPortal/allEntities/standard/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="partner-tier2-support-permissions"></a>Разрешения службы поддержки партнеров уровня 2
 
@@ -1498,16 +1505,25 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/contacts/basic/update | Обновление базовых свойств контактов в Azure Active Directory. |
 | microsoft.directory/contacts/create | Создание контактов в Azure Active Directory. |
 | microsoft.directory/contacts/delete | Удаление контактов в Azure Active Directory. |
-| microsoft.directory/domains/allTasks | Создание и удаление доменов, а также чтение и изменение стандартных свойств в Azure Active Directory. |
+| Microsoft. Directory/Domains/Basic/Аллтаскс | Создание и удаление доменов, а также чтение и изменение стандартных свойств в Azure Active Directory. |
 | microsoft.directory/groups/create | Создание групп в Azure Active Directory. |
 | microsoft.directory/groups/delete | Удаление групп в Azure Active Directory. |
 | microsoft.directory/groups/members/update | Изменение свойства groups.members в Azure Active Directory. |
+| microsoft.directory/groups/owners/update | Обновление владельцев групп, за исключением назначаемых ролью групп |
 | microsoft.directory/groups/restore | Восстановление групп в Azure Active Directory. |
+| microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Создание и удаление разрешений OAuth 2,0, а затем чтение и обновление всех свойств. |
 | microsoft.directory/organization/basic/update | Обновление базовых свойств в организации в Azure Active Directory. |
-| microsoft.directory/users/appRoleAssignments/update | Изменение свойства users.appRoleAssignments в Azure Active Directory. |
+| microsoft.directory/roleAssignments/allProperties/allTasks | Создание и удаление назначений ролей, а затем чтение и обновление всех свойств назначения ролей |
+| microsoft.directory/roleDefinitions/allProperties/allTasks | Создание и удаление определений ролей, а затем чтение и изменение всех свойств |
+| microsoft.directory/scopedRoleMemberships/allProperties/allTasks | Создание и удаление Скопедролемембершипс и чтение и изменение всех свойств |
+| microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Обновление назначений ролей субъекта-службы |
+| Microsoft. Directory/Субскрибедскус/Standard/Read | Чтение основных свойств подписок |
 | microsoft.directory/users/assignLicense | Управление лицензиями для пользователей в Azure Active Directory. |
 | microsoft.directory/users/basic/update | Обновление базовых свойств пользователей в Azure Active Directory. |
+| microsoft.directory/users/create | Добавление пользователей |
 | microsoft.directory/users/delete | Удаление пользователей в Azure Active Directory. |
+| Microsoft. Directory/пользователи/отключить | Отключить пользователей |
+| Microsoft. Directory/пользователи/включить | Разрешить пользователям |
 | microsoft.directory/users/invalidateAllRefreshTokens | Отмена всех маркеров обновления пользователей в Azure Active Directory. |
 | microsoft.directory/users/manager/update | Изменение свойства users.manager в Azure Active Directory. |
 | microsoft.directory/users/password/update | Обновление паролей для всех пользователей в Azure Active Directory. Дополнительные сведения см. в электронной документации. |
@@ -1515,9 +1531,9 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.directory/users/userPrincipalName/update | Изменение свойства users.userPrincipalName в Azure Active Directory. |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
+| microsoft.office365.webPortal/allEntities/standard/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="password-administrator-permissions"></a>Разрешения администратора паролей
 
@@ -1785,18 +1801,18 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | --- | --- |
 | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
-| microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
-| microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
-| microsoft.directory/groups/unified/delete | Удаление групп Microsoft 365. |
-| microsoft.directory/groups/unified/members/update | Обновление членства в группах Microsoft 365. |
-| microsoft.directory/groups/unified/owners/update | Обновление владельца групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Basic/Update | Обновление основных свойств групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/CREATE | Создание групп Microsoft 365. |
+| Microsoft. каталог/группы. унифицированная или удаленная | Удаление групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Members/Update | Обновление членства в группах Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Owners/Update | Обновление владельца групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Restore | Восстановление групп Microsoft 365 |
 | microsoft.office365.network/performance/allProperties/read | Чтение страниц производительности сети в Центре администрирования Microsoft 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
 | microsoft.office365.sharepoint/allEntities/allTasks | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в microsoft.office365.sharepoint. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read    | Чтение отчетов об использовании Office 365. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| Microsoft. Office 365. Усажерепортс/Аллентитиес/Аллпропертиес/Read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.webPortal/allEntities/standard/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 
 ### <a name="teams-communications-administrator-permissions"></a>Разрешения администратора связи Teams
 
@@ -1880,16 +1896,19 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 | microsoft.azure.supportTickets/allEntities/allTasks | Создавайте билеты в службу поддержки Azure и управляйте ими для служб уровня каталога. |
 | microsoft.directory/groups/hiddenMembers/read | Чтение свойства roups.hiddenMembers в Azure Active Directory. |
 | microsoft.directory/groups/unified/appRoleAssignments/update | Обновление свойства groups.unified в Azure Active Directory. |
-| microsoft.directory/groups/unified/basic/update | Обновление основных свойств групп Microsoft 365. |
-| microsoft.directory/groups/unified/create | Создание групп Microsoft 365. |
-| microsoft.directory/groups/unified/delete | Удаление групп Microsoft 365. |
-| microsoft.directory/groups/unified/members/update | Обновление членства в группах Microsoft 365. |
-| microsoft.directory/groups/unified/owners/update | Обновление владельца групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Basic/Update | Обновление основных свойств групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/CREATE | Создание групп Microsoft 365. |
+| Microsoft. каталог/группы. унифицированная или удаленная | Удаление групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Members/Update | Обновление членства в группах Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Owners/Update | Обновление владельца групп Microsoft 365. |
+| Microsoft. каталог/группы. Unified/Restore | Восстановление групп Microsoft 365 |
+| Microsoft. Directory/свойства serviceprincipals/Манажепермиссионгрантсфорграуп. Микрософт-Алл-аппликатион-пермиссионс | Предоставление согласия делегированных разрешений от имени группы |
 | microsoft.office365.network/performance/allProperties/read | Чтение страниц производительности сети в Центре администрирования Microsoft 365. |
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и Настройка работоспособности службы Microsoft 365. |
+| microsoft.office365.skypeForBusiness/allEntities/allTasks | Управление всеми аспектами Skype для бизнеса Online |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
-| microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
+| Microsoft. Office 365. Усажерепортс/Аллентитиес/Аллпропертиес/Read | Чтение отчетов об использовании Office 365. |
+| microsoft.office365.webPortal/allEntities/standard/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 | Microsoft. Teams/Аллентитиес/Аллпропертиес/Аллтаскс | Управление всеми ресурсами в командах. |
 
 ### <a name="usage-summary-reports-reader-permissions"></a>Разрешения на чтение сводных отчетов об использовании
@@ -2071,7 +2090,7 @@ Device Users (Пользователи устройства) | Не рекоме
 
 \* Глобальный администратор не может удалить собственное назначение глобального администратора. Это позволяет избежать ситуации, когда у Организации есть 0 глобальных администраторов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о назначении пользователя в качестве администратора подписки Azure см. в статье [Добавление и удаление назначений ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) .
 * Дополнительные сведения о том, как контролируется доступ к ресурсам в Microsoft Azure, см. в [этой статье](../../role-based-access-control/rbac-and-directory-admin-roles.md).

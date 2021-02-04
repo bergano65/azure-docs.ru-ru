@@ -7,18 +7,18 @@ documentationcenter: na
 author: KumudD
 ms.service: virtual-network
 ms.devlang: NA
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/24/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 5cf0345ccffe95286b95607c6c7322752df6342b
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 9510c4b0940a0a03ae9a232c3329817468aaf358
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223284"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99537904"
 ---
 # <a name="how-network-security-groups-filter-network-traffic"></a>Фильтрация сетевого трафика с группами безопасности сети
 <a name="network-security-groups"></a>
@@ -64,7 +64,7 @@ ms.locfileid: "98223284"
 > [!TIP]
 > Если у вас нет конкретной причины, рекомендуется связать группу безопасности сети с подсетью или сетевым интерфейсом, но не с обеими причинами. Так как правила в группе безопасности сети, связанной с подсетью, могут конфликтовать с правилами в группе безопасности сети, связанной с сетевым интерфейсом, могут возникнуть непредвиденные проблемы с обменом данными, требующие устранения неполадок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о том, какие ресурсы Azure можно развернуть в виртуальной сети и какие группы безопасности сети можно связать с ними, см. в статье [Интеграция виртуальной сети для служб Azure](virtual-network-for-azure-services.md).
 * Если вы еще не создавали группу безопасности сети, вы можете пройти краткое [руководство](tutorial-filter-network-traffic.md), чтобы получить такой опыт создания.
