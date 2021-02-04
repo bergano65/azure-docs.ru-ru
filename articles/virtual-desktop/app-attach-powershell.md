@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8aa6a2168bff6e90d636770804900fa93f081ced
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 1196982fedc7321805e36cceed27c90e43a6e705
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97426006"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99558334"
 ---
 # <a name="set-up-msix-app-attach-preview-using-powershell"></a>Настройка присоединения приложения MSIX (Предварительная версия) с помощью PowerShell
 
@@ -30,6 +30,7 @@ ms.locfileid: "97426006"
 
 - Работающее развертывание виртуального рабочего стола Windows. Сведения о развертывании виртуальных рабочих столов Windows (классическая модель) см. в статье [Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md). Чтобы узнать, как развернуть виртуальный рабочий стол Windows с Azure Resource Managerной интеграцией, см. раздел [Создание пула узлов с портал Azure](./create-host-pools-azure-marketplace.md).
 - Пул узлов виртуальных рабочих столов Windows, который имеет хотя бы один активный узел сеансов.
+- Этот пул узлов должен находиться в среде проверки.
 - Группа удаленных приложений для настольных компьютеров.
 - Средство упаковки MSIX.
 - MSIX приложение, развернутое в образе MSIX, передаваемый в общую папку.
@@ -239,7 +240,7 @@ $grName = "<AppGroupName>"
 >[!NOTE]
 >Если пользователь назначен как в удаленную группу приложений, так и в группу классических приложений в одном пуле узлов, то при подключении пользователя к удаленному рабочему столу они увидят приложения MSIX из обеих групп.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Запросите наши вопросы сообщества об этой функции в [Windows Virtual Desktop течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 

@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик для Azure Spring Cloud
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Spring Cloud. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: reference
 author: bmitchell287
 ms.author: brendm
 ms.service: spring-cloud
 ms.custom: subject-policy-reference, devx-track-java
-ms.openlocfilehash: 3f93a8b648da7c5c13bd6822d8a2edc5f04cf296
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 398967fe168d25f18743e860d2234f8c00abf95f
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096062"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556714"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-spring-cloud"></a>Встроенные определения в Политике Azure для Azure Spring Cloud
 

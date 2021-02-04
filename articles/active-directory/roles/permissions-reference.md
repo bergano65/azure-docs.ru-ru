@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1c544bd6d3965bc71df2024e66defbdf9443c8f
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 4982acb54207a9ed08a96414877603a8253c2ade
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550731"
+ms.locfileid: "99557758"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -2058,7 +2058,7 @@ Device Users (Пользователи устройства) | Не рекоме
 Инженер службы поддержки связи Teams | Инженер службы поддержки связи Teams | f70938a0-fc10-4177-9e90-2178f8765737
 Специалист службы поддержки связи Teams | Специалист службы поддержки связи Teams | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
 Администраторы устройств Teams | Администраторы устройств Teams | 3d762c5a-1b6c-493f-843e-55a3b42923d4
-Администратор Teams | Администратор Teams | 69091246-20e8-4a56-aa4d-066075b2a7a8
+Администратор службы Teams | Администратор службы Teams | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Средство чтения сводных отчетов об использовании | Средство чтения сводных отчетов об использовании | 75934031-6c7e-415a-99d7-48dbd49e875e
 Пользователь | Не отображается, так как не может использоваться. | a0b1b346-4d3e-4e8b-98f8-753987be4970
 администратора пользователей; | Администратор пользователей | fe930be7-5e62-47db-91af-98c3a49a38b1
@@ -2118,7 +2118,7 @@ Device Users (Пользователи устройства) | Не рекоме
 
 \* Глобальный администратор не может удалить собственное назначение глобального администратора. Это позволяет избежать ситуации, когда у Организации есть 0 глобальных администраторов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о назначении пользователя в качестве администратора подписки Azure см. в статье [Добавление и удаление назначений ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) .
 * Дополнительные сведения о том, как контролируется доступ к ресурсам в Microsoft Azure, см. в [этой статье](../../role-based-access-control/rbac-and-directory-admin-roles.md).

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.openlocfilehash: f5d7094920a21af630e10aec2aa759ce9c505050
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 8d9f54c1fcd142c77fb73c294b81bf0f11ee083f
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550590"
+ms.locfileid: "99557697"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>Изменение пар QnA в базе знаний
 
@@ -38,6 +38,8 @@ QnA Maker позволяет управлять содержимым базы з
 ![Базы знаний QnA Maker](../media/qnamaker-concepts-knowledgebase/knowledgebase.png)
 
 ## <a name="add-an-editorial-qna-pair"></a>Добавление пары редакционных QnA
+
+Если у вас нет уже существующего содержимого для заполнения базы знаний, можно добавить пары QnA на портале QnA Maker.
 
 1. Войдите на [портал QnA](https://www.qnamaker.ai/), а затем выберите базу знаний, в которую нужно добавить пару QnA.
 1. На странице **Правка** базы знаний выберите **Добавить пару QnA** , чтобы добавить новую пару QnA.
@@ -155,7 +157,7 @@ QnA Maker позволяет управлять содержимым базы з
 
 Закончив внесение изменений, повторно импортируйте TSV-файл со страницы **Параметры**. Это полностью заменит текущую базу знаний на импортированную.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Collaborate on a knowledge base](../index.yml) (Совместная работа над базой знаний)

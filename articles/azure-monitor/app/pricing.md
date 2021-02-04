@@ -7,12 +7,12 @@ author: DaleKoetke
 ms.author: dalek
 ms.date: 5/7/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 69ac1e82c267dee521143c4ed5f6c2be4d32e2ea
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 477a96f1bf66255b11b2fee36c38e55b18cddb69
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531332"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556128"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -186,7 +186,7 @@ union (AppAvailabilityResults),
 
 * **Выборка.** Позволяет уменьшить объем данных телеметрии, отправляемых из серверных и клиентских приложений, с минимальным искажением метрик. Это основное средство, с помощью которого можно настроить объем отправляемых данных. Дополнительные сведения см. в статье [Выборка в Application Insights](./sampling.md).
 
-* **Ограничение числа вызовов AJAX.** Вы можете [ограничить число вызовов AJAX, которые могут выполняться](./javascript.md#configuration) на каждом представлении страницы, или отключите формирование отчетов AJAX.
+* **Ограничение числа вызовов AJAX.** Вы можете [ограничить число вызовов AJAX, которые могут выполняться](./javascript.md#configuration) на каждом представлении страницы, или отключите формирование отчетов AJAX. Обратите внимание, что отключение вызовов AJAX отключит [корреляцию JavaScript](./javascript.md#enable-correlation).
 
 * **Отключение ненужных модулей.** Отключите модули сбора, которые вы не используете, [отредактировав файл ApplicationInsights.config](./configuration-with-applicationinsights-config.md). Например, вы можете решить, что счетчики производительности или данные зависимостей не являются необходимыми.
 

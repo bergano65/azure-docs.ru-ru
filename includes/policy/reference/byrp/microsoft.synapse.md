@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 1c6e767a1c6be08060865c43614c90aa7469d1b2
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 4991bb889d4b9a099662b8d46c6d5cd5a89c1c63
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092436"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555798"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -19,4 +19,4 @@ ms.locfileid: "99092436"
 |[Управляемая виртуальная сеть рабочей области в рабочих областях Azure Synapse должна быть включена](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2d9dbfa3-927b-4cf0-9d0f-08747f971650) |Включение управляемой виртуальной сети рабочей области гарантирует, что ваша рабочая область будет изолирована от других областей. Интеграции данных и ресурсы Spark, развернутые в этой виртуальной сети, также обеспечивают изоляцию на уровне пользователей для действий Spark. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceManagedVnet_Audit.json) |
 |[Подключения к частным конечным точкам в рабочих областях Azure Synapse должны быть включены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F72d11df1-dd8a-41f7-8925-b05b960ebafc) |Частные конечные точки можно настроить для частного подключения к рабочей области Azure Synapse. Это необходимо для принудительного применения безопасного коммуникационного канала к рабочей области Azure Synapse. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceUsePrivateLinks_Audit.json) |
 |[Управляемые частные конечные точки Synapse должны подключаться только к ресурсам в утвержденных клиентах Azure Active Directory](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3a003702-13d2-4679-941b-937e58c443f0) |Защитите рабочую область Synapse, разрешив подключения только к ресурсам утвержденных клиентов Azure Active Directory. Утвержденные клиенты Azure AD можно определить во время назначения политики. |Audit, Disabled, Deny |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/Workspace_DataExfiltrationPrevention_Deny.json) |
-|[Оценка уязвимостей должна быть включена в рабочих областях синапсе](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0049a6b3-a662-4f3e-8635-39cf44ace45a) |Обнаружение, отслеживание и устранение потенциальных уязвимостей путем настройки повторяющихся сканирований оценки уязвимости SQL в рабочих областях синапсе. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/ASC_SQLVulnerabilityAssessmentOnSynapse_Audit.json) |
+|[В рабочих областях Synapse должна быть включена оценка уязвимостей](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0049a6b3-a662-4f3e-8635-39cf44ace45a) |Обнаруживайте, отслеживайте и устраняйте потенциальные уязвимости, настроив регулярную оценку уязвимостей SQL для рабочих областей Synapse. |AuditIfNotExists, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/ASC_SQLVulnerabilityAssessmentOnSynapse_Audit.json) |

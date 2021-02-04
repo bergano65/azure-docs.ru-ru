@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: cffc41264dfa30fd833aef465a13abc799334b2f
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: c3bb05af3e0a24ebb10dc98b9174cfb235ddda13
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567480"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99555933"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -66,11 +66,13 @@ Azure Sentinel поддерживает следующие методы подк
 
 - **Внешние решения через API**. Некоторые источники данных подключены с помощью интерфейсов API, предоставляемых подключенным источником данных. Как правило, большинство технологий безопасности предоставляют набор API, с помощью которых можно получить журналы событий. API подключаются к Azure Sentinel и собирают определенные типы данных, а затем отправляют их в Azure Log Analytics. Устройства, подключенные с помощью API:
     
+    - [Защита от фишинга и защиты торговой марки Агари](connect-agari-phishing-defense.md)
     - [Alcide kAudit](connect-alcide-kaudit.md)
     - [Barracuda WAF](connect-barracuda.md)
     - [Barracuda CloudGen Firewall](connect-barracuda-cloudgen-firewall.md)
     - [BETTER Mobile Threat Defense](connect-better-mtd.md)
     - [Beyond Security beSECURE](connect-besecure.md)
+    - [Cisco Umbrella](connect-cisco-umbrella.md)
     - [Citrix Analytics (модуль безопасности)](connect-citrix-analytics.md)
     - [F5 BIG-IP](connect-f5-big-ip.md)
     - [Forcepoint DLP](connect-forcepoint-dlp.md)
@@ -95,6 +97,7 @@ Azure Sentinel поддерживает следующие методы подк
 
     - **Брандмауэры, прокси-серверы и конечные точки — CEF:**
         - [Vectra AI Detect](connect-ai-vectra-detect.md)
+        - [События безопасности Akamai](connect-akamai-security-events.md)
         - [Check Point](connect-checkpoint.md)
         - [Cisco ASA](connect-cisco.md)
         - [Citrix WAF](connect-citrix-waf.md)
@@ -104,24 +107,27 @@ Azure Sentinel поддерживает следующие методы подк
         - [Продукты Forcepoint](connect-forcepoint-casb-ngfw.md)
         - [Fortinet](connect-fortinet.md)
         - [Illusive Networks AMS](connect-illusive-attack-management-system.md)
+        - [Шлюз WAF Imperva](connect-imperva-waf-gateway.md)
         - [One Identity Safeguard](connect-one-identity.md)
         - [Palo Alto Networks](connect-paloalto.md)
-        - [Сервер секрета сикотик](connect-thycotic-secret-server.md)
+        - [Thycotic Secret Server](connect-thycotic-secret-server.md)
         - [Trend Micro Deep Security](connect-trend-micro.md)
         - [Trend Micro TippingPoint](connect-trend-micro-tippingpoint.md)
         - [Платформа сетевого судебного Вирекса](connect-wirex-systems.md)
         - [Zscaler](connect-zscaler.md)
         - [Другие устройства на основе CEF](connect-common-event-format.md)
     - **Брандмауэры, прокси-серверы и конечные точки — syslog:**
+        - [Алсид для Active Directory](connect-alsid-active-directory.md)
         - [Унифицированная вычислительная система Cisco (UCS)](connect-cisco-ucs.md)
         - [Infoblox NIOS](connect-infoblox.md)
         - [Juniper SRX](connect-juniper-srx.md)
         - [Pulse Connect Secure](connect-pulse-connect-secure.md)
         - [Sophos XG](connect-sophos-xg-firewall.md)
-        - [Прокси-сервер скуид](connect-squid-proxy.md)
+        - [Squid Proxy](connect-squid-proxy.md)
         - [Symantec Proxy SG](connect-symantec-proxy-sg.md)
         - [Symantec VIP](connect-symantec-vip.md)
         - [Другие устройства на основе системного журнала](connect-syslog.md)
+    - [HTTP-сервер Apache](connect-apache-http-server.md)
     - Решения DLP
     - [Поставщики Threat Intelligence](connect-threat-intelligence.md)
     - [Компьютеры DNS](connect-dns.md) — агент установлен непосредственно на компьютере DNS
@@ -132,7 +138,6 @@ Azure Sentinel поддерживает следующие методы подк
 ## <a name="agent-connection-options"></a>Параметры подключения агента<a name="agent-options"></a>
 
 Чтобы подключить внешнее устройство к Azure Sentinel, агент должен быть развернут на выделенном компьютере (виртуальной машине или локальном компьютере) для поддержки связи между устройством и Azure Sentinel. Вы можете развернуть агент автоматически или вручную. Автоматическое развертывание доступно только в том случае, если выделенный компьютер является новой созданной в Azure виртуальной машиной. 
-
 
 ![CEF в Azure](./media/connect-cef/cef-syslog-azure.png)
 

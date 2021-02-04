@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/07/2020
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 5b257e45a86a7b22e9064fcfc6092b3c946ae99b
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 13cbc2e9451221fef951eb6fac4c6b2772275122
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757653"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556425"
 ---
 # <a name="organize-management-groups-subscriptions-and-tenant-wide-visibility"></a>Организация групп управления, подписок и видимости на уровне клиента
 
@@ -81,12 +81,14 @@ ms.locfileid: "98757653"
 
 ## <a name="grant-tenant-wide-permissions-to-yourself"></a>Предоставьте себе разрешения для всего клиента
 
-У пользователя с ролью Azure Active Directory **Глобальный администратор** могут быть обязанности на уровне клиента, но отсутствовать разрешения Azure на просмотр сведений в масштабах организации в Центре безопасности Azure. 
+Пользователь с ролью Azure Active Directory (AD) **глобального администратора** может иметь права на уровне клиента, но не имеет разрешений Azure на просмотр сведений о всей Организации в центре безопасности Azure. Требуется повышение прав, так как назначения ролей Azure AD не предоставляют доступ к ресурсам Azure. 
 
 > [!TIP]
-> Если ваша организация управляет доступом к ресурсам с помощью [Azure AD privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-configure.md)или любого другого средства PIM, для пользователя, выполняющего эти изменения, должна быть активна роль глобального администратора.
+> Дополнительные сведения о повышении разрешений для роли глобального администратора см. в статье повышение уровня [доступа для управления всеми подписками Azure и группами управления](../role-based-access-control/elevate-access-global-admin.md).
 
 Чтобы назначить себе разрешения уровня клиента:
+
+1. Если ваша организация управляет доступом к ресурсам с помощью [Azure AD privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-configure.md)или любого другого средства PIM, роль глобального администратора должна быть активна для пользователя, который выполняет процедуру, описанную ниже.
 
 1. Как пользователь глобального администратора без назначения корневой группы управления клиента, откройте страницу **Обзор** центра безопасности и выберите в баннере ссылку «видимость для **всего клиента** ». 
 
@@ -123,7 +125,7 @@ ms.locfileid: "98757653"
 
 1. Если отображается баннер «вы видите ограниченные сведения». Выберите его.
 
-    :::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Баннер, уведомляющий пользователя о том, что он может запрашивать разрешения на уровне клиента.":::
+    :::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Баннер, уведомляющий пользователя о возможности запроса разрешения на уровне арендатора.":::
 
 1. В форме подробный запрос выберите нужную роль и обоснование, по которым требуются эти разрешения.
 

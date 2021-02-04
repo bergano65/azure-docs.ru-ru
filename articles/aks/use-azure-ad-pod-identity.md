@@ -4,20 +4,23 @@ description: Узнайте, как использовать управляем�
 services: container-service
 ms.topic: article
 ms.date: 12/01/2020
-ms.openlocfilehash: d992c5c5384c04fe39511481550ab7b0ea47069e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 22b7a03a8598aa6e4b7c392567905d467776360c
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217878"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99557361"
 ---
 # <a name="use-azure-active-directory-pod-managed-identities-in-azure-kubernetes-service-preview"></a>Использование удостоверений под управлением Azure Active Directory Pod в службе Kubernetes Azure (Предварительная версия)
 
 Azure Active Directory удостоверения, управляемые модулем Pod, используют примитивы Kubernetes для связывания [управляемых удостоверений для ресурсов][az-managed-identities] и удостоверений Azure в Azure Active Directory (AAD) с Pod. Администраторы создают удостоверения и привязки в виде примитивов Kubernetes, которые позволяют модулям Pod получать доступ к ресурсам Azure, использующим AAD в качестве поставщика удостоверений.
 
+> [!NOTE]
+> При наличии существующей установки ААДПОДИДЕНТИТИ необходимо удалить существующую установку. Включение этой функции означает, что компонент MIC не требуется.
+
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Необходимо установить следующий ресурс:
 
@@ -168,7 +171,7 @@ az aks pod-identity delete --name ${POD_IDENTITY_NAME} --namespace ${POD_IDENTIT
 az identity delete -g ${IDENTITY_RESOURCE_GROUP} -n ${IDENTITY_NAME}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. [в этой статье][az-managed-identities].
 
