@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 2ee4e313366bafdd2f6e3bd0e104abd9f11b7776
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 6cefb60d794defcce54766b9c7f71e7fbf40fe5c
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108676"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539439"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge"></a>Хранение данных на пограничных устройствах с использованием хранилища BLOB-объектов Azure в IoT Edge
 
@@ -77,7 +77,7 @@ ms.locfileid: "98108676"
 
 Имя этого параметра — `deviceToCloudUploadProperties` . Если вы используете симулятор IoT Edge, присвойте значения соответствующим переменным среды для этих свойств, которые можно найти в разделе пояснения.
 
-| Свойство | Возможные значения | Объяснение |
+| Свойство | Возможные значения | Описание |
 | ----- | ----- | ---- |
 | уплоадон | true, false | По умолчанию задано значение `false` . Если вы хотите включить эту функцию, присвойте этому полю значение `true` . <br><br> Переменная среды: `deviceToCloudUploadProperties__uploadOn={false,true}` |
 | уплоадордер | Невестфирст, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. По умолчанию задано значение `OldestFirst` . Порядок определяется временем последнего изменения большого двоичного объекта. <br><br> Переменная среды: `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
@@ -89,7 +89,7 @@ ms.locfileid: "98108676"
 
 Имя этого параметра — `deviceAutoDeleteProperties` . Если вы используете симулятор IoT Edge, присвойте значения соответствующим переменным среды для этих свойств, которые можно найти в разделе пояснения.
 
-| Свойство | Возможные значения | Объяснение |
+| Свойство | Возможные значения | Описание |
 | ----- | ----- | ---- |
 | делетеон | true, false | По умолчанию задано значение `false` . Если вы хотите включить эту функцию, присвойте этому полю значение `true` . <br><br> Переменная среды: `deviceAutoDeleteProperties__deleteOn={false,true}` |
 | делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет. Текущая максимальная допустимая минута — 35791. <br><br> Переменная среды: `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
@@ -184,6 +184,7 @@ sudo chmod -R 700 <blob-dir>
 В следующих примерах краткого руководства используются языки, которые также поддерживаются IoT Edge, поэтому их можно развернуть как IoT Edge модулей вместе с модулем хранилища BLOB-объектов:
 
 * [.NET](../storage/blobs/storage-quickstart-blobs-dotnet.md)
+  * Хранилище BLOB-объектов Azure для модуля IOT 1.4.0 и более ранних версий совместимо с WindowsAzure. пакет SDK для 9.3.3 хранилища и v 1.4.1 также поддерживает пакет SDK Azure. Storage. blobs 12.8.0.
 * [Python](../storage/blobs/storage-quickstart-blobs-python.md)
   * В версиях, предшествующих версии 2.1 пакета SDK для Python, есть известная ошибка, при которой модуль не возвращает время создания большого двоичного объекта. Из-за этой проблемы некоторые методы, такие как List Blobs, не работают. В качестве обходного решения явно задайте версию API в клиенте BLOB-объекта равным "2017-04-17". Пример: `block_blob_service._X_MS_VERSION = '2017-04-17'`
   * [Пример добавления большого двоичного объекта](https://github.com/Azure/azure-storage-python/blob/master/samples/blob/append_blob_usage.py)
@@ -292,7 +293,7 @@ sudo chmod -R 700 <blob-dir>
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-[Заметки о выпуске в центре DOCKER](https://hub.docker.com/_/microsoft-azure-blob-storage) для этого модуля
+Ниже приведены [заметки о выпуске для этого модуля в DOCKER Hub](https://hub.docker.com/_/microsoft-azure-blob-storage) . Дополнительные сведения об исправлении ошибок и исправлении см. в заметках о выпуске определенной версии.
 
 ## <a name="suggestions"></a>Предложения
 
@@ -300,7 +301,7 @@ sudo chmod -R 700 <blob-dir>
 
 Вы можете связаться с нами по адресу absiotfeedback@microsoft.com
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [развертывать хранилище BLOB-объектов Azure на IOT Edge](how-to-deploy-blob.md)
 
