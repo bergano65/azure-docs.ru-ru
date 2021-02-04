@@ -3,7 +3,7 @@ title: Учебник. Добавление локального приложе�
 description: Azure Active Directory (Azure AD) содержит службу прокси приложения, которая позволяет пользователям получать доступ к локальным приложениям при входе с использованием своей учетной записи Azure AD. В этом учебнике описано, как подготовить среду для использования с Application Proxy. Затем используется портал Azure для добавления локального приложения в клиент Azure AD.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 01/20/2021
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 6f8fdb23222944eab4742d1e972280e1e27e30a3
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 04b3dd51aab9686d102b6b94324f89396a268e7d
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728520"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99260084"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory
 
@@ -56,7 +56,8 @@ Azure Active Directory (Azure AD) содержит службу прокси п�
 > ```
 > Windows Registry Editor Version 5.00
 > 
-> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp\EnableDefaultHttp2 Value: 0
+> [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\WinHttp]
+> "EnableDefaultHTTP2"=dword:00000000
 > ```
 >
 > Ключ можно задать через PowerShell с помощью следующей команды.

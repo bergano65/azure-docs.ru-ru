@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 391d921cfe77e8efdfd93fa87f102652120786d4
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 934497f0d4debf8f21d5e12ba1e6addedd3c70f6
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807170"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99214406"
 ---
 |Имя |Описание |Политики |Версия |
 |---|---|---|---|
@@ -22,7 +22,7 @@ ms.locfileid: "98807170"
 |[FedRAMP — средний уровень](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/FedRAMP_M_audit.json) |Эта инициатива включает политики аудита, соответствующие требованиям FedRAMP M. В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/fedrampm-blueprint](https://aka.ms/fedrampm-blueprint). |62 |4.0.0 |
 |[HITRUST/HIPAA](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/HIPAA_HITRUST_audit.json) |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие требованиям HITRUST/HIPAA. В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/hipaa-blueprint](https://aka.ms/hipaa-blueprint). |120 |5.0.0 |
 |[IRS1075, сентябрь 2016 г.](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/IRS1075_audit.json) |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие требованиям IRS1075 (сентябрь 2016 г.). В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/irs1075-blueprint](https://aka.ms/irs1075-blueprint). |62 |4.0.0 |
-|[ISO 27001:2013](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/ISO27001_2013_audit.json). |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие требованиям ISO 27001:2013. В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/iso27001-blueprint](https://aka.ms/iso27001-blueprint). |53 |4.0.0 |
+|[ISO 27001:2013](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/ISO27001_2013_audit.json). |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие требованиям ISO 27001:2013. В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/iso27001-init](https://aka.ms/iso27001-init). |53 |4.0.1 |
 |[Американская ассоциация кинокомпаний (MPAA)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/Media_audit.json) |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие рекомендациям и требованиям к обеспечению безопасности Американской ассоциации кинокомпаний (MPAA). В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/mpaa-blueprint](https://aka.ms/mpaa-blueprint). |36 |4.0.0 (предварительная версия) |
 |[NIST SP 800-171 R2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/NIST800-171_audit.json) |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие требованиям NIST SP 800-171, ред. 2. В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/nist800171r2-blueprint](https://aka.ms/nist800171r2-blueprint). |77 |5.0.0 — предварительная версия |
 |[NIST SP 800-53, ред. 4](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/NIST80053_audit.json) |Эта инициатива включает политики аудита и развертывания расширений виртуальных машин, соответствующие требованиям NIST SP 800-53, ред. 4. В будущих выпусках будут добавлены дополнительные политики. Дополнительные сведения см. по адресу [https://aka.ms/nist80053-blueprint](https://aka.ms/nist80053-blueprint). |790 |4.0.0 |

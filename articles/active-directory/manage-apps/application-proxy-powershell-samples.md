@@ -3,7 +3,7 @@ title: Примеры PowerShell для прокси приложения Azure�
 description: Эти примеры PowerShell для прокси приложения Azure AD позволяют получить сведения о приложениях и соединителях прокси приложения, доступных в каталоге, назначить приложениям пользователей и группы, а также получить сведения о сертификатах.
 services: active-directory
 author: kenwith
-manager: celestedg
+manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 12/05/2019
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b0955e67c5a35cbea96490a0395522fa145dad1
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 117b4fec13c22ffb2f3163d50be44734d24ef3fa
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96858371"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99259106"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для прокси приложения Azure AD
 

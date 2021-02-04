@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/05/2021
+ms.date: 01/07/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: c884ad6850b8f94baa7c658d685651c3241be33f
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: eb71db05a61a0e32f3f092f37a4da72bc04e581d
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935692"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99525760"
 ---
 # <a name="tutorial-configure-compute-on-azure-stack-edge-pro-gpu-device"></a>Руководство по Настройка вычислений на устройстве Azure Stack Edge Pro с GPU
 
@@ -43,40 +43,7 @@ ms.locfileid: "97935692"
 
 ## <a name="configure-compute"></a>настройка вычислений;
 
-Чтобы настроить вычисления в Azure Stack Edge Pro, необходимо создать ресурс Центра Интернета вещей на портале Azure.
-
-1. На портале Azure своего ресурса Azure Stack Edge перейдите к разделу **Обзор** и выберите **IoT Edge**.
-
-   ![Начало работы с вычислениями](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-1.png)
-
-2. В разделе **Enable IoT Edge service** (Включение службы IoT Edge) выберите **Add** (Добавить).
-
-   ![настройка вычислений;](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-2.png)
-
-3. В колонке **Настройка пограничных вычислений** введите следующие значения:
-   
-   |Поле  |Значение  |
-   |---------|---------|
-   |Центр Интернета вещей     | Выберите **Новый** или **Существующий**. <br> По умолчанию для создания ресурса Интернета вещей используется уровень служб "Стандартный" (S1). Чтобы использовать ресурс Интернета вещей уровня служб "Бесплатный", создайте его и выберите существующий ресурс. <br> В любом случае для ресурса Интернета вещей используется та же подписка и группа ресурсов, что и для ресурса Azure Stack Edge.     |
-   |Имя     |Введите имя ресурса Центра Интернета вещей.         |
-
-   ![Начало работы с вычислениями 2](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-3.png)
-
-4. Завершив настройку параметров, выберите **Просмотр и создание**. Проверьте параметры для своего ресурса Центра Интернета вещей и выберите **Создать**.
-
-   Для создания ресурса Центра Интернета вещей нужно несколько минут. После создания ресурса в разделе **Обзор** будет указано, что служба IoT Edge теперь запущена.
-
-   ![Начало работы с вычислениями 3](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-4.png)
-
-5. Чтобы убедиться, что роль пограничных вычислений настроена, выберите **Свойства**.
-
-   ![Начало работы с вычислениями 4](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-5.png)
-
-   При настройке роли вычислений Edge на устройстве Edge создается два устройства — устройство Интернета вещей и устройство IoT Edge. Оба устройства можно просмотреть в ресурсе Центра Интернета вещей. На этом устройстве IoT Edge также запущена среда выполнения IoT Edge. На данный момент доступна только платформа Linux для устройства IoT Edge.
-
-Настройка вычислений может занять 20–30 минут, так как в фоновом режиме создаются виртуальные машины и кластер Kubernetes.
-
-После успешной настройки вычислений на портале Azure вам будут доступны кластер Kubernetes и пользователь по умолчанию, связанный с пространством имен Интернета вещей (системное пространство имен, контролируемое Azure Stack Edge Pro).
+[!INCLUDE [configure-compute](../../includes/azure-stack-edge-gateway-configure-compute.md)]
 
 ## <a name="get-kubernetes-endpoints"></a>Получение конечных точек Kubernetes
 

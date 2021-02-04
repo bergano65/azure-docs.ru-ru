@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/08/2019
 ms.author: jeedes
-ms.openlocfilehash: c3221063469315b2324c5039a46db622109826aa
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 0b337225c5909563ef4aeb49cf0754e11075a6fb
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673631"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090058"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bridge"></a>Руководство. Интеграция Azure Active Directory с Bridge
 
@@ -106,7 +106,7 @@ ms.locfileid: "97673631"
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<company name>.bridgeapp.com`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Bridge](https://community.bridgeapp.com/community/help). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Bridge](https://community.bridgeapp.com/hc/en-us/community/topics). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (необработанный)** из предложенных вариантов и сохранить его на компьютере.
 
@@ -124,7 +124,7 @@ ms.locfileid: "97673631"
 
 ### <a name="configure-bridge-single-sign-on"></a>Настройка единого входа в Bridge
 
-Чтобы настроить единый вход на стороне **Bridge**, нужно отправить скачанный **сертификат (необработанный)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Bridge](https://community.bridgeapp.com/community/help). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Bridge**, нужно отправить скачанный **сертификат (необработанный)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Bridge](https://community.bridgeapp.com/hc/en-us/community/topics). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -179,7 +179,7 @@ ms.locfileid: "97673631"
 
 ### <a name="create-bridge-test-user"></a>Создание тестового пользователя в Bridge
 
-В этом разделе описано, как создать пользователя Britta Simon в Bridge. Чтобы добавить пользователей на платформу Bridge, обратитесь в [службу поддержки Bridge](https://community.bridgeapp.com/community/help). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Bridge. Чтобы добавить пользователей на платформу Bridge, обратитесь в [службу поддержки Bridge](https://community.bridgeapp.com/hc/en-us/community/topics). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

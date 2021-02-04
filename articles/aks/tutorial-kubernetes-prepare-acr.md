@@ -3,14 +3,14 @@ title: Руководство по работе с Kubernetes в Azure. Созд
 description: С помощью этого руководства Azure Kubernetes Service (AKS) вы создадите экземпляр Реестра контейнеров Azure и отправите образ контейнера примера приложения.
 services: container-service
 ms.topic: tutorial
-ms.date: 01/12/2021
+ms.date: 01/31/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d1dce1c59c4bf40eaead89e4a8a088e9a8ea4f76
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 9f6ec14cea20192aef7d3010201e6613c5d03a9e
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250627"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430969"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
 
@@ -61,7 +61,7 @@ az acr login --name <acrName>
 Чтобы просмотреть список сохраненных образов, используйте команду [docker images][docker-images]:
 
 ```console
-$ docker images
+docker images
 ```
 В выходных данных команды выше приведен список текущих локальных образов:
 
@@ -88,8 +88,8 @@ docker tag mcr.microsoft.com/azuredocs/azure-vote-front:v1 <acrLoginServer>/azur
 
 Чтобы убедиться, что теги применены, запустите команду [docker images][docker-images] еще раз.
 
-```azurecli
-$ docker images
+```console
+docker images
 ```
 
 Образ помечен адресом экземпляра ACR и номером версии.

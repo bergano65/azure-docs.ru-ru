@@ -1,15 +1,15 @@
 ---
 title: Сведения о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 description: Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure. Каждый элемент управления сопоставляется с определениями одной или нескольких Политик Azure, которые помогают выполнять оценку.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 85467c086225c4d9e7699debb9871dbd197ebfd2
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: e1b30ae4f0708fd48e1832c4b9272d8e0c4744f2
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807067"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99091516"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Подробные сведения о встроенной инициативе о соответствии нормативным требованиям теста производительности CIS для платформ Microsoft Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "98807067"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
+|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 
 ### <a name="ensure-asc-default-policy-setting-monitor-jit-network-access-is-not-disabled"></a>Обеспечение того, что параметр "Мониторинг JIT-доступа к сети" не имеет значение "Отключено" в политике ASC по умолчанию
 

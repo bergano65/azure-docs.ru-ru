@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 7c3bca9e5ad87c681fc38a5c618331a3f7a97ae1
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 8b46d08da87565d133962c23e8281b221544d9ca
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897515"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092522"
 ---
 # <a name="tutorial-discover-hyper-v-vms-with-server-assessment"></a>Руководство по обнаружению виртуальных машин Hyper-V с помощью средства оценки серверов
 
@@ -87,7 +87,7 @@ ms.locfileid: "98897515"
 Проверка версии PowerShell | Проверяется, используете ли вы скрипт в поддерживаемой версии PowerShell. | Убедитесь, что на узле Hyper-V используется PowerShell версии 4.0 или более поздней.
 Создание учетной записи | Проверяет наличие необходимых разрешений на узле Hyper-V.<br/><br/> Позволяет создать локальную учетную запись пользователя с нужными разрешениями. | Вариант 1. Подготовьте учетную запись, используя права администратора, на хост-компьютере Hyper-V.<br/><br/> Вариант 2. Подготовьте учетную запись локального администратора или учетную запись администратора домена и добавьте ее в следующие группы: "Пользователи удаленного управления", "Администраторы Hyper-V" и "Пользователи системного монитора".
 Включение удаленного взаимодействия PowerShell | Включает на узле удаленное взаимодействия PowerShell, чтобы устройство, используемое для службы "Миграция Azure", могло выполнять команды PowerShell на узле с помощью подключения WinRM. | Для настройки откройте на каждом узле консоль PowerShell с правами администратора и выполните команду ``` powershell Enable-PSRemoting -force ```.
-Настройка служб интеграции Hyper-V | Проверяется, включены ли службы Integration Services Hyper-V на всех виртуальных машинах, управляемых узлом. | [Включите службы интеграции Hyper-V](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services.md) на каждой виртуальной машине.<br/><br/> Если вы используете Windows Server 2003, [выполните эти инструкции](prepare-windows-server-2003-migration.md).
+Настройка служб интеграции Hyper-V | Проверяется, включены ли службы Integration Services Hyper-V на всех виртуальных машинах, управляемых узлом. | [Включите службы интеграции Hyper-V](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services) на каждой виртуальной машине.<br/><br/> Если вы используете Windows Server 2003, [выполните эти инструкции](prepare-windows-server-2003-migration.md).
 Делегирование учетных данных, если диски виртуальной машины находятся в удаленных общих папках SMB | Делегирование учетных данных | Чтобы включить CredSSP для делегирования учетных данных на узлах с виртуальными машинами Hyper-V и дисками в общих папках SMB, выполните команду ```powershell Enable-WSManCredSSP -Role Server -Force ```.<br/><br/> Вы можете запустить эту команду удаленно на всех узлах Hyper-V.<br/><br/> Если вы добавляете новые главные узлы в кластер, они автоматически добавляются для обнаружения, но вам необходимо вручную включить CredSSP.<br/><br/> При настройке устройства вы закончите настройку шифрования CredSSP, [включив его на устройстве.](#delegate-credentials-for-smb-vhds) 
 
 ### <a name="run-the-script"></a>Выполнение скрипта

@@ -1,15 +1,15 @@
 ---
 title: Элементы управления соответствием Политики Azure для серверов с поддержкой Arc Azure (предварительная версия)
 description: Здесь перечислены элементы управления соответствием Политики Azure, доступные для серверов с поддержкой Arc Azure (предварительная версия). Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: sample
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 25bfe883a764e469876ae9d70b5cd474f2d21e81
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 664c82bce815ce80d9ad72fc780154a55e8269a7
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98795439"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092902"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-arc-enabled-servers"></a>Элементы управления соответствием Политики Azure для серверов с поддержкой Arc Azure
 

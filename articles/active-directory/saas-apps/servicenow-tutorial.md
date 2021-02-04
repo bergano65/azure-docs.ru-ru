@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 7a15248300150c9b79c4678701f81fac923d56a3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c90234249f3cf7eb6ed4793110d61e1f8190ed60
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353618"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99092638"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство по интеграции единого входа Azure Active Directory с приложением ServiceNow
 
@@ -36,7 +36,7 @@ ms.locfileid: "96353618"
 * Подписка ServiceNow с поддержкой единого входа.
 * Для ServiceNow экземпляр или клиент ServiceNow поддерживает версии для Калгари, Кингстона, Лондона, Мадрида, Нью Йорка, Орландо и Парижа или более поздние версии.
 * Экземпляр ServiceNow Express версии Helsinki или более поздней (для ServiceNow Express).
-* В клиенте ServiceNow должен быть включен [подключаемый модуль единого входа для нескольких поставщиков](https://wiki.servicenow.com/index.php?title=Multiple_Provider_Single_Sign-On#gsc.tab=0).
+* В клиенте ServiceNow должен быть включен [подключаемый модуль единого входа для нескольких поставщиков](https://old.wiki/index.php/Multiple_Provider_Single_Sign-On#gsc.tab=0).
 * Чтобы применить автоматическую настройку, включите подключаемый модуль поддержки нескольких поставщиков для ServiceNow.
 * Для установки приложения ServiceNow Classic (Mobile) перейдите в соответствующее хранилище и выполните поиск по запросу ServiceNow Classic. Скачайте это приложение.
 

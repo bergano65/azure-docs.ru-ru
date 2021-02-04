@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/14/2020
-ms.openlocfilehash: 88483b29c8951f8e3f38f7cdc5bbdfb80eeca2b1
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: bc809cf02b827b7498890cb7d929c44bd360ab53
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370140"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99094747"
 ---
 # <a name="tutorial-assign-directory-readers-role-to-an-azure-ad-group-and-manage-role-assignments"></a>Руководство по назначению роли "Читатели каталогов" группе Azure AD и управлению назначениями ролей
 
@@ -23,7 +23,7 @@ ms.locfileid: "92370140"
 > [!NOTE]
 > Описанное в этой статье назначение роли **Читатели каталогов** группе находится в **общедоступной предварительной версии**. 
 
-В этой статье описано, как создать группу в Azure Active Directory (Azure AD) и назначить ей роль [**Читатели каталогов**](../../active-directory/roles/permissions-reference.md#directory-readers). Разрешения "Читатели каталогов" позволяют владельцам групп добавлять в них дополнительных членов, таких как [управляемые удостоверения](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) [Базы данных SQL Azure](sql-database-paas-overview.md), [Управляемого экземпляра SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). В этом случае для назначения роли "Читатели каталогов" непосредственно для каждого удостоверения логического сервера Azure SQL в клиенте не требуются права [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [администратора привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator).
+В этой статье описано, как создать группу в Azure Active Directory (Azure AD) и назначить ей роль [**Читатели каталогов**](../../active-directory/roles/permissions-reference.md#directory-readers). Разрешения "Читатели каталогов" позволяют владельцам групп добавлять в них дополнительных членов, таких как [управляемые удостоверения](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) [Базы данных SQL Azure](sql-database-paas-overview.md), [Управляемого экземпляра SQL Azure](../managed-instance/sql-managed-instance-paas-overview.md) и [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). В этом случае для назначения роли "Читатели каталогов" непосредственно для каждого удостоверения логического сервера Azure SQL в клиенте не требуются права [глобального администратора](../../active-directory/roles/permissions-reference.md#global-administrator) или [администратора привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator).
 
 В этом учебнике используется функция, описанная в статье [Использование облачных групп для управления назначением ролей в Azure Active Directory (предварительная версия)](../../active-directory/roles/groups-concept.md). 
 
@@ -38,7 +38,7 @@ ms.locfileid: "92370140"
 
 ### <a name="create-a-new-group-and-assign-owners-and-role"></a>Создание новой группы и назначение владельцев и роли
 
-1. Для этой первоначальной настройки пользователю требуются разрешения [Глобальный администратор](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [Администратор привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator).
+1. Для этой первоначальной настройки пользователю требуются разрешения [Глобальный администратор](../../active-directory/roles/permissions-reference.md#global-administrator) или [Администратор привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator).
 1. Привилегированный пользователь должен войти на [портал Azure](https://portal.azure.com).
 1. Перейдите к ресурсу **Azure Active Directory**. В разделе **Управляемые** перейдите в раздел **Группы**. Чтобы создать группу, выберите **Создать группу**.
 1. Выберите **Безопасность** в качестве типа группы и заполните остальные поля. Убедитесь, что для параметра **Azure AD roles can be assigned to the group (Preview)** (Роли Azure AD можно назначить группе (предварительная версия)) установлено значение **Да**. Затем назначьте группе роль **Читатели каталогов** Azure AD.
@@ -55,7 +55,7 @@ ms.locfileid: "92370140"
 
 Чтобы проверить созданную группу и управлять ею, вернитесь в область **Группы** на портале Azure и найдите имя группы. После выбора группы можно добавить дополнительных владельцев и членов, выбрав меню **Владельцы** и **Члены** в параметре **Управление**. Кроме того, можно проверить **назначенные роли** для группы.
 
-:::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-group-created.png" alt-text="aad-new-group":::
+:::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-group-created.png" alt-text="Снимок экрана: область &quot;Группа&quot; с выделенными ссылками, по которым открываются меню параметров для членов, владельцев и назначенных ролей (предварительная версия).":::
 
 ### <a name="add-azure-sql-managed-identity-to-the-group"></a>Добавление управляемого удостоверения SQL Azure в группу
 
@@ -68,17 +68,17 @@ ms.locfileid: "92370140"
 
 1. Найдите на портале Azure имя ресурса **управляемого экземпляра SQL**.
 
-   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance.png" alt-text="aad-new-group":::
+   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance.png" alt-text="Снимок экрана: страница &quot;Управляемые экземпляры SQL&quot; с выделенными именем экземпляра SQL ssomitest и именем подсети ManagedInstance.":::
 
    Во время создания Управляемого экземпляра SQL для вашего экземпляра было создано удостоверение Azure. Созданное удостоверение имеет то же имя, что и префикс имени Управляемого экземпляра SQL. Чтобы найти субъект-службу для удостоверения Управляемого экземпляра SQL, созданного в качестве приложения Azure AD, выполните следующие действия:
 
     - Перейдите к ресурсу **Azure Active Directory**. В разделе параметра **Управление** выберите **Корпоративные приложения**. **Идентификатор объекта** — это идентификатор экземпляра.
     
-    :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance-service-principal.png" alt-text="aad-new-group":::
+    :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-managed-instance-service-principal.png" alt-text="Снимок экрана: страница &quot;Корпоративные приложения&quot; для ресурса Azure Active Directory с выделенным идентификатором объекта для управляемого экземпляра SQL.":::
 
 1. Перейдите к ресурсу **Azure Active Directory**. В разделе **Управляемые** перейдите в раздел **Группы**. Выберите созданную группу. В параметре вашей группы **Управляемые** выберите **Члены**. Выберите **Добавление членов** и добавьте субъект-службу Управляемого экземпляра SQL в качестве члена группы, выполнив поиск по имени, указанному выше.
 
-   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-add-managed-instance-service-principal.png" alt-text="aad-new-group":::
+   :::image type="content" source="media/authentication-aad-directory-readers-role/azure-ad-add-managed-instance-service-principal.png" alt-text="Снимок экрана: страница &quot;Члены&quot; для ресурса Azure Active Directory с выделенными вариантами для добавления управляемого экземпляра SQL в качестве нового члена.":::
 
 > [!NOTE]
 > Распространение разрешений субъекта-службы через систему Azure и предоставление доступа к API Graph Azure AD может занять несколько минут. Возможно, вам придется подождать несколько минут, прежде чем приступить к подготовке администратора Azure AD для Управляемого экземпляра SQL.
@@ -94,7 +94,7 @@ ms.locfileid: "92370140"
 ## <a name="directory-readers-role-assignment-using-powershell"></a>Назначение роли "Читатели каталогов" с помощью PowerShell
 
 > [!IMPORTANT]
-> [Глобальному администратору](../../active-directory/roles/permissions-reference.md#global-administrator--company-administrator) или [администратору привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) потребуется выполнить начальные действия. Помимо PowerShell, Azure AD предлагает API Microsoft Graph для [создания группы с назначением роли в Azure AD](../../active-directory/roles/groups-create-eligible.md#using-microsoft-graph-api).
+> [Глобальному администратору](../../active-directory/roles/permissions-reference.md#global-administrator) или [администратору привилегированных ролей](../../active-directory/roles/permissions-reference.md#privileged-role-administrator) потребуется выполнить начальные действия. Помимо PowerShell, Azure AD предлагает API Microsoft Graph для [создания группы с назначением роли в Azure AD](../../active-directory/roles/groups-create-eligible.md#using-microsoft-graph-api).
 
 1. Скачайте модуль Azure AD PowerShell (предварительная версия) с помощью указанной ниже команды. Возможно, потребуется запустить PowerShell от имени администратора.
 

@@ -1,15 +1,15 @@
 ---
 title: Сведения о соответствии требованиям стандарта HIPAA HITRUST 9.2
 description: Сведения о встроенной инициативе по соответствию требованиям стандарта HIPAA HITRUST 9.2. Каждый элемент управления сопоставляется с одним или несколькими определениями Политики Azure, которые помогают выполнять оценку.
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: bbec4e1ea72f458557281f76b5ca5178bce2c316
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 4ee5f87b5bf8d2476685eb469df05bb2267bcf2f
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805587"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99095762"
 ---
 # <a name="details-of-the-hipaa-hitrust-92-regulatory-compliance-built-in-initiative"></a>Сведения о встроенной инициативе по соответствию требованиям стандарта HIPAA HITRUST 9.2
 
@@ -1438,7 +1438,7 @@ ms.locfileid: "98805587"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
+|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 |[Необходимо устранить уязвимости в конфигурациях безопасности контейнера.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe8cbc669-f12d-49eb-93e7-9273119e9933) |Аудит уязвимостей в конфигурации безопасности на компьютерах с установленным Docker и отображение результатов в качестве рекомендаций в Центре безопасности Azure. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ContainerBenchmark_Audit.json) |
 |[Уязвимости конфигурации безопасности на ваших компьютерах должны быть устранены](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fe1e5fd5d-3e4c-4ce1-8661-7d1873ae6b15) |Серверы, не соответствующие заданным базовым показателям, будут отслеживаться центром безопасности Azure для предоставления рекомендаций. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_OSVulnerabilities_Audit.json) |
 |[Уязвимости в конфигурации безопасности в масштабируемом наборе виртуальных машин должны быть устранены.](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3c735d8a-a4ba-4a3a-b7cf-db7754cf57f4) |Аудит наличия уязвимостей ОС в ваших масштабируемых наборах виртуальных машин для защиты их от атак. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssOSVulnerabilities_Audit.json) |
@@ -1461,7 +1461,7 @@ ms.locfileid: "98805587"
 
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
+|[Необходимо включить решение для оценки уязвимостей на виртуальных машинах](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) |Осуществляет аудит виртуальных машин, чтобы определить, работает ли на них поддерживаемое решение для оценки уязвимостей. Основным компонентом каждой программы безопасности и защиты от киберрисков является идентификация и анализ уязвимостей. Ценовая категория "Стандартный" Центра безопасности Azure предоставляет возможность выполнять проверку уязвимостей виртуальных машин без дополнительных затрат. Кроме того, Центр безопасности может автоматически развернуть этот инструмент. |AuditIfNotExists, Disabled |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 
 ### <a name="patches-are-tested-and-evaluated-before-they-are-installed"></a>Исправления проверяются и оцениваются до их установки.
 

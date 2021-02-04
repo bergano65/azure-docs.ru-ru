@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/13/2021
+ms.date: 01/28/2021
 ms.author: jeedes
-ms.openlocfilehash: e8a392f72af1ae5a3da8d8e3306f05cdec390591
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: c6eac316a8d1849e193add2d74e81f8652c7a676
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735903"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090592"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-navex-one"></a>Руководство Интеграция единого входа Azure Active Directory с NAVEX One
 
@@ -76,10 +76,32 @@ ms.locfileid: "98735903"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<CLIENT_KEY>.navexglobal.com`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес в одном из таких форматов:
+
+    | URL-адрес входа |
+    |--------------|
+    | `https://<CLIENT_KEY>.navexglobal.com` |
+    | `https://<CLIENT_KEY>.navexglobal.eu` |
+    |
+
+    b. В текстовом поле **Идентификатор** введите любой из следующих URL-адресов:
+
+    | Идентификатор |
+    |--------------|
+    | `https://doorman.navexglobal.com/Shibboleth` |
+    | `https://doorman.navexglobal.eu/Shibboleth` |
+    |
+
+    c. В текстовом поле **URL-адрес ответа** введите любой из следующих URL-адресов:
+
+    | URL-адрес ответа |
+    |--------------|
+    | `https://doorman.navexglobal.com/Shibboleth.sso/SAML2/POST` |
+    | `https://doorman.navexglobal.eu/Shibboleth.sso/SAML2/POST` |
+    |
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу технической поддержки клиентов NAVEX One](mailto:ethicspoint@navexglobal.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу технической поддержки клиентов NAVEX One](mailto:ethicspoint@navexglobal.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 

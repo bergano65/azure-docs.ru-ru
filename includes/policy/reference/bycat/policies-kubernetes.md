@@ -2,19 +2,19 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: d24192cb2f648a20a8f776b92f765bc6055ecf71
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 5d8890198308379d837f3b486b4d0efc987249e3
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807304"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99220638"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[В ваших кластерах должна быть установлена и включена надстройка службы "Политика Azure" для службы Kubernetes (AKS)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a15ec92-a229-4763-bb14-0ea34a568f8d) |Надстройка службы "Политика Azure" для службы Kubernetes (AKS) расширяет возможности Gatekeeper версии 3, представляющего собой веб-перехватчик контроллера допуска для Open Policy Agent (OPA), чтобы централизованным и согласованным образом применить правила и меры безопасности для кластеров в требуемом масштабе. |Audit, Disabled |[1.0.1 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Audit.json) |
+|[В ваших кластерах должна быть установлена и включена надстройка службы "Политика Azure" для службы Kubernetes (AKS)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0a15ec92-a229-4763-bb14-0ea34a568f8d) |Надстройка службы "Политика Azure" для службы Kubernetes (AKS) расширяет возможности Gatekeeper версии 3, представляющего собой веб-перехватчик контроллера допуска для Open Policy Agent (OPA), чтобы централизованным и согласованным образом применить правила и меры безопасности для кластеров в требуемом масштабе. |Audit, Disabled |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Audit.json) |
 |[Операционные системы и диски данных в кластерах Службы Azure Kubernetes должны быть зашифрованы с помощью ключей, управляемых клиентом](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F7d7be79c-23ba-4033-84dd-45e2a5ccdd67) |Шифрование дисков ОС и данных с помощью ключей, управляемых клиентом, обеспечивает больший контроль и большую гибкость в управлении ключами. Это общее требование для многих нормативных и отраслевых стандартов соответствия. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_CMK_Deny.json) |
 |[Развертывание надстройки службы "Политика Azure" в кластерах Службы Azure Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa8eff44f-8c92-45c3-a3fb-9880802d67a7) |Надстройка службы "Политика Azure" позволяет управлять состоянием соответствия кластеров Службы Azure Kubernetes (AKS) и получать уведомления о нем. Дополнительные сведения см. в статье [https://aka.ms/akspolicydoc](https://aka.ms/akspolicydoc). |deployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/AKS_AzurePolicyAddOn_Deploy.json) |
 |[Развертывание GitOps в кластер Kubernetes](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1d61c4d2-aef2-432b-87fc-7f96b019b7e1) |Эта политика развертывает конфигурацию "sourceControlConfiguration" в кластерах Kubernetes, чтобы обеспечить для них достоверный источник из определенного git-репозитория. Инструкции по использованию этой политики см. на странице [https://aka.ms/K8sGitOpsPolicy](https://aka.ms/K8sGitOpsPolicy). |DeployIfNotExists |[1.0.0 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/Deploy-GitOps-to-Kubernetes-cluster_DINE.json) |

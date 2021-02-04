@@ -7,12 +7,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 04/24/2020
-ms.openlocfilehash: 254a9737b805aeeae2008923a8178cd971602132
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 372f531154528698da05c7a20c5d842b593259d1
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677750"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072257"
 ---
 # <a name="tutorial-delete-an-azure-red-hat-openshift-4-cluster"></a>Руководство по Удаление кластера Azure Red Hat OpenShift 4
 
@@ -61,4 +61,4 @@ az aro delete --resource-group $RESOURCEGROUP --name $CLUSTER
 > [!div class="checklist"]
 > * Удаление кластера Azure Red Hat OpenShift 4
 
-Ознакомьтесь с дополнительными сведениями об использовании OpenShift в [документации по Red Hat OpenShift](https://www.openshift.com/try).
+Ознакомьтесь с дополнительными сведениями об использовании OpenShift в [документации по Red Hat OpenShift](https://docs.openshift.com/container-platform/4.6/welcome/index.html).

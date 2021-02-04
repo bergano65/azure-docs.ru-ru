@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: 2391a36c02e0bdfe0ea98be7f19fc64f1fbb676f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: f9791fa8932792398efdea39fe0d39a967420596
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879937"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99491728"
 ---
 # <a name="register-and-scan-an-azure-sql-database-managed-instance"></a>Регистрация и сканирование Управляемого экземпляра Базы данных SQL Azure
 
@@ -104,20 +104,6 @@ Azure Purview не поддерживает сканирование [предс
 1. Чтобы завершить процесс, щелкните **Создать**.
 1. Если хранилище ключей еще не подключено к службе Purview, вам придется [создать новое подключение к хранилищу ключей](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account).
 1. Наконец, [создайте новые учетные данные](manage-credentials.md#create-a-new-credential) для сканирования, указав субъект-службу.
-
-### <a name="firewall-settings"></a>Параметры брандмауэра
-
-Сервер базы данных должен разрешать подключения к Azure. Это нужно Azure Purview для доступа к серверу и его подключения. Вы можете воспользоваться практическим руководством по [подключению из среды Azure](../azure-sql/database/firewall-configure.md#connections-from-inside-azure).
-
-1. Перейдите к учетной записи базы данных.
-1. На странице **Обзор** выберите имя сервера.
-1. Выберите **Безопасность > Брандмауэры и виртуальные сети**.
-1. Выберите значение **Да** для параметра **Разрешить доступ к серверу службам и ресурсам Azure**.
-
-    :::image type="content" source="media/register-scan-azure-sql-database/sql-firewall.png" alt-text="Параметры регистрации источников" border="true":::
-    
-> [!Note]
-> В настоящее время Azure Purview не поддерживает конфигурацию виртуальной сети. Это означает, что вы не сможете использовать параметры брандмауэра на основе IP-адресов.
 
 ## <a name="register-an-azure-sql-database-managed-instance-data-source"></a>Регистрация источника данных Управляемого экземпляра Базы данных SQL Azure
 

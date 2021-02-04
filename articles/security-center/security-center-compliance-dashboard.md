@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/28/2021
 ms.author: memildin
-ms.openlocfilehash: f8d92ff0835948637761d7d2a98ec95a1c6dfccd
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 523b081b59bd2f4c45c1ceeb9f39c58f4e3b02b1
+ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944231"
+ms.locfileid: "98986909"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Руководство по Обеспечение соответствия нормативным требованиям на высоком уровне
 
@@ -55,7 +55,7 @@ ms.locfileid: "98944231"
 
     В верхней части экрана находится панель мониторинга с обзором состояния соответствия с набором поддерживаемых нормативов соответствия. Вы можете увидеть общую оценку соответствия и число удачных и неудачных оценок, связанных с каждым стандартом.
 
-    :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Панель мониторинга соответствия нормативным требованиям":::
+    :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Панель мониторинга соответствия нормативным требованиям" lightbox="./media/security-center-compliance-dashboard/compliance-dashboard.png":::
 
 1. Выберите вкладку для необходимого стандарта соответствия (1). Вы увидите, к каким подпискам применяется стандарт (2) и список всех элементов управления для этого стандарта (3). Для применимых элементов управления вы можете просмотреть сведения об удачных и неудачных оценках, связанных с этим элементом управления (4), а также количество затронутых ресурсов (5). Некоторые элементы управления отображаются серым цветом. С этими элементами управления не связаны оценки Центра безопасности. Проанализируйте требования для них и оцените их в своей среде самостоятельно. Некоторые из них могут относиться к процессу и не быть техническими.
 
