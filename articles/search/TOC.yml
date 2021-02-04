@@ -302,10 +302,10 @@
               href: knowledge-store-projections-examples.md
     - name: Запросы
       items:
-        - name: Типы запросов и составление запросов
-          href: search-query-overview.md
         - name: Создание простого запроса
           href: search-query-create.md
+        - name: Типы запросов и составление запросов
+          href: search-query-overview.md
         - name: Использование простого синтаксиса (примеры)
           href: search-query-simple-examples.md
         - name: Использование полного синтаксиса Lucene (примеры)
