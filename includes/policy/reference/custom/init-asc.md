@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 36cc72745636774ed1dcd34ad24bfe5c816ee235
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: c47da0961251ce0c7856fb366f81980cc4811115
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096955"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560954"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|--|
@@ -189,4 +189,4 @@ ms.locfileid: "99096955"
 |[Для Шлюза приложений должен быть включен брандмауэр веб-приложения (WAF)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F564feb30-bf6a-4854-b4bb-0d2d2d1e6c66) |Разверните Брандмауэр веб-приложения Azure (WAF) перед общедоступными веб-приложениями для дополнительной проверки входящего трафика. Брандмауэр веб-приложения (WAF) обеспечивает централизованную защиту веб-приложений от распространенных эксплойтов и уязвимостей, включая внедрение кода SQL, межсайтовые сценарии, а также выполнение локальных и удаленных файлов. Вы также можете ограничить доступ к веб-приложениям по странам, диапазонам IP-адресов и другим параметрам HTTP(S) с помощью настраиваемых правил. |Audit, Deny, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayEnabled_Audit.json) |
 |[Для службы Azure Front Door Service должен быть включен Брандмауэр веб-приложений (WAF)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F055aa869-bc98-4af8-bafc-23f1ab6ffe2c) |Разверните Брандмауэр веб-приложения Azure (WAF) перед общедоступными веб-приложениями для дополнительной проверки входящего трафика. Брандмауэр веб-приложения (WAF) обеспечивает централизованную защиту веб-приложений от распространенных эксплойтов и уязвимостей, включая внедрение кода SQL, межсайтовые сценарии, а также выполнение локальных и удаленных файлов. Вы также можете ограничить доступ к веб-приложениям по странам, диапазонам IP-адресов и другим параметрам HTTP(S) с помощью настраиваемых правил. |Audit, Deny, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Enabled_Audit.json) |
 |[Веб-приложение должно быть доступно только по HTTPS](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa4af4a39-4135-47fb-b175-47fbdf85311d) |Использование HTTPS обеспечивает проверку подлинности сервера и служб, а также защищает передаваемые данные от перехвата на сетевом уровне. |Audit, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/App%20Service/AppServiceWebapp_AuditHTTP_Audit.json) |
-|[На компьютерах должна быть включена система защиты от эксплойтов защитника Windows](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbed48b13-6647-468e-aa2f-1af1d3f4dd40) |Служба защиты от эксплойтов защитника Windows использует агент гостевой конфигурации политики Azure. Exploit Guard состоит из четырех компонентов, которые предназначены для блокировки устройств с целью защиты от разнообразных векторов атак и блокируют поведение, которое присуще атакам с использованием вредоносных программ, позволяя организациям сбалансировать риски, связанные с угрозами безопасности, и требования к производительности (только для Windows). |AuditIfNotExists, Disabled |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsDefenderExploitGuard_AINE.json) |
+|[На компьютерах должны быть включены функции Exploit Guard в Microsoft Defender](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbed48b13-6647-468e-aa2f-1af1d3f4dd40) |Exploit Guard в Microsoft Defender использует агент гостевой конфигурации Политики Azure. Exploit Guard состоит из четырех компонентов, которые предназначены для блокировки устройств с целью защиты от разнообразных векторов атак и блокируют поведение, которое присуще атакам с использованием вредоносных программ, позволяя организациям сбалансировать риски, связанные с угрозами безопасности, и требования к производительности (только для Windows). |AuditIfNotExists, Disabled |[1.1.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Guest%20Configuration/GuestConfiguration_WindowsDefenderExploitGuard_AINE.json) |

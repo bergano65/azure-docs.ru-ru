@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/03/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: d60a241506dbcf3e038f79c99830ef1a81c06b88
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 589081149d08983d3cd5a4a8822873f5a6cfca0e
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735270"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559442"
 ---
 # <a name="customize-node-configuration-for-azure-kubernetes-service-aks-node-pools-preview"></a>Настройка конфигурации узла для пулов узлов Azure Kubernetes Service (AKS) (Предварительная версия)
 
@@ -166,7 +166,7 @@ az extension update --name aks-preview
 }
 ```
 
-Создайте новый кластер, указав конфигурации кублет и ОС, используя JSON-файлы, созданные на предыдущем шаге. 
+Создайте новый кластер, указав конфигурации kubelet и ОС, используя JSON-файлы, созданные на предыдущем шаге. 
 
 > [!NOTE]
 > При создании кластера можно указать конфигурацию kubelet, конфигурацию ОС или и то, и другое. Если при создании кластера указать конфигурацию, то эта конфигурация будет применена только к узлам в начальном пуле узлов. Все параметры, не настроенные в JSON, будут хранить значение по умолчанию.

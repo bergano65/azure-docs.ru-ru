@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: e485c2f0a7deeffe68c932688658ef099fec510e
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 97042479419cbc9d634a06e2dcbcccf9c8fde62b
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492761"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560467"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Создание и подключение кластера службы Kubernetes Azure
 
@@ -210,7 +210,7 @@ az ml computetarget create aks -n myaks
 
 **Оценка времени:** Приблизительно 5 минут.
 
-Если у вас уже есть кластер AKS в подписке Azure и он имеет версию 1,17 или более раннюю, его можно использовать для развертывания образа.
+Если у вас уже есть кластер AKS в подписке Azure, его можно использовать в рабочей области.
 
 > [!TIP]
 > Существующий кластер AKS может находиться в регионе Azure, отличном от Машинное обучение Azure рабочей области.
@@ -382,7 +382,7 @@ az ml computetarget detach -n myaks -g myresourcegroup -w myworkspace
 
 ---
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="update-the-cluster"></a>Обновление кластера
 
 Обновления компонентов Машинное обучение Azure, установленных в кластере службы Azure Kubernetes, необходимо применять вручную. 
@@ -425,7 +425,7 @@ kubectl get secret/azuremlfessl -o yaml
 az aks get-credentials -g <rg> -n <aks cluster name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование Azure RBAC для авторизации Kubernetes](../aks/manage-azure-rbac.md)
 * [Как и где развертывается модель](how-to-deploy-and-where.md)

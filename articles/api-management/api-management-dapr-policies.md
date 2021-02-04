@@ -6,12 +6,12 @@ ms.author: vlvinogr
 ms.date: 10/23/2020
 ms.topic: article
 ms.service: api-management
-ms.openlocfilehash: 9d1ba226e3ca1276658f7e72e9094918f0379a77
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: b8e253f75f56f961a24a441188b7a8e571622667
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653543"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560235"
 ---
 # <a name="api-management-dapr-integration-policies"></a>Политики интеграции ДАПР управления API
 
@@ -89,7 +89,7 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
+| Атрибут        | Описание                     | Обязательно | По умолчанию |
 |------------------|---------------------------------|----------|---------|
 | backend-id       | Необходимо задать значение "ДАПР"           | Да      | Н/Д     |
 | ДАПР-App-ID      | Имя целевой микрослужбы. Сопоставляется с параметром [AppID](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/service_invocation_api.md) в ДАПР.| Да | Н/Д |
@@ -111,7 +111,7 @@ template:
 ### <a name="policy-statement"></a>Правило политики
 
 ```xml
-<publish-to-dapr pubsub-name="pubsub-name" topic=”topic-name” ignore-error="false|true" response-variable-name="resp-var-name" timeout="in seconds" template=”Liquid” content-type="application/json">
+<publish-to-dapr pubsub-name="pubsub-name" topic="topic-name" ignore-error="false|true" response-variable-name="resp-var-name" timeout="in seconds" template="Liquid" content-type="application/json">
     <!-- message content -->
 </publish-to-dapr>
 ```
@@ -157,7 +157,7 @@ template:
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
+| Атрибут        | Описание                     | Обязательно | По умолчанию |
 |------------------|---------------------------------|----------|---------|
 | pubsub — имя      | Имя целевого компонента PubSub. Сопоставляется с параметром [пубсубнаме](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) в ДАПР. Если он отсутствует, значение атрибута __раздела__ должно быть в виде `pubsub-name/topic-name` .    | Нет       | None    |
 | Раздел            | Имя раздела. Сопоставляется с параметром [раздела](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/pubsub_api.md) в ДАПР.               | Да      | Н/Д     |
@@ -183,9 +183,9 @@ template:
 ### <a name="policy-statement"></a>Правило политики
 
 ```xml
-<invoke-dapr-binding name=”bind-name" operation="op-name" ignore-error="false|true" response-variable-name="resp-var-name" timeout="in seconds" template=”Liquid content-type="application/json">
+<invoke-dapr-binding name="bind-name" operation="op-name" ignore-error="false|true" response-variable-name="resp-var-name" timeout="in seconds" template="Liquid" content-type="application/json">
     <metadata>
-        <item key=”item-name”><!-- item-value --></item>
+        <item key="item-name"><!-- item-value --></item>
     </metadata>
     <data>
         <!-- message content -->
@@ -238,12 +238,12 @@ template:
 |---------------------|--------------|----------|
 | Invoke-ДАПР — привязка | Корневой элемент | Да      |
 | метаданные            | Привязка конкретных метаданных в виде пар «ключ-значение». Сопоставляется со свойством [метаданных](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
-| Данные            | Содержимое сообщения. Сопоставляется со свойством [Data](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
+| .            | Содержимое сообщения. Сопоставляется со свойством [Data](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет |
 
 
 ### <a name="attributes"></a>Атрибуты
 
-| Атрибут        | Описание                     | Обязательно | Значение по умолчанию |
+| Атрибут        | Описание                     | Обязательно | По умолчанию |
 |------------------|---------------------------------|----------|---------|
 | name            | Имя целевой привязки. Должно совпадать с именем привязок, [определенных](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#bindings-structure) в ДАПР.           | Да      | Н/Д     |
 | Операция       | Имя целевой операции (только для привязки). Сопоставляется со свойством [Operation](https://github.com/dapr/docs/blob/master/daprdocs/content/en/reference/api/bindings_api.md#invoking-output-bindings) в ДАПР. | Нет | None |

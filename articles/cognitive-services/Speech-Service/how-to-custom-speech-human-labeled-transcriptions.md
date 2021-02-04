@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: erhopf
-ms.openlocfilehash: eafdebc795d5bede7fa52a3562d33c806035697f
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 85f239afd1b9263440abff1f924c12cdb7eeadaa
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704437"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99560278"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Создание транскрипций с отметкой
 
@@ -167,7 +167,11 @@ ms.locfileid: "98704437"
 | ¡Eine Frage!     | eine frage               |
 | wir, haben       | wir haben                |
 
-## <a name="next-steps"></a>Следующие шаги
+### <a name="text-normalization-for-japanese"></a>Нормализация текста для японского языка
+
+В японском языке (ja-JP) для каждого предложения существует максимальная длина в 90 символов. Строки с длинными предложениями будут отклонены. Чтобы добавить длинный текст, вставьте точку между.
+
+## <a name="next-steps"></a>Next Steps
 
 - [Подготовка и тестирование данных](./how-to-custom-speech-test-and-train.md)
 - [Проверка данных](how-to-custom-speech-inspect-data.md)

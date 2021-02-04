@@ -11,23 +11,23 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/29/2020
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 7c09a7f6c6a313852fc6212c6190a584ba5f67bd
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7821d94ed032fd0fc52a756766e6a9af7c82cfde
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409898"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559238"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
 В этой статье описывается распространенная угроза безопасности поддоменных перенаправление и действия, которые можно предпринять для устранения проблемы.
 
 
-## <a name="what-is-subdomain-takeover"></a>Что такое поддомены перенаправление?
+## <a name="what-is-a-subdomain-takeover"></a>Что такое поддомен перенаправление?
 
-Такеоверс поддоменов — это распространенная угроза высокой серьезности для организаций, которые регулярно создают и удаляют множество ресурсов. Дочерний домен перенаправление может возникать, если имеется [запись DNS](../../dns/dns-zones-records.md#dns-records) , указывающая на отозванный ресурс Azure. Такие записи DNS также называются "висячими DNS" записями. Записи CNAME особенно уязвимы для этой угрозы. Поддомены такеоверс позволяют вредоносным субъектам перенаправлять трафик, предназначенный для домена организации, на сайт, выполняющий вредоносные действия.
+Такеоверс поддоменов — это распространенная угроза высокой серьезности для организаций, которые регулярно создают и удаляют множество ресурсов. Дочерний домен перенаправление может возникать, если имеется [запись DNS](../../dns/dns-zones-records.md#dns-records) , указывающая на отозванный ресурс Azure. Такие записи DNS называются недействительными. Записи CNAME особенно уязвимы перед этой угрозой. Перенаправление поддомена позволяет вредоносным субъектам перенаправлять трафик, предназначенный для домена организации, на сайт, выполняющий вредоносные действия.
 
 Распространенный сценарий для поддомена перенаправление:
 
@@ -92,7 +92,7 @@ ms.locfileid: "94409898"
 | хранилище BLOB-объектов Azure        | microsoft.storage/storageaccounts           | Properties. первичных. BLOB           | `abc. blob.core.windows.net`    |
 | Azure CDN                 | microsoft.cdn/profiles/endpoints            | Свойства. имя узла                        | `abc.azureedge.net`             |
 | Общедоступные IP-адреса       | microsoft.network/publicipaddresses         | Properties. dnsSettings. FQDN                | `abc.EastUs.cloudapp.azure.com` |
-| Диспетчер трафика Azure     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
+| Azure Traffic Manager     | microsoft.network/trafficmanagerprofiles    | Properties. dnsConfig. FQDN                  | `abc.trafficmanager.net`        |
 | Экземпляр контейнера Azure  | microsoft.containerinstance/containergroups | Properties. ipAddress. FQDN                  | `abc.EastUs.azurecontainer.io`  |
 | Служба управления Azure API      | microsoft.apimanagement/service             | Properties. Хостнамеконфигуратионс. имя_узла | `abc.azure-api.net`             |
 | Служба приложений Azure         | microsoft.web/sites                         | Properties. параметром DefaultHostName                 | `abc.azurewebsites.net`         |
@@ -100,7 +100,7 @@ ms.locfileid: "94409898"
 
 
 
-### <a name="prerequisites"></a>Обязательные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Запустите запрос от имени пользователя, который:
 
@@ -144,6 +144,15 @@ ms.locfileid: "94409898"
 
 Некоторые службы Azure предлагают функции, которые помогут в создании предупредительных мер и подробно описаны ниже. Другие методы для предотвращения этой проблемы должны быть установлены с помощью рекомендаций Организации или стандартных операционных процедур.
 
+### <a name="enable-azure-defender-for-app-service"></a>Включение защитника Azure для службы приложений
+
+Интегрированная облачная платформа защиты рабочих нагрузок центра безопасности Azure (КВПП), защитник Azure, предлагает ряд планов для защиты ресурсов и рабочих нагрузок Azure, гибридных и нескольких облаков.
+
+**Защитник Azure для плана службы приложений** включает в себя висячий поиск DNS. Если этот план включен, вы получите оповещения системы безопасности при списании веб-сайта службы приложений, но не удаляйте его личный домен из регистратора DNS.
+
+Защита DNS в защитнике Azure доступна, если домены управляются Azure DNS или внешним регистратором домена и применяются к службе приложений в Windows и Linux.
+
+Дополнительные сведения об этом и других преимуществах этого плана защитника Azure см. в статье Общие сведения о [защитнике Azure для службы приложений](../../security-center/defender-for-app-service-introduction.md).
 
 ### <a name="use-azure-dns-alias-records"></a>Использование записей псевдонимов Azure DNS
 
@@ -198,9 +207,11 @@ ms.locfileid: "94409898"
     - Удалите запись DNS, если она больше не используется, или укажите правильный ресурс Azure (FQDN), принадлежащий вашей организации.
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о связанных службах и функциях Azure, которые можно использовать для защиты от перенаправление поддоменов, см. на следующих страницах.
+
+- [Включение защитника Azure для службы приложений](../../security-center/defender-for-app-service-introduction.md) — получение оповещений при обнаружении ВИСЯЧИХ DNS-записей
 
 - [Предотвращение висячих записей DNS с Azure DNS](../../dns/dns-alias.md#prevent-dangling-dns-records)
 

@@ -1,19 +1,19 @@
 ---
 title: Встроенные определения политик для Виртуальных машин Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Виртуальных машин Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 01/29/2021
+ms.date: 02/04/2021
 ms.topic: reference
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
 ms.subservice: security
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 89c81db16a2e863fe295691f662f99662ecba9d9
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: b29810f830c01fe459ded2563a9c4ddf1dea4b8b
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090921"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99559565"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-virtual-machines"></a>Встроенные определения в Политике Azure для Виртуальных машин Azure
 
