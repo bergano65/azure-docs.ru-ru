@@ -12,12 +12,12 @@ ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 8f5324e967c5a67ee77559087a02c3421611d8f3
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 3ce00c5182246513aaf3178118058826528619d2
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752870"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584270"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Публикация приложения в коллекции приложений Azure AD
 
@@ -69,7 +69,7 @@ ms.locfileid: "98752870"
 - Нашим общим клиентам предлагается пошаговое руководство по настройке.
 - Клиенты, использующие систему для управления идентификаторами в разных доменах ([scim](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010)), могут использовать подготовку для одного и того же приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Вам потребуется постоянная учетная запись для тестирования по крайней мере двух зарегистрированных пользователей.
 
@@ -85,11 +85,11 @@ ms.locfileid: "98752870"
 
 ## <a name="step-1---choose-the-right-single-sign-on-standard-for-your-app"></a>Шаг 1. Выбор подходящего стандарта единого входа для приложения
 
-Чтобы получить список приложений в коллекции приложений Azure AD, необходимо реализовать хотя бы один из поддерживаемых параметров единого входа. Сведения о параметрах единого входа и о том, как клиенты будут настраивать их в Azure AD, см. в разделе [Параметры единого входа](../manage-apps/sso-options.md).
+Чтобы получить список приложений в коллекции приложений Azure AD, реализуйте хотя бы один из поддерживаемых параметров единого входа. Сведения о параметрах единого входа и о том, как клиенты будут настраивать их в Azure AD, см. в разделе [Параметры единого входа](../manage-apps/sso-options.md).
 
 В следующей таблице сравниваются основные стандарты: Open authentication 2,0 (OAuth 2,0) с OpenID Connect Connect (OIDC), язык разметки зявлений системы безопасности (SAML) (SAML) и Web Services Federation (WS-подача).
 
-| Возможности| OAuth/OIDC| SAML/WS-Fed |
+| Функция| OAuth/OIDC| SAML/WS-Fed |
 | - |-|-|
 | Единый вход на основе веб-сайта| √| √ |
 | Единый выход через Интернет| √| √ |
@@ -186,7 +186,7 @@ Azure AD предоставляет [справочный код](https://aka.ms
 
 Кроме того, клиент Azure AD поставляется с каждой Microsoft 365ной подпиской. Чтобы настроить бесплатную среду разработки Microsoft 365, см. статью [Присоединение к программе Microsoft 365 Developer](/office/developer-program/microsoft-365-developer-program).
 
-После создания клиента необходимо протестировать единый вход и [подготовить](../app-provisioning/use-scim-to-provision-users-and-groups.md#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client). 
+После создания клиента выполните тестирование единого входа и [подготовки](../app-provisioning/use-scim-to-provision-users-and-groups.md#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client). 
 
 **Для приложений OIDC или Oath** [зарегистрируйте приложение](quickstart-register-app.md) в качестве приложения с несколькими клиентами. В поле Поддерживаемые типы учетных записей выберите учетные записи в любом организационном каталоге и личные учетные записи Майкрософт.
 

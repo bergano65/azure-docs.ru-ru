@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: ebc22e3cf300b664aae5842f7cf924769d4d907e
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 1187c768a54dd04d25b6de0e6785ebb81a7dfc24
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756493"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584437"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Настройка мобильного приложения, вызывающего веб-API
 
@@ -82,7 +82,7 @@ var app = PublicClientApplicationBuilder.Create(clientId)
 
 ##### <a name="specify-the-parent-ui-window-or-activity"></a>Укажите родительский пользовательский интерфейс, окно или действие
 
-В Android перед выполнением интерактивной проверки подлинности необходимо передать родительское действие. В iOS при использовании брокера необходимо передать `ViewController` . Точно так же, как и в UWP, может потребоваться передать родительское окно. Он передается при получении маркера. Но при создании приложения можно также указать обратный вызов в качестве делегата, возвращающего `UIParent` .
+В Android перед выполнением интерактивной проверки подлинности передайте родительское действие. В iOS при использовании брокера передается `ViewController` . Точно так же, как и в UWP, может потребоваться передать родительское окно. Он передается при получении маркера. Но при создании приложения можно также указать обратный вызов в качестве делегата, возвращающего `UIParent` .
 
 ```csharp
 IPublicClientApplication application = PublicClientApplicationBuilder.Create(clientId)
@@ -218,7 +218,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url,
 
     `"uiviewcontroller_required_for_ios_broker":"UIViewController is null, so MSAL.NET cannot invoke the iOS broker. See https://aka.ms/msal-net-ios-broker."`
 
-1. В `AcquireTokenInteractive` вызове используйте `.WithParentActivityOrWindow(App.RootViewController)` . Передайте ссылку на окно объекта, которое вы будете использовать. Ниже приведен пример:
+1. В `AcquireTokenInteractive` вызове используйте `.WithParentActivityOrWindow(App.RootViewController)` . Передайте ссылку на окно объекта, которое вы будете использовать. Пример:
 
     В `App.cs`:
     ```csharp
@@ -363,6 +363,6 @@ MSAL для iOS и macOS использует URL-адреса для вызов
 
 Сведения о включении брокера в Android см. [в статье Проверка подлинности через посредника в Xamarin. Android](msal-net-use-brokers-with-xamarin-apps.md#brokered-authentication-for-android).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующей статье в этом сценарии, [получая маркер](scenario-mobile-acquire-token.md).

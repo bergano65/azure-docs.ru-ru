@@ -13,12 +13,12 @@ ms.date: 04/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 5bccc39144186b23cc7f9fedf02e5b9d84ea2ee4
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: d477c419bb677a6b8f24a3aae26c403e47cc96cb
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063558"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583948"
 ---
 # <a name="instantiate-a-confidential-client-application-with-configuration-options-using-msalnet"></a>Создание экземпляра конфиденциального клиентского приложения с параметрами конфигурации с помощью MSAL.NET
 
@@ -60,7 +60,7 @@ ms.locfileid: "98063558"
 
 Начиная с версии MSAL.NET v3. x, можно настроить конфиденциальное клиентское приложение в файле конфигурации.
 
-В классе, где требуется настроить и создать экземпляр приложения, необходимо объявить `ConfidentialClientApplicationOptions` объект.  Свяжите конфигурацию, считанную из источника (включая appconfig.jsв файле), с экземпляром параметров приложения, используя `IConfigurationRoot.Bind()` метод из [Microsoft.Extensions.Configфигурации. Пакет NuGet BINDER](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
+В классе, где требуется настроить и создать экземпляр приложения, объявите `ConfidentialClientApplicationOptions` объект.  Свяжите конфигурацию, считанную из источника (включая appconfig.jsв файле), с экземпляром параметров приложения, используя `IConfigurationRoot.Bind()` метод из [Microsoft.Extensions.Configфигурации. Пакет NuGet BINDER](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -79,7 +79,7 @@ app = ConfidentialClientApplicationBuilder.CreateWithApplicationOptions(_applica
 ```
 
 ## <a name="add-runtime-configuration"></a>Добавить конфигурацию среды выполнения
-В конфиденциальном клиентском приложении обычно имеется кэш для каждого пользователя. Поэтому необходимо получить кэш, связанный с пользователем, и сообщить построителю приложений, что вы хотите его использовать. Аналогичным образом, может иметься динамически вычисленный URI перенаправления. В этом случае код является следующим:
+В конфиденциальном клиентском приложении обычно имеется кэш для каждого пользователя. Поэтому необходимо получить кэш, связанный с пользователем, и сообщить построителю приложений, что вы хотите его использовать. Аналогичным образом, может иметься динамически вычисленный URI перенаправления. В этом случае код выглядит следующим образом:
 
 ```csharp
 IConfidentialClientApplication app;

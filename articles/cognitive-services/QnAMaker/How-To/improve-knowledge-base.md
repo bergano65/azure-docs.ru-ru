@@ -6,12 +6,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 6b9077fec13dd177ec4e07e7fbd7818ded2fd0a1
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 3f2e8fef35095a007051999d806f2942089ae19a
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98164946"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584759"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -49,18 +49,39 @@ ms.locfileid: "98164946"
 
 <a name="#score-proximity-between-knowledge-base-questions"></a>
 
+## <a name="active-learning-suggestions-are-saved-in-the-exported-knowledge-base"></a>Активные предложения по обучению сохраняются в экспортированной базе знаний.
+
+Если в приложении включено активное обучение и вы экспортируете приложение, `SuggestedQuestions` столбец в TSV файле содержит активные обучающие данные.
+
+`SuggestedQuestions`Столбец представляет собой объект JSON сведений о неявных, `autosuggested` и явных, `usersuggested` обратных отзывах. Пример этого объекта JSON для одного отправленного пользователем вопроса `help` :
+
+```JSON
+[
+    {
+        "clusterHead": "help",
+        "totalAutoSuggestedCount": 1,
+        "totalUserSuggestedCount": 0,
+        "alternateQuestionList": [
+            {
+                "question": "help",
+                "autoSuggestedCount": 1,
+                "userSuggestedCount": 0
+            }
+        ]
+    }
+]
+```
+
+При повторном импорте этого приложения активное обучение продолжит собираются сведения и рекомендации для своей базы знаний.
+
+
 ### <a name="architectural-flow-for-using-generateanswer-and-train-apis-from-a-bot"></a>Архитектурный поток для использования Женератеансвер и обучения API-интерфейсов из Bot
 
 Для использования активного обучения в роботе или другом клиентском приложении следует использовать следующую архитектурную последовательность:
 
 * Bot [получает ответ от базы знаний](#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers) с помощью API женератеансвер, используя `top` свойство для получения ряда ответов.
-* Bot определяет явный отзыв:
-    * Используя собственную [бизнес-логику](#use-the-score-property-along-with-business-logic-to-get-list-of-answers-to-show-user), отфильтруйте низкие оценки.
-    * В окне "bot" или "клиент-приложение" отобразится список возможных ответов для пользователя и получите выбранный ответ.
-* Bot [отправляет выбранный ответ обратно в QnA Maker](#bot-framework-sample-code) с помощью [API обучения](#train-api).
 
-
-### <a name="use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers"></a>Использование свойства Top в запросе Женератеансвер для получения нескольких соответствующих ответов
+#### <a name="use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers"></a>Использование свойства Top в запросе Женератеансвер для получения нескольких соответствующих ответов
 
 При отправке вопроса в QnA Maker для ответа `top` свойство тела JSON задает число возвращаемых ответов.
 
@@ -71,6 +92,12 @@ ms.locfileid: "98164946"
     "top": 3
 }
 ```
+
+* Bot определяет явный отзыв:
+    * Используя собственную [бизнес-логику](#use-the-score-property-along-with-business-logic-to-get-list-of-answers-to-show-user), отфильтруйте низкие оценки.
+    * В окне "bot" или "клиент-приложение" отобразится список возможных ответов для пользователя и получите выбранный ответ.
+* Bot [отправляет выбранный ответ обратно в QnA Maker](#bot-framework-sample-code) с помощью [API обучения](#train-api).
+
 
 ### <a name="use-the-score-property-along-with-business-logic-to-get-list-of-answers-to-show-user"></a>Использование свойства Score вместе с бизнес-логикой для получения списка ответов для отображения пользователя
 
@@ -134,18 +161,18 @@ Content-Type: application/json
 |--|--|--|--|
 |Параметр URL-маршрута|Идентификатор базы знаний|строка|Идентификатор GUID для базы знаний.|
 |Пользовательский поддомен|Имя ресурса QnAMaker|строка|Имя ресурса используется в качестве пользовательского поддомена для QnA Maker. Это можно найти на странице параметры после публикации базы знаний. Он указан как `host` .|
-|Header|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию: `application/json`|
-|Header|Авторизация|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
+|Заголовок|Content-Type|строка|Тип носителя текста, отправляемого в API. Значение по умолчанию: `application/json`|
+|Заголовок|Авторизация|строка|Ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).|
 |Текст запроса POST|Объект JSON|JSON|Отзыв по обучению|
 
 Тело JSON имеет несколько параметров:
 
 |Свойство тела JSON|Тип|Назначение|
 |--|--|--|--|
-|`feedbackRecords`|массиве|Список отзывов.|
-|`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный параметр.|
-|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный.|
-|`qnaID`|number|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
+|`feedbackRecords`|array|Список отзывов.|
+|`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный элемент.|
+|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный элемент.|
+|`qnaID`|число|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
 Пример текста JSON выглядит следующим образом:
 
@@ -310,38 +337,11 @@ async callTrain(stepContext){
 }
 ```
 
-## <a name="active-learning-is-saved-in-the-exported-knowledge-base"></a>Активное обучение сохраняется в экспортированной базе знаний
-
-Если в приложении включено активное обучение и вы экспортируете приложение, `SuggestedQuestions` столбец в TSV файле содержит активные обучающие данные.
-
-`SuggestedQuestions`Столбец представляет собой объект JSON сведений о неявных, `autosuggested` и явных, `usersuggested` обратных отзывах. Пример этого объекта JSON для одного отправленного пользователем вопроса `help` :
-
-```JSON
-[
-    {
-        "clusterHead": "help",
-        "totalAutoSuggestedCount": 1,
-        "totalUserSuggestedCount": 0,
-        "alternateQuestionList": [
-            {
-                "question": "help",
-                "autoSuggestedCount": 1,
-                "userSuggestedCount": 0
-            }
-        ]
-    }
-]
-```
-
-При повторном импорте этого приложения активное обучение продолжит собираются сведения и рекомендации для своей базы знаний.
-
-
-
 ## <a name="best-practices"></a>Рекомендации
 
 Рекомендации по использованию активного обучения см. в статье [Рекомендации по использованию базы знаний QnA Maker](../Concepts/best-practices.md#active-learning).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Использование метаданных с помощью API GenerateAnswer](metadata-generateanswer-usage.md)

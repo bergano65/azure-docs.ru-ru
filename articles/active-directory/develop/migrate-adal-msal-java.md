@@ -14,12 +14,12 @@ ms.date: 11/04/2019
 ms.author: sagonzal
 ms.reviewer: nacanuma, twhitney
 ms.custom: aaddev, devx-track-java
-ms.openlocfilehash: 1d1512447b5d0474f8fabe92dbc7a36259f4618c
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 620f77655f8281919ba0831a7e53af8cd28bc5f2
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754984"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583999"
 ---
 # <a name="adal-to-msal-migration-guide-for-java"></a>Инструкции по миграции ADAL в MSAL для Java
 
@@ -80,7 +80,7 @@ MSAL для Java добавляет [кэш маркеров](msal-acquire-cache
 
 В версии 1.0 при использовании `https://login.microsoftonline.com/common` центра пользователи могут входить в систему с помощью любой учетной записи Azure Active Directory (AAD) (для любой организации).
 
-При использовании `https://login.microsoftonline.com/common` центра в версии 2.0 пользователи могут входить в систему с любой организацией AAD или даже с помощью личной учетной записи Майкрософт (MSA). В MSAL для Java, если вы хотите ограничить вход на любую учетную запись AAD, необходимо использовать `https://login.microsoftonline.com/organizations` центр сертификации (то же поведение, что и в случае с ADAL4J). Чтобы указать центр сертификации, задайте `authority` параметр в методе [Публикклиентаппликатион. Builder](https://javadoc.io/doc/com.microsoft.azure/msal4j/1.0.0/com/microsoft/aad/msal4j/PublicClientApplication.Builder.html) при создании `PublicClientApplication` класса.
+При использовании `https://login.microsoftonline.com/common` центра в версии 2.0 пользователи могут входить в систему с любой организацией AAD или даже с помощью личной учетной записи Майкрософт (MSA). В MSAL для Java, если вы хотите ограничить вход на любую учетную запись AAD, используйте `https://login.microsoftonline.com/organizations` центр (то же поведение, что и в случае с ADAL4J). Чтобы указать центр сертификации, задайте `authority` параметр в методе [Публикклиентаппликатион. Builder](https://javadoc.io/doc/com.microsoft.azure/msal4j/1.0.0/com/microsoft/aad/msal4j/PublicClientApplication.Builder.html) при создании `PublicClientApplication` класса.
 
 ## <a name="v10-and-v20-tokens"></a>Маркеры версии 1.0 и версии 2.0
 

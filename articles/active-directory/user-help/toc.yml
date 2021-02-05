@@ -72,6 +72,8 @@
       href: my-account-portal-sign-ins-page.md
     - name: Изменение параметров портала
       href: my-account-portal-settings.md
+    - name: Определение администратора учетной записи
+      href: my-account-find-administrator.md
     - name: Переключение организаций
       href: cross-tenant-switcher.md
 - name: Справка по сведениям для защиты

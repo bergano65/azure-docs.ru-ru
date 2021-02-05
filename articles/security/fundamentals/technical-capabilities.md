@@ -2,20 +2,21 @@
 title: Технические возможности безопасности в Azure — Microsoft Azure
 description: Общие сведения о службах безопасности в Azure, которые помогут защитить данные, ресурсы и приложения в облаке.
 services: security
-author: terrylanfear
+author: TerryLanfear
+manager: rkarlin
 ms.assetid: ''
 ms.service: security
 ms.subservice: security-fundamentals
 ms.devlang: na
 ms.topic: article
-ms.date: 07/13/2020
+ms.date: 02/04/2021
 ms.author: terrylan
-ms.openlocfilehash: 353b1708a1c6014f9108ad2be62f22c1e0b0604c
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 6e0642a2124d58bb3af483313ac824568b6bbb39
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092774"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585149"
 ---
 # <a name="azure-security-technical-capabilities"></a>Технические возможности обеспечения безопасности Azure
 В этой статье содержатся общие сведения о службах безопасности в Azure, которые помогут защитить данные, ресурсы и приложения в облаке и удовлетворить потребности системы безопасности вашего бизнеса.
@@ -339,7 +340,7 @@ Azure предлагает [антивредоносное ПО](antimalware.md)
 
 Центр безопасности анализирует состояние безопасности ресурсов Azure, чтобы выявить потенциальные уязвимости. Список рекомендаций помогает выполнить процедуру настройки необходимого средства контроля.
 
-Примеры приведены ниже:
+Примеры приведены ниже.
 
 - Подготовка антивредоносных программ для обнаружения и устранения вредоносных программ.
 
@@ -431,20 +432,6 @@ Azure предлагает [антивредоносное ПО](antimalware.md)
 > [!Note]
 > Диспетчер ресурсов предоставляет новый способ развертывания ваших решений и управления ими. Если вы использовали более раннюю модель развертывания и хотите узнать об изменениях, см. раздел [Общие сведения о развертывании диспетчер ресурсов и классическом развертывании](../../azure-resource-manager/management/deployment-models.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
-Дополнительные сведения о безопасности можно узнать, ознакомившись с указанными далее подробными статьями.
-
-- [Аудит и ведение журнала](https://www.microsoft.com/en-us/trustcenter/security/auditingandlogging)
-
-- [Cybercrime](https://www.microsoft.com/en-us/trustcenter/security/cybercrime) (Киберпреступность);
-
-- [Безопасность проектирования и работы](https://www.microsoft.com/en-us/trustcenter/security/designopsecurity)
-
-- [Шифрование](https://www.microsoft.com/en-us/trustcenter/security/encryption)
-
-- [Управление удостоверениями и доступом](https://www.microsoft.com/en-us/trustcenter/security/identity)
-
-- [Безопасность сети](https://www.microsoft.com/en-us/trustcenter/security/networksecurity)
-
-- [Управление угрозами](https://www.microsoft.com/en-us/trustcenter/security/threatmanagement)
+Программа [тестирования безопасности Azure](../benchmarks/introduction.md) включает набор рекомендаций по безопасности, которые можно использовать для защиты служб, используемых в Azure.

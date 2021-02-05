@@ -13,12 +13,12 @@ ms.date: 05/18/2020
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 601eefa7957972daa2d538e6ba0d9b7a5311c79d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 656cb167fb47e44c28922afed75d8c46a460aaf1
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756477"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584403"
 ---
 # <a name="call-a-web-api-from-a-mobile-app"></a>Вызов веб-API из мобильного приложения
 
@@ -117,7 +117,7 @@ task.resume()
 
 ## <a name="make-several-api-requests"></a>Выполнение нескольких запросов API
 
-Если один и тот же API требуется вызвать несколько раз или нужно вызвать несколько API, при разработке приложения следует учитывать следующие моменты.
+Чтобы вызвать один API несколько раз или вызвать несколько API-интерфейсов, при сборке приложения учитывайте следующие темы:
 
 - **Добавочное согласие**. платформа Microsoft Identity позволяет приложениям получать согласие пользователя, когда требуются разрешения, а не все в начале. Всякий раз, когда ваше приложение готово вызвать API, оно должно запрашивать только необходимые ему области.
 
@@ -125,7 +125,7 @@ task.resume()
 
 ## <a name="call-several-apis-by-using-incremental-consent-and-conditional-access"></a>Вызов нескольких API с использованием добавочного согласия и условного доступа
 
-Если требуется вызвать несколько API для одного пользователя, то после получения маркера для этого пользователя можно не требовать от него предоставления учетных данных. Достаточно вызывать `AcquireTokenSilent`, чтобы получить маркер:
+Чтобы вызвать несколько API для одного пользователя, после получения маркера для пользователя можно избежать неоднократного запроса учетных данных для `AcquireTokenSilent` получения маркера.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")

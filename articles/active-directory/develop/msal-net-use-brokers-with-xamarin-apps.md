@@ -12,16 +12,16 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 73fbda9a3356e2877617391430a7f2b555b1a0e5
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: ee9f374d110115b224c48853f26037dc461e5fa0
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063490"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583847"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Использование Microsoft Authenticator или Корпоративный портал Intune в приложениях Xamarin
 
-В Android и iOS такие брокеры, как Microsoft Authenticator и Microsoft Intune корпоративный портал для Android, включают:
+В Android и iOS такие брокеры, как Microsoft Authenticator и Microsoft Intune Корпоративный портал для Android, включают:
 
 - **Единый вход (SSO)**. пользователям не нужно входить в каждое приложение.
 - **Идентификация устройства**. брокер обращается к сертификату устройства. Этот сертификат создается на устройстве при его присоединении к рабочей области.
@@ -91,7 +91,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url,
 
 ### <a name="step-4-set-uiviewcontroller"></a>Шаг 4. Настройка UIViewController ()
 
-По-прежнему в файле *AppDelegate.CS* необходимо задать окно объекта. Обычно вам не нужно задавать окно объекта для Xamarin iOS, но для отправки и получения ответов от брокера необходимо окно объекта.
+Находясь в файле *AppDelegate.CS* , задайте окно объекта. Обычно вам не нужно задавать окно объекта для Xamarin iOS, но для отправки и получения ответов от брокера необходимо окно объекта.
 
 Чтобы настроить окно объекта, выполните следующие действия.
 
@@ -237,7 +237,7 @@ result = await app.AcquireTokenInteractive(scopes)
 
 ### <a name="step-4-add-a-redirect-uri-to-your-app-registration"></a>Шаг 4. Добавление URI перенаправления в регистрацию приложения
 
-MSAL использует URL-адреса для вызова брокера, а затем возвращается в приложение. Чтобы завершить это круговое обращение, необходимо зарегистрировать **URI перенаправления** для приложения с помощью [портал Azure](https://portal.azure.com).
+MSAL использует URL-адреса для вызова брокера, а затем возвращается в приложение. Чтобы завершить цикл обработки, зарегистрируйте **URI перенаправления** для приложения с помощью [портал Azure](https://portal.azure.com).
 
 Формат URI перенаправления для приложения зависит от сертификата, используемого для подписи APK. Пример:
 
@@ -361,6 +361,6 @@ msauth://com.microsoft.xforms.testApp/hgbUYHVBYUTvuvT&Y6tr554365466=
 
     После получения журналов вы можете выполнить поиск по ним, чтобы выполнить проверку подлинности с помощью идентификатора корреляции. Идентификатор корреляции прикрепляется к каждому запросу проверки подлинности. Чтобы найти ошибки, возвращенные конечной точкой проверки подлинности платформы идентификации Майкрософт, выполните поиск по запросу `AADSTS` .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о [вопросах использования универсальная платформа Windows с MSAL.NET](msal-net-uwp-considerations.md).

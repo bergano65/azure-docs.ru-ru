@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 2f9fa6e7ef9a7ee8ea7dd2a09622f26f6fd9739e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 00407b4a55b3c074fa77d4c3664f6e218c23fe21
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223131"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584534"
 ---
 # <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio для мониторинга приложений Apache Spark
 
@@ -156,6 +156,26 @@ ms.locfileid: "98223131"
 
    ![сведения о невыполненном задании](./media/how-to-monitor-spark-applications/failed-job-info.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="compare-apache-spark-applications"></a>Сравнение Apache Spark приложений
+Нажмите кнопку **сравнить приложения** и выберите приложение для сравнения производительности, пользователи смогут интуитивно видеть разницу между двумя приложениями.
+
+![Сравнение приложений](./media/how-to-monitor-spark-applications/compare-applications.png)
+
+1. Используйте мышь для наведения указателя мыши на приложение, после чего отображается значок **сравнить приложения** .
+
+2. Щелкните значок **Сравнение приложений** , и на странице Сравнение приложений появится всплывающее окно.
+
+3. Нажмите кнопку **выбрать приложение** , чтобы открыть страницу **Выбор приложения сравнения** .
+
+4. При выборе приложения сравнения пользователям необходимо либо ввести URL-адрес приложения, либо выбрать его в списке повторяющихся. Затем нажмите кнопку " **ОК** ". 
+
+   ![Выбор приложения сравнения](./media/how-to-monitor-spark-applications/choose-comparison-application.png)
+
+5. Результат сравнения будет отображаться на странице Сравнение приложений.
+
+   ![результат сравнения](./media/how-to-monitor-spark-applications/comparison-result.png)
+
+
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о выполнении конвейера мониторинга см. в статье [выполнение конвейера мониторинга с помощью синапсе Studio](how-to-monitor-pipeline-runs.md) .

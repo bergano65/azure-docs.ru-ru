@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b437efcfa2b0bb2a725929ae0253f48d97d11552
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 2b8577af2c8a6296ae6f4f090e8ff233e51ee6fb
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754813"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583931"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -132,7 +132,7 @@ MSAL.NET и конечная точка версии 2.0 пока поддер�
 Тип приложения | Предоставить | ADAL.NET | MSAL.NET
 ----- | ----- | ----- | -----
 Веб-приложение, веб-API, управляющая программа | Учетные данные клиента | [Потоки учетных данных клиента в ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Client-credential-flows) | [Потоки учетных данных клиента в MSAL.NET](msal-authentication-flows.md#client-credentials)
-Веб-интерфейс API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
+Веб-API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
 Веб-приложение | Код аутентификации | [Получение маркеров с помощью кодов авторизации в веб-приложениях через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-with-authorization-codes-on-web-apps) | [Получение маркеров с помощью кодов авторизации в веб-приложениях через MSAL.NET](msal-authentication-flows.md#authorization-code)
 
 ### <a name="cache-persistence"></a>Сохраняемость кэша
@@ -145,7 +145,7 @@ MSAL.NET предоставляет кэш маркеров в закрытом 
 
 Если вы используете центр `https://login.microsoftonline.com/common` в версии 1.0, пользователи могут входить с любой учетной записью AAD (любой организации). Подробнее см. в статье [о проверке в ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AuthenticationContext:-the-connection-to-Azure-AD#authority-validation).
 
-Если вы используете центр `https://login.microsoftonline.com/common` в версии 2.0, пользователи смогут входить с любой корпоративной (AAD) или личной учетной записью Майкрософт (MSA). Если при использовании MSAL.NET вы хотите ограничить вход только учетными записями AAD (поведение, аналогичное ADAL.NET), необходимо использовать `https://login.microsoftonline.com/organizations`. Дополнительные сведения см. в описании параметра `authority` в статье об [общедоступном клиентском приложении](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications#publicclientapplication).
+Если вы используете центр `https://login.microsoftonline.com/common` в версии 2.0, пользователи смогут входить с любой корпоративной (AAD) или личной учетной записью Майкрософт (MSA). В MSAL.NET, если требуется ограничить вход в учетную запись AAD (то же поведение, что и в ADAL.NET), используйте `https://login.microsoftonline.com/organizations` . Дополнительные сведения см. в описании параметра `authority` в статье об [общедоступном клиентском приложении](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications#publicclientapplication).
 
 ## <a name="v10-and-v20-tokens"></a>Маркеры версии 1.0 и версии 2.0
 
@@ -182,7 +182,7 @@ string[] scopes = { ResourceId + "Directory.Read", ResourceId + "Directory.Write
 
 #### <a name="warning-should-you-have-one-or-two-slashes-in-the-scope-corresponding-to-a-v10-web-api"></a>Предупреждение. должна ли быть одна или две косые черты в области, соответствующей веб-API версии 1.0
 
-Если вам нужны права записи в область, соответствующую API Azure Resource Manager (https://management.core.windows.net/), вам следует запросить следующую область (обратите внимание на две косые черты).
+Если необходимо записать область, соответствующую Azure Resource Manager API ( https://management.core.windows.net/) , запросите следующую область (Обратите внимание на две косые черты).
 
 ```csharp
 var scopes = new[] {"https://management.core.windows.net//user_impersonation"};
