@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 5e97a35a272684a99e1ca21cbec9c8f3edef253c
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 8926e99db926fc8182e98509c3deff0ccc3d1612
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097428"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576673"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -81,7 +81,7 @@ ms.locfileid: "99097428"
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 - Настройка конечных точек службы в подсети в виртуальной сети. Конечные точки работают с любым типом вычислительных экземпляров, выполняющихся в этой подсети.
 - Вы можете настроить несколько конечных точек службы для всех поддерживаемых служб Azure (например, службы хранилища Azure или базы данных SQL Azure) в подсети.
@@ -126,7 +126,7 @@ ms.locfileid: "99097428"
 
 Дополнительные сведения о встроенных ролях см. в статье [встроенные роли Azure](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Дополнительные сведения о назначении конкретных разрешений настраиваемым ролям см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если они находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). 
+Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Некоторые службы Azure (не все), такие как служба хранилища Azure и Azure Key Vault, также поддерживают конечные точки службы в разных клиентах Active Directory (AD), т. е. Виртуальная сеть и ресурс службы Azure могут находиться в разных клиентах Active Directory (AD). Дополнительные сведения см. в документации по отдельным службам.  
 
 ## <a name="pricing-and-limits"></a>Цены и ограничения
 
@@ -144,7 +144,7 @@ ms.locfileid: "99097428"
 
 Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](./virtual-networks-faq.md#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка конечных точек службы виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

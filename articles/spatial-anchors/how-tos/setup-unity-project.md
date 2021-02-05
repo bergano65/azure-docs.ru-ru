@@ -8,29 +8,29 @@ ms.author: parkerra
 ms.date: 2/3/2021
 ms.topic: how-to
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: e058186d8848256bf97d99ee1b8b1ddae7d78383
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 56532c17c91e6c703a6acd7990bbae47cd248165
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550629"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576571"
 ---
 # <a name="configuring-azure-spatial-anchors-in-a-unity-project"></a>Настройка пространственных привязок Azure в проекте Unity
 
 В этом руководство показано, как приступить к работе с пакетом SDK для пространственных привязок Azure в проекте Unity.
 
-## <a name="requirements"></a>Требования
+## <a name="project-requirements"></a>Проектные требования
 
-Пространственные привязки Azure в настоящее время поддерживают Unity 2019,4 (LTS) со следующими конфигурациями.
-
-* Unity 2019,4 с AR Foundation 3,1 поддерживается в пространственных привязках Azure 2.4.0 +.
+[!INCLUDE [Unity Project Requirements](../../../includes/spatial-anchors-unity-project-requirements.md)]
 
 ## <a name="configuring-a-project"></a>Настройка проекта
 
-### <a name="download-packages"></a>Скачивание пакетов
+Перед включением пакета SDK для пространственных привязок Azure в проекте Unity обязательно установите [необходимые](#project-requirements) пакеты с помощью диспетчера пакетов Unity.
+
+### <a name="download-asa-packages"></a>Скачать пакеты ASA
 [!INCLUDE [Download Unity Packages](../../../includes/spatial-anchors-unity-download-packages.md)]
 
-### <a name="import-packages"></a>Импорт пакетов
+### <a name="import-asa-packages"></a>Импорт пакетов ASA
 [!INCLUDE [Import Unity Packages](../../../includes/spatial-anchors-unity-import-packages.md)]
 
 ### <a name="android-only-configure-the-maintemplategradle-file"></a>Только для Android: Настройка файла mainTemplate. gradle
@@ -50,7 +50,7 @@ ms.locfileid: "99550629"
 
 [!code-gradle[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-android-gradle-setup.md?range=9-13&highlight=3-4)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Как создавать и размещать привязки в Unity](./create-locate-anchors-unity.md)

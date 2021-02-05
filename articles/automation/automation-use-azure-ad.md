@@ -4,12 +4,12 @@ description: В этой статье рассказывается, как в с
 services: automation
 ms.date: 03/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: 41eaab7be66d446109e1052948a29ad4723b191c
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 336c0387ac9febcc517c2ce358d0b04c80d10678
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98894666"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576809"
 ---
 # <a name="use-azure-ad-to-authenticate-to-azure"></a>Аутентификация в Azure с помощью Azure AD
 
@@ -50,7 +50,7 @@ ms.locfileid: "98894666"
 
 1. Убедитесь, что на вашем компьютере включен компонент Microsoft .NET Framework 3.5.x. Вероятно, что на компьютере уже установлена более новая версия, но обратная совместимость платформы .NET Framework с более старыми версиями может быть включена или отключена. 
 
-2. Установите 64-разрядную версию [помощника по входу в Microsoft Online Services](https://www.microsoft.com/download/details.aspx?id=41950).
+2. Установите 64-разрядную версию [помощника по входу в Microsoft Online Services](https://www.microsoft.com/Download/details.aspx?id=28177).
 
 3. Откройте сеанс Windows PowerShell от имени администратора, чтобы запустить командную строку Windows PowerShell с повышенными привилегиями.
 

@@ -7,18 +7,18 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 11/11/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: b6e523fc4a3dcd0eb8c8ed7a44b3d7d9fcdd7d34
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 37c8b4bc186c217ecb27638f5f50297102345de7
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887283"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576537"
 ---
 # <a name="access-your-application-in-a-private-network"></a>Доступ к приложению в частной сети
 
 В этом документе объясняется, как получить доступ к конечной точке приложения в частной сети.  Чтобы получить доступ, необходимо создать в подписке **зону Azure частная зона DNS** , чтобы преобразовать или разрешить частное полное доменное имя (FQDN) в его IP-адрес.
 
-Когда в виртуальной сети развертывается **назначение конечной точки** для приложений в экземпляре облачной службы Azure весны, конечная точка является частным полным доменным именем. Домен доступен только в частной сети. Приложения и службы используют конечную точку приложения. Они включают **конечную точку теста** , описанную в разделе [Проверка промежуточного развертывания](spring-cloud-howto-staging-environment.md#verify-the-staging-deployment). **Потоковая передача журналов**, описанная в статье [потоки журналов облачного приложения Azure весны в реальном времени](spring-cloud-howto-log-streaming.md), также работает только в частной сети.
+Когда в виртуальной сети развертывается **назначение конечной точки** для приложений в экземпляре облачной службы Azure весны, конечная точка является частным полным доменным именем. Домен доступен только в частной сети. Приложения и службы используют конечную точку приложения. Они включают **конечную точку теста** , описанную в статье [Просмотр приложений и развертываний](spring-cloud-howto-staging-environment.md#view-apps-and-deployments). **Потоковая передача журналов**, описанная в статье [потоки журналов облачного приложения Azure весны в реальном времени](spring-cloud-howto-log-streaming.md), также работает только в частной сети.
 
 ## <a name="create-a-private-dns-zone"></a>Создание частной зоны DNS
 
@@ -117,7 +117,7 @@ $SERVICE_RUNTIME_RG --query "[0].privateIpAddress" -o tsv`
 
 ![Доступ к частной конечной точке в виртуальной сети](media/spring-cloud-access-app-vnet/access-private-endpoint.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Предоставление приложениям доступа к Интернету с помощью шлюза приложений и брандмауэра Azure](spring-cloud-expose-apps-gateway-azure-firewall.md)
 
