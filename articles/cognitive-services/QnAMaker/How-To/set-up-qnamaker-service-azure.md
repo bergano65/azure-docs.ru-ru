@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 4e09f9b8564c9319e68984df1c0f8db7a496a6d0
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: beb45d0d650b07f6106a3307d2d3a955095ee8b1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584810"
+ms.locfileid: "99592268"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -92,60 +92,10 @@ ms.locfileid: "99584810"
     ![Ресурс создал новую управляемую службу QnA Maker (Предварительная версия)](../media/qnamaker-how-to-setup-service/resources-created-v2.png)
 
     У ресурса с типом _Cognitive Services_ есть ключи _подписки_ .
-
+    
 ---
 
-## <a name="find-authoring-keys-in-the-azure-portal"></a>Поиск ключей разработки в портал Azure
-
-# <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
-
-Вы можете просматривать и сбрасывать ключи разработки из портал Azure, где был создан QnA Maker ресурс. Эти ключи могут называться ключами подписки.
-
-1. Перейдите к ресурсу QnA Maker в портал Azure и выберите ресурс с типом _Cognitive Services_ :
-
-    ![Список ресурсов QnA Maker](../media/qnamaker-how-to-key-management/qnamaker-resource-list.png)
-
-2. Перейдите к **разделу ключи и конечная точка**:
-
-    ![Ключ подписки управляемого (Предварительная версия) QnA Maker](../media/qnamaker-how-to-key-management/subscription-key-v2.png)
-
-### <a name="find-query-endpoint-keys-in-the-qna-maker-portal"></a>Поиск ключей конечной точки запроса на портале QnA Maker
-
-Конечная точка находится в том же регионе, что и ресурс, так как ключи конечной точки используются для выполнения вызова к базе знаний.
-
-Ключами конечной точки можно управлять на [портале QnA Maker](https://qnamaker.ai).
-
-1. Войдите на [портал QnA Maker](https://qnamaker.ai), перейдите к своему профилю и выберите **Параметры службы**:
-
-    ![Ключ конечной точки](../media/qnamaker-how-to-key-management/Endpoint-keys.png)
-
-2. Просмотр или сброс ключей:
-
-    > [!div class="mx-imgBorder"]
-    > ![Диспетчер ключей конечных точек](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)
-
-    >[!NOTE]
-    >Обновите ключи, если считаете, что они скомпрометированы. Для этого может потребоваться внести соответствующие изменения в код клиентского приложения или бота.
-
-# <a name="qna-maker-managed-preview-release"></a>[Управляемая служба QnA Maker (предварительный выпуск)](#tab/v2)
-
-Вы можете просмотреть и сбросить ключи разработки из портал Azure, в которой был создан QnA Maker управляемый (предварительный) ресурс. Эти ключи могут называться ключами подписки.
-
-1. Перейдите к ресурсу управляемый QnA Maker (Предварительная версия) в портал Azure и выберите ресурс с типом *Cognitive Services* :
-
-    ![Список ресурсов для управляемого (предварительной версии) QnA Maker](../media/qnamaker-how-to-key-management/qnamaker-v2-resource-list.png)
-
-2. Перейдите к **разделу ключи и конечная точка**:
-
-    ![Ключ подписки управляемого (Предварительная версия) QnA Maker](../media/qnamaker-how-to-key-management/subscription-key-v2.png)
-
-### <a name="update-the-resources"></a>Обновление ресурсов
-
-Узнайте, как обновить ресурсы, используемые базой знаний. QnA Maker управляемый (Предварительная версия) предоставляется **бесплатно** в предварительной версии. 
-
----
-
-### <a name="recommended-settings-for-network-isolation"></a>Рекомендуемые параметры для сетевой изоляции
+## <a name="recommended-settings-for-network-isolation"></a>Рекомендуемые параметры для сетевой изоляции
 
 # <a name="qna-maker-ga-stable-release"></a>[Общедоступная версия QnA Maker (стабильный выпуск)](#tab/v1)
 
@@ -400,7 +350,7 @@ ms.locfileid: "99584810"
 
     ![Снимок экрана: страница настройки управляемого (Предварительная версия) QnA Maker](../media/qnamaker-how-to-upgrade-qnamaker/change-search-service-configuration.png)
 
-1. Нажмите **Сохранить**.
+1. Щелкните **Save** (Сохранить).
 
 > [!NOTE]
 > Если вы измените службу поиска Azure, связанную с QnA Maker, вы потеряли доступ ко всем уже имеющимся в ней базам знаний. Перед изменением службы поиска Azure обязательно экспортируйте существующие базы знаний.

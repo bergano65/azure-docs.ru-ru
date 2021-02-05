@@ -5,12 +5,12 @@ author: erscorms
 ms.author: erscor
 ms.date: 02/11/2020
 ms.topic: reference
-ms.openlocfilehash: 33f5314c80dc33dbec50dc21a71f4cb507979e12
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 68c0c04feba2779598a500c84b2ba4a9086b104d
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427434"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593960"
 ---
 # <a name="limitations"></a>Ограничения
 
@@ -19,8 +19,8 @@ ms.locfileid: "94427434"
 ## <a name="azure-frontend"></a>Интерфейсный сервер Azure
 
 К интерфейсному API (C++ и C#) применяются следующие ограничения.
-* Всего экземпляров [азурефронтенд](/dotnet/api/microsoft.azure.remoterendering.azurefrontend) на процесс: 16.
-* Всего экземпляров [азуресессион](/dotnet/api/microsoft.azure.remoterendering.azuresession) на [азурефронтенд](/dotnet/api/microsoft.azure.remoterendering.azurefrontend): 16.
+* Всего экземпляров [ремотерендерингклиент](/dotnet/api/microsoft.azure.remoterendering.remoterenderingclient) на процесс: 16.
+* Всего экземпляров [рендерингсессион](/dotnet/api/microsoft.azure.remoterendering.renderingsession) на [ремотерендерингклиент](/dotnet/api/microsoft.azure.remoterendering.remoterenderingclient): 16.
 
 ## <a name="objects"></a>Объекты
 
@@ -32,7 +32,7 @@ ms.locfileid: "94427434"
 * **Анимация:** Анимация ограничивается анимацией отдельных преобразований [игровых объектов](../concepts/entities.md). Анимации скелетообразных с обложками или анимацией вершин не поддерживаются. Дорожки анимации из исходного файла ресурса не сохраняются. Вместо этого анимация преобразования объектов должна управляться кодом клиента.
 * **Пользовательские шейдеры:** Создание пользовательских шейдеров не поддерживается. Можно использовать только встроенные [цветовые материалы](../overview/features/color-materials.md) или [материалы PBR](../overview/features/pbr-materials.md) .
 * **Максимальное число различных материалов** в ресурсе: 65 535. Дополнительные сведения об автоматическом уменьшении количества материалов см. в разделе «Удаление [дубликатов материалов](../how-tos/conversion/configure-model-conversion.md#material-de-duplication) ».
-* **Максимальная размерность одной текстуры** : 16 384 x 16 384. Размер больших исходных текстур будет уменьшен в процессе преобразования.
+* **Максимальная размерность одной текстуры**: 16 384 x 16 384. Размер больших исходных текстур будет уменьшен в процессе преобразования.
 
 ### <a name="overall-number-of-polygons"></a>Общее число многоугольников
 

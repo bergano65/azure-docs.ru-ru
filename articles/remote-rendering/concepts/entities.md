@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bfcfa4c5ed57489c56ebf845d238198944150a96
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 29952353b8c3452d95bcced163fafa81fe158f64
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92202894"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593407"
 ---
 # <a name="entities"></a>Сущности
 
@@ -23,7 +23,7 @@ ms.locfileid: "92202894"
 
 Наиболее важным аспектом самой сущности является иерархия и итоговое иерархическое преобразование. Например, если несколько сущностей присоединены как дочерние элементы к одной родительской сущности, все эти сущности можно перемещать, поворачивать и масштабировать синхронно, изменяя преобразование для родительской сущности. Кроме того, состояние сущности `enabled` можно использовать для отключения видимости и ответов на преобразования лучей для полной вложенной диаграммы в иерархии.
 
-Сущность имеет строго один родительский элемент. При удалении родительского элемента с помощью `Entity.Destroy()` удаляются и все его дочерние элементы, в том числе подключенные [компоненты](components.md). Таким образом, модель из сцены можно удалить путем вызова `Destroy` для корневого узла модели, полученного от метода `AzureSession.Actions.LoadModelAsync()` или аналогичного метода SAS `AzureSession.Actions.LoadModelFromSASAsync()`.
+Сущность имеет строго один родительский элемент. При удалении родительского элемента с помощью `Entity.Destroy()` удаляются и все его дочерние элементы, в том числе подключенные [компоненты](components.md). Таким образом, модель из сцены можно удалить путем вызова `Destroy` для корневого узла модели, полученного от метода `RenderingSession.Connection.LoadModelAsync()` или аналогичного метода SAS `RenderingSession.Connection.LoadModelFromSasAsync()`.
 
 Сущности создаются, когда сервер загружает содержимое или пользователь выражает намерение добавить объект в сцену. Например, если пользователь хочет добавить плоскость разрезания для визуализации внутренней части сетки, он может создать сущность в том положении, где должна располагаться эта плоскость, а затем добавить к ней компонент плоскости разрезания.
 
@@ -32,19 +32,19 @@ ms.locfileid: "92202894"
 Чтобы добавить в сцену новую сущность, например для передачи ее в качестве корневого объекта для загрузки моделей или присоединения к нему компонентов, используйте следующий код:
 
 ```cs
-Entity CreateNewEntity(AzureSession session)
+Entity CreateNewEntity(RenderingSession session)
 {
-    Entity entity = session.Actions.CreateEntity();
+    Entity entity = session.Connection.CreateEntity();
     entity.Position = new LocalPosition(1, 2, 3);
     return entity;
 }
 ```
 
 ```cpp
-ApiHandle<Entity> CreateNewEntity(ApiHandle<AzureSession> session)
+ApiHandle<Entity> CreateNewEntity(ApiHandle<RenderingSession> session)
 {
     ApiHandle<Entity> entity(nullptr);
-    if (auto entityRes = session->Actions()->CreateEntity())
+    if (auto entityRes = session->Connection()->CreateEntity())
     {
         entity = entityRes.value();
         entity->SetPosition(Double3{ 1, 2, 3 });
@@ -106,33 +106,24 @@ Quaternion rotation = entity->GetRotation();
 Запросы к метаданным выполняются асинхронно и адресуются определенной сущности. Такой запрос возвращает метаданные только для одной сущности, но не объединяет их по вложенному графу.
 
 ```cs
-MetadataQueryAsync metaDataQuery = entity.QueryMetaDataAsync();
-metaDataQuery.Completed += (MetadataQueryAsync query) =>
-{
-    if (query.IsRanToCompletion)
-    {
-        ObjectMetaData metaData = query.Result;
-        ObjectMetaDataEntry entry = metaData.GetMetadataByName("MyInt64Value");
-        System.Int64 intValue = entry.AsInt64;
-
-        // ...
-    }
-};
+Task<ObjectMetadata> metaDataQuery = entity.QueryMetadataAsync();
+ObjectMetadata metaData = await metaDataQuery;
+ObjectMetadataEntry entry = metaData.GetMetadataByName("MyInt64Value");
+System.Int64 intValue = entry.AsInt64;
+// ...
 ```
 
 ```cpp
-ApiHandle<MetadataQueryAsync> metaDataQuery = *entity->QueryMetaDataAsync();
-metaDataQuery->Completed([](const ApiHandle<MetadataQueryAsync>& query)
+entity->QueryMetadataAsync([](Status status, ApiHandle<ObjectMetadata> metaData) 
+{
+    if (status == Status::OK)
     {
-        if (query->GetIsRanToCompletion())
-        {
-            ApiHandle<ObjectMetaData> metaData = query->GetResult();
-            ApiHandle<ObjectMetaDataEntry> entry = *metaData->GetMetadataByName("MyInt64Value");
-            int64_t intValue = *entry->GetAsInt64();
+        ApiHandle<ObjectMetadataEntry> entry = *metaData->GetMetadataByName("MyInt64Value");
+        int64_t intValue = *entry->GetAsInt64();
 
-            // ...
-        }
-    });
+        // ...
+    }
+});
 ```
 
 Запрос будет считаться успешно выполненным, даже если в объекте нет метаданных.
@@ -140,9 +131,9 @@ metaDataQuery->Completed([](const ApiHandle<MetadataQueryAsync>& query)
 ## <a name="api-documentation"></a>Документирование API
 
 * [Класс сущностей C#](/dotnet/api/microsoft.azure.remoterendering.entity)
-* [C# Ремотеманажер. Креатинтити ()](/dotnet/api/microsoft.azure.remoterendering.remotemanager.createentity)
+* [C# Рендерингконнектион. Креатинтити ()](/dotnet/api/microsoft.azure.remoterendering.renderingconnection.createentity)
 * [Класс сущностей C++](/cpp/api/remote-rendering/entity)
-* [C++ Ремотеманажер:: Креатинтити ()](/cpp/api/remote-rendering/remotemanager#createentity)
+* [C++ Рендерингконнектион:: Креатинтити ()](/cpp/api/remote-rendering/renderingconnection#createentity)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

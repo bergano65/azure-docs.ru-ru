@@ -11,52 +11,48 @@ ms.date: 11/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 486a1c6c8103db8dc938a956eb1f77da3f15f49c
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: aa358b0c9d7747584deabe761160d3bcbcde8feb
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98614011"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593186"
 ---
 # <a name="aadcloudsynctools-powershell-module-for-azure-ad-connect-cloud-sync"></a>Модуль Аадклаудсинктулс PowerShell для Azure AD Connect облачной синхронизации
 
-С выпуском общедоступного обновления 2 Корпорация Майкрософт представила модуль PowerShell Аадклаудсинктулс.  Этот модуль предоставляет набор полезных средств, которые можно использовать для управления Azure AD Connect развертываниями облачной синхронизации.
+Модуль Аадклаудсинктулс предоставляет набор полезных средств, которые можно использовать для управления Azure AD Connect развертываниями облачной синхронизации.
 
 ## <a name="pre-requisites"></a>Предварительные требования
 Требуются следующие предварительные требования:
-- Этот модуль использует проверку подлинности MSAL, поэтому для него требуется установленный модуль MSAL.PS. Она больше не зависит от предварительной версии Azure AD или Azure AD.   Чтобы проверить, выполните в окне администратора PowerShell `Get-module MSAL.PS` . Если модуль установлен правильно, будет получен ответ.  Вы можете использовать `Install-AADCloudSyncToolsPrerequisites` для установки последней версии MSAL.PS
-- Модуль PowerShell AzureAD.  Некоторые командлеты используют части модуля AzureAD PowerShell для выполнения своих задач.  Чтобы проверить, в окне администрирования PowerShell выполните `Get-module AzureAD` . Вы должны получить ответ.  Вы можете использовать `Install-AADCloudSyncToolsPrerequisites` для установки последней версии модуля PowerShell AzureAD.
-- Установка модулей из PowerShell может привести к принудительному использованию TLS 1,2.  Чтобы обеспечить возможность установки модулей, установите следующие значения: \
-`[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 `
+
+- Все необходимые компоненты для этого модуля можно установить автоматически с помощью `Install-AADCloudSyncToolsPrerequisites`
+- Этот модуль использует проверку подлинности MSAL, поэтому для него требуется установленный модуль MSAL.PS. Чтобы проверить, в окне PowerShell выполните процедуру `Get-module MSAL.PS -ListAvailable` . Если модуль установлен правильно, будет получен ответ. Вы можете использовать `Install-AADCloudSyncToolsPrerequisites` для установки последней версии MSAL.PS
+- Несмотря на то, что модуль AzureAD PowerShell не является необходимым условием для каких-либо функций этого модуля, полезно установить его автоматически с помощью `Install-AADCloudSyncToolsPrerequisites` .
+- Для установки модулей из PowerShell вручную требуется принудительное применение TLS 1,2. Чтобы обеспечить возможность установки модулей, в сеансе PowerShell установите следующие значения, прежде чем использовать
+  ```
+   Install-Module:
+  [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
+  ```
+
 
 ## <a name="install-the-aadcloudsynctools-powershell-module"></a>Установка модуля PowerShell Аадклаудсинктулс
 Чтобы установить и использовать модуль Аадклаудсинктулс, выполните следующие действия.
 
-1.  Откройте Windows PowerShell с правами администратора
-2.  Введите `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12` и нажмите клавишу ВВОД.
-3.  Введите или скопируйте и вставьте следующий текст: 
-    ``` powershell
-    Import-module -Name "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Utility\AADCloudSyncTools"
-    ```
-3.  Нажмите клавишу ВВОД.
-4.  Чтобы проверить, установлен ли модуль, введите или скопируйте и вставьте следующий текст:
-    ```powershell
-    Get-module AADCloudSyncTools
-    ```
-5.  Теперь должны отобразиться сведения о модуле.
-6.  Следующий запуск
-    ``` powershell
-    Install-AADCloudSyncToolsPrerequisites
-    ```
-7.  При этом будут установлены модули PowerShell Get.  Закройте окно PowerShell.
-8.  Откройте Windows PowerShell с правами администратора
-9.  Снова Импортируйте модуль, используя шаг 3.
-10. Выполните команду `Install-AADCloudSyncToolsPrerequisites` , чтобы установить модули MSAL и AzureAD
+1. Откройте Windows PowerShell с правами администратора
+2. Введите или скопируйте и вставьте следующий текст: `Import-module -Name "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Utility\AADCloudSyncTools"`
+3. Нажмите клавишу ВВОД.
+4. Чтобы проверить, был ли модуль импортирован, введите или скопируйте и вставьте следующий текст: `Get-module AADCloudSyncTools`
+5. Теперь должны отобразиться сведения о модуле.
+6. Далее, чтобы установить предварительные требования модуля Аадклаудсинктулс, выполните следующие действия. `Install-AADCloudSyncToolsPrerequisites`
+7. При первом запуске будет установлен модуль Повешеллжет, если он отсутствует. Чтобы загрузить новый модуль PowershellGet, закройте окно PowerShell и откройте новый сеанс PowerShell с правами администратора. 
+8. Снова Импортируйте модуль, используя шаг 3.
+9. Выполните команду `Install-AADCloudSyncToolsPrerequisites` , чтобы установить модули MSAL и AzureAD
 11. Все предварительные запросов секунду должны быть успешно установлены. ![ модуль установки](media/reference-powershell/install-1.png)
+
 
 ## <a name="aadcloudsynctools--cmdlets"></a>Командлеты Аадклаудсинктулс
 ### <a name="connect-aadcloudsynctools"></a>Connect-AADCloudSyncTools
-Использует модуль AzureAD для подключения к Azure AD и модуля MSAL.PS, чтобы запросить маркер для Microsoft Graph
+Использует модуль MSAL.PS для запроса маркера для администратора Azure AD, чтобы получить доступ к Microsoft Graph 
 
 
 ### <a name="export-aadcloudsynctoolslogs"></a>Export-AADCloudSyncToolsLogs
@@ -125,5 +121,5 @@ ms.locfileid: "98614011"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [Что такое Azure AD Connect синхронизации в облаке?](what-is-cloud-sync.md)
+- [Что представляет собой облачная синхронизация Azure AD Connect?](what-is-cloud-sync.md)
 

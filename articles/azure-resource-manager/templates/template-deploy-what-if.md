@@ -3,14 +3,14 @@ title: Шаблоны развертывания что если
 description: Прежде чем развертывать шаблон Azure Resource Manager, определите, какие изменения будут выполнены для ресурсов.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 02/05/2021
 ms.author: tomfitz
-ms.openlocfilehash: fa70d88b046cf38aa74582066d230c15580465b9
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 8122fa5c00a61017b5f358a112c94a5299539cee
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673976"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591630"
 ---
 # <a name="arm-template-deployment-what-if-operation"></a>Операция "что если" развертывания шаблона ARM
 
@@ -21,10 +21,6 @@ ms.locfileid: "97673976"
 ## <a name="install-azure-powershell-module"></a>Установите модуль Azure PowerShell.
 
 Чтобы использовать то, что в PowerShell, необходимо установить **модуль AZ версии 4,2 или более поздней**.
-
-Но перед установкой необходимого модуля убедитесь, что у вас есть PowerShell Core (6. x или 7. x). Если у вас есть PowerShell 5. x или более ранней [версии, обновите версию PowerShell](/powershell/scripting/install/installing-powershell). Невозможно установить требуемый модуль в PowerShell 5. x или более ранней версии.
-
-### <a name="install-latest-version"></a>Установить последнюю версию
 
 Чтобы установить модуль, используйте:
 
@@ -117,7 +113,7 @@ Resource changes: 1 to modify.
 
 Если вы хотите вернуть результаты без цветов, откройте файл [конфигурации Azure CLI](/cli/azure/azure-cli-configuration) . Задайте для параметра **no_color** значение **Да**.
 
-### <a name="azure-rest-api"></a>REST API Azure
+### <a name="azure-rest-api"></a>Azure REST API
 
 Для REST API используйте:
 
@@ -314,7 +310,7 @@ foreach ($change in $results.Changes)
 }
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 results=$(az deployment group what-if --resource-group ExampleGroup --template-uri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/what-if/what-if-after.json" --no-pretty-print)
@@ -326,7 +322,7 @@ results=$(az deployment group what-if --resource-group ExampleGroup --template-u
 
 Операция "что если" поддерживает использование [режима развертывания](deployment-modes.md). Если задано значение полного режима, ресурсы, отсутствующие в шаблоне, удаляются. В следующем примере выполняется развертывание [шаблона, не имеющего ресурсов, определенных](https://github.com/Azure/azure-docs-json-samples/blob/master/empty-template/azuredeploy.json) в полном режиме.
 
-Для предварительного просмотра изменений перед развертыванием шаблона используйте параметр подтверждения с командой развертывания. Если изменения соответствуют ожидаемым, подтвердите выполнение развертывания.
+Для предварительного просмотра изменений перед развертыванием шаблона используйте параметр подтверждения с командой развертывания. Если изменения ожидаемы, ответьте на то, что развертывание должно завершиться.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -393,7 +389,7 @@ Are you sure you want to execute the deployment?
 
 * Для .NET используйте [класс деплойментвхатиф](/dotnet/api/microsoft.azure.management.resourcemanager.models.deploymentwhatif).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Если вы заметили неправильные результаты операции "что если", сообщите о проблемах по адресу [https://aka.ms/whatifissues](https://aka.ms/whatifissues) .
 - Сведения о модуле Microsoft Learn, который охватывает использование функции, см. в разделе [Предварительный просмотр изменений и проверка ресурсов Azure с помощью средств тестирования шаблонов ARM](/learn/modules/arm-template-test/).

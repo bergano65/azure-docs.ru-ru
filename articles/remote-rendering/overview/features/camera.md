@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/07/2020
 ms.topic: article
-ms.openlocfilehash: 76bb9d289e984dd8c229bdaaab09e679e11283fe
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: dbe86313054706af974ccb324a39e942e9b5ca44
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246287"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594135"
 ---
 # <a name="camera"></a>Камера
 
@@ -57,14 +57,14 @@ ms.locfileid: "98246287"
 API удаленной подготовки к просмотру Azure должен узнать о соответствии соглашениям о буфере глубины локального модуля подготовки отчетов о том, чтобы правильно составить глубину удаленной передачи в локальный буфер глубины. Если диапазон буфера глубины равен [0; 1], оставьте этот флаг как `false` . Если используется инвертированный буфер глубины с диапазоном [1; 0], установите `InverseDepth` для флага значение `true` .
 
 > [!NOTE]
-> Для Unity правильный параметр уже применен, `RemoteManager` поэтому нет необходимости в ручном вмешательстве.
+> Для Unity правильный параметр уже применен, `RenderingConnection` поэтому нет необходимости в ручном вмешательстве.
 
 Изменение параметров камеры можно выполнить следующим образом.
 
 ```cs
-void ChangeCameraSetting(AzureSession session)
+void ChangeCameraSetting(RenderingSession session)
 {
-    CameraSettings settings = session.Actions.CameraSettings;
+    CameraSettings settings = session.Connection.CameraSettings;
 
     settings.SetNearAndFarPlane(0.1f, 20.0f);
     settings.EnableDepth = false;
@@ -73,9 +73,9 @@ void ChangeCameraSetting(AzureSession session)
 ```
 
 ```cpp
-void ChangeStageSpace(ApiHandle<AzureSession> session)
+void ChangeCameraSetting(ApiHandle<RenderingSession> session)
 {
-    ApiHandle<CameraSettings> settings = session->Actions()->GetCameraSettings();
+    ApiHandle<CameraSettings> settings = session->Connection()->GetCameraSettings();
 
     settings->SetNearAndFarPlane(0.1f, 20.0f);
     settings->SetEnableDepth(false);

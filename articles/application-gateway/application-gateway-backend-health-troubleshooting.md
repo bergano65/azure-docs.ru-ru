@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/09/2020
 ms.author: surmb
-ms.openlocfilehash: 5e5be79371b640431603409a34b1a7812ed5c2a3
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 95b74e5fc6c5d2c09ff04b3f14e920ae675ab6e1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746110"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592761"
 ---
 <a name="troubleshoot-backend-health-issues-in-application-gateway"></a>Устранение проблем с работоспособностью серверной части в Шлюзе приложений
 ==================================================
@@ -24,7 +24,7 @@ ms.locfileid: "98746110"
 
 ### <a name="how-to-check-backend-health"></a>Как проверить работоспособность серверной части
 
-Чтобы проверить работоспособность серверного пула, можно использовать страницу **Оценка работоспособности серверной части** на портале Azure. Можно также использовать [Azure PowerShell](/powershell/module/az.network/get-azapplicationgatewaybackendhealth?view=azps-2.6.0), [интерфейс командной строки](/cli/azure/network/application-gateway?view=azure-cli-latest#az-network-application-gateway-show-backend-health) или [REST API](/rest/api/application-gateway/applicationgateways/backendhealth).
+Чтобы проверить работоспособность серверного пула, можно использовать страницу **Оценка работоспособности серверной части** на портале Azure. Можно также использовать [Azure PowerShell](/powershell/module/az.network/get-azapplicationgatewaybackendhealth), [интерфейс командной строки](/cli/azure/network/application-gateway#az-network-application-gateway-show-backend-health) или [REST API](/rest/api/application-gateway/applicationgateways/backendhealth).
 
 Состояние, полученное любым из этих методов, может быть одним из следующих:
 
@@ -119,7 +119,7 @@ BackendAddressPoolsText : [
 
 1.  Если вы используете DNS по умолчанию Azure, обратитесь к регистратору доменных имен, чтобы узнать, завершено ли сопоставление соответствующих записей A или записей CNAME.
 
-1.  Если домен является частным или внутренним, попробуйте разрешить его имя из виртуальной машины в той же виртуальной сети. Если вам это удалось, перезапустите Шлюз приложений и проверьте наличие проблемы. Чтобы перезапустить Шлюз приложений, его необходимо [отключить](/powershell/module/azurerm.network/stop-azurermapplicationgateway?view=azurermps-6.13.0) и [запустить](/powershell/module/azurerm.network/start-azurermapplicationgateway?view=azurermps-6.13.0) с помощью команд PowerShell, которые описаны в приведенных связанных ресурсах.
+1.  Если домен является частным или внутренним, попробуйте разрешить его имя из виртуальной машины в той же виртуальной сети. Если вам это удалось, перезапустите Шлюз приложений и проверьте наличие проблемы. Чтобы перезапустить Шлюз приложений, его необходимо [отключить](/powershell/module/azurerm.network/stop-azurermapplicationgateway) и [запустить](/powershell/module/azurerm.network/start-azurermapplicationgateway) с помощью команд PowerShell, которые описаны в приведенных связанных ресурсах.
 
 #### <a name="tcp-connect-error"></a>Ошибка TCP-подключения
 

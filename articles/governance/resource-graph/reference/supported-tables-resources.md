@@ -1,15 +1,15 @@
 ---
 title: Поддерживаемые типы ресурсов Azure Resource Manager
 description: Укажите список типов ресурсов Azure Resource Manager, поддерживаемых графиком ресурсов Azure и журналом изменений.
-ms.date: 01/06/2021
+ms.date: 02/04/2021
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 4198c60bc298eb6a1b9902bb92e3df44648b2c0b
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 865aed468f8a6bcb848b77a82467efc2c531398b
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251783"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594339"
 ---
 # <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Azure Resource Graph и сведения о типах ресурсов
 
@@ -130,6 +130,9 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. azurestack/линкедсубскриптионс
 - Microsoft. Azurestack/регистрации (концентраторы Azure Stack)
 - Microsoft. АзурестаккхЦи/Clusters (Azure Stack ХЦИ)
+- Microsoft. азурестаккхЦи/галлеримажес
+- Microsoft. азурестаккхЦи/networkinterfaces
+- Microsoft. азурестаккхЦи/virtualnetworks
 - microsoft.baremetal/consoleconnections
 - Microsoft. BareMetal/Крайсерверс (серверы Cray)
 - Microsoft. BareMetal/Мониторингсерверс (серверы мониторинга)
@@ -331,6 +334,9 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. Insights/воркбуктемплатес (шаблоны книг Azure)
 - Microsoft. Интеллижентитдигиталтвин/Дигиталтвинс (Минервас)
 - Microsoft. интеллижентитдигиталтвин/дигиталтвинс/активы
+- Microsoft. интеллижентитдигиталтвин/дигиталтвинс/ексекутионпланс
+- Microsoft. интеллижентитдигиталтвин/дигиталтвинс/тестпланс
+- Microsoft. интеллижентитдигиталтвин/дигиталтвинс/тесты
 - Microsoft. Иотцентрал/Иотаппс (IoT Central приложения)
 - Microsoft. Иотспацес/Graph (цифровой двойников (не рекомендуется))
 - microsoft.keyvault/hsmpools
@@ -494,6 +500,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. Resources/Темплатеспекс (спецификации шаблонов)
 - microsoft.resources/templatespecs/versions
 - Microsoft. SaaS/Applications (программное обеспечение как услуга (классическая модель))
+- Microsoft. SaaS/Resources (КПКС-PlaceHolder)
 - Microsoft. Scheduler/Жобколлектионс (коллекции заданий планировщика)
 - Microsoft. SCVMM/облака
 - Microsoft. SCVMM/virtualMachines (виртуальная машина SCVMM — Azure ARC)
@@ -588,6 +595,7 @@ Azure Resource Graph поддерживает следующие **типы ре
 - Microsoft. Web/Статикситес (статические веб-приложения (Предварительная версия))
 - Microsoft. Виндовсесу/Мултиплеактиватионкэйс (несколько ключей активации Windows)
 - Microsoft. Виндовсиот/Девицесервицес (основные службы IoT Windows 10)
+- Microsoft. ворклоадбуилдер/мигратионажентс
 - Microsoft. ворклоадбуилдер/рабочие нагрузки
 - MyGet. PackageManagement/Services (MyGet-Hosted NuGet, NPM, Bower и VSIX)
 - With LEAP. CloudMonix/Services (CloudMonix)

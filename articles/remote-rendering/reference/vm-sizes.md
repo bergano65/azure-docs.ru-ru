@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 05/28/2020
 ms.topic: reference
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b37aabb39e19fa5ec53d2b006a7cbc1793adad72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e2687954fb05ce826e780ae0dbd3931d899885f
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90988047"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594406"
 ---
 # <a name="server-sizes"></a>Размеры серверов
 
@@ -30,26 +30,35 @@ ms.locfileid: "90988047"
 Требуемый тип конфигурации сервера должен быть указан во время инициализации сеанса отрисовки. Его нельзя изменить в работающем сеансе. В следующих примерах кода показано место, где должен быть указан размер сервера:
 
 ```cs
-async void CreateRenderingSession(AzureFrontend frontend)
+async void CreateRenderingSession(RemoteRenderingClient client)
 {
-    RenderingSessionCreationParams sessionCreationParams = new RenderingSessionCreationParams();
-    sessionCreationParams.Size = RenderingSessionVmSize.Standard; // or  RenderingSessionVmSize.Premium
+    RenderingSessionCreationOptions sessionCreationOptions = default;
+    sessionCreationOptions.Size = RenderingSessionVmSize.Standard; // or  RenderingSessionVmSize.Premium
 
-    AzureSession session = await frontend.CreateNewRenderingSessionAsync(sessionCreationParams).AsTask();
+    CreateRenderingSessionResult result = await client.CreateNewRenderingSessionAsync(sessionCreationOptions);
+    if (result.ErrorCode == Result.Success)
+    {
+        RenderingSession session = result.Session;
+        // do something with the session
+    }
 }
 ```
 
 ```cpp
-void CreateRenderingSession(ApiHandle<AzureFrontend> frontend)
+void CreateRenderingSession(ApiHandle<RemoteRenderingClient> client)
 {
-    RenderingSessionCreationParams sessionCreationParams;
-    sessionCreationParams.Size = RenderingSessionVmSize::Standard; // or  RenderingSessionVmSize::Premium
+    RenderingSessionCreationOptions sessionCreationOptions;
+    sessionCreationOptions.Size = RenderingSessionVmSize::Standard; // or  RenderingSessionVmSize::Premium
 
-    if (auto createSessionAsync = frontend->CreateNewRenderingSessionAsync(sessionCreationParams))
-    {
-        // ...
-    }
+    client->CreateNewRenderingSessionAsync(sessionCreationOptions, [](Status status, ApiHandle<CreateRenderingSessionResult> result) {
+        if (status == Status::OK && result->GetErrorCode() == Result::Success)
+        {
+            ApiHandle<RenderingSession> session = result->GetSession();
+            // do something with the session
+        }
+    });
 }
+
 ```
 
 В [примерах сценариев PowerShell](../samples/powershell-example-scripts.md)требуемый размер сервера должен быть указан в `arrconfig.json` файле:
@@ -76,14 +85,14 @@ void CreateRenderingSession(ApiHandle<AzureFrontend> frontend)
 ### <a name="how-to-determine-the-number-of-polygons"></a>Определение количества многоугольников
 
 Существует два способа определить количество многоугольников модели или сцены, влияющих на бюджетное ограничение `standard` размера конфигурации:
-* На стороне преобразования модели Извлеките [выходной JSON файл преобразования](../how-tos/conversion/get-information.md)и проверьте `numFaces` запись в [разделе *инпутстатистикс* ](../how-tos/conversion/get-information.md#the-inputstatistics-section) .
-* Если приложение работает с динамическим содержимым, количество визуализированных многоугольников можно запросить динамически во время выполнения. Используйте [запрос оценки производительности](../overview/features/performance-queries.md#performance-assessment-queries) и проверьте наличие `polygonsRendered` элемента в `FrameStatistics` структуре. `polygonsRendered`Поле будет иметь значение, `bad` когда модуль подготовки отчетов достигнет предельного значения многоугольника. Фон шахматной доски всегда прокладывается с некоторой задержкой, чтобы обеспечить возможность выполнения действий пользователя после этого асинхронного запроса. Действие пользователя может сделать экземпляр недоступным для скрытия или удаления экземпляров модели.
+* На стороне преобразования модели Извлеките [выходной JSON файл преобразования](../how-tos/conversion/get-information.md)и проверьте `numFaces` запись в [разделе *инпутстатистикс*](../how-tos/conversion/get-information.md#the-inputstatistics-section) .
+* Если приложение работает с динамическим содержимым, количество визуализированных многоугольников можно запросить динамически во время выполнения. Используйте [запрос оценки производительности](../overview/features/performance-queries.md#performance-assessment-queries) и проверьте наличие `polygonsRendered` элемента в `FrameStatistics` структуре. `PolygonsRendered`Поле будет иметь значение, `bad` когда модуль подготовки отчетов достигнет предельного значения многоугольника. Фон шахматной доски всегда прокладывается с некоторой задержкой, чтобы обеспечить возможность выполнения действий пользователя после этого асинхронного запроса. Действие пользователя может сделать экземпляр недоступным для скрытия или удаления экземпляров модели.
 
 ## <a name="pricing"></a>Цены
 
 Подробное разбиение цен для каждого типа конфигурации см. на странице [цен на удаленную визуализацию](https://azure.microsoft.com/pricing/details/remote-rendering) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Примеры скриптов PowerShell](../samples/powershell-example-scripts.md)
 * [Преобразование модели](../how-tos/conversion/model-conversion.md)
 

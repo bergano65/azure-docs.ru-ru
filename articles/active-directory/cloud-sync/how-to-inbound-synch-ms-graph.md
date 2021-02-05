@@ -1,5 +1,5 @@
 ---
-title: Входящая синхронизация для облачной синхронизации с помощью MS API Graph
+title: Как программно настроить синхронизацию в облаке с помощью MS API Graph
 description: В этом разделе описано, как включить входящую синхронизацию, используя только API Graph
 services: active-directory
 author: billmath
@@ -11,14 +11,14 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3796b3d86f647e38cf2ff018e8c0c903d9a64e41
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6c84636ea86b3b640aef365c1c5d8e634b9a1f48
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98682044"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593168"
 ---
-# <a name="inbound-synchronization-for-cloud-sync-using-ms-graph-api"></a>Входящая синхронизация для облачной синхронизации с помощью MS API Graph
+# <a name="how-to-programmatically-configure-cloud-sync-using-ms-graph-api"></a>Как программно настроить синхронизацию в облаке с помощью MS API Graph
 
 В следующем документе описано, как реплицировать профиль синхронизации с нуля с помощью только API-интерфейсов Мсграф.  
 Структура того, как это сделать, состоит из следующих шагов.  К ним относятся:
@@ -28,6 +28,7 @@ ms.locfileid: "98682044"
 - [Создание задания синхронизации](#create-sync-job)
 - [Обновление целевого домена](#update-targeted-domain)
 - [Включить хэши паролей синхронизации](#enable-sync-password-hashes-on-configuration-blade)
+- [Случайные удаления](#accidental-deletes)
 - [Запуск задания синхронизации](#start-sync-job)
 - [Состояние проверки](#review-status)
 
@@ -211,6 +212,71 @@ ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f AppId: 00000014-0000-0000-C000-00
 
  Добавьте схему в текст запроса. 
 
+## <a name="accidental-deletes"></a>Случайные удаления
+В этом разделе рассматривается программное включение, отключение и использование [случайных удалений](how-to-accidental-deletes.md) .
+
+
+### <a name="enabling-and-setting-the-threshold"></a>Включение и установка порогового значения
+Существует два параметра для каждого задания, которые можно использовать.
+
+ - Делетесрешолденаблед — включает предотвращение случайного удаления для задания, если задано значение "true". По умолчанию имеет значение true.
+ - Делетесрешолдвалуе — определяет максимальное число удалений, которые будут разрешены при каждом выполнении задания, если включена защита от случайного удаления. По умолчанию задано значение 500.  Таким образом, если задано значение 500, максимальное количество удалений будет составлять 499 при каждом выполнении.
+
+Параметры порога удаления являются частью компонента `SyncNotificationSettings` и могут быть изменены с помощью Graph. 
+
+Нам нужно обновить Синкнотификатионсеттингс, для которого предназначена эта конфигурация, поэтому обновите секреты.
+
+ ```
+ PUT – https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/secrets
+ ```
+
+ Добавьте следующую пару "ключ-значение" в массиве значений ниже, исходя из того, что вы пытаетесь сделать:
+
+```
+ Request body -
+ {
+   "value":[
+             {
+               "key":"SyncNotificationSettings",
+               "value": "{\"Enabled\":true,\"Recipients\":\"foobar@xyz.com\",\"DeleteThresholdEnabled\":true,\"DeleteThresholdValue\":50}"
+              }
+            ]
+  }
+
+
+```
+
+Параметр "включено" в приведенном выше примере предназначен для включения и отключения уведомлений по электронной почте, когда задание помещено в карантин.
+
+
+Сейчас мы не поддерживаем запросы на исправление для секретов, поэтому для сохранения других значений необходимо добавить все значения в текст запроса размещения (как в примере выше).
+
+Существующие значения для всех секретов можно получить с помощью команды. 
+
+```
+GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/secrets 
+```
+
+### <a name="allowing-deletes"></a>Разрешение операций удаления
+Чтобы разрешить удаленное выполнение операций удаления после того, как задание перейдет в карантин, необходимо выполнить перезагрузку, указав в качестве области только "Форцеделетес". 
+
+```
+Request:
+POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/restart
+```
+
+```
+Request Body:
+{
+  "criteria": {"resetScope": "ForceDeletes"}
+}
+```
+
+
+
+
+
+
 ## <a name="start-sync-job"></a>Запуск задания синхронизации
 Задание можно получить снова с помощью следующей команды:
 
@@ -250,8 +316,8 @@ ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f AppId: 00000014-0000-0000-C000-00
 
 Просмотрите раздел "Status" возвращаемого объекта, чтобы получить соответствующие сведения.
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
-- [Что представляет собой облачная синхронизация Azure AD Connect?](what-is-cloud-sync.md)
+- [Что представляет собой облачная синхронизация Azure AD Connect?](what-is-cloud-sync.md)
 - [Преобразования](how-to-transformation.md)
 - [API синхронизации Azure AD](/graph/api/resources/synchronization-overview?view=graph-rest-beta)
