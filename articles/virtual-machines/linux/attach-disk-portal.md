@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: ca8584d6cce3f5487d84f6647c42274879d610dd
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 647564a9b9ca909d2f45ae66673d8beac168a4aa
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198073"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575980"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Подключение диска данных к виртуальной машине Linux с помощью портала 
 В этой статье показано, как подключить новый и существующий диски к виртуальной машине Linux на портале Azure. Вы также можете [подключить диск данных к виртуальной машине Windows на портале Azure](../windows/attach-managed-disk-portal.md). 
@@ -225,4 +225,7 @@ sdc     3:0:0:0       4G
     ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения и устранение неполадок с диском см. в разделе [Устранение неполадок при изменении имени устройства виртуальной машины Linux](../troubleshooting/troubleshoot-device-names-problems.md).
+
 Вы можете также [подключить диск данных](add-disk.md) с помощью Azure CLI.

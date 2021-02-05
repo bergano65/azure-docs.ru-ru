@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f13dfa4221f8f09c24cce3a451f3180d15ee3b99
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 0c4ed5dfee80c33009874361ae6b4d23ec00bc26
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435763"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573336"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Руководство. Планирование реализации гибридного присоединения к Azure Active Directory.
 
@@ -66,7 +66,7 @@ ms.locfileid: "96435763"
 - Windows 8.1
 - Поддержка Windows 7 закончилась 14 января 2020 г. Дополнительные сведения см. в разделе [Поддержка Windows 7 завершена](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020).
 - Windows Server 2012 R2
-- Windows Server 2012
+- Windows Server 2012
 - Windows Server 2008 R2. Сведения о поддержке в Windows Server 2008 и 2008 R2 см. в разделе [Подготовка к завершению поддержки Windows server 2008](https://www.microsoft.com/cloud-platform/windows-server-2008).
 
 В качестве первого шага планирования вам следует просмотреть свою среду и определить, нужно ли вам поддерживать устройства Windows нижнего уровня.
@@ -81,6 +81,8 @@ ms.locfileid: "96435763"
 - Гибридное присоединение к Azure AD не поддерживается на устройствах Windows нижнего уровня при использовании роуминга учетных данных или перемещаемого или обязательного профиля пользователя.
 
 - ОС Server Core не поддерживает ни один тип регистрации устройства.
+
+- Средство миграции пользовательской среды (USMT) не работает с регистрацией устройств.  
 
 ### <a name="os-imaging-considerations"></a>Вопросы работы с образами ОС
 - Если вы используете средство подготовки системы (Sysprep) и если вы используете предварительно установленный образ **Windows 10 1809** , убедитесь, что образ не относится к устройству, которое уже зарегистрировано в Azure AD как гибридное присоединение к Azure AD.

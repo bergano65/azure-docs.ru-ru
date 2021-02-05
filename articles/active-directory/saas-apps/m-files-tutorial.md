@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 0df9e4722136dafe94d1bfc84a7767e1e0144d69
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 552e5c2411889ee7f07265eb1cc35d98aed4d7c1
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997228"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99574167"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Учебник. Интеграция Azure Active Directory с M-Files
 
@@ -129,7 +129,7 @@ ms.locfileid: "95997228"
     >[!NOTE]
     >Если вы хотите настроить единый вход для классического приложения M-Files, то выполните описанные ниже действия. Если единый вход настраивается только для веб-версии M-Files, то никакие дополнительные действия не требуются.  
 
-1. Выполните описанные ниже действия, чтобы настроить в классическом приложении M-Files единый вход с помощью Azure AD. Для скачивания M-Files перейдите на страницу [M-Files download](https://www.m-files.com/en/download-latest-version) (Скачивание M-Files).
+1. Выполните описанные ниже действия, чтобы настроить в классическом приложении M-Files единый вход с помощью Azure AD. Для скачивания M-Files перейдите на страницу [M-Files download](https://www.m-files.com/customers/product-downloads/download-update-links/) (Скачивание M-Files).
 
 1. Откройте окно **M-Files Desktop Settings** (Параметры классического приложения M-Files). Нажмите кнопку **Добавить**.
    

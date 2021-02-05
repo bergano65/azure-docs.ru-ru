@@ -8,21 +8,19 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: a8d1a69070628248fb710a614369ff9311252c05
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: dcdbf94e547581cb9ff885ac5896467abdf316ae
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93103037"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576199"
 ---
 # <a name="managed-disk-bursting"></a>Ускорение операций управляемого диска
 [!INCLUDE [managed-disks-bursting](../../includes/managed-disks-bursting.md)]
 
 ## <a name="virtual-machine-level-bursting"></a>Ускорение операций на уровне виртуальной машины
-Поддержка ускорения операций на уровне виртуальной машины включена во всех регионах общедоступного облака с такими поддерживаемыми размерами: 
+На следующей серии виртуальных машин во всех регионах, в которых они поддерживаются, включена возможность разбивки на уровни виртуальных машин.
 - [Серия Lsv2](lsv2-series.md)
-
-Кроме того, в западной центральной части США доступно увеличение уровня виртуальной машины для следующих поддерживаемых размеров:
 - [Серия Dsv3](dv3-dsv3-series.md)
 - [серия Esv3](ev3-esv3-series.md);
 

@@ -6,12 +6,12 @@ author: v-dalc
 ms.topic: article
 ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 02611bdf9689d2f62f661f558fd547ea46bd4d36
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 52b30730ee8ab126521ad0760204ee48ef6a63fe
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744892"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576014"
 ---
 # <a name="storsimple-virtual-array-update-13-release-notes"></a>Заметки о выпуске обновления 1,3 для виртуального массива StorSimple
 
@@ -28,15 +28,15 @@ ms.locfileid: "98744892"
 
 ## <a name="whats-new-in-update-13"></a>Новые возможности в обновлении 1,3
 
-Это обновление содержит следующие улучшения.
+Это обновление содержит следующие улучшения: KB4540725
 
 - Безопасность транспортного уровня (TLS) 1,2 является обязательным обновлением и должно быть установлено. В этом выпуске протокол TLS 1,2 превращается в стандартный протокол для всех портал Azure связи.
 - Исправления ошибок сборки мусора улучшают производительность цикла сбора мусора, когда устройство и учетная запись хранения находятся в двух удаленных регионах.
 - Исправление ошибок резервного копирования из-за превышения времени ожидания больших двоичных объектов.
 - Обновленные исправления безопасности для ОС/. NET Framework:
-  - [KB4540725](\\winsehotfix.segroup.winse.corp.microsoft.com\hotfixes\Windows6.3\RTM\KB4540725\V1.001\free\NEU\X64): Март 2020 SSU (обновление стека обслуживания)
-  - [KB4565541](\\winsehotfix.segroup.winse.corp.microsoft.com\hotfixes\Windows6.3\RTM\KB4565541\V1.014\free\NEU\X64). свертка 2020 июля
-  - [KB4565622](\\winsehotfix.segroup.winse.corp.microsoft.com\hotfixes\Partner\DOTNET47x\KB4565622\V1.000\free\NEU\x64): 2020 июля платформа .NET Framework обновление
+  - [KB4540725](https://support.microsoft.com/topic/servicing-stack-update-for-windows-8-1-rt-8-1-and-server-2012-r2-march-10-2020-cfa082a3-0b58-a8a3-7dc7-ab424de91b86): Март 2020 SSU (обновление стека обслуживания)
+  - [KB4565541](https://support.microsoft.com/topic/july-14-2020-kb4565541-monthly-rollup-fed6b2b1-3d23-5981-34df-9215a8d8ce01). свертка 2020 июля
+  - [KB4565622](https://support.microsoft.com/topic/security-and-quality-rollup-for-net-framework-4-6-4-6-1-4-6-2-4-7-4-7-1-4-7-2-for-windows-8-1-rt-8-1-and-windows-server-2012-r2-kb4565622-b7320848-1889-a624-da01-719f55ee8a00): 2020 июля платформа .NET Framework обновление
 
 ## <a name="download-update-13"></a>Загрузка обновления 1,3
 

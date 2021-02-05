@@ -10,24 +10,26 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: c34410fcb5e1992f8b7a358801a354a1e1cf190c
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 01e5095e5ff5c65bff508f4bd526ee5f85e3dc56
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808006"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575166"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Перенос трафика базы данных SQL Azure на более новые шлюзы
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 По мере улучшения инфраструктуры Azure Корпорация Майкрософт периодически обновляет оборудование, чтобы обеспечить максимально возможный уровень взаимодействия с клиентами. В ближайшие месяцы мы планируем добавить шлюзы, основанные на более новых аппаратных поколениях, перенести трафик на них и в конечном итоге списать шлюзы, созданные на старом оборудовании в некоторых регионах.  
 
-Клиенты будут уведомлены по электронной почте, а также в портал Azure, что еще не изменится на шлюзы, доступные в каждом регионе. Самые актуальные сведения будут храниться в таблице [IP-адресов шлюза базы данных SQL Azure](connectivity-architecture.md#gateway-ip-addresses) .
+Клиенты будут получать уведомления через уведомления о работоспособности службы перед любым изменением шлюзов, доступных в каждом регионе. Клиенты могут [использовать портал Azure для настройки оповещений журнала действий](https://docs.microsoft.com/azure/service-health/alerts-activity-log-service-notifications-portal).
+
+Самые актуальные сведения будут храниться в таблице [IP-адресов шлюза базы данных SQL Azure](connectivity-architecture.md#gateway-ip-addresses) .
 
 ## <a name="status-updates"></a>Обновления состояния
 
 # <a name="in-progress"></a>[Выполняется](#tab/in-progress-ip)
-## <a name="february-2021"></a>Февраль 2021 г.
+## <a name="february-2021"></a>Февраль 2021 года
 Новые шлюзы SQL добавляются в следующие регионы:
 
 - Центральная американская: 13.89.169.20
@@ -148,6 +150,6 @@ ms.locfileid: "98808006"
 
 Если описанное выше решение не работает, отправьте запрос в службу поддержки для базы данных SQL или Управляемый экземпляр SQL, используя следующий URL-адрес: https://aka.ms/getazuresupport
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [архитектуре подключения SQL Azure](connectivity-architecture.md)

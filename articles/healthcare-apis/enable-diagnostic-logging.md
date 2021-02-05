@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.reviewer: dseven
 ms.author: cavoeg
 author: CaitlinV39
-ms.date: 11/01/2019
-ms.openlocfilehash: 54119585d4f1377b60b85fbad01fe90f097a304f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.date: 02/03/2021
+ms.openlocfilehash: 8dc87ae5b296f322d9d5a4d59c0a8c9b1c50d5da
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95905180"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575451"
 ---
 # <a name="enable-diagnostic-logging-in-azure-api-for-fhir"></a>Включение ведения журнала диагностики в Azure API для FHIR
 
@@ -35,9 +35,9 @@ ms.locfileid: "95905180"
     2. **Поток в концентратор событий** для приема от сторонней службы или пользовательского аналитического решения. Прежде чем можно будет настроить этот шаг, необходимо создать пространство имен концентратора событий и политику концентратора событий.
     3. **Поток** в рабочую область Log Analytics в Azure Monitor. Чтобы выбрать этот параметр, необходимо создать рабочую область журналы Analytics.
 
-6. Выберите **AuditLogs** и все метрики, которые требуется захватить. Если вы используете соединитель Azure IoT для FHIR, убедитесь, что выбраны **ошибки, трафик и задержка** для метрик. 
+6. Выберите **AuditLogs** и (или) **аллметрикс**. Метрики включают имя службы, доступность, размер данных, общую задержку, общее количество запросов, общее число ошибок и отметку времени.
 
-   :::image type="content" source="media/iot-metrics-export/diagnostic-setting-add.png" alt-text="Connector2 IoT" lightbox="media/iot-metrics-export/diagnostic-setting-add.png":::
+   :::image type="content" source="media/diagnostic-logging/fhir-diagnostic-setting.png" alt-text="Параметры диагностики Azure FHIR. Выберите AuditLogs и (или) Аллметрикс." lightbox="media/diagnostic-logging/fhir-diagnostic-setting.png":::
 
 7. Нажмите кнопку **Сохранить**.
 
@@ -102,7 +102,7 @@ MicrosoftHealthcareApisAuditLogs
  
 FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы узнали, как включить журналы аудита для Azure API для FHIR. Далее вы узнаете о других дополнительных параметрах, которые можно настроить в API Azure для FHIR.
  
 >[!div class="nextstepaction"]

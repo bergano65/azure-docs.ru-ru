@@ -1,30 +1,28 @@
 ---
-title: Разрешенный ЦС для включения пользовательского HTTPS на Azure CDN
-description: Если вы используете свой собственный сертификат для включения HTTPS в личном домене, вам нужен разрешенный центр сертификации (CA) для его создания.
+title: Разрешенный ЦС для включения пользовательского HTTPS
+titleSuffix: Azure Content Delivery Network
+description: Если вы используете собственный сертификат для включения протокола HTTPS в пользовательском домене, для его создания необходимо использовать разрешенный центр сертификации (ЦС).
 services: cdn
-documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: ''
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 10/18/2018
+ms.date: 02/04/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 29b6cb25e021e86ce6663b4db5c89217aaf70a37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f98e28c89fa70831108cfbbbaca6e2f316d1b039
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84887407"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573404"
 ---
-# <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-cdn"></a>Разрешенные центры сертификации для включения настраиваемого HTTPS в Azure CDN
+# <a name="allowed-certificate-authorities-for-enabling-custom-https"></a>Разрешенные центры сертификации для включения пользовательского HTTPS
 
-При [включении функции HTTPS с помощью собственного сертификата](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#tlsssl-certificates) для пользовательского домена сети доставки содержимого Azure (CDN) необходимо соблюдать требования к сертификатам. **Azure CDN стандарт из профиля Майкрософт** требует сертификат от одного из утвержденных центров сертификации (CA) в следующем списке. Если используется сертификат из неутвержденного ЦС или самозаверяющий сертификат, запрос отклоняется. **Azure CDN Standard от Verizon** и **Azure CDN Premium из профилей Verizon** принимают любой действительный сертификат от любого допустимого ЦС.
+Требования к сертификатам необходимы при [включении функции HTTPS с помощью собственного сертификата](cdn-custom-ssl.md?tabs=option-2-enable-https-with-your-own-certificate#tlsssl-certificates) для Azure CDN (сети доставки содержимого). 
+
+* **Azure CDN стандарт из профиля Майкрософт** требует сертификат от одного из утвержденных центров сертификации (CA) в следующем списке. Если используется сертификат из неутвержденного ЦС или самозаверяющий сертификат, запрос отклоняется. 
+
+* **Azure CDN Standard от Verizon** и **Azure CDN Premium из профилей Verizon** принимают любой действительный сертификат от любого допустимого ЦС. Профили Verizon не поддерживают самозаверяющие сертификаты.
 
 > [!NOTE]
 > Возможность использования собственного сертификата для включения функции HTTPS пользовательского домена *недоступна* для **Azure CDN Standard из профилей Akamai** . 

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: alkohli
-ms.openlocfilehash: f99a3110880626b3a809e6bab5edc02398094547
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 887aaf32592c74a5884916bc7ad63d79544fb554
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426226"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575861"
 ---
 # <a name="azure-stack-edge-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Stack
 
@@ -23,7 +23,7 @@ ms.locfileid: "92426226"
 
 ## <a name="storage-differences"></a>Различия хранилищ
 
-|     Компонент                                             |     Хранилище Azure                                     |     Azure Stack пограничное хранилище BLOB-объектов |
+|     Функция                                             |     Служба хранилища Azure                                     |     Azure Stack пограничное хранилище BLOB-объектов |
 |---------------------------------------------------------|-------------------------------------------------------|---------------------------|
 |    Хранилище файлов Azure                                   |    Поддерживаются облачные общие папки с файлами SMB              |    Не поддерживается      |
 |    Тип учетной записи хранения                                 |    Учетные записи хранения общего назначения и учетные записи хранения BLOB-объектов Azure    |    Только общего назначения версии 1|
@@ -148,6 +148,6 @@ AccountKey=mykey;
 EndpointSuffix=<serial no. of the device>.microsoftdatabox.com
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подготовка к развертыванию Azure Stack пограничных Pro с помощью GPU](azure-stack-edge-gpu-deploy-prep.md)

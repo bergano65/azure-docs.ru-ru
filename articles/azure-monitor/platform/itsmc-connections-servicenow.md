@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: cc4f961c399e9ac5e853085106924584eb3935d0
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 222257f5045984a71c2aee9de83b5fa420306728
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223395"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99573421"
 ---
 # <a name="connect-servicenow-with-it-service-management-connector"></a>Подключение ServiceNow с Соединитель управления ИТ-услугами
 
@@ -123,7 +123,7 @@ ms.locfileid: "99223395"
    | --- | --- |
    | **Имя соединения**   | Введите имя экземпляра ServiceNow, который вы хотите подключить с помощью ITSMC. Это имя используется позже в Log Analytics при настройке рабочих элементов ITSM и просмотре подробной аналитики. |
    | **Тип партнера**   | Выберите **ServiceNow**. |
-   | **URL-адрес сервера**   | Введите URL-адрес экземпляра ServiceNow, который вы хотите подключить к ITSMC. URL-адрес должен указывать на поддерживаемую версию SaaS с суффиксом *. servicenow.com* (например https://XXXXX.service-now.com/) ,.|
+   | **URL-адрес сервера**   | Введите URL-адрес экземпляра ServiceNow, который вы хотите подключить к ITSMC. URL-адрес должен указывать на поддерживаемую версию SaaS с суффиксом *. servicenow.com* (например, `https://XXXXX.service-now.com/` ).|
    | **Имя пользователя**   | Введите имя пользователя интеграции, созданное в приложении ServiceNow, для поддержки подключения к ITSMC.|
    | **Пароль**   | Введите пароль, связанный с этим именем пользователя. **Примечание**. имя пользователя и пароль используются только для создания маркеров проверки подлинности. Они хранятся не в любом месте службы ITSMC.  |
    | **Идентификатор клиента**   | Введите идентификатор клиента, который вы хотите использовать для проверки подлинности OAuth2, созданной ранее. Дополнительные сведения о создании идентификатора клиента и секрета см. в разделе [Настройка OAuth](https://old.wiki/index.php/OAuth_Setup). |
@@ -143,7 +143,7 @@ ms.locfileid: "99223395"
 > [!NOTE]
 > Для ServiceNow предусмотрено ограничение скорости запросов в час. Чтобы настроить ограничение, определите **REST API ограничения скорости для входящего трафика** в экземпляре ServiceNow.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор соединитель ITSM](itsmc-overview.md)
 * [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts)

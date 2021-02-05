@@ -7,14 +7,14 @@ ms.topic: reference
 ms.workload: identity
 author: rolyon
 ms.author: rolyon
-ms.date: 01/15/2021
+ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 39385a3ea9dc06875806ac85c06c0df6d5db2698
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 3b7b65a558470c4e7f04ed84ea186fc1ea98bc40
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683799"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99557341"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -103,6 +103,7 @@ ms.locfileid: "98683799"
 > | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). | fbdf93bf-df7d-467e-a4d2-9458aa1360c8 |
 > | [Оператор Cosmos DB](#cosmos-db-operator) | Позволяет управлять учетными записями Azure Cosmos DB, но не доступом к данным. Предотвращает доступ к ключам учетной записи и строкам подключения. | 230815da-be43-4aae-9cb4-875f7bd000aa |
 > | [CosmosBackupOperator](#cosmosbackupoperator) | Позволяет отправлять запрос на восстановление контейнера или базы данных Cosmos DB для учетной записи. | db7b14f2-5adf-42da-9f96-f2ee17bab5cb |
+> | [космосрестореоператор](#cosmosrestoreoperator) | Можно выполнить действие восстановления для учетной записи базы данных Cosmos DB с режимом непрерывного резервного копирования. | 5432c526-bc82-444a-b7ba-57c5b0b5b34f |
 > | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. | 5bd9cd88-fe45-4216-938b-f97437e15450 |
 > | [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Redis, но не доступом к нему. | e0f68234-74aa-48ed-b826-c38b57376e17 |
 > | [Участник базы данных SQL](#sql-db-contributor) | Позволяет управлять базами данных SQL, но не доступом к ним. Кроме того, не позволяет управлять их политиками безопасности или родительскими серверами SQL Server. | 9b7fa17d-e63e-47b0-bb0a-15c516ac86ec |
@@ -1453,6 +1454,7 @@ ms.locfileid: "98683799"
 > | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/оператионсстатус/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Возвращает состояние операции, выполненной с защищенными элементами. |
 > | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Возвращает сведения об объекте для защищенного элемента. |
 > | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/рековерипоинтс/провисионинстантитемрековери/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Подготавливает мгновенное восстановление для защищенного элемента. |
+> | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/рековерипоинтс/акцесстокен/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Получение AccessToken для восстановления между регионами. |
 > | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/рековерипоинтс/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Возвращает точки восстановления для защищенных элементов. |
 > | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/рековерипоинтс/Ресторе/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Восстанавливает точки восстановления для защищенных элементов. |
 > | /Ваултс/баккупфабрикс/протектионконтаинерс/протектедитемс/рековерипоинтс/ревокеинстантитемрековери/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Отменяет мгновенное восстановление для защищенного элемента. |
@@ -1495,6 +1497,12 @@ ms.locfileid: "98683799"
 > | /Локатионс/баккупстатус/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Проверка состояния архивации хранилищ служб восстановления. |
 > | /Локатионс/баккуппревалидатепротектион/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) |  |
 > | /Локатионс/баккупвалидатефеатурес/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Проверка компонентов. |
+> | /Локатионс/баккупаадпропертиес/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Получите свойства AAD для проверки подлинности в третьем регионе для восстановления между регионами. |
+> | /Локатионс/баккупкрржобс/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Перечисление заданий восстановления с перекрестной областью в дополнительном регионе для хранилища служб восстановления. |
+> | /Локатионс/баккупкрржоб/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Получите сведения о задании восстановления из нескольких регионов в дополнительном регионе для хранилища служб восстановления. |
+> | /Локатионс/баккупкроссрегионресторе/Актион [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Активация восстановления между регионами. |
+> | /Локатионс/баккупкрроператионресултс/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Возвращает результат операции КРР для хранилища служб восстановления. |
+> | /Локатионс/баккупкрроператионсстатус/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Возвращает состояние операции КРР для хранилища служб восстановления. |
 > | /Ваултс/мониторингалертс/Врите [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Разрешение оповещения. |
 > | /Оператионс/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Получение списка операций для поставщика ресурсов. |
 > | /Локатионс/оператионстатус/Реад [Microsoft. RecoveryServices](resource-provider-operations.md#microsoftrecoveryservices) | Возвращает состояние операции для данной операции |
@@ -1527,6 +1535,7 @@ ms.locfileid: "98683799"
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/operationsStatus/read",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/action",
+        "Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/accessToken/action",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/read",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/restore/action",
         "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/revokeInstantItemRecovery/action",
@@ -1569,6 +1578,12 @@ ms.locfileid: "98683799"
         "Microsoft.RecoveryServices/locations/backupStatus/action",
         "Microsoft.RecoveryServices/locations/backupPreValidateProtection/action",
         "Microsoft.RecoveryServices/locations/backupValidateFeatures/action",
+        "Microsoft.RecoveryServices/locations/backupAadProperties/read",
+        "Microsoft.RecoveryServices/locations/backupCrrJobs/action",
+        "Microsoft.RecoveryServices/locations/backupCrrJob/action",
+        "Microsoft.RecoveryServices/locations/backupCrossRegionRestore/action",
+        "Microsoft.RecoveryServices/locations/backupCrrOperationResults/read",
+        "Microsoft.RecoveryServices/locations/backupCrrOperationsStatus/read",
         "Microsoft.RecoveryServices/Vaults/monitoringAlerts/write",
         "Microsoft.RecoveryServices/operations/read",
         "Microsoft.RecoveryServices/locations/operationStatus/read",
@@ -2438,6 +2453,7 @@ ms.locfileid: "98683799"
 > | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/куеуесервицес/куеуес/мессажес/делете | Удаление одного или нескольких сообщений из очереди. |
 > | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/куеуесервицес/куеуес/мессажес/Реад | Просмотр или извлечение одного или нескольких сообщений из очереди. |
 > | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/куеуесервицес/куеуес/мессажес/Врите | Добавление сообщения в очередь. |
+> | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/куеуесервицес/куеуес/мессажес/процесс/Актион | Возвращение результата, полученного при обработке сообщения. |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -2460,7 +2476,8 @@ ms.locfileid: "98683799"
       "dataActions": [
         "Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete",
         "Microsoft.Storage/storageAccounts/queueServices/queues/messages/read",
-        "Microsoft.Storage/storageAccounts/queueServices/queues/messages/write"
+        "Microsoft.Storage/storageAccounts/queueServices/queues/messages/write",
+        "Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action"
       ],
       "notDataActions": []
     }
@@ -3932,6 +3949,49 @@ ms.locfileid: "98683799"
     }
   ],
   "roleName": "CosmosBackupOperator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cosmosrestoreoperator"></a>космосрестореоператор
+
+Можно выполнить действие восстановления для учетной записи базы данных Cosmos DB с режимом непрерывного резервного копирования.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft.Docументдб](resource-provider-operations.md#microsoftdocumentdb)/локатионс/ресторабледатабасеаккаунтс/Ресторе/Актион | Отправка запроса восстановления |
+> | [Microsoft.Docументдб](resource-provider-operations.md#microsoftdocumentdb)/локатионс/ресторабледатабасеаккаунтс/*/Реад |  |
+> | [Microsoft.Docументдб](resource-provider-operations.md#microsoftdocumentdb)/локатионс/ресторабледатабасеаккаунтс/Реад | Чтение учетной записи базы данных restorable или вывод списка всех учетных записей базы данных restorable |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can perform restore action for Cosmos DB database account with continuous backup mode",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/5432c526-bc82-444a-b7ba-57c5b0b5b34f",
+  "name": "5432c526-bc82-444a-b7ba-57c5b0b5b34f",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/restore/action",
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/*/read",
+        "Microsoft.DocumentDB/locations/restorableDatabaseAccounts/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "CosmosRestoreOperator",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -7788,8 +7848,12 @@ Microsoft. зрения Data пленку может создавать, чит�
 > | --- | --- |
 > | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
 > | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классических правил оповещения и управление ими |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/женерателиветокен/Реад | Маркер получения динамических метрик |
 > | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/метрикалертс/* | Создание новых правил оповещения и управление ими |
 > | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/компонентс/* | Создание компонентов Insights и управление ими |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/счедуледкуерирулес/* |  |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/топологи/Реад | Прочитать топологию |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/трансактионс/Реад | Чтение транзакций |
 > | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/вебтестс/* | Создание веб-тестов аналитики и управление ими |
 > | /Аваилабилитистатусес/Реад [Microsoft. ресаурцехеалс](resource-provider-operations.md#microsoftresourcehealth) | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
@@ -7815,8 +7879,12 @@ Microsoft. зрения Data пленку может создавать, чит�
       "actions": [
         "Microsoft.Authorization/*/read",
         "Microsoft.Insights/alertRules/*",
+        "Microsoft.Insights/generateLiveToken/read",
         "Microsoft.Insights/metricAlerts/*",
         "Microsoft.Insights/components/*",
+        "Microsoft.Insights/scheduledqueryrules/*",
+        "Microsoft.Insights/topology/read",
+        "Microsoft.Insights/transactions/read",
         "Microsoft.Insights/webtests/*",
         "Microsoft.ResourceHealth/availabilityStatuses/read",
         "Microsoft.Resources/deployments/*",

@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 02/03/2020
 ms.topic: how-to
-ms.openlocfilehash: 8901877ab3055c02dfc8c129fb35864418cd19d8
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 2b67eada5dfa89f95e2c9ae045c6bbe3fa0bb1ce
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549141"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576318"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Проверка на наличие ошибок в пуле и узле
 
@@ -24,7 +24,7 @@ ms.locfileid: "99549141"
 
 ### <a name="resize-timeout-or-failure"></a>Время ожидания изменения размера или сбой
 
-При создании пула или изменении размера имеющегося пула вы указываете целевое количество узлов. Операция создания или изменения размера завершается немедленно, но фактическое выделение новых узлов или удаление существующих может занять несколько минут. Вы указываете значение для времени ожидания изменения размера в API [создания](/rest/api/batchservice/pool/add) или [изменения размера](/rest/api/batchservice/pool/resize) . Если пакет не может получить целевое количество узлов в течение периода ожидания изменения размера, то пул переходит в устойчивое состояние и сообщает об ошибках изменения размера.
+При создании пула или изменении размера имеющегося пула вы указываете целевое количество узлов. Операция создания или изменения размера завершается немедленно, но фактическое выделение новых узлов или удаление существующих может занять несколько минут. Вы можете указать время ожидания изменения размера в API [создания](/rest/api/batchservice/pool/add) или [изменения размера](/rest/api/batchservice/pool/resize) . Если пакет не может получить целевое количество узлов в течение периода ожидания изменения размера, то пул переходит в устойчивое состояние и сообщает об ошибках изменения размера.
 
 Свойство [ResizeError](/rest/api/batchservice/pool/get#resizeerror) для самой последней оценки содержит список всех возникших ошибок.
 
@@ -151,7 +151,7 @@ ms.locfileid: "99549141"
 
 Чтобы восстановить непригодный для использования узел в пулах [VirtualMachineConfiguration](/rest/api/batchservice/pool/add#virtualmachineconfiguration) , можно удалить узел из пула с помощью [API удаления узлов](/rest/api/batchservice/pool/removenodes). Затем можно снова увеличить пул, чтобы заменить неисправный узел на новый. Для пулов [CloudServiceConfiguration](/rest/api/batchservice/pool/add#cloudserviceconfiguration) можно повторно создать образ узла с помощью [API-интерфейса повторного создания образа пакета](/rest/api/batchservice/computenode/reimage). Это приведет к очистке всего диска. В настоящее время восстановление из образа не поддерживается для пулов [VirtualMachineConfiguration](/rest/api/batchservice/pool/add#virtualmachineconfiguration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о [проверке ошибок заданий и задач](batch-job-task-error-checking.md).
 - Ознакомьтесь с [рекомендациями](best-practices.md) по работе с пакетной службой Azure.

@@ -1,14 +1,14 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 02/01/2021
+ms.date: 02/02/2021
 ms.topic: how-to
-ms.openlocfilehash: b214f63fba9a5d13aac0f4bf86ce0810f16f0c9c
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 8847c2e5ee4986d35ad676440720b150794003e8
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509475"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575912"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
@@ -49,9 +49,9 @@ ms.locfileid: "99509475"
 
 Вы можете просматривать [предупреждения](../../azure-monitor/platform/alerts-overview.md) для делегированных подписок в клиентах клиентов, которыми управляет.
 
-Чтобы автоматически обновлять оповещения для нескольких клиентов, используйте запрос к [графу ресурсов Azure](../../governance/resource-graph/overview.md) для фильтрации оповещений. Вы можете закрепить запрос на панели мониторинга и выбрать всех соответствующих клиентов и подписок.
+С помощью управляемого клиента можно [создавать, просматривать оповещения журнала действий и управлять ими](../../azure-monitor/platform/alerts-activity-log.md) в портал Azure или через API-интерфейсы и средства управления.
 
-В следующем примере запроса будут отображаться предупреждения с уровнем серьезности 0 и 1, которые обновляются каждые 60 минут.
+Чтобы автоматически обновлять оповещения для нескольких клиентов, используйте запрос к [графу ресурсов Azure](../../governance/resource-graph/overview.md) для фильтрации оповещений. Вы можете закрепить запрос на панели мониторинга и выбрать всех соответствующих клиентов и подписок. Например, приведенный ниже запрос будет отображать предупреждения серьезности 0 и 1, обновляя каждые 60 минут.
 
 ```kusto
 alertsmanagementresources
@@ -63,7 +63,7 @@ alertsmanagementresources
 | sort by tostring(StartTime)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Изучите [образец книги, созданной](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks)с помощью MVP, которая отслеживает отчеты о соответствии требованиям, [запросив журналы Управление обновлениями](../../automation/update-management/query-logs.md) в нескольких log Analytics рабочих областях. 
 - Дополнительные сведения об [Azure Monitor](../../azure-monitor/index.yml).
