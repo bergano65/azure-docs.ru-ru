@@ -138,7 +138,7 @@
       href: service-fabric-best-practices.md
 - name: 'Мониторинг, аудит и операции'
   items:
-    - name: Дополнительная защита от угроз
+    - name: Защита от угроз
       href: threat-detection.md
     - name: Ведение журналов и аудит Azure
       href: log-audit.md

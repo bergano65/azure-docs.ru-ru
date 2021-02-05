@@ -11,4 +11,4 @@
           topicHref: /azure/cloud-services/index
         - name: Развертывание Visual Studio
           tocHref: /visualstudio-docs/docs/
-          topicHref: /visualstudio-docs/docs/index
+          topicHref: /visualstudio/deployment

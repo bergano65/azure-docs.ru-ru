@@ -79,6 +79,8 @@
       href: load-balancer-standard-availability-zones.md
     - name: Конфигурация с плавающим IP-адресом
       href: load-balancer-floating-ip.md
+    - name: Режимы распределения
+      href: distribution-mode-concepts.md
     - name: Безопасность
       items:
         - name: Базовые средства безопасности
