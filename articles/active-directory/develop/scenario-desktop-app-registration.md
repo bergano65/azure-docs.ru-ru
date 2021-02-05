@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 46c8127a93cef8f662930fffd07a2fa3d22b8871
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 4031e43b3ec6f6f451fbc4888cc482249042690b
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753718"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582729"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Классическое приложение, вызывающее веб-API: регистрация приложения
 
@@ -47,7 +47,7 @@ URI перенаправления для использования в клас
 
 - Если вы создаете собственное приложение с собственным целевым кодом C или SWIFT для macOS, зарегистрируйте URI перенаправления на основе идентификатора пакета приложения в следующем формате: `msauth.<your.app.bundle.id>://auth` . Замените `<your.app.bundle.id>` идентификатором пакета своего приложения.
 - Если приложение использует только встроенную проверку подлинности Windows или имя пользователя и пароль, вам не нужно регистрировать универсальный код ресурса (URI) перенаправления для приложения. Эти потоки выполняют циклическое обращение к конечной точке платформы Microsoft Identity Platform версии 2.0. Приложение не будет вызываться обратно по любому конкретному URI.
-- Чтобы отличить [поток кода устройства](scenario-desktop-acquire-token.md#device-code-flow), [встроенную проверку подлинности Windows](scenario-desktop-acquire-token.md#integrated-windows-authentication)и [имя пользователя и пароль](scenario-desktop-acquire-token.md#username-and-password) из конфиденциального клиентского приложения с помощью потока учетных данных клиента, используемого в [управляющих приложениях](scenario-daemon-overview.md), ни один из них не требует URI перенаправления, необходимо настроить его как общедоступное клиентское приложение. Для достижения этой конфигурации они делают следующее.
+- Чтобы отличать [поток кода устройства](scenario-desktop-acquire-token.md#device-code-flow), [встроенную проверку подлинности Windows](scenario-desktop-acquire-token.md#integrated-windows-authentication)и [имя пользователя и пароль](scenario-desktop-acquire-token.md#username-and-password) из конфиденциального клиентского приложения с помощью потока учетных данных клиента, используемого в [управляющих приложениях](scenario-daemon-overview.md), ни один из них не требует URI перенаправления, настройте его как общедоступное клиентское приложение. Для достижения этой конфигурации они делают следующее.
 
     1. В <a href="https://portal.azure.com/" target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span> портал Azure</a>выберите свое приложение в **Регистрация приложений**, а затем выберите **Проверка подлинности**.
     1. В **дополнительных параметрах**  >  **разрешите общедоступные потоки клиентов**  >  **включить следующие мобильные и настольные потоки:** выберите **Да**.

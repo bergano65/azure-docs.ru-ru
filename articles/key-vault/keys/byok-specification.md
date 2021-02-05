@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: conceptual
-ms.date: 05/29/2020
+ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: feef35ef86a933f32949468366fea85eb87d4866
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 141abea0c0946c98b6dfe627f32f01682a18be44
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91315785"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581029"
 ---
 # <a name="bring-your-own-key-specification"></a>Спецификация BYOK
 
@@ -35,7 +35,7 @@ Key Vault клиент хочет безопасно передавать клю
 |---|---|---|---|
 |Ключ обмена ключами (KEK)|RSA|HSM Azure Key Vault|Пара ключей RSA с защитой HSM, созданная в Azure Key Vault
 Перенос ключа|AES|HSM от поставщика|Ключ AES [эфемерного], созданный HSM в локальной системе
-Целевой ключ|RSA, EC, AES|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault
+Целевой ключ|RSA, EC, AES (только управляемый HSM)|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault
 
 Ключ **обмена ключами**: ключ, поддерживающий аппаратный модуль HSM, созданный клиентом в хранилище ключей, в котором будет ИМПОРТИРОВАН ключ BYOK. Этот KEK должен иметь следующие свойства:
 
@@ -130,9 +130,16 @@ az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --fil
 
 Клиент перейдет по ключу (файл с расширением byok) на рабочую станцию, а затем выполните команду **AZ keyvault Key Import** , чтобы импортировать этот большой двоичный объект в качестве нового ключа, поддерживающего HSM, в Key Vault. 
 
+Чтобы импортировать ключ RSA, используйте следующую команду:
 ```azurecli
 az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file KeyTransferPackage-ContosoFirstHSMkey.byok --ops encrypt decrypt
 ```
+Чтобы импортировать ключ EC, необходимо указать тип ключа и имя кривой.
+
+```azurecli
+az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file --kty EC-HSM --curve-name "P-256" KeyTransferPackage-ContosoFirstHSMkey.byok --ops sign verify
+```
+
 
 При выполнении приведенной выше команды она приводит к отправке запроса REST API следующим образом:
 
@@ -140,7 +147,7 @@ az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey
 PUT https://contosokeyvaulthsm.vault.azure.net/keys/ContosoFirstHSMKey?api-version=7.0
 ```
 
-Тело запроса:
+Текст запроса при импорте ключа RSA:
 ```json
 {
   "key": {
@@ -156,11 +163,30 @@ PUT https://contosokeyvaulthsm.vault.azure.net/keys/ContosoFirstHSMKey?api-versi
   }
 }
 ```
+
+Текст запроса при импорте ключа EC:
+```json
+{
+  "key": {
+    "kty": "EC-HSM",
+    "crv": "P-256",
+    "key_ops": [
+      "sign",
+      "verify"
+    ],
+    "key_hsm": "<Base64 encoded BYOK_BLOB>"
+  },
+  "attributes": {
+    "enabled": true
+  }
+}
+```
+
 значение "key_hsm" — это все содержимое KeyTransferPackage-ContosoFirstHSMkey. byok, закодированное в формате Base64.
 
 ## <a name="references"></a>Ссылки
 - [Руководство разработчика Azure Key Vault](../general/developers-guide.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * Пошаговые инструкции BYOK: [Импорт ключей, защищенных с помощью HSM, в Key Vault (BYOK)](hsm-protected-keys-byok.md)
 

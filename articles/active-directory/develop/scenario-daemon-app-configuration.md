@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/19/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c858f48a67cd434a620fb610046833d29b7475f7
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 8a01ee4e2b0d4e72c1b17cf56953675e735ead79
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756589"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582896"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
@@ -111,7 +111,7 @@ ms.locfileid: "98756589"
 
 ### <a name="instantiate-the-msal-application"></a>Создание экземпляра приложения MSAL
 
-Чтобы создать экземпляр приложения MSAL, необходимо добавить, создать ссылку или импортировать пакет MSAL (в зависимости от языка).
+Чтобы создать экземпляр приложения MSAL, добавьте, создайте ссылку или импортируйте пакет MSAL (в зависимости от языка).
 
 Конструкция отличается в зависимости от того, используете ли вы клиентские секреты или сертификаты (или, в качестве расширенного сценария, подписанные утверждения).
 
@@ -261,7 +261,7 @@ ConfidentialClientApplication cca =
                 .build();
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```Java
 PrivateKey key = getPrivateKey(); /* RSA private key to sign the assertion */
@@ -289,7 +289,7 @@ MSAL.NET имеет два метода для предоставления по
 - `.WithClientAssertion()`
 - `.WithClientClaims()`
 
-При использовании необходимо `WithClientAssertion` предоставить подписанный JWT. Этот расширенный сценарий подробно описан в [проверочных утверждениях клиента](msal-net-client-assertions.md).
+При использовании `WithClientAssertion` Предоставьте подписанный JWT. Этот расширенный сценарий подробно описан в [проверочных утверждениях клиента](msal-net-client-assertions.md).
 
 ```csharp
 string signedClientAssertion = ComputeAssertion();

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: c58f4a553073eb3ed062ef9ec2a66c8e4f40e57b
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 4a244c543aa83ae84891e3f942995dc340a7209d
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785131"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582661"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, которое вызывает веб-API: Получение маркера
 
@@ -445,7 +445,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-В MSAL.NET необходимо использовать:
+В MSAL.NET используйте:
 
 ```csharp
 AcquireTokenByIntegratedWindowsAuth(IEnumerable<string> scopes)
@@ -922,7 +922,7 @@ if not result:
 
 ### <a name="device-code-flow"></a>Поток кода устройства
 
-Если вы создаете программу командной строки, которая не содержит веб-элементы управления, и вы не можете или не хотите использовать предыдущие потоки, необходимо использовать поток кода устройства.
+Если вы создаете программу командной строки, которая не содержит веб-элементы управления, и вы не можете использовать предыдущие последовательности или не хотите, используйте поток кода устройства.
 
 Для интерактивной проверки подлинности в Azure AD требуется веб-браузер. Дополнительные сведения см. в разделе [Использование веб-браузеров](https://aka.ms/msal-net-uses-web-browser). Для проверки подлинности пользователей на устройствах или в операционных системах без веб-браузера поток кода устройства позволяет пользователю использовать другое устройство (например, другой компьютер или мобильный телефон) для входа в интерактивном режиме. С помощью потока кода устройства приложение получает маркеры через двухэтапный процесс, предназначенный для этих устройств или операционных систем. Это могут быть приложения, работающие в системе Интернета вещей или программах командной строки (CLI). Идея состоит в следующем.
 
@@ -1405,6 +1405,6 @@ namespace CommonCacheMsalV3
 
 [!INCLUDE [advanced-token-caching](../../../includes/advanced-token-cache.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии, [вызовите веб-API из классического приложения](scenario-desktop-call-api.md).

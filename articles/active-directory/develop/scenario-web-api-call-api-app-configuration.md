@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b8360a22c815fa28626bb07a1518bd82ba6e3e46
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: d1ab7da9753642093505fa91ea76b9327612a6ac
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753516"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582372"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Веб-API, вызывающий веб-API: конфигурация кода
 
@@ -33,7 +33,7 @@ ms.locfileid: "98753516"
 
 ## <a name="client-secrets-or-client-certificates"></a>Секреты клиента или сертификаты клиента
 
-Учитывая, что веб-API теперь вызывает нисходящий веб-API, необходимо предоставить секрет клиента или сертификат клиента в *appsettings.js* в файле. Можно также добавить раздел, который указывает:
+Учитывая, что веб-API теперь вызывает нисходящий веб-API, предоставьте секрет клиента или сертификат клиента в *appsettings.js* в файле. Можно также добавить раздел, который указывает:
 
 - URL-адрес подчиненного веб-API
 - Области, необходимые для вызова API
@@ -169,7 +169,7 @@ public class Startup
 :::image type="content" source="media/scenarios/microsoft-identity-web-startup-cs.svg" alt-text="Блок-схема, показывающая параметры конфигурации службы в загрузочном точке C S для вызова Web API и указания реализации кэша маркеров":::
 
 > [!NOTE]
-> Чтобы полностью понять эти примеры кода, ознакомьтесь с [основами ASP.NET Core](/aspnet/core/fundamentals), в частности со сведениями о [параметрах](/aspnet/core/fundamentals/configuration/options) и [внедрении зависимостей](/aspnet/core/fundamentals/dependency-injection).
+> Чтобы полностью понять примеры кода, ознакомьтесь с [ASP.NET Core фундаментальными принципами](/aspnet/core/fundamentals)и в частности с [внедрением](/aspnet/core/fundamentals/dependency-injection) и [параметрами](/aspnet/core/fundamentals/configuration/options)зависимостей.
 
 # <a name="java"></a>[Java](#tab/java)
 

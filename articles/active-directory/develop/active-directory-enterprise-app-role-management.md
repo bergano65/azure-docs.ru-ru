@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 10b61dd4b6cc3a99b8eecf86cb5ba7e718d64743
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 076054b7240712fec57d0908615ce7abbfb62013
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015119"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582236"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений
 
@@ -30,7 +30,7 @@ ms.locfileid: "98015119"
 
 ## <a name="when-to-use-this-feature"></a>Когда следует использовать эту функцию
 
-Эта функция понадобится вам для передачи в приложение пользовательских ролей в ответе SAML. Вы сможете создать любое число ролей и передать их обратно в приложение из Azure AD.
+Используйте эту функцию, если приложение должно использовать пользовательские роли в ответе SAML, возвращенном Azure AD. Можно создать любое необходимое количество ролей.
 
 ## <a name="create-roles-for-an-application"></a>Создание ролей для приложения
 
@@ -139,7 +139,7 @@ ms.locfileid: "98015119"
     ![Области "Изменение назначения" и "Выбор роли"](./media/active-directory-enterprise-app-role-management/graph-explorer-new6.png)
 
     
-    Необходимо обновить сеанс на портале Azure, чтобы отобразились новые роли.
+    Обновите сеанс в портал Azure, чтобы увидеть новые роли.
 
 1. Обновите таблицу **Атрибуты**, чтобы определить настраиваемое сопоставление утверждения роли.
 
@@ -255,7 +255,7 @@ ms.locfileid: "98015119"
 
     Прежде чем роль можно будет удалить, ее необходимо отключить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные инструкции см. в [документации по приложениям](../saas-apps/tutorial-list.md).
 

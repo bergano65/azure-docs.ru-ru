@@ -13,12 +13,12 @@ ms.date: 12/3/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 22352f6d0c7dc48b98be5fcb4101f262adc480d6
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: cfbcc8523ff1d5858317a3654b58ec7b2d23607a
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98795627"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582032"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы удостоверений Майкрософт
 
@@ -101,12 +101,12 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
 
-Получив сертификат, необходимо вычислить следующие значения:
+Выполнив получение сертификата, вычислите следующие значения:
 
 - `$base64Thumbprint` — Значение хэша сертификата в кодировке Base64
 - `$base64Value` — Значение необработанных данных сертификата в кодировке Base64
 
-Также необходимо предоставить идентификатор GUID для определения ключа в манифесте приложения (`$keyId`).
+Укажите идентификатор GUID для задания ключа в манифесте приложения ( `$keyId` ).
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
 1. Щелкните **Манифест**, чтобы открыть манифест приложения.
@@ -136,7 +136,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 |`client_assertion_type`|`urn:ietf:params:oauth:client-assertion-type:jwt-bearer`| Это фиксированное значение, указывающее, что используются учетные данные сертификата. |
 |`client_assertion`| JWT |Это созданное выше JWT. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Библиотека MSAL.NET обрабатывает этот сценарий](msal-net-client-assertions.md) в одной строке кода.
 

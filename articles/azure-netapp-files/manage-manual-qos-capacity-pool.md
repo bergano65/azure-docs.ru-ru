@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/28/2020
+ms.date: 02/04/2021
 ms.author: b-juche
-ms.openlocfilehash: 5e44c2cfc81256a8715c7c625648b6ec25bcd319
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 566cc3b1192d632bbffb8f9ef091f291b4bcc6e6
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91929223"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581161"
 ---
 # <a name="manage-a-manual-qos-capacity-pool"></a>Управление пулом емкости качества обслуживания вручную
 
@@ -28,7 +28,7 @@ ms.locfileid: "91929223"
 Сведения о типах QoS см. в разделе [иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md) и [рекомендации по производительности для Azure NetApp Files](azure-netapp-files-performance-considerations.md) .  
 
 ## <a name="register-the-feature"></a>регистрация компонента
-Сейчас функция типа QoS вручную доступна в предварительной версии. Если эта функция используется впервые, необходимо сначала зарегистрировать эту функцию.
+Сейчас функция типа QoS вручную доступна в предварительной версии. Если эта функция используется впервые, ее необходимо сначала зарегистрировать.
   
 1.  Зарегистрируйте функцию:
 
@@ -59,7 +59,8 @@ ms.locfileid: "91929223"
 Вы можете изменить пул ресурсов, который в настоящее время использует автоматический тип QoS, для использования типа QoS вручную.  
 
 > [!IMPORTANT]
-> Установка для типа емкости значения QoS вручную является постоянным изменением. Невозможно преобразовать средство ручной емкости типа QoS в пул ресурсов автоматического качества обслуживания. 
+> Установка для типа емкости значения QoS вручную является постоянным изменением. Невозможно преобразовать средство ручной емкости типа QoS в пул ресурсов автоматического качества обслуживания.  
+> Во время преобразования уровни пропускной способности могут быть ограничены, чтобы соответствовать ограничениям пропускной способности для томов типа QoS вручную. См. раздел [ограничения ресурсов для Azure NetApp Files](azure-netapp-files-resource-limits.md#resource-limits).
 
 1. В колонке управления для учетной записи NetApp щелкните **Пулы ресурсов** , чтобы отобразить существующие пулы мощностей.   
  
@@ -84,12 +85,12 @@ ms.locfileid: "91929223"
 
     ![Изменение пропускной способности QoS](../media/azure-netapp-files/change-qos-throughput.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги  
+## <a name="next-steps"></a>Следующие шаги  
 
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
 * [Метрики для Azure NetApp Files](azure-netapp-files-metrics.md)
 * [Рекомендации по ускорению Azure NetApp Files](azure-netapp-files-performance-considerations.md)
-* [Устранение проблем с пулом ресурсов](troubleshoot-capacity-pools.md)
+* [Устранение неполадок с пулами емкости](troubleshoot-capacity-pools.md)
 * [Иерархия хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
 * [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 * [Модель затрат для Azure NetApp Files](azure-netapp-files-cost-model.md)

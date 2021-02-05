@@ -12,12 +12,12 @@ ms.date: 11/25/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: b35b39d7072b22d9cc3f7b4f4ef8886431b06f69
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 7e2fcf2dc0dc53038b82bbf182cb12f580d88357
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754669"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583592"
 ---
 # <a name="scopes-for-a-web-api-accepting-v10-tokens"></a>Области для веб-API, принимающие токены версии 1.0
 
@@ -37,7 +37,7 @@ var scopes = new [] {  ResourceId+"/user_impersonation"};
 var scopes = [ ResourceId + "/user_impersonation"];
 ```
 
-Для чтения и записи в MSAL.NET Azure AD с помощью API Microsoft Graph (HTTPS: \/ /Graph.Microsoft.com/) необходимо создать список областей, как показано в следующих примерах:
+Для чтения и записи в MSAL.NET Azure AD с помощью API Microsoft Graph (HTTPS: \/ /Graph.Microsoft.com/) создайте список областей, как показано в следующих примерах:
 
 ```csharp
 string ResourceId = "https://graph.microsoft.com/";
@@ -49,7 +49,7 @@ var ResourceId = "https://graph.microsoft.com/";
 var scopes = [ ResourceId + "Directory.Read", ResourceID + "Directory.Write"];
 ```
 
-Чтобы записать область, соответствующую Azure Resource Manager API (HTTPS: \/ /Management.Core.Windows.NET/), необходимо запросить следующую область (Обратите внимание на две косые черты):
+Чтобы записать область, соответствующую Azure Resource Manager API (HTTPS: \/ /Management.Core.Windows.NET/), запросите следующую область (Обратите внимание на две косые черты):
 
 ```csharp
 var scopes = new[] {"https://management.core.windows.net//user_impersonation"};
@@ -59,7 +59,7 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 ```
 
 > [!NOTE]
-> Здесь необходимо использовать две косые черты, поскольку API Azure Resource Manager требует наличия косой черты в утверждении "aud", а вторая косая черта отделяет имя API от области действия.
+> Используйте две косые черты, так как Azure Resource Manager API ждет косую черту в своем утверждении аудитории (AUD), а затем есть косая черта, чтобы отделить имя API от области.
 
 Azure AD использует следующую логику:
 

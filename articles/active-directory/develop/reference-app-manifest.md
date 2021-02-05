@@ -13,12 +13,12 @@ ms.date: 02/02/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: d544d884a82a7532bf343f38049102dfccae342f
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 0291d2e6f0cee07bd7164b63dfd4ac8b02c42a01
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507285"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99583049"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Манифест приложения Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "99507285"
 Вы можете настроить атрибуты приложения через портал Azure или программным способом с помощью [REST API](/graph/api/resources/application) или [PowerShell](/powershell/module/azuread#applications). Но в некоторых сценариях манифест приложения придется редактировать напрямую, чтобы настроить атрибут приложения. Ниже приведены соответствующие сценарии.
 
 * Если вы зарегистрировали приложение c мультитенантной учетной записью AAD и личной учетной записью Майкрософт, вы не сможете изменить в пользовательском интерфейсе поддерживаемые учетные записи Майкрософт. Вместо этого для изменения типа поддерживаемых учетных записей придется использовать редактор манифеста приложения.
-* Если вам нужно определить разрешения и роли, которые поддерживает приложение, необходимо изменить манифест приложения.
+* Чтобы определить разрешения и роли, поддерживаемые приложением, необходимо изменить манифест приложения.
 
 ## <a name="configure-the-app-manifest"></a>Настройка манифеста приложения
 

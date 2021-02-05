@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 45f3a066283a921f60909a4aa3cfdc76f3faad06
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 54caea62feed6ae7c082a979901999a5dcb3bd71
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753272"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582253"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое входит в систему пользователей: конфигурация кода
 
@@ -64,13 +64,13 @@ ms.locfileid: "98753272"
 
 ## <a name="configuration-files"></a>Файлы конфигурации.
 
-Веб-приложения, которые входят в систему пользователей с помощью платформы Microsoft Identity, настраиваются с помощью файлов конфигурации. Параметры, которые необходимо заполнить:
+Веб-приложения, которые входят в систему пользователей с помощью платформы Microsoft Identity, настраиваются с помощью файлов конфигурации. Ниже приведены значения, которые необходимо указать в конфигурации.
 
 - Облачный экземпляр ( `Instance` ), если вы хотите, чтобы приложение выполнялось в национальных облаках, например
 - Аудитория в ИДЕНТИФИКАТОРе клиента ( `TenantId` )
 - Идентификатор клиента ( `ClientId` ) для приложения, скопированный из портал Azure
 
-В некоторых случаях приложения могут быть параметризованным с помощью `Authority` , что является объединением `Instance` и `TenantId` .
+Также можно увидеть ссылки на `Authority` . `Authority`Значение представляет собой объединение `Instance` `TenantId` значений и.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -133,7 +133,7 @@ ms.locfileid: "98753272"
 }
 ```
 
-В портал Azure идентификаторы URI ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. Для двух предыдущих файлов конфигурации они бы были `https://localhost:44321/signin-oidc` . Причина в том, что `applicationUrl` это `http://localhost:3110` , но `sslPort` указано (44321). `CallbackPath` имеет `/signin-oidc` , как определено в `appsettings.json` .
+В портал Azure идентификаторы URI перенаправления, регистрируемые на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. Для двух предыдущих файлов конфигурации они бы были `https://localhost:44321/signin-oidc` . Причина в том, что `applicationUrl` это `http://localhost:3110` , но `sslPort` указано (44321). `CallbackPath` имеет `/signin-oidc` , как определено в `appsettings.json` .
 
 Таким же образом URI выхода будет иметь значение `https://localhost:44321/signout-oidc` .
 
@@ -161,7 +161,7 @@ ms.locfileid: "98753272"
   </appSettings>
 ```
 
-В портал Azure идентификаторы URI ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. То есть они должны быть `https://localhost:44326/` .
+В портал Azure идентификаторы URI ответа, регистрируемые на странице **проверки подлинности** для вашего приложения, должны соответствовать этим URL-адресам. То есть они должны быть `https://localhost:44326/` .
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -175,7 +175,7 @@ aad.redirectUriSignin=http://localhost:8080/msal4jsample/secure/aad
 aad.redirectUriGraph=http://localhost:8080/msal4jsample/graph/me
 ```
 
-В портал Azure коды URI ответа, которые необходимо зарегистрировать на странице **проверки подлинности** для приложения, должны совпадать с `redirectUri` экземплярами, которые определяет приложение. То есть они должны быть `http://localhost:8080/msal4jsample/secure/aad` и `http://localhost:8080/msal4jsample/graph/me` .
+В портал Azure идентификаторы URI ответа, регистрируемые на странице **проверки подлинности** для приложения, должны совпадать с `redirectUri` экземплярами, которые определяет приложение. То есть они должны быть `http://localhost:8080/msal4jsample/secure/aad` и `http://localhost:8080/msal4jsample/graph/me` .
 
 # <a name="python"></a>[Python](#tab/python)
 

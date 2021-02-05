@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/12/2020
+ms.date: 02/04/2021
 ms.author: b-juche
-ms.openlocfilehash: 239b985bf45942afbff8ca49d7e15ead24456304
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 13acee8b21adf946192544afcea17b4a8d9b9ec9
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993987"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581131"
 ---
 # <a name="manual-qos-capacity-pool"></a>Управляемый вручную пул емкости QoS
 
@@ -29,7 +29,7 @@ ms.locfileid: "91993987"
 
 [Тип QoS](azure-netapp-files-understand-storage-hierarchy.md#qos_types) является атрибутом пула ресурсов. Azure NetApp Files предоставляет два типа QoS пулов емкости — Auto (по умолчанию) и вручную.  
 
-В пуле ресурсов *ручного обслуживания вручную* можно независимо назначать емкость и пропускную способность тома. Общая пропускная способность всех томов, созданных с помощью управляемого вручную пула емкости QoS, ограничена общей пропускной способностью пула. Она определяется сочетанием размера пула и пропускной способности на уровне службы. 
+В пуле ресурсов *ручного обслуживания вручную* можно независимо назначать емкость и пропускную способность тома. Минимальные и максимальные уровни пропускной способности см. в разделе [ограничения ресурсов для Azure NetApp Files](azure-netapp-files-resource-limits.md#resource-limits). Общая пропускная способность всех томов, созданных с помощью управляемого вручную пула емкости QoS, ограничена общей пропускной способностью пула. Она определяется сочетанием размера пула и пропускной способности на уровне службы. 
 
 В пуле ресурсов *автоматического* качества обслуживания пропускная способность автоматически назначается томам в пуле, пропорционально квоте размера, назначенной томам.  
 
@@ -47,7 +47,7 @@ ms.locfileid: "91993987"
 
 Для использования типа QoS вручную требуется [зарегистрировать компонент](manage-manual-qos-capacity-pool.md#register-the-feature).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление пулом емкости качества обслуживания вручную](manage-manual-qos-capacity-pool.md)
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
@@ -60,4 +60,4 @@ ms.locfileid: "91993987"
 * [Создание тома SMB](azure-netapp-files-create-volumes-smb.md)
 * [Создание тома с двумя протоколами](create-volumes-dual-protocol.md)
 * [Метрики для Azure NetApp Files](azure-netapp-files-metrics.md)
-* [Устранение проблем с пулом ресурсов](troubleshoot-capacity-pools.md)
+* [Устранение неполадок с пулами емкости](troubleshoot-capacity-pools.md)

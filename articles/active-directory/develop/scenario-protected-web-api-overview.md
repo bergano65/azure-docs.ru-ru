@@ -12,18 +12,18 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c9cc8e6fcc796cfc7a09cf7bc1431646a6603af0
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 434c255f0b9634e0d17bad1627ddd92af9498bfe
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442979"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582440"
 ---
 # <a name="scenario-protected-web-api"></a>Сценарий: защищенный веб-API
 
 В этом сценарии вы узнаете, как предоставить веб-API. Вы также узнаете, как защитить веб-API таким образом, чтобы доступ к нему могли получить только пользователи, прошедшие проверку подлинности.
 
-Чтобы использовать веб-API, необходимо либо включить прошедшие проверку подлинности пользователей с помощью рабочих и учебных учетных записей, либо включить личные учетные записи Майкрософт.
+Чтобы использовать веб-API, можно включить пользователей, прошедших проверку подлинности, с помощью рабочих и учебных учетных записей или включить личные учетные записи Майкрософт.
 
 ## <a name="specifics"></a>Особенности
 
@@ -40,6 +40,6 @@ ms.locfileid: "94442979"
 
 [!INCLUDE [recommended-topics](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии — [Регистрация приложения](scenario-protected-web-api-app-registration.md).

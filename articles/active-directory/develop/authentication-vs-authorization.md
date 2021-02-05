@@ -13,12 +13,12 @@ ms.date: 05/22/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: b81b34010736bce33085cb1ebf0faa3da6a41bd6
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 5244a8e572abb56c00d87d0bdd7e8d1291af9b9e
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755394"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581913"
 ---
 # <a name="authentication-vs-authorization"></a>Проверка подлинности и авторизация
 
@@ -34,7 +34,7 @@ ms.locfileid: "98755394"
 
 ## <a name="authentication-and-authorization-using-the-microsoft-identity-platform"></a>Проверка подлинности и авторизация с помощью платформы Microsoft Identity
 
-Создание приложений, которые сохраняют свои собственные сведения о имени пользователя и пароле, влечет за собой высокий уровень административной нагрузки при необходимости добавления или удаления пользователей в нескольких приложениях. Вместо этого ваши приложения могут делегировать ответственность за централизованный поставщик удостоверений.
+Создание приложений, которые сохраняют свои собственные сведения о имени пользователя и пароле, влечет за собой высокий уровень административной нагрузки при добавлении или удалении пользователей в нескольких приложениях. Вместо этого ваши приложения могут делегировать ответственность за централизованный поставщик удостоверений.
 
 Azure Active Directory (Azure AD) — это централизованный поставщик удостоверений в облаке. Делегирование проверки подлинности и авторизации в него позволяет выполнять такие сценарии, как:
 

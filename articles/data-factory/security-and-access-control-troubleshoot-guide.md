@@ -5,15 +5,15 @@ services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 01/05/2021
+ms.date: 02/04/2021
 ms.author: lle
 ms.reviewer: craigg
-ms.openlocfilehash: 70e4d0c1a9f26f83924c1343e4e8e51c5595b324
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 37da2869f0cf315ac0a6851c9a77dcee4debf71a
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944519"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581692"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Устранение неполадок, связанных с управлением безопасностью и доступом в фабрике данных Azure
 
@@ -88,9 +88,10 @@ ms.locfileid: "98944519"
 #### <a name="resolution"></a>Решение
 
 Чтобы устранить эту проблему, выполните следующие действия.
-- См. статью [Частная ссылка Azure для фабрики данных Azure](./data-factory-private-link.md#dns-changes-for-private-endpoints) . Инструкция предназначена для настройки частной зоны DNS или сервера для разрешения полного доменного имени фабрики данных в частный IP-адрес.
 
-- В качестве долгосрочного решения рекомендуется использовать пользовательский DNS-сервер. Однако если вы не хотите настраивать частную зону или сервер DNS, попробуйте следующее временное решение:
+- Как вариант, мы хотели бы предложить вам вручную добавить "ссылку на виртуальную сеть" в фабрике данных "зона DNS" частной связи ". Дополнительные сведения см. в статье [Частная ссылка Azure для фабрики данных Azure](./data-factory-private-link.md#dns-changes-for-private-endpoints) . Инструкция предназначена для настройки частной зоны DNS или пользовательского DNS-сервера для разрешения полного доменного имени фабрики данных в частный IP-адрес. 
+
+- Однако если вы не хотите настраивать частную зону DNS или пользовательский DNS-сервер, попробуйте следующее временное решение:
 
   1. Измените файл узла в Windows и сопоставьте частный IP-адрес (закрытую конечную точку фабрики данных Azure) с полным доменным именем фабрики данных Azure.
   

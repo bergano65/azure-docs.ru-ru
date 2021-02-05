@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.openlocfilehash: 92d0dad86b3f048eb96dd7b17ed09f6e20d7cde2
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 812bf7bd68362667fcd1b636d0d28fdbb21c1409
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063303"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99582355"
 ---
 # <a name="microsoft-identity-platform-token-exchange-scenarios-with-saml-and-oidcoauth"></a>Сценарии обмена маркерами платформы идентификации Microsoft Identity с SAML и OIDC/OAuth
 
 SAML и OpenID Connect Connect (OIDC)/OAuth — это популярные протоколы, используемые для реализации единого Sign-On (SSO). Некоторые приложения могут реализовывать только SAML, а другие могут только реализовать OIDC/OAuth. Оба протокола используют токены для обмена секретами. Дополнительные сведения о SAML см. в разделе [Single Sign-On протокол SAML](single-sign-on-saml-protocol.md). Дополнительные сведения о OIDC/OAuth см. в статье [протоколы oauth 2,0 и OpenID Connect Connect на платформе Microsoft Identity](active-directory-v2-protocols.md).
 
-В этой статье описывается распространенный сценарий, в котором приложение реализует SAML, но необходимо вызвать API Graph, в котором используется OIDC/OAuth. Для пользователей, работающих с этим сценарием, предоставляется основное руководство.
+В этой статье описывается типичный сценарий, в котором приложение реализует SAML, но вызывает API Graph, который использует OIDC/OAuth. Для пользователей, работающих с этим сценарием, предоставляется основное руководство.
 
 ## <a name="scenario-you-have-a-saml-token-and-want-to-call-the-graph-api"></a>Сценарий. у вас есть токен SAML, который требуется вызвать API Graph
 Многие приложения реализуются с помощью SAML. Однако API Graph использует протоколы OIDC/OAuth. Можно, хотя и не тривиальны, добавлять функции OIDC/OAuth в приложение SAML. После того как функциональные возможности OAuth доступны в приложении, можно использовать API Graph.
@@ -32,5 +32,5 @@ SAML и OpenID Connect Connect (OIDC)/OAuth — это популярные пр
 > [!NOTE]
 > Рекомендуемой библиотекой для добавления поведения OIDC/OAuth является библиотека проверки подлинности Майкрософт (MSAL). Дополнительные сведения о MSAL см. в статье [Обзор библиотеки проверки подлинности Майкрософт (MSAL)](msal-overview.md). Предыдущая библиотека называлась Библиотека проверки подлинности Active Directory (ADAL), но не рекомендуется, так как MSAL заменяет ее.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

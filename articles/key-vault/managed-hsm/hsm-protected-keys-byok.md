@@ -6,14 +6,14 @@ author: amitbapat
 tags: azure-resource-manager
 ms.service: key-vault
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: 444f279f8e96486bd6ad61a2ea2640a18b491c9c
-ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
+ms.openlocfilehash: 1a15ed6b92ade96dd2ed9ef6ffbbe17e2b1452ef
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222240"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581420"
 ---
 # <a name="import-hsm-protected-keys-to-managed-hsm-byok"></a>Импорт ключей, защищенных с АППАРАТным модулем безопасности, в управляемый HSM (BYOK)
 
@@ -69,17 +69,20 @@ az login
 |Cryptomathic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>nCipher</li><li>Thales</li><li>Utimaco</li></ul>Дополнительные сведения см. на [сайте Cryptomathic](https://www.cryptomathic.com/azurebyok).|[Новое средство BYOK и документация для Cryptomathic](https://www.cryptomathic.com/azurebyok)|
 |Securosys SA|Производитель, HSM как услуга|Семейство Primus HSM, Securosys Clouds HSM|[Новое средство BYOK и документация для Primus](https://www.securosys.com/primus-azure-byok)|
 |StorMagic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Дополнительные сведения см. на [сайте StorMagic](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm).|[SvKMS и Azure Key Vault (BYOK)](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
-|IBM|Изготовитель|IBM 476x, Криптоекспресс|[IBM Enterprise Key Management Foundation](https://www.ibm.com/security/key-management/ekmf-bring-your-own-key-azure)|
+|IBM|Изготовитель|IBM 476x, CryptoExpress|[IBM Enterprise Key Management Foundation](https://www.ibm.com/security/key-management/ekmf-bring-your-own-key-azure)|
 ||||
 
 
 ## <a name="supported-key-types"></a>Поддерживаемые типы ключей
 
-|Имя раздела|Тип ключа|Размер ключа|Исходный домен|Описание|
+|Имя раздела|Тип ключа|Размер ключа/кривая|Исходный домен|Описание|
 |---|---|---|---|---|
 |Ключ обмена ключами (KEK)|RSA| 2048-разрядный<br />3072-разрядный<br />4096-разрядный|Управляемое устройство HSM|Пара ключей RSA с АППАРАТным модулем безопасности, созданная в управляемом HSM|
-|Целевой ключ|RSA|2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM от поставщика|Ключ для передачи в управляемый модуль HSM|
-
+|Целевой ключ|
+||RSA|2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM от поставщика|Ключ для передачи в управляемый модуль HSM|
+||EC|P-256<br />P-384<br />P-521|HSM от поставщика|Ключ для передачи в управляемый модуль HSM|
+||Симметричный ключ (Oct-HSM)|128-разрядный<br />192-разрядный<br />256-разрядный|HSM от поставщика|Ключ для передачи в управляемый модуль HSM|
+||||
 ## <a name="generate-and-transfer-your-key-to-the-managed-hsm"></a>Создание и перенос ключа в управляемый модуль HSM
 
 Чтобы создать и переместить ключ в управляемый модуль HSM, выполните следующие действия.

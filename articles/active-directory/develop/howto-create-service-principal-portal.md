@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 284ab3a2aabb2395636982237159117a10151019
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: d20a363a0320ca45f22183e54bcc390d4733c8bc
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014949"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581760"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -55,7 +55,7 @@ ms.locfileid: "98014949"
 
 1. Найдите и выберите **подписки** или выберите **подписки** на **домашней** странице.
 
-   ![Поиск](./media/howto-create-service-principal-portal/select-subscription.png)
+   ![Система поиска](./media/howto-create-service-principal-portal/select-subscription.png)
 
 1. Выберите подписку, в которой необходимо создать субъект-службу.
 
@@ -115,7 +115,7 @@ ms.locfileid: "98014949"
 
 ## <a name="get-tenant-and-app-id-values-for-signing-in"></a>Получение значений идентификатора клиента и приложения для входа
 
-При программном входе необходимо передать идентификатор клиента с запросом проверки подлинности и ИДЕНТИФИКАТОРом приложения.  Вам также потребуется сертификат или ключ проверки подлинности (описывается в следующем разделе). Получить эти значения можно следующим образом.
+При программном входе передайте идентификатор клиента с запросом проверки подлинности и ИДЕНТИФИКАТОРом приложения.  Вам также потребуется сертификат или ключ проверки подлинности (описывается в следующем разделе). Получить эти значения можно следующим образом.
 
 1. Выберите **Azure Active Directory**.
 1. В Azure Active Directory в разделе **Регистрация приложений** выберите нужное приложение.
@@ -162,7 +162,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 
 1. Выберите **Добавить**.
 
-После регистрации сертификата в приложении на портале регистрации приложений необходимо включить код клиентского приложения для использования сертификата.
+После регистрации сертификата в приложении на портале регистрации приложений включите код клиентского приложения для использования сертификата.
 
 ### <a name="option-2-create-a-new-application-secret"></a>Вариант 2. Создание нового секрета приложения
 
@@ -186,7 +186,7 @@ $cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocati
 1. Выберите **Добавить** , чтобы добавить политику доступа, а затем нажмите кнопку **сохранить** , чтобы зафиксировать изменения.
     ![Добавление политики доступа](./media/howto-create-service-principal-portal/add-access-policy.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [использовать Azure PowerShell для создания субъекта-службы](howto-authenticate-service-principal-powershell.md).
 * Дополнительные сведения об указании политик безопасности см. в статье [Управление доступом на основе ролей в Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).
 * Список доступных действий, которые можно разрешить или запретить пользователям, см. в разделе [Операции поставщиков ресурсов Azure Resource Manager](../../role-based-access-control/resource-provider-operations.md).

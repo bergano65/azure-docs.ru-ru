@@ -2,13 +2,13 @@
 title: Настройка Azure Backup Server для решения Azure VMware
 description: Настройте среду решения Azure VMware для резервного копирования виртуальных машин с помощью Azure Backup Server.
 ms.topic: how-to
-ms.date: 10/23/2020
-ms.openlocfilehash: 7885c0bc73bd5f7cd802e76ed9db470f77eda30d
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.date: 02/04/2021
+ms.openlocfilehash: e9204b9f86c7e9ef67d2e3d6b45ccf4248d00b32
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703408"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581488"
 ---
 # <a name="set-up-azure-backup-server-for-azure-vmware-solution"></a>Настройка Azure Backup Server для решения Azure VMware
 
@@ -389,7 +389,7 @@ Azure Backup Server v3 принимает только тома хранилищ
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Перейдите к следующему руководству, чтобы узнать, как настроить резервное копирование виртуальных машин VMware, работающих в решении VMware для Azure, с помощью Azure Backup Server.
+Теперь, когда вы узнали, как настроить Azure Backup Server для решения Azure VMware, вы можете узнать о следующих возможностях:
 
-> [!div class="nextstepaction"]
-> [Настройка резервного копирования виртуальных машин решения Azure VMware](backup-azure-vmware-solution-virtual-machines.md)
+- [Настройка резервного копирования для виртуальных машин решения Azure VMware](backup-azure-vmware-solution-virtual-machines.md).
+- [Защита виртуальных машин решения Azure VMware с помощью интеграции с центром безопасности Azure](azure-security-integration.md).
