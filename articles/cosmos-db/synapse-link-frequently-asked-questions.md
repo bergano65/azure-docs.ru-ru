@@ -6,12 +6,12 @@ ms.author: rosouz
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: 82133f990c1714276aa13ff22c3f19d0993d16df
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cef5f178ea879ba98df90da36ec9c4b639dd100a
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488720"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627788"
 ---
 # <a name="frequently-asked-questions-about-azure-synapse-link-for-azure-cosmos-db"></a>Часто задаваемые вопросы об Azure Synapse Link для Azure Cosmos DB
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -109,7 +109,7 @@ Azure Cosmos DB гарантирует изолированное выполн�
 
 ## <a name="analytical-time-to-live-ttl"></a>Аналитический срок жизни
 
-### <a name="is-ttl-for-analytical-data-supported-at-both-container-and-item-level"></a>Поддерживается ли срок жизни для аналитических данных на уровне контейнеров и элементов одновременно?
+### <a name="is-ttl-for-analytical-data-supported-at-both-container-and-item-level"></a>Поддерживается ли TTL для аналитических данных на уровне контейнеров и элементов?
 
 В настоящее время срок жизни для аналитических данных можно настроить только на уровне контейнера, а задание аналитического срока жизни на уровне элемента не поддерживается.
 
@@ -156,7 +156,7 @@ Azure Cosmos DB гарантирует изолированное выполн�
 
 В настоящее время поддержка структурированной потоковой передачи Spark для Azure Cosmos DB реализуется с помощью функциональности канала изменений в хранилище транзакций, однако в аналитическом хранилище она еще не поддерживается.
 
-## <a name="azure-synapse-studio"></a>Azure синапсе Studio
+## <a name="azure-synapse-studio"></a>Azure Synapse Studio
 
 ### <a name="in-the-azure-synapse-studio-how-do-i-recognize-if-im-connected-to-an-azure-cosmos-db-container-with-the-analytics-store-enabled"></a>Как узнать, подключен ли Azure Cosmos DB контейнер с включенным хранилищем аналитики в Azure синапсе Studio?
 
