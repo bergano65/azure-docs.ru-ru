@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 5d81e37ab547d12e33cfacb9725d9bdb22666142
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 26e39b8f0429995bfa336c4971c76f90d903ff55
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97628742"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99628930"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -111,7 +111,9 @@ call oneToOneCall = callAgent.call(appContext, participants, startCallOptions);
 
 ### <a name="place-a-1n-call-with-users-and-pstn"></a>Поместите вызов 1: n с помощью пользователей и PSTN
 > [!WARNING]
-> В настоящее время вызов PSTN недоступен для размещения пользователя 1: n и номера PSTN, которое необходимо указать для номера телефона вызываемого объекта.
+> В настоящее время вызов PSTN недоступен
+
+Чтобы разместить вызов 1: n для пользователя и номер PSTN, необходимо указать номер телефона вызываемого объекта.
 Ресурс служб связи должен быть настроен на разрешение вызова PSTN:
 ```java
 CommunicationUser acsUser1 = new CommunicationUser(<USER_ID>);
@@ -629,7 +631,7 @@ DeviceManager deviceManager = callClient.getDeviceManager().get();
 
 ### <a name="enumerate-local-devices"></a>Перечисление локальных устройств
 
-Для доступа к локальным устройствам можно использовать методы перечисления в Device Manager. Перечисление является синхронным действием.
+Для доступа к локальным устройствам можно использовать методы перечисления в диспетчер устройств. Перечисление является синхронным действием.
 
 ```java
 //  Get a list of available video devices for use.
@@ -682,7 +684,7 @@ layout.addView(uiView);
 ## <a name="eventing-model"></a>Модель событий
 Вы можете подписываться на большинство свойств и коллекций, чтобы получать уведомления при изменении значений.
 
-### <a name="properties"></a>Properties (Свойства)
+### <a name="properties"></a>Свойства
 Чтобы подписываться на `property changed` события, выполните следующие действия.
 
 ```java

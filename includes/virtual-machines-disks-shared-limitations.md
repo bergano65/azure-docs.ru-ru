@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 76e52758bf88dde9cdc68dad974f0b65fd55140f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4a61399bbb75639fdf4f03da7b77f22a2136adbe
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027096"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99628881"
 ---
 Включение общих дисков доступно только для подмножества типов дисков. В настоящее время общие диски разрешены только для Ultra дисков и твердотельных накопителей уровня "Премиум". Для каждого управляемого диска с включенными общими дисками действуют следующие ограничения, упорядоченные по типу диска:
 
@@ -37,7 +37,8 @@ ms.locfileid: "96027096"
 - При использовании групп доступности и масштабируемых наборов виртуальных машин с общими дисками Azure [Выравнивание домена сбоя хранилища](../articles/virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) с доменом сбоя виртуальной машины не применяется к общему диску данных.
 - При использовании групп размещения с учетом расположения [(ППГ)](../articles/virtual-machines/windows/proximity-placement-groups.md)все виртуальные машины, совместно использующие диск, должны быть частью одного ППГ.
 - В некоторых версиях отказоустойчивого кластера Windows Server можно использовать только базовые диски. Дополнительные сведения см. в разделе [требования к оборудованию отказоустойчивой кластеризации и параметры хранения](/windows-server/failover-clustering/clustering-requirements).
-- Поддержка Azure Backup и Azure Site Recovery пока недоступна.
+- Поддержка Azure Site Recovery пока недоступна.
+- Azure Backup доступен в [службе архивации дисков Azure (Предварительная версия)](../articles/backup/disk-backup-overview.md).
 
 #### <a name="regional-availability"></a>Доступность по регионам
 
