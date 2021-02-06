@@ -1,10 +1,10 @@
 - name: Документация по Docker
   href: index.yml
 - name: Краткое руководство
-  expanded: true
   items:
     - name: Развертывание виртуальной машины Ubuntu с помощью Docker
       href: 'https://azure.microsoft.com/resources/templates/docker-simple-on-ubuntu/'
+  expanded: true
 - name: Учебники
   items:
     - name: 'Веб-приложение Python и Docker, PostgreSQL'
@@ -15,8 +15,6 @@
   items:
     - name: Расширение виртуальной машины Docker
       href: 'https://github.com/Azure/azure-docker-extension/blob/master/README.md'
-    - name: Виртуальная машина Docker
-      href: ../virtual-machines/linux/docker-machine.md
     - name: Реестр контейнеров Docker
       href: ../container-registry/container-registry-get-started-portal.md
 - name: Ресурсы

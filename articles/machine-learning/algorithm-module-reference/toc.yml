@@ -28,8 +28,6 @@
       href: convert-to-dataset.md
     - name: Преобразование в значения индикатора
       href: convert-to-indicator-values.md
-    - name: Очистка недостающих данных
-      href: clean-missing-data.md
     - name: Правка метаданных
       href: edit-metadata.md
     - name: Группирование данных в ячейки

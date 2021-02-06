@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы Canada Federal PBMM
 description: Обзор примера схемы Canada Federal PBMM. Этот пример схемы помогает клиентам оценить определенные средства управления Canada Federal PBMM.
-ms.date: 11/02/2020
+ms.date: 02/05/2021
 ms.topic: sample
-ms.openlocfilehash: 6da387d6a2e0124a533c1001ab54dc9a9b4364ad
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 59a15e7749a2de4871dfa96ac7c0185c728db1b3
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420433"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625100"
 ---
 # <a name="overview-of-the-canada-federal-pbmm-blueprint-sample"></a>Обзор примера схемы Canada Federal PBMM
 
