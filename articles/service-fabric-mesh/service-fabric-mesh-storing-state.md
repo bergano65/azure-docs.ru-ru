@@ -5,14 +5,19 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 11/27/2018
 ms.topic: conceptual
-ms.openlocfilehash: b8440a168d6d268cd27e1208ff54616a3b1e193a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 651329b1b061f2cf5a06dbdc9d60f73cec64e7d3
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843215"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625555"
 ---
 # <a name="state-management-with-service-fabric"></a>Управление состояниями с помощью Service Fabric
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Service Fabric поддерживает множество разных способов хранения состояний. Принципы работы шаблонов управления состояниями и Service Fabric представлены в разделе [Состояние службы](../service-fabric/service-fabric-concepts-state.md). Эти принципы применимы независимо от того, выполняются службы внутри или вне службы "Сетка Service Fabric". 
 
@@ -32,7 +37,7 @@ Service Fabric поддерживает множество разных спос
 
 Том службы "Файлы Azure" — это драйвер тома Docker, используемый для подключения общего ресурса службы "Файлы Azure" к контейнеру. Хранилище службы "Файлы Azure" использует сетевое хранилище, поэтому операции чтения и записи выполняются по сети. По сравнению с надежным томом Service Fabric хранилище службы "Файлы Azure" является менее производительным, но более экономичным и надежным вариантом хранения данных. Пример см. в статье [Развертывание приложение с использованием тома службы "Файлы Azure"](service-fabric-mesh-howto-deploy-app-azurefiles-volume.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о модели приложения см. в разделе [Сохранение состояния с помощью подключения тома службы файлов Azure в приложении службы "Сетка Service Fabric"](service-fabric-mesh-service-fabric-resources.md).
 

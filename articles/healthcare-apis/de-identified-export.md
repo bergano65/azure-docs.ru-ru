@@ -7,12 +7,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 9/28/2020
 ms.author: matjazl
-ms.openlocfilehash: bdbab0e032764d07119402686051d391376cb913
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60a2a41a8005e8bd0fbc313c9a177d54df6dac5e
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91844001"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627169"
 ---
 # <a name="exporting-de-identified-data-preview"></a>Экспорт неопознанных данных (Предварительная версия)
 
@@ -22,6 +22,9 @@ ms.locfileid: "91844001"
 Команду $export также можно использовать для экспорта неопознанных данных с сервера FHIR. Он использует механизм анонимности из [FHIR Tools для анонимного](https://github.com/microsoft/FHIR-Tools-for-Anonymization)выполнения и принимает сведения о конфигурации анонимного использования в параметрах запроса. Вы можете создать собственный файл конфигурации анонимного пользователя или использовать [Пример файла конфигурации](https://github.com/microsoft/FHIR-Tools-for-Anonymization#sample-configuration-file-for-hipaa-safe-harbor-method) для Harbor в качестве отправной точки. 
 
  `https://<<FHIR service base URL>>/$export?_container=<<container_name>>&_anonymizationConfig=<<config file name>>&_anonymizationConfigEtag=<<ETag on storage>>`
+
+> [!Note] 
+> Прямо сейчас API Azure для FHIR поддерживает только неопознанный экспорт на уровне системы ($export).
 
 |Параметр запроса            | Пример |Optionality| Описание|
 |---------------------------|---------|-----------|------------|

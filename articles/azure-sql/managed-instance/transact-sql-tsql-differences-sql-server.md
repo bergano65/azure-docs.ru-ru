@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 66198291420d48e04df0821d8d110812d6aa01d7
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: cc31ad851441c980365841b1131405339a1092fa
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525811"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626280"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>Отличия T-SQL от SQL Server & SQL Azure Управляемый экземпляр
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -312,7 +312,7 @@ SQL Управляемый экземпляр не удается получит
 - прокси-серверы;
 - Планирование заданий на неактивном ЦП
 - Включение или отключение агента
-- видны узлы
+- Оповещения
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](/sql/ssms/agent/sql-server-agent).
 
@@ -320,7 +320,7 @@ SQL Управляемый экземпляр не удается получит
 
 Следующие типы таблиц не поддерживаются:
 
-- [FILESTREAM](/sql/relational-databases/blob/filestream-sql-server)
+- [ПОТОКА](/sql/relational-databases/blob/filestream-sql-server)
 - [ПРОВЕРОЧ](/sql/relational-databases/blob/filetables-sql-server)
 - [Внешняя таблица](/sql/t-sql/statements/create-external-table-transact-sql) (polybase)
 - [MEMORY_OPTIMIZED](/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables) (не поддерживается только на уровне общего назначения)
@@ -490,7 +490,7 @@ SQL Управляемый экземпляр не может получить �
   - `scan for startup procs`
 - `sp_execute_external_scripts` не поддерживается. См. раздел [Примеры](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql#examples).
 - `xp_cmdshell` не поддерживается. См. раздел [xp_cmdshell (Transact-SQL)](/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
-- `Extended stored procedures` не поддерживаются, в том числе `sp_addextendedproc` и `sp_dropextendedproc` . См. раздел [Расширенные хранимые процедуры](/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
+- `Extended stored procedures` не поддерживаются, включая `sp_addextendedproc` и `sp_dropextendedproc` . Эта функция не будет поддерживаться, так как она находится на пути устаревания для SQL Server. Дополнительные сведения см. в разделе [Расширенные хранимые процедуры](/sql/relational-databases/extended-stored-procedures-programming/database-engine-extended-stored-procedures-programming).
 - `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
 
 ### <a name="system-functions-and-variables"></a>Системные функции и переменные
@@ -551,7 +551,7 @@ SQL Управляемый экземпляр не может получить �
 
 SQL Управляемый экземпляр помещает подробные сведения в журналы ошибок. Существует множество внутренних системных событий, которые регистрируются в журнале ошибок. Используйте пользовательскую процедуру для чтения журналов ошибок, которые отфильтровывают некоторые ненужные записи. Дополнительные сведения см. в разделе [sql управляемый экземпляр – sp_readmierrorlog](/archive/blogs/sqlcat/azure-sql-db-managed-instance-sp_readmierrorlog) или [расширение SQL управляемый экземпляр (Предварительная версия)](/sql/azure-data-studio/azure-sql-managed-instance-extension#logs) для Azure Data Studio.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о SQL Управляемый экземпляр см. в статье [что такое sql управляемый экземпляр?](sql-managed-instance-paas-overview.md)
 - Список функций и сравнительных списков см. в статье [Сравнение функций управляемый экземпляр SQL Azure](../database/features-comparison.md).

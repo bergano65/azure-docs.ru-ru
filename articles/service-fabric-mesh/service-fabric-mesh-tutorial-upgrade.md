@@ -6,14 +6,19 @@ ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-csharp
-ms.openlocfilehash: 2d74841e1873e5bd84d839122e0e662ef65ccd11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1020613eb43177ba159601f253848f8d03f385a8
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842008"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625438"
 ---
 # <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Руководство. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Это руководство является четвертой частью цикла, в котором показано, как обновить приложение Сетки Azure Service Fabric непосредственно из Visual Studio. Обновления затронут как код, так и конфигурацию. Вы увидите, что действия по обновлению и публикации в Visual Studio одинаковы.
 
@@ -45,17 +50,17 @@ ms.locfileid: "91842008"
 
 При создании Service Fabric приложения для сетки Visual Studio добавляет файл **Parameters. YAML** для каждой среды развертывания (облачной и локальной). В этих файлах можно определить параметры и их значения, на которые затем можно будет ссылаться из файлов сетки *. YAML, таких как Service. YAML или Network. YAML.  Visual Studio предоставляет несколько переменных, например, сколько ресурсов ЦП может использовать служба.
 
-Мы будем обновлять `WebFrontEnd_cpu` параметр, чтобы обновить ресурсы ЦП до `1.5` , в результате чего служба WebService **WebFrontEnd** будет более интенсивно использоваться.
+Мы будем обновлять `WebFrontEnd_cpu` параметр, чтобы обновить ресурсы ЦП до `1.5` , в результате чего служба WebService  будет более интенсивно использоваться.
 
-1. В проекте **тодолистапп** в разделе **среды**  >  **облака**откройте файл **Parameters. YAML** . Измените `WebFrontEnd_cpu` значение, равное `1.5` . Перед именем параметра рекомендуется использовать имя службы, `WebFrontEnd_` чтобы отличить его от параметров с тем же именем, которые применяются к разным службам.
+1. В проекте **тодолистапп** в разделе **среды**  >  **облака** откройте файл **Parameters. YAML** . Измените `WebFrontEnd_cpu` значение, равное `1.5` . Перед именем параметра рекомендуется использовать имя службы, `WebFrontEnd_` чтобы отличить его от параметров с тем же именем, которые применяются к разным службам.
 
     ```xml
     WebFrontEnd_cpu: 1.5
     ```
 
-2. Откройте файл **Service. YAML проекта WebService** **в разделе** **WebFrontEnd**  >  **ресурсы службы WebService**.
+2. Откройте файл **Service. YAML проекта WebService** **в разделе**   >  **ресурсы службы WebService**.
 
-    Обратите внимание, что в `resources:` разделе in `cpu:` задано значение `"[parameters('WebFrontEnd_cpu')]"` . Если проект строится для облака, значение для `'WebFrontEnd_cpu` будет взято из файла Environments **Environments**  >  **облака**  >  **Parameters. YAML** и будет `1.5` . Если проект строится для запуска локально, значение будет взято из **Environments**  >  файла**Local**  >  **Parameters. YAML** окружений и будет равно "0,5".
+    Обратите внимание, что в `resources:` разделе in `cpu:` задано значение `"[parameters('WebFrontEnd_cpu')]"` . Если проект строится для облака, значение для `'WebFrontEnd_cpu` будет взято из файла Environments   >  **облака**  >  **Parameters. YAML** и будет `1.5` . Если проект строится для запуска локально, значение будет взято из   >  файла **Local**  >  **Parameters. YAML** окружений и будет равно "0,5".
 
 > [!Tip]
 > По умолчанию файл параметров, являющийся одноранговым узлом файла Profile. YAML, будет использоваться для предоставления значений для этого файла Profile. YAML.
@@ -151,7 +156,7 @@ The application was deployed successfully and it can be accessed at http://10.00
 
 Откройте веб-браузер и перейдите к URL-адресу, чтобы увидеть работу сайта в Azure. Теперь вы видите веб-страницу, содержащую столбец категории.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства было показано следующее.
 > [!div class="checklist"]

@@ -6,14 +6,19 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: aa3ac9d8835cd17387346bb29b3e7c30f286cd1f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40bba03c35568c013e383c08f0a13f765c1cc8bd
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839730"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625860"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Ресурс шлюза используется для перенаправления входящего трафика в сеть, в которой находится приложение. Настройте шлюз, указав правила направления запросов к конкретным службам или конечным точкам в зависимости от структуры запроса. В статье [Introduction to networking in Service Fabric Mesh applications](service-fabric-mesh-networks-and-gateways.md) (Общие сведения о сетевых подключениях в приложениях службы "Сетка Service Fabric") вы найдете дополнительные сведения о сетях и шлюзах в Сетке Service Fabric. 
 
@@ -222,5 +227,5 @@ ms.locfileid: "91839730"
 * " \<IPAddress> : 80/helloWorld/" приведет к тому, что \<request\> запрос будет направлен в "хелловорлдлистенер" в helloWorldService. 
 * " \<IPAddress> : 80/Counter/" приведет к тому, что \<request\> запрос будет направлен в "каунтерлистенер" в каунтерсервице. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.

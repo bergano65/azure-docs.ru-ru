@@ -6,14 +6,19 @@ ms.author: edoyle
 ms.topic: how-to
 ms.date: 01/14/2020
 ms.custom: subject-moving-resources
-ms.openlocfilehash: c842a065f108a924c6bffd70d6c2edbbd31b6dff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b59d482b8b88e37da2d61636ff3f254a46ba5c2
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260152"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626093"
 ---
 # <a name="move-a-service-fabric-mesh-application-to-another-azure-region"></a>Перемещение Service Fabric приложения сетки в другой регион Azure
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 В этой статье описывается, как переместить приложение сетки Service Fabric и его ресурсы в другой регион Azure. Вы можете переместить ресурсы в другой регион по ряду причин. Например, в ответ на сбои, чтобы получить доступ к функциям или службам, доступным только в конкретных регионах, в соответствии с требованиями к внутренней политике и управлению или в соответствии с требованиями к планированию емкости.
 
@@ -24,7 +29,7 @@ ms.locfileid: "86260152"
 * Входной контроллер (например, [шлюз приложений](../application-gateway/index.yml)), служащий посредником для маршрутизации трафика между клиентами и приложением Service Fabricной сетки
 * Доступность Service Fabric сети (Предварительная версия) в целевом регионе Azure ( `westus` , `eastus` или `westeurope` )
 
-## <a name="prepare"></a>Подготовка.
+## <a name="prepare"></a>Подготовка
 
 1. Сделайте "моментальный снимок" текущего состояния приложения Service Fabricной сетки, экспортировав шаблон и параметры Azure Resource Manager из последнего развертывания. Для этого выполните действия, описанные в разделе [Экспорт шаблона после развертывания](../azure-resource-manager/templates/export-template-portal.md#export-template-after-deployment) с помощью портал Azure. Можно также использовать [Azure CLI](../azure-resource-manager/management/manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](../azure-resource-manager/management/manage-resource-groups-powershell.md#export-resource-groups-to-templates)или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 
@@ -44,7 +49,7 @@ ms.locfileid: "86260152"
 
 1. После завершения развертывания проверьте конечные точки приложения, чтобы проверить функциональные возможности приложения.
 
-2. Вы также можете проверить состояние приложения, проверив состояние приложения ([AZ сеток](/cli/azure/ext/mesh/mesh/app?view=azure-cli-latest#ext-mesh-az-mesh-app-show)Application View) и просмотр журналов приложений и ([AZ сетки кода-пакетных журналов](/cli/azure/ext/mesh/mesh/code-package-log?view=azure-cli-latest)) с помощью [интерфейса командной строки Azure Service Fabric сеток](./service-fabric-mesh-quickstart-deploy-container.md#set-up-service-fabric-mesh-cli).
+2. Вы также можете проверить состояние приложения, проверив состояние приложения ([AZ сеток](/cli/azure/ext/mesh/mesh/app#ext-mesh-az-mesh-app-show)Application View) и просмотр журналов приложений и ([AZ сетки кода-пакетных журналов](/cli/azure/ext/mesh/mesh/code-package-log)) с помощью [интерфейса командной строки Azure Service Fabric сеток](./service-fabric-mesh-quickstart-deploy-container.md#set-up-service-fabric-mesh-cli).
 
 ## <a name="commit"></a>Commit
 

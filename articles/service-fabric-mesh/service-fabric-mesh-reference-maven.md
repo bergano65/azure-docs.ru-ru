@@ -6,14 +6,19 @@ ms.author: suhuruli
 ms.date: 11/26/2018
 ms.topic: reference
 ms.custom: devx-track-java
-ms.openlocfilehash: 3a1aa004f47ba700ef4b96004dfe5b835788dcc7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd42752dc7ef2c7686073b7a2d780fe9356425c7
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87372473"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625589"
 ---
 # <a name="maven-plugin-for-service-fabric-mesh"></a>Подключаемый модуль Maven для службы "Сетка Service Fabric"
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 

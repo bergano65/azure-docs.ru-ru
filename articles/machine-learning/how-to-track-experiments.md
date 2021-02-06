@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 235d54d36965ac5d8d173354b2223247806a1fff
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 9e5f64d9ef61a272da488ad70e690db4c07ddccc
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803669"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625083"
 ---
 # <a name="enable-logging-in-ml-training-runs"></a>Включение ведения журнала в учебных запусках МАШИНного обучения
 
@@ -51,13 +51,15 @@ ms.locfileid: "97803669"
 
 1. Создайте скрипт обучения, который включает логику ведения журнала `train.py`.
 
-   [! код — Python](~/MachineLearningNotebooks/how-to-use-azureml/training/train-on-local/train.py)
+   [!code-python[](~/MachineLearningNotebooks/how-to-use-azureml/training/train-on-local/train.py)]
 
 
 1. Отправьте скрипт ```train.py``` для выполнения в среде, управляемой пользователем. Для обучения отправляется вся папка скриптов.
 
-   [! ноутбук — Python](~/MachineLearningNotebooks/how-to-use-azureml/training/train-on-local/train-on-local.ipynb?name=src) 
-    [! ноутбук — Python](~/MachineLearningNotebooks/how-to-use-azureml/training/train-on-local/train-on-local.ipynb?name=run)
+   [! Notebook-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/траин-он-локал.ипинб? Name = src)]
+
+
+   [! Записная книжка — Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/траин-он-локал.ипинб? Name = Run)]
 
     С помощью параметра `show_output` вы можете включить подробное ведение журнала, чтобы просматривать сведения о процессе обучения, а также об удаленных ресурсах или целевых объектах вычислений. Используйте следующий код, чтобы включить подробное ведение журнала при отправке эксперимента.
 
@@ -92,7 +94,7 @@ logging.basicConfig(level=logging.DEBUG)
 * [how-to-use-azureml/training/train-on-local](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training/train-on-local)
 * [how-to-use-azureml/track-and-monitor-experiments/logging-api](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/track-and-monitor-experiments/logging-api)
 
-[! Включение AML-Clone-in-Azure-Notebook](https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/includes/aml-clone-for-examples.md)
+[!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

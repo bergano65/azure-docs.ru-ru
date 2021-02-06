@@ -5,14 +5,19 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 10/26/2018
 ms.topic: conceptual
-ms.openlocfilehash: 67b4b27a5d1faab3e6c156704d67a30b220ac54c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f0e115e596925878bf9fdd43b7074cefdba47b2
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840189"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626864"
 ---
 # <a name="scaling-service-fabric-mesh-applications"></a>Масштабирование приложений службы "Сетка Service Fabric"
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Одним из основных преимуществ развертывания приложений на Service Fabricной сетке является возможность легко масштабировать службы в или. Его следует использовать для обработки различных объемов нагрузки на службы или для повышения доступности. Вы можете вручную горизонтально масштабировать свои службы с увеличением или уменьшением производительности, а также настроить политики автомасштабирования.
 
@@ -33,6 +38,6 @@ ms.locfileid: "91840189"
 
 Сведения о том, как задать политику автомасштабирования для службы, см. в статье об [автомасштабировании служб](service-fabric-mesh-howto-auto-scale-services.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о модели приложения см. в разделе [Сохранение состояния с помощью подключения тома службы файлов Azure в приложении службы "Сетка Service Fabric"](service-fabric-mesh-service-fabric-resources.md).

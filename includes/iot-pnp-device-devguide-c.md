@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/19/2020
-ms.openlocfilehash: 1485adc1407720343c27e07c2d2f4a13ba037a90
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ad83ef0f3f4c0717a3cb669c34145572d44be09a
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511539"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99616385"
 ---
 ## <a name="model-id-announcement"></a>Объявление идентификатора модели
 
@@ -26,6 +26,9 @@ iothubResult = IoTHubDeviceClient_LL_SetOption(
 > [!TIP]
 > Для модулей и IoT Edge используйте `IoTHubModuleClient_LL` вместо `IoTHubDeviceClient_LL` .
 
+> [!TIP]
+> Это единственный момент, когда устройство может задать идентификатор модели, оно не может быть обновлено после подключения устройства.
+
 ## <a name="dps-payload"></a>Полезные данные DPS
 
 Устройства, использующие [службу подготовки устройств (DPS)](../articles/iot-dps/about-iot-dps.md) , могут включать в себя `modelId` для использования в процессе подготовки с помощью следующих полезных данных JSON.
@@ -38,7 +41,7 @@ iothubResult = IoTHubDeviceClient_LL_SetOption(
 
 ## <a name="implement-telemetry-properties-and-commands"></a>Реализация телеметрии, свойств и команд
 
-Как описано в разделе [Общие сведения о компонентах Plug and Play моделей Интернета вещей](../articles/iot-pnp/concepts-components.md), построители устройств должны решить, хотят ли они использовать компоненты для описания своих устройств. При использовании компонентов устройства должны соответствовать правилам, описанным в этом разделе.
+Как описано в разделе [Общие сведения о компонентах Самонастраивающийся моделей Интернета вещей](../articles/iot-pnp/concepts-components.md), построители устройств должны решить, хотят ли они использовать компоненты для описания своих устройств. При использовании компонентов устройства должны соответствовать правилам, описанным в этом разделе.
 
 ### <a name="telemetry"></a>Телеметрия
 
@@ -211,7 +214,7 @@ PnP_TempControlComponent_Report_MaxTempSinceLastReboot_Property(g_thermostatHand
 
 ### <a name="writable-properties"></a>Доступные для записи свойства
 
-Эти свойства можно задать на устройстве или обновить с помощью решения. Если решение обновляет свойство, клиент получает уведомление в качестве обратного вызова в `DeviceClient` или `ModuleClient` . Чтобы следовать правилам Plug and Play IoT, устройство должно информировать службу о том, что свойство было успешно получено.
+Эти свойства можно задать на устройстве или обновить с помощью решения. Если решение обновляет свойство, клиент получает уведомление в качестве обратного вызова в `DeviceClient` или `ModuleClient` . Чтобы следовать правилам самонастраивающийся IoT, устройство должно информировать службу о том, что свойство было успешно получено.
 
 #### <a name="report-a-writable-property"></a>Сообщить о свойстве, доступном для записи
 

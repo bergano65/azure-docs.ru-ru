@@ -6,14 +6,20 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: f65fcfa76069a3de37fd3a76e38e38fba40e04ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a707e3601bb24b2d5c2aa9402edff4a2e8803033
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843062"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625910"
 ---
 # <a name="create-autoscale-policies-for-a-service-fabric-mesh-application"></a>Создание политик автомасштабирования для приложения Сетки Service Fabric
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
+
 Одним из основных преимуществ развертывания приложений на Service Fabricной сетке является возможность легко масштабировать службы в или. Его следует использовать для обработки различных объемов нагрузки на службы или для повышения доступности. Вы можете вручную выполнять масштабирование своих служб или же настроить автомасштабирование.
 
 [Автомасштабирование](service-fabric-mesh-scalability.md#autoscaling-service-instances) позволяет динамически масштабировать количество экземпляров службы (горизонтальное масштабирование). Автомасштабирование обеспечивает большую эластичность и позволяет подготовить к работе или удалить экземпляры служб на основе данных об использовании ЦП или памяти.
@@ -114,5 +120,5 @@ application:
           ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее о [ручном масштабировании службы](service-fabric-mesh-tutorial-template-scale-services.md)

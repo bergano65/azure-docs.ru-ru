@@ -6,14 +6,19 @@ ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: vturecek
 ms.custom: mvc, devcenter
-ms.openlocfilehash: a7f25d4156c3d2671e1a15a1253ed7ba22265af0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 650755cf2692b613b2998e8ef7b706e09022b178
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91354876"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626915"
 ---
 # <a name="introduction-to-service-fabric-resource-model"></a>Общие сведения о модели ресурсов Service Fabric
+
+> [!IMPORTANT]
+> Предварительная версия сетки Service Fabric Azure была снята с учета. Новые развертывания больше не будут разрешены через интерфейс API Service Fabricной сетки. Поддержка существующих развертываний будет продолжена 28 апреля 2021 г.
+> 
+> Дополнительные сведения см. в статье о прекращении использования [предварительной версии сети Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Модель ресурсов Service Fabric описывает простой подход к определению ресурсов, составляющих приложение "Сетка Service Fabric". Отдельные ресурсы можно развернуть в любой среде Service Fabric.  Модель ресурсов Service Fabric также совместима с моделью Azure Resource Manager. В этой модели в настоящее время поддерживаются следующие типы ресурсов:
 
@@ -78,7 +83,7 @@ ms.locfileid: "91354876"
 Приложения Сетки Service Fabric на основе модели ресурсов упаковываются в виде контейнеров Docker.  Сетка Service Fabric является общей мультитенантной средой, а контейнеры обеспечивают высокий уровень изоляции.  Описываются эти приложения с помощью формата JSON или YAML (который затем преобразуется в формат JSON). При развертывании приложения сетки в сетке Service Fabric Azure JSON, используемый для описания приложения, является шаблоном Azure Resource Manager. Ресурсы сопоставляются с ресурсами Azure.  При развертывании приложения сетки в Service Fabric кластере (изолированном или размещенном в Azure) JSON, используемый для описания приложения, имеет формат, аналогичный шаблону Azure Resource Manager.  После развертывания приложениями Сетки можно управлять с помощью интерфейсов HTTP или Azure CLI. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)
 

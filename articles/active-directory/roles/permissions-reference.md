@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4982acb54207a9ed08a96414877603a8253c2ade
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 22ac3b9ac5f7a10226e8dc7197fdf60dc0a84e3b
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557758"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627622"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -535,6 +535,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | microsoft.directory/policies/applicationConfiguration/owners/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 > | microsoft.directory/policies/applicationConfiguration/owners/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
 > | microsoft.directory/policies/applicationConfiguration/policyAppliedTo/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
@@ -697,6 +698,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | microsoft.directory/policies/applicationConfiguration/owners/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
 > | microsoft.directory/policies/applicationConfiguration/owners/update | Обновление свойства applicationConfiguration в Azure Active Directory. |
 > | microsoft.directory/policies/applicationConfiguration/policyAppliedTo/read | Чтение свойства applicationConfiguration в Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Изменение свойства servicePrincipals.appRoleAssignedTo в Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/appRoleAssignments/update | Изменение свойства servicePrincipals.appRoleAssignments в Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/audience/update | Обновление свойства servicePrincipals.owners в Azure Active Directory. |
@@ -766,6 +768,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Создание и удаление объектов oAuth2PermissionGrant, а также чтение и изменение всех свойств в Azure Active Directory. |
 > | microsoft.directory/organization/allProperties/allTasks | Создание и удаление организаций, а также чтение и изменение всех свойств в Azure Active Directory. |
 > | microsoft.directory/policies/allProperties/allTasks | Создание и удаление политик, а также чтение и изменение всех свойств в Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.directory/roleAssignments/allProperties/allTasks | Создание и удаление объектов roleAssignment и чтение и изменение всех свойств в Azure Active Directory. |
 > | microsoft.directory/roleDefinitions/allProperties/allTasks | Создание и удаление объектов roleDefinition и чтение и изменение всех свойств в Azure Active Directory. |
 > | microsoft.directory/scopedRoleMemberships/allProperties/allTasks | Создание и удаление объектов scopedRoleMembership и чтение и изменение всех свойств в Azure Active Directory. |
@@ -1143,6 +1146,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | microsoft.directory/organization/basic/read    | Чтение базовых свойств в организации в Azure Active Directory. |
 > | microsoft.directory/organization/trustedCAsForPasswordlessAuth/read    | Чтение свойства оrganizations.trustedCAsForPasswordlessAuth в Azure Active Directory. |
 > | microsoft.directory/policies/standard/read    | Просмотр стандартных политик в Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.directory/roleAssignments/basic/read    | Чтение базовых свойств roleAssignments в Azure Active Directory. |
 > | microsoft.directory/roleDefinitions/basic/read    | Чтение базовых свойств roleDefinitions в Azure Active Directory. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/read    | Чтение свойства ervicePrincipals.appRoleAssignedTo в Azure Active Directory. |
@@ -1683,6 +1687,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | Действия | Описание |
 > | --- | --- |
 > | microsoft.directory/auditLogs/allProperties/read | Чтение всех свойств (включая привилегированные) в auditLogs в Azure Active Directory. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 > | microsoft.office365.usageReports/allEntities/read | Чтение отчетов об использовании Office 365. |
@@ -1743,6 +1748,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | microsoft.directory/policies/owners/update | Изменение свойства policies.owners в Azure Active Directory. |
 > | microsoft.directory/policies/tenantDefault/update | Обновление свойства policies.tenantDefault в Azure Active Directory. |
 > | Microsoft. Directory/Привилежедидентитиманажемент/Аллпропертиес/Read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.directory/servicePrincipals/policies/update | Изменение свойства servicePrincipals.policies в Azure Active Directory. |
 > | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 > | microsoft.office365.protectionCenter/allEntities/read | Чтение всех аспектов Центра защиты Office 365. |
@@ -1792,6 +1798,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > | microsoft.directory/signInReports/allProperties/read | Чтение всех свойств (включая привилегированные) в signInReports в Azure Active Directory. |
 > | microsoft.aad.identityProtection/allEntities/read | Чтение всех ресурсов в microsoft.aad.identityProtection. |
 > | microsoft.aad.privilegedIdentityManagement/allEntities/read | Чтение всех ресурсов в microsoft.aad.privilegedIdentityManagement. |
+> | microsoft.directory/provisioningLogs/allProperties/read | Чтение всех свойств журналов подготовки. |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Чтение и настройка Работоспособности служб Azure. |
 > | microsoft.office365.webPortal/allEntities/basic/read | Чтение базовых свойств для всех ресурсов в microsoft.office365.webPortal. |
 > | microsoft.office365.protectionCenter/allEntities/read | Чтение всех аспектов Центра защиты Office 365. |
@@ -2118,7 +2125,7 @@ Device Users (Пользователи устройства) | Не рекоме
 
 \* Глобальный администратор не может удалить собственное назначение глобального администратора. Это позволяет избежать ситуации, когда у Организации есть 0 глобальных администраторов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о назначении пользователя в качестве администратора подписки Azure см. в статье [Добавление и удаление назначений ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md) .
 * Дополнительные сведения о том, как контролируется доступ к ресурсам в Microsoft Azure, см. в [этой статье](../../role-based-access-control/rbac-and-directory-admin-roles.md).

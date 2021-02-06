@@ -4,12 +4,12 @@ description: Сведения о том, как обрабатывать уча�
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: cba3cd0fd5d8727c4ffa4d1b42d7cd9250f21032
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: dd7f8416b2f4520ec8e94c8608f753f7412afc4d
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028309"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99627378"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
 
@@ -37,6 +37,9 @@ ms.locfileid: "98028309"
 
 * `E4_SmsPhoneVerification`: [Функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая выполняет проверку телефона, включая управление временем ожидания и повторные попытки.
 * `E4_SendSmsChallenge`: [Функция действия](durable-functions-bindings.md#activity-trigger) , которая отправляет код через текстовое сообщение.
+
+> [!NOTE]
+> `HttpStart`Функция в [примере приложения и краткое руководство](#prerequisites) выступает в качестве [клиента оркестрации](durable-functions-bindings.md#orchestration-client) , запускающего функцию Orchestrator.
 
 ### <a name="e4_smsphoneverification-orchestrator-function"></a>E4_SmsPhoneVerification Orchestrator, функция
 
