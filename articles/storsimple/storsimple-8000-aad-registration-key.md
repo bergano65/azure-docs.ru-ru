@@ -1,19 +1,19 @@
 ---
-title: Аутентификация Azure AD для StorSimple 8000 в Device Manager
+title: Аутентификация Azure AD для StorSimple 8000 в диспетчер устройств
 description: Из этой статьи вы узнаете, как использовать для службы аутентификацию на основе AAD, создать ключ регистрации и регистрировать устройства вручную.
 author: alkohli
 ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 0e071a20051f047efbd040dfc01a30e3c1381367
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b09d68e7859a787c05a2fc62294f081c4345ae08
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631330"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805046"
 ---
-# <a name="use-azuer-active-directory-ad-authentication-for-your-storsimple"></a>Использование проверки подлинности Azure Active Directory (AD) для StorSimple
+# <a name="use-azure-active-directory-ad-authentication-for-your-storsimple"></a>Использование проверки подлинности Azure Active Directory (AD) для StorSimple
 
 [!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
@@ -88,6 +88,6 @@ ms.locfileid: "91631330"
     > [!NOTE] 
     > Если вы создаете облачное устройство StorSimple в службе, зарегистрированной на устройстве StorSimple серии 8000, во время этого процесса не создавайте регистрационный ключ. Дождитесь завершения создания устройства, а затем создайте регистрационный ключ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md)

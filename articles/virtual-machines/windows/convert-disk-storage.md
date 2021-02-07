@@ -1,5 +1,5 @@
 ---
-title: Преобразование хранилища управляемых дисков между SSD уровня "Стандартный" и "Премиум"
+title: Преобразование хранилища управляемых дисков между SSD уровня "Стандартный" и "Премиум" с помощью Azure PowerShell
 description: Как преобразовать управляемые диски Azure с уровня "Стандартный" на "Премиум" или "Премиум" на "Стандартный" с помощью Azure PowerShell.
 author: roygara
 ms.service: virtual-machines-windows
@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: d81cd0ac57a5a18d90144584e8705cbffcba6f9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13159e527fac76a1a79118e9363b94904935a2be
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88871434"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807501"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Обновление типа хранилища управляемого диска
 
@@ -118,7 +118,7 @@ Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 4. Выберите диск, который требуется преобразовать.
 5. В меню выберите пункт **Конфигурация** .
 6. Измените **тип учетной записи** с **HDD (цен. Категория "Стандартный")** на **SSD (цен. Категория "Премиум")**.
-7. Нажмите кнопку **сохранить**и закройте область диск.
+7. Нажмите кнопку **сохранить** и закройте область диск.
 
 Преобразование типа диска происходит мгновенно. После преобразования можно запустить виртуальную машину.
 

@@ -1,5 +1,5 @@
 ---
-title: Обнаружение и изучение данных в ADF с помощью зрения
+title: Обнаружение и изучение данных в ADF с помощью Purview
 description: Узнайте, как обнаруживать, изучать данные в фабрике данных Azure с помощью зрения
 services: data-factory
 documentationcenter: ''
@@ -11,14 +11,14 @@ ms.author: lle
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 01/15/2021
-ms.openlocfilehash: 1a8ed80daa4406f32909a6622b8649f37ec48063
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: accb9bbf195daa3d25e1aed109e36ef309083385
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063973"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805315"
 ---
-# <a name="discover-and-explore-data-in-adf-using-purview"></a>Обнаружение и изучение данных в ADF с помощью зрения
+# <a name="discover-and-explore-data-in-adf-using-purview"></a>Обнаружение и изучение данных в ADF с помощью Purview
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
@@ -47,7 +47,7 @@ ms.locfileid: "99063973"
 ### <a name="actions-that-you-can-perform-over-datasets-with-data-factory-resources"></a>Действия, которые можно выполнять над наборами данных с помощью ресурсов фабрики 
 Вы можете напрямую создать связанную службу, набор данных или поток данных по данным, которые вы ищете в Azure зрения.
 
-:::image type="content" source="./media/data-factory-purview/actions-over-purview-data.png" alt-text="Снимок экрана для выполнения над наборами данных.":::
+:::image type="content" source="./media/data-factory-purview/actions-over-purview-data.png" alt-text="Снимок экрана, показывающий, как можно напрямую создать связанную службу, набор данных или поток данных по данным, которые вы ищете в Azure зрения.":::
 
 ##  <a name="nextsteps"></a>Дальнейшие действия 
 

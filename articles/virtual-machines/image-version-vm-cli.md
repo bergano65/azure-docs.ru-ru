@@ -1,5 +1,5 @@
 ---
-title: Создание образа из виртуальной машины
+title: Создание образа из виртуальной машины с помощью Azure CLI
 description: Узнайте, как создать образ в общей коллекции образов на основе виртуальной машины в Azure.
 author: cynthn
 ms.service: virtual-machines
@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b8aa2623722b5e75480e68324d76e4a1493501df
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: ca354ee662ebad0cd514d4822794b056ee6f9850
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685146"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805383"
 ---
 # <a name="create-an-image-version-from-a-vm-in-azure-using-the-azure-cli"></a>Создание версии образа из виртуальной машины в Azure с помощью Azure CLI
 
@@ -24,7 +24,7 @@ ms.locfileid: "98685146"
 **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При использовании версии образа для создания виртуальной машины используется версия образа для создания дисков для новой виртуальной машины. Версии образов можно использовать несколько раз.
 
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей необходимо иметь существующую коллекцию общих образов. 
 
@@ -103,7 +103,7 @@ az sig image-version create \
 > Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs` [хранилище или избыточное в зону](../storage/common/storage-redundancy.md) , добавив `--storage-account-type  standard_zrs` его при создании версии образа.
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте виртуальную машину из [обобщенного образа](vm-generalized-image-version-cli.md) , используя Azure CLI.
 

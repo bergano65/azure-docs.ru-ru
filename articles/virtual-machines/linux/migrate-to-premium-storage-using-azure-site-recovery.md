@@ -7,14 +7,14 @@ ms.topic: how-to
 ms.date: 08/15/2017
 ms.author: luywang
 ms.subservice: disks
-ms.openlocfilehash: c767edca46696bc7d04a1cf101e2bd183f5cf7f9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e00496ad623d534e1fbdcb60f22a1e36f77c4212
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970849"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806178"
 ---
-# <a name="migrate-to-premium-storage-by-using-azure-site-recovery"></a>Перемещение в хранилище класса Premium с помощью Azure Site Recovery
+# <a name="use-site-recovery-to-migrate-to-premium-storage"></a>Использование Site Recovery для миграции в хранилище класса Premium
 
 [Хранилище Azure категории Premium (SSD)](../disks-types.md) обеспечивает поддержку дисков с высокой производительностью и малой задержкой для виртуальных машин с интенсивной рабочей нагрузкой ввода-вывода. С помощью этого руководства вы узнаете, как переместить диски виртуальной машины из учетной записи хранения класса Standard в учетную запись хранения класса Premium с помощью [Azure Site Recovery](../../site-recovery/site-recovery-overview.md).
 

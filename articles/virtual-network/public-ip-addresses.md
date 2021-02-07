@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: 9a80242422631995f6d5c24ba2118ee98a9b8d32
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: f2818965013e44cbbe3202887bf79a737dbbbb58
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576182"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806972"
 ---
 # <a name="public-ip-addresses"></a>Общедоступные IP-адреса
 
@@ -37,7 +37,7 @@ ms.locfileid: "99576182"
 
 Общедоступные IP-адреса создаются с адресами IPv4 или IPv6. 
 
-## <a name="sku"></a>SKU
+## <a name="sku"></a>номер SKU
 
 Дополнительные сведения об обновлении SKU см. в статье [Обновление общедоступного IP-адреса](../virtual-network/virtual-network-public-ip-address-upgrade.md).
 
@@ -64,7 +64,7 @@ ms.locfileid: "99576182"
 > При использовании [IMDS службы метаданных экземпляра](../virtual-machines/windows/instance-metadata-service.md)доступны только общедоступные IP-адреса с номером SKU "базовый". SKU "Стандартный" не поддерживается.
 
 > [!NOTE]
-> Параметры диагностики не отображаются в колонке ресурс при использовании общедоступного IP-адреса стандартного SKU. Чтобы включить ведение журнала на ресурсе общедоступного IP-адреса Станрд, перейдите к параметрам диагностики в колонке Azure Monitor и выберите ресурс IP-адреса.
+> Параметры диагностики не отображаются в колонке ресурс при использовании общедоступного IP-адреса стандартного SKU. Чтобы включить ведение журнала на стандартном ресурсе общедоступного IP-адреса, перейдите к параметрам диагностики в колонке Azure Monitor и выберите ресурс IP-адреса.
 
 ### <a name="basic"></a>Basic
 
@@ -200,6 +200,6 @@ IP-адрес освобождается, когда метод распреде
 
 За общедоступные IP-адреса взимается номинальная плата. Дополнительные сведения о ценах на IP-адреса в Azure см. на [соответствующей](https://azure.microsoft.com/pricing/details/ip-addresses) странице.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о [частных IP-адресах в Azure](private-ip-addresses.md)
 * [Развертывание виртуальной машины со статическим общедоступным IP-адресом с использованием портала Azure](virtual-network-deploy-static-pip-arm-portal.md)

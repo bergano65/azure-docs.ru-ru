@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/19/2020
-ms.openlocfilehash: 5f42b5f2b2a7660ee0de975068f64572c470503a
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 78187b2cbb6603a0ae0df55465b9a5ce5e7dca7f
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874912"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807552"
 ---
 # <a name="register-and-scan-a-power-bi-tenant-preview"></a>Регистрация и сканирование клиента Power BI (Предварительная версия)
 
@@ -84,7 +84,7 @@ ms.locfileid: "98874912"
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/select-power-bi-data-source.png" alt-text="Изображение, показывающее список доступных источников данных":::
 
-1. Присвойте экземпляру Power BI понятное имя.
+3. Присвойте экземпляру Power BI понятное имя.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-friendly-name.png" alt-text="Изображение, показывающее понятное имя источника данных Power BI":::
 
@@ -94,17 +94,21 @@ ms.locfileid: "98874912"
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-datasource-registered.png" alt-text="Power BI зарегистрированный источник данных":::
 
-1. Укажите имя для проверки. Обратите внимание, что единственным поддерживаемым методом проверки подлинности является **управляемое удостоверение**.
+    > [!Note]
+    > Для Power BI регистрация и сканирование источника данных разрешены только для одного экземпляра.
+
+
+4. Укажите имя для проверки. Обратите внимание, что единственным поддерживаемым методом проверки подлинности является **управляемое удостоверение**.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/power-bi-scan-setup.png" alt-text="Изображение, показывающее настройку сканирования Power BI":::
 
     Имя проверки должно иметь длину от 3-63 символов и должно содержать только буквы, цифры, символы подчеркивания и дефисы.  Пробелы не допускаются.
 
-1. Настройка триггера сканирования. Варианты доступны **один раз**, **каждые 7 дней** и **каждые 30 дней**.
+5. Настройка триггера сканирования. Варианты доступны **один раз**, **каждые 7 дней** и **каждые 30 дней**.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/scan-trigger.png" alt-text="Изображение триггера сканирования":::
 
-1. На **Просмотр новой проверки** выберите **сохранить и запустить** , чтобы запустить проверку.
+6. На **Просмотр новой проверки** выберите **сохранить и запустить** , чтобы запустить проверку.
 
     :::image type="content" source="media/setup-power-bi-scan-catalog-portal/save-run-power-bi-scan.png" alt-text="Сохранить и запустить Power BI изображение экрана":::
 

@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
-ms.date: 10/14/2020
-ms.openlocfilehash: bc369b072f90e675cf882d52b2edae30530f1c18
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.date: 02/07/2021
+ms.openlocfilehash: 03061f71ee0cceaa39c7ab9b258f9d3a0a84f1be
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895974"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807892"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics экспорт данных рабочей области в Azure Monitor (Предварительная версия)
 Log Analytics экспорт данных рабочей области в Azure Monitor позволяет непрерывно экспортировать данные из выбранных таблиц в Log Analytics рабочей области в учетную запись хранения Azure или концентратор событий Azure по мере их сбора. Эта статья содержит сведения об этой функции и действиях по настройке экспорта данных в рабочих областях.
@@ -28,8 +28,7 @@ Log Analytics экспорт данных рабочей области в Azure
 ## <a name="other-export-options"></a>Другие параметры экспорта
 Log Analytics экспорт данных рабочей области непрерывно экспортирует данные из рабочей области Log Analytics. Далее приведены другие варианты экспорта данных для определенных сценариев.
 
-- Запланированный экспорт из запроса журнала с помощью приложения логики. Это похоже на функцию экспорта данных, но позволяет отсылать отфильтрованные или агрегированные данные в службу хранилища Azure. Несмотря на то, что для этого метода действуют [ограничения на запросы журнала](../service-limits.md#log-analytics-workspaces)  , см. раздел [архивные данные из рабочей области log Analytics в хранилище Azure с помощью приложения логики](logs-export-logic-app.md).
-- Однократный экспорт с помощью приложения логики. [Logic Apps и автоматизация питания см. в разделе Azure Monitor журналов](logicapp-flow-connector.md).
+- Запланированный экспорт из запроса журнала с помощью приложения логики. Это похоже на функцию экспорта данных, но позволяет отсылать отфильтрованные или агрегированные данные в службу хранилища Azure. При использовании этого метода в соответствии с [ограничениями запросов журнала](../service-limits.md#log-analytics-workspaces)можно ознакомиться с разделом [Архивация данных из log Analytics рабочей области в службу хранилища Azure с помощью приложения логики](logs-export-logic-app.md).
 - Один раз экспортируйте на локальный компьютер с помощью скрипта PowerShell. См. раздел [Invoke-азоператионалинсигхтскуерекспорт](https://www.powershellgallery.com/packages/Invoke-AzOperationalInsightsQueryExport).
 
 
@@ -47,16 +46,7 @@ Log Analytics экспорт данных рабочей области непр
 - В рабочей области можно создать два правила экспорта — одно правило для концентратора событий и одно правило для учетной записи хранения.
 - Целевая учетная запись хранения или концентратор событий должны находиться в том же регионе, что и Рабочая область Log Analytics.
 - Имена экспортируемых таблиц не могут содержать более 60 символов для учетной записи хранения и не более 47 символов в концентраторе событий. Таблицы с более длинными именами не будут экспортированы.
-
-> [!NOTE]
-> Log Analytics экспорт данных записывает данные как добавочный BLOB-объект, который сейчас находится в предварительной версии для Azure Data Lake Storage 2-го поколения. Перед настройкой экспорта в это хранилище необходимо открыть запрос в службу поддержки. Для этого запроса используйте следующие сведения.
-> - Тип проблемы: "Техническая".
-> - Подписка. Ваша подписка
-> - Служба: Data Lake Storage 2-го поколения
-> - Ресурс: имя ресурса
-> - Сводка. запрос регистрации подписки для принятия данных из Log Analytics экспорта данных.
-> - Тип проблемы: подключение
-> - Подтип проблемы: проблема с подключением
+- Поддержка добавочных BLOB-объектов для Azure Data Lake Storage теперь [ограничена общедоступной предварительной версией](https://azure.microsoft.com/updates/append-blob-support-for-azure-data-lake-storage-preview/)
 
 ## <a name="data-completeness"></a>Полнота данных
 Экспорт данных продолжит попытки отправки данных в течение 30 минут, когда назначение недоступно. Если он по-прежнему недоступен через 30 минут, данные будут удалены до тех пор, пока назначение не станет доступным.
@@ -76,6 +66,9 @@ Log Analytics экспорт данных рабочей области непр
 [![Образец данных хранилища](media/logs-data-export/storage-data.png)](media/logs-data-export/storage-data.png#lightbox)
 
 Log Analytics экспорт данных может записывать Добавление больших двоичных объектов в неизменяемые учетные записи хранения, если для политик хранения на основе времени включен параметр *алловпротектедаппендвритес* . Это позволяет записывать новые блоки в добавочный большой двоичный объект, сохраняя неизменную защиту и соответствие. См. раздел [разрешение записи BLOB-объектов с защищенным добавлением](../../storage/blobs/storage-blob-immutable-storage.md#allow-protected-append-blobs-writes).
+
+> [!NOTE]
+> Поддержка добавочных BLOB-объектов для хранилища Azure Data Lake теперь доступна в предварительной версии во всех регионах Azure. Прежде чем создавать правило экспорта для Azure Data Lake хранилища, [Зарегистрируйтесь в ограниченной общедоступной предварительной версии](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR4mEEwKhLjlBjU3ziDwLH-pURDk2NjMzUTVEVzU5UU1XUlRXSTlHSlkxQS4u) . Экспорт не будет действовать без этой регистрации.
 
 ### <a name="event-hub"></a>концентратор событий;
 Данные отправляются в концентратор событий практически в реальном времени по мере достижения Azure Monitor. Концентратор событий создается для каждого экспортируемого типа данных *с именем, за которым* следует имя таблицы. Например, таблица *SecurityEvent* будет отправлена в концентратор событий с именем *AM-SecurityEvent*. Если вы хотите, чтобы экспортированные данные достигли определенного концентратора событий или если у вас есть таблица с именем, длина которого превышает ограничение в 47 символов, можно указать собственное имя концентратора событий и экспортировать все данные для определенных таблиц.
@@ -123,13 +116,13 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.insights
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+н/д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду CLI для просмотра таблиц в рабочей области. Он поможет скопировать нужные таблицы и включить их в правило экспорта данных.
 
@@ -405,13 +398,13 @@ PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+н/д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы просмотреть конфигурацию правила экспорта данных с помощью интерфейса командной строки.
 
@@ -429,7 +422,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Недоступно
+н/д
 
 ---
 
@@ -437,13 +430,13 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+н/д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Можно отключить правила экспорта, чтобы вы могли отменить экспорт, когда не нужно хранить данные в течение определенного периода, например при выполнении тестирования. Используйте следующую команду, чтобы отключить правило экспорта данных с помощью интерфейса командной строки.
 
@@ -484,13 +477,13 @@ Content-type: application/json
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+н/д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы удалить правило экспорта данных с помощью интерфейса командной строки.
 
@@ -508,7 +501,7 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Недоступно
+н/д
 
 ---
 
@@ -516,13 +509,13 @@ DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegrou
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Недоступно
+н/д
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Недоступно
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Используйте следующую команду, чтобы просмотреть все правила экспорта данных в рабочей области с помощью интерфейса командной строки.
 
@@ -540,7 +533,7 @@ GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/
 
 # <a name="template"></a>[Шаблон](#tab/json)
 
-Недоступно
+н/д
 
 ---
 

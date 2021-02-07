@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/11/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 66172fc9e258ae99e8ed263342025f5c33f7a168
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 5eff20ecb1366114ead80877b684ef512742803b
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219678"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805400"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -54,7 +54,7 @@ ms.locfileid: "99219678"
 1. **Управление сеансами единого входа (SSO)** — восстанавливает состояние сеанса технического профиля с помощью [управления сеансами единого входа](custom-policy-reference-sso.md).
 1. **Преобразование "входные утверждения** " — перед запуском технического профиля Azure AD B2C выполняет [Преобразование](claimstransformations.md)"входные утверждения".
 1. **Входные утверждения** — утверждения выбираются из контейнера утверждений, которые используются для технического профиля.
-1. **Выполнение технического профиля**: технический профиль обменивается утверждениями с настроенной службой. Например:
+1. **Выполнение технического профиля**: технический профиль обменивается утверждениями с настроенной службой. Пример:
     - Пользователь перенаправляется к поставщику удостоверений для завершения процедуры входа. После успешного входа пользователь возвращается назад, и выполнение технического профиля продолжается.
     - Вызов REST API с последующей отправкой параметров в поле InputClaims и получение сведений в поле OutputClaims.
     - Создание или обновление учетной записи пользователя.
@@ -131,7 +131,7 @@ ms.locfileid: "99219678"
 | ------- | ----------- | ----------- |
 | Item | 0:n | Метаданные, относящиеся к техническому профилю. Каждый тип технического профиля имеет свой набор элементов метаданных. Дополнительные сведения см. в разделе о типах технических профилей.  |
 
-### <a name="item"></a>Элемент
+### <a name="item"></a>Компонент
 
 Элемент **Item** элемента **метаданных** содержит следующий атрибут:
 
@@ -448,14 +448,14 @@ ms.locfileid: "99219678"
 В следующем примере показано использование включения:
 
 - *API-интерфейс RESTful* — общий технический профиль с базовой конфигурацией.
-- *Валидатепрофиле* — включает технический профиль *API-интерфейса "Коммом* " и задает входные и выходные утверждения.
-- *Упдатепрофиле* -включает технический профиль Write *-API-Коммом* , задает входные утверждения и перезаписывает `ServiceUrl` метаданные.
+- *Валидатепрофиле* -включает в себя технический профиль *API-интерфейса RESTful* и указывает на входные и выходные утверждения.
+- *Упдатепрофиле* -включает в себя технический профиль Write- *API-Common* , задает входные утверждения и перезаписывает `ServiceUrl` метаданные.
 
 ```xml
 <ClaimsProvider>
   <DisplayName>REST APIs</DisplayName>
   <TechnicalProfiles>
-    <TechnicalProfile Id="REST-API-Commom">
+    <TechnicalProfile Id="REST-API-Common">
       <DisplayName>Base REST API configuration</DisplayName>
       <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
@@ -480,7 +480,7 @@ ms.locfileid: "99219678"
       <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="promoCode" />
       </OutputClaims>
-      <IncludeTechnicalProfile ReferenceId="REST-API-Commom" />
+      <IncludeTechnicalProfile ReferenceId="REST-API-Common" />
     </TechnicalProfile>
 
     <TechnicalProfile Id="REST-UpdateProfile">
@@ -492,7 +492,7 @@ ms.locfileid: "99219678"
         <InputClaim ClaimTypeReferenceId="objectId" />
         <InputClaim ClaimTypeReferenceId="email" />
       </InputClaims>
-      <IncludeTechnicalProfile ReferenceId="REST-API-Commom" />
+      <IncludeTechnicalProfile ReferenceId="REST-API-Common" />
     </TechnicalProfile>
   </TechnicalProfiles>
 </ClaimsProvider>

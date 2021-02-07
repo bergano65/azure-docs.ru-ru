@@ -1,6 +1,6 @@
 ---
 title: Подключение AWS Клаудтраил к Azure Sentinel | Документация Майкрософт
-description: Используйте соединитель AWS, чтобы делегировать доступ к журналам ресурсов AWS с помощью маркеров Azure, создавая доверительные отношения между AWS Клаудтраил и Sentinel.
+description: Используйте соединитель AWS, чтобы делегировать доступ к журналам ресурсов AWS с помощью Azure Sentinel, создавая доверительные отношения между AWS Клаудтраил и Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2020
 ms.author: yelevin
-ms.openlocfilehash: a7405824d2477d2d39c45a56ae545e58a090c321
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 3d24fa1ea046a860feb40d09a6d0a57c79371450
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436612"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807603"
 ---
 # <a name="connect-azure-sentinel-to-aws-cloudtrail"></a>Подключение Sentinel Azure к AWS Клаудтраил
 
 Используйте соединитель AWS для потоковой передачи событий управления AWS Клаудтраил в Azure Sentinel. Этот процесс подключения делегирует доступ для маркеров Azure к журналам ресурсов AWS, создавая доверительные отношения между AWS Клаудтраил и Sentinel. Это выполняется в AWS путем создания роли, которая предоставляет разрешение на метку Azure для доступа к журналам AWS.
 
 > [!NOTE]
-> AWS Клаудтраил имеет [встроенные ограничения](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html) в своем API лукупевентс. Он позволяет не более двух транзакций в секунду (TPS) на каждую учетную запись, и каждый запрос может возвращать не более 50 записей. Следовательно, если один клиент постоянно создает более 100 записей в одну секунду в одном регионе, невыполненные работы и задержки при приеме данных будут возникать.
+> AWS Клаудтраил имеет [встроенные ограничения](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html) в своем API лукупевентс. Он позволяет не более двух транзакций в секунду (TPS) на каждую учетную запись, и каждый запрос может возвращать не более 50 записей. Следовательно, если один клиент постоянно создает более 100 записей в одну секунду в одном регионе, могут возникнуть невыполненные работы и задержки при приеме данных.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -35,7 +35,7 @@ ms.locfileid: "96436612"
 > [!NOTE]
 > Azure Sentinel собирает события управления Клаудтраил из всех регионов. Не рекомендуется выполнять потоковую передачу событий из одного региона в другой.
 
-## <a name="connect-aws"></a>Подключение к AWS 
+## <a name="connect-aws"></a>Подключение AWS 
 
 
 1. В поле Sentinel Azure выберите **соединители данных** , а затем щелкните строку **Amazon Web Services** в таблице и в области AWS справа щелкните **открыть страницу соединителя**.

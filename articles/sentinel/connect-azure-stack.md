@@ -1,6 +1,6 @@
 ---
 title: Подключение виртуальных машин Azure Stack HUB к Azure Sentinel | Документация Майкрософт
-description: В этой статье показано, как подготавливать расширение виртуальной машины управления Azure Monitor, Update и Configuration Management на виртуальных машинах Azure Stack HUB и запускать их мониторинг с помощью Sentinel.
+description: В этой статье показано, как подготавливать расширение виртуальной машины управления Azure Monitor, Update и Configuration Management на виртуальных машинах Azure Stack HUB и приступить к их мониторингу с помощью Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 068296a02af0abd2fb18d284fdaf01b7c1b198fa
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 120f160e3c7bc7a9a0e81586ea4b97ee827dd33e
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631148"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807434"
 ---
 # <a name="connect-azure-stack-hub-virtual-machines-to-azure-sentinel"></a>Подключение виртуальных машин Azure Stack HUB к Azure Sentinel
 

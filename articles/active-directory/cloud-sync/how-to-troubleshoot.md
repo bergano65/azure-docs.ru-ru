@@ -8,12 +8,12 @@ ms.date: 01/19/2021
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 33af92c1987d9cd0c88e689dd7bafccadd60cb06
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: fad065795345314c58e83c8d2614ed01c9e78e49
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98614060"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805535"
 ---
 # <a name="cloud-sync-troubleshooting"></a>Устранение неполадок синхронизации в облаке
 
@@ -122,7 +122,7 @@ ms.locfileid: "98614060"
 
 Чтобы устранить эту проблему, измените политики выполнения PowerShell на сервере. Необходимо, чтобы политики компьютера и пользователя были заданы как *неопределенные* или *RemoteSigned*. Если они заданы как *неограниченные*, вы увидите эту ошибку. Дополнительные сведения см. в разделе [политики выполнения PowerShell](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6). 
 
-### <a name="log-files"></a>Файлы журнала
+### <a name="log-files"></a>файлы журналов.
 
 По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке **К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace**.
 
@@ -164,7 +164,7 @@ ms.locfileid: "98614060"
 
 Выбрав состояние, можно просмотреть дополнительные сведения о карантине. Также можно получить код ошибки и сообщение.
 
-![Сведения о состоянии карантина](media/how-to-troubleshoot/quarantine-2.png)
+![Снимок экрана, на котором отображаются дополнительные сведения о карантине.](media/how-to-troubleshoot/quarantine-2.png)
 
 При щелчке состояния правой кнопкой мыши отображаются дополнительные параметры:
     
@@ -172,7 +172,7 @@ ms.locfileid: "98614060"
    - Просмотреть агент
    - Очистить карантин
 
-![Сведения о состоянии карантина](media/how-to-troubleshoot/quarantine-4.png)
+![Снимок экрана, показывающий пункты контекстного меню.](media/how-to-troubleshoot/quarantine-4.png)
 
 
 ### <a name="resolve-a-quarantine"></a>Разрешение карантина
@@ -186,7 +186,7 @@ ms.locfileid: "98614060"
 
 Вы увидите уведомление о том, что карантин очищен.
 
-![Сведения о состоянии карантина](media/how-to-troubleshoot/quarantine-5.png)
+![Снимок экрана, на котором показано уведомление о снятии карантина.](media/how-to-troubleshoot/quarantine-5.png)
 
 После этого состояние агента должно отображаться как работоспособное.
 
