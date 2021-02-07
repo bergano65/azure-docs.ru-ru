@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1ba23b73836f1a2dbe73932ba920649ca5bb8b33
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 175c00440fe9723bbd389db39616f525c2b7f436
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195710"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805484"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
@@ -1102,9 +1102,9 @@ ms.locfileid: "98195710"
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
-**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Можно использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений Sentinel.
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-* [Как настроить непрерывный экспорт данных](../security-center/continuous-export.md)
+* [Настройка непрерывного экспорта данных](../security-center/continuous-export.md)
 
 * [Как выполнить потоковую передачу оповещений в Azure Sentinel](../sentinel/connect-azure-security-center.md)
 

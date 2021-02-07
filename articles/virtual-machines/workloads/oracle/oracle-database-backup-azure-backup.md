@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/28/2021
 ms.author: cholse
 ms.reviewer: dbakevlar
-ms.openlocfilehash: 3122b1c5d7ac8b9dca0e244a4b7e73a57c4c5fca
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: ac045694e8975509635e03221a8cb9cc84446b55
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072410"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806415"
 ---
 # <a name="back-up-and-recover-an-oracle-database-19c-database-on-an-azure-linux-vm-using-azure-backup"></a>Резервное копирование и восстановление Oracle Database базы данных 19c на виртуальной машине Linux в Azure с помощью Azure Backup
 
@@ -73,7 +73,7 @@ ms.locfileid: "99072410"
     export ORACLE_SID=test;
     ```
 
-    Кроме того, необходимо добавить переменную ORACLE_SID в `oracle` файл Users `.bashrc` для будущих входов с помощью следующей команды:
+    Кроме того, необходимо добавить переменную ORACLE_SID в файл `.bashrc` пользователей `oracle` для последующих операций входа с помощью следующей команды:
 
     ```bash
     echo "export ORACLE_SID=test" >> ~oracle/.bashrc
@@ -380,7 +380,7 @@ Azure Backup служба предоставляет [платформу](../../
 
 8. Для согласованных с приложениями резервных копий устраните все ошибки в файле журнала. Файл журнала находится по адресу/Вар/лог/Азуре/Микрософт.Азуре.рековерисервицес.вмснапшотлинукс/екстенсион.лог.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Создайте хранилище служб восстановления.
 
@@ -476,7 +476,7 @@ Azure Backup служба предоставляет [платформу](../../
     $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы получить список точек восстановления для виртуальной машины, используйте команду AZ Backup точек восстановления. В этом примере мы выбираем последнюю точку восстановления для виртуальной машины с именем myVM, защищенной в хранилище myRecoveryServicesVault:
 
@@ -673,7 +673,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
 
    ![Команда удаления хранилища](./media/oracle-backup-recovery/recover-vm-01.png)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Останавливает и освобождает виртуальную машину:
 
@@ -697,7 +697,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
 
    1. В портал Azure выберите **+ создать ресурс** и найдите и выберите **учетная запись хранения**.
     
-      ![Страница добавления учетной записи хранения](./media/oracle-backup-recovery/storage-1.png)
+      ![Снимок экрана, на котором показано, где можно создать ресурс.](./media/oracle-backup-recovery/storage-1.png)
     
     
    1. На странице Создание учетной записи хранения выберите существующую группу ресурсов **RG-Oracle**, присвойте имя учетной записи хранения **Оракресторе** и выберите **Storage v2 (Женералпурпосе v2)** для типа учетной записи. Измените репликацию на **локально избыточное хранилище (LRS)** и установите для параметра производительность значение **Standard**. Убедитесь, что в качестве расположения выбран тот же регион, что и для всех остальных ресурсов в группе ресурсов. 
@@ -736,7 +736,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
 
     ![Состояние процесса восстановления](./media/oracle-backup-recovery/recover-vm-06.png)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы настроить учетную запись хранения и файловый ресурс, выполните следующие команды в Azure CLI.
 
@@ -877,7 +877,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
 
 5.  Теперь необходимо отключить сетевую карту, созданную с помощью операции восстановления виртуальной машины, так как она настроена в качестве основного интерфейса. Щелкните **Отключить сетевой интерфейс** и выберите новую сетевую карту, подобную **vmoracle19c-NIC-XXXXXXXXXXXX**, а затем нажмите кнопку **ОК** .
 
-    ![Значение IP-адреса](./media/oracle-backup-recovery/create-ip-05.png)
+    ![Снимок экрана, на котором показано, где выбрать вариант отсоединить сетевой интерфейс.](./media/oracle-backup-recovery/create-ip-05.png)
     
     Теперь созданная виртуальная машина будет иметь исходную сетевую карту, связанную с исходным IP-адресом и правилами группы безопасности сети.
     
@@ -885,7 +885,7 @@ $ scp vmoracle19c_xxxxxx_xxxxxx_xxxxxx.py azureuser@<publicIpAddress>:/tmp
     
 6.  Вернитесь к **обзору** и нажмите кнопку **Пуск** . 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Останавливает и освобождает виртуальную машину:
 

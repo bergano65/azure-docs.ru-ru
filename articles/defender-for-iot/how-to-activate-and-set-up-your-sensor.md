@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 7d045ad104f8e2055ae85b74f4aae8f4d3fd61a4
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 5d2d923fc448beeff8fa165226890d88d97d01ad
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509525"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805671"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Активация и настройка датчика
 
@@ -98,7 +98,7 @@ ms.locfileid: "99509525"
 1. Введите парольную фразу и отправьте PEM-файл, если это необходимо.
 1. Выберите **Далее**. Откроется экран проверка. По умолчанию проверка между консолью управления и подключенными датчиками включена.
 1. Чтобы отключить проверку, отключите переключатель **включить проверку на уровне системы** . Рекомендуется включить проверку.
-1. Щелкните **Сохранить**.  
+1. Нажмите кнопку **Сохранить**.  
 
 После отправки сертификата, подписанного ЦС, может потребоваться обновить экран.
 
@@ -182,7 +182,7 @@ ms.locfileid: "99509525"
 | Панель мониторинга | :::image type="icon" source="media/concept-sensor-console-overview/dashboard-icon-azure.png" border="false"::: | Просмотр интуитивно понятного моментального снимка состояния безопасности сети. |
 | Схема устройства | :::image type="icon" source="media/concept-sensor-console-overview/asset-map-icon-azure.png" border="false"::: | Просмотр сетевых устройств, подключений устройств и свойств устройств на карте. Для просмотра сети доступны различные параметры масштабирования, выделения и фильтрации. |
 | Инвентаризация устройств | :::image type="icon" source="media/concept-sensor-console-overview/asset-inventory-icon-azure.png" border="false":::  | В поле Инвентаризация устройства отображается список атрибутов устройства, обнаруженных этим датчиком. Доступны следующие параметры: <br /> — Сортировка или фильтрация сведений в соответствии с полями таблицы и просмотр отфильтрованных сведений. <br /> — Экспорт данных в CSV-файл. <br /> — Импорт сведений о реестре Windows.|
-| видны узлы | :::image type="icon" source="media/concept-sensor-console-overview/alerts-icon-azure.png" border="false"::: | Отображение предупреждений при возникновении нарушений политики, возникновение отклонения от базового поведения или обнаружении любого типа подозрительных действий в сети. |
+| Оповещения | :::image type="icon" source="media/concept-sensor-console-overview/alerts-icon-azure.png" border="false"::: | Отображение предупреждений при возникновении нарушений политики, возникновение отклонения от базового поведения или обнаружении любого типа подозрительных действий в сети. |
 | Отчеты | :::image type="icon" source="media/concept-sensor-console-overview/reports-icon-azure.png" border="false"::: | Просмотр отчетов, основанных на запросах интеллектуального анализа данных. |
 
 **Анализ**
@@ -204,7 +204,7 @@ ms.locfileid: "99509525"
 | Окно | Значок | Описание |
 |---|---|---|
 | Пользователи | :::image type="icon" source="media/concept-sensor-console-overview/users-icon-azure.png" border="false"::: | Определите пользователей и роли с различными уровнями доступа. |
-| Сылая | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Перешлите сведения о предупреждениях партнерам и внутренним источникам (например, Sentinel), которые интегрируются с защитником для Интернета вещей, на адреса электронной почты, на серверы веб-перехватчиков и многое другое. <br /> Дополнительные сведения см. в разделе [сведения о пересылке оповещений](how-to-forward-alert-information-to-partners.md) . |
+| Сылая | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Пересылка сведений о предупреждениях партнерам и внутренним источникам (например, к Azure Sentinel) интеграция с защитником Интернета вещей, адреса электронной почты, серверы веб-перехватчиков и многое другое. <br /> Дополнительные сведения см. в разделе [сведения о пересылке оповещений](how-to-forward-alert-information-to-partners.md) . |
 | Системные параметры | :::image type="icon" source="media/concept-sensor-console-overview/system-settings-icon-azure.png" border="false"::: | Настройте параметры системы. Например, определите параметры DHCP, укажите сведения о почтовом сервере или создайте псевдонимы портов. |
 | Импорт параметров | :::image type="icon" source="media/concept-sensor-console-overview/import-settings-icon-azure.png" border="false"::: | Отображение окна **Параметры импорта** . В сведениях об устройстве можно выполнять ручные изменения.<br /> Дополнительные сведения см. в разделе [Импорт сведений об устройстве](how-to-import-device-information.md) . |
 
@@ -214,7 +214,7 @@ ms.locfileid: "99509525"
 |----|---|---|
 | Поддержка | :::image type="icon" source="media/concept-sensor-console-overview/support-icon-azure.png" border="false"::: | Обратитесь за помощью в [Служба поддержки Майкрософт](https://support.microsoft.com/) . |
 
-### <a name="see-also"></a>См. также раздел
+### <a name="see-also"></a>См. также
 
 [Подключение датчика](getting-started.md#4-onboard-a-sensor)
 

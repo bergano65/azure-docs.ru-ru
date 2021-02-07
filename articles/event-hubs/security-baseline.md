@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 0fbd7cda4723b62863d7d9bb0fe6aa2fac32dcd9
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: c5c4aed7a5ee1726d7afb1a671fea1519acfa67c
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633109"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806093"
 ---
 # <a name="azure-security-baseline-for-event-hubs"></a>Базовый уровень безопасности Azure для концентраторов событий
 
@@ -1054,7 +1054,7 @@ https://azuremarketplace.microsoft.com/marketplace/?term=Firewall
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
-**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
 Настройка непрерывного экспорта данных: https://docs.microsoft.com/azure/security-center/continuous-export
 

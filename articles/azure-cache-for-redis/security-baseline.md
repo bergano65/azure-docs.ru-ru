@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 10277f18dd2a7ddaa436794839669e34f0ee95c3
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 567652ec8da257e72aafa95e24af9f5680a2b6d3
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195915"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807960"
 ---
 # <a name="azure-security-baseline-for-azure-cache-for-redis"></a>Базовый план безопасности Azure для кэша Azure для Redis
 
@@ -1161,9 +1161,9 @@ https://docs.microsoft.com/azure/security-center/security-center-provide-securit
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
 
-**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных центра безопасности Azure для потоковой передачи метки предупреждений.
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Вы можете использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений в Azure Sentinel.
 
-Настройка непрерывного экспорта данных: 
+Как настроить непрерывный экспорт:
 
 https://docs.microsoft.com/azure/security-center/continuous-export
 

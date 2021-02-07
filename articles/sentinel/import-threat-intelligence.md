@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/26/2020
 ms.author: yelevin
-ms.openlocfilehash: bde11c8e06891025be96810acf6d87952a3d8d2f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 5bf94d7c5889bb5a743655d65e48f021e91e01b7
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660786"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807145"
 ---
 # <a name="import-threat-intelligence-into-azure-sentinel"></a>Импорт аналитики угроз в Azure Sentinel
 
@@ -36,7 +36,7 @@ ms.locfileid: "94660786"
 - Используйте встроенные шаблоны правил **аналитики** для создания оповещений системы безопасности и инцидентов с помощью импортированной аналитики угроз.
 - Визуализируйте ключевые сведения об аналитике угроз в Azure Sentinel с помощью **книги аналитики угроз**.
 
-Аналитика угроз также предоставляет полезный контекст в других возможностях Azure Sentinel, **таких как поиск** и **записные книжки**, и, как и в этой статье, эти возможности рассматриваются в [этой отличной записи блога с помощью Ян Хеллен на записных книжках Jupyter в Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/using-threat-intelligence-in-your-jupyter-notebooks/ba-p/860239), что охватывает использование CTI в записных книжках.
+Аналитика угроз также предоставляет полезный контекст в рамках других возможностей Azure Sentinel, **таких как поиск** и **записные книжки**, и, как и в этой статье, эти возможности рассматриваются в [этой отличной записи блога Ян Хеллен в записях Jupyter Notebooks в Azure Sentinel](https://techcommunity.microsoft.com/t5/azure-sentinel/using-threat-intelligence-in-your-jupyter-notebooks/ba-p/860239), которая охватывает использование CTI в записных книжках.
 
 ## <a name="azure-sentinel-data-connectors-for-threat-intelligence"></a>Соединители данных Azure Sentinel для аналитики угроз
 

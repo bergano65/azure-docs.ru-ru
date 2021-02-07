@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 22c49502883cb444027bd59a24bfb5bb3c32da4c
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 42d4467a6441e517ef3194f701eb47e7e68505b1
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915170"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99806313"
 ---
 # <a name="view-and-configure-ddos-diagnostic-logging"></a>Просмотр и настройка журнала диагностики атак DDoS
 
@@ -73,11 +73,11 @@ ms.locfileid: "97915170"
 | **ResourceId** | Идентификатор ресурса общедоступного IP-адреса. |
 | **Категория** | Для уведомлений это будет `DDoSProtectionNotifications` .|
 | **ResourceGroup** | Группа ресурсов, содержащая общедоступный IP-адрес и виртуальную сеть. |
-| **Подписки** | Идентификатор подписки плана защиты от атак DDoS. |
+| **SubscriptionId** | Идентификатор подписки плана защиты от атак DDoS. |
 | **Ресурс** | Имя общедоступного IP-адреса. |
 | **ResourceType** | Это всегда будет `PUBLICIPADDRESS` . |
 | **OperationName** | Для уведомлений это будет `DDoSProtectionNotifications` .  |
-| **Message** | Сведения об атаке. |
+| **Сообщение** | Сведения об атаке. |
 | **Тип** | Тип уведомления. Возможные значения: `MitigationStarted` . `MitigationStopped`. |
 | **PublicIpAddress** | Ваш общедоступный IP-адрес. |
 
@@ -89,16 +89,16 @@ ms.locfileid: "97915170"
 | **ResourceId** | Идентификатор ресурса общедоступного IP-адреса. |
 | **Категория** | Для журналов потоков это будет `DDoSMitigationFlowLogs` .|
 | **ResourceGroup** | Группа ресурсов, содержащая общедоступный IP-адрес и виртуальную сеть. |
-| **Подписки** | Идентификатор подписки плана защиты от атак DDoS. |
+| **SubscriptionId** | Идентификатор подписки плана защиты от атак DDoS. |
 | **Ресурс** | Имя общедоступного IP-адреса. |
 | **ResourceType** | Это всегда будет `PUBLICIPADDRESS` . |
 | **OperationName** | Для журналов потоков это будет `DDoSMitigationFlowLogs` . |
-| **Message** | Сведения об атаке. |
+| **Сообщение** | Сведения об атаке. |
 | **саурцепублиЦипаддресс** | Общедоступный IP-адрес клиента, который создает трафик на общедоступный IP-адрес. |
 | **SourcePort** | Номер порта в диапазоне от 0 до 65535. |
 | **дестпублиЦипаддресс** | Ваш общедоступный IP-адрес. |
 | **дестпорт** | Номер порта в диапазоне от 0 до 65535. |
-| **протокол**; | Тип протокола. Возможные значения: `tcp` , `udp` , `other` .|
+| **Протокол** | Тип протокола. Возможные значения: `tcp` , `udp` , `other` .|
 
 # <a name="ddosmitigationreports"></a>[DDoSMitigationReports](#tab/DDoSMitigationReports)
 
@@ -108,7 +108,7 @@ ms.locfileid: "97915170"
 | **ResourceId** | Идентификатор ресурса общедоступного IP-адреса. |
 | **Категория** | Для уведомлений это будет `DDoSProtectionNotifications` .|
 | **ResourceGroup** | Группа ресурсов, содержащая общедоступный IP-адрес и виртуальную сеть. |
-| **Подписки** | Идентификатор подписки плана защиты от атак DDoS. |
+| **SubscriptionId** | Идентификатор подписки плана защиты от атак DDoS. |
 | **Ресурс** | Имя общедоступного IP-адреса. |
 | **ResourceType** | Это всегда будет `PUBLICIPADDRESS` . |
 | **OperationName** | Для отчетов об устранении рисков это будет `DDoSMitigationReports` . |
@@ -128,7 +128,7 @@ ms.locfileid: "97915170"
 
 ## <a name="enable-diagnostic-logging-on-all-public-ips"></a>Включить ведение журнала диагностики на всех общедоступных IP-адресах
 
-Этот [шаблон](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Enable%20Diagnostic%20Logging/Azure%20Policy) создает определение политики Azure для автоматического включения ведения журнала диагностики для всех журналов общедоступных IP-адресов в определенной области.
+Этот [шаблон](https://aka.ms/ddosdiaglogs) создает определение политики Azure для автоматического включения ведения журнала диагностики для всех журналов общедоступных IP-адресов в определенной области.
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FEnable%2520Diagnostic%2520Logging%2FAzure%2520Policy%2FDDoSLogs.json)
 
@@ -142,7 +142,7 @@ ms.locfileid: "97915170"
 
 ### <a name="azure-ddos-protection-workbook"></a>Книга защиты от атак DDoS Azure
 
-Этот шаблон Azure Resource Manager (ARM) можно использовать для развертывания книги анализа атак. Эта книга позволяет визуализировать данные атаки на нескольких фильтруемых панелях, чтобы легко понять, что находится на заявляйте. 
+[Этот шаблон Azure Resource Manager (ARM)](https://aka.ms/ddosworkbook) можно использовать для развертывания книги анализа атак. Эта книга позволяет визуализировать данные атаки на нескольких фильтруемых панелях, чтобы легко понять, что находится на заявляйте. 
 
 [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Network-Security%2Fmaster%2FAzure%2520DDoS%2520Protection%2FAzure%2520DDoS%2520Protection%2520Workbook%2FAzureDDoSWorkbook_ARM.json)
 
