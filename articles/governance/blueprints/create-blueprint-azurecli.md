@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы с помощью Azure CLI
 description: В рамках этого краткого руководства вы будете использовать Azure Blueprints для создания, определения и развертывания артефактов с помощью Azure CLI.
-ms.date: 01/26/2021
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: a0e44925bdec78b8b02a50c8b3f91db0bb764976
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 6ce3031c93f973c2efb251fad371a6f3750ae0fd
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98875217"
+ms.locfileid: "98920246"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Краткое руководство. Определение и назначение схемы Azure с помощью Azure CLI
 
@@ -167,6 +167,9 @@ ms.locfileid: "98875217"
         --parameters artifacts\policyTags.json
      ```
 
+     > [!NOTE]
+     > При использовании `az blueprint` на компьютерах Mac замените `\` на `/` в значениях параметров, которые включают путь. В этом случае значение **parameters** примет вид `artifacts/policyTags.json`.
+
 1. Добавьте в подписку еще одно назначение политики для тега хранилища (повторно используя параметр _storageAccountType_). Этот дополнительный артефакт назначения политики демонстрирует, что определенный в схеме параметр может использоваться несколькими артефактами. В этом примере **storageAccountType** используется для настройки тега группы ресурсов. Это значение предоставляет сведения об учетной записи хранения, которая будет создана на следующем шаге. В этом примере используется встроенная политика "_Задать тег и его значение по умолчанию для групп ресурсов_" с глобальным уникальным идентификатором `49c88fc8-6fd1-46fd-a676-f12d1d3a4c71`.
 
    - JSON-файл — artifacts\policyStorageTags.json
@@ -193,6 +196,9 @@ ms.locfileid: "98875217"
         --description 'Apply storage tag and the parameter also used by the template to resource groups' \
         --parameters artifacts\policyStorageTags.json
      ```
+
+     > [!NOTE]
+     > При использовании `az blueprint` на компьютерах Mac замените `\` на `/` в значениях параметров, которые включают путь. В этом случае значение **parameters** примет вид `artifacts/policyStorageTags.json`.
 
 1. Добавьте шаблон в группу ресурсов. Параметр **template** для шаблона ARM содержит обычные компоненты JSON шаблона. Этот шаблон также повторно использует параметры схемы **storageAccountType**, **tagName** и **tagValue**, передавая каждый из них в шаблон. Параметры схемы доступны шаблону за счет использования параметра **parameters**. В коде JSON-шаблона эта пара "ключ-значение" используется для внедрения значения. Имена параметров схемы и шаблона могут быть одинаковыми.
 
@@ -276,6 +282,9 @@ ms.locfileid: "98875217"
         --parameters artifacts\templateStorageParams.json \
         --resource-group-art 'storageRG'
      ```
+
+     > [!NOTE]
+     > При использовании `az blueprint` на компьютерах Mac замените `\` на `/` в значениях параметров, которые включают путь. В этом случае значение **template** примет виде `artifacts/templateStorage.json`, а **parameters** — `artifacts/templateStorageParams.json`.
 
 1. Добавьте назначение ролей в группу ресурсов. Так же как и в предыдущем фрагменте назначения ролей, в приведенном ниже примере используется идентификатор для роли **Владелец**, но из схемы для него передается другой параметр. В этом примере используется встроенная роль _Владелец_ с глобальным уникальным идентификатором `8e3af657-a8ff-443c-a75c-2fe8c4bcb635`.
 

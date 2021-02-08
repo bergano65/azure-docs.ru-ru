@@ -2,15 +2,15 @@
 title: Настройка приложений Python в Linux
 description: Узнайте, как с помощью портала Azure и Azure CLI настроить контейнер Python для выполнения веб-приложений.
 ms.topic: quickstart
-ms.date: 11/16/2020
+ms.date: 02/01/2021
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 7589b5c66bf4fa86db243574f551ec585ccccea1
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 83c49eea8bda10d665c0a08666276e905c60c584
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855062"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493708"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -67,10 +67,13 @@ ms.locfileid: "96855062"
 
 При развертывании приложения с помощью пакетов Git или ZIP система сборки Службы приложений, именуемая Oryx, выполняет следующие действия:
 
-1. Запускает пользовательский скрипт предварительной сборки, если он задан с помощью параметра `PRE_BUILD_COMMAND`.
+1. Запускает пользовательский скрипт предварительной сборки, если он задан с помощью параметра `PRE_BUILD_COMMAND`. (Этот скрипт может вызывать другие скрипты Python и Node.js, команды pip и npm, а также YARN и прочие средства на основе Node, например `yarn install` и `yarn build`.)
+
 1. Выполните `pip install -r requirements.txt`. В корневой папке проекта должен присутствовать файл *requirements.txt*. В противном случае в процессе сборки будет выведено сообщение об ошибке: Could not find setup.py or requirements.txt; Not running pip install (Не удалось найти setup.py или requirements.txt. Не запущена установка pip).
+
 1. Если *manage.py* находится в корне репозитория (что характерно для приложения Django), запускает *manage.py collectstatic*. Однако если для параметра `DISABLE_COLLECTSTATIC` задано значение `true`, этот шаг пропускается.
-1. Запускает пользовательский скрипт последующей сборки, если он задан с помощью параметра `POST_BUILD_COMMAND`.
+
+1. Запускает пользовательский скрипт последующей сборки, если он задан с помощью параметра `POST_BUILD_COMMAND`. (Этот скрипт также может вызывать другие скрипты Python и Node.js, команды pip и npm и средства на основе Node.)
 
 По умолчанию параметры `PRE_BUILD_COMMAND`, `POST_BUILD_COMMAND` и `DISABLE_COLLECTSTATIC` пусты. 
 
@@ -131,6 +134,52 @@ ms.locfileid: "96855062"
 | `ALLOWED_HOSTS` | В рабочей среде для Django требуется включить URL-адрес приложения в массив `ALLOWED_HOSTS` в *settings.py*. Этот URL-адрес можно получить во время выполнения с помощью кода `os.environ['WEBSITE_HOSTNAME']`. Служба приложений автоматически задает в качестве значения переменной среды `WEBSITE_HOSTNAME` URL-адрес приложения. |
 | `DATABASES` | Определите параметры в Службе приложений для подключения к базе данных и загрузите их в виде переменных среды, чтобы заполнить словарь [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES). Можно также сохранить значения (особенно имя пользователя и пароль) в виде [секретов Azure Key Vault](../key-vault/secrets/quick-create-python.md). |
 
+## <a name="serve-static-files-for-django-apps"></a>Выдача статических файлов для приложений Django
+
+Если веб-приложение Django содержит статические файлы для интерфейса, сначала выполните инструкции из [раздела об управлении статическими файлами](https://docs.djangoproject.com/en/3.1/howto/static-files/) в документации по Django.
+
+Для Службы приложений нужно внести следующие изменения:
+
+1. Рекомендуем применить переменные среды (при локальной разработке) и параметры приложения (при развертывании в облаке) для динамической передачи значений `STATIC_URL` и `STATIC_ROOT` в Django. Пример:    
+
+    ```python
+    STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "/static/")
+    STATIC_ROOT = os.environ.get("DJANGO_STATIC_ROOT", "./static/")    
+    ```
+
+    `DJANGO_STATIC_URL` и `DJANGO_STATIC_ROOT` можно изменять по мере необходимости для локальных и облачных сред. Например, если в процессе сборки статических файлов они помещаются в папку с именем `django-static`, вы можете задать для `DJANGO_STATIC_URL` значение `/django-static/` вместо значения по умолчанию.
+
+1. Если у вас есть выполняемый перед сборкой скрипт, с помощью которого создаются статические файлы в другой папке, включите эту папку в переменную Django `STATICFILES_DIRS`, чтобы процесс `collectstatic` в Django смог их найти. Например, если `yarn build` выполняется в папке для внешнего интерфейса, а YARN создает папку `build/static` со статическими файлами, включите эту папку следующим образом:
+
+    ```python
+    FRONTEND_DIR = "path-to-frontend-folder" 
+    STATICFILES_DIRS = [os.path.join(FRONTEND_DIR, 'build', 'static')]    
+    ```
+
+    Здесь `FRONTEND_DIR` применяется, чтобы создать путь к месту запуска средства сборки (в нашем примере это YARN). Как обычно, вы можете использовать переменную среды и параметр приложения на свое усмотрение.
+
+1. Добавьте `whitenoise` в файл *requirements.txt*. Пакет Python [Whitenoise](http://whitenoise.evans.io/en/stable/) (whitenoise.evans.io) упрощает обработку собственных статических файлов рабочего приложения Django. Whitenoise обслуживает файлы в той папке, имя которой указано в переменной Django `STATIC_ROOT`.
+
+1. В файле *settings.py* добавьте для Whitenoise следующую строку:
+
+    ```python
+    STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+    ```
+
+1. Также включите Whitenoise в списки `MIDDLEWARE` и `INSTALLED_APPS`:
+
+    ```python
+    MIDDLEWARE = [
+        "whitenoise.middleware.WhiteNoiseMiddleware",
+        # Other values follow
+    ]
+
+    INSTALLED_APPS = [
+        "whitenoise.runserver_nostatic",
+        # Other values follow
+    ]
+    ```
+
 ## <a name="container-characteristics"></a>Характеристики контейнера
 
 При развертывании в Службе приложений приложения Python выполняются в контейнере Linux Docker, который определен в [этом репозитории GitHub](https://github.com/Azure-App-Service/python). Конфигурации образов можно найти в каталогах для конкретных версий.
@@ -150,6 +199,8 @@ ms.locfileid: "96855062"
 
 - Служба приложений автоматически определяет переменную среды с именем `WEBSITE_HOSTNAME`, используя URL-адрес веб-приложения, например `msdocs-hello-world.azurewebsites.net`. Она также определяет `WEBSITE_SITE_NAME`, используя имя приложения, например `msdocs-hello-world`. 
    
+- npm и Node.js устанавливаются в контейнере, что позволяет запускать YARN и другие средства сборки на основе Node.
+
 ## <a name="container-startup-process"></a>Процесс запуска контейнера
 
 Во время запуска служба приложений под управлением контейнера Linux выполнит следующие действия.
@@ -270,7 +321,7 @@ gunicorn --bind=0.0.0.0 --timeout 600 app:app
 ```python
 db_server = os.environ['DATABASE_SERVER']
 ```
-    
+
 ## <a name="detect-https-session"></a>Обнаружение сеанса HTTPS
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) (wikipedia.org) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.

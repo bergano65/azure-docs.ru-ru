@@ -8,14 +8,14 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurepowershell
-ms.date: 09/30/2020
+ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: d1fa63da035cba35538d13ffe4c3897458364a65
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f3b770a5790d5e9554c7bf5d7d24f1eeccff7662
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936657"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072225"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell
 
@@ -33,38 +33,18 @@ Connect-AzAccount
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.
-
-```azurepowershell-interactive
-New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-powershell-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
-Далее вы создадите Key Vault. При выполнении этого шага вам понадобятся некоторые сведения:
-
-Хотя мы используем Contoso KeyVault2 как имя для Key Vault в рамках работы с этим руководством, вы должны использовать уникальное имя.
-
-- **Имя хранилища**: Contoso-Vault2.
-- **Имя группы ресурсов**: ContosoResourceGroup.
-- **Расположение**: восточная часть США.
-
-```azurepowershell-interactive
-New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
-```
-
-В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
-
-* **Имя хранилища.** В этом примере используется имя **Contoso-Vault2**. Вы будете использовать это имя для выполнения других командлетов хранилища ключей;
-* **URI хранилища**. В нашем примере это https://Contoso-Vault2.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
-
-После создания хранилища ваша учетная запись Azure будет единственной учетной записью, с которой можно выполнять любые действия в новом хранилище.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-kv-creation.md)]
 
 ## <a name="give-your-user-account-permissions-to-manage-secrets-in-key-vault"></a>Предоставление учетной записи пользователя разрешений на управление секретами в Key Vault
 
 Используйте командлет Azure PowerShell Set-AzKeyVaultAccessPolicy, чтобы обновить политику доступа Key Vault и предоставить разрешения секретов учетной записи пользователя.
+
 ```azurepowershell-interactive
-Set-AzKeyVaultAccessPolicy -VaultName 'Contoso-Vault2' -UserPrincipalName 'user@domain.com' -PermissionsToSecrets get,set,delete
+Set-AzKeyVaultAccessPolicy -VaultName "<your-unique-keyvault-name>" -UserPrincipalName "user@domain.com" -PermissionsToSecrets get,set,delete
 ```
 
 ## <a name="adding-a-secret-to-key-vault"></a>Добавление секрета в Key Vault
@@ -74,14 +54,14 @@ Set-AzKeyVaultAccessPolicy -VaultName 'Contoso-Vault2' -UserPrincipalName 'user@
 Сначала преобразуйте значение **hVFkk965BuUv** в безопасную строку, выполнив следующую команду:
 
 ```azurepowershell-interactive
-$secretvalue = ConvertTo-SecureString 'hVFkk965BuUv' -AsPlainText -Force
+$secretvalue = ConvertTo-SecureString "hVFkk965BuUv" -AsPlainText -Force
 ```
 
 Затем введите команды PowerShell ниже, чтобы создать секрет в Key Vault с именем **ExamplePassword** и значением **hVFkk965BuUv**:
 
 
 ```azurepowershell-interactive
-$secret = Set-AzKeyVaultSecret -VaultName 'Contoso-Vault2' -Name 'ExamplePassword' -SecretValue $secretvalue
+$secret = Set-AzKeyVaultSecret -VaultName "<your-unique-keyvault-name>" -Name "ExamplePassword" -SecretValue $secretvalue
 ```
 
 ## <a name="retrieve-a-secret-from-key-vault"></a>получение секрета из Key Vault.
@@ -89,7 +69,7 @@ $secret = Set-AzKeyVaultSecret -VaultName 'Contoso-Vault2' -Name 'ExamplePasswor
 Чтобы просмотреть содержащееся в секрете значение в виде обычного текста, введите следующее:
 
 ```azurepowershell-interactive
-$secret = Get-AzKeyVaultSecret -VaultName 'Contoso-Vault2' -Name 'ExamplePassword'
+$secret = Get-AzKeyVaultSecret -VaultName "<your-unique-keyvault-name>" -Name "ExamplePassword"
 $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)
 try {
    $secretValueText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($ssPtr)

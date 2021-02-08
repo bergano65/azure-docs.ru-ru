@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/30/2020
-ms.openlocfilehash: 9d402599c4d6732ce92b8c64af6f660bcedbc4ba
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d90b9e38158d951990fffc21a43317c688da12c9
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455069"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052048"
 ---
 # <a name="quickstart-create-your-first-logic-apps-workflow---azure-portal"></a>Краткое руководство. Создание первого рабочего процесса Logic Apps на портале Azure
 
@@ -30,11 +30,14 @@ ms.locfileid: "96455069"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас нет подписки, [зарегистрируйтесь, чтобы получить бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Учетная запись и подписка Azure. Если у вас нет подписки, [зарегистрируйтесь, чтобы получить бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+
 * Учетная запись электронной почты службы, поддерживаемой в Logic Apps (например, Office 365 Outlook или Outlook.com). Сведения о других поддерживаемых поставщиках электронной почты см. в [списке соединителей](/connectors/).
 
     > [!IMPORTANT]
     > Если вы используете соединитель [Gmail](/connectors/gmail/), учтите, что использовать этот соединитель в Logic Apps без ограничений могут только учетные записи G Suite. Если у вас есть учетная запись объекта-получателя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+
+* Если для приложения логики нужно реализовать обмен данными через брандмауэр, который допускает трафик только на определенные IP-адреса, этот брандмауэр должен разрешать доступ [входящим](logic-apps-limits-and-config.md#inbound) *и* [исходящим](logic-apps-limits-and-config.md#outbound) IP-адресам, используемым службой Logic Apps или средой выполнения в регионе Azure, где существует ваше приложение логики. Если приложение логики также использует [управляемые соединители](../connectors/apis-list.md#managed-api-connectors) (например, соединитель Office 365 Outlook или соединитель SQL) либо [настраиваемые соединители](/connectors/custom-connectors/), брандмауэр также должен разрешать доступ *всем* [исходящим IP-адресам управляемого соединителя](logic-apps-limits-and-config.md#outbound) в регионе Azure приложения логики.
 
 <a name="create-logic-app"></a>
 
@@ -51,7 +54,7 @@ ms.locfileid: "96455069"
    ![Снимок экрана: страница службы Logic Apps на портале Azure, на которой показан список приложений логики и выбранная кнопка "Добавить".](./media/quickstart-create-first-logic-app-workflow/add-new-logic-app.png)
 
 1. В области **Logic App** укажите основные сведения и параметры для приложения логики. Создайте [группу ресурсов](../azure-resource-manager/management/overview.md#terminology) для этого примера приложения логики.
-    
+
    | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **имя**; | <*logic-app-name*> | Название приложения логики должно быть уникальным между регионами. Имя может содержать только буквы, цифры, дефисы (`-`), символы подчеркивания (`_`), круглые скобки (`(`, `)`) и точки (`.`). В этом примере используется имя My-First-Logic-App. |

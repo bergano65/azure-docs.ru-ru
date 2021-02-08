@@ -4,12 +4,12 @@ description: Сведения о том, как создать функцию C#
 ms.topic: quickstart
 ms.date: 11/03/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 791416a54fa75091facf1f7bc2aadf6fccf54b05
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 0068a9cbf99117a0a2432a02c9be934eb749f19a
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968625"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493691"
 ---
 # <a name="quickstart-create-a-c-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции C# в Azure с помощью Visual Studio Code
 
@@ -78,7 +78,7 @@ ms.locfileid: "97968625"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью Visual Studio Code вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье вы расширите эту функцию, добавив выходную привязку. Эта привязка записывает строку из HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
+С помощью [Visual Studio Code](functions-develop-vs-code.md?tabs=csharp) вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье показано, как расширить эту функцию путем подключения к службе хранилища Azure. Дополнительные сведения о подключении к другим службам Azure см. в статье [Подключение функций к службам Azure с помощью привязок](add-bindings-existing-function.md?tabs=csharp). 
 
 > [!div class="nextstepaction"]
 > [Подключение Функций Azure к службе хранилища Azure с помощью средств командной строки](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-csharp)

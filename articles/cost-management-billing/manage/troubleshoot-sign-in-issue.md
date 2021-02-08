@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 08/20/2020
 ms.author: v-miegge
-ms.openlocfilehash: 2e9b14fa264f3286134913e3c279c4400ce5bcc3
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 915b4fb289b6af6f4aac84d8bfa4d491a7f77efe
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132335"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050476"
 ---
 # <a name="troubleshoot-azure-subscription-sign-in-issues"></a>Устранение проблем со входом для подписки Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "92132335"
 - Воспользуйтесь другим браузером.
 - Используйте в браузере режим закрытого просмотра.
 
-   - **Edge.** Откройте раздел **Параметры** (три точки рядом с изображением профиля), выберите **Новое окно InPrivate**, а затем перейдите на [портал Azure](https://portal.azure.com/) или в [Центр управления учетной записью Azure](https://account.azure.com/Subscriptions). 
+   - **Edge.** Откройте раздел **Параметры** (три точки рядом с изображением профиля), выберите **Новое окно InPrivate**, а затем войдите на [портал Azure](https://portal.azure.com/). 
    - **Chrome.** Выберите режим **Incognito** (Инкогнито).
    - **Safari.** Выберите **File** (Файл) и **New Private Window** (Новое окно в конфиденциальном режиме).
 
@@ -53,7 +53,7 @@ ms.locfileid: "92132335"
    - **Chrome.** Выберите **Settings** (Параметры) и щелкните **Clear browsing data** (Очистить данные браузера) в разделе **Privacy and Security** (Конфиденциальность и безопасность).
 - Сбросьте параметры браузера до значений по умолчанию.
 - Используйте в браузере режим закрытого просмотра. 
-   - **Edge.** Откройте раздел **Параметры** (три точки рядом с изображением профиля), выберите **Новое окно InPrivate**, а затем перейдите на [портал Azure](https://portal.azure.com/) или в [Центр управления учетной записью Azure](https://account.azure.com/Subscriptions). 
+   - **Edge.** Откройте раздел **Параметры** (три точки рядом с изображением профиля), выберите **Новое окно InPrivate**, а затем войдите на [портал Azure](https://portal.azure.com/). 
    - **Chrome.** Выберите режим **Incognito** (Инкогнито).
    - **Safari.** Выберите **File** (Файл) и **New Private Window** (Новое окно в конфиденциальном режиме).
 

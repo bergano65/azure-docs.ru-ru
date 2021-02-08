@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: b475d8072c4103e8a532cdf703e2d75b0c8aafa2
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: b2ae48c76ccba80d274e7463b31782b4fbc6a976
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754149"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225720"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
@@ -55,13 +55,14 @@ ms.locfileid: "98754149"
 > 1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 > 1. Выберите **Зарегистрировать**. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** для использования в будущем.
 > 1. Для этого краткого руководства должно быть включено [неявное предоставление разрешения потока](v2-oauth2-implicit-grant-flow.md). В разделе **Управление** выберите **Проверка подлинности**.
-> 1. В разделе **Конфигурации платформ** щелкните **Добавить платформу**. Откроется панель слева. Выберите регион **веб-приложений**.
-> 1. В этой же левой части задайте для **URI перенаправления** значение `http://localhost:3000/`. Затем выберите **Маркер доступа** и **Токен идентификатора**.
+> 1. Выберите в разделе **Конфигурации платформ** > **Добавить платформу**. Выберите **Интернет**.
+> 1. В поле **URI перенаправления** укажите значение `http://localhost:3000/`. 
+> 1. Выберите **Маркеры доступа** и **Маркеры идентификации** в разделе **Неявное предоставление разрешения и гибридные потоки**.
 > 1. Нажмите кнопку **Настроить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Для работы примера кода в этом кратком руководстве необходимо добавить `redirectUri` со значением `http://localhost:3000/` и включить **неявное предоставление разрешения**.
+> Для примера кода, приведенного в этом кратком руководстве, требуется задать **URI перенаправления** `http://localhost:3000/` и включить **неявное предоставление разрешения**.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
 >

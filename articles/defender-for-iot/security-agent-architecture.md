@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: shhazam
-ms.openlocfilehash: 929b8de8a6b70519bb44e41ba5cfede9ec12f110
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: ff837fe88f878c522366b2b6bc19a1ef3954b667
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99808867"
+ms.locfileid: "99820659"
 ---
 # <a name="security-agent-reference-architecture"></a>Эталонная архитектура агента безопасности
 
@@ -51,7 +51,7 @@ ms.locfileid: "99808867"
 | 64-разрядная | C# или C | C# | Мы рекомендуем использовать агент C для устройств с более ограниченными или минимальными ресурсами устройств. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы получите общий обзор архитектуры модуля безопасности для центра Интернета вещей и доступных установщиков.
 

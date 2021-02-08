@@ -3,12 +3,12 @@ title: Создание функции TypeScript с помощью Visual Studi
 description: Сведения о том, как создать функцию TypeScript, а затем опубликовать локальный проект Node.js в бессерверном размещении в Функциях Azure с помощью расширения Функций Azure в Visual Studio Code.
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: 48295aab80b8a15a313ce7fa7acf94606357930b
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 4470741c8c7f2f6c9832ea73aa9c6207764bc903
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424972"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493544"
 ---
 # <a name="quickstart-create-a-function-in-azure-with-typescript-using-visual-studio-code"></a>Краткое руководство. Создание функции в Azure на TypeScript с помощью Visual Studio Code
 
@@ -74,7 +74,7 @@ ms.locfileid: "93424972"
 
 1. Щелкните значок Azure на панели действий, а затем в области **Azure: Функции** выберите кнопку **Deploy to function app...** (Развертывание в приложение-функцию).
 
-    ![Публикация проекта в Azure](media/functions-create-first-function-vs-code/function-app-publish-project.png)
+    ![Публикация проекта в Azure](../../includes/media/functions-publish-project-vscode/function-app-publish-project.png)
 
 1. Введите следующие сведения по соответствующим запросам:
 
@@ -90,17 +90,19 @@ ms.locfileid: "93424972"
 
     + **Select a location for new resources** (Выбор расположения для новых ресурсов).  Для повышения производительности выберите [регион](https://azure.microsoft.com/regions/) рядом с вами.
 
+    Расширение показывает в области уведомлений состояние отдельных ресурсов по мере их создания в Azure.
+
+    :::image type="content" source="../../includes/media/functions-publish-project-vscode/resource-notification.png" alt-text="Уведомление о создании ресурса Azure":::
+
 1. После завершения в вашей подписке создаются следующие ресурсы Azure с именами, производными от имени приложения-функции:
 
-    + группу ресурсов — логический контейнер связанных ресурсов;
-    + Стандартная учетная запись хранения Azure для сохранения состояния и других сведений о проектах.
-    + План потребления, который определяет базовый узел для бессерверного приложения-функции; 
-    + приложение-функцию — среду для выполнения кода функции. Приложение-функция позволяет группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими в рамках единого плана размещения.
-    + Экземпляр Application Insights, подключенный к приложению-функции, который отслеживает использование бессерверной функции.
+    [!INCLUDE [functions-vs-code-created-resources](../../includes/functions-vs-code-created-resources.md)]
 
     После создания приложения-функции и применения пакета развертывания отобразится уведомление. 
 
-1. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure. Если вы пропустили уведомление, щелкните значок колокольчика в правом нижнем углу, чтобы снова просмотреть его.
+    [!INCLUDE [functions-vs-code-create-tip](../../includes/functions-vs-code-create-tip.md)]
+
+4. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure. Если вы пропустили уведомление, щелкните значок колокольчика в правом нижнем углу, чтобы снова просмотреть его.
 
     ![Создание уведомления о завершении](./media/functions-create-first-function-vs-code/function-create-notifications.png)
 
@@ -110,7 +112,7 @@ ms.locfileid: "93424972"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью Visual Studio Code вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье вы расширите эту функцию, добавив выходную привязку. Эта привязка записывает строку из HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
+С помощью [Visual Studio Code](functions-develop-vs-code.md?tabs=javascript) вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье показано, как расширить эту функцию путем подключения к службе хранилища Azure. Дополнительные сведения о подключении к другим службам Azure см. в статье [Подключение функций к службам Azure с помощью привязок](add-bindings-existing-function.md?tabs=typescript).   
 
 > [!div class="nextstepaction"]
 > [Подключение Функций Azure к службе хранилища Azure с помощью средств командной строки](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-typescript)

@@ -5,25 +5,18 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/04/2021
 ms.author: raynew
-ms.openlocfilehash: ab4b8f5a691bc8e4091e9f3f01b709391deeddb0
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: c586832386f3bf6419d8af94ad23662c6801b1ae
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550714"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820880"
 ---
 # <a name="common-questions"></a>Часто задаваемые вопросы
 
 В этой статье содержатся ответы на часто задаваемые вопросы о службе "перемещение [ресурсов Azure](overview.md)".
-
-## <a name="general"></a>Общие
-
-### <a name="is-resource-mover-generally-available"></a>Доступна ли в общедоступной форме перечисление ресурсов?
-
-В настоящее время включена общедоступная Предварительная версия для перемещения ресурсов. Рабочие нагрузки поддерживаются.
-
 
 
 ## <a name="moving-across-regions"></a>Перемещение между регионами
@@ -45,6 +38,9 @@ ms.locfileid: "99550714"
 - Внутренние и общедоступные подсистемы балансировки нагрузки. 
 - Базы данных SQL Azure и эластичные пулы.
 
+### <a name="can-i-move-disks-across-regions"></a>Можно ли перемещать диски между регионами?
+
+Вы не можете выбрать диски в качестве ресурсов для перемещения между регионами. Однако диски перемещаются в рамках перемещения виртуальной машины.
 
 ### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Можно ли перемещать ресурсы между подписками при их перемещении между регионами?
 
@@ -97,6 +93,12 @@ ms.locfileid: "99550714"
 ### <a name="how-can-i-do-multiple-moves-together"></a>Как можно выполнить несколько перемещений одновременно?
 
 При необходимости измените сочетания исходного и целевого объектов с помощью параметра изменить на портале.
+
+### <a name="what-happens-when-i-remove-a-resource-from-a-list-of-move-resources"></a>Что происходит при удалении ресурса из списка перемещенных ресурсов?
+
+Вы можете удалить ресурсы, добавленные в список перемещение. Поведение при удалении ресурса из списка зависит от состояния ресурса. [Подробнее](remove-move-resources.md#vm-resource-state-after-removing).
+
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

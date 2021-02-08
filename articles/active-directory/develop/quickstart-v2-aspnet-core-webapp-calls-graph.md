@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 8e54f71ef58b3ea76a5fe55347a1caa173046320
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 675a5526bfd741876de16fe41c969c09a4ed0ad7
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754491"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938233"
 ---
 # <a name="quickstart-aspnet-core-web-app-that-signs-in-users-and-calls-microsoft-graph-on-their-behalf"></a>Краткое руководство. Веб-приложение ASP.NET Core, выполняющее вход пользователей в систему и вызывающее Microsoft Graph от их имени
 
@@ -55,7 +55,7 @@ ms.locfileid: "98754491"
 > 1. Введите **URI перенаправления** `https://localhost:44321/signin-oidc`.
 > 1. Выберите **Зарегистрировать**.
 > 1. В разделе **Управление** выберите **Проверка подлинности**.
-> 1. Введите **URL-адрес выхода** `https://localhost:44321/signout-oidc`.
+> 1. Задайте для параметра **URL-адрес выхода Front-channel** значение `https://localhost:44321/signout-oidc`.
 > 1. Нажмите **Сохранить**.
 > 1. В разделе **Управление** выберите **Сертификаты и секреты** > **Создать секрет клиента**.
 > 1. Введите **описание**, например `clientsecret1`.
@@ -64,7 +64,7 @@ ms.locfileid: "98754491"
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Чтобы пример кода для этого краткого руководства работал, вам необходимо добавить URL-адреса ответов в виде `https://localhost:44321/signin-oidc` и URL-адрес выхода из системы в виде `https://localhost:44321/signout-oidc`.
+> Для примера кода, приведенного в этом кратком руководстве, требуется задать **URI перенаправления** `https://localhost:44321/signin-oidc` и **URL-адрес выхода Front-channel** `https://localhost:44321/signout-oidc` при регистрации приложения.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >

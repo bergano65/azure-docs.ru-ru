@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 01/28/2021
 ms.author: banders
-ms.openlocfilehash: 625c40ea17cf20449f1be241a1605a80bf6a73f1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 464e129314a369c14dcc6bc6c16eadf5f8bcf01f
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353006"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99052995"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
 
@@ -61,7 +61,7 @@ ms.locfileid: "96353006"
 
 ## <a name="get-rates-for-azure-meters"></a>Получение ставок для единиц измерения Azure
 
-Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](/previous-versions/azure/reference/mt219004(v=azure.100)) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
+Вы можете получить сведения о затратах по каждой единице измерения с помощью API розничных цен Azure. Сведения о том, как получить ставки для единицы измерения Azure, см. в статье [Обзор розничных цен Azure](/rest/api/cost-management/retail-prices/azure-retail-prices).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о резервировании для Azure см. в следующих статьях.

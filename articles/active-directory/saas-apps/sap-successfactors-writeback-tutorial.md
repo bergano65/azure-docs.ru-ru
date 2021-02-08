@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: chmutali
-ms.openlocfilehash: d39e00a80ab167936a749c73867b4343e6ed9d76
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3260787dec4ae26cd6ef7cc3bd562f39db8e3655
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006444"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526981"
 ---
 # <a name="tutorial-configure-attribute-write-back-from-azure-ad-to-sap-successfactors"></a>Руководство по настройке обратной записи данных из Azure AD в SAP SuccessFactors
 Цель этого учебника — продемонстрировать действия, которые необходимо выполнить для обратной записи атрибутов из Azure AD в SAP SuccessFactors Employee Central. 
@@ -282,7 +282,7 @@ ms.locfileid: "96006444"
    | 3 | 8448 | emailType | Это постоянное значение является идентификатором SuccessFactors, связанным с рабочим адресом электронной почтой. Замените это значение соответствующим значением для своей среды SuccessFactors. Инструкции по его настройке см. в разделе [Получение постоянного значения для emailType](#retrieve-constant-value-for-emailtype). |
    | 4 | true | emailIsPrimary | Используйте этот атрибут, чтобы задать рабочий адрес электронной почты в качестве основного в SuccessFactors. Если рабочий адрес электронной почты не является основным, установите для этого флага значение false. |
    | 5 | userPrincipalName | [custom01–custom15] | С помощью функции **Добавить новое сопоставление** можно дополнительно записать userPrincipalName или любой атрибут Azure AD в настраиваемый атрибут, доступный в объекте пользователя SuccessFactors.  |
-   | 6 | on-prem-samAccountName | username | С помощью функции **Добавить новое сопоставление** можно при необходимости сопоставить локальный атрибут samAccountName с атрибутом username в SuccessFactors. |
+   | 6 | On Prem SamAccountName | username | С помощью функции **Добавить новое сопоставление** можно при необходимости сопоставить локальный атрибут samAccountName с атрибутом username в SuccessFactors. Для синхронизации samAccountName с Azure AD используйте инструкции из статьи [Синхронизация Azure AD Connect: расширения каталогов](../hybrid/how-to-connect-sync-feature-directory-extensions.md). Атрибут отобразится в раскрывающемся списке исходных атрибутов в таком виде: *extension_yourTenantGUID_samAccountName*. |
    | 7 | Единый вход | loginMethod | Если клиент SuccessFactors настроен для [частично единого входа](https://apps.support.sap.com/sap/support/knowledge/en/2320766), с помощью функции "Добавить новое сопоставление" можно при необходимости задать для loginMethod постоянное значение "SSO" или "PWD". |
    | 8 | TelephoneNumber | businessPhoneNumber | Используйте это сопоставление для передачи *telephoneNumber* из Azure AD в атрибут рабочего номера телефона в SuccessFactors. |
    | 9 | 10605 | businessPhoneType | Это постоянное значение является идентификатором SuccessFactors, связанным с рабочим номером телефона. Замените это значение соответствующим значением для своей среды SuccessFactors. Инструкции по его настройке см. в разделе [Получение постоянного значения для phoneType](#retrieve-constant-value-for-phonetype). |

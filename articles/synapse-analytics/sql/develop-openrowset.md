@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2ead7291f52f33c271768ae2f470af65aca98030
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 9fd10d6a4fb748a61b5e1d9e27777c2fa1134039
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734753"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225619"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Использование OPENROWSET с бессерверным пулом SQL в Azure Synapse Analytics
 
@@ -121,7 +121,7 @@ WITH ( {'column_name' 'column_type' [ 'column_ordinal' | 'json_path'] })
 | хранилище BLOB-объектов Azure         | wasb(s)  | \<container>@\<storage_account>.blob.core.windows.net/path/file |
 | Azure Data Lake Store 1-го поколения | http(s)  | \<storage_account>.azuredatalakestore.net/webhdfs/v1 |
 | Azure Data Lake Store 2-го поколения | http(s)  | \<storage_account>.dfs.core.windows.net /path/file   |
-| Azure Data Lake Store 2-го поколения | aufs[s]  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
+| Azure Data Lake Store 2-го поколения | abfs(s)  | [\<file_system>@\<account_name>.dfs.core.windows.net/path/file](../../storage/blobs/data-lake-storage-introduction-abfs-uri.md#uri-syntax)              |
 ||||
 
 '\<storage_path>'
@@ -222,6 +222,7 @@ PARSER_VERSION = "версия_средства_синтаксического_�
 Особенности средства синтаксического анализа для CSV-файлов версии 2.0:
 
 - Поддерживаются не все типы данных.
+- Максимальная длина символьного столбца — 8000.
 - Размер строки не может превышать 8 МБ.
 - Приведенные ниже параметры не поддерживаются. DATA_COMPRESSION.
 - Пустая строка в кавычках ("") интерпретируется как пустая строка.

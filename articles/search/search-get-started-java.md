@@ -1,33 +1,33 @@
 ---
-title: Краткое руководство. Создание индекса службы "Поиск Azure" в Java с помощью интерфейсов REST API
+title: Краткое руководство. Создание индекса поиска в Java
 titleSuffix: Azure Cognitive Search
-description: В этом кратком руководстве Java вы узнаете, как создать индекс, загрузку данных и выполнение запросов с помощью REST API Когнитивного поиска Azure.
+description: В этом кратком руководстве Java описывается, как создать индекс, загрузку данных и выполнение запросов с помощью клиентской библиотеки Когнитивного поиска Azure для Java.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.devlang: java
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/25/2020
+ms.date: 01/25/2021
 ms.custom: devx-track-java
-ms.openlocfilehash: 2ab87dfdeb18f97265c3bb2f34616c942a345c1e
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 9e05e41ca0c293e31a29dc25a7b4ec7b87734246
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698953"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509424"
 ---
-# <a name="quickstart-create-an-azure-cognitive-search-index-in-java-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java с помощью REST API
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-java"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Java
 > [!div class="op_single_selector"]
+> * [Java](search-get-started-java.md)
 > * [JavaScript](search-get-started-javascript.md)
 > * [C#](search-get-started-dotnet.md)
-> * [Java](search-get-started-java.md)
 > * [Портал](search-get-started-portal.md)
-> * [PowerShell](./search-get-started-powershell.md)
+> * [PowerShell](search-get-started-powershell.md)
 > * [Python](search-get-started-python.md)
 > * [REST](search-get-started-rest.md)
 
-Создайте консольное приложение Java, которое создает, загружает и опрашивает индекс поиска с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Эта статья содержит пошаговые инструкции по созданию приложения. Кроме того, можно [скачать и установить готовую версию приложения](/samples/azure-samples/azure-search-java-samples/java-sample-quickstart/).
+Создайте консольное приложение Java, которое создает, загружает и опрашивает индекс поиска с помощью [IntelliJ](https://www.jetbrains.com/idea/), [пакета SDK для Java 11](/java/azure/jdk/) и [REST API Когнитивного поиска Azure](/rest/api/searchservice/). Эта статья содержит пошаговые инструкции по созданию приложения. Кроме того, можно [скачать и установить готовую версию приложения](https://developers.google.com/sheets/api/quickstart/java).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -49,11 +49,9 @@ ms.locfileid: "94698953"
 
 1. [Войдите на портал Azure](https://portal.azure.com/) и на странице **обзора** службы поиска получите URL-адрес. Пример конечной точки может выглядеть так: `https://mydemo.search.windows.net`.
 
-2. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
+1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   Создайте также ключ запросов. Мы рекомендуем создавать запросы с доступом только для чтения.
-
-:::image type="content" source="media/search-get-started-javascript/service-name-and-keys.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
+   :::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Получение имени службы, ключей запросов и администратора" border="false":::
 
 Для любого запроса, отправляемого к службе, требуется ключ API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -88,21 +86,72 @@ ms.locfileid: "94698953"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <modelVersion>4.0.0</modelVersion>
-    
         <groupId>AzureSearchQuickstart</groupId>
         <artifactId>AzureSearchQuickstart</artifactId>
+        <packaging>jar</packaging>
         <version>1.0-SNAPSHOT</version>
+        <properties>
+            <jackson.version>2.12.1</jackson.version>
+            <auto-value.version>1.6.2</auto-value.version>
+            <junit.version>5.4.2</junit.version>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        </properties>
+        <name>azuresearch-console</name>
+        <url>http://maven.apache.org</url>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.value</groupId>
+                <artifactId>auto-value-annotations</artifactId>
+                <version>${auto-value.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.value</groupId>
+                <artifactId>auto-value</artifactId>
+                <version>${auto-value.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.azure</groupId>
+                <artifactId>azure-search-documents</artifactId>
+                <version>11.1.3</version>
+            </dependency>
+        </dependencies>
+    
         <build>
-            <sourceDirectory>src</sourceDirectory>
             <plugins>
+                <!--put generated source files to generated-sources-->
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.8.0</version>
                     <configuration>
                         <source>11</source>
                         <target>11</target>
                     </configuration>
                 </plugin>
+                <!-- For JUnit -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                </plugin>
+                <!-- Add exec plugin to run demo program -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
@@ -115,27 +164,21 @@ ms.locfileid: "94698953"
                         </execution>
                     </executions>
                     <configuration>
-                        <mainClass>main.java.app.App</mainClass>
+                        <mainClass>com.microsoft.azure.search.samples.demo.App</mainClass>
                         <cleanupDaemonThreads>false</cleanupDaemonThreads>
                     </configuration>
                 </plugin>
             </plugins>
         </build>
-        <dependencies>
-            <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.json</artifactId>
-                <version>1.0.2</version>
-            </dependency>
-        </dependencies>   
     </project>
     ```
 
+<!-- STOPPED HERE -- SENT EMAIL TO TONG XU ASKING FOR INFO -->
 ### <a name="set-up-the-project-structure"></a>Настройка структуры проекта
 
 1. Выберите **File** (Файл)  > **Project Structure** (Структура проекта).
 1. Щелкните **Modules** (Модули) и разверните дерево источников, чтобы просмотреть содержимое папки `src` >  `main`.
-1. В папке `src` >  `main` > `java` добавьте папки `app` и `service`. Для этого выберите папку `java`, нажмите сочетание клавиш ALT+INSERT, а затем введите имя папки.
+1. В папке `src` >  `main` > `java` добавьте папки для `com`, `microsoft`, `azure`, `search`, `samples`, `demo`. Для этого выберите папку `java`, нажмите сочетание клавиш ALT+INSERT, а затем введите имя папки.
 1. В папке `src` >  `main` >`resources` добавьте папки `app` и `service`.
 
     По завершении дерево проектов должно выглядеть как на следующем изображении.
@@ -511,7 +554,7 @@ ms.locfileid: "94698953"
     }
     ```
 
-    Этому индексу будет задано имя hotels-quickstart. Атрибуты в полях индекса определяют, как выполнять поиск индексированных данных в приложении. Например, атрибут `IsSearchable` нужно назначить каждому полю, которое должно включаться в полнотекстовый поиск. Дополнительные сведения см. в разделе о [коллекции полей и атрибутах поля](search-what-is-an-index.md#fields-collection).
+    Этому индексу будет задано имя hotels-quickstart. Атрибуты в полях индекса определяют, как выполнять поиск индексированных данных в приложении. Например, атрибут `IsSearchable` нужно назначить каждому полю, которое должно включаться в полнотекстовый поиск. Дополнительные сведения об атрибутах см. в статье [Создание индекса (REST)](/rest/api/searchservice/create-index).
     
     Поле `Description` в этом индексе использует необязательное свойство `analyzer` для переопределения стандартного анализатора языка Lucene. Поле `Description_fr` использует анализатор Lucene для французского языка `fr.lucene`, так как в нем хранится текст на французском языке. Поле `Description` использует необязательный анализатор языка Майкрософт en.lucene. Дополнительные сведения см. в статье об [анализаторах для обработки текста в службе "Когнитивный поиск Azure"](search-analyzers.md).
 

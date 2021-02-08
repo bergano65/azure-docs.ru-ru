@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание назначения политики с помощью REST API
 description: В рамках этого краткого руководства с помощью REST API вы создадите назначение в службе "Политика Azure", позволяющее определить ресурсы, которые не соответствуют требованиям.
-ms.date: 10/14/2020
+ms.date: 01/29/2021
 ms.topic: quickstart
-ms.openlocfilehash: ab05079c5bb319f0808a743a1d668649df51b1b3
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 438d8004cd50e6e2ef7586c51adc63257f37978b
+ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074011"
+ms.lasthandoff: 01/31/2021
+ms.locfileid: "99219983"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-with-rest-api"></a>Краткое руководство. Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью REST API
 
@@ -47,6 +47,11 @@ REST API используется для создания ресурсов Azure
          "displayName": "Audit VMs without managed disks Assignment",
          "description": "Shows all virtual machines not using managed disks",
          "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/06a78e20-9358-41c9-923c-fb736d382a4d",
+         "nonComplianceMessages": [
+             {
+                 "message": "Virtual machines should use a managed disk"
+             }
+         ]
        }
      }
      ```
@@ -59,12 +64,13 @@ REST API используется для создания ресурсов Azure
   - Подписка: `/subscriptions/{subscriptionId}`
   - группу ресурсов `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}`;
   - Ресурс: `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}`.
-- **Name** — фактическое имя назначения. В этом примере использовалось имя _audit-vm-manageddisks_ .
+- **Name** — фактическое имя назначения. В этом примере использовалось имя _audit-vm-manageddisks_.
 
 Тело запроса:
-- **DisplayName** — отображаемое имя назначения политики. В этом случае используется определение _аудита виртуальных машин без назначения управляемых дисков_ .
+- **DisplayName** — отображаемое имя назначения политики. В этом случае используется определение _аудита виртуальных машин без назначения управляемых дисков_.
 - **Description** — более подробное объяснение того, что делает политика или почему она относится к этой области.
-- **policyDefinitionId** — идентификатор определения политики, на основе которой вы создаете назначение. В нашем случае это идентификатор определения политики _аудита виртуальных машин, которые не используют управляемые диски_ .
+- **policyDefinitionId** — идентификатор определения политики, на основе которой вы создаете назначение. В нашем случае это идентификатор определения политики _аудита виртуальных машин, которые не используют управляемые диски_.
+- **nonComplianceMessages** — позволяет указать сообщение, которое будет отображаться, когда ресурс отклонен из-за несоответствия или был признан несоответствующим. Дополнительные сведения см. в разделе [Сообщения о несоответствии](./concepts/assignment-structure.md#non-compliance-messages).
 
 ## <a name="identify-non-compliant-resources"></a>Выявление несоответствующих ресурсов
 

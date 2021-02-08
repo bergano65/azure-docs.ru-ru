@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET
-description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для .NET для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
+title: Краткое руководство. Использование библиотеки Хранилища BLOB-объектов Azure версии 12 для .NET
+description: В этом кратком руководстве описывается, как использовать клиентскую библиотеку Хранилища BLOB-объектов Azure версии 12 для .NET для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.date: 07/24/2020
@@ -8,18 +8,18 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8cb8c193e09e841a8401cbb0a6ac78ce87afa01c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f8f27743d8680f5e73e1f7bb7a3f7bd6ff2e0464
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021713"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054726"
 ---
-# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для .NET
+# <a name="quickstart-azure-blob-storage-client-library-v12-for-net"></a>Краткое руководство. Использование библиотеки Хранилища BLOB-объектов Azure версии 12 для .NET
 
-Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для .NET. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
+Приступите к работе с клиентской библиотекой Хранилища BLOB-объектов Azure версии 12 для .NET. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
 
-Клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для .NET можно использовать для выполнения таких задач:
+Клиентскую библиотеку Хранилища BLOB-объектов Azure версии 12 для .NET можно использовать для выполнения таких задач:
 
 * Создание контейнера
 * передача большого двоичного объекта в хранилище Azure;
@@ -44,7 +44,7 @@ ms.locfileid: "96021713"
 
 ## <a name="setting-up"></a>Настройка
 
-В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для .NET.
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой Хранилища BLOB-объектов Azure версии 12 для .NET.
 
 ### <a name="create-the-project"></a>Создание проекта
 
@@ -128,7 +128,7 @@ namespace BlobQuickstartV12
 
 ## <a name="code-examples"></a>Примеры кода
 
-В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки хранилища BLOB-объектов Azure для .NET:
+В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки Хранилища BLOB-объектов Azure для .NET:
 
 * [Получение строки подключения](#get-the-connection-string)
 * [Создание контейнера](#create-a-container)
@@ -144,7 +144,7 @@ namespace BlobQuickstartV12
 Добавьте этот код в метод `Main`.
 
 ```csharp
-Console.WriteLine("Azure Blob storage v12 - .NET quickstart sample\n");
+Console.WriteLine("Azure Blob Storage v12 - .NET quickstart sample\n");
 
 // Retrieve the connection string for use with the application. The storage
 // connection string is stored in an environment variable on the machine
@@ -287,7 +287,7 @@ dotnet run
 Вы должны увидеть выходные данные приложения, как показано ниже.
 
 ```output
-Azure Blob storage v12 - .NET quickstart sample
+Azure Blob Storage v12 - .NET quickstart sample
 
 Uploading to Blob storage as blob:
          https://mystorageacct.blob.core.windows.net/quickstartblobs60c70d78-8d93-43ae-954d-8322058cfd64/quickstart2fe6c5b4-7918-46cb-96f4-8c4c5cb2fd31.txt
@@ -315,7 +315,7 @@ Done
 Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
 
 > [!div class="nextstepaction"]
-> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
+> [Примеры для пакета SDK Хранилища BLOB-объектов Azure версии 12 для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples)
 
 * Руководства, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков .NET и .NET Core](/dotnet/azure/).
 * Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).

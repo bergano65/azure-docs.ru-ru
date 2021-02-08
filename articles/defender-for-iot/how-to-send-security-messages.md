@@ -4,26 +4,26 @@ description: Узнайте, как отправить сообщения без
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/09/2020
-ms.author: mlottner
+ms.date: 2/8/2021
+ms.author: shhazam
 ms.custom: devx-track-js
-ms.openlocfilehash: 5217940a3696bd001db421e61be8313453807c8b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d59121f2dbae208ba045a9c2e6d66245296537a0
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318523"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820693"
 ---
 # <a name="send-security-messages-sdk"></a>Пакет SDK для отправки сообщений системы безопасности
 
-В этом пошаговом руководство объясняются возможности службы IoT, если вы решили получать и отсылать сообщения безопасности устройства без использования защитника для агента IoT, а также объясняется, как это сделать.
+В этом пошаговом руководство поясняются возможности службы IoT, если вы решили получать и отсылать сообщения безопасности устройства без использования защитника для агента IoT, а также объясняется, как это сделать.
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
@@ -196,7 +196,7 @@ function SendSecurityMessage(messageContent)
 
 Чтобы использовать API Python, необходимо установить пакет [Azure-IOT-Device](https://pypi.org/project/azure-iot-device/).
 
-При использовании API Python можно либо отправить сообщение безопасности через модуль, либо через устройство, используя уникальную строку подключения устройства или модуля. При использовании следующего примера скрипта Python с устройством используйте **иосубдевицеклиент**и модуль, используйте **иосубмодулеклиент**.
+При использовании API Python можно либо отправить сообщение безопасности через модуль, либо через устройство, используя уникальную строку подключения устройства или модуля. При использовании следующего примера скрипта Python с устройством используйте **иосубдевицеклиент** и модуль, используйте **иосубмодулеклиент**.
 
 ```python
 from azure.iot.device.aio import IoTHubDeviceClient, IoTHubModuleClient
@@ -226,12 +226,12 @@ public void SendSecurityMessage(string message)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей"
 - Дополнительные сведения о защитнике для [архитектуры](architecture.md) IOT
 - Включите [службу](quickstart-onboard-iot-hub.md).
 - Ознакомьтесь с [вопросами и](resources-frequently-asked-questions.md) ответами
 - Узнайте, как получить доступ к [необработанным данным безопасности](how-to-security-data-access.md).
-- Общие сведения о [рекомендациях](concept-recommendations.md).
+- Общие сведения о [рекомендациях](concept-recommendations.md)
 - Ознакомьтесь со сведениями об [оповещениях](concept-security-alerts.md).

@@ -4,19 +4,19 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 10/18/2020
 ms.author: glenga
-ms.openlocfilehash: 29a31948c5bfc9b5fd3a31f39144d186dbfe4885
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 99ae35aca485ac928f7c5ef9f98295eed4bc1245
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026197"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99500479"
 ---
 ## <a name="create-supporting-azure-resources-for-your-function"></a>Создание вспомогательных ресурсов Azure для функции
 
 Прежде чем развернуть код функции в Azure, необходимо создать три ресурса:
 
-- группу ресурсов — логический контейнер связанных ресурсов;
-- учетную запись хранения — для сохранения состояния и других сведений о проектах;
+- [группу ресурсов](../articles/azure-resource-manager/management/overview.md) — логический контейнер связанных ресурсов;
+- [учетную запись хранения](../articles/storage/common/storage-account-create.md), которая используется для сохранения состояния и других сведений о функциях;
 - приложение-функцию — среду для выполнения кода функции. Оно сопоставляется с локальным проектом функций и позволяет группировать функции в логические единицы, чтобы упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими.
 
 Чтобы создать эти элементы, выполните следующие команды: Поддерживается Azure CLI и PowerShell.

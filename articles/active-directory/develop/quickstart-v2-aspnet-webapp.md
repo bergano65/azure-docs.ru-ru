@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1
-ms.openlocfilehash: e2a71313294457e09e2bb152dea98c84b7730236
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 420415cc3bc2228a104ccf054098543bf04847b0
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754412"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225771"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Краткое руководство. Добавление функции входа платформы Microsoft Identity в веб-приложение ASP.NET
 
@@ -54,12 +54,13 @@ ms.locfileid: "98754412"
 > 1. Введите **имя** приложения, например `ASPNET-Quickstart`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 > 1. Добавьте `https://localhost:44368/` в поле **URI перенаправления** и выберите **Зарегистрировать**.
 > 1. В разделе **Управление** выберите **Проверка подлинности**.
-> 1. В подразделе **Неявное предоставление** выберите **Токен идентификатора**.
+> 1. В разделе **Неявное предоставление разрешения и гибридные потоки** выберите **Токены идентификатора**.
 > 1. Щелкните **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Для работы примера кода в этом кратком руководстве необходимо добавить URL-адрес ответа `https://localhost:44368/`.
+> Для примера кода, приведенного в этом кратком руководстве, требуется задать **URI перенаправления** `https://localhost:44368/`.
+
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >

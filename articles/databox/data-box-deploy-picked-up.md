@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 12/10/2020
+ms.date: 02/02/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 9b40ff3a5c9ce2103cde00b26543711d4c05efb0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 228f837a8826612bbbadf2ca8c5ef339ab248397
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028382"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99524998"
 ---
 ::: zone target="docs"
 
@@ -322,7 +322,7 @@ Once the upload to Azure is complete, the Data Box erases the data on its disks 
 
 ## <a name="self-managed"></a>[Cамостоятельное управление](#tab/in-selfmanaged)
 
-Если вы используете Data Box в государственной организации США, в Японии, Сингапуре, Корее, Индии, Южной Африке или Западной Европе и выбрали при создании заказа самостоятельное управление отгрузкой, следуйте этим инструкциям.
+Если вы используете Data Box в государственной организации США, в Японии, Сингапуре, Корее, Индии, Южной Африке, Соединенном Королевстве, Западной Европе или Австралии и выбрали при создании заказа самостоятельное управление отгрузкой, следуйте этим инструкциям.
 
 1. Запишите код авторизации, который отобразится на странице **Подготовка к отправке** локального пользовательского веб-интерфейса Data Box после успешного выполнения этого шага.
 2. Выключите устройство и отсоедините кабели. Смотайте и аккуратно разместите шнур питания, входящий в комплект устройства, на задней панели устройства.

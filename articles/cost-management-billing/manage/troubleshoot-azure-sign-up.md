@@ -8,14 +8,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: troubleshooting
-ms.date: 08/20/2020
+ms.date: 01/28/2021
 ms.author: v-miegge
-ms.openlocfilehash: 85f6e64cb20a14b9cd03776d138872d6a4191535
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 015e6058236190a04df152573621f0e57030d23b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96344493"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054167"
 ---
 # <a name="troubleshoot-issues-when-you-sign-up-for-a-new-account-in-azure-portal-or-azure-account-center"></a>Устранение неполадок при регистрации для получения новой учетной записи на портале Azure или в Центре управления учетной записью Azure
 
@@ -139,19 +139,18 @@ ms.locfileid: "96344493"
 
 ## <a name="other-issues"></a>Другие проблемы
 
-### <a name="cant-activate-azure-benefit-plan-like-msdn-bizspark-bizsparkplus-or-mpn"></a>Не удается активировать льготный план Azure, например MSDN, BizSpark, BizSparkPlus или MPN
+### <a name="cant-activate-azure-benefit-plan-like-visual-studio-bizspark-bizsparkplus-or-mpn"></a>Не удается активировать льготный план Azure, например Visual Studio, BizSpark, BizSparkPlus или MPN
 
 Убедитесь, что используются правильные учетные данные для входа. Затем проверьте, имеете ли вы право на участие в программе вознаграждений.
-- MSDN
-  - Проверьте свой статус соответствия требованиям на своей [странице учетной записи MSDN](https://msdn.microsoft.com/subscriptions/manage/default.aspx).
-  - Если вам не удается проверить свой статус, обратитесь в [центры обслуживания клиентов с подписками MSDN](/previous-versions/mappoint/aa493452(v=msdn.10)).
+- Visual Studio
+  - Проверьте свой статус соответствия требованиям на своей [странице учетной записи Visual Studio](https://my.visualstudio.com/Benefits).
+  - Если вы не можете проверить состояние, обратитесь в [службу поддержки подписки Visual Studio](https://visualstudio.microsoft.com/subscriptions/support/).
 - Майкрософт для стартапов
   - Войдите на портал [Майкрософт для стартапов](https://startups.microsoft.com/#start-two), чтобы проверить, имеете ли вы право на участие в программе "Майкрософт для стартапов".
   - Если вы не можете проверить свой статус, вы можете получить помощь на [Форумах Майкрософт для стартапов](https://www.microsoftpartnercommunity.com/t5/Microsoft-for-Startups/ct-p/Microsoft_Startups).
 - MPN
   - Войдите на [портал MPN](https://mspartner.microsoft.com/Pages/Locale.aspx), чтобы проверьте свой статус соответствия требованиям. Дополнительные преимущества предоставляются при наличии соответствующих [компетенций облачной платформы](https://mspartner.microsoft.com/pages/membership/cloud-platform-competency.aspx).
   - Если вам не удается проверить свой статус, обратитесь в [службу поддержки MPN](https://mspartner.microsoft.com/Pages/Support/Premium/contact-support.aspx).
-
 
 ### <a name="cant-activate-new-azure-in-open-subscription"></a>Не удается активировать новую подписку Azure с открытой лицензией
 

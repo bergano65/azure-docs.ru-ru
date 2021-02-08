@@ -1,6 +1,6 @@
 ---
-title: Использование библиотеки хранилища BLOB-объектов Azure версии 12 для Java
-description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для Java для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
+title: Краткое руководство. Использование библиотеки Хранилища BLOB-объектов Azure версии 12 для Java
+description: В этом кратком руководстве описывается, как использовать клиентскую библиотеку Хранилища BLOB-объектов Azure версии 12 для Java для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
@@ -8,12 +8,12 @@ ms.date: 12/01/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 02752af77d443e19278a96206bb7516fedd59d7f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b5c34cea5d8222a246462bfadde66fd8a5ddbec7
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501130"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054709"
 ---
 # <a name="quickstart-manage-blobs-with-java-v12-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Java версии 12
 
@@ -37,7 +37,7 @@ ms.locfileid: "96501130"
 
 ## <a name="setting-up"></a>Настройка
 
-В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для Java.
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой Хранилища BLOB-объектов Azure версии 12 для Java.
 
 ### <a name="create-the-project"></a>Создание проекта
 
@@ -183,7 +183,7 @@ public class App
 
 ## <a name="code-examples"></a>Примеры кода
 
-В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки хранилища BLOB-объектов Azure для Java:
+В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки Хранилища BLOB-объектов Azure для Java:
 
 * [Получение строки подключения](#get-the-connection-string)
 * [Создание контейнера](#create-a-container)
@@ -199,7 +199,7 @@ public class App
 Добавьте этот код в метод `Main`.
 
 ```java
-System.out.println("Azure Blob storage v12 - Java quickstart sample\n");
+System.out.println("Azure Blob Storage v12 - Java quickstart sample\n");
 
 // Retrieve the connection string for use with the application. The storage
 // connection string is stored in an environment variable on the machine
@@ -342,7 +342,7 @@ mvn exec:java -Dexec.mainClass="com.blobs.quickstart.App" -Dexec.cleanupDaemonTh
 Вы должны увидеть выходные данные приложения, как показано ниже.
 
 ```output
-Azure Blob storage v12 - Java quickstart sample
+Azure Blob Storage v12 - Java quickstart sample
 
 Uploading to Blob storage as blob:
         https://mystorageacct.blob.core.windows.net/quickstartblobsf9aa68a5-260e-47e6-bea2-2dcfcfa1fd9a/quickstarta9c3a53e-ae9d-4863-8b34-f3d807992d65.txt
@@ -371,7 +371,7 @@ Done
 Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
 
 > [!div class="nextstepaction"]
-> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-blob/src/samples/java/com/azure/storage/blob)
+> [Примеры для пакета SDK Хранилища BLOB-объектов Azure версии 12 для Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-blob/src/samples/java/com/azure/storage/blob)
 
 * Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для Java](https://github.com/Azure/azure-sdk-for-java/blob/master/README.md).
 * Учебники, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков облачных решений Java](/azure/developer/java/).

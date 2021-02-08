@@ -3,12 +3,12 @@ title: Создание функции Go или Rust с помощью Visual S
 description: Узнайте, как создать функцию Go в виде пользовательского обработчика Функций Azure, а затем опубликовать локальный проект в бессерверном размещении в Функциях Azure с помощью расширения Функций Azure в Visual Studio Code.
 ms.topic: quickstart
 ms.date: 12/4/2020
-ms.openlocfilehash: 911e2ed263271cff41562f383f231d3ca8181854
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 4f2e0b30c4bf5e6c4629fc63f3125e5ddda70ad2
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567598"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493670"
 ---
 # <a name="quickstart-create-a-go-or-rust-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции Go или Rust в Azure с помощью Visual Studio Code
 
@@ -226,7 +226,7 @@ ms.locfileid: "98567598"
 
 1. Возвращается ответ, который в браузере выглядит следующим образом:
 
-    ![Браузер: пример выходных данных localhost](../../includes/media/functions-run-function-test-local-vs-code/functions-test-local-browser.png)
+    ![Браузер: пример выходных данных localhost](./media/create-first-function-vs-code-other/functions-test-local-browser.png)
 
 1. Сведения о запросе отображаются на панели **Терминал**.
 
@@ -308,7 +308,7 @@ ms.locfileid: "98567598"
 
 1. Щелкните значок Azure на панели действий, а затем в области **Azure: Функции** выберите кнопку **Deploy to function app...** (Развертывание в приложение-функцию).
 
-    ![Публикация проекта в Azure](./media/functions-create-first-function-vs-code/function-app-publish-project.png)
+    ![Публикация проекта в Azure](../../includes/media/functions-publish-project-vscode/function-app-publish-project.png)
 
 1. Введите следующие сведения по соответствующим запросам:
 
@@ -337,19 +337,17 @@ ms.locfileid: "98567598"
 
     + **Select an Application Insights resource** (Выберите ресурс Application Insights). Выберите `+ Create Application Insights resource`. Это имя должно быть глобально уникальным в Azure. Можно использовать имя, предложенное в командной строке.
 
-    + **Select a location for new resources** (Выбор расположения для новых ресурсов).  Для повышения производительности выберите [регион](https://azure.microsoft.com/regions/) рядом с вами. 
+    + **Select a location for new resources** (Выбор расположения для новых ресурсов).  Для оптимальной производительности выберите [регион](https://azure.microsoft.com/regions/) рядом с вами. Расширение показывает в области уведомлений состояние отдельных ресурсов по мере их создания в Azure.
 
-1. После завершения в вашей подписке создаются следующие ресурсы Azure с именами, производными от имени приложения-функции:
+    :::image type="content" source="../../includes/media/functions-publish-project-vscode/resource-notification.png" alt-text="Уведомление о создании ресурса Azure":::
 
-    + группу ресурсов — логический контейнер связанных ресурсов;
-    + Стандартная учетная запись хранения Azure для сохранения состояния и других сведений о проектах.
-    + План потребления, который определяет базовый узел для бессерверного приложения-функции; 
-    + приложение-функцию — среду для выполнения кода функции. Приложение-функция позволяет группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими в рамках единого плана размещения.
-    + Экземпляр Application Insights, подключенный к приложению-функции, который отслеживает использование бессерверной функции.
+1. После завершения в Azure в вашей подписке создаются следующие ресурсы:
+
+    [!INCLUDE [functions-vs-code-created-resources](../../includes/functions-vs-code-created-resources.md)]
 
     После создания приложения-функции и применения пакета развертывания отобразится уведомление. 
 
-1. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure. Если вы пропустили уведомление, щелкните значок колокольчика в правом нижнем углу, чтобы снова просмотреть его.
+4. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure. Если вы пропустили уведомление, щелкните значок колокольчика в правом нижнем углу, чтобы снова просмотреть его.
 
     ![Создание уведомления о завершении](./media/functions-create-first-function-vs-code/function-create-notifications.png)
 

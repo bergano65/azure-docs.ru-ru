@@ -3,20 +3,19 @@ title: Создание и получение атрибутов ключа в A
 description: Краткое руководство по настройке и получению ключа из Azure Key Vault с помощью Azure CLI
 services: key-vault
 author: msmbaldwin
-manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.date: 03/30/2020
+ms.date: 01/27/2021
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8da5e86362f41322102c3b5316df5743e0c2458f
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: 4141e60370b397e799664b7d42384bbeb096bd05
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977004"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071194"
 ---
 # <a name="quickstart-set-and-retrieve-a-key-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение ключа из Azure Key Vault с помощью Azure CLI
 
@@ -30,30 +29,11 @@ ms.locfileid: "97977004"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. В следующем примере создается группа ресурсов с именем *ContosoResourceGroup* в расположении *eastus*.
-
-```azurecli
-az group create --name "ContosoResourceGroup" --location eastus
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-cli-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
-Затем вы создадите Key Vault в группе ресурсов, созданной на предыдущем шаге. Необходимо будет указать следующие сведения:
-
-- В этом руководстве мы используем **Contoso-vault2**. Укажите уникальное имя в тестировании.
-- Имя группы ресурсов: **ContosoResourceGroup**.
-- Расположение: **восточная часть США**.
-
-```azurecli
-az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGroup" --location eastus
-```
-
-В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
-
-- **Имя хранилища.** В нашем примере это **Contoso-Vault2**. Вы будете использовать это имя для выполнения других команд Key Vault.
-- **URI хранилища**. В нашем примере это https://contoso-vault2.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
-
-На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-cli-kv-creation.md)]
 
 ## <a name="add-a-key-to-key-vault"></a>Добавление ключа в Key Vault
 
@@ -62,33 +42,28 @@ az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGrou
 Выполните приведенные ниже команды, чтобы создать ключ **ExampleKey**:
 
 ```azurecli
-az keyvault key create --vault-name "Contoso-Vault2" -n ExampleKey --protection software
+az keyvault key create --vault-name "<your-unique-keyvault-name>" -n ExampleKey --protection software
 ```
 
-Теперь ключ, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://Contoso-Vault2.vault.azure.net/keys/ExampleKey** , чтобы получить текущую версию. 
+Теперь ключ, добавленный в Azure Key Vault, можно вызвать, используя его URI. Чтобы получить текущую версию, используйте **https://<your-unique-keyvault-name>.vault.azure.net/keys/ExampleKey**. 
 
 Чтобы просмотреть ранее сохраненный ключ, выполните следующие действия:
 
 ```azurecli
 
-az keyvault key show --name "ExampleKey" --vault-name "Contoso-Vault2"
+az keyvault key show --name "ExampleKey" --vault-name "<your-unique-keyvault-name>"
 ```
 
 Вы создали Key Vault, сохранили в нем ключ и извлекли его.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Другие руководства в этой серии созданы на основе этого документа. Если вы планируете продолжить работу с последующими краткими руководствами и статьями, эти ресурсы можно не удалять.
-Вы можете удалить ставшие ненужными группу ресурсов и все связанные с ней ресурсы, выполнив команду [az group delete](/cli/azure/group). Удалите ресурсы следующим образом:
-
-```azurecli
-az group delete --name ContosoResourceGroup
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-cli-delete-resources.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы создали Key Vault и сохранили в нем ключ. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
 - [Обзор Azure Key Vault](../general/overview.md)
-- Справочник по [командам az keyvault для Azure CLI](/cli/azure/keyvault?view=azure-cli-latest)
+- Справочник по [командам az keyvault для Azure CLI](/cli/azure/keyvault)
 - Статья [Обзор системы безопасности Key Vault](../general/security-overview.md)

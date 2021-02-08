@@ -7,12 +7,12 @@ ms.reviewer: jonfan, deli, logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/28/2020
-ms.openlocfilehash: 170a919ca184c959800e62cb0d8ede8659c96df4
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: f46c093bffcc26b5f7975d25ccaca648bdc527da
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97708997"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99054692"
 ---
 # <a name="quickstart-create-and-manage-logic-app-workflow-definitions-by-using-visual-studio-code"></a>Краткое руководство. Создание определений рабочих процессов приложения логики и управление ими с помощью Visual Studio Code
 
@@ -23,6 +23,8 @@ ms.locfileid: "97708997"
 В этой статье вы можете создать то же приложение логики из этого [краткого руководства](../logic-apps/quickstart-create-first-logic-app-workflow.md), которое демонстрирует основные понятия. Вы также можете узнать, как [создать пример приложения в Visual Studio](quickstart-create-logic-apps-with-visual-studio.md), а также как [создавать приложения и управлять ими с помощью интерфейса командной строки Azure (Azure CLI)](quickstart-logic-apps-azure-cli.md). В Visual Studio Code приложение логики выглядит так, как показано в следующем примере.
 
 ![Пример определения рабочего процесса приложения логики](./media/quickstart-create-logic-apps-visual-studio-code/visual-studio-code-overview.png)
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, убедитесь, что у вас есть эти элементы:
 
@@ -49,6 +51,8 @@ ms.locfileid: "97708997"
     ![Подтверждение правильной установки расширения](./media/quickstart-create-logic-apps-visual-studio-code/confirm-installed-visual-studio-code-extension.png)
 
     Дополнительные сведения см. на странице [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) (Расширения в Marketplace). Чтобы внести изменения в эту версию расширения с открытым кодом, посетите веб-страницу [расширения Azure Logic Apps для Visual Studio Code на веб-сайте GitHub](https://github.com/Microsoft/vscode-azurelogicapps).
+
+* Если для приложения логики нужно реализовать обмен данными через брандмауэр, который допускает трафик только на определенные IP-адреса, этот брандмауэр должен разрешать доступ [входящим](logic-apps-limits-and-config.md#inbound) *и* [исходящим](logic-apps-limits-and-config.md#outbound) IP-адресам, используемым службой Logic Apps или средой выполнения в регионе Azure, где существует ваше приложение логики. Если приложение логики также использует [управляемые соединители](../connectors/apis-list.md#managed-api-connectors) (например, соединитель Office 365 Outlook или соединитель SQL) либо [настраиваемые соединители](/connectors/custom-connectors/), брандмауэр также должен разрешать доступ *всем* [исходящим IP-адресам управляемого соединителя](logic-apps-limits-and-config.md#outbound) в регионе Azure приложения логики.
 
 <a name="access-azure"></a>
 

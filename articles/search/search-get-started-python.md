@@ -1,32 +1,32 @@
 ---
 title: Краткое руководство. Создание индекса поиска в Python
 titleSuffix: Azure Cognitive Search
-description: Описание того, как создать индекс, загрузить данные и выполнять запросы с помощью Python, записных книжек и библиотеки Azure.Documents.Search.
+description: Сведения о том, как создать индекс, загрузить данные и выполнять запросы с помощью Python, записных книжек Jupyter Notebook и клиентской библиотеки Azure.Documents.Search для Python.
 author: HeidiSteen
 manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 11/19/2020
+ms.date: 01/29/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 126fc69678148d4d478c96ff8d05f194c7e3d1b3
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: eb5de33fd41d3a454f4d0b8d44325ed30f9c5d47
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861873"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071636"
 ---
-# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter Notebook
+# <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebook"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Python с помощью записных книжек Jupyter Notebook
 
 > [!div class="op_single_selector"]
 > * [Python](search-get-started-python.md)
-> * [PowerShell (REST)](./search-get-started-powershell.md)
-> * [C#](./search-get-started-dotnet.md)
+> * [PowerShell (REST)](search-get-started-powershell.md)
+> * [C#](search-get-started-dotnet.md)
 > * [REST](search-get-started-rest.md)
 > * [Портал](search-get-started-portal.md)
 >
 
-Создайте записную книжку Jupyter Notebook, которая создает, загружает и запрашивает индекс Когнитивного поиска Azure с помощью Python и [библиотеки azure-search-documents](/python/api/overview/azure/search-documents-readme) в пакете SDK Azure для Python. В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
+Создайте записную книжку, которая создает, загружает и запрашивает индекс Когнитивного поиска Azure с помощью Python и [библиотеки azure-search-documents](/python/api/overview/azure/search-documents-readme) в пакете SDK Azure для Python. В этой статье содержатся сведения о пошаговом создании записной книжки. Вы также можете [скачать и запустить готовую записную книжку Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -38,7 +38,7 @@ ms.locfileid: "96861873"
 
 * [пакет azure-search-documents](https://pypi.org/project/azure-search-documents/)
 
-* [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Для выполнения инструкций, описанных в этом кратком руководстве, можно использовать уровень "Бесплатный". 
+* [Создайте службу поиска](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Для выполнения инструкций, описанных в этом кратком руководстве, можно использовать уровень "Бесплатный". 
 
 ## <a name="copy-a-key-and-url"></a>Копирование ключа и URL-адреса
 
@@ -48,7 +48,7 @@ ms.locfileid: "96861873"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-![Получение конечной точки HTTP и ключа доступа](media/search-get-started-rest/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-rest/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -63,7 +63,7 @@ ms.locfileid: "96861873"
    ```python
     !pip install azure-search-documents --pre
     !pip show azure-search-documents
-
+    
     import os
     from azure.core.credentials import AzureKeyCredential
     from azure.search.documents.indexes import SearchIndexClient 
@@ -82,17 +82,17 @@ ms.locfileid: "96861873"
 1. Во второй ячейке введите элементы запроса, которые будут выполнять роль констант при каждом запросе. Укажите имя службы поиска, ключ API администратора и ключ API запроса, скопированные на предыдущем шаге. Эта ячейка также позволяет настраивать клиенты, которые будут использоваться для выполнения конкретных операций: [SearchIndexClient](/python/api/azure-search-documents/azure.search.documents.indexes.searchindexclient) для создания индекса и [SearchClient](/python/api/azure-search-documents/azure.search.documents.searchclient) для запроса индекса.
 
    ```python
-    service_name = ["SEARCH_ENDPOINT - do not include search.windows.net"]
-    admin_key = ["Cognitive Search Admin API Key"]
-
+    service_name = "YOUR-SEARCH-SERIVCE-NAME"
+    admin_key = "YOUR-SEARCH-SERVICE-ADMIN-API-KEY"
+    
     index_name = "hotels-quickstart"
-
+    
     # Create an SDK client
     endpoint = "https://{}.search.windows.net/".format(service_name)
     admin_client = SearchIndexClient(endpoint=endpoint,
                           index_name=index_name,
                           credential=AzureKeyCredential(admin_key))
-
+    
     search_client = SearchClient(endpoint=endpoint,
                           index_name=index_name,
                           credential=AzureKeyCredential(admin_key))
@@ -121,6 +121,7 @@ ms.locfileid: "96861873"
 1. В следующую ячейку вставьте приведенный ниже пример для предоставления схемы.
 
     ```python
+    # Specify the index schema
     name = index_name
     fields = [
             SimpleField(name="HotelId", type=SearchFieldDataType.String, key=True),
@@ -128,13 +129,13 @@ ms.locfileid: "96861873"
             SearchableField(name="Description", type=SearchFieldDataType.String, analyzer_name="en.lucene"),
             SearchableField(name="Description_fr", type=SearchFieldDataType.String, analyzer_name="fr.lucene"),
             SearchableField(name="Category", type=SearchFieldDataType.String, facetable=True, filterable=True, sortable=True),
-
+        
             SearchableField(name="Tags", collection=True, type=SearchFieldDataType.String, facetable=True, filterable=True),
-
+    
             SimpleField(name="ParkingIncluded", type=SearchFieldDataType.Boolean, facetable=True, filterable=True, sortable=True),
             SimpleField(name="LastRenovationDate", type=SearchFieldDataType.DateTimeOffset, facetable=True, filterable=True, sortable=True),
             SimpleField(name="Rating", type=SearchFieldDataType.Double, facetable=True, filterable=True, sortable=True),
-
+    
             ComplexField(name="Address", fields=[
                 SearchableField(name="StreetAddress", type=SearchFieldDataType.String),
                 SearchableField(name="City", type=SearchFieldDataType.String, facetable=True, filterable=True, sortable=True),
@@ -150,20 +151,20 @@ ms.locfileid: "96861873"
 
 1. В другой ячейке сформулируйте сам запрос. Этот запрос create_index отправляется в коллекцию индексов службы поиска и создает [SearchIndex](/python/api/azure-search-documents/azure.search.documents.indexes.models.searchindex) на основе схемы индекса, которую вы указали в предыдущей ячейке.
 
-   ```python
+    ```python
     index = SearchIndex(
         name=name,
         fields=fields,
         scoring_profiles=scoring_profiles,
         suggesters = suggester,
         cors_options=cors_options)
-
+    
     try:
         result = admin_client.create_index(index)
         print ('Index', result.name, 'created')
     except Exception as ex:
         print (ex)
-   ```
+    ```
 
 1. Выполните каждый шаг.
 
@@ -176,8 +177,7 @@ ms.locfileid: "96861873"
 1. В новой ячейке укажите четыре документа, соответствующие схеме индекса. Укажите действие отправки для каждого документа.
 
     ```python
-    documents = {
-        "value": [
+    documents = [
         {
         "@search.action": "upload",
         "HotelId": "1",
@@ -255,19 +255,17 @@ ms.locfileid: "96861873"
             }
         }
     ]
-    }
     ```  
 
 1. В другой ячейке сформулируйте сам запрос. Этот запрос upload_documents обращается к коллекции документов в индексе hotels-quickstart и помещает документы, переданные на предыдущем шаге, в индекс Когнитивного поиска.
 
-
-   ```python
+    ```python
     try:
         result = search_client.upload_documents(documents=documents)
         print("Upload of new document succeeded: {}".format(result[0].succeeded))
     except Exception as ex:
         print (ex.message)
-   ```
+    ```
 
 1. Выполните каждый шаг, чтобы отправить документы в индекс в службе поиска.
 
@@ -277,76 +275,76 @@ ms.locfileid: "96861873"
 
 1. Для этой операции используйте search_client. Этот запрос выполняет пустой поиск (`search=*`), возвращая неупорядоченный список (search score = 1.0) произвольных документов. Поскольку условия не заданы, в результаты включаются все документы. Этот запрос выводит только два поля в каждом документе. Он также добавляет `include_total_count=True`, чтобы получить количество всех документов (4) в результатах.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="*", include_total_count=True)
-
+    
     print ('Total Documents Matching Query:', results.get_count())
     for result in results:
         print("{}: {}".format(result["HotelId"], result["HotelName"]))
-   ```
+    ```
 
 1. Следующий запрос добавляет в выражение поиска целые термины ("wifi"). Этот запрос указывает, что результаты содержат только поля в операторе `select`. Ограничение числа полей, которые возвращаются обратно, минимизирует объем данных, передаваемых по сети, и сокращает задержку поиска.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="wifi", include_total_count=True, select='HotelId,HotelName,Tags')
-
+    
     print ('Total Documents Matching Query:', results.get_count())
     for result in results:
         print("{}: {}: {}".format(result["HotelId"], result["HotelName"], result["Tags"]))
-   ```
+    ```
 
 1. Затем примените критерий фильтра, возвращая только те отели, для которых рейтинг больше 4, отсортированные в убывающем порядке.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="hotels", select='HotelId,HotelName,Rating', filter='Rating gt 4', order_by='Rating desc')
-
+    
     for result in results:
         print("{}: {} - {} rating".format(result["HotelId"], result["HotelName"], result["Rating"]))
-   ```
+    ```
 
 1. Добавьте `search_fields`, чтобы ограничить запрос до одного поля.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="sublime", search_fields='HotelName', select='HotelId,HotelName')
-
+    
     for result in results:
         print("{}: {}".format(result["HotelId"], result["HotelName"]))
-   ```
+    ```
 
 1. Аспекты — это метки, которые можно использовать для создания структуры навигации по аспектам. Этот запрос возвращает аспекты и счетчики для категории.
 
-   ```python
+    ```python
     results =  search_client.search(search_text="*", facets=["Category"])
-
+    
     facets = results.get_facets()
-
+    
     for facet in facets["Category"]:
         print("    {}".format(facet))
-   ```
+    ```
 
 1. В этом примере выполняется поиск определенного документа на основе его ключа. Обычно требуется вернуть документ, когда пользователь щелкает документ в результатах поиска.
 
-   ```python
+    ```python
     result = search_client.get_document(key="3")
-
+    
     print("Details for hotel '3' are:")
-    print("        Name: {}".format(result["HotelName"]))
-    print("      Rating: {}".format(result["Rating"]))
-    print("    Category: {}".format(result["Category"]))
-   ```
+    print("Name: {}".format(result["HotelName"]))
+    print("Rating: {}".format(result["Rating"]))
+    print("Category: {}".format(result["Category"]))
+    ```
 
 1. В этом примере мы будем использовать функцию автозаполнения. Она используется в поле поиска для автоматического завершения потенциальных совпадений по мере того, как пользователь вводит запрос в поле поиска.
 
    При создании индекса в составе запроса также создается средство подбора с именем "sg". Определение средства подбора указывает, какие поля можно использовать для поиска потенциальных соответствий для запросов предложения. В этом примере это поля "теги", "адрес/город", "адрес/страна". Чтобы имитировать автозавершение, введите "sa" в виде части строки. Метод автозаполнения [SearchClient](/python/api/azure-search-documents/azure.search.documents.searchclient) возвращает подходящие термины.
 
-   ```python
+    ```python
     search_suggestion = 'sa'
     results = search_client.autocomplete(search_text=search_suggestion, suggester_name="sg", mode='twoTerms')
-
+    
     print("Autocomplete for:", search_suggestion)
     for result in results:
         print (result['text'])
-   ```
+    ```
 
 ## <a name="clean-up"></a>Очистка
 

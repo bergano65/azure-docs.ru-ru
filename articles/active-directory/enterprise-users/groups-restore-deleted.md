@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfdc96df548a4a3df2b789759889b85835e1382a
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 1eacba47e68310dd45976bcd9ddff052fa193436
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860734"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99090143"
 ---
 # <a name="restore-a-deleted-microsoft-365-group-in-azure-active-directory"></a>Восстановление удаленной группы Microsoft 365 в Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "96860734"
 Роль | Разрешения
 --------- | ---------
 Глобальный администратор, администратор групп, партнер с поддержкой уровня 2, администратор службы Intune | Восстановление любой удаленной группы Microsoft 365
-Администратор пользователей, партнер с поддержкой уровня 1 | Восстановление любой удаленной группы Microsoft 365, кроме тех, которым назначена роль администратора компании
+Администратор пользователей, партнер с поддержкой уровня 1 | Восстановление любой удаленной группы Microsoft 365, кроме тех, которым назначена роль глобального администратора
 Пользователь | Восстановление любой удаленной группы Microsoft 365, которая принадлежала пользователю
 
 ## <a name="view-and-manage-the-deleted-microsoft-365-groups-that-are-available-to-restore"></a>Просмотр и администрирование удаленных групп Microsoft 365, которые можно восстановить

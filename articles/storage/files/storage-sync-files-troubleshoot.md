@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 2/1/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 65a1f8ef82ba9ec35e01a61d9682ebed0b9ba04c
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 534f9e76cfca4037634cfca089f1131984456636
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428340"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820710"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -210,10 +210,10 @@ Set-AzStorageSyncServerEndpoint `
         - Инструкции по использованию командлетов TLS см. в разделе [Настройка порядка комплектов шифров TLS с помощью командлетов TLS PowerShell](/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets).
     
         В настоящее время Синхронизация файлов Azure поддерживает следующие комплекты шифров для протокола TLS 1,2:  
-        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256  
-        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256  
-        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA_P256  
-        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA_P256  
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256  
 
 - Если в журнале появляется запись **GetNextJob завершено с состоянием:-2134347764**, сервер не может взаимодействовать со службой "Синхронизация файлов Azure" из-за того, что срок действия сертификата истек или сертификат был удален.  
     - Выполните следующую команду PowerShell на сервере, чтобы сбросить сертификат, используемый для проверки подлинности:

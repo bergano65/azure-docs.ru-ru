@@ -9,16 +9,16 @@ ms.subservice: reservations
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 522b67e62e7ad8560bb48e8d056ca6daeeb45251
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: f6aad15d70157dda110fce233fbdafb7f3d896ad
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350914"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055065"
 ---
 # <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования
 
-Чтобы оценить использование резервирования, используйте идентификатор резервирования со [страницы резервирования](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) и файл с [портала учетных записей Azure](https://account.azure.com).
+Чтобы оценить использование резервирования, используйте идентификатор резервирования со [страницы резервирования](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) и файл с [портала Azure](https://portal.azure.com).
 
 Если вы являетесь клиентом с Соглашением Enterprise, ознакомьтесь со статьей [Общие сведения об использовании резервирования с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md).
 

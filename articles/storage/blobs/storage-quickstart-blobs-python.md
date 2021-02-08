@@ -1,19 +1,19 @@
 ---
-title: Краткое руководство. Использование библиотеки хранилища BLOB-объектов Azure версии 12 для Python
-description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища BLOB-объектов Azure версии 12 для Python для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
+title: Краткое руководство. Библиотека Хранилища BLOB-объектов Azure версии 12 для Python
+description: Из этого краткого руководства вы узнаете, как с помощью клиентской библиотеки Хранилища BLOB-объектов Azure версии 12 для Python создать контейнер и большой двоичный объект в Хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 07/24/2020
+ms.date: 01/28/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-python
-ms.openlocfilehash: dbac832165c57e14e737372e12c4f4b2f3039c0d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e315f0f4f7bfff03a659de430e6fe182037f1b8a
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995269"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096412"
 ---
 # <a name="quickstart-manage-blobs-with-python-v12-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12
 
@@ -36,7 +36,7 @@ ms.locfileid: "95995269"
 
 ## <a name="setting-up"></a>Настройка
 
-В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для Python.
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой Хранилища BLOB-объектов Azure версии 12 для Python.
 
 ### <a name="create-the-project"></a>Создание проекта
 
@@ -54,7 +54,7 @@ ms.locfileid: "95995269"
     cd blob-quickstart-v12
     ```
 
-1. В каталоге *blob-quickstart-v12* создайте каталог *data*. Это каталог для создания и хранения файлов данных больших двоичных объектов.
+1. В каталоге *blob-quickstart-v12* создайте каталог *data*. Это каталог для создания и хранения файлов данных для больших двоичных объектов.
 
     ```console
     mkdir data
@@ -62,13 +62,13 @@ ms.locfileid: "95995269"
 
 ### <a name="install-the-package"></a>Установка пакета
 
-Оставаясь в каталоге приложения, установите клиентскую библиотеку хранилища BLOB-объектов Azure для пакета Python с помощью команды `pip install`.
+Оставаясь в каталоге приложения, установите пакет клиентской библиотеки Хранилища BLOB-объектов Azure для Python с помощью команды `pip install`.
 
 ```console
 pip install azure-storage-blob
 ```
 
-Эта команда устанавливает клиентскую библиотеку хранилища BLOB-объектов Azure для пакета Python и все библиотеки, от которых она зависит. В данном случае это только основная библиотека Azure для Python.
+Эта команда устанавливает пакет клиентской библиотеки Хранилища BLOB-объектов Azure для Python и все библиотеки, от которых она зависит. В данном случае это только основная библиотека Azure для Python.
 
 ### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
 
@@ -80,17 +80,7 @@ pip install azure-storage-blob
 
     Вот этот код:
 
-    ```python
-    import os, uuid
-    from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, __version__
-
-    try:
-        print("Azure Blob storage v" + __version__ + " - Python quickstart sample")
-        # Quick start code goes here
-    except Exception as ex:
-        print('Exception:')
-        print(ex)
-    ```
+    :::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/app_framework.py":::
 
 1. Сохраните новый файл как *blob-quickstart-v12.py* в каталоге *blob-quickstart-v12*.
 
@@ -98,7 +88,7 @@ pip install azure-storage-blob
 
 ## <a name="object-model"></a>Объектная модель
 
-Хранилище BLOB-объектов Azure оптимизировано для хранения больших объемов неструктурированных данных. Неструктурированные данные — это данные, которые не соответствуют определенной модели данных или определению, например текстовых или двоичных данных. В хранилище BLOB-объектов предлагается три типа ресурсов:
+Хранилище BLOB-объектов Azure оптимизировано для хранения больших объемов неструктурированных данных. Неструктурированные данные — это данные, которые не соответствуют определенной модели данных или определению, например текстовых или двоичных данных. В хранилище BLOB-объектов предлагается три типа ресурсов:
 
 * учетная запись хранения;
 * контейнер в учетной записи хранения;
@@ -116,7 +106,7 @@ pip install azure-storage-blob
 
 ## <a name="code-examples"></a>Примеры кода
 
-В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки хранилища BLOB-объектов Azure для Python:
+В этих примерах фрагментов кода показано, как выполнять следующие задачи с помощью клиентской библиотеки Хранилища BLOB-объектов Azure для Python:
 
 * [Получение строки подключения](#get-the-connection-string)
 * [Создание контейнера](#create-a-container)
@@ -127,19 +117,11 @@ pip install azure-storage-blob
 
 ### <a name="get-the-connection-string"></a>Получение строки подключения
 
-Приведенный ниже код извлекает строку подключения для учетной записи хранения из переменной среды, созданной в разделе [Настройка строки подключения хранилища](#configure-your-storage-connection-string).
+Приведенный ниже код извлекает строку подключения к учетной записи хранения из переменной среды, созданной при изучении раздела [Настройка строки подключения хранилища](#configure-your-storage-connection-string).
 
 Добавьте этот код в блок `try`.
 
-```python
-# Retrieve the connection string for use with the application. The storage
-# connection string is stored in an environment variable on the machine
-# running the application called AZURE_STORAGE_CONNECTION_STRING. If the environment variable is
-# created after the application is launched in a console or with Visual Studio,
-# the shell or application needs to be closed and reloaded to take the
-# environment variable into account.
-connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
-```
+:::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/blob-quickstart-v12.py" id="Snippet_ConnectionString":::
 
 ### <a name="create-a-container"></a>Создание контейнера
 
@@ -152,47 +134,20 @@ connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
 
 Добавьте следующий код в конец блока `try`.
 
-```python
-# Create the BlobServiceClient object which will be used to create a container client
-blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-
-# Create a unique name for the container
-container_name = "quickstart" + str(uuid.uuid4())
-
-# Create the container
-container_client = blob_service_client.create_container(container_name)
-```
+:::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/blob-quickstart-v12.py" id="Snippet_CreateContainer":::
 
 ### <a name="upload-blobs-to-a-container"></a>Отправка больших двоичных объектов в контейнер
 
 Приведенный ниже фрагмент кода:
 
+1. Создает локальный каталог для хранения файлов данных.
 1. Создает текстовый файл в локальном каталоге.
 1. Возвращает ссылку на объект [BlobClient](/python/api/azure-storage-blob/azure.storage.blob.blobclient), вызывая метод [get_blob_client](/python/api/azure-storage-blob/azure.storage.blob.containerclient#get-blob-client-blob--snapshot-none-) для [BlobServiceClient](/python/api/azure-storage-blob/azure.storage.blob.blobserviceclient) из раздела [Создание контейнера](#create-a-container).
 1. Передает локальный текстовый файл в большой двоичный объект, вызывая метод [upload_blob](/python/api/azure-storage-blob/azure.storage.blob.blobclient#upload-blob-data--blob-type--blobtype-blockblob---blockblob----length-none--metadata-none----kwargs-).
 
 Добавьте следующий код в конец блока `try`.
 
-```python
-# Create a file in local data directory to upload and download
-local_path = "./data"
-local_file_name = "quickstart" + str(uuid.uuid4()) + ".txt"
-upload_file_path = os.path.join(local_path, local_file_name)
-
-# Write text to the file
-file = open(upload_file_path, 'w')
-file.write("Hello, World!")
-file.close()
-
-# Create a blob client using the local file name as the name for the blob
-blob_client = blob_service_client.get_blob_client(container=container_name, blob=local_file_name)
-
-print("\nUploading to Azure Storage as blob:\n\t" + local_file_name)
-
-# Upload the created file
-with open(upload_file_path, "rb") as data:
-    blob_client.upload_blob(data)
-```
+:::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/blob-quickstart-v12.py" id="Snippet_UploadBlobs":::
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
@@ -200,14 +155,7 @@ with open(upload_file_path, "rb") as data:
 
 Добавьте следующий код в конец блока `try`.
 
-```python
-print("\nListing blobs...")
-
-# List the blobs in the container
-blob_list = container_client.list_blobs()
-for blob in blob_list:
-    print("\t" + blob.name)
-```
+:::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/blob-quickstart-v12.py" id="Snippet_ListBlobs":::
 
 ### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
@@ -215,42 +163,21 @@ for blob in blob_list:
 
 Добавьте следующий код в конец блока `try`.
 
-```python
-# Download the blob to a local file
-# Add 'DOWNLOAD' before the .txt extension so you can see both files in the data directory
-download_file_path = os.path.join(local_path, str.replace(local_file_name ,'.txt', 'DOWNLOAD.txt'))
-print("\nDownloading blob to \n\t" + download_file_path)
-
-with open(download_file_path, "wb") as download_file:
-    download_file.write(blob_client.download_blob().readall())
-```
+:::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/blob-quickstart-v12.py" id="Snippet_DownloadBlobs":::
 
 ### <a name="delete-a-container"></a>Удаление контейнера
 
 Следующий код очищает созданные приложением ресурсы, полностью удаляя контейнер с помощью метода [delete_container](/python/api/azure-storage-blob/azure.storage.blob.containerclient#delete-container---kwargs-). Кроме того, при необходимости можно удалить локальные файлы.
 
-Приложение приостанавливается для ввода пользователя, вызывая `input()`, перед удалением большого двоичного объекта, контейнера и локальных файлов. Это хорошая возможность проверить правильность создания ресурсов перед их удалением.
+Приложение приостанавливается для ввода пользователя, вызывая `input()`, перед удалением большого двоичного объекта, контейнера и локальных файлов. Перед удалением ресурсов убедитесь, что они были созданы правильно.
 
 Добавьте следующий код в конец блока `try`.
 
-```python
-# Clean up
-print("\nPress the Enter key to begin clean up")
-input()
-
-print("Deleting blob container...")
-container_client.delete_container()
-
-print("Deleting the local source and downloaded files...")
-os.remove(upload_file_path)
-os.remove(download_file_path)
-
-print("Done")
-```
+:::code language="python" source="~/azure-storage-snippets/blobs/quickstarts/python/V12/blob-quickstart-v12.py" id="Snippet_CleanUp":::
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-В этом приложении тестовый файл создается в локальной папке, а затем передается в хранилище BLOB-объектов. После этого выводится список больших двоичных объектов в контейнере, а затем файл загружается с новым именем, чтобы можно было сравнить старый и новый файлы.
+В этом приложении тестовый файл создается в локальной папке, а затем передается в Хранилище BLOB-объектов Azure. Затем пример выводит список больших двоичных объектов в контейнере и скачивает файл с новым именем. Теперь вы можете сравнить старый и новый файлы.
 
 Перейдите в каталог, содержащий файл *blob-quickstart-v12.py*, а затем выполните указанную команду `python`, чтобы запустить приложение.
 
@@ -261,7 +188,7 @@ python blob-quickstart-v12.py
 Вы должны увидеть выходные данные приложения, как показано ниже.
 
 ```output
-Azure Blob storage v12 - Python quickstart sample
+Azure Blob Storage v12 - Python quickstart sample
 
 Uploading to Azure Storage as blob:
         quickstartcf275796-2188-4057-b6fb-038352e35038.txt
@@ -279,7 +206,7 @@ Deleting the local source and downloaded files...
 Done
 ```
 
-Прежде чем начать удаление, проверьте наличие двух файлов в папке *data*. Вы можете открыть их и убедиться, что они идентичны.
+Прежде чем начать процесс удаления, проверьте наличие двух файлов в папке *data*. Вы можете открыть их и убедиться, что они идентичны.
 
 После проверки файлов нажмите клавишу **ВВОД**, чтобы завершить работу с демонстрационной версией и удалить тестовые файлы.
 
@@ -290,7 +217,7 @@ Done
 Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
 
 > [!div class="nextstepaction"]
-> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
+> [Примеры для пакета SDK Хранилища BLOB-объектов Azure версии 12 для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
 
 * Чтобы узнать больше, ознакомьтесь с [клиентскими библиотеками службы хранилища Azure для Python](/azure/developer/python/sdk/storage/overview).
 * Учебники, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков Python](/azure/python/).

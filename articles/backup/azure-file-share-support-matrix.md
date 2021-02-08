@@ -4,12 +4,12 @@ description: В этой статье предлагается сводка па
 ms.topic: conceptual
 ms.date: 5/07/2020
 ms.custom: references_regions
-ms.openlocfilehash: 6381170df93fdf52c2d0dc7059ad47bbff734025
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 999cb4c764e9960c509d19faa61016b2522259ac
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378038"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99819866"
 ---
 # <a name="support-matrix-for-azure-file-share-backup"></a>Таблица поддержки резервного копирования общих папок в Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "89378038"
 | Параметр                                                      | Ограничение   |
 | ------------------------------------------------------------ | ------- |
 | Максимальное число восстановлений в день                           | 10      |
-| Максимальное число восстанавливаемых за один раз файлов                         | 10      |
+| Максимальное число восстанавливаемых за один раз файлов                         | 99      |
 | Максимальный рекомендуемый размер восстанавливаемых за один раз данных для больших общих папок | 15 ТиБ |
 
 ## <a name="retention-limits"></a>Ограничения периода удержания

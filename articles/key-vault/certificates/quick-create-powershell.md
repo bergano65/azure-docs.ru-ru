@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Настройка и просмотр сертификатов Azure Key Vault с помощью Azure PowerShell
+title: Краткое руководство. Настройка и просмотр сертификатов Azure Key Vault с помощью Azure PowerShell
 description: Краткое руководство по настройке и получению сертификата из Azure Key Vault с помощью Azure PowerShell
 services: key-vault
 author: msmbaldwin
@@ -9,14 +9,14 @@ ms.service: key-vault
 ms.subservice: certificates
 ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.date: 09/03/2019
+ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: ae53ebac1c2a943a2b1ca98b222a8dbab210bdb5
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 587815cf9628df35f1e1efdbc6a7a3c89a27ed55
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935127"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99071923"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-azure-powershell"></a>Краткое руководство. Настройка и получение сертификата из Azure Key Vault с помощью Azure PowerShell
 
@@ -35,32 +35,11 @@ Login-AzAccount
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов Azure с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. 
-
-```azurepowershell-interactive
-New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
-```
+[!INCLUDE [Create a resource group](../../../includes/key-vault-powershell-rg-creation.md)]
 
 ## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
-Далее вы создадите Key Vault. При выполнении этого шага вам понадобятся некоторые сведения:
-
-Хотя мы используем Contoso KeyVault2 как имя для Key Vault в рамках работы с этим руководством, вы должны использовать уникальное имя.
-
-- **Имя хранилища**: Contoso-Vault2.
-- **Имя группы ресурсов**: ContosoResourceGroup.
-- **Расположение**: восточная часть США.
-
-```azurepowershell-interactive
-New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' -Location 'East US'
-```
-
-В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
-
-* **Имя хранилища.** В этом примере используется имя **Contoso-Vault2**. Вы будете использовать это имя для выполнения других командлетов хранилища ключей;
-* **URI хранилища**. В нашем примере это https://Contoso-Vault2.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
-
-После создания хранилища ваша учетная запись Azure будет единственной учетной записью, с которой можно выполнять любые действия в новом хранилище.
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-kv-creation.md)]
 
 ## <a name="add-a-certificate-to-key-vault"></a>Добавление сертификата в Key Vault
 
@@ -70,27 +49,23 @@ New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' 
 
 ```azurepowershell-interactive
 $Policy = New-AzKeyVaultCertificatePolicy -SecretContentType "application/x-pkcs12" -SubjectName "CN=contoso.com" -IssuerName "Self" -ValidityInMonths 6 -ReuseKeyOnRenewal
-Add-AzKeyVaultCertificate -VaultName "Contoso-Vault2" -Name "ExampleCertificate" -CertificatePolicy $Policy
+
+Add-AzKeyVaultCertificate -VaultName "<your-unique-keyvault-name>" -Name "ExampleCertificate" -CertificatePolicy $Policy
 ```
 
-Теперь сертификат, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://Contoso-Vault2.vault.azure.net/certificates/ExampleCertificate** , чтобы получить текущую версию. 
+Теперь сертификат, добавленный в Azure Key Vault, можно вызвать, используя его URI. Чтобы получить текущую версию, используйте **https://<your-unique-keyvault-name>.vault.azure.net/certificates/ExampleCertificate**. 
 
 Чтобы просмотреть ранее сохраненный сертификат, выполните следующие действия:
 
 ```azurepowershell-interactive
-Get-AzKeyVaultCertificate -VaultName "Contoso-Vault2" -Name "ExampleCertificate"
+Get-AzKeyVaultCertificate -VaultName "<your-unique-keyvault-name>" -Name "ExampleCertificate"
 ```
 
 Вы создали Key Vault, сохранили в нем сертификат и извлекли его.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Другие руководства в этой серии созданы на основе этого документа. Если вы планируете продолжить работу с последующими краткими руководствами и статьями, эти ресурсы можно не удалять.
-Чтобы удалить группу ресурсов и все связанные с ней ресурсы, выполните команду [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup). Удалите ресурсы следующим образом:
-
-```azurepowershell-interactive
-Remove-AzResourceGroup -Name ContosoResourceGroup
-```
+[!INCLUDE [Create a key vault](../../../includes/key-vault-powershell-delete-resources.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

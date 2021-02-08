@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 81ae46a7b6c19557eeadd2d5b28ad2fa46e77115
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 28ec6659430cfdbc81533f05863ccb0ddc560e32
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881373"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99508038"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Общие сведения об Azure Defender для SQL
 
@@ -72,7 +72,6 @@ Azure Defender для SQL содержит два плана Azure Defender, к�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этой статьи вы узнали об Azure Defender для SQL.
+Из этой статьи вы узнали об Azure Defender для SQL. Чтобы использовать описанные службы, выполните следующие действия:
 
-> [!div class="nextstepaction"]
-> [Проверьте серверы SQL на наличие уязвимостей с помощью Azure Defender](defender-for-sql-usage.md)
+- Используйте Azure Defender для серверов SQL на компьютерах для [проверки SQL серверов на наличие уязвимостей](defender-for-sql-usage.md).

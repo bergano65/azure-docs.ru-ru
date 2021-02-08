@@ -3,25 +3,25 @@ title: Анализ затрат на Azure с помощью приложени
 description: В этой статье объясняется, как установить и использовать приложение Power BI Azure Cost Management.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/09/2020
+ms.date: 1/29/2021
 ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: benshy
-ms.openlocfilehash: 1c5adf58f670f3cadcedbe710568551004b77b78
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d3439f5a86c445898d95191a32496b5f0c86be0b
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413247"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99070163"
 ---
 # <a name="analyze-cost-with-the-azure-cost-management-power-bi-app-for-enterprise-agreements-ea"></a>Анализ затрат с помощью приложения Power BI Azure Cost Management для Соглашений Enterprise (EA)
 
 В этой статье объясняется, как установить и использовать приложение Power BI Azure Cost Management. Это приложение помогает анализировать затраты на Azure в Power BI и управлять ими. Вы можете использовать это приложение для мониторинга затрат и тенденций использования, а также для поиска возможностей оптимизации затрат для снижения расходов.
 
-Вы можете использовать это приложение "как есть" или изменить его, чтобы расширить возможности фильтров, представлений и визуализаций по умолчанию и настроить их в соответствии с вашими потребностями. Затем можно использовать приложение для объединения дополнительных данных и создания настраиваемых отчетов, чтобы получить комплексное представление об общих затратах компании.
-
 В настоящее время приложение Power BI Azure Cost Management доступно только клиентам с [Соглашением Enterprise](https://azure.microsoft.com/pricing/enterprise-agreement/).
+
+Приложение ограничивает возможности настройки. Если вы хотите изменить и расширить фильтры по умолчанию, представления и визуализации в соответствии со своими потребностями, используйте [соединитель Управления затратами Azure в Power BI Desktop](/power-bi/connect-data/desktop-connect-azure-cost-management). С помощью соединителя Управления затратами Azure можно присоединить дополнительные данные из других источников, чтобы создать настраиваемые отчеты для получения комплексных представлений об общих расходах бизнеса. Соединитель также поддерживает Клиентские соглашения Майкрософт.
 
 > [!NOTE]
 > Приложения-шаблоны Power BI не поддерживают скачивание PBIX-файла.

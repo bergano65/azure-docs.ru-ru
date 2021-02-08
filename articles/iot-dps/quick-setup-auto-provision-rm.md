@@ -3,17 +3,17 @@ title: Краткое руководство. Создание Службы по
 description: Краткое руководство по Azure. Сведения о том, как создать Службу подготовки устройств к добавлению в Центр Интернета вещей Azure (DPS) с помощью шаблона Azure Resource Manager (шаблона ARM).
 author: wesmc7777
 ms.author: wesmc
-ms.date: 12/03/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc, subject-armqs, devx-track-azurecli
-ms.openlocfilehash: 73beed4e4262d911f68c2b4b33bc0c1ee24164f8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: cc55d1569c85dd0873d0132833acc99bd5d06136
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746218"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98928934"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-dps-with-an-arm-template"></a>Краткое руководство. Настройка Службы подготовки устройств к добавлению в Центр Интернета вещей с помощью шаблона ARM
 
@@ -36,12 +36,15 @@ ms.locfileid: "96746218"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-iothub-device-provisioning/).
 
+> [!NOTE]
+> В настоящее время шаблоны ARM не поддерживают создание регистраций с новыми ресурсами DPS. Наличие такой поддержки является востребованным и понятным, поэтому мы рассматриваем возможность ее добавления.
+
 :::code language="json" source="~/quickstart-templates/101-iothub-device-provisioning/azuredeploy.json":::
 
 В приведенном выше шаблоне определено два ресурса Azure:
 
-* [**Microsoft.Devices/iothubs.** ](/azure/templates/microsoft.devices/iothubs) Создает новый центр Интернета вещей Azure.
-* [**Microsoft.Devices/provisioningservices.** ](/azure/templates/microsoft.devices/provisioningservices) Создает новую Службу подготовки устройств к добавлению в центр Интернета вещей, которая уже связана с новым центром Интернета вещей.
+* [**Microsoft.Devices/iothubs.**](/azure/templates/microsoft.devices/iothubs) Создает новый центр Интернета вещей Azure.
+* [**Microsoft.Devices/provisioningservices.**](/azure/templates/microsoft.devices/provisioningservices) Создает новую Службу подготовки устройств к добавлению в центр Интернета вещей, которая уже связана с новым центром Интернета вещей.
 
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона

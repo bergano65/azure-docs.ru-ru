@@ -3,12 +3,12 @@ title: Создание функции Java с помощью Visual Studio Code
 description: Узнайте, как создать функцию Java, а затем опубликовать локальный проект в бессерверном размещении в Функциях Azure с помощью расширения Функций Azure в Visual Studio Code.
 ms.topic: quickstart
 ms.date: 11/03/2020
-ms.openlocfilehash: daaa578b2842a6314706b3578f4c9e44d46aa6ce
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 36516abd8b50c0b0b7d72e6bae0b67701509ca65
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424832"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493640"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции Java в Azure с помощью Visual Studio Code
 
@@ -86,7 +86,7 @@ ms.locfileid: "93424832"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью Visual Studio Code вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье вы расширите эту функцию, добавив выходную привязку. Эта привязка записывает строку из HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
+С помощью [Visual Studio Code](functions-develop-vs-code.md?tabs=java) вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье показано, как расширить эту функцию путем подключения к службе хранилища Azure. Дополнительные сведения о подключении к другим службам Azure см. в статье [Подключение функций к службам Azure с помощью привязок](add-bindings-existing-function.md?tabs=java). 
 
 > [!div class="nextstepaction"]
 > [Подключение Функций Azure к службе хранилища Azure с помощью средств командной строки](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-java)

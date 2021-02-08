@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: fd154ec40ed4d1650e44a67fd5d362a2bc0c519d
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: f4ce830c889feaeda05745eeb02b72f55ad9314a
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813944"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99819849"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Краткое руководство. Создание и Настройка службы защиты Azure от атак DDoS Standard
 
@@ -39,7 +39,7 @@ ms.locfileid: "97813944"
 
 1. Выберите **создать ресурс** в левом верхнем углу портал Azure.
 2. Найдите термин *от атак DDoS*. Когда в результатах поиска появится **план защиты от атак DDoS** , выберите его.
-3. Нажмите кнопку **создания**.
+3. Щелкните **Создать**.
 4. Введите или выберите следующие значения, а затем щелкните **создать**:
 
     |Параметр        |Значение                                              |
@@ -77,7 +77,7 @@ ms.locfileid: "97813944"
 
 ### <a name="enable-ddos-protection-for-all-virtual-networks"></a>Включить защиту от атак DDoS для всех виртуальных сетей
 
-Эта [Политика](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20DDoS%20Protection/Policy%20-%20Virtual%20Networks%20should%20be%20associated%20with%20an%20Azure%20DDoS%20Protection%20Standard%20plan) будет обнаруживать все виртуальные сети в определенной области, для которых не включен стандарт защиты от атак DDoS, а затем при необходимости создать задачу исправления, которая создаст связь для защиты виртуальной сети. Подробные пошаговые инструкции по развертыванию этой политики см. в разделе https://aka.ms/ddosvnetpolicy-techcommunity .
+Эта [Политика](https://aka.ms/ddosvnetpolicy) будет обнаруживать все виртуальные сети в определенной области, для которых не включен стандарт защиты от атак DDoS, а затем при необходимости создать задачу исправления, которая создаст связь для защиты виртуальной сети. Подробные пошаговые инструкции по развертыванию этой политики см. в разделе https://aka.ms/ddosvnetpolicy-techcommunity .
 
 ## <a name="validate-and-test"></a>Проверка и тестирование
 
@@ -113,7 +113,7 @@ ms.locfileid: "97813944"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к руководствам.
+Чтобы узнать, как просмотреть и настроить данные телеметрии для плана защиты от атак DDoS, перейдите к следующим руководствам.
 
 > [!div class="nextstepaction"]
 > [Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии](telemetry.md)

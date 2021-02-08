@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание схемы с помощью PowerShell
 description: В этом кратком руководстве вы создадите, определите и развернете артефакты с помощью PowerShell и Azure Blueprints.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: 339cd4628cda5f469a783db02c10f86259c93941
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 65d573d0aec7d5f292bc985483e1f12c350ae03a
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89051514"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918285"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Краткое руководство. Определение и назначение схемы Azure с помощью PowerShell
 
@@ -16,9 +16,9 @@ ms.locfileid: "89051514"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
-
-Выполните инструкции из [этой статьи](./how-to/manage-assignments-ps.md#add-the-azblueprint-module), чтобы установить модуль **Az.Blueprint** из коллекции PowerShell и проверить его работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Выполните инструкции из [этой статьи](./how-to/manage-assignments-ps.md#add-the-azblueprint-module), чтобы установить модуль **Az.Blueprint** из коллекции PowerShell и проверить его работу.
+- Если вы ранее не использовали Azure Blueprints, зарегистрируйте поставщик ресурсов, выполнив командлет `Register-AzResourceProvider -ProviderNamespace Microsoft.Blueprint` в Azure PowerShell.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e693bd15e5255fda135a7a1dc416dd67f24f7f25
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: b493ee7d77fc45018dbf8d2bac748b03e3d74b8a
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120416"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430215"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Управление доступом к учетной записи хранения в бессерверном пуле SQL в Azure Synapse Analytics
 
@@ -94,6 +94,9 @@ ms.locfileid: "98120416"
 
 Для обращения к хранилищу, защищенному брандмауэром, можно использовать **удостоверение пользователя** или **управляемое удостоверение**.
 
+> [!NOTE]
+> Функция брандмауэра в службе хранилища предоставляется в общедоступной предварительной версии и доступна во всех регионах общедоступного облака. 
+
 #### <a name="user-identity"></a>Удостоверение пользователя
 
 Чтобы обратиться к хранилищу, защищенному брандмауэром, с помощью удостоверения пользователя, можно использовать модуль Az.Storage в PowerShell.
@@ -102,12 +105,13 @@ ms.locfileid: "98120416"
 Выполните описанные ниже действия, чтобы настроить брандмауэр учетной записи хранения и добавить исключение для рабочей области Synapse.
 
 1. Откройте или [установите PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?preserve-view=true&view=powershell-7.1).
-2. Установите обновленный модуль Az. Storage: 
+2. Установите модуль Az.Storage 3.0.1 и Az.Synapse 0.7.0: 
     ```powershell
     Install-Module -Name Az.Storage -RequiredVersion 3.0.1-preview -AllowPrerelease
+    Install-Module -Name Az.Synapse -RequiredVersion 0.7.0
     ```
     > [!IMPORTANT]
-    > Убедитесь, что используется версия 3.0.1 или более поздняя. Чтобы проверить версию Az.Storage, выполните следующую команду:  
+    > Обязательно используйте **версию 3.0.1**. Чтобы проверить версию Az.Storage, выполните следующую команду:  
     > ```powershell 
     > Get-Module -ListAvailable -Name  Az.Storage | select Version
     > ```
@@ -121,16 +125,23 @@ ms.locfileid: "98120416"
     - Имя группы ресурсов можно найти на портале Azure в общих сведениях о рабочей области Synapse.
     - Имя учетной записи — это имя учетной записи хранения, защищенной правилами брандмауэра.
     - Идентификатор клиента можно найти на портале Azure в разделе информации о клиенте Azure Active Directory.
-    - Идентификатор ресурса можно найти на портале Azure в общих сведениях о рабочей области Synapse.
+    - Имя рабочей области — это имя рабочей области Synapse.
 
     ```powershell
         $resourceGroupName = "<resource group name>"
         $accountName = "<storage account name>"
         $tenantId = "<tenant id>"
-        $resourceId = "<Synapse workspace resource id>"
+        $workspaceName = "<synapse workspace name>"
+        
+        $workspace = Get-AzSynapseWorkspace -Name $workspaceName
+        $resourceId = $workspace.Id
+        $index = $resourceId.IndexOf("/resourceGroups/", 0)
+        # Replace G with g - /resourceGroups/ to /resourcegroups/
+        $resourceId = $resourceId.Substring(0,$index) + "/resourcegroups/" + $resourceId.Substring($index + "/resourceGroups/".Length)
+        $resourceId
     ```
     > [!IMPORTANT]
-    > Идентификатор ресурса должен соответствовать шаблону ниже.
+    > Убедитесь, что идентификатор ресурса соответствует этому шаблону в выводе переменной resourceId.
     >
     > Значение **resourcegroups** обязательно нужно указывать в нижнем регистре.
     > Пример идентификатора ресурса: 
@@ -145,7 +156,14 @@ ms.locfileid: "98120416"
 6. Убедитесь, что правило было применено в учетной записи хранения: 
     ```powershell
         $rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName
-        $rule.ResourceAccessRules
+        $rule.ResourceAccessRules | ForEach-Object { 
+        if ($_.ResourceId -cmatch "\/subscriptions\/(\w\-*)+\/resourcegroups\/(.)+") { 
+            Write-Host "Storage account network rule is successfully configured." -ForegroundColor Green
+            $rule.ResourceAccessRules
+        } else {
+            Write-Host "Storage account network rule is not configured correctly. Remove this rule and follow the steps in detail." -ForegroundColor Red
+            $rule.ResourceAccessRules
+        }
     ```
 
 #### <a name="managed-identity"></a>Управляемое удостоверение

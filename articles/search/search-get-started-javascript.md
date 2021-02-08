@@ -8,14 +8,14 @@ ms.author: delegenz
 ms.devlang: javascript
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 10/26/2020
+ms.date: 02/02/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 69cef4c17fd17219f0221c509775ad3fd6a80a27
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 7d31201f9d1a4519538aba3ac57ddfd340d936d1
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498988"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99509407"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-using-the-javascript-sdk"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" с помощью пакета SDK для JavaScript
 > [!div class="op_single_selector"]
@@ -169,7 +169,7 @@ main().catch((err) => {
 
 ## <a name="1---create-index"></a>1\. Создание индекса 
 
-Создайте файл **hotels_quickstart_index.json**.  Этот файл определяет, как Когнитивный поиск Azure будет работать с документами, которые вы отправите на следующем шаге. Каждое поле идентифицируется по свойству `name`, и для каждого поля указано значение `type`. У каждого поля также есть ряд атрибутов индекса, которые определяют, может ли Когнитивный поиск Azure применять это поле для поиска, фильтрации, сортировки и определения аспектов. Большинство полей имеют простой тип данных, но некоторые (например, `AddressType`) являются сложными типами, что позволяет создавать сложные структуры данных в индексе.  Вы можете подробнее изучить [поддерживаемые типы данных](/rest/api/searchservice/supported-data-types) и [атрибуты индекса](./search-what-is-an-index.md#index-attributes). 
+Создайте файл **hotels_quickstart_index.json**.  Этот файл определяет, как Когнитивный поиск Azure будет работать с документами, которые вы отправите на следующем шаге. Каждое поле идентифицируется по свойству `name`, и для каждого поля указано значение `type`. У каждого поля также есть ряд атрибутов индекса, которые определяют, может ли Когнитивный поиск Azure применять это поле для поиска, фильтрации, сортировки и определения аспектов. Большинство полей имеют простой тип данных, но некоторые (например, `AddressType`) являются сложными типами, что позволяет создавать сложные структуры данных в индексе.  Вы можете подробнее изучить [поддерживаемые типы данных](/rest/api/searchservice/supported-data-types) и атрибуты индекса, описанные в статье [Создание индекса (REST API службы "Когнитивный поиск Azure")](/rest/api/searchservice/create-index). 
 
 Добавьте следующий код в **hotels_quickstart_index.json** или [скачайте готовый файл](https://github.com/Azure-Samples/azure-search-javascript-samples/blob/master/quickstart/v11/hotels_quickstart_index.json). 
 

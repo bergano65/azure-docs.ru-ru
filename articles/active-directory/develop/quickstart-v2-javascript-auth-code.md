@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: f9c9cb3b1891383d4c1f0d579cf5990eee9f7826
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 98110723063ee2a2c9deb75fc931655e18e5bc95
+ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754166"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98938059"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa-using-the-auth-code-flow"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript с помощью потока кода авторизации
 
@@ -63,7 +63,7 @@ ms.locfileid: "98754166"
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Для работы примера кода в этом кратком руководстве необходимо добавить `redirectUri` со значением `http://localhost:3000/`.
+> Для примера кода, приведенного в этом кратком руководстве, требуется задать **URI перенаправления** `http://localhost:3000/`.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
 >

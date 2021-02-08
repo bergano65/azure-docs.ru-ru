@@ -3,12 +3,12 @@ title: Создание функции PowerShell с помощью Visual Studi
 description: Сведения о том, как создать функцию PowerShell, а затем опубликовать локальный проект в бессерверном размещении в Функциях Azure с помощью расширения Функций Azure в Visual Studio Code.
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: ad129d8faec5725a6e76f14577e6a0e9deae8d86
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 9833b154cdba24f8760e7e8d9040bfc72bbcd271
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968013"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493603"
 ---
 # <a name="quickstart-create-a-powershell-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции PowerShell в Azure с помощью Visual Studio Code
 
@@ -65,7 +65,7 @@ ms.locfileid: "97968013"
 
 1. Используя эти сведения, Visual Studio Code создает проект функций Azure с триггером HTTP. Файлы локального проекта можно просмотреть в Explorer. Дополнительные сведения см. в разделе [Generated project files](functions-develop-vs-code.md#generated-project-files) (Созданные файлы проекта). 
 
-[!INCLUDE [functions-run-function-test-local-vs-code-ps](../../includes/functions-run-function-test-local-vs-code-ps.md)]
+[!INCLUDE [functions-run-function-test-local-vs-code](../../includes/functions-run-function-test-local-vs-code.md)]
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure с помощью Visual Studio Code. 
 
@@ -79,7 +79,7 @@ ms.locfileid: "97968013"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью Visual Studio Code вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье вы расширите эту функцию, добавив выходную привязку. Эта привязка записывает строку из HTTP-запроса в сообщение очереди Хранилища очередей Azure. 
+С помощью [Visual Studio Code](functions-develop-vs-code.md?tabs=powershell) вы создали приложение-функцию с простой функцией, активируемой HTTP-запросом. В следующей статье показано, как расширить эту функцию путем подключения к службе хранилища Azure. Дополнительные сведения о подключении к другим службам Azure см. в статье [Подключение функций к службам Azure с помощью привязок](add-bindings-existing-function.md?tabs=powershell).  
 
 > [!div class="nextstepaction"]
 > [Подключение Функций Azure к службе хранилища Azure с помощью средств командной строки](functions-add-output-binding-storage-queue-vs-code.md?pivots=programming-language-powershell)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 055448eacf1cc12c6d021c6571a0478cb35442ba
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 32027695f914257ef245d920f00fc1d1976fa791
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89566925"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98956353"
 ---
 Манифест развертывания определяет, какие именно модули развертываются на пограничном устройстве. Кроме того, он определяет параметры конфигурации для этих модулей. 
 
@@ -14,6 +14,13 @@ ms.locfileid: "89566925"
 1. Рядом с областью **ЦЕНТР ИНТЕРНЕТА ВЕЩЕЙ AZURE** выберите значок **Дополнительные действия**, чтобы задать строку подключения к Центру Интернета вещей. Строку подключения можно скопировать из файла *src/cloud-to-device-console-app/appsettings.json*. 
 
     ![Установка строки подключения Центра Интернета вещей](../../../media/quickstarts/set-iotconnection-string.png)
+
+> [!NOTE]
+> Возможно, вам будет предложено ввести сведения о встроенной конечной точке для Центра Интернета вещей. Чтобы получить эти сведения, на портале Azure перейдите в Центр Интернета вещей и найдите пункт **Встроенные конечные точки** в области навигации слева. Щелкните этот пункт и найдите значение **конечной точки, совместимой с центрами событий,** в разделе **Конечная точка, совместимая с концентратором событий**. В поле скопируйте текст и используйте его. Значение конечной точки будет приблизительно таким:  
+    ```
+    Endpoint=sb://iothub-ns-xxx.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX;EntityPath=<IoT Hub name>
+    ```
+
 1. Щелкните правой кнопкой мыши **src/edge/deployment.template.json** и выберите **Generate IoT Edge Deployment Manifest** (Создать манифест развертывания IoT Edge).
 
     ![Создание файла манифеста развертывания IoT Edge](../../../media/quickstarts/generate-iot-edge-deployment-manifest.png)

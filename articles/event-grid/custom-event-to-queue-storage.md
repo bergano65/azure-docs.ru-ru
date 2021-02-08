@@ -1,15 +1,15 @@
 ---
 title: Краткое руководство. Отправка настраиваемых событий в гибридное подключение — "Сетка событий", Azure CLI
 description: Краткое руководство. Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Очередь хранилища используется в качестве конечной точки.
-ms.date: 07/07/2020
+ms.date: 02/02/2021
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4de7aa1c111b5b21a27b155474ae10f78feba083
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 00808e7eca13824833673ef820d39b70bf618dd2
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566322"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493274"
 ---
 # <a name="quickstart-route-custom-events-to-azure-queue-storage-with-azure-cli-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в хранилище очередей Azure с помощью Azure CLI и службы "Сетка событий"
 
@@ -116,6 +116,11 @@ done
 Перейдите к хранилищу очередей на портале. Вы увидите, что служба "Сетка событий" отправила эти три события в очередь.
 
 ![Отображение сообщений](./media/custom-event-to-queue-storage/messages.png)
+
+> [!NOTE]
+> Если вы используете [триггер хранилища очередей Azure для Функций Azure](../azure-functions/functions-bindings-storage-queue-trigger.md) для очереди, которая получает сообщения из Сетки событий, возможно, отобразится следующее сообщение об ошибке при выполнении функции: `The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.`
+> 
+> Причина заключается в том, что при использовании [триггера хранилища очередей Azure](../azure-functions/functions-bindings-storage-queue-trigger.md) Функции Azure ожидают **строку в кодировке Base64**, но Сетка событий отправляет сообщения в очередь хранилища в формате обычного текста. В настоящее время вы не можете настроить триггер очереди для Функций Azure, чтобы он принимал обычный текст. 
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

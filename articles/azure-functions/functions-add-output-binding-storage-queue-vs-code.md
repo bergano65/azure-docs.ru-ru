@@ -5,12 +5,12 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-js
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: e280fddbe83da2a7ee89185046883f6c2c77167a
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 96384d2c50e7d5b4b5b6e652d01c4a89cd519573
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739831"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493408"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Подключение Функций Azure к службе хранилища Azure с помощью Visual Studio Code
 
@@ -96,7 +96,7 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage
 
 В службе "Функции" для каждого типа привязок требуется `direction`, `type` и уникальное `name`, которое определяется в файле function.json. Способ определения этих атрибутов зависит от языка приложения-функции.
 
-::: zone pivot="programming-language-javascript,programming-language-typescript,programming-language-python,programming-language-powershell,programming-language-java"
+::: zone pivot="programming-language-javascript,programming-language-typescript,programming-language-python,programming-language-powershell"
 
 [!INCLUDE [functions-add-output-binding-json](../../includes/functions-add-output-binding-json.md)]
 
@@ -148,35 +148,25 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage
 
 [!INCLUDE [functions-add-storage-binding-java-code](../../includes/functions-add-storage-binding-java-code.md)]
 
-## <a name="update-the-test-set"></a>Обновление набора тестов
+## <a name="update-the-tests"></a>Обновление тестов
 
 [!INCLUDE [functions-add-output-binding-java-test](../../includes/functions-add-output-binding-java-test.md)]
 
 ::: zone-end  
 
-<!--- Local testing section --->
+## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
-::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-python"
+1. Как и при работе с предыдущей статьей, нажмите клавишу <kbd>F5</kbd>, чтобы запустить проект приложения функции и Core Tools. 
 
-[!INCLUDE [functions-run-function-test-local-vs-code](../../includes/functions-run-function-test-local-vs-code.md)]
+1. При запущенных Core Tools перейдите в область **Azure: Функции**. В разделе **Функции** разверните **Локальный проект** > **Функции**. Щелкните правой кнопкой мыши (Ctrl-щелчок на компьютерах Mac) функцию `HttpExample` и выберите **Выполнить функцию...** .
 
-::: zone-end
+    :::image type="content" source="../../includes/media/functions-run-function-test-local-vs-code/execute-function-now.png" alt-text="Вариант &quot;Выполнить функцию&quot; из Visual Studio Code":::
 
-::: zone pivot="programming-language-powershell"
+1. В поле **Ввести текст запроса** вы увидите значение текста запроса `{ "name": "Azure" }`. Нажмите клавишу ВВОД, чтобы отправить это сообщение запроса в свою функцию.  
+ 
+1. После возврата ответа нажмите клавиши <kbd>CTRL+C</kbd>, чтобы остановить работу Core Tools.
 
-[!INCLUDE [functions-run-function-test-local-vs-code-ps](../../includes/functions-run-function-test-local-vs-code-ps.md)]
-
-::: zone-end
-
-Новая очередь с именем **outqueue** создается в вашей учетной записи хранения средой выполнения Функций при первом использовании выходной привязки. Чтобы убедиться, что очередь и сообщение в ней были созданы, вам нужно будет использовать Обозреватель службы хранилища.
-
-::: zone pivot="programming-language-java"  
-
-## <a name="update-the-tests"></a>Обновление тестов
-
-[!INCLUDE [functions-add-output-binding-java-test](../../includes/functions-add-output-binding-java-test.md)]
-
-::: zone-end
+Так как вы используете строку подключения к хранилищу, функция подключается к учетной записи хранения Azure при локальном запуске. Новая очередь с именем **outqueue** создается в вашей учетной записи хранения средой выполнения Функций при первом использовании выходной привязки. Чтобы убедиться, что очередь и сообщение в ней были созданы, вам нужно будет использовать Обозреватель службы хранилища.
 
 ### <a name="connect-storage-explorer-to-your-account"></a>Подключение Обозревателя службы хранилища к учетной записи
 
@@ -212,11 +202,7 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage
 
 1. Выберите созданное в рамках первой статьи приложение-функцию. Так как вы повторно развертываете свой проект в том же приложении, щелкните **Развернуть**, чтобы закрыть предупреждение о перезаписи файлов.
 
-1. По завершении развертывания вы можете снова использовать cURL или браузер для проверки повторно развернутой функции. Как прежде, добавьте строку запроса `&name=<yourname>` URL-адресу, как показано в следующем примере.
-
-    ```bash
-    curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....&name=<yourname>
-    ```
+1. После завершения развертывания вы можете повторно использовать возможность **Выполнить функцию...** , чтобы запустить функцию в Azure.
 
 1. Еще раз [просмотрите сообщение в очереди хранилища](#examine-the-output-queue), чтобы убедиться, что выходная привязка снова создает новое сообщение в очереди.
 

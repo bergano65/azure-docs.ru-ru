@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 09/28/2020
 ms.author: glenga
-ms.openlocfilehash: a525d1e14e642a64235c263ba29bf7a181bf9e30
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2517f132578b5de6b062b38ce94581f118327a13
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008237"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493602"
 ---
 ## <a name="publish-the-project-to-azure"></a>Публикация проекта в Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "96008237"
 
 1. Щелкните значок Azure на панели действий, а затем в области **Azure: Функции** выберите кнопку **Deploy to function app...** (Развертывание в приложение-функцию).
 
-    ![Публикация проекта в Azure](media/functions-publish-project-vscode/function-app-publish-project.png)
+    ![Публикация проекта в Azure](./media/functions-publish-project-vscode/function-app-publish-project.png)
 
 1. Введите следующие сведения по соответствующим запросам:
 
@@ -35,16 +35,18 @@ ms.locfileid: "96008237"
     
     - **Select a location for new resources** (Выбор расположения для новых ресурсов).  Для повышения производительности выберите [регион](https://azure.microsoft.com/regions/) рядом с вами. 
     
+    Расширение показывает в области уведомлений состояние отдельных ресурсов по мере их создания в Azure.
+
+    :::image type="content" source="media/functions-publish-project-vscode/resource-notification.png" alt-text="Уведомление о создании ресурса Azure":::
+    
 1.  После завершения в вашей подписке создаются следующие ресурсы Azure с именами, производными от имени приложения-функции:
     
-    - группу ресурсов — логический контейнер связанных ресурсов;
-    - Стандартная учетная запись хранения Azure для сохранения состояния и других сведений о проектах.
-    - План потребления, который определяет базовый узел для бессерверного приложения-функции; 
-    - приложение-функцию — среду для выполнения кода функции. Приложение-функция позволяет группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими в рамках единого плана размещения.
-    - Экземпляр Application Insights, подключенный к приложению-функции, который отслеживает использование бессерверной функции.
+    [!INCLUDE [functions-vs-code-created-resources](functions-vs-code-created-resources.md)]
 
     После создания приложения-функции и применения пакета развертывания отобразится уведомление. 
-    
-1. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure. Если вы пропустили уведомление, щелкните значок колокольчика в правом нижнем углу, чтобы снова просмотреть его.
+
+    [!INCLUDE [functions-vs-code-create-tip](functions-vs-code-create-tip.md)]
+
+4. Выберите **View Output** (Просмотреть выходные данные) в уведомлении, чтобы просмотреть результаты создания и развертывания ресурсов Azure. Если вы пропустили уведомление, щелкните значок колокольчика в правом нижнем углу, чтобы снова просмотреть его.
 
     ![Создание уведомления о завершении](media/functions-publish-project-vscode/function-create-notifications.png)

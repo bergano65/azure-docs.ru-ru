@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: c20685c0c392ece68dc80b57afc6680f2efd9e35
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: b2e42dcaeb72a053f20afa47439d1825445b0ad8
+ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754506"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99225839"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -56,13 +56,13 @@ ms.locfileid: "98754506"
 > 1. Выберите **Зарегистрировать**.
 > 1. В разделе **Управление** выберите **Проверка подлинности**.
 > 1. В разделе **URI перенаправления** выберите **Добавить URI** и введите `https://localhost:44321/signin-oidc`.
-> 1. Введите **URL-адрес выхода** `https://localhost:44321/signout-oidc`.
-> 1. В разделе **Неявное предоставление разрешения** установите флажок **Токены идентификатора**.
+> 1. Задайте для параметра **URL-адрес выхода Front-channel** значение `https://localhost:44321/signout-oidc`.
+> 1. В разделе **Неявное предоставление разрешения и гибридные потоки** выберите **Маркеры идентификации**.
 > 1. Щелкните **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Чтобы пример кода для этого краткого руководства работал, необходимо добавить URL-адреса ответа `https://localhost:44321/` и `https://localhost:44321/signin-oidc`, URL-адрес выхода `https://localhost:44321/signout-oidc` и запросить выдачу токенов идентификации конечной точкой авторизации.
+> Для примера кода, приведенного в этом кратком руководстве, требуется задать **URI перенаправления** `https://localhost:44321/`, `https://localhost:44321/signin-oidc` и **URL-адрес выхода Front-channel**  `https://localhost:44321/signout-oidc`. Маркеры идентификации запросов будут выдаваться конечной точкой авторизации.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >

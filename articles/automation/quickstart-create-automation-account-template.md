@@ -3,22 +3,18 @@ title: Краткое руководство. Создание учетной з
 titleSuffix: Azure Automation
 description: В этом кратком руководстве показано, как создать учетную запись автоматизации с помощью шаблона Azure Resource Manager.
 services: automation
-documentationcenter: na
-author: mgoedtel
 Customer intent: I want to create an Automation account by using an Azure Resource Manager template so that I can automate processes with runbooks.
-ms.service: automation
-ms.devlang: na
 ms.topic: quickstart
 ms.workload: infrastructure-services
-ms.date: 07/23/2020
+ms.date: 01/07/2021
 ms.author: magoedte
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: 9315b898e290dc758c300f9b74006b4b08888e9e
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: d0582876a08b433a10106b97179ab603d4ec5762
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078958"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050674"
 ---
 # <a name="quickstart-create-an-automation-account-by-using-arm-template"></a>Краткое руководство. Создание учетной записи автоматизации с помощью шаблона Resource Manager
 
@@ -44,7 +40,7 @@ ms.locfileid: "92078958"
 * добавляет примеры модулей Runbook автоматизации в учетную запись.
 
 >[!NOTE]
->Создание учетной записи запуска от имени службы автоматизации на основе шаблона Azure Resource Manager не поддерживается. Сведения о создании учетной записи запуска от имени вручную на портале или с помощью PowerShell см. в статье [Управление учетными записями запуска от имени](manage-runas-account.md).
+>Создание учетной записи запуска от имени службы автоматизации на основе шаблона Azure Resource Manager не поддерживается. Сведения о создании учетной записи запуска от имени вручную на портале или с помощью PowerShell см. в статье [Создание учетной записи запуска от имени](create-run-as-account.md).
 
 После выполнения этих действий необходимо [настроить параметры диагностики](automation-manage-send-joblogs-log-analytics.md), чтобы учетная запись службы автоматизации могла отправлять состояния заданий Runbook и потоки заданий в связанную рабочую область Log Analytics.
 
