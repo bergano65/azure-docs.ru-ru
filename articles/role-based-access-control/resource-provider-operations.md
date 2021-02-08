@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 768a327421a941a39b6f66be411712a565097f66
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 72a8f2eb93a9c12510b093e29c7b8fc6867cb2eb
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557330"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809393"
 ---
 # <a name="azure-resource-provider-operations"></a>Операции с поставщиками ресурсов Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "99557330"
 | [Microsoft.MarketplaceOrdering](#microsoftmarketplaceordering) |
 | [Microsoft.ResourceHealth](#microsoftresourcehealth) |
 | [Microsoft. support](#microsoftsupport) |
-| **Compute** |
+| **Среда выполнения приложений** |
 | [Microsoft.ClassicCompute](#microsoftclassiccompute) |
 | [Microsoft.Compute](#microsoftcompute) |
 | [Microsoft.ServiceFabric](#microsoftservicefabric) |
@@ -40,7 +40,7 @@ ms.locfileid: "99557330"
 | [Microsoft.Cdn](#microsoftcdn) |
 | [Microsoft.ClassicNetwork](#microsoftclassicnetwork) |
 | [Microsoft.Network](#microsoftnetwork) |
-| **Хранилище** |
+| **Память** |
 | [Microsoft.ClassicStorage](#microsoftclassicstorage) |
 | [Microsoft.DataBox](#microsoftdatabox) |
 | [Microsoft.ImportExport](#microsoftimportexport) |
@@ -160,7 +160,9 @@ ms.locfileid: "99557330"
 | [Microsoft.Intune](#microsoftintune) |
 | **Другое** |
 | [Microsoft.BingMaps](#microsoftbingmaps) |
+| [Microsoft.DesktopVirtualization](#microsoftdesktopvirtualization) |
 | [Microsoft.DigitalTwins](#microsoftdigitaltwins) |
+| [Microsoft. Сервицешуб](#microsoftserviceshub) |
 
 
 ## <a name="general"></a>Общие сведения
@@ -281,7 +283,7 @@ ms.locfileid: "99557330"
 > | Microsoft. support/Суппорттиккетс/связь/чтение | Перечисление одного или всех сообщений в службу поддержки |
 > | Microsoft. support/Суппорттиккетс/связь/запись | Добавляет новый обмен информацией в службу поддержки |
 
-## <a name="compute"></a>Вычисления
+## <a name="compute"></a>Службы вычислений
 
 ### <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
@@ -1388,7 +1390,7 @@ ms.locfileid: "99557330"
 > | Microsoft.Network/vpnsites/delete | Удаление ресурса сети VPN. |
 > | Microsoft. Network/Впнситес/Впнсителинкс/чтение | Возвращает ссылку на VPN-сайт |
 
-## <a name="storage"></a>Хранение
+## <a name="storage"></a>Память
 
 ### <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
@@ -4380,7 +4382,7 @@ ms.locfileid: "99557330"
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/запись | Создание нового или изменение свойств существующей виртуальной машины SQL |
 > | Microsoft. Склвиртуалмачине/Склвиртуалмачинес/Delete | Удалить существующую виртуальную машину SQL |
 
-## <a name="analytics"></a>Аналитика
+## <a name="analytics"></a>Analytics
 
 ### <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 
@@ -10268,6 +10270,51 @@ ms.locfileid: "99557330"
 > | Microsoft. BingMaps/Мапапис/Листусажеметрикс/Action | Перечисление метрик для Microsoft. BingMaps/Мапапис |
 > | Microsoft.BingMaps/Operations/read | Перечисление операций для Microsoft. BingMaps |
 
+### <a name="microsoftdesktopvirtualization"></a>Microsoft.DesktopVirtualization
+
+Служба Azure: [виртуальный рабочий стол Windows](../virtual-desktop/index.yml)
+
+> [!div class="mx-tableFixed"]
+> | Действие | Описание |
+> | --- | --- |
+> | Microsoft. Десктопвиртуализатион/Register/действие | Зарегистрировать подписку |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/Read | Чтение аппликатионграупс |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/запись | Запись аппликатионграупс |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/Delete | Удалить аппликатионграупс |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/Applications/Read | Чтение аппликатионграупс и приложений |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/приложения/запись | Запись аппликатионграупс и приложений |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/приложения/Удаление | Удаление аппликатионграупс и приложений |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/настольные системы/чтение | Чтение аппликатионграупс и настольных систем |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/настольные системы/запись | Запись аппликатионграупс и настольных систем |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/настольные системы/удаление | Удаление аппликатионграупс и настольных систем |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/екстерналусерассигнментс/Read |  |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/providers/Microsoft. Insights/diagnosticSettings/Read | Получает параметр диагностики. |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики. |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/providers/Microsoft. Insights/Логдефинитионс/Read | Получение доступных журналов |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/стартменуитемс/Read | Чтение пунктов меню "Пуск" |
+> | Microsoft. Десктопвиртуализатион/хостпулс/Read | Чтение хостпулс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/запись | Запись хостпулс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/Delete | Удалить хостпулс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/providers/Microsoft. Insights/diagnosticSettings/Read | Получает параметр диагностики. |
+> | Microsoft. Десктопвиртуализатион/хостпулс/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики. |
+> | Microsoft. Десктопвиртуализатион/хостпулс/providers/Microsoft. Insights/Логдефинитионс/Read | Получение доступных журналов |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/Read | Чтение хостпулс и сессионхостс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/запись | Запись хостпулс и сессионхостс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/Delete | Удалить хостпулс или сессионхостс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/усерсессионс/Read | Чтение хостпулс/сессионхостс/усерсессионс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/усерсессионс/Write | Запись хостпулс/сессионхостс/усерсессионс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/усерсессионс/Delete | Удаление хостпулс/сессионхостс/усерсессионс |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/усерсессионс/действие | Отключает узел сеанса формы сеанса пользователя |
+> | Microsoft. Десктопвиртуализатион/хостпулс/сессионхостс/усерсессионс/sendMessage/Action | Отправить сообщение в сеанс пользователя |
+> | Microsoft. Десктопвиртуализатион/рабочие области/чтение | Чтение рабочих областей |
+> | Microsoft. Десктопвиртуализатион/рабочие области/запись | Запись рабочих областей |
+> | Microsoft. Десктопвиртуализатион/рабочие области/удаление | Удаление рабочих областей |
+> | Microsoft. Десктопвиртуализатион/workspaces/providers/Microsoft. Insights/diagnosticSettings/Read | Получает параметр диагностики. |
+> | Microsoft. Десктопвиртуализатион/workspaces/providers/Microsoft. Insights/diagnosticSettings/запись | Создает или обновляет параметр диагностики. |
+> | Microsoft. Десктопвиртуализатион/workspaces/providers/Microsoft. Insights/Логдефинитионс/Read | Получение доступных журналов |
+> | **DataAction** | **Описание** |
+> | Microsoft. Десктопвиртуализатион/аппликатионграупс/усеаппликатионс/Action | Использование ApplicationGroup |
+
 ### <a name="microsoftdigitaltwins"></a>Microsoft.DigitalTwins
 
 Служба Azure: [Azure Digital двойников](../digital-twins/index.yml)
@@ -10316,6 +10363,20 @@ ms.locfileid: "99557330"
 > | Microsoft. Дигиталтвинс/Models/Read | Чтение любой модели |
 > | Microsoft. Дигиталтвинс/Models/Write | Создание или обновление любой модели |
 > | Microsoft. Дигиталтвинс/Models/Delete | Удаление любой модели |
+
+### <a name="microsoftserviceshub"></a>Microsoft. Сервицешуб
+
+Служба Azure: [центр служб](/services-hub/)
+
+> [!div class="mx-tableFixed"]
+> | Действие | Описание |
+> | --- | --- |
+> | Microsoft. Сервицешуб/Connectors/Write | Создание или обновление соединителя центра служб |
+> | Microsoft. Сервицешуб/Connectors/Read | Просмотр или перечисление соединителей концентратора служб |
+> | Microsoft. Сервицешуб/Connectors/Delete | Удаление соединителей центра служб |
+> | Microsoft. Сервицешуб/Connectors/Чеккассессментентитлемент/Action | Список прав оценки для определенной рабочей области центра служб |
+> | Microsoft. Сервицешуб/Суппортофферинжентитлемент/Read | Просмотр прав на предложение поддержки для определенной рабочей области центра служб |
+> | Microsoft. Сервицешуб/рабочие области/чтение | Перечисление рабочих областей центра служб для указанного пользователя |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

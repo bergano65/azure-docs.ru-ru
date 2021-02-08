@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 9106e00fe2146978f97b480e3afd3b7ed58c9130
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb2b7810c0829859f4a104c62b6df2ca0495bac7
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90937778"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809207"
 ---
 # <a name="configure-and-customize-security-module-for-azure-rtos-preview"></a>Настройка и Настройка модуля безопасности для Azure RTO (Предварительная версия)
 
@@ -30,14 +30,14 @@ ms.locfileid: "90937778"
 
 ### <a name="general"></a>Общие сведения
 
-| Имя | Тип | По умолчанию | Подробнее |
+| Имя | Тип | По умолчанию | Сведения |
 | - | - | - | - |
-| ASC_SECURITY_MODULE_ID | Строковый тип | --- | Уникальный идентификатор устройства  |
+| ASC_SECURITY_MODULE_ID | Строка | --- | Уникальный идентификатор устройства  |
 | ASC_SECURITY_MODULE_PENDING_TIME  | Число | 300 | Время ожидания модуля безопасности в секундах. Значение, если время превышает изменение состояния для приостановки. |
 
 #### <a name="collection"></a>Коллекция
 
-| Имя | Тип | По умолчанию | Подробнее |
+| Имя | Тип | По умолчанию | Сведения |
 | - | - | - | - |
 | ASC_HIGH_PRIORITY_INTERVAL | Число | 10 | Интервал групп с высоким приоритетом для собраний в секундах. |
 | ASC_MEDIUM_PRIORITY_INTERVAL | Число | 30 | Интервал групп средних приоритетов для собирающих в секундах. |
@@ -47,7 +47,7 @@ ms.locfileid: "90937778"
 
 Чтобы настроить конфигурацию сетевой активности сборщика, используйте следующую команду:
 
-| Имя | Тип | По умолчанию | Подробнее |
+| Имя | Тип | По умолчанию | Сведения |
 | - | - | - | - |
 | ASC_COLLECTOR_NETWORK_ACTIVITY_TCP_DISABLED | Логическое | false | Фильтрация `TCP` активности сети |
 | ASC_COLLECTOR_NETWORK_ACTIVITY_UDP_DISABLED | Логическое | false | Фильтрация `UDP` событий сетевых операций |
@@ -61,7 +61,7 @@ ms.locfileid: "90937778"
 Флаги компиляции позволяют переопределить предопределенные конфигурации.
 
 ### <a name="collectors"></a>Сборщики
-| Имя | Тип | По умолчанию | Подробнее |
+| Имя | Тип | По умолчанию | Сведения |
 | - | - | - | - |
 | collector_heartbeat_enabled | Логическое | ON | Включение сборщика пакетов пульса |
 | collector_network_activity_enabled | Логическое | ON | Включение сборщика активности сети |
@@ -73,9 +73,9 @@ ms.locfileid: "90937778"
 
 ## <a name="log-analytics-optional"></a>Log Analytics (необязательно)
 
-Включение и настройка Log Analytics могут быть полезными, если вы хотите дополнительно исследовать события и действия устройства, хотя это необязательно и необязательно. Узнайте, как настроить и использовать [log Analytics со службой "защитник для Интернета вещей"](how-to-security-data-access.md#log-analytics) для получения дополнительных сведений. 
+Включение и настройка Log Analytics могут быть полезными, если вы хотите дополнительно исследовать события и действия устройства, хотя это необязательно и необязательно. Дополнительные сведения см. в статье о настройке и использовании [log Analytics со службой "защитник для Интернета вещей"](how-to-security-data-access.md#log-analytics) . 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Обзор и Настройка модуля безопасности для [оповещений и рекомендаций системы безопасности](concept-rtos-security-alerts-recommendations.md) Azure RTO
 - При необходимости обратитесь к [модулю безопасности Azure RTO API](azure-rtos-security-module-api.md) .

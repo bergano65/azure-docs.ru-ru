@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/01/2021
 ms.custom: generated
-ms.openlocfilehash: 3b7b65a558470c4e7f04ed84ea186fc1ea98bc40
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 384d00ee41f2b6bfc2e91815bfcf54819c7d9ab2
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99557341"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809387"
 ---
 # <a name="azure-built-in-roles"></a>Встроенные роли Azure
 
@@ -75,6 +75,7 @@ ms.locfileid: "99557341"
 > | [Отправитель сообщений данных в очередь хранилища](#storage-queue-data-message-sender) | Добавление сообщений в очередь службы хранилища Azure. Сведения о том, какие действия необходимы для конкретной операции с данными, см. в разделе [Разрешения на вызов операций с данными BLOB-объектов и очередей](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
 > | [Читатель данных очереди хранилища](#storage-queue-data-reader) | Чтение и перечисление очередей и сообщений в очередях службы хранилища Azure. Сведения о том, какие действия необходимы для конкретной операции с данными, см. в разделе [Разрешения на вызов операций с данными BLOB-объектов и очередей](/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). | 19e7f393-937e-4f77-808e-94535e297925 |
 > | **Web** |  |  |
+> | [Участник данных Azure Maps](#azure-maps-data-contributor) | Предоставляет доступ на чтение, запись и удаление для сопоставления связанных данных из учетной записи службы "карты Azure". | 8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204 |
 > | [Читатель данных Azure Maps](#azure-maps-data-reader) | Предоставляет доступ на чтение связанных данных карты в учетной записи Azure Maps. | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
 > | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. | 7ca78c08-252a-4471-8644-bb5ff32d4ba0 |
 > | [Агент AccessKey SignalR](#signalr-accesskey-reader) | Чтение ключей доступа службы SignalR | 04165923-9d83-45d5-8227-78b77b0a687e |
@@ -129,7 +130,15 @@ ms.locfileid: "99557341"
 > | [Доступ к узлам элементов блокчейна (предварительная версия)](#blockchain-member-node-access-preview) | Разрешает доступ к узлам элементов блокчейна. | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
 > | **ИИ и машинное обучение** |  |  |
 > | [Участник служб Cognitive Services](#cognitive-services-contributor) | Позволяет создавать, читать, обновлять, удалять ключи служб Cognitive Services и управлять ими. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
+> | [Участник Cognitive Services Пользовательское визуальное распознавание](#cognitive-services-custom-vision-contributor) | Полный доступ к проекту, включая возможность просмотра, создания, изменения и удаления проектов. | c1ff6cc2-C111-46fe-8896-e0ef812ad9f3 |
+> | [Развертывание Cognitive Services Пользовательское визуальное распознавание](#cognitive-services-custom-vision-deployment) | Публикация, отмена публикации или экспорт моделей. Развертывание может просматривать проект, но не может обновляться. | 5c4089e1-6d96-4d2f-b296-c1bc7137275f |
+> | [Cognitive Services Пользовательское визуальное распознавание меток](#cognitive-services-custom-vision-labeler) | Просмотр, изменение учебных изображений и создание, добавление, удаление и удаление тегов изображений. Метки могут просматривать проект, но не могут обновлять ничего, Кроме учебных изображений и тегов. | 88424f51-ebe7-446f-bc41-7fa16989e96c |
+> | [Модуль чтения Cognitive Services Пользовательское визуальное распознавание](#cognitive-services-custom-vision-reader) | Действия, которые доступны только для чтения в проекте. Читатели не могут создать или обновить проект. | 93586559-c37d-4a6b-ba08-b9f0940c2d73 |
+> | [Cognitive Services инструктор Пользовательское визуальное распознавание](#cognitive-services-custom-vision-trainer) | Просмотр, изменение проектов и обучение моделей, включая возможность публикации, отмены публикации и экспорта моделей. Преподаватели не могут создать или удалить проект. | 0a5ae4ab-0d65-4eeb-be61-29fc9b54394b |
 > | [Модуль чтения данных Cognitive Services (предварительная версия)](#cognitive-services-data-reader-preview) | Позволяет считывать данные Cognitive Services. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
+> | [Администратор помощника по метрикам Cognitive Services](#cognitive-services-metrics-advisor-administrator) | Полный доступ к проекту, включая конфигурацию системного уровня. | cb43c632-a144-4ec5-977c-e80c4affc34a |
+> | [Редактор Cognitive Services QnA Maker](#cognitive-services-qna-maker-editor) | Позволяет создавать, изменять, импортировать и экспортировать базы знаний. Невозможно опубликовать или удалить базу знаний. | f4cc2bf9-21be-47a1-bdf1-5c5804381025 |
+> | [Модуль чтения Cognitive Services QnA Maker](#cognitive-services-qna-maker-reader) | Давайте выполним чтение и тестирование только базы знаний. | 466ccd10-b268-4a11-b098-b4849f024126 |
 > | [Пользователь служб Cognitive Services](#cognitive-services-user) | Позволяет создавать и читать список ключей служб Cognitive Services. | a97b65f3-24c7-4388-baec-2e87135dc908 |
 > | **Смешанная реальность** |  |  |
 > | [Администратор удаленной подготовки к просмотру](#remote-rendering-administrator) | Предоставляет пользователю возможность преобразования, управления сеансами, подготовки к просмотру и диагностике для удаленной подготовки к просмотру Azure. | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
@@ -162,6 +171,8 @@ ms.locfileid: "99557341"
 > | [Участник управляемого удостоверения](#managed-identity-contributor) | Создание, чтение, обновление и удаление пользовательских удостоверений. | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | [Оператор управляемого удостоверения](#managed-identity-operator) | Чтение и назначение пользовательских удостоверений. | f1a07417-d97a-45cb-824c-7a7467783830 |
 > | **Безопасность** |  |  |
+> | [Участник аттестации](#attestation-contributor) | Может читать, записывать или удалять экземпляр поставщика аттестации | bbf86eb8-f7b4-4cce-96e4-18cddf81d86e |
+> | [Читатель аттестации](#attestation-reader) | Может считывать свойства поставщика аттестации | fd1bd22b-8476-40bc-a0bc-69b95687b9f3 |
 > | [Участник Azure Sentinel](#azure-sentinel-contributor) | Участник Azure Sentinel | ab8e14d6-4a74-4a29-9ba8-549422addade |
 > | [Читатель Azure Sentinel](#azure-sentinel-reader) | Читатель Azure Sentinel | 8d289c81-5878-46d4-8554-54e1e3d8b5cb |
 > | [Респондент Azure Sentinel](#azure-sentinel-responder) | Респондент Azure Sentinel | 3e150937-b8fe-4cfb-8069-0eaf05ecd056 |
@@ -174,6 +185,7 @@ ms.locfileid: "99557341"
 > | [Читатель Key Vault (Предварительная версия)](#key-vault-reader-preview) | Чтение метаданных хранилищ ключей и их сертификатов, ключей и секретов. Не удается считать конфиденциальные значения, такие как содержимое секрета или материал ключа. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 21090545-7ca7-4776-b22c-e363652d74d2 |
 > | [Директор Key Vault секреты (Предварительная версия)](#key-vault-secrets-officer-preview) | Выполните любое действие с секретами хранилища ключей, за исключением разрешений на управление. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | b86a8fe4-44ce-4948-aee5-eccb2c155cd7 |
 > | [Key Vault секреты пользователя (Предварительная версия)](#key-vault-secrets-user-preview) | Чтение содержимого секрета. Работает только для хранилищ ключей, использующих модель разрешений управления доступом на основе ролей Azure. | 4633458b-17de-408a-b874-0445c86b69e6 |
+> | [Участник управляемого HSM](#managed-hsm-contributor) | Позволяет управлять управляемыми пулами HSM, но не доступом к ним. | 18500a29-7fe2-46b2-a342-b16a415e101d |
 > | [Администратор безопасности](#security-admin) | Просмотр и обновление разрешений для Центра безопасности. Имеет те же права, что и читатель сведений о безопасности, но также может изменять политику безопасности, отклонять рекомендации и оповещения. | fb1c8493-542b-48eb-b624-b4c8fea62acd |
 > | [Участник оценки безопасности](#security-assessment-contributor) | Позволяет отправлять оценки в Центр безопасности. | 612c2aa1-cb24-443b-ac28-3ab7272de6f5 |
 > | [Диспетчер безопасности (устаревший)](#security-manager-legacy) | Это устаревшая роль. Используйте вместо нее роль администратора безопасности. | e3d13bf0-dd5a-482e-ba6b-9b8433878d10 |
@@ -210,6 +222,7 @@ ms.locfileid: "99557341"
 > | [Читатель группы управления](#management-group-reader) | Роль читателя группы управления | ac63b705-f282-497d-ac71-919bf39d939d |
 > | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. | 5d28c62d-5b37-4476-8438-e587778df237 |
 > | [Редактор данных анализа политик (предварительная версия)](#policy-insights-data-writer-preview) | Предоставляет доступ на чтение политик ресурсов и доступ на запись событий политики компонентов ресурсов. | 66bb4e9e-b016-4a94-8249-4c0511c2be84 |
+> | [Покупатель зарезервированных товаров](#reservation-purchaser) | Позволяет приобрести резервирования | f7b75c60-3036-4b75-91c3-6b41c27c1689 |
 > | [Участник политики ресурсов](#resource-policy-contributor) | Пользователи с правами на создание или изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии. | 36243c78-bf99-498c-9df9-86d9f8d28608 |
 > | [Участник Site Recovery](#site-recovery-contributor) | Позволяет управлять службой Site Recovery, за исключением создания хранилищ и назначения ролей. | 6670b86e-a3f7-4917-ac9b-5d6ab1be4567 |
 > | [Оператор Site Recovery](#site-recovery-operator) | Позволяет выполнять отработку отказа и восстановление размещения, но не другие операции управления Site Recovery. | 494ae006-db33-4328-bf46-533a6560a3ca |
@@ -220,8 +233,22 @@ ms.locfileid: "99557341"
 > | [Владелец данных Azure Digital двойников](#azure-digital-twins-data-owner) | Роль полного доступа для двойников данных уровня Digital | bcd981a7-7f74-457b-83e1-cceb9e632ffe |
 > | [Модуль чтения данных Azure Digital двойников](#azure-digital-twins-data-reader) | Роль только для чтения для свойств плоскости данных Digital двойников | d57506d4-4c8d-48b1-8587-93c323f6a5a3 |
 > | [Участник BizTalk](#biztalk-contributor) | Позволяет управлять службами BizTalk, но не доступом к ним. | 5e3c6656-6cfa-4708-81fe-0de47ac73342 |
+> | [Участник группы приложений виртуализации настольных систем](#desktop-virtualization-application-group-contributor) | Участник группы приложений виртуализации настольных систем. | 86240b0e-9422-4c43-887b-b61143f32ba8 |
+> | [Читатель группы приложений виртуализации настольных систем](#desktop-virtualization-application-group-reader) | Читатель группы приложений виртуализации настольных систем. | aebf23d0-b568-4e86-b8f9-fe83a2c6ab55 |
+> | [Участник виртуализации настольных систем](#desktop-virtualization-contributor) | Участник виртуализации настольных систем. | 082f0a83-3be5-4ba1-904c-961cca79b387 |
+> | [Участник пула узлов виртуализации настольных систем](#desktop-virtualization-host-pool-contributor) | Участник пула узлов виртуализации настольных систем. | e307426c-f9b6-4e81-87de-d99efb3c32bc |
+> | [Средство чтения пула узлов виртуализации настольных систем](#desktop-virtualization-host-pool-reader) | Модуль чтения пула узлов виртуализации настольных систем. | ceadfde2-b300-400a-ab7b-6143895aa822 |
+> | [Средство чтения виртуализации рабочего стола](#desktop-virtualization-reader) | Читатель виртуализации настольных систем. | 49a72310-ab8d-41df-bbb0-79b649203868 |
+> | [Оператор узла сеансов виртуализации рабочих столов](#desktop-virtualization-session-host-operator) | Оператор узла сеансов виртуализации настольных систем. | 2ad6aaab-ead9-4eaa-8ac5-da422f562408 |
 > | [Пользователь виртуализации рабочих столов](#desktop-virtualization-user) | Позволяет пользователю использовать приложения в группе приложений. | 1d18fff3-a72a-46b5-b4a9-0b38a3cd7e63 |
+> | [Оператор пользовательского сеанса виртуализации настольных систем](#desktop-virtualization-user-session-operator) | Оператор сеанса Уеср виртуализации настольных систем. | ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6 |
+> | [Участник рабочей области виртуализации рабочих столов](#desktop-virtualization-workspace-contributor) | Участник рабочей области виртуализации настольных систем. | 21efdde3-836f-432b-bf3d-3e8e734d4b2b |
+> | [Читатель рабочей области виртуализации рабочих столов](#desktop-virtualization-workspace-reader) | Читатель рабочей области виртуализации настольных систем. | 0fa44ee9-7a7d-466b-9bb2-2bf446b1204d |
+> | [Средство чтения резервных копий дисков](#disk-backup-reader) | Предоставляет разрешение на резервное копирование резервного хранилища на диск. | 3e5e47e6-65f7-47ef-90b5-e5dd4d455f24 |
+> | [Оператор восстановления диска](#disk-restore-operator) | Предоставляет разрешение на восстановление диска в хранилище архивации. | b50d9833-a0cb-478e-945f-707fcc997c13 |
+> | [Участник моментальных снимков дисков](#disk-snapshot-contributor) | Предоставляет разрешение на резервное хранилище для управления моментальными снимками диска. | 7efff54f-a5b4-42b5-a1c5-5411624893ce |
 > | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. | 188a0f2f-5c9e-469b-ae67-2aa5ce574b94 |
+> | [Оператор центра служб](#services-hub-operator) | Оператор "центр служб" позволяет выполнять все операции чтения, записи и удаления, связанные с соединителями концентратора служб. | 82200a5b-e217-47a5-b665-6d8765ee745b |
 
 
 ## <a name="general"></a>Общие сведения
@@ -2612,9 +2639,52 @@ ms.locfileid: "99557341"
 ## <a name="web"></a>Интернет
 
 
+### <a name="azure-maps-data-contributor"></a>Участник данных Azure Maps
+
+Предоставляет доступ на чтение, запись и удаление для сопоставления связанных данных из учетной записи службы "карты Azure". [Дополнительные сведения](../azure-maps/azure-maps-authentication.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. Maps](resource-provider-operations.md#microsoftmaps)/аккаунтс/*/Реад |  |
+> | [Microsoft. Maps](resource-provider-operations.md#microsoftmaps)/аккаунтс/*/Врите |  |
+> | [Microsoft. Maps](resource-provider-operations.md#microsoftmaps)/аккаунтс/*/Delete |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Grants access to read, write, and delete access to map related data from an Azure maps account.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204",
+  "name": "8f5e0ce6-4f7b-4dcf-bddf-e6f48634a204",
+  "permissions": [
+    {
+      "actions": [],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Maps/accounts/*/read",
+        "Microsoft.Maps/accounts/*/write",
+        "Microsoft.Maps/accounts/*/delete"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Azure Maps Data Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="azure-maps-data-reader"></a>Читатель данных Azure Maps
 
-Предоставляет доступ на чтение связанных данных карты в учетной записи Azure Maps.
+Предоставляет доступ на чтение связанных данных карты в учетной записи Azure Maps. [Дополнительные сведения](../azure-maps/azure-maps-authentication.md)
 
 > [!div class="mx-tableFixed"]
 > | Действия | Описание |
@@ -5278,6 +5348,249 @@ Microsoft. зрения Data пленку может создавать, чит�
 }
 ```
 
+### <a name="cognitive-services-custom-vision-contributor"></a>Участник Cognitive Services Пользовательское визуальное распознавание
+
+Полный доступ к проекту, включая возможность просмотра, создания, изменения и удаления проектов. [Дополнительные сведения](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Full access to the project, including the ability to view, create, edit, or delete projects.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/c1ff6cc2-c111-46fe-8896-e0ef812ad9f3",
+  "name": "c1ff6cc2-c111-46fe-8896-e0ef812ad9f3",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-deployment"></a>Развертывание Cognitive Services Пользовательское визуальное распознавание
+
+Публикация, отмена публикации или экспорт моделей. Развертывание может просматривать проект, но не может обновляться. [Дополнительные сведения](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/*/Реад |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/предиктионс/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/итератионс/публиш/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/итератионс/експорт/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/куикктест/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/классифи/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/детект/* |  |
+> | **NotDataActions** |  |
+> | /Аккаунтс/кустомвисион/прожектс/експорт/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Экспортирует проект. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Publish, unpublish or export models. Deployment can view the project but can't update.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/5c4089e1-6d96-4d2f-b296-c1bc7137275f",
+  "name": "5c4089e1-6d96-4d2f-b296-c1bc7137275f",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*/read",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/predictions/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/iterations/publish/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/iterations/export/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/quicktest/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/classify/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/detect/*"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Deployment",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-labeler"></a>Cognitive Services Пользовательское визуальное распознавание меток
+
+Просмотр, изменение учебных изображений и создание, добавление, удаление и удаление тегов изображений. Метки могут просматривать проект, но не могут обновлять ничего, Кроме учебных изображений и тегов. [Дополнительные сведения](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/*/Реад |  |
+> | /Аккаунтс/кустомвисион/прожектс/предиктионс/куери/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Получение образов, отправленных в конечную точку прогнозирования. |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/имажес/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/ТАГС/* |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/прожектс/имажес/сугжестед/* |  |
+> | /Аккаунтс/кустомвисион/прожектс/тагсандрегионс/сугжестионс/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Этот API будет получать предлагаемые теги и регионы для массива или пакета изображений без тегов вместе с достоверностью тегов. Если теги не найдены, возвращается пустой массив. |
+> | **NotDataActions** |  |
+> | /Аккаунтс/кустомвисион/прожектс/експорт/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Экспортирует проект. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "View, edit training images and create, add, remove, or delete the image tags. Labelers can view the project but can't update anything other than training images and tags.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/88424f51-ebe7-446f-bc41-7fa16989e96c",
+  "name": "88424f51-ebe7-446f-bc41-7fa16989e96c",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*/read",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/predictions/query/action",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/images/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/tags/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/images/suggested/*",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/tagsandregions/suggestions/action"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Labeler",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-reader"></a>Модуль чтения Cognitive Services Пользовательское визуальное распознавание
+
+Действия, которые доступны только для чтения в проекте. Читатели не могут создать или обновить проект. [Дополнительные сведения](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/*/Реад |  |
+> | /Аккаунтс/кустомвисион/прожектс/предиктионс/куери/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Получение образов, отправленных в конечную точку прогнозирования. |
+> | **NotDataActions** |  |
+> | /Аккаунтс/кустомвисион/прожектс/експорт/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Экспортирует проект. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Read-only actions in the project. Readers can't create or update the project.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/93586559-c37d-4a6b-ba08-b9f0940c2d73",
+  "name": "93586559-c37d-4a6b-ba08-b9f0940c2d73",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*/read",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/predictions/query/action"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-custom-vision-trainer"></a>Cognitive Services инструктор Пользовательское визуальное распознавание
+
+Просмотр, изменение проектов и обучение моделей, включая возможность публикации, отмены публикации и экспорта моделей. Преподаватели не могут создать или удалить проект. [Дополнительные сведения](../cognitive-services/custom-vision-service/role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/кустомвисион/* |  |
+> | **NotDataActions** |  |
+> | /Аккаунтс/кустомвисион/прожектс/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Создайте проект. |
+> | /Аккаунтс/кустомвисион/прожектс/делете [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Удаление конкретного проекта. |
+> | /Аккаунтс/кустомвисион/прожектс/импорт/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Импортирует проект. |
+> | /Аккаунтс/кустомвисион/прожектс/експорт/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Экспортирует проект. |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "View, edit projects and train the models, including the ability to publish, unpublish, export the models. Trainers can't create or delete the project.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0a5ae4ab-0d65-4eeb-be61-29fc9b54394b",
+  "name": "0a5ae4ab-0d65-4eeb-be61-29fc9b54394b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/*"
+      ],
+      "notDataActions": [
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/action",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/delete",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/import/action",
+        "Microsoft.CognitiveServices/accounts/CustomVision/projects/export/read"
+      ]
+    }
+  ],
+  "roleName": "Cognitive Services Custom Vision Trainer",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="cognitive-services-data-reader-preview"></a>Модуль чтения данных Cognitive Services (предварительная версия)
 
 Позволяет считывать данные Cognitive Services.
@@ -5312,6 +5625,209 @@ Microsoft. зрения Data пленку может создавать, чит�
     }
   ],
   "roleName": "Cognitive Services Data Reader (Preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-metrics-advisor-administrator"></a>Администратор помощника по метрикам Cognitive Services
+
+Полный доступ к проекту, включая конфигурацию системного уровня. [Дополнительные сведения](../cognitive-services/metrics-advisor/how-tos/alerts.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/аккаунтс/метриксадвисор/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Full access to the project, including the system level configuration.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/cb43c632-a144-4ec5-977c-e80c4affc34a",
+  "name": "cb43c632-a144-4ec5-977c-e80c4affc34a",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/MetricsAdvisor/*"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services Metrics Advisor Administrator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-qna-maker-editor"></a>Редактор Cognitive Services QnA Maker
+
+Позволяет создавать, изменять, импортировать и экспортировать базы знаний. Невозможно опубликовать или удалить базу знаний. [Дополнительные сведения](../cognitive-services/qnamaker/reference-role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/ролеассигнментс/Реад | Возвращает сведения о назначении роли. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/роледефинитионс/Реад | Возвращает сведения об определении роли. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Аккаунтс/кнамакер/кновледжебасес/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает список базы знаний или сведения о конкретном кновледжебасер. |
+> | /Аккаунтс/кнамакер/кновледжебасес/Довнлоад/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачайте базу знаний. |
+> | /Аккаунтс/кнамакер/кновледжебасес/креате/Врите [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Асинхронная операция создания новой базы знаний. |
+> | /Аккаунтс/кнамакер/кновледжебасес/Врите [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Асинхронная операция изменения базы знаний или замены содержимого базы знаний. |
+> | /Аккаунтс/кнамакер/кновледжебасес/женератеансвер/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Вызов Женератеансвер для запроса базы знаний. |
+> | /Аккаунтс/кнамакер/кновледжебасес/траин/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Обучить вызов, чтобы добавить предложения в базу знаний. |
+> | /Аккаунтс/кнамакер/алтератионс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачивание изменений из среды выполнения. |
+> | /Аккаунтс/кнамакер/алтератионс/Врите [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Замена данных изменений. |
+> | /Аккаунтс/кнамакер/ендпоинткэйс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает ключи конечной точки для конечной точки. |
+> | /Аккаунтс/кнамакер/ендпоинткэйс/рефрешкэйс/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Повторно создает ключ конечной точки. |
+> | /Аккаунтс/кнамакер/ендпоинтсеттингс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает параметры конечной точки для конечной точки. |
+> | /Аккаунтс/кнамакер/ендпоинтсеттингс/Врите [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Обновите конечную точку ситтингс для конечной точки. |
+> | /Аккаунтс/кнамакер/оператионс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Получает сведения об определенной длительной операции. |
+> | /Accounts/QnAMaker.v2/knowledgebases/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает список базы знаний или сведения о конкретном кновледжебасер. |
+> | /Accounts/QnAMaker.v2/knowledgebases/download/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачайте базу знаний. |
+> | /Accounts/QnAMaker.v2/knowledgebases/Create/Write [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Асинхронная операция создания новой базы знаний. |
+> | /Accounts/QnAMaker.v2/knowledgebases/Write [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Асинхронная операция изменения базы знаний или замены содержимого базы знаний. |
+> | /Accounts/QnAMaker.v2/knowledgebases/generateanswer/Action [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Вызов Женератеансвер для запроса базы знаний. |
+> | /Accounts/QnAMaker.v2/knowledgebases/Train/Action [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Обучить вызов, чтобы добавить предложения в базу знаний. |
+> | /Accounts/QnAMaker.v2/alterations/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачивание изменений из среды выполнения. |
+> | /Accounts/QnAMaker.v2/alterations/Write [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Замена данных изменений. |
+> | /Accounts/QnAMaker.v2/endpointkeys/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает ключи конечной точки для конечной точки. |
+> | /Accounts/QnAMaker.v2/endpointkeys/refreshkeys/Action [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Повторно создает ключ конечной точки. |
+> | /Accounts/QnAMaker.v2/endpointsettings/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает параметры конечной точки для конечной точки. |
+> | /Accounts/QnAMaker.v2/endpointsettings/Write [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Обновите конечную точку ситтингс для конечной точки. |
+> | /Accounts/QnAMaker.v2/Operations/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Получает сведения об определенной длительной операции. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Let's you create, edit, import and export a KB. You cannot publish or delete a KB.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/f4cc2bf9-21be-47a1-bdf1-5c5804381025",
+  "name": "f4cc2bf9-21be-47a1-bdf1-5c5804381025",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read",
+        "Microsoft.Authorization/roleAssignments/read",
+        "Microsoft.Authorization/roleDefinitions/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/create/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/train/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/alterations/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointkeys/refreshkeys/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointsettings/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/operations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/create/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/train/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/refreshkeys/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/write",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/operations/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services QnA Maker Editor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="cognitive-services-qna-maker-reader"></a>Модуль чтения Cognitive Services QnA Maker
+
+Давайте выполним чтение и тестирование только базы знаний. [Дополнительные сведения](../cognitive-services/qnamaker/reference-role-based-access-control.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices)/*/Реад |  |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/ролеассигнментс/Реад | Возвращает сведения о назначении роли. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/роледефинитионс/Реад | Возвращает сведения об определении роли. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | /Аккаунтс/кнамакер/кновледжебасес/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает список базы знаний или сведения о конкретном кновледжебасер. |
+> | /Аккаунтс/кнамакер/кновледжебасес/Довнлоад/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачайте базу знаний. |
+> | /Аккаунтс/кнамакер/кновледжебасес/женератеансвер/Актион [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Вызов Женератеансвер для запроса базы знаний. |
+> | /Аккаунтс/кнамакер/алтератионс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачивание изменений из среды выполнения. |
+> | /Аккаунтс/кнамакер/ендпоинткэйс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает ключи конечной точки для конечной точки. |
+> | /Аккаунтс/кнамакер/ендпоинтсеттингс/Реад [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает параметры конечной точки для конечной точки. |
+> | /Accounts/QnAMaker.v2/knowledgebases/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает список базы знаний или сведения о конкретном кновледжебасер. |
+> | /Accounts/QnAMaker.v2/knowledgebases/download/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачайте базу знаний. |
+> | /Accounts/QnAMaker.v2/knowledgebases/generateanswer/Action [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Вызов Женератеансвер для запроса базы знаний. |
+> | /Accounts/QnAMaker.v2/alterations/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Скачивание изменений из среды выполнения. |
+> | /Accounts/QnAMaker.v2/endpointkeys/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает ключи конечной точки для конечной точки. |
+> | /Accounts/QnAMaker.v2/endpointsettings/Read [Microsoft. CognitiveServices](resource-provider-operations.md#microsoftcognitiveservices) | Возвращает параметры конечной точки для конечной точки. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Let's you read and test a KB only.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/466ccd10-b268-4a11-b098-b4849f024126",
+  "name": "466ccd10-b268-4a11-b098-b4849f024126",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.CognitiveServices/*/read",
+        "Microsoft.Authorization/roleAssignments/read",
+        "Microsoft.Authorization/roleDefinitions/read"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker/endpointsettings/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/download/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/knowledgebases/generateanswer/action",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/alterations/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointkeys/read",
+        "Microsoft.CognitiveServices/accounts/QnAMaker.v2/endpointsettings/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Cognitive Services QnA Maker Reader",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -6729,6 +7245,88 @@ Microsoft. зрения Data пленку может создавать, чит�
 ## <a name="security"></a>Безопасность
 
 
+### <a name="attestation-contributor"></a>Участник аттестации
+
+[Дополнительные сведения](../attestation/quickstart-powershell.md) см. в статье запись или удаление экземпляра поставщика аттестации.
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | Microsoft.Attestation/attestationProviders/attestation/read |  |
+> | Microsoft.Attestation/attestationProviders/attestation/write |  |
+> | Microsoft.Attestation/attestationProviders/attestation/delete |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read write or delete the attestation provider instance",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/bbf86eb8-f7b4-4cce-96e4-18cddf81d86e",
+  "name": "bbf86eb8-f7b4-4cce-96e4-18cddf81d86e",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Attestation/attestationProviders/attestation/read",
+        "Microsoft.Attestation/attestationProviders/attestation/write",
+        "Microsoft.Attestation/attestationProviders/attestation/delete"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Attestation Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="attestation-reader"></a>Читатель аттестации
+
+Можно прочитать свойства поставщика аттестации [Подробнее](../attestation/troubleshoot-guide.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | Microsoft.Attestation/attestationProviders/attestation/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Can read the attestation provider properties",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/fd1bd22b-8476-40bc-a0bc-69b95687b9f3",
+  "name": "fd1bd22b-8476-40bc-a0bc-69b95687b9f3",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Attestation/attestationProviders/attestation/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Attestation Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="azure-sentinel-contributor"></a>Участник Azure Sentinel
 
 [Дополнительные сведения](../sentinel/roles.md) см. в подучастнике Sentinel Azure
@@ -7458,6 +8056,45 @@ Microsoft. зрения Data пленку может создавать, чит�
     }
   ],
   "roleName": "Key Vault Secrets User (preview)",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="managed-hsm-contributor"></a>Участник управляемого HSM
+
+Позволяет управлять управляемыми пулами HSM, но не доступом к ним. [Дополнительные сведения](../key-vault/managed-hsm/secure-your-managed-hsm.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. KeyVault](resource-provider-operations.md#microsoftkeyvault)/манажедхсмс/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage managed HSM pools, but not access to them.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/18500a29-7fe2-46b2-a342-b16a415e101d",
+  "name": "18500a29-7fe2-46b2-a342-b16a415e101d",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.KeyVault/managedHSMs/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Managed HSM contributor",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -9229,6 +9866,63 @@ Microsoft. зрения Data пленку может создавать, чит�
 }
 ```
 
+### <a name="reservation-purchaser"></a>Покупатель зарезервированных товаров
+
+[Дополнительные сведения о](../cost-management-billing/reservations/prepare-buy-reservation.md) приобретении резервирований
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | /Субскриптионс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает список подписок. |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | /Регистер/Актион [Microsoft. Capacity](resource-provider-operations.md#microsoftcapacity) | Регистрация поставщика ресурсов емкости и разрешение создания ресурсов емкости. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/регистер/Актион | Регистрирует подписку в поставщике ресурсов Microsoft.Compute. |
+> | /Регистер/Актион [Microsoft. SQL](resource-provider-operations.md#microsoftsql) | Регистрация подписки для поставщика ресурсов базы данных SQL Azure и разрешение создания баз данных Microsoft SQL. |
+> | [Microsoft. потребление](resource-provider-operations.md#microsoftconsumption)/регистер/Актион | Регистрация в поставщике используемых ресурсов. |
+> | /Каталогс/Реад [Microsoft. Capacity](resource-provider-operations.md#microsoftcapacity) | Чтение каталога резервирования. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/ролеассигнментс/Реад | Возвращает сведения о назначении роли. |
+> | [Microsoft. потребление](resource-provider-operations.md#microsoftconsumption)/ресерватионрекоммендатионс/Реад | Вывод одной рекомендации или нескольких общих рекомендаций для зарезервированных экземпляров в подписке. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/суппорттиккетс/Врите | Позволяет создавать и обновлять запросы в службу поддержки. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you purchase reservations",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/f7b75c60-3036-4b75-91c3-6b41c27c1689",
+  "name": "f7b75c60-3036-4b75-91c3-6b41c27c1689",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Resources/subscriptions/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Capacity/register/action",
+        "Microsoft.Compute/register/action",
+        "Microsoft.SQL/register/action",
+        "Microsoft.Consumption/register/action",
+        "Microsoft.Capacity/catalogs/read",
+        "Microsoft.Authorization/roleAssignments/read",
+        "Microsoft.Consumption/reservationRecommendations/read",
+        "Microsoft.Support/supporttickets/write"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Reservation Purchaser",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="resource-policy-contributor"></a>Участник политики ресурсов
 
 Пользователи с правами на создание или изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии. [Дополнительные сведения](../governance/policy/overview.md)
@@ -9871,6 +10565,363 @@ Microsoft. зрения Data пленку может создавать, чит�
 }
 ```
 
+### <a name="desktop-virtualization-application-group-contributor"></a>Участник группы приложений виртуализации настольных систем
+
+Участник группы приложений виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/аппликатионграупс/* |  |
+> | /Хостпулс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс |
+> | /Хостпулс/сессионхостс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс и сессионхостс |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of the Desktop Virtualization Application Group.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/86240b0e-9422-4c43-887b-b61143f32ba8",
+  "name": "86240b0e-9422-4c43-887b-b61143f32ba8",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/applicationgroups/*",
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Application Group Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-application-group-reader"></a>Читатель группы приложений виртуализации настольных систем
+
+Читатель группы приложений виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/аппликатионграупс/*/Реад |  |
+> | /Аппликатионграупс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение аппликатионграупс |
+> | /Хостпулс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс |
+> | /Хостпулс/сессионхостс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс и сессионхостс |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | /Деплойментс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает развернутые службы или выводит их список. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/Реад | Чтение классического оповещения метрики. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of the Desktop Virtualization Application Group.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/aebf23d0-b568-4e86-b8f9-fe83a2c6ab55",
+  "name": "aebf23d0-b568-4e86-b8f9-fe83a2c6ab55",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/applicationgroups/*/read",
+        "Microsoft.DesktopVirtualization/applicationgroups/read",
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Application Group Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-contributor"></a>Участник виртуализации настольных систем
+
+Участник виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/* |  |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of Desktop Virtualization.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/082f0a83-3be5-4ba1-904c-961cca79b387",
+  "name": "082f0a83-3be5-4ba1-904c-961cca79b387",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-host-pool-contributor"></a>Участник пула узлов виртуализации настольных систем
+
+Участник пула узлов виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/хостпулс/* |  |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of the Desktop Virtualization Host Pool.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/e307426c-f9b6-4e81-87de-d99efb3c32bc",
+  "name": "e307426c-f9b6-4e81-87de-d99efb3c32bc",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Host Pool Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-host-pool-reader"></a>Средство чтения пула узлов виртуализации настольных систем
+
+Модуль чтения пула узлов виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/хостпулс/*/Реад |  |
+> | /Хостпулс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | /Деплойментс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает развернутые службы или выводит их список. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/Реад | Чтение классического оповещения метрики. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of the Desktop Virtualization Host Pool.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/ceadfde2-b300-400a-ab7b-6143895aa822",
+  "name": "ceadfde2-b300-400a-ab7b-6143895aa822",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/*/read",
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Host Pool Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-reader"></a>Средство чтения виртуализации рабочего стола
+
+Читатель виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/*/Реад |  |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | /Деплойментс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает развернутые службы или выводит их список. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/Реад | Чтение классического оповещения метрики. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of Desktop Virtualization.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/49a72310-ab8d-41df-bbb0-79b649203868",
+  "name": "49a72310-ab8d-41df-bbb0-79b649203868",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-session-host-operator"></a>Оператор узла сеансов виртуализации рабочих столов
+
+Оператор узла сеансов виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | /Хостпулс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/хостпулс/сессионхостс/* |  |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Operator of the Desktop Virtualization Session Host.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/2ad6aaab-ead9-4eaa-8ac5-da422f562408",
+  "name": "2ad6aaab-ead9-4eaa-8ac5-da422f562408",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Session Host Operator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
 ### <a name="desktop-virtualization-user"></a>Пользователь виртуализации рабочих столов
 
 Позволяет пользователю использовать приложения в группе приложений. [Дополнительные сведения](../virtual-desktop/delegated-access-virtual-desktop.md)
@@ -9882,7 +10933,7 @@ Microsoft. зрения Data пленку может создавать, чит�
 > | **NotActions** |  |
 > | *Нет* |  |
 > | **Действия с данными** |  |
-> | Microsoft. Десктопвиртуализатион/Аппликатионграупс/Усеаппликатионс/Action | Использование ApplicationGroup |
+> | /Аппликатионграупс/усеаппликатионс/Актион [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Использование ApplicationGroup |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -9905,6 +10956,310 @@ Microsoft. зрения Data пленку может создавать, чит�
     }
   ],
   "roleName": "Desktop Virtualization User",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-user-session-operator"></a>Оператор пользовательского сеанса виртуализации настольных систем
+
+Оператор сеанса Уеср виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | /Хостпулс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс |
+> | /Хостпулс/сессионхостс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение хостпулс и сессионхостс |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/хостпулс/сессионхостс/усерсессионс/* |  |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Operator of the Desktop Virtualization Uesr Session.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6",
+  "name": "ea4bfff8-7fb4-485a-aadd-d4129a0ffaa6",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/hostpools/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/read",
+        "Microsoft.DesktopVirtualization/hostpools/sessionhosts/usersessions/*",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization User Session Operator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-workspace-contributor"></a>Участник рабочей области виртуализации рабочих столов
+
+Участник рабочей области виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization)/воркспацес/* |  |
+> | /Аппликатионграупс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение аппликатионграупс |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/* | Создание классического оповещения метрики и управление им |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Contributor of the Desktop Virtualization Workspace.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/21efdde3-836f-432b-bf3d-3e8e734d4b2b",
+  "name": "21efdde3-836f-432b-bf3d-3e8e734d4b2b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/workspaces/*",
+        "Microsoft.DesktopVirtualization/applicationgroups/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/*",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Workspace Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="desktop-virtualization-workspace-reader"></a>Читатель рабочей области виртуализации рабочих столов
+
+Читатель рабочей области виртуализации настольных систем. [Дополнительные сведения](../virtual-desktop/rbac.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | /Воркспацес/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение рабочих областей |
+> | /Аппликатионграупс/Реад [Microsoft. десктопвиртуализатион](resource-provider-operations.md#microsoftdesktopvirtualization) | Чтение аппликатионграупс |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | /Деплойментс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает развернутые службы или выводит их список. |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. Insights](resource-provider-operations.md#microsoftinsights)/алертрулес/Реад | Чтение классического оповещения метрики. |
+> | [Microsoft. support](resource-provider-operations.md#microsoftsupport)/* | Создание и обновление запроса в службу поддержки |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Reader of the Desktop Virtualization Workspace.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/0fa44ee9-7a7d-466b-9bb2-2bf446b1204d",
+  "name": "0fa44ee9-7a7d-466b-9bb2-2bf446b1204d",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.DesktopVirtualization/workspaces/read",
+        "Microsoft.DesktopVirtualization/applicationgroups/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/read",
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Insights/alertRules/read",
+        "Microsoft.Support/*"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Desktop Virtualization Workspace Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="disk-backup-reader"></a>Средство чтения резервных копий дисков
+
+Предоставляет разрешение на резервное копирование резервного хранилища на диск. [Дополнительные сведения](../backup/disk-backup-faq.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/дискс/Реад | Возвращает свойства диска. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/дискс/бегинжетакцесс/Актион | Возвращает универсальный код ресурса (URI) SAS диска для доступа к большому двоичному объекту. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Provides permission to backup vault to perform disk backup.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/3e5e47e6-65f7-47ef-90b5-e5dd4d455f24",
+  "name": "3e5e47e6-65f7-47ef-90b5-e5dd4d455f24",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Compute/disks/read",
+        "Microsoft.Compute/disks/beginGetAccess/action"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Disk Backup Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="disk-restore-operator"></a>Оператор восстановления диска
+
+Предоставляет разрешение на восстановление диска в хранилище архивации. [Дополнительные сведения](../backup/restore-managed-disks.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/дискс/Врите | Создает новый диск или обновляет существующий. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/дискс/Реад | Возвращает свойства диска. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Provides permission to backup vault to perform disk restore.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b50d9833-a0cb-478e-945f-707fcc997c13",
+  "name": "b50d9833-a0cb-478e-945f-707fcc997c13",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Compute/disks/write",
+        "Microsoft.Compute/disks/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Disk Restore Operator",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="disk-snapshot-contributor"></a>Участник моментальных снимков дисков
+
+Предоставляет разрешение на резервное хранилище для управления моментальными снимками диска. [Дополнительные сведения](../backup/backup-managed-disks.md)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/снапшотс/делете | Удаляет моментальный снимок. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/снапшотс/Врите | Создает новый моментальный снимок или обновляет существующий. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/снапшотс/Реад | Возвращает свойства моментального снимка. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/снапшотс/бегинжетакцесс/Актион | Получение универсального кода ресурса (URI) SAS моментального снимка для доступа к большому двоичному объекту. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/снапшотс/енджетакцесс/Актион | Отмена универсального кода ресурса (URI) SAS моментального снимка. |
+> | [Microsoft. COMPUTE](resource-provider-operations.md#microsoftcompute)/дискс/бегинжетакцесс/Актион | Возвращает универсальный код ресурса (URI) SAS диска для доступа к большому двоичному объекту. |
+> | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/листкэйс/Актион | Возвращает ключи доступа для указанной учетной записи хранения. |
+> | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/Врите | Создает новую учетную запись хранения с указанными параметрами, обновляет свойства или теги указанной существующей учетной записи хранения или добавляет в нее личный домен. |
+> | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/Реад | Возвращает список учетных записей хранения или свойства указанной учетной записи хранения. |
+> | [Microsoft. Storage](resource-provider-operations.md#microsoftstorage)/сторажеаккаунтс/делете | Удаляет существующую учетную запись хранения. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Provides permission to backup vault to manage disk snapshots.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/7efff54f-a5b4-42b5-a1c5-5411624893ce",
+  "name": "7efff54f-a5b4-42b5-a1c5-5411624893ce",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Compute/snapshots/delete",
+        "Microsoft.Compute/snapshots/write",
+        "Microsoft.Compute/snapshots/read",
+        "Microsoft.Compute/snapshots/beginGetAccess/action",
+        "Microsoft.Compute/snapshots/endGetAccess/action",
+        "Microsoft.Compute/disks/beginGetAccess/action",
+        "Microsoft.Storage/storageAccounts/listkeys/action",
+        "Microsoft.Storage/storageAccounts/write",
+        "Microsoft.Storage/storageAccounts/read",
+        "Microsoft.Storage/storageAccounts/delete"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Disk Snapshot Contributor",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }
@@ -9956,6 +11311,61 @@ Microsoft. зрения Data пленку может создавать, чит�
     }
   ],
   "roleName": "Scheduler Job Collections Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
+}
+```
+
+### <a name="services-hub-operator"></a>Оператор центра служб
+
+Оператор "центр служб" позволяет выполнять все операции чтения, записи и удаления, связанные с соединителями концентратора служб. [Дополнительные сведения](/services-hub/health/sh-connector-roles)
+
+> [!div class="mx-tableFixed"]
+> | Действия | Описание |
+> | --- | --- |
+> | [Microsoft. Authorization](resource-provider-operations.md#microsoftauthorization)/*/Реад | Чтение ролей и назначений ролей |
+> | /Субскриптионс/ресаурцеграупс/Реад [Microsoft. Resources](resource-provider-operations.md#microsoftresources) | Возвращает группы ресурсов или выводит их список. |
+> | [Microsoft. Resources](resource-provider-operations.md#microsoftresources)/деплойментс/* | Создание развертывания и управление им |
+> | /Коннекторс/Врите [Microsoft. сервицешуб](resource-provider-operations.md#microsoftserviceshub) | Создание или обновление соединителя центра служб |
+> | /Коннекторс/Реад [Microsoft. сервицешуб](resource-provider-operations.md#microsoftserviceshub) | Просмотр или перечисление соединителей концентратора служб |
+> | /Коннекторс/делете [Microsoft. сервицешуб](resource-provider-operations.md#microsoftserviceshub) | Удаление соединителей центра служб |
+> | /Коннекторс/чеккассессментентитлемент/Актион [Microsoft. сервицешуб](resource-provider-operations.md#microsoftserviceshub) | Список прав оценки для определенной рабочей области центра служб |
+> | /Суппортофферинжентитлемент/Реад [Microsoft. сервицешуб](resource-provider-operations.md#microsoftserviceshub) | Просмотр прав на предложение поддержки для определенной рабочей области центра служб |
+> | /Воркспацес/Реад [Microsoft. сервицешуб](resource-provider-operations.md#microsoftserviceshub) | Перечисление рабочих областей центра служб для указанного пользователя |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Services Hub Operator allows you to perform all read, write, and deletion operations related to Services Hub Connectors.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/82200a5b-e217-47a5-b665-6d8765ee745b",
+  "name": "82200a5b-e217-47a5-b665-6d8765ee745b",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Authorization/*/read",
+        "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "Microsoft.Resources/deployments/*",
+        "Microsoft.ServicesHub/connectors/write",
+        "Microsoft.ServicesHub/connectors/read",
+        "Microsoft.ServicesHub/connectors/delete",
+        "Microsoft.ServicesHub/connectors/checkAssessmentEntitlement/action",
+        "Microsoft.ServicesHub/supportOfferingEntitlement/read",
+        "Microsoft.ServicesHub/workspaces/read"
+      ],
+      "notActions": [],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Services Hub Operator",
   "roleType": "BuiltInRole",
   "type": "Microsoft.Authorization/roleDefinitions"
 }

@@ -4,21 +4,21 @@ description: Узнайте о различных методах проверк�
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/09/2020
-ms.author: mlottner
-ms.openlocfilehash: 896baa70fb6e18165a025459a063e33d705261ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/24/2021
+ms.author: shhazam
+ms.openlocfilehash: aa5a8a842a750e44d4beeb915008f86c6b5bbb70
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90939488"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809258"
 ---
 # <a name="security-agent-authentication-methods"></a>Методы проверки подлинности агента безопасности
 
@@ -32,7 +32,7 @@ ms.locfileid: "90939488"
 
 ## <a name="authentication-methods"></a>Методы проверки подлинности
 
-Для проверки подлинности агент Азуреиотсекурити выполняет следующие два метода:
+Два метода защитника Азуреиотсекурити для агента Интернета вещей выполняют проверку подлинности:
 
 - Режим проверки подлинности **секуритимодуле**<br>
 Проверка подлинности агента выполняется с помощью удостоверения модуля безопасности независимо от удостоверения устройства.
@@ -102,7 +102,7 @@ ms.locfileid: "90939488"
 }
 ```
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - [Обзор агентов безопасности](security-agent-architecture.md)
 - [Развертывание агента безопасности](how-to-deploy-agent.md)

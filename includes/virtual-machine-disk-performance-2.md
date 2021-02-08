@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/12/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 086ebf71e2da19a96433f32cfb1bae133e875400
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 3c4ab8362b2a717a348a59c0baf829b61e1a8006
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518094"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99808484"
 ---
 ![Диаграмма, показывающая спецификации D s версии 3.](media/vm-disk-performance/dsv3-documentation.jpg)
 
@@ -137,6 +137,7 @@ ms.locfileid: "92518094"
 - **Операций записи на диск/с**: количество операций вывода, записанных в секунду со всех дисков, подключенных к виртуальной машине.
 
 ## <a name="storage-io-utilization-metrics"></a>Метрики использования операций ввода-вывода хранилища
+Следующие метрики помогают диагностировать узкие места в сочетании виртуальной машины и диска. Эти метрики доступны только при использовании виртуальной машины с включенным Premium. Эти метрики доступны для всех типов дисков, за исключением Ultra. 
 
 Метрики, помогающие диагностировать ограничения дискового ввода-вывода:
 

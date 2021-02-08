@@ -8,14 +8,14 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: 0b04ebd9672990738d77bc5ae09d7f7fae4ffb9d
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 0121ea65b190f254f032085133f12f6eb0f374ca
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99500374"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99808445"
 ---
-# <a name="azure-instance-metadata-service-imds"></a>Служба метаданных экземпляров Azure (IMDS)
+# <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
 Служба метаданных экземпляров Azure (IMDS) предоставляет сведения о текущих экземплярах виртуальных машин. Его можно использовать для управления виртуальными машинами и их настройки.
 Эти сведения включают SKU, хранилище, конфигурации сети и будущие события обслуживания. Полный список доступных данных см. в разделе [Сводка по категориям конечных точек](#endpoint-categories).
@@ -274,7 +274,7 @@ API IMDS содержит несколько категорий конечных
 | `/metadata/identity` | См. раздел [управляемое удостоверение через IMDS](#managed-identity) . | 2018-02-01
 | `/metadata/instance` | См. [метаданные экземпляра](#instance-metadata) | 2017-04-02
 | `/metadata/scheduledevents` | См. [запланированные события через IMDS](#scheduled-events) | 2017-08-01
-| `/metadata/versions` | См. [версии](#versions) | Недоступно
+| `/metadata/versions` | См. [версии](#versions) | н/д
 
 ## <a name="versions"></a>Версии
 
@@ -330,7 +330,7 @@ GET /metadata/instance
 
 Разбиение схемы:
 
-**Compute**
+**Среда выполнения приложений**
 
 | Данные | Описание | Представленная версия |
 |------|-------------|--------------------|
@@ -724,7 +724,7 @@ GET /metadata/attested/document
 | Имя | Обязательный/необязательный | Описание |
 |------|-------------------|-------------|
 | `api-version` | Обязательно | Версия, используемая для обслуживания запроса.
-| `nonce` | Необязательный | Строка из 10 цифр, которая служит в качестве криптографического nonce. Если значение не указано, IMDS использует текущую метку времени в формате UTC.
+| `nonce` | Необязательно | Строка из 10 цифр, которая служит в качестве криптографического nonce. Если значение не указано, IMDS использует текущую метку времени в формате UTC.
 
 #### <a name="response"></a>Ответ
 
