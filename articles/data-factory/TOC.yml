@@ -760,6 +760,10 @@
           href: solution-template-databricks-notebook.md
     - name: Основные сведения о ценах
       items:
+        - name: "Поток данных\_— общие сведения о зарезервированной емкости"
+          href: data-flow-reserved-capacity-overview.md
+        - name: "Поток данных\_— общие сведения о расходах на резервирование"
+          href: data-flow-understand-reservation-charges.md
         - name: Планирование затрат и управление ими
           href: plan-manage-costs.md
         - name: Примеры цен
