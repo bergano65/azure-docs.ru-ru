@@ -7,14 +7,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 01/27/2021
+ms.date: 02/09/2021
 ms.author: aahi
-ms.openlocfilehash: 8fa10164ae2d697f68156777f224b92f0562475f
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: eaffa535b51b786a53f1e6cc35233c55dd837233
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98940041"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989069"
 ---
 # <a name="configure-azure-cognitive-services-virtual-networks"></a>Настройка виртуальных сетей Azure Cognitive Services
 
@@ -59,7 +59,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 
 > [!NOTE]
-> Если вы используете LUIS, тег **когнитивесервицесманажемент** позволяет использовать службу только с помощью пакета SDK или REST API. Чтобы получить доступ к порталу LUIS из виртуальной сети и использовать его, необходимо использовать следующие Теги:  
+> Если вы используете службы LUIS или Speech Services, тег **когнитивесервицесманажемент** позволяет использовать только службу с пакетом SDK или REST API. Для доступа и использования портала LUIS и (или) Speech Studio из виртуальной сети необходимо использовать следующие Теги:  
 > * **AzureActiveDirectory**
 > * **AzureFrontDoor.Frontend**
 > * **AzureResourceManager** 
@@ -157,7 +157,7 @@ Azure Cognitive Services предоставляет многоуровневую
         --default-action Allow
     ```
 
-**_
+***
 
 ## <a name="grant-access-from-a-virtual-network"></a>Предоставление доступа из виртуальной сети
 
@@ -169,7 +169,7 @@ Azure Cognitive Services предоставляет многоуровневую
 
 ### <a name="required-permissions"></a>Необходимые разрешения
 
-Чтобы применить правило виртуальной сети к ресурсу Cognitive Services, пользователь должен иметь соответствующие разрешения для добавляемых подсетей. Требуемое разрешение — роль _Contributor * по умолчанию или роль *участника Cognitive Services* . Необходимые разрешения также можно добавить в определения пользовательских ролей.
+Чтобы применить правило виртуальной сети к ресурсу Cognitive Services, пользователь должен иметь соответствующие разрешения для добавляемых подсетей. Требуемое разрешение является ролью *участника* по умолчанию или ролью *участника Cognitive Services* . Необходимые разрешения также можно добавить в определения пользовательских ролей.
 
 Cognitive Services ресурс и виртуальные сети, которым предоставлен доступ, могут находиться в разных подписках, включая подписки, которые являются частью другого клиента Azure AD.
 
@@ -325,10 +325,10 @@ Cognitive Services ресурс и виртуальные сети, которы
         --subnet $subnetid
     ```
 
-**_
+***
 
 > [!IMPORTANT]
-> Не забудьте [задать для правила по умолчанию](#change-the-default-network-access-rule) значение _ * Deny * *, иначе правила сети не действуют.
+> Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
 ## <a name="grant-access-from-an-internet-ip-range"></a>Предоставление доступа из диапазона IP-адресов в Интернете
 
@@ -472,10 +472,10 @@ Cognitive Services ресурс и виртуальные сети, которы
         --ip-address "16.17.18.0/24"
     ```
 
-**_
+***
 
 > [!IMPORTANT]
-> Не забудьте [задать для правила по умолчанию](#change-the-default-network-access-rule) значение _ * Deny * *, иначе правила сети не действуют.
+> Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
 ## <a name="use-private-endpoints"></a>Использование частных конечных точек
 

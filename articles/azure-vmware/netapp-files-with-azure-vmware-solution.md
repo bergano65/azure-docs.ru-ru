@@ -2,13 +2,13 @@
 title: Azure NetApp Files с помощью решения VMware для Azure
 description: Используйте Azure NetApp Files с виртуальными машинами Azure VMware для переноса и синхронизации данных между локальными серверами, виртуальными машинами Azure VMware и облачными инфраструктурами.
 ms.topic: how-to
-ms.date: 02/01/2021
-ms.openlocfilehash: 8c101b652ffcefe05e9b6c11f166c1da3df2ede1
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.date: 02/08/2021
+ms.openlocfilehash: 69d4e3a99de28d55b2fd95b1fc05c04c2ae0a37b
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539372"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988653"
 ---
 # <a name="azure-netapp-files-with-azure-vmware-solution"></a>Azure NetApp Files с помощью решения VMware для Azure
 
@@ -16,7 +16,7 @@ ms.locfileid: "99539372"
 
 ## <a name="azure-netapp-files-overview"></a>Обзор Azure NetApp Files
 
-[Azure NetApp Files](../azure-netapp-files/azure-netapp-files-introduction.md) — это первая служба Azure для миграции и запуска самых требовательных корпоративных рабочих нагрузок файлов в облаке, включая базы данных, SAP и высокопроизводительные вычислительные приложения без изменения кода.
+[Azure NetApp Files](../azure-netapp-files/azure-netapp-files-introduction.md) — это служба Azure для миграции и запуска самых требовательных корпоративных рабочих нагрузок файлов в облаке. Сюда входят базы данных, SAP и высокопроизводительные вычислительные приложения без изменений кода.
 
 ### <a name="features"></a>Компоненты
 (Службы, где используются Azure NetApp Files.)
@@ -31,7 +31,7 @@ Azure NetApp Files доступен во многих регионах Azure и 
 
 ## <a name="reference-architecture"></a>Эталонная архитектура
 
-На следующей схеме показано подключение через Azure ExpressRoute к частному облаку решения Azure VMware. В нем показано использование Azure NetApp Files общего ресурса, подключенного к виртуальным машинам Azure VMware, доступ к которым осуществляется средой решения Azure VMware.
+На следующей схеме показано подключение через Azure ExpressRoute к частному облаку решения Azure VMware. Среда решения Azure VMware обращается к Azure NetApp Files общему ресурсу, который подключен на виртуальных машинах Azure VMware.
 
 ![Схема, на которой показаны файлы NetApp для архитектуры решения VMware для Azure.](media/net-app-files/net-app-files-topology.png)
 
@@ -83,11 +83,11 @@ Azure NetApp Files доступен во многих регионах Azure и 
 
     :::image type="content" source="media/net-app-files/configuration-of-volume.png" alt-text="Снимок экрана, показывающий сведения о конфигурации тома.":::
 
-    Вы видите, что том анфволуме с размером 200 гиб, был создан в пуле ресурсов anfpool1 и экспортирован как файловый ресурс NFS через 10.22.3.4:/АНФВОЛУМЕ. Один частный IP-адрес из виртуальной сети Azure (VNet) был создан для Azure NetApp Files и пути NFS для подключения к виртуальной машине. Сведения о Azure NetApp Files производительности тома относительно размера ("квота") см. в статье [рекомендации по производительности для Azure NetApp Files](../azure-netapp-files/azure-netapp-files-performance-considerations.md). 
+    Вы видите, что размер тома анфволуме составляет 200 гиб и находится в anfpool1 пула емкости.  Он экспортируется как файловый ресурс NFS через 10.22.3.4:/АНФВОЛУМЕ. Один частный IP-адрес из виртуальной сети Azure (VNet) был создан для Azure NetApp Files и пути NFS для подключения к виртуальной машине. Дополнительные сведения о Azure NetApp Files производительности объемом по размеру или квоте см. в разделе [рекомендации по производительности для Azure NetApp Files](../azure-netapp-files/azure-netapp-files-performance-considerations.md). 
 
 ## <a name="verify-pre-configured-azure-vmware-solution-vm-share-mapping"></a>Проверка предварительно настроенного сопоставления общего ресурса виртуальной машины Azure VMware
 
-Прежде чем приступить к демонстрации доступности Azure NetApp Files общего доступа к виртуальной машине Azure VMware, важно разобраться в сопоставлении общего ресурса SMB и NFS. Их можно подключить только после настройки томов SMB или NFS, как описано здесь.
+Чтобы сделать ресурс Azure NetApp Files доступным для виртуальной машины Azure VMware, важно разобраться в сопоставлении общего ресурса SMB и NFS. Их можно подключить только после настройки томов SMB или NFS, как описано здесь.
 
 - Общий ресурс SMB. Создайте подключение Active Directory перед развертыванием тома SMB. Для успешного подключения указанные контроллеры домена должны быть доступны для делегированной подсети Azure NetApp Files. После настройки Active Directory в учетной записи Azure NetApp Files она будет отображаться как выбираемый элемент при создании томов SMB.
 
@@ -101,9 +101,9 @@ Azure NetApp Files доступен во многих регионах Azure и 
 - Управление профилем службы удаленных рабочих столов
 - Общие файловые ресурсы в решении VMware для Azure
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-После интеграции Azure NetApp Files с рабочими нагрузками решения Azure VMware вы можете получить дополнительные сведения:
+Теперь, когда вы узнали, как интегрировать Azure NetApp Files с рабочими нагрузками решения Azure VMware, вам может потребоваться изучить следующие темы:
 
 - [Ограничения ресурсов для Azure NetApp Files](../azure-netapp-files/azure-netapp-files-resource-limits.md#resource-limits).
 - [Рекомендации по Azure NetApp Filesному планированию сети](../azure-netapp-files/azure-netapp-files-network-topologies.md).

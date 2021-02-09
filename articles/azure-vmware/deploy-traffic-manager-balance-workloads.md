@@ -2,13 +2,13 @@
 title: Развертывание диспетчера трафика для балансировки рабочих нагрузок решения VMware Azure
 description: Узнайте, как интегрировать диспетчер трафика с решением VMware Azure для балансировки рабочих нагрузок приложений на нескольких конечных точках в разных регионах.
 ms.topic: how-to
-ms.date: 12/29/2020
-ms.openlocfilehash: 6dbd58f17e29b045bd654bee90b6390f608803ab
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.date: 02/08/2021
+ms.openlocfilehash: 46570c5a61fc0a641d83126fd0f8ef35b3dc42cc
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809740"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988592"
 ---
 # <a name="deploy-traffic-manager-to-balance-azure-vmware-solution-workloads"></a>Развертывание диспетчера трафика для балансировки рабочих нагрузок решения VMware Azure
 
@@ -130,9 +130,9 @@ ms.locfileid: "97809740"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. также:
+Теперь, когда вы построили интеграцию диспетчера трафика Azure с решением VMware для Azure, вам может потребоваться изучить следующие темы:
 
-- [Использование шлюза приложений Azure в решении VMware для Azure](protect-azure-vmware-solution-with-application-gateway.md)
-- [Методы маршрутизации диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md)
-- [Объединение служб балансировки нагрузки в Azure](../traffic-manager/traffic-manager-load-balancing-azure.md)
-- [Измерение производительности диспетчера трафика](../traffic-manager/traffic-manager-performance-considerations.md)
+- [Использование шлюза приложений Azure в решении VMware для Azure](protect-azure-vmware-solution-with-application-gateway.md).
+- [Методы маршрутизации диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md).
+- [Объединение служб балансировки нагрузки в Azure](../traffic-manager/traffic-manager-load-balancing-azure.md).
+- [Измерение производительности диспетчера трафика](../traffic-manager/traffic-manager-performance-considerations.md).

@@ -3,15 +3,15 @@ title: Использование возможностей Key Vault
 description: Узнайте, как настроить службу приложений Azure и функции Azure для использования Azure Key Vault ссылок. Сделайте Key Vault секреты доступными для кода приложения.
 author: mattchenderson
 ms.topic: article
-ms.date: 10/09/2019
+ms.date: 02/05/2021
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: bb220da0b906c9d7a5f45dcc841129e14c7c6c51
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: b55aeb68d5fa740d34c8823f555f804be54895a7
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205852"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988774"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Использование Key Vault ссылок для службы приложений и функций Azure
 
@@ -40,24 +40,24 @@ ms.locfileid: "92205852"
 > [!div class="mx-tdBreakAll"]
 > | Строка ссылки                                                            | Описание                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | SecretUri=_secretUri_                                                       | Здесь **SecretUri** является полным URI плоскости данных секрета в Key Vault, включая версию, например: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931.  |
-> | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | Здесь **VaultName** — имя ресурса Key Vault. **SecretName** — имя целевого секрета. **SecretVersion** — используемая версия секрета. |
+> | SecretUri=_secretUri_                                                       | **Секретури** должен быть полным URI-кодом плоскости данных в Key Vault, при необходимости включая версию, например, `https://myvault.vault.azure.net/secrets/mysecret/` или`https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931`  |
+> | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | **VaultName** является обязательным и должно иметь имя ресурса Key Vault. Параметр **SecretName** является обязательным и должен быть именем целевого секрета. **Версиясекрета** является необязательным, но если он есть, указывает версию секрета для использования. |
 
-> [!NOTE] 
-> В настоящее время требуются версии. При смене секретов вам придется обновлять версию в конфигурации приложения.
 Вот пример допустимой полной ссылки:
 
-
 ```
-@Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931)
+@Microsoft.KeyVault(SecretUri=https://myvault.vault.azure.net/secrets/mysecret)
 ```
 
 Еще один вариант:
 
 ```
-@Microsoft.KeyVault(VaultName=myvault;SecretName=mysecret;SecretVersion=ec96f02080254f109c51a1f14cdb1931)
+@Microsoft.KeyVault(VaultName=myvault;SecretName=mysecret)
 ```
 
+## <a name="rotation"></a>Поворот
+
+Если в ссылке не указана версия, приложение будет использовать последнюю версию, существующую в Key Vault. Когда станут доступны более новые версии, например с помощью события вращения, приложение автоматически обновится и начнет использовать последнюю версию в течение одного дня. Любые изменения конфигурации, вносимые в приложение, приведут к немедленному обновлению последних версий всех секретных данных, на которые имеются ссылки.
 
 ## <a name="source-application-settings-from-key-vault"></a>Получение параметров приложения из Key Vault
 

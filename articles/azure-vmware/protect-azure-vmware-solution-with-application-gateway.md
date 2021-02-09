@@ -2,13 +2,13 @@
 title: Использование шлюза приложений Azure для защиты веб-приложений в решении Azure VMware
 description: Настройте шлюз приложений Azure, чтобы безопасно предоставлять веб-приложения, выполняющиеся в решении VMware для Azure.
 ms.topic: how-to
-ms.date: 11/13/2020
-ms.openlocfilehash: 02e439989c985354dbe06fa3e231d5daf7099d70
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.date: 02/08/2021
+ms.openlocfilehash: fdef37bd76b08a8778db8401a1e8a0406c2ed652
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629053"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988641"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Использование шлюза приложений Azure для защиты веб-приложений в решении Azure VMware
 
@@ -158,7 +158,7 @@ ms.locfileid: "94629053"
    1. Выберите **Добавить** и введите сведения о первом пуле, **contoso-Web**. 
    1. Добавьте одну виртуальную машину в качестве целевой. 
    1. Выберите **Добавить**. 
-   1. Повторите эту процедуру для **contoso-Images** и **contoso-Video** , добавив одну уникальную виртуальную машину в качестве целевого объекта. 
+   1. Повторите эту процедуру для **contoso-Images** и **contoso-Video**, добавив одну уникальную виртуальную машину в качестве целевого объекта. 
 
     :::image type="content" source="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-02.png" alt-text="Снимок экрана: страница &quot;серверные пулы&quot; с добавлением трех новых серверных пулов." lightbox="media/protect-azure-vmware-solution-with-application-gateway/app-gateway-url-route-backend-pool-02.png":::
 
@@ -188,4 +188,8 @@ ms.locfileid: "94629053"
 
 ## <a name="next-steps"></a>Next Steps
 
-Дополнительные примеры настройки см. в [документации по шлюзу приложений Azure](../application-gateway/index.yml) .
+Теперь, когда вы узнали об использовании шлюза приложений для защиты веб-приложения, работающего в решении VMware для Azure, вы можете узнать о следующих возможностях:
+
+- [Настройка шлюза приложений Azure для различных сценариев](../application-gateway/configuration-overview.md).
+- [Развертывание диспетчера трафика для балансировки рабочих нагрузок решения VMware Azure](deploy-traffic-manager-balance-workloads.md).
+- [Интеграция Azure NetApp Files с рабочими нагрузками на основе решений VMware для Azure](netapp-files-with-azure-vmware-solution.md).

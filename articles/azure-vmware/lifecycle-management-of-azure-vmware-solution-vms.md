@@ -2,13 +2,13 @@
 title: Управление жизненным циклом виртуальных машин Azure VMware
 description: Узнайте, как управлять всеми аспектами жизненного цикла виртуальных машин решения Azure VMware с помощью Microsoft Azure собственных средств.
 ms.topic: conceptual
-ms.date: 09/11/2020
-ms.openlocfilehash: 5bba9cbbc8783cc285ff09f790ee1b35b20ba358
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.date: 02/08/2021
+ms.openlocfilehash: d8224a37e46b336ebf889fe1c075930f34f10ca4
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062902"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988525"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Управление жизненным циклом виртуальных машин Azure VMware
 
@@ -110,3 +110,11 @@ Azure Monitor — это комплексное решение для сбора
     - [Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor](../azure-monitor/platform/alerts-log.md).
     - [Правила действий](../azure-monitor/platform/alerts-action-rules.md) для задания автоматических действий и уведомлений.
     - [Подключение Azure к средствам ITSM с помощью соединитель управления ИТ-услугами](../azure-monitor/platform/itsmc-overview.md).
+    
+ ## <a name="next-steps"></a>Следующие шаги
+
+Теперь, когда вы узнали об использовании собственных средств Azure для управления виртуальными машинами Azure VMware в течение жизненного цикла, вы можете узнать о следующих возможностях:
+
+- [Защита виртуальных машин решения Azure VMware с помощью центра безопасности Azure](azure-security-integration.md).
+- [Настройка Azure Backup Server для решения Azure VMware](set-up-backup-server-for-azure-vmware-solution.md).
+- [Интеграция решения VMware для Azure в центральную и периферийную архитектуру](concepts-hub-and-spoke.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/13/2020
 ms.author: apimpm
-ms.openlocfilehash: 4e5522c162e08f0257bd6f20b058bf8bb858cff3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 553b4527796db3e5d0f430afd6c5e614626187e5
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099352"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988882"
 ---
 # <a name="how-to-secure-apis-using-client-certificate-authentication-in-api-management"></a>Защита API-интерфейсов с помощью аутентификации на основе сертификата клиента в службе управления API Azure
 
@@ -95,8 +95,20 @@ ms.locfileid: "93099352"
 > Проблема взаимоблокировки сертификата клиента, описанная в этой [статье](https://techcommunity.microsoft.com/t5/Networking-Blog/HTTPS-Client-Certificate-Request-freezes-when-the-Server-is/ba-p/339672) , может быть манифестом несколькими способами, например запросы на замораживание, запросы, вызывающие `403 Forbidden` код состояния после истечения времени ожидания, `context.Request.Certificate` — `null` . Эта проблема обычно влияет `POST` на `PUT` запросы с длиной содержимого приблизительно 60KB или выше.
 > Чтобы предотвратить возникновение этой проблемы, включите параметр "согласовать сертификат клиента" для нужных имен узлов в колонке "личные домены", как показано на первом рисунке этого документа. Эта функция недоступна в уровне потребления.
 
+## <a name="certificate-validation-in-self-hosted-gateway"></a>Проверка сертификата в самостоятельно размещенном шлюзе
 
-## <a name="next-steps"></a>Дальнейшие действия
+Образ [шлюза, размещенного](self-hosted-gateway-overview.md) в службе управления API по умолчанию, не поддерживает проверку сертификатов сервера и клиента с помощью [корневых сертификатов ЦС](api-management-howto-ca-certificates.md) , передаваемых экземпляру службы управления API. Клиенты, которые представляют пользовательский сертификат для самостоятельно размещенного шлюза, могут столкнуться с медленными ответами, так как проверка списка отзыва сертификатов (CRL) может занять много времени на шлюзе. 
+
+В качестве обходного решения при запуске шлюза можно настроить IP-адрес PKI таким образом, чтобы он указывал на адрес localhost (127.0.0.1), а не на экземпляр службы управления API. Это приводит к тому, что проверка списка отзыва сертификатов быстро завершается сбоем, когда шлюз пытается проверить сертификат клиента. Чтобы настроить шлюз, добавьте запись DNS для экземпляра службы управления API, которая будет разрешаться в localhost в `/etc/hosts` файле в контейнере. Эту запись можно добавить во время развертывания шлюза:
+ 
+* Для развертывания DOCKER — добавьте `--add-host <hostname>:127.0.0.1` параметр в `docker run` команду. Дополнительные сведения см. [в разделе Добавление записей в контейнер файл hosts](https://docs.docker.com/engine/reference/commandline/run/#add-entries-to-container-hosts-file---add-host) .
+ 
+* Для развертывания Kubernetes `hostAliases` . Добавьте спецификацию в `myGateway.yaml` файл конфигурации. Дополнительные сведения см. [в разделе Добавление записей в Pod/etc/hosts с псевдонимами узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/).
+
+
+
+
+## <a name="next-steps"></a>Следующие шаги
 
 -   [Как защитить серверные службы с помощью аутентификации на основе сертификата клиента](./api-management-howto-mutual-certificates.md)
 -   [Как передавать сертификаты](./api-management-howto-mutual-certificates.md)
