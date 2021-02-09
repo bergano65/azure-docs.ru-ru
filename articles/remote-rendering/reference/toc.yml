@@ -8,6 +8,8 @@
   href: network-requirements.md
 - name: Ограничения
   href: limits.md
+- name: Место расположения данных
+  href: data-residency.md
 - name: Репозиторий с примерами для Удаленной отрисовки (GitHub)
   href: 'https://github.com/Azure/azure-remote-rendering'
 - name: REST API управления ресурсами Смешанной реальности Azure

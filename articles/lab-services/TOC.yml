@@ -36,7 +36,7 @@
           href: classroom-labs-scenarios.md
         - name: Использование Службы лабораторий для хакатонов
           href: hackathon-labs.md
-        - name: 'Лаборатории: типы классов'
+        - name: Типы классов лабораторий
           items:
             - name: Общие сведения о типах классов
               href: class-types.md
@@ -46,9 +46,11 @@
               href: class-type-shell-scripting-linux.md
             - name: Этичный взлом
               href: class-type-ethical-hacking.md
+            - name: Организация сети с использованием GNS3
+              href: class-type-networking-gns3.md
             - name: Управление базами данных
               href: class-type-database-management.md
-            - name: Разработка баз данных SQL Azure и управление ими
+            - name: Разработка баз данных SQL и управление ими
               href: class-type-sql-server.md
             - name: Использование Python с Jupyter Notebook
               href: class-type-jupyter-notebook.md
@@ -58,8 +60,8 @@
               href: class-type-matlab.md
             - name: Автоматизированное проектирование (САПР) с использованием SolidWorks
               href: class-type-solidworks.md
-            - name: Организация сети с использованием GNS3
-              href: class-type-networking-gns3.md
+            - name: ArcGIS
+              href: class-type-arcgis.md
             - name: Project Lead the Way
               href: class-type-pltw.md
         - name: Использование Служб лабораторий Azure с Teams

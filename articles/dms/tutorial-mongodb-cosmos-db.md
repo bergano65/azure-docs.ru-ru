@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
-ms.date: 01/08/2020
-ms.openlocfilehash: 4f3b201d35781d6d33eead0b0a21d38fbb897097
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.date: 02/03/2021
+ms.openlocfilehash: 1ba6a45062f4018c59f5b41ab616f7a04f87140a
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966825"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575577"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство по Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 
@@ -53,6 +53,18 @@ ms.locfileid: "94966825"
 * Убедитесь, что правила группы безопасности сети (NSG) для виртуальной сети не блокируют следующие порты: 53, 443, 445, 9354 и 10000–20000. См. дополнительные сведения о [фильтрации трафика, предназначенного для виртуальной сети, с помощью групп безопасности сети](../virtual-network/virtual-network-vnet-plan-design-arm.md).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MongoDB. По умолчанию это TCP-порт 27017.
 * Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
+
+## <a name="configure-azure-cosmos-db-server-side-retries-for-efficient-migration"></a>Настройка повторных попыток в Azure Cosmos DB на стороне сервера для эффективной миграции
+
+Клиенты, которые переходят с MongoDB на Azure Cosmos DB получают преимущества возможностей управления ресурсами, позволяющие полностью использовать подготовленные ЕЗ/с пропускной способности. Azure Cosmos DB может регулировать определенный запрос службы переноса данных в процессе миграции, если размер этого запроса превышает число подготовленных ЕЗ/с контейнера. После этого такой запрос нужно повторить. Служба переноса данных может выполнять повторные попытки, но время кругового пути в рамках сетевого прыжка между службой переноса данных и Azure Cosmos DB влияет на общее время отклика для этого запроса. Оптимизация времени отклика для регулируемых запросов может сократить общее время, необходимое для миграции. Функция *повторных попыток на стороне сервера* Azure Cosmos DB позволяет службе перехватывать коды ошибок регулирования и повторять попытки с уменьшенным временем кругового пути, что значительно сокращает время отклика для запроса.
+
+Функцию повторных попыток на стороне сервера можно найти в колонке *Функции* на портале Azure Cosmos DB.
+
+![Функция SSR в MongoDB](media/tutorial-mongodb-to-cosmosdb/mongo-server-side-retry-feature.png)
+
+Если функция *отключена*, рекомендуется включить ее, как показано ниже.
+
+![Включение функции SSR в MongoDB](media/tutorial-mongodb-to-cosmosdb/mongo-server-side-retry-enable.png)
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 

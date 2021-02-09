@@ -107,26 +107,15 @@
       href: ./workloads/mainframe-rehosting/overview.md
     - name: Базы данных
       items:
-        - name: MySQL в SUSE
-          href: ./linux/mysql-on-opensuse.md
         - name: MongoDB
           items:
-            - name: Linux
-              href: ./linux/install-mongodb.md
             - name: Windows
               href: ./windows/install-mongodb.md
-        - name: PostgreSQL
-          href: ./linux/postgresql-install.md
         - name: MS SQL в Linux
           href: /sql/linux/sql-server-linux-azure-virtual-machine
     - name: Высокопроизводительные вычисления (HPC)
       href: /azure/architecture/topics/high-performance-computing/
     - name: Контейнеры
-      items:
-        - name: Использование виртуальной машины Docker
-          href: ./linux/docker-machine.md
-        - name: Использование Docker Compose
-          href: ./linux/docker-compose-quickstart.md
     - name: Visual Studio
       href: ./windows/using-visual-studio-vm.md
 - name: Экземпляры
@@ -979,10 +968,18 @@
       href: disks-scalability-targets.md
     - name: Резервное копирование и хранение данных
       items:
-        - name: Резервное копирование и аварийное восстановление дисков
-          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: Включение добавочных моментальных снимков
           href: disks-incremental-snapshots.md
+        - name: Резервное копирование дисков Azure
+          items:
+            - name: Обзор
+              href: ../backup/disk-backup-overview.md?context=/azure/virtual-machines/context/context
+            - name: Настройка резервного копирования дисков Azure
+              href: ../backup/backup-managed-disks.md?context=/azure/virtual-machines/context/context
+            - name: Восстановление дисков с помощью резервного копирования дисков Azure
+              href: ../backup/restore-managed-disks.md?context=/azure/virtual-machines/context/context
+        - name: Резервное копирование и аварийное восстановление дисков
+          href: backup-and-disaster-recovery-for-azure-iaas-disks.md
         - name: 'Создание моментального снимка диска, CLI'
           href: ./linux/snapshot-copy-managed-disk.md
         - name: 'Создание моментального снимка диска, PowerShell'
@@ -1281,8 +1278,6 @@
       href: ../azure-monitor/insights/monitor-vm-azure.md?context=/azure/virtual-machines/context/context
     - name: Мониторинг виртуальных машин
       items:
-        - name: Linux
-          href: ./linux/tutorial-monitor.md
         - name: Windows
           href: ./windows/tutorial-monitor.md
     - name: Агенты

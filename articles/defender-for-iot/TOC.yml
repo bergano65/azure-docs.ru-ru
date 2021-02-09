@@ -3,12 +3,15 @@
 - name: Обзор
   href: overview.md
   items:
-    - name: Архитектура решения
-      href: architecture.md
     - name: Новые возможности
       href: release-notes.md
-    - name: Краткие руководства
-      expanded: true
+    - name: Безагентная архитектура решения
+      href: architecture.md
+    - name: Архитектура решения на основе агента
+      href: architecture-agent-based.md
+- name: Краткие руководства
+  expanded: true
+  items:
     - name: Безагентное решение для организаций
       items:
         - name: Предварительные требования к системе
@@ -19,22 +22,22 @@
       items:
         - name: Настройка модуля безопасности для ОСРВ Azure
           href: quickstart-azure-rtos-security-module.md
-        - name: Центр Интернета вещей
-          href: quickstart-iot-hub-integration.md
-        - name: Подключение Azure Defender для Интернета вещей в Центре Интернета вещей
+        - name: Подключение решения Defender для Интернета вещей на основе агента
           href: quickstart-onboard-iot-hub.md
-        - name: Агенты безопасности
-          href: security-agent-architecture.md
-        - name: Настройка решения
+        - name: Создание двойника модуля для микроагента Defender для Интернета вещей (предварительная версия)
+          href: quickstart-create-micro-agent-module-twin.md
+        - name: Установка микроагента Defender для Интернета вещей (предварительная версия)
+          href: quickstart-standalone-agent-binary-installation.md
+        - name: Создание микроагента Defender для Интернета вещей на основе исходного кода (предварительная версия)
+          href: quickstart-building-the-defender-micro-agent-from-source.md
+        - name: Добавление ресурсов Azure в решение Интернета вещей
           href: quickstart-configure-your-solution.md
-        - name: Создание двойника модуля для Azure Defender для Интернета вещей
-          href: quickstart-create-security-twin.md
-        - name: Изучение рекомендаций по обеспечению безопасности
-          href: quickstart-investigate-security-recommendations.md
-        - name: Создание пользовательских оповещений системы безопасности
-          href: quickstart-create-custom-alerts.md
-        - name: Анализ оповещений системы безопасности
-          href: quickstart-investigate-security-alerts.md
+        - name: Классическая
+          items:
+            - name: Общие сведения об агенте безопасности
+              href: security-agent-architecture.md
+            - name: Создание двойника модуля azureiotsecurity
+              href: quickstart-create-security-twin.md
 - name: Основные понятия
   items:
     - name: Безагентное решение для организаций
@@ -43,35 +46,38 @@
           href: concept-key-concepts.md
     - name: Решение на основе агента для разработчиков устройств
       items:
-        - name: Модуль безопасности для ОСРВ Azure
-          href: iot-security-azure-rtos.md
-          items:
-            - name: Общие сведения о модуле безопасности для ОСРВ Azure
-              href: concept-rtos-security-module.md
-            - name: 'Рекомендации и оповещения, касающиеся модуля безопасности для ОСРВ Azure'
-              href: concept-rtos-security-alerts-recommendations.md
-        - name: Модуль безопасности Edge
-          href: security-edge-architecture.md
-        - name: Агенты безопасности
-          href: overview-security-agents.md
-        - name: Аутентификация агентов безопасности
-          href: concept-security-agent-authentication-methods.md
-        - name: Модуль безопасности
-          href: concept-security-module.md
+        - name: Общие сведения о портфеле агентов и поддержке ОС (предварительная версия)
+          href: concept-agent-portfolio-overview-os-support.md
+        - name: Общие сведения об автономном микроагенте (предварительная версия)
+          href: concept-standalone-micro-agent-overview.md
+        - name: Аутентификация агентов безопасности (предварительная версия)
+          href: concept-security-agent-authentication.md
+        - name: 'Уровень безопасности: тест производительности CIS'
+          href: concept-security-posture.md
+        - name: Статистическая обработка событий (предварительная версия)
+          href: concept-event-aggregation.md
         - name: Оповещения безопасности
           href: concept-security-alerts.md
-        - name: Настраиваемые оповещения системы безопасности
+        - name: Пользовательские оповещения системы безопасности
           href: concept-customizable-security-alerts.md
-        - name: Безопасность
+        - name: Рекомендации по обеспечению безопасности
+          href: concept-recommendations.md
+        - name: Классическая
           items:
-            - name: Рекомендации по обеспечению безопасности
-              href: concept-recommendations.md
-            - name: Базовые средства безопасности
+            - name: Модуль безопасности
+              href: concept-security-module.md
+            - name: Модуль безопасности Edge
+              href: security-edge-architecture.md
+            - name: Агенты безопасности
+              href: overview-security-agents.md
+            - name: Аутентификация агентов безопасности
+              href: concept-security-agent-authentication-methods.md
+            - name: Базовый
+              href: concept-baseline.md
+            - name: Базовые средства безопасности для Azure Defender для Интернета вещей
               href: security-baseline.md
-        - name: Базовый
-          href: concept-baseline.md
-        - name: Агрегация событий
-          href: event-aggregation.md
+            - name: Классическое агрегирование событий модуля безопасности
+              href: event-aggregation.md
 - name: Практические руководства
   items:
     - name: Безагентное решение для организаций
@@ -147,8 +153,10 @@
               href: how-to-manage-the-alert-event.md
             - name: Ускорение реагирования на инциденты из оповещений
               href: how-to-accelerate-alert-incident-response.md
+              displayName: 'custom, alerts, comments, groups'
             - name: Переадресация сведений об оповещении
               href: how-to-forward-alert-information-to-partners.md
+              displayName: 'integration, partners, vendor, Syslog server, NetWitness,CEF, LEEF, email'
         - name: 'Анализ глобальных, региональных и локальных угроз'
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
         - name: Работа с оповещениями на локальной консоли управления
@@ -176,11 +184,12 @@
               displayName: 'import, enrich'
         - name: Отслеживание действий датчика
           href: how-to-track-sensor-activity.md
-          displayName: 'timeline, time line, time-line, event'
+          displayName: 'timeline, time line, time-line, event, audit'
         - name: Устранение неполадок с датчиком и локальной консолью управления
           href: how-to-troubleshoot-the-sensor-and-on-premises-management-console.md
         - name: Настройка мониторинга SNMP MIB
           href: how-to-set-up-snmp-mib-monitoring.md
+          displayName: health
         - name: Интеграция с партнерскими решениями
           items:
             - name: Интеграция с Cisco ISE pxGrid
@@ -197,40 +206,65 @@
               href: integration-splunk.md
     - name: Решение на основе агента для разработчиков устройств
       items:
-        - name: Работа с модулем безопасности для ОСРВ Azure
-          href: how-to-azure-rtos-security-module.md
-        - name: Какой агент нужно развернуть?
+        - name: Модуль безопасности для ОСРВ Azure
+          href: iot-security-azure-rtos.md
           items:
-            - name: Выбор агента для развертывания
-              href: how-to-deploy-agent.md
-            - name: Развертывание агента безопасности на основе C# на устройстве Windows
-              href: how-to-deploy-windows-cs.md
-            - name: Развертывание агента безопасности на основе C# на устройстве Linux
-              href: how-to-deploy-linux-cs.md
-            - name: Развертывание агента безопасности на основе C на устройстве Linux
-              href: how-to-deploy-linux-c.md
-        - name: Устранение неполадок в работе агента безопасности
-          items:
-            - name: Устранение неполадок в работе агента безопасности Azure Defender для Интернета вещей (Linux)
-              href: troubleshoot-agent.md
-            - name: Локальная конфигурация C
-              href: azure-iot-security-local-configuration-c.md
-            - name: Локальная конфигурация C#
-              href: azure-iot-security-local-configuration-csharp.md
-        - name: Развертывание модуля безопасности Edge
-          href: how-to-deploy-edge.md
-        - name: Настройка агентов безопасности
-          href: how-to-agent-configuration.md
-        - name: Отправка собственных сообщений безопасности
-          href: how-to-send-security-messages.md
-        - name: Доступ к необработанным данным безопасности
-          href: how-to-security-data-access.md
-        - name: Исследование устройства
-          href: how-to-investigate-device.md
+            - name: Работа с модулем безопасности для ОСРВ Azure
+              href: how-to-azure-rtos-security-module.md
+            - name: Общие сведения о модуле безопасности для ОСРВ Azure
+              href: concept-rtos-security-module.md
+            - name: 'Рекомендации и оповещения, касающиеся модуля безопасности для ОСРВ Azure'
+              href: concept-rtos-security-alerts-recommendations.md
         - name: Подключение к Azure Sentinel
           href: how-to-configure-with-sentinel.md
-        - name: Настройка агента
-          href: how-to-customize-solution.md
+        - name: Настройка решения Azure Defender для Интернета вещей на основе агента
+          href: how-to-configure-agent-based-solution.md
+        - name: Изучение рекомендаций на основе теста производительности CIS
+          href: how-to-investigate-cis-benchmark.md
+        - name: Изучение рекомендаций по обеспечению безопасности
+          href: quickstart-investigate-security-recommendations.md
+        - name: Анализ оповещений системы безопасности
+          href: quickstart-investigate-security-alerts.md
+        - name: Создание настраиваемых оповещений
+          href: quickstart-create-custom-alerts.md
+        - name: Классическая
+          items:
+            - name: Какой агент нужно развернуть?
+              items:
+                - name: Выбор агента для развертывания
+                  href: how-to-deploy-agent.md
+                - name: Развертывание агента безопасности на основе C# на устройстве Windows
+                  href: how-to-deploy-windows-cs.md
+                - name: Развертывание агента безопасности на основе C# на устройстве Linux
+                  href: how-to-deploy-linux-cs.md
+                - name: Развертывание агента безопасности на основе C на устройстве Linux
+                  href: how-to-deploy-linux-c.md
+            - name: Устранение неполадок в работе агента безопасности
+              items:
+                - name: Устранение неполадок в работе агента безопасности Azure Defender для Интернета вещей (Linux)
+                  href: troubleshoot-agent.md
+                - name: Локальная конфигурация C
+                  href: azure-iot-security-local-configuration-c.md
+                - name: Локальная конфигурация C#
+                  href: azure-iot-security-local-configuration-csharp.md
+            - name: Развертывание модуля безопасности Edge
+              href: how-to-deploy-edge.md
+            - name: Настройка агентов безопасности
+              href: how-to-agent-configuration.md
+            - name: Отправка собственных сообщений безопасности
+              href: how-to-send-security-messages.md
+            - name: Доступ к необработанным данным безопасности
+              href: how-to-security-data-access.md
+            - name: Исследование устройства
+              href: how-to-investigate-device.md
+- name: Устранение неполадок
+  items:
+    - name: Устранение неполадок с микроагентом Defender для Интернета вещей (предварительная версия)
+      href: troubleshoot-defender-micro-agent.md
+- name: Поддержка и прекращение использования функций
+  items:
+    - name: Поддержка и прекращение использования функций
+      href: edge-security-module-deprecation.md
 - name: Ссылки
   items:
     - name: Безагентное решение для организаций
@@ -275,5 +309,5 @@
           href: 'https://azure.microsoft.com/regions/services/'
         - name: Цены
           href: 'https://azure.microsoft.com/pricing/details/azure-defender/'
-        - name: Видео
+        - name: Видеоролики
           href: 'https://azure.microsoft.com/resources/videos/index/?services=security-center&service=internet-of-things&page=1&sort=newest'

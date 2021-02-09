@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 37bd7d91dfe9e4b9e620f89e7504331d8f631a6a
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4851d06ffedaacb441d28cae24d7d32bfe1c611c
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602120"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576267"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Руководство по Написание кода с помощью API Azure Digital Twins
 
@@ -253,12 +253,16 @@ dotnet run
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/fullClientApp.cs":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
- 
-Экземпляр из этого руководства можно использовать при работе со следующим руководством [ *Изучение Azure Digital Twins с помощью примера клиентского приложения*](tutorial-command-line-app.md). Если вы планируете продолжить работу со следующим учебником, то можете сохранить настроенный здесь экземпляр Azure Digital Twins.
+
+По завершении работы с этим руководством вы можете выбрать ресурсы, которые нужно удалить, в зависимости от планируемых действий.
+
+* **Если в планируете перейти к следующему руководству**, экземпляр из текущего руководства можно использовать при работе со следующим. Вы можете оставить настроенные здесь ресурсы Azure Digital Twins и пропустить оставшуюся часть этого раздела.
+
+[!INCLUDE [digital-twins-cleanup-clear-instance.md](../../includes/digital-twins-cleanup-clear-instance.md)]
  
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-Наконец, удалите папку проекта, созданную на локальном компьютере.
+Также, возможно, потребуется удалить папку проекта с вашего локального компьютера.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

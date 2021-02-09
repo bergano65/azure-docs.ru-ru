@@ -51,6 +51,8 @@
   items:
     - name: Создание доверенной службы проверки подлинности с помощью Функций Azure
       href: tutorials/trusted-service-tutorial.md
+    - name: Подписывание HTTP-запроса с помощью сигнатуры HMAC с использованием C#
+      href: tutorials/hmac-header-tutorial.md
     - name: Подготовка веб-приложения для Служб коммуникации (Node.js)
       href: tutorials/building-app-start.md
 - name: Основные понятия
@@ -88,6 +90,8 @@
       href: concepts/client-and-server-architecture.md
     - name: Потоки вызовов
       href: concepts/call-flows.md
+    - name: Топологии потоков вызовов
+      href: concepts/detailed-call-flows.md
     - name: "Клиентские библиотеки и интерфейсы REST\_API"
       href: concepts/sdk-options.md
     - name: Модель ценообразования
@@ -108,6 +112,8 @@
       href: concepts/metrics.md
     - name: Устранение неполадок
       href: concepts/troubleshooting-info.md
+    - name: Известные проблемы
+      href: concepts/known-issues.md
 - name: Примеры
   items:
     - name: Главный пример функции группового вызова

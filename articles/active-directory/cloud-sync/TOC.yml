@@ -62,7 +62,7 @@
       items:
         - name: Преобразования
           href: how-to-transformation.md
-        - name: "Входящая синхронизация с API MS\_Graph"
+        - name: Программная настройка облачной синхронизации с использованием API MS Graph
           href: how-to-inbound-synch-ms-graph.md
         - name: API синхронизации Azure AD
           href: /graph/api/resources/synchronization-overview

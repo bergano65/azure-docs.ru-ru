@@ -63,6 +63,8 @@
       href: azure-netapp-files-faqs.md
     - name: 'Что такое средство создания моментальных снимков, согласованных с приложениями Azure'
       href: azacsnap-introduction.md
+    - name: Что означает изменение жесткой квоты тома
+      href: volume-hard-quota-guidelines.md
 - name: Практические руководства
   items:
     - name: Регистрация в службе Azure NetApp Files

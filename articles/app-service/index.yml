@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   ms.service: app-service
   ms.date: 08/06/2020
-  ms.openlocfilehash: 8ace1c6bb530fcc93d06f48bcef0d1ccfdf82306
-  ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+  ms.openlocfilehash: 2344c7a1507feb6ca3938fe0c53cf618b015f0f4
+  ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/22/2020
-  ms.locfileid: "97724431"
+  ms.lasthandoff: 02/06/2021
+  ms.locfileid: "99627324"
 landingContent:
 - title: Сведения о Службе приложений
   linkLists:
@@ -60,46 +60,10 @@ landingContent:
       url: scenario-secure-app-overview.md
   - linkListType: how-to-guide
     links:
-    - text: Включение журналов диагностики
-      url: troubleshoot-diagnostic-logs.md
     - text: Подключение к контейнеру Linux по протоколу SSH
       url: configure-linux-open-ssh-session.md
     - text: Перенос активного домена в Службу приложений
       url: manage-custom-dns-migrate-domain.md
-- title: Приложение CRUD с базой данных
-  linkLists:
-  - linkListType: tutorial
-    links:
-    - text: Использование приложения ASP.NET с базой данных SQL
-      url: app-service-web-tutorial-dotnet-sqldatabase.md
-    - text: Приложение ASP.NET Core с Базой данных SQL
-      url: tutorial-dotnetcore-sqldb-app.md
-    - text: Приложение PHP (Laravel) с MySQL в Azure
-      url: tutorial-php-mysql-app.md
-    - text: Приложение Node.js (MEAN.js) с MongoDB
-      url: tutorial-nodejs-mongodb-app.md
-    - text: Приложение Java (Spring Boot) с Cosmos DB
-      url: tutorial-java-spring-cosmosdb.md
-    - text: Приложение Python (Django) с PostgreSQL
-      url: tutorial-python-postgresql-app.md
-    - text: Приложение Ruby (Rails) с PostgreSQL
-      url: tutorial-ruby-postgres-app.md
-- title: Передача кода или содержимого
-  linkLists:
-  - linkListType: deploy
-    links:
-    - text: Передача содержимого с использованием FTP
-      url: deploy-ftp.md
-    - text: Передача содержимого в виде ZIP-пакетов
-      url: deploy-zip.md
-    - text: Отправка Git с локального компьютера
-      url: deploy-local-git.md
-    - text: Синхронизация содержимого с OneDrive или Dropbox
-      url: deploy-content-sync.md
-    - text: CI/CD с использованием GitHub, BitBucket и т. д.
-      url: deploy-continuous-deployment.md
-    - text: Запуск из пакета
-      url: deploy-run-package.md
 - title: Запуск пользовательских контейнеров
   linkLists:
   - linkListType: quickstart
@@ -120,6 +84,24 @@ landingContent:
       url: configure-connect-to-azure-storage.md
     - text: Развертывание с помощью действий GitHub
       url: deploy-container-github-action.md
+- title: Приложение CRUD с базой данных
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Использование приложения ASP.NET с базой данных SQL
+      url: app-service-web-tutorial-dotnet-sqldatabase.md
+    - text: Приложение ASP.NET Core с Базой данных SQL
+      url: tutorial-dotnetcore-sqldb-app.md
+    - text: Приложение PHP (Laravel) с MySQL в Azure
+      url: tutorial-php-mysql-app.md
+    - text: Приложение Node.js (MEAN.js) с MongoDB
+      url: tutorial-nodejs-mongodb-app.md
+    - text: Приложение Java (Spring Boot) с Cosmos DB
+      url: tutorial-java-spring-cosmosdb.md
+    - text: Приложение Python (Django) с PostgreSQL
+      url: tutorial-python-postgresql-app.md
+    - text: Приложение Ruby (Rails) с PostgreSQL
+      url: tutorial-ruby-postgres-app.md
 - title: Управление и интеграция
   linkLists:
   - linkListType: concept
@@ -146,6 +128,46 @@ landingContent:
       url: configure-domain-traffic-manager.md
     - text: Резервное копирование приложения в большие двоичные объекты хранилища
       url: manage-backup.md
+- title: Передача кода или содержимого
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Передача содержимого с использованием FTP
+      url: deploy-ftp.md
+    - text: Передача содержимого в виде ZIP-пакетов
+      url: deploy-zip.md
+    - text: Отправка Git с локального компьютера
+      url: deploy-local-git.md
+    - text: Синхронизация содержимого с OneDrive или Dropbox
+      url: deploy-content-sync.md
+    - text: CI/CD с использованием GitHub, BitBucket и т. д.
+      url: deploy-continuous-deployment.md
+    - text: Запуск из пакета
+      url: deploy-run-package.md
+- title: Отслеживание работы приложения
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Интеграция Службы приложений с Azure Monitor (предварительная версия)
+      url: https://azure.github.io/AppService/2019/11/01/App-Service-Integration-with-Azure-Monitor.html
+    - text: Типы журналов для интеграции с Azure Monitor (предварительная версия)
+      url: https://azure.github.io/AppService/2020/06/25/New-Logs-Available-for-Azure-Monitor-Integration.html
+  - linkListType: tutorial
+    links:
+    - text: Устранение ошибок с помощью Azure Monitor (предварительная версия)
+      url: tutorial-troubleshoot-monitor.md
+  - linkListType: how-to-guide
+    links:
+    - text: Включение журналов диагностики
+      url: troubleshoot-diagnostic-logs.md
+    - text: Получение данных о событиях ресурса
+      url: get-resource-events.md
+    - text: Проверка работоспособности
+      url: monitor-instances-health-check.md
+  - linkListType: reference
+    links:
+    - text: Квоты и оповещения
+      url: web-sites-monitor.md
 - title: Дополнительные ресурсы
   linkLists:
   - linkListType: video
