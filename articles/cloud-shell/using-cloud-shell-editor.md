@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: 7f597bb5cba1a12bdb93325fe2b877ffc644e3e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e3ea9222b0f231250bde43fb86c07847ca4835e
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "60199234"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832341"
 ---
 # <a name="using-the-azure-cloud-shell-editor"></a>Использование редактора Azure Cloud Shell
 
@@ -52,5 +52,6 @@ Azure Cloud Shell включает в себя встроенный редакт
 Поддержка выделения кода в редакторе Cloud Shell реализуется с помощью функций верхнего уровня при использовании определений синтаксиса Monarch в [редакторе Monaco](https://github.com/Microsoft/monaco-editor). Чтобы узнать, как внести свой вклад, перейдите к этому [руководству по Monaco](https://github.com/Microsoft/monaco-editor/blob/master/CONTRIBUTING.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Попробуйте краткое руководство по bash в Cloud Shell](quickstart.md) 
- [Просмотрите полный список интегрированных средств Cloud Shell](features.md)
+
+- [Попробуйте краткое руководство по bash в Cloud Shell](quickstart.md)
+- [Просмотрите полный список интегрированных средств Cloud Shell](features.md)

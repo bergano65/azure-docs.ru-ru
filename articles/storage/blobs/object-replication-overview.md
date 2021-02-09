@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/13/2021
+ms.date: 02/08/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e7fa6b1ee7c92f82c3e15335991f5a240c7acc52
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 391c33e72f45e7c0c0b56128b32a8e73399e417a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762885"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834329"
 ---
 # <a name="object-replication-for-block-blobs"></a>Репликация объектов для блочных BLOB-объектов
 
@@ -42,6 +42,8 @@ ms.locfileid: "98762885"
 - [Управление версиями BLOB-объектов](versioning-overview.md): необходимо включить как в исходной, так и в конечной учетной записи. Сведения о том, как включить управление версиями, см. в разделе [Включение управления версиями BLOB-объектов и управление ими](versioning-enable.md).
 
 Включение канала изменений и управления версиями BLOB-объектов может повлечь за собой дополнительные затраты. Дополнительные сведения см. на странице [цен на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
+
+Репликация объектов поддерживается только для учетных записей хранения общего назначения версии 2. Исходная и Целевая учетные записи должны быть общими для общего назначения версии 2. 
 
 ## <a name="how-object-replication-works"></a>Как работает репликация объектов
 

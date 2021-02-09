@@ -6,14 +6,17 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 02/20/2018
-ms.openlocfilehash: 18c07266cec68aaf6e95fe4085b9d21244fecff4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d7c7068c4a8669cdff782267030d38ac0f73584
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761045"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832935"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
+
+> [!IMPORTANT]
+> Начиная с 1 июля 2021 вы не сможете добавлять новые тесты в существующую рабочую область или включать новую рабочую область в Монитор производительности сети. Вы можете продолжать использовать тесты, созданные до 1 июля 2021. Чтобы минимизировать перерыв в работе службы для текущих рабочих нагрузок, [перенесите тесты из монитор производительности сети в новый монитор подключений](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) в наблюдатель за сетями Azure до 29 февраля 2024.
 
 С помощью монитора подключений службы в [Мониторе производительности сети](network-performance-monitor.md) можно отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом. К таким конечным точкам относятся веб-сайты, приложения SaaS, приложения PaaS и базы данных SQL. 
 
@@ -132,6 +135,5 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 | Exchange Online | * outlook.office365.us <br> * attachments.office365-net.us <br> * autodiscover-s.office365.us <br> * manage.office365.us <br> * scc.office365.us |
 | MS Teams | gov.teams.microsoft.us | 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
-

@@ -12,14 +12,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: 3c094bf5397d15e24c3b1a58369a74438c99017e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: ff4882f2146a8b978047df2fcf6c52734534979f
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018417"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833989"
 ---
 # <a name="migrate-to-connection-monitor-from-connection-monitor-classic"></a>Миграция в монитор подключений из монитора подключений (классическая модель)
+
+> [!IMPORTANT]
+> Начиная с 1 июля 2021 вы не сможете добавлять новые мониторы подключений в мониторе подключений (классическая модель), но можно продолжать использовать существующие мониторы подключения, созданные до 1 июля 2021. Чтобы минимизировать перерыв в работе служб для текущих рабочих нагрузок, [выполните миграцию из монитора подключений (классическая модель) в новый монитор подключений](migrate-to-connection-monitor-from-connection-monitor-classic.md)  наблюдателя за сетями Azure до 29 февраля 2024.
 
 Можно перенести существующие мониторы подключения в новый, Улучшенный монитор подключения с помощью нескольких щелчков мыши и с нулевым временем простоя. Дополнительные сведения о преимуществах см. в разделе [монитор подключения](./connection-monitor-overview.md).
 

@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: devx-track-csharp
 ms.topic: conceptual
 ms.date: 10/09/2020
-ms.openlocfilehash: 9343bc424a0a38da173a56701528c4fd7549aabd
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 908254fec0d9e92b0e30c2e4968c3c505bbbdbf8
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734663"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833836"
 ---
 # <a name="configure-virtual-network-support-for-a-premium-tier-azure-cache-for-redis-instance"></a>Настройка поддержки виртуальной сети для кэша Azure уровня "Премиум" для экземпляра Redis
 
@@ -77,7 +77,7 @@ ms.locfileid: "97734663"
 
 1. При необходимости на вкладке **теги** введите имя и значение, если требуется классифицировать ресурс.
 
-1. Выберите **Review + create** (Просмотреть и создать). Вы перейдете на вкладку " **Проверка и создание** ", где Azure проверяет конфигурацию.
+1. Выберите **Просмотреть и создать**. Вы перейдете на вкладку " **Проверка и создание** ", где Azure проверяет конфигурацию.
 
 1. После появления сообщения "Зеленая **Проверка пройдена** " выберите **создать**.
 
@@ -178,7 +178,7 @@ public static ConnectionMultiplexer Connection
 * Исходящие сетевые подключения к конечным точкам хранилища Azure по всему миру. Включены конечные точки, расположенные в том же регионе, что и кэш Azure для экземпляра Redis и конечные точки хранилища, расположенные в *других* регионах Azure. Конечные точки службы хранилища Azure разрешаются в следующих доменах DNS: *Table.Core.Windows.NET*, *BLOB.Core.Windows.NET*, *Queue.Core.Windows.NET* и *File.Core.Windows.NET*.
 * Исходящее сетевое подключение к *OCSP.DigiCert.com*, *crl4.DigiCert.com*, *OCSP.msocsp.com*, *mscrl.Microsoft.com*, *crl3.DigiCert.com*, *cacerts.DigiCert.com*, *oneocsp.Microsoft.com* и *CRL.Microsoft.com*. Это подключение требуется для поддержки функций TLS/SSL.
 * Конфигурация DNS для виртуальной сети должна поддерживать разрешение всех конечных точек и доменов, указанных в предыдущих точках. Эти требования DNS обеспечиваются за счет настройки допустимой инфраструктуры DNS и ее поддержания для виртуальной сети.
-* Исходящее сетевое подключение к следующим Azure Monitor конечным точкам, которые разрешаются в следующих доменах DNS: *shoebox2-Black.shoebox2.Metrics.nsatc.NET*, *North-prod2.prod2.Metrics.nsatc.NET*, *azglobal-Black.azglobal.Metrics.nsatc.NET*, *shoebox2-Red.shoebox2.Metrics.nsatc.NET*, *East-prod2.prod2.Metrics.nsatc.NET* и *azglobal-Red.azglobal.Metrics.nsatc.NET*.
+* Исходящее сетевое подключение к следующим Azure Monitor конечным точкам, которые разрешаются в следующих доменах DNS: *shoebox2-Black.shoebox2.Metrics.nsatc.NET*, *North-prod2.prod2.Metrics.nsatc.NET*, *azglobal-Black.azglobal.Metrics.nsatc.NET*, *shoebox2-Red.shoebox2.Metrics.nsatc.NET*, *East-prod2.prod2.Metrics.nsatc.NET*, *azglobal-Red.azglobal.Metrics.nsatc.NET*, *shoebox3.prod.microsoftmetrics.com*, *shoebox3-Red.prod.microsoftmetrics.com* и *shoebox3-Black.prod.microsoftmetrics.com*.
 
 ### <a name="how-can-i-verify-that-my-cache-is-working-in-a-virtual-network"></a>Как проверить, работает ли кэш в виртуальной сети?
 

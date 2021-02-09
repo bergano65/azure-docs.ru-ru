@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 07/15/2020
+ms.date: 02/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 4deeec1b6c9db80c15b001efb7b40bdb4bb9d515
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c87c8cfd40903f6296f0a36f5c83c0b5c5cb7818
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452646"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831594"
 ---
 # <a name="azure-stack-edge-pro-system-requirements"></a>Требования к системе для Azure Stack пограничных Pro
 
 В этой статье описываются важные требования к системе для решения Microsoft Azure Stack пограничной Pro и для клиентов, подключающихся к Azure Stack. Перед развертыванием Azure Stack пограничной Pro рекомендуется внимательно ознакомиться со сведениями. Данные сведения можно просматривать во время развертывания и при последующих операциях.
 
-Требования к системе для Azure Stack ребра Pro включают:
+Требования к системе для Azure Stack ребра Pro включают: 
 
 - **Требования к программному обеспечению для узлов**. Описание поддерживаемых платформ, браузеров для локальной конфигурации пользовательского интерфейса, клиентов SMB и любых дополнительных требований для клиентов, которые получают доступ к устройству.
 - **Требования к сети для устройства**. Предоставление информации о любых сетевых требованиях к работе физическое устройства.

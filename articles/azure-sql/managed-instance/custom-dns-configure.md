@@ -12,14 +12,14 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 07/17/2019
-ms.openlocfilehash: 017698975706aa8501cd059351cf9a9d88594f77
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a54907dd3f7b3fbc06033624f14b12de14d9afb9
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779906"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831507"
 ---
-# <a name="configure-a-custom-dns-for-azure-sql-managed-instance"></a>Настройка пользовательского DNS для Управляемый экземпляр Azure SQL
+# <a name="configure-a-custom-dns-for-azure-sql-managed-instance"></a>Настройка пользовательской службы DNS для Управляемого экземпляра SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
 Управляемый экземпляр Azure SQL необходимо развернуть в [виртуальной сети](../../virtual-network/virtual-networks-overview.md)Azure. Существует несколько сценариев (например, Database Mail, связанные серверы с другими экземплярами SQL Server в облачной или гибридной среде), для которых требуется, чтобы имена частных узлов разрешались из Управляемого экземпляра SQL. В таком случае в Azure необходимо настроить пользовательскую службу DNS. 
@@ -30,7 +30,7 @@ ms.locfileid: "92779906"
 > Всегда используйте полное доменное имя (FQDN) для почтового сервера, для экземпляра SQL Server и для других служб, даже если они находятся в частной зоне DNS. Например, используйте `smtp.contoso.com` для почтового сервера, так как `smtp` не будет правильно разрешаться. Для создания связанного сервера или репликации, которая ссылается на SQL Server виртуальных машин в одной виртуальной сети, также требуется полное доменное имя и DNS-суффикс по умолчанию. Например, `SQLVM.internal.cloudapp.net`. Дополнительные сведения см. в разделе [разрешение имен, использующее собственный DNS-сервер](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server).
 
 > [!IMPORTANT]
-> Обновление DNS-серверов виртуальной сети не повлияет на Управляемый экземпляр SQL немедленно. Конфигурация DNS Управляемый экземпляр SQL обновляется по истечении срока действия аренды DHCP или после обновления платформы (в зависимости от того, что происходит раньше). **Пользователям рекомендуется задать конфигурацию DNS виртуальной сети перед созданием своего первого управляемого экземпляра.**
+> Обновление DNS-серверов виртуальной сети не повлияет на Управляемый экземпляр SQL немедленно. Дополнительные сведения см. в статье [Синхронизация параметров DNS-серверов виртуальной сети в управляемый экземпляре SQL в виртуальном кластере](synchronize-vnet-dns-servers-setting-on-virtual-cluster.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

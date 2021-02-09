@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 20c6841bb596c7f4a32ef689423515a8da59a945
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 45447a26c0455fc5945af8b8e9f7442af7facfbe
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541561"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99830691"
 ---
 # <a name="application-development-overview-for-azure-database-for-mysql"></a>Обзор разработки приложений для базы данных Azure для MySQL 
 В этой статье рассматриваются рекомендации по проектированию, которые разработчик должен учитывать при написании кода приложения для подключения к базе данных Azure для MySQL. 
@@ -23,7 +23,7 @@ ms.locfileid: "94541561"
 Доступны примеры кода на разных языках программирования и для разных платформ. Ссылки на примеры кода вы найдете в статье [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).
 
 ## <a name="tools"></a>Инструменты
-База данных Azure для MySQL использует версию MySQL для сообщества, совместимую с распространенными средствами управления MySQL, такими как Workbench или служебные программы MySQL (mysql.exe, [phpMyAdmin](https://www.phpmyadmin.net/), [Navicat](https://www.navicat.com/products/navicat-for-mysql) и др.). Для взаимодействия со службой базы данных также можно использовать портал Azure, Azure CLI и интерфейсы REST API.
+База данных Azure для MySQL использует версию сообщества MySQL, совместимую с общими средствами управления MySQL, такими как средства Workbench или MySQL, такие как mysql.exe, [PhpMyAdmin](https://www.phpmyadmin.net/), [Navicat](https://www.navicat.com/products/navicat-for-mysql), [дбфорже Studio для MySQL](https://www.devart.com/dbforge/mysql/studio/) и других. Для взаимодействия со службой базы данных также можно использовать портал Azure, Azure CLI и интерфейсы REST API.
 
 ## <a name="resource-limitations"></a>Ограничения ресурсов
 База данных Azure для MySQL управляет ресурсами, доступными для сервера, используя два различных механизма: 

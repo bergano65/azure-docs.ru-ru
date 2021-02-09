@@ -11,17 +11,17 @@ ms.workload: identity
 ms.date: 02/29/2020
 ms.author: kenwith
 ms.reviewer: baselden
-ms.openlocfilehash: 13fe9c52312ba6053a6093ec51d42f05a44627e0
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 10e548eb87b7ac4254fa916f804a6710252be7fc
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258292"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99830725"
 ---
 # <a name="plan-azure-active-directory-my-apps-configuration"></a>Планирование Azure Active Directory конфигурации моих приложений
 
 > [!NOTE]
-> Эта статья предназначена для ИТ-специалистов, которым необходимо спланировать конфигурацию портала "Мои приложения" Организации. Сведения о том, как использовать мои приложения и коллекции, см. в разделе [Вход и запуск приложений с портала "Мои приложения"](../user-help/my-apps-portal-end-user-access.md).
+> Эта статья предназначена для ИТ-специалистов, которым необходимо спланировать конфигурацию портала "Мои приложения" Организации. 
 >
 > **Документацию для конечных пользователей см. в разделе [Вход и запуск приложений с портала "Мои приложения"](../user-help/my-apps-portal-end-user-access.md)**.
 
@@ -139,7 +139,7 @@ Azure AD поддерживает несколько вариантов един
 
 Дополнительные сведения о расширении см. в разделе [Установка расширения браузера "Мои приложения](../user-help/my-apps-portal-end-user-access.md)".
 
-Если необходимо интегрировать эти приложения, необходимо определить механизм для развертывания расширения в масштабе с помощью [поддерживаемых браузеров](../user-help/my-apps-portal-end-user-access.md). Доступные параметры: 
+Если необходимо интегрировать эти приложения, необходимо определить механизм для развертывания расширения в масштабе с помощью [поддерживаемых браузеров](../user-help/my-apps-portal-end-user-access.md). Доступны следующие варианты:
 
 * [Управляемая пользователем загрузка и настройка для Chrome, Firefox, Microsoft ребр или IE](../user-help/my-apps-portal-end-user-access.md)
 
