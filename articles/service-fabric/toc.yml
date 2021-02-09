@@ -713,8 +713,6 @@
                   href: service-fabric-cluster-security-update-certs-azure.md
                 - name: Удаленное подключение к виртуальной машине узла кластера
                   href: service-fabric-cluster-remote-connect-to-azure-cluster-node.md
-                - name: Обновление узлов кластера для использования управляемых дисков
-                  href: upgrade-managed-disks.md
         - name: Изолированные кластеры
           items:
             - name: Создание

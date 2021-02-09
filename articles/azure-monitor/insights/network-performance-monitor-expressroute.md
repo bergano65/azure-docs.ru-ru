@@ -6,14 +6,17 @@ ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 11/27/2018
-ms.openlocfilehash: a9f268e5080a5c04c5cdb4767f2db5fd2d77cd3c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 91bb303fca4517f84ad8b430f26543e9f116fddc
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87326160"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833088"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
+
+> [!IMPORTANT]
+> Начиная с 1 июля 2021 вы не сможете добавлять новые тесты в существующую рабочую область или включать новую рабочую область в Монитор производительности сети. Вы можете продолжать использовать тесты, созданные до 1 июля 2021. Чтобы минимизировать перерыв в работе службы для текущих рабочих нагрузок, [перенесите тесты из монитор производительности сети в новый монитор подключений](https://docs.microsoft.com/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor) в наблюдатель за сетями Azure до 29 февраля 2024.
 
 Монитор ExpressRoute Azure в [Мониторе производительности сети](network-performance-monitor.md) можно использовать, чтобы отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute. Ключевыми преимуществами являются: 
 
@@ -141,4 +144,3 @@ ms.locfileid: "87326160"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.
-

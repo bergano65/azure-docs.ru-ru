@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: 664264f2cd810f232b967f5af78ba3d522f0a41f
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 857fba6dfa6191163c06c423cefb42d57f25dc1d
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060016"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980581"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Общие сведения о изоляции и конфиденциальности виртуальной сети
 
@@ -28,13 +28,13 @@ ms.locfileid: "98060016"
 
 **1. Обзор виртуальной сети**  >  [2. Обеспечьте безопасность рабочей области](how-to-secure-workspace-vnet.md)  >  [3. Обеспечьте безопасность среды обучения](how-to-secure-training-vnet.md)  >  [4. Обеспечьте безопасность окружения](how-to-secure-inferencing-vnet.md)  >  [5. Включить функциональные возможности студии](how-to-enable-studio-virtual-network.md)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы со следующими разделами:
 + [Виртуальные сети Azure](../virtual-network/virtual-networks-overview.md)
 + [IP-сети](../virtual-network/public-ip-addresses.md)
 + [Приватный канал Azure](how-to-configure-private-link.md)
-+ [Группы безопасности сети](../virtual-network/network-security-groups-overview.md)
++ [Группы безопасности сети (NSG)](../virtual-network/network-security-groups-overview.md)
 + [Сетевые брандмауэры](../firewall/overview.md)
 
 ## <a name="example-scenario"></a>Пример сценария
@@ -137,6 +137,15 @@ ms.locfileid: "98060016"
 ### <a name="limitations"></a>Ограничения
 - Кластеры AKS должны принадлежать к той же виртуальной сети, что и Рабочая область, и связанные с ней ресурсы. 
 
+## <a name="optional-enable-public-access"></a>Необязательно: Включение общего доступа
+
+Вы можете защитить рабочую область за виртуальной сетью с помощью частной конечной точки и по-прежнему разрешить доступ через общедоступный Интернет. Начальная конфигурация аналогична [защите рабочей области и связанных с ней ресурсов](#secure-the-workspace-and-associated-resources). 
+
+После защиты рабочей области с помощью закрытой ссылки вы [Включите общий доступ](how-to-configure-private-link.md#enable-public-access). После этого вы сможете получить доступ к рабочей области из общедоступного Интернета и виртуальной сети.
+
+### <a name="limitations"></a>Ограничения
+
+- Если вы используете Машинное обучение Azure Studio через общедоступный Интернет, некоторые функции, такие как конструктор, могут не получить доступ к данным. Эта проблема возникает, когда данные хранятся в службе, защищенной за пределы виртуальной сети. Например, учетная запись хранения Azure.
 ## <a name="optional-enable-studio-functionality"></a>Необязательно: Включение функциональности Studio
 
 [Защита рабочей области](#secure-the-workspace-and-associated-resources)  >  [Защита среды обучения](#secure-the-training-environment)  >  [Защита окружения](#secure-the-inferencing-environment)  >  **Включить функциональные возможности студии**  >  [Настройка параметров брандмауэра](#configure-firewall-settings)

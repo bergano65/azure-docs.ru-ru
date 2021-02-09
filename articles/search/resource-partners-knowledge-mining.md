@@ -7,13 +7,13 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/17/2020
-ms.openlocfilehash: bb1c29f292cc099eaa7a84094f6f4a2674ae02aa
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.date: 02/04/2021
+ms.openlocfilehash: 68c50cf72c5592b7593c9f87445679b08116dd43
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97682739"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980116"
 ---
 # <a name="partner-solutions"></a>Решения партнеров
 
@@ -21,6 +21,5 @@ ms.locfileid: "97682739"
 
 | Партнер | Описание | Ссылка на веб-сайт или продукт |
 |---------|-------------|----------------------|
-| ![оранженкст](media/resource-partners/orangenxt-beldmerk-boven-160px.png "Логотип компании") | [**Оранженкст**](https://orangenxt.com/) предлагает опыт в области консолидации данных, моделирования данных и создания навыков, включающий пользовательскую логику, разработанную для конкретных вариантов использования.<br/><br/>[**Дигиталнкст Search**](https://orangenxt.com/solutions/digitalnxt/digitalnxt-search/) — это оранженкст решение, объединяющее AI, оптическое распознавание символов (OCR) и обработку естественного языка в конвейере Azure когнитивный Поиск для облегчения извлечения результатов поиска из нескольких структурированных и неструктурированных источников данных. **Дигиталнкст Поиск** — это сложные пользовательские навыки для интерпретации и корреляции выбранных данных.<br/><br/>| [Страница продукта](https://orangenxt.com/solutions/digitalnxt/digitalnxt-search/)|
-
-<!-- Review [**digitalNXT** case studies](https://orangenxt.com/solutions/digitalnxt/digitalnxt-search/problems-causes-solutions/) for a closer look at specific solutions. -->
+| ![Neal Analytics](media/resource-partners/neal-analytics-logo.png "Логотип компании Neal Analytics") | [**Neal Analytics**](https://nealanalytics.com/) предлагает более 10 лет облачных, данных и искусственного интеллекта в Azure. ИТ-специалисты получили подробные навыки работы с Azure ии и службами ML. Neal может помочь клиентам в настройке и реализации Когнитивный поиск в самых разных вариантах использования. Опыт Neal Analytics лежит в основе поиска на корпоративном уровне, формы и автоматизации процессов для сопоставления доменов для извлечения и анализа данных, обнаружения плагиарисм и многого другого. | [Страница продукта](https://go.nealanalytics.com/cognitive-search)|
+| ![оранженкст](media/resource-partners/orangenxt-beldmerk-boven-160px.png "Логотип компании Оранженкст") | [**Оранженкст**](https://orangenxt.com/) предлагает опыт в области консолидации данных, моделирования данных и создания навыков, включающий пользовательскую логику, разработанную для конкретных вариантов использования.<br/><br/>Дигиталнкст Search — это Оранженкст решение, объединяющее AI, оптическое распознавание символов (OCR) и обработку естественного языка в конвейере Azure Когнитивный поиск для облегчения извлечения результатов поиска из нескольких структурированных и неструктурированных источников данных. Дигиталнкст Поиск — это сложные пользовательские навыки для интерпретации и корреляции выбранных данных.<br/><br/>| [Страница продукта](https://orangenxt.com/solutions/digitalnxt/digitalnxt-search/)|

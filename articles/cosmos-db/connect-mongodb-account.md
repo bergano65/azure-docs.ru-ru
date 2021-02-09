@@ -8,12 +8,16 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 03/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 06b03ac1cfe37307a5839be0d5ca3b1003db35af
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+adobe-target: true
+adobe-target-activity: DocsExp-A/B-384740-MongoDB-2.8.2021
+adobe-target-experience: Experience B
+adobe-target-content: connect-mongodb-account-experimental.md
+ms.openlocfilehash: d3e619559f1fb2500904aa7349aa131fd9b5fc00
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93072424"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980802"
 ---
 # <a name="connect-a-mongodb-application-to-azure-cosmos-db"></a>Подключение приложения MongoDB к Azure Cosmos DB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -35,7 +39,7 @@ ms.locfileid: "93072424"
 1. В веб браузере Войдите в [портал Azure](https://portal.azure.com).
 2. В колонке **Azure Cosmos DB** выберите API.
 3. В левой панели в колонке учетной записи щелкните **Быстрый запуск**.
-4. Выберите платформу ( **.NET** , **Node.js** , **оболочка MongoDB** , **Java** , **Python** ). Если соответствующего драйвера или средства нет в списке, не беспокойтесь, мы постоянно добавляем дополнительные фрагменты кода для подключения. Оставьте в конце статьи свои комментарии о том, что, по вашему мнению, нужно добавить. Дополнительные сведения о том, как создавать собственное подключение, см.в разделе [Получение строки подключения MongoDB для настройки](#get-the-mongodb-connection-string-to-customize).
+4. Выберите платформу (**.NET**, **Node.js**, **оболочка MongoDB**, **Java**, **Python**). Если соответствующего драйвера или средства нет в списке, не беспокойтесь, мы постоянно добавляем дополнительные фрагменты кода для подключения. Оставьте в конце статьи свои комментарии о том, что, по вашему мнению, нужно добавить. Дополнительные сведения о том, как создавать собственное подключение, см.в разделе [Получение строки подключения MongoDB для настройки](#get-the-mongodb-connection-string-to-customize).
 5. Скопируйте и вставьте фрагмент кода в приложение MongoDB.
 
     :::image type="content" source="./media/connect-mongodb-account/QuickStartBlade.png" alt-text="Колонка &quot;Быстрый запуск&quot;":::
@@ -58,7 +62,7 @@ Azure Cosmos DB поддерживает стандартный формат URI
 
 `mongodb://username:password@host:port/[database]?ssl=true`
 
-Значения для этой строки можно найти в колонке **Строка подключения** , как показано выше:
+Значения для этой строки можно найти в колонке **Строка подключения**, как показано выше:
 
 * Имя пользователя (обязательно): Cosmos учетной записи.
 * Password (обязательно): пароль учетной записи Cosmos.

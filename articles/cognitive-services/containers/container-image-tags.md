@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: reference
 ms.date: 11/17/2020
 ms.author: aahi
-ms.openlocfilehash: 8abe785cac4f46401b3efeb7868b061d13810b29
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: c3023c32f2a31235f5a733639a548c190197b413
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576233"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981125"
 ---
 # <a name="azure-cognitive-services-container-image-tags-and-release-notes"></a>Теги образа контейнера Cognitive Services Azure и заметки о выпуске
 
@@ -36,7 +36,7 @@ Azure Cognitive Services предлагает множество образов 
 | `latest`                      |       |
 | `1.1.013560003-amd64-preview` |      |
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
@@ -53,16 +53,16 @@ Azure Cognitive Services предлагает множество образов 
 # <a name="latest-version"></a>[Последняя версия](#tab/current)
 
 Заметки о выпуске для `3.2-preview.2` :
-
-* Новый контейнер версии 3.2
+* Выпуск дистролесс
+* Параметр Реадингордер для выбора порядка текстовых строк в ответе JSON
+* Расширенное ведение журнала
+* Исправления для CJK Model
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
-| `latest`                      |       |
-| `3.2-preview.2` |  |
-| `3.2-preview.1` |  |
+|3.2.2.014850001-49e0eac6-AMD64-Preview                     |       |
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 Заметки о выпуске для `v2.0.013250001-amd64-preview` :
 
@@ -116,7 +116,7 @@ Azure Cognitive Services предлагает множество образов 
 | `1.1.009301-amd64-preview`    |       |
 
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
@@ -1075,7 +1075,7 @@ Azure Cognitive Services предлагает множество образов 
 | `latest`                      |       |
 | `1.1.013570001-amd64` |       |
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 | Теги изображений                    | Примечания |
 |-------------------------------|:------|
@@ -1099,7 +1099,7 @@ Azure Cognitive Services предлагает множество образов 
 | `1.1.013570001-amd64` | |
    
 
-# <a name="previous-versions"></a>[предыдущих версий](#tab/previous)
+# <a name="previous-versions"></a>[Предыдущие версии](#tab/previous)
 
 
 | Теги изображений                    | Примечания |

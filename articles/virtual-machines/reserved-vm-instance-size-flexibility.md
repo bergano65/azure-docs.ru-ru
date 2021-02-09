@@ -7,13 +7,13 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/02/2021
-ms.author: yashesvi
-ms.openlocfilehash: e6e96ff41503751741c8afc2229d66fd596e0806
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.author: yashar
+ms.openlocfilehash: cf8f2f794be4340de4419457872ed5ff4bb4a686
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525370"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99980445"
 ---
 # <a name="virtual-machine-size-flexibility-with-reserved-vm-instances"></a>Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин
 
@@ -50,6 +50,6 @@ ms.locfileid: "99525370"
 
 Мы сохраним URL-адрес файла и схему, чтобы вы могли использовать этот файл программным способом. Вскоре данные также будут доступны через API.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [что такое резервирование Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md).

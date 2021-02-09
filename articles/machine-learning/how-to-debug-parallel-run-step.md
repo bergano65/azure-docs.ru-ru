@@ -11,12 +11,12 @@ ms.reviewer: larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 09/23/2020
-ms.openlocfilehash: 6ea796fb2ec038a03595d37d903fe8ee3ce904db
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: a0f813253520d76731a9b49a89b0bcace7c2ef34
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070275"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979170"
 ---
 # <a name="troubleshooting-the-parallelrunstep"></a>Устранение неполадок ParallelRunStep
 
@@ -171,7 +171,16 @@ parallelrun_step = ParallelRunStep(
     - Общее число элементов, число успешно обработанных элементов и число элементов, обработка которых завершилась сбоем.
     - Время начала, продолжительность, время обработки и время выполнения метода.
 
-Здесь также приведены сведения об использовании ресурсов процессами для каждой рабочей роли. Эти сведения доступны в файле CSV по адресу `~/logs/sys/perf/<ip_address>/node_resource_usage.csv`. Сведения о каждом процессе доступны в разделе `~logs/sys/perf/<ip_address>/processes_resource_usage.csv` .
+Можно также просмотреть результаты периодических проверок использования ресурсов для каждого узла. Файлы журнала и файлы установки находятся в этой папке:
+
+- `~/logs/perf`: Задайте `--resource_monitor_interval` для изменения интервала проверки в секундах. По умолчанию используется интервал `600` , который составляет примерно 10 минут. Чтобы прерывать наблюдение, задайте значение `0` . Каждая `<ip_address>` Папка включает:
+
+    - `os/`: Сведения обо всех выполняющихся процессах в узле. Одна проверка запускает команду операционной системы и сохраняет результат в файл. В Linux команда имеет значение `ps` . В Windows используйте `tasklist` .
+        - `%Y%m%d%H`: Имя вложенной папки — это время в час.
+            - `processes_%M`: Файл заканчивается в течение минуты времени проверки.
+    - `node_disk_usage.csv`: Подробные сведения об использовании диска узлом.
+    - `node_resource_usage.csv`: Общие сведения об использовании ресурсов узла.
+    - `processes_resource_usage.csv`: Общие сведения об использовании ресурсов для каждого процесса.
 
 ### <a name="how-do-i-log-from-my-user-script-from-a-remote-context"></a>Ведение журнала из пользовательского сценария в удаленном контексте
 
@@ -233,25 +242,25 @@ labels_path = args.labels_dir
 
 ```python
 service_principal = ServicePrincipalAuthentication(
-    tenant_id="**_",
-    service_principal_id="_*_",
-    service_principal_password="_*_")
+    tenant_id="***",
+    service_principal_id="***",
+    service_principal_password="***")
  
 ws = Workspace(
-    subscription_id="_*_",
-    resource_group="_*_",
-    workspace_name="_*_",
+    subscription_id="***",
+    resource_group="***",
+    workspace_name="***",
     auth=service_principal
     )
  
-default_blob_store = ws.get_default_datastore() # or Datastore(ws, '_*_datastore-name_*_') 
-ds = Dataset.File.from_files(default_blob_store, '_*path**_')
-registered_ds = ds.register(ws, '_*_dataset-name_*_', create_new_version=True)
+default_blob_store = ws.get_default_datastore() # or Datastore(ws, '***datastore-name***') 
+ds = Dataset.File.from_files(default_blob_store, '**path***')
+registered_ds = ds.register(ws, '***dataset-name***', create_new_version=True)
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-_ См. следующие [записные книжки Jupyter, демонстрирующие машинное обучение Azure конвейеры](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
+* См. следующие [записные книжки Jupyter, демонстрирующие конвейеры машинное обучение Azure](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 
 * Сведения о пакете [azureml-Pipeline-пошаговые инструкции](/python/api/azureml-pipeline-steps/azureml.pipeline.steps?preserve-view=true&view=azure-ml-py) см. в справочнике по пакету SDK. Просмотрите справочную [документацию](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?preserve-view=true&view=azure-ml-py) по классу параллелрунстеп.
 

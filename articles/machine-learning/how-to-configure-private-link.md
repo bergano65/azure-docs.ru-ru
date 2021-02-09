@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 09/30/2020
-ms.openlocfilehash: 2953f85a5c21cdd670d6e133d09ffacf06f178ef
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5ba1b9d53255406a73b1b74dbc59fe39e3f9a0d7
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842708"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979187"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области
 
@@ -35,7 +35,8 @@ ms.locfileid: "94842708"
 
 ## <a name="limitations"></a>Ограничения
 
-Использование рабочей области Машинное обучение Azure с частной ссылкой недоступна в регионах Azure для государственных организаций или в регионах Azure для Китая.
+* Использование рабочей области Машинное обучение Azure с частной ссылкой недоступна в регионах Azure для государственных организаций или в регионах Azure для Китая.
+* Если вы включили общий доступ для рабочей области, защищенной с помощью частного канала, и используете Машинное обучение Azure Studio через общедоступный Интернет, некоторые функции, такие как конструктор, могут не получить доступ к данным. Эта проблема возникает, когда данные хранятся в службе, защищенной за пределы виртуальной сети. Например, учетная запись хранения Azure.
 
 ## <a name="create-a-workspace-that-uses-a-private-endpoint"></a>Создание рабочей области, использующей закрытую конечную точку
 
@@ -62,7 +63,7 @@ ws = Workspace.create(name='myworkspace',
     show_output=True)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_create) . Следующие параметры этой команды можно использовать для создания рабочей области с частной сетью, но для нее требуется существующая виртуальная сеть.
 
@@ -70,7 +71,7 @@ ws = Workspace.create(name='myworkspace',
 * `--pe-auto-approval`— Следует ли автоматически утверждать подключения частной конечной точки к рабочей области.
 * `--pe-resource-group`: Группа ресурсов для создания частной конечной точки в. Должна быть той же группой, которая содержит виртуальную сеть.
 * `--pe-vnet-name`— Существующая виртуальная сеть для создания частной конечной точки в.
-* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
+* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -103,7 +104,7 @@ ws.add_private_endpoint(private_endpoint_config=pe, private_endpoint_auto_approv
 
 Дополнительные сведения о классах и методах, используемых в этом примере, см. в разделе [приватиндпоинтконфиг](/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) and [Workspace.add_private_endpoint](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#add-private-endpoint-private-endpoint-config--private-endpoint-auto-approval-true--location-none--show-output-true--tags-none-).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Add](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
 
@@ -140,7 +141,7 @@ _, _, connection_name = ws.get_details()['privateEndpointConnections'][0]['id'].
 ws.delete_private_endpoint_connection(private_endpoint_connection_name=connection_name)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Delete](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
 
@@ -158,6 +159,31 @@ ws.delete_private_endpoint_connection(private_endpoint_connection_name=connectio
 > Чтобы избежать временного сбоя подключения, корпорация Майкрософт рекомендует сбрасывать кэш DNS на компьютерах, подключающихся к рабочей области, после включения частной связи. 
 
 Сведения о виртуальных машинах Azure см. в [документации по виртуальным машинам](../virtual-machines/index.yml).
+
+## <a name="enable-public-access"></a>Включить общий доступ
+
+После настройки рабочей области с помощью частной конечной точки можно дополнительно включить общий доступ к рабочей области. Это не приведет к удалению закрытой конечной точки. Он обеспечивает общий доступ в дополнение к закрытому доступу. Чтобы включить общий доступ к рабочей области с поддержкой закрытых ссылок, выполните следующие действия.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Чтобы удалить закрытую конечную точку, используйте [Workspace.delete_private_endpoint_connection](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#delete-private-endpoint-connection-private-endpoint-connection-name-) .
+
+```python
+from azureml.core import Workspace
+
+ws = Workspace.from_config()
+ws.update(allow_public_access_when_behind_vnet=True)
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+[Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Update](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_update) . Чтобы включить общий доступ к рабочей области, добавьте параметр `--allow-public-access true` .
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+
+В настоящее время невозможно включить эту функцию с помощью портала.
+
+---
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

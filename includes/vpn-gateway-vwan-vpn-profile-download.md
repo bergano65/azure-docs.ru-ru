@@ -5,37 +5,30 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 07/31/2020
+ms.date: 02/08/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: fc2393cfe87e2639ce40e66e6053d4d430518719
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3eb2d9469ab3a3d2c1d09e4adc3ee2cb1f86e6e
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87515351"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979079"
 ---
-## <a name="1-download-the-file"></a>1. Скачивание файла
-
-Выполните команды ниже. Скопируйте полученный URL-адрес в браузер, чтобы скачать ZIP-файл профиля.
-
-```azurepowershell-interactive
-$profile = New-AzVpnClientConfiguration -ResourceGroupName AADAuth -Name AADauthGW -AuthenticationMethod "EapTls"
-   
-$PROFILE.VpnProfileSASUrl
-```
-
-## <a name="2-extract-the-zip-file"></a>2. Извлечение ZIP-файла
+## <a name="extract-the-zip-file"></a>Извлечение ZIP-файла
 
 Извлеките ZIP-файл. Файл содержит следующие папки.
 
 * AzureVPN
 * Универсальный шаблон
-* Опенвпн (если вы включили параметр Опенвпн с **сертификатом Azure** или параметрами **проверки подлинности RADIUS** на шлюзе). Сведения о VPN-шлюзе см. в разделе [Создание клиента](../articles/vpn-gateway/openvpn-azure-ad-tenant.md). Сведения о виртуальной глобальной сети см. в разделе [Создание клиента — виртуальная глобальная сеть](../articles/virtual-wan/openvpn-azure-ad-tenant.md).
+* Опенвпн (если вы включили параметр Опенвпн с **сертификатом Azure** или параметрами **проверки подлинности RADIUS** на шлюзе). Выберите соответствующую статью, соответствующую вашей конфигурации, чтобы создать клиент.
 
-## <a name="3-retrieve-information"></a>3. Извлечение информации
+  * [VPN-шлюз — создание клиента](../articles/vpn-gateway/openvpn-azure-ad-tenant.md).
+  * [Виртуальная глобальная сеть — создание клиента](../articles/virtual-wan/openvpn-azure-ad-tenant.md).
 
-В папке **AzureVPN** перейдите к файлу ***azurevpnconfig.xml*** и откройте его в "Блокноте". Запишите текст между следующими тегами.
+## <a name="retrieve-information"></a>Получение сведений
+
+В папке **AzureVPN** перейдите к файлу **_azurevpnconfig.xml_** и откройте его в блокноте. Запишите текст между следующими тегами.
 
 ```
 <audience>          </audience>
@@ -49,11 +42,11 @@ $PROFILE.VpnProfileSASUrl
 
 При добавлении подключения используйте сведения, собранные на предыдущем шаге, для страницы сведений о профиле. Поля соответствуют следующим сведениям.
 
-   * **Audience:** идентифицирует ресурс получателя, для которого предназначен токен.
-   * **Issuer:** идентифицирует службу токенов безопасности (STS), которая выдала токен, а также клиент Azure AD.
-   * **Tenant:** содержит неизменяемый уникальный идентификатор клиента каталога, который выдал токен.
-   * **FQDN:** полное доменное имя (FQDN) VPN-шлюза Azure.
-   * **ServerSecret:** общий ключ VPN-шлюза.
+* **Аудитория:** Определяет ресурс получателя, для которого предназначен маркер.
+* **Издатель:** Определяет службу маркеров безопасности (STS), которая выдает маркер, а также клиент Azure AD.
+* **Клиент:** Содержит неизменяемый уникальный идентификатор клиента каталога, который выдал маркер.
+* **Полное доменное имя:** Полное доменное имя (FQDN) VPN-шлюза Azure.
+* **Серверсекрет:** Общий ключ VPN-шлюза.
 
 ## <a name="folder-contents"></a>Содержимое папки
 

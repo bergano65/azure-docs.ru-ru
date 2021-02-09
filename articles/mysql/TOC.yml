@@ -1,6 +1,7 @@
 - name: Документация по Базе данных Azure для MySQL
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Что такое База данных Azure для MySQL?
       href: overview.md
@@ -12,7 +13,6 @@
       href: concepts-version-policy.md
       displayName: version policy
 - name: Одиночный сервер
-  expanded: true
   items:
     - name: Документация по Отдельному серверу
       href: single-server/index.yml
