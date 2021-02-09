@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: justinha
-ms.openlocfilehash: d5dbb7b71e2d67ed5b3f624c93c3c143d6c98e5d
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 6da1d285440daa5d1d5a230905a77057728d4ae6
+ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618541"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99256547"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Руководство по настройке защищенного протокола LDAP для управляемого домена доменных служб Azure AD
 
@@ -212,6 +212,12 @@ Thumbprint                                Subject
 Включение защищенного протокола LDAP для управляемого домена займет несколько минут. Если предоставленный сертификат защищенного протокола LDAP не соответствует требуемому критерию, действие по включению защищенного протокола LDAP для управляемого домена завершается сбоем.
 
 Типичные примеры ошибок: указано неправильное доменное имя, для шифрования сертификата используется алгоритм, отличный от *TripleDES-SHA1*, срок действия сертификата истек или истекает в ближайшее время. Вы можете повторно создать сертификат с правильными параметрами и включить защищенный протокол LDAP с указанием обновленного сертификата.
+
+## <a name="change-an-expiring-certificate"></a>Замена сертификата с истекающим сроком действия
+
+1. Создайте заменяющий сертификат для защищенного протокола LDAP, выполнив [эти действия](#create-a-certificate-for-secure-ldap).
+1. Чтобы применить заменяющий сертификат к Azure AD DS, на портале Azure в меню Azure AD DS слева выберите **Защищенный протокол LDAP** и щелкните **Изменить сертификат**.
+1. Распространите сертификат на все клиенты, которые подключаются по защищенному протоколу LDAP. 
 
 ## <a name="lock-down-secure-ldap-access-over-the-internet"></a>Блокировка доступа по защищенному протокол LDAP через Интернет
 

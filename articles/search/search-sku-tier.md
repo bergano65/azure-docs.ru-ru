@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 320f02f6ece106b4d0e14293f95533aa5b4e0743
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: df218c2a4c066343ef571c6f24554ecaa806b639
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98693457"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987876"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Выберите ценовую категорию для Azure Когнитивный поиск
 
@@ -60,7 +60,8 @@ ms.locfileid: "98693457"
 | [Управляемые или доверенные удостоверения для исходящего доступа (индексатора)](search-howto-managed-identities-data-sources.md) | Недоступно на уровне Free.|
 | [Управляемые пользователем ключи шифрования](search-security-manage-encryption-keys.md) | Недоступно на уровне Free. |
 | [Доступ к брандмауэру IP](service-configure-firewall.md) | Недоступно на уровне Free. |
-| [Частная конечная точка (интеграция с частной ссылкой Azure)](service-create-private-endpoint.md) | Для входящих подключений к службе поиска недоступна на уровне Free. Для исходящих подключений индексаторов к другим ресурсам Azure недоступно на свободном или S3 HD. Для индексаторов, использующих навыков, недоступно на Free, Basic, S1 или S3 HD.|
+| [Частная конечная точка (интеграция с частной ссылкой Azure)](service-create-private-endpoint.md) | Для входящих подключений к службе поиска недоступна на уровне Free. Для исходящих подключений индексаторов к другим ресурсам Azure недоступно на свободном или S3 HD. Для индексаторов, использующих навыков, недоступно на Free, Basic, S1 или S3 HD.| 
+| [Зоны доступности](search-performance-optimization.md) | Недоступно на уровне "бесплатный" и "базовый". |
 
 Функции, интенсивно использующие ресурсы, могут работать не так, как только вы предоставляете достаточную емкость. Например, [обогащение искусственного интеллекта](cognitive-search-concept-intro.md) имеет долгосрочные навыки, которые истечения времени ожидания в бесплатной службе, если набор данных не является небольшим.
 

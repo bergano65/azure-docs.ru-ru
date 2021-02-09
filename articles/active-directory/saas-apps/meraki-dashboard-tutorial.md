@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: f635a4c4c6e0b1dcb4d4842d3cddb337d2b26407
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 74009c7e7f2ad28655c9c5322a063a17da96e0c5
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735168"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99493927"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-meraki-dashboard"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Meraki Dashboard
 
@@ -103,7 +103,7 @@ ms.locfileid: "98735168"
 
     ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
-1. В разделе **Сертификат подписи SAML** скопируйте **значение отпечатка** и сохраните его на компьютере.
+1. В разделе **Сертификат подписи SAML** скопируйте **значение отпечатка** и сохраните его на компьютере. Это значение необходимо преобразовать с включением двоеточий, чтобы панель мониторинга Meraki могла распознать его. Например, если отпечаток из Azure имеет значение `C2569F50A4AAEDBB8E`, его необходимо изменить на `C2:56:9F:50:A4:AA:ED:BB:8E`, чтобы использовать позже в панели мониторинга Meraki.
 
     ![Копирование значения "Отпечаток"](common/copy-thumbprint.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "98735168"
 
     ![Добавление поставщика удостоверений SAML в Meraki Dashboard](./media/meraki-dashboard-tutorial/configure-3.png)
 
-1. В текстовое поле **Thumbprint** (Отпечаток) вставьте значение **отпечатка сертификата SHA1 X.590**, которое скопировали на портале Azure. Затем нажмите кнопку **Сохранить**. После сохранения здесь отобразится URL-адрес потребителя. Скопируйте значение "Consumer URL" (URL-адрес потребителя) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+1. Вставьте преобразованное значение **отпечатка**, которое вы скопировали на портале Azure и для которого вы изменили формат в соответствии с инструкциями на шаге 9 предыдущего раздела, в текстовое поле **Отпечаток SHA1 X сертификата X.590**. Затем нажмите кнопку **Сохранить**. После сохранения здесь отобразится URL-адрес потребителя. Скопируйте значение "Consumer URL" (URL-адрес потребителя) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     ![Конфигурация Meraki Dashboard](./media/meraki-dashboard-tutorial/configure-4.png)
 

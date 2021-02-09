@@ -8,37 +8,60 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 40b44fd277eac14a5bf2c15f58fccfd9d5b156c4
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5c43d61b1e7cd98674eab4c6d857cc1114a06013
+ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881490"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99475325"
 ---
 # <a name="reset-an-azure-cloud-service-extended-support"></a>Сброс Облачной службы Azure (расширенная поддержка) 
 В этих примерах рассматриваются различные способы для сброса существующего развертывания Облачной службы Azure (расширенная поддержка).
 
-## <a name="reimage-role-instances-of-cloud-service"></a>Пересоздание образов для экземпляров ролей Облачной службы
+## <a name="reimage-role-instances-of-cloud-service"></a>Пересоздание образов для экземпляров ролей облачной службы
 ```powershell
 $roleInstances = @("ContosoFrontEnd_IN_0", "ContosoBackEnd_IN_1")
-Reset-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance $roleInstances -Reimage
+Invoke-AzCloudServiceReimage -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance $roleInstances
 ```
-Эта команда пересоздает образы для 2 экземпляров ролей **ContosoFrontEnd\_IN\_0** и **ContosoBackEnd\_IN\_1** Облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
+Эта команда пересоздает образы для 2 экземпляров ролей ContosoFrontEndIN_0 и ContosoBackEndIN_1 облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
 
 ## <a name="reimage-all-roles-of-cloud-service"></a>Пересоздание образа для всех ролей Облачной службы
 ```powershell
-Reset-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance "*" -Reimage
+Invoke-AzCloudServiceReimage -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance "*"
 ```
+Эта команда пересоздает образы для всех экземпляров ролей облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
 
 ## <a name="reimage-a-single-role-instance-of-a-cloud-service"></a>Пересоздание образа для отдельного экземпляра ролей Облачной службы
 ```powershell
-Reset-AzCloudServiceRoleInstance -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0" -Reimage
+Invoke-AzCloudServiceRoleInstanceReimage -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstanceName "ContosoFrontEnd_IN_0"
 ```
+Эта команда пересоздает образы для экземпляра роли ContosoFrontEnd_IN_0 облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
 
-## <a name="restart-a-single-role-instance-of-a-cloud-service"></a>Перезапуск отдельного экземпляра ролей Облачной службы
+## <a name="rebuild-role-instances-of-cloud-service"></a>Перестройка для экземпляров ролей облачной службы
 ```powershell
-Reset-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance "*" -Restart
+$roleInstances = @("ContosoFrontEnd_IN_0", "ContosoBackEnd_IN_1")
+Invoke-AzCloudServiceRebuild -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance $roleInstances
 ```
+Эта команда перестраивает 2 экземпляра ролей ContosoFrontEndIN_0 и ContosoBackEndIN_1 облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
+
+## <a name="rebuild-all-roles-of-cloud-service"></a>Перестройка всех ролей облачной службы
+```powershell
+Invoke-AzCloudServiceRebuild -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance "*"
+```
+Эта команда перестраивает все экземпляры ролей облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
+
+## <a name="restart-role-instances-of-cloud-service"></a>Перезапуск экземпляров ролей облачной службы
+```powershell
+$roleInstances = @("ContosoFrontEnd_IN_0", "ContosoBackEnd_IN_1")
+Restart-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance $roleInstances
+```
+Эта команда перезапускает 2 экземпляра ролей ContosoFrontEndIN_0 и ContosoBackEndIN_1 облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
+
+## <a name="restart-all-roles-of-cloud-service"></a>Перезапуск всех ролей облачной службы
+```powershell
+Restart-AzCloudService -ResourceGroupName "ContosOrg" -CloudServiceName "ContosoCS" -RoleInstance "*"
+```
+Эта команда перезапускает всех экземпляры ролей облачной службы с именем ContosoCS, которая принадлежит группе ресурсов с именем ContosOrg.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

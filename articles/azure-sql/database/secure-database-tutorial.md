@@ -10,12 +10,12 @@ ms.author: vanto
 ms.reviewer: ''
 ms.date: 09/21/2020
 ms.custom: seoapril2019 sqldbrb=1
-ms.openlocfilehash: 77ed71d74e75abfdf7f84aee9b116f1d9d2ccc9d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: f42db48e0fa0e85d919d6894e5476b7ef5380698
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985864"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99089297"
 ---
 # <a name="tutorial-secure-a-database-in-azure-sql-database"></a>Руководство по Защита базы данных в службе "База данных SQL Azure"
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -124,7 +124,7 @@ ms.locfileid: "94985864"
     ![выбор Active Directory](./media/secure-database-tutorial/admin-settings.png)  
 
     > [!IMPORTANT]
-    > Вы должны быть администратором организации или глобальным администратором, чтобы выполнить эту задачу.
+    > Для выполнения этой задачи требуется роль глобального администратора.
 
 1. На странице **Добавление администратора** найдите и выберите группу или пользователя AD, а затем щелкните **Выбрать**. На странице перечислены все участники и группы Active Directory, а те, которые выделены серым цветом, не поддерживаются как администраторы Azure AD. Обратитесь к разделу [Функции и ограничения Azure AD](authentication-aad-overview.md#azure-ad-features-and-limitations).
 

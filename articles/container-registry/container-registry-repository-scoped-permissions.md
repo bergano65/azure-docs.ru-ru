@@ -2,17 +2,17 @@
 title: Разрешения на репозитории в Реестре контейнеров Azure
 description: Создание маркера с разрешениями, ограниченными конкретными репозиториями в реестре уровня "Премиум" для извлечения или отправки изображений или выполнения других действий.
 ms.topic: article
-ms.date: 05/27/2020
-ms.openlocfilehash: b65b1bf69337cb172a17043490a5d13c7bd7afc2
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.date: 02/04/2021
+ms.openlocfilehash: ceec69d746f77ea7a23bc70d029c8b3736e7f292
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381241"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988265"
 ---
 # <a name="create-a-token-with-repository-scoped-permissions"></a>Создание токена с разрешениями уровня репозитория
 
-Эта статья описывает создание токенов и карт области для управления разрешениями уровня репозитория в реестре контейнеров. Создавая токены, владелец реестра может предоставлять пользователям или службам ограниченный по времени и области доступ к репозиториям, чтобы получать или отправлять образы или выполнять другие действия. Токен предоставляет более детализированные разрешения, чем другие [варианты проверки подлинности](container-registry-authentication.md) в реестре, в которых областью действия разрешений является весь реестр. 
+В этой статье описывается создание маркеров и сопоставлений областей для управления доступом к конкретным репозиториям в реестре контейнеров. Создавая токены, владелец реестра может предоставлять пользователям или службам ограниченный по времени и области доступ к репозиториям, чтобы получать или отправлять образы или выполнять другие действия. Токен предоставляет более детализированные разрешения, чем другие [варианты проверки подлинности](container-registry-authentication.md) в реестре, в которых областью действия разрешений является весь реестр. 
 
 Ниже приведены сценарии создания токена.
 
@@ -46,7 +46,7 @@ ms.locfileid: "94381241"
   |`metadata/read`    | Чтение метаданных из репозитория   | Перечисление тегов или манифестов |
   |`metadata/write`     |  Запись метаданных в репозиторий  | Включение или отключение операций чтения, записи или удаления |
 
-* Разрешения для репозитория групп **карт области** , которые применяются к токену или могут повторно применяться к другим токенам. Каждый токен связан с одной картой области. 
+* Разрешения для репозитория групп **карт области**, которые применяются к токену или могут повторно применяться к другим токенам. Каждый токен связан с одной картой области. 
 
    Карта области предоставляет следующие возможности.
 
@@ -61,9 +61,9 @@ ms.locfileid: "94381241"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Azure CLI**  — команды для создания токенов и управления ими доступны в Azure CLI версии 2.0.76 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
-* **Docker**  — чтобы проверить подлинность в реестре для извлечения или отправки образов, требуется локальная установка Docker. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
-* **Реестр контейнеров**  — если у вас его нет, создайте реестр контейнеров уровня "Премиум" в подписке Azure или обновите существующий реестр. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). 
+* В примерах команд **Azure CLI** -Azure CLI в этой статье требуется Azure CLI версии 2.17.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+* **Docker** — чтобы проверить подлинность в реестре для извлечения или отправки образов, требуется локальная установка Docker. На сайте Docker предоставляются инструкции по установке для систем [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms).
+* **Реестр контейнеров** — если у вас его нет, создайте реестр контейнеров уровня "Премиум" в подписке Azure или обновите существующий реестр. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). 
 
 ## <a name="create-token---cli"></a>Создание токена — интерфейс командной строки
 
@@ -79,7 +79,7 @@ az acr token create --name MyToken --registry myregistry \
   content/write content/read
 ```
 
-В выходных данных отображаются сведения о токене. По умолчанию создаются два пароля. Рекомендуется сохранить эти пароли в надежном месте для последующего использования при проверке подлинности. Повторно получить эти пароли невозможно, но можно создать новые.
+В выходных данных отображаются сведения о токене. По умолчанию создаются два пароля, срок действия которых не истекает, но при необходимости можно задать дату окончания срока действия. Рекомендуется сохранить эти пароли в надежном месте для последующего использования при проверке подлинности. Повторно получить эти пароли невозможно, но можно создать новые.
 
 ```console
 {
@@ -113,7 +113,7 @@ az acr token create --name MyToken --registry myregistry \
 ```
 
 > [!NOTE]
-> Если вы хотите повторно создать пароли токенов и задать срок действия пароля, см. раздел [Повторное создание паролей токенов](#regenerate-token-passwords) далее в этой статье.
+> Дополнительные сведения о повторном создании паролей токенов и сроках действия см. в разделе [Повторное создание паролей токенов](#regenerate-token-passwords) далее в этой статье.
 
 Выходные данные содержат сведения о карте области, созданной командой. Карту области, которая здесь называется `MyToken-scope-map`, можно использовать, чтобы применить те же действия репозитория к другим токенам. Или можно обновить карту области позже, чтобы изменить разрешения для связанных токенов.
 
@@ -141,7 +141,7 @@ az acr token create --name MyToken \
 В выходных данных отображаются сведения о токене. По умолчанию создаются два пароля. Рекомендуется сохранить эти пароли в надежном месте для последующего использования при проверке подлинности. Повторно получить эти пароли невозможно, но можно создать новые.
 
 > [!NOTE]
-> Если вы хотите повторно создать пароли токенов и задать срок действия пароля, см. раздел [Повторное создание паролей токенов](#regenerate-token-passwords) далее в этой статье.
+> Дополнительные сведения о повторном создании паролей токенов и сроках действия см. в разделе [Повторное создание паролей токенов](#regenerate-token-passwords) далее в этой статье.
 
 ## <a name="create-token---portal"></a>Создание токена — портал
 
@@ -161,8 +161,8 @@ az acr token create --name MyToken \
 
         :::image type="content" source="media/container-registry-repository-scoped-permissions/portal-scope-map-add.png" alt-text="Создание карты области на портале":::
 
-    1. После добавления репозиториев и разрешений выберите **Добавить** , чтобы добавить карту области.
-1. Примите **Состояние** токена по умолчанию **Включено** , а затем выберите **Создать**.
+    1. После добавления репозиториев и разрешений выберите **Добавить**, чтобы добавить карту области.
+1. Примите **Состояние** токена по умолчанию **Включено**, а затем выберите **Создать**.
 
 После проверки и создания токена сведения о нем отображаются на экране **Токены**.
 
@@ -198,13 +198,13 @@ az acr token create --name MyToken \
 
 ### <a name="pull-and-tag-test-images"></a>Извлечение тестовых образов и пометка их тегами
 
-В следующих примерах вам нужно извлечь образы `hello-world` и `alpine` из Docker Hub и пометить их тегами для реестра и репозитория.
+В следующих примерах вы запрашиваете общедоступные `hello-world` `nginx` образы из реестра контейнеров Майкрософт и размечать их для реестра и репозитория.
 
 ```bash
-docker pull hello-world
-docker pull alpine
-docker tag hello-world myregistry.azurecr.io/samples/hello-world:v1
-docker tag alpine myregistry.azurecr.io/samples/alpine:v1
+docker pull mcr.microsoft.com/hello-world
+docker pull mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine
+docker tag mcr.microsoft.com/hello-world myregistry.azurecr.io/samples/hello-world:v1
+docker tag mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine myregistry.azurecr.io/samples/nginx:v1
 ```
 
 ### <a name="authenticate-using-token"></a>Проверка подлинности с помощью токена
@@ -234,17 +234,17 @@ Login Succeeded
 docker push myregistry.azurecr.io/samples/hello-world:v1
 ```
 
-У этого токена нет разрешений для репозитория `samples/alpine`, поэтому следующая попытка отправки завершается ошибкой, аналогичной `requested access to the resource is denied`.
+У этого токена нет разрешений для репозитория `samples/nginx`, поэтому следующая попытка отправки завершается ошибкой, аналогичной `requested access to the resource is denied`.
 
 ```bash
-docker push myregistry.azurecr.io/samples/alpine:v1
+docker push myregistry.azurecr.io/samples/nginx:v1
 ```
 
 ### <a name="update-token-permissions"></a>Обновить разрешения маркера
 
 Чтобы изменить разрешения токена, обновите разрешения в соответствующей карте области. Обновленная карта области применяется сразу для всех связанных токенов. 
 
-Например, обновите `MyToken-scope-map` с помощью действий `content/write` и `content/read` для репозитория `samples/alpine` и удалите действие `content/write` для репозитория `samples/hello-world`.  
+Например, обновите `MyToken-scope-map` с помощью действий `content/write` и `content/read` для репозитория `samples/ngnx` и удалите действие `content/write` для репозитория `samples/hello-world`.  
 
 Чтобы использовать Azure CLI, выполните команду [az acr scope-map update][az-acr-scope-map-update] для обновления карты области.
 
@@ -252,21 +252,21 @@ docker push myregistry.azurecr.io/samples/alpine:v1
 az acr scope-map update \
   --name MyScopeMap \
   --registry myregistry \
-  --add samples/alpine content/write content/read \
-  --remove samples/hello-world content/write 
+  --add-repository samples/nginx content/write content/read \
+  --remove-repository samples/hello-world content/write 
 ```
 
 На портале Azure выполните следующие действия.
 
 1. Перейдите к реестру контейнеров.
 1. В разделе **разрешения репозитория** выберите карты **области (Предварительная версия)** и выберите карту области для обновления.
-1. В разделе **Репозитории** введите `samples/alpine` и в разделе **Разрешения** выберите `content/read` и `content/write`. Затем выберите **+ Добавить**.
+1. В разделе **Репозитории** введите `samples/nginx` и в разделе **Разрешения** выберите `content/read` и `content/write`. Затем выберите **+ Добавить**.
 1. В разделе **Репозитории** выберите `samples/hello-world` и в разделе **Разрешения** отмените выбор `content/write`. Затем нажмите кнопку **Save** (Сохранить).
 
 После обновления карты области следующая операция отправки выполняется успешно.
 
 ```bash
-docker push myregistry.azurecr.io/samples/alpine:v1
+docker push myregistry.azurecr.io/samples/nginx:v1
 ```
 
 Так как карта области имеет разрешение `content/read` только для репозитория `samples/hello-world`, попытка отправки в репозиторий `samples/hello-world` теперь завершается ошибкой.
@@ -278,12 +278,12 @@ docker push myregistry.azurecr.io/samples/hello-world:v1
 Извлечение образов из обоих репозиториев выполняется успешно, так как карта области предоставляет разрешения `content/read` для обоих репозиториев.
 
 ```bash
-docker pull myregistry.azurecr.io/samples/alpine:v1
+docker pull myregistry.azurecr.io/samples/nginx:v1
 docker pull myregistry.azurecr.io/samples/hello-world:v1
 ```
 ### <a name="delete-images"></a>Удаление изображений
 
-Обновите карту области, добавив действие `content/delete` в репозиторий `alpine`. Это действие позволяет удалять образы в репозитории или удалить весь репозиторий.
+Обновите карту области, добавив действие `content/delete` в репозиторий `nginx`. Это действие позволяет удалять образы в репозитории или удалить весь репозиторий.
 
 Для краткости мы приводим только команду [az acr scope-map update][az-acr-scope-map-update] для обновления карты области.
 
@@ -291,16 +291,16 @@ docker pull myregistry.azurecr.io/samples/hello-world:v1
 az acr scope-map update \
   --name MyScopeMap \
   --registry myregistry \
-  --add samples/alpine content/delete
+  --add-repository samples/nginx content/delete
 ``` 
 
 Чтобы обновить карту области с помощью портала, см. [предыдущий раздел](#update-token-permissions).
 
-Чтобы удалить репозиторий `samples/alpine`, используйте следующую команду [az acr repository delete][az-acr-repository-delete]. Чтобы удалить образы или репозитории, передайте имя и пароль маркера в команду. В следующем примере используются переменные среды, созданные ранее в этой статье.
+Чтобы удалить репозиторий `samples/nginx`, используйте следующую команду [az acr repository delete][az-acr-repository-delete]. Чтобы удалить образы или репозитории, передайте имя и пароль маркера в команду. В следующем примере используются переменные среды, созданные ранее в этой статье.
 
 ```azurecli
 az acr repository delete \
-  --name myregistry --repository samples/alpine \
+  --name myregistry --repository samples/nginx \
   --username $TOKEN_NAME --password $TOKEN_PWD
 ```
 
@@ -314,7 +314,7 @@ az acr repository delete \
 az acr scope-map update \
   --name MyScopeMap \
   --registry myregistry \
-  --add samples/hello-world metadata/read 
+  --add-repository samples/hello-world metadata/read 
 ```  
 
 Чтобы обновить карту области с помощью портала, см. [предыдущий раздел](#update-token-permissions).
@@ -382,7 +382,7 @@ az acr token list --registry myregistry --output table
 
 ```azurecli
 TOKEN_PWD=$(az acr token credential generate \
-  --name MyToken --registry myregistry --days 30 \
+  --name MyToken --registry myregistry --expiration-in-days 30 \
   --password1 --query 'passwords[0].value' --output tsv)
 ```
 

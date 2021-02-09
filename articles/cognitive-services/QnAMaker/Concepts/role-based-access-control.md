@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: cb6d0ee9c651ca1dcc554f5951a5733727af2d6b
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: f43fa06cf93d383efcb0fe746de28ab143280e50
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954112"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988019"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Совместная работа с другими авторами и редакторами
 
@@ -46,12 +46,12 @@ ms.locfileid: "98954112"
 
 ## <a name="authenticate-by-qna-maker-portal"></a>Проверка подлинности с помощью портала QnA Maker
 
-При создании и совместной работе с помощью QnA Maker портала после [добавления соответствующей роли в ресурс для совместной работы](../index.yml)портал QnA Maker управляет всеми разрешениями на доступ.
+При создании и совместной работе с помощью QnA Maker портала после добавления соответствующей роли в ресурс для совместной работы портал QnA Maker управляет всеми разрешениями на доступ.
 
 ## <a name="authenticate-by-qna-maker-apis-and-sdks"></a>Проверка подлинности с помощью QnA Maker API и пакетов SDK
 
 При создании и совместной работе с использованием API-интерфейсов с помощью функций RESTFUL или пакетов SDK необходимо [создать субъект-службу](../../authentication.md#assign-a-role-to-a-service-principal) для управления проверкой подлинности.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
-* Разработка базы знаний для [языков](../index.yml) и [клиентских приложений](../index.yml)
+* Разработка базы знаний для языков и клиентских приложений

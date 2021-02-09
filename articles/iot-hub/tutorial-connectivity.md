@@ -16,12 +16,12 @@ ms.custom:
 ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: 060ed8bfc424fcb9dab8fc12faf5e3822fa86a31
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 253ec23a421415c11e4b47670dca870ebc463256
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621449"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99538777"
 ---
 # <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство по Проверка подключения к центру Интернета вещей с помощью имитированного устройства
 
@@ -66,15 +66,15 @@ node --version
 
 Войдите на портал и перейдите к своему Центру Интернета вещей. Затем откройте средство **Устройства Интернета вещей**:
 
-![Средство "Устройства Интернета вещей"](media/tutorial-connectivity/iot-devices-tool.png)
+:::image type="content" source="media/tutorial-connectivity/iot-devices-tool.png" alt-text="Средство &quot;Устройства Интернета вещей&quot;":::
 
-Чтобы зарегистрировать новое устройство, щелкните **+Добавить**, введите в поле **Идентификатор устройства** значение **MyTestDevice** и щелкните **Сохранить**:
+Чтобы зарегистрировать новое устройство, щелкните **+ Создать**, введите в поле **Идентификатор устройства** значение **MyTestDevice** и щелкните **Сохранить**.
 
-![Добавление нового устройства](media/tutorial-connectivity/add-device.png)
+:::image type="content" source="media/tutorial-connectivity/add-device.png" alt-text="Добавление нового устройства":::
 
-Чтобы получить строку подключения для **MyTestDevice**, щелкните это устройство в списке устройств и скопируйте значение **Строка подключения — первичный ключ**. Строка подключения содержит *общий ключ доступа* для устройства.
+Чтобы получить строку подключения для **MyTestDevice**, щелкните это устройство в списке устройств и скопируйте значение параметра **Первичная строка подключения**. Строка подключения содержит *общий ключ доступа* для устройства.
 
-![Получение строки подключения для устройства](media/tutorial-connectivity/copy-connection-string.png)
+:::image type="content" source="media/tutorial-connectivity/copy-connection-string.png" alt-text="Получение строки подключения для устройства":::
 
 Чтобы имитировать отправку телеметрии от **MyTestDevice** в Центр Интернета вещей, запустите приложение Node.js для имитации устройства, которое вы скачали ранее.
 
@@ -176,7 +176,7 @@ node SimulatedDevice-2.js "{Your SAS token}"
 Для начала получите используемую строку подключения для имитированного устройства, выполнив следующую команду:
 
 ```azurecli-interactive
-az iot hub device-identity show-connection-string --device-id MyTestDevice --output table --hub-name {YourIoTHubName}
+az iot hub device-identity connection-string show --device-id MyTestDevice --output table --hub-name {YourIoTHubName}
 ```
 
 Чтобы запустить имитированное устройство для отправки сообщений, перейдите в папку **iot-hub\Tutorials\ConnectivityTests** в скачанном коде.
@@ -218,7 +218,7 @@ az iot hub invoke-device-method --device-id MyTestDevice --method-name TestMetho
 
 ![Вызов прямого метода на имитированном устройстве](media/tutorial-connectivity/receive-method-call.png)
 
-Когда имитированное устройство успешно принимает вызов прямого метода, оно возвращает подтверждение в Центр Интернета вещей:
+Когда имитированное устройство успешно принимает вызов прямого метода, оно возвращает подтверждение в центр:
 
 ![Подтверждение получения прямого метода](media/tutorial-connectivity/method-acknowledgement.png)
 

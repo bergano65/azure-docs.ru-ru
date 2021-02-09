@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: tutorial
-ms.date: 02/01/2021
+ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: 98da8057fb09cf43a59b921694386cbf3fa8ca21
-ms.sourcegitcommit: 983eb1131d59664c594dcb2829eb6d49c4af1560
+ms.openlocfilehash: 51ba981dcc6f36df3bfaacebb503782faed5c91f
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222223"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99581012"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Импорт защищенных модулем HSM ключей в Key Vault (BYOK)
 
@@ -71,10 +71,13 @@ ms.locfileid: "99222223"
 
 ## <a name="supported-key-types"></a>Поддерживаемые типы ключей
 
-|Имя раздела|Тип ключа|Размер ключа|Исходный домен|Описание|
+|Имя раздела|Тип ключа|Размер ключа (кривая)|Исходный домен|Описание|
 |---|---|---|---|---|
 |Ключ обмена ключами (KEK)|RSA| 2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM Azure Key Vault|Защищенная HSM пара ключей RSA, созданная в Azure Key Vault|
-|Целевой ключ|RSA|2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault|
+|Целевой ключ|
+||RSA|2048-разрядный<br />3072-разрядный<br />4096-разрядный|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault|
+||EC|P-256<br />P-384<br />P-521|HSM от поставщика|Ключ для передачи в модуль HSM Azure Key Vault|
+||||
 
 ## <a name="generate-and-transfer-your-key-to-the-key-vault-hsm"></a>Создание ключа и его передача в модуль HSM Key Vault
 
@@ -120,7 +123,7 @@ az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --fil
 Перенесите файл BYOK на подключенный компьютер.
 
 > [!NOTE] 
-> Импорт 1024-разрядных ключей RSA не поддерживается. В настоящее время импорт ключа эклиптической кривой (EC) не поддерживается.
+> Импорт 1024-разрядных ключей RSA не поддерживается. Импорт ключа с эллиптической кривой с P-256K не поддерживается.
 > 
 > **Известная проблема**. Импорт целевого 4096-разрядного ключа RSA из модулей HSM Luna поддерживается только при использовании встроенного ПО версии 7.4.0 или более поздней.
 
@@ -128,8 +131,15 @@ az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --fil
 
 Чтобы завершить импорт ключа, перенесите пакет обмена ключами (файл BYOK) с отключенного компьютера на компьютер, подключенный к Интернету. Чтобы передать файл BYOK в HSM Key Vault, используйте команду [az keyvault key import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import).
 
+Чтобы импортировать ключ RSA, используйте приведенную ниже команду. Параметр --kty является необязательным и по умолчанию имеет значение RSA-HSM.
 ```azurecli
 az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file KeyTransferPackage-ContosoFirstHSMkey.byok
+```
+
+Чтобы импортировать ключ EC, нужно указать тип ключа и имя кривой.
+
+```azurecli
+az keyvault key import --vault-name ContosoKeyVaultHSM --name ContosoFirstHSMkey --byok-file --kty EC-HSM --curve-name "P-256" KeyTransferPackage-ContosoFirstHSMkey.byok
 ```
 
 Если отправка прошла успешно, в Azure CLI отобразятся свойства импортированного ключа.

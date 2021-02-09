@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/03/2021
+ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: cdc29f89307a986b2d71604ca495eac45458632b
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: fe031fa6de86b8059ba175fc4e1df6385ca7e796
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526625"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99551032"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Новые возможности в Центре безопасности Azure
 
@@ -37,7 +37,8 @@ ms.locfileid: "99526625"
 
 - [выпущена общедоступная версия рекомендаций по защите рабочих нагрузок Kubernetes;](#kubernetes-workload-protection-recommendations-released-for-general-availability-ga)
 - [прямая ссылка на политику на странице сведений о рекомендации;](#direct-link-to-policy-from-recommendation-details-page)
-- [рекомендация по классификации данных SQL больше не влияет на оценку безопасности.](#sql-data-classification-recommendation-no-longer-affect-your-secure-score)
+- [Рекомендация по классификации данных SQL больше не влияет на оценку безопасности.](#sql-data-classification-recommendation-no-longer-affects-your-secure-score)
+- [Автоматизацию рабочих процессов можно активировать путем изменения оценки соответствия нормативным требованиям (предварительная версия)](#workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview)
 
 ### <a name="kubernetes-workload-protection-recommendations-released-for-general-availability-ga"></a>Выпущена общедоступная версия рекомендаций по защите рабочих нагрузок Kubernetes
 
@@ -63,15 +64,21 @@ ms.locfileid: "99526625"
 
 Эту ссылку можно использовать для просмотра определения политики и логики оценки. 
 
-Если вы изучаете список рекомендаций в [справочном руководстве по безопасности](recommendations-reference.md), вы также увидите аналогичные ссылки на страницы определения политики:
+Если вы изучаете список рекомендаций в [справочном руководстве по безопасности](recommendations-reference.md), вы также увидите ссылки на страницы определения политики:
 
-:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Доступ к странице Политики Azure для определенной политики непосредственно со страницы справочника по рекомендациям в Центре безопасности Azure":::
+:::image type="content" source="media/release-notes/view-policy-definition-from-documentation.png" alt-text="Доступ к странице Политики Azure для определенной политики непосредственно со страницы справочника по рекомендациям в Центре безопасности Azure" lightbox="media/release-notes/view-policy-definition-from-documentation.png":::
 
 
-### <a name="sql-data-classification-recommendation-no-longer-affect-your-secure-score"></a>Рекомендация по классификации данных SQL больше не влияет на оценку безопасности
+### <a name="sql-data-classification-recommendation-no-longer-affects-your-secure-score"></a>Рекомендация по классификации данных SQL больше не влияет на оценку безопасности.
 
 Рекомендация **Конфиденциальные данные в базах данных SQL должны быть засекречены** теперь не влияет на оценку безопасности. Это единственная рекомендация в элементе управления безопасностью **Применить классификацию данных**, так что теперь этот элемент управления имеет оценку безопасности 0.
 
+
+### <a name="workflow-automations-can-be-triggered-by-changes-to-regulatory-compliance-assessments-preview"></a>Автоматизацию рабочих процессов можно активировать путем изменения оценки соответствия нормативным требованиям (предварительная версия)
+
+Мы добавили третий тип данных в параметры триггера для автоматизации ваших рабочих процессов: изменения в оценке соответствия нормативным требованиям.
+
+:::image type="content" source="media/release-notes/regulatory-compliance-triggers-workflow-automation.png" alt-text="Активация автоматизации рабочих процессов путем изменения оценки соответствия нормативным требованиям" lightbox="media/release-notes/regulatory-compliance-triggers-workflow-automation.png":::
 
 
 ## <a name="january-2021"></a>Январь 2021 г.

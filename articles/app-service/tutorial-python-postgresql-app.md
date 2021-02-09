@@ -3,7 +3,7 @@ title: Руководство по развертыванию приложени
 description: Создайте веб-приложение Python с использованием базы данных PostgreSQL и разверните его в Azure. В этом учебнике используется платформа Django, а приложение размещается в Службе приложений Azure в Linux.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 01/04/2021
+ms.date: 02/02/2021
 ms.custom:
 - mvc
 - seodec18
@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: ffde74a0567661d6b9f77e45a80bfd585e5c7212
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 05bdbd6c9d5dc3862c3191e4564a79e7a44bc0b8
+ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898595"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99494061"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по развертыванию веб-приложения Django с PostgreSQL в Службе приложений Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "97898595"
 
 1. Подготовьте учетную запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 1. Установите <a href="https://www.python.org/downloads/" target="_blank">Python 3.6 или более поздней версии</a>.
-1. Установите <a href="/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> версии 2.0.80 или более поздней для выполнения команд в любой оболочке для подготовки и настройки ресурсов Azure.
+1. Установите <a href="/cli/azure/install-azure-cli" target="_blank">Azure CLI</a> версии 2.18.0 или более поздней для выполнения команд в любой оболочке для подготовки и настройки ресурсов Azure.
 
 Откройте окно терминала и проверьте, что используется Python 3.6 или более поздней версии:
 
@@ -63,11 +63,13 @@ py -3 --version
 
 ---
 
-Убедитесь, что у вас есть Azure CLI версии 2.0.80 или выше.
+Убедитесь, что у вас есть Azure CLI версии 2.18.0 или выше.
 
 ```azurecli
 az --version
 ```
+
+Если необходимо выполнить обновление, воспользуйтесь командой `az upgrade` (требуется версия 2.11 или выше) или см. статью <a href="/cli/azure/install-azure-cli" target="_blank">Установка Azure CLI</a>.
 
 Теперь войдите в Azure с помощью CLI.
 
@@ -229,7 +231,7 @@ az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNA
 
     Замените `<app-name>` именем, которое использовали ранее в команде `az webapp up`.
 
-    В macOS и Linux можно также подключиться к сеансу SSH с помощью команды [`az webapp ssh`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az_webapp_ssh).
+    Можно также подключиться к сеансу SSH с помощью команды [`az webapp ssh`](/cli/azure/webapp?view=azure-cli-latest&preserve-view=true#az_webapp_ssh). В Windows для выполнения этой команды требуется Azure CLI 2.18.0 или более поздней версии.
 
     Если не удается подключиться к сеансу SSH, значит, не запустилось само приложение. [Проверьте журналы диагностики](#6-stream-diagnostic-logs), чтобы получить подробные сведения. Например, если вы еще не создали необходимые параметры приложения в предыдущем разделе, в журналах будет указано `KeyError: 'DBNAME'`.
 
@@ -239,8 +241,11 @@ az webapp config appsettings set --settings DBHOST="<postgres-server-name>" DBNA
     # Change to the app folder
     cd $APP_PATH
     
-    # Activate the venv (requirements.txt is installed automatically)
+    # Activate the venv
     source /antenv/bin/activate
+
+    # Install requirements
+    pip install -r requirements.txt
 
     # Run database migrations
     python manage.py migrate
@@ -398,6 +403,7 @@ az webapp up
 ```
 cd $APP_PATH
 source /antenv/bin/activate
+pip instal -r requirements.txt
 python manage.py migrate
 ```
 

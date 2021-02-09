@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 61e1e729ab0aeac1f7b8e5ee6787da38c5fef108
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: cd90043c8f03361244d3500f83f6df5347f1d867
+ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020151"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99539405"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
@@ -45,7 +45,7 @@ ms.locfileid: "98020151"
 
 [![Изображение с кнопкой "Развернуть в Azure".](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-SQLPassword-Csharp%2Fmain%2FARM-Templates%2FInitial-Setup%2Fazuredeploy.json)
 
-1. Для параметра **Группа ресурсов** выберите **Создать**. Присвойте группе имя **akvrotation**.
+1. Для параметра **Группа ресурсов** выберите **Создать**. Укажите имя группы. В нашем примере используется имя **akvrotation**.
 1. В разделе **Sql Admin Login** (Имя входа администратора SQL) введите имя для входа администратора SQL. 
 1. Выберите **Review + create** (Просмотреть и создать).
 1. Нажмите кнопку **Создать**
@@ -94,7 +94,7 @@ akvrotation-sql2/master  akvrotation      eastus      Microsoft.Sql/servers/data
 1. В поле **Secret Name** (Имя секрета) введите имя секрета, где будет храниться пароль.
 1. В поле **URL-адрес репозитория** введите расположение кода для функции на сайте GitHub ( **https://github.com/Azure-Samples/KeyVault-Rotation-SQLPassword-Csharp.git** ).
 1. Выберите **Review + create** (Просмотреть и создать).
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
 
 :::image type="content" source="../media/rotate-3.png" alt-text="Выбор параметра Review+create (Просмотр и создание)":::
   

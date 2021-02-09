@@ -4,14 +4,14 @@ description: Отправка и извлечение артефактов с о
 author: SteveLasker
 manager: gwallace
 ms.topic: article
-ms.date: 08/12/2020
+ms.date: 02/03/2021
 ms.author: stevelas
-ms.openlocfilehash: 7c95766cc12b281521fa52ab113fadd4321d0815
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a73f295999888dab20531ffdd0fb042790a5357
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89485009"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988230"
 ---
 # <a name="push-and-pull-an-oci-artifact-using-an-azure-container-registry"></a>Отправка и извлечение артефакта OCI с помощью реестра контейнеров Azure
 
@@ -46,7 +46,7 @@ oras login myregistry.azurecr.io --username $SP_APP_ID --password $SP_PASSWD
 
 [Войдите](/cli/azure/authenticate-azure-cli) в Azure CLI с помощью удостоверения, чтобы отправить артефакты из реестра контейнеров и извлечь их из него.
 
-Затем используйте команду Azure CLI [AZ контроля учетных записей](/cli/azure/acr?view=azure-cli-latest#az-acr-login) для доступа к реестру. Например, для проверки подлинности в реестре с именем *myregistry*:
+Затем используйте команду Azure CLI [AZ контроля учетных записей](/cli/azure/acr#az-acr-login) для доступа к реестру. Например, для проверки подлинности в реестре с именем *myregistry*:
 
 ```azurecli
 az login
@@ -61,12 +61,12 @@ az acr login --name myregistry
 Создайте текстовый файл в локальном рабочем каталоге с примером текста. Например, в оболочке bash:
 
 ```bash
-echo "Here is an artifact!" > artifact.txt
+echo "Here is an artifact" > artifact.txt
 ```
 
 Используйте `oras push` команду, чтобы отправить этот текстовый файл в реестр. В следующем примере текстовый файл отправляется в `samples/artifact` репозиторий. Реестр определен с полным именем реестра *myregistry.azurecr.IO* (все строчные буквы). Артефакт помечается тегом `1.0` . По умолчанию артефакт имеет неопределенный тип, который определяется строкой *типа носителя* после имени файла `artifact.txt` . Дополнительные типы см. в статье о [артефактах OCI](https://github.com/opencontainers/artifacts) . 
 
-**Linux**
+**Linux и macOS**
 
 ```bash
 oras push myregistry.azurecr.io/samples/artifact:1.0 \
@@ -137,7 +137,7 @@ oras pull myregistry.azurecr.io/samples/artifact:1.0 \
 
 ```bash
 $ cat artifact.txt
-Here is an artifact!
+Here is an artifact
 ```
 
 ## <a name="remove-the-artifact-optional"></a>Удалить артефакт (необязательно)
@@ -157,7 +157,7 @@ az acr repository delete \
 Например, создайте однострочный Dockerfile:
 
 ```bash
-echo "FROM hello-world" > hello-world.dockerfile
+echo "FROM mcr.microsoft.com/hello-world" > hello-world.dockerfile
 ```
 
 Войдите в реестр контейнеров назначения.
@@ -170,17 +170,18 @@ az acr login --name myregistry
 Создайте и отправьте новый артефакт OCI в целевой реестр с помощью `oras push` команды. В этом примере задается тип носителя по умолчанию для артефакта.
 
 ```bash
-oras push myregistry.azurecr.io/hello-world:1.0 hello-world.dockerfile
+oras push myregistry.azurecr.io/dockerfile:1.0 hello-world.dockerfile
 ```
 
 Выполните команду [AZ запись контроля](/cli/azure/acr#az-acr-build) доступа, чтобы создать образ Hello-World, используя новый артефакт в качестве контекста сборки:
 
 ```azurecli
-az acr build --registry myregistry --file hello-world.dockerfile \
-  oci://myregistry.azurecr.io/hello-world:1.0
+az acr build --registry myregistry --image builds/hello-world:v1 \
+  --file hello-world.dockerfile \
+  oci://myregistry.azurecr.io/dockerfile:1.0
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [библиотеке Орас](https://github.com/deislabs/oras/tree/master/docs), включая настройку манифеста для артефакта
 * Справочные сведения о новых типах артефактов см. в репозитории [артефактов OCI](https://github.com/opencontainers/artifacts) .

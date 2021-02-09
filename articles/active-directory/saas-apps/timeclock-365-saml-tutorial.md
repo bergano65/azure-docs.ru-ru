@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/16/2020
+ms.date: 01/28/2021
 ms.author: jeedes
-ms.openlocfilehash: 329e0fbfdea43f3933333744f89ed1c03ef0ed13
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d0c8364cc85cfce900021272d17456527919122b
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729336"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99050809"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-timeclock-365-saml"></a>Руководство по интеграции единого входа Azure Active Directory с Timeclock 365 SAML
 
@@ -70,7 +70,7 @@ ms.locfileid: "98729336"
 
 1. На портале Azure на странице интеграции с приложением **Timeclock 365 SAML** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** для изменения параметров.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
@@ -109,7 +109,15 @@ ms.locfileid: "98729336"
 
 ## <a name="configure-timeclock-365-saml-sso"></a>Настройка единого входа в Timeclock 365 SAML
 
-1. Откройте новую вкладку в браузере и войдите на корпоративный сайт Timeclock 365 SAML с правами администратора.
+1. Для автоматизации настройки в Timeclock 365 SAML необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
+
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. После добавления расширения в браузер щелкните **Set up Timeclock 365 SAML** (Настроить Timeclock 365 SAML), чтобы перейти в приложение Timeclock 365 SAML. После этого укажите учетные данные администратора для входа в Timeclock 365 SAML. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–4.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+3. Если вы хотите настроить Timeclock 365 SAML вручную, в другом окне браузера войдите на свой корпоративный сайт Timeclock 365 SAML с правами администратора.
 
 1. Выполните приведенные ниже действия.
 

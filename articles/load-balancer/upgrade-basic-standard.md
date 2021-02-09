@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: ef018e58f8336220b96eba568c94efc40a0fb0c7
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 3bf910d3309285c8b700c39af68fb90715f8863a
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045399"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987724"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Обновление общедоступных Load Balancer Azure
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](./skus.md#skus).
@@ -21,6 +21,9 @@ ms.locfileid: "98045399"
 
 1. Измените метод выделения IP-адресов с динамического на статический.
 2. Запустите сценарий PowerShell, чтобы завершить обновление и перенос трафика.
+
+> [!IMPORTANT]
+> Сценарий в настоящее время находится в состоянии обслуживания. Инструкции по обновлению общедоступных IP-адресов см. [на странице с](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address-upgrade?tabs=option-upgrade-cli%2Coption-migrate-powershell#tabpanel_CeZOj-G++Q_option-upgrade-cli) номерами SKU "базовый" и "Стандартный".
 
 ## <a name="upgrade-overview"></a>Общие сведения об обновлении
 
@@ -48,7 +51,7 @@ ms.locfileid: "98045399"
     1. В разделе **Параметры** выберите **конфигурации**.
    
     1. В поле **Назначение** выберите **Статический**.
-    1. Нажмите кнопку **Сохранить**.
+    1. Щелкните **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
@@ -121,6 +124,6 @@ ms.locfileid: "98045399"
 
 Да. Сценарий Azure PowerShell не только обновляет общедоступный IP-адрес, копирует конфигурацию с базового на Load Balancer (цен. категория "Стандартный"), а также переносит виртуальную машину на вновь созданную стандартную общедоступную Load Balancer. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

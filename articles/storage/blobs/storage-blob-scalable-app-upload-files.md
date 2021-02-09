@@ -4,15 +4,15 @@ description: Узнайте, как использовать клиентску�
 author: roygara
 ms.service: storage
 ms.topic: tutorial
-ms.date: 10/08/2019
+ms.date: 01/26/2021
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: 5dc1f8b8a7c46a3d6ad6f62d93bc91753e42c3ae
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: ed59903454725aca8ca5e73c2df6e4d6d6262ef6
+ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95545046"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99096277"
 ---
 # <a name="upload-large-amounts-of-random-data-in-parallel-to-azure-storage"></a>Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "95545046"
 > * Выполнение приложения
 > * Проверка количества подключений.
 
-Хранилище BLOB-объектов Azure предоставляет масштабируемую службу для хранения данных. Чтобы обеспечить высокую производительность приложения, рекомендуется ознакомиться с работой хранилища BLOB-объектов. Важно понимание ограничений больших двоичных объектов Azure. Дополнительные сведения см. в статье [Scalability and performance targets for Blob storage](../blobs/scalability-targets.md) (Целевые показатели масштабируемости и производительности для хранилища BLOB-объектов).
+Хранилище BLOB-объектов Microsoft Azure — это масштабируемая служба для хранения данных. Чтобы обеспечить высокую производительность приложения, рекомендуется ознакомиться с работой хранилища BLOB-объектов. Важно понимание ограничений больших двоичных объектов Azure. Дополнительные сведения см. в статье [Scalability and performance targets for Blob storage](../blobs/scalability-targets.md) (Целевые показатели масштабируемости и производительности для хранилища BLOB-объектов).
 
 [Именование разделов](../blobs/storage-performance-checklist.md#partitioning) является еще одним важным фактором при разработке приложения с высокой производительностью, использующего большие двоичные объекты. Для размера блока более 4 МиБ используются [блочные BLOB-объекты с высокой пропускной способностью](https://azure.microsoft.com/blog/high-throughput-with-azure-blob-storage/). В этом случае именование раздела не повлияет на производительность. Для блоков размером менее 4 МиБ служба хранилища Azure использует схему секционирования по диапазону для масштабирования и распределения нагрузки. Эта конфигурация означает, что файлы с одинаковыми соглашениями об именовании или префиксами располагаются в одном разделе. Эта логика включает имя контейнера, в который передаются файлы. В этом руководстве используются файлы, содержащие глобальные уникальные идентификаторы (GUID) имен, а также содержимое, создаваемое случайным образом. Затем они передаются в пять разных контейнеров со случайными именами.
 
@@ -38,7 +38,7 @@ ms.locfileid: "95545046"
 
 Для создания сеанса удаленного рабочего стола с виртуальной машиной выполните команду ниже на своем локальном компьютере. Замените IP-адрес значением publicIPAddress виртуальной машины. При появлении запроса введите учетные данные, использованные при создании виртуальной машины.
 
-```
+```console
 mstsc /v:<publicIpAddress>
 ```
 
@@ -46,7 +46,7 @@ mstsc /v:<publicIpAddress>
 
 Войдите в свою учетную запись хранения на портале Azure. В меню учетной записи хранения в разделе **Параметры** выберите **Ключи доступа**. Скопируйте **строку подключения** из основного или вторичного ключа. Войдите на виртуальную машину, созданную в рамках работы с предыдущим руководством. Откройте **командную строку** от имени администратора и выполните команду `setx` с параметром `/m`. Таким образом вы сохраните переменную среды параметра виртуальной машины. Переменная среды доступна только после перезагрузки **командной строки**. Замените **\<storageConnectionString\>** в следующем примере:
 
-```
+```console
 setx storageconnectionstring "<storageConnectionString>" /m
 ```
 
@@ -58,51 +58,58 @@ setx storageconnectionstring "<storageConnectionString>" /m
 
 Нажмите клавишу `dotnet run`, чтобы запустить приложение. При первом выполнении команды `dotnet` заполнится локальный кэш пакета для оптимизации скорости восстановления и включения автономного доступа. Выполнение этой команды займет около минуты, и она используется только один раз.
 
-```
+```console
 dotnet run
 ```
 
-Приложение создаст пять контейнеров со случайными именами и начнет отправлять файлы из промежуточного каталога в учетную запись хранения. Минимальное количество потоков, которое задает приложение, равно 100. Для параметра ограничения [DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit) также установлено значение 100. Это требуется, чтобы разрешить выполнение большого количества одновременных подключений при запуске приложения.
+Приложение создаст пять контейнеров со случайными именами и начнет отправлять файлы из промежуточного каталога в учетную запись хранения. Для минимального и максимального числа потоков задано значение 100, чтобы обеспечить допустимость большого количества одновременных подключений.
 
-Помимо параметров ограничения для количества подключений и потоков настраиваются также параметры [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions) метода [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync) для использования параллелизма и отключения проверки хэша MD5. Файлы передаются в блоки размером 100 МБ. Такая конфигурация обеспечивает лучшую производительность, но может быть дорогостоящей при использовании медленной сети. Это объясняется тем, что в случае сбоя будет выполнена повторная передача всего блока.
+Метод `UploadFilesAsync` показан в следующем примере:
 
-|Свойство|Значение|Описание|
-|---|---|---|
-|[ParallelOperationThreadCount](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.paralleloperationthreadcount)| 8| Этот параметр разделяет передаваемый большой двоичный объект на блоки. Для обеспечения максимальной производительности это значение должно в 8 раз превышать количество ядер. |
-|[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation)| Да| Это свойство отключает проверку хэша MD5 отправляемого содержимого. При этом передача ускоряется. Но без проверки MD5 не будет подтверждения о достоверности или целостности передаваемых файлов.   |
-|[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5)| false| Это свойство определяет, будет ли вычисляться и сохраняться в файле хэш MD5.   |
-| [RetryPolicy](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.retrypolicy)| Интервал задержки — 2 секунды. Максимальное количество повторений — 10. |Определяет политику повтора запросов. При сбоях подключения выполняются повторные попытки подключения. В этом примере для политики [ExponentialRetry](/dotnet/api/microsoft.azure.batch.common.exponentialretry) настроен интервал задержки 2 секунды с максимальным количеством повторений — 10. Этот параметр важен, когда есть вероятность превышения приложением ограничений целевых показателей масштабируемости хранилища BLOB-объектов. Дополнительные сведения см. в статье [Scalability and performance targets for Blob storage](../blobs/scalability-targets.md) (Целевые показатели масштабируемости и производительности для хранилища BLOB-объектов).  |
+# <a name="net-v12"></a>[.NET (версии 12)](#tab/dotnet)
 
-Задание `UploadFilesAsync`, показано в следующем примере:
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Scalable.cs" id="Snippet_UploadFilesAsync":::
+
+# <a name="net-v11"></a>[.NET (версии 11)](#tab/dotnet11)
 
 ```csharp
 private static async Task UploadFilesAsync()
 {
-    // Create random 5 characters containers to upload files to.
+    // Create five randomly named containers to store the uploaded files.
     CloudBlobContainer[] containers = await GetRandomContainersAsync();
+
     var currentdir = System.IO.Directory.GetCurrentDirectory();
 
-    // path to the directory to upload
+    // Path to the directory to upload
     string uploadPath = currentdir + "\\upload";
+
+    // Start a timer to measure how long it takes to upload all the files.
     Stopwatch time = Stopwatch.StartNew();
+
     try
     {
         Console.WriteLine("Iterating in directory: {0}", uploadPath);
+
         int count = 0;
         int max_outstanding = 100;
         int completed_count = 0;
 
         // Define the BlobRequestOptions on the upload.
-        // This includes defining an exponential retry policy to ensure that failed connections are retried with a backoff policy. As multiple large files are being uploaded
-        // large block sizes this can cause an issue if an exponential retry policy is not defined.  Additionally parallel operations are enabled with a thread count of 8
-        // This could be should be multiple of the number of cores that the machine has. Lastly MD5 hash validation is disabled for this example, this improves the upload speed.
+        // This includes defining an exponential retry policy to ensure that failed connections
+        // are retried with a back off policy. As multiple large files are being uploaded using
+        // large block sizes, this can cause an issue if an exponential retry policy is not defined.
+        // Additionally, parallel operations are enabled with a thread count of 8.
+        // This should be a multiple of the number of processor cores in the machine.
+        // Lastly, MD5 hash validation is disabled for this example, improving the upload speed.
         BlobRequestOptions options = new BlobRequestOptions
         {
             ParallelOperationThreadCount = 8,
             DisableContentMD5Validation = true,
             StoreBlobContentMD5 = false
         };
-        // Create a new instance of the SemaphoreSlim class to define the number of threads to use in the application.
+
+        // Create a new instance of the SemaphoreSlim class to 
+        // define the number of threads to use in the application.
         SemaphoreSlim sem = new SemaphoreSlim(max_outstanding, max_outstanding);
 
         List<Task> tasks = new List<Task>();
@@ -111,26 +118,28 @@ private static async Task UploadFilesAsync()
         // Iterate through the files
         foreach (string path in Directory.GetFiles(uploadPath))
         {
-            // Create random file names and set the block size that is used for the upload.
             var container = containers[count % 5];
             string fileName = Path.GetFileName(path);
-            Console.WriteLine("Uploading {0} to container {1}.", path, container.Name);
+            Console.WriteLine("Uploading {0} to container {1}", path, container.Name);
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(fileName);
 
-            // Set block size to 100MB.
+            // Set the block size to 100MB.
             blockBlob.StreamWriteSizeInBytes = 100 * 1024 * 1024;
+
             await sem.WaitAsync();
 
-            // Create tasks for each file that is uploaded. This is added to a collection that executes them all asyncronously.  
+            // Create a task for each file to upload. The tasks are
+            // added to a collection and all run asynchronously.
             tasks.Add(blockBlob.UploadFromFileAsync(path, null, options, null).ContinueWith((t) =>
             {
                 sem.Release();
                 Interlocked.Increment(ref completed_count);
             }));
+
             count++;
         }
 
-        // Creates an asynchronous task that completes when all the uploads complete.
+        // Run all the tasks asynchronously.
         await Task.WhenAll(tasks);
 
         time.Stop();
@@ -149,29 +158,39 @@ private static async Task UploadFilesAsync()
     }
 }
 ```
+Помимо параметров ограничения для количества подключений и потоков настраиваются также параметры [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions) метода [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync) для использования параллелизма и отключения проверки хэша MD5. Файлы передаются в блоки размером 100 МБ. Такая конфигурация обеспечивает лучшую производительность, но может быть дорогостоящей при использовании медленной сети. Это объясняется тем, что в случае сбоя будет выполнена повторная передача всего блока.
+
+|Свойство|Значение|Описание|
+|---|---|---|
+|[ParallelOperationThreadCount](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.paralleloperationthreadcount)| 8| Этот параметр разделяет передаваемый большой двоичный объект на блоки. Для обеспечения максимальной производительности это значение должно в 8 раз превышать количество ядер. |
+|[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation)| Да| Это свойство отключает проверку хэша MD5 отправляемого содержимого. При этом передача ускоряется. Но без проверки MD5 не будет подтверждения о достоверности или целостности передаваемых файлов.   |
+|[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5)| false| Это свойство определяет, будет ли вычисляться и сохраняться в файле хэш MD5.   |
+| [RetryPolicy](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.retrypolicy)| Интервал задержки — 2 секунды. Максимальное количество повторений — 10. |Определяет политику повтора запросов. При сбоях подключения выполняются повторные попытки подключения. В этом примере для политики [ExponentialRetry](/dotnet/api/microsoft.azure.batch.common.exponentialretry) настроен интервал задержки 2 секунды с максимальным количеством повторений — 10. Этот параметр важен, когда есть вероятность превышения приложением ограничений целевых показателей масштабируемости хранилища BLOB-объектов. Дополнительные сведения см. в статье [Scalability and performance targets for Blob storage](../blobs/scalability-targets.md) (Целевые показатели масштабируемости и производительности для хранилища BLOB-объектов).  |
+
+---
 
 В следующем примере представлены усеченные выходные данные приложения, работающего под управлением Windows.
 
-```
-Created container https://mystorageaccount.blob.core.windows.net/9efa7ecb-2b24-49ff-8e5b-1d25e5481076
-Created container https://mystorageaccount.blob.core.windows.net/bbe5f0c8-be9e-4fc3-bcbd-2092433dbf6b
-Created container https://mystorageaccount.blob.core.windows.net/9ac2f71c-6b44-40e7-b7be-8519d3ba4e8f
-Created container https://mystorageaccount.blob.core.windows.net/47646f1a-c498-40cd-9dae-840f46072180
-Created container https://mystorageaccount.blob.core.windows.net/38b2cdab-45fa-4cf9-94e7-d533837365aa
+```console
+Created container 9efa7ecb-2b24-49ff-8e5b-1d25e5481076
+Created container bbe5f0c8-be9e-4fc3-bcbd-2092433dbf6b
+Created container 9ac2f71c-6b44-40e7-b7be-8519d3ba4e8f
+Created container 47646f1a-c498-40cd-9dae-840f46072180
+Created container 38b2cdab-45fa-4cf9-94e7-d533837365aa
 Iterating in directory: D:\git\storage-dotnet-perf-scale-app\upload
 Found 50 file(s)
-Starting upload of D:\git\storage-dotnet-perf-scale-app\upload\1d596d16-f6de-4c4c-8058-50ebd8141e4d.txt to container 9efa7ecb-2b24-49ff-8e5b-1d25e5481076.
-Starting upload of D:\git\storage-dotnet-perf-scale-app\upload\242ff392-78be-41fb-b9d4-aee8152a6279.txt to container bbe5f0c8-be9e-4fc3-bcbd-2092433dbf6b.
-Starting upload of D:\git\storage-dotnet-perf-scale-app\upload\38d4d7e2-acb4-4efc-ba39-f9611d0d55ef.txt to container 9ac2f71c-6b44-40e7-b7be-8519d3ba4e8f.
-Starting upload of D:\git\storage-dotnet-perf-scale-app\upload\45930d63-b0d0-425f-a766-cda27ff00d32.txt to container 47646f1a-c498-40cd-9dae-840f46072180.
-Starting upload of D:\git\storage-dotnet-perf-scale-app\upload\5129b385-5781-43be-8bac-e2fbb7d2bd82.txt to container 38b2cdab-45fa-4cf9-94e7-d533837365aa.
+Uploading D:\git\storage-dotnet-perf-scale-app\upload\1d596d16-f6de-4c4c-8058-50ebd8141e4d.txt to container 9efa7ecb-2b24-49ff-8e5b-1d25e5481076
+Uploading D:\git\storage-dotnet-perf-scale-app\upload\242ff392-78be-41fb-b9d4-aee8152a6279.txt to container bbe5f0c8-be9e-4fc3-bcbd-2092433dbf6b
+Uploading D:\git\storage-dotnet-perf-scale-app\upload\38d4d7e2-acb4-4efc-ba39-f9611d0d55ef.txt to container 9ac2f71c-6b44-40e7-b7be-8519d3ba4e8f
+Uploading D:\git\storage-dotnet-perf-scale-app\upload\45930d63-b0d0-425f-a766-cda27ff00d32.txt to container 47646f1a-c498-40cd-9dae-840f46072180
+Uploading D:\git\storage-dotnet-perf-scale-app\upload\5129b385-5781-43be-8bac-e2fbb7d2bd82.txt to container 38b2cdab-45fa-4cf9-94e7-d533837365aa
 ...
 Upload has been completed in 142.0429536 seconds. Press any key to continue
 ```
 
 ### <a name="validate-the-connections"></a>Проверка подключений
 
-Во время передачи файлов можно проверить количество одновременных подключений к учетной записи хранения. Откройте окно **командной строки** и введите `netstat -a | find /c "blob:https"`. Эта команда показывает количество подключений, которые в настоящее время открыты с помощью `netstat`. В следующем примере показан результат, аналогичный тому, который отобразится при самостоятельном запуске руководства. Как видно из примера, при передаче случайных файлов в учетную запись хранения было открыто 800 подключений. Это значение меняется на протяжении выполнения передачи. При отправке в параллельных фрагментах блока значительно сокращается количество времени, необходимое для передачи содержимого.
+Во время передачи файлов можно проверить количество одновременных подключений к учетной записи хранения. Откройте окно консоли и введите `netstat -a | find /c "blob:https"`. Эта команда показывает количество подключений, которые открыты в настоящее время. Как видно из следующего примера, при передаче случайных файлов в учетную запись хранения было открыто 800 подключений. Это значение меняется на протяжении выполнения передачи. При отправке в параллельных фрагментах блока значительно сокращается количество времени, необходимое для передачи содержимого.
 
 ```
 C:\>netstat -a | find /c "blob:https"

@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 10/26/2020
-ms.openlocfilehash: 7b0aead6ada87ca259c838f3f56e68f1030302a2
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e6be2b659223fb110d7e13b14d732561df9ad408
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675724"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072241"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Руководство по созданию кластера Azure Red Hat OpenShift 4
 
@@ -82,17 +82,17 @@ ms.locfileid: "92675724"
 Если вы предоставляете личный домен для кластера, учитывайте следующие моменты:
 
 * После создания кластера необходимо создать две записи DNS типа A на DNS-сервере для указанного значения`--domain`:
-    * запись **api** , указывающую на IP-адрес сервера;
-    * запись **\*.apps** , указывающую на IP-адрес входящего трафика.
+    * запись **api**, указывающую на IP-адрес сервера;
+    * запись **\*.apps**, указывающую на IP-адрес входящего трафика.
     * Извлеките эти значения, выполнив следующую команду после создания кластера: `az aro show -n -g --query '{api:apiserverProfile.ip, ingress:ingressProfiles[0].ip}'`.
 
 * Консоль OpenShift будет доступна по URL-адресу, такому как `https://console-openshift-console.apps.example.com`, вместо встроенного домена `https://console-openshift-console.apps.<random>.<location>.aroapp.io`.
 
-* По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в личных доменах `*.apps.example.com`.  Если вы решили использовать пользовательскую службу DNS после подключения к кластеру, необходимо выполнить действия, описанные в документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера входящего трафика](https://docs.openshift.com/aro/4/authentication/certificates/replacing-default-ingress-certificate.html) и [пользовательский ЦС для сервера API](https://docs.openshift.com/aro/4/authentication/certificates/api-server.html).
+* По умолчанию OpenShift использует самозаверяющие сертификаты для всех маршрутов, созданных в личных доменах `*.apps.example.com`.  Если вы решили использовать пользовательскую службу DNS после подключения к кластеру, необходимо выполнить действия, описанные в документации по OpenShift, чтобы [настроить пользовательский ЦС для контроллера входящего трафика](https://docs.openshift.com/container-platform/4.6/security/certificates/replacing-default-ingress-certificate.html) и [пользовательский ЦС для сервера API](https://docs.openshift.com/container-platform/4.6/security/certificates/api-server.html).
 
 ### <a name="create-a-virtual-network-containing-two-empty-subnets"></a>Создание виртуальной сети, содержащей две пустые подсети
 
-Далее вы создадите виртуальную сеть, содержащую две пустые подсети.
+Далее вы создадите виртуальную сеть, содержащую две пустые подсети. Если вы хотите использовать существующую виртуальную сеть, которая соответствует вашим требованиям, этот шаг можно пропустить.
 
 1. **Задайте указанные ниже переменные в среде оболочки, где будут выполняться команды `az`.**
 
@@ -131,7 +131,7 @@ ms.locfileid: "92675724"
 
 2. **Создайте виртуальную сеть.**
 
-   Для кластеров Azure Red Hat OpenShift с OpenShift 4 требуется виртуальная сеть с двумя пустыми подсетями для главного и рабочего узлов.
+   Для кластеров Azure Red Hat OpenShift с OpenShift 4 требуется виртуальная сеть с двумя пустыми подсетями для главного и рабочего узлов. Для этого вы можете создать новую виртуальную сеть или использовать существующую.
 
    Создайте виртуальную сеть в той же группе ресурсов, которая была создана ранее:
 

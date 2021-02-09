@@ -7,12 +7,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d8944c9e49bde8c452a10a1886cae316a0f7a33f
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 168833ea0a451913f4ed019cba832a16207e0d9c
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945068"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99988156"
 ---
 # <a name="create-luis-resources"></a>Создание ресурсов LUIS
 
@@ -135,7 +135,7 @@ LUIS позволяет выполнять три типа ресурсов Azur
 
 Среда выполнения частного приложения доступна только для следующих ключей:
 
-|Ключ и пользователь|Описание|
+|Ключ и пользователь|Объяснение|
 |--|--|
 |Ключ разработки владельца| До 1 000 конечных точек|
 |Ключи для совместной работы и создания участников| До 1 000 конечных точек|
@@ -236,6 +236,10 @@ LUIS позволяет выполнять три типа ресурсов Azur
 
 1. Получите токен Azure Resource Manager на [этом веб-сайте](https://resources.azure.com/api/token?plaintext=true). Срок действия маркера истекает, поэтому используйте его сразу. По запросу возвращается маркер Azure Resource Manager.
 
+    ```azurecli
+    az account get-access-token --resource=https://management.core.windows.net/ --query accessToken --output tsv
+    ```
+    
     ![Снимок экрана, на котором показан веб-сайт для запроса маркера Azure Resource Manager.](./media/luis-manage-keys/get-arm-token.png)
 
 1. Используйте маркер, чтобы запросить ресурсы среды выполнения LUIS в подписках. Используйте [API получения учетных записей Azure Luis](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5be313cec181ae720aa2b26c), к которому имеет доступ ваша учетная запись пользователя.
@@ -253,11 +257,11 @@ LUIS позволяет выполнять три типа ресурсов Azur
 
     Этот API-интерфейс POST требует наличия следующих значений:
 
-    |Тип|Параметр|Значение|
+    |Type|Параметр|Значение|
     |--|--|--|
-    |Header|`Authorization`|Значение `Authorization` равно `Bearer {token}`. Значению маркера должно предшествовать слово `Bearer` и пробел.|
-    |Header|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
-    |Header|`Content-type`|`application/json`|
+    |Заголовок|`Authorization`|Значение `Authorization` равно `Bearer {token}`. Значению маркера должно предшествовать слово `Bearer` и пробел.|
+    |Заголовок|`Ocp-Apim-Subscription-Key`|Ваш ключ разработки.|
+    |Заголовок|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS.
     |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 

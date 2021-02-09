@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 12/07/2020
+ms.date: 01/27/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 640098e118db87214d7364132a5119e35cb94c0a
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: ac64233467166ca6567f1601c3b90f80fdba3dcf
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778722"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954653"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-pro-with-gpu"></a>Руководство по настройке параметров сети для Azure Stack Edge Pro с GPU
 
@@ -132,7 +132,8 @@ ms.locfileid: "96778722"
 
 > [!IMPORTANT]
 > * Если вы включили вычисления и используете на устройстве Azure Stack Edge Pro модуль IoT Edge, мы рекомендуем указать для параметра проверки подлинности веб-прокси значение **Нет**. NTLM не поддерживается.
->* Файлы автоматической настройки прокси-сервера (PAC-файлы) не поддерживаются. PAC-файл определяет, как веб-браузеры и другие агенты пользователей могут автоматически выбрать соответствующий прокси-сервер (метод доступа) для получения заданного URL-адреса. Прокси-серверы, пытающиеся перехватить и прочесть весь трафик (а затем повторно подписать все собственным сертификатом), не поддерживаются, так как сертификат прокси-сервера не является доверенным. Обычно прозрачные прокси-серверы без проблем работают с Azure Stack Edge Pro. Непрозрачные веб-прокси не поддерживаются.
+> * Файлы автоматической настройки прокси-сервера (PAC-файлы) не поддерживаются. PAC-файл определяет, как веб-браузеры и другие агенты пользователей могут автоматически выбрать соответствующий прокси-сервер (метод доступа) для получения заданного URL-адреса. 
+> * Прозрачные прокси-серверы без проблем работают с Azure Stack Edge Pro. Для непрозрачных прокси, которые перехватывают и считывают весь трафик (через собственные сертификаты, установленные на прокси-сервере), передайте открытый ключ сертификата прокси-сервера в качестве цепочки подписывания на устройстве Azure Stack Edge Pro. Затем вы можете настроить параметры прокси-сервера на устройстве Azure Stack Edge. Дополнительные сведения см. в разделе [Использование собственных сертификатов](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates).  
 
 <!--1. Go to the **Get started** page in the local web UI of your device.
 2. On the **Network** tile, configure your web proxy server settings. Although web proxy configuration is optional, if you use a web proxy, you can configure it on this page only.
@@ -159,7 +160,7 @@ ms.locfileid: "96778722"
 Из этого учебника вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Предварительные условия
+> * Предварительные требования
 > * настройка сети;
 > * включение сети вычислений;
 > * Настройка веб-прокси

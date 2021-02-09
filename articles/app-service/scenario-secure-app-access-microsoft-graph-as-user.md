@@ -7,16 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/30/2020
+ms.date: 01/28/2021
 ms.author: ryanwi
 ms.reviewer: stsoneff
 ms.custom: azureday1
-ms.openlocfilehash: e07ec17a4e14f0099d82bd444f2ee8d37abe9908
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 3413c1a3f27b48c60ae730ad230c653928702faa
+ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435014"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99063388"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-user"></a>Руководство по получению доступа к Microsoft Graph из защищенного приложения от имени пользователя
 
@@ -85,7 +85,7 @@ ms.locfileid: "96435014"
 
 ### <a name="install-client-library-packages"></a>Установка пакетов клиентских библиотек
 
-Установите в проект пакеты NuGet [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) и [Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph) с помощью интерфейса командной строки .NET Core или консоли диспетчера пакетов в Visual Studio.
+Установите в проект пакеты NuGet [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web/) и [Microsoft.Identity.Web.MicrosoftGraph](https://www.nuget.org/packages/Microsoft.Identity.Web.MicrosoftGraph) с помощью интерфейса командной строки .NET Core или консоли диспетчера пакетов в Visual Studio.
 
 # <a name="command-line"></a>[Командная строка](#tab/command-line)
 
@@ -94,7 +94,7 @@ ms.locfileid: "96435014"
 Выполните команды установки.
 
 ```dotnetcli
-dotnet add package Microsoft.Graph
+dotnet add package Microsoft.Identity.Web.MicrosoftGraph
 
 dotnet add package Microsoft.Identity.Web
 ```
@@ -105,7 +105,7 @@ dotnet add package Microsoft.Identity.Web
 
 Выполните команды установки.
 ```powershell
-Install-Package Microsoft.Graph
+Install-Package Microsoft.Identity.Web.MicrosoftGraph
 
 Install-Package Microsoft.Identity.Web
 ```

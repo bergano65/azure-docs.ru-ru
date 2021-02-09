@@ -6,16 +6,16 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/23/2020
-ms.openlocfilehash: 9cfe8c7e7d2484649bf458524032365b692c9243
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 07b0dd38b616525728c264bd315c5cb8ddcaa79a
+ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093525"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99072057"
 ---
 # <a name="network-concepts-for-azure-red-hat-openshift-aro"></a>Основные понятия сети для Azure Red Hat OpenShift (АТО)
 
-В этом руководстве приведены общие сведения о сетях в Azure Red Hat OpenShift на базе кластеров OpenShift 4, а также схема и список важных конечных точек. Дополнительную информацию об основных понятиях, связанных с сетями в OpenShift, см. в [документации по сетям в Azure Red Hat OpenShift 4](https://docs.openshift.com/aro/4/networking/understanding-networking.html).
+В этом руководстве приведены общие сведения о сетях в Azure Red Hat OpenShift на базе кластеров OpenShift 4, а также схема и список важных конечных точек. Дополнительную информацию об основных понятиях, связанных с сетями в OpenShift, см. в [документации по сетям в Azure Red Hat OpenShift 4](https://docs.openshift.com/container-platform/4.6/networking/understanding-networking.html).
 
 ![Схема сети в Azure Red Hat OpenShift 4](./media/concepts-networking/aro4-networking-diagram.png)
 
@@ -64,19 +64,22 @@ ms.locfileid: "97093525"
 
 ## <a name="networking-basics-in-openshift"></a>Основные сведения о сетях в OpenShift
 
-В OpenShift используется программно-определяемая сеть [(SDN)](https://docs.openshift.com/container-platform/4.5/networking/openshift_sdn/about-openshift-sdn.html) для настройки наложенной сети с помощью [OVS](https://www.openvswitch.org/) (Open vSwitch). Такая сеть — это реализация OpenFlow на основе спецификации CNI (сетевого интерфейса контейнера). SDN поддерживает разные подключаемые модули, и в Azure Red Hat на платформе OpenShift 4 используется подключаемый модуль Network Policy (Сетевая политика). Все сетевые подключения управляются через SDN, поэтому для взаимодействия между разными pod не придется создавать дополнительных маршрутов в виртуальных сетях.
+В OpenShift используется программно-определяемая сеть [(SDN)](https://docs.openshift.com/container-platform/4.6/networking/openshift_sdn/about-openshift-sdn.html) для настройки наложенной сети с помощью [OVS](https://www.openvswitch.org/) (Open vSwitch). Такая сеть — это реализация OpenFlow на основе спецификации CNI (сетевого интерфейса контейнера). SDN поддерживает разные подключаемые модули, и в Azure Red Hat на платформе OpenShift 4 используется подключаемый модуль Network Policy (Сетевая политика). Все сетевые подключения управляются через SDN, поэтому для взаимодействия между разными pod не придется создавать дополнительных маршрутов в виртуальных сетях.
 
 ## <a name="networking--for-azure-red-hat-openshift"></a>Сеть для Azure Red Hat OpenShift
 
-Для Azure Red Hat OpenShift характерны следующие возможности сети:
+Для Azure Red Hat OpenShift характерны следующие возможности сети:  
 * Пользователи могут создать свой кластер ARO в существующей виртуальной сети или виртуальную сеть при создании кластера ARO.
 * Есть возможность настраивать CIDR для pod и сети службы.
 * Главные и рабочие узлы находятся в разных подсетях.
 * Для главных и рабочих узлов требуются подсети виртуальной сети размером не менее /27.
-* Для pod нужно использовать CIDR размером не менее /18 (IP-адреса сети pod не маршрутизируются и используются только в пределах OpenShift SDN).
+* По умолчанию для CIDR группы pod задано значение 10.128.0.0/14.
+* По умолчанию для CIDR службы задано значение 172.30.0.0/16.
+* Значения CIDR для pod и службы не должны перекрывать другие диапазоны IP-адресов, используемые в виртуальной сети, и не должны находиться в пределах диапазона IP-адресов виртуальной сети вашего кластера.
+* Для pod нужно использовать CIDR размером не менее /18. (IP-адреса сети pod не маршрутизируются и используются только в пределах OpenShift SDN.)
 * Каждому узлу для размещения pod выделяется подсеть размера /23 (512 IP-адресов). Это значение невозможно изменить.
 * Вы не можете подключить pod к нескольким сетям.
-* Вы не можете настроить статический IP-адрес для исходящего трафика. (Это возможность OpenShift. Дополнительные сведения см. в [документации по настройке IP-адресов для исходящего трафика](https://docs.openshift.com/container-platform/4.5/networking/openshift_sdn/assigning-egress-ips.html)).
+* Вы не можете настроить статический IP-адрес для исходящего трафика. (Это возможность OpenShift. Дополнительные сведения см. в [документации по настройке IP-адресов для исходящего трафика](https://docs.openshift.com/container-platform/4.6/networking/openshift_sdn/assigning-egress-ips.html)).
 
 ## <a name="network-settings"></a>Параметры сети
 
@@ -95,7 +98,7 @@ ms.locfileid: "97093525"
 При использовании общедоступного сервера API нельзя создавать группы безопасности сети и назначать их сетевым адаптерам.
 
 ## <a name="domain-forwarding"></a>Переадресация домена
-Azure Red Hat OpenShift использует CoreDNS. Можно настроить пересылку доменов. Нельзя использовать собственные DNS-службы в виртуальных сетях. Дополнительные сведения см. в документации по [использованию переадресации DNS](https://docs.openshift.com/aro/4/networking/dns-operator.html#nw-dns-forward_dns-operator).
+Azure Red Hat OpenShift использует CoreDNS. Можно настроить пересылку доменов. Нельзя использовать собственные DNS-службы в виртуальных сетях. Дополнительные сведения см. в документации по [использованию переадресации DNS](https://docs.openshift.com/container-platform/4.6/networking/dns-operator.html#nw-dns-forward_dns-operator).
 
 ## <a name="whats-new-in-openshift-45"></a>Новые возможности в OpenShift 4.5
 

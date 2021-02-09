@@ -4,12 +4,12 @@ description: Сведения о том, как с помощью Пользов
 ms.topic: tutorial
 ms.date: 09/08/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: de788c337ce8030b73538565e4f374ffc7db55b8
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 0b5d011ac7832436edf1f5c898b1fe1e239d0aea
+ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060525"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99055370"
 ---
 # <a name="tutorial-analyze-live-video-with-live-video-analytics-on-iot-edge-and-azure-custom-vision"></a>Руководство по анализу видеотрансляций с помощью Аналитики видеотрансляций в IoT Edge и Пользовательского визуального распознавания Azure
 
@@ -51,7 +51,6 @@ ms.locfileid: "98060525"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [prerequisites](includes/custom-vision-tutorial/csharp/prerequisites.md)]
 ::: zone-end
@@ -59,6 +58,10 @@ ms.locfileid: "98060525"
 ::: zone pivot="programming-language-python"
 [!INCLUDE [prerequisites](includes/custom-vision-tutorial/python/prerequisites.md)]
 ::: zone-end
+
+> [!IMPORTANT]
+> Этот модуль Пользовательского визуального распознавания поддерживает только архитектуры **Intel x86 и AMD64**. Прежде чем продолжить, проверьте архитектуру своего пограничного устройства.
+
 ## <a name="review-the-sample-video"></a>Просмотр примера видео
 
 В этом руководстве для моделирования прямой трансляции используется файл [видео вывода игрушечного автомобиля](https://lvamedia.blob.core.windows.net/public/t2.mkv). Видео можно просмотреть с помощью таких приложений, как [проигрыватель мультимедиа VLC](https://www.videolan.org/vlc/). Нажмите клавиши **CTRL+N**, а затем вставьте ссылку на [видео вывода игрушечного автомобиля](https://lvamedia.blob.core.windows.net/public/t2.mkv), чтобы начать воспроизведение. Просматривая видео, обратите внимание на то, что игрушечный грузовик появляется на отметке времени, которая соответствует 36 секунде. Пользовательская модель обучена так, чтобы обнаруживать этот конкретный игрушечный грузовик. 
@@ -81,6 +84,9 @@ ms.locfileid: "98060525"
 Как нам подсказывает имя службы, Пользовательское визуальное распознавание можно использовать для создания собственного облачного средства для обнаружения объектов или их классификации. Служба предоставляет простой и понятный интерфейс для создания моделей Пользовательского визуального распознавания, которые можно развернуть в облаке или на пограничном устройстве с помощью контейнеров.
 
 Чтобы создать средство обнаружения игрушечных грузовиков, выполните действия, описанные в кратком руководстве [ Создание средства обнаружения объектов с помощью веб-сайта Пользовательского визуального распознавания](../../cognitive-services/custom-vision-service/get-started-build-detector.md).
+
+> [!IMPORTANT]
+> Этот модуль Пользовательского визуального распознавания поддерживает только архитектуры **Intel x86 и AMD64**. Прежде чем продолжить, проверьте архитектуру своего пограничного устройства.
 
 Дополнительные замечания
  

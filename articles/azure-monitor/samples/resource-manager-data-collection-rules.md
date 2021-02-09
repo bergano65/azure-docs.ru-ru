@@ -6,12 +6,12 @@ ms.topic: sample
 author: bwren
 ms.author: bwren
 ms.date: 11/17/2020
-ms.openlocfilehash: 12e6aa85f7d8c2c4aebe80efc92f771917e6a1d5
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: bff13c24e0b5818b352e76df1d8ecd8251a5f12c
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746018"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99430231"
 ---
 # <a name="resource-manager-template-samples-for-data-collection-rules-in-azure-monitor"></a>Примеры шаблонов Resource Manager для правил сбора данных в Azure Monitor
 Эта статья содержит примеры [шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для развертывания и настройки [агента Log Analytics](../platform/log-analytics-agent.md) и [расширения системы диагностики](../platform/diagnostics-extension-overview.md) для виртуальных машин в Azure Monitor. Каждый пример включает файл шаблона и файл параметров с примерами значений для предоставления шаблона.
@@ -21,7 +21,7 @@ ms.locfileid: "96746018"
 
 ## <a name="create-association-with-azure-vm"></a>Создание связи с виртуальной машиной Azure
 
-В приведенном ниже примере на виртуальной машине Windows Azure устанавливается агент Azure Monitor. Между виртуальной машиной Azure и правилом сбора данных устанавливается связь.
+В следующем примере устанавливается связь между виртуальной машиной Azure и правилом сбора данных.
 
 ### <a name="template-file"></a>Файл шаблона
 
@@ -80,7 +80,7 @@ ms.locfileid: "96746018"
 }
 ```
 
-## <a name="create-association-ith-azure-arc"></a>Создание связи с Azure Arc
+## <a name="create-association-with-azure-arc"></a>Создание связи с Azure Arc
 
 В приведенном ниже примере на виртуальной машине Windows Azure устанавливается агент Azure Monitor. Между сервером с поддержкой Azure Arc и правилом сбора данных устанавливается связь.
 

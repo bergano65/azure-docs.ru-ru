@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/27/2020
+ms.date: 01/25/2021
 ms.author: jeedes
-ms.openlocfilehash: 3c9d79ef4fd73adbe3ba376f1723693ea8e85197
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 7ee22121fd023f3942eed64bd605bf87b961d893
+ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736512"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99429844"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-server"></a>Руководство по интеграции единого входа Azure Active Directory с Tableau Server
 
@@ -40,7 +40,7 @@ ms.locfileid: "98736512"
 
 * Tableau Server поддерживает единый вход, инициированный **поставщиком услуг**.
 
-## <a name="adding-tableau-server-from-the-gallery"></a>Добавление сервера Tableau Server из коллекции
+## <a name="add-tableau-server-from-the-gallery"></a>Добавление сервера Tableau Server из коллекции
 
 Чтобы настроить интеграцию Tableau Server с Azure AD, необходимо добавить Tableau Server из коллекции в список управляемых приложений SaaS.
 
@@ -83,7 +83,7 @@ ms.locfileid: "98736512"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://azure.<domain name>.link/wg/saml/SSO/index.html`.
 
     > [!NOTE]
-    > Приведенные выше значения используются только для примера. Их необходимо изменить на фактические URL-адрес и идентификатор, которые можно найти на странице конфигурации Tableau Server (объясняется далее в этом руководстве).
+    > Приведенные выше значения используются только для примера. Их необходимо заменить на фактические URL-адрес входа, идентификатор и URL-адрес ответа, которые можно найти на странице конфигурации Tableau Server (объясняется далее в этом руководстве).
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -123,11 +123,11 @@ ms.locfileid: "98736512"
 
 2. На вкладке **Конфигурация** выберите **Удостоверения пользователя и доступ**, а затем вкладку **Метод проверки подлинности**.
 
-    ![Снимок экрана: меню User Identity & Access (Удостоверения пользователя и доступ) с выбранной вкладкой для настройки метода проверки подлинности.](./media/tableauserver-tutorial/tutorial-tableauserver-auth.png)
+    ![Снимок экрана: меню User Identity & Access (Удостоверения пользователя и доступ) с выбранной вкладкой для настройки метода проверки подлинности.](./media/tableauserver-tutorial/auth.png)
 
 3. На странице **Конфигурация** сделайте следующее.
 
-    ![Снимок экрана: страница Configuration (Конфигурация), где вы можете ввести описанные здесь значения.](./media/tableauserver-tutorial/tutorial-tableauserver-config.png)
+    ![Снимок экрана: страница Configuration (Конфигурация), где вы можете ввести описанные здесь значения.](./media/tableauserver-tutorial/config.png)
 
     а. В качестве **метода проверки подлинности** выберите SAML.
 
@@ -143,7 +143,7 @@ ms.locfileid: "98736512"
 
     ж. Введите имена атрибутов, которые поставщик удостоверений использует для хранения имен пользователей, отображаемых имен и адресов электронной почты.
 
-    h. Щелкните **Сохранить**.
+    h. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > Клиенту следует передать файл сертификата x509 в кодировке PEM с расширением CRT и файл закрытого ключа RSA или DSA с расширением KEY в качестве файла ключа сертификата. Дополнительные сведения о файле сертификата и файле ключа сертификата см. в [этом](https://help.tableau.com/current/server/en-us/saml_requ.htm) документе. Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML на уровне всего сервера](https://help.tableau.com/current/server/en-us/config_saml.htm).
@@ -165,9 +165,8 @@ ms.locfileid: "98736512"
 
 * Перейдите по URL-адресу для входа в Tableau Server и инициируйте поток входа.
 
-* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Tableau Server на портале "Мои приложения", вы перейдете по URL-адресу для входа в Tableau Server. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](../user-help/my-apps-portal-end-user-access.md).
-
+* Вы можете использовать портал "Мои приложения" корпорации Майкрософт. Щелкнув плитку Tableau Server на портале "Мои приложения", вы перейдете по URL-адресу для входа в Tableau Server. Дополнительные сведения о портале "Мои приложения" см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-После настройки Tableau Server вы можете применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).
+После настройки Tableau Server вы можете применить управление сеансами, которое в реальном времени защищает конфиденциальные данные вашей организации от хищения и несанкционированного доступа. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

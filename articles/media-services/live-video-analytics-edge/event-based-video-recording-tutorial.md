@@ -3,12 +3,12 @@ title: Руководство по записи видео в облако на 
 description: Из этого руководства можно узнать, как с помощью службы Аналитики видеотрансляций на платформе Azure IoT Edge записывать видео в облако на основе событий и воспроизводить его.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: cfb4648d991565470133d603194c07b797f89311
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: f54659cc279b68113150f2f49d18e938f2500030
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060441"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99526268"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Руководство. Запись видео в облако на основе событий и его воспроизведение
 
@@ -45,7 +45,7 @@ ms.locfileid: "98060441"
     > [!TIP]
     > Может появиться запрос на установку Docker. Проигнорируйте его.
 * Установите [SDK .NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.201-windows-x64-installer) на компьютере, на котором ведется разработка.
-* Выполните [скрипт подготовки ресурсов аналитики видеотрансляции](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) и [процедуру подготовки среды](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/detect-motion-emit-events-quickstart?branch=release-preview-media-services-lva#set-up-the-environment).
+* Выполните [скрипт подготовки ресурсов аналитики видеотрансляции](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) и [процедуру подготовки среды](https://docs.microsoft.com/azure/media-services/live-video-analytics-edge/detect-motion-emit-events-quickstart?pivots=programming-language-csharp#set-up-your-development-environment).
 
 После выполнения этой процедуры вы получите соответствующие ресурсы Azure, доступные в вашей подписке Azure:
 
@@ -120,8 +120,8 @@ ms.locfileid: "98060441"
     AAD_TENANT_ID="<AAD Tenant ID>"  
     AAD_SERVICE_PRINCIPAL_ID="<AAD SERVICE_PRINCIPAL ID>"  
     AAD_SERVICE_PRINCIPAL_SECRET="<AAD SERVICE_PRINCIPAL ID>"  
-    INPUT_VIDEO_FOLDER_ON_DEVICE="/home/lvaadmin/samples/input"  
-    OUTPUT_VIDEO_FOLDER_ON_DEVICE="/home/lvaadmin/samples/output"  
+    VIDEO_INPUT_FOLDER_ON_DEVICE="/home/lvaadmin/samples/input"  
+    VIDEO_OUTPUT_FOLDER_ON_DEVICE="/home/lvaadmin/samples/output"  
     APPDATA_FOLDER_ON_DEVICE="/var/local/mediaservices"
     CONTAINER_REGISTRY_USERNAME_myacr="<your container registry username>"  
     CONTAINER_REGISTRY_PASSWORD_myacr="<your container registry username>"      
@@ -170,6 +170,12 @@ ms.locfileid: "98060441"
 > :::image type="content" source="./media/quickstarts/create-deployment-single-device.png" alt-text="Создание развертывания для одного устройства":::
 
 Если вы раньше не работали с руководством по аналитике видеотрансляций в IoT Edge, среда Visual Studio Code предложит вам ввести строку подключения к Центру Интернета вещей. Ее можно скопировать из файла appsettings.json.
+
+> [!NOTE]
+> Возможно, вам будет предложено ввести сведения о встроенной конечной точке для Центра Интернета вещей. Чтобы получить эти сведения, на портале Azure перейдите в Центр Интернета вещей и найдите пункт **Встроенные конечные точки** в области навигации слева. Щелкните этот пункт и найдите значение **конечной точки, совместимой с центрами событий,** в разделе **Конечная точка, совместимая с концентратором событий**. В поле скопируйте текст и используйте его. Значение конечной точки будет приблизительно таким:  
+    ```
+    Endpoint=sb://iothub-ns-xxx.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX;EntityPath=<IoT Hub name>
+    ```
 
 Далее Visual Studio Code предложит выбрать устройство Центра Интернета вещей. Выберите свое устройство IoT Edge, которое должно быть устройством lva-sample-device.
 

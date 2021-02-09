@@ -1,5 +1,5 @@
 ---
-title: Потоковая передача видеофайлов с помощью Служб мультимедиа Azure и Azure CLI
+title: Потоковая передача видеофайлов с помощью CLI Служб мультимедиа Azure
 description: В этом руководстве показано, как с помощью Azure CLI создать учетную запись Служб мультимедиа Azure, закодировать файл и выполнить его потоковую передачу в Проигрыватель мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: devx-track-azurecli
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: f4a71509c29555da2fdbc1e7eed2fd985237d6a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c78205d7e2b41628de9e8b92c9fa5506e82158cb
+ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91268780"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98954501"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---azure-cli"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью Azure CLI
 
