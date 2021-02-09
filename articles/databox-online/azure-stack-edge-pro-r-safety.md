@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 12/18/2020
+ms.date: 02/04/2021
 ms.author: alkohli
-ms.openlocfilehash: 627196c0a76f1de23f7e5421c47a33356a73967f
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: cc24839396116a5b581758b29b087c237a6f902b
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709452"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981346"
 ---
 # <a name="azure-stack-edge-pro-r-safety-instructions"></a>Инструкции по безопасности для Azure Stack пограничных Pro R
 
@@ -37,7 +37,7 @@ ms.locfileid: "97709452"
 | Значок | Описание |
 |:--- |:--- |
 | ![Сначала прочесть все инструкции](./media/azure-stack-edge-pro-r-safety/icon-safety-read-all-instructions.png) | Сначала прочесть все инструкции |
-| ![Символ опасности](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Символ опасности |
+| ![Значок "Примечание"](./media/azure-stack-edge-mini-r-safety/icon-safety-notice.png) **ПРИМЕЧАНИЕ.** | Указывает на важные сведения, не связанные с угрозой здоровью и жизни человека. || ![Символ опасности](./media/azure-stack-edge-pro-r-safety/icon-safety-warning.png) | Символ опасности |
 | ![Значок предупреждения об опасности](./media/azure-stack-edge-pro-r-safety/icon-safety-tip-hazard.png)  | Опасность опрокидывания|
 | ![Значок «Большой вес»](./media/azure-stack-edge-pro-r-safety/icon-safety-heavy-weight.png)  | Большая масса опасности|
 | ![Значок «Электрошок»](./media/azure-stack-edge-pro-r-safety/icon-safety-electric-shock.png) | Опасность поражения электрическим током |
@@ -88,6 +88,7 @@ ms.locfileid: "97709452"
   * Предоставляется с достаточным объемом для доступа к шнурам питания, так как он выступает в качестве основного отключения питания продукта.
 * Кабели Ethernet не предоставляются вместе с продуктом. Чтобы уменьшить электромагнитные помехи, рекомендуется использовать кабель экранированной витой пары (STP 6).
 * Настройте оборудование в рабочей области, чтобы обеспечить адекватное использование воздуха по всему оборудованию. Убедитесь, что передняя и задняя крышки полностью удалены во время работы устройства.
+* Кабели Ethernet не предоставляются вместе с продуктом. Чтобы уменьшить электромагнитные помехи, рекомендуется использовать кабель с экранированием (STP) CAT 6.
 * Устанавливайте оборудование в области с контролем температуры на основе контаминантс и допускайте адекватное беспроводное электроциркуляцию по всему оборудованию.
 * Не отключайте оборудование от источников жидкостей и чрезмерно Хумид сред.
 * Не разрешайте системе никаких ликвидных или ни одного внешнего объекта. Не помещайте напитки или другие контейнеры жидкостей в систему или рядом с ней.
@@ -207,7 +208,7 @@ A device that has a UPS installed is designed to operate in the following enviro
 > Maximum corrosive contaminant levels measured at &lt;/= 50% relative humidity. --> 
 
 
-> ![Значок уведомления ](./media/azure-stack-edge-pro-r-safety/icon-safety-notice.png) **Обратите внимание:** &nbsp; изменения или изменения, внесенные в оборудование, не утвержденные корпорацией Майкрософт, могут аннулировать права пользователя на его эксплуатацию.
+> ![Значок уведомления — 2 Примечание ](./media/azure-stack-edge-pro-r-safety/icon-safety-notice.png) **.** &nbsp; изменения или изменения, внесенные в оборудование, не утвержденные корпорацией Майкрософт, могут аннулировать права пользователя на эксплуатацию оборудования.
 
 Для КАНАДЫ и США:
 

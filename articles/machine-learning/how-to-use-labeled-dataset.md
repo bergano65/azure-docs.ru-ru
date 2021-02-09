@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, data4ml
 ms.date: 05/14/2020
-ms.openlocfilehash: b7eaf374e72997013f09b1c94ce16c67d115a818
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: a4f15a1a0911e5a33da8b5f9445709cb42e7e10e
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94987377"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981516"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных с метками в Машинном обучении Azure
 
@@ -39,6 +39,9 @@ ms.locfileid: "94987377"
 ### <a name="coco"></a>COCO 
 
  Файл COCO создается в хранилище больших двоичных объектов по умолчанию для рабочей области Машинного обучения Azure в папке *export/coco*. 
+ 
+>[!NOTE]
+>В проектах обнаружения объектов экспортированные значения "ббокс": [x, y, Width, Height] "в файле COCO нормализованы. Они масштабируются до 1. Пример. ограничивающий прямоугольник в точке (10, 10) с шириной 30 пикселей, высотой 60 пикселей, в изображении 640 пикселей будет помечен как (0,015625. 0,02083, 0,046875, 0,125). Так как курдинтес нормализованы, для всех изображений будет отображаться как "0,0" как "Width" и "Height". Фактическая ширина и высота можно получить с помощью библиотеки Python, например OpenCV или Пиллов (пил).
 
 ### <a name="azure-machine-learning-dataset"></a>Набор данных службы "Машинное обучение Azure"
 

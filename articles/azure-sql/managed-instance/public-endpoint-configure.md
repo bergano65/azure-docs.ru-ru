@@ -9,13 +9,13 @@ ms.topic: how-to
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: vanto, sstein
-ms.date: 05/07/2019
-ms.openlocfilehash: 73fa4d4988c7a036dc1d2eb7dc81c3c1c5d77026
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 02/08/2021
+ms.openlocfilehash: 7d5f40be895aea26a234d9ae622aa5bf22528231
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788287"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981448"
 ---
 # <a name="configure-public-endpoint-in-azure-sql-managed-instance"></a>Configure public endpoint in Azure SQL Managed Instance (Настройка общедоступной конечной точки в управляемом экземпляре SQL Azure)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -96,12 +96,12 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 
     |Параметр  |Рекомендуемое значение  |Описание  |
     |---------|---------|---------|
-    |**Source**     |Любой IP-адрес или тег службы         |<ul><li>Для служб Azure, таких как Power BI, выберите тег облачной службы Azure.</li> <li>Для компьютера или виртуальной машины Azure используйте IP-адрес NAT.</li></ul> |
+    |**Источник**     |Любой IP-адрес или тег службы         |<ul><li>Для служб Azure, таких как Power BI, выберите тег облачной службы Azure.</li> <li>Для компьютера или виртуальной машины Azure используйте IP-адрес NAT.</li></ul> |
     |**Диапазоны исходных портов**     |* |Оставьте это значение равным * (Any), так как порты источника обычно выделяются динамически и, как таковые, непредсказуемые. |
     |**Назначение**     |Любой         |Запрет места назначения в качестве любого, чтобы разрешить трафик в подсеть управляемого экземпляра |
     |**Диапазоны портов назначения**     |3342         |Порт назначения области 3342, который является общедоступной конечной точкой TDS управляемого экземпляра. |
-    |**протокол** ;     |TCP         |SQL Управляемый экземпляр использует протокол TCP для TDS |
-    |**Действие**     |Разрешить         |Разрешить входящий трафик к управляемому экземпляру через общедоступную конечную точку |
+    |**протокол**;     |TCP         |SQL Управляемый экземпляр использует протокол TCP для TDS |
+    |**Действие**     |Allow         |Разрешить входящий трафик к управляемому экземпляру через общедоступную конечную точку |
     |**Приоритет**     |1300         |Убедитесь, что это правило имеет более высокий приоритет, чем правило **deny_all_inbound** |
 
     ![На снимке экрана показаны правила безопасности для входящего трафика с новым правилом public_endpoint_inbound над правилом deny_all_inbound.](./media/public-endpoint-configure/mi-nsg-rules.png)
@@ -112,7 +112,7 @@ Set-AzSqlInstance -PublicDataEndpointEnabled $false -force
 ## <a name="obtaining-the-managed-instance-public-endpoint-connection-string"></a>Получение строки подключения общедоступной конечной точки управляемого экземпляра
 
 1. Перейдите на страницу "Конфигурация управляемого экземпляра", для которой была включена общедоступная конечная точка. Перейдите на вкладку **строки подключения** в разделе Конфигурация **параметров** .
-1. Обратите внимание, что имя узла общедоступной конечной точки имеет формат <mi_name>. **Public** . <dns_zone>. Database.Windows.NET и порт, используемый для соединения, — 3342.
+1. Обратите внимание, что имя узла общедоступной конечной точки имеет формат <mi_name>. **Public**. <dns_zone>. Database.Windows.NET и порт, используемый для соединения, — 3342. Ниже приведен пример значения сервера строки подключения, которое обозначает порт общедоступной конечной точки, который можно использовать в SQL Server Management Studio или Azure Data Studioных соединениях: `<mi_name>.public.<dns_zone>.database.windows.net,3342`
 
     ![На снимке экрана показаны строки подключения для общедоступных и частных конечных точек.](./media/public-endpoint-configure/mi-public-endpoint-conn-string.png)
 

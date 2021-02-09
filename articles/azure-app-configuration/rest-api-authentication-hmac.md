@@ -6,12 +6,12 @@ ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: f761d86bd7dbe54b687e8db75ecb3df2dbba3384
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 4b5a073459fad734a11d3a75718240d0ebbb486a
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932716"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981397"
 ---
 # <a name="hmac-authentication---rest-api-reference"></a>Проверка подлинности HMAC — Справочник по REST API
 
@@ -22,7 +22,7 @@ ms.locfileid: "96932716"
 - **Записям** - \<Access Key ID\>
 - **Secret** — значение ключа доступа для декодирования Base64. ``base64_decode(<Access Key Value>)``
 
-Значения учетных данных (также называемые `id` ) и секрет (также называемые `value` ) должны быть получены из экземпляра конфигурации приложения Azure. Это можно сделать с помощью [портал Azure](https://portal.azure.com) или [Azure CLI](/cli/azure/?preserve-view=true&view=azure-cli-latest).
+Значения учетных данных (также называемые `id` ) и секрет (также называемые `value` ) должны быть получены из экземпляра конфигурации приложения Azure. Это можно сделать с помощью [портал Azure](https://portal.azure.com) или [Azure CLI](/cli/azure/).
 
 Предоставьте каждому запросу все заголовки HTTP, необходимые для проверки подлинности. Минимальное число необходимых значений:
 
@@ -54,7 +54,7 @@ Authorization: HMAC-SHA256 Credential={Access Key ID}&SignedHeaders=x-ms-date;ho
 | **HMAC-SHA256** | Применить схему авторизации _необходимости_ |
 | **Учетные данные** | Идентификатор ключа доступа, используемого для расчета подписи. _необходимости_ |
 | **сигнедхеадерс** | Заголовки HTTP-запросов, добавленные в подпись. _необходимости_ |
-| **Подпись** | HMACSHA256 в кодировке Base64 для строки на подпись. _необходимости_|
+| **Образец** | HMACSHA256 в кодировке Base64 для строки на подпись. _необходимости_|
 
 ### <a name="credential"></a>Учетные данные
 
@@ -103,7 +103,7 @@ string-To-Sign=
 ```
 
 
-### <a name="errors"></a>ошибки
+### <a name="errors"></a>Ошибки
 
 ```http
 HTTP/1.1 401 Unauthorized
