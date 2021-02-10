@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 04cb48a3ff84a67995c1a920a323fa568a67cdf3
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 8eb73fcfde7e294896a12289486ff71794a00ae6
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203251"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591724"
 ---
 # <a name="tutorial-refining-materials-lighting-and-effects"></a>Руководство по Детализация материалов, освещения и эффектов
 
@@ -36,7 +36,7 @@ ms.locfileid: "92203251"
 
 1. Создайте скрипт с именем **EntityOverrideController** и замените все его содержимое следующим кодом:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -162,13 +162,13 @@ ms.locfileid: "92203251"
 
 1. Измените класс **RemoteEntityHelper**, чтобы реализовать абстрактный класс **BaseRemoteEntityHelper**. Это изменение позволит использовать контроллер представления, предоставленный в составе **учебных ресурсов**. После изменения результат будет выглядеть так:
 
-    ```csharp
+    ```cs
     public class RemoteEntityHelper : BaseRemoteEntityHelper
     ```
 
 2. Переопределите абстрактные методы, используя следующий код:
 
-    ```csharp
+    ```cs
     public override BaseEntityOverrideController EnsureOverrideComponent(Entity entity)
     {
         var entityGameObject = entity.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);
@@ -249,7 +249,7 @@ ms.locfileid: "92203251"
 
 1. Создайте скрипт с именем **RemoteCutPlane** и замените его код приведенным ниже.
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -322,14 +322,14 @@ ms.locfileid: "92203251"
 
 2. Замените метод `CreateCutPlane()` приведенной ниже готовой версией.
 
-    ```csharp
+    ```cs
     public override void CreateCutPlane()
     {
         if (remoteCutPlaneComponent != null)
             return; //Nothing to do!
 
         //Create a root object for the cut plane
-        var cutEntity = RemoteRenderingCoordinator.CurrentSession.Actions.CreateEntity();
+        var cutEntity = RemoteRenderingCoordinator.CurrentSession.Connection.CreateEntity();
 
         //Bind the remote entity to this game object
         cutEntity.BindToUnityGameObject(this.gameObject);
@@ -339,7 +339,7 @@ ms.locfileid: "92203251"
         syncComponent.SyncEveryFrame = true;
 
         //Add a cut plane to the entity
-        remoteCutPlaneComponent = RemoteRenderingCoordinator.CurrentSession.Actions.CreateComponent(ObjectType.CutPlaneComponent, cutEntity) as CutPlaneComponent;
+        remoteCutPlaneComponent = RemoteRenderingCoordinator.CurrentSession.Connection.CreateComponent(ObjectType.CutPlaneComponent, cutEntity) as CutPlaneComponent;
 
         //Configure the cut plane
         remoteCutPlaneComponent.Normal = SliceNormal;
@@ -353,7 +353,7 @@ ms.locfileid: "92203251"
 
 3. Замените метод `DestroyCutPlane()` приведенной ниже готовой версией.
 
-    ```csharp
+    ```cs
     public override void DestroyCutPlane()
     {
         if (remoteCutPlaneComponent == null)
@@ -391,7 +391,7 @@ ms.locfileid: "92203251"
 
 1. Создайте скрипт с именем **RemoteSky** и замените все его содержимое следующим кодом:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -402,7 +402,7 @@ ms.locfileid: "92203251"
 
     public class RemoteSky : BaseRemoteSky
     {
-        public override Dictionary<string, LoadTextureFromSASParams> AvailableCubemaps => builtInTextures;
+        public override Dictionary<string, LoadTextureFromSasOptions> AvailableCubemaps => builtInTextures;
 
         private bool canSetSky;
         public override bool CanSetSky
@@ -426,22 +426,22 @@ ms.locfileid: "92203251"
             }
         }
 
-        private Dictionary<string, LoadTextureFromSASParams> builtInTextures = new Dictionary<string, LoadTextureFromSASParams>()
+        private Dictionary<string, LoadTextureFromSasOptions> builtInTextures = new Dictionary<string, LoadTextureFromSasOptions>()
         {
-            {"Autoshop",new LoadTextureFromSASParams("builtin://Autoshop", TextureType.CubeMap)},
-            {"BoilerRoom",new LoadTextureFromSASParams("builtin://BoilerRoom", TextureType.CubeMap)},
-            {"ColorfulStudio",new LoadTextureFromSASParams("builtin://ColorfulStudio", TextureType.CubeMap)},
-            {"Hangar",new LoadTextureFromSASParams("builtin://Hangar", TextureType.CubeMap)},
-            {"IndustrialPipeAndValve",new LoadTextureFromSASParams("builtin://IndustrialPipeAndValve", TextureType.CubeMap)},
-            {"Lebombo",new LoadTextureFromSASParams("builtin://Lebombo", TextureType.CubeMap)},
-            {"SataraNight",new LoadTextureFromSASParams("builtin://SataraNight", TextureType.CubeMap)},
-            {"SunnyVondelpark",new LoadTextureFromSASParams("builtin://SunnyVondelpark", TextureType.CubeMap)},
-            {"Syferfontein",new LoadTextureFromSASParams("builtin://Syferfontein", TextureType.CubeMap)},
-            {"TearsOfSteelBridge",new LoadTextureFromSASParams("builtin://TearsOfSteelBridge", TextureType.CubeMap)},
-            {"VeniceSunset",new LoadTextureFromSASParams("builtin://VeniceSunset", TextureType.CubeMap)},
-            {"WhippleCreekRegionalPark",new LoadTextureFromSASParams("builtin://WhippleCreekRegionalPark", TextureType.CubeMap)},
-            {"WinterRiver",new LoadTextureFromSASParams("builtin://WinterRiver", TextureType.CubeMap)},
-            {"DefaultSky",new LoadTextureFromSASParams("builtin://DefaultSky", TextureType.CubeMap)}
+            {"Autoshop",new LoadTextureFromSasOptions("builtin://Autoshop", TextureType.CubeMap)},
+            {"BoilerRoom",new LoadTextureFromSasOptions("builtin://BoilerRoom", TextureType.CubeMap)},
+            {"ColorfulStudio",new LoadTextureFromSasOptions("builtin://ColorfulStudio", TextureType.CubeMap)},
+            {"Hangar",new LoadTextureFromSasOptions("builtin://Hangar", TextureType.CubeMap)},
+            {"IndustrialPipeAndValve",new LoadTextureFromSasOptions("builtin://IndustrialPipeAndValve", TextureType.CubeMap)},
+            {"Lebombo",new LoadTextureFromSasOptions("builtin://Lebombo", TextureType.CubeMap)},
+            {"SataraNight",new LoadTextureFromSasOptions("builtin://SataraNight", TextureType.CubeMap)},
+            {"SunnyVondelpark",new LoadTextureFromSasOptions("builtin://SunnyVondelpark", TextureType.CubeMap)},
+            {"Syferfontein",new LoadTextureFromSasOptions("builtin://Syferfontein", TextureType.CubeMap)},
+            {"TearsOfSteelBridge",new LoadTextureFromSasOptions("builtin://TearsOfSteelBridge", TextureType.CubeMap)},
+            {"VeniceSunset",new LoadTextureFromSasOptions("builtin://VeniceSunset", TextureType.CubeMap)},
+            {"WhippleCreekRegionalPark",new LoadTextureFromSasOptions("builtin://WhippleCreekRegionalPark", TextureType.CubeMap)},
+            {"WinterRiver",new LoadTextureFromSasOptions("builtin://WinterRiver", TextureType.CubeMap)},
+            {"DefaultSky",new LoadTextureFromSasOptions("builtin://DefaultSky", TextureType.CubeMap)}
         };
 
         public UnityBoolEvent OnCanSetSkyChanged;
@@ -485,10 +485,10 @@ ms.locfileid: "92203251"
             {
                 Debug.Log("Setting sky to " + skyKey);
                 //Load the texture into the session
-                var texture = await RemoteRenderingCoordinator.CurrentSession.Actions.LoadTextureFromSASAsync(AvailableCubemaps[skyKey]).AsTask();
+                var texture = await RemoteRenderingCoordinator.CurrentSession.Connection.LoadTextureFromSasAsync(AvailableCubemaps[skyKey]);
 
                 //Apply the texture to the SkyReflectionSettings
-                RemoteRenderingCoordinator.CurrentSession.Actions.SkyReflectionSettings.SkyReflectionTexture = texture;
+                RemoteRenderingCoordinator.CurrentSession.Connection.SkyReflectionSettings.SkyReflectionTexture = texture;
                 SkyChanged?.Invoke(skyKey);
             }
             else
@@ -501,12 +501,12 @@ ms.locfileid: "92203251"
 
     Наиболее важной частью этого кода являются всего несколько строк.
 
-    ```csharp
+    ```cs
     //Load the texture into the session
-    var texture = await RemoteRenderingCoordinator.CurrentSession.Actions.LoadTextureFromSASAsync(AvailableCubemaps[skyKey]).AsTask();
+    var texture = await RemoteRenderingCoordinator.CurrentSession.Connection.LoadTextureFromSasAsync(AvailableCubemaps[skyKey]);
 
     //Apply the texture to the SkyReflectionSettings
-    RemoteRenderingCoordinator.CurrentSession.Actions.SkyReflectionSettings.SkyReflectionTexture = texture;
+    RemoteRenderingCoordinator.CurrentSession.Connection.SkyReflectionSettings.SkyReflectionTexture = texture;
     ```
 
     Здесь мы получаем ссылку на необходимую текстуру, загрузив ее в сеанс из встроенного Хранилища BLOB-объектов. Остается только назначить эту текстуру свойству `SkyReflectionTexture` сеанса, чтобы ее применить.
@@ -525,7 +525,7 @@ ms.locfileid: "92203251"
 
 1. Создайте скрипт с именем **RemoteLight** и замените его код приведенным ниже.
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -618,7 +618,7 @@ ms.locfileid: "92203251"
 
             //Create a root object for the light
             if(lightEntity == null)
-                lightEntity = RemoteRenderingCoordinator.CurrentSession.Actions.CreateEntity();
+                lightEntity = RemoteRenderingCoordinator.CurrentSession.Connection.CreateEntity();
 
             //Bind the remote entity to this game object
             lightEntity.BindToUnityGameObject(this.gameObject);
@@ -631,13 +631,13 @@ ms.locfileid: "92203251"
             switch (RemoteLightType)
             {
                 case ObjectType.DirectionalLightComponent:
-                    var remoteDirectional = RemoteRenderingCoordinator.CurrentSession.Actions.CreateComponent(ObjectType.DirectionalLightComponent, lightEntity) as DirectionalLightComponent;
+                    var remoteDirectional = RemoteRenderingCoordinator.CurrentSession.Connection.CreateComponent(ObjectType.DirectionalLightComponent, lightEntity) as DirectionalLightComponent;
                     //No additional properties
                     remoteLightComponent = remoteDirectional;
                     break;
 
                 case ObjectType.PointLightComponent:
-                    var remotePoint = RemoteRenderingCoordinator.CurrentSession.Actions.CreateComponent(ObjectType.PointLightComponent, lightEntity) as PointLightComponent;
+                    var remotePoint = RemoteRenderingCoordinator.CurrentSession.Connection.CreateComponent(ObjectType.PointLightComponent, lightEntity) as PointLightComponent;
                     remotePoint.Radius = 0;
                     remotePoint.Length = localLight.range;
                     //remotePoint.AttenuationCutoff = //No direct analog in Unity legacy lights
@@ -726,7 +726,7 @@ ms.locfileid: "92203251"
 
 1. Создайте скрипт с именем **EntityMaterialController** и замените все его содержимое следующим кодом:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -890,7 +890,7 @@ ms.locfileid: "92203251"
 
 Тип `OverrideMaterialProperty` должен быть достаточно гибким, чтобы при необходимости можно было изменить несколько других значений материала. Тип `OverrideMaterialProperty` отслеживает состояние переопределения, сохраняет старое и новое значение и использует делегат, чтобы задать переопределение. В качестве примера рассмотрим `ColorOverride`.
 
-```csharp
+```cs
 ColorOverride = new OverrideMaterialProperty<Color>(
     GetMaterialColor(targetMaterial), //The original value
     targetMaterial, //The target material
@@ -901,7 +901,7 @@ ColorOverride = new OverrideMaterialProperty<Color>(
 
 Чтобы этот подход сработал, `ColorOverride` использует метод `ApplyMaterialColor`.
 
-```csharp
+```cs
 private void ApplyMaterialColor(ARRMaterial material, Color color)
 {
     if (material.MaterialSubType == MaterialType.Color)
