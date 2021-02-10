@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: c3dc2f91fcd09807a7eaaaaa638e78ba3717faec
-ms.sourcegitcommit: 63caac7871df9d999ca5a5f1b8c036ae7014231c
+ms.openlocfilehash: 85a5493e1d1c06a68aa9f4b64cd0f3d55c4f5f63
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98061775"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99580893"
 ---
 # <a name="whats-new-in-qna-maker"></a>Новые возможности QnA Maker
 
@@ -36,7 +36,7 @@ ms.locfileid: "98061775"
 ### <a name="july-2020"></a>Июль 2020 г.
 
 * [Метаданные: логическое сочетание `OR` (ИЛИ) нескольких пар метаданных](how-to/metadata-generateanswer-usage.md#logical-or-using-strictfilterscompoundoperationtype-property).
-* [Шаги](how-to/set-up-qnamaker-service-azure.md#configuring-cognitive-search-as-a-private-endpoint-inside-a-vnet) для настройки частных конечных точек Когнитивного поиска, которые по-прежнему доступны для QnA Maker.
+* [Шаги](how-to/set-up-qnamaker-service-azure.md#recommended-settings-for-network-isolation) для настройки частных конечных точек Когнитивного поиска, которые по-прежнему доступны для QnA Maker.
 * Бесплатные ресурсы Когнитивного поиска удаляются после [90 дней бездействия](how-to/set-up-qnamaker-service-azure.md#inactivity-policy-for-free-search-resources).
 
 ### <a name="june-2020"></a>Июнь 2020 г.

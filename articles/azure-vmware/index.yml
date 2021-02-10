@@ -9,12 +9,12 @@ metadata:
   author: dikamath
   ms.author: dikamath
   ms.date: 11/19/2020
-  ms.openlocfilehash: c460df29183cbf40bee1f539435669121b3ee6ed
-  ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+  ms.openlocfilehash: dc7d344ea33686cc32d2817886ee2cafa829cf1b
+  ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/04/2020
-  ms.locfileid: "96608424"
+  ms.lasthandoff: 02/09/2021
+  ms.locfileid: "100006723"
 landingContent:
 - title: О Решении Azure VMware
   linkLists:
@@ -129,7 +129,7 @@ landingContent:
     - text: Azure PowerShell
       url: /powershell/module/az.vmware
     - text: ВОПРОСЫ И ОТВЕТЫ
-      url: faq.md
+      url: faq.yml
 - title: Устранение неполадок
   linkLists:
   - linkListType: reference

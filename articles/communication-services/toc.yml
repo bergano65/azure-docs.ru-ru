@@ -58,6 +58,8 @@
 - name: Основные понятия
   expanded: false
   items:
+    - name: Взаимодействие с Teams
+      href: concepts/teams-interop.md
     - name: Чат
       items:
         - name: Общие сведения о клиентской библиотеке для чата
@@ -78,8 +80,6 @@
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Основные понятия голосовой связи и видеосвязи
           href: concepts/voice-video-calling/about-call-types.md
-        - name: Взаимодействие с Teams
-          href: concepts/voice-video-calling/teams-interop.md
     - name: Инфраструктура пользовательского интерфейса
       items:
         - name: Обзор платформы пользовательского интерфейса

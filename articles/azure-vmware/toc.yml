@@ -107,7 +107,7 @@
         - name: 'Создание запроса на поддержку, касающегося сбоев развертывания'
           href: fix-deployment-provisioning-failures.md
     - name: ВОПРОСЫ И ОТВЕТЫ
-      href: faq.md
+      href: faq.yml
 - name: Справочник
   items:
     - name: Azure CLI
