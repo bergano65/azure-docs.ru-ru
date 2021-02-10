@@ -161,7 +161,7 @@
               href: openvpn-azure-ad-mfa.md
             - name: Настройка VPN-клиента
               href: openvpn-azure-ad-client.md
-            - name: О скачиваемом файле профиля VPN-клиента
+            - name: Работа с файлами профиля VPN-клиента
               href: about-vpn-profile-download.md
             - name: "Intune\_— развертывание профиля VPN-клиента"
               href: vpn-profile-intune.md

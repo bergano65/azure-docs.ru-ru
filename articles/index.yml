@@ -13,12 +13,12 @@ metadata:
   ms.date: 01/29/2021
   featureFlags:
   - clicktale
-  ms.openlocfilehash: 57d3607b2076b7a5990361278c8c1372fff1b711
-  ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+  ms.openlocfilehash: 2f792ffb95323444d8666c4c676025995f5db438
+  ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/01/2021
-  ms.locfileid: "99225599"
+  ms.lasthandoff: 02/09/2021
+  ms.locfileid: "99979476"
 highlightedContent:
   items:
   - title: Руководство по началу работы для разработчиков Azure
@@ -71,6 +71,12 @@ productDirectory:
     - ai-machine-learning
     - analytics
     url: /azure/databricks/
+  - title: Health Bot
+    summary: Управляемая служба, созданная для разработки виртуальных помощников в сфере здравоохранения.
+    imageSrc: media/index/health-bot-logo.svg
+    azureCategories:
+    - ai-machine-learning
+    url: /azure/health-bot/
   - title: Машинное обучение Azure
     summary: Доступность средств искусственного интеллекта для всех благодаря полнофункциональной масштабируемой надежной платформе с возможностью экспериментирования и функцией управления моделями
     imageSrc: https://static.docs.com/ui/media/product/azure/machine-learning.svg
@@ -1129,13 +1135,13 @@ productDirectory:
     azureCategories:
     - security
     url: security-center/azure-defender.md
-  - title: Azure Defender для Интернета вещей (предварительная версия)
+  - title: Azure Defender для Интернета вещей
     summary: Непрерывное управление ресурсами и обнаружение угроз как для неуправляемых, так и для управляемых устройств Интернета вещей и OT-устройств
     imageSrc: ./media/index/defender-iot.svg
     azureCategories:
     - security
     - iot
-    url: ./security-center/azure-defender.md
+    url: ./defender-for-iot/index.yml
   - title: Защита от атак DDoS Azure
     summary: Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS)
     imageSrc: https://static.docs.com/ui/media/product/azure/ddos-protection.svg

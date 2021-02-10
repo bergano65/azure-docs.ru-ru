@@ -766,6 +766,8 @@
                   href: troubleshoot-not-found.md
                 - name: Устранение проблемы при несанкционированном доступе
                   href: troubleshoot-unauthorized.md
+                - name: Устранение неполадок при запрете
+                  href: troubleshoot-forbidden.md
                 - name: Проблемы с доступностью в средах с поддержкой нескольких регионов
                   href: troubleshoot-sdk-availability.md
             - name: .NET

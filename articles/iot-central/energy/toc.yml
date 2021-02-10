@@ -5,6 +5,7 @@
     - name: Создание решений для энергетики с помощью Azure IoT Central
       href: overview-iot-central-energy.md
 - name: Учебники
+  expanded: true
   items:
     - name: Создания приложения для мониторинга "умных счетчиков"
       href: tutorial-smart-meter-app.md

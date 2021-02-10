@@ -30,6 +30,8 @@
       href: Concepts/azure-resources.md
     - name: Источники данных и контекст
       href: Concepts/data-sources-and-content.md
+    - name: Управление доступом Azure на основе ролей (Azure RBAC)
+      href: Concepts/role-based-access-control.md
     - name: Процесс ранжирования
       displayName: 'DefaultAnswer, Default answer'
       href: Concepts/query-knowledge-base.md
@@ -46,7 +48,7 @@
     - name: Управление ресурсами Azure
       href: How-To/set-up-qnamaker-service-azure.md
       displayName: 'azure, resource, key, upgrade, pricing, tier,'
-    - name: Управление приложением QnA Maker
+    - name: Управление ресурсами QnA Maker
       href: How-To/manage-qna-maker-app.md
     - name: Включение активного обучения
       href: How-To/use-active-learning.md
@@ -92,8 +94,6 @@
       href: Concepts/confidence-score.md
     - name: Диагностика
       href: troubleshooting.md
-    - name: Пары вопросов и ответов
-      href: Concepts/question-answer-set.md
     - name: Точный ответ
       href: reference-precise-answering.md
     - name: Добавление защищенных файлов SharePoint
@@ -105,14 +105,6 @@
       href: reference-app-service.md
     - name: Рекомендации по формату содержимого
       href: reference-document-format-guidelines.md
-    - name: Форматы содержимого и данных
-      items:
-        - name: Рекомендации по формату содержимого
-          href: reference-document-format-guidelines.md
-        - name: URL-адреса
-          href: reference-document-type-url.md
-        - name: Рекомендации по импорту и экспорту данных
-          href: reference-data-guidelines.md
     - name: Формат отображения
       href: reference-markdown-format.md
     - name: Приватные каналы

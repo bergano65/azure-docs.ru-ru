@@ -9,20 +9,20 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 02/09/2021
 ms.author: justinha
-ms.openlocfilehash: 89671d0e69d4e526e30c80619b57d698d5a5acc5
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 3d0f2b44f37cb318be2117b5dc5d8b42b418ff19
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491171"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090995"
 ---
 # <a name="frequently-asked-questions-faqs-about-azure-active-directory-ad-domain-services"></a>Часто задаваемые вопросы о доменных службах Azure Active Directory (AD)
 
 На этой странице приведены ответы на часто задаваемые вопросы об Azure Active Directory доменных службах.
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 * [Можно ли создать несколько управляемых доменов для одного каталога Azure AD?](#can-i-create-multiple-managed-domains-for-a-single-azure-ad-directory)
 * [Можно ли включить доменные службы Azure AD в классической виртуальной сети?](#can-i-enable-azure-ad-domain-services-in-a-classic-virtual-network)
@@ -152,7 +152,7 @@ ms.locfileid: "99491171"
 Нет. После включения управляемого домена доменных служб Azure AD служба будет доступна в выбранной виртуальной сети, пока не будет удален управляемый домен. Приостановить работу службы невозможно. Счета выставляются на почасовой основе, пока вы не удалите управляемый домен.
 
 ### <a name="can-i-fail-over-azure-ad-domain-services-to-another-region-for-a-dr-event"></a>Можно ли выполнить отработку отказа доменных служб Azure AD в другой регион для события аварийного восстановления?
-Нет. Доменные службы Azure AD в настоящее время не предоставляют геоизбыточную модель развертывания. Она ограничена одной виртуальной сетью в регионе Azure. Чтобы использовать несколько регионов Azure, необходимо запустить контроллеры домена Active Directory на виртуальных машинах IaaS Azure. Инструкции по архитектуре см. в статье [расширение локального домена Active Directory в Azure](/azure/architecture/reference-architectures/identity/adds-extend-domain).
+Да, чтобы обеспечить географическую устойчивость для управляемого домена, можно создать дополнительный [набор реплик](tutorial-create-replica-set.md) для одноранговой виртуальной сети в любом регионе Azure, поддерживающем AD DS Azure. Наборы реплик совместно используют одно и то же пространство имен и конфигурацию с управляемым доменом.
 
 ### <a name="can-i-get-azure-ad-domain-services-as-part-of-enterprise-mobility-suite-ems-do-i-need-azure-ad-premium-to-use-azure-ad-domain-services"></a>Можно ли получить доменные службы Azure AD в составе Enterprise Mobility Suite (EMS)? Требуется ли Azure AD Premium для использования доменных служб Azure AD?
 Нет. Доменные службы Azure AD — это служба Azure с оплатой по мере использования и не входящая в EMS. Доменные службы Azure AD можно использовать со всеми выпусками Azure AD (Free и Premium). Счет выставляется на почасовой основе в зависимости от использования.
@@ -160,7 +160,7 @@ ms.locfileid: "99491171"
 ### <a name="what-azure-regions-is-the-service-available-in"></a>В каких регионах Azure доступна служба?
 Перейдите на страницу [служб Azure по регионам](https://azure.microsoft.com/regions/#services/), чтобы просмотреть список регионов Azure, в которых доступны доменные службы Azure AD.
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Ознакомьтесь с нашим [руководством по устранению неполадок](troubleshoot.md) для решения распространенных проблем при настройке или администрировании доменных служб Azure AD.
 

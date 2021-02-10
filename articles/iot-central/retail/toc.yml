@@ -5,6 +5,7 @@
     - name: Создание решений для розничной торговли с помощью Azure IoT Central
       href: overview-iot-central-retail.md
 - name: Учебники
+  expanded: true
   items:
     - name: "Аналитика магазина\_— оформление заказа"
       items:

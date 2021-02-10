@@ -10,12 +10,12 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10fe3b895ea5084247822f1c35275e68d80b73fa
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: c9e0a645bc580ab3a0794ca6ded1e60159df7d92
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762985"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090604"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Переход на облачную проверку подлинности с использованием промежуточного развертывания (предварительная версия)
 
@@ -83,10 +83,6 @@ ms.locfileid: "98762985"
     - Динамические группы *не поддерживаются* для промежуточного развертывания.
     - Объекты контакта внутри группы будут блокировать добавление группы.
 
-- Вам все равно нужно выполнить окончательный переход из федеративной проверки подлинности в облачную с помощью Azure AD Connect или PowerShell. Промежуточное развертывание не преобразовывает федеративные домены в управляемые.  Дополнительные сведения о домене прямую миграцию см. в статье [Миграция из Федерации в синхронизацию хэша паролей](plan-migrate-adfs-password-hash-sync.md) и [Миграция из Федерации в сквозную аутентификацию](plan-migrate-adfs-pass-through-authentication.md) .
-
-
-
 - При первом добавлении группы безопасности для промежуточного развертывания вы можете ограничиться 200 пользователей, чтобы избежать времени ожидания пользовательского интерфейса. После добавления группы вы можете добавить дополнительных пользователей, если это необходимо.
 
 - Когда пользователи находятся в промежуточном режиме, когда Енфорцеклаудпассвордполицифорпассвордсинцедусерс включен, для политики срока действия пароля устанавливается значение 90 дней без возможности настройки. 
@@ -95,7 +91,9 @@ ms.locfileid: "98762985"
 
 - Гибридное подключение Windows 10 или первичный маркер обновления присоединение к Azure AD для всех версий, если локальный UPN пользователя не поддерживает маршрутизацию. Этот сценарий перейдет в конечную точку WS-Trust в промежуточном режиме, но прекратит работу, когда промежуточная миграция завершится, а вход пользователя больше не будет полагаться на сервер федерации.
 
-
+  >[!NOTE]
+  >Вам все равно нужно выполнить окончательный переход из федеративной проверки подлинности в облачную с помощью Azure AD Connect или PowerShell. Промежуточное развертывание не переключает домены с федеративного на управляемый.  Дополнительные сведения о домене прямую миграцию см. в статье [Миграция из Федерации в синхронизацию хэша паролей](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso) и [Миграция из Федерации в сквозную аутентификацию](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso) .
+  
 ## <a name="get-started-with-staged-rollout"></a>Начало работы с промежуточным развертыванием
 
 Чтобы проверить *синхронизацию хэша паролей* данных для входа с помощью промежуточного развертывания, выполните инструкции для предварительной подготовки, приведенные в следующем разделе.
@@ -257,3 +255,5 @@ A. Да. Сведения об использовании PowerShell для вы
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [AzureADPreview](/powershell/module/azuread/?view=azureadps-2.0-preview#staged_rollout )
+- [Изменение метода входа на синхронизацию хэшей паролей](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)
+- [Изменение метода входа для сквозной проверки подлинности](plan-migrate-adfs-password-hash-sync.md#step-3-change-the-sign-in-method-to-password-hash-synchronization-and-enable-seamless-sso)

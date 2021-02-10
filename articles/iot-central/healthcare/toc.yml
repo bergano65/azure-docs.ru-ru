@@ -5,9 +5,12 @@
     - name: Создание решений для здравоохранения с помощью Azure IoT Central
       href: overview-iot-central-healthcare.md
 - name: Учебники
+  expanded: true
   items:
     - name: Создание приложения для непрерывного мониторинга состояния пациентов
       href: tutorial-continuous-patient-monitoring.md
+    - name: Создание панель мониторинга для анализа данных о здоровье
+      href: howto-health-data-triage.md
 - name: Основные понятия
   items:
     - name: Архитектура приложения для непрерывного мониторинга состояния пациентов
@@ -18,8 +21,6 @@
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/healthcare/toc.json&bc=/azure/iot-central/healthcare/breadcrumb/toc.json
 - name: Практические руководства
   items:
-    - name: Создание панель мониторинга для анализа данных о здоровье
-      href: howto-health-data-triage.md
     - name: Подключение и разработка устройств
       items:
         - name: Подготовка и подключение Rigado Cascade 500

@@ -5,6 +5,7 @@
     - name: Создание решений для государственных организаций с помощью Azure IoT Central
       href: overview-iot-central-government.md
 - name: Учебники
+  expanded: true
   items:
     - name: Создание приложения для интеллектуального управления отходами
       href: tutorial-connected-waste-management.md

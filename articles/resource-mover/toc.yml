@@ -12,6 +12,8 @@
   items:
     - name: Перенос виртуальных машин Azure в другой регион
       href: tutorial-move-region-virtual-machines.md
+    - name: Перемещение зашифрованных виртуальных машин Azure в другой регион
+      href: tutorial-move-region-encrypted-virtual-machines.md
     - name: Перемещение ресурсов SQL в другой регион
       href: tutorial-move-region-sql.md
 - name: Основные понятия
