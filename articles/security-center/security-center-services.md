@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 ms.author: memildin
-ms.openlocfilehash: 04dfd731f1dcf0e9e7c045e0f7ef335c8db5b359
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: e827178d8ccb0f7de8d32433d03502a7412d1139
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805623"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834056"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -54,7 +54,7 @@ ms.locfileid: "98805623"
 
 |**Возможность**|**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры с поддержкой Azure Arc**|**Требуется ли Azure Defender**
 |----|:----:|:----:|:----:|:----:|
-|[Интеграция Microsoft Defender для конечной точки](security-center-wdatp.md)|-|-|-|Да|
+|[Интеграция Microsoft Defender для конечной точки](security-center-wdatp.md)|-|-|-|-|
 |[Аналитика поведения виртуальных машин (и оповещения системы безопасности)](./azure-defender.md)|✔</br>(в поддерживаемых версиях)|✔</br>(в поддерживаемых версиях)|✔|Да|
 |[Оповещения системы безопасности о бесфайловых угрозах](alerts-reference.md#alerts-windows)|-|-|-|Да|
 |[Оповещения системы безопасности об угрозах на уровне сети](other-threat-protections.md#network-layer)|✔|✔|-|Да|
@@ -96,10 +96,10 @@ ms.locfileid: "98805623"
 | Trend Micro — агент Deep Security | Семейство Windows Server  | Нет | Да |
 | Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
 | McAfee v10+ | Семейство Windows Server  | Нет | Да |
-| McAfee v10+ | Семейство Linux Server  | Нет | Да * *\** _ |
-| Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да _*\**_  |
+| McAfee v10+ | Семейство Linux Server  | Нет | Да **\*** |
+| Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да **\***  |
 
- _*\**_ Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
+ **\*** Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
 
 > [!NOTE]
 > Чтобы служба System Center Endpoint Protection (SCEP) была доступна для обнаружения на виртуальной машине Windows Server 2008 R2, службу нужно установить после установки PowerShell 3.0 или более поздней версии.
@@ -136,7 +136,7 @@ ms.locfileid: "98805623"
 |[Защита рабочих нагрузок Kubernetes](kubernetes-workload-protections.md)|-|-|
 |||
 
-(1) Требуется _ *Azure Defender для серверов**.
+(1) Требуется **Azure Defender для серверов**.
 
 (2) Частично.
 
