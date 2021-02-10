@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: f2ea7af0ec9c740c07cd3a5e4ebd88a9ad1a031d
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: c2faf8e8b6a814989fa9e1693fddeedb525df13a
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542649"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006859"
 ---
 # <a name="mysql-drivers-and-management-tools-compatible-with-azure-database-for-mysql"></a>Совместимость драйверов и инструментов управления MySQL с базой данных Azure для MySQL.
 В этой статье описываются драйверы и инструменты управления, совместимые с Базой данных Azure для MySQL.
@@ -30,7 +30,7 @@ ms.locfileid: "94542649"
 | Python | Соединитель MySQL/Python | https://pypi.python.org/pypi/mysql-connector-python | 1.2.3, 2,0, 2,1, 2,2, использование 8.0.16 + с MySQL 8,0  | Версия 1.2.2 и предыдущие версии | |
 | Python | пимискл | https://pypi.org/project/PyMySQL/ | 0.7.11, 0.8.0, 0.8.1, 0.9.3 + | 0.9.0-0.9.2 (регрессия в web2py) | |
 | Java | Соединитель MariaDB/J | https://downloads.mariadb.org/connector-java/ | 2.1, 2.0, 1.6 | Версия 1.5.5 и предыдущие версии | | 
-| Java | Соединитель MySQL/J | https://github.com/mysql/mysql-connector-j | 5.1.21 +, использование 8.0.17 + с MySQL 8,0 | 5.1.20 и ниже | |
+| Java | MySQL Connector/J | https://github.com/mysql/mysql-connector-j | 5.1.21 +, использование 8.0.17 + с MySQL 8,0 | 5.1.20 и ниже | |
 | C | Соединитель MySQL/C (либмисклклиент) | https://dev.mysql.com/doc/refman/5.7/en/c-api-implementations.html | 6.0.2 + | | |
 | C | Соединитель MySQL/ODBC (мйодбк) | https://github.com/mysql/mysql-connector-odbc | 3.51.29 + | | |
 | C++ | Соединитель MySQL/C++ | https://github.com/mysql/mysql-connector-cpp | 1.1.9 + | 1.1.3 и ниже | | 
@@ -43,16 +43,16 @@ ms.locfileid: "94542649"
 ## <a name="management-tools"></a>Средства управления
 Преимущества совместимости также распространяются на инструменты управления базой данных. Имеющиеся инструменты должны продолжать работать с базой данных Azure для MySQL, пока обработка базы данных выполняется в пределах разрешений пользователя. Следующая таблица содержит три распространенных инструмента управления базой данных, которые были протестированы и которые совместимы с базой данных Azure для MySQL 5.6 и 5.7.
 
-|                                     | **MySQL Workbench 6.x и более поздней версии** | **Navicat 12** | **PHPMyAdmin 4.x и более поздней версии** |
-| :---------------------------------- | :----------------------------- | :------------- | :-------------------------|
-| **Создание, обновление, чтение, запись и удаление** | X | X | X |
-| **SSL-соединение** | X | X | X |
-| **Автозавершение запроса SQL** | X | X |  |
-| **Импорт и экспорт данных** | X | X | X |
-| **Экспорт в несколько форматов** | X | X | X |
-| **Резервное копирование и восстановление** |  | X |  |
-| **Отображение параметров сервера** | X | X | X |
-| **Отображение клиентских подключений** | X | X | X |
+|                                     | **MySQL Workbench 6.x и более поздней версии** | **Navicat 12** | **PHPMyAdmin 4.x и более поздней версии** | **Дбфорже Studio для MySQL 9,0** |
+| :---------------------------------- | :----------------------------- | :------------- | :-------------------------| :------------------------------- |
+| **Создание, обновление, чтение, запись и удаление** | X | X | X | X |
+| **SSL-соединение** | X | X | X | X |
+| **Автозавершение запроса SQL** | X | X |  | X |
+| **Импорт и экспорт данных** | X | X | X | X |
+| **Экспорт в несколько форматов** | X | X | X | X |
+| **Резервное копирование и восстановление** |  | X |  | X |
+| **Отображение параметров сервера** | X | X | X | X |
+| **Отображение клиентских подключений** | X | X | X | X |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

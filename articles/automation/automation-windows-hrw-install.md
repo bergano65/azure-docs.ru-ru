@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: e77a90617d79dab8c71cdf0c7a6a4fb21e052fbd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 09c86e23379cf9ccecf77d88a99ad6b3a7019a87
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182790"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006995"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -24,7 +24,7 @@ ms.locfileid: "96182790"
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
-### <a name="a-log-analytics-workspace"></a>Рабочая область Log Analytics
+### <a name="a-log-analytics-workspace"></a>Рабочая область Log Analytics .
 
 Гибридная Рабочая роль Runbook зависит от Azure Monitor Log Analytics рабочей области для установки и настройки роли. Его можно создать с помощью [Azure Resource Manager](../azure-monitor/samples/resource-manager-workspace.md#create-a-log-analytics-workspace), с помощью [PowerShell](../azure-monitor/scripts/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)или в [портал Azure](../azure-monitor/learn/quick-create-workspace.md).
 
@@ -38,8 +38,8 @@ ms.locfileid: "96182790"
 
 Гибридная Рабочая роль Runbook поддерживает следующие операционные системы:
 
-* Windows Server 2019
-* Windows Server 2016, версии 1709 и 1803
+* Windows Server 2019 (включая Server Core)
+* Windows Server 2016, версия 1709 и 1803 (за исключением Server Core)
 * Windows Server 2012, 2012 R2
 * Windows Server 2008 (x64) с пакетом обновления 2 (SP2), 2008 R2
 * Все устройства с Windows 10 Корпоративная (с несколькими сеансами), и Профессиональная

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 718e812a8193797ad350fa61444bb05fe5a4b724
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 6e312d354a25113a764bca5e9492909d22af9873
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896907"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007743"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
 
@@ -74,7 +74,7 @@ ms.locfileid: "98896907"
 
 |Операционная система  |Примечания  |
 |---------|---------|
-|Windows Server 2019 (Datacenter, Datacenter Core или Standard)<br>Windows Server 2016 (Datacenter, Datacenter Core или Standard)<br>Windows Server 2012 R2 (Datacenter или Standard)<br>Windows Server 2012 |
+|Windows Server 2019 (Datacenter/Standard, включая Server Core)<br><br>Windows Server 2016 (Datacenter/Standard, исключая Server Core)<br><br>Windows Server 2012 R2 (Datacenter или Standard)<br><br>Windows Server 2012 | |
 |Windows Server 2008 R2 (RTM и Standard с пакетом обновления 1, SP1)| Управление обновлениями поддерживает оценки и исправления для этой операционной системы. [Гибридная Рабочая роль Runbook](../automation-windows-hrw-install.md) поддерживается для Windows Server 2008 R2. |
 |CentOS 6 и 7 (x64)      | Агентам Linux требуется доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа `yum` вернула данные безопасности, которых нет в выпусках RTM CentOS. Дополнительные сведения об исправлениях на основе классификации в CentOS см. в разделе о [классификации обновлений в Linux](view-update-assessments.md#linux).          |
 |Red Hat Enterprise 6 и 7 (x64)     | Агентам Linux требуется доступ к репозиторию обновлений.        |

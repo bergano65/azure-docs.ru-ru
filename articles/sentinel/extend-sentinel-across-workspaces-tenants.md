@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2020
 ms.author: yelevin
-ms.openlocfilehash: dfd8f94dc7ab4e428647b8f44a86a2cd06634e2a
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 9cbafa2a87db9aa59769ac759da9b56a6463874a
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807247"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006689"
 ---
 # <a name="extend-azure-sentinel-across-workspaces-and-tenants"></a>Расширение Azure Sentinel между рабочими областями и арендаторами
 
@@ -98,7 +98,7 @@ Azure Sentinel поддерживает запросы [к нескольким 
 <!-- Bookmark added for backward compatibility with old heading -->
 Запросы между рабочими областями теперь можно включать в запланированные правила аналитики с соблюдением следующих ограничений.
 
-- Один запрос может содержать до 15 рабочих областей.
+- Один запрос может содержать до 20 рабочих областей.
 - Sentinel Azure необходимо развернуть в каждой рабочей области, на которую ссылается запрос.
 
 > [!NOTE] 

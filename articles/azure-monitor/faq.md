@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 2ca8a814fbaf2d8c257d094f81d17a5c871793b0
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: a8d3ded1d11a350ff53ffda71348b2cc707760b8
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878941"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008423"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Azure Monitor: вопросы и ответы
 
@@ -81,10 +81,12 @@ Azure Monitor собирает данные из различных источн
 
 ### <a name="how-do-i-retrieve-log-data"></a>Как извлечь данные журналов?
 Все данные из рабочей области Log Analytics извлекаются с помощью запросов к журналам, написанных на языке запросов Kusto (KQL). Вы можете создавать собственные запросы или использовать решения для мониторинга и службы аналитики, в которых есть готовые запросы к журналам для определенного приложения или службы. См. статью [Общие сведения о запросах к журналам в Azure Monitor](log-query/log-query-overview.md).
-p
+
 ### <a name="can-i-delete-data-from-a-log-analytics-workspace"></a>Можно ли удалить данные из рабочей области Log Analytics?
 Данные удаляются из рабочей области в соответствии с сроком [хранения](platform/manage-cost-storage.md#change-the-data-retention-period). Вы можете удалить определенные данные в соответствии с требованиями к конфиденциальности или соответствию. Дополнительные сведения см. [в разделе Экспорт и удаление закрытых данных](platform/personal-data-mgmt.md#how-to-export-and-delete-private-data) .
 
+### <a name="is-log-analytics-storage-immutable"></a>Log Analytics ли неизменяемое хранилище?
+Данные в хранилище базы данных нельзя изменить после приема, но их можно удалить с помощью [пути API *очистки* для удаления закрытых данных](platform/personal-data-mgmt.md#delete). Хотя данные не могут быть изменены, для некоторых сертификатов требуется, чтобы данные сохранялись как неизменяемые и не могут быть изменены или удалены в хранилище. Неизменность данных может быть достигнута с помощью [экспорта данных](platform/logs-data-export.md) в учетную запись хранения, настроенную как [неизменяемое хранилище](../storage/blobs/storage-blob-immutability-policies-manage.md).
 
 ### <a name="what-is-a-log-analytics-workspace"></a>Что такое рабочая область Log Analytics?
 Все данные журналов, собранные Azure Monitor, сохраняются в рабочей области Log Analytics. Рабочая область по сути является контейнером, в который собираются данные журналов из разных источников. Вы можете использовать одну рабочую область Log Analytics для всех данных мониторинга или создать несколько, если в этом есть потребность. См. статью [Разработка развертывания журналов Azure Monitor](platform/design-logs-deployment.md).

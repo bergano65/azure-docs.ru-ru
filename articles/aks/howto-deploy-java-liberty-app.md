@@ -7,16 +7,23 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/01/2021
 keywords: Java, жакартаи, Java, Микропрофиль, Open-Liberty, WebSphere-Liberty, AKS, kubernetes
-ms.openlocfilehash: 2e025c706512b6ab3945118da996b11a5a8a9585
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: d0e6f2fea6894378da736ba83a90ee28402ec7f9
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526896"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007143"
 ---
 # <a name="deploy-a-java-application-with-open-liberty-or-websphere-liberty-on-an-azure-kubernetes-service-aks-cluster"></a>Развертывание приложения Java с помощью Open Liberty или WebSphere Liberty в кластере службы Kubernetes Azure (AKS)
 
-В этом руководстве показано, как запустить приложение Java, Java EE, [Джакарта ee](https://jakarta.ee/)или [Микропрофиль](https://microprofile.io/) в открытой среде выполнения Liberty или WebSphere Liberty, а затем развернуть контейнерное приложение в кластере AKS с помощью оператора Open Liberty. Оператор Open Liberty упрощает развертывание и Управление приложениями, работающими на открытых кластерах Liberty Kubernetes. Кроме того, можно выполнять более сложные операции, такие как сбор трассировок и дампов с помощью оператора. В этой статье описывается подготовка приложения Liberty, создание образа DOCKER приложения и запуск контейнерного приложения в кластере AKS.  Дополнительные сведения об Open Liberty см. [на странице Открытие проекта Liberty](https://openliberty.io/). Дополнительные сведения о IBM WebSphere Liberty см. [на странице продукта WebSphere Liberty](https://www.ibm.com/cloud/websphere-liberty).
+В этой статье демонстрируются следующие возможности.  
+* Запустите приложение Java, Java EE, Джакарта EE или Микропрофиль в открытой среде выполнения Liberty или WebSphere Liberty.
+* Создайте образ DOCKER приложения с помощью открытых образов контейнеров Liberty.
+* Разверните контейнерное приложение в кластере AKS с помощью оператора Open Liberty.   
+
+Оператор Open Liberty упрощает развертывание и Управление приложениями, работающими в кластерах Kubernetes. С помощью оператора Open Liberty можно также выполнять более сложные операции, такие как сбор трассировок и дампов. 
+
+Дополнительные сведения об Open Liberty см. [на странице Открытие проекта Liberty](https://openliberty.io/). Дополнительные сведения о IBM WebSphere Liberty см. [на странице продукта WebSphere Liberty](https://www.ibm.com/cloud/websphere-liberty).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -24,17 +31,20 @@ ms.locfileid: "99526896"
 
 * Для работы с этой статьей требуется последняя версия Azure CLI. Если вы используете Azure Cloud Shell, последняя версия уже установлена.
 * При запуске команд в этом руководство локально (вместо Azure Cloud Shell):
-  * Подготовка локального компьютера с установленной операционной системой, похожей на UNIX (например, Ubuntu, macOS).
+  * Подготовка локального компьютера с установленной операционной системой, похожей на UNIX (например, Ubuntu, macOS, подсистема Windows для Linux).
   * Установите реализацию Java SE (например, [Адоптопенждк OpenJDK 8 LTS/OpenJ9](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9)).
   * Установите [Maven](https://maven.apache.org/download.cgi) 3.5.0 или более поздней версии.
   * Установите [DOCKER](https://docs.docker.com/get-docker/) для вашей ОС.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. Создайте группу ресурсов *Java-Liberty-Project* с помощью команды [AZ Group Create](/cli/azure/group#az_group_create) в расположении *eastus* . Он будет использоваться позже для создания экземпляра реестра контейнеров Azure (записи контроля доступа) и кластера AKS. 
+Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure.  
+
+Создайте группу ресурсов с именем *Java-Liberty-Project* с помощью команды [AZ Group Create](/cli/azure/group#az_group_create) в расположении *eastus* . Эта группа ресурсов будет использоваться позже для создания экземпляра реестра контейнеров Azure (записи контроля доступа) и кластера AKS. 
 
 ```azurecli-interactive
-az group create --name java-liberty-project --location eastus
+RESOURCE_GROUP_NAME=java-liberty-project
+az group create --name $RESOURCE_GROUP_NAME --location eastus
 ```
 
 ## <a name="create-an-acr-instance"></a>Создание экземпляра ACR
@@ -42,7 +52,8 @@ az group create --name java-liberty-project --location eastus
 Используйте команду [AZ контроля](/cli/azure/acr#az_acr_create) доступа для создания экземпляра контроля доступа. В следующем примере создается экземпляр контроля учетных записей с именем *йоуруникуеакрнаме*. Убедитесь, что *йоуруникуеакрнаме* является уникальным в Azure.
 
 ```azurecli-interactive
-az acr create --resource-group java-liberty-project --name youruniqueacrname --sku Basic --admin-enabled
+REGISTRY_NAME=youruniqueacrname
+az acr create --resource-group $RESOURCE_GROUP_NAME --name $REGISTRY_NAME --sku Basic --admin-enabled
 ```
 
 Через некоторое время вы увидите выходные данные JSON, которые содержат:
@@ -55,10 +66,9 @@ az acr create --resource-group java-liberty-project --name youruniqueacrname --s
 
 ### <a name="connect-to-the-acr-instance"></a>Подключение к экземпляру записи контроля доступа
 
-Чтобы отправить образ в экземпляр записи контроля доступа, сначала необходимо войти в него. Выполните следующие команды, чтобы проверить подключение:
+Необходимо войти в экземпляр записи контроля доступа, прежде чем можно будет отправить в него образ. Выполните следующие команды, чтобы проверить подключение:
 
 ```azurecli-interactive
-REGISTRY_NAME=youruniqueacrname
 LOGIN_SERVER=$(az acr show -n $REGISTRY_NAME --query 'loginServer' -o tsv)
 USER_NAME=$(az acr credential show -n $REGISTRY_NAME --query 'username' -o tsv)
 PASSWORD=$(az acr credential show -n $REGISTRY_NAME --query 'passwords[0].value' -o tsv)
@@ -73,7 +83,8 @@ docker login $LOGIN_SERVER -u $USER_NAME -p $PASSWORD
 Используйте команду [az aks create](/cli/azure/aks#az_aks_create), чтобы создать кластер AKS. В следующем примере создается кластер *myAKSCluster* с одним узлом. Это может занять несколько минут.
 
 ```azurecli-interactive
-az aks create --resource-group java-liberty-project --name myAKSCluster --node-count 1 --generate-ssh-keys --enable-managed-identity
+CLUSTER_NAME=myAKSCluster
+az aks create --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME --node-count 1 --generate-ssh-keys --enable-managed-identity
 ```
 
 Через несколько минут команда завершит работу и возвратит сведения о кластере в формате JSON, включая следующие:
@@ -96,7 +107,7 @@ az aks install-cli
 Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials](/cli/azure/aks#az_aks_get_credentials). Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
 
 ```azurecli-interactive
-az aks get-credentials --resource-group java-liberty-project --name myAKSCluster --overwrite-existing
+az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAME --overwrite-existing
 ```
 
 > [!NOTE]
@@ -144,6 +155,7 @@ curl -L https://raw.githubusercontent.com/OpenLiberty/open-liberty-operator/mast
 1. Клонировать пример кода для этого руководством. Пример находится на [GitHub](https://github.com/Azure-Samples/open-liberty-on-aks).
 1. Измените каталог на `javaee-app-simple-cluster` локальный клон.
 1. Выполните команду `mvn clean package` , чтобы упаковать приложение.
+1. Запустите `mvn liberty:dev` , чтобы протестировать приложение. `The defaultServer server is ready to run a smarter planet.`В случае успеха в выходных данных команды вы увидите. Чтобы остановить приложение, нажмите клавишу `CTRL-C`.
 1. Выполните одну из следующих команд, чтобы создать образ приложения и отправить его в экземпляр записи контроля доступа.
    * Выполните сборку с открытым базовым образом Liberty, если вы предпочитаете использовать Open Liberty в качестве облегченного™ среды выполнения Java с открытым кодом:
 
@@ -206,12 +218,12 @@ curl -L https://raw.githubusercontent.com/OpenLiberty/open-liberty-operator/mast
 kubectl get service javaee-app-simple-cluster --watch
 
 NAME                        TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)          AGE
-javaee-app-simple-cluster   LoadBalancer   10.0.251.169   52.152.189.57   9080:31732/TCP   68s
+javaee-app-simple-cluster   LoadBalancer   10.0.251.169   52.152.189.57   80:31732/TCP     68s
 ```
 
-Дождитесь, пока *внешний IP* -адрес изменится с *ожидания* на фактический общедоступный IP-адрес, используйте `CTRL-C` для отмены `kubectl` процесса просмотра.
+После того как *внешний IP* -адрес изменится с *ожидания* на фактический общедоступный IP-адрес, используйте `CTRL-C` для завершения `kubectl` процесса наблюдения.
 
-Откройте веб-браузер с внешним IP-адресом и портом службы ( `52.152.189.57:9080` для приведенного выше примера), чтобы просмотреть домашнюю страницу приложения. Имя Pod реплик приложения должно отобразиться в левом верхнем углу страницы. Подождите несколько минут и обновите страницу. Вы, вероятно, увидите другое имя Pod, отображаемое в результате балансировки нагрузки, предоставляемой кластером AKS.
+Откройте веб-браузер по внешнему IP-адресу службы ( `52.152.189.57` для приведенного выше примера), чтобы просмотреть домашнюю страницу приложения. Имя Pod реплик приложения должно отобразиться в левом верхнем углу страницы. Подождите несколько минут и обновите страницу, чтобы увидеть другое имя Pod, отображаемое в результате балансировки нагрузки, предоставляемой кластером AKS.
 
 :::image type="content" source="./media/howto-deploy-java-liberty-app/deploy-succeeded.png" alt-text="Приложение Java Liberty успешно развернуто в AKS":::
 
@@ -220,13 +232,13 @@ javaee-app-simple-cluster   LoadBalancer   10.0.251.169   52.152.189.57   9080:3
 
 ## <a name="clean-up-the-resources"></a>очищать ресурсы.
 
-Чтобы избежать расходов за использование Azure, необходимо удалить ненужные ресурсы.  Если кластер больше не нужен, используйте команду [AZ Group Delete](/cli/azure/group#az_group_delete) , чтобы удалить группу ресурсов, службу контейнеров, реестр контейнеров и все связанные ресурсы.
+Чтобы избежать оплаты за использование Azure, следует очистить ненужные ресурсы.  Если кластер больше не нужен, используйте команду [AZ Group Delete](/cli/azure/group#az_group_delete) , чтобы удалить группу ресурсов, службу контейнеров, реестр контейнеров и все связанные ресурсы.
 
 ```azurecli-interactive
-az group delete --name java-liberty-project --yes --no-wait
+az group delete --name $RESOURCE_GROUP_NAME --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения можно узнать из ссылок, используемых в этом руководство:
 

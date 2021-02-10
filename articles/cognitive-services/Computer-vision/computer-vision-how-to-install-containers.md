@@ -12,12 +12,12 @@ ms.date: 11/23/2020
 ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: локальное, оптическое распознавание, Docker, контейнер
-ms.openlocfilehash: 2298c7b931a5bb51d5067a9f789135ecf86ef3e5
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: fc5d281a6c0c9dd9620109de9d8deea27462ad0e
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576826"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008593"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Установить чтение с оптического распознавания контейнеров DOCKER (Предварительная версия) 
 
@@ -92,7 +92,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 | Контейнер | Реестр контейнеров, имя репозитория или образа |
 |-----------|------------|
 | Чтение 2,0-Preview | `mcr.microsoft.com/azure-cognitive-services/vision/read:2.0-preview` |
-| Чтение 3.2 (предварительная версия) | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1` |
+| Чтение 3.2 (предварительная версия) | `mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.2` |
 
 Используйте [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) команду, чтобы скачать образ контейнера.
 
@@ -101,7 +101,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 # <a name="version-32-preview"></a>[Версия 3,2-Preview](#tab/version-3-2)
 
 ```bash
-docker pull mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1
+docker pull mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.2
 ```
 
 # <a name="version-20-preview"></a>[Версия 2,0-Preview](#tab/version-2)
@@ -131,7 +131,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/vision/read:2.0-preview
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 18g --cpus 8 \
-mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.1 \
+mcr.microsoft.com/azure-cognitive-services/vision/read:3.2-preview.2 \
 Eula=accept \
 Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
@@ -438,7 +438,7 @@ ApiKey={API_KEY}
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](./computer-vision-resource-container-config.md).
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 Из этой статьи вы узнали основные понятия и рабочий процесс, позволяющий скачивать, устанавливать и запускать контейнеры компьютерного зрения. В разделе "Сводка" сделайте следующее.
 

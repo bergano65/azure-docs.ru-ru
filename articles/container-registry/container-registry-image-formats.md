@@ -3,12 +3,12 @@ title: Поддерживаемые форматы содержимого
 description: Сведения о форматах содержимого, поддерживаемых реестром контейнеров Azure, включая образы контейнеров, совместимые с DOCKER, Helmные диаграммы, изображения OCI и, например, артефакты OCI.
 ms.topic: article
 ms.date: 08/30/2019
-ms.openlocfilehash: ab915385f46f83c7b655acd1a48d66df84b50653
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2a54c65d149a27ed9eae85c3308d657ed3471a3
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84695272"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008338"
 ---
 # <a name="content-formats-supported-in-azure-container-registry"></a>Форматы содержимого, поддерживаемые в Реестре контейнеров Azure
 
@@ -20,11 +20,11 @@ ms.locfileid: "84695272"
 
 * [Манифест версии 2 образа Docker, схема 1](https://docs.docker.com/registry/spec/manifest-v2-1/)
 
-* [Манифест версии 2 образа Docker, схема 2](https://docs.docker.com/registry/spec/manifest-v2-2/) — включает в себя списки манифестов, которые позволяют реестрам хранить многоплатформенные образы в одной ссылке "image: tag"
+* [Манифест образа DOCKER v2, схема 2](https://docs.docker.com/registry/spec/manifest-v2-2/) . включает списки манифестов, которые позволяют реестрам хранить [образы с несколькими архитектурами](push-multi-architecture-images.md) в одной `image:tag` ссылке.
 
 ## <a name="oci-images"></a>Изображения OCI
 
-Реестр контейнеров Azure поддерживает образы, соответствующие [спецификации формата образа для инициативы Open Container (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md). Форматы упаковки включают [Формат изображения в формате "только в единственном числе" (SIF)](https://github.com/sylabs/sif).
+Реестр контейнеров Azure поддерживает образы, которые соответствуют [спецификации формата образа для инициативы Open Container (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md), включая спецификацию необязательного [индекса изображений](https://github.com/opencontainers/image-spec/blob/master/image-index.md) . Форматы упаковки включают [Формат изображения в формате "только в единственном числе" (SIF)](https://github.com/sylabs/sif).
 
 ## <a name="oci-artifacts"></a>, Артефакты OCI
 

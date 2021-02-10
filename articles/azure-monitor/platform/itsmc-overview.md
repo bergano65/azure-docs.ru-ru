@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 12/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: ed13837eabadc38cee50efac3b9340c973c8ea70
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: d22bb05ad6db3630e9b0242e098fd81f65e34b05
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492439"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007318"
 ---
 # <a name="it-service-management-connector-overview"></a>Обзор Соединитель управления ИТ-услугами
 
@@ -32,7 +32,8 @@ ms.locfileid: "99492439"
 -   Cherwell
 
    >[!NOTE]
-> Мы предлагаем нашим клиентам Cherwell и Provance использовать [действие веб-перехватчика](./action-groups.md#webhook) для Cherwell и Provance конечной точки в качестве другого решения интеграции.
+> Начиная с 1-Oct-2020 Cherwell и Provance ITSM интеграция с оповещением Azure больше не будут включены для новых клиентов. Новые подключения ITSM не будут поддерживаться.
+> Существующие подключения ITSM будут поддерживаться.
 
 С помощью ITSMC можно:
 

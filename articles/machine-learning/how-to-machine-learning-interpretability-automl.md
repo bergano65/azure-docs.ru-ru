@@ -10,12 +10,12 @@ ms.custom: how-to, automl, responsible-ml
 ms.author: mithigpe
 author: minthigpen
 ms.date: 07/09/2020
-ms.openlocfilehash: fe0b2abb7fa2ca986a896a75e5f6d4c238d70109
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 709c85bed4a028c6c168c79cd9fffd6b7b40cb68
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807264"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008049"
 ---
 # <a name="interpretability-model-explanations-in-automated-machine-learning-preview"></a>Интерпретируемость: пояснения к модели в автоматизированном машинном обучении (предварительная версия)
 
@@ -51,7 +51,7 @@ ms.locfileid: "99807264"
 > * Среднее значение по сезону 
 > * Сезонный Байес
 
-### <a name="download-engineered-feature-importance-from-artifact-store"></a>Скачивание характеристик сконструированной функции из хранилища артефактов
+### <a name="download-the-engineered-feature-importances-from-the-best-run"></a>Загрузите более высокую важность функций из лучшего запуска.
 
 Вы можете использовать `ExplanationClient` для скачивания объяснений инженерных функций из хранилища артефактов `best_run` . 
 
@@ -61,6 +61,18 @@ from azureml.interpret import ExplanationClient
 client = ExplanationClient.from_run(best_run)
 engineered_explanations = client.download_model_explanation(raw=False)
 print(engineered_explanations.get_feature_importance_dict())
+```
+
+### <a name="download-the-raw-feature-importances-from-the-best-run"></a>Загрузка необработанных характеристик компонента из лучшего запуска
+
+Можно использовать `ExplanationClient` для загрузки необработанных объяснений функций из хранилища артефактов `best_run` .
+
+```python
+from azureml.interpret import ExplanationClient
+
+client = ExplanationClient.from_run(best_run)
+raw_explanations = client.download_model_explanation(raw=True)
+print(raw_explanations.get_feature_importance_dict())
 ```
 
 ## <a name="interpretability-during-training-for-any-model"></a>Возможности интерпретации во время обучения для любой модели 
@@ -75,7 +87,7 @@ automl_run, fitted_model = local_run.get_output(metric='accuracy')
 
 ### <a name="set-up-the-model-explanations"></a>Настройка объяснений модели
 
-Используйте `automl_setup_model_explanations` для получения инженерных объяснений. `fitted_model`Может создавать следующие элементы:
+Используйте `automl_setup_model_explanations` для получения инженерных и необработанных объяснений. `fitted_model`Может создавать следующие элементы:
 
 - Рекомендуемые данные из обученных или тестовых примеров
 - Списки имен сконструированных функций
@@ -114,13 +126,25 @@ explainer = MimicWrapper(ws, automl_explainer_setup_obj.automl_estimator,
                          explainer_kwargs=automl_explainer_setup_obj.surrogate_model_params)
 ```
 
-### <a name="use-mimicexplainer-for-computing-and-visualizing-engineered-feature-importance"></a>Использование Мимицексплаинер для вычисления и визуализации важности сконструированных функций
+### <a name="use-mimic-explainer-for-computing-and-visualizing-engineered-feature-importance"></a>Использование пояснения к процедуре "имитировать" для вычисления и визуализации важности сконструированных функций
 
-Вы можете вызвать `explain()` метод в мимиквраппер с преобразованными примерами тестов, чтобы получить важность признаков для созданных сконструированных функций. Можно также использовать `ExplanationDashboard` для просмотра панели мониторинга значений важности функций созданных сконструированных функций с помощью аутомл феатуризерс.
+Вы можете вызвать `explain()` метод в мимиквраппер с преобразованными примерами тестов, чтобы получить важность признаков для созданных сконструированных функций. Вы также можете войти в [машинное обучение Azure Studio](https://ml.azure.com/) , чтобы просмотреть панель мониторинга значений важности функций созданных сконструированных функций, аутомл феатуризерс.
 
 ```python
 engineered_explanations = explainer.explain(['local', 'global'], eval_dataset=automl_explainer_setup_obj.X_test_transform)
 print(engineered_explanations.get_feature_importance_dict())
+```
+
+### <a name="use-mimic-explainer-for-computing-and-visualizing-raw-feature-importance"></a>Использование пояснения к процедуре "имитировать" для вычисления и визуализации необработанных важных компонентов
+
+Вы можете вызвать `explain()` метод в мимиквраппер с преобразованными примерами тестов, чтобы получить важность признаков для необработанных функций. В [машинное обучение Studio](https://ml.azure.com/)можно просмотреть панель мониторинга со значениями важности функций необработанных компонентов.
+
+```python
+raw_explanations = explainer.explain(['local', 'global'], get_raw=True,
+                                     raw_feature_names=automl_explainer_setup_obj.raw_feature_names,
+                                     eval_dataset=automl_explainer_setup_obj.X_test_transform,
+                                     raw_eval_dataset=automl_explainer_setup_obj.X_test_raw)
+print(raw_explanations.get_feature_importance_dict())
 ```
 
 ## <a name="interpretability-during-inference"></a>Интерпретируемость во время вывода
@@ -174,6 +198,48 @@ with open("myenv.yml","r") as f:
 
 ```
 
+### <a name="create-the-scoring-script"></a>Создание скрипта оценки
+
+Напишите сценарий, который загружает модель и создает прогнозы и объяснения на основе нового пакета данных.
+
+```python
+%%writefile score.py
+import joblib
+import pandas as pd
+from azureml.core.model import Model
+from azureml.train.automl.runtime.automl_explain_utilities import automl_setup_model_explanations
+
+
+def init():
+    global automl_model
+    global scoring_explainer
+
+    # Retrieve the path to the model file using the model name
+    # Assume original model is named automl_model
+    automl_model_path = Model.get_model_path('automl_model')
+    scoring_explainer_path = Model.get_model_path('scoring_explainer')
+
+    automl_model = joblib.load(automl_model_path)
+    scoring_explainer = joblib.load(scoring_explainer_path)
+
+
+def run(raw_data):
+    data = pd.read_json(raw_data, orient='records')
+    # Make prediction
+    predictions = automl_model.predict(data)
+    # Setup for inferencing explanations
+    automl_explainer_setup_obj = automl_setup_model_explanations(automl_model,
+                                                                 X_test=data, task='classification')
+    # Retrieve model explanations for engineered explanations
+    engineered_local_importance_values = scoring_explainer.explain(automl_explainer_setup_obj.X_test_transform)
+    # Retrieve model explanations for raw explanations
+    raw_local_importance_values = scoring_explainer.explain(automl_explainer_setup_obj.X_test_transform, get_raw=True)
+    # You can return any data type as long as it is JSON-serializable
+    return {'predictions': predictions.tolist(),
+            'engineered_local_importance_values': engineered_local_importance_values,
+            'raw_local_importance_values': raw_local_importance_values}
+```
+
 ### <a name="deploy-the-service"></a>Развертывание службы
 
 Разверните службу с помощью файла conda и файла оценки из предыдущих шагов.
@@ -216,11 +282,13 @@ if service.state == 'Healthy':
     print(output['predictions'])
     # Print the engineered feature importances for the predicted value
     print(output['engineered_local_importance_values'])
+    # Print the raw feature importances for the predicted value
+    print('raw_local_importance_values:\n{}\n'.format(output['raw_local_importance_values']))
 ```
 
 ### <a name="visualize-to-discover-patterns-in-data-and-explanations-at-training-time"></a>Визуализация для обнаружения закономерностей в данных и объяснениях во время обучения
 
-Диаграмму важности функций можно визуализировать в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com). После завершения выполнения Аутомл выберите **Просмотреть сведения о модели** , чтобы просмотреть конкретный запуск. Перейдите на вкладку **пояснения** , чтобы увидеть панель мониторинга визуализации пояснения.
+Диаграмму важности функций можно визуализировать в рабочей области в [машинное обучение Studio](https://ml.azure.com). После завершения выполнения Аутомл выберите **Просмотреть сведения о модели** , чтобы просмотреть конкретный запуск. Перейдите на вкладку **пояснения** , чтобы увидеть панель мониторинга визуализации пояснения.
 
 [![Архитектура интерпретации Машинное обучение](./media/how-to-machine-learning-interpretability-automl/automl-explanation.png)](./media/how-to-machine-learning-interpretability-automl/automl-explanation.png#lightbox)
 

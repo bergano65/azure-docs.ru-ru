@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: be807c7654123962f93820d9a3d54f3c7c070d97
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 049c24beb6bb1573458779bf0796357fa634898f
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526964"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008576"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Установка и инициализация Azure IoT Edge для Linux на устройстве Windows (Предварительная версия)
 
@@ -27,6 +27,8 @@ Azure IoT Edge для Linux в Windows позволяет использоват
 
 >[!NOTE]
 >IoT Edge для Linux в Windows предоставляется в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>
+>Хотя IoT Edge для Linux в Windows — это рекомендуемый интерфейс для использования Azure IoT Edge в среде Windows, контейнеры Windows по-прежнему доступны. Если вы предпочитаете использовать контейнеры Windows, см. инструкции по [установке и управлению Azure IOT Edge для Windows](how-to-install-iot-edge-windows-on-windows.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -337,6 +339,6 @@ Azure IoT Edge для Linux в Windows поддерживает следующи
        sudo iotedge check
        ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Продолжайте [развертывать модули IOT Edge](how-to-deploy-modules-portal.md) , чтобы узнать, как развернуть модули на устройстве.

@@ -9,43 +9,43 @@ ms.author: mlearned
 description: Подключение к Azure Arc кластера Kubernetes, который поддерживает Azure Arc
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 131ec014c9ac016a682bc4928f74910a3405a5da
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: b4ab84153eaaf81c668d8589fec7516853aca5f9
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186011"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008117"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой Azure Arc (предварительная версия)
 
-В этом документе рассматривается процесс подключения любого облачного кластера, сертифицированного для машинного кода (КНКФ), такого как AKS Engine в Azure, AKS Engine в центре Azure Stack, ГКЕ, ЕКС и VMware vSphere кластера в дугу Azure.
+В этой статье описывается процесс подключения любого Kubernetes кластера, сертифицированного для машинного кода (КНКФ), например, AKS Engine в Azure, AKS-Engine в центре Azure Stack, ГКЕ, ЕКС и VMware vSphere кластера в дугу Azure.
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Убедитесь, что выполняются следующие требования:
+Убедитесь, что вы подготовили следующие необходимые компоненты:
 
 * Работающий кластер Kubernetes. Если у вас нет кластера Kubernetes, вы можете создать тестовый кластер с помощью одного из следующих руководств:
-  * Создание кластера Kubernetes с помощью [Kubernetes в DOCKER (Kind)](https://kind.sigs.k8s.io/)
-  * Создание кластера Kubernetes с помощью DOCKER для [Mac](https://docs.docker.com/docker-for-mac/#kubernetes) или [Windows](https://docs.docker.com/docker-for-windows/#kubernetes)
-* Вам потребуется файл kubeconfig для доступа к кластеру и роли администратора кластера в кластере для развертывания с помощью Arc с включенными агентами Kubernetes.
+  * Создание кластера Kubernetes с помощью [Kubernetes в DOCKER (Kind)](https://kind.sigs.k8s.io/).
+  * Создайте кластер Kubernetes с помощью DOCKER для [Mac](https://docs.docker.com/docker-for-mac/#kubernetes) или [Windows](https://docs.docker.com/docker-for-windows/#kubernetes).
+* Файл kubeconfig для доступа к кластеру и роли администратора кластера в кластере для развертывания агентов Kubernetes с поддержкой ARC.
 * Пользователь или субъект-служба, которые будут указаны в командах `az login` и `az connectedk8s connect`, имеют разрешения на чтение и запись для типа ресурса Microsoft.Kubernetes/connectedclusters. Роль "кластер Kubernetes с подключением ARC в Azure" имеет эти разрешения и может использоваться для назначений ролей пользователя или субъекта-службы.
-* Helm 3 требуется для адаптации кластера с помощью расширения connectedk8s. [Установите последнюю версию Helm 3](https://helm.sh/docs/intro/install) для удовлетворения этого требования.
-* Azure CLI версии 2.15 + требуется для установки расширений CLI Kubernetes с поддержкой ARC. [Установите Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) или обновите последнюю версию, чтобы убедиться в наличии Azure CLI версии 2.15 +.
+* Helm 3 для адаптации кластера с помощью расширения connectedk8s. [Установите последнюю версию Helm 3](https://helm.sh/docs/intro/install) для удовлетворения этого требования.
+* Azure CLI версии 2.15 + для установки расширений CLI Kubernetes с поддержкой ARC в Azure. [Установите Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) или обновите последнюю версию.
 * Установите расширения CLI Kubernetes с поддержкой ARC:
   
-  Установите расширение `connectedk8s`, которое поможет подключить кластеры Kubernetes к Azure.
+  * Установите расширение `connectedk8s`, которое поможет подключить кластеры Kubernetes к Azure.
   
   ```azurecli
   az extension add --name connectedk8s
   ```
   
-  Установите расширение `k8sconfiguration`:
+   * Установите расширение `k8sconfiguration`:
   
   ```azurecli
   az extension add --name k8sconfiguration
   ```
-  
-  Если вы хотите обновить эти расширения позже, выполните следующие команды:
+
+  * Если вы хотите обновить эти расширения позже, выполните следующие команды:
   
   ```azurecli
   az extension update --name connectedk8s
@@ -59,20 +59,20 @@ ms.locfileid: "98186011"
 
 ## <a name="network-requirements"></a>Требования к сети
 
-Для работы агентов Azure Arc требуются следующие протоколы, порты и исходящие URL-адреса.
+Для работы агентов Azure Arc требуются следующие протоколы, порты и исходящие URL-адреса:
 
-* TCP на порту 443 (`https://:443`);
-* TCP на порту 9418 (`git://:9418`).
+* TCP через порт 443: `https://:443`
+* TCP через порт 9418: `git://:9418`
 
 | Конечная точка (DNS)                                                                                               | Описание                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `https://management.azure.com`                                                                                 | Требуется для подключения агента к Azure и регистрации кластера                                                        |
-| `https://eastus.dp.kubernetesconfiguration.azure.com`, `https://westeurope.dp.kubernetesconfiguration.azure.com` | Конечная точка плоскости данных, через которую агент будет отправлять сведения о состоянии и извлекать сведения о конфигурации.                                      |
-| `https://login.microsoftonline.com`                                                                            | Требуется для извлечения и обновления маркеров Azure Resource Manager.                                                                                    |
-| `https://mcr.microsoft.com`                                                                            | Требуется агентам Azure Arc для извлечения образов контейнеров.                                                                  |
-| `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Требуется для извлечения назначенных системой сертификатов управляемых удостоверений                                                                  |
+| `https://management.azure.com`                                                                                 | Требуется для подключения агента к Azure и регистрации кластера.                                                        |
+| `https://eastus.dp.kubernetesconfiguration.azure.com`, `https://westeurope.dp.kubernetesconfiguration.azure.com` | Конечная точка плоскости данных для агента, чтобы отправить сведения о состоянии и получить информацию о конфигурации.                                      |
+| `https://login.microsoftonline.com`                                                                            | Требуется для выборки и обновления маркеров Azure Resource Manager.                                                                                    |
+| `https://mcr.microsoft.com`                                                                            | Требуется для извлечения образов контейнеров для агентов Arc Azure.                                                                  |
+| `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Требуется для извлечения назначенных системой сертификатов управляемых удостоверений.                                                                  |
 
-## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Регистрация двух поставщиков для Kubernetes с поддержкой Azure Arc:
+## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Зарегистрируйте два поставщика для Kubernetes с поддержкой дуги Azure:
 
 ```console
 az provider register --namespace Microsoft.Kubernetes
@@ -80,7 +80,7 @@ az provider register --namespace Microsoft.Kubernetes
 az provider register --namespace Microsoft.KubernetesConfiguration
 ```
 
-Регистрация — это асинхронный процесс. На ее завершение может уйти около 10 минут. Процесс регистрации можно контролировать, выполняя следующие команды:
+Регистрация — это асинхронный процесс, который может занять около 10 минут. Процесс регистрации можно контролировать, выполняя следующие команды:
 
 ```console
 az provider show -n Microsoft.Kubernetes -o table
@@ -110,10 +110,13 @@ eastus      AzureArcTest
 
 ## <a name="connect-a-cluster"></a>Подключение кластера
 
-Теперь подключите кластер Kubernetes к Azure. Рабочий процесс для `az connectedk8s connect` выглядит следующим образом:
+Далее мы подключим наш кластер Kubernetes к Azure, используя `az connectedk8s connect` :
 
-1. Проверьте возможность подключения к кластеру Kubernetes через `KUBECONFIG`, `~/.kube/config` или `--kube-config`.
-1. Разверните агенты Azure Arc для Kubernetes с помощью Helm 3 в пространстве имен `azure-arc`.
+1. Проверьте подключение к кластеру Kubernetes одним из следующих способов:
+   1. `KUBECONFIG`
+   1. `~/.kube/config`
+   1. `--kube-config`
+1. Разверните агенты Arc Azure для Kubernetes, используя Helm 3 в `azure-arc` пространстве имен:
 
 ```console
 az connectedk8s connect --name AzureArcTest1 --resource-group AzureArcTest
@@ -151,7 +154,7 @@ Helm release deployment succeeded
 
 ## <a name="verify-connected-cluster"></a>Проверка подключенного кластера
 
-Получите список подключенных кластеров:
+Чтобы получить список подключенных кластеров, используйте следующую команду:
 
 ```console
 az connectedk8s list -g AzureArcTest -o table
@@ -166,22 +169,22 @@ Name           Location    ResourceGroup
 AzureArcTest1  eastus      AzureArcTest
 ```
 
-Этот ресурс также можно просмотреть на [портал Azure](https://portal.azure.com/). После открытия портала в браузере перейдите к группе ресурсов и ресурсу Kubernetes с включенной службой "Дуга Azure" на основе имени ресурса и входных данных имени группы ресурсов, которые использовались ранее в `az connectedk8s connect` команде.
+Этот ресурс также можно просмотреть на [портал Azure](https://portal.azure.com/). Откройте портал в браузере и перейдите к группе ресурсов и ресурсу Kubernetes с поддержкой ARC в Azure на основе имен ресурсов и имен групп ресурсов, используемых ранее в `az connectedk8s connect` команде.
 
 > [!NOTE]
-> После подключения кластера потребуется от 5 до 10 минут для метаданных кластера (версия кластера, версия агента, число узлов) на странице Обзор ресурса Kubernetes в службе "Дуга Azure", включенной в портал Azure.
+> После подключения кластера потребуется от 5 до 10 минут для метаданных кластера (версия кластера, версия агента, число узлов и т. д.) на странице обзора ресурса Kubernetes в Azure с поддержкой дуги в портал Azure.
 
 ## <a name="connect-using-an-outbound-proxy-server"></a>Подключение с использованием исходящего прокси-сервера
 
-Если кластер находится за исходящим прокси-сервером, Azure CLI и для агентов Kubernetes должны маршрутизировать запросы через исходящий прокси-сервер. Следующая конфигурация включает следующие параметры:
+Если кластер находится за исходящим прокси-сервером, Azure CLI и агенты Kubernetes с поддержкой Arc должны маршрутизировать свои запросы через исходящий прокси-сервер:
 
-1. Проверьте версию расширения, `connectedk8s` установленную на компьютере, выполнив следующую команду:
+1. Проверьте версию расширения, `connectedk8s` установленного на компьютере:
 
     ```console
     az -v
     ```
 
-    `connectedk8s`Для настройки агентов с исходящим прокси-сервером требуется расширение version >= 0.2.5. Если на компьютере установлена версия < 0.2.3, выполните [инструкции по обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
+    `connectedk8s`Для настройки агентов с исходящим прокси-сервером требуется расширение 0.2.5 +. Если на компьютере установлена версия 0.2.3 или более старая, выполните инструкции по [обновлению](#before-you-begin) , чтобы получить последнюю версию расширения на компьютере.
 
 2. Задайте переменные среды, необходимые для Azure CLI для использования исходящего прокси-сервера:
 
@@ -208,13 +211,13 @@ AzureArcTest1  eastus      AzureArcTest
     ```
 
 > [!NOTE]
-> 1. Чтобы гарантировать, что взаимодействие в кластере не будет разорвано для агентов, необходимо указать ЕксклудедЦидр ниже--proxy-Skip-Range.
-> 2. While--Proxy-HTTP,--proxy-HTTPS и--Proxy-Skip-Range ожидается для большинства исходящих прокси-сред. параметр-proxy-CERT требуется только при наличии доверенных сертификатов от прокси-сервера, которые необходимо внедрить в хранилище доверенных сертификатов модулей Pod агента.
-> 3. Приведенная выше спецификация прокси-сервера в настоящее время применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой дуги активно работает над этой функцией, и вскоре она будет доступна.
+> 1. Указание `excludedCIDR` в разделе `--proxy-skip-range` важно для того, чтобы обеспечить передачу данных в кластере для агентов не разбивается.
+> 2. Несмотря на то, что `--proxy-http` `--proxy-https` `--proxy-skip-range` для большинства сред исходящих прокси-серверов ожидается, и, `--proxy-cert` требуется только в том случае, если доверенные сертификаты от прокси-сервера необходимо внедрить в хранилище доверенных сертификатов модулей Pod агента.
+> 3. Приведенная выше спецификация прокси-сервера в настоящее время применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой Arc активно работает над этой функцией, и вскоре она будет доступна.
 
 ## <a name="azure-arc-agents-for-kubernetes"></a>Агенты Azure Arc для Kubernetes
 
-Kubernetes с поддержкой Azure Arc развертывает в пространстве имен `azure-arc` ряд операторов. Эти развертывания и объекты pod можно просмотреть здесь:
+Kubernetes с поддержкой дуги Azure развертывает несколько операторов в `azure-arc` пространстве имен. Для просмотра этих развертываний и модулей Pod можно использовать:
 
 ```console
 kubectl -n azure-arc get deployments,pods
@@ -242,28 +245,32 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Kubernetes с поддержкой Azure Arc состоит из нескольких агентов (операторов), которые выполняются в кластере, развернутом в пространстве имен `azure-arc`.
+Kubernetes с поддержкой дуги Azure состоит из нескольких агентов (операторов), которые выполняются в кластере, развернутом в `azure-arc` пространстве имен.
 
-* `deployment.apps/config-agent` наблюдает за подключенным кластером и ищет ресурсы конфигурации системы управления версиями, примененные к этому кластеру, а также обновляет состояние соответствия.
-* `deployment.apps/controller-manager` является оператором для операторов, то есть управляет взаимодействием между компонентами Azure Arc.
-* `deployment.apps/metrics-agent` собирает метрики от других агентов Azure Arc, чтобы обеспечить оптимальную производительность этих агентов.
-* `deployment.apps/cluster-metadata-operator`: собирает метаданные кластера — версию кластера, число узлов и версию агента ARC для Azure.
-* `deployment.apps/resource-sync-agent` синхронизирует упомянутые выше метаданные кластера с Azure.
-* `deployment.apps/clusteridentityoperator`: Служба "Дуга Azure" Kubernetes сейчас поддерживает назначенное системой удостоверение. клустеридентитйоператор хранит сертификат управляемого удостоверения службы (MSI), используемый другими агентами для взаимодействия с Azure.
-* `deployment.apps/flux-logs-agent` собирает журналы из операторов Flux, развернутых в составе конфигурации системы управления версиями.
+| Агенты (операторы)                                                                                               | Описание                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| `deployment.apps/config-agent`                                                                                 | Наблюдает за подключенным кластером для ресурсов конфигурации системы управления версиями, применяемых в кластере, и обновляет состояние соответствия.                                                        |
+| `deployment.apps/controller-manager` | Оператор операторов, который управляет взаимодействием между компонентами дуги Azure.                                      |
+| `deployment.apps/metrics-agent`                                                                            | Собирает метрики производительности других агентов ARC.                                                                                    |
+| `deployment.apps/cluster-metadata-operator`                                                                            | Собирает метаданные кластера, такие как версия кластера, число узлов и версия агента Arc Azure.                                                                  |
+| `deployment.apps/resource-sync-agent`                                                                            |  Синхронизирует упомянутые выше метаданные кластера с Azure.                                                                  |
+| `deployment.apps/clusteridentityoperator`                                                                            |  В настоящее время Kubernetes с поддержкой дуги Azure поддерживает назначенное системой удостоверение. `clusteridentityoperator` хранит сертификат управляемого удостоверения службы (MSI), используемый другими агентами для взаимодействия с Azure.                                                                  |
+| `deployment.apps/flux-logs-agent`                                                                            |  Собирает журналы из операторов Flux, развернутых в составе конфигурации системы управления версиями.                                                                  |
 
 ## <a name="delete-a-connected-cluster"></a>Удаление подключенного кластера
 
 Ресурс `Microsoft.Kubernetes/connectedcluster` можно удалить с помощью Azure CLI или портала Azure.
 
 
-* **Удаление с помощью Azure CLI**: можно использовать следующую команду Azure CLI для инициации удаления ресурса Kubernetes с включенной службой "Дуга Azure".
+* **Удаление с помощью Azure CLI**: выполните следующую команду Azure CLI, чтобы инициировать удаление ресурса Kubernetes с поддержкой дуги Azure.
   ```console
   az connectedk8s delete --name AzureArcTest1 --resource-group AzureArcTest
   ```
-  Эта команда удаляет `Microsoft.Kubernetes/connectedCluster` ресурс и все связанные `sourcecontrolconfiguration` с ним ресурсы в Azure. Azure CLI использует удаление Helm для удаления агентов, выполняющихся в кластере.
+  Эта команда удаляет `Microsoft.Kubernetes/connectedCluster` ресурс и все связанные `sourcecontrolconfiguration` с ним ресурсы в Azure. Azure CLI использует `helm uninstall` для удаления агентов, выполняющихся в кластере.
 
-* **Удаление на портал Azure**: Удаление ресурса Kubernetes в службе "Дуга Azure" на портал Azure удаление `Microsoft.Kubernetes/connectedcluster` ресурса и всех связанных `sourcecontrolconfiguration` ресурсов в Azure, но не удаление агентов, выполняющихся в кластере. Чтобы удалить агенты, запущенные в кластере, выполните следующую команду.
+* **Удаление портал Azure**: Удаление ресурса Kubernetes с поддержкой дуги Azure на портал Azure удаление `Microsoft.Kubernetes/connectedcluster` ресурса и всех связанных `sourcecontrolconfiguration` ресурсов в Azure, но *не* удаляет агенты, работающие в кластере. 
+
+  Чтобы удалить агенты, запущенные в кластере, выполните следующую команду:
 
   ```console
   az connectedk8s delete --name AzureArcTest1 --resource-group AzureArcTest

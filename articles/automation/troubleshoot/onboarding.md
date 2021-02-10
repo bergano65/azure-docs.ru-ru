@@ -5,12 +5,12 @@ services: automation
 ms.subservice: ''
 ms.date: 06/30/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 6668fe3c30bd5187016ac2e0c766e7e78d5b3e8c
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 41388e46f5204acaa53f376bc05cebf975361dad
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896517"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008168"
 ---
 # <a name="troubleshoot-feature-deployment-issues"></a>Устранение неполадок с развертыванием компонентов
 
@@ -148,7 +148,7 @@ The link cannot be updated or deleted because it is linked to Update Management 
 После удаления ресурсов для функций вы сможете удалить связь с рабочей областью. При этом важно удалить из рабочей области и учетной записи службы автоматизации все существующие артефакты для этих функций.
 
 * Для функции "Управление обновлениями" удалите компонент **Развертывания обновлений (расписания)** из учетной записи службы автоматизации.
-* Для функции "Запуск и остановка виртуальных машин в нерабочее время" удалите все блокировки компонентов функции из учетной записи службы автоматизации с помощью раздела **Параметры** > **Блокировки**. Дополнительные сведения см. в разделе [Удаление функции](../automation-solution-vm-management.md#remove-the-feature).
+* Для функции "Запуск и остановка виртуальных машин в нерабочее время" удалите все блокировки компонентов функции из учетной записи службы автоматизации с помощью раздела **Параметры** > **Блокировки**. Дополнительные сведения см. в разделе [Удаление функции](../automation-solution-vm-management-remove.md).
 
 ## <a name="log-analytics-for-windows-extension-failures"></a><a name="mma-extension-failures"></a>Сбой расширения Log Analytics для Windows
 

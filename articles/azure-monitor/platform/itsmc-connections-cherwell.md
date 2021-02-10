@@ -6,19 +6,20 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/21/2020
-ms.openlocfilehash: 73fc13cf2a49d7cacd7540d06c6d0afd9cea68e5
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: a24ece3c0b75d0d0d22e13c6e5367c27fbaeab66
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97729750"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100006791"
 ---
 # <a name="connect-cherwell-with-it-service-management-connector"></a>Подключение Cherwell к Соединитель управления ИТ-услугами
 
 В этой статье содержатся сведения о настройке подключения между экземпляром Cherwell и Соединитель управления ИТ-услугами (ITSMC) в Log Analytics для централизованного управления рабочими элементами.
 
 > [!NOTE]
-> Мы предлагаем нашим клиентам Cherwell и Provance использовать [действие веб-перехватчика](./action-groups.md#webhook) для Cherwell и Provance конечной точки в качестве другого решения интеграции.
+> Начиная с 1-Oct-2020 Cherwell ITSM интеграция с оповещением Azure больше не будет включена для новых клиентов. Новые подключения ITSM не будут поддерживаться.
+> Существующие подключения ITSM будут поддерживаться.
 
 В разделах ниже приведены сведения о подключении экземпляра Cherwell к ITSMC в Azure.
 
@@ -80,6 +81,6 @@ ms.locfileid: "97729750"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор соединитель ITSM](itsmc-overview.md)
+* [Обзор соединителя ITSM](itsmc-overview.md)
 * [Создание рабочих элементов ITSM из оповещений Azure](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts)
 * [Устранение неполадок с соединителем ITSM](./itsmc-resync-servicenow.md)

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 11/11/2020
+ms.date: 02/04/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35ffae55e749c7493b9cd8af13dfd5216abf5822
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: d003008ea5b0d2591574f6f488b0145ee6f08a5e
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515512"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008134"
 ---
 # <a name="microsoft-365-external-sharing-and-azure-active-directory-azure-ad-b2b-collaboration"></a>Microsoft 365 внешний общий доступ и Azure Active Directory (Azure AD) B2B для совместной работы
 
@@ -32,8 +32,7 @@ ms.locfileid: "94515512"
 
 - Пользователей, приглашенных в службу совместной работы Azure AD B2B, можно выбирать в диалоговых окнах общего доступа OneDrive и SharePoint Online. Приглашенные пользователи OneDrive и SharePoint Online также отображаются в Azure AD после того, как они активируют свои приглашения.
 
-- Требования к лицензированию отличаются. См. дополнительные сведения о [лицензировании Azure AD B2B](./external-identities-pricing.md) и [правах внешнего пользователя при использовании внешнего общего доступа SharePoint Online](/sharepoint/external-sharing-overview#what-happens-when-users-share).
-
+- Требования к лицензированию отличаются. Дополнительные сведения о лицензировании см. в статье [Лицензирование внешних удостоверений Azure AD](./external-identities-pricing.md) и [Обзор внешнего общего доступа к SharePoint Online](/sharepoint/external-sharing-overview).
 Чтобы управлять внешним общим доступом в OneDrive и SharePoint Online с помощью службы совместной работы Azure AD B2B, задайте для параметра внешнего общего доступа OneDrive и SharePoint Online значение **Allow sharing only with the external users that already exist in your organization's directory** (Разрешить общий доступ только внешним пользователям, которые уже существуют в каталоге организации). Пользователи могут перейти на внешние сайты, предоставляющие общий доступ, и выбрать из внешних сотрудников, добавленных администратором. Администратор может добавлять внешних сотрудников с помощью интерфейсов API приглашения службы совместной работы B2B.
 
 
