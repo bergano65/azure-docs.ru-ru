@@ -4,110 +4,164 @@ description: Узнайте, как создать файловый ресурс
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2020
+ms.date: 01/22/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 323eed77d6f7a6ccfcdd0a7c7aecff3a125300dc
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: dc23dec8a8d59a7762e93cdfaa2a39d824506e7b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602670"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382129"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Создание общей папки NFS
-
-Файловые ресурсы Azure — это полностью управляемые общие файловые ресурсы, которые находятся в облаке. Доступ к ним можно получить с помощью протокола SMB или протокола сетевой файловой системы (NFS). В этой статье рассматривается создание общей папки, использующей протокол NFS. Дополнительные сведения об этих протоколах см. в статье [протоколы файловых ресурсов Azure](storage-files-compare-protocols.md).
+Файловые ресурсы Azure — это полностью управляемые общие файловые ресурсы, которые находятся в облаке. В этой статье рассматривается создание общей папки, использующей протокол NFS. Дополнительные сведения об этих протоколах см. в статье [протоколы файловых ресурсов Azure](storage-files-compare-protocols.md).
 
 ## <a name="limitations"></a>Ограничения
-
 [!INCLUDE [files-nfs-limitations](../../../includes/files-nfs-limitations.md)]
 
 ### <a name="regional-availability"></a>Доступность по регионам
-
 [!INCLUDE [files-nfs-regional-availability](../../../includes/files-nfs-regional-availability.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-- Создайте [учетную запись филестораже](storage-how-to-create-premium-fileshare.md).
-
-    > [!IMPORTANT]
-    > Доступ к общим папкам NFS можно получить только из доверенных сетей. Подключения к общему ресурсу NFS должны исходить из одного из следующих источников:
-
+- Доступ к общим папкам NFS можно получить только из доверенных сетей. Подключения к общему ресурсу NFS должны исходить из одного из следующих источников:
     - Либо [Создайте закрытую конечную точку](storage-files-networking-endpoints.md#create-a-private-endpoint) (рекомендуется), либо [Ограничьте доступ к общедоступной конечной точке](storage-files-networking-endpoints.md#restrict-public-endpoint-access).
     - [Настройте VPN-подключение типа "точка — сеть" (P2S) в Linux для использования с файлами Azure](storage-files-configure-p2s-vpn-linux.md).
     - [Настройте VPN типа "сеть — сеть" для использования с файлами Azure](storage-files-configure-s2s-vpn.md).
     - Настройте [ExpressRoute](../../expressroute/expressroute-introduction.md).
-- Если вы хотите использовать Azure CLI, [установите последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+- Если вы хотите использовать Azure CLI, [установите последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 ## <a name="register-the-nfs-41-protocol"></a>Регистрация протокола NFS 4,1
-
 Если вы используете модуль Azure PowerShell или Azure CLI, зарегистрируйте функцию с помощью следующих команд:
 
-### <a name="powershell"></a>PowerShell
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+Чтобы зарегистрировать компонент NFS 4,1 для службы файлов Azure, используйте либо Azure PowerShell, либо Azure CLI.
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 ```azurepowershell
+# Connect your PowerShell session to your Azure account, if you have not already done so.
 Connect-AzAccount
-$context = Get-AzSubscription -SubscriptionId <yourSubscriptionIDHere>
+
+# Set the actively selected subscription, if you have not already done so.
+$subscriptionId = "<yourSubscriptionIDHere>"
+$context = Get-AzSubscription -SubscriptionId $subscriptionId
 Set-AzContext $context
-Register-AzProviderFeature -FeatureName AllowNfsFileShares -ProviderNamespace Microsoft.Storage
+
+# Register the NFS 4.1 feature with Azure Files to enable the preview.
+Register-AzProviderFeature `
+    -ProviderNamespace Microsoft.Storage `
+    -FeatureName AllowNfsFileShares 
+    
 Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 ```
 
-### <a name="azure-cli"></a>Azure CLI
-
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 ```azurecli
+# Connect your Azure CLI to your Azure account, if you have not already done so.
 az login
-az feature register --name AllowNfsFileShares \
-                    --namespace Microsoft.Storage \
-                    --subscription <yourSubscriptionIDHere>
-az provider register --namespace Microsoft.Storage
+
+# Provide the subscription ID for the subscription where you would like to 
+# register the feature
+subscriptionId="<yourSubscriptionIDHere>"
+
+az feature register \
+    --name AllowNfsFileShares \
+    --namespace Microsoft.Storage \
+    --subscription $subscriptionId
+
+az provider register \
+    --namespace Microsoft.Storage
 ```
 
-## <a name="verify-feature-registration"></a>Проверка регистрации компонентов
+---
 
 Утверждение регистрации может занять до часа. Чтобы убедиться, что регистрация завершена, используйте следующие команды:
 
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell
-Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNfsFileShares
-```
-
-### <a name="azure-cli"></a>Azure CLI
-
-```azurecli
-az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscription <yourSubscriptionIDHere>
-```
-
-## <a name="verify-storage-account-kind"></a>Проверка вида учетной записи хранения
-
-В настоящее время только учетные записи Филестораже могут создавать общие папки NFS. 
-
 # <a name="portal"></a>[Портал](#tab/azure-portal)
-
-Чтобы проверить тип учетной записи хранения, перейдите к ней в портал Azure. Затем в учетной записи хранения выберите **Свойства**. В колонке свойства проверьте значение в поле **тип учетной записи**, которое должно иметь значение **филестораже**.
+Чтобы проверить регистрацию функции NFS 4,1 для службы файлов Azure, используйте либо Azure PowerShell, либо Azure CLI. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-Чтобы убедиться, что у вас есть учетная запись Филестораже, можно использовать следующую команду:
-
 ```azurepowershell
-$accountKind=Get-AzStorageAccount -ResourceGroupName "yourResourceGroup" -Name "yourStorageAccountName"
-$accountKind.Kind
+Get-AzProviderFeature `
+    -ProviderNamespace Microsoft.Storage `
+    -FeatureName AllowNfsFileShares
 ```
-
-Выходные данные должны быть **филестораже**, если это не так, то учетная запись хранения имеет неверный тип. Сведения о создании учетной записи **филестораже** см. [в статье Создание общей папки Azure Premium](storage-how-to-create-premium-fileshare.md).
 
 # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-Чтобы убедиться, что у вас есть учетная запись Филестораже, можно использовать следующую команду:
-
 ```azurecli
-az storage account show -g yourResourceGroup -n yourStorageAccountName
+az feature show \
+    --name AllowNfsFileShares \
+    --namespace Microsoft.Storage \
+    --subscription $subscriptionId
 ```
 
-Выходные данные должны содержать **"Kind": "филестораже"**, если нет, то учетная запись хранения имеет неверный тип. Сведения о создании учетной записи **филестораже** см. [в статье Создание общей папки Azure Premium](storage-how-to-create-premium-fileshare.md).
-
 ---
+
+## <a name="create-a-filestorage-storage-account"></a>Создание учетной записи хранения Филестораже
+В настоящее время общие папки NFS 4,1 доступны только в качестве файловых ресурсов уровня "Премиум". Чтобы развернуть файловый ресурс Premium с поддержкой протокола NFS 4,1, необходимо сначала создать учетную запись хранения Филестораже. Учетная запись хранения — это объект верхнего уровня в Azure, который представляет общий пул хранилища, который можно использовать для развертывания нескольких файловых ресурсов Azure.
+
+# <a name="portal"></a>[Портал](#tab/azure-portal)
+Чтобы создать учетную запись хранения Филестораже, перейдите к портал Azure.
+
+1. В портал Azure выберите **учетные записи хранения** в меню слева.
+
+    ![портал Azure главной страницы выберите учетную запись хранения](media/storage-how-to-create-premium-fileshare/azure-portal-storage-accounts.png)
+
+2. В появившемся окне **Учетные записи хранения** выберите **добавить**.
+3. Выберите подписку, в которой будет создана учетная запись хранения.
+4. Выберите группу ресурсов, в которой будет создана учетная запись хранения.
+
+5. Далее введите имя своей учетной записи хранения. Выбранное вами имя должно быть уникальным в Azure. Также имя должно содержать от 3 до 24 символов и может состоять только из цифр и строчных букв.
+6. Выберите расположение учетной записи хранения или используйте расположение по умолчанию.
+7. Для **повышения производительности** выберите **Premium**.
+
+    В раскрывающемся списке **тип учетной записи** выберите значение **Premium** для **филестораже** , чтобы стать доступным.
+
+8. Выберите **тип учетной записи** и щелкните **филестораже**.
+9. Оставьте для параметра **репликация** значение по умолчанию **локально избыточное хранилище (LRS)**.
+
+    ![Создание учетной записи хранения для файлового ресурса уровня "Премиум"](media/storage-how-to-create-premium-fileshare/create-filestorage-account.png)
+
+10. Выберите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.
+11. Выберите **Создать**.
+
+После создания ресурса учетной записи хранения перейдите к нему.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+Чтобы создать учетную запись хранения Филестораже, откройте командную строку PowerShell и выполните следующие команды, не заменяя `<resource-group>` и `<storage-account>` указав соответствующие значения для вашей среды.
+
+```powershell
+$resourceGroupName = "<resource-group>"
+$storageAccountName = "<storage-account>"
+$location = "westus2"
+
+$storageAccount = New-AzStorageAccount `
+    -ResourceGroupName $resourceGroupName `
+    -Name $storageAccountName `
+    -SkuName Premium_LRS `
+    -Location $location `
+    -Kind FileStorage
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+Чтобы создать учетную запись хранения Филестораже, откройте терминал и выполните следующие команды, не заменяя `<resource-group>` и `<storage-account>` указав соответствующие значения для вашей среды.
+
+```azurecli-interactive
+resourceGroup="<resource-group>"
+storageAccount="<storage-account>"
+location="westus2"
+
+az storage account create \
+    --resource-group $resourceGroup \
+    --name $storageAccount \
+    --location $location \
+    --sku Premium_LRS \
+    --kind FileStorage
+```
+---
+
 ## <a name="create-an-nfs-share"></a>Создание общей папки NFS
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
@@ -124,13 +178,13 @@ az storage account show -g yourResourceGroup -n yourStorageAccountName
     - Без корневого Squash — удаленный суперпользователь (root) получает доступ от имени привилегированного пользователя.
     - Все Squash — все пользователи сопоставлены с UID (65534) и GID (65534).
     
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
     :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/create-nfs-file-share.png" alt-text="Снимок экрана: колонка создания файлового ресурса":::
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
-1. Убедитесь, что платформа .NET Framework установлена. См. раздел [Download .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
+1. Убедитесь, что платформа .NET Framework установлена. См. раздел [Download платформа .NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
  
 1. Убедитесь, что установленная версия PowerShell `5.1` или более поздняя, с помощью следующей команды.    
 
@@ -138,7 +192,7 @@ az storage account show -g yourResourceGroup -n yourStorageAccountName
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) .
+   Сведения об обновлении версии PowerShell см. в разделе [обновление существующих Windows PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6&preserve-view=true#upgrading-existing-windows-powershell) .
     
 1. Установите последнюю версию модуля PowershellGet.
 
@@ -154,41 +208,40 @@ az storage account show -g yourResourceGroup -n yourStorageAccountName
    Install-Module Az.Storage -Repository PsGallery -RequiredVersion 2.5.2-preview -AllowClobber -AllowPrerelease -Force  
    ```
 
-   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.0.0) .
+   Дополнительные сведения об установке модулей PowerShell см. [в статье Установка модуля Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.0.0&preserve-view=true) .
    
 1. Чтобы создать файловый ресурс уровня "Премиум" с помощью модуля Azure PowerShell, используйте командлет [New-азрмсторажешаре](/powershell/module/az.storage/new-azrmstorageshare) .
 
-> [!NOTE]
-> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/storage/files/).
+    > [!NOTE]
+    > Счета за файловые ресурсы уровня "Премиум" выставляются с помощью подготовленной модели. Подготовленный размер общей папки указывается `QuotaGiB` ниже. Дополнительные сведения см. [в разделе Основные сведения о подготовленной модели](understanding-billing.md#provisioned-model) и [странице цен на службы файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/).
 
-  ```powershell
-  New-AzRmStorageShare `
-   -ResourceGroupName $resourceGroupName `
-   -StorageAccountName $storageAccountName `
-   -Name myshare `
-   -EnabledProtocol NFS `
-   -RootSquash RootSquash `
-   -Context $storageAcct.Context
-  ```
+    ```powershell
+    New-AzRmStorageShare `
+        -StorageAccount $storageAccount `
+        -Name myshare `
+        -EnabledProtocol NFS `
+        -RootSquash RootSquash `
+        -QuotaGiB 1024
+    ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 Чтобы создать общую папку уровня "Премиум" с помощью Azure CLI, используйте команду [AZ Storage Share Create](/cli/azure/storage/share-rm) .
 
 > [!NOTE]
-> Подготовленные размеры общих ресурсов задаются квотой общего доступа. Общие ресурсы выставляются по подготовленному размеру. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/storage/files/).
+> Счета за файловые ресурсы уровня "Премиум" выставляются с помощью подготовленной модели. Подготовленный размер общей папки указывается `quota` ниже. Дополнительные сведения см. [в разделе Основные сведения о подготовленной модели](understanding-billing.md#provisioned-model) и [странице цен на службы файлов Azure](https://azure.microsoft.com/pricing/details/storage/files/).
 
 ```azurecli-interactive
 az storage share-rm create \
-    --storage-account $STORAGEACCT \
+    --resource-group $resourceGroup \
+    --storage-account $storageAccount \
+    --name "myshare" \
     --enabled-protocol NFS \
     --root-squash RootSquash \
-    --name "myshare" 
+    --quota 1024
 ```
 ---
 
 ## <a name="next-steps"></a>Следующие шаги
-
 Теперь, когда вы создали общий ресурс NFS, для его использования необходимо подключить его к клиенту Linux. Дополнительные сведения см. [в разделе Подключение общего ресурса NFS](storage-files-how-to-mount-nfs-shares.md).
 
 Если возникнут проблемы, см. раздел [Устранение неполадок файловых ресурсов NFS Azure](storage-troubleshooting-files-nfs.md).

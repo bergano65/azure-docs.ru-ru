@@ -2,21 +2,20 @@
 title: Машинное обучение Azure в качестве источника сетки событий
 description: Описание свойств, предоставляемых для событий рабочей области Машинное обучение с помощью службы "Сетка событий Azure"
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: fb8cd76829622962b642580bbda7f2a655604c2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 02/11/2021
+ms.openlocfilehash: e47c2137840e21eab73906d42b1e1536422f872d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87458048"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100363395"
 ---
 # <a name="azure-machine-learning-as-an-event-grid-source"></a>Машинное обучение Azure в качестве источника сетки событий
 
 Эта статья содержит свойства и схему для событий рабочей области машинного обучения. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
-## <a name="event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
-### <a name="available-event-types"></a>Доступные типы событий
+## <a name="available-event-types"></a>Доступные типы событий
 
 Машинное обучение Azure выдает следующие типы событий:
 
@@ -28,11 +27,11 @@ ms.locfileid: "87458048"
 | Microsoft. Мачинелеарнингсервицес. Датасетдрифтдетектед | Возникает, когда монитор смещения набора данных обнаруживает смещение. |
 | Microsoft. Мачинелеарнингсервицес. Рунстатусчанжед | Возникает при изменении состояния выполнения. |
 
-### <a name="the-contents-of-an-event-response"></a>Содержимое ответа на событие
+## <a name="example-events"></a>Примеры событий
 
-При активации события служба Сетки событий отправляет данные о нем на подписанную конечную точку.
+При активации события служба Сетки событий отправляет данные о нем на подписанную конечную точку. В этом разделе приведен пример того, как будут выглядеть данные для каждого события.
 
-В этом разделе приведен пример того, как будут выглядеть данные для каждого события.
+# <a name="event-grid-event-schema"></a>[Схема событий службы "Сетка событий Azure"](#tab/event-grid-event-schema)
 
 ### <a name="microsoftmachinelearningservicesmodelregistered-event"></a>Событие Microsoft. Мачинелеарнингсервицес. Моделрегистеред
 
@@ -182,77 +181,243 @@ ms.locfileid: "87458048"
 }]
 ```
 
+# <a name="cloud-event-schema"></a>[Схема событий облака](#tab/cloud-event-schema)
+
+### <a name="microsoftmachinelearningservicesmodelregistered-event"></a>Событие Microsoft. Мачинелеарнингсервицес. Моделрегистеред
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}",
+  "subject": "models/sklearn_regression_model:20",
+  "type": "Microsoft.MachineLearningServices.ModelRegistered",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "ModelName": "sklearn_regression_model",
+    "ModelVersion": 20,
+    "ModelTags": {
+        "area": "diabetes",
+        "type": "regression"
+    },
+    "ModelProperties": {
+        "type": "test"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftmachinelearningservicesmodeldeployed-event"></a>Событие Microsoft. Мачинелеарнингсервицес. Моделдеплойед
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}",
+  "subject": "endpoints/my-sklearn-service",
+  "type": "Microsoft.MachineLearningServices.ModelDeployed",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "ServiceName": "my-sklearn-service",
+    "ServiceComputeType": "ACI",
+    "ModelIds": "sklearn_regression_model:1,sklearn_regression_model:2",
+    "ServiceTags": {
+        "area": "diabetes",
+        "type": "regression"
+    },
+    "ServiceProperties": {
+        "type": "test"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftmachinelearningservicesruncompleted-event"></a>Событие Microsoft. Мачинелеарнингсервицес. Рункомплетед
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}",
+  "subject": "experiments/0fa9dfaa-cba3-4fa7-b590-23e48548f5c1/runs/AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5",
+  "type": "Microsoft.MachineLearningServices.RunCompleted",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "experimentId": "0fa9dfaa-cba3-4fa7-b590-23e48548f5c1",
+    "experimentName": "automl-local-regression",
+    "runId": "AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5",
+    "runType": null,
+    "runTags": {},
+    "runProperties": {
+        "runTemplate": "automl_child",
+        "pipeline_id": "5adc0a4fe02504a586f09a4fcbb241f9a4012062",
+        "pipeline_spec": "{\"objects\": [{\"class_name\": \"StandardScaler\", \"module\": \"sklearn.preprocessing\", \"param_args\": [], \"param_kwargs\": {\"with_mean\": true, \"with_std\": false}, \"prepared_kwargs\": {}, \"spec_class\": \"preproc\"}, {\"class_name\": \"LassoLars\", \"module\": \"sklearn.linear_model\", \"param_args\": [], \"param_kwargs\": {\"alpha\": 0.001, \"normalize\": true}, \"prepared_kwargs\": {}, \"spec_class\": \"sklearn\"}], \"pipeline_id\": \"5adc0a4fe02504a586f09a4fcbb241f9a4012062\"}",
+        "training_percent": "100",
+        "predicted_cost": "0.062226144097381045",
+        "iteration": "5",
+        "run_template": "automl_child",
+        "run_preprocessor": "StandardScalerWrapper",
+        "run_algorithm": "LassoLars",
+        "conda_env_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5/outputs/conda_env_v_1_0_0.yml",
+        "model_name": "AutoMLad912b2d65",
+        "scoring_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5/outputs/scoring_file_v_1_0_0.py",
+        "model_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5/outputs/model.pkl"
+    }
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftmachinelearningservicesdatasetdriftdetected-event"></a>Событие Microsoft. Мачинелеарнингсервицес. Датасетдрифтдетектед
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}",
+  "subject": "datadrifts/{}/runs/{}",
+  "type": "Microsoft.MachineLearningServices.DatasetDriftDetected",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "DataDriftId": "01d29aa4-e6a4-470a-9ef3-66660d21f8ef",
+    "DataDriftName": "myDriftMonitor",
+    "RunId": "01d29aa4-e6a4-470a-9ef3-66660d21f8ef_1571590300380",
+    "BaseDatasetId": "3c56d136-0f64-4657-a0e8-5162089a88a3",
+    "TargetDatasetId": "d7e74d2e-c972-4266-b5fb-6c9c182d2a74",
+    "DriftCoefficient": 0.83503490684792081,
+    "StartTime": "2019-07-04T00:00:00+00:00",
+    "EndTime": "2019-07-05T00:00:00+00:00"
+  },
+  "specversion": "1.0"
+}]
+```
+
+### <a name="microsoftmachinelearningservicesrunstatuschanged-event"></a>Событие Microsoft. Мачинелеарнингсервицес. Рунстатусчанжед
+
+```json
+[{
+  "source": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.MachineLearningServices/workspaces/{workspace-name}",
+  "subject": "experiments/0fa9dfaa-cba3-4fa7-b590-23e48548f5c1/runs/AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5",
+  "type": "Microsoft.MachineLearningServices.RunStatusChanged",
+  "time": "2017-06-26T18:41:00.9584103Z",
+  "id": "831e1650-001e-001b-66ab-eeb76e069631",
+  "data": {
+    "experimentId": "0fa9dfaa-cba3-4fa7-b590-23e48548f5c1",
+    "experimentName": "automl-local-regression",
+    "runId": "AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5",
+    "runType": null,
+    "runTags": {},
+    "runProperties": {
+        "runTemplate": "automl_child",
+        "pipeline_id": "5adc0a4fe02504a586f09a4fcbb241f9a4012062",
+        "pipeline_spec": "{\"objects\": [{\"class_name\": \"StandardScaler\", \"module\": \"sklearn.preprocessing\", \"param_args\": [], \"param_kwargs\": {\"with_mean\": true, \"with_std\": false}, \"prepared_kwargs\": {}, \"spec_class\": \"preproc\"}, {\"class_name\": \"LassoLars\", \"module\": \"sklearn.linear_model\", \"param_args\": [], \"param_kwargs\": {\"alpha\": 0.001, \"normalize\": true}, \"prepared_kwargs\": {}, \"spec_class\": \"sklearn\"}], \"pipeline_id\": \"5adc0a4fe02504a586f09a4fcbb241f9a4012062\"}",
+        "training_percent": "100",
+        "predicted_cost": "0.062226144097381045",
+        "iteration": "5",
+        "run_template": "automl_child",
+        "run_preprocessor": "StandardScalerWrapper",
+        "run_algorithm": "LassoLars",
+        "conda_env_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5/outputs/conda_env_v_1_0_0.yml",
+        "model_name": "AutoMLad912b2d65",
+        "scoring_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5/outputs/scoring_file_v_1_0_0.py",
+        "model_data_location": "aml://artifact/ExperimentRun/dcid.AutoML_ad912b2d-6467-4f32-a616-dbe4af6dd8fc_5/outputs/model.pkl"
+    },
+   "runStatus": "failed"
+   },
+  "specversion": "1.0"
+}]
+```
+
+---
+
 ### <a name="event-properties"></a>Свойства события
+
+# <a name="event-grid-event-schema"></a>[Схема событий службы "Сетка событий Azure"](#tab/event-grid-event-schema)
 
 Событие содержит следующие высокоуровневые данные:
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
-| Раздел | строка | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
-| subject | строка | Определенный издателем путь к субъекту событий. |
-| eventType | строка | Один из зарегистрированных типов событий для этого источника событий. |
-| eventTime | строка | Время создания события с учетом времени поставщика в формате UTC. |
-| идентификатор | строка | Уникальный идентификатор события. |
-| . | объект | Данные события хранилища BLOB-объектов. |
-| dataVersion | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
-| metadataVersion | строка | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
+| `topic` | строка | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
+| `subject` | строка | Определенный издателем путь к субъекту событий. |
+| `eventType` | строка | Один из зарегистрированных типов событий для этого источника событий. |
+| `eventTime` | строка | Время создания события с учетом времени поставщика в формате UTC. |
+| `id` | строка | Уникальный идентификатор события. |
+| `data` | объект | Данные события хранилища BLOB-объектов. |
+| `dataVersion` | строка | Версия схемы для объекта данных. Версию схемы определяет издатель. |
+| `metadataVersion` | строка | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
+
+# <a name="cloud-event-schema"></a>[Схема событий облака](#tab/cloud-event-schema)
+
+Событие содержит следующие высокоуровневые данные:
+
+| Свойство | Type | Описание |
+| -------- | ---- | ----------- |
+| `source` | строка | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
+| `subject` | строка | Определенный издателем путь к субъекту событий. |
+| `type` | строка | Один из зарегистрированных типов событий для этого источника событий. |
+| `time` | строка | Время создания события с учетом времени поставщика в формате UTC. |
+| `id` | строка | Уникальный идентификатор события. |
+| `data` | объект | Данные события хранилища BLOB-объектов. |
+| `specversion` | строка | Версия спецификации схемы Клаудевентс. |
+
+---
+
 
 Объект данных имеет следующие свойства для каждого типа событий:
 
 ### <a name="microsoftmachinelearningservicesmodelregistered"></a>Microsoft. Мачинелеарнингсервицес. Моделрегистеред
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
-| ModelName | строка | Имя зарегистрированной модели. |
-| моделверсион | строка | Версия зарегистрированной модели. |
-| моделтагс | object | Теги зарегистрированной модели. |
-| моделпропертиес | object | Свойства зарегистрированной модели. |
+| `ModelName` | строка | Имя зарегистрированной модели. |
+| `ModelVersion` | строка | Версия зарегистрированной модели. |
+| `ModelTags` | object | Теги зарегистрированной модели. |
+| `ModelProperties` | object | Свойства зарегистрированной модели. |
 
 ### <a name="microsoftmachinelearningservicesmodeldeployed"></a>Microsoft. Мачинелеарнингсервицес. Моделдеплойед
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
-| ServiceName | строка | Имя развернутой службы. |
-| сервицекомпутетипе | строка | Тип вычислений (например, ACI, AKS) развернутой службы. |
-  | моделидс | строка | Разделенный запятыми список идентификаторов моделей. Идентификаторы моделей, развернутых в службе. |
-| сервицетагс | object | Теги развернутой службы. |
-| сервицепропертиес | object | Свойства развернутой службы. |
+| `ServiceName` | строка | Имя развернутой службы. |
+| `ServiceComputeType` | строка | Тип вычислений (например, ACI, AKS) развернутой службы. |
+  | `ModelIds` | строка | Список идентификаторов моделей с разделителями-запятыми. Идентификаторы моделей, развернутых в службе. |
+| `ServiceTags` | object | Теги развернутой службы. |
+| `ServiceProperties` | object | Свойства развернутой службы. |
 
 ### <a name="microsoftmachinelearningservicesruncompleted"></a>Microsoft. Мачинелеарнингсервицес. Рункомплетед
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
-| експериментид | строка | ИДЕНТИФИКАТОР эксперимента, к которому относится выполнение. |
-| експериментнаме | строка | Имя эксперимента, которому принадлежит выполнение. |
-| runId | строка | Идентификатор завершенного запуска. |
-| рунтипе | строка | Тип запуска завершенного выполнения. |
-| рунтагс | object | Теги завершенного выполнения. |
-| рунпропертиес | object | Свойства завершенного выполнения. |
+| `experimentId` | строка | ИДЕНТИФИКАТОР эксперимента, к которому относится выполнение. |
+| `experimentName` | строка | Имя эксперимента, которому принадлежит выполнение. |
+| `runId` | строка | Идентификатор завершенного запуска. |
+| `runType` | строка | Тип запуска завершенного выполнения. |
+| `runTags` | object | Теги завершенного выполнения. |
+| `runProperties` | object | Свойства завершенного выполнения. |
 
 ### <a name="microsoftmachinelearningservicesdatasetdriftdetected"></a>Microsoft. Мачинелеарнингсервицес. Датасетдрифтдетектед
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
-| датадрифтид | строка | ИДЕНТИФИКАТОР монитора смещения данных, вызвавшего событие. |
-| датадрифтнаме | строка | Имя монитора смещения данных, вызвавшего событие. |
-| RunId | строка | Идентификатор запуска, который обнаружил отклонение данных. |
-| баседатасетид | строка | Идентификатор базового набора данных, используемый для обнаружения смещения. |
-| таржетдатасетид | строка | Идентификатор целевого набора данных, используемый для обнаружения смещения. |
-| дрифткоеффиЦиент | double | Результат коэффициента, вызвавшего событие. |
-| StartTime | DATETIME | Время начала временного ряда целевого набора данных, которое привело к обнаружению отклонения.  |
-| EndTime | DATETIME | Время окончания временного ряда набора данных, которое привело к обнаружению рассмещений. |
+| `DataDriftId` | строка | ИДЕНТИФИКАТОР монитора смещения данных, вызвавшего событие. |
+| `DataDriftName` | строка | Имя монитора смещения данных, вызвавшего событие. |
+| `RunId` | строка | Идентификатор запуска, который обнаружил отклонение данных. |
+| `BaseDatasetId` | строка | Идентификатор базового набора данных, используемый для обнаружения смещения. |
+| `TargetDatasetId` | строка | Идентификатор целевого набора данных, используемый для обнаружения смещения. |
+| `DriftCoefficient` | double | Результат коэффициента, вызвавшего событие. |
+| `StartTime` | DATETIME | Время начала временного ряда целевого набора данных, которое привело к обнаружению отклонения.  |
+| `EndTime` | DATETIME | Время окончания временного ряда набора данных, которое привело к обнаружению рассмещений. |
 
 ### <a name="microsoftmachinelearningservicesrunstatuschanged"></a>Microsoft. Мачинелеарнингсервицес. Рунстатусчанжед
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | -------- | ---- | ----------- |
-| експериментид | строка | ИДЕНТИФИКАТОР эксперимента, к которому относится выполнение. |
-| експериментнаме | строка | Имя эксперимента, которому принадлежит выполнение. |
-| runId | строка | Идентификатор завершенного запуска. |
-| рунтипе | строка | Тип запуска завершенного выполнения. |
-| рунтагс | object | Теги завершенного выполнения. |
-| рунпропертиес | object | Свойства завершенного выполнения. |
-| runStatus | строка | Состояние выполнения. |
+| `experimentId` | строка | ИДЕНТИФИКАТОР эксперимента, к которому относится выполнение. |
+| `experimentName` | строка | Имя эксперимента, которому принадлежит выполнение. |
+| `runId` | строка | Идентификатор завершенного запуска. |
+| `runType` | строка | Тип запуска завершенного выполнения. |
+| `runTags` | object | Теги завершенного выполнения. |
+| `runProperties` | object | Свойства завершенного выполнения. |
+| `runStatus` | строка | Состояние выполнения. |
 
 ## <a name="tutorials-and-how-tos"></a>Руководства и инструкции
 | Заголовок | Описание |

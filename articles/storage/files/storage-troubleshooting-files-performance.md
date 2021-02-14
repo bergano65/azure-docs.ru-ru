@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: c3dbd76e76ad6e7bed0808278d4516992bc328f0
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 54b92c24b5a50ef1674dcb47df555b27259a350b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99574437"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393859"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Устранение проблем с производительностью файловых ресурсов Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "99574437"
 
 ### <a name="cause-1-share-was-throttled"></a>Причина 1: ресурс был отрегулирован
 
-Запросы регулируются при достижении предельных значений операций ввода-вывода в секунду, входящих или исходящих данных для общей папки. Сведения об ограничениях для файловых ресурсов уровня "Стандартный" и "Премиум" см. в разделе Общие папки [и целевые объекты масштабирования файлов](./storage-files-scale-targets.md#file-share-and-file-scale-targets).
+Запросы регулируются при достижении предельных значений операций ввода-вывода в секунду, входящих или исходящих данных для общей папки. Сведения об ограничениях для файловых ресурсов уровня "Стандартный" и "Премиум" см. в разделе Общие папки [и целевые объекты масштабирования файлов](./storage-files-scale-targets.md#azure-file-share-scale-targets).
 
 Чтобы проверить, выполняется ли регулирование общей папки, вы можете получить доступ к метрикам Azure и использовать ее на портале.
 
@@ -174,7 +174,7 @@ ms.locfileid: "99574437"
 
 ### <a name="workaround"></a>Обходной путь
 
-- Отсутствует.
+- Нет.
 
 ## <a name="slow-performance-from-windows-81-or-server-2012-r2"></a>Снижение производительности Windows 8.1 или сервера 2012 R2
 

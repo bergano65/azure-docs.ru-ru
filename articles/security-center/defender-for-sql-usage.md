@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/23/2020
+ms.date: 02/11/2021
 ms.author: memildin
-ms.openlocfilehash: d741aad2e97b211e42dc6c8b6176f102703acc5b
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 205f92d4282f0cad00c1dd136636da319e107f3f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98916495"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391084"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -70,7 +70,7 @@ ms.locfileid: "98916495"
 
 1. Установите параметр для **защитника Azure для серверов SQL Server на компьютерах** с планом **на**. 
 
-    ![Страница цен на центр безопасности с необязательными планами](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png)
+    :::image type="content" source="./media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png" alt-text="Страница цен на центр безопасности с необязательными планами":::
 
     Этот план будет включен на всех серверах SQL Server, подключенных к выбранной рабочей области. Защита будет полностью активна после первого перезапуска экземпляра SQL Server.
 
@@ -124,7 +124,7 @@ ms.locfileid: "98916495"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Связанные материалы см. в следующих статьях.
 

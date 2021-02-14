@@ -6,44 +6,46 @@ ms.service: sql-database
 ms.subservice: scale-out
 ms.custom: seo-lt-2019, sqldbrb=1
 ms.devlang: ''
+dev_langs:
+- TSQL
 ms.topic: how-to
 ms.author: jaredmoo
 author: jaredmoo
 ms.reviewer: sstein
-ms.date: 02/07/2020
-ms.openlocfilehash: 76f9fb4ed5c3b88b3a1f69e352f50079586ec336
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.date: 02/01/2021
+ms.openlocfilehash: 11b94ba5bcedf56f0115b8730dc58f808aff5c58
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98663338"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371606"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs-preview"></a>Использование Transact-SQL (T-SQL) для создания заданий обработки эластичных баз данных и управления ими (Предварительная версия)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 В этой статье приведено множество примеров сценариев, позволяющих приступить к использованию эластичных заданий с помощью T-SQL.
 
-В этих примерах используются [хранимые процедуры](#job-stored-procedures) и [представления](#job-views), доступные в [*базе данных задания*](job-automation-overview.md#job-database).
+В этих примерах используются [хранимые процедуры](#job-stored-procedures) и [представления](#job-views), доступные в [*базе данных задания*](job-automation-overview.md#elastic-job-database).
 
 Transact-SQL (T-SQL) используется для создания, настройки, выполнения заданий и управления ими. Создание агента заданий обработки эластичных баз данных в T-SQL не поддерживается, поэтому нужно сначала создать *агент заданий обработки эластичных баз данных* с помощью портала или [PowerShell](elastic-jobs-powershell-create.md#create-the-elastic-job-agent).
 
 ## <a name="create-a-credential-for-job-execution"></a>Создание учетных данных для выполнения заданий
 
-Учетные данные используются для подключения к целевым базам данных при выполнении сценария. Для успешного выполнения сценария этим учетным данным необходимы соответствующие разрешения для баз данных, указанных в целевой группе. При использовании логического члена целевой группы [SQL Server](logical-servers.md) или пула настоятельно рекомендуется создать основные учетные данные для использования при обновлении учетных данных до расширения сервера или пула во время выполнения задания. Учетные данные базы данных должны быть созданы в базе данных агента заданий. Эти же учетные данные должны использоваться для *создания имени для входа* и *создания пользователя на основании имени для входа для предоставления разрешений на вход в базу данных* для целевых баз данных.
+Учетные данные используются для подключения к целевым базам данных при выполнении сценария. Для успешного выполнения сценария этим учетным данным необходимы соответствующие разрешения для баз данных, указанных в целевой группе. При использовании логического члена целевой группы [SQL Server](logical-servers.md) или пула настоятельно рекомендуется создать учетные данные для использования при обновлении учетных данных до расширения сервера и (или) пула во время выполнения задания. Учетные данные базы данных должны быть созданы в базе данных агента заданий. Эти же учетные данные должны использоваться для *создания имени для входа* и *создания пользователя на основании имени для входа для предоставления разрешений на вход в базу данных* для целевых баз данных.
 
 ```sql
---Connect to the job database specified when creating the job agent
+--Connect to the new job database specified when creating the Elastic Job agent
 
--- Create a db master key if one does not already exist, using your own password.  
+-- Create a database master key if one does not already exist, using your own password.  
 CREATE MASTER KEY ENCRYPTION BY PASSWORD='<EnterStrongPasswordHere>';  
   
--- Create a database scoped credential.  
-CREATE DATABASE SCOPED CREDENTIAL myjobcred WITH IDENTITY = 'jobcred',
+-- Create two database scoped credentials.  
+-- The credential to connect to the Azure SQL logical server, to execute jobs
+CREATE DATABASE SCOPED CREDENTIAL job_credential WITH IDENTITY = 'job_credential',
     SECRET = '<EnterStrongPasswordHere>';
 GO
-
--- Create a database scoped credential for the master database of server1.
-CREATE DATABASE SCOPED CREDENTIAL mymastercred WITH IDENTITY = 'mastercred',
+-- The credential to connect to the Azure SQL logical server, to refresh the database metadata in server
+CREATE DATABASE SCOPED CREDENTIAL refresh_credential WITH IDENTITY = 'refresh_credential',
     SECRET = '<EnterStrongPasswordHere>';
 GO
 ```
@@ -51,20 +53,20 @@ GO
 ## <a name="create-a-target-group-servers"></a>Создание целевой группы (серверов)
 
 В приведенном ниже примере показано, как выполнить задание со всеми базами данных на сервере.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 -- Connect to the job database specified when creating the job agent
 
 -- Add a target group containing server(s)
-EXEC jobs.sp_add_target_group 'ServerGroup1'
+EXEC jobs.sp_add_target_group 'ServerGroup1';
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
-'ServerGroup1',
+@target_group_name = 'ServerGroup1',
 @target_type = 'SqlServer',
-@refresh_credential_name = 'mymastercred', --credential required to refresh the databases in a server
-@server_name = 'server1.database.windows.net'
+@refresh_credential_name = 'refresh_credential', --credential required to refresh the databases in a server
+@server_name = 'server1.database.windows.net';
 
 --View the recently created target group and target group members
 SELECT * FROM jobs.target_groups WHERE target_group_name='ServerGroup1';
@@ -74,29 +76,29 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name='ServerGroup1';
 ## <a name="exclude-an-individual-database"></a>Исключение отдельной базы данных
 
 В следующем примере показано, как выполнить задание для всех баз данных на сервере, за исключением базы данных с именем *маппингдб*.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- Add a target group containing server(s)
-EXEC [jobs].sp_add_target_group N'ServerGroup'
+EXEC [jobs].sp_add_target_group N'ServerGroup';
 GO
 
 -- Add a server target member
 EXEC [jobs].sp_add_target_group_member
 @target_group_name = N'ServerGroup',
 @target_type = N'SqlServer',
-@refresh_credential_name = N'mymastercred', --credential required to refresh the databases in a server
-@server_name = N'London.database.windows.net'
+@refresh_credential_name = N'refresh_credential', --credential required to refresh the databases in a server
+@server_name = N'London.database.windows.net';
 GO
 
 -- Add a server target member
 EXEC [jobs].sp_add_target_group_member
 @target_group_name = N'ServerGroup',
 @target_type = N'SqlServer',
-@refresh_credential_name = N'mymastercred', --credential required to refresh the databases in a server
-@server_name = 'server2.database.windows.net'
+@refresh_credential_name = N'refresh_credential', --credential required to refresh the databases in a server
+@server_name = 'server2.database.windows.net';
 GO
 
 --Exclude a database target member from the server target group
@@ -105,7 +107,7 @@ EXEC [jobs].sp_add_target_group_member
 @membership_type = N'Exclude',
 @target_type = N'SqlDatabase',
 @server_name = N'server1.database.windows.net',
-@database_name = N'MappingDB'
+@database_name = N'MappingDB';
 GO
 
 --View the recently created target group and target group members
@@ -116,21 +118,21 @@ SELECT * FROM [jobs].target_group_members WHERE target_group_name = N'ServerGrou
 ## <a name="create-a-target-group-pools"></a>Создание целевой группы (пулов)
 
 В примере ниже показано, как выбрать в качестве цели все базы данных в одном или нескольких эластичных пулах.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- Add a target group containing pool(s)
-EXEC jobs.sp_add_target_group 'PoolGroup'
+EXEC jobs.sp_add_target_group 'PoolGroup';
 
 -- Add an elastic pool(s) target member
 EXEC jobs.sp_add_target_group_member
-'PoolGroup',
+@target_group_name = 'PoolGroup',
 @target_type = 'SqlElasticPool',
-@refresh_credential_name = 'mymastercred', --credential required to refresh the databases in a server
+@refresh_credential_name = 'refresh_credential', --credential required to refresh the databases in a server
 @server_name = 'server1.database.windows.net',
-@elastic_pool_name = 'ElasticPool-1'
+@elastic_pool_name = 'ElasticPool-1';
 
 -- View the recently created target group and target group members
 SELECT * FROM jobs.target_groups WHERE target_group_name = N'PoolGroup';
@@ -140,20 +142,20 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name = N'PoolGroup';
 ## <a name="deploy-new-schema-to-many-databases"></a>Развертывание новой схемы в нескольких базах данных
 
 В приведенном ниже примере показано, как развернуть новую схему во всех базах данных.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 --Add job for create table
-EXEC jobs.sp_add_job @job_name = 'CreateTableTest', @description = 'Create Table Test'
+EXEC jobs.sp_add_job @job_name = 'CreateTableTest', @description = 'Create Table Test';
 
 -- Add job step for create table
 EXEC jobs.sp_add_jobstep @job_name = 'CreateTableTest',
 @command = N'IF NOT EXISTS (SELECT * FROM sys.tables WHERE object_id = object_id(''Test''))
 CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
-@credential_name = 'myjobcred',
-@target_group_name = 'PoolGroup'
+@credential_name = 'job_credential',
+@target_group_name = 'PoolGroup';
 ```
 
 ## <a name="data-collection-using-built-in-parameters"></a>Сбор данных с помощью встроенных параметров
@@ -188,7 +190,7 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 3. Некластеризованный индекс, указанный `IX_<TableName>_Internal_Execution_ID` в столбце internal_execution_id.
 4. Все перечисленные выше разрешения, за исключением `CREATE TABLE` разрешения для базы данных.
 
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команды, приведенные ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команды, приведенные ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -200,32 +202,34 @@ EXEC jobs.sp_add_job @job_name ='ResultsJob', @description='Collection Performan
 EXEC jobs.sp_add_jobstep
 @job_name = 'ResultsJob',
 @command = N' SELECT DB_NAME() DatabaseName, $(job_execution_id) AS job_execution_id, * FROM sys.dm_db_resource_stats WHERE end_time > DATEADD(mi, -20, GETDATE());',
-@credential_name = 'myjobcred',
+@credential_name = 'job_credential',
 @target_group_name = 'PoolGroup',
 @output_type = 'SqlDatabase',
-@output_credential_name = 'myjobcred',
+@output_credential_name = 'job_credential',
 @output_server_name = 'server1.database.windows.net',
 @output_database_name = '<resultsdb>',
-@output_table_name = '<resutlstable>'
-Create a job to monitor pool performance
+@output_table_name = '<resutlstable>';
+
+--Create a job to monitor pool performance
+
 --Connect to the job database specified when creating the job agent
 
--- Add a target group containing master database
-EXEC jobs.sp_add_target_group 'MasterGroup'
+-- Add a target group containing Elastic Job database
+EXEC jobs.sp_add_target_group 'ElasticJobGroup';
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
-@target_group_name = 'MasterGroup',
+@target_group_name = 'ElasticJobGroup',
 @target_type = 'SqlDatabase',
 @server_name = 'server1.database.windows.net',
-@database_name = 'master'
+@database_name = 'master';
 
 -- Add a job to collect perf results
 EXEC jobs.sp_add_job
 @job_name = 'ResultsPoolsJob',
 @description = 'Demo: Collection Performance data from all pools',
 @schedule_interval_type = 'Minutes',
-@schedule_interval_count = 15
+@schedule_interval_count = 15;
 
 -- Add a job step w/ schedule to collect results
 EXEC jobs.sp_add_jobstep
@@ -246,61 +250,61 @@ SELECT elastic_pool_name , end_time, elastic_pool_dtu_limit, avg_cpu_percent, av
         avg_storage_percent, elastic_pool_storage_limit_mb FROM sys.elastic_pool_resource_stats
         WHERE end_time > @poolStartTime and end_time <= @poolEndTime;
 '),
-@credential_name = 'myjobcred',
-@target_group_name = 'MasterGroup',
+@credential_name = 'job_credential',
+@target_group_name = 'ElasticJobGroup',
 @output_type = 'SqlDatabase',
-@output_credential_name = 'myjobcred',
+@output_credential_name = 'job_credential',
 @output_server_name = 'server1.database.windows.net',
 @output_database_name = 'resultsdb',
-@output_table_name = 'resutlstable'
+@output_table_name = 'resutlstable';
 ```
 
 ## <a name="view-job-definitions"></a>Просмотр определений заданий
 
 В следующем примере показано, как просмотреть определения текущих заданий.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- View all jobs
-SELECT * FROM jobs.jobs
+SELECT * FROM jobs.jobs;
 
 -- View the steps of the current version of all jobs
 SELECT js.* FROM jobs.jobsteps js
 JOIN jobs.jobs j
-  ON j.job_id = js.job_id AND j.job_version = js.job_version
+  ON j.job_id = js.job_id AND j.job_version = js.job_version;
 
 -- View the steps of all versions of all jobs
-select * from jobs.jobsteps
+SELECT * FROM jobs.jobsteps;
 ```
 
 ## <a name="begin-unplanned-execution-of-a-job"></a>Начало незапланированного выполнения задания
 
 В приведенном ниже примере показано, как запустить задание немедленно.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
 -- Execute the latest version of a job
-EXEC jobs.sp_start_job 'CreateTableTest'
+EXEC jobs.sp_start_job 'CreateTableTest';
 
 -- Execute the latest version of a job and receive the execution id
-declare @je uniqueidentifier
-exec jobs.sp_start_job 'CreateTableTest', @job_execution_id = @je output
-select @je
+declare @je uniqueidentifier;
+exec jobs.sp_start_job 'CreateTableTest', @job_execution_id = @je output;
+select @je;
 
-select * from jobs.job_executions where job_execution_id = @je
+select * from jobs.job_executions where job_execution_id = @je;
 
 -- Execute a specific version of a job (e.g. version 1)
-exec jobs.sp_start_job 'CreateTableTest', 1
+exec jobs.sp_start_job 'CreateTableTest', 1;
 ```
 
 ## <a name="schedule-execution-of-a-job"></a>Планирование выполнения задания
 
 В следующем примере показано, как запланировать выполнение задания в будущем.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -309,13 +313,13 @@ EXEC jobs.sp_update_job
 @job_name = 'ResultsJob',
 @enabled=1,
 @schedule_interval_type = 'Minutes',
-@schedule_interval_count = 15
+@schedule_interval_count = 15;
 ```
 
 ## <a name="monitor-job-execution-status"></a>Отслеживание состояния выполнения задания
 
 В приведенном ниже примере показано, как просмотреть сведения о состоянии выполнения всех заданий.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -323,27 +327,27 @@ EXEC jobs.sp_update_job
 --View top-level execution status for the job named 'ResultsPoolJob'
 SELECT * FROM jobs.job_executions
 WHERE job_name = 'ResultsPoolsJob' and step_id IS NULL
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 
 --View all top-level execution status for all jobs
 SELECT * FROM jobs.job_executions WHERE step_id IS NULL
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 
 --View all execution statuses for job named 'ResultsPoolsJob'
 SELECT * FROM jobs.job_executions
 WHERE job_name = 'ResultsPoolsJob'
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 
 -- View all active executions
 SELECT * FROM jobs.job_executions
 WHERE is_active = 1
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 ```
 
 ## <a name="cancel-a-job"></a>Отмена задания
 
 В следующем примере показано, как отменить задание.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -351,23 +355,23 @@ ORDER BY start_time DESC
 -- View all active executions to determine job execution id
 SELECT * FROM jobs.job_executions
 WHERE is_active = 1 AND job_name = 'ResultPoolsJob'
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 GO
 
 -- Cancel job execution with the specified job execution id
-EXEC jobs.sp_stop_job '01234567-89ab-cdef-0123-456789abcdef'
+EXEC jobs.sp_stop_job '01234567-89ab-cdef-0123-456789abcdef';
 ```
 
 ## <a name="delete-old-job-history"></a>Удаление старого журнала заданий
 
 В приведенном ниже примере показано, как удалить старый журнал заданий до определенной даты.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
--- Delete history of a specific job’s executions older than the specified date
-EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-01 00:00:00'
+-- Delete history of a specific job's executions older than the specified date
+EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-01 00:00:00';
 
 --Note: job history is automatically deleted if it is >45 days old
 ```
@@ -375,19 +379,19 @@ EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-
 ## <a name="delete-a-job-and-all-its-job-history"></a>Удаление задания и его журнала заданий
 
 В приведенном ниже примере показано, как удалить задание и связанный с ним журнал заданий.  
-Подключитесь к [*базе данных заданий*](job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](job-automation-overview.md#elastic-job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
 
-EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
+EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob';
 
 --Note: job history is automatically deleted if it is >45 days old
 ```
 
 ## <a name="job-stored-procedures"></a>Хранимые процедуры задания
 
-В [базе данных заданий](job-automation-overview.md#job-database) доступны следующие хранимые процедуры.
+В [базе данных заданий](job-automation-overview.md#elastic-job-database) доступны следующие хранимые процедуры.
 
 |Хранимая процедура  |Описание  |
 |---------|---------|
@@ -431,7 +435,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 Описание задания. Типом description является nvarchar(512), значение по умолчанию — NULL. Если описание не указано, используется пустая строка.
 
 [ **\@ включено =** ] включено  
-Указывает, включено ли задание. Типом enabled является bit, значение по умолчанию — 0 (отключено). При значении 0 задание не включено и не выполняется по заданному расписанию, однако его можно запустить вручную. При значении 1 задание выполняется по своему расписанию, а также может быть выполнено вручную.
+Включено ли расписание задания. Типом enabled является bit, значение по умолчанию — 0 (отключено). При значении 0 задание не включено и не выполняется по заданному расписанию, однако его можно запустить вручную. При значении 1 задание выполняется по своему расписанию, а также может быть выполнено вручную.
 
 [ **\@ schedule_interval_type =**] schedule_interval_type  
 Это значение указывает, когда должно выполняться задание. Типом schedule_interval_type является nvarchar(50), значение по умолчанию — Once. Допускаются следующие значения:
@@ -459,10 +463,10 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 sp_add_job необходимо выполнять из базы данных агента заданий, указанной при создании этого агента.
-После выполнения sp_add_job для добавления задания можно выполнить sp_add_jobstep, чтобы добавить в задание шаги для выполнения действий. Исходный номер версии задания — 0. Он будет увеличен на 1 при добавлении первого шага.
+После выполнения sp_add_job для добавления задания можно выполнить sp_add_jobstep, чтобы добавить в задание шаги для выполнения действий. Первоначальный номер версии задания равен 0, что будет увеличиваться до 1 при добавлении первого шага.
 
 #### <a name="permissions"></a>Разрешения
 
@@ -501,7 +505,7 @@ sp_add_job необходимо выполнять из базы данных а
 Описание задания. Типом description является nvarchar(512).
 
 [ **\@ включено =** ] включено  
-Указывает, включено (1) или отключено (0) расписание задания. Типом enabled является bit.
+Указывает, включено ли расписание задания (1) или не включено (0). Типом enabled является bit.
 
 [ **\@ schedule_interval_type =** ] schedule_interval_type  
 Это значение указывает, когда должно выполняться задание. Типом schedule_interval_type является nvarchar(50). Допускаются следующие значения:
@@ -526,9 +530,9 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
-После выполнения sp_add_job для добавления задания можно выполнить sp_add_jobstep, чтобы добавить в задание шаги для выполнения действий. Исходный номер версии задания — 0. Он будет увеличен на 1 при добавлении первого шага.
+После выполнения sp_add_job для добавления задания можно выполнить sp_add_jobstep, чтобы добавить в задание шаги для выполнения действий. Первоначальный номер версии задания равен 0, что будет увеличиваться до 1 при добавлении первого шага.
 
 #### <a name="permissions"></a>Разрешения
 
@@ -561,7 +565,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 Журнал заданий автоматически удаляется вместе с заданием.
 
@@ -651,7 +655,7 @@ sp_add_job необходимо выполнять из базы данных а
 Максимальная продолжительность выполнения шага. При превышении этого значения выполнение задания завершается с состоянием жизненного цикла TimedOut. Типом step_timeout_seconds является int, значение по умолчанию — 43 200 секунд (12 часов).
 
 [ **\@ output_type =** ] ' output_type '  
-Если значение не равно NULL, указывает тип назначения для записи первого результирующего набора команды. Типом output_type является nvarchar(50), значение по умолчанию — NULL.
+Если значение не равно null, то тип назначения, в который записывается первый результирующий набор команды. Типом output_type является nvarchar(50), значение по умолчанию — NULL.
 
 Если этот аргумент указан, его значением должно быть SqlDatabase.
 
@@ -674,7 +678,7 @@ sp_add_job необходимо выполнять из базы данных а
 Если значение не равно NULL, указывает имя схемы SQL, содержащей целевую выходную таблицу. Если значение output_type равно SqlDatabase, то значение по умолчанию — dbo. Типом output_schema_name является nvarchar(128).
 
 [ **\@ output_table_name =** ] ' output_table_name '  
-Если значение не равно NULL, указывает имя таблицы для записи первого результирующего набора команды. Если таблица не существует, она будет создана в соответствии со схемой возвращенного результирующего набора. Должен указываться, если значение output_type равно SqlDatabase. Типом output_table_name является nvarchar(128), значение по умолчанию — NULL.
+Если не равно null, то имя таблицы, в которую будет записан первый результирующий набор команды. Если таблица не существует, она будет создана в соответствии со схемой возвращенного результирующего набора. Должен указываться, если значение output_type равно SqlDatabase. Типом output_table_name является nvarchar(128), значение по умолчанию — NULL.
 
 [ **\@ job_version =** ] job_version выходные данные  
 Параметр вывода, которому будет присвоен номер версии нового задания. Типом job_version является int.
@@ -686,9 +690,9 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
-При успешном выполнении sp_add_jobstep номер текущей версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия. Если идет выполнение задания, то оно не будет включать в себя новый шаг.
+При завершении sp_add_jobstep номер текущей версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия. Если идет выполнение задания, то оно не будет включать в себя новый шаг.
 
 #### <a name="permissions"></a>Разрешения
 
@@ -782,7 +786,7 @@ sp_add_job необходимо выполнять из базы данных а
 Максимальная продолжительность выполнения шага. При превышении этого значения выполнение задания завершается с состоянием жизненного цикла TimedOut. Типом step_timeout_seconds является int, значение по умолчанию — 43 200 секунд (12 часов).
 
 [ **\@ output_type =** ] ' output_type '  
-Если значение не равно NULL, указывает тип назначения для записи первого результирующего набора команды. Чтобы сбросить значение output_type до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_type является nvarchar(50), значение по умолчанию — NULL.
+Если значение не равно null, то тип назначения, в который записывается первый результирующий набор команды. Чтобы сбросить значение output_type до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_type является nvarchar(50), значение по умолчанию — NULL.
 
 Если этот аргумент указан, его значением должно быть SqlDatabase.
 
@@ -799,7 +803,7 @@ sp_add_job необходимо выполнять из базы данных а
 Если значение не равно NULL, указывает имя схемы SQL, содержащей целевую выходную таблицу. Если значение output_type равно SqlDatabase, то значение по умолчанию — dbo. Чтобы сбросить значение output_schema_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_schema_name является nvarchar(128).
 
 [ **\@ output_table_name =** ] ' output_table_name '  
-Если значение не равно NULL, указывает имя таблицы для записи первого результирующего набора команды. Если таблица не существует, она будет создана в соответствии со схемой возвращенного результирующего набора. Должен указываться, если значение output_type равно SqlDatabase. Чтобы сбросить значение output_server_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_table_name является nvarchar(128), значение по умолчанию — NULL.
+Если не равно null, то имя таблицы, в которую будет записан первый результирующий набор команды. Если таблица не существует, она будет создана в соответствии со схемой возвращенного результирующего набора. Должен указываться, если значение output_type равно SqlDatabase. Чтобы сбросить значение output_server_name до NULL, задайте для этого параметра значение '' (пустая строка). Типом output_table_name является nvarchar(128), значение по умолчанию — NULL.
 
 [ **\@ job_version =** ] job_version выходные данные  
 Параметр вывода, которому будет присвоен номер версии нового задания. Типом job_version является int.
@@ -811,9 +815,9 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
-Какие-либо текущие выполнения задания не затрагиваются. При успешном выполнении sp_update_jobstep номер версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия.
+Какие-либо текущие выполнения задания не затрагиваются. При завершении sp_update_jobstep номер версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия.
 
 #### <a name="permissions"></a>Разрешения
 
@@ -854,9 +858,9 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
-Какие-либо текущие выполнения задания не затрагиваются. При успешном выполнении sp_update_jobstep номер версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия.
+Какие-либо текущие выполнения задания не затрагиваются. При завершении sp_update_jobstep номер версии задания увеличивается. При следующем выполнении задания будет использоваться его новая версия.
 
 Другие шаги задания будут автоматически перенумерованы, чтобы заполнить пропуск из-за удаленного шага задания.
 
@@ -891,7 +895,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 Нет.
 
@@ -922,7 +926,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 Нет.
 
@@ -956,7 +960,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 С помощью целевых групп можно легко нацелить задание на коллекцию баз данных.
 
@@ -987,7 +991,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 Нет.
 
@@ -1023,22 +1027,22 @@ sp_add_job необходимо выполнять из базы данных а
 Имя целевой группы для добавления элемента. Типом target_group_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **\@ membership_type =** ] ' membership_type '  
-Указывает, добавляется или исключается ли элемент целевой группы. Типом target_group_name является nvarchar(128), значение по умолчанию — Include. Допустимые значения для membership_type: "include" или "Exclude".
+Указывает, добавляется или исключается ли элемент целевой группы. target_group_name имеет тип nvarchar (128) и значение по умолчанию "include". Допустимые значения для membership_type: "include" или "Exclude".
 
 [ **\@ target_type =** ] ' target_type '  
-Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле, все базы данных в сопоставлении сегментов или отдельную базу данных. Типом target_type является nvarchar(128), значение по умолчанию отсутствует. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase, SqlShardMap.
+Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле, все базы данных в сопоставлении сегментов или отдельную базу данных. Типом target_type является nvarchar(128), значение по умолчанию отсутствует. Допустимые значения для target_type: "SqlServer", "Склеластикпул", "SqlDatabase" или "Склшардмап".
 
 [ **\@ refresh_credential_name =** ] ' refresh_credential_name '  
 Имя учетных данных области базы данных. Типом refresh_credential_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **\@ server_name =** ] ' server_name '  
-Имя сервера, который необходимо добавить в указанную целевую группу. Значение server_name следует указывать, если значением target_type является SqlServer. Типом server_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя сервера, который необходимо добавить в указанную целевую группу. server_name следует указывать, если target_type имеет "SqlServer". Типом server_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **\@ database_name =** ] ' database_name '  
-Имя базы данных, добавляемой в указанную целевую группу. Значение database_name следует указывать, если значением target_type является SqlDatabase. Типом database_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя базы данных, добавляемой в указанную целевую группу. database_name следует указывать, если target_type имеет "SqlDatabase". Типом database_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **\@ elastic_pool_name =** ] ' elastic_pool_name '  
-Имя эластичного пула, добавляемого в указанную целевую группу. Значение elastic_pool_name следует указывать, если значением target_type является SqlElasticPool. Типом elastic_pool_name является nvarchar(128), значение по умолчанию отсутствует.
+Имя эластичного пула, добавляемого в указанную целевую группу. elastic_pool_name следует указывать, если target_type имеет "Склеластикпул". Типом elastic_pool_name является nvarchar(128), значение по умолчанию отсутствует.
 
 [ **\@ shard_map_name =** ] ' shard_map_name '  
 Имя сопоставления сегментов, добавляемого в указанную целевую группу. elastic_pool_name следует указывать, если target_type имеет "Склшардмап". Типом shard_map_name является nvarchar(128), значение по умолчанию отсутствует.
@@ -1047,7 +1051,7 @@ sp_add_job необходимо выполнять из базы данных а
 Целевой идентификационный номер, который назначается элементу целевой группы при его успешном создании и добавлении в целевую группу. target_id является выходной переменой типа uniqueidentifier, значение по умолчанию — NULL.
 Значения кода возврата: 0 (успех) или 1 (сбой).
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 Задание выполняется во всех отдельных базах данных на сервере или в эластичном пуле во время выполнения, если в целевую группу входит сервер или эластичный пул.
 
@@ -1065,27 +1069,27 @@ sp_add_job необходимо выполнять из базы данных а
 
 ```sql
 --Connect to the jobs database specified when creating the job agent
-USE ElasticJobs ;
+USE ElasticJobs;
 GO
 
 -- Add a target group containing server(s)
-EXEC jobs.sp_add_target_group @target_group_name =  N'Servers Maintaining Customer Information'
+EXEC jobs.sp_add_target_group @target_group_name =  N'Servers Maintaining Customer Information';
 GO
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
 @target_group_name = N'Servers Maintaining Customer Information',
 @target_type = N'SqlServer',
-@refresh_credential_name=N'mymastercred', --credential required to refresh the databases in server
-@server_name=N'London.database.windows.net' ;
+@refresh_credential_name=N'refresh_credential', --credential required to refresh the databases in server
+@server_name=N'London.database.windows.net';
 GO
 
 -- Add a server target member
 EXEC jobs.sp_add_target_group_member
 @target_group_name = N'Servers Maintaining Customer Information',
 @target_type = N'SqlServer',
-@refresh_credential_name=N'mymastercred', --credential required to refresh the databases in server
-@server_name=N'NewYork.database.windows.net' ;
+@refresh_credential_name=N'refresh_credential', --credential required to refresh the databases in server
+@server_name=N'NewYork.database.windows.net';
 GO
 
 --View the recently added members to the target group
@@ -1116,7 +1120,7 @@ GO
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 С помощью целевых групп можно легко нацелить задание на коллекцию баз данных.
 
@@ -1139,12 +1143,12 @@ GO
 
 -- Retrieve the target_id for a target_group_members
 declare @tid uniqueidentifier
-SELECT @tid = target_id FROM [jobs].target_group_members WHERE target_group_name = 'Servers Maintaining Customer Information' and server_name = 'London.database.windows.net'
+SELECT @tid = target_id FROM [jobs].target_group_members WHERE target_group_name = 'Servers Maintaining Customer Information' and server_name = 'London.database.windows.net';
 
 -- Remove a target group member of type server
 EXEC jobs.sp_delete_target_group_member
 @target_group_name = N'Servers Maintaining Customer Information',
-@target_id = @tid
+@target_id = @tid;
 GO
 ```
 
@@ -1175,7 +1179,7 @@ GO
 
 0 (успешное завершение) или 1 (неуспешное завершение)
 
-#### <a name="remarks"></a>Примечания
+#### <a name="remarks"></a>Remarks
 
 С помощью целевых групп можно легко нацелить задание на коллекцию баз данных.
 
@@ -1202,7 +1206,7 @@ GO
 
 ## <a name="job-views"></a>Представления заданий
 
-Ниже приведены представления, доступные в [базе данных заданий](job-automation-overview.md#job-database).
+Ниже приведены представления, доступные в [базе данных заданий](job-automation-overview.md#elastic-job-database).
 
 |Представление  |Описание  |
 |---------|---------|
@@ -1228,18 +1232,18 @@ GO
 |**job_version** | INT | Версия задания (автоматически обновляется каждый раз при изменении задания).
 |**step_id** |INT | Уникальный для данного задания идентификатор этапа. Значение NULL означает, что выполняется родительское задание.
 |**is_active** | bit | Указывает, является ли задание активным или неактивным. Значение 1 указывает активные задания, а значение 0 — неактивные.
-|**файлу** | nvarchar(50) | Значение, указывающее состояние задания: Created, In Progress, Failed, Succeeded, Skipped, SucceededWithSkipped.|
+|**файлу** | nvarchar(50) | Значение, указывающее состояние задания: "создано", "выполняется", "сбой", "успешно", "пропущено", "Сукцеедедвисскиппед"|
 |**create_time**| datetime2(7) | Дата и время создания задания.
 |**start_time** | datetime2(7) | Дата и время начала выполнения задания. Имеет значение NULL, если задание еще не выполнено.
 |**end_time** | datetime2(7) | Дата и время завершения выполнения задания. Имеет значение NULL, если задание еще не выполнено или его выполнение не завершено.
 |**current_attempts** | INT | Число попыток выполнения шага. Для родительского задания будет отображено значение 0, а число выполнений дочернего задания будет равно 1 или больше, в зависимости от политики выполнения.
 |**current_attempt_start_time** | datetime2(7) | Дата и время начала выполнения задания. Значение NULL означает, что выполняется родительское задание.
 |**last_message** | nvarchar(max) | Запись в журнале о задании или этапе.
-|**target_type** | NVARCHAR(128) | Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле или отдельную базу данных. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase. Значение NULL означает, что выполняется родительское задание.
+|**target_type** | NVARCHAR(128) | Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле или отдельную базу данных. Допустимые значения для target_type: "SqlServer", "Склеластикпул" или "SqlDatabase". Значение NULL означает, что выполняется родительское задание.
 |**target_id** | UNIQUEIDENTIFIER | Уникальный идентификатор элемента целевой группы.  Значение NULL означает, что выполняется родительское задание.
 |**target_group_name** | NVARCHAR(128) | Имя целевой группы. Значение NULL означает, что выполняется родительское задание.
-|**target_server_name** | nvarchar(256)  | Имя сервера, содержащегося в Целевой группе. Указывается, только если значением target_type является SqlServer. Значение NULL означает, что выполняется родительское задание.
-|**target_database_name** | NVARCHAR(128) | Имя базы данных в целевой группе. Указывается, только если значением target_type является SqlDatabase. Значение NULL означает, что выполняется родительское задание.
+|**target_server_name** | nvarchar(256)  | Имя сервера, содержащегося в Целевой группе. Указывается, только если target_type имеет значение "SqlServer". Значение NULL означает, что выполняется родительское задание.
+|**target_database_name** | NVARCHAR(128) | Имя базы данных в целевой группе. Указывается, только если target_type имеет "SqlDatabase". Значение NULL означает, что выполняется родительское задание.
 
 ### <a name="jobs-view"></a>Представление jobs
 
@@ -1283,8 +1287,8 @@ GO
 |**job_version**|INT|Версия задания (автоматически обновляется каждый раз при изменении задания).|
 |**step_id**|INT|Уникальный для данного задания идентификатор этапа.|
 |**step_name**|NVARCHAR(128)|Уникальное (в пределах задания) имя шага.|
-|**command_type**|nvarchar(50)|Тип команды, выполняемой на шаге задания. Для версии 1 должно быть указано значение по умолчанию — TSql.|
-|**command_source**|nvarchar(50)|Расположение команды. Для версии 1 допускается только значение по умолчанию — Inline.|
+|**command_type**|nvarchar(50)|Тип команды, выполняемой на шаге задания. Для v1 значение должно быть равно, а по умолчанию — TSql.|
+|**command_source**|nvarchar(50)|Расположение команды. Для версии v1 параметр "inline" является значением по умолчанию и принимает только значение.|
 |**command**|nvarchar(max)|Команды, выполняемые эластичными заданиями в соответствии с command_type.|
 |**credential_name**|NVARCHAR(128)|Имя учетных данных базы данных, используемых для выполнения задания.|
 |**target_group_name**|NVARCHAR(128)|Имя целевой группы.|
@@ -1301,7 +1305,7 @@ GO
 |**output_server_name**|nvarchar(256)|Имя целевого сервера для хранения результирующего набора.|
 |**output_database_name**|NVARCHAR(128)|Имя целевой базы данных для хранения результирующего набора.|
 |**output_schema_name**|nvarchar(max)|Имя целевой схемы. Если не указано, используется значение по умолчанию — dbo.|
-|**output_table_name**|nvarchar(max)|Имя таблицы для хранения результирующего набора запроса. Таблица будет создана автоматически в соответствии со схемой результирующего набора, если она не существует. Схема должна совпадать со схемой результирующего набора.|
+|**output_table_name**|nvarchar(max)|Имя таблицы для хранения результирующего набора запроса. Таблица будет создана автоматически на основе схемы набора результатов, если она еще не существует. Схема должна совпадать со схемой результирующего набора.|
 |**max_parallelism**|INT|Максимальное число баз данных на эластичный пул, которое может одновременно обрабатывать шаг задания. Значение по умолчанию — NULL. Оно означает отсутствие ограничения. |
 
 ### <a name="jobstep_versions-view"></a><a name="jobstep_versions-view"></a>Представление jobstep_versions
@@ -1331,16 +1335,16 @@ GO
 |-----|-----|-----|
 |**target_group_name**|nvarchar(128)|Имя целевой группы, содержащей коллекцию баз данных. |
 |**target_group_id**|UNIQUEIDENTIFIER|Уникальный идентификатор целевой группы.|
-|**membership_type**|INT|Указывает, добавляется элемент в целевую группу или исключается из нее. Допустимые значения target_group_name: Include и Exclude.|
-|**target_type**|NVARCHAR(128)|Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле или отдельную базу данных. Допустимые значения target_type: SqlServer, SqlElasticPool, SqlDatabase, SqlShardMap.|
+|**membership_type**|INT|Указывает, добавляется элемент в целевую группу или исключается из нее. Допустимые значения для target_group_name: "include" или "Exclude".|
+|**target_type**|NVARCHAR(128)|Тип целевой базы данных или коллекции баз данных, включая все базы данных на сервере, все базы данных в эластичном пуле или отдельную базу данных. Допустимые значения для target_type: "SqlServer", "Склеластикпул", "SqlDatabase" или "Склшардмап".|
 |**target_id**|UNIQUEIDENTIFIER|Уникальный идентификатор элемента целевой группы.|
 |**refresh_credential_name**|NVARCHAR(128)|Имя учетных данных базы данных, используемых для подключения к элементу целевой группы.|
 |**subscription_id**|UNIQUEIDENTIFIER|Уникальный идентификатор подписки.|
 |**resource_group_name**|NVARCHAR(128)|Имя группы ресурсов, в которой находится элемент целевой группы.|
-|**server_name**|NVARCHAR(128)|Имя сервера, содержащегося в Целевой группе. Указывается, только если значением target_type является SqlServer. |
-|**database_name**|NVARCHAR(128)|Имя базы данных в целевой группе. Указывается, только если значением target_type является SqlDatabase.|
-|**elastic_pool_name**|NVARCHAR(128)|Имя эластичного пула в целевой группе. Указывается, только если значением target_type является SqlElasticPool.|
-|**shard_map_name**|NVARCHAR(128)|Имя карт сегментов, содержащихся в Целевой группе. Указывается, только если значением target_type является SqlShardMap.|
+|**server_name**|NVARCHAR(128)|Имя сервера, содержащегося в Целевой группе. Указывается, только если target_type имеет значение "SqlServer". |
+|**database_name**|NVARCHAR(128)|Имя базы данных в целевой группе. Указывается, только если target_type имеет "SqlDatabase".|
+|**elastic_pool_name**|NVARCHAR(128)|Имя эластичного пула в целевой группе. Указывается, только если target_type имеет "Склеластикпул".|
+|**shard_map_name**|NVARCHAR(128)|Имя карт сегментов, содержащихся в Целевой группе. Указывается, только если target_type имеет "Склшардмап".|
 
 ## <a name="resources"></a>Ресурсы
 

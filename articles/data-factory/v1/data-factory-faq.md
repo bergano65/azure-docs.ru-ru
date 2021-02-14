@@ -1,22 +1,18 @@
 ---
 title: Фабрика данных Azure — часто задаваемые вопросы
 description: Часто задаваемые вопросы о фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 57f2beef3dc14a47480950bf9e3bdf35a1fd6ce8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 4ddadec327f1a4f6aa22d51ac073b9aebb0dee82
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495826"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383200"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
 > [!NOTE]
@@ -25,7 +21,7 @@ ms.locfileid: "96495826"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="general-questions"></a>Общие вопросы
-### <a name="what-is-azure-data-factory"></a>Что такое фабрика данных Azure?
+### <a name="what-is-azure-data-factory"></a>Что такое Фабрика данных Azure?
 Фабрика данных представляет собой облачную службу интеграции информации, которая **автоматизирует перемещение и преобразование данных**. Как на фабрике сырье превращается в готовую продукцию с помощью оборудования, так и в фабриках данных необработанные данные собираются и преобразовываются в готовые к использованию сведения с помощью специальных служб.
 
 Фабрика данных позволяет создавать управляемые данными рабочие процессы для перемещения данных между локальными и облачными хранилищами данных, а также обрабатывать или преобразовывать данные с помощью служб вычислений, таких как Azure HDInsight и Azure Data Lake Analytics. Для созданного конвейера, который выполняет необходимое действие, можно запланировать периодический запуск (ежечасно, ежедневно, еженедельно и т. д.).   

@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: TheJY
 ms.author: jeanyd
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 10f21067f48155a394ac20337d77e3e82aae64d8
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 8edf540c3f67a3a8bee075569f0a2588cae18a62
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98985943"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390017"
 ---
 # <a name="what-is-azure-arc-enabled-postgresql-hyperscale"></a>Что такое служба "PostgreSQL" в Azure ARC с поддержкой масштабирования?
 
@@ -47,8 +47,8 @@ PostgreSQL "Дуга Azure Enabled" — это одна из служб баз �
 
 Это конструктивный коэффициент для ядра СУБД postgres, доступный в службах данных, поддерживающих службу Arc Azure. Кроме того, она работает на основе расширения Цитус, которое обеспечивает возможность использования возможностей масштабирования. В этом конструктивном коэффициенте наши клиенты предоставляют инфраструктуру, в которой размещаются системы и работают их.
 
-## <a name="next-steps"></a>Дальнейшие действия
-- **Попробуйте.** Быстро Начните работу с помощью [Azure Arc JumpStart](https://github.com/microsoft/azure_arc#azure-arc-enabled-data-services) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure. 
+## <a name="next-steps"></a>Следующие шаги
+- **Попробуйте.** Быстро Начните работу с помощью [Azure Arc JumpStart](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data/) в службе Azure Kubernetes Service (AKS), AWS эластичной Kubernetes Service (ЕКС), Google Cloud Kubernetes Engine (гке) или на виртуальной машине Azure. 
 
 - **Создайте свой собственный.** Чтобы создать кластер Kubernetes, выполните следующие действия. 
    1. [Установка клиентских средств](install-client-tools.md)

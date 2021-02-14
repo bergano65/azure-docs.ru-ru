@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/04/2021
 ms.custom: references_regions
-ms.openlocfilehash: 954d08fa163b481393df28ae22016859badea694
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 46f2035e5f8409cd38faeb9c327b88b06fc7d7a0
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99537312"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097642"
 ---
 # <a name="security-overview-for-azure-cognitive-search"></a>Общие сведения о безопасности для Azure Когнитивный поиск
 
@@ -113,12 +113,6 @@ ms.locfileid: "99537312"
 
 > [!Note]
 > Используя механизмы Azure, можно заблокировать подписку или ресурс, чтобы предотвратить случайное или несанкционированное удаление службы поиска пользователями с правами администратора. Дополнительные сведения см. [в разделе Блокировка ресурсов для предотвращения непредвиденного удаления](../azure-resource-manager/management/lock-resources.md).
-
-## <a name="threat-protection"></a>Защита от угроз
-
-Доступ к содержимому в службе поиска осуществляется исключительно с помощью запросов. Если служба поиска является целью атаки с запросом, система удаляет запросы, так как система приближается к пиковой емкости. 
-
-Регулирование работает по-разному для разных API. API запросов (поиск, предложения и автозавершение) и API индексирования регулируются динамически в зависимости от нагрузки на службу. Интерфейсы API индекса и API операций службы имеют ограничения частоты статических запросов. Вы можете ознакомиться с ограничениями запросов статической скорости в [ограничениях регулирования](search-limits-quotas-capacity.md#throttling-limits). Дополнительные сведения о поведении регулирования см. в разделе [наблюдение за запросами запросов](search-monitor-queries.md).
 
 <a name="encryption"></a>
 

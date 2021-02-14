@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 7821d94ed032fd0fc52a756766e6a9af7c82cfde
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: c3a821156074727d02ab36cf88f3e998756b8cc4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99559238"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389456"
 ---
 # <a name="prevent-dangling-dns-entries-and-avoid-subdomain-takeover"></a>Предотвращение висячих записей DNS и избежание поддоменного перенаправление
 
@@ -86,7 +86,7 @@ ms.locfileid: "99559238"
 Это средство поддерживает ресурсы Azure, перечисленные в следующей таблице. Средство извлекает или принимает в качестве входных данных все записи CNAME клиента.
 
 
-| Служба                   | Тип                                        | фкднпроперти                               | Пример                         |
+| Служба                   | Type                                        | фкднпроперти                               | Пример                         |
 |---------------------------|---------------------------------------------|--------------------------------------------|---------------------------------|
 | Azure Front Door          | microsoft.network/frontdoors                | Properties. cName                           | `abc.azurefd.net`               |
 | хранилище BLOB-объектов Azure        | microsoft.storage/storageaccounts           | Properties. первичных. BLOB           | `abc. blob.core.windows.net`    |
@@ -119,7 +119,7 @@ ms.locfileid: "99559238"
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
-Дополнительные сведения о скрипте PowerShell **Get-DanglingDnsRecords.ps1** и его загрузке с сайта GitHub: https://aka.ms/DanglingDNSDomains .
+Дополнительные сведения о скрипте PowerShell **Get-DanglingDnsRecords.ps1** и его загрузке с сайта GitHub: https://aka.ms/Get-DanglingDnsRecords .
 
 ## <a name="remediate-dangling-dns-entries"></a>Исправление висячих записей DNS 
 

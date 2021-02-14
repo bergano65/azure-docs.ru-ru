@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 54da62ce961156b64c917b448557c17e7516e222
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: ef753043218f259c69082dbb8682517be79cf95c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862133"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099801"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Сведения о вычислительном экземпляре Машинного обучения Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "97862133"
 
 Вы можете запускать записные книжки Jupyter в [VS Code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) используя экземпляр COMPUTE в качестве удаленного сервера без необходимости SSH. Можно также включить интеграцию VS Code через [Удаленное расширение SSH](https://devblogs.microsoft.com/python/enhance-your-azure-machine-learning-experience-with-the-vs-code-extension/).
 
-Вы можете [установить пакеты](how-to-create-manage-compute-instance.md#install-packages) и [Добавить ядра](how-to-create-manage-compute-instance.md#add-new-kernels) в вычислительный экземпляр.  
+Вы можете [установить пакеты](how-to-access-terminal.md#install-packages) и [Добавить ядра](how-to-access-terminal.md#add-new-kernels) в вычислительный экземпляр.  
 
 Следующие средства и среды уже установлены на вычислительном экземпляре: 
 
@@ -77,7 +77,7 @@ ms.locfileid: "97862133"
 |Anaconda Python||
 |Jupyter и расширения||
 |Jupyterlab и расширения||
-[Пакет SDK службы "Машинное обучение Azure" для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)</br>из PyPI|Включает большинство дополнительных пакетов azureml.  Чтобы просмотреть полный список, [откройте окно терминала в вычислительном экземпляре](how-to-run-jupyter-notebooks.md#terminal) и выполните команду <br/> `conda list -n azureml_py36 azureml*` |
+[Пакет SDK службы "Машинное обучение Azure" для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)</br>из PyPI|Включает большинство дополнительных пакетов azureml.  Чтобы просмотреть полный список, [откройте окно терминала в вычислительном экземпляре](how-to-access-terminal.md) и выполните команду <br/> `conda list -n azureml_py36 azureml*` |
 |Другие пакеты PyPI|`jupytext`</br>`tensorboard`</br>`nbconvert`</br>`notebook`</br>`Pillow`|
 |Пакеты Conda|`cython`</br>`numpy`</br>`ipykernel`</br>`scikit-learn`</br>`matplotlib`</br>`tqdm`</br>`joblib`</br>`nodejs`</br>`nb_conda_kernels`|
 |Пакеты глубокого обучения|`PyTorch`</br>`TensorFlow`</br>`Keras`</br>`Horovod`</br>`MLFlow`</br>`pandas-ml`</br>`scrapbook`|
@@ -132,10 +132,10 @@ ms.locfileid: "97862133"
 
 Чтобы создать вычислительный экземпляр, необходимо иметь разрешения на следующие действия:
 * *Microsoft.MachineLearningServices/workspaces/computes/write*
-* *Microsoft. Мачинелеарнингсервицес/workspaces/Чекккомпутенамеаваилабилити/действие*
+* *Microsoft.MachineLearningServices/workspaces/checkComputeNameAvailability/action*
 
 
-### <a name="create-a-compute-instance"></a><a name="create"></a>Создание вычислительного экземпляра
+### <a name="create-a-compute-instance"></a><a name="create"></a>Создание экземпляра вычислений
 
 В рабочей области Машинное обучение Azure Studio [Создайте новый вычислительный экземпляр](how-to-create-attach-compute-studio.md#compute-instance) из раздела **вычислений** или **записных книжек** , когда будете готовы запустить одну из ваших записных книжек. 
 

@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из списка SharePoint Online с помощью Фабрики данных Azure
 description: Сведения о том, как копировать данные из списка SharePoint Online в поддерживаемые хранилища данных в роли приемников с помощью действия копирования в конвейере Фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: jingwang
-ms.openlocfilehash: 440dd561beddc9696ec703142fe82655b69fbb48
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 3f05c90ba3c7e6b47009cbb597c56dac8a01427a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99474953"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393434"
 ---
 # <a name="copy-data-from-sharepoint-online-list-by-using-azure-data-factory"></a>Копирование данных из списка SharePoint Online с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -196,7 +191,7 @@ ms.locfileid: "99474953"
 | Несколько строк текста                          | Edm.String                                           | Строка                                   |
 | Выбор (меню для выбора)                    | Edm.String                                           | Строка                                   |
 | Число (1, 1,0, 100)                            | Edm.Double                                           | Double                                   |
-| Валюта ($, ¥, €)                              | Edm.Double                                           | Double                                   |
+| Currency ($, ¥, &euro; )                              | Edm.Double                                           | Double                                   |
 | Дата и время                                   | Edm.DateTime                                         | Дата и время                                 |
 | Поиск (информация уже имеется на сайте)       | Edm.Int32                                            | Int32                                    |
 | Да/Нет (флажок)                              | Edm.Boolean                                          | Логическое                                  |

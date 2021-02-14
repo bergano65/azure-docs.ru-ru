@@ -7,12 +7,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: 9e79e0a2c030e2ebfcd5ddfd49e7c05afdb0dc3c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 3ed3ff44b927fa230dedf16387c1daca889d7c66
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019556"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388708"
 ---
 # <a name="automate-builds-tests-and-deployments-of-an-azure-stream-analytics-job-using-cicd-tools"></a>Автоматизация сборок, тестов и развертываний задания Azure Stream Analytics с помощью средств CI/CD
 
@@ -22,7 +22,7 @@ ms.locfileid: "98019556"
 
 Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с помощью `npm install -g azure-streamanalytics-cicd` команды. Рекомендуется использовать команду, которая также может использоваться в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
 
-## <a name="build-the-project"></a>Сборка проекта
+## <a name="build-the-project"></a>Построение проекта
 
 Пакет **ASA-streamanalytics-cicd** NPM предоставляет средства для создания шаблонов Azure Resource Manager Stream Analytics [Visual Studio Code проектов](./quick-create-visual-studio-code.md) или [проектов Visual Studio](stream-analytics-quick-create-vs.md). Пакет NPM можно также использовать в Windows, macOS и Linux без установки Visual Studio Code или Visual Studio.
 
@@ -158,7 +158,7 @@ azure-streamanalytics-cicd addtestcase -project "/Users/roger/projects/samplejob
       "ExpectedOutputs": [
         {
           "OutputAlias": [Output alias string],
-          "FilePath": "Required",
+          "FilePath": [Required],
           "Required": true
         }
       ]
@@ -240,7 +240,7 @@ azure-streamanalytics-cicd test -project <projectFullPath> [-testConfigPath <tes
 
 Вы можете использовать шаблон Azure Resource Manager и файлы параметров, созданные в процессе сборки, для [развертывания задания в Azure](../azure-resource-manager/templates/template-tutorial-use-parameter-file.md?tabs=azure-powershell#deploy-template).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Непрерывная интеграция и непрерывное развертывание для Azure Stream Analytics](cicd-overview.md)
 * [Настройка конвейера CI/CD для задания Stream Analytics с помощью Azure Pipelines](set-up-cicd-pipeline.md)

@@ -13,20 +13,30 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 10/18/2019
+ms.date: 02/10/2021
 ms.author: b-juche
-ms.openlocfilehash: 870caffe2bd286c2eec3390915bc5e64e0103a07
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ac83e5a9366a12c5adce0e08f04f2bb28a7d788d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85483471"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374887"
 ---
 # <a name="troubleshoot-azure-netapp-files-resource-provider-errors"></a>Устранение ошибок с поставщиком ресурсов Azure NetApp Files 
 
 В этой статье описаны распространенные ошибки поставщика ресурсов Azure NetApp Files, их причины, решения и способы их решения (если они доступны).
 
 ## <a name="common-azure-netapp-files-resource-provider-errors"></a>Распространенные ошибки поставщика ресурсов Azure NetApp Files
+
+***Создание `netAppAccounts` ограничено в этом регионе.***
+
+Эта ситуация возникает, когда подписка ваитлистед для Azure NetApp Files и пользователь пытается создать учетную запись NetApp.
+
+* Причина.   
+Поставщик ресурсов Azure для Azure NetApp Files не зарегистрирован. 
+ 
+* Решение.   
+Выполните все действия, описанные в разделе [Регистрация поставщика ресурсов Azure NetApp](azure-netapp-files-register.md#resource-provider) после ваитлистед подписки.
 
 ***Невозможно изменить Бареметалтенантид.***  
 
@@ -679,6 +689,6 @@ API Azure использует Azure NetApp Files API для управлени�
 Удалите том, а затем повторите операцию создания тома из моментального снимка.
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Разработка для Azure NetApp Files с помощью REST API](azure-netapp-files-develop-with-rest-api.md)

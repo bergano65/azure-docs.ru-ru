@@ -2,20 +2,20 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 1d9daf53191d9ba3a2ee3cc06fffa257c79533b3
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: d47383866a96ca00ccd80eaabe36bd544753159f
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99559054"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098493"
 ---
 |Имя<br /><sub>(портал Azure)</sub> |Описание |Действие |Версия<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Учетным записям Azure Cosmos DB должны быть заданы правила брандмауэра](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F862e97cf-49fc-4a5c-9de4-40d4e2e7c8eb) |Правила брандмауэра должны быть определены в учетных записях Azure Cosmos DB, чтобы предотвратить поступление трафика из неавторизованных источников. Учетные записи, для которых задано хотя бы одно правило для IP-адресов и включен фильтр виртуальных сетей, считаются соответствующими требованиям. Учетные записи, запрещающие общий доступ, также считаются соответствующими требованиям. |Audit, Deny, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cosmos%20DB/Cosmos_NetworkRulesExist_Audit.json) |
-|[Учетные записи Azure Cosmos DB должны использовать управляемые клиентом ключи для шифрования неактивных данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1f905d99-2ab7-462c-a6b0-f709acca6c8f) |Используйте ключи, управляемые клиентом, для управления шифрованием неактивного содержимого в Azure Cosmos DB. По умолчанию неактивные данные шифруются с помощью ключей, управляемых службой, но для соблюдения нормативных требований обычно требуются управляемые клиентом ключи (CMK). Ключи CMK позволяют шифровать данные с помощью ключа Azure Key Vault, создателем и владельцем которого являетесь вы. Вы полностью контролируете жизненный цикл ключа, включая его смену и управление им. См. дополнительные сведения о шифровании CMK: [https://aka.ms/cosmosdb-cmk](https://aka.ms/cosmosdb-cmk). |Audit, Deny, Disabled |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cosmos%20DB/Cosmos_CMK_Deny.json) |
+|[Учетные записи Azure Cosmos DB должны использовать управляемые клиентом ключи для шифрования неактивных данных](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1f905d99-2ab7-462c-a6b0-f709acca6c8f) |Используйте ключи, управляемые клиентом, для управления шифрованием неактивного содержимого в Azure Cosmos DB. По умолчанию данные шифруются при хранении с помощью управляемых службой ключей, но для соблюдения нормативных требований обычно требуются управляемые клиентом ключи. Ключи, управляемые клиентом, позволяют шифровать данные с помощью Azure Key Vault ключа, созданного и принадлежащего вам. Вы полностью контролируете жизненный цикл ключа, включая его смену и управление им. Подробная информация собрана на странице [https://aka.ms/cosmosdb-cmk](https://aka.ms/cosmosdb-cmk). |Audit, Deny, Disabled |[1.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cosmos%20DB/Cosmos_CMK_Deny.json) |
 |[Разрешенные расположения Azure Cosmos DB](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0473574d-2d43-4217-aefe-941fcdf7e684) |Эта политика позволяет ограничить расположения, которые ваша организация может указать при развертывании ресурсов Azure Cosmos DB. Используется для соблюдения географических требований. |[parameters('policyEffect')] |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cosmos%20DB/Cosmos_Locations_Deny.json) |
 |[Доступ для записи метаданных на основе ключей Azure Cosmos DB должен быть отключен](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4750c32b-89c0-46af-bfcb-2e4541a818d5) |Эта политика обеспечивает отключение доступа на запись метаданных на основе ключей для всех учетных записей Azure Cosmos DB. |append |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cosmos%20DB/Cosmos_DisableMetadata_Append.json) |
 |[Пропускная способность Azure Cosmos DB должна быть ограничена](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0b7ef78e-a035-4f23-b9bd-aff122a1b1cf) |Эта политика позволяет ограничить максимальную пропускную способность, которую может указать организация при создании баз данных и контейнеров Azure Cosmos DB с помощью поставщика ресурсов. Она блокирует создание автомасштабируемых ресурсов. |Audit, Deny, Disabled |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cosmos%20DB/Cosmos_MaxThroughput_Deny.json) |

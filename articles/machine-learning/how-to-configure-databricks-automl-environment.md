@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 7c5544ec5f89cfbf2451c19430a99b64825f90bc
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: daeb0d666c0dfb8306663da1d8d59dfba6adc359
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98872610"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516929"
 ---
 # <a name="set-up-a-development-environment-with-azure-databricks-and-automl-in-azure-machine-learning"></a>Настройка среды разработки с помощью Azure Databricks и Аутомл в Машинное обучение Azure 
 
@@ -125,13 +125,13 @@ Azure Databricks интегрируется с Машинное обучение
 
 * **Сбой при установке пакетов**
 
-    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример.
+    Сбой установки пакета SDK Машинное обучение Azure на Azure Databricks при установке дополнительных пакетов. Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, зафиксировать версию библиотеки. Эта проблема связана с модулями связи, а не с пакетом SDK для Машинное обучение Azure. Эта проблема также может возникнуть и в других библиотеках. Пример:
     
     ```python
     psutil cryptography==1.5 pyopenssl==16.0.0 ipython==2.2.0
     ```
 
-    Кроме того, можно использовать скрипты init, если возникают проблемы с установкой библиотек Python. Этот подход официально не поддерживается. Дополнительные сведения см. в разделе [сценарии инициализации с областью действия кластера](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
+    Кроме того, можно использовать скрипты init, если возникают проблемы с установкой библиотек Python. Этот подход официально не поддерживается. Дополнительные сведения см. в разделе [сценарии инициализации с областью действия кластера](/azure/databricks/clusters/init-scripts#cluster-scoped-init-scripts).
 
 * **Ошибка импорта: не удается импортировать `Timedelta` имя `pandas._libs.tslibs` из**: Если вы видите эту ошибку при использовании автоматического машинного обучения, выполните в записной книжке две следующие строки:
     ```
@@ -159,7 +159,7 @@ Azure Databricks интегрируется с Машинное обучение
     * Добавьте `pyarrow` версию 0,11 или более позднюю.
   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обучение модели](tutorial-train-models-with-aml.md) на машинное обучение Azure с помощью набора данных MNIST.
 - См. [Справочник по машинное обучение Azure SDK для Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).

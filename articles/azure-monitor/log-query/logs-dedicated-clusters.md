@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 1222108694ff7274e5d8fd063635b70a76ffc59c
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: bcd89274b1f2ba7b31a10a481e3d73901eac2c60
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954755"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375193"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor журналов выделенных кластеров
 
@@ -84,11 +84,11 @@ Authorization: Bearer <token>
 У вас может быть до 2 активных кластеров на одну подписку для каждого региона. Если кластер удален, он по-прежнему резервируется в течение 14 дней. Можно использовать до 4 зарезервированных кластеров на одну подписку в каждом регионе (активная или недавно удаленная).
 
 > [!WARNING]
-> Создание кластера вызывает выделение ресурсов и подготовку. Выполнение этой операции может занять до часа. Рекомендуется выполнять его асинхронно.
+> Создание кластера вызывает выделение ресурсов и подготовку. Выполнение этой операции может занять несколько часов. Рекомендуется выполнять его асинхронно.
 
 Учетная запись пользователя, которая создает кластеры, должна иметь стандартное разрешение на создание ресурсов Azure: `Microsoft.Resources/deployments/*` и разрешение на запись в кластере `Microsoft.OperationalInsights/clusters/write` , используя назначения ролей для этого конкретного действия или `Microsoft.OperationalInsights/*` `*/write` .
 
-### <a name="create"></a>Создание 
+### <a name="create"></a>Создать 
 
 **PowerShell**
 
@@ -571,7 +571,7 @@ Remove-AzOperationalInsightsLinkedService -ResourceGroupName {resource-group-nam
   -  404--Рабочая область не найдена. Указанная Рабочая область не существует или была удалена.
   -  409--ссылка на рабочую область или отмена связи в процессе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [log Analytics выставлении счетов за выделенный кластер](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)
 - Сведения о [правильном проектировании рабочих областей log Analytics](../platform/design-logs-deployment.md)

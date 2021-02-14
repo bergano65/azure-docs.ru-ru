@@ -1,23 +1,19 @@
 ---
 title: Создание триггеров расписания в фабрике данных Azure
 description: Узнайте, как создать в фабрике данных Azure триггер, который запускает конвейер по расписанию.
-services: data-factory
-documentationcenter: ''
 author: chez-charlie
 ms.author: chez
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/30/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a6f53d6ce41085b2348857ccb5b45c06132d6a99
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3673dd9eba717d2bdb569b4248936bbb59a8eae7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001989"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387586"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Создание триггера, который запускает конвейер по расписанию
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -72,7 +68,7 @@ ms.locfileid: "96001989"
 
 1. Выберите **опубликовать все** , чтобы опубликовать изменения в фабрике данных. Пока вы не опубликуете изменения в фабрике данных, триггер не запускает запуск конвейера. 
 
-    ![Кнопка "Опубликовать"](./media/how-to-create-schedule-trigger/publish-2.png)
+    ![Кнопка Publish (Опубликовать)](./media/how-to-create-schedule-trigger/publish-2.png)
 
 1. Перейдите на вкладку **запуски конвейера** слева, а затем выберите **Обновить** , чтобы обновить список. Вы увидите, что запуск конвейера инициируется запланированным триггером. Обратите внимание на значения в столбце, **активируемом по** столбцам. Если вы используете параметр **Активировать сейчас** , вы увидите в списке запуск триггера вручную. 
 
@@ -366,14 +362,14 @@ ms.locfileid: "96001989"
 
 ### <a name="schema-defaults-limits-and-examples"></a>Параметры схемы по умолчанию, ограничения и примеры
 
-| Свойство JSON | Тип | Обязательно | Значение по умолчанию | Допустимые значения | Пример |
+| Свойство JSON | Type | Обязательно | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **startTime** | Строка | Да | None | Дата и время по спецификации ISO-8601 | для часового пояса в формате UTC `"startTime" : "2013-01-09T09:30:00-08:00Z"` <br> для другого часового пояса `"2013-01-09T09:30:00-08:00"` |
 | **Стандарт** | Строка | Да | None | [Значения часового пояса](#time-zone-option)  | `"UTC"` |
 | **шаблон** | Объект | Да | None | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
 | **пределах** | Число | Нет | 1 | 1–1000 | `"interval":10` |
 | **Завершения** | Строка | Да | None | Значение даты и времени, представляющее время в будущем. | для часового пояса в формате UTC `"endTime" : "2013-02-09T09:30:00-08:00Z"` <br> для другого часового пояса `"endTime" : "2013-02-09T09:30:00-08:00"`|
-| **Расписание** | Объект | нет | None | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **Расписание** | Объект | Нет | None | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="time-zone-option"></a>Параметр часового пояса
 
@@ -381,14 +377,14 @@ ms.locfileid: "96001989"
 
 | Часовой пояс | Смещение в формате UTC (не летнее) | Значение часового пояса | Наблюдение за летним режимом | Формат метки времени |
 | :--- | :--- | :--- | :--- | :--- |
-| Время в формате UTC | 0 | `UTC` | нет | `'yyyy-MM-ddTHH:mm:ssZ'`|
+| Время в формате UTC | 0 | `UTC` | Нет | `'yyyy-MM-ddTHH:mm:ssZ'`|
 | Тихоокеанское время (Пт) | –8 | `Pacific Standard Time` | Да | `'yyyy-MM-ddTHH:mm:ss'` |
 | Центральное время (CT) | –6 | `Central Standard Time` | Да | `'yyyy-MM-ddTHH:mm:ss'` |
 | Восточное время (ET) | -5 | `Eastern Standard Time` | Да | `'yyyy-MM-ddTHH:mm:ss'` |
 | Среднее время по Гринвичу (GMT) | 0 | `GMT Standard Time` | Да | `'yyyy-MM-ddTHH:mm:ss'` |
 | Центральноевропейское время (зима) | +1 | `W. Europe Standard Time` | Да | `'yyyy-MM-ddTHH:mm:ss'` |
-| Индийское время (зима) (ИЗРАИЛЬСКОМУ стандартному) | + 5:30 | `India Standard Time` | нет | `'yyyy-MM-ddTHH:mm:ss'` |
-| Китайское время (зима) | + 8 | `China Standard Time` | нет | `'yyyy-MM-ddTHH:mm:ss'` |
+| Индийское время (зима) (ИЗРАИЛЬСКОМУ стандартному) | + 5:30 | `India Standard Time` | Нет | `'yyyy-MM-ddTHH:mm:ss'` |
+| Китайское время (зима) | + 8 | `China Standard Time` | Нет | `'yyyy-MM-ddTHH:mm:ss'` |
 
 Этот список неполон. Полный список параметров часовых поясов см. на [странице создания триггеров](#data-factory-ui) на портале фабрики данных.
 

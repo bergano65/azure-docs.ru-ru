@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 02/07/2021
 ms.author: memildin
-ms.openlocfilehash: ea66bb5bcdd6132809804632919a120f5c93353f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: eb70a31d0fa5f231bd0db8ca27517ce43fe1db28
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132723"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007830"
 ---
 # <a name="container-security-in-security-center"></a>Защита контейнеров в Центре безопасности
 
@@ -70,11 +70,25 @@ ms.locfileid: "98132723"
 ### <a name="continuous-monitoring-of-your-kubernetes-clusters"></a>Непрерывный мониторинг кластеров Kubernetes
 Центр безопасности работает в сочетании со службой Azure Kubernetes Service (AKS), которая представляет собой службу оркестрации контейнеров под управлением Майкрософт, предназначенную для разработки и развертывания контейнерных приложений, а также управления ими.
 
-AKS предоставляет средства управления безопасностью и информацию о состоянии безопасности для кластеров. Центр безопасности с помощью этих функций выполняет следующие задачи:
-* постоянный мониторинг конфигурации кластеров AKS;
-* создание рекомендаций по безопасности в соответствии с отраслевыми стандартами.
+AKS предоставляет средства управления безопасностью и информацию о состоянии безопасности для кластеров. В Центре безопасности эти функции используются для постоянного мониторинга конфигурации кластеров AKS и создания рекомендаций по безопасности, соответствующих отраслевым стандартам.
+
+Вот подробная схема взаимодействия между Центром безопасности Azure, Службой Azure Kubernetes и Политикой Azure.
+
+:::image type="content" source="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png" alt-text="Подробная схема взаимодействия между Центром безопасности Azure, Службой Azure Kubernetes и Политикой Azure" lightbox="./media/defender-for-kubernetes-intro/kubernetes-service-security-center-integration-detailed.png":::
+
+Как видите, Центр безопасности собирает и анализирует следующие элементы:
+
+- журналы аудита с сервера API;
+- необработанные события безопасности от агента Log Analytics;
+
+    > [!NOTE]
+    > Сейчас установка агента Log Analytics в кластерах Службы Azure Kubernetes, работающих в масштабируемых наборах виртуальных машин, не поддерживается.
+
+- сведения о конфигурации кластера из кластера AKS;
+- конфигурации рабочих нагрузок из Политики Azure (через **надстройку Политики Azure для Kubernetes**).
 
 Дополнительные сведения о соответствующих рекомендациях Центра безопасности, которые могут предоставляться для этой функции, см. в [разделе о вычислениях](recommendations-reference.md#recs-compute) справочной таблицы рекомендаций.
+
 
 ###  <a name="workload-protection-best-practices-using-kubernetes-admission-control"></a>Рекомендации по защите рабочих нагрузок с использованием средств контроля доступа в Kubernetes
 

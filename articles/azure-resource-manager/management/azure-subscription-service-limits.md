@@ -3,12 +3,12 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 0a20d38d0f8d5be4a19dcdb8b6b846699bac6cc1
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: ac35f09e1a7274019a8ca504fc697ca81de000f7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920479"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370121"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -364,6 +364,9 @@ ms.locfileid: "98920479"
 
 Ограничения Azure синапсе Analytics см. в статье [ограничения ресурсов Azure синапсе](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md).
 
+## <a name="azure-files-and-azure-file-sync"></a>Службы файлов и Синхронизация файлов Azure Azure
+Дополнительные сведения об ограничениях для файлов и Синхронизация файлов Azure см. в статье [целевые показатели масштабируемости и производительности службы файлов Azure](../../storage/files/storage-files-scale-targets.md).
+
 ## <a name="storage-limits"></a>Ограничения хранилища
 
 <!--like # storage accts -->
@@ -378,16 +381,6 @@ ms.locfileid: "98920479"
 ### <a name="azure-blob-storage-limits"></a>Ограничения хранилища BLOB-объектов Azure
 
 [!INCLUDE [storage-blob-scale-targets](../../../includes/storage-blob-scale-targets.md)]
-
-### <a name="azure-files-limits"></a>Ограничения службы "Файлы Azure"
-
-Дополнительные сведения об ограничениях для файлов Azure см. в статье [целевые показатели масштабируемости и производительности службы файлов Azure](../../storage/files/storage-files-scale-targets.md).
-
-[!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
-
-### <a name="azure-file-sync-limits"></a>Ограничения службы "Синхронизация файлов Azure"
-
-[!INCLUDE [storage-sync-files-scale-targets](../../../includes/storage-sync-files-scale-targets.md)]
 
 ### <a name="azure-queue-storage-limits"></a>Ограничения для службы Azure "Хранилище очередей"
 
@@ -450,7 +443,7 @@ ms.locfileid: "98920479"
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

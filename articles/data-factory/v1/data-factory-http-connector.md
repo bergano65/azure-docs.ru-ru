@@ -1,22 +1,18 @@
 ---
 title: Перемещение данных из источника HTTP в Azure
 description: Узнайте о перемещении данных из локального или облачного источника HTTP с помощью фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/22/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 653a53d6bb5c69cd95fd5e9a2483b51de8293b40
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: ce29b5a112d70575a721b0b527947fd95868da80
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608584"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382928"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 
@@ -95,7 +91,7 @@ ms.locfileid: "97608584"
 | Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | embeddedCertData | Содержимое двоичных данных PFX-файла с кодировкой Base64. | Укажите либо **ембеддедцертдата** , либо **certThumbprint** |
-| certThumbprint | Отпечаток сертификата, который был установлен в хранилище сертификатов на компьютере шлюза. Применимо, только когда копирование данных выполняется из локального источника HTTP. | Укажите либо **ембеддедцертдата** , либо **certThumbprint** |
+| certThumbprint | Отпечаток сертификата, установленного в хранилище сертификатов на компьютере шлюза. Применимо, только когда копирование данных выполняется из локального источника HTTP. | Укажите либо **ембеддедцертдата** , либо **certThumbprint** |
 | password | Пароль, связанный с сертификатом. | Нет |
 
 Используя **certThumbprint** для проверки подлинности и установив сертификат в личном хранилище локального компьютера, предоставьте разрешение на чтение для службы шлюза:

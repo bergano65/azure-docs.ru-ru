@@ -3,16 +3,16 @@ title: Подключение учетной записи GCP к Центру б
 description: Мониторинг ресурсов GCP в Центре безопасности Azure
 author: memildin
 ms.author: memildin
-ms.date: 02/07/2021
+ms.date: 02/08/2021
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 8ee7b37861be299dd36a596ae1cd4899b0ebffab
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 94c7a800fc551faf6650b8e30fe7c2188f7d2dbb
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809411"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100008389"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Подключение учетных записей GCP к Центру безопасности Azure
 
@@ -44,10 +44,16 @@ ms.locfileid: "99809411"
 
 ## <a name="connect-your-gcp-account"></a>Подключение к учетной записи GCP
 
-Выполните приведенные ниже шаги, чтобы создать облачный соединитель GCP для подключения ресурсов Google Cloud на уровне организации или проекта. 
+Создайте соединитель для каждой организации, которую вы хотите отслеживать из Центра безопасности.
 
-> [!TIP]
-> Сведения об иерархии ресурсов Google Cloud см. в [веб-документации Google](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy).
+При подключении учетных записей GCP к конкретным подпискам Azure учитывайте [иерархию ресурсов Google Cloud](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#resource-hierarchy-detail) и следующие рекомендации:
+
+- Вы можете подключить свои учетные записи GCP к ASC на уровне *организации*.
+- Вы можете подключить к одной подписке Azure несколько организаций.
+- Вы можете подключить несколько организаций к нескольким подпискам Azure.
+- При подключении организации все *проекты* в пределах этой организации добавляются в Центр безопасности.
+
+Чтобы создать облачный соединитель GCP, сделайте следующее. 
 
 ### <a name="step-1-set-up-gcp-security-command-center-with-security-health-analytics"></a>Шаг 1. Настройка центра управления безопасностью GCP и его службы анализа работоспособности системы безопасности
 
@@ -64,7 +70,7 @@ ms.locfileid: "99809411"
 
 ### <a name="step-2-enable-gcp-security-command-center-api"></a>Шаг 2. Включение API центра управления безопасностью GCP
 
-1. В **библиотеке Google с API для Cloud Console** выберите проект, который нужно подключить к Центру безопасности Azure.
+1. В **библиотеке Google с API для Cloud Console** выберите каждый проект организации, который нужно подключить к Центру безопасности Azure.
 1. В библиотеке API найдите и выберите элемент **Security Command Center API** (API центра управления безопасностью).
 1. На странице API нажмите кнопку **ENABLE** (Включить).
 
@@ -73,7 +79,11 @@ ms.locfileid: "99809411"
 
 ### <a name="step-3-create-a-dedicated-service-account-for-the-security-configuration-integration"></a>Шаг 3. Создание отдельной учетной записи службы для интеграции настроек безопасности
 
-1. В консоли **GCP Console** выберите проект, который нужно подключить к Центру безопасности.
+1. В **консоли GCP** выберите проект организации, в которой вы создаете необходимую учетную запись службы. 
+
+    > [!NOTE]
+    > Когда эта учетная запись службы запись будет добавлена на уровне организации, она будет использоваться для доступа к данным, собираемым Центром управления безопасностью из всех других включенных проектов в организации. 
+
 1. В **меню навигации** в разделе **IAM и администрирования** выберите элемент **Service accounts** (Учетные записи служб).
 1. Выберите **CREATE SERVICE ACCOUNT** (Создание учетной записи службы).
 1. Введите имя учетной записи и нажмите кнопку **Create** (Создать).
@@ -84,7 +94,7 @@ ms.locfileid: "99809411"
     1. Переключитесь на уровень организации.
     1. Нажмите кнопку **ADD** (Добавить).
     1. В поле **New members** (Новые участники) вставьте **адрес электронной почты**, скопированный ранее.
-    1. Для параметра роли выберите вариант **Security Center Admin Viewer** (Наблюдатель администратора Центра безопасности) и нажмите кнопку Save (Сохранить).
+    1. Для параметра роли выберите вариант **Security Center Admin Viewer** (Наблюдатель администратора Центра безопасности) и нажмите кнопку **Save** (Сохранить).
         :::image type="content" source="./media/quickstart-onboard-gcp/iam-settings-gcp-permissions-admin-viewer.png" alt-text="Предоставление необходимых разрешений GCP":::
 
 
@@ -97,7 +107,7 @@ ms.locfileid: "99809411"
 1. Сохраните этот файл JSON.
 
 
-### <a name="step-5-connect-gcp-to-security-center"></a>Шаг 5. Подключение GCP к Центру безопасности 
+### <a name="step-5-connect-gcp-to-security-center"></a>Шаг 5. Подключение GCP к Центру безопасности
 1. В меню Центра безопасности выберите **Облачные соединители**.
 1. Выберите элемент Add GCP account (Добавить учетную запись GCP).
 1. На странице подключения выполните описанные ниже действия, а затем нажмите кнопку **Далее**.
@@ -126,8 +136,12 @@ ms.locfileid: "99809411"
 
 ## <a name="faq-for-connecting-gcp-accounts-to-azure-security-center"></a>Часто задаваемые вопросы о подключении учетных записей GCP к Центру безопасности Azure
 
-### <a name="can-i-connect-multiple-gcp-accounts-to-security-center"></a>Можно ли подключить несколько учетных записей GCP к Центру безопасности?
-Да. Как упоминалось выше, вы можете подключить ресурсы Google Cloud на уровне организации или проекта. Сведения об иерархии ресурсов Google Cloud см. в [веб-документации Google](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy).
+### <a name="can-i-connect-multiple-gcp-organizations-to-security-center"></a>Можно ли подключить к Центру безопасности несколько организаций GCP?
+Да. Соединитель GCP Центра безопасности подключается к ресурсам Google Cloud на уровне *организации*. 
+
+Создайте соединитель для каждой организации GCP, которую вы хотите отслеживать из Центра безопасности. При подключении организации все проекты в пределах этой организации добавляются в Центр безопасности.
+
+Сведения об иерархии ресурсов Google Cloud см. в [онлайн-документации Google](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy).
 
 
 ### <a name="is-there-an-api-for-connecting-my-gcp-resources-to-security-center"></a>Существует ли API для подключения ресурсов GCP к Центру безопасности?
@@ -138,3 +152,4 @@ ms.locfileid: "99809411"
 Подключение учетной записи GCP — это только одна из возможностей интеграции различных облачных сред, доступных в Центре безопасности Azure. Больше узнать об этих возможностях можно на следующей странице:
 
 - [Подключение учетных записей AWS к Центру безопасности Azure](quickstart-onboard-aws.md)
+- [Иерархия ресурсов Google Cloud](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy) — сведения об иерархии ресурсов Google Cloud см. в онлайн-документации Google.

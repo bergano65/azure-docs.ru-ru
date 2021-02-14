@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: 1c1ddeb8cafd8aa7584da48a715139c5d12eeb10
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: fbfef094cd062e437f2a28369162de96631ef41b
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874804"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832612"
 ---
 # <a name="tutorial-monitor-and-manage-a-video-analytics---object-and-motion-detection-application"></a>Руководство по мониторингу и управлению видео с помощью приложения "Видеоаналитика — распознавание объектов и движения"
 
@@ -61,7 +61,7 @@ ms.locfileid: "91874804"
 
 Выберите вкладку **Downstream Devices** (Подчиненные устройства) для устройства **LVA Gateway 001**, чтобы увидеть только что добавленные камеры:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/inspect-downstream.png" alt-text="Добавление камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/inspect-downstream.png" alt-text="Проверить":::
 
 Камеры также появятся в списке на странице **Devices** (Устройства) в приложении.
 
@@ -98,7 +98,7 @@ ms.locfileid: "91874804"
 
 Через несколько секунд появится подтверждающее сообщение **Accepted** (Принято) для каждого параметра:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/object-detection.png" alt-text="Добавление камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/object-detection.png" alt-text="Обнаружение объектов":::
 
 ## <a name="start-lva-processing"></a>Начало обработки LVA
 
@@ -108,13 +108,13 @@ ms.locfileid: "91874804"
 
 Когда выполнение этой команды завершится, проверьте журнал команд на наличие ошибок.
 
-:::image type="content" source="media/tutorial-video-analytics-manage/start-processing.png" alt-text="Добавление камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/start-processing.png" alt-text="Команда начала обработки LVA":::
 
 ## <a name="monitor-the-cameras"></a>Мониторинг камер
 
 Перейдите к устройству **camera-003** и выберите вкладку **Dashboard** (Панель мониторинга).
 
-:::image type="content" source="media/tutorial-video-analytics-manage/camera-dashboard.png" alt-text="Добавление камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/camera-dashboard.png" alt-text="Панель мониторинга камеры":::
 
 На плитке **Detection Count** (Счетчик обнаружений) отображается среднее число обнаружений для каждого из выбранных объектов классов обнаружения за интервал длительностью в одну секунду.
 
@@ -157,7 +157,7 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
 
 Перейдите к устройству **camera-003** и выберите вкладку **Dashboard** (Панель мониторинга). Затем щелкните одну из захваченных гиперссылок обнаружения объектов на плитке **Inference Event Video** (Видео событий вывода). Видеоконтент появится на странице, которую отображает локальный видеопроигрыватель:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Добавление камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/video-snippet.png" alt-text="Фрагмент видео":::
 
 ## <a name="change-the-simulated-devices-in-application-dashboards"></a>Изменение имитированных устройств на панелях мониторинга приложения
 
@@ -182,7 +182,7 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
 
 Панель мониторинга **Real Camera Monitor** (Мониторинг реальной камеры) теперь отображает значения, полученные от реальной камеры:
 
-:::image type="content" source="media/tutorial-video-analytics-manage/update-real-cameras.png" alt-text="Добавление камеры":::
+:::image type="content" source="media/tutorial-video-analytics-manage/update-real-cameras.png" alt-text="Панель мониторинга приложения для реальных камер":::
 
 ## <a name="pause-processing"></a>Приостановка обработки
 
@@ -195,7 +195,7 @@ docker run -it --rm -e amsAadClientId="<FROM_AZURE_PORTAL>" -e amsAadSecret="<FR
     * Щелкните ресурс **Streaming Endpoint** (Конечная точка потоковой передачи).
     * На странице **Streaming endpoint details** (Сведения о конечной точке потоковой передачи) выберите **Stop** (Остановить).
 
-## <a name="tidy-up"></a>Удаление ненужных элементов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы завершили работу с приложением, можете удалить все созданные ресурсы следующим образом:
 

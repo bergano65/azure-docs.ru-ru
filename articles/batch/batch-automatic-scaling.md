@@ -4,12 +4,12 @@ description: Включение автоматического масштаби�
 ms.topic: how-to
 ms.date: 11/23/2020
 ms.custom: H1Hack27Feb2017, fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: 033272f22b98b27c67e9a551bce952368d35a043
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 06f717e7c3ab8285b494f89c39838af6b0d96c8f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95737298"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381432"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы для автоматизации масштабирования вычислительных узлов в пуле пакетной службы
 
@@ -128,6 +128,7 @@ $NodeDeallocationOption = taskcompletion;
 | $PendingTasks |Сумма $ActiveTasks и $RunningTasks. |
 | $SucceededTasks |Количество успешно выполненных задач. |
 | $FailedTasks |Количество задач, которые не удалось выполнить. |
+| $TaskSlotsPerNode |Количество слотов задач, которые могут использоваться для выполнения параллельных задач на одном кластерном узле в пуле. |
 | $CurrentDedicatedNodes |Текущее количество выделенных вычислительных узлов. |
 | $CurrentLowPriorityNodes |Текущее количество вычислительных узлов с низким приоритетом, включая все замещенные узлы. |
 | $PreemptedNodeCount | Количество узлов в пуле, которые находятся в замещенном состоянии. |
@@ -229,7 +230,7 @@ $NodeDeallocationOption = taskcompletion;
 
 <table>
   <tr>
-    <th>Metric</th>
+    <th>Метрика</th>
     <th>Описание</th>
   </tr>
   <tr>
