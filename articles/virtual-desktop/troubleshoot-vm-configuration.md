@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 84a49ea2f6ce4a5119af024ab3de67fa2b89c02e
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: f1f2caa194972bb870dc58cfa0bd6ccb2f8db053
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539745"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099920"
 ---
 # <a name="session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеанса
 
@@ -20,7 +20,7 @@ ms.locfileid: "98539745"
 
 Используйте эту статью для устранения неполадок, возникающих при настройке виртуальных машин узла сеансов виртуальных рабочих столов Windows.
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -193,7 +193,7 @@ ms.locfileid: "98539745"
 > [!div class="mx-imgBorder"]
 > ![Параллельный стек установлен или включен с квинста, указанным в выходных данных как RDP-SxS.](media/23b8e5f525bb4e24494ab7f159fa6b62.png)
 
-Проверьте указанные ниже записи реестра и убедитесь, что их значения совпадают. Если разделы реестра отсутствуют или несовпадающие значения, следуйте инструкциям в статье [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) для повторной установки параллельного стека.
+Проверьте указанные ниже записи реестра и убедитесь, что их значения совпадают. Если разделы реестра отсутствуют или значения не совпадают, убедитесь, что используется [поддерживаемая операционная система](troubleshoot-agent.md#error-operating-a-pro-vm-or-other-unsupported-os). Если вы используете, выполните инструкции из статьи [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md) , чтобы переустановить параллельный стек.
 
 ```registry
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal

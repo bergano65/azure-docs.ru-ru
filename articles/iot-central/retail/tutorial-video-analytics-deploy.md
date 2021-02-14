@@ -1,5 +1,5 @@
 ---
-title: Руководство. Развертывание шаблона приложения видеоаналитики для распознавания объектов и движения (Azure IoT Central)
+title: Руководство по Развертывание шаблона приложения видеоаналитики для распознавания объектов и движения (Azure IoT Central)
 description: Руководство. В этом руководстве показано, как развернуть приложение Azure IoT Central с помощью шаблона приложения видеоаналитики для распознавания объектов и движения.
 services: iot-central
 ms.service: iot-central
@@ -8,20 +8,24 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: abeae674cef8f13a092b53bde6040ad853bd0cca
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: f7f1952ab8c98553a447c3ed1955fb556ba48124
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820370"
+ms.locfileid: "99831949"
 ---
-# <a name="tutorial-how-to-deploy-an-iot-central-application-using-the-video-analytics---object-and-motion-detection-application-template"></a>Руководство. Развертывание приложения IoT Central с помощью шаблона приложения видеоаналитики для распознавания объектов и движения
+# <a name="tutorial-how-to-deploy-an-iot-central-application-using-the-video-analytics---object-and-motion-detection-application-template"></a>Руководство по Развертывание приложения IoT Central с помощью шаблона приложения видеоаналитики для распознавания объектов и движения
 
 Общие сведения о ключевых компонентах приложения *видеоаналитики для распознавания объектов и движения* см. в описании [архитектуры приложения видеоаналитики](architecture-video-analytics.md).
 
 В следующем видео представлено пошаговое руководство по использованию шаблона приложения _видеоаналитики для распознавания объектов и движения_ для развертывания решения IoT Central.
 
 > [!VIDEO https://www.youtube.com/embed/Bo3FziU9bSA]
+
+## <a name="prerequisites"></a>Предварительные требования
+
+подписка Azure (рекомендуется). В качестве альтернативы вы можете использовать бесплатную пробную версию, предоставляемую на семь дней. Если у вас еще нет подписки, создайте ее на [странице регистрации в Azure](https://aka.ms/createazuresubscription);
 
 ## <a name="deploy-the-application"></a>Развертывание приложения
 
@@ -43,7 +47,15 @@ ms.locfileid: "99820370"
     - Просмотреть захваченное видео с обнаруженными объектами.
     - Удалить ненужные элементы.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Завершив работу с приложением, вы можете удалить все созданные ресурсы следующим образом:
+
+1. В приложении IoT Central перейдите на страницу **Ваше приложение** в разделе **Администрирование**. Теперь щелкните **Удалить**.
+1. На портале Azure удалите группу ресурсов **lva-rg**.
+1. На локальном компьютере закройте контейнер Docker **amp-viewer**.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомившись с шагами, требуемыми для развертывания и использования шаблона приложения видеоаналитики, см. следующие ресурсы:
 

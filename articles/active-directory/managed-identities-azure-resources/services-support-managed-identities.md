@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 31ca126c75d5c2e3fa7fd91f3398202fad418183
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 969ca74d628da2bf91e0a7c091c9792f2676fb71
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99555618"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095687"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -221,7 +221,7 @@ ms.locfileid: "99555618"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | --- | --- | --- | --- |
-| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Предварительный просмотр | Доступно | Доступно |
+| Назначено системой | Доступно в регионе, где доступна служба импорта и экспорта Azure | Preview (Предварительный просмотр) | Доступно | Доступно |
 | Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
 
 ### <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
@@ -252,7 +252,7 @@ ms.locfileid: "99555618"
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
+| Назначено системой | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
 | Назначено пользователем | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
 
 Дополнительные сведения см. [в статье Использование управляемых удостоверений с машинное обучение Azure](../../machine-learning/how-to-use-managed-identities.md).
@@ -345,7 +345,7 @@ ms.locfileid: "99555618"
 | Назначено пользователем | [Доступно в поддерживаемых регионах](../../virtual-machines/image-builder-overview.md#regions) | Недоступно | Недоступно | Недоступно |
 
 Сведения о настройке управляемого удостоверения для построителя образов виртуальных машин Azure (в регионах, где это возможно) см. в разделе [Общие сведения о построителе образов](../../virtual-machines/image-builder-overview.md#permissions).
-### <a name="azure-signalr-service"></a>Служба SignalR Azure
+### <a name="azure-signalr-service"></a>Служба Azure SignalR
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -355,6 +355,17 @@ ms.locfileid: "99555618"
 Сведения о настройке управляемого удостоверения для службы SignalR Azure (в регионах, где это возможно) см. в следующем списке:
 
 - [Шаблон Azure Resource Manager](../../azure-signalr/howto-use-managed-identity.md)
+
+### <a name="azure-resource-mover"></a>Azure Resource Mover
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Назначено системой | Доступно в регионах, где доступна служба для перемещения ресурсов Azure | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Недоступно | Недоступно | Недоступно | Недоступно |
+
+Сведения об использовании службы "перемещение ресурсов Azure" см. в следующем документе:
+
+- [Azure Resource Mover](../../resource-mover/overview.md)
 
 ## <a name="azure-services-that-support-azure-ad-authentication"></a>Службы Azure, поддерживающие аутентификацию Azure AD
 

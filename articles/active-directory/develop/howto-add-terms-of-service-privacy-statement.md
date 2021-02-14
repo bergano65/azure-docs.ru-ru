@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: 46919a97364aeff29e2b458c619315571dba7710
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 311dfd976610c392909a0ec3d91fecaa4d733539
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013674"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104201"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
@@ -58,11 +58,11 @@ ms.locfileid: "98013674"
 ### <a name="using-the-azure-portal"></a><a name="azure-portal"></a>Использование портала Azure
 Выполните следующие действия в портал Azure.
 
-1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>, выберите правильный клиент AZUREAD (не B2C).
+1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure</a> и выберите правильный клиент Azure AD (не B2C).
 2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
-3. Откройте панель **фирменной символики** .
+3. В разделе **Управление** выберите **фирменная символика**.
 4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
-5. Сохраните изменения.
+5. Щелкните **Сохранить**.
 
     ![Свойства приложения содержат условия предоставления услуг и URL-адресов заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
 

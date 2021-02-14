@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 12/31/2020
-ms.openlocfilehash: fc384ffbc246f5ce9fa84b8161cbc4a5226fa5c8
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 7801145ba1bcaa2ffd543becfe190f05d232e8c8
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97843624"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104966"
 ---
 # <a name="connect-servicenow-to-azure-monitor"></a>Подключение ServiceNow к Azure Monitor
 
@@ -22,7 +22,7 @@ ms.locfileid: "97843624"
 Убедитесь, что выполнены следующие предварительные требования:
 
 * Служба Azure AD зарегистрирована.
-* Имеется поддерживаемая версия управления событиями ServiceNow — ИТОМ (версия Орландо или более поздняя).
+* У вас установлена поддерживаемая версия управления событиями ServiceNow — ИТОМ (версия Нью-Йорк или более поздняя).
 
 ## <a name="configure-the-servicenow-connection"></a>Настройка подключения ServiceNow
 

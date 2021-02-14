@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: 1967a2fb5adebe01ef4bff8d58f7832bffe95762
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f98482a43516683499e83bebafe4eeadc5b7a8b7
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531276"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832510"
 ---
 # <a name="tutorial-deploy-and-walkthrough-a-continuous-patient-monitoring-app-template"></a>Руководство по развертыванию и созданию шаблона приложения для непрерывного мониторинга пациентов
 
@@ -24,6 +24,10 @@ ms.locfileid: "90531276"
 > [!div class="checklist"]
 > * Создание шаблона приложения
 > * Знакомство с шаблоном приложения.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+подписка Azure (рекомендуется). В качестве альтернативы вы можете использовать бесплатную пробную версию, предоставляемую на семь дней. Если у вас еще нет подписки, создайте ее на [странице регистрации в Azure](https://aka.ms/createazuresubscription);
 
 ## <a name="create-an-application-template"></a>Создание шаблона приложения
 
@@ -61,11 +65,11 @@ ms.locfileid: "90531276"
 
 * изменять **статус пациента** на устройстве, чтобы указать, используется ли устройство для госпитализированного пациента или удаленного сценария.
 
-:::image type="content" source="media/lamna-in-patient.png" alt-text="Шаблон приложения здравоохранения":::
+:::image type="content" source="media/lamna-in-patient.png" alt-text="Состояние госпитализированного пациента":::
 
 Вы также можете щелкнуть **Go to remote patient dashboard** (Перейти к панели мониторинга удаленного пациента), чтобы увидеть панель мониторинга оператора больницы Burkville. Эта панель мониторинга содержит аналогичный набор действий, телеметрии и информации. Здесь также можно просмотреть несколько используемых устройств и **обновить встроенное ПО** каждого из них.
 
-:::image type="content" source="media/lamna-remote.png" alt-text="Шаблон приложения здравоохранения":::
+:::image type="content" source="media/lamna-remote.png" alt-text="Панель мониторинга удаленного оператора":::
 
 ### <a name="device-templates"></a>Шаблоны устройств
 
@@ -75,7 +79,7 @@ ms.locfileid: "90531276"
 
 * **Smart Knee Brace**: это устройство представляет собой шарнирный бандаж на колено, который используется при восстановлении после протезирования коленного сустава. Если выбрать этот шаблон, вы увидите такие характеристики, как данные устройства, диапазон движений и ускорения.
 
-:::image type="content" source="media/smart-vitals-device-template.png" alt-text="Шаблон приложения здравоохранения":::
+:::image type="content" source="media/smart-vitals-device-template.png" alt-text="Шаблон смарт-накладки":::
 
 ### <a name="device-groups"></a>Группы устройств
 
@@ -93,7 +97,7 @@ ms.locfileid: "90531276"
 
 * **Patch battery low** (Низкий уровень заряда батареи накладки): это правило активируется, когда уровень заряда батареи на устройстве ниже 10 %. Используйте это правило, чтобы активировать уведомление пациента о необходимости зарядить устройство.
 
-:::image type="content" source="media/brace-temp-rule.png" alt-text="Шаблон приложения здравоохранения":::
+:::image type="content" source="media/brace-temp-rule.png" alt-text="Правила":::
 
 ### <a name="jobs"></a>Задания
 
@@ -113,7 +117,7 @@ ms.locfileid: "90531276"
 
 Вкладка **Команды** позволяет выполнять команды на устройстве.
 
-:::image type="content" source="media/knee-brace-dashboard.png" alt-text="Шаблон приложения здравоохранения":::
+:::image type="content" source="media/knee-brace-dashboard.png" alt-text="Панель мониторинга шарнирного бандажа на колено":::
 
 ### <a name="data-export"></a>Экспорт данных
 
@@ -123,7 +127,7 @@ ms.locfileid: "90531276"
 
 Если вы не собираетесь в дальнейшем использовать это приложение, удалите его, выбрав **Администрирование > Параметры приложения** и щелкнув **Удалить**.
 
-:::image type="content" source="media/admin-delete.png" alt-text="Шаблон приложения здравоохранения":::
+:::image type="content" source="media/admin-delete.png" alt-text="Очистка ресурсов":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

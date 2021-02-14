@@ -31,7 +31,7 @@
   items:
     - name: Тестирование модели
       href: test-your-model.md
-    - name: Усовершенствование классификатора
+    - name: Улучшение модели
       href: getting-started-improving-your-classifier.md
     - name: Выбор домена
       href: select-domain.md

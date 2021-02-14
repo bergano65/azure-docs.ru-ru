@@ -13,20 +13,20 @@ metadata:
   author: BlackMist
   ms.date: 09/21/2020
   ms.custom: contperf-fy21q1
-  ms.openlocfilehash: 44f260d5e336433c7366dcbe7ce6f1bb79f92c3c
-  ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+  ms.openlocfilehash: b52e7908d07dcd342be59f9870dece13701f1dc6
+  ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/22/2021
-  ms.locfileid: "98683979"
+  ms.lasthandoff: 02/10/2021
+  ms.locfileid: "100096333"
 landingContent:
 - title: 'Приступая к работе: подход Code First'
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Руководство по началу работы (Python)
+    - text: Начало работы со скриптами Python
       url: tutorial-1st-experiment-sdk-setup-local.md
-    - text: Руководство по использованию Jupyter Notebook
+    - text: Начало работы с записными книжками Jupyter (Python)
       url: tutorial-1st-experiment-sdk-setup.md
     - text: Пакетный вывод с использованием конвейеров машинного обучения (Python)
       url: tutorial-pipeline-batch-scoring-classification.md

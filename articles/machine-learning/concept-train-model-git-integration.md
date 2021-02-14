@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 11/16/2020
-ms.openlocfilehash: 989fc7cb66cf5381d174a3aad12f84f5b055aab8
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 7c10d3066dc7b9ee0994de8c327b286bf8c917e7
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701642"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099478"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Интеграция с Git для Машинное обучение Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "94701642"
 
 ## <a name="clone-git-repositories-into-your-workspace-file-system"></a>Клонирование репозиториев Git в файловую систему рабочей области
 Машинное обучение Azure предоставляет общую файловую систему для всех пользователей в рабочей области.
-Чтобы клонировать репозиторий Git в этот файловый ресурс, рекомендуется создать вычислительный экземпляр & открыть терминал.
+Чтобы клонировать репозиторий Git в этот файловый ресурс, рекомендуется создать вычислительный экземпляр & [Открыть терминал](how-to-access-terminal.md).
 После открытия терминала Вы получите доступ к полному клиенту Git и можете клонировать и работать с Git с помощью интерфейса командной строки Git.
 
 Рекомендуется клонировать репозиторий в каталог пользователей, чтобы другие пользователи не могли выполнять конфликты непосредственно в рабочей ветви.
@@ -39,7 +39,7 @@ ms.locfileid: "94701642"
 
 ## <a name="authenticate-your-git-account-with-ssh"></a>Проверка подлинности учетной записи Git с помощью SSH
 ### <a name="generate-a-new-ssh-key"></a>Создать новый ключ SSH
-1) [Откройте окно терминала](./how-to-run-jupyter-notebooks.md#terminal) на вкладке машинное обучение Azure Notebook (записная книжка).
+1) [Откройте окно терминала](./how-to-access-terminal.md) на вкладке машинное обучение Azure Notebook (записная книжка).
 
 2) Вставьте приведенный ниже текст, подставив его в адресе электронной почты.
 
@@ -89,7 +89,7 @@ cat ~/.ssh/id_rsa.pub
 
 + [GitLab](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account)
 
-+ [Azure DevOps](/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#step-2--add-the-public-key-to-azure-devops-servicestfs)  Начните с **шага 2**.
++ [Azure DevOps](/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops#step-2--add-the-public-key-to-azure-devops-servicestfs&preserve-view=true)  Начните с **шага 2**.
 
 + [BitBucket](https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/#SetupanSSHkey-ssh2). Начните с **шага 4**.
 
@@ -194,6 +194,6 @@ az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup
 
 Дополнительные сведения см. в справочной документации по [AZ ML по запуску](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md)

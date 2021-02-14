@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 02/01/2021
+ms.date: 02/03/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 290aed6c817b5e1cfc8bc75b3551bfe15a7b3691
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 44265efd4d125bb2701742a490fc883c48f1877b
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524830"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550997"
 ---
 # <a name="tutorial-run-a-compute-workload-with-iot-edge-module-on-azure-stack-edge-pro-gpu"></a>Руководство. Выполнение рабочей нагрузки вычислений с помощью модуля IoT Edge на Azure Stack Edge Pro с GPU
 
@@ -151,4 +151,4 @@ ms.locfileid: "99524830"
 Сведения об администрировании устройства Azure Stack Edge Pro см. в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Использование локального пользовательского веб-интерфейса для администрирования Azure Stack Edge Pro](azure-stack-edge-manage-access-power-connectivity-mode.md)
+> [Использование локального пользовательского веб-интерфейса для администрирования Azure Stack Edge Pro](azure-stack-edge-gpu-manage-access-power-connectivity-mode.md)

@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 90bb6f60712fc59aec05ff2e85364fccf00ff1df
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 66b8fe0109a4dd2e054106b67f893def2ee596b0
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804797"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095092"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -149,7 +149,7 @@ $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" 
 $targetVault.ID
 ```
 
-Или
+либо
 
 ```powershell
 $targetVaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" -Name "testvault" | select -ExpandProperty ID
@@ -526,6 +526,53 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 > Один из них должен выборочно выполнять резервное копирование дисков для выборочного восстановления дисков. Дополнительные сведения приведены [здесь](selective-disk-backup-restore.md#selective-disk-restore).
 
 Восстановив диски, перейдите к следующему разделу по созданию виртуальной машины.
+
+#### <a name="restore-disks-to-a-secondary-region"></a>Восстановление дисков в дополнительный регион
+
+Если в хранилище, с которым защищены виртуальные машины, включено восстановление между регионами, резервные копии данных реплицируются в дополнительный регион. Данные резервного копирования можно использовать для выполнения восстановления. Чтобы активировать восстановление в дополнительном регионе, выполните следующие действия.
+
+1. Получите [идентификатор хранилища](#fetch-the-vault-id) , с которым защищены виртуальные машины.
+1. Выберите [правильный элемент резервного копирования для восстановления](#select-the-vm-when-restoring-files).
+1. Выберите соответствующую точку восстановления в дополнительном регионе, который будет использоваться для восстановления.
+
+    Чтобы выполнить этот шаг, выполните следующую команду:
+
+    ```powershell
+    $rp=Get-AzRecoveryServicesBackupRecoveryPoint -UseSecondaryRegion -Item $backupitem -VaultId $targetVault.ID
+    $rp=$rp[0]
+    ```
+
+1. Выполните командлет [RESTORE-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem) с `-RestoreToSecondaryRegion` параметром, чтобы активировать восстановление в дополнительном регионе.
+
+    Чтобы выполнить этот шаг, выполните следующую команду:
+
+    ```powershell
+    $restorejob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks" -VaultId $targetVault.ID -VaultLocation $targetVault.Location -RestoreToSecondaryRegion -RestoreOnlyOSDisk
+    ```
+
+    Результат будет выглядеть примерно так:
+
+    ```output
+    WorkloadName     Operation             Status              StartTime                 EndTime          JobID
+    ------------     ---------             ------              ---------                 -------          ----------
+    V2VM             CrossRegionRestore   InProgress           4/23/2016 5:00:30 PM                       cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
+    ```
+
+1. Выполните командлет [Get-азрековерисервицесбаккупжоб](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupjob) с `-UseSecondaryRegion` параметром для отслеживания задания восстановления.
+
+    Чтобы выполнить этот шаг, выполните следующую команду:
+
+    ```powershell
+    Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -To (Get-Date).ToUniversalTime() -UseSecondaryRegion -VaultId $targetVault.ID
+    ```
+
+    Результат будет выглядеть примерно так:
+
+    ```output
+    WorkloadName     Operation            Status               StartTime                 EndTime                   JobID
+    ------------     ---------            ------               ---------                 -------                   -----
+    V2VM             CrossRegionRestore   InProgress           2/8/2021 4:24:57 PM                                 2d071b07-8f7c-4368-bc39-98c7fb2983f7
+    ```
 
 ## <a name="replace-disks-in-azure-vm"></a>Замена дисков в виртуальной машине Azure
 

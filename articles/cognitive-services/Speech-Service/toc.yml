@@ -529,8 +529,6 @@
           displayName: 'ACI,azure container instances,container instances,containers'
           maintainContext: true
           href: ../containers/azure-container-instance-recipe.md
-        - name: Часто задаваемые вопросы о контейнерах
-          href: speech-container-faq.md
         - name: Документация по контейнерам Cognitive Services
           href: ../containers/index.yml
 - name: Устройства

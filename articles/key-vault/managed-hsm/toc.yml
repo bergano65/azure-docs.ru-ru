@@ -39,8 +39,6 @@
       href: access-control.md
     - name: Встроенные роли локальной системы управления доступом на основе ролей
       href: built-in-roles.md
-- name: Практические руководства
-  items: null
 - name: Справочник
   items:
     - name: Azure PowerShell

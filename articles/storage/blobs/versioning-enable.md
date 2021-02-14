@@ -6,20 +6,20 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5802070bf9b495c0e866d160d6661349369a444e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 5b6bd16eacf4b1bbb7b93f5500813e7fa9dc7eef
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95993756"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095853"
 ---
 # <a name="enable-and-manage-blob-versioning"></a>Включение управления версиями BLOB-объектов и работа с ним
 
-Вы можете включить управление версиями хранилища BLOB-объектов, чтобы автоматически поддерживать предыдущие версии объекта.  Если управление версиями BLOB-объектов включено, можно восстановить более раннюю версию большого двоичного объекта, чтобы восстановить данные, если они ошибочно изменены или удалены.
+Вы можете включить управление версиями хранилища BLOB-объектов, чтобы автоматически поддерживать предыдущие версии большого двоичного объекта при его изменении или удалении. При включении управления версиями BLOB-объектов можно восстановить более раннюю версию большого двоичного объекта, чтобы восстановить данные, если они ошибочно изменены или удалены.
 
 В этой статье показано, как включить или отключить управление версиями BLOB-объектов для учетной записи хранения с помощью портал Azure или шаблона Azure Resource Manager. Дополнительные сведения о управлении версиями BLOB-объектов см. в разделе [Управление версиями BLOB](versioning-overview.md)-объектов.
 
@@ -29,13 +29,39 @@ ms.locfileid: "95993756"
 
 # <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
-Чтобы включить управление версиями BLOB-объектов в портал Azure:
+Чтобы включить управление версиями BLOB-объектов для учетной записи хранения в портал Azure:
 
 1. Перейдите к своей учетной записи хранения на портале.
 1. В разделе **Служба BLOB-объектов** выберите **Защита данных**.
 1. В разделе **Управление версиями** выберите **включено**.
 
 :::image type="content" source="media/versioning-enable/portal-enable-versioning.png" alt-text="Снимок экрана, показывающий, как включить управление версиями BLOB-объектов в портал Azure":::
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Чтобы включить управление версиями BLOB-объектов для учетной записи хранения с помощью PowerShell, сначала установите модуль [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) 2.3.0 или более поздней версии. Затем вызовите команду [Update-азсторажеблобсервицепроперти](/powershell/module/az.storage/update-azstorageblobserviceproperty) , чтобы включить управление версиями, как показано в следующем примере. Не забудьте заменить значения в угловых скобках собственными значениями:
+
+```powershell
+# Set resource group and account variables.
+$rgName = "<resource-group>"
+$accountName = "<storage-account>"
+
+# Enable versioning.
+Update-AzStorageBlobServiceProperty -ResourceGroupName $rgName `
+    -StorageAccountName $accountName `
+    -IsVersioningEnabled $true
+```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы включить управление версиями BLOB-объектов для учетной записи хранения с Azure CLI, сначала установите Azure CLI версии 2.2.0 или более поздней. Затем вызовите команду [AZ Storage Account BLOB-Service-Properties Update](/cli/azure/ext/storage-blob-preview/storage/account/blob-service-properties#ext_storage_blob_preview_az_storage_account_blob_service_properties_update) , чтобы включить управление версиями, как показано в следующем примере. Не забудьте заменить значения в угловых скобках собственными значениями:
+
+```azurecli
+az storage account blob-service-properties update \
+    --resource-group <resource_group> \
+    --account-name <storage-account> \
+    --enable-versioning true
+```
 
 # <a name="template"></a>[Шаблон](#tab/template)
 
@@ -87,7 +113,7 @@ ms.locfileid: "95993756"
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ListBlobVersions":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Управление версиями BLOB-объектов](versioning-overview.md)
 - [Soft delete for Azure Storage blobs](./soft-delete-blob-overview.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
