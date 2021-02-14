@@ -9,12 +9,12 @@ ms.date: 1/8/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7f6e90edc0503326dc9dbb06abfcf59fa2d51e1e
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 9ae7009468b548cb9386fd405abfbe110d62f9a3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043822"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377522"
 ---
 # <a name="deploy-iot-edge-modules-at-scale-using-visual-studio-code"></a>Развертывание модулей IoT Edge в масштабе с помощью Visual Studio Code
 
@@ -82,7 +82,7 @@ ms.locfileid: "92043822"
             "edgeAgent": {
               "type": "docker",
               "settings": {
-                "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+                "image": "mcr.microsoft.com/azureiotedge-agent:1.1",
                 "createOptions": "{}"
               }
             },
@@ -91,7 +91,7 @@ ms.locfileid: "92043822"
               "status": "running",
               "restartPolicy": "always",
               "settings": {
-                "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+                "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
                 "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}],\"443/tcp\":[{\"HostPort\":\"443\"}]}}}"
               }
             }
@@ -229,7 +229,7 @@ ms.locfileid: "92043822"
   | Параметр | Описание |
   | --- | --- |
   | Идентификатор развертывания | Имя развертывания, которое будет создано в центре Интернета вещей. Присвойте своему развертыванию уникальное имя, содержащее до 128 букв в нижнем регистре. Не используйте пробелы и следующие недопустимые символы: `& ^ [ ] { } \ | " < > /`. |
-  | Условие назначения | Введите целевое условие, чтобы определить, какие устройства будут направлены в это развертывание. Условие основано на тегах двойника устройства или его сообщаемых свойствах и должно соответствовать формату выражения.Например, `tags.environment='test' and properties.reported.devicemodel='4000x'` . |
+  | Условие назначения | Введите целевое условие, чтобы определить, какие устройства будут направлены в это развертывание.  Условие основано на тегах двойника устройства или его сообщаемых свойствах и должно соответствовать формату выражения.  Например, `tags.environment='test' and properties.reported.devicemodel='4000x'`. |
   | Приоритет |  Положительное целое число. Если на одном устройстве нацелено два или более развертывания, будет применяться развертывание с наибольшим числовым значением приоритета. |
 
   После указания приоритета терминал должен отобразить выходные данные, аналогичные приведенным ниже.

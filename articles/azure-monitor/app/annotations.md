@@ -3,12 +3,12 @@ title: Заметки о выпуске для Application Insights | Докум
 description: Добавление маркеров развертывания или сборки для диаграмм обозревателя метрик в Application Insights.
 ms.topic: conceptual
 ms.date: 08/14/2020
-ms.openlocfilehash: 58f6603687838713fafbf4cd5cc3f100e22b7401
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c23c973bc02482e7000cfd1d066a322fff93542a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993726"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386039"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
@@ -81,7 +81,7 @@ ms.locfileid: "95993726"
 
 Теперь при использовании шаблона выпуска для развертывания нового выпуска заметка отправляется в Application Insights. Заметки можно просмотреть в следующих расположениях:
 
-На панели использование вы также можете вручную создавать заметки о выпуске:
+На панели **Использование** вы также можете вручную создавать заметки о выпуске:
 
 ![Снимок экрана линейчатой диаграммы с количеством посещений пользователей, отображаемых за определенный период времени. Заметки о выпуске отображаются в виде зеленых флажков над диаграммой, указывающей на момент возникновения выпуска.](./media/annotations/usage-pane.png)
 

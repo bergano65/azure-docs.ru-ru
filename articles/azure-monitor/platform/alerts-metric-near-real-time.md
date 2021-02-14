@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 02/10/2021
 ms.subservice: alerts
-ms.openlocfilehash: 8f59f3488f6c8f5b35ec68d93db656447f882a92
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: ee281e60a0eb6f6192e63a9733146714e4aaf2eb
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510688"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104388"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Поддерживаемые ресурсы для оповещений метрик в Azure Monitor
 
@@ -35,7 +35,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.AppConfiguration/configurationStores |Да | Нет | [Конфигурация приложений](./metrics-supported.md#microsoftappconfigurationconfigurationstores) |
 |Microsoft.AppPlatform/Spring | Да | Нет | [Azure Spring Cloud](./metrics-supported.md#microsoftappplatformspring) |
 |Microsoft.Automation/automationAccounts | Да| Нет | [Учетные записи автоматизации](./metrics-supported.md#microsoftautomationautomationaccounts) |
-|Microsoft. AVS/Приватеклаудс | Нет | Нет | |
+|Microsoft. AVS/Приватеклаудс | Нет | Нет | [Решение Azure VMware](./metrics-supported.md#microsoftavsprivateclouds) |
 |Microsoft.Batch/batchAccounts | Да | Нет | [Ученые записи пакетной службы](./metrics-supported.md#microsoftbatchbatchaccounts) |
 |Microsoft.Cache/Redis; | Да | Да | [Кэш Azure для Redis](./metrics-supported.md#microsoftcacheredis) |
 |Microsoft.ClassicCompute/domainNames/slots/roles | Нет | Нет | [Классические облачные службы](./metrics-supported.md#microsoftclassiccomputedomainnamesslotsroles) |
@@ -54,7 +54,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.DataBoxEdge/dataBoxEdgeDevices | Да | Да | [Data Box](./metrics-supported.md#microsoftdataboxedgedataboxedgedevices) |
 |Microsoft.DataFactory/datafactories| Да| Нет | [Фабрики данных V1](./metrics-supported.md#microsoftdatafactorydatafactories) |
 |Microsoft.DataFactory/factories; |Да | Нет | [Фабрики данных V2](./metrics-supported.md#microsoftdatafactoryfactories) |
-|Microsoft.DataShare/accounts | Да | Нет | |
+|Microsoft.DataShare/accounts | Да | Нет | [Общие ресурсы данных](./metrics-supported.md#microsoftdatashareaccounts) |
 |Microsoft.DBforMariaDB/servers | Нет | Нет | [База данных для MariaDB](./metrics-supported.md#microsoftdbformariadbservers) |
 |Microsoft.DBforMySQL/servers | Нет | Нет |[База данных для MySQL](./metrics-supported.md#microsoftdbformysqlservers)|
 |Microsoft.DBforPostgreSQL/servers | Нет | Нет | [База данных для PostgreSQL](./metrics-supported.md#microsoftdbforpostgresqlservers)|
@@ -62,7 +62,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.DBforPostgreSQL/flexibleServers | Да | Нет | [База данных для PostgreSQL (гибкие серверы)](./metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
 |Microsoft.Devices/IotHubs | Да | Нет |[Центр Интернета вещей](./metrics-supported.md#microsoftdevicesiothubs) |
 |Microsoft.Devices/provisioningServices| Да | Нет | [Службы подготовки устройств](./metrics-supported.md#microsoftdevicesprovisioningservices) |
-|Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес | Да | Нет | |
+|Microsoft. Дигиталтвинс/Дигиталтвинсинстанцес | Да | Нет | [Digital Twins](./metrics-supported.md#microsoftdigitaltwinsdigitaltwinsinstances) |
 |Microsoft.DocumentDB/databaseAccounts | Да | Нет | [База данных Cosmos](./metrics-supported.md#microsoftdocumentdbdatabaseaccounts) |
 |Microsoft.EventGrid/domains | Да | Нет | [Домены Сетки событий](./metrics-supported.md#microsofteventgriddomains) |
 |Microsoft. EventGrid/Системтопикс | Да | Нет | [Статьи по системе сетки событий](./metrics-supported.md#microsofteventgridsystemtopics) |
@@ -87,10 +87,10 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Network/expressRouteCircuits | Да | Нет |[Каналы ExpressRoute](./metrics-supported.md#microsoftnetworkexpressroutecircuits) |
 |Microsoft.Network/expressRoutePorts | Да | Нет |[ExpressRoute Direct](./metrics-supported.md#microsoftnetworkexpressrouteports) |
 |Microsoft.Network/loadBalancers (только для SKU "Стандартный")| Да| Нет | [Подсистемы балансировки нагрузки](./metrics-supported.md#microsoftnetworkloadbalancers) |
-|Microsoft. Network/Натгатевайс| Нет | Нет | |
-|Microsoft. Network/Приватиндпоинтс| Нет | Нет | |
-|Microsoft.Network/privateLinkServices| Нет | Нет |
-|Microsoft.Network/publicipaddresses; | Нет | Нет |[общедоступные IP-адреса](./metrics-supported.md#microsoftnetworkpublicipaddresses)|
+|Microsoft. Network/Натгатевайс| Нет | Нет | [Шлюзы NAT](./metrics-supported.md#microsoftnetworknatgateways) |
+|Microsoft. Network/Приватиндпоинтс| Нет | Нет | [Частные конечные точки](./metrics-supported.md#microsoftnetworkprivateendpoints) |
+|Microsoft.Network/privateLinkServices| Нет | Нет | [Службы частной связи](./metrics-supported.md#microsoftnetworkprivatelinkservices) |
+|Microsoft.Network/publicipaddresses; | Нет | Нет | [общедоступные IP-адреса](./metrics-supported.md#microsoftnetworkpublicipaddresses)|
 |Microsoft.Network/trafficManagerProfiles | Да | Нет | [Профили диспетчера трафика](./metrics-supported.md#microsoftnetworktrafficmanagerprofiles) |
 |Microsoft.OperationalInsights/workspaces| Да | Нет | [Рабочие области Log Analytics](./metrics-supported.md#microsoftoperationalinsightsworkspaces)|
 |Microsoft. пиринг/пиринг | Да | Нет | [Пиринги](./metrics-supported.md#microsoftpeeringpeerings) |
@@ -107,7 +107,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 |Microsoft.Storage/storageAccounts/fileServices | Да| Нет | [Учетные записи хранения — файлы](./metrics-supported.md#microsoftstoragestorageaccountsfileservices) |
 |Microsoft.Storage/storageAccounts/queueServices | Да| Нет | [Учетные записи хранения — очереди](./metrics-supported.md#microsoftstoragestorageaccountsqueueservices) |
 |Microsoft.Storage/storageAccounts/tableServices | Да| Нет | [Учетные записи хранения — таблицы](./metrics-supported.md#microsoftstoragestorageaccountstableservices) |
-|Microsoft.StorageCache/caches | Да | Нет | |
+|Microsoft.StorageCache/caches | Да | Нет | [Кэши HPC](./metrics-supported.md#microsoftstoragecachecaches) |
 |Microsoft. StorageSync/Сторажесинксервицес | Да | Нет | [Службы синхронизации хранилища](./metrics-supported.md#microsoftstoragesyncstoragesyncservices) |
 |Microsoft.StreamAnalytics/streamingjobs | Да | Нет | [Stream Analytics](./metrics-supported.md#microsoftstreamanalyticsstreamingjobs) |
 |Microsoft.Synapse/workspaces | Да | Нет | [Synapse Analytics](./metrics-supported.md#microsoftsynapseworkspaces) |
@@ -181,7 +181,7 @@ Azure Monitor теперь поддерживает [новый тип опов�
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Получите дополнительные сведения об [интерфейсе оповещений](./alerts-overview.md).
 * Ознакомьтесь со сведениями об [оповещениях журналов в Azure](./alerts-unified-log.md).

@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия)
 description: Узнайте, как копировать данные из Marketo на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/04/2020
 ms.author: jingwang
-ms.openlocfilehash: 08f117e2fc4939eee1458c0807cac5a292785608
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aae25536f0ac1d5d3b43b5173d3e5789cd66a774
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84669891"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385648"
 ---
 # <a name="copy-data-from-marketo-using-azure-data-factory-preview"></a>Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -56,9 +51,9 @@ ms.locfileid: "84669891"
 | endpoint | Конечная точка сервера Marketo. (т. е. 123-ABC-321.mktorest.com)  | Да |
 | clientid | Идентификатор клиента службы Marketo.  | Да |
 | clientSecret | Секрет клиента службы Marketo. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
-| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
+| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
+| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
+| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 
 **Пример**.
 

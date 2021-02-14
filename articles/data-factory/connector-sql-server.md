@@ -1,23 +1,18 @@
 ---
 title: Копирование данных в SQL Server и из них
 description: Узнайте, как перемещать данные в SQL Server базу данных, которая находится локально или на виртуальной машине Azure, с помощью фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/18/2020
-ms.openlocfilehash: ee91d06dc5377afa1bd216280e537c2837ada6d9
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 5d35d0434f65f28b58a6d81172ade12aceb02987
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694847"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385002"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных в SQL Server и из них с помощью фабрики данных Azure
 
@@ -196,8 +191,8 @@ ms.locfileid: "97694847"
 | isolationLevel | Задает режим блокировки транзакций для источника данных SQL. Допустимые значения: **ReadCommitted**, **READUNCOMMITTED**, **RepeatableRead**, **Serializable**, **snapshot**. Если значение не указано, используется уровень изоляции базы данных по умолчанию. Дополнительные сведения см. в [этом документе](/dotnet/api/system.data.isolationlevel). | нет |
 | partitionOptions | Задает параметры секционирования данных, используемые для загрузки данных из SQL Server. <br>Допустимые значения: **None** (по умолчанию), **фисикалпартитионсофтабле** и **динамикранже**.<br>Если параметр секции включен (то есть не `None` ), степень параллелизма для параллельной загрузки данных из SQL Server управляется [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) параметром действия копирования. | нет |
 | partitionSettings | Позволяет указать группу параметров для секционирования данных. <br>Применяется, если параметр Partition не имеет значение `None` . | Нет |
-| **_В разделе `partitionSettings` :_* _ | | |
-| partitionColumnName | Укажите имя исходного столбца _ *в виде целого числа или типа Date/DateTime** ( `int` , `smallint` ,,,,, `bigint` `date` `smalldatetime` `datetime` `datetime2` или `datetimeoffset` ), которое будет использоваться секционированием по диапазонам для параллельного копирования. Если значение не указано, то индекс или первичный ключ таблицы будет обнаружен и использован в качестве столбца секционирования.<br>Применяется, если параметр секционирования имеет значение `DynamicRange`. Если для получения исходных данных используется запрос, присоединитесь к  `?AdfDynamicRangePartitionCondition ` предложению WHERE. Пример см. в разделе [Параллельное копирование из базы данных SQL](#parallel-copy-from-sql-database) . | нет |
+| ***В разделе `partitionSettings` :*** | | |
+| partitionColumnName | Укажите имя исходного столбца **в целочисленном или в типе даты/времени** ( `int` , `smallint` , `bigint` , `date` , `smalldatetime` , `datetime` , `datetime2` или `datetimeoffset` ), которое будет использоваться секционированием по диапазонам для параллельного копирования. Если значение не указано, то индекс или первичный ключ таблицы будет обнаружен и использован в качестве столбца секционирования.<br>Применяется, если параметр секционирования имеет значение `DynamicRange`. Если для получения исходных данных используется запрос, присоединитесь к  `?AdfDynamicRangePartitionCondition ` предложению WHERE. Пример см. в разделе [Параллельное копирование из базы данных SQL](#parallel-copy-from-sql-database) . | нет |
 | partitionUpperBound | Максимальное значение столбца секционирования для разделения диапазона секций. Это значение используется для выбора шага секционирования, а не для фильтрации строк в таблице. Все строки в таблице или результатах запроса будут секционированы и скопированы. Если не указано, действие копирования автоматически определяет значение.  <br>Применяется, если параметр секционирования имеет значение `DynamicRange`. Пример см. в разделе [Параллельное копирование из базы данных SQL](#parallel-copy-from-sql-database) . | нет |
 | partitionLowerBound | Минимальное значение столбца секционирования для разделения диапазона секций. Это значение используется для выбора шага секционирования, а не для фильтрации строк в таблице. Все строки в таблице или результатах запроса будут секционированы и скопированы. Если не указано, действие копирования автоматически определяет значение.<br>Применяется, если параметр секционирования имеет значение `DynamicRange`. Пример см. в разделе [Параллельное копирование из базы данных SQL](#parallel-copy-from-sql-database) . | Нет |
 
@@ -587,7 +582,7 @@ END
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Объект |
-| text |String, Char[] |
+| текст |String, Char[] |
 | time |TimeSpan |
 | TIMESTAMP |Byte[] |
 | tinyint |Int16 |
@@ -644,5 +639,5 @@ END
 5. Создайте на компьютере **правило брандмауэра Windows** , чтобы разрешить входящий трафик через этот порт. 
 6. **Проверить подключение**. чтобы подключиться к SQL Server с помощью полного имени, используйте SQL Server Management Studio с другого компьютера. Например, `"<machine>.<domain>.corp.<company>.com,1433"`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Список хранилищ данных, поддерживаемых действием копирования в фабрике данных Azure в качестве источников и приемников, см. в разделе [Supported Data Stores (поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats)).

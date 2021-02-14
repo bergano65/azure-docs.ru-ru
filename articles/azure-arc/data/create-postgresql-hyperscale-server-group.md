@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: TheJY
 ms.author: jeanyd
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 45bb045e7bad2d5f8a56b71787b3abb5921cb7d5
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 4ff45eea8e07a282d8529c745344c11706bc27bb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98985892"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387994"
 ---
 # <a name="create-an-azure-arc-enabled-postgresql-hyperscale-server-group"></a>Создание группы сервера с Гипермасштабированием PostgreSQL с поддержкой Azure Arc
 
@@ -81,13 +81,13 @@ azdata arc postgres server create -n <name> --workers <# worker nodes with #>=2>
 > [!IMPORTANT]
 > - Класс хранения, используемый для резервного копирования (_--Storage-Class-Backups-СКБ_), по умолчанию использует класс хранения данных контроллера данных, если он не указан.
 > - Чтобы восстановить группу серверов в отдельной группе серверов (например, восстановление до точки во времени), необходимо настроить группу серверов для использования постоянных виртуальных цепей с режимом доступа Реадвритемани. Это необходимо сделать при создании группы серверов. Его нельзя изменить после создания. Дополнительные сведения см. в статье:
->    - [Этот раздел о резервном копировании и восстановлении](https://docs.microsoft.com/azure/azure-arc/data/backup-restore-postgresql-hyperscale#create-a-server-group-that-is-ready-for-backups-and-restores)
->    - [В этом разделе об ограничениях PostgreSQL с поддержкой ARC в Azure](https://docs.microsoft.com/azure/azure-arc/data/limitations-postgresql-hyperscale)
+>    - [Создание группы серверов, готовой к резервному копированию и восстановлению](backup-restore-postgresql-hyperscale.md#create-a-server-group-that-is-ready-for-backups-and-restores)
+>    - [Ограничения PostgreSQL с поддержкой ARC в Azure](limitations-postgresql-hyperscale.md)
 
 
 > [!NOTE]
 > - **Доступны другие параметры командной строки.  Просмотрите полный список параметров, выполнив `azdata arc postgres server create --help` .**
-
+>
 > - Единица, принимаемая параметрами--Volume-Size-*, — это Kubernetes ресурсное количество (целое число, за которым следует одно из этих данных, достаточное (T, G, M, K, M) или их степень-два эквивалента (Ti, МВт, MI, KI)).
 > - Длина имени не должна превышать 12 символов и соответствовать соглашениям об именовании DNS.
 > - Вам будет предложено ввести пароль для пользователя с правами администратора _postgres_ Standard.  Интерактивную строку можно пропустить, задав `AZDATA_PASSWORD` переменную среды сеанса перед выполнением команды Create.
@@ -190,7 +190,7 @@ az network public-ip list -g azurearcvm-rg --query "[].{PublicIP:ipAddress}" -o 
 psql postgresql://postgres:<EnterYourPassword>@10.0.0.4:30655
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомьтесь с основными понятиями и руководствами по использованию службы "база данных Azure для PostgreSQL", чтобы распределить данные между несколькими узлами PostgreSQL, а также получить преимущества от всех возможностей службы "база данных Azure для PostgreSQL". :
     * [Узлы и таблицы](../../postgresql/concepts-hyperscale-nodes.md)

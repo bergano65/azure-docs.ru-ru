@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 057ff064264485a9aea6fc2b31fe57ce37c805ce
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 18104f06e779046786a2c7794736d01c35139490
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895620"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365809"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -25,7 +25,7 @@ ms.locfileid: "97895620"
 - Windows 7 
 - Windows 8.1 
 - Windows Server 2008 R2 
-- Windows Server 2012 
+- Windows Server 2012 
 - Windows Server 2012 R2 
 
 Сведения об устройствах под управлением Windows 10 и Windows Server 2016 см. в статье [Troubleshooting hybrid Azure Active Directory joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md) (Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory).
@@ -39,6 +39,7 @@ ms.locfileid: "97895620"
 **Что следует учитывать:** 
 
 - Гибридное присоединение к Azure AD на устройствах Windows нижнего уровня работают несколько иначе, чем в Windows 10. Многие клиенты не понимают, что им нужно настроить AD FS (для федеративных доменов) или эффективный единый вход (для управляемых доменов).
+- Простой единый вход не работает в конфиденциальном режиме просмотра в браузерах Firefox и Microsoft Edge, а также в Internet Explorer, если браузер работает в режиме повышенной защиты.
 - Для клиентов с федеративными доменами, если точка подключения к службе (SCP) настроена таким образом, что она указывает на управляемое доменное имя (например, contoso.onmicrosoft.com, а не contoso.com), тогда гибридное присоединение к Azure AD на устройствах Windows нижнего уровня не будет работать.
 - Одно и то же физическое устройство появляется несколько раз в Azure AD, когда несколько пользователей доменов входят в гибридные устройства нижнего уровня, присоединенные к Azure AD.  Например, если *jdoe* и *jharnett* войдут в устройство, на вкладке сведений **о пользователе** для каждого из них будет создана отдельная регистрация (DeviceID). 
 - Но, можно также получить несколько записей для устройства на вкладке сведения о пользователе в результате повторной установки операционной системы или повторной регистрации вручную.
@@ -103,6 +104,6 @@ ms.locfileid: "97895620"
    - или, если ваш домен управляемый, то эффективный SSO не был настроен или не работает;
    - пользователь достиг предела подключенных устройств. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).  

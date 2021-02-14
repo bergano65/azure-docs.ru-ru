@@ -1,23 +1,18 @@
 ---
 title: Устранение неполадок с производительностью действия копирования
 description: Узнайте, как устранять производительность действий копирования в фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/07/2021
-ms.openlocfilehash: 203782ef2d95cd2b47082f630fa12531a110d49e
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 07be5d29ccb55fe97f38123ff4a850d28cd39ead
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98933918"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387688"
 ---
 # <a name="troubleshoot-copy-activity-performance"></a>Устранение неполадок с производительностью действия копирования
 
@@ -142,7 +137,7 @@ ms.locfileid: "98933918"
 
   - Проверьте тенденцию использования ЦП и памяти в портал Azure-> странице > обзор фабрики данных. Рассмотрите возможность [увеличения или уменьшения IR](create-self-hosted-integration-runtime.md#high-availability-and-scalability) , если загрузка ЦП высока или если объем доступной памяти мал.
 
-  - При применении рекомендаций по загрузке данных, связанных с соединителем, рекомендуется использовать. Пример.
+  - При применении рекомендаций по загрузке данных, связанных с соединителем, рекомендуется использовать. Пример:
 
     - При копировании данных из [Oracle](connector-oracle.md#oracle-as-source), [Netezza](connector-netezza.md#netezza-as-source), [Teradata](connector-teradata.md#teradata-as-source), [SAP HANA](connector-sap-hana.md#sap-hana-as-source), [таблицы SAP](connector-sap-table.md#sap-table-as-source)и [открытого концентратора SAP](connector-sap-business-warehouse-open-hub.md#sap-bw-open-hub-as-source)можно включить параметры секций данных для параллельного копирования данных.
 

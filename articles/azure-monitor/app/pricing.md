@@ -5,14 +5,14 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 author: DaleKoetke
 ms.author: dalek
-ms.date: 5/7/2020
+ms.date: 2/7/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: 477a96f1bf66255b11b2fee36c38e55b18cddb69
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 3ae3224ae17d0dee2ed1080669c6057ca62959d9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99556128"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384509"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Управление использованием и затратами для Application Insights
 
@@ -286,15 +286,18 @@ requests | where timestamp > ago(1d)
 
 Для ранних пользователей Azure Application Insights по-прежнему существуют две ценовые категории: "Базовый" и "Корпоративный". По умолчанию используется ценовая категория "Базовый", которая соответствует описанию выше. Она включает в себя все возможности категории "Корпоративный", не требуя дополнительных затрат. В категории "Базовый" плата в основном взимается за объем принимаемых данных.
 
-> [!NOTE]
-> Эти устаревшие ценовые категории были переименованы. Ценовая категория "Корпоративный" теперь называется **За узел**, а категория "Базовый" называется **За ГБ**. Эти новые имена используются в тексте ниже и на портале Azure.  
+Эти устаревшие ценовые категории были переименованы. Ценовая категория "Корпоративный" теперь называется **За узел**, а категория "Базовый" называется **За ГБ**. Эти новые имена используются в тексте ниже и на портале Azure.  
 
-В категории "За узел" (ранее — "Корпоративный") оплачивается каждый узел, и каждому узлу выделяется ежедневная квота данных. При использовании ценовой категории "За узел" плата взимается за данные, полученные сверх предоставленной квоты. Если вы используете Operations Management Suite, следует выбрать категорию "За узел".
+В категории "За узел" (ранее — "Корпоративный") оплачивается каждый узел, и каждому узлу выделяется ежедневная квота данных. При использовании ценовой категории "За узел" плата взимается за данные, полученные сверх предоставленной квоты. Если вы используете Operations Management Suite, следует выбрать категорию "За узел". В апреле 2018 года была [представлена](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) новая модель ценообразования для служб мониторинга Azure. Эта модель использует простой принцип "с оплатой по мере использования" во всем портфеле служб мониторинга. Дополнительные сведения о [новой модели ценообразования](../platform/usage-estimated-costs.md).
 
 Текущие цены в валюте вашей страны для выбранного региона вы можете узнать на [странице цен на Application Insights](https://azure.microsoft.com/pricing/details/application-insights/).
 
-> [!NOTE]
-> В апреле 2018 года была [представлена](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) новая модель ценообразования для служб мониторинга Azure. Эта модель использует простой принцип "с оплатой по мере использования" во всем портфеле служб мониторинга. Узнайте больше о [новой модели ценообразования](../platform/usage-estimated-costs.md), о том, как [оценить последствия перехода на новую модель](../platform/usage-estimated-costs.md#understanding-your-azure-monitor-costs), исходя из ваших шаблонов использования, и как [перейти на эту модель](../platform/usage-estimated-costs.md#azure-monitor-pricing-model).
+### <a name="understanding-billed-usage-on-the-legacy-enterprise-per-node-tier"></a>Основные сведения об использовании устаревшей версии корпоративного уровня (на узел) 
+
+Как описано ниже, уровень унаследованного предприятия (на уровне узла) сочетает в себе использование всех Application Insightsных ресурсов в подписке для вычисления количества узлов и превышения объема данных. Из-за этого комбинированного процесса **использование всех Application Insightsных ресурсов в подписке сообщается только одному из ресурсов**.  Это позволяет выверять [оплачиваемое использование за счет](https://docs.microsoft.com/azure/azure-monitor/app/pricing#viewing-application-insights-usage-on-your-azure-bill) использования каждого Application Insights ресурсов очень сложно. 
+
+> [!WARNING]
+> Из-за сложности отслеживания и понимания использования Application Insightsных ресурсов на уровне устаревших корпоративных (на уровне узла) мы настоятельно рекомендуем использовать текущую ценовую категорию с оплатой по мере использования. 
 
 ### <a name="per-node-tier-and-operations-management-suite-subscription-entitlements"></a>Категория "За узел" и права подписки Operations Management Suite
 
@@ -347,4 +350,3 @@ requests | where timestamp > ago(1d)
 [start]: ./app-insights-overview.md
 [pricing]: https://azure.microsoft.com/pricing/details/application-insights/
 [pricing]: https://azure.microsoft.com/pricing/details/application-insights/
-

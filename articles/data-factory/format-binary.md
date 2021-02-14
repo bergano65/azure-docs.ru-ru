@@ -2,19 +2,16 @@
 title: Двоичный формат в фабрике данных Azure
 description: В этом разделе описывается, как работать с двоичным форматом в фабрике данных Azure.
 author: linda33wj
-manager: shwang
-ms.reviewer: craigg
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.author: jingwang
-ms.openlocfilehash: be4338942057cf52bf26b7fd1e15f77e724d49f8
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: cc5b54e99584b74b287fa66deba1694419b46b16
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348914"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393689"
 ---
 # <a name="binary-format-in-azure-data-factory"></a>Двоичный формат в фабрике данных Azure
 
@@ -73,7 +70,7 @@ ms.locfileid: "96348914"
 
 ### <a name="binary-as-source"></a>Двоичный файл в качестве источника
 
-В разделе действие копирования **_ \_ source \**** поддерживаются следующие свойства.
+В разделе ***\* Источник \**** действия копирования поддерживаются следующие свойства.
 
 | Свойство      | Описание                                                  | Обязательно |
 | ------------- | ------------------------------------------------------------ | -------- |
@@ -120,7 +117,7 @@ ms.locfileid: "96348914"
 
 ### <a name="binary-as-sink"></a>Двоичный в качестве приемника
 
-В разделе действие копирования **_ \_ sink \**** поддерживаются следующие свойства.
+В разделе ***\* приемника \**** действия копирования поддерживаются следующие свойства.
 
 | Свойство      | Описание                                                  | Обязательно |
 | ------------- | ------------------------------------------------------------ | -------- |

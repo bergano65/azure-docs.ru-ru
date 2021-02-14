@@ -1,22 +1,18 @@
 ---
 title: Копирование или клонирование фабрики данных в службе "Фабрика данных Azure"
 description: Узнайте, как выполнять копирование или клонирование фабрики данных в службе "Фабрика данных Azure".
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 author: chez-charlie
 ms.author: chez
-manager: jroth
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 304c39f4b6f7852068d4e72adfad2d41eeefc26c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ea16785502ce8a82087b79dd8e7f0014c0059fc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85552967"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375244"
 ---
 # <a name="copy-or-clone-a-data-factory-in-azure-data-factory"></a>Копирование или клонирование фабрики данных в службе "Фабрика данных Azure"
 
@@ -51,6 +47,6 @@ ms.locfileid: "85552967"
 
 1. По соображениям безопасности созданный шаблон диспетчер ресурсов не будет содержать секретных сведений, например паролей для связанных служб. Поэтому необходимо предоставить учетные данные в качестве параметров развертывания. Если ввод учетных данных вручную нежелателен для ваших параметров, попробуйте получить строки подключения и пароли из Azure Key Vault. [Подробнее](store-credentials-in-key-vault.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с руководством по созданию фабрики данных на портале Azure в статье [Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"](quickstart-create-data-factory-portal.md).

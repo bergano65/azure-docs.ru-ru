@@ -323,8 +323,6 @@
       items:
         - name: 'Канал на YouTube, посвященный системе управления'
           href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
-        - name: "Видео: Ignite\_2019"
-          href: 'https://myignite.techcommunity.microsoft.com/sessions/81584?source=sessions'
         - name: Видео по гостевой конфигурации
           items:
             - name: Приступая к работе

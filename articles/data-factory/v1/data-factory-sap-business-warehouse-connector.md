@@ -1,23 +1,18 @@
 ---
 title: Перемещение данных из SAP Business Warehouse с помощью фабрики данных Azure
 description: Узнайте, как перемещать данные из SAP Business Warehouse с помощью фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-editor: ''
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fb91a09ed31658c2d547a7b46cf2f986bfbd0e50
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 513d6b28908b99594eaa525e86690fa75bffb103
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508294"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386974"
 ---
 # <a name="move-data-from-sap-business-warehouse-using-azure-data-factory"></a>Перемещение данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -288,7 +283,7 @@ encryptedCredential | Строка зашифрованных учетных д�
 
 Тип данных в словаре ABAP | Тип данных .NET
 -------------------------------- | --------------
-ACCP |  Int
+ACCP |    Int
 CHAR | Строка
 CLNT | Строка
 CURR | Decimal

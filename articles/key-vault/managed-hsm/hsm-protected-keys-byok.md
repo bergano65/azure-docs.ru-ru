@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: 1a15ed6b92ade96dd2ed9ef6ffbbe17e2b1452ef
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 71cc36541b8809d93c84225edf771400d2878b4f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99581420"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376060"
 ---
 # <a name="import-hsm-protected-keys-to-managed-hsm-byok"></a>Импорт ключей, защищенных с АППАРАТным модулем безопасности, в управляемый HSM (BYOK)
 
@@ -45,7 +45,7 @@ ms.locfileid: "99581420"
 Чтобы использовать команды Azure CLI из этой строки, вам необходимо следующее:
 
 * подписка на Microsoft Azure. Если у вас ее нет, зарегистрируйтесь, чтобы воспользоваться [бесплатной пробной версией](https://azure.microsoft.com/pricing/free-trial).
-* Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
+* Azure CLI 2.12.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 * Управляемый модуль HSM — [поддерживаемый список HSM](#supported-hsms) в вашей подписке. См. [Краткое руководство. Подготовка и активация управляемого устройства HSM с помощью Azure CLI](quick-create-cli.md) для выполнения соответствующих действий.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
@@ -70,12 +70,13 @@ az login
 |Securosys SA|Производитель, HSM как услуга|Семейство Primus HSM, Securosys Clouds HSM|[Новое средство BYOK и документация для Primus](https://www.securosys.com/primus-azure-byok)|
 |StorMagic|ISV (Enterprise Key Management System)|Несколько торговых марок и моделей HSM, в том числе<ul><li>Utimaco</li><li>Thales</li><li>nCipher</li></ul>Дополнительные сведения см. на [сайте StorMagic](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm).|[SvKMS и Azure Key Vault (BYOK)](https://stormagic.com/doc/svkms/Content/Integrations/Azure_KeyVault_BYOK.htm)|
 |IBM|Изготовитель|IBM 476x, CryptoExpress|[IBM Enterprise Key Management Foundation](https://www.ibm.com/security/key-management/ekmf-bring-your-own-key-azure)|
+|Utimaco|Производитель,<br/>HSM как услуга|u. Trust якоря, Криптосервер|[Средство Утимако BYOK и рекомендации по интеграции](https://support.hsm.utimaco.com/support/downloads/byok)|
 ||||
 
 
 ## <a name="supported-key-types"></a>Поддерживаемые типы ключей
 
-|Имя раздела|Тип ключа|Размер ключа/кривая|Исходный домен|Описание|
+|Имя раздела|Тип ключа|Размер ключа (кривая)|Исходный домен|Описание|
 |---|---|---|---|---|
 |Ключ обмена ключами (KEK)|RSA| 2048-разрядный<br />3072-разрядный<br />4096-разрядный|Управляемое устройство HSM|Пара ключей RSA с АППАРАТным модулем безопасности, созданная в управляемом HSM|
 |Целевой ключ|

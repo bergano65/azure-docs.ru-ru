@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 09/24/2019
+ms.date: 02/10/2021
 ms.author: cherylmc
-ms.openlocfilehash: f307ff9e7d609628bc22374fc5874dcbf993e4c2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 9d31bcaad01b9b762e57bd619d45c1f53ffb201e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661194"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376808"
 ---
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>Подключение виртуальных сетей из разных моделей развертывания с помощью портала
 
@@ -28,7 +28,7 @@ ms.locfileid: "94661194"
 
 Если у вас нет шлюза виртуальной сети и вы не хотите его создавать, то вместо этого можно подключить виртуальные сети с помощью пиринга виртуальных сетей. При пиринговой связи между виртуальными сетями VPN-шлюз не используется. Дополнительную информацию см. в статье [Пиринговая связь между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
 
-### <a name="before-you-begin"></a><a name="before"></a>Перед началом
+### <a name="before-you-begin"></a><a name="before"></a>Подготовка к работе
 
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "94661194"
 
 | Виртуальная сеть | Адресное пространство | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
-| ClassicVNet |(10.0.0.0/24) |западная часть США | RMVNetLocal (192.168.0.0/16) |
+| ClassicVNet |(10.0.0.0/24) |Западная часть США | RMVNetLocal (192.168.0.0/16) |
 | RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |
 
 ## <a name="section-1---configure-the-classic-vnet-settings"></a><a name="classicvnet"></a>Раздел 1. Настройка классической виртуальной сети
@@ -172,7 +172,7 @@ ms.locfileid: "94661194"
 
 | Виртуальная сеть | Адресное пространство | Регион | Подключается к сайту локальной сети |Общедоступный IP-адрес|
 |:--- |:--- |:--- |:--- |:--- |
-| ClassicVNet |(10.0.0.0/24) |западная часть США | RMVNetLocal (192.168.0.0/16) |Общедоступный IP-адрес, назначенный шлюзу ClassicVNet|
+| ClassicVNet |(10.0.0.0/24) |Западная часть США | RMVNetLocal (192.168.0.0/16) |Общедоступный IP-адрес, назначенный шлюзу ClassicVNet|
 | RMVNet | (192.168.0.0/16) |Восточная часть США |ClassicVNetLocal (10.0.0.0/24) |Общедоступный IP-адрес, назначенный шлюзу RMVNet|
 
 Шлюз локальной сети задает диапазон адресов и общедоступный IP-адрес, связанный с классической виртуальной сетью и ее шлюзом. При выполнении этих действий в качестве упражнения используйте примеры значений.

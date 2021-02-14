@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: cbded0a9c905bb488e1bae0f92d777e2e7ed7441
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: a9edd93aa265622732be4a7582cce9900959bf6d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630859"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374989"
 ---
 # <a name="smb-multichannel-performance"></a>Производительность SMB Multichannel
 
@@ -110,7 +110,7 @@ ms.locfileid: "98630859"
 
 - На одном сетевом адаптере с большим средним размером ввода-вывода (> ~ 16 КБ) были внесены значительные улучшения в операции чтения и записи.
 - Для меньших размеров ввода-вывода при включении многоканального протокола SMB было незначительным влиянием примерно 10% на производительность. Это можно уменьшить за счет распределения нагрузки по нескольким файлам или отключения функции.
-- Производительность по-прежнему ограничена  [одними ограничениями на отдельные файлы](storage-files-scale-targets.md#file-level-limits).
+- Производительность по-прежнему ограничена [одними ограничениями на отдельные файлы](storage-files-scale-targets.md#file-scale-targets).
 
 ## <a name="optimizing-performance"></a>Оптимизация производительности
 
@@ -130,7 +130,7 @@ ms.locfileid: "98630859"
 
 Более высокие размеры операций ввода-вывода повышают пропускную способность и имеют более высокие задержки, что приводит к снижению числа операций ввода-вывода в секунду. Меньшие размеры ввода-вывода повышают скорость операций ввода-вывода, но при этом снижается пропускная способность и задержка.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Включение многоканального SMB в учетной записи Филестораже (Предварительная версия)](storage-files-enable-smb-multichannel.md)
 - Дополнительные сведения о многоканальном SMB см. в [документации по Windows](/azure-stack/hci/manage/manage-smb-multichannel) .

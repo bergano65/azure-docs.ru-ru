@@ -3,12 +3,12 @@ title: Защита Функций Azure
 description: Узнайте, как улучшить защиту кода функций, выполняемых в Azure, от распространенных атак.
 ms.date: 4/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: ee54ff8c1efaee00999888891e6de255060aa416
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 351bdca7ff94b6c058b5ab62fd9c16d707e7dc78
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491330"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368495"
 ---
 # <a name="securing-azure-functions"></a>Защита Функций Azure
 
@@ -107,6 +107,8 @@ ms.locfileid: "94491330"
 
 [!INCLUDE [app-service-managed-identities](../../includes/app-service-managed-identities.md)]
 
+Управляемые удостоверения можно использовать вместо секретов для подключений из некоторых триггеров и привязок. См. раздел [подключения на основе удостоверений](#identity-based-connections).
+
 Дополнительные сведения см. в статье [Использование управляемых удостоверений в Службе приложений и Функциях Azure](../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json).
 
 #### <a name="restrict-cors-access"></a>Ограничение доступа CORS
@@ -136,6 +138,14 @@ ms.locfileid: "94491330"
 Хотя параметров приложения достаточно для большинства функций, иногда одни и те же секреты требуется совместно использовать в нескольких службах. В этом случае избыточное хранение секретов приводит к появлению дополнительных потенциальных уязвимостей. Более безопасный подход — использовать централизованную службу хранения секретов и ссылаться на нее, а не на сами секреты.      
 
 Служба [Azure Key Vault](../key-vault/general/overview.md) обеспечивает централизованное управление секретами и полный контроль над политиками доступа и журналами аудита. Ссылку на Key Vault можно использовать вместо строки подключения или ключа в параметрах приложения. Дополнительные сведения см. в статье [Использование ссылок на Key Vault в Службе приложений и Функциях Azure](../app-service/app-service-key-vault-references.md?toc=%2fazure%2fazure-functions%2ftoc.json).
+
+### <a name="identity-based-connections"></a>Подключения на основе удостоверений
+
+Удостоверения могут использоваться вместо секретов для подключения к некоторым ресурсам. Это имеет преимущество не требует управления секретом и обеспечивает более детализированное управление доступом и аудит. 
+
+При написании кода, который создает подключение к [службам Azure, поддерживающим проверку подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), можно использовать удостоверение вместо секрета или строки подключения. Сведения о обоих методах подключения описаны в документации по каждой службе.
+
+Некоторые расширения триггеров и привязок функций Azure можно настроить с помощью подключения на основе удостоверений. В настоящее время сюда входят расширения [больших двоичных объектов Azure](./functions-bindings-storage-blob.md) и [очередей Azure](./functions-bindings-storage-queue.md) . Сведения о том, как настроить эти расширения для использования удостоверения, см. [в статье Использование подключений на основе удостоверений в функциях Azure](./functions-reference.md#configure-an-identity-based-connection).
 
 ### <a name="set-usage-quotas"></a>Настройка квот на использование
 

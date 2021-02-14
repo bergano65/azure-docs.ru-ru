@@ -10,13 +10,13 @@ ms.custom: how-to, devx-track-azurecli
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 09/30/2020
-ms.openlocfilehash: 5ba1b9d53255406a73b1b74dbc59fe39e3f9a0d7
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.date: 02/09/2021
+ms.openlocfilehash: 75ea473c8669e9d50d2e9971a20a5fc1c3070779
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979187"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368019"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Настройка частной ссылки Azure для Машинное обучение Azure рабочей области
 
@@ -31,8 +31,9 @@ ms.locfileid: "99979187"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы планируете использовать рабочую область с включенной частной связью с ключом, управляемым клиентом, необходимо запросить эту функцию с помощью запроса в службу поддержки. Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
+* Если вы планируете использовать рабочую область с включенной частной связью с ключом, управляемым клиентом, необходимо запросить эту функцию с помощью запроса в службу поддержки. Дополнительные сведения см. в статье [Управление квотами и их увеличение](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases).
 
+* Для создания частной конечной точки в необходимо наличие существующей виртуальной сети. Необходимо также [отключить сетевые политики для частных конечных точек](../private-link/disable-private-endpoint-network-policy.md) перед добавлением частной конечной точки.
 ## <a name="limitations"></a>Ограничения
 
 * Использование рабочей области Машинное обучение Azure с частной ссылкой недоступна в регионах Azure для государственных организаций или в регионах Azure для Китая.
@@ -63,7 +64,7 @@ ws = Workspace.create(name='myworkspace',
     show_output=True)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_create) . Следующие параметры этой команды можно использовать для создания рабочей области с частной сетью, но для нее требуется существующая виртуальная сеть.
 
@@ -71,7 +72,20 @@ ws = Workspace.create(name='myworkspace',
 * `--pe-auto-approval`— Следует ли автоматически утверждать подключения частной конечной точки к рабочей области.
 * `--pe-resource-group`: Группа ресурсов для создания частной конечной точки в. Должна быть той же группой, которая содержит виртуальную сеть.
 * `--pe-vnet-name`— Существующая виртуальная сеть для создания частной конечной точки в.
-* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
+* `--pe-subnet-name`— Имя подсети, в которой создается частная конечная точка. Значение по умолчанию — `default`.
+
+Эти параметры помимо других обязательных параметров для команды Create. Например, следующая команда создает новую рабочую область в регионе "Западная часть США", используя существующую группу ресурсов и виртуальную сеть:
+
+```azurecli
+az ml workspace create -r myresourcegroup \
+    -l westus \
+    -n myworkspace \
+    --pe-name myprivateendpoint \
+    --pe-auto-approval \
+    --pe-resource-group myresourcegroup \
+    --pe-vnet-name myvnet \
+    --pe-subnet-name mysubnet
+```
 
 # <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -82,10 +96,6 @@ ws = Workspace.create(name='myworkspace',
 ## <a name="add-a-private-endpoint-to-a-workspace"></a>Добавление частной конечной точки в рабочую область
 
 Чтобы добавить частную конечную точку в существующую рабочую область, используйте один из следующих методов.
-
-> [!IMPORTANT]
->
-> Для создания частной конечной точки в необходимо наличие существующей виртуальной сети. Необходимо также [отключить сетевые политики для частных конечных точек](../private-link/disable-private-endpoint-network-policy.md) перед добавлением частной конечной точки.
 
 > [!WARNING]
 >
@@ -104,7 +114,7 @@ ws.add_private_endpoint(private_endpoint_config=pe, private_endpoint_auto_approv
 
 Дополнительные сведения о классах и методах, используемых в этом примере, см. в разделе [приватиндпоинтконфиг](/python/api/azureml-core/azureml.core.privateendpointconfig?view=azure-ml-py) and [Workspace.add_private_endpoint](/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#add-private-endpoint-private-endpoint-config--private-endpoint-auto-approval-true--location-none--show-output-true--tags-none-).
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Add](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
 
@@ -141,7 +151,7 @@ _, _, connection_name = ws.get_details()['privateEndpointConnections'][0]['id'].
 ws.delete_private_endpoint_connection(private_endpoint_connection_name=connection_name)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Private-Endpoint Delete](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
 
@@ -175,7 +185,7 @@ ws = Workspace.from_config()
 ws.update(allow_public_access_when_behind_vnet=True)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 [Расширение Azure CLI для машинного обучения](reference-azure-machine-learning-cli.md) предоставляет команду [AZ ML Workspace Update](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_update) . Чтобы включить общий доступ к рабочей области, добавьте параметр `--allow-public-access true` .
 
@@ -186,7 +196,7 @@ ws.update(allow_public_access_when_behind_vnet=True)
 ---
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о защите рабочей области Машинное обучение Azure см. в статье [Общие сведения о изоляции и конфиденциальности виртуальной сети](how-to-network-security-overview.md) .
 

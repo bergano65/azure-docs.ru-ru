@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0dcb6d24eacbe594a907f084874e76fea963c561
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0ac3141823eb72b17754a771cd63264fe851949d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725134"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365367"
 ---
 # <a name="control-access-with-sensitivity-labels"></a>Управление доступом с помощью меток чувствительности 
 
@@ -66,7 +66,7 @@ ms.locfileid: "98725134"
 
 * Какие значения по умолчанию должны быть размещены для HBI данных, сайтов или групп Microsoft 365?
 
-* Где вы будете использовать метки чувствительности для [меток и мониторинга](/microsoft-365/compliance/label-analytics?view=o365-worldwide), а также для [обеспечения шифрования](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) или [принудительного применения ограничений доступа к контейнеру](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
+* Где вы будете использовать метки чувствительности для [меток и мониторинга](/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide), а также для [обеспечения шифрования](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) или [принудительного применения ограничений доступа к контейнеру](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
 
 **Для электронной почты и содержимого**
 

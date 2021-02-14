@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 4031e43b3ec6f6f451fbc4888cc482249042690b
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 155df45d975a30991edc80d587445d699a8d2695
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582729"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103232"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Классическое приложение, вызывающее веб-API: регистрация приложения
 
@@ -49,7 +49,7 @@ URI перенаправления для использования в клас
 - Если приложение использует только встроенную проверку подлинности Windows или имя пользователя и пароль, вам не нужно регистрировать универсальный код ресурса (URI) перенаправления для приложения. Эти потоки выполняют циклическое обращение к конечной точке платформы Microsoft Identity Platform версии 2.0. Приложение не будет вызываться обратно по любому конкретному URI.
 - Чтобы отличать [поток кода устройства](scenario-desktop-acquire-token.md#device-code-flow), [встроенную проверку подлинности Windows](scenario-desktop-acquire-token.md#integrated-windows-authentication)и [имя пользователя и пароль](scenario-desktop-acquire-token.md#username-and-password) из конфиденциального клиентского приложения с помощью потока учетных данных клиента, используемого в [управляющих приложениях](scenario-daemon-overview.md), ни один из них не требует URI перенаправления, настройте его как общедоступное клиентское приложение. Для достижения этой конфигурации они делают следующее.
 
-    1. В <a href="https://portal.azure.com/" target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span> портал Azure</a>выберите свое приложение в **Регистрация приложений**, а затем выберите **Проверка подлинности**.
+    1. В <a href="https://portal.azure.com/" target="_blank">портал Azure</a>выберите свое приложение в **Регистрация приложений**, а затем выберите **Проверка подлинности**.
     1. В **дополнительных параметрах**  >  **разрешите общедоступные потоки клиентов**  >  **включить следующие мобильные и настольные потоки:** выберите **Да**.
 
         :::image type="content" source="media/scenarios/default-client-type.png" alt-text="Включить общедоступный параметр клиента на панели проверки подлинности в портал Azure":::

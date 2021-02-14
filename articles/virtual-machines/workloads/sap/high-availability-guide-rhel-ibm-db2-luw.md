@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: juergent
-ms.openlocfilehash: 85f268990ac9e0c04cba1b9c409a232a24ce0d61
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 8202b9bd496b4f539df99e35a3118ed109dbd31c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608640"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365112"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в Red Hat Enterprise Linux Server
 
@@ -145,10 +145,6 @@ HADR — это только функция репликации. Он не им
     + Используйте Red Hat Enterprise Linux для образа SAP в Azure Marketplace.
     + Выберите группу доступности Azure, созданную на шаге 3, или выберите зону доступности (не та же зона, что и на шаге 3).
 1. Добавьте диски данных к виртуальным машинам, а затем проверьте рекомендацию по установке файловой системы в статье [развертывание СУБД IBM DB2 Azure для рабочей нагрузки SAP][dbms-db2].
-
-## <a name="create-the-pacemaker-cluster"></a>Создание кластера Pacemaker
-    
-Сведения о создании базового кластера Pacemaker для этого сервера IBM DB2 см. в статье [Настройка Pacemaker на Red Hat Enterprise Linux в Azure][rhel-pcs-azr]. 
 
 ## <a name="install-the-ibm-db2-luw-and-sap-environment"></a>Установка среды IBM DB2 LUW и SAP
 
@@ -277,7 +273,6 @@ SOCK_RECV_BUF_REQUESTED,ACTUAL(bytes) = 0, 369280
              READS_ON_STANDBY_ENABLED = N
 
 
-
 #Secondary output:
 Database Member 0 -- Database ID2 -- Standby -- Up 1 days 15:45:18 -- Date 2019-06-25-10.56.19.820474
 
@@ -324,10 +319,78 @@ SOCK_RECV_BUF_REQUESTED,ACTUAL(bytes) = 0, 367360
                  PEER_WINDOW(seconds) = 1000
                       PEER_WINDOW_END = 06/25/2019 11:12:59.000000 (1561461179)
              READS_ON_STANDBY_ENABLED = N
-
 </code></pre>
 
+### <a name="configure-azure-load-balancer"></a>Настройка Azure Load Balancer
 
+Чтобы настроить Azure Load Balancer, рекомендуется использовать [номер SKU Azure Load Balancer (цен. Категория "Стандартный")](../../../load-balancer/load-balancer-overview.md) , а затем выполнить следующие действия.
+
+> [!NOTE]
+> Номер SKU Load Balancer (цен. категория "Стандартный") имеет ограничения на доступ к общедоступным IP-адресам с узлов, расположенных под Load Balancer. Сведения о том, как разрешить этим узлам доступ к общедоступным IP-адресам, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. Категория "Стандартный") в сценариях с высоким уровнем доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md) .
+
+> [!IMPORTANT]
+> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](../../../load-balancer/load-balancer-multivip-overview.md#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
+
+1. Создайте интерфейсный пул IP-адресов:
+
+   а. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов** и нажмите кнопку **Добавить**.
+
+   b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
+
+   c. Установите статическое **назначение** и введите IP-адрес **Virtual-IP** , определенный в начале.
+
+   d. Щелкните **ОК**.
+
+   д) Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
+
+1. Создайте пул серверной части:
+
+   а. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы** и нажмите кнопку **Добавить**.
+
+   b. Введите имя нового пула серверной части (например, **DB2-Серверная** часть).
+
+   c. Щелкните **Добавить виртуальную машину**.
+
+   d. Выберите группу доступности или виртуальные машины, на которых размещена база данных IBM DB2, созданная на предыдущем шаге.
+
+   д. Выберите виртуальные машины кластера IBM DB2.
+
+   е) Щелкните **ОК**.
+
+1. Создание пробы работоспособности:
+
+   а. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности** и нажмите кнопку **Добавить**.
+
+   b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
+
+   c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5** и установите для параметра **порог неработоспособности** значение **2**.
+
+   d. Щелкните **ОК**.
+
+1. Создайте правила балансировки нагрузки.
+
+   а. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
+
+   b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
+
+   c. Выберите интерфейсный IP-адрес, пул внутренних серверов и пробы работоспособности, созданные ранее (например, **DB2-** Front).
+
+   d. Установите для параметра **протокол** значение **TCP** и введите порт *связи с базой данных* порта.
+
+   д. Увеличьте **время ожидания** до 30 минут.
+
+   f. Не забудьте **включить плавающий IP-адрес**.
+
+   ж. Щелкните **ОК**.
+
+**[A]** добавьте правило брандмауэра для пробного порта:
+
+<pre><code>sudo firewall-cmd --add-port=<b><probe-port></b>/tcp --permanent
+sudo firewall-cmd --reload</code></pre>
+
+## <a name="create-the-pacemaker-cluster"></a>Создание кластера Pacemaker
+    
+Сведения о создании базового кластера Pacemaker для этого сервера IBM DB2 см. в статье [Настройка Pacemaker на Red Hat Enterprise Linux в Azure][rhel-pcs-azr]. 
 
 ## <a name="db2-pacemaker-configuration"></a>Конфигурация Pacemaker DB2
 
@@ -345,8 +408,7 @@ SOCK_RECV_BUF_REQUESTED,ACTUAL(bytes) = 0, 367360
 <pre><code># Install korn shell:
 sudo yum install ksh
 # Change users shell:
-sudo usermod -s /bin/ksh db2&lt;sid&gt;</code></pre>
-   
+sudo usermod -s /bin/ksh db2&lt;sid&gt;</code></pre>  
 
 ### <a name="pacemaker-configuration"></a>Конфигурация Pacemaker
 
@@ -356,6 +418,9 @@ sudo pcs property set maintenance-mode=true
 </code></pre>
 
 **[1]** создайте ресурсы IBM DB2:
+
+При создании кластера на **RHEL 7. x** используйте следующие команды:
+
 <pre><code># Replace <b>bold strings</b> with your instance name db2sid, database SID, and virtual IP address/Azure Load Balancer.
 sudo pcs resource create Db2_HADR_<b>ID2</b> db2 instance='<b>db2id2</b>' dblist='<b>ID2</b>' master meta notify=true resource-stickiness=5000
 
@@ -378,94 +443,60 @@ sudo pcs constraint colocation add g_ipnc_<b>db2id2</b>_<b>ID2</b> with master D
 sudo pcs constraint order promote Db2_HADR_<b>ID2</b>-master then g_ipnc_<b>db2id2</b>_<b>ID2</b>
 </code></pre>
 
+При создании кластера на **RHEL 8. x** используйте следующие команды:
+
+<pre><code># Replace <b>bold strings</b> with your instance name db2sid, database SID, and virtual IP address/Azure Load Balancer.
+sudo pcs resource create Db2_HADR_<b>ID2</b> db2 instance='<b>db2id2</b>' dblist='<b>ID2</b>' promotable meta notify=true resource-stickiness=5000
+
+#Configure resource stickiness and correct cluster notifications for master resoruce
+sudo pcs resource update Db2_HADR_<b>ID2</b>-clone meta notify=true resource-stickiness=5000
+
+# Configure virtual IP - same as Azure Load Balancer IP
+sudo pcs resource create vip_<b>db2id2</b>_<b>ID2</b> IPaddr2 ip='<b>10.100.0.40</b>'
+
+# Configure probe port for Azure load Balancer
+sudo pcs resource create nc_<b>db2id2</b>_<b>ID2</b> azure-lb port=<b>62500</b>
+
+#Create a group for ip and Azure loadbalancer probe port
+sudo pcs resource group add g_ipnc_<b>db2id2</b>_<b>ID2</b> vip_<b>db2id2</b>_<b>ID2</b> nc_<b>db2id2</b>_<b>ID2</b>
+
+#Create colocation constrain - keep Db2 HADR Master and Group on same node
+sudo pcs constraint colocation add g_ipnc_<b>db2id2</b>_<b>ID2</b> with master Db2_HADR_<b>ID2</b>-clone
+
+#Create start order constrain
+sudo pcs constraint order promote Db2_HADR_<b>ID2</b>-clone then g_ipnc_<b>db2id2</b>_<b>ID2</b>
+</code></pre>
+
 **[1]** ЗАПУСТИТЕ ресурсы IBM DB2:
 * Перевести Pacemaker в режим обслуживания.
 <pre><code># Put Pacemaker out of maintenance-mode - that start IBM Db2
 sudo pcs property set maintenance-mode=false</pre></code>
 
 **[1]** убедитесь, что кластер имеет состояние "ОК" и все ресурсы запущены. Не важно, на каком узле работают ресурсы.
-<pre><code>sudo pcs status</code>
+<pre><code>sudo pcs status
 2 nodes configured
 5 resources configured
 
-Online: [AZ-idb01 AZ-idb02]
+Online: [ az-idb01 az-idb02 ]
 
-Полный список ресурсов:
+Full list of resources:
 
- rsc_st_azure (stonith: fence_azure_arm): запущен AZ-idb01 главный/ведомый набор: Db2_HADR_ID2-Master [Db2_HADR_ID2]. [AZ-idb01] Slave: [AZ-idb02] Группа ресурсов: g_ipnc_db2id2_ID2 vip_db2id2_ID2 (ОКФ:: пульс: IPaddr2): запущено AZ-idb01 nc_db2id2_ID2 (ОКФ:: пульс: Azure-фунтов): Started-idb01
+ rsc_st_azure   (stonith:fence_azure_arm):      Started az-idb01
+ Master/Slave Set: Db2_HADR_ID2-master [Db2_HADR_ID2]
+     Masters: [ az-idb01 ]
+     Slaves: [ az-idb02 ]
+ Resource Group: g_ipnc_db2id2_ID2
+     vip_db2id2_ID2     (ocf::heartbeat:IPaddr2):       Started az-idb01
+     nc_db2id2_ID2      (ocf::heartbeat:azure-lb):      Started az-idb01
 
-Состояние управляющей программы: corosync: Active/Disabled Pacemaker: Active/Disabled ПКСД: Active/Enabled
-</pre>
+Daemon Status:
+  corosync: active/disabled
+  pacemaker: active/disabled
+  pcsd: active/enabled
+</code></pre>
 
 > [!IMPORTANT]
 > Необходимо управлять экземпляром Clustered DB2 Pacemaker с помощью средств Pacemaker. При использовании таких команд DB2, как db2stop, Pacemaker обнаруживает это действие как сбой ресурса. При выполнении обслуживания можно перевести узлы или ресурсы в режим обслуживания. Pacemaker приостанавливает ресурсы мониторинга, а затем можно использовать обычные команды администрирования DB2.
-
-
-### <a name="configure-azure-load-balancer"></a>Настройка Azure Load Balancer
-Чтобы настроить Azure Load Balancer, рекомендуется использовать [номер SKU Azure Load Balancer (цен. Категория "Стандартный")](../../../load-balancer/load-balancer-overview.md) , а затем выполнить следующие действия.
-
-> [!NOTE]
-> Номер SKU Load Balancer (цен. категория "Стандартный") имеет ограничения на доступ к общедоступным IP-адресам с узлов, расположенных под Load Balancer. Сведения о том, как разрешить этим узлам доступ к общедоступным IP-адресам, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. Категория "Стандартный") в сценариях с высоким уровнем доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md) .
-
-> [!IMPORTANT]
-> Плавающий IP-адрес не поддерживается для вторичной IP-конфигурации NIC в сценариях балансировки нагрузки. Дополнительные сведения см. в статье [ограничения балансировщика нагрузки Azure](../../../load-balancer/load-balancer-multivip-overview.md#limitations). Если для виртуальной машины требуется дополнительный IP-адрес, разверните вторую сетевую карту.  
-
-
-1. Создайте интерфейсный пул IP-адресов:
-
-   a. В портал Azure откройте Azure Load Balancer, выберите **интерфейсный пул IP-адресов** и нажмите кнопку **Добавить**.
-
-   b. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
-
-   c. Установите статическое **назначение** и **Static** введите IP-адрес **Virtual-IP** , определенный в начале.
-
-   d. Щелкните **ОК**.
-
-   д) Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
-
-1. Создайте пул серверной части:
-
-   a. В портал Azure откройте Azure Load Balancer, выберите **серверные пулы** и нажмите кнопку **Добавить**.
-
-   b. Введите имя нового пула серверной части (например, **DB2-Серверная** часть).
-
-   c. Щелкните **Добавить виртуальную машину**.
-
-   г. Выберите группу доступности или виртуальные машины, на которых размещена база данных IBM DB2, созданная на предыдущем шаге.
-
-   д) Выберите виртуальные машины кластера IBM DB2.
-
-   е) Щелкните **ОК**.
-
-1. Создание пробы работоспособности:
-
-   a. В портал Azure откройте Azure Load Balancer, выберите **зонды работоспособности** и нажмите кнопку **Добавить**.
-
-   b. Введите имя новой проверки работоспособности (например, **DB2-HP**).
-
-   c. Выберите **TCP** в качестве протокола и порта **62500**. Установите для параметра **интервал** значение **5** и установите для параметра **порог неработоспособности** значение **2**.
-
-   d. Щелкните **ОК**.
-
-1. Создайте правила балансировки нагрузки.
-
-   a. В портал Azure откройте Azure Load Balancer, выберите **правила балансировки нагрузки**, а затем нажмите кнопку **Добавить**.
-
-   b. Введите имя нового правила Load Balancer (например, **DB2-SID**).
-
-   c. Выберите интерфейсный IP-адрес, пул внутренних серверов и пробы работоспособности, созданные ранее (например, **DB2-** Front).
-
-   г. Установите для параметра **протокол** значение **TCP** и введите порт *связи с базой данных* порта.
-
-   д) Увеличьте **время ожидания** до 30 минут.
-
-   е) Не забудьте **включить плавающий IP-адрес**.
-
-   ж. Щелкните **ОК**.
-
-**[A]** добавьте правило брандмауэра для пробного порта:
-<pre><code>sudo firewall-cmd --add-port=<b><probe-port></b>/tcp --permanent
-sudo firewall-cmd --reload</code></pre>
 
 ### <a name="make-changes-to-sap-profiles-to-use-virtual-ip-for-connection"></a>Внесение изменений в профили SAP для использования виртуального IP-адреса для подключения
 Чтобы подключиться к основному экземпляру конфигурации HADR, уровень приложений SAP должен использовать виртуальный IP-адрес, определенный и настроенный для Azure Load Balancer. Требуются следующие изменения:
@@ -479,11 +510,9 @@ j2ee/dbhost = db-virt-hostname
 <pre><code>Hostname=db-virt-hostname
 </code></pre>
 
-
-
 ## <a name="install-primary-and-dialog-application-servers"></a>Установка основных и диалоговых серверов приложений
 
-При установке основного и диалогового сервера приложений для конфигурации DB2 HADR используйте имя виртуального узла, выбранное для конфигурации. 
+При установке основного и диалогового сервера приложений для конфигурации DB2 HADR используйте имя виртуального узла, выбранное для конфигурации.
 
 Если вы выполнили установку до создания конфигурации DB2 HADR, внесите изменения, как описано в предыдущем разделе, а также для стеков SAP Java.
 
@@ -507,6 +536,7 @@ j2ee/dbhost = db-virt-hostname
 1. Перезапустите экземпляр Java.
 
 ## <a name="configure-log-archiving-for-hadr-setup"></a>Настройка архивирования журналов для установки HADR
+
 Чтобы настроить архивацию журналов DB2 для программы установки HADR, рекомендуется настроить базу данных как в основной, так и в резервной, чтобы иметь возможность автоматического получения журналов из всех расположений архива журналов. Как основная, так и резервная база данных должна иметь возможность получения файлов архивов журналов из всех расположений архивов журналов, в которые один из экземпляров базы данных может архивировать файлы журналов. 
 
 Архивирование журналов выполняется только базой данных-источником. При изменении ролей HADR серверов баз данных или при возникновении сбоя новая база данных-источник отвечает за архивирование журналов. Если вы настроили несколько расположений архивов журналов, журналы могут быть архивированы дважды. В случае локального или удаленного обнаружения может также потребоваться вручную скопировать Архивные журналы с старого сервера-источника в активное расположение журнала нового сервера-источника.
@@ -553,9 +583,6 @@ Daemon Status:
 
 ![DBACockpit — Предварительная миграция](./media/high-availability-guide-rhel-ibm-db2-luw/hadr-sap-mgr-org-rhel.png)
 
-
-
-
 ### <a name="test-takeover-of-ibm-db2"></a>Тестирование перенаправление IBM DB2
 
 
@@ -565,9 +592,12 @@ Daemon Status:
 > * Отсутствуют ограничения расположения (оставшиеся тесты миграции)
 > * Синхронизация IBM DB2 HADR работает. Проверка с помощью пользовательской DB2\<sid> <pre><code>db2pd -hadr -db \<DBSID></code></pre>
 
-
 Перенесите узел, на котором выполняется первичная база данных DB2, выполнив следующую команду:
-<pre><code>sudo pcs resource move Db2_HADR_<b>ID2</b>-master</code></pre>
+<pre><code># On RHEL 7.x
+sudo pcs resource move Db2_HADR_<b>ID2</b>-master
+# On RHEL 8.x
+sudo pcs resource move Db2_HADR_<b>ID2</b>-clone --master
+</code></pre>
 
 После завершения миграции выходные данные состояния CRM выглядят следующим образом:
 <pre><code>2 nodes configured
@@ -594,8 +624,13 @@ Full list of resources:
 При переносе ресурсов с "перемещение ресурсов на ПК" создаются ограничения расположения. Ограничения расположения в этом случае препятствуют запуску экземпляра IBM DB2 на AZ-idb01. Если ограничения расположения не удаляются, ресурс не может восстановить размещение.
 
 Удалите узел с ограничением расположения и резервным узлом, который будет запущен с помощью команды AZ-idb01.
-<pre><code>sudo pcs resource clear Db2_HADR_<b>ID2</b>-master</code></pre>
+<pre><code># On RHEL 7.x
+sudo pcs resource clear Db2_HADR_<b>ID2</b>-master
+# On RHEL 8.x
+sudo pcs resource clear Db2_HADR_<b>ID2</b>-clone</code></pre>
+
 И состояние кластера изменится на:
+
 <pre><code>2 nodes configured
 5 resources configured
 
@@ -613,13 +648,16 @@ Full list of resources:
 
 ![DBACockpit — ограничение расположения удалено](./media/high-availability-guide-rhel-ibm-db2-luw/hadr-sap-mgr-clear-rhel.png)
 
-
 Перенесите ресурс обратно в *AZ-idb01* и очистите ограничения расположения.
-<pre><code>sudo pcs resource move Db2_HADR_<b>ID2</b>-master az-idb01
+<pre><code># On RHEL 7.x
+sudo pcs resource move Db2_HADR_<b>ID2</b>-master az-idb01
 sudo pcs resource clear Db2_HADR_<b>ID2</b>-master
-</code></pre>
+# On RHEL 8.x
+sudo pcs resource move Db2_HADR_<b>ID2</b>-clone --master
+sudo pcs resource clear Db2_HADR_<b>ID2</b>-clone</code></pre>
 
-- **Перемещение ресурсов ПК \<res_name> <host> :** создает ограничения расположения и может вызвать проблемы с перенаправление
+- **В RHEL 7. x — перемещение ресурсов на компьютерах \<res_name> <host> :** создает ограничения расположения и может вызвать проблемы с перенаправление
+- **На RHEL 8. x — перемещение ресурсов на компьютерах \<res_name> --master:** создание ограничений расположения и может вызвать проблемы с перенаправление
 - **ресурсы ПК Clear \<res_name>**: очищает ограничения расположения
 - **Очистка \<res_name> ресурсов ПК**: очищает все ошибки ресурса.
 
@@ -763,7 +801,7 @@ Failed Actions:
 
 ### <a name="crash-the-vm-that-runs-the-hadr-primary-database-instance-with-halt"></a>Сбой виртуальной машины, на которой выполняется экземпляр базы данных HADR, с "Halt"
 
-<pre><code>#Linux kernel panic. 
+<pre><code>#Linux kernel panic.
 sudo echo b > /proc/sysrq-trigger</code></pre>
 
 В этом случае Pacemaker обнаружит, что узел, на котором выполняется экземпляр базы данных-источника, не отвечает.
@@ -821,7 +859,7 @@ rsc_st_azure    (stonith:fence_azure_arm):      Started az-idb02
      vip_db2id2_ID2     (ocf::heartbeat:IPaddr2):       Started az-idb02
      nc_db2id2_ID2      (ocf::heartbeat:azure-lb):      Started az-idb02</code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Высокодоступная архитектура и сценарии для SAP NetWeaver](./sap-high-availability-architecture-scenarios.md)
 - [Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure][rhel-pcs-azr]
 

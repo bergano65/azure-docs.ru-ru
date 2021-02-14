@@ -1,22 +1,17 @@
 ---
 title: Выполнение пакетов SQL Server Integration Services (SSIS) с помощью служебной программы dtexec с поддержкой Azure
 description: Узнайте, как выполнять пакеты SQL Server Integration Services (SSIS) с помощью служебной программы dtexec с поддержкой Azure.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/12/2020
 author: swinarko
 ms.author: sawinark
-manager: mflasko
-ms.reviewer: douglasl
-ms.openlocfilehash: 90c269435f8df2cb3e7aeedc8ff561693c831a09
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 980e8e3c2f2c1ca1dc716df1e77caaa3fe3181aa
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556483"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386175"
 ---
 # <a name="run-sql-server-integration-services-packages-with-the-azure-enabled-dtexec-utility"></a>Выполнение пакетов SQL Server Integration Services с помощью служебной программы dtexec с поддержкой Azure
 
@@ -93,7 +88,7 @@ ms.locfileid: "98556483"
 > [!NOTE]
 > При вызове Азуредтексек с новыми значениями параметров создается новый конвейер, за исключением параметра **/de [нарий]**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После того как уникальные конвейеры с действием выполнение пакета служб SSIS в них создаются и запускаются при вызове Азуредтексек, их можно отслеживать на портале фабрики данных. Вы также можете назначить им триггеры фабрики данных, если вы хотите управлять ими или запланировать их с помощью фабрики данных. Дополнительные сведения см. в статье [выполнение пакетов служб SSIS в качестве действий фабрики данных](./how-to-invoke-ssis-package-ssis-activity.md).
 
