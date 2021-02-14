@@ -1,22 +1,17 @@
 ---
 title: Веб-действие в фабрике данных Azure
 description: Сведения об использовании веб-действия, одного из действий потока управления, поддерживаемых в фабрике данных, для вызова конечной точки REST из конвейера.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/19/2018
-ms.openlocfilehash: fbe37152f4ff1ce24754bc2d7b968c8e1c76ca10
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: e4578b41e5cbb62c8a1bfa0c48d4fd60d042a506
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387723"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361525"
 ---
 # <a name="web-activity-in-azure-data-factory"></a>Веб-действие в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -103,7 +98,7 @@ connectVia | [Среда выполнения интеграции](./concepts-i
 
 Ниже приведены поддерживаемые типы проверки подлинности в веб-действии.
 
-### <a name="none"></a>Нет
+### <a name="none"></a>None
 
 Если проверка подлинности не требуется, не включайте свойство authentication.
 

@@ -30,6 +30,9 @@
     - name: Политика управления версиями
       href: concepts-version-policy.md
       displayName: 'version, postgresql'
+    - name: Известные проблемы и ограничения
+      href: concepts-known-issues-limitations.md
+      displayName: 'issues, limitations, postgresql'
 - name: Одиночный сервер
   expanded: true
   items:

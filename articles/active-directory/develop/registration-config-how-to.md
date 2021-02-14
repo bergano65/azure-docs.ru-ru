@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: ryanwi
 ROBOTS: NOINDEX
-ms.openlocfilehash: 3afaf654228511a357461a9e762be0b04acc65c6
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 778523869715916bf1e4c32af59ea7a0081df91b
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064170"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103317"
 ---
 # <a name="how-to-discover-endpoints"></a>Обнаружение конечных точек
 
 Конечные точки проверки подлинности для приложения можно найти на [портале Azure](https://portal.azure.com).
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**, а затем в верхнем меню выберите **конечные точки** .
 
@@ -34,6 +34,6 @@ ms.locfileid: "98064170"
 
 В **национальных облаках** (например, в Azure AD для Китая, Германии и США) есть собственный портал регистрации приложений и конечные точки проверки подлинности Azure AD. Дополнительные сведения см. в [обзоре национальных облаков](authentication-national-cloud.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о конечных точках в различных средах Azure см. в [обзоре национальных облаков](authentication-national-cloud.md).

@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: 0121ea65b190f254f032085133f12f6eb0f374ca
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: fcdccf6701afe73ab0f11a7a907072b01a9d5aa4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99808445"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373319"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -42,7 +42,7 @@ IMDS — это REST API, который доступен на хорошо из
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance?api-version=2020-09-01" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance?api-version=2020-09-01" | ConvertTo-Json -Depth 64
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -274,7 +274,7 @@ API IMDS содержит несколько категорий конечных
 | `/metadata/identity` | См. раздел [управляемое удостоверение через IMDS](#managed-identity) . | 2018-02-01
 | `/metadata/instance` | См. [метаданные экземпляра](#instance-metadata) | 2017-04-02
 | `/metadata/scheduledevents` | См. [запланированные события через IMDS](#scheduled-events) | 2017-08-01
-| `/metadata/versions` | См. [версии](#versions) | н/д
+| `/metadata/versions` | См. [версии](#versions) | Н/Д
 
 ## <a name="versions"></a>Версии
 
@@ -330,7 +330,7 @@ GET /metadata/instance
 
 Разбиение схемы:
 
-**Среда выполнения приложений**
+**Службы вычислений**
 
 | Данные | Описание | Представленная версия |
 |------|-------------|--------------------|
@@ -494,7 +494,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2020-09-01" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2020-09-01" | ConvertTo-Json -Depth 64
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -653,7 +653,7 @@ AzurePublicCloud
 #### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
-Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/network?api-version=2017-08-01" | ConvertTo-Json
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -NoProxy -Uri "http://169.254.169.254/metadata/instance/network?api-version=2017-08-01" | ConvertTo-Json  -Depth 64
 ```
 
 #### <a name="linux"></a>[Linux](#tab/linux/)
@@ -724,7 +724,7 @@ GET /metadata/attested/document
 | Имя | Обязательный/необязательный | Описание |
 |------|-------------------|-------------|
 | `api-version` | Обязательно | Версия, используемая для обслуживания запроса.
-| `nonce` | Необязательно | Строка из 10 цифр, которая служит в качестве криптографического nonce. Если значение не указано, IMDS использует текущую метку времени в формате UTC.
+| `nonce` | Необязательный | Строка из 10 цифр, которая служит в качестве криптографического nonce. Если значение не указано, IMDS использует текущую метку времени в формате UTC.
 
 #### <a name="response"></a>Ответ
 
@@ -947,7 +947,7 @@ openssl verify -verbose -CAfile /etc/ssl/certs/Baltimore_CyberTrust_Root.pem -un
 | `429 Too Many Requests` | Превышены [пределы частоты](#rate-limiting) API
 | `500 Service Error` | Повторите попытку через некоторое время
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 **Я получаю сообщение об ошибке `400 Bad Request, Required metadata header not specified` . Что это означает?**
 
@@ -1126,7 +1126,7 @@ route add 169.254.169.254/32 10.0.1.10 metric 1 -p
 
 Отзывы и идеи по продуктам можно предоставить в канале отзывов пользователей в разделе Виртуальные машины > служба метаданных экземпляра. https://feedback.azure.com/forums/216843-virtual-machines?category_id=394627
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Получение маркера доступа для виртуальной машины](../articles/active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
 

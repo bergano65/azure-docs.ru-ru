@@ -1,22 +1,17 @@
 ---
 title: Преобразование данных с помощью записной книжки кирпичей
-description: Узнайте, как обрабатывать и преобразовывать данные с помощью записной книжки Databricks.
-services: data-factory
-documentationcenter: ''
+description: Узнайте, как обрабатывать или преобразовывать данные, запустив в фабрике данных Azure записную книжку.
 ms.service: data-factory
-ms.workload: data-services
 author: nabhishek
 ms.author: abnarain
-manager: shwang
-ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 03/15/2018
-ms.openlocfilehash: 4679d06e877679f0a56ee782b9a43a5a8147d7a5
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 486dc2ab3a14917e8c7bdddf8b5b9c6f9da1a1dc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608125"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374003"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -67,7 +62,6 @@ ms.locfileid: "97608125"
 |baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Это может быть массив \<string, object> .|Нет|
 
-
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
 
 В приведенном выше определении действия "кирпичы данных" указываются следующие типы библиотек: *JAR*, *Egg*, *WHL*, *Maven*, *PyPI*, *Cran*.
@@ -110,31 +104,35 @@ ms.locfileid: "97608125"
 
 ```
 
-Дополнительные сведения см. в [документации Databricks](https://docs.azuredatabricks.net/api/latest/libraries.html#managedlibrarieslibrary) по типам библиотек.
+Дополнительные сведения см. в [документации Databricks](/azure/databricks/dev-tools/api/latest/libraries#managedlibrarieslibrary) по типам библиотек.
 
 ## <a name="passing-parameters-between-notebooks-and-data-factory"></a>Передача параметров между записными книжками и фабрикой данных
 
-Параметры фабрики данных можно передать в записные книжки с помощью свойства *басепараметерс* в действии модуля данных. 
+Параметры фабрики данных можно передать в записные книжки с помощью свойства *басепараметерс* в действии модуля данных.
 
-В некоторых случаях может потребоваться передача определенных значений из записной книжки обратно в фабрику данных, которую можно использовать для потока управления (условные проверки) в фабрике данных или для использования нисходящими действиями (ограничение размера — 2 МБ). 
+В некоторых случаях может потребоваться передача определенных значений из записной книжки обратно в фабрику данных, которую можно использовать для потока управления (условные проверки) в фабрике данных или для использования нисходящими действиями (ограничение размера — 2 МБ).
 
-1. В записной книжке вы можете вызвать [дбутилс. Notebook. Exit ("ReturnValue")](https://docs.azuredatabricks.net/user-guide/notebooks/notebook-workflows.html#notebook-workflows-exit) , и в фабрике данных будет возвращен соответствующий результат "ReturnValue".
+1. В записной книжке вы можете вызвать [дбутилс. Notebook. Exit ("ReturnValue")](/azure/databricks/notebooks/notebook-workflows#notebook-workflows-exit) , и в фабрике данных будет возвращен соответствующий результат "ReturnValue".
 
-2. Выходные данные в фабрике данных можно использовать с помощью выражения, такого как `'@activity('databricks notebook activity name').output.runOutput'` . 
+2. Выходные данные в фабрике данных можно использовать с помощью выражения, такого как `'@activity('databricks notebook activity name').output.runOutput'` .
 
    > [!IMPORTANT]
-   > При передаче объекта JSON значения можно получить, добавив имена свойств. Например, `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`.
+   > При передаче объекта JSON значения можно получить, добавив имена свойств. Пример: `'@activity('databricks notebook activity name').output.runOutput.PropertyName'`
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Отправка библиотеки в Databricks
 
-#### <a name="using-databricks-workspace-ui"></a>[С помощью пользовательского интерфейса рабочей области Databricks](https://docs.azuredatabricks.net/user-guide/libraries.html#create-a-library)
+### <a name="you-can-use-the-workspace-ui"></a>Вы можете использовать пользовательский интерфейс рабочей области:
 
-Чтобы получить путь к dbfs библиотеки, добавленной с помощью пользовательского интерфейса, можно использовать [интерфейс командной строки Databricks (установка)](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#install-the-cli). 
+1. [Использование пользовательского интерфейса рабочей области "кирпичи"](/azure/databricks/libraries/#create-a-library)
 
-Обычно библиотеки Jar, добавленные с помощью пользовательского интерфейса, хранятся в каталоге dbfs:/FileStore/jars. Вы можете получить список всех библиотек, выполнив следующую команду в интерфейсе командной строки: *databricks fs ls dbfs:/FileStore/jars*.
+2. Чтобы получить путь dBFS библиотеки, добавленной с помощью пользовательского интерфейса, можно использовать интерфейс [командной строки для модуля](/azure/databricks/dev-tools/cli/#install-the-cli)данных.
 
+   Обычно библиотеки Jar, добавленные с помощью пользовательского интерфейса, хранятся в каталоге dbfs:/FileStore/jars. Вы можете получить список всех библиотек, выполнив следующую команду в интерфейсе командной строки: *databricks fs ls dbfs:/FileStore/job-jars*.
 
+### <a name="or-you-can-use-the-databricks-cli"></a>Также можно использовать интерфейс командной строки для модуля:
 
-#### <a name="copy-library-using-databricks-cli"></a>[Копирование библиотеки с помощью интерфейса командной строки Databricks](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#copy-a-file-to-dbfs)
+1. Следуйте инструкциям [по копированию библиотеки с помощью интерфейса командной строки для модуля](/azure/databricks/dev-tools/cli/#copy-a-file-to-dbfs) обработки
 
-Пример: *databricks fs cp SparkPi-assembly-0.1.jar dbfs:/FileStore/jars*
+2. Использование интерфейса командной строки кирпичей [(этапы установки)](/azure/databricks/dev-tools/cli/#install-the-cli)
+
+   Например, чтобы скопировать JAR-файл в dBFS: `dbfs cp SparkPi-assembly-0.1.jar dbfs:/docs/sparkpi.jar`

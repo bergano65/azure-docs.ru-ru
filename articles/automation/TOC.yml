@@ -252,6 +252,8 @@
           href: automation-solution-vm-management-config.md
         - name: Журналы запросов Запуска и остановки виртуальных машин в нерабочее время
           href: automation-solution-vm-management-logs.md
+        - name: Удаление Запуска и остановки виртуальных машин в нерабочее время
+          href: automation-solution-vm-management-remove.md
         - name: Устранение неполадок с Запуском и остановкой виртуальных машин в нерабочее время
           href: troubleshoot/start-stop-vm.md
     - name: Управление обновлениями

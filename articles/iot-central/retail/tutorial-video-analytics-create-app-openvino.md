@@ -8,12 +8,12 @@ ms.topic: tutorial
 author: KishorIoT
 ms.author: nandab
 ms.date: 10/06/2020
-ms.openlocfilehash: fbe1e84525eed47127a08abc9fb7ec5d1144d02f
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: a201a0300cb4ae0fba1a41b5f64838c17904fa83
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763623"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832102"
 ---
 # <a name="tutorial-create-a-video-analytics---object-and-motion-detection-application-in-azure-iot-central-openvinotrade"></a>Руководство по созданию видеоаналитики — приложения для распознавания объектов и движения в Azure IoT Central (OpenVINO&trade;)
 
@@ -125,3 +125,25 @@ ms.locfileid: "96763623"
 Перейдите в папку *lva-configuration* и выберите файл манифеста *deployment.openvino.amd64.json*, который вы изменили ранее. Щелкните **Отправить**. После завершения проверки нажмите кнопку **Заменить**.
 
 [!INCLUDE [iot-central-video-analytics-part4](../../../includes/iot-central-video-analytics-part4.md)]
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы завершили работу с приложением, можете удалить все созданные ресурсы следующим образом:
+
+1. В приложении IoT Central перейдите на страницу **Ваше приложение** в разделе **Администрирование**. Теперь щелкните **Удалить**.
+1. На портале Azure удалите группу ресурсов **lva-rg**.
+1. На локальном компьютере закройте контейнер Docker **amp-viewer**.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Вы создали приложение IoT Central с помощью шаблона приложения **Видеоаналитика — распознавание объектов и движения**, создали шаблон устройства шлюза и добавили в приложение устройство шлюза.
+
+Если вы хотите испытать приложение "Видеоаналитика — распознавание объектов и движения", используя модули IoT Edge в облачной виртуальной машине с имитированными потоками видео, ознакомьтесь со следующей статьей:
+
+> [!div class="nextstepaction"]
+> [Создание экземпляра IoT Edge для видеоаналитики (виртуальная машина Linux)](tutorial-video-analytics-iot-edge-vm.md)
+
+Если вы хотите испытать приложение "Видеоаналитика — распознавание объектов и движения", используя модули IoT Edge, работающие на реальном устройстве с реальной камерой **ONVIF**, ознакомьтесь со следующей статьей:
+
+> [!div class="nextstepaction"]
+> [Создание экземпляра IoT Edge для видеоаналитики (Intel NUC)](tutorial-video-analytics-iot-edge-nuc.md)

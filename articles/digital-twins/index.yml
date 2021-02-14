@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 02/12/2020
-  ms.openlocfilehash: bcba2b48fdecda311ce349f90ba43023b906bd44
-  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+  ms.openlocfilehash: 29f3b0bf0a00c9e4e238e8bb514f80e7451d30a6
+  ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/26/2020
-  ms.locfileid: "96186411"
+  ms.lasthandoff: 02/09/2021
+  ms.locfileid: "100007760"
 landingContent:
 - title: Сведения об Azure Digital Twins
   linkLists:
@@ -23,6 +23,14 @@ landingContent:
     links:
     - text: Что такое Azure Digital Twins?
       url: overview.md
+  - linkListType: concept
+    links:
+    - text: Настраиваемые модели
+      url: concepts-models.md
+    - text: Цифровые двойники и граф двойника
+      url: concepts-twins-graph.md
+    - text: Язык запросов
+      url: concepts-query-language.md
 - title: Начало работы с кратким руководством
   linkLists:
   - linkListType: quickstart
@@ -43,20 +51,6 @@ landingContent:
     links:
     - text: Подключение комплексного решения
       url: tutorial-end-to-end.md
-- title: Обучение
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Настраиваемые модели
-      url: concepts-models.md
-  - linkListType: concept
-    links:
-    - text: Цифровые двойники и граф двойника
-      url: concepts-twins-graph.md
-  - linkListType: concept
-    links:
-    - text: Язык запросов
-      url: concepts-query-language.md
 - title: Разработка
   linkLists:
   - linkListType: how-to-guide
@@ -115,3 +109,19 @@ landingContent:
     links:
     - text: Пользовательские объекты Swagger для соединителя Logic Apps
       url: /samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/
+- title: Обучение на основе сценариев с помощью Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: 'Схема обучения: Разработка с использованием Azure Digital Twins'
+      url: /learn/paths/develop-azure-digital-twins/
+  - linkListType: learn
+    links:
+    - text: Модуль Learn. Общие сведения об Azure Digital Twins
+      url: /learn/modules/develop-with-azure-digital-twins/introduction-to-azure-digital-twins/
+    - text: Модуль Learn. Создание графа Azure Digital Twins для производственной линии шоколадной фабрики
+      url: /learn/modules/develop-with-azure-digital-twins/build-azure-digital-twins-graph-for-chocolate-factory/
+    - text: Модуль Learn. Прием данных в Azure Digital Twins
+      url: /learn/modules/develop-with-azure-digital-twins/ingest-data-into-azure-digital-twins/
+    - text: Модуль Learn. Вывод из Azure Digital Twins в нижестоящие службы
+      url: /learn/modules/develop-with-azure-digital-twins/route-output-from-azure-digital-twins-to-downstream-services/

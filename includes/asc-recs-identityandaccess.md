@@ -2,15 +2,15 @@
 author: memildin
 ms.service: security-center
 ms.topic: include
-ms.date: 01-26-2021
+ms.date: 02/09/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: 7487262faa8af74af26ac2123686a8e202254e76
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: e1d2039ba3a667e40740acd7781090c9c0cf5281
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797184"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007612"
 ---
 В этой категории есть **21** рекомендация.
 
@@ -20,7 +20,7 @@ ms.locfileid: "98797184"
 |Azure Defender для Key Vault должен быть включен |Центр безопасности Azure включает в себя Azure Defender для Key Vault, что обеспечивает дополнительный уровень аналитики безопасности.<br>Azure Defender для Key Vault выявляет необычные и потенциально опасные попытки доступа к учетным записям Key Vault или их использования.<br><br>Важно! При применении этой рекомендации за защиту хранилищ ключей взимается плата. Если в этой подписке нет хранилищ ключей, плата взиматься не будет.<br>Если в будущем вы создадите в этой подписке хранилища ключей, они будут автоматически защищены, и с этого момента начнет начисляться плата.<br> <a href='https://docs.microsoft.com/azure/security-center/advanced-threat-protection-key-vault'>Узнайте больше об Azure Defender для Key Vault.</a><br />(связанная политика: [необходимо включить Azure Defender для Key Vault](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fmicrosoft.authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047).) |Высокий |
 |Устаревшие учетные записи следует удалять из подписки. |Учетные записи пользователей, которым запрещен вход в систему, необходимо удалить из подписок.<br>Эти учетные записи могут стать мишенью для злоумышленников, которые стремятся незаметно получить доступ к вашим данным.<br />(связанная политика: [устаревшие учетные записи необходимо удалить из подписки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6b1cbf55-e8b6-442f-ba4c-7246b6381474).) |Высокий |
 |Устаревшие учетные записи с разрешениями владельца следует удалять из подписки. |Учетные записи пользователей, которым запрещен вход в систему, необходимо удалить из подписок.<br>Эти учетные записи могут стать мишенью для злоумышленников, которые стремятся незаметно получить доступ к вашим данным.<br />(связанная политика: [устаревшие учетные записи с разрешениями владельца необходимо удалить из подписки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2febb62a0c-3560-49e1-89ed-27e074e9f8ad).) |Высокий |
-|Журналы диагностики в Key Vault должны быть включены |Включите журналы и сохраняйте их на год. Это позволит воссоздать следы действий для анализа инцидентов безопасности или при компрометации сети.<br />(связанная политика: [в Key Vault необходимо включить журналы диагностики ](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcf820ca0-f99e-4f3e-84fb-66e913812d21).) |Низкий |
+|Журналы диагностики в Key Vault должны быть включены |Включите журналы и сохраняйте их на год. Это позволит воссоздать следы действий для анализа инцидентов безопасности или при компрометации сети.<br />(связанная политика: [в Key Vault должны быть включены журналы ресурсов](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcf820ca0-f99e-4f3e-84fb-66e913812d21)) |Низкий |
 |Внешние учетные записи с разрешениями владельца следует удалять из подписки. |Учетные записи с разрешениями владельца, имеющие другие доменные имена (внешние учетные записи), необходимо удалить из подписки. Это позволит предотвратить неотслеживаемый доступ. Эти учетные записи могут стать мишенью для злоумышленников, которые стремятся незаметно получить доступ к вашим данным.<br />(связанная политика: [внешние учетные записи с разрешениями владельца необходимо удалить из подписки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2ff8456c1c-aa66-4dfb-861a-25d127b775c9).) |Высокий |
 |Внешние учетные записи с разрешениями на чтение следует удалять из подписки. |Учетные записи с разрешениями на чтение, имеющие другие доменные имена (внешние учетные записи), необходимо удалить из подписки. Это позволит предотвратить неотслеживаемый доступ. Эти учетные записи могут стать мишенью для злоумышленников, которые стремятся незаметно получить доступ к вашим данным.<br />(связанная политика: [внешние учетные записи с разрешениями на чтение необходимо удалить из подписки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f5f76cf89-fbf2-47fd-a3f4-b891fa780b60).) |Высокий |
 |Внешние учетные записи с разрешениями на запись следует удалять из подписки. |Учетные записи с разрешениями на запись, имеющие другие доменные имена (внешние учетные записи), необходимо удалить из подписки. Это позволит предотвратить неотслеживаемый доступ. Эти учетные записи могут стать мишенью для злоумышленников, которые стремятся незаметно получить доступ к вашим данным.<br />(связанная политика: [внешние учетные записи с разрешениями на запись необходимо удалить из подписки](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f5c607a2e-c700-4744-8254-d77e7c9eb5e4).) |Высокий |

@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 2b24b6480e4331f3a9470dcbb49e7ad221809187
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 6e686c7b22eb834a096cdd7a67beb6d8d291ef20
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132088"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392329"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Автоматическое обучение прогнозной модели временных рядов
 
@@ -194,6 +194,14 @@ automl_config = AutoMLConfig(task='forecasting',
                              **forecasting_parameters)
 ```
 
+Объем данных, необходимых для успешного обучения модели прогнозирования с автоматизированным ML, зависит от `forecast_horizon` `n_cross_validations` значений,, и, `target_lags` `target_rolling_window_size` указанных при настройке `AutoMLConfig` . 
+
+Следующая формула вычисляет объем исторических данных, которые необходимы для создания функций временных рядов.
+
+Требуется минимум данных с предысторией: (2x `forecast_horizon` ) + # `n_cross_validations` + Max (Max ( `target_lags` ), `target_rolling_window_size` )
+
+Исключение для всех рядов в наборе данных, которые не соответствуют требуемому объему исторических данных для указанных параметров, возникнет ошибка. 
+
 ### <a name="featurization-steps"></a>Добавление признаков шаги
 
 В каждом автоматическом эксперименте машинного обучения автоматические методики масштабирования и нормализации применяются к данным по умолчанию. Эти методы являются типами **Добавление признаков** , которые помогают *некоторым* алгоритмам, которые чувствительны к функциям различных масштабов. Дополнительные сведения о действиях Добавление признаков по умолчанию в [Добавление признаков в аутомл](how-to-configure-auto-features.md#automatic-featurization)
@@ -368,7 +376,7 @@ day_datetime,store,week_of_year
 Повторите необходимые шаги, чтобы загрузить эти будущие данные в объект DataFrame, а затем запустите `best_run.predict(test_data)` для прогнозирования будущих значений.
 
 > [!NOTE]
-> Если количество периодов превышает `forecast_horizon`, спрогнозировать значения невозможно. Для прогнозирования будущих значений за пределами текущего горизонта необходимо повторно обучить модель с большим горизонтом.
+> Встроенные прогнозы не поддерживаются для прогнозирования с помощью автоматического ML, если `target_lags` включены и/или `target_rolling_window_size` .
 
 
 ## <a name="example-notebooks"></a>Примеры записных книжек

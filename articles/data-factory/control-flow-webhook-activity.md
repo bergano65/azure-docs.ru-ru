@@ -1,22 +1,18 @@
 ---
 title: Действие веб-перехватчика в фабрике данных Azure
 description: Действие веб-перехватчика не позволяет продолжить выполнение конвейера до тех пор, пока не будет выполнена проверка присоединенного набора данных с определенными критериями, указанными пользователем.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 144006c3d0722bc3211f542b7059bba0bb0cbdbf
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 435cad4d1ef002261b194431dbdb787e072808f5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499413"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361491"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Действие веб-перехватчика в фабрике данных Azure
 
@@ -69,11 +65,11 @@ ms.locfileid: "96499413"
 
 Действие веб-перехватчика поддерживает следующие типы проверки подлинности.
 
-### <a name="none"></a>Нет
+### <a name="none"></a>None
 
 Если проверка подлинности не требуется, не включайте свойство **authentication** .
 
-### <a name="basic"></a>Основные
+### <a name="basic"></a>Базовый
 
 Укажите имя пользователя и пароль для использования с обычной проверкой подлинности.
 
@@ -111,7 +107,7 @@ ms.locfileid: "96499413"
 > [!NOTE]
 > Если ваша фабрика данных настроена с репозиторием Git, необходимо сохранить учетные данные в Azure Key Vault, чтобы использовать проверку подлинности "базовый" или "клиент-сертификат". В службе "Фабрика данных Azure" не хранятся пароли в Git.
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 Фабрика данных передает дополнительное свойство **каллбаккури** в тексте, отправляемом конечной точке URL-адреса. Фабрика данных ждет, что этот URI будет вызываться до указанного значения времени ожидания. Если URI не вызывается, действие завершается с состоянием «TimedOut».
 
@@ -140,7 +136,7 @@ ms.locfileid: "96499413"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. следующие действия потока управления, поддерживаемые фабрикой данных.
 

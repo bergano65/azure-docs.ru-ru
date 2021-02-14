@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 17cff66d3f8c816099bcc61322a1d331bfe58872
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 03ffea7688207b56a683d3afcbe49bf95ea00708
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226310"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103130"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Руководство по Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -361,7 +361,7 @@ ms.locfileid: "99226310"
 
 Чтобы быстро зарегистрировать приложение, сделайте следующее:
 
-1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs" target="_blank">регистрации приложений на портале Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.  
+1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs" target="_blank">регистрации приложений</a> на портале Azure и приступите к работе.  
 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 1. Следуйте инструкциям, чтобы одним щелчком мыши скачать и автоматически настроить новое приложение.
 
@@ -375,7 +375,7 @@ ms.locfileid: "99226310"
    1. Щелкните правой кнопкой мыши проект в Visual Studio, выберите **Свойства** и щелкните вкладку **Интернет**. В разделе **Серверы** измените **URL-адрес проекта** на **URL-адрес SSL**.
    1. Скопируйте URL-адрес SSL. На следующем шаге вы добавите этот URL-адрес в список URI перенаправления на портале регистрации.<br/><br/>![Свойства проекта](media/active-directory-develop-guidedsetup-aspnetwebapp-configure/vsprojectproperties.png)<br />
    
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
