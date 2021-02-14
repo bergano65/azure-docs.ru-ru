@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5bfdf90ddbd500fd9d1c504bd37ed4ac35d8bf70
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: d9db845bfa4a7c0c117220b8932b370eb230f6dc
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752769"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102994"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Руководство по Вызов API Microsoft Graph из классического приложения для Windows
 
@@ -97,14 +97,14 @@ MSAL управляет кэшированием и обновлением ма�
 ### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
 
 Чтобы быстро зарегистрировать приложение, сделайте следующее:
-1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs" target="_blank">регистрации приложений</a> на портале Azure и приступите к работе.
 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 
 ### <a name="option-2-advanced-mode"></a>Вариант 2. Расширенный режим
 
 Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.

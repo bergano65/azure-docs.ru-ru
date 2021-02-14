@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 11/17/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: e47dad8498c48a5da5307517efe493fa5c1aa590
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: e180ecbf5c68dbd9c179244083a641ac6ed42de0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94748069"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371963"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
@@ -42,7 +42,7 @@ ms.locfileid: "94748069"
 После создания нескольких моделей обычно требуется система для регистрации моделей и управления ими. Обычно требуется сочетание сценариев или интерфейсов API и серверной базы данных или системы управления версиями. Ниже приведено несколько инструментов, которые можно рассмотреть для выполнения этих задач управления:
 
 1. [Служба "Машинное обучение Azure" — служба управления моделями](../index.yml)
-2. [ModelDB из MIT](http://modeldb.csail.mit.edu:3000/projects) 
+2. [ModelDB из MIT](https://people.csail.mit.edu/mvartak/papers/modeldb-hilda.pdf) 
 3. [SQL Server как система управления моделями](https://blogs.technet.microsoft.com/dataplatforminsider/2016/10/17/sql-server-as-a-machine-learning-model-management-system/)
 4. [Microsoft Machine Learning Server](/sql/advanced-analytics/r/r-server-standalone)
 
@@ -74,7 +74,7 @@ ms.locfileid: "94748069"
 Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В разделе [Ход выполнения проектов обработки и анализа данных](track-progress.md) показано, как специалист по обработке и анализу данных может отслеживать ход выполнения проекта обработки и анализа данных.
 

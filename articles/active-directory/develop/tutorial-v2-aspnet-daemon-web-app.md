@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: a5f0a7d8221e970c8c1aa3c1ddffbfc56f2d5715
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 4fccff70fd267aef84550b4e2f5d6f5f9422a341
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226191"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103028"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Руководство по Создание мультитенантной управляющей программы, которая использует конечную платформу удостоверений Майкрософт
 
@@ -93,7 +93,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2.git
 
 ### <a name="choose-the-azure-ad-tenant"></a>Выбор арендатора Azure AD
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 
 
@@ -203,7 +203,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2.git
 
 ### <a name="create-and-publish-dotnet-web-daemon-v2-to-an-azure-website"></a>Создание и публикация dotnet-web-daemon-v2 на веб-сайте Azure
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. В нижнем левом углу щелкните **Создать ресурс**.
 1. Выберите **Интернет** > **Веб-приложение** и присвойте веб-сайту имя. Например, **dotnet-web-daemon-v2-contoso.azurewebsites.net**.
 1. Заполните поля **Подписка**, **Группа ресурсов**, а также **Расположение или план службы приложений**- Для параметра **Операционная система** укажите **Windows**, а для параметра **Публиковать** — значение **Код**.
@@ -224,7 +224,7 @@ Visual Studio опубликует проект и автоматически о
 
 ### <a name="update-the-azure-ad-tenant-application-registration-for-dotnet-web-daemon-v2"></a>Обновление регистрации приложения dotnet-web-daemon-v2 в арендаторе Azure AD
 
-1. Вернитесь на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Вернитесь на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. На панели слева выберите службу **Azure Active Directory**, а затем щелкните **Регистрация приложений**.
 1. Выберите приложение **dotnet-web-daemon-v2**.
 1. На странице **Аутентификация** приложения обновите поля **URL-адрес выхода переднего канала**, указав адрес службы. Например, воспользуйтесь `https://dotnet-web-daemon-v2-contoso.azurewebsites.net/Account/EndSession`.

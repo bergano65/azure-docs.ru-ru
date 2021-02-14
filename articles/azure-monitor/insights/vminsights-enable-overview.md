@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 12/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 655a146ccde9c75629d0a991a6a3aafa91f40764
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 18be0f7d1bd8622735f24bf20161d652846112f7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233973"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373425"
 ---
 # <a name="enable-azure-monitor-for-vms-overview"></a>Общие сведения о включении Azure Monitor для виртуальных машин
 
@@ -66,7 +66,7 @@ Azure Monitor для виртуальных машин поддерживает 
 ## <a name="log-analytics-workspace"></a>Рабочая область Log Analytics
 Для Azure Monitor для виртуальных машин требуется рабочая область Log Analytics. Дополнительные сведения и требования к этой рабочей области см. в статье [настройка log Analytics рабочей области для Azure Monitor для виртуальных машин](vminsights-configure-workspace.md) .
 ## <a name="agents"></a>Агенты
-Для Azure Monitor для виртуальных машин требуется установить следующие два агента на каждой виртуальной машине или масштабируемом наборе виртуальных машин, которые необходимо отслеживать. Чтобы подключить ресурс, установите эти агенты и подключите их к рабочей области.  Требования к сети для этих агентов см. в разделе [требования к сети](../platform/log-analytics-agent.md#network-requirements) .
+Для Azure Monitor для виртуальных машин требуется установить следующие два агента на каждой виртуальной машине или масштабируемом наборе виртуальных машин, которые необходимо отслеживать. Чтобы подключить ресурс, установите эти агенты и подключите их к рабочей области.  
 
 - [Агент log Analytics](../platform/log-analytics-agent.md). Сбор данных о событиях и производительности из масштабируемого набора виртуальных машин и их доставка в рабочую область Log Analytics. Методы развертывания для агента Log Analytics в ресурсах Azure используют расширение виртуальной машины для [Windows](../../virtual-machines/extensions/oms-windows.md) и [Linux](../../virtual-machines/extensions/oms-linux.md).
 - Агент зависимостей. Собирает обнаруженные данные о процессах, выполняемых на виртуальной машине, и зависимостях внешних процессов, которые используются [функцией Map в Azure Monitor для виртуальных машин](vminsights-maps.md). Агент зависимостей использует агент Log Analytics для доставки данных в Azure Monitor. Методы развертывания для агента зависимостей в ресурсах Azure используют расширение виртуальной машины для [Windows](../../virtual-machines/extensions/agent-dependency-windows.md) и [Linux](../../virtual-machines/extensions/agent-dependency-linux.md).
@@ -79,11 +79,15 @@ Azure Monitor для виртуальных машин поддерживает 
 | Метод | Описание |
 |:---|:---|
 | [Портал Azure](./vminsights-enable-portal.md) | Установите оба агента на одной виртуальной машине, масштабируемом наборе виртуальных машин или гибридных виртуальных машинах, подключенных к службе "Дуга Azure". |
-| [Шаблоны Resource Manager](vminsights-enable-resource-manager.md) | Установите оба агента с помощью любого из поддерживаемых методов, чтобы развернуть шаблон диспетчер ресурсов, включая CLI и PowerShell. |
+| [Шаблоны диспетчер ресурсов](vminsights-enable-resource-manager.md) | Установите оба агента с помощью любого из поддерживаемых методов, чтобы развернуть шаблон диспетчер ресурсов, включая CLI и PowerShell. |
 | [Политика Azure](./vminsights-enable-policy.md) | Назначение инициативы политики Azure для автоматической установки агентов при создании виртуальной машины или масштабируемого набора виртуальных машин. |
 | [Установка вручную](./vminsights-enable-hybrid.md) | Установите агенты в гостевой операционной системе на компьютерах, размещенных за пределами Azure, включая в вашем центре обработки данных или в других облачных средах. |
 
 
+## <a name="network-requirements"></a>Требования к сети
+
+- Требования к сети для агента Log Analytics см. в разделе [требования к сети](../platform/log-analytics-agent.md#network-requirements) .
+- Агенту зависимостей требуется подключение от виртуальной машины к адресу 169.254.169.254. Это конечная точка службы метаданных Azure. Убедитесь, что параметры брандмауэра разрешают подключения к этой конечной точке.
 
 
 ## <a name="management-packs"></a>Пакеты управления
@@ -101,6 +105,6 @@ Azure Monitor для виртуальных машин поддерживает 
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-dsr-and-stp-note.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об использовании функции наблюдения за производительностью см. в разделе [View Azure Monitor для виртуальных машин Performance](vminsights-performance.md). Для просмотра обнаруженных зависимостей приложений см. статью о [просмотре схемы Azure Monitor для виртуальных машин](vminsights-maps.md).

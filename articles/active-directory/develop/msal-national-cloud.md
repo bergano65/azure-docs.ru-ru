@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: marsma, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 01a69dbf9230154b74145f932b678d6bbebbde08
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 09c4dadd7a6560bd5163d623dd8a7f247b57860e
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583965"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102501"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>Использование MSAL в национальной облачной среде
 
@@ -70,7 +70,7 @@ ms.locfileid: "99583965"
 
 ### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 
-1. Войдите на <a href="https://portal.azure.us/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.us/" target="_blank">портал Azure</a>.
 
    Чтобы найти портал Azure конечные точки для других национальных облаков, см. раздел [конечные точки регистрации приложений](authentication-national-cloud.md#app-registration-endpoints).
 
@@ -91,7 +91,7 @@ ms.locfileid: "99583965"
 
 - [Скачайте файлы проекта](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip) для локального веб-сервера, например node.
 
-  или
+  или диспетчер конфигурации служб
 
 - [Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/vsquickstart.zip).
 
@@ -222,7 +222,7 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Список URL-адресов портал Azure и конечных точек токенов для каждого облака см. в разделе [местные облачные конечные точки аутентификации](authentication-national-cloud.md) .
 

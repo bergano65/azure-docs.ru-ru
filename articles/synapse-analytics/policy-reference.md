@@ -1,18 +1,18 @@
 ---
 title: Встроенные определения политик
 description: Выводит список встроенных определений политик Azure для Azure синапсе Analytics. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 author: julieMSFT
 ms.author: jrasnick
 ms.service: synapse-analytics
 ms.custom: subject-policy-reference
-ms.openlocfilehash: b28758a2e2d99a1cc80b58f74425e00987a02686
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 09bdbe59843421bed3ac9ec69ee3cf222006df13
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99555796"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092373"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-synapse-analytics"></a>Встроенные определения политики Azure для Azure синапсе Analytics 
 

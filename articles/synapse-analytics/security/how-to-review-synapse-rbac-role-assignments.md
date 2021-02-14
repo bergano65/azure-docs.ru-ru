@@ -1,23 +1,23 @@
 ---
 title: Как проверить назначения ролей RBAC синапсе в синапсе Studio
 description: В этой статье описывается, как просматривать назначения ролей RBAC синапсе с помощью синапсе Studio.
-author: billgib
+author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: security
 ms.date: 12/1/2020
-ms.author: billgib
+ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: ee3b2c69d7782dca10b16a3b1726b75bfd99326e
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 9065ca9c7638f3d2bda36e4831b81963936f4b45
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218131"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102161"
 ---
 # <a name="how-to-review-synapse-rbac-role-assignments"></a>Как проверить назначения ролей RBAC синапсе
 
-Роли RBAC синапсе используются для назначения разрешений пользователям, группам и другим субъектам безопасности, чтобы обеспечить доступ и использование ресурсов синапсе.  [Подробнее](./synapse-workspace-synapse-rbac.md)
+Роли RBAC синапсе используются для назначения разрешений пользователям, группам и другим субъектам безопасности, чтобы обеспечить доступ и использование ресурсов синапсе.  [Дополнительные сведения](./synapse-workspace-synapse-rbac.md)
 
 В этой статье объясняется, как проверить текущие назначения ролей для рабочей области.
 
@@ -56,7 +56,7 @@ ms.locfileid: "98218131"
 
 При создании рабочей области вы и субъект-служба MSI рабочей области автоматически получают роль администратора синапсе в области рабочей области.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте [, как управлять назначениями РОЛЕЙ RBAC синапсе](./how-to-manage-synapse-rbac-role-assignments.md).
 

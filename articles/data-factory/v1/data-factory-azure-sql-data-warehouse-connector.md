@@ -1,23 +1,18 @@
 ---
 title: Копирование данных в Azure синапсе Analytics и обратно
 description: Узнайте, как копировать данные в Azure синапсе Analytics и обратно с помощью фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: d90fa9bd-4b79-458a-8d40-e896835cfd4a
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 0d071599b72f6a71bdff815f514311fb87f53d5b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: aa364ec434db980bf226008537ca928628fcac1b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452356"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392091"
 ---
 # <a name="copy-data-to-and-from-azure-synapse-analytics-using-azure-data-factory"></a>Копирование данных в Azure синапсе Analytics и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -106,7 +101,7 @@ ms.locfileid: "96452356"
 
 Кроме того, можно создать хранимую процедуру, указав **sqlReaderStoredProcedureName** и **storedProcedureParameters** (если хранимая процедура принимает параметры).
 
-Если не указать ни sqlReaderQuery, ни sqlReaderStoredProcedureName, то для создания запроса, который будет выполняться в Azure синапсе Analytics, будут использоваться столбцы, определенные в разделе структура JSON-файла набора данных. Например, `select column1, column2 from mytable`. Если у определения набора данных нет структуры, выбираются все столбцы из таблицы.
+Если не указать ни sqlReaderQuery, ни sqlReaderStoredProcedureName, то для создания запроса, который будет выполняться в Azure синапсе Analytics, будут использоваться столбцы, определенные в разделе структура JSON-файла набора данных. Пример: `select column1, column2 from mytable`. Если у определения набора данных нет структуры, выбираются все столбцы из таблицы.
 
 #### <a name="sqldwsource-example"></a>Пример SqlDWSource
 
@@ -305,7 +300,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 | BigInt | BigInt |
 | SmallInt | SmallInt |
 | TinyInt | TinyInt |
-| Разряд | Разряд |
+| bit | bit |
 | Decimal | Decimal |
 | Числовой | Decimal |
 | Float | Float |
@@ -317,12 +312,12 @@ All columns of the table must be specified in the INSERT BULK statement.
 | Дата | Дата |
 | Дата и время | Дата и время |
 | datetime2 | datetime2 |
-| Время | Время |
+| время; | время; |
 | DateTimeOffset | DateTimeOffset |
 | SmallDateTime | SmallDateTime |
 | Текст | Varchar (до 8000) |
 | NText | NVarChar (до 4000) |
-| Образ — | VarBinary (до 8000) |
+| Изображение | VarBinary (до 8000) |
 | UniqueIdentifier | UniqueIdentifier |
 | Char | Char |
 | NCHAR | NCHAR |
@@ -368,7 +363,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Object * |
-| text |String, Char[] |
+| текст |String, Char[] |
 | time |TimeSpan |
 | TIMESTAMP |Byte[] |
 | tinyint |Byte |

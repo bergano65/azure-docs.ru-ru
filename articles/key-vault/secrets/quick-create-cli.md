@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-azurecli
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: c2c6d106a198445fdbd08fbaeb7d03472b688b62
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: e84a9fe15f648311c22fb0f7e8f8374454f5668a
+ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071381"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99989154"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
@@ -50,7 +50,7 @@ az keyvault secret set --vault-name "<your-unique-keyvault-name>" --name "Exampl
 Чтобы просмотреть содержащееся в секрете значение в виде обычного текста, введите следующее:
 
 ```azurecli
-az keyvault secret show --name "ExamplePassword" --vault-name "<your-unique-keyvault-name>"
+az keyvault secret show --name "ExamplePassword" --vault-name "<your-unique-keyvault-name>" --query "value"
 ```
 
 Вы создали Key Vault, сохранили в нем секрет и извлекли его.

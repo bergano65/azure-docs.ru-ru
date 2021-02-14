@@ -13,12 +13,12 @@ ms.date: 12/09/2020
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 0ded249a55e5a59bdcad7407694cbd5ed4cf2352
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 05447f41ca891adfe14533a74dfedf153e3c5773
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756066"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102705"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство по настройке утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -81,10 +81,8 @@ ms.locfileid: "98756066"
 
 Всем утверждениям, определенным в Azure AD, можно также назначить любые постоянные (статические) значения. Выполните следующие действия, чтобы присвоить постоянное значение.
 
-1. В <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a>в разделе **пользовательские атрибуты & утверждения** щелкните значок **изменить** , чтобы изменить утверждения.
-
+1. На <a href="https://portal.azure.com/" target="_blank">портале Azure</a> в разделе **Атрибуты и утверждения пользователя** щелкните значок **Изменить**, чтобы изменить утверждение.
 1. Щелкните обязательное утверждение, которое необходимо изменить.
-
 1. Введите постоянное значение без кавычек в поле **Атрибут источника** в соответствии с параметрами вашей организации и нажмите кнопку **Сохранить**.
 
     ![Атрибуты Организации & утверждения в портал Azure](./media/active-directory-saml-claims-customization/organization-attribute.png)

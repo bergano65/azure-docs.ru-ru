@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: c8d52609043f173e896668eadeb8c59493739859
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: c58b267874f013a4660428e23abd41810a0fbf34
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95521144"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093171"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Политика поддержки Azure Red Hat OpenShift
 
@@ -26,6 +26,7 @@ ms.locfileid: "95521144"
 * Кластер должен содержать не менее двух рабочих узлов. Не масштабировать рабочие роли кластера в ноль или попытаться корректно завершить работу кластера.
 * Не удаляйте и не изменяйте службы кластеров Prometheus и Alertmanager.
 * Не удаляйте правила службы Alertmanager.
+* Не удаляйте и не изменяйте группы безопасности сети.
 * Не удаляйте и не изменяйте журналы службы OpenShift Azure Red Hat (pod-объекты mdsd).
 * Не удаляйте и не изменяйте секретный код для извлечения кластера arosvc.azurecr.io.
 * Все виртуальные машины кластера должны иметь прямой исходящий доступ к Интернету по крайней мере для конечных точек Azure Resource Manager (ARM) и Service Logging (Geneva).  Ни одна из форм прокси-сервера HTTPS не поддерживается.

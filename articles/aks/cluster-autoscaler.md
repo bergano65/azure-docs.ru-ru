@@ -4,12 +4,12 @@ description: Узнайте, как использовать средство а
 services: container-service
 ms.topic: article
 ms.date: 07/18/2019
-ms.openlocfilehash: 5f0754638be1aa29672b6a59218a6c9d695261a5
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: c0564dc3b394b4a65e70a487b6f6989cb306bdda
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223148"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373255"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Автоматическое масштабирование кластера в соответствии с требованиями приложения в Службе контейнеров Azure
 
@@ -273,6 +273,9 @@ az aks nodepool update \
 ```
 
 Если вы хотите повторно включить Автомасштабирование кластера в существующем кластере, его можно включить повторно с помощью команды [AZ AKS нодепул Update][az-aks-nodepool-update] , указав `--enable-cluster-autoscaler` `--min-count` Параметры, и `--max-count` .
+
+> [!NOTE]
+> Если вы планируете использовать Автомасштабирование кластера с нодепулс, охватывающем несколько зон, и используете функции планирования, связанные с зонами, такими как планирование Volume топологическом, то рекомендуется установить по одной нодепул на каждую зону и включить с `--balance-similar-node-groups` помощью профиля автомасштабирования. Это обеспечит успешное масштабирование автомасштабирования и попытайтесь и сохранит размеры сбалансированного нодепулс.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/14/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
-ms.openlocfilehash: de42854f512a69b7b70a15a10fe8499ca1d0bf8b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 45fa5cf4c76577cb5e8ba9bf482f4aab7301e3c6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017735"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391496"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-blob-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным большого двоичного объекта
 
@@ -28,6 +28,9 @@ ms.locfileid: "96017735"
 Расширения службы хранилища Azure поддерживаются для операций с данными больших двоичных объектов. Действия, которые можно вызывать, зависят от разрешений, предоставленных субъекту безопасности Azure AD, с помощью которого вы входите в PowerShell. Разрешения для контейнеров службы хранилища Azure назначаются через Azure RBAC. Например, если вы назначили роль **читателя данных большого двоичного объекта** , то можете выполнять команды сценариев, считывающие данные из контейнера. Если вы назначили роль **участника данных большого двоичного объекта** , то можете выполнять команды сценариев, которые считывают, записывают или удаляют контейнер или содержащиеся в них данные.
 
 Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в контейнере, см. в разделе [операции хранилища вызовов с токенами OAuth](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).  
+
+> [!IMPORTANT]
+> Если учетная запись хранения заблокирована с блокировкой Azure Resource Manager **только для чтения** , операция " [список ключей](/rest/api/storagerp/storageaccounts/listkeys) " не разрешена для этой учетной записи хранения. **Список ключей** является операцией POST, и все операции POST предотвращаются, если для учетной записи настроена блокировка **только для чтения** . По этой причине, если учетная запись заблокирована с блокировкой **только для чтения** , пользователи, которым не назначены ключи учетной записи, должны использовать учетные данные Azure AD для доступа к данным BLOB-объектов. В PowerShell включите параметр, `-UseConnectedAccount` чтобы создать объект **AzureStorageContext** с учетными данными Azure AD.
 
 ## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Вызов команд PowerShell с использованием учетных данных Azure AD
 

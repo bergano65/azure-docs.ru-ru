@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: conceptual
 ms.date: 01/29/2021
-ms.openlocfilehash: 0de0c5d53bd3195a24f75f4a2e65c19602e2a2b3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 103855748c4b5d998dfc81eeb4044f5f53dae9e5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99088927"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372014"
 ---
 # <a name="pricing-and-billing-models-for-azure-logic-apps"></a>Цены и модели выставления счетов для Azure Logic Apps
 
@@ -72,8 +72,8 @@ ms.locfileid: "99088927"
 
 | SKU ISE | Описание |
 |---------|-------------|
-| **Премиальный** | Базовая единица имеет фиксированную емкость и [оплачивается по почасовой ставке для SKU уровня "Премиум"](https://azure.microsoft.com/pricing/details/logic-apps). Если требуется дополнительная пропускная способность, можно [добавить дополнительные единицы масштабирования](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) при создании интегрированной среды сценариев или впоследствии. Плата за каждую единицу масштабирования взимается по [почасовой ставке, которая примерно равна половине базовой ставки единиц](https://azure.microsoft.com/pricing/details/logic-apps). <p><p>Сведения об ограничениях см. [в разделе ограничения интегрированной среды сценариев в Azure Logic Apps](logic-apps-limits-and-config.md#integration-service-environment-ise). |
-| **Разработчик** | Базовая единица имеет фиксированную емкость и [оплачивается по почасовой ставке для SKU разработчика](https://azure.microsoft.com/pricing/details/logic-apps). У этого SKU нет возможности масштабирования, соглашения об уровне обслуживания (SLA) или опубликованных ограничений. Используйте этот SKU только для изучения, экспериментов, разработки и тестирования, а не для тестирования в рабочей среде и производительности. |
+| **Премиальный** | Базовая единица имеет [фиксированную емкость](logic-apps-limits-and-config.md#integration-service-environment-ise) и [оплачивается по почасовой ставке для SKU уровня "Премиум"](https://azure.microsoft.com/pricing/details/logic-apps). Если требуется дополнительная пропускная способность, можно [добавить дополнительные единицы масштабирования](../logic-apps/ise-manage-integration-service-environment.md#add-capacity) при создании интегрированной среды сценариев или впоследствии. Плата за каждую единицу масштабирования взимается по [почасовой ставке, которая примерно равна половине базовой ставки единиц](https://azure.microsoft.com/pricing/details/logic-apps). <p><p>Сведения о емкости и ограничениях см. [в разделе ограничения интегрированной среды сценариев в Azure Logic Apps](logic-apps-limits-and-config.md#integration-service-environment-ise). |
+| **Разработчик** | Базовая единица имеет [фиксированную емкость](logic-apps-limits-and-config.md#integration-service-environment-ise) и [оплачивается по почасовой ставке для SKU разработчика](https://azure.microsoft.com/pricing/details/logic-apps). Однако этот SKU не имеет соглашения об уровне обслуживания (SLA), возможностей масштабирования или избыточности во время повторного запуска, что означает, что вы можете столкнуться с задержками или простоем. Серверные обновления могут периодически прерывать работу службы. <p><p>**Важно**. Убедитесь, что вы используете этот номер SKU только для изучения, экспериментов, разработки и тестирования, а не для тестирования в рабочей среде или при тестировании производительности. <p><p>Сведения о емкости и ограничениях см. [в разделе ограничения интегрированной среды сценариев в Azure Logic Apps](logic-apps-limits-and-config.md#integration-service-environment-ise). |
 |||
 
 ### <a name="included-at-no-extra-cost"></a>Включается без дополнительных затрат
@@ -147,6 +147,6 @@ ms.locfileid: "99088927"
 
 Отключенные приложения логики не оплачены, так как они не могут создавать новые экземпляры, пока они отключены. Когда вы отключаете приложение логики, может потребоваться некоторое время до полной остановки всех его запущенных экземпляров.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Планирование и управление затратами для Azure Logic Apps](plan-manage-costs.md)

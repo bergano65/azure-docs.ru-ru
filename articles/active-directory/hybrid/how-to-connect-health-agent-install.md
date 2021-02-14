@@ -17,12 +17,12 @@ ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 57362aa84886d7b7d764617ce5a43ca2393bed52
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 0e644b7937f6ccb23b4833405b8f4ed3119879a5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98018247"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362290"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
@@ -34,7 +34,7 @@ ms.locfileid: "98018247"
 
 | Требование | Описание |
 | --- | --- |
-| Azure AD Premium установлен. |Azure AD Connect Health — это функция Azure AD Premium. Дополнительные сведения см. в статье [Регистрация в Azure AD Premium](../fundamentals/active-directory-get-started-premium.md). <br /><br />Чтобы запустить бесплатную 30-дневную пробную версию, см. статью [Запуск пробной версии](https://azure.microsoft.com/trial/get-started-active-directory/). |
+| Существует Azure AD Premium (P1 или P2) подписке.  |Azure AD Connect Health — это функция Azure AD Premium (P1 или P2). Дополнительные сведения см. в статье [Регистрация в Azure AD Premium](../fundamentals/active-directory-get-started-premium.md). <br /><br />Чтобы запустить бесплатную 30-дневную пробную версию, см. статью [Запуск пробной версии](https://azure.microsoft.com/trial/get-started-active-directory/). |
 | Вы являетесь глобальным администратором в Azure AD. |По умолчанию только глобальные администраторы могут устанавливать и настраивать агенты работоспособности, получать доступ к порталу и выполнять любые операции в Azure AD Connect Health. Дополнительные сведения см. в статье [Администрирование каталога Azure AD](../fundamentals/active-directory-whatis.md). <br /><br /> С помощью управления доступом на основе ролей Azure (Azure RBAC) можно разрешить другим пользователям в организации получать доступ к Azure AD Connect Health. Дополнительные сведения см. в разделе [Azure RBAC for Azure AD Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Важно**. для установки агентов используйте рабочую или учебную учетную запись. Нельзя использовать учетная запись Майкрософт. Дополнительные сведения см. в статье [Регистрация в Azure в качестве организации](../fundamentals/sign-up-organization.md). |
 | Агент Azure AD Connect Health установлен на каждом целевом сервере. | Агенты работоспособности должны быть установлены и настроены на целевых серверах, чтобы они могли получать данные и предоставлять возможности мониторинга и аналитики. <br /><br />Например, чтобы получить данные из инфраструктуры службы федерации Active Directory (AD FS) (AD FS), необходимо установить агент на AD FS сервере и прокси-сервере веб – приложения. Аналогично, чтобы получить данные из локальной инфраструктуры доменных служб Azure AD (Azure AD DS), необходимо установить агент на контроллерах домена.  |
 | Конечные точки службы Azure имеют исходящее подключение. | Во время установки и выполнения агенту требуется подключение к конечным точкам службы Azure AD Connect Health. Если брандмауэры блокируют исходящие подключения, добавьте [конечные точки исходящего подключения](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) в список разрешений. |
@@ -195,7 +195,7 @@ ms.locfileid: "98018247"
 ![Снимок экрана, на котором показана работающая Azure AD Connect Health для служб Sync Services на сервере.](./media/how-to-connect-health-agent-install/services.png)
 
 > [!NOTE]
-> Помните, что для использования Azure AD Connect Health необходимо иметь Azure AD Premium. Если у вас нет Azure AD Premium, вы не сможете завершить настройку в портал Azure. Дополнительные сведения см. в разделе [требования](how-to-connect-health-agent-install.md#requirements).
+> Помните, что для использования Azure AD Connect Health необходимо иметь Azure AD Premium (P1 или P2). Если у вас нет Azure AD Premium, вы не сможете завершить настройку в портал Azure. Дополнительные сведения см. в разделе [требования](how-to-connect-health-agent-install.md#requirements).
 >
 >
 
@@ -351,11 +351,11 @@ Set-AzureAdConnectHealthProxySettings -ImportFromWinHttp
 Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress address:port
 ```
 
-Приведем пример: 
+Ниже приведен пример: 
 
 `Set-AzureAdConnectHealthProxySettings -HttpsProxyAddress myproxyserver: 443`
 
-В данном примере:
+В этом примере:
 * `address`Параметр может быть разрешимым именем сервера DNS или IPv4-адресом.
 * Можно опустить `port` . В этом случае по умолчанию используется порт 443.
 
@@ -390,7 +390,7 @@ Test-AzureADConnectHealthConnectivity -Role ADFS
 Параметр role в настоящее время принимает следующие значения:
 
 * ADFS
-* Sync
+* Синхронизация
 * ADDS
 
 > [!NOTE]
@@ -398,7 +398,7 @@ Test-AzureADConnectHealthConnectivity -Role ADFS
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь со следующими статьями:
 

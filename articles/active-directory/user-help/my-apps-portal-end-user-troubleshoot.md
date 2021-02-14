@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 03/21/2019
+ms.date: 01/19/2021
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: 5ae946f82590f2270719570e4b589d49542ffec8
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4377ed76de971f78336ea9024b59dafc5d513487
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833985"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100094973"
 ---
 # <a name="troubleshoot-problems-with-the-my-apps-portal"></a>Устранение неполадок с порталом "Мои приложения"
 
@@ -31,9 +31,9 @@ ms.locfileid: "94833985"
 
     - **Microsoft Edge.** В юбилейном выпуске Windows 10 или более поздней версии.
 
-    - **Google Chrome.** В ОС Windows 7 или более поздней версии, Mac OS X или более поздней версии.
+    - **Google Chrome.** Работает в Windows 7 или более поздней версии, а также на macOS X или более поздней версии.
 
-    - **Mozilla Firefox версии 26.0 и выше.** В ОС Windows XP с пакетом обновления 2 (SP2) или более поздней версии, Mac OS X 10.6 или более поздней версии.
+    - **Mozilla Firefox версии 26.0 и выше.** В Windows XP с пакетом обновления 2 (SP2) или более поздней версии, macOS X 10,6 или более поздней версии.
 
     - **Internet Explorer 11.** В ОС Windows 7 или более поздней версии (ограниченная поддержка).
 
@@ -46,6 +46,11 @@ ms.locfileid: "94833985"
 ## <a name="i-cant-sign-in-to-the-my-apps-portal"></a>Не могу войти на портал **Мои приложения**
 
 Если возникают проблемы при входе на портал **Мои приложения**, попробуйте выполнить следующее:
+
+- Если вы видите ошибку при входе с помощью личного учетная запись Майкрософт, вы по-прежнему можете выполнять вход, используя доменное имя организации (например, contoso.com) или **идентификатор клиента** вашей организации от администратора в одном из следующих URL-адресов:
+
+   - https://myapplications.microsoft.com?tenantId=*your_domain_name*
+   - https://myapplications.microsoft.com?tenant=*your_tenant_ID*
 
 - Убедитесь, что используется правильный URL-адрес. Это может быть адрес https://myapps.microsoft.com или персонализированная корпоративная страница, например https://myapps.microsoft.com/contoso.com.
 
