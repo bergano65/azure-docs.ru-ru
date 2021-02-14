@@ -1,21 +1,17 @@
 ---
 title: Копирование данных из Amazon RedShift
 description: Узнайте, как копировать данные из Amazon Redshift в поддерживаемые хранилища данных-приемники с помощью фабрики данных Azure.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/09/2020
-ms.openlocfilehash: b17c567b2e83bef3c37c8f1272091021a1943b15
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 9441885766dad97dfc237ab81a59710245bf13ce
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008334"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364262"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -55,7 +51,7 @@ ms.locfileid: "97008334"
 
 Для связанной службы Amazon Redshift поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства Type необходимо задать значение **AmazonRedshift** . | Да |
 | server |IP-адрес или имя узла сервера Amazon Redshift. |Да |
@@ -97,7 +93,7 @@ ms.locfileid: "97008334"
 
 Чтобы скопировать данные из Amazon RedShift, поддерживаются следующие свойства:
 
-| Свойство. | Описание | Обязательно |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **амазонредшифттабле** . | Да |
 | схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
@@ -221,14 +217,14 @@ ms.locfileid: "97008334"
 | bigint |Int64 |
 | BOOLEAN |Строка |
 | CHAR |Строка |
-| DATE |Дата/время |
+| DATE |Дата и время |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
-| ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
+| real |Single |
 | SMALLINT |Int16 |
 | TEXT |Строка |
-| timestamp |Дата/время |
+| timestamp |Дата и время |
 | VARCHAR |Строка |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

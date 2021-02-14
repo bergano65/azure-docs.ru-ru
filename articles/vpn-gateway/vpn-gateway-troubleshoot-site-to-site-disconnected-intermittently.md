@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: chadmath
 ms.service: vpn-gateway
 ms.topic: troubleshooting
-ms.date: 10/30/2018
+ms.date: 02/10/2021
 ms.author: genli
-ms.openlocfilehash: 63c9bd93e75533e54c42c2041cb9f55a1f0036b6
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 582077c46f5fc7176b457cf0d392af48fbe7d40b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98872151"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369345"
 ---
 # <a name="troubleshooting-azure-site-to-site-vpn-disconnects-intermittently"></a>Устранение проблемы периодических разрывов подключений VPN типа "сеть — сеть" Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "98872151"
 
 Функция **полной безопасности пересылки** (PFS) может вызвать проблемы отключения. Если для VPN-устройства **включена полная PFS,** отключите ее. Затем [Обновите политику IPSec шлюза виртуальной сети](vpn-gateway-ipsecikepolicy-rm-powershell.md#managepolicy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание подключения типа "сеть — сеть" на портале Azure](./tutorial-site-to-site-portal.md)
 - [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md)

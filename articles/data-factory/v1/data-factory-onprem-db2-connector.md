@@ -1,23 +1,18 @@
 ---
 title: Перемещение данных из DB2 с помощью фабрики данных Azure
 description: Узнайте, как перемещать данные из локальной базы данных DB2 с помощью действия копирования в фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: c1644e17-4560-46bb-bf3c-b923126671f1
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: e5d2c6b0460c3a7566adb17601aceb57e57f4d0b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bcd1e6f9f9be1765e76399707ae36776a9f1987d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001071"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387365"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -83,10 +78,10 @@ ms.locfileid: "96001071"
 | **type** |Этому свойству необходимо задать значение **OnPremisesDB2**. |Да |
 | **server** |Имя сервера DB2. |Да |
 | **database** |Имя базы данных DB2. |Да |
-| **schema** |Имя схемы в базе данных DB2. Это свойство чувствительно к регистру. |нет |
+| **schema** |Имя схемы в базе данных DB2. Это свойство чувствительно к регистру. |Нет |
 | **authenticationType** |Тип аутентификации, используемый для подключения к базе данных DB2. Возможные значения: "Анонимная", "Обычная" и "Windows". |Да |
-| **username** |Имя для учетной записи пользователя, если используемая аутентификация имеет тип "Обычная" или "Windows". |нет |
-| **password** |Пароль для учетной записи пользователя. |нет |
+| **username** |Имя для учетной записи пользователя, если используемая аутентификация имеет тип "Обычная" или "Windows". |Нет |
+| **password** |Пароль для учетной записи пользователя. |Нет |
 | **gatewayName** |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных DB2. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
@@ -105,7 +100,7 @@ ms.locfileid: "96001071"
 
 | Свойство | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| **запрос** |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Пример: `"query": "select * from "MySchema"."MyTable""` |Нет (если для свойства **tableName** задано значение dataset). |
+| **запрос** |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например: `"query": "select * from "MySchema"."MyTable""` |Нет (если для свойства **tableName** задано значение dataset). |
 
 > [!NOTE]
 > В именах схем и таблиц учитывается регистр. В инструкции запроса заключите имена свойств в двойные кавычки ("").
@@ -310,7 +305,7 @@ ms.locfileid: "96001071"
 | SmallInt |Int16 |
 | Целое число |Int32 |
 | BigInt |Int64 |
-| Real |Один |
+| Real |Single |
 | Double |Double |
 | Float |Double |
 | Decimal |Decimal |
@@ -336,7 +331,7 @@ ms.locfileid: "96001071"
 | SmallInt |Int16 |
 | Целое число |Int32 |
 | BigInt |Int64 |
-| Real |Один |
+| Real |Single |
 | Double |Double |
 | Float |Double |
 | Decimal |Decimal |

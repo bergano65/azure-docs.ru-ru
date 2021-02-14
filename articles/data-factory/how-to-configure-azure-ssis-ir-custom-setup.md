@@ -1,23 +1,18 @@
 ---
 title: Настройка среды выполнения интеграции Azure Integration Services
 description: В этой статье описано, как использовать интерфейс пользовательской установки для среды выполнения интеграции Azure-SSIS и установить дополнительные компоненты или изменить параметры
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: swinarko
 ms.author: sawinark
-manager: mflasko
-ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 11/06/2020
-ms.openlocfilehash: b9dc88c5773d1329ad4fb4d1c45a0cbc88737423
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: b1b3a34ac495936ed92e29353a41efb8c462768f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556585"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387739"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка среды выполнения интеграции Azure Integration Services
 
@@ -295,7 +290,7 @@ ms.locfileid: "98556585"
 
    e. Дважды щелкните папку *UserScenarios*, чтобы найти следующие элементы:
 
-      * Папка *.NET FRAMEWORK 3,5* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки более ранней версии .NET Framework на каждом узле Azure-SSIS IR. Эта версия может потребоваться для некоторых пользовательских компонентов.
+      * Папка *.NET FRAMEWORK 3,5* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки более ранней версии платформа .NET Framework на каждом узле Azure-SSIS IR. Эта версия может потребоваться для некоторых пользовательских компонентов.
 
       * Папка *bcp* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки SQL Server служебных программ командной строки (*MsSqlCmdLnUtils.msi*) на каждом узле Azure-SSIS IR. Одной из этих служебных программ является программа копирования (*bcp*).
 
@@ -359,7 +354,7 @@ ms.locfileid: "98556585"
 
 1. После завершения стандартной пользовательской установки и запуска Azure-SSIS IR можно найти все журналы настраиваемой установки в папке *Main. cmd. log* контейнера. Они включают стандартные выходные данные файла *Main. cmd* и другие журналы выполнения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка выпуска Enterprise Azure-SSIS IR](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных компонентов для Azure-SSIS IR](how-to-develop-azure-ssis-ir-licensed-components.md)

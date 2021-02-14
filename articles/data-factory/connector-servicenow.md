@@ -1,22 +1,18 @@
 ---
 title: Копирование данных из ServiceNow
 description: Узнайте, как копировать данные из ServiceNow в поддерживаемые хранилища данных в качестве приемников с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.openlocfilehash: bc48f651a1adb099017e8f47d9fa6bcfa8078fa1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e7ebc422a9fd8503c5a3b004e1d06cb5ebfb987
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81415350"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378457"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Копирование данных из ServiceNow с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -120,12 +116,11 @@ ms.locfileid: "81415350"
 
 Указывая в запросе схему и столбец для ServiceNow, обратите внимание на следующую информацию. Также просмотрите **советы по [улучшению производительности](#performance-tips) копирования**.
 
-- **Схема.** В запросе к ServiceNow укажите схему как `Actual` или `Display`, что можно рассматривать как параметр `sysparm_display_value` со значением true или false при вызове [REST API ServiceNow](https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=r_AggregateAPI-GET). 
+- **Схема.** В запросе к ServiceNow укажите схему как `Actual` или `Display`, что можно рассматривать как параметр `sysparm_display_value` со значением true или false при вызове [REST API ServiceNow](https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=r_AggregateAPI-GET). 
 - **Столбец.** Имя столбца для фактического значения в схеме `Actual` — это `[column name]_value`, а отображаемое имя в `Display` — это `[column name]_display_value`. Обратите внимание, что имя столбца должно соответствовать имени в схеме, используемой в запросе.
 
 **Образец запроса:** 
- `SELECT col_value FROM Actual.alm_asset` НИ 
-`SELECT col_display_value FROM Display.alm_asset`
+ `SELECT col_value FROM Actual.alm_asset` НИ`SELECT col_display_value FROM Display.alm_asset`
 
 **Пример**.
 

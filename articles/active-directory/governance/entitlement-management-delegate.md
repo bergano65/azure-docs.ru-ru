@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a5812d4dbbd1a63b16d5bee77bb018ea18dd1d6
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c8e6c13600cb5940351d31b54af403584cc68a5f
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937676"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515654"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Делегирование и роли в управлении назначениями Azure AD
 
@@ -65,12 +65,12 @@ ms.locfileid: "98937676"
 
 После делегирования отдел маркетинга может иметь роли, аналогичные приведенным в следующей таблице.
 
-| Пользователь | Роль задания | Роль Azure AD | Роль управления назначениями |
+| User (Пользователь) | Роль задания | Роль Azure AD | Роль управления назначениями |
 | --- | --- | --- | --- |
 | Hana | ИТ – администратор | глобальный администратор или администратор пользователей. |  |
-| мамта | Менеджер по маркетингу | Пользователь | Создатель каталога и владелец каталога |
-| Bob | Ведущий маркетинг | Пользователь | Владелец каталога |
-| Джессика | Менеджер по маркетингу проекта | Пользователь | Доступ к диспетчеру пакетов |
+| мамта | Менеджер по маркетингу | User (Пользователь) | Создатель каталога и владелец каталога |
+| Владимир | Ведущий маркетинг | User (Пользователь) | Владелец каталога |
+| Джессика | Менеджер по маркетингу проекта | User (Пользователь) | Доступ к диспетчеру пакетов |
 
 ## <a name="entitlement-management-roles"></a>Роли управления назначениями
 
@@ -124,22 +124,19 @@ ms.locfileid: "98937676"
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Microsoft 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Глобальный администратор](../roles/permissions-reference.md) | н/д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Администратор пользователей](../roles/permissions-reference.md) | н/д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Глобальный администратор](../roles/permissions-reference.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Администратор пользователей](../roles/permissions-reference.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Администратор Intune](../roles/permissions-reference.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Администратор Exchange](../roles/permissions-reference.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор служб Team Services](../roles/permissions-reference.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор SharePoint](../roles/permissions-reference.md) | Владелец каталога |  | :heavy_check_mark: |  | :heavy_check_mark: |
 | [Администратор приложения](../roles/permissions-reference.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
 | [Администратор облачных приложений](../roles/permissions-reference.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
-| Пользователь | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
-
-> [!NOTE]
-> Если пользователь добавляет группу безопасности или группу Microsoft 365, эта группа не может быть назначена ролью. Если пользователь добавляет группу, которая является назначаемой с помощью роли при создании пакета доступа, они также должны быть владельцами этой группы, назначаемой ролью. Дополнительные сведения см. [в статье Создание назначаемой роли группы в Azure Active Directory](../roles/groups-create-eligible.md).
+| User (Пользователь) | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
 
 Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../roles/delegate-by-task.md#entitlement-management).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Делегирование управления доступом к авторам каталогов](entitlement-management-delegate-catalog.md)
 - [Создание каталога ресурсов и управление им](entitlement-management-catalog-create.md)

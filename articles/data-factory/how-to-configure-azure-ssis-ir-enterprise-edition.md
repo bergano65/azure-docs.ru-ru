@@ -1,21 +1,17 @@
 ---
 title: Подготовка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
 description: В этой статье описаны возможности выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services, а также процедура его подготовки.
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/09/2020
 author: swinarko
 ms.author: sawinark
-ms.reviewer: douglasl
-manager: anandsub
-ms.openlocfilehash: be49d56d301c23791777f4d89e8c6c6fd35d7035
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: f700729c2d059648b1c3a7e451526aefcb436818
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636312"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387552"
 ---
 # <a name="provision-enterprise-edition-for-the-azure-ssis-integration-runtime"></a>Подготовка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
 
@@ -48,7 +44,7 @@ ms.locfileid: "92636312"
 
 1.  Скачайте и установите [Azure PowerShell](/powershell/azure/install-az-ps).
 
-2.  При подготовке или перенастройке среды выполнения интеграции Azure SSIS с помощью PowerShell, прежде чем ее запускать, выполните команду `Set-AzDataFactoryV2IntegrationRuntime` с **Enterprise** в качестве значения для параметра **Edition** . Ниже приведен пример скрипта:
+2.  При подготовке или перенастройке среды выполнения интеграции Azure SSIS с помощью PowerShell, прежде чем ее запускать, выполните команду `Set-AzDataFactoryV2IntegrationRuntime` с **Enterprise** в качестве значения для параметра **Edition**. Ниже приведен пример скрипта:
 
     ```powershell
     $MyAzureSsisIrEdition = "Enterprise"

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: reyandap
 ms.custom: references_pricing
-ms.openlocfilehash: 8ced9bb33be341d35904967092414676a6ffe3ac
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 13451291544f704000ab61d41ed5014fa69298e4
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905542"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517694"
 ---
 # <a name="about-virtual-wan-pricing"></a>Сведения о ценах на виртуальные глобальные сети
 
@@ -23,8 +23,7 @@ ms.locfileid: "96905542"
 Каждая служба в виртуальной глобальной сети оплачивается ценой. Поэтому предложение одной цены неприменимо к виртуальной глобальной сети. [Калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/) предоставляет механизм для получения затрат, основанный на службах, подготовленных в виртуальной глобальной сети. В этой статье обсуждаются часто задаваемые вопросы о ценах на виртуальные глобальные сети.
 
 >[!NOTE]
->Сведения о текущих ценах см. на странице [цен на виртуальные глобальные сети](https://azure.microsoft.com/pricing/details/virtual-wan/).
->
+>Сведения о текущих ценах см. на странице [цен на виртуальные глобальные сети](https://azure.microsoft.com/pricing/details/virtual-wan/). Плата за обмен данными между концентраторами (концентратора и концентратором) не отображается на странице цен на виртуальную глобальную сеть, так как она действует Inter-Region (внутренняя/межконтинентальной частиная) плата за [передачу данных Azure](https://azure.microsoft.com/pricing/details/bandwidth/).
 
 ## <a name="common-pricing-questions"></a><a name="questions"></a>Общие вопросы о ценах
 

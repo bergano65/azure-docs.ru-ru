@@ -3,7 +3,7 @@ title: Устранение неполадок управления назнач
 description: Узнайте о некоторых элементах, которые следует проверить, чтобы помочь в устранении неполадок Azure Active Directory управления назначением.
 services: active-directory
 documentationCenter: ''
-author: barclayn
+author: ajburnle
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.subservice: compliance
 ms.date: 12/23/2020
-ms.author: barclayn
+ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bca78195d4fb7bb265c4a7fd8d78ea49a35335b6
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 5b01321c2cbb15be5526bbe9ed04f52238390574
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746717"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516895"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
 
@@ -47,7 +47,6 @@ ms.locfileid: "97746717"
 
 * При удалении члена команды они также удаляются из группы Microsoft 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](/microsoftteams/office-365-groups#group-membership).
 
-* Убедитесь, что каталог не настроен для работы в нескольких регионах. Сейчас для управления правами не поддерживаются несколько регионов для SharePoint Online. Чтобы можно было управлять правами для сайтов SharePoint Online, эти сайты должны принадлежать к географическому расположению по умолчанию. Дополнительные сведения см. [в статье поддержка нескольких географических возможностей в OneDrive и SharePoint Online](/Microsoft 365/Enterprise/multi-geo-capabilities-in-onedrive-and-sharepoint-online-in-office-365).
 
 ## <a name="access-packages"></a>Пакеты для доступа
 
@@ -150,7 +149,7 @@ ms.locfileid: "97746717"
     
     Если любая политика имеет более высокий приоритет, категории с низким приоритетом не учитываются. Пример того, как в запрашивающей части отображается несколько политик с одинаковым приоритетом, см. в разделе [Выбор политики](entitlement-management-request-access.md#select-a-policy).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Управление доступом для внешних пользователей](entitlement-management-external-users.md)
 - [Просмотр отчетов о том, как пользователи получили доступ в управлении назначениями](entitlement-management-reports.md)

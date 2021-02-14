@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): Управление 
 description: Управляйте Машинное обучение новыми и классическими веб-службами с помощью портала веб-служб Машинное обучение Microsoft Azure. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/28/2017
-ms.openlocfilehash: 37f10cc8eb3d606d99eb5b3f821a486e9e4ea2fe
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8b04119f4a9ff702356f942cec5bebed1e23926b
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322349"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515943"
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-classic-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
@@ -51,7 +51,7 @@ ms.locfileid: "93322349"
 Для управления новыми веб-службами выполните следующие действия.
 
 1. Войдите в учетную запись Microsoft Azure на [портале веб-служб машинного обучения Microsoft Azure](https://services.azureml.net/quickstart) (используйте учетную запись, связанную с подпиской Azure).
-2. В меню выберите пункт **Web Services** (Веб-службы).
+2. В меню выберите пункт **Web Services**(Веб-службы).
 
 Отобразится список развернутых веб-служб для вашей подписки. 
 
@@ -120,7 +120,7 @@ ms.locfileid: "93322349"
 1. Войдите в учетную запись Microsoft Azure на [портале веб-служб машинного обучения Microsoft Azure](https://services.azureml.net/quickstart) (используйте учетную запись, связанную с подпиской Azure).
 2. В меню выберите **Classic Web Services** (Классические веб-службы).
 
-Для управления классической веб-службой щелкните **Classic Web Services** (Классические веб-службы). На странице классических веб-служб вы можете:
+Для управления классической веб-службой щелкните **Classic Web Services**(Классические веб-службы). На странице классических веб-служб вы можете:
 
 * выбрать веб-службу для просмотра связанных конечных точек;
 * удалить веб-службу;

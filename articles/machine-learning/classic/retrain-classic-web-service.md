@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): повторное о
 description: Узнайте, как переучить модель и обновить классическую веб-службу для использования недавно обученной модели в Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: peterclu
 ms.author: peterlu
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: 158541d34568b7ea02ea82dbfe90f5801824716f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 90c968ee953e80238775639964cb09a25741b33d
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325785"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517575"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 
-**применимо к:** ![ Зеленая галочка. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ X, указывающее на отсутствие. ](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**применимо к:** ![ Зеленая галочка. ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ X, указывающее на отсутствие.](../../../includes/media/aml-applies-to-skus/no.png)[машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
 
 
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)
@@ -76,7 +76,7 @@ ms.locfileid: "93325785"
 
 Теперь обученную модель можно использовать для обновления созданной конечной точки оценки.
 
-В следующем примере кода показано, как использовать параметры *BaseLocation* , *RelativeLocation* , *SasBlobToken* и URL-адрес исправления для обновления конечной точки.
+В следующем примере кода показано, как использовать параметры *BaseLocation*, *RelativeLocation*, *SasBlobToken* и URL-адрес исправления для обновления конечной точки.
 
 ```csharp
 private async Task OverwriteModel()
@@ -134,7 +134,7 @@ private async Task OverwriteModel()
 
 Если код выполнен успешно, новая конечная точка начнет использовать переобученную модель примерно через 30 секунд.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

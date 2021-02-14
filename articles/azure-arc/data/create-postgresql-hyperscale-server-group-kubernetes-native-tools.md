@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 30852b6b3f9a4b490c4b58fe07f34ee49c60fa9f
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 250c1ef837793c2149ff653f395f40272cf43335
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955252"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384951"
 ---
 # <a name="create-a-postgresql-hyperscale-server-group-using-kubernetes-tools"></a>Создание группы PostgreSQL Scale Server с помощью средств Kubernetes
 
@@ -44,14 +44,14 @@ data:
   password: <your base64 encoded password>
 kind: Secret
 metadata:
-  name: example-login-secret
+  name: pg1-login-secret
 type: Opaque
 ---
 apiVersion: arcdata.microsoft.com/v1alpha1
 kind: postgresql-12
 metadata:
   generation: 1
-  name: example
+  name: pg1
 spec:
   engine:
     extensions:
@@ -107,7 +107,7 @@ echo '<your string to encode here>' | base64
 
 ### <a name="customizing-the-name"></a>Настройка имени
 
-Шаблон имеет значение "example" для атрибута Name.  Его можно изменить, но должны быть символами, которые следуют стандартам DNS-имен.  Необходимо также изменить имя секрета на Match.  Например, если изменить имя группы серверов PostgreSQL Scale на postgres1, необходимо изменить имя секрета с "example-login-Secret" на "postgres1-login-Secret".
+Шаблон имеет значение "группы PG1" для атрибута Name.  Его можно изменить, но должны быть символами, которые следуют стандартам DNS-имен.  Необходимо также изменить имя секрета на Match.  Например, если изменить имя группы серверов PostgreSQL Scale на группы pg2, необходимо изменить имя секрета с "группы PG1-login-Secret" на "группы pg2-login-Secret".
 
 ### <a name="customizing-the-engine-version"></a>Настройка версии подсистемы
 
@@ -152,10 +152,10 @@ kubectl create -n <your target namespace> -f <path to your yaml file>
 Создание группы серверов PostgreSQL Scale займет несколько минут. Вы можете отслеживать ход выполнения в другом окне терминала с помощью следующих команд:
 
 > [!NOTE]
->  В приведенных ниже примерах команд предполагается, что вы создали PostgreSQL группу серверов с именем "postgres1" и пространством имен Kubernetes с именем "Arc".  Если вы использовали другое имя пространства имен или PostgreSQL, можно заменить "Arc" и "postgres1" своими именами.
+>  В приведенных ниже примерах команд предполагается, что вы создали PostgreSQL группу серверов с именем "группы PG1" и пространством имен Kubernetes с именем "Arc".  Если вы использовали другое имя пространства имен или PostgreSQL, можно заменить "Arc" и "группы PG1" своими именами.
 
 ```console
-kubectl get postgresql-12/postgres1 --namespace arc
+kubectl get postgresql-12/pg1 --namespace arc
 ```
 
 ```console
@@ -168,7 +168,7 @@ kubectl get pods --namespace arc
 kubectl describe po/<pod name> --namespace arc
 
 #Example:
-#kubectl describe po/postgres1-0 --namespace arc
+#kubectl describe po/pg1-0 --namespace arc
 ```
 
 ## <a name="troubleshooting-creation-problems"></a>Устранение неполадок при создании

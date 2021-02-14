@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7f7be27e67bfa266c368927227f1b8d1083a5124
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 96fbe676d4b929d2c1ee2efce0d10f3b5dc7c6ab
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937881"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103198"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое входит в систему пользователей: регистрация приложения
 
@@ -42,7 +42,7 @@ ms.locfileid: "98937881"
 > Используемый портал отличается в зависимости от того, выполняется ли ваше приложение в Microsoft Azure общедоступном облаке или в национальной или независимых облаке. Дополнительные сведения см. в статье [местные облака](./authentication-national-cloud.md#app-registration-endpoints).
 
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>. 
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>. 
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
@@ -57,7 +57,7 @@ ms.locfileid: "98937881"
 1. В разделе **Управление** выберите **Проверка подлинности** и добавьте следующие сведения.
    1. В разделе " **веб-сайт** " добавьте в `https://localhost:44321/signin-oidc` качестве **URI перенаправления**.
    1. В **URL-адресе для выхода на переднюю канал** введите `https://localhost:44321/signout-oidc` .
-   1. В разделе **неявное предоставление и гибридные потоки** выберите **токены идентификации**.
+   1. В разделе **Неявное предоставление разрешения и гибридные потоки** выберите **Маркеры идентификации**.
    1. Щелкните **Сохранить**.
    
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
@@ -68,7 +68,7 @@ ms.locfileid: "98937881"
    1. В разделе **URI перенаправления (необязательно)** выберите **Web** в поле со списком и введите **URI перенаправления** `https://localhost:44326/` .
    1. Выберите **Зарегистрировать**, чтобы создать приложение.
 1. В разделе **Управление** выберите **Проверка подлинности**.
-1. В разделе **неявное предоставление и гибридные потоки** выберите **токены идентификации**. Для работы с этим образцом необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md) для входа пользователя.
+1. В разделе **Неявное предоставление разрешения и гибридные потоки** выберите **Токены идентификатора**. Для работы с этим образцом необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md) для входа пользователя.
 1. Щелкните **Сохранить**.
 
 # <a name="java"></a>[Java](#tab/java)
@@ -121,6 +121,6 @@ ms.locfileid: "98937881"
 >
 > Вы можете создать приложение, которое будет выполнять вход пользователей с помощью личных учетных записей Майкрософт (например, Skype, Xbox или Outlook.com). Сначала создайте многоклиентское приложение. Поддерживаемые типы учетных записей — это учетные записи в любом каталоге Организации. Затем измените [`accessTokenAcceptedVersion`](./reference-app-manifest.md#accesstokenacceptedversion-attribute) значение свойства на **2** , а свойство — на [`signInAudience`](./reference-app-manifest.md#signinaudience-attribute) `AzureADandPersonalMicrosoftAccount` в [манифесте приложения](./reference-app-manifest.md) из портал Azure. Дополнительные сведения см. в описании [шага 1,3](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-3-AnyOrgOrPersonal#step-1-register-the-sample-with-your-azure-ad-tenant) в руководстве по ASP.NET Core. Этот шаг можно обобщить для веб-приложений на любом языке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к следующей статье в этом сценарии — [конфигурации кода приложения](scenario-web-app-sign-user-app-configuration.md).

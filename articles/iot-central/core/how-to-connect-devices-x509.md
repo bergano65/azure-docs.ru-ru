@@ -8,18 +8,25 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: bffff099e8df2b944cbef50a074ef625267ed238
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: cf0db71600c9350b4d70e6375f509a6e88709f70
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944638"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378338"
 ---
 # <a name="how-to-connect-devices-with-x509-certificates-using-nodejs-device-sdk-for-iot-central-application"></a>Как подключить устройства с сертификатами X. 509 с помощью пакета SDK для Node.js устройств для IoT Central приложения
 
 IoT Central поддерживает подписанные URL-адрес (SAS) и сертификаты X. 509 для защиты обмена данными между устройством и приложением. В руководстве по [созданию и подключению клиентского приложения к IOT Centralному приложению Azure](./tutorial-connect-device.md) используется SAS. Из этой статьи вы узнаете, как изменить пример кода для использования X. 509.  Сертификаты X. 509 рекомендуется использовать в рабочих средах. Дополнительные сведения см. [в статье подключение к Azure IOT Central](./concepts-get-connected.md).
 
 В этой статье описаны два способа использования [регистраций](how-to-connect-devices-x509.md#use-a-group-enrollment) X. 509-Group, обычно используемых в рабочей среде, и [индивидуальных регистраций](how-to-connect-devices-x509.md#use-an-individual-enrollment) , которые можно использовать для тестирования.
+
+В фрагментах кода в этой статье используется JavaScript. Примеры кода на других языках см. в следующих статьях:
+
+- [В](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_ll_client_x509_sample)
+- [C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/device/X509DeviceCertWithChainSample)
+- [Java](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/send-event-x509)
+- [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/sync-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -219,6 +226,6 @@ IoT Central поддерживает подписанные URL-адрес (SAS)
 
 Вы также можете повторить описанные выше действия для сертификата _митестселфцертсекондари_ .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как подключать устройства с помощью сертификатов X. 509, предлагаем следующий шаг: Узнайте, как [отслеживать подключение устройств с помощью Azure CLI](howto-monitor-devices-azure-cli.md)

@@ -1,24 +1,18 @@
 ---
 title: Простота копирования данных с помощью мастера копирования — Azure
 description: Из этой статьи вы узнаете, как с помощью мастера копирования фабрики данных копировать данные из поддерживаемых источников данных в приемники.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: f904972f-cd33-48db-9755-2b3196ae4168
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 28169e43d0e6949a16cc56c7e7d5d91d6db1ef57
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f3686a22291e8595deabe3e207ce66744c3cdd82
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003044"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376910"
 ---
 # <a name="copy-or-move-data-easily-with-azure-data-factory-copy-wizard"></a>Удобное копирование и перемещение данных с помощью мастера копирования в фабрике данных Azure
 > [!NOTE]

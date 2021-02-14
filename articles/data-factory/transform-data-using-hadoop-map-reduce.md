@@ -1,21 +1,18 @@
 ---
 title: Преобразование данных с помощью действия MapReduce для Hadoop
 description: Узнайте, как обрабатывать данные путем выполнения программ Hadoop MapReduce в кластере Azure HDInsight из фабрики данных Azure.
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: nabhishek
 ms.author: abnarain
-manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 05/08/2020
-ms.openlocfilehash: 7685c2075b371ce22930b14187c27bcb0879c962
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: f03906586d6226c92cfa69e1a139d4c876cbf723
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632028"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375890"
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
 
@@ -112,7 +109,7 @@ ms.locfileid: "92632028"
     }
 }
 ```
-Вы можете указать необходимые аргументы для программы MapReduce в разделе **arguments** . Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д. — параметры, за которыми сразу следуют их значения).
+Вы можете указать необходимые аргументы для программы MapReduce в разделе **arguments**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д. — параметры, за которыми сразу следуют их значения).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами:

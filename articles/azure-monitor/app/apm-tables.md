@@ -3,14 +3,14 @@ title: Схема ресурсов на основе рабочей област
 description: Сведения о новой структуре и схеме таблицы для Azure Monitor Application Insights ресурсов на основе рабочих областей.
 ms.topic: conceptual
 ms.date: 05/09/2020
-ms.openlocfilehash: 8f0bee64d74cfd5b6abef5c918c023974fda3fcf
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: e63d4a680ad76ccd6895aed53f3276a5775b1226
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931059"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385971"
 ---
-# <a name="workspace-based-resource-changes-preview"></a>Изменения ресурсов на основе рабочей области (Предварительная версия)
+# <a name="workspace-based-resource-changes"></a>Изменения ресурсов на основе рабочей области
 
 До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](../platform/data-platform-logs.md).
 
@@ -18,18 +18,18 @@ ms.locfileid: "91931059"
 
 ## <a name="table-structure"></a>Структура таблицы
 
-| Устаревшее имя таблицы | Имя новой таблицы | Description |
+| Устаревшее имя таблицы | Новое имя таблицы | Описание |
 |:---|:---|:---|
-| availabilityResults | аппаваилабилитиресултс |  Сводные данные из тестов доступности.|
-| бровсертимингс | аппбровсертимингс | Данные о производительности клиента, например время, затраченное на обработку входящих данных.|
-| зависимости | аппдепенденЦиес | Вызовы из приложения в другие компоненты (включая внешние компоненты), записанные через TrackDependency (), например вызовы REST API, базы данных или файловой системы.  |
-| customEvents | аппевентс | Пользовательские события, созданные приложением. |
-| customMetrics | аппметрикс | Пользовательские метрики, созданные приложением. |
-| pageViews | апппажевиевс| Данные о каждом представлении веб-сайта с информацией браузера. |
-| performanceCounters | аппперформанцекаунтерс | Измерения производительности от ресурсов вычислений, поддерживающих приложение, например счетчики производительности Windows. |
-| requests | аппрекуестс | Запросы, полученные приложением. Например, отдельная запись запроса записывается в журнал для каждого HTTP-запроса, получаемого веб – приложением.  |
-| исключения | аппсистемевентс | Исключения, вызываемые средой выполнения приложения, захватывают исключения как на стороне сервера, так и на стороне клиента (браузеров). |
-| traces | апптрацес | Подробные журналы (трассировки), выдаваемые с помощью платформ кода приложения и ведения журналов, записанных с помощью TrackTrace (). |
+| availabilityResults | AppAvailabilityResults |  Сводные данные из тестов доступности.|
+| бровсертимингс | AppBrowserTimings | Данные о производительности клиента, например время, затраченное на обработку входящих данных.|
+| зависимости | AppDependencies | Вызовы из приложения в другие компоненты (включая внешние компоненты), записанные через TrackDependency (), например вызовы REST API, базы данных или файловой системы.  |
+| customEvents | AppEvents | Пользовательские события, созданные приложением. |
+| customMetrics | AppMetrics | Пользовательские метрики, созданные приложением. |
+| pageViews | AppPageViews| Данные о каждом представлении веб-сайта с информацией браузера. |
+| performanceCounters | AppPerformanceCounters | Измерения производительности от ресурсов вычислений, поддерживающих приложение, например счетчики производительности Windows. |
+| requests | AppRequests | Запросы, полученные приложением. Например, отдельная запись запроса записывается в журнал для каждого HTTP-запроса, получаемого веб – приложением.  |
+| исключения | AppSystemEvents | Исключения, вызываемые средой выполнения приложения, захватывают исключения как на стороне сервера, так и на стороне клиента (браузеров). |
+| traces | AppTraces | Подробные журналы (трассировки), выдаваемые с помощью платформ кода приложения и ведения журналов, записанных с помощью TrackTrace (). |
 
 ## <a name="table-schemas"></a>Схемы таблиц
 
@@ -37,13 +37,13 @@ ms.locfileid: "91931059"
 
 Большинство столбцов имеют одинаковые имена с разной прописной буквой. Так как ККЛ учитывает регистр, необходимо изменить имя каждого столбца вместе с именами таблиц в существующих запросах. Столбцы с изменениями в дополнение к капитализации выделены. Вы по-прежнему можете использовать классические Application Insights запросы на панели **журналы** ресурса Application Insights, даже если это ресурс на основе рабочей области. Новые имена свойств необходимы для выполнения запросов в контексте Log Analytics рабочей области.
 
-### <a name="appavailabilityresults"></a>аппаваилабилитиресултс
+### <a name="appavailabilityresults"></a>AppAvailabilityResults
 
 Устаревшая таблица: доступность
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -75,19 +75,19 @@ ms.locfileid: "91931059"
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
 |size|real|Размер|real|
-|Успешное завершение|строка|Успех|Bool|
+|Успешное завершение|строка|Успешно|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="appbrowsertimings"></a>аппбровсертимингс
+### <a name="appbrowsertimings"></a>AppBrowserTimings
 
 Устаревшая таблица: Бровсертимингс
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -125,13 +125,13 @@ ms.locfileid: "91931059"
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="appdependencies"></a>аппдепенденЦиес
+### <a name="appdependencies"></a>AppDependencies
 
 Устаревшая таблица: зависимости
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -146,7 +146,7 @@ ms.locfileid: "91931059"
 |cloud_RoleName|строка|аппроленаме|строка|
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|Данные|строка|Данные|строка|
+|.|строка|Данные|строка|
 |длительность|real|DurationMs|real|
 |`id`|строка|`Id`|строка|
 |iKey|строка|IKey|строка|
@@ -162,7 +162,7 @@ ms.locfileid: "91931059"
 |resultCode|строка|ResultCode|строка|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|Успешное завершение|строка|Успех|Bool|
+|Успешное завершение|строка|Успешно|Bool|
 |target|строка|Назначение|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |type|строка|DependencyType|строка|
@@ -170,13 +170,13 @@ ms.locfileid: "91931059"
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="appevents"></a>аппевентс
+### <a name="appevents"></a>AppEvents
 
 Устаревшая таблица: customEvents
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -207,13 +207,13 @@ ms.locfileid: "91931059"
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="appmetrics"></a>аппметрикс
+### <a name="appmetrics"></a>AppMetrics
 
 Устаревшая таблица: customMetrics
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -248,13 +248,13 @@ ms.locfileid: "91931059"
 |валуестддев|real|валуестддев|real|
 |валуесум|real|валуесум|real|
 
-### <a name="apppageviews"></a>апппажевиевс
+### <a name="apppageviews"></a>AppPageViews
 
 Устаревшая таблица: pageViews
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -289,13 +289,13 @@ ms.locfileid: "91931059"
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="appperformancecounters"></a>аппперформанцекаунтерс
+### <a name="appperformancecounters"></a>AppPerformanceCounters
 
 Устаревшая таблица: performanceCounters
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |категория|строка|Категория|строка|
@@ -328,13 +328,13 @@ ms.locfileid: "91931059"
 |user_Id|строка|UserId|строка|
 |значение|real|Значение|real|
 
-### <a name="apprequests"></a>аппрекуестс
+### <a name="apprequests"></a>AppRequests
 
 Устаревшая таблица: запросы
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|
@@ -350,7 +350,7 @@ ms.locfileid: "91931059"
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
 |длительность|real|DurationMs|Real|
-|`id`|строка|`Id`|Строковый тип|
+|`id`|строка|`Id`|Строка|
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
@@ -360,25 +360,25 @@ ms.locfileid: "91931059"
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
 |operation_SyntheticSource|строка|оператионсинсетиксаурце|строка|
-|перформанцебуккет|строка|перформанцебуккет|Строковый тип|
-|resultCode|строка|ResultCode|Строковый тип|
+|перформанцебуккет|строка|перформанцебуккет|Строка|
+|resultCode|строка|ResultCode|Строка|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|source|строка|Источник|Строковый тип|
-|Успешное завершение|строка|Успех|Bool|
+|source|строка|Источник|Строка|
+|Успешное завершение|строка|Успешно|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
-|url|строка|Url|Строковый тип|
+|url|строка|Url|Строка|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="appsystemevents"></a>аппсистемевентс
+### <a name="appsystemevents"></a>AppSystemEvents
 
 Устаревшая таблица: исключения
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |сборка|строка|Сборка|строка|
@@ -394,7 +394,7 @@ ms.locfileid: "91931059"
 |cloud_RoleName|строка|аппроленаме|строка|
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|подробности|Динамический|Подробнее|Динамический|
+|подробности|Динамический|Сведения|Динамический|
 |handledAt|строка|хандледат|строка|
 |iKey|строка|IKey|строка|
 |иннермостассембли|строка|иннермостассембли|строка|
@@ -424,13 +424,13 @@ ms.locfileid: "91931059"
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
 
-### <a name="apptraces"></a>апптрацес
+### <a name="apptraces"></a>AppTraces
 
 Устаревшая таблица: трассировки
 
-|ApplicationInsights|Тип|LogAnalytics|Тип|
+|ApplicationInsights|Type|LogAnalytics|Type|
 |:---|:---|:---|:---|
-|appId|строка|\_ResourceGUID|строка|
+|appId|строка|\_ResourceGuid|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
 |client_Browser|строка|ClientBrowser|строка|

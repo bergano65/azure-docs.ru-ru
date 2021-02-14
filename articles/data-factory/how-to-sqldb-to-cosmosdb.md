@@ -1,19 +1,17 @@
 ---
 title: Перенос таблиц базы данных SQL Azure в Azure CosmosDB с помощью фабрики данных Azure
 description: Возьмите существующую нормализованную схему базы данных из базы данных SQL Azure и перенесите ее в Денормализованный контейнер Azure CosmosDB с помощью фабрики данных Azure.
-services: data-factory
 author: kromerm
+ms.author: makromer
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/29/2020
-ms.author: makromer
-ms.openlocfilehash: 5d93cb49c77a4c8164a8b4e9bca349a805f39678
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 3d67ac9474704fac39dbe7eb91aead5c4babc4ce
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041638"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383948"
 ---
 # <a name="migrate-normalized-database-schema-from-azure-sql-database-to-azure-cosmosdb-denormalized-container"></a>Перенос нормализованной схемы базы данных из базы данных SQL Azure в денормализованный контейнер Azure CosmosDB
 
@@ -50,7 +48,7 @@ FROM SalesLT.SalesOrderHeader o;
 
 2. Добавление действия потока данных
 
-3. В действии поток данных выберите **создать сопоставление поток данных** .
+3. В действии поток данных выберите **создать сопоставление поток данных**.
 
 4. Эта диаграмма потока данных будет построена ниже
 
@@ -104,7 +102,7 @@ FROM SalesLT.SalesOrderHeader o;
 
 Если все выглядит хорошо, теперь все готово для создания нового конвейера, добавления этого действия потока данных в этот конвейер и его выполнения. Можно выполнить из отладки или запуска триггера. Через несколько минут в базе данных CosmosDB должен быть новый Денормализованный контейнер заказов, именуемый "заказы".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создайте оставшуюся часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)сопоставления.
 * [Скачайте шаблон завершенного конвейера](https://github.com/kromerm/adfdataflowdocs/blob/master/sampledata/SQL%20Orders%20to%20CosmosDB.zip) для этого руководства и импортируйте шаблон в фабрику.

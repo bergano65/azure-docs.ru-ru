@@ -1,24 +1,19 @@
 ---
 title: Устранение неполадок фабрики данных Azure
 description: Узнайте, как устранять неполадки при использовании фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
-ms.assetid: 38fd14c1-5bb7-4eef-a9f5-b289ff9a6942
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 author: dcstwh
 ms.author: weetok
 ms.reviewer: maghan
-manager: anandsub
 robots: noindex
-ms.openlocfilehash: bd18a26a1c199e1ecc32cfc371d2931b1dee0c3f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ed831e5f07eb29110b858dfb16b73f276926424f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494976"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388249"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок Фабрики данных
 > [!NOTE]
@@ -30,19 +25,20 @@ ms.locfileid: "96494976"
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 ### <a name="error-the-subscription-is-not-registered-to-use-namespace-microsoftdatafactory"></a>Ошибка "Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory"
-Если эта ошибка возникает, поставщик ресурсов фабрики данных Azure не был зарегистрирован на компьютере. Выполните следующие действия.
+Если эта ошибка возникает, поставщик ресурсов фабрики данных Azure не был зарегистрирован на компьютере. Выполните следующие действия:
 
 1. Запустите Azure PowerShell.
 2. Войдите в свою учетную запись Azure с помощью следующей команды:
 
-    ```powershell
-    Connect-AzAccount
-    ```
+   ```powershell
+   Connect-AzAccount
+   ```
+
 3. Выполните следующую команду, чтобы зарегистрировать поставщик фабрики данных Azure:
 
-    ```powershell        
-    Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
-    ```
+   ```powershell
+   Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
+   ```
 
 ### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Проблема: ошибка авторизации при выполнении командлета фабрики данных
 Скорее всего, для Azure PowerShell используется неправильная учетная запись или подписка Azure. Чтобы выбрать правильную учетную запись и подписку Azure для Azure PowerShell, используйте такие командлеты:
@@ -67,7 +63,7 @@ ms.locfileid: "96494976"
 ### <a name="problem-input-slices-are-in-waiting-state-forever"></a>Проблема. неограниченное состояние входных срезов
 Срезы могут находиться в состоянии **ожидания** по разным причинам. Одна из распространенных причин — для свойства **external** не задано значение **true**. Все наборы данных, созданные вне фабрики данных Azure, должны быть помечены свойством **external** . Это свойство указывает на то, что данные являются внешними и не поддерживаются какими-либо конвейерами в фабрике данных. После того как данные станут доступны в соответствующем хранилище, срезы данных помечаются флагом **Ready** (готово).
 
-Пример использования свойства **external** приведен ниже. При установке значения External в значение true можно дополнительно указать **externalData** _.
+Пример использования свойства **external** приведен ниже. При необходимости можно указать **externalData***, если параметру External присвоить значение true.
 
 Дополнительные сведения об этом свойстве см. в статье [Наборы данных](data-factory-create-datasets.md).
 
@@ -97,7 +93,7 @@ ms.locfileid: "96494976"
 }
 ```
 
-Чтобы устранить эту ошибку, добавьте свойство _ *External** и необязательный раздел **EXTERNALDATA** в определение JSON входной таблицы и воссоздайте таблицу.
+Чтобы устранить эту ошибку, добавьте свойство **external** и дополнительный раздел **externalData** в определение JSON входной таблицы и повторно создайте эту таблицу.
 
 ### <a name="problem-hybrid-copy-operation-fails"></a>Проблема: сбой гибридной операции копирования
 Действия по устранению неполадок с копированием в локальное хранилище данных и из него с помощью шлюза управления данными см. в статье [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).

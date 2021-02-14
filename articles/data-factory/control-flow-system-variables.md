@@ -1,22 +1,18 @@
 ---
 title: Системные переменные в фабрике данных Azure
 description: В этой статье описаны системные переменные, поддерживаемые фабрикой данных Azure. Вы можете использовать эти переменные в выражениях при определении сущностей фабрики данных.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/12/2018
-ms.openlocfilehash: fc6b2e4c944394d811abc19f70aeb34a0ae3c9a4
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: cb19b7e8c5271e1106e69c98d5bd17a1bcb822bf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127674"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385291"
 ---
 # <a name="system-variables-supported-by-azure-data-factory"></a>Системные переменные, поддерживаемые в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -66,5 +62,5 @@ ms.locfileid: "98127674"
 | @triggerBody(). имя_папки  |Путь к папке, содержащей файл, заданный параметром `@triggerBody().fileName` . Первый сегмент пути к папке — это имя контейнера хранилища BLOB-объектов Azure.  |
 | @trigger().startTime |Время срабатывания триггера для вызова выполнения конвейера. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о том, как эти переменные используются в выражениях, см. в статье [Выражения и функции в фабрике данных Azure](control-flow-expression-language-functions.md).
