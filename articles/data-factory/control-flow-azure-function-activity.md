@@ -1,22 +1,18 @@
 ---
 title: Действие функции Azure в фабрике данных Azure
 description: Узнайте, как с помощью действия функции Azure запускать функцию Azure в конвейере Фабрики данных
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: f7c8f1e5ae0da9e7c404a942fcb4f554281486a7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 51cf396fb6f1fcc86a0187e9f3be6b81487b86c2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500054"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383410"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -69,6 +65,6 @@ ms.locfileid: "96500054"
 
 Образец фабрики данных, который использует функцию Azure для извлечения содержимого tar-файла, можно найти [здесь](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о действиях в Фабрике данных см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md).

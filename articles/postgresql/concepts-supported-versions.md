@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f0c9a01e43f12e8fbe597c85c22b79c0994305e3
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 41662c5e4cc0ed9458f8b1b1279e2753daed789f
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938874"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518459"
 ---
 # <a name="supported-postgresql-major-versions"></a>Поддерживаемые основные версии PostgreSQL
 
@@ -29,11 +29,8 @@ ms.locfileid: "96938874"
 ## <a name="postgresql-version-96"></a>PostgreSQL версии 9,6
 Текущий дополнительный выпуск — 9.6.16. Дополнительные сведения об улучшениях и исправлениях в этом дополнительном выпуске см. в [документации по PostgreSQL](https://www.postgresql.org/docs/9.6/static/release-9-6-16.html) .
 
-## <a name="postgresql-version-95"></a>PostgreSQL версии 9,5
-Текущий дополнительный выпуск — 9.5.20. Дополнительные сведения об улучшениях и исправлениях в этом дополнительном выпуске см. в [документации по PostgreSQL](https://www.postgresql.org/docs/9.5/static/release-9-5-20.html) .
-
-> [!NOTE]
-> При согласовании с [политикой управления версиями](https://www.postgresql.org/support/versioning/)postgres Community в базе данных Azure для PostgreSQL будет снята версия 9,5 с 11 февраля 2021. Дополнительные сведения и ограничения см. в статье [Политика управления версиями базы данных Azure для PostgreSQL](concepts-version-policy.md) .
+## <a name="postgresql-version-95-retired"></a>PostgreSQL версии 9,5 (снят с учета)
+В соответствии с [политикой управления версиями](https://www.postgresql.org/support/versioning/)сообщества postgres, база данных Azure для PostgreSQL была списана Postgres версии 9,5 с 11 февраля 2021 г. Дополнительные сведения и ограничения см. в статье [Политика управления версиями базы данных Azure для PostgreSQL](concepts-version-policy.md) . Если вы используете эту основную версию, выполните обновление до более поздней версии, желательно, чтобы PostgreSQL 11 на самом раннем удобство.
 
 ## <a name="managing-upgrades"></a>Управление обновлениями
 Проект PostgreSQL регулярно выдает дополнительные выпуски для исправления ошибок, о которых сообщили. База данных Azure для PostgreSQL автоматически закрывает серверы с дополнительными выпусками во время ежемесячных развертываний службы. 
@@ -46,5 +43,5 @@ ms.locfileid: "96938874"
 ### <a name="version-syntax"></a>Синтаксис версии
 До PostgreSQL версии 10 [Политика управления версиями PostgreSQL](https://www.postgresql.org/support/versioning/) считается обновлением _основного номера версии_ , что приводит к увеличению первого _или_ второго числа. Например, 9,5 на 9,6 считалось обновлением _основной_ версии. Начиная с версии 10, только изменение первого числа считается обновлением основной версии. Например, 10,0 на 10,1 — это _незначительное_ обновление выпуска. Версия 10 до 11 является _основным_ обновлением версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Сведения о поддерживаемых расширениях PostgreSQL см. [в документе о расширениях](concepts-extensions.md).

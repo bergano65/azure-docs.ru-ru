@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Узнайте о средствах и платформах машинного обучения, предустановленных на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 087679c49c3cc025268e6f895757ae5f5c47c917
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ac71d8d7830f1d740d0156886a364b1d53ab247f
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014216"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519564"
 ---
 # <a name="machine-learning-and-data-science-tools-on-azure-data-science-virtual-machines"></a>Машинное обучение и средства обработки и анализа данных на виртуальных машинах Azure для обработки и анализа данных
 Виртуальные машины Azure для обработки и анализа данных (Dsvm) имеют широкий набор средств и библиотек для машинного обучения, доступных на популярных языках, таких как Python, R и Julia.
@@ -89,7 +88,7 @@ ms.locfileid: "96014216"
 | Что это такое?   |  Коллекция алгоритмов машинного обучения для задач интеллектуального анализа данных. Алгоритмы можно применить непосредственно к набору данных или вызвать из кода Java. Weka содержит средства для предварительной обработки данных, классификации, регрессии, кластеризации, правил взаимосвязей и визуализации. |
 | Поддерживаемые выпуски     | Windows, Linux     |
 | Распространенные способы применения      | Общее средство машинного обучения     |
-| Запуск и использование      | В Windows выполните поиск Weka в меню " **Пуск** ". В Linux войдите в систему с помощью X2Go, а затем перейдите к разделу разработка **приложений**  >  **Development**  >  **weka**. |
+| Запуск и использование      | В Windows выполните поиск Weka в меню " **Пуск** ". В Linux войдите в систему с помощью X2Go, а затем перейдите к разделу разработка **приложений**  >    >  **weka**. |
 | Ссылка на примеры      | [Примеры Weka](https://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
 | Связанные инструменты      |LightGBM, Rattle, XGBoost   |
 

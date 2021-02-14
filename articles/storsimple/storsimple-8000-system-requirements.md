@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 09/28/2017
+ms.date: 02/11/2021
 ms.author: alkohli
-ms.openlocfilehash: 6dcaa83980210a1f5449e8a2e0982cb8e39ff03d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: fa7616a740e8246fa08e950494428095f41ee404
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966196"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382860"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>Программное обеспечение StorSimple серии 8000, высокий уровень доступности и требования к сети
 
@@ -41,7 +41,7 @@ ms.locfileid: "94966196"
 
 | Поддерживаемые операционные системы | Требуемая версия | Дополнительные требования и примечания |
 | --- | --- | --- |
-| Windows Server |2008 R2 с пакетом обновления 1 (SP1), 2012, 2012 R2, 2016 |Тома StorSimple iSCSI поддерживаются только на следующих типах дисков Windows:<ul><li>простой том на базовом диске;</li><li>простой и зеркальный тома на динамическом диске.</li></ul>Поддерживаются только инициаторы iSCSI программного обеспечения, которые изначально присутствуют в операционной системе. Инициаторы iSCSI оборудования не поддерживаются.<br></br>Тонкая подготовка Windows Server 2012 и 2016 и функции ODX поддерживаются при использовании тома StorSimple iSCSI.<br><br>StorSimple может создавать тома с тонкой и полной подготовкой. Однако тома с частичной подготовкой создать нельзя.<br><br>Переформатирование тома с тонкой подготовкой может занять длительное время. Вместо переформатирования рекомендуется удалить том, а затем создать новый. Если все же требуется переформатировать том, выполните следующие действия.<ul><li>Выполните следующую команду до переформатирования, чтобы избежать задержек при реорганизации пространства: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>После завершения форматирования используйте следующую команду, чтобы реорганизовать пространство:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Примените исправление Windows Server 2012 к компьютеру Windows Server в соответствии с указаниями в [статье 2878635 базы знаний](https://support.microsoft.com/kb/2870270).</li></ul></li></ul></ul> При настройке StorSimple Snapshot Manager или адаптера StorSimple для SharePoint см. раздел [Требования к программному обеспечению для дополнительных компонентов](#software-requirements-for-optional-components). |
+| Windows Server |2008 R2 с пакетом обновления 1 (SP1), 2012, 2012 R2, 2016 |Тома StorSimple iSCSI поддерживаются только на следующих типах дисков Windows:<ul><li>простой том на базовом диске;</li><li>простой и зеркальный тома на динамическом диске.</li></ul>Поддерживаются только инициаторы iSCSI программного обеспечения, которые изначально присутствуют в операционной системе. Инициаторы iSCSI оборудования не поддерживаются.<br></br>Тонкая подготовка Windows Server 2012 и 2016 и функции ODX поддерживаются при использовании тома StorSimple iSCSI.<br><br>StorSimple может создавать тома с тонкой и полной подготовкой. Однако тома с частичной подготовкой создать нельзя.<br><br>Переформатирование тома с тонкой подготовкой может занять длительное время. Вместо переформатирования рекомендуется удалить том, а затем создать новый. Если все же требуется переформатировать том, выполните следующие действия.<ul><li>Выполните следующую команду до переформатирования, чтобы избежать задержек при реорганизации пространства: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>После завершения форматирования используйте следующую команду, чтобы реорганизовать пространство:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Примените исправление Windows Server 2012 к компьютеру Windows Server в соответствии с указаниями в [статье 2878635 базы знаний](https://support.microsoft.com/kb/2870270).</li></ul></li></ul></ul> При настройке StorSimple Snapshot Manager или адаптера StorSimple для SharePoint см. раздел [Требования к программному обеспечению для дополнительных компонентов](#software-requirements-for-optional-components). <br> Если клиент Windows Server использует протокол SMB для доступа к устройству StorSimple, перейдите к разделу [Настройка производительности файловых серверов SMB](/windows-server/administration/performance-tuning/role/file-server/smb-file-server) , чтобы получить рекомендации по повышению параллельной обработки.|
 | VMware ESX |5.5 и 6.0 |Поддерживается при использовании VMware vSphere в качестве клиента iSCSI. Функция блокировки VAAI поддерживается при использовании VMware vSphere на устройствах StorSimple. |
 | Linux RHEL/CentOS |5, 6 и 7 |Поддержка клиентов Linux iSCSI с инициатором Open-iSCSI версий 5, 6 и 7. |
 | Linux |SUSE Linux 11 | |
@@ -98,7 +98,7 @@ ms.locfileid: "94966196"
 
 | Шаблон URL-адреса | Компонент или функция | IP-адреса устройств |
 | --- | --- | --- |
-| `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*`<br>`https://login.windows.net` |Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Служебная шина Azure<br>Служба проверки подлинности |Сетевые интерфейсы с поддержкой облака |
+| `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*`<br>`https://login.windows.net` |Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Azure Service Bus<br>Служба проверки подлинности |Сетевые интерфейсы с поддержкой облака |
 | `https://*.backup.windowsazure.com` |Регистрация устройства |Только DATA 0 |
 | `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Отзыв сертификатов |Сетевые интерфейсы с поддержкой облака |
 | `https://*.core.windows.net/*` <br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Учетные записи хранения Azure и мониторинг |Сетевые интерфейсы с поддержкой облака |
@@ -110,7 +110,7 @@ ms.locfileid: "94966196"
 
 | Шаблон URL-адреса | Компонент или функция | IP-адреса устройств |
 | --- | --- | --- |
-| `https://*.storsimple.windowsazure.us/*`<br>`https://*.accesscontrol.usgovcloudapi.net/*`<br>`https://*.servicebus.usgovcloudapi.net/*`<br>`https://login.microsoftonline.us` |Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Служебная шина Azure<br>Служба проверки подлинности |Сетевые интерфейсы с поддержкой облака |
+| `https://*.storsimple.windowsazure.us/*`<br>`https://*.accesscontrol.usgovcloudapi.net/*`<br>`https://*.servicebus.usgovcloudapi.net/*`<br>`https://login.microsoftonline.us` |Служба диспетчера устройств StorSimple<br>Служба контроля доступа<br>Azure Service Bus<br>Служба проверки подлинности |Сетевые интерфейсы с поддержкой облака |
 | `https://*.backup.windowsazure.us` |Регистрация устройства |Только DATA 0 |
 | `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Отзыв сертификатов |Сетевые интерфейсы с поддержкой облака |
 | `https://*.core.usgovcloudapi.net/*` <br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Учетные записи хранения Azure и мониторинг |Сетевые интерфейсы с поддержкой облака |
@@ -233,7 +233,7 @@ ms.locfileid: "94966196"
 * Убедитесь, что оба модуля контроллера для корпуса EBOD, оба кабеля SAS и все жесткие диски установлены.
 * При сбое модуля контроллера для корпуса EBOD немедленно запросите сменный модуль.
 * При сбое модуля контроллера для корпуса EBOD убедитесь, что модуль активный перед тем, как заменить модуль со сбоем. Инструкции по проверке активности контроллера см. в разделе [Определение активного контроллера устройства](storsimple-8000-controller-replacement.md#identify-the-active-controller-on-your-device).
-* Во время замены модуля контроллера EBOD постоянно Отслеживайте состояние компонента в службе StorSimple Device Manager, обращаясь к **контролю**  >  **работоспособности оборудования**.
+* Во время замены модуля контроллера EBOD постоянно Отслеживайте состояние компонента в службе StorSimple Диспетчер устройств, обращаясь к **контролю**  >  **работоспособности оборудования**.
 * При сбое кабеля SAS или необходимости замены (для определения этого нужно обратиться в службу поддержки Майкрософт) убедитесь, что вы удалили только тот кабель SAS, для которого требуется замена.
 * Не отключайте одновременно оба кабеля SAS от системы.
 

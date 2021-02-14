@@ -1,21 +1,17 @@
 ---
 title: Управляемое удостоверение для Фабрики данных
 description: Сведения об управляемом удостоверении для фабрики данных Azure.
-services: data-factory
 author: linda33wj
-manager: shwang
-editor: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: jingwang
-ms.openlocfilehash: 819f84eeb7540050fb001111690fb6d2ba484b2a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e0d3b551265a480a700f374ddfcf89dd4d93333f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452304"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389167"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -246,7 +242,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В следующих разделах представлены сведения о том, когда и как использовать управляемое удостоверение фабрики данных.
 
 - [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md)

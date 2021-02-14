@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 087073437fe9d6159422799c04ce095c0aae5eca
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 778424cbb81f8fe51a57dd41d94aa9015ffad94e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96001258"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381517"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Выходные привязки хранилища очередей Azure для функций Azure
 
@@ -398,13 +398,15 @@ public class HttpTriggerQueueOutput {
 |**direction** | Недоступно | Нужно задать значение `out`. Это свойство задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно | Имя переменной, представляющей очередь в коде функции. Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
 |**queueName** |**QueueName** | Имя очереди. |
-|**connection**; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**connection**; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени.<br><br>Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Если используется [расширение версии 5. x или более поздней](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher)версии, а не строка подключения, можно указать ссылку на раздел конфигурации, который определяет соединение. См. раздел [подключения](./functions-reference.md#connections).|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Использование
 
 # <a name="c"></a>[C#](#tab/csharp)
+
+### <a name="default"></a>По умолчанию
 
 Напишите одно сообщение очереди с помощью параметра метода, например `out T paramName` . Вы можете использовать этот метод типа возвращаемого значения вместо параметра `out`. `T` может быть любого из следующих типов:
 
@@ -417,10 +419,21 @@ public class HttpTriggerQueueOutput {
 
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
-* `ICollector<T>` или `IAsyncCollector<T>`
+* `ICollector<T>` либо `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
+### <a name="additional-types"></a>Дополнительные типы
+
+Приложения, использующие [версию 5.0.0 или более поздней версии,](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) могут также использовать типы из [пакета Azure SDK для .NET](/dotnet/api/overview/azure/storage.queues-readme). Эта версия отменяет поддержку устаревших `CloudQueue` `CloudQueueMessage` типов и в пользу следующих типов:
+
+- [куеуемессаже](/dotnet/api/azure.storage.queues.models.queuemessage)
+- [QueueClient](/dotnet/api/azure.storage.queues.queueclient) для записи нескольких сообщений в очереди
+
+Примеры использования этих типов см. [в репозитории GitHub для расширения](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples).
+
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
+
+### <a name="default"></a>По умолчанию
 
 Напишите одно сообщение очереди с помощью параметра метода, например `out T paramName` . `paramName`— Это значение, указанное в `name` свойстве *function.json*. Вы можете использовать этот метод типа возвращаемого значения вместо параметра `out`. `T` может быть любого из следующих типов:
 
@@ -433,8 +446,17 @@ public class HttpTriggerQueueOutput {
 
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
-* `ICollector<T>` или `IAsyncCollector<T>`
+* `ICollector<T>` либо `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
+
+### <a name="additional-types"></a>Дополнительные типы
+
+Приложения, использующие [версию 5.0.0 или более поздней версии,](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) могут также использовать типы из [пакета Azure SDK для .NET](/dotnet/api/overview/azure/storage.queues-readme). Эта версия отменяет поддержку устаревших `CloudQueue` `CloudQueueMessage` типов и в пользу следующих типов:
+
+- [куеуемессаже](/dotnet/api/azure.storage.queues.models.queuemessage)
+- [QueueClient](/dotnet/api/azure.storage.queues.queueclient) для записи нескольких сообщений в очереди
+
+Примеры использования этих типов см. [в репозитории GitHub для расширения](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -469,38 +491,6 @@ public class HttpTriggerQueueOutput {
 | Очередь | [Коды ошибок очередей](/rest/api/storageservices/queue-service-error-codes) |
 | Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
 | Большой двоичный объект, таблица, очередь |  [Устранение неполадок](/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
-
-<a name="host-json"></a>  
-
-## <a name="hostjson-settings"></a>Параметры файла host.json
-
-В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример host.jsв файле ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в разделе [host.jsв справочнике по функциям Azure](functions-host-json.md).
-
-> [!NOTE]
-> Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
-
-```json
-{
-    "version": "2.0",
-    "extensions": {
-        "queues": {
-            "maxPollingInterval": "00:00:02",
-            "visibilityTimeout" : "00:00:30",
-            "batchSize": 16,
-            "maxDequeueCount": 5,
-            "newBatchThreshold": 8
-        }
-    }
-}
-```
-
-|Свойство  |По умолчанию | Описание |
-|---------|---------|---------|
-|maxPollingInterval|00:00:01|Максимальный интервал между опросами очереди. Минимальное значение — 00:00:00.100 (100 мс) и увеличивается до 00:01:00 (1 мин.).  В 1. x тип данных равен миллисекундам, а в 2. x и более поздней — интервал времени.|
-|visibilityTimeout|00:00:00|Интервал времени между повторными попытками, когда при обработке сообщения возникает сбой. |
-|batchSize|16|Количество сообщений очереди, которые среда выполнения функций одновременно получает и обрабатывает в параллельном режиме. Когда число обрабатываемых сообщений достигает `newBatchThreshold`, среда выполнения получает следующий пакет и начинает обработку содержащихся в нем сообщений. Поэтому максимальное количество сообщений, одновременно обрабатываемых каждой функцией, равно `batchSize` плюс `newBatchThreshold`. Это ограничение применяется отдельно к каждой функции, активируемой с помощью очереди. <br><br>Если вы не хотите, чтобы сообщения из одной очереди обрабатывались параллельно, можно установить для `batchSize` значение 1. Тем не менее этот параметр позволяет исключить параллелизм только при условии, что приложение-функция выполняется на одной виртуальной машине. Если приложение-функция развернуто на нескольких виртуальных машинах, каждая машина может запускать один экземпляр каждой функции, активируемой с помощью очереди.<br><br>Максимальное значение `batchSize` — 32. |
-|maxDequeueCount|5|Число повторных попыток обработки сообщения, прежде чем поместить его в очередь подозрительных сообщений.|
-|newBatchThreshold|batchSize/2|Каждый раз, когда количество сообщений, обрабатываемых параллельно, достигает этого числа, среда выполнения получает другой пакет.|
 
 ## <a name="next-steps"></a>Следующие шаги
 

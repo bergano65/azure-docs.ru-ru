@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): выполнение 
 description: Узнайте, как использовать модуль выполнение скрипта Python для использования кода Python в экспериментах и веб-службах Машинное обучение Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: devx-track-python, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/12/2019
-ms.openlocfilehash: 822bb43aaeb3cc1cf5914bb1600ef754441c4206
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 374589212b230e6b3ce0abcadbad8aa3eb7271fc
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310197"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519989"
 ---
 # <a name="execute-python-machine-learning-scripts-in-azure-machine-learning-studio-classic"></a>Выполнение скриптов машинного обучения Python в Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Python — это ценное средство в сундука многих специалистов по обработке и анализу данных. Он используется на каждом этапе стандартных рабочих процессов машинного обучения, включая исследование данных, извлечение компонентов, обучение и проверку модели, а также развертывание.

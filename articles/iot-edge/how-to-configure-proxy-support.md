@@ -10,12 +10,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - contperf-fy21q1
-ms.openlocfilehash: fb7cb0638ca86ea736749e6fb35e2295128162aa
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 7fc57b46055281c64b39767047f6b7cb5b748ad2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032989"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373833"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -85,7 +85,7 @@ URL-адрес прокси-сервера имеет такой формат: *
    . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
    ```
 
-Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. например следующие.
+Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например,
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
@@ -245,7 +245,7 @@ Restart-Service iotedge
 "edgeHub": {
     "type": "docker",
     "settings": {
-        "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+        "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
         "createOptions": ""
     },
     "env": {
@@ -275,9 +275,9 @@ Restart-Service iotedge
 
 Если прокси-сервер, который вы пытаетесь использовать, выполняет проверку трафика для подключений, защищенных с помощью TLS, важно отметить, что проверка подлинности с помощью сертификатов X. 509 не работает. IoT Edge устанавливает TLS-канал, который шифруется в конце с помощью предоставленного сертификата и ключа. Если этот канал будет недоступен для проверки трафика, прокси-сервер не сможет восстановить канал с соответствующими учетными данными, а центр Интернета вещей и служба подготовки устройств центра Интернета вещей возвращают `Unauthorized` ошибку.
 
-Чтобы использовать прокси-сервер, выполняющий проверку трафика, необходимо использовать проверку подлинности с помощью подписанного URL-доступа или включить центр Интернета вещей и службу подготовки устройств центра Интернета вещей, добавленную в разрешенных, чтобы избежать проверки.
+Чтобы использовать прокси-сервер, выполняющий проверку трафика, необходимо использовать проверку подлинности с помощью подписанного URL-доступа или службу подготовки устройств центра Интернета вещей, добавленную в список разрешений, чтобы избежать проверки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о ролях см. в статье о [среде выполнения IoT Edge](iot-edge-runtime.md).
 

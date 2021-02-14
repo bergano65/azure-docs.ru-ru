@@ -9,12 +9,12 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
-ms.openlocfilehash: d2b36dd600efa864913e0087c49bffd556e8330d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f1f2ea8bd51b7eeda9afdd6a94d5de1d58acef57
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912405"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520652"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
@@ -25,7 +25,7 @@ HDInsight предоставляет доступ к распределенно�
 Дополнительные сведения об интерфейсе HDFS CLI см. в [официальной документации](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и [руководстве по разрешениям HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) .
 
 >[!NOTE]
->Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, можно использовать CLI модуля данных для взаимодействия с файловой системой модуля данных. См. раздел [CLI кирпичей](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
+>Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, можно использовать CLI модуля данных для взаимодействия с файловой системой модуля данных. См. раздел [CLI кирпичей](/azure/databricks/dev-tools/cli/).
 
 ## <a name="use-the-hdfs-cli-with-an-hdinsight-hadoop-cluster-on-linux"></a>Использование HDFS CLI с кластером HDInsight Hadoop в Linux
 
@@ -58,7 +58,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените `<path>` заполнитель URI контейнера или папки контейнера.
 
-Пример: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
+Например: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
 
 ## <a name="create-a-directory"></a>Создание каталога
 
@@ -66,7 +66,7 @@ hdfs dfs -mkdir /samplefolder
 
 Замените `<path>` заполнитель именем корневого контейнера или папкой в контейнере.
 
-Пример: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
+Например: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
 
 ## <a name="delete-a-file-or-directory"></a>Удаление файла или каталога
 
@@ -74,13 +74,13 @@ hdfs dfs -mkdir /samplefolder
 
 Замените заполнитель `<path>` на URI файла или папки, которые нужно удалить.
 
-Пример: `hdfs dfs -rmdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name/my-file-name`
+Например: `hdfs dfs -rmdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name/my-file-name`
 
 ## <a name="display-the-access-control-lists-acls-of-files-and-directories"></a>Отображение списков управления доступом (ACL) файлов и каталогов
 
 `hdfs dfs -getfacl [-R] <path>`
 
-Пример.
+Пример:
 
 `hdfs dfs -getfacl -R /dir`
 
@@ -90,7 +90,7 @@ hdfs dfs -mkdir /samplefolder
 
 `hdfs dfs -setfacl [-R] [-b|-k -m|-x <acl_spec> <path>]|[--set <acl_spec> <path>]`
 
-Пример.
+Пример:
 
 `hdfs dfs -setfacl -m user:hadoop:rw- /file`
 
@@ -116,7 +116,7 @@ hdfs dfs -mkdir /samplefolder
 
 Полный список команд можно просмотреть на веб-сайте [Apache Hadoop 2.4.1 File System Guide](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md)
 

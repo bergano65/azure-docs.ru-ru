@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/10/2020
 ms.author: alsin
 ms.reviewer: cynthn
-ms.openlocfilehash: 7006096154d8958e13e7a86783bd07067b95d293
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 38bf8b3c1c39322aea27f5f4d427c31010837bfb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98872898"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391026"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -30,9 +30,6 @@ ms.locfileid: "98872898"
 - Виртуальные машины, подготовленные на основе образов Red Hat Gold, не несут RHEL плату, связанную с образами RHEL с оплатой по мере использования.
 - Образы являются неуполномоченными. Вы должны использовать Red Hat Subscription-Manager для регистрации и подписки на виртуальные машины, чтобы получать обновления с Red Hat напрямую.
 - Вы можете переключиться с образов с оплатой по мере использования на BYOS с помощью [преимущество гибридного использования Azure](../../linux/azure-hybrid-benefit-linux.md). Однако невозможно переключиться с первоначально развернутых BYOS на модели выставления счетов с оплатой по мере использования для образов Linux. Чтобы переключить модель выставления счетов с BYOS на "Оплата по мере использования", необходимо повторно развернуть виртуальную машину из соответствующего образа.
-
->[!NOTE]
-> Образы поколения 2 RHEL BYOS в настоящее время недоступны в рамках предложения Marketplace. Если вам требуется образ поколения 2 RHEL BYOS, посетите панель мониторинга доступа к облаку в консоли управления подписками Red Hat. Дополнительные сведения см. в [документации по Red Hat](https://access.redhat.com/articles/4847681).
 
 ## <a name="requirements-and-conditions-to-access-the-red-hat-gold-images"></a>Требования и условия для доступа к образам Red Hat Gold
 
@@ -209,7 +206,7 @@ ms.locfileid: "98872898"
 
 - Если вы используете автоматизацию для инициализации виртуальных машин из образов RHEL BYOS, необходимо указать параметры плана, аналогичные показанным в примерах команд. Например, если вы используете terraform, вы предоставляете сведения о плане в [блоке плана](https://www.terraform.io/docs/providers/azurerm/r/virtual_machine.html#plan).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о облачном доступе к Red Hat доступны в [документации по Red Hat в общедоступном облаке](https://access.redhat.com/public-cloud) .
 - Пошаговые руководства и сведения о программе для доступа к облаку см. в [документации по облачному доступу для Red Hat](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index).

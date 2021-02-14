@@ -3,16 +3,16 @@ title: Обмен сообщениями с помощью служебной ш
 description: Создание автоматизированных задач и рабочих процессов, отправляющих и получающих сообщения с помощью служебной шины Azure в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: logicappspm
+ms.reviewer: logicappspm, azla
 ms.topic: conceptual
-ms.date: 10/22/2020
+ms.date: 02/10/2021
 tags: connectors
-ms.openlocfilehash: b6276ff940d8b156a671cb5386ce53ede30dd879
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 98d2ee8a85d25065c0021841a9b99a6d616a35d8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019721"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367424"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
@@ -169,7 +169,7 @@ ms.locfileid: "96019721"
 
 ## <a name="delays-in-updates-to-your-logic-app-taking-effect"></a>Задержки в обновлениях приложения логики, которые вступают в действие
 
-Если интервал опроса триггера служебной шины мал, например 10 секунд, обновления для приложения логики могут не действовать в течение 10 минут. Чтобы обойти эту проблему, можно временно увеличить интервал опроса до большего значения, например 30 секунд или 1 минуту, перед обновлением приложения логики. После выполнения обновления можно сбросить интервал опроса до исходного значения. 
+Если интервал опроса триггера служебной шины мал, например 10 секунд, обновления для приложения логики могут не действовать в течение 10 минут. Чтобы обойти эту проблему, можно отключить приложение логики, внести изменения, а затем снова включить приложение логики.
 
 <a name="connector-reference"></a>
 

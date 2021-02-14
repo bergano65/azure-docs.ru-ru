@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/04/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: a1fb1c1be8a0203d9f36712fda8e30f0f9354091
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 8fc3ad3e1597d9b38bd095875c8a6f11260e8711
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576121"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515150"
 ---
 Профили для VPN-клиентов Azure (Windows 10) можно развернуть с помощью Microsoft Intune. Эта статья поможет вам создать профиль Intune с помощью пользовательских параметров.
 
@@ -46,21 +46,14 @@ ms.locfileid: "99576121"
       <PluginProfile>
         <ServerUrlList>azuregateway-7cee0077-d553-4323-87df-069c331f58cb-053dd0f6af02.vpn.azure.com</ServerUrlList> 
         <CustomConfiguration>
+
         </CustomConfiguration>
         <PluginPackageFamilyName>Microsoft.AzureVpn_8wekyb3d8bbwe</PluginPackageFamilyName>
       </PluginProfile>
     </VPNProfile>
    ```
 1. Измените запись между ```<ServerUrlList>``` и ```</ServerUrlList>``` с записью из скачанного профиля (azurevpnconfig.xml). Измените полное доменное имя "Трустеднетворкдетектион" в соответствии с вашей средой.
-1. Откройте профиль скачанного Azure (azurevpnconfig.xml) и скопируйте содержимое в буфер обмена, выделив текст и нажав клавиши <ctrl> + C. Скопируйте все данные из следующих строк азвпнпрофиле, но не копируйте сами строки азвпнпрофиле:
-
-   ```
-   <AzVpnProfile xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/">
-     <any xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Xml"
-       i:nil="true" />
-   For example - copy the text in your xml that is located here.
-   </AzVpnProfile>
-   ```
+1. Откройте скачанный профиль Azure (azurevpnconfig.xml) и скопируйте все содержимое в буфер обмена, выделив текст и нажав клавиши (Ctrl) + C. 
 1. Вставьте скопированный текст из предыдущего шага в файл, созданный на шаге 2 между ```<CustomConfiguration>  </CustomConfiguration>``` тегами. Сохраните файл с расширением XML.
 1. Запишите значение в ```<name>  </name>``` тегах. Это имя профиля. Это имя потребуется при создании профиля в Intune. Закройте файл и запомните расположение, в котором он сохранен.
 

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 1/29/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 10bb0364bf7c54cd07d6dfa5725b3a626622d390
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 2ad6f5bf18d362f846e12720e00584b854729366
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097798"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515671"
 ---
 # <a name="collect-telemetry-data-for-search-traffic-analytics"></a>Сбор данных телеметрии для аналитики трафика поиска
 
@@ -168,7 +168,7 @@ var searchId = request.getResponseHeader('x-ms-azs-searchid');
 + **ScoringProfile**: (строка) имя используемого профиля оценки, если имеется
 
 > [!NOTE]
-> Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. в статье [Поиск документов (REST)](/rest/api/searchservice/search-documents#counttrue--false).
+> Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. в статье [Поиск документов (REST)](/rest/api/searchservice/search-documents#query-parameters).
 >
 
 **Использование C#**

@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из Concur с помощью фабрики данных Azure (предварительная версия)
 description: Узнайте, как копировать данные из Concur в поддерживаемые хранилища данных в качестве приемников с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: jingwang
-ms.openlocfilehash: f6d6c830eec8e711e700733a90611c353b68439d
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 974682aa9e9bebd6e2d17237decd8389174ff28d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030804"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383676"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Копирование данных из Concur с помощью фабрики данных Azure (предварительная версия)
 
@@ -53,7 +48,7 @@ ms.locfileid: "96030804"
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Concur** | Да |
 | connectionProperties | Группа свойств, определяющих способ подключения к Concur. | Да |
-| **_В разделе `connectionProperties` :_* _ | | |
+| ***В разделе `connectionProperties` :*** | | |
 | authenticationType | Допустимые значения: `OAuth_2.0_Bearer` и `OAuth_2.0` (прежние версии). Параметр аутентификации OAuth 2,0 работает с старым API Concur, который был признан устаревшим с февраля 2017. | Да |
 | host | Конечная точка сервера Concur, например `implementation.concursolutions.com` .  | Да |
 | BaseUrl | Базовый URL-адрес URL авторизации Concur. | Да для `OAuth_2.0_Bearer` проверки подлинности |
@@ -61,11 +56,11 @@ ms.locfileid: "96030804"
 | clientSecret | Секрет клиента, соответствующий ИДЕНТИФИКАТОРу клиента. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да для `OAuth_2.0_Bearer` проверки подлинности |
 | username | Имя пользователя, которое используется для доступа к службе Concur. | Да |
 | password | Пароль, соответствующий имени пользователя, которое указано в поле имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | нет |
-| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
-| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | нет |
+| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
+| useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
+| usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 
-_ *Пример:**
+**Пример**.
 
 ```json
 { 

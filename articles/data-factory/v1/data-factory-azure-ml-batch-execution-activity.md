@@ -1,22 +1,18 @@
 ---
 title: Создание конвейеров прогнозных данных с помощью фабрики данных Azure
 description: Описывает создание прогнозных конвейеров с помощью фабрики данных Azure и Машинное обучение Azure Studio (классическая модель).
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: c04c94ef2a73085b982fde3efefecea351b083af
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: a7042a67081475311341ad6d56e35b2a71b8b12c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608074"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379341"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-studio-classic-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью Машинное обучение Azure Studio (классическая модель) и фабрики данных Azure
 
@@ -183,7 +179,7 @@ ms.locfileid: "97608074"
    }
    ```
 
-   Входной CSV-файл должен содержать строку заголовков столбцов. Если вы используете **действие копирования** для создания или перемещения CSV-файла в хранилище BLOB-объектов, следует установить для свойства **blobWriterAddHeader** приемника значение **true**. Пример.
+   Входной CSV-файл должен содержать строку заголовков столбцов. Если вы используете **действие копирования** для создания или перемещения CSV-файла в хранилище BLOB-объектов, следует установить для свойства **blobWriterAddHeader** приемника значение **true**. Пример:
 
    ```json
    sink:
@@ -556,7 +552,7 @@ ms.locfileid: "97608074"
 
 Сведения о модулях [чтения](/azure/machine-learning/studio-module-reference/import-data) и [записи](/azure/machine-learning/studio-module-reference/export-data) больших двоичных объектов Azure и SQL Azure см. в соответствующих разделах в библиотеке MSDN. В примере из предыдущего раздела используется модуль чтения и модуль записи больших двоичных объектов Azure. В этом разделе рассматривается использование модуля чтения и модуля записи SQL Azure.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 **Вопрос.** Имеется несколько файлов, сформированных моими конвейерами больших данных. Можно использовать действие AzureMLBatchExecution для работы с этими файлами?
 
 **Ответ.** Да. Дополнительные сведения см. в статье **Использование модуля чтения для чтения данных из нескольких файлов в большом двоичном объекте Azure**.

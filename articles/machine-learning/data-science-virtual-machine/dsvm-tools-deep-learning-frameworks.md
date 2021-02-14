@@ -4,19 +4,18 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Доступные платформы и средства глубокого обучения на виртуальной машине Azure для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 ms.custom: devx-track-python
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: c8c6ee3d5eecc02ac921d7b10f2394380af684c2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3c720e2b033d07397f3b13c37e1b4e15251b0a17
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309024"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519496"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Платформы глубокого обучения и искусственного интеллекта для виртуальной машины Azure для обработки и анализа данных
 Платформы глубокого обучения в DSVM перечислены ниже.
@@ -146,5 +145,5 @@ ms.locfileid: "93309024"
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.0.3 |
 | Поддерживаемые выпуски DSVM      | Ubuntu 16.04 |
-| Настройка и установка на DSVM  |Theano устанавливается в среде Python 2,7 ( _root_ ) и в окружении Python 3,5 ( _PY35_ ). |
+| Настройка и установка на DSVM  |Theano устанавливается в среде Python 2,7 (_root_) и в окружении Python 3,5 (_PY35_). |
 | Как запустить      |  Терминал: активируйте нужную версию Python (root или PY35), запустите Python, а затем импортируйте Theano.<br/>* Jupyter: выберите ядро Python 2,7 или 3,5, а затем импортируйте Theano.  <br/>Чтобы обойти недавную ошибку математической библиотеки ядра (MKL), необходимо сначала установить MKL потоковый уровень следующим образом:<br/><br/>`export MKL_THREADING_LAYER=GNU`  |

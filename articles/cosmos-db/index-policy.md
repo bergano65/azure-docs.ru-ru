@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 02/02/2021
+ms.date: 02/10/2021
 ms.author: tisande
-ms.openlocfilehash: 58ee3bcd0ba14359ea9adaa131b8280b81008b57
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 26465eb9826c60daad7b44e1c2fe6ae3c19b1ed0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526778"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378814"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexing policy in Azure Cosmos DB (Политики индексации в Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -290,7 +290,7 @@ WHERE c.firstName = "John" AND Contains(c.lastName, "Smith", true)
 ORDER BY c.firstName, c.lastName
 ```
 
-Следующие рекомендации используются при создании составных индексов для оптимизации запроса с помощью фильтра и `ORDER BY` предложения.
+При создании составных индексов для оптимизации запроса с помощью фильтра и предложения следует учитывать следующие моменты `ORDER BY` .
 
 * Если не определить составной индекс для запроса с фильтром по одному свойству и отдельным `ORDER BY` предложением с другим свойством, запрос будет выполняться. Однако стоимость единицы запроса может быть сокращена с помощью составного индекса, особенно если свойство в `ORDER BY` предложении имеет большую кратность.
 * Если запрос фильтрует свойства, они должны быть включены в `ORDER BY` предложение первыми.
@@ -308,6 +308,26 @@ ORDER BY c.firstName, c.lastName
 | ```(name ASC, timestamp ASC)```          | ```SELECT * FROM c WHERE c.name = "John" ORDER BY c.timestamp ASC``` | ```No```   |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.age ASC, c.name ASC,c.timestamp ASC``` | `Yes` |
 | ```(age ASC, name ASC, timestamp ASC)``` | ```SELECT * FROM c WHERE c.age = 18 and c.name = "John" ORDER BY c.timestamp ASC``` | `No` |
+
+### <a name="queries-with-a-filter-and-an-aggregate"></a>Запросы с фильтром и статистическим выражением 
+
+Если запрос фильтрует одно или несколько свойств и имеет агрегатную системную функцию, может быть полезно создать составной индекс для свойств в системной функции Filter и Aggregate. Эта оптимизация применяется к системным функциям [Sum](sql-query-aggregate-sum.md) и [AVG](sql-query-aggregate-avg.md) .
+
+Ниже приведены рекомендации по созданию составных индексов для оптимизации запроса с помощью фильтра и агрегатной системной функции.
+
+* Составные индексы необязательны при выполнении запросов со статистическими выражениями. Однако стоимость единицы запроса в секунду может значительно снизиться с помощью составного индекса.
+* Если запрос фильтруется по нескольким свойствам, фильтры равенства должны быть первыми свойствами составного индекса.
+* Можно использовать не более одного фильтра диапазона для каждого составного индекса, и оно должно находиться в свойстве агрегатной системной функции.
+* Свойство в системной функции Aggregate должно быть определено последним в составном индексе.
+* Значение `order` ( `ASC` или `DESC` ) не имеет значения.
+
+| **Составной индекс**                      | **Образец запроса**                                  | **Поддерживается составным индексом?** |
+| ---------------------------------------- | ------------------------------------------------------------ | --------------------------------- |
+| ```(name ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"``` | `Yes` |
+| ```(timestamp ASC, name ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John"``` | `No` |
+| ```(name ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name > "John"``` | `No` |
+| ```(name ASC, age ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age = 25``` | `Yes` |
+| ```(age ASC, timestamp ASC)```          | ```SELECT AVG(c.timestamp) FROM c WHERE c.name = "John" AND c.age > 25``` | `No` |
 
 ## <a name="index-transformationmodifying-the-indexing-policy"></a><преобразование индекса>изменение политики индексирования
 

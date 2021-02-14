@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 95560801d4132735435e4d45e8a588476636ec38
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 59cedb25295770ba4ae4a33aac3287c5fed1297d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96001241"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381500"
 ---
 # <a name="azure-queue-storage-trigger-for-azure-functions"></a>Триггер хранилища очередей Azure для функций Azure
 
@@ -357,13 +357,15 @@ public class QueueTriggerDemo {
 |**direction**| Недоступно | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно |Имя переменной, содержащей полезные данные элемента очереди в коде функции.  |
 |**queueName** | **QueueName**| Имя очереди для опроса. |
-|**connection**; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**connection**; | **Соединение** |Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени.<br><br>Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Если используется [расширение версии 5. x или более поздней](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher)версии, а не строка подключения, можно указать ссылку на раздел конфигурации, который определяет соединение. См. раздел [подключения](./functions-reference.md#connections).|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
 ## <a name="usage"></a>Использование
 
 # <a name="c"></a>[C#](#tab/csharp)
+
+### <a name="default"></a>По умолчанию
 
 Получите доступ к данным сообщения с помощью параметра метода, например `string paramName` . Вы можете выполнить привязку к одному из следующих типов:
 
@@ -374,7 +376,17 @@ public class QueueTriggerDemo {
 
 Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](functions-bindings-storage-queue.md#azure-storage-sdk-version-in-functions-1x).
 
+### <a name="additional-types"></a>Дополнительные типы
+
+Приложения, использующие [версию 5.0.0 или более поздней версии,](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) могут также использовать типы из [пакета Azure SDK для .NET](/dotnet/api/overview/azure/storage.queues-readme). Эта версия удаляет поддержку устаревшего `CloudQueueMessage` типа в пользу следующих типов:
+
+- [куеуемессаже](/dotnet/api/azure.storage.queues.models.queuemessage)
+ 
+Примеры использования этих типов см. [в репозитории GitHub для расширения](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples).
+
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
+
+### <a name="default"></a>По умолчанию
 
 Получите доступ к данным сообщения с помощью параметра метода, например `string paramName` . `paramName`— Это значение, указанное в `name` свойстве *function.json*. Вы можете выполнить привязку к одному из следующих типов:
 
@@ -384,6 +396,14 @@ public class QueueTriggerDemo {
 * [CloudQueueMessage]
 
 Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](functions-bindings-storage-queue.md#azure-storage-sdk-version-in-functions-1x).
+
+### <a name="additional-types"></a>Дополнительные типы
+
+Приложения, использующие [версию 5.0.0 или более поздней версии,](./functions-bindings-storage-queue.md#storage-extension-5x-and-higher) могут также использовать типы из [пакета Azure SDK для .NET](/dotnet/api/overview/azure/storage.queues-readme). Эта версия удаляет поддержку устаревшего `CloudQueueMessage` типа в пользу следующих типов:
+
+- [куеуемессаже](/dotnet/api/azure.storage.queues.models.queuemessage)
+
+Примеры использования этих типов см. [в репозитории GitHub для расширения](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Microsoft.Azure.WebJobs.Extensions.Storage.Queues#examples).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -407,7 +427,7 @@ public class QueueTriggerDemo {
 
 Триггер очереди предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Свойства являются членами класса [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage) .
 
-|Свойство|Тип|Описание|
+|Свойство|Type|Описание|
 |--------|----|-----------|
 |`QueueTrigger`|`string`|Полезные данные очереди (если это допустимая строка). Если полезная нагрузка сообщения очереди является строкой, `QueueTrigger` то она имеет то же значение, что и переменная, именованная `name` свойством в *function.json*.|
 |`DequeueCount`|`int`|Количество раз, когда сообщение было выведено из очереди.|
@@ -448,7 +468,7 @@ public class QueueTriggerDemo {
 
 ## <a name="hostjson-properties"></a>Свойства host.json
 
-В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. Дополнительные сведения о доступных параметрах см. в разделе [host.jsпо параметрам](functions-bindings-storage-queue-output.md#hostjson-settings) .
+В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. Дополнительные сведения о доступных параметрах см. в разделе [host.jsпо параметрам](functions-bindings-storage-queue.md#hostjson-settings) .
 
 ## <a name="next-steps"></a>Следующие шаги
 

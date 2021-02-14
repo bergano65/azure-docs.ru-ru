@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: С помощью этих примеров и пошаговых руководств вы узнаете, как выполнять типичные задачи и сценарии с помощью виртуальной машины для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 98a1cd883867aa2f785b15f4c7ae4f2266a421ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cda5dfd936243602775e1f4f965032b9d746b0b7
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012575"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519768"
 ---
 # <a name="samples-on-azure-data-science-virtual-machines"></a>Примеры на виртуальных машинах Azure для обработки и анализа данных
 

@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): повторное о
 description: Узнайте, как обновить веб-службу для использования недавно обученной модели машинного обучения в Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18, devx-track-csharp
 ms.date: 02/14/2019
-ms.openlocfilehash: ff0378871139a038f096a44b9ee0c6af2cb67d73
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a4fe9e54e5e03a8dbf2a727b22f784c36d6c65f9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325816"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517592"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
@@ -61,10 +61,10 @@ ms.locfileid: "93325816"
 
 Следуйте приведенным ниже инструкциям, чтобы вызвать API переобучения:
 
-1. Создание консольного приложения C# в Visual Studio: **Создание**  >  **проекта**  >  **Visual C#**  >  **классическое**  >  **консольное приложение Windows (.NET Framework)**.
+1. Создание консольного приложения C# в Visual Studio: **Создание**  >  **проекта**  >  **Visual C#**  >  **классическое**  >  **консольное приложение Windows (платформа .NET Framework)**.
 1. Войдите на портал веб-служб Машинного обучения.
 1. Щелкните веб-службу, с которой работаете.
-1. Щелкните **Consume** (Использование).
+1. Щелкните **Consume**(Использование).
 1. В нижней части страницы **Consume** (Использование) в разделе **Sample Code** (Пример кода) щелкните **Batch** (Пакет).
 1. Скопируйте пример кода на C# для пакетного выполнения и вставьте его в файл Program.cs. Убедитесь, что пространство имен не изменено.
 
@@ -76,7 +76,7 @@ ms.locfileid: "93325816"
 
 ### <a name="update-the-apikey-declaration"></a>Обновление объявления apiKey
 
-Найдите объявление **apiKey** :
+Найдите объявление **apiKey**:
 
 ```csharp
 const string apiKey = "abc123"; // Replace this with the API key for the web service
@@ -93,10 +93,10 @@ const string apiKey = "abc123"; // Replace this with the API key for the web ser
 1. Выберите в списке учетную запись хранения, которая будет использоваться для хранения переобученной модели.
 1. В левой области навигации щелкните **Ключи доступа**.
 1. Скопируйте и сохраните **первичный ключ доступа**.
-1. В левом столбце навигации щелкните **Blobs (большие двоичные объекты** ).
+1. В левом столбце навигации щелкните **Blobs (большие двоичные объекты**).
 1. Выберите существующий контейнер или создайте другой, а затем сохраните его имя.
 
-Найдите объявления *StorageAccountName* , *StorageAccountKey* и *StorageContainerName* , а затем обновите их, используя значения с портала.
+Найдите объявления *StorageAccountName*, *StorageAccountKey* и *StorageContainerName*, а затем обновите их, используя значения с портала.
 
 ```csharp
 const string StorageAccountName = "mystorageacct"; // Replace this with your Azure storage account name
@@ -108,7 +108,7 @@ const string StorageContainerName = "mycontainer"; // Replace this with your Azu
 
 ### <a name="specify-the-output-location"></a>Указание расположения выходных данных
 
-Указывая расположение выходных данных для полезных данных запроса, измените расширение файла, заданное в *RelativeLocation* , на `ilearner`.
+Указывая расположение выходных данных для полезных данных запроса, измените расширение файла, заданное в *RelativeLocation*, на `ilearner`.
 
 ```csharp
 Outputs = new Dictionary<string, AzureBlobDataReference>() {
@@ -130,11 +130,11 @@ Outputs = new Dictionary<string, AzureBlobDataReference>() {
 
 При выполнении приложения выходные данные содержат URL-адрес и подписанные URL-адреса, необходимые для доступа к результатам оценки.
 
-Чтобы увидеть результаты работы переобученной модели, введите в адресную строку браузера полный URL-адрес, составив его из значений параметров *BaseLocation* , *RelativeLocaiton* и *SasBlobToken* , содержащихся в выходных данных *output2*.
+Чтобы увидеть результаты работы переобученной модели, введите в адресную строку браузера полный URL-адрес, составив его из значений параметров *BaseLocation*, *RelativeLocaiton* и *SasBlobToken*, содержащихся в выходных данных *output2*.
 
 Проанализируйте результаты и определите, можно ли только что обученную модель считать лучше предыдущей.
 
-Сохраните значения *BaseLocation* , *RelativeLocation* и *SasBlobToken* из полученных результатов.
+Сохраните значения *BaseLocation*, *RelativeLocation* и *SasBlobToken* из полученных результатов.
 
 ## <a name="update-the-predictive-experiment"></a>Обновление прогнозного эксперимента
 
@@ -175,7 +175,7 @@ Export-AzMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.jso
 
 ### <a name="update-the-reference-to-the-ilearner-blob"></a>Обновление ссылки на большой двоичный объект ilearner
 
-В ресурсах-контейнерах найдите элемент [trained model], обновите значение *uri* в узле *locationInfo* , заменив его универсальным кодом ресурса (URI) BLOB-объекта ilearner. URI формируется в результате объединения параметров *BaseLocation* и *RelativeLocation* из выходных данных вызова переобучения BES.
+В ресурсах-контейнерах найдите элемент [trained model], обновите значение *uri* в узле *locationInfo*, заменив его универсальным кодом ресурса (URI) BLOB-объекта ilearner. URI формируется в результате объединения параметров *BaseLocation* и *RelativeLocation* из выходных данных вызова переобучения BES.
 
 ```json
 "asset3": {
@@ -208,7 +208,7 @@ $wsd = Import-AzMlWebService -InputFile "C:\temp\mlservice_export.json"
 Update-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

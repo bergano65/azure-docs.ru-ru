@@ -1,23 +1,19 @@
 ---
 title: Настройка среды выполнения интеграции Azure SSIS для отработки отказа базы данных SQL
 description: В этой статье описывается, как настроить среду выполнения интеграции Azure-SSIS с георепликацией и отработкой отказа базы данных SQL Azure для базы данных SSISDB.
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.devlang: powershell
 author: swinarko
 ms.author: sawinark
-manager: mflasko
-ms.reviewer: douglasl
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/06/2020
-ms.openlocfilehash: 6b37a0df994546762abbcf3452d8e7b52dec6847
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: e12939d1003ce708889ca0b3dbc710096f9ee955
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331419"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364449"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-with-sql-database-geo-replication-and-failover"></a>Настройка среды выполнения интеграции Azure SSIS с георепликацией и отработкой отказа базы данных SQL
 
@@ -31,7 +27,7 @@ ms.locfileid: "94331419"
 
 ## <a name="azure-ssis-ir-failover-with-a-sql-managed-instance"></a>Azure-SSIS IR отработки отказа с помощью Управляемый экземпляр SQL
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Управляемый экземпляр Azure SQL использует *главный ключ базы данных (DMK)* , чтобы защитить данные, учетные данные и сведения о соединении, хранящиеся в базе данных. Чтобы включить автоматическую расшифровку DMK, копия ключа шифруется с помощью *главного ключа сервера (SMK)*. 
 
@@ -268,7 +264,7 @@ Set-AzDataFactoryV2IntegrationRuntime -CatalogServerEndpoint "Azure SQL Database
 
    Дополнительные сведения об этой команде PowerShell см. [в статье Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь со следующими параметрами конфигурации для среды выполнения интеграции Azure-SSIS:
 

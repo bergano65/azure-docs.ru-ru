@@ -3,18 +3,17 @@ title: Отслеживание экспериментов и развертыв
 titleSuffix: Azure Data Science Virtual Machine
 description: Узнайте, как относить эксперименты с виртуальной машиной для обработки и анализа данных с помощью Машинное обучение Azure и Млфлов.
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: samkemp
 ms.author: samkemp
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 7726fce7ac69ebfaabf44049abc49c53f8175718
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 3795d531c5c4c543587ab817c05cd1cfeea6be06
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704546"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518544"
 ---
 # <a name="track-experiments-and-deploy-models-in-azure-machine-learning"></a>Отслеживание экспериментов и развертывание моделей в Машинное обучение Azure
 
@@ -24,13 +23,13 @@ ms.locfileid: "98704546"
 
 ![Прослеживание экспериментов](./media/how-to-track-experiments/mlflow-diagram-track.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо [подготавливать Рабочая область машинного обучения Azure](../how-to-manage-workspace.md#create-a-workspace)
 
 ## <a name="create-a-new-notebook"></a>Создание записной книжки
 
-Пакет SDK для Машинное обучение Azure и Млфлов предварительно установлен на виртуальной машине обработки и анализа данных и доступен в среде **azureml_py36_ \** _ conda. В JupyterLab щелкните средство запуска и выберите следующий kernel:
+Пакет SDK для Машинное обучение Azure и Млфлов предварительно установлен на виртуальной машине обработки и анализа данных и доступен в среде **azureml_py36_ \*** conda. В JupyterLab щелкните средство запуска и выберите следующий kernel:
 
 ![Выбор ядра](./media/how-to-track-experiments/experiment-tracking-1.png)
 
@@ -137,7 +136,7 @@ with mlflow.start_run():
 
 В __новой области кластера__ выводятся сведения о заполнении для:
 
-_ Имя вычислений
+* Имя вычислений
 * Служба Kubernetes — выберите создать
 * Выберите регион
 * Выберите размер виртуальной машины (для целей данного учебника достаточно по умолчанию Standard_D3_v2)
@@ -202,6 +201,6 @@ print(output)
 
 Удалите вычисление, созданное на шаге 1, чтобы не вычислять непрерывные затраты на вычисления. В меню слева в Машинное обучение Azure Studio щелкните вычисления кластеры вывода > > выберите вычисления > удалить.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 * Дополнительные сведения о [развертывании моделей в AzureML](../how-to-deploy-and-where.md)

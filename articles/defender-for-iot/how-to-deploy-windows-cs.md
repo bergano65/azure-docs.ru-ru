@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 6c441c9f81477a586c3e153e23b1fc63f2f76344
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 4d99cdbb2f50d04eff790cdfe675d0f8031c48a9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99819933"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517184"
 ---
 # <a name="deploy-a-defender-for-iot-c-based-security-agent-for-windows"></a>Развертывание агента безопасности на основе C# для Windows IoT
 
@@ -77,7 +77,7 @@ ms.locfileid: "99819933"
 * Установка агента в качестве **системной службы**.
 * Настройка агента с предоставленными параметрами проверки подлинности.
 
-Для получения дополнительных сведений используйте команду Get-Help в PowerShell.
+Для получения дополнительной справки используйте команду Get-Help в PowerShell.
 
 Get-Help пример:    ```Get-Help .\InstallSecurityAgent.ps1```
 
@@ -119,13 +119,13 @@ Get-Help пример:    ```Get-Help .\InstallSecurityAgent.ps1```
 
 1. Перезапустите агент, выполнив следующую команду в PowerShell или командной строке.
 
-    **Оболочк**
+    **PowerShell**
 
      ```
      Restart-Service "ASC IoT Agent"
      ```
 
-   или диспетчер конфигурации служб
+   или
 
     **CMD**
 
@@ -138,7 +138,7 @@ Get-Help пример:    ```Get-Help .\InstallSecurityAgent.ps1```
 
    Расположение файла журнала: `.\IoTAgentLog.log`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей"
 * Дополнительные сведения о защитнике для [архитектуры](architecture.md) IOT

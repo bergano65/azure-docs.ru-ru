@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из источника HTTP с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из облака или локального источника HTTP на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
-ms.openlocfilehash: 730efb552ef218cc5a5ce6a984d20b4e23b364ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0462dac12d41fff667212902152b420d1460186d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81416941"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383642"
 ---
 # <a name="copy-data-from-an-http-endpoint-by-using-azure-data-factory"></a>Копирование данных с источника HTTP с помощью фабрики данных Azure
 
@@ -71,7 +66,7 @@ ms.locfileid: "81416941"
 | type | Для свойства **type** необходимо задать значение **HttpServer**. | Да |
 | url | Базовый URL-адрес веб-сервера. | Да |
 | enableServerCertificateValidation | Укажите, следует ли включить проверку сертификата TLS или SSL сервера при подключении к конечной точке HTTP. Если ваш сервер HTTPS использует самозаверенный сертификат, установите свойство **false**. | Нет<br /> (значение по умолчанию — **true**) |
-| authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic **, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой таблицы. | Да |
+| authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic**, **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой таблицы. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные условия](#prerequisites). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 ### <a name="using-basic-digest-or-windows-authentication"></a>Использование типов проверки подлинности Basic, Digest или Windows

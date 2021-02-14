@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): развертыва�
 description: Развертывание рабочей области для Машинное обучение Azure Studio (классическая модель) с помощью шаблона Azure Resource Manager
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18, devx-track-azurepowershell
 ms.date: 02/05/2018
-ms.openlocfilehash: f860a52691d4d7fe72cbd7c8989277b224214064
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: ee0bee4857d410781561e6f7f6a7eae0509d1138
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322762"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520040"
 ---
 # <a name="deploy-azure-machine-learning-studio-classic-workspace-using-azure-resource-manager"></a>Развертывание рабочей области Машинное обучение Azure Studio (классическая модель) с помощью Azure Resource Manager
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 Шаблон развертывания Azure Resource Manager позволяет сэкономить время, предоставляя масштабируемый способ развертывания взаимосвязанных компонентов с возможностью проверки и механизмом повтора. Например, чтобы настроить рабочие области Машинное обучение Azure Studio (классические), необходимо сначала настроить учетную запись хранения Azure, а затем развернуть рабочую область. Представьте себе выполнение этого задания вручную для сотен рабочих областей. Более простой альтернативой является использование шаблона Azure Resource Manager для развертывания рабочей области Studio (классической) и всех ее зависимостей. В этой статье представлено пошаговое выполнение этого процесса. Подробный обзор Azure Resource Manager см. в статье [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 
@@ -140,7 +140,7 @@ Get-AzResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |ForEa
 ```
 После подготовки рабочей области можно автоматизировать многие задачи Машинное обучение Azure Studio (классические) с помощью [модуля PowerShell для машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [создании шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 * Просмотрите [репозиторий шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).

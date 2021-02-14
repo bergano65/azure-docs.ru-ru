@@ -1,24 +1,20 @@
 ---
 title: Управляемая виртуальная сеть & управляемые частные конечные точки
 description: Сведения об управляемой виртуальной сети и управляемых частных конечных точках в фабрике данных Azure.
-services: data-factory
 ms.author: abnarain
 author: nabhishek
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom:
 - seo-lt-2019
 - references_regions
 ms.date: 07/15/2020
-ms.openlocfilehash: 81d82bccd6b6bd97b84df5269dd59ffac4903370
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: d950b05dd34788c2c5ef0b34b8ec8ac0b20ad4b6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980384"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379579"
 ---
 # <a name="azure-data-factory-managed-virtual-network-preview"></a>Управляемая виртуальная сеть фабрики данных Azure (Предварительная версия)
 
@@ -51,7 +47,7 @@ ms.locfileid: "94980384"
 
 ![Новая управляемая частная конечная точка](./media/tutorial-copy-data-portal-private/new-managed-private-endpoint.png)
 
-Фабрика данных Azure поддерживает частные ссылки. Частная ссылка позволяет получить доступ к службам Azure (PaaS) (таким как служба хранилища Azure, Azure Cosmos DB, Azure синапсе Analytics (ранее — хранилище данных SQL)).
+Фабрика данных Azure поддерживает частные ссылки. Частная ссылка позволяет получить доступ к службам Azure (PaaS) (таким как служба хранилища Azure, Azure Cosmos DB, Azure синапсе Analytics).
 
 При использовании частной ссылки трафик между хранилищами данных и управляемой виртуальной сетью полностью проходит через магистральную сеть Майкрософт. Приватный канал обеспечивает защиту от угроз кражи данных. Чтобы установить приватный канал для ресурса, создайте частную конечную точку.
 
@@ -86,7 +82,7 @@ ms.locfileid: "94980384"
 - Файлы Azure
 - Azure Data Lake 2-го поколения
 - База данных SQL Azure (не включая Azure SQL Управляемый экземпляр)
-- Azure Synapse Analytics (прежнее название — Хранилище данных SQL)
+- Azure Synapse Analytics
 - SQL CosmosDB Azure
 - Azure Key Vault
 - Служба частной связи Azure

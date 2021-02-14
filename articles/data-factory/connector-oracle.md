@@ -1,22 +1,17 @@
 ---
 title: Копирование данных в Oracle и обратно с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ в базу данных Oracle или из Oracle в поддерживаемые хранилища приемников с помощью фабрики данных.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: jingwang
-ms.openlocfilehash: b4d2b277eea85fb8a5c9eb733e5bfd64d66f392c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bba1ae991f2a4702a0d55a8dc3f6c7a44b9e7b65
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91407832"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381347"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 
@@ -154,13 +149,13 @@ ms.locfileid: "91407832"
         "type": "Oracle",
         "typeProperties": {
             "connectionString": "Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;",
-            "password": { 
-                "type": "AzureKeyVaultSecret", 
-                "store": { 
-                    "referenceName": "<Azure Key Vault linked service name>", 
-                    "type": "LinkedServiceReference" 
-                }, 
-                "secretName": "<secretName>" 
+            "password": { 
+                "type": "AzureKeyVaultSecret", 
+                "store": { 
+                    "referenceName": "<Azure Key Vault linked service name>", 
+                    "type": "LinkedServiceReference" 
+                }, 
+                "secretName": "<secretName>" 
             }
         },
         "connectVia": {
@@ -219,7 +214,7 @@ ms.locfileid: "91407832"
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение `OracleSource` . | Да |
 | oracleReaderQuery | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`.<br>При включении секционированной нагрузки необходимо привязать все соответствующие встроенные параметры секции в запросе. Примеры см. в разделе [Параллельное копирование из Oracle](#parallel-copy-from-oracle) . | Нет |
-| partitionOptions | Задает параметры секционирования данных, используемые для загрузки данных из Oracle. <br>Допустимые значения: **None** (по умолчанию), **фисикалпартитионсофтабле**и **динамикранже**.<br>Если параметр секции включен (то есть не `None` ), степень параллелизма для параллельной загрузки данных из базы данных Oracle управляется [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) параметром действия копирования. | нет |
+| partitionOptions | Задает параметры секционирования данных, используемые для загрузки данных из Oracle. <br>Допустимые значения: **None** (по умолчанию), **фисикалпартитионсофтабле** и **динамикранже**.<br>Если параметр секции включен (то есть не `None` ), степень параллелизма для параллельной загрузки данных из базы данных Oracle управляется [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) параметром действия копирования. | нет |
 | partitionSettings | Позволяет указать группу параметров для секционирования данных. <br>Применяется, если параметр Partition не имеет значение `None` . | Нет |
 | партитионнамес | Список физических разделов, которые необходимо скопировать. <br>Применяется, если параметр секционирования имеет значение `PhysicalPartitionsOfTable`. Если для получения исходных данных используется запрос, подключите `?AdfTabularPartitionName` в предложении WHERE. Пример см. в разделе [Параллельное копирование из Oracle](#parallel-copy-from-oracle) . | нет |
 | partitionColumnName | Укажите имя исходного столбца **целочисленного типа**, который будет использоваться для секционирования по диапазонам при параллельном копировании. Если этот параметр не указан, первичный ключ таблицы определяется автоопределением и используется в качестве столбца секционирования. <br>Применяется, если параметр секционирования имеет значение `DynamicRange`. Если для получения исходных данных используется запрос, присоединитесь к  `?AdfRangePartitionColumnName` предложению WHERE. Пример см. в разделе [Параллельное копирование из Oracle](#parallel-copy-from-oracle) . | нет |
@@ -360,24 +355,24 @@ ms.locfileid: "91407832"
 | BFILE |Byte[] |
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версий) |
 | CHAR |Строка |
-| CLOB |Строковый тип |
+| CLOB |Строка |
 | DATE |Дата и время |
 | FLOAT |десятичное число, строка (если точность больше 28) |
-| ЦЕЛОЕ ЧИСЛО |десятичное число, строка (если точность больше 28) |
-| LONG |Строковый тип |
+| INTEGER |десятичное число, строка (если точность больше 28) |
+| LONG |Строка |
 | LONG RAW |Byte[] |
-| NCHAR |Строковый тип |
-| NCLOB |Строковый тип |
+| NCHAR |Строка |
+| NCLOB |Строка |
 | NUMBER |десятичное число, строка (если точность больше 28) |
-| NVARCHAR2 |Строковый тип |
+| NVARCHAR2 |Строка |
 | RAW |Byte[] |
-| ROWID |Строковый тип |
+| ROWID |Строка |
 | timestamp |Дата и время |
-| TIMESTAMP WITH LOCAL TIME ZONE |Строковый тип |
-| TIMESTAMP WITH TIME ZONE |Строковый тип |
+| TIMESTAMP WITH LOCAL TIME ZONE |Строка |
+| TIMESTAMP WITH TIME ZONE |Строка |
 | UNSIGNED INTEGER |Число |
-| VARCHAR2 |Строковый тип |
-| XML |Строковый тип |
+| VARCHAR2 |Строка |
+| XML |Строка |
 
 > [!NOTE]
 > Типы данных INTERVAL YEAR TO MONTH и INTERVAL DAY TO SECOND не поддерживаются.

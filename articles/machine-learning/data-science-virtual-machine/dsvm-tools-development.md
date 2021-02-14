@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Сведения о средствах и интегрированных средах разработки, доступных на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 42a595246f45b2c7423aaf77c95f17243cf8813c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cecc195b8b97ffd9b25cf12898726352ddd698a9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012389"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519445"
 ---
 # <a name="development-tools-on-the-azure-data-science-virtual-machine"></a>Средства разработки на виртуальной машине Azure для обработки и анализа данных
 
