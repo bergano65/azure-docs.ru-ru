@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/08/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 8c963f11a34217253f02cb5d116d66cdbf8bcc19
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 319bbdd7809e224ca608fdac06d4b304c2052e86
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033964"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391547"
 ---
 # <a name="choose-how-to-authorize-access-to-blob-data-in-the-azure-portal"></a>Выберите способ авторизации доступа к данным BLOB-объектов в портал Azure
 
@@ -37,6 +37,9 @@ ms.locfileid: "97033964"
 - Роль [участника учетной записи хранения](../../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
 При попытке получить доступ к данным большого двоичного объекта в портал Azure на портале сначала проверяется, была ли назначена роль с помощью **Microsoft. Storage/storageAccounts/listkeys/Action**. Если вы назначили роль с этим действием, портал использует ключ учетной записи для доступа к данным большого двоичного объекта. Если вы не назначили роль с этим действием, портал пытается получить доступ к данным с помощью учетной записи Azure AD.
+
+> [!IMPORTANT]
+> Если учетная запись хранения заблокирована с блокировкой Azure Resource Manager **только для чтения** , операция " [список ключей](/rest/api/storagerp/storageaccounts/listkeys) " не разрешена для этой учетной записи хранения. **Список ключей** является операцией POST, и все операции POST предотвращаются, если для учетной записи настроена блокировка **только для чтения** . По этой причине, если учетная запись заблокирована с блокировкой **только для чтения** , пользователи должны использовать учетные данные Azure AD для доступа к данным большого двоичного объекта на портале. Сведения о доступе к данным большого двоичного объекта на портале с помощью Azure AD см. в статье [Использование учетной записи Azure AD](#use-your-azure-ad-account).
 
 > [!NOTE]
 > Администратор службы роли администратора классической подписки и Co-Administrator включает в себя эквивалент роли [владельца](../../role-based-access-control/built-in-roles.md#owner) Azure Resource Manager. Роль **владелец** включает все действия, включая **Microsoft. Storage/storageAccounts/listkeys/Action**, поэтому пользователь с одной из этих административных ролей также может получать доступ к данным большого двоичного объекта с помощью ключа учетной записи. Дополнительные сведения см. в статье [Роли классического администратора подписки, роли Azure и роли администратора Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#classic-subscription-administrator-roles).
@@ -108,9 +111,9 @@ ms.locfileid: "97033964"
 
     :::image type="content" source="media/authorize-data-operations-portal/auth-blob-upload.png" alt-text="Снимок экрана, показывающий, как изменить метод авторизации при передаче BLOB-объекта":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Проверка подлинности доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../common/storage-auth-aad.md)
-- [Используйте портал Azure, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](../common/storage-auth-aad-rbac-portal.md)
+- [Назначение роли Azure для доступа к большим двоичным объектам и данным очереди с помощью портала Azure](../common/storage-auth-aad-rbac-portal.md)
 - [Используйте Azure CLI, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](../common/storage-auth-aad-rbac-cli.md)
 - [Использование модуля Azure PowerShell для назначения роли Azure доступа к данным BLOB-объектов и очередей](../common/storage-auth-aad-rbac-powershell.md)

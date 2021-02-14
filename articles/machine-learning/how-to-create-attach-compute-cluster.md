@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 0d1cbb8efe0882f48a345d44a650eb711a44d570
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: f9b970f498db7530b35c57a75edeae55dec3f22d
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739191"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098849"
 ---
 # <a name="create-an-azure-machine-learning-compute-cluster"></a>Создание вычислительного кластера Машинного обучения Azure
 
@@ -100,7 +100,7 @@ az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STAN
 
  ## <a name="lower-your-compute-cluster-cost"></a><a id="low-pri-vm"></a> Снижение стоимости вычислений в кластере
 
-Вы также можете использовать [виртуальные машины с низким приоритетом](concept-plan-manage-cost.md#low-pri-vm) для выполнения некоторых или всех рабочих нагрузок. Эти виртуальные машины не обеспечены гарантиями доступности и могут быть замещены при использовании. Замещенное задание перезапускается, а не возобновляется. 
+Вы также можете использовать [виртуальные машины с низким приоритетом](concept-plan-manage-cost.md#low-pri-vm) для выполнения некоторых или всех рабочих нагрузок. Эти виртуальные машины не обеспечены гарантиями доступности и могут быть замещены при использовании. Вам потребуется перезапустить задание с вытеснением. 
 
 Используйте любой из этих способов, чтобы указать виртуальную машину с низким приоритетом:
     

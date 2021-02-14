@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 10/19/2020
+ms.date: 01/19/2021
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: cff1298f12d26b1260213d75701c282e0a82511d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fc8d211160e757c78a8e2adafad703118628e6dc
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004163"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095050"
 ---
 # <a name="update-your-groups-info-on-the-my-apps-portal"></a>Обновление сведений о группах на портале "Мои приложения"
 
@@ -27,6 +27,11 @@ ms.locfileid: "96004163"
 
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](../manage-apps/index.yml).
+>
+> Если вы видите ошибку при входе с помощью личного учетная запись Майкрософт, вы по-прежнему можете выполнять вход, используя доменное имя организации (например, contoso.com) или **идентификатор клиента** вашей организации от администратора в одном из следующих URL-адресов:
+>
+>   - https://myapplications.microsoft.com?tenantId=*your_domain_name*
+>   - https://myapplications.microsoft.com?tenant=*your_tenant_ID*
 
 ## <a name="view-your-groups-information"></a>Просмотр сведений о группах
 
@@ -40,7 +45,11 @@ ms.locfileid: "96004163"
 
 1. Войдите в рабочую или учебную учетную запись.
 
-2. Откройте веб-браузер и перейдите по адресу https://myapps.microsoft.com или воспользуйтесь ссылкой, предоставленной вашей организацией. Вам может быть предоставлена персонализированная корпоративная страница, например https://myapps.microsoft.com/contoso.com.
+2. Откройте веб-браузер и перейдите по адресу https://myapps.microsoft.com или воспользуйтесь ссылкой, предоставленной вашей организацией. Вам может быть предоставлена персонализированная корпоративная страница, например https://myapps.microsoft.com/contoso.com. Если вы входите в систему с помощью личного учетная запись Майкрософт, вы по-прежнему можете выполнять вход, используя доменное имя организации (например, contoso.com) или **идентификатор клиента** вашей организации от администратора в одном из следующих URL-адресов:
+
+   - https://myapplications.microsoft.com?tenantId=*your_domain_name*
+   - https://myapplications.microsoft.com?tenant=*your_tenant_ID*
+
 
     Откроется страница **Приложения**, где отображаются все облачные приложения, принадлежащие вашей организации и доступные вам для использования.
 

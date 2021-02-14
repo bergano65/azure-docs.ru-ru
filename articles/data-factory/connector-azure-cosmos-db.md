@@ -1,22 +1,18 @@
 ---
 title: Копирование и преобразование данных в Azure Cosmos DB (API SQL)
 description: Узнайте, как копировать данные в Azure Cosmos DB (API SQL) и обратно, а затем преобразовывать данные в Azure Cosmos DB (API SQL) с помощью фабрики данных.
-services: data-factory, cosmosdb
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
-ms.service: multiple
-ms.workload: data-services
+ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/29/2021
-ms.openlocfilehash: 1d9e43aafbe1f9fdd48596c54138075e23a25590
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 2a084683d99117697657ba8900fcd6534b4a3e95
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222922"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379953"
 ---
 # <a name="copy-and-transform-data-in-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование и преобразование данных в Azure Cosmos DB (API SQL) с помощью фабрики данных Azure
 
@@ -52,7 +48,7 @@ ms.locfileid: "99222922"
 > [!TIP]
 > [Видео о переносе данных](https://youtu.be/5-SRNiC_qOU) поможет вам выполнить копирование данных из хранилища BLOB-объектов Azure в Azure Cosmos DB. Кроме того, в видео приведены общие рекомендации по настройке производительности приема данных в Azure Cosmos DB.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -301,7 +297,7 @@ ms.locfileid: "99222922"
 - В Cosmos DB размер одного запроса не должен превышать 2 МБ. Формула: "размер запроса = один размер документа * размер пакета". Если возникла ошибка с сообщением "размер запроса слишком велик", уменьшите значение размера пакета.
 - Чем больше размер пакета, тем более производительно может достигнуть пропускная способность, в то время как необходимо выделить достаточное количество запросов для повышения производительности рабочей нагрузки.
 
-**Ключ секции:** Введите строку, представляющую ключ секции для коллекции. Например, ```/movies/title```.
+**Ключ секции:** Введите строку, представляющую ключ секции для коллекции. Пример: ```/movies/title```
 
 **Пропускная способность:** Задайте необязательное значение для числа RUs, которое вы хотите применить к коллекции CosmosDB для каждого выполнения этого потока данных. Минимум — 400.
 
@@ -328,6 +324,6 @@ ms.locfileid: "99222922"
 
 При переходе с реляционной базы данных, например SQL Server на Azure Cosmos DB, действие копирования может легко сопоставлять табличные данные из источника для спрямления документов JSON в Cosmos DB. В некоторых случаях может потребоваться переконструировать модель данных, чтобы оптимизировать ее для NoSQL вариантов использования в соответствии с [моделированием данных в Azure Cosmos DB](../cosmos-db/modeling-data.md), например, для денормализации данных путем встраивания всех связанных вложенных элементов в один документ JSON. В этом случае обратитесь к [этой статье](../cosmos-db/migrate-relational-to-cosmos-db-sql-api.md) с пошаговым руководством по ее выполнению с помощью действия копирования в фабрике данных Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

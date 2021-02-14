@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 01/07/2021
-ms.openlocfilehash: c2b89450c0e474f5030f8812e888890f1fedde7e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.date: 02/12/2021
+ms.openlocfilehash: 4b431220dbab49b74f38a8f37be8aac1a0c5c460
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019641"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382894"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -452,17 +452,23 @@ Logic Apps предоставляет эти соединители предпр
 >
 > Дополнительные сведения о создании Исес см. в статье [Подключение к виртуальным сетям Azure из Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).
 
+## <a name="get-ready-for-deployment"></a>Подготовка к развертыванию
+
+Хотя подключения создаются в приложении логики, подключения представляют собой отдельные ресурсы Azure с собственными определениями ресурсов. Чтобы проверить эти определения ресурсов подключения, [скачайте приложение логики из Azure в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md). это самый простой способ создать допустимый параметризованный шаблон приложения логики, который в основном готов к развертыванию.
+
 <a name="block-connections"></a>
 
 ## <a name="block-creating-connections"></a>Блокировать создание подключений
 
 Если ваша организация не разрешается подключаться к конкретным ресурсам с помощью соединителей в Azure Logic Apps, можно [заблокировать возможность создания этих подключений](../logic-apps/block-connections-connectors.md) для конкретных соединителей в рабочих процессах приложения логики с помощью [политики Azure](../governance/policy/overview.md). Дополнительные сведения см. [в разделе Блокирование подключений, созданных конкретными соединителями в Azure Logic Apps](../logic-apps/block-connections-connectors.md).
 
-## <a name="get-ready-for-deployment"></a>Подготовка к развертыванию
+## <a name="known-issues"></a>Известные проблемы
 
-Хотя подключения создаются в приложении логики, подключения представляют собой отдельные ресурсы Azure с собственными определениями ресурсов. Чтобы проверить эти определения ресурсов подключения, [скачайте приложение логики из Azure в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md). это самый простой способ создать допустимый параметризованный шаблон приложения логики, который в основном готов к развертыванию.
+#### <a name="error-badgateway-client-request-id-guid"></a>Ошибка: BadGateway. Идентификатор запроса клиента: "{GUID}"
 
-## <a name="next-steps"></a>Дальнейшие действия
+Эта ошибка возникает из-за обновления тегов в приложении логики, где одно или несколько подключений не поддерживают проверку подлинности OAuth Azure Active Directory (Azure AD), например SFTP AD SQL, нарушая эти соединения. Чтобы предотвратить такое поведение, старайтесь не обновлять эти теги.
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Просмотр [полного списка соединителей](/connectors)
 * [Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)

@@ -329,9 +329,10 @@
           href: virtual-machine-scale-sets-placement-groups.md
         - name: Преобразование шаблона масштабируемого набора для использования управляемого диска
           href: virtual-machine-scale-sets-convert-template-to-md.md
-        - name: Использование выделенных узлов (предварительная версия)
-          href: ../virtual-machines/dedicated-hosts.md
+        - name: Использование выделенных узлов
           items:
+            - name: Обзор
+              href: ../virtual-machines/dedicated-hosts.md
             - name: CLI
               href: ../virtual-machines/linux/dedicated-hosts-cli.md
             - name: PowerShell

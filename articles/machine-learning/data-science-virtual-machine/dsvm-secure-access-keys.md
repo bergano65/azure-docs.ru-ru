@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Описание безопасного хранения учетных данных для доступа на виртуальной машине для обработки и анализа данных. Вы узнаете, как использовать управляемые удостоверения служб и Azure Key Vault для хранения учетных данных доступа.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 05/08/2018
-ms.openlocfilehash: d5604e42c2c27463e10c136ccd18c3c21846fc5a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: adc66fc794ac6cce3fc0f8fd1552f701a4968860
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309154"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519683"
 ---
 # <a name="store-access-credentials-securely-on-an-azure-data-science-virtual-machine"></a>Безопасное хранение учетных данных доступа на виртуальной машине Azure для обработки и анализа данных
 

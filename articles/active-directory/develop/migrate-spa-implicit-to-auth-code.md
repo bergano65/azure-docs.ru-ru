@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: e6bbebafab45080a2076f33d66dd96296a761e4f
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: fc5d9cbd02490748c17a9f40a1440c5ad0c46278
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754948"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104116"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Перенос одностраничного приложения JavaScript из неявного потока предоставления разрешения в поток кода авторизации
 
@@ -41,7 +41,7 @@ MSAL.js 2.x — это расширенная версия MSAL.js 1.x, кото
 
 Выполните следующие действия для регистраций приложений, у которых URI перенаправления сейчас настроены для **веб-** платформы.
 
-1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span></a> и выберите свой клиент **Azure Active Directory** .
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a> и выберите свой клиент **Azure Active Directory**.
 1. В разделе **Регистрация приложений** выберите свое приложение и щелкните элемент **Проверка подлинности**.
 1. На плитке **веб-** платформы в разделе **URI перенаправления** выберите предупреждающий баннер (он указывает на необходимость переноса URI).
 

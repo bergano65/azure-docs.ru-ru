@@ -7,12 +7,12 @@ ms.date: 01/08/2021
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 6be49ec3777b4bcaa033a60546e95711090662a4
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: b0b5aafd85fe6d992afa9d879f73ef0ec43e00d3
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065292"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834380"
 ---
 # <a name="tutorial-create-a-rule-and-set-up-notifications-in-your-azure-iot-central-application"></a>Руководство по Создание правила и настройка уведомлений в приложении Azure IoT Central
 
@@ -107,6 +107,10 @@ ms.locfileid: "98065292"
 ## <a name="enable-or-disable-a-rule-for-specific-devices"></a>Включение или отключение правила для определенных устройств
 
 Выберите правило, которое требуется включить или отключить. Используйте один или несколько фильтров в разделе **Целевые устройства**, чтобы ограничить область действия правила для устройств, которые вы хотите отслеживать.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+[!INCLUDE [iot-central-clean-up-resources](../../../includes/iot-central-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

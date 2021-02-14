@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из DB2 с помощью Фабрики данных Azure
 description: Узнайте, как копировать данные из DB2 в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: jingwang
-ms.openlocfilehash: f890e4c47a427b6ca8c07463d6795f0813ef5bbd
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 642f12386a7695e026eb0c30016acf6f53fc9e95
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638199"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381126"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Копирование данных из DB2 с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -82,13 +77,13 @@ ms.locfileid: "92638199"
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных DB2.<br/>Допустимое значение: **Базовый** |Да |
 | username |Укажите имя пользователя для подключения к базе данных DB2. |Да |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
-| packageCollection | Укажите, в каком расположении служба ADF создает необходимые пакеты при запросе к базе данных. Если этот параметр не задан, Фабрика данных использует {username} в качестве значения по умолчанию. | нет |
+| packageCollection    | Укажите, в каком расположении служба ADF создает необходимые пакеты при запросе к базе данных. Если этот параметр не задан, Фабрика данных использует {username} в качестве значения по умолчанию. | нет |
 | certificateCommonName | При использовании протоколов SSL или TLS необходимо ввести значение для параметра "Общее имя сертификата". | нет |
 
 > [!TIP]
 > Если вы получите сообщение об ошибке `The package corresponding to an SQL statement execution request was not found. SQLSTATE=51002 SQLCODE=-805`, это означает, что необходимый пакет для пользователя не создан. По умолчанию ADF попытается создать пакет в коллекции с тем же именем, что у пользователя, которое использовалось при подключении к DB2. Укажите свойство коллекции пакетов, чтобы определить, где ADF будет создавать необходимые пакеты при запросе к базе данных.
 
-**Пример** .
+**Пример**.
 
 ```json
 {
@@ -204,7 +199,7 @@ ms.locfileid: "92638199"
 | type | Свойству type источника действия копирования необходимо задать значение **Db2Source** | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"query": "SELECT * FROM \"DB2ADMIN\".\"Customers\""`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример** .
+**Пример**.
 
 ```json
 "activities":[
