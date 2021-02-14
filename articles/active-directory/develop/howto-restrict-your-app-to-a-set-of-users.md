@@ -13,12 +13,12 @@ ms.date: 09/24/2018
 ms.author: kkrishna
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 5f6ac11fc5c7bbe7a8f81e6ea89e2c582ebcf264
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: f3eff6f5660089472ef431bad9a4f05be1fffe24
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178744"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104151"
 ---
 # <a name="how-to-restrict-your-azure-ad-app-to-a-set-of-users-in-an-azure-ad-tenant"></a>Как ограничить приложение Azure AD набором пользователей в клиенте Azure AD
 
@@ -47,7 +47,7 @@ ms.locfileid: "98178744"
 
 ### <a name="enterprise-applications-requires-the-global-administrator-role"></a>Корпоративные приложения (требуется роль глобального администратора)
 
-1. Войдите в <a href="https://portal.azure.com/" target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span> портал Azure</a> в качестве **глобального администратора**.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a> как **глобальный администратор**.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **корпоративные приложения**  >  **все приложения**.
@@ -57,15 +57,15 @@ ms.locfileid: "98178744"
 1. Найдите параметр **Требуется ли назн. польз.?** и присвойте ему значение **Да**. Если этот параметр имеет значение **Да**, пользователи в клиенте сначала должны быть назначены этому приложению или не смогут входить в это приложение.
 1. Щелкните **Сохранить**.
 
-### <a name="app-registration"></a>Регистрация приложения
+### <a name="app-registration"></a>Регистрация приложений
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.
 1. Создайте или выберите приложение, которым требуется управлять. Необходимо быть **владельцем** этого приложения.
 1. На странице **Обзор** приложения выберите ссылку **управляемое приложение в локальном каталоге** в разделе **основные компоненты** .
-1. В разделе **Управление** выберите **свойства**.
+1. В разделе **Управление** выберите **Свойства**.
 1. Найдите параметр **Требуется ли назн. польз.?** и присвойте ему значение **Да**. Если этот параметр имеет значение **Да**, пользователи в клиенте сначала должны быть назначены этому приложению или не смогут входить в это приложение.
 1. Щелкните **Сохранить**.
 

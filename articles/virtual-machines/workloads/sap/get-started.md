@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dfd0156907f18dcb7f38246993ddc4abcd508631
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 25d9d53b9bc597b5eb51586c594dd631609f476e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99549394"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362154"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -84,6 +84,7 @@ Azure для SAP HANA — это предложение, выделяющее A
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 02/11/2021: изменения в [высокой доступности IBM DB2 LUW на виртуальных машинах Azure на сервере Red Hat Enterprise Linux](./high-availability-guide-rhel-ibm-db2-luw.md) для уточнения команд кластера PACEMAKER для RHEL 8. x
 - 02/03/2021: измените [настройку Pacemaker в RHEL в Azure](./high-availability-guide-rhel-pacemaker.md) для обновления pcmk_host_map в команде создания stonith
 - 02/03/2021: измените [настройку Pacemaker для SLES в Azure](./high-availability-guide-suse-pacemaker.md) , чтобы добавить pcmk_host_map в команде stonith Create. 
 - 02/03/2021: Дополнительные сведения о параметрах планировщика ввода-вывода для SUSE в статье [SAP HANA конфигурациях хранилища виртуальных машин Azure](./hana-vm-operations-storage.md)

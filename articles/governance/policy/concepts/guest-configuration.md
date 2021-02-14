@@ -3,12 +3,12 @@ title: Узнайте больше про аудит содержимого ви
 description: Узнайте, как политика Azure использует клиент гостевой конфигурации для аудита параметров в виртуальных машинах.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: c141169545379f1ac0dd18a97e85652f97b90e6f
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 5d1503680ea2ca7d0ff7c8adae19c05abfe441c0
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210126"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104813"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -142,11 +142,15 @@ ms.locfileid: "98210126"
 
 Определения политик аудита, доступные для гостевой конфигурации, включают тип ресурса **Microsoft. хибридкомпуте/Machines** . Все компьютеры, подключенные к [Azure Arc для серверов](../../../azure-arc/servers/overview.md) и находящиеся в области назначения политики, добавляются автоматически.
 
+## <a name="troubleshooting-guest-configuration"></a>Устранение неполадок настройки гостевой системы
+
+Дополнительные сведения об устранении неполадок с гостевой конфигурацией см. в [статье Устранение неполадок политики Azure](../troubleshoot/general.md).
+
 ### <a name="multiple-assignments"></a>Несколько назначений
 
 Определения политик гостевой конфигурации в настоящее время поддерживают только назначение одного и того же назначения гостей один раз на компьютер, даже если в назначении политики используются другие параметры.
 
-## <a name="client-log-files"></a>Файлы журналов клиента
+### <a name="client-log-files"></a>Файлы журналов клиента
 
 Модуль настройки гостевой конфигурации записывает файлы журналов в следующие разделы:
 
@@ -180,6 +184,15 @@ linesToIncludeAfterMatch=10
 logPath=/var/lib/GuestConfig/gc_agent_logs/gc_agent.log
 egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCManagedEngine' $logPath | tail
 ```
+
+### <a name="client-files"></a>Файлы клиента
+
+Клиент конфигурации гостя загружает пакеты содержимого на компьютер и извлекает содержимое.
+Чтобы проверить, какое содержимое было загружено и сохранено, просмотрите расположение папок, указанное ниже.
+
+Windows: `c:\programdata\guestconfig\configurations`
+
+Linux: `/var/lib/guestconfig/configurations`
 
 ## <a name="guest-configuration-samples"></a>Примеры гостевой конфигурации
 

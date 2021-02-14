@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.author: nandab
 author: KishorIoT
 ms.date: 07/31/2020
-ms.openlocfilehash: c2f6f386f4a8ea062980c0efc97d0cfb4f37f4f2
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: e5236bb7034ae4d5f86ab2f8f965bdbfbc3d6ccd
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124900"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832051"
 ---
 # <a name="tutorial-modify-and-build-the-live-video-analytics-gateway-modules"></a>Руководство по изменению и созданию модулей шлюза для динамической видеоаналитики
 
@@ -73,6 +73,13 @@ git clone https://github.com/Azure/live-video-analytics
 1. В терминале VS Code выполните команду **npm version patch**. Этот скрипт сборки развертывает образы в реестре контейнеров. Выходные данные в окне терминала VS Code проинформируют, успешно ли выполнена сборка.
 
 1. Версия образа **LvaEdgeGatewayModule** увеличивается при каждом завершении сборки. Эту версию необходимо правильно указать в файле манифеста развертывания.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы завершили работу с приложением, можете удалить все созданные ресурсы следующим образом:
+
+1. В приложении IoT Central перейдите на страницу **Ваше приложение** в разделе **Администрирование**. Теперь щелкните **Удалить**.
+1. На портале Azure удалите группу ресурсов **lva-rg**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

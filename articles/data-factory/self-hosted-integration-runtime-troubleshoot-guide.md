@@ -1,18 +1,17 @@
 ---
 title: Устранение неполадок с локальной средой выполнения интеграции в Фабрике данных Azure
 description: Узнайте, как устранять неполадки с локальной средой выполнения интеграции в Фабрике данных Azure.
-services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 01/25/2021
 ms.author: lle
-ms.openlocfilehash: 3735d7b21faf62905ed4c06dbef80c9737e7329e
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 2cb0e0870b32270340e37d54dc54a43b22ee014a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99551082"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376468"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
@@ -83,8 +82,8 @@ ms.locfileid: "99551082"
 Ограничение на количество параллельных заданий зависит от логического ядра и памяти компьютера. Попробуйте изменить значение вниз на значение 24, а затем просмотрите результат.
 
 > [!TIP] 
-> - Дополнительные сведения о количестве логических ядер и определении числа логических ядер компьютера см. в статье [четыре способа определения количества ядер в ЦП в Windows 10](https://www.top-password.com/blog/find-number-of-cores-in-your-cpu-on-windows-10/).
-> - Чтобы узнать, как вычислить Math. log, перейдите к [калькулятору логарифма](https://www.rapidtables.com/calc/math/Log_Calculator.html).
+> -    Дополнительные сведения о количестве логических ядер и определении числа логических ядер компьютера см. в статье [четыре способа определения количества ядер в ЦП в Windows 10](https://www.top-password.com/blog/find-number-of-cores-in-your-cpu-on-windows-10/).
+> -    Чтобы узнать, как вычислить Math. log, перейдите к [калькулятору логарифма](https://www.rapidtables.com/calc/math/Log_Calculator.html).
 
 
 ### <a name="self-hosted-ir-high-availability-ha-ssl-certificate-issue"></a>Неисправность SSL-сертификата в локальной среде с высоким уровнем доступности
@@ -335,7 +334,7 @@ ms.locfileid: "99551082"
             b. Установите собственные IR-биты.  
             c. Измените учетную запись службы, выполнив следующие действия.  
 
-             i. Перейдите в папку с локальной ИНФРАКРАСной установкой и перейдите в папку *Microsoft Integration Runtime\4.0\Shared* .  
+             и. Перейдите в папку с локальной ИНФРАКРАСной установкой и перейдите в папку *Microsoft Integration Runtime\4.0\Shared* .  
              ii. Откройте окно командной строки с повышенными привилегиями. Замените *\<user>* и *\<password>* собственным именем пользователя и паролем, а затем выполните следующую команду:   
                 `dmgcmd.exe -SwitchServiceAccount "<user>" "<password>"`  
              iii. Если вы хотите перейти на учетную запись LocalSystem, убедитесь, что для этой учетной записи используется правильный формат: `dmgcmd.exe -SwitchServiceAccount "NT Authority\System" ""`  
@@ -792,7 +791,7 @@ ms.locfileid: "99551082"
 
 Локальная среда IR не может совместно использоваться несколькими клиентами.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

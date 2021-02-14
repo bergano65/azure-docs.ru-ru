@@ -11,12 +11,12 @@ ms.date: 03/27/2019
 ms.author: procha
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f207509baba2499adf5d5d00df0ccd0503a25491
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 918dd929244c7177790a77bfff32589847073c70
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98665197"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104797"
 ---
 # <a name="azure-synapse-analytics-data-integration-partners"></a>Партнеры по интеграции данных с Azure Synapse Analytics
 
@@ -52,7 +52,8 @@ ms.locfileid: "98665197"
 | ![TimeXtender](./media/sql-data-warehouse-partner-data-integration/timextender-logo.png) |**TimeXtender**<br>Центр обнаружения TimeXtender помогает компаниям создавать современные пространства данных, предоставляя интегрированную платформу управления данными, которая ускоряет получение полезных сведений до 10 раз. Помимо ежедневных ETL и ELT, он предоставляет возможности для доступа к данным, моделирования данных и обеспечения соответствия требованиям на одной платформе. Центр обнаружения предоставляет единую структуру данных для облачной аналитики. Он позволяет подключать и интегрировать различные приемники данных, каталоги, модели, перемещения и документы для аналитики и AI. | [Страница продукта](https://www.timextender.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?search=timextender&page=1) |
 | ![Trifacta](./media/sql-data-warehouse-partner-data-integration/trifacta_logo.png) |**Trifacta Wrangler**<br> Trifacta помогает отдельным пользователям и целым организациям исследовать и объединять разнообразные данные для анализа. Продукт Trifacta Wrangler предназначен для выполнения рабочих нагрузок первичной обработки данных, которым требуется поддержка больших объемов данных и большого количества пользователей.|[Страница продукта](https://www.trifacta.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/trifactainc1587522950142.trifactaazure?tab=Overview) |
 | ![WhereScape](./media/sql-data-warehouse-partner-data-integration/wherescape_logo.png) |**WhereScape RED**<br> Интегрированная среда разработки WhereScape RED предоставляет специалистам средства автоматизации для упрощения рабочих нагрузок ETL. Эта интегрированная среда разработки предоставляет современный и оптимизированный машинный код для популярных хранилищ данных. WhereScape RED позволит вам ускорить разработку, развертывание и эксплуатацию инфраструктуры данных.|[Страница продукта](https://www.wherescape.com/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/wherescapesoftware.wherescape-red?source=datamarket&tab=Overview) |
-| ![кспленти](./media/sql-data-warehouse-partner-data-integration/xplenty-logo.png) |**кспленти**<br> Платформа кспленти ELT позволяет быстро и легко подготавливать данные для аналитических и рабочих вариантов использования с помощью простой облачной службы. & кспленти щелчком мыши, перетаскивание интерфейса перетаскивания & обеспечивает интеграцию данных, обработку и подготовку, не устанавливая, не развертывая и не обслуживая какое – либо программное обеспечение. Подключайте и интегрируйте широкий набор хранилищ данных и приложений SaaS, включая Azure синапсе, хранилище BLOB-объектов Azure и SQL Server. Кспленти также поддерживает все веб-службы, доступные через API-интерфейс.|[Страница продукта](https://www.xplenty.com/integrations/azure-synapse-analytics/ )<br> |
+| ![Ксперт BI](./media/sql-data-warehouse-partner-data-integration/xpertbi-logo.png) |**Ксперт BI**<br> Ксперт BI помогает организациям быстрее создавать и обслуживать надежную и масштабируемую платформу данных в Azure с помощью автоматизации на основе метаданных. Он расширяет возможности Azure синапсе с помощью рекомендаций и Датаопс для гибкой разработки данных с помощью встроенных функций управления данными. Используйте ксперт BI для быстрого тестирования и переключения между различными решениями Azure, такими как Azure синапсе, Azure Data Lake Storage и база данных SQL Azure, так как бизнес и аналитика требуют изменений и растет.|[Страница продукта](https://www.bi-builders.com/adding-automation-and-governance-to-azure-analytics/)<br> |
+| ![кспленти](./media/sql-data-warehouse-partner-data-integration/xplenty-logo.png) |**кспленти**<br> Платформа кспленти ELT позволяет быстро и легко подготавливать данные для аналитических и рабочих вариантов использования с помощью простой облачной службы. & точки кспленти SELECT, перетаскивание & Interface обеспечивает интеграцию данных, обработку и подготовку без установки, развертывания или обслуживания любого программного обеспечения. Подключайте и интегрируйте широкий набор хранилищ данных и приложений SaaS, включая Azure синапсе, хранилище BLOB-объектов Azure и SQL Server. Кспленти также поддерживает все веб-службы, доступные через API-интерфейс.|[Страница продукта](https://www.xplenty.com/integrations/azure-synapse-analytics/ )<br> |
 
 
 ## <a name="next-steps"></a>Следующие шаги

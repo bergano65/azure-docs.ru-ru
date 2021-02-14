@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
-ms.date: 01/18/2021
+ms.date: 02/09/2021
 ms.author: chmutali
-ms.openlocfilehash: f260bca196839a091ae7d12be6d5f85912bf92db
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 2b1a43ee6b13d32c0eaed92538cf9c25405e061b
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99255990"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104337"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-workday"></a>Как Azure Active Directory подготовка интегрируется с Workday
 
@@ -449,7 +449,22 @@ Azure AD отправляет следующий запрос на веб-слу
 
 `wd:Worker/wd:Worker_Data/wd:Account_Provisioning_Data/wd:Provisioning_Group_Assignment_Data[wd:Status='Assigned']/wd:Provisioning_Group/text()`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="handling-different-hr-scenarios"></a>Обработка различных сценариев HR
+
+### <a name="retrieving-international-job-assignments-and-secondary-job-details"></a>Получение международных назначений заданий и сведений о вторичном задании
+
+По умолчанию соединитель Workday извлекает атрибуты, связанные с основным заданием работника. Соединитель также поддерживает получение *дополнительных данных о заданиях* , связанных с назначениями международных заданий или вторичными заданиями. 
+
+Чтобы получить атрибуты, связанные с назначениями международного задания, выполните следующие действия. 
+
+1. Задайте для URL-адреса подключения Workday использование API веб-службы Workday версии 30,0 или более поздней. Соответствующим образом задайте [правильные значения XPath](workday-attribute-reference.md#xpath-values-for-workday-web-services-wws-api-v30) в приложении подготовки Workday. 
+1. `@wd:Primary_Job=0` `Worker_Job_Data` Для получения правильного атрибута используйте селектор на узле. 
+   * **Пример 1.** Чтобы получить `SecondaryBusinessTitle` Использование XPath `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Title/text()`
+   * **Пример 2:** Чтобы получить `SecondaryBusinessLocation` Использование XPath `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Site_Summary_Data/wd:Location_Reference/@wd:Descriptor`
+
+ 
+
+## <a name="next-steps"></a>Следующие шаги
 
 * [Узнайте, как настроить Workday для Active Directory подготовки](../saas-apps/workday-inbound-tutorial.md)
 * [Узнайте, как настроить обратную запись в Workday](../saas-apps/workday-writeback-tutorial.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/03/2021
 ms.author: yelevin
-ms.openlocfilehash: 59ef34f9d6d42277d8e83bf4e0ebb8ee29096f52
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 6a1a2a2a7dac961e49e6ced38803649ebf5ad523
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99566870"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096860"
 ---
 # <a name="connect-your-apache-http-server-to-azure-sentinel"></a>Подключение HTTP-сервера Apache к Azure Sentinel
 
@@ -37,7 +37,7 @@ ms.locfileid: "99566870"
 
 ## <a name="configure-and-integrate-apache-http-server-logs-via-log-analytics-agent"></a>Настройка и интеграция журналов HTTP-сервера Apache с помощью агента Log Analytics
 
-Настройте расположение файлов журнала HTTP-сервера Apache, чтобы перенаправить данные в рабочую область Azure с помощью агента Log Analytics.
+Настройте HTTP-сервер Apache для отправки файлов журнала в рабочую область Azure с помощью агента Log Analytics.
 Настройка агента Log Analytics для чтения файлов журнала HTTP-сервера Apache.
 
 1. Следуйте инструкциям по https://httpd.apache.org/docs/2.4/logs.html настройке расположения файлов журнала на сервере Apache HTTP.
@@ -56,7 +56,7 @@ ms.locfileid: "99566870"
 
 После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить HTTP-сервер Apache к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

@@ -1,19 +1,17 @@
 ---
 title: Обработку строк ошибок с сопоставлением потоков данных в фабрике данных Azure
 description: Узнайте, как выполнять обработку ошибок усечения SQL в фабрике данных Azure с помощью сопоставления потоков данных.
-services: data-factory
 author: kromerm
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/22/2020
 ms.author: makromer
-ms.openlocfilehash: c8b0ae7058aecc1813d720a3fbb2a1a1f967cf40
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: a7a03ff1a58f50f16ebefce48b9e2772a16a011a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352613"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386345"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Обработку строк ошибок усечения SQL в потоках данных сопоставления фабрики данных
 
@@ -62,6 +60,6 @@ ms.locfileid: "96352613"
 
     ![завершение потока данных с строками ошибок](media/data-flow/error-row-3.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создайте оставшуюся часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)сопоставления.

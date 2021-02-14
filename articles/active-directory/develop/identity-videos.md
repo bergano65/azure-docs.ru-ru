@@ -12,12 +12,12 @@ ms.date: 08/03/2020
 ms.author: marsma
 ms.custom: aaddev
 ms.reviewer: celested
-ms.openlocfilehash: bb5e4a1d4dc3977e8bc50885b02e3fe3ba6c5e7a
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: adb6be99fdfe9ef0a7fa21e025a9ef9a2c0dfffe
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116128"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104235"
 ---
 # <a name="microsoft-identity-platform-videos"></a>Видео по платформе удостоверений Майкрософт
 
@@ -31,21 +31,21 @@ ___
 
 :::row:::
   :::column:::
-        <a href="https://www.youtube.com/watch?v=tkQJSHFsduY" target="_blank">Основы современной проверки подлинности — платформа <span class="docon docon-navigate-external x-hidden-focus"></span> Microsoft Identity</a> (12:28)
+        <a href="https://www.youtube.com/watch?v=tkQJSHFsduY" target="_blank">Основы современной проверки подлинности — платформа Microsoft Identity</a>(12:28)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=tkQJSHFsduY" target="_blank"> <img src="./media/identity-videos/id-for-devs-07.jpg" alt="Video thumbnail for a video about the basics of modern authentication on the Microsoft identity platform."> </a>
+        <a href="https://www.youtube.com/watch?v=tkQJSHFsduY" target="_blank"> <img src="./media/identity-videos/id-for-devs-07.jpg" alt="Video thumbnail for a video about the basics of modern authentication on the Microsoft identity platform."></a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=7_vxnHiUA1M" target="_blank">Современная проверка подлинности: как мы получили здесь — <span class="docon docon-navigate-external x-hidden-focus"></span> платформа Microsoft Identity</a> (15:47)
+        <a href="https://www.youtube.com/watch?v=7_vxnHiUA1M" target="_blank">Современная проверка подлинности: как мы получили здесь — платформа Microsoft Identity</a>(15:47)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=7_vxnHiUA1M" target="_blank"> <img src="./media/identity-videos/id-for-devs-08.jpg" alt="Video thumbnail for a video about modern authentication and the Microsoft identity platform." class="mx-imgBorder"> </a>
+        <a href="https://www.youtube.com/watch?v=7_vxnHiUA1M" target="_blank"> <img src="./media/identity-videos/id-for-devs-08.jpg" alt="Video thumbnail for a video about modern authentication and the Microsoft identity platform." class="mx-imgBorder"></a>
     :::column-end:::
 :::row-end:::
 :::row:::
   :::column:::
-        <a href="https://www.youtube.com/watch?v=JpeMeTjQJ04" target="_blank">Обзор: реализация единого входа в мобильные приложения — платформа <span class="docon docon-navigate-external x-hidden-focus"></span> Microsoft Identity</a> (20:30)
+        <a href="https://www.youtube.com/watch?v=JpeMeTjQJ04" target="_blank">Обзор: реализация единого входа в мобильных приложениях — платформа Microsoft Identity</a> (20:30)
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=JpeMeTjQJ04" target="_blank"><img src="./media/identity-videos/mobile-single-sign-on.jpg" alt="Video thumbnail for a video about implementing mobile single sign on using the Microsoft identity platform."> </a> (20:30)
@@ -72,38 +72,38 @@ ___
 
 :::row:::
     :::column:::
-        1. <a href="https://www.youtube.com/watch?v=zjezqZPPOfc&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=1" target="_blank">Обзор платформы Microsoft Identity для разработчиков <span class="docon docon-navigate-external x-hidden-focus"></span> </a> (33:55)
+        1. <a href="https://www.youtube.com/watch?v=zjezqZPPOfc&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=1" target="_blank">Обзор платформы Microsoft Identity для разработчиков</a> (33:55)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=zjezqZPPOfc" target="_blank"> <img src="./media/identity-videos/id-for-devs-01.jpg" alt="Video thumbnail for a video overview of the Microsoft identity platform for developers."> </a>
+        <a href="https://www.youtube.com/watch?v=zjezqZPPOfc" target="_blank"> <img src="./media/identity-videos/id-for-devs-01.jpg" alt="Video thumbnail for a video overview of the Microsoft identity platform for developers."></a>
     :::column-end:::
      :::column:::
-        2. <a href="https://www.youtube.com/watch?v=Mtpx_lpfRLs&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=2" target="_blank">Проверка подлинности пользователей приложений с помощью платформы <span class="docon docon-navigate-external x-hidden-focus"></span> идентификации майкрософт</a> (29:09)
+        2. <a href="https://www.youtube.com/watch?v=Mtpx_lpfRLs&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=2" target="_blank">Проверка подлинности пользователей приложений с помощью платформы идентификации Майкрософт </a> (29:09)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=Mtpx_lpfRLs" target="_blank"> <img src="./media/identity-videos/id-for-devs-02.jpg" alt="Video thumbnail for a video about how to authenticate users of your apps with the Microsoft identity platform."> </a>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        3. <a href="https://www.youtube.com/watch?v=toAWRNqqDL4&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=3" target="_blank">разрешения платформы Microsoft Identity и инфраструктура <span class="docon docon-navigate-external x-hidden-focus"></span> согласия</a> (45:08)
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=toAWRNqqDL4" target="_blank"> <img src="./media/identity-videos/id-for-devs-03.jpg" alt="Video thumbnail for a video about Microsoft identity platform’s permissions and consent framework."> </a>
-    :::column-end:::
-    :::column:::
-        4. <a href="https://www.youtube.com/watch?v=IIQ7QW4bYqA&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=4" target="_blank">Защита API с помощью <span class="docon docon-navigate-external x-hidden-focus"></span> платформы Microsoft identity</a> (33:17)
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=IIQ7QW4bYqA" target="_blank"> <img src="./media/identity-videos/id-for-devs-04.jpg" alt="Video thumbnail for a video about how to protect APIs using the Microsoft identity platform."> </a>
+        <a href="https://www.youtube.com/watch?v=Mtpx_lpfRLs" target="_blank"> <img src="./media/identity-videos/id-for-devs-02.jpg" alt="Video thumbnail for a video about how to authenticate users of your apps with the Microsoft identity platform."></a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        5. <a href="https://www.youtube.com/watch?v=-BK2iBDrmNo&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=5" target="_blank">роли приложений и группы безопасности на платформе <span class="docon docon-navigate-external x-hidden-focus"></span> Microsoft identity</a> (15:52)
+        3. <a href="https://www.youtube.com/watch?v=toAWRNqqDL4&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=3" target="_blank">разрешения платформы Microsoft Identity и инфраструктура согласия</a> (45:08)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=-BK2iBDrmNo" target="_blank"> <img src="./media/identity-videos/id-for-devs-05.jpg" alt="Video thumbnail for a video about application roles and security groups on the Microsoft identity platform."> </a>
+        <a href="https://www.youtube.com/watch?v=toAWRNqqDL4" target="_blank"> <img src="./media/identity-videos/id-for-devs-03.jpg" alt="Video thumbnail for a video about Microsoft identity platform’s permissions and consent framework."></a>
+    :::column-end:::
+    :::column:::
+        4. <a href="https://www.youtube.com/watch?v=IIQ7QW4bYqA&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=4" target="_blank">Защита API с помощью платформы Microsoft Identity</a> (33:17)
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=IIQ7QW4bYqA" target="_blank"> <img src="./media/identity-videos/id-for-devs-04.jpg" alt="Video thumbnail for a video about how to protect APIs using the Microsoft identity platform."></a>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        5. <a href="https://www.youtube.com/watch?v=-BK2iBDrmNo&list=PLLasX02E8BPBxGouWlJV-u-XZWOc2RkiX&index=5" target="_blank">роли приложений и группы безопасности на платформе Microsoft Identity</a> (15:52)
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=-BK2iBDrmNo" target="_blank"> <img src="./media/identity-videos/id-for-devs-05.jpg" alt="Video thumbnail for a video about application roles and security groups on the Microsoft identity platform."></a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -135,44 +135,44 @@ ___
 
 :::row:::
     :::column:::
-        1 <a href="https://www.youtube.com/watch?v=fbSVgC8nGz4&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=1" target="_blank">. Основные понятия современной проверки подлинности <span class="docon docon-navigate-external x-hidden-focus"></span> </a> (4:33)
+        1 <a href="https://www.youtube.com/watch?v=fbSVgC8nGz4&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=1" target="_blank">. Основные понятия современной проверки подлинности</a> (4:33)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=fbSVgC8nGz4" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-01.jpg" alt="Video thumbnail for a video about the concept of modern authentication."> </a>
+        <a href="https://www.youtube.com/watch?v=fbSVgC8nGz4" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-01.jpg" alt="Video thumbnail for a video about the concept of modern authentication."></a>
     :::column-end:::
      :::column:::
-        2. <a href="https://www.youtube.com/watch?v=tCNcG1lcCHY&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=2" target="_blank">современная проверка подлинности <span class="docon docon-navigate-external x-hidden-focus"></span> для веб-приложений</a> (6:02)
+        2. <a href="https://www.youtube.com/watch?v=tCNcG1lcCHY&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=2" target="_blank">современная проверка подлинности для веб-приложений</a> (6:02)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=tCNcG1lcCHY" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-02.jpg" alt="Video thumbnail for a video about modern authentication for web applications."> </a>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        3. <a href="https://www.youtube.com/watch?v=51B-jSOBF8U&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=3" target="_blank">единый вход <span class="docon docon-navigate-external x-hidden-focus"></span> через интернет</a> (4:13)
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=51B-jSOBF8U" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-03.jpg" alt="Video thumbnail for a video about web single sign-on."> </a>
-    :::column-end:::
-    :::column:::
-        4. <a href="https://www.youtube.com/watch?v=CjarTgjKcX8&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=4" target="_blank">Федеративная веб- <span class="docon docon-navigate-external x-hidden-focus"></span> Аутентификация</a> (6:19)
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=CjarTgjKcX8" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-04.jpg" alt="Video thumbnail for a video about federated web authentication."> </a>
+        <a href="https://www.youtube.com/watch?v=tCNcG1lcCHY" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-02.jpg" alt="Video thumbnail for a video about modern authentication for web applications."></a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        5. <a href="https://www.youtube.com/watch?v=OGMDnuDrAcQ&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=5" target="_blank">собственные клиентские приложения — часть <span class="docon docon-navigate-external x-hidden-focus"></span> 1</a> (8:12)
+        3. <a href="https://www.youtube.com/watch?v=51B-jSOBF8U&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=3" target="_blank">единый вход через Интернет</a> (4:13)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=OGMDnuDrAcQ" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-05.jpg" alt="Video thumbnail for part 1 of a video about native client applications."> </a>
+        <a href="https://www.youtube.com/watch?v=51B-jSOBF8U" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-03.jpg" alt="Video thumbnail for a video about web single sign-on."></a>
     :::column-end:::
     :::column:::
-        6. <a href="https://www.youtube.com/watch?v=2RE6IhXfmHY&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=6" target="_blank">собственные клиентские приложения — часть <span class="docon docon-navigate-external x-hidden-focus"></span> 2</a> (5:33)
+        4. <a href="https://www.youtube.com/watch?v=CjarTgjKcX8&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=4" target="_blank">Федеративная веб-аутентификация</a> (6:19)
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=2RE6IhXfmHY" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-06.jpg" alt="Video thumbnail for part 2 of a video about native client applications."> </a>
+        <a href="https://www.youtube.com/watch?v=CjarTgjKcX8" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-04.jpg" alt="Video thumbnail for a video about federated web authentication."></a>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        5. <a href="https://www.youtube.com/watch?v=OGMDnuDrAcQ&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=5" target="_blank">собственные клиентские приложения — часть 1 </a> (8:12)
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=OGMDnuDrAcQ" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-05.jpg" alt="Video thumbnail for part 1 of a video about native client applications."></a>
+    :::column-end:::
+    :::column:::
+        6. <a href="https://www.youtube.com/watch?v=2RE6IhXfmHY&list=PLLasX02E8BPD5vC2XHS_oHaMVmaeHHPLy&index=6" target="_blank">собственные клиентские приложения — часть 2 </a> (5:33)
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=2RE6IhXfmHY" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-06.jpg" alt="Video thumbnail for part 2 of a video about native client applications."></a>
     :::column-end:::
 :::row-end:::
 
@@ -200,39 +200,39 @@ ___
 
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank">Обзор платформы идентификации Майкрософт <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank">Обзор платформы идентификации Майкрософт </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for an overview video about Microsoft identity platform."> </a>
+        <a href="https://www.youtube.com/watch?v=bNlcFuIo3r8" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for an overview video about Microsoft identity platform."></a>
     :::column-end:::
     :::column:::
     :::column-end:::
     :::column:::
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank">Microsoft Graph и библиотека проверки подлинности Майкрософт (MSAL) <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank"> <img src="./media/identity-videos/graph-and-msal.jpg" alt="Video thumbnail for a video about Microsoft Graph and the Microsoft Authentication Library (MSAL)."> </a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank">Что такое семейство библиотек MSAL? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about the MSAL family of libraries."> </a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank">Описание областей <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank">Microsoft Graph и библиотека проверки подлинности Майкрософт (MSAL) </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that explains scopes."> </a>
+        <a href="https://www.youtube.com/watch?v=apbbx2n4tnU" target="_blank"> <img src="./media/identity-videos/graph-and-msal.jpg" alt="Video thumbnail for a video about Microsoft Graph and the Microsoft Authentication Library (MSAL)."></a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=Zd_Uubnu0U0" target="_blank">Что такое брокеры <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank">Что такое семейство библиотек MSAL?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=yLVEBU9Z96Q" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about the MSAL family of libraries."></a>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank">Описание областей </a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=eiPHOoLmGJs" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that explains scopes."></a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=Zd_Uubnu0U0" target="_blank">Что такое брокеры </a>
     :::column-end:::
     :::column:::
         <a href="https://www.youtube.com/watch?v=Zd_Uubnu0U0" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about brokers."> </a>
@@ -240,94 +240,94 @@ ___
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank">Что делают URI перенаправления <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank">Для чего используются URI перенаправления</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describers what redirect URIs do."> </a>
+        <a href="https://www.youtube.com/watch?v=znSN_3JAuoU" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describers what redirect URIs do."></a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank">Описание клиентов <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank">Описание клиентов </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that explains tenants."> </a>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank">Роль Azure AD <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes the role of Azure AD."> </a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank">Роль объектов приложения Azure AD <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes the role of Azure AD app objects."> </a>
+        <a href="https://www.youtube.com/watch?v=mDhT4Zv1fZU" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that explains tenants."></a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank">Различия в организационных и личных учетная запись Майкрософт <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank">Роль Azure AD </a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about organizational and personal Microsoft account differences."> </a>
+        <a href="https://www.youtube.com/watch?v=zDEC7A5ZS2Q" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes the role of Azure AD."></a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank">Различия в SPA и веб-приложениях <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank">Роль объектов приложения Azure AD</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about SPA and web app differences."> </a>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank">Что такое разрешения приложений и делегированные разрешения? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank"> <img src="./media/identity-videos/aad-basics-12.jpg" alt="Video thumbnail for a video about the differences between application permissions and delegated permissions."> </a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank">Что такое Microsoft Identity Platform OpenID Connect Connect сертифицировано? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail for a video about Microsoft identity platform OpenID Connect certified."> </a>
+        <a href="https://www.youtube.com/watch?v=HEpq_YSmuWw" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes the role of Azure AD app objects."></a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank">Каковы различные типы приложений Azure Active Directory и как они сравниваются? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank">Отличия личной учетной записи Майкрософт от учетной записи организации</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank"> <img src="./media/identity-videos/aad-basics-13.jpg" alt="Video thumbnail for a video that compares Azure Active Directory app types."> </a>
+        <a href="https://www.youtube.com/watch?v=E2OUluQQKSk" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about organizational and personal Microsoft account differences."></a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank">Если вы используете MSAL, какие основные понятия протокола следует иметь в курсе? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank">Различия в между одностраничными приложениями и веб-приложениями</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail for a video about protocol concepts you should know if you use MSAL."> </a>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank">В чем разница между маркерами идентификации, маркерами доступа, маркерами обновления и маркерами сеансов? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-08.jpg" alt="Video thumbnail for a video that explains the difference between ID tokens, access tokens, refresh tokens, and session tokens."> </a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank">Какова связь между запросом авторизации и маркерами? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-    :::column-end:::
-    :::column:::
-        <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail for a video that describes the relationship between an authorization request and tokens."> </a>
+        <a href="https://www.youtube.com/watch?v=ZJirt7eTVw8" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video about SPA and web app differences."></a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank">Какие аспекты использования протоколов делают библиотеки MSAL проще? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank">Что такое разрешения приложений и делегированные разрешения?</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank"> <img src="./media/identity-videos/id-for-devs-06.jpg" alt="Video thumbnail for video that describes what aspects of using protocols does the MSAL libraries make easier."> </a>
+        <a href="https://www.youtube.com/watch?v=6R3W9T01gdE" target="_blank"> <img src="./media/identity-videos/aad-basics-12.jpg" alt="Video thumbnail for a video about the differences between application permissions and delegated permissions."></a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank">Что такое Microsoft Identity Platform OpenID Connect Connect сертифицировано?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=Gm6sALdXtpg" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail for a video about Microsoft identity platform OpenID Connect certified."></a>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank">Каковы различные типы приложений Azure Active Directory и как они сравниваются?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=NrydwrckYaw" target="_blank"> <img src="./media/identity-videos/aad-basics-13.jpg" alt="Video thumbnail for a video that compares Azure Active Directory app types."></a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank">Если вы используете MSAL, какие основные понятия протокола следует иметь в курсе?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=cZKgTqF4o88" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail for a video about protocol concepts you should know if you use MSAL."></a>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank">В чем разница между маркерами идентификации, маркерами доступа, маркерами обновления и маркерами сеансов?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=41vmzPdbfXM" target="_blank"> <img src="./media/identity-videos/aad-auth-fund-08.jpg" alt="Video thumbnail for a video that explains the difference between ID tokens, access tokens, refresh tokens, and session tokens."></a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank">Какова связь между запросом авторизации и маркерами?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=jEEwN7XAtUo" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail for a video that describes the relationship between an authorization request and tokens."></a>
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank">Какие аспекты использования протоколов делают библиотеки MSAL проще?</a>
+    :::column-end:::
+    :::column:::
+        <a href="https://www.youtube.com/watch?v=4pwuRYcZbz4" target="_blank"> <img src="./media/identity-videos/id-for-devs-06.jpg" alt="Video thumbnail for video that describes what aspects of using protocols does the MSAL libraries make easier."></a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -342,29 +342,29 @@ ___
 
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank">Зачем выполнять миграцию из ADAL в MSAL <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank">Зачем переносить данные из ADAL в MSAL</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that explains why to migrate from ADAL to MSAL."> </a>
+        <a href="https://www.youtube.com/watch?v=qpdC45tZYDg" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that explains why to migrate from ADAL to MSAL."></a>
     :::column-end:::
      :::column:::
-        <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank">Перенос базы кода ADAL в MSAL <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank">Перенос базы кода ADAL в MSAL</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes migrating your ADAL codebase to MSAL."> </a>
+        <a href="https://www.youtube.com/watch?v=xgL_z9yCnrE" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes migrating your ADAL codebase to MSAL."></a>
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank">Преимущества MSAL через ADAL <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank">Преимущества MSAL перед ADAL</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes the advantages of MSAL over ADAL."> </a>
+        <a href="https://www.youtube.com/watch?v=q-TDszj2O-4" target="_blank"> <img src="./media/identity-videos/one-dev-question-jm.jpg" alt="Video thumbnail for a video that describes the advantages of MSAL over ADAL."></a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank">Каковы различия в проверке подлинности v1 и v2? <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+        <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank">Каковы различия в проверке подлинности v1 и v2?</a>
     :::column-end:::
     :::column:::
-        <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail"> </a>
+        <a href="https://www.youtube.com/watch?v=aBMUxC4evhU" target="_blank"> <img src="./media/identity-videos/one-dev-question-hs.jpg" alt="Video thumbnail"></a>
     :::column-end:::
 :::row-end:::

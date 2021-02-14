@@ -6,12 +6,12 @@ ms.date: 03/14/2019
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 3144633f76d1c4738f2323f1e047d6f32329909f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: df1f58418452ecafacddd013ab815ebca5cb8a35
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133248"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097557"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java-sdk"></a>Устранение неполадок и вопросы и ответы для Application Insights для пакета SDK для Java
 
@@ -170,7 +170,7 @@ java -Dapplicationinsights.logger.console.level=trace -jar MyApp.jar
 
 Да, если ваш сервер может отправлять данные телеметрии на портал Application Insights через общедоступную сеть Интернет.
 
-В вашем брандмауэре вам может потребоваться открыть TCP-порты 80 и 443 для исходящего трафика, идущего на сайты dc.services.visualstudio.com и f5.services.visualstudio.com.
+Возможно, потребуется [открыть некоторые исходящие порты в брандмауэре сервера](./ip-addresses.md#outgoing-ports) , чтобы пакет SDK мог отправить данные на портал.
 
 ## <a name="data-retention"></a>Хранение данных
 **Как долго данные хранятся на портале? Защищен ли он?**
@@ -192,7 +192,7 @@ Application Insights использует модуль `org.apache.http`. Он �
 * [Написать код для отслеживания использования приложения][track]
 * [Записать журналы диагностики][javalogs]
 
-## <a name="get-help"></a>Получить помощь
+## <a name="get-help"></a>Получить справку
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ms-application-insights)
 * [Сообщите о проблеме на GitHub](https://github.com/microsoft/ApplicationInsights-Java/issues)
 

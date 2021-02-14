@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: decf289614179718d5c3424f6d4482a5ce2c43e1
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 6241f6156b01c3c90f00578ae5416e4e77270930
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680723"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386804"
 ---
 # <a name="tutorial-migrate-from-google-maps-to-azure-maps"></a>Руководство по Переход с Google Карт на Azure Maps
 
@@ -48,7 +48,7 @@ Azure Maps предоставляет разработчикам из всех 
 | API-интерфейсы RESTful           | ✓                                      |
 | Направления (построение маршрутов)        | ✓                                      |
 | Матрица расстояний             | ✓                                      |
-| Elevation                   | Запланировано                                |
+| Elevation                   | ✓ (предварительная версия)                            |
 | Геокодирование (прямое и обратное) | ✓                                      |
 | Географическое положение                 | Недоступно                                    |
 | Ближайшие дороги               | ✓                                      |
