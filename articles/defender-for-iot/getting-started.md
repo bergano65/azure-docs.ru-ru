@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/26/2020
 ms.author: shhazam
-ms.openlocfilehash: 82fcf7f129d5caba471d6d72da83a317b26c638c
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 06cf8b5f35bdebed0ebaa9e6949261d7c0d516f2
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98807889"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522569"
 ---
 # <a name="get-started-with-defender-for-iot"></a>Начало работы с защитником для Интернета вещей
 
@@ -126,9 +126,8 @@ ms.locfileid: "98807889"
 ## <a name="7-populate-azure-sentinel-with-alert-information-optional"></a>7. Заполнение Sentinel Azure сведениями о предупреждении (необязательно)
 
 Отправьте сведения об оповещении в Azure Sentinel, настроив метку Azure. См. статью [подключение данных из защитника для Интернета вещей к Azure Sentinel](how-to-configure-with-sentinel.md).
+## <a name="next-steps"></a>Дальнейшие шаги
 
-## <a name="see-also"></a>См. также
+[Добро пожаловать в защитник Azure для IoT](overview.md)
 
-- [Добро пожаловать в защитник Azure для IoT](overview.md)
-
-- [Архитектура защитника Azure для Интернета вещей](architecture.md)
+[Архитектура защитника Azure для Интернета вещей](architecture.md)

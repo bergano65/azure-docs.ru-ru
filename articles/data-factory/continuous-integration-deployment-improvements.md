@@ -1,22 +1,18 @@
 ---
 title: Автоматическая публикация для непрерывной интеграции и доставки
 description: Узнайте, как опубликовать для непрерывной интеграции и доставки автоматически.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 author: nabhishek
 ms.author: abnarain
 ms.reviewer: maghan
-manager: weetok
 ms.topic: conceptual
 ms.date: 02/02/2021
-ms.openlocfilehash: 7b9e07c6bd2cb52858550fe5c34b2660c4d977eb
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: b5becd8ddaf74ab2acd059054a095ce9d21c178f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99431286"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366846"
 ---
 # <a name="automated-publishing-for-continuous-integration-and-delivery"></a>Автоматическая публикация для непрерывной интеграции и доставки
 
@@ -187,7 +183,7 @@ npm run start validate C:\DataFactories\DevDataFactory /subscriptions/xxxxxxxx-x
 4.  Введите код YAML. Рекомендуется взять файл YAML и использовать его в качестве отправной точки.
 5.  Сохраните и запустите. При использовании YAML он будет срабатывать каждый раз при обновлении "Main" ветви.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о непрерывной интеграции и доставке в фабрике данных: 
 

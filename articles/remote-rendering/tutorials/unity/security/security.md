@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d8a7bb620b7fcc9c878986d3575e22bb6f0f77bc
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: b1bcba264589d6cbe9b4f671e1e4f2c9b1dbf2c5
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724134"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594254"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Руководство по Защита службы "Удаленная отрисовка Azure" и хранилища моделей
 
@@ -41,16 +41,16 @@ ms.locfileid: "97724134"
 
 При использовании связанного Хранилища BLOB-объектов для загрузки моделей применяются несколько иные методы.
 
-```csharp
-var loadModelParams = new LoadModelFromSASParams(modelPath, modelEntity);
-var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelFromSASAsync(loadModelParams);
+```cs
+var loadModelParams = new LoadModelFromSasOptions(modelPath, modelEntity);
+var task = ARRSessionService.CurrentActiveSession.Connection.LoadModelFromSasAsync(loadModelParams);
 ```
 
-В приведенных выше строках используется версия `FromSAS` действия params и действия session. Их необходимо преобразовать в версии, не связанные с SAS.
+В приведенных выше строках используется версия `FromSas` действия params и действия session. Их необходимо преобразовать в версии, не связанные с SAS.
 
-```csharp
-var loadModelParams = new LoadModelParams(storageAccountPath, blobContainerName, modelPath, modelEntity);
-var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsync(loadModelParams);
+```cs
+var loadModelParams = new LoadModelOptions(storageAccountPath, blobContainerName, modelPath, modelEntity);
+var task = ARRSessionService.CurrentActiveSession.Connection.LoadModelAsync(loadModelParams);
 ```
 
 Давайте изменим **RemoteRenderingCoordinator**, чтобы загрузить настраиваемую модель из связанной учетной записи Хранилища BLOB-объектов.
@@ -58,7 +58,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 1. Если вы этого еще не сделали, выполните инструкции в [практическом руководстве по привязке учетных записей хранения](../../../how-tos/create-an-account.md#link-storage-accounts), чтобы предоставить экземпляру Удаленной отрисовки Azure доступ к экземпляру Хранилища BLOB-объектов.
 1. Добавьте следующий измененный метод **LoadModel** в **RemoteRenderingCoordinator** непосредственно под текущим методом **LoadModel**.
 
-    ```csharp
+    ```cs
     /// <summary>
     /// Loads a model from blob storage that has been linked to the ARR instance
     /// </summary>
@@ -68,10 +68,10 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
     /// <param name="parent">The parent Transform for this remote entity</param>
     /// <param name="progress">A call back method that accepts a float progress value [0->1]</param>
     /// <returns></returns>
-    public async Task<Entity> LoadModel(string storageAccountName, string blobContainerName, string modelPath, Transform parent = null, ProgressHandler progress = null)
+    public async Task<Entity> LoadModel(string storageAccountName, string blobContainerName, string modelPath, Transform parent = null, Action<float> progress = null)
     {
         //Create a root object to parent a loaded model to
-        var modelEntity = ARRSessionService.CurrentActiveSession.Actions.CreateEntity();
+        var modelEntity = ARRSessionService.CurrentActiveSession.Connection.CreateEntity();
 
         //Get the game object representation of this entity
         var modelGameObject = modelEntity.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);
@@ -100,11 +100,9 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
     #endif
 
         //Load a model that will be parented to the entity
-        var loadModelParams = new LoadModelParams($"{storageAccountName}.blob.core.windows.net", blobContainerName, modelPath, modelEntity);
-        var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsync(loadModelParams);
-        if (progress != null)
-            loadModelAsync.ProgressUpdated += progress;
-        var result = await loadModelAsync.AsTask();
+        var loadModelParams = new LoadModelOptions($"{storageAccountName}.blob.core.windows.net", blobContainerName, modelPath, modelEntity);
+        var loadModelAsync = ARRSessionService.CurrentActiveSession.Connection.LoadModelAsync(loadModelParams, progress);
+        var result = await loadModelAsync;
         return modelEntity;
     }
     ```
@@ -115,7 +113,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
 1. Добавьте следующий метод в **RemoteRenderingCoordinator** непосредственно после **LoadTestModel**.
 
-    ```csharp
+    ```cs
     private bool loadingLinkedCustomModel = false;
 
     [SerializeField]
@@ -190,7 +188,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
 Проверка подлинности AAD позволяет лучше контролировать, какие пользователи или группы могут использовать Удаленную отрисовку Azure. Вместо использования ключа учетной записи служба "Удаленная отрисовка Azure" может принимать [маркеры доступа](../../../../active-directory/develop/access-tokens.md). Маркеры доступа можно рассматривать как ключ конкретного пользователя с ограниченным сроком действия, который разблокирует только определенные части конкретного ресурса, для которого он был запрошен.
 
-У скрипта **RemoteRenderingCoordinator** имеется делегат с именем **ARRCredentialGetter**. Он содержит метод, возвращающий объект **AzureFrontendAccountInfo**, который используется для настройки удаленного управления сеансами. Этому делегату **ARRCredentialGetter** можно назначить другой метод. Это позволит использовать поток входа Azure, создающий объект **AzureFrontendAccountInfo**, который содержит маркер доступа Azure. Этот маркер доступа будет действовать только для пользователя, который выполнил вход.
+В скрипте **RemoteRenderingCoordinator** есть делегат с именем **ARRCredentialGetter**. Он содержит метод, который возвращает объект **SessionConfiguration**, который, в свою очередь, используется для настройки удаленного управления сеансами. Этому делегату **ARRCredentialGetter** можно назначить другой метод. Это позволит использовать поток входа Azure, создающий объект **SessionConfiguration**, который содержит маркер доступа Azure. Этот маркер доступа будет действовать только для пользователя, который выполнил вход.
 
 1. Следуйте указаниям [практического руководства по настройке проверки подлинности, изложенной в разделе "Проверка подлинности для развернутых приложений"](../../../how-tos/authentication.md#authentication-for-deployed-applications). В частности, выполните инструкции в документации по Пространственным привязкам Azure, приведенные в разделе [Аутентификация пользователей с помощью AAD](../../../../spatial-anchors/concepts/authentication.md?tabs=csharp#azure-ad-user-authentication). Такой подход предполагает регистрацию нового приложения Azure Active Directory и настройку доступа к экземпляру Удаленной отрисовки Azure.
 1. После настройки нового приложения AAD убедитесь, что он выглядит так, как на следующих изображениях.
@@ -206,11 +204,11 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
     >[!NOTE]
     > Для управления сеансами через клиентское приложение роли *владельца* недостаточно. Каждому пользователю, которому необходимо предоставить возможность управления сеансами, следует назначить роль **клиента Удаленной отрисовки**. Каждому пользователю, которому необходимо управлять сеансами и преобразовывать модели, следует назначить роль **администратора Удаленной отрисовки**.
 
-Теперь, когда вы настроили все необходимое в Azure, нужно изменить способ подключения кода к службе AAD. Для этого необходимо реализовать экземпляр **BaseARRAuthentication**, который вернет новый объект **AzureFrontendAccountInfo**. В этом случае сведения об учетной записи будут настроены с помощью маркера доступа Azure.
+Теперь, когда вы настроили все необходимое в Azure, нужно изменить способ подключения кода к службе AAD. Для этого необходимо реализовать экземпляр **BaseARRAuthentication**, который вернет новый объект **SessionConfiguration**. В этом случае сведения об учетной записи будут настроены с помощью маркера доступа Azure.
 
 1. Создайте скрипт с именем **AADAuthentication** и замените его код следующим:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -278,7 +276,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
             this.gameObject.AddComponent<ExecuteOnUnityThread>();
         }
 
-        public async override Task<AzureFrontendAccountInfo> GetAARCredentials()
+        public async override Task<SessionConfiguration> GetAARCredentials()
         {
             var result = await TryLogin();
             if (result != null)
@@ -287,7 +285,7 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
                 var AD_Token = result.AccessToken;
 
-                return await Task.FromResult(new AzureFrontendAccountInfo(AzureRemoteRenderingAccountAuthenticationDomain, AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
+                return await Task.FromResult(new SessionConfiguration(AzureRemoteRenderingAccountAuthenticationDomain, AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
             }
             else
             {
@@ -373,11 +371,11 @@ var loadModelAsync = ARRSessionService.CurrentActiveSession.Actions.LoadModelAsy
 
 Наиболее важной частью этого класса с точки зрения Удаленной отрисовки Azure является эта строка:
 
-```csharp
-return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
+```cs
+return await Task.FromResult(new SessionConfiguration(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
 ```
 
-Здесь мы создаем объект **AzureFrontendAccountInfo**, используя домен и идентификатор учетной записи, домен аутентификации учетной записи, а также маркер доступа. Этот маркер затем используется службой "Удаленная отрисовка Azure" для запроса, создания и объединения сеансов удаленной отрисовки при условии, что пользователь авторизован в соответствии с разрешениями на основе ролей, настроенными ранее.
+Здесь мы создаем объект **SessionConfiguration**, используя домен и идентификатор учетной записи, домен аутентификации учетной записи, а также маркер доступа. Этот маркер затем используется службой "Удаленная отрисовка Azure" для запроса, создания и объединения сеансов удаленной отрисовки при условии, что пользователь авторизован в соответствии с разрешениями на основе ролей, настроенными ранее.
 
 После этих изменений текущее состояние приложения и его доступ к ресурсам Azure выглядят следующим образом:
 

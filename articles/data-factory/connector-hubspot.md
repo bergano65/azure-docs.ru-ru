@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из HubSpot с помощью Фабрики данных Azure
 description: Узнайте, как копировать данные из HubSpot в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: jingwang
-ms.openlocfilehash: 151f156439a40b2e5515886849635f00b2fcc1e7
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 7f2ab069be7985376c44f2cd2ae3ccdd728d4e2a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680911"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385665"
 ---
 # <a name="copy-data-from-hubspot-using-azure-data-factory"></a>Копирование данных из HubSpot с помощью Фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]

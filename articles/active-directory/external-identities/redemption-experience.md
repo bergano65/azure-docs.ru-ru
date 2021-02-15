@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/11/2020
+ms.date: 02/12/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aef4ff77eb02723bcd95dcc99a55094bd10acd4c
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 08f560f076caf90c9c930cedfd6a7ba9c6c8b37d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355483"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365452"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
 
@@ -25,8 +25,8 @@ ms.locfileid: "97355483"
 Когда вы добавляете гостя в свой каталог, его учетная запись имеет статус согласия (просматриваемый в PowerShell), для которого изначально установлено значение **PendingAcceptance**. Эта настройка сохраняется до тех пор, пока гость не примет ваше приглашение и не согласится с вашей политикой конфиденциальности и условиями использования. После этого состояние согласия изменяется на **Принято** и страницы согласия больше не представляются гостю.
 
    > [!IMPORTANT]
-   > - **Начиная с 4 января 2021** г. Компания Google не [WebView поддержку входа в систему](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете Google Federation или самостоятельную регистрацию с помощью Gmail, необходимо [протестировать собственные бизнес-приложения для обеспечения совместимости](google-federation.md#deprecation-of-webview-sign-in-support).
-   > - **Начиная с 31 марта 2021 г.** корпорация Майкрософт не будет поддерживать активацию через приглашение при создании неуправляемых учетных записей и арендаторов Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам перейти на [проверку подлинности с использованием одноразового секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам об этой функции, предоставляемой в общедоступной предварительной версии, и с радостью создадим другие способы для совместной работы.
+   > - **Начиная с 4 января 2021 г.** компания Google [прекращает поддержку входа через веб-представление](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете федерацию Google или самостоятельную регистрацию с помощью Gmail, вам нужно [проверить нативные бизнес-приложения на совместимость](google-federation.md#deprecation-of-webview-sign-in-support).
+   > - **Начиная с 2021 октября** Корпорация Майкрософт больше не будет поддерживать погашение приглашений, создавая неуправляемые учетные записи и клиенты Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам перейти на [проверку подлинности с использованием одноразового секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам об этой функции, предоставляемой в общедоступной предварительной версии, и с радостью создадим другие способы для совместной работы.
 
 ## <a name="redemption-through-the-invitation-email"></a>Активация с помощью приглашения по электронной почте
 

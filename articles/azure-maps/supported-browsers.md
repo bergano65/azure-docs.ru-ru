@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: f51b46efcaf9be4f51e96b038b93562d0e3eae0b
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 6321b96cb3db570102f138dcfd949d9c32daedbc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601156"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384475"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
 
@@ -29,7 +29,7 @@ if (!atlas.isSupported()) {
 }
 ```
 
-## <a name="desktop"></a>Рабочий стол
+## <a name="desktop"></a>Классические приложения
 
 Веб-пакет SDK Azure Maps поддерживает следующие браузеры для настольных систем:
 
@@ -72,6 +72,8 @@ if (!atlas.isSupported()) {
 </iframe>
 
 Дополнительные примеры кода, использующие Azure Maps в Леафлет, можно найти [здесь](https://azuremapscodesamples.azurewebsites.net/?search=leaflet).
+
+[Ниже](open-source-projects.md#third-part-map-control-plugins) приведены некоторые популярные элементы управления картой с открытым кодом, для которых команда Azure Maps создала подключаемый модуль.
 
 ## <a name="next-steps"></a>Следующие шаги
 

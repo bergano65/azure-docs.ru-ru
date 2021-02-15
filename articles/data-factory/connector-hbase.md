@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из HBase с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из HBase в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: f2d10a6150a6e6957b303ca391c97e166342111c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02f4b88b1dab99b3b052f59f91f7869d8aedc77f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417254"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388368"
 ---
 # <a name="copy-data-from-hbase-using-azure-data-factory"></a>Копирование данных из HBase с помощью фабрики данных Azure 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]

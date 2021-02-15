@@ -125,7 +125,7 @@
           href: troubleshoot-capacity-pools.md
         - name: Устранение неполадок с репликацией между регионами
           href: troubleshoot-cross-region-replication.md
-        - name: Устранение неполадок с томами с двумя протоколами
+        - name: Устранение неполадок с томами с двумя протоколами или SMB
           href: troubleshoot-dual-protocol-volumes.md
         - name: Устранение неполадок с томами Kerberos NFSv4.1
           href: troubleshoot-nfsv41-kerberos-volumes.md

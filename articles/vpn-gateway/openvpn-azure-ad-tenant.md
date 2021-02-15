@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3055c9dd1294af81c6c52603dd60bb5aa6075abd
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: bff1eec0152ab0f57edd212adf6b14f7b588fb51
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92777863"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390170"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений "точка — сеть" по протоколу OpenVPN
 
@@ -33,7 +33,7 @@ ms.locfileid: "92777863"
 
 Клиент Azure AD должен иметь следующие учетные записи: учетную запись глобального администратора и учетную запись главного пользователя. Учетная запись главного пользователя используется как главная учетная запись внедрения (учетная запись службы). При создании учетной записи пользователя клиента Azure AD необходимо настроить роль каталога под тип пользователя, который требуется создать.
 
-Выполните действия, описанные в разделе [Добавление или удаление пользователей. Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md) , чтобы создать по крайней мере двух пользователей для вашего клиента Azure AD. Не забудьте изменить **Роль каталога** , чтобы создать типы учетных записей:
+Выполните действия, описанные в разделе [Добавление или удаление пользователей. Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md) , чтобы создать по крайней мере двух пользователей для вашего клиента Azure AD. Не забудьте изменить **Роль каталога**, чтобы создать типы учетных записей:
 
 * глобальный администратор.
 * Пользователь
@@ -42,11 +42,11 @@ ms.locfileid: "92777863"
 
 1. Укажите идентификатор каталога, который хотите использовать для проверки подлинности. Он указан в разделе Свойства страницы Active Directory.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/directory-id.png" alt-text="Новый клиент Azure AD" lightbox="./media/openvpn-create-azure-ad-tenant/directory-id.png":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/directory-id.png" alt-text="Снимок экрана, показывающий свойства каталога" lightbox="./media/openvpn-create-azure-ad-tenant/directory-id.png":::
 
 1. Скопируйте идентификатор каталога.
 
-1. Войдите на портал Azure как пользователь с ролью **Глобального администратора** .
+1. Войдите на портал Azure как пользователь с ролью **Глобального администратора**.
 
 1. Затем дайте согласие администратора. Скопируйте и вставьте URL-адрес, относящийся к расположению развертывания, в адресную строку браузера:
 
@@ -78,30 +78,30 @@ ms.locfileid: "92777863"
    > Если вы используете учетную запись глобального администратора, которая не является собственной для клиента Azure AD для предоставления согласия, замените "Common" идентификатором каталога Azure AD в URL-адресе. Также может потребоваться заменить «Common» идентификатором каталога в некоторых других случаях.
    >
 
-1. При появлении запроса выберите учетную запись **Глобальный администратор** .
+1. При появлении запроса выберите учетную запись **Глобальный администратор**.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/pick.png" alt-text="Новый клиент Azure AD" border="false":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/pick.png" alt-text="Выбор учетной записи" border="false":::
 1. Выберите **Принять** при появлении соответствующего запроса.
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/accept.jpg" alt-text="Новый клиент Azure AD" border="false":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/accept.jpg" alt-text="На снимке экрана показаны разрешения на сообщения, запрошенные для вашей организации, с подробностями и параметром для принятия." border="false":::
 1. В Azure AD в разделе **корпоративные приложения** вы увидите список **VPN Azure** .
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azurevpn.png" alt-text="Новый клиент Azure AD" lightbox="./media/openvpn-create-azure-ad-tenant/azurevpn.png" :::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azurevpn.png" alt-text="Снимок экрана, на котором показана страница все приложения." lightbox="./media/openvpn-create-azure-ad-tenant/azurevpn.png" :::
 1. Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. раздел [Создание VPN-подключения](vpn-gateway-howto-point-to-site-resource-manager-portal.md) типа "точка — сеть" для создания и настройки VPN-шлюза типа "точка — сеть".
 
     > [!IMPORTANT]
     > SKU уровня "Базовый" не поддерживается для OpenVPN.
 
-1. Включите проверку подлинности Azure AD на VPN-шлюзе, перейдя к **конфигурации "точка — сеть** " и выбрав **опенвпн (SSL)** в качестве **типа туннеля** . Выберите **Azure Active Directory** в качестве **типа проверки подлинности** , а затем заполните сведения в разделе **Azure Active Directory** .
+1. Включите проверку подлинности Azure AD на VPN-шлюзе, перейдя к **конфигурации "точка — сеть** " и выбрав **опенвпн (SSL)** в качестве **типа туннеля**. Выберите **Azure Active Directory** в качестве **типа проверки подлинности**, а затем заполните сведения в разделе **Azure Active Directory** .
 
    * **Клиент:** ИД клиента Azure AD ```https://login.microsoftonline.com/{AzureAD TenantID}/```
 
    * **Аудитория:** ApplicationID для корпоративного приложения Azure AD "VPN Azure" ```{AppID of the "Azure VPN" AD Enterprise app}```
 
-   * **Issuer** : URL-адрес службы токенов безопасности ```https://sts.windows.net/{AzureAD TenantID}/```
+   * **Issuer**: URL-адрес службы токенов безопасности ```https://sts.windows.net/{AzureAD TenantID}/```
 
 
-   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azure-ad-auth-portal.png" alt-text="Новый клиент Azure AD" border="false":::
+   :::image type="content" source="./media/openvpn-create-azure-ad-tenant/azure-ad-auth-portal.png" alt-text="Сазуре VPN" border="false":::
 
    > [!NOTE]
    > Убедитесь, что в конце значения включена обратная косая черта `AadIssuerUri` . В противном случае подключение может завершиться ошибкой.
@@ -115,6 +115,6 @@ ms.locfileid: "92777863"
 
 1. Запишите расположение файла "azurevpnconfig.xml". azurevpnconfig.xml содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В виртуальную сеть необходимо создать и настроить профиль VPN-клиента. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).
+Создание и настройка профиля VPN-клиента. См. раздел [Настройка VPN-клиента для P2S VPN-подключений](openvpn-azure-ad-client.md).

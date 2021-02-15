@@ -1,23 +1,18 @@
 ---
 title: Копирование данных из Google BigQuery с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из Google BigQuery в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
-ms.openlocfilehash: 6751f64706444176f0df8f8fc0c6132e76b39b2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3fcaa6c1542578d983461623da743724a3114d9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417318"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389694"
 ---
 # <a name="copy-data-from-google-bigquery-by-using-azure-data-factory"></a>Копирование данных из Google BigQuery с помощью фабрики данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -51,7 +46,7 @@ ms.locfileid: "81417318"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **GoogleBigQuery**. | Да |
-| проект | Идентификатор проекта BigQuery по умолчанию для отправки запросов.  | Да |
+| project | Идентификатор проекта BigQuery по умолчанию для отправки запросов.  | Да |
 | additionalProjects | Список разделенных запятыми идентификаторов общедоступных проектов BigQuery для доступа.  | Нет |
 | requestGoogleDriveScope | Определяет, следует ли подавать запрос на доступ к Google Drive. Если разрешить доступ к Google Drive, включится поддержка для федеративных таблиц, которые объединяют данные BigQuery с данными с Google Drive. Значение по умолчанию — **false**.  | нет |
 | authenticationType | Механизм OAuth 2.0 для аутентификации. ServiceAuthentication может использоваться только в локальных средах выполнения интеграции. <br/>Допустимые значения: **UserAuthentication** и **ServiceAuthentication**. В разделах ниже описываются дополнительные свойства и приведены примеры JSON для поддерживаемых типов проверки подлинности. | Да |

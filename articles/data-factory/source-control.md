@@ -1,22 +1,18 @@
 ---
 title: Система управления версиями
 description: Сведения о настройке системы управления версиями в Фабрике данных Azure
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 author: dcstwh
 ms.author: weetok
-manager: anandsub
-ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 27f14834e45dd32bdf3a26d22d38ab250aa1bcbe
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 5bf1877edaa6c13cb0c645eb2d1c7ec2dc53ad00
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127742"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392448"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Система управления версиями в Фабрике данных Azure
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -30,7 +26,7 @@ ms.locfileid: "98127742"
 Чтобы сделать процесс разработки удобнее, Фабрика данных Azure позволяет настроить репозиторий Git в Azure Repos или GitHub. Git — это система управления версиями, упрощающая отслеживание изменений и совместную работу. В этой статье описывается, как настроить и работать в репозитории Git вместе с рекомендациями и руководством по устранению неполадок.
 
 > [!NOTE]
-> Интеграция Git фабрики данных Azure доступна только для GitHub Enterprise в облаке Azure для государственных организаций.
+> Для облака Azure для государственных организаций доступна только служба GitHub Enterprise.
 
 Дополнительные сведения о том, как фабрика данных Azure интегрируется с Git, см. на 15-минутном учебном видео ниже:
 
@@ -104,7 +100,7 @@ ms.locfileid: "98127742"
 | **Организация Azure Repos** | Название вашей организации Azure Repos. Название организации Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com`. [Войдите в свою организацию Azure Repos](https://www.visualstudio.com/team-services/git/) и получите доступ к профилю Visual Studio, чтобы просмотреть свои репозитории и проекты. | `<your organization name>` |
 | **Имя проекта** | Имя проекта Azure Repos. Имя проекта Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com/{project name}`. | `<your Azure Repos project name>` |
 | **Имя репозитория** | Имя репозитория кода Azure Repos. Проекты Azure Repos содержат репозитории Git, которые управляют исходным кодом по мере роста проекта. Создайте репозиторий либо используйте репозиторий, который уже имеется в проекте. | `<your Azure Repos code repository name>` |
-| **Ветвь совместной работы** | Ветвь вашей совместной работы в Azure Repos, которая используется для публикации. По умолчанию это `main` . Измените этот параметр, если нужно опубликовать ресурсы из другой ветви. | `<your collaboration branch name>` |
+| **Ветвь совместной работы** | Ветвь вашей совместной работы в Azure Repos, которая используется для публикации. По умолчанию это `main`. Измените этот параметр, если нужно опубликовать ресурсы из другой ветви. | `<your collaboration branch name>` |
 | **Корневая папка** | Корневая папка в ветви совместной работы Azure Repos. | `<your root folder name>` |
 | **Import existing Data Factory resources to repository** (Импорт существующих ресурсов фабрики данных в репозиторий) | Указывает, следует ли импортировать имеющиеся ресурсы фабрики данных из пользовательского интерфейса **Работа над холстом** в репозиторий Git Azure Repos. Установите флажок, чтобы импортировать ресурсы фабрики данных в связанный репозиторий Git в формате JSON. Это действие экспортирует каждый ресурс по отдельности (то есть, связанные службы и наборы данных будут экспортироваться в отдельных файлах JSON). Если этот флажок не установлен, имеющиеся ресурсы не импортируются. | Установлен (по умолчанию) |
 | **Branch to import resource into** (Ветвь для импорта ресурсов) | Указывает, в какую ветвь импортируются ресурсы фабрики данных (конвейеры, наборы данных, связанные службы и т.д.). Вы можете выбрать для импорта ресурсов один из следующих вариантов: 1) "Совместная работа"; 2) "Создать"; 3) "Использовать имеющуюся". |  |

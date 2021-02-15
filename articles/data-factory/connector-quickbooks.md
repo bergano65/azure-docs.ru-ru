@@ -1,23 +1,18 @@
 ---
 title: Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
 description: Узнайте, как копировать данные из QuickBooks Online в поддерживаемые хранилища данных в качестве приемников с помощью действия копирования в конвейере Фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
 ms.author: jingwang
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/15/2021
-ms.openlocfilehash: ecdb0e55aa7127a373e63612908ed58109c1f8e2
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: eecbcb817ad31480f8f6c3c7272328d06b17c081
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233174"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384067"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -52,7 +47,7 @@ ms.locfileid: "98233174"
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **QuickBooks**. | Да |
 | connectionProperties | Группа свойств, определяющих способ подключения к QuickBooks. | Да |
-| **_В разделе `connectionProperties` :_* _ | | |
+| ***В разделе `connectionProperties` :*** | | |
 | endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | Да |
 | companyId | Идентификатор компании QuickBooks для авторизации. Сведения о том, как найти идентификатор компании, см. в разделе [разделы справки найти свой идентификатор компании](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | Да |
 | consumerKey | Идентификатор клиента приложения QuickBooks Online для проверки подлинности OAuth 2,0. Дополнительные сведения см. [здесь](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0#obtain-oauth2-credentials-for-your-app). | Да |
@@ -60,7 +55,7 @@ ms.locfileid: "98233174"
 | refreshtoken | Маркер обновления OAuth 2,0, связанный с приложением QuickBooks. Дополнительные сведения см. [здесь](https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0#obtain-oauth2-credentials-for-your-app). Примечание. срок действия маркера обновления истечет через 180 дней. Клиент должен регулярно обновлять маркер обновления. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md).| Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
 
-_ *Пример:**
+**Пример**.
 
 ```json
 {
