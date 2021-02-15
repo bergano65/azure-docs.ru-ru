@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: ee1c59c71834ab9d80f1ed66a002e211bdcacbbf
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: f82c7060f703aff6c19f0082454779b8fea1ba76
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796505"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526261"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -26,7 +26,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Доступ к хранилищу ключей осуществляется с помощью двух интерфейсов: **плоскость управления** и **плоскость данных**. Плоскость управления используется для управления Key Vault. Операции в этой плоскости включают в себя создание и удаление хранилищ ключей, получение свойств Key Vault и обновление политик доступа. Плоскость данных предназначена для работы с данными, хранящимися в хранилище ключей. Вы можете добавлять, удалять и изменять ключи, секреты и сертификаты.
 
-На обеих плоскостях для проверки подлинности используется [Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md) . Для авторизации плоскость управления использует [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) , а плоскость данных использует [политику доступа Key Vault](./assign-access-policy-portal.md) и [Azure RBAC для Key Vault операций с плоскостью данных (Предварительная версия)](./rbac-guide.md).
+На обеих плоскостях для проверки подлинности используется [Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md) . Для авторизации плоскость управления использует [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/overview.md) , а плоскость данных использует [политику доступа Key Vault](./assign-access-policy-portal.md) и [Azure RBAC для Key Vault операций с плоскостью данных](./rbac-guide.md).
 
 Чтобы получить доступ к хранилищу ключей в любой плоскости, все вызывающие объекты (пользователи или приложения) должны иметь надлежащую аутентификацию и авторизацию. Аутентификация позволяет идентифицировать вызывающую сторону. Авторизация определяет, какие операции может выполнять вызывающий объект. Проверка подлинности в Key Vault работает в сочетании со службой [Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md), которая отвечает за проверку подлинности удостоверений любого предоставленного **субъекта безопасности**.
 
@@ -111,7 +111,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Основные преимущества использования разрешения RBAC Azure через политики доступа к хранилищу — централизованное управление доступом и интеграция с [Управление привилегированными пользователями (PIM)](../../active-directory/privileged-identity-management/pim-configure.md). Управление привилегированными пользователями обеспечивает активацию ролей на основе времени и утверждений, чтобы снизить риски, связанные с чрезмерным, ненужным или неправильным использованием разрешений на доступ к ресурсам, которые вас интересуют.
 
-Дополнительные сведения о Key Vault плоскостью данных с помощью Azure RBAC см. в разделе [Key Vault ключи, сертификаты и секреты с помощью управления доступом на основе ролей Azure (Предварительная версия)](rbac-guide.md) .
+Дополнительные сведения о Key Vault плоскостью данных с помощью Azure RBAC см. в разделах [Key Vault ключи, сертификаты и секреты с управлением доступом на основе ролей в Azure](rbac-guide.md) .
 
 ## <a name="firewalls-and-virtual-networks"></a>Брандмауэры и виртуальные сети
 
@@ -187,7 +187,7 @@ Azure Key Vault — это облачная служба, которая обе
 | Группа безопасности | [Участник Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Сертификаты: все операции <br> Ключи: все операции <br> Секреты: все операции | [Администратор Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) |
 | Разработчики и&nbsp;операторы | Разрешение на развертывание Key Vault<br><br> **Примечание.** Это разрешение позволяет развернутым виртуальным машинам получать секреты из хранилища ключей. | None | None |
 | Аудиторы | None | Сертификаты: список <br> Ключи: перечисление<br>Секреты: перечисление<br><br> **Примечание.** Это разрешение позволяет аудиторам проверять атрибуты (теги, даты активации, даты истечения срока действия) ключей и секретов, которые не отправляются в журналы. | [Читатель Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview) |
-| Учетная запись хранения Azure | None | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user-preview) |
+| Учетная запись хранения Azure | Нет | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user-preview) |
 | Приложение | None | Секреты: Get, List <br> Сертификаты: Get, List | [Читатель Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview), [Key Vault пользователя секрета (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user-preview) |
 
 Трем ролям группы требуется доступ к другим ресурсам вместе с разрешениями Key Vault. Для развертывания виртуальных машин (или компонента "веб-приложения" службы приложений Azure) разработчикам и операторам требуется развернуть доступ. Аудиторам требуется доступ на чтение к учетной записи хранения, где хранятся журналы Key Vault.

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 8be5def6d4780fd8b2ab65c5c9e1104a869f6d5a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: db3954b0368392d63680a8d92f13d6a0423e8ef5
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391598"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526892"
 ---
 # <a name="troubleshoot-your-connections-in-azure-purview"></a>Устранение неполадок подключений в Azure зрения
 
@@ -53,7 +53,10 @@ ms.locfileid: "100391598"
 Чтобы проверить это, выполните следующие действия.
 
 1. Перейдите к хранилищу ключей и к разделу **политики доступа** .
-1. Убедитесь, что управляемое удостоверение зрения отображается в разделе *текущие политики доступа* с разрешениями **Get** и **List** для секретов, как минимум
+
+1. Убедитесь, что управляемое удостоверение зрения отображается в разделе *текущие политики доступа* по крайней мере с разрешениями **Get** и **List** для секретов.
+
+   :::image type="content" source="./media/troubleshoot-connections/verify-minimum-permissions.png" alt-text="Изображение, показывающее выбор из списка параметров разрешений Get и List":::
 
 Если управляемое удостоверение зрения отсутствует в списке, выполните действия, описанные в разделе [Создание учетных данных для сканирования и управление ими](manage-credentials.md) для добавления. 
 

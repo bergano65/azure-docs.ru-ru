@@ -7,18 +7,18 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/11/2021
-ms.openlocfilehash: 091f4d7a4acdcc5d1a2b89a5121ee0cff3ee1f55
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 9ffc450294f186b77cc7a6c44c10eecf266161d3
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381194"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526703"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Учетные данные для исходной проверки подлинности в Azure зрения
 
 В этой статье описывается, как можно создать учетные данные в Azure зрения. Эти сохраненные учетные данные позволяют быстро повторно использовать и применять сохраненные сведения проверки подлинности к проверкам источника данных.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Хранилище ключей Azure. Сведения о том, как ее создать, см. в разделе [Краткое руководство. Создание хранилища ключей с помощью портал Azure](../key-vault/general/quick-create-portal.md).
 
@@ -67,7 +67,7 @@ ms.locfileid: "100381194"
 
 4. В раскрывающемся списке **разрешения секреты** выберите **получить** и **вывести список** разрешений.
 
-5. В поле **Выбор субъекта** выберите управляемое удостоверение зрения.
+5. В поле **Выбор субъекта** выберите управляемое удостоверение зрения. Можно выполнить поиск MSI зрения с помощью имени экземпляра зрения **или** идентификатора приложения управляемого удостоверения. В настоящее время не поддерживаются составные удостоверения (имя управляемого удостоверения + идентификатор приложения).
 
    :::image type="content" source="media/manage-credentials/add-access-policy.png" alt-text="Добавление политики доступа":::
 
@@ -122,6 +122,6 @@ ms.locfileid: "100381194"
 
 3. Удалите одну или несколько учетных данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание набора правил проверки](create-a-scan-rule-set.md)

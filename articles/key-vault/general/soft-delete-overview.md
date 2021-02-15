@@ -7,17 +7,20 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 12/15/2020
-ms.openlocfilehash: 68c690b9cbd2028f73492550adbe86111f9ec3a7
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: e06a388f2391f4ed94370dd072a66a162ba5240f
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257952"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526669"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Общие сведения об обратимом удалении в Azure Key Vault
 
 > [!IMPORTANT]
 > Вы должны немедленно включить обратимое удаление в хранилищах ключей. Возможность отказаться от обратимого удаления будет нерекомендуемой в ближайшее время. Ознакомьтесь с полными [сведениями](soft-delete-change.md)
+
+> [!IMPORTANT]
+> Обратимо удаленные хранилища триггеры удаляют параметры для интеграции с Key Vault Services, т. е. назначения ролей RBAC в Azure, подписки на сетку событий, Azure Monitor параметры диагностики. После восстановления параметров Key Vault обратимого удаления для интегрированных служб потребуется создать их вручную. 
 
 Функция обратимого удаления Key Vault позволяет восстанавливать удаленные хранилища и удаленные объекты хранилища ключей (например, ключи, секреты, сертификаты), называемые обратимым удалением. В частности, мы будем решать следующие сценарии защиты:
 
@@ -27,7 +30,7 @@ ms.locfileid: "99257952"
 
 ## <a name="supporting-interfaces"></a>Поддержка интерфейсов
 
-Функция обратимого удаления доступна через [REST API](/rest/api/keyvault/), [Azure CLI](./key-vault-recovery.md), [Azure PowerShell](./key-vault-recovery.md)и интерфейсы [.NET/C#](/dotnet/api/microsoft.azure.keyvault?view=azure-dotnet) , а также [шаблоны ARM](/azure/templates/microsoft.keyvault/2019-09-01/vaults).
+Функция обратимого удаления доступна через [REST API](/rest/api/keyvault/), [Azure CLI](./key-vault-recovery.md), [Azure PowerShell](./key-vault-recovery.md)и интерфейсы [.NET/C#](/dotnet/api/microsoft.azure.keyvault?view=azure-dotnet&preserve-view=true) , а также [шаблоны ARM](/azure/templates/microsoft.keyvault/2019-09-01/vaults).
 
 ## <a name="scenarios"></a>Сценарии
 

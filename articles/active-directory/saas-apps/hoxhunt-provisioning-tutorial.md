@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/28/2021
 ms.author: Zhchia
-ms.openlocfilehash: eb3df574029a7c13488830e01354e738930fcd7f
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 55da26296f0545c8e2c0008185de14230cfee304
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523436"
+ms.locfileid: "100526618"
 ---
 # <a name="tutorial-configure-hoxhunt-for-automatic-user-provisioning"></a>Учебник. Настройка Хоксхунт для автоматической подготовки пользователей
 
@@ -42,16 +42,13 @@ ms.locfileid: "100523436"
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) настраивать подготовку (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
 * Клиент Хоксхунт.
 * Ключ API SCIM и URL-адрес конечной точки SCIM для вашей организации (настраивается с помощью поддержки Хоксхунт).
-?
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания для подготовки
 1. Узнайте, [как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 2. Определите, кто будет находиться в [области подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts).
 3. Определите, какие данные должны [сопоставляться между Azure AD и хоксхунт](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
 
 ## <a name="step-2-configure-hoxhunt-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Хоксхунт для поддержки подготовки с помощью Azure AD
-?
 Обратитесь в [службу поддержки хоксхунт](mailto:support@hoxhunt.com) , чтобы получить ключ API scim и URL-адрес КОНЕЧНОЙ точки scim, чтобы настроить хоксхунт для поддержки подготовки в Azure AD.
-?
 ## <a name="step-3-add-hoxhunt-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Хоксхунт из коллекции приложений Azure AD
 
 Добавьте Хоксхунт из коллекции приложений Azure AD, чтобы начать управление подготовкой в Хоксхунт. Если вы ранее настроили Хоксхунт для единого входа, вы можете использовать то же приложение. Но мы рекомендуем создать отдельное приложение для исходной проверки интеграции. Дополнительные сведения о добавлении приложения из коллекции см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app). 

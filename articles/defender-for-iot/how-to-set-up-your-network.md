@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/03/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 3d5a29ed26d58f0cbaa57768d4b8ad236283deb9
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 4ceedf4d05c6f92e5c32da95f8b54fc6c95de01c
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523861"
+ms.locfileid: "100526516"
 ---
 # <a name="about-azure-defender-for-iot-network-setup"></a>Настройка сети с Azure Defender для Интернета вещей
 
@@ -466,7 +466,7 @@ RSPAN: на основе Cisco Catalyst 2960 (24 порта).
 
 :::image type="content" source="media/how-to-set-up-your-network/wireshark-validation.png" alt-text="Снимок экрана проверки Wireshark.":::
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Используйте следующие разделы для устранения неполадок.
 
@@ -563,7 +563,7 @@ RSPAN: на основе Cisco Catalyst 2960 (24 порта).
 
 Обзор схемы промышленного сети позволит определить правильное расположение защитника для оборудования IoT.
 
-1.  Просмотр глобальной схемы сети для среды промышленного класса. Например:
+1.  Просмотр глобальной схемы сети для среды промышленного класса. Пример:
 
     :::image type="content" source="media/how-to-set-up-your-network/ot-global-network-diagram.png" alt-text="Схема среды промышленного класса для глобальной сети.":::
 
@@ -605,7 +605,7 @@ RSPAN: на основе Cisco Catalyst 2960 (24 порта).
 
     Что такое политика? __________________________________ 
 
-    Например:
+    Пример:
 
     - Компания
 
@@ -695,6 +695,6 @@ RSPAN: на основе Cisco Catalyst 2960 (24 порта).
 | Камера | |
 | Компьютер X-Ray | |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="see-also"></a>См. также
 
 [Сведения об установке защитника для IoT](how-to-install-software.md)

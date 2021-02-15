@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 02/02/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: ba98eb7e87ba277dcd5279ecf17373a8276b1cb1
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: c8bb44d323574f6815aa570b271ed4c0df1fc6be
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523980"
+ms.locfileid: "100526924"
 ---
 # <a name="manage-individual-sensors"></a>Управление отдельными датчиками
 
@@ -282,7 +282,7 @@ Windows будет распознавать эти файлы как файлы 
 
 Управляйте своими сертификатами с помощью следующих команд:
 
-| Описание: | Команда CLI |
+| Описание | Команда CLI |
 |--|--|
 | Создание нового закрытого ключа и запроса подписи сертификата | `openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key` |
 | Создание самозаверяющего сертификата | `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt` |
@@ -292,7 +292,7 @@ Windows будет распознавать эти файлы как файлы 
 
 Если необходимо проверить сведения в сертификате, CSR или закрытом ключе, используйте следующие команды.
 
-| Описание: | Команда CLI |
+| Описание | Команда CLI |
 |--|--|
 | Проверка запроса подписи сертификата (CSR) | `openssl req -text -noout -verify -in CSR.csr` |
 | Проверка закрытого ключа | `openssl rsa -in privateKey.key -check` |
@@ -300,13 +300,13 @@ Windows будет распознавать эти файлы как файлы 
 
 Если вы получаете сообщение об ошибке, когда закрытый ключ не соответствует сертификату или сертификат, установленный на сайте, не является доверенным, используйте эти команды для исправления ошибки.
 
-| Описание: | Команда CLI |
+| Описание | Команда CLI |
 |--|--|
 | Проверьте хэш MD5 открытого ключа, чтобы убедиться, что он соответствует тому, что находится в CSR или закрытом ключе. | одного. `openssl x509 -noout -modulus -in certificate.crt | openssl md5` <br /> 2. `openssl rsa -noout -modulus -in privateKey.key | openssl md5` <br /> 3. `openssl req -noout -modulus -in CSR.csr | openssl md5 ` |
 
 Чтобы преобразовать сертификаты и ключи в различные форматы, чтобы обеспечить их совместимость с конкретными типами серверов или программным обеспечением, используйте эти команды.
 
-| Описание: | Команда CLI |
+| Описание | Команда CLI |
 |--|--|
 | Преобразование DER-файла (. CRT. cer. der) в PEM  | `openssl x509 -inform der -in certificate.cer -out certificate.pem`  |
 | Преобразование PEM-файла в DER-файл | `openssl x509 -outform der -in certificate.pem -out certificate.der`  |
@@ -397,7 +397,7 @@ Windows будет распознавать эти файлы как файлы 
 
 3. Задайте параметры.
 
-    | Параметр | Описание: |
+    | Параметр | Описание |
     |--|--|
     | IP-адрес | IP-адрес датчика |
     | Маска подсети | Адрес маски |
@@ -414,7 +414,7 @@ Windows будет распознавать эти файлы как файлы 
 
 :::image type="content" source="media/how-to-manage-individual-sensors/time-and-region.png" alt-text="Настройте время и регион.":::
 
-| Параметр | Описание: |
+| Параметр | Описание |
 |--|--|
 | Часовой пояс | Определение часового пояса для:<br />— Оповещения<br />— Мини-приложения для тенденций и статистики<br />— Отчеты интеллектуального анализа данных<br />   — Отчеты по оценке рисков<br />— Векторы атак |
 | Формат даты | Выберите один из следующих параметров формата.<br />-дд/мм/гггг чч: мм: СС<br />-MM/дд/гггг чч: мм: СС<br />-гггг/мм/дд чч: мм: СС |
@@ -570,7 +570,7 @@ Windows будет распознавать эти файлы как файлы 
 
 3. В разделе **Общие** выберите **Свойства системы** .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="see-also"></a>См. также
 
 [Исследование и пакеты аналитики угроз](how-to-work-with-threat-intelligence-packages.md)
 

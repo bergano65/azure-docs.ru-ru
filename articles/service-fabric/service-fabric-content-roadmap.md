@@ -3,12 +3,12 @@ title: Дополнительные сведения об Azure Service Fabric
 description: Основные понятия и аспекты Azure Service Fabric. Эта статья предоставляет расширенные сведения о Service Fabric и создании микрослужб.
 ms.topic: conceptual
 ms.date: 12/08/2017
-ms.openlocfilehash: 36215dd3419050cf498a749b5caf927c3c4e275a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 011ddf5db1555e83a1a61a349cc19ed791ab900b
+ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485456"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100526772"
 ---
 # <a name="so-you-want-to-learn-about-service-fabric"></a>Что бы вы хотели узнать о Service Fabric?
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Service Fabric имеет большую контактную зону и вы можете многому научиться.  Здесь представлен краткий обзор Service Fabric и описаны основные понятия, модели программирования, жизненный цикл приложения, тестирование, кластеры и мониторинг работоспособности. Обзор и сведения о том, как создавать микрослужбы с помощью Service Fabric, см. в статьях [Общие сведения о Service Fabric](service-fabric-overview.md) и [Разработка приложений с использованием микрослужб](service-fabric-overview-microservices.md). Эта статья не содержит полный список связанной документации, но предоставляет ссылки на руководства по началу работы для каждой области Service Fabric. 
@@ -87,7 +87,7 @@ Service Fabric интегрируется с [ASP.NET Core](service-fabric-relia
 ## <a name="application-lifecycle"></a>Жизненный цикл приложения
 Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. Service Fabric предоставляет первоклассную поддержку полного жизненного цикла приложений в облаке: от разработки, развертывания, ежедневного управления и технического обслуживания до вывода приложения из эксплуатации. Модель службы использует несколько различных ролей для независимого участия в жизненном цикле приложения. [Жизненный цикл приложения в Service Fabric](service-fabric-application-lifecycle.md) представляет обзор интерфейсов API, а также их использование различными ролями на протяжении всех фаз жизненного цикла приложения в Service Fabric. 
 
-Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/overview/azure/servicefabric) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](./service-fabric-tutorial-deploy-app-with-cicd-vsts.md) или [Jenkins](/azure/developer/jenkins/deploy-to-service-fabric-cluster).
+Всем жизненным циклом приложения можно управлять с помощью [командлетов PowerShell](/powershell/module/ServiceFabric/New-ServiceFabricService), [команд CLI](service-fabric-sfctl.md), [C# APIs](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient), [API Java](/java/api/overview/azure/servicefabric) и [REST API](/rest/api/servicefabric/). Вы также можете настроить конвейеры непрерывной интеграции и разработки с помощью средств [Azure Pipelines](./service-fabric-tutorial-deploy-app-with-cicd-vsts.md) или [Jenkins](/azure/developer/jenkins/deploy-to-service-fabric-cluster).
 
 ## <a name="test-applications-and-services"></a>Тестирование приложений и служб
 Чтобы создать службы именно в масштабах облака, очень важно, чтобы приложения и службы были устойчивы к реальным сбоям. Служба анализа сбоев предназначена для проверки служб, созданных на платформе Service Fabric. С помощью [службы анализа сбоев](service-fabric-testability-overview.md)можно вызвать осмысленные ошибки и выполнить сценарии тестирования для приложений. Вызываемые ошибки и сценарии позволяют воспроизвести и проверить в контролируемых, безопасных и согласованных условиях разные состояния и переходы, происходящие со службой в течение ее жизненного цикла.
@@ -160,7 +160,7 @@ Service Fabric для Linux дает возможность создавать, 
 
 Service Fabric предоставляет несколько способов [просмотра отчетов о работоспособности](service-fabric-view-entities-aggregated-health.md), объединенных в хранилище данных о работоспособности.
 * [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) или другие средства визуализации.
-* запросы о работоспособности (с помощью [PowerShell](/powershell/module/ServiceFabric/), [CLI](service-fabric-sfctl.md), [API C# FabricClient](/dotnet/api/system.fabric.fabricclient.healthclient) и [API Java FabricClient](/java/api/system.fabric) или [REST APIs](/rest/api/servicefabric));
+* запросы о работоспособности (с помощью [PowerShell](/powershell/module/ServiceFabric/New-ServiceFabricService), [CLI](service-fabric-sfctl.md), [API C# FabricClient](/dotnet/api/system.fabric.fabricclient.healthclient) и [API Java FabricClient](/java/api/system.fabric) или [REST APIs](/rest/api/servicefabric));
 * общие запросы, возвращающие перечень сущностей, среди свойств которых есть работоспособность (с помощью PowerShell, CLI, API или REST).
 
 ## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
