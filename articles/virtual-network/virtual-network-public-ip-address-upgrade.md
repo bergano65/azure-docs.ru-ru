@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions
-ms.openlocfilehash: 93d5d422709fad3d4f732b3b232f67d60d79b507
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 33c767d847d9e70e95b3ee1648be7852aa5cec98
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493725"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522892"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Обновление общедоступных IP-адресов
 
@@ -36,7 +36,7 @@ ms.locfileid: "99493725"
 Чтобы обновить общедоступный IP-адрес, он не должен быть связан ни с одним ресурсом (Дополнительные сведения о том, как отменять связь с общедоступными IP, см. на [этой странице](./virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address) ).
 
 >[!IMPORTANT]
->Общедоступные IP-адреса, обновленные с уровня "базовый" до SKU "Стандартный", остаются без [зон доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  Это означает, что они не могут быть связаны с ресурсом Azure, который является избыточным в виде зоны, или привязан к предварительно указанной зоне в регионах, где это предлагается.
+>Общедоступные IP-адреса, обновленные с уровня "базовый" до "Стандартный", остаются без гарантированных [зон доступности](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  Убедитесь, что это необходимо учитывать при выборе ресурсов, с которыми будет связан IP-адрес.
 
 ---
 # <a name="basic-to-standard---powershell"></a>[**Базовый для Standard-PowerShell**](#tab/option-upgrade-powershell)

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: b34fcd66f0b64e2522da69bcfc7d119628b9d9d9
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 0a8c30076231aecb17505dd0d7a2fe4e7be485a3
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100516708"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522671"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии
 
@@ -37,7 +37,7 @@ ms.locfileid: "100516708"
 Для стандарта защиты Azure от атак DDoS доступны следующие [метрики](../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses) . Эти метрики также можно экспортировать с помощью параметров диагностики (см. раздел [Просмотр и Настройка ведения журнала диагностики от атак DDoS](diagnostic-logging.md)).
 
 
-| Метрика | Отображаемое имя метрики | Unit | Тип статистической обработки | Описание |
+| Метрика | Отображаемое имя метрики | Unit | Тип статистической обработки | Описание: |
 | --- | --- | --- | --- | --- |
 | BytesDroppedDDoS | Удаленные входящие байты (атака DDoS) | Байт/с | Максимальная | Удаленные входящие байты (атака DDoS)| 
 | BytesForwardedDDoS | Перенаправленные входящие байты (атака DDoS) | Байт/с | Максимальная | Перенаправленные входящие байты (атака DDoS) |
@@ -70,7 +70,7 @@ ms.locfileid: "100516708"
 
 ## <a name="view-ddos-protection-telemetry"></a>Просмотр данных телеметрии защиты от атак DDoS
 
-Данные телеметрии для атаки предоставляются Azure Monitor в режиме реального времени. Данные телеметрии доступны только в тот интервал времени, в который для общедоступного IP-адреса выполняется устранение атаки. Невозможно просмотреть данные телеметрии до или после устранения атаки.
+Данные телеметрии для атаки предоставляются Azure Monitor в режиме реального времени. Данные телеметрии доступны, только если в разделе Устранение рисков используется общедоступный IP-адрес. 
 
 1. Войдите в [портал Azure](https://portal.azure.com/) и перейдите к плану защиты от атак DDoS.
 2. В разделе **Мониторинг** выберите **Метрики**.

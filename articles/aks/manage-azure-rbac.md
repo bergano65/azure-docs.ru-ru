@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 09/21/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: af8d0300b533d9f25cddf225f4ffbe78ca6bf2cb
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: aa1693ba2b17c344475b96db42fa55514cf6b4db
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98249641"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380582"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -21,7 +21,7 @@ ms.locfileid: "98249641"
 
 В этом документе рассматривается новый подход, обеспечивающий унифицированный контроль и управление доступом к ресурсам Azure, AKS и Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Возможность управления RBAC для ресурсов Kubernetes из Azure дает возможность управлять RBAC для ресурсов кластера с помощью Azure или собственных механизмов Kubernetes. Если этот параметр включен, субъекты Azure AD будут проверяться исключительно в Azure RBAC, а обычные пользователи Kubernetes и учетные записи служб будут проверены только с помощью Kubernetes RBAC. Дополнительные сведения о проверке подлинности и авторизации с помощью RBAC в AKS см. [здесь](concepts-identity.md#azure-rbac-for-kubernetes-authorization-preview).
 
@@ -49,7 +49,7 @@ az feature register --namespace "Microsoft.ContainerService" --name "EnableAzure
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableAzureRBACPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register] [AZ-регистратор-Register]:
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -270,7 +270,7 @@ az role definition delete -n "AKS Deployment Viewer"
 az group delete -n MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о проверке подлинности AKS, авторизации, Kubernetes RBAC и Azure RBAC см. [здесь](concepts-identity.md).
 - Дополнительные сведения об Azure RBAC см. [здесь](../role-based-access-control/overview.md).
@@ -285,3 +285,4 @@ az group delete -n MyResourceGroup
 [az-feature-list]: /cli/azure/feature#az-feature-list
 [az-feature-register]: /cli/azure/feature#az-feature-register
 [az-aks-install-cli]: /cli/azure/aks?view=azure-cli-latest#az-aks-install-cli&preserve-view=true
+[az-provider-register]: /cli/azure/provider?view=azure-cli-latest#az-provider-register

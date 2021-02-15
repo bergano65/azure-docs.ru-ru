@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 5d2d923fc448beeff8fa165226890d88d97d01ad
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 56f6c9d3ff3093c3acd28b670e37f823ad5e9f9a
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805671"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522518"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Активация и настройка датчика
 
@@ -44,7 +44,7 @@ ms.locfileid: "99805671"
 
 Датчик был подключен к службе "защитник Azure для Интернета вещей" в определенном режиме управления:
 
-| Тип режима | Описание |
+| Тип режима | Описание: |
 |--|--|
 | **Режим подключения к облаку** | Сведения, обнаруженные датчиком, отображаются в консоли датчика. Сведения о предупреждениях также доставляются через центр Интернета вещей и могут использоваться совместно с другими службами Azure, такими как Azure Sentinel. |
 | **Локально подключенный режим** | Сведения, обнаруженные датчиком, отображаются в консоли датчика. Сведения об обнаружении также используются совместно с локальной консолью управления, если к ней подключен датчик. |
@@ -142,7 +142,7 @@ ms.locfileid: "99805671"
 
 Проверьте параметры системы датчика, чтобы убедиться, что датчик настроен для оптимального обнаружения и оповещения.
 
-Определите системные параметры датчика. Пример:
+Определите системные параметры датчика. Например:
 
 - Определите ICS (или IoT) и разделенные подсети.
 
@@ -182,7 +182,7 @@ ms.locfileid: "99805671"
 | Панель мониторинга | :::image type="icon" source="media/concept-sensor-console-overview/dashboard-icon-azure.png" border="false"::: | Просмотр интуитивно понятного моментального снимка состояния безопасности сети. |
 | Схема устройства | :::image type="icon" source="media/concept-sensor-console-overview/asset-map-icon-azure.png" border="false"::: | Просмотр сетевых устройств, подключений устройств и свойств устройств на карте. Для просмотра сети доступны различные параметры масштабирования, выделения и фильтрации. |
 | Инвентаризация устройств | :::image type="icon" source="media/concept-sensor-console-overview/asset-inventory-icon-azure.png" border="false":::  | В поле Инвентаризация устройства отображается список атрибутов устройства, обнаруженных этим датчиком. Доступны следующие параметры: <br /> — Сортировка или фильтрация сведений в соответствии с полями таблицы и просмотр отфильтрованных сведений. <br /> — Экспорт данных в CSV-файл. <br /> — Импорт сведений о реестре Windows.|
-| Оповещения | :::image type="icon" source="media/concept-sensor-console-overview/alerts-icon-azure.png" border="false"::: | Отображение предупреждений при возникновении нарушений политики, возникновение отклонения от базового поведения или обнаружении любого типа подозрительных действий в сети. |
+| видны узлы | :::image type="icon" source="media/concept-sensor-console-overview/alerts-icon-azure.png" border="false"::: | Отображение предупреждений при возникновении нарушений политики, возникновение отклонения от базового поведения или обнаружении любого типа подозрительных действий в сети. |
 | Отчеты | :::image type="icon" source="media/concept-sensor-console-overview/reports-icon-azure.png" border="false"::: | Просмотр отчетов, основанных на запросах интеллектуального анализа данных. |
 
 **Анализ**
@@ -214,7 +214,7 @@ ms.locfileid: "99805671"
 |----|---|---|
 | Поддержка | :::image type="icon" source="media/concept-sensor-console-overview/support-icon-azure.png" border="false"::: | Обратитесь за помощью в [Служба поддержки Майкрософт](https://support.microsoft.com/) . |
 
-### <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Подключение датчика](getting-started.md#4-onboard-a-sensor)
 

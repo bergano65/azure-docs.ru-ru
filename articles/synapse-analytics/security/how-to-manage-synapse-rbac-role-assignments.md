@@ -1,23 +1,23 @@
 ---
 title: Управление назначениями RBAC синапсе в синапсе Studio
 description: В этой статье описывается назначение и отзыв ролей синапсе RBAC субъектам безопасности AAD.
-author: billgib
+author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: security
 ms.date: 12/1/2020
-ms.author: billgib
+ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: c88371eb450d5b0e2e8b821cdec0e87190e291f8
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: bed0c00b8cb5718456302dff06e98ff2f7f2b4e8
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218201"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102195"
 ---
 # <a name="how-to-manage-synapse-rbac-role-assignments-in-synapse-studio"></a>Управление назначениями ролей RBAC синапсе в синапсе Studio
 
-Синапсе RBAC использует роли для назначения разрешений пользователям, группам и другим субъектам безопасности, чтобы обеспечить доступ и использование ресурсов синапсе и артефактов кода.  [Подробнее](./synapse-workspace-synapse-rbac.md)
+Синапсе RBAC использует роли для назначения разрешений пользователям, группам и другим субъектам безопасности, чтобы обеспечить доступ и использование ресурсов синапсе и артефактов кода.  [Дополнительные сведения](./synapse-workspace-synapse-rbac.md)
 
 В этой статье показано, как добавлять и удалять назначения ролей RBAC синапсе.
 
@@ -65,7 +65,7 @@ ms.locfileid: "98218201"
 
 ![Добавление назначения роли для элемента рабочей области — Выбор типа элемента](./media/how-to-manage-synapse-rbac-role-assignments/access-control-add-workspace-item-assignment-select-item-type.png) 
 
-Выберите конкретный **элемент** , который будет использоваться в качестве области, а затем выберите **роль** , которая будет назначена, из раскрывающегося списка.  Раскрывающийся список содержит только те роли, которые являются допустимыми для выбранного типа элемента. [Подробнее](./synapse-workspace-synapse-rbac.md).  
+Выберите конкретный **элемент** , который будет использоваться в качестве области, а затем выберите **роль** , которая будет назначена, из раскрывающегося списка.  Раскрывающийся список содержит только те роли, которые являются допустимыми для выбранного типа элемента. [Подробнее.](./synapse-workspace-synapse-rbac.md)  
 
 ![Добавление назначения роли для элемента рабочей области — Выбор роли](./media/how-to-manage-synapse-rbac-role-assignments/access-control-add-workspace-item-assignment-select-role.png) 
  
@@ -79,6 +79,6 @@ ms.locfileid: "98218201"
 
 Помните, что изменения в назначениях ролей вступят в силу за 2-5 минут.   
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Общие сведения о ролях синапсе RBAC, необходимых для выполнения стандартных задач](./synapse-workspace-understand-what-role-you-need.md)

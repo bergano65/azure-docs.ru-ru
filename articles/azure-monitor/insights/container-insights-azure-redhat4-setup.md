@@ -3,12 +3,12 @@ title: Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для 
 description: В этой статье описывается настройка мониторинга для кластера Kubernetes с Azure Monitor, размещенной в Azure Red Hat OpenShift версии 4 или более поздней.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 8cd551a028f2fc67c26f8e32d59c0e0650aa1e54
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: e6668ac22c6c0f53c7511cfb76bf50c5474f3a76
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944526"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521634"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-azure-monitor-for-containers"></a>Настройка Azure Red Hat OpenShift v4. x с Azure Monitor для контейнеров
 
@@ -29,7 +29,7 @@ Azure Monitor для контейнеров поддерживает монит�
 - Данные в режиме реального времени (Предварительная версия)
 - [Сбор метрик](container-insights-update-metrics.md) из узлов кластера и модулей Pod и их сохранение в базе данных метрик Azure Monitor
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Azure CLI версии 2.0.72 или более поздней.  
 
@@ -121,7 +121,7 @@ Azure Monitor для контейнеров поддерживает монит�
     export kubeContext="<kubeContext name of your ARO v4 cluster>"  
     ```
 
-    Пример.
+    Ниже приведена команда, которую необходимо выполнить после заполнения 3 переменных командами Export:
 
     `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext --workspace-id $logAnalyticsWorkspaceResourceId`
 
@@ -142,7 +142,7 @@ export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGrou
 export kubeContext="<kubeContext name of your ARO v4 cluster>"
 ```
 
-Пример.
+Например:
 
 `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext`
 
@@ -164,7 +164,7 @@ export kubeContext="<kubeContext name of your ARO v4 cluster>"
 
     Результаты в списке можно найти, выполнив поиск значения **АТО** в столбце **тип кластера** . После выбора **включить** вы будете перенаправлены к этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Теперь, когда вы включили функцию мониторинга для получения сведений о работоспособности и использовании ресурсов в кластере RedHat OpenShift версии 4. x и рабочих нагрузках, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
 

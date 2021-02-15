@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/24/2021
 ms.author: shhazam
-ms.openlocfilehash: 61c7f1bddd40151aff2b1ca556045d34c4a1cc0d
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: a40b64dd3b8f898c961863c1d78a2a56642c44b9
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820829"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521617"
 ---
 # <a name="get-started-with-azure-defender-for-iot-device-micro-agents"></a>Приступая к работе с защитником Azure для устройств IoT Micro Agent
 
@@ -42,9 +42,8 @@ ms.locfileid: "99820829"
 
 1. Проверьте наличие рекомендаций в защитнике для Интернета вещей в ответ на сбой проверки базового плана ОС на предыдущем шаге. Начните проверку через 30 минут после выполнения сценария.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Настройка [решения](quickstart-configure-your-solution.md)
-- [Quickstart: Create an azureiotsecurity module twin](quickstart-create-security-twin.md) (Краткое руководство по созданию модуля двойника устройства azureiotsecurity)
-- Настройка [пользовательских оповещений](quickstart-create-custom-alerts.md)
-- [Развертывание агента безопасности](how-to-deploy-agent.md)
+Настройка [решения](quickstart-configure-your-solution.md) 
+ [Создание модулей безопасности](quickstart-create-security-twin.md) Настройка [пользовательских предупреждений](quickstart-create-custom-alerts.md) 
+ [развертывание агента безопасности](how-to-deploy-agent.md)

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/20/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: edeb383317d4bdc0e7beef1f8390ddabd350f002
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 0738dc7f2b7012002fc6ddf5cc68dd0c8e42b04d
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99507576"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522485"
 ---
 # <a name="sensor-data-mining-queries"></a>Запросы интеллектуального анализа данных датчика
 
@@ -45,7 +45,7 @@ ms.locfileid: "99507576"
 
 ### <a name="dynamic-updates"></a>Динамические обновления
 
-Создаваемые запросы интеллектуального анализа данных динамически обновляются каждый раз при их открытии. Пример:
+Создаваемые запросы интеллектуального анализа данных динамически обновляются каждый раз при их открытии. Например:
 
 - Если вы создаете отчет для версий встроенного по на устройствах 1 июня и снова открываете отчет в течение 10 июня, этот отчет будет обновлен с учетом информации, которая точна до 10 июня.
 
@@ -130,7 +130,7 @@ ms.locfileid: "99507576"
 
    - Укажите MAC-адрес.
 
-4. Щелкните **Сохранить**. Результаты отчета открываются на странице **интеллектуальный анализ данных** .
+4. Нажмите кнопку **Сохранить**. Результаты отчета открываются на странице **интеллектуальный анализ данных** .
 
 :::image type="content" source="media/how-to-generate-reports/data-mining-page.png" alt-text="Отчет о результатах, как показано на странице интеллектуальный анализ данных.":::
 
@@ -138,7 +138,7 @@ ms.locfileid: "99507576"
 
 В следующей таблице описаны параметры управления интеллектуального анализа данных.
 
-| Изображение значка | Описание |
+| Изображение значка | Описание: |
 |--|--|
 | :::image type="icon" source="media/how-to-generate-reports/edit-a-simulation-icon.png" border="false"::: | Измените параметры отчета. |
 | :::image type="icon" source="media/how-to-generate-reports/export-as-pdf-icon.png" border="false"::: | Экспорт в формате PDF. |
@@ -285,3 +285,7 @@ ms.locfileid: "99507576"
 3. В раскрывающемся списке справа выберите отчет, который необходимо создать.
 
 4. Чтобы создать PDF-файл результатов отчета, выберите :::image type="icon" source="media/how-to-generate-reports/pdf-report-icon.png" border="false"::: .
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+[Тенденции датчика и статистические отчеты](how-to-create-trends-and-statistics-reports.md).

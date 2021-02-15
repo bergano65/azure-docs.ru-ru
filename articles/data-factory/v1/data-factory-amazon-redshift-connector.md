@@ -1,23 +1,18 @@
 ---
 title: Перемещение данных из Amazon RedShift с помощью фабрики данных Azure
 description: Узнайте о том, как перемещать данные из Amazon Redshift с помощью действия копирования фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 01d15078-58dc-455c-9d9d-98fbdf4ea51e
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c0dcaec9c8e9a310af1fd6fc319e0784694610e2
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 025250f47bf0630be5ae988140a5feeecfd0eaf0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463080"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377556"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -333,7 +328,7 @@ ms.locfileid: "96463080"
 | INTEGER |Int32 |
 | bigint |Int64 |
 | DECIMAL |Decimal |
-| ВЕЩЕСТВЕННОЕ ЧИСЛО |Один |
+| real |Single |
 | DOUBLE PRECISION |Double |
 | BOOLEAN |Строка |
 | CHAR |Строка |
@@ -351,5 +346,5 @@ ms.locfileid: "96463080"
 ## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о ключевых факторах, влияющих на производительность действия копирования, и различных способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Пошаговые инструкции по созданию конвейера с действием копирования см. в руководстве [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).

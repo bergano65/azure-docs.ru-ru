@@ -5,15 +5,15 @@ author: msftradford
 manager: MehranAzimi-msft
 services: azure-spatial-anchors
 ms.author: parkerra
-ms.date: 11/20/2020
+ms.date: 2/3/2021
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ee0bf9b4ce009f37dd1931d4ed030defa24e7d38
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 0233e58a404721586af0ae2fbdf78dbab6d424ed
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95996272"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550396"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
@@ -140,36 +140,13 @@ ms.locfileid: "95996272"
 
 ## <a name="get-the-azure-spatial-anchors-sdk"></a>Получение пакета SDK Пространственных привязок Azure
 
-## <a name="via-unity-package-manager-upm-package"></a>[Через пакет диспетчера пакетов Unity (UPM)](#tab/UPMPackage)
+### <a name="download-packages"></a>Скачивание пакетов
+[!INCLUDE [Download Unity Packages](../../../includes/spatial-anchors-unity-download-packages.md)]
 
-Этот метод совместим с Unity версии 2019.1+.
+### <a name="import-packages"></a>Импорт пакетов
+[!INCLUDE [Import Unity Packages](../../../includes/spatial-anchors-unity-import-packages.md)]
 
-### <a name="add-the-registry-to-your-unity-project"></a>Добавление реестра в проект Unity
-
-1. В проводнике перейдите к папке `Packages` проекта Unity. Откройте файл манифеста проекта `manifest.json` в текстовом редакторе.
-2. В верхней части файла на том же уровне, что и раздел `dependencies`, добавьте следующую запись, чтобы включить в проект реестр Пространственных привязок Azure. Запись `scopedRegistries` указывает Unity, где искать пакеты SDK Пространственных привязок Azure.
-
-    [!code-json[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-scoped-registry-setup.md?range=9-19&highlight=2-10)]
-
-### <a name="add-the-sdk-package-to-your-unity-project"></a>Добавление пакета SDK в проект Unity
-
-1. Добавьте запись с именем пакета Windows SDK Пространственных привязок Azure (`com.microsoft.azure.spatial-anchors-sdk.windows`) и версию пакета в раздел `dependencies` в манифесте проекта. Пример см. ниже.
-
-    [!code-json[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-unity-scoped-registry-setup.md?range=9-20&highlight=12)]
-
-2. Сохраните и закройте файл `manifest.json`. Unity должен автоматически обнаруживать изменение манифеста проекта и получать указанные пакеты. Вы можете развернуть папку `Packages` в представлении проекта, чтобы убедиться, что импортированы необходимые пакеты.
-
-## <a name="via-unity-asset-package"></a>[С помощью пакета ресурсов Unity](#tab/UnityAssetPackage)
-
-> [!WARNING]
-> Распределение пакета ресурсов Unity в пакете SDK Пространственных привязок Azure перестанет поддерживаться после пакета SDK версии 2.5.0.
-
-Давайте скачаем пакет SDK Пространственных привязок Azure. Перейдите на [страницу выпусков Пространственных привязок Azure на сайте GitHub](https://github.com/Azure/azure-spatial-anchors-samples/releases). В разделе **Assets** (Ресурсы) скачайте файл **AzureSpatialAnchors.unitypackage**. В Unity перейдите к разделу **Assets** (Ресурсы) и выберите **Import Package** (Импорт пакета)  > **Custom Package…** (Пользовательский пакет…). Перейдите к пакету и выберите **Открыть**.
-
-В открывшемся окне **Import Unity Package** (Импорт пакета Unity) отмените выбор пункта **Plugins** (Подключаемые модули), а затем выберите **Import** (Импортировать) в нижнем правом углу страницы.
-
----
-
+### <a name="prepare-code"></a>Подготовка кода
 В решении **Visual Studio** добавьте следующую операцию импорта в `<ProjectName>\Assets\Scripts\AzureSpatialAnchorsScript.cs`:
 
 [!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=18-21&highlight=1)]

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: eb5f2c6293042f44de5e3c061c6d379bee6e5b06
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 8b647d5e97439db4805a7346a02db3f845dc9e37
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820591"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523895"
 ---
 # <a name="about-high-availability"></a>О высокой доступности
 
@@ -74,7 +74,7 @@ ms.locfileid: "99820591"
 
 Необходимо убедиться, что политика безопасности Организации предоставляет доступ к следующим службам в основной и дополнительной консоли управления. Эти службы также обеспечивают подключение между датчиками и дополнительной локальной консолью управления:
 
-|Порт|Служба|Описание|
+|Port|Служба|Описание|
 |----|-------|-----------|
 |**443 или TCP**|HTTPS|Предоставляет доступ к локальной консоли управления через веб-консоль.|
 |**22 или TCP**|SSH|Синхронизирует данные между основным и дополнительным устройствами локальной консоли управления.|
@@ -149,6 +149,6 @@ cyberx-management-deploy-ssh-key <Primary ip>
 
 3. Обновите датчики.
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Активация и настройка локальной консоли управления](how-to-activate-and-set-up-your-on-premises-management-console.md)

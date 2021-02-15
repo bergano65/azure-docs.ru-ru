@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/25/2021
 ms.author: shhazam
-ms.openlocfilehash: 1729a20825eb554a4fd2ee60141994e57e62f030
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 3a7dabfed86dab463b38ae45278ead7f5acb5ef9
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99810002"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521957"
 ---
 # <a name="agent-based-solution-for-device-builders"></a>Решение на основе агента для разработчиков устройств
 
@@ -44,7 +44,7 @@ ms.locfileid: "99810002"
 
 :::image type="content" source="media/architecture/micro-agent-architecture.png" alt-text="Архитектура Micro Agent.":::
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Вопросы и ответы о защитнике для IoT](resources-frequently-asked-questions.md)
 

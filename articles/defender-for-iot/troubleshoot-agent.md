@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: e9904e9157a560e2a4853a1a9cd37977defe73ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9367cf4324d577e4dd44cb9294a8b82b1bceaf74
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90937391"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522960"
 ---
 # <a name="security-agent-troubleshoot-guide-linux"></a>Инструкции по устранению неполадок с агентом безопасности (Linux)
 
@@ -108,10 +108,4 @@ Defender for IoT agent encountered an error! Error in: {Error Code}, reason: {Er
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей"
-- Дополнительные сведения о защитнике для [архитектуры](architecture.md) IOT
-- Включение защитника для [службы](quickstart-onboard-iot-hub.md) IOT
-- [Вопросы и ответы](resources-frequently-asked-questions.md) о службе "защитник для Интернета вещей"
-- Узнайте, как получить доступ к [необработанным данным безопасности](how-to-security-data-access.md).
-- Общие сведения о [рекомендациях](concept-recommendations.md).
-- Общие сведения об [оповещениях](concept-security-alerts.md) системы безопасности
+Ознакомьтесь с [обзором](overview.md) службы "защитник для Интернета вещей" Узнайте больше о защитнике для [архитектуры](architecture.md) IOT включение [службы](quickstart-onboard-iot-hub.md) "защитник для Интернета вещей" чтение [сведений о службе](concept-security-alerts.md) "защитник для Интернета вещей [" сведения о](resources-frequently-asked-questions.md) том, как получить доступ к [необработанным данным о безопасности](how-to-security-data-access.md) . Общие [рекомендации](concept-recommendations.md)

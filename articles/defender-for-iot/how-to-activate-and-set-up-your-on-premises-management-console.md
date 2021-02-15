@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 94a1db30419e5d7e52f369392d94b817d0dc273a
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: d326a90ffb957604dba74982d8983acedc6ab85d
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623760"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522586"
 ---
 # <a name="activate-and-set-up-your-on-premises-management-console"></a>Активация и настройка локальной консоли управления 
 
@@ -79,7 +79,7 @@ ms.locfileid: "98623760"
 
 Чтобы отключить проверку между консолью управления и подключенными датчиками, выполните следующие действия.
 
-1. Нажмите **Далее**.
+1. Выберите **Далее**.
 1. Отключите переключатель **включить проверку на уровне системы** .
 
 Сведения о передаче нового сертификата, поддерживаемых файлов сертификатов и связанных элементов см. в статье [Управление локальной консолью управления](how-to-manage-the-on-premises-management-console.md).
@@ -108,7 +108,7 @@ ms.locfileid: "98623760"
 
 3. В текстовом поле **адрес** введите IP-адрес локальной консоли управления, к которой необходимо подключиться.
 
-4. Щелкните **Подключить**. Состояние изменится:
+4. Выберите **Подключиться**. Состояние изменится:
 
    :::image type="content" source="media/how-to-activate-and-set-up-your-on-premises-management-console/connection-status-window-connected.png" alt-text="Снимок экрана: окно состояния локальной консоли управления, в котором отображается соединение.":::
 
@@ -155,7 +155,7 @@ ms.locfileid: "98623760"
 
 Группы доступа обеспечивают лучший контроль над тем, где пользователи управляют и анализируют устройства в защитнике для платформы IoT.
 
-### <a name="how-it-works"></a>Принципы работы
+### <a name="how-it-works"></a>Принцип работы
 
 Для каждого сайта можно определить подразделение и регион. Затем можно добавить зоны, которые являются логическими сущностями в сети. 
 
@@ -223,15 +223,15 @@ ms.locfileid: "98623760"
 
 В следующей таблице описаны параметры в окне " **Управление сайтом** ".
 
-| Параметр | Описание |
+| Параметр | Описание: |
 |--|--|
 | Имя | Имя датчика. Это имя можно изменить только с датчика. Дополнительные сведения см. в разделе "защитник для пользователей IoT". |
 | IP-адрес | IP-адрес датчика. |
 | Версия | Версия датчика. |
-| Соединение | Состояние подключения датчика. Состояние может быть **подключено** или **разорвано**. |
+| Подключение | Состояние подключения датчика. Состояние может быть **подключено** или **разорвано**. |
 | Последнее обновление | Дата последнего обновления. |
 | Ход выполнения обновления | Индикатор выполнения показывает состояние процесса обновления следующим образом.<br />— Отправка пакета<br />-Подготовка к установке<br />— Остановка процессов<br />— Резервное копирование данных<br />-Создание моментального снимка<br />-Обновление конфигурации<br />— Обновление зависимостей<br />-Обновление библиотек<br />— Установка исправлений баз данных<br />-Запуск процессов<br />— Проверка системного работоспособности<br />-Проверка пройдена<br />— Успешное завершение<br />— Сбой<br />-Обновление начато<br />-Запуск установкиogress bar shows the status of the upgrade process, as follows:<br />- Uploading package<br />- Preparing to install<br />- Stopping processes<br />- Backing up data<br />- Taking snapshot<br />- Updating configuration<br />- Updating dependencies<br />- Updating libraries<br />- Patching databases<br />- Starting processes<br />- Validating system sanity<br />- Validation succeeded<br />- Success<br />- Failure<br />- Upgrade started<br />- Starting installation<br /></br >Дополнительные сведения об обновлении см. в [Служба поддержки Майкрософт](https://support.microsoft.com/) для получения справки. |
-| . | Число устройств, которые наблюдает датчиком. |
+| Устройства | Число устройств, которые наблюдает датчиком. |
 | видны узлы | Число оповещений на датчике. |
 | :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/assign-icon.png" border="false"::: | Позволяет назначить датчикам зоны. |
 | :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false":::| Включает удаление датчика disconnected с сайта. |
@@ -316,6 +316,6 @@ ms.locfileid: "98623760"
 
 3. Чтобы удалить неназначенный датчик с сайта, выберите датчик в списке неназначенных датчиков и щелкните :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false"::: .
 
-## <a name="see-also"></a>См. также статью
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Устранение неполадок с датчиком и локальной консолью управления](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md)

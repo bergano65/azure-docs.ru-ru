@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: c33b3e5fee19edc5d4ac85284e507b53e96234a0
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: fd0c7b74bea979737644824f93b4dce7a2364b99
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977019"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522348"
 ---
 # <a name="about-defender-for-iot-console-users"></a>О защитнике для пользователей консоли IoT
 
@@ -185,7 +185,7 @@ ms.locfileid: "97977019"
 
 1. Задайте параметры сервера Active Directory следующим образом:
 
-   | Параметр сервера | Описание |
+   | Параметр сервера | Описание: |
    |--|--|
    | Полное доменное имя контроллера домена | Задайте полное доменное имя в том виде, в каком оно отображается на сервере LDAP. Например, введите `host1.subdomain.domain.com`. |
    | Порт контроллера домена | Определите порт, на котором настроен протокол LDAP. |
@@ -193,7 +193,7 @@ ms.locfileid: "97977019"
    | Группы Active Directory | Введите имена групп, которые определены в конфигурации Active Directory на сервере LDAP. |
    | Доверенные домены | Чтобы добавить доверенный домен, добавьте доменное имя и тип подключения для доверенного домена. <br />Доверенные домены можно настроить только для пользователей, которые были определены в разделе пользователи. |
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 1. Чтобы добавить доверенный сервер, выберите **Добавить сервер** и настройте другой сервер.
 
@@ -265,7 +265,7 @@ ms.locfileid: "97977019"
 
 1. Выберите **Обновить**.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Активация и настройка датчика](how-to-activate-and-set-up-your-sensor.md) 
  [Активация и Настройка локальной консоли управления](how-to-activate-and-set-up-your-on-premises-management-console.md) 

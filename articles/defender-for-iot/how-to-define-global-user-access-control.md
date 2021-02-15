@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/08/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 399eee06d472204eaf6dbc333f15cee7c4373739
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 81ede3506337e76c84e20203ac27a3d441fdcef8
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624648"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522280"
 ---
 # <a name="define-global-access-control"></a>Определение глобального контроля доступа
 
@@ -88,6 +88,6 @@ ms.locfileid: "98624648"
 
 - Если подразделение или регион не выбраны, пользователи будут иметь доступ ко всем определенным бизнес-единицам и регионам.
 
-## <a name="see-also"></a>См. также статью
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [О защитнике для пользователей консоли IoT](how-to-create-and-manage-users.md)

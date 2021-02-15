@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/24/2019
 ms.author: mlottner
-ms.openlocfilehash: b33c456d47426a3721e8582f24ffd603db0429c9
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: feb84a1261e37600c68d8e372162033d4021f564
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340039"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522926"
 ---
 # <a name="security-module"></a>Модуль безопасности
 
@@ -40,7 +40,7 @@ ms.locfileid: "96340039"
 
 Сведения о создании, настройке и настройке двойника см. в статьях [Создание модуля безопасности двойника](quickstart-create-security-twin.md) и [Настройка агентов безопасности](how-to-agent-configuration.md) . Дополнительные сведения о концепции модуля двойников в центре Интернета вещей см. в разделе [Основные сведения о модуле двойников](../iot-hub/iot-hub-devguide-module-twins.md) .
 
-## <a name="see-also"></a>См. также раздел
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обзор защитника для IoT](overview.md)
 - [Развертывание агентов безопасности](how-to-deploy-agent.md)

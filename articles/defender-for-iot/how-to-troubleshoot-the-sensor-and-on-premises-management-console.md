@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/3/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: b91827fc0a6fb8380c9f8aa87a3def3bc1819523
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 624f60441f56646c3633a2afa79d326c92ba1a37
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955439"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100523725"
 ---
 # <a name="troubleshoot-the-sensor-and-on-premises-management-console"></a>Устранение неполадок с датчиком и локальной консолью управления
 
@@ -185,7 +185,7 @@ ms.locfileid: "97955439"
 
 1. Войдите в CLI датчика как защитник для пользователя IoT и введите `sudo cyberx-xsense-limit-interface-I eth0 -l value` .
 
-   Пример: `sudo cyberx-xsense-limit-interface -i eth0 -l 30kbit`
+   Например: `sudo cyberx-xsense-limit-interface -i eth0 -l 30kbit`
 
    > [!NOTE]
    > Для физического устройства используйте интерфейс em1.
@@ -258,7 +258,7 @@ ms.locfileid: "97955439"
 
 1. Чтобы определить, какие данные необходимо экспортировать, выберите категории данных:  
 
-    | Экспорт категории | Описание |
+    | Экспорт категории | Описание: |
     |--|--|
     | **Журналы операционной системы** | Выберите этот параметр, чтобы получить сведения о состоянии операционной системы. |
     | **Журналы установки и обновления** | Выберите этот параметр для изучения параметров конфигурации установки и обновления. |
@@ -283,7 +283,7 @@ ms.locfileid: "97955439"
 
 Список архивных журналов может содержать до пяти элементов. Если число элементов в списке выходит за пределы этого числа, самый ранний элемент удаляется.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Просмотр оповещений](how-to-view-alerts.md)
 

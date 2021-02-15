@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: 1d434697802596a0200dc0cb5f1afe5bc67afef5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c411250f7d850e56c9c54c27e888cba8f3acfece
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379715"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100522212"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Совместная работа с другими авторами и редакторами
 
@@ -25,7 +25,7 @@ ms.locfileid: "100379715"
 * Быстро добавляйте авторов и редакторы ко всем базам знаний в ресурсе, так как управление осуществляется на уровне ресурсов, а не на уровне базы знаний.
 
 > [!NOTE]
-> При выполнении AR обязательно добавьте пользовательский поддомен для ресурса. [Пользовательский поддомен](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) должен присутствовать по умолчанию, но если нет, добавьте его.
+> Обязательно добавьте пользовательский поддомен для ресурса. [Пользовательский поддомен](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) должен присутствовать по умолчанию, но если нет, добавьте его.
 
 ## <a name="access-is-provided-by-a-defined-role"></a>Доступ предоставляется определенной ролью.
 
@@ -38,7 +38,7 @@ ms.locfileid: "100379715"
 > [!div class="mx-imgBorder"]
 > ![На следующей схеме показан поток с точки зрения автора для входа на портал QnA Maker и использования API-интерфейсов разработки.](../media/qnamaker-how-to-collaborate-knowledge-base/rbac-flow-from-portal-to-service.png)
 
-|Шаги|Описание|
+|Шаги|Описание:|
 |--|--|
 |1|Портал получает маркер для ресурса QnA Maker.|
 |2|Портал вызывает соответствующий API QnA Maker создания (APIM), передавая маркер вместо ключей.|
@@ -55,6 +55,6 @@ ms.locfileid: "100379715"
 
 При создании и совместной работе с использованием API-интерфейсов с помощью функций RESTFUL или пакетов SDK необходимо [создать субъект-службу](../../authentication.md#assign-a-role-to-a-service-principal) для управления проверкой подлинности.
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 * Разработка базы знаний для языков и клиентских приложений

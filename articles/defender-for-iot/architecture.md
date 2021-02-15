@@ -1,5 +1,5 @@
 ---
-title: Архитектура решения без агента
+title: Безагентная архитектура решения
 description: Узнайте о защитнике Azure для архитектуры IoT без агента и информационном потоке.
 services: defender-for-iot
 ms.service: defender-for-iot
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/25/2021
 ms.author: shhazam
-ms.openlocfilehash: 1eb939a63edc4abc638dc128af0d9ebbd7241bef
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 28449c4e80e22548d2f727e5ad330ab487528847
+ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809309"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100521906"
 ---
 # <a name="azure-defender-for-iot-architecture"></a>Архитектура защитника Azure для Интернета вещей
 
@@ -116,7 +116,7 @@ ms.locfileid: "99809309"
 
 - Обновление пакетов аналитики угроз
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Вопросы и ответы о защитнике для IoT](resources-frequently-asked-questions.md)
 
