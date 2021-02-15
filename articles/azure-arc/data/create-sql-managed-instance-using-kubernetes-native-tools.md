@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: dde2794e459e9375a231b7792bc1bd5ab21561bf
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: cade888d951c2071f8f40c145e28eed3c3a5d27c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955235"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384254"
 ---
 # <a name="create-azure-sql-managed-instance-using-kubernetes-tools"></a>Создание управляемого экземпляра SQL Azure с помощью средств Kubernetes
 
@@ -45,13 +45,13 @@ data:
   username: <your base64 encoded user name. 'sa' is not allowed>
 kind: Secret
 metadata:
-  name: example-login-secret
+  name: sql1-login-secret
 type: Opaque
 ---
 apiVersion: sql.arcdata.microsoft.com/v1alpha1
 kind: sqlmanagedinstance
 metadata:
-  name: example
+  name: sql1
 spec:
   limits:
     memory: 4Gi
@@ -62,13 +62,7 @@ spec:
   service:
     type: LoadBalancer
   storage:
-    backups:
-      className: default
-      size: 5Gi
     data:
-      className: default
-      size: 5Gi
-    datalogs:
       className: default
       size: 5Gi
     logs:
@@ -107,7 +101,7 @@ echo '<your string to encode here>' | base64
 
 ### <a name="customizing-the-name"></a>Настройка имени
 
-Шаблон имеет значение "example" для атрибута Name.  Его можно изменить, но должны быть символами, которые следуют стандартам DNS-имен.  Необходимо также изменить имя секрета на Match.  Например, если изменить имя управляемого экземпляра SQL на "SQL1", необходимо изменить имя секрета с "example-login-Secret" на "SQL1-login-Secret"
+Шаблон имеет значение "SQL1" для атрибута Name.  Его можно изменить, но должны быть символами, которые следуют стандартам DNS-имен.  Необходимо также изменить имя секрета на Match.  Например, если изменить имя управляемого экземпляра SQL на "sql2", необходимо изменить имя секрета с "SQL1-login-Secret" на "sql2-login-Secret".
 
 ### <a name="customizing-the-resource-requirements"></a>Настройка требований к ресурсам
 
@@ -173,6 +167,6 @@ kubectl describe po/<pod name> --namespace arc
 
 Если у вас возникли роняли с созданием, ознакомьтесь с [руководством по устранению неполадок](troubleshoot-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Подключение к SQL Управляемый экземпляр с включенной службой Arc](connect-managed-instance.md)

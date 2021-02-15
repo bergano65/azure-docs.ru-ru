@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, responsible-ml
-ms.openlocfilehash: ee589aed2b8f3c53d21c1f762a5d2027f3762649
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 322b036fee840db58ed610795155af6c9e1320cc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222774"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366987"
 ---
 # <a name="use-azure-machine-learning-with-the-fairlearn-open-source-package-to-assess-the-fairness-of-ml-models-preview"></a>Использование Машинное обучение Azure с пакетом с открытым исходным кодом Фаирлеарн для оценки распределения моделей машинного обучения (Предварительная версия)
 
@@ -214,10 +214,15 @@ pip install fairlearn==0.4.6
     1. Выберите **эксперименты** на левой панели, чтобы просмотреть список экспериментов, которые вы выполняли на машинное обучение Azure.
     1. Выберите конкретный эксперимент, чтобы просмотреть все запуски в этом эксперименте.
     1. Выберите выполнение, а затем вкладку **равноправие** на панели мониторинга визуализации объяснение.
+    1. После размещения на вкладке **равноправие** щелкните **идентификатор равноправия** в меню справа.
+    1. Настройте панель мониторинга, выбрав секретный атрибут, метрику производительности и метрику равномерного распределения для земли на странице Оценка равноправия.
+    1. Переключите тип диаграммы с одного на другой, чтобы наблюдать за причинами **распределения** и причинами потери **качества обслуживания** .
 
 
-    [![Панель мониторинга равноправия](./media/how-to-machine-learning-fairness-aml/dashboard.png)](./media/how-to-machine-learning-fairness-aml/dashboard.png#lightbox)
+
+    [![Выделение панели мониторинга равноправия](./media/how-to-machine-learning-fairness-aml/dashboard-1.png)](./media/how-to-machine-learning-fairness-aml/dashboard-1.png#lightbox)
     
+    [![Качество обслуживания панели мониторинга равноправия](./media/how-to-machine-learning-fairness-aml/dashboard-2.png)](./media/how-to-machine-learning-fairness-aml/dashboard-2.png#lightbox)
     * **Панель «модели»**
     1. Если вы зарегистрировали исходную модель, выполнив описанные выше действия, можно выбрать **модели** на левой панели, чтобы просмотреть их.
     1. Выберите модель, а затем вкладку **равноправие** , чтобы просмотреть панель мониторинга визуализации пояснения.
@@ -343,7 +348,7 @@ pip install fairlearn==0.4.6
 [![Панель мониторинга Фаирлеарн для сравнения моделей](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png)](./media/how-to-machine-learning-fairness-aml/multi-model-dashboard.png#lightbox)
     
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Дополнительные сведения о равномерном использовании модели](concept-fairness-ml.md)
 

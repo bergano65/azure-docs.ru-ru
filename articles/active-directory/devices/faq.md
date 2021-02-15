@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73946eea846b06b28d0a0f017ea1317c8cc7326d
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 550481b9153d8fe8745d2a745fe6b6f00d09cdb1
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165150"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365826"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -298,7 +298,12 @@ ms.locfileid: "98165150"
 **Конкретного** 
 - Для устройств, зарегистрированных в Windows 10 Azure AD, выберите **Параметры**  >  **учетные записи**  >  **доступ к рабочей или учебной заведению**. Выберите учетную запись и щелкните **Отключить**. Регистрация устройства для каждого профиля пользователя в Windows 10.
 - Для iOS и Android можно использовать **Параметры** приложения Microsoft Authenticator  >  **Регистрация устройства** и выбрать отменить **регистрацию устройства**.
-- Для macOS можно использовать приложение корпоративный портал Microsoft Intune, чтобы отменить регистрацию устройства в управлении и удалить все регистрации. 
+- Для macOS можно использовать приложение Корпоративный портал Microsoft Intune, чтобы отменить регистрацию устройства в управлении и удалить все регистрации. 
+
+Для устройств Windows 10 этот процесс можно автоматизировать с помощью [средства удаления Workplace Join (WPJ)](https://download.microsoft.com/download/8/e/f/8ef13ae0-6aa8-48a2-8697-5b1711134730/WPJCleanUp.zip) .
+
+> [!NOTE]
+> Это средство удаляет все учетные записи единого входа на устройстве. После выполнения этой операции все приложения теряют состояние единого входа, и устройство будет отменено для регистрации в средствах управления (MDM) и отменяется регистрация в облаке. В следующий раз, когда приложение пытается войти в систему, пользователям будет предложено добавить учетную запись еще раз.
 
 ---
 ### <a name="q-how-can-i-block-users-from-adding-additional-work-accounts-azure-ad-registered-on-my-corporate-windows-10-devices"></a>Вопрос. как можно запретить пользователям добавлять дополнительные рабочие учетные записи (зарегистрированные в Azure AD) на моих корпоративных устройствах Windows 10?

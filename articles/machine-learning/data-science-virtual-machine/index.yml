@@ -4,19 +4,18 @@ summary: Виртуальная машина для обработки и ана
 metadata:
   title: Документация по Виртуальной машине для обработки и анализа данных Azure
   description: Виртуальная машина для обработки и анализа данных (DSVM) — это образ виртуальной машины с предварительно загруженными средствами для выполнения соответствующих задач.
-  ms.service: machine-learning
-  ms.subservice: data-science-vm
+  ms.service: data-science-vm
   ms.topic: landing-page
   ms.collection: collection
   author: gvashishtha
   ms.author: gopalv
   ms.date: 09/13/2019
-  ms.openlocfilehash: 6cce3a1c8ec5c330c84009a8c20cbddd769b129c
-  ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+  ms.openlocfilehash: f6f844875d69584052625c33aa8d3d42be2fd2dd
+  ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/20/2020
-  ms.locfileid: "94985779"
+  ms.lasthandoff: 02/14/2021
+  ms.locfileid: "100518476"
 landingContent:
 - title: Начало работы с виртуальной машиной для обработки и анализа данных
   linkLists:

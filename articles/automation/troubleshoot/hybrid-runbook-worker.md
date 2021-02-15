@@ -3,14 +3,16 @@ title: Устранение неполадок гибридной рабочей
 description: В этой статье описано, как устранять неполадки, которые могут возникать для гибридных рабочих ролей Runbook в службе автоматизации Azure.
 services: automation
 ms.subservice: ''
-ms.date: 11/25/2019
+author: mgoedtel
+ms.author: magoedte
+ms.date: 02/11/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 7f034f5043c3cb88ec705b42b06887c5ba56bd6d
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: af432d9c6323bd2328eb8dd84d8572a8a5ae05a7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055337"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388011"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Устранение неполадок с гибридной рабочей ролью runbook
 
@@ -26,9 +28,7 @@ ms.locfileid: "99055337"
 
 Происходит сбой выполнения модуля runbook со следующим сообщением об ошибке.
 
-```error
-"The job action 'Activate' cannot be run, because the process stopped unexpectedly. The job action was attempted three times."
-```
+`The job action 'Activate' cannot be run, because the process stopped unexpectedly. The job action was attempted three times.`
 
 Модуль runbook приостанавливается сразу после третьей попытки выполнения. Некоторые условия могут помешать модулю runbook завершить работу. Соответствующее сообщение об ошибке может не включать дополнительные сведения.
 
@@ -56,13 +56,12 @@ ms.locfileid: "99055337"
 
 Гибридная рабочая роль Runbook получает событие 15011, указывающее, что результат запроса недействителен. Приведенная ниже ошибка возникает, когда рабочая роль пытается открыть подключение к [серверу SignalR](/aspnet/core/signalr/introduction).
 
-```error
-[AccountId={c7d22bd3-47b2-4144-bf88-97940102f6ca}]
+`[AccountId={c7d22bd3-47b2-4144-bf88-97940102f6ca}]
 [Uri=https://cc-jobruntimedata-prod-su1.azure-automation.net/notifications/hub][Exception=System.TimeoutException: Transport timed out trying to connect
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at JobRuntimeData.NotificationsClient.JobRuntimeDataServiceSignalRClient.<Start>d__45.MoveNext()
-```
+`
 
 #### <a name="cause"></a>Причина
 
@@ -96,14 +95,13 @@ ms.locfileid: "99055337"
 
 Модуль Runbook, запущенный в гибридной рабочей роли Runbook, завершается сбоем со следующей ошибкой.
 
-```error
-Connect-AzAccount : No certificate was found in the certificate store with thumbprint 0000000000000000000000000000000000000000
-At line:3 char:1
-+ Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -Appl ...
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Connect-AzAccount], ArgumentException
-    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzAccountCommand
-```
+`Connect-AzAccount : No certificate was found in the certificate store with thumbprint 0000000000000000000000000000000000000000`  
+`At line:3 char:1`  
+`+ Connect-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -Appl ...`  
+`+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`  
+`    + CategoryInfo          : CloseError: (:) [Connect-AzAccount],ArgumentException`  
+`    + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzAccountCommand`
+
 #### <a name="cause"></a>Причина
 
 Эта ошибка возникает при попытке использовать [учетную запись запуска от имени](../automation-security-overview.md#run-as-accounts) в модуле runbook, который выполняется в гибридной рабочей роли Runbook, где отсутствует сертификат учетной записи запуска от имени. У гибридных рабочих ролей Runbook по умолчанию отсутствует локальный ресурс сертификата. Этот ресурс требуется для правильной работы учетной записи запуска от имени.
@@ -118,9 +116,7 @@ At line:3 char:1
 
 На этапе первоначальной регистрации рабочей роли происходит сбой, и появляется следующее сообщение об ошибке (403).
 
-```error
-"Forbidden: You don't have permission to access / on this server."
-```
+`Forbidden: You don't have permission to access / on this server.`
 
 #### <a name="cause"></a>Причина
 
@@ -139,6 +135,37 @@ At line:3 char:1
 Рабочая область Log Analytics и учетная запись службы автоматизации должны находиться в связанном регионе. Список поддерживаемых регионов см. в разделе [Сопоставления службы автоматизации Azure и рабочей области Log Analytics](../how-to/region-mappings.md).
 
 Также может потребоваться изменить дату или часовой пояс компьютера. При выборе настраиваемого диапазона времени убедитесь, что он указан в формате UTC, который может отличаться от местного часового пояса.
+
+### <a name="scenario-set-azstorageblobcontent-fails-on-a-hybrid-runbook-worker"></a><a name="set-azstorageblobcontent-execution-fails"></a>Сценарий: сбой Set-AzStorageBlobContent в гибридной рабочей роли Runbook 
+
+#### <a name="issue"></a>Проблема
+
+При попытке выполнить Runbook происходит сбой `Set-AzStorageBlobContent` , и появляется следующее сообщение об ошибке:
+
+`Set-AzStorageBlobContent : Failed to open file xxxxxxxxxxxxxxxx: Illegal characters in path`
+
+#### <a name="cause"></a>Причина
+
+ Эта ошибка вызвана длительным поведением имени файла для вызовов `[System.IO.Path]::GetFullPath()` , которые добавляют пути UNC.
+
+#### <a name="resolution"></a>Решение
+
+В качестве обходного решения можно создать файл конфигурации с именем `OrchestratorSandbox.exe.config` со следующим содержимым:
+
+```azurecli
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.IO.UseLegacyPathHandling=false" />
+  </runtime>
+</configuration>
+```
+
+Поместите этот файл в ту же папку, где находится исполняемый файл `OrchestratorSandbox.exe` . Например,
+
+`%ProgramFiles%\Microsoft Monitoring Agent\Agent\AzureAutomation\7.3.702.0\HybridAgent`
+
+>[!Note]
+> При обновлении агента этот файл конфигурации будет удален, и его потребуется создать заново.
 
 ## <a name="linux"></a>Linux
 
@@ -192,7 +219,7 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 
 Если в **/var/opt/microsoft/omsconfig/omsconfig.log** присутствует сообщение об ошибке `The specified class does not exist..`, необходимо обновить агент Log Analytics для Linux. Выполните приведенную ниже команду, чтобы повторно установить агент.
 
-```bash
+```Bash
 wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <WorkspaceID> -s <WorkspaceKey>
 ```
 
@@ -267,8 +294,7 @@ Invoke-Command -ComputerName $env:COMPUTERNAME -Credential $Credential
 
 В следующем примере запроса показаны компьютеры в рабочей области и их последние сведения о пульсе:
 
-```loganalytics
-// Last heartbeat of each computer
+```kusto
 Heartbeat
 | summarize arg_max(TimeGenerated, *) by Computer
 ```
@@ -295,9 +321,7 @@ Start-Service -Name HealthService
 
 Вы получаете следующее сообщение при попытке добавить гибридную рабочую роль Runbook с помощью командлета `Add-HybridRunbookWorker`.
 
-```error
-Machine is already registered
-```
+`Machine is already registered`
 
 #### <a name="cause"></a>Причина
 
@@ -315,15 +339,11 @@ Machine is already registered
 
 При попытке добавить гибридную рабочую роль Runbook с помощью скрипта Python появляется следующее сообщение `sudo python /opt/microsoft/omsconfig/.../onboarding.py --register` :
 
-```error
-Unable to register, an existing worker was found. Please deregister any existing worker and try again.
-```
+`Unable to register, an existing worker was found. Please deregister any existing worker and try again.`
 
 Кроме того, попытка отменить регистрацию гибридной рабочей роли Runbook с помощью `sudo python /opt/microsoft/omsconfig/.../onboarding.py --deregister` скрипта Python:
 
-```error
-Failed to deregister worker. [response_status=404]
-```
+`Failed to deregister worker. [response_status=404]`
 
 #### <a name="cause"></a>Причина
 
@@ -331,7 +351,7 @@ Failed to deregister worker. [response_status=404]
 
 #### <a name="resolution"></a>Решение
 
-Для разрешения этой проблемы:
+Чтобы устранить эту проблему, выполните следующие действия.
 
 1. Удалите агент `sudo sh onboard_agent.sh --purge` .
 

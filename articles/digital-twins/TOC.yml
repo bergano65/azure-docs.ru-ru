@@ -52,7 +52,11 @@
             - name: Версия в виде скрипта
               href: how-to-set-up-instance-scripted.md
         - name: Включить частного доступа с помощью Приватного канала
-          href: how-to-enable-private-link.md
+          items:
+            - name: Версия для портала
+              href: how-to-enable-private-link-portal.md
+            - name: Версия интерфейса командной строки
+              href: how-to-enable-private-link-cli.md
         - name: Написание кода проверки подлинности приложения
           href: how-to-authenticate-client.md
         - name: Регистрация приложения
@@ -103,12 +107,16 @@
       items:
         - name: Управление конечными точками и маршрутами
           items:
-            - name: Использование API-интерфейсов и интерфейса командной строки
-              href: how-to-manage-routes-apis-cli.md
             - name: Версия для портала
               href: how-to-manage-routes-portal.md
+            - name: Использование API-интерфейсов и интерфейса командной строки
+              href: how-to-manage-routes-apis-cli.md
         - name: Включение управляемого удостоверения для событий маршрутизации
-          href: how-to-enable-managed-identities.md
+          items:
+            - name: Версия для портала
+              href: how-to-enable-managed-identities-portal.md
+            - name: Версия интерфейса командной строки
+              href: how-to-enable-managed-identities-cli.md
         - name: Интеграция с Azure Maps
           href: how-to-integrate-maps.md
         - name: Интеграция со службой "Аналитика временных рядов Azure"

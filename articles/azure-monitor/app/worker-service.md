@@ -4,12 +4,12 @@ description: Мониторинг приложений .NET Core/. NET Framework
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/11/2020
-ms.openlocfilehash: 155a0963146860431cb44c255e1e1d1aca3ae344
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c1ca594626d4384c9dfb62990ee2017d2094fca4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943878"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371861"
 ---
 # <a name="application-insights-for-worker-service-applications-non-http-applications"></a>Application Insights для приложений службы рабочей роли (приложений, отличных от HTTP)
 
@@ -108,9 +108,9 @@ ms.locfileid: "98943878"
 ```json
     {
         "ApplicationInsights":
-            {
+        {
             "InstrumentationKey": "putinstrumentationkeyhere"
-            },
+        },
         "Logging":
         {
             "LogLevel":
@@ -122,9 +122,9 @@ ms.locfileid: "98943878"
 ```
 
 Кроме того, можно указать ключ инструментирования в любой из следующих переменных среды.
-`APPINSIGHTS_INSTRUMENTATIONKEY` или `ApplicationInsights:InstrumentationKey`
+`APPINSIGHTS_INSTRUMENTATIONKEY` либо `ApplicationInsights:InstrumentationKey`
 
-Пример: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
+Например: `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 НИ `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
 Как правило, `APPINSIGHTS_INSTRUMENTATIONKEY` указывает ключ инструментирования для приложений, развернутых в веб-приложениях в виде веб-заданий.
@@ -522,7 +522,7 @@ using Microsoft.ApplicationInsights.Channel;
     }
 ```
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="how-can-i-track-telemetry-thats-not-automatically-collected"></a>Как можно отвестить данные телеметрии, которые не собираются автоматически?
 
@@ -573,7 +573,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Используйте API](./api-custom-events-metrics.md) для отправки собственных событий и метрик для получения подробного представления о производительности и использовании приложения.
 * [Следите за автоматической](./auto-collect-dependencies.md)отслеживанием дополнительных зависимостей.

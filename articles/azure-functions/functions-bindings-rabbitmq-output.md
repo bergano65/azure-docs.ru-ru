@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: d9e575d68fe4fef607bdf443ece1ddd04f085533
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 1664656f82492e664b7574339893cd688f0a061d
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746462"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097319"
 ---
 # <a name="rabbitmq-output-binding-for-azure-functions-overview"></a>Обзор выходной привязки RabbitMQ для функций Azure
 
@@ -207,7 +207,7 @@ def main(req: func.HttpRequest, outputMessage: func.Out[str]) -> func.HttpRespon
 
 # <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показана функция Java, которая отправляет сообщение в очередь RabbitMQ при активации TimerTrigger каждые 5 минут.
+Следующая функция Java использует `@RabbitMQOutput` аннотацию из [типов Java RabbitMQ](https://mvnrepository.com/artifact/com.microsoft.azure.functions/azure-functions-java-library-rabbitmq) для описания конфигурации для выходной привязки очереди RabbitMQ. Функция отправляет сообщение в очередь RabbitMQ при активации TimerTrigger каждые 5 минут.
 
 ```java
 @FunctionName("RabbitMQOutputExample")

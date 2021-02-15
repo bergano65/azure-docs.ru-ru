@@ -11,12 +11,13 @@ ms.reviewer: larryfr
 ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: e9c691485eb0ec1a0b3c0564f9a8f9a5d2aa255d
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+adobe-target: true
+ms.openlocfilehash: da47967b719b5ce601d8049f54597c207ea732c8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185807"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372040"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>Развертывание моделей машинного обучения в Azure
 
@@ -51,7 +52,7 @@ ms.locfileid: "98185807"
 
 ## <a name="connect-to-your-workspace"></a>Подключение к рабочей области
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
 
 Следуйте указаниям в документации по Azure CLI для [настройки контекста подписки](/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-subscription).
 
@@ -91,7 +92,7 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 
 В следующих примерах показано, как зарегистрировать модель.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
 
 ### <a name="register-a-model-from-an-azure-ml-training-run"></a>Регистрация модели из запуска обучения Azure ML
 
@@ -186,7 +187,7 @@ az ml model register -n onnx_mnist -p mnist/model.onnx
 
 Конфигурация вывода описывает, как настроить веб-службу, содержащую модель. Он используется позже при развертывании модели.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
 
 Минимальная конфигурация вывода может быть записана следующим образом:
 
@@ -239,7 +240,7 @@ inference_config = InferenceConfig(entry_script='path-to-score.py',
 
 ## <a name="define-a-deployment-configuration"></a>Определение конфигурации развертывания
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
 
 Параметры, доступные для конфигурации развертывания, зависят от выбранного целевого объекта вычислений.
 
@@ -273,7 +274,7 @@ from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservic
 
 Теперь вы готовы к развертыванию модели. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
 
 ### <a name="using-a-registered-model"></a>Использование зарегистрированной модели
 
@@ -319,7 +320,7 @@ print(service.state)
 | Переход | Служба находится в процессе развертывания. | Нет |
 | Unhealthy | Служба была развернута, но сейчас недоступна.  | Нет |
 | Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
-| Сбой | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
+| Failed | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
 | Работоспособно | Служба работоспособна, и доступна конечная точка. | Да |
 
 > [!TIP]
@@ -335,7 +336,7 @@ print(service.state)
 
 ## <a name="delete-resources"></a>Удаление ресурсов
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
 
 Чтобы удалить развернутую WebService, используйте `az ml service <name of webservice>` .
 
@@ -352,7 +353,7 @@ print(service.state)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

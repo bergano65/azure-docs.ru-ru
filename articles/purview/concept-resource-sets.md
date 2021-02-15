@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 02/03/2021
-ms.openlocfilehash: e4b48729f13ec0234a7a711032a2db34e55a8bd1
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 39a1400bfe642672ba276686851d4f0edebbeb00
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387858"
 ---
 # <a name="understanding-resource-sets"></a>Сведения о наборах ресурсов
 
@@ -86,19 +86,19 @@ Azure зрения поддерживает следующие шаблоны н
 
 ### <a name="example-1"></a>Пример 1
 
-Полное имя: https://myblob.blob.core.windows.net/sample-data/name-of-spark-output/{SparkPartitions}
+Полное имя: `https://myblob.blob.core.windows.net/sample-data/name-of-spark-output/{SparkPartitions}`
 
 Отображаемое имя: "имя выхода Spark"
 
 ### <a name="example-2"></a>Пример 2
 
-Полное имя: https://myblob.blob.core.windows.net/my-partitioned-data/{Year}-{Month}-{Day}/{N}-{N}-{N}-{N}/{GUID}
+Полное имя: `https://myblob.blob.core.windows.net/my-partitioned-data/{Year}-{Month}-{Day}/{N}-{N}-{N}-{N}/{GUID}`
 
 Отображаемое имя: "Мои секционированные данные"
 
 ### <a name="example-3"></a>Пример 3
 
-Полное имя: https://myblob.blob.core.windows.net/sample-data/data{N}.csv
+Полное имя: `https://myblob.blob.core.windows.net/sample-data/data{N}.csv`
 
 Отображаемое имя: "данные"
 

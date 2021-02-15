@@ -1,31 +1,27 @@
 ---
 title: Автоматизация установки локальной среды выполнения интеграции с помощью локальных сценариев PowerShell
 description: Автоматизация установки локальной среды выполнения интеграции на локальные компьютеры.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: nabhishek
 ms.author: abnarain
-manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 05/09/2020
-ms.openlocfilehash: 36414c975e97dbaa7d8747da98c31eeb12fbc206
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8cbe54a23cb1c8b55afd86a18b51c0e392c3f78a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636975"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376213"
 ---
 # <a name="automating-self-hosted-integration-runtime-installation-using-local-powershell-scripts"></a>Автоматизация установки локальной среды выполнения интеграции с помощью локальных сценариев PowerShell
 Чтобы автоматизировать установку локальной среды выполнения интеграции на локальные компьютеры (не на виртуальных машинах Azure, где можно использовать шаблон Resource Manager), можно воспользоваться локальными сценариями PowerShell. В этой статье представлены два сценария, которые можно использовать.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Запустите PowerShell на локальном компьютере. Для запуска сценариев потребуется выбрать команду **Запуск от имени администратора** .
+* Запустите PowerShell на локальном компьютере. Для запуска сценариев потребуется выбрать команду **Запуск от имени администратора**.
 * [Скачайте](https://www.microsoft.com/download/details.aspx?id=39717) программное обеспечение локальной среды выполнения интеграции. Скопируйте путь к скачанному файлу. 
-* Также потребуется **ключ проверки подлинности** , чтобы зарегистрировать локальную среду выполнения интеграции.
+* Также потребуется **ключ проверки подлинности**, чтобы зарегистрировать локальную среду выполнения интеграции.
 * Для автоматизации обновлений, выполняемых вручную, необходима предварительно настроенная локальная среда выполнения интеграции.
 
 ## <a name="scripts-introduction"></a>Общие сведения о сценариях 
@@ -38,13 +34,13 @@ ms.locfileid: "92636975"
 
 * Для автоматизации обновлений, выполняемых вручную: обновите узел локальной среды IR до определенной версии или до актуальной версии с помощью сценария **[script-update-gateway.ps1](https://github.com/nabhishek/SelfHosted-IntegrationRuntime_AutomationScripts/blob/master/script-update-gateway.ps1)** . Он также поддерживается в случае, если вы отключили автоматическое обновление или хотите получить больший контроль над обновлениями. Сценарий можно использовать для обновления узла локальной среды выполнения интеграции до актуальной версии или до указанной более поздней версии (переход на использование более ранней версии не поддерживается). Он принимает аргумент для указания номера версии (пример: -version 3.13.6942.1). Если версия не указана, локальная среда IR всегда обновляется до последней версии, найденной в [загрузках](https://www.microsoft.com/download/details.aspx?id=39717).
     > [!NOTE]
-    > Можно указать только последние 3 версии. В идеале сценарий используется для обновления существующего узла до актуальной версии. **ПРЕДПОЛАГАЕТСЯ, ЧТО У ВАС ЕСТЬ ЗАРЕГИСТРИРОВАННАЯ ЛОКАЛЬНАЯ СРЕДА IR** . 
+    > Можно указать только последние 3 версии. В идеале сценарий используется для обновления существующего узла до актуальной версии. **ПРЕДПОЛАГАЕТСЯ, ЧТО У ВАС ЕСТЬ ЗАРЕГИСТРИРОВАННАЯ ЛОКАЛЬНАЯ СРЕДА IR**. 
 
 ## <a name="usage-examples"></a>Примеры использования
 
 ### <a name="for-automating-setup"></a>Для автоматизации установки
 1. Скачайте локальную среду IR, которая находится [здесь](https://www.microsoft.com/download/details.aspx?id=39717). 
-1. Укажите путь к расположению скачанного файла SHIR MSI (файл установки). Например, если путь *C:\Users\username\Downloads\IntegrationRuntime_4.7.7368.1.msi* , то для этой задачи можно использовать следующий пример для командной строки PowerShell:
+1. Укажите путь к расположению скачанного файла SHIR MSI (файл установки). Например, если путь *C:\Users\username\Downloads\IntegrationRuntime_4.7.7368.1.msi*, то для этой задачи можно использовать следующий пример для командной строки PowerShell:
 
    ```powershell
    PS C:\windows\system32> C:\Users\username\Desktop\InstallGatewayOnLocalMachine.ps1 -path "C:\Users\username\Downloads\IntegrationRuntime_4.7.7368.1.msi" -authKey "[key]"
@@ -57,7 +53,7 @@ ms.locfileid: "92636975"
 
 1. Если на компьютере имеется одна предварительно установленная локальная среда IR, сценарий автоматически удаляет ее, а затем настраивает новую. Появится следующее окно: ![настройка среды выполнения интеграции](media/self-hosted-integration-runtime-automation-scripts/integration-runtime-configure.png)
 
-1. После завершения установки и регистрации ключа в локальной оболочке PowerShell отобразятся сообщения *Succeed to install gateway* и *Succeed to register gateway* , свидетельствующие об успешной установке и регистрации шлюза.
+1. После завершения установки и регистрации ключа в локальной оболочке PowerShell отобразятся сообщения *Succeed to install gateway* и *Succeed to register gateway*, свидетельствующие об успешной установке и регистрации шлюза.
         [![результат выполнения сценария 1](media/self-hosted-integration-runtime-automation-scripts/script-1-run-result.png)](media/self-hosted-integration-runtime-automation-scripts/script-1-run-result.png#lightbox)
 
 ### <a name="for-automating-manual-updates"></a>Для автоматизации обновлений, выполняемых вручную

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 037e7fd13f55a0f5de939197f71324221392bd55
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: bc548d4cc728611387b36451d563be6ca0e21530
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601070"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388198"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -116,6 +116,21 @@ ms.locfileid: "98601070"
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseFetchAndPrint":::
 
+## <a name="update-relationships"></a>Обновить связи
+
+Связи обновляются с помощью `UpdateRelationship` метода. 
+
+>[!NOTE]
+>Этот метод предназначен для обновления **свойств** связи. Если необходимо изменить исходный двойника или целевой двойника связи, необходимо [Удалить связь](#delete-relationships) и [создать ее повторно](#create-relationships) с помощью нового двойников.
+
+Обязательные параметры для клиентского вызова — это идентификатор источника двойника (двойника, где исходит связь), идентификатор связи для обновления и документ [исправления JSON](http://jsonpatch.com/) , содержащий свойства и новые значения, которые необходимо обновить.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UpdateRelationshipMethod":::
+
+Ниже приведен пример вызова этого метода, который передает документ исправления JSON со сведениями для обновления свойства.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseUpdateRelationship":::
+
 ## <a name="delete-relationships"></a>Удаление связей
 
 Первый параметр указывает исходный двойника (двойника, где исходит связь). Другой параметр — идентификатор связи. Вам потребуется идентификатор двойника и идентификатор связи, так как идентификаторы связей уникальны только в пределах области двойника.
@@ -137,7 +152,7 @@ ms.locfileid: "98601070"
 Перед запуском образца выполните следующие действия.
 1. Скачайте файлы модели, поместите их в свой проект и замените `<path-to>` заполнители в приведенном ниже коде, чтобы сообщить программе, где их можно найти.
 2. Замените заполнитель `<your-instance-hostname>` именем узла своего экземпляра цифрового двойников Azure.
-3. Добавьте в проект две зависимости, которые понадобятся для работы с Azure Digital двойников. Первый — это пакет для пакета [SDK Azure Digital двойников для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), второй предоставляет средства для проверки подлинности в Azure.
+3. Добавьте в проект две зависимости, которые понадобятся для работы с Azure Digital двойников. Первая — это пакет для [пакета SDK Azure Digital Twins для .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), вторая содержит средства для проверки подлинности в Azure.
 
       ```cmd/sh
       dotnet add package Azure.DigitalTwins.Core
@@ -168,8 +183,8 @@ ms.locfileid: "98601070"
 
 |  Идентификатор модели    | Идентификатор двойника (должен быть уникальным) | Имя связи  | Идентификатор целевого двойника  | Данные инициализации двойника |
 | --- | --- | --- | --- | --- |
-| дтми: пример: Floor; 1    | Floor1 | contains | Room1 | |
-| дтми: пример: Floor; 1    | Floor0 | contains | Room0 | |
+| дтми: пример: Floor; 1    | Floor1 | содержит | Room1 | |
+| дтми: пример: Floor; 1    | Floor0 | содержит | Room0 | |
 | дтми: пример: комната; 1    | Room1 | | | {"Температура": 80} |
 | дтми: пример: комната; 1    | Room0 | | | {"Температура": 70} |
 

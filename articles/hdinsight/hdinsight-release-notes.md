@@ -5,12 +5,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: f6b7000812f1adfe6ff7bd93711c9b8fe4ff9adc
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 1a0b1a0400ae3d43817921e8a336421aee35ccd6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988370"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378151"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -49,7 +49,8 @@ Azure HDInsight является одной из самых популярных
 
 
 ### <a name="breaking-change-for-net-for-apache-spark-100"></a>Критическое изменение для .NET для Apache Spark 1.0.0
-В HDInsight появился первый основной официальный выпуск .NET для Apache Spark в следующем выпуске. Он обеспечивает полноту API кадров данных для Spark 2.4. x и Spark 3.0. x вместе с другими функциями. В этой основной версии будут внесены критические изменения. Дополнительные сведения о шагах, необходимых для обновления кода и конвейеров, см. в [этом руководстве по миграции](https://github.com/dotnet/spark/blob/master/docs/migration-guide.md#upgrading-from-microsoftspark-0x-to-10) . Дополнительные сведения см. [здесь](https://docs.microsoft.com/azure/hdinsight/spark/spark-dotnet-version-update#using-net-for-apache-spark-v10-in-hdinsight).
+В последнем выпуске HDInsight представляет собой первую официальную версию 1.0.0 библиотеки [".NET для Apache Spark"](https://github.com/dotnet/spark) . Он обеспечивает полноту API кадров данных для Spark 2.4. x и Spark 3.0. x вместе с [другими функциями](https://github.com/dotnet/spark/blob/master/docs/release-notes/1.0.0/release-1.0.0.md). В этой основной версии будут внесены критические изменения. Дополнительные сведения о шагах, необходимых для обновления кода и конвейеров, см. в [руководстве по миграции .NET для Apache Spark](https://github.com/dotnet/spark/blob/master/docs/migration-guide.md#upgrading-from-microsoftspark-0x-to-10) . Дополнительные сведения см. в руководстве по [.NET для Apache Spark v 1.0 в Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/spark-dotnet-version-update#using-net-for-apache-spark-v10-in-hdinsight).
+
 
 ## <a name="upcoming-changes"></a>Предстоящие изменения
 В предстоящих выпусках будут внесены описанные ниже изменения.
@@ -68,4 +69,3 @@ HDInsight постоянно повышает надежность и произ
 
 ## <a name="component-version-change"></a>Изменение версий компонентов
 В этом выпуска не вносилось изменений в версии компонентов. Текущие версии компонентов для HDInsight 4,0 и HDInsight 3,6 можно найти в [этом документе](./hdinsight-component-versioning.md).
-

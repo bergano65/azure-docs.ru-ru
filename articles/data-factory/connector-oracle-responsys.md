@@ -1,22 +1,18 @@
 ---
 title: Копирование данных из Oracle Респонсис (Предварительная версия)
 description: Узнайте, как копировать данные из Oracle Responsys в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.openlocfilehash: cde0e2d118490801aeee3874e220d298fea24598
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 334af18b068f247d9566d6be926632b9f9670e6e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81416835"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368427"
 ---
 # <a name="copy-data-from-oracle-responsys-using-azure-data-factory-preview"></a>Копирование данных из Oracle Responsys с помощью фабрики данных Azure (предварительная версия)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]

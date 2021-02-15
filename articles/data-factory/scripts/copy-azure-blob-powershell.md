@@ -1,21 +1,18 @@
 ---
 title: Копирование данных в облако с помощью PowerShell
 description: С помощью скрипта PowerShell можно копировать данные из одного расположения в другое в хранилище BLOB-объектов Azure.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: article
 ms.custom: seo-lt-2019
 ms.date: 03/12/2020
-ms.openlocfilehash: 9550556aa022a9211072fd4c5fb18acb4ee7882e
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 169420aee32a49549a71746708bd8377a4c63b5d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637995"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370297"
 ---
 # <a name="use-powershell-to-create-a-data-factory-pipeline-to-copy-data-in-the-cloud"></a>Создание конвейера фабрики данных для копирования данных в облаке с помощью PowerShell
 
@@ -26,7 +23,7 @@ ms.locfileid: "92637995"
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
-* **Учетная запись хранения Azure.** Хранилище BLOB-объектов используется как хранилища данных, являющиеся **источником** и **приемником** . Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом о [создании учетной записи хранения](../../storage/common/storage-account-create.md). 
+* **Учетная запись хранения Azure.** Хранилище BLOB-объектов используется как хранилища данных, являющиеся **источником** и **приемником**. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом о [создании учетной записи хранения](../../storage/common/storage-account-create.md). 
 * Создайте **контейнер больших двоичных объектов** в хранилище BLOB-объектов, в контейнере создайте входную **папку** и отправьте несколько файлов в нее. Такие средства, как [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/), можно использовать для подключения к Хранилищу BLOB-объектов Azure, создания контейнера BLOB-объектов, отправки входных файлов и проверки выходных.
 
 ## <a name="sample-script"></a>Пример скрипта
