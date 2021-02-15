@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, sneshaf, pinath, logicappspm
 ms.topic: conceptual
 ms.date: 01/20/2021
-ms.openlocfilehash: 2192ae5f3de551cb8ff2b6c36e233804c3c56bf1
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: a90f75db6961ea06b1cf9c2958556c1c2ef24805
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633253"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380140"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Automate и их развертывание в Azure Logic Apps
 
@@ -24,7 +24,7 @@ ms.locfileid: "98633253"
 >
 > * Чтобы узнать, какие соединители Power автоматизировать не имеют Logic Apps эквивалентов, см. раздел [Power автоматизиру Connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors).
 >
-> * Чтобы узнать, какие соединители Logic Apps не имеют эквивалентов Power автоматизировать, см. раздел [Logic Apps Connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors).
+> * Чтобы узнать, какие соединители Logic Apps не имеют эквивалентов Power автоматизировать, см. раздел [Logic Apps Connectors](/connectors/connector-reference/connector-reference-logicapps-connectors).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -174,7 +174,7 @@ ms.locfileid: "98633253"
 
 Дополнительные сведения об этих шагах развертывания см [. в разделе Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio.](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-to-Azure)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [соединителях для Azure Logic Apps](../connectors/apis-list.md)
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

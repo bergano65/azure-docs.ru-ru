@@ -1,22 +1,18 @@
 ---
 title: Выполнение конвейера и триггеры в фабрике данных Azure
 description: В этой статье объясняется, как выполнить конвейер в фабрике данных Azure по запросу или путем создания триггера.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/05/2018
-ms.openlocfilehash: e46b08e31725765d700bf41649d997d7b20e5f95
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: bd36b589424a0d890fc5e1bbab3f234e9b3264c6
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065496"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374785"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Выполнение конвейера и триггеры в фабрике данных Azure
 
@@ -283,10 +279,10 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 | Свойство JSON | Type | Обязательно | Значение по умолчанию | Допустимые значения | Пример |
 | --- | --- | --- | --- | --- | --- |
-| **startTime** | строка | Да | Нет | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **шаблон** | object | Да | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **пределах** | number | Нет | 1 | От 1 до 1000 | `"interval":10` |
-| **Завершения** | строка | Да | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **startTime** | строка | Да | None | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **шаблон** | object | Да | None | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **пределах** | число | Нет | 1 | От 1 до 1000 | `"interval":10` |
+| **Завершения** | строка | Да | None | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
 | **Расписание** | object | Нет | None | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
@@ -384,7 +380,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 | **Системные переменные** | Вместе с @trigger (). счедуледтиме и @trigger (). StartTime также поддерживает использование системных переменных **WindowStart** и **WindowEnd** . Пользователи могут получить доступ к `trigger().outputs.windowStartTime` и `trigger().outputs.windowEndTime` как к системным переменным триггера в определении триггера. Значения используются как время начала и окончания окна соответственно. Например, для триггера "переворачивающегося" окна, выполняющегося каждый час, в окне от 1:00 до 2:00 определением является `trigger().outputs.windowStartTime = 2017-09-01T01:00:00Z` и `trigger().outputs.windowEndTime = 2017-09-01T02:00:00Z`. | Поддерживаются только @trigger переменные Default (). счедуледтиме и @trigger (). StartTime. |
 | **Связь конвейера и триггера** | Поддерживает связь "один к одному". Вы можете активировать только один конвейер. | Поддерживает связи "многие ко многим" Несколько триггеров могут запускать один конвейер. Один триггер может запускать несколько конвейеров. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими руководствами:
 
 - [Создание фабрики данных и конвейера с помощью пакета SDK .NET](quickstart-create-data-factory-dot-net.md)

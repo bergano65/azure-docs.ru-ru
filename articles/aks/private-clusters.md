@@ -4,12 +4,12 @@ description: Узнайте, как создать частный кластер
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 2749e66375fbd808a9e87f252a813f1054ceff21
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: d3b53c860c150b5b67d38cf5d11db9f070ffb81d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99525574"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392805"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Создание частного кластера Службы Azure Kubernetes
 
@@ -66,7 +66,7 @@ az aks create \
 > [!NOTE]
 > Если адрес CIDR моста Docker (172.17.0.1/16) конфликтует с подсетью CIDR, измените его соответствующим образом.
 
-## <a name="configure-private-dns-zone"></a>Настройка зоны Частная зона DNS
+## <a name="configure-private-dns-zone"></a>Настройка зоны Частная зона DNS 
 
 Для настройки зоны Частная зона DNS можно использовать следующие параметры.
 
@@ -79,7 +79,7 @@ az aks create \
 * Предварительная версия AKS версии 0.4.71 или более поздней
 * API версии 2020-11-01 или более поздней
 
-### <a name="create-a-private-aks-cluster-with-private-dns-zone"></a>Создание частного кластера AKS с зоной Частная зона DNS
+### <a name="create-a-private-aks-cluster-with-private-dns-zone-preview"></a>Создание частного кластера AKS с зоной Частная зона DNS (Предварительная версия)
 
 ```azurecli-interactive
 az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone [none|system|custom private dns zone ResourceId]

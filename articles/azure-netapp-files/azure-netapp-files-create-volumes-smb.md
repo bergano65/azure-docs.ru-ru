@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: b-juche
-ms.openlocfilehash: 48ee05eebd91c60fa2cfecc80898d3be54367269
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 7c5f18d33efa1838fccab3935054ea19227bc06c
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762684"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102858"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
@@ -326,5 +326,6 @@ Azure NetApp Files поддерживает создание томов с по�
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
 * [Часто задаваемые вопросы о SMB](./azure-netapp-files-faqs.md#smb-faqs)
+* [Устранение неполадок в томах с протоколом SMB или с двумя протоколами](troubleshoot-dual-protocol-volumes.md)
 * [Узнайте об интеграции виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md)
 * [Установка нового леса Active Directory с помощью Azure CLI](/windows-server/identity/ad-ds/deploy/virtual-dc/adds-on-azure-vm)

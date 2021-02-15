@@ -3,17 +3,17 @@ title: 'Задайте вопрос: можно ответить на студи
 description: Узнайте, как формулировать точные вопросы обработки и анализа данных. В этом вам поможет видео 3 из цикла "Обработка и анализ данных для начинающих". Включает сравнение вопросов классификации и регрессии.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: conceptual
 author: sdgilley
 ms.author: sgilley
 ms.date: 03/22/2019
-ms.openlocfilehash: dbac7c8818300ffb09959969e6b79f949177f457
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2ff440801db7ba8c5bfc1785fc7a399a1d773b73
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307670"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517031"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Задайте вопрос, на который можно ответить с помощью данных
 ## <a name="video-3-data-science-for-beginners-series"></a>Видео 3. Обработка и анализ данных для начинающих
@@ -89,6 +89,6 @@ ms.locfileid: "93307670"
 
 Обязательно ознакомьтесь с другими видеоматериалами, приведенными в подСтудия машинного обучения Microsoft Azure (классическая модель обработки данных для начинающих).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](../overview-what-is-azure-ml.md)

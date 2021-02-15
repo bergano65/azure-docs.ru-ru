@@ -1,14 +1,14 @@
 ---
-title: Управление миграцией проектов в Azure с помощью Azure Лигхсаусе
+title: Управление миграцией проектов в Azure с масштабированием
 description: Узнайте, как эффективно использовать миграцию Azure в отношении делегированных ресурсов клиентов.
 ms.date: 01/29/2021
 ms.topic: how-to
-ms.openlocfilehash: 8e8ba21881ea5dad36ae640632b6307cd9a22a73
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: ed2fc8ae1a3b87a3b2501c3a390fe7a1822003e4
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99093614"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393587"
 ---
 # <a name="manage-azure-migrate-projects-at-scale-with-azure-lighthouse"></a>Управление миграцией проектов в Azure с помощью Azure Лигхсаусе
 
@@ -76,7 +76,7 @@ Azure Lighthouse позволяет поставщикам служб выпол
 
 Дополнительные сведения см. в статье [Привязка идентификатора партнера для отслеживания влияния на переданные ресурсы](partner-earned-credit.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [службе "миграция Azure](../../migrate/migrate-services-overview.md)".
 - Узнайте о других возможностях [управления между клиентами](../concepts/cross-tenant-management-experience.md) , поддерживаемых Azure лигхсаусе.

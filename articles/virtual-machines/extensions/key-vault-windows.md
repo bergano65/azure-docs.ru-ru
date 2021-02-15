@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: e1a9f5d08168841d7651a17e2de4995b7a7cf38b
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: f7c8a7eb06490a46e1c5b633944dcd596fa08515
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820727"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093630"
 ---
 # <a name="key-vault-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Key Vault для Windows
 
@@ -26,7 +26,7 @@ ms.locfileid: "99820727"
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012
+- Windows Server 2012
 
 Расширение Key Vault VM также поддерживается на пользовательской локальной виртуальной машине, которая передается и преобразуется в специализированный образ для использования в Azure с помощью установки Windows Server 2019 Core.
 
@@ -35,25 +35,31 @@ ms.locfileid: "99820727"
 - PKCS #12
 - PEM
 
-## <a name="prerequisities"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
+
   - Key Vault экземпляр с сертификатом. См. раздел [создание Key Vault](../../key-vault/general/quick-create-portal.md)
   - Виртуальная машина должна иметь назначенное [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md)
   - Политика доступа Key Vault должна быть установлена с секретами `get` и `list` разрешениями на управляемое удостоверение VM/VMSS для получения части сертификата, относящейся к секрету. См. статью [Проверка подлинности в Key Vault](../../key-vault/general/authentication.md) и [назначение политики доступа Key Vault](../../key-vault/general/assign-access-policy-cli.md).
-  -  VMSS должен иметь следующий параметр Identity: ` 
+  -  Масштабируемые наборы виртуальных машин должны иметь следующие параметры идентификации:
+
+  ``` 
   "identity": {
-  "type": "UserAssigned",
-  "userAssignedIdentities": {
-  "[parameters('userAssignedIdentityResourceId')]": {}
+    "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "[parameters('userAssignedIdentityResourceId')]": {}
+    }
   }
-  }
-  `
+  ```
   
-- Расширение AKV должно иметь этот параметр: `
-                  "authenticationSettings": {
-                    "msiEndpoint": "[parameters('userAssignedIdentityEndpoint')]",
-                    "msiClientId": "[reference(parameters('userAssignedIdentityResourceId'), variables('msiApiVersion')).clientId]"
-                  }
-   `
+  - Расширение AKV должно иметь этот параметр:
+
+  ```
+  "authenticationSettings": {
+    "msiEndpoint": "[parameters('userAssignedIdentityEndpoint')]",
+    "msiClientId": "[reference(parameters('userAssignedIdentityResourceId'), variables('msiApiVersion')).clientId]"
+  }
+  ```
+
 ## <a name="extension-schema"></a>Схема расширения
 
 В следующем JSON-файле показана схема для расширения виртуальной машины Key Vault. Для расширения не требуются защищенные параметры. все его параметры считаются общедоступными сведениями. Для расширения требуется список отслеживаемых сертификатов, периодичность опроса и хранилище сертификатов назначения. В частности:  
@@ -164,7 +170,9 @@ Key Vaultное расширение виртуальной машины под�
     ...
 }
 ```
-> Метим Использование этой функции несовместимо с шаблоном ARM, который создает удостоверение, назначенное системой, и обновляет политику Key Vaultного доступа с этим удостоверением. Это приведет к взаимоблокировке, так как политика доступа к хранилищу невозможно обновить до тех пор, пока не будут запущены все расширения. Вместо этого следует использовать *одно назначенное пользователем удостоверение MSI* и предварительно список ACL для хранилищ с этим удостоверением перед развертыванием.
+
+> [!Note] 
+> Использование этой функции несовместимо с шаблоном ARM, который создает удостоверение, назначенное системой, и обновляет политику Key Vaultного доступа с этим удостоверением. Это приведет к взаимоблокировке, так как политика доступа к хранилищу невозможно обновить до тех пор, пока не будут запущены все расширения. Вместо этого следует использовать *одно назначенное пользователем удостоверение MSI* и предварительно список ACL для хранилищ с этим удостоверением перед развертыванием.
 
 ## <a name="azure-powershell-deployment"></a>Развертывание с помощью Azure PowerShell
 > [!WARNING]
@@ -222,9 +230,9 @@ Azure PowerShell можно использовать для развертыва
     
     ```azurecli
        # Start the deployment
-         az vm extension set --name "KeyVaultForWindows" `
+         az vm extension set -name "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
-         --resource-group "<resourcegroup>" `
+         -resource-group "<resourcegroup>" `
          --vm-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCert1> \", \" <observedCert2> \"] }}'
     ```
@@ -233,9 +241,9 @@ Azure PowerShell можно использовать для развертыва
 
    ```azurecli
         # Start the deployment
-        az vmss extension set --name "KeyVaultForWindows" `
+        az vmss extension set -name "KeyVaultForWindows" `
          --publisher Microsoft.Azure.KeyVault `
-         --resource-group "<resourcegroup>" `
+         -resource-group "<resourcegroup>" `
          --vmss-name "<vmName>" `
          --settings '{\"secretsManagementSettings\": { \"pollingIntervalInS\": \"<pollingInterval>\", \"certificateStoreName\": \"<certStoreName>\", \"certificateStoreLocation\": \"<certStoreLoc>\", \"observedCertificates\": [\" <observedCert1> \", \" <observedCert2> \"] }}'
     ```

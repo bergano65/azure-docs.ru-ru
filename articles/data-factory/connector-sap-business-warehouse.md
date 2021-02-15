@@ -1,23 +1,18 @@
 ---
 title: Копирование данных из SAP BW
 description: Узнайте, как копировать данные из SAP Business Warehouse на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/04/2019
-ms.openlocfilehash: 86d4f82b70a6b6b3ceed262cf96fa291e26dd53c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a5eb7c8d729fc0c3b95a61a4b8dbc8266d1eec3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87534385"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386668"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -50,7 +45,7 @@ ms.locfileid: "87534385"
 Чтобы использовать этот соединитель SAP Business Warehouse, сделайте следующее:
 
 - Настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
-- Установите **библиотеку SAP NetWeaver** на компьютере среды выполнения интеграции. Библиотеку SAP Netweaver можно получить у администратора SAP или непосредственно на странице [SAP Software Download Center](https://support.sap.com/swdc) (Центр загрузки программного обеспечения SAP). Найдите **примечание к SAP № 1025361**, чтобы узнать адрес для скачивания самой последней версии. Убедитесь, что выбрана **64-разрядная** Библиотека SAP NetWeaver, соответствующая установке Integration Runtime. Установите все файлы, включенные в состав пакета SDK RFC для SAP NetWeaver, согласно примечанию к SAP. Библиотека SAP NetWeaver также включена в состав клиентских инструментов SAP.
+- Установите **библиотеку SAP NetWeaver** на компьютере среды выполнения интеграции. Библиотеку SAP NetWeaver можно получить у администратора SAP или непосредственно в [центре загрузки программного обеспечения SAP](https://support.sap.com/swdc). Найдите **примечание к SAP № 1025361**, чтобы узнать адрес для скачивания самой последней версии. Убедитесь, что выбрана **64-разрядная** Библиотека SAP NetWeaver, соответствующая установке Integration Runtime. Установите все файлы, включенные в состав пакета SDK RFC для SAP NetWeaver, согласно примечанию к SAP. Библиотека SAP NetWeaver также включена в состав клиентских инструментов SAP.
 
 >[!TIP]
 >Чтобы устранить неполадки с подключением к SAP BW, проверьте следующее:
@@ -182,26 +177,26 @@ ms.locfileid: "87534385"
 |:--- |:--- |
 | ACCP | Int |
 | CHAR | Строка |
-| CLNT | Строковый тип |
-| CURR | Десятичный тип |
-| CUKY | Строковый тип |
-| DEC | Десятичный тип |
+| CLNT | Строка |
+| CURR | Decimal |
+| CUKY | Строка |
+| DEC | Decimal |
 | FLTP | Double |
 | INT1 | Byte |
 | INT2 | Int16 |
 | INT4 | Int |
-| LANG | Строковый тип |
-| LCHR | Строковый тип |
+| LANG | Строка |
+| LCHR | Строка |
 | LRAW | Byte[] |
 | PREC | Int16 |
-| QUAN | Десятичный тип |
+| QUAN | Decimal |
 | RAW | Byte[] |
 | RAWSTRING | Byte[] |
-| STRING | Строковый тип |
-| ЕДИНИЦА ИЗМЕРЕНИЯ | Строковый тип |
-| DATS | Строковый тип |
-| NUMC | Строковый тип |
-| TIMS | Строковый тип |
+| STRING | Строка |
+| ЕДИНИЦА ИЗМЕРЕНИЯ | Строка |
+| DATS | Строка |
+| NUMC | Строка |
+| TIMS | Строка |
 
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

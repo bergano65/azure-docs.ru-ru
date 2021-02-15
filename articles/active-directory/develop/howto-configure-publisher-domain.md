@@ -13,12 +13,12 @@ ms.date: 07/23/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
-ms.openlocfilehash: d793ed912af1c6fdd6e0da417b8709cad8bf08b9
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 9b3840ffb39a204cfa24dcb0430f20ac16587582
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013640"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104184"
 ---
 # <a name="how-to-configure-an-applications-publisher-domain"></a>Как настроить домен издателя приложения
 
@@ -48,18 +48,12 @@ ms.locfileid: "98013640"
 
 Чтобы задать домен издателя приложения, выполните следующие действия.
 
-1. Войдите в <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a> с помощью рабочей или учебной учетной записи или личного учетная запись Майкрософт.
-
-1. Если ваша учетная запись присутствует в нескольких клиентах Azure AD:
-   1. Выберите свой профиль в меню в правом верхнем углу страницы, а затем **Переключение каталога**.
-   1. Измените сеанс на арендатор Azure AD, в котором нужно создать приложение.
-
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
+1. Если у вас есть доступ к нескольким клиентам, используйте фильтр **каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: в верхнем меню, чтобы выбрать Клиент, на котором зарегистрировано приложение.
 1. Перейдите к [Azure Active Directory > регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , чтобы найти и выбрать приложение, которое требуется настроить.
 
    Выбрав приложение, вы увидите страницу **обзора** приложения.
-
-1. На странице **Обзор** приложения выберите раздел **фирменная символика** .
-
+1. В разделе **Управление** выберите **фирменную символику**.
 1. Найдите поле **домен издателя** и выберите один из следующих вариантов:
 
    - Выберите **настроить домен** , если вы еще не настроили домен.

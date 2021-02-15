@@ -8,12 +8,12 @@ ms.date: 08/14/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 4af63421e831318e6250825cffd1abad415b85bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c24fd42f866cd15f84688318050bc07d5ad235e9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91447839"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100384662"
 ---
 # <a name="give-modules-access-to-a-devices-local-storage"></a>Предоставление модулям доступа к локальному хранилищу устройства
 
@@ -36,7 +36,7 @@ ms.locfileid: "91447839"
 "systemModules": {
     "edgeAgent": {
         "settings": {
-            "image": "mcr.microsoft.com/azureiotedge-agent:1.0",
+            "image": "mcr.microsoft.com/azureiotedge-agent:1.1",
             "createOptions": {
                 "HostConfig": {
                     "Binds":["<HostStoragePath>:<ModuleStoragePath>"]
@@ -52,7 +52,7 @@ ms.locfileid: "91447839"
     },
     "edgeHub": {
         "settings": {
-            "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+            "image": "mcr.microsoft.com/azureiotedge-hub:1.1",
             "createOptions": {
                 "HostConfig": {
                     "Binds":["<HostStoragePath>:<ModuleStoragePath>"],
@@ -72,7 +72,7 @@ ms.locfileid: "91447839"
 
 Замените `<HostStoragePath>` и на `<ModuleStoragePath>` путь к хранилищу узла и модуля; оба значения должны быть абсолютным путем.
 
-Например, в системе Linux это означает, `"Binds":["/etc/iotedge/storage/:/iotedge/storage/"]` что каталог **/ЕТК/иотедже/стораже** в главной системе сопоставляется с каталогом **/иотедже/стораже/** в контейнере. В системе Windows в качестве другого примера означает, `"Binds":["C:\\temp:C:\\contemp"]` что каталог **c: \\ TEMP** в системе размещения сопоставлен с каталогом **c: \\ ** в контейнере.
+Например, в системе Linux это означает, `"Binds":["/etc/iotedge/storage/:/iotedge/storage/"]` что каталог **/ЕТК/иотедже/стораже** в главной системе сопоставляется с каталогом **/иотедже/стораже/** в контейнере. В системе Windows в качестве другого примера означает, `"Binds":["C:\\temp:C:\\contemp"]` что каталог **c: \\ TEMP** в системе размещения сопоставлен с каталогом **c: \\** в контейнере.
 
 Кроме того, на устройствах Linux убедитесь, что профиль пользователя модуля имеет необходимые разрешения на чтение, запись и выполнение для каталога главной системы. Вернувшись к предыдущему примеру включения концентратора IoT Edge для хранения сообщений в локальном хранилище устройства, необходимо предоставить разрешения для своего профиля пользователя, UID 1000. (Агент IoT Edge работает как корень, поэтому ему не требуются дополнительные разрешения.) Существует несколько способов управления разрешениями каталога в системах Linux, в том числе с помощью `chown` для изменения владельца каталога, а также `chmod` для изменения разрешений, например:
 
@@ -89,6 +89,6 @@ sudo chmod 700 <HostStoragePath>
 
 Если требуется совместное использование файлов между модулями в поколениях, они не должны содержать секреты, иначе они не будут расшифровываться.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные примеры доступа к хранилищу узлов из модуля см. в разделе [хранение данных в пограничном хранилище с помощью хранилища BLOB-объектов Azure на IOT Edge](how-to-store-data-blob.md).

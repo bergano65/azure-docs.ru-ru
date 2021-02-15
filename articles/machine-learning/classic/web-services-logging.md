@@ -4,22 +4,21 @@ description: Узнайте, как включить ведение журнал
 services: machine-learning
 author: likebupt
 ms.author: keli19
-editor: cgronlun
 ms.assetid: c54d41e1-0300-46ef-bbfc-d6f7dca85086
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 ms.date: 06/15/2017
-ms.openlocfilehash: 154479be1eae01bcc533b556b751ed24aee3da2b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c9ce9b7b0d739301e76abd43b265fe28195ed302
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308576"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518289"
 ---
 # <a name="enable-logging-for-azure-machine-learning-studio-classic-web-services"></a>Включение ведения журнала для веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 В этом документе содержатся сведения о возможности ведения журнала в веб-службах Машинное обучение Studio (классическая модель). Ведение журнала предоставляет дополнительные сведения, кроме номера ошибки и сообщения, которые могут помочь при устранении неполадок при вызове API-интерфейсов Машинное обучение Studio (классическая модель).  
@@ -44,7 +43,7 @@ ms.locfileid: "93308576"
 
    ![Выбор уровня ведения журнала](./media/web-services-logging/enable-logging.png)
 
-6. Выберите команду **Сохранить**.
+6. Нажмите кнопку **Сохранить**.
 
 7. Для классических веб-служб создайте контейнер **ml-diagnostics**.
 
@@ -54,7 +53,7 @@ ms.locfileid: "93308576"
 
    2. В колонке **Служба BLOB-объектов** щелкните **Контейнеры**.
 
-   3. Если контейнер **ml-diagnostics** не существует, щелкните **+Контейнер** , присвойте контейнеру имя ml-diagnostics и выберите **Тип доступа** "BLOB-объект". Нажмите кнопку **ОК**.
+   3. Если контейнер **ml-diagnostics** не существует, щелкните **+Контейнер**, присвойте контейнеру имя ml-diagnostics и выберите **Тип доступа** "BLOB-объект". Нажмите кнопку **ОК**.
 
       ![Создание нового контейнера для хранения журналов диагностики](./media/web-services-logging/create-ml-diagnostics-container.png)
 
@@ -66,7 +65,7 @@ ms.locfileid: "93308576"
 ## <a name="the-effects-of-enabling-logging"></a>Результаты включения ведения журнала
 Если ведение журнала включено, диагностика и ошибки в конечной точке веб-службы регистрируются в контейнере больших двоичных объектов **машинного обучения** в учетной записи хранения Azure, связанной с рабочей областью пользователя. В этом контейнере содержатся все диагностические сведения обо всех конечных точках веб-службы для всех рабочих областей, связанных с этой учетной записью хранения.
 
-Эти журналы можно просматривать при помощи любого из доступных инструментов, позволяющих просматривать элементы в учетной записи хранения Azure. Проще всего перейти к учетной записи хранения на портале Azure, щелкнуть **Контейнеры** , а затем выбрать контейнер **ml-diagnostics**.  
+Эти журналы можно просматривать при помощи любого из доступных инструментов, позволяющих просматривать элементы в учетной записи хранения Azure. Проще всего перейти к учетной записи хранения на портале Azure, щелкнуть **Контейнеры**, а затем выбрать контейнер **ml-diagnostics**.  
 
 ## <a name="log-blob-detail-information"></a>Ведение журнала подробных сведений о больших двоичных объектах
 Каждый большой двоичный объект в контейнере содержит диагностические данные по одному из следующих действий:

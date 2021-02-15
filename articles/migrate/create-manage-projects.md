@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 0d4ccc1a60f9ac3c2183023d3d3772da6a1e307b
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: f66aef64d68bd5d99d7a27d1382306d9202bd350
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99830759"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388062"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "99830759"
     - География используется только для хранения метаданных, собранных с локальных компьютеров. Можно выбрать любой целевой регион для миграции. 
     - Просмотрите список поддерживаемых регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
 
-8. Нажмите кнопку **создания**.
+8. Щелкните **Создать**.
 
    ![Страница с параметрами входного проекта](./media/create-manage-projects/project-details.png)
 
@@ -87,7 +87,7 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
 3. Выберите подходящую подписку и проект "миграция Azure".
 
 
-### <a name="find-a-legacy-project"></a>Поиск проекта прежних версий
+### <a name="find-a-classic-azure-migrate-project"></a>Поиск классического проекта службы "миграция Azure"
 
 Если вы создали проект в [предыдущей версии](migrate-services-overview.md#azure-migrate-versions) службы "миграция Azure", найдите его следующим образом:
 
@@ -129,6 +129,6 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
        
 2. [Следуйте инструкциям](../azure-monitor/platform/delete-workspace.md) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

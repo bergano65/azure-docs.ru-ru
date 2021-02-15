@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 09/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 0295f1687a328980ccf8ceeb6d6a1f1cbd2b4bad
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 1488aa6f48c05a8c2dfa2c6162c1bd1df35d4f58
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878076"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380508"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
 
@@ -242,7 +242,7 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 
 ## <a name="to-modify-ip-address-prefixes-for-a-local-network-gateway"></a><a name="modify"></a>Изменение префиксов IP-адресов для локального сетевого шлюза
 
-Если префиксы IP-адресов, которые должны перенаправляться к локальному расположению, изменились, можно изменить шлюз локальной сети. Мы приводим два набора инструкций. Выбор тех или других инструкций зависит от того, создано ли у вас подключение через шлюз. При использовании этих примеров настройте параметры в соответствии с вашей средой.
+Если префиксы IP-адресов, которые должны перенаправляться к локальному расположению, изменились, можно изменить шлюз локальной сети. При использовании этих примеров настройте параметры в соответствии с вашей средой.
 
 [!INCLUDE [Modify prefixes](../../includes/vpn-gateway-modify-ip-prefix-rm-include.md)]
 
@@ -259,9 +259,9 @@ Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
 -ResourceGroupName TestRG1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-*  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](../index.yml).
+*  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения см. в статье [виртуальные машины](../index.yml).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).
 * Сведения о создании VPN-подключения типа "сеть — сеть" с помощью шаблона Azure Resource Manager см. [в разделе Создание VPN-подключения](https://azure.microsoft.com/resources/templates/101-site-to-site-vpn-create/)типа "сеть — сеть".
 * Сведения о создании VPN-подключения между виртуальными сетями с помощью шаблона Azure Resource Manager см. в статье [развертывание георепликации HBase](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-replication-geo/).

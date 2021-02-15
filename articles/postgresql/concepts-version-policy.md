@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/05/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: f325a43895e1e9d73b11c06662851d7654d31ddb
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 62fe1b3391eb4cb2d409a92b936fd3f1ae56d992
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331827"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518425"
 ---
 # <a name="azure-database-for-postgresql-versioning-policy"></a>Политика управления версиями базы данных Azure для PostgreSQL
 
@@ -22,13 +22,13 @@ ms.locfileid: "94331827"
 
 База данных Azure для PostgreSQL поддерживает следующие версии баз данных.
 
-| Версия | Одиночный сервер | Гибкий сервер (предварительная версия) |
+| Version | Одиночный сервер | Гибкий сервер (предварительная версия) |
 | ----- | :------: | :----: |
 | PostgreSQL 12 |  | X  | 
 | PostgreSQL 11 | X | X |
 | PostgreSQL 10 | X |  |
 | PostgreSQL 9,6 | X |  |
-| PostgreSQL 9,5 | X |  |
+| *PostgreSQL 9,5 (с прекращением)* | X |  |
 
 ## <a name="major-version-support"></a>Поддержка основного номера версии
 Каждая основная версия PostgreSQL будет поддерживаться базой данных Azure для PostgreSQL, начиная с даты, когда Azure начинает поддерживать версию до тех пор, пока не будет снята версия сообщества PostgreSQL, как указано в [политике управления версиями сообщества PostgreSQL](https://www.postgresql.org/support/versioning/).
@@ -39,9 +39,9 @@ ms.locfileid: "94331827"
 ## <a name="major-version-retirement-policy"></a>Политика выхода основной версии
 В таблице ниже приведены сведения о прекращении использования основных версий PostgreSQL. Даты соответствуют [политике управления версиями PostgreSQL Community](https://www.postgresql.org/support/versioning/).
 
-| Версия | What's New | Дата начала поддержки Azure | Дата вывода|
+| Version | What's New | Дата начала поддержки Azure | Дата вывода|
 | ----- | ----- | ------ | ----- |
-| PostgreSQL 9,5| [Функции](https://www.postgresql.org/docs/9.5/release-9-5.html)  | 18 апреля 2018 г.    | 11 февраля, 2021
+| [PostgreSQL 9,5 (с прекращением)](https://www.postgresql.org/about/news/postgresql-132-126-1111-1016-9621-and-9525-released-2165/)| [Функции](https://www.postgresql.org/docs/9.5/release-9-5.html)  | 18 апреля 2018 г.   | 11 февраля, 2021
 | [PostgreSQL 9,6](https://www.postgresql.org/about/news/postgresql-96-released-1703/) | [Функции](https://wiki.postgresql.org/wiki/NewIn96) | 18 апреля 2018 г.  | 11 ноября 2021 г.
 | [PostgreSQL 10](https://www.postgresql.org/about/news/postgresql-10-released-1786/) | [Функции](https://wiki.postgresql.org/wiki/New_in_postgres_10) | 4 июня 2018 г.  | 10 ноября 2022 г.
 | [PostgreSQL 11](https://www.postgresql.org/about/news/postgresql-11-released-1894/) | [Функции](https://www.postgresql.org/docs/11/release-11.html) | 24 июля 2019 г.  | 9 ноября 2023 г.
@@ -49,7 +49,7 @@ ms.locfileid: "94331827"
 
 ## <a name="retired-postgresql-engine-versions-not-supported-in-azure-database-for-postgresql"></a>Устаревшие версии подсистемы PostgreSQL не поддерживаются в базе данных Azure для PostgreSQL
 
-После даты выбытия для каждой версии базы данных PostgreSQL, если продолжить работу с устаревшей версией, обратите внимание на следующие ограничения.
+Вы можете продолжить выполнение устаревшей версии в базе данных Azure для PostgreSQL. Однако обратите внимание на следующие ограничения после даты выбытия каждой версии базы данных PostgreSQL:
 - Поскольку сообщество не будет выпускать последующие исправления ошибок или исправления безопасности, служба "база данных Azure для PostgreSQL" не будет исправлять устаревшие ядра СУБД на наличие ошибок или проблем безопасности или иным образом принимать меры безопасности в отношении устаревшего ядра СУБД. В результате могут возникнуть уязвимости системы безопасности или другие проблемы. Однако Azure продолжит выполнять периодическое обслуживание и исправление для узла, ОС, контейнеров и других компонентов, связанных со службами.
 - Если вы можете столкнуться с любой проблемой, связанной с базой данных PostgreSQL, мы не можем предоставить вам поддержку. В таких случаях потребуется обновить базу данных, чтобы мы смогли предоставить вам поддержку.
 - Вы не сможете создавать новые серверы баз данных для устаревшей версии. Тем не менее вы сможете выполнять операции восстановления на момент времени и создавать реплики чтения для существующих серверов.
@@ -60,7 +60,7 @@ ms.locfileid: "94331827"
 ## <a name="postgresql-version-syntax"></a>Синтаксис версии PostgreSQL
 До PostgreSQL версии 10 [Политика управления версиями PostgreSQL](https://www.postgresql.org/support/versioning/) считается обновлением _основного номера версии_ , что приводит к увеличению первого _или_ второго числа. Например, 9,5 на 9,6 считалось обновлением _основной_ версии. Начиная с версии 10, только изменение первого числа считается обновлением основной версии. Например, 10,0 на 10,1 — это _незначительное_ обновление выпуска. Версия 10 до 11 является _основным_ обновлением версии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - См. статью база данных Azure для PostgreSQL — [Поддерживаемые версии](./concepts-supported-versions.md) с одним сервером
 - [Поддерживаемые версии](flexible-server/concepts-supported-versions.md) см. в статье база данных Azure для PostgreSQL. Поддержка гибких серверов (Предварительная версия)
 - Сведения о том, как выполнять обновление основных версий, см. в документации по [обновлению основных версий](how-to-upgrade-using-dump-and-restore.md) .

@@ -3,21 +3,21 @@ title: 'ML Studio (классическая модель): модули PowerShe
 description: Используйте PowerShell для создания и управления рабочими областями, экспериментами, веб-службами и т. д. Машинное обучение Azure Studio (классическая модель).
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 04/25/2019
-ms.openlocfilehash: f66363ec8b64dea1a076f81f4fc89bafe5ca4151
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 684299d61ba6e9e27e16a162c9f226a7ea3b5f58
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322335"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518017"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio-classic"></a>Модули PowerShell для Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 С помощью модулей PowerShell можно программно управлять ресурсами и активами студии (классическими), такими как рабочие области, наборы данных и веб-службы.
@@ -55,7 +55,7 @@ Az теперь является предполагаемым модулем Pow
 
 | Задача | **AZ** |  **Классическая модель PowerShell** |
 | --- | --- | --- |
-| Создание и удаление рабочих областей | [Шаблоны Resource Manager](./deploy-with-resource-manager-template.md) |  |
+| Создание и удаление рабочих областей | [Шаблоны диспетчер ресурсов](./deploy-with-resource-manager-template.md) |  |
 | Управление планами обязательств рабочей области | [New-AzMlCommitmentPlan](/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
 | Управление пользователями рабочей области |  | [Add-AmlWorkspaceUsers](https://github.com/hning86/azuremlps#add-amlworkspaceusers)|
 | Управление веб-службами | [New-AzMlWebService](/powershell/module/az.machinelearning/new-azmlwebservice) <br>("новые" веб-службы)| [New-AmlWebService](https://github.com/hning86/azuremlps#manage-classic-web-service) <br>("классические" веб-службы) |
@@ -65,7 +65,7 @@ Az теперь является предполагаемым модулем Pow
 | Управление настраиваемыми модулями | | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с полной документацией по этому модулю PowerShell:
 * [Классическая модель PowerShell](https://aka.ms/amlps)
 * [Azure PowerShell Az](/powershell/module/az.machinelearning/#machine_learning)

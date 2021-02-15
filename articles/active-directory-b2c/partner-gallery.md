@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5012e90aae316897454ffc7933efc88d83afdf6e
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: a1ee632e3aaae7b858ab43b45f6e72aff8d1fb77
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98893391"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361774"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C партнеров независимых поставщиков программного обеспечения
 
@@ -74,6 +74,7 @@ ms.locfileid: "98893391"
 | Партнер по ISV | Пошаговые руководства по описанию и интеграции |
 |:-------------------------|:--------------|
 | ![Снимок экрана с логотипом Аркосе Lab](./media/partner-gallery/arkose-logo.png) | [Аркосе Labs](./partner-arkose-labs.md) — это поставщик решений предотвращения мошенничества, который помогает организациям защищаться от атак с помощью роботов, атак перенаправление и мошеннических учетных записей. |
+| ![Снимок экрана эмблемы Microsoft Dynamics 365](./media/partner-gallery/microsoft-dynamics365-logo.png) | [Защита от мошенничества Microsoft Dynamics 365](./partner-dynamics-365-fraud-protection.md) — это решение, помогающее организациям защититься от мошеннических учетных записей с помощью отпечатка пальца устройства. |
 | ![Снимок экрана с логотипом проверки связи](./media/partner-gallery/ping-logo.png) | [Проверка связи](./partner-ping-identity.md) обеспечивает безопасный гибридный доступ к локальным старым приложениям в нескольких облаках. |
 | ![Снимок экрана с логотипом Strata](./media/partner-gallery/strata-logo.png) | [Strata](./partner-strata.md) обеспечивает безопасный гибридный доступ к локальным приложениям, применяя согласованные политики доступа, обеспечивая синхронизацию удостоверений и упрощая перенос приложений из устаревших систем идентификации в стандартную проверку подлинности и управление доступом, предоставляемые Azure AD B2C. |
 | ![Снимок экрана с логотипом Zscaler](./media/partner-gallery/zscaler-logo.png) | [Zscaler](./partner-zscaler.md) обеспечивает безопасный доступ к частным приложениям и ресурсам на основе политик без затрат, проблем или угроз безопасности VPN. |
@@ -84,6 +85,6 @@ ms.locfileid: "98893391"
 
 - [Приступая к работе с пользовательскими политиками в Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Выберите партнера в упомянутых таблицах, чтобы узнать, как интегрировать свое решение с Azure AD B2C.

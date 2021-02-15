@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: b0b0c43039648737b229edc79dd4e0a3dc45f38e
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 014c592713a8568b3bbc7e8e536f81b203271ccc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683346"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388079"
 ---
 # <a name="use-managed-identities-with-azure-machine-learning-preview"></a>Использование управляемых удостоверений с Машинное обучение Azure (Предварительная версия)
 
@@ -29,6 +29,7 @@ ms.locfileid: "98683346"
 
  * Настройте и используйте запись контроля доступа для рабочей области Машинное обучение Azure без включения прав администратора на доступ к записи.
  * Доступ к закрытой записи контроля доступа, внешней для рабочей области, для извлечения базовых образов для обучения или вывода.
+ * Создайте рабочую область с назначенным пользователем управляемым удостоверением для доступа к связанным ресурсам.
 
 > [!IMPORTANT]
 > Использование управляемых удостоверений для управления доступом к ресурсам с Машинное обучение Azure в настоящее время находится на этапе предварительной версии. Функция предварительной версии предоставляется "как есть", без гарантии поддержки или соглашения об уровне обслуживания. Дополнительные сведения см. в дополнительных [условиях использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -102,7 +103,7 @@ az ml workspace create -w <workspace name> \
 
 ### <a name="create-compute-with-managed-identity-to-access-docker-images-for-training"></a>Создание вычислений с управляемым удостоверением для доступа к образам DOCKER для обучения
 
-Чтобы получить доступ к записи контроля доступа рабочей области, создайте кластерный ресурс машинного обучения с включенным системой управляемым удостоверением. Удостоверение можно включить из портал Azure или Studio при создании вычислений или из Azure CLI с помощью
+Чтобы получить доступ к записи контроля доступа рабочей области, создайте кластерный ресурс машинного обучения с включенным системой управляемым удостоверением. Удостоверение можно включить портал Azure или Studio при создании вычислений или из Azure CLI с помощью приведенных ниже. Дополнительные сведения см. в разделе [использование управляемого удостоверения с COMPUTE Clusters](how-to-create-attach-compute-cluster.md#managed-identity).
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -228,6 +229,41 @@ env.docker.base_image = "my-acr.azurecr.io/my-repo/my-image:latest"
 
 > [!NOTE]
 > Если вы перенесете собственный кластер AKS, то вместо управляемого удостоверения кластеру должен быть включен субъект-служба.
+
+## <a name="create-workspace-with-user-assigned-managed-identity"></a>Создание рабочей области с управляемым удостоверением, назначенным пользователем
+
+При создании рабочей области можно указать назначаемое пользователем управляемое удостоверение, которое будет использоваться для доступа к связанным ресурсам: запись контроля учетных записей, KeyVault, хранилище и App Insights.
+
+Сначала [Создайте назначаемое пользователем управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli])и запишите идентификатор ресурса ARM управляемого удостоверения.
+
+Затем используйте Azure CLI или пакет SDK для Python, чтобы создать рабочую область. При использовании интерфейса командной строки укажите идентификатор с помощью `--primary-user-assigned-identity` параметра. При использовании пакета SDK используйте `primary_user_assigned_identity` . Ниже приведены примеры использования Azure CLI и Python для создания новой рабочей области с использованием следующих параметров.
+
+__Azure CLI__;
+
+```azurecli-interactive
+az ml workspace create -w <workspace name> -g <resource group> --primary-user-assigned-identity <managed identity ARM ID>
+```
+
+__Python__
+
+```python
+from azureml.core import Workspace
+
+ws = Workspace.create(name="workspace name", 
+    subscription_id="subscription id", 
+    resource_group="resource group name",
+    primary_user_assigned_identity="managed identity ARM ID")
+```
+
+Можно также использовать [шаблон ARM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-advanced) для создания рабочей области с назначенным пользователем управляемым удостоверением.
+
+> [!IMPORTANT]
+> Если вы понесете собственные связанные ресурсы, вместо того, чтобы создавать Машинное обучение Azure службы, необходимо предоставить управляемые роли идентификации в этих ресурсах. Для выполнения назначений используйте [шаблон ARM для назначения ролей](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-dependencies-role-assignment) .
+
+Для рабочей области с (ключами, управляемыми клиентом для шифрования) [ https://docs.microsoft.com/azure/machine-learning/concept-data-encryption ] можно передать управляемое пользователем удостоверение для проверки подлинности из хранилища в Key Vault. Для передачи управляемого удостоверения используйте аргумент __User-назначил-Identity-for-CMK-Encryption__ (CLI) или __user_assigned_identity_for_cmk_encryption__ (SDK). Это управляемое удостоверение может совпадать с именем управляемого удостоверения, назначенным основному пользователю рабочей области, или совпадать с ним.
+
+Если у вас есть рабочая область, ее можно обновить с назначенного пользователем управляемого удостоверения с помощью ```az ml workspace update``` команды CLI или ```Workspace.update``` метода Python SDK.
+
 
 ## <a name="next-steps"></a>Следующие шаги
 

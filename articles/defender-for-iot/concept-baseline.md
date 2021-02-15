@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2019
 ms.author: mlottner
-ms.openlocfilehash: 75c6841b7fed354843b955a971f02946be349a02
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 04fe87cd69efc4c064b8fbdc596a5f9e187abbb1
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548891"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102246"
 ---
 # <a name="azure-defender-for-iot-baseline-and-custom-checks"></a>Azure Defender для базового плана IoT и пользовательские проверки
 
@@ -35,9 +35,13 @@ ms.locfileid: "96548891"
 ## <a name="setting-baseline-properties"></a>Задание свойств базового плана
 
 1. В центре Интернета вещей перейдите к устройству, которое вы хотите изменить, и выберите его.
+
 1. Щелкните устройство, а затем щелкните модуль **азуреиотсекурити** .
+
 1. Щелкните **модуль удостоверение двойника**.
+
 1. Передайте на устройство файл **базовых пользовательских проверок** .
+
 1. Добавьте свойства базового плана в модуль безопасности и нажмите кнопку **сохранить**.
 
 ### <a name="baseline-custom-check-file-example"></a>Пример файла пользовательской проверки базового уровня
@@ -62,7 +66,7 @@ ms.locfileid: "96548891"
 
 ## <a name="baseline-custom-check-properties"></a>Свойства базовой пользовательской проверки
 
-| Имя| Состояние | Допустимые значения| Значения по умолчанию| Описание |
+| Имя| Состояние | Допустимые значения| Значения по умолчанию| Description |
 |------|-----|------|-----|-----|
 |баселинекустомчекксенаблед|Обязательный: true |Допустимые значения: **Boolean** |Значение по умолчанию: **false** |Максимальный интервал времени до отправки сообщений с высоким приоритетом.|
 |баселинекустомчекксфилепас |Обязательный: true|Допустимые значения: **String**, **null** |Значение по умолчанию: **null** |Полный путь к базовой конфигурации XML|
@@ -70,7 +74,7 @@ ms.locfileid: "96548891"
 
 Дополнительные примеры базовых показателей см. в разделе [Пользовательский базовый пример 1](https://ascforiot.blob.core.windows.net/public/custom_baseline_example_hyperv_ubuntu1804.xml) и [Пользовательский базовый пример — 2](https://ascforiot.blob.core.windows.net/public/oms_audits.xml).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - Доступ к [необработанным данным безопасности](how-to-security-data-access.md)
 - [Исследование устройства](how-to-investigate-device.md)

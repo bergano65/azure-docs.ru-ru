@@ -11,12 +11,12 @@ ms.custom:
 ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
-ms.openlocfilehash: fca9a72fa237a11a02b6d4fbe30ebba5857384cf
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 2695b34745ff02d55f18cebbe87a468f807ca77a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346373"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831694"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Руководство по Экспорт данных из Azure IoT Central и визуализация аналитических сведений в Power BI
 
@@ -504,6 +504,4 @@ ms.locfileid: "97346373"
 В этих трех учебниках показано комплексное решение, использующее шаблон приложения IoT Central **Аналитика магазина — оформление заказа**. Вы подключили устройства к приложению, использовали IoT Central для наблюдения за ними, а также создали панель мониторинга с помощью Power BI для просмотра аналитических сведений из телеметрии устройств. Далее рекомендуем изучить один из других шаблонов приложений IoT Central.
 
 > [!div class="nextstepaction"]
-> * [Создание решений для энергетики с помощью IoT Central](../energy/overview-iot-central-energy.md)
-> * [Создание решений для государственных организаций с помощью IoT Central](../government/overview-iot-central-government.md)
-> * [Создание решений для здравоохранения с помощью IoT Central](../healthcare/overview-iot-central-healthcare.md)
+> [Создание решений для энергетики с помощью IoT Central](../energy/overview-iot-central-energy.md)
