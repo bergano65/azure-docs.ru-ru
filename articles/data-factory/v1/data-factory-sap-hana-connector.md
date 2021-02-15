@@ -1,23 +1,18 @@
 ---
 title: Перемещение данных из SAP HANA с помощью фабрики данных Azure
 description: Узнайте, как перемещать данные из SAP HANA с использованием фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-editor: ''
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c08aeca8e7aaa71e5a2a80cbdece762b989e28c2
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 9c192a5f84f36fbdea0dd1d280928aa40186d4ee
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510147"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386991"
 ---
 # <a name="move-data-from-sap-hana-using-azure-data-factory"></a>Перемещение данных из SAP HANA с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -287,8 +282,8 @@ TINYINT | Byte
 SMALLINT | Int16
 INT | Int32
 bigint | Int64
-ВЕЩЕСТВЕННОЕ ЧИСЛО | Один
-DOUBLE | Один
+real | Single
+DOUBLE | Single
 DECIMAL | Decimal
 BOOLEAN | Byte
 VARCHAR | Строка
@@ -296,10 +291,10 @@ NVARCHAR | Строка
 CLOB | Byte[]
 ALPHANUM | Строка
 BLOB | Byte[]
-DATE | DateTime
+DATE | Дата и время
 TIME | TimeSpan
-timestamp | DateTime
-SECONDDATE | DateTime
+timestamp | Дата и время
+SECONDDATE | Дата и время
 
 ## <a name="known-limitations"></a>Известные ограничения
 Существует несколько известных ограничений, действующих при копировании данных из SAP HANA.

@@ -1,22 +1,18 @@
 ---
 title: Добавление отказоустойчивости в действие копирования фабрики данных Azure путем пропуска несовместимых строк
 description: Обеспечение отказоустойчивости для действия копирования в фабрике данных Azure с помощью пропуска несовместимых строк во время копирования
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 65584b2a6a3bdfbb863c26dac688b20279c4b54d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 10e4bedae5b7c429152a3503fff2cb2769d66eb5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452287"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377182"
 ---
 # <a name="add-fault-tolerance-in-copy-activity-by-skipping-incompatible-rows"></a>Обеспечение отказоустойчивости для действия копирования с помощью пропуска несовместимых строк
 
@@ -74,7 +70,7 @@ ms.locfileid: "96452287"
 | **enableSkipIncompatibleRow** | Включить или отключить пропуск несовместимых строк во время копирования. | True<br/>False (по умолчанию) | Нет |
 | **redirectIncompatibleRowSettings** | Группа свойств, которые можно указать, если вы хотите записать несовместимые строки в журнал. | &nbsp; | нет |
 | **linkedServiceName** | Связанная служба хранилища Azure, в которой будет храниться журнал, содержащий пропущенные строки. | Имя связанной службы [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service) или [AzureStorageSas](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service), которая будет ссылаться на экземпляр хранилища, используемый для хранения файла журнала. | Нет |
-| **путь** | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к хранилищу BLOB-объектов, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | нет |
+| **path** | Путь к файлу журнала, который содержит пропущенные строки. | Укажите путь к хранилищу BLOB-объектов, в котором будут храниться несовместимые данные. Если путь не указан, служба создаст контейнер самостоятельно. | нет |
 
 ## <a name="monitoring"></a>Наблюдение
 Когда действие копирования будет завершено, вы увидите число пропущенных строк в разделе мониторинга:

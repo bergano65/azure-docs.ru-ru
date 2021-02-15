@@ -3,21 +3,21 @@ title: 'ML Studio (классическая модель): результаты 
 description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.date: 11/29/2017
-ms.openlocfilehash: 74210475cc8c0efd274d6e80c3f1c89b5206a97d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: f824cf6e30ed795ef0fe4468542ae16c801bd61b
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509505"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516130"
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio-classic"></a>Интерпретация результатов модели в Студии машинного обучения Azure (классическая версия)
 
-**применимо к:** ![ Это галочка, которая означает, что эта статья относится к Машинное обучение Studio (классическая модель). ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ это X, что означает, что эта статья применима к машинное обучение Azure.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**ПРИМЕНИМО К:**  ![Флажок, который обозначает, что эта статья применима к Студии машинного обучения (классическая версия). ](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая версия) ![Значок X, который обозначает, что эта статься применима к решению "Машинное обучение Azure". ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 В этом разделе объясняется, как визуализировать и интерпретировать результаты прогноза в Машинное обучение Azure Studio (классическая модель). Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.
 

@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2d668775e8d11faa0b2913cebc41e5217b49c278
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 2d97d02aec84fec92e29e971cd5c667c847b2541
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357336"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368053"
 ---
 # <a name="migration-overview-sql-server-to-sql-database"></a>Общие сведения о миграции: SQL Server в базу данных SQL
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "97357336"
 
 Другие сценарии см. в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/). 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 [База данных SQL Azure](../../database/sql-database-paas-overview.md) является рекомендуемым вариантом для рабочих нагрузок SQL Server, которым требуется полностью управляемая платформа как услуга (PaaS). База данных SQL обрабатывает большинство функций управления базами данных, а также высокую доступность, интеллектуальную обработку запросов, масштабируемость и возможности производительности, встроенные в соответствие множеству различных типов приложений. 
 
@@ -157,7 +157,7 @@ ms.locfileid: "97357336"
 Перенос пакетов SQL Server Integration Services (SSIS) в Azure путем повторного развертывания пакетов в среде выполнения Azure-SSIS в [фабрике данных Azure](../../../data-factory/introduction.md). Фабрика данных Azure [поддерживает миграцию пакетов служб SSIS](../../../data-factory/scenario-ssis-migration-overview.md#azure-sql-database-as-database-workload-destination) , предоставляя среду выполнения, созданную для выполнения пакетов служб SSIS в Azure. Кроме того, можно также переписать логику ETL служб SSIS в ADF-файле с помощью [потоков](../../../data-factory/concepts-data-flow-overview.md)данных.
 
 
-#### <a name="sql-server-reporting-services"></a>Службы SQL Server Reporting Services
+#### <a name="sql-server-reporting-services"></a>службы SQL Server Reporting Services
 Миграция отчетов SQL Server Reporting Services (SSRS) в отчеты с разбивкой на страницы в Power BI. Используйте [средство миграции языка определения отчетов](https://github.com/microsoft/RdlMigration) для подготовки и переноса отчетов. Это средство было разработано корпорацией Майкрософт, чтобы помочь клиентам перенести RDL-отчеты с серверов SSRS на платформу Power BI. Он доступен на сайте GitHub, и он документирует полное пошаговое руководство по сценарию миграции. 
 
 #### <a name="high-availability"></a>Высокий уровень доступности
@@ -166,7 +166,7 @@ ms.locfileid: "97357336"
 Помимо архитектуры высокого уровня доступности, включенной в базу данных SQL, существует также функция [групп автоматической отработки отказа](../../database/auto-failover-group-overview.md) , которая позволяет управлять репликацией и отработкой отказа баз данных в управляемом экземпляре в другой регион. 
 
 #### <a name="sql-agent-jobs"></a>Задания агента SQL Server
-Задания агента SQL напрямую не поддерживаются в базе данных SQL Azure и должны быть развернуты в [заданиях эластичной базы данных (Предварительная версия)](../../database/job-automation-overview.md#elastic-database-jobs-preview).
+Задания агента SQL напрямую не поддерживаются в базе данных SQL Azure и должны быть развернуты в [заданиях эластичной базы данных (Предварительная версия)](../../database/job-automation-overview.md).
 
 #### <a name="logins-and-groups"></a>Имена входа и группы
 Перемещение имен входа SQL из исходного SQL Server в базу данных SQL Azure с помощью Database Migration Service (DMS) в автономном режиме.  Используйте колонку " **выбранные имена входа** " в **мастере миграции** , чтобы перенести имена входа в целевую базу данных SQL. 
@@ -209,7 +209,7 @@ ms.locfileid: "97357336"
 Эти ресурсы были разработаны в рамках программы Data SQL Ninja, которая спонсируется группой разработчиков Azure Data Group. Основная часть программы Data SQL Ninja заключается в разрешении и ускорении сложной модернизации и реализация перехода на платформу данных Microsoft Azure. Если вы считаете, что ваша организация заинтересована в участии в программе Data SQL Ninja, обратитесь в службу поддержки своей учетной записи и попросите отправить заявку.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к переносу SQL Server в базу данных SQL Azure, см. [инструкции по миграции SQL Server в базу данных SQL](sql-server-to-sql-database-guide.md).
 

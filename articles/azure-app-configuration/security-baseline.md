@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4af00b2e0e5445ecc904f603d813d843a9c54b93
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b160f6641cced1e4ea6af1eac225d92abe26a631
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735022"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380276"
 ---
 # <a name="azure-security-baseline-for-azure-app-configuration"></a>Базовые показатели безопасности Azure для конфигурации приложений Azure
 
@@ -437,7 +437,7 @@ Azure предоставляет следующие встроенные рол�
 
 - [Авторизация доступа к Конфигурации приложений Azure с помощью Azure Active Directory](concept-enable-rbac.md)
 
-- [Шифрование данных конфигурации приложения](faq.md#does-app-configuration-encrypt-my-data)
+- [Шифрование данных конфигурации приложения](faq.yml#does-app-configuration-encrypt-my-data)
 
 - [Управление доступом на основе ролей (RBAC) в Azure](../role-based-access-control/overview.md) 
 

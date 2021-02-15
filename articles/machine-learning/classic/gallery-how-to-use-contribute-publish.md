@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): Коллекция р
 description: Находите ресурсы аналитики и многое другое, а также обменивайтесь ими с помощью коллекции решений ИИ Azure. Учитесь у других и вносите свой вклад в сообщество.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: eacc7adae16785049022cd05f04904d97b0b3a6d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 935d0149a4a6b33c5272e57aab5f1cc9c3bb2924
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95486132"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519853"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Поиск и публикация ресурсов в коллекции решений ИИ Azure
 
-**применимо к:** ![ Это галочка, которая означает, что эта статья относится к Машинное обучение Studio (классическая модель). ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ это X, что означает, что эта статья применима к машинное обучение Azure.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**ПРИМЕНИМО К:**  ![Флажок, который обозначает, что эта статья применима к Студии машинного обучения (классическая версия). ](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая версия) ![Значок X, который обозначает, что эта статься применима к решению "Машинное обучение Azure". ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 
@@ -123,8 +123,8 @@ ms.locfileid: "95486132"
 
 * имя эксперимента;
 * сводка или описание;
-* Tags
-* Образ —
+* Теги
+* Изображение
 * параметр видимости (**Public** (Общедоступный) или **Unlisted** (Вне списка)).
 
 Эксперимент можно также удалить из коллекции.
@@ -161,7 +161,7 @@ ms.locfileid: "95486132"
    > [!TIP]
    > Чтобы убедиться, что документация выглядит надлежащим образом, сначала можно опубликовать эксперимент как **частный**. Позже на странице сведений эксперимента можно изменить параметр видимости на **Public** (Общедоступный). Обратите внимание, что единожды выбрав для эксперимента тип **Public** (Общедоступный), вы не сможете вернуть ему тип **Unlisted** (Частный).
 
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
 Теперь ваш ресурс доступен в коллекции решений ИИ Azure. Все предоставленные вами ресурсы отображаются на странице учетной записи на вкладке **Items** (Элементы).
 
@@ -180,7 +180,7 @@ ms.locfileid: "95486132"
 * К элементам в коллекции можно добавить примечания. Для этого щелкните в правом верхнем углу элемента и выберите команду **Add/Edit note** (Добавить/изменить примечание).
 * Чтобы удалить элемент из коллекции, щелкните в правом верхнем углу элемента и выберите команду **Remove** (Удалить).
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 **Каковы требования для отправки или редактирования изображения?**
 

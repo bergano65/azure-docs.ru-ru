@@ -1,14 +1,14 @@
 ---
 title: Мониторинг делегированных ресурсов в масштабе
 description: Узнайте, как эффективно использовать журналы Azure Monitor в масштабируемом способе между клиентами клиентов, которыми вы управляете.
-ms.date: 02/02/2021
+ms.date: 02/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 8847c2e5ee4986d35ad676440720b150794003e8
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: f3a789c855f7b05d24cdacd0fb31ee7d6d3e188b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575912"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379239"
 ---
 # <a name="monitor-delegated-resources-at-scale"></a>Мониторинг делегированных ресурсов в масштабе
 
@@ -65,7 +65,6 @@ alertsmanagementresources
 
 ## <a name="next-steps"></a>Следующие шаги
 
+- Испытайте [журналы действий по](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/workbook-activitylogs-by-domain) рабочей книге в GitHub.
 - Изучите [образец книги, созданной](https://github.com/scautomation/Azure-Automation-Update-Management-Workbooks)с помощью MVP, которая отслеживает отчеты о соответствии требованиям, [запросив журналы Управление обновлениями](../../automation/update-management/query-logs.md) в нескольких log Analytics рабочих областях. 
-- Дополнительные сведения об [Azure Monitor](../../azure-monitor/index.yml).
-- Сведения о [журналах Azure Monitor](../../azure-monitor/platform/data-platform-logs.md).
-- Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).
+- Узнайте о других [процессах управления между клиентами](../concepts/cross-tenant-management-experience.md).

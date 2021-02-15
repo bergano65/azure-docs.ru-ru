@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: e2ab39f090124aaf590798795f446bda5b0fe48a
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 6faec27bf368b3eb45e05a91307df6027bda93b1
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008560"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100094004"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -110,7 +110,7 @@ const io = require('socket.io')(server,{
 
 **Я использую собственный пользовательский контейнер. Платформа должна подключить общую папку SMB к `/home/` каталогу.**
 
-Если `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр не **указан** или имеет значение *true*, `/home/` каталог **будет совместно использоваться** экземплярами масштабирования, а записываемые файлы **будут сохраняться** при перезапуске. Явное задание значения `WEBSITES_ENABLE_APP_SERVICE_STORAGE` *false* приведет к отключению подключения.
+Если `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр не **указан** или имеет значение *false*, то `/home/` каталог **не будет совместно** использоваться экземплярами масштабирования, а записываемые файлы **не будут сохраняться** при перезапуске. Явное задание значения `WEBSITES_ENABLE_APP_SERVICE_STORAGE` *true* включит подключение.
 
 **Мой пользовательский контейнер долго запускается, и платформа перезапускает контейнер до завершения его запуска.**
 
@@ -201,7 +201,7 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 
 Вы можете отправить свои идеи на [форум отзывов о веб-приложениях](https://aka.ms/webapps-uservoice). Добавьте [Linux] в заголовок своей идеи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о службе приложений на платформе Linux](overview.md#app-service-on-linux).
 - [Настройка промежуточных сред в Службе приложений Azure](deploy-staging-slots.md)

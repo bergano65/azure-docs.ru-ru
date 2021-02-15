@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 57fda08a996b7d46da74c0ce35bff0df20821b31
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 708c70a5144e4e38dd5de9524711c80ef28cd839
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654835"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092134"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -35,6 +35,16 @@ ms.locfileid: "97654835"
 
 3.  Создайте ресурс Анализ текста и перейдите в колонку "ключи и конечная точка" в левой части страницы. Скопируйте ключ, который будет использоваться позже при вызове API. Вы добавите его позже в качестве значения для `Ocp-Apim-Subscription-Key` заголовка.
 
+## <a name="change-your-pricing-tier"></a>Изменение ценовой категории 
+
+Если у вас есть ресурс Анализ текста с использованием ценовой категории S0 – S4, вы можете обновить его, чтобы использовать [ценовую категорию](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)Standard (S):
+
+1. Перейдите к ресурсу Анализ текста в [портал Azure](https://portal.azure.com/).
+2. В меню навигации слева выберите **ценовая** Категория. Он будет ниже **управления ресурсами**. 
+3. Выберите ценовую категорию Standard (S). Затем щелкните **Выбрать**.
+
+Вы также можете создать новый ресурс Анализ текста с ценовой категорией Standard (S) и перенести приложения, чтобы использовать учетные данные для нового ресурса. 
+
 ## <a name="using-the-api-synchronously"></a>Синхронное использование API
 
 Можно вызвать Анализ текста синхронно (для сценариев с низкой задержкой). При использовании синхронного API необходимо вызывать каждый API (функцию) отдельно. Если необходимо вызвать несколько функций, ознакомьтесь с приведенным ниже разделом об асинхронном вызове Анализ текста. 
@@ -49,7 +59,7 @@ ms.locfileid: "97654835"
 
 См. таблицу ниже, чтобы узнать, какие функции можно использовать асинхронно. Обратите внимание, что из конечной точки можно вызывать только несколько функций `/analyze` . 
 
-| Компонент | Синхронная | Асинхронный |
+| Функция | Синхронная | Асинхронный |
 |--|--|--|
 | Определение языка | ✔ |  |
 | Анализ мнений | ✔ |  |
@@ -113,7 +123,7 @@ ms.locfileid: "97654835"
 
 | Элемент | Допустимые значения | Необходим? | Использование |
 |---------|--------------|-----------|-------|
-|`displayName` | Строка | Необязательно | Используется в качестве отображаемого имени для уникального идентификатора задания.|
+|`displayName` | Строка | Необязательный | Используется в качестве отображаемого имени для уникального идентификатора задания.|
 |`analysisInput` | Включает `documents` поле ниже | Обязательно | Содержит сведения о документах, которые необходимо отправить. |
 |`documents` | Включает `id` поля и `text` ниже | Обязательно | Содержит сведения для каждого отправляемого документа и необработанный текст документа. |
 |`id` | Строка | Обязательно | Предоставленные идентификаторы используются для структурирования выходных данных. |
@@ -122,7 +132,7 @@ ms.locfileid: "97654835"
 |`parameters` | Включает `model-version` поля и `stringIndexType` ниже | Обязательно | Это поле включено в указанные выше задачи функции. Они содержат сведения о версии модели, которую необходимо использовать, и типе индекса. |
 |`model-version` | Строка | Обязательно | Укажите версию вызываемой модели, которую необходимо использовать.  |
 |`stringIndexType` | Строка | Обязательно | Укажите текстовый декодер, соответствующий используемой среде программирования.  Поддерживаются типы `textElement_v8` (по умолчанию), `unicodeCodePoint` , `utf16CodeUnit` . Дополнительные сведения см. в [статье о смещениях текста](../concepts/text-offsets.md#offsets-in-api-version-31-preview) .  |
-|`domain` | Строка | Необязательно | Применяется только в качестве параметра к `entityRecognitionPiiTasks` задаче и может иметь значение `pii` или `phi` . Значение по умолчанию —, `pii` если не указано.  |
+|`domain` | Строка | Необязательный | Применяется только в качестве параметра к `entityRecognitionPiiTasks` задаче и может иметь значение `pii` или `phi` . Значение по умолчанию —, `pii` если не указано.  |
 
 ```json
 {
@@ -205,30 +215,30 @@ example.json
 
 ### <a name="endpoints-for-sending-synchronous-requests"></a>Конечные точки для отправки синхронных запросов
 
-| Компонент | Тип запроса | Конечные точки ресурсов |
+| Функция | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
-| Определение языка | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
-| Анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
-| Интеллектуальный анализ мнений | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
-| Извлечение ключевой фразы | POST | `<your-text-analytics-resource>/text/analytics/v3.0/keyPhrases` |
-| Распознавание именованных сущностей — общие | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/general` |
-| Распознавание именованных сущностей — PII | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii` |
-| Распознавание именованных сущностей — фи | POST |  `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii?domain=phi` |
+| Определение языка | ПОМЕСТИТЬ | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
+| Анализ мнений | ПОМЕСТИТЬ | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
+| Интеллектуальный анализ мнений | ПОМЕСТИТЬ | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
+| Извлечение ключевой фразы | ПОМЕСТИТЬ | `<your-text-analytics-resource>/text/analytics/v3.0/keyPhrases` |
+| Распознавание именованных сущностей — общие | ПОМЕСТИТЬ | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/general` |
+| Распознавание именованных сущностей — PII | ПОМЕСТИТЬ | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii` |
+| Распознавание именованных сущностей — фи | ПОМЕСТИТЬ |  `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii?domain=phi` |
 
 #### <a name="asynchronous"></a>[Асинхронный](#tab/asynchronous)
 
 ### <a name="endpoints-for-sending-asynchronous-requests-to-the-analyze-endpoint"></a>Конечные точки для отправки асинхронных запросов к `/analyze` конечной точке
 
-| Компонент | Тип запроса | Конечные точки ресурсов |
+| Функция | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
-| Отправить задание анализа | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
+| Отправить задание анализа | ПОМЕСТИТЬ | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
 | Получение состояния и результатов анализа | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>` |
 
 ### <a name="endpoints-for-sending-asynchronous-requests-to-the-health-endpoint"></a>Конечные точки для отправки асинхронных запросов к `/health` конечной точке
 
-| Компонент | Тип запроса | Конечные точки ресурсов |
+| Функция | Тип запроса | Конечные точки ресурсов |
 |--|--|--|
-| Отправка Анализ текста для задания работоспособности  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
+| Отправка Анализ текста для задания работоспособности  | ПОМЕСТИТЬ | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
 | Получение состояния задания и результатов | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
 | отмена задания. | DELETE | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
 

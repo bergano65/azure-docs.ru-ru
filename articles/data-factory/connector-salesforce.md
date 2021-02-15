@@ -1,22 +1,18 @@
 ---
 title: Копирование данных из Salesforce и обратно
 description: Узнайте, как копировать данные из Salesforce в поддерживаемые приемники данных или из поддерживаемых источников данных в Salesforce с помощью действия копирования в конвейере фабрики данных.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/02/2021
-ms.openlocfilehash: 9c85b02ac0e83f3463c458629411989062adc4e6
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: d820be66c70ae336361de7209722c4018ffd5077
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99430753"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392176"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
 
@@ -44,7 +40,7 @@ ms.locfileid: "99430753"
 
 Соединитель Salesforce построен на основе API-интерфейса SalesForce RESTFUL/Массовы. По умолчанию при копировании данных из Salesforce соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) и автоматически выбирает между API-интерфейсами RESTful и массовыми данными в зависимости от размера данных. Если результирующий набор большой, то для повышения производительности используется групповой API. При записи данных в Salesforce соединитель использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) небольшого API. Можно также явно задать версию API, используемую для чтения и записи данных через [ `apiVersion` свойство](#linked-service-properties) в связанной службе.
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В Salesforce требуется включить разрешение API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 
@@ -153,7 +149,7 @@ ms.locfileid: "99430753"
 
 ![Фабрика данных — подключение к Salesforce: имя API](media/copy-data-from-salesforce/data-factory-salesforce-api-name.png)
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -199,7 +195,7 @@ ms.locfileid: "99430753"
 
 ![Фабрика данных — подключение к Salesforce: список имен API](media/copy-data-from-salesforce/data-factory-salesforce-api-name-2.png)
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -302,7 +298,7 @@ ms.locfileid: "99430753"
 | Формат даты и времени |  Подробнее см. [здесь](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm), а примеры — в следующем разделе. | Подробнее см. [здесь](/sql/odbc/reference/develop-app/date-time-and-timestamp-literals), а примеры — в следующем разделе. |
 | Логические значения | Представленные в виде `False` и `True`, например `SELECT … WHERE IsDeleted=True`. | Представленные в значении 0 или 1, например `SELECT … WHERE IsDeleted=1`. |
 | Переименование столбцов | Не поддерживается. | Поддерживается, например, `SELECT a AS b FROM …`. |
-| Связь | Поддерживается, например, `Account_vod__r.nvs_Country__c`. | Не поддерживается. |
+| Relationship | Поддерживается, например, `Account_vod__r.nvs_Country__c`. | Не поддерживается. |
 
 ### <a name="retrieve-data-by-using-a-where-clause-on-the-datetime-column"></a>Извлечение данных с использованием предложения where для столбца даты и времени
 
@@ -321,25 +317,25 @@ ms.locfileid: "99430753"
 
 | Тип данных Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| Автонумерация |Строковый |
-| Флажок |Логический |
+| Автонумерация |Строка |
+| Флажок |Логическое |
 | Валюта |Decimal |
 | Дата |Дата и время |
 | Дата и время |Дата и время |
-| Электронная почта |Строковый |
-| ID |Строковый |
-| Связь для подстановки |Строковый |
-| Список множественного выбора |Строковый |
-| Number |Decimal |
+| Адрес электронной почты |Строка |
+| ID |Строка |
+| Связь для подстановки |Строка |
+| Список множественного выбора |Строка |
+| Число |Decimal |
 | Процент |Decimal |
-| Номер телефона |Строковый |
-| Список выбора |Строковый |
+| Номер телефона |Строка |
+| Список выбора |Строка |
 | Текстовый |Строковый |
-| Текстовое поле |Строковый |
-| Текстовое поле (длинное) |Строковый |
-| Текстовое поле (расширенное) |Строковый |
-| Текст (зашифрованный) |Строковый |
-| URL-адрес |Строковый |
+| Текстовое поле |Строка |
+| Текстовое поле (длинное) |Строка |
+| Текстовое поле (расширенное) |Строка |
+| Текст (зашифрованный) |Строка |
+| URL-адрес |Строка |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 

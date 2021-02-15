@@ -1,18 +1,18 @@
 ---
 title: Элементы управления соответствием в службе "Политика Azure" для Службы SignalR
 description: Содержит список элементов управления соответствием из службы "Политика Azure", доступных для Azure SignalR. Эти встроенные определения политик предоставляют популярные подходы к управлению соответствием ресурсов Azure.
-ms.date: 01/29/2021
+ms.date: 02/09/2021
 ms.topic: sample
 author: sffamily
 ms.author: zhshang
 ms.service: signalr
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 02af9a2c1da6cac27a896d9600dc755d17e883e1
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: c77aaffa2607d5096f46cafd50c54bdc7a80219f
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99179441"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096635"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-signalr"></a>Элементы управления соответствием в службе "Политика Azure" для Службы SignalR
 

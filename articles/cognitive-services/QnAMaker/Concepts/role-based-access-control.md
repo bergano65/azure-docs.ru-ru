@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: f43fa06cf93d383efcb0fe746de28ab143280e50
-ms.sourcegitcommit: 7e117cfec95a7e61f4720db3c36c4fa35021846b
+ms.openlocfilehash: 1d434697802596a0200dc0cb5f1afe5bc67afef5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99988019"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379715"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Совместная работа с другими авторами и редакторами
 
@@ -23,6 +23,9 @@ ms.locfileid: "99988019"
 Эта функция Azure RBAC включает в себя следующее:
 * Azure Active Directory (AAD) обеспечивает обратную совместимость 100% с проверкой подлинности на основе ключей для владельцев и участников. Клиенты могут использовать проверку подлинности на основе ключей или проверку подлинности на основе Azure RBAC в своих запросах.
 * Быстро добавляйте авторов и редакторы ко всем базам знаний в ресурсе, так как управление осуществляется на уровне ресурсов, а не на уровне базы знаний.
+
+> [!NOTE]
+> При выполнении AR обязательно добавьте пользовательский поддомен для ресурса. [Пользовательский поддомен](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) должен присутствовать по умолчанию, но если нет, добавьте его.
 
 ## <a name="access-is-provided-by-a-defined-role"></a>Доступ предоставляется определенной ролью.
 

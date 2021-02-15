@@ -1,16 +1,16 @@
 ---
-title: Шифрование данных резервных копий с помощью управляемых клиентом ключей
+title: Шифрование данных резервного копирования с использованием ключей, управляемых клиентом
 description: Узнайте, как Azure Backup позволяет шифровать данные резервных копий с помощью ключей, управляемых клиентом (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: d5daa88475e3becde6e513391c555471f80396c5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 230669e0a3543a0709dda3f7fee35a0cae300d5a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735866"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369464"
 ---
-# <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Шифрование данных резервных копий с помощью управляемых клиентом ключей
+# <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Шифрование данных резервного копирования с использованием ключей, управляемых клиентом
 
 Azure Backup позволяет зашифровать данные резервных копий с помощью управляемых клиентом ключей (CMK) вместо использования ключей, управляемых платформой, которые включены по умолчанию. Ключи, используемые для шифрования данных резервных копий, должны храниться в [Azure Key Vault](../key-vault/index.yml).
 
@@ -36,6 +36,7 @@ Azure Backup позволяет зашифровать данные резерв
 - Хранилище служб восстановления может быть зашифровано только с помощью ключей, хранящихся в Azure Key Vault, расположенном в том **же регионе**. Кроме того, ключи должны быть только с **ключами RSA 2048** и должны находиться в состоянии **Enabled** .
 
 - Перемещение CMK зашифрованного хранилища служб восстановления между группами ресурсов и подписками сейчас не поддерживается.
+- При перемещении хранилища служб восстановления, уже зашифрованного с помощью ключей, управляемых клиентом, в новый клиент необходимо обновить хранилище служб восстановления, чтобы повторно создать и перенастроить управляемое удостоверение и CMK для хранилища, а также (которое должно быть в новом клиенте). Если это не так, операции резервного копирования и восстановления начнут завершаться сбоем. Кроме того, все разрешения на управление доступом на основе ролей (RBAC), настроенные в подписке, необходимо будет перенастроить.
 
 - Эту функцию можно настроить с помощью портал Azure и PowerShell.
 
@@ -79,7 +80,7 @@ Azure Backup использует управляемое системой удо
 
 Используйте команду [Update-азрековерисервицесваулт](/powershell/module/az.recoveryservices/update-azrecoveryservicesvault) для включения управляемого удостоверения, назначенного системой для хранилища служб восстановления.
 
-Пример.
+Пример:
 
 ```AzurePowerShell
 $vault=Get-AzRecoveryServicesVault -ResourceGroupName "testrg" -Name "testvault"
@@ -118,32 +119,6 @@ Type        : SystemAssigned
 1. После этого нажмите кнопку **Добавить** , чтобы добавить новую политику доступа.
 
 1. Нажмите кнопку **сохранить** , чтобы сохранить изменения, внесенные в политику доступа Azure Key Vault.
-
-**С помощью PowerShell**:
-
-Используйте команду [Set-азрековерисервицесваултпроперти](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) , чтобы включить шифрование с помощью управляемых клиентом ключей и назначить или обновить используемый ключ шифрования.
-
-Пример.
-
-```azurepowershell
-$keyVault = Get-AzKeyVault -VaultName "testkeyvault" -ResourceGroupName "testrg" 
-$key = Get-AzKeyVaultKey -VaultName $keyVault -Name "testkey" 
-Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -KeyVaultSubscriptionId "xxxx-yyyy-zzzz"  -VaultId $vault.ID
-
-
-$enc=Get-AzRecoveryServicesVaultProperty -VaultId $vault.ID
-$enc.encryptionProperties | fl
-```
-
-Выходные данные:
-
-```output
-EncryptionAtRestType          : CustomerManaged
-KeyUri                        : testkey
-SubscriptionId                : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
-LastUpdateStatus              : Succeeded
-InfrastructureEncryptionState : Disabled
-```
 
 ### <a name="enable-soft-delete-and-purge-protection-on-the-azure-key-vault"></a>Включение обратимого удаления и очистки защиты на Azure Key Vault
 
@@ -197,7 +172,7 @@ InfrastructureEncryptionState : Disabled
 
 После того как эти сведения будут гарантированы, продолжите выбор ключа шифрования для своего хранилища.
 
-Чтобы назначить ключ, сделайте следующее:
+#### <a name="to-assign-the-key-in-the-portal"></a>Назначение ключа на портале
 
 1. Перейдите к хранилищу служб восстановления — > **Свойства** .
 
@@ -230,6 +205,32 @@ InfrastructureEncryptionState : Disabled
     Обновления ключа шифрования также регистрируются в журнале действий хранилища.
 
     ![Журнал действий](./media/encryption-at-rest-with-cmk/activity-log.png)
+
+#### <a name="to-assign-the-key-with-powershell"></a>Назначение ключа с помощью PowerShell
+
+Используйте команду [Set-азрековерисервицесваултпроперти](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) , чтобы включить шифрование с помощью управляемых клиентом ключей и назначить или обновить используемый ключ шифрования.
+
+Пример:
+
+```azurepowershell
+$keyVault = Get-AzKeyVault -VaultName "testkeyvault" -ResourceGroupName "testrg" 
+$key = Get-AzKeyVaultKey -VaultName $keyVault -Name "testkey" 
+Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -KeyVaultSubscriptionId "xxxx-yyyy-zzzz"  -VaultId $vault.ID
+
+
+$enc=Get-AzRecoveryServicesVaultProperty -VaultId $vault.ID
+$enc.encryptionProperties | fl
+```
+
+Выходные данные:
+
+```output
+EncryptionAtRestType          : CustomerManaged
+KeyUri                        : testkey
+SubscriptionId                : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
+LastUpdateStatus              : Succeeded
+InfrastructureEncryptionState : Disabled
+```
 
 >[!NOTE]
 > Этот процесс остается прежним, если вы хотите обновить или изменить ключ шифрования. Если вы хотите обновить и использовать ключ из другого Key Vault (отличного от используемого в данный момент), убедитесь в том, что:
@@ -292,7 +293,7 @@ InfrastructureEncryptionState : Disabled
 
 Используйте команду [Get-азрековерисервицесбаккупитем](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) с параметром [ `-DiskEncryptionSetId <string>` ], чтобы [указать алгоритм DES](/powershell/module/az.compute/get-azdiskencryptionset) , используемый для шифрования восстановленного диска. Дополнительные сведения о восстановлении дисков из резервной копии виртуальных машин см. в [этой статье](./backup-azure-vms-automation.md#restore-an-azure-vm).
 
-Пример.
+Пример:
 
 ```azurepowershell
 $namedContainer = Get-AzRecoveryServicesBackupContainer  -ContainerType "AzureVM" -Status "Registered" -FriendlyName "V2VM" -VaultId $vault.ID
@@ -311,7 +312,7 @@ $restorejob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -Storag
 
 При восстановлении из резервной копии SAP HANA или базы данных SQL, работающей на виртуальной машине Azure, восстановленные данные будут зашифрованы с помощью ключа шифрования, используемого в целевом расположении хранилища. Это может быть ключ, управляемый клиентом, или управляемый платформой ключ, используемый для шифрования дисков виртуальной машины.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="can-i-encrypt-an-existing-backup-vault-with-customer-managed-keys"></a>Можно ли зашифровать существующее резервное хранилище с помощью управляемых клиентом ключей?
 

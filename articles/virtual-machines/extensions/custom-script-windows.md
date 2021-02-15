@@ -2,21 +2,21 @@
 title: Расширение Azure Custom Script в ОС Windows
 description: Сведения об автоматизации задач настройки виртуальных машин Windows с помощью расширения пользовательских сценариев
 services: virtual-machines-windows
-manager: carmonm
-author: bobbytreed
+manager: gwallace
+author: amjads1
 ms.service: virtual-machines-windows
 ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/31/2020
-ms.author: robreed
-ms.openlocfilehash: d4cfb8d6a48ac41b4deb8913d4277f07cbb43208
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.author: amjads
+ms.openlocfilehash: d06be4efae895cfe6903be4451f892660ce689f3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258710"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390136"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -32,6 +32,7 @@ ms.locfileid: "99258710"
 ### <a name="operating-system"></a>Операционная система
 
 Расширение настраиваемых скриптов для Linux будет работать в поддерживаемых им ОС.
+
 ### <a name="windows"></a>Windows
 
 * Windows Server 2008 R2
@@ -67,7 +68,7 @@ ms.locfileid: "99258710"
 * Расширение позволяет запустить скрипт только один раз. Если нужно выполнять скрипт при каждой загрузке, создайте запланированную задачу Windows с помощью расширения.
 * Чтобы запланировать время выполнения скрипта, необходимо создать запланированную задачу Windows с помощью расширения.
 * Во время выполнения скрипта вы увидите на портале Microsoft Azure или в CLI только переходное состояние расширения. Если требуются более частые обновления состояния выполняющегося скрипта, следует создать собственное решение.
-* Расширение настраиваемых скриптов не имеет собственной поддержки прокси-серверов. Но можно использовать средство передачи файлов, которое поддерживает прокси-серверы в скрипте, например *Curl*.
+* Расширение пользовательских сценариев изначально не поддерживает прокси-серверы, однако можно использовать средство для обмена файлами, которое поддерживает прокси-серверы в скрипте, например *Invoke-WebRequest* .
 * Следует учитывать настраиваемые расположения каталогов, которые могут использоваться скриптами или командами, и иметь в распоряжении логику для обработки таких ситуаций.
 * Расширение пользовательских скриптов будет выполняться под учетной записью LocalSystem
 * Если вы планируете использовать свойства *storageAccountName* и *storageAccountKey* , эти свойства должны быть выровнены в *protectedSettings*.
