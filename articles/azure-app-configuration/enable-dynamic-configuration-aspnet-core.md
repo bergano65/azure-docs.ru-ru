@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/1/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: e894caddd037738645a37ccb43265a24d56e8afe
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 083bd56b2b211d11206a277bf31eea797b37cdb9
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493809"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979935"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство. Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -191,7 +191,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     ```
     ---
     > [!Tip]
-    > Дополнительные сведения о шаблоне параметров, используемых при чтении значений конфигурации, см. в статье [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1).
+    > Дополнительные сведения о шаблоне параметров, используемых при чтении значений конфигурации, см. в статье [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options).
 
 4. Обновите метод `Configure`, добавив ПО промежуточного слоя `UseAzureAppConfiguration`, чтобы обновлять зарегистрированные для обновления параметры конфигурации, в то время как веб-приложение ASP.NET Core продолжает получать запросы.
 

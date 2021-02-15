@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/08/2021
 ms.author: memildin
-ms.openlocfilehash: e827178d8ccb0f7de8d32433d03502a7412d1139
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 7034d1b5f06fcbcead79d85df10042eee3581b0b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834056"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369362"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -96,10 +96,8 @@ ms.locfileid: "99834056"
 | Trend Micro — агент Deep Security | Семейство Windows Server  | Нет | Да |
 | Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
 | McAfee v10+ | Семейство Windows Server  | Нет | Да |
-| McAfee v10+ | Семейство Linux Server  | Нет | Да **\*** |
-| Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да **\***  |
-
- **\*** Сведения о поддержке и вспомогательные данные сейчас доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Они не отображаются на портале Центра безопасности Azure.
+| McAfee v10+ | Семейство Linux Server  | Нет | Да |
+| Sophos, начиная с версии 9| Семейство Linux Server  | Нет | Да |
 
 > [!NOTE]
 > Чтобы служба System Center Endpoint Protection (SCEP) была доступна для обнаружения на виртуальной машине Windows Server 2008 R2, службу нужно установить после установки PowerShell 3.0 или более поздней версии.
@@ -120,7 +118,7 @@ ms.locfileid: "99834056"
 |[Подключение учетной записи AWS](quickstart-onboard-aws.md) (1)|-|-|
 |[Подключение учетной записи GCP](quickstart-onboard-gcp.md) (1)|-|-|
 |[непрерывный экспорт.](continuous-export.md)|✔|✔ (2)|
-|[Автоматизация рабочих процессов](workflow-automation.md)|✔|✔|
+|[Автоматизация рабочих процессов](workflow-automation.md)|✔ (2)|✔|
 |[Правила исключения рекомендаций](exempt-resource.md)|-|-|
 |[Правила подавления оповещений](alerts-suppression-rules.md)|✔|✔|
 |[Отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)|✔|✔|
@@ -132,7 +130,7 @@ ms.locfileid: "99834056"
 |[Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender для DNS](defender-for-dns-introduction.md)|-|-|
 |[Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
-|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔ (2)|✔|
 |[Защита рабочих нагрузок Kubernetes](kubernetes-workload-protections.md)|-|-|
 |||
 

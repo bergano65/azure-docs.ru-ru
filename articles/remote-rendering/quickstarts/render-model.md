@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 6258365ab00ab538f3f3502682078d29a391578c
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 525872ca3ad2558c327b7b856254319d3db2dc7f
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724940"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593999"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Краткое руководство. Отрисовка модели с помощью Unity
 
@@ -74,8 +74,8 @@ git clone https://github.com/Azure/azure-remote-rendering
 ![Сведения об учетной записи ARR](./media/arr-sample-account-info.png)
 
 > [!IMPORTANT]
-> Задайте для параметра **AccountDomain** значение `<region>.mixedreality.azure.com`, где `<region>` — [это один из доступных ближайших регионов](../reference/regions.md).
-> Задайте для **AccountAuthenticationDomain** значение [домена учетной записи](../how-tos/create-an-account.md#retrieve-the-account-information), как оно отображается на портале Azure.
+> Задайте для параметра **RemoteRenderingDomain** значение `<region>.mixedreality.azure.com`, где `<region>` — это [один из ближайших доступных регионов](../reference/regions.md).
+> Задайте для параметра **AccountDomain** значение [домена учетной записи](../how-tos/create-an-account.md#retrieve-the-account-information), как показано на портале Azure.
 
 Позже мы развернем этот проект в HoloLens и подключим к службе "Удаленная отрисовка" с этого устройства. Так как у нас нет простого способа ввода учетных данных на устройстве, пример для быстрого запуска **сохранит учетные данные в сцене Unity**.
 

@@ -781,6 +781,8 @@
             - name: Оповещения о доступности
               displayname: 'alerts, global, alerting'
               href: app/availability-alerts.md
+            - name: Отчет о Соглашении об уровне обслуживания
+              href: app/sla-report.md
             - name: Устранение неполадок
               displayname: 'availability, troubleshoot, troubleshoot availability'
               href: app/troubleshoot-availability.md
@@ -794,6 +796,8 @@
         - name: Live Metrics Stream
           displayname: 'live, quickpulse, quick pulse, live metrics'
           href: app/live-stream.md
+        - name: Интеграция рабочих элементов
+          href: app/work-item-integration.md
         - name: Метрики
           items:
             - name: Метрики на основе журналов и предварительно агрегированные метрики
@@ -1022,7 +1026,7 @@
               href: insights/vminsights-health-troubleshoot.md
         - name: Анализ данных с помощью запросов к журналу
           href: insights/vminsights-log-search.md
-        - name: Мониторинг производительности
+        - name: видны узлы
           href: insights/vminsights-alerts.md
         - name: Мониторинг изменений
           href: insights/vminsights-change-analysis.md

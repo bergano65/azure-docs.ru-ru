@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 3923f3d0a65412c23d5fc32d7a4cea8648686df4
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 4f48416153f5a378f9e4eff84802519250488301
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98948478"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584660"
 ---
 > [!IMPORTANT]
 > В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных.
@@ -155,7 +155,7 @@ mkdir -p src/main/java
 
 `FormRecognizerClient` предоставляет операции для перечисленных ниже целей.
 
-- Распознавание полей форм и содержимого с помощью настраиваемых моделей, обученных для распознавания пользовательских форм.  Эти значения возвращаются в коллекцию объектов `RecognizedForm`. См. пример в разделе об [анализе пользовательских форм](#analyze-forms-with-a-custom-model).
+- Распознавание полей форм и содержимого с помощью настраиваемых моделей, обученных для анализа пользовательских форм.  Эти значения возвращаются в коллекцию объектов `RecognizedForm`. См. пример в разделе об [анализе пользовательских форм](#analyze-forms-with-a-custom-model).
 - Распознавание содержимого формы, в том числе таблиц, строк и слов, без необходимости обучения модели.  Содержимое форм возвращается в коллекцию объектов `FormPage`. См. пример [анализа макета](#analyze-layout).
 - Распознавание общих полей в квитанциях для США с помощью предварительно обученной модели для обработки квитанций в службе "Распознаватель документов".  Эти поля и метаданные возвращаются в коллекцию объектов `RecognizedForm`. См. пример [анализа квитанций](#analyze-receipts).
 
@@ -163,8 +163,8 @@ mkdir -p src/main/java
 
 `FormTrainingClient` предоставляет операции для перечисленных ниже целей.
 
-- Обучение настраиваемых моделей для распознавания всех полей и значений в пользовательских формах.  Возвращаемый объект `CustomFormModel` задает типы форм, которые будет распознавать модель, и поля, которые она будет извлекать для каждого из этих типов.
-- Обучение пользовательских моделей для распознавания конкретных полей и значений, указываемых путем добавления меток к пользовательским формам.  Возвращаемый объект `CustomFormModel` задает поля, которые будут извлечены моделью, а также предполагаемую точность для каждого поля.
+- Обучение настраиваемых моделей для анализа всех полей и значений в пользовательских формах.  Возвращаемый объект `CustomFormModel` задает типы форм, которые будет анализировать модель, и поля, которые она будет извлекать для каждого из этих типов.
+- Обучение пользовательских моделей для анализа конкретных полей и значений, указываемых путем добавления меток к пользовательским формам.  Возвращаемый объект `CustomFormModel` задает поля, которые будут извлечены моделью, а также предполагаемую точность для каждого поля.
 - Управление моделями, созданными в учетной записи.
 - Копирование настраиваемой модели из одного ресурса Распознавателя документов в другой.
 
@@ -202,9 +202,9 @@ mkdir -p src/main/java
 
 ## <a name="analyze-layout"></a>Анализ макета
 
-С помощью Распознавателя документов можно распознавать таблицы, строки и слова в документах без предварительного обучения модели.
+С помощью Распознавателя документов можно анализировать таблицы, строки и слова в документах без необходимости обучать модель. Дополнительные сведения об извлечении макетов см. в статье [Служба макета Распознавателя документов](../../concept-layout.md).
 
-Для распознавания содержимого файла по указанному URL-адресу используйте метод **beginRecognizeContentFromUrl**.
+Для анализа содержимого файла по указанному URL-адресу используйте метод **beginRecognizeContentFromUrl**.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_getcontent_call)]
 
@@ -233,65 +233,6 @@ Cell has text $89,024.34.
 Cell has text ET.
 ```
 
-## <a name="analyze-receipts"></a>Анализ квитанций
-
-В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в США квитанции и извлекать из них содержимое стандартных полей.
-
-Для распознавания квитанции с определенным универсальным кодом ресурса (URI) используйте метод **beginRecognizeReceiptsFromUrl**. 
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_call)]
-
-> [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
-
-Возвращаемое значение представляет собой коллекцию объектов **RecognizedReceipt**: по одному для каждой страницы обработанного документа. Следующий блок кода обрабатывает квитанции в цикле и выводит их данные в консоль.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print)]
-
-Следующий блок кода обрабатывает в цикле отдельные объекты, обнаруженные в квитанции, и выводит их данные в консоль.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print_items)]
-
-### <a name="output"></a>Выходные данные 
-
-```console
-Analyze receipt...
------------ Recognized Receipt page 0 -----------
-Merchant Name: Contoso Contoso, confidence: 0.62
-Merchant Address: 123 Main Street Redmond, WA 98052, confidence: 0.99
-Transaction Date: 2020-06-10, confidence: 0.90
-Receipt Items:
-Name: Cappuccino, confidence: 0.96s
-Quantity: null, confidence: 0.957s]
-Total Price: 2.200000, confidence: 0.95
-Name: BACON & EGGS, confidence: 0.94s
-Quantity: null, confidence: 0.927s]
-Total Price: null, confidence: 0.93
-```
-
-## <a name="analyze-business-cards"></a>Анализ визитных карточек
-
-#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
-
-> [!IMPORTANT]
-> Эта функция недоступна в выбранной версии API.
-
-#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
-
-В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в Великобритании визитные карточки и извлекать из них содержимое стандартных полей.
-
-Для распознавания визитных карточек по URL-адресу воспользуйтесь методом `beginRecognizeBusinessCardsFromUrl`. 
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_call)]
-
-> [!TIP]
-> Кроме того, можно распознавать изображения визитных карточек в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeBusinessCards**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
-
-Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждой карточки в документе. В следующем блоке кода обрабатывается визитная карточка с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
-
-[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_print)]
-
----
 
 ## <a name="analyze-invoices"></a>Анализ счетов
 
@@ -302,16 +243,16 @@ Total Price: null, confidence: 0.93
 
 #### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
 
-В этом разделе объясняется, как с помощью предварительно обученной модели распознавать счета на продажу и извлекать из них содержимое стандартных полей.
+В этом разделе показано, как с помощью предварительно обученной модели анализировать счета на продажу и извлекать из них содержимое стандартных полей. Дополнительные сведения об анализе счета см. в статье [Служба макета Распознавателя документов](../../concept-invoices.md).
 
-Для распознавания визитных карточек по URL-адресу воспользуйтесь методом `beginRecognizeInvoicesFromUrl`. 
+Для анализа счетов по URL-адресу используйте метод `beginRecognizeInvoicesFromUrl`. 
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_invoice_call)]
 
 > [!TIP]
-> Кроме того, можно распознавать счета в определенном регионе. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient), например о **beginRecognizeInvoices**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+> Можно также проанализировать счета, сохраненные локально. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeInvoices**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
 
-Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждого счета в документе. В следующем блоке кода обрабатывается визитная карточка с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
+Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждого счета в документе. В приведенном ниже блоке кода обрабатывается счет с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_invoice_print)]
 
@@ -326,14 +267,14 @@ Total Price: null, confidence: 0.93
 
 ### <a name="train-a-model-without-labels"></a>Обучение моделей без меток
 
-Вы можете обучить свою модель распознавать все поля и значения в ваших формах без разметки вручную документов, которые будете использовать для обучения.
+Вы можете обучить свою модель анализировать все поля и значения в ваших формах без необходимости вручную помечать документы, которые вы будете использовать для обучения.
 
 Приведенный ниже метод обучает модель на основе заданного набора документов и выводит ее статус в консоль. 
 
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_train_call)]
 
-Возвращаемый объект **CustomFormModel** содержит сведения о типах форм, с которыми работает модель, и полях, которые она способна извлечь из формы каждого типа. Приведенный ниже блок кода выводит эту информацию в консоль.
+Возвращаемый объект **CustomFormModel** содержит сведения о типах форм, которые может анализировать модель, и полях, которые она способна извлечь из формы каждого типа. Приведенный ниже блок кода выводит эту информацию в консоль.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_train_print)]
 
@@ -428,6 +369,65 @@ Field 'field-5' has label 'Charges' with a confidence score of 1.00.
 Field 'field-6' has label 'VAT ID' with a confidence score of 1.00.
 ```
 
+## <a name="analyze-receipts"></a>Анализ квитанций
+
+В этом разделе объясняется, как с помощью предварительно обученной модели можно анализировать используемые в США квитанции и извлекать из них содержимое стандартных полей. Дополнительные сведения об анализе квитанций см. в статье [Готовая модель получения Распознавателя форм](../../concept-receipts.md).
+
+Для распознавания чеков по указанному URI используйте метод **beginRecognizeReceiptsFromUrl**. 
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_call)]
+
+> [!TIP]
+> Можно также проанализировать локальные изображения квитанций. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+
+Возвращаемое значение представляет собой коллекцию объектов **RecognizedReceipt**: по одному для каждой страницы обработанного документа. Следующий блок кода обрабатывает квитанции в цикле и выводит их данные в консоль.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print)]
+
+Следующий блок кода обрабатывает в цикле отдельные объекты, обнаруженные в квитанции, и выводит их данные в консоль.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_receipts_print_items)]
+
+### <a name="output"></a>Выходные данные 
+
+```console
+Analyze receipt...
+----------- Recognized Receipt page 0 -----------
+Merchant Name: Contoso Contoso, confidence: 0.62
+Merchant Address: 123 Main Street Redmond, WA 98052, confidence: 0.99
+Transaction Date: 2020-06-10, confidence: 0.90
+Receipt Items:
+Name: Cappuccino, confidence: 0.96s
+Quantity: null, confidence: 0.957s]
+Total Price: 2.200000, confidence: 0.95
+Name: BACON & EGGS, confidence: 0.94s
+Quantity: null, confidence: 0.927s]
+Total Price: null, confidence: 0.93
+```
+
+## <a name="analyze-business-cards"></a>Анализ визитных карточек
+
+#### <a name="version-20"></a>[Версия 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Эта функция недоступна в выбранной версии API.
+
+#### <a name="version-21-preview"></a>[Предварительная версия 2.1](#tab/preview)
+
+В этом разделе показано, как с помощью предварительно обученной модели анализировать визитные карточки на английском языке и извлекать из них содержимое стандартных полей. Дополнительные сведения об анализе визитных карточек см. в статье [Готовая модель для анализа визитных карточек с помощью Распознавателя форм](../../concept-business-cards.md).
+
+Для анализа визитных карточек по URL-адресу используйте метод `beginRecognizeBusinessCardsFromUrl`. 
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_call)]
+
+> [!TIP]
+> Можно также проанализировать локальные изображения визитных карточек. Изучите информацию о методах класса [FormRecognizerClient](/java/api/com.azure.ai.formrecognizer.formrecognizerclient?view=azure-java-stable), например о **beginRecognizeBusinessCards**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/formrecognizer/azure-ai-formrecognizer/src/samples/README.md) для сценариев, включающих использование локальных изображений.
+
+Возвращаемое значение представляет собой коллекцию объектов **RecognizedForm**: по одному для каждой карточки в документе. В следующем блоке кода обрабатывается визитная карточка с указанным универсальным кодом ресурса (URI) и все ее основные поля с соответствующими значениями выводятся в консоль.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_print)]
+
+---
 
 ## <a name="manage-custom-models"></a>Управление пользовательскими моделями
 
