@@ -5,30 +5,31 @@ author: deborahc
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 09/22/2019
+ms.date: 02/09/2021
 ms.author: dech
-ms.openlocfilehash: 7b52a066f80b686a0e424d8f63d520d46691a72a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.custom: references_regions
+ms.openlocfilehash: b8ce745a0a0db96e7f6b9e3a0140d46364246e4a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187822"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379613"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Включение записных книжек для учетных записей Azure Cosmos DB (Предварительная версия)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!IMPORTANT]
-> Встроенные записные книжки для Azure Cosmos DB в настоящее время доступны в следующих регионах Azure: Восточная Австралия, восток США, Восточная часть США 2, Северная Европа, Юго-Центральный регион США, Юго-Восточная Азия, южная часть Соединенного Королевства, Западная Европа и Западная часть США 2. Чтобы использовать записные книжки, [Создайте новую учетную запись с записными книжками](#enable-notebooks-in-a-new-cosmos-account) или [включите записные книжки для существующей учетной записи](#enable-notebooks-in-an-existing-cosmos-account) в одном из этих регионов.
+> Встроенные записные книжки для Azure Cosmos DB в настоящее время доступны в [29 регионах](#supported-regions). Чтобы использовать записные книжки, [Создайте новую учетную запись Cosmos](#create-a-new-cosmos-account) или [включите записные книжки в существующей учетной записи](#enable-notebooks-in-an-existing-cosmos-account) в одном из этих регионов. 
 
 Встроенные записные книжки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные с портала Azure. В этой статье описывается, как включить эту функцию для учетной записи Azure Cosmos DB.
 
-## <a name="enable-notebooks-in-a-new-cosmos-account"></a>Включение записных книжек в новой учетной записи Cosmos
-
+## <a name="create-a-new-cosmos-account"></a>Создание новой учетной записи Cosmos
+Начиная с 10 февраля 2021 новые учетные записи Azure Cosmos, созданные в одном из [поддерживаемых регионов](#supported-regions) , автоматически будут иметь включенные записные книжки. Для включения записных книжек дополнительная настройка не требуется. Чтобы создать новую учетную запись, выполните следующие действия.
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Последовательно выберите **Создать ресурс** > **Базы данных** > **Azure Cosmos DB**.
-1. На странице **Создание учетной записи Azure Cosmos DB** выберите **записные книжки**. 
+1. Введите основные параметры для учетной записи. 
  
-    :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks.png" alt-text="Выберите пункт &quot;записные книжки&quot; в колонке Azure Cosmos DB создание":::
+   :::image type="content" source="./media/create-cosmosdb-resources-portal/azure-cosmos-db-create-new-account-detail-2.png" alt-text="Страница Новая учетная запись для Azure Cosmos DB":::
 
 1. Выберите **Review + create** (Просмотреть и создать). Можно пропустить параметр **сеть** и **теги** . 
 1. Проверьте параметры учетной записи, а затем нажмите кнопку **Создать**. Создание учетной записи занимает несколько минут. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. 
@@ -74,6 +75,45 @@ ms.locfileid: "96187822"
 
 :::image type="content" source="media/enable-notebooks/create-or-upload-new-notebook.png" alt-text="Создание или передача новой записной книжки":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="supported-regions"></a>Поддерживаемые регионы
+Встроенные записные книжки для Azure Cosmos DB в настоящее время доступны в 29 регионах Azure. Для новых учетных записей Azure Cosmos, созданных в этих регионах, будут автоматически включены записные книжки. Записные книжки бесплатно предоставляются вашей учетной записью. 
 
-- Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
+- Центральная Австралия
+- Центральная Австралия 2
+- Восточная Австралия
+- Юго-Восточная часть Австралии
+- Южная Бразилия
+- Центральная Канада
+- Восточная Канада
+- Центральная Индия
+- Центральная часть США
+- Восточная часть США
+- восточная часть США 2
+- Центральная Франция
+- Южная Франция
+- Северная Германия
+- Центрально-Западная Германия
+- Западная Япония
+- Республика Корея, южный регион
+- Северо — центральная часть США
+- Северная Европа
+- Юго-Центральный регион США
+- Southeast Asia
+- Северная Швейцария
+- Центральная часть ОАЭ.
+- южная часть Соединенного Королевства
+- западная часть Соединенного Королевства
+- Западная Центральная часть США
+- Западная Европа
+- Западная Индия
+- Западная часть США 2
+
+## <a name="next-steps"></a>Следующие шаги
+
+* Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
+* [Обзор коллекции примеров записных книжек](https://cosmos.azure.com/gallery.html)
+* [Использование функций и команд записной книжки Python](use-python-notebook-features-and-commands.md)
+* [Использование функций и команд записной книжки C#](use-csharp-notebook-features-and-commands.md)
+* [Импорт записных книжек из репозитория GitHub](import-github-notebooks.md)
+
+

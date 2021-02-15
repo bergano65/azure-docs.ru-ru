@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/21/2020
 ms.author: yelevin
-ms.openlocfilehash: cf8da1d88529a823ff4399fb955c8a5e0abbd20e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d1314b79f09f1bed2de5d6964b0a6224b5962ca
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87038245"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096877"
 ---
 # <a name="connect-your-alcide-kaudit-to-azure-sentinel"></a>Подключение АлЦиде Каудит к Azure Sentinel
 
@@ -63,7 +63,7 @@ ms.locfileid: "87038245"
 
 Чтобы использовать соответствующую схему в журналах для АлЦиде Каудит, выполните поиск по указанным выше типам данных.
 
-Если журналы начнут появляться в Log Analytics, это может занять до 20 минут.
+После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/04/2021
 ms.author: memildin
-ms.openlocfilehash: 3fca96c6cf11e0b35cd830fe4c0d8ccac8e66bd2
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 768f686889663d9b1af4b88d84b361ac9460a5a0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99548870"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381738"
 ---
 # <a name="customize-the-set-of-standards-in-your-regulatory-compliance-dashboard"></a>Настройка набора стандартов на панели мониторинга соответствия нормативным требованиям
 
@@ -92,7 +92,7 @@ ms.locfileid: "99548870"
 
     :::image type="content" source="./media/security-center-compliance-dashboard/compliance-dashboard.png" alt-text="Панель мониторинга соответствия нормативным требованиям" lightbox="./media/security-center-compliance-dashboard/compliance-dashboard.png":::
 
-## <a name="removing-a-standard-from-your-dashboard"></a>Удаление стандарта из панели мониторинга
+## <a name="remove-a-standard-from-your-dashboard"></a>Удаление стандарта из панели мониторинга
 
 Если какой-либо из предоставляемых нормативных требований не относится к вашей организации, это простой процесс удаления из пользовательского интерфейса. Это позволяет дополнительно настроить панель мониторинга соответствия нормативным требованиям и сосредоточиться только на тех применимых к вам стандартам.
 
@@ -113,10 +113,10 @@ ms.locfileid: "99548870"
 
     :::image type="content" source="./media/update-regulatory-compliance-packages/remove-standard-confirm.png" alt-text="Подтвердите, что вы действительно хотите удалить выбранный нормативный стандарт.":::
 
-1. Выберите **Да**. Стандартный будет удален. 
+1. Выберите ответ **Да**. Стандартный будет удален. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как **Добавить стандарты соответствия** требованиям, чтобы отслеживать соответствие нормативным и отраслевым стандартам.
 

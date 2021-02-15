@@ -8,12 +8,10 @@
       href: whats-new.md
 - name: Краткие руководства
   items:
-    - name: С использованием портала QnA Maker
-      items:
-        - name: Создание базы знаний
-          href: Quickstarts/create-publish-knowledge-base.md
-        - name: Запрос к базе знаний
-          href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
+    - name: Создание базы знаний на портале QnA Maker
+      href: Quickstarts/create-publish-knowledge-base.md
+    - name: Выполнение запроса к базе знаний с помощью REST API
+      href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: "Использование клиентских библиотек или REST\_API"
       href: Quickstarts/quickstart-sdk.md
 - name: Учебники
@@ -38,6 +36,8 @@
     - name: Жизненный цикл разработки
       href: Concepts/development-lifecycle-knowledge-base.md
       displayName: 'version control, test, index, publish, monitor usage, create'
+    - name: Точный ответ
+      href: reference-precise-answering.md
     - name: Рекомендации
       href: Concepts/best-practices.md
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
@@ -50,6 +50,13 @@
       displayName: 'azure, resource, key, upgrade, pricing, tier,'
     - name: Управление ресурсами QnA Maker
       href: How-To/manage-qna-maker-app.md
+    - name: Настройка активного обучения для улучшения базы знаний
+      items:
+        - name: Включение активного обучения
+          href: How-To/use-active-learning.md
+        - name: Получение предлагаемых альтернативных вопросов
+          href: How-to/improve-knowledge-base.md
+          displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
     - name: Включение активного обучения
       href: How-To/use-active-learning.md
     - name: Управление базой знаний
@@ -86,16 +93,10 @@
       href: Overview/language-support.md
     - name: Ограничения
       href: limits.md
-    - name: Управление доступом Azure на основе ролей (Azure RBAC)
-      href: Concepts/role-based-access-control.md
-    - name: Активное обучение
-      href: Concepts/active-learning-suggestions.md
     - name: Оценка надежности
       href: Concepts/confidence-score.md
     - name: Диагностика
       href: troubleshooting.md
-    - name: Точный ответ
-      href: reference-precise-answering.md
     - name: Добавление защищенных файлов SharePoint
       href: How-To/add-sharepoint-datasources.md
       displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'

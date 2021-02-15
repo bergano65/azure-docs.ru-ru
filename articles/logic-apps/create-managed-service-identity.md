@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 01/15/2021
-ms.openlocfilehash: 9ac8a23569d9a85787768419a0377967026e9bd9
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 02/12/2021
+ms.openlocfilehash: 9a3a511a287f093b4fc317213afedd5fdc3c21be
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520669"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps.
 
@@ -30,6 +30,9 @@ Azure Logic Apps поддерживает [*назначенные систем�
 * Функции Azure
 * HTTP
 * HTTP + веб-перехватчик
+
+> [!NOTE]
+> Хотя триггер и действие HTTP могут проверять подлинность подключений к учетным записям хранения Azure за брандмауэром Azure, используя управляемое системой удостоверение, они не могут использовать управляемое пользователем удостоверение для проверки подлинности тех же подключений.
 
 **Управляемые соединители**
 

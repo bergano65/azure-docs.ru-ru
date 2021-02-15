@@ -1,22 +1,18 @@
 ---
 title: Использование Приватного канала Azure для Фабрики данных Azure
 description: Узнайте, как работает частная ссылка Azure в фабрике данных Azure.
-services: data-factory
 ms.author: abnarain
 author: nabhishek
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: a1b5ba56d30124bea7a814c2ffcf0cfff28903aa
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 9e4d686f582a202dbc543620c7bf73dc4e7adb22
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99062194"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389184"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Использование Приватного канала Azure для Фабрики данных Azure
 
@@ -76,7 +72,7 @@ ms.locfileid: "99062194"
 
 В приведенном выше примере записи ресурсов DNS для фабрики данных "Factory" (при разрешении из-за пределов виртуальной сети, в которой размещается частная конечная точка) будут:
 
-| Название | Тип | Значение |
+| Имя | Type | Значение |
 | ---------- | -------- | --------------- |
 | Фабрика. {Region}. факт. Azure. NET | CNAME   | Фабрика. {Region}. привателинк. факт. Azure. NET |
 | Фабрика. {Region}. привателинк. факт. Azure. NET | CNAME   | < общедоступной конечной точки службы фабрики данных > |
@@ -84,7 +80,7 @@ ms.locfileid: "99062194"
 
 Записи ресурсов DNS для фабрики (если они разрешаются в виртуальной сети, в которой размещается частная конечная точка) будут:
 
-| Название | Тип | Значение |
+| Имя | Type | Значение |
 | ---------- | -------- | --------------- |
 | Фабрика. {Region}. факт. Azure. NET | CNAME   | Фабрика. {Region}. привателинк. факт. Azure. NET |
 | Фабрика. {Region}. привателинк. факт. Azure. NET   | Объект | < IP-адрес частной конечной точки > |
@@ -120,7 +116,7 @@ ms.locfileid: "99062194"
 > [!NOTE]
 > Вы по-прежнему можете получить доступ к порталу фабрики данных Azure через общедоступную сеть после создания частной конечной точки для портала.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Создание фабрики данных с помощью пользовательского интерфейса фабрики данных Azure](quickstart-create-data-factory-portal.md)
 - [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)

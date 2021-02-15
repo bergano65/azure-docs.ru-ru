@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Узнайте, как создать & развернуть общий пул виртуальных машин для обработки и анализа данных (Dsvm) в качестве общего ресурса для команды.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 12/10/2018
-ms.openlocfilehash: eb1242189f4c5a38421a7f44e8f5e738c44970b6
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: a118d5a3e716a80bda21ffe82a8cefd1da1202f3
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705529"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519717"
 ---
 # <a name="create-a-shared-pool-of-data-science-virtual-machines"></a>Создание общего пула виртуальных машин для обработки и анализа данных
 
@@ -55,7 +54,7 @@ az deployment group create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  -
 
 Масштабируемые наборы виртуальных машин поддерживают автомасштабирование. Можно задать правила создания дополнительных экземпляров и время масштабирования экземпляров. Например, вы можете уменьшить масштаб до нуля экземпляров, чтобы сэкономить на использовании облачного оборудования, когда виртуальные машины простаивают. Подробное описание процедуры [автомасштабирования](../../virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md) приведено в документации по масштабируемым наборам виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка общего удостоверения](dsvm-common-identity.md)
 * [Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных](dsvm-secure-access-keys.md)

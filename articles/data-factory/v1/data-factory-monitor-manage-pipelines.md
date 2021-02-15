@@ -1,22 +1,18 @@
 ---
 title: Мониторинг конвейеров и управление ими с помощью портал Azure и PowerShell
 description: Сведения о том, как с помощью портала Azure и Azure PowerShell отслеживать состояние созданных конвейеров и фабрик данных Azure и управлять ими.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 2a30c755bc19849ad3a821cbbc75b787a3b0bb98
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 486f12c29c473d46e3aff73abe747f8aa5a2ef8d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96495860"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380412"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
 > [!div class="op_single_selector"]
@@ -87,10 +83,10 @@ ms.locfileid: "96495860"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Область</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
-    <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
+    <td rowspan="8">Ожидание</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
 </tr>
 <tr>
 <td>DatasetDependencies</td><td>Восходящие зависимости не готовы.</td>
@@ -121,7 +117,7 @@ ms.locfileid: "96495860"
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Failed</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
 <td>Отменено</td><td>Срез был отменен пользователем.</td>
@@ -135,10 +131,10 @@ ms.locfileid: "96495860"
 <td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
-<td>Пропущено</td><td>Нет</td><td>Срез не обрабатывается.</td>
+<td>Пропущено</td><td>None</td><td>Срез не обрабатывается.</td>
 </tr>
 <tr>
-<td>Нет</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
+<td>None</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
 </tr>
 </table>
 
@@ -287,7 +283,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
 
 ![Исправление ошибок и проверка](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
 
-### <a name="use-azure-powershell"></a>Использование Azure Powershell
+### <a name="use-azure-powershell"></a>Использование Azure PowerShell
 Ошибки можно повторно запустить с помощью командлета **Set-аздатафакторислицестатус** . Синтаксис и другие сведения о командлете см. в разделе [Set-аздатафакторислицестатус](/powershell/module/az.datafactory/set-azdatafactoryslicestatus) .
 
 **Пример**.

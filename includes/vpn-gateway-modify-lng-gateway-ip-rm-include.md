@@ -5,62 +5,20 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 01/15/2020
+ms.date: 02/10/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 22d68722afe4be6113263a7e7282dde3f188b18a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 06df27b5eeb74f75bc49a848881b56aa4e81c57b
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025636"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380507"
 ---
-### <a name="to-modify-the-local-network-gateway-gatewayipaddress---no-gateway-connection"></a><a name="gwipnoconnection"></a> Изменение шлюза локальной сети с использованием GatewayIpAddress при отсутствии подключения к шлюзу
-
-Если общедоступный IP-адрес VPN-устройства, к которому вы хотите подключиться, изменился, измените шлюз локальной сети в соответствии с изменениями. Используйте пример ниже, чтобы изменить шлюз локальной сети, к которому нет подключения.
-
-При изменении этого значения вы также можете изменить префиксы адресов. Не забудьте указать имеющееся имя шлюза локальной сети для перезаписи текущих параметров. Если используется другое имя, необходимо создать новый шлюз локальной сети вместо перезаписи существующего.
+Если общедоступный IP-адрес VPN-устройства, к которому вы хотите подключиться, изменился, измените шлюз локальной сети в соответствии с изменениями. При изменении этого значения вы также можете изменить префиксы адресов. Не забудьте указать имеющееся имя шлюза локальной сети для перезаписи текущих параметров. Если используется другое имя, необходимо создать новый шлюз локальной сети вместо перезаписи существующего.
 
 ```azurepowershell-interactive
 New-AzLocalNetworkGateway -Name Site1 `
 -Location "East US" -AddressPrefix @('10.101.0.0/24','10.101.1.0/24') `
 -GatewayIpAddress "5.4.3.2" -ResourceGroupName TestRG1
 ```
-
-### <a name="to-modify-the-local-network-gateway-gatewayipaddress---existing-gateway-connection"></a><a name="gwipwithconnection"></a> Изменение шлюза локальной сети с использованием GatewayIpAddress, если подключение к шлюзу установлено
-
-Если общедоступный IP-адрес VPN-устройства, к которому вы хотите подключиться, изменился, измените шлюз локальной сети в соответствии с изменениями. Если шлюз уже подключен, сначала вам нужно удалить подключение. Затем вы сможете изменить IP-адрес шлюза и создать новое подключение. При этом вы также можете изменить префиксы адресов. После этого VPN-подключение будет некоторое время недоступно. Не удаляйте VPN-шлюз при изменении IP-адреса шлюза. Необходимо удалить только подключение.
- 
-
-1. Удалите подключение. Вы можете найти имя своего подключения с помощью командлета Get-AzVirtualNetworkGatewayConnection.
-
-   ```azurepowershell-interactive
-   Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
-   -ResourceGroupName TestRG1
-   ```
-2. Измените значение GatewayIpAddress. При этом вы также можете изменить префиксы адресов. Не забудьте указать существующее имя шлюза локальной сети для перезаписи текущих параметров. Иначе вы создадите новый шлюз локальной сети, а не перезапишете существующий.
-
-   ```azurepowershell-interactive
-   New-AzLocalNetworkGateway -Name Site1 `
-   -Location "East US" -AddressPrefix @('10.101.0.0/24','10.101.1.0/24') `
-   -GatewayIpAddress "104.40.81.124" -ResourceGroupName TestRG1
-   ```
-3. Создайте подключение. В этом примере мы настраиваем тип подключения IPsec. При повторном создании подключения используйте тип соединения, указанный для вашей конфигурации. Дополнительные типы подключений см. на странице с [командлетами PowerShell](/powershell/module/Azurerm.Network/New-AzureRmVirtualNetworkGatewayConnection).  Чтобы получить имя VirtualNetworkGateway, запустите командлет Get-AzVirtualNetworkGateway.
-   
-    Задайте переменные.
-
-   ```azurepowershell-interactive
-   $local = Get-AzLocalNetworkGateway -Name Site1 -ResourceGroupName TestRG1
-
-   $vnetgw = Get-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1
-   ```
-   
-    Создайте подключение.
-
-   ```azurepowershell-interactive 
-   New-AzVirtualNetworkGatewayConnection -Name VNet1Site1 -ResourceGroupName TestRG1 `
-   -Location "East US" `
-   -VirtualNetworkGateway1 $vnetgw `
-   -LocalNetworkGateway2 $local `
-   -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
-   ```

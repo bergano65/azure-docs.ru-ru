@@ -3,36 +3,48 @@
 - name: Обзор
   items:
     - name: Что такое пакетная служба Azure?
+      displayName: overview
       href: batch-technical-overview.md
 - name: Краткие руководства
   expanded: true
   items:
     - name: Выполнение пакетного задания — CLI
+      displayName: 'quickstart, first, create'
       href: quick-create-cli.md
     - name: Выполнение пакетного задания — портал
+      displayName: 'quickstart, first, create'
       href: quick-create-portal.md
     - name: Выполнение пакетного задания — .NET
+      displayName: 'quickstart, first, create, c#, csharp'
       href: quick-run-dotnet.md
     - name: Выполнение пакетного задания — Python
+      displayName: 'quickstart, first, create'
       href: quick-run-python.md
     - name: "Создание учетной записи пакетной службы\_— шаблон ARM"
       href: quick-create-template.md
-      displayName: Resource Manager
+      displayName: 'Resource Manager, quickstart, first, create'
 - name: Учебники
   items:
     - name: Параллельная обработка файлов — .NET
+      displayName: 'tutorial, hpc, high-performance, large, c#, csharp'
       href: tutorial-parallel-dotnet.md
     - name: Параллельная обработка файлов — Python
+      displayName: 'tutorial, hpc, high-performance, large'
       href: tutorial-parallel-python.md
     - name: Отрисовка сцен с использованием Arnold
+      displayName: tutorial
       href: tutorial-rendering-cli.md
     - name: Рендеринг с использованием Batch Explorer
+      displayName: tutorial
       href: tutorial-rendering-batchexplorer-blender.md
     - name: Параллельное моделирование на R
+      displayName: 'tutorial, doAzureParallel, rstudio'
       href: tutorial-r-doazureparallel.md
     - name: Распознавание текста c помощью пакетной службы и службы "Функции"
+      displayName: 'trigger, optical'
       href: tutorial-batch-functions.md
     - name: Скрипты Python с использованием Фабрики данных
+      displayName: tutorial
       href: tutorial-run-python-batch-azure-data-factory.md
 - name: Примеры
   items:
@@ -68,20 +80,20 @@
         - name: Лучшие методики обеспечения безопасности
           href: security-best-practices.md
     - name: Рабочий процесс и ресурсы пакетной службы
-      displayName: developer features
+      displayName: 'developer features, core, component, overview'
       href: batch-service-workflow-features.md
       items:
         - name: Учетные записи пакетной службы
           displayName: storage account
           href: accounts.md
         - name: Узлы и пулы
-          displayName: 'compute node, application package, scaling, schedule, os'
+          displayName: 'compute node, application package, scaling, schedule, os, configuration'
           href: nodes-and-pools.md
         - name: Задания и задачи
-          displayName: Batch job
+          displayName: 'Batch job, start task, environment'
           href: jobs-and-tasks.md
         - name: Файлы и каталоги
-          displayName: Batch file
+          displayName: 'Batch file, working directory'
           href: files-and-directories.md
     - name: API-интерфейсы и средства
       href: batch-apis-tools.md
@@ -131,26 +143,34 @@
     - name: Создание пулов и управление ими
       items:
         - name: Автомасштабирование вычислительных узлов
+          displayName: 'scaling, dynamic, formula'
           href: batch-automatic-scaling.md
         - name: Выбор размера виртуальной машины для вычислительных узлов
           href: batch-pool-vm-sizes.md
         - name: Перемещение из облачной службы в пулы виртуальных машин
+          displayName: migrate
           href: batch-pool-cloud-service-to-virtual-machine-configuration.md
         - name: Настройка доступа к вычислительным узлам
+          displayName: 'rdp, ssh, network, remote'
           href: pool-endpoint-configuration.md
         - name: Создание пула с использованием службы "Общая коллекция образов"
+          displayName: 'managed image, sig'
           href: batch-sig-images.md
         - name: Создание пула с использованием ресурса управляемого образа
           href: batch-custom-images.md
         - name: Создание пула в Зонах доступности
+          displayName: 'region, zonal policy'
           href: create-pool-availability-zones.md
         - name: Создание пула с включенным шифрованием дисков
           href: disk-encryption.md
         - name: Создание пула в виртуальной сети
+          displayName: vNet
           href: batch-virtual-network.md
         - name: Создание пула с общедоступными IP-адресами
+          displayName: static
           href: create-pool-public-ip.md
         - name: Создание пула без общедоступных IP-адресов
+          displayName: private
           href: batch-pool-no-public-ip-address.md
         - name: Подключение виртуальной файловой системы
           href: virtual-file-mount.md
@@ -161,17 +181,21 @@
         - name: Использование вычислительных узлов Linux
           href: batch-linux-nodes.md
         - name: Использование виртуальных машин с низким приоритетом
+          displayName: 'preempted, surplus, capacity'
           href: batch-low-pri-vms.md
         - name: Проверка на наличие ошибок в пуле и узле
+          displayName: 'troubleshoot, failure'
           href: batch-pool-node-error-checking.md
     - name: Создание конвейера CI/CD для пакетной службы
+      displayName: 'Azure DevOps, devops, continuous'
       href: batch-ci-cd.md
     - name: Управление заданиями и задачами
       items:
         - name: Подготовка заданий и выполнение задач
+          displayName: 'release, job release'
           href: batch-job-prep-release.md
         - name: Параллельные задачи узла
-          displayName: concurrent
+          displayName: 'variable, maximize'
           href: batch-parallel-node-tasks.md
         - name: Зависимости задачи
           href: batch-task-dependencies.md
@@ -182,6 +206,7 @@
         - name: Планирование заданий для повышения эффективности
           href: batch-job-schedule.md
         - name: Проверка на наличие ошибок заданий и задач
+          displayName: 'failure, troubleshoot'
           href: batch-job-task-error-checking.md
     - name: Сохранение пакетных заданий и выходных данных задач
       href: batch-task-output.md
@@ -194,29 +219,37 @@
       href: monitoring-overview.md
       items:
         - name: Использование метрик и журналов диагностики
+          displayName: 'alert, monitor'
           href: batch-diagnostics.md
         - name: Мониторинг с помощью Application Insights
+          displayName: debug
           href: monitor-application-insights.md
         - name: Подсчет ресурсов по штатам
           href: batch-get-resource-counts.md
         - name: Выполнение эффективных запросов ресурсов
+          displayName: 'monitor, queries'
           href: batch-efficient-list-queries.md
     - name: Использование инструментов для работы со скриптами
       items:
         - name: Использование Azure PowerShell
+          displayName: 'ps, scripting, cmdlet'
           href: batch-powershell-cmdlets-get-started.md
         - name: Использование Azure CLI
+          displayName: command line
           href: batch-cli-get-started.md
-          items:
-            - name: Использование шаблонов интерфейса командной строки пакетной службы
-              href: batch-cli-templates.md
+        - name: Использование шаблонов интерфейса командной строки пакетной службы
+          diplayName: extension
+          href: batch-cli-templates.md
     - name: Использование пакета SDK Node.js для пакетной службы
+      displayName: json
       href: batch-nodejs-get-started.md
     - name: Выполнение рабочих нагрузок
       items:
-        - name: Задания MPI
+        - name: MPI
+          displayName: 'multi-instance, message passing interface'
           href: batch-mpi.md
         - name: Контейнерные рабочие нагрузки
+          displayName: docker
           href: batch-docker-container-workloads.md
         - name: Отрисовка
           items:
@@ -231,6 +264,7 @@
             - name: Справочник по приложениям для рендеринга
               href: batch-rendering-application-reference.md
             - name: Хранение и перемещение данных
+              displayName: 'rendering, assets'
               href: batch-rendering-storage-data-movement.md
             - name: Архитектура для рендеринга
               href: batch-rendering-architectures.md

@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для службы автоматизации Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для службы автоматизации Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 775bc106336fd9e11719b9885ddfd250750fecae
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 3e82d37eb4b9ad5ce20c8146c340ad2dd00b54e8
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99558085"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096272"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-automation"></a>Встроенные определения в Политике Azure для службы автоматизации Azure
 

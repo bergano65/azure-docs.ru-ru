@@ -5,7 +5,7 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: troubleshooting
-ms.date: 12/11/2020
+ms.date: 02/12/2021
 tags: active-directory
 ms.author: mimart
 author: msmimart
@@ -14,12 +14,12 @@ ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa0d0d032c2ab6ae1d6c5e6b1c8b1793a6b3bd7c
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 60cd944ecb144a30e872259f6e959a11c3ea6319
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99090643"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365435"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
@@ -27,7 +27,7 @@ ms.locfileid: "99090643"
 
    > [!IMPORTANT]
    > - **Начиная с 4 января 2021 г.** компания Google [прекращает поддержку входа через веб-представление](https://developers.googleblog.com/2020/08/guidance-for-our-effort-to-block-less-secure-browser-and-apps.html). Если вы используете федерацию Google или самостоятельную регистрацию с помощью Gmail, вам нужно [проверить нативные бизнес-приложения на совместимость](google-federation.md#deprecation-of-webview-sign-in-support).
-   > - **Начиная с 31 марта 2021 г.** корпорация Майкрософт не будет поддерживать активацию через приглашение при создании неуправляемых учетных записей и арендаторов Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам перейти на [проверку подлинности с использованием одноразового секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам об этой функции, предоставляемой в общедоступной предварительной версии, и с радостью создадим другие способы для совместной работы.
+   > - **Начиная с 2021 октября** Корпорация Майкрософт больше не будет поддерживать погашение приглашений, создавая неуправляемые учетные записи и клиенты Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам перейти на [проверку подлинности с использованием одноразового секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам об этой функции, предоставляемой в общедоступной предварительной версии, и с радостью создадим другие способы для совместной работы.
 
 ## <a name="ive-added-an-external-user-but-do-not-see-them-in-my-global-address-book-or-in-the-people-picker"></a>После добавления внешнего пользователя он не отображается в глобальной адресной книге или в средстве выбора пользователей
 
@@ -112,7 +112,7 @@ ms.locfileid: "99090643"
 
 При использовании функций самостоятельной регистрации, таких как пользовательские атрибуты пользователя или потоки пользователей, автоматически создается приложение с именем `aad-extensions-app. Do not modify. Used by AAD for storing user data.` . Он используется внешними удостоверениями Azure AD для хранения сведений о пользователях, которые подписываются и собирают настраиваемые атрибуты.
 
-Если вы случайно удалили `aad-extensions-app` , то можете восстановить его через 30 дней. Вы можете восстановить приложение с помощью модуля Azure AD PowerShell.
+Если вы случайно удалили приложение `aad-extensions-app`, его можно восстановить в течение 30 дней. Вы можете восстановить приложение с помощью модуля Azure AD PowerShell.
 
 1. Запустите модуль Azure AD PowerShell и запустите `Connect-AzureAD` .
 1. Войдите в систему как глобальный администратор для клиента Azure AD, для которого требуется восстановить удаленное приложение.
@@ -122,6 +122,6 @@ ms.locfileid: "99090643"
 
 Теперь восстановленное приложение появится в портал Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Получение поддержки для службы совместной работы B2B](../fundamentals/active-directory-troubleshooting-support-howto.md)

@@ -1,22 +1,17 @@
 ---
 title: Журнал сеанса в действии копирования
 description: Узнайте, как включить журнал сеанса в действии копирования в фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
 author: dearandyxu
-manager: ''
-ms.reviewer: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: yexu
-ms.openlocfilehash: e56a840da07a2f6e966867699506f0122a0e7956
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 7cb00d62556babbd8e43e2fac2faa815a63943ed
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593661"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100385274"
 ---
 #  <a name="session-log-in-copy-activity"></a>Журнал сеанса в действии копирования
 
@@ -101,6 +96,9 @@ path | Путь к файлам журнала. | Укажите путь, по 
         }
 
 ```
+
+> [!NOTE]
+> Если `enableCopyActivityLog` свойство имеет значение `Enabled` , имена файлов журнала формируются системой.
 
 ### <a name="the-schema-of-the-log-file"></a>Схема файла журнала
 

@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 506e568f44d8dd5354ed7bd3ec20d0c71d484b85
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 41db671e4ab76dc56dc2c01f4852640acfe3fd83
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475190"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389745"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети
 <a name="network-service-tags"></a>
@@ -153,6 +153,7 @@ ms.locfileid: "99475190"
 ### <a name="tips"></a>Советы 
 - Наличие обновления можно отслеживать по увеличению значения *changeNumber* в файле JSON. Для каждого подраздела (например, **Storage.WestUS**) имеется собственное значение *changeNumber*, которое увеличивается по мере появления изменений. Значение *changeNumber* в файле увеличивается при изменении любого из подразделов.
 - Примеры синтаксического анализа сведений о теге службы (например, получение всех диапазонов адресов для хранилища в WestUS) см. в [документации по API обнаружения тегов служб PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag?viewFallbackFrom=azps-2.3.2).
+- При добавлении новых IP-адресов в теги службы они не будут использоваться в Azure по крайней мере на одну неделю. Это дает вам время на обновление любых систем, которым может потребоваться отслеживание IP-адресов, связанных с тегами службы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [создать группу безопасности сети](tutorial-filter-network-traffic.md).

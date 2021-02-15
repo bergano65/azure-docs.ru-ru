@@ -1,22 +1,18 @@
 ---
 title: Копирование данных из SAP HANA
 description: Узнайте, как копировать данные из SAP HANA на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/22/2020
-ms.openlocfilehash: 92cc94170a01aceaa3e6bd058f4ae6628db04f18
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce3c1e22dd030c0730bf4d9859591c00860908a7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87529591"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382282"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Копирование данных из SAP HANA с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -69,7 +65,7 @@ ms.locfileid: "87529591"
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **SapHana** | Да |
 | connectionString | Укажите сведения, необходимые для подключения к SAP HANA с помощью **обычной проверки подлинности** или **проверки подлинности Windows**. Ознакомьтесь с приведенными ниже примерами.<br>В строке подключения параметр "сервер/порт" является обязательным (порт по умолчанию — 30015), а имя пользователя и пароль являются обязательными при использовании обычной проверки подлинности. Дополнительные дополнительные параметры см. в разделе [SAP HANA свойства подключения ODBC](<https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html>) .<br/>Можно также поместить пароль в Azure Key Vault и извлечь конфигурацию пароля из строки подключения. Дополнительные сведения см. в разделе [хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md) статье. | Да |
-| userName | Укажите имя пользователя при использовании проверки подлинности Windows. Например, `user@domain.com`. | Нет |
+| userName | Укажите имя пользователя при использовании проверки подлинности Windows. Пример: `user@domain.com` | Нет |
 | password | Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | нет |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
@@ -271,28 +267,28 @@ ms.locfileid: "87529591"
 
 | Тип данных SAP HANA | Тип промежуточных данных фабрики данных |
 | ------------------ | ------------------------------ |
-| ALPHANUM           | Строковый тип                         |
+| ALPHANUM           | Строка                         |
 | bigint             | Int64                          |
 | BINARY             | Byte[]                         |
-| бинтекст            | Строковый тип                         |
+| бинтекст            | Строка                         |
 | BLOB               | Byte[]                         |
 | BOOL               | Byte                           |
-| CLOB               | Строковый тип                         |
+| CLOB               | Строка                         |
 | DATE               | Дата и время                       |
 | DECIMAL            | Decimal                        |
 | DOUBLE             | Double                         |
 | FLOAT              | Double                         |
 | INTEGER            | Int32                          |
-| NCLOB              | Строковый тип                         |
-| NVARCHAR           | Строковый тип                         |
-| ВЕЩЕСТВЕННОЕ ЧИСЛО               | Один                         |
+| NCLOB              | Строка                         |
+| NVARCHAR           | Строка                         |
+| real               | Single                         |
 | SECONDDATE         | Дата и время                       |
-| шорттекст          | Строковый тип                         |
-| SMALLDECIMAL       | Десятичный тип                        |
+| шорттекст          | Строка                         |
+| SMALLDECIMAL       | Decimal                        |
 | SMALLINT           | Int16                          |
 | STGEOMETRYTYPE     | Byte[]                         |
 | стпоинттипе        | Byte[]                         |
-| TEXT               | Строковый тип                         |
+| TEXT               | Строка                         |
 | TIME               | TimeSpan                       |
 | TINYINT            | Byte                           |
 | VARCHAR            | Строка                         |

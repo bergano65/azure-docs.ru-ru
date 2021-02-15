@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 description: Узнайте, как копировать данные из Cassandra в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 4b7fd2de0762de147ad3ceae0d562a1c78b33dc2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a3cd3c3ae28ae302e9469a71d00054152a9b5fb5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100383710"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -219,7 +214,7 @@ ms.locfileid: "81417473"
 
 Ниже приведен пример таблицы ExampleTable в базе данных Cassandra. В этой таблице содержатся такие столбцы: столбец первичного ключа pk_int (целое число), текстовый столбец "Значение", столбец "Список", "Сопоставление" и StringSet.
 
-| pk_int | Значение | Список | Схема | StringSet |
+| pk_int | Значение | List | Карта | StringSet |
 | --- | --- | --- | --- | --- |
 | 1 |"пример значения 1" |["1", "2", "3"] |{"S1": "a", "S2": "b"} |{"A", "B", "C"} |
 | 3 |"пример значения 3" |["100", "101", "102", "105"] |{"S1": "t"} |{"A", "E"} |
@@ -264,7 +259,7 @@ ms.locfileid: "81417473"
 | 1 |Объект |
 | 1 |B |
 | 1 |C |
-| 3 |Объект |
+| 3 |A |
 | 3 |E |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

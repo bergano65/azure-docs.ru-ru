@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из Teradata разных с помощью фабрики данных Azure
 description: Соединитель Teradata службы фабрики данных позволяет копировать данные из Teradata разных в хранилища данных, поддерживаемые фабрикой данных в качестве приемников.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.author: jingwang
-ms.openlocfilehash: 430b9a1e567d9a79093f50ae388b4b69119c057d
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: c65b295dca16a3453b2ee5472b9a3ee5e8d62df7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98695879"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381772"
 ---
 # <a name="copy-data-from-teradata-vantage-by-using-azure-data-factory"></a>Копирование данных из Teradata разных с помощью фабрики данных Azure
 
@@ -76,7 +71,7 @@ ms.locfileid: "98695879"
 | уседатаенкриптион | Указывает, следует ли шифровать все связи с базой данных Teradata. Допустимые значения: 0 или 1.<br><br/>- **0 (отключено, по умолчанию)**: шифрует только сведения о проверке подлинности.<br/>- **1 (включено)**: шифрует все данные, передаваемые между драйвером и базой данных. | `0` |
 | CharacterSet | Кодировка, используемая для сеанса. Например, `CharacterSet=UTF16` .<br><br/>Это значение может быть пользовательской кодировкой или одной из следующих предварительно определенных наборов символов: <br/>-ASCII<br/>-UTF8<br/>-UTF16<br/>— LATIN1252_0A<br/>— LATIN9_0A<br/>— LATIN1_0A<br/>-Shift-JIS (Windows, совместимые с DOS, KANJISJIS_0S)<br/>-EUC (совместимый с UNIX, KANJIEC_0U)<br/>— Мэйнфрейм IBM (KANJIEBCDIC5035_0I)<br/>— KANJI932_1S0<br/>-BIG5 (TCHBIG5_1R0)<br/>-GB (SCHGB2312_1T0)<br/>— SCHINESE936_6R0<br/>— TCHINESE950_8R0<br/>-Нетворккореан (HANGULKSC5601_2R4)<br/>— HANGUL949_7R0<br/>— ARABIC1256_6A0<br/>— CYRILLIC1251_2A0<br/>— HEBREW1255_5A0<br/>— LATIN1250_1A0<br/>— LATIN1254_7A0<br/>— LATIN1258_8A0<br/>— THAI874_4A0 | `ASCII` |
 | максреспсизе |Максимальный размер буфера ответов для запросов SQL в килобайтах (KBs). Например, `MaxRespSize=‭10485760‬` .<br/><br/>Для базы данных Teradata версии 16,00 или более поздней максимальное значение равно 7361536. Для соединений, использующих более ранние версии, максимальное значение — 1048576. | `65536` |
-| мечанисмнаме | Чтобы использовать протокол LDAP для проверки подлинности подключения, укажите `MechanismName=LDAP` . | Недоступно |
+| мечанисмнаме | Чтобы использовать протокол LDAP для проверки подлинности подключения, укажите `MechanismName=LDAP` . | Н/Д |
 
 **Пример использования обычной проверки подлинности**
 
@@ -174,7 +169,7 @@ ms.locfileid: "98695879"
 | База данных | Имя экземпляра Teradata. | Нет (если свойство query указано в источнике действия) |
 | table | Имя таблицы в экземпляре Teradata. | Нет (если свойство query указано в источнике действия) |
 
-**Пример.**
+**Пример**.
 
 ```json
 {

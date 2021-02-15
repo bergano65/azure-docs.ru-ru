@@ -8,19 +8,19 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
-ms.date: 10/21/2020
-ms.openlocfilehash: 6e397242bd699adcba4737014ebbce72aadc8ec2
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 02/11/2021
+ms.openlocfilehash: 4012cd83cf2e6fe438792a503731729b57a1425c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92669819"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380599"
 ---
 # <a name="azure-active-directory-service-principal-with-azure-sql"></a>Субъект-служба Azure Active Directory с SQL Azure
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Поддержка создания пользователей Azure Active Directory (Azure AD) в базе данных SQL Azure (SQL DB) и [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) от имени приложений Azure AD (субъектов-служб) в настоящее время **доступна в общедоступной предварительной версии** .
+Поддержка создания пользователей Azure Active Directory (Azure AD) в базе данных SQL Azure (SQL DB) и [Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) от имени приложений Azure AD (субъектов-служб) в настоящее время **доступна в общедоступной предварительной версии**.
 
 > [!NOTE]
 > Эта функция уже поддерживается для SQL Управляемый экземпляр.
@@ -52,7 +52,7 @@ ms.locfileid: "92669819"
 
 Чтобы включить создание объектов Azure AD в базе данных SQL и Azure синапсе от имени приложения Azure AD, необходимы следующие параметры:
 
-1. Назначение удостоверения сервера
+1. Назначьте удостоверение сервера. Назначенное удостоверение сервера представляет управляемую системную идентификацию (MSI). В настоящее время удостоверение сервера для Azure SQL не поддерживает управляемое пользователем удостоверение (УМИ).
     - Для нового логического сервера SQL Azure выполните следующую команду PowerShell:
     
     ```powershell
@@ -100,7 +100,7 @@ ms.locfileid: "92669819"
 - Использование приложения Azure AD с субъектом-службой из другого клиента Azure AD завершится ошибкой при доступе к базе данных SQL или Управляемый экземпляр SQL, созданной в другом клиенте. Субъект-служба, назначенный этому приложению, должен принадлежать тому же клиенту, что и логический сервер SQL или Управляемый экземпляр.
 - Для настройки отдельного приложения Azure AD в качестве администратора Azure AD для SQL Azure с помощью PowerShell необходим модуль [Az.Sql 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) или более поздней версии. Убедитесь, что используется последняя версия модуля.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию пользователей Azure AD с помощью приложений Azure AD](authentication-aad-service-principal-tutorial.md)

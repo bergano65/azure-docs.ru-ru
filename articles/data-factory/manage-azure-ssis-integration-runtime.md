@@ -1,22 +1,17 @@
 ---
 title: Перенастройка среды выполнения интеграции SQL Server Integration Services Azure
 description: Узнайте, как перенастроить среду выполнения интеграции Azure-SSIS в фабрике данных Azure после ее подготовки.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/03/2020
 author: swinarko
 ms.author: sawinark
-ms.reviewer: douglasl
-manager: anandsub
-ms.openlocfilehash: 7545f593aea2aca8c0aa240d44bcef3b7a1ca7c6
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 724411dc12654aec1614230c943923062b334cd2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636278"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370688"
 ---
 # <a name="reconfigure-the-azure-ssis-integration-runtime"></a>Перенастройка среды выполнения интеграции SQL Server Integration Services Azure
 
@@ -28,10 +23,10 @@ ms.locfileid: "92636278"
 Пользовательский интерфейс фабрики данных можно использовать для остановки, изменения, повторной настройки и удаления среды выполнения интеграции Azure SSIS. 
 
 1. Откройте пользовательский интерфейс фабрики данных, щелкнув плитку " **автор & монитор** " на домашней странице фабрики данных.
-2. Выберите **Управление** концентратором ниже **Главная** , **изменить** и **мониторинг** концентраторов, чтобы отображалась область **подключения** .
+2. Выберите **Управление** концентратором ниже **Главная**, **изменить** и **мониторинг** концентраторов, чтобы отображалась область **подключения** .
 
 ### <a name="to-reconfigure-an-azure-ssis-ir"></a>Перенастройка среды выполнения интеграции Azure SSIS
-На панели **Подключения** центра **Управление** перейдите на страницу **Среды выполнения интеграции** и выберите **Обновить** . 
+На панели **Подключения** центра **Управление** перейдите на страницу **Среды выполнения интеграции** и выберите **Обновить**. 
 
    ![Панель "Подключения"](./media/tutorial-create-azure-ssis-runtime-portal/connections-pane.png)
 
@@ -88,7 +83,7 @@ ms.locfileid: "92636278"
    Remove-AzResourceGroup -Name $ResourceGroupName -Force 
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о среде выполнения Azure SSIS см. в следующих разделах: 
 
 - [Azure-SSIS Integration Runtime](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR. 

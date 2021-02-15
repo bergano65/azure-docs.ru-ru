@@ -9,12 +9,12 @@ ms.date: 01/27/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 8172abb5e220f28061c7826af24a5d9a2043f4ad
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 5e08af509487188245b0fad9ba2d0f490944868f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219915"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371793"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -94,7 +94,7 @@ ms.locfileid: "99219915"
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -DefaultAction Allow
     ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -202,7 +202,7 @@ ms.locfileid: "99219915"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -324,7 +324,7 @@ ms.locfileid: "99219915"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -371,10 +371,12 @@ ms.locfileid: "99219915"
 
 Типы операций, которые может выполнять экземпляр ресурса в данных учетной записи хранения, определяются [назначениями ролей Azure](storage-auth-aad.md#assign-azure-roles-for-access-rights) экземпляра ресурса. Экземпляры ресурсов должны находиться в том же клиенте, что и учетная запись хранения, но они могут принадлежать любой подписке в клиенте.
 
-Список поддерживаемых служб Azure отображается в разделе [доверенный доступ на основе управляемого системой удостоверения, назначенного](#trusted-access-system-assigned-managed-identity) в этой статье.
+> [!NOTE]
+> Эта функция доступна в общедоступной предварительной версии и доступна во всех регионах общедоступного облака.
 
 > [!NOTE]
-> Эта функция доступна в общедоступной предварительной версии и доступна во всех регионах общедоступного облака. 
+> Правила экземпляра ресурса в настоящее время поддерживаются только для Azure синапсе. Поддержка других служб Azure, перечисленных в разделе « [доверенный доступ на основе управляемого системой удостоверения](#trusted-access-system-assigned-managed-identity) » этой статьи, будет доступна в ближайшие недели.
+
 
 ### <a name="portal"></a>[Портал](#tab/azure-portal)
 
@@ -477,7 +479,7 @@ $rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName
 $rule.ResourceAccessRules 
 ```
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Для добавления или удаления правил сети ресурсов можно использовать команды Azure CLI.
 
@@ -581,7 +583,7 @@ az storage account network-rule list \
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее.](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy) |
+| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Azure Cognitive Services       | Microsoft. Когнитивесервице/учетные записи    | Разрешает Cognitive Services доступ к учетным записям хранения. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
@@ -648,7 +650,7 @@ az storage account network-rule list \
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе исключение не будет действовать.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
