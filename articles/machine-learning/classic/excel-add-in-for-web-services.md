@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): надстройка 
 description: Использование веб-служб машинного обучения Azure непосредственно из Excel без написания кода.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: fb87afcc6edc02d241dca763aff9ecdd594e4711
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 45d9e494b9f885cfa0680bec595aefcd4074d41e
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93310091"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520006"
 ---
 # <a name="excel-add-in-for-azure-machine-learning-studio-classic-web-services"></a>Надстройка Excel для веб-служб Машинное обучение Azure Studio (классическая модель)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Excel упрощает непосредственный вызов веб-служб без необходимости написания какого-либо кода.
@@ -65,14 +65,14 @@ Excel упрощает непосредственный вызов веб-слу
 
 **Использовать новую веб-службу**
 
-1. На портале [веб-служб машинное обучение Azure](https://services.azureml.net) щелкните **веб-службы** , а затем выберите свою веб-службу. 
-2. Щелкните **Consume** (Использование).
+1. На портале [веб-служб машинное обучение Azure](https://services.azureml.net) щелкните **веб-службы**, а затем выберите свою веб-службу. 
+2. Щелкните **Consume**(Использование).
 3. Найдите раздел **Basic consumption info** (Основные сведения об использовании). Скопируйте и сохраните **первичный ключ** и URL-адрес **запроса-ответа**.
 
 ## <a name="steps-to-add-a-new-web-service"></a>Действия для добавления новой веб-службы
 
 1. Разверните новую веб-службу или используйте уже существующую. Дополнительные сведения о развертывании веб-службы см. в разделе [учебник 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md).
-2. Щелкните **Consume** (Использование).
+2. Щелкните **Consume**(Использование).
 3. Найдите раздел **Basic consumption info** (Основные сведения об использовании). Скопируйте и сохраните **первичный ключ** и URL-адрес **запроса-ответа**.
 4. В Excel перейдите к разделу **веб-службы** (если вы используете раздел **Predict** , щелкните стрелку "назад", чтобы перейти к списку веб-служб).
    

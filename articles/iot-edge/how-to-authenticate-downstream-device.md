@@ -8,12 +8,12 @@ ms.date: 10/15/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3876b44bc6bb1ddbc5398126421fb9651003838f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 13ac18abd0a557d02435c3805e1ab86bcbf1ff84
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678829"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391989"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -68,6 +68,11 @@ ms.locfileid: "98678829"
 * Выберите **задать родительское устройство** и выберите устройство шлюза IOT EDGE, с помощью которого будет подключаться это подчиненное устройство. Вы всегда можете изменить родительский элемент позже.
 
    ![Создание идентификатора устройства с проверкой подлинности на основе ключа содержимого на портале](./media/how-to-authenticate-downstream-device/symmetric-key-portal.png)
+
+   >[!NOTE]
+   >Настройка родительского устройства в качестве дополнительного шага для подчиненных устройств, использующих проверку подлинности с симметричным ключом. Однако начиная с версии IoT Edge 1.1.0, каждое подчиненное устройство должно быть назначено родительскому устройству.
+   >
+   >Можно настроить центр IoT Edge для возврата к предыдущему поведению, задав для переменной среды **AuthenticationMode** значение **клаудандскопе**.
 
 Для выполнения той же операции можно также использовать [расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) . В следующем примере для создания нового устройства IoT с проверкой подлинности симметричного ключа и назначения родительского устройства используется команда [AZ IOT Hub Device-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) :
 

@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из PayPal с помощью фабрики данных Azure (предварительная версия)
 description: Узнайте, как копировать данные из PayPal в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: c93425fe2e5210a3a8cc577b6e74e281c88121c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6753159acbc4a2da20695d61c6e7c31f4ac0a7c3
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81416791"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381296"
 ---
 # <a name="copy-data-from-paypal-using-azure-data-factory-preview"></a>Копирование данных из PayPal с помощью фабрики данных Azure (предварительная версия)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -50,7 +45,7 @@ ms.locfileid: "81416791"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **PayPal**. | Да |
-| host | URL-адрес экземпляра PayPal. (api.sandbox.paypal.com).  | Да |
+| host | URL-адрес экземпляра PayPal (api.sandbox.paypal.com).  | Да |
 | clientid | Идентификатор клиента, связанный с приложением PayPal.  | Да |
 | clientSecret | Секрет клиента, связанный с приложением PayPal. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |

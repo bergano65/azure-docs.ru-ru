@@ -1,22 +1,18 @@
 ---
 title: Мониторинг фабрик данных с помощью Azure Monitor
 description: Узнайте, как использовать Azure Monitor для мониторинга конвейеров фабрики данных/Азуре, включив журналы диагностики со сведениями из фабрики данных.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: d1325ac1afbca8b30cc640f1f22cb598506a5c91
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 389c0b1fd5a2fde33c2bf19ac2807cca45691523
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555718"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373153"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Мониторинг и оповещение фабрики данных с помощью Azure Monitor
 
@@ -66,12 +62,12 @@ Azure Monitor предоставляет метрики и журналы инф
       - _адфактивитирун_
       - _адфпипелинерун_
       - _адфтригжеррун_
-      - _адфссисинтегратионрунтимелогс_
-      - _адфссиспаккажеевентмессажеконтекст_
-      - _адфссиспаккажеевентмессажес_
-      - _адфссиспаккажеексекутаблестатистикс_
-      - _адфссиспаккажеексекутионкомпонентфасес_
-      - _адфссиспаккажеексекутиондатастатистикс_
+      - _ADFSSISIntegrationRuntimeLogs_
+      - _ADFSSISPackageEventMessageContext_
+      - _ADFSSISPackageEventMessages_
+      - _ADFSSISPackageExecutableStatistics_
+      - _ADFSSISPackageExecutionComponentPhases_
+      - _ADFSSISPackageExecutionDataStatistics_
 
       Можно выбрать различные журналы, относящиеся к рабочим нагрузкам, для отправки в Log Analytics таблицы. Например, если вы не используете SQL Server Integration Services (SSIS) вообще, не нужно выбирать журналы служб SSIS. Если вы хотите вести журнал операций запуска, отмены или обслуживания служб SSIS Integration Runtime (IR), можно выбрать пункт журналы IR для служб SSIS. При вызове выполнения пакетов служб SSIS с помощью T-SQL на SQL Server Management Studio (SSMS), агент SQL Server или других назначенных средствах можно выбрать журналы пакетов служб SSIS. При вызове выполнения пакетов служб SSIS с помощью действий выполнить пакет служб SSIS в конвейерах ADF можно выбрать все журналы.
 
@@ -269,7 +265,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство | Тип | Описание |
+| Свойство | Type | Описание |
 | --- | --- | --- |
 | **storageAccountId** |Строка | Идентификатор ресурса учетной записи хранения, в которую необходимо отправить журналы диагностики. |
 | **serviceBusRuleId** |Строка | Идентификатор правила служебной шины для пространства имен Service-Bus, в котором должны быть созданы концентраторы событий для потоковой передачи журналов диагностики. Идентификатор правила имеет формат `{service bus resource ID}/authorizationrules/{key name}` .|
@@ -278,7 +274,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | **журналы**| Сложный тип| Имя категории журнала диагностики для типа ресурса. Чтобы получить список категорий журналов диагностики для ресурса, выполните операцию получения диагностической настройки. |
 | **category**| Строка| Массив категорий журналов и их политик хранения. |
 | **timegrain** | Строка | Гранулярность метрик, которые записываются в формате длительности ISO 8601. Значение свойства должно быть равно `PT1M` , что указывает одну минуту. |
-| **доступной**| Логическое значение | Указывает, включен ли сбор метрики или категории журналов для этого ресурса. |
+| **доступной**| Логическое | Указывает, включен ли сбор метрики или категории журналов для этого ресурса. |
 | **retentionPolicy**| Сложный тип| Описывает политику хранения метрики или категории журналов. Это свойство используется только для учетных записей хранения. |
 |**недели**| Int| Количество дней, в течение которых хранятся метрики или журналы. Если значение свойства равно 0, журналы хранятся неограниченное время. Это свойство используется только для учетных записей хранения. |
 
@@ -442,7 +438,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство | Тип | Описание | Пример |
+| Свойство | Type | Описание | Пример |
 | --- | --- | --- | --- |
 | **Уровень** |Строка | Уровень журналов диагностики. Для журналов выполнения действий задайте для свойства значение 4. | `4` |
 | **correlationId** |Строка | Уникальный идентификатор для отслеживания конкретного запроса. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
@@ -488,7 +484,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство | Тип | Описание | Пример |
+| Свойство | Type | Описание | Пример |
 | --- | --- | --- | --- |
 | **Уровень** |Строка | Уровень журналов диагностики. Для журналов выполнения действий задайте для свойства значение 4. | `4` |
 | **correlationId** |Строка | Уникальный идентификатор для отслеживания конкретного запроса. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
@@ -531,7 +527,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство | Тип | Описание | Пример |
+| Свойство | Type | Описание | Пример |
 | --- | --- | --- | --- |
 | **Уровень** |Строка | Уровень журналов диагностики. Для журналов выполнения действий задайте для свойства значение 4. | `4` |
 | **correlationId** |Строка | Уникальный идентификатор для отслеживания конкретного запроса. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
@@ -568,7 +564,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство                   | Тип   | Описание                                                   | Пример                        |
+| Свойство                   | Type   | Описание                                                   | Пример                        |
 | -------------------------- | ------ | ------------------------------------------------------------- | ------------------------------ |
 | **time**                   | Строка | Время события в формате UTC: `YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
 | **operationName**          | Строка | Имя операции со IR для служб SSIS                            | `Start/Stop/Maintenance` |
@@ -608,7 +604,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство                   | Тип   | Описание                                                          | Пример                        |
+| Свойство                   | Type   | Описание                                                          | Пример                        |
 | -------------------------- | ------ | -------------------------------------------------------------------- | ------------------------------ |
 | **time**                   | Строка | Время события в формате UTC: `YYYY-MM-DDTHH:MM:SS.00000Z`        | `2017-06-28T21:00:27.3534352Z` |
 | **operationName**          | Строка | Для этого параметра задается значение `YourSSISIRName-SSISPackageEventMessageContext`       | `mysqlmissisir-SSISPackageEventMessageContext` |
@@ -658,7 +654,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство                   | Тип   | Описание                                                        | Пример                        |
+| Свойство                   | Type   | Описание                                                        | Пример                        |
 | -------------------------- | ------ | ------------------------------------------------------------------ | ------------------------------ |
 | **time**                   | Строка | Время события в формате UTC: `YYYY-MM-DDTHH:MM:SS.00000Z`      | `2017-06-28T21:00:27.3534352Z` |
 | **operationName**          | Строка | Для этого параметра задается значение `YourSSISIRName-SSISPackageEventMessages`           | `mysqlmissisir-SSISPackageEventMessages` |
@@ -707,7 +703,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство                   | Тип   | Описание                                                      | Пример                        |
+| Свойство                   | Type   | Описание                                                      | Пример                        |
 | -------------------------- | ------ | ---------------------------------------------------------------- | ------------------------------ |
 | **time**                   | Строка | Время события в формате UTC: `YYYY-MM-DDTHH:MM:SS.00000Z`    | `2017-06-28T21:00:27.3534352Z` |
 | **operationName**          | Строка | Для этого параметра задается значение `YourSSISIRName-SSISPackageExecutableStatistics`  | `mysqlmissisir-SSISPackageExecutableStatistics` |
@@ -752,7 +748,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство                   | Тип   | Описание                                                         | Пример                        |
+| Свойство                   | Type   | Описание                                                         | Пример                        |
 | -------------------------- | ------ | ------------------------------------------------------------------- | ------------------------------ |
 | **time**                   | Строка | Время события в формате UTC: `YYYY-MM-DDTHH:MM:SS.00000Z`       | `2017-06-28T21:00:27.3534352Z` |
 | **operationName**          | Строка | Для этого параметра задается значение `YourSSISIRName-SSISPackageExecutionComponentPhases` | `mysqlmissisir-SSISPackageExecutionComponentPhases` |
@@ -800,7 +796,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Свойство                     | Тип   | Описание                                                        | Пример                        |
+| Свойство                     | Type   | Описание                                                        | Пример                        |
 | ---------------------------- | ------ | ------------------------------------------------------------------ | ------------------------------ |
 | **time**                     | Строка | Время события в формате UTC: `YYYY-MM-DDTHH:MM:SS.00000Z`      | `2017-06-28T21:00:27.3534352Z` |
 | **operationName**            | Строка | Для этого параметра задается значение `YourSSISIRName-SSISPackageExecutionDataStatistics` | `mysqlmissisir-SSISPackageExecutionDataStatistics` |
@@ -829,13 +825,13 @@ Log Analytics наследует схему от Monitor со следующим
 * Нет столбца "Level".
 * Динамический столбец "Properties" сохраняется как следующий динамический тип больших двоичных объектов JSON.
 
-    | Azure Monitor столбец | Log Analytics столбец | Тип |
+    | Azure Monitor столбец | Log Analytics столбец | Type |
     | --- | --- | --- |
     | $. Properties. усерпропертиес | UserProperties | Динамический |
     | $. Properties. Примечания | Заметки | Динамический |
     | $. Properties. Входной | Входные данные | Динамический |
-    | $. Properties. Проверки | Выходные данные | Динамический |
-    | $. Properties. Ошибка. errorCode | ErrorCode | int |
+    | $. Properties. Проверки | Вывод | Динамический |
+    | $. Properties. Ошибка. errorCode | ErrorCode | INT |
     | $. Properties. Ошибка. сообщение | ErrorMessage | строка |
     | $. Properties. План | Ошибка | Динамический |
     | $. Properties. Предшественников | Предшественников | Динамический |
@@ -907,5 +903,5 @@ Log Analytics наследует схему от Monitor со следующим
 
 ![Запрос журналов выполнения пакетов служб SSIS на Log Analytics](media/data-factory-monitor-oms/log-analytics-query2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Программное отслеживание конвейеров и управление ими](monitor-programmatically.md)

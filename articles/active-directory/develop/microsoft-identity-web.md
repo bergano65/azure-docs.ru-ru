@@ -13,12 +13,12 @@ ms.date: 10/09/2020
 ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b82e300128a41f8315132e1ff93af33c853edb15
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8bc9773fa7e1b3db2e249e803f4d2a3cf39edb48
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173521"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102552"
 ---
 # <a name="microsoft-identity-web-authentication-library"></a>Библиотека веб-аутентификации Microsoft Identity
 
@@ -70,7 +70,7 @@ dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id "00000000-00
 
 #### <a name="github"></a>GitHub
 
-Microsoft Identity Web — это проект с открытым кодом, размещенный на сайте GitHub: <a href="https://github.com/AzureAD/microsoft-identity-web" target="_blank">AzureAD/Microsoft- <span class="docon docon-navigate-external x-hidden-focus"></span> Identity-Web</a>
+Microsoft Identity Web — это проект с открытым кодом, размещенный на сайте GitHub: <a href="https://github.com/AzureAD/microsoft-identity-web" target="_blank">AzureAD/Microsoft-Identity-Web</a>
 
 [Вики-сайт репозитория](https://github.com/AzureAD/microsoft-identity-web/wiki) содержит дополнительную документацию, и если вам нужна помощь или обнаружение ошибки, можно [придать ему сообщение](https://github.com/AzureAD/microsoft-identity-web/issues).
 
@@ -78,7 +78,7 @@ Microsoft Identity Web — это проект с открытым кодом, �
 
 Веб-сайт Microsoft Identity включает несколько функций, которые не предоставляются при использовании шаблонов проектов ASP.NET 3,1 по умолчанию.
 
-| Компонент                                                                                  | ASP.NET Core 3.1                                                     | Веб-сайт Microsoft Identity                                                                                  |
+| Функция                                                                                  | ASP.NET Core 3.1                                                     | Веб-сайт Microsoft Identity                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [Вход пользователей](scenario-web-app-sign-user-app-configuration.md) в веб-приложениях             | <li>Рабочие или учебные учетные записи<li>Удостоверения социальных сетей (с Azure AD B2C) | <li>Рабочие или учебные учетные записи<li>Personal Microsoft accounts (Личные учетные записи Майкрософт)<li>Удостоверения социальных сетей (с Azure AD B2C)     |
 | [Защита веб-API](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) | <li>Рабочие или учебные учетные записи<li>Удостоверения социальных сетей (с Azure AD B2C) | <li>Рабочие или учебные учетные записи<li>Personal Microsoft accounts (Личные учетные записи Майкрософт)<li>Удостоверения социальных сетей (с Azure AD B2C)     |
@@ -91,7 +91,7 @@ Microsoft Identity Web — это проект с открытым кодом, �
 | [Область действия/проверка роли приложения] [сценарий — API-проверка] в веб-API                        | Нет                                                                   | Да                                                                                                     |
 | `WWW-Authenticate` Создание заголовков в веб-API                                         | Нет                                                                   | Да                                                                                                     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы просмотреть Microsoft Identity Web в действии, воспользуйтесь нашим руководством по Блазор Server.
 
@@ -99,12 +99,14 @@ Microsoft Identity Web — это проект с открытым кодом, �
 
 Веб-вики Microsoft Identity на сайте GitHub содержит подробную справочную документацию по различным аспектам библиотеки. Например, использование сертификатов, добавочное согласие и ссылка на условный доступ можно найти здесь:
 
-- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates" target="_blank">Использование сертификатов с Microsoft. Identity. Web <span class="docon docon-navigate-external x-hidden-focus"></span> </a> GitHub
-- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access" target="_blank">Последовательное согласие и <span class="docon docon-navigate-external x-hidden-focus"></span> Условный доступ</a> GitHub
+- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Using-certificates" target="_blank">Использование сертификатов с Microsoft. Identity. Web</a> (GitHub)
+- <a href="https://github.com/AzureAD/microsoft-identity-web/wiki/Managing-incremental-consent-and-conditional-access" target="_blank">Поэтапное согласие и условный доступ</a> (GitHub)
 
 <!-- LINKS -->
 <!--  [miw-certs]: microsoft-identity-web-certificates.md  -->
 <!--  [miw-certs-decrypt]: microsoft-identity-web-certificates.md#decryption-certificates  -->
 <!--  [miw-inc-consent-ca-header]: microsoft-identity-web-consent-conditional-access.md#handling-incremental-consent-or-conditional-access-in-web-apis  -->
 <!--  [miw-inc-consent-ca]: microsoft-identity-web-consent-conditional-access.md  -->
-[сценарий-API-Call-API]: сценарий-Web-API-Call-API-Call-API. md # параметр-1-вызов-Microsoft-Graph-с-The-SDK [сценарий-API-Call-Graph]: сценарий-Web-API-Call-API-Call-API. md # параметр-1-Call-Microsoft-Graph-with-a-SDK [сценарий-API-Validation]: scenario-protected-web-api-verification-scope-app-roles.md
+[сценарий-API-Call-API]: сценарий-Web-API-Call-API-Call-API. md # параметр-1 — вызов-Microsoft-Graph-с-The-SDK  
+[сценарий-API-Call-Graph]: сценарий-Web-API-Call-API-Call-API. md # параметр-1-Call-Microsoft-Graph-с-The-SDK  
+[сценарий-API-Validation]: scenario-protected-web-api-verification-scope-app-roles.md  

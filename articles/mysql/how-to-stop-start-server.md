@@ -6,17 +6,17 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: how-to
 ms.date: 09/21/2020
-ms.openlocfilehash: 047a24133dfdf68e2176b20cf31a871d11f0d4f9
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: d297d215d4b0edfdd67b603ba4707bf02057ad78
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241163"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516878"
 ---
 # <a name="stopstart-an-azure-database-for-mysql"></a>Завершение работы и запуск базы данных Azure для MySQL
 
 > [!IMPORTANT]
-> В настоящее время доступна общедоступная Предварительная версия функции "завершение работы и запуск" для базы данных Azure для MySQL.
+>  При **остановлении** сервера он остается в этом состоянии в течение следующих 7 дней в растяжении. Если не **запустить** его в течение этого времени вручную, сервер будет автоматически запущен в конце 7 дней. Если сервер не используется, его можно снова **Отключить** .
 
 В этой статье приводятся пошаговые инструкции по выполнению и запуску одного сервера.
 
@@ -48,7 +48,7 @@ ms.locfileid: "93241163"
 
 2.  На странице **Обзор** нажмите кнопку **Запуск** на панели инструментов.
 
-    :::image type="content" source="./media/howto-stop-start-server/mysql-start-server.png" alt-text="Завершение сервера базы данных Azure для MySQL":::
+    :::image type="content" source="./media/howto-stop-start-server/mysql-start-server.png" alt-text="Запуск сервера базы данных Azure для MySQL":::
 
     > [!NOTE]
     > После запуска сервера все операции управления теперь доступны для одного сервера.
@@ -79,5 +79,5 @@ ms.locfileid: "93241163"
     > [!NOTE]
     > После запуска сервера все операции управления теперь доступны для одного сервера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте [, как создавать оповещения по метрикам](howto-alert-on-metric.md).

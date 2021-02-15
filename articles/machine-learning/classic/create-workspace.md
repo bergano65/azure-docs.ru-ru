@@ -3,22 +3,22 @@ title: 'ML Studio (классическая модель): создание ра
 description: Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 12/07/2017
-ms.openlocfilehash: 0e2a67141970d1f5091457066db9b18a00ffecf8
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 9caac94c90aa18f8661ab46a0ae72d49500f39cb
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95486166"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100520550"
 ---
 # <a name="create-and-share-an-machine-learning-studio-classic-workspace"></a>Создание и совместное использование рабочей области Машинное обучение Studio (классическая модель)
 
-**применимо к:** ![ Это галочка, которая означает, что эта статья относится к Машинное обучение Studio (классическая модель). ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ это X, что означает, что эта статья применима к машинное обучение Azure.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**ПРИМЕНИМО К:**  ![Флажок, который обозначает, что эта статья применима к Студии машинного обучения (классическая версия). ](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая версия) ![Значок X, который обозначает, что эта статься применима к решению "Машинное обучение Azure". ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 Чтобы использовать Машинное обучение Azure Studio (классическая модель), необходимо иметь рабочую область Машинное обучение Studio (классическая). Такая рабочая область содержит инструменты, необходимые для создания, публикации экспериментов и управления ими.
 
@@ -129,6 +129,6 @@ ms.locfileid: "95486166"
 После удаления файлов cookie перезапустите браузер и перейдите на страницу [студия машинного обучения Microsoft Azure (классическая модель)](https://studio.azureml.net) . Введите данные той же учетной записи Майкрософт, использованной для создания рабочей области.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении рабочей областью см. в статье [Управление рабочей областью машинное обучение Azure Studio (классическая модель)](manage-workspace.md).

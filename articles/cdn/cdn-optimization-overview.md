@@ -4,22 +4,16 @@ description: Узнайте, как сеть доставки содержимо
 services: cdn
 documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: ''
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: allensu
-ms.openlocfilehash: 7c7e4ff05307452da67c37b23bf492db8855e2ef
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3d207ee09a76509a65a2645515b182f8d92753b0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004506"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387926"
 ---
 # <a name="optimize-azure-cdn-for-the-type-of-content-delivery"></a>Оптимизация Azure CDN для типа доставки содержимого
 
@@ -64,7 +58,11 @@ ms.locfileid: "96004506"
 
 ## <a name="select-and-configure-optimization-types"></a>Выбор и настройка типов оптимизации
 
-Чтобы создать новую конечную точку, выберите тип оптимизации, который наилучшим образом соответствует сценарию и типу содержимого, которое должна предоставлять конечная точка. По умолчанию выбрана **Общая веб-доставка**. Для существующих конечных точек **Azure CDN уровня "Стандартный" от Akamai** вариант оптимизации можно обновить в любое время. Такое изменение не приведет к прерыванию доставки из сети доставки содержимого Azure. 
+Чтобы создать новую конечную точку, выберите тип оптимизации, который наилучшим образом соответствует сценарию и типу содержимого, которое должна предоставлять конечная точка. 
+
+По умолчанию выбрана **Общая веб-доставка**. Обновление **Azure CDN Standard из** конечных точек Akamai можно обновить в любое время. 
+
+Для **Azure CDN Standard от корпорации майкрософт** **Azure CDN Standard от Verizon** и **Azure CDN Premium от Verizon**, вы не можете.
 
 1. Выберите конечную точку в профиле **Azure CDN уровня "Стандартный" от Akamai**.
 

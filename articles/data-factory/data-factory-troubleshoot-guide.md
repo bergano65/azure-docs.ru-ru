@@ -1,19 +1,17 @@
 ---
 title: Устранение неполадок в Фабрике данных Azure | Документация Майкрософт
 description: Узнайте, как устранять неполадки с внешними действиями управления в Фабрике данных Azure.
-services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 12/30/2020
 ms.author: abnarain
-ms.reviewer: craigg
-ms.openlocfilehash: 922ec6c4b579a657e7ee5e872148f8126ce175e2
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 101e55188b8021040e2fd6bd573c1c6330241e72
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822290"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382809"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок в Фабрике данных Azure
 

@@ -1,22 +1,17 @@
 ---
 title: Загрузка данных из Office 365 с помощью Фабрики данных Azure
 description: Использование Фабрики данных Azure для копирования данных из Office 365
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 05f336af62bc0869249d5b32700ea3515ac5994f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8b98344dcb2321d5d91c9974dc833a735164d428
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459704"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370664"
 ---
 # <a name="load-data-from-office-365-by-using-azure-data-factory"></a>Загрузка данных из Office 365 с помощью Фабрики данных Azure
 
@@ -79,7 +74,7 @@ ms.locfileid: "96459704"
 
     ![Настройка таблицы набора данных Office 365](./media/load-office-365-data/edit-dataset.png)
 
-8. Теперь вернитесь на вкладку Источник **конвейера**,  >  **Source tab** чтобы продолжить настройку дополнительных свойств для извлечения данных Office 365.  Область пользователя и фильтр области пользователя — это необязательные предикаты, которые можно определить, чтобы ограничить данные, которые необходимо извлечь из Office 365. Сведения о настройке этих параметров см. в разделе [Свойства набора данных Office 365](./connector-office-365.md#dataset-properties) .
+8. Теперь вернитесь на вкладку Источник **конвейера**,  >   чтобы продолжить настройку дополнительных свойств для извлечения данных Office 365.  Область пользователя и фильтр области пользователя — это необязательные предикаты, которые можно определить, чтобы ограничить данные, которые необходимо извлечь из Office 365. Сведения о настройке этих параметров см. в разделе [Свойства набора данных Office 365](./connector-office-365.md#dataset-properties) .
 
 9. Вам необходимо выбрать один из фильтров даты и указать время начала и время окончания.
 

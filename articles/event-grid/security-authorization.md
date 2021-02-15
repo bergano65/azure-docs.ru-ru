@@ -2,13 +2,13 @@
 title: 'Сетка событий Azure: безопасность и проверка подлинности'
 description: В статье описываются служба "Сетка событий Azure" и ее основные понятия.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 24954ce0a0dc54a04720c0d0b495d14e950a2f71
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.date: 02/12/2021
+ms.openlocfilehash: 326fa00645302eb4b9c9bc59f17c1ca153bdb0b7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109595"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371726"
 ---
 # <a name="authorizing-access-to-event-grid-resources"></a>Авторизация доступа к ресурсам сетки событий
 Служба "Сетка событий Azure" позволяет управлять уровнем доступа, предоставляемого разным пользователям, для выполнения различных **операций управления** , таких как список подписок на события, создание новых и создание ключей. Сетка событий использует управление доступом на основе ролей Azure (Azure RBAC).
@@ -51,6 +51,8 @@ az provider operation show --namespace Microsoft.EventGrid
         "Actions": [
           "Microsoft.Authorization/*/read",
           "Microsoft.EventGrid/eventSubscriptions/*",
+          "Microsoft.EventGrid/systemtopics/eventsubscriptions/*",
+          "Microsoft.EventGrid/partnertopics/eventsubscriptions/*",
           "Microsoft.EventGrid/topicTypes/eventSubscriptions/read",
           "Microsoft.EventGrid/locations/eventSubscriptions/read",
           "Microsoft.EventGrid/locations/topicTypes/eventSubscriptions/read",
@@ -188,7 +190,7 @@ az provider operation show --namespace Microsoft.EventGrid
 Чтобы использовать ресурс, который является источником события, необходимо иметь разрешение **Microsoft.EventGrid/EventSubscriptions/Write**. Это разрешение необходимо, так как вы записываете новую подписку в области действия ресурса. Требуемый ресурс зависит от того, на какой раздел оформляется подписка: системный или пользовательский. В этом разделе описываются оба типа подписки.
 
 ### <a name="system-topics-azure-service-publishers"></a>Системные разделы (издатели служб Azure)
-Для системных разделов необходимо разрешение на запись новой подписки на события в области действия ресурса, публикующего событие. Ресурс имеет следующий формат: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}`
+Для системных разделов, если вы не являетесь владельцем или участником исходного ресурса, вам нужно разрешение на запись новой подписки на события в области действия ресурса, публикующего событие. Ресурс имеет следующий формат: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}`
 
 Например, чтобы подписаться на событие в учетной записи хранения с именем **myacct**, требуется разрешение Microsoft.EventGrid/EventSubscriptions/Write для следующего ресурса: `/subscriptions/####/resourceGroups/testrg/providers/Microsoft.Storage/storageAccounts/myacct`
 

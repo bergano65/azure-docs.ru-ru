@@ -93,8 +93,6 @@
           href: storage-how-to-create-file-share.md
         - name: Развертывание Синхронизации файлов Azure
           href: storage-sync-files-deployment-guide.md
-        - name: Создание общей папки (цен. категория "Премиум")
-          href: storage-how-to-create-premium-fileshare.md
         - name: Создание общей папки NFS
           href: storage-files-how-to-create-nfs-shares.md
         - name: Использование SQL Server FCI с общими папками уровня "Премиум"

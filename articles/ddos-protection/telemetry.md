@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: a3f6c14b7ed2686a262f28510efb37068cfb9cb3
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: b34fcd66f0b64e2522da69bcfc7d119628b9d9d9
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787304"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516708"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>Настройка телеметрии защиты от атак DDoS и просмотр данных телеметрии
 
@@ -39,7 +39,6 @@ ms.locfileid: "98787304"
 
 | Метрика | Отображаемое имя метрики | Unit | Тип статистической обработки | Описание |
 | --- | --- | --- | --- | --- |
-| ByteCount | Количество байтов | Count | Итог | Общее количество байтов, переданных за период времени |
 | BytesDroppedDDoS | Удаленные входящие байты (атака DDoS) | Байт/с | Максимальная | Удаленные входящие байты (атака DDoS)| 
 | BytesForwardedDDoS | Перенаправленные входящие байты (атака DDoS) | Байт/с | Максимальная | Перенаправленные входящие байты (атака DDoS) |
 | BytesInDDoS | Входящие байты (атака DDoS) | Байт/с | Максимальная | Входящие байты (атака DDoS) |
@@ -47,11 +46,9 @@ ms.locfileid: "98787304"
 | DDoSTriggerTCPPackets | Входящие пакеты TCP для активации защиты от атаки DDoS | Число/с | Максимальная | Входящие пакеты TCP для активации защиты от атаки DDoS |
 | DDoSTriggerUDPPackets | Входящие пакеты UDP для активации защиты от атаки DDoS | Число/с | Максимальная | Входящие пакеты UDP для активации защиты от атаки DDoS |
 | IfUnderDDoSAttack | Выполняется ли атака DDoS | Count | Максимальная | Выполняется ли атака DDoS |
-| PacketCount | Количество пакетов | Count | Итог | Общее количество пакетов, переданных за период времени |
 | PacketsDroppedDDoS | Удаленные входящие пакеты (атака DDoS) | Число/с | Максимальная | Удаленные входящие пакеты (атака DDoS) |
 | PacketsForwardedDDoS | Перенаправленные входящие пакеты (атака DDoS) | Число/с | Максимальная | Перенаправленные входящие пакеты (атака DDoS) |
 | PacketsInDDoS | Входящие пакеты (атака DDoS) | Число/с | Максимальная | Входящие пакеты (атака DDoS) |
-| SynCount | Количество пакетов SYN | Count | Итог | Общее количество пакетов SYN, переданных за период времени |
 | TCPBytesDroppedDDoS | Удаленные входящие байты TCP (атака DDoS) | Байт/с | Максимальная | Удаленные входящие байты TCP (атака DDoS) |
 | TCPBytesForwardedDDoS | Перенаправленные входящие байты TCP (атака DDoS) | Байт/с | Максимальная | Перенаправленные входящие байты TCP (атака DDoS) |
 | TCPBytesInDDoS | Входящие байты TCP (атака DDoS) | Байт/с | Максимальная | Входящие байты TCP (атака DDoS) |
@@ -64,7 +61,6 @@ ms.locfileid: "98787304"
 | UDPPacketsDroppedDDoS | Удаленные входящие пакеты UDP (атака DDoS) | Число/с | Максимальная | Удаленные входящие пакеты UDP (атака DDoS) |
 | UDPPacketsForwardedDDoS | Перенаправленные входящие пакеты UDP (атака DDoS) | Число/с | Максимальная | Перенаправленные входящие пакеты UDP (атака DDoS) |
 | UDPPacketsInDDoS | Входящие пакеты UDP (атака DDoS) | Число/с | Максимальная | Входящие пакеты UDP (атака DDoS) |
-| VipAvailability | Data Path Availability (Доступность пути к данным) | Count | Среднее | Средняя доступность IP-адреса за период времени |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -99,7 +95,7 @@ ms.locfileid: "98787304"
 
 Сведения о моделировании от атак ddosной атаки для проверки телеметрии защиты от атак DDoS см. в разделе [Проверка обнаружения от атак DDoS](test-through-simulations.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как выполнять следующие задачи:
 

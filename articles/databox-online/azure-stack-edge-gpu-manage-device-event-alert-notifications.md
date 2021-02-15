@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: a18937d84b05159626708d577982405d79161a1a
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 0ab7cdfb3d699a8415739565aae5d4326002bc43
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99500803"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389150"
 ---
 # <a name="manage-device-event-alert-notifications-on-azure-stack-edge-pro-resources"></a>Управление уведомлениями о событиях устройств на Azure Stack пограничных ресурсах Pro
 
@@ -23,7 +23,7 @@ ms.locfileid: "99500803"
 
 Правило действия может активировать или подавлять уведомления об оповещениях. Правило действия добавляется в *группу действий* — набор параметров уведомлений, которые используются для уведомления пользователей, которым необходимо действовать с оповещениями, активированными в разных контекстах для ресурса или набора ресурсов.
 
-Дополнительные сведения о правилах действий см. в разделе [Настройка правила действий](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule). Дополнительные сведения о группах действий см. [в разделе Создание групп действий и управление ими в портал Azure](/blob/master/articles/azure-monitor/platform/action-groups).
+Дополнительные сведения о правилах действий см. в разделе [Настройка правила действий](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule). Дополнительные сведения о группах действий см. [в разделе Создание групп действий и управление ими в портал Azure](/azure/azure-monitor/platform/action-groups).
 
 > [!NOTE]
 > Функция правил действий доступна в предварительной версии. Некоторые экраны и шаги могут измениться по мере уточнения процесса.
@@ -121,10 +121,10 @@ ms.locfileid: "99500803"
 ![Образец уведомления по электронной почте для правила действия](media/azure-stack-edge-gpu-manage-device-event-alert-notifications/sample-action-rule-email-notification.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-<!-- - See [Create and manage action groups in the Azure portal](/blob/master/articles/azure-monitor/platform/action-groups) for guidance on creating a new action group.
+<!-- - See [Create and manage action groups in the Azure portal](/azure/azure-monitor/platform/action-groups) for guidance on creating a new action group.
 - See [Configure an action rule](/azure/azure-monitor/platform/alerts-action-rules?tabs=portal#configuring-an-action-rule) for more info about creating action rules that send or suppress alert notifications. -2 bullets referenced above. Making room for local tasks in "Next Steps." --> 
 - Сведения о просмотре событий устройств, состояния оборудования и диаграмм метрик см. [в статье мониторинг Azure Stack пограничных Pro](azure-stack-edge-monitor.md) . 
 - Дополнительные сведения об оптимизации Azure Monitor для устройств с графическим процессором Azure Stack с поддержкой ребра см. [в разделе использование Azure Monitor](azure-stack-edge-gpu-enable-azure-monitor.md) .
-- Сведения об управлении отдельными предупреждениями см. [в статье Создание и Просмотр оповещений метрик и управление ими с помощью Azure Monitor ссылки](/../azure-monitor/platform/alerts-metric.md) .
+- Сведения об управлении отдельными предупреждениями см. [в статье Создание и Просмотр оповещений метрик и управление ими с помощью Azure Monitor ссылки](/azure/azure-monitor/platform/alerts-metric) .

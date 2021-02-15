@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: e895640daeb3fbbba2f2708969ee4cf856bf1033
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 17c31bbe54326962c26ab53f702cbd28d1e36c6d
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621187"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092797"
 ---
 # <a name="connect-your-f5-big-ip-appliance"></a>Подключение устройства F5 с большим IP-адресом 
 
@@ -42,11 +42,11 @@ F5 BIG-IP может интегрировать и экспортировать 
 
 ## <a name="validate-connectivity"></a>Проверка подключения
 
-Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
+После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут. 
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить метку F5 BIG-IP к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

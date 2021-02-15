@@ -1,23 +1,18 @@
 ---
 title: Перемещение данных из Teradata с помощью фабрики данных Azure
 description: Сведения о соединителе Teradata для службы фабрики данных, с помощью которого можно перемещать данные из базы данных Teradata.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 98eb76d8-5f3d-4667-b76e-e59ed3eea3ae
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: ecde5784e759ef5259b8c67ed574cef6cae98f30
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ef992ed907bc070643f290e7fd536de05ebf9242
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96019605"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387212"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Перемещение данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -66,8 +61,8 @@ ms.locfileid: "96019605"
 | type |Для свойства type необходимо задать значение **OnPremisesTeradata** |Да |
 | server |Имя сервера Teradata. |Да |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных Teradata. Возможными значениями являются: анонимная, обычная и Windows. |Да |
-| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |нет |
-| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |нет |
+| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
+| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных Teradata. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
@@ -135,9 +130,9 @@ ms.locfileid: "96019605"
 
 **Входной набор данных Teradata**
 
-В примере предполагается, что вы уже создали таблицу MyTable в Teradata и она содержит столбец с именем timestamp для данных временных рядов.
+В примере предполагается, что таблица MyTable создана в Teradata и содержит столбец с именем timestamp для данных временных рядов.
 
-Если для параметра external задать значение true, то фабрика данных воспримет эту таблицу как внешнюю, которая создана не каким-либо действием в этой фабрике данных.
+Если параметру External присвоить значение true, то служба фабрики данных будет изменяться, что таблица является внешней по отношению к фабрике данных и не создана действием в фабрике данных.
 
 ```json
 {

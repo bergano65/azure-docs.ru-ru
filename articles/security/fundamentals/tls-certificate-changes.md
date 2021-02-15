@@ -9,12 +9,12 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 11/10/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 04b68899b796088bd4b89509a413c7a1fe5369bb
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 9e4edbcfd9e4180e727cd885902d9f0150a967ca
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475358"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100389405"
 ---
 # <a name="azure-tls-certificate-changes"></a>Изменения TLS-сертификатов Azure  
 
@@ -24,7 +24,7 @@ ms.locfileid: "99475358"
 
 Существующие конечные точки Azure были переведены поэтапно с 13 августа 2020. Все новые конечные точки TLS/SSL Azure содержат обновленные сертификаты, связанные с новыми корневыми ЦС.
 
-Сведения о конкретной службе:
+Это изменение влияет на все службы Azure. Ниже приведены некоторые дополнительные сведения о конкретных службах.
 
 - Переход для служб [Azure Active Directory (Azure AD)](../../active-directory/index.yml) начался 7 июля 2020 г.
 - [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub) и [DPS](../../iot-dps/index.yml) будут связаны с корневым ЦС Baltimore CyberTrust, но их промежуточные ЦС изменятся. [Щелкните здесь, чтобы узнать больше.](https://techcommunity.microsoft.com/t5/internet-of-things/azure-iot-tls-changes-are-coming-and-why-you-should-care/ba-p/1658456)
@@ -89,6 +89,6 @@ TLS-сертификаты, используемые службами Azure, б�
     - http://ocsp&#46;msocsp&#46;com.
     - http://www&#46; Microsoft&#46;com/пкиопс
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если у вас есть дополнительные вопросы, свяжитесь с нами через [службу поддержки](https://azure.microsoft.com/support/options/).

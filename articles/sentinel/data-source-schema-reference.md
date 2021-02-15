@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: reference
 ms.custom: ''
 ms.date: 01/14/2021
-ms.openlocfilehash: 32ec711309190d4bb7c6c98a05b6a75cf88a8f5c
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: b5d53ec6c6a8002c72a53d6928d56e55d520ef38
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98920512"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390833"
 ---
 # <a name="data-source-schema-reference"></a>Справочник по схеме источника данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "98920512"
 
 ## <a name="azure-data-sources"></a>Источники данных Azure
 
-| Тип                             | Источник данных             | Log Analytics TableName | Справочник по схеме |
+| Type                             | Источник данных             | Log Analytics TableName | Справочник по схеме |
 | -------------------------------- | ---------------------- | ---------------------- | ---------------- |
 | **Azure**                            | Azure Active Directory | сигниневентс           | [Свойства входа в отчеты о действиях Azure AD](/graph/api/resources/signin#properties) |
 | **Azure**                            | Azure Active Directory | AuditLogs              | [Справочник по Azure Monitor AuditLogs](/azure/azure-monitor/reference/tables/auditlogs) |
@@ -37,11 +37,14 @@ ms.locfileid: "98920512"
 | **Network**                          | Журналы потоков NSG          | азуренетворканалитикс  | [Схема и агрегирование данных в Аналитика трафика](/azure/network-watcher/traffic-analytics-schema) |
 | | | | |
 
+> [!NOTE]
+> Дополнительные сведения см. во всей [Azure Monitor ссылке на данные](/azure/azure-monitor/reference/).
+>
 ## <a name="3rd-party-vendor-data-sources"></a>источники данных сторонних поставщиков
 
 В следующей таблице перечислены поддерживаемые сторонние поставщики и их syslog-журналы или CEF. документация по сопоставлению для различных поддерживаемых типов журналов, которые содержат сопоставления полей CEF и примеры журналов для каждого типа категории.
 
-| Тип |    Vendor |    Product | Log Analytics TableName | Справочник по сопоставлению полей CEF  |
+| Type |    Vendor |    Продукт | Log Analytics TableName | Справочник по сопоставлению полей CEF  |
 | ----- | ----- | ----- | ----- |----- |
 | **Network** | Пало-Альто   | ПАНОРАМИРОВАНИЕ ОС    | CommonSecurityLog |   [Pan-OS 9,0. рекомендации по интеграции формата распространенных событий](https://docs.paloaltonetworks.com/content/dam/techdocs/en_US/pdf/cef/pan-os-90-cef-configuration-guide.pdf) (поиск *форматов журнала в стиле CEF*) |
 | **Network** | Check Point  |ALL   | CommonSecurityLog | [Описание полей журнала](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk109795)       |
@@ -56,10 +59,10 @@ ms.locfileid: "98920512"
 | **Network** | F5  | BigIP ASM|    CommonSecurityLog|  [Ведение журнала событий безопасности приложения](https://techdocs.f5.com/kb/en-us/products/big-ip_asm/manuals/product/asm-implementations-13-1-0/14.html)                                                           |
 | **Network** | Citrix  |Брандмауэр веб-приложения   | CommonSecurityLog|    [Поддержка ведения журнала общего формата событий (CEF) в брандмауэре приложения](https://support.citrix.com/article/CTX136146) <br>  [Справочник по сообщениям syslog NetScaler 12,0](https://developer-docs.citrix.com/projects/netscaler-syslog-message-reference/en/12.0/)   |
 |**Узел** |Symantec | Менеджер Endpoint Protection Symantec (СЕПМ) | CommonSecurityLog|[Параметры внешнего ведения журнала и уровни серьезности событий журнала для менеджер Endpoint Protection](https://support.symantec.com/us/en/article.tech171741.html)|
-|**Узел** |Trend Micro |All |CommonSecurityLog | [Сопоставление содержимого syslog-CEF](https://docs.trendmicro.com/en-us/enterprise/control-manager-70/appendices/syslog-mapping-cef.aspx) |
+|**Узел** |Trend Micro |Все |CommonSecurityLog | [Сопоставление содержимого syslog-CEF](https://docs.trendmicro.com/en-us/enterprise/control-manager-70/appendices/syslog-mapping-cef.aspx) |
 | | | | | |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о поддерживаемых соединителях Sentinel Azure, таких как CEF, syslog, Direct, Agent и Custom Connectors:
 
