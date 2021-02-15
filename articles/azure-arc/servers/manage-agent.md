@@ -1,14 +1,14 @@
 ---
 title: Управление агентом серверов с поддержкой ARC в Azure
 description: В этой статье описываются различные задачи управления, которые обычно выполняются в течение жизненного цикла агента подключенного компьютера с поддержкой ARC в Azure.
-ms.date: 01/21/2021
+ms.date: 02/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: 27712dcd30857ca8c677de4f99dc4ed7e2e7b292
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: cc42830fc73612e744942bdd8b353832e0ccbf2a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98662132"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368461"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>Обслуживание агента Connected Machine и управление им
 
@@ -48,60 +48,17 @@ ms.locfileid: "98662132"
 > [!WARNING]
 > Рекомендуется избегать переименования имени компьютера компьютера и выполнять эту процедуру только в случае крайней необходимости.
 
-Ниже приведено описание процедуры переименования компьютера.
-
 1. Произведите аудит установленных на компьютере расширений виртуальной машины и запишите их конфигурацию, используя [Azure CLI](manage-vm-extensions-cli.md#list-extensions-installed) или [Azure PowerShell](manage-vm-extensions-powershell.md#list-extensions-installed).
 
-2. Удалите расширения виртуальной машины с помощью PowerShell, Azure CLI или из портал Azure.
+2. Удалите расширения виртуальной машины, установленные из [портал Azure](manage-vm-extensions-portal.md#uninstall-extension), с помощью [Azure CLI](manage-vm-extensions-cli.md#remove-an-installed-extension)или с помощью [Azure PowerShell](manage-vm-extensions-powershell.md#remove-an-installed-extension).
 
-    > [!NOTE]
-    > Если вы развернули агент Azure Monitor для виртуальных машин (Insights) или агент Log Analytics с помощью политики гостевой конфигурации Azure, агенты будут развернуты повторно после следующего [цикла оценки](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers) и после регистрации переименованной машины на серверах с поддержкой ARC.
+3. Используйте средство **азкмажент** с параметром [Disconnect](manage-agent.md#disconnect) для отключения компьютера от дуги Azure и удаления ресурса компьютера из Azure. Отключение компьютера от серверов с поддержкой Arc не приводит к удалению агента подключенного компьютера, и вам не нужно удалять агент в рамках этого процесса. Вы можете запустить его вручную, войдя в систему в интерактивном режиме, или автоматизировать с помощью того же субъекта-службы, который использовался для подключения нескольких агентов, или с помощью [маркера доступа](../../active-directory/develop/access-tokens.md)платформы удостоверений Майкрософт. Если вы не использовали субъект-службу для регистрации компьютера с серверами с поддержкой дуги Azure, ознакомьтесь со следующей [статьей](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale) , чтобы создать субъект-службу.
 
-3. Отключите машину от серверов с поддержкой ARC с помощью PowerShell, Azure CLI или с портала.
+4. Переименуйте имя компьютера компьютеров.
 
-4. Переименуйте компьютер.
+5. Повторно зарегистрируйте агент подключенного компьютера с серверами с поддержкой ARC. Запустите `azcmagent` средство с параметром [Connect](manage-agent.md#connect) выполнить этот шаг.
 
-5. Подключите компьютер с серверами с поддержкой ARC с помощью `Azcmagent` средства для регистрации и создания нового ресурса в Azure.
-
-6. Разверните ранее установленные расширения виртуальной машины на целевом компьютере.
-
-Для выполнения этой задачи выполните следующие действия.
-
-1. Удалите расширения виртуальной машины, установленные из [портал Azure](manage-vm-extensions-portal.md#uninstall-extension), с помощью [Azure CLI](manage-vm-extensions-cli.md#remove-an-installed-extension)или с помощью [Azure PowerShell](manage-vm-extensions-powershell.md#remove-an-installed-extension).
-
-2. Чтобы отключить компьютер от дуги Azure, используйте один из следующих методов. Отключение компьютера от серверов с поддержкой Arc не приводит к удалению агента подключенного компьютера, и вам не нужно удалять агент в рамках этого процесса. Все расширения виртуальных машин, развернутые на компьютере, продолжают работать во время этого процесса.
-
-    # <a name="azure-portal"></a>[Портал Azure](#tab/azure-portal)
-
-    1. В браузере перейдите на [портал Azure](https://portal.azure.com).
-    1. На портале перейдите к пункту **серверы — дугу Azure** и выберите Гибридный компьютер из списка.
-    1. На странице выбранный зарегистрированный сервер Arc нажмите кнопку **Удалить** на верхней панели, чтобы удалить ресурс в Azure.
-
-    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-    
-    ```azurecli
-    az resource delete \
-      --resource-group ExampleResourceGroup \
-      --name ExampleArcMachine \
-      --resource-type "Microsoft.HybridCompute/machines"
-    ```
-
-    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
-
-    ```powershell
-    Remove-AzResource `
-     -ResourceGroupName ExampleResourceGroup `
-     -ResourceName ExampleArcMachine `
-     -ResourceType Microsoft.HybridCompute/machines
-    ```
-
-3. Переименуйте имя компьютера, на котором находится компьютер.
-
-### <a name="after-renaming-operation"></a>После переименования операции
-
-После переименования компьютера необходимо повторно зарегистрировать агент подключенного компьютера с серверами с поддержкой ARC. Запустите `azcmagent` средство с параметром [Connect](#connect) выполнить этот шаг.
-
-Повторно разверните расширения виртуальной машины, которые изначально были развернуты на компьютере с серверов с поддержкой ARC. Если вы развернули агент Azure Monitor для виртуальных машин (Insights) или агент Log Analytics с помощью политики гостевой конфигурации политики Azure, агенты будут развернуты повторно после следующего [цикла оценки](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers).
+6. Повторно разверните расширения виртуальной машины, которые изначально были развернуты на компьютере с серверов с поддержкой ARC. Если вы развернули агент Azure Monitor для виртуальных машин (Insights) или агент Log Analytics с помощью политики Azure, агенты будут развернуты повторно после следующего [цикла оценки](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers).
 
 ## <a name="upgrading-agent"></a>Обновление агента
 

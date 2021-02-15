@@ -1,28 +1,82 @@
 ---
 title: Переменные в шаблонах
-description: Описывает определение переменных в шаблоне Azure Resource Manager (шаблон ARM).
+description: Описывает, как определять переменные в шаблоне Azure Resource Manager (шаблон ARM) и файле Бицеп.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: feecc4b5df77e6a3bf51294cb12aabf44899dde5
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 02/12/2021
+ms.openlocfilehash: cafd42112e5d296cb73f88e292a66ca2203f3810
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98874440"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364466"
 ---
-# <a name="variables-in-arm-template"></a>Переменные в шаблоне ARM
+# <a name="variables-in-arm-templates"></a>Переменные в шаблонах ARM
 
-В этой статье описывается определение и использование переменных в шаблоне Azure Resource Manager (шаблон ARM). Для упрощения шаблона используются переменные. Вместо повторения сложных выражений во всем шаблоне определяется переменная, которая содержит сложное выражение. Затем вы ссылаетесь на эту переменную по мере необходимости во всем шаблоне.
+В этой статье описывается определение и использование переменных в шаблоне Azure Resource Manager (шаблон ARM) или в файле Бицеп. Для упрощения шаблона используются переменные. Вместо повторения сложных выражений во всем шаблоне определяется переменная, которая содержит сложное выражение. Затем вы используете эту переменную по мере необходимости во всем шаблоне.
 
 Диспетчер ресурсов разрешает переменные перед началом операций развертывания. Когда в шаблоне используется переменная, Resource Manager заменяет ее разрешенным значением.
 
+[!INCLUDE [Bicep preview](../../../includes/resource-manager-bicep-preview.md)]
+
 ## <a name="define-variable"></a>Определение переменной
 
-При определении переменной укажите значение или выражение шаблона, которое разрешается в [тип данных](template-syntax.md#data-types). При построении переменной можно использовать значение из параметра или другой переменной.
+При определении переменной вы не указываете [тип данных](template-syntax.md#data-types) для переменной. Вместо этого укажите значение или выражение шаблона. Тип переменной выводится из разрешенного значения. В следующем примере переменная задается в виде строки.
 
-В объявлении переменной можно использовать [функции шаблонов](template-functions.md) , но нельзя использовать функцию [Reference](template-functions-resource.md#reference) или любые функции [списка](template-functions-resource.md#list) . Эти функции получают состояние среды выполнения ресурса и не могут быть выполнены до развертывания при разрешении переменных.
+# <a name="json"></a>[JSON](#tab/json)
 
-В приведенном ниже примере показано определение переменной. В нем создается строковое значение имени учетной записи хранения. Он использует несколько функций шаблона для получения значения параметра и объединяет его в уникальную строку.
+```json
+"variables": {
+  "stringVar": "example value"
+},
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var stringVar = 'example value'
+```
+
+---
+
+При построении переменной можно использовать значение из параметра или другой переменной.
+
+# <a name="json"></a>[JSON](#tab/json)
+
+```json
+"parameters": {
+  "inputValue": {
+    "defaultValue": "deployment parameter",
+    "type": "string"
+  }
+},
+"variables": {
+  "stringVar": "myVariable",
+  "concatToVar": "[concat(variables('stringVar'), '-addtovar') ]",
+  "concatToParam": "[concat(parameters('inputValue'), '-addtoparam')]"
+}
+```
+
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+param inputValue string = 'deployment parameter'
+
+var stringVar = 'myVariable'
+var concatToVar =  '${stringVar}-addtovar'
+var concatToParam = '${inputValue}-addtoparam'
+```
+
+---
+
+Для создания значения переменной можно использовать [функции шаблонов](template-functions.md) .
+
+В шаблонах JSON нельзя использовать функцию [Reference](template-functions-resource.md#reference) или любые функции [List](template-functions-resource.md#list) в объявлении переменной. Эти функции получают состояние среды выполнения ресурса и не могут быть выполнены до развертывания при разрешении переменных.
+
+Функции Reference и List допустимы при объявлении переменной в файле Бицеп.
+
+В следующем примере создается строковое значение для имени учетной записи хранения. Он использует несколько функций шаблона для получения значения параметра и объединяет его в уникальную строку.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 ```json
 "variables": {
@@ -30,9 +84,21 @@ ms.locfileid: "98874440"
 },
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+```bicep
+var storageName = '${toLower(storageNamePrefix)}${uniqueString(resourceGroup().id)}'
+```
+
+---
+
 ## <a name="use-variable"></a>Использование переменной
 
-В шаблоне ссылка на значение параметра осуществляется с помощью функции [Variables](template-functions-deployment.md#variables) . В следующем примере показано, как использовать переменную для свойства ресурса.
+В следующем примере показано, как использовать переменную для свойства ресурса.
+
+# <a name="json"></a>[JSON](#tab/json)
+
+В шаблоне JSON вы ссылаетесь на значение переменной с помощью функции [Variables](template-functions-deployment.md#variables) .
 
 ```json
 "resources": [
@@ -44,19 +110,48 @@ ms.locfileid: "98874440"
 ]
 ```
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+В файле Бицеп вы ссылаетесь на значение переменной, указав имя переменной.
+
+```bicep
+resource demoAccount 'Microsoft.Storage/storageAccounts@2019-06-01' = {
+  name: storageName
+```
+
+---
+
 ## <a name="example-template"></a>Пример шаблона
 
-Следующий шаблон не развертывает ресурсы. В нем просто показаны некоторые способы объявления переменных.
+Следующий шаблон не развертывает ресурсы. В нем показаны некоторые способы объявления переменных различных типов.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variables.json":::
 
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+Бицеп в настоящее время не поддерживает циклы.
+
+:::code language="bicep" source="~/resourcemanager-templates/azure-resource-manager/variables.bicep":::
+
+---
+
 ## <a name="configuration-variables"></a>Переменные конфигурации
 
-Можно определить переменные, которые содержат связанные значения для настройки среды. Переменная определяется как объект со значениями. В следующем примере показан объект, содержащий значения для двух сред — **Test** и **произ**. Вы передаете одно из этих значений во время развертывания.
+Можно определить переменные, которые содержат связанные значения для настройки среды. Переменная определяется как объект со значениями. В следующем примере показан объект, содержащий значения для двух сред — **Test** и **произ**. Передайте одно из этих значений во время развертывания.
+
+# <a name="json"></a>[JSON](#tab/json)
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variablesconfigurations.json":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+# <a name="bicep"></a>[Bicep](#tab/bicep)
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variablesconfigurations.bicep":::
+
+---
+
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о доступных свойствах переменных см. в разделе Общие сведения о [структуре и синтаксисе шаблонов ARM](template-syntax.md).
 * Рекомендации по созданию переменных см. в разделе рекомендации [— переменные](template-best-practices.md#variables).

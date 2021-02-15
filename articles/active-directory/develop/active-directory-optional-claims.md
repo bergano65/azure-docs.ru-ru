@@ -12,12 +12,12 @@ ms.date: 1/06/2021
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 6855e8f550c14574795ec00f4fed36762944dca1
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 7c0394e765923c027cc15a6278ee451fb13ed1b2
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756029"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100104286"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Как предоставить приложению необязательные утверждения
 
@@ -138,7 +138,7 @@ ms.locfileid: "98756029"
 
 Настроить необязательные утверждения для приложения можно с помощью пользовательского интерфейса или манифеста приложения.
 
-1. Перейдите к <a href="https://portal.azure.com/" target="_blank">портал Azure <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. 
+1. Перейдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>. 
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.
 1. Выберите в списке приложение, для которого нужно настроить необязательные утверждения.
@@ -246,7 +246,7 @@ ms.locfileid: "98756029"
 
 **Настройка необязательных утверждений групп с помощью пользовательского интерфейса**
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 1. Найдите и выберите **Azure Active Directory**.
 1. В разделе **Управление** выберите **Регистрация приложений**.
@@ -255,11 +255,11 @@ ms.locfileid: "98756029"
 1. Выберите пункт **Добавить утверждение групп**.
 1. Выберите типы групп для возврата (**группы безопасности** или **роли каталогов**, **все группы** и **группы, назначенные приложению**). **Группы, назначенные** параметру приложения, включают только группы, назначенные приложению. Параметр **все группы** включает в себя **SecurityGroup**, **DirectoryRole** и **Дистрибутионлист**, но не **назначенные приложению группы**. 
 1. Необязательно. Выберите свойства определенного типа токена, чтобы изменить значение утверждения групп, чтобы оно содержало атрибуты локальной группы, или изменить тип утверждения на роль.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 **Настройка необязательных утверждений групп с помощью манифеста приложения.**
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 1. Найдите и выберите **Azure Active Directory**.
 1. Выберите в списке приложение, для которого нужно настроить необязательные утверждения.
@@ -388,7 +388,7 @@ ms.locfileid: "98756029"
 
 **Настройка с помощью пользовательского интерфейса.**
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 
 1. Найдите и выберите **Azure Active Directory**.
@@ -411,7 +411,7 @@ ms.locfileid: "98756029"
 
 **Настройка с помощью манифеста.**
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Пройдя аутентификацию, выберите клиент Azure AD, щелкнув его в правом верхнем углу страницы.
 1. Найдите и выберите **Azure Active Directory**.
 1. Найдите в списке приложение, для которого нужно настроить необязательные утверждения, и выберите его.

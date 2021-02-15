@@ -1,22 +1,18 @@
 ---
 title: Перенос данных из Amazon S3 в Azure Data Lake Storage 2-го поколения
 description: Узнайте, как использовать шаблон решения для переноса данных из Amazon S3 с помощью внешней таблицы управления для хранения списка секций в AWS S3 с фабрикой данных Azure.
-services: data-factory
 author: dearandyxu
 ms.author: yexu
-ms.reviewer: ''
-manager: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/07/2019
-ms.openlocfilehash: e25299c2ce5d31da8f3caa5b02ab8def816b31ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1fd4cb248abdc219c6ee5d098e10c329826c160
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91398226"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362001"
 ---
 # <a name="migrate-data-from-amazon-s3-to-azure-data-lake-storage-gen2"></a>Перенос данных из Amazon S3 в Azure Data Lake Storage 2-го поколения
 
@@ -119,7 +115,7 @@ ms.locfileid: "91398226"
 
     ![Снимок экрана, на котором показаны два конвейера и три набора данных, созданные с помощью шаблона.](media/solution-template-migration-s3-azure/historical-migration-s3-azure3.png)
 
-6. Выберите **Отладка**, введите **Параметры**, а затем нажмите **Готово**.
+6. Перейдите к конвейеру "BulkCopyFromS3" и выберите **Отладка**, а затем введите **Параметры**. Нажмите кнопку **Готово**.
 
     ![Снимок экрана, на котором показано, где выбрать отладку, и введите параметры перед нажатием кнопки "Готово".](media/solution-template-migration-s3-azure/historical-migration-s3-azure4.png)
 
@@ -182,7 +178,7 @@ ms.locfileid: "91398226"
 
     ![Проверка конвейера](media/solution-template-migration-s3-azure/delta-migration-s3-azure3.png)
 
-6. Выберите **Отладка**, введите **Параметры**, а затем нажмите **Готово**.
+6.  Перейдите в конвейер "DeltaCopyFromS3" и выберите **Debug (Отладка**) и введите **Параметры**. Нажмите кнопку **Готово**.
 
     ![Щелкните **Отладка**](media/solution-template-migration-s3-azure/delta-migration-s3-azure4.png)
 
@@ -194,7 +190,7 @@ ms.locfileid: "91398226"
 
     ![Снимок экрана, показывающий результаты из таблицы элементов управления после выполнения запроса.](media/solution-template-migration-s3-azure/delta-migration-s3-azure6.png)
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Копирование файлов из нескольких контейнеров](solution-template-copy-files-multiple-containers.md)
 - [Перемещение файлов](solution-template-move-files.md)

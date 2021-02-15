@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 983322800198246bcfaecec92fe0b2b74e587756
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: bf2ff2fc20d3581a297881fbd9e6db15d825814d
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952103"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100519003"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Предварительные версии функций в Azure Когнитивный поиск
 
@@ -24,7 +24,7 @@ ms.locfileid: "91952103"
 |Функция&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Категория | Описание | Доступность  |
 |---------|------------------|-------------|---------------|
 | [**Навык Машинное обучение Azure (AML)**](cognitive-search-aml-skill.md) | Обогащение данных с помощью средств ИИ| Новый тип навыка для интеграции конечной точки с точкой Машинное обучение Azure. Начните с [этого руководства](cognitive-search-tutorial-aml-custom-skill.md). | Используйте [поиск REST API 2020-06-30-Preview](/rest/api/searchservice/) или 2019-05-06-Preview. Кроме того, на портале в проекте набора навыков при условии Когнитивный поиск и служб машинного обучения Azure развертываются в одной подписке. |
-| [**Феатуресмоде, параметр**](/rest/api/searchservice/search-documents#featuresmode) | Релевантность (оценка) | Расширение оценки релевантности для включения подробностей: Оценка сходства полей, частота терминов поля и число совпадающих уникальных токенов для каждого поля. Эти точки данных можно использовать в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial). | Добавьте этот параметр запроса, используя [Поиск документов (остальные)](/rest/api/searchservice/search-documents) с помощью API-Version = 2020 – 06 -30-preview или 2019-05-06-Preview. |
+| [**Феатуресмоде, параметр**](/rest/api/searchservice/preview-api/search-documents#query-parameters) | Релевантность (оценка) | Расширение оценки релевантности для включения подробностей: Оценка сходства полей, частота терминов поля и число совпадающих уникальных токенов для каждого поля. Эти точки данных можно использовать в [пользовательских решениях оценки](https://github.com/Azure-Samples/search-ranking-tutorial). | Добавьте этот параметр запроса, используя [Поиск документов (остальные)](/rest/api/searchservice/preview-api/search-documents) с помощью API-Version = 2020 – 06 -30-preview или 2019-05-06-Preview. |
 | [**Сеансы отладки**](cognitive-search-debug-session.md) | Портал, обогащение искусственного интеллекта (набор навыков) | Редактор набора навыков в сеансах, используемый для исследования и устранения проблем с набором навыков. Исправления, применяемые во время сеанса отладки, можно сохранить в наборе навыков в службе. | Только на портале, используя ссылки на промежуточные страницы на странице обзора для открытия сеанса отладки. |
 | [**Обратимое удаление собственного BLOB-объекта**](search-howto-index-changed-deleted-blobs.md) | Индексаторы, большие двоичные объекты Azure| Индексатор хранилища BLOB-объектов Azure в Когнитивный поиске Azure будет распознавать большие двоичные объекты, которые находятся в обратимо удаленном состоянии, и удалять соответствующий документ поиска во время индексирования. | Добавьте этот параметр конфигурации, используя [CREATE индексатор (RESTful)](/rest/api/searchservice/create-indexer) с API-Version = 2020-06 -30-Preview или API-Version = 2019 – 05 -06-Preview. |
 | [**Навык поиска настраиваемой сущности**](cognitive-search-skill-custom-entity-lookup.md ) | Обогащение искусственного интеллекта (набор навыков) | Квалифицированный навык, который ищет текст из пользовательского списка слов и фраз, определяемых пользователем. Затем он помечает все документы, в которых есть совпадения с любыми сущностями из этого списка. Также этот навык поддерживает определенный уровень нечеткого соответствия, что позволяет искать похожие, но не точно совпадающие фрагменты. | Сослаться на этот предварительный навык, используя редактор набора навыков на портале или [создавайте знания (остальные)](/rest/api/searchservice/create-skillset) с помощью API-Version = 2020-06 -30-Preview или API-Version = 2019 – 05 -06-Preview. |
@@ -58,7 +58,7 @@ POST https://[service name].search.windows.net/indexes/hotels-idx/docs/search?ap
 
 Служба Когнитивный поиск Azure доступна в нескольких версиях. Дополнительные сведения см. в разделе [Версии API](search-api-versions.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с справочной документацией по API поиска по поиску в ОСТАВШЕЙся версии. При возникновении проблем попросите помощь по [Stack overflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
 

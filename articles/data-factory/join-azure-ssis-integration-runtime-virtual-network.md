@@ -1,22 +1,17 @@
 ---
 title: Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 description: Узнайте, как присоединить среду выполнения интеграции Azure SSIS к виртуальной сети Azure.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/02/2020
 author: swinarko
 ms.author: sawinark
-ms.reviewer: douglasl
-manager: mflasko
-ms.openlocfilehash: a8928f9d52fd8e721ac770dda8f0cbf0162a0f61
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: 9a82b305adec1385bf659987ea39df6bb953cd70
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797918"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370977"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 
@@ -600,7 +595,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Выполнение этой команды занимает от 20 до 30 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Azure-SSIS IR см. в следующих статьях: 
 - [Azure-SSIS IR](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о IRs, включая Azure-SSIS IR. 

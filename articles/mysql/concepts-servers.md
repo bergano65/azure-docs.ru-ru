@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 5477aa0c4eb2a66af816b287a8b6d7da8a53952f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ed6d5d676fd2c6eefd3288b7609446eb61611ed6
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534897"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517983"
 ---
 # <a name="server-concepts-in-azure-database-for-mysql"></a>Основные понятия работы с сервером в базе данных Azure для MySQL
 
@@ -46,7 +46,7 @@ ms.locfileid: "94534897"
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу базы данных, пока не будут указаны компьютеры, которые имеют разрешение. Ознакомьтесь со статьей [Правила брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md). |
 | **SSL** | Служба поддерживает применение SSL-соединений между приложениями и сервером базы данных.  Ознакомьтесь со статьей [Configure SSL connectivity in your application to securely connect to Azure Database for MySQL](./howto-configure-ssl.md) (Настройка SSL-соединений в приложении для безопасного подключения к базе данных Azure для MySQL). |
 
-## <a name="stopstart-an-azure-database-for-mysql-preview"></a>Завершение работы и запуск базы данных Azure для MySQL (Предварительная версия)
+## <a name="stopstart-an-azure-database-for-mysql"></a>Завершение работы и запуск базы данных Azure для MySQL
 
 База данных Azure для MySQL позволяет **прекратить** работу сервера, когда он не используется, и **запустить** сервер при возобновлении действия. По сути, это делается для снижения затрат на серверы баз данных и оплаты только тех ресурсов, которые используются. Это еще важнее для рабочих нагрузок разработки и тестирования, а также при использовании сервера только для части дня. При прекращении сервера все активные подключения будут удалены. Позже, когда нужно перевести сервер обратно в режим «в сети», можно использовать [портал Azure](how-to-stop-start-server.md) или [CLI](how-to-stop-start-server.md).
 
@@ -64,7 +64,7 @@ ms.locfileid: "94534897"
 
 Управлять серверами базы данных Azure для MySQL можно с помощью портала Azure или Azure CLI.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Обзор службы содержится в статье [What is Azure Database for MySQL? Service Introduction](./overview.md) (Что такое база данных Azure для MySQL? Общие сведения о службе).
 - Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **ценовой** категории, см. в статье [ценовые](./concepts-pricing-tiers.md) категории.

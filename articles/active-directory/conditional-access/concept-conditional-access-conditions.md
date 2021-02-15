@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/07/2020
+ms.date: 02/10/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96d1eaff4d1b93ad3bb489f177020c351fe4d13d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fecf3f1a302a6734d92335bc15722df4d5288a56
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95904041"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100362426"
 ---
 # <a name="conditional-access-conditions"></a>Условный доступ: условия
 
@@ -34,7 +34,7 @@ ms.locfileid: "95904041"
 
 ## <a name="user-risk"></a>Риск пользователя 
 
-Для клиентов, имеющих доступ к [защите идентификации](../identity-protection/overview-identity-protection.md), риск для пользователей можно оценить как часть политики условного доступа. Риск для пользователей представляет вероятность того, что заданный идентификатор или учетная запись скомпрометированы. Дополнительные сведения о риске для пользователей можно найти в статьях, [что такое риск](../identity-protection/concept-identity-protection-risks.md#user-risk) и [как настроить и включить политики риска](../identity-protection/howto-identity-protection-configure-risk-policies.md).
+Для клиентов, имеющих доступ к [защите идентификации](../identity-protection/overview-identity-protection.md), риск для пользователей можно оценить как часть политики условного доступа. Риск для пользователей представляет вероятность компрометации данного удостоверения или учетной записи. Дополнительные сведения о риске для пользователей можно найти в статьях, [что такое риск](../identity-protection/concept-identity-protection-risks.md#user-risk) и [как настроить и включить политики риска](../identity-protection/howto-identity-protection-configure-risk-policies.md).
 
 ## <a name="device-platforms"></a>Платформы устройств
 
@@ -105,18 +105,18 @@ ms.locfileid: "95904041"
 
 Этот параметр работает со всеми браузерами. Но чтобы выполнить условия политики устройств, например требование соответствия, поддерживаются следующие операционные системы и браузеры:
 
-| OS | Браузеры |
+| Операционная система | Браузеры |
 | :-- | :-- |
 | Windows 10 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows 8, Windows 8.1 | Internet Explorer, Chrome |
-| Windows 7 | Internet Explorer, Chrome |
+| Windows 7 | Internet Explorer, Chrome |
 | iOS | Microsoft ребро, Intune Managed Browser, Safari |
 | Android | Microsoft ребро, Intune Managed Browser, Chrome |
 | Windows Phone | Microsoft ребро, Internet Explorer |
 | Windows Server 2019 | Microsoft ребро, Internet Explorer, Chrome |
 | Windows Server 2016 | Internet Explorer |
 | Windows Server 2012 R2 | Internet Explorer |
-| Windows Server 2008 R2 | Internet Explorer |
+| Windows Server 2008 R2 | Internet Explorer |
 | macOS | Chrome, Safari |
 
 > [!NOTE]
@@ -196,7 +196,7 @@ ms.locfileid: "95904041"
 Например, *все пользователи* , обращающиеся к облачному приложению *Microsoft Azure Management* , включая **все состояние устройства** , за исключением **гибридного устройства, присоединенного к Azure AD** , и **устройства, помеченные как соответствующие** и для *элементов управления доступом*, **блок**. 
    - В этом примере создается политика, которая разрешает доступ к управлению Microsoft Azure только с устройств, присоединенных к домену Azure AD или устройств, помеченных как соответствующие требованиям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Условный доступ: предоставление](concept-conditional-access-grant.md)
 

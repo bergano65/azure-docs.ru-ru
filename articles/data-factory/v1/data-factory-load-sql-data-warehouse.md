@@ -1,23 +1,18 @@
 ---
 title: Загрузка терабайтов данных в Azure синапсе Analytics
 description: Демонстрируется, как в Azure синапсе Analytics можно загрузить 1 ТБ данных в течение 15 минут с помощью фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: a6c133c0-ced2-463c-86f0-a07b00c9e37f
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 68c9e594201f0d0689a289e13f2c4ebf909c2f87
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5acae7c90efbf178fad199177fa6e0886e497fdf
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457107"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371215"
 ---
 # <a name="load-1-tb-into-azure-synapse-analytics-under-15-minutes-with-data-factory"></a>Загрузка 1 ТБ в Azure синапсе Analytics в течение 15 минут с помощью фабрики данных
 > [!NOTE]
@@ -141,7 +136,7 @@ ms.locfileid: "96457107"
 
 1. В качестве **имени задачи** введите **CopyFromBlobToAzureSqlDataWarehouse**.
 2. Выберите параметр **Run once now** (Запустить сейчас один раз).   
-3. Щелкните **Далее**.  
+3. Нажмите кнопку **Далее**.  
 
     ![Мастер копирования — страница "Свойства"](media/data-factory-load-sql-data-warehouse/copy-wizard-properties-page.png)
 
@@ -183,7 +178,7 @@ ms.locfileid: "96457107"
 
 ## <a name="step-4-performance-settings"></a>Шаг 4. Настройки производительности
 
-Флажок **Allow polybase** (Разрешить использование PolyBase) установлен по умолчанию.  Щелкните **Далее**.
+Флажок **Allow polybase** (Разрешить использование PolyBase) установлен по умолчанию.  Нажмите кнопку **Далее**.
 
 ![Мастер копирования — страница сопоставления столбцов](media/data-factory-load-sql-data-warehouse/performance-settings-page.png)
 
@@ -212,6 +207,6 @@ ms.locfileid: "96457107"
 
 Дополнительные сведения см. в статье рекомендации [по Azure синапсе Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-best-practices.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Мастер копирования фабрики данных](data-factory-copy-wizard.md). В этой статье приведены сведения о мастере копирования.
 * [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md). Эта статья содержит эталонные измерения производительности и руководство по настройке.

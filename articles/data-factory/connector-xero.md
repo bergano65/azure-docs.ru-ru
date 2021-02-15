@@ -1,22 +1,17 @@
 ---
 title: Копирование данных из Xero с помощью Фабрики данных Azure
 description: Узнайте, как копировать данные из Xero в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/26/2021
 ms.author: jingwang
-ms.openlocfilehash: 3f8c74f36c1c441e00b808954ce7f7710d3fbd52
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: d795f8355943032751b911423b8aaa93b2df3206
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879971"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100366914"
 ---
 # <a name="copy-data-from-xero-using-azure-data-factory"></a>Копирование данных из Xero с помощью Фабрики данных Azure
 
@@ -52,10 +47,10 @@ ms.locfileid: "98879971"
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Xero**. | Да |
 | connectionProperties | Группа свойств, определяющих способ подключения к Xero. | Да |
-| **_В разделе `connectionProperties` :_* _ | | |
+| ***В разделе `connectionProperties` :*** | | |
 | узел | Конечная точка сервера Xero (`api.xero.com`).  | Да |
 | authenticationType | Допустимые значения: `OAuth_2.0` и `OAuth_1.0` . | Да |
-| consumerKey | Для OAuth 2,0 укажите *идентификатор клиента** для приложения Xero.<br>Для OAuth 1,0 укажите ключ потребителя, связанный с приложением Xero.<br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| consumerKey | Для OAuth 2,0 укажите **идентификатор клиента** для приложения Xero.<br>Для OAuth 1,0 укажите ключ потребителя, связанный с приложением Xero.<br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | privateKey | Для OAuth 2,0 укажите **секрет клиента** для приложения Xero.<br>Для OAuth 1,0 укажите закрытый ключ из PEM-файла, созданного для частного приложения Xero, в разделе [Создание пары открытого и закрытого ключей](https://developer.xero.com/documentation/auth-and-limits/create-publicprivate-key). Примечание для **создания privateKey. PEM с нумбитс 512** с помощью `openssl genrsa -out privatekey.pem 512` , 1024 не поддерживается. Включает весь текст из PEM-файла, в том числе окончания строк Unix (\n). Пример см. ниже.<br/><br>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | tenantId | Идентификатор клиента, связанный с приложением Xero. Применимо к проверке подлинности OAuth 2,0.<br>Сведения о том, как получить идентификатор клиента, см. в [разделе Проверка клиентов, которым вы имеете право доступа](https://developer.xero.com/documentation/oauth2/auth-flow). | Да для проверки подлинности OAuth 2,0 |
 | refreshtoken | Применимо к проверке подлинности OAuth 2,0.<br/>Маркер обновления OAuth 2,0 связан с приложением Xero и используется для обновления маркера доступа. срок действия маркера доступа истекает через 30 минут. Узнайте, как работает поток авторизации Xero и как получить маркер обновления из [этой статьи](https://developer.xero.com/documentation/oauth2/auth-flow). Чтобы получить маркер обновления, необходимо запросить [область offline_access](https://developer.xero.com/documentation/oauth2/scopes). <br/>**Знание ограничения**: Примечание. Xero сбрасывает маркер обновления после его использования для обновления маркера доступа. Для рабочей нагрузки перед выполнением каждого действия копирования необходимо задать допустимый маркер обновления для использования ADF.<br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да для проверки подлинности OAuth 2,0 |

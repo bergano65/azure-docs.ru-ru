@@ -3,18 +3,18 @@ title: Использование политик безопасности Pod в
 description: Узнайте, как управлять допуском Pod с помощью Подсекуритиполици в службе Kubernetes Azure (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/21/2020
-ms.openlocfilehash: 77c618429503caf9aa7bb6abda109504bbf68d71
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.date: 02/12/2021
+ms.openlocfilehash: 23c436cb3ddf970939ab9d7b936a4e03e1fbb7ff
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696002"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371232"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительная версия — защита кластера с помощью политик безопасности Pod в службе Kubernetes Azure (AKS)
 
 > [!WARNING]
-> **Функция, описанная в этом документе, политика безопасности Pod (Предварительная версия), настроена для устаревания и больше не будет доступна после 31 мая, 2021** в пользу [политики Azure для AKS](use-pod-security-on-azure-policy.md). Дата устаревания была продлена с предыдущей даты 15 октября 2020 г.
+> **Функция, описанная в этом документе, политика безопасности Pod (Предварительная версия), задается для устаревания и больше не будет доступна после 30 июня 2021** в пользу [политики Azure для AKS](use-pod-security-on-azure-policy.md). Дата устаревания была продлена с предыдущей даты 15 октября 2020 г.
 >
 > После этой даты политику безопасности pod (предварительная версия) нужно будет отключить на всех затронутых существующих кластерах, чтобы сохранить возможность обновления кластеров в будущем и обеспечить поддержку Azure.
 >
