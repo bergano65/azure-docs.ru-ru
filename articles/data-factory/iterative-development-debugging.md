@@ -4,17 +4,14 @@ description: Узнайте, как итеративно разрабатыва�
 ms.date: 10/29/2020
 ms.topic: conceptual
 ms.service: data-factory
-services: data-factory
-documentationcenter: ''
-ms.workload: data-services
 author: dcstwh
 ms.author: weetok
-ms.openlocfilehash: 9b28fb24439354e09e5262281a99cd9dc0153a04
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 90f3f57fa527c8aaeb32a7dcf41f461ff5f0bf77
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485252"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100392533"
 ---
 # <a name="iterative-development-and-debugging-with-azure-data-factory"></a>Итеративные разработка и отладка в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -90,6 +87,6 @@ ms.locfileid: "96485252"
 
 ![Выполнение конвейера с потоком данных](media/iterative-development-debugging/iterative-development-dataflow.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После тестирования изменений передвигайте их в более высокие среды, используя [непрерывную интеграцию и развертывание в фабрике данных Azure](continuous-integration-deployment.md).

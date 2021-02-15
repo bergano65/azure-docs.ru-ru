@@ -10,16 +10,32 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: f10319de67a105b4b5e4641c4171ccd0a6e63440
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 31ca65099d645b7fdfee70275515f0a864cd905f
+ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99490883"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100007403"
 ---
 # <a name="whats-new-in-computer-vision"></a>Новые возможности Компьютерного зрения
 
 Узнайте о новых возможностях службы. Эти элементы могут включать заметки о выпуске, видео, записи блогов и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
+
+## <a name="february-2021"></a>Февраль 2021 года
+
+### <a name="read-api-v32-public-preview-with-ocr-support-for-73-languages"></a>В API чтения версии 3.2 (общедоступная предварительная версия) включена функция OCR для 73 языков
+Общедоступная предварительная версия API чтения Компьютерного зрения версии 3.2, доступная в качестве облачной службы и контейнера Docker, включает следующие обновления:
+* [OCR для 73 языков](./language-support.md#optical-character-recognition-ocr), включая упрощенный и традиционный китайский, японский, корейский и латинский языки;
+* естественный порядок чтения для выходных данных строки текста;
+* классификация стилей рукописного ввода для строк текста и оценка достоверности (только для латинских языков);
+* извлечение текста только для выбранных страниц многостраничного документа;
+* доступность в качестве [бездистрибутивного контейнера](./computer-vision-how-to-install-containers.md?tabs=version-3-2) для локального развертывания.
+
+[См. дополнительные сведения об API чтения.](concept-recognizing-text.md)
+
+> [!div class="nextstepaction"]
+> [Получить общедоступную предварительную версию API чтения версии 3.2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)
+
 
 ## <a name="january-2021"></a>Январь 2021 г.
 

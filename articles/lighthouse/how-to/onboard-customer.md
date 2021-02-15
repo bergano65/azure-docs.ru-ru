@@ -1,14 +1,14 @@
 ---
 title: Подключение клиента к Azure Lighthouse
 description: Узнайте, как подключить клиента к Azure Лигхсаусе, предоставив доступ к ресурсам и управление ими с помощью собственного клиента, используя делегированное управление ресурсами Azure.
-ms.date: 01/14/2021
+ms.date: 02/08/2021
 ms.topic: how-to
-ms.openlocfilehash: 1a7c8fc85819b2c34b5c64dc83cb908b7bee3c41
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c0a886b692b99156cbd53e5f0f5953047560c5b9
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232681"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100372150"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Подключение клиента к Azure Lighthouse
 
@@ -311,12 +311,13 @@ az account list
 Если вы не можете успешно подключить клиента или у пользователей возникли проблемы с делегированными ресурсами, ознакомьтесь со следующими советами и требованиями и повторите попытку.
 
 - `managedbyTenantId`Значение не должно совпадать с идентификатором клиента для подписки.
-- Нельзя использовать несколько назначений в одной и той же области `mspOfferName` . 
+- Нельзя использовать несколько назначений в одной и той же области `mspOfferName` .
 - Поставщик ресурсов **Microsoft. ManagedServices** должен быть зарегистрирован для делегированной подписки. Это должно происходить автоматически во время развертывания, но если нет, [его можно зарегистрировать вручную](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider).
 - Авторизация не должна включать пользователей с встроенной ролью [владельца](../../role-based-access-control/built-in-roles.md#owner) или встроенными ролями с [действиями](../../role-based-access-control/role-definitions.md#dataactions)с данными.
 - Группы должны быть созданы с [**типом группы**](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md#group-types) " **Безопасность** ", а не **Microsoft 365**.
 - Перед включением доступа для [вложенных групп](../..//active-directory/fundamentals/active-directory-groups-membership-azure-portal.md)может возникнуть дополнительная задержка.
 - Пользователи, которым требуется просматривать ресурсы в портал Azure, должны иметь роль [читателя](../../role-based-access-control/built-in-roles.md#reader) (или другую встроенную роль, которая включает доступ для чтения).
+- [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md) , включаемые в разрешения, не должны включать устаревшие роли. Если встроенная роль Azure становится устаревшей, все пользователи, подключенные к этой роли, будут потеряют доступ, и вы не сможете подключить дополнительные делегирования. Чтобы устранить эту проблему, обновите шаблон, чтобы использовать только поддерживаемые встроенные роли, а затем выполните новое развертывание.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

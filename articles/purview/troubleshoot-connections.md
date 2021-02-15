@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: f76a05757f86308785d4ca678675b87b3fa9d63e
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 8be5def6d4780fd8b2ab65c5c9e1104a869f6d5a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96554420"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391598"
 ---
 # <a name="troubleshoot-your-connections-in-azure-purview"></a>Устранение неполадок подключений в Azure зрения
 
@@ -53,11 +53,11 @@ ms.locfileid: "96554420"
 Чтобы проверить это, выполните следующие действия.
 
 1. Перейдите к хранилищу ключей и к разделу **политики доступа** .
-1. Убедитесь, что управляемое удостоверение зрения отображается в разделе *текущие политики доступа* с разрешениями на **Получение** секретов, как минимум
+1. Убедитесь, что управляемое удостоверение зрения отображается в разделе *текущие политики доступа* с разрешениями **Get** и **List** для секретов, как минимум
 
 Если управляемое удостоверение зрения отсутствует в списке, выполните действия, описанные в разделе [Создание учетных данных для сканирования и управление ими](manage-credentials.md) для добавления. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор каталога данных Azure зрения](how-to-browse-catalog.md)
-- [Поиск в каталоге данных Azure зрения](how-to-search-catalog.md)
+- [Обзор каталога данных Azure Purview](how-to-browse-catalog.md)
+- [Поиск по каталогу данных Azure Purview](how-to-search-catalog.md)

@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: a4d29dfb2a57dde2bb21244b2e5335f1a8ea1fcf
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: e5a131753829edddbb4f385766a2d8697ebd0106
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98947893"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584657"
 ---
 > [!IMPORTANT]
 > * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. См. справочную документацию ниже. 
@@ -81,15 +81,15 @@ npm install @azure/ai-form-recognizer
 ### <a name="formrecognizerclient"></a>FormRecognizerClient
 `FormRecognizerClient` предоставляет операции для перечисленных ниже целей.
 
- * Распознавание полей форм и содержимого с помощью настраиваемых моделей, обученных для распознавания пользовательских форм. Эти значения возвращаются в коллекцию объектов `RecognizedForm`.
+ * Распознавание полей форм и содержимого с помощью настраиваемых моделей, обученных для анализа пользовательских форм. Эти значения возвращаются в коллекцию объектов `RecognizedForm`.
  * Распознавание содержимого формы, в том числе таблиц, строк и слов, без необходимости обучения модели. Содержимое форм возвращается в коллекцию объектов `FormPage`.
  * Распознавание общих полей в квитанциях с помощью предварительно обученной модели для обработки квитанций в службе "Распознаватель документов". Эти поля и метаданные возвращаются в коллекцию `RecognizedReceipt`.
 
 ### <a name="formtrainingclient"></a>FormTrainingClient
 `FormTrainingClient` предоставляет операции для перечисленных ниже целей.
 
-* Обучение настраиваемых моделей для распознавания всех полей и значений в пользовательских формах. Возвращаемый объект `CustomFormModel` задает типы форм, которые будет распознавать модель, и поля, которые она будет извлекать для каждого из этих типов. Более подробное описание процесса создания набора данных для обучения см. в [документации службы по обучению модели без добавления меток](#train-a-model-without-labels).
-* Обучение пользовательских моделей для распознавания конкретных полей и значений, указываемых путем добавления меток к пользовательским формам. Возвращаемый объект `CustomFormModel` задает поля, которые будут извлечены моделью, а также предполагаемую точность для каждого поля. Более подробное объяснение применения меток к набору данных для обучения см. в [документации службы по обучению модели с добавлением меток](#train-a-model-with-labels).
+* Обучение настраиваемых моделей для анализа всех полей и значений в пользовательских формах. Возвращаемый объект `CustomFormModel` задает типы форм, которые будет анализировать модель, и поля, которые она будет извлекать для каждого из этих типов. Более подробное описание процесса создания набора данных для обучения см. в [документации службы по обучению модели без добавления меток](#train-a-model-without-labels).
+* Обучение пользовательских моделей для анализа конкретных полей и значений, указываемых путем добавления меток к пользовательским формам. Возвращаемый объект `CustomFormModel` задает поля, которые будут извлечены моделью, а также предполагаемую точность для каждого поля. Более подробное объяснение применения меток к набору данных для обучения см. в [документации службы по обучению модели с добавлением меток](#train-a-model-with-labels).
 * Управление моделями, созданными в учетной записи.
 * Копирование настраиваемой модели из одного ресурса Распознавателя документов в другой.
 
@@ -128,7 +128,7 @@ npm install @azure/ai-form-recognizer
 
 ## <a name="analyze-layout"></a>Анализ макета
 
-С помощью Распознавателя документов можно распознавать таблицы, строки и слова в документах без предварительного обучения модели. Для распознавания содержимого файла c определенным универсальным кодом ресурса URI используйте метод `beginRecognizeContentFromUrl`.
+С помощью Распознавателя документов можно анализировать таблицы, строки и слова в документах без необходимости обучать модель. Дополнительные сведения об извлечении макетов см. в статье [Служба макета Распознавателя документов](../../concept-layout.md). Для анализа содержимого файла по указанному URI используйте метод `beginRecognizeContentFromUrl`.
 
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_getcontent)]
 
@@ -152,31 +152,7 @@ cell [1,3] has text $56,651.49
 cell [1,5] has text PT
 ```
 
-## <a name="analyze-receipts"></a>Анализ квитанций
 
-В этом разделе объясняется, как с помощью предварительно обученной модели распознавать используемые в США квитанции и извлекать из них содержимое стандартных полей.
-
-Для распознавания квитанции с определенным универсальным кодом ресурса (URI) используйте метод `beginRecognizeReceiptsFromUrl`. В следующем блоке кода обрабатывается квитанция с указанным универсальным кодом ресурса (URI) и в консоль выводятся все ее основные поля с соответствующими значениями.
-
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_receipts)]
-
-> [!TIP]
-> Можно также выполнить распознавание квитанций, используя локальные изображения. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
-
-### <a name="output"></a>Выходные данные
-
-```console
-status: notStarted
-status: running
-status: succeeded
-First receipt:
-  Receipt Type: 'Itemized', with confidence of 0.659
-  Merchant Name: 'Contoso Contoso', with confidence of 0.516
-  Transaction Date: 'Sun Jun 09 2019 17:00:00 GMT-0700 (Pacific Daylight Time)', with confidence of 0.985
-    Item Name: '8GB RAM (Black)', with confidence of 0.916
-    Item Name: 'SurfacePen', with confidence of 0.858
-  Total: '1203.39', with confidence of 0.774
-```
 
 ## <a name="train-a-custom-model"></a>Обучение пользовательской модели
 
@@ -187,7 +163,7 @@ First receipt:
 
 ### <a name="train-a-model-without-labels"></a>Обучение моделей без меток
 
-Вы можете обучить свою модель распознавать все поля и значения в ваших формах без разметки вручную документов, которые будете использовать для обучения.
+Вы можете обучить свою модель анализировать все поля и значения в ваших формах без необходимости вручную помечать документы, которые вы будете использовать для обучения.
 
 Приведенная ниже функция обучает модель на основе заданного набора документов и выводит ее статус в консоль. 
 
@@ -320,6 +296,32 @@ Field Signature has value 'undefined' with a confidence score of undefined
 Field Subtotal has value 'undefined' with a confidence score of undefined
 Field Tax has value 'undefined' with a confidence score of undefined
 Field Total has value 'undefined' with a confidence score of undefined
+```
+
+## <a name="analyze-receipts"></a>Анализ квитанций
+
+В этом разделе объясняется, как с помощью предварительно обученной модели можно анализировать используемые в США квитанции и извлекать из них содержимое стандартных полей. Дополнительные сведения об анализе квитанций см. в статье [Готовая модель получения Распознавателя форм](../../concept-receipts.md).
+
+Для анализа чеков по URI используйте метод `beginRecognizeReceiptsFromUrl`. В следующем блоке кода обрабатывается квитанция с указанным универсальным кодом ресурса (URI) и в консоль выводятся все ее основные поля с соответствующими значениями.
+
+[!code-javascript[](~/cognitive-services-quickstart-code/javascript/FormRecognizer/FormRecognizerQuickstart.js?name=snippet_receipts)]
+
+> [!TIP]
+> Можно также проанализировать локальные изображения квитанций. Изучите информацию о методах класса [FormRecognizerClient](/javascript/api/@azure/ai-form-recognizer/formrecognizerclient?view=azure-node-latest), например о **beginRecognizeReceipts**. Либо просмотрите пример кода на [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/samples) для сценариев, включающих использование локальных изображений.
+
+### <a name="output"></a>Выходные данные
+
+```console
+status: notStarted
+status: running
+status: succeeded
+First receipt:
+  Receipt Type: 'Itemized', with confidence of 0.659
+  Merchant Name: 'Contoso Contoso', with confidence of 0.516
+  Transaction Date: 'Sun Jun 09 2019 17:00:00 GMT-0700 (Pacific Daylight Time)', with confidence of 0.985
+    Item Name: '8GB RAM (Black)', with confidence of 0.916
+    Item Name: 'SurfacePen', with confidence of 0.858
+  Total: '1203.39', with confidence of 0.774
 ```
 
 ## <a name="manage-your-custom-models"></a>Управление пользовательскими моделями

@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 48c835070329b5cb0892b10760d37708e46bfa1d
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: cec97134173cfc7879baf1d914d8f224a0736430
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559139"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99593050"
 ---
 # <a name="tutorial-manipulating-models"></a>Руководство по Манипулирование моделями
 
@@ -37,7 +37,7 @@ ms.locfileid: "96559139"
 1. Создайте скрипт в том же каталоге, что и **RemoteRenderedModel**, и назовите его **RemoteBounds**.
 1. Замените содержимое скрипта приведенным ниже кодом.
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -51,8 +51,6 @@ ms.locfileid: "96559139"
     {
         //Remote bounds works with a specific remotely rendered model
         private BaseRemoteRenderedModel targetModel = null;
-
-        private BoundsQueryAsync remoteBoundsQuery = null;
 
         private RemoteBoundsState currentBoundsState = RemoteBoundsState.NotReady;
 
@@ -94,14 +92,8 @@ ms.locfileid: "96559139"
             }
         }
 
-        // Create a query using the model entity
-        private void QueryBounds()
-        {
-            //Implement me
-        }
-
-        // Check the result and apply it to the local Unity bounding box if it was successful
-        private void ProcessQueryResult(BoundsQueryAsync remoteBounds)
+        // Create an async query using the model entity
+        async private void QueryBounds()
         {
             //Implement me
         }
@@ -113,31 +105,21 @@ ms.locfileid: "96559139"
 
     Этот скрипт должен быть добавлен в тот же игровой объект, что и скрипт, реализующий **BaseRemoteRenderedModel**. В данном случае — в **RemoteRenderedModel**. Как и предыдущие скрипты, этот исходный код будет обрабатывать все изменения состояния, события и данные, связанные с удаленными границами.
 
-    Осталось реализовать два метода: **QueryBounds** и **ProcessQueryResult**. **QueryBounds** получает границы, а **ProcessQueryResult** принимает результат запроса и применяет его к локальному коллайдеру **BoxCollider**.
+    Для реализации осталось применить только один метод: **QueryBounds**. **QueryBounds** получает границы, асинхронно, принимает результат запроса и применяет его к локальному экземпляру **BoxCollider**.
 
-    Метод **QueryBounds** очень прост: он отправляет запрос в сеанс удаленной отрисовки и ожидает передачи данных о событии `Completed`.
+    Метод **QueryBounds** очень простой: он отправляет запрос в сеанс удаленной отрисовки и ожидает результат.
 
 1. Замените метод **QueryBounds** следующим готовым методом:
 
-    ```csharp
+    ```cs
     // Create a query using the model entity
-    private void QueryBounds()
+    async private void QueryBounds()
     {
         remoteBoundsQuery = targetModel.ModelEntity.QueryLocalBoundsAsync();
         CurrentBoundsState = RemoteBoundsState.Updating;
-        remoteBoundsQuery.Completed += ProcessQueryResult;
-    }
-    ```
+        await remoteBounds;
 
-    Метод **ProcessQueryResult** также прост. Мы проверим результат, чтобы убедиться в успешности его выполнения. Если это так, преобразуйте и примените возвращенные границы в формат, который может принимать **BoxCollider**.    
-
-1. Замените метод **ProcessQueryResult** следующим готовым методом:
-
-    ```csharp
-    // Check the result and apply it to the local Unity bounding box if it was successful
-    private void ProcessQueryResult(BoundsQueryAsync remoteBounds)
-    {
-        if (remoteBounds.IsRanToCompletion)
+        if (remoteBounds.IsCompleted)
         {
             var newBounds = remoteBounds.Result.toUnity();
             BoundsBoxCollider.center = newBounds.center;
@@ -151,6 +133,8 @@ ms.locfileid: "96559139"
         }
     }
     ```
+
+    Мы проверим запрос, чтобы убедиться в успешности его выполнения. Если это так, преобразуйте и примените возвращенные границы в формат, который может принимать **BoxCollider**.
 
 Теперь, когда скрипт **RemoteBounds** добавлен к тому же игровому объекту, что и **RemoteRenderedModel**, в случае необходимости будет добавляться **BoxCollider**. Когда модель достигнет состояния `Loaded`, границы будут автоматически запрашиваться и применяться к **BoxCollider**.
 
@@ -198,7 +182,7 @@ BoxCollider вокруг модели подходит для взаимодей
 
 1. Создайте скрипт с именем **RemoteRayCaster** и замените все его содержимое следующим кодом:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -220,7 +204,8 @@ BoxCollider вокруг модели подходит для взаимодей
             if(RemoteRenderingCoordinator.instance.CurrentCoordinatorState == RemoteRenderingCoordinator.RemoteRenderingState.RuntimeConnected)
             {
                 var rayCast = new RayCast(origin.toRemotePos(), dir.toRemoteDir(), maxDistance, hitPolicy);
-                return await RemoteRenderingCoordinator.CurrentSession.Actions.RayCastQueryAsync(rayCast).AsTask();
+                var result = await RemoteRenderingCoordinator.CurrentSession.Connection.RayCastQueryAsync(rayCast);
+                return result.Hits;
             }
             else
             {
@@ -243,7 +228,7 @@ BoxCollider вокруг модели подходит для взаимодей
 
 1. Создайте скрипт с именем **RemoteRayCastPointerHandler** и замените все его содержимое следующим кодом:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -314,7 +299,7 @@ BoxCollider вокруг модели подходит для взаимодей
 
 1. Создайте скрипт с именем **RemoteEntityHelper** и замените его содержимое следующим:
 
-    ```csharp
+    ```cs
     // Copyright (c) Microsoft Corporation. All rights reserved.
     // Licensed under the MIT License. See LICENSE in the project root for license information.
     
@@ -359,7 +344,7 @@ BoxCollider вокруг модели подходит для взаимодей
 
 1. Измените скрипт **RemoteEntityHelper**, чтобы он также содержал следующий метод:
 
-    ```csharp
+    ```cs
     public void MakeSyncedGameObject(Entity entity)
     {
         var entityGameObject = entity.GetOrCreateGameObject(UnityCreationMode.DoNotCreateUnityComponents);

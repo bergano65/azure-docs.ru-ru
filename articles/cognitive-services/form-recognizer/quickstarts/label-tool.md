@@ -11,12 +11,12 @@ ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: Обработка документов
-ms.openlocfilehash: 813f5a06915ca7f5dfc0f4cc9a3f9b3e232ca31a
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 0405ea116a1867ec75beff21637f18fb37565627
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221097"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99584725"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -176,7 +176,7 @@ ms.locfileid: "99221097"
 
 ### <a name="apply-labels-to-text"></a>Применение меток к тексту
 
-Теперь вам предстоит создать теги (метки) и применить их к текстовым элементам, которые должна распознавать модель.
+Теперь вам предстоит создать теги (метки) и применить их к текстовым элементам, которые должна анализировать модель.
 
 # <a name="v20"></a>[Версия 2.0](#tab/v2-0)  
 1. Во-первых, с помощью панели редактора тегов создайте теги (метки), которые вы хотите определить.

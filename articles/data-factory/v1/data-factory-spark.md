@@ -1,22 +1,18 @@
 ---
 title: Вызов программ Spark из фабрики данных Azure
 description: Узнайте, как вызывать программы Spark из фабрики данных Azure с помощью действия MapReduce.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 417306e09a9424b302bb226aea5dd2c1debe96f5
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: a7fcccad039ff6d737e10cfc57ba97f914645a9d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508430"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100382673"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -274,7 +270,7 @@ ms.locfileid: "97508430"
 Для дальнейшего устранения неполадок сделайте следующее:
 
 
-1. Перейдите в расположение `https://<CLUSTERNAME>.azurehdinsight.net/yarnui/hn/cluster`.
+1. Перейдите к `https://<CLUSTERNAME>.azurehdinsight.net/yarnui/hn/cluster`.
 
     ![Приложение пользовательского интерфейса YARN](media/data-factory-spark/yarnui-application.png)
 

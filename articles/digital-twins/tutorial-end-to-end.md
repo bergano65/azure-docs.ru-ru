@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 8933dd6655223db092597aedf839fd800119864a
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 5ef06f2db487a3e6d897e26758da840f37c3ecaf
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684011"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575811"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -401,18 +401,15 @@ ObserveProperties thermostat67 Temperature room21 Temperature
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы, созданные для этого учебника, вам больше не нужны, можете удалить их. 
+По завершении работы с этим руководством вы можете выбрать ресурсы, которые нужно удалить, в зависимости от планируемых действий.
 
-В [Azure Cloud Shell](https://shell.azure.com) можно удалить все ресурсы Azure в группе ресурсов с помощью команды [az group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-delete). Это приведет к удалению всей группы ресурсов, экземпляра Azure Digital Twins, Центра Интернета вещей и регистрации устройства в этом центре, раздела Сетки событий и связанных с ним подписок, а также приложения Функций Azure вместе с двумя функциями и связанными с ними ресурсами, такими как хранилище.
+[!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-> [!IMPORTANT]
-> Удаление группы ресурсов — процесс необратимый. Группа ресурсов и все содержащиеся в ней ресурсы удаляются без возможности восстановления. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. 
+* **Если вы хотите и дальше использовать экземпляр Azure Digital Twins, который настроили при работе с этой статьей, но вам нужно очистить некоторые или все его модели, двойники и связи**, вы можете воспользоваться командами CLI [az dt](/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true) в окне [Azure Cloud Shell](https://shell.azure.com).
 
-```azurecli-interactive
-az group delete --name <your-resource-group>
-```
+    Этот параметр не приведет к удалению других ресурсов Azure, созданных с помощью этого руководства (Центр Интернета вещей, приложение Функций Azure и т. д.). Их можно удалить по отдельности с помощью [команд dt](/cli/azure/reference-index?view=azure-cli-latest&preserve-view=true), подходящих для каждого типа ресурсов.
 
-Наконец, удалите папку примера проекта, скачанную на локальный компьютер.
+Также, возможно, потребуется удалить папку проекта с вашего локального компьютера.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

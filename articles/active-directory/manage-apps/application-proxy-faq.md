@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 121dcdf51374f625ad7393bb181b1be215775a0b
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 19a5d223b587e47c562977cc9fea34f990eb0e46
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257783"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370824"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
@@ -106,6 +106,15 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\W
 
 Нет, в настоящее время такая возможность не поддерживается.
 
+### <a name="what-happens-if-i-delete-cwap_authsecret-the-client-secret-in-the-app-registration"></a>Что произойдет, если удалить CWAP_AuthSecret (секрет клиента) в регистрации приложения?
+
+Секрет клиента, также называемый *CWAP_AuthSecret*, автоматически добавляется в объект приложения (регистрация приложения) при создании приложения AD application proxy Azure.
+
+Секрет клиента действителен в течение одного года. Новый секрет клиента в течение одного года создается автоматически до истечения срока действия текущего действительного секрета клиента. Три CWAP_AuthSecret клиентских секретов хранятся в объекте приложения постоянно. 
+
+> [!IMPORTANT]
+> Удаление CWAP_AuthSecret прерывает предварительную проверку подлинности для AD Application Proxy Azure. Не удаляйте CWAP_AuthSecret.
+
 ### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Разделы справки изменить целевую страницу, с которой загружается приложение?
 
 На странице регистрации приложений можно изменить URL-адрес домашней страницы на требуемый внешний URL-адрес целевой странице. Указанная страница будет загружаться при запуске приложения из папки "Мои приложения" или с портала Office 365. Инструкции по настройке см. в разделе [Настройка пользовательской домашней страницы для опубликованных приложений с помощью Azure AD application proxy](./application-proxy-configure-custom-home-page.md)
@@ -187,11 +196,11 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\W
 
 ## <a name="websocket"></a>WebSocket
 
-### <a name="does-websocket-support-work-for-applications-other-than-qliksense"></a>Поддерживает ли WebSocket работу для приложений, отличных от QlikSense?
+### <a name="does-websocket-support-work-for-applications-other-than-qliksense-and-remote-desktop-web-client-html5"></a>Поддерживает ли WebSocket работу для приложений, отличных от QlikSense и удаленный рабочий стол веб-клиента (HTML5)?
 
 В настоящее время поддержка протокола WebSocket по-прежнему доступна в общедоступной предварительной версии, и она может не работать для других приложений. Некоторые клиенты успешно выполнили смешанный успешный протокол WebSocket с другими приложениями. При тестировании таких сценариев мы будем рады услышать результаты. Отправьте нам свой отзыв по адресу aadapfeedback@microsoft.com .
 
-Функции (EventLog, PowerShell и службы удаленных рабочих столов) в центре администрирования Windows (ВАК) или удаленный рабочий стол веб-клиента (HTML5) не работают в Azure AD Application Proxy в настоящее время.
+Функции (журналы событий, PowerShell и службы удаленных рабочих столов) в центре администрирования Windows (ВАК) не работают в Azure AD Application Proxy в настоящее время.
 
 ## <a name="link-translation"></a>Преобразование ссылок
 
@@ -201,7 +210,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\W
 
 Для лучшей производительности рекомендуется использовать идентичные внутренние и внешние URL-адреса, настроив [Личные домены](./application-proxy-configure-custom-domain.md). Если использование пользовательских доменов невозможно, можно улучшить производительность преобразования ссылок с помощью расширения для безопасного входа в мои приложения или браузера Microsoft ребра на мобильных устройствах. См. раздел [Перенаправление жестко закодированных ссылок для приложений, опубликованных с помощью Azure AD application proxy](application-proxy-configure-hard-coded-link-translation.md).
 
-## <a name="wildcards"></a>подстановочные знаки;
+## <a name="wildcards"></a>Знаки подстановки
 
 ### <a name="how-do-i-use-wildcards-to-publish-two-applications-with-the-same-custom-domain-name-but-with-different-protocols-one-for-http-and-one-for-https"></a>Разделы справки использовать подстановочные знаки для публикации двух приложений с одним и тем же именем личного домена, но с разными протоколами, одним для HTTP и одним для HTTPS?
 

@@ -1,15 +1,15 @@
 ---
 title: Встроенные определения политик для Azure Backup
 description: Здесь приведены встроенные определения политик в Политике Azure для Azure Backup. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 02/04/2021
+ms.date: 02/09/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: bbc293241557b6cb4c4c0212108156d12927d17a
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 866750347109225e48f3913801b98d7f5c3e6a23
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99558051"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097626"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-backup"></a>Встроенные определения в Политике Azure для Azure Backup
 

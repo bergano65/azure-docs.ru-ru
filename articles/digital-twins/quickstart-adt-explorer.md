@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: f6bd6b13ab4a2e654bdabc86355f2c3388abed31
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 9d09bca246938f972a212f7ee71f03a618e16ac4
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050533"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99575696"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Краткое руководство. Изучение примера сценария Azure Digital Twins с помощью ADT Explorer
 
@@ -306,11 +306,15 @@ ms.locfileid: "98050533"
 
 Чтобы окончательно завершить пример в этом кратком руководстве, сначала завершите работу консольного приложения. Это действие закрывает подключение браузера к приложению ADT Explorer. Вы больше не сможете просматривать динамические данные в браузере. Теперь можно закрыть вкладку браузера.
 
-Если вы планируете продолжить работу с учебниками по Azure Digital Twins, созданный в этом кратком руководстве экземпляр можно использовать повторно для работы со следующими статьями, поэтому удалять его не нужно.
+Теперь вы можете выбрать ресурсы, которые нужно удалить, в зависимости от планируемых действий.
+
+* **Если вы планируете продолжить работу с руководствами по Azure Digital Twins**, созданный в этом кратком руководстве экземпляр можно использовать повторно для работы со следующими статьями, поэтому удалять его не нужно.
+
+[!INCLUDE [digital-twins-cleanup-clear-instance.md](../../includes/digital-twins-cleanup-clear-instance.md)]
  
 [!INCLUDE [digital-twins-cleanup-basic.md](../../includes/digital-twins-cleanup-basic.md)]
 
-Наконец, удалите папку примеров проекта **Azure_Digital_Twins__ADT__explorer**, скачанную на локальный компьютер. Возможно, придется удалить как сжатую, так и распакованную версию.
+Также, возможно, потребуется удалить папку проекта с вашего локального компьютера.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 0b3ccc31c9159b5d7b1615add89e8fdc308bf8df
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: d9c2aea284a2ab84b5d45fe35a35785adfc88123
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763461"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832079"
 ---
 ### <a name="publish-the-device-template"></a>Публикация шаблона устройства
 
@@ -61,16 +61,3 @@ ms.locfileid: "96763461"
 
 1. Выберите **Закрыть**.
 
-## <a name="next-steps"></a>Дальнейшие действия
-
-Вы создали приложение IoT Central с помощью шаблона приложения **Видеоаналитика — распознавание объектов и движения**, создали шаблон устройства шлюза и добавили в приложение устройство шлюза.
-
-Если вы хотите испытать приложение "Видеоаналитика — распознавание объектов и движения", используя модули IoT Edge в облачной виртуальной машине с имитированными потоками видео, ознакомьтесь со следующей статьей:
-
-> [!div class="nextstepaction"]
-> [Создание экземпляра IoT Edge для видеоаналитики (виртуальная машина Linux)](../articles/iot-central/retail/tutorial-video-analytics-iot-edge-vm.md)
-
-Если вы хотите испытать приложение "Видеоаналитика — распознавание объектов и движения", используя модули IoT Edge, работающие на реальном устройстве с реальной камерой **ONVIF**, ознакомьтесь со следующей статьей:
-
-> [!div class="nextstepaction"]
-> [Создание экземпляра IoT Edge для видеоаналитики (Intel NUC)](../articles/iot-central/retail/tutorial-video-analytics-iot-edge-nuc.md)

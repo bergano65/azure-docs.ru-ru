@@ -1,23 +1,18 @@
 ---
 title: Копирование данных в Dynamics (Common Data Service)
 description: Узнайте, как копировать данные из Microsoft Dynamics CRM или Microsoft Dynamics 365 (Common Data Service) в поддерживаемые хранилища данных-приемники или из поддерживаемых исходных хранилищ данных в Dynamics CRM или Dynamics 365 с помощью действия копирования в конвейере фабрики данных.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 02/02/2021
-ms.openlocfilehash: 63816a40aa710d26dc036dfe82018883e917beb6
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: d238a232d719c75244e6f9b825272957d2a4a4bc
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428493"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381007"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -62,7 +57,7 @@ ms.locfileid: "99428493"
 
 Этот соединитель Dynamics построен на основе [инструментов Dynamics XRM](/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
 
-## <a name="prerequisites"></a>Обязательные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель с проверкой подлинности субъекта-службы Azure AD, необходимо настроить проверку подлинности "сервер-сервер" (S2S) в Common Data Service или Dynamics. Подробные инструкции см. в [этой статье](/powerapps/developer/common-data-service/build-web-applications-server-server-s2s-authentication) .
 
@@ -379,21 +374,21 @@ ms.locfileid: "99428493"
 | Тип данных Dynamics | Тип промежуточных данных фабрики данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | Long | ✓ | ✓ |
-| AttributeTypeCode.Boolean | Логический | ✓ | ✓ |
+| AttributeTypeCode.Boolean | Логическое | ✓ | ✓ |
 | AttributeType.Customer | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.DateTime | Datetime | ✓ | ✓ |
 | AttributeType.Decimal | Decimal | ✓ | ✓ |
 | AttributeType.Double | Double | ✓ | ✓ |
-| AttributeType.EntityName | Строковый | ✓ | ✓ |
+| AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
 | AttributeType.Lookup | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
-| AttributeType.ManagedProperty | Логический | ✓ | |
-| AttributeType.Memo | Строковый | ✓ | ✓ |
+| AttributeType.ManagedProperty | Логическое | ✓ | |
+| AttributeType.Memo | Строка | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |
 | AttributeType.Owner | Идентификатор GUID | ✓ | ✓ (См. [руководство](#writing-data-to-a-lookup-field)) |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
 | AttributeType.Uniqueidentifier | Идентификатор GUID | ✓ | ✓ |
-| AttributeType.String | Строковый | ✓ | ✓ |
+| AttributeType.String | Строка | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 
@@ -434,5 +429,5 @@ ms.locfileid: "99428493"
 
 Дополнительные сведения о свойствах см. в разделе [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Список хранилищ данных, которые действие копирования в фабрике данных поддерживает как источники и приемники, см. в разделе [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats).

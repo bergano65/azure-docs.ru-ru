@@ -7,16 +7,18 @@ ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 10ec761313ce39beb4b24b838d156478704f943e
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: b2b17cffb8abd748315c437f46000995c4cb598a
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820036"
+ms.locfileid: "99831915"
 ---
 # <a name="quickstart---set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Краткое руководство. Настройка среды для кратких руководств и учебников по IoT Plug and Play
 
 Перед началом работы с краткими руководствами и учебниками по IoT Plug and Play необходимо настроить центр Интернета вещей и Службу подготовки устройств (DPS) в подписке Azure. Кроме того, вам понадобятся локальные копии файлов модели, используемых в примерах приложений, и обозреватель Интернета вещей Azure.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -130,7 +132,7 @@ set IOTHUB_DEVICE_ID=my-pnp-device
 
 Дополнительные сведения см. в статье [Установка и использование обозревателя Интернета вещей Azure](howto-use-iot-explorer.md).
 
-## <a name="remove-the-resources"></a>Удаление ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Вы можете использовать центр Интернета вещей и экземпляр DPS для всех кратких руководств и учебников по IoT Plug and Play — вам нужно только выполнить действия, описанные в этой статье. По завершении работы ресурсы можно удалить из подписки с помощью следующей команды:
 
@@ -138,7 +140,7 @@ set IOTHUB_DEVICE_ID=my-pnp-device
 az group delete --name my-pnp-resourcegroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили среду, вы можете обратиться к одному из кратких руководств или учебников, например:
 

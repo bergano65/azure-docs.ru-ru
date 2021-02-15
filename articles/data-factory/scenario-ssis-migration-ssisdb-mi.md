@@ -1,22 +1,17 @@
 ---
 title: Миграция служб SSIS с помощью Управляемый экземпляр Azure SQL в качестве назначения рабочей нагрузки базы данных
 description: Миграция служб SSIS с помощью Управляемый экземпляр Azure SQL в качестве назначения рабочей нагрузки базы данных.
-services: data-factory
-documentationcenter: ''
 author: chugugrace
 ms.author: chugu
-ms.reviewer: ''
-manager: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 9/12/2019
-ms.openlocfilehash: 184cd7ec0dd490152e7234383bffe4f0fd822913
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 3d2bc60f8ba7120f8d962500c06be50e905c11a5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635717"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373595"
 ---
 # <a name="ssis-migration-with-azure-sql-managed-instance-as-the-database-workload-destination"></a>Миграция служб SSIS с помощью Управляемый экземпляр Azure SQL в качестве назначения рабочей нагрузки базы данных
 
@@ -44,7 +39,7 @@ SQL Управляемый экземпляр имеет собственный 
 - [Сетевые топологии для миграции SQL Управляемый экземпляр с помощью DMS](../dms/resource-network-topologies.md)
 - [Миграция пакетов служб SSIS в Управляемый экземпляр SQL](../dms/how-to-migrate-ssis-packages-managed-instance.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Подключение к каталогу SSIS (SSISDB) в Azure](/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database)
 - [Запуск пакетов служб SSIS, развернутых в Azure](/sql/integration-services/lift-shift/ssis-azure-run-packages)

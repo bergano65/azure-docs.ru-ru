@@ -1,22 +1,18 @@
 ---
 title: Загрузка данных в Azure Synapse Analytics
 description: Копирование данных в Azure синапсе Analytics с помощью фабрики данных Azure
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/29/2020
-ms.openlocfilehash: 8071b0fb08f6456b4eb59a3dae875ab0c90ab64d
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 94f5884cb9d1886a9e7aa6b09817b26bba6d47f7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223510"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370722"
 ---
 # <a name="load-data-into-azure-synapse-analytics-by-using-azure-data-factory"></a>Загрузка данных в Azure синапсе Analytics с помощью фабрики данных Azure
 
@@ -77,7 +73,7 @@ ms.locfileid: "99223510"
     >В этом руководстве используется *Проверка подлинности SQL* в качестве типа проверки подлинности для исходного хранилища данных, но при необходимости можно выбрать другие поддерживаемые методы проверки подлинности:*субъект-служба* и *управляемое удостоверение* . Дополнительные сведения см. в соответствующих разделах [этой статьи](./connector-azure-sql-database.md#linked-service-properties).
     >Чтобы безопасно хранить секреты для хранилищ данных, также рекомендуется использовать Azure Key Vault. Дополнительные сведения см. в [этой статье](./store-credentials-in-key-vault.md).
 
-    a. Щелкните **+ создать новое соединение**.
+    а. Щелкните **+ создать новое соединение**.
 
     b. В коллекции выберите элемент **База данных SQL Azure** и нажмите кнопку **Продолжить**. Вы можете ввести текст "SQL" в поле поиска, чтобы отфильтровать соединители.
 
@@ -122,7 +118,7 @@ ms.locfileid: "99223510"
 
 9. На странице **Параметры** сделайте следующее.
 
-    a. В разделе **Staging Settings** (Промежуточные параметры) щелкните **+Создать**, чтобы создать промежуточное хранилище. Это хранилище используется для промежуточного хранения данных перед их загрузкой в Azure Synapse Analytics с помощью PolyBase. После завершения копирования промежуточные данные в хранилище BLOB-объектов Azure автоматически очищаются.
+    а. В разделе **Staging Settings** (Промежуточные параметры) щелкните **+Создать**, чтобы создать промежуточное хранилище. Это хранилище используется для промежуточного хранения данных перед их загрузкой в Azure Synapse Analytics с помощью PolyBase. После завершения копирования промежуточные данные в хранилище BLOB-объектов Azure автоматически очищаются.
 
     b. На странице **Новая связанная служба** выберите свою учетную запись хранения и щелкните **создать** , чтобы развернуть связанную службу.
 

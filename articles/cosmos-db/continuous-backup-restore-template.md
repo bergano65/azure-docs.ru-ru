@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 642c61414d882b9cfe83f585fda8ff5404e8834a
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 4abfdd0209bd9f13fb7bd902b27a53f65156da2e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538482"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381823"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-resource-manager-templates"></a>Настройка непрерывного резервного копирования и восстановление на момент времени (Предварительная версия) и управление ими с помощью шаблонов Azure Resource Manager
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "99538482"
 
 ## <a name="provision-an-account-with-continuous-backup"></a><a id="provision"></a>Предоставление учетной записи с непрерывным резервным копированием
 
-Azure Resource Manager шаблоны можно использовать для развертывания Azure Cosmos DB учетной записи с непрерывным режимом. При определении шаблона для предоставления учетной записи включите параметр "Баккупполици", как показано в следующем примере:
+Azure Resource Manager шаблоны можно использовать для развертывания Azure Cosmos DB учетной записи с непрерывным режимом. При определении шаблона для предоставления учетной записи включите параметр, `backupPolicy` как показано в следующем примере:
 
 ```json
 {
@@ -66,9 +66,9 @@ az group deployment create -g <ResourceGroup> --template-file <ProvisionTemplate
 
 Вы также можете восстановить учетную запись с помощью шаблона диспетчер ресурсов. При определении шаблона включите следующие параметры:
 
-* Присвойте параметру "createMode" значение "Restore"
-* Определите "Ресторепараметерс", обратите внимание, что значение "Ресторесаурце" извлекается из выходных данных `az cosmosdb restorable-database-account list` команды для исходной учетной записи. Атрибут идентификатора экземпляра для имени учетной записи используется для восстановления.
-* Задайте для параметра "Режимвосстановления" значение "PointInTime" и настройте параметр "Ресторетиместампинутк".
+* Задайте `createMode` параметр для *восстановления*
+* Определите `restoreParameters` , обратите внимание, что `restoreSource` значение извлекается из выходных данных `az cosmosdb restorable-database-account list` команды для исходной учетной записи. Атрибут идентификатора экземпляра для имени учетной записи используется для восстановления.
+* Задайте `restoreMode` для параметра значение *PointInTime* и настройте его `restoreTimestampInUtc` .
 
 ```json
 {

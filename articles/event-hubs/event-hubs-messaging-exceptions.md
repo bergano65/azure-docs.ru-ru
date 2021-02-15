@@ -2,16 +2,16 @@
 title: Концентраторы событий Azure — исключения (прежние версии)
 description: В этой статье приводится список исключений обмена сообщениями Центров событий и предлагаемые действия.
 ms.topic: article
-ms.date: 11/02/2020
-ms.openlocfilehash: 357a87c53023962dd9195a616bd9ce9e01c55bf9
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.date: 02/10/2021
+ms.openlocfilehash: a76c98ec7d6d1f3370ed8787bf10d1d16a7baaa5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340973"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100390901"
 ---
 # <a name="event-hubs-messaging-exceptions---net-legacy"></a>Исключения обмена сообщениями концентраторов событий — .NET (устаревший)
-В этом разделе перечислены исключения .NET, созданные .NET Framework API. 
+В этом разделе перечислены исключения .NET, созданные платформа .NET Framework API. 
 
 > [!IMPORTANT]
 > Некоторые исключения, перечисленные в статье, относятся только к устаревшей библиотеке концентраторов событий .NET. Например: Microsoft. ServiceBus. * Exceptions.
@@ -125,14 +125,14 @@ ms.locfileid: "96340973"
 
     Если вы видите значения, превышающие число единиц пропускной способности * (1 МБ в секунду для входящих или 1000 запросов на входящий трафик/с, 2 МБ в секунду для исходящего трафика), увеличьте число единиц пропускной способности, используя **масштаб** (в левой меню) пространства имен концентраторов событий, чтобы вручную увеличить или использовать функцию [автоматического](event-hubs-auto-inflate.md) расширения концентраторов событий. Обратите внимание, что автоматическое расширение может увеличиться до 20 единиц ПРОПУСКНОЙ способности. Чтобы подать ему ровно 40 единиц пропускной способности, отправьте [запрос в службу поддержки](../azure-portal/supportability/how-to-create-azure-support-request.md).
 
-### <a name="error-code-50001"></a>Код ошибки 50001
+### <a name="error-code-50008"></a>Код ошибки 50008
 
 Эта ошибка не должна возникать часто. Она происходит, когда контейнеру, выполняющему код для пространства имен, не хватает ресурсов ЦП — всего за пару секунд до запуска подсистемы балансировки нагрузки Центров событий.
 
-**Решение**. Ограничьте при вызове метода GetRuntimeInformation. Концентраторы событий Azure поддерживают до 50 вызовов в секунду в Жетрунтимеинфо в секунду. При достижении предела может появиться исключение, аналогичное следующему:
+**Решение**. Ограничьте вызовы метода GetRuntimeInformation. Концентраторы событий Azure поддерживают до 50 вызовов в секунду на группу потребителей в Жетрунтимеинфо в секунду. При достижении предела может появиться исключение, аналогичное следующему:
 
 ```
-ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The request was terminated because the namespace 75248:aaa-default-eventhub-ns-prodb2b is being throttled. Error code : 50001. Please wait 10 seconds and try again.
+ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The request was terminated because the namespace 75248:aaa-default-eventhub-ns-prodb2b is being throttled. Error code : 50008. Please wait 10 seconds and try again.
 ```
 
 
