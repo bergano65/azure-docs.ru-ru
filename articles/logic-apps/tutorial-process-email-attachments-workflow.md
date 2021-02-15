@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 02/27/2020
-ms.openlocfilehash: 95cc13a79f39888a5be10e423bda4c7cd7c84cb3
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: bd1715dc0a3767bc5826154616bbdc97c7b61dd3
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054793"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576368"
 ---
 # <a name="tutorial-automate-tasks-to-process-emails-by-using-azure-logic-apps-azure-functions-and-azure-storage"></a>Руководство по Автоматизация задач обработки сообщений электронной почты с помощью Azure Logic Apps, Функций Azure и службы хранилища Azure
 
@@ -88,7 +88,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
       ![Копирование имени и ключа учетной записи хранения](./media/tutorial-process-email-attachments-workflow/copy-save-storage-name-key.png)
 
-   Получить ключ доступа к учетной записи хранения также можно с помощью [Azure PowerShell](/powershell/module/az.storage/get-azstorageaccountkey) или [Azure CLI](/cli/azure/storage/account/keys.md#az-storage-account-keys-list).
+   Получить ключ доступа к учетной записи хранения также можно с помощью [Azure PowerShell](/powershell/module/az.storage/get-azstorageaccountkey) или [Azure CLI](/cli/azure/storage/account/keys).
 
 1. Создайте контейнер хранилища BLOB-объектов для вложений электронной почты.
 

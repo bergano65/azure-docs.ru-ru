@@ -1,22 +1,18 @@
 ---
 title: IP-адреса Azure Integration Runtime
 description: Узнайте, какие IP-адреса необходимо разрешить из входящего трафика, чтобы правильно настроить брандмауэры для защиты сетевого доступа к хранилищам данных.
-services: data-factory
 ms.author: abnarain
 author: nabhishek
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/06/2020
-ms.openlocfilehash: fb83be59a3ccb11ea8bbd88307596937caa2b354
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 7b663c8d6e5849d39bb8366c82f45e0fd66d77dd
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638301"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100371402"
 ---
 # <a name="azure-integration-runtime-ip-addresses"></a>IP-адреса Azure Integration Runtime
 
@@ -31,7 +27,7 @@ IP-адреса, которые Azure Integration Runtime использует, 
 
 ## <a name="azure-integration-runtime-ip-addresses-specific-regions"></a>Azure Integration Runtime IP-адреса: определенные регионы
 
-Разрешите трафик с IP-адресов, указанных для среды выполнения интеграции Azure, в определенном регионе Azure, где находятся ваши ресурсы. Список диапазонов IP-адресов можно получить с помощью ссылки для [скачивания тегов службы из диапазона IP-адресов](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files). Например, если регион Azure — **AustraliaEast** , можно получить список диапазонов IP-адресов из **AustraliaEast** .
+Разрешите трафик с IP-адресов, указанных для среды выполнения интеграции Azure, в определенном регионе Azure, где находятся ваши ресурсы. Список диапазонов IP-адресов можно получить с помощью ссылки для [скачивания тегов службы из диапазона IP-адресов](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files). Например, если регион Azure — **AustraliaEast**, можно получить список диапазонов IP-адресов из **AustraliaEast**.
 
 
 ## <a name="known-issue-with-azure-storage"></a>Известная ошибка в службе хранилища Azure
@@ -40,6 +36,6 @@ IP-адреса, которые Azure Integration Runtime использует, 
 
   Вместо этого мы рекомендуем использовать [Доверенные службы при подключении к службе хранилища Azure](https://techcommunity.microsoft.com/t5/azure-data-factory/data-factory-is-now-a-trusted-service-in-azure-storage-and-azure/ba-p/964993). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Вопросы безопасности при перемещении данных в фабрике данных Azure](data-movement-security-considerations.md)

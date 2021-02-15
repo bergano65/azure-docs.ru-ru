@@ -1,22 +1,18 @@
 ---
 title: Копирование данных из MongoDB с использованием устаревшей версии
 description: Узнайте, как копировать данные из Mongo DB в поддерживаемые хранилища данных-приемники с помощью действия копирования в устаревшем конвейере фабрики данных Azure.
-services: data-factory
 author: linda33wj
 ms.author: jingwang
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 08/12/2019
-ms.openlocfilehash: 7cf4be078a7bee0bedbeac4326acb9ca290cde88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e13a1a5a939d314bdf4500c0827fa13201505016
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331987"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100368852"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory-legacy"></a>Копирование данных из MongoDB с помощью фабрики данных Azure (прежние версии)
 
@@ -230,8 +226,8 @@ ms.locfileid: "91331987"
 
 | _№ | ExampleTable_Invoices_dim1_idx | счет_№ | item | price | Скидка |
 | --- | --- | --- | --- | --- | --- |
-| 1111 |0 |123 |тостер |456 |0,2 |
-| 1111 |1 |124 |печь |1235 |0,2 |
+| 1111 |0 |123 |тостер |456 |0.2 |
+| 1111 |1 |124 |печь |1235 |0.2 |
 | 2222 |0 |135 |холодильник |12543 |0,0 |
 
 **Таблица "ExampleTable_Ratings":**

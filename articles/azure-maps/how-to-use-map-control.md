@@ -9,18 +9,20 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: db7006c01f59e8a11872d99b3a16f24f65ef7588
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 27d9d5d30dc4c96516d23acba6a11b411827071e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413383"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378712"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой в Azure Maps
 
 Библиотека JavaScript на стороне клиента Map Control позволяет отображать карты и встроенные функции Azure Maps в веб-приложение или мобильном приложении.
 
-## <a name="prerequisites"></a>Обязательные условия
+В этой документации используется веб-пакет SDK Azure Maps, однако службы Azure Maps можно использовать с любым элементом управления картой. [Ниже](open-source-projects.md#third-part-map-control-plugins) приведены некоторые популярные элементы управления картой с открытым кодом, для которых команда Azure Maps создала подключаемый модуль.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 Для использования Map Control на веб-странице необходимо выполнить одно из следующих условий.
 
@@ -200,7 +202,7 @@ ms.locfileid: "94413383"
 
 ## <a name="localizing-the-map"></a>Локализация карты
 
-Azure Maps предоставляет два разных способа настройки языкового и регионального представления для отображаемой схемы. Первый вариант — Добавить эту информацию в глобальное `atlas` пространство имен, что приведет к тому, что все экземпляры элементов управления картой в приложении будут по умолчанию иметь эти параметры. Следующий пример устанавливает для языка значение французский (fr-FR) и региональное представление "Auto":
+Azure Maps предоставляет два разных способа настройки языкового и регионального представления для отображаемой схемы. Первый вариант — Добавить эту информацию в глобальное `atlas` пространство имен, что приведет к тому, что все экземпляры элементов управления картой в приложении будут по умолчанию иметь эти параметры. В приведенном ниже примере кода устанавливается французский язык (fr-FR) и региональное представление со значением Auto:
 
 ```javascript
 atlas.setLanguage('fr-FR');
@@ -261,7 +263,7 @@ var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 - [Компонент React Azure Maps](https://github.com/WiredSolutions/react-azure-maps) — программа-оболочка React для управления Azure Maps.
 - [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps) — компонент Azure Maps для приложения Vue.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как создавать и взаимодействовать с картой:
 

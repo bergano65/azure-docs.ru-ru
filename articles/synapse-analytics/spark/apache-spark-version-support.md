@@ -1,20 +1,19 @@
 ---
 title: Поддержка версий Apache Spark
-description: Поддерживаемые версии Spark, Scala, Python
+description: Поддерживаемые версии Spark, Scala, Python, .NET
 services: synapse-analytics
-author: euangMS
+author: midesa
 ms.service: synapse-analytics
 ms.topic: reference
 ms.subservice: spark
-ms.date: 04/15/2020
-ms.author: euang
-ms.reviewer: euang
-ms.openlocfilehash: 64955cdc1e4eb0088b53ad73d9c464c9533aa0fa
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.date: 01/04/2021
+ms.author: midesa
+ms.openlocfilehash: 1ed998412e1447e21b11bc08b1d69314f0ab7de5
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007726"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100379936"
 ---
 # <a name="supported-language-and-runtime-versions-for-apache-spark-and-dependent-components"></a>Поддерживаемые языки и версии среды выполнения для Apache Spark и зависимых компонентов  
 
@@ -56,11 +55,9 @@ Apache Spark в Azure Synapse включает установку Python вер�
 
 accessors-smart-1.2.jar
 
-activation-1.1.1.jar
+нактиватион-1.1.1. jar
 
-aircompressor-0.10.jar
-
-annotations-2.0.1.jar
+наиркомпрессор-0,10. jar
 
 antlr-2.7.7.jar
 
@@ -74,19 +71,13 @@ aopalliance-repackaged-2.4.0-b34.jar
 
 apacheds-i18n-2.0.0-M15.jar
 
-apacheds-kerberos-codec-2.0.0-M15.jar
+апачедс-Kerberos-кодек-2.0.0-M15 JAR
 
 apache-log4j-extras-1.2.17.jar
 
 api-asn1-api-1.0.0-M20.jar
 
 api-util-1.0.0-M20.jar
-
-applicationinsights-core-2.3.1.jar
-
-applicationinsights-logging-log4j1_2-2.3.1.jar
-
-applicationinsights-web-2.3.1.jar
 
 arpack_combined_all-0.1.jar
 
@@ -104,13 +95,11 @@ avro-ipc-1.8.2.jar
 
 avro-mapred-1.8.2-hadoop2.jar
 
-aws-java-sdk-bundle-1.11.199.jar
+АВС-Жава-СДК-бундле-1.11.271. jar
 
-azuredw-0.3.0.2.6.99.201-SNAPSHOT.jar
+Азуре-кэйваулт-коре-1.0.0. jar
 
-azure-keyvault-core-0.8.0.jar
-
-azure-storage-5.4.0.jar
+Азуре-стораже-7.0.1. jar
 
 bonecp-0.8.0.RELEASE.jar
 
@@ -128,7 +117,11 @@ chill_2.11-0.9.3.jar
 
 chill-java-0.9.3.jar
 
-commons-beanutils-1.9.3.jar
+Клиент-СДК-1.11.0. jar
+
+КНТК-2.4. jar
+
+Коммонс-беанутилс-1.9.4. jar
 
 commons-cli-1.2.jar
 
@@ -166,7 +159,11 @@ commons-pool-1.5.4.jar
 
 compress-lzf-1.0.3.jar
 
+Конфиг-1.3.4. jar
+
 core-1.1.2.jar
+
+Космос-Аналитикс-СПАРК-коннектор-Ассембли-1.4.3. jar
 
 curator-client-2.7.1.jar
 
@@ -174,13 +171,13 @@ curator-framework-2.7.1.jar
 
 curator-recipes-2.7.1.jar
 
-CustomAccessTokenProvider-1.0-SNAPSHOT.jar
-
 datanucleus-api-jdo-3.2.6.jar;
 
 datanucleus-core-3.2.10.jar;
 
 datanucleus-rdbms-3.2.9.jar;
+
+Дельта-core_2.11-0.6.1. jar
 
 derby-10.12.1.1.jar
 
@@ -189,6 +186,8 @@ ehcache-3.3.1.jar
 eigenbase-properties-1.1.5.jar
 
 flatbuffers-1.2.0-3f79e055.jar
+
+флуент-логжер-жар-ВИС-депенденЦиес. jar
 
 geronimo-jcache_1.0_spec-1.0-alpha-1.jar
 
@@ -200,43 +199,45 @@ guice-3.0.jar
 
 guice-servlet-3.0.jar
 
-hadoop-annotations-2.9.1.2.6.99.201-1240.jar
+хадуп-аннотатионс-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-auth-2.9.1.2.6.99.201-1240.jar
+хадуп-АУС-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-aws-2.9.1.2.6.99.201-1240.jar
+хадуп-АВС-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-azure-2.9.1.2.6.99.201-1240.jar
+хадуп-Азуре-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-client-2.9.1.2.6.99.201-1240.jar
+хадуп-клиент-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-common-2.9.1.2.6.99.201-1240.jar
+хадуп-Коммон-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-hdfs-client-2.9.1.2.6.99.201-1240.jar
+хадуп-хдфс-клиент-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-mapreduce-client-app-2.9.1.2.6.99.201-1240.jar
+хадуп-мапредуце-клиент-АПП-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-mapreduce-client-common-2.9.1.2.6.99.201-1240.jar
+хадуп-мапредуце-клиент-Коммон-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-mapreduce-client-core-2.9.1.2.6.99.201-1240.jar
+хадуп-мапредуце-клиент-коре-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-mapreduce-client-jobclient-2.9.1.2.6.99.201-1240.jar
+хадуп-мапредуце-клиент-жобклиент-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-mapreduce-client-shuffle-2.9.1.2.6.99.201-1240.jar
+хадуп-мапредуце-клиент-Шуффле-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-openstack-2.9.1.2.6.99.201-1240.jar
+хадуп-опенстакк-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-yarn-api-2.9.1.2.6.99.201-1240.jar
+хадуп-ярн-АПИ-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-yarn-client-2.9.1.2.6.99.201-1240.jar
+хадуп-ярн-клиент-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-yarn-common-2.9.1.2.6.99.201-1240.jar
+хадуп-ярн-Коммон-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-yarn-registry-2.9.1.2.6.99.201-1240.jar
+хадуп-ярн-регистри-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-yarn-server-common-2.9.1.2.6.99.201-1240.jar
+хадуп-ярн-сервер-Коммон-2.9.1.2.6.99.201 -25973884. jar
 
-hadoop-yarn-server-web-proxy-2.9.1.2.6.99.201-1240.jar
+хадуп-ярн-сервер-веб-прокси-2.9.1.2.6.99.201 -25973884. jar
+
+hdinsight-Spark-metrics_2_4-2.0. jar
 
 HikariCP-java7-2.4.12.jar
 
@@ -264,6 +265,12 @@ httpclient-4.5.6.jar
 
 httpcore-4.4.10.jar
 
+гиперпространства-core_2.11-0.3.2. jar
+
+Pulse — core_2.11-0.0.1. jar
+
+Isolation-forest_2.4.3_2.11-0.3.2. jar
+
 ivy-2.4.0.jar
 
 jackson-annotations-2.6.7.jar
@@ -272,23 +279,11 @@ jackson-core-2.6.7.jar
 
 jackson-core-asl-1.9.13.jar
 
-jackson-databind-2.6.7.1.jar
-
-jackson-dataformat-xml-2.4.5.jar
-
-jackson-dataformat-yaml-2.4.5.jar
-
-jackson-datatype-joda-2.4.5.jar
+жакксон-датабинд-2.6.7.3. jar
 
 jackson-jaxrs-1.9.13.jar
 
-jackson-jaxrs-base-2.4.5.jar
-
-jackson-jaxrs-json-provider-2.4.5.jar
-
 jackson-mapper-asl-1.9.13.jar
-
-jackson-module-jaxb-annotations-2.6.7.jar
 
 jackson-module-paranamer-2.7.9.jar
 
@@ -334,8 +329,6 @@ jersey-guava-2.22.2.jar
 
 jersey-media-jaxb-2.22.2.jar
 
-jersey-media-multipart-2.1.jar
-
 jersey-server-2.22.2.jar
 
 jetty-6.1.26.jar
@@ -352,6 +345,10 @@ jodd-core-3.5.2.jar
 
 jpam-1.1.jar
 
+жсч-0.1.54. jar
+
+JSON-20090211. jar
+
 json4s-ast_2.11-3.5.3.jar
 
 json4s-core_2.11-3.5.3.jar
@@ -359,6 +356,8 @@ json4s-core_2.11-3.5.3.jar
 json4s-jackson_2.11-3.5.3.jar
 
 json4s-scalap_2.11-3.5.3.jar
+
+жсон-Симпле-1.1. jar
 
 json-smart-2.3.jar
 
@@ -374,11 +373,17 @@ jul-to-slf4j-1.7.16.jar
 
 kryo-shaded-4.0.2.jar
 
+Кусто-Дата-2.2.0. jar
+
+Кусто-ИнЖест-2.2.0. jar
+
 leveldbjni-all-1.8.jar
 
 libfb303-0.9.3.jar
 
 libthrift-0.9.3.jar
+
+лигхтгбмлиб-2.3.180. jar
 
 log4j-1.2.17.jar
 
@@ -388,6 +393,8 @@ machinist_2.11-0.6.1.jar
 
 macro-compat_2.11-1.1.1.jar
 
+мдсдклиентдинамик-2.0. jar
+
 metrics-core-3.1.5.jar
 
 metrics-graphite-3.1.5.jar
@@ -396,19 +403,27 @@ metrics-json-3.1.5.jar
 
 metrics-jvm-3.1.5.jar
 
-microsoft-spark-2.4.x-0.4.0.jar
+Микрософт-каталог-метасторе-клиент-1.0.23. jar
 
-mimepull-1.8.jar
+Microsoft-log4j-etwappender-1.0. jar
+
+Микрософт-СПАРК. jar
 
 minlog-1.3.0.jar
 
+mmlspark_2.11-1.0.0-RC3-6 -0a30d1ae-SNAPSHOT. jar
+
 mssql-jdbc-6.2.1.jre7.jar
+
+MySQL-Connector-Java-8.0.18. jar
 
 netty-3.9.9.Final.jar
 
-netty-all-4.1.17.Final.jar
+Нетти-Алл-4.1.42. Final. jar
 
 nimbus-jose-jwt-4.41.1.jar
+
+нотебук-утилс-2.4.4-20201103.2. jar
 
 objenesis-2.5.1.jar
 
@@ -417,6 +432,8 @@ okhttp-2.7.5.jar
 okio-1.6.0.jar
 
 opencsv-2.3.jar
+
+опенкв-3.2.0 -1. jar
 
 orc-core-1.5.5-nohive.jar
 
@@ -444,17 +461,17 @@ parquet-hadoop-bundle-1.6.0.jar
 
 parquet-jackson-1.10.1.jar
 
+перегрине-СПАРК-0,5. jar
+
+постгрескл-42.2.9. jar
+
 protobuf-java-2.5.0.jar
 
 py4j-0.10.7.jar
 
 pyrolite-4.13.jar
 
-reflections-0.9.10.jar
-
 RoaringBitmap-0.7.45.jar
-
-rocksdbjni-6.0.1.jar
 
 scala-compiler-2.11.12.jar
 
@@ -474,53 +491,67 @@ slf4j-api-1.7.16.jar
 
 slf4j-log4j12-1.7.16.jar
 
-snakeyaml-1.12.jar
-
 snappy-0.2.jar
 
 snappy-java-1.1.7.3.jar
 
-spark-catalyst_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-avro_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-core_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-catalyst_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-graphx_2.11-2.4.0.2.6.99.201-1240.jar
+СПАРК-КДМ-коннектор-Ассембли-0.18.2. jar
 
-spark-hive_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-core_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-hive-thriftserver_2.11-2.4.0.2.6.99.201-1240.jar
+Спарккустомевентс-2.0.0. jar
 
-spark-kvstore_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-graphx_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-launcher_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-hive_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-mllib_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-Hive-thriftserver_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-mllib-local_2.11-2.4.0.2.6.99.201-1240.jar
+СПАРК-Кусто-коннектор-2.2.0. jar
 
-spark-multi-tenant-history-server_2.11-2.4.0.2.6.99.201-1240.jar
+СПАРК-Кусто-синапсе-коннектор-0.9.0. jar
 
-spark-network-common_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-kvstore_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-network-shuffle_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-launcher_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-repl_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-Microsoft-telemetry_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-sketch_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-Microsoft-tools_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-sql_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-mllib_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-streaming_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-mllib-local_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-tags_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-Network-common_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-unsafe_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-Network-shuffle_2.11-2.4.4.2.6.99.201 -25973884. jar
 
-spark-yarn_2.11-2.4.0.2.6.99.201-1240.jar
+Spark-repl_2.11-2.4.4.2.6.99.201 -25973884. jar
+
+Spark-sketch_2.11-2.4.4.2.6.99.201 -25973884. jar
+
+Spark-sql_2.11-2.4.4.2.6.99.201 -25973884. jar
+
+Spark-streaming_2.11-2.4.4.2.6.99.201 -25973884. jar
+
+Spark-tags_2.11-2.4.4.2.6.99.201 -25973884. jar
+
+Spark-unsafe_2.11-2.4.4.2.6.99.201 -25973884. jar
+
+Spark-yarn_2.11-2.4.4.2.6.99.201 -25973884. jar
 
 spire_2.11-0.13.0.jar
 
 spire-macros_2.11-0.13.0.jar
+
+распылитель-json_2.11-1.3.2. jar
+
+скланалитиксконнектор-1.0.9.2.6.99.201 -25973884. jar
 
 ST4-4.0.4.jar
 
@@ -536,23 +567,19 @@ stringtemplate-3.2.1.jar
 
 super-csv-2.2.0.jar
 
-swagger-annotations-1.5.8.jar
+синапсе-Spark-telemetry_2.11-0.0.1. jar
 
-swagger-core-1.5.8.jar
-
-swagger-jaxrs-1.5.8.jar
-
-swagger-jersey2-jaxrs-1.5.8.jar
-
-swagger-models-1.5.8.jar
-
-swagger-scala-module_2.11-1.0.2.jar
+Токенлибрари-Ассембли-1.0. jar
 
 univocity-parsers-2.7.3.jar
 
 validation-api-1.1.0.Final.jar
 
-wildfly-openssl-1.0.4.Final.jar
+Вегасконнектор-1.0.10.1. jar
+
+ВВ-жни-8.8.1. jar
+
+вилдфли-опенссл-1.0.7. Final. jar
 
 woodstox-core-5.0.3.jar
 
@@ -562,572 +589,616 @@ xmlenc-0.52.jar
 
 xz-1.5.jar
 
-zookeeper-3.4.11.2.6.99.201-1240.jar
+зукипер-3.4.11.2.6.99.201 -25973884. jar
 
 zstd-jni-1.3.2-2.jar
-
+ 
 ## <a name="python-libraries"></a>Библиотеки Python
 
-absl-py==0.8.1
+_libgcc_mutex = = 0,1 
 
-adal==1.2.2
+_openmp_mutex = = 4.5
 
-alabaster==0.7.10
+c-Арес = = 1.16.1
 
-altair==3.2.0
+CA-Certificates = = 2020.6.20
+
+Сертификация = = 2020.6.20
+
+кффи = 1.14.3
+
+chardet==3.0.4
+
+Шифрование = = 3.1.1
+
+conda = = 4.3.21
+
+cytoolz==0.8.2
+
+гперфтулс = = 2.7
+
+h5py==2.10.0
+
+hdf5 = = 1.10.6
+
+JPEG = = 9d
+
+либблас = = 3.9.0
+
+либкблас = = 3.9.0
+
+либкурл = = 7.71.1
+
+либедит = = 3.1.20191231
+
+либев = = 4.33
+
+libffi==3.2.1
+
+либгкк-NG = = 9.3.0
+
+либгфортран-NG = = 9.3.0
+
+libgfortran4 = = 7.5.0
+
+libgfortran5 = = 9.3.0
+
+либгомп = = 9.3.0
+
+либиконв = = 1.16
+
+либлапакк = = 3.9.0
+
+libnghttp2 = = 1.41.0
+
+либопенблас = = 0.3.12
+
+NumPy = = 1.18.5
+
+нкурсес = = 6.2
+
+OpenSSL = = 1.1.1
+
+Perl = = 5.32.0
+
+PIP = = 20.2.4
+
+пигментс = = 2.7.3
+
+pyopenssl = = 19.1.0
+
+Python = = 3.6.11
+
+ReadLine = = 8.0
+
+запросы = = 2.24.0
+
+сентенцепиеце = = 0.1.92
+
+setuptools==41.4.0
+
+шесть = = 1.15.0
+
+SQLite = = 3.33.0
+
+TK = = 8.6.10
+
+тулз = = 0.11.1
+
+urllib3 = = 1.25.10
+
+unixodbc = = 2.3.9
+
+КСЗ = = 5.2.5
+
+wheel==0.30.0
+
+YAML = = 0.2.5
+
+zlib = = = = 1.2.11
+
+абсл-копировать = = 0.11.0
+
+ADAL = = 1.2.4
+
+адлфс = = 0.5.5
+
+аиохттп = = 3.7.2
+
+алембик = = 1.4.1
+
+Altair = = 4.1.0
+
+аппдирс = = 1.4.4
 
 applicationinsights==0.11.9
 
-asn1crypto==1.0.1
+asn1crypto = = 1.4.0
 
-astor==0.8.0
+Астор = = 0.8.1
 
-astroid==1.4.9
+Астроид = = 2.4.2
 
-astropy==1.3.2
+астунпарсе = = 1.6.3
 
-attrs==19.2.0
+Async-timeout = = 3.0.1
 
-azure-common==1.1.23
+attr = = 20.3.0
 
-Azure-Core = = 1.6.0
+Azure-Common = = 1.1.25
+
+Azure-Core = = 1.8.2
+
+Azure-Data Lake Store = = 0.0.51
 
 azure-graphrbac==0.61.1
 
-Azure-Identity = = 1.2.0
+Azure-Identity = = 1.4.1
 
-azure-mgmt-authorization==0.60.0
+Azure-управление-авторизация = = 0.61.0
 
 azure-mgmt-containerregistry==2.8.0
 
-azure-mgmt-keyvault==2.0.0
+Azure-управление-keyvault = = 2.2.0
 
-Azure-siteing-Network = = 10.2.0
+Azure-управление-ресурс = = 10.2.0
 
-azure-mgmt-resource==5.1.0
+Azure-управление-хранилище = = 11.2.0
 
-azure-mgmt-storage==4.2.0
-
-Azure-Storage-BLOB = = 2.1.0
+Azure-Storage-BLOB = = 12.5.0
 
 Azure-Storage — Common = = 2.1.0
 
-azureml-аутомл-Core = = 1.6.0
+azureml-аутомл-Core = = 1.16.0
 
-azureml-аутомл-Runtime = = 1.6.0. post1
+azureml-аутомл-Runtime = = 1.16.0
 
-azureml-Core = = 1.6.0
+azureml-Core = = 1.16.0
 
-azureml-"Подготовка к вы1.6.3У"
+azureml — подготовка к выходе = = 2.3.1
 
-azureml-onподготовительная — Native = = 14.1.0
+azureml-onподготовительная — Native = = 23.0.0
 
-azureml — значения по умолчанию = = 1.6.0
 
-azureml-объяснить-Model = = 1.6.0
+azureml-рслекс = = 1.1.1
 
-azureml-интерпретировать = = 1.6.0
+azureml-DataSet-Runtime = = 1.16.0
+
+azureml — значения по умолчанию = = 1.16.0
+
+azureml-интерпретировать = = 1.16.0
+
+azureml-млфлов = = 1.16.0
 
 azureml-Model-Management-SDK = = 1.0.1 B6. post1
 
+azureml-опендатасетс = = 1.18.0
 
-azureml-опендатасетс = = 1.6.0
+azureml-Pipeline = = 1.16.0
 
-azureml-Pipeline = = 1.6.0
+azureml-конвейер-Core = = 1.16.0
 
-azureml-конвейер-Core = = 1.6.0
+azureml-конвейер — шаги = = 1.16.0
 
-azureml-конвейер — шаги = = 1.6.0
+azureml-SDK = = 1.16.0
 
-azureml-SDK = = 1.6.0
+Azure-Storage-BLOB = = 12.5.0
 
-azureml-телеметрии = = 1.6.0
+azureml-телеметрии = = 1.16.0
 
-azureml-поезд = = 1.6.0
+azureml-поезд = = 1.16.0
 
-azureml-Training-аутомл = = 1.6.0
+azureml-Training-аутомл = = 1.16.0
 
-azureml-Training-аутомл-Client = = 1.6.0. post1
+azureml-Training-аутомл-Client = = 1.16.0
 
-azureml-Training-аутомл-Runtime = = 1.6.0
+azureml-Training-аутомл-Runtime = = 1.16.0
 
-azureml-Training-Core = = 1.6.0
+azureml-Training-Core = = 1.16.0
 
-azureml-Training-рестклиентс-a Drive = = 1.6.0
-
-Babel = = 2.4.0
-
-вызов = = 0.2.0
-
-Внешние порты. шутил-Get-терминала-size = = 1.0.0
+azureml-Training-рестклиентс-a Drive = = 1.16.0
 
 backports.tempfile==1.0
 
 backports.weakref==1.0.post1
 
-beautifulsoup4==4.6.0
+beautifulsoup4 = = 4.9.3
 
-bitarray==0.8.1
+BitArray = = 1.6.1
 
-blaze==0.10.1
-
-bleach==1.5.0
-
-bokeh==1.3.4
+Боке = = 2.2.3
 
 boto==2.49.0
 
-boto3 = = 1.9.247
+boto3 = = 1.15.14
 
-ботокоре = = 1.12.247
+ботокоре = = 1.18.14
 
-Узкое место = = 1.2.1
+Узкие места = = 1.3.2
 
-certifi==2019.9.11
+бпемб = = 0.3.2
 
-cffi==1.12.3
+качетулс = = 4.1.1
 
-chardet==3.0.4
+Сертификация = = 2020.6.20
 
-Chart-Studio = = 1.0.0
+щелчок = = 7.1.2
 
-click==6.7
-
-cloudpickle==1.2.2
-
-clyent==1.2.2
-
-colorama==0.3.9
+клаудпиккле = = 1.6.0
 
 конфигпарсер = = 3.7.4
 
 contextlib2 = = 0.6.0. post1
 
-cryptography==2.7
-
 cycler==0.10.0
 
-Cython==0.29.13
+цисон = = 0.29.21
 
 cytoolz==0.8.2
 
-dask==0.14.3
+классы coclass = = 0,8
 
-datashape==0.5.4
+Shape = = 0.5.2
 
-декоратор = = 4.4.0
+декоратор = = 4.4.2
 
-dill==0.3.1.1
+Устарело = = 1.2.10
 
-distributed==1.16.3
+детализировать подобные = = 0.3.2
 
-distro==1.4.0
+дистрибутив = = 1.5.0
 
-docker==4.1.0
+DOCKER = = 4.3.1
 
-docutils==0.15.2
+докутилс = = 0,16
 
-dotnetcore2 = = 2.1.14
+dotnetcore2 = = 2.1.17
 
 entrypoints==0.3
 
 ET-XmlFile = = 1.0.1
 
-fastcache==1.0.2
+FileLock = = 3.0.12
 
-fire==0.2.1
+Пожар = = 0.3.1
 
-flake8 = = 3.7.9
+склонность = = 0,5
 
 Flask = = 1.0.3
 
-Flask-CORS = = 3.0.2
-
-fsspec==0.5.2
+фсспек = = 0.8.4
 
 fusepy==3.0.1
 
-gast==0.3.2
+будущее = = 0.18.2
 
-gensim==3.8.1
+Гаст = = 0.3.3
 
-gevent==1.2.1
+женсим = = 3.8.3
 
-google-pasta==0.1.7
+жеографиклиб = = 1,50
 
-greenlet==0.4.12
+жеопи = = 2.0.0
 
-grpcio==1.24.1
+гитдб = = 4.0.5
+
+Гитписон = = 3.1.11
+
+Google-auth = = 1.23.0
+
+Google-auth-оауслиб = = 0.4.2
+
+Google-паста = = 0.2.0
+
+Gorilla = = 0.3.0
+
+грпЦио = = 1.33.2
 
 гуникорн = = 19.9.0
 
-h5py==2.10.0
+html5lib = = 1.1
 
-Хеапдикт = = 1.0.1
+хуммингбирд-ML = = 0.0.6
 
-html5lib==0.999
+хиперопт = = 0.2.5
 
-idna==2.8
+IDNA = = 2.10
 
-имажеио = = 2.6.1
+IDNA — SSL = = 1.1.0
 
-imagesize==0.7.1
+имажеио = = 2.9.0
 
-importlib-metadata==0.23
+importlib-Metadata = = 1.7.0
 
-интерпретируемый Community = = 0.10.2
+интерпретируемый Community = = 0.15.1
 
-интерпретируемый Core = = 0.1.21
-
-ipykernel==4.6.1
+интерпретируемый Core = = 0.2.1
 
 IPython Notebook = = 7.8.0
 
 IPython Notebook-женутилс = = 0.2.0
 
-ipywidgets==6.0.0
-
 isodate==0.6.0
 
-isort==4.2.5
+исорт = = 5.6.4
 
-itsdangerous==0.24
+итсданжераус = = 1.1.0
 
-jdcal==1.3
+ждкал = = 1.4.1
 
-jedi==0.10.2
+жипнэй = = 0.4.3
 
-jeepney==0.4.1
+Jinja2 = = 2.11.2
 
-Jinja2==2.10.3
-
-jmespath==0.9.4
+jmespath = = 0.10.0
 
 жоблиб = = 0.14.1
 
 JSON-Logging-корректировка = = 0,2
 
-JsonForm==0.0.2
+жсонпиккле = = 1.4.1
 
-jsonpickle==1.2
-
-жсонсчема = = 3.1.1
-
-JsonSir==0.0.2
-
-jupyter==1.0.0
-
-jupyter-Client = = 5.0.1
-
-jupyter-Console = = 5.1.0
-
-jupyter-Core = = 4.3.0
+жсонсчема = = 3.2.0
 
 Keras-Applications==1.0.8
 
-Keras-Preprocessing==1.1.0
+Keras — Предварительная обработка = = 1.1.2
 
-keras2onnx==1.5.2
+keras2onnx = = 1.6.0
 
-kiwisolver==1.1.0
+кивисолвер = = 1.3.1
 
-lazy-object-proxy==1.2.2
+коалас = = 1.2.0
 
-лиак-arff = = 2.4.0
+лангдетект = = 1.0.8
 
-lightgbm==2.2.3
+Lazy-Object-Proxy = = 1.4.3
 
-llvmlite==0.18.0
+лиак-arff = = 2.5.0
 
-locket==0.2.0
+lightgbm = = 2.3.0
 
-lxml==3.7.3
+Мако = = 1.1.3
 
-Markdown==3.1.1
+Markdown = = 3.3.3
 
 MarkupSafe==1.1.1
 
-matplotlib==3.1.1
+Matplotlib = = 3.2.2
 
 мккабе = = 0.6.1
 
-missingno==0.4.2
+некоторая настройка = = 0.8.4
 
-mistune==0.7.4
+млеап = = 0.16.1
 
-mmlspark = = 1.0.0. dev1
+млфлов = = 1.11.0
 
-more-itertools==7.2.0
+more-итертулс = = 8.6.0
 
-mpmath==0.19
+mpld3 = = 0,3
 
-msal = = 1.3.0
+мпмас = = 1.1.0
 
-msal-Extensions = = 0.1.3
+msal = = 1.5.0
 
-msgpack==0.6.2
+msal-Extensions = = 0.2.2
 
-msgpack-python==0.4.8
+мсрест = = 0.6.19
 
-msrest==0.6.10
+мсрестазуре = = 0.6.4
 
-msrestazure==0.6.2
+мултидикт = = 5.0.0
 
-многометоды = = 1.0.0
+мултипледиспатч = = 0.6.0
 
-multipledispatch==0.4.9
+mypy = = 0.780
 
-navigator-updater==0.1.0
-
-nbconvert==5.1.1
-
-nbformat==4.3.0
+mypy-Extensions = = 0.4.3
 
 ndg-httpsclient==0.5.1
 
-нетворккс = = 2.3
+нетворккс = = 2,5
 
-nimbusml==1.5.0
+нимбусмл = = 1.7.1
 
-nltk==3.2.3
+нлтк = = 3.5
 
 nose==1.3.7
-
-notebook==5.0.0
-
-нотебукутилс = = 20200602.4
-
-numba==0.33.0
-
-numexpr==2.6.2
-
-numpy==1.16.2
-
-numpydoc==0.6.0
 
 oauthlib==3.1.0
 
 odo==0.5.0
 
-olefile==0.44
+олефиле = = 0.46
 
 onnx==1.6.0
 
-onnxconverter-common==1.5.5
+оннксконвертер-Common = = 1.6.0
 
 onnxmltools==1.4.1
 
-onnxruntime==0.4.0
+оннксрунтиме = = 1.3.0
 
-openpyxl==2.4.7
+опенпиксл = = 3.0.5
 
-packaging==19.2
+OPT-еинсум = = 3.3.0
 
-pandas==0.23.4
+Упаковка = = 20.4
 
-pandocfilters==1.4.1
+Pandas = = 0.25.3
 
-Param = = 1.9.2
+пандаскл = = 0.7.3
 
-partd==1.0.0
-
-pathlib2==2.2.1
-
-pathspec==0.6.0
+пасспек = = 0.8.0
 
 patsy==0.5.1
 
-pep8==1.7.0
+пикклешаре = = 0.7.5
 
-pexpect==4.2.1
+Пиллов = = 8.0.1
 
-pickleshare==0.7.4
+график = = 4.12.0
 
-Pillow==6.2.0
-
-plotly==4.1.1
-
-ply==3.10
+подключение = = 0.13.1
 
 pmdarima==1.1.1
 
-порталоккер = = 1.7.0
+порталоккер = = 1.7.1
 
-Prompt — набор средств = = 2.0.10
+Prometheus-Client = = 0.8.0
 
-protobuf==3.10.0
+Prometheus-Flask-Export = = 0.18.1
 
-psutil==5.2.2
+protobuf = = 3.13.0
 
-ptyprocess==0.5.1
+псутил = = 5.7.2.
 
-py==1.4.33
+корректировка = = 1.9.0
 
-Копировать — кпуинфо = = 6.0.0
+корректировка — кпуинфо = = 5.0.0
 
 py4j = = 0.10.7
 
-pyarrow = = 0.15.1
+pyarrow = = 1.0.1
 
-pyasn1==0.4.7
+pyasn1 = = 0.4.8
 
-пикодестиле = = 2.5.0
-
-pycosat==0.6.2
-
-pycparser==2.19
+pyasn1-modules = = 0.2.8
 
 pycrypto==2.6.1
 
-пикт = = 0.4.6
-
-pycurl==7.43.0
-
-пифлакес = = ИД
-
-pygal==2.4.0
-
-Пигментс = = 2.2.0
-
 PyJWT==1.7.1
 
-pylint==1.6.4
+pylint = = 2.6.0
 
-pymssql==2.1.4
+pymssql = = 2.1.5
 
-pyodbc==4.0.16
+pyodbc = = 4.0.30
 
-pyOpenSSL==19.0.0
+пйопенкл = = 2020.1
 
-pyparsing==2.4.2
+пипарсинг = = 2.4.7
 
-pyrsistent==0.15.4
+пирсистент = = 0.17.3
 
-pyspark = = 2.4.4
+питест = = 5.3.2
 
-pytest==3.0.7
+Python-датеутил = = 2.8.1
 
-python-dateutil==2.8.0
+Python-Editor = = 1.0.4
 
-Python-EasyConfig==0.1.7
+питулс = = 2021.1
 
-pytz==2019.3
+питз = = 2020.1
 
-Пивавелетс = = 1.0.3
+Пивавелетс = = 1.1.1
 
-PyYAML==5.1.2
+Пиямл = = 5.3.1
 
-pyzmq==16.0.2
+QueryString-Parser = = 1.2.4
 
-Ктавесоме = = 0.4.4
+Regex = = 2020.10.28
 
-qtconsole==4.3.0
-
-Ктпи = = 1.2.1
-
-requests==2.22.0
-
-requests-oauthlib==1.2.0
-
-Resource==0.2.1
+запросы — оауслиб = = 1.3.0
 
 retrying==1.3.3
 
-ропе-Py3K = = 0.9.4. post1
+RSA = = 4.6
 
-ruamel.yaml==0.15.89
+руамел. YAML = = 0.16.12
 
-s3transfer==0.2.1
+руамел. YAML. клиб = = 0.2.2
 
-scikit-Image = = 0.15.0
+s3transfer = = 0.3.3
 
-scikit-learn==0.20.3
+сакремосес = = 0.0.43
 
-scipy==1.1.0
+scikit-Image = = 0.17.2
 
-seaborn==0.9.0
+scikit — сведения = = 0.22.2. post1
 
-SecretStorage==3.1.1
+SciPy = = 1.4.1
+
+сеаборн = = 0.11.0
+
+Секретстораже = = 3.1.2
+
+сегток = = 1.5.10
 
 Шап = = 0.34.0
-
-simplegeneric==0.8.1
-
-singledispatch==3.4.0.3
-
-six==1.12.0
 
 skl2onnx==1.4.9
 
 sklearn-pandas==1.7.0
 
-smart-open==1.8.4
+Smart-Open = = 1.9.0
 
-snowballstemmer==1.2.1
+сммап = = 3.0.4
 
-sortedcollections==0.5.3
+саупсиеве = = 2.0.1
 
-sortedcontainers==2.1.0
+Склалчеми = = 1.3.13
 
-Сфинкс = = 1.5.6.
+склитедикт = = 1.7.0
 
-spyder==3.1.4
+склпарсе = = 0.4.1
 
-Склалчеми = = 1.1.9
+статсмоделс = = 0.10.2
 
-statsmodels==0.10.1
+Табуляция = = 0.8.7
 
-sympy==1.0
+ТБ — ночно = = 1.14.0
 
-таблицы = = 3.3.0
+tensorboard = = 2.3.0
 
-tblib==1.4.0
+tensorboard-plugin-WIT = = 1.7.0
 
-tensorboard==1.14.0
+tensorflow = = 2.0.0 B1
 
-tensorflow==1.14.0
-
-tensorflow-estimator==1.14.0
+tensorflow-оценщик = = 2.3.0
 
 termcolor==1.1.0
 
-terminado==0.6
+текстблоб = = 0.15.3
 
-testpath==0.3
+TF-оценщик — ночное = = 1.14.0
 
-toolz==0.10.0
+tf2onnx = = 1.7.2
 
-Torch = = 1.3.0
+тифффиле = = 2020.9.3
 
-tornado==6.0.3
+лексемы = = 0.9.2
 
-ткдм = = 4.46.1
+томл = = 0.10.2
 
-traitlets==4.3.2
+Torch = = 1.7.0
 
-typing-extensions==3.7.4
+Торнадо = = 6.1
 
-unicodecsv==0.14.1
+ткдм = = 4.48.2
 
-urllib3==1.25.6
+Преобразователи = = 3.4.0
 
-Вега — наборы данных = = 0.7.0
+типизированный-AST = = 1.4.1
 
-wcwidth==0.1.7
+Ввод расширений = = 3.7.4.3
 
-websocket-client==0.56.0
+urllib3 = = 1.25.10
 
-Werkzeug==0.16.0
+вквидс = = 0.2.5
 
-widgetsnbextension==2.0.0
+кодировки (0.5.1)
+
+WebSocket-Client = = 0.57.0
+
+Веркзеуг = = 0.16.1
+
+wheel==0.30.0
 
 wrapt==1.11.2
 
-xlrd==1.0.0
-
-Кслсксвритер = = 0.9.6
-
-xlwt==1.2.0
+xgboost = = 0,90
 
 зикт = = 1.0.0
 

@@ -1,29 +1,25 @@
 ---
 title: Создание конвейеров данных с помощью пакета SDK для Azure .NET
 description: Узнайте, как программным способом создавать, отслеживать и контролировать фабрики данных Azure с помощью пакета SDK фабрики данных.
-services: data-factory
-documentationcenter: ''
 author: dcstwh
 ms.author: weetok
-manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0305094d3883fa6fc3254a682f9aa6f3202c9e48
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 1b7f5d1ad671b6d97bd6597386c714b026c02232
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555548"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100376859"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Создание, отслеживание фабрик данных Azure и управление ими с помощью пакета SDK фабрики данных Azure для .NET
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, ознакомьтесь с руководством по [применению действия копирования](../quickstart-create-data-factory-dot-net.md). 
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 Создание, отслеживание фабрик данных и управление ими программным способом с помощью пакета .NET SDK фабрики данных. Эта статья содержит пошаговое руководство по созданию образца консольного приложения .NET, которое будет создавать и отслеживать фабрику данных. 
 
 > [!NOTE]
@@ -500,7 +496,7 @@ do
 while (response != null);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. Следующий пример создания конвейера с помощью пакета SDK для .NET, который копирует данные из хранилища BLOB-объектов Azure в базу данных SQL Azure. 
 
 - [Руководство. Создание конвейера с действием копирования с помощью API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)

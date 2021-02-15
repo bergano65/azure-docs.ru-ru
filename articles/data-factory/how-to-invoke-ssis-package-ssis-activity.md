@@ -1,25 +1,19 @@
 ---
 title: Запуск пакета служб SSIS с действием "выполнение пакета служб SSIS"
 description: В этой статье описывается, как выполнить пакет SQL Server Integration Services (SSIS) в конвейере фабрики данных Azure с помощью действия "выполнение пакета служб SSIS".
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
-ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
 ms.author: sawinark
 author: swinarko
-ms.reviewer: douglasl
-manager: mflasko
 ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.date: 07/20/2020
-ms.openlocfilehash: de9cd7e77e558c4d1a0aa62af17bc612eee5ec56
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 40e7d5c11a2ebc62e59c3d5d20dfefe18a33f9a7
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555848"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391615"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия выполнения пакета SSIS в Фабрике данных Azure
 
@@ -720,6 +714,6 @@ while ($True) {
    select * from catalog.executions
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. в следующей записи блога:
 - [Модернизировать и расширьте рабочие процессы ETL/ELT с помощью действий SSIS в конвейерах фабрики данных Azure](https://techcommunity.microsoft.com/t5/SQL-Server-Integration-Services/Modernize-and-Extend-Your-ETL-ELT-Workflows-with-SSIS-Activities/ba-p/388370)

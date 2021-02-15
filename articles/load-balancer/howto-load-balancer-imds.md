@@ -8,22 +8,22 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 02/12/2021
 ms.author: allensu
-ms.openlocfilehash: 35e32627eaf26eb6f73ca382f119eab61ebd8711
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5196b03ccd513e4afd93b8b8fcf18f7c2580024a
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100418257"
+ms.locfileid: "100519224"
 ---
 # <a name="retrieve-load-balancer-metadata-using-the-azure-instance-metadata-service-imds"></a>Получение метаданных подсистемы балансировки нагрузки с помощью службы метаданных экземпляра Azure (IMDS)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Используйте [последнюю версию API](/virtual-machines/windows/instance-metadata-service?tabs=windows#supported-api-versions) для запроса.
+* Используйте [последнюю версию API](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#supported-api-versions) для запроса.
 
 ## <a name="sample-request-and-response"></a>Пример запроса и ответа
 > [!IMPORTANT]
-> Этот пример обходит учетные записи-посредники. При запросе IMDS **необходимо** обходить прокси-серверы. Дополнительные сведения см. в разделе [учетные записи-посредники](/virtual-machines/windows/instance-metadata-service?tabs=windows#proxies).
+> Этот пример обходит учетные записи-посредники. При запросе IMDS **необходимо** обходить прокси-серверы. Дополнительные сведения см. в разделе [учетные записи-посредники](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#proxies).
 ### <a name="windows"></a>[Windows](#tab/windows/)
 
 ```powershell
@@ -82,9 +82,9 @@ curl -H "Metadata:true" --noproxy "*" "http://169.254.169.254:80/metadata/loadba
 ## <a name="next-steps"></a>Дальнейшие действия
 [Распространенные коды ошибок и действия по устранению неполадок](troubleshoot-load-balancer-imds.md)
 
-Дополнительные сведения о [службе метаданных экземпляров Azure](/virtual-machines/windows/instance-metadata-service)
+Дополнительные сведения о [службе метаданных экземпляров Azure](../virtual-machines/windows/instance-metadata-service.md)
 
-[Получение всех метаданных для экземпляра](/virtual-machines/windows/instance-metadata-service?tabs=windows#access-azure-instance-metadata-service)
+[Получение всех метаданных для экземпляра](../virtual-machines/windows/instance-metadata-service.md?tabs=windows#access-azure-instance-metadata-service)
 
 [Развертывание стандартной подсистемы балансировки нагрузки](quickstart-load-balancer-standard-public-portal.md)
 

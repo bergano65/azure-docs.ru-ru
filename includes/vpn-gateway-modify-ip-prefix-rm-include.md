@@ -5,18 +5,16 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 02/14/2019
+ms.date: 02/10/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 76a602ae722bd975e634631819ebc703e8896c98
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7dd255e9767309c7b273dccfa0ee5675eed18568
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026802"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380506"
 ---
-### <a name="to-modify-local-network-gateway-ip-address-prefixes---no-gateway-connection"></a><a name="noconnection"></a>Изменение префиксов IP-адресов для шлюза локальной сети при отсутствии подключения шлюза
-
 Чтобы добавить дополнительные префиксы адресов:
 
 1. Задайте переменную для локального сетевого шлюза.
@@ -24,7 +22,7 @@ ms.locfileid: "96026802"
    ```azurepowershell-interactive
    $local = Get-AzLocalNetworkGateway -Name Site1 -ResourceGroupName TestRG1
    ```
-2. Измените префиксы.
+1. Измените префиксы.
 
    ```azurepowershell-interactive
    Set-AzLocalNetworkGateway -LocalNetworkGateway $local `
@@ -40,50 +38,9 @@ ms.locfileid: "96026802"
    ```azurepowershell-interactive
    $local = Get-AzLocalNetworkGateway -Name Site1 -ResourceGroupName TestRG1
    ```
-2. Укажите шлюз с обновленными префиксами.
+1. Укажите шлюз с обновленными префиксами.
 
    ```azurepowershell-interactive
    Set-AzLocalNetworkGateway -LocalNetworkGateway $local `
    -AddressPrefix @('10.101.0.0/24','10.101.1.0/24')
-   ```
-
-### <a name="to-modify-local-network-gateway-ip-address-prefixes---existing-gateway-connection"></a><a name="withconnection"></a>Изменение префиксов IP-адресов для шлюза локальной сети при наличии подключения шлюза
-
-Если шлюз уже подключен и вам нужно добавить или удалить префиксы IP-адресов, указанные для локального сетевого шлюза, выполните приведенные ниже шаги именно в такой последовательности. После этого VPN-подключение будет некоторое время недоступно. При изменении префиксов IP-адресов не нужно удалять VPN-шлюз. Необходимо удалить только подключение.
-
-1. Удалите подключение.
-
-   ```azurepowershell-interactive
-   Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 -ResourceGroupName TestRG1
-   ```
-2. Задайте шлюз локальной сети с измененными префиксами адреса.
-   
-   Задайте переменную для локального сетевого шлюза.
-
-   ```azurepowershell-interactive
-   $local = Get-AzLocalNetworkGateway -Name Site1 -ResourceGroupName TestRG1
-   ```
-   
-   Измените префиксы.
-   
-   ```azurepowershell-interactive
-   Set-AzLocalNetworkGateway -LocalNetworkGateway $local `
-   -AddressPrefix @('10.101.0.0/24','10.101.1.0/24')
-   ```
-3. Создайте подключение. В этом примере мы настраиваем тип подключения IPsec. При повторном создании подключения используйте тип соединения, указанный для вашей конфигурации. Дополнительные типы подключений см. на странице с [командлетами PowerShell](/powershell/module/Azurerm.Network/New-AzureRmVirtualNetworkGatewayConnection).
-   
-   Задайте переменную для шлюза виртуальной сети.
-
-   ```azurepowershell-interactive
-   $gateway1 = Get-AzVirtualNetworkGateway -Name VNet1GW  -ResourceGroupName TestRG1
-   ```
-   
-   Создайте подключение. В этом примере используется переменная $local, присвоенная на шаге 2.
-
-   ```azurepowershell-interactive
-   New-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
-   -ResourceGroupName TestRG1 -Location 'East US' `
-   -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
-   -ConnectionType IPsec `
-   -RoutingWeight 10 -SharedKey 'abc123'
    ```

@@ -2,16 +2,15 @@
 title: Устранение неполадок с runbook службы автоматизации Azure
 description: В этой статье рассказывается, как устранять проблемы с последовательностями runbook службы автоматизации Azure.
 services: automation
-ms.subservice: ''
-ms.date: 11/03/2020
+ms.date: 02/11/2021
 ms.topic: troubleshooting
 ms.custom: has-adal-ref
-ms.openlocfilehash: e154284df8eaad798c5cfaf4de69c40601863cf4
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 0ae7af848fd3ceb1d5b186a5a326c8fa43a69d24
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99053675"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388028"
 ---
 # <a name="troubleshoot-runbook-issues"></a>Устранение неполадок с последовательностями runbook
 
@@ -224,37 +223,46 @@ The subscription named <subscription name> cannot be found.
 
 ### <a name="cause"></a>Причина
 
-При запуске модуля runbook используется неправильный контекст.
+При запуске модуля runbook используется неправильный контекст. Это может быть вызвано тем, что модуль Runbook случайно пытается получить доступ к неверной подписке.
+
+Вы можете столкнуться с такими ошибками:
+
+```error
+Get-AzVM : The client '<automation-runas-account-guid>' with object id '<automation-runas-account-guid>' does not have authorization to perform action 'Microsoft.Compute/virtualMachines/read' over scope '/subscriptions/<subcriptionIdOfSubscriptionWichDoesntContainTheVM>/resourceGroups/REsourceGroupName/providers/Microsoft.Compute/virtualMachines/VMName '.
+   ErrorCode: AuthorizationFailed
+   StatusCode: 403
+   ReasonPhrase: Forbidden Operation
+   ID : <AGuidRepresentingTheOperation> At line:51 char:7 + $vm = Get-AzVM -ResourceGroupName $ResourceGroupName -Name $UNBV... +
+```
 
 ### <a name="resolution"></a>Решение
 
-Контекст подписки может быть утрачен, если runbook вызывает несколько последовательностей runbook. Чтобы обеспечить передачу контекста подписки в последовательности runbook, используйте в командлете `AzureRmContext` параметр `Start-AzureRmAutomationRunbook` для передачи контекста клиентской последовательности runbook. Используйте командлет `Disable-AzureRmContextAutosave` с параметром `Scope`, для которого задано значение `Process`, чтобы указанные учетные данные использовались только для текущей последовательности runbook. Дополнительные сведения см. на странице о [подписках](../automation-runbook-execution.md#subscriptions).
+Контекст подписки может быть утрачен, если runbook вызывает несколько последовательностей runbook. Чтобы избежать случайной попытки доступа к неверной подписке, следуйте указаниям ниже.
 
-```azurepowershell-interactive
-# Ensures that any credentials apply only to the execution of this runbook
-Disable-AzContextAutosave –Scope Process
+* Чтобы избежать создания ссылок на неправильную подписку, отключите сохранение контекста в модулях Runbook службы автоматизации, используя следующий код в начале каждого модуля Runbook.
 
-# Connect to Azure with Run As account
-$ServicePrincipalConnection = Get-AutomationConnection -Name 'AzureRunAsConnection'
+   ```azurepowershell-interactive
+   Disable-AzContextAutosave –Scope Process
+   ```
 
-Connect-AzAccount `
-    -ServicePrincipal `
-    -Tenant $ServicePrincipalConnection.TenantId `
-    -ApplicationId $ServicePrincipalConnection.ApplicationId `
-    -CertificateThumbprint $ServicePrincipalConnection.CertificateThumbprint
+* Командлеты Azure PowerShell поддерживают `-DefaultProfile` параметр. Он был добавлен ко всем командлетам AZ и AzureRm для поддержки выполнения нескольких сценариев PowerShell в одном процессе, что позволяет указать контекст и подписку, которую следует использовать для каждого командлета. При работе с модулями Runbook объект контекста следует сохранять в модуле Runbook при создании модуля Runbook (то есть при входе в учетную запись) и при каждом изменении, а также ссылаться на контекст при указании командлета AZ.
 
-$AzContext = Select-AzSubscription -SubscriptionId $ServicePrincipalConnection.SubscriptionID
+   > [!NOTE]
+   > Необходимо передать объект контекста, даже если манипулировать контекстом напрямую с помощью командлетов, таких как [Set-азконтекст](/powershell/module/az.accounts/Set-AzContext) или [SELECT-азсубскриптион](/powershell/module/servicemanagement/azure.service/set-azuresubscription).
 
-$params = @{"VMName"="MyVM";"RepeatCount"=2;"Restart"=$true}
-
-Start-AzAutomationRunbook `
-    –AutomationAccountName 'MyAutomationAccount' `
-    –Name 'Test-ChildRunbook' `
-    -ResourceGroupName 'LabRG' `
-    -AzContext $AzContext `
-    –Parameters $params –wait
-```
-
+   ```azurepowershell-interactive
+   $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName 
+   $context = Add-AzAccount `
+             -ServicePrincipal `
+             -TenantId $servicePrincipalConnection.TenantId `
+             -ApplicationId $servicePrincipalConnection.ApplicationId `
+             -Subscription 'cd4dxxxx-xxxx-xxxx-xxxx-xxxxxxxx9749' `
+             -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
+   $context = Set-AzContext -SubscriptionName $subscription `
+       -DefaultProfile $context
+   Get-AzVm -DefaultProfile $context
+   ```
+  
 ## <a name="scenario-authentication-to-azure-fails-because-multifactor-authentication-is-enabled"></a><a name="auth-failed-mfa"></a>Сценарий. Сбой проверки подлинности в Azure из-за включенной многофакторной проверки подлинности
 
 ### <a name="issue"></a>Проблема

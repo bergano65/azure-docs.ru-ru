@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 12/17/2020
 ms.author: cachai
 ms.custom: ''
-ms.openlocfilehash: 4ba19fdf700790d89fe04867985fb803c3b0a2fc
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: be3c5bc2d178171aaebd322e13b23b3a6f79c442
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760407"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100388997"
 ---
 # <a name="rabbitmq-trigger-for-azure-functions-overview"></a>Общие сведения о триггере RabbitMQ для функций Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "97760407"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md) , которая считывает и регистрирует сообщение RabbitMQ как [событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html):
+В следующем примере показана [функция C#](functions-dotnet-class-library.md) , которая считывает и регистрирует сообщение RabbitMQ как [событие RabbitMQ](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.Events.BasicDeliverEventArgs.html):
 
 ```cs
 [FunctionName("RabbitMQTriggerCSharp")]
@@ -229,7 +229,7 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Типом сообщений по умолчанию является [событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html), а `Body` свойство события RabbitMQ может быть считано так, как показано ниже.
+Типом сообщений по умолчанию является [событие RabbitMQ](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.Events.BasicDeliverEventArgs.html), а `Body` свойство события RabbitMQ может быть считано так, как показано ниже.
 
 * `An object serializable as JSON` — Сообщение доставляется в виде допустимой строки JSON.
 * `string`
@@ -238,7 +238,7 @@ public static void RabbitMQTest([RabbitMQTrigger("queue")] string message, ILogg
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Типом сообщений по умолчанию является [событие RabbitMQ](https://www.rabbitmq.com/releases/rabbitmq-dotnet-client/v3.2.2/rabbitmq-dotnet-client-3.2.2-client-htmldoc/html/type-RabbitMQ.Client.Events.BasicDeliverEventArgs.html), а `Body` свойство события RabbitMQ может быть считано так, как показано ниже.
+Типом сообщений по умолчанию является [событие RabbitMQ](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.Events.BasicDeliverEventArgs.html), а `Body` свойство события RabbitMQ может быть считано так, как показано ниже.
 
 * `An object serializable as JSON` — Сообщение доставляется в виде допустимой строки JSON.
 * `string`
@@ -335,6 +335,6 @@ az resource update -g <resource_group> -n <function_app_name>/config/web --set p
 * Включение [подключаемого модуля управления RabbitMQ](https://www.rabbitmq.com/management.html)
 * Перейдите по http://{node-имя_узла}: 15672 и войдите в систему, используя имя пользователя и пароль.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Отправка сообщений RabbitMQ из функций Azure (Выходная привязка)](./functions-bindings-rabbitmq-output.md)

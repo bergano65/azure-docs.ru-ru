@@ -59,10 +59,8 @@
       href: ./update-application-to-3.0-sdk.md
 - name: Справочник
   items:
-    - name: API обучения Пользовательского визуального распознавания
-      href: 'https://go.microsoft.com/fwlink/?linkid=865446'
-    - name: API прогнозирования Пользовательского визуального распознавания
-      href: 'https://go.microsoft.com/fwlink/?linkid=865445'
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/custom-vision/'
     - name: Пакеты SDK
       items:
         - name: .NET

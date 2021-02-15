@@ -3,22 +3,22 @@ title: Использование R с Машинное обучение Studio 
 description: Используйте это руководство по программированию на R для начала работы с Машинное обучение Azure Studio (классической) в R для создания решения для прогнозирования.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/01/2019
-ms.openlocfilehash: bca2f0229a15f44ff8f3589a9c1e80032036b97c
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: c619b51f9323477bda4f1ec99aeeb1bfa01028fc
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95507211"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100517745"
 ---
 # <a name="get-started-with-azure-machine-learning-studio-classic-in-r"></a>Приступая к работе с Машинное обучение Azure Studio (классическая модель) в R
 
-**применимо к:** ![ Это галочка, которая означает, что эта статья относится к Машинное обучение Studio (классическая модель). ](../../../includes/media/aml-applies-to-skus/yes.png) Машинное обучение Studio (классическая модель) ![ это X, что означает, что эта статья применима к машинное обучение Azure.](../../../includes/media/aml-applies-to-skus/no.png)[ Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)  
+**ПРИМЕНИМО К:**  ![Флажок, который обозначает, что эта статья применима к Студии машинного обучения (классическая версия). ](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая версия) ![Значок X, который обозначает, что эта статься применима к решению "Машинное обучение Azure". ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 <!-- Stephen F Elston, Ph.D. -->
 В этом руководстве описано, как использовать Машинное обучение Azure Studio (классическая модель) для создания, тестирования и выполнения кода R. В итоге у вас будет полноценное решение для прогнозирования.
@@ -159,7 +159,7 @@ RStudio — широко используемая интегрированная
 1. В поле **Поиск элементов эксперимента** в верхней части левой панели введите [выполнить сценарий R][execute-r-script]. Модуль появится в списке поиска.
 1. Перетащите модуль [выполнить сценарий R][execute-r-script] на свою палету.
 1. Соедините выход **набора данныхcsdairydata.csv** с крайним левым входом (**dataSet1**) [скрипта выполнения R][execute-r-script].
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 На этом этапе ваш эксперимент должен выглядеть примерно так, как показано в этом примере.
 
@@ -240,7 +240,7 @@ load("src/yourData.rdata") # Reads a zipped R data file
 
 1. Введите `source()` функцию с именем ZIP-файла в окно кода модуля [выполнить сценарий R][execute-r-script] . В этом случае мы указали `source("src/simpleplot.R")` .
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 После выполнения этих действий модуль [выполнить сценарий r][execute-r-script] выполняет скрипт r в ZIP-файле при выполнении эксперимента. На этом этапе ваш эксперимент должен выглядеть примерно так, как показано в этом примере.
 
@@ -1028,10 +1028,10 @@ summary(milk.lm)
 ##
 ## Coefficients:
 ##                   Estimate Std. Error t value Pr(>|t|)
-## (Intercept)       6.33e+00   1.45e-01   43.60   <2e-16 **_
-## Time              1.63e-09   1.72e-10    9.47   <2e-16 _*_
+## (Intercept)       6.33e+00   1.45e-01   43.60   <2e-16 ***
+## Time              1.63e-09   1.72e-10    9.47   <2e-16 ***
 ## I(Month.Count^2) -1.71e-06   4.89e-06   -0.35    0.726
-## I(Month.Count^3) -3.24e-08   1.49e-08   -2.17    0.031 _  
+## I(Month.Count^3) -3.24e-08   1.49e-08   -2.17    0.031 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ##
@@ -1061,10 +1061,10 @@ summary(milk.lm)
 ## Coefficients:
 ##                   Estimate Std. Error t value Pr(>|t|)
 ## (Intercept)       6.38e+00   4.07e-02   156.6   <2e-16 ***
-## Time              1.57e-09   4.32e-11    36.3   <2e-16 **_
-## I(Month.Count^3) -3.76e-08   2.50e-09   -15.1   <2e-16 _*_
+## Time              1.57e-09   4.32e-11    36.3   <2e-16 ***
+## I(Month.Count^3) -3.76e-08   2.50e-09   -15.1   <2e-16 ***
 ## ---
-## Signif. codes:  0 '_*_' 0.001 '_*' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ##
 ## Residual standard error: 0.0417 on 213 degrees of freedom
 ## Multiple R-squared:  0.941,  Adjusted R-squared:  0.94
@@ -1112,21 +1112,21 @@ summary(milk.lm2)
 ## Coefficients:
 ##                   Estimate Std. Error t value Pr(>|t|)
 ## Time              1.57e-09   2.72e-11    57.7   <2e-16 ***
-## I(Month.Count^3) -3.74e-08   1.57e-09   -23.8   <2e-16 **_
-## MonthApr          6.40e+00   2.63e-02   243.3   <2e-16 _*_
-## MonthAug          6.38e+00   2.63e-02   242.2   <2e-16 _*_
-## MonthDec          6.38e+00   2.64e-02   241.9   <2e-16 _*_
-## MonthFeb          6.31e+00   2.63e-02   240.1   <2e-16 _*_
-## MonthJan          6.39e+00   2.63e-02   243.1   <2e-16 _*_
-## MonthJul          6.39e+00   2.63e-02   242.6   <2e-16 _*_
-## MonthJun          6.38e+00   2.63e-02   242.4   <2e-16 _*_
-## MonthMar          6.42e+00   2.63e-02   244.2   <2e-16 _*_
-## MonthMay          6.43e+00   2.63e-02   244.3   <2e-16 _*_
-## MonthNov          6.34e+00   2.63e-02   240.6   <2e-16 _*_
-## MonthOct          6.37e+00   2.63e-02   241.8   <2e-16 _*_
-## MonthSep          6.34e+00   2.63e-02   240.6   <2e-16 _*_
+## I(Month.Count^3) -3.74e-08   1.57e-09   -23.8   <2e-16 ***
+## MonthApr          6.40e+00   2.63e-02   243.3   <2e-16 ***
+## MonthAug          6.38e+00   2.63e-02   242.2   <2e-16 ***
+## MonthDec          6.38e+00   2.64e-02   241.9   <2e-16 ***
+## MonthFeb          6.31e+00   2.63e-02   240.1   <2e-16 ***
+## MonthJan          6.39e+00   2.63e-02   243.1   <2e-16 ***
+## MonthJul          6.39e+00   2.63e-02   242.6   <2e-16 ***
+## MonthJun          6.38e+00   2.63e-02   242.4   <2e-16 ***
+## MonthMar          6.42e+00   2.63e-02   244.2   <2e-16 ***
+## MonthMay          6.43e+00   2.63e-02   244.3   <2e-16 ***
+## MonthNov          6.34e+00   2.63e-02   240.6   <2e-16 ***
+## MonthOct          6.37e+00   2.63e-02   241.8   <2e-16 ***
+## MonthSep          6.34e+00   2.63e-02   240.6   <2e-16 ***
 ## ---
-## Signif. codes:  0 '_*_' 0.001 '_*' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ##
 ## Residual standard error: 0.0263 on 202 degrees of freedom
 ## Multiple R-squared:     1,    Adjusted R-squared:     1
@@ -1279,7 +1279,7 @@ RStudio хорошо документирована. Ниже приведены
 * **Редактирование и выполнение кода r**. RStudio предоставляет интегрированную среду для редактирования и выполнения кода r. Дополнительные сведения см. в разделе [Редактирование и исполнение кода](https://support.rstudio.com/hc/articles/200484448-Editing-and-Executing-Code).
 * **Отладка**: RStudio включает мощные возможности отладки. Дополнительные сведения об этих функциях см. [в разделе Отладка с помощью RStudio](https://support.rstudio.com/hc/articles/200713843-Debugging-with-RStudio). Дополнительные сведения о возможностях устранения неполадок в [точке останова см.](https://support.rstudio.com/hc/articles/200534337-Breakpoint-Troubleshooting)
 
-## <a name="further-reading"></a><a id="appendixb"></a>Дополнительные сведения
+## <a name="further-reading"></a><a id="appendixb"></a>Дополнительные материалы
 
 В этом руководстве по программированию на языке R рассматриваются основы использования языка R с Машинное обучение Studio (классическая модель). Если вы не знакомы с R, в CRAN доступны два введения:
 

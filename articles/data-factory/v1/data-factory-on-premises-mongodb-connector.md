@@ -1,20 +1,17 @@
 ---
 title: Перемещение данных из MongoDB
 description: Узнайте, как перемещать данные из базы данных MongoDB с использованием фабрики данных Azure.
-services: data-factory
 author: linda33wj
 ms.author: jingwang
-manager: shwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/13/2018
-ms.openlocfilehash: edddd100bddab1d642a8169353298a2d20620274
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cedb0b99f04df00763a3ee83287eec90bd5fb45d
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79281344"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387518"
 ---
 # <a name="move-data-from-mongodb-using-azure-data-factory"></a>Перемещение данных из MongoDB с помощью фабрики данных Azure
 
@@ -46,7 +43,7 @@ ms.locfileid: "79281344"
 
 Самый простой способ создать конвейер — использовать **Мастер копирования**. В статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md) приведены краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно также использовать следующие средства: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager шаблон**, **API .NET**и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в разделе [учебник по действиям копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) .
+Для создания конвейера можно также использовать следующие средства: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager шаблон**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в разделе [учебник по действиям копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) .
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -72,7 +69,7 @@ ms.locfileid: "79281344"
 | authSource |Имя базы данных MongoDB, которое будет использоваться для проверки учетных данных при проверке подлинности |Необязательно (если используется обычная проверка подлинности). По умолчанию используется учетная запись администратора и база данных, указанная с помощью свойства databaseName |
 | databaseName |Имя базы данных MongoDB, к которой необходимо получить доступ |Да |
 | gatewayName |Имя шлюза, который обращается к хранилищу данных |Да |
-| encryptedCredential |Учетные данные, зашифрованные шлюзом |Необязательно |
+| encryptedCredential |Учетные данные, зашифрованные шлюзом |Необязательный |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных](data-factory-create-datasets.md). Разделы структуры, доступности и политики JSON набора данных одинаковы для всех типов наборов данных (SQL Azure, большие двоичные объекты Azure, таблицы Azure и т. д.).
@@ -343,8 +340,8 @@ ms.locfileid: "79281344"
 
 | _№ | ExampleTable_Invoices_dim1_idx | счет_№ | item | price | Скидка |
 | --- | --- | --- | --- | --- | --- |
-| 1111 |0 |123 |тостер |456 |0,2 |
-| 1111 |1 |124 |печь |1235 |0,2 |
+| 1111 |0 |123 |тостер |456 |0.2 |
+| 1111 |1 |124 |печь |1235 |0.2 |
 | 2222 |0 |135 |холодильник |12543 |0,0 |
 
 Таблица ExampleTable_Ratings:

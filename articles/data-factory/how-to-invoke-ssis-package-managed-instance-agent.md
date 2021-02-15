@@ -1,20 +1,17 @@
 ---
 title: Запуск пакетов служб SSIS с помощью агента Управляемый экземпляр Azure SQL
 description: Узнайте, как запускать пакеты служб SSIS с помощью агента Управляемый экземпляр Azure SQL.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.author: lle
 author: lle
 ms.date: 04/14/2020
-ms.openlocfilehash: 5f8b18375c517ab5b620b2d6d897f5133b14705d
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 916d799ba08f46cb86ee2e22c4af7fc1b92b385f
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556466"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386158"
 ---
 # <a name="run-ssis-packages-by-using-azure-sql-managed-instance-agent"></a>Запуск пакетов служб SSIS с помощью агента Управляемый экземпляр Azure SQL
 
@@ -158,5 +155,5 @@ ms.locfileid: "98556466"
 
 1. Останавливает соответствующую операцию на основе **executionId**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы также можете планировать пакеты служб SSIS с помощью фабрики данных Azure. Пошаговые инструкции см. в разделе [триггер событий фабрики данных Azure](how-to-create-event-trigger.md).

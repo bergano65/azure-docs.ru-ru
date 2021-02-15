@@ -8,17 +8,17 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: 5aaf31d8c629e0770b913485de175c38f708390c
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 0a83dd143ae626108fdf8d2645b8cc368a3f3e05
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359631"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516572"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-data-from-azure-databricks"></a>Доступ к данным API Cassandra для Azure Cosmos DB из Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
 
-В этой статье описывается, как работать с API Cassandra для Azure Cosmos DB из Spark в [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks).
+В этой статье подробно описано, как работать с Azure Cosmos DB API Cassandra из Spark на [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -62,9 +62,9 @@ ms.locfileid: "97359631"
 
 Следующие ссылки помогут приступить к созданию программы Spark Scala для взаимодействия с API Cassandra для Azure Cosmos DB.
 * [Подключение к API Cassandra для Azure Cosmos DB из программ Spark Scala](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-api-spark-connector-sample/blob/main/src/main/scala/com/microsoft/azure/cosmosdb/cassandra/SampleCosmosDBApp.scala)
-* [Запуск программы Spark Scala как автоматического задания для Azure Databricks](https://docs.azuredatabricks.net/user-guide/jobs.html)
+* [Запуск программы Spark Scala как автоматического задания для Azure Databricks](/azure/databricks/jobs)
 * [Полный список примеров кода для работы с API Cassandra](cassandra-spark-generic.md#next-steps)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Начните с [создания учетной записи API Cassandra, базы данных и таблицы](create-cassandra-api-account-java.md) с помощью приложения Java.

@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 02/04/2021
 ms.author: nicolela
-ms.openlocfilehash: dbe4191b64773b71bc1ae04842d824fbfead8e55
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 8d5356f7fd2661d9743d1058a147a0b20f62850e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99628171"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373714"
 ---
 # <a name="set-up-a-lab-for-arcmaparcgis-desktop"></a>Настройка лаборатории для Аркмап\аркгис Desktop
 
@@ -55,7 +55,7 @@ ms.locfileid: "99628171"
 1.  Запустите шаблон виртуальной машины и подключитесь к компьютеру по протоколу RDP.
 
 2.  Скачайте и установите компоненты Desktop ArcGIS с помощью инструкций из программы ESRI.  Эти шаги включают назначение диспетчера лицензий для лицензирования параллельного использования. 
-    - [Общие сведения об установке и настройке ArcGIS Desktop](https://desktop.arcgis.com/arcmap/latest/get-started/installation-guide/introduction.htm)
+    - [Общие сведения об установке и настройке ArcGIS Desktop](https://desktop.arcgis.com/en/arcmap/latest/get-started/installation-guide/introduction.htm)
 
 3.  Настройка внешнего хранилища резервных копий для учащихся.  Студенты могут сохранять файлы непосредственно в назначенной им виртуальной машине, так как все вносимые изменения сохраняются в сеансах.  Однако рекомендуется, чтобы студенты создавали свою работу в хранилище, внешнем от виртуальной машины по нескольким причинам:
     - , Чтобы предоставить учащимся доступ к своей работе после завершения занятий класса и лаборатории.  
@@ -90,7 +90,7 @@ ms.locfileid: "99628171"
 >[!IMPORTANT]
 > Оценка стоимости предназначена только для примера.  Текущие сведения о ценах см. на странице [цен на службы лаборатории Azure](https://azure.microsoft.com/pricing/details/lab-services/).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дальнейшие действия являются общими для настройки любой лаборатории.
 

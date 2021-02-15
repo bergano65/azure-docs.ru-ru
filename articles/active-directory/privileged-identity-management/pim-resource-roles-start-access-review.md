@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: pim
-ms.date: 12/08/2020
+ms.date: 02/11/2021
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a618da7c9a66b8f687c1b75914530080ed56bea
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b8f05ca02068c82a3839b22b698e49a7be818a56
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905831"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370552"
 ---
 # <a name="create-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Создание проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -28,9 +28,9 @@ ms.locfileid: "96905831"
 
 В этой статье описывается, как создать одну или несколько проверок доступа для привилегированных ролей ресурсов Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-[Администратор привилегированных ролей](../roles/permissions-reference.md#privileged-role-administrator)
+ Для создания проверок доступа необходимо назначить роль Azure " [владелец](../../role-based-access-control/built-in-roles.md#owner) " или " [администратор доступа пользователей](../../role-based-access-control/built-in-roles.md#user-access-administrator) " для ресурса.
 
 ## <a name="open-access-reviews"></a>Открытие проверок доступа
 
@@ -68,7 +68,7 @@ ms.locfileid: "96905831"
 
 В зависимости от сделанного выбора в **параметрах завершения**, автоматическое применение будет выполняться после даты окончания проверки или при ручной отмене проверки. Состояние проверки будет изменено с **завершено** на промежуточные состояния, такие как **применение** и, наконец, к **примененному** состоянию. Вы должны видеть запрещенных пользователей (если они есть), которые удаляются из ролей через несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Проверка доступа к ролям ресурсов Azure](pim-resource-roles-perform-access-review.md)
 - [Выполнение проверки доступа к ролям ресурсов Azure](pim-resource-roles-complete-access-review.md)

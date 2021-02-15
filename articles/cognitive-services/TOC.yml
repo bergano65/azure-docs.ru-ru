@@ -51,7 +51,7 @@
     - name: Теги образа контейнера и заметки о выпуске
       href: ./containers/container-image-tags.md
     - name: Вопросы и ответы по контейнерам
-      href: ./containers/container-faq.md
+      href: ./containers/container-faq.yml
     - name: Инструкции по работе с контейнерами
       items:
         - name: Повторное использование контейнеров
