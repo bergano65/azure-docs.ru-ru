@@ -11,12 +11,12 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: sgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: 40882f2a0c1a65650d633d0784214afbeef9ae63
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5fc5b52cb8fb4d654bef136f44d8579036921364
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842895"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097200"
 ---
 # <a name="create-and-manage-an-azure-machine-learning-compute-instance"></a>Создание Машинное обучение Azure вычислительного экземпляра и управление им
 
@@ -44,9 +44,9 @@ ms.locfileid: "94842895"
 
 **Оценка времени**: приблизительно 5 минут.
 
-Создание вычислительного экземпляра выполняется один раз для рабочей области. Вы можете повторно использовать это вычисление как рабочую станцию разработки или как целевой объект вычислений для обучения. К рабочей области можно присоединить несколько экземпляров вычислений.
+Создание вычислительного экземпляра выполняется один раз для рабочей области. Можно повторно использовать COMPUTE как рабочую станцию разработки или как целевой объект вычислений для обучения. К рабочей области можно присоединить несколько экземпляров вычислений.
 
-Выделенные ядра для каждого региона на каждую квоту семейства виртуальных машин и общая региональная квота, применяемая к созданию вычислительных экземпляров, объединены и используются совместно с Машинное обучение Azureной квотой вычислительных кластеров для обучения. При остановке вычислительного экземпляра квота не освобождается для того, чтобы вы могли перезапустить вычислительный экземпляр. Обратите внимание, что после создания вычислительного экземпляра нельзя изменить размер виртуальной машины.
+Выделенные ядра для каждого региона на каждую квоту семейства виртуальных машин и общая региональная квота, применяемая к созданию вычислительных экземпляров, объединены и используются совместно с Машинное обучение Azureной квотой вычислительных кластеров для обучения. При остановке вычислительного экземпляра квота не освобождается для того, чтобы вы могли перезапустить вычислительный экземпляр. Обратите внимание, что после создания вычислительного экземпляра невозможно изменить размер виртуальной машины.
 
 В следующем примере показано, как создать вычислительный экземпляр:
 
@@ -87,7 +87,7 @@ except ComputeTargetException:
 * [ComputeInstance.wait_for_completion](/python/api/azureml-core/azureml.core.compute.computeinstance(class)?preserve-view=true&view=azure-ml-py#wait-for-completion-show-output-false--is-delete-operation-false-)
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
@@ -138,7 +138,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.get_status()
     ```
 
-* Остановить
+* Стоп
 
     ```python
     # stop() is used to stop the ComputeInstance
@@ -147,32 +147,32 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
     instance.stop(wait_for_completion=True, show_output=True)
     ```
 
-* Начать
+* Начало
 
     ```python
     # start() is used to start the ComputeInstance if it is in stopped state
     instance.start(wait_for_completion=True, show_output=True)
     ```
 
-* Перезагрузить
+* Перезапуск
 
     ```python
     # restart() is used to restart the ComputeInstance
     instance.restart(wait_for_completion=True, show_output=True)
     ```
 
-* Удалить
+* Удаление
 
     ```python
     # delete() is used to delete the ComputeInstance target. Useful if you want to re-use the compute name 
     instance.delete(wait_for_completion=True, show_output=True)
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 В приведенных ниже примерах имя вычислительного экземпляра — **instance** .
 
-* Остановить
+* Стоп
 
     ```azurecli-interactive
     az ml computetarget stop computeinstance -n instance -v
@@ -180,7 +180,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в разделе [AZ ML computetarget останавливает компутеинстанце](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop).
 
-* Начать 
+* Начало 
 
     ```azurecli-interactive
     az ml computetarget start computeinstance -n instance -v
@@ -188,7 +188,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в статье [AZ ML computetarget Start компутеинстанце](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start).
 
-* Перезагрузить 
+* Перезапуск 
 
     ```azurecli-interactive
     az ml computetarget restart computeinstance -n instance -v
@@ -196,7 +196,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
     Дополнительные сведения см. в статье [AZ ML computetarget Restart компутеинстанце](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart).
 
-* Удалить
+* Удаление
 
     ```azurecli-interactive
     az ml computetarget delete -n instance -v
@@ -226,7 +226,7 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 
 ---
 
-[Azure RBAC](../role-based-access-control/overview.md) позволяет контролировать, какие пользователи в рабочей области могут создавать, удалять, запускать, останавливаться и перезапускать вычислительные экземпляры. Все пользователи с ролью участника или владельца рабочей области могут создавать, удалять, запускать, останавливать и перезапускать вычислительные экземпляры в рабочей области. Однако доступ к Jupyter, JupyterLab и RStudio на этом вычислительном экземпляре разрешен только создателю определенного вычислительного экземпляра или назначенному пользователю, если он был создан от их имени. Вычислительный экземпляр предназначен для одного пользователя с правами root и может проходить через Jupyter/JupyterLab/RStudio. В вычислительном экземпляре будет входить однопользовательский вход, и все действия будут использовать удостоверение этого пользователя для Azure RBAC, а для выполнения экспериментов — идентификаторы. Доступ по протоколу SSH контролируется с помощью открытого и закрытого ключей.
+[Azure RBAC](../role-based-access-control/overview.md) позволяет контролировать, какие пользователи в рабочей области могут создавать, удалять, запускать, останавливаться и перезапускать вычислительные экземпляры. Все пользователи с ролью участника или владельца рабочей области могут создавать, удалять, запускать, останавливать и перезапускать вычислительные экземпляры в рабочей области. Однако доступ к Jupyter, JupyterLab и RStudio на этом вычислительном экземпляре разрешен только создателю определенного вычислительного экземпляра или назначенному пользователю, если он был создан от их имени. Вычислительный экземпляр предназначен для одного пользователя с правами root и может проходить через Jupyter/JupyterLab/RStudio. В вычислительном экземпляре будет входить однопользовательский вход, и все действия будут использовать удостоверение этого пользователя для Azure RBAC и его атрибуты. Доступ по протоколу SSH контролируется с помощью открытого и закрытого ключей.
 
 Эти действия можно контролировать с помощью Azure RBAC:
 * *Microsoft.MachineLearningServices/workspaces/computes/read*
@@ -236,62 +236,8 @@ az ml computetarget create computeinstance  -n instance -s "STANDARD_D3_V2" -v
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/действие*
 * *Microsoft. Мачинелеарнингсервицес/рабочие области/вычислений/перезагрузка/действие*
 
-
-## <a name="access-the-terminal-window"></a>Доступ к окну терминала
-
-Откройте окно терминала для вычислительного экземпляра одним из следующих способов:
-
-* RStudio: в левом верхнем углу выберите вкладку **Terminal** (Терминал).
-* Jupyter Lab:  выберите плитку **Terminal** (Терминал) под заголовком **Other** (Другое) на вкладке Launcher (Средства запуска).
-* Jupyter:  на вкладке Files (Файлы) в правом верхнем углу выберите **New > Terminal** (Создать > Терминал).
-* SSH-подключение к компьютеру, если вы включили доступ по протоколу SSH при создании вычислительного экземпляра.
-
-Окно терминала используется для установки пакетов и создания дополнительных ядер.
-
-## <a name="install-packages"></a>Установка пакетов
-
-Пакеты можно устанавливать непосредственно в Jupyter Notebook или RStudio.
-
-* RStudio: используйте вкладку **Packages** (Пакеты) в правом нижнем углу или вкладку **Console** (Консоль) в левом верхнем углу.  
-* Python: Добавление кода установки и выполнение в Jupyter Notebookной ячейке.
-
-Или можно установить из окна терминала. Установите пакеты Python в среду **python 3,6-AzureML** .  Установите пакеты R в среде **R**.
-
-> [!NOTE]
-> Для управления пакетами в записной книжке используйте функции " **% PIP** " или " **% conda** Magic" для автоматической установки пакетов в **выполняющийся в настоящее время ядре**, а не в разделе **! PIP** или **! conda** , который ссылается на все пакеты (включая пакеты вне текущего выполняющегося ядра).
-
-## <a name="add-new-kernels"></a>Добавление новых ядер
-
-> [!WARNING]
->  При настройке вычислительного экземпляра убедитесь, что вы не удалили **azureml_py36** среду conda или ядро **Python 3,6-azureml** . Это необходимо для работы функции Jupyter/JupyterLab
-
-Добавление нового ядра Jupyter в вычислительный экземпляр:
-
-1. Создайте новый терминал из панели записных книжек Jupyter, JupyterLab или из Блокнота или SSH в вычислительный экземпляр.
-2. Создайте новую среду с помощью терминала.  Например, приведенный ниже код создает `newenv` :
-
-    ```shell
-    conda create --name newenv
-    ```
-
-3. Активируйте среду.  Например, после создания среды `newenv`:
-
-    ```shell
-    conda activate newenv
-    ```
-
-4. Установите PIP и пакет ипикернел в новой среде и создайте ядро для этого conda env.
-
-    ```shell
-    conda install pip
-    conda install ipykernel
-    python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
-    ```
-
-Можно установить любое из [доступных ядер Jupyter](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).
-
-
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Доступ к терминалу вычислительных экземпляров](how-to-access-terminal.md)
+* [Создание файлов и управление ими](how-to-manage-files.md)
 * [Отправить обучающий запуск](how-to-set-up-training-targets.md)

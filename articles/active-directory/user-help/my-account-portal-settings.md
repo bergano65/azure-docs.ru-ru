@@ -9,22 +9,31 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 07/29/2020
+ms.date: 01/19/2021
 ms.author: curtand
-ms.openlocfilehash: 7dcaae80842f06714759cb5c933a62ccd85aac63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 249b013a35df8978a7296086b4e5ada3b78b2c52
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88798097"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093834"
 ---
 # <a name="view-or-change-your-settings-in-the-my-account-portal"></a>Просмотр или изменение параметров на портале "Моя учетная запись"
 
 Вы можете просмотреть или изменить параметры учетной записи на портале учетной записи, например язык или часовой пояс, на странице **параметры & конфиденциальность** портала " **Моя учетная запись** ".
 
+>[!Note]
+> Если при входе в систему с помощью личного учетная запись Майкрософт появляется сообщение об ошибке, вы по-прежнему можете войти, используя доменное имя организации (например, contoso.com) или **идентификатор клиента** вашей организации от администратора в одном из следующих URL-адресов:
+>
+>   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+>   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
+
 ## <a name="view-and-manage-your-language-and-regional-settings"></a>Просмотр и Управление языковыми и региональными параметрами
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myaccount.microsoft.com/.
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myaccount.microsoft.com/. Если вы входите в систему с помощью личного учетная запись Майкрософт, вы по-прежнему можете выполнять вход, используя доменное имя организации (например, contoso.com) или **идентификатор клиента** вашей организации от администратора в одном из следующих URL-адресов:
+
+   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
 
 1. Выберите **параметры & конфиденциальность** в левой области навигации или щелкните ссылку **Просмотреть параметры и конфиденциальность** в окне **Параметры & блокировка конфиденциальности** .
 

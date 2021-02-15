@@ -1,21 +1,17 @@
 ---
 title: Хранение учетных данных в Azure Key Vault
 description: Узнайте, как хранить учетные данные для хранилищ данных, используемых в Azure Key Vault, которые фабрика данных Azure может автоматически извлекать в среду выполнения.
-services: data-factory
 author: linda33wj
-manager: shwang
-editor: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: jingwang
-ms.openlocfilehash: 22ab4433d84db926733fd0b18035875e63322dda
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 828794715af1e7676253714da6fdc1a487c7c107
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81451692"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361899"
 ---
 # <a name="store-credential-in-azure-key-vault"></a>Хранение учетных данных в Azure Key Vault
 
@@ -91,7 +87,7 @@ ms.locfileid: "81451692"
 
 ![Настройка секрета Azure Key Vault](media/store-credentials-in-key-vault/configure-akv-secret.png)
 
-**Пример JSON: (см. раздел "пароль") **
+**Пример JSON: (см. раздел "пароль")**
 
 ```json
 {

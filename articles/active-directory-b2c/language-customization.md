@@ -12,12 +12,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 1012dad1b7e0a314687a38e420ff9ad4780051da
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e2aab537c2235fe3e008fa619c96a3098cfa7a27
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97111419"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361219"
 ---
 # <a name="language-customization-in-azure-active-directory-b2c"></a>Настройка языка в Azure Active Directory B2C
 
@@ -181,7 +181,7 @@ https://wingtiptoysb2c.blob.core.windows.net/fr/wingtip/unified.html
 
 ## <a name="add-custom-languages"></a>Добавление пользовательских языков
 
-Вы также можете добавить языки, на которые корпорация Майкрософт в настоящее время не предоставляет переводы. Необходимо будет предоставить переводы для всех строк в потоке пользователя. Язык и коды языковых стандартов ограничиваются предусмотренными в стандарте ISO 639-1.
+Вы также можете добавить языки, на которые корпорация Майкрософт в настоящее время не предоставляет переводы. Необходимо будет предоставить переводы для всех строк в потоке пользователя. Язык и коды языковых стандартов ограничиваются предусмотренными в стандарте ISO 639-1. Формат кода локали должен быть "ISO_639-1_code"-"Каунтрикоде" для например: en-GB. Дополнительные сведения о форматах идентификатора языкового стандарта см. на https://docs.microsoft.com/openspecs/office_standards/ms-oe376/6c085406-a698-4e12-9d4d-c3b0ee3dbc4a
 
 1. В клиенте Azure AD B2C выберите **Потоки пользователей**.
 2. Щелкните поток пользователя, в котором необходимо добавить пользовательские языки, и выберите **Языки**.
@@ -487,7 +487,7 @@ Azure AD B2C включает поддержку следующих языков
 | Галисийский              | gl            | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Гуджарати              | gu            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) |
 | Иврит                | he            | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
-| Хинди                 | hi            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
+| Hindi                 | hi            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Хорватский              | hr            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Венгерский             | hu            | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 | Индонезийский            | идентификатор            | ![X, указывающее на отсутствие.](./media/user-flow-language-customization/no.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
@@ -525,7 +525,7 @@ Azure AD B2C включает поддержку следующих языков
 | Китайский (традиционное письмо) | zh-hant       | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) | ![Зеленая галочка.](./media/user-flow-language-customization/yes.png) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 ::: zone pivot="b2c-user-flow"
 

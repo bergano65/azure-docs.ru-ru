@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 02/12/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 767f60cae2f74f7e2a928253d45011bb6ceb5d0e
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 6dda65be98934ce90e985b241078ae8019afb7e0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653849"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361270"
 ---
 # <a name="add-ad-fs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление AD FS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -38,9 +38,11 @@ ms.locfileid: "97653849"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-- Убедитесь, что у вас есть доступ к PFX-файлу сертификата с закрытым ключом. Можно создать собственный подписанный сертификат и передать его в Azure AD B2C. Azure AD B2C использует этот сертификат для подписи запроса SAML, отправляемого поставщику удостоверений SAML. Дополнительные сведения о создании сертификата см. в разделе [Создание сертификата для подписи](identity-provider-salesforce-saml.md#generate-a-signing-certificate).
-- Чтобы служба Azure принимала пароль PFX-файла, пароль должен быть зашифрован с помощью параметра TripleDES – SHA1 в служебной программе экспорта хранилища сертификатов Windows, а не AES256-SHA256.
+[!INCLUDE [active-directory-b2c-customization-prerequisites-custom-policy](../../includes/active-directory-b2c-customization-prerequisites-custom-policy.md)]
+
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+
+[!INCLUDE [active-directory-b2c-create-self-signed-certificate](../../includes/active-directory-b2c-create-self-signed-certificate.md)]
 
 ## <a name="create-a-policy-key"></a>Создание ключа политики
 
@@ -52,7 +54,7 @@ ms.locfileid: "97653849"
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Upload`.
-7. Введите **имя** ключа политики. Например, `ADFSSamlCert`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
+7. Введите **имя** ключа политики. Например, `SAMLSigningCert`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
 8. Найдите и выберите PFX-файл сертификата с закрытым ключом.
 9. Нажмите кнопку **Создать**.
 
@@ -80,7 +82,7 @@ ms.locfileid: "97653849"
             <Item Key="PartnerEntity">https://your-AD-FS-domain/federationmetadata/2007-06/federationmetadata.xml</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SamlCert"/>
+            <Key Id="SamlMessageSigning" StorageReferenceId="B2C_1A_SAMLSigningCert"/>
           </CryptographicKeys>
           <OutputClaims>
             <OutputClaim ClaimTypeReferenceId="issuerUserId" PartnerClaimType="userPrincipalName" />
@@ -125,54 +127,26 @@ ms.locfileid: "97653849"
 
 1. Сохраните файл.
 
-### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
+[!INCLUDE [active-directory-b2c-add-identity-provider-to-user-journey](../../includes/active-directory-b2c-add-identity-provider-to-user-journey.md)]
 
-Теперь вы настроили политику так, чтобы Azure AD B2C знала, как взаимодействовать с учетной записью AD FS. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
-
-1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
-3. Щелкните **Отправить**.
-
-> [!NOTE]
-> Расширение Visual Studio Code B2C использует "СоЦиалидпусерид". Для AD FS также требуется политика социальных сетей.
->
-
-## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
-
-На этом этапе поставщик удостоверений уже настроен, но еще недоступен ни на одном экране регистрации или входа. Чтобы сделать его доступным, создайте дубликат существующего шаблона пути взаимодействия пользователя, а затем измените его, чтобы у него также был поставщик удостоверений AD FS.
-
-1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
-2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
-3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
-5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInADFS`.
-
-### <a name="display-the-button"></a>Отображение кнопки
-
-Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экране регистрации или входа. Если добавить элемент **клаимспровидерселектион** для учетной записи AD FS, то при переходе пользователя на страницу появится новая кнопка.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-2. Добавьте следующий элемент под элементом **ClaimsProviderSelections**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `ContosoExchange`:
-
-    ```xml
+```xml
+<OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
+  <ClaimsProviderSelections>
+    ...
     <ClaimsProviderSelection TargetClaimsExchangeId="ContosoExchange" />
-    ```
+  </ClaimsProviderSelections>
+  ...
+</OrchestrationStep>
 
-### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
-
-Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. Действие, в данном случае, предназначено для Azure AD B2C для взаимодействия с учетной записью AD FS для получения маркера.
-
-1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
-
-    ```xml
+<OrchestrationStep Order="2" Type="ClaimsExchange">
+  ...
+  <ClaimsExchanges>
     <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="Contoso-SAML2" />
-    ```
+  </ClaimsExchanges>
+</OrchestrationStep>
+```
 
-    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Contoso-SAML2`.
-
-3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
-
+[!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
 ## <a name="configure-an-ad-fs-relying-party-trust"></a>Настройка отношения доверия с проверяющей стороной AD FS
 
@@ -216,17 +190,17 @@ https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/your-poli
 13. В диспетчер сервера выберите **инструменты**, а затем выберите **AD FS управление**.
 14. Выберите созданное отношение доверия проверяющей стороны, щелкните **Update from Federation Metadata** (Обновить с метаданных федерации), а затем выберите **Обновить**.
 
-### <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
+## <a name="test-your-custom-policy"></a>Тестирование пользовательской политики
 
-Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Выберите значок **Каталог и подписка** в верхней панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
+1. На портале Azure найдите и выберите **Azure AD B2C**.
+1. В разделе " **политики**" выберите **инфраструктура процедур идентификации** .
+1. Выберите политику проверяющей стороны, например `B2C_1A_signup_signin` .
+1. Для **приложения** выберите [ранее зарегистрированное](tutorial-register-applications.md)веб-приложение. В поле **URL-адрес ответа** должно содержаться значение `https://jwt.ms`.
+1. Нажмите кнопку **Запустить сейчас** .
 
-1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInADFS.xml*.
-2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInADFS`.
-3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например: `http://contoso.com/B2C_1A_signup_signin_adfs`.
-4. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами нового пути взаимодействия пользователя (SignUpSignInADFS).
-5. Сохраните изменения, отправьте файл, а затем выберите в списке новую политику.
-6. Убедитесь, что созданное приложение Azure AD B2C выбрано в поле **Выберите приложение**, а затем протестируйте его, щелкнув **Запустить сейчас**.
-
+Если процесс входа прошел успешно, браузер перенаправляется на `https://jwt.ms` , который отображает содержимое маркера, возвращенного Azure AD B2C.
 ## <a name="troubleshooting-ad-fs-service"></a>Устранение неполадок службы AD FS  
 
 AD FS настроен для использования журнала приложений Windows. При возникновении проблем с настройкой AD FS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure AD B2C может потребоваться проверить журнал AD FS событий:

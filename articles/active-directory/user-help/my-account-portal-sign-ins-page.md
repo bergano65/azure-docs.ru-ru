@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 08/03/2020
+ms.date: 01/19/2021
 ms.author: curtand
-ms.openlocfilehash: a002254995e42fc586b707e3cb373dac66e678ee
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1062c8dfe416af2d39063bf71f39d52e151e28d3
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94834155"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096078"
 ---
 # <a name="view-and-search-your-recent-sign-in-activity-from-the-my-sign-ins-page"></a>Просмотр и поиск недавних событий входа на странице «Мои входы»
 
@@ -25,6 +25,12 @@ ms.locfileid: "94834155"
 - Когда кто-то пытается угадать пароль.
 - Когда злоумышленник успешно вошел в вашу учетную запись и из какого расположения.
 - Приложения, к которым злоумышленник пытался получить доступ.
+
+>[!Note]
+> Если при входе в систему с помощью личного учетная запись Майкрософт появляется сообщение об ошибке, вы по-прежнему можете войти, используя доменное имя организации (например, contoso.com) или **идентификатор клиента** вашей организации от администратора в одном из следующих URL-адресов:
+>
+>   - https://myaccount.microsoft.com?tenantId=*your_domain_name*
+>   - https://myaccount.microsoft.com?tenant=*your_tenant_ID*
 
 ## <a name="view-your-recent-sign-in-activity"></a>Просмотр недавних действий входа в систему
 
@@ -50,7 +56,7 @@ ms.locfileid: "94834155"
 
 ![Неудачная плитка входа](media/my-account-portal-sign-ins-page/unsuccessful.png)
 
-Если вы видите неудачную попытку входа, запомните, что **Session activity** `Additional verification failed, invalid code` учетные данные для основной проверки подлинности успешно пройдены, но многофакторная проверка подлинности не удалась. Это состояние может означать, что злоумышленник правильно выдали ваш пароль, но ему не удалось передать запрос многофакторной проверки подлинности. Рекомендуется по-прежнему изменять пароль, так как он уже есть, и перейти на страницу [сведений о безопасности](https://mysignins.microsoft.com/security-info) , чтобы обновить параметры безопасности.
+Если вы видите неудачную попытку входа, запомните, что  `Additional verification failed, invalid code` учетные данные для основной проверки подлинности успешно пройдены, но многофакторная проверка подлинности не удалась. Это состояние может означать, что злоумышленник правильно выдали ваш пароль, но ему не удалось передать запрос многофакторной проверки подлинности. Рекомендуется по-прежнему изменять пароль, так как он уже есть, и перейти на страницу [сведений о безопасности](https://mysignins.microsoft.com/security-info) , чтобы обновить параметры безопасности.
 
 ## <a name="search-for-specific-sign-in-activity"></a>Поиск конкретного действия входа
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: e13b251c9bd95a5b52d63d8ea1bbf265c9c46fd8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2c26931db617109c36c19b73bd3ec9263f4b40cc
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023880"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096452"
 ---
 # <a name="connect-your-vmware-carbon-black-cloud-endpoint-standard-to-azure-sentinel-with-azure-function"></a>Подключение стандарта VMware для облачной конечной точки к Azure Sentinel с помощью функции Azure
 
@@ -47,10 +47,10 @@ ms.locfileid: "96023880"
 После установки успешного подключения данные появляются в Log Analytics под **CarbonBlackAuditLogs_CL**, **CarbonBlackNotifications_CL** и * * * * CarbonBlackEvents_CL * * * * таблицах.
 
 ## <a name="validate-connectivity"></a>Проверка подключения
-Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
+После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить стандартную облачную конечную точку VMware для Azure к Sentinel с помощью приложений-функций Azure. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

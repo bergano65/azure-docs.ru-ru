@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: df4292a40335e58c64b8ebc50ffb6ac1ceee8836
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86018bafaa42eac01e5dccf8da1d290b64e2475c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87059901"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100092984"
 ---
 # <a name="connect-your-proofpoint-tap-to-azure-sentinel-with-azure-function"></a>Подключение Proofpoint On Demand TAP к Azure Sentinel с помощью функции Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "87059901"
 
 ## <a name="validate-connectivity"></a>Проверка подключения
 
-Если журналы начнут появляться в Log Analytics, это может занять до 20 минут.
+После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

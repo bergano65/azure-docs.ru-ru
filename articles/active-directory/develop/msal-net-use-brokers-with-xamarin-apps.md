@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: ee9f374d110115b224c48853f26037dc461e5fa0
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 6958302a429fd88d4e26087b860b7f473bf4a1f9
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583847"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103997"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Использование Microsoft Authenticator или Корпоративный портал Intune в приложениях Xamarin
 
@@ -183,7 +183,7 @@ public static string redirectUriOnIos = "msauth.com.yourcompany.XForms://auth";
 
 **Создание URI перенаправления:**
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Выберите **Azure Active Directory**  >  **Регистрация приложений** > зарегистрированное приложение
 1. Выбор **проверки подлинности**  >  **Добавление платформы**  >  **iOS/macOS**
 1. Введите идентификатор пакета и нажмите кнопку **настроить**.
@@ -239,7 +239,7 @@ result = await app.AcquireTokenInteractive(scopes)
 
 MSAL использует URL-адреса для вызова брокера, а затем возвращается в приложение. Чтобы завершить цикл обработки, зарегистрируйте **URI перенаправления** для приложения с помощью [портал Azure](https://portal.azure.com).
 
-Формат URI перенаправления для приложения зависит от сертификата, используемого для подписи APK. Пример:
+Формат URI перенаправления для приложения зависит от сертификата, используемого для подписи APK. Например:
 
 ```
 msauth://com.microsoft.xforms.testApp/hgbUYHVBYUTvuvT&Y6tr554365466=

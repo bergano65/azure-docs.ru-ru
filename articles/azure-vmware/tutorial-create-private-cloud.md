@@ -3,12 +3,12 @@ title: Руководство. Развертывание кластера vSphe
 description: Сведения о том, как развернуть кластер vSphere в Azure с помощью Решения Azure VMware.
 ms.topic: tutorial
 ms.date: 11/19/2020
-ms.openlocfilehash: 93937f8ca0918494810885f5cb45de571a6e1529
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3c8ae3673ad049153c2b9700bd7efae6c4c286ed
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966315"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100093953"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Руководство по Развертывание частного облака Решения Azure VMware в Azure
 
@@ -74,25 +74,6 @@ az group create --name myResourceGroup --location eastus
 ```azurecli-interactive
 az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --location eastus --cluster-size 3 --network-block xx.xx.xx.xx/22 --sku AV36
 ```
-
-## <a name="delete-an-azure-vmware-solution-private-cloud"></a>Удаление частного облака Решения Azure VMware
-
-Если у вас есть частное облако Решения Azure VMware, которое больше не требуется, его можно удалить. Частное облако Решения Azure VMware включает в себя изолированный домен сети, один или несколько подготовленных кластеров vSphere на выделенных узлах сервера и несколько виртуальных машин. При удалении частного облака удаляются все виртуальные машины, их данные и кластеры. Выделенные узлы без операционной системы безопасно очищаются и возвращаются в пул свободных ресурсов. Домен сети, подготовленный для клиента, удаляется.  
-
-> [!CAUTION]
-> Удаление частного облака — необратимая операция. После удаления частного облака его данные невозможно восстановить, так как этот процесс завершает все выполняющиеся рабочие нагрузки и компоненты. При этом удаляются все данные и параметры конфигурации частного облака, включая общедоступные IP-адреса.
-
-### <a name="prerequisites"></a>Предварительные требования
-
-После удаления частного облака невозможно восстановить виртуальные машины и их данные. Если данные виртуальной машины потребуются в будущем, то перед удалением частного облака администратор должен создать резервную копию всех данных.
-
-### <a name="steps-to-delete-an-azure-vmware-solution-private-cloud"></a>Этапы удаления частного облака Решения Azure VMware
-
-1. Перейдите на страницу Решения Azure VMware на портале Azure.
-
-2. Выберите частное облако для удаления.
- 
-3. Введите имя частного облака и выберите **Да**. Через несколько часов процесс удаления будет завершен.  
 
 ## <a name="azure-vmware-commands"></a>Команды Azure VMware
 

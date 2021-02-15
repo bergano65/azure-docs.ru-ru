@@ -1,23 +1,18 @@
 ---
 title: Перемещение данных из PostgreSQL с помощью фабрики данных Azure
 description: Узнайте, как перемещать данные из базы данных PostgreSQL с использованием фабрики данных Azure
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: 888d9ebc-2500-4071-b6d1-0f6bd1b5997c
+ms.author: jingwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 37c83e77cadae002ff701a08c4b36a86f7cab9a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8ca8770944a12c6e0dd3e4f95d286758ebee5f9e
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082840"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100387280"
 ---
 # <a name="move-data-from-postgresql-using-azure-data-factory"></a>Перемещение данных из PostgreSQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -160,7 +155,7 @@ ms.locfileid: "87082840"
 ```
 **Входной набор данных PostgreSQL**
 
-В примере предполагается, что вы уже создали таблицу MyTable в PostgreSQL и она содержит столбец с именем timestamp для данных временных рядов.
+В примере предполагается, что вы создали таблицу MyTable в PostgreSQL и она содержит столбец с именем timestamp для данных временных рядов.
 
 Значение `"external": true` означает, что служба фабрики данных считает этот набор данных внешним по отношению к себе и не созданным в результате какого-либо действия в фабрике данных.
 
@@ -339,7 +334,7 @@ ms.locfileid: "87082840"
 | pg_lsn | |Int64 |
 | point | |Byte[], String |
 | polygon | |Byte[], String |
-| real |float4 |Один |
+| real |float4 |Single |
 | smallint |int2 |Int16 |
 | smallserial |serial2 |Int16 |
 | serial |serial4 |Int32 |

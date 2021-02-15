@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 01/29/2018
 ms.author: victorh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 81c936acc00801f8473c1ec74aa50dbf2abb4936
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 2e766bcdee2afa3ff4ed75476c619326c4c0e0c2
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397031"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99591673"
 ---
 # <a name="manage-web-traffic-using-the-azure-cli"></a>Управление веб-трафиком с помощью Azure CLI
 
@@ -48,8 +48,8 @@ az group delete --name myResourceGroupAG --yes
 | [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть. |
 | [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create) | Создает подсеть в виртуальной сети. |
-| [az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest) | Создает общедоступный IP-адрес для шлюза приложений. |
-| [az network application-gateway create](/cli/azure/network/application-gateway?view=azure-cli-latest) | Создание шлюза приложений. |
+| [az network public-ip create](/cli/azure/network/public-ip) | Создает общедоступный IP-адрес для шлюза приложений. |
+| [az network application-gateway create](/cli/azure/network/application-gateway) | Создание шлюза приложений. |
 | [az vmss create](/cli/azure/vmss) | Создает масштабируемый набор виртуальных машин. |
 | [az network public-ip show](/cli/azure/network/public-ip) | Получает общедоступный IP-адрес для шлюза приложений. |
 

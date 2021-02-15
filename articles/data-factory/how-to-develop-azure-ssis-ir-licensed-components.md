@@ -1,22 +1,18 @@
 ---
 title: Установка лицензированных компонентов для среды выполнения интеграции Azure SSIS
 description: Узнайте, как независимый поставщик программного обеспечения может разрабатывать и устанавливать платные или лицензионные пользовательские компоненты для среды выполнения интеграции Azure–SSIS
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 author: swinarko
 ms.author: sawinark
-manager: mflasko
-ms.reviewer: douglasl
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 07/09/2020
-ms.openlocfilehash: 77eedbfc65b54ce128e1adbd93375bc624ef38cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd62822e111346ee9a81a5d1bcce55191b19da02
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187627"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386294"
 ---
 # <a name="install-paid-or-licensed-custom-components-for-the-azure-ssis-integration-runtime"></a>Установка платных или лицензионных пользовательских компонентов для среды выполнения интеграции Azure–SSIS
 
@@ -40,7 +36,7 @@ ms.locfileid: "86187627"
 
 ![Установка лицензированных компонентов](media/how-to-configure-azure-ssis-ir-licensed-components/licensed-component-installation.png)
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Инструкции
 1. Независимые поставщики программного обеспечения могут предлагать свои лицензированные компоненты на различных номерах SKU или уровнях, например только один узел, до 5 узлов, до 10 узлов и т. д. Когда клиент приобретает продукт, независимый поставщик программного обеспечения предоставляет соответствующий ключ продукта. Он также может предоставить контейнер больших двоичных объектов службы хранилища Azure, который содержит скрипт установки и связанные с ним файлы. Клиенты могут скопировать эти файлы в собственный контейнер хранилища и изменять их, используя собственный ключ продукта (например, запустив `IsvSetup.exe -pid xxxx-xxxx-xxxx`). Клиенты могут подготовить или перенастроить среду выполнения интеграции Azure SSIS, используя URI SAS их контейнера в качестве параметра. Дополнительные сведения см. в разделе [Выборочная установка среды выполнения интеграции Azure-SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
 
 2. После подготовки и перенастройки среды выполнения интеграции Azure SSIS пакет установки независимого поставщика программного обеспечения выполняется на каждом узле для запроса переменных среды `SSIS_CLUSTERID` и `SSIS_CLUSTERNODECOUNT`. Затем среда выполнения интеграции Azure SSIS отправляет свой идентификатор кластера и ключ лицензированного продукта на сектор активации независимого поставщика программного обеспечения для создания ключа активации.
