@@ -1,23 +1,18 @@
 ---
 title: Встроенные и предварительно установленные компоненты в Azure-SSIS Integration Runtime
 description: Список всех встроенных и предварительно установленных компонентов, например клиентов, драйверов, поставщиков, диспетчеров подключений, источников, назначений и преобразований данных, а также задач, в Azure-SSIS Integration Runtime.
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 author: swinarko
 ms.author: sawinark
-ms.reviewer: douglasl
-manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 05/14/2020
-ms.openlocfilehash: 2f152cddf506c160e686e404b9ba199fbc4c4c37
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 2f5ad8deb702e312f7dd7275128e8ca8098ab90c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98556330"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393791"
 ---
 # <a name="built-in-and-preinstalled-components-on-azure-ssis-integration-runtime"></a>Встроенные и предварительно установленные компоненты в Azure-SSIS Integration Runtime
 

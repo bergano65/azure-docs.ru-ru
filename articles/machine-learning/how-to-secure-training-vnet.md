@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 02045c7ba2373c57213cc7fffb71a5e6bb5979e6
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 9a937336e1628add54ab5f52cdd6ef475d463f7d
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538006"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515994"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Защита Машинное обучение Azureной среды обучения с помощью виртуальных сетей
 
@@ -26,7 +26,7 @@ ms.locfileid: "99538006"
 
 См. Другие статьи в этой серии:
 
-[1. Общие сведения о виртуальной сети](how-to-network-security-overview.md)  >  [Обеспечьте безопасность рабочей области](how-to-secure-workspace-vnet.md)  >  **3. Обеспечьте безопасность среды обучения**  >  [4. Обеспечьте безопасность окружения](how-to-secure-inferencing-vnet.md)   >  [5. Включить функциональные возможности студии](how-to-enable-studio-virtual-network.md)
+[1. Обзор виртуальной сети](how-to-network-security-overview.md)  >  [2. Обеспечьте безопасность рабочей области](how-to-secure-workspace-vnet.md)  >  **3. Обеспечьте безопасность среды обучения**  >  [4. Обеспечьте безопасность окружения](how-to-secure-inferencing-vnet.md)   >  [5. Включить функциональные возможности студии](how-to-enable-studio-virtual-network.md)
 
 В этой статье вы узнаете, как защитить следующие обучающие ресурсы для обучения в виртуальной сети.
 > [!div class="checklist"]
@@ -273,7 +273,7 @@ except ComputeTargetException:
 > * Если учетные записи хранения Azure для рабочей области также предусмотрены в виртуальной сети, они должны находиться в той же виртуальной сети, что и кластер Azure Databricks.
 > * В дополнение к подсетям __databricks-private__ и __databricks-public__, используемым Azure Databricks, необходимо также создать подсеть __по умолчанию__ для виртуальной сети.
 
-Конкретные сведения об использовании Azure Databricks с виртуальной сетью см. в разделе [Развертывание Azure Databricks в виртуальной сети Azure](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-inject.html).
+Конкретные сведения об использовании Azure Databricks с виртуальной сетью см. в разделе [Развертывание Azure Databricks в виртуальной сети Azure](/azure/databricks/administration-guide/cloud-configurations/azure/vnet-inject).
 
 <a id="vmorhdi"></a>
 

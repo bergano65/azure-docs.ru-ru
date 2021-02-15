@@ -8,12 +8,12 @@ author: trkeya
 ms.author: trkeya
 ms.date: 10/27/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 26ceee828bae7ea3fe2d78ec1393f308556b8401
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: c28ab557f6aac94fa9acde78c7433b850ecba0be
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033363"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100097269"
 ---
 # <a name="update-existing-offers-in-the-commercial-marketplace"></a>Обновление существующих предложений в коммерческом магазине
 
@@ -31,6 +31,10 @@ ms.locfileid: "97033363"
     - **Неопубликованные изменения**: раздел был обновлен и завершен. Были предоставлены все необходимые данные, и в обновлениях не появились ошибки.
     - Не **завершено**. в обновлениях, внесенных в раздел, появились ошибки, которые необходимо исправить, или требуется предоставить дополнительные сведения.
 2. Выберите **опубликовать** , чтобы отправить обновленное предложение для публикации. Затем ваше предложение будет проходить стандартные действия по [проверке и публикации](../review-publish-offer.md#validation-and-publishing-steps).
+
+## <a name="changing-offer-type"></a>Изменение типа предложения
+
+[!INCLUDE [change-offer-type](../includes/change-offer-type.md)]
 
 > [!IMPORTANT]
 > Вы должны просмотреть предварительную версию предложения, когда она будет доступна, и выбрать **Go-Live** , чтобы опубликовать обновленное предложение в предполагаемой аудитории (общедоступная или частная).

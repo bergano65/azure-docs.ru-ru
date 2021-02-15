@@ -1,23 +1,18 @@
 ---
 title: Вызов хранимой процедуры из действия копирования фабрики данных Azure
 description: Узнайте, как вызвать хранимую процедуру в базе данных SQL Azure или SQL Server из действия копирования в фабрике данных Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-editor: ''
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d2b10744222da8e5d85b19e1ded5aa24cf9c9706
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 6f06b84ac0807a37c7adc603a557894be85a4cea
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637859"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100374972"
 ---
 # <a name="invoke-stored-procedure-from-copy-activity-in-azure-data-factory"></a>Вызов хранимой процедуры из действия копирования в фабрике данных Azure
 > [!NOTE]
@@ -29,7 +24,7 @@ ms.locfileid: "92637859"
 В следующем примере показано, как вызвать хранимую процедуру в базе данных SQL Server из конвейера фабрики данных (действие копирования):  
 
 ## <a name="output-dataset-json"></a>Определение JSON выходного набора данных
-В определении JSON выходного набора данных задайте для свойства **type** значение **SqlServerTable** . Задайте для него значение **AzureSqlTable** для использования с базой данных SQL Azure. Значение свойства **tableName** должно соответствовать имени первого параметра хранимой процедуры.  
+В определении JSON выходного набора данных задайте для свойства **type** значение **SqlServerTable**. Задайте для него значение **AzureSqlTable** для использования с базой данных SQL Azure. Значение свойства **tableName** должно соответствовать имени первого параметра хранимой процедуры.  
 
 ```json
 {
@@ -49,7 +44,7 @@ ms.locfileid: "92637859"
 ```
 
 ## <a name="sqlsink-section-in-copy-activity-json"></a>Раздел SqlSink в определении JSON действия копирования
-Определите раздел **SqlSink** в JSON действия копирования следующим образом. Чтобы вызвать хранимую процедуру при вставке данных в целевую базу данных (приемник), необходимо указать значения для свойств **SqlWriterStoredProcedureName** и **SqlWriterTableType** . Описания этих свойств см. в разделе [SqlSink](data-factory-sqlserver-connector.md#sqlsink) статьи, посвященной соединителю SQL Server.
+Определите раздел **SqlSink** в JSON действия копирования следующим образом. Чтобы вызвать хранимую процедуру при вставке данных в целевую базу данных (приемник), необходимо указать значения для свойств **SqlWriterStoredProcedureName** и **SqlWriterTableType**. Описания этих свойств см. в разделе [SqlSink](data-factory-sqlserver-connector.md#sqlsink) статьи, посвященной соединителю SQL Server.
 
 ```json
 "sink":
@@ -68,7 +63,7 @@ ms.locfileid: "92637859"
 ```
 
 ## <a name="stored-procedure-definition"></a>Определение хранимой процедуры 
-В своей базе данных определите хранимую процедуру с тем же именем, что и **SqlWriterStoredProcedureName** . Хранимая процедура обрабатывает входные данные из исходного хранилища данных и вставляет данные в таблицу в целевой базе данных. Имя первого параметра хранимой процедуры должно совпадать со значением свойства tableName, заданным в определении JSON (Marketing) набора данных.
+В своей базе данных определите хранимую процедуру с тем же именем, что и **SqlWriterStoredProcedureName**. Хранимая процедура обрабатывает входные данные из исходного хранилища данных и вставляет данные в таблицу в целевой базе данных. Имя первого параметра хранимой процедуры должно совпадать со значением свойства tableName, заданным в определении JSON (Marketing) набора данных.
 
 ```sql
 CREATE PROCEDURE spOverwriteMarketing @Marketing [dbo].[MarketingType] READONLY, @stringData varchar(256)
@@ -81,7 +76,7 @@ END
 ```
 
 ## <a name="table-type-definition"></a>Определение типа таблицы
-В своей базе данных определите тип таблицы с тем же именем, что и **SqlWriterTableType** . Схема типа таблицы должна соответствовать схеме входного набора данных.
+В своей базе данных определите тип таблицы с тем же именем, что и **SqlWriterTableType**. Схема типа таблицы должна соответствовать схеме входного набора данных.
 
 ```sql
 CREATE TYPE [dbo].[MarketingType] AS TABLE(
@@ -90,7 +85,7 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 )
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
 - [База данных SQL Azure](data-factory-azure-sql-connector.md)

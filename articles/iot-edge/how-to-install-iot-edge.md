@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: kgremban
-ms.openlocfilehash: ab783d6cb20f1c2fe31e8556dc57999df20d5637
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: efbae71162bdd0c126287191f7ad35cf903db138
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98629816"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378083"
 ---
 # <a name="install-or-uninstall-azure-iot-edge-for-linux"></a>Установка или удаление Azure IoT Edge для Linux
 
@@ -32,7 +32,7 @@ ms.locfileid: "98629816"
 
 * Устройство Linux
 
-  Наличие устройства Linux x64, ARM32 или ARM64. Корпорация Майкрософт предоставляет установочные пакеты для Ubuntu Server 16,04, Ubuntu Server 18,04 и Raspberry Pi ОС растягивать операционные системы.
+  Наличие устройства Linux x64, ARM32 или ARM64. Корпорация Майкрософт предоставляет установочные пакеты для операционных систем Ubuntu Server 18,04 и Raspberry Pi.
 
   Последние сведения о том, какие операционные системы в настоящее время поддерживаются в рабочих сценариях, см. в разделе [Azure IOT Edge Поддерживаемые системы](support.md#operating-systems) .
 
@@ -42,12 +42,6 @@ ms.locfileid: "98629816"
 * Подготовьте устройство для доступа к пакетам установки Майкрософт.
 
   Установите конфигурацию репозитория, соответствующую операционной системе устройства.
-
-  * **Ubuntu Server 16.04**:
-
-    ```bash
-    curl https://packages.microsoft.com/config/ubuntu/16.04/multiarch/prod.list > ./microsoft-prod.list
-    ```
 
   * **Ubuntu Server 18.04**:
 
@@ -321,6 +315,6 @@ sudo apt-get remove --purge moby-cli
 sudo apt-get remove --purge moby-engine
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Продолжайте [развертывать модули IOT Edge](how-to-deploy-modules-portal.md) , чтобы узнать, как развернуть модули на устройстве.

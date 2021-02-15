@@ -7,18 +7,45 @@ ms.reviewer: mikeray
 services: azure-arc
 ms.service: azure-arc
 ms.subservice: azure-arc-data
-ms.date: 12/09/2020
+ms.date: 02/11/2021
 ms.topic: conceptual
-ms.openlocfilehash: 2c9b239269aa00255aa08d6c233cd7978b253d94
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: f303ddb4d32da4c4cb6609f3ceec34e5c83529a8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653577"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391462"
 ---
 # <a name="release-notes---azure-arc-enabled-data-services-preview"></a>Заметки о выпуске — службы данных с поддержкой ARC в Azure (Предварительная версия)
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
+
+## <a name="january-2021"></a>Январь 2021 г.
+
+### <a name="new-capabilities-and-features"></a>Новые возможности и возможности
+
+Номер версии Azure Data CLI ( `azdata` ): 20.3.0. Скачайте по адресу [https://aka.ms/azdata](https://aka.ms/azdata) . Вы можете установить `azdata` из программы [установки Azure Data CLI ( `azdata` )](/sql/azdata/install/deploy-install-azdata).
+
+
+К дополнительным обновлениям относятся:
+- Доступ к локализованному порталу для 17 новых языков
+- Незначительные изменения в файлах KUBE-Native. YAML
+- Новые версии Grafana и Kibana
+- Проблемы с окружениями Python при использовании аздата в записных книжках в Azure Data Studio разрешены
+- Расширение pg_audit теперь доступно для PostgreSQLного масштабирования.
+- При полном восстановлении базы данных PostgreSQL с масштабированием больше не требуется идентификатор резервного копирования
+- Состояние (состояние работоспособности) указывается для каждого экземпляра PostgreSQL, составляющего группу серверов.
+
+   В более ранних выпусках состояние было агрегировано на уровне группы серверов и не было детализировано на уровне узла PostgreSQL.
+
+- Развертывания PostgreSQL теперь учитывают параметры размера тома, указанные в командах Create Commands.
+- Параметры версии подсистемы теперь учитываются при редактировании группы серверов.
+- Изменилось соглашение об именовании модулей Pod для PostgreSQL с поддержкой ARC в Azure
+
+    Теперь он имеет вид: `ServergroupName{c, w}-n` . Например, группа серверов с тремя узлами, одним узлом координатора и двумя рабочими узлами, представлена следующим образом:
+   - `Postgres01c-0` (узел координатора)
+   - `Postgres01w-0` (рабочий узел)
+   - `Postgres01w-1` (рабочий узел)
 
 ## <a name="december-2020"></a>Декабрь 2020 г.
 
@@ -41,14 +68,14 @@ ms.locfileid: "97653577"
 
 #### <a name="new-resource-provider"></a>Новый поставщик ресурсов
 
-В этом выпуске появился обновленный [поставщик ресурсов](../../azure-resource-manager/management/azure-services-resource-providers.md) с именем `Microsoft.AzureArcData` . Прежде чем использовать эту функцию, необходимо зарегистрировать этот поставщик ресурсов. 
+В этом выпуске появился обновленный [поставщик ресурсов](../../azure-resource-manager/management/azure-services-resource-providers.md) с названием `Microsoft.AzureArcData`. Прежде чем использовать эту функцию, необходимо зарегистрировать этот поставщик ресурсов. 
 
 Чтобы зарегистрировать этот поставщик ресурсов, сделайте следующее: 
 
 1. В портал Azure выберите **подписки** . 
 2. Выберите свою подписку
-3. В разделе **Параметры** выберите **поставщики ресурсов** . 
-4. Найдите `Microsoft.AzureArcData` и выберите **регистр** . 
+3. В разделе **Параметры** с помощью пункта **Поставщики ресурсов** 
+4. Посредством поиска по `Microsoft.AzureArcData` и выбора **Зарегистрировать** 
 
 Вы можете ознакомиться с подробными инструкциями [поставщиков и типов ресурсов Azure](../../azure-resource-manager/management/resource-providers-and-types.md). Это изменение также приведет к удалению всех существующих ресурсов Azure, отправленных в портал Azure. Чтобы использовать поставщик ресурсов, необходимо обновить контроллер данных и использовать последнюю версию `azdata` интерфейса командной строки.  
 

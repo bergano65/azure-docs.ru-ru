@@ -8,16 +8,16 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 04/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 4d735c623a6dffe24108d06d00caa7fba987c7df
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a35a7e5e5c7eccf006f18badad88656e8bc73453
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96467279"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367696"
 ---
 # <a name="configure-business-continuity-and-disaster-recovery-for-azure-stack-edge-vpn"></a>Настройка непрерывности бизнес-процессов и аварийного восстановления для Azure Stack пограничных VPN
 
-[!INCLUDE [applies-to-r-skus](../../includes/azure-stack-edge-applies-to-r-sku.md)]
+[!INCLUDE [applies-to-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-pro-r-mini-r-sku.md)]
 
 В этой статье описывается настройка непрерывности бизнес-процессов и аварийного восстановления (BCDR) в виртуальной частной сети (VPN), настроенной на Azure Stack пограничном устройстве.
 
@@ -59,6 +59,6 @@ Azure Stack пограничное устройство использует р�
 
 1. Вы можете обновить конфигурацию VPN Azure Stack пограничной виртуальной сети, чтобы использовать VPN-шлюз нового региона, и выбрать новый регион для добавления маршрутов, использующих VPN-шлюз.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создайте резервную копию устройства Azure Stack пограничных устройств](azure-stack-edge-gpu-prepare-device-failure.md).

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: fe49481357b542ce52de5fc9dab3059cb584c229
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 902475ae3e60761fb30620c5ba2fa8cbd905c916
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87083911"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099189"
 ---
 # <a name="connect-your-symantec-proxysg-to-azure-sentinel"></a>Подключение Symantec Проксисг к Azure Sentinel
 
@@ -48,7 +48,7 @@ ms.locfileid: "87083911"
 
 ## <a name="validate-connectivity"></a>Проверка подключения
 
-Если журналы начнут появляться в Log Analytics, это может занять до 20 минут. 
+После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,19 +1,17 @@
 ---
 title: Устранение проблем безопасности и контроля доступа
 description: Узнайте, как устранять проблемы безопасности и контроля доступа в фабрике данных Azure.
-services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 02/04/2021
 ms.author: lle
-ms.reviewer: craigg
-ms.openlocfilehash: 37da2869f0cf315ac0a6851c9a77dcee4debf71a
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 0dac0dcb272b602be8b921bce0ffc68c05cb9cbd
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99581692"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375176"
 ---
 # <a name="troubleshoot-azure-data-factory-security-and-access-control-issues"></a>Устранение неполадок, связанных с управлением безопасностью и доступом в фабрике данных Azure
 
@@ -153,7 +151,7 @@ ms.locfileid: "99581692"
 
 ![Снимок экрана элемента управления "включено" для "разрешить доступ к общедоступной сети" в области "Сетевые подключения".](media/self-hosted-integration-runtime-troubleshoot-guide/enable-public-network-access.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

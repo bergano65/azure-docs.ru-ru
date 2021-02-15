@@ -1,21 +1,18 @@
 ---
 title: Копирование данных в массовый среде с помощью PowerShell
 description: С помощью этого скрипта PowerShell можно использовать фабрику данных Azure для копирования данных из исходного хранилища данных в хранилище данных назначения в пакетном режиме.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: article
 ms.custom: seo-lt-2019
 ms.date: 10/31/2017
-ms.openlocfilehash: 3b06cc68a4de50ae95d8946f32b241d38b4781ea
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 16cb08d49efcd46e2746c5031793af8b747a2b31
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460957"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373578"
 ---
 # <a name="powershell-script---copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Скрипт PowerShell: копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 

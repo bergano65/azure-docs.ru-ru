@@ -1,27 +1,21 @@
 ---
 title: Преобразование данных с помощью кирпичей Python
-description: Сведения об обработке или преобразовании данных с помощью Databricks Python.
-services: data-factory
-documentationcenter: ''
+description: Узнайте, как обрабатывать или преобразовывать данные, запустив действие Python в конвейере фабрики данных Azure.
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/15/2018
 author: dcstwh
 ms.author: weetok
-ms.reviewer: maghan
-manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: 7e80fad02a186173868a6aa78aedeac0801f199a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 49dfe11ceb01471e3b5afadd30259dcd63e7b82a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496897"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373952"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
-
 
 Действие Python в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Python в кластере Azure Databricks. Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования. Azure Databricks — это управляемая платформа для запуска Apache Spark.
 
@@ -71,7 +65,7 @@ ms.locfileid: "96496897"
 |type|Тип действия Python в Databricks — DatabricksSparkPython.|Да|
 |linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md).|Да|
 |pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|Да|
-|параметры|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
+|parameters|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Нет|
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
@@ -110,18 +104,22 @@ ms.locfileid: "96496897"
 
 ```
 
-Дополнительные сведения см. в [документации Databricks](https://docs.azuredatabricks.net/api/latest/libraries.html#managedlibrarieslibrary) по типам библиотек.
+Дополнительные сведения см. в [документации Databricks](/azure/databricks/dev-tools/api/latest/libraries#managedlibrarieslibrary) по типам библиотек.
 
 ## <a name="how-to-upload-a-library-in-databricks"></a>Отправка библиотеки в Databricks
 
-#### <a name="using-databricks-workspace-ui"></a>[С помощью пользовательского интерфейса рабочей области Databricks](https://docs.azuredatabricks.net/user-guide/libraries.html#create-a-library)
+### <a name="you-can-use-the-workspace-ui"></a>Вы можете использовать пользовательский интерфейс рабочей области:
 
-Чтобы получить путь к dbfs библиотеке, добавленной с помощью пользовательского интерфейса, можно использовать [интерфейс командной строки Databricks (установка)](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#install-the-cli). 
+1. [Использование пользовательского интерфейса рабочей области "кирпичи"](/azure/databricks/libraries/#create-a-library)
 
-Обычно библиотеки Jar, добавленные с помощью пользовательского интерфейса, хранятся в каталоге dbfs:/FileStore/jars. Вы можете вывести список всех с помощью интерфейса командной строки: *dbfss FS Ls:/хранилище файлов/JAR* 
+2. Чтобы получить путь dBFS библиотеки, добавленной с помощью пользовательского интерфейса, можно использовать интерфейс [командной строки для модуля](/azure/databricks/dev-tools/cli/#install-the-cli)данных.
 
+   Обычно библиотеки Jar, добавленные с помощью пользовательского интерфейса, хранятся в каталоге dbfs:/FileStore/jars. Вы можете получить список всех библиотек, выполнив следующую команду в интерфейсе командной строки: *databricks fs ls dbfs:/FileStore/job-jars*.
 
+### <a name="or-you-can-use-the-databricks-cli"></a>Также можно использовать интерфейс командной строки для модуля:
 
-#### <a name="copy-library-using-databricks-cli"></a>[Копирование библиотеки с помощью интерфейса командной строки Databricks](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html#copy-a-file-to-dbfs)
+1. Следуйте инструкциям [по копированию библиотеки с помощью интерфейса командной строки для модуля](/azure/databricks/dev-tools/cli/#copy-a-file-to-dbfs) обработки
 
-Пример: *databricks fs cp SparkPi-assembly-0.1.jar dbfs:/FileStore/jars*
+2. Использование интерфейса командной строки кирпичей [(этапы установки)](/azure/databricks/dev-tools/cli/#install-the-cli)
+
+   Например, чтобы скопировать JAR-файл в dBFS: `dbfs cp SparkPi-assembly-0.1.jar dbfs:/docs/sparkpi.jar`

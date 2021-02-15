@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ea274914ac70540d5763884bbd01e41e349a530d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5813331d5eafd953d776dd19d9cc885ff71b8be0
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879836"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100361559"
 ---
 # <a name="change-the-license-model-for-a-sql-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL в Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "98879836"
 ![Преимущество гибридного использования Azure на портале](./media/licensing-model-azure-hybrid-benefit-ahb-change/ahb-in-portal.png)
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
 
 Вы можете изменить модель лицензирования с помощью Azure CLI.  
 
@@ -119,7 +119,6 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
    - Поддерживаются только выпуски SQL Server Standard и Enterprise. Изменять тип лицензии для выпусков Express, Web и Developer нельзя. 
    - Поддерживаются только виртуальные машины, развернутые с помощью модели развертывания с Azure Resource Manager. Виртуальные машины, развернутые с помощью классической модели развертывания, не поддерживаются. 
    - Доступно только для общедоступных облаков и Azure для государственных организаций. 
-   - Поддерживается только на виртуальных машинах с одним сетевым интерфейсом. 
 
 > [!Note]
 > Для Преимущество гибридного использования Azure доступны только SQL Server на основе ядер с лицензированием Software Assurance или подпиской на подписку. Если вы используете лицензирование Server + CAL для SQL Server и у вас есть программа Software Assurance, можно использовать собственную лицензию на образ виртуальной машины Azure SQL Server, чтобы использовать перемещение лицензий для этих серверов, но нельзя использовать другие функции Преимущество гибридного использования Azure. 
@@ -136,10 +135,6 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 
 Вам потребуется зарегистрировать подписку в поставщике ресурсов, а затем [зарегистрировать SQL Server виртуальную машину с расширением агента IaaS SQL](sql-agent-extension-manually-register-single-vm.md). 
 
-
-**С виртуальной машиной " \<vmname\> " связана более одной сетевой карты**
-
-Такая ошибка возникает на виртуальных машинах с несколькими сетевыми картами. Удалите одну из сетевых карт, прежде чем изменить модель лицензирования. После изменения модели лицензирования вы можете обратно добавить сетевую карту для виртуальной машины, но при этом на портале Azure не будут поддерживаться такие операции, как автоматическое резервное копирование и установка исправлений. 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,20 +1,17 @@
 ---
 title: Обзор соединителя фабрики данных Azure
 description: Узнайте о поддерживаемых соединителях в фабрике данных.
-services: data-factory
 author: linda33wj
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: jingwang
-ms.reviewer: craigg
-ms.openlocfilehash: 9b346c24b6a363e66e56f6c16b70058df3864c88
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 9dff36704fc0e3163da0439d55452fa82cb40e55
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945840"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100381313"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор соединителя фабрики данных Azure
 
@@ -39,7 +36,7 @@ ms.locfileid: "91945840"
 
 ## <a name="supported-file-formats"></a>Поддерживаемые типы файлов
 
-Фабрика данных Azure поддерживает следующие форматы файлов. Дополнительные сведения о параметрах на основе форматирования см. в каждой статье.
+Фабрика данных Azure поддерживает следующие форматы файлов. Дополнительные сведения о параметрах с учетом форматирования см. в соответствующих статьях.
 
 - [Формат Avro](format-avro.md)
 - [Двоичный формат](format-binary.md)
@@ -52,7 +49,7 @@ ms.locfileid: "91945840"
 - [Формат Parquet](format-parquet.md)
 - [Формат XML](format-xml.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Действие копирования](copy-activity-overview.md)
 - [Поток данных для сопоставления](concepts-data-flow-overview.md)

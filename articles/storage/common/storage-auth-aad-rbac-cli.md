@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 02/10/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9b818b8b46b6ac3af98ff5f25ef69335231744cc
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: c42061520b73966f2cd516716039d78c2b9cbeb8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779045"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375992"
 ---
 # <a name="use-azure-cli-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>Использование Azure CLI для назначения роли Azure доступа к данным BLOB-объектов и очередей
 
@@ -58,8 +58,10 @@ Storage Queue Data Reader                 Allows for read access to Azure Storag
 
 Чтобы назначить роль Azure субъекту безопасности, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az-role-assignment-create) . Формат команды может различаться в зависимости от области назначения. В следующих примерах показано, как назначить роль пользователю в различных областях, но можно использовать ту же команду, чтобы назначить роль любому субъекту безопасности.
 
-> [!NOTE]
-> При создании учетной записи хранения Azure вы не назначаете разрешения на доступ к данным через Azure AD автоматически. Необходимо явно назначить себе роль Azure для службы хранилища Azure. Вы можете назначить ее на уровне подписки, группы ресурсов, учетной записи хранения, контейнера или очереди.
+> [!IMPORTANT]
+> При создании учетной записи хранения Azure вы не назначаете разрешения на доступ к данным через Azure AD автоматически. Необходимо явно назначить себе роль RBAC Azure для доступа к данным. Вы можете назначить ее на уровне подписки, группы ресурсов, учетной записи хранения, контейнера или очереди.
+>
+> Если учетная запись хранения заблокирована с блокировкой только для чтения Azure Resource Manager, блокировка не позволит назначить роли RBAC Azure, областью действия которых является учетная запись хранения или контейнер данных (контейнер BLOB-объектов или очередь).
 
 ### <a name="container-scope"></a>Область контейнера
 
@@ -140,8 +142,8 @@ az role assignment create \
     --scope "/subscriptions/<subscription>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Добавление или удаление назначений ролей Azure с помощью модуля Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 - [Использование модуля Azure PowerShell для назначения роли Azure доступа к данным BLOB-объектов и очередей](storage-auth-aad-rbac-powershell.md)
-- [Используйте портал Azure, чтобы назначить роль Azure для доступа к данным BLOB-объектов и очередей.](storage-auth-aad-rbac-portal.md)
+- [Назначение роли Azure для доступа к большим двоичным объектам и данным очереди с помощью портала Azure](storage-auth-aad-rbac-portal.md)

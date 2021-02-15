@@ -1,24 +1,18 @@
 ---
 title: Мастер копирования фабрики данных Azure
 description: Из этой статьи вы узнаете, как с помощью мастера копирования фабрики данных Azure копировать данные из поддерживаемых источников данных в приемники.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: ''
-editor: ''
-ms.assetid: 0974eb40-db98-4149-a50d-48db46817076
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 99c7490c4bf842da119a3a0abd4623c64d720ac8
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0f95b0d62bc81a8dddc72239491a05ca78945490
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462213"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100393383"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Мастер копирования фабрики данных Azure
 
@@ -115,7 +109,7 @@ ms.locfileid: "96462213"
         8.  Закройте браузер и перезапустите.
     - Если вы используете браузер Firefox, следуйте приведенным ниже инструкциям, чтобы добавить исключение "файлы cookie".
         1. В меню Firefox выберите **Сервис**  >  **Параметры**.
-        2. В **Privacy** разделе  >  **Журнал** конфиденциальности можно увидеть, что текущая настройка **использует настраиваемые параметры для журнала**.
+        2. В разделе  >  **Журнал** конфиденциальности можно увидеть, что текущая настройка **использует настраиваемые параметры для журнала**.
         3. Если вы **принимаете сторонние файлы cookie**, текущий параметр может быть **никогда не** выбран, а затем следует щелкнуть **исключения** справа, чтобы добавить следующие сайты.
             - https://login.microsoftonline.com
             - https://login.windows.net
@@ -132,5 +126,5 @@ ms.locfileid: "96462213"
     3.  Попробуйте использовать другой браузер. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Краткое пошаговое руководство по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных см. в [этой статье](data-factory-copy-data-wizard-tutorial.md).

@@ -6,16 +6,16 @@ author: tamram
 services: storage
 ms.author: tamram
 ms.reviewer: ozgun
-ms.date: 09/14/2020
+ms.date: 02/10/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: bf2696d329f852741c42219219600dc773090623
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 61bcf7abca2860078bd89da070309a0057360f0c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590721"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100370229"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-queue-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным очереди
 
@@ -28,6 +28,9 @@ ms.locfileid: "97590721"
 Расширения службы хранилища Azure поддерживаются для операций с данными очереди. Действия, которые можно вызывать, зависят от разрешений, предоставленных субъекту безопасности Azure AD, с помощью которого вы входите в PowerShell. Разрешения для очередей назначаются через Azure RBAC. Например, если вы назначили роль **читателя данных очереди** , то можете выполнять команды сценариев, считывающие данные из очереди. Если роль **участника данных очереди** назначена, можно выполнять команды сценариев, которые считывают, записывают или удаляют очередь или содержащиеся в них данные.
 
 Дополнительные сведения о разрешениях, необходимых для каждой операции службы хранилища Azure в очереди, см. в разделе [операции хранилища вызовов с токенами OAuth](/rest/api/storageservices/authorize-with-azure-active-directory#call-storage-operations-with-oauth-tokens).
+
+> [!IMPORTANT]
+> Если учетная запись хранения заблокирована с блокировкой Azure Resource Manager **только для чтения** , операция " [список ключей](/rest/api/storagerp/storageaccounts/listkeys) " не разрешена для этой учетной записи хранения. **Список ключей** является операцией POST, и все операции POST предотвращаются, если для учетной записи настроена блокировка **только для чтения** . По этой причине, если учетная запись заблокирована с блокировкой **только для чтения** , пользователи, которым не назначены ключи учетной записи, должны использовать учетные данные Azure AD для доступа к данным очереди. В PowerShell включите параметр, `-UseConnectedAccount` чтобы создать объект **AzureStorageContext** с учетными данными Azure AD.
 
 ## <a name="call-powershell-commands-using-azure-ad-credentials"></a>Вызов команд PowerShell с использованием учетных данных Azure AD
 
@@ -80,7 +83,7 @@ ms.locfileid: "97590721"
     New-AzStorageQueue -Name $queueName -Context $ctx
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Назначение роли Azure для доступа к данным BLOB-объектов и очередей с помощью PowerShell](../common/storage-auth-aad-rbac-powershell.md)
 - [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](../common/storage-auth-aad-msi.md)

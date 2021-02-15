@@ -299,6 +299,8 @@
       href: partner-center-portal/downloads-dashboard.md
     - name: Панель мониторинга оценок и рецензий
       href: partner-center-portal/ratings-reviews.md
+    - name: Обнаружение аномалий для выставления счетов по тарифу
+      href: anomaly-detection.md
     - name: Часто задаваемые вопросы об аналитике
       href: analytics-faq.md
 - name: Политики и условия

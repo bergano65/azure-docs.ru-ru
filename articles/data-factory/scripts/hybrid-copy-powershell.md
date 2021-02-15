@@ -1,21 +1,18 @@
 ---
 title: Копирование данных из локальной среды в Azure с помощью PowerShell
 description: Этот сценарий PowerShell копирует данные из базы данных SQL Server в другое хранилище BLOB-объектов Azure.
-services: data-factory
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: article
 ms.author: jingwang
 author: linda33wj
-manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 10/31/2017
-ms.openlocfilehash: bc10017da8561cda09658ec9380cc82095f3ef94
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 34c5497a8b059260dfe60e8015e62c0f1511f021
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632238"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100373391"
 ---
 # <a name="use-powershell-to-create-a-data-factory-pipeline-to-copy-data-from-sql-server-to-azure"></a>Создание конвейера фабрики данных для копирования данных из SQL Server в Azure с помощью PowerShell
 
@@ -29,7 +26,7 @@ ms.locfileid: "92632238"
 
 - **SQL Server.** В этом примере в качестве **исходного** хранилища данных используется база данных SQL Server.
 - **Учетная запись хранения Azure.** В этом примере в качестве **места назначения и приемника** будет использоваться хранилище BLOB-объектов Azure. Если у вас нет учетной записи хранения Azure, создайте ее, как описано в статье [Создание учетной записи хранения](../../storage/common/storage-account-create.md) .
-- Локальная **Среда выполнения интеграции** . Скачайте MSI-файл из [центра загрузки](https://www.microsoft.com/download/details.aspx?id=39717) и запустите его, чтобы установить локальную среду выполнения интеграции на компьютере.  
+- Локальная **Среда выполнения интеграции**. Скачайте MSI-файл из [центра загрузки](https://www.microsoft.com/download/details.aspx?id=39717) и запустите его, чтобы установить локальную среду выполнения интеграции на компьютере.  
 
 ### <a name="create-sample-database-in-sql-server"></a>Создание примера базы данных в SQL Server
 1. В SQL Server базе данных создайте таблицу с именем **EMP** с помощью следующего скрипта SQL:
