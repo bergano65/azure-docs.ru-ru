@@ -14,32 +14,35 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: yelevin
-ms.openlocfilehash: 0dccd8ac4f852688bf7e59e7ed96c4458c08d18b
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 3f3e945a00ec7bba75deebb56118d45aa7ff571d
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784734"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530728"
 ---
 # <a name="enable-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Включение анализа поведения пользователей и сущностей (УЕБА) в Azure Sentinel 
 
 > [!IMPORTANT]
 >
-> - Функции УЕБА и Entity Pages теперь доступны в **общем доступе** в **_все_* _ географические регионах и регионы Azure Sentinel.
+> - Функции УЕБА и Entity Pages теперь доступны в **общедоступной** части **_всех_** географических регионов и регионах Azure Sentinel.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы включить или отключить эту функцию (эти компоненты не требуются для использования этой функции):
 
 - Пользователь должен быть членом Azure Active Directory вашей организации, а не гостевым пользователем.
 
-- Пользователю должны быть назначены роли "_ *глобального администратора*" или " **администратор безопасности** " в Azure AD.
+- Пользователю должны быть назначены роли **глобального администратора** или **администратора безопасности** в Azure AD.
 
 - Пользователю должна быть назначена по крайней мере одна из следующих **ролей Azure** (дополнительные [сведения об Azure RBAC](roles.md)).
     - **Участник Sentinel Azure** на уровнях рабочей области или группы ресурсов.
     - **Log Analytics участника** на уровне группы ресурсов или подписки.
 
 - К рабочей области не должны быть применены блокировки ресурсов Azure. Дополнительные [сведения о блокировке ресурсов Azure](../azure-resource-manager/management/lock-resources.md).
+
+> [!NOTE]
+> Для добавления функции УЕБА в Azure Sentinel специальная лицензия не требуется, но могут **взиматься дополнительные** платы.
 
 ## <a name="how-to-enable-user-and-entity-behavior-analytics"></a>Как включить анализ поведения пользователей и сущностей
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: e5009e59477e6862c4441090a6480075c9e22385
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: b713a19cbe572998bb6e5050ab2d7721a844f07a
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526789"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530456"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
@@ -49,11 +49,11 @@ ms.locfileid: "100526789"
 ИДЕНТИФИКАТОР связи должен быть уникальным в пределах заданного исходного двойника. Оно не обязательно должно быть глобально уникальным.
 Например, для двойника *foo* каждый конкретный идентификатор связи должен быть уникальным. Однако другая двойниканая *черта* может иметь исходящее отношение, совпадающее с идентификатором связи *foo* .
 
-В следующем примере кода показано, как создать связь в вашем экземпляре Digital двойников для Azure.
+В следующем примере кода показано, как создать связь в вашем экземпляре Digital двойников для Azure. Он использует вызов пакета SDK (выделенный) в пользовательском методе, который может присутствовать в контексте более крупной программы.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="CreateRelationshipMethod":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="CreateRelationshipMethod" highlight="13":::
 
-В методе Main теперь можно вызвать пользовательскую функцию для создания связи, которая _содержит_ следующее: 
+Теперь эту пользовательскую функцию можно вызвать для создания связи, которая _содержит_ такой объект: 
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseCreateRelationship":::
 
@@ -82,9 +82,9 @@ ms.locfileid: "100526789"
 
 Он возвращает `Azure.Pageable<T>` или `Azure.AsyncPageable<T>` , в зависимости от того, используется ли синхронная или асинхронная версия вызова.
 
-Ниже приведен пример, в котором извлекается список связей:
+Ниже приведен пример, в котором извлекается список связей. Он использует вызов пакета SDK (выделенный) в пользовательском методе, который может присутствовать в контексте более крупной программы.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindOutgoingRelationshipsMethod":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindOutgoingRelationshipsMethod" highlight="8":::
 
 Теперь можно вызвать этот пользовательский метод, чтобы увидеть исходящие отношения двойников следующим образом:
 
@@ -96,11 +96,12 @@ ms.locfileid: "100526789"
 
 В Azure Digital двойников также есть API для поиска всех **входящих** отношений с заданным двойника. Это часто полезно для обратных переходов или при удалении двойника.
 
-Предыдущий пример кода был сосредоточен на поиске исходящих связей от двойника. Следующий пример структурирован аналогично, но находит *Входящие* связи с двойника.
+>[!NOTE]
+> `IncomingRelationship` вызовы не возвращают полный текст связи. Дополнительные сведения о `IncomingRelationship` классе см. в его [справочной документации](/dotnet/api/azure.digitaltwins.core.incomingrelationship?view=azure-dotnet&preserve-view=true).
 
-Обратите внимание, что `IncomingRelationship` вызовы не возвращают полный текст связи.
+Пример кода в предыдущем разделе посвящен поиску исходящих связей от двойника. Следующий пример структурирован аналогично, но находит *Входящие* связи с двойника. В этом примере также используется вызов пакета SDK (выделено) внутри пользовательского метода, который может появиться в контексте более крупной программы.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindIncomingRelationshipsMethod":::
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FindIncomingRelationshipsMethod" highlight="8":::
 
 Теперь можно вызвать этот пользовательский метод, чтобы увидеть входящие отношения двойников следующим образом:
 
@@ -108,11 +109,11 @@ ms.locfileid: "100526789"
 
 ### <a name="list-all-twin-properties-and-relationships"></a>Вывод списка всех свойств и отношений двойника
 
-Используя описанные выше методы для перечисления входящих и исходящих отношений с двойника, можно создать метод, который выводит полные сведения двойника, включая свойства двойника и оба типа связей. Ниже приведен пример пользовательского метода, показывающего, как это сделать.
+Используя описанные выше методы для перечисления входящих и исходящих отношений с двойника, можно создать метод, который выводит полные сведения двойника, включая свойства двойника и оба типа связей. Ниже приведен пример пользовательского метода, который показывает, как объединить приведенные выше пользовательские методы для этой цели.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="FetchAndPrintMethod":::
 
-Теперь эту пользовательскую функцию можно вызвать в методе Main следующим образом: 
+Теперь можно вызвать эту пользовательскую функцию следующим образом: 
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UseFetchAndPrint":::
 
@@ -125,7 +126,9 @@ ms.locfileid: "100526789"
 
 Обязательные параметры для клиентского вызова — это идентификатор источника двойника (двойника, где исходит связь), идентификатор связи для обновления и документ [исправления JSON](http://jsonpatch.com/) , содержащий свойства и новые значения, которые необходимо обновить.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UpdateRelationshipMethod":::
+Ниже приведен пример кода, демонстрирующий использование этого метода. В этом примере используется вызов пакета SDK (выделено) внутри пользовательского метода, который может появиться в контексте более крупной программы.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="UpdateRelationshipMethod" highlight="6":::
 
 Ниже приведен пример вызова этого пользовательского метода, который передает документ исправления JSON со сведениями для обновления свойства.
 
@@ -135,7 +138,9 @@ ms.locfileid: "100526789"
 
 Первый параметр указывает исходный двойника (двойника, где исходит связь). Другой параметр — идентификатор связи. Вам потребуется идентификатор двойника и идентификатор связи, так как идентификаторы связей уникальны только в пределах области двойника.
 
-:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="DeleteRelationshipMethod":::
+Ниже приведен пример кода, демонстрирующий использование этого метода. В этом примере используется вызов пакета SDK (выделено) внутри пользовательского метода, который может появиться в контексте более крупной программы.
+
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/graph_operations_sample.cs" id="DeleteRelationshipMethod" highlight="5":::
 
 Теперь можно вызвать этот пользовательский метод, чтобы удалить связь следующим образом:
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/25/2020
 ms.author: yelevin
-ms.openlocfilehash: c375595951eb760d5341db424c5572719b97046a
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: aa57963ce369e4c8f84f4aae5f99fe343181ff6b
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93103132"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530507"
 ---
 # <a name="connect-cyberark-enterprise-password-vault-epv-to-azure-sentinel"></a>Подключение хранилища паролей Циберарк Enterprise (ЕПВ) к Azure Sentinel
 
@@ -36,9 +36,9 @@ ms.locfileid: "93103132"
 
 Журналы ЕПВ Циберарк отправляются из хранилища на сервер пересылки журналов на основе Linux (под управлением rsyslog или syslog-ng) с установленным агентом Log Analytics, который экспортирует журналы в Azure Sentinel. Если у вас нет такого сервера пересылки журналов, ознакомьтесь с [этими инструкциями](connect-cef-agent.md) , чтобы запустить их.
 
-1. На портале Sentinel Azure щелкните **соединители данных** , выберите **циберарк (Предварительная версия) событий хранилища ПАРОЛЕЙ предприятия (ЕПВ)** , а затем **откройте страницу соединителя** .
+1. На портале Sentinel Azure щелкните **соединители данных**, выберите **циберарк (Предварительная версия) событий хранилища ПАРОЛЕЙ предприятия (ЕПВ)** , а затем **откройте страницу соединителя**.
 
-1. Следуйте инструкциям по Циберарк ЕПВ, чтобы настроить отправку данных системного журнала на сервер пересылки журналов.
+1. Следуйте [инструкциям по ЦИБЕРАРК ЕПВ](https://docs.cyberark.com/Product-Doc/OnlineHelp/PAS/Latest/en/Content/PASIMP/DV-Integrating-with-SIEM-Applications.htm) , чтобы настроить отправку данных системного журнала на сервер пересылки журналов.
 
 1. Проверка подключения и проверка приема данных с помощью [этих инструкций](connect-cef-verify.md). После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут.
 

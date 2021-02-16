@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: 0583846fcd847e92a6f001dae828d31d9d11cb00
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: b10c47a31bf1be10c278d4d9e0dce633bc7bff6c
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567922"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530643"
 ---
 # <a name="connect-your-juniper-srx-firewall-to-azure-sentinel"></a>Подключение брандмауэра Juniper SRX к Azure Sentinel
 
@@ -31,7 +31,7 @@ ms.locfileid: "98567922"
 > [!NOTE]
 > Данные будут храниться в географическом расположении рабочей области, на которой вы используете метку Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - У вас должно быть разрешение на чтение и запись в рабочей области "Sentinel" Azure.
 
@@ -53,7 +53,7 @@ ms.locfileid: "98567922"
 
     1. Настройка собираемых журналов
 
-        - Выбор средств и серьезности в конфигурации дополнительных параметров рабочей области
+        - Выберите средства и серьезность в конфигурации агентов рабочей области.
 
     1. Настройка и подключение Juniper SRX
 
