@@ -149,4 +149,4 @@
         - name: Соответствие нормативным требованиям
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
         - name: Шифрование
-          href: translator-encryption-of-data-at-rest.md
+          href: encrypt-data-at-rest.md

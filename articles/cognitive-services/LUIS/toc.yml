@@ -413,7 +413,7 @@
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Шифрование
-      href: luis-encryption-of-data-at-rest.md
+      href: encrypt-data-at-rest.md
     - name: Настройка виртуальных сетей
       maintainContext: true
       href: ../cognitive-services-virtual-networks.md
