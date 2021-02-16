@@ -131,8 +131,8 @@
               displayName: 'Active Directory, roles, permissions'
               href: how-to-create-and-manage-users.md
             - name: Определение глобального контроля доступа пользователей
-              displayName: 'business unit, site, region'
               href: how-to-define-global-user-access-control.md
+              displayName: 'business unit, site, region, user'
         - name: Выбор трафика для мониторинга
           displayName: 'Windows, Learning, Smart IT Learning, DNS, DHCP, engines, subnets'
           href: how-to-control-what-traffic-is-monitored.md
@@ -140,8 +140,8 @@
           displayName: 'disconnect, connect, activation file, sensor backup'
           href: how-to-manage-sensors-from-the-on-premises-management-console.md
         - name: Управление отдельными датчиками
-          displayName: 'activation, certificate, connect, timezone time zone, backup, restore, software update, failure'
           href: how-to-manage-individual-sensors.md
+          displayName: 'activation, certificate, SSL, TLS, connect, timezone time zone, backup, restore, software update, failure'
         - name: Управление датчиками в облаке
           href: how-to-manage-sensors-on-the-cloud.md
         - name: Управление локальной консолью управления
@@ -153,10 +153,13 @@
           items:
             - name: Изучение всех обнаруженных датчиков предприятия в данных инвентаризации устройств
               href: how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md
+              displayName: classification
             - name: Изучение обнаруженных датчиков в данных инвентаризации устройств
               href: how-to-investigate-sensor-detections-in-a-device-inventory.md
+              displayName: 'classification, Windows registry'
         - name: Работа с картой устройств датчиков
           href: how-to-work-with-the-sensor-device-map.md
+          displayName: 'connections, Purdue, zoom'
         - name: 'Работа с оповещениями, обнаруженными датчиком'
           items:
             - name: Работа с оповещениями на датчике
@@ -165,8 +168,10 @@
               href: how-to-view-alerts.md
             - name: Просмотр сведений в оповещениях
               href: how-to-view-information-provided-in-alerts.md
+              displayName: PCAP
             - name: Управление событиями оповещений
               href: how-to-manage-the-alert-event.md
+              displayName: 'PCAP, acknowledge, learn, mute, policy'
             - name: Ускорение реагирования на инциденты из оповещений
               href: how-to-accelerate-alert-incident-response.md
               displayName: 'custom, alerts, comments, groups'
@@ -175,18 +180,21 @@
               displayName: 'integration, partners, vendor, Syslog server, NetWitness,CEF, LEEF, email'
         - name: 'Анализ глобальных, региональных и локальных угроз'
           href: how-to-gain-insight-into-global-regional-and-local-threats.md
+          displayName: 'site, business unit, region, map'
         - name: Работа с оповещениями на локальной консоли управления
           href: how-to-work-with-alerts-on-premises-management-console.md
         - name: Создавать отчеты
           items:
             - name: Создание отчетов по оценке рисков
               href: how-to-create-risk-assessment-reports.md
+              displayName: 'vulnerability, security score, score'
             - name: Создание отчетов о векторах атак
               href: how-to-create-attack-vector-reports.md
             - name: Создание отчетов интеллектуального анализа данных
               href: how-to-create-data-mining-queries.md
             - name: Создание отчетов о тенденциях и статистических отчетов
-              href: how-to-create-data-mining-queries.md
+              href: how-to-create-trends-and-statistics-reports.md
+              displayName: 'widgets, charts'
         - name: Обогащение сведений об устройстве
           items:
             - name: Работа с уведомлениями об устройствах
