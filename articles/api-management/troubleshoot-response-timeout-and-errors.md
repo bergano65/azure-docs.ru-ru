@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/04/2020
 ms.author: apimpm
 ms.service: api-management
-ms.openlocfilehash: 770a8191b1b07a7ebc779b84f443ae96d66d1c97
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 6cace4a02c8d45cacbbc34e9778b5c4a78ada27f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841494"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576525"
 ---
 # <a name="troubleshooting-client-response-timeouts-and-errors-with-api-management"></a>Устранение неполадок времени ожидания ответа клиента и ошибок в службе управления API
 
@@ -24,7 +24,7 @@ ms.locfileid: "96841494"
 * Периодические ошибки HTTP 500
 * Сообщения об ошибках времени ожидания
 
-Эти симптомы являются экземплярами `BackendConnectionFailure` в [журналах Azure Monitor ресурсов](../azure-monitor/platform/resource-logs.md).
+Эти симптомы являются экземплярами `BackendConnectionFailure` в [журналах Azure Monitor ресурсов](../azure-monitor/essentials/resource-logs.md).
 
 ## <a name="cause"></a>Причина
 
@@ -81,7 +81,7 @@ ms.locfileid: "96841494"
 
 Дополнительные сведения см. в разделе [политики ограничения доступа для управления API](api-management-access-restriction-policies.md) .
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Azure Load Balancer: Устранение сбоев исходящих подключений](../load-balancer/troubleshoot-outbound-connection.md)
 * [Служба приложений Azure: Устранение неполадок с периодическими исходящими ошибками подключения](../app-service/troubleshoot-intermittent-outbound-connection-errors.md)

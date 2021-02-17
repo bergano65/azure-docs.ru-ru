@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 1818dc558ba45e318b71e1443556cc48feaede8b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1453d43707a3680380e553fe69d738b27fe5ae3a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367679"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571355"
 ---
 # <a name="troubleshoot-azure-monitor-for-windows-virtual-desktop-preview"></a>Устранение неполадок Azure Monitor для виртуальных рабочих столов Windows (Предварительная версия)
 
@@ -26,9 +26,9 @@ ms.locfileid: "100367679"
 
 - Чтобы вручную включить диагностику или получить доступ к рабочей области Log Analytics, см. статью [Отправка диагностических сведений о виртуальных рабочих столах Windows в log Analytics](diagnostics-log-analytics.md).
 - Сведения об установке расширения Log Analytics на узле вручную см. в разделе [log Analytics расширение виртуальной машины для Windows](../virtual-machines/extensions/oms-windows.md).
-- Сведения о настройке новой рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/learn/quick-create-workspace.md).
-- Сведения о добавлении или удалении счетчиков производительности см. в разделе [Настройка счетчиков производительности](../azure-monitor/platform/data-sources-performance-counters.md).
-- Сведения о настройке событий для Log Analytics рабочей области см. в разделе [Получение источников данных журнала событий Windows с помощью агента log Analytics](../azure-monitor/platform/data-sources-windows-events.md).
+- Сведения о настройке новой рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/logs/quick-create-workspace.md).
+- Сведения о добавлении или удалении счетчиков производительности см. в разделе [Настройка счетчиков производительности](../azure-monitor/agents/data-sources-performance-counters.md).
+- Сведения о настройке событий для Log Analytics рабочей области см. в разделе [Получение источников данных журнала событий Windows с помощью агента log Analytics](../azure-monitor/agents/data-sources-windows-events.md).
 
 ## <a name="my-data-isnt-displaying-properly"></a>Мои данные отображаются неправильно
 
@@ -44,7 +44,7 @@ ms.locfileid: "100367679"
 
 - Возможно, потребуется открыть исходящие порты в брандмауэре сервера, чтобы разрешить Azure Monitor отправить данные на портал, см. раздел [исходящие порты](https://docs.microsoft.com/azure/azure-monitor/app/ip-addresses). 
 
-- Не отображаются данные из последних действий? Возможно, потребуется подождать 15 минут и обновить веб-канал. Azure Monitor имеет период задержки в 15 минут для заполнения данных журнала. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](../azure-monitor/platform/data-ingestion-time.md).
+- Не отображаются данные из последних действий? Возможно, потребуется подождать 15 минут и обновить веб-канал. Azure Monitor имеет период задержки в 15 минут для заполнения данных журнала. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](../azure-monitor/logs/data-ingestion-time.md).
 
 Если вы не пропустили какие-либо сведения, но данные не отображаются должным образом, может возникнуть ошибка в запросе или источниках данных. Ознакомьтесь с известными проблемами и ограничениями. 
 
@@ -52,7 +52,7 @@ ms.locfileid: "100367679"
 
 Azure Monitor для виртуальных рабочих столов Windows использует книги Azure Monitor. Книги позволяют сохранить копию шаблона книги виртуальных рабочих столов Windows и внести собственные изменения.
 
-По умолчанию пользовательские шаблоны книг не будут автоматически внедрять обновления из группы "продукты". Дополнительные сведения см. в разделе [Устранение неполадок с использованием аналитических данных на основе книг](../azure-monitor/insights/troubleshoot-workbooks.md) и [общих сведений о книгах](../azure-monitor/platform/workbooks-overview.md).
+По умолчанию пользовательские шаблоны книг не будут автоматически внедрять обновления из группы "продукты". Дополнительные сведения см. в разделе [Устранение неполадок с использованием аналитических данных на основе книг](../azure-monitor/insights/troubleshoot-workbooks.md) и [общих сведений о книгах](../azure-monitor/visualize/workbooks-overview.md).
 
 ## <a name="i-cant-interpret-the-data"></a>Не удается интерпретировать данные
 
@@ -91,6 +91,6 @@ Azure Monitor для виртуальных рабочих столов Windows 
 - Время подключения включает время, необходимое пользователям для ввода учетных данных. Это соответствует интерфейсу, но в некоторых случаях может показывать ложные пиковые значения. 
     
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы не знаете, как интерпретировать данные или хотите узнать больше об общих терминах, ознакомьтесь с [Azure Monitor для глоссария виртуальных рабочих столов Windows](azure-monitor-glossary.md). Если вы хотите узнать, как настроить и использовать Azure Monitor для виртуальных рабочих столов Windows, см. статью [использование Azure Monitor для виртуальных рабочих столов Windows для мониторинга развертывания](azure-monitor.md).

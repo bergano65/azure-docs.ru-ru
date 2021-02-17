@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/30/2020
 ms.author: cfowler
 ms.custom: include file
-ms.openlocfilehash: c6352ee9d29e4e45aa4be449046a0715fee06047
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 9a003b5c42a6ef4c699a3768d15ae08f86d56e52
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165915"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367302"
 ---
 ## <a name="create-a-new-cdn-profile"></a>Создание нового профиля сети CDN
 
@@ -31,7 +31,7 @@ ms.locfileid: "98165915"
    
     | Параметр  | Значение |
     | -------- | ----- |
-    | **имя**; | Введите *cdn-profile-123* в качестве имени профиля. Это имя должно быть глобально уникальным. Если оно уже используется, введите другое имя. |
+    | **имя**; | Введите *cdn-profile-123* в качестве имени профиля. |
     | **Подписка** | В раскрывающемся списке выберите подписку Azure. |
     | **Группа ресурсов** | Щелкните **Создать новую** и введите *CDNQuickstart-rg* в качестве имени группы ресурсов или щелкните **Использовать существующую** и выберите *CDNQuickstart-rg*, если группа ресурсов уже существует. | 
     | **Расположение группы ресурсов** | В раскрывающемся списке выберите близкое к вам расположение. |

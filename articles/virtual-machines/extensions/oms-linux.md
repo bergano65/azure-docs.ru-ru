@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: f75ad90a562a39f940e1006a2e4d9123eff2b47c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 202cdc341ce31c2347552e6fbc430c679ef28d7f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202187"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580097"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Log Analytics для Linux
 
@@ -37,7 +37,7 @@ ms.locfileid: "98202187"
 
 ### <a name="operating-system"></a>Операционная система
 
-Дополнительные сведения о поддерживаемых дистрибутивах Linux см. в статье [обзор Azure Monitorных агентов](../../azure-monitor/platform/agents-overview.md#supported-operating-systems) .
+Дополнительные сведения о поддерживаемых дистрибутивах Linux см. в статье [обзор Azure Monitorных агентов](../../azure-monitor/agents/agents-overview.md#supported-operating-systems) .
 
 ### <a name="agent-and-vm-extension-version"></a>Версия агента и расширения виртуальной машины
 Приведенная ниже таблица содержит сопоставление версий расширения виртуальной машины Log Analytics и пакетов агента Log Analytics для каждого выпуска. В ней также указана ссылка на заметки о выпуске для версии пакета агента Log Analytics. Заметки о выпуске содержат сведения об исправлениях ошибок и новых функциях, доступных в данном выпуске агента.  
@@ -76,7 +76,7 @@ ms.locfileid: "98202187"
 
 ## <a name="extension-schema"></a>Схема расширения
 
-В следующем объекте JSON показана схема для расширения агента Log Analytics. Расширение требует идентификатор и ключ целевой рабочей области Log Analytics, которые можно найти в [рабочей области Log Analytics](../../azure-monitor/learn/quick-collect-linux-computer.md#obtain-workspace-id-and-key) на портале Azure. Так как ключ рабочей области должен рассматриваться в качестве конфиденциальных данных, его следует хранить в защищенной конфигурации параметров. Данные защищенных параметров расширения виртуальной машины Azure зашифрованы. Они расшифровываются только на целевой виртуальной машине. Обратите внимание, что в **workspaceId** и **workspaceKey** учитывается регистр знаков.
+В следующем объекте JSON показана схема для расширения агента Log Analytics. Расширение требует идентификатор и ключ целевой рабочей области Log Analytics, которые можно найти в [рабочей области Log Analytics](../../azure-monitor/vm/quick-collect-linux-computer.md#obtain-workspace-id-and-key) на портале Azure. Так как ключ рабочей области должен рассматриваться в качестве конфиденциальных данных, его следует хранить в защищенной конфигурации параметров. Данные защищенных параметров расширения виртуальной машины Azure зашифрованы. Они расшифровываются только на целевой виртуальной машине. Обратите внимание, что в **workspaceId** и **workspaceKey** учитывается регистр знаков.
 
 ```json
 {
@@ -221,7 +221,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 | 53 | Сбой расширения из-за отсутствующих или неверных параметров конфигурации | Проверьте выходные данные и журналы, чтобы получить дополнительные сведения о том, что пошло не так. Кроме того, проверьте правильность идентификатора рабочей области и убедитесь, что компьютер подключен к Интернету. |
 | 55 | Не удается подключиться к службе Azure Monitor, отсутствуют необходимые пакеты или заблокирован менеджер пакетов dpkg| Убедитесь, что система либо имеет доступ к Интернету, либо что предоставлен допустимый прокси-сервер HTTP. Кроме того, проверьте правильность идентификатора рабочей области и убедитесь, что установлены служебные программы для залистывания и tar. |
 
-Дополнительные сведения об устранении неполадок см. в [руководстве по устранению неполадок агента Log Analytics для Linux](../../azure-monitor/platform/vmext-troubleshoot.md).
+Дополнительные сведения об устранении неполадок см. в [руководстве по устранению неполадок агента Log Analytics для Linux](../../azure-monitor/visualize/vmext-troubleshoot.md).
 
 ### <a name="support"></a>Поддержка
 

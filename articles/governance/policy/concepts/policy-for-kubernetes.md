@@ -3,12 +3,12 @@ title: Сведения о политике Azure для Kubernetes
 description: Узнайте, как Политика Azure использует Rego и Open Policy Agent для управления кластерами, работающими под управлением Kubernetes в Azure или в локальной среде.
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: f25b64bc28535d125c7883f16c9e747d6250ca96
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 0aaf610cd5712ee195ed2a4108cf9e5ca9c65183
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789744"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577094"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Общие сведения о политике Azure для кластеров Kubernetes
 
@@ -447,7 +447,7 @@ kubectl get pods -n gatekeeper-system
 ## <a name="logging"></a>Logging
 
 И объект pod _azure-policy_ и _gatekeeper_, являющиеся контроллерами/контейнерами Kubernetes, хранят журналы в кластере Kubernetes. Журналы можно предоставить на странице **Insights** (Аналитические сведения) кластера Kubernetes.
-Дополнительные сведения см. в статье [Мониторинг производительности кластера Kubernetes с помощью Azure Monitor для контейнеров](../../../azure-monitor/insights/container-insights-analyze.md).
+Дополнительные сведения см. в статье [Мониторинг производительности кластера Kubernetes с помощью Azure Monitor для контейнеров](../../../azure-monitor/containers/container-insights-analyze.md).
 
 Чтобы просмотреть журналы надстроек, используйте `kubectl`:
 

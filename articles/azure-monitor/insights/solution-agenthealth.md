@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/06/2020
-ms.openlocfilehash: 4f14f006283b7430458d67d2bd3bee787c08411d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a498c229acce9359acfb4593ec5f833000ca2c39
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87326024"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573369"
 ---
 #  <a name="agent-health-solution-in-azure-monitor"></a>Работоспособность агентов решение в Azure Monitor
 Решение Работоспособность агентов в Azure помогает понять, что для всех агентов, отправляющих отчеты непосредственно в рабочую область Log Analytics в Azure Monitor или группу управления System Center Operations Manager, подключенную к Azure Monitor, которая не отвечает и не отправляет операционные данные.  Вы также можете отслеживать число развернутых агентов и их географическое распределение, а также выполнять другие запросы, чтобы знать о распределении агентов, развернутых в Azure, других облачных средах или в локальной среде.    
 
 ## <a name="prerequisites"></a>Предварительные требования
-Перед развертыванием этого решения убедитесь, что у вас есть поддерживаемые [агенты Windows](../platform/agent-windows.md), которые отправляют отчеты в рабочую область Log Analytics или [группу управления Operations Manager](../platform/om-agents.md), интегрированную с вашей рабочей областью.
+Перед развертыванием этого решения убедитесь, что у вас есть поддерживаемые [агенты Windows](../agents/agent-windows.md), которые отправляют отчеты в рабочую область Log Analytics или [группу управления Operations Manager](../agents/om-agents.md), интегрированную с вашей рабочей областью.
 
 ## <a name="solution-components"></a>Компоненты решения
 Это решение состоит из следующих ресурсов, добавленных в вашу рабочую область, и подключенных напрямую агентов или подключенной группы управления Operations Manager.
@@ -28,7 +28,7 @@ ms.locfileid: "87326024"
 * Пакет аналитики канала Direct оценки работоспособности помощника Microsoft System Center (Microsoft.IntelligencePacks.HealthAssessmentDirect)
 * Пакет аналитики канала сервера оценки работоспособности помощника Microsoft System Center (Microsoft.IntelligencePacks.HealthAssessmentViaServer).  
 
-Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../platform/om-agents.md).
+Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../agents/om-agents.md).
 
 ## <a name="configuration"></a>Конфигурация
 Добавьте решение для мониторинга работоспособности агентов в рабочую область Log Analytics, как описано в статье [Добавление решений](solutions.md). Дополнительная настройка не требуется.
@@ -110,5 +110,5 @@ ms.locfileid: "87326024"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения о создании оповещений из запросов журналов см. [в Azure Monitor](../platform/alerts-overview.md) . 
+* Дополнительные сведения о создании оповещений из запросов журналов см. [в Azure Monitor](../alerts/alerts-overview.md) . 
 

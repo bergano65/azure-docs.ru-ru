@@ -1,12 +1,17 @@
 ---
-ms.openlocfilehash: b241bda12881edd6482e58514cfb936ee6904894
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3196d377c09ca0cce24093710bc4be13fb21d2e3
+ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88682373"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99531222"
 ---
 Убедитесь, что вы выполнили шаги для [Подготовки к мониторингу событий](../../../detect-motion-emit-events-quickstart.md#prepare-to-monitor-events).
 
 ![Запуск мониторинга встроенной конечной точки события](../../../media/quickstarts/start-monitoring-iothub-events.png)
 
+> [!NOTE]
+> Возможно, вам будет предложено ввести сведения о встроенной конечной точке для Центра Интернета вещей. Чтобы получить эти сведения, на портале Azure перейдите в Центр Интернета вещей и найдите пункт **Встроенные конечные точки** в области навигации слева. Щелкните этот пункт и найдите значение **конечной точки, совместимой с центрами событий,** в разделе **Конечная точка, совместимая с концентратором событий**. В поле скопируйте текст и используйте его. Значение конечной точки будет приблизительно таким:  
+    ```
+    Endpoint=sb://iothub-ns-xxx.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=XXX;EntityPath=<IoT Hub name>
+    ```

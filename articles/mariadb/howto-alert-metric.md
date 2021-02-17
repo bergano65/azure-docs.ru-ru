@@ -3,15 +3,15 @@ title: Настройка оповещений метрик — портал Azu
 description: В этой статье описывается, как настроить уведомления на основе метрик для Базы данных Azure для MariaDB и получить к ним доступ с помощью портала Azure.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 1e7dafaba6b6792afdec1f1866629fac9ba5a577
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 689e830d2486420be8d551d1f88dccba8d982428
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664424"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593060"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mariadb"></a>Настройка оповещений на основе метрик для Базы данных Azure для MariaDB на портале Azure
 
@@ -25,8 +25,8 @@ ms.locfileid: "98664424"
 * Вызов webhook.
 
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
-* [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Портал Azure](../azure-monitor/alerts/alerts-metric.md#create-with-azure-portal)
+* [Azure CLI](../azure-monitor/alerts/alerts-metric.md#with-azure-cli)
 * [REST API Azure Monitor](/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric"></a>Создание правила генерации оповещений на основе метрики
@@ -84,6 +84,6 @@ ms.locfileid: "98664424"
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
 
-## <a name="next-steps"></a>Следующие шаги
-* Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
-* Прочитайте [обзор сбора метрики](../azure-monitor/platform/data-platform.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.
+## <a name="next-steps"></a>Дальнейшие шаги
+* Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/alerts/alerts-webhooks.md).
+* Прочитайте [обзор сбора метрики](../azure-monitor/data-platform.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

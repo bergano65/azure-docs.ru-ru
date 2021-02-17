@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: terrylan
-ms.openlocfilehash: 8a33e9d462f3105bfee295ac82384a38325f7c7c
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 27443eb9c04c69567b3a1374f11e8b53837040f2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498801"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585409"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "96498801"
 |--------|--------|
 |[Центр&nbsp;безопасности&nbsp;Azure](../../security-center/security-center-introduction.md)| Облачное решение защиты рабочих нагрузок обеспечивает управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок.|
 |[Azure Key Vault](../../key-vault/general/overview.md);| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
-|[Журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md)|Служба мониторинга собирает телеметрию и другие данные, а также предоставляет язык запросов и модуль аналитики для доставки оперативных аналитических сведений для приложений и ресурсов. Решение можно использовать отдельно или совместно с другими службами, например центром обеспечения безопасности. |
+|[Журналы Azure Monitor](../../azure-monitor/logs/log-query-overview.md)|Служба мониторинга собирает телеметрию и другие данные, а также предоставляет язык запросов и модуль аналитики для доставки оперативных аналитических сведений для приложений и ресурсов. Решение можно использовать отдельно или совместно с другими службами, например центром обеспечения безопасности. |
 |[Лаборатории для разработки и тестирования Azure](../../devtest-labs/devtest-lab-overview.md)|Это служба, помогающая разработчикам и тест-инженерам быстро создавать среды в Azure при минимальных потерях и контроле издержек.  |
 
 <!---|[Azure&nbsp;Disk&nbsp;Encryption](/azure/azure-security-disk-encryption-overview)| THIS WILL GO TO THE NEW OVERVIEW TOPIC MEGHAN STEWART IS WRITING|--->
@@ -71,7 +71,7 @@ ms.locfileid: "96498801"
 | [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)|Облачный репозиторий аутентификации, который поддерживает несколько клиентов, облачный каталог и несколько служб управления удостоверениями в рамках Azure.  |
 | [Azure Active Directory B2C](../../active-directory-b2c/overview.md)|Это служба управления идентификацией, которая позволяет администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений на основе Azure.   |
 | [Доменные службы Azure Active Directory](../../active-directory-domain-services/overview.md)| Облачная и управляемая версия доменных служб Active Directory. |
-| [Многофакторная идентификация Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
+| [Многофакторная идентификация Azure AD](../../active-directory/authentication/concept-mfa-howitworks.md)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
 
 ## <a name="backup-and-disaster-recovery"></a>Резервное копирование и аварийное восстановление
 |Служба|Описание|

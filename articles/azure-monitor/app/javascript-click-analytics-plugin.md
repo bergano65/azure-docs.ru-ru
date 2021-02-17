@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: lagayhar
-ms.openlocfilehash: b2e9c267b0a3723c9ac7b3edd49e23b95741962f
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 5ad3e1a5a4ff47fe3d5fee8b8bc79235838995b8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98660459"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593633"
 ---
 # <a name="click-analytics-auto-collection-plugin-for-application-insights-javascript-sdk"></a>Щелкните подключаемый модуль автосбора аналитики для Application Insights пакет SDK для JavaScript.
 
@@ -87,7 +87,7 @@ appInsights.loadAppInsights();
 | Теги              | [икустомдататагс](#icustomdatatags)| null    | Пользовательские теги данных, предоставленные для переопределения тегов по умолчанию, используемых для сбора данных по щелчку.                                                           |
 | урлколлексаш        | Логическое                            | false   | Включает ведение журнала значений после символа "#" URL-адреса.                                                                          |
 | урлколлекткуери       | Логическое                            | false   | Включает ведение журнала строки запроса URL-адреса.                                                                                      |
-| бехавиорвалидатор     | Функция                           | null  | Функция обратного вызова, используемая для `data-*-bhvr` проверки значения. Дополнительные сведения см. в [разделе бехавиорвалидатор](#behaviorvalidator).|
+| бехавиорвалидатор     | Компонент                           | null  | Функция обратного вызова, используемая для `data-*-bhvr` проверки значения. Дополнительные сведения см. в [разделе бехавиорвалидатор](#behaviorvalidator).|
 | дефаултригхткликкбхвр | строка (или) номер                 | ''      | Значение поведения по умолчанию при возникновении события щелчка правой кнопкой мыши. Это значение будет переопределено, если элемент имеет `data-*-bhvr` атрибут. |
 | дропинвалидевентс     | Логическое                            | false   | Флаг для удаления событий, которые не имеют полезных данных по щелчку.                                                                                   |
 
@@ -95,9 +95,9 @@ appInsights.loadAppInsights();
 
 | Имя               | Тип     | По умолчанию | Описание                                                                             |
 | ------------------ | -------- | ------- | --------------------------------------------------------------------------------------- |
-| pageName           | Функция | null    | Функция для переопределения поведения записи pageName по умолчанию.                           |
-| пажеактионпажетагс | Функция | null    | Функция обратного вызова для дополнения Пажетагс по умолчанию, собираемого во время события Пажеактион.  |
-| contentName        | Функция | null    | Функция обратного вызова для заполнения настраиваемого contentName.                                 |
+| pageName           | Компонент | null    | Функция для переопределения поведения записи pageName по умолчанию.                           |
+| пажеактионпажетагс | Компонент | null    | Функция обратного вызова для дополнения Пажетагс по умолчанию, собираемого во время события Пажеактион.  |
+| contentName        | Компонент | null    | Функция обратного вызова для заполнения настраиваемого contentName.                                 |
 
 ### <a name="icustomdatatags"></a>икустомдататагс
 
@@ -310,9 +310,9 @@ appInsights.loadAppInsights();
 
 [Простое веб-приложение с включенным подключаемым модулем автоматической коллекции Click Analytics](https://go.microsoft.com/fwlink/?linkid=2152871).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [репозиторием GitHub](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-clickanalytics-js) и [пакетом NPM](https://www.npmjs.com/package/@microsoft/applicationinsights-clickanalytics-js) для подключаемого модуля автосбора данных Click Analytics.
 - Используйте [Анализ событий в процессе использования](usage-segmentation.md) , чтобы анализировать верхние щелчки и срезы по доступным измерениям.
-- Найдите элемент данные в поле содержимое в атрибуте customDimensions в таблице CustomEvents в [log Analytics](../log-query/log-analytics-tutorial.md#write-a-query). Дополнительные рекомендации см. в разделе [пример приложения](https://go.microsoft.com/fwlink/?linkid=2152871) .
-- Создайте [книгу](../platform/workbooks-overview.md) для создания пользовательских визуализаций по щелчку данных.
+- Найдите элемент данные в поле содержимое в атрибуте customDimensions в таблице CustomEvents в [log Analytics](../logs/log-analytics-tutorial.md#write-a-query). Дополнительные рекомендации см. в разделе [пример приложения](https://go.microsoft.com/fwlink/?linkid=2152871) .
+- Создайте [книгу](../visualize/workbooks-overview.md) для создания пользовательских визуализаций по щелчку данных.

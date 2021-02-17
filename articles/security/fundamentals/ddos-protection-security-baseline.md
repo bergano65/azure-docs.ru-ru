@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b4b2a3bf8c9a3a2e2ec7f1b22785a037f8dedc60
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 21ae8986761483658f5ac4254e4bb378e0bc4ba9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98873966"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575056"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Базовый план безопасности Azure для Azure от атак DDoS Protection Standard
 
@@ -26,7 +26,7 @@ ms.locfileid: "98873966"
 
 **Руководство**. Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, концентратор событий Azure или учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, выполненных в планах защиты Azure от атак DDoS на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для экземпляров защиты Azure от атак DDoS.
 
-- [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -40,7 +40,7 @@ ms.locfileid: "98873966"
 
 - [Просмотр и настройка журнала диагностики атак DDoS](../../ddos-protection/diagnostic-logging.md)
 
-- [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -50,7 +50,7 @@ ms.locfileid: "98873966"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с планами защиты Azure от атак DDoS в соответствии с нормативными требованиями Организации.
 
-- [Настройка параметров хранения журнала](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -62,9 +62,9 @@ ms.locfileid: "98873966"
 
 - [Сведения о том, как получить доступ к телеметрии, журналам и службе анализа атак для стандартной службы защиты от атак DDoS](../../ddos-protection/telemetry.md)
 
-- [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../../azure-monitor/essentials/activity-log.md)
 
-- [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../../azure-monitor/platform/activity-log.md)
+- [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -80,7 +80,7 @@ ms.locfileid: "98873966"
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-- [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-log.md)
+- [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../../azure-monitor/alerts/alerts-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -276,7 +276,7 @@ ms.locfileid: "98873966"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в планах защиты Azure от атак DDoS, а также в других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

@@ -1,19 +1,19 @@
 ---
-title: Планирование емкости и масштабирование для Azure Service Fabric
+title: Планирование ресурсов и масштабирование для Azure Service Fabric
 description: Рекомендации по планированию и масштабированию кластеров и приложений Service Fabric.
 author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d7d9ed8fa695c636e7aaf36fd034babb4de012d9
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 32a9c26bb9e89cf4057cc753b02ad3c006d0bae6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784686"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595079"
 ---
-# <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Планирование емкости и масштабирование для Azure Service Fabric
+# <a name="capacity-planning-and-scaling-for-azure-service-fabric"></a>Планирование ресурсов и масштабирование для Azure Service Fabric
 
 Перед созданием кластера Azure Service Fabric или масштабирования ресурсов вычислений, в которых размещается кластер, важно спланировать емкость. См. дополнительные сведения о [планировании загрузки кластера Service Fabric](./service-fabric-cluster-capacity.md). Дополнительные рекомендации по масштабируемости кластера см. в статье [Service Fabric рекомендации по масштабируемости](/azure/architecture/reference-architectures/microservices/service-fabric#scalability-considerations).
 
@@ -26,7 +26,7 @@ ms.locfileid: "98784686"
 
 * Если развертывание шаблонов Resource Manager с объявленной емкостью не подходит для вашего варианта использования.
      
-   В дополнение к ручному масштабированию можно настроить [конвейер непрерывной интеграции и доставки в Azure DevOps Services с помощью проектов развертывания группы ресурсов Azure](../azure-resource-manager/templates/add-template-to-azure-pipelines.md). Этот конвейер обычно запускается приложением логики, которое использует метрики производительности виртуальной машины, запрашиваемые из [Azure Monitor REST API](../azure-monitor/platform/rest-api-walkthrough.md). Конвейер эффективно масштабируется на основе любых нужных метрик, а оптимизация для шаблонов диспетчер ресурсов.
+   В дополнение к ручному масштабированию можно настроить [конвейер непрерывной интеграции и доставки в Azure DevOps Services с помощью проектов развертывания группы ресурсов Azure](../azure-resource-manager/templates/add-template-to-azure-pipelines.md). Этот конвейер обычно запускается приложением логики, которое использует метрики производительности виртуальной машины, запрашиваемые из [Azure Monitor REST API](../azure-monitor/essentials/rest-api-walkthrough.md). Конвейер эффективно масштабируется на основе любых нужных метрик, а оптимизация для шаблонов диспетчер ресурсов.
 * За один раз необходимо горизонтальное масштабирование только одного узла масштабируемого набора виртуальных машин.
    
    Для горизонтального масштабирования по трем или более узлам необходимо [масштабировать кластер Service Fabric, добавив масштабируемый набор виртуальных машин](virtual-machine-scale-set-scale-node-type-scale-out.md). Это самый надежный способ масштабирования и масштабирования масштабируемых наборов виртуальных машин по горизонтали, по одному узлу за раз.
@@ -42,7 +42,7 @@ ms.locfileid: "98784686"
 
 ## <a name="vertical-scaling-considerations"></a>Рекомендации по вертикальному масштабированию
 
-[Вертикальное масштабирование](./virtual-machine-scale-set-scale-node-type-scale-out.md) типа узла в Service Fabric Azure требует ряда шагов и рекомендаций. Пример:
+[Вертикальное масштабирование](./virtual-machine-scale-set-scale-node-type-scale-out.md) типа узла в Service Fabric Azure требует ряда шагов и рекомендаций. Пример.
 
 * Масштабируемый кластер должен быть работоспособным. В противном случае вы будете дестабилизировать кластер.
 * Для всех Service Fabric типов узлов кластера, на которых размещены службы с отслеживанием состояния, требуется уровень устойчивости или выше.
@@ -117,7 +117,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 }
 ```
 
-Необходимо подготовить узел к завершению работы для программного масштабирования. Найдите узел, который нужно удалить (узел с наибольшим экземпляром). Пример:
+Необходимо подготовить узел к завершению работы для программного масштабирования. Найдите узел, который нужно удалить (узел с наибольшим экземпляром). Пример.
 
 ```csharp
 using (var client = new FabricClient())
@@ -160,7 +160,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ```
 
 > [!NOTE]
-> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer). Вы можете выполнить следующие действия:
+> При масштабировании в кластере вы увидите, что удаленный экземпляр узла или виртуальной машины отображается в неработоспособном состоянии Service Fabric Explorer. Описание этого поведения см. [в разделе варианты поведения, которые могут возникнуть в Service Fabric Explorer](./service-fabric-cluster-scale-in-out.md#behaviors-you-may-observe-in-service-fabric-explorer). Вы можете:
 > * Вызовите [команду Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate) с соответствующим именем узла.
 > * Разверните в кластере [вспомогательное приложение автомасштабирования Service Fabric](https://github.com/Azure/service-fabric-autoscale-helper/) . Это приложение гарантирует, что масштабируемые узлы будут удалены из Service Fabric Explorer.
 
@@ -218,7 +218,7 @@ scaleSet.Update().WithCapacity(newCapacity).Apply();
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создание кластера на виртуальных машинах или компьютерах под управлением Windows Server: [Создание кластера Service Fabric для Windows Server](service-fabric-cluster-creation-for-windows-server.md).
 * Создание кластера на виртуальных машинах или компьютерах под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).

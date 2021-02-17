@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: df4bd0ae0884feae8bd21e33f4d27b6ceb207337
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 843e11e7f2df404a6bf1866da7b383ee9d1097de
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234007"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574786"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "98234007"
 2. В разделе **Параметры приложения** добавьте параметр:
     * Ключ = WEBSITE_TIME_ZONE
     * Значение = *требуемый часовой пояс*
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
 Для служб приложений, работающих в Windows, см. выходные данные `tzutil /L` команды Windows. Используйте значение из второй строки каждой записи. Например: "Тонга (стандартное время)". Некоторые из этих значений также перечислены в столбце **TimeZone** в [часовых поясах по умолчанию](/windows-hardware/manufacture/desktop/default-time-zones).
 
@@ -292,7 +292,7 @@ Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Gr
 
 ## <a name="why-isnt-autoscale-working-as-expected"></a>Почему автомасштабирование не работает правильно?
 
-Если функция автомасштабирования Azure не обрабатывает экземпляр веб-приложения правильно, возможно, используется сценарий, в котором эта функция намеренно отключена, чтобы избежать бесконечного цикла из-за нестабильности. Обычно это происходит из-за недостаточного промежутка между пороговыми значениями увеличения и уменьшения и масштаба. Дополнительные сведения о предотвращении нестабильности и другую информацию см. в разделе [Рекомендации по автомасштабированию](../azure-monitor/platform/autoscale-best-practices.md#autoscale-best-practices).
+Если функция автомасштабирования Azure не обрабатывает экземпляр веб-приложения правильно, возможно, используется сценарий, в котором эта функция намеренно отключена, чтобы избежать бесконечного цикла из-за нестабильности. Обычно это происходит из-за недостаточного промежутка между пороговыми значениями увеличения и уменьшения и масштаба. Дополнительные сведения о предотвращении нестабильности и другую информацию см. в разделе [Рекомендации по автомасштабированию](../azure-monitor/autoscale/autoscale-best-practices.md#autoscale-best-practices).
 
 ## <a name="why-does-autoscale-sometimes-scale-only-partially"></a>Почему автомасштабирование иногда выполняется только частично?
 

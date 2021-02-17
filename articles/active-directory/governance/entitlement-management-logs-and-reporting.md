@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af9921510ba11ab1bd7d0664b2c4c19e042864d3
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 1a7f0d937d41ee42bf0fe678eb2f49e78882f881
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746649"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577863"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Архивируйте журналы и создавайте отчеты в управлении правами Azure AD в Azure Monitor
 
@@ -59,7 +59,7 @@ Azure AD хранит события аудита в журнале аудит�
 
 ## <a name="view-events-for-an-access-package"></a>Просмотр событий для пакета доступа  
 
-Чтобы просмотреть события для пакета доступа, необходимо иметь доступ к базовой рабочей области Azure Monitor (Дополнительные сведения см. в статье [Управление доступом к данным журнала и рабочим областям в Azure Monitor](../../azure-monitor/platform/manage-access.md#manage-access-using-azure-permissions)) и в одной из следующих ролей: 
+Чтобы просмотреть события для пакета доступа, необходимо иметь доступ к базовой рабочей области Azure Monitor (Дополнительные сведения см. в статье [Управление доступом к данным журнала и рабочим областям в Azure Monitor](../../azure-monitor/logs/manage-access.md#manage-access-using-azure-permissions)) и в одной из следующих ролей: 
 
 - Глобальный администратор.  
 - администратор безопасности;  
@@ -189,4 +189,4 @@ $bResponse.Results |ft
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия:
-- [Создавайте интерактивные отчеты с книгами Azure Monitor](../../azure-monitor/platform/workbooks-overview.md)
+- [Создавайте интерактивные отчеты с книгами Azure Monitor](../../azure-monitor/visualize/workbooks-overview.md)

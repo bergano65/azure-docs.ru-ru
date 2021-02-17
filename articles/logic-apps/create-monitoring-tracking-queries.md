@@ -6,20 +6,20 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
-ms.openlocfilehash: d1f575d9d588ccd99523c6b6d5d2ceba6369dc3d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 5de795811923c965a1473f8d91e3fd654aeef266
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92309914"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574544"
 ---
 # <a name="view-and-create-queries-for-monitoring-and-tracking-in-azure-monitor-logs-for-azure-logic-apps"></a>Просмотр и создание запросов для мониторинга и отслеживания в журналах Azure Monitor для Azure Logic Apps
 
-Можно просматривать базовые запросы, которые формируют результаты из [журналов Azure Monitor](../azure-monitor/log-query/log-query-overview.md) , и создавать запросы, которые фильтруют результаты по конкретным критериям. Например, можно найти сообщения с определенным контрольным номером обмена. Запросы используют [язык запросов Kusto](/azure/data-explorer/kusto/query/), который можно изменить, если нужно просмотреть различные результаты. Дополнительные сведения см. в разделе [Azure Monitor запросы журналов](/azure/data-explorer/kusto/query/).
+Можно просматривать базовые запросы, которые формируют результаты из [журналов Azure Monitor](../azure-monitor/logs/log-query-overview.md) , и создавать запросы, которые фильтруют результаты по конкретным критериям. Например, можно найти сообщения с определенным контрольным номером обмена. Запросы используют [язык запросов Kusto](/azure/data-explorer/kusto/query/), который можно изменить, если нужно просмотреть различные результаты. Дополнительные сведения см. в разделе [Azure Monitor запросы журналов](/azure/data-explorer/kusto/query/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Рабочая область Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
+* Рабочая область Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/logs/quick-create-workspace.md).
 
 * Приложение логики, которое настроено с Azure Monitor ведением журнала и отправляет эту информацию в Log Analytics рабочую область. Узнайте [, как настроить журналы Azure Monitor для приложения логики](../logic-apps/monitor-logic-apps.md).
 
@@ -45,15 +45,15 @@ ms.locfileid: "92309914"
 
 ## <a name="create-your-own-query"></a>Создание собственного запроса
 
-Чтобы найти или отфильтровать результаты на основе конкретных свойств или значений, можно создать собственный запрос, начав с пустого запроса или используя существующий запрос. Дополнительные сведения см. [в разделе Приступая к работе с запросами журналов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md).
+Чтобы найти или отфильтровать результаты на основе конкретных свойств или значений, можно создать собственный запрос, начав с пустого запроса или используя существующий запрос. Дополнительные сведения см. [в разделе Приступая к работе с запросами журналов в Azure Monitor](../azure-monitor/logs/get-started-queries.md).
 
 1. В [портал Azure](https://portal.azure.com)найдите и выберите свою рабочую область log Analytics.
 
-1. В меню Рабочая область в разделе **Общие**выберите **журналы**.
+1. В меню Рабочая область в разделе **Общие** выберите **журналы**.
 
 1. Начните с пустого запроса или любых доступных существующих запросов.
 
-   * Чтобы проверить, доступны ли какие либо существующие запросы, на панели инструментов запрос выберите пункт **выборка**  >  **журнала**запросов, где отображаются запросы из предыдущих запусков запросов, или выберите **Обозреватель запросов**, в котором отображаются готовые запросы.
+   * Чтобы проверить, доступны ли какие либо существующие запросы, на панели инструментов запрос выберите пункт **выборка**  >  **журнала** запросов, где отображаются запросы из предыдущих запусков запросов, или выберите **Обозреватель запросов**, в котором отображаются готовые запросы.
 
      Например, Logic Apps B2B решение предоставляет следующие готовые запросы:
 
@@ -63,7 +63,7 @@ ms.locfileid: "92309914"
 
      ![Начать с пустого запроса](./media/create-monitoring-tracking-queries/create-query-from-blank.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
 * [Схемы отслеживания X12](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)

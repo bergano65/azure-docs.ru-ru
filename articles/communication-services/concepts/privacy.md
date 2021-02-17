@@ -8,12 +8,12 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 7c522abd04f4a3e480bb5c3e14e78cc03dbd5d86
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: a047761669920d6460c3d6fb6d74b970effa7846
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888646"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572041"
 ---
 # <a name="region-availability-and-data-residency"></a>Доступность в регионах и место расположения данных
 
@@ -73,7 +73,7 @@ ms.locfileid: "94888646"
 
 ## <a name="azure-monitor-and-log-analytics"></a>Azure Monitor и Log Analytics
 
-Службы коммуникации Azure передают данные журнала Azure Monitor для анализа операционного состояния и использования службы. Некоторые из этих журналов содержат удостоверения Служб коммуникации и телефонные номера в качестве данных для полей. Чтобы удалить потенциальные персональные данные, необходимо [использовать эти процедуры для Azure Monitor](../../azure-monitor/platform/personal-data-mgmt.md). Можно также настроить [период хранения для Azure Monitor, заданный по умолчанию](../../azure-monitor/platform/manage-cost-storage.md).
+Службы коммуникации Azure передают данные журнала Azure Monitor для анализа операционного состояния и использования службы. Некоторые из этих журналов содержат удостоверения Служб коммуникации и телефонные номера в качестве данных для полей. Чтобы удалить потенциальные персональные данные, необходимо [использовать эти процедуры для Azure Monitor](../../azure-monitor/logs/personal-data-mgmt.md). Можно также настроить [период хранения для Azure Monitor, заданный по умолчанию](../../azure-monitor/logs/manage-cost-storage.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

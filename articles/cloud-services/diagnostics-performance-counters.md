@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: 16b54e8a59eb42c6e2351d37ec0a29d775161493
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: fa5dd61c0764be45cdba68b73a4f55745ee5e55a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98739842"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585505"
 ---
 # <a name="collect-performance-counters-for-your-azure-cloud-service-classic"></a>Получение счетчиков производительности для облачной службы Azure (классическая модель)
 
@@ -124,7 +124,7 @@ Application Insights автоматически собирает данные с
 
 Счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определяется для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration**  >  **PublicConfig**  >  **WadCfg**  >  **DiagnosticMonitorConfiguration**  >  **PerformanceCounters** . Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Этот элемент имеет два атрибута: `counterSpecifier` и `sampleRate`. Атрибут `counterSpecifier` определяет набор счетчиков производительности системы (описанный в предыдущем разделе) для сбора данных. Значение `sampleRate` указывает, как часто выполняется опрос. В целом все счетчики производительности передаются в Azure в соответствии со значением атрибута `scheduledTransferPeriod` родительского элемента `PerformanceCounters`.
 
-Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Схема Диагностики Azure](../azure-monitor/platform/diagnostics-extension-schema-windows.md#performancecounters-element).
+Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Схема Диагностики Azure](../azure-monitor/agents/diagnostics-extension-schema-windows.md#performancecounters-element).
 
 Период, определенный атрибутом `sampleRate`, использует тип данных продолжительности XML, чтобы указать, как часто проверяется счетчик производительности. В приведенном ниже примере скорость равна `PT3M`, что означает `[P]eriod[T]ime[3][M]inutes`: каждые три минуты.
 
@@ -294,4 +294,4 @@ counterServiceUsed.Increment();
 - [Application Insights для облачных служб Azure](../azure-monitor/app/cloudservices.md#performance-counters)
 - [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md)
 - [Specifying a Counter Path](/windows/win32/perfctrs/specifying-a-counter-path) (Указание пути счетчика)
-- [Схема Диагностики Azure — элементы PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-windows.md#performancecounters-element)
+- [Схема Диагностики Azure — элементы PerformanceCounters](../azure-monitor/agents/diagnostics-extension-schema-windows.md#performancecounters-element)

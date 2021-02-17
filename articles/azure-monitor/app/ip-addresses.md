@@ -3,12 +3,12 @@ title: IP-адреса, используемые Azure Monitor
 description: Исключения брандмауэра сервера, требуемые для Application Insights
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: 0e7028c59b4588ac23424a63f4e3ce240391dfb8
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 72f825630ec94b5c32a949a4395c431318afa87f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220808"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584086"
 ---
 # <a name="ip-addresses-used-by-azure-monitor"></a>IP-адреса, используемые Azure Monitor
 [Azure Monitor](../overview.md) использует несколько IP-адресов. Azure Monitor состоит из основных метрик платформы и журналов, а также Log Analytics и Application Insights. Может потребоваться знать эти адреса, если наблюдаемое приложение или инфраструктура размещается за брандмауэром.
@@ -254,21 +254,21 @@ USDoD East
    1. Добавьте имя группы ресурсов, а затем введите *сведения об экземпляре*.
    1. Щелкните **Проверка + создать** , а затем — *создать*.
    
-   :::image type="content" source="../platform/media/action-groups/action-group-create-security-group.png" alt-text="Пример создания группы безопасности сети."border="true":::
+   :::image type="content" source="../alerts/media/action-groups/action-group-create-security-group.png" alt-text="Пример создания группы безопасности сети."border="true":::
 
 3. Перейдите в раздел Группа ресурсов и щелкните созданную *группу безопасности сети* .
 
     1. Выберите *правила безопасности для входящего трафика*.
     1. Щелкните **Добавить**.
     
-    :::image type="content" source="../platform/media/action-groups/action-group-add-service-tag.png" alt-text="Пример добавления тега службы."border="true":::
+    :::image type="content" source="../alerts/media/action-groups/action-group-add-service-tag.png" alt-text="Пример добавления тега службы."border="true":::
 
 4. В правой панели откроется новое окно.
     1.  Выбрать источник: **тег службы**
     1.  Тег исходной службы: **ActionGroup**
     1.  Нажмите кнопку **Добавить**.
     
-    :::image type="content" source="../platform/media/action-groups/action-group-service-tag.png" alt-text="Пример добавления тега службы."border="true":::
+    :::image type="content" source="../alerts/media/action-groups/action-group-service-tag.png" alt-text="Пример добавления тега службы."border="true":::
 
 
 ## <a name="profiler"></a>Profiler
