@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: 63b9d74fbbb1a79dd4f3d3e7c5fb094a372282e0
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.openlocfilehash: d388478fb3bc9b4e355d8c3cd3f16c0a785b8b27
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299638"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578913"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Использование Logstash для подключения источников данных к Azure Sentinel
 
@@ -49,7 +49,7 @@ ms.locfileid: "96299638"
 Подключаемый модуль выходных данных Azure Sentinel для Logstash отправляет данные в формате JSON в рабочую область Log Analytics с помощью REST API сборщика данных Log Analytics HTTP. Данные принимаются в пользовательские журналы.
 
 - Дополнительные сведения о [Log Analytics REST API](/rest/api/loganalytics/create-request).
-- Дополнительные сведения о [пользовательских журналах](../azure-monitor/platform/data-sources-custom-logs.md).
+- Дополнительные сведения о [пользовательских журналах](../azure-monitor/agents/data-sources-custom-logs.md).
 
 ## <a name="deploy-the-azure-sentinel-output-plugin-in-logstash"></a>Развертывание подключаемого модуля выходных данных Azure Sentinel в Logstash
 
@@ -57,7 +57,7 @@ ms.locfileid: "96299638"
 
 Подключаемый модуль выходных данных Azure-Sentinel доступен в коллекции Logstash.
 
-- Чтобы установить подключаемый модуль **_[Microsoft-Logstash-Output-Azure-loganalytics](https://github.com/Azure/Azure-Sentinel/tree/master/DataConnectors/microsoft-logstash-output-azure-loganalytics)_* _, следуйте инструкциям в документе Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) .
+- Чтобы установить подключаемый модуль ***[Microsoft-Logstash-Output-Azure-loganalytics](https://github.com/Azure/Azure-Sentinel/tree/master/DataConnectors/microsoft-logstash-output-azure-loganalytics)*** , следуйте инструкциям в документе Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) .
    
 - Если у вашей системы Logstash нет доступа к Интернету, следуйте инструкциям в документе по [управлению подключаемым модулем Logstash offline](https://www.elastic.co/guide/en/logstash/current/offline-plugins.html) , чтобы подготовить и использовать автономный пакет подключаемого модуля. (Для этого потребуется создать другую систему Logstash с доступом к Интернету.)
 
@@ -67,15 +67,15 @@ ms.locfileid: "96299638"
 
 | Имя поля | Тип данных | Описание |
 |----------------|---------------|-----------------|
-| `workspace_id` | строка | Введите идентификатор GUID рабочей области. _ |
+| `workspace_id` | строка | Введите идентификатор GUID рабочей области. * |
 | `workspace_key` | строка | Введите идентификатор GUID первичного ключа рабочей области. * |
 | `custom_log_table_name` | строка | Задайте имя таблицы, в которую будут поступать журналы. Можно настроить только одно имя таблицы для каждого подключаемого модуля вывода. Таблица журнала появится в столбце Метка Azure в разделе **журналы** **в категории** **пользовательские журналы** с `_CL` суффиксом. |
 | `endpoint` | строка | Дополнительное поле. По умолчанию это конечная точка Log Analytics. Используйте это поле, чтобы задать альтернативную конечную точку. |
 | `time_generated_field` | строка | Дополнительное поле. Это свойство переопределяет поле **timegenerated** по умолчанию в log Analytics. Введите имя поля метки времени в источнике данных. Данные в этом поле должны соответствовать формату ISO 8601 (). `YYYY-MM-DDThh:mm:ssZ` |
-| `key_names` | массиве | Введите список полей выходной схемы Log Analytics. Каждый элемент списка должен быть заключен в одинарные кавычки и элементы, разделенные запятыми, и весь список, заключенный в квадратные скобки. См. пример ниже. |
-| `plugin_flush_interval` | number | Дополнительное поле. Задайте значение, чтобы определить максимальный интервал (в секундах) между передачами сообщений в Log Analytics. Значение по умолчанию — 5. |
+| `key_names` | array | Введите список полей выходной схемы Log Analytics. Каждый элемент списка должен быть заключен в одинарные кавычки и элементы, разделенные запятыми, и весь список, заключенный в квадратные скобки. См. пример ниже. |
+| `plugin_flush_interval` | число | Дополнительное поле. Задайте значение, чтобы определить максимальный интервал (в секундах) между передачами сообщений в Log Analytics. Значение по умолчанию — 5. |
     | `amount_resizing` | Логическое | True или False. Включите или отключите механизм автоматического масштабирования, который корректирует размер буфера сообщений в соответствии с объемом полученных данных журнала. |
-| `max_items` | number | Дополнительное поле. Применяется только в том случае `amount_resizing` , если задано значение "false". Используется для установки ограничения на размер буфера сообщений (в записях). Значение по умолчанию — 2000.  |
+| `max_items` | число | Дополнительное поле. Применяется только в том случае `amount_resizing` , если задано значение "false". Используется для установки ограничения на размер буфера сообщений (в записях). Значение по умолчанию — 2000.  |
 
 \* ИДЕНТИФИКАТОР рабочей области и первичный ключ можно найти в ресурсе рабочей области в разделе **Управление агентами**.
 
@@ -170,7 +170,7 @@ ms.locfileid: "96299638"
 
 Если вы не видите данные в этом файле журнала, создайте и отправьте некоторые события локально (через подключаемые модули ввода и фильтрации), чтобы убедиться, что подключаемый модуль вывода получает данные. Sentinel Azure будет поддерживать только проблемы, связанные с подключаемым модулем вывода.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как использовать Logstash для подключения внешних источников данных к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

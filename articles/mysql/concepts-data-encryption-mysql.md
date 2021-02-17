@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: f9b9681b08f5864dc34bbf1c35dc6919129c24cb
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 4c8f4b490c46ed8061201ba6362999f0e426ecb7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518810"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596329"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Шифрование данных в Базе данных Azure для MySQL с помощью управляемого клиентом ключа
 
@@ -118,7 +118,7 @@ Key Vault — это облачная внешняя система управ
 * [Работоспособность ресурсов Azure](../service-health/resource-health-overview.md). Недоступная база данных, которая потеряла доступ к ключу клиента, отображается как недоступная после отклонения первого подключения к базе данных.
 * [Журнал действий](../service-health/alerts-activity-log-service-notifications-portal.md). В случае сбоя доступа к ключу клиента в управляемом клиентом Key Vault в журнал действий добавляются записи. Если для таких событий создать правила генерации оповещений, можно восстанавливать доступ максимально быстро.
 
-* [Группы действий](../azure-monitor/platform/action-groups.md). Определите эти группы для отправки уведомлений и оповещений в соответствии с вашими предпочтениями.
+* [Группы действий](../azure-monitor/alerts/action-groups.md). Определите эти группы для отправки уведомлений и оповещений в соответствии с вашими предпочтениями.
 
 ## <a name="restore-and-replicate-with-a-customers-managed-key-in-key-vault"></a>Восстановление и репликация с помощью управляемого клиентом ключа в Key Vault
 
@@ -143,6 +143,6 @@ Key Vault — это облачная внешняя система управ
 
 * Шифрование поддерживается только при использовании криптографического ключа RSA 2048.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как настроить шифрование данных с помощью управляемого клиентом ключа для базы данных Azure для MySQL, используя [портал Azure](howto-data-encryption-portal.md) и [Azure CLI](howto-data-encryption-cli.md).

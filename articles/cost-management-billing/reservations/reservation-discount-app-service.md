@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 ms.author: banders
-ms.openlocfilehash: debe02a89e10712ad8a0b8d61b0fdc3f8a4bd7b2
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: c599c64ce4b22bbf7bece77602b22fef6629d07c
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99577411"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100369736"
 ---
 # <a name="how-reservation-discounts-apply-to-azure-app-service-premium-v3-instances-and-isolated-stamps"></a>Применение скидок на резервирование к меткам экземпляра Службы приложений Azure уровня "Премиум" версии 3 и ценовой категории уровня "Изолированный"
 
@@ -40,10 +40,6 @@ ms.locfileid: "99577411"
 4.  В течение четвертого часа экземпляр 1 работает 0,5 часа, а экземпляр 2 работает 1 час. Использование экземпляра 1 полностью покрываться резервированием. 0,5 часа работы экземпляра 2 также покрываются. За оставшиеся 0,5 часа с вас взимается оплата по мере использования.
 
 Чтобы больше узнать о применении резервирования Azure и просмотреть отчеты о начислении платы за использование, см. статью об [использовании резервирования](understand-reserved-instance-usage-ea.md).
-
-### <a name="discount-can-apply-to-different-sizes"></a>Скидка может распространяться на различные размеры
-
-Если при покупке зарезервированного экземпляра уровня "Премиум" версии 3 вы выбираете **Optimized for instance size flexibility** (Оптимизировано для гибкости размера экземпляра), покрытие скидки применяется к выбранному размеру экземпляра уровня "Премиум" версии 3. Оно также может применяться к другим размерам экземпляров, принадлежащих к группе гибкости размера экземпляров той же серии.
 
 ## <a name="how-reservation-discounts-apply-to-isolated-stamps"></a>Как скидки на резервирование применяются к меткам ценовой категории "Изолированный"
 

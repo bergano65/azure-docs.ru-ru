@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e6a42a39e55e379865332fce8a9aed8dfe78f57b
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 28be34e9323697759b2492d86b968f8e3d47a28e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201337"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572052"
 ---
 # <a name="azure-security-baseline-for-azure-cloud-services"></a>Базовые показатели безопасности Azure для облачных служб Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "98201337"
 
 **Руководство**. в Azure Cloud реализована многоуровневая Сетевая безопасность для защиты служб платформы от атак типа "отказ в обслуживании" (от атак DDoS). Защита Azure от атак DDoS является частью процесса непрерывного мониторинга облака Azure, который постоянно повышается за счет тестирования на проникновение. Эта защита от атак DDoS предназначена для того, чтобы выдерживать не только атаки извне, но и других клиентов Azure. 
 
-Существует несколько различных способов блокировки или запрета обмена данными, помимо защиты на уровне платформы в облачных службах Azure. А именно: 
+Существует несколько различных способов блокировки или запрета обмена данными, помимо защиты на уровне платформы в облачных службах Azure. Эти особые значения приведены ниже. 
 
 -  Создание задачи запуска для выборочного блокирования определенных IP-адресов
 -  Ограничение доступа веб-роли Azure к набору указанных IP-адресов путем изменения файла web.config IIS
@@ -175,9 +175,9 @@ ms.locfileid: "98201337"
 
 Создайте параметр диагностики для отправки журнала действий в Azure Monitor, концентраторы событий Azure для пересылки за пределы Azure или в службу хранилища Azure для архивации. Настройте Azure Monitor для оповещений о предупреждениях при изменении критических ресурсов в облачных службах Azure. 
 
-- [Журнал действий Azure](../azure-monitor/platform/activity-log.md)
+- [Журнал действий Azure](../azure-monitor/essentials/activity-log.md)
 
-- [Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Мониторинг диспетчера трафика](../traffic-manager/traffic-manager-monitoring.md)
 
@@ -233,7 +233,7 @@ ms.locfileid: "98201337"
 
 - [Включение диагностики в Visual Studio перед развертыванием](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?preserve-view=true#to-turn-on-diagnostics-in-visual-studio-before-deployment)
 
-- [Просмотр журнала изменений](../azure-monitor/platform/activity-log.md#view-change-history)
+- [Просмотр журнала изменений](../azure-monitor/essentials/activity-log.md#view-change-history)
 
 - [Application Insights для облачной службы Azure (классическая модель)](../azure-monitor/app/cloudservices.md)
 
@@ -369,7 +369,7 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Ознакомьтесь с документацией по API-интерфейсам и создайте процесс защиты конфиденциальных данных в соответствии с требованиями Организации.
 
-- [Получить развертывание](/rest/api/compute/cloudservices/rest-get-deployment)
+- [Получение развертывания](/rest/api/compute/cloudservices/rest-get-deployment)
 
 - [Получение свойств облачной службы](/rest/api/compute/cloudservices/rest-get-cloud-service-properties)
 
@@ -389,7 +389,7 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 - [Создание групп управления](../governance/management-groups/create-management-group-portal.md)
 
-- [Схема WebRole](schema-csdef-webrole.md#Certificate)
+- [Схема этой роли](schema-csdef-webrole.md#Certificate)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -465,9 +465,9 @@ Get-AzRoleAssignment Инклудеклассикадминистраторс
 
 Кроме того, Application Insights может отслеживать доступность, производительность, сбои и использование приложений облачных служб Azure. Это использует объединенные данные из Application Insights SDK с система диагностики Azure данными из облачных служб Azure.
 
-- [Создание, просмотр и управление классическими оповещениями метрик с помощью Azure Monitor](../azure-monitor/platform/alerts-classic-portal.md)
+- [Создание, просмотр и управление классическими оповещениями метрик с помощью Azure Monitor](../azure-monitor/alerts/alerts-classic-portal.md)
 
-- [Общие сведения об оповещениях метрик](../azure-monitor/platform/alerts-metric-overview.md) 
+- [Общие сведения об оповещениях метрик](../azure-monitor/alerts/alerts-metric-overview.md) 
 
 - [Application Insights для облачной службы Azure (классическая модель)](../azure-monitor/app/cloudservices.md)
 

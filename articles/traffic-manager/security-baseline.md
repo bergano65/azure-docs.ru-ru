@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 13515f2428b1fc95c31b04c984dd77dd316a4315
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: bc121b3f5aadad1e68315acac5daade5337b701b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202204"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580366"
 ---
 # <a name="azure-security-baseline-for-azure-traffic-manager"></a>Базовый план безопасности Azure для диспетчера трафика Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "98202204"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -48,9 +48,9 @@ ms.locfileid: "98202204"
 
 - [Метрики и оповещения диспетчера трафика](traffic-manager-metrics-alerts.md)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -60,7 +60,7 @@ ms.locfileid: "98202204"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-- [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Изменение срока хранения данных в Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 - [Настройка политики хранения для журналов учетных записей хранения Azure](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -76,9 +76,9 @@ ms.locfileid: "98202204"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -96,7 +96,7 @@ ms.locfileid: "98202204"
 
 - [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -288,7 +288,7 @@ ms.locfileid: "98202204"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в диспетчере трафика Azure, а также в других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

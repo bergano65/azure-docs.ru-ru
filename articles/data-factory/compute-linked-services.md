@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nabhishek
 ms.author: abnarain
 ms.date: 05/08/2019
-ms.openlocfilehash: 7dae067b5d8648f1441047c26f8792e55591b64d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 95d35b3496248db9acb69181191acde58ede7b44
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368529"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589237"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure
 
@@ -322,6 +322,9 @@ ms.locfileid: "100368529"
 * [Основные сведения о пакетной службе Azure](../batch/batch-technical-overview.md) — общие сведения о пакетной службе Azure.
 * Статья о командлете [New-AzBatchAccount](/powershell/module/az.batch/New-azBatchAccount) со сведениями о создании учетной записи пакетной службы Azure или статья о [портале Azure](../batch/batch-account-create-portal.md) со сведениями о создании учетной записи пакетной службы Azure с помощью портала Azure. Подробные инструкции по использованию этого командлета см. в статье [Using PowerShell to manage Azure Batch Account](/archive/blogs/windowshpc/using-azure-powershell-to-manage-azure-batch-account) (Использование PowerShell для управления учетной записью пакетной службы Azure).
 * [New-AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) со сведениями о создании пула пакетной службы Azure.
+
+> [!IMPORTANT]
+> При создании нового пула пакетной службы Azure необходимо использовать "VirtualMachineConfiguration", а не "CloudServiceConfiguration". Дополнительные сведения см. в [руководстве по миграции пула пакетной службы Azure](https://docs.microsoft.com/azure/batch/batch-pool-cloud-service-to-virtual-machine-configuration). 
 
 ### <a name="example"></a>Пример
 

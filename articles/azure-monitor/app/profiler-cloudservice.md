@@ -7,12 +7,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 75927534bf62fa4733bb552906ffa7e3a6e76286
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5eb6680bba44872821a2f0d094d31d0ad994f8a0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98935617"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589590"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
@@ -38,7 +38,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Настройте расширение система диагностики Azure, чтобы включить профилировщик:
 
-    а. Выберите файл [система диагностики Azure](../platform/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
+    а. Выберите файл [система диагностики Azure](../agents/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
 
       ![Расположение файла конфигурации диагностики](./media/profiler-cloudservice/cloudservice-solutionexplorer.png)  
 
@@ -69,7 +69,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Разверните службу с новой конфигурацией диагностики. При этом Application Insights Profiler настраивается для этой службы.
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 * См. раздел [трассировки профайлера](profiler-overview.md?toc=/azure/azure-monitor/toc.json) в портал Azure.

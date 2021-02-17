@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 97bcf0bedb3ed175f8fdb5d4dc361c069ae0327d
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: c0b773a728fed456a34d0db3a00b353147432012
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805215"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589252"
 ---
 # <a name="azure-security-baseline-for-cognitive-services"></a>Базовый план безопасности Azure для Cognitive Services
 
@@ -175,9 +175,9 @@ ms.locfileid: "99805215"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с контейнером Azure Cognitive Services. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -199,7 +199,7 @@ ms.locfileid: "99805215"
 
 **Руководство**. Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, концентратор событий Azure или учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, выполненных в контейнере Cognitive Services Azure на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для кэша Azure для экземпляров Redis.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -211,7 +211,7 @@ ms.locfileid: "99805215"
 
 Кроме того, Azure Cognitive Services отправляет диагностические события, которые можно собирать и использовать в целях анализа, предупреждений и отчетов. Параметры диагностики для контейнера Cognitive Services можно настроить с помощью портал Azure. Вы можете отправить одно или несколько событий диагностики в учетную запись хранения, концентратор событий или рабочую область Log Analytics.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Использование параметров диагностики для Azure Cognitive Services](./diagnostic-logging.md)
 
@@ -231,7 +231,7 @@ ms.locfileid: "99805215"
 
 **Руководство**. В Azure Monitor задайте период хранения для рабочей области Log Analytics согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -241,9 +241,9 @@ ms.locfileid: "99805215"
 
 **Руководство**. Включение параметров диагностики журнала действий Azure и отправка журналов в рабочую область log Analytics. Эти журналы предоставляют широкие, часто встречающиеся данные о работе ресурса, которые используются для идентификации и отладки проблем. Выполнение запросов в Log Analytics для поиска терминов, выявления тенденций, анализа закономерностей и предоставления многих других аналитических сведений на основе данных журнала действий, которые могли быть собраны для Azure Cognitive Services.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
-* [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../azure-monitor/platform/activity-log.md)
+* [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -257,7 +257,7 @@ ms.locfileid: "99805215"
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-log.md)
+* [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -570,7 +570,7 @@ ms.locfileid: "99805215"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах Cognitive Services Azure и других критических или связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

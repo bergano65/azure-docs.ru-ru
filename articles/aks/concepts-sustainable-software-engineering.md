@@ -4,12 +4,12 @@ description: Сведения о устойчивом проектировани
 services: container-service
 ms.topic: conceptual
 ms.date: 08/26/2020
-ms.openlocfilehash: 700723041855fdae4f994480d180292fdfd12e15
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: e179b49879b78b2bab738407984c0f50d161114b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346900"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572672"
 ---
 # <a name="sustainable-software-engineering-principles-in-azure-kubernetes-service-aks"></a>Устойчивые принципы проектирования программного обеспечения в службе Azure Kubernetes (AKS)
 
@@ -45,7 +45,7 @@ ms.locfileid: "97346900"
 
 По возможности рассмотрите возможность сдвига ресурсов кластера на время или регионы, в которых можно использовать избыточную емкость. Например, можно изменить время или регион для пакетного задания, чтобы запустить или использовать [плашечные пулы][spot-pools]. Также рекомендуется выполнить рефакторинг приложения, чтобы использовать очередь для отсчета выполняющихся рабочих нагрузок, которые не требуют немедленной обработки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о функциях AKS, упомянутых в этой статье:
 
@@ -61,7 +61,7 @@ ms.locfileid: "97346900"
 * [Зоны доступности][availability-zones]
 
 [availability-zones]: availability-zones.md
-[azure-monitor]: ../azure-monitor/insights/container-insights-overview.md
+[azure-monitor]: ../azure-monitor/containers/container-insights-overview.md
 [azure-traffic-manager]: ../traffic-manager/traffic-manager-overview.md
 [proiximity-placement-groups]: reduce-latency-ppg.md
 [regions]: faq.md#which-azure-regions-currently-provide-aks

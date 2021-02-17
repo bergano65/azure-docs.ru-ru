@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - fasttrack-edit
 - iot
-ms.openlocfilehash: f8d37cf8f23de1d0535c7a9ff4a95ac217eddf74
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: adcbf4efc4dfaa7701c18440531327949640cb53
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452396"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581985"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -206,7 +206,7 @@ ms.locfileid: "96452396"
 
 1. Укажите **частоту выборки** в диапазоне от 0 до 100 %.
 
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 1. Подождите несколько секунд и нажмите кнопку **Обновить**. Если устройство подтвердит эту операцию, появится значок синхронизации с флажком.
 
@@ -260,7 +260,7 @@ ms.locfileid: "96452396"
 
 ### <a name="query-using-log-analytics"></a>Запрос с помощью Log Analytics
 
-Если вы настроили [log Analytics с журналами ресурсов](../azure-monitor/platform/resource-logs.md#send-to-azure-storage), выполните запрос, выполнив поиск журналов в `DistributedTracing` категории. Например, этот запрос показывает все трассировки в журнале:
+Если вы настроили [log Analytics с журналами ресурсов](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage), выполните запрос, выполнив поиск журналов в `DistributedTracing` категории. Например, этот запрос показывает все трассировки в журнале:
 
 ```Kusto
 // All distributed traces 
@@ -325,7 +325,7 @@ AzureDiagnostics
 - Возможность переноса из облака на двойник устройства недоступна на [уровне "Базовый" Центра Интернета вещей](iot-hub-scaling.md#basic-and-standard-tiers). Тем не менее, Центр Интернета вещей все равно будет регистрироваться в Azure Monitor, если видит правильно составленный заголовок контекста трассировки.
 - Чтобы обеспечить эффективность операции, Центр Интернета вещей применит регулирование на основе частоты регистрации, которая может возникнуть как часть распределенной трассировки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об общем шаблоне распределенной трассировки в микрослужбах см. в [этой статье](https://microservices.io/patterns/observability/distributed-tracing.html).
 - Чтобы настроить конфигурацию для применения параметров распределенной трассировки на большое количество устройств, ознакомьтесь со статьей [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](./iot-hub-automatic-device-management.md).

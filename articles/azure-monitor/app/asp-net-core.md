@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 2f17f4fbed196932ad7a5680338c459740e4d3bd
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 93f72b7e2f709f32942564dc7322a4c5d1064cfc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98249114"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589902"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -29,7 +29,10 @@ ms.locfileid: "98249114"
 * **Интегрированная среда разработки**: Visual Studio, VS Code или Командная строка.
 
 > [!NOTE]
-> ASP.NET Core 3. X требует [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
+> Для ASP.NET Core 3,1 требуется [Application Insights 2.8.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.8.0) или более поздней версии.
+
+> [!IMPORTANT]
+> Поддерживаются следующие версии ASP.NET Core: ASP.NET Core 2,1 и 3,1. Версии 2,0, 2,2 и 3,0 были прекращены и больше не поддерживаются.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -110,7 +113,7 @@ ms.locfileid: "98249114"
 
     * `ApplicationInsights:InstrumentationKey`
 
-    Пример:
+    Пример.
 
     * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
@@ -213,7 +216,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Полный список параметров в `ApplicationInsightsServiceOptions`
 
-|Параметр | Описание | По умолчанию
+|Параметр | Описание | Значение по умолчанию
 |---------------|-------|-------
 |енаблеперформанцекаунтерколлектионмодуле  | Включить или отключить `PerformanceCounterCollectionModule` | Да
 |енаблерекуесттраккингтелеметримодуле   | Включить или отключить `RequestTrackingTelemetryModule` | Да
@@ -476,7 +479,7 @@ public class HomeController : Controller
    * Данные телеметрии Application Insights будут продолжать работать в:
        * Все операционные системы, включая Windows, Linux и Mac.
        * Все режимы публикации, включая автономные или зависящие от платформы.
-       * Все целевые платформы, включая полный .NET Framework.
+       * Все целевые платформы, включая полный платформа .NET Framework.
        * Все варианты размещения, включая веб-приложения, виртуальные машины, Linux, контейнеры, службу Azure Kubernetes и размещение без Azure.
        * Все версии .NET Core, включая предварительные версии.
    * Вы можете просматривать данные телеметрии локально при отладке из Visual Studio.
@@ -522,7 +525,7 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 Последние обновления и исправления ошибок см. [в заметках о выпуске](./release-notes.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Изучите потоки пользователей](./usage-flows.md) , чтобы понять, как пользователи переходят через приложение.
 * [Настройте сбор моментальных снимков](./snapshot-debugger.md) для просмотра состояния исходного кода и переменных в момент возникновения исключения.

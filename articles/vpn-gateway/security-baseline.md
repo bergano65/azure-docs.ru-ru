@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8221e814b4555a75d596cec3ab00aa3b63e41a14
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: caff705a03f7c4645eedc9423f6a9f9649c1167e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197410"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571289"
 ---
 # <a name="azure-security-baseline-for-vpn-gateway"></a>Базовый уровень безопасности Azure для VPN-шлюза
 
@@ -78,9 +78,9 @@ ms.locfileid: "98197410"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в ресурсах виртуальной сети. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критически важных ресурсов, связанных с VPN-шлюзом.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -100,7 +100,7 @@ ms.locfileid: "98197410"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -112,9 +112,9 @@ ms.locfileid: "98197410"
 
 **Руководство**. Включите параметры диагностики для ресурсов VPN-шлюза, чтобы получить доступ к журналам аудита, безопасности и диагностики. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы. 
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -124,7 +124,7 @@ ms.locfileid: "98197410"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения. 
 
-- [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) 
+- [Изменение срока хранения данных в Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period) 
 
 - [Настройка политики хранения для журналов учетных записей хранения Azure](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -140,9 +140,9 @@ ms.locfileid: "98197410"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -158,7 +158,7 @@ ms.locfileid: "98197410"
 
 - [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -382,7 +382,7 @@ ms.locfileid: "98197410"
 
 - [Настройка оповещений о событиях журнала диагностики из VPN-шлюза](vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md)
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

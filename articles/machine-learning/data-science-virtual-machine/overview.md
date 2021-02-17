@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Обзор Виртуальной машины для обработки и анализа данных Azure. Эту виртуальную машину легко использовать на облачной платформе Azure с помощью предварительно установленных и настроенных инструментов и библиотек для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: overview
 ms.date: 04/02/2020
-ms.openlocfilehash: 7bcee0f571fe42e4c00499f188e35d0e0ff2ebe7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: bd2333d89e4d1789b3464606b49f624609ef67d5
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322497"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518765"
 ---
 # <a name="what-is-the-azure-data-science-virtual-machine-for-linux-and-windows"></a>Что такое виртуальная машина для обработки и анализа данных Azure на Linux и Windows?
 
