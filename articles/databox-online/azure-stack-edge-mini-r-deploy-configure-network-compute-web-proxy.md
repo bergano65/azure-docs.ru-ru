@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/14/2020
+ms.date: 02/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Mini R so I can use it to transfer data to Azure.
-ms.openlocfilehash: 915aca5f7400496aacb3c3cf248120dff39d747c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 1cca747003a127371db7d110500e2b4168f10219
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96465031"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594456"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-mini-r"></a>Руководство по настройке параметров сети для Azure Stack Edge Mini R
 
@@ -108,7 +108,7 @@ ms.locfileid: "96465031"
 
     ![Параметры сети для порта Wi-Fi в локальном пользовательском веб-интерфейсе, шаг 4](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-4.png)
 
-6. Выберите добавленный на предыдущем шаге профиль Wi-Fi и щелкните команду **Apply** (Применить). 
+6. Выберите добавленный на предыдущем шаге профиль Wi-Fi и щелкните **Применить**. 
 
     ![Параметры сети для порта Wi-Fi в локальном пользовательском веб-интерфейсе, шаг 5](./media/azure-stack-edge-mini-r-deploy-configure-network-compute-web-proxy/add-wifi-profile-5.png)
 
@@ -126,6 +126,7 @@ ms.locfileid: "96465031"
    - Если в среде включен DHCP, сетевые интерфейсы настраиваются автоматически. IP-адрес, подсеть, шлюз и DNS назначаются автоматически.
    - Если протокол DHCP не включен, при необходимости вы можете назначить статические IP-адреса.
    - Сетевой интерфейс можно настроить как IPv4.
+   - Объединение сетевых адаптеров или агрегирование ссылок не поддерживается в Azure Stack Edge.
    - Серийный номер для любого порта совпадает с серийным номером узла. Для устройства серии K отображается только один серийный номер.
 
      >[!NOTE] 
@@ -197,7 +198,7 @@ ms.locfileid: "96465031"
 Из этого учебника вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Предварительные требования
+> * Предварительные условия
 > * настройка сети;
 > * включение сети вычислений;
 > * Настройка веб-прокси

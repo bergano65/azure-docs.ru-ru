@@ -1,22 +1,23 @@
 ---
-title: Добавление и удаление назначений ролей Azure с помощью портал Azure Azure RBAC
+title: Назначение ролей Azure с помощью портал Azure Azure RBAC
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью портал Azure и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 author: rolyon
-manager: mtillman
+manager: daveba
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 01/11/2021
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: f1753e7bc50fa9ff2c5512696a37dae7578f23b4
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.custom: contperf-fy21q3-portal
+ms.openlocfilehash: e25bbe4e1a96e4efaaa13732aea571d26d4b006e
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117450"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555292"
 ---
-# <a name="add-or-remove-azure-role-assignments-using-the-azure-portal"></a>Добавление и удаление назначений ролей Azure с помощью портала Azure
+# <a name="assign-azure-roles-using-the-azure-portal"></a>Назначение ролей Azure с помощью портал Azure
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В этой статье описывается назначение ролей с помощью портал Azure.
 
@@ -26,11 +27,7 @@ ms.locfileid: "98117450"
 
 [!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
 
-## <a name="add-a-role-assignment"></a>Добавление назначения роли
-
-В Azure RBAC для предоставления доступа к ресурсу Azure необходимо добавить назначение роли. Чтобы назначить роль, выполните следующие действия. Общий обзор шагов см. [в разделе шаги по добавлению назначения ролей](role-assignments-steps.md).
-
-### <a name="step-1-identify-the-needed-scope"></a>Шаг 1. Определение требуемой области
+## <a name="step-1-identify-the-needed-scope"></a>Шаг 1. Определение требуемой области
 
 [!INCLUDE [Scope for Azure RBAC introduction](../../includes/role-based-access-control/scope-intro.md)]
 
@@ -50,7 +47,7 @@ ms.locfileid: "98117450"
 
     ![Общие сведения о группе ресурсов](./media/shared/rg-overview.png)
 
-### <a name="step-2-open-the-add-role-assignment-pane"></a>Шаг 2. Открытие панели "Добавление назначения ролей"
+## <a name="step-2-open-the-add-role-assignment-pane"></a>Шаг 2. Открытие панели "Добавление назначения ролей"
 
 **Управление доступом (IAM)** — это страница, которая обычно используется для назначения ролей для предоставления доступа к ресурсам Azure. Он также называется управление удостоверениями и доступом (IAM) и появляется в нескольких расположениях в портал Azure.
 
@@ -71,7 +68,7 @@ ms.locfileid: "98117450"
 
    ![Область "Добавить назначение ролей"](./media/shared/add-role-assignment.png)
 
-### <a name="step-3-select-the-appropriate-role"></a>Шаг 3. Выбор подходящей роли
+## <a name="step-3-select-the-appropriate-role"></a>Шаг 3. Выбор подходящей роли
 
 1. В списке **роль** найдите или прокрутите список ролей, которые нужно назначить.
 
@@ -81,7 +78,7 @@ ms.locfileid: "98117450"
 
 1. Щелкните, чтобы выбрать роль.
 
-### <a name="step-4-select-who-needs-access"></a>Шаг 4. Выбор пользователей, которым требуется доступ
+## <a name="step-4-select-who-needs-access"></a>Шаг 4. Выбор пользователей, которым требуется доступ
 
 1. В списке **назначить доступ к** выберите тип субъекта безопасности, которому нужно назначить доступ.
 
@@ -101,7 +98,7 @@ ms.locfileid: "98117450"
 
 1. Найдя субъект безопасности, щелкните его, чтобы выбрать.
 
-### <a name="step-5-assign-role"></a>Шаг 5. Назначение роли
+## <a name="step-5-assign-role"></a>Шаг 5. Назначение роли
 
 1. Чтобы назначить роль, нажмите кнопку **сохранить**.
 
@@ -111,30 +108,8 @@ ms.locfileid: "98117450"
 
     ![Добавление назначения роли сохранено](./media/role-assignments-portal/rg-role-assignments.png)
 
-## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
-
-В Azure RBAC для удаления доступа из ресурса Azure вы удаляете назначение роли. Выполните следующие действия, чтобы удалить назначение роли.
-
-1. Откройте **Управление доступом (IAM)** для области, например группы управления, подписки, группы ресурсов или отдельного ресурса, чтобы заблокировать доступ.
-
-1. Щелкните вкладку **Назначения ролей**, чтобы просмотреть все назначения ролей в этой области.
-
-1. В списке назначений ролей добавьте флажок рядом с именем субъекта безопасности, для которого нужно удалить назначение ролей.
-
-   ![Выбрано назначение ролей для удаления](./media/role-assignments-portal/rg-role-assignments-select.png)
-
-1. Щелкните **Удалить**.
-
-   ![Сообщение об удалении назначения роли](./media/role-assignments-portal/remove-role-assignment.png)
-
-1. В появившемся сообщении об отзыве назначения роли щелкните **Да**.
-
-    Если появится сообщение о том, что наследование назначений ролей не может быть удалено, вы пытаетесь удалить назначение роли в дочерней области. Следует открыть элемент управления доступом (IAM) в области, в которой была назначена роль, и повторить попытку. Чтобы быстро открыть элемент управления доступом (IAM) в нужной области, просмотрите столбец **область** и щелкните ссылку рядом с **(наследуется)**.
-
-   ![Удаление сообщения о назначении роли для наследуемых назначений ролей](./media/role-assignments-portal/remove-role-assignment-inherited.png)
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение пользователя администратором подписки Azure](role-assignments-portal-subscription-admin.md)
-- [Добавление назначения роли для управляемого удостоверения](role-assignments-portal-managed-identity.md)
+- [Удаление назначений ролей Azure](role-assignments-remove.md)
 - [Устранение неполадок в Azure RBAC](troubleshooting.md)

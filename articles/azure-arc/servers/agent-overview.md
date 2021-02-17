@@ -1,14 +1,14 @@
 ---
 title: Общие сведения об агенте Connected Machine для Windows
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
-ms.date: 02/03/2021
+ms.date: 02/16/2021
 ms.topic: conceptual
-ms.openlocfilehash: ed77ee00510fedaf42226081fcf11c4753b8a63a
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 82562bf3b1f8392e56a53ba0f968a76b050e7b13
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99626314"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558498"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -32,6 +32,30 @@ ms.locfileid: "99626314"
     * Назначения удаляются через 14 дней и не переназначаются компьютеру после 14-дневного периода.
 
 * Агент расширений управляет расширениями виртуальной машины, включая установку, удаление и обновление. Расширения загружаются из Azure и копируются в `%SystemDrive%\%ProgramFiles%\AzureConnectedMachineAgent\ExtensionService\downloads` папку в Windows, а для Linux — `/opt/GC_Ext/downloads` . В Windows расширение устанавливается по следующему пути `%SystemDrive%\Packages\Plugins\<extension>` , а в Linux расширение устанавливается в `/var/lib/waagent/<extension>` .
+
+## <a name="instance-metadata"></a>Метаданные экземпляра
+
+Метаданные о подключенном компьютере собираются после того, как агент подключенного компьютера регистрируется на серверах с поддержкой ARC. В частности:
+
+* Имя, тип и версия операционной системы
+* Имя компьютера
+* полное доменное имя (FQDN) компьютера;
+* версия агента подключенного компьютера.
+* Active Directory и полное доменное имя DNS (FQDN)
+* UUID (ИДЕНТИФИКАТОР BIOS)
+* Период пульса агента подключенного компьютера
+* версия агента подключенного компьютера.
+* Открытый ключ для управляемого удостоверения
+* Состояние соответствия политике и сведения (при использовании политик гостевой конфигурации политики Azure)
+
+Агент из Azure запрашивает следующие сведения о метаданных:
+
+* Расположение ресурса (регион)
+* Virtual machine ID (Идентификатор виртуальной машины)
+* Теги
+* Сертификат управляемого удостоверения Azure Active Directory
+* Назначения политик гостевой конфигурации
+* Запросы расширения — установка, обновление и удаление.
 
 ## <a name="download-agents"></a>Скачивание агентов
 
@@ -108,7 +132,7 @@ URL-адреса:
 |`dc.services.visualstudio.com`|Application Insights|
 |`*.guestconfiguration.azure.com` |Гостевая конфигурация|
 |`*.his.arc.azure.com`|Служба гибридной идентификации|
-|`www.office.com`|Office 365|
+|`www.office.com`|Office 365|
 
 Для предварительных версий агентов (версии 0,11 и ниже) также требуется доступ к следующим URL-адресам:
 

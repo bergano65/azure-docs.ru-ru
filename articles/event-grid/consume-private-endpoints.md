@@ -3,12 +3,12 @@ title: Доставка событий с помощью службы частн
 description: В этой статье описывается, как обойти ограничение невозможности доставки событий с помощью службы Private Link.
 ms.topic: how-to
 ms.date: 02/12/2021
-ms.openlocfilehash: ad6f500830383f60e0350a297d2650bfbeae2f6f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4343740ea6c34c9ae282723b79007f7035785b04
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100418034"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548626"
 ---
 # <a name="deliver-events-using-private-link-service"></a>Доставка событий с помощью службы частной связи
 В настоящее время невозможно доставить события с помощью [частных конечных точек](../private-link/private-endpoint-overview.md). То есть нет никакой поддержки, если есть требования к сетевой изоляции, в которых трафик доставленных событий не должен выходить за пределы частного IP-адреса. 
@@ -19,7 +19,7 @@ ms.locfileid: "100418034"
 Затем можно использовать закрытую ссылку, настроенную в функциях Azure, или веб-перехватчик, развернутый в виртуальной сети, для извлечения событий. См. Пример: [Подключение к частным конечным точкам с помощью функций Azure](/samples/azure-samples/azure-functions-private-endpoints/connect-to-private-endpoints-with-azure-functions/).
 
 
-:::image type="content" source="./media/consume-private-endpoints/deliver-private-link-service.png" alt-text="Доставка через службу частных ссылок":::
+:::image type="content" source="./media/consume-private-endpoints/deliver-private-link-service.svg" alt-text="Доставка через службу частных ссылок":::
 
 
 В этой конфигурации трафик передается через общедоступный IP-адрес или Интернет из службы "Сетка событий" в концентраторы событий, служебную шину или службу хранилища Azure, но канал может быть зашифрован и используется управляемое удостоверение службы "Сетка событий". Если вы настраиваете функции Azure или веб-перехватчик, развернутые в виртуальной сети, для использования концентраторов событий, служебной шины или хранилища Azure с помощью частной связи, этот раздел трафика будет оставаться в пределах Azure.
@@ -48,5 +48,5 @@ ms.locfileid: "100418034"
 1. [Настройте подписку на события](managed-service-identity.md#create-event-subscriptions-that-use-an-identity) , использующую очередь или раздел служебной шины в качестве конечной точки для использования назначенного системой удостоверения.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о доставке событий с помощью управляемого удостоверения см. в разделе [Доставка событий с помощью управляемого удостоверения](managed-service-identity.md). 

@@ -4,18 +4,18 @@ description: Использование Azure Monitor для создания и
 author: yanivlavi
 ms.author: yalavi
 ms.topic: conceptual
-ms.date: 07/29/2019
+ms.date: 09/22/2020
 ms.subservice: alerts
-ms.openlocfilehash: 950482a96604165a8f1ff20cab9e3eafe1224c90
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 9f50a08930ba2556c27c79a90261497dc00dcca3
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98029004"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548341"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 
 Оповещения журнала позволяют пользователям использовать [log Analytics](../log-query/log-analytics-tutorial.md) запрос для проверки журнала ресурсов каждые заданные частоты и запуска предупреждения на основе результатов. Правила могут запускать одно или несколько действий с помощью [групп действий](./action-groups.md). [Дополнительные сведения о функциональности и терминологии оповещений журнала](alerts-unified-log.md).
 
@@ -55,7 +55,7 @@ ms.locfileid: "98029004"
 
 1. Оповещения журнала могут основываться на двух типах [**мер**](alerts-unified-log.md#measure):
     1. **Число результатов** — количество записей, возвращаемых запросом.
-    1. **Измерение метрик**  -  *Статистическое значение* , вычисленное с использованием суммирования, сгруппированных по выражениям, выбранным и [ячейками](/azure/kusto/query/binfunction) . Пример:
+    1. **Измерение метрик**  -  *Статистическое значение* , вычисленное с использованием суммирования, сгруппированных по выражениям, выбранным и [ячейками](/azure/kusto/query/binfunction) . Например:
 
     ```Kusto
     // Reported errors
@@ -112,7 +112,7 @@ ms.locfileid: "98029004"
 
 1. На [портале](https://portal.azure.com/)выберите **монитор** и щелкните **оповещения**.
 
-    ![Мониторинг](media/alerts-log/AlertsPreviewMenu.png)
+    ![Наблюдение](media/alerts-log/AlertsPreviewMenu.png)
 
 1. Выберите **новое правило генерации оповещений**. 
 
@@ -321,7 +321,7 @@ az deployment group create \
 
 При успешном создании возвращается 201. При успешном обновлении возвращается 200.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об [оповещениях журнала](./alerts-unified-log.md).
 * Создание оповещений журнала с помощью [шаблонов Azure Resource Manager](./alerts-log-create-templates.md).

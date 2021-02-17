@@ -1,25 +1,29 @@
 ---
-title: Добавление назначений ролей Azure с помощью шаблона Azure Resource Manager — Azure RBAC
+title: Назначение ролей Azure с помощью шаблонов Azure Resource Manager — Azure RBAC
 description: Узнайте, как предоставляется доступ к ресурсам Azure пользователям, группам, субъектам-службам или управляемым удостоверениям с помощью шаблона Azure Resource Manager и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
-manager: mtillman
+manager: daveba
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
 ms.date: 01/21/2021
 ms.author: rolyon
-ms.openlocfilehash: 023aa086cdafc3ab1459c2f748b2181575c14191
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 65b4ec369085e44cdffb0550e9eeaef0196cd35a
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675342"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556022"
 ---
-# <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Добавление назначений ролей Azure с помощью шаблона Azure Resource Manager
+# <a name="assign-azure-roles-using-azure-resource-manager-templates"></a>Назначение ролей Azure с помощью шаблонов Azure Resource Manager
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В дополнение к использованию Azure PowerShell или Azure CLI вы можете назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается порядок назначения ролей с помощью шаблонов.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+[!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
 
 ## <a name="get-object-ids"></a>Получение идентификаторов объектов
 
@@ -73,13 +77,13 @@ $objectid = (Get-AzADServicePrincipal -DisplayName "{name}").id
 objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output tsv)
 ```
 
-## <a name="add-a-role-assignment"></a>Добавление назначения роли
+## <a name="assign-an-azure-role"></a>Назначение роли Azure
 
-Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей.
+Чтобы предоставить доступ, назначьте роль в Azure RBAC.
 
 ### <a name="resource-group-scope-without-parameters"></a>Область группы ресурсов (без параметров)
 
-Следующий шаблон демонстрирует базовый способ добавления назначения ролей. Некоторые значения указываются в шаблоне. Приведенный ниже шаблон демонстрирует:
+В следующем шаблоне показан базовый способ назначения роли. Некоторые значения указываются в шаблоне. Приведенный ниже шаблон демонстрирует:
 
 -  как назначить роль [Reader](built-in-roles.md#reader) пользователю, группе или приложению в области действия группы ресурсов.
 
@@ -206,7 +210,7 @@ az deployment sub create --location centralus --template-file rbac-test.json --p
 
 ### <a name="resource-scope"></a>Область ресурса
 
-Если необходимо добавить назначение ролей на уровне ресурса, задайте `scope` для свойства в назначении роли имя ресурса.
+Если необходимо назначить роль на уровне ресурса, присвойте `scope` свойству назначения роли имя ресурса.
 
 Приведенный ниже шаблон демонстрирует:
 
@@ -369,15 +373,6 @@ az deployment group create --resource-group ExampleGroup2 --template-file rbac-t
 Ниже приведен пример назначения роли Contributor новому субъекту-службе управляемого удостоверения после развертывания шаблона.
 
 ![Назначение ролей для нового субъекта-службы управляемого удостоверения](./media/role-assignments-template/role-assignment-template-msi.png)
-
-## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
-
-В Azure RBAC для удаления доступа к ресурсу Azure следует удалить назначение ролей. Невозможно удалить назначение ролей с помощью шаблона. Чтобы удалить назначение ролей, необходимо использовать другие средства, такие как:
-
-- [Портал Azure](role-assignments-portal.md#remove-a-role-assignment)
-- [Azure PowerShell](role-assignments-powershell.md#remove-a-role-assignment)
-- [Azure CLI](role-assignments-cli.md#remove-a-role-assignment)
-- [REST API](role-assignments-rest.md#remove-a-role-assignment)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

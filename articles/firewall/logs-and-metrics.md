@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 09/10/2020
+ms.date: 02/16/2021
 ms.author: victorh
-ms.openlocfilehash: 69890e2d846a63a70c1b7459b1df13ce5e891289
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 637ef56ca79dd333a587d38ed6a685664c7566ca
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659477"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547049"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Журналы и метрики Брандмауэра Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "94659477"
 
 * **Журнал правил приложений**
 
-   Журнал правил приложений сохраняется в учетной записи хранения, передается в концентраторы событий и (или) отправляются в журналы Azure Monitor, только если вы включили его для каждого брандмауэра Azure. Результаты каждого нового подключения, которое соответствует одному из настроенных правил приложения, находятся в журнале принятого или отклоненного подключения. Данные регистрируются в журнале в формате JSON, как показано в примере ниже.
+   Журнал правил приложений сохраняется в учетной записи хранения, передается в концентраторы событий и (или) отправляются в журналы Azure Monitor, только если вы включили его для каждого брандмауэра Azure. Результаты каждого нового подключения, которое соответствует одному из настроенных правил приложения, находятся в журнале принятого или отклоненного подключения. Данные записываются в формате JSON, как показано в следующих примерах:
 
    ```
    Category: application rule logs.
@@ -46,6 +46,18 @@ ms.locfileid: "94659477"
     "properties": {
         "msg": "HTTPS request from 10.1.0.5:55640 to mydestination.com:443. Action: Allow. Rule Collection: collection1000. Rule: rule1002"
     }
+   }
+   ```
+
+   ```json
+   {
+     "category": "AzureFirewallApplicationRule",
+     "time": "2018-04-16T23:45:04.8295030Z",
+     "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/AZUREFIREWALLS/{resourceName}",
+     "operationName": "AzureFirewallApplicationRuleLog",
+     "properties": {
+         "msg": "HTTPS request from 10.11.2.4:53344 to www.bing.com:443. Action: Allow. Rule Collection: ExampleRuleCollection. Rule: ExampleRule. Web Category: SearchEnginesAndPortals"
+     }
    }
    ```
 
@@ -171,7 +183,7 @@ ms.locfileid: "94659477"
    Добавив дополнительные общедоступные IP-адреса для брандмауэра, вы сделаете доступными больше портов SNAT и снизите уровень их использования. Кроме того, дополнительные порты SNAT станут доступными при масштабировании брандмауэра по любой другой причине (например, для оптимизации работы ЦП или пропускной способности сети). Таким образом, заданный процент использования портов SNAT может быть отключен без добавления общедоступных IP-адресов, так как служба масштабируется. Можно напрямую управлять количеством доступных общедоступных IP-адресов, чтобы увеличить число доступных портов в брандмауэре. Но вы не можете напрямую управлять масштабированием брандмауэра.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. дополнительные сведения об [отслеживании метрик и журналов Брандмауэра Azure](./firewall-diagnostics.md).
 

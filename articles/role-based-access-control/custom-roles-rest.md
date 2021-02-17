@@ -15,17 +15,17 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: b459f44308827308c28687db3c3fc33df470ea8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab64765fc4e329c8edbf7a4db813113d20d476b3
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84790196"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557514"
 ---
 # <a name="create-or-update-azure-custom-roles-using-the-rest-api"></a>Создание или обновление пользовательских ролей Azure с помощью REST API
 
 > [!IMPORTANT]
-> Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
+> В настоящее время добавление группы управления в `AssignableScopes` доступно в режиме предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -126,7 +126,7 @@ ms.locfileid: "84790196"
 
 1. Замените *{roleDefinitionId}* идентификатором GUID определения роли.
 
-## <a name="create-a-custom-role"></a>Создание настраиваемой роли
+## <a name="create-a-custom-role"></a>Создание пользовательской роли
 
 Чтобы создать пользовательскую роль, используйте REST API [Определения ролей — создание или обновление](/rest/api/authorization/roledefinitions/createorupdate). Чтобы вызвать этот API, необходимо войти в систему с помощью пользователя, которому назначена роль, имеющая `Microsoft.Authorization/roleDefinitions/write` разрешение на доступ ко всем `assignableScopes` . Из встроенных ролей это разрешение включает только [владелец](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator) .
 
@@ -183,7 +183,7 @@ ms.locfileid: "84790196"
 
 1. Если `assignableScopes` является подпиской или группой ресурсов, замените экземпляры *{SubscriptionId}* или *{resourceGroup}* идентификаторами.
 
-1. Если `assignableScopes` является группой управления, замените экземпляр *{groupId}* идентификатором группы управления. Добавление группы управления в `assignableScopes` сейчас находится на этапе предварительной версии.
+1. Если `assignableScopes` является группой управления, замените экземпляр *{groupId}* идентификатором группы управления. В настоящее время добавление группы управления в `assignableScopes` доступно в режиме предварительной версии.
 
 1. В свойстве `actions` добавьте операции, которые разрешают выполнение роли.
 
@@ -341,5 +341,5 @@ ms.locfileid: "84790196"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настраиваемые роли Azure](custom-roles.md)
-- [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
+- [Назначение ролей Azure с помощью REST API](role-assignments-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)

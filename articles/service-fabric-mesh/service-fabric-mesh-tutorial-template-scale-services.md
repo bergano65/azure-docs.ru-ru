@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: df28083a0522178b7327d9f6d24029d303e417a1
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 02dc5d43a23c572d441da2bbb7386885bf66ece7
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747861"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625388"
 ---
 # <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство по Масштабирование приложения, работающего в Сетке Service Fabric
+
+> [!IMPORTANT]
+> Поддержка предварительной версии Сетки Azure Service Fabric была прекращена. Новые развертывания больше не будут разрешены через API Сетки Service Fabric. Поддержка существующих развертываний будет продолжена до 28 апреля 2021 г. включительно.
+> 
+> Дополнительные сведения см. в статье [Прекращение поддержки предварительной версии Сетки Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Это руководство представляет собой вторую часть цикла. Узнайте, как вручную изменять число экземпляров службы приложения, которое было [развернуто в Сетке Service Fabric](service-fabric-mesh-tutorial-template-deploy-app.md). По завершении у вас будет интерфейсная служба с тремя работающими экземплярами и служба данных с двумя запущенными экземплярами.
 
@@ -25,14 +30,14 @@ ms.locfileid: "92747861"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * [развертывание приложения в Сетке Service Fabric с помощью шаблона](service-fabric-mesh-tutorial-template-deploy-app.md);
+> * [Развертывание приложения в Сетке Service Fabric с помощью шаблона](service-fabric-mesh-tutorial-template-deploy-app.md)
 > * Масштабирование приложения, работающего в Сетке Service Fabric
 > * [Обновление приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-upgrade-app.md)
 > * [Удаление приложения](service-fabric-mesh-tutorial-template-remove-app.md)
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -44,7 +49,7 @@ ms.locfileid: "92747861"
 
 Одним из основных преимуществ развертывания приложений в Сетке Service Fabric является возможность легко масштабировать службы. Это можно использовать для обработки изменяющихся объемов нагрузки в службах или для повышения уровня доступности.
 
-В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение имеет две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с одной репликой.  Чтобы просмотреть количество работающих реплик службы WebFrontEnd, используйте следующую команду.
+В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение содержит две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с одной репликой.  Чтобы просмотреть количество работающих реплик службы WebFrontEnd, используйте следующую команду.
 
 ```azurecli
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp --query "replicaCount"
@@ -56,7 +61,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 az mesh service show --resource-group myResourceGroup --name ToDoService --app-name todolistapp --query "replicaCount"
 ```
 
-В шаблоне развертывания ресурса приложения для каждой службы определено свойство *replicaCount* , с помощью которого можно настроить число развертываний этой службы. Приложение может состоять из нескольких служб с уникальными номерами *replicaCount* , развертывание которых и управление которыми осуществляется вместе. Чтобы изменить количество реплик службы, в шаблоне развертывания или файле параметров измените значение *replicaCount* для каждой службы, для которой необходимо горизонтально уменьшить масштаб.  Затем обновите приложение.
+В шаблоне развертывания ресурса приложения для каждой службы определено свойство *replicaCount*, с помощью которого можно настроить число развертываний этой службы. Приложение может состоять из нескольких служб с уникальными номерами *replicaCount*, развертывание которых и управление которыми осуществляется вместе. Чтобы изменить количество реплик службы, в шаблоне развертывания или файле параметров измените значение *replicaCount* для каждой службы, которую необходимо масштабировать.  Затем обновите приложение.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Изменение параметров шаблона развертывания
 
@@ -88,7 +93,7 @@ az mesh service show --resource-group myResourceGroup --name ToDoService --app-n
     }
 ```
 
-Свойство *replicaCount* службы WebFrontEnd ссылается на параметр *frontEndReplicaCount* , а свойство *replicaCount* службы ToDoService — на параметр *serviceReplicaCount* .
+Свойство *replicaCount* службы WebFrontEnd ссылается на параметр *frontEndReplicaCount*, а свойство *replicaCount* службы ToDoService — на параметр *serviceReplicaCount*.
 
 ```json
     "services": [

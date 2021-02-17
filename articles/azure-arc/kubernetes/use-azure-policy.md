@@ -2,18 +2,18 @@
 title: Использование Политики Azure для применения конфигураций кластера в требуемом масштабе (предварительная версия)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/10/2021
+ms.date: 02/15/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: Использование Политики Azure для применения конфигураций кластера в требуемом масштабе
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
-ms.openlocfilehash: ce9ba75e200a02654cac4c50303cc90fd0c1a5fd
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b80e50cb4823632f054de3b7f9da71392f8578d7
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390918"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560190"
 ---
 # <a name="use-azure-policy-to-apply-cluster-configurations-at-scale-preview"></a>Использование Политики Azure для применения конфигураций кластера в требуемом масштабе (предварительная версия)
 
@@ -52,7 +52,7 @@ ms.locfileid: "100390918"
 1. Включите параметр **Создание задачи исправления**.
 1. Убедитесь, что установлен флажок **создать управляемое удостоверение** и что удостоверение будет иметь разрешения **участника** . 
     * Дополнительные сведения см. в статье [Создание назначения политики](../../governance/policy/assign-policy-portal.md) и [исправление несоответствующих ресурсов с помощью политики Azure](../../governance/policy/how-to/remediate-resources.md).
-1. Выберите **Просмотр и создание**.
+1. Выберите **Review + create** (Просмотреть и создать).
 
 После создания назначения политики `sourceControlConfiguration` будет применяться к любому из следующих ресурсов, расположенных в области назначения.
 * Новые `connectedCluster` ресурсы.

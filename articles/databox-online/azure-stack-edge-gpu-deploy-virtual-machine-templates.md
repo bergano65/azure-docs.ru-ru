@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 66d537b79819aecab4ce88a56ed465679363f421
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 9a347d57de540ed31c862f618be7c8a98b685348
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805203"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546930"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Развертывание виртуальных машин на устройстве с Azure Stack ребра Pro GPU с помощью шаблонов
 
@@ -149,7 +149,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 ### <a name="optional-install-certificates"></a>Используемых Установка сертификатов
 
-Пропустите этот шаг, если подключение будет осуществляться через Обозреватель службы хранилища по *протоколу HTTP*. Если используется *протокол HTTPS*, необходимо установить соответствующие сертификаты в обозреватель службы хранилища. В этом случае установите сертификат конечной точки большого двоичного объекта. Дополнительные сведения см. в статье Создание и передача сертификатов в оснастке [Управление сертификатами](azure-stack-edge-j-series-manage-certificates.md). 
+Пропустите этот шаг, если подключение будет осуществляться через Обозреватель службы хранилища по *протоколу HTTP*. Если используется *протокол HTTPS*, необходимо установить соответствующие сертификаты в обозреватель службы хранилища. В этом случае установите сертификат конечной точки большого двоичного объекта. Дополнительные сведения см. в статье Создание и передача сертификатов в оснастке [Управление сертификатами](azure-stack-edge-gpu-manage-certificates.md). 
 
 ### <a name="create-and-upload-a-vhd"></a>Создание и передача виртуального жесткого диска
 
@@ -290,7 +290,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 > [!NOTE]
 > При развертывании шаблона при возникновении ошибки проверки подлинности учетные данные Azure для этого сеанса могли быть просрочены. Повторно выполните `login-AzureRM` команду, чтобы снова подключиться к Azure Resource Manager на устройстве Azure Stack ребра Pro.
 
-1. Выполните следующую команду: 
+1. Выполните следующую команду. 
     
     ```powershell
     $templateFile = "Path to CreateImage.json"
@@ -388,7 +388,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 1. Введите имя пользователя, пароль и поддерживаемый размер виртуальной машины.
 1. При включении сетевого интерфейса для вычислений виртуальный коммутатор и виртуальная сеть были автоматически созданы на этом сетевом интерфейсе. Вы можете запросить существующую виртуальную сеть, чтобы получить имя виртуальной сети, ее имя и имя группы ресурсов виртуальной сети.
 
-    Выполните следующую команду:
+    Выполните следующую команду.
 
     ```powershell
     Get-AzureRmVirtualNetwork
@@ -494,7 +494,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 Разверните шаблон создания виртуальной машины `CreateVM.json` . Этот шаблон создает сетевой интерфейс из существующей виртуальной сети и создает виртуальную машину из развернутого образа.
 
-1. Выполните следующую команду: 
+1. Выполните следующую команду. 
     
     ```powershell
     Command:
@@ -565,7 +565,7 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
     --     ----            -------------   -----         -----------     --------             -------
     ```
 
-7. Убедитесь, что виртуальная машина успешно подготовлена. Выполните следующую команду:
+7. Убедитесь, что виртуальная машина успешно подготовлена. Выполните следующую команду.
 
     `Get-AzureRmVm`
 
@@ -588,6 +588,6 @@ key2 7vnVMJUwJXlxkXXOyVO4NfqbW5e/5hZ+VOs+C/h/ReeoszeV+qoyuBitgnWjiDPNdH4+lSm1/Zj
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Командлеты Azure Resource Manager](/powershell/module/azurerm.resources/?view=azurermps-6.13.0&preserve-view=true)

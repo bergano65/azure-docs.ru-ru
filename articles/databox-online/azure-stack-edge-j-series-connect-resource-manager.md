@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 54aad90cf86f1a20d76f04f3a829f29c47023558
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: ebadfc889eb648b734747e5a2a45662e82aab643
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805803"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546811"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Подключение к Azure Resource Manager на устройстве Azure Stack ребра Pro
 
@@ -36,9 +36,9 @@ Azure Resource Manager предоставляет последовательны
 
 | # | Конечная точка | Поддерживаемые протоколы | Используемый порт | Назначение |
 | --- | --- | --- | --- | --- |
-| 1. | Azure Resource Manager | HTTPS | 443 | Подключение к Azure Resource Manager для автоматизации |
-| 2. | Служба маркеров безопасности | HTTPS | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
-| 3. | BLOB-объект | HTTPS | 443 | Подключение к хранилищу BLOB-объектов с помощью протокола RESTFUL |
+| 1. | Azure Resource Manager | https | 443 | Подключение к Azure Resource Manager для автоматизации |
+| 2. | Служба маркеров безопасности | https | 443 | Проверка подлинности с помощью маркеров доступа и обновления |
+| 3. | BLOB-объект | https | 443 | Подключение к хранилищу BLOB-объектов с помощью протокола RESTFUL |
 
 
 ## <a name="connecting-to-azure-resource-manager-workflow"></a>Подключение к рабочему процессу Azure Resource Manager
@@ -93,9 +93,9 @@ Azure Resource Manager предоставляет последовательны
 
 Для использования только для тестирования и разработки можно использовать Windows PowerShell для создания сертификатов в локальной системе. При создании сертификатов для клиента следуйте приведенным ниже рекомендациям.
 
-1. Сначала необходимо создать корневой сертификат для цепочки подписывания. Дополнительные сведения см. в разделе шаги по [созданию сертификатов цепочки подписывания](azure-stack-edge-j-series-manage-certificates.md#create-signing-chain-certificate).
+1. Сначала необходимо создать корневой сертификат для цепочки подписывания. Дополнительные сведения см. в разделе шаги по [созданию сертификатов цепочки подписывания](azure-stack-edge-gpu-manage-certificates.md#create-signing-chain-certificate).
 
-2. Затем можно создать сертификаты конечной точки для большого двоичного объекта и Azure Resource Manager. Эти конечные точки можно получить на странице **устройства** в локальном веб-интерфейсе. См. инструкции по [созданию сертификатов конечной точки](azure-stack-edge-j-series-manage-certificates.md#create-signed-endpoint-certificates).
+2. Затем можно создать сертификаты конечной точки для большого двоичного объекта и Azure Resource Manager. Эти конечные точки можно получить на странице **устройства** в локальном веб-интерфейсе. См. инструкции по [созданию сертификатов конечной точки](azure-stack-edge-gpu-manage-certificates.md#create-signed-endpoint-certificates).
 
 3. Для всех этих сертификатов убедитесь, что имя субъекта и альтернативное имя субъекта соответствуют следующим рекомендациям:
 
@@ -105,26 +105,26 @@ Azure Resource Manager предоставляет последовательны
     |Хранилище BLOB-объектов|`*.blob.<Device name>.<Dns Domain>`|`*.blob.< Device name>.<Dns Domain>`|`*.blob.mydevice1.microsoftdatabox.com` |
     |Один сертификат с несколькими SAN для обеих конечных точек|`<Device name>.<dnsdomain>`|`login.<Device name>.<Dns Domain>`<br>`management.<Device name>.<Dns Domain>`<br>`*.blob.<Device name>.<Dns Domain>`|`mydevice1.microsoftdatabox.com` |
 
-Дополнительные сведения о сертификатах см. в руководствах по [управлению сертификатами](azure-stack-edge-j-series-manage-certificates.md).
+Дополнительные сведения о сертификатах см. в руководствах по [управлению сертификатами](azure-stack-edge-gpu-manage-certificates.md).
 
 ### <a name="upload-certificates-on-the-device"></a>Отправка сертификатов на устройство
 
 Сертификаты, созданные на предыдущем шаге, будут находиться в личном хранилище на клиенте. Эти сертификаты необходимо экспортировать на клиент в соответствующие файлы форматирования, которые затем можно отправить на устройство.
 
-1. Корневой сертификат необходимо экспортировать как файл формата DER с расширением *CER* . Подробные инструкции см. в разделе [Экспорт сертификатов в виде CER-файла форматирования](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-der-format).
+1. Корневой сертификат необходимо экспортировать как файл формата DER с расширением *CER* . Подробные инструкции см. в разделе [Экспорт сертификатов в виде CER-файла форматирования](azure-stack-edge-gpu-manage-certificates.md#export-certificates-as-der-format).
 
-2. Сертификаты конечной точки должны быть экспортированы в виде *PFX* -файлов с закрытыми ключами. Подробные инструкции см. в разделе [Экспорт сертификатов как PFX-файла с закрытыми ключами](azure-stack-edge-j-series-manage-certificates.md#export-certificates-as-pfx-format-with-private-key).
+2. Сертификаты конечной точки должны быть экспортированы в виде *PFX* -файлов с закрытыми ключами. Подробные инструкции см. в разделе [Экспорт сертификатов как PFX-файла с закрытыми ключами](azure-stack-edge-gpu-manage-certificates.md#export-certificates-as-pfx-format-with-private-key).
 
-3. Затем корневые и конечные сертификаты передаются на устройство с помощью параметра **+ Добавить сертификат** на странице **Сертификаты** в локальном веб-интерфейсе. Чтобы передать сертификаты, выполните действия, описанные в разделе [Отправка сертификатов](azure-stack-edge-j-series-manage-certificates.md#upload-certificates).
+3. Затем корневые и конечные сертификаты передаются на устройство с помощью параметра **+ Добавить сертификат** на странице **Сертификаты** в локальном веб-интерфейсе. Чтобы передать сертификаты, выполните действия, описанные в разделе [Отправка сертификатов](azure-stack-edge-gpu-manage-certificates.md#upload-certificates).
 
 
 ### <a name="import-certificates-on-the-client-running-azure-powershell"></a>Импорт сертификатов на клиенте, на котором работает Azure PowerShell
 
 Клиент Windows, на котором будет вызывать API Azure Resource Manager, должен установить доверие с устройством. Для этого сертификаты, созданные на предыдущем шаге, необходимо импортировать на клиент Windows в соответствующее хранилище сертификатов.
 
-1. Корневой сертификат, экспортированный в формате DER с расширением *CER* , теперь должен импортироваться в Доверенные корневые центры сертификации в клиентской системе. Подробные инструкции см. в разделе [Импорт сертификатов в хранилище доверенных корневых центров сертификации.](azure-stack-edge-j-series-manage-certificates.md#import-certificates-as-der-format)
+1. Корневой сертификат, экспортированный в формате DER с расширением *CER* , теперь должен импортироваться в Доверенные корневые центры сертификации в клиентской системе. Подробные инструкции см. в разделе [Импорт сертификатов в хранилище доверенных корневых центров сертификации.](azure-stack-edge-gpu-manage-certificates.md#import-certificates-as-der-format)
 
-2. Сертификаты конечной точки, экспортированные в виде *PFX* -файла, должны быть экспортированы в виде *CER*-файла. Затем этот *CER* -объект импортируется в **личное** хранилище сертификатов в вашей системе. Подробные инструкции см. [в разделе Импорт сертификатов в личное хранилище](azure-stack-edge-j-series-manage-certificates.md#import-certificates-as-der-format).
+2. Сертификаты конечной точки, экспортированные в виде *PFX* -файла, должны быть экспортированы в виде *CER*-файла. Затем этот *CER* -объект импортируется в **личное** хранилище сертификатов в вашей системе. Подробные инструкции см. [в разделе Импорт сертификатов в личное хранилище](azure-stack-edge-gpu-manage-certificates.md#import-certificates-as-der-format).
 
 ## <a name="step-3-install-powershell-on-the-client"></a>Шаг 3. Установка PowerShell на клиенте 
 

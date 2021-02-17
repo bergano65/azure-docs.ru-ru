@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2019
 ms.author: kumud
-ms.openlocfilehash: f4ce830c889feaeda05745eeb02b72f55ad9314a
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 336eeee7d522647d11f55a65dc9dc4e65e8b7d47
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99819849"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535247"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard"></a>Краткое руководство. Создание и Настройка службы защиты Azure от атак DDoS Standard
 
@@ -39,7 +39,7 @@ ms.locfileid: "99819849"
 
 1. Выберите **создать ресурс** в левом верхнем углу портал Azure.
 2. Найдите термин *от атак DDoS*. Когда в результатах поиска появится **план защиты от атак DDoS** , выберите его.
-3. Щелкните **Создать**.
+3. Нажмите кнопку **создания**.
 4. Введите или выберите следующие значения, а затем щелкните **создать**:
 
     |Параметр        |Значение                                              |
@@ -88,6 +88,11 @@ ms.locfileid: "99819849"
 3. Выберите план защиты от атак DDoS из списка.
 
 Должна быть указана виртуальная сеть _MyVnet_ . 
+
+### <a name="view-protected-resources"></a>Просмотр защищенных ресурсов
+В разделе **защищенные ресурсы** можно просмотреть защищенные виртуальные сети и общедоступные IP-адреса или добавить дополнительные виртуальные сети в ваш план защиты от атак DDoS:
+
+![Просмотр защищенных ресурсов](./media/manage-ddos-protection/ddos-protected-resources.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
