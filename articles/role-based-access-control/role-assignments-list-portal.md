@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 12/09/2020
 ms.author: rolyon
-ms.openlocfilehash: adb3691625d6cdde03c803480ae948bb1911cc7d
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 7d53df4159c071c17657e8a8367da605b6a5dc9e
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964377"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556172"
 ---
 # <a name="list-azure-role-assignments-using-the-azure-portal"></a>Вывод списка назначений ролей Azure с помощью портала Azure.
 
@@ -185,5 +185,5 @@ ms.locfileid: "97964377"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)
+- [Назначение ролей Azure с помощью портал Azure](role-assignments-portal.md)
 - [Устранение неполадок в Azure RBAC](troubleshooting.md)

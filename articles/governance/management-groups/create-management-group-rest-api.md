@@ -1,14 +1,14 @@
 ---
 title: Краткое руководство. Создание группы управления с помощью REST API
 description: В этом кратком руководстве показано, как с помощью REST API создать группу управления для организации ресурсов в иерархию ресурсов.
-ms.date: 08/31/2020
+ms.date: 02/05/2021
 ms.topic: quickstart
-ms.openlocfilehash: b19fddf8215a1b133254c2a31bbea568a315f721
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ff1487bf25945c733402ddb74d1e102bea80b4b1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89237143"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99592506"
 ---
 # <a name="quickstart-create-a-management-group-with-rest-api"></a>Краткое руководство. Создание группы управления с помощью REST API
 
@@ -20,7 +20,7 @@ ms.locfileid: "89237143"
 
 - Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-- Установите [ARMClient](https://github.com/projectkudu/ARMClient), если его у вас еще нет. Это средство, которое отправляет HTTP-запросы к REST API на основе Azure Resource Manager. Кроме того, вы можете использовать функцию "Попробовать" в документации по REST или средствах, например PowerShell [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod) или [Postman](https://www.postman.com).
+- Установите [ARMClient](https://github.com/projectkudu/ARMClient), если его у вас еще нет. Это средство, которое отправляет HTTP-запросы к REST API на основе Azure Resource Manager. Вы можете использовать функцию "Попробовать" в документации по REST или средствах, например PowerShell [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod) или [Postman](https://www.postman.com).
 
 - Любой пользователь Azure AD в арендаторе может создать группу управления без разрешения на запись для группы управления, назначенного этому пользователю, если [защита иерархии](./how-to/protect-resource-hierarchy.md#setting---require-authorization) не включена. Эта новая группа управления становится дочерней по отношению к корневой группе управления или [группе управления по умолчанию](./how-to/protect-resource-hierarchy.md#setting---default-management-group), а ее создателю назначается роль "Владелец". Служба группы управления обеспечивает эту возможность, чтобы назначения ролей не требовались на корневом уровне. У пользователей нет доступа к корневой группе управления при ее создании. Чтобы избежать трудностей при поиске глобальных администраторов Azure AD для настройки работы с группами управления, мы разрешаем создавать исходные группы управления на корневом уровне.
 

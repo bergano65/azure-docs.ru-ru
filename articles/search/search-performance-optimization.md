@@ -5,16 +5,16 @@ description: Узнайте о методах и рекомендациях по
 manager: nitinme
 author: LiamCavanagh
 ms.author: liamca
-ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 02/14/2020
-ms.openlocfilehash: b7c71524dc40f7eabd5ff86ee21c8197acfae1a3
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.date: 02/01/2021
+ms.custom: references_regions
+ms.openlocfilehash: bbd3e5774c6effa45888f6e59874d29f3b55b45f
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100102297"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545587"
 ---
 # <a name="scale-for-performance-on-azure-cognitive-search"></a>Масштабирование для производительности Когнитивный поиск Azure
 
@@ -143,7 +143,7 @@ Azure Когнитивный поиск в настоящее время не п
 
    ![Перекрестные запросы к службам по региону с использованием диспетчера трафика][3]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о ценовых категориях и службах для каждого из них см. в разделе [ограничения служб](search-limits-quotas-capacity.md). Дополнительные сведения о комбинациях секций и реплик см. в разделе [планирование емкости](search-capacity-planning.md) .
 

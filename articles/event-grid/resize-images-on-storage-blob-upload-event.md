@@ -3,12 +3,12 @@ title: Руководство по Использование службы "Се
 description: Руководство по Служба "Сетка событий Azure" может быть активирована при передаче больших двоичных объектов в службу хранилища Azure. Это можно использовать для отправки файлов изображений, которые передаются в службу хранилища Azure, в другие службы, например службу "Функции Azure", для изменения размера и других улучшений.
 ms.topic: tutorial
 ms.date: 07/07/2020
-ms.openlocfilehash: 47ac8cad6d7c2ead8d25aa3525aafdab735f9e71
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca231fc65162fe38f4dcb8b8d5677ef42c7807bb
+ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326598"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99550524"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Руководство по Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
@@ -43,7 +43,7 @@ ms.locfileid: "91326598"
 
 Необходимо изучить руководство по использованию хранилища BLOB-объектов [Передача данных изображений в облако с помощью службы хранилища Azure][previous-tutorial].
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Вам понадобится [подписка Azure](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing). Для работы с этим учебником не подойдет подписка уровня **Бесплатный**. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -263,7 +263,7 @@ az functionapp deployment source config --name $functionapp `
 
 1.  Щелкните элемент **Интеграция**. Затем последовательно выберите элементы **Триггер сетки событий** и **Создание подписки для Сетки событий**.
 
-    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="Выбор функции Эскиз на портале" :::
+    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="Переход к параметру добавления подписки Сетки событий на портале Azure" :::
 
 1. Задайте значения параметров подписки на событие, указанные в таблице.
     
@@ -283,7 +283,7 @@ az functionapp deployment source config --name $functionapp `
 
 1. Перейдите на вкладку **Фильтры** и выполните следующие действия:
     1. Выберите параметр **Включить фильтрацию тем**.
-    1. Для **Тема начинается с** укажите следующее значение: **/blobServices/default/containers/images/blobs/** .
+    1. Для **Тема начинается с** укажите следующее значение: **/blobServices/default/containers/images/** .
 
         ![Выбор фильтра для подписки на событие](./media/resize-images-on-storage-blob-upload-event/event-subscription-filter.png)
 

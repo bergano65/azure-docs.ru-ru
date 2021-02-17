@@ -7,12 +7,12 @@ ms.date: 09/25/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 6de0fc52ae265a47ca7f52d46e5f44b74c1277aa
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a75ecac20c553f697585648c5654d375b85e5183
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530924"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535201"
 ---
 # <a name="key-vault-authentication-fundamentals"></a>Основы проверки подлинности в Key Vault
 
@@ -120,7 +120,7 @@ Key Vault назначения ролей — это набор встроенн
 Дополнительные сведения об Azure RBAC для Key Vault см. в следующих документах:
 
 * [Ссылка](./secure-your-key-vault.md#management-plane-and-azure-rbac) Azure RBAC для Key Vault
-* [Ссылка](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) на Azure RBAC для роли Key Vault (Предварительная версия)
+* [Ссылка](../../role-based-access-control/built-in-roles.md#key-vault-administrator) на Azure RBAC для ролей Key Vault
 
 ## <a name="configure-key-vault-firewall"></a>Настройка брандмауэра Key Vault
 

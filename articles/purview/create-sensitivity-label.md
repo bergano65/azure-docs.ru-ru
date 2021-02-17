@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: b376883ab7d8ef0ffd57a271e74862b684788ebd
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 70aaa528fc86c9e543267b68b5b4cf157ec2dc65
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630282"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535269"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Автоматическая маркировка данных в Azure зрения
 
@@ -41,17 +41,17 @@ ms.locfileid: "98630282"
 Дополнительные сведения см. в разделе:
 
 - [Сведения о метках конфиденциальности](/microsoft-365/compliance/sensitivity-labels) см. в документации по Microsoft 365
-- [Что такое правила автометки?](#what-are-autolabeling-rules)
+- [Что такое правила автоматической маркировки?](#what-are-auto-labeling-rules)
 - [Поддерживаемые типы данных для меток чувствительности в Azure зрения](#supported-data-types-for-sensitivity-labels-in-azure-purview)
 - [Добавление меток для столбцов базы данных SQL](#labeling-for-sql-database-columns)
 
-#### <a name="what-are-autolabeling-rules"></a>Что такое правила автометки?
+#### <a name="what-are-auto-labeling-rules"></a>Что такое правила автоматической маркировки?
 
 Данные постоянно растут и изменяются. Отслеживание данных, которые в настоящее время не отмечены, и принятие действий по ручному применению меток — не только громоздкий, но и ненужная головная боль. 
 
-Правила автомаркировки — это условия, которые указывают, когда должна быть применена определенная метка. При соблюдении этих условий метка автоматически назначается данным, в результате чего сохраняются единообразные метки чувствительности к данным в масштабе.
+Правила автоматической маркировки — это условия, которые указывают, когда должна быть применена определенная метка. При соблюдении этих условий метка автоматически назначается данным, в результате чего сохраняются единообразные метки чувствительности к данным в масштабе.
 
-При создании меток обязательно Определите правила автоматической подписи для [файлов](#define-autolabeling-rules-for-files) и [столбцов базы данных](#define-autolabeling-rules-for-database-columns) , чтобы автоматически применять метки при сканировании данных. 
+При создании меток обязательно Определите правила автоматической метки для [файлов](#define-auto-labeling-rules-for-files) и [столбцов базы данных](#define-auto-labeling-rules-for-database-columns) , чтобы автоматически применять метки при каждом сканировании данных. 
 
 После сканирования данных в зрения можно просмотреть метки, автоматически применяемые в каталоге зрения и аналитических отчетах.
 #### <a name="supported-data-types-for-sensitivity-labels-in-azure-purview"></a>Поддерживаемые типы данных для меток чувствительности в Azure зрения
@@ -123,10 +123,10 @@ ms.locfileid: "98630282"
 
 1. Следуйте остальным запросам в мастере для настройки меток. 
 
-    В частности, определите правила автометки для файлов и столбцов базы данных.
+    В частности, определите правила автоматической метки для файлов и столбцов базы данных.
 
-    - [Определение правил автометки для файлов](#define-autolabeling-rules-for-files)
-    - [Определение правил автометки для столбцов базы данных](#define-autolabeling-rules-for-database-columns)
+    - [Определение правил автоматической метки для файлов](#define-auto-labeling-rules-for-files)
+    - [Определение правил автоматической метки для столбцов базы данных](#define-auto-labeling-rules-for-database-columns)
 
     Дополнительные сведения о параметрах мастера см. в разделе [какие метки конфиденциальности могут быть доступны](/microsoft-365/compliance/sensitivity-labels#what-sensitivity-labels-can-do) в Microsoft 365ной документации.
 
@@ -156,21 +156,21 @@ ms.locfileid: "98630282"
 - [Просмотр меток для ресурсов](#view-labels-on-assets)
 - [Просмотр аналитических отчетов по классификациям и меткам конфиденциальности](#view-insight-reports-for-the-classifications-and-sensitivity-labels)
 
-#### <a name="define-autolabeling-rules-for-files"></a>Определение правил автометки для файлов
+#### <a name="define-auto-labeling-rules-for-files"></a>Определение правил автоматической метки для файлов
 
-Определите правила автометки для файлов в мастере при создании или изменении метки. 
+Определите правила автоматической метки для файлов в мастере при создании или изменении метки. 
 
 На странице **Автоматическое добавление меток для приложений Office** включите **автоматическую маркировку для приложений Office,** а затем определите условия, при которых должна автоматически применяться метка к данным.
 
 Пример:
 
-:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-files-small.png" alt-text="Определение правил автометки для файлов в центре безопасности и соответствия требованиям Microsoft 365" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-files.png":::
+:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-files-small.png" alt-text="Определение правил автоматической метки для файлов в центре безопасности и соответствия требованиям Microsoft 365" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-files.png":::
  
 Дополнительные сведения см. в статье [Автоматическое применение метки чувствительности к данным](/microsoft-365/compliance/apply-sensitivity-label-automatically#how-to-configure-auto-labeling-for-office-apps) в Microsoft 365ной документации. 
 
-#### <a name="define-autolabeling-rules-for-database-columns"></a>Определение правил автометки для столбцов базы данных
+#### <a name="define-auto-labeling-rules-for-database-columns"></a>Определение правил автоматической метки для столбцов базы данных
 
-Определите правила автометки для столбцов базы данных в мастере при создании или изменении метки. 
+Задайте правила автоматической метки для столбцов базы данных в мастере при создании или изменении метки. 
 
 В разделе **Azure зрения Assets (Предварительная версия)** :
 
@@ -180,15 +180,15 @@ ms.locfileid: "98630282"
 
 Пример:
         
-:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-db-columns-small.png" alt-text="Определение правил автометки для столбцов SQL в Microsoft 365 центре безопасности и соответствия требованиям" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-db-columns.png":::
+:::image type="content" source="media/create-sensitivity-label/create-auto-labeling-rules-db-columns-small.png" alt-text="Определение правил автоматической метки для столбцов SQL в центре безопасности и соответствия требованиям Microsoft 365" lightbox="media/create-sensitivity-label/create-auto-labeling-rules-db-columns.png":::
 
 ## <a name="scan-your-data-to-apply-labels-automatically"></a>Проверка данных на автоматическое применение меток
 
-Просканируйте данные в Azure зрения, чтобы автоматически применить созданные метки на основе заданных правил автомаркировки. 
+Просканируйте данные в Azure зрения, чтобы автоматически применить созданные метки на основе определенных правил автоматического определения меток. 
 
 Дополнительные сведения о настройке проверок для различных ресурсов в Azure зрения см. в следующих статьях:
 
-|Источник  |Ссылка  |
+|Источник  |Справочник  |
 |---------|---------|
 |**Хранилище BLOB-объектов Azure**     |[Регистрация и проверка хранилища BLOB-объектов Azure](register-scan-azure-blob-storage-source.md)         |
 |**Хранилище озера данных Azure**     |[Регистрация и сканирование Azure Data Lake Storage 1-го поколения](register-scan-adls-gen1.md) </br>[Регистрация и сканирование Azure Data Lake Storage 2-го поколения](register-scan-adls-gen2.md)         |
@@ -197,7 +197,7 @@ ms.locfileid: "98630282"
 
 ## <a name="view-labels-on-assets"></a>Просмотр меток для ресурсов
 
-Определив правила автоматической подписи для меток в Microsoft 365 и проверили данные в Azure зрения, метки автоматически применяются к вашим ресурсам. 
+Определив правила автоматической маркировки для меток в Microsoft 365 и проверили данные в Azure зрения, метки автоматически применяются к вашим ресурсам. 
 
 **Чтобы просмотреть метки, применяемые к вашим ресурсам в каталоге Azure зрения, выполните следующие действия.**
 

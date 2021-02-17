@@ -6,15 +6,15 @@ documentationcenter: ''
 author: johndowns
 ms.service: api-management
 ms.topic: article
-ms.date: 06/12/2020
+ms.date: 02/10/2021
 ms.author: jodowns
 ms.custom: fasttrack-new
-ms.openlocfilehash: 578bb511175d88a1507af9520265a1acd068b27c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9dc44b4b898603df88d1bdd8c36ddfb6449335ac
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87098002"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547202"
 ---
 # <a name="versions-in-azure-api-management"></a>Версии в службе управления API Azure
 
@@ -64,9 +64,13 @@ ms.locfileid: "87098002"
 
 ## <a name="how-versions-are-represented"></a>Представление версий
 
-Служба управления API Azure поддерживает ресурс, называемый *набором версий*, который представляет набор версий для одного логического API. Если вы используете портал Azure для управления версиями, набор версий не отображается, но если вы взаимодействуете со службой управления API с помощью PowerShell, шаблонов диспетчер ресурсов или API Azure Resource Manager, вы можете непосредственно просматривать наборы версий и управлять ими. Набор версий содержит отображаемое имя API с управлением версиями, а также [схему управления версиями, используемую](#versioning-schemes) для направления запросов к указанным версиям.
+Служба управления API Azure поддерживает ресурс, называемый *набором версий*, который представляет набор версий для одного логического API. Набор версий содержит отображаемое имя API с управлением версиями и [схему управления версиями, используемую](#versioning-schemes) для направления запросов к указанным версиям.
 
-Каждая версия API сохраняется в виде собственного ресурса API, который затем связывается с набором версий. Набор версий может содержать API-интерфейсы с очень разными операциями или политиками, что отражает тот факт, что вы можете вносить существенные изменения между версиями API.
+Каждая версия API сохраняется в виде собственного ресурса API, который затем связывается с набором версий. Набор версий может содержать API-интерфейсы с разными операциями или политиками. Вы можете вносить существенные изменения между версиями в наборе.
+
+Портал Azure создает наборы версий. Вы можете изменить имя и описание набора версий в портал Azure.
+
+Вы можете просматривать наборы версий и управлять ими непосредственно с помощью [Azure CLI](/cli/azure/apim/api/versionset), [Azure PowerShell](/powershell/module/az.apimanagement/#api-management), [шаблонов диспетчер ресурсов](/azure/templates/microsoft.apimanagement/service/apiversionsets)или [API Azure Resource Manager](/rest/api/apimanagement/2020-06-01-preview/apiversionset).
 
 ### <a name="migrating-a-non-versioned-api-to-a-versioned-api"></a>Миграция API без управления версиями в API с управлением версиями
 

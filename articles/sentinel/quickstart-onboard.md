@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 10/14/2020
 ms.custom: references_regions
-ms.openlocfilehash: 107806b6372360e501fe9cc0a21d25cff5cc35f9
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 7cb8cb4d99ca8a63195eba21d82814fcd7820f5c
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95248651"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807773"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
@@ -41,7 +41,7 @@ ms.locfileid: "95248651"
 
 ### <a name="geographical-availability-and-data-residency"></a>Географическая доступность и место расположения данных
 
-- Azure Sentinel можно запускать в рабочих областях в большинстве [общедоступных регионов Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor) за исключением Китая и Германии (независимых регионов). Иногда в новых регионах Log Analytics подключение к службе Sentinel может занять некоторое время. 
+- Azure Sentinel можно запускать в рабочих областях в большинстве [общедоступных регионов Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor) за исключением Китая и Германии (независимых регионов). Иногда в новых регионах Log Analytics подключение к службе Azure Sentinel может занять некоторое время. 
 
 - Данные, созданные с помощью Azure Sentinel, такие как инциденты, закладки и правила аналитики, могут содержать данные о клиенте, источником которых являются рабочие области Log Analytics клиента. Эти данные, созданные с помощью Azure Sentinel, сохраняются в географическом списке, приведенном в следующей таблице, в соответствии с географией, в которой находится рабочая область.
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 5ef06f2db487a3e6d897e26758da840f37c3ecaf
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: cff40385edc89c0f6d2d105d089b66c046b0c04b
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575811"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545944"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Руководство по Создание комплексного решения
 
@@ -124,8 +124,6 @@ Query
 ### <a name="assign-permissions-to-the-function-app"></a>Назначение разрешений для приложения-функции
 
 Чтобы разрешить приложению-функции доступ к Azure Digital Twins, необходимо настроить параметр приложения, назначить приложению управляемое системой удостоверение Azure AD и предоставить этому удостоверению роль *владельца данных Azure Digital Twins* в экземпляре Azure Digital Twins. Эта роль необходима для любого пользователя или функции, которым потребуется выполнять множество действий на плоскости данных в экземпляре. Дополнительные сведения о назначениях ролей и безопасности см. в статье [*Основные понятия. Безопасность для решений Azure Digital Twins*](concepts-security.md).
-
-[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
 В Azure Cloud Shell установите параметр приложения, который будет использоваться вашим приложением-функцией для обращения к экземпляру Azure Digital Twins, с помощью следующей команды. Вместо заполнителей укажите сведения о своих ресурсах. Помните, что URL-адрес экземпляра Azure Digital Twins — это имя узла, которому предшествует *https://* .
 

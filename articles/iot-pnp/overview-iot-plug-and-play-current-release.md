@@ -8,12 +8,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 5e9d9e762568c01d31f0c3a29be809a5f90b6b44
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 7b6669ca55dc9b94dc5d702e54b42011120b8812
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421657"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831881"
 ---
 # <a name="what-is-in-the-current-iot-plug-and-play-release"></a>Каков текущий выпуск IoT Plug and Play?
 
@@ -77,3 +77,7 @@ REST API [30.09.2020](/rest/api/iothub).
 - [Подготовка и сертификация устройств для IoT Plug and Play (опубликовано 26 августа 2020 г.)](https://azure.microsoft.com/blog/prepare-and-certify-your-devices-for-iot-plug-and-play/)
 - [Теперь IoT Plug and Play доступен в предварительной версии (опубликовано 22 августа 2019 г.)](https://azure.microsoft.com/blog/iot-plug-and-play-is-now-available-in-preview/)
 - [Сборка с помощью Azure IoT Central и IoT Plug and Play (опубликовано 7 мая 2019 г.)](https://azure.microsoft.com/blog/build-with-azure-iot-central-and-iot-plug-and-play/)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+На следующем шаге мы рекомендуем ознакомиться со статьей [Что такое IoT Plug and Play?](overview-iot-plug-and-play.md).

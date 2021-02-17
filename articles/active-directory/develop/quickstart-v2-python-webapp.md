@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 3c3eaddf1767a3fa4a2ba73ae7a27f1f7df13990
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: fb38140f09fc7c1eb2c40fc02e8c113cbc6f94a0
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178212"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103521"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт
 
@@ -40,7 +40,7 @@ ms.locfileid: "98178212"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/PythonQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/PythonQuickstartPage/sourceType/docs" target="_blank">регистрации приложений</a> на портале Azure и приступите к работе.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
@@ -50,7 +50,7 @@ ms.locfileid: "98178212"
 >
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
-> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 > 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 > 1. Введите **имя** приложения, например `python-webapp`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
@@ -65,7 +65,7 @@ ms.locfileid: "98178212"
 > 1. Введите описание ключа (например, "Секрет приложения"), оставьте срок действия по умолчанию и выберите **Добавить**.
 > 1. Запишите **значение** параметра **Секрет клиента** для последующего использования.
 > 1. В разделе **Управление** выберите **Разрешения API** > **Добавить разрешение**.
->1.  Убедитесь, что выбрана вкладка **API Майкрософт**.
+> 1. Убедитесь, что выбрана вкладка **API Майкрософт**.
 > 1. В разделе *Часто используемые интерфейсы API Microsoft* выберите **Microsoft Graph**.
 > 1. В разделе **Делегированные разрешения** убедитесь, что выбраны нужные разрешения: **User.ReadBasic.All**. При необходимости используйте поле поиска.
 > 1. Нажмите кнопку **Add permissions** (Добавить разрешения).
@@ -74,7 +74,7 @@ ms.locfileid: "98178212"
 >
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
 >
-> Для работы примера кода в этом кратком руководстве необходимо:
+> Чтобы пример кода, приведенный в этом кратком руководстве, работал, сделайте следующее:
 >
 > 1. Добавьте URL-адрес для ответа как`http://localhost:5000/getAToken`.
 > 1. Создание Секрета клиента.

@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 30b7f1054f7bfee8dc58638791f0b8a424de92a4
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 7118ff589e580fd3aa1f693e72152f1ad4c18e10
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226427"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979884"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Руководство. Выполнение входа от имени пользователя и вызов защищенного API из приложения Blazor WebAssembly
 
@@ -102,7 +102,7 @@ dotnet run --framework netstandard2.1
 
 Затем измените код, как указано в следующих шагах. Эти изменения добавляют [маркеры доступа](access-tokens.md) к исходящим запросам, которые отправляются в API Microsoft Graph. Этот подход более подробно описан в статье [Сценарии обеспечения дополнительной безопасности Blazor WebAssembly для ASP.NET Core](/aspnet/core/blazor/security/webassembly/additional-scenarios).
 
-Сначала создайте новый файл с именем *GraphAuthorizationMessageHandler.cs*, используя следующий код. Этот обработчик будет использоваться для добавления маркера доступа для областей `User.Read` и `Mail.Read` в исходящих запросах к API Microsoft Graph.
+Сначала создайте новый файл с именем *GraphAPIAuthorizationMessageHandler.cs*, используя следующий код. Этот обработчик будет использоваться для добавления маркера доступа для областей `User.Read` и `Mail.Read` в исходящих запросах к API Microsoft Graph.
 
 ```csharp
 using Microsoft.AspNetCore.Components;

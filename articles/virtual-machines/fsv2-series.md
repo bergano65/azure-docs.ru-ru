@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 7071675d4573ebee297217fe216552482cb76406
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: e738a3e18d4ee16b2bbfd7edb6cc32152bb82b48
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096886"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557809"
 ---
 # <a name="fsv2-series"></a>Серия Fsv2
 
@@ -26,7 +26,7 @@ ms.locfileid: "99096886"
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
-[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается (*требуется не менее 4 виртуальных ЦП*)<br>
 [Временные диски ОС](ephemeral-os-disks.md): поддерживаются <br>
 <br>
 
