@@ -1,6 +1,6 @@
 ---
-title: Развертывание виртуальных машин точки Azure с помощью PowerShell
-description: Узнайте, как использовать Azure PowerShell для развертывания плашечных виртуальных машин, чтобы сэкономить на затратах.
+title: Развертывание виртуальных машин Azure на месте с помощью PowerShell
+description: Узнайте, как использовать Azure PowerShell для развертывания виртуальных машин Azure на месте, чтобы сэкономить на затратах.
 author: cynthn
 ms.service: virtual-machines
 ms.workload: infrastructure-services
@@ -8,21 +8,21 @@ ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 0ca3c99aed8160161c125a89da3cb176c6e745f6
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 3554068d75d2581411dd89a1dc876984710bc439
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202068"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557160"
 ---
-# <a name="deploy-spot-vms-using-azure-powershell"></a>Развертывание плашечных виртуальных машин с помощью Azure PowerShell
+# <a name="deploy-azure-spot-virtual-machines-using-azure-powershell"></a>Развертывание виртуальных машин с использованием точки Azure с помощью Azure PowerShell
 
 
-Использование [плашечных виртуальных машин](../spot-vms.md) позволяет использовать преимущества нашей неиспользуемой емкости с значительной экономией затрат. В любой момент времени, когда эта емкость становится нужна, инфраструктура Azure вытесняет точечные виртуальные машины. Это означает, что точечные виртуальные машины прекрасно подходят для рабочих нагрузок, для которых допустимы прерывания, например для заданий пакетной обработки, сред разработки или тестирования, больших вычислительных рабочих нагрузок и других.
+Используя [виртуальные машины Azure](../spot-vms.md) , вы можете использовать преимущества нашей неиспользуемой емкости с значительной экономией затрат. В любой момент, когда Azure нужна емкость, инфраструктура Azure будет выключать виртуальные машины Azure. Таким образом, виртуальные машины Azure для виртуальных машин отлично подходят для рабочих нагрузок, которые могут обрабатывать прерывания, такие как задания пакетной обработки, среды разработки и тестирования, большие вычислительные рабочие нагрузки и многое другое.
 
-Цена на точечные виртуальные машины может изменяться в зависимости от региона и ценовой категории. Дополнительные сведения см. на страницах с информацией о ценах на виртуальные машины [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) и [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/). Дополнительные сведения о настройке максимальной цены см. в разделе [точки на виртуальных машинах — цены](../spot-vms.md#pricing).
+Цены на виртуальные машины Azure для машинного хранения являются переменными на основе региона и SKU. Дополнительные сведения см. на страницах с информацией о ценах на виртуальные машины [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) и [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/). Дополнительные сведения о настройке максимальной цены см. в статье о [ценах на виртуальные машины Azure](../spot-vms.md#pricing).
 
-Вы можете задать максимальную цену, которую вы хотите платить, в час, для виртуальной машины. Максимальная цена на плашечную виртуальную машину можно установить в долларах США (USD), используя до 5 десятичных разрядов. Например, значение `0.98765` определяет максимальную цену 0,98765 долларов США в час. Если вы укажете для максимальной цены значение `-1`, виртуальная машине не будет вытесняться по критерию цены. Цена на такую виртуальную машину будет определяться меньшим из двух значений: текущая цена точечных виртуальных машин или цена на стандартные виртуальные машины, но только при условии наличия емкости и соблюдения квоты.
+Вы можете задать максимальную цену, которую вы хотите платить, в час, для виртуальной машины. Максимальная цена для виртуальной машины точки Azure может быть задана в долларах США (USD), в которой используется до 5 десятичных разрядов. Например, значение `0.98765` определяет максимальную цену 0,98765 долларов США в час. Если вы укажете для максимальной цены значение `-1`, виртуальная машине не будет вытесняться по критерию цены. Цена на такую виртуальную машину будет определяться меньшим из двух значений: текущая цена точечных виртуальных машин или цена на стандартные виртуальные машины, но только при условии наличия емкости и соблюдения квоты.
 
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
@@ -56,7 +56,7 @@ $nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $l
 $nic = New-AzNetworkInterface -Name myNic -ResourceGroupName $resourceGroup -Location $location `
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
 
-# Create a virtual machine configuration and set this to be a Spot VM
+# Create a virtual machine configuration and set this to be an Azure Spot Virtual Machine
 
 $vmConfig = New-AzVMConfig -VMName $vmName -VMSize Standard_D1 -Priority "Spot" -MaxPrice -1 -EvictionPolicy Deallocate | `
 Set-AzVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred | `
@@ -75,7 +75,7 @@ Get-AzVM -ResourceGroupName $resourceGroup | `
 
 ## <a name="simulate-an-eviction"></a>Имитация вытеснения
 
-Вы можете [имитировать вытеснение](/rest/api/compute/virtualmachines/simulateeviction) для ПЛАШЕЧНОЙ виртуальной машины, чтобы проверить, насколько хорошо ваше приложение будет ответил внезапного вытеснения. 
+Вы можете [имитировать вытеснение](/rest/api/compute/virtualmachines/simulateeviction) виртуальной машины в машинном коде Azure, чтобы проверить, насколько хорошо ваше приложение будет ответил внезапного вытеснения. 
 
 Замените следующие сведения: 
 
@@ -90,8 +90,8 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Можно также создать плашечную виртуальную машину с помощью [Azure CLI](../linux/spot-cli.md), [портала](../spot-portal.md) или [шаблона](../linux/spot-template.md).
+Вы также можете создать виртуальную машину Azure с помощью [Azure CLI](../linux/spot-cli.md), [портала](../spot-portal.md) или [шаблона](../linux/spot-template.md).
 
-Запросите актуальные сведения о ценах с помощью [API розничных цен Azure](/rest/api/cost-management/retail-prices/azure-retail-prices) для получения сведений о ценах. Объект `meterName` и `skuName` будет содержать `Spot` .
+Запросите текущие сведения о ценах с помощью [API розничных цен Azure](/rest/api/cost-management/retail-prices/azure-retail-prices) , чтобы получить сведения о ценах на виртуальные машины Azure для машинного характера. Объект `meterName` и `skuName` будет содержать `Spot` .
 
 Если возникает ошибка, см. раздел [коды ошибок](../error-codes-spot.md).

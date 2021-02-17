@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 02/01/2021
 ms.author: juliako
-ms.openlocfilehash: c0d332c00635444ab4d694e46486a498b43137f2
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: a6b1fc5adba166aa15a786d3440be1eca7f0a260
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99427670"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560504"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "99427670"
 > [!NOTE]
 > Учетные записи индексатора видео, подключенные к LinkedIn и Facebook, будут недоступны после 1 марта 2021. 
 > 
-> Вы должны [присоединиться](invite-users.md) к учетной записи индексатора видео в Azure AD, Microsoft или Google, чтобы у вас по-прежнему был доступ.<br/>
+> Вы должны [присоединиться](invite-users.md) к учетной записи индексатора видео в Azure AD, Microsoft или Google, чтобы у вас по-прежнему был доступ. Можно добавить дополнительного владельца поддерживаемых поставщиков, как описано в [приглашении](invite-users.md). <br/>
 > Кроме того, можно создать платную учетную запись и перенести данные.
 
 ## <a name="august-2020"></a>Август 2020 г.

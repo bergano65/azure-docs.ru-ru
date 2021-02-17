@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 01/28/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: f4640bbd445b27942d757cc4e09aa7e673550ebc
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 84dde96276414e98cbde05d6e046dce03227f60d
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226528"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547865"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Часто задаваемые вопросы о приложении Microsoft Authenticator
 
@@ -94,6 +94,7 @@ ms.locfileid: "99226528"
 ### <a name="device-registration"></a>Регистрация устройства
 
 **Вопрос**. что такое регистрация устройств?
+
 Ответ **. вашей** Организации может потребоваться зарегистрировать устройство для контроля доступа к защищенным ресурсам, таким как файлы и приложения. Организация также может включить условный доступ, чтобы снизить риск нежелательного доступа к этим ресурсам. Вы можете отменить регистрацию устройства в разделе **параметров**, но при этом можете потерять доступ к сообщениям в Outlook и файлам в OneDrive, а также возможность входа на телефоне.
 
 ### <a name="verification-codes-when-connected"></a>Коды проверки при подключении

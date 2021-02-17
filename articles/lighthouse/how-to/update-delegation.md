@@ -1,14 +1,14 @@
 ---
 title: Обновление делегирования
 description: Узнайте, как обновить делегирование для клиента, ранее подключенного к Azure Лигхсаусе.
-ms.date: 12/03/2020
+ms.date: 02/16/2021
 ms.topic: how-to
-ms.openlocfilehash: eec5d1f2d34e8e3c9e0ded59cb111624b1981873
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: f0ed5222cdbac3d0e4d193941c2a6f233d15938c
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791345"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555772"
 ---
 # <a name="update-a-delegation"></a>Обновление делегирования
 
@@ -48,7 +48,7 @@ ms.locfileid: "98791345"
 Удаление доступа к делегированию может осуществляться любым пользователем в управляющем клиенте, которому была предоставлена [роль "назначение регистрации управляемых служб" Удаление роли](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) в исходном делегировании. Если ни один пользователь в вашем управляющем клиенте не имеет этой роли, можно попросить клиента [Удалить доступ к предложению в портал Azure](view-manage-service-providers.md#add-or-remove-service-provider-offers).
 
 > [!TIP]
-> Если вы удалили предыдущее делегирование, следуя приведенным выше инструкциям, и все еще не можете развернуть новый шаблон ARM, может потребоваться [полностью удалить определение регистрации](/powershell/module/az.managedservices/remove-azmanagedservicesdefinition). Это можно сделать с помощью любого пользователя с ролью владельца в клиенте клиента.  
+> Если вы удалили предыдущее делегирование, следуя приведенным выше инструкциям, и все еще не можете развернуть новый шаблон ARM, может потребоваться [полностью удалить определение регистрации](/powershell/module/az.managedservices/remove-azmanagedservicesdefinition). Это может сделать любой пользователь с ролью, имеющей `Microsoft.Authorization/roleAssignments/write` разрешение, например [владелец](../../role-based-access-control/built-in-roles.md#owner), в клиенте клиента.  
 
 ## <a name="deploy-the-arm-template"></a>Развертывание шаблона ARM
 

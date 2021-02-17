@@ -13,12 +13,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 2b8577af2c8a6296ae6f4f090e8ff233e51ee6fb
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 64107c3f667dd7e59fcf6d191e83457029b3a277
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99583931"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546352"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -59,7 +59,7 @@ ADAL.NET получает маркеры для *ресурсов*, а MSAL.NET�
 
 - ADAL.NET использует [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AuthenticationContext:-the-connection-to-Azure-AD) для представления подключения к службе токенов безопасности (STS) или серверу авторизации с помощью объекта Authority. Библиотека MSAL.NET, в свою очередь, основана на концепции [клиентских приложений](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Client-Applications). Она предоставляет два отдельных класса: `PublicClientApplication` и `ConfidentialClientApplication`.
 
-- Получение маркеров: ADAL.NET и MSAL.NET имеют одинаковые вызовы проверки подлинности ( `AcquireTokenAsync` и  `AcquireTokenSilentAsync` для ADAL.NET и `AcquireTokenInteractive` и `AcquireTokenSilent` в MSAL.NET), но с различными параметрами. В числе отличий важно отметить, что в MSAL.NET уже не нужно передавать в приложение `ClientID` при каждом вызове AcquireTokenXX. Теперь `ClientID` задается только один раз при создании `IPublicClientApplication` или `IConfidentialClientApplication`.
+- Получение маркеров: ADAL.NET и MSAL.NET имеют одинаковые вызовы проверки подлинности ( `AcquireTokenAsync` и `AcquireTokenSilentAsync` для ADAL.NET и `AcquireTokenInteractive` и `AcquireTokenSilent` в MSAL.NET), но с различными параметрами. В числе отличий важно отметить, что в MSAL.NET уже не нужно передавать в приложение `ClientID` при каждом вызове AcquireTokenXX. Теперь `ClientID` задается только один раз при создании `IPublicClientApplication` или `IConfidentialClientApplication`.
 
 ### <a name="iaccount-not-iuser"></a>IAccount вместо IUser
 
@@ -132,7 +132,7 @@ MSAL.NET и конечная точка версии 2.0 пока поддер�
 Тип приложения | Предоставить | ADAL.NET | MSAL.NET
 ----- | ----- | ----- | -----
 Веб-приложение, веб-API, управляющая программа | Учетные данные клиента | [Потоки учетных данных клиента в ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Client-credential-flows) | [Потоки учетных данных клиента в MSAL.NET](msal-authentication-flows.md#client-credentials)
-Веб-API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
+Веб-интерфейс API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
 Веб-приложение | Код аутентификации | [Получение маркеров с помощью кодов авторизации в веб-приложениях через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-with-authorization-codes-on-web-apps) | [Получение маркеров с помощью кодов авторизации в веб-приложениях через MSAL.NET](msal-authentication-flows.md#authorization-code)
 
 ### <a name="cache-persistence"></a>Сохраняемость кэша
@@ -170,7 +170,7 @@ MSAL.NET предоставляет кэш маркеров в закрытом 
 Например, чтобы получить доступ в имени пользователя веб-API версии 1.0, для которого используется URI идентификатора приложения `ResourceId` , необходимо использовать:
 
 ```csharp
-var scopes = new [] {  ResourceId+"/user_impersonation"};
+var scopes = new [] { ResourceId+"/user_impersonation" };
 ```
 
 Если вы хотите считывать и записывать с помощью MSAL.NET Azure Active Directory с помощью Microsoft Graph API ( https://graph.microsoft.com/) , создайте список областей, например, в следующем фрагменте кода:
@@ -205,7 +205,7 @@ Azure AD использует следующую логику:
 
 ```csharp
 ResourceId = "someAppIDURI";
-var scopes = new [] {  ResourceId+"/.default"};
+var scopes = new [] { ResourceId+"/.default" };
 ```
 
 ### <a name="scopes-to-request-in-the-case-of-client-credential-flow--daemon-app"></a>Области для запроса при использовании клиентского потока учетных данных или управляющей программы
@@ -264,6 +264,6 @@ AuthenticationResult result = await appRt.AcquireTokenByRefreshToken(null, rt)
 
 Этот метод можно использовать в разных процессах интеграции, если у вас есть готовый маркер обновления.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об областях в [области, разрешениях и согласии можно найти на платформе Microsoft Identity](v2-permissions-and-consent.md) .

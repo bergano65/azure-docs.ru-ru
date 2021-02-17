@@ -3,12 +3,12 @@ title: Настройка среды для оператора схемы
 description: Узнайте, как настроить среду Azure для использования с встроенной ролью оператора схемы Azure.
 ms.date: 02/05/2021
 ms.topic: how-to
-ms.openlocfilehash: 0e0f6680ab39481a480919af10fadc0f7103a1fb
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: b43a33f4bac92903bd07454041d11850f217d480
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99591607"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558729"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>Настройка среды для роли "Оператор схем"
 
@@ -22,7 +22,7 @@ ms.locfileid: "99591607"
 
 1. Такую [Создание группы безопасности и добавление участников](../../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md)
 
-1. [Добавление назначения роли](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) для **оператора** схемы в учетную запись или группу безопасности
+1. [Назначение роли Azure](../../../role-based-access-control/role-assignments-portal.md) **оператора** схемы учетной записи или группе безопасности
 
 ## <a name="user-assign-managed-identity"></a>Управляемое удостоверение, назначаемое пользователем
 
@@ -32,7 +32,7 @@ ms.locfileid: "99591607"
 
 1. Предоставьте назначаемому пользователем управляемому удостоверению все роли или разрешения, необходимые для определения схемы для предполагаемой области.
 
-1. [Добавьте назначение роли](../../../role-based-access-control/role-assignments-portal.md#add-a-role-assignment) **управляемого оператора идентификации** в учетную запись или группу безопасности. Назначение роли новому назначенному пользователем управляемому удостоверению.
+1. [Назначение роли Azure](../../../role-based-access-control/role-assignments-portal.md) **управляемого оператора идентификации** учетной записи или группе безопасности. Назначение роли новому назначенному пользователем управляемому удостоверению.
 
 1. В качестве **оператора** схемы [назначьте](../create-blueprint-portal.md#assign-a-blueprint) схему, которая использует новое назначенное пользователем управляемое удостоверение.
 

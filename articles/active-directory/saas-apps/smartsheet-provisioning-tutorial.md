@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/07/2019
 ms.author: jeedes
-ms.openlocfilehash: aa4e8c2baaaa0c8ccc9bcdda595f040fac72682f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e9ee994564e175d3c41cfd5ce415ead8c67df353
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181450"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103572"
 ---
 # <a name="tutorial-configure-smartsheet-for-automatic-user-provisioning"></a>Руководство по настройке автоматической подготовки пользователей в Smartsheet
 
@@ -89,7 +89,7 @@ ms.locfileid: "96181450"
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Шаг 4. Определение пользователей для включения в область подготовки 
 
-Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили указать, кто именно будет подготовлен к работе в приложении, на основе назначения, можно выполнить следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+Служба подготовки Azure AD позволяет определить пользователей, которые будут подготовлены, на основе назначения приложению и (или) атрибутов пользователя или группы. Если вы решили определить пользователей на основе назначения, выполните следующие [действия](../manage-apps/assign-user-or-group-access-portal.md), чтобы назначить пользователей и группы приложению. Если вы решили указать, кто именно будет подготовлен, на основе одних только атрибутов пользователя или группы, можете использовать фильтр задания области, как описано [здесь](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
 
 * При назначении пользователей и групп для Smartsheet нужно выбрать роль, отличную от роли **Доступ по умолчанию**. Пользователи с ролью "Доступ по умолчанию" исключаются из подготовки и будут помечены в журналах подготовки как не назначенные явно. Кроме того, если эта роль является единственной, доступной в приложении, можно [изменить манифест приложения](../develop/howto-add-app-roles-in-azure-ad-apps.md), чтобы добавить дополнительные роли. 
 
@@ -137,22 +137,20 @@ ms.locfileid: "96181450"
 
 9. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые синхронизируются из Azure AD в Smartsheet. Атрибуты, выбранные как свойства с меткой **Сопоставление**, используются для сопоставления учетных записей пользователей в Smartsheet при операциях обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |attribute|Тип|
-   |---|---|
+   |attribute|Тип|Поддерживается для фильтрации|
+   |---|---|---|
+   |userName|Строка|&check;|
    |active|Логическое|
    |title|Строка|
-   |userName|Строка|
    |name.givenName|Строка|
    |name.familyName|Строка|
    |phoneNumbers[type eq "work"].value|Строка|
    |phoneNumbers[type eq "mobile"].value|Строка|
    |phoneNumbers[type eq "fax"].value|Строка|
+   |emails[type eq "work"].value|Строка|
    |externalId|Строка|
-   |roles[primary eq "True"].display|Строка|
-   |roles[primary eq "True"].type|Строка|
-   |roles[primary eq "True"].value|Строка|
    |Роли|Строка|
-   urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|Строка|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Строка|
@@ -188,6 +186,7 @@ ms.locfileid: "96181450"
 ## <a name="change-log"></a>Журнал изменений
 
 * 16.06.2020 — добавлена поддержка корпоративных атрибутов расширения для пользователей: Cost Center (Центр затрат), Division (Подразделение), Manager (Руководитель) и Department (Отдел).
+* 10.02.2021 г. — добавлена поддержка основных атрибутов "emails[type eq "work"]" для пользователей.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

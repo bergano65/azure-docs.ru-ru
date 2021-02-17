@@ -7,12 +7,13 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1552401953a8cba9dda787a0f0e461adb7972920
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 5ac41ecc068238cbb20c05b253dc071dfc4a8138
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664458"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560789"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Настройка экземпляра Azure Digital двойников и проверки подлинности (с помощью сценария)
 
@@ -29,11 +30,11 @@ ms.locfileid: "98664458"
 
 ## <a name="prerequisites-download-the-script"></a>Предварительные требования: скачивание скрипта
 
-Пример скрипта написан на PowerShell. Это часть [**комплексных примеров Azure Digital двойников**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *обзора кода* под заголовком. Вы перейдете в репозиторий GitHub для образцов, которые можно скачать в виде *. ZIP* , нажав кнопку *код* и *загрузив ZIP*.
+Пример скрипта написан на PowerShell. Это часть [**комплексных примеров Azure Digital двойников**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), которые можно загрузить на компьютер, перейдя по этой ссылке и нажав кнопку *обзора кода* под заголовком. Вы перейдете в репозиторий GitHub для примеров, которые можно скачать как *ZIP*-файлы. Для этого нажмите кнопку *Код* и выберите элемент *Скачать ZIP-файл*.
 
-:::image type="content" source="media/includes/download-repo-zip.png" alt-text="Представление репозитория Digital-двойников-Samples на GitHub. Выбрана кнопка кода, в результате чего выдается небольшое диалоговое окно, где была отмечена кнопка Загрузить ZIP-файл." lightbox="media/includes/download-repo-zip.png":::
+:::image type="content" source="media/includes/download-repo-zip.png" alt-text="Представление репозитория примеров Digital Twins в GitHub. Выбрана кнопка &quot;Код&quot;, в результате чего отображается небольшое диалоговое окно с выделенной кнопкой &quot;Скачать ZIP-файл&quot;." lightbox="media/includes/download-repo-zip.png":::
 
-Будет загружен *. ZIP* -папку на компьютер как **digital-twins-samples-master.zip**. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
+На ваш компьютер будет скачана *ZIP*-папка с именем **digital-twins-samples-master.zip**. Перейдите в папку на компьютере и распакуйте ее, чтобы извлечь файлы.
 
 В распакованной папке скрипт развертывания находится в сценариях _Digital-двойников-Samples-master > > **deploy.ps1**_.
 
@@ -119,7 +120,7 @@ ms.locfileid: "98664458"
 
 Если проверка завершилась неудачно, можно также повторить собственное назначение ролей с помощью [портала](how-to-set-up-instance-portal.md#set-up-user-access-permissions) или [интерфейса командной строки](how-to-set-up-instance-cli.md#set-up-user-access-permissions).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вытестируйте отдельные REST API вызовы в экземпляре с помощью команд CLI Azure Digital двойников: 
 * [AZ DT Справочник](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)

@@ -3,16 +3,14 @@ author: joshuapartlow
 ms.author: joshuapa
 ms.service: azure-notebooks
 ms.topic: include
-ms.date: 07/01/2020
-ms.openlocfilehash: 1cbea6f133fa31b7b1523dfb0f9b81809c5b008f
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.date: 02/08/2020
+ms.openlocfilehash: bbf834a25c65403933d7576eb059b86e6e22b94c
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997876"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987498"
 ---
 > [!IMPORTANT]
-> 15 января 2021 года поддержка общедоступной предварительной версии сайта Записных книжек Azure будет прекращена. Вместо этого будут использоваться интегрированные службы из Visual Studio, Azure и GitHub. Чтобы создать новую записную книжку или выполнить код в существующей, [узнайте больше](https://aka.ms/aznb-notebooks-at-msft/) о других функциях записных книжек Майкрософт.
->
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> 15 января 2021 года поддержка общедоступной предварительной версии сайта Записных книжек Azure была прекращена. Вместо этого теперь используются интегрированные службы из Visual Studio, Azure и GitHub. Чтобы создать новую записную книжку или выполнить код в существующей, [узнайте больше](https://aka.ms/aznb-notebooks-at-msft/) о других функциях записных книжек Майкрософт.
+
