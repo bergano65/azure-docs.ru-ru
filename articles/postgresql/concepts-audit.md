@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
-ms.openlocfilehash: 615297a4bf47d80c9313f011b90d343b7ae680e3
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 33fa6420f52cae9c869cc75a04ea82de0ec48262
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488050"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596290"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
 
@@ -21,7 +21,7 @@ ms.locfileid: "92488050"
 > Пгаудит находится на этапе предварительной версии в базе данных Azure для PostgreSQL.
 > Расширение можно включить только для общего назначения и оптимизированных для памяти серверов.
 
-Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../azure-monitor/platform/platform-logs-overview.md).
+Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../azure-monitor/essentials/platform-logs-overview.md).
 
 ## <a name="usage-considerations"></a>Особенности использования
 По умолчанию выписки из журналов pgAudit создаются вместе с регулярными выписками с использованием стандартного средства ведения журнала Postgres. В Базе данных Azure для PostgreSQL эти файлы журнала можно скачать на портале Azure или с помощью интерфейса командной строки. Максимальный объем хранилища для коллекции файлов составляет 1 ГБ, а каждый файл доступен не более семи дней (по умолчанию — три дня). Эта служба является краткосрочным хранилищем.
@@ -88,9 +88,9 @@ t=%m u=%u db=%d pid=[%p]:
 ## <a name="viewing-audit-logs"></a>Просмотр журналов аудита
 Если вы используете файлы. log, журналы аудита будут включены в тот же файл, что и журналы ошибок PostgreSQL. Файлы журнала можно загрузить с [портала](howto-configure-server-logs-in-portal.md) Azure или с помощью [интерфейса командной строки](howto-configure-server-logs-using-cli.md). 
 
-Если вы используете ведение журнала ресурсов Azure, то способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
+Если вы используете ведение журнала ресурсов Azure, то способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs) .
 
-Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md) .
+Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/logs/log-query-overview.md) .
 
 Этот запрос можно использовать для начала работы. Можно настроить оповещения на основе запросов.
 
@@ -102,6 +102,6 @@ AzureDiagnostics
 | where Message contains "AUDIT:"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Сведения о ведении журнала в базе данных Azure для PostgreSQL](concepts-server-logs.md)
 - Узнайте, как задать параметры с помощью [портал Azure](howto-configure-server-parameters-using-portal.md), [Azure CLI](howto-configure-server-parameters-using-cli.md)или [REST API](/rest/api/postgresql/configurations/createorupdate).

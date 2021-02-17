@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/23/2018
 ms.author: memildin
-ms.openlocfilehash: 4e270185550fac5a06d800d74d5fcd751aceb25d
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 5b5c78ffec736f29a481aa95426ff663199613b3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342235"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595648"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
 В этой статье приводятся сведения об управлении данными пользователя в центре безопасности Azure. Управление данными пользователя включает в себя возможность доступа, удаления и экспорта данных.
@@ -97,4 +97,4 @@ ms.locfileid: "92342235"
 [Данные об оповещении](security-center-managing-and-responding-alerts.md) считаются данными безопасности и хранятся в течение двух лет.
 
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
-В [журналах действий Azure](../azure-monitor/platform/platform-logs-overview.md)хранятся журналы аудита контактного лица по вопросам безопасности, своевременного и обновления оповещений.
+В [журналах действий Azure](../azure-monitor/essentials/platform-logs-overview.md)хранятся журналы аудита контактного лица по вопросам безопасности, своевременного и обновления оповещений.

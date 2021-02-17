@@ -8,16 +8,16 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 7ed2a672f0f7149240e799b5529a7a3a6836a702
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 004a84cd98381af027c554a7ef40e27e69ec6dbc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499311"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587919"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
-В 2014 мы запустили инфраструктуру как услугу (IaaS) на [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). Мы с легкостью улучшаем возможности. Поскольку Azure Resource Manager теперь обладает полными возможностями IaaS и другими улучшениями, мы не рекомендуем управлять виртуальными машинами IaaS с помощью [Azure Service Manager](./migration-classic-resource-manager-faq.md#what-is-azure-service-manager-and-what-does-it-mean-by-classic) (ASM) 28 февраля 2020. Эта функция будет полностью прекращена 1 марта 2023 г. 
+В 2014 мы запустили инфраструктуру как услугу (IaaS) на [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/). Мы с легкостью улучшаем возможности. Поскольку Azure Resource Manager теперь обладает полными возможностями IaaS и другими улучшениями, мы не рекомендуем управлять виртуальными машинами IaaS с помощью [Azure Service Manager](./migration-classic-resource-manager-faq.md#what-is-azure-service-manager-and-what-does-it-mean-by-classic) (ASM) 28 февраля 2020. Эта функциональность будет полностью удалена 1 марта 2023 г. 
 
 Сегодня около 90% виртуальных машин IaaS используют Azure Resource Manager. Если вы используете ресурсы IaaS через ASM, начните планировать миграцию прямо сейчас. Заполните ее 1 марта 2023, чтобы воспользоваться преимуществами [Azure Resource Manager](../azure-resource-manager/management/index.yml).
 
@@ -30,7 +30,7 @@ ms.locfileid: "96499311"
 - В 1 марта 2023 подписки, которые не перенесены в Azure Resource Manager, будут уведомлены о временных шкалах для удаления оставшихся виртуальных машин (классическая модель).  
 
 Эта выбытие *не* влияет на следующие службы и функции Azure: 
-- Oблачныe службы Azure 
+- [Облачные службы Azure (классические)](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)
 - Учетные записи хранения, *не* используемые виртуальными машинами (классическая модель) 
 - Виртуальные сети, *не* используемые виртуальными машинами (классическая модель) 
 - Другие классические ресурсы
@@ -49,9 +49,9 @@ ms.locfileid: "96499311"
 
 1. Мы рекомендуем начать планирование с помощью [средства миграции платформы поддержка платформ](./migration-classic-resource-manager-overview.md) , чтобы перенести существующие виртуальные машины с помощью трех простых шагов: Проверка, подготовка и фиксация. Это средство предназначено для переноса виртуальных машин в минимальной степени без простоев. 
 
-   1. Первый шаг, проверка, не влияет на существующее развертывание и предоставляет список всех неподдерживаемых сценариев для миграции. 
-   1. Просмотрите [список обходных путей](./migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) , чтобы исправить развертывание и подготовить его к миграции. 
-   1. В идеале после устранения всех ошибок проверки не следует столкнуться с проблемами во время подготовки и фиксации. После успешной фиксации развертывание динамически переносится в Azure Resource Manager и затем может управляться через новые интерфейсы API, предоставляемые Azure Resource Manager. 
+   - Первый шаг, проверка, не влияет на существующее развертывание и предоставляет список всех неподдерживаемых сценариев для миграции. 
+   - Просмотрите [список обходных путей](./migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) , чтобы исправить развертывание и подготовить его к миграции. 
+   - В идеале после устранения всех ошибок проверки не следует столкнуться с проблемами во время подготовки и фиксации. После успешной фиксации развертывание динамически переносится в Azure Resource Manager и затем может управляться через новые интерфейсы API, предоставляемые Azure Resource Manager. 
 
    Если средство миграции не подходит для миграции, можно изучить [другие предложения вычислений](/azure/architecture/guide/technology-choices/compute-decision-tree) для миграции. Так как существует много предложений вычислений Azure и они отличаются друг от друга, мы не можем предоставить поддерживаемый платформой путь к миграции.  
 
@@ -65,6 +65,6 @@ ms.locfileid: "96499311"
 
 - [Поддержка миграции Azure](https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/{"pesId":"6f16735c-b0ae-b275-ad3a-03479cfa1396","supportTopicId":"1135e3d0-20e2-aec5-4ef0-55fd3dae2d58"}): Специальная группа поддержки для технической помощи во время миграции.
 
-- [Microsoft Fast Track](https://www.microsoft.com/fasttrack): Быстрая запись помогает соответствующим клиентам планировать & выполнения этой миграции. [Назначить себе себя](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0).  
+- [Microsoft Fast Track](https://www.microsoft.com/fasttrack): Быстрая запись помогает соответствующим клиентам планировать & выполнения этой миграции. [Назначить себя](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fprograms%2Fazure-fasttrack%2F%23nomination&data=02%7C01%7CTanmay.Gore%40microsoft.com%7C3e75bbf3617944ec663a08d85c058340%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637360526032558561&sdata=CxWTVQQPVWNwEqDZKktXzNV74pX91uyJ8dY8YecIgGc%3D&reserved=0) для программы переноса контроллеров домена.  
 
 - Если ваша компания или организация взаимодействуют с корпорацией Майкрософт или работают с представителями корпорации Майкрософт (например, архитекторами облачных решений (КСАС) или диспетчерами технических учетных записей (ТАМС)), обратитесь к ним за дополнительными ресурсами для миграции.

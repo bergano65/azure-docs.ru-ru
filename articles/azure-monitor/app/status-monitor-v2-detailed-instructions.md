@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: a8a27a782d5e05b5febda659009284c22d3608c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a955273c01d8c0d865aabd91bb1bfcce70fd373
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318986"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587378"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Агент Application Insights (прежнее название — монитор состояния v2): подробные инструкции
 
@@ -158,9 +158,9 @@ SerializationVersion           1.1.0.1
 
 ### <a name="manually-download-the-latest-nupkg-file"></a>Скачайте последнюю версию файла nupkg вручную
 
-1. Перейдите по адресу https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
+1. Перейдите к https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 2. Выберите последнюю версию файла в таблице **журнала версий** .
-3. В разделе **Параметры установки**выберите **Загрузка вручную**.
+3. В разделе **Параметры установки** выберите **Загрузка вручную**.
 
 ### <a name="option-1-install-into-a-powershell-modules-directory"></a>Вариант 1. Установка в каталог модулей PowerShell
 Установите модуль PowerShell, загруженный вручную, в каталог PowerShell, чтобы он был обнаружен сеансами PowerShell.
@@ -227,13 +227,13 @@ SerializationVersion           1.1.0.1
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
  Просмотр телеметрии:
 
-- [Изучите метрики](../platform/metrics-charts.md) для мониторинга производительности и использования.
+- [Изучите метрики](../essentials/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](./diagnostic-search.md) для диагностики проблем.
-- [Используйте аналитику](../log-query/log-query-overview.md) для более сложных запросов.
+- [Используйте аналитику](../logs/log-query-overview.md) для более сложных запросов.
 - [Создание панелей мониторинга](./overview-dashboard.md).
 
  Добавление данных телеметрии:

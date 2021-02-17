@@ -3,12 +3,12 @@ title: Общие сведения об агенте Connected Machine для Wi
 description: В этой статье представлен подробный обзор доступного агента серверов с поддержкой Arc Azure, который поддерживает мониторинг виртуальных машин, размещенных в гибридных средах.
 ms.date: 02/16/2021
 ms.topic: conceptual
-ms.openlocfilehash: 82562bf3b1f8392e56a53ba0f968a76b050e7b13
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 8c06989d726a30e95f0b9c4dcc15a967d498f92a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100558498"
+ms.locfileid: "100580873"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Обзор агента серверов с поддержкой ARC в Azure
 
@@ -110,7 +110,7 @@ ms.locfileid: "100558498"
 Агент Connected Machine для Linux и Windows обменивается исходящими данными со службой Azure Arc через TCP-порт 443. Если компьютер подключается через брандмауэр или прокси-сервер для взаимодействия через Интернет, ознакомьтесь со следующими сведениями о требованиях к конфигурации сети.
 
 > [!NOTE]
-> Серверы с поддержкой Arc не поддерживают использование [шлюза log Analytics](../../azure-monitor/platform/gateway.md) в качестве прокси-сервера для агента подключенного компьютера.
+> Серверы с поддержкой Arc не поддерживают использование [шлюза log Analytics](../../azure-monitor/agents/gateway.md) в качестве прокси-сервера для агента подключенного компьютера.
 >
 
 Если исходящее подключение ограничено брандмауэром или прокси-сервером, убедитесь, что указанные ниже URL-адреса не заблокированы. Если разрешить агенту взаимодействовать со службой только диапазоны IP-адресов или имена доменов, необходимо разрешить доступ к следующим тегам службы и URL-адресам.
@@ -132,7 +132,7 @@ URL-адреса:
 |`dc.services.visualstudio.com`|Application Insights|
 |`*.guestconfiguration.azure.com` |Гостевая конфигурация|
 |`*.his.arc.azure.com`|Служба гибридной идентификации|
-|`www.office.com`|Office 365|
+|`www.office.com`|Office 365|
 
 Для предварительных версий агентов (версии 0,11 и ниже) также требуется доступ к следующим URL-адресам:
 
@@ -293,7 +293,7 @@ az provider register --namespace 'Microsoft.GuestConfiguration'
     * /var/opt/azcmagent
     * /opt/logs
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы начать оценку серверов с поддержкой Arc Azure, следуйте указаниям в статье [подключение гибридных компьютеров к Azure из портал Azure](onboard-portal.md).
 

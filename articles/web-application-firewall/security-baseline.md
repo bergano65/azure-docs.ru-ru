@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b50ab8cae91aab56be287f517fa6e6a0b25db8e1
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d1f0b0b36c8f0ed5ede7b5c3113207ae3cce10fd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807875"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581255"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Базовые показатели безопасности Azure для брандмауэра веб-приложения Azure
 
@@ -111,9 +111,9 @@ ms.locfileid: "99807875"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых параметров и ресурсов, связанных с развертываниями брандмауэра веб-приложения Azure (WAF). Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых параметров или ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -153,9 +153,9 @@ ms.locfileid: "99807875"
 
 - [Общие сведения о ведении журнала](ag/ag-overview.md#logging)
 
-- [Общие сведения о запросе журнала Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+- [Общие сведения о запросе журнала Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 
-- [Общие сведения о журналах платформы Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о журналах платформы Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -192,9 +192,9 @@ ms.locfileid: "99807875"
 
 **Руководство**. Включение параметров диагностики журнала действий Azure, а также параметров диагностики для Azure WAF и отправка журналов в рабочую область log Analytics. Выполняйте запросы в Log Analytics для поиска терминов, определения тенденций, анализа шаблонов и предоставления многих других сведений на основе собранных данных. Создание предупреждений для аномальных действий на основе метрик WAF. Например, если заблокированное число запросов превышает "X," Do "Y".
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
-- [Создание оповещений в Azure](../azure-monitor/learn/tutorial-response.md)
+- [Создание оповещений в Azure](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

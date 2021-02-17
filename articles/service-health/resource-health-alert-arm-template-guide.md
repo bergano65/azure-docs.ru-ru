@@ -3,12 +3,12 @@ title: Шаблон для создания оповещений Работос�
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
 ms.topic: conceptual
 ms.date: 9/4/2018
-ms.openlocfilehash: 3859bb0ce2497b1c1f547c3750e53745ef6d6f28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f1cbe1e2d2c185906feb4ccba380cb31df864f5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91537435"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588204"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -23,9 +23,9 @@ ms.locfileid: "91537435"
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
 1. Необходимо установить [модуль Azure PowerShell](/powershell/azure/install-az-ps)
-2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
+2. [Создать или повторно использовать группу действий](../azure-monitor/alerts/action-groups.md), настроенную на уведомление.
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Инструкции
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
 
     ```azurepowershell
@@ -168,7 +168,7 @@ ms.locfileid: "91537435"
 ],
 ```
 
-Например: `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
+Пример: `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
 
 > Чтобы получить эту строку, перейдите на портал Azure и посмотрите на URL-адрес в разделе ресурса Azure.
 
@@ -452,4 +452,4 @@ ms.locfileid: "91537435"
 
 Создание оповещений службы "Работоспособность служб":
 -  [Создание оповещений журнала действий для уведомлений службы](./alerts-activity-log-service-notifications-portal.md) 
--  [Схема событий журнала действий Azure](../azure-monitor/platform/activity-log-schema.md)
+-  [Схема событий журнала действий Azure](../azure-monitor/essentials/activity-log-schema.md)

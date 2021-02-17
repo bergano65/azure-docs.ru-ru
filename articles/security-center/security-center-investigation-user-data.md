@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/20/2018
 ms.author: memildin
-ms.openlocfilehash: 88fd707d769c7aed53160a9f22fefd15cce19a4b
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 89d47f1fe941dad6a2450df86bfed2d25a1d8f7d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340739"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595663"
 ---
 # <a name="manage-user-data-found-in-an-azure-security-center-investigation"></a>Управление данными пользователя, находящимися в анализе центра безопасности Azure
-В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Данные расследования хранятся в [журналах Azure Monitor](../azure-monitor/log-query/log-query-overview.md) и доступны в центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.
+В этой статье содержатся сведения об управлении данными пользователя, находящимися в анализе центра безопасности Azure. Данные расследования хранятся в [журналах Azure Monitor](../azure-monitor/logs/log-query-overview.md) и доступны в центре безопасности. Управление данными пользователя включает в себя возможность удаления и экспорта данных.
 
 [!INCLUDE [gdpr-intro-sentence.md](../../includes/gdpr-intro-sentence.md)]
 
@@ -57,4 +57,4 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения об управлении данными пользователя в центре безопасности Azure см. в [этой статье](security-center-privacy.md).
-Дополнительные сведения об удалении личных данных в журналах Azure Monitor см. в разделе [Экспорт и удаление закрытых данных](../azure-monitor/platform/personal-data-mgmt.md#how-to-export-and-delete-private-data).
+Дополнительные сведения об удалении личных данных в журналах Azure Monitor см. в разделе [Экспорт и удаление закрытых данных](../azure-monitor/logs/personal-data-mgmt.md#how-to-export-and-delete-private-data).

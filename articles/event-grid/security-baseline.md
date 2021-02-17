@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e085c5c2dbb608692ff7e766744743d3f640387b
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: ef0f308c3ea2986301b0247111ef96bb133b57f4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633211"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571923"
 ---
 # <a name="azure-security-baseline-for-event-grid"></a>Базовый план безопасности Azure для службы "Сетка событий"
 
@@ -163,9 +163,9 @@ ms.locfileid: "98633211"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных со службой "Сетка событий Azure". Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -209,7 +209,7 @@ ms.locfileid: "98633211"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с ресурсами службы "Сетка событий Azure", в соответствии с нормативными требованиями вашей организации.
 
-- [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -227,9 +227,9 @@ ms.locfileid: "98633211"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -249,7 +249,7 @@ ms.locfileid: "98633211"
 
 - [Сведения о схеме журнала диагностики сетки событий](diagnostic-logs.md)
 
-- [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-log.md)
+- [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -513,7 +513,7 @@ ms.locfileid: "98633211"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах ресурсов сетки событий Azure и других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 

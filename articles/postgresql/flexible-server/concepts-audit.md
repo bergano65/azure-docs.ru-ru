@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: cf749f3aef10a0c67814722577f79906f447ffdb
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: b344e2a845a9da8333860599bd4ff9041108202f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92532787"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588259"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---flexible-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — гибкого сервера
 
@@ -20,7 +20,7 @@ ms.locfileid: "92532787"
 > [!IMPORTANT]
 > База данных Azure для PostgreSQL — гибкий сервер в предварительной версии
 
-Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
+Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../../azure-monitor/essentials/platform-logs-overview.md).
 
 ## <a name="usage-considerations"></a>Особенности использования
 По умолчанию выписки из журналов pgAudit создаются вместе с регулярными выписками с использованием стандартного средства ведения журнала Postgres. В базе данных Azure для PostgreSQL-гибкого сервера можно настроить отправку всех журналов в Azure Monitor хранилище журналов для последующей аналитики в Log Analytics. Если вы включаете Azure Monitor ведение журнала ресурсов, журналы автоматически отправляются (в формате JSON) в хранилище Azure, концентраторы событий и (или) Azure Monitor журналы в зависимости от вашего выбора.
@@ -57,9 +57,9 @@ CREATE EXTENSION pgaudit;
 Чтобы быстро приступить к работе, присвойте параметру значение `pgaudit.log` `WRITE` и откройте журналы сервера для просмотра выходных данных. 
 
 ## <a name="viewing-audit-logs"></a>Просмотр журналов аудита
-Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
+Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs) .
 
-Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../../azure-monitor/log-query/log-query-overview.md) .
+Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../../azure-monitor/logs/log-query-overview.md) .
 
 Этот запрос можно использовать для начала работы. Можно настроить оповещения на основе запросов.
 
@@ -71,6 +71,6 @@ AzureDiagnostics
 | where Message contains "AUDIT:"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Сведения о ведении журнала в базе данных Azure для PostgreSQL — гибком сервере](concepts-logging.md)
 - [Узнайте, как настроить ведение журнала в базе данных Azure для PostgreSQL-гибкого сервера и получить доступ к журналам.](howto-configure-and-access-logs.md)

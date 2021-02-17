@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/30/2020
-ms.openlocfilehash: bde1c503d0aaaff1afcee67a26245d5021c43bb4
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d031b64b36bd7ff91c64960642cfbf00fb1682ab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807756"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587304"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -118,7 +118,7 @@ ms.locfileid: "99807756"
 - Отслеживать действия администратора, чтобы контролировать изменения конфигурации или операции с высоким уровнем привилегий.
 - Выявлять и анализировать нежелательное поведение пользователей, которое можно настраивать, исходя из потребностей организации.
 - Выполнять аудит и проверку соответствия. Например, можно отслеживать операции доступа к файлам для конфиденциальных файлов, что поможет в процессе аудита и проверки соответствия.
-- Оперативно устраняйте неполадки с помощью [запросов журнала](../log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
+- Оперативно устраняйте неполадки с помощью [запросов журнала](../logs/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
 
 
 ## <a name="uninstall"></a>Удаление
@@ -218,7 +218,7 @@ ms.locfileid: "99807756"
     .\office365_unsubscribe.ps1 -WorkspaceName <Log Analytics workspace name> -ResourceGroupName <Resource Group name> -SubscriptionId <Subscription ID> -OfficeTennantID <Tenant ID> 
     ```
 
-    Пример.
+    Пример
 
     ```powershell
     .\office365_unsubscribe.ps1 -WorkspaceName MyWorkspace -ResourceGroupName MyResourceGroup -SubscriptionId '60b79d74-f4e4-4867-b631-yyyyyyyyyyyy' -OfficeTennantID 'ce4464f8-a172-4dcf-b675-xxxxxxxxxxxx'
@@ -226,7 +226,7 @@ ms.locfileid: "99807756"
 
 Вам будет предложено ввести учетные данные. Укажите учетные данные для рабочей области Log Analytics.
 
-## <a name="data-collection"></a>Сбор данных
+## <a name="data-collection"></a>сбор данных
 
 Для сбора данных может потребоваться несколько часов. После запуска сбора при создании каждой записи Office 365 отправляет в службу Azure Monitor [уведомление веб-перехватчика](/office/office-365-management-api/office-365-management-activity-api-reference#receiving-notifications) с подробными данными. Эта запись становится доступной в Azure Monitor в течение нескольких минут после ее получения.
 
@@ -263,7 +263,7 @@ ms.locfileid: "99807756"
 
 | Свойство | Описание |
 |:--- |:--- |
-| Тип | *OfficeActivity* |
+| Type | *OfficeActivity* |
 | ClientIP | IP-адрес устройства, которое использовалось при записи действия в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
 | OfficeWorkload | Служба Office 365, к которой относится запись.<br><br>AzureActiveDirectory<br>Exchange<br>SharePoint|
 | Операция | Имя действия пользователя или администратора.  |
@@ -272,7 +272,7 @@ ms.locfileid: "99807756"
 | ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
-| UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Обычный<br>Зарезервировано<br>ServicePrincipal<br>система |
+| UserType | Тип пользователя, выполнившего операцию.<br><br>Административный<br>Приложение<br>DcAdmin<br>Обычный<br>Зарезервировано<br>ServicePrincipal<br>Система |
 
 
 ### <a name="azure-active-directory-base"></a>Основа Azure Active Directory
@@ -381,7 +381,7 @@ ms.locfileid: "99807756"
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
-| Компонент | Представляет элемент, в отношении которого выполнялась операция. | 
+| Элемент | Представляет элемент, в отношении которого выполнялась операция. | 
 | SendAsUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить как". |
 | SendAsUserSmtp | SMTP-адрес пользователя, олицетворяемого при отправке. |
 | SendonBehalfOfUserMailboxGuid | Идентификатор GUID Exchange почтового ящика, к которому осуществлялся доступ для отправки почты с помощью команды "Отправить от имени". |
@@ -471,8 +471,8 @@ ms.locfileid: "99807756"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
-* [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.
-* [Создайте оповещения](../platform/alerts-overview.md), чтобы заранее получать уведомления о важных действиях в Office 365.  
+* Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../logs/log-query-overview.md).
+* [Создайте собственные панели мониторинга](../visualize/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.
+* [Создайте оповещения](../alerts/alerts-overview.md), чтобы заранее получать уведомления о важных действиях в Office 365.  

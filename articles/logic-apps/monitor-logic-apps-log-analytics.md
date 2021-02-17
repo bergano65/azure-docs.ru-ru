@@ -6,16 +6,16 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 09/24/2020
-ms.openlocfilehash: 5df596560e97ea9dba38dca4d4ca58e38caabd37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d72e3ffc8698d9f3a2df170bd87f2969475ca9ed
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91333959"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580678"
 ---
 # <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-azure-logic-apps"></a>Настройка журналов Azure Monitor и получение диагностических данных для Azure Logic Apps
 
-Чтобы получить более широкие отладочные сведения о приложениях логики во время выполнения, можно настроить и использовать [журналы Azure Monitor](../azure-monitor/platform/data-platform-logs.md) для записи и хранения сведений о данных и событиях времени выполнения, таких как события триггера, события запуска и события действий в [рабочей области log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace). [Azure Monitor](../azure-monitor/overview.md) помогает отслеживать облачные и локальные среды, чтобы можно было легко поддерживать доступность и производительность. С помощью журналов Azure Monitor можно создавать запросы к [журналам](../azure-monitor/log-query/log-query-overview.md) , которые помогают в собрании и проверке этих данных. Вы также можете [использовать эти диагностические данные с другими службами Azure](#extend-data), такими как служба хранилища Azure и концентраторы событий Azure.
+Чтобы получить более широкие отладочные сведения о приложениях логики во время выполнения, можно настроить и использовать [журналы Azure Monitor](../azure-monitor/logs/data-platform-logs.md) для записи и хранения сведений о данных и событиях времени выполнения, таких как события триггера, события запуска и события действий в [рабочей области log Analytics](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace). [Azure Monitor](../azure-monitor/overview.md) помогает отслеживать облачные и локальные среды, чтобы можно было легко поддерживать доступность и производительность. С помощью журналов Azure Monitor можно создавать запросы к [журналам](../azure-monitor/logs/log-query-overview.md) , которые помогают в собрании и проверке этих данных. Вы также можете [использовать эти диагностические данные с другими службами Azure](#extend-data), такими как служба хранилища Azure и концентраторы событий Azure.
 
 Чтобы настроить ведение журнала для приложения логики, можно [включить log Analytics при создании приложения логики](#logging-for-new-logic-apps)или [установить решение по управлению Logic Apps](#install-management-solution) в рабочей области log Analytics для существующих приложений логики. Это решение предоставляет статистические сведения о выполнении приложений логики и содержит конкретные сведения, такие как состояние, время выполнения, состояние повторной отправки и идентификаторы корреляции. Затем, чтобы включить ведение журнала и создать запросы для этих сведений, [Настройте журналы Azure Monitor](#set-up-resource-logs).
 
@@ -23,7 +23,7 @@ ms.locfileid: "91333959"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы вам потребуется [Рабочая область log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace). Если у вас нет рабочей области, Узнайте, [как создать рабочую область log Analytics](../azure-monitor/learn/quick-create-workspace.md).
+Перед началом работы вам потребуется [Рабочая область log Analytics](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace). Если у вас нет рабочей области, Узнайте, [как создать рабочую область log Analytics](../azure-monitor/logs/quick-create-workspace.md).
 
 <a name="logging-for-new-logic-apps"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "91333959"
 
 1. В [портал Azure](https://portal.azure.com)на панели, где вы предоставляете сведения для создания приложения логики, выполните следующие действия.
 
-   1. В разделе **log Analytics**выберите **вкл**.
+   1. В разделе **log Analytics** выберите **вкл**.
 
    1. В списке **Рабочая область log Analytics** выберите рабочую область, в которой нужно отправить данные из приложения логики.
 
@@ -55,15 +55,15 @@ ms.locfileid: "91333959"
 
    ![Выберите "Log Analytics рабочие области".](./media/monitor-logic-apps-log-analytics/find-select-log-analytics-workspaces.png)
 
-1. В разделе **log Analytics рабочие области**выберите рабочую область.
+1. В разделе **log Analytics рабочие области** выберите рабочую область.
 
    ![Выбор рабочей области Log Analytics](./media/monitor-logic-apps-log-analytics/select-log-analytics-workspace.png)
 
-1. В области **Обзор** в разделе Начало **работы с log Analytics**  >  **настроить решения мониторинга**выберите пункт **Просмотреть решения**.
+1. В области **Обзор** в разделе Начало **работы с log Analytics**  >  **настроить решения мониторинга** выберите пункт **Просмотреть решения**.
 
    ![На панели "Обзор" выберите "Просмотр решений".](./media/monitor-logic-apps-log-analytics/log-analytics-workspace.png)
 
-1. В разделе **Обзор**выберите **Добавить**.
+1. В разделе **Обзор** выберите **Добавить**.
 
    ![В области "Обзор" добавьте новое решение](./media/monitor-logic-apps-log-analytics/add-logic-apps-management-solution.png)
 
@@ -87,14 +87,14 @@ ms.locfileid: "91333959"
 
 ## <a name="set-up-azure-monitor-logs"></a>настройка журналов Azure Monitor;
 
-При хранении сведений о событиях и данных времени выполнения в [Azure Monitor журналах](../azure-monitor/platform/data-platform-logs.md)можно создавать [запросы журналов](../azure-monitor/log-query/log-query-overview.md) , помогающие находить и просматривать эти сведения.
+При хранении сведений о событиях и данных времени выполнения в [Azure Monitor журналах](../azure-monitor/logs/data-platform-logs.md)можно создавать [запросы журналов](../azure-monitor/logs/log-query-overview.md) , помогающие находить и просматривать эти сведения.
 
 > [!NOTE]
 > После включения параметров диагностики данные диагностики могут не передаваться на журналы в указанном месте до 30 минут, например Log Analytics, концентратор событий или учетную запись хранения. Эта задержка означает, что данные диагностики за указанный период времени могут не существовать для просмотра. Завершенные события и [Отслеживание свойств](#extend-data) могут не отображаться в рабочей области log Analytics в течение 10-15 минут.
 
 1. На [портале Azure](https://portal.azure.com) найдите и выберите требуемое приложение логики.
 
-1. В меню приложения логики в разделе **мониторинг**выберите **параметры диагностики**  >  **Добавить параметр диагностики**.
+1. В меню приложения логики в разделе **мониторинг** выберите **параметры диагностики**  >  **Добавить параметр диагностики**.
 
    ![В разделе "Мониторинг" выберите "параметры диагностики" > "добавить параметр диагностики".](./media/monitor-logic-apps-log-analytics/logic-app-diagnostics.png)
 
@@ -104,17 +104,17 @@ ms.locfileid: "91333959"
 
    1. Установите флажок **Отправить в Log Analytics**.
 
-   1. В поле **Подписка**выберите подписку Azure, связанную с рабочей областью log Analytics.
+   1. В поле **Подписка** выберите подписку Azure, связанную с рабочей областью log Analytics.
 
-   1. Для **log Analytics рабочей области**выберите рабочую область, которую хотите использовать.
+   1. Для **log Analytics рабочей области** выберите рабочую область, которую хотите использовать.
 
-   1. В разделе **Журнал**выберите категорию **WorkflowRuntime** , которая указывает категорию событий, которую необходимо записать.
+   1. В разделе **Журнал** выберите категорию **WorkflowRuntime** , которая указывает категорию событий, которую необходимо записать.
 
-   1. Чтобы выбрать все метрики, в разделе **Метрика**выберите **аллметрикс**.
+   1. Чтобы выбрать все метрики, в разделе **Метрика** выберите **аллметрикс**.
 
    1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
-   Пример:
+   Пример.
 
    ![Выберите рабочую область Log Analytics и данные для ведения журнала](./media/monitor-logic-apps-log-analytics/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -178,10 +178,10 @@ ms.locfileid: "91333959"
 
 Наряду с журналами Azure Monitor можно расширить возможности использования диагностических данных приложения логики с другими службами Azure, например:
 
-* [Архивация журналов ресурсов Azure в учетной записи хранения](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
-* [Потоковая передача журналов платформы Azure в концентраторы событий Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)
+* [Архивация журналов ресурсов Azure в учетной записи хранения](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
+* [Потоковая передача журналов платформы Azure в концентраторы событий Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs)
 
-После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Пример:
+После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/visualize/powerbi.md). Пример.
 
 * [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)
@@ -194,7 +194,7 @@ ms.locfileid: "91333959"
 
 ## <a name="azure-monitor-diagnostics-events"></a>События диагностики Azure Monitor
 
-Каждое событие диагностики содержит подробные сведения о приложении логики и данном событии, например такие, как состояние, время начала, время окончания и т. д. Чтобы программно настроить мониторинг, отслеживание и ведение журнала, эти сведения можно использовать с [REST API для Azure Logic Apps](/rest/api/logic) и [REST API для Azure Monitor](../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows). Можно также использовать `clientTrackingId` `trackedProperties` Свойства и, которые отображаются в 
+Каждое событие диагностики содержит подробные сведения о приложении логики и данном событии, например такие, как состояние, время начала, время окончания и т. д. Чтобы программно настроить мониторинг, отслеживание и ведение журнала, эти сведения можно использовать с [REST API для Azure Logic Apps](/rest/api/logic) и [REST API для Azure Monitor](../azure-monitor/essentials/metrics-supported.md#microsoftlogicworkflows). Можно также использовать `clientTrackingId` `trackedProperties` Свойства и, которые отображаются в 
 
 * `clientTrackingId`. Если это свойство не указано, Azure автоматически создает этот идентификатор и сопоставляет события во время выполнения приложения логики, включая все вложенные рабочие процессы, вызываемые из приложения логики. Этот идентификатор можно указать вручную в триггере, передав `x-ms-client-tracking-id` заголовок со значением ПОЛЬЗОВАТЕЛЬСКОГО идентификатора в запросе триггера. Можно использовать триггер запроса, триггер HTTP или триггер веб-перехватчика.
 

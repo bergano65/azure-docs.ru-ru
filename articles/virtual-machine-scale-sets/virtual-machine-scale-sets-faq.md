@@ -9,12 +9,12 @@ ms.subservice: faq
 ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 8170cfcbbf200c6ba5030aff5716f46b537d8c97
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3bc259f9ee6cb1e6fd927af82a1740403d3ae7d8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016715"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587946"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -64,22 +64,22 @@ ms.locfileid: "96016715"
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Работают ли масштабируемые наборы с зонами доступности Azure?
 
-Да. Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
+Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
 ## <a name="autoscale"></a>Автомасштабирование
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Существуют ли рекомендации по автомасштабированию Azure?
 
-Рекомендации по автомасштабированию виртуальных компонентов см. в [этой статье](../azure-monitor/platform/autoscale-best-practices.md).
+Рекомендации по автомасштабированию виртуальных компонентов см. в [этой статье](../azure-monitor/autoscale/autoscale-best-practices.md).
 
 ### <a name="where-do-i-find-metric-names-for-autoscaling-that-uses-host-based-metrics"></a>Где можно найти имена метрик на основе узла, используемые в процессе автомасштабирования?
 
-Имена метрик на основе узла, используемые в процессе автомасштабирования, перечислены в статье [Метрики, поддерживаемые Azure Monitor](../azure-monitor/platform/metrics-supported.md).
+Имена метрик на основе узла, используемые в процессе автомасштабирования, перечислены в статье [Метрики, поддерживаемые Azure Monitor](../azure-monitor/essentials/metrics-supported.md).
 
 ### <a name="are-there-any-examples-of-autoscaling-based-on-an-azure-service-bus-topic-and-queue-length"></a>Существуют ли какие-либо образцы автомасштабирования на основе раздела или длины очереди служебной шины Azure?
 
-Да. Образцы автомасштабирования на основе раздела или длины очереди служебной шины Azure см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
+Да. Образцы автомасштабирования на основе раздела или длины очереди служебной шины Azure см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/autoscale/autoscale-common-metrics.md).
 
 Для очереди служебной шины используйте следующий код JSON:
 
@@ -104,9 +104,9 @@ ms.locfileid: "96016715"
 
 Вы можете создать на виртуальной машине конфигурацию автомасштабирования с использованием метрик уровня узла или метрик на основе гостевой ОС.
 
-Список поддерживаемых метрик см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
+Список поддерживаемых метрик см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/autoscale/autoscale-common-metrics.md).
 
-Полное определение конфигурации масштабируемых наборов см. в статье [Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для масштабируемых наборов виртуальных машин](../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md).
+Полное определение конфигурации масштабируемых наборов см. в статье [Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для масштабируемых наборов виртуальных машин](../azure-monitor/autoscale/autoscale-virtual-machine-scale-sets.md).
 
 В этой конфигурации используется метрика ЦП уровня узла и метрика количества сообщений.
 
@@ -114,13 +114,13 @@ ms.locfileid: "96016715"
 
 ### <a name="how-do-i-set-alert-rules-on-a-virtual-machine-scale-set"></a>Как можно задать правила оповещений в масштабируемом наборе виртуальных машин?
 
-Оповещения на основе метрик в масштабируемых наборах виртуальных машин можно создать с помощью PowerShell или Azure CLI. Дополнительные сведения см. в статье [Примеры для быстрого запуска Azure Monitor с помощью PowerShell](../azure-monitor/samples/powershell-samples.md#create-metric-alerts) и разделе [Работа с оповещениями](../azure-monitor/samples/cli-samples.md#work-with-alerts).
+Оповещения на основе метрик в масштабируемых наборах виртуальных машин можно создать с помощью PowerShell или Azure CLI. Дополнительные сведения см. в статье [Примеры для быстрого запуска Azure Monitor с помощью PowerShell](../azure-monitor/powershell-samples.md#create-metric-alerts) и разделе [Работа с оповещениями](../azure-monitor/cli-samples.md#work-with-alerts).
 
 Идентификатор целевого ресурса масштабируемого набора виртуальных машин выглядит следующим образом:
 
 /subscriptions/идентификатор_подписки/resourceGroups/группа_ресурсов/providers/Microsoft.Compute/virtualMachineScaleSets/имя_набора.
 
-В качестве метрики, для которой будут устанавливаться оповещения, можно выбрать любой счетчик производительности виртуальной машины. Дополнительные сведения см. в разделе [Метрики гостевой ОС для виртуальных машин под управлением Windows, развернутых с помощью Resource Manager](../azure-monitor/platform/autoscale-common-metrics.md#guest-os-metrics-for-resource-manager-based-windows-vms) и [Метрики гостевой ОС для виртуальных машин под управлением Linux](../azure-monitor/platform/autoscale-common-metrics.md#guest-os-metrics-linux-vms) статьи [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
+В качестве метрики, для которой будут устанавливаться оповещения, можно выбрать любой счетчик производительности виртуальной машины. Дополнительные сведения см. в разделе [Метрики гостевой ОС для виртуальных машин под управлением Windows, развернутых с помощью Resource Manager](../azure-monitor/autoscale/autoscale-common-metrics.md#guest-os-metrics-for-resource-manager-based-windows-vms) и [Метрики гостевой ОС для виртуальных машин под управлением Linux](../azure-monitor/autoscale/autoscale-common-metrics.md#guest-os-metrics-linux-vms) статьи [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/autoscale/autoscale-common-metrics.md).
 
 ### <a name="how-do-i-set-up-autoscale-on-a-virtual-machine-scale-set-by-using-powershell"></a>Как можно задать параметры автомасштабирования в масштабируемом наборе виртуальных машин с помощью PowerShell?
 
@@ -226,8 +226,8 @@ az sf cluster create -h
 
 Имя элемента конфигурации Linux | Обязательно | Тип | Описание
 --- | --- | --- | ---
-ssh | нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-путь | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
+path | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Да | Строка | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
@@ -346,7 +346,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 В Azure CLI есть возможность только удалить отдельный экземпляр. При попытке удалить один экземпляр с блокировкой, блокировка учитывается, и вы не сможете удалить этот экземпляр.
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>Модули
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -469,7 +469,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
 
 ### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-applies-to-all-the-vm-nics-in-the-set"></a>Можно ли назначить группу безопасности сети масштабируемому набору, чтобы она применялась ко всем сетевым картам виртуальных машин в наборе?
 
-Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример.
+Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример
 
 ```json
 "networkProfile": {
@@ -543,7 +543,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-the-dns-servers-used-by-a-scale-set"></a>Как настроить DNS-серверы, используемые масштабируемым набором?
 
-Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример.
+Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример
 
 ```json
     "dnsSettings":{
@@ -553,7 +553,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-a-scale-set-to-assign-a-public-ip-address-to-each-vm"></a>Как настроить масштабируемый набор, чтобы назначать общедоступный IP-адрес каждой виртуальной машине?
 
-Чтобы создать масштабируемый набор виртуальных машин, который назначает общедоступный IP-адрес каждой виртуальной машине, убедитесь, что версия API ресурса Microsoft. COMPUTE/virtualMachineScaleSets равна 2017-03-30, и добавьте пакет JSON _publicipaddressconfiguration_ в раздел ipConfigurations масштабируемого набора. Пример.
+Чтобы создать масштабируемый набор виртуальных машин, который назначает общедоступный IP-адрес каждой виртуальной машине, убедитесь, что версия API ресурса Microsoft. COMPUTE/virtualMachineScaleSets равна 2017-03-30, и добавьте пакет JSON _publicipaddressconfiguration_ в раздел ipConfigurations масштабируемого набора. Пример
 
 ```json
     "publicipaddressconfiguration": {
@@ -568,7 +568,7 @@ IP-адреса выбираются из указанной подсети.
 
 Да. Вы можете добавить идентификаторы ресурсов для нескольких серверных пулов адресов шлюза приложений в список _аппликатионгатевайбаккендаддресспулс_ в разделе _ipConfigurations_ сетевого профиля масштабируемого набора.
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 ### <a name="in-what-case-would-i-create-a-virtual-machine-scale-set-with-fewer-than-two-vms"></a>В каких случаях следует создавать масштабируемый набор с одной виртуальной машиной или без них?
 
@@ -671,7 +671,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 }
 ```
 
-После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Пример:
+После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Ниже приведен пример:
 
 ```json
 "bootDiagnostics": {

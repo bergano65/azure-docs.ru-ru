@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ead666cecbc3208fe103aa740578ca36339c3e30
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 19935037e98bbc7ce9c4152b034b664d802a8f3a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804977"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588288"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Базовый план безопасности Azure для базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -60,7 +60,7 @@ ms.locfileid: "99804977"
 
 Кроме того, прием журналов осуществляется с помощью Azure Monitor для агрегирования данных безопасности, формируемых функцией масштабирования (Цитус). В Azure Monitor использовать рабочие области Log Analytics для запроса и выполнения анализа, а также использовать учетные записи хранения для долгосрочного и архивного хранения. Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним системам управления информационной безопасностью и событиями безопасности (SIEM). 
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Метрики в масштабировании (Цитус)](./concepts-hyperscale-monitoring.md)
 
@@ -80,7 +80,7 @@ ms.locfileid: "99804977"
 
 - [Метрики в масштабировании (Цитус)](./concepts-hyperscale-monitoring.md)
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -92,9 +92,9 @@ ms.locfileid: "99804977"
 
 **Руководство**. в Azure Monitor для рабочей области log Analytics, используемой для хранения журналов Цитус, задайте срок хранения согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-- [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -106,9 +106,9 @@ ms.locfileid: "99804977"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Дополнительные сведения о Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Дополнительные сведения о Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -122,7 +122,7 @@ ms.locfileid: "99804977"
 
 - [Метрики в масштабировании (Цитус)](./howto-hyperscale-alert-on-metric.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -379,7 +379,7 @@ ms.locfileid: "99804977"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах Цитус и других важных или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

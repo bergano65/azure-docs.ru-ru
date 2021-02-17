@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: 59359cdd3e3c035d4cb6789295d41bb3908019bb
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 7a456057bc088264cefb91be9f3e5069b29474a1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785826"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596811"
 ---
 # <a name="azure-monitor-logs-for-azure-standard-load-balancer"></a>Журналы Azure Monitor для Azure Load Balancer (цен. категория "Стандартный")
 
@@ -63,7 +63,7 @@ ms.locfileid: "98785826"
      5. В раскрывающемся списке **выберите имя политики концентратора событий** выберите имя.
      6. Щелкните **ОК**.
 
-   * **Отправить на log Analytics**. Для этого процесса необходимо, чтобы Рабочая область log Analytics была создана и настроена. Сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/learn/quick-create-workspace.md).
+   * **Отправить на log Analytics**. Для этого процесса необходимо, чтобы Рабочая область log Analytics была создана и настроена. Сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/logs/quick-create-workspace.md).
      1. Установите флажок **Отправить в Log Analytics**.
      2. В раскрывающемся списке **Подписка** выберите подписку, в которой находится рабочая область log Analytics.
      3. В раскрывающемся списке **log Analytics Workspace (Рабочая область** ) выберите рабочую область.
@@ -100,10 +100,10 @@ ms.locfileid: "98785826"
 > Если вы знакомы с Visual Studio и основные понятия изменения значений констант и переменных в C#, можно использовать [средства преобразования журналов](https://github.com/Azure-Samples/networking-dotnet-log-converter) , доступные на сайте GitHub.
 
 ## <a name="stream-to-an-event-hub"></a>"Передать в концентратор событий";
-Когда диагностические данные передаются в концентратор событий, их можно использовать для централизованного анализа журналов в средстве Partner SIEM Tool с интеграцией Azure Monitor. Дополнительные сведения см. [в статье потоковая передача данных мониторинга Azure в концентратор событий](../azure-monitor/platform/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration).
+Когда диагностические данные передаются в концентратор событий, их можно использовать для централизованного анализа журналов в средстве Partner SIEM Tool с интеграцией Azure Monitor. Дополнительные сведения см. [в статье потоковая передача данных мониторинга Azure в концентратор событий](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration).
 
 ## <a name="send-to-log-analytics"></a>Отправка в Log Analytics
-Диагностические данные для ресурсов в Azure можно отправить непосредственно в Log Analytics рабочую область. В этой рабочей области можно выполнять сложные запросы к сведениям для устранения неполадок и анализа. Дополнительные сведения см. в разделе [Получение журналов ресурсов Azure в log Analytics рабочей области в Azure Monitor](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace).
+Диагностические данные для ресурсов в Azure можно отправить непосредственно в Log Analytics рабочую область. В этой рабочей области можно выполнять сложные запросы к сведениям для устранения неполадок и анализа. Дополнительные сведения см. в разделе [Получение журналов ресурсов Azure в log Analytics рабочей области в Azure Monitor](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace).
 
 ## <a name="limitations"></a>Ограничения
 Функция экспорта метрик в журналы для Azure Load Balancer имеет следующие ограничения.
@@ -111,6 +111,6 @@ ms.locfileid: "98785826"
 * Размерность метрик не сохраняется. Например, с такими метриками, как **дипаваилабилити** (состояние проверки работоспособности), вы не сможете разбивать или просматривать по внутреннему IP-адресу.
 * Метрики для используемых портов SNAT и выделенных портов SNAT в настоящее время недоступны для экспорта в качестве журналов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Проверка доступных метрик для балансировщика нагрузки](./load-balancer-standard-diagnostics.md)
 * [Создавайте и тестируйте запросы, следуя инструкциям Azure Monitor](../azure-monitor/log-query/log-query-overview.md)

@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: f9ced3dfeccdbac5f0eb220cf0e104679f263aac
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d2e898c6401ff9959298e5e435d68b4c4a452c4c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186870"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587280"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
 
@@ -29,7 +29,7 @@ ms.locfileid: "96186870"
 
 [![На снимке экрана показано меню портал Azure с выбранными решениями и решениями, отображаемыми в области решения.](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
-Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, любые запросы журнала, включенные в решение, отображаются в разделе **запросы решения** в [обозревателе запросов](../log-query/log-analytics-tutorial.md). Эти запросы можно использовать при выполнении нерегламентированного анализа с [запросами журналов](../log-query/log-query-overview.md).
+Решения мониторинга могут содержать несколько типов ресурсов Azure, и все ресурсы в составе решения можно просмотреть точно так же, как любой другой ресурс. Например, любые запросы журнала, включенные в решение, отображаются в разделе **запросы решения** в [обозревателе запросов](../logs/log-analytics-tutorial.md). Эти запросы можно использовать при выполнении нерегламентированного анализа с [запросами журналов](../logs/log-query-overview.md).
 
 ## <a name="list-installed-monitoring-solutions"></a>Список установленных решений мониторинга
 
@@ -83,7 +83,7 @@ Get-AzMonitorLogAnalyticsSolution -ResourceGroupName MyResourceGroup
 
 ### <a name="portal"></a>[Портал](#tab/portal)
 
-В [Azure Marketplace](https://azuremarketplace.microsoft.com) доступны решения мониторинга, предлагаемые корпорацией Майкрософт и ее партнерами. Вы можете выполнять поиск доступных решений и устанавливать их с помощью описанной ниже процедуры. При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.
+В [Azure Marketplace](https://azuremarketplace.microsoft.com) доступны решения мониторинга, предлагаемые корпорацией Майкрософт и ее партнерами. Вы можете выполнять поиск доступных решений и устанавливать их с помощью описанной ниже процедуры. При установке решения необходимо выбрать [рабочую область Log Analytics](../logs/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.
 
 1. В [списке решений в вашей подписке](#list-installed-monitoring-solutions) щелкните **Добавить**.
 1. Просмотрите решения или выполните поиск. Вы также можете просмотреть решения по [этой ссылке](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/management-tools?page=1&subcategories=management-solutions).
@@ -141,7 +141,7 @@ Get-AzMonitorLogAnalyticsSolution -ResourceGroupName MyResourceGroup
 
 ### <a name="install-a-solution-with-the-azure-cli"></a>Установка решения с Azure CLI
 
-При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.  С Azure CLI Управление рабочими областями осуществляется с помощью команд ссылки на [рабочую область "az Monitor журнала-Analytics](/cli/azure/monitor/log-analytics/workspace) ".  Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
+При установке решения необходимо выбрать [рабочую область Log Analytics](../logs/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.  С Azure CLI Управление рабочими областями осуществляется с помощью команд ссылки на [рабочую область "az Monitor журнала-Analytics](/cli/azure/monitor/log-analytics/workspace) ".  Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
 
 Используйте команду [AZ Monitor log-Analytics](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution) для установки решения для мониторинга.  Параметры в квадратных скобках являются необязательными.
 
@@ -171,7 +171,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 ### <a name="prepare-your-environment"></a>Подготовка среды
 
-1. Установите Azure PowerShell
+1. Установка Azure PowerShell
 
    Перед выполнением команд Azure PowerShell REFERENCES необходимо [установить Azure PowerShell](/powershell/azure/install-az-ps) . При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье. Azure Cloud Shell — это интерактивная оболочка среды, с которой можно работать в браузере. Запустите Cloud Shell с помощью одного из этих методов:
 
@@ -196,7 +196,7 @@ az monitor log-analytics solution create --resource-group MyResourceGroup \
 
 ### <a name="install-a-solution-with-azure-powershell"></a>Установка решения с Azure PowerShell
 
-При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных. Используя Azure PowerShell, вы управляете рабочими областями с помощью командлетов в модуле PowerShell [AZ. мониторингсолутионс](/powershell/module/az.monitoringsolutions) . Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
+При установке решения необходимо выбрать [рабочую область Log Analytics](../logs/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных. Используя Azure PowerShell, вы управляете рабочими областями с помощью командлетов в модуле PowerShell [AZ. мониторингсолутионс](/powershell/module/az.monitoringsolutions) . Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
 
 Используйте командлет [New-азмониторлоганалитикссолутион](/powershell/module/az.monitoringsolutions/new-azmonitorloganalyticssolution) , чтобы установить решение для мониторинга. Параметры в квадратных скобках являются необязательными.
 
@@ -219,7 +219,7 @@ New-AzMonitorLogAnalyticsSolution -Type Containers -ResourceGroupName MyResource
 
 ## <a name="log-analytics-workspace-and-automation-account"></a>Рабочая область Log Analytics и учетная запись службы автоматизации
 
-Всем решениям мониторинга требуется [рабочая область Log Analytics](../platform/manage-access.md) для хранения собранных решением данных и размещения его поисков по журналам и представлений. Для некоторых решений дополнительно требуется [учетная запись службы автоматизации](../../automation/automation-security-overview.md), в которой они хранят модули Runbook и связанные ресурсы. Рабочая область и учетная запись должны отвечать следующим требованиям.
+Всем решениям мониторинга требуется [рабочая область Log Analytics](../logs/manage-access.md) для хранения собранных решением данных и размещения его поисков по журналам и представлений. Для некоторых решений дополнительно требуется [учетная запись службы автоматизации](../../automation/automation-security-overview.md), в которой они хранят модули Runbook и связанные ресурсы. Рабочая область и учетная запись должны отвечать следующим требованиям.
 
 * Каждая установка решения может использовать только одну рабочую область Log Analytics и одну учетную запись службы автоматизации. Решение можно установить отдельно в нескольких рабочих областях.
 * Если для решения нужна учетная запись службы автоматизации, она должна быть связана с рабочей областью Log Analytics для этого же решения. Рабочая область Log Analytics может быть связана только с одной учетной записью службы автоматизации и наоборот.
@@ -264,5 +264,5 @@ Remove-AzMonitorLogAnalyticsSolution  -ResourceGroupName MyResourceGroup -Name W
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](../monitor-reference.md).
-* Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
+* Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../logs/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
 * См. все [команды Azure CLI для Azure Monitor](/cli/azure/azure-cli-reference-for-monitor).
