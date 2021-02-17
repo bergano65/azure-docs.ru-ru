@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 118b869cb97a7dd3ce65566a994a27d2a65a7402
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 49c790ae92537ab72fb9848ed4e57e222ef11d79
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184940"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545689"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Известные проблемы в службе Digital двойников
 
@@ -30,8 +30,6 @@ ms.locfileid: "98184940"
 ## <a name="missing-role-assignment-after-scripted-setup"></a>Отсутствует назначение роли после установки в скрипте
 
 **Описание проблемы:** Некоторые пользователи могут столкнуться с проблемами, описанными в разделе "назначение ролей" раздела [*как настроить экземпляр и выполнить проверку подлинности (в сценариях)*](how-to-set-up-instance-scripted.md). Сценарий не указывает на сбой, но роль *владельца данных Digital двойников* не назначена пользователю, и эта проблема повлияет на возможность создания других ресурсов в дороге.
-
-[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
 | Влияет ли это на меня? | Причина | Решение |
 | --- | --- | --- |
@@ -53,7 +51,7 @@ ms.locfileid: "98184940"
 | --- | --- | --- |
 | `DefaultAzureCredential` используется в большинстве примеров документации для этой службы, которая включает проверку подлинности. Если вы создаете код проверки подлинности с помощью `DefaultAzureCredential` с версией 1.3.0 `Azure.Identity` библиотеки и видите это сообщение об ошибке, это влияет на вас. | Это, вероятно, является следствием некоторых проблем с конфигурацией `Azure.Identity` . | Одна из стратегий решения этой проблемы заключается в исключении `SharedTokenCacheCredential` из учетных данных, как описано в этой [дефаултазурекредентиалной ошибке](https://github.com/Azure/azure-sdk/issues/1970) , которая в настоящее время открыта для `Azure.Identity` .<br>Другой вариант — изменить приложение для использования более ранней версии `Azure.Identity` , например [версии 1.2.3](https://www.nuget.org/packages/Azure.Identity/1.2.3). Это не влияет на работу с Azure Digital двойников. Таким же решением также является принятое решение. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о безопасности и разрешениях для Azure Digital двойников:
 * [*Основные понятия: безопасность решений для цифровых двойников Azure*](concepts-security.md)

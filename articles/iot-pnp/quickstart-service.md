@@ -9,12 +9,12 @@ ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
 zone_pivot_groups: programming-languages-set-ten
-ms.openlocfilehash: 2c39672c779c5aa27aae7271b8a903a1146118d9
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: f1c7cb4c760b5344a7c27fc0257fdea445280b7f
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95487802"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831905"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-device-thats-connected-to-your-solution"></a>Краткое руководство. Взаимодействие с подключенным к решению устройством IoT Plug and Play
 
@@ -41,6 +41,10 @@ ms.locfileid: "95487802"
 [!INCLUDE [iot-pnp-service-python](../../includes/iot-pnp-service-python.md)]
 
 :::zone-end
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы закончили работу с краткими руководствами и учебниками, см. раздел [Очистка ресурсов](set-up-environment.md#clean-up-resources).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

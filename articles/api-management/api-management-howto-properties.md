@@ -6,14 +6,14 @@ documentationcenter: ''
 author: vladvino
 ms.service: api-management
 ms.topic: article
-ms.date: 12/14/2020
+ms.date: 02/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 344500d5635f591b34a45130c7dd6b63659ad84d
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 2bc9b1c5724fa7bab1fdf5ac9332d87ba03a6d11
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491024"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545825"
 ---
 # <a name="use-named-values-in-azure-api-management-policies"></a>Использование именованных значений в политиках управления API Azure
 
@@ -86,6 +86,8 @@ ms.locfileid: "99491024"
 
 ### <a name="add-a-plain-or-secret-value"></a>Добавление обычного или секретного значения
 
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
 1. Перейдите к экземпляру Управления API на [портале Azure](https://portal.azure.com).
 1. В разделе **интерфейсы API** выберите **именованные значения**  >  **+ Добавить**.
 1. Введите идентификатор **имени** и введите **Отображаемое имя** , используемое для ссылки на свойство в политиках.
@@ -96,15 +98,59 @@ ms.locfileid: "99491024"
 
 После создания именованного значения его можно изменить, выбрав имя. При изменении отображаемого имени все политики, ссылающиеся на это именованное значение, автоматически обновляются для использования нового отображаемого имени.
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Начало использования Azure CLI:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Чтобы добавить именованное значение, используйте команду [AZ apim NV Create](/cli/azure/apim/nv#az_apim_nv_create) :
+
+```azurecli
+az apim nv create --resource-group apim-hello-word-resource-group \
+    --display-name "named_value_01" --named-value-id named_value_01 \
+    --secret true --service-name apim-hello-world --value test
+```
+
+После создания именованного значения его можно обновить с помощью команды [AZ apim NV Update](/cli/azure/apim/nv#az_apim_nv_update) . Чтобы просмотреть все именованные значения, выполните команду [AZ apim NV List](/cli/azure/apim/nv#az_apim_nv_list) :
+
+```azurecli
+az apim nv list --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --output table
+```
+
+Чтобы просмотреть сведения об именованном значении, созданном для этого примера, выполните команду [AZ apim NV Показать](/cli/azure/apim/nv#az_apim_nv_show) :
+
+```azurecli
+az apim nv show --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --named-value-id named_value_01
+```
+
+Этот пример является секретным значением. Предыдущая команда не возвращает значение. Чтобы просмотреть это значение, выполните команду [AZ apim NV Показать-Secret](/cli/azure/apim/nv#az_apim_nv_show_secret) :
+
+```azurecli
+az apim nv show-secret --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --named-value-id named_value_01
+```
+
+Чтобы удалить именованное значение, используйте команду [AZ apim NV Delete](/cli/azure/apim/nv#az_apim_nv_delete) :
+
+```azurecli
+az apim nv delete --resource-group apim-hello-word-resource-group \
+    --service-name apim-hello-world --named-value-id named_value_01
+```
+
+---
+
 ## <a name="use-a-named-value"></a>Использовать именованное значение
 
 В примерах в этом разделе используются именованные значения, приведенные в следующей таблице.
 
 | Имя               | Значение                      | Секрет | 
 |--------------------|----------------------------|--------|---------|
-| ContosoHeader      | `TrackingId`                 | False  | 
+| ContosoHeader      | `TrackingId`                 | Неверно  | 
 | ContosoHeaderValue | ••••••••••••••••••••••     | True   | 
-| ExpressionProperty | `@(DateTime.Now.ToString())` | False  | 
+| ExpressionProperty | `@(DateTime.Now.ToString())` | Неверно  | 
 
 Чтобы использовать именованное значение в политике, поместите его отображаемое имя внутри двойной пары фигурных скобок `{{ContosoHeader}}` , как показано в следующем примере:
 

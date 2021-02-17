@@ -1,35 +1,35 @@
 ---
-title: Добавление или удаление назначений ролей Azure для внешних пользователей с помощью портал Azure Azure RBAC
+title: Назначение ролей Azure внешним гостевым пользователям с помощью портал Azure Azure RBAC
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, внешних по отношению к Организации, с помощью портал Azure и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
-manager: mtillman
-editor: ''
-ms.assetid: ''
+manager: daveba
 ms.service: role-based-access-control
 ms.devlang: ''
 ms.topic: how-to
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 11/25/2019
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: a18fc3e4851c2daf03c662cf40cef58cc7d9e77a
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: d834f4ccd8dba26c895e0578f161813fc49332ea
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117713"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556297"
 ---
-# <a name="add-or-remove-azure-role-assignments-for-external-guest-users-using-the-azure-portal"></a>Добавление или удаление назначений ролей Azure для внешних гостевых пользователей с помощью портал Azure
+# <a name="assign-azure-roles-to-external-guest-users-using-the-azure-portal"></a>Назначение ролей Azure внешним гостевым пользователям с помощью портал Azure
 
 [Управление доступом на основе ролей в Azure (Azure RBAC)](overview.md) позволяет улучшить управление безопасностью для крупных организаций, а также для малых и средних предприятий, работающих с внешними участниками совместной работы, поставщиками или в сети, которым требуется доступ к конкретным ресурсам в вашей среде, но не обязательно ко всей инфраструктуре или всем областям, связанным с выставлением счетов. Вы можете использовать возможности [Azure Active Directory B2B](../active-directory/external-identities/what-is-b2b.md) для совместной работы с внешними гостевыми пользователями. Вы можете использовать Azure RBAC, чтобы предоставить только те разрешения, которые требуются гостевым пользователям в вашей среде.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
+Чтобы назначить роли Azure или удалить назначения ролей, необходимо иметь следующее:
+
+- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
+
 
 ## <a name="when-would-you-invite-guest-users"></a>Когда вы приглашаете гостевых пользователей?
 
@@ -65,9 +65,9 @@ ms.locfileid: "98117713"
 
 Дополнительные сведения о процессе приглашения см. в разделе [Azure Active Directory службы совместной работы B2B](../active-directory/external-identities/redemption-experience.md).
 
-## <a name="add-a-role-assignment-for-a-guest-user"></a>Добавление назначения роли для гостевого пользователя
+## <a name="assign-a-role-to-a-guest-user"></a>Назначение роли гостевому пользователю
 
-Чтобы предоставить доступ, назначьте роль в Azure RBAC. Чтобы добавить назначение роли для гостевого пользователя, выполните [те же действия](role-assignments-portal.md#add-a-role-assignment) , что и для пользователя участника, группы, субъекта-службы или управляемого удостоверения. Выполните следующие действия, чтобы добавить назначение ролей для гостевого пользователя в разных областях.
+Чтобы предоставить доступ, назначьте роль в Azure RBAC. Чтобы назначить роль гостевому пользователю, выполните [те же действия](role-assignments-portal.md) , что и для пользователя участника, группы, субъекта-службы или управляемого удостоверения. Выполните следующие действия, чтобы назначить роль гостевому пользователю в разных областях.
 
 1. На портале Azure щелкните **Все службы**.
 
@@ -101,9 +101,9 @@ ms.locfileid: "98117713"
 
     ![Назначение ролей для участника виртуальной машины](./media/role-assignments-external-users/access-control-role-assignments.png)
 
-## <a name="add-a-role-assignment-for-a-guest-user-not-yet-in-your-directory"></a>Добавление назначения роли для пользователя Guest еще не в вашем каталоге
+## <a name="assign-a-role-to-a-guest-user-not-yet-in-your-directory"></a>Назначение роли гостевому пользователю еще не в вашем каталоге
 
-Чтобы добавить назначение роли для гостевого пользователя, выполните [те же действия](role-assignments-portal.md#add-a-role-assignment) , что и для пользователя участника, группы, субъекта-службы или управляемого удостоверения.
+Чтобы назначить роль гостевому пользователю, выполните [те же действия](role-assignments-portal.md) , что и для пользователя участника, группы, субъекта-службы или управляемого удостоверения.
 
 Если гостевой пользователь еще не находится в каталоге, вы можете пригласить пользователя непосредственно из области добавить назначение ролей.
 
@@ -187,7 +187,7 @@ ms.locfileid: "98117713"
 
 ### <a name="guest-user-cannot-browse-users-groups-or-service-principals-to-assign-roles"></a>Гостевой пользователь не может просматривать пользователей, группы или субъекты-службы для назначения ролей
 
-Гостевые пользователи имеют ограниченные разрешения каталога. Даже если гостевой пользователь является [владельцем](built-in-roles.md#owner) области, при попытке добавить назначение ролей для предоставления другим пользователям доступа он не сможет просматривать список пользователей, групп или субъектов-служб.
+Гостевые пользователи имеют ограниченные разрешения каталога. Даже если гостевой пользователь является [владельцем](built-in-roles.md#owner) области, при попытке назначить роль для предоставления другим пользователям доступа он не сможет просматривать список пользователей, групп или субъектов-служб.
 
 ![Гостевой пользователь не может просматривать субъекты безопасности для назначения ролей](./media/role-assignments-external-users/directory-no-browse.png)
 

@@ -22,7 +22,7 @@
           href: character-counts.md
     - name: Практические руководства
       items:
-        - name: Регистрация для использования службы "Переводчик"
+        - name: Создание ресурса Переводчика
           href: ./translator-how-to-signup.md
         - name: "Миграция в API Перевода текстов версии\_3"
           href: migrate-to-v3.md

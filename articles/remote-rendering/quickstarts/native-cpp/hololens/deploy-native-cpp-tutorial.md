@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 06/08/2020
 ms.topic: quickstart
-ms.openlocfilehash: b469f0cae1e356c47bfe60af99c4fa2e73eab78d
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: b340a180927b3df9ad51295383b09b03dbbb2d98
+ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594033"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100530592"
 ---
 # <a name="quickstart-deploy-native-c-sample-to-hololens"></a>Краткое руководство. Развертывание примера в машинном коде C++ в HoloLens
 
@@ -81,7 +81,7 @@ git clone https://github.com/Azure/azure-remote-rendering
 В частности, измените следующие значения:
 * `init.AccountId`, `init.AccountKey` и `init.AccountDomain` должны содержать данные для вашей учетной записи. См. раздел [Извлечение сведений об учетной записи](../../../how-tos/create-an-account.md#retrieve-the-account-information).
 * Укажите, где следует создать сеанс удаленной подготовки к отрисовке, изменив указывающую на регион часть в строке `init.RemoteRenderingDomain` на регионы, отличные от `westus2`, например `"westeurope.mixedreality.azure.com"`.
-* Кроме того, вместо `m_sessionOverride` можно указать существующий идентификатор сеанса. Сеансы можно создавать за пределами этого примера, например с помощью [скрипта PowerShell](../../../samples/powershell-example-scripts.md#script-renderingsessionps1) или напрямую через [REST API сеанса](../../../how-tos/session-rest-api.md#create-a-session).
+* Кроме того, вместо `m_sessionOverride` можно указать существующий идентификатор сеанса. Сеансы можно создавать за пределами этого примера, например с помощью [скрипта PowerShell](../../../samples/powershell-example-scripts.md#script-renderingsessionps1) или напрямую через [REST API сеанса](../../../how-tos/session-rest-api.md).
 Мы рекомендуем создавать сеанс за пределами примера, если его нужно выполнять несколько раз. Если сеанс не передается, этот пример будет создавать новый сеанс при каждом запуске, что может занять несколько минут.
 
 Теперь приложение можно компилировать.

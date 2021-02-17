@@ -11,25 +11,23 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
-ms.date: 07/21/2020
-ms.openlocfilehash: ff9fc2baaf1563d4a02364db00344ffc0bc46a6a
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.date: 01/29/2021
+ms.openlocfilehash: 6232c842514c10a5440e574621ca74e2f4867d86
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060271"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981677"
 ---
 # <a name="quickstart-create-an-instance-of-the-azure-database-migration-service-by-using-the-azure-portal"></a>Краткое руководство. Создание экземпляра службы Azure Database Migration Service с помощью портала Azure
 
-В этом кратком руководстве вы создадите экземпляр Azure Database Migration Service с помощью портала Azure.  Созданный экземпляр можно будет использовать для переноса данных с платформы SQL Server в Базу данных SQL Azure.
+В этом кратком руководстве вы создадите экземпляр Azure Database Migration Service с помощью портала Azure. После создания экземпляра его можно использовать для переноса данных из нескольких источников базы данных на платформы данных Azure, например из SQL Server в Базу данных SQL Azure или из SQL Server в Управляемый экземпляр SQL Azure.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Откройте веб-браузер, перейдите к [порталу Microsoft Azure](https://portal.azure.com/) и введите учетные данные для входа на портал.
-
-Панель мониторинга службы является представлением по умолчанию.
+Откройте веб-браузер, перейдите к [порталу Microsoft Azure](https://portal.azure.com/) и введите учетные данные для входа на портал. Панель мониторинга службы является представлением по умолчанию.
 
 > [!NOTE]
 > В одной подписке можно создать до 10 экземпляров DMS на регион. Если требуется больше экземпляров, создайте запрос в службу поддержки.
@@ -38,39 +36,50 @@ ms.locfileid: "98060271"
 
 Прежде чем создать свой первый экземпляр Database Migration Service, зарегистрируйте поставщик ресурсов Microsoft.DataMigration.
 
-1. На портале Azure щелкните **Все службы** и выберите **Подписки**.
+1. На портале Azure найдите и выберите **Подписки**.
+
+   ![Отображение подписок на портале](media/quickstart-create-data-migration-service-portal/portal-select-subscription.png)
 
 2. Выберите подписку, в которой нужно создать экземпляр Azure Database Migration Service, а затем щелкните **Поставщики ресурсов**.
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+    ![Отображение поставщиков ресурсов](media/quickstart-create-data-migration-service-portal/portal-select-resource-provider.png)
+
+3. В поле поиска введите migration, а затем щелкните элемент **Зарегистрировать** рядом с **Microsoft.DataMigration**.
 
     ![Регистрация поставщика ресурсов](media/quickstart-create-data-migration-service-portal/dms-register-provider.png)
 
 ## <a name="create-an-instance-of-the-service"></a>Создание экземпляра службы
 
-1. Щелкните **+Создать ресурс**, чтобы создать экземпляр Azure Database Migration Service.
+1. На **домашней странице** или в меню портала Azure щелкните элемент **Создать ресурс**. Найдите и выберите элемент **Azure Database Migration Service**.
 
-2. Выполните в Marketplace поиск по слову migration, выберите службу **Azure Database Migration Service**, а затем на экране **Azure Database Migration Service** нажмите кнопку **Create**.
+    ![Azure Marketplace](media/quickstart-create-data-migration-service-portal/portal-marketplace.png)
 
-3. На экране **Создать Migration Service** сделайте следующее:
+2. На экране **Azure Database Migration Service** выберите **Создать**.
 
-    - Выберите **имя службы**, которое хорошо запоминается и будет уникальным для идентификации экземпляра Azure Database Migration Service.
-    - Выберите **подписку** Azure, в которой нужно создать экземпляр.
-    - Выберите существующую **группу ресурсов** или создайте новую.
-    - Выберите **расположение**, наиболее близкое к исходному или целевому серверу.
-    - Выберите существующую **виртуальную сеть** или создайте новую.
+    ![Создание экземпляра Azure Database Migration Service](media/quickstart-create-data-migration-service-portal/dms-create.png)
 
-        Виртуальная сеть предоставляет Azure Database Migration Service доступ к базе данных-источнику и целевой среде.
+3. На экране основных сведений **Создание Migration Service** сделайте следующее:
 
-        См. дополнительные сведения о [создании виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md).
+     - Выберите подписку.
+     - Создайте группу ресурсов или выберите существующую.
+     - Укажите имя для экземпляра Azure Database Migration Service.
+     - Выберите расположение, в котором нужно создать экземпляр Azure Database Migration Service.
+     - Выберите **Azure** в качестве режима службы.
+     - Выберите ценовую категорию. Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
+     
+    ![Настройка основных параметров экземпляра Azure Database Migration Service](media/quickstart-create-data-migration-service-portal/dms-create-basics.png)
 
-    - Выберите "Basic: 1 vCore" (Базовый: 1 виртуальное ядро) для параметра **Ценовая категория**.
+     - Нажмите Далее: сеть.
 
-        ![Создание службы миграции](media/quickstart-create-data-migration-service-portal/dms-create-service1.png)
+4. На экране сети **Создание Migration Service** сделайте следующее:
 
-4. Нажмите кнопку **создания**.
+    - Выберите существующую виртуальную сеть или создайте новую. Виртуальная сеть предоставляет Azure Database Migration Service доступ к базе данных-источнику и целевой среде. См. статью [Краткое руководство. Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md).
 
-    Через несколько секунд экземпляр Azure Database Migration Service будет создан и готов к использованию. Экземпляр Azure Database Migration Service отобразится, как показано на рисунке ниже.
+    ![Настройка параметров сети экземпляра Azure Database Migration Service](media/quickstart-create-data-migration-service-portal/dms-network-settings.png)
+
+    - Щелкните **Просмотреть и создать**, чтобы создать службу. 
+    
+    - Через несколько секунд экземпляр Azure Database Migration Service будет создан и готов к использованию:
 
     ![Созданная служба Migration Service](media/quickstart-create-data-migration-service-portal/dms-service-created.png)
 
@@ -80,5 +89,7 @@ ms.locfileid: "98060271"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Перенос SQL Server в Базу данных Azure SQL](tutorial-sql-server-to-azure-sql.md)
+* [Миграция из SQL Server в Базу данных SQL Azure в автономном режиме](tutorial-sql-server-to-azure-sql.md)
+* [Миграция из SQL Server в Базу данных SQL Azure в подключенном режиме](tutorial-sql-server-azure-sql-online.md)
+* [Миграция SQL Server в Управляемый экземпляр SQL Azure в автономном режиме](tutorial-sql-server-to-managed-instance.md)
+* [Миграция SQL Server в Управляемый экземпляр SQL Azure по сети](tutorial-sql-server-managed-instance-online.md)

@@ -2,13 +2,13 @@
 title: Перенос конфигурации пула пакетной службы из облачных служб на виртуальные машины
 description: Узнайте, как обновить конфигурацию пула до последней и рекомендуемой конфигурации.
 ms.topic: how-to
-ms.date: 1/6/2021
-ms.openlocfilehash: 417738be2c69101129079b8ff3a3d80634f9f99c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 2/16/2021
+ms.openlocfilehash: 9cbcf3864526bd8f8132f3b0f729e2d728e07bb8
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98731505"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546046"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Перенос конфигурации пула пакетной службы из облачных служб на виртуальные машины
 
@@ -37,7 +37,20 @@ ms.locfileid: "98731505"
 
 - Время запуска и удаления пулов и узлов может немного отличаться между пулами "cloudServiceConfiguration" и пулами "virtualMachineConfiguration".
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="azure-data-factory-custom-activity-pools"></a>Пулы настраиваемых действий фабрики данных Azure
+
+Пулы пакетной службы Azure можно использовать для запуска настраиваемых действий фабрики данных. Все пулы "cloudServiceConfiguration", используемые для выполнения настраиваемых действий, необходимо удалить, а также создать новые пулы "virtualMachineConfiguration".
+
+- Прежде чем удалять или повторно создавать конвейеры, их необходимо приостановить, чтобы не прерывать выполнение.
+- Для предотвращения изменений конфигурации связанной службы можно использовать один и тот же идентификатор пула.
+- Возобновить конвейеры при создании новых пулов.
+
+Дополнительные сведения об использовании пакетной службы Azure для запуска настраиваемых действий фабрики данных:
+
+- [Связанная пакетная служба Azure](../data-factory/compute-linked-services.md#azure-batch-linked-service)
+- [Пользовательские действия в конвейере фабрики данных](../data-factory/transform-data-using-dotnet-custom-activity.md)
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [конфигурациях пулов](nodes-and-pools.md#configurations).
 - Дополнительные сведения о рекомендациях по работе с [пулами](best-practices.md#pools).

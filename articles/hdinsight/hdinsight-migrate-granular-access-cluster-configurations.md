@@ -6,12 +6,12 @@ ms.author: tyfox
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/20/2020
-ms.openlocfilehash: 08be42f4f0801fc700b3e0fc645c1bbc1b747e91
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: c6bbb389902c11239f665c6d0db787f61955a953
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944091"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555812"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -28,7 +28,7 @@ ms.locfileid: "98944091"
 | Роль                                  | Раньше назывался .                                                                                       | Переход вперед       |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|-----------|
 | Читатель                                | — Доступ на чтение, включая секреты.                                                                   | — Доступ на чтение, **исключение** секретов |           |   |   |
-| Оператор кластера HDInsight<br>(Новая роль) | Недоступно                                                                                              | — Доступ на чтение и запись, включая секреты         |   |   |
+| Оператор кластера HDInsight<br>(Новая роль) | Н/Д                                                                                              | — Доступ на чтение и запись, включая секреты         |   |   |
 | Участник                           | — Доступ на чтение и запись, включая секреты.<br>— Создание всех типов ресурсов Azure и управление ими.<br>— Выполнение действий скрипта.     | Без изменения. |
 | Владелец                                 | — Доступ на чтение и запись, включая секреты.<br>— Полный доступ ко всем ресурсам<br>— Делегирование доступа другим пользователям.<br>— Выполнение действий скрипта. | Без изменения. |
 
@@ -79,7 +79,7 @@ ms.locfileid: "98944091"
 
 Если вы используете версию 1.1.1 или ниже, обновите до [последней версии средств Azure HDInsight для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=mshdinsight.azure-hdinsight&ssr=false) , чтобы избежать перерывов.
 
-### <a name="azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ
+### <a name="azure-toolkit-for-intellij"></a>Набор средств Azure для IntelliJ
 
 Если вы используете версию 3.20.0 или ниже, обновите [последнюю версию подключаемого модуля Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij) , чтобы избежать перерывов.
 
@@ -87,7 +87,7 @@ ms.locfileid: "98944091"
 
 Обновите [Azure Data Lake и средства Stream Analytics для Visual Studio](https://marketplace.visualstudio.com/items?itemName=ADLTools.AzureDataLakeandStreamAnalyticsTools&ssr=false#overview) до версии 2.3.9000.1 или более поздней, чтобы избежать перерывов в работе.  Справку по обновлению см. в нашей документации, а также в [статье обновление средств Data Lake для Visual Studio](./hadoop/apache-hadoop-visual-studio-tools-get-started.md#update-data-lake-tools-for-visual-studio).
 
-### <a name="azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
+### <a name="azure-toolkit-for-eclipse"></a>Набор средств Azure для Eclipse
 
 Если вы используете версию 3.15.0 или ниже, обновите ее до [последней версии Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse) во избежание перерывов.
 
@@ -182,7 +182,7 @@ az role assignment create --role "HDInsight Cluster Operator" --assignee user@do
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
-Можно также использовать портал Azure для добавления назначения роли оператора кластера HDInsight пользователю. См. документацию, [Добавление или удаление назначений ролей Azure с помощью портал Azure — Добавление назначения роли](../role-based-access-control/role-assignments-portal.md#add-a-role-assignment).
+Можно также использовать портал Azure для добавления назначения роли оператора кластера HDInsight пользователю. См. документацию по [назначению ролей Azure с помощью портал Azure](../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 

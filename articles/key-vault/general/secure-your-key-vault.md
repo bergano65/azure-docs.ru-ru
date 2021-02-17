@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: f82c7060f703aff6c19f0082454779b8fea1ba76
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 552aad3e3b41bcfd55d1b57a53d8dff2080a6210
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526261"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100534708"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -182,13 +182,13 @@ Azure Key Vault — это облачная служба, которая обе
 
 В следующей таблице приведены разрешения доступа для наших ролей и приложения.
 
-| Роль | Разрешения плоскости управления | Разрешения плоскости данных — политики доступа к хранилищу | Разрешения плоскости данных — Azure RBAC (Предварительная версия)  |
+| Роль | Разрешения плоскости управления | Разрешения плоскости данных — политики доступа к хранилищу | Разрешения плоскости данных — Azure RBAC  |
 | --- | --- | --- | --- |
-| Группа безопасности | [Участник Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Сертификаты: все операции <br> Ключи: все операции <br> Секреты: все операции | [Администратор Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) |
+| Группа безопасности | [Участник Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Сертификаты: все операции <br> Ключи: все операции <br> Секреты: все операции | [Администратор Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-administrator) |
 | Разработчики и&nbsp;операторы | Разрешение на развертывание Key Vault<br><br> **Примечание.** Это разрешение позволяет развернутым виртуальным машинам получать секреты из хранилища ключей. | None | None |
-| Аудиторы | None | Сертификаты: список <br> Ключи: перечисление<br>Секреты: перечисление<br><br> **Примечание.** Это разрешение позволяет аудиторам проверять атрибуты (теги, даты активации, даты истечения срока действия) ключей и секретов, которые не отправляются в журналы. | [Читатель Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview) |
-| Учетная запись хранения Azure | Нет | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user-preview) |
-| Приложение | None | Секреты: Get, List <br> Сертификаты: Get, List | [Читатель Key Vault (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview), [Key Vault пользователя секрета (Предварительная версия)](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user-preview) |
+| Аудиторы | None | Сертификаты: список <br> Ключи: перечисление<br>Секреты: перечисление<br><br> **Примечание.** Это разрешение позволяет аудиторам проверять атрибуты (теги, даты активации, даты истечения срока действия) ключей и секретов, которые не отправляются в журналы. | [Модуль чтения Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-reader) |
+| Учетная запись хранения Azure | Нет | Ключи: Get, List, wrapKey, unwrapKey <br> | [Key Vault шифрование службы шифрования](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-user) |
+| Приложение | None | Секреты: Get, List <br> Сертификаты: Get, List | [Читатель Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-reader), [Key Vault секретный пользователь](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user) |
 
 Трем ролям группы требуется доступ к другим ресурсам вместе с разрешениями Key Vault. Для развертывания виртуальных машин (или компонента "веб-приложения" службы приложений Azure) разработчикам и операторам требуется развернуть доступ. Аудиторам требуется доступ на чтение к учетной записи хранения, где хранятся журналы Key Vault.
 
@@ -205,7 +205,7 @@ Azure Key Vault — это облачная служба, которая обе
 - [Azure RBAC](../../role-based-access-control/overview.md)
 - [Приватный канал](../../private-link/private-link-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Проверка подлинности в Azure Key Vault](authentication.md)
 

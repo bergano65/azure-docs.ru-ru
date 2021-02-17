@@ -10,18 +10,18 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/08/2021
 ms.author: kenwith
-ms.openlocfilehash: 03eacf4405217ee883689a088499d86d6f2262b5
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 100f66d6217533ff6eba7881f938e877b98c735e
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99830708"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091114"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Руководство. Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory
 
 Microsoft Azure AD обеспечивает поддержку для подготовки пользователей для сторонних приложений SaaS, например Salesforce, G Suite и др. Если включена подготовка пользователей для сторонних приложений SaaS, портал Azure определяет значения их атрибутов посредством сопоставления атрибутов.
 
-Прежде чем приступить к работе, ознакомьтесь с концепциями управления приложениями и **единого входа** по следующими ссылкам:
+Прежде чем приступить к работе, ознакомьтесь с концепциями управления приложениями и **единого входа**. Ознакомьтесь со следующими ресурсами:
 - [Цикл кратких руководств по управлению приложениями в Azure AD](../manage-apps/view-applications-portal.md)
 - [Что собой представляет единый вход?](../manage-apps/what-is-single-sign-on.md)
 
